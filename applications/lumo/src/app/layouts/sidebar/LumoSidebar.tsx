@@ -11,12 +11,11 @@ import { metaKey } from '@proton/shared/lib/helpers/browser';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 
-import {useLumoFlags} from '../../hooks/useLumoFlags';
-import {GuestChatDisclaimerModal} from '../../components/Modals/GuestChatDisclaimerModal';
-import GuestDisclaimer from '../../components/Notifications/GuestDisclaimer';
-import {SearchModal} from '../../components/Modals/SearchModal/SearchModal';
+import { GuestChatDisclaimerModal } from '../../components/Modals/GuestChatDisclaimerModal';
+import { SearchModal } from '../../components/Modals/SearchModal/SearchModal';
 import SettingsModal from '../../components/Modals/SettingsModal/SettingsModal';
 import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
+import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useSearchModal } from '../../providers/SearchModalProvider';
@@ -36,67 +35,6 @@ import {useLumoFlags} from "../../hooks/useLumoFlags";
 const ProjectsSidebarSection = lazy(() =>
     import('./ProjectsSidebarSection').then((m) => ({ default: m.ProjectsSidebarSection }))
 );
-
-// Hook for text visibility - show immediately as sidebar expands, delay hide during collapse
-// TODO: delete, moved to useTextVisibility.tsx
-// const useTextVisibility = (isCollapsed: boolean) => {
-//     const [showText, setShowText] = useState(!isCollapsed);
-
-//     useEffect(() => {
-//         if (isCollapsed) {
-//             const timer = setTimeout(() => setShowText(false), 200);
-//             return () => clearTimeout(timer);
-//         } else {
-//             setShowText(true);
-//         }
-//     }, [isCollapsed]);
-
-//     return showText;
-// };
-
-// TODO: delete, moved to SidebarItem.tsx
-// // Simple sidebar item component
-// interface SidebarItemProps {
-//     icon: string;
-//     label: string;
-//     onClick: () => void;
-//     showText: boolean;
-//     className?: string;
-//     shortcut?: string;
-//     showShortcutOnHover?: boolean;
-//     iconSVG?: React.ReactNode | null;
-// }
-
-// const SidebarItem = ({
-//     icon,
-//     label,
-//     onClick,
-//     showText,
-//     className,
-//     shortcut,
-//     showShortcutOnHover,
-//     iconSVG = null,
-// }: SidebarItemProps) => (
-//     <Tooltip title={label} originalPlacement="right">
-//         <button
-//             className={clsx('sidebar-item', className, showShortcutOnHover && 'show-shortcut-on-hover')}
-//             onClick={onClick}
-//             aria-label={label}
-//         >
-//             <div className="sidebar-item-icon">
-//                 {iconSVG ? iconSVG : <Icon name={icon as any} size={4} className="rtl:mirror" />}
-//             </div>
-//             <span className={clsx('sidebar-item-text', !showText && 'hidden')}>
-//                 <span className="sidebar-item-label">{label}</span>
-//                 {shortcut && showText && (
-//                     <span className="sidebar-item-shortcut">
-//                         <Kbd shortcut={shortcut} />
-//                     </span>
-//                 )}
-//             </span>
-//         </button>
-//     </Tooltip>
-// );
 
 // Gallery Sidebar Item
 const GallerySidebarItem = ({ showText, onItemClick }: { showText: boolean; onItemClick: () => void }) => {
@@ -261,7 +199,7 @@ const LumoSidebarContent = () => {
     const { isVisible, isSmallScreen, isCollapsed, toggle, closeOnItemClick } = useSidebar();
     const isGuest = useIsGuest();
     const showText = useTextVisibility(isCollapsed);
-    const {imageTools} = useLumoFlags();
+    const { imageTools } = useLumoFlags();
     const settingsModal = useModalStateObject();
     const searchModal = useModalStateObject();
     const { registerOpenFunction } = useSearchModal();
@@ -321,10 +259,9 @@ const LumoSidebarContent = () => {
                     </div>
                 )}
 
-
                 {imageTools && (
                     <div className="sidebar-section">
-                        <GallerySidebarItem showText={showText} onItemClick={closeOnItemClick}/>
+                        <GallerySidebarItem showText={showText} onItemClick={closeOnItemClick} />
                     </div>
                 )}
 
@@ -412,7 +349,6 @@ const LumoSidebarContent = () => {
             </div>
             {settingsModal.render && <SettingsModal {...settingsModal.modalProps} />}
             {searchModal.render && <SearchModal {...searchModal.modalProps} />}
-            {/* {isGuest && isSmallScreen && <GuestDisclaimer />} */}
         </>
     );
 };
