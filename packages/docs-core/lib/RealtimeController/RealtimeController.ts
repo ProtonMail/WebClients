@@ -29,7 +29,7 @@ import { DocControllerEvent } from '../AuthenticatedDocController/AuthenticatedD
 import type { GetDocumentMeta } from '../UseCase/GetDocumentMeta'
 import type { FetchDecryptedCommit } from '../UseCase/FetchDecryptedCommit'
 import { isDocumentUpdateChunkingEnabled } from '../utils/document-update-chunking'
-import type { UnleashClient } from '@proton/unleash'
+import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { SquashErrorEvent } from '../UseCase/SquashDocument'
 

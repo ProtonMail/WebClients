@@ -6,7 +6,7 @@ import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
-import type { UnleashClient } from '@proton/unleash';
+import type { UnleashClient } from '@proton/unleash/UnleashClient';
 
 export interface ProtonThunkArguments {
     api: ApiWithListener;

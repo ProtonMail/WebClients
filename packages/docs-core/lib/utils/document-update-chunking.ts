@@ -1,5 +1,5 @@
 import { MAX_UPDATE_SIZE, UPDATE_CHUNK_SAFE_SIZE_MARGIN } from '../Models/Constants'
-import type { UnleashClient } from '@proton/unleash'
+import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import { DocumentUpdate } from '@proton/docs-proto'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 
