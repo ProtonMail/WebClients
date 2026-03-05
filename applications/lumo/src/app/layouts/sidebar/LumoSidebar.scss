@@ -389,6 +389,16 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
+// Mobile sidebar header: bleeds to the edges of the padded container
+.lumo-sidebar-mobile-header {
+	margin-block: -16px 0;
+	margin-inline: -16px;
+}
+
+.lumo-sidebar-mobile-header-logo {
+	block-size: 40px;
+}
+
 // Mobile-specific sidebar enhancements (core positioning handled in index.scss)
 @include im.media('<=small') {
 	// Reset sidebar bottom padding on mobile
