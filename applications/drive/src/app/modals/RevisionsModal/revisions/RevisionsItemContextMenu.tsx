@@ -1,19 +1,25 @@
-import { useMemo } from 'react';
-
 import { ContextSeparator } from '@proton/components';
 import type { Revision } from '@proton/drive';
-import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
 
-import type { ContextMenuProps } from '../FileBrowser';
-import { ItemContextMenu } from '../sections/ContextMenu/ItemContextMenu';
-import {
-    RevisionDeleteButton,
-    RevisionDetailsButton,
-    RevisionDownloadButton,
-    RevisionPreviewButton,
-    RevisionRestoreButton,
-} from './ContextMenuButtons';
-import { useRevisionsProvider } from './RevisionsProvider';
+import type { ContextMenuProps } from '../../../components/FileBrowser';
+import { ItemContextMenu } from '../../../components/sections/ContextMenu/ItemContextMenu';
+import type { RevisionsProviderState } from '../useRevisionsModalState';
+import { RevisionDeleteButton } from './ContextMenuButtons/RevisionDeleteButton';
+import { RevisionDetailsButton } from './ContextMenuButtons/RevisionDetailsButton';
+import { RevisionDownloadButton } from './ContextMenuButtons/RevisionDownloadButton';
+import { RevisionPreviewButton } from './ContextMenuButtons/RevisionPreviewButton';
+import { RevisionRestoreButton } from './ContextMenuButtons/RevisionRestoreButton';
+
+type RevisionActionProps = Pick<
+    RevisionsProviderState,
+    | 'hasPreviewAvailable'
+    | 'isOwner'
+    | 'openRevisionPreview'
+    | 'openRevisionDetails'
+    | 'deleteRevision'
+    | 'restoreRevision'
+    | 'downloadRevision'
+>;
 
 export function RevisionsItemContextMenu({
     anchorRef,
@@ -23,20 +29,17 @@ export function RevisionsItemContextMenu({
     close,
     revision,
     isCurrent,
+    hasPreviewAvailable,
+    isOwner,
+    openRevisionPreview,
+    downloadRevision,
+    openRevisionDetails,
+    deleteRevision,
+    restoreRevision,
 }: ContextMenuProps & {
     revision: Revision;
     isCurrent: boolean;
-}) {
-    const {
-        permissions,
-        hasPreviewAvailable,
-        openRevisionPreview,
-        downloadRevision,
-        openRevisionDetails,
-        deleteRevision,
-        restoreRevision,
-    } = useRevisionsProvider();
-    const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
+} & RevisionActionProps) {
     if (isCurrent) {
         return (
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
@@ -69,7 +72,7 @@ export function RevisionsItemContextMenu({
             <ContextSeparator />
             <RevisionDetailsButton revision={revision} openRevisionDetails={openRevisionDetails} close={close} />
 
-            {isAdmin && (
+            {isOwner && (
                 <>
                     <ContextSeparator />
                     <RevisionDeleteButton deleteRevision={deleteRevision} revision={revision} close={close} />

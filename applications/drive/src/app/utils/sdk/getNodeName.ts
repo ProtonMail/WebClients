@@ -2,6 +2,10 @@ import { c } from 'ttag';
 
 import type { Device, MaybeBookmark, MaybeNode } from '@proton/drive';
 
+export function getNodeNameFallback() {
+    return c('Error').t`⚠️ Undecryptable name`;
+}
+
 export function getNodeName(node: MaybeNode): string {
     if (node.ok) {
         return node.value.name;
@@ -11,7 +15,7 @@ export function getNodeName(node: MaybeNode): string {
         return maybeName.value;
     }
     if (maybeName.error instanceof Error || !maybeName.error.name) {
-        return c('Error').t`⚠️ Undecryptable name`;
+        return getNodeNameFallback();
     }
     // Invalid name can still be used to display the node.
     return maybeName.error.name;
@@ -26,7 +30,7 @@ export function getBookmarkNodeName(bookmark: MaybeBookmark): string {
         return maybeName.value;
     }
     if (maybeName.error instanceof Error) {
-        return c('Error').t`⚠️ Undecryptable name`;
+        return getNodeNameFallback();
     }
     // Invalid name can still be used to display the node.
     return maybeName.error.name;

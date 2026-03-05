@@ -12,4 +12,4 @@ import type { ProtonDriveClient } from '@proton/drive';
  * to edit the file.
  */
 export type Drive = Pick<ProtonDriveClient, 'getNode' | 'iterateThumbnails' | 'getFileDownloader'> &
-    Partial<Pick<ProtonDriveClient, 'getSharingInfo' | 'getFileRevisionUploader'>>;
+    Partial<Pick<ProtonDriveClient, 'getSharingInfo' | 'getFileRevisionUploader' | 'getFileRevisionDownloader'>>;

@@ -25,12 +25,14 @@ export function usePreviewState({
     previewableNodeUids,
     onNodeChange,
     verifySignatures = true,
+    revisionUid,
 }: {
     drive: Drive;
     nodeUid: string;
     previewableNodeUids?: string[];
     onNodeChange?: (nodeUid: string) => void;
     verifySignatures: boolean;
+    revisionUid?: string;
 }) {
     const [nodeUid, setNodeUid] = useState<string>(passedNodeUid);
     const nodeUidRef = useRef<string>(nodeUid);
@@ -128,7 +130,7 @@ export function usePreviewState({
             }
 
             void withIsContentLoading(
-                downloadContent(drive, nodeUid, abortSignal)
+                downloadContent(drive, nodeUid, abortSignal, revisionUid)
                     .then(({ contents, hasSignatureIssues }) => {
                         setNodeData({ contents, hasSignatureIssues });
                     })
@@ -143,7 +145,7 @@ export function usePreviewState({
                     })
             );
         },
-        [drive, node, nodeUid, previewMethod, withIsContentLoading]
+        [drive, node, nodeUid, previewMethod, revisionUid, withIsContentLoading]
     );
 
     // Metadata load is triggered by the node UID change.
