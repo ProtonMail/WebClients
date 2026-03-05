@@ -22,3 +22,5 @@ export type ESItemCursorResult = { key: string; value: ESCiphertext };
 export type MigrateFn = (data: EncryptedSearchData) => EncryptedSearchData;
 
 export const CONTENT_EXTRACTION_MAX_RETRIES = 5;
+
+export const READ_BATCH_SIZE = 100;
