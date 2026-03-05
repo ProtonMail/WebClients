@@ -10,7 +10,6 @@ import { useLoading } from '@proton/hooks';
 import ModalContentLoader from '../../components/modals/ModalContentLoader';
 import type { DirectoryTreeItem } from '../../statelessComponents/DirectoryTree/DirectoryTree';
 import { DirectoryTreeRoot } from '../../statelessComponents/DirectoryTree/DirectoryTree';
-import { EmptyFileTreePlaceholder } from './EmptyFileTreePlaceholder';
 
 export type SelectLinkToShareModalViewProps =
     | ({ loaded: true } & LoadedSelectLinkToShareModalViewProps)
@@ -41,15 +40,6 @@ const SelectLinkToShareModalContent = ({
 }: LoadedSelectLinkToShareModalViewProps) => {
     const [loading, withLoading] = useLoading();
     const isSharingDisabled = !selectedNodeUid;
-
-    if (treeRoots.length === 0) {
-        return (
-            <ModalTwo open={open} onExit={onExit} onClose={onClose} size="large">
-                <ModalTwoHeader closeButtonProps={{ disabled: loading }} />
-                <EmptyFileTreePlaceholder />
-            </ModalTwo>
-        );
-    }
 
     return (
         <ModalTwo
