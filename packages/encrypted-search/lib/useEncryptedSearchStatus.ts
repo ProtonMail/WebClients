@@ -4,13 +4,7 @@ import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { INDEXING_STATUS, defaultESStatus } from './constants';
 import { getIndexKey } from './esHelpers';
-import {
-    checkVersionedESDB,
-    contentIndexingProgress,
-    metadataIndexingProgress,
-    readEnabled,
-    readLimited,
-} from './esIDB';
+import { contentIndexingProgress, hasESDB, metadataIndexingProgress, readEnabled, readLimited } from './esIDB';
 import type { ESCache, ESStatus } from './models';
 
 /**
@@ -34,7 +28,7 @@ export const useEncryptedSearchStatus = <ESItemMetadata extends Object, ESSearch
     useEffect(() => {
         const initEsStatus = async () => {
             try {
-                const esdbExists = await checkVersionedESDB(userID);
+                const esdbExists = await hasESDB(userID);
 
                 if (esdbExists) {
                     const userKeys = await getUserKeys();

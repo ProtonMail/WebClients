@@ -6,17 +6,30 @@
  * upper bound for when to remove the migration code, and that is three
  * weeks. All users who login before three weeks will have their IDB
  * migrated, while all those who don't would anyway receive a refresh
- * flag from the BE, thus once this migration code no longer exists
- * the checkVersionedESDB will remove the old index
+ * flag from the BE
  */
 import type { IDBPTransaction } from 'idb';
 import { openDB } from 'idb';
 
-import type { PrivateKeyReference } from '@proton/crypto/lib';
-import { ES_MAX_ITEMS_PER_BATCH, INDEXING_STATUS, defaultESProgress } from '@proton/encrypted-search/constants';
-import { decryptIndexKey, removeESFlags } from '@proton/encrypted-search/esHelpers';
-import { getItem } from '@proton/shared/lib/helpers/storage';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import type { PrivateKeyReference } from '@proton/crypto';
+import {
+    ES_MAX_ITEMS_PER_BATCH,
+    INDEXEDDB_VERSION,
+    INDEXING_STATUS,
+    defaultESProgress,
+} from '@proton/encrypted-search/constants';
+import { decryptIndexKey } from '@proton/encrypted-search/esHelpers';
+import { getItem, removeItem } from '@proton/shared/lib/helpers/storage';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+
+const removeESFlags = (userID: string) => {
+    Object.keys(window.localStorage).forEach((key) => {
+        const chunks = key.split(':');
+        if (chunks[0] === 'ES' && chunks[1] === userID) {
+            removeItem(key);
+        }
+    });
+};
 
 /**
  * Interface of the old progress blob as we used to store in local
@@ -99,43 +112,45 @@ export const migrate = async (
     const shareID = await promiseShareID;
 
     let success = true;
-    await openDB(`ES:${userID}:DB`, 2, {
+    await openDB(`ES:${userID}:DB`, INDEXEDDB_VERSION, {
         upgrade: async (...args) => {
-            const [newESDB, , , tx] = args;
+            const [newESDB, oldVersion, , tx] = args;
 
-            // Create the new object stores and fill them accordingly
-            const configOS = newESDB.createObjectStore('config');
-            await configOS.put(armoredIndexKey, 'indexKey');
-            await configOS.put(size, 'size');
-            await configOS.put(isEnabled, 'enabled');
-            await configOS.put(false, 'limited');
+            if (oldVersion < 3) {
+                // Create the new object stores and fill them accordingly
+                const configOS = newESDB.createObjectStore('config');
+                await configOS.put(armoredIndexKey, 'indexKey');
+                await configOS.put(size, 'size');
+                await configOS.put(isEnabled, 'enabled');
+                await configOS.put(false, 'limited');
 
-            const eventsOS = newESDB.createObjectStore('events');
-            await eventsOS.put(lastEventID, shareID);
+                const eventsOS = newESDB.createObjectStore('events');
+                await eventsOS.put(lastEventID, shareID);
 
-            const indexingProgressOS = newESDB.createObjectStore('indexingProgress');
-            if (!progressBlob) {
-                // Case 2. ES was fully activated
-                await indexingProgressOS.put(
-                    {
-                        ...defaultESProgress,
-                        status: INDEXING_STATUS.ACTIVE,
-                    },
-                    'metadata'
-                );
-            } else {
-                // Case 3. ES was indexing
-                success = false;
-                return;
+                const indexingProgressOS = newESDB.createObjectStore('indexingProgress');
+                if (!progressBlob) {
+                    // Case 2. ES was fully activated
+                    await indexingProgressOS.put(
+                        {
+                            ...defaultESProgress,
+                            status: INDEXING_STATUS.ACTIVE,
+                        },
+                        'metadata'
+                    );
+                } else {
+                    // Case 3. ES was indexing
+                    success = false;
+                    return;
+                }
+
+                // Create the metadata and content object stored and move all ciphertexts
+                // from "files" into the former, such that "files" can be removed
+                const metadataOS = newESDB.createObjectStore('metadata');
+                metadataOS.createIndex('temporal', 'timepoint', { unique: true, multiEntry: false });
+                newESDB.createObjectStore('content');
+                await moveCiphertexts(tx);
+                newESDB.deleteObjectStore('files');
             }
-
-            // Create the metadata and content object stored and move all ciphertexts
-            // from "files" into the former, such that "files" can be removed
-            const metadataOS = newESDB.createObjectStore('metadata');
-            metadataOS.createIndex('temporal', 'timepoint', { unique: true, multiEntry: false });
-            newESDB.createObjectStore('content');
-            await moveCiphertexts(tx);
-            newESDB.deleteObjectStore('files');
         },
     });
 

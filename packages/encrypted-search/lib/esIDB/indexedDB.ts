@@ -6,9 +6,10 @@ import { detectStorageCapabilities } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
 
 import { INDEXEDDB_VERSION, STORING_OUTCOME } from '../constants';
-import { ciphertextSize, esSentryReport, isTimepointSmaller, removeESFlags } from '../esHelpers';
+import { ciphertextSize, esSentryReport, isTimepointSmaller } from '../esHelpers';
 import type { EncryptedItemWithInfo, EncryptedMetadataItem, EncryptedSearchDB } from '../models';
 import { updateSize } from './configObjectStore';
+import { upgrade } from './indexedDBUpgrade';
 import { getOldestID, getOldestInfo } from './metadata';
 
 /**
@@ -23,16 +24,24 @@ export const deleteESDB = async (userID: string) => deleteDB(getDBName(userID)).
 
 async function cleanupESDB(esDB: IDBPDatabase<EncryptedSearchDB>, userID: string) {
     esDB.close();
-    // Flags are removed from local storage in case this code
-    // is called due to an update from an outdated version of IDB
-    removeESFlags(userID);
     await deleteESDB(userID);
 }
 
 /**
+ * Checks if the given user's IDB exists
+ * @param userID
+ * @returns true if the IDB exists, false otherwise
+ */
+export const hasESDB = async (userID: string) => {
+    const dbName = getDBName(userID);
+    const databases = await indexedDB.databases();
+
+    return databases.some(({ name }) => name === dbName);
+};
+
+/**
  * Open an existing IDB for the given user. If the DB hadn't already existed,
- * undefined is returned instead. WARNING: this function will delete an old
- * version of IDB if it exists
+ * undefined is returned instead.
  */
 export const openESDB = async (userID: string) => {
     let esDB: IDBPDatabase<EncryptedSearchDB> | undefined;
@@ -43,68 +52,18 @@ export const openESDB = async (userID: string) => {
             esSentryReport('openESDB: indexedDB not accessible', { isAccessible, hasIndexedDB });
             return;
         }
-        esDB = await openDB<EncryptedSearchDB>(getDBName(userID), INDEXEDDB_VERSION);
-        // return esDB if the esDB contains a metadata and content table
-        if (esDB?.objectStoreNames.contains('metadata') && esDB.objectStoreNames.contains('content')) {
-            return esDB;
-        }
-        await cleanupESDB(esDB, userID);
-        return;
+
+        const dbName = getDBName(userID);
+        esDB = await openDB<EncryptedSearchDB>(dbName, INDEXEDDB_VERSION, {
+            upgrade,
+        });
+        return esDB;
     } catch (error: any) {
         if (esDB) {
             await cleanupESDB(esDB, userID);
         }
-        // Currently our openESDB usage expects undefined in case a db was never there (see !dbExisted conditional above)
         return;
     }
-};
-
-/**
- * Check whether the current version of IDB exists. WARNING: this function
- * will delete an old version of IDB if it exists
- */
-export const checkVersionedESDB = async (userID: string) => {
-    const esDB = await openESDB(userID);
-    const check = !!esDB;
-    esDB?.close();
-    return check;
-};
-
-/**
- * Create an up-to-date IDB for the given user
- */
-export const createESDB = async (userID: string) => {
-    // Remove the database first, in case there is an old stale version that
-    // might arise when removing it and creating a new one immediately after
-    await deleteESDB(userID);
-    return openDB<EncryptedSearchDB>(getDBName(userID), INDEXEDDB_VERSION, {
-        upgrade: (esDB) => {
-            // The object store containing the content of items, indexed by their ID.
-            // Out-of-line keys are used
-            esDB.createObjectStore('content');
-
-            // The object store containing all metadata of items, indexed by their ID
-            // In-line keys are used, defined by the ID property. A temporal index
-            // is created as well
-            const metadataOS = esDB.createObjectStore('metadata');
-            metadataOS.createIndex('temporal', 'timepoint', { unique: true, multiEntry: false });
-
-            // The config object store contains ES-wide values (e.g. the encrypted index key),
-            // configuration (e.g. whether ES is enabled) and information (e.g. an estimate
-            // of the size)
-            esDB.createObjectStore('config');
-
-            // The events object store contains the last event ID according to which the index has
-            // been updated for every component of the product
-            esDB.createObjectStore('events');
-
-            // The indexingProgress object store contains metadata information on indexing. It always
-            // will contain a 'metadata' row, for items metadata to either search those exclusively or
-            // to enable ES for free users, as well as a row for content in case a product decides to
-            // have any
-            esDB.createObjectStore('indexingProgress');
-        },
-    });
 };
 
 /**

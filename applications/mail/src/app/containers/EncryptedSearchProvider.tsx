@@ -9,7 +9,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi, useSubscribeEventManager } from '@proton/components';
 import { getIndexKey } from '@proton/encrypted-search/esHelpers';
-import { checkVersionedESDB, contentIndexingProgress, wrappedGetOldestInfo } from '@proton/encrypted-search/esIDB';
+import { contentIndexingProgress, hasESDB, wrappedGetOldestInfo } from '@proton/encrypted-search/esIDB';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
 import { useEncryptedSearch } from '@proton/encrypted-search/useEncryptedSearch';
 import { useIndexedDBSupport } from '@proton/encrypted-search/useIndexedDBSupport';
@@ -128,7 +128,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      */
     const initializeESMail = async () => {
         if (isESEnabledInbox) {
-            if (!(await checkVersionedESDB(user.ID))) {
+            if (!(await hasESDB(user.ID))) {
                 // Avoid indexing for incognito users, and users that only log in on a device once
                 // If initialIndexing is set, it means that the user is most likely not in incognito mode, since they have persistent storage
                 // (or they loaded the page twice in a single incognito session)
@@ -163,7 +163,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         }
 
         // Existence of IDB is checked since the following operations interact with it
-        if (!(await checkVersionedESDB(user.ID))) {
+        if (!(await hasESDB(user.ID))) {
             return;
         }
 
