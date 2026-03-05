@@ -53,7 +53,7 @@ export interface TaxCountryHook {
     billingAddressChangedInModal: (billingAddress: BillingAddress) => void;
 }
 
-function getBillingAddressFromProps(props: HookProps): BillingAddress {
+function getBillingAddressFromPaymentStatusProp(props: HookProps): BillingAddress {
     const billingAddress = props.paymentStatus
         ? ({
               CountryCode: props.paymentStatus.CountryCode,
@@ -91,15 +91,23 @@ function getBillingAddressFromProps(props: HookProps): BillingAddress {
     return billingAddress;
 }
 
+function isSameBillingAddress(billingAddress1: BillingAddress, billingAddress2: BillingAddress) {
+    return (
+        billingAddress1.CountryCode === billingAddress2.CountryCode &&
+        billingAddress1.State === billingAddress2.State &&
+        billingAddress1.ZipCode === billingAddress2.ZipCode
+    );
+}
+
 export const useTaxCountry = (props: HookProps): TaxCountryHook => {
     const { paymentsApi: defaultPaymentsApi } = usePaymentsApi();
     const paymentsApi = props.paymentsApi ?? defaultPaymentsApi;
 
     const offerUnavailableErrorMessage = useOfferUnavailableErrorMessage(props.paymentFacade);
 
-    const currentFromProps: BillingAddress = getBillingAddressFromProps(props);
+    const currentFromPaymentStatus: BillingAddress = getBillingAddressFromPaymentStatusProp(props);
 
-    const taxBillingAddressRef = useRef<BillingAddress>(currentFromProps);
+    const taxBillingAddressRef = useRef<BillingAddress>(currentFromPaymentStatus);
     const [, forceRender] = useState(0);
     // Helper function to trigger re-render
     const triggerRerender = () => forceRender((prev) => prev + 1);
@@ -123,18 +131,27 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
     }, [taxBillingAddressRef.current.CountryCode, taxBillingAddressRef.current.ZipCode]);
 
     useEffect(() => {
-        // Compare with current ref value to avoid unnecessary updates
         const current = taxBillingAddressRef.current;
-        const hasChanged =
-            current.CountryCode !== currentFromProps.CountryCode ||
-            current.State !== currentFromProps.State ||
-            current.ZipCode !== currentFromProps.ZipCode;
 
-        if (hasChanged) {
-            setTaxBillingAddress(currentFromProps);
-            billingAddressChanged(currentFromProps);
+        // During page loading, we initially use the default billing address (CH). When payment status is loaded, we
+        // update the billing address. It can lead to the situation where the useTaxCountry hook still stores CH, so we
+        // need to update the local state.
+        const localStateStale = !isSameBillingAddress(current, currentFromPaymentStatus);
+
+        if (localStateStale) {
+            setTaxBillingAddress(currentFromPaymentStatus);
+
+            const checkResultBillingAddress = props.paymentFacade?.checkResult?.requestData.BillingAddress;
+            // Sometimes we need to trigger change in the outer state too, in case if the parent component still doesn't
+            // have subscription estimation for the correct billing address.
+            const outerStateStale =
+                !checkResultBillingAddress ||
+                !isSameBillingAddress(checkResultBillingAddress, currentFromPaymentStatus);
+            if (outerStateStale) {
+                billingAddressChanged(currentFromPaymentStatus);
+            }
         }
-    }, [currentFromProps.CountryCode, currentFromProps.State, currentFromProps.ZipCode]);
+    }, [currentFromPaymentStatus.CountryCode, currentFromPaymentStatus.State, currentFromPaymentStatus.ZipCode]);
 
     const selectedCountryCode = taxBillingAddressRef.current.CountryCode;
     const federalStateCode = taxBillingAddressRef.current.State ?? null;

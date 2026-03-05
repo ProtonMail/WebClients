@@ -103,29 +103,19 @@ const PlansSectionInner = ({ app }: Props) => {
     const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
 
     const [cycle, setCycle] = useState(searchParams.cycle ?? DEFAULT_CYCLE);
-    const { CouponCode } = subscription;
 
     useLoad();
 
-    const handleModal = async (newPlanIDs: PlanIDs, newCycle: Cycle, currency: Currency) => {
+    const handleModal = async (newPlanIDs: PlanIDs, newCycle: Cycle) => {
         if (!hasPlanIDs(newPlanIDs)) {
             throw new Error('Downgrade not supported');
         }
-
-        const couponCode = CouponCode || undefined; // From current subscription; CouponCode can be null
-        const { Coupon } = await paymentsApi.checkSubscription({
-            Plans: newPlanIDs,
-            Currency: currency,
-            Cycle: newCycle,
-            CouponCode: couponCode,
-        });
 
         const plan = getPlanFromPlanIDs(plansMap, newPlanIDs);
 
         open({
             defaultSelectedProductPlans: selectedProductPlans,
             planIDs: newPlanIDs,
-            coupon: Coupon?.Code,
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             cycle: newCycle,
             currency: plan?.Currency,
@@ -139,7 +129,7 @@ const PlansSectionInner = ({ app }: Props) => {
     };
 
     // Clicking the "Select Plan" button opens the browser on Electron or the modal on the web
-    const handlePlanChange = (newPlanIDs: PlanIDs, newCycle: Cycle, currency: Currency) => {
+    const handlePlanChange = (newPlanIDs: PlanIDs, newCycle: Cycle) => {
         const newPlanName = Object.keys(newPlanIDs)[0];
         const isNewPlanCorrect = isValidPlanName(newPlanName);
         if (isElectronApp && !hasInboxDesktopInAppPayments && newPlanName && isNewPlanCorrect) {
@@ -147,7 +137,7 @@ const PlansSectionInner = ({ app }: Props) => {
             return;
         }
 
-        void withLoading(handleModal(newPlanIDs, newCycle, currency));
+        void withLoading(handleModal(newPlanIDs, newCycle));
     };
 
     useEffect(() => {
