@@ -8,6 +8,14 @@
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
+// Override the design system's default InterVariable with OpenRunde.
+// The --optional-font-family variable is the intended app-level hook in
+// packages/styles/scss/base/_fonts.scss and takes precedence over InterVariable
+// while still respecting the user's --setting-font-family preference.
+:root {
+	--optional-font-family: 'OpenRunde', system-ui, sans-serif;
+}
+
 body::before {
 	position: fixed;
 	display: flex;
@@ -71,7 +79,7 @@ body::before {
 }
 
 .sidebar {
-	background-color: inherit;
+	background-color: var(--background-weak);
 
 	// Smooth width transitions for desktop
 	transition:
