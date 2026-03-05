@@ -1,0 +1,108 @@
+@use '~@proton/styles/scss/lib' as *;
+
+.weather-card {
+    background: var(--background-norm);
+    border: 1px solid var(--border-norm);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    font-family: inherit;
+    margin-block: 0.25rem;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+        gap: 0.5rem;
+    }
+
+    &__location-row {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    &__location-icon {
+        font-size: 1rem;
+        color: var(--interaction-norm);
+        line-height: 1;
+    }
+
+    &__location-name {
+        font-size: 0.9375rem;
+        font-weight: 600;
+        color: var(--text-norm);
+    }
+
+    &__last-updated {
+        font-size: 0.75rem;
+        color: var(--text-weak);
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.5rem 1rem 1rem;
+    }
+
+    &__condition-icon {
+        font-size: 3rem;
+        line-height: 1;
+        flex-shrink: 0;
+    }
+
+    &__temp-block {
+        display: flex;
+        flex-direction: column;
+        gap: 0.125rem;
+    }
+
+    &__temperature {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-norm);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+
+    &__description {
+        font-size: 0.9375rem;
+        color: var(--text-weak);
+    }
+
+    &__stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+        border-top: 1px solid var(--border-weak);
+
+        > * {
+            border-right: 1px solid var(--border-weak);
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+
+    &__stat {
+        padding: 0.625rem 1rem;
+
+        &-label {
+            font-size: 0.6875rem;
+            color: var(--text-weak);
+            margin: 0 0 0.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        &-value {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-norm);
+            margin: 0;
+        }
+    }
+}
