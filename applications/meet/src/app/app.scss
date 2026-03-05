@@ -230,11 +230,11 @@ $profile-colors:
 	padding-inline: 1.5rem;
 
 	@include im.media('>medium') {
-		padding-inline: 2.5rem;
+		padding-inline: 2rem;
 	}
 
 	@include im.media('>large') {
-		padding-inline: 3.75rem;
+		padding-inline: 2rem;
 	}
 }
 
