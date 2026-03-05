@@ -236,9 +236,6 @@
       "Disable recovery phrase?": [
         "Omogućiti frazu za oporavak?"
       ],
-      "Disable security events": [
-        "Onemogući sigurnosne događaje"
-      ],
       "Discard": [
         "Odbaci"
       ],
@@ -421,6 +418,9 @@
       ],
       "Loading verification": [
         "Učitavanje potvrde"
+      ],
+      "Manage addresses": [
+        "Upravljanje adresama"
       ],
       "Manage folders": [
         "Upravljanje mapama"
@@ -8330,9 +8330,6 @@
       "Address added": [
         "Adresa je dodana"
       ],
-      "Address successfully added": [
-        "Adresa uspješno dodana"
-      ],
       "Administrator privileges restored": [
         "Administratorske ovlasti vraćene"
       ],
@@ -8808,8 +8805,8 @@
       "Delete": [
         "Izbriši"
       ],
-      "Delete ${ policyName }?": [
-        "Izbriši ${ policyName }?"
+      "Delete ${ name }?": [
+        "Izbriši ${ name }?"
       ],
       "Delete account": [
         "Ukloni račun"

@@ -284,6 +284,9 @@
       "Delete Gateway": [
         "Ağ geçidini sil"
       ],
+      "Delete gateway": [
+        "Ağ geçidini sil"
+      ],
       "Delete group": [
         "Grubu sil"
       ],
@@ -298,6 +301,9 @@
       ],
       "Delete policy": [
         "İlkeyi sil"
+      ],
+      "Delete token ${ token.Account }": [
+        "${ token.Account } kodunu sil"
       ],
       "Delete user": [
         "Kullanıcıyı sil"
@@ -317,14 +323,14 @@
       "Disable": [
         "Kapat"
       ],
+      "Disable account monitor": [
+        "Hesap izleyicisini devre dışı bırak"
+      ],
       "Disable recovery phrase": [
         "Kurtarma ifadesini kapat"
       ],
       "Disable recovery phrase?": [
         "Kurtarma ifadesi özelliği kapatılsın mı?"
-      ],
-      "Disable security events": [
-        "Güvenlik etkinlikleri özelliğini kapat"
       ],
       "Discard": [
         "Sil"
@@ -601,6 +607,9 @@
       ],
       "Make admin": [
         "Yönetici yap"
+      ],
+      "Manage addresses": [
+        "Adres yönetimi"
       ],
       "Manage advanced account protections": [
         "Gelişmiş hesap korumalarını yönetin"
@@ -1816,8 +1825,17 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Migration Assistant": [
+        "${ BRAND_NAME } Migration Assistant"
+      ],
+      "App installed": [
+        "Uygulama kuruldu"
+      ],
       "Authenticate": [
         "Kimliği doğrulayın"
+      ],
+      "Authenticate your Google Workspace account": [
+        "Google Workspace hesabınızı doğrulayın"
       ],
       "Calendar": [
         "Takvim"
@@ -1839,6 +1857,12 @@
       ],
       "Failed to load OAuth": [
         "OAuth yüklenemedi"
+      ],
+      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
+        "Verileri ${ BRAND_NAME } üzerine kopyalamak için Google Marketplace uygulaması"
+      ],
+      "Install app": [
+        "Uygulamayı kur"
       ],
       "Install migration app": [
         "Aktarım uygulamasını kurun"
@@ -1895,8 +1919,8 @@
       "Sign in to Google Workspace": [
         "Google Workspace oturumu açın"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Kuruluşunuzun verilerini aktarmak için Google Workspace Marketplace üzerinden ${ BRAND_NAME } Migration Assistant uygulamasını kurmalısınız. Bu işlem ${ BRAND_NAME } ile verilerinizi kopyalama izni verecek. Kurduktan sonra buraya dönerek ilerleyin. Ayrıntılı bilgi alın"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "Kuruluşunuzun verilerini aktarmak için Google Workspace Marketplace üzerinden ${ BRAND_NAME } Migration Assistant uygulamasını kurmalısınız. Bu işlem ${ BRAND_NAME } ile verilerinizi kopyalama izni verecek. Kurduktan sonra buraya dönerek ilerleyin."
       ],
       "Transfer errors": [
         "Aktarım hataları"
@@ -1904,14 +1928,23 @@
       "User": [
         "Kullanıcı"
       ],
+      "Verify installation": [
+        "Kurulumu doğrula"
+      ],
       "Verify your domain": [
         "Etki alanınızı doğrulayın"
       ],
       "Verify your domain to start a migration": [
         "Bir aktarım başlatmak için etki alanınızı doğrulayın"
       ],
+      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
+        "Kurulum doğrulanamadı. Lütfen Google Workspace hesabınız ile kurduğunuzdan emin olun ve yeniden deneyin."
+      ],
       "What are you migrating?": [
         "Neyi aktarıyorsunuz?"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "Verilerinizi kopyalaması için ${ BRAND_NAME } uygulamasına izin vermelisiniz. İzinleri verdikten sonra ilerlemek için buraya dönün."
       ]
     },
     "Browser": {
@@ -2010,7 +2043,7 @@
     },
     "Button": {
       "Add users manually": [
-        "Kullanıcıları manuel olarak ekle"
+        "Kullanıcıları el ile ekle"
       ],
       "Close": [
         "Kapat"
@@ -2040,7 +2073,7 @@
         "Ekibinizi davet edin"
       ],
       "Manage global VPN permissions": [
-        "Genel VPN izinlerini yönet"
+        "Genel VPN izinlerini ayarlayın"
       ],
       "Maybe later": [
         "Belki sonra"
@@ -2049,7 +2082,7 @@
         "Daha sonra hatırlat"
       ],
       "Secure your organization": [
-        "Kuruluşunuzu güvence altına alın"
+        "Kuruluşunuzun güvenliğini sağlayın"
       ],
       "Send": [
         "Gönder"
@@ -2058,7 +2091,7 @@
         "Diğer özellikleri ayarlayın"
       ],
       "Set up SSO": [
-        "SSO'yu ayarla"
+        "Tek oturum açmayı kurun"
       ],
       "Take a tour": [
         "Keşfedin"
@@ -3353,7 +3386,7 @@
         "CRM uygulamanızı, sitenizi, yazıcılarınızı ve diğer şeyleri bağlayın."
       ],
       "Create a Gateway to give your users access to your IT resources through dedicated servers.": [
-        "Kullanıcılarınızın özel sunucular aracılığıyla BT kaynaklarınıza erişebilmeleri için bir Ağ Geçidi oluşturun."
+        "Kullanıcılarınızın BT kaynaklarınıza size ayrılmış sunucular üzerinden erişebilmesi için bir ağ geçidi oluşturun."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "Tek tıklamayla Zoom görüşmesi oluşturun ve etkinliğinize katılım bilgilerini ekleyin."
@@ -3362,13 +3395,13 @@
         "Tek bir adresle e-posta gönderebileceğiniz gruplar oluşturun."
       ],
       "Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.": [
-        "Yeni kullanıcı hesapları oluşturun veya SSO (tek oturum açma) SCIM provizyonu ile kullanıcıları içe aktarın."
+        "Yeni kullanıcı hesapları oluşturun veya SSO (tek oturum açma) SCIM ayarları ile kullanıcıları içe aktarın."
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Her ülkedeki paylaşılan sunuculara kimlerin bağlanabileceğini belirlemek için ilkeler oluşturun."
       ],
       "Decide which users can connect to each of our 120+ shared server locations.": [
-        "120'den fazla paylaşımlı sunucu konumumuzun her birine hangi kullanıcıların bağlanabileceğine karar verin."
+        "Hangi kullanıcıların 120 üzerinde paylaşılan sunucu konumumuzdan hangilerine bağlanabileceğine karar verin."
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "E-postanıza ve takviminize bilgisayarınızdan ve mobil aygıtınızdan kolayca erişin."
@@ -4336,7 +4369,7 @@
         "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
-        "Televizyonunuz bağlanırken bir sorun oluştu. Televizyonunuzdaki karekodu tekrar taratın."
+        "Televizyonunuz ile bağlantı kurulurken bir sorun çıktı. Televizyonunuzdaki kare kodu yeniden tarayın."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
@@ -4898,8 +4931,8 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Tarifenizden ayrıldıktan sonra bu kullanıcı 30 günlük deneme süresi ile ${ BRAND_NAME } Unlimited tarifesine geçirilecek.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Varsayılan olarak, yönetici hesabına ${ formattedStorage } depolama alanı veririz. Bu depolama alanını yöneterek daha sonra başka kullanıcılar arasında dağıtabilirsiniz."
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "Yönetici hesabına depolama alanı atayın. Daha sonra diğer kullanıcılar için depolama alanını paylaştırabilirsiniz."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Aile üyeleri ekleyin ve yönetin ve onlara ${ DRIVE_APP_NAME } ile ${ MAIL_APP_NAME } arasında paylaşılan depolama alanı ayırın."
@@ -5150,7 +5183,7 @@
         "${ name } güvenlik anahtarını silmek istediğinize emin misiniz?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } hesabınıza bağlı bir güvenlik anahtarı ekleyin."
+        "${ BRAND_NAME } hesabınız ile ilişkilendirilmiş güvenlik anahtarını takın."
       ],
       "Insert your security key into your device's USB port.": [
         "Güvenlik anahtarınızı aygıtınızın USB bağlantı noktasına takın."
@@ -6319,8 +6352,8 @@
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "İletilerinizi, kişilerinizi ve takvimlerinizi ${ BRAND_NAME } üzerine alın."
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Güvenlik etkinliklerini izleme özelliğini kapattığınızda, tüm geçmişinizi de temizlemiş olursunuz. Bu özelliği kapatmak istediğinize emin misiniz?"
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Hesap izleyiciyi devre dışı bırakarak tüm geçmişinizi de temizlemiş olacaksınız. Devre dışı bırakmak istediğinizden emin misiniz?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
@@ -6670,7 +6703,7 @@
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu girin. ${ digit } rakamı."
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "${ BRAND_NAME } hesabınızın kimlik doğrulama bilgilerini yazın."
@@ -6723,6 +6756,12 @@
       "Free trial": [
         "Ücretsiz deneme"
       ],
+      "Gateway couldn't be deleted. Please try again": [
+        "Ağ geçidi silinemedi. Lütfen tekrar deneyin"
+      ],
+      "Gateway deleted": [
+        "Ağ geçidi silindi"
+      ],
       "Gateway monitor": [
         "Ağ geçidi izleyici"
       ],
@@ -6739,7 +6778,7 @@
         "Parolanız veya diğer kişisel verileriniz sızdırılmışsa bildirim alın. ${ learnMoreLinkNoBreach }"
       ],
       "Get started": [
-        "Başlayın"
+        "Başlayalım"
       ],
       "Get started with the referral link above.": [
         "Yukarıdaki öneri bağlantısı ile başlayın."
@@ -8064,7 +8103,7 @@
         "Bir sunucuyu bir ağ geçidinden kaldırdığınızda, 10 günlük bir kullanımdan kaldırma süreci başlar. Bu sunucu yeni bir ağ geçidine eklenebilir, ancak ülkesi değiştirilemez."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki adımlı kimlik doğrulamayı ayarladığınızda ve kimlik doğrulama uygulamanıza erişiminizi kaybettiğinizde oturum açmak için kullanabileceğiniz kurtarma kodları sağlıyoruz."
+        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları veriyoruz."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm krediyi kullanacağız."
@@ -8175,7 +8214,7 @@
         "İlerlemek için uygulamaya dönebilirsiniz"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Aynı anda yalnızca bir sohbet penceresi açabilirsiniz. Yeni bir sohbet başlatmadan önce önceki sohbetleri kapatın."
+        "Aynı anda yalnızca bir sohbet kopyası açabilirsiniz. Lütfen yeni bir konuşma başlatmadan önce önceki konuşmaları kapatın."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
@@ -8858,6 +8897,9 @@
       "Emails (last 3 months)": [
         "E-postalar (son 3 ay)"
       ],
+      "Emails (last 6 months)": [
+        "E-postalar (son 6 ay)"
+      ],
       "Emails (last month)": [
         "E-postalar (son 1 ay)"
       ],
@@ -8980,6 +9022,9 @@
       ],
       "Last 3 months only": [
         "Yalnızca son 3 ay"
+      ],
+      "Last 6 months only": [
+        "Sadece son 6 ay"
       ],
       "Last month only": [
         "Yalnızca son ay"
@@ -9662,16 +9707,16 @@
     },
     "Live Chat Modal": {
       "Live chat is available with ${ planName }": [
-        "Canlı sohbet ${ planName } ile kullanılabilir"
+        "${ planName } tarifesi ile canlı sohbet edin"
       ],
       "Open support form": [
         "Destek formunu aç"
       ],
       "Upgrade subscription": [
-        "Aboneliği yükselt"
+        "Abonelik tarifesini yükselt"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Sohbet desteği ve diğer ücretli özelliklerin kilidini açmak için yükseltme yapın veya sorununuzu bildirmek için ücretsiz destek formumuzu kullanın."
+        "Destek ekibi ile sohbete ve diğer ücretli özelliklere erişmek için abonelik tarifenizi yükseltin ya da sorununuzu bildirmek için ücretsiz destek formumuzu kullanın."
       ]
     },
     "Loading info": {
@@ -9799,8 +9844,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Etkinlik izleyici"
+      "Account monitor": [
+        "Hesap izleyici"
       ],
       "Enable ${ reason }": [
         "${ reason } özelliğini aç"
@@ -14561,9 +14606,6 @@
       "Address added": [
         "Adres eklendi"
       ],
-      "Address successfully added": [
-        "Adres eklendi"
-      ],
       "Administrator privileges restored": [
         "Yönetici yetkileri geri yüklendi"
       ],
@@ -14999,6 +15041,9 @@
       "Account": [
         "Hesap"
       ],
+      "Account monitor": [
+        "Hesap izleyici"
+      ],
       "Account recovery": [
         "Hesap kurtarma"
       ],
@@ -15307,8 +15352,8 @@
       "Delete": [
         "Sil"
       ],
-      "Delete ${ policyName }?": [
-        "${ policyName } silinsin mi?"
+      "Delete ${ name }?": [
+        "${ name } albümü silinsin mi?"
       ],
       "Delete account": [
         "Hesabı sil"
@@ -15344,8 +15389,8 @@
       "Device name": [
         "Aygıt adı"
       ],
-      "Disable activity monitor?": [
-        "Etkinlik izleyici kapatılsın mı?"
+      "Disable account monitor?": [
+        "Hesap izleyicisi devre dışı bırakılsın mı?"
       ],
       "Disable two-factor authentication": [
         "İki adımlı doğrulamayı kapat"
@@ -15360,7 +15405,7 @@
         "Değişiklikler silinsin mi?"
       ],
       "Dismiss setup checklist": [
-        "Kurulum kontrol listesini kapat"
+        "Kurulum kontrol listesini atla"
       ],
       "Domain names": [
         "Etki alanları"
@@ -15432,7 +15477,7 @@
         "E-posta kategorileri"
       ],
       "Email subscriptions": [
-        "E-posta aboneliği"
+        "E-posta abonelikleri"
       ],
       "Enable advanced account protection": [
         "Gelişmiş hesap korumasını açın"
@@ -15505,7 +15550,7 @@
         "VPN hizmetinizden fazlasını alın"
       ],
       "Get started": [
-        "Başlayın"
+        "Başlayalım"
       ],
       "Get the apps": [
         "Uygulamaları indirme"
@@ -15778,9 +15823,6 @@
       "Security and privacy": [
         "Güvenlik ve gizlilik"
       ],
-      "Security events": [
-        "Güvenlik olayları"
-      ],
       "Select a plan": [
         "Bir tarife seçin"
       ],
@@ -15951,7 +15993,7 @@
         "Ücretli avantajlarınızı korumak için tarifenizi yükseltin."
       ],
       "Upgrade your network protection with dedicated servers": [
-        "Özel sunucularla ağ korumanızı yükseltin"
+        "Size ayrılmış sunucular ile ağ korumanızı yükseltin"
       ],
       "Upgrade your privacy": [
         "Gizlilik düzeyinizi yükseltin"
@@ -16044,7 +16086,7 @@
         "Değişiklikleriniz henüz eşitlenmedi"
       ],
       "Your current plan": [
-        "Mevcut tarifeniz"
+        "Geçerli tarifeniz"
       ],
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"
@@ -16673,7 +16715,7 @@
         "${ planTitle } aboneliğinizle daha fazlasını elde edin."
       ],
       "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
-        "${ maxDriveSpace } bulut depolama alanı ile dosyalarınızı, fotoğraflarınızı ve belgelerinizi güvende tutun."
+        "${ maxDriveSpace } bulut depolama alanı ile dosyalarınızı, fotoğraflarınızı ve belgelerinizi koruyun."
       ],
       "Set secure passwords without the hassle.": [
         "Uğraşmadan güvenli parolalar oluşturun."
@@ -16874,6 +16916,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Bu ağ geçidindeki sunucular 10 günlük bir devre dışı bırakma sürecine girecek. Bu sunucular yeni bir ağ geçidine eklenebilir ancak ülkeleri değiştirilemez."
       ],
       "Skip verification?": [
         "Doğrulama atlansın mı?"

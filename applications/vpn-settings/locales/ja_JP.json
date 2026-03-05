@@ -317,14 +317,14 @@
       "Disable": [
         "無効にする"
       ],
+      "Disable account monitor": [
+        "アカウントモニターを無効化"
+      ],
       "Disable recovery phrase": [
         "回復用フレーズを無効にする"
       ],
       "Disable recovery phrase?": [
         "回復用フレーズを無効にしますか?"
-      ],
-      "Disable security events": [
-        "セキュリティイベントを無効にする"
       ],
       "Discard": [
         "破棄"
@@ -601,6 +601,9 @@
       ],
       "Make admin": [
         "管理者として設定"
+      ],
+      "Manage addresses": [
+        "アドレスの管理"
       ],
       "Manage advanced account protections": [
         "高度なアカウント保護を管理"
@@ -1795,6 +1798,9 @@
       ]
     },
     "BOSS": {
+      "App installed": [
+        "アプリをインストールしました"
+      ],
       "Authenticate": [
         "認証"
       ],
@@ -1818,6 +1824,9 @@
       ],
       "Failed to load OAuth": [
         "OAuthの読み込みに失敗しました"
+      ],
+      "Install app": [
+        "アプリをインストール"
       ],
       "Install migration app": [
         "移行アプリをインストール"
@@ -1873,8 +1882,8 @@
       "Sign in to Google Workspace": [
         "Google Workspaceにサインイン"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "組織のデータを移行するには、Google Workspace Marketplaceから${ BRAND_NAME } Migration Assistantアプリをインストールする必要があります。これにより、${ BRAND_NAME }はお客様のデータをコピーする権限を得ます。インストールが完了したら、ここに戻って続行してください。詳細はこちら"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "組織のデータを移行するには、Google Workspace Marketplaceから${ BRAND_NAME } Migration Assistant をインストールする必要があります。これにより、${ BRAND_NAME }にデータをコピーする権限が与えられます。インストールをしてから、ここに戻って続行してください。"
       ],
       "Transfer errors": [
         "転送エラー"
@@ -1890,6 +1899,9 @@
       ],
       "What are you migrating?": [
         "何を移行しますか？"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "${ BRAND_NAME } がデータをコピーすることを許可する必要があります。権限を許可した後、ここに戻って続行してください。"
       ]
     },
     "Browser": {
@@ -3858,6 +3870,9 @@
       "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
         "復旧連絡先に協力を依頼してください。相手にはリクエストを確認し、データをロック解除するためのメールが届きます。"
       ],
+      "Contacts": [
+        "連絡先"
+      ],
       "Immediate": [
         "すぐに"
       ],
@@ -4784,9 +4799,6 @@
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "プランを離れた後、このユーザーは 30 日の無料トライアル付きの${ BRAND_NAME }無制限プラン*に移行されます。"
-      ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "デフォルトでは、ストレージの ${ formattedStorage } が管理者アカウントに割り当てられます。 割り当てられたストレージを管理して、後で追加のユーザーに分散することができます。"
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "ファミリー メンバーを作成および管理し、${ DRIVE_APP_NAME } と ${ MAIL_APP_NAME } の間で共有されるストレージ スペースをファミリー メンバーに割り当てます。"
@@ -6144,8 +6156,8 @@
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "メッセージ、連絡先、カレンダーを ${ BRAND_NAME }に移行。"
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "セキュリティイベントのモニタリングを無効にすると、すべての履歴が消去されます。無効にしてよろしいですか？"
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "アカウントモニターを無効にすると、すべての履歴が消去されます。無効にしてよろしいですか？"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "無料プランへダウングレードすると、現在の特典は利用できなくなります。今後アップグレードしても現在の特典は復活しません。"
@@ -8628,6 +8640,9 @@
       "Emails (last 3 months)": [
         "メール (過去 3 か月)"
       ],
+      "Emails (last 6 months)": [
+        "メール (過去 6 か月)"
+      ],
       "Emails (last month)": [
         "メール (過去 1 か月)"
       ],
@@ -8750,6 +8765,9 @@
       ],
       "Last 3 months only": [
         "過去 3 か月のみ"
+      ],
+      "Last 6 months only": [
+        "過去 6 か月のみ"
       ],
       "Last month only": [
         "過去 1 か月のみ"
@@ -9552,8 +9570,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "アクティビティモニター"
+      "Account monitor": [
+        "アカウントモニター"
       ],
       "Enable ${ reason }": [
         "${ reason } を有効にする"
@@ -14191,9 +14209,6 @@
       "Address added": [
         "アドレスが追加されました"
       ],
-      "Address successfully added": [
-        "アドレスが正常に追加されました"
-      ],
       "Administrator privileges restored": [
         "管理者権限が復元されました"
       ],
@@ -14603,6 +14618,9 @@
       "Access control": [
         "アクセス管理"
       ],
+      "Account monitor": [
+        "アカウントモニター"
+      ],
       "Account recovery": [
         "アカウントの回復"
       ],
@@ -14909,8 +14927,8 @@
       "Delete": [
         "削除"
       ],
-      "Delete ${ policyName }?": [
-        "${ policyName }を削除しますか?"
+      "Delete ${ name }?": [
+        "${ name } を削除しますか？"
       ],
       "Delete account": [
         "アカウントの削除"
@@ -14944,9 +14962,6 @@
       ],
       "Device name": [
         "デバイス名"
-      ],
-      "Disable activity monitor?": [
-        "アクティビティモニターを無効化しますか？"
       ],
       "Disable two-factor authentication": [
         "2要素認証を無効化"
@@ -15358,9 +15373,6 @@
       ],
       "Security and privacy": [
         "セキュリティとプライバシー"
-      ],
-      "Security events": [
-        "セキュリティイベント"
       ],
       "Select a plan": [
         "プランを選択"
