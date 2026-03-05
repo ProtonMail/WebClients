@@ -9,7 +9,6 @@ im.$media-expressions: $media-expressions;
 	block-size: 100%;
 	padding: 12px;
 	gap: 8px;
-	box-sizing: border-box;
 	background-color: var(--background-weak);
 
 	// Add V2 list border and text styling
@@ -64,13 +63,25 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
+// Scrollable main content area — fills all space above sidebar-bottom.
+// Uses overflow: auto so that when expanded sections (projects/favorites) exceed
+// the available height on small screens, content scrolls rather than being clipped.
+.sidebar-main-content {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-block-size: 0;
+	overflow: hidden auto;
+	gap: 8px;
+}
+
 .sidebar-section {
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
 
 	&.sidebar-bottom {
-		margin-block-start: auto;
+		flex-shrink: 0;
 		padding-block-start: 12px;
 	}
 }
@@ -218,12 +229,11 @@ im.$media-expressions: $media-expressions;
 	overflow: hidden;
 }
 
-// Chat history content area
+// Chat history content area - owns the scroll
 .chat-history-content {
 	flex: 1;
 	min-block-size: 0;
-	position: relative;
-	overflow: hidden;
+	overflow: hidden auto;
 	animation: sidebar-fade-in 0.25s ease-in-out;
 }
 
