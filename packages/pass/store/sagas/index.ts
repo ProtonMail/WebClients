@@ -27,6 +27,9 @@ import settings from './client/settings.saga';
 import sync from './client/sync.saga';
 import events from './events/events.saga';
 import fileAttachmentsSagas from './file-attachments/file-attachments.sagas';
+import groupsGetAll from './groups/groups.get-all.saga';
+import groupsGet from './groups/groups.get.saga';
+import groupsMembers from './groups/groups.members.saga';
 import itemsImport from './import/import.saga';
 import groupInviteAccept from './invites/group-invite-accept.saga';
 import groupInviteReject from './invites/group-invite-reject.saga';
@@ -66,9 +69,7 @@ import monitorAddressToggle from './monitor/monitor-address.toggle.saga';
 import monitorToggle from './monitor/monitor-toggle.saga';
 import sentinelToggle from './monitor/sentinel-toggle.saga';
 import notificationSagas from './notifications/notifications.sagas';
-import groupMembers from './organization/group-members.saga';
-import getOrganizationGroups from './organization/organization-groups.saga';
-import getOrganizationSettings from './organization/organization-settings.saga';
+import organizationSettings from './organization/organization.settings.saga';
 import secureLinkSagas from './secure-links/secure-links.sagas';
 import sharesDedupe from './shares/shares-dedupe.saga';
 import sharesNotification from './shares/shares-notification.saga';
@@ -116,9 +117,10 @@ const COMMON_SAGAS = [
     events,
     exportUserData,
     featureFlags,
-    groupMembers,
-    getOrganizationGroups,
-    getOrganizationSettings,
+    groupsGetAll,
+    groupsGet,
+    groupsMembers,
+    organizationSettings,
     groupInviteAccept,
     groupInviteReject,
     inviteAccept,

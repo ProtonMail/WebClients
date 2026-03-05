@@ -6,13 +6,11 @@ import { api } from '@proton/pass/lib/api/api';
 import { isBusinessPlan } from '@proton/pass/lib/organization/helpers';
 import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import { groupInvitesChannel } from '@proton/pass/store/sagas/events/channel.group-invites';
-import { selectFeatureFlag, selectOrganizationGroups, selectPassPlan } from '@proton/pass/store/selectors';
+import { selectFeatureFlag, selectPassPlan } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { MaybeNull } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import type { UserPassPlan } from '@proton/pass/types/api/plan';
 import { logger } from '@proton/pass/utils/logger';
-import type { Group } from '@proton/shared/lib/interfaces';
 
 import { invitesChannel } from './channel.invites';
 import { shareChannels } from './channel.share';
@@ -21,14 +19,13 @@ import { userChannel } from './channel.user';
 
 function* eventsWorker(options: RootSagaOptions): Generator {
     const passPlan: UserPassPlan = yield select(selectPassPlan);
-    const groups: MaybeNull<Group[]> = yield select(selectOrganizationGroups);
     const groupShareFeature: boolean = yield select(selectFeatureFlag(PassFeature.PassGroupInvitesV1));
     const b2b = isBusinessPlan(passPlan);
 
     /** Loading group invites is only needed if the user is a group owner
      * Fetching every group members list to define if the user is group owner would be too long
-     * But we can limit at the plan to be b2b and having at least one group */
-    const loadGroupInvites = groupShareFeature && b2b && !!groups?.length;
+     * But we can limit at the plan to be b2b */
+    const loadGroupInvites = groupShareFeature && b2b;
 
     yield all(
         [userChannel, shareChannels, sharesChannel, invitesChannel, ...(loadGroupInvites ? [groupInvitesChannel] : [])].map((effect) =>
