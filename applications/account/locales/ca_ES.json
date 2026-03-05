@@ -1694,6 +1694,9 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Delete gateway": [
+        "Eliminar la passarel·la"
       ]
     },
     "action": {
@@ -12149,6 +12152,12 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "No s'ha pogut eliminar la passarel·la. Torneu-ho a provar"
+      ],
+      "Gateway deleted": [
+        "S'ha eliminat la passarel·la"
       ]
     },
     "info": {
@@ -23771,6 +23780,9 @@
       ],
       "Your subscriptions": [
         "Les vostres subscripcions"
+      ],
+      "Delete ${ name }?": [
+        "Elimina ${ name }?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24957,6 +24969,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La vostra prova finalitzarà el ${ textDate }. No se us cobrarà si cancel·leu abans del ${ textDate }. ${ action }"
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Els servidors d'aquesta passarel·la entraran en un període de desactivació de 10 dies. Podeu afegir aquests servidors a una passarel·la nova, però no en podreu canviar el país."
       ]
     },
     "Warning for domain modal": {

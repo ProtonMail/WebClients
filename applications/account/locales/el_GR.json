@@ -1694,6 +1694,9 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Delete gateway": [
+        "Διαγραφή πύλης"
       ]
     },
     "action": {
@@ -12149,6 +12152,12 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "Δεν ήταν δυνατή η διαγραφή της πύλης. Παρακαλούμε προσπαθήστε ξανά"
+      ],
+      "Gateway deleted": [
+        "Η πύλη διαγράφηκε"
       ]
     },
     "info": {
@@ -23768,6 +23777,9 @@
       ],
       "Your subscriptions": [
         "Οι συνδρομές σας"
+      ],
+      "Delete ${ name }?": [
+        "Διαγραφή ${ name };"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24954,6 +24966,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Η δοκιμαστική περίοδος θα λήξει στις ${ textDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ textDate }. ${ action }"
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Οι διακομιστές σε αυτήν την πύλη θα εισέλθουν σε περίοδο απενεργοποίησης 10 ημερών. Αυτοί οι διακομιστές μπορούν να προστεθούν σε μια νέα Πύλη, αλλά η χώρα τους δεν μπορεί να αλλάξει."
       ]
     },
     "Warning for domain modal": {

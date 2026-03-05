@@ -23168,6 +23168,9 @@
       ],
       "Your subscriptions": [
         "あなたのサブスクリプション"
+      ],
+      "Delete ${ name }?": [
+        "${ name } を削除しますか？"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24558,6 +24561,101 @@
       ],
       "Yearly, ${ untilString }": [
         "毎年、${ untilString }"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "今後このオファーを表示しない"
+      ],
+      "Get the deal": [
+        "特典を利用する"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/月"
+      ],
+      "15 GB storage": [
+        "15 GB ストレージ"
+      ],
+      "2 TB data storage": [
+        "2 TB データストレージ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB ストレージで現在のプランの40倍に"
+      ],
+      "3 TB data storage": [
+        "3 TB データストレージ"
+      ],
+      "500 GB storage": [
+        "500 GB ストレージ"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "120か国以上の15,000台以上のサーバーにアクセス"
+      ],
+      "Access advanced AI models": [
+        "高度なAIモデルへのアクセス"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "メール、パスワード、ドライブ、VPN、カレンダーのすべてのプレミアム機能"
+      ],
+      "Block ads, trackers, and malware": [
+        "広告、トラッカー、マルウェアをブロック"
+      ],
+      "Built-in 2FA authenticator": [
+        "2要素認証機能を内蔵"
+      ],
+      "Connect 10 devices at once": [
+        "10台のデバイスを同時接続"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "割引は通常の月額料金を基準に適用されています。サブスクリプションは、請求期間終了後に通常の年額料金で更新されます。"
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }へのフルアクセス"
+      ],
+      "Full chat history with easy search and favorites": [
+        "簡単な検索とお気に入り機能付きの完全なチャット履歴"
+      ],
+      "Individual accounts for 6 users": [
+        "6ユーザー分の個別アカウント"
+      ],
+      "Individual accounts for you and a partner": [
+        "お客様用とパートナー様用の個別アカウント"
+      ],
+      "Online document editor": [
+        "オンラインで使えるドキュメントエディタ"
+      ],
+      "Recover previous file versions": [
+        "ファイルの以前のバージョンを復元"
+      ],
+      "Stronger protection against cyber threats": [
+        "サイバー脅威に対するより強力な保護"
+      ],
+      "Unlimited daily chats": [
+        "無制限の毎日のチャット"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "無制限のフォルダー、ラベル、フィルター"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Hide-my-emailエイリアスが無制限"
+      ],
+      "Use your own email domain": [
+        "独自のメールドメインを使用"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "蝶"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "12か月プラン"
+      ],
+      "SPRING SALE": [
+        "スプリングセール"
       ]
     }
   }

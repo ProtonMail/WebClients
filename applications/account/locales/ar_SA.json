@@ -1497,6 +1497,9 @@
       ],
       "Zoom out": [
         "تصغير"
+      ],
+      "Delete gateway": [
+        "حذف البوابة"
       ]
     },
     "action": {
@@ -11044,6 +11047,12 @@
       ],
       "Zoom meeting": [
         "اجتماع Zoom"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "تعذّر حذف البوابة. يُرجى المحاولة مرة أخرى."
+      ],
+      "Gateway deleted": [
+        "تم حذف البوابة"
       ]
     },
     "info": {
@@ -21885,6 +21894,9 @@
       ],
       "Your subscriptions": [
         "اشتراكاتك"
+      ],
+      "Delete ${ name }?": [
+        "حذف ${ name }?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22917,6 +22929,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "ستَنتهي الفترة التجريبية في ${ textDate }. لن يتم تحصيل أي رسوم إذا ألغيت قبل ${ textDate }. ${ action }"
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "ستدخل الخوادم في هذه البوابة فترة إلغاء تنشيط مدتها 10 أيام. يمكن إضافة هذه الخوادم إلى بوابة جديدة، ولكن لا يمكن تغيير بلدها."
       ]
     },
     "Warning for domain modal": {

@@ -1688,6 +1688,9 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Delete gateway": [
+        "Supprimer la passerelle"
       ]
     },
     "action": {
@@ -12119,6 +12122,12 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "La passerelle n'a pas pu être supprimée. Nous vous invitons à réessayer."
+      ],
+      "Gateway deleted": [
+        "La passerelle a été supprimée."
       ]
     },
     "info": {
@@ -23691,6 +23700,9 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Delete ${ name }?": [
+        "Supprimer ${ name } ?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24877,6 +24889,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Votre version d'essai se terminera le ${ textDate }. Vous ne serez pas facturé si vous annulez avant le ${ textDate }. ${ action }"
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Les serveurs de cette passerelle entreront dans une période de désactivation de 10 jours. Ces serveurs peuvent être ajoutés à une nouvelle passerelle, mais leur pays ne peut pas être modifié."
       ]
     },
     "Warning for domain modal": {
@@ -25132,6 +25147,101 @@
       ],
       "Yearly, ${ untilString }": [
         "Chaque année, ${ untilString }"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Ne plus montrer cette offre"
+      ],
+      "Get the deal": [
+        "Profitez de l'offre"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/mois"
+      ],
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "2 TB data storage": [
+        "2 To d'espace de stockage de données"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 Go d'espace de stockage : 40x votre abonnement actuel"
+      ],
+      "3 TB data storage": [
+        "3 To d'espace de stockage de données"
+      ],
+      "500 GB storage": [
+        "500 Go d'espace de stockage"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
+      ],
+      "Access advanced AI models": [
+        "Accès aux modèles d'IA avancés"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Toutes les fonctionnalités premium de Mail, Pass, Drive, VPN et Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloquez les publicités, les traqueurs et les logiciels malveillants"
+      ],
+      "Built-in 2FA authenticator": [
+        "Authentificateur A2F intégré"
+      ],
+      "Connect 10 devices at once": [
+        "Connectez 10 appareils en même temps"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Accès complet à ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Historique complet des discussions avec recherche facile et favoris"
+      ],
+      "Individual accounts for 6 users": [
+        "Comptes individuels pour 6 utilisateurs"
+      ],
+      "Individual accounts for you and a partner": [
+        "Comptes individuels pour vous et un partenaire"
+      ],
+      "Online document editor": [
+        "Éditeur de documents en ligne"
+      ],
+      "Recover previous file versions": [
+        "Récupérez les versions précédentes des fichiers"
+      ],
+      "Stronger protection against cyber threats": [
+        "Une protection renforcée contre les cybermenaces"
+      ],
+      "Unlimited daily chats": [
+        "Chats quotidiens illimités"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Des dossiers, labels et filtres illimités"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre illimité d'alias « hide-my-email »"
+      ],
+      "Use your own email domain": [
+        "Utilisez votre propre domaine de messagerie"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "un papillon"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "pendant 12 mois"
+      ],
+      "SPRING SALE": [
+        "OFFRE DE PRINTEMPS"
       ]
     }
   }

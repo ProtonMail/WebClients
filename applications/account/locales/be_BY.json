@@ -2853,7 +2853,7 @@
         "Спраўдзіце свой дамен, каб пачаць перанос"
       ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Немагчыма спраўдзіць ўусталяванне. Праверце, што ўсталяванне было зроблена ва ўліковым запісе Google Workspace і паспрабуйце яшчэ раз."
+        "Немагчыма спраўдзіць усталяванне. Праверце, што ўсталяванне было зроблена ва ўліковым запісе Google Workspace і паспрабуйце яшчэ раз."
       ],
       "What are you migrating?": [
         "Што вы плануеце перанесці?"
@@ -6910,7 +6910,7 @@
         "Назвы некаторых вашых метак перавышаюць абмежаванні колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
       ],
       "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
-        "Нешта пашйло не так пры падключэнні вашага тэлевізара. Паспрабуйце яшчэ раз адсканіраваць QR-код на сваім тэлевізары."
+        "Нешта пайшло не так пры падключэнні вашага тэлевізара. Паспрабуйце яшчэ раз адсканіраваць QR-код на сваім тэлевізары."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Нешта пайшло не так. ${ refresh } для працягу. Калі вы ўсё яшчэ бачыце паведамленне з памылкай, напішыце ў нашу ${ supportTeam }."
@@ -24354,6 +24354,9 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "Delete ${ name }?": [
+        "Выдаліць ${ name }?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
