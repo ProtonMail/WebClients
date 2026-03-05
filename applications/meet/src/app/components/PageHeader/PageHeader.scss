@@ -153,6 +153,24 @@ im.$media-expressions: $media-expressions;
 	@include im.media('<=small') {
 		gap: var(--space-1);
 	}
+
+	.close-button {
+		background-color: transparent;
+		border-color: var(--border-card);
+		color: var(--text-weak);
+
+		&:hover,
+		&:focus,
+		&:focus-visible {
+			background-color: var(--border-weak);
+			border-color: var(--border-weak);
+			color: var(--text-weak);
+
+			.color-hint {
+				color: inherit;
+			}
+		}
+	}
 }
 
 .sign-in-header-button {
