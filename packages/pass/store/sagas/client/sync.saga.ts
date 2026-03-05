@@ -12,22 +12,20 @@ import {
     syncIntent,
     syncSuccess,
 } from '@proton/pass/store/actions';
-import { getOrganizationGroups, getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
+import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { resolvePrivateDomains } from '@proton/pass/store/actions/creators/private-domains';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { synchronize } from '@proton/pass/store/sagas/client/sync';
 import { selectUser } from '@proton/pass/store/selectors';
-import type { State } from '@proton/pass/store/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import type { User } from '@proton/shared/lib/interfaces';
 
 function* syncWorker({ payload }: ReturnType<typeof syncIntent>) {
     yield put(stopEventPolling());
 
-    const state = (yield select()) as State;
-    const user = selectUser(state);
-
+    const user: User = yield select(selectUser);
     if (!user) return;
 
     try {
@@ -36,7 +34,6 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>) {
         yield put(withRevalidate(getUserAccessIntent(user.ID)));
         yield put(withRevalidate(getUserFeaturesIntent(user.ID)));
         yield put(withRevalidate(getOrganizationSettings.intent()));
-        yield put(withRevalidate(getOrganizationGroups.intent()));
         yield put(withRevalidate(secureLinksGet.intent()));
         yield put(withRevalidate(getInAppNotifications.intent()));
         yield put(getAuthDevices.intent());

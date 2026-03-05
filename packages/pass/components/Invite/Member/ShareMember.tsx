@@ -5,10 +5,10 @@ import { c } from 'ttag';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
+import { useMaybeGroup } from '@proton/pass/components/Groups/GroupsProvider';
 import { type InviteLabels, useInviteLabels } from '@proton/pass/components/Invite/useInviteLabels';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { GroupMembersModal, useGroupMembersModal } from '@proton/pass/components/Organization/Groups/GroupMembersModal';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import type { AccessDTO } from '@proton/pass/lib/access/types';
@@ -61,10 +61,8 @@ export const ShareMember: FC<Props> = ({
     userShareId,
     isGroupShare,
 }) => {
-    const { open, isGroup, groupId, name, label, avatar, members, onClick, onClose } = useGroupMembersModal(
-        email,
-        isGroupShare
-    );
+    const { name, onShowMembers } = useMaybeGroup(email);
+
     // TODO: Remove this in IDTEAM-4660
     const labels = useInviteLabels();
     const { title, description } = getDefinition(owner, target, role, labels);
@@ -92,21 +90,21 @@ export const ShareMember: FC<Props> = ({
         });
 
     const loading = transferOwner.loading || removeAccess.loading || editRole.loading;
-    const showTransfer = !isGroup && canTransfer && role === ShareRole.MANAGER;
+    const showTransfer = !isGroupShare && canTransfer && role === ShareRole.MANAGER;
 
     return (
         <div
             className={clsx('flex flex-nowrap items-center border border-weak rounded-xl px-4 py-3 w-full', className)}
         >
-            <button onClick={onClick}>
-                <ShareMemberAvatar value={avatar} loading={loading} />
+            <button onClick={onShowMembers}>
+                <ShareMemberAvatar email={email} isGroup={isGroupShare} loading={loading} />
             </button>
 
             <div className="flex-1">
                 <div className="flex flex-nowrap flex-1 items-center gap-2">
-                    {groupId ? (
-                        <button onClick={onClick} className="text-ellipsis">
-                            {label}
+                    {isGroupShare ? (
+                        <button onClick={onShowMembers} className="text-ellipsis">
+                            {name}
                         </button>
                     ) : (
                         <>
@@ -171,8 +169,6 @@ export const ShareMember: FC<Props> = ({
                 submitText={c('Action').t`Confirm`}
                 alertText={c('Warning').t`Transfer ownership of this vault to ${email}?`}
             />
-
-            {open && <GroupMembersModal name={name} members={members} onClose={onClose} />}
         </div>
     );
 };

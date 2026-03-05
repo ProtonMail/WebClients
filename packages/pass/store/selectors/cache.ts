@@ -5,24 +5,25 @@ import { objectFilter } from '@proton/pass/utils/object/filter';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 
 export const selectCachableState = (state: State) => {
-    const whiteListedState = asIfNotOptimistic(state, reducerMap);
+    const cachable = asIfNotOptimistic(state, reducerMap);
 
     /** Remove "hot" data that should never be cached.
      * These should be revalidated on boot or via polling. */
-    whiteListedState.monitor = null;
-    whiteListedState.items.secureLinks = {};
-    whiteListedState.invites = {};
-    whiteListedState.user = partialMerge(whiteListedState.user, { devices: [] });
-    whiteListedState.access = {};
-    whiteListedState.alias = { aliasDetails: {}, aliasOptions: null, mailboxes: null };
-    whiteListedState.files = {};
+    cachable.monitor = null;
+    cachable.items.secureLinks = {};
+    cachable.invites = {};
+    cachable.user = partialMerge(cachable.user, { devices: [] });
+    cachable.access = {};
+    cachable.alias = { aliasDetails: {}, aliasOptions: null, mailboxes: null };
+    cachable.files = {};
+    cachable.groups = {};
 
     /** Filter stale request metadata and optimisticIds */
-    whiteListedState.items.byOptimisticId = {};
-    whiteListedState.request = objectFilter(
-        whiteListedState.request,
+    cachable.items.byOptimisticId = {};
+    cachable.request = objectFilter(
+        cachable.request,
         (_, request) => request.status === 'success' && request.maxAge !== undefined && !request.hot
     );
 
-    return whiteListedState;
+    return cachable;
 };

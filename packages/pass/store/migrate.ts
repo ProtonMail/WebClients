@@ -59,7 +59,6 @@ export const migrate = (state: State, snapshot: SerializedCryptoContext<PassCryp
                       organization,
                       canUpdate: user ? isB2BAdmin(user, plan) : false,
                       settings: INITIAL_ORGANIZATION_SETTINGS,
-                      groups: [],
                   }
                 : null;
         }
