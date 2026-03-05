@@ -91,16 +91,17 @@ const LumoSidebarContent = () => {
                         <GallerySidebarButton showText={showText} onItemClick={closeOnItemClick} />
                     </div>
                 )}
+                <div className="sidebar-main-content">
+                    <div className="sidebar-section">
+                        <Suspense fallback={null}>
+                            <ProjectsSidebarSection showText={showText} onItemClick={closeOnItemClick} />
+                        </Suspense>
+                    </div>
 
-                <div className="sidebar-section">
-                    <Suspense fallback={null}>
-                        <ProjectsSidebarSection showText={showText} onItemClick={closeOnItemClick} />
-                    </Suspense>
+                    <FavoritesSidebarSection showText={showText} onItemClick={closeOnItemClick} />
+
+                    <ChatHistorySection searchValue={searchValue} showText={showText} />
                 </div>
-
-                <FavoritesSidebarSection showText={showText} onItemClick={closeOnItemClick} />
-
-                <ChatHistorySection searchValue={searchValue} showText={showText} />
 
                 <div className="sidebar-section sidebar-bottom">
                     <LumoSidebarUpsell collapsed={isCollapsed} />
