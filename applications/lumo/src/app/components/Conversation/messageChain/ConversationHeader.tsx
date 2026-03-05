@@ -11,7 +11,6 @@ import { IcMonitor } from '@proton/icons/icons/IcMonitor';
 
 import { useConversationStar } from '../../../hooks/useConversationStar';
 import { HeaderWrapper } from '../../../layouts/header/HeaderWrapper';
-import { NewChatButtonHeader } from '../../../layouts/sidebar/NewChatButton';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useSidebar } from '../../../providers/SidebarProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
@@ -21,6 +20,7 @@ import { type Conversation, type Message, getProjectInfo } from '../../../types'
 import { sendConversationEditTitleEvent } from '../../../util/telemetry';
 import FavoritesUpsellPrompt from '../../Buttons/FavoritesUpsellPrompt';
 import LumoButton from '../../Buttons/LumoButton';
+import { NewChatButtonHeader } from '../../Buttons/NewChatButton';
 
 import './ConversationHeader.scss';
 
