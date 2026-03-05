@@ -1,5 +1,6 @@
 import { decodeUpdate } from 'yjs'
 import { decompressDocumentUpdate, isCompressedDocumentUpdate } from './document-update-compression'
+import { getBufferHash } from './hash'
 
 export type UpdateTimelineEntry = {
   timestamp: number
@@ -43,7 +44,7 @@ async function getUpdateInfo(content: Uint8Array<ArrayBuffer>) {
   for (const [clientId, items] of decoded.ds.clients) {
     deleteCountsPerClientId[clientId] = items.length
   }
-  const hash = await getUpdateHash(content)
+  const hash = await getBufferHash(content)
   return {
     structCount,
     structClientIds: Array.from(structClientIds),
@@ -51,12 +52,4 @@ async function getUpdateInfo(content: Uint8Array<ArrayBuffer>) {
     deleteSet: deleteCountsPerClientId,
     hash,
   }
-}
-
-export async function getUpdateHash(content: Uint8Array<ArrayBuffer>) {
-  const hash = await window.crypto.subtle.digest('SHA-1', content)
-  const hashHex = Array.from(new Uint8Array(hash))
-    .map((b) => b.toString(16).padStart(2, '0'))
-    .join('')
-  return hashHex
 }
