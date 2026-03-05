@@ -16,7 +16,7 @@ interface UpgradeContentProps {
     migrationArray: MigrationMethod[];
 }
 
-const upgradeContentArray = ({ contentVersion, data, migrationArray }: UpgradeContentProps) => {
+const upgradeContentArray = async ({ contentVersion, data, migrationArray }: UpgradeContentProps) => {
     const migrationsToRun = getMigrationToRun(contentVersion, migrationArray);
     if (migrationsToRun.length === 0) {
         return data;
@@ -24,7 +24,7 @@ const upgradeContentArray = ({ contentVersion, data, migrationArray }: UpgradeCo
 
     let result = data;
     for (const migrate of migrationsToRun) {
-        result = migrate.fn(result);
+        result = await migrate.fn(result);
     }
 
     return result;
@@ -62,7 +62,7 @@ export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateConte
                 const contentVersion = hasVersion ? data.value.version : decrypted.content?.version || -1;
                 versionsRecord[contentVersion] = (versionsRecord[contentVersion] ?? 0) + 1;
 
-                const result = upgradeContentArray({
+                const result = await upgradeContentArray({
                     contentVersion,
                     migrationArray,
                     data: decrypted,

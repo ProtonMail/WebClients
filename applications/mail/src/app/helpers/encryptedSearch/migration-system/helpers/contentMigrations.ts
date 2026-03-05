@@ -1,27 +1,30 @@
 import { CONTENT_VERSION } from '../../esBuild';
 import type { CleanTextFn, EncryptedSearchData, MigrationMethod } from '../interface';
 
-const upgradeToVersionOne = (data: EncryptedSearchData): EncryptedSearchData => {
+const upgradeToVersionOne = async (data: EncryptedSearchData): Promise<EncryptedSearchData> => {
     return {
         ...data,
         content: data.content ? { ...data.content, version: CONTENT_VERSION.V1 } : undefined,
     };
 };
 
-const upgradeToDomIndexing = (data: EncryptedSearchData): EncryptedSearchData => {
+const upgradeToDomIndexing = async (data: EncryptedSearchData): Promise<EncryptedSearchData> => {
     return {
         ...data,
         content: data.content ? { ...data.content, version: CONTENT_VERSION.DOM_INDEXING } : undefined,
     };
 };
 
-const upgradeToBlockquoteFix = (data: EncryptedSearchData, cleanText: CleanTextFn): EncryptedSearchData => {
+const upgradeToBlockquoteFix = async (
+    data: EncryptedSearchData,
+    cleanText: CleanTextFn
+): Promise<EncryptedSearchData> => {
     return {
         ...data,
         content: data.content
             ? {
                   ...data.content,
-                  decryptedBody: cleanText(data.content.decryptedBody || '', false),
+                  decryptedBody: await cleanText(data.content.decryptedBody || '', false),
                   version: CONTENT_VERSION.BLOCKQUOTE_FIX,
               }
             : undefined,
