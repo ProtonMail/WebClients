@@ -12,6 +12,7 @@ import {getKnowledgeBaseUrl} from '@proton/shared/lib/helpers/url';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 
 import {useGuestChatHandler} from '../../hooks/useGuestChatHandler';
+import {useLumoFlags} from '../../hooks/useLumoFlags';
 import {useGhostChat} from '../../providers/GhostChatProvider';
 import {useIsGuest} from '../../providers/IsGuestProvider';
 import {useSearchModal} from '../../providers/SearchModalProvider';
@@ -257,6 +258,7 @@ const LumoSidebarContent = () => {
     const {isVisible, isSmallScreen, isCollapsed, toggle, closeOnItemClick} = useSidebar();
     const isGuest = useIsGuest();
     const showText = useTextVisibility(isCollapsed);
+    const {imageTools} = useLumoFlags();
     const settingsModal = useModalStateObject();
     const searchModal = useModalStateObject();
     const {registerOpenFunction} = useSearchModal();
@@ -310,9 +312,11 @@ const LumoSidebarContent = () => {
                     <NewChatButton showText={showText} isSmallScreen={isSmallScreen}/>
                 </div>
 
-                <div className="sidebar-section">
-                    <GallerySidebarItem showText={showText} onItemClick={closeOnItemClick}/>
-                </div>
+                {imageTools && (
+                    <div className="sidebar-section">
+                        <GallerySidebarItem showText={showText} onItemClick={closeOnItemClick}/>
+                    </div>
+                )}
 
                 <div className="sidebar-section">
                     <Suspense fallback={null}>

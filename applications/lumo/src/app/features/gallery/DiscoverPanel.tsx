@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
 
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+
 import { useLumoUserSettings } from '../../hooks/useLumoUserSettings';
 import { getGalleryPromptSuggestions, type GalleryPromptSuggestion } from './promptSuggestions';
 
@@ -69,7 +71,7 @@ export const DiscoverPanel = ({ onSuggestionClick }: { onSuggestionClick: (s: Ga
         <div className="gallery-discover">
             <div className="gallery-discover__header">
                 <span className="gallery-discover__title">
-                    {c('collider_2025:Label').t`Discover what Lumo can create`}
+                    {c('collider_2025:Label').t`Discover what ${LUMO_SHORT_APP_NAME} can create`}
                 </span>
                 <span className="gallery-discover__header-actions">
                     {expanded && (

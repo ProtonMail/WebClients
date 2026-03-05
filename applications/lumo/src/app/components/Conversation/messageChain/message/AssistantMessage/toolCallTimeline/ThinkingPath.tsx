@@ -4,6 +4,7 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import type { IconName } from '@proton/icons/types';
 
@@ -73,6 +74,8 @@ function getToolCallLabel(toolCall: ToolCallData): [string, string] {
             return [`Editing image: "${shortEditPrompt}"...`, `Edited image: "${shortEditPrompt}"`];
         case 'proton_info':
             return ['Checking Proton knowledge...', 'Checked Proton knowledge'];
+        case 'web_extract':
+            return ['Extracting content from page...', 'Extracted page content'];
         default:
             return ['Executing tool...', 'Executed tool'];
     }
@@ -171,6 +174,30 @@ interface ImageToolResult {
     error?: boolean;
 }
 
+interface WebExtractResultItem {
+    title: string;
+    url: string;
+    content: string;
+}
+
+interface WebExtractResult {
+    type: 'WebExtract' | string;
+    results: WebExtractResultItem[];
+    failed_urls: string[];
+}
+
+const parseWebExtractResult = (result: string): WebExtractResult | null => {
+    try {
+        const parsed = JSON.parse(result);
+        if (parsed.type === 'WebExtract' && Array.isArray(parsed.results)) {
+            return parsed as WebExtractResult;
+        }
+    } catch {
+        // Not valid JSON or not web extract format
+    }
+    return null;
+};
+
 const parseWebSearchResults = (result: string): WebSearchResults | null => {
     try {
         const parsed = JSON.parse(result);
@@ -224,6 +251,10 @@ const ToolCallStep = ({
         (toolCall.name === 'describe_image' || toolCall.name === 'generate_image' || toolCall.name === 'edit_image')
             ? parseImageToolResult(result)
             : null;
+    const webExtractResult = hasDetails && toolCall.name === 'web_extract' ? parseWebExtractResult(result) : null;
+    const hasInlineCard =
+        hasDetails &&
+        (toolCall.name === 'stock' || toolCall.name === 'cryptocurrency' || toolCall.name === 'weather');
 
     // Check if the tool call failed
     const hasError = imageToolResult?.error === true;
@@ -243,7 +274,13 @@ const ToolCallStep = ({
             </div>
 
             <div className="thinking-step-content">
-                {hasDetails ? (
+                {/* eslint-disable-next-line no-nested-ternary */}
+                {hasInlineCard && !isActive ? (
+                    <div className="thinking-step-toggle" style={{ cursor: 'default' }}>
+                        <span className="thinking-step-label color-weak">{label}</span>
+                        <IcCheckmarkCircleFilled size={3} className="color-success shrink-0" />
+                    </div>
+                ) : hasDetails ? (
                     <>
                         <button
                             className="thinking-step-toggle"
@@ -273,6 +310,19 @@ const ToolCallStep = ({
                                         {webSearchResults.results.length === 1 ? 'result' : 'results'}
                                     </span>
                                 )}
+                                {webExtractResult && (
+                                    <span className="text-sm color-weak">
+                                        {webExtractResult.results.length + webExtractResult.failed_urls.length}{' '}
+                                        {webExtractResult.results.length + webExtractResult.failed_urls.length === 1
+                                            ? 'URL'
+                                            : 'URLs'}
+                                        {webExtractResult.failed_urls.length > 0 && (
+                                            <span className="color-danger ml-1">
+                                                · {webExtractResult.failed_urls.length} failed
+                                            </span>
+                                        )}
+                                    </span>
+                                )}
                                 <Icon
                                     name="chevron-down"
                                     size={3}
@@ -287,7 +337,52 @@ const ToolCallStep = ({
                         {isExpanded && (
                             <div className="thinking-step-details">
                                 {/* eslint-disable-next-line no-nested-ternary */}
-                                {webSearchResults ? (
+                                {webExtractResult ? (
+                                    <div className="flex flex-column gap-2">
+                                        {webExtractResult.results.map((item, idx) => (
+                                            <div
+                                                key={idx}
+                                                className="pb-2 last:pb-0 flex items-start gap-2"
+                                            >
+                                                <IcCheckmarkCircleFilled
+                                                    size={3}
+                                                    className="color-success shrink-0 mt-0.5"
+                                                />
+                                                <div className="min-w-0">
+                                                    <a
+                                                        href={item.url}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-semibold color-primary text-no-decoration hover:underline block mb-0.5"
+                                                        onClick={(e) => handleLinkClick?.(e, item.url)}
+                                                    >
+                                                        {item.title || new URL(item.url).hostname}
+                                                    </a>
+                                                    <p className="text-xs color-weak m-0">
+                                                        {new URL(item.url).hostname}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                        {webExtractResult.failed_urls.map((url, idx) => (
+                                            <div
+                                                key={`failed-${idx}`}
+                                                className="pb-2 border-bottom border-weak last:border-0 last:pb-0 flex items-start gap-2"
+                                            >
+                                                <IcExclamationCircleFilled
+                                                    size={3}
+                                                    className="color-danger shrink-0 mt-0.5"
+                                                />
+                                                <div className="min-w-0">
+                                                    <p className="text-semibold color-danger m-0 mb-0.5 text-ellipsis overflow-hidden">
+                                                        {url}
+                                                    </p>
+                                                    <p className="text-xs color-weak m-0">Failed to extract</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                ) : webSearchResults ? (
                                     <div className="flex flex-column gap-2">
                                         {webSearchResults.results.map((result, idx) => (
                                             <div
@@ -299,6 +394,7 @@ const ToolCallStep = ({
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="text-semibold color-primary text-no-decoration hover:underline block mb-1"
+                                                    onClick={(e) => handleLinkClick?.(e, result.url)}
                                                 >
                                                     {result.title}
                                                 </a>
