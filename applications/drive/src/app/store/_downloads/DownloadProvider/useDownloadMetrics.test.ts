@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import metrics from '@proton/metrics';
-import type { UnleashClient } from '@proton/unleash';
+import type { UnleashClient } from '@proton/unleash/UnleashClient';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
 import { unleashVanillaStore } from '../../../zustand/unleash/unleash.store';

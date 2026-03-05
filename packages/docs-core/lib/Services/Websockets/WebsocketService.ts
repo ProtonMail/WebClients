@@ -67,7 +67,7 @@ import {
   processDocumentUpdateChunk,
   splitDocumentUpdateIntoChunks,
 } from '../../utils/document-update-chunking'
-import type { UnleashClient } from '@proton/unleash'
+import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
 import { tmpConvertOldDocTypeToNew } from '../../utils/convert-doc-type'
