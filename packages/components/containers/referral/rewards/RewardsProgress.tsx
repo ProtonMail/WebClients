@@ -45,7 +45,7 @@ const RewardsProgress = () => {
     const borderedBoxClasses = 'border border-weak rounded p-4';
 
     return (
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 mb-4">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 mb-6">
             <div className={clsx(borderedBoxClasses, 'flex-1 flex justify-space-between flex-nowrap gap-4')}>
                 <div>
                     {getStat(
