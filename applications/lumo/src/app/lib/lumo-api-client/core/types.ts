@@ -132,7 +132,6 @@ export interface LumoApiClientConfig {
     endpoint: string;
     lumoPubKey: string;
     externalTools: ToolName[];
-    internalTools: ToolName[];
     imageTools: ToolName[];
     interceptors: {
         request?: RequestInterceptor[];
