@@ -31,7 +31,8 @@ import { WebsocketConnectionEvent } from '../Realtime/WebsocketEvent/WebsocketCo
 import type { WebsocketConnectionEventPayloads } from '../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
 import { obfuscateUpdate } from 'yjs'
 import type { UpdateTimelineEntry } from '../utils/create-update-timeline'
-import { createUpdateTimelineEntry, getUpdateHash } from '../utils/create-update-timeline'
+import { createUpdateTimelineEntry } from '../utils/create-update-timeline'
+import { getBufferHash } from '../utils/hash'
 
 // This is part of a hack to make sure the name in the document sharing modal is updated when the document name changes.
 // While having these module-scoped variable here looks a bit stinky, it's completely fine because the purpose is to prevent a
@@ -122,13 +123,13 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
         if (isCompressedDocumentUpdate(content)) {
           content = decompressDocumentUpdate(content)
         }
-        const hash = await getUpdateHash(content)
+        const hash = await getBufferHash(content)
         zip.file(`${message.timestamp}-${hash}.bin`, content)
       }
     }
 
     for (const update of this.receivedOrSentDUs) {
-      const hash = await getUpdateHash(update.content)
+      const hash = await getBufferHash(update.content)
       zip.file(`${update.timestamp}-${hash}.bin`, update.content)
     }
 
@@ -526,14 +527,14 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
         if (isCompressedDocumentUpdate(content)) {
           content = decompressDocumentUpdate(content)
         }
-        const hashBeforeObfuscating = await getUpdateHash(content)
+        const hashBeforeObfuscating = await getBufferHash(content)
         const obfuscated = obfuscateUpdate(content)
         zip.file(`${message.timestamp}-${hashBeforeObfuscating}.bin`, obfuscated)
       }
     }
 
     for (const update of this.receivedOrSentDUs) {
-      const hashBeforeObfuscating = await getUpdateHash(update.content)
+      const hashBeforeObfuscating = await getBufferHash(update.content)
       const obfuscated = obfuscateUpdate(update.content)
       zip.file(`${update.timestamp}-${hashBeforeObfuscating}.bin`, obfuscated)
     }
