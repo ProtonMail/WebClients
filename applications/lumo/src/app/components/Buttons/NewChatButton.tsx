@@ -1,7 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -11,35 +10,35 @@ import type { PopperPlacement } from '@proton/components';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import type { IconSize } from '@proton/icons/types';
 
-import { GuestChatDisclaimerModal } from '../../components/Modals/GuestChatDisclaimerModal';
 import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
+import { GuestChatDisclaimerModal } from '../Modals/GuestChatDisclaimerModal';
 
 // Hook to manage delayed text rendering for smooth animations
-const useDelayedTextVisibility = (isCollapsed: boolean) => {
-    const [shouldShowText, setShouldShowText] = useState(!isCollapsed);
+// const useDelayedTextVisibility = (isCollapsed: boolean) => {
+//     const [shouldShowText, setShouldShowText] = useState(!isCollapsed);
 
-    useEffect(() => {
-        if (isCollapsed) {
-            // Immediately hide text when collapsing
-            setShouldShowText(false);
-        } else {
-            // Delay showing text to allow animation to complete
-            const timer = setTimeout(() => {
-                setShouldShowText(true);
-            }, 320); // Match the sidebar animation timing
-            return () => clearTimeout(timer);
-        }
-    }, [isCollapsed]);
+//     useEffect(() => {
+//         if (isCollapsed) {
+//             // Immediately hide text when collapsing
+//             setShouldShowText(false);
+//         } else {
+//             // Delay showing text to allow animation to complete
+//             const timer = setTimeout(() => {
+//                 setShouldShowText(true);
+//             }, 320); // Match the sidebar animation timing
+//             return () => clearTimeout(timer);
+//         }
+//     }, [isCollapsed]);
 
-    return shouldShowText;
-};
+//     return shouldShowText;
+// };
 
-interface Props {
-    isCollapsed: boolean;
-    isSmallScreen: boolean;
-}
+// interface Props {
+//     isCollapsed: boolean;
+//     isSmallScreen: boolean;
+// }
 
 interface NewChatButtonProps {
     buttonProps: ButtonLikeProps<'button'>;
@@ -65,7 +64,7 @@ const NewChatButtonGuest = ({ buttonProps, children, toolTipPlacement }: NewChat
     return (
         <>
             <Tooltip title={c('collider_2025: Action').t`New chat`} originalPlacement={toolTipPlacement}>
-                <Button onClick={handleGuestClick} {...buttonProps}>
+                <Button className="testing" onClick={handleGuestClick} {...buttonProps}>
                     {children}
                 </Button>
             </Tooltip>
@@ -108,42 +107,42 @@ const NewChatButton = ({ buttonProps, children, toolTipPlacement }: NewChatButto
     );
 };
 
-const NewChatButtonSidebar = ({ isCollapsed, isSmallScreen }: Props) => {
-    const shouldShowText = useDelayedTextVisibility(isCollapsed);
+// const NewChatButtonSidebar = ({ isCollapsed, isSmallScreen }: Props) => {
+//     const shouldShowText = useDelayedTextVisibility(isCollapsed);
 
-    if (isSmallScreen) {
-        return null;
-    }
+//     if (isSmallScreen) {
+//         return null;
+//     }
 
-    const buttonClassName = clsx(
-        'w-full flex items-center',
-        isCollapsed ? 'justify-center px-0' : 'justify-start px-3'
-    );
+//     const buttonClassName = clsx(
+//         'w-full flex items-center',
+//         isCollapsed ? 'justify-center px-0' : 'justify-start px-3'
+//     );
 
-    return (
-        <div className="px-3 py-2 shrink-0 md:block">
-            <NewChatButton
-                buttonProps={{
-                    className: buttonClassName,
-                    size: 'medium',
-                    color: 'norm',
-                    icon: true,
-                }}
-                toolTipPlacement="right"
-            >
-                <div className="flex items-center gap-2">
-                    <IcPenSquare
-                        className={clsx('shrink-0', isCollapsed && 'mx-auto')}
-                        alt={c('collider_2025:Button').t`New chat`}
-                    />
-                    {shouldShowText && <span className="text-ellipsis">{c('collider_2025:Button').t`New chat`}</span>}
-                </div>
-            </NewChatButton>
-        </div>
-    );
-};
+//     return (
+//         <div className="px-3 py-2 shrink-0 md:block">
+//             <NewChatButton
+//                 buttonProps={{
+//                     className: buttonClassName,
+//                     size: 'medium',
+//                     color: 'norm',
+//                     icon: true,
+//                 }}
+//                 toolTipPlacement="right"
+//             >
+//                 <div className="flex items-center gap-2">
+//                     <IcPenSquare
+//                         className={clsx('shrink-0', isCollapsed && 'mx-auto')}
+//                         alt={c('collider_2025:Button').t`New chat`}
+//                     />
+//                     {shouldShowText && <span className="text-ellipsis">{c('collider_2025:Button').t`New chat`}</span>}
+//                 </div>
+//             </NewChatButton>
+//         </div>
+//     );
+// };
 
-export default NewChatButtonSidebar;
+// export default NewChatButtonSidebar;
 
 export const NewChatButtonHeader = ({ iconSize = 5 }: { iconSize?: IconSize }) => {
     return (
