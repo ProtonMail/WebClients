@@ -8,6 +8,7 @@
         "./useVariant": "./useVariant.ts",
         "./UnleashClient": "./UnleashClient.ts",
         "./getMaxContactsImportConfig": "./helpers/getMaxContactsImportConfig.ts",
+        "./getUnleashReadyPromise": "./readyPromise.ts",
         "./standaloneClient": "./standaloneClient.ts",
         "./UnleashFlagProvider": "./UnleashFlagProvider.tsx",
         "./UnleashFeatureFlagsVariants": "./UnleashFeatureFlagsVariants.ts",
