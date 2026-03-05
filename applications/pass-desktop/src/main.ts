@@ -13,6 +13,7 @@ import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { fixSSOUrl } from './lib/sso';
 import { getTheme } from './lib/theming';
 import { userAgent } from './lib/user-agent';
+import { onHideWindow } from './lib/window';
 import { getWindowConfig, registerWindowManagementHandlers } from './lib/window-management';
 import { setApplicationMenu } from './menu-view/application-menu';
 import { startup } from './startup';
@@ -150,6 +151,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
         if (!ctx.quitting) {
             e.preventDefault();
             ctx.window?.hide();
+            onHideWindow(() => ctx.window);
             if (isMac) app.dock?.hide();
         }
     });
