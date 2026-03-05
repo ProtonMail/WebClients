@@ -679,7 +679,7 @@ export const ProtonMeetContainer = ({
                 }
 
                 if (reason === DisconnectReason.ROOM_DELETED || reason === DisconnectReason.PARTICIPANT_REMOVED) {
-                    history.push(guestMode ? '/incognito' : '/dashboard');
+                    history.push('/dashboard');
                 }
             });
 
