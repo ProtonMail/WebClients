@@ -122,6 +122,7 @@ export const Canvas = ({
                 <p className="text-danger">{error}</p>
             </div>
         );
+
     }
 
     return (
