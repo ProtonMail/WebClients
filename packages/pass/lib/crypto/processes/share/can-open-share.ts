@@ -1,6 +1,7 @@
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { PassCryptoShareError } from '@proton/pass/lib/crypto/utils/errors';
 import type { Maybe, ShareGetResponse, ShareKeyResponse, ShareManager } from '@proton/pass/types';
+import type { AddressKey } from '@proton/shared/lib/interfaces';
 
 /** Check if share can be opened with available keys - either from existing
  * `shareManager` or provided `encryptedShareKeys` matched against
@@ -9,7 +10,8 @@ import type { Maybe, ShareGetResponse, ShareKeyResponse, ShareManager } from '@p
 export const canOpenShare = (
     encryptedShare: ShareGetResponse,
     encryptedShareKeys: Maybe<ShareKeyResponse[]>,
-    shareManager: Maybe<ShareManager>
+    shareManager: Maybe<ShareManager>,
+    groupKeys: Maybe<AddressKey[]>
 ): boolean => {
     if (!encryptedShareKeys) {
         if (!shareManager) throw new PassCryptoShareError('Missing share manager');
@@ -21,9 +23,8 @@ export const canOpenShare = (
     /** With group shares, we can't rely on UserKeyID which is useless
      * but we can check that we have keys for the target addressId and groupId */
     if (encryptedShare.GroupID) {
-        const { addresses, groupKeys: groupKeysContext } = PassCrypto.getContext();
+        const { addresses } = PassCrypto.getContext();
         const addressKeys = addresses?.find((address) => address.ID === encryptedShare.AddressID)?.Keys;
-        const groupKeys = groupKeysContext.get(encryptedShare.GroupID);
         return !!(addressKeys?.length && groupKeys?.length);
     }
 

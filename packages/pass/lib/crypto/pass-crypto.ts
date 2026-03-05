@@ -286,7 +286,13 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
                 const { encryptedShare, encryptedShareKeys } = data;
                 const { ShareID: shareId } = encryptedShare;
                 const shareManager = hasShareManager(shareId) ? getShareManager(shareId) : undefined;
-                const canOpenShare = processes.canOpenShare(encryptedShare, encryptedShareKeys, shareManager);
+                const groupKeys = encryptedShare.GroupID ? await getGroupKeys(encryptedShare.GroupID) : undefined;
+                const canOpenShare = processes.canOpenShare(
+                    encryptedShare,
+                    encryptedShareKeys,
+                    shareManager,
+                    groupKeys
+                );
 
                 /** Return null if share cannot be opened - typically occurs
                  * during password reset when user keys are unavailable. */
