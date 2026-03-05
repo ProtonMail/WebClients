@@ -3491,6 +3491,9 @@
       "Failed loading group members": [
         "Chyba pri načítavaní členov skupiny"
       ],
+      "Failed to change permissions settings": [
+        "Zmena nastavení oprávnení zlyhala"
+      ],
       "Failed to copy photo to album": [
         "Nepodarilo sa skopírovať fotografiu do albumu"
       ],
@@ -5389,6 +5392,18 @@
       ],
       "Calendar side panel": [
         "Bočný panel kalendára"
+      ],
+      "Can edit": [
+        "Môže upravovať"
+      ],
+      "Can edit and manage access": [
+        "Môže upravovať a spravovať prístup"
+      ],
+      "Can view and edit": [
+        "Môže zobraziť a upraviť"
+      ],
+      "Can view only": [
+        "Môže len zobraziť"
       ],
       "Can't move a folder into itself": [
         "Priečinok nie je možné presunúť sám do seba"
@@ -7476,6 +7491,9 @@
       "Emails (last 3 months)": [
         "Emaily (posledné 3 mesiace)"
       ],
+      "Emails (last 6 months)": [
+        "Emaily (posledných 6 mesiacov)"
+      ],
       "Emails (last month)": [
         "Emaily (posledný mesiac)"
       ],
@@ -7574,6 +7592,9 @@
       ],
       "Last 3 months only": [
         "Iba posledné 3 mesiace"
+      ],
+      "Last 6 months only": [
+        "Len posledných 6 mesiacov"
       ],
       "Last month only": [
         "Iba minulý mesiac"
@@ -9759,6 +9780,12 @@
       ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Vybrané fotografie sa už nachádzajú v \"${ albumName }\""
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Nastavenie aktualizované. Editori môžu meniť oprávnenia a zdieľať."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Nastavenie aktualizované. Editori nemôžu meniť oprávnenia ani zdieľať."
       ],
       "Share invitation accepted successfully": [
         "Pozvanie na zdieľanie bolo úspešne prijaté"

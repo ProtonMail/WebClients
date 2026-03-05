@@ -281,6 +281,9 @@
       "Delete Gateway": [
         "Oletusyhdyskäytävä"
       ],
+      "Delete gateway": [
+        "Poista yhdyskäytävä"
+      ],
       "Delete group": [
         "Poista ryhmä"
       ],
@@ -295,6 +298,9 @@
       ],
       "Delete policy": [
         "Poista käytäntö"
+      ],
+      "Delete token ${ token.Account }": [
+        "Poista tunniste ${ token.Account }"
       ],
       "Delete user": [
         "Poista käyttäjä"
@@ -313,6 +319,9 @@
       ],
       "Disable": [
         "Poista käytöstä"
+      ],
+      "Disable account monitor": [
+        "Poista tilinvalvonta käytöstä"
       ],
       "Disable recovery phrase": [
         "Poista palautuslauseke käytöstä"
@@ -592,6 +601,9 @@
       ],
       "Make admin": [
         "Määritä ylläpitäjäksi"
+      ],
+      "Manage addresses": [
+        "Hallitse osoitteita"
       ],
       "Manage advanced account protections": [
         "Hallitse edistynyttä tilisuojausta"
@@ -4614,8 +4626,8 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Poistuttaan tilauksestasi, tämä käyttäjä siirretään ${ BRAND_NAME } Unlimited -tilaukseen 30 päivän maksuttomalla kokeilujaksolla.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Oletusarvoisesti ylläpitotilille määriteteään ${ formattedStorage } tallennustilaa. Voit myöhemmin muuttaa tallennustilan jakautumista muille käyttäjille."
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "Määritä tallennustila ylläpitäjätilille. Voit jakaa tallennustilaa lisäkäyttäjille myöhemmin."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Luo ja hallinnoi perheenjäseniä ja myönnä heille tallennustilaa, joka on jaettu ${ DRIVE_APP_NAME } ja ${ MAIL_APP_NAME } välillä."
@@ -5978,8 +5990,8 @@
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Tuo viestisi, yhteystietosi ja kalenterisi ${ BRAND_NAME }iin."
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Turvallisuustapahtumien seurannan käytöstäpoiston yhteydessä tyhjennetään myös koko historiasi. Haluatko varmasti poistaa sen käytöstä?"
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Tilinvalvonnan käytöstä poistaminen tyhjentää myös koko historiasi. Haluatko varmasti poistaa tämän käytöstä?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Alentamalla ilmaiseen palveluun, menetät nämä edut pysyvästi, vaikka päivittäisit tilauksesi tulevaisuudessa uudelleen."
@@ -6354,6 +6366,12 @@
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Niiden käyttäjien, jotka siirtyvät käyttämään ${ MAIL_APP_NAME } jostain toisesta sähköpostipalvelusta, tulee valita ${ boldAddresses }-välilehti ja lisätä kaikki aktiiviset sähköpostiosoitteet ennen kuin MX-tietuetta voi muuttaa, jotta siirtymä olisi jouheva."
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "Yhdyskäytävää ei voitu poistaa. Yritä uudelleen"
+      ],
+      "Gateway deleted": [
+        "Yhdyskäytävä poistettu"
       ],
       "Gateway monitor": [
         "Yhdyskäytävän valvonta"
@@ -8374,6 +8392,9 @@
       "Emails (last 3 months)": [
         "Sähköpostit (viimeiset 3 kuukautta)"
       ],
+      "Emails (last 6 months)": [
+        "Sähköpostit (viimeiset 6 kuukautta)"
+      ],
       "Emails (last month)": [
         "Viestit (viime kuukausi)"
       ],
@@ -8484,6 +8505,9 @@
       ],
       "Last 3 months only": [
         "Vain viimeiset 3 kuukautta"
+      ],
+      "Last 6 months only": [
+        "Vain viimeiset 6 kuukautta"
       ],
       "Last month only": [
         "Vain viime kuu"
@@ -9271,6 +9295,9 @@
       ]
     },
     "Log preference": {
+      "Account monitor": [
+        "Tilinvalvonta"
+      ],
       "Enable ${ reason }": [
         "Ota ${ reason } käyttöön"
       ],
@@ -13677,9 +13704,6 @@
       "Address added": [
         "Osoite lisättiin"
       ],
-      "Address successfully added": [
-        "Osoite lisätty onnistuneesti"
-      ],
       "Administrator privileges restored": [
         "Hallintaoikeudet palautettiin"
       ],
@@ -14086,6 +14110,9 @@
       "Access control": [
         "Käyttöoikeusvalvonta"
       ],
+      "Account monitor": [
+        "Tilinvalvonta"
+      ],
       "Account recovery": [
         "Tilin palautus"
       ],
@@ -14376,8 +14403,8 @@
       "Delete": [
         "Poista"
       ],
-      "Delete ${ policyName }?": [
-        "Poistetaanko ${ policyName }?"
+      "Delete ${ name }?": [
+        "Poistetaanko ${ name }?"
       ],
       "Delete account": [
         "Poista tili"
@@ -14412,6 +14439,9 @@
       ],
       "Device name": [
         "Laitteen nimi"
+      ],
+      "Disable account monitor?": [
+        "Poista tilinvalvonta käytöstä?"
       ],
       "Disable two-factor authentication": [
         "Poista kaksivaiheinen tunnistautuminen käytöstä"
@@ -14816,9 +14846,6 @@
       ],
       "Security and privacy": [
         "Suojaus ja yksityisyys"
-      ],
-      "Security events": [
-        "Suojaustapahtumat"
       ],
       "Select a plan": [
         "Valitse tilaus"
@@ -15829,6 +15856,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raportit eivät ole päästä päähän -salattuja, joten älä sisällytä niihin arkaluonteisia tietoja."
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Tämän yhdyskäytävän palvelimet siirtyvät 10 päivän deaktivointijaksoon. Nämä palvelimet voidaan lisätä uuteen yhdyskäytävään, mutta niiden maata ei voida muuttaa."
       ],
       "Skip verification?": [
         "Ohitetaanko vahvistus?"

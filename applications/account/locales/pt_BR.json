@@ -480,6 +480,9 @@
       "Delete record": [
         "Excluir registro"
       ],
+      "Delete token ${ token.Account }": [
+        "Excluir token ${ token.Account }"
+      ],
       "Delete token “${ token.Name }”": [
         "Excluir token “${ token.Name }”"
       ],
@@ -513,6 +516,9 @@
       "Disable": [
         "Desativar"
       ],
+      "Disable account monitor": [
+        "Desativar monitor da conta"
+      ],
       "Disable categories": [
         "Desativar categorias"
       ],
@@ -521,9 +527,6 @@
       ],
       "Disable recovery phrase?": [
         "Desativar a frase de recuperação?"
-      ],
-      "Disable security events": [
-        "Desativar eventos de segurança"
       ],
       "Discard": [
         "Descartar"
@@ -959,6 +962,9 @@
       ],
       "Make key primary": [
         "Tornar chave principal"
+      ],
+      "Manage addresses": [
+        "Gerenciar endereços"
       ],
       "Manage advanced account protections": [
         "Gerenciar proteções avançada de conta"
@@ -2676,8 +2682,14 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Migration Assistant": [
+        "Assistente de Migração da ${ BRAND_NAME }"
+      ],
       "Add a custom domain": [
         "Adicionar um domínio adicional"
+      ],
+      "App installed": [
+        "Apps instalado"
       ],
       "Authenticate": [
         "Autenticar"
@@ -2711,6 +2723,9 @@
       ],
       "Finish setting up your business account": [
         "Conclua a configuração da sua conta empresarial"
+      ],
+      "Install app": [
+        "Instalar aplicativo"
       ],
       "Install migration app": [
         "Instalar aplicativo de migração"
@@ -2776,14 +2791,14 @@
       "Start migration": [
         "Iniciar migração"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Para migrar os dados da sua organização, você precisa instalar o aplicativo Assistente de Migração do ${ BRAND_NAME } na Google Workspace Marketplace. Isso concederá permissão ao ${ BRAND_NAME } para copiar seus dados. Após a instalação, volte aqui para continuar. Saiba mais"
-      ],
       "Transfer errors": [
         "Erros de transferência"
       ],
       "User": [
         "Usuário"
+      ],
+      "Verify installation": [
+        "Verificar instalação"
       ],
       "Verify your domain": [
         "Verifique seu domínio"
@@ -7527,9 +7542,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Após sair do seu plano, este usuário será movido para o plano ${ BRAND_NAME } Unlimited com 30 dias de avaliação gratuita."
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Por padrão, atribuímos o armazenamento ${ formattedStorage } à conta do administrador. Você pode gerenciar o armazenamento atribuído a ser distribuído entre usuários adicionais posteriormente."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Crie e gerencie os membros da família e atribuí-los o espaço de armazenamento compartilhado entre ${ DRIVE_APP_NAME } e ${ MAIL_APP_NAME }."
       ],
@@ -9452,9 +9464,6 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Ao criar uma conta ${ PASS_APP_NAME } com seu e-mail do SimpleLogin, você pode gerenciar seus aliases diretamente do ${ PASS_APP_NAME }."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Ao desativar o monitoramento de eventos de segurança, você também limpará todo o seu histórico. Tem certeza de que deseja desativar isso?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao fazer o downgrade para um plano gratuito, você perderá permanentemente esses benefícios, mesmo que você faça o upgrade novamente no futuro."
@@ -12834,6 +12843,9 @@
       "Allow recovery using a trusted device": [
         "Permitir recuperação usando dispositivo confiável"
       ],
+      "Allow secure link sharing": [
+        "Permitir compartilhamento de link seguro"
+      ],
       "Allow sharing outside the organization": [
         "Permitir compartilhamento fora da organização"
       ],
@@ -13239,6 +13251,9 @@
       "Emails (last 3 months)": [
         "E-mails (últimos 3 messes)"
       ],
+      "Emails (last 6 months)": [
+        "E-mails (últimos 6 messes)"
+      ],
       "Emails (last month)": [
         "E-mails (último mês)"
       ],
@@ -13463,6 +13478,9 @@
       ],
       "Last 3 months only": [
         "Somente os últimos 3 meses"
+      ],
+      "Last 6 months only": [
+        "Somente os últimos 6 meses"
       ],
       "Last month only": [
         "Apenas no mês passado"
@@ -14627,8 +14645,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Monitor de atividade"
+      "Account monitor": [
+        "Monitor da conta"
       ],
       "Enable ${ reason }": [
         "Ativar ${ reason }"
@@ -21613,9 +21631,6 @@
       "Address added": [
         "Endereço adicionado"
       ],
-      "Address successfully added": [
-        "Endereço adicionado com sucesso"
-      ],
       "Address updated": [
         "Endereço atualizado"
       ],
@@ -22200,6 +22215,9 @@
       "Account keys": [
         "Chaves da conta"
       ],
+      "Account monitor": [
+        "Monitor da conta"
+      ],
       "Account recovery": [
         "Recuperação de conta"
       ],
@@ -22595,9 +22613,6 @@
       "Deep dive into VPN blog posts": [
         "Aprofunde-se nas postagens do blog sobre VPN"
       ],
-      "Delete ${ policyName }?": [
-        "Excluir ${ policyName }?"
-      ],
       "Delete ${ value }": [
         "Excluir ${ value }"
       ],
@@ -22656,8 +22671,8 @@
       "Device name": [
         "Nome do dispositivo"
       ],
-      "Disable activity monitor?": [
-        "Desativar o monitor de atividade?"
+      "Disable account monitor?": [
+        "Desativar monitor da conta?"
       ],
       "Disable categories?": [
         "Desativar categorias?"
@@ -23362,9 +23377,6 @@
       ],
       "Security and privacy": [
         "Segurança e privacidade"
-      ],
-      "Security events": [
-        "Eventos de segurança"
       ],
       "Security logs": [
         "Registros de segurança"

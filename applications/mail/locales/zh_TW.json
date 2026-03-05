@@ -324,6 +324,9 @@
       "Copy addresses": [
         "複製電郵位址"
       ],
+      "Copy alias “${ name }”": [
+        "複製別名 \"${ name }\""
+      ],
       "Copy email to clipboard": [
         "複製電郵位址至剪貼簿"
       ],
@@ -5101,6 +5104,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "我們無法載入此頁面。請重新整理頁面或檢查您的網際網路連線。"
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "啟用額外密碼時，別名管理只能在 ${ PASS_APP_NAME } 中進行。"
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "您尚未有任何聯絡人。立即開始創建一個新的聯絡人"
@@ -12282,14 +12288,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "全部別名"
+      ],
       "Create alias": [
         "創建別名"
+      ],
+      "Create an alias": [
+        "建立一個別名"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "隨時生成信箱別名，輕鬆管理別名與密碼。"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email 別名"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email 別名可以讓您在註冊帳號時不再需要分享您真實的電子郵件地址。 ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "新增别名"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "開啟 ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "保護你的線上身分"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "嘗試${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "於Amazon購物時等…"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "當網站要求您輸入電子郵件時，給他們別名就好。 別名由 ${ passLink } 提供。"
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(轉開 ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -13492,6 +13530,9 @@
       "Address verification disabled": [
         "位址驗證已停用"
       ],
+      "Alias copied to clipboard": [
+        "已複製別名到剪貼簿"
+      ],
       "Alias saved and copied": [
         "已成功儲存及複製別名"
       ],
@@ -13578,6 +13619,9 @@
       ],
       "Labels applied.": [
         "標籤已套用。"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "最後修改的別名已儲存到您最舊的保險庫"
       ],
       "Mail list unsubscribed": [
         "已從郵寄清單取消訂閱"

@@ -321,6 +321,9 @@
       "Connected": [
         "Tilkoblet"
       ],
+      "Contact sales": [
+        "Ta kontakt med salg"
+      ],
       "Contact support": [
         "Kontakt brukerstøtte"
       ],
@@ -444,6 +447,9 @@
       "Delete account": [
         "Slett konto"
       ],
+      "Delete and confirm": [
+        "Slett og bekreft"
+      ],
       "Delete filter “${ Name }”": [
         "Slett filter “${ Name }”"
       ],
@@ -473,6 +479,9 @@
       ],
       "Delete record": [
         "Slett post"
+      ],
+      "Delete token ${ token.Account }": [
+        "Slett token ${ token.Account }"
       ],
       "Delete token “${ token.Name }”": [
         "Slett token “${ token.Name }”"
@@ -515,9 +524,6 @@
       ],
       "Disable recovery phrase?": [
         "Deaktiver gjenopprettingsfrase?"
-      ],
-      "Disable security events": [
-        "Deaktiver sikkerhetshendelser"
       ],
       "Discard": [
         "Forkast"
@@ -953,6 +959,9 @@
       ],
       "Make key primary": [
         "Gjør nøkkelen til primær"
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
       ],
       "Manage advanced account protections": [
         "Administrer avansert kontobeskyttelse"
@@ -2670,11 +2679,20 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Migration Assistant": [
+        "${ BRAND_NAME } Migration Assistant"
+      ],
       "Add a custom domain": [
         "Legg til et egendefinert domene"
       ],
+      "App installed": [
+        "App installert"
+      ],
       "Authenticate": [
         "Autentiser"
+      ],
+      "Authenticate your Google Workspace account": [
+        "Autentiser Google Workspace-kontoen din"
       ],
       "Calendar": [
         "Kalender"
@@ -2705,6 +2723,12 @@
       ],
       "Finish setting up your business account": [
         "Fullfør konfigurasjonen av bedriftskontoen din"
+      ],
+      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
+        "Google Marketplace-app for å kopiere data til ${ BRAND_NAME }"
+      ],
+      "Install app": [
+        "Installer app"
       ],
       "Install migration app": [
         "Installer migreringsappen"
@@ -2770,14 +2794,17 @@
       "Start migration": [
         "Start migrering"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "For å migrere organisasjonens data, må du installere ${ BRAND_NAME } Migration Assistant-appen fra Google Workspace Marketplace. Dette vil gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter å ha installert den, kom tilbake hit for å fortsette. Lær mer"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "For å migrere organisasjonens data, må du installere ${ BRAND_NAME } Migration Assistant-appen fra Google Workspace Marketplace. Dette vil gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter å ha installert den, kom tilbake hit for å fortsette."
       ],
       "Transfer errors": [
         "Overføringsfeil"
       ],
       "User": [
         "Bruker"
+      ],
+      "Verify installation": [
+        "Verifiser installasjon"
       ],
       "Verify your domain": [
         "Verifiser domenet ditt"
@@ -2788,8 +2815,14 @@
       "Verify your domain to start a migration": [
         "Verifiser domenet ditt for å starte en migrering"
       ],
+      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
+        "Vi kunne ikke bekrefte installasjonen. Sjekk at du har installert den i Google Workspace-kontoen din, og prøv på nytt."
+      ],
       "What are you migrating?": [
         "Hva migrerer du?"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "Du må gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter at du har godtatt tillatelsene, kan du komme tilbake hit for å fortsette."
       ]
     },
     "breadcrumb": {
@@ -7521,9 +7554,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Etter å ha forlatt planen din, vil denne brukeren bli flyttet til en ${ BRAND_NAME } Unlimited-plan med en 30-dagers gratis prøveperiode.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Som standard tildeler vi ${ formattedStorage } med lagringsplass til administrator kontoen. Du kan administrere den tildelte lagringen til å bli distribuert blant ytterligere brukere senere."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Opprett og behandle familiemedlemmer og tildel dem lagringsplass delt mellom ${ DRIVE_APP_NAME } og ${ MAIL_APP_NAME }."
       ],
@@ -8835,6 +8865,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% rabatt"
       ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } vil ikke lenger beholde tidligere versjoner av filene dine."
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } er ugyldig"
       ],
@@ -9441,9 +9474,6 @@
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Ved å opprette en ${ PASS_APP_NAME }-konto med SimpleLogin-e-posten din, kan du administrere aliasene dine direkte fra ${ PASS_APP_NAME }."
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Ved å deaktivere overvåking av sikkerhetshendelser vil du også slette hele historikken. Er du sikker på at du vil deaktivere dette?"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
       ],
@@ -9953,6 +9983,9 @@
       "finance": [
         "finans"
       ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Kontakt vårt salgsapparat for en 10-årig versjonshistorikk."
+      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "For tilgang til e-post når som helst og optimalisert mobilopplevelse, last ned vår ${ androidAppLink } eller ${ iosAppLink }."
       ],
@@ -10051,6 +10084,9 @@
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Hvis deaktivert, kan organisasjonsmedlemmer bare dele hvelv eller elementer innen organisasjonen."
+      ],
+      "If disabled, organization members won't be able to create secure links.": [
+        "Hvis dette er deaktivert, vil ikke organisasjonsmedlemmer kunne opprette sikre koblinger."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Hvis aktivert, kan organisasjonsmedlemmer dele enkeltelementer i tillegg til hvelv."
@@ -11264,6 +11300,12 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Denne verifiseringen kan ta opptil én time. Når bekreftelsen er fullført, må du ikke fjerne TXT-posten, siden det er nødvendig for å bekrefte at du fortsatt eier domenet."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Dette vil slette alle tidligere versjoner av filene dine eldre enn ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Dette vil slette alle tidligere versjoner av filene dine."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Dette vil nekte tilgang til **${ email }**. Er du sikker på at du vil fortsette?"
       ],
@@ -11453,6 +11495,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Oppgrader for å beholde ${ planTitle } fordelene dine."
       ],
+      "Upgrade to unlock": [
+        "Oppgrader for å låse opp"
+      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Oppgrader for å låse opp ${ monitorLink }."
       ],
@@ -11548,6 +11593,9 @@
       ],
       "Version ${ version }": [
         "Versjon ${ version }"
+      ],
+      "Version history": [
+        "Versjonshistorikk"
       ],
       "Version number successfully copied to clipboard": [
         "Versjonsnummeret ble kopiert til utklippstavlen"
@@ -12807,6 +12855,9 @@
       "Allow recovery using a trusted device": [
         "Tillat gjenoppretting via en klarert enhet"
       ],
+      "Allow secure link sharing": [
+        "Tillat sikker deling av koblinger"
+      ],
       "Allow sharing outside the organization": [
         "Tillat deling utenfor organisasjonen"
       ],
@@ -13178,6 +13229,9 @@
       ],
       "Don't ask again": [
         "Ikke spør igjen"
+      ],
+      "Don't keep versions": [
+        "Ikke behold versjoner"
       ],
       "Don't show this again": [
         "Ikke vis dette igjen"
@@ -14597,9 +14651,6 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Aktivitetsovervåking"
-      ],
       "Enable ${ reason }": [
         "Aktiver ${ reason }"
       ],
@@ -19733,6 +19784,9 @@
       ]
     },
     "Setting": {
+      "Enable Photos section": [
+        "Aktiver Bilder-seksjonen"
+      ],
       "Get updates about comments via email": [
         "Få oppdateringer om kommentarer via e-post"
       ],
@@ -21571,9 +21625,6 @@
       "Address added": [
         "Adresse lagt til"
       ],
-      "Address successfully added": [
-        "Adressen ble lagt til"
-      ],
       "Address updated": [
         "Adresse oppdatert"
       ],
@@ -22550,9 +22601,6 @@
       "Deep dive into VPN blog posts": [
         "Dypdykk i VPN-blogginnlegg"
       ],
-      "Delete ${ policyName }?": [
-        "Slette ${ policyName }?"
-      ],
       "Delete ${ value }": [
         "Slett ${ value }"
       ],
@@ -22587,6 +22635,9 @@
       "Delete user?": [
         "Slett bruker?"
       ],
+      "Delete version history?": [
+        "Slette versjonshistorikk?"
+      ],
       "Deny access to user?": [
         "Nekte tilgang til bruker?"
       ],
@@ -22607,9 +22658,6 @@
       ],
       "Device name": [
         "Enhetsnavn"
-      ],
-      "Disable activity monitor?": [
-        "Deaktivere aktivitetsovervåking?"
       ],
       "Disable categories?": [
         "Deaktivere kategorier?"
@@ -23311,9 +23359,6 @@
       ],
       "Security and privacy": [
         "Sikkerhet og personvern"
-      ],
-      "Security events": [
-        "Sikkerhetshendelser"
       ],
       "Security logs": [
         "Sikkerhetslogger"

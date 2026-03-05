@@ -327,6 +327,9 @@
       "Copy addresses": [
         "Капіяваць адрасы"
       ],
+      "Copy alias “${ name }”": [
+        "Капіяваць псеўданім “${ name }”"
+      ],
       "Copy email to clipboard": [
         "Скапіяваць ліст у буфер абмену"
       ],
@@ -5385,6 +5388,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Немагчыма загрузіць старонку. Абнавіце старонку або праверце злучэнне з інтэрнэтам."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Кіраванне псеўданімамі можа быць завершана толькі ў ${ PASS_APP_NAME }, калі дадатковы пароль уключаны."
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "У вас пакуль няма кантактаў. Пачніце са стварэння новага кантакту"
       ]
@@ -9756,6 +9762,9 @@
       "Emails (last 3 months)": [
         "Лісты (за апошнія 3 месяцы)"
       ],
+      "Emails (last 6 months)": [
+        "Лісты (за апошнія 6 месяцаў)"
+      ],
       "Emails (last month)": [
         "Лісты (за апошні месяц)"
       ],
@@ -9896,6 +9905,9 @@
       ],
       "Last 3 months only": [
         "Толькі за апошнія 3 месяцы"
+      ],
+      "Last 6 months only": [
+        "Толькі за апошнія 6 месяцаў"
       ],
       "Last month only": [
         "Толькі за апошні месяц"
@@ -13356,14 +13368,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Усе псеўданімы"
+      ],
       "Create alias": [
         "Стварыць псеўданім"
+      ],
+      "Create an alias": [
+        "Стварыць псеўданім"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Генерыруйце імгненныя псеўданімы і без намаганняў кіруйце імі разам з паролямі."
+      ],
+      "Hide-my-email aliases": [
+        "Псеўданімы Hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Псеўданімы Hide-my-email дазваляюць вам рэгістравацца для атрымання пэўнай паслугі без раскрыцця свайго адраса электроннай пошты. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Новы псеўданім"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Адкрыць ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Абараняйце сваю сеткавую ідэнтычнасць"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Паспрабуйце ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Выкарыстоўвайце на Amazon для пакупак і г.д."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Дайце гэты псеўданім замест таго, каб уводзіць ваш сапраўдны адрас электроннай пошты. Псеўданімы забяспечваюцца ${ passLink }."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(адкрые ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -14801,6 +14845,9 @@
       "Address verification disabled": [
         "Спраўджанне адраса адключана"
       ],
+      "Alias copied to clipboard": [
+        "Псеўданім скапіяваны ў буфер абмену"
+      ],
       "Alias saved and copied": [
         "Псеўданімы захаваны і скапіяваны"
       ],
@@ -14896,6 +14943,9 @@
       ],
       "Labels applied.": [
         "Меткі ўжыты."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Апошнія змененыя псеўданімы захоўваюцца ў вашым самым старым сховішчы"
       ],
       "Mail list unsubscribed": [
         "Ваш адрас выдалены са спіса рассылкі"

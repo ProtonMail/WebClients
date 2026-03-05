@@ -516,9 +516,6 @@
       "Disable recovery phrase?": [
         "Deaktivovat obnovovací frázi?"
       ],
-      "Disable security events": [
-        "Deaktivovat bezpečnostní události"
-      ],
       "Discard": [
         "Zahodit"
       ],
@@ -953,6 +950,9 @@
       ],
       "Make key primary": [
         "Nastavit klíč jako primární"
+      ],
+      "Manage addresses": [
+        "Spravovat adresy"
       ],
       "Manage advanced account protections": [
         "Spravovat pokročilé ochrany účtu"
@@ -2803,9 +2803,6 @@
       ],
       "Start migration": [
         "Spustit migraci"
-      ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Chcete-li migrovat data vaší organizace, musíte nainstalovat aplikaci ${ BRAND_NAME } Migration Assistant z Google Workspace Markeplace. Tím udělíte aplikaci ${ BRAND_NAME } oprávnění kopírovat vaše data. Po instalaci se vraťte sem a pokračujte. Více informací"
       ],
       "Transfer errors": [
         "Chyby přenosu"
@@ -7625,9 +7622,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Po opuštění vašeho tarifu bude tento uživatel přesunut na ${ BRAND_NAME }. Neomezený tarif s 30denní bezplatnou zkušební dobou.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Ve výchozím stavu je správci přiřazeno ${ formattedStorage } úložného prostoru. Velikost prostoru přiřazeného dalším uživatelům, můžete později změnit."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Vytvářejte a spravujte členy rodiny a přidělujte jim úložný prostor sdílený mezi ${ DRIVE_APP_NAME } a ${ MAIL_APP_NAME }."
       ],
@@ -9650,9 +9644,6 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Vytvořením účtu ${ PASS_APP_NAME } s vaším e-mailem SimpleLogin můžete spravovat své aliasy přímo z ${ PASS_APP_NAME }."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Deaktivací sledování bezpečnostních událostí smažete také celou historii. Jste si jisti, že to chcete deaktivovat?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Pokud svůj aktuální tarif snížíte na bezplatnou verzi, navždy ztratíte současné výhody, i když v budoucnu svůj účet znovu povýšíte."
@@ -14887,9 +14878,6 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Monitor aktivity"
-      ],
       "Enable ${ reason }": [
         "Povolit ${ reason }"
       ],
@@ -22121,9 +22109,6 @@
       "Address added": [
         "Adresa přidána"
       ],
-      "Address successfully added": [
-        "Adresa byla úspěšně přidána"
-      ],
       "Address updated": [
         "Adresa aktualizována"
       ],
@@ -23128,9 +23113,6 @@
       "Deep dive into VPN blog posts": [
         "Začtěte se do článků o VPN na blogu"
       ],
-      "Delete ${ policyName }?": [
-        "Smazat ${ policyName }?"
-      ],
       "Delete ${ value }": [
         "Smazat ${ value }"
       ],
@@ -23187,9 +23169,6 @@
       ],
       "Device name": [
         "Název zařízení"
-      ],
-      "Disable activity monitor?": [
-        "Deaktivovat monitor aktivity?"
       ],
       "Disable categories?": [
         "Deaktivovat kategorie?"
@@ -23895,9 +23874,6 @@
       ],
       "Security and privacy": [
         "Bezpečnost a soukromí"
-      ],
-      "Security events": [
-        "Bezpečnostní události"
       ],
       "Security logs": [
         "Bezpečnostní protokoly"

@@ -299,6 +299,9 @@
       "Delete policy": [
         "Slett retningslinje"
       ],
+      "Delete token ${ token.Account }": [
+        "Slett token ${ token.Account }"
+      ],
       "Delete user": [
         "Slett bruker"
       ],
@@ -322,9 +325,6 @@
       ],
       "Disable recovery phrase?": [
         "Deaktiver gjenopprettingsfrase?"
-      ],
-      "Disable security events": [
-        "Deaktiver sikkerhetshendelser"
       ],
       "Discard": [
         "Forkast"
@@ -601,6 +601,9 @@
       ],
       "Make admin": [
         "Gjør til administrator"
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
       ],
       "Manage advanced account protections": [
         "Administrer avansert kontobeskyttelse"
@@ -1816,8 +1819,17 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Migration Assistant": [
+        "${ BRAND_NAME } Migration Assistant"
+      ],
+      "App installed": [
+        "App installert"
+      ],
       "Authenticate": [
         "Autentiser"
+      ],
+      "Authenticate your Google Workspace account": [
+        "Autentiser Google Workspace-kontoen din"
       ],
       "Calendar": [
         "Kalender"
@@ -1839,6 +1851,12 @@
       ],
       "Failed to load OAuth": [
         "Kunne ikke laste inn OAuth"
+      ],
+      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
+        "Google Marketplace-app for å kopiere data til ${ BRAND_NAME }"
+      ],
+      "Install app": [
+        "Installer app"
       ],
       "Install migration app": [
         "Installer migreringsappen"
@@ -1895,8 +1913,8 @@
       "Sign in to Google Workspace": [
         "Logg på Google Workspace"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "For å migrere organisasjonens data, må du installere ${ BRAND_NAME } Migration Assistant-appen fra Google Workspace Marketplace. Dette vil gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter å ha installert den, kom tilbake hit for å fortsette. Lær mer"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "For å migrere organisasjonens data, må du installere ${ BRAND_NAME } Migration Assistant-appen fra Google Workspace Marketplace. Dette vil gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter å ha installert den, kom tilbake hit for å fortsette."
       ],
       "Transfer errors": [
         "Overføringsfeil"
@@ -1904,14 +1922,23 @@
       "User": [
         "Bruker"
       ],
+      "Verify installation": [
+        "Verifiser installasjon"
+      ],
       "Verify your domain": [
         "Verifiser domenet ditt"
       ],
       "Verify your domain to start a migration": [
         "Verifiser domenet ditt for å starte en migrering"
       ],
+      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
+        "Vi kunne ikke bekrefte installasjonen. Sjekk at du har installert den i Google Workspace-kontoen din, og prøv på nytt."
+      ],
       "What are you migrating?": [
         "Hva migrerer du?"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "Du må gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter at du har godtatt tillatelsene, kan du komme tilbake hit for å fortsette."
       ]
     },
     "Browser": {
@@ -4898,9 +4925,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Etter å ha forlatt planen din, vil denne brukeren bli flyttet til en ${ BRAND_NAME } Unlimited-plan med en 30-dagers gratis prøveperiode.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Som standard tildeler vi ${ formattedStorage } med lagringsplass til administrator kontoen. Du kan administrere den tildelte lagringen til å bli distribuert blant ytterligere brukere senere."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Opprett og behandle familiemedlemmer og tildel dem lagringsplass delt mellom ${ DRIVE_APP_NAME } og ${ MAIL_APP_NAME }."
       ],
@@ -6318,9 +6342,6 @@
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Ta med dine meldinger, kontakter og kalendere til ${ BRAND_NAME }."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Ved å deaktivere overvåking av sikkerhetshendelser vil du også slette hele historikken. Er du sikker på at du vil deaktivere dette?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
@@ -9799,9 +9820,6 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Aktivitetsovervåking"
-      ],
       "Enable ${ reason }": [
         "Aktiver ${ reason }"
       ],
@@ -14561,9 +14579,6 @@
       "Address added": [
         "Adresse lagt til"
       ],
-      "Address successfully added": [
-        "Adressen ble lagt til"
-      ],
       "Administrator privileges restored": [
         "Administratorprivilegier gjenopprettet"
       ],
@@ -15307,8 +15322,8 @@
       "Delete": [
         "Slett"
       ],
-      "Delete ${ policyName }?": [
-        "Slette ${ policyName }?"
+      "Delete ${ name }?": [
+        "Slette ${ name }?"
       ],
       "Delete account": [
         "Slett konto"
@@ -15343,9 +15358,6 @@
       ],
       "Device name": [
         "Enhetsnavn"
-      ],
-      "Disable activity monitor?": [
-        "Deaktivere aktivitetsovervåking?"
       ],
       "Disable two-factor authentication": [
         "Deaktiver tofaktorautentisering"
@@ -15777,9 +15789,6 @@
       ],
       "Security and privacy": [
         "Sikkerhet og personvern"
-      ],
-      "Security events": [
-        "Sikkerhetshendelser"
       ],
       "Select a plan": [
         "Velg en plan"

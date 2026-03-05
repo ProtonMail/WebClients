@@ -320,9 +320,6 @@
       "Disable recovery phrase?": [
         "Vuoi disabilitare la frase di recupero?"
       ],
-      "Disable security events": [
-        "Disattiva eventi di sicurezza"
-      ],
       "Discard": [
         "Scarta"
       ],
@@ -595,6 +592,9 @@
       ],
       "Make admin": [
         "Rendi amministratore"
+      ],
+      "Manage addresses": [
+        "Gestisci indirizzi"
       ],
       "Manage advanced account protections": [
         "Gestisci le protezioni avanzate dell'account"
@@ -4720,9 +4720,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Dopo aver abbandonato il tuo piano, questo utente verrà trasferito a un piano ${ BRAND_NAME } Unlimited con una prova gratuita di 30 giorni.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Per impostazione predefinita assegniamo ${ formattedStorage } di archiviazione all'account dell'amministratore. Puoi gestire lo spazio di archiviazione che ti è stato assegnato, distribuendolo poi tra gli utenti aggiuntivi."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Crea i membri della famiglia, gestiscili e assegna loro lo spazio di archiviazione condiviso tra ${ DRIVE_APP_NAME } e ${ MAIL_APP_NAME }."
       ],
@@ -6131,9 +6128,6 @@
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Importa i tuoi messaggi, contatti e calendari in ${ BRAND_NAME }."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Disabilitando il monitoraggio degli eventi di sicurezza, cancellerai anche l'intera cronologia. Sei sicuro di volerlo disabilitare?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
@@ -9568,9 +9562,6 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Monitor attività"
-      ],
       "Enable ${ reason }": [
         "Abilita ${ reason }"
       ],
@@ -14231,9 +14222,6 @@
       "Address added": [
         "Indirizzo aggiunto"
       ],
-      "Address successfully added": [
-        "Indirizzo aggiunto"
-      ],
       "Administrator privileges restored": [
         "Privilegi di amministratore ripristinati"
       ],
@@ -14963,8 +14951,8 @@
       "Delete": [
         "Elimina"
       ],
-      "Delete ${ policyName }?": [
-        "Eliminare ${ policyName }?"
+      "Delete ${ name }?": [
+        "Eliminare ${ name }?"
       ],
       "Delete account": [
         "Elimina account"
@@ -14999,9 +14987,6 @@
       ],
       "Device name": [
         "Nome dispositivo"
-      ],
-      "Disable activity monitor?": [
-        "Disattivare monitor attività?"
       ],
       "Disable two-factor authentication": [
         "Disabilita l'autenticazione a due fattori"
@@ -15415,9 +15400,6 @@
       ],
       "Security and privacy": [
         "Sicurezza e privacy"
-      ],
-      "Security events": [
-        "Eventi di sicurezza"
       ],
       "Select a plan": [
         "Seleziona un piano"

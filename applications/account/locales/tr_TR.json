@@ -211,7 +211,7 @@
         "Geri"
       ],
       "Back to sign in": [
-        "Oturum açmaya geri dön"
+        "Oturum açmaya dön"
       ],
       "Block": [
         "Engelle"
@@ -322,7 +322,7 @@
         "Bağlı"
       ],
       "Contact sales": [
-        "Satış departmanıyla iletişime geçin"
+        "Satış ekibiyle görüşün"
       ],
       "Contact support": [
         "Destek ekibimizle görüşün"
@@ -480,6 +480,9 @@
       "Delete record": [
         "Kaydı sil"
       ],
+      "Delete token ${ token.Account }": [
+        "${ token.Account } kodunu sil"
+      ],
       "Delete token “${ token.Name }”": [
         "“${ token.Name }” kodunu sil"
       ],
@@ -513,6 +516,9 @@
       "Disable": [
         "Kapat"
       ],
+      "Disable account monitor": [
+        "Hesap izleyicisini devre dışı bırak"
+      ],
       "Disable categories": [
         "Kategorileri kullanımdan kaldır"
       ],
@@ -521,9 +527,6 @@
       ],
       "Disable recovery phrase?": [
         "Kurtarma ifadesi özelliği kapatılsın mı?"
-      ],
-      "Disable security events": [
-        "Güvenlik etkinlikleri özelliğini kapat"
       ],
       "Discard": [
         "Sil"
@@ -959,6 +962,9 @@
       ],
       "Make key primary": [
         "Anahtarı birincil yap"
+      ],
+      "Manage addresses": [
+        "Adres yönetimi"
       ],
       "Manage advanced account protections": [
         "Gelişmiş hesap korumalarını yönetin"
@@ -2676,11 +2682,20 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Migration Assistant": [
+        "${ BRAND_NAME } Migration Assistant"
+      ],
       "Add a custom domain": [
         "Bir özel etki alanı ekleyin"
       ],
+      "App installed": [
+        "Uygulama kuruldu"
+      ],
       "Authenticate": [
         "Kimliği doğrulayın"
+      ],
+      "Authenticate your Google Workspace account": [
+        "Google Workspace hesabınızı doğrulayın"
       ],
       "Calendar": [
         "Takvim"
@@ -2710,7 +2725,13 @@
         "OAuth yüklenemedi"
       ],
       "Finish setting up your business account": [
-        "İşletme hesabınızın kurulumunu tamamlayın"
+        "Kuruluş hesabınızın kurulumunu tamamlayın"
+      ],
+      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
+        "Verileri ${ BRAND_NAME } üzerine kopyalamak için Google Marketplace uygulaması"
+      ],
+      "Install app": [
+        "Uygulamayı kur"
       ],
       "Install migration app": [
         "Aktarım uygulamasını kurun"
@@ -2776,14 +2797,17 @@
       "Start migration": [
         "Aktarımı başlat"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Kuruluşunuzun verilerini aktarmak için Google Workspace Marketplace üzerinden ${ BRAND_NAME } Migration Assistant uygulamasını kurmalısınız. Bu işlem ${ BRAND_NAME } ile verilerinizi kopyalama izni verecek. Kurduktan sonra buraya dönerek ilerleyin. Ayrıntılı bilgi alın"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "Kuruluşunuzun verilerini aktarmak için Google Workspace Marketplace üzerinden ${ BRAND_NAME } Migration Assistant uygulamasını kurmalısınız. Bu işlem ${ BRAND_NAME } ile verilerinizi kopyalama izni verecek. Kurduktan sonra buraya dönerek ilerleyin."
       ],
       "Transfer errors": [
         "Aktarım hataları"
       ],
       "User": [
         "Kullanıcı"
+      ],
+      "Verify installation": [
+        "Kurulumu doğrula"
       ],
       "Verify your domain": [
         "Etki alanınızı doğrulayın"
@@ -2794,8 +2818,14 @@
       "Verify your domain to start a migration": [
         "Bir aktarım başlatmak için etki alanınızı doğrulayın"
       ],
+      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
+        "Kurulum doğrulanamadı. Lütfen Google Workspace hesabınız ile kurduğunuzdan emin olun ve yeniden deneyin."
+      ],
       "What are you migrating?": [
         "Neyi aktarıyorsunuz?"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "Verilerinizi kopyalaması için ${ BRAND_NAME } uygulamasına izin vermelisiniz. İzinleri verdikten sonra ilerlemek için buraya dönün."
       ]
     },
     "breadcrumb": {
@@ -4588,7 +4618,7 @@
         "${ planTitle } aboneliğinizle daha fazlasını elde edin."
       ],
       "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
-        "${ maxDriveSpace } bulut depolama alanı ile dosyalarınızı, fotoğraflarınızı ve belgelerinizi güvende tutun."
+        "${ maxDriveSpace } bulut depolama alanı ile dosyalarınızı, fotoğraflarınızı ve belgelerinizi koruyun."
       ],
       "Set secure passwords without the hassle.": [
         "Uğraşmadan güvenli parolalar oluşturun."
@@ -6790,7 +6820,7 @@
         "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
-        "Televizyonunuz bağlanırken bir sorun oluştu. Televizyonunuzdaki karekodu tekrar taratın."
+        "Televizyonunuz ile bağlantı kurulurken bir sorun çıktı. Televizyonunuzdaki kare kodu yeniden tarayın."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
@@ -7527,8 +7557,8 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Tarifenizden ayrıldıktan sonra bu kullanıcı 30 günlük deneme süresi ile ${ BRAND_NAME } Unlimited tarifesine geçirilecek.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Varsayılan olarak, yönetici hesabına ${ formattedStorage } depolama alanı veririz. Bu depolama alanını yöneterek daha sonra başka kullanıcılar arasında dağıtabilirsiniz."
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "Yönetici hesabına depolama alanı atayın. Daha sonra diğer kullanıcılar için depolama alanını paylaştırabilirsiniz."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Aile üyeleri ekleyin ve yönetin ve onlara ${ DRIVE_APP_NAME } ile ${ MAIL_APP_NAME } arasında paylaşılan depolama alanı ayırın."
@@ -7782,7 +7812,7 @@
         "${ name } güvenlik anahtarını silmek istediğinize emin misiniz?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } hesabınıza bağlı bir güvenlik anahtarı ekleyin."
+        "${ BRAND_NAME } hesabınız ile ilişkilendirilmiş güvenlik anahtarını takın."
       ],
       "Insert your security key into your device's USB port.": [
         "Güvenlik anahtarınızı aygıtınızın USB bağlantı noktasına takın."
@@ -8842,7 +8872,7 @@
         "%${ discountPercent } indirim"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } artık dosyalarınızın önceki sürümlerini saklamayacak."
+        "${ DRIVE_APP_NAME } artık dosyalarınızın önceki sürümlerini tutmayacak."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } geçersiz"
@@ -9450,8 +9480,8 @@
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "SimpleLogin e-posta adresinizle bir ${ PASS_APP_NAME } hesabı açarak takma adlarınızı doğrudan ${ PASS_APP_NAME } üzerinden yönetebilirsiniz."
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Güvenlik etkinliklerini izleme özelliğini kapattığınızda, tüm geçmişinizi de temizlemiş olursunuz. Bu özelliği kapatmak istediğinize emin misiniz?"
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Hesap izleyiciyi devre dışı bırakarak tüm geçmişinizi de temizlemiş olacaksınız. Devre dışı bırakmak istediğinizden emin misiniz?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
@@ -9885,7 +9915,7 @@
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu girin. ${ digit } rakamı."
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "${ BRAND_NAME } hesabınızın kimlik doğrulama bilgilerini yazın."
@@ -9963,7 +9993,7 @@
         "finans"
       ],
       "For a 10-year version history, please contact our sales team.": [
-        "10 yıllık sürüm geçmişi için lütfen satış ekibimizle iletişime geçin."
+        "Sürüm geçmişini 10 yıl geriye dönük olarak tutmak için lütfen satış ekibimizle görüşün."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "E-postanıza istediğiniz zaman erişebilmek ve iyi bir mobil deneyim için ${ androidAppLink } ya da ${ iosAppLink } uygulamamızı indirin."
@@ -10063,6 +10093,9 @@
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Bu seçenek kapalıysa, kuruluş üyeleri kasaları veya ögeleri yalnızca kuruluş içinde paylaşabilir."
+      ],
+      "If disabled, organization members won't be able to create secure links.": [
+        "Kapatıldığında, kuruluş üyeleri güvenli bağlantılar oluşturamaz."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Bu seçenek açıksa, kuruluş üyeleri kasalara ek olarak tekil ögeleri de paylaşabilir."
@@ -11277,10 +11310,10 @@
         "Doğrulama işleminin tamamlanması bir saat kadar sürebilir. Doğrulama tamamlandıktan sonra da bu etki alanının sahibi olduğunuzu doğrulamayı sürdürmemiz gerektiğinden bu TXT kaydını kaldırmayın."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Bu işlem dosyalarınızın ${ rententionLabel } süresinden eski olan önceki tüm sürümlerini silecek."
+        "Bu işlem dosyalarınızın ${ rententionLabel } öncesindeki tüm sürümlerini silecek."
       ],
       "This will delete all previous versions of your files.": [
-        "Bu işlem dosyalarınızın önceki tüm sürümlerini silecektir."
+        "Bu işlem dosyalarınızın tüm önceki sürümlerini siler."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Bu işlem, **${ email }** hesabına erişme izni vermeyecek. İlerlemek istediğinize emin misiniz?"
@@ -11355,7 +11388,7 @@
         "Onaylamak için lütfen silmek istediğiniz kullanıcının adını yazın."
       ],
       "To continue to ${ product }": [
-        "${ product } ürününe devam etmek için"
+        "${ product } ile ilerlemek için"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Hizmetlerimizi sürekli olarak geliştirmek için bazen uygulamalarımızın düzgün çalışıp çalışmadığını izlemek amacıyla veri topluyoruz. Bu bilgiler herhangi bir üçüncü taraf ile paylaşılmıyor."
@@ -11472,7 +11505,7 @@
         "${ planTitle } avantajlarınızı korumak için tarifenizi yükseltin."
       ],
       "Upgrade to unlock": [
-        "Kilidi açmak için yükseltin"
+        "Erişmek için tarifenizi yükseltin"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "${ monitorLink } özelliğine erişmek için tarifenizi yükseltin."
@@ -11712,7 +11745,7 @@
         "Bir sunucuyu bir ağ geçidinden kaldırdığınızda, 10 günlük bir kullanımdan kaldırma süreci başlar. Bu sunucu yeni bir ağ geçidine eklenebilir, ancak ülkesi değiştirilemez."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki adımlı kimlik doğrulamayı ayarladığınızda ve kimlik doğrulama uygulamanıza erişiminizi kaybettiğinizde oturum açmak için kullanabileceğiniz kurtarma kodları sağlıyoruz."
+        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları veriyoruz."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm krediyi kullanacağız."
@@ -12831,6 +12864,9 @@
       "Allow recovery using a trusted device": [
         "Kurtarma için güvenilen bir aygıt kullanın"
       ],
+      "Allow secure link sharing": [
+        "Güvenli bağlantı paylaşımına izin ver"
+      ],
       "Allow sharing outside the organization": [
         "Kuruluş dışına paylaşım yapılabilsin"
       ],
@@ -13236,6 +13272,9 @@
       "Emails (last 3 months)": [
         "E-postalar (son 3 ay)"
       ],
+      "Emails (last 6 months)": [
+        "E-postalar (son 6 ay)"
+      ],
       "Emails (last month)": [
         "E-postalar (son 1 ay)"
       ],
@@ -13460,6 +13499,9 @@
       ],
       "Last 3 months only": [
         "Yalnızca son 3 ay"
+      ],
+      "Last 6 months only": [
+        "Sadece son 6 ay"
       ],
       "Last month only": [
         "Yalnızca son ay"
@@ -14306,7 +14348,7 @@
         "Takma ad oluştur"
       ],
       "Don't have access to your 2FA?": [
-        "İki adımlı doğrulamanıza erişiminiz yok mu?"
+        "İki adımlı doğrulamanıza erişemiyor musunuz?"
       ],
       "Downloads": [
         "İndirmeler"
@@ -14624,8 +14666,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Etkinlik izleyici"
+      "Account monitor": [
+        "Hesap izleyici"
       ],
       "Enable ${ reason }": [
         "${ reason } özelliğini aç"
@@ -14954,7 +14996,7 @@
         "${ appName }: Oturum aç"
       ],
       "${ appName }: Sign-up": [
-        "${ appName }: Kaydol"
+        "${ appName }: Hesap aç"
       ],
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } hesabı"
@@ -14966,7 +15008,7 @@
         "Bir ${ BRAND_NAME } hesabı açın | Gizliliğinizi geri alın"
       ],
       "Create a new ${ appName } account": [
-        "Yeni bir ${ appName } hesabı oluştur"
+        "Yeni bir ${ appName } hesabı aç"
       ],
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "İki haftalık ücretsiz ${ BRAND_NAME } tadını çıkarın"
@@ -14978,10 +15020,10 @@
         "${ BRAND_NAME } hesabınızın kullanıcı adını bulun"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "${ BRAND_NAME } hesabınızın parolasını unuttunuz mu? Kurtarma kodu, e-posta ya da SMS ile sıfırlayarak ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi hizmetlere yeniden erişin."
+        "${ BRAND_NAME } hesabınızın parolasını mı unuttunuz? Kurtarma kodu, e-posta ya da SMS ile sıfırlayarak ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi hizmetlere yeniden erişin."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "${ BRAND_NAME } hesabınızın kullanıcı adını unuttunuz mu? Kurtarma e-posta adresinizi ya da telefon numaranızı kullanarak ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi hizmetlere yeniden erişin."
+        "${ BRAND_NAME } hesabınızın kullanıcı adını mı unuttunuz? Kurtarma e-posta adresinizi ya da telefon numaranızı kullanarak ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi hizmetlere yeniden erişin."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "${ BRAND_NAME } hesabınızın parolasını sıfırlayın"
@@ -17187,7 +17229,7 @@
     },
     "pass_signup_2023: Action": {
       "Buy now": [
-        "Şimdi satın al"
+        "Satın al"
       ],
       "Contact us": [
         "Bizimle görüşün"
@@ -19761,7 +19803,7 @@
     },
     "Setting": {
       "Enable Photos section": [
-        "Fotoğraflar bölümünü etkinleştir"
+        "Fotoğraflar bölümünü aç"
       ],
       "Get updates about comments via email": [
         "Yorum güncellemeleri e-posta ile bildirilsin"
@@ -21601,9 +21643,6 @@
       "Address added": [
         "Adres eklendi"
       ],
-      "Address successfully added": [
-        "Adres eklendi"
-      ],
       "Address updated": [
         "Adres güncellendi"
       ],
@@ -22185,6 +22224,9 @@
       "Account keys": [
         "Hesap anahtarları"
       ],
+      "Account monitor": [
+        "Hesap izleyici"
+      ],
       "Account recovery": [
         "Hesap kurtarma"
       ],
@@ -22580,9 +22622,6 @@
       "Deep dive into VPN blog posts": [
         "VPN yazılarına derinlemesine dalın"
       ],
-      "Delete ${ policyName }?": [
-        "${ policyName } silinsin mi?"
-      ],
       "Delete ${ value }": [
         "${ value } sil"
       ],
@@ -22641,8 +22680,8 @@
       "Device name": [
         "Aygıt adı"
       ],
-      "Disable activity monitor?": [
-        "Etkinlik izleyici kapatılsın mı?"
+      "Disable account monitor?": [
+        "Hesap izleyicisi devre dışı bırakılsın mı?"
       ],
       "Disable categories?": [
         "Kategoriler kullanımdan kaldırılsın mı?"
@@ -23344,9 +23383,6 @@
       ],
       "Security and privacy": [
         "Güvenlik ve gizlilik"
-      ],
-      "Security events": [
-        "Güvenlik olayları"
       ],
       "Security logs": [
         "Güvenlik günlüğü"
@@ -24596,7 +24632,7 @@
         "${ planTitle } aboneliğinizle daha fazlasını elde edin."
       ],
       "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
-        "${ maxDriveSpace } bulut depolama alanı ile dosyalarınızı, fotoğraflarınızı ve belgelerinizi güvende tutun."
+        "${ maxDriveSpace } bulut depolama alanı ile dosyalarınızı, fotoğraflarınızı ve belgelerinizi koruyun."
       ],
       "Set secure passwords without the hassle.": [
         "Uğraşmadan güvenli parolalar oluşturun."

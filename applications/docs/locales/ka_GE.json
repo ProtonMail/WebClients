@@ -920,6 +920,9 @@
         "${ ips } გამოყოფილი VPN სერვერი",
         "${ ips } გამოყოფილი VPN სერვერი"
       ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME }-ის ადგილები"
+      ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
         "${ seats }${ LUMO_APP_NAME } ხი-ის ლიცენზია",
         "${ seats }${ LUMO_APP_NAME } ხი-ის ლიცენზია"
@@ -936,6 +939,9 @@
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
       ],
+      "Dedicated VPN servers": [
+        "გამოყოფილი VPN სერვერები"
+      ],
       "Domains": [
         "დომენები"
       ],
@@ -947,6 +953,9 @@
       ],
       "Writing assistant": [
         "წერაში დამხმარე"
+      ],
+      "Writing assistant seats": [
+        "წერაში დამხმარის ადგილები"
       ]
     },
     "Alert": {
@@ -1108,6 +1117,18 @@
       ],
       "3 TB data storage": [
         "3 ტბ მეხსიერება"
+      ],
+      "Access advanced AI models": [
+        "წვდომა განვითარებულ ხი მოდელებთან"
+      ],
+      "Built-in 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Connect 10 devices at once": [
+        "დააკავშირეთ 10 მოწყობილობა ერთდროულად"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
       ]
     },
     "Browser": {
@@ -5434,6 +5455,9 @@
       "Emails (last 3 months)": [
         "ელფოსტა (გასული სამი თვე)"
       ],
+      "Emails (last 6 months)": [
+        "ელფოსტა (გასული 6 თვე)"
+      ],
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
@@ -5514,6 +5538,9 @@
       ],
       "Last 3 months only": [
         "მხოლოდ ბოლო 3 თვე"
+      ],
+      "Last 6 months only": [
+        "მხოლოდ, ბოლო 6 თვე"
       ],
       "Last month only": [
         "მხოლოდ ბოლო თვეში"
@@ -8238,8 +8265,28 @@
       ]
     },
     "sheets_2025:Action": {
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
       "New spreadsheet": [
         "ახალი ელცხრილი"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Detect automatically": [
+        "ავტომატურად ამოცნობა"
+      ],
+      "Insert as new sheet": [
+        "ჩასმა ახალი ფურცლის სახით"
+      ],
+      "Replace current sheet": [
+        "მიმდინარე ფურცლის ჩანაცვლება"
+      ],
+      "Replace spreadsheet": [
+        "ელცხრილის ჩანაცვლება"
+      ],
+      "Select a file to import": [
+        "აირჩიეთ შემოსატანი ფაილი"
       ]
     },
     "sheets_2025:Label": {

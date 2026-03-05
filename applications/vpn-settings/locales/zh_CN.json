@@ -299,6 +299,9 @@
       "Delete policy": [
         "删除策略"
       ],
+      "Delete token ${ token.Account }": [
+        "删除令牌 ${ token.Account }"
+      ],
       "Delete user": [
         "删除用户"
       ],
@@ -322,9 +325,6 @@
       ],
       "Disable recovery phrase?": [
         "禁用恢复密语吗？"
-      ],
-      "Disable security events": [
-        "停用安全事件"
       ],
       "Discard": [
         "放弃"
@@ -601,6 +601,9 @@
       ],
       "Make admin": [
         "设为管理员"
+      ],
+      "Manage addresses": [
+        "管理邮箱地址"
       ],
       "Manage advanced account protections": [
         "管理高级账户保护"
@@ -1800,8 +1803,17 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Migration Assistant": [
+        "${ BRAND_NAME } 迁移助手"
+      ],
+      "App installed": [
+        "应用已安装"
+      ],
       "Authenticate": [
         "身份验证"
+      ],
+      "Authenticate your Google Workspace account": [
+        "验证您的 Google Workspace 账户"
       ],
       "Calendar": [
         "日历"
@@ -1823,6 +1835,12 @@
       ],
       "Failed to load OAuth": [
         "加载 OAuth 失败"
+      ],
+      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
+        "用于将数据复制到 ${ BRAND_NAME } 的 Google Marketplace 应用"
+      ],
+      "Install app": [
+        "安装应用"
       ],
       "Install migration app": [
         "安装迁移应用"
@@ -1878,8 +1896,8 @@
       "Sign in to Google Workspace": [
         "登录 Google Workspace"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "若要迁移您组织的数据，您需要从 Google Workspace Marketplace 安装 ${ BRAND_NAME } 迁移助手应用。这将授予 ${ BRAND_NAME } 复制您数据的权限。安装完成后，请返回此处继续。了解详情"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "若要迁移您组织的数据，您需要从 Google Workspace Marketplace 安装 ${ BRAND_NAME } 迁移助手应用。这将授予 ${ BRAND_NAME } 复制您数据的权限。安装完成后，请返回此处继续。"
       ],
       "Transfer errors": [
         "传输错误"
@@ -1887,14 +1905,23 @@
       "User": [
         "用户"
       ],
+      "Verify installation": [
+        "验证安装"
+      ],
       "Verify your domain": [
         "验证您的域名"
       ],
       "Verify your domain to start a migration": [
         "验证您的域名以开始迁移"
       ],
+      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
+        "我们无法验证安装，请检查您已在 Google Workspace 账户中安装该应用，然后重试。"
+      ],
       "What are you migrating?": [
         "您需要迁移什么？"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "您需要授予 ${ BRAND_NAME } 复制数据的权限。接受权限后，请返回此处继续。"
       ]
     },
     "Browser": {
@@ -4862,9 +4889,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "离开您的计划后，此用户将被移动到一个无限制的 ${ BRAND_NAME } 计划，并且免费试用30天。*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "默认情况下，我们将储存的 ${ formattedStorage } 分配给管理员账户。您可以管理分配给其他用户的储存空间。"
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "创建和管理家庭成员并分配他们在 ${ DRIVE_APP_NAME } 和 ${ MAIL_APP_NAME } 之间共享的存储空间。"
       ],
@@ -6229,9 +6253,6 @@
       ],
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "将您的信息、联系人和日历同步至 ${ BRAND_NAME }。"
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "禁用安全事件监控后，您还将清除所有的历史记录。您确定要禁用吗？"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降级为免费用户，无论今后是否再次付费升级，您都将永远失去这些特权。"
@@ -9673,9 +9694,6 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "活动监视器"
-      ],
       "Enable ${ reason }": [
         "启用 ${ reason }"
       ],
@@ -14332,9 +14350,6 @@
       "Address added": [
         "地址已添加"
       ],
-      "Address successfully added": [
-        "地址已成功添加"
-      ],
       "Administrator privileges restored": [
         "管理员权限已恢复"
       ],
@@ -15070,8 +15085,8 @@
       "Delete": [
         "删除"
       ],
-      "Delete ${ policyName }?": [
-        "删除 ${ policyName }？"
+      "Delete ${ name }?": [
+        "刪除 ${ name }？"
       ],
       "Delete account": [
         "删除账户"
@@ -15105,9 +15120,6 @@
       ],
       "Device name": [
         "设备名称"
-      ],
-      "Disable activity monitor?": [
-        "禁用活动监视器？"
       ],
       "Disable two-factor authentication": [
         "禁用双因素身份验证"
@@ -15537,9 +15549,6 @@
       ],
       "Security and privacy": [
         "安全与隐私"
-      ],
-      "Security events": [
-        "安全事件"
       ],
       "Select a plan": [
         "选择账户等级"
