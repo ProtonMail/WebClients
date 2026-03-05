@@ -3985,6 +3985,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nerozšifrovateľný názov"
+      ],
+      "Failed to change permissions settings": [
+        "Zmena nastavení oprávnení zlyhala"
       ]
     },
     "error": {
@@ -7111,6 +7114,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
+      "Can edit": [
+        "Môže upravovať"
+      ],
+      "Can edit and manage access": [
+        "Môže upravovať a spravovať prístup"
+      ],
+      "Can view and edit": [
+        "Môže zobraziť a upraviť"
+      ],
+      "Can view only": [
+        "Môže len zobraziť"
       ]
     },
     "info": {
@@ -7877,6 +7892,12 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Emails (last 6 months)": [
+        "Emaily (posledných 6 mesiacov)"
+      ],
+      "Last 6 months only": [
+        "Len posledných 6 mesiacov"
       ]
     },
     "Label for contact group color": {
@@ -9807,6 +9828,12 @@
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavenia boli úspešne zmenené"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Nastavenie aktualizované. Editori môžu meniť oprávnenia a zdieľať."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Nastavenie aktualizované. Editori nemôžu meniť oprávnenia ani zdieľať."
       ]
     },
     "Notification for duplicate filenames in the current upload": {

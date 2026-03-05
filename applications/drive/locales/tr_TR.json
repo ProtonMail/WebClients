@@ -3348,13 +3348,13 @@
         "Herhangi bir güvenli bağlantı bulunamadı"
       ],
       "Can't retrieve device name": [
-        "Aygıt adı alınamıyor"
+        "Aygıt adı alınamadı"
       ],
       "Cannot export this contact": [
         "Bu kişi dışa aktarılamadı"
       ],
       "Cannot find move target": [
-        "Taşıma hedefi bulunamıyor"
+        "Taşıma hedefi bulunamadı"
       ],
       "Checkout expired, please try again": [
         "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
@@ -3387,7 +3387,7 @@
         "Beğenilenlerden kaldırılamadı"
       ],
       "Data integrity check failed": [
-        "Veri bütünlüğü kontrolü başarısız oldu"
+        "Veri bütünlüğü denetlenemedi"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "En az ${ calendarsToFixCount } takvimi kaldırın",
@@ -4338,7 +4338,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } hesabınıza bağlı bir güvenlik anahtarı ekleyin."
+        "${ BRAND_NAME } hesabınız ile ilişkilendirilmiş güvenlik anahtarını takın."
       ],
       "Security key": [
         "Güvenlik anahtarı"
@@ -5243,10 +5243,10 @@
         "Klasör kendi içine taşınamaz"
       ],
       "Can't rename to same name": [
-        "Aynı isimle yeniden adlandırılamaz"
+        "Aynı adla yeniden adlandırılamaz"
       ],
       "Can't write into folder": [
-        "Klasöre yazılamıyor"
+        "Klasöre yazılamadı"
       ],
       "Canceled": [
         "İptal edildi"
@@ -5507,7 +5507,7 @@
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu girin. ${ digit } rakamı."
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
@@ -6674,7 +6674,7 @@
         "${ deviceName } uygulamasını eşitlenmiş aygıtlardan kaldırdığınızda, ${ DRIVE_APP_NAME } uygulaması ile bu aygıttan Bilgisayarlarım klasörüne eklenen tüm klasörler kalıcı olarak silinir."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki adımlı kimlik doğrulamayı ayarladığınızda ve kimlik doğrulama uygulamanıza erişiminizi kaybettiğinizde oturum açmak için kullanabileceğiniz kurtarma kodları sağlıyoruz."
+        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları veriyoruz."
       ],
       "who": [
         "kim"
@@ -7682,6 +7682,12 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Emails (last 6 months)": [
+        "E-postalar (son 6 ay)"
+      ],
+      "Last 6 months only": [
+        "Sadece son 6 ay"
       ]
     },
     "Label for contact group color": {
@@ -9440,10 +9446,10 @@
         "Seçilmiş fotoğraflar “${ albumName }” albümünde zaten var."
       ],
       "Setting updated. Editors can change permissions and share.": [
-        "Ayarlar güncellendi. Düzenleyiciler izinleri değiştirebilir ve paylaşabilir."
+        "Ayarlar güncellendi. Düzenleyiciler paylaşabilir ve izinleri değiştirebilir."
       ],
       "Setting updated. Editors can't change permissions or share.": [
-        "Ayarlar güncellendi. Düzenleyiciler izinleri değiştiremez veya paylaşamaz."
+        "Ayarlar güncellendi. Düzenleyiciler paylaşamaz veya izinleri değiştiremez."
       ],
       "Share invitation accepted successfully": [
         "Paylaşma daveti kabul edildi"

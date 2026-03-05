@@ -3898,6 +3898,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 无法解密的名称"
+      ],
+      "Failed to change permissions settings": [
+        "更改权限设置失败"
       ]
     },
     "error": {
@@ -6814,6 +6817,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
+      ],
+      "Can edit": [
+        "可以编辑"
+      ],
+      "Can edit and manage access": [
+        "可以编辑并管理访问权限"
+      ],
+      "Can view and edit": [
+        "可以查看和编辑"
+      ],
+      "Can view only": [
+        "只能查看"
       ]
     },
     "info": {
@@ -9300,6 +9315,12 @@
       ],
       "Your settings have been changed successfully": [
         "设置已更改"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "设置已更新，编辑者可以更改权限和共享。"
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "设置已更新，编辑者无法更改权限或共享。"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

@@ -5593,7 +5593,7 @@
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Introduceți codul de verificare. ${ digit } cifre."
+        "Introduceți codul de verificare. Cifra ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Introduceți parola (ca administrator al organizației)."
@@ -7787,6 +7787,12 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Emails (last 6 months)": [
+        "Mesaje (ultimele 6 luni)"
+      ],
+      "Last 6 months only": [
+        "Doar ultimele 6 luni"
       ]
     },
     "Label for contact group color": {

@@ -3895,6 +3895,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 復号できない名前"
+      ],
+      "Cannot find move target": [
+        "移動先が見つかりません"
+      ],
+      "Failed to change permissions settings": [
+        "権限設定の変更に失敗しました"
       ]
     },
     "error": {
@@ -6791,6 +6797,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
+      ],
+      "Can edit": [
+        "編集可能"
+      ],
+      "Can edit and manage access": [
+        "編集・アクセス管理"
+      ],
+      "Can view and edit": [
+        "閲覧・編集"
+      ],
+      "Can view only": [
+        "閲覧のみ"
+      ],
+      "Can't write into folder": [
+        "フォルダーにデータを追加できません"
       ]
     },
     "info": {
@@ -7539,6 +7560,12 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Emails (last 6 months)": [
+        "メール (過去 6 か月)"
+      ],
+      "Last 6 months only": [
+        "過去 6 か月のみ"
       ]
     },
     "Label for contact group color": {
@@ -9274,6 +9301,12 @@
       ],
       "Your settings have been changed successfully": [
         "設定が正常に変更されました"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "設定を更新しました。編集者は共有・権限の変更ができます。"
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "設定を更新しました。編集者は共有・権限の変更ができません。"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

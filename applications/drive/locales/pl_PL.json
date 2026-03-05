@@ -3976,6 +3976,9 @@
     "fido2: Info": {
       "Security key": [
         "Klucz bezpieczeństwa"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Użyj klucza bezpieczeństwa powiązanego z kontem ${ BRAND_NAME }."
       ]
     },
     "fido2: Label": {
@@ -12656,6 +12659,11 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Darmowa wersja próbna zakończy się ${ textDate }. ${ action }"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
       ]
     }
   }

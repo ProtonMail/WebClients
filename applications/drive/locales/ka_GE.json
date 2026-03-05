@@ -1320,6 +1320,15 @@
       ],
       "Writing assistant": [
         "წერაში დამხმარე"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME }-ის ადგილები"
+      ],
+      "Dedicated VPN servers": [
+        "გამოყოფილი VPN სერვერები"
+      ],
+      "Writing assistant seats": [
+        "წერაში დამხმარის ადგილები"
       ]
     },
     "Alert": {
@@ -1511,6 +1520,18 @@
       ],
       "3 TB data storage": [
         "3 ტბ მეხსიერება"
+      ],
+      "Access advanced AI models": [
+        "წვდომა განვითარებულ ხი მოდელებთან"
+      ],
+      "Built-in 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Connect 10 devices at once": [
+        "დააკავშირეთ 10 მოწყობილობა ერთდროულად"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
       ]
     },
     "Billing cycle option": {
@@ -3832,6 +3853,15 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ არგაშიფვრადი სახელი"
+      ],
+      "Can't retrieve device name": [
+        "მოწყობილობის სახელის მიღება შეუძლებელია"
+      ],
+      "Cannot find move target": [
+        "გადატანის სამიზნე აღმოჩენილი არაა"
+      ],
+      "Data integrity check failed": [
+        "მონაცემთა მთლიანობის შემოწმება ჩავარდა"
       ]
     },
     "error": {
@@ -6673,6 +6703,15 @@
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
+      ],
+      "Can edit and manage access": [
+        "შეუძლია წვდომების ჩასწორება და მართვა"
+      ],
+      "Can't rename to same name": [
+        "სახელის გადარქმევა იგივე სახელზე შეუძლებელია"
+      ],
+      "Can't write into folder": [
+        "საქაღალდეში ჩაწერა შეუძლებელია"
       ]
     },
     "info": {
@@ -7424,6 +7463,12 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Emails (last 6 months)": [
+        "ელფოსტა (გასული 6 თვე)"
+      ],
+      "Last 6 months only": [
+        "მხოლოდ, ბოლო 6 თვე"
       ]
     },
     "Label for contact group color": {
@@ -9819,6 +9864,12 @@
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
+      ],
+      "Including ${ rate }% tax": [
+        "${ rate }% გადასახადის ჩათვლით"
+      ],
+      "Including ${ rate }% taxes": [
+        "${ rate }% გადასახადის ჩათვლით"
       ]
     },
     "Payments.Error": {
@@ -10481,6 +10532,12 @@
     "sheets_2025:Action": {
       "New spreadsheet": [
         "ახალი ელცხრილი"
+      ],
+      "Open in ${ appName }": [
+        "${ appName }-ში გახსნა"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "გახსნა ${ appName }-ში (ბეტა)"
       ]
     },
     "Signing preference for emails": {
