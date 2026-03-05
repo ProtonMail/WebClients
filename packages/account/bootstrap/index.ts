@@ -69,8 +69,9 @@ import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import type { MeetEventResponse } from '@proton/shared/lib/interfaces/Meet';
 import initLogicalProperties from '@proton/shared/lib/logical/logical';
 import { telemetry } from '@proton/shared/lib/telemetry';
-import { EVENTS, createCustomFetch, getUnleashConfig, setStandaloneUnleashClient } from '@proton/unleash';
+import { EVENTS, createCustomFetch, getUnleashConfig } from '@proton/unleash';
 import { UnleashClient } from '@proton/unleash/UnleashClient';
+import { setStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 import noop from '@proton/utils/noop';
 
 import { getCryptoWorkerOptions } from './cryptoWorkerOptions';

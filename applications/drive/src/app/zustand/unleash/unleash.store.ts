@@ -1,7 +1,7 @@
 import type { UnleashClient } from 'unleash-proxy-client';
 import { createStore } from 'zustand/vanilla';
 
-import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
+import type { FeatureFlag } from '@proton/unleash/Flags';
 import type { FeatureFlagVariant, FeatureFlagsWithVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 
 interface UnleashState {

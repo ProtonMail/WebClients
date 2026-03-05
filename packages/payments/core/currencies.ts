@@ -1,5 +1,5 @@
 import type { User, UserModel } from '@proton/shared/lib/interfaces';
-import type { FeatureFlag } from '@proton/unleash';
+import type { FeatureFlag } from '@proton/unleash/Flags';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { BillingAddress } from './billing-address/billing-address';
