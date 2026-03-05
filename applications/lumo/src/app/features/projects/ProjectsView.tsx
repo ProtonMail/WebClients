@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { SettingsLink, useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 
