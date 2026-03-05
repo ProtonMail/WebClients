@@ -8,7 +8,7 @@ import type { CleanTextFn, EncryptedSearchData, MigrateFn } from '../interface';
 import { getMigrationMap } from './contentMigrations';
 import { getOutdatedContentIterator } from './contentVersionHelpers';
 import { decryptESItem } from './decryptESItem';
-import { encryptAndWriteESItem } from './encryptAndWriteESItem';
+import { encryptAndWriteESItems } from './encryptAndWriteESItems';
 
 interface UpgradeContentProps {
     contentVersion: number;
@@ -22,11 +22,8 @@ interface UpgradeContentProps {
 const upgradeContent = async ({
     contentVersion,
     data,
-    originalEncryptedData,
-    esDB,
-    indexKey,
     migrationMap,
-}: UpgradeContentProps): Promise<void> => {
+}: UpgradeContentProps): Promise<EncryptedSearchData> => {
     let result = data;
     for (const [targetVersion, migrate] of migrationMap) {
         if (targetVersion > contentVersion) {
@@ -34,12 +31,7 @@ const upgradeContent = async ({
         }
     }
 
-    await encryptAndWriteESItem({
-        esDB,
-        indexKey,
-        item: result,
-        originalEncryptedData,
-    });
+    return result;
 };
 
 interface MigrateContentProps {
@@ -52,18 +44,13 @@ export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateConte
     const migrationMap = getMigrationMap(cleanText);
     const versionsRecord: Record<number, number> = {};
 
-    while (true) {
-        const array = await getOutdatedContentIterator(esDB);
-        if (array.length === 0) {
-            break;
-        }
-
+    let array = [];
+    while ((array = await getOutdatedContentIterator(esDB)).length !== 0) {
+        const updatedItems: { original: ESCiphertext; updated: EncryptedSearchData }[] = [];
         for (const data of array) {
             try {
                 const decrypted = await decryptESItem({ esDB, indexKey, itemID: data.key });
                 const hasVersion = data.value.version !== -1;
-
-                console.count('updating');
 
                 if (!decrypted) {
                     traceInitiativeError(
@@ -78,7 +65,7 @@ export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateConte
                 const contentVersion = hasVersion ? data.value.version : decrypted.content?.version || -1;
                 versionsRecord[contentVersion] = (versionsRecord[contentVersion] ?? 0) + 1;
 
-                await upgradeContent({
+                const result = await upgradeContent({
                     contentVersion,
                     esDB,
                     indexKey,
@@ -86,11 +73,15 @@ export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateConte
                     data: decrypted,
                     originalEncryptedData: data.value,
                 });
+
+                updatedItems.push({ updated: result, original: data.value });
             } catch (error) {
                 traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, error);
                 console.error(error);
             }
         }
+
+        await encryptAndWriteESItems({ esDB, indexKey, items: updatedItems });
     }
 
     console.log(`versionsRecord: ${JSON.stringify(versionsRecord)}`);
