@@ -1,6 +1,6 @@
 import { channel, eventChannel, runSaga } from 'redux-saga';
 
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/manager/constants';
+import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import * as itemRequests from '@proton/pass/lib/items/item.requests';
 import * as shareParser from '@proton/pass/lib/shares/share.parser';
 import { sharesEventNew } from '@proton/pass/store/actions';

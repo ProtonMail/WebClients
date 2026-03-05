@@ -3,11 +3,11 @@ import type { Task } from 'redux-saga';
 import { all, call, cancel, fork, select, take } from 'redux-saga/effects';
 
 import { isShareRemovedError } from '@proton/pass/lib/api/errors';
-import type { EventManagerEvent } from '@proton/pass/lib/events/manager/manager';
-import { processSharePollingError, processSharePollingEvent } from '@proton/pass/lib/events/v1/share-polling.processor';
+import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
 import { PendingFileLinkTracker } from '@proton/pass/lib/file-attachments/file-link.tracker';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { getShareEventsQuery, getShareLatestEventId } from '@proton/pass/lib/shares/share.requests';
+import { processSharePollingError, processSharePollingEvent } from '@proton/pass/lib/sync/v1/share-polling.processor';
 import { vaultDeleteSuccess } from '@proton/pass/store/actions';
 import type { ShareItem } from '@proton/pass/store/reducers/shares';
 import { selectAllShares, selectShare } from '@proton/pass/store/selectors';

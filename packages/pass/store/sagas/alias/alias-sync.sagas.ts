@@ -1,20 +1,12 @@
-import { put, select } from 'redux-saga/effects';
+import { put } from 'redux-saga/effects';
 
-import {
-    createAliasesFromPending,
-    enableAliasSync,
-    getAliasSyncStatus,
-    getPendingAliases,
-    toggleAliasStatus,
-} from '@proton/pass/lib/alias/alias.requests';
+import { enableAliasSync, getAliasSyncStatus, toggleAliasStatus } from '@proton/pass/lib/alias/alias.requests';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
+import { syncPendingAliases } from '@proton/pass/lib/sync/common/alias';
 import { aliasPendingCreate, aliasSyncEnable, aliasSyncStatus, aliasSyncStatusToggle } from '@proton/pass/store/actions';
 import { userAccessRequest } from '@proton/pass/store/actions/requests';
 import { requestInvalidate } from '@proton/pass/store/request/actions';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
-import { selectUserDefaultShareID } from '@proton/pass/store/selectors';
-import type { AliasPending, ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
 
 /* Will invalidate the `user-access` request as to re-request it
  * from the event channels soon as possible. */
@@ -27,25 +19,6 @@ const aliasSyncEnableSaga = createRequestSaga({
         return DefaultShareID;
     },
 });
-
-export function* syncPendingAliases(): Generator<unknown, ItemRevision[]> {
-    try {
-        const shareId: Maybe<string> = yield select(selectUserDefaultShareID);
-        if (!shareId) throw new Error('Could not resolve user default vault');
-
-        const pendingAliases: AliasPending[] = yield getPendingAliases();
-        const encryptedItems: ItemRevisionContentsResponse[] = yield createAliasesFromPending({
-            shareId,
-            pendingAliases,
-        });
-
-        const items: ItemRevision[] = yield Promise.all(encryptedItems.map(parseItemRevision.bind(null, shareId)));
-        return items;
-    } catch (error) {
-        logger.warn('[SL::Sync] Failed to create pending aliases', error);
-        throw error;
-    }
-}
 
 /** Gets all pending aliases from SimpleLogin and
  * attempts to create alias items for each of them */

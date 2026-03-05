@@ -1,8 +1,8 @@
 import { put, select } from 'redux-saga/effects';
 
-import type { EventProcessor } from '@proton/pass/lib/events/types';
 import { resolveGroupInvites, resolveUserInvites } from '@proton/pass/lib/invites/invite.requests';
 import { partitionGroupInvites } from '@proton/pass/lib/invites/invite.utils';
+import type { EventProcessor } from '@proton/pass/lib/sync/types';
 import { getShareAccessOptions, syncInvites } from '@proton/pass/store/actions';
 import { selectItemsByShareId, selectShare } from '@proton/pass/store/selectors';
 import type { GroupInvite, ItemRevision, Maybe, Share, SyncEventShareOutput, UserInvite } from '@proton/pass/types';
