@@ -8,7 +8,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import type { BottomBarProps } from '@proton/pass/components/Layout/Bar/BottomBar';
 import { BottomBar } from '@proton/pass/components/Layout/Bar/BottomBar';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
-import { clientBusy, clientOffline } from '@proton/pass/lib/client';
+import { clientOffline } from '@proton/pass/lib/client';
 import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { ConnectivityStatus, getConnectivityWarning } from '@proton/pass/lib/network/connectivity.utils';
 import { offlineResume } from '@proton/pass/store/actions/creators/client';
@@ -50,15 +50,17 @@ export const useConnectivityBar = (propsFactory: (status: ConnectivityStatus) =>
     return <BottomBar {...props} text={props.text ?? getConnectivityWarning(connectivity)} />;
 };
 
-export const useLobbyConnectivityBar = (status: AppStatus) =>
-    useConnectivityBar((connectivity) => ({
-        className: clsx('bg-danger fixed bottom-0 left-0'),
-        hidden: connectivity === ConnectivityStatus.ONLINE || clientBusy(status),
-        text:
-            connectivity === ConnectivityStatus.DOWNTIME
-                ? c('Info').t`Servers are unreachable`
-                : c('Info').t`No network connection`,
-    }));
+export const useLobbyConnectivityBar = () =>
+    useConnectivityBar((connectivity) => {
+        return {
+            className: clsx('bg-danger fixed bottom-0 left-0'),
+            hidden: connectivity === ConnectivityStatus.ONLINE,
+            text:
+                connectivity === ConnectivityStatus.DOWNTIME
+                    ? c('Info').t`Servers are unreachable`
+                    : c('Info').t`No network connection`,
+        };
+    });
 
 export const useAppConnectivityBar = (status: AppStatus, localID?: number) => {
     const offline = clientOffline(status);
