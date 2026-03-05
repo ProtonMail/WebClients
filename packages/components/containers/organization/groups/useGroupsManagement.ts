@@ -44,6 +44,8 @@ const INITIAL_FORM_VALUES = (organization?: Organization) => ({
 });
 
 const useGroupsManagement = (organization?: Organization): GroupsManagementReturn | undefined => {
+    const showMail = shouldShowMail(organization?.PlanName);
+
     const handleError = useErrorHandler();
     const [members] = useMembers();
     const [memberships, loadingMemberships] = useGroupMemberships();
@@ -91,8 +93,8 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     const suggestedAddressDomainName = useMemo(getSuggestedAddressDomainName, [organization]);
 
     const getSuggestedAddressDomainPart = (): DomainSuggestion => {
-        // case 1: simplest case, prefer custom domain if available
-        if (customDomains && customDomains.length > 0) {
+        // case 1: simplest case, prefer custom domain if available and mail is enabled
+        if (showMail && customDomains && customDomains.length > 0) {
             return {
                 domain: customDomains[0].DomainName,
                 source: 'customdomain',
@@ -136,7 +138,15 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
 
     const { domain: suggestedAddressDomainPart, source: suggestedAddressDomainSource } = useMemo(
         getSuggestedAddressDomainPart,
-        [organization, customDomains, pmMeDomain, loadingPmMeDomain, groupsProtonMeDomain, loadingGroupsProtonMeDomain]
+        [
+            organization,
+            customDomains,
+            pmMeDomain,
+            loadingPmMeDomain,
+            groupsProtonMeDomain,
+            loadingGroupsProtonMeDomain,
+            showMail,
+        ]
     );
 
     const [selectedDomain, setSelectedDomain] = useState<string | null>(null);
