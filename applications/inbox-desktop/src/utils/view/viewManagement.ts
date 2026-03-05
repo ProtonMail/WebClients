@@ -37,6 +37,7 @@ import { ThemeTypes } from "@proton/shared/lib/themes/constants";
 import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor } from "../../constants/zoom";
 import { addHashToCurrentURL } from "../urls/urlHelpers";
 import { isWindowValid } from "./windowUtils";
+import { profiler } from "../profiler/profiler";
 
 type ViewID = keyof URLConfig;
 
@@ -95,6 +96,7 @@ export const IGNORED_NET_ERROR_CODES = [NET_ERROR_CODE.ABORTED];
 
 export const viewCreationAppStartup = async () => {
     mainWindow = createBrowserWindow();
+    profiler.mark("window-created");
 
     // We need this for E2E tests because Playwright waits for something
     // to be loaded before connecting to the browser view.
@@ -107,6 +109,7 @@ export const viewCreationAppStartup = async () => {
     }
 
     createViews();
+    profiler.mark("views-created");
 
     const debouncedSaveWindowBounds = debounce(() => saveWindowBounds(mainWindow!), 1000);
     mainWindow.on("move", debouncedSaveWindowBounds);
@@ -160,6 +163,7 @@ export const viewCreationAppStartup = async () => {
         loadURL("mail", getAppURL().mail + `/inbox#mailto=${mailto}`).then(() => {
             showView("mail");
             mainWindow!.show();
+            profiler.markWindowShownAndWriteReport();
         });
         return;
     }
@@ -169,6 +173,7 @@ export const viewCreationAppStartup = async () => {
         loadURL("mail", getAppURL().mail + `/inbox#${openMail}`).then(() => {
             showView("mail");
             mainWindow!.show();
+            profiler.markWindowShownAndWriteReport();
         });
         return;
     }
@@ -178,6 +183,7 @@ export const viewCreationAppStartup = async () => {
         loadURL("calendar", getAppURL().calendar).then(() => {
             showView("calendar");
             mainWindow!.show();
+            profiler.markWindowShownAndWriteReport();
         });
         return;
     }
@@ -185,6 +191,7 @@ export const viewCreationAppStartup = async () => {
     loadURL("mail", getAppURL().mail).then(() => {
         showView("mail");
         mainWindow!.show();
+        profiler.markWindowShownAndWriteReport();
     });
 };
 
@@ -483,6 +490,7 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
         };
 
         const handleLoadFinish = () => {
+            profiler.mark("did-finish-load");
             viewLogger(viewID).debug("did-finish-load", url);
             cleanup();
         };
@@ -503,6 +511,7 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
         loadingTimeoutID = setTimeout(handleLoadTimeout, 30000);
         viewURLMap[viewID] = url;
         view.webContents.loadURL(url);
+        profiler.mark("load-url-called");
     });
 
     await loadingViewMap[viewID];
