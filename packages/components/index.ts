@@ -719,7 +719,6 @@ export { OverviewSection } from './containers/recovery/OverviewSection';
 export { SessionRecoverySection } from './containers/recovery/SessionRecoverySection';
 export { InviteSection } from './containers/referral/invite/InviteSection';
 export { ReferralInvitesContextProvider } from './containers/referral/ReferralInvitesContext';
-export { RewardSection } from './containers/referral/rewards/RewardSection';
 export { RightToLeftProvider } from './containers/rightToLeft/Provider';
 export { useRightToLeft } from './containers/rightToLeft/useRightToLeft';
 export { AddressVerificationSection } from './containers/security/AddressVerificationSection';

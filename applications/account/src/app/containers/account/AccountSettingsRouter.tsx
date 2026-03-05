@@ -41,7 +41,6 @@ import {
     PrivateMainSettingsArea,
     RecoveryPageTelemetry,
     ReferralInvitesContextProvider,
-    RewardSection,
     SentinelSection,
     SessionRecoverySection,
     SessionsSection,
@@ -65,6 +64,7 @@ import NonPrivateRecoverySection from '@proton/components/containers/account/Non
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import DashboardComparePlansCTA from '@proton/components/containers/payments/subscription/YourPlanSectionV2/DashboardComparePlansCTA';
 import SignInWithAnotherDeviceSettings from '@proton/components/containers/recovery/SignInWithAnotherDeviceSettings';
+import { RewardSection } from '@proton/components/containers/referral/rewards/RewardSection';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { recoveryIds } from './recoveryIds';
