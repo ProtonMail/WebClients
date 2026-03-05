@@ -7,7 +7,7 @@ import type { CONTENT_VERSION } from '../esBuild';
 
 export type MigrationToolParams = { user: UserModel; keyPassword: string };
 
-export type CleanTextFn = (text: string, includeQuote: boolean) => string;
+export type CleanTextFn = (text: string, includeQuote: boolean) => Promise<string>;
 
 export type MigrationToolAPI = {
     migration: (params: MigrationToolParams, cleanText: CleanTextFn) => Promise<void>;
@@ -21,7 +21,7 @@ export type EncryptedSearchData = {
 
 export type ESItemCursorResult = { key: string; value: ESCiphertext };
 
-export type MigrateFn = (data: EncryptedSearchData) => EncryptedSearchData;
+export type MigrateFn = (data: EncryptedSearchData) => Promise<EncryptedSearchData>;
 
 export type MigrationMethod = { targetVersion: CONTENT_VERSION; fn: MigrateFn };
 
