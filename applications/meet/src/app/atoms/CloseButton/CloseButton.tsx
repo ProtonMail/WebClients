@@ -4,6 +4,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import clsx from '@proton/utils/clsx';
 
+import './CloseButton.scss';
+
 interface CloseButtonProps {
     onClose: () => void;
     className?: string;
@@ -23,7 +25,7 @@ export const CloseButton = ({ onClose, className, style }: CloseButtonProps) => 
             aria-label={c('Alt').t`Close`}
             onClick={onClose}
         >
-            <IcCross size={5} alt={c('Action').t`Close`} />
+            <IcCross size={4} alt={c('Action').t`Close`} />
         </Button>
     );
 };
