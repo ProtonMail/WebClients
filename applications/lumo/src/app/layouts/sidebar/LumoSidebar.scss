@@ -30,6 +30,7 @@ im.$media-expressions: $media-expressions;
 
 	@include im.media('<=small') {
 		background-color: var(--background-composer-mobile);
+		gap: 4px;
 	}
 
 	// Remove list styling from Lumo Plus button
@@ -386,6 +387,7 @@ im.$media-expressions: $media-expressions;
 // 	}
 // }
 
+// overrides for UserDropdownButton.scss
 .user-dropdown-button {
 	padding: 4px;
 	flex-direction: row-reverse;
@@ -393,6 +395,10 @@ im.$media-expressions: $media-expressions;
 	.user-dropdown-text {
 		// display: revert;
 		text-align: start;
+
+		@include im.media('>=small', '<=large') {
+			display: block;
+		}
 	}
 
 	.user-initials {
