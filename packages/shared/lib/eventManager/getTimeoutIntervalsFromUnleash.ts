@@ -1,4 +1,4 @@
-import { CommonFeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
+import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 import clamp from '@proton/utils/clamp';
 
