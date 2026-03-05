@@ -34,7 +34,7 @@ import { type DirectMember, MemberType } from './interfaces';
 
 export type SharingModalInnerProps = {
     nodeUid: string;
-    drive?: ProtonDriveClient;
+    drive?: Pick<ProtonDriveClient, 'getSharingInfo' | 'getNode' | 'unshareNode' | 'shareNode' | 'resendInvitation'>;
     isResharing?: boolean; // Sharing from "shared with me" section
 };
 
