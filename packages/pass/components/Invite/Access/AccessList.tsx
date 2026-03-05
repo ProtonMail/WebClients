@@ -10,6 +10,7 @@ import { PendingExistingMember, PendingNewMember } from '@proton/pass/components
 import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { type AccessDTO, AccessTarget } from '@proton/pass/lib/access/types';
+import { isGroupInvite } from '@proton/pass/lib/invites/invite.utils';
 import type { NewUserPendingInvite, PendingInvite, ShareMember as ShareMemberType } from '@proton/pass/types';
 import { OrganizationItemShareMode } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
@@ -83,6 +84,7 @@ export const AccessList: FC<Props> = ({
                                     canManage={canManage}
                                     className="rounded-none"
                                     email={item.invite.invitedEmail}
+                                    isGroup={isGroupInvite(item.invite)}
                                     itemId={itemId}
                                     newUserInviteId={item.invite.newUserInviteId}
                                     shareId={shareId}
@@ -97,6 +99,7 @@ export const AccessList: FC<Props> = ({
                                     canManage={canManage}
                                     className="rounded-none"
                                     email={item.invite.invitedEmail}
+                                    isGroup={isGroupInvite(item.invite)}
                                     inviteId={item.invite.inviteId}
                                     itemId={itemId}
                                     shareId={shareId}

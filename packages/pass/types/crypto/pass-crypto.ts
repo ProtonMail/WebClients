@@ -1,4 +1,5 @@
 import type { CreateSecureLinkData, FileDescriptorProcessResult } from '@proton/pass/lib/crypto/processes';
+import type { Group } from '@proton/pass/lib/groups/groups.types';
 import type {
     EncodedItemKeyRotation,
     InviteAcceptRequest,
@@ -25,7 +26,6 @@ import type {
     AddressKey,
     DecryptedAddressKey,
     DecryptedKey,
-    Group,
     OrganizationKey,
     User,
 } from '@proton/shared/lib/interfaces';
@@ -65,10 +65,9 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         snapshot?: SerializedCryptoContext<PassCryptoSnapshot>;
         user: User;
         clear?: boolean;
-        groups?: Group[];
     }) => Promise<void>;
     clear: () => void;
-    setGroupKeys: (groups: Group[]) => void;
+    setGroupKeys: (group: Group) => void;
     getShareManager: (shareId: ShareId) => ShareManager;
     createVault: (content: Uint8Array<ArrayBuffer>) => Promise<VaultCreateRequest>;
     updateVault: (data: { shareId: ShareId; content: Uint8Array<ArrayBuffer> }) => Promise<VaultUpdateRequest>;

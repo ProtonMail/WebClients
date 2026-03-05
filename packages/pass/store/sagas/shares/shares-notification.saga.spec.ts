@@ -1,12 +1,12 @@
 import type { Task } from 'redux-saga';
 import { runSaga } from 'redux-saga';
 
+import type { Group } from '@proton/pass/lib/groups/groups.types';
 import { shareEventDelete, sharesEventNew } from '@proton/pass/store/actions';
 import { sagaSetup } from '@proton/pass/store/sagas/testing';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { ItemRevision, Share } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
-import type { Group } from '@proton/shared/lib/interfaces';
 
 import notificationForShares from './shares-notification.saga';
 
@@ -14,14 +14,14 @@ describe('notif-shares saga', () => {
     const onNotification = jest.fn();
 
     const group = {
-        ID: 'groupId',
-        Name: 'groupName',
+        groupId: 'groupId',
+        name: 'groupName',
     } as Group;
 
     const vault = {
         shareId: 'vaultShareId',
         targetType: ShareType.Vault,
-        groupId: group.ID,
+        groupId: group.groupId,
         content: { name: 'vaultName' },
     } as Share<ShareType.Vault>;
 
@@ -29,7 +29,7 @@ describe('notif-shares saga', () => {
         shareId: 'itemShareId',
         targetId: 'itemId',
         targetType: ShareType.Item,
-        groupId: group.ID,
+        groupId: group.groupId,
     } as Share<ShareType.Item>;
 
     const itemRevision = { itemId: item.targetId, shareId: item.shareId, data: { metadata: { name: 'itemName' } } } as ItemRevision;
@@ -40,7 +40,7 @@ describe('notif-shares saga', () => {
 
     beforeEach(() => {
         saga = sagaSetup({
-            organization: { groups: [group] },
+            groups: { [group.groupId]: group },
             items: { byShareId: { [item.shareId]: { [item.targetId]: itemRevision } }, byOptimisticId: {} },
             shares: { [vault.shareId]: vault, [item.shareId]: item },
         });
@@ -69,7 +69,7 @@ describe('notif-shares saga', () => {
             dispatch(sharesEventNew({ shares: { [vault.shareId]: vault }, items: {} }));
             expect(onNotification).toHaveBeenCalled();
             expect(onNotification.mock.lastCall[0].text).toBe(
-                `You now have access to "Vault ${vault.content.name}" because your group ${group.Name} has been granted access.`
+                `You now have access to "Vault ${vault.content.name}" because your group ${group.name} has been granted access.`
             );
         });
 
@@ -77,7 +77,7 @@ describe('notif-shares saga', () => {
             dispatch(sharesEventNew({ shares: { [item.shareId]: item }, items: {} }));
             expect(onNotification).toHaveBeenCalled();
             expect(onNotification.mock.lastCall[0].text).toBe(
-                `You now have access to "Item ${itemRevision.data.metadata.name}" because your group ${group.Name} has been granted access.`
+                `You now have access to "Item ${itemRevision.data.metadata.name}" because your group ${group.name} has been granted access.`
             );
         });
 
@@ -85,10 +85,10 @@ describe('notif-shares saga', () => {
             dispatch(sharesEventNew({ shares: { [vault.shareId]: vault, [item.shareId]: item }, items: {} }));
             expect(onNotification).toHaveBeenCalledTimes(2);
             expect(onNotification.mock.calls[0][0].text).toBe(
-                `You now have access to "Vault ${vault.content.name}" because your group ${group.Name} has been granted access.`
+                `You now have access to "Vault ${vault.content.name}" because your group ${group.name} has been granted access.`
             );
             expect(onNotification.mock.calls[1][0].text).toBe(
-                `You now have access to "Item ${itemRevision.data.metadata.name}" because your group ${group.Name} has been granted access.`
+                `You now have access to "Item ${itemRevision.data.metadata.name}" because your group ${group.name} has been granted access.`
             );
         });
     });
@@ -116,7 +116,7 @@ describe('notif-shares saga', () => {
             dispatch(shareEventDelete(vault));
             expect(onNotification).toHaveBeenCalled();
             expect(onNotification.mock.lastCall[0].text).toBe(
-                `You no longer have access to some vaults or items because your group ${group.Name}'s access was removed.`
+                `You no longer have access to some vaults or items because your group ${group.name}'s access was removed.`
             );
         });
 
@@ -124,7 +124,7 @@ describe('notif-shares saga', () => {
             dispatch(shareEventDelete(item));
             expect(onNotification).toHaveBeenCalled();
             expect(onNotification.mock.lastCall[0].text).toBe(
-                `You no longer have access to some vaults or items because your group ${group.Name}'s access was removed.`
+                `You no longer have access to some vaults or items because your group ${group.name}'s access was removed.`
             );
         });
     });

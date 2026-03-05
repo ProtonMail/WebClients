@@ -6,7 +6,8 @@ import { authStore } from '@proton/pass/lib/auth/store';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { serializeShareManagers } from '@proton/pass/lib/crypto/utils/seralize';
-import { getOrganizationGroups } from '@proton/pass/store/actions/creators/organization';
+import type { Group } from '@proton/pass/lib/groups/groups.types';
+import { getGroup } from '@proton/pass/store/actions/creators/groups';
 import { asyncRequestDispatcherFactory } from '@proton/pass/store/request/utils';
 import type { State } from '@proton/pass/store/types';
 import type {
@@ -26,7 +27,7 @@ import { first } from '@proton/pass/utils/array/first';
 import { unwrap } from '@proton/pass/utils/fp/promises';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { entriesMap } from '@proton/pass/utils/object/map';
-import type { DecryptedAddressKey, Group, OrganizationKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedAddressKey, OrganizationKey } from '@proton/shared/lib/interfaces';
 import {
     getDecryptedAddressKeysHelper,
     getDecryptedOrganizationKeyHelper,
@@ -114,11 +115,9 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
     };
 
     /** When user is hydrated, its groups are loaded and their keys stored in context */
-    const setGroupKeys = (groups: Group[]) => {
-        context.groupKeys = new Map();
-        groups.forEach((group) => {
-            context.groupKeys.set(group.ID, group.Address.Keys);
-        });
+    const setGroupKeys = (group: Group) => {
+        assertHydrated(context);
+        context.groupKeys.set(group.groupId, group.keys);
     };
 
     /** When asking for a group keys, first check the context
@@ -128,9 +127,12 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
         let groupKeys = context.groupKeys.get(groupId);
 
         if (groupKeys === undefined && store) {
-            // There's many cache layer but if we truly miss keys because they are not loaded
-            // This will trigger the request and update the group keys on success
-            await asyncRequestDispatcherFactory(store.dispatch)(getOrganizationGroups);
+            /** There's many cache layer but if we truly miss keys because they are not loaded
+             * This will trigger the request and update the group keys on success. NOTE: on
+             * success `getOrganizationGroup` will hydrate the crypto `groupKeys` accordingly.
+             * see: `packages/pass/store/sagas/organization/organization.group.saga.ts` */
+            const asyncDispatch = asyncRequestDispatcherFactory(store.dispatch);
+            await asyncDispatch(getGroup, groupId);
             groupKeys = context.groupKeys.get(groupId);
         }
 
@@ -181,7 +183,7 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
 
         getContext: () => context,
 
-        async hydrate({ user, addresses, keyPassword, snapshot, groups, clear }) {
+        async hydrate({ user, addresses, keyPassword, snapshot, clear }) {
             logger.info('[PassCrypto] Hydrating crypto state');
 
             if (clear) worker.clear();
@@ -198,8 +200,6 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
                 context.primaryAddress = activeAddresses[0];
                 context.userKeys = userKeys;
                 context.primaryUserKey = userKeys[0];
-
-                if (groups) this.setGroupKeys(groups);
 
                 if (snapshot) {
                     const entries = snapshot.shareManagers as [string, SerializedCryptoContext<ShareContext>][];
