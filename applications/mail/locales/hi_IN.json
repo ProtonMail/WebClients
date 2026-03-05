@@ -4001,6 +4001,9 @@
       "Something went wrong": [
         "कुछ गलत हो गया"
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "जब अतिरिक्त पासवर्ड सक्षम हो, तो नकली-नाम प्रबंधन केवल ${ PASS_APP_NAME } में किया जा सकता है।"
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "आपका अभी तक कोई संपर्क नहीं है। एक नया संपर्क बनाकर प्रारंभ करें।"
       ]
@@ -9111,14 +9114,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "सभी नकली-नाम"
+      ],
       "Create alias": [
         "नकली-नाम बनाएं"
+      ],
+      "Create an alias": [
+        "नकली-नाम बनाएं"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "तुरंत नकली-नाम उत्पन्न करें, और आसानी से नकली-नामों और पासवर्डों को संभाले।"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email नकलीनाम"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email नकली-नाम ईमेल पता शेयर किए बिना ऑनलाइन चीजों के लिए साइनअप करने की सुविधा देता है। ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "नया नकली-नाम"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } खोलें"
+      ],
+      "Protect your online identity": [
+        "अपनी ऑनलाइन पहचान सुरक्षित रखें"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } आज़माएँ"
       ],
       "Used on Amazon for shopping, etc.": [
         "अमेज़न पर शॉपिंग आदि के लिए उपयोग किया जाता है।"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "जब आपसे आपका ईमेल पता पूछा जाए, तो इसके बजाय यह उपनाम दें। उपनाम ${ passLink } द्वारा प्रदान किए जाते हैं।"
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(${ PASS_APP_NAME } खुल जाएगा)"
       ]
     },
     "Security Center - Action": {
@@ -9939,6 +9974,9 @@
       "Address verification disabled": [
         "पता सत्यापन अक्षम"
       ],
+      "Alias copied to clipboard": [
+        "नकली-नाम क्लिपबोर्ड पर कॉपी किया गया"
+      ],
       "Billing details updated": [
         "बिलिंग विवरण अपडेट हुआ"
       ],
@@ -10015,6 +10053,9 @@
       ],
       "Labels applied.": [
         "लेबल लागू किए गए।"
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "आपके सबसे पुराने तिजोरी में स्टोर किया अंतिम संशोधित प्रकारांतर"
       ],
       "Mail list unsubscribed": [
         "मेल सूची सदस्यता समाप्त"

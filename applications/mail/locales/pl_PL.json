@@ -318,6 +318,9 @@
       "Copy addresses": [
         "Kopiuj adresy"
       ],
+      "Copy alias “${ name }”": [
+        "Kopiuj alias “${ name }”"
+      ],
       "Copy email to clipboard": [
         "Kopiuj adres e-mail do schowka"
       ],
@@ -5025,6 +5028,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nie możemy załadować strony. Odśwież stronę lub sprawdź swoje połączenie."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Po włączeniu dodatkowego hasła zarządzanie aliasami dostępne jest tylko w ${ PASS_APP_NAME }."
+      ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Nie masz jeszcze żadnego kontaktu. Zacznij od utworzenia nowego kontaktu"
       ]
@@ -5250,7 +5256,15 @@
         "Błyskawiczne prędkości"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Użyj klucza bezpieczeństwa powiązanego z kontem ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Klucz bezpieczeństwa"
       ]
@@ -12437,14 +12451,46 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Wszystkie aliasy"
+      ],
       "Create alias": [
         "Utwórz alias"
+      ],
+      "Create an alias": [
+        "Utwórz alias"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Generuj aliasy \"w locie\" i zarządzaj aliasami oraz hasłami."
+      ],
+      "Hide-my-email aliases": [
+        "Aliasy hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Aliasy hide-my-email pozwalają zakładać konta online bez udostępniania adresu e-mail. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Nowy alias"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Otwórz ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Chroń swoją tożsamość online"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Wypróbuj ${ PASS_APP_NAME }"
       ],
       "Used on Amazon for shopping, etc.": [
         "Używany w Amazon do zakupów itp."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Użyj aliasu, zamiast adresu e-mail. Aliasy dostarcza ${ passLink }."
+      ]
+    },
+    "Security Center (link to Pass App)": {
+      "(will open ${ PASS_APP_NAME })": [
+        "(otworzy ${ PASS_APP_NAME })"
       ]
     },
     "Security Center - Action": {
@@ -13733,6 +13779,9 @@
       "Address verification disabled": [
         "Weryfikacja adresu została wyłączona"
       ],
+      "Alias copied to clipboard": [
+        "Alias został skopiowany do schowka"
+      ],
       "Alias saved and copied": [
         "Alias został zapisany i skopiowany"
       ],
@@ -13825,6 +13874,9 @@
       ],
       "Labels applied.": [
         "Etykiety zostały zastosowane."
+      ],
+      "Last modified aliases stored in your oldest vault": [
+        "Ostatnio zmodyfikowane aliasy są przechowywane w najstarszym sejfie"
       ],
       "Mail list unsubscribed": [
         "Subskrypcja została anulowana"
