@@ -19,7 +19,7 @@ export const getGroup = requestActionsFactory<string, Group, unknown>('groups::g
 
 export const getGroupMembers = requestActionsFactory<string, GroupMembersResponse>('groups::members')({
     key: identity,
-    success: { config: { maxAge: 15 * UNIX_MINUTE, data: null, hot: true } },
+    success: { config: { maxAge: 15 * UNIX_MINUTE, hot: true } },
     failure: {
         prepare: (error, payload) =>
             withNotification({
