@@ -12,7 +12,7 @@ import { handleDocsCustomPassword } from '@proton/shared/lib/drive/sharing/publi
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
 import { useUpsellFloatingModal } from '../components/modals/UpsellFloatingModal';

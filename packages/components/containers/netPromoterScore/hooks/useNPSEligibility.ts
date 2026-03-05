@@ -3,7 +3,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useFeature } from '@proton/features';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { getFeatureCode, isAccountOlderThanMinimum } from '../helpers';
 import type { NPSApplication } from '../interface';

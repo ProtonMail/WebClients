@@ -20,7 +20,7 @@ import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { DIRECTION, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 import { getRecipients, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import { sanitizeComposerReply } from '@proton/shared/lib/sanitize/purify';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import type { ComposerReturnType } from 'proton-mail/helpers/composer/contentFromComposerMessage';

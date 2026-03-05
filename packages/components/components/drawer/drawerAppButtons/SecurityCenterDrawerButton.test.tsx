@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { ThemeColor } from '@proton/colors/types';
 import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import { baseUseSelector } from '@proton/react-redux-store';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import SecurityCenterDrawerAppButton from '../drawerAppButtons/SecurityCenterDrawerAppButton';
 import {

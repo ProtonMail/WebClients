@@ -4,7 +4,7 @@ import useApi from '@proton/components/hooks/useApi';
 import { FeatureCode, useFeature } from '@proton/features';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { sendSecurityCenterReport } from '../securityCenterTelemetry';
 import AccountSecurityCard from './AccountSecurityCard';

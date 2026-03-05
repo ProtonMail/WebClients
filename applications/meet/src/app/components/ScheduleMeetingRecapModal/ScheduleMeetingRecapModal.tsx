@@ -18,7 +18,7 @@ import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { formatDate, formatTimeHHMM } from '../../utils/timeFormat';

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetContext } from '../contexts/MeetContext';
 import { useIsLocalParticipantAdmin } from './useIsLocalParticipantAdmin';

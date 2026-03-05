@@ -1,7 +1,7 @@
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getItem } from '@proton/shared/lib/helpers/storage';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import RecipientType from 'proton-mail/components/message/recipients/RecipientType';
 import { hasLabel } from 'proton-mail/helpers/elements';

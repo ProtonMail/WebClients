@@ -6,7 +6,8 @@ import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler'
 import { CYCLE } from '@proton/payments';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { redirectTo } from '@proton/shared/lib/helpers/browser';
-import { useFlag, useFlagsStatus } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
+import { useFlagsStatus } from '@proton/unleash';
 
 import { usePrefetchGenerateRecoveryKit } from '../../../containers/recoveryPhrase/useRecoveryKitDownload';
 import { SignupHumanVerification, SignupType } from '../../../signup/interfaces';

@@ -5,7 +5,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { normalize } from '@proton/shared/lib/helpers/string';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useUrlifyString } from '../../hooks/useUrlifyString';

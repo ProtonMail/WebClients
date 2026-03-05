@@ -9,7 +9,7 @@ import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authenticatio
 import { useLocation } from 'react-router-dom-v5-compat'
 import { useIsSheetsEnabled } from './misc'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import useFlag from '@proton/unleash/useFlag'
+import { useFlag } from '@proton/unleash/useFlag'
 
 const DocsUrlContext = createContext<{
   searchParams: URLSearchParams

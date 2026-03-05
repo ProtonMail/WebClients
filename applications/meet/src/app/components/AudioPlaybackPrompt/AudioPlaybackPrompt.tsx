@@ -2,7 +2,7 @@ import { useStartAudio } from '@livekit/components-react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import './AudioPlaybackPrompt.scss';
 

@@ -1,6 +1,6 @@
 import { UnleashClient as OriginalUnleashClient } from '@unleash/proxy-client-react';
 
-import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
+import type { FeatureFlag } from './UnleashFeatureFlags';
 
 class UnleashClient extends OriginalUnleashClient {
     isEnabled = (flag: FeatureFlag) => {

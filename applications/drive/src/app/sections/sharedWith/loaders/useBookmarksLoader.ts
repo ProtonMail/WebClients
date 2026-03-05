@@ -5,7 +5,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { useNotifications } from '@proton/components';
 import { useDrive } from '@proton/drive/index';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getBookmark } from '../../../utils/sdk/getBookmark';

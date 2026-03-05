@@ -8,7 +8,7 @@ import { getAppHref, getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { DRIVE_PRICING_PAGE, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls';
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import config from '../../../config';
 import { useDriveFreePromo } from '../../../hooks/payments/useDriveFreePromo';

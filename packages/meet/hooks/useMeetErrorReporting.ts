@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import type { SeverityLevel } from '@sentry/browser';
 
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 interface ReportMeetErrorOptions {
     level?: SeverityLevel;

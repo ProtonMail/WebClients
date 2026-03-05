@@ -39,7 +39,7 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isBounced } from '@proton/shared/lib/mail/messages';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 

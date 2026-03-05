@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { SettingsLink } from '@proton/components';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetContext } from '../../contexts/MeetContext';
 import { UpgradeIcon } from '../UpgradeIcon/UpgradeIcon';

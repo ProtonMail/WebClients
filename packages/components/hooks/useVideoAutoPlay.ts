@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 const hasUserActivation = (nav: Navigator): nav is Navigator & { userActivation: { hasBeenActive: boolean } } => {
     return 'userActivation' in nav && nav.userActivation !== undefined;

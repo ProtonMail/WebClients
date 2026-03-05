@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useVideoAutoPlay } from './useVideoAutoPlay';
 

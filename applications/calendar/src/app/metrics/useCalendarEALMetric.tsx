@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 import metrics from '@proton/metrics';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 type ActionType = 'delete' | 'edit';
 

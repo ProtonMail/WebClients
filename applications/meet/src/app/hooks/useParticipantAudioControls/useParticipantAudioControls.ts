@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useRoomContext } from '@livekit/components-react';
 
 import { useMeetErrorReporting } from '@proton/meet';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { AudioTrackSubscriptionManager } from '../../utils/subscriptionManagers/AudioTrackSubscriptionManager';
 
