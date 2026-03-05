@@ -1,6 +1,7 @@
 import { type FC, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
+import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
@@ -21,6 +22,7 @@ export const AppGuard: FC = () => {
     const dispatch = useDispatch();
     const state = useAppState();
     const authStore = useAuthStore();
+    const auth = useAuthService();
 
     const online = useOnline();
     const updateAvailable = useServiceWorkerState()?.updateAvailable ?? false;
@@ -30,6 +32,17 @@ export const AppGuard: FC = () => {
         const { status } = AppStateManager.getState();
         if (online && clientOffline(status)) dispatch(offlineResume.intent({ localID }));
     }, [online]);
+
+    /** Auto lock when the desktop app hide the window.
+     * On Web, ctxBridge will be undefined and the rest will be ignored */
+    useEffect(
+        () =>
+            window.ctxBridge?.onWindowHide(async () => {
+                const mode = authStore?.getLockMode();
+                if (mode) await auth.lock(mode, { soft: true });
+            }),
+        []
+    );
 
     return (
         <>
