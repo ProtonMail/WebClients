@@ -10,7 +10,6 @@ import { IcFolder } from '@proton/icons/icons/IcFolder';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 
 import { DismissedFeaturePill } from '../../components/DismissedFeaturePill';
-import { LumoLink } from '../../components/Links/LumoLink';
 import { NewProjectModal, useProjects } from '../../features/projects';
 import { ProjectActionsDropdown } from '../../features/projects/ProjectActionsDropdown';
 import { getProjectCategory } from '../../features/projects/constants';
@@ -18,6 +17,9 @@ import { ProjectLimitModal } from '../../features/projects/modals/ProjectLimitMo
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
+import { SidebarNavList } from './components/SidebarNavList';
+
+import './ProjectsSidebarSection.scss';
 
 interface ProjectsSidebarSectionProps {
     showText: boolean;
@@ -219,39 +221,24 @@ export const ProjectsSidebarSection = ({ showText, onItemClick }: ProjectsSideba
             {!isGuest && isExpanded && showText && (
                 <div className="projects-list">
                     {projects.length > 0 && (
-                        <div className="flex flex-column flex-nowrap gap-0 shrink-0">
-                            {projects.slice(0, 5).map((project) => {
+                        <SidebarNavList
+                            items={projects.slice(0, 5).map((project) => {
                                 const category = getProjectCategory(project.icon);
-                                const isSelected = currentProjectId === project.id;
-
-                                return (
-                                    <li
-                                        key={project.id}
-                                        className={clsx(
-                                            'relative group-hover-hide-container group-hover-opacity-container flex items-center shrink-0 navigation-link w-full',
-                                            'hover:bg-weak rounded-md transition-colors',
-                                            isSelected && 'is-active bg-norm-weak'
-                                        )}
-                                    >
-                                        <LumoLink
-                                            to={`/projects/${project.id}`}
-                                            className="flex items-center flex-1 px-3 py-2 text-sm text-ellipsis hover:text-primary"
-                                            onClick={onItemClick}
-                                        >
-                                            <div className="project-icon-small color-norm mr-2 flex-shrink-0">
-                                                <Icon name={category.icon as any} size={4} className="color-white" />
-                                            </div>
-                                            <span className="text-ellipsis flex-1" title={project.name}>
-                                                {project.name}
-                                            </span>
-                                        </LumoLink>
-                                        <div className="flex-shrink-0">
-                                            <ProjectActionsDropdown project={project} />
+                                return {
+                                    id: project.id,
+                                    to: `/projects/${project.id}`,
+                                    label: project.name,
+                                    isSelected: currentProjectId === project.id,
+                                    leadingContent: (
+                                        <div className="project-icon-small color-norm flex-shrink-0">
+                                            <Icon name={category.icon as any} size={4} className="color-white" />
                                         </div>
-                                    </li>
-                                );
+                                    ),
+                                    trailingContent: <ProjectActionsDropdown project={project} />,
+                                };
                             })}
-                        </div>
+                            onItemClick={onItemClick}
+                        />
                     )}
                     {projects.length > 5 && (
                         <button

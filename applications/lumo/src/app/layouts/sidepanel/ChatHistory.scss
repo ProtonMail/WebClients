@@ -1,0 +1,16 @@
+// Prevent text reflow during sidebar transitions by maintaining fixed layout
+.chat-history-container {
+	position: absolute;
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	block-size: 100%;
+	inline-size: 100%;
+	max-inline-size: 100%;
+	min-inline-size: 235px;
+
+	// Enable scrolling for content overflow
+	overflow: hidden auto;
+
+	// Hardware acceleration for smooth transitions
+	transform: translateZ(0);
+}
