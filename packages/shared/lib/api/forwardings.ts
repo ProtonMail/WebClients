@@ -1,4 +1,4 @@
-import type { SIEVE_VERSION, SieveBranch } from '@proton/sieve/src/interface';
+import type { SIEVE_VERSION, SieveBranch } from '@proton/sieve/types';
 
 import type {
     Api,
