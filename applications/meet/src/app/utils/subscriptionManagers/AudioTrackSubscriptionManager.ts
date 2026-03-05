@@ -513,8 +513,6 @@ export class AudioTrackSubscriptionManager {
         }
 
         this.isHealthCheckRunning = true;
-        // eslint-disable-next-line no-console
-        console.log('Running audio track state health check v3');
         try {
             const stats = await subscriberPC.getStats();
             const currentCacheValues = Array.from(this.subscribedMicrophoneTrackPublications.values());
