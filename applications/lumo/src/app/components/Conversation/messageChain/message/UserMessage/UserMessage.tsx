@@ -212,7 +212,7 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
     return (
         <div
             className={clsx(
-                'user-msg-container markdown-rendering *:min-size-auto gap-2 rounded-xl bg-strong p-4 min-h-custom relative group-hover-opacity-container',
+                'user-msg-container markdown-rendering *:min-size-auto gap-2 rounded-xl p-4 min-h-custom relative',
                 isEditing && 'w-full'
             )}
             style={{ '--min-h-custom': '3.25rem' /*52px*/ }} //to prevent the size change when buttons are shown on hover
