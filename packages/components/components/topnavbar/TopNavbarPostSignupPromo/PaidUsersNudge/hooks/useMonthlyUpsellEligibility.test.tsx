@@ -5,7 +5,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useFeature from '@proton/features/useFeature';
 import { CYCLE, PLANS, type Subscription, SubscriptionPlatform } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { HIDE_OFFER } from '../helpers/interface';
 import { paidConfig } from '../montlyPaidUserNudgeConfig';

@@ -9,7 +9,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
 import ZoomLogo from '@proton/styles/assets/img/brand/zoom.svg';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { AccessToggle } from './AccessToggle';
 

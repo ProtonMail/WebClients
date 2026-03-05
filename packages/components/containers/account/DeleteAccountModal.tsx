@@ -35,7 +35,7 @@ import { ACCOUNT_DELETION_REASONS, BRAND_NAME } from '@proton/shared/lib/constan
 import { minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

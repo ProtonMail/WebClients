@@ -3,7 +3,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { getIsB2BAudienceFromPlan } from '@proton/payments';
 import { getIsBYOEAccount } from '@proton/shared/lib/keys';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 const useBYOEFeatureStatus = (
     authorizeBYOEOnlyAccounts = true // In Settings, for example, we want to show BYOE options to BYOE only accounts. However, in the checklist, only normal accounts can see the option

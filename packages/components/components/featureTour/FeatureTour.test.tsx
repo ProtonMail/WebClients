@@ -25,7 +25,7 @@ describe('FeatureTour', () => {
 
     beforeEach(() => {
         jest.clearAllMocks();
-        useFlagSpy = jest.spyOn(useFlagModule, 'default').mockReturnValue(true);
+        useFlagSpy = jest.spyOn(useFlagModule, 'useFlag').mockReturnValue(true);
     });
 
     afterEach(() => {

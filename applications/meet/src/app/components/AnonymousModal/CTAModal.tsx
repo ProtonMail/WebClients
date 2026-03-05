@@ -12,7 +12,7 @@ import scheduleIcon from '@proton/styles/assets/img/meet/schedule-icon.png';
 import upsellModalIcon from '@proton/styles/assets/img/meet/upsell-modal-icon.svg';
 import upsellRoomIcon from '@proton/styles/assets/img/meet/upsell-room-icon.svg';
 import upsellScheduleIcon from '@proton/styles/assets/img/meet/upsell-schedule-icon.svg';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { MeetSignIn } from '../SignIn/SignIn';

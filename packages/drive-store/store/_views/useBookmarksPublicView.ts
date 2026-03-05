@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import useLoading from '@proton/hooks/useLoading';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import usePublicToken from '../../hooks/drive/usePublicToken';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';

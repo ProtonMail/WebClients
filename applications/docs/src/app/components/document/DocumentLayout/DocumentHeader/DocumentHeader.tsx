@@ -23,7 +23,7 @@ import type {
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
-import useFlag from '@proton/unleash/useFlag'
+import { useFlag } from '@proton/unleash/useFlag'
 import clsx from '@proton/utils/clsx'
 import { useIsSheetsEditorEnabled } from '~/utils/misc'
 

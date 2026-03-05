@@ -14,7 +14,7 @@ import {
     togglePopupState,
     toggleSideBarState,
 } from '@proton/meet/store/slices/uiStateSlice';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';

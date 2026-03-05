@@ -2,7 +2,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { isUserEligibleForBusySlots } from '@proton/components/helpers/busySlots';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 /**
  * Is busyTimeSlot feature enabled

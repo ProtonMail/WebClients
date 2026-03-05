@@ -5,7 +5,7 @@ import {
     isSupportedText,
     mimeTypeToOpenInDocsType,
 } from '@proton/shared/lib/helpers/mimetype';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useFlagsDriveSheetODSImport } from '../../flags/useFlagsDriveSheetODSImport';
 import { useDocumentActions } from '../../hooks/docs/useDocumentActions';

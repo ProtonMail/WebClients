@@ -23,7 +23,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import folderImagesDark from '@proton/styles/assets/img/drive/empty-image-album-dark.webp';
 import folderImages from '@proton/styles/assets/img/drive/empty-image-album.webp';
 import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import SignatureIcon from '../../../components/SignatureIcon';

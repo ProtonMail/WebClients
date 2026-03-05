@@ -4,7 +4,7 @@ import { renderHook } from '@testing-library/react';
 
 import useConfig from '@proton/components/hooks/useConfig';
 import { APPS } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { DEFAULT_TAX_BILLING_ADDRESS } from '../../core/billing-address/billing-address';
 import { useTaxCountry } from './useTaxCountry';

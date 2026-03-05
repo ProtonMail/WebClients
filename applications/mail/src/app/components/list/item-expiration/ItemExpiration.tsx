@@ -3,7 +3,7 @@ import { Icon } from '@proton/components';
 import type { IconName } from '@proton/icons/types';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { isExpiringByRetentionRule, isFrozenExpiration } from '@proton/shared/lib/mail/messages';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { isAllowedAutoDeleteLabelID } from '../../../helpers/autoDelete';

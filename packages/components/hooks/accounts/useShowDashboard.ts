@@ -6,7 +6,9 @@ import { getIsB2BAudienceFromSubscription } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';
-import { type FeatureFlagVariant, type FeatureFlagsWithVariant, useFlag, useVariant } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
+import { useVariant } from '@proton/unleash/useVariant';
+import type{  FeatureFlagVariant, FeatureFlagsWithVariant } from '@proton/unleash';
 
 export const getDashboardFeatureFlag = (appName: APP_NAMES): FeatureFlagsWithVariant => {
     switch (appName) {

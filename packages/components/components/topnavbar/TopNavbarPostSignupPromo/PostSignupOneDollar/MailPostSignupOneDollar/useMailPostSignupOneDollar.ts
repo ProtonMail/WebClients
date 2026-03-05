@@ -7,7 +7,7 @@ import { FeatureCode, useFeature } from '@proton/features';
 import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import type { OfferHookReturnValue } from '../../common/helpers/interface';
 import { isRootFolder } from '../../common/topNavbarPromoHelpers';

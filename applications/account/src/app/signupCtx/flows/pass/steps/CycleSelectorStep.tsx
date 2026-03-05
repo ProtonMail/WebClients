@@ -8,7 +8,7 @@ import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import type { MaybeNull } from '@proton/pass/types';
 import { CYCLE, PLANS } from '@proton/payments/index';
 import { usePaymentOptimistic } from '@proton/payments/ui';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { Layout } from '../components/Layout/Layout';

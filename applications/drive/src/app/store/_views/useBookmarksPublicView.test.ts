@@ -3,7 +3,7 @@ import { verifyAllWhenMocksCalled, when } from 'jest-when';
 
 import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import usePublicToken from '../../hooks/drive/usePublicToken';
 import { useBookmarks } from '../_bookmarks/useBookmarks';

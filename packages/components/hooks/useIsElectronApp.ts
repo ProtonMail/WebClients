@@ -4,7 +4,8 @@ import {
     isElectronOnMac,
     isElectronOnWindows,
 } from '@proton/shared/lib/helpers/desktop';
-import { type FeatureFlag, useFlag } from '@proton/unleash';
+import type { FeatureFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import useConfig from './useConfig';
 

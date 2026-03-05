@@ -24,7 +24,7 @@ import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import type { IconName } from '@proton/icons/types';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

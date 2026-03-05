@@ -8,7 +8,7 @@ import { useLoading } from '@proton/hooks';
 import { getSilentApi, getSilentApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';

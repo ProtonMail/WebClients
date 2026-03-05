@@ -2,7 +2,7 @@ import { differenceInMonths, fromUnixTime } from 'date-fns';
 
 import { useUser } from '@proton/account/user/hooks';
 import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 export const useCanReplayOnboarding = () => {
     const [user] = useUser();

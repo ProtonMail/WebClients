@@ -8,7 +8,7 @@ import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { useDispatch, useSelector } from '@proton/redux-shared-store';
 import { TelemetryPostSubscriptionTourEvents } from '@proton/shared/lib/api/telemetry';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useModalStateObject } from '../modalTwo/useModalState';
 import FeatureTourLoader from './FeatureTourLoader';

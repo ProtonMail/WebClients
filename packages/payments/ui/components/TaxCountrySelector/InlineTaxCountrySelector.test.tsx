@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import useConfig from '@proton/components/hooks/useConfig';
 import { APPS } from '@proton/shared/lib/constants';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { type OnBillingAddressChange, useTaxCountry } from '../../hooks/useTaxCountry';
 import { InlineTaxCountrySelector } from './InlineTaxCountrySelector';

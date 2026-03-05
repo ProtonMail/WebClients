@@ -14,7 +14,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { ADDRESS_FLAGS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { mockUseFeatureBarrel } from '@proton/testing/lib/mockUseFeatureBarrel';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import useKTVerifier from '../keyTransparency/useKTVerifier';
 import AddressesWithUser from './AddressesWithUser';

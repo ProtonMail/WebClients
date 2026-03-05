@@ -8,7 +8,7 @@ import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import type { IconName } from '@proton/icons/types';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import './ItemCheckbox.scss';

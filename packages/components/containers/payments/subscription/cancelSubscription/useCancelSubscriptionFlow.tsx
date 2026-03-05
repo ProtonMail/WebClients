@@ -35,7 +35,7 @@ import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/
 import { APPS } from '@proton/shared/lib/constants';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import { hasPaidMail, hasPaidVpn } from '@proton/shared/lib/user/helpers';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { OPEN_TRIAL_CANCELED_MODAL } from '../../../topBanners/constants';
 import DowngradeModal from '../../DowngradeModal';

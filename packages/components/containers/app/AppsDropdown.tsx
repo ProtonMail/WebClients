@@ -14,7 +14,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail, isElectronOnInboxApps, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { InboxDesktopAppSwitcher } from '../desktop/InboxDesktopAppSwitcher';
 import ProductIcon from './ProductIcon';

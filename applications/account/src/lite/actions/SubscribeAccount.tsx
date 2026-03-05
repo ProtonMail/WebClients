@@ -53,7 +53,7 @@ import {
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { canPay } from '@proton/shared/lib/user/helpers';
-import { useVariant } from '@proton/unleash';
+import { useVariant } from '@proton/unleash/useVariant';
 import type { FeatureFlagVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 import clsx from '@proton/utils/clsx';
 

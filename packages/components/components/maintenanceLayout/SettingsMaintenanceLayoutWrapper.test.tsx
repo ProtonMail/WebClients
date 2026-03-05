@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import type { SettingsAreaConfig } from '../../containers/layout/interface';
 import SettingsMaintenanceLayoutWrapper from './SettingsMaintenanceLayoutWrapper';

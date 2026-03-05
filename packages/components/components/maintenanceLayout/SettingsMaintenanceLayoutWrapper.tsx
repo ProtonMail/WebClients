@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import type { SettingsAreaConfig } from '@proton/components/containers/layout/interface';
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
-import { type FeatureFlag, useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
+import type {  FeatureFlag} from '@proton/unleash';
 
 interface Props {
     config: SettingsAreaConfig;

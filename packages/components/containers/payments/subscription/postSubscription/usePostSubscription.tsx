@@ -11,7 +11,7 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, type APP_NAMES, MAIL_UPSELL_PATHS, SHARED_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { canShowB2BOnboardingButton } from '@proton/shared/lib/onboarding/helpers';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import type { SubscriptionOverridableStep } from '../SubscriptionModalProvider';
 import type { PostSubscriptionFlowName } from './interface';

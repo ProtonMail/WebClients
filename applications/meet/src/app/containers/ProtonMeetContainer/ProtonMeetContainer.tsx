@@ -26,7 +26,7 @@ import { getItem } from '@proton/shared/lib/helpers/storage';
 import { CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { ConnectionLostModal } from '../../components/ConnectionLostModal/ConnectionLostModal';
 import { MeetingLockedModal } from '../../components/MeetingLockedModal/MeetingLockedModal';

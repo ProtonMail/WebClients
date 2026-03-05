@@ -21,7 +21,7 @@ import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks/index';
 import { IcBrandGoogle } from '@proton/icons/icons/IcBrandGoogle';
-import { useVariant } from '@proton/unleash';
+import { useVariant } from '@proton/unleash/useVariant';
 
 interface Props {
     provider?: ImportProvider | OAUTH_PROVIDER;

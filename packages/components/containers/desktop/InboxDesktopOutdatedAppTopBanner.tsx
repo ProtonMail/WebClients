@@ -13,7 +13,7 @@ import {
     isElectronOnMac as isMac,
     isElectronOnWindows as isWindows,
 } from '@proton/shared/lib/helpers/desktop';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import TopBanner from '../topBanners/TopBanner';

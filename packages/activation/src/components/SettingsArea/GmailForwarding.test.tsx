@@ -1,7 +1,8 @@
 import { screen } from '@testing-library/dom';
 
 import { useUser } from '@proton/account/user/hooks';
-import { useFlag, useGetFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
+import { useGetFlag } from '@proton/unleash/useGetFlag';
 
 import { easySwitchRender } from '../../tests/render';
 import GmailForwarding from './GmailForwarding';

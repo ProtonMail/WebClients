@@ -33,7 +33,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import type { ImportCalendarModel, ImportedEvent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import AttachingModalContent from './AttachingModalContent';

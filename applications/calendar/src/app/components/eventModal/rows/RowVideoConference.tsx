@@ -23,7 +23,7 @@ import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
 import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { type EventModel, VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useVideoConferenceSpotlight from '../../../hooks/useVideoConferenceSpotlight';
