@@ -749,6 +749,9 @@
       "Make admin": [
         "Сделать администратором"
       ],
+      "Manage addresses": [
+        "Управление адресами"
+      ],
       "Manage advanced account protections": [
         "Управление расширенной защитой аккаунта"
       ],
@@ -5403,9 +5406,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "После выхода из вашего тарифа этот пользователь будет переведен на тариф ${ BRAND_NAME } Безлимитный тариф с 30-дневным пробным периодом.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "По умолчанию администратору доступно ${ formattedStorage } хранилища. В дальнейшем вы сможете перераспределить доступный объем между дополнительными пользователями."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Создавайте и настраивайте аккаунты членов семьи, а также управляйте доступным им объемом хранилища для ${ DRIVE_APP_NAME } и ${ MAIL_APP_NAME }."
       ],
@@ -7113,9 +7113,6 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Создавая учетную запись ${ PASS_APP_NAME } с адресом электронной почтой SimpleLogin, вы сможете управлять своими псевдонимами непосредственно из ${ PASS_APP_NAME }."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Отключив мониторинг событий безопасности, вы также очистите всю свою историю. Вы уверены, что хотите отключить это?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
@@ -11213,9 +11210,6 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Монитор активности"
-      ],
       "Enable ${ reason }": [
         "Включить ${ reason }"
       ],
@@ -16673,9 +16667,6 @@
       "Address added": [
         "Адрес добавлен"
       ],
-      "Address successfully added": [
-        "Адрес успешно добавлен"
-      ],
       "Administrator privileges restored": [
         "Права администратора восстановлены"
       ],
@@ -17509,9 +17500,6 @@
       "Deep dive into VPN blog posts": [
         "Подробное изучение постов блога VPN"
       ],
-      "Delete ${ policyName }?": [
-        "Удалить ${ policyName }?"
-      ],
       "Delete ${ value }": [
         "Удалить ${ value }"
       ],
@@ -18120,9 +18108,6 @@
       ],
       "Security and privacy": [
         "Безопасность и конфиденциальность"
-      ],
-      "Security events": [
-        "События безопасности"
       ],
       "Security logs": [
         "Журнал безопасности"

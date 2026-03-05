@@ -480,6 +480,9 @@
       "Delete record": [
         "Eliminar registro"
       ],
+      "Delete token ${ token.Account }": [
+        "Eliminar token ${ token.Account }"
+      ],
       "Delete token “${ token.Name }”": [
         "Eliminar token «${ token.Name }»"
       ],
@@ -513,6 +516,9 @@
       "Disable": [
         "Desactivar"
       ],
+      "Disable account monitor": [
+        "Desactivar monitoreo de cuenta"
+      ],
       "Disable categories": [
         "Desactivar categorías"
       ],
@@ -521,9 +527,6 @@
       ],
       "Disable recovery phrase?": [
         "¿Desactivar frase de recuperación?"
-      ],
-      "Disable security events": [
-        "Desactivar eventos de seguridad"
       ],
       "Discard": [
         "Descartar"
@@ -959,6 +962,9 @@
       ],
       "Make key primary": [
         "Marcar clave como principal"
+      ],
+      "Manage addresses": [
+        "Gestionar direcciones"
       ],
       "Manage advanced account protections": [
         "Gestionar protecciones avanzadas de la cuenta"
@@ -2676,11 +2682,20 @@
       ]
     },
     "BOSS": {
+      "${ BRAND_NAME } Migration Assistant": [
+        "Asistente de migración de ${ BRAND_NAME }"
+      ],
       "Add a custom domain": [
         "Añadir un dominio personalizado"
       ],
+      "App installed": [
+        "Aplicación instalada"
+      ],
       "Authenticate": [
         "Autenticar"
+      ],
+      "Authenticate your Google Workspace account": [
+        "Autentique su cuenta de Google Workspace"
       ],
       "Calendar": [
         "Calendario"
@@ -2711,6 +2726,12 @@
       ],
       "Finish setting up your business account": [
         "Termine de configurar su cuenta de empresa"
+      ],
+      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
+        "Aplicación de Google Marketplace para copiar datos a ${ BRAND_NAME }"
+      ],
+      "Install app": [
+        "Instale la aplicación"
       ],
       "Install migration app": [
         "Instalar aplicación de migración"
@@ -2776,14 +2797,17 @@
       "Start migration": [
         "Iniciar migración"
       ],
-      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue. Learn more": [
-        "Para migrar los datos de su organización, necesita instalar la aplicación Asistente de migración de ${ BRAND_NAME } desde Google Workspace Marketplace. Esto otorgará permiso a ${ BRAND_NAME } para copiar sus datos. Después de instalarla, vuelva aquí para continuar. Más información"
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "Para migrar los datos de su organización, necesita instalar la aplicación Asistente de migración de ${ BRAND_NAME } desde Google Workspace Marketplace. Esto otorgará permiso a ${ BRAND_NAME } para copiar sus datos. Después de instalarla, vuelva aquí para continuar."
       ],
       "Transfer errors": [
         "Errores de transferencia"
       ],
       "User": [
         "Usuario"
+      ],
+      "Verify installation": [
+        "Verificar instalación"
       ],
       "Verify your domain": [
         "Verifique su dominio"
@@ -2794,8 +2818,14 @@
       "Verify your domain to start a migration": [
         "Verifique su dominio para iniciar una migración"
       ],
+      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
+        "No pudimos verificar la instalación. Compruebe que la ha instalado en su cuenta de Google Workspace e intente de nuevo."
+      ],
       "What are you migrating?": [
         "¿Qué está migrando?"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "Necesita otorgar el permiso para que ${ BRAND_NAME } copie sus datos. Después de aceptar los permisos, vuelva aquí para continuar."
       ]
     },
     "breadcrumb": {
@@ -7527,8 +7557,8 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Después de abandonar el plan, este usuario se moverá al plan ${ BRAND_NAME } Unlimited con una prueba gratuita de 30 días.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Por defecto, asignamos ${ formattedStorage } de almacenamiento a la cuenta del administrador. Puede gestionar el almacenamiento asignado para que se distribuya entre usuarios adicionales más adelante."
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "Asigne almacenamiento a la cuenta del administrador. Puede distribuir el almacenamiento para usuarios adicionales más adelante."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Cree y administre miembros de la familia y asígneles espacio de almacenamiento compartido entre ${ DRIVE_APP_NAME } y ${ MAIL_APP_NAME }."
@@ -9453,8 +9483,8 @@
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Al crear una cuenta ${ PASS_APP_NAME } con su correo electrónico de SimpleLogin, puede administrar sus alias directamente desde ${ PASS_APP_NAME }."
       ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Al desactivar el monitoreo de eventos de seguridad, también borrará todo su historial. ¿En verdad desea desactivar esta opción?"
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Si desactivas el monitor de cuenta, también se borrará todo su historial. ¿Realmente quiere desactivarlo?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al pasar a un plan gratuito, perderá permanentemente estos beneficios, incluso si mejore de nuevo el plan en el futuro."
@@ -10066,6 +10096,9 @@
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Si se desactiva, los miembros de la organización solo podrán compartir bóvedas o elementos dentro de la organización."
+      ],
+      "If disabled, organization members won't be able to create secure links.": [
+        "Si está desactivado, los miembros de la organización no podrán crear enlaces seguros."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Si se activa, los miembros de la organización podrán compartir cada elemento además de bóvedas"
@@ -12834,6 +12867,9 @@
       "Allow recovery using a trusted device": [
         "Permitir recuperación usando un dispositivo de confianza"
       ],
+      "Allow secure link sharing": [
+        "Permitir compartir enlaces de forma segura"
+      ],
       "Allow sharing outside the organization": [
         "Permitir compartir fuera de la organización"
       ],
@@ -13239,6 +13275,9 @@
       "Emails (last 3 months)": [
         "Correos (últimos 3 meses)"
       ],
+      "Emails (last 6 months)": [
+        "Correos electrónicos (últimos 6 meses)"
+      ],
       "Emails (last month)": [
         "Correos (último mes)"
       ],
@@ -13463,6 +13502,9 @@
       ],
       "Last 3 months only": [
         "Solo los últimos 3 meses"
+      ],
+      "Last 6 months only": [
+        "Solo los últimos 6 meses"
       ],
       "Last month only": [
         "Solo el último mes"
@@ -14627,8 +14669,8 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Monitor de actividades"
+      "Account monitor": [
+        "Monitoreo de cuenta"
       ],
       "Enable ${ reason }": [
         "Activar ${ reason }"
@@ -21604,9 +21646,6 @@
       "Address added": [
         "Dirección agregada"
       ],
-      "Address successfully added": [
-        "Se agregó la dirección."
-      ],
       "Address updated": [
         "Dirección actualizada"
       ],
@@ -22188,6 +22227,9 @@
       "Account keys": [
         "Claves de la cuenta"
       ],
+      "Account monitor": [
+        "Monitoreo de cuenta"
+      ],
       "Account recovery": [
         "Recuperación de cuenta"
       ],
@@ -22583,9 +22625,6 @@
       "Deep dive into VPN blog posts": [
         "Análisis en profundidad de las publicaciones de nuestro blog de VPN"
       ],
-      "Delete ${ policyName }?": [
-        "¿Eliminar ${ policyName }?"
-      ],
       "Delete ${ value }": [
         "Eliminar ${ value }"
       ],
@@ -22644,8 +22683,8 @@
       "Device name": [
         "Nombre del dispositivo"
       ],
-      "Disable activity monitor?": [
-        "¿Desactivar el monitor de actividades?"
+      "Disable account monitor?": [
+        "¿Desactivar el monitoreo de cuenta?"
       ],
       "Disable categories?": [
         "¿Desactivar categorías?"
@@ -23347,9 +23386,6 @@
       ],
       "Security and privacy": [
         "Seguridad y privacidad"
-      ],
-      "Security events": [
-        "Eventos de seguridad"
       ],
       "Security logs": [
         "Registros de seguridad"

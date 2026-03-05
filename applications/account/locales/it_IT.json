@@ -513,9 +513,6 @@
       "Disable recovery phrase?": [
         "Vuoi disabilitare la frase di recupero?"
       ],
-      "Disable security events": [
-        "Disattiva eventi di sicurezza"
-      ],
       "Discard": [
         "Scarta"
       ],
@@ -944,6 +941,9 @@
       ],
       "Make key primary": [
         "Segna la chiave come principale"
+      ],
+      "Manage addresses": [
+        "Gestisci indirizzi"
       ],
       "Manage advanced account protections": [
         "Gestisci le protezioni avanzate dell'account"
@@ -7193,9 +7193,6 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Dopo aver abbandonato il tuo piano, questo utente verrà trasferito a un piano ${ BRAND_NAME } Unlimited con una prova gratuita di 30 giorni.*"
       ],
-      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "Per impostazione predefinita assegniamo ${ formattedStorage } di archiviazione all'account dell'amministratore. Puoi gestire lo spazio di archiviazione che ti è stato assegnato, distribuendolo poi tra gli utenti aggiuntivi."
-      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Crea i membri della famiglia, gestiscili e assegna loro lo spazio di archiviazione condiviso tra ${ DRIVE_APP_NAME } e ${ MAIL_APP_NAME }."
       ],
@@ -9103,9 +9100,6 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Creando un account ${ PASS_APP_NAME } con la tua email SimpleLogin, potrai gestire i tuoi alias direttamente da ${ PASS_APP_NAME }."
-      ],
-      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
-        "Disabilitando il monitoraggio degli eventi di sicurezza, cancellerai anche l'intera cronologia. Sei sicuro di volerlo disabilitare?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
@@ -14188,9 +14182,6 @@
       ]
     },
     "Log preference": {
-      "Activity monitor": [
-        "Monitor attività"
-      ],
       "Enable ${ reason }": [
         "Abilita ${ reason }"
       ],
@@ -20989,9 +20980,6 @@
       "Address added": [
         "Indirizzo aggiunto"
       ],
-      "Address successfully added": [
-        "Indirizzo aggiunto"
-      ],
       "Address updated": [
         "Indirizzo aggiornato"
       ],
@@ -21965,9 +21953,6 @@
       "Deep dive into VPN blog posts": [
         "Approfondimento sui post del blog VPN"
       ],
-      "Delete ${ policyName }?": [
-        "Eliminare ${ policyName }?"
-      ],
       "Delete ${ value }": [
         "Elimina ${ value }"
       ],
@@ -22022,9 +22007,6 @@
       ],
       "Device name": [
         "Nome dispositivo"
-      ],
-      "Disable activity monitor?": [
-        "Disattivare monitor attività?"
       ],
       "Disable categories?": [
         "Disattivare le categorie?"
@@ -22723,9 +22705,6 @@
       ],
       "Security and privacy": [
         "Sicurezza e privacy"
-      ],
-      "Security events": [
-        "Eventi di sicurezza"
       ],
       "Security logs": [
         "Log di sicurezza"
