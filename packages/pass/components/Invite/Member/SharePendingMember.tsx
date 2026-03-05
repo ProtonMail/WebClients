@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
+import { useMaybeGroup } from '@proton/pass/components/Groups/GroupsProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { useMemberOrGroupName } from '@proton/pass/hooks/groups/useMemberOrGroupName';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import type { AccessDTO } from '@proton/pass/lib/access/types';
 import {
@@ -21,27 +21,35 @@ import clsx from '@proton/utils/clsx';
 
 import { ShareMemberAvatar } from './ShareMemberAvatar';
 
-type PendingMemberBase = AccessDTO & { canManage: boolean; email: string; className?: string };
+type PendingMemberBase = AccessDTO & { canManage: boolean; email: string; isGroup: boolean; className?: string };
 type PendingExistingMemberProps = PendingMemberBase & { inviteId: string };
 type PendingNewMemberProps = PendingMemberBase & { newUserInviteId: string; state: NewUserInviteState };
 
 type SharePendingMemberProps = {
     actions?: ReactNode[];
     email: string;
+    isGroup: boolean;
     extra?: ReactNode;
     loading: boolean;
     className?: string;
 };
 
-export const SharePendingMember: FC<SharePendingMemberProps> = ({ actions, email, extra, loading, className }) => {
-    const { name, avatar } = useMemberOrGroupName(email);
+export const SharePendingMember: FC<SharePendingMemberProps> = ({
+    actions,
+    email,
+    isGroup,
+    extra,
+    loading,
+    className,
+}) => {
+    const { name } = useMaybeGroup(email);
 
     return (
         <div className={clsx('border border-weak rounded-xl px-4 py-3 max-w-full', className)}>
             <div className="flex flex-nowrap items-center w-full">
-                <ShareMemberAvatar value={avatar} loading={loading} />
+                <ShareMemberAvatar email={email} isGroup={isGroup} loading={loading} />
                 <div className="flex-1">
-                    <Tooltip openDelay={100} originalPlacement="bottom-start" title={email}>
+                    <Tooltip openDelay={100} originalPlacement="bottom-start" title={name}>
                         <div className="text-ellipsis">{name}</div>
                     </Tooltip>
                     <div className="flex items-center gap-1">
@@ -69,6 +77,7 @@ export const PendingExistingMember: FC<PendingExistingMemberProps> = ({
     canManage,
     className,
     email,
+    isGroup,
     inviteId,
     itemId,
     shareId,
@@ -84,6 +93,7 @@ export const PendingExistingMember: FC<PendingExistingMemberProps> = ({
     return (
         <SharePendingMember
             email={email}
+            isGroup={isGroup}
             loading={loading}
             actions={
                 canManage
@@ -115,6 +125,7 @@ export const PendingExistingMember: FC<PendingExistingMemberProps> = ({
 export const PendingNewMember: FC<PendingNewMemberProps> = ({
     canManage,
     email,
+    isGroup,
     shareId,
     itemId,
     state,
@@ -132,6 +143,7 @@ export const PendingNewMember: FC<PendingNewMemberProps> = ({
     return (
         <SharePendingMember
             email={email}
+            isGroup={isGroup}
             loading={loading}
             actions={
                 canManage
