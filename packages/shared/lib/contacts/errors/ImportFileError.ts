@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { getMaxContactsImportConfig } from '@proton/unleash';
+import { getMaxContactsImportConfig } from '@proton/unleash/getMaxContactsImportConfig';
 import truncate from '@proton/utils/truncate';
 
 import { MAX_FILENAME_CHARS_DISPLAY, MAX_IMPORT_FILE_SIZE_STRING } from '../constants';
