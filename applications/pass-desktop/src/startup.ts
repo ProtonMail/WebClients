@@ -6,6 +6,7 @@ import { setupIpcHandlers as info } from './lib/install-info';
 import { setupIpcHandlers as navigation } from './lib/navigation';
 import { setupIpcHandlers as theming } from './lib/theming';
 import { setupIpcHandlers as update } from './lib/update';
+import { setupIpcHandlers as window } from './lib/window';
 import type { PassElectronContext } from './types';
 import { handleSquirrelEvents } from './utils/squirrel';
 
@@ -14,6 +15,7 @@ export const startup = async (ctx: PassElectronContext) => {
     await handleSquirrelEvents();
 
     // Initialize IPC handlers
+    window(() => ctx.window);
     biometrics(() => ctx.window);
     navigation(() => ctx.window);
     clipboard();

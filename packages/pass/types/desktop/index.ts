@@ -6,6 +6,9 @@ import type { AutotypeProperties } from './autotype';
 export * from './autotype';
 
 export type ContextBridgeApi = {
+    windowShow: () => Promise<void>;
+    onWindowHide: (callback: () => void) => void;
+
     writeToClipboard: (text: string) => Promise<void>;
     readFromClipboard: () => Promise<string>;
 
