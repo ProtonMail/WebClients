@@ -8,7 +8,7 @@ import { CYCLE, type PLANS, canModify, hasMigrationDiscount } from '@proton/paym
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { HIDE_OFFER } from '../helpers/interface';
 import { isInWindow } from '../helpers/paidUserNudgeHelper';

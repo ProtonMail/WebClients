@@ -12,7 +12,7 @@ import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';

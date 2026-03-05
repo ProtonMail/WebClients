@@ -7,7 +7,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 export const AppSwitcher = ({ hasBorder, app }: { hasBorder?: boolean; app: APP_NAMES }) => {

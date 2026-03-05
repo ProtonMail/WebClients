@@ -5,7 +5,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments';
 import { DRIVE_PRICING_PAGE, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useDriveFreePromo } from '../../hooks/payments/useDriveFreePromo';
 

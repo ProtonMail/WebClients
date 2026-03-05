@@ -31,7 +31,7 @@ import {
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import type { EnhancedMember, Group, GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_PERMISSIONS, GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useGroupKeys from './useGroupKeys';

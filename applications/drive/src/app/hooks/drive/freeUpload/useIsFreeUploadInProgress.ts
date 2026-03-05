@@ -1,4 +1,4 @@
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useFreeUploadStore } from '../../../zustand/freeUpload/freeUpload.store';
 

@@ -13,7 +13,7 @@ import useAppTitle from '@proton/components/hooks/useAppTitle';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { PLANS } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useSubscriptionModal } from '../SubscriptionModalProvider';
 import { useCancelSubscriptionFlow } from '../cancelSubscription/useCancelSubscriptionFlow';

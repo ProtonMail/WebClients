@@ -62,7 +62,7 @@ import type { User } from '@proton/shared/lib/interfaces/User';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

@@ -16,7 +16,7 @@ import { AutoAddVideoConferenceLinkProvider } from '@proton/shared/lib/calendar/
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import InviteLocaleSelector from './InviteLocaleSelector';
 

@@ -56,7 +56,7 @@ import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 import clamp from '@proton/utils/clamp';
 import isTruthy from '@proton/utils/isTruthy';
 

@@ -1,4 +1,4 @@
-import useFlag from '@proton/unleash/useFlag'
+import { useFlag } from '@proton/unleash/useFlag'
 import { isDevOrBlack, type BasePropertiesState, type BasePropertyValues } from '@proton/docs-shared'
 import { useCallback, useEffect, useInsertionEffect, useRef, useState } from 'react'
 

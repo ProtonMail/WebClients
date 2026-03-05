@@ -12,7 +12,7 @@ import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectPreviousMeetingLink } from '@proton/meet/store/slices';
 import { isValidMeetingLink, parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useFeedback } from '../../hooks/useFeedback';
 import { FeedbackOptionColumn } from '../FeedbackOptionColumn/FeedbackOptionColumn';

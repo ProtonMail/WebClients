@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 import metrics from '@proton/metrics';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import type { CalendarViewEventTemporaryEvent } from '../containers/calendar/interface';
 import { getNESTData } from './calendarMetricsHelper';

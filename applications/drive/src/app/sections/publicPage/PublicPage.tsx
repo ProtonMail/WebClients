@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom-v5-compat';
 import { useActiveBreakpoint, useAppTitle, useTheme } from '@proton/components';
 import { NodeType, useDrive } from '@proton/drive';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import config from '../../config';
 import LocationErrorBoundary from '../../containers/LocationErrorBoundary';

@@ -28,7 +28,7 @@ import { getActiveAddresses, getIsBYOEOnlyAccount } from '@proton/shared/lib/hel
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { isDesktopInboxUser, isDriveUser, isPassUser, isVPNUser } from '@proton/shared/lib/helpers/usedClientsFlags';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { MAIL_UPSELL_BANNERS_OPTIONS_URLS } from 'proton-mail/constants';
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';

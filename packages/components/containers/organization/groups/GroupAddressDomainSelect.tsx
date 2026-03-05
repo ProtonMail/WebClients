@@ -9,7 +9,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import type { Domain } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import AddSubdomainModal from './AddSubdomainModal';
 import useGroupsProtonMeDomain from './useGroupsProtonMeDomain';

@@ -18,7 +18,7 @@ import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { PM_SIGNATURE_REFERRAL } from '@proton/shared/lib/mail/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 const useAvailableApps = () => {
     const [user] = useUser();

@@ -98,7 +98,7 @@ import { useIsB2BTrial } from '@proton/payments/ui';
 import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import VpnSidebarVersion from './containers/VpnSidebarVersion';
 import { getRoutes } from './routes';

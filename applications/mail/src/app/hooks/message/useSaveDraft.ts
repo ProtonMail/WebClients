@@ -8,7 +8,7 @@ import type { MessageState, MessageStateWithData } from '@proton/mail/store/mess
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 

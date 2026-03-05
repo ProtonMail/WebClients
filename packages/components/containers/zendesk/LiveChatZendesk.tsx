@@ -10,7 +10,7 @@ import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import * as sessionStorageWrapper from '@proton/shared/lib/helpers/sessionStorage';
 import * as localStorageWrapper from '@proton/shared/lib/helpers/storage';
 import type { Api } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 type MessageDestination = 'proton' | 'zendesk';

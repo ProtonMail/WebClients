@@ -6,7 +6,8 @@ import { getIsB2BAudienceFromSubscription } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';
-import { useFlag, useVariant } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
+import { useVariant } from '@proton/unleash/useVariant';
 
 const useShowVPNDashboard = (app: APP_NAMES) => {
     const [organization] = useOrganization();

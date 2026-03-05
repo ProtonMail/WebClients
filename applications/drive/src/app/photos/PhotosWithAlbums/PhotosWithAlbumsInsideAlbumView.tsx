@@ -9,7 +9,7 @@ import { Loader, useAppTitle, useConfig } from '@proton/components';
 import { generateNodeUid } from '@proton/drive/index';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import useNavigate from '../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';

@@ -2,7 +2,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { PaymentsContextOptimisticProvider } from '@proton/payments/ui';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { cachedPlans } from '../defaultPlans';
 import type { BaseSignupContextProps } from './context/SignupContext';

@@ -16,7 +16,7 @@ import { generateNodeUid, getDriveForPhotos, splitNodeUid } from '@proton/drive'
 import { uploadManager } from '@proton/drive/modules/upload';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import PortalPreview from '../../../components/PortalPreview';
