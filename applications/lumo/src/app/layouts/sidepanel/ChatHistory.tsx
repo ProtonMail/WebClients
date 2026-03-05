@@ -20,6 +20,8 @@ import { sortByDate } from '../../util/date';
 import RecentChatsList from './RecentChatsList';
 import { categorizeConversations, searchConversations } from './helpers';
 
+import './ChatHistory.scss';
+
 interface Props {
     refInputSearch: React.RefObject<HTMLInputElement>;
     onItemClick?: () => void;
