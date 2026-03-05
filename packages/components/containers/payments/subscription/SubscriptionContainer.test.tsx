@@ -83,7 +83,7 @@ function mockCheckResult(checkData: Partial<SubscriptionEstimation> = {}) {
 function enableSepaFeatureFlag() {
     const sepaFlag: FeatureFlag = 'SepaPayments';
 
-    const useFlagMock = jest.spyOn(require('@proton/unleash/useFlag'), 'default');
+    const useFlagMock = jest.spyOn(require('@proton/unleash/useFlag'), 'useFlag');
     useFlagMock.mockImplementation((flag) => flag === sepaFlag);
 }
 

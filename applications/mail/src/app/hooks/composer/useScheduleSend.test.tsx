@@ -24,8 +24,7 @@ jest.mock('react-router-dom', () => ({
 }));
 
 jest.mock('@proton/unleash/useFlag', () => ({
-    __esModule: true,
-    default: () => mockUseFlag(),
+    useFlag: () => mockUseFlag(),
 }));
 
 jest.mock('proton-mail/store/hooks', () => ({

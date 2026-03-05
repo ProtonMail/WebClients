@@ -8,8 +8,10 @@ import { type OnBillingAddressChange, useTaxCountry } from '../../hooks/useTaxCo
 import { InlineTaxCountrySelector } from './InlineTaxCountrySelector';
 
 // Mock the feature flag to be enabled by default for all tests (to match existing test expectations)
-jest.mock('@proton/unleash', () => ({
+jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: jest.fn().mockReturnValue(true),
+}));
+jest.mock('@proton/unleash/useGetFlag', () => ({
     useGetFlag: jest.fn().mockReturnValue(() => true),
 }));
 

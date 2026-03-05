@@ -18,7 +18,7 @@ jest.mock('../views/SecurityCenter/BreachAlerts/slice/breachNotificationsSlice',
     selectUnreadBreachesCount: jest.fn(),
 }));
 
-jest.mock('@proton/unleash', () => ({
+jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: jest.fn(),
 }));
 
