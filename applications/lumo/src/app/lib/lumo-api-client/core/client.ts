@@ -39,8 +39,7 @@ const DEFAULT_CONFIG: LumoApiClientConfig = {
     enableSmoothing: true,
     endpoint: LUMO_CHAT_ENDPOINT,
     lumoPubKey: DEFAULT_LUMO_PUB_KEY,
-    externalTools: ['web_search', 'weather', 'stock', 'cryptocurrency'],
-    internalTools: ['proton_info'],
+    externalTools: ['web_search', 'weather', 'stock', 'cryptocurrency', 'web_extract', 'proton_info'],
     imageTools: ['generate_image', 'describe_image', 'edit_image'],
     interceptors: {
         request: [],
@@ -214,10 +213,9 @@ export class LumoApiClient {
     }
 
     private getTools(enableExternalTools: boolean, enableImageTools: boolean) {
-        const { internalTools, externalTools, imageTools } = this.config;
+        const { externalTools, imageTools } = this.config;
         // prettier-ignore
         return [
-            ...internalTools,
             ...when(enableExternalTools, externalTools),
             ...when(enableImageTools, imageTools),
         ];

@@ -3,7 +3,10 @@ import type { ContentBlock, Message, ToolCallBlock } from '../../../../../../typ
 import { isToolCallBlock, isToolResultBlock } from '../../../../../../types';
 import StreamingMarkdownRenderer from '../../../../../LumoMarkdown/StreamingMarkdownRenderer';
 import { parseToolCallBlock } from '../../toolCall/toolCallUtils';
+import { FinanceComparisonResult, type FinanceComparisonItem } from './FinanceComparisonResult';
+import { FinanceToolResult, parseFinanceResult } from './FinanceToolResult';
 import { ThinkingPath, type ThinkingStep } from './ThinkingPath';
+import { WeatherToolResult, parseWeatherResult } from './WeatherToolResult';
 
 const TurndownServiceModule = require('turndown');
 // Handle both CommonJS and ES module exports
@@ -120,7 +123,6 @@ function groupBlocks(blocks: ContentBlock[]): BlockGroupingResultItem[] {
         }
     }
 
-    // Don't forget the last group
     if (currentToolGroup.length > 0) {
         groups.push({ type: 'timeline', blocks: currentToolGroup });
     }
@@ -221,35 +223,76 @@ export const RenderBlocks = ({
         }
     }
 
+    const inlineCardSteps = thinkingSteps.filter(
+        (step): step is Extract<ThinkingStep, { type: 'tool_call' }> =>
+            step.type === 'tool_call' &&
+            !step.isActive &&
+            !!step.result &&
+            (step.toolCall.name === 'stock' ||
+                step.toolCall.name === 'cryptocurrency' ||
+                step.toolCall.name === 'weather')
+    );
+
     return (
         <>
-            {/* Show unified thinking path if we have reasoning or tool calls */}
             {showThinkingPath && (
                 <ThinkingPath steps={thinkingSteps} message={message} handleLinkClick={handleLinkClick} />
             )}
 
-            {/* Render text content blocks */}
-            <div ref={messageContentContainerRef}>
-                {groups.map((group, idx) => {
-                    if (group.type === 'text') {
-                        const isLastGroup = idx === groups.length - 1;
-                        return (
-                            <StreamingMarkdownRenderer
-                                key={idx}
-                                message={message}
-                                content={preprocessContent(group.block.content)}
-                                isStreaming={isGenerating && isLastMessage && isLastGroup}
-                                handleLinkClick={handleLinkClick}
-                                toolCallResults={toolCallResults}
-                                sourcesContainerRef={sourcesContainerRef}
-                            />
-                        );
-                    }
+            {(() => {
+                const seenSymbols = new Set<string>();
+                const financeItems: FinanceComparisonItem[] = inlineCardSteps
+                    .filter((s) => s.toolCall.name === 'stock' || s.toolCall.name === 'cryptocurrency')
+                    .flatMap((s) => {
+                        const data = parseFinanceResult(s.result!);
+                        const symbol =
+                            'arguments' in s.toolCall && 'symbol' in s.toolCall.arguments
+                                ? (s.toolCall.arguments as { symbol: string }).symbol
+                                : s.toolCall.name;
+                        if (!data || seenSymbols.has(symbol)) return [];
+                        seenSymbols.add(symbol);
+                        return [{ data, symbol }];
+                    });
 
-                    // Skip timeline groups - they're now handled by ThinkingPath
-                    return null;
-                })}
-            </div>
+                const weatherCards = inlineCardSteps
+                    .filter((s) => s.toolCall.name === 'weather')
+                    .flatMap((s) => {
+                        const data = parseWeatherResult(s.result!);
+                        return data ? [data] : [];
+                    });
+
+                return (
+                    <>
+                        {financeItems.length >= 2 ? (
+                            <FinanceComparisonResult items={financeItems} />
+                        ) : (
+                            financeItems.map((item, i) => <FinanceToolResult key={i} data={item.data} />)
+                        )}
+                        {weatherCards.map((data, i) => (
+                            <WeatherToolResult key={i} data={data} />
+                        ))}
+                    </>
+                );
+            })()}
+
+            {groups.map((group, idx) => {
+                if (group.type === 'text') {
+                    const isLastGroup = idx === groups.length - 1;
+                    return (
+                        <StreamingMarkdownRenderer
+                            key={idx}
+                            message={message}
+                            content={preprocessContent(group.block.content)}
+                            isStreaming={isGenerating && isLastMessage && isLastGroup}
+                            handleLinkClick={handleLinkClick}
+                            toolCallResults={toolCallResults}
+                            sourcesContainerRef={sourcesContainerRef}
+                        />
+                    );
+                }
+
+                return null;
+            })}
         </>
     );
 };
