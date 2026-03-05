@@ -1,5 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
+import { parseGroup } from '@proton/pass/lib/groups/groups.parsers';
 import type { ItemRevisionContentsResponse, ShareGetResponse, ShareKeyResponse } from '@proton/pass/types';
 import { ContentFormatVersion, ItemState, PassEncryptionTag, ShareRole, ShareType } from '@proton/pass/types';
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/lib/constants';
@@ -452,7 +453,7 @@ describe('PassCrypto', () => {
 
             const groupId = 'groupId';
             const { group, groupKey } = await createRandomGroupKey(groupId);
-            PassCrypto.setGroupKeys([group]);
+            PassCrypto.setGroupKeys(parseGroup(group));
 
             const [encryptedShare, shareKey] = await createRandomShareResponses(
                 addressKey,

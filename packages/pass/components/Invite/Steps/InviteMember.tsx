@@ -3,14 +3,14 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { useMaybeGroup } from '@proton/pass/components/Groups/GroupsProvider';
+import { ShareMemberAvatar } from '@proton/pass/components/Invite/Member/ShareMemberAvatar';
 import { getShareRoleDefinition } from '@proton/pass/components/Invite/Member/ShareRoleOptions';
 import { useInviteLabels } from '@proton/pass/components/Invite/useInviteLabels';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
-import { GroupMembersModal, useGroupMembersModal } from '@proton/pass/components/Organization/Groups/GroupMembersModal';
 import type { AccessTarget } from '@proton/pass/lib/access/types';
 import type { InviteFormMemberItem } from '@proton/pass/types';
 import { ShareRole } from '@proton/pass/types';
@@ -23,8 +23,9 @@ export type InviteMemberProps = InviteFormMemberItem & {
 };
 
 export const InviteMember: FC<InviteMemberProps> = ({ target, value, onRemove, onRoleChange }) => {
-    const { role, email } = value;
-    const { open, groupId, name, label, avatar, members, onClick, onClose } = useGroupMembersModal(email);
+    const { role, email, isGroup } = value;
+    const { name, onShowMembers } = useMaybeGroup(email);
+
     // TODO: Remove this in IDTEAM-4660
     const labels = useInviteLabels();
     const { title: roleLabel } = useMemo(() => getShareRoleDefinition(target, labels)[role], [role]);
@@ -32,17 +33,17 @@ export const InviteMember: FC<InviteMemberProps> = ({ target, value, onRemove, o
 
     return (
         <div className="flex gap-3 flex-nowrap items-center  py-3 w-full">
-            <button onClick={onClick} aria-labelledby={nameId}>
+            <button onClick={onShowMembers} aria-labelledby={nameId}>
                 <IconBox size={5} mode="icon" className="shrink-0 ui-primary flex items-center justify-center">
-                    <Avatar className="rounded-lg pass-member--avatar">{avatar}</Avatar>
+                    <ShareMemberAvatar email={email} isGroup={isGroup} />
                 </IconBox>
             </button>
 
             <div className="flex-1">
                 <div className="flex flex-nowrap flex-1 items-center gap-2">
-                    {groupId ? (
-                        <button onClick={onClick} className="text-ellipsis" id={nameId}>
-                            {label}
+                    {isGroup ? (
+                        <button onClick={onShowMembers} className="text-ellipsis" id={nameId}>
+                            {name}
                         </button>
                     ) : (
                         <Tooltip openDelay={100} originalPlacement="bottom-start" title={email} id={nameId}>
@@ -86,8 +87,6 @@ export const InviteMember: FC<InviteMemberProps> = ({ target, value, onRemove, o
                     )}
                 </QuickActionsDropdown>
             )}
-
-            {open && <GroupMembersModal name={name} members={members} onClose={onClose} />}
         </div>
     );
 };
