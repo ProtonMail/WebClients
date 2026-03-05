@@ -137,10 +137,12 @@ export class MetricHandler {
             }
         }
 
-        metrics.drive_sdk_upload_success_rate_total.increment({
-            volumeType: metric.volumeType || 'unknown',
-            status: !metric.error ? 'success' : 'failure',
-        });
+        if (metric.error !== 'network_error') {
+            metrics.drive_sdk_upload_success_rate_total.increment({
+                volumeType: metric.volumeType || 'unknown',
+                status: !metric.error ? 'success' : 'failure',
+            });
+        }
 
         if (metric.error) {
             metrics.drive_sdk_upload_errors_total.increment({
@@ -192,10 +194,12 @@ export class MetricHandler {
             }
         }
 
-        metrics.drive_sdk_download_success_rate_total.increment({
-            volumeType: metric.volumeType || 'unknown',
-            status: !metric.error ? 'success' : 'failure',
-        });
+        if (metric.error !== 'network_error') {
+            metrics.drive_sdk_download_success_rate_total.increment({
+                volumeType: metric.volumeType || 'unknown',
+                status: !metric.error ? 'success' : 'failure',
+            });
+        }
 
         if (metric.error) {
             metrics.drive_sdk_download_errors_total.increment({
