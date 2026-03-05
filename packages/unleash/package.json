@@ -3,14 +3,16 @@
     "description": "Unleash feature flags",
     "sideEffects": false,
     "exports": {
-        ".": "./index.ts",
         "./useFlag": "./useFlag.ts",
         "./useGetFlag": "./useGetFlag.ts",
         "./useVariant": "./useVariant.ts",
         "./UnleashClient": "./UnleashClient.ts",
         "./getMaxContactsImportConfig": "./helpers/getMaxContactsImportConfig.ts",
         "./standaloneClient": "./standaloneClient.ts",
-        "./Flags": "./UnleashFeatureFlags.ts"
+        "./UnleashFlagProvider": "./UnleashFlagProvider.tsx",
+        "./UnleashFeatureFlagsVariants": "./UnleashFeatureFlagsVariants.ts",
+        "./Flags": "./UnleashFeatureFlags.ts",
+        "./proxy": "./proxy.ts"
     },
     "scripts": {
         "check-types": "tsc",

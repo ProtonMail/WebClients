@@ -33,7 +33,7 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
-import { FlagProvider } from '@proton/unleash';
+import { FlagProvider } from '@proton/unleash/proxy';
 import ExtendedApiProvider from '@proton/wallet/contexts/ExtendedApiContext/ExtendedApiProvider';
 import type { WalletStore } from '@proton/wallet/store';
 import { extraThunkArguments } from '@proton/wallet/store/thunk';

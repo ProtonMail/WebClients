@@ -16,7 +16,7 @@ import { Application } from '@proton/docs-core'
 import config from '~/config'
 import { ApplicationProvider } from '~/utils/application-context'
 import { useFlag } from '@proton/unleash/useFlag'
-import { useUnleashClient } from '@proton/unleash'
+import { useUnleashClient } from '@proton/unleash/proxy'
 import { DocsNotificationsProvider } from '../__utils/notifications-context'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import {
