@@ -1,7 +1,6 @@
 import { generateNodeUid, useDrive } from '@proton/drive';
 
 import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
-import { useRevisionsModal } from '../../../components/modals/RevisionsModal/RevisionsModal';
 import useOpenPreview from '../../../components/useOpenPreview';
 import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
 import { useCopyItemsModal } from '../../../modals/CopyItemsModal';
@@ -10,6 +9,7 @@ import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
+import { useRevisionsModal } from '../../../modals/RevisionsModal';
 import { useFileSharingModal } from '../../../modals/SelectLinkToShareModal';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { useDrivePreviewModal } from '../../../modals/preview';
@@ -62,7 +62,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
     const { sharingModal, showSharingModal } = useSharingModal();
     const { detailsModal, showDetailsModal } = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
-    const [revisionsModal, showRevisionsModal] = useRevisionsModal();
+    const { revisionsModal, showRevisionsModal } = useRevisionsModal();
     const { renameModal, showRenameModal } = useRenameModal();
     const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal();
     const { copyModal, showCopyItemsModal } = useCopyItemsModal();

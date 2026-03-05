@@ -1,42 +1,30 @@
-import type { PropsWithChildren } from 'react';
-import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
-import type { Revision } from '@proton/drive';
-import { RevisionState, generateNodeUid, splitNodeRevisionUid, useDrive } from '@proton/drive';
+import type { ModalStateProps } from '@proton/components';
+import type { NodeEntity, ProtonDriveClient, Revision } from '@proton/drive';
+import { getDrive } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import clsx from '@proton/utils/clsx';
 
-import { useFlagsDriveSDKTransfer } from '../../flags/useFlagsDriveSDKTransfer';
 import { DownloadManager } from '../../managers/download/DownloadManager';
-import { useDownload } from '../../store';
-import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
-import PortalPreview from '../PortalPreview';
-import { useRevisionDetailsModal } from '../modals/DetailsModal';
-import type { CategorizedRevisions } from './getCategorizedRevisions';
-import { getCategorizedRevisions } from './getCategorizedRevisions';
-
-import './RevisionPreview.scss';
-
-export type RevisionItem = {
-    mimeType: string;
-    size: number;
-    volumeId: string;
-    linkId: string;
-    rootShareId: string;
-    name: string;
-    isFile: boolean;
-};
+import { sendErrorReport } from '../../utils/errorHandling';
+import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
+import { getNodeNameFallback } from '../../utils/sdk/getNodeName';
+import { getRootNode } from '../../utils/sdk/mapNodeToLegacyItem';
+import { useDetailsModal } from '../DetailsModal';
+import { Preview } from '../preview';
+import type { CategorizedRevisions } from './revisions/getCategorizedRevisions';
+import { getCategorizedRevisions } from './revisions/getCategorizedRevisions';
 
 export interface RevisionsProviderState {
     hasPreviewAvailable: boolean;
     isLoading: boolean;
-    permissions: SHARE_MEMBER_PERMISSIONS;
+    isOwner: boolean;
     currentRevision?: Revision;
     categorizedRevisions: CategorizedRevisions;
     openRevisionPreview: (revision: Revision) => void;
@@ -46,28 +34,37 @@ export interface RevisionsProviderState {
     downloadRevision: (revision: Revision) => void;
 }
 
-const RevisionsContext = createContext<RevisionsProviderState | null>(null);
+export type UseRevisionsModalStateProps = {
+    nodeUid: string;
+    drive?: ProtonDriveClient;
+} & ModalStateProps;
 
-export const RevisionsProvider = ({
-    link,
-    children,
-}: PropsWithChildren<{
-    link: RevisionItem;
-}>) => {
+export type RevisionsModalContentViewProps = RevisionsProviderState & {
+    portalPreview: ReactNode;
+    confirmModal: ReactNode;
+    detailsModal: ReactNode;
+} & ModalStateProps;
+
+export const useRevisionsModalState = ({
+    nodeUid,
+    drive = getDrive(),
+    ...modalProps
+}: UseRevisionsModalStateProps): RevisionsModalContentViewProps => {
     const { createNotification } = useNotifications();
-    const ref = useRef(null);
-    const { getSharePermissions } = useDirectSharingInfo();
-    const { drive } = useDrive();
 
     const [isLoading, withLoading] = useLoading(true);
     const [currentRevision, setCurrentRevision] = useState<Revision | undefined>(undefined);
     const [olderRevisions, setOlderRevisions] = useState<Revision[]>([]);
-    const [permissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(SHARE_MEMBER_PERMISSIONS.EDITOR);
+    const [node, setNode] = useState<NodeEntity>();
+    const [isOwner, setIsOwner] = useState<boolean>(false);
 
     const loadRevisions = async () => {
-        const nodeUid = generateNodeUid(link.volumeId, link.linkId);
         let currentRevision;
         const olderRevisions = [];
+        const maybeNode = await drive.getNode(nodeUid);
+        const { node } = getNodeEntity(maybeNode);
+
+        setNode(node);
         for await (const revision of drive.iterateRevisions(nodeUid)) {
             if (!currentRevision) {
                 currentRevision = revision;
@@ -78,42 +75,48 @@ export const RevisionsProvider = ({
 
         setCurrentRevision(currentRevision);
         setOlderRevisions(olderRevisions);
+
+        const rootNode = await getRootNode(node, drive);
+
+        let isDeviceRoot = false;
+        // Not sending an error, if this fails it will have failed in sidebar first
+        for await (const device of drive.iterateDevices()) {
+            if (device.rootFolderUid === rootNode.uid) {
+                isDeviceRoot = true;
+            }
+        }
+        const rootFolder = await drive.getMyFilesRootFolder();
+        const { node: rootFolderNode } = getNodeEntity(rootFolder);
+        setIsOwner(rootNode.uid === rootFolderNode.uid || isDeviceRoot);
     };
 
     useEffect(() => {
-        void withLoading(loadRevisions());
-    }, [link.linkId]);
-
-    useEffect(() => {
-        void getSharePermissions(new AbortController().signal, link.rootShareId).then(setPermissions);
-    }, [link.rootShareId]);
+        try {
+            void withLoading(loadRevisions());
+        } catch (error) {
+            createNotification({
+                type: 'error',
+                text: c('Error').t`We were not able to load the file history`,
+            });
+            sendErrorReport(error);
+            modalProps.onClose();
+        }
+    }, [nodeUid]);
 
     const categorizedRevisions = useMemo(() => getCategorizedRevisions(olderRevisions), [olderRevisions]);
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
-    const [revisionDetailsModal, showRevisionDetailsModal] = useRevisionDetailsModal();
-    const hasPreviewAvailable = !!link.mimeType && isPreviewAvailable(link.mimeType, link.size);
+    const { detailsModal, showDetailsModal } = useDetailsModal();
+    const hasPreviewAvailable =
+        !!node?.mediaType && isPreviewAvailable(node.mediaType, node.activeRevision?.storageSize);
     const [selectedRevision, setSelectedRevision] = useState<Revision | null>(null);
-    const { download } = useDownload();
 
-    const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos: false });
     const dm = DownloadManager.getInstance();
     const downloadRevision = (revision: Revision) => {
-        const { revisionId } = splitNodeRevisionUid(revision.uid);
-
-        if (isSDKTransferEnabled) {
-            return dm.downloadRevision(generateNodeUid(link.volumeId, link.linkId), revision.uid);
-        }
-
-        void download([{ ...link, shareId: link.rootShareId, revisionId }]);
+        return dm.downloadRevision(nodeUid, revision.uid);
     };
 
-    const openRevisionDetails = (revision: Revision) => {
-        void showRevisionDetailsModal({
-            revision,
-            shareId: link.rootShareId,
-            linkId: link.linkId,
-            name: link.name,
-        });
+    const openRevisionDetails = (_revision: Revision) => {
+        showDetailsModal({ nodeUid });
     };
 
     const handleRevisionDelete = (revision: Revision) => {
@@ -133,7 +136,7 @@ export const RevisionsProvider = ({
                     }
                     &nbsp;
                     <span className="text-bold">
-                        {link.name}, {formattedRevisionDate}
+                        {node?.name || getNodeNameFallback()}, {formattedRevisionDate}
                     </span>
                     &nbsp;
                     {
@@ -167,7 +170,7 @@ export const RevisionsProvider = ({
             canUndo: true,
             message: (
                 <>
-                    <span className="text-bold">{link.name}</span>
+                    <span className="text-bold">{node?.name || getNodeNameFallback()}</span>
                     &nbsp;
                     {
                         // translator: complete sentence example: Yearly reports.docx. will be restored to the version from February 6, 2023 at 12:00. All other versions will still be saved.
@@ -197,58 +200,24 @@ export const RevisionsProvider = ({
         setSelectedRevision(revision);
     };
 
-    return (
-        <RevisionsContext.Provider
-            value={{
-                hasPreviewAvailable,
-                isLoading,
-                permissions,
-                deleteRevision: handleRevisionDelete,
-                restoreRevision: handleRevisionRestore,
-                currentRevision,
-                categorizedRevisions,
-                openRevisionPreview,
-                openRevisionDetails,
-                downloadRevision,
-            }}
-        >
-            {children}
-            {selectedRevision && (
-                <PortalPreview
-                    key="portal-preview-revisions"
-                    open={!!selectedRevision}
-                    ref={ref}
-                    revisionId={splitNodeRevisionUid(selectedRevision.uid).revisionId}
-                    shareId={link.rootShareId}
-                    linkId={link.linkId}
-                    date={selectedRevision.creationTime}
-                    className={clsx(
-                        'revision-preview',
-                        (confirmModal?.props.open || revisionDetailsModal?.props.open) && 'revision-preview--behind'
-                    )}
-                    onDetails={() => openRevisionDetails(selectedRevision)}
-                    onRestore={
-                        selectedRevision.state !== RevisionState.Active
-                            ? () => {
-                                  handleRevisionRestore(selectedRevision);
-                              }
-                            : undefined
-                    }
-                    onClose={() => setSelectedRevision(null)}
-                    onExit={() => setSelectedRevision(null)}
-                />
-            )}
+    const portalPreview = selectedRevision ? (
+        <Preview nodeUid={nodeUid} revisionUid={selectedRevision.uid} onClose={() => setSelectedRevision(null)} />
+    ) : null;
 
-            {revisionDetailsModal}
-            {confirmModal}
-        </RevisionsContext.Provider>
-    );
-};
-
-export const useRevisionsProvider = () => {
-    const state = useContext(RevisionsContext);
-    if (!state) {
-        throw new Error('Trying to use uninitialized RevisionsProvider');
-    }
-    return state;
+    return {
+        ...modalProps,
+        hasPreviewAvailable,
+        isLoading,
+        isOwner,
+        deleteRevision: handleRevisionDelete,
+        restoreRevision: handleRevisionRestore,
+        currentRevision,
+        categorizedRevisions,
+        openRevisionPreview,
+        openRevisionDetails,
+        downloadRevision,
+        portalPreview,
+        confirmModal,
+        detailsModal,
+    };
 };

@@ -3,15 +3,27 @@ import { c } from 'ttag';
 
 import type { Revision } from '@proton/drive';
 
-import RevisionListItem from './RevisionListItem';
+import type { RevisionsProviderState } from '../useRevisionsModalState';
+import { RevisionListItem } from './RevisionListItem';
 import type { CategorizedRevisions } from './getCategorizedRevisions';
 
-interface Props {
+type RevisionActionProps = Pick<
+    RevisionsProviderState,
+    | 'hasPreviewAvailable'
+    | 'isOwner'
+    | 'openRevisionPreview'
+    | 'openRevisionDetails'
+    | 'deleteRevision'
+    | 'restoreRevision'
+    | 'downloadRevision'
+>;
+
+interface Props extends RevisionActionProps {
     currentRevision: Revision;
     categorizedRevisions: CategorizedRevisions;
 }
 
-const RevisionList = ({ currentRevision, categorizedRevisions }: Props) => {
+export const RevisionList = ({ currentRevision, categorizedRevisions, ...actionProps }: Props) => {
     const currentRevisionFormat = isToday(currentRevision.creationTime) ? 'time' : 'date';
     return (
         <ul className="unstyled">
@@ -20,7 +32,12 @@ const RevisionList = ({ currentRevision, categorizedRevisions }: Props) => {
                     .t`Current version`}</span>
 
                 <ul className="unstyled my-4 ml-4">
-                    <RevisionListItem formatType={currentRevisionFormat} revision={currentRevision} isCurrent />
+                    <RevisionListItem
+                        formatType={currentRevisionFormat}
+                        revision={currentRevision}
+                        isCurrent
+                        {...actionProps}
+                    />
                 </ul>
             </li>
             {!!categorizedRevisions.size ? (
@@ -38,6 +55,7 @@ const RevisionList = ({ currentRevision, categorizedRevisions }: Props) => {
                                             key={revision.uid}
                                             formatType={key === 'today' || key === 'yesterday' ? 'time' : 'date'}
                                             revision={revision}
+                                            {...actionProps}
                                         />
                                     ))}
                                 </ul>
@@ -49,5 +67,3 @@ const RevisionList = ({ currentRevision, categorizedRevisions }: Props) => {
         </ul>
     );
 };
-
-export default RevisionList;
