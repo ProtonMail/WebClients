@@ -1,4 +1,3 @@
-import { type ConversationContext, formatPersonalization } from '../components/Conversation/helper';
 import { decryptString } from '../crypto';
 import type { AesGcmCryptoKey } from '../crypto/types';
 import { createImageAttachment, generateImageMarkdown } from '../lib/imageAttachment';
@@ -36,6 +35,7 @@ import {
     type Turn,
 } from '../types';
 import type { GenerationResponseMessage, WireImage } from '../types-api';
+import { type ConversationContext, formatPersonalization } from '../components/Conversation/helper';
 import { separateAttachmentsByType } from './attachments';
 
 export type ContextFilter = {
@@ -167,24 +167,37 @@ export function prepareTurns(
     // These are per-request instructions that should apply to the current question
     const personalizationPrompt = formatPersonalization(personalization);
     if (personalizationPrompt || projectInstructions) {
-        const instructionParts: string[] = [];
-        if (personalizationPrompt) {
-            instructionParts.push(`[Personal context: ${personalizationPrompt}]`);
+        // Find the last user message
+        const lastUserIndex = turns.findLastIndex((turn) => turn.role === Role.User);
+
+        if (lastUserIndex !== -1) {
+            const userTurn = turns[lastUserIndex]!;
+            const originalContent = userTurn.content || '';
+
+            // Build instruction parts
+            // todo: use injectPersonalization() instead
+            const instructionParts: string[] = [];
+            if (personalizationPrompt) {
+                instructionParts.push(`[Personal context: ${personalizationPrompt}]`);
+            }
+            if (projectInstructions) {
+                instructionParts.push(`[Project instructions: ${projectInstructions}]`);
+            }
+
+            // Prepend instructions to the user's message
+            const instructionText = instructionParts.join('\n\n');
+            const updatedContent = instructionText ? `${instructionText}\n\n${originalContent}` : originalContent;
+
+            turns[lastUserIndex] = {
+                ...userTurn,
+                content: updatedContent,
+            };
+
+            console.log('Updated user message with instructions:', {
+                personalizationPrompt: !!personalizationPrompt,
+                projectInstructions: !!projectInstructions,
+            });
         }
-        if (projectInstructions) {
-            instructionParts.push(`[Project instructions: ${projectInstructions}]`);
-        }
-        // Prepend instructions to the turns as a system message
-        const instructionText = instructionParts.join('\n\n');
-        const instructionTurn: TurnInProgress = {
-            role: Role.System,
-            content: instructionText,
-        };
-        turns = [instructionTurn, ...turns];
-        console.log('Added system message with instructions:', {
-            personalizationPrompt: !!personalizationPrompt,
-            projectInstructions: !!projectInstructions,
-        });
     }
 
     // Step 4: Remove empty assistant turns
