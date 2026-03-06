@@ -34,6 +34,13 @@ jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
     useStore: () => ({ getState: mockGetState }),
 }));
 
+jest.mock('./useVatFormValidation', () => ({
+    getVatFormErrors: () => ({
+        hasErrors: false,
+        errorMessages: { VatId: '', Company: '', FirstName: '', LastName: '', Address: '', City: '' },
+    }),
+}));
+
 jest.mock('../../core/plan/helpers', () => ({
     getIsB2BAudienceFromPlan: (plan: string | undefined) => {
         const b2bPlans = new Set([
@@ -152,7 +159,7 @@ describe('useVatNumber', () => {
             expect(result.current.renderVatNumberInput).toBe(false);
         });
 
-        it('should expose paymentsApi and isAuthenticated in return value', () => {
+        it('should expose paymentsApi and shouldEditInModal in return value', () => {
             const customApi = { getFullBillingAddress: jest.fn() } as unknown as PaymentsApi;
             const { result } = renderHook(() =>
                 useVatNumber(
@@ -161,7 +168,7 @@ describe('useVatNumber', () => {
             );
 
             expect(result.current.paymentsApi).toBe(customApi);
-            expect(result.current.isAuthenticated).toBe(true);
+            expect(result.current.shouldEditInModal).toBe(true);
         });
     });
 
@@ -232,7 +239,7 @@ describe('useVatNumber', () => {
 
             await act(async () => {});
 
-            expect(result.current.isAuthenticated).toBe(true);
+            expect(result.current.shouldEditInModal).toBe(true);
         });
 
         it('should fall back to store user when isAuthenticated prop is undefined', async () => {
@@ -242,7 +249,7 @@ describe('useVatNumber', () => {
 
             await act(async () => {});
 
-            expect(result.current.isAuthenticated).toBe(true);
+            expect(result.current.shouldEditInModal).toBe(true);
             expect(mockGetState).toHaveBeenCalled();
         });
 
@@ -253,7 +260,7 @@ describe('useVatNumber', () => {
                 useVatNumber(defaultProps({ isAuthenticated: undefined, selectedPlanName: PLANS.MAIL }))
             );
 
-            expect(result.current.isAuthenticated).toBe(false);
+            expect(result.current.shouldEditInModal).toBe(false);
         });
     });
 
@@ -292,15 +299,15 @@ describe('useVatNumber', () => {
             expect(result.current.vatNumber).toBe('NEW-VAT');
         });
 
-        it('should call onChange callback with new value', () => {
-            const onChange = jest.fn();
-            const { result } = renderHook(() => useVatNumber(defaultProps({ isAuthenticated: false, onChange })));
+        it('should call onVatChange callback with new value', () => {
+            const onVatChange = jest.fn();
+            const { result } = renderHook(() => useVatNumber(defaultProps({ isAuthenticated: false, onVatChange })));
 
             act(() => {
                 result.current.setVatNumber('NEW-VAT');
             });
 
-            expect(onChange).toHaveBeenCalledWith('NEW-VAT');
+            expect(onVatChange).toHaveBeenCalledWith('NEW-VAT');
         });
 
         it('should work when onChange is not provided', () => {
@@ -322,13 +329,13 @@ describe('useVatNumber', () => {
 
     describe('Country/plan change effect', () => {
         it('should clear vatNumber when country changes to non-VAT country', () => {
-            const onChange = jest.fn();
+            const onVatChange = jest.fn();
             const taxCountry = buildTaxCountryStub({ selectedCountryCode: 'DE' });
 
             const { result, rerender } = renderHook((props) => useVatNumber(props), {
                 initialProps: defaultProps({
                     isAuthenticated: false,
-                    onChange,
+                    onVatChange,
                     taxCountry,
                 }),
             });
@@ -336,43 +343,43 @@ describe('useVatNumber', () => {
             act(() => {
                 result.current.setVatNumber('VAT-123');
             });
-            onChange.mockClear();
+            onVatChange.mockClear();
 
             const nonVatCountry = buildTaxCountryStub({ selectedCountryCode: 'US' });
             rerender(
                 defaultProps({
                     isAuthenticated: false,
-                    onChange,
+                    onVatChange,
                     taxCountry: nonVatCountry,
                 })
             );
 
             expect(result.current.vatNumber).toBe('');
-            expect(onChange).toHaveBeenCalledWith('');
+            expect(onVatChange).toHaveBeenCalledWith('');
         });
 
         it('should clear vatNumber when plan changes to non-B2B', () => {
-            const onChange = jest.fn();
+            const onVatChange = jest.fn();
 
             const { result, rerender } = renderHook((props) => useVatNumber(props), {
-                initialProps: defaultProps({ isAuthenticated: false, onChange }),
+                initialProps: defaultProps({ isAuthenticated: false, onVatChange }),
             });
 
             act(() => {
                 result.current.setVatNumber('VAT-123');
             });
-            onChange.mockClear();
+            onVatChange.mockClear();
 
             rerender(
                 defaultProps({
                     selectedPlanName: PLANS.MAIL,
                     isAuthenticated: false,
-                    onChange,
+                    onVatChange,
                 })
             );
 
             expect(result.current.vatNumber).toBe('');
-            expect(onChange).toHaveBeenCalledWith('');
+            expect(onVatChange).toHaveBeenCalledWith('');
         });
 
         it('should NOT clear vatNumber when country is in VAT list and plan is B2B', () => {
@@ -391,22 +398,22 @@ describe('useVatNumber', () => {
         });
 
         it('should NOT trigger when vatNumber is already empty', () => {
-            const onChange = jest.fn();
+            const onVatChange = jest.fn();
 
             const { rerender } = renderHook((props) => useVatNumber(props), {
-                initialProps: defaultProps({ isAuthenticated: false, onChange }),
+                initialProps: defaultProps({ isAuthenticated: false, onVatChange }),
             });
 
             const nonVatCountry = buildTaxCountryStub({ selectedCountryCode: 'US' });
             rerender(
                 defaultProps({
                     isAuthenticated: false,
-                    onChange,
+                    onVatChange,
                     taxCountry: nonVatCountry,
                 })
             );
 
-            expect(onChange).not.toHaveBeenCalled();
+            expect(onVatChange).not.toHaveBeenCalled();
         });
     });
 
@@ -457,7 +464,7 @@ describe('useVatNumber', () => {
             expect(onVatUpdated).not.toHaveBeenCalled();
         });
 
-        it('should pass stale vatNumber to onVatUpdated (pre-update closure value)', async () => {
+        it('should pass new vatNumber to onVatUpdated', async () => {
             const onVatUpdated = jest.fn();
             const { result } = renderHook(() =>
                 useVatNumber(defaultProps({ isAuthenticated: true, onVatUpdated, selectedPlanName: PLANS.MAIL }))
@@ -471,9 +478,7 @@ describe('useVatNumber', () => {
                 await result.current.vatUpdatedInModal('NEW-VAT');
             });
 
-            // onVatUpdated receives 'OLD-VAT' (the state before handleVatNumberChange('NEW-VAT')
-            // updates it) because useState doesn't synchronously mutate the closure's vatNumber
-            expect(onVatUpdated).toHaveBeenCalledWith('OLD-VAT');
+            expect(onVatUpdated).toHaveBeenCalledWith('NEW-VAT');
         });
     });
 

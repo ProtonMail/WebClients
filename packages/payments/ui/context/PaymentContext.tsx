@@ -21,14 +21,17 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { getPreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import type { OnChargeable } from '@proton/components/payments/client-extensions';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS } from '../../core/billing-address/billing-address';
+import {
+    type BillingAddressExtended,
+    DEFAULT_TAX_BILLING_ADDRESS,
+    type FullBillingAddressFlat,
+} from '../../core/billing-address/billing-address';
 import { getBillingAddressFromPaymentStatus } from '../../core/billing-address/billing-address-from-payments-status';
 import { type PaymentsCheckoutUI, getCheckoutUi, type getOptimisticCheckResult } from '../../core/checkout';
 import { computeOptimisticCheckResult } from '../../core/computeOptimisticCheckResult';
@@ -89,7 +92,7 @@ export interface PaymentsContextType {
     selectPlanIDs: (planIDs: PlanIDs) => Promise<void>;
     selectCycle: (cycle: Cycle) => Promise<void>;
     selectCurrency: (currency: Currency) => Promise<void>;
-    selectBillingAddress: (billingAddress: BillingAddress) => Promise<void>;
+    selectFullBillingAddress: (fullBillingAddress: FullBillingAddressFlat) => Promise<void>;
     checkMultiplePlans: (planToCheck: PlanToCheck[]) => Promise<SubscriptionEstimation[]>;
     /**
      * Returns the cached version of the subscription response. Returns null if the cache is missing.
@@ -110,11 +113,10 @@ export interface PaymentsContextType {
 
     // TODO: exposing for now. Will likely want to abstract this result
     checkResult: SubscriptionEstimation;
-    zipCodeValid: boolean;
 
     // paymentFacade: ReturnType<typeof usePaymentFacade>;
 
-    billingAddress: BillingAddress;
+    billingAddress: BillingAddressExtended;
     checkoutUi: PaymentsCheckoutUI;
     paymentStatus: PaymentStatus | undefined;
     paymentsApi: PaymentsApi;
@@ -158,7 +160,7 @@ interface PaymentsContextProviderProps {
 interface PaymentsContextProviderState {
     telemetryContext: PaymentTelemetryContext;
     product: ProductParam;
-    billingAddress: BillingAddress;
+    billingAddress: BillingAddressExtended;
     subscription: Subscription | FreeSubscription;
     plansData: {
         plans: Plan[];
@@ -169,7 +171,6 @@ interface PaymentsContextProviderState {
     availableCurrencies: readonly Currency[];
     planToCheck: PlanToCheck;
     checkResult: SubscriptionEstimation;
-    zipCodeValid: boolean;
     vatNumber: string | undefined;
     loading: boolean;
 }
@@ -300,7 +301,6 @@ export const PaymentsContextProvider = ({
                 availableCurrencies: mainCurrencies,
                 planToCheck,
                 checkResult,
-                zipCodeValid: true,
                 vatNumber: undefined,
                 loading: false,
             };
@@ -379,7 +379,6 @@ export const PaymentsContextProvider = ({
                     AmountDue: 0,
                     PeriodEnd: 0,
                 },
-                zipCodeValid: true,
             });
 
             return newCheckResult;
@@ -402,27 +401,19 @@ export const PaymentsContextProvider = ({
 
             const newCheckResult = await paymentsApiRef.current.checkSubscription(subscriptionData, {
                 signal: abortControllerRef.current.signal,
+                previousEstimation: stateRef.current.checkResult,
             });
             setState({
                 planToCheck: newPlanToCheck,
                 billingAddress: newBillingAddress,
                 vatNumber: newVatNumber,
                 checkResult: newCheckResult,
-                zipCodeValid: true,
             });
             paymentsApiRef.current.cacheMultiCheck(subscriptionData, newCheckResult);
             return newCheckResult;
         } catch (error) {
-            if (error instanceof InvalidZipCodeError) {
-                setState({
-                    planToCheck: newPlanToCheck,
-                    zipCodeValid: false,
-                });
-
-                return stateRef.current.checkResult;
-            } else {
-                throw error;
-            }
+            // todo: keeping the silly re-throw as a placeholder for now, in case if we want special handling for the code 800_001
+            throw error;
         } finally {
             setState({ loading: false });
         }
@@ -491,7 +482,7 @@ export const PaymentsContextProvider = ({
         const isFree = hasFreePlanIDs(newPlanToCheck.planIDs);
         if (isFree) {
             const newCheckResult = getOptimisticCheckResult(newPlanToCheck);
-            setState({ planToCheck: newPlanToCheck, checkResult: newCheckResult, zipCodeValid: true });
+            setState({ planToCheck: newPlanToCheck, checkResult: newCheckResult });
             return newCheckResult;
         }
 
@@ -680,9 +671,9 @@ export const PaymentsContextProvider = ({
         }
     };
 
-    const instantSelectBillingAddress = async (billingAddress: BillingAddress) => {
+    const instantSelectBillingAddress = async (billingAddress: BillingAddressExtended, vatNumber?: string) => {
         try {
-            await calculateSubscriptionEstimation({ billingAddress });
+            await calculateSubscriptionEstimation({ billingAddress, vatNumber });
         } catch (error: any) {
             if (error?.name === 'AbortError') {
                 return;
@@ -695,12 +686,26 @@ export const PaymentsContextProvider = ({
 
     const debouncedSelectBillingAddress = useHandler(instantSelectBillingAddress, { debounce: userInputDebounceDelay });
 
-    const selectBillingAddress = (billingAddress: BillingAddress) => {
-        if (billingAddress.ZipCode !== stateRef.current.billingAddress.ZipCode) {
-            return debouncedSelectBillingAddress(billingAddress);
+    const selectFullBillingAddress = (fullBillingAddress: FullBillingAddressFlat) => {
+        const { VatId, ...billingAddress } = fullBillingAddress;
+        const vatNumber = VatId ?? undefined;
+
+        // Only a few props can trigger the subscription estimation to be re-run instantly. For example, CountryCode and
+        // State are using dropdowns, so users can't change them rapidly, and it makes sense to disable any debouncing
+        // delay. Many other fields are simple text fields, so we should avoid re-calculation on every keystroke.
+        const instantProps: (keyof BillingAddressExtended)[] = ['CountryCode', 'State'];
+        const isDeboucingPropChanged = Object.keys(billingAddress).some((key) => {
+            const propertyName = key as keyof BillingAddressExtended;
+            return (
+                !instantProps.includes(propertyName) &&
+                billingAddress[propertyName] !== stateRef.current.billingAddress[propertyName]
+            );
+        });
+        if (isDeboucingPropChanged) {
+            return debouncedSelectBillingAddress(billingAddress, vatNumber);
         }
 
-        return instantSelectBillingAddress(billingAddress);
+        return instantSelectBillingAddress(billingAddress, vatNumber);
     };
 
     const getFallbackPrice: PaymentsContextType['getFallbackPrice'] = (planToCheck): PricesResult => {
@@ -818,7 +823,7 @@ export const PaymentsContextProvider = ({
             }),
         selectNewPlan,
         selectCurrency,
-        selectBillingAddress,
+        selectFullBillingAddress,
         checkMultiplePlans: (plansToCheck) => {
             return checkMultiplePlans({
                 getLocalizedPlansMap,
@@ -838,7 +843,6 @@ export const PaymentsContextProvider = ({
         getOptimisticCheckResult,
         getCoupon,
         checkResult: stateRef.current.checkResult,
-        zipCodeValid: stateRef.current.zipCodeValid,
         // paymentFacade,
         billingAddress: stateRef.current.billingAddress,
         checkoutUi: getCheckoutUi({

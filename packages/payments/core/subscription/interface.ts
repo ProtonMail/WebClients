@@ -1,6 +1,11 @@
+import type {
+    InvalidZipCodeError,
+    TaxExemptionNotSupportedError,
+    WrongBillingAddressError,
+} from '@proton/components/payments/react-extensions/errors';
 import type { Nullable } from '@proton/shared/lib/interfaces';
 
-import type { CheckSubscriptionData, ProrationMode } from '../api/api';
+import type { CheckSubscriptionData } from '../api/api';
 import type { Currency, Cycle, PlanIDs } from '../interface';
 import type { BasePlansMap, Plan, SubscriptionPlan } from '../plan/interface';
 import type { Renew, SubscriptionMode, SubscriptionPlatform, TaxInclusive, TrialType } from './constants';
@@ -119,16 +124,6 @@ interface SubscriptionCheckResponse {
      */
     SubscriptionMode: SubscriptionMode;
     /**
-     * The property doesn't exist on the backend. If the check response is created by the frontend then it should be
-     * considered optimistic.
-     */
-    optimistic?: boolean;
-    /**
-     * This property doesn't actually exist in the response.
-     * It's added by the frontend and echoes the same property from the request.
-     */
-    ProrationMode?: ProrationMode;
-    /**
      * Sometimes amount for the second subscription term (renew amount) is different from the first one. In this case
      * this property will have the renew amount.
      */
@@ -141,7 +136,17 @@ interface SubscriptionCheckResponse {
 }
 
 export type SubscriptionEstimation = SubscriptionCheckResponse & {
+    /**
+     * Just echoes the same properties from the request payload.
+     */
     requestData: CheckSubscriptionData;
+    /**
+     * The property doesn't exist on the backend. If the check response is created by the frontend then it should be
+     * considered optimistic.
+     */
+    optimistic?: boolean;
+
+    error?: InvalidZipCodeError | TaxExemptionNotSupportedError | WrongBillingAddressError;
 };
 
 export interface Tax {

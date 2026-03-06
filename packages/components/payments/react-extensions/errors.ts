@@ -20,3 +20,37 @@ export class TaxExemptionNotSupportedError extends PaymentsApiError {
         this.name = 'TaxExemptionNotSupportedError';
     }
 }
+
+export type BillingAddressFieldStatus = 'ok' | 'missing' | 'invalid';
+
+export type BillingAddressValidationResult = {
+    CountryCode?: BillingAddressFieldStatus;
+    State?: BillingAddressFieldStatus;
+    Company?: BillingAddressFieldStatus;
+    FirstName?: BillingAddressFieldStatus;
+    LastName?: BillingAddressFieldStatus;
+    Address?: BillingAddressFieldStatus;
+    ZipCode?: BillingAddressFieldStatus;
+    City?: BillingAddressFieldStatus;
+    VatId?: BillingAddressFieldStatus;
+};
+
+export function backendBillingAddressFieldError(status: BillingAddressFieldStatus | undefined): string {
+    if (status === 'missing') {
+        return c('Error').t`This field is required`;
+    }
+    if (status === 'invalid') {
+        return c('Error').t`This field is invalid`;
+    }
+    return '';
+}
+
+export class WrongBillingAddressError extends PaymentsApiError {
+    public validationResult?: BillingAddressValidationResult;
+
+    constructor(validationResult?: BillingAddressValidationResult) {
+        super(c('Error').t`Wrong billing address`);
+        this.name = 'WrongBillingAddressError';
+        this.validationResult = validationResult;
+    }
+}

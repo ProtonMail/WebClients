@@ -11,7 +11,8 @@ import useLoading from '@proton/hooks/useLoading';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcShield2CheckFilled } from '@proton/icons/icons/IcShield2CheckFilled';
 import { PAYMENT_METHOD_TYPES, getPaymentsVersion, getPlanFromPlanIDs } from '@proton/payments';
-import { PayButton, usePaymentOptimistic, useTaxCountry } from '@proton/payments/ui';
+import { PayButton, usePaymentOptimistic } from '@proton/payments/ui';
+import { useBillingAddress } from '@proton/payments/ui/hooks/useBillingAddress';
 import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -110,14 +111,14 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
         coupon: options.checkResult.Coupon?.Code,
     });
 
-    const taxCountry = useTaxCountry({
-        onBillingAddressChange: payments.selectBillingAddress,
+    const billingAddressHook = useBillingAddress({
+        onBillingAddressChange: payments.selectFullBillingAddress,
         paymentStatus: payments.paymentStatus,
-        zipCodeBackendValid: payments.zipCodeValid,
-        previousValidZipCode: payments.options.billingAddress.ZipCode,
         paymentFacade,
         telemetryContext: payments.telemetryContext,
         allowedCountries: greenlandOfferCountryCodes,
+        disableVat: true,
+        selectedPlanName: payments.selectedPlan.getPlanName(),
     });
 
     const validatePayment = () => {
@@ -232,7 +233,7 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
                     noMaxWidth
                     hideFirstLabel
                     onCurrencyChange={payments.selectCurrency}
-                    taxCountry={taxCountry}
+                    taxCountry={billingAddressHook.taxCountry}
                 />
             </div>
 
@@ -242,7 +243,7 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
                 type="submit"
                 fullWidth
                 pill
-                taxCountry={taxCountry}
+                taxCountry={billingAddressHook.taxCountry}
                 paymentFacade={paymentFacade}
                 loading={submitting || processingPayment}
                 disabled={loadingChallenge || submitting || processingPayment}
