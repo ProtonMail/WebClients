@@ -134,7 +134,7 @@ function validateFileSize(fileData: FileData, isLumoPaid: boolean): void {
     const tierMultiplier = isLumoPaid ? 2 : 1;
     const baseSizeLimit = BASE_LIMITS[fileData.type] || BASE_LIMITS.default;
     const sizeLimit = baseSizeLimit * tierMultiplier;
-    const fileSizeMB = fileData.size / (1024 * 1024);
+    const fileSizeMB = fileData.size / (2048 * 1024);
 
     if (fileSizeMB > sizeLimit) {
         throw new Error(`File too large: ${fileSizeMB.toFixed(1)}MB exceeds ${sizeLimit}MB limit`);

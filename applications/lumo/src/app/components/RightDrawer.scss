@@ -1,0 +1,36 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.right-drawer {
+	width: 480px;
+	min-width: 380px;
+	block-size: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--background-norm);
+	border-inline-start: 1px solid var(--border-weak);
+	animation: rightDrawerSlideIn 0.25s ease-out;
+	overflow: hidden;
+
+	@include im.media('<=small') {
+		width: 100%;
+		min-width: 0;
+		border-inline-start: none;
+		border-block-start: 1px solid var(--border-weak);
+	}
+
+}
+
+@keyframes rightDrawerSlideIn {
+	from {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
