@@ -11,6 +11,7 @@ import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlus
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import {
+    selectActiveSecureLinksCount,
     selectPassPlan,
     selectSharedByMeCount,
     selectSharedWithMeCount,
@@ -32,6 +33,7 @@ export const SharedMenuContent: FC<Props> = ({ heading, onAction }) => {
     const sharedWithMeCount = useSelector(selectSharedWithMeCount);
     const sharedByMeCount = useSelector(selectSharedByMeCount);
     const secureLinksCount = useSelector(selectVisibleSecureLinksCount);
+    const activeSecureLinksCount = useSelector(selectActiveSecureLinksCount);
     const orgPublicLinkingDisabled = org?.settings.PublicLinkMode === OrganizationPublicLinkMode.DISABLED;
 
     const elements = [
@@ -58,7 +60,7 @@ export const SharedMenuContent: FC<Props> = ({ heading, onAction }) => {
                 onAction={onAction}
             />
         ),
-        secureLinksCount > 0 && !orgPublicLinkingDisabled && (
+        secureLinksCount > 0 && (!orgPublicLinkingDisabled || activeSecureLinksCount > 0) && (
             <SharedMenuItem
                 key="secure-links"
                 label={c('Action').t`Secure links`}

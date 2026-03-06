@@ -81,7 +81,8 @@ const getPolicies = ({ showItemSharing = false, showSecureLink = false }: GetPol
               {
                   setting: 'PublicLinkMode',
                   label: c('Label').t`Allow secure link sharing`,
-                  description: c('Info').t`If disabled, organization members won't be able to create secure links.`,
+                  description: c('Info')
+                      .t`If disabled, organization members won't be able to create secure links. Previously active secure links remain valid until their expiration.`,
               } as const,
           ]
         : []),

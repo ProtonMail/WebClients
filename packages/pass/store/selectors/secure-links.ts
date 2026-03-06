@@ -18,6 +18,7 @@ export const selectAllSecureLinks = createSelector(selectSecureLinkedItems, (ent
 export const selectVisibleSecureLinks = createVisibilityFilterSelector(selectAllSecureLinks);
 export const selectVisibleSecureLinkedItems = createVisibilityFilterSelector(selectSecureLinkedItems);
 export const selectVisibleSecureLinksCount = createSelector([selectVisibleSecureLinks], prop('length'));
+export const selectActiveSecureLinksCount = createSelector(selectVisibleSecureLinks, (links) => links.filter(prop('active')).length);
 export const selectInactiveSecureLinksCount = createSelector(selectAllSecureLinks, (links) => links.filter(not(prop('active'))).length);
 
 export const selectItemSecureLinks = (shareId: string, itemId: string) =>
