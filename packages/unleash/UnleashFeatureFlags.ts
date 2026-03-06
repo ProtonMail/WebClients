@@ -109,6 +109,7 @@ enum AccountFlag {
     ShowLiteAppCheckoutV2 = 'ShowLiteAppCheckoutV2',
     AdminRoleMVP = 'AdminRoleMVP',
     UseZendeskV2 = 'UseZendeskV2',
+    PurchaseAttributionSurveyEnabled = 'PurchaseAttributionSurveyEnabled',
 }
 
 enum PaymentsFlag {

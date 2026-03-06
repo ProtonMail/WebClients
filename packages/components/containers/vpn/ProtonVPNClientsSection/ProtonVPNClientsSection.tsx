@@ -1,67 +1,55 @@
+import { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { Href } from '@proton/atoms/Href/Href';
+import { useUser } from '@proton/account/user/hooks';
 import Copy from '@proton/components/components/button/Copy';
 import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMenuLink';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { appendUrlSearchParams } from '@proton/shared/lib/helpers/url';
 import { VPN_MOBILE_APP_LINKS } from '@proton/shared/lib/vpn/constants';
-import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 
 import DownloadClientCard from '../../../components/downloadClientCard/DownloadClientCard';
-import { getDownloadAppText } from '../../account/dashboard/shared/DashboardMoreInfoSection/helpers';
-import OnboardingContent from '../../onboarding/OnboardingContent';
+import DownloadModal from './DownloadModal/DownloadModal';
+import { FeedbackSurveyModal } from './FeedbackSurveyModal/FeedbackSurveyModal';
+import { FeedbackSurveyModalWrapper } from './FeedbackSurveyModal/FeedbackSurveyModalWrapper';
 import { androidMarketplaceUrl, iosMarketplaceUrl } from './downloadLinks';
-import { getOsDownloadUrl } from './getOsDownloadUrl';
 
-interface DownloadModalProps extends ModalProps {
-    downloadUrl: string;
-}
-
-const DownloadModal = ({ downloadUrl, ...rest }: DownloadModalProps) => {
-    return (
-        <ModalTwo {...rest} size="small">
-            <ModalTwoContent className="m-8 text-center">
-                <OnboardingContent
-                    img={<img src={onboardingVPNWelcome} alt={getWelcomeToText(VPN_APP_NAME)} />}
-                    title={getDownloadAppText(VPN_APP_NAME)}
-                    description={c('Info').t`The securest way to browse, stream, and be online.`}
-                />
-                <ButtonLike
-                    as={Href}
-                    color="norm"
-                    size="large"
-                    target="_blank"
-                    href={getOsDownloadUrl()}
-                    fullWidth
-                    onClick={() => {
-                        rest.onClose?.();
-                    }}
-                    className="mb-2"
-                >{c('Action').t`Download`}</ButtonLike>
-                <Button color="norm" size="large" fullWidth shape="ghost" onClick={rest.onClose}>
-                    {c('Action').t`Close`}
-                </Button>
-            </ModalTwoContent>
-        </ModalTwo>
-    );
-};
+const FIVE_MINUTES = 5 * 60 * 1000;
 
 const ProtonVPNClientsSection = () => {
     const history = useHistory();
     const location = useLocation();
     const { createNotification } = useNotifications();
+    const [user] = useUser();
+    // We only want to display the survey when the user just created the account && it is not a free user
+    const [isFeedbackModalOpen, setIsFeedbackModalOpen] = useState(() => {
+        if (!user.hasPaidVpn) {
+            return false;
+        }
+
+        const seen = getItem('vpn-feedback-modal') === 'seen';
+        if (seen) {
+            return false;
+        }
+
+        setItem('vpn-feedback-modal', 'seen', { ttl: FIVE_MINUTES });
+        return Date.now() - user.CreateTime * 1000 < FIVE_MINUTES;
+    });
+
+    const handleOnCloseFeedbackModal = (discarded: boolean) => {
+        setIsFeedbackModalOpen(false);
+        if (!discarded) {
+            createNotification({
+                text: c('Info').t`Thanks for the feedback!`,
+            });
+        }
+    };
 
     const androidLinks = [
         {
@@ -105,6 +93,9 @@ const ProtonVPNClientsSection = () => {
                     history.replace({ ...location, search: '' });
                 }}
             />
+            <FeedbackSurveyModalWrapper>
+                <FeedbackSurveyModal open={isFeedbackModalOpen} onClose={handleOnCloseFeedbackModal} />
+            </FeedbackSurveyModalWrapper>
             <SettingsParagraph>
                 {c('Info')
                     .t`To secure your internet connection, download and install the ${VPN_APP_NAME} application for your device and connect to a server.`}
