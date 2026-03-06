@@ -1,11 +1,31 @@
 .translucent-modal {
 	font-size: 1rem;
-	backdrop-filter: blur(48px);
 	background-color: rgb(0 0 0 / 0.3);
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		backdrop-filter: blur(48px);
+
+		// did put the backdrop filter on the before element because we can have several backdrop filters in this modal
+		// header-container is sticky and also with a backdrop, and browsers don't manage this super well
+		// this pseudo-element is a workaround to make it work
+	}
 
 	.modal-two-dialog-container,
 	.modal-two-dialog {
 		background-color: transparent;
+	}
+
+	.header-container {
+		backdrop-filter: blur(10px);
+		isolation: isolate; // to force a proper stacking context to avoid artefacts in Chrome/Safari
+		mask-image: linear-gradient(
+			to bottom,
+			black 85%,
+			transparent
+		); // small mask so the effect is more smooth => black = visible, transparent = hidden
 	}
 
 	.header-buttons-container {
