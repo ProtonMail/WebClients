@@ -116,6 +116,14 @@ const slice = createSlice({
         setNoDeviceDetected: (state, action: PayloadAction<PermissionPromptStatus>) => {
             state.noDeviceDetected = action.payload;
         },
+        resetUiState: (state) => {
+            state.meetingReadyPopupOpen = initialState.meetingReadyPopupOpen;
+            state.showDuration = initialState.showDuration;
+            state.sideBarState = initialState.sideBarState;
+            state.popupState = initialState.popupState;
+            state.permissionPromptStatus = initialState.permissionPromptStatus;
+            state.noDeviceDetected = initialState.noDeviceDetected;
+        },
     },
 });
 
@@ -130,6 +138,7 @@ export const {
     closeAllPopups,
     setPermissionPromptStatus,
     setNoDeviceDetected,
+    resetUiState,
 } = slice.actions;
 
 // Selectors
