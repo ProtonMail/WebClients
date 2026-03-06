@@ -1,5 +1,6 @@
 import type { IDBPDatabase } from 'idb';
 
+import { decryptFromDB } from '@proton/encrypted-search/lib/esHelpers';
 import type { EncryptedSearchDB } from '@proton/encrypted-search/models';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
@@ -7,10 +8,8 @@ import type { ESMessageContent } from 'proton-mail/models/encryptedSearch';
 
 import type { CleanTextFn, MigrationMethod, PreparedMessageContent } from '../interface';
 import { getMigrationArray } from './contentMigrations';
-import { getOutdatedContentIterator } from './contentVersionHelpers';
-import { decryptESItem } from './decryptESItem';
+import { readNextOudatedBatch } from './contentVersionHelpers';
 import { encryptAndWriteESItems } from './encryptAndWriteESItems';
-import { getMigrationToRun } from './getMigrationToRun';
 
 interface UpgradeContentProps {
     contentVersion: number;
@@ -19,7 +18,10 @@ interface UpgradeContentProps {
 }
 
 const upgradeContentArray = async ({ contentVersion, data, migrationArray }: UpgradeContentProps) => {
-    const migrationsToRun = getMigrationToRun(contentVersion, migrationArray);
+    const migrationsToRun = migrationArray
+        .filter((data) => data.targetVersion > contentVersion)
+        .sort((a, b) => a.targetVersion - b.targetVersion);
+
     if (migrationsToRun.length === 0) {
         return data;
     }
@@ -43,12 +45,17 @@ export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateConte
     const versionsRecord: Record<number, number> = {};
 
     let array = [];
-    while ((array = await getOutdatedContentIterator(esDB)).length !== 0) {
+    while ((array = await readNextOudatedBatch(esDB)).length !== 0) {
         const items: PreparedMessageContent[] = (
             await Promise.all(
                 array.map(async (data) => {
                     try {
-                        const decrypted = await decryptESItem({ indexKey, cipher: data.value });
+                        const decrypted = await decryptFromDB<ESMessageContent>({
+                            aesGcmCiphertext: data.value,
+                            indexKey,
+                            source: 'readContentItem',
+                        });
+
                         const hasVersion = data.value.version !== -1;
 
                         const contentVersion = hasVersion ? data.value.version : decrypted?.version || -1;
