@@ -17,11 +17,10 @@ import { NewGhostChatButton } from '../Buttons/GhostChatButton/NewGhostChatButto
 import { ComposerComponent } from '../Composer/ComposerComponent';
 import { FilesManagementView } from '../Files';
 import { LumoCat } from '../LumoAvatar';
-import LumoOnboarding from '../Onboarding/LumoOnboarding';
 import WhatsNew from '../WhatsNew/WhatsNew';
 import LumoMainText from './MainContainer/LumoMainText';
+import MainContainerFooter from './MainContainer/MainContainerFooter';
 import { ThemedPromptSuggestion } from './MainContainer/PromptSuggestion';
-import TermsAndConditions from './MainContainer/TermsAndConditions';
 
 import './MainContainer.scss';
 
@@ -101,7 +100,7 @@ const MainContainer = ({
                     '--lg-max-w-custom': '43rem',
                 }}
             >
-                {!isSmallScreen && <NewGhostChatButton className="absolute top-0 right-0 mt-4 mr-4" />}
+                {/* {!isSmallScreen && <NewGhostChatButton className="absolute top-0 right-0 mt-4 mr-4" />} */}
                 <div
                     className={clsx(
                         'lumo-welcome-section flex flex-column-reverse md:flex-row w-full flex-nowrap px-8 relative',
@@ -148,7 +147,7 @@ const MainContainer = ({
                     />
                 </div>
                 <WhatsNew />
-                {!isMobileOrSmallScreen && <LumoOnboarding />}
+                {/* {!isSmallScreen && <LumoOnboarding />} */}
             </div>
             {openPanel.type === 'files' && (
                 <FilesManagementView
@@ -162,8 +161,7 @@ const MainContainer = ({
                 />
             )}
 
-            {/* Legal disclaimer for desktop - only shown in guest mode and before user starts typing */}
-            {isGuest && !isSmallScreen && <TermsAndConditions />}
+            <MainContainerFooter />
         </>
     );
 };

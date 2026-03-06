@@ -6,9 +6,10 @@ import { GhostChatProvider } from '../providers/GhostChatProvider';
 import { useIsGuest } from '../providers/IsGuestProvider';
 import { SearchModalProvider, useSearchModal } from '../providers/SearchModalProvider';
 import { SidebarProvider } from '../providers/SidebarProvider';
-// import { PrivateHeader } from './header/PrivateHeader';
-// import { PublicHeader } from './header/PublicHeader';
+import { PublicHeader } from './header/PublicHeader';
 import LumoSidebar from './sidebar/LumoSidebar';
+
+// import { PublicHeader } from './header/PublicHeader';
 
 export type ActivePanel = 'chatHistory' | 'favoriteChats' | null;
 
@@ -19,7 +20,7 @@ interface Props {
 const MainLayoutContent = ({ children }: Props) => {
     // const { isSmallScreen } = useSidebar();
     const { openSearchModal } = useSearchModal();
-    // const isGuest = useIsGuest();
+    const isGuest = useIsGuest();
 
 
     // Set up keyboard shortcuts
@@ -35,6 +36,7 @@ const MainLayoutContent = ({ children }: Props) => {
                         <LumoSidebar />
                         <main className="flex-1 flex flex-column flex-nowrap border-top border-weak reset4print">
                             <HighLoadWarning />
+                            {isGuest && <PublicHeader />}
                             {children}
                         </main>
                     </div>
