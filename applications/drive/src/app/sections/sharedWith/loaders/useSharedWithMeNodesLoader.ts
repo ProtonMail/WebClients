@@ -11,7 +11,7 @@ import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
-import { ItemType, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
+import { ItemType, useSharedWithMeStore } from '../useSharedWithMe.store';
 
 export const useSharedWithMeNodesLoader = () => {
     const {
@@ -21,7 +21,7 @@ export const useSharedWithMeNodesLoader = () => {
     const { createNotification } = useNotifications();
     const { setVolumeShareIds } = useVolumesState();
 
-    const { setSharedWithMeItemInStore, setLoadingNodes, cleanupStaleItems } = useSharedWithMeListingStore(
+    const { setSharedWithMeItemInStore, setLoadingNodes, cleanupStaleItems } = useSharedWithMeStore(
         useShallow((state) => ({
             setSharedWithMeItemInStore: state.setSharedWithMeItem,
             setLoadingNodes: state.setLoadingNodes,
@@ -31,7 +31,7 @@ export const useSharedWithMeNodesLoader = () => {
 
     const loadSharedWithMeNodes = useCallback(
         async (abortSignal: AbortSignal) => {
-            if (useSharedWithMeListingStore.getState().isLoadingNodes) {
+            if (useSharedWithMeStore.getState().isLoadingNodes) {
                 return;
             }
             setLoadingNodes(true);

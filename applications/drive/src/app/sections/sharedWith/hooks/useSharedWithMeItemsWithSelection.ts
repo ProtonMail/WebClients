@@ -17,7 +17,7 @@ import { useDrivePreviewModal } from '../../../modals/preview';
 import { useDocumentActions, useUserSettings } from '../../../store';
 import { useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { dateToLegacyTimestamp } from '../../../utils/sdk/legacyTime';
-import { ItemType, getKeyUid, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
+import { ItemType, getKeyUid, useSharedWithMeStore } from '../useSharedWithMe.store';
 import { useBookmarksActions } from './useBookmarksActions';
 
 const DEFAULT_SORT = {
@@ -54,7 +54,7 @@ export const useSharedWithMeItemsWithSelection = () => {
         isLoading,
         hasEverLoaded,
         itemUidsSize,
-    } = useSharedWithMeListingStore(
+    } = useSharedWithMeStore(
         useShallow((state) => ({
             getSharedWithMeStoreItem: state.getSharedWithMeItem,
             invitationPositionedItems: state.getInvitationPositionedItems(),
@@ -207,7 +207,7 @@ export const useSharedWithMeItemsWithSelection = () => {
                     return openDocument({
                         type: 'doc',
                         linkId: nodeId,
-                        shareId: item.shareId,
+                        shareId: item.shareId ?? '',
                         openBehavior: 'tab',
                     });
                 }
@@ -217,7 +217,7 @@ export const useSharedWithMeItemsWithSelection = () => {
                     return openDocument({
                         type: 'sheet',
                         linkId: nodeId,
-                        shareId: item.shareId,
+                        shareId: item.shareId ?? '',
                         openBehavior: 'tab',
                     });
                 }
@@ -225,20 +225,20 @@ export const useSharedWithMeItemsWithSelection = () => {
             }
 
             if (item.type === NodeType.Album) {
-                navigateToAlbum(item.shareId, nodeId);
+                navigateToAlbum(item.shareId ?? '', nodeId);
                 return;
             }
 
             if ((item.type === NodeType.File || item.type === NodeType.Photo) && isSDKPreviewEnabled) {
                 showPreviewModal({
                     drive: getDrivePerNodeType(item.type),
-                    deprecatedContextShareId: item.shareId,
+                    deprecatedContextShareId: item.shareId ?? '',
                     nodeUid: item.nodeUid,
                 });
                 return;
             }
 
-            navigateToLink(item.shareId, nodeId, item.type === NodeType.File || item.type === NodeType.Photo);
+            navigateToLink(item.shareId ?? '', nodeId, item.type === NodeType.File || item.type === NodeType.Photo);
         },
         [
             getSharedWithMeStoreItem,

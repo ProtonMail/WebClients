@@ -1,7 +1,7 @@
 import { SortField } from '../../modules/sorting/types';
-import { ItemType, type SharedWithMeListingItemUI } from '../../zustand/sections/sharedWithMeListing.store';
+import { ItemType, type SharedWithMeItem } from './types';
 
-export function getSharedWithMeSortValue(item: SharedWithMeListingItemUI, field: SortField): unknown {
+export function getSharedWithMeSortValue(item: SharedWithMeItem, field: SortField): unknown {
     switch (field) {
         case SortField.name:
             return item.name;

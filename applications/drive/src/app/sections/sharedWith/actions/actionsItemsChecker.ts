@@ -1,6 +1,6 @@
 import { NodeType, splitNodeUid } from '@proton/drive';
 
-import { ItemType, type SharedWithMeListingItemUI } from '../../../zustand/sections/sharedWithMeListing.store';
+import { ItemType, type SharedWithMeItem } from '../useSharedWithMe.store';
 
 // TODO: Consider implementing action capabilities pattern
 // Similar to node capabilities, we could provide specific action capabilities for better separation of concerns.
@@ -27,10 +27,10 @@ export interface ItemTypeChecker {
     canDownload: boolean;
     canOpenInDocs: boolean;
     canCopy: boolean;
-    items: SharedWithMeListingItemUI[];
+    items: SharedWithMeItem[];
 }
 
-export const createItemChecker = (items: SharedWithMeListingItemUI[]): ItemTypeChecker => {
+export const createItemChecker = (items: SharedWithMeItem[]): ItemTypeChecker => {
     const metadata = items.reduce(
         (acc, item) => {
             if (item.itemType === ItemType.INVITATION) {
@@ -107,7 +107,7 @@ export const createItemChecker = (items: SharedWithMeListingItemUI[]): ItemTypeC
     };
 };
 
-export const mapToLegacyFormat = (items: SharedWithMeListingItemUI[]) => {
+export const mapToLegacyFormat = (items: SharedWithMeItem[]) => {
     return items.map((item) => {
         if (item.itemType === ItemType.BOOKMARK) {
             // Bookmark doesn't have any info about the node
@@ -125,7 +125,7 @@ export const mapToLegacyFormat = (items: SharedWithMeListingItemUI[]) => {
 
         const { volumeId, nodeId } = splitNodeUid(item.nodeUid);
         return {
-            rootShareId: item.shareId,
+            rootShareId: item.shareId ?? '',
             mimeType: item.mediaType || '',
             linkId: nodeId,
             isFile: item.type === NodeType.File || item.type === NodeType.Photo,
