@@ -1,0 +1,168 @@
+import clsx from '@proton/utils/clsx';
+
+import type { MeetingVariant } from '../ScheduleMeetingForm/ScheduleMeetingForm';
+import { MeetingColorsMap } from '../ScheduleMeetingForm/ScheduleMeetingSvgIcon';
+
+export const ScheduleMeetingRecapAnimatedIcon = ({
+    className,
+    variant,
+}: {
+    className?: string;
+    variant: MeetingVariant;
+}) => (
+    <svg
+        width="64"
+        height="57"
+        viewBox="0 0 64 57"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={clsx('mb-5', className)}
+    >
+        <rect y="4.84375" width="57.6363" height="37.4764" rx="9.68644" fill={MeetingColorsMap[variant][0]} />
+        <path
+            d="M53.874 16.9434C55.9518 16.9435 57.6365 18.6283 57.6367 20.7061V46.7881C57.6367 52.1377 53.2997 56.4744 47.9502 56.4746H9.68652C4.33685 56.4746 0 52.1378 0 46.7881V20.7061C0.000178701 18.6282 1.68478 16.9434 3.7627 16.9434H53.874Z"
+            fill={MeetingColorsMap[variant][2]}
+        />
+        <rect
+            x="13.2139"
+            width="9.68644"
+            height="4.30508"
+            rx="2.15254"
+            transform="rotate(90 13.2139 0)"
+            fill={MeetingColorsMap[variant][1]}
+        />
+        <rect
+            x="25.0527"
+            width="9.68644"
+            height="4.30508"
+            rx="2.15254"
+            transform="rotate(90 25.0527 0)"
+            fill={MeetingColorsMap[variant][1]}
+        />
+        <rect
+            x="36.8918"
+            width="9.68644"
+            height="4.30508"
+            rx="2.15254"
+            transform="rotate(90 36.8918 0)"
+            fill={MeetingColorsMap[variant][1]}
+        />
+        <rect
+            x="48.7307"
+            width="9.68644"
+            height="4.30508"
+            rx="2.15254"
+            transform="rotate(90 48.7307 0)"
+            fill={MeetingColorsMap[variant][1]}
+        />
+        <rect
+            x="7.76367"
+            y="23.2539"
+            width="6.91969"
+            height="5.38136"
+            rx="2.69068"
+            fill={MeetingColorsMap[variant][0]}
+        />
+        <rect
+            x="7.76367"
+            y="23.2539"
+            width="6.91969"
+            height="5.38136"
+            rx="2.69068"
+            fill={MeetingColorsMap[variant][0]}
+        />
+        <rect
+            x="18.9885"
+            y="23.2539"
+            width="6.91969"
+            height="5.38136"
+            rx="2.69068"
+            fill={MeetingColorsMap[variant][0]}
+        />
+        <rect
+            x="30.2131"
+            y="23.2539"
+            width="6.91969"
+            height="5.38136"
+            rx="2.69068"
+            fill={MeetingColorsMap[variant][1]}
+        />
+        <rect
+            x="41.438"
+            y="23.2539"
+            width="6.91969"
+            height="5.38136"
+            rx="2.69068"
+            fill={MeetingColorsMap[variant][0]}
+        />
+        <rect
+            x="7.76367"
+            y="31.8633"
+            width="6.91969"
+            height="5.38136"
+            rx="2.69068"
+            fill={MeetingColorsMap[variant][0]}
+        />
+        <rect
+            x="18.9885"
+            y="31.8633"
+            width="6.91969"
+            height="5.38136"
+            rx="2.69068"
+            fill={MeetingColorsMap[variant][0]}
+        />
+        <rect
+            x="30.2131"
+            y="31.8633"
+            width="6.91969"
+            height="5.38136"
+            rx="2.69068"
+            fill={MeetingColorsMap[variant][2]}
+        />
+        <rect
+            x="41.438"
+            y="31.8633"
+            width="6.91969"
+            height="5.38136"
+            rx="2.69068"
+            fill={MeetingColorsMap[variant][2]}
+        />
+        <rect
+            x="7.76367"
+            y="40.4746"
+            width="6.91969"
+            height="5.38136"
+            rx="2.69068"
+            fill={MeetingColorsMap[variant][0]}
+        />
+        <rect
+            x="18.9885"
+            y="40.4746"
+            width="6.91969"
+            height="5.38136"
+            rx="2.69068"
+            fill={MeetingColorsMap[variant][0]}
+        />
+        <rect
+            x="30.2131"
+            y="40.4746"
+            width="6.91969"
+            height="5.38136"
+            rx="2.69068"
+            fill={MeetingColorsMap[variant][2]}
+        />
+        <rect
+            x="41.438"
+            y="40.4746"
+            width="6.91969"
+            height="5.38136"
+            rx="2.69068"
+            fill={MeetingColorsMap[variant][2]}
+        />
+        <path
+            d="M64 25.6547L42.6874 51.2686L28.26 39.2455L32.1251 34.6063L41.9098 42.761L59.3582 21.793L64 25.6547Z"
+            fill={MeetingColorsMap[variant][1]}
+            className="meeting-icon-check"
+        />
+    </svg>
+);

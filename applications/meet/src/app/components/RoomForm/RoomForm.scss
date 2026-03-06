@@ -26,6 +26,10 @@
 		color: var(--text-invert) !important;
 	}
 
+	&.variant-purple {
+		--theme-color: var(--interaction-norm);
+	}
+
 	&.variant-orange {
 		--theme-color: var(--ui-orange-interaction-minor-1);
 	}

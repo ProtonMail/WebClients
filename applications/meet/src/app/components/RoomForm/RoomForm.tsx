@@ -9,7 +9,7 @@ import clsx from '@proton/utils/clsx';
 
 import './RoomForm.scss';
 
-export type RoomVariant = 'orange' | 'blue' | 'green' | 'red';
+export type RoomVariant = 'purple' | 'orange' | 'blue' | 'green' | 'red';
 
 export interface RoomFormProps {
     id?: string;
@@ -19,6 +19,7 @@ export interface RoomFormProps {
     onClose: () => void;
 }
 const RoomColorsMap: Record<RoomVariant, string[]> = {
+    purple: ['#413969', '#9581FF', '#6F53FF'],
     orange: ['#523A2E', '#FFB35F', '#FF7A00'],
     blue: ['#094A62', '#7BDCFF', '#0080A8'],
     green: ['#2B3E40', '#9EEA9F', '#1CBB1D'],

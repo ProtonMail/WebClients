@@ -1,6 +1,6 @@
 import type { RoomVariant } from './RoomForm';
 
-const ROOM_VARIANTS: RoomVariant[] = ['orange', 'blue', 'green', 'red'];
+const ROOM_VARIANTS: RoomVariant[] = ['purple', 'orange', 'blue', 'green', 'red'];
 
 /**
  * Returns a deterministic variant for a given room ID.
@@ -8,7 +8,7 @@ const ROOM_VARIANTS: RoomVariant[] = ['orange', 'blue', 'green', 'red'];
  */
 export const getRoomVariantFromId = (id: string | undefined): RoomVariant => {
     if (id === undefined || id === '') {
-        return ROOM_VARIANTS[Math.floor(Math.random() * ROOM_VARIANTS.length)];
+        return ROOM_VARIANTS[0]; // default to purple
     }
     let hash = 0;
     for (let i = 0; i < id.length; i++) {
