@@ -23,7 +23,7 @@ import { c } from 'ttag'
 import { downloadExport } from '../UseCase/ExportAndDownload'
 
 export interface EditorControllerInterface {
-  copyCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
+  getCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<string | null>
   exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
   exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array<ArrayBuffer>>
   getDocumentClientId(): Promise<number | undefined>
@@ -330,12 +330,12 @@ export class EditorController implements EditorControllerInterface {
     return this.editorInvoker.exportData(format)
   }
 
-  async copyCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<void> {
+  async getCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<string | null> {
     if (!this.editorInvoker) {
       throw new Error(`Attepting to export document before editor invoker or decrypted node is initialized`)
     }
 
-    return this.editorInvoker.copyCurrentSelection(format)
+    return this.editorInvoker.getCurrentSelection(format)
   }
 
   async getDocumentState(): Promise<Uint8Array<ArrayBuffer>> {
