@@ -18,6 +18,7 @@ export type MessageComponentProps = {
     sourcesContainerRef: React.MutableRefObject<HTMLDivElement | null>;
     handleOpenSources: (message: Message) => void;
     handleOpenFiles: (message?: Message) => void;
+    handleOpenFilePreview: (attachment: import('../../../../types').Attachment) => void;
     messageChain: Message[];
     newMessageRef?: React.MutableRefObject<HTMLDivElement | null>;
     isLastMessage: boolean;
@@ -71,6 +72,7 @@ const MessageComponentPure = ({
     sourcesContainerRef,
     handleOpenSources,
     handleOpenFiles,
+    handleOpenFilePreview,
     messageChain,
     newMessageRef,
     isLastMessage,
@@ -96,7 +98,7 @@ const MessageComponentPure = ({
                     siblingInfo={siblingInfo}
                     handleEditMessage={handleEditMessage}
                     newMessageRef={newMessageRef}
-                    // onOpenFiles={handleOpenFiles}
+                    onOpenFilePreview={handleOpenFilePreview}
                 />
             ) : (
                 <>
