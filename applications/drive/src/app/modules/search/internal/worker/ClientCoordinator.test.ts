@@ -1,6 +1,6 @@
+import type { MainThreadBridge } from '../MainThreadBridge';
 import type { ClientId, UserId } from '../types';
 import { ClientCoordinator } from './ClientCoordinator';
-import type { MainThreadBridge } from './indexing/types';
 
 jest.mock('../Logger', () => ({
     Logger: { info: jest.fn(), error: jest.fn() },
