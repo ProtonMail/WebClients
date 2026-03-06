@@ -84,7 +84,7 @@ const TotalAmountWithDiscount = ({ amountDue, currency, discount }: FooterTotalA
 interface Props {
     paymentFacade: ReturnType<typeof usePaymentFacade>;
     paymentMethodRequired: boolean;
-    vatNumber: ReturnType<typeof useVatNumber>;
+    vatNumber: ReturnType<typeof useVatNumber> | undefined;
     taxCountry: ReturnType<typeof useTaxCountry>;
 }
 

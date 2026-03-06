@@ -11,7 +11,8 @@ import { usePaymentFacade } from '@proton/components/payments/client-extensions'
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { PAYMENT_METHOD_TYPES, PLANS, getPaymentsVersion, getPlanFromPlanIDs } from '@proton/payments';
-import { PayButton, usePaymentOptimistic, useTaxCountry, useVatNumber } from '@proton/payments/ui';
+import { PayButton, usePaymentOptimistic } from '@proton/payments/ui';
+import { useBillingAddress } from '@proton/payments/ui/hooks/useBillingAddress';
 import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Audience } from '@proton/shared/lib/interfaces';
@@ -63,19 +64,13 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
         return true;
     };
 
-    const taxCountry = useTaxCountry({
-        onBillingAddressChange: payments.selectBillingAddress,
+    const billingAddressHook = useBillingAddress({
+        onBillingAddressChange: payments.selectFullBillingAddress,
         paymentStatus: payments.paymentStatus,
-        zipCodeBackendValid: payments.zipCodeValid,
-        previousValidZipCode: payments.options.billingAddress.ZipCode,
         paymentFacade,
         telemetryContext: payments.telemetryContext,
-    });
-
-    const vatNumber = useVatNumber({
         selectedPlanName: payments.selectedPlan.getPlanName(),
-        onChange: payments.setVatNumber,
-        taxCountry,
+        onVatChange: payments.setVatNumber,
     });
 
     const handleProcess = async (event: FormEvent<HTMLFormElement>) => {
@@ -185,8 +180,8 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
                         noMaxWidth
                         hideFirstLabel
                         onCurrencyChange={payments.selectCurrency}
-                        taxCountry={taxCountry}
-                        vatNumber={vatNumber}
+                        taxCountry={billingAddressHook.taxCountry}
+                        vatNumber={billingAddressHook.vatNumber}
                     />
 
                     <PayButton
@@ -194,7 +189,8 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
                         color="norm"
                         fullWidth
                         pill
-                        taxCountry={taxCountry}
+                        taxCountry={billingAddressHook.taxCountry}
+                        vatNumber={billingAddressHook.vatNumber}
                         paymentFacade={paymentFacade}
                         loading={loading}
                         data-testid="pay"

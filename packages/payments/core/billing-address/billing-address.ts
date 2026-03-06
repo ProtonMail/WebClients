@@ -82,18 +82,26 @@ export function billingStateValidator(billingAddress: BillingAddress) {
     return '';
 }
 
+export type BillingAddressExtraProperties = {
+    Company?: string | null;
+    Address?: string | null;
+    City?: string | null;
+    FirstName?: string | null;
+    LastName?: string | null;
+};
+
+export type BillingAddressExtended = BillingAddress & BillingAddressExtraProperties;
+
 export type FullBillingAddress = {
-    BillingAddress: BillingAddress & {
-        Company?: string | null;
-        Address?: string | null;
-        City?: string | null;
-        FirstName?: string | null;
-        LastName?: string | null;
-    };
+    BillingAddress: BillingAddressExtended;
     VatId?: string | null;
 };
 
-export type PayloadBillingAddress = BillingAddress & {
+export type FullBillingAddressFlat = BillingAddressExtended & {
+    VatId?: string | null;
+};
+
+export type PayloadBillingAddress = BillingAddressExtended & {
     VatId?: string | null;
 };
 
@@ -130,7 +138,7 @@ export function getBillingAddressPayload({
     billingAddress,
     vatId,
 }: {
-    billingAddress: BillingAddress;
+    billingAddress: BillingAddressExtended;
     vatId: string | undefined;
 }): PayloadBillingAddress {
     const withNormalizedZipCode = normalizeZipCodeInBillingAddress({
@@ -142,7 +150,17 @@ export function getBillingAddressPayload({
         vatId,
     });
 
-    const allowedProps: (keyof PayloadBillingAddress)[] = ['CountryCode', 'State', 'ZipCode', 'VatId'];
+    const allowedProps: (keyof PayloadBillingAddress)[] = [
+        'CountryCode',
+        'State',
+        'ZipCode',
+        'VatId',
+        'Company',
+        'Address',
+        'City',
+        'FirstName',
+        'LastName',
+    ];
     const payload: any = {};
     Object.keys(withNormalizedVatId).forEach((key: any) => {
         if (allowedProps.includes(key)) {
