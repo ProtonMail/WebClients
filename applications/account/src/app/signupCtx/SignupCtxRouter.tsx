@@ -26,38 +26,6 @@ const DriveSignupController = (props: BaseSignupContextProps) => (
     </Switch>
 );
 
-const PassSignupController = (props: BaseSignupContextProps) => (
-    <Switch>
-        <Route>
-            <PassSignup {...props} />
-        </Route>
-    </Switch>
-);
-
-const MeetSignupController = (props: BaseSignupContextProps) => (
-    <Switch>
-        <Route>
-            <MeetB2CSignup {...props} />
-        </Route>
-    </Switch>
-);
-
-const FirstEmailReservationController = (props: BaseSignupContextProps) => (
-    <Switch>
-        <Route>
-            <FirstEmailReservationFlowSignup {...props} />
-        </Route>
-    </Switch>
-);
-
-const ReferralSignupController = (props: BaseSignupContextProps) => {
-    return <ReferralSignup {...props} />;
-};
-
-const GreenlandSignupController = (props: BaseSignupContextProps) => {
-    return <GreenlandSignup {...props} />;
-};
-
 const GenericSignupController = (props: BaseSignupContextProps) => {
     /**
      * Here we can control which signups to initiate
@@ -87,21 +55,21 @@ const SignupCtxRouter = (props: BaseSignupContextProps) => {
                     <DriveSignupController {...props} />
                 </Route>
                 <Route path={SSO_PATHS.REFERAL_PLAN_SELECTION}>
-                    <ReferralSignupController {...props} />
+                    <ReferralSignup {...props} />
                 </Route>
                 <Route path={SSO_PATHS.PASS_SIGNUP}>
-                    <PassSignupController {...props} />
+                    <PassSignup {...props} />
                 </Route>
                 <Route path={SSO_PATHS.MEET_SIGNUP}>
-                    <MeetSignupController {...props} />
+                    <MeetB2CSignup {...props} />
                 </Route>
                 {firstEmailEnabled && (
                     <Route path={SSO_PATHS.FIRST_EMAIL}>
-                        <FirstEmailReservationController {...props} />
+                        <FirstEmailReservationFlowSignup {...props} />
                     </Route>
                 )}
                 <Route path={SSO_PATHS.GREENLAND_SIGNUP}>
-                    <GreenlandSignupController {...props} />
+                    <GreenlandSignup {...props} />
                 </Route>
                 <Route>
                     <GenericSignupController {...props} />
