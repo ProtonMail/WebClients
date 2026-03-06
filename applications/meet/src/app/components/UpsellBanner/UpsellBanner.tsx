@@ -7,6 +7,7 @@ import { SettingsLink } from '@proton/components/index';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { PLANS } from '@proton/payments/core/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useIsTreatedAsPaidMeetUser } from '../../hooks/useIsTreatedAsPaidMeetUser';
@@ -39,6 +40,11 @@ export const UpsellBanner = ({ isPaid }: UpsellBannerProps) => {
         return null;
     }
 
+    // Temporarily fix for double settings button, we hide upsell banner to not go to settings.
+    if (isElectronApp) {
+        return;
+    }
+
     const unlimitedMeeting = (
         <span key="unlimited-meeting" className="color-norm">{c('Info').t`unlimited meeting`}</span>
     );
@@ -67,7 +73,7 @@ export const UpsellBanner = ({ isPaid }: UpsellBannerProps) => {
 };
 
 export const UpsellBannerWithUser = () => {
-    const isTreatedAsPaid = useIsTreatedAsPaidMeetUser();
+    const { isPaid, isSubUser } = useIsTreatedAsPaidMeetUser();
 
-    return <UpsellBanner isPaid={isTreatedAsPaid} />;
+    return <UpsellBanner isPaid={isPaid || isSubUser} />;
 };
