@@ -1,9 +1,9 @@
 import * as Comlink from 'comlink';
 
 import { Logger } from './Logger';
+import type { MainThreadBridge } from './MainThreadBridge';
 import type { ClientId, UserId } from './types';
 import type { SharedWorkerAPI } from './worker/SharedWorkerAPI';
-import type { MainThreadBridge } from './worker/indexing/types';
 
 const HEARTBEAT_INTERVAL = 3000;
 
@@ -53,6 +53,10 @@ export class WorkerClient {
     }
 
     // TODO: Add methods to search or read the current state of indexing.
+
+    dispose(): void {
+        this.disconnect();
+    }
 
     private disconnect() {
         clearInterval(this.heartbeatInterval);

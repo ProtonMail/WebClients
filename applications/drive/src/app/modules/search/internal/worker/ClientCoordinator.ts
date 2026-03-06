@@ -1,6 +1,6 @@
 import { Logger } from '../Logger';
+import type { MainThreadBridge } from '../MainThreadBridge';
 import type { ClientId, UserId } from '../types';
-import type { MainThreadBridge } from './indexing/types';
 
 // How long we wait before considering a client dead.
 const HEARTBEAT_TIMEOUT = 30000;
