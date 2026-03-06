@@ -11,6 +11,7 @@ export function SearchContextMenu({ anchorRef, isOpen, position, open, close }: 
         handleDetails,
         handleRename,
         handleTrash,
+        handleMove,
         handleOpenDocsOrSheets,
         handleGoToParent,
         handleShare,
@@ -24,6 +25,7 @@ export function SearchContextMenu({ anchorRef, isOpen, position, open, close }: 
                     onDownload={handleDownload}
                     onDetails={handleDetails}
                     onTrash={handleTrash}
+                    onMove={handleMove}
                     onRename={handleRename}
                     onOpenDocsOrSheets={handleOpenDocsOrSheets}
                     onGoToParent={handleGoToParent}
@@ -36,6 +38,7 @@ export function SearchContextMenu({ anchorRef, isOpen, position, open, close }: 
             {modals.detailsModal}
             {modals.renameModal}
             {modals.sharingModal}
+            {modals.moveItemsModal}
         </>
     );
 }

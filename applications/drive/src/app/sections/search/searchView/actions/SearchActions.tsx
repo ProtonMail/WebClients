@@ -15,6 +15,7 @@ interface BaseSearchActionsProps {
     onDownload: (uids: string[]) => Promise<void>;
     onRename: (uid: string) => void;
     onTrash: (uids: string[]) => void;
+    onMove: (uids: string[]) => void;
     onGoToParent: (parentNodeUid: string) => void;
     onOpenDocsOrSheets: (uid: string, openInDocs: OpenInDocsType) => void;
     onShare: (uid: string) => void;
@@ -40,6 +41,7 @@ export function SearchActions({
     onDetails,
     onRename,
     onTrash,
+    onMove,
     onGoToParent,
     onOpenDocsOrSheets,
     onShare,
@@ -73,6 +75,7 @@ export function SearchActions({
             onDetails={onDetails}
             onRename={onRename}
             onTrash={onTrash}
+            onMove={onMove}
             onGoToParent={onGoToParent}
             onShare={onShare}
             onOpenDocsOrSheets={onOpenDocsOrSheets}
