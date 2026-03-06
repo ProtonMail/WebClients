@@ -1118,6 +1118,12 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Set password or expiration date": [
+        "Nastavi geslo ali datum poteka veljavnosti"
+      ],
+      "Sharing is end-to-end encrypted": [
+        "Deljenje je šifrirano od konca do konca"
       ]
     },
     "Actions": {
@@ -6192,6 +6198,15 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše preizkusno obdobje se bo končalo čez ${ timeRemaining }."
+      ],
+      "Link copied": [
+        "Povezava je kopirana"
+      ],
+      "owner": [
+        "lastnik"
+      ],
+      "Who has access": [
+        "Kdo ima dostop"
       ]
     },
     "info": {
@@ -6892,6 +6907,24 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Active": [
+        "Aktivno"
+      ],
+      "Anyone on the Internet with the link": [
+        "Vsakdo na spletu s povezavo si lahko ogleda"
+      ],
+      "can edit": [
+        "lahko ureja"
+      ],
+      "can view": [
+        "lahko si ogledate"
+      ],
+      "Delete link and remove access for everyone": [
+        "Izbriši povezavo in odstrani dostop za vse."
+      ],
+      "Not active": [
+        "Ni dejaven"
       ]
     },
     "Label for contact group color": {
@@ -11586,6 +11619,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "Pridobili ste pet GB prostora za shranjevanje."
+      ],
+      "Public link": [
+        "Javna povezava"
+      ],
+      "Public link settings": [
+        "Nastavitve javne povezave"
+      ],
+      "Settings for ${ sharedFileName }": [
+        "Nastavitve za ${ sharedFileName }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -11895,6 +11937,14 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaša preskusna različica se izteče ${ textDate }. Če do ${ textDate } prekličete, vam ne bo zaračunano. ${ action }"
+      ]
+    },
+    "Status": {
+      "accepted": [
+        "sprejeto"
+      ],
+      "pending": [
+        "v teku"
       ]
     }
   }
