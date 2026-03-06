@@ -15,13 +15,13 @@ interface CloseButtonProps {
 export const CloseButton = ({ onClose, className, style }: CloseButtonProps) => {
     return (
         <Button
-            className={clsx('close-button rounded-full w-custom h-custom shrink-0 p-0 border-weak', className)}
+            className={clsx('close-button rounded-full w-custom h-custom shrink-0 p-0', className)}
             style={{
                 '--w-custom': '2.5rem',
                 '--h-custom': '2.5rem',
                 ...style,
             }}
-            shape="outline"
+            shape="ghost"
             aria-label={c('Alt').t`Close`}
             onClick={onClose}
         >
