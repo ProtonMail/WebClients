@@ -17,6 +17,7 @@ import {
   useAuthentication,
   usePopperAnchor,
   useConfig,
+  useNotifications,
 } from '@proton/components'
 import type {
   AuthenticatedDocControllerInterface,
@@ -48,6 +49,7 @@ import { useDebugMode } from '~/utils/debug-mode-context'
 import * as Ariakit from '@ariakit/react'
 import clsx from '@proton/utils/clsx'
 import * as UI from '@proton/docs-shared/components/ui/ui'
+import { textToClipboard } from '@proton/shared/lib/helpers/browser'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -90,6 +92,7 @@ export function DocumentTitleDropdown({
   const isDownloadLogsAllowed = useIsDownloadLogsAllowed()
   const { APP_VERSION } = useConfig()
   const isSheetsEnabled = useIsSheetsEnabled()
+  const { createNotification } = useNotifications()
 
   const [isRenaming, setIsRenaming] = useState(false)
   const [renameInputValue, setRenameInputValue] = useState(title)
@@ -792,8 +795,15 @@ export function DocumentTitleDropdown({
           {!isSpreadsheet && (
             <DropdownMenuButton
               className="flex items-center text-left"
-              onClick={() => {
-                void editorController.copyCurrentSelection('md')
+              onClick={async () => {
+                const result = await editorController.getCurrentSelection('md')
+                if (result) {
+                  textToClipboard(result)
+                  createNotification({
+                    type: 'success',
+                    text: c('Info').t`Copied to clipboard`,
+                  })
+                }
               }}
               data-testid="dropdown-copy-as-md"
             >
