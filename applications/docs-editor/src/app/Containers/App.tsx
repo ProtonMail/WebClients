@@ -55,8 +55,7 @@ import { Spreadsheet } from './Spreadsheet/Spreadsheet'
 import { $generateJSONFromSelectedNodes } from '@lexical/clipboard'
 import { getEditorStateFromSerializedNodes } from '../Conversion/get-editor-state-from-nodes'
 import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils'
-import { copyTextToClipboard } from '../Utils/copy-to-clipboard'
-import { ErrorBoundary, useNotifications } from '@proton/components'
+import { ErrorBoundary } from '@proton/components'
 import type { OpenLinkEventData } from './Spreadsheet/constants'
 import { OPEN_LINK_EVENT } from './Spreadsheet/constants'
 
@@ -68,7 +67,6 @@ type AppProps = {
 
 export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const { application, bridge, docState, docMap, editorConfig, setEditorConfig, didSetInitialConfig } = bridgeState
-  const { createNotification } = useNotifications()
   const { suggestionsEnabled } = useSyncedState()
   const { editorState } = useEditorState()
   const { userMode } = useEditorStateValues()
@@ -391,10 +389,10 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         setShowTreeView((show) => !show)
       },
 
-      async copyCurrentSelection(format) {
+      async getCurrentSelection(format) {
         const editor = editorRef.current
         if (!editor) {
-          return
+          return null
         }
 
         try {
@@ -421,18 +419,13 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
             editorState = editor.getEditorState().toJSON()
           }
           if (!editorState) {
-            return
+            return null
           }
 
           const result = await exportDataFromEditorState(editorState, format, {
             fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
           })
           const resultString = uint8ArrayToUtf8String(result)
-          copyTextToClipboard(resultString)
-          createNotification({
-            type: 'success',
-            text: c('Info').t`Copied to clipboard`,
-          })
 
           if (selection) {
             editor.update(
@@ -444,8 +437,11 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
               },
             )
           }
+
+          return resultString
         } catch (error) {
           console.error('Could not copy as markdown', error)
+          return null
         }
       },
 
@@ -496,7 +492,6 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     applyBeforePrintFixesForChrome,
     userModeRef,
     editorState,
-    createNotification,
   ])
 
   useEffect(() => {
