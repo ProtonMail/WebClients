@@ -1,15 +1,15 @@
 import type { IDBPDatabase } from 'idb';
 
 import { ciphertextSize, serializeAndEncryptItem } from '@proton/encrypted-search/esHelpers';
-import type { ESCiphertext, EncryptedSearchDB } from '@proton/encrypted-search/models';
+import type { EncryptedSearchDB } from '@proton/encrypted-search/models';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
-import type { EncryptedSearchData } from '../interface';
+import type { PreparedMessageContent } from '../interface';
 
 interface EncryptAndWriteProps {
     esDB: IDBPDatabase<EncryptedSearchDB>;
     indexKey: CryptoKey;
-    items: { original: ESCiphertext; updated: EncryptedSearchData }[];
+    items: PreparedMessageContent[];
 }
 
 /**
@@ -18,10 +18,9 @@ interface EncryptAndWriteProps {
 export const encryptAndWriteESItems = async ({ esDB, indexKey, items }: EncryptAndWriteProps): Promise<void> => {
     const encryptedItems = [];
 
-    for (const { updated, original } of items) {
-        const itemID = updated.metadata?.ID;
-        const version = updated.content?.version;
-        if (!version || !itemID || !updated.content) {
+    for (const { updated, original, itemID } of items) {
+        const version = updated?.version;
+        if (!version || !updated) {
             traceInitiativeError(
                 SentryMailInitiatives.MIGRATION_TOOL,
                 new Error('Item missing ID, version, or content')
@@ -30,7 +29,7 @@ export const encryptAndWriteESItems = async ({ esDB, indexKey, items }: EncryptA
         }
 
         // Encryption is done before opening the transaction to avoid auto-commit
-        const encryptedContent = await serializeAndEncryptItem(indexKey, updated.content, version);
+        const encryptedContent = await serializeAndEncryptItem(indexKey, updated, version);
         encryptedItems.push({ encryptedContent, original: original, id: itemID });
     }
 
