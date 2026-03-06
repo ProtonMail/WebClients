@@ -33,11 +33,11 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { getTimeZoneOptions, getTimezone } from '@proton/shared/lib/date/timezone';
 import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
-import scheduleIcon from '@proton/styles/assets/img/meet/schedule-icon.svg';
 
 import { formatTimeHHMM } from '../../utils/timeFormat';
 import { ScheduleMeetingRecapModal } from '../ScheduleMeetingRecapModal/ScheduleMeetingRecapModal';
 import { TimeInputBlock } from '../TimeInputBlock';
+import { ScheduleMeetingSvgIcon } from './ScheduleMeetingSvgIcon';
 import type { OnDateTimeChange } from './types';
 import { combineDateAndTime, getInitialValues, validate } from './utils';
 
@@ -50,14 +50,23 @@ const timeZoneSelectOptions = getTimeZoneOptions().map((option) => ({
     formattedText: option.formattedText,
 }));
 
+export type MeetingVariant = 'purple' | 'orange' | 'blue' | 'green' | 'red';
+
 interface ScheduleMeetingFormProps {
     open: boolean;
-    onClose: () => void;
     meeting?: Meeting;
+    variant: MeetingVariant;
+    onClose: () => void;
     onMeetingCreated: (meetingId: string) => void;
 }
 
-export const ScheduleMeetingForm = ({ open, onClose, meeting, onMeetingCreated }: ScheduleMeetingFormProps) => {
+export const ScheduleMeetingForm = ({
+    open,
+    meeting,
+    variant,
+    onClose,
+    onMeetingCreated,
+}: ScheduleMeetingFormProps) => {
     const [user] = useUser();
     const [userSettings] = useUserSettings();
     const timeFormat = userSettings.TimeFormat;
@@ -340,34 +349,33 @@ export const ScheduleMeetingForm = ({ open, onClose, meeting, onMeetingCreated }
 
     return (
         <>
-            {result && (
-                <ScheduleMeetingRecapModal
-                    open={open}
-                    onClose={onClose}
-                    meetingName={result.meetingName}
-                    meetingLink={result.meetingLink}
-                    meetingId={result.meetingId}
-                    startTime={combineDateAndTime(values.startDate, values.startTime, values.timeZone)}
-                    endTime={combineDateAndTime(values.endDate, values.endTime, values.timeZone)}
-                    timeZone={values.timeZone}
-                    rrule={result.rrule}
-                    isEdit={!!meeting}
-                    backToEditMeeting={backToEditMeeting}
-                    meetingIsDecrypting={!meeting}
-                />
-            )}
+            {
+                // meeting?.ID is to avoid a theme switch in the recap modal as the theme is based on the meeting ID
+                result && meeting?.ID && (
+                    <ScheduleMeetingRecapModal
+                        open={open}
+                        variant={variant}
+                        onClose={onClose}
+                        meetingName={result.meetingName}
+                        meetingLink={result.meetingLink}
+                        meetingId={result.meetingId}
+                        startTime={combineDateAndTime(values.startDate, values.startTime, values.timeZone)}
+                        endTime={combineDateAndTime(values.endDate, values.endTime, values.timeZone)}
+                        timeZone={values.timeZone}
+                        rrule={result.rrule}
+                        isEdit={!!meeting}
+                        backToEditMeeting={backToEditMeeting}
+                        meetingIsDecrypting={!meeting}
+                    />
+                )
+            }
             <div className="flex md:items-center justify-center">
                 <div
-                    className="create-container md:w-custom flex flex-column gap-2"
+                    className={`create-container md:w-custom flex flex-column gap-2 variant-${variant}`}
                     style={{ '--md-w-custom': '35rem' }}
                 >
                     <div className="text-center">
-                        <img
-                            className="w-custom h-custom mb-2"
-                            src={scheduleIcon}
-                            alt=""
-                            style={{ '--w-custom': '4rem', '--h-custom': '4rem' }}
-                        />
+                        <ScheduleMeetingSvgIcon variant={variant} />
                     </div>
                     <div className="create-container-title mb-10 w-full text-center text-semibold">
                         {meeting ? values.meetingName : c('Title').t`Schedule a meeting`}
