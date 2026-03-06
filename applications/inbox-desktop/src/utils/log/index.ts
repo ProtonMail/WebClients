@@ -207,6 +207,7 @@ export function initializeLog() {
     Logger.transports.file.maxSize = 5 * 1024 * 1024; // 3MB
     Logger.hooks.push(filterSensitiveLogMessage);
     Logger.transports.metrics = metrics.logTransporter;
+    Logger.eventLogger.startLogging();
 }
 
 export async function connectNetLogger(

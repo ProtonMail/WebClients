@@ -1,6 +1,7 @@
 import { BrowserWindow, app } from "electron";
 import { saveWindowBounds } from "../../store/boundsStore";
 import { mainLogger } from "../log";
+import { quitTracker } from "../log/quitTracker";
 
 export const macOSExitEvent = (window: BrowserWindow) => {
     saveWindowBounds(window);
@@ -29,6 +30,7 @@ export const windowsAndLinuxExitEvent = (window: BrowserWindow) => {
             window.destroy();
         }
 
+        quitTracker.setReason("windows-linux-exit-event");
         app.quit();
     }
 };
