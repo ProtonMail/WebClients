@@ -3,8 +3,10 @@ import { app } from "electron";
 import { existsSync } from "fs";
 import { join } from "path";
 import { isMac } from "../utils/helpers";
+import { quitTracker } from "../utils/log/quitTracker";
 
 export const uninstallProton = () => {
+    quitTracker.setReason("uninstall");
     app.quit();
 
     const file = join(process.resourcesPath, "uninstall.sh");

@@ -36,6 +36,7 @@ import { preventRemoteDebugging, registerDebugStartOptions } from "./debug/start
 import { registerIOStreamErrorHandlers } from "./utils/errors/io-stream";
 import { profiler } from "./utils/profiler/profiler";
 import { performance } from "node:perf_hooks";
+import { quitTracker } from "./utils/log/quitTracker";
 
 (async function () {
     const PROFILER_IIFE_START = Date.now();
@@ -91,7 +92,7 @@ import { performance } from "node:perf_hooks";
 
     app.setAppUserModelId(pkg.config.appUserModelId);
 
-    app.on("before-quit", () => {
+    quitTracker.setBeforeQuitHandler(() => {
         const mainWindow = getMainWindow();
 
         if (!isWindowValid(mainWindow) || updateDownloaded) {
@@ -111,6 +112,7 @@ import { performance } from "node:perf_hooks";
     if (!isMac) {
         app.on("window-all-closed", () => {
             mainLogger.info("All windows closed");
+            quitTracker.setReason("all-windows-closed");
             app.quit();
         });
     }
@@ -121,6 +123,7 @@ import { performance } from "node:perf_hooks";
 
     if (!app.requestSingleInstanceLock()) {
         mainLogger.info("App is already running");
+        quitTracker.setReason("app-already-running");
         app.quit();
         return;
     }
@@ -128,6 +131,9 @@ import { performance } from "node:perf_hooks";
     // After this point we should be able to use all electron APIs safely.
     await app.whenReady();
     profiler.mark("app-ready");
+
+    // Register shutdown signal handlers (logs)
+    quitTracker.register();
 
     handleSecondInstance();
     checkDefaultProtocols();
