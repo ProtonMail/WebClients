@@ -94,10 +94,10 @@ export const KnowledgeBaseContextProgressBar: React.FC<KnowledgeBaseContextProgr
     }, [messageChain, activeFiles]);
 
     return (
-        <div className="mb-4 w-full">
+        <div className="w-full">
             <div className="w-full bg-weak rounded-full h-2">
                 <div
-                    className={`h-full rounded-full transition-all bg-progress-dark`}
+                    className="h-full rounded-full transition-all bg-progress-dark"
                     style={{ width: `${Math.min(100, percentage)}%` }}
                 />
             </div>

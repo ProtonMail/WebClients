@@ -15,6 +15,7 @@ export type MessageChainComponentProps = {
     getSiblingInfo: (message: Message) => SiblingInfo;
     handleOpenSources: (message: Message) => void;
     handleOpenFiles: (message?: Message) => void;
+    handleOpenFilePreview: (attachment: import('../../../types').Attachment) => void;
     isGenerating?: boolean;
     onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
     composerContainerRef: React.RefObject<HTMLDivElement>;
@@ -81,7 +82,7 @@ const useAutoScroll = (
 
     // Scroll to position the latest question at the top when a new question is asked
     const scrollQuestionToTopRef = useRef<(() => void) | null>(null);
-    
+
     scrollQuestionToTopRef.current = () => {
         if (!messageChainRef.current || messageChain.length === 0) return;
 
@@ -156,6 +157,7 @@ export const MessageChainComponent = ({
     sourcesContainerRef,
     handleOpenSources,
     handleOpenFiles,
+    handleOpenFilePreview,
     onRetryPanelToggle,
     composerContainerRef,
 }: MessageChainComponentProps) => {
@@ -222,6 +224,7 @@ export const MessageChainComponent = ({
                                 sourcesContainerRef={sourcesContainerRef}
                                 handleOpenSources={handleOpenSources}
                                 handleOpenFiles={handleOpenFiles}
+                                handleOpenFilePreview={handleOpenFilePreview}
                                 messageChain={messageChain}
                                 newMessageRef={index === messageChain.length - 2 ? newMessageRef : undefined}
                                 isLastMessage={isLastMessage}
