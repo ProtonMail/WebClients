@@ -37,7 +37,6 @@ export const RoomList = ({
                 <MeetingRow
                     key={meeting.ID}
                     meeting={meeting}
-                    index={index}
                     isFirst={index === 0}
                     isLast={index === meetingRooms.length - 1}
                     isRoom={true}
