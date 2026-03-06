@@ -40,6 +40,7 @@ describe('createActionsItemChecker', () => {
                 canEdit: true,
                 canDownload: false,
                 canDelete: false,
+                canMove: false,
                 canShare: false,
                 canGoToParent: false,
                 canPreview: false,
@@ -201,6 +202,28 @@ describe('createActionsItemChecker', () => {
                 expect(result).not.toHaveProperty('parentNodeUid');
             });
         });
+
+        describe('canMove', () => {
+            it('should be true for Editor role', () => {
+                const result = createActionsItemChecker([createItem({ role: MemberRole.Editor })], 'toolbar');
+                expect(result.canMove).toBe(true);
+            });
+
+            it('should be true for Admin role', () => {
+                const result = createActionsItemChecker([createItem({ role: MemberRole.Admin })], 'toolbar');
+                expect(result.canMove).toBe(true);
+            });
+
+            it('should be false for Viewer role', () => {
+                const result = createActionsItemChecker([createItem({ role: MemberRole.Viewer })], 'toolbar');
+                expect(result.canMove).toBe(false);
+            });
+
+            it('should be true in both toolbar and contextMenu', () => {
+                expect(createActionsItemChecker([createItem()], 'toolbar').canMove).toBe(true);
+                expect(createActionsItemChecker([createItem()], 'contextMenu').canMove).toBe(true);
+            });
+        });
     });
 
     describe('multiple items', () => {
@@ -215,6 +238,7 @@ describe('createActionsItemChecker', () => {
             expect(result.canGoToParent).toBe(false);
             expect(result.canShare).toBe(false);
             expect(result).not.toHaveProperty('firstItemUid');
+            expect(result.canMove).toBe(true); // move is available for multi-selection with edit permission
         });
 
         it('should allow download and delete', () => {
