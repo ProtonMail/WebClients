@@ -673,7 +673,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
         );
 
         return (
-            <div className={'drive-browser-container flex flex-column flex-nowrap h-full relative overflow-y-auto'}>
+            <div className={'drive-browser-container flex flex-column flex-nowrap h-full relative p-4'}>
                 <input
                     ref={fileInputRef}
                     type="file"

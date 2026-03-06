@@ -4,26 +4,9 @@ im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
 .lumo-chat-container {
-	// Smooth transitions when panels open/close
 	.lumo-chat-item {
 		@include im.media('>small') {
 			transition: inline-size 0.3s ease-in-out;
-		}
-	}
-
-	&.lumo-chat-container-with-sources {
-		@include im.media('>small') {
-			.lumo-chat-item {
-				inline-size: 80%;
-			}
-		}
-	}
-
-	&.lumo-chat-container-with-knowledge-base {
-		@include im.media('>small') {
-			.lumo-chat-item {
-				inline-size: 80%;
-			}
 		}
 	}
 }
