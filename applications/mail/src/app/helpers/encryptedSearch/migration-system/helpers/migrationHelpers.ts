@@ -14,7 +14,7 @@ import { getMigrationToRun } from './getMigrationToRun';
 
 interface UpgradeContentProps {
     contentVersion: number;
-    data: ESMessageContent | undefined;
+    data: ESMessageContent;
     migrationArray: MigrationMethod[];
 }
 
@@ -48,18 +48,8 @@ export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateConte
         const updatedItems: PreparedMessageContent[] = [];
         for (const data of array) {
             try {
-                const decrypted = await decryptESItem({ esDB, indexKey, itemID: data.key });
+                const decrypted = await decryptESItem({ indexKey, cipher: data.value });
                 const hasVersion = data.value.version !== -1;
-
-                if (!decrypted) {
-                    traceInitiativeError(
-                        SentryMailInitiatives.MIGRATION_TOOL,
-                        hasVersion
-                            ? new Error('Failed to decrypt content with version')
-                            : new Error('Failed to decrypt content without version')
-                    );
-                    continue;
-                }
 
                 const contentVersion = hasVersion ? data.value.version : decrypted?.version || -1;
                 versionsRecord[contentVersion] = (versionsRecord[contentVersion] ?? 0) + 1;

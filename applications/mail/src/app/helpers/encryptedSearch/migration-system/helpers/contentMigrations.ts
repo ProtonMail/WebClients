@@ -3,36 +3,21 @@ import type { ESMessageContent } from 'proton-mail/models/encryptedSearch';
 import { CONTENT_VERSION } from '../../esBuild';
 import type { CleanTextFn, MigrationMethod } from '../interface';
 
-const upgradeToVersionOne = async (data?: ESMessageContent): Promise<ESMessageContent | undefined> => {
-    if (!data) {
-        return undefined;
-    }
-
+const upgradeToVersionOne = async (data?: ESMessageContent): Promise<ESMessageContent> => {
     return {
         ...data,
         version: CONTENT_VERSION.V1,
     };
 };
 
-const upgradeToDomIndexing = async (data?: ESMessageContent): Promise<ESMessageContent | undefined> => {
-    if (!data) {
-        return undefined;
-    }
-
+const upgradeToDomIndexing = async (data?: ESMessageContent): Promise<ESMessageContent> => {
     return {
         ...data,
         version: CONTENT_VERSION.DOM_INDEXING,
     };
 };
 
-const upgradeToBlockquoteFix = async (
-    cleanText: CleanTextFn,
-    data?: ESMessageContent
-): Promise<ESMessageContent | undefined> => {
-    if (!data) {
-        return undefined;
-    }
-
+const upgradeToBlockquoteFix = async (data: ESMessageContent, cleanText: CleanTextFn): Promise<ESMessageContent> => {
     return {
         ...data,
         decryptedBody: await cleanText(data.decryptedBody || '', false),
@@ -52,7 +37,7 @@ export const getMigrationArray = (cleanText: CleanTextFn): MigrationMethod[] => 
         },
         {
             targetVersion: CONTENT_VERSION.BLOCKQUOTE_FIX,
-            fn: (data) => upgradeToBlockquoteFix(cleanText, data),
+            fn: (data) => upgradeToBlockquoteFix(data, cleanText),
         },
     ];
 };
