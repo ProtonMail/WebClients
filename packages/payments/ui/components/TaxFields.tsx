@@ -47,7 +47,7 @@ export const TaxFields = ({ user, taxCountry, vatNumber, subscription }: Props) 
             onInlineClick={() => onEditClick(billingCountryLoadingKey)}
             loadingBillingAddressModal={loadingByKey[billingCountryLoadingKey]}
             defaultCollapsed={true}
-            className={vatNumber?.renderVatNumberInput ? 'mb-2' : 'mb-4'}
+            className="mb-4"
             {...taxCountry}
         />
     );

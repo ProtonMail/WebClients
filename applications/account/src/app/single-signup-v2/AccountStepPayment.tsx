@@ -28,8 +28,10 @@ import {
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
+import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
-import { type OnBillingAddressChange, PayButton, useTaxCountry, useVatNumber } from '@proton/payments/ui';
+import { PayButton } from '@proton/payments/ui';
+import { useBillingAddress } from '@proton/payments/ui/hooks/useBillingAddress';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -70,7 +72,7 @@ interface Props {
     measure: Measure;
     defaultMethod: PAYMENT_METHOD_TYPES | undefined;
     handleOptimistic: (optimistic: Partial<OptimisticOptions>) => void;
-    onBillingAddressChange: OnBillingAddressChange;
+    onBillingAddressChange: (billingAddress: FullBillingAddressFlat, vatNumber: string | undefined) => void;
     terms?: ReactNode;
     signupParameters: SignupParameters2;
     showRenewalNotice: boolean;
@@ -253,22 +255,23 @@ const AccountStepPayment = ({
         [paymentFacade.selectedMethodType]
     );
 
-    const taxCountry = useTaxCountry({
-        onBillingAddressChange,
-        paymentStatus: paymentFacade.paymentStatus,
-        zipCodeBackendValid: subscriptionData.zipCodeValid,
-        previousValidZipCode: subscriptionData.billingAddress.ZipCode,
+    const billingAddressHook = useBillingAddress({
+        paymentsApi,
         paymentFacade,
         telemetryContext,
-        paymentsApi,
-    });
-
-    const vatNumber = useVatNumber({
         isAuthenticated,
-        paymentsApi,
+        onBillingAddressChange: (billingAddress: FullBillingAddressFlat) => {
+            onBillingAddressChange(
+                {
+                    ...options.billingAddress,
+                    ...billingAddress,
+                },
+                billingAddress.VatId ?? undefined
+            );
+        },
+        paymentStatus: paymentFacade.paymentStatus,
         selectedPlanName: selectedPlan?.Name,
-        onChange: onVatNumberChange,
-        taxCountry,
+        onVatChange: onVatNumberChange,
         onVatUpdated: () => handleOptimistic({}),
     });
 
@@ -416,8 +419,8 @@ const AccountStepPayment = ({
                     isAuthenticated={isAuthenticated} // needed for Bitcoin signup
                     noMaxWidth
                     hideFirstLabel
-                    taxCountry={taxCountry}
-                    vatNumber={vatNumber}
+                    taxCountry={billingAddressHook.taxCountry}
+                    vatNumber={billingAddressHook.vatNumber}
                     loadingBitcoin={loadingPaymentDetails}
                     subscription={model.session?.subscription}
                     startTrial={isTrial}
@@ -476,7 +479,8 @@ const AccountStepPayment = ({
                                 size="large"
                                 color="norm"
                                 fullWidth
-                                taxCountry={taxCountry}
+                                taxCountry={billingAddressHook.taxCountry}
+                                vatNumber={billingAddressHook.vatNumber}
                                 paymentFacade={paymentFacade}
                                 loading={loadingSignup || loadingPaymentDetails}
                                 pill

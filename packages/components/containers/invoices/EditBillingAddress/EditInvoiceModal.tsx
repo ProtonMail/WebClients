@@ -13,10 +13,18 @@ import type { ModalTwoPromiseHandlers } from '@proton/components/components/moda
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import type { BillingAddressValidationResult } from '@proton/components/payments/react-extensions/errors';
+import {
+    WrongBillingAddressError,
+    backendBillingAddressFieldError,
+} from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { type FullBillingAddress, type Invoice, isCountryWithRequiredPostalCode } from '@proton/payments';
 import { getVatNumberName } from '@proton/payments/ui';
+import { zipCodeValidator } from '@proton/payments/ui/containers/EditBillingAddress/helpers';
+import { getVatFormErrors } from '@proton/payments/ui/hooks/useVatFormValidation';
+import useFlag from '@proton/unleash/useFlag';
 
 export type EditInvoiceModalInputs = {
     initialFullBillingAddress: FullBillingAddress;
@@ -25,18 +33,6 @@ export type EditInvoiceModalInputs = {
 };
 
 type Props = ModalProps & ModalTwoPromiseHandlers<void> & EditInvoiceModalInputs;
-
-const zipCodeValidator = (countryCode: string, zipCode: string | null | undefined) => {
-    if (isCountryWithRequiredPostalCode(countryCode) && !zipCode) {
-        if (countryCode === 'US') {
-            return c('Error').t`ZIP code is required`;
-        }
-
-        return c('Error').t`Postal code is required`;
-    }
-
-    return '';
-};
 
 export const EditInvoiceModal = (props: Props) => {
     const { initialInvoiceBillingAddress, initialFullBillingAddress, onReject, onResolve, ...rest } = props;
@@ -47,8 +43,18 @@ export const EditInvoiceModal = (props: Props) => {
     const { paymentsApi } = usePaymentsApi();
 
     const { validator, onFormSubmit } = useFormErrors();
+    const showExtendedBillingAddressForm = useFlag('PaymentsValidateBillingAddress');
 
     const [loading, withLoading] = useLoading();
+    const [backendErrors, setBackendErrors] = useState<BillingAddressValidationResult | null>(null);
+
+    const frontendErrors = getVatFormErrors(
+        {
+            ...invoiceBillingAddress.BillingAddress,
+            VatId: invoiceBillingAddress.VatId,
+        },
+        showExtendedBillingAddressForm
+    );
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.stopPropagation();
@@ -57,16 +63,29 @@ export const EditInvoiceModal = (props: Props) => {
             return;
         }
 
+        setBackendErrors(null);
+
         void withLoading(async () => {
             try {
                 await paymentsApi.updateInvoiceBillingAddress(props.invoice.ID, invoiceBillingAddress);
                 onResolve?.();
                 createNotification({ text: c('Success').t`Billing details updated` });
-            } catch {
+            } catch (error: any) {
+                if (error instanceof WrongBillingAddressError) {
+                    if (error.validationResult) {
+                        setBackendErrors(error.validationResult);
+                    }
+                    createNotification({ type: 'error', text: c('Error').t`Wrong billing address` });
+                    return;
+                }
                 createNotification({ type: 'error', text: c('Error').t`Failed to update billing address` });
-                return;
             }
         });
+    };
+
+    const updateInvoiceAddress = (updater: Parameters<typeof setInvoiceBillingAddress>[0]) => {
+        setInvoiceBillingAddress(updater);
+        setBackendErrors(null);
     };
 
     const hidePostalCode = isCountryWithRequiredPostalCode(invoiceBillingAddress.BillingAddress.CountryCode);
@@ -81,20 +100,34 @@ export const EditInvoiceModal = (props: Props) => {
                         .t`Text fields are optional. The information you provide in this form will only change the invoice you have selected and not your future invoice details.`}
                 </p>
                 <div>
-                    <InputFieldTwo
-                        label={c('Label').t`Company`}
-                        placeholder={c('Placeholder').t`Company name`}
-                        autoFocus
-                        name="company"
-                        data-testid="billing-address-company"
-                        value={invoiceBillingAddress.BillingAddress.Company ?? ''}
-                        onValue={(value: string) =>
-                            setInvoiceBillingAddress((model) => ({
-                                ...model,
-                                BillingAddress: { ...model.BillingAddress, Company: value },
-                            }))
-                        }
-                    />
+                    {showPostalCode && (
+                        <InputFieldTwo
+                            label={
+                                invoiceBillingAddress.BillingAddress.CountryCode === 'US'
+                                    ? c('Label').t`ZIP code`
+                                    : c('Label').t`Postal code`
+                            }
+                            placeholder="12345"
+                            autoFocus
+                            name="zipcode"
+                            data-testid="billing-address-zipcode"
+                            value={invoiceBillingAddress.BillingAddress.ZipCode ?? ''}
+                            onValue={(value: string) =>
+                                updateInvoiceAddress((model) => ({
+                                    ...model,
+                                    BillingAddress: { ...model.BillingAddress, ZipCode: value },
+                                }))
+                            }
+                            error={
+                                validator([
+                                    zipCodeValidator(
+                                        invoiceBillingAddress.BillingAddress.CountryCode,
+                                        invoiceBillingAddress.BillingAddress.ZipCode
+                                    ),
+                                ]) || backendBillingAddressFieldError(backendErrors?.ZipCode)
+                            }
+                        />
+                    )}
                     {
                         // if user already has VAT number, then we don't let them edit it on the invoices
                         !initialFullBillingAddress.VatId && (
@@ -105,51 +138,33 @@ export const EditInvoiceModal = (props: Props) => {
                                 data-testid="billing-address-vat"
                                 value={invoiceBillingAddress.VatId ?? ''}
                                 onValue={(value: string) =>
-                                    setInvoiceBillingAddress((model) => ({
+                                    updateInvoiceAddress((model) => ({
                                         ...model,
                                         VatId: value,
                                     }))
+                                }
+                                error={
+                                    validator([frontendErrors.errorMessages.VatId]) ||
+                                    backendBillingAddressFieldError(backendErrors?.VatId)
                                 }
                             />
                         )
                     }
                     <InputFieldTwo
-                        label={c('Label').t`First name`}
-                        placeholder={c('Placeholder').t`Thomas`}
-                        name="firstname"
-                        data-testid="billing-address-firstname"
-                        value={invoiceBillingAddress.BillingAddress.FirstName ?? ''}
+                        label={c('Label').t`Company`}
+                        placeholder={c('Placeholder').t`Company name`}
+                        name="company"
+                        data-testid="billing-address-company"
+                        value={invoiceBillingAddress.BillingAddress.Company ?? ''}
                         onValue={(value: string) =>
-                            setInvoiceBillingAddress((model) => ({
+                            updateInvoiceAddress((model) => ({
                                 ...model,
-                                BillingAddress: { ...model.BillingAddress, FirstName: value },
+                                BillingAddress: { ...model.BillingAddress, Company: value },
                             }))
                         }
-                    />
-                    <InputFieldTwo
-                        label={c('Label').t`Last name`}
-                        placeholder={c('Placeholder').t`Anderson`}
-                        name="lastname"
-                        data-testid="billing-address-lastname"
-                        value={invoiceBillingAddress.BillingAddress.LastName ?? ''}
-                        onValue={(value: string) =>
-                            setInvoiceBillingAddress((model) => ({
-                                ...model,
-                                BillingAddress: { ...model.BillingAddress, LastName: value },
-                            }))
-                        }
-                    />
-                    <InputFieldTwo
-                        label={c('Label').t`Street address`}
-                        placeholder={c('Placeholder').t`Main street 12`}
-                        name="address"
-                        data-testid="billing-address-address"
-                        value={invoiceBillingAddress.BillingAddress.Address ?? ''}
-                        onValue={(value: string) =>
-                            setInvoiceBillingAddress((model) => ({
-                                ...model,
-                                BillingAddress: { ...model.BillingAddress, Address: value },
-                            }))
+                        error={
+                            validator([frontendErrors.errorMessages.Company]) ||
+                            backendBillingAddressFieldError(backendErrors?.Company)
                         }
                     />
                     <InputFieldTwo
@@ -159,37 +174,71 @@ export const EditInvoiceModal = (props: Props) => {
                         data-testid="billing-address-city"
                         value={invoiceBillingAddress.BillingAddress.City ?? ''}
                         onValue={(value: string) =>
-                            setInvoiceBillingAddress((model) => ({
+                            updateInvoiceAddress((model) => ({
                                 ...model,
                                 BillingAddress: { ...model.BillingAddress, City: value },
                             }))
                         }
+                        error={
+                            validator([frontendErrors.errorMessages.City]) ||
+                            backendBillingAddressFieldError(backendErrors?.City)
+                        }
                     />
-                    {showPostalCode && (
+                    <InputFieldTwo
+                        label={c('Label').t`Street address`}
+                        placeholder={c('Placeholder').t`Main street 12`}
+                        name="address"
+                        data-testid="billing-address-address"
+                        value={invoiceBillingAddress.BillingAddress.Address ?? ''}
+                        onValue={(value: string) =>
+                            updateInvoiceAddress((model) => ({
+                                ...model,
+                                BillingAddress: { ...model.BillingAddress, Address: value },
+                            }))
+                        }
+                        error={
+                            validator([frontendErrors.errorMessages.Address]) ||
+                            backendBillingAddressFieldError(backendErrors?.Address)
+                        }
+                    />
+                    <div className="flex gap-4">
                         <InputFieldTwo
-                            label={
-                                invoiceBillingAddress.BillingAddress.CountryCode === 'US'
-                                    ? c('Label').t`ZIP code`
-                                    : c('Label').t`Postal code`
-                            }
-                            placeholder="12345"
-                            name="zipcode"
-                            data-testid="billing-address-zipcode"
-                            value={invoiceBillingAddress.BillingAddress.ZipCode ?? ''}
+                            label={c('Label').t`First name`}
+                            placeholder={c('Placeholder').t`Thomas`}
+                            name="firstname"
+                            data-testid="billing-address-firstname"
+                            value={invoiceBillingAddress.BillingAddress.FirstName ?? ''}
                             onValue={(value: string) =>
-                                setInvoiceBillingAddress((model) => ({
+                                updateInvoiceAddress((model) => ({
                                     ...model,
-                                    BillingAddress: { ...model.BillingAddress, ZipCode: value },
+                                    BillingAddress: { ...model.BillingAddress, FirstName: value },
                                 }))
                             }
-                            error={validator([
-                                zipCodeValidator(
-                                    invoiceBillingAddress.BillingAddress.CountryCode,
-                                    invoiceBillingAddress.BillingAddress.ZipCode
-                                ),
-                            ])}
+                            error={
+                                validator([frontendErrors.errorMessages.FirstName]) ||
+                                backendBillingAddressFieldError(backendErrors?.FirstName)
+                            }
+                            rootClassName="flex-1"
                         />
-                    )}
+                        <InputFieldTwo
+                            label={c('Label').t`Last name`}
+                            placeholder={c('Placeholder').t`Anderson`}
+                            name="lastname"
+                            data-testid="billing-address-lastname"
+                            value={invoiceBillingAddress.BillingAddress.LastName ?? ''}
+                            onValue={(value: string) =>
+                                updateInvoiceAddress((model) => ({
+                                    ...model,
+                                    BillingAddress: { ...model.BillingAddress, LastName: value },
+                                }))
+                            }
+                            error={
+                                validator([frontendErrors.errorMessages.LastName]) ||
+                                backendBillingAddressFieldError(backendErrors?.LastName)
+                            }
+                            rootClassName="flex-1"
+                        />
+                    </div>
                 </div>
             </ModalTwoContent>
 

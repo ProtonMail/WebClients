@@ -1,9 +1,13 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 
 import useConfig from '@proton/components/hooks/useConfig';
+import type { PaymentFacade } from '@proton/components/payments/client-extensions';
+import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { APPS } from '@proton/shared/lib/constants';
+import { renderWithProviders } from '@proton/testing/index';
 import useFlag from '@proton/unleash/useFlag';
 
+import type { SubscriptionEstimation } from '../../../core/subscription/interface';
 import { type OnBillingAddressChange, useTaxCountry } from '../../hooks/useTaxCountry';
 import { InlineTaxCountrySelector } from './InlineTaxCountrySelector';
 
@@ -37,6 +41,10 @@ const TestInlineTaxCountrySelector = ({
     zipCodeValid?: boolean;
     defaultCollapsed?: boolean;
 }) => {
+    const zipCodeValidMock = {
+        checkResult: { error: zipCodeValid ? undefined : new InvalidZipCodeError() } as SubscriptionEstimation,
+    } as PaymentFacade;
+
     const taxCountry = useTaxCountry({
         paymentStatus: {
             CountryCode: initialCountryCode,
@@ -44,7 +52,7 @@ const TestInlineTaxCountrySelector = ({
             ZipCode: initialZipCode,
         },
         onBillingAddressChange,
-        zipCodeBackendValid: zipCodeValid,
+        paymentFacade: zipCodeValidMock,
         telemetryContext: 'other',
     });
 
@@ -58,18 +66,18 @@ describe('InlineTaxCountrySelector component', () => {
     });
 
     it('should render', () => {
-        const { container } = render(<TestInlineTaxCountrySelector />);
+        const { container } = renderWithProviders(<TestInlineTaxCountrySelector />);
         expect(container).not.toBeEmptyDOMElement();
     });
 
     it('should render with country dropdown expanded', () => {
-        render(<TestInlineTaxCountrySelector defaultCollapsed={false} initialCountryCode="US" />);
+        renderWithProviders(<TestInlineTaxCountrySelector defaultCollapsed={false} initialCountryCode="US" />);
         const countryDropdown = screen.getByTestId('tax-country-dropdown');
         expect(countryDropdown).toBeInTheDocument();
     });
 
     it('should render with country dropdown expanded with country flag', () => {
-        render(<TestInlineTaxCountrySelector defaultCollapsed={false} initialCountryCode="US" />);
+        renderWithProviders(<TestInlineTaxCountrySelector defaultCollapsed={false} initialCountryCode="US" />);
         const countryDropdown = screen.getByTestId('tax-country-dropdown');
         expect(countryDropdown).toBeInTheDocument();
         expect(screen.getByAltText('United States')).toBeInTheDocument();
@@ -85,7 +93,7 @@ describe('InlineTaxCountrySelector component', () => {
             expectedText: 'Germany',
         },
     ])('should render the collapsed state for $initialCountryCode', ({ initialCountryCode, expectedText }) => {
-        render(<TestInlineTaxCountrySelector initialCountryCode={initialCountryCode} />);
+        renderWithProviders(<TestInlineTaxCountrySelector initialCountryCode={initialCountryCode} />);
         const countryText = screen.getByTestId('billing-country-collapsed');
         expect(countryText).toHaveTextContent(expectedText);
     });
@@ -106,7 +114,7 @@ describe('InlineTaxCountrySelector component', () => {
     ])(
         'should render the expanded state for countries with states: $initialCountryCode $initialStateCode',
         ({ initialCountryCode, initialStateCode, expectedCountry, expectedState }) => {
-            render(
+            renderWithProviders(
                 <TestInlineTaxCountrySelector
                     initialCountryCode={initialCountryCode}
                     initialStateCode={initialStateCode}
@@ -129,7 +137,9 @@ describe('InlineTaxCountrySelector component', () => {
 
     it('should render the ZIP code in the collapsed state for US states', () => {
         const zipCode = '12345';
-        render(<TestInlineTaxCountrySelector initialCountryCode="US" initialStateCode="NY" initialZipCode={zipCode} />);
+        renderWithProviders(
+            <TestInlineTaxCountrySelector initialCountryCode="US" initialStateCode="NY" initialZipCode={zipCode} />
+        );
 
         // When all fields are provided (country, state, and ZIP),
         // the component should show in collapsed state
@@ -145,7 +155,9 @@ describe('InlineTaxCountrySelector component', () => {
 
     it('should render collapsed state for Canadian provinces with ZIP code', () => {
         const zipCode = 'A1B 2C3';
-        render(<TestInlineTaxCountrySelector initialCountryCode="CA" initialStateCode="NL" initialZipCode={zipCode} />);
+        renderWithProviders(
+            <TestInlineTaxCountrySelector initialCountryCode="CA" initialStateCode="NL" initialZipCode={zipCode} />
+        );
 
         // When all fields are provided (country, state, and ZIP),
         // the component should show in collapsed state
@@ -162,7 +174,7 @@ describe('InlineTaxCountrySelector component', () => {
             countryCode: 'CA',
         },
     ])('should render the expanded state if state is required but not specified: $countryCode', ({ countryCode }) => {
-        render(<TestInlineTaxCountrySelector initialCountryCode={countryCode} initialStateCode={null} />);
+        renderWithProviders(<TestInlineTaxCountrySelector initialCountryCode={countryCode} initialStateCode={null} />);
         const countryDropdown = screen.getByTestId('tax-country-dropdown');
         expect(countryDropdown).toBeInTheDocument();
         expect(screen.getByText('Select state')).toBeInTheDocument();
@@ -170,7 +182,7 @@ describe('InlineTaxCountrySelector component', () => {
     });
 
     it('clicking the collapsed element should switch to uncollapsed state and open the dropdown', () => {
-        render(<TestInlineTaxCountrySelector />);
+        renderWithProviders(<TestInlineTaxCountrySelector />);
 
         const countryText = screen.getByTestId('billing-country-collapsed');
         fireEvent.click(countryText);
@@ -187,7 +199,9 @@ describe('InlineTaxCountrySelector component', () => {
     });
 
     it('should show error message with invalid ZIP error', () => {
-        render(<TestInlineTaxCountrySelector initialCountryCode="US" initialStateCode="NY" zipCodeValid={false} />);
+        renderWithProviders(
+            <TestInlineTaxCountrySelector initialCountryCode="US" initialStateCode="NY" zipCodeValid={false} />
+        );
 
         const zipInput = screen.getByTestId('tax-zip-code');
         expect(zipInput).toBeInTheDocument();
@@ -204,7 +218,7 @@ describe('InlineTaxCountrySelector component', () => {
     });
 
     it('should show error message for missing country', () => {
-        render(<TestInlineTaxCountrySelector initialCountryCode="" />);
+        renderWithProviders(<TestInlineTaxCountrySelector initialCountryCode="" />);
 
         const errorMessage = screen.getByTestId('billing-country-error');
         expect(errorMessage).toBeInTheDocument();
@@ -212,7 +226,7 @@ describe('InlineTaxCountrySelector component', () => {
     });
 
     it('should show error message for missing state', () => {
-        render(<TestInlineTaxCountrySelector initialCountryCode="US" initialStateCode={null} />);
+        renderWithProviders(<TestInlineTaxCountrySelector initialCountryCode="US" initialStateCode={null} />);
 
         const errorMessage = screen.getByTestId('billing-country-error');
         expect(errorMessage).toBeInTheDocument();
@@ -220,7 +234,9 @@ describe('InlineTaxCountrySelector component', () => {
     });
 
     it('should show error message for missing ZIP code', () => {
-        render(<TestInlineTaxCountrySelector initialCountryCode="US" initialStateCode="NY" initialZipCode="" />);
+        renderWithProviders(
+            <TestInlineTaxCountrySelector initialCountryCode="US" initialStateCode="NY" initialZipCode="" />
+        );
 
         const errorMessage = screen.getByTestId('billing-country-error');
         expect(errorMessage).toBeInTheDocument();

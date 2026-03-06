@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
+import type { BillingAddressValidationResult } from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 
 import {
@@ -14,6 +15,10 @@ import {
 import { getBillingAddressFromPaymentStatus } from '../../core/billing-address/billing-address-from-payments-status';
 import { getDefaultState, isCountryWithRequiredPostalCode, isCountryWithStates } from '../../core/countries';
 import type { PaymentStatus, PaymentsApi } from '../../core/interface';
+import {
+    getWrongBillingAddressValidationResult,
+    hasInvalidZipCodeError,
+} from '../../core/subscription/subscription-estimation';
 import { getDefaultPostalCodeByStateCode } from '../../postal-codes/default-postal-codes';
 import { isPostalCodeValid } from '../../postal-codes/postal-codes-validation';
 import type { PaymentTelemetryContext } from '../../telemetry/helpers';
@@ -26,9 +31,7 @@ export type OnBillingAddressChange = (billingAddress: BillingAddress) => void;
 interface HookProps {
     onBillingAddressChange?: OnBillingAddressChange;
     paymentStatus?: Pick<PaymentStatus, 'CountryCode' | 'State' | 'ZipCode'>;
-    zipCodeBackendValid: boolean;
     paymentFacade?: PaymentFacade;
-    previousValidZipCode?: string | null;
     telemetryContext: PaymentTelemetryContext;
     allowedCountries?: string[];
     disabledCountries?: string[];
@@ -51,9 +54,10 @@ export interface TaxCountryHook {
     offerUnavailableErrorMessage?: OfferUnavailableErrorMessage;
     paymentsApi: PaymentsApi;
     billingAddressChangedInModal: (billingAddress: BillingAddress) => void;
+    billingAddressValidationResult?: BillingAddressValidationResult;
 }
 
-function getBillingAddressFromProps(props: HookProps): BillingAddress {
+function getBillingAddressFromPaymentStatusProp(props: HookProps): BillingAddress {
     const billingAddress = props.paymentStatus
         ? ({
               CountryCode: props.paymentStatus.CountryCode,
@@ -91,15 +95,26 @@ function getBillingAddressFromProps(props: HookProps): BillingAddress {
     return billingAddress;
 }
 
+function isSameBillingAddress(billingAddress1: BillingAddress, billingAddress2: BillingAddress) {
+    return (
+        billingAddress1.CountryCode === billingAddress2.CountryCode &&
+        billingAddress1.State === billingAddress2.State &&
+        billingAddress1.ZipCode === billingAddress2.ZipCode
+    );
+}
+
 export const useTaxCountry = (props: HookProps): TaxCountryHook => {
+    const zipCodeBackendValid = !hasInvalidZipCodeError(props.paymentFacade?.checkResult);
+    const billingAddressValidationResult = getWrongBillingAddressValidationResult(props.paymentFacade?.checkResult);
+
     const { paymentsApi: defaultPaymentsApi } = usePaymentsApi();
     const paymentsApi = props.paymentsApi ?? defaultPaymentsApi;
 
     const offerUnavailableErrorMessage = useOfferUnavailableErrorMessage(props.paymentFacade);
 
-    const currentFromProps: BillingAddress = getBillingAddressFromProps(props);
+    const currentFromPaymentStatus: BillingAddress = getBillingAddressFromPaymentStatusProp(props);
 
-    const taxBillingAddressRef = useRef<BillingAddress>(currentFromProps);
+    const taxBillingAddressRef = useRef<BillingAddress>(currentFromPaymentStatus);
     const [, forceRender] = useState(0);
     // Helper function to trigger re-render
     const triggerRerender = () => forceRender((prev) => prev + 1);
@@ -114,27 +129,37 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
 
     useEffect(() => {
         if (taxBillingAddressRef.current.CountryCode) {
-            props.paymentFacade?.chargebeeCard.setCountryCode(taxBillingAddressRef.current.CountryCode);
+            props.paymentFacade?.chargebeeCard?.setCountryCode(taxBillingAddressRef.current.CountryCode);
         }
 
         if (taxBillingAddressRef.current.ZipCode) {
-            props.paymentFacade?.chargebeeCard.setPostalCode(taxBillingAddressRef.current.ZipCode);
+            props.paymentFacade?.chargebeeCard?.setPostalCode(taxBillingAddressRef.current.ZipCode);
         }
     }, [taxBillingAddressRef.current.CountryCode, taxBillingAddressRef.current.ZipCode]);
 
     useEffect(() => {
         // Compare with current ref value to avoid unnecessary updates
         const current = taxBillingAddressRef.current;
-        const hasChanged =
-            current.CountryCode !== currentFromProps.CountryCode ||
-            current.State !== currentFromProps.State ||
-            current.ZipCode !== currentFromProps.ZipCode;
 
-        if (hasChanged) {
-            setTaxBillingAddress(currentFromProps);
-            billingAddressChanged(currentFromProps);
+        // During page loading, we initially use the default billing address (CH). When payment status is loaded, we
+        // update the billing address. It can lead to the situation where the useTaxCountry hook still stores CH, so we
+        // need to update the local state.
+        const localStateStale = !isSameBillingAddress(current, currentFromPaymentStatus);
+
+        if (localStateStale) {
+            setTaxBillingAddress(currentFromPaymentStatus);
+
+            const checkResultBillingAddress = props.paymentFacade?.checkResult?.requestData?.BillingAddress;
+            // Sometimes we need to trigger change in the outer state too, in case if the parent component still doesn't
+            // have subscription estimation for the correct billing address.
+            const outerStateStale =
+                !checkResultBillingAddress ||
+                !isSameBillingAddress(checkResultBillingAddress, currentFromPaymentStatus);
+            if (outerStateStale) {
+                billingAddressChanged(currentFromPaymentStatus);
+            }
         }
-    }, [currentFromProps.CountryCode, currentFromProps.State, currentFromProps.ZipCode]);
+    }, [currentFromPaymentStatus.CountryCode, currentFromPaymentStatus.State, currentFromPaymentStatus.ZipCode]);
 
     const selectedCountryCode = taxBillingAddressRef.current.CountryCode;
     const federalStateCode = taxBillingAddressRef.current.State ?? null;
@@ -218,7 +243,7 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
         }
     };
 
-    const billingAddressStatus = getBillingAddressStatus(taxBillingAddressRef.current, props.zipCodeBackendValid);
+    const billingAddressStatus = getBillingAddressStatus(taxBillingAddressRef.current, zipCodeBackendValid);
     const billingAddressErrorMessage = useMemo(() => {
         if (billingAddressStatus.reason === 'missingCountry') {
             return c('Error').t`Please select billing country`;
@@ -242,31 +267,7 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
             }
             return c('Error').t`Please enter a valid postal code`;
         }
-    }, [billingAddressStatus.reason, props.zipCodeBackendValid]);
-
-    const prevZipCodeValidRef = useRef<boolean | undefined>(undefined);
-    useEffect(
-        /**
-         * If the ZIP code in the taxCountry hook is different then we need to override it after we has a
-         * successfull check. Example: User has US, CA, 90001 - valid ZIP code. User selects US, CA, 90000. This
-         * ZIP code does not exist, and the backend returns an error. zipCodeValid is marked as false. We do not
-         * store invalid zip codes in the state, so the state remains US, CA, 90001. Then user changes e.g.
-         * currency. At this point, the frontend will do another check with the new currency and
-         * 90001. This check returns 200, and now we need to override the ZIP code in the taxCountry hook,
-         * otherwise it will keep displaying 90000.
-         */
-        function overrideZipCodeWhenItsValidAgain() {
-            const prevZipCodeValid = prevZipCodeValidRef.current;
-            const currentZipCodeValid = props.zipCodeBackendValid;
-
-            if (props.previousValidZipCode && currentZipCodeValid && prevZipCodeValid === false) {
-                setZipCode(props.previousValidZipCode, { skipCallback: true });
-            }
-
-            prevZipCodeValidRef.current = currentZipCodeValid;
-        },
-        [props.previousValidZipCode, props.zipCodeBackendValid]
-    );
+    }, [billingAddressStatus.reason, zipCodeBackendValid]);
 
     const billingAddressChangedInModal = (billingAddress: BillingAddress) => {
         setTaxBillingAddress(billingAddress);
@@ -280,14 +281,15 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
         setFederalStateCode,
         zipCode,
         setZipCode,
-        billingAddressValid: billingAddressStatus.valid && props.zipCodeBackendValid,
+        billingAddressValid: billingAddressStatus.valid && zipCodeBackendValid,
         billingAddressStatus,
         billingAddressErrorMessage,
-        zipCodeBackendValid: props.zipCodeBackendValid,
+        zipCodeBackendValid,
         allowedCountries: props.allowedCountries,
         disabledCountries: props.disabledCountries,
         offerUnavailableErrorMessage,
         paymentsApi,
         billingAddressChangedInModal,
+        billingAddressValidationResult,
     };
 };

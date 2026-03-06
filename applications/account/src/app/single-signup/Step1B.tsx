@@ -631,15 +631,13 @@ const Step1B = ({
     const taxCountry = useTaxCountry({
         onBillingAddressChange: handleChangeBillingAddress,
         paymentStatus: model.paymentStatus,
-        zipCodeBackendValid: model.subscriptionData.zipCodeValid,
-        previousValidZipCode: model.subscriptionData.billingAddress.ZipCode,
         paymentFacade,
         telemetryContext,
     });
 
     const vatNumber = useVatNumber({
         selectedPlanName: selectedPlan?.Name,
-        onChange: (vatNumber) => debouncedHandleOptimistic({ vatNumber }),
+        onVatChange: (vatNumber) => debouncedHandleOptimistic({ vatNumber }),
         taxCountry,
     });
 

@@ -8943,6 +8943,7 @@ __metadata:
     react-redux: "npm:^9.2.0"
     ts-jest: "npm:^29.4.6"
     typescript: "npm:^5.9.3"
+    vat-validation: "npm:^3.0.0-beta.2"
   languageName: unknown
   linkType: soft
 
@@ -45730,6 +45731,13 @@ __metadata:
   version: 1.1.2
   resolution: "vary@npm:1.1.2"
   checksum: 10/31389debef15a480849b8331b220782230b9815a8e0dbb7b9a8369559aed2e9a7800cd904d4371ea74f4c3527db456dc8e7ac5befce5f0d289014dbdf47b2242
+  languageName: node
+  linkType: hard
+
+"vat-validation@npm:^3.0.0-beta.2":
+  version: 3.0.0-beta.2
+  resolution: "vat-validation@npm:3.0.0-beta.2"
+  checksum: 10/7429cee4446a384fa91fe836e86c56c22a41d6d67675fc9b695a0d46151280dabe0ecf5d07326e6e03e53d06588d879e22a345c721681b85daf529ef681ca964
   languageName: node
   linkType: hard
 

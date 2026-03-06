@@ -21,9 +21,9 @@ import {
     isSubscriptionCheckForbiddenWithReason,
 } from '@proton/payments';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import { useTaxCountry, useVatNumber } from '@proton/payments/ui';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
 import { usePayments } from '@proton/payments/ui/context/PaymentContext';
+import { useBillingAddress } from '@proton/payments/ui/hooks/useBillingAddress';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Audience } from '@proton/shared/lib/interfaces';
@@ -54,10 +54,9 @@ const SubscriptionCheckoutPaymentSection = ({
     const {
         subscription,
         checkoutUi,
-        zipCodeValid,
         paymentStatus,
         billingAddress,
-        selectBillingAddress,
+        selectFullBillingAddress,
         plansMap,
         checkResult,
         telemetryContext,
@@ -70,19 +69,16 @@ const SubscriptionCheckoutPaymentSection = ({
     const { planIDs, cycle, planName, currency } = checkoutUi;
     const { amount, selectedMethodValue, methods, currencyOverride } = paymentFacade;
     const { selectMethod, savedMethods } = methods;
-    const taxCountry = useTaxCountry({
-        onBillingAddressChange: selectBillingAddress,
-        zipCodeBackendValid: zipCodeValid,
+
+    const billingAddressHook = useBillingAddress({
+        onBillingAddressChange: selectFullBillingAddress,
         paymentStatus,
         paymentFacade,
-        previousValidZipCode: billingAddress.ZipCode,
         telemetryContext,
-    });
-    const vatNumber = useVatNumber({
         selectedPlanName: planName,
-        taxCountry,
         onVatUpdated: (vatNumber) => setVatNumber(vatNumber ?? ''),
     });
+
     const { createNotification } = useNotifications();
 
     useEffect(() => {
@@ -127,7 +123,7 @@ const SubscriptionCheckoutPaymentSection = ({
                 product: appName,
                 taxBillingAddress: billingAddress,
                 StartTrial: isTrial,
-                vatNumber: vatNumber.vatNumber,
+                vatNumber: billingAddressHook.vatNumber?.vatNumber,
             });
             await processor.processPaymentToken();
         } catch (e) {
@@ -222,8 +218,8 @@ const SubscriptionCheckoutPaymentSection = ({
                 <PaymentMethodForm
                     paymentFacade={paymentFacade}
                     paymentMethodRequired={paymentMethodRequired}
-                    vatNumber={vatNumber}
-                    taxCountry={taxCountry}
+                    vatNumber={billingAddressHook.vatNumber}
+                    taxCountry={billingAddressHook.taxCountry}
                 >
                     <SubscriptionConfirmButton
                         onDone={onClose}
@@ -241,7 +237,8 @@ const SubscriptionCheckoutPaymentSection = ({
                         paymentForbiddenReason={paymentForbiddenReason}
                         subscription={subscription}
                         hasPaymentMethod={hasPaymentMethod}
-                        taxCountry={taxCountry}
+                        taxCountry={billingAddressHook.taxCountry}
+                        vatNumber={billingAddressHook.vatNumber}
                         paymentFacade={paymentFacade}
                         couponConfig={couponConfig}
                         showVisionaryWarning={renderVisionaryDowngradeWarningText}
