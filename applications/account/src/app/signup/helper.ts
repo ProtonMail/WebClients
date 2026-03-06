@@ -1,7 +1,6 @@
 import type { Location } from 'history';
 
 import {
-    type BillingAddress,
     type CheckSubscriptionData,
     type Currency,
     type Cycle,
@@ -12,6 +11,7 @@ import {
     getFreeCheckResult,
     hasPlanIDs,
 } from '@proton/payments';
+import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { getCroHeaders, getOwnershipVerificationHeaders } from '@proton/shared/lib/fetch/headers';
@@ -31,16 +31,18 @@ export async function getSubscriptionPrices({
     trial,
     ValidateBillingAddress,
     VatId,
+    previousEstimation,
 }: {
     paymentsApi: PaymentsApi;
     planIDs: PlanIDs;
     currency: Currency;
     cycle: Cycle;
-    billingAddress?: BillingAddress;
+    billingAddress?: BillingAddressExtended;
     coupon?: string;
     trial?: boolean;
     ValidateBillingAddress?: boolean;
     VatId: string | undefined;
+    previousEstimation?: SubscriptionEstimation;
 }): Promise<SubscriptionEstimation> {
     if (!hasPlanIDs(planIDs) || planIDs[PLANS.FREE]) {
         return getFreeCheckResult(currency, cycle);
@@ -62,6 +64,11 @@ export async function getSubscriptionPrices({
             State: billingAddress.State,
             CountryCode: billingAddress.CountryCode,
             ZipCode: billingAddress.ZipCode,
+            Company: billingAddress.Company,
+            Address: billingAddress.Address,
+            City: billingAddress.City,
+            FirstName: billingAddress.FirstName,
+            LastName: billingAddress.LastName,
         };
     }
 
@@ -69,7 +76,7 @@ export async function getSubscriptionPrices({
         data.IsTrial = true;
     }
 
-    return paymentsApi.checkSubscription(data);
+    return paymentsApi.checkSubscription(data, { previousEstimation });
 }
 
 export const isReferralSignup = (location: Location) => {

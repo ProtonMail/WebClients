@@ -2,7 +2,15 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { type CheckSubscriptionData, PLANS } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { addApiMock, apiMock, defaultProtonConfig, hookWrapper, withApi, withConfig } from '@proton/testing';
+import {
+    addApiMock,
+    apiMock,
+    defaultProtonConfig,
+    hookWrapper,
+    withApi,
+    withConfig,
+    withReduxStore,
+} from '@proton/testing';
 
 import { usePaymentsApi } from './usePaymentsApi';
 
@@ -11,7 +19,7 @@ jest.mock('@proton/account/plans/hooks', () => ({
     useGetPlans: jest.fn(),
 }));
 
-const getWrapper = () => hookWrapper(withApi(), withConfig());
+const getWrapper = () => hookWrapper(withApi(), withConfig(), withReduxStore());
 
 beforeEach(() => {
     jest.clearAllMocks();
@@ -94,7 +102,8 @@ describe('usePaymentsApi', () => {
                 withConfig({
                     ...defaultProtonConfig,
                     APP_NAME: appName,
-                })
+                }),
+                withReduxStore()
             ),
         });
 
