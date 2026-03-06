@@ -530,11 +530,11 @@ export const KnowledgeBasePanel = ({
                                 shape="outline"
                                 onClick={() => setShowDriveBrowser(true)}
                                 className="shrink-0 flex flex-row flex-nowrap items-center gap-2"
-                                title={c('collider_2025: Action').t`Add from ${DRIVE_SHORT_APP_NAME}`}
+                                title={c('collider_2025: KBActionTitle').t`Add from ${DRIVE_SHORT_APP_NAME}`}
                             >
                                 <IcBrandProtonDrive size={4} />
                                 <span className="text-sm">
-                                    {c('collider_2025: Action').t`Add from ${DRIVE_SHORT_APP_NAME}`}
+                                    {c('collider_2025: KBAction').t`Add from ${DRIVE_SHORT_APP_NAME}`}
                                 </span>
                             </Button>
                         )}

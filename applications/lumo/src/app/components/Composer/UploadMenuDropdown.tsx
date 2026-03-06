@@ -40,7 +40,7 @@ export const UploadMenuDropdown = ({
     const uploadMenuItems: UploadActionItemProps[] = [
         {
             iconName: 'brand-proton-drive' as IconName,
-            getLabel: () => c('collider_2025: Action').t`Add from ${DRIVE_APP_NAME}`,
+            getLabel: () => c('collider_2025: UploadAction').t`Add from ${DRIVE_APP_NAME}`,
             onClick: onBrowseDrive,
             onClose: onClose,
             canShow: showBrowseDriveOption,
