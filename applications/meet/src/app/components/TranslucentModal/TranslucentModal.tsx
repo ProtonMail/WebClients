@@ -18,8 +18,8 @@ export const TranslucentModal = ({
     headerButtons?: React.ReactNode;
 }) => (
     <ModalTwo open={open} onClose={onClose} rootClassName="translucent-modal" size="full" fullscreen>
-        <div className="w-full meet-container-padding-x overflow-y-auto h-full flex flex-column">
-            <div className="flex justify-space-between items-center pt-5 pb-5">
+        <div className="w-full meet-container-padding-x overflow-y-auto h-full flex flex-column relative">
+            <div className="flex justify-space-between items-center pt-5 pb-5 sticky top-0 header-container">
                 <img src={brand} alt={MEET_APP_NAME} className="h-custom" style={{ '--h-custom': '2.5rem' }} />
                 <div className="header-buttons-container flex gap-1">
                     {headerButtons}
