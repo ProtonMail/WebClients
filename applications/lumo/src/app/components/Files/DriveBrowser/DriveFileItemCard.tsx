@@ -60,11 +60,11 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
     const isProcessing = file.processing;
 
     const getBaseClasses = () => {
-        const base = 'flex flex-row flex-nowrap items-center transition-all cursor-pointer rounded file-item-card';
+        const base = 'flex flex-row flex-nowrap items-center transition-all cursor-pointer file-item-card';
 
         switch (variant) {
             case 'simple':
-                return `${base} p-2 mb-1`;
+                return `${base} p-2 mb-2 rounded-lg`;
             case 'compact':
                 return `${base} p-2 mb-1 rounded border border-weak`;
             case 'detailed':
@@ -99,16 +99,16 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
             {/* File icon */}
             <div className="shrink-0 mr-3">
                 {file.type === NodeType.Folder ? (
-                    <IcFolderFilled size={6} className="color-warning" />
+                    <IcFolderFilled size={variant === 'simple' ? 10 : 6} className="color-warning" />
                 ) : (
-                    <FileIcon mimeType={file.mediaType || detectedMimeType} size={6} />
+                    <FileIcon mimeType={file.mediaType || detectedMimeType} size={variant === 'simple' ? 10 : 6} />
                 )}
             </div>
 
             {/* File info */}
             <div className="flex flex-column flex-1 min-w-0 gap-1">
                 <span
-                    className={`font-semibold ${variant === 'compact' ? 'text-xs' : 'text-sm'}`}
+                    className={`${variant === 'simple' ? 'text-sm text-bold' : `font-semibold ${variant === 'compact' ? 'text-xs' : 'text-sm'}`}`}
                     style={{
                         display: 'block',
                         overflow: 'hidden',

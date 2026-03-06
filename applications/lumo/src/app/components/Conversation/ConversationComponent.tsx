@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
-import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -10,11 +9,11 @@ import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import type { ConversationError } from '../../redux/slices/meta/errors';
 import { selectConversationErrors, selectTierErrors } from '../../redux/slices/meta/errors';
-import type { Conversation, Message, RetryStrategy, SiblingInfo } from '../../types';
-import UpsellCard from '../../upsells/components/UpsellCard';
-import { ComposerComponent } from '../Composer/ComposerComponent';
-import { FilesManagementView } from '../Files';
+import type { Attachment, Conversation, Message, RetryStrategy, SiblingInfo } from '../../types';
 import ErrorCard from '../Notifications/ErrorCard';
+import { FilesManagementView } from '../Files';
+import { FilePreviewPanel } from '../Files/Common/FilePreviewPanel';
+import { RightDrawer } from '../RightDrawer';
 import { RetryPanel } from '../RetryPanel';
 import { ConversationSurvey } from '../Survey/ConversationSurvey';
 import { ConversationHeader } from './messageChain/ConversationHeader';
@@ -146,10 +145,11 @@ const ConversationComponent = ({
     const inputContainerRef = useRef<HTMLDivElement>(null);
     const { isWebSearchButtonToggled } = useWebSearch();
     const [openPanel, setOpenPanel] = useState<{
-        type: 'sources' | 'files' | null;
+        type: 'sources' | 'files' | 'file-preview' | null;
         message?: Message;
         filterMessage?: Message;
         autoShowDriveBrowser?: boolean;
+        attachment?: Attachment;
     }>({ type: null });
 
     // Retry panel state
@@ -196,6 +196,10 @@ const ConversationComponent = ({
         setOpenPanel({ type: null });
     }, []);
 
+    const handleOpenFilePreview = useCallback((attachment: Attachment) => {
+        setOpenPanel({ type: 'file-preview', attachment });
+    }, []);
+
     const handleClearFilter = useCallback(() => {
         // Keep files panel open but remove the filter
         setOpenPanel((prev) => (prev.type === 'files' ? { type: 'files', filterMessage: undefined } : prev));
@@ -235,21 +239,15 @@ const ConversationComponent = ({
 
     return (
         <>
-            {conversation && (
-                <ConversationHeader
-                    conversation={conversation}
-                    messageChain={messageChain}
-                    onOpenFiles={handleOpenFiles}
-                />
-            )}
-            <div
-                className={clsx(
-                    'lumo-chat-container flex flex-row flex-nowrap flex-1 relative reset4print overflow-hidden',
-                    openPanel.type === 'sources' && 'lumo-chat-container-with-sources',
-                    openPanel.type === 'files' && 'lumo-chat-container-with-knowledge-base'
-                )}
-            >
-                <div className="outer flex flex-column flex-nowrap flex-1 reset4print">
+            <div className="lumo-chat-container flex flex-row flex-nowrap flex-1 relative reset4print overflow-hidden">
+                <div className="outer flex flex-column flex-nowrap flex-1 reset4print overflow-hidden">
+                    {conversation && (
+                        <ConversationHeader
+                            conversation={conversation}
+                            messageChain={messageChain}
+                            onOpenFiles={handleOpenFiles}
+                        />
+                    )}
                     <MessageChainComponent
                         messageChainRef={messageChainRef}
                         messageChain={messageChain}
@@ -260,6 +258,7 @@ const ConversationComponent = ({
                         sourcesContainerRef={sourcesContainerRef}
                         handleOpenSources={handleOpenSources}
                         handleOpenFiles={handleOpenFiles}
+                        handleOpenFilePreview={handleOpenFilePreview}
                         onRetryPanelToggle={handleRetryPanelToggle}
                         composerContainerRef={composerContainerRef}
                     />
@@ -285,6 +284,7 @@ const ConversationComponent = ({
                             messageChain={messageChain}
                             handleOpenFiles={handleOpenFiles}
                             onShowDriveBrowser={handleShowDriveBrowser}
+                            onOpenFilePreview={handleOpenFilePreview}
                             initialQuery={initialQuery}
                             prefillQuery={prefillQuery}
                             spaceId={conversation?.spaceId}
@@ -312,6 +312,15 @@ const ConversationComponent = ({
                         initialShowDriveBrowser={openPanel.autoShowDriveBrowser}
                         spaceId={conversation?.spaceId}
                     />
+                )}
+                {openPanel.type === 'file-preview' && openPanel.attachment && (
+                    <RightDrawer>
+                        <FilePreviewPanel
+                            attachment={openPanel.attachment}
+                            onBack={() => setOpenPanel({ type: 'files' })}
+                            onClose={() => setOpenPanel({ type: null })}
+                        />
+                    </RightDrawer>
                 )}
             </div>
 

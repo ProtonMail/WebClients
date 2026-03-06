@@ -147,7 +147,6 @@ const MainContainer = ({
                     />
                 </div>
                 <WhatsNew />
-                {/* {!isSmallScreen && <LumoOnboarding />} */}
             </div>
             {openPanel.type === 'files' && (
                 <FilesManagementView
