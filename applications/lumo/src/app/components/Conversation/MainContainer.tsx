@@ -4,23 +4,22 @@ import { clsx } from 'clsx';
 
 import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
-import { LumoCat } from '../LumoAvatar';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
+import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useOnboardingContext } from '../../providers/OnboardingProvider';
 import type { Message } from '../../types';
-import { FilesManagementView } from '../Files';
-import { NewGhostChatButton } from '../Buttons/GhostChatButton/NewGhostChatButton';
-import WhatsNew from '../WhatsNew/WhatsNew';
-import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
 import LumoNavbarUpsell from '../../upsells/composed/LumoNavbarUpsell';
-import LumoMainText from './MainContainer/LumoMainText';
-import LumoOnboarding from '../Onboarding/LumoOnboarding';
-import { ThemedPromptSuggestion } from './MainContainer/PromptSuggestion';
-import TermsAndConditions from './MainContainer/TermsAndConditions';
+import { NewGhostChatButton } from '../Buttons/GhostChatButton/NewGhostChatButton';
 import { ComposerComponent } from '../Composer/ComposerComponent';
+import { FilesManagementView } from '../Files';
+import { LumoCat } from '../LumoAvatar';
+import WhatsNew from '../WhatsNew/WhatsNew';
+import LumoMainText from './MainContainer/LumoMainText';
+import MainContainerFooter from './MainContainer/MainContainerFooter';
+import { ThemedPromptSuggestion } from './MainContainer/PromptSuggestion';
 
 import './MainContainer.scss';
 
@@ -100,7 +99,7 @@ const MainContainer = ({
                     '--lg-max-w-custom': '43rem',
                 }}
             >
-                {!isSmallScreen && <NewGhostChatButton className="absolute top-0 right-0 mt-4 mr-4" />}
+                {/* {!isSmallScreen && <NewGhostChatButton className="absolute top-0 right-0 mt-4 mr-4" />} */}
                 <div
                     className={clsx(
                         'lumo-welcome-section flex flex-column-reverse md:flex-row w-full flex-nowrap px-8 relative',
@@ -147,7 +146,7 @@ const MainContainer = ({
                     />
                 </div>
                 <WhatsNew />
-                {!isSmallScreen && <LumoOnboarding />}
+                {/* {!isSmallScreen && <LumoOnboarding />} */}
             </div>
             {openPanel.type === 'files' && (
                 <FilesManagementView
@@ -161,8 +160,7 @@ const MainContainer = ({
                 />
             )}
 
-            {/* Legal disclaimer for desktop - only shown in guest mode and before user starts typing */}
-            {isGuest && !isSmallScreen && <TermsAndConditions />}
+            <MainContainerFooter />
         </>
     );
 };
