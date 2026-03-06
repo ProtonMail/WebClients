@@ -22,6 +22,8 @@ export enum UpsellModalTypes {
     GuestAccount = 'guestAccount',
     FreeAccount = 'freeAccount',
     PaidAccount = 'paidAccount',
+    MeetingEnded = 'meetingEnded',
+    RemovedFromMeeting = 'removedFromMeeting',
 }
 
 export interface MeetChatMessage extends Pick<ChatMessage, 'id' | 'message' | 'timestamp'> {

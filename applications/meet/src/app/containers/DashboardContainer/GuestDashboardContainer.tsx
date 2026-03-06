@@ -24,6 +24,8 @@ export const GuestDashboardContainer = () => {
     const handleRejoin = () => {
         if (previousMeetingLink) {
             history.push(previousMeetingLink);
+        } else {
+            history.push('/join');
         }
     };
 
