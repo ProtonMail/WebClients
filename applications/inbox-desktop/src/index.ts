@@ -42,8 +42,10 @@ import { quitTracker } from "./utils/log/quitTracker";
     const PROFILER_IIFE_START = Date.now();
     const PROFILER_IIFE_START_PERF = performance.now();
 
+    const isPlaywrightTest = process.env.PLAYWRIGHT_TEST === "true";
+
     // Prevent remote debugging through CDP (Chrome Dev-Tools Protocol)
-    preventRemoteDebugging();
+    if (!isPlaywrightTest) preventRemoteDebugging();
 
     profiler.init(PROFILER_IIFE_START, PROFILER_IIFE_START_PERF);
 
@@ -63,7 +65,7 @@ import { quitTracker } from "./utils/log/quitTracker";
     profiler.mark("squirrel-done");
 
     // Security addition
-    if (process.env.PLAYWRIGHT_TEST !== "true") {
+    if (!isPlaywrightTest) {
         app.enableSandbox();
     }
 
@@ -185,7 +187,7 @@ import { quitTracker } from "./utils/log/quitTracker";
     setRequestPermission();
     extendAppVersionHeader();
 
-    if (process.env.PLAYWRIGHT_TEST === "true") {
+    if (isPlaywrightTest) {
         // We can expose a method through the global node context.
         // Playwright can interface with it via JS handles.
         // In turn this enables us to evaluate what view is presented in the main browser window on INDA.
