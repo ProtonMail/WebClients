@@ -3,7 +3,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { NodeType } from '@proton/drive/index';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { ItemType } from '../../../zustand/sections/sharedWithMeListing.store';
+import { ItemType } from '../useSharedWithMe.store';
 import { useSharedWithMeItemsWithSelection } from './useSharedWithMeItemsWithSelection';
 
 jest.mock('../../../components/FileBrowser', () => ({
@@ -88,8 +88,8 @@ const mockSharedWithMeStore = {
     itemUids: new Set(),
 };
 
-jest.mock('../../../zustand/sections/sharedWithMeListing.store', () => ({
-    useSharedWithMeListingStore: (selector: any) => selector(mockSharedWithMeStore),
+jest.mock('../useSharedWithMe.store', () => ({
+    useSharedWithMeStore: (selector: any) => selector(mockSharedWithMeStore),
     ItemType: {
         BOOKMARK: 'bookmark',
         DIRECT_SHARE: 'directShare',

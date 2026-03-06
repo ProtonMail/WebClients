@@ -7,7 +7,7 @@ import { useNotifications } from '@proton/components';
 import { splitInvitationUid, useDrive } from '@proton/drive/index';
 
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
-import { ItemType, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
+import { ItemType, useSharedWithMeStore } from '../useSharedWithMe.store';
 
 export const useInvitationsLoader = () => {
     const {
@@ -16,7 +16,7 @@ export const useInvitationsLoader = () => {
     } = useDrive();
     const { createNotification } = useNotifications();
 
-    const { setSharedWithMeItemInStore, setLoadingInvitations, cleanupStaleItems } = useSharedWithMeListingStore(
+    const { setSharedWithMeItemInStore, setLoadingInvitations, cleanupStaleItems } = useSharedWithMeStore(
         useShallow((state) => ({
             setSharedWithMeItemInStore: state.setSharedWithMeItem,
             setLoadingInvitations: state.setLoadingInvitations,
@@ -26,7 +26,7 @@ export const useInvitationsLoader = () => {
 
     const loadInvitations = useCallback(
         async (abortSignal: AbortSignal) => {
-            if (useSharedWithMeListingStore.getState().isLoadingInvitations) {
+            if (useSharedWithMeStore.getState().isLoadingInvitations) {
                 return;
             }
             setLoadingInvitations(true);

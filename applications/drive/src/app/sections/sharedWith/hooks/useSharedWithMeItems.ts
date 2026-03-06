@@ -16,7 +16,7 @@ import { useSelectionStore } from '../../../modules/selection';
 import type { SortConfig, SortField } from '../../../modules/sorting/types';
 import { useDocumentActions, useUserSettings } from '../../../store';
 import { useDriveDocsFeatureFlag } from '../../../store/_documents';
-import { ItemType, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
+import { ItemType, useSharedWithMeStore } from '../useSharedWithMe.store';
 import { useBookmarksActions } from './useBookmarksActions';
 
 export const useSharedWithMeItems = () => {
@@ -63,10 +63,10 @@ export const useSharedWithMeItems = () => {
         sortField,
         direction,
         setSorting,
-    } = useSharedWithMeListingStore(
+    } = useSharedWithMeStore(
         useShallow((state) => ({
             getSharedWithMeStoreItem: state.getSharedWithMeItem,
-            sortedUids: state.getItemUids(),
+            sortedUids: state.sortedItemUids,
             clearItemsWithInvitationPosition: state.clearItemsWithInvitationPosition,
             isLoading: state.isLoading(),
             hasEverLoaded: state.hasEverLoaded,
@@ -153,7 +153,7 @@ export const useSharedWithMeItems = () => {
                     return openDocument({
                         type: 'doc',
                         linkId: nodeId,
-                        shareId: item.shareId,
+                        shareId: item.shareId ?? '',
                         openBehavior: 'tab',
                     });
                 }
@@ -163,7 +163,7 @@ export const useSharedWithMeItems = () => {
                     return openDocument({
                         type: 'sheet',
                         linkId: nodeId,
-                        shareId: item.shareId,
+                        shareId: item.shareId ?? '',
                         openBehavior: 'tab',
                     });
                 }
@@ -171,20 +171,20 @@ export const useSharedWithMeItems = () => {
             }
 
             if (item.type === NodeType.Album) {
-                navigateToAlbum(item.shareId, nodeId);
+                navigateToAlbum(item.shareId ?? '', nodeId);
                 return;
             }
 
             if ((item.type === NodeType.File || item.type === NodeType.Photo) && isSDKPreviewEnabled) {
                 showPreviewModal({
                     drive: getDrivePerNodeType(item.type),
-                    deprecatedContextShareId: item.shareId,
+                    deprecatedContextShareId: item.shareId ?? '',
                     nodeUid: item.nodeUid,
                 });
                 return;
             }
 
-            navigateToLink(item.shareId, nodeId, item.type === NodeType.File || item.type === NodeType.Photo);
+            navigateToLink(item.shareId ?? '', nodeId, item.type === NodeType.File || item.type === NodeType.Photo);
         },
         [
             navigateToLink,

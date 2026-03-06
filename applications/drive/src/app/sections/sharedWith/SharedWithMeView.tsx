@@ -9,12 +9,12 @@ import { FileBrowserStateProvider } from '../../components/FileBrowser';
 import ToolbarRow from '../../components/sections/ToolbarRow/ToolbarRow';
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
 import { Actions, traceTelemetry } from '../../utils/telemetry';
-import { useSharedWithMeListingStore } from '../../zustand/sections/sharedWithMeListing.store';
-import SharedWithMe from './SharedWithMe';
+import { SharedWithMe } from './SharedWithMe';
 import SharedWithMeToolbar from './SharedWithMeToolbar';
 import { useBookmarksLoader } from './loaders/useBookmarksLoader';
 import { useInvitationsLoader } from './loaders/useInvitationsLoader';
 import { useSharedWithMeNodesLoader } from './loaders/useSharedWithMeNodesLoader';
+import { useSharedWithMeStore } from './useSharedWithMe.store';
 
 export const SharedWithMeView = () => {
     useAppTitle(c('Title').t`Shared with me`);
@@ -23,9 +23,9 @@ export const SharedWithMeView = () => {
     const { loadSharedWithMeNodes } = useSharedWithMeNodesLoader();
     const { loadInvitations } = useInvitationsLoader();
     const { loadBookmarks } = useBookmarksLoader();
-    const { itemUids } = useSharedWithMeListingStore(
+    const { itemUids } = useSharedWithMeStore(
         useShallow((state) => ({
-            itemUids: state.getItemUids(),
+            itemUids: state.sortedItemUids,
         }))
     );
 
