@@ -36,8 +36,8 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
 }) => {
     if (children.length === 0) {
         return (
-            <div className="text-center py-8 text-gray-500">
-                <p>{c('collider_2025: Info').t`No supported files in this folder`}</p>
+            <div className="flex items-center justify-center text-center py-8">
+                <p className="color-weak text-sm m-0">{c('collider_2025: Info').t`No supported files in this folder`}</p>
             </div>
         );
     }
@@ -67,7 +67,7 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                 };
 
                 const fileExists = existingFiles.some((existing) => existing.filename === child.name);
-                const estimatedTooLargeForPreview = child.size && child.size > 750 * 1024; // 750KB threshold
+                const estimatedTooLargeForPreview = child.size && child.size > 4096 * 1024; // 1MB threshold
                 const exceedsFileSizeLimit = child.size && child.size > MAX_ASSET_SIZE;
 
                 const CheckmarkIcon = () => <IcCheckmarkCircle />;

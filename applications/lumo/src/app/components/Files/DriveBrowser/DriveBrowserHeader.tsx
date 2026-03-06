@@ -35,53 +35,52 @@ export const DriveBrowserHeader: React.FC<DriveBrowserHeaderProps> = ({
     isRefreshing,
     hasCurrentFolder,
     folderSelectionMode,
-    // onLinkCurrentFolder,
-    // currentFolderName,
 }) => {
     return (
-        <div className="mb-4">
-            <div className="flex flex-row flex-nowrap items-center justify-space-between mb-2 p-2">
-                <div className="flex flex-row items-center gap-1">
-                    <div className="flex flex-row items-center gap-1">
-                        {onBack && !initialShowDriveBrowser && (
-                            <>
-                                <Button onClick={onBack} size="small" shape="ghost">
-                                    <IcArrowLeft size={4} />
-                                </Button>
-                            </>
-                        )}
-
-                        <p className="m-0 text-lg text-bold">{DRIVE_APP_NAME}</p>
-
-                        {!displayError && !folderSelectionMode && (
-                            <>
-                                <Button
-                                    onClick={onRefresh}
-                                    size="small"
-                                    shape="ghost"
-                                    disabled={loading || isRefreshing}
-                                    title={c('collider_2025: Action').t`Refresh folder contents`}
-                                >
-                                    <IcArrowRotateRight size={4} className={isRefreshing ? 'animate-spin' : ''} />
-                                </Button>
-
-                                <Button
-                                    onClick={onUpload}
-                                    size="small"
-                                    shape="ghost"
-                                    disabled={loading || isRefreshing || !hasCurrentFolder}
-                                    title={c('collider_2025: Action').t`Upload file and add to knowledge base`}
-                                >
-                                    <IcArrowUpLine size={4} />
-                                </Button>
-                            </>
-                        )}
-                    </div>
+        <div className="shrink-0 mb-4">
+            <div className="flex flex-row items-center justify-space-between">
+                {/* Left side: back + title */}
+                <div className="flex flex-row flex-nowrap items-center gap-1">
+                    {onBack && !initialShowDriveBrowser && (
+                        <Button icon className="shrink-0" size="small" shape="ghost" onClick={onBack}>
+                            <IcArrowLeft size={4} />
+                        </Button>
+                    )}
+                    <p className="m-0 text-lg text-bold">{DRIVE_APP_NAME}</p>
                 </div>
 
-                <Button icon className="shrink-0" size="small" shape="ghost" onClick={onClose}>
-                    <IcCross />
-                </Button>
+                {/* Right side: action buttons + close */}
+                <div className="flex flex-row flex-nowrap items-center gap-1">
+                    {!displayError && !folderSelectionMode && (
+                        <>
+                            <Button
+                                icon
+                                size="small"
+                                shape="ghost"
+                                onClick={onRefresh}
+                                disabled={loading || isRefreshing}
+                                title={c('collider_2025: Action').t`Refresh folder contents`}
+                            >
+                                <IcArrowRotateRight size={4} className={isRefreshing ? 'animate-spin' : ''} />
+                            </Button>
+
+                            <Button
+                                icon
+                                size="small"
+                                shape="ghost"
+                                onClick={onUpload}
+                                disabled={loading || isRefreshing || !hasCurrentFolder}
+                                title={c('collider_2025: Action').t`Upload file to Drive`}
+                            >
+                                <IcArrowUpLine size={4} />
+                            </Button>
+                        </>
+                    )}
+
+                    <Button icon className="shrink-0" size="small" shape="ghost" onClick={onClose}>
+                        <IcCross size={4} />
+                    </Button>
+                </div>
             </div>
         </div>
     );
