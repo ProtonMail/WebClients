@@ -24,7 +24,11 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@proton/shared": "workspace:^",
         "@unleash/proxy-client-react": "^5.0.1",
+        "date-fns": "^3.6.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
         "unleash-proxy-client": "^3.7.8"
     },
     "devDependencies": {
@@ -37,10 +41,5 @@
         "jest": "^30.2.0",
         "prettier": "^3.8.1",
         "typescript": "^5.9.3"
-    },
-    "peerDependencies": {
-        "date-fns": "^3.6.0",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1"
     }
 }
