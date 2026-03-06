@@ -1,7 +1,8 @@
 import isDeepEqual from 'lodash/isEqual';
 
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { fromSieveTree, toSieveTree } from '@proton/sieve';
+import { fromSieveTree } from '@proton/sieve/fromSieveTree';
+import { toSieveTree } from '@proton/sieve/toSieveTree';
 
 import { COMPARATORS, FILTER_VERSION, OPERATORS, TYPES, getDefaultFolders } from './constants';
 import type {
