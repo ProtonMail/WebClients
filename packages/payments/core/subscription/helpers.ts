@@ -1077,7 +1077,7 @@ export function hasSpringSale2026Coupon(subscription: Subscription | FreeSubscri
             COUPON_CODES.MAR26OFFER,
             COUPON_CODES.MAR26OFFERCS,
             COUPON_CODES.MAR26BUNDLESALE,
-            COUPON_CODES.MAR26BUNDLESALECD,
+            COUPON_CODES.MAR26BUNDLESALECS,
         ] as string[]
     ).includes(subscription?.CouponCode || '');
 }
