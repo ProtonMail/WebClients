@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 
 import { c, msgid } from 'ttag';
-import { useShallow } from 'zustand/react/shallow';
 
 import clsx from '@proton/utils/clsx';
 
-import { useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
+import { useInvitationCountStore } from '../../../zustand/share/invitationCount.store';
 import { useInvitationsLoader } from '../../sharedWith/loaders/useInvitationsLoader';
+import { useSharedWithMeStore } from '../../sharedWith/useSharedWithMe.store';
 import { DriveSidebarListItem } from '../DriveSidebarListItem';
 
 interface DriveSidebarSharedWithMeProps {
@@ -16,13 +16,7 @@ interface DriveSidebarSharedWithMeProps {
 export const DriveSidebarSharedWithMe = ({ shareId, collapsed }: DriveSidebarSharedWithMeProps) => {
     const { loadInvitations } = useInvitationsLoader();
 
-    const { subscribeToEvents, unsubscribeToEvents, invitationsCount } = useSharedWithMeListingStore(
-        useShallow((state) => ({
-            invitationsCount: state.getInvitationCount(),
-            subscribeToEvents: state.subscribeToEvents,
-            unsubscribeToEvents: state.unsubscribeToEvents,
-        }))
-    );
+    const invitationsCount = useInvitationCountStore((state) => state.invitationCount);
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -34,16 +28,17 @@ export const DriveSidebarSharedWithMe = ({ shareId, collapsed }: DriveSidebarSha
 
     useEffect(() => {
         const abortController = new AbortController();
-        void subscribeToEvents('driveSidebar', {
+        // TODO: We need to remove dependency to shared with me store
+        void useSharedWithMeStore.getState().subscribeToEvents('driveSidebar', {
             onRefreshSharedWithMe: async () => {
                 await loadInvitations(abortController.signal);
             },
         });
         return () => {
             abortController.abort();
-            void unsubscribeToEvents('driveSidebar');
+            void useSharedWithMeStore.getState().unsubscribeToEvents('driveSidebar');
         };
-    }, [subscribeToEvents, unsubscribeToEvents, loadInvitations]);
+    }, [loadInvitations]);
 
     const invitationsCountTitle = c('Info').ngettext(
         msgid`${invitationsCount} pending invitation`,
