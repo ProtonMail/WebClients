@@ -6,6 +6,7 @@ import { DeleteButton } from '../../../commonButtons/DeleteButton';
 import { DetailsButton } from '../../../commonButtons/DetailsButton';
 import { DownloadButton } from '../../../commonButtons/DownloadButton';
 import { GoToButton } from '../../../commonButtons/GoToParentButton';
+import { MoveButton } from '../../../commonButtons/MoveButton';
 import { OpenInDocsOrSheetsButton } from '../../../commonButtons/OpenInDocsOrSheetsButton';
 import { PreviewButton } from '../../../commonButtons/PreviewButton';
 import { RenameButton } from '../../../commonButtons/RenameButton';
@@ -21,6 +22,7 @@ interface BaseEditActionsProps {
     onRename: (uid: string) => void;
     onShare: (uid: string) => void;
     onTrash: (uids: string[]) => void;
+    onMove: (uids: string[]) => void;
     onGoToParent: (parentNodeUid: string) => void;
     onOpenDocsOrSheets: (uid: string, openInDocs: OpenInDocsType) => void;
 }
@@ -45,6 +47,7 @@ export function EditActions({
     onDetails,
     onRename,
     onTrash,
+    onMove,
     onGoToParent,
     onOpenDocsOrSheets,
     onShare,
@@ -69,7 +72,7 @@ export function EditActions({
             )}
             {itemChecker.canDownload && <DownloadButton onClick={() => onDownload(selectedUids)} {...extraProps} />}
             {itemChecker.canShare && <ShareButton onClick={() => onShare(itemChecker.firstItemUid)} {...extraProps} />}
-            {/* TODO: Add move button */}
+            {itemChecker.canMove && <MoveButton onClick={() => onMove(selectedUids)} {...extraProps} />}
 
             {(itemChecker.canRename || itemChecker.canShowDetails) && separator}
             {itemChecker.canRename && (

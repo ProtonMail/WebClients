@@ -19,6 +19,7 @@ interface BaseSearchItemChecker {
     canEdit: boolean;
     canDownload: boolean;
     canDelete: boolean;
+    canMove: boolean;
     hasAtLeastOneSelectedItem: boolean;
 }
 
@@ -74,6 +75,7 @@ export const createActionsItemChecker = (
     const canEdit = items.every((item) => item.role === MemberRole.Editor || item.role === MemberRole.Admin);
     const canDownload = hasAtLeastOneSelectedItem;
     const canDelete = hasAtLeastOneSelectedItem;
+    const canMove = canEdit && hasAtLeastOneSelectedItem;
 
     // Single-selection case:
     if (items.length === 1 && firstItem) {
@@ -89,6 +91,7 @@ export const createActionsItemChecker = (
             canEdit,
             canDownload,
             canDelete,
+            canMove,
             canPreview: hasPreviewAvailable,
             canRename: true as const,
             canShowDetails: true as const,
@@ -117,6 +120,7 @@ export const createActionsItemChecker = (
         canEdit,
         canDownload,
         canDelete,
+        canMove,
         canShare: false as const,
         canGoToParent: false as const,
         canPreview: false as const,
