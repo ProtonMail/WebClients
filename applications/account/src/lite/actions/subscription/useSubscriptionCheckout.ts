@@ -226,7 +226,7 @@ const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed, m
         planIDs: planIDs,
         coupon: checkResult?.Coupon?.Code,
         onBeforeSepaPayment: async () => {
-            if (checkResult.ProrationMode === ProrationMode.Exact) {
+            if (checkResult.requestData.ProrationMode === ProrationMode.Exact) {
                 const currentAmountDue = checkResult.AmountDue;
 
                 const newCheckResult = await reRunPaymentChecks();

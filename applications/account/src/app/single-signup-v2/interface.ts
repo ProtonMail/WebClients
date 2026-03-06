@@ -17,6 +17,7 @@ import type {
     SubscriptionEstimation,
     SubscriptionPlan,
 } from '@proton/payments';
+import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import type { ExtensionApp } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Audience, HumanVerificationMethodType, VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -52,7 +53,7 @@ export interface OptimisticOptions {
     cycle: CYCLE;
     currency: Currency;
     planIDs: PlanIDs;
-    billingAddress: BillingAddress;
+    billingAddress: BillingAddressExtended;
     checkResult: SubscriptionEstimation;
     coupon?: string;
     trial?: boolean;

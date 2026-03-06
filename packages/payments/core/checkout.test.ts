@@ -1,7 +1,8 @@
+import { InvalidZipCodeError, WrongBillingAddressError } from '@proton/components/payments/react-extensions/errors';
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 import { PLANS_MAP } from '@proton/testing/data';
 
-import { getCheckoutUi, getUsersAndAddons } from './checkout';
+import { getCheckoutUi, getInformedOptimisticSubscriptionEstimation, getUsersAndAddons } from './checkout';
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from './constants';
 import type { Plan } from './plan/interface';
 import { SubscriptionMode } from './subscription/constants';
@@ -1107,5 +1108,211 @@ describe('getUsersAndAddons()', () => {
             },
             addons: [],
         });
+    });
+});
+
+describe('getInformedOptimisticSubscriptionEstimation', () => {
+    const baseRequestData = {
+        Plans: { [PLANS.VPN2024]: 1 },
+        Currency: 'USD' as const,
+        Cycle: CYCLE.YEARLY,
+    };
+
+    const goodEstimation: SubscriptionEstimation = {
+        Amount: 7188,
+        AmountDue: 7188,
+        CouponDiscount: 0,
+        Cycle: CYCLE.YEARLY,
+        Coupon: null,
+        Currency: 'USD',
+        SubscriptionMode: SubscriptionMode.Regular,
+        BaseRenewAmount: null,
+        RenewCycle: null,
+        PeriodEnd: +addMonths(new Date(), CYCLE.YEARLY) / 1000,
+        Taxes: [{ Name: 'VAT', Rate: 20, Amount: 1198 }],
+        requestData: {
+            ...baseRequestData,
+            BillingAddress: {
+                CountryCode: 'US',
+                State: 'CA',
+                ZipCode: '94105',
+            },
+        },
+    };
+
+    const erroredEstimation: SubscriptionEstimation = {
+        Amount: 0,
+        AmountDue: 0,
+        CouponDiscount: 0,
+        Cycle: CYCLE.YEARLY,
+        Coupon: null,
+        Currency: 'USD',
+        SubscriptionMode: SubscriptionMode.Regular,
+        BaseRenewAmount: null,
+        RenewCycle: null,
+        PeriodEnd: +addMonths(new Date(), CYCLE.YEARLY) / 1000,
+        error: new InvalidZipCodeError(),
+        requestData: {
+            ...baseRequestData,
+            BillingAddress: {
+                CountryCode: 'US',
+                State: 'CA',
+                ZipCode: '00000',
+            },
+        },
+    };
+
+    it('should merge good pricing with error when core params match', () => {
+        const result = getInformedOptimisticSubscriptionEstimation(erroredEstimation, goodEstimation);
+
+        expect(result.Amount).toBe(7188);
+        expect(result.AmountDue).toBe(7188);
+        expect(result.optimistic).toBe(true);
+        expect(result.error).toBeInstanceOf(InvalidZipCodeError);
+        expect(result.requestData).toBe(erroredEstimation.requestData);
+        expect(result.Taxes).toEqual([]);
+    });
+
+    it('should preserve coupon data from the good estimation', () => {
+        const goodWithCoupon: SubscriptionEstimation = {
+            ...goodEstimation,
+            CouponDiscount: -1000,
+            Coupon: { Code: 'SAVE10', Description: '', MaximumRedemptionsPerUser: null },
+        };
+
+        const result = getInformedOptimisticSubscriptionEstimation(erroredEstimation, goodWithCoupon);
+
+        expect(result.CouponDiscount).toBe(-1000);
+        expect(result.Coupon?.Code).toBe('SAVE10');
+        expect(result.optimistic).toBe(true);
+        expect(result.error).toBeInstanceOf(InvalidZipCodeError);
+    });
+
+    it('should return errored estimation as-is when plans differ', () => {
+        const erroredWithDifferentPlan: SubscriptionEstimation = {
+            ...erroredEstimation,
+            requestData: {
+                ...erroredEstimation.requestData,
+                Plans: { [PLANS.VISIONARY]: 1 },
+            },
+        };
+
+        const result = getInformedOptimisticSubscriptionEstimation(erroredWithDifferentPlan, goodEstimation);
+
+        expect(result).toBe(erroredWithDifferentPlan);
+    });
+
+    it('should return errored estimation as-is when cycle differs', () => {
+        const erroredWithDifferentCycle: SubscriptionEstimation = {
+            ...erroredEstimation,
+            requestData: {
+                ...erroredEstimation.requestData,
+                Cycle: CYCLE.MONTHLY,
+            },
+        };
+
+        const result = getInformedOptimisticSubscriptionEstimation(erroredWithDifferentCycle, goodEstimation);
+
+        expect(result).toBe(erroredWithDifferentCycle);
+    });
+
+    it('should return errored estimation as-is when currency differs', () => {
+        const erroredWithDifferentCurrency: SubscriptionEstimation = {
+            ...erroredEstimation,
+            requestData: {
+                ...erroredEstimation.requestData,
+                Currency: 'EUR',
+            },
+        };
+
+        const result = getInformedOptimisticSubscriptionEstimation(erroredWithDifferentCurrency, goodEstimation);
+
+        expect(result).toBe(erroredWithDifferentCurrency);
+    });
+
+    it('should merge when only billing address differs', () => {
+        const erroredWithDifferentAddress: SubscriptionEstimation = {
+            ...erroredEstimation,
+            error: new WrongBillingAddressError({ ZipCode: 'invalid' }),
+            requestData: {
+                ...baseRequestData,
+                BillingAddress: {
+                    CountryCode: 'DE',
+                    State: 'Berlin',
+                    ZipCode: 'XXXXX',
+                },
+            },
+        };
+
+        const result = getInformedOptimisticSubscriptionEstimation(erroredWithDifferentAddress, goodEstimation);
+
+        expect(result.Amount).toBe(7188);
+        expect(result.optimistic).toBe(true);
+        expect(result.error).toBeInstanceOf(WrongBillingAddressError);
+        expect(result.requestData.BillingAddress?.CountryCode).toBe('DE');
+    });
+
+    it('should merge when coupon codes match between both estimations', () => {
+        const couponRequestData = {
+            ...baseRequestData,
+            CouponCode: 'SAVE10',
+        };
+
+        const goodWithCoupon: SubscriptionEstimation = {
+            ...goodEstimation,
+            CouponDiscount: -1000,
+            requestData: {
+                ...couponRequestData,
+                BillingAddress: { CountryCode: 'US', State: 'CA', ZipCode: '94105' },
+            },
+        };
+
+        const erroredWithCoupon: SubscriptionEstimation = {
+            ...erroredEstimation,
+            requestData: {
+                ...couponRequestData,
+                BillingAddress: { CountryCode: 'US', State: 'CA', ZipCode: '00000' },
+            },
+        };
+
+        const result = getInformedOptimisticSubscriptionEstimation(erroredWithCoupon, goodWithCoupon);
+
+        expect(result.CouponDiscount).toBe(-1000);
+        expect(result.optimistic).toBe(true);
+    });
+
+    it('should return errored estimation when coupon codes differ', () => {
+        const goodWithCoupon: SubscriptionEstimation = {
+            ...goodEstimation,
+            requestData: {
+                ...baseRequestData,
+                CouponCode: 'SAVE10',
+            },
+        };
+
+        const erroredNoCoupon: SubscriptionEstimation = {
+            ...erroredEstimation,
+            requestData: {
+                ...baseRequestData,
+            },
+        };
+
+        const result = getInformedOptimisticSubscriptionEstimation(erroredNoCoupon, goodWithCoupon);
+
+        expect(result).toBe(erroredNoCoupon);
+    });
+
+    it('should clear Taxes from the good estimation in the merged result', () => {
+        const goodWithTaxes: SubscriptionEstimation = {
+            ...goodEstimation,
+            Taxes: [
+                { Name: 'VAT', Rate: 20, Amount: 1198 },
+                { Name: 'State Tax', Rate: 8.5, Amount: 510 },
+            ],
+        };
+
+        const result = getInformedOptimisticSubscriptionEstimation(erroredEstimation, goodWithTaxes);
+
+        expect(result.Taxes).toEqual([]);
     });
 });

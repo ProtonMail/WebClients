@@ -279,14 +279,6 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
         updateMultiPlanCheckCacheAfterChangingCurrency(currency, options.currency).catch(noop);
     };
 
-    const selectBillingAddress = (billingAddress: BillingAddress) => {
-        return paymentsContext.selectBillingAddress(billingAddress);
-    };
-
-    const setVatNumber = async (vatNumber: string) => {
-        return paymentsContext.setVatNumber(vatNumber);
-    };
-
     const selectedPlan = new SelectedPlan(options.planIDs, paymentsContext.plansMap, options.cycle, options.currency);
 
     return (
@@ -294,8 +286,6 @@ export const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsCon
             value={{
                 ...paymentsContext,
                 initialize,
-                selectBillingAddress,
-                setVatNumber,
                 selectCycle,
                 selectCurrency,
                 selectPlanIDs,

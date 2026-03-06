@@ -343,9 +343,10 @@ export type ChargeableV5PaymentParameters = ChargeablePaymentParameters & {
 export type ChargebeeFetchedPaymentToken = (ChargeableV5PaymentToken | NonChargeableV5PaymentToken) &
     (AuthorizedV5PaymentToken | NonAuthorizedV5PaymentToken);
 
-export type RequestOptions = {
+export type CheckSubscriptionRequestOptions = {
     signal?: AbortSignal;
     silence?: boolean;
+    previousEstimation?: SubscriptionEstimation;
 };
 
 type OptimisticFallbackOptions =
@@ -359,7 +360,7 @@ type OptimisticFallbackOptions =
 
 export type MultiCheckOptions = {
     cached?: boolean;
-} & RequestOptions &
+} & Omit<CheckSubscriptionRequestOptions, 'previousEstimation'> &
     OptimisticFallbackOptions;
 
 export type GetPlansData = {
@@ -369,7 +370,7 @@ export type GetPlansData = {
 export interface PaymentsApi {
     checkSubscription: (
         data: CheckSubscriptionData,
-        requestOptions?: RequestOptions
+        requestOptions?: CheckSubscriptionRequestOptions
     ) => Promise<SubscriptionEstimation>;
 
     multiCheck: (data: CheckSubscriptionData[], options?: MultiCheckOptions) => Promise<SubscriptionEstimation[]>;

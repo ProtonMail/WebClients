@@ -1,8 +1,11 @@
+import isDeepEqual from 'lodash/isEqual';
 import { c, msgid } from 'ttag';
 
 import { LUMO_APP_NAME } from '@proton/shared/lib/constants';
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
+import { pick } from '@proton/shared/lib/helpers/object';
 
+import type { CheckSubscriptionData } from './api/api';
 import { ADDON_NAMES, ADDON_PREFIXES, CYCLE, DEFAULT_CYCLE, PLANS, PLAN_NAMES, PLAN_TYPES } from './constants';
 import type { Currency, FeatureLimitKey, PlanIDs, Pricing } from './interface';
 import {
@@ -386,6 +389,65 @@ export const getOptimisticCheckResult = ({
             Plans: planIDs || {},
         },
     };
+};
+
+/**
+ * Creates an "informed" optimistic subscription estimation by merging pricing data from the last
+ * successful estimation with the error and request data from the current failed estimation.
+ *
+ * This allows the checkout UI to keep displaying meaningful amounts (amount due, coupon discount,
+ * proration, etc.) even when the latest `subscription/check` call returned an error (e.g. invalid
+ * ZIP code, wrong billing address, wrong VAT number). The result is marked as `optimistic`
+ * and still carries the error so that consumers can disable the Pay button and highlight invalid fields.
+ *
+ * The merge only happens when the "core" subscription parameters (Plans, Currency, Cycle, CouponCode,
+ * Codes, IsTrial) match between the two estimations. If they differ — meaning the user changed something
+ * fundamental like the plan or cycle — the fallback data is stale and we return the errored estimation
+ * as-is instead.
+ *
+ * @param subscriptionEstimationWithError - The latest estimation that came back with an error from the backend.
+ * @param subscriptionEstimationWithoutError - The last known-good estimation (no error) to use as a pricing fallback.
+ * @returns A merged optimistic estimation when core params match, or the errored estimation otherwise.
+ */
+export const getInformedOptimisticSubscriptionEstimation = (
+    subscriptionEstimationWithError: SubscriptionEstimation,
+    subscriptionEstimationWithoutError: SubscriptionEstimation
+): SubscriptionEstimation => {
+    // Only compare the subscription-defining properties, intentionally ignoring billing address fields (BillingAddress,
+    // VatId, etc.) since those are the fields most likely to cause the error and their change shouldn't invalidate the
+    // pricing fallback. The listed properties can influence amountDue.
+    const propsToPick: (keyof CheckSubscriptionData)[] = [
+        'Plans',
+        'Currency',
+        'Cycle',
+        'CouponCode',
+        'Codes',
+        'IsTrial',
+    ];
+    const baseRequestDataWithErrorResponse = pick(subscriptionEstimationWithError.requestData, propsToPick);
+    const baseRequestDataWithoutErrorResponse = pick(subscriptionEstimationWithoutError.requestData, propsToPick);
+
+    // If core subscription parameters match, the pricing from the last good estimation is still
+    // relevant, so we create a hybrid: good pricing data + current error + current request data.
+    if (isDeepEqual(baseRequestDataWithErrorResponse, baseRequestDataWithoutErrorResponse)) {
+        const subscriptionEstimation: SubscriptionEstimation = {
+            // Spread the last valid estimation to preserve amounts, coupon, proration, etc.
+            ...subscriptionEstimationWithoutError,
+            // Mark as optimistic so consumers know this is a frontend-constructed estimation.
+            optimistic: true,
+            // Carry the error through so the UI can react (e.g. disable Pay, show validation).
+            error: subscriptionEstimationWithError.error,
+            // Use the latest request data so it reflects what the user actually submitted.
+            requestData: subscriptionEstimationWithError.requestData,
+            // Clear taxes because the backend couldn't compute them for the errored request.
+            Taxes: [],
+        };
+
+        return subscriptionEstimation;
+    }
+
+    // Core parameters differ — the fallback estimation is stale, so return the errored one directly.
+    return subscriptionEstimationWithError;
 };
 
 export const getOptimisticCheckout = (params: Parameters<typeof getOptimisticCheckResult>[0]): PaymentsCheckoutUI => {

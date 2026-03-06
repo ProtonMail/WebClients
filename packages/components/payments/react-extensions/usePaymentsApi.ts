@@ -1,7 +1,9 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
+import { createSelector } from '@reduxjs/toolkit';
 import { addMonths } from 'date-fns';
 
+import { selectPlans } from '@proton/account/plans';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -15,13 +17,12 @@ import {
     type PaymentStatus,
     type PaymentsApi,
     type PaymentsVersion,
-    type RequestOptions,
     type SubscriptionEstimation,
     SubscriptionMode,
     captureWrongPlanIDs,
     getPaymentMethodStatus,
-    getPaymentsVersion,
     getPlanName,
+    getPlansMap,
     isLifetimePlanSelected,
     isSubscriptionCheckForbidden,
 } from '@proton/payments';
@@ -33,14 +34,14 @@ import {
 } from '@proton/payments/core/api/billing-information';
 import { getLifetimeProductType } from '@proton/payments/core/api/createPaymentSubscription';
 import { getBillingAddressPayload } from '@proton/payments/core/billing-address/billing-address';
-import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import { getInformedOptimisticSubscriptionEstimation, getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import type { CheckSubscriptionRequestOptions } from '@proton/payments/core/interface';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces';
-import { getSentryError } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { InvalidZipCodeError, TaxExemptionNotSupportedError } from './errors';
+import { InvalidZipCodeError, TaxExemptionNotSupportedError, WrongBillingAddressError } from './errors';
 import { enrichCoupon } from './helpers';
 
 const checkSubscriptionQuery = (data: CheckSubscriptionData, version: PaymentsVersion) => {
@@ -76,46 +77,6 @@ const checkProduct = (data: CheckSubscriptionData) => {
             ProductType: getLifetimeProductType(data),
             BillingAddress: data.BillingAddress,
         },
-    };
-};
-
-export const useReportRoutingError = () => {
-    const errorsToReport: string[] = [
-        'This operation is not supported for users without a legacy subscription',
-        'This operation is not supported for users on a legacy subscription',
-    ];
-
-    const { APP_NAME } = useConfig();
-
-    const [alreadyReported, setAlreadyReported] = useState(false);
-
-    const isRoutingError = (error: string) => {
-        return errorsToReport.some((reportable) => error?.includes(reportable));
-    };
-
-    return (error: any, additionalContext: any) => {
-        const message: unknown = error?.data?.Error;
-        if (alreadyReported || typeof message !== 'string' || !isRoutingError(message)) {
-            return;
-        }
-
-        const context = {
-            app: APP_NAME,
-            paymentsVersion: getPaymentsVersion(),
-            ...additionalContext,
-        };
-
-        const sentryError = getSentryError(error);
-        captureMessage('Payments: routing error', {
-            level: 'error',
-            extra: {
-                error: sentryError,
-                message,
-                context,
-            },
-        });
-
-        setAlreadyReported(true);
     };
 };
 
@@ -216,6 +177,8 @@ const updateInvoiceBillingAddress = async (api: Api, invoiceId: string, fullBill
     await api(putInvoiceBillingAddress(invoiceId, normalizeFullBillingAddress(fullBillingAddress)));
 };
 
+const plansSelector = createSelector(selectPlans, (plans) => plans.value?.plans ?? []);
+
 export const usePaymentsApi = (
     apiOverride?: Api,
     checkV5Fallback?: (data: CheckSubscriptionData) => SubscriptionEstimation | null
@@ -226,8 +189,48 @@ export const usePaymentsApi = (
     const regularApi = useApi();
     const apiHook = apiOverride ?? regularApi;
     const { APP_NAME } = useConfig();
-    const reportRoutingError = useReportRoutingError();
     const multiCheckCache = useMultiCheckCache();
+    const plans = useSelector(plansSelector);
+
+    const getOptimisticFallback = (
+        data: CheckSubscriptionData,
+        requestOptions: CheckSubscriptionRequestOptions,
+        error: any
+    ): SubscriptionEstimation | null => {
+        const optimisticSubscriptionEstimation = getOptimisticCheckResult({
+            cycle: data.Cycle,
+            planIDs: data.Plans,
+            plansMap: getPlansMap(plans, data.Currency),
+            currency: data.Currency,
+        });
+        optimisticSubscriptionEstimation.requestData = data;
+
+        if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_ZIP_CODE) {
+            optimisticSubscriptionEstimation.error = new InvalidZipCodeError();
+        }
+
+        if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.TAX_EXEMPTION_NOT_SUPPORTED) {
+            optimisticSubscriptionEstimation.error = new TaxExemptionNotSupportedError();
+        }
+
+        if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_BILLING_ADDRESS) {
+            optimisticSubscriptionEstimation.error = new WrongBillingAddressError(error?.data?.ValidationResult);
+        }
+
+        const hasDetectedError = !!optimisticSubscriptionEstimation.error;
+        if (hasDetectedError) {
+            if (requestOptions.previousEstimation) {
+                return getInformedOptimisticSubscriptionEstimation(
+                    optimisticSubscriptionEstimation,
+                    requestOptions.previousEstimation
+                );
+            }
+
+            return optimisticSubscriptionEstimation;
+        }
+
+        return null;
+    };
 
     const getPaymentsApi = (api: Api): PaymentsApi => {
         const paymentStatus = async (): Promise<PaymentStatus> => {
@@ -243,7 +246,7 @@ export const usePaymentsApi = (
 
         const checkSubscription = async (
             data: CheckSubscriptionData,
-            requestOptions: RequestOptions = {}
+            requestOptions: CheckSubscriptionRequestOptions = {}
         ): Promise<SubscriptionEstimation> => {
             captureWrongPlanIDs(data.Plans, { source: 'check' });
 
@@ -298,12 +301,9 @@ export const usePaymentsApi = (
 
                 return enrichedCheckResponse;
             } catch (error: any) {
-                if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_ZIP_CODE) {
-                    throw new InvalidZipCodeError();
-                }
-
-                if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.TAX_EXEMPTION_NOT_SUPPORTED) {
-                    throw new TaxExemptionNotSupportedError();
+                const optimisticFallback = getOptimisticFallback(data, requestOptions, error);
+                if (optimisticFallback) {
+                    return optimisticFallback;
                 }
 
                 if (fallback) {
@@ -313,7 +313,6 @@ export const usePaymentsApi = (
                     };
                 }
 
-                reportRoutingError(error, { system: 'chargebee', reason: 'default' });
                 throw error;
             }
         };
@@ -386,6 +385,10 @@ export const usePaymentsApi = (
             } catch (error: any) {
                 if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_ZIP_CODE) {
                     throw new InvalidZipCodeError();
+                } else if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_BILLING_ADDRESS) {
+                    throw new WrongBillingAddressError(error?.data?.ValidationResult);
+                } else if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.TAX_EXEMPTION_NOT_SUPPORTED) {
+                    throw new TaxExemptionNotSupportedError();
                 }
 
                 throw error;
@@ -398,6 +401,8 @@ export const usePaymentsApi = (
             } catch (error: any) {
                 if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_ZIP_CODE) {
                     throw new InvalidZipCodeError();
+                } else if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_BILLING_ADDRESS) {
+                    throw new WrongBillingAddressError(error?.data?.ValidationResult);
                 }
 
                 throw error;

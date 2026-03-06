@@ -20,9 +20,11 @@ export const applyHOCs = <T extends JSX.IntrinsicAttributes>(...hocs: HOC<T>[]) 
     return (Component: ComponentType<T>) => {
         const WrappedComponent = reducedHoc(Component);
 
-        return (props: T & JSX.IntrinsicAttributes) => {
+        const HOC = (props: T & JSX.IntrinsicAttributes) => {
             return createElement<T>(WrappedComponent, props);
         };
+
+        return HOC;
     };
 };
 
@@ -38,6 +40,6 @@ export const hookWrapper = <
 
 export const componentWrapper = <T extends JSX.IntrinsicAttributes & { children?: ReactNode }>(
     ...hocs: HOC<T>[]
-): React.JSXElementConstructor<{ children: React.ReactElement }> => {
+): React.JSXElementConstructor<{ children: ReactNode }> => {
     return reduceHOCs(hocs)((props) => props.children as any) as any;
 };
