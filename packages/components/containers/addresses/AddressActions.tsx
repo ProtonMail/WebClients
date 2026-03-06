@@ -46,13 +46,12 @@ const useAddressFlagsActionsList = (
     member: Member | undefined,
     withLoading: WithLoading
 ) => {
-    const addressFlags = useAddressFlags(address);
+    const addressFlags = useAddressFlags(address, user);
 
-    const isPaidMail = user.hasPaidMail;
     // Only allow on the user's own settings address list, not in org admin management panel.
     // This still allows an admin logged in as sub-user to manage the preferences.
     const isSelf = member === undefined || !!member.Self;
-    if (!addressFlags || !isPaidMail || !isSelf) {
+    if (!addressFlags || !isSelf) {
         return [];
     }
 

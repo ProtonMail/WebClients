@@ -135,7 +135,7 @@ export const deleteForwarding = ({
 
         // Re-enable E2EE for this address if deleting last outgoing forwarding
         if (address && reActivateE2EE) {
-            const data = getAddressFlagsData(address);
+            const data = getAddressFlagsData(address, undefined);
             if (data.isEncryptionDisabled) {
                 await dispatch(
                     setAddressFlags({
@@ -261,7 +261,7 @@ export const setupForwarding = ({
                 dispatch(outgoingAddressForwardingsActions.upsertForwarding(OutgoingAddressForwarding));
             }
         } else {
-            const addressFlags = getAddressFlagsData(forwarderAddress);
+            const addressFlags = getAddressFlagsData(forwarderAddress, undefined);
             // Disable encryption if the email is external
             if (isExternal && !addressFlags.isEncryptionDisabled) {
                 await dispatch(
