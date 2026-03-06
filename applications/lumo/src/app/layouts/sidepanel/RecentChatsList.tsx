@@ -12,13 +12,13 @@ interface ChatsListProps {
     onItemClick?: () => void;
 }
 
-const RecentChatsList = ({ conversations, selectedConversationId, onItemClick }: ChatsListProps) => {
+const RecentChatsList = ({ conversations, selectedConversationId, disabled, onItemClick }: ChatsListProps) => {
     const items: SidebarNavItem[] = conversations.map((conversation) => ({
         id: conversation.id,
         to: `/c/${conversation.id}`,
         label: conversation.title.trim() || c('collider_2025:Button').t`Untitled chat`,
         isSelected: selectedConversationId === conversation.id,
-        trailingContent: <ChatDropdownMenu conversation={conversation} />,
+        trailingContent: disabled ? undefined : <ChatDropdownMenu conversation={conversation} />,
     }));
 
     return <SidebarNavList items={items} onItemClick={onItemClick} />;
