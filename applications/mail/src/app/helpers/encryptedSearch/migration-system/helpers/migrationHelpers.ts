@@ -40,34 +40,37 @@ interface MigrateContentProps {
 
 export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateContentProps) => {
     const migrationArray = getMigrationArray(cleanText);
-
     const versionsRecord: Record<number, number> = {};
 
     let array = [];
     while ((array = await getOutdatedContentIterator(esDB)).length !== 0) {
-        const updatedItems: PreparedMessageContent[] = [];
-        for (const data of array) {
-            try {
-                const decrypted = await decryptESItem({ indexKey, cipher: data.value });
-                const hasVersion = data.value.version !== -1;
+        const items: PreparedMessageContent[] = (
+            await Promise.all(
+                array.map(async (data) => {
+                    try {
+                        const decrypted = await decryptESItem({ indexKey, cipher: data.value });
+                        const hasVersion = data.value.version !== -1;
 
-                const contentVersion = hasVersion ? data.value.version : decrypted?.version || -1;
-                versionsRecord[contentVersion] = (versionsRecord[contentVersion] ?? 0) + 1;
+                        const contentVersion = hasVersion ? data.value.version : decrypted?.version || -1;
+                        versionsRecord[contentVersion] = (versionsRecord[contentVersion] ?? 0) + 1;
 
-                const result = await upgradeContentArray({
-                    contentVersion,
-                    migrationArray,
-                    data: decrypted,
-                });
+                        const result = await upgradeContentArray({
+                            contentVersion,
+                            migrationArray,
+                            data: decrypted,
+                        });
 
-                updatedItems.push({ updated: result, original: data.value, itemID: data.key });
-            } catch (error) {
-                traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, error);
-                console.error(error);
-            }
-        }
+                        return { updated: result, original: data.value, itemID: data.key };
+                    } catch (error) {
+                        traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, error);
+                        console.error(error);
+                        return null;
+                    }
+                })
+            )
+        ).filter((item) => item !== null);
 
-        await encryptAndWriteESItems({ esDB, indexKey, items: updatedItems });
+        await encryptAndWriteESItems({ esDB, indexKey, items });
     }
 
     console.log(`versionsRecord: ${JSON.stringify(versionsRecord)}`);
