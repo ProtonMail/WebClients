@@ -9,9 +9,18 @@ export function getItem(key: string, defaultValue?: string) {
     }
 }
 
-export const setItem = (key: string, value: string) => {
+const removeAfterTtl = (key: string, expiringTimeMS: number) => {
+    setTimeout(() => {
+        window.localStorage.removeItem(key);
+    }, expiringTimeMS);
+};
+
+export const setItem = (key: string, value: string, args?: { ttl: number }) => {
     try {
         window.localStorage.setItem(key, value);
+        if (args?.ttl) {
+            removeAfterTtl(key, args.ttl);
+        }
     } catch (e: any) {
         return undefined;
     }
