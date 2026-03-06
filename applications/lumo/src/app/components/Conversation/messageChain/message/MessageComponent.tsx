@@ -4,7 +4,7 @@ import type { HandleEditMessage, HandleRegenerateMessage } from 'applications/lu
 import type { SiblingInfo } from 'applications/lumo/src/app/hooks/usePreferredSiblings';
 
 import type { Message } from '../../../../types';
-import { Role } from '../../../../types';
+import { type Attachment, Role } from '../../../../types';
 import ChatContainerItem from '../../../ChatContainerItem';
 import AssistantMessage from './AssistantMessage/AssistantMessage';
 import UserMessage from './UserMessage/UserMessage';
@@ -18,7 +18,7 @@ export type MessageComponentProps = {
     sourcesContainerRef: React.MutableRefObject<HTMLDivElement | null>;
     handleOpenSources: (message: Message) => void;
     handleOpenFiles: (message?: Message) => void;
-    handleOpenFilePreview: (attachment: import('../../../../types').Attachment) => void;
+    handleOpenFilePreview: (attachment: Attachment) => void;
     messageChain: Message[];
     newMessageRef?: React.MutableRefObject<HTMLDivElement | null>;
     isLastMessage: boolean;
