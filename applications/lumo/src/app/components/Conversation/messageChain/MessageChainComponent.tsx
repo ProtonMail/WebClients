@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useReducer, useRef, useState } from 'rea
 
 import type { HandleEditMessage, HandleRegenerateMessage } from '../../../hooks/useLumoActions';
 import type { SiblingInfo } from '../../../hooks/usePreferredSiblings';
-import { type Message, Role } from '../../../types';
+import { type Attachment, type Message, Role } from '../../../types';
 import { ScrollToBottomButton } from './ScrollToBottomButton/ScrollToBottomButton';
 import { MessageComponent } from './message/MessageComponent';
 
@@ -15,7 +15,7 @@ export type MessageChainComponentProps = {
     getSiblingInfo: (message: Message) => SiblingInfo;
     handleOpenSources: (message: Message) => void;
     handleOpenFiles: (message?: Message) => void;
-    handleOpenFilePreview: (attachment: import('../../../types').Attachment) => void;
+    handleOpenFilePreview: (attachment: Attachment) => void;
     isGenerating?: boolean;
     onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
     composerContainerRef: React.RefObject<HTMLDivElement>;

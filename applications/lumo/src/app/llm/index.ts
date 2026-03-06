@@ -48,7 +48,7 @@ export const EMPTY_ASSISTANT_TURN: Turn = {
     content: '',
 };
 
-export const ENABLE_U2L_ENCRYPTION = false;
+export const ENABLE_U2L_ENCRYPTION = true;
 
 // Internal type for turns during processing (before final cleanup)
 type TurnInProgress = Turn & {
