@@ -15,7 +15,7 @@ export type MigrationToolAPI = {
 
 export type ESItemCursorResult = { key: string; value: ESCiphertext };
 
-export type MigrateFn = (data?: ESMessageContent) => Promise<ESMessageContent | undefined>;
+export type MigrateFn = (data: ESMessageContent) => Promise<ESMessageContent>;
 
 export type MigrationMethod = { targetVersion: CONTENT_VERSION; fn: MigrateFn };
 
