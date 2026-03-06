@@ -13,6 +13,34 @@
 		font-size: 0.875rem;
 	}
 
+	// ------------------------------------------------------------
+	// overrides for themes
+	// ------------------------------------------------------------
+	a,
+	.link,
+	.timezone-button {
+		color: var(--theme-color, var(--link-norm));
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: color-mix(in srgb, var(--theme-color, var(--link-norm-major-1)) 90%, transparent);
+		}
+	}
+
+	.input:not(.disabled):focus-within,
+	.field[aria-expanded='true']:not([aria-controls]),
+	.field:focus {
+		--focus-outline: var(--theme-color);
+	}
+
+	button.primary {
+		background-color: var(--theme-color, var(--interaction-norm));
+		border-color: var(--theme-color, var(--interaction-norm));
+	}
+
+	// ------------------------------------------------------------
+
 	.create-container-title {
 		font-size: 2rem !important;
 		line-height: 2.5rem;
@@ -45,7 +73,7 @@
 
 	.input.focus,
 	.input:not(.disabled):focus-within {
-		box-shadow: 0 0 0 0.063rem var(--ui-purple-interaction-minor-1);
+		box-shadow: 0 0 0 0.063rem var(--theme-color, var(--ui-purple-interaction-minor-1));
 	}
 
 	.button {
@@ -61,20 +89,40 @@
 	}
 
 	.input-link {
-		color: var(--ui-purple-interaction-minor-1);
+		color: var(--theme-color, var(--ui-purple-interaction-minor-1));
 		background-color: var(--background-card);
 		border-radius: var(--border-radius-xxl);
 	}
 
 	.button-copy {
-		background-color: var(--ui-purple-interaction-minor-3);
+		background-color: color-mix(in srgb, var(--theme-color) 10%, transparent);
 		color: var(---ui-purple-interaction-minor-1);
 
 		&:hover,
 		&:focus,
 		&:active {
-			background-color: var(--ui-purple-interaction-minor-2);
+			background-color: color-mix(in srgb, var(--theme-color) 20%, transparent);
 		}
+	}
+
+	&.variant-purple {
+		--theme-color: var(--interaction-norm);
+	}
+
+	&.variant-orange {
+		--theme-color: var(--ui-orange-interaction-minor-1);
+	}
+
+	&.variant-blue {
+		--theme-color: var(--ui-blue-interaction-minor-1);
+	}
+
+	&.variant-green {
+		--theme-color: var(--ui-green-interaction-minor-1);
+	}
+
+	&.variant-red {
+		--theme-color: var(--ui-red-interaction-norm);
 	}
 }
 
@@ -87,7 +135,7 @@
 	&.select-two-repeat:focus-within,
 	&.select-two-repeat[aria-expanded='true']:not([aria-controls]) {
 		// specificity inferno
-		box-shadow: 0 0 0 0.063rem var(--ui-purple-interaction-minor-1) !important;
+		box-shadow: 0 0 0 0.063rem var(--theme-color, var(--ui-purple-interaction-minor-1)) !important;
 	}
 
 	// a bit of reset to get it like we want

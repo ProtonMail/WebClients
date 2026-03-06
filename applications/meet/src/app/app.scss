@@ -49,25 +49,36 @@ body {
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
 }
 
-$meet-background-colors:
-	var(--ui-purple-interaction-minor-3), var(--ui-green-interaction-minor-3), var(--interaction-norm-minor-3),
-	var(--ui-blue-interaction-minor-3), var(--ui-red-interaction-norm-minor-2), var(--ui-orange-interaction-minor-3);
+$meet-background-colors: (
+	'purple': var(--ui-purple-interaction-minor-3),
+	'green': var(--ui-green-interaction-minor-3),
+	'norm': var(--interaction-norm-minor-3),
+	'blue': var(--ui-blue-interaction-minor-3),
+	'red': var(--ui-red-interaction-norm-minor-2),
+	'orange': var(--ui-orange-interaction-minor-3),
+);
 
-@for $i from 1 through 6 {
-	.meet-background-#{$i} {
-		background-color: #{list.nth($meet-background-colors, $i)};
+@each $name, $value in $meet-background-colors {
+	.meet-background-#{$name} {
+		background-color: #{$value};
 	}
 }
 
-$meet-room-background-colors:
-	linear-gradient(141.78deg, #968aef 8.4%, #4a4478 93.76%), linear-gradient(141.78deg, #51cc52 8.4%, #1b3228 93.76%),
-	linear-gradient(141.78deg, #9581ff 8.4%, #413968 93.76%), linear-gradient(141.78deg, #0bf 8.4%, #094a62 93.76%),
-	linear-gradient(141.78deg, #fb7878 8.4%, #552c40 93.76%), linear-gradient(141.78deg, #ff9761 8.4%, #523a2e 93.76%);
+$meet-room-background-colors: (
+	'purple': linear-gradient(141.78deg, #968aef 8.4%, #4a4478 93.76%),
+	'green': linear-gradient(141.78deg, #51cc52 8.4%, #1b3228 93.76%),
+	'norm': linear-gradient(141.78deg, #9581ff 8.4%, #413968 93.76%),
+	'blue': linear-gradient(141.78deg, #0bf 8.4%, #094a62 93.76%),
+	'red': linear-gradient(141.78deg, #fb7878 8.4%, #552c40 93.76%),
+	'orange': linear-gradient(141.78deg, #ff9761 8.4%, #523a2e 93.76%),
+);
 
-@for $i from 1 through 6 {
-	.meet-room-background-#{$i} {
-		background: #{list.nth($meet-room-background-colors, $i)};
-		box-shadow: 0 8px 40px 0 rgb(0 0 0 / 0.16);
+[class^='meet-room-background-'] {
+	box-shadow: 0 8px 40px 0 rgb(0 0 0 / 0.16);
+}
+@each $name, $value in $meet-room-background-colors {
+	.meet-room-background-#{$name} {
+		background: #{$value};
 	}
 }
 
@@ -377,9 +388,9 @@ button {
 		&:hover,
 		&:active,
 		&:focus-visible {
-			background-color: var(--interaction-norm-major-1);
+			background-color: var(--theme-color, var(--interaction-norm-major-1));
 			color: var(--text-invert);
-			border: 1px solid var(--interaction-norm-major-1);
+			border: 1px solid var(--theme-color, var(--interaction-norm-major-1));
 		}
 	}
 
