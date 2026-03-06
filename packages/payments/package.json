@@ -17,7 +17,8 @@
         "@proton/shared": "workspace:^",
         "@reduxjs/toolkit": "^2.11.2",
         "react": "^18.3.1",
-        "react-redux": "^9.2.0"
+        "react-redux": "^9.2.0",
+        "vat-validation": "^3.0.0-beta.2"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",

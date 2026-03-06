@@ -1,7 +1,7 @@
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { CheckSubscriptionData } from '../../core/api/api';
-import type { BillingAddress } from '../../core/billing-address/billing-address';
+import { type BillingAddress, getBillingAddressPayload } from '../../core/billing-address/billing-address';
 import { computeOptimisticCheckResult } from '../../core/computeOptimisticCheckResult';
 import type { Currency, FreeSubscription, PaymentsApi } from '../../core/interface';
 import { getAutoCoupon, isSubscriptionCheckForbidden } from '../../core/subscription/helpers';
@@ -27,11 +27,10 @@ export const getSubscriptionDataFromPlanToCheck = ({
     Currency: currency,
     Cycle: cycle,
     Codes: coupon ? [coupon] : [],
-    BillingAddress: {
-        CountryCode: BillingAddress.CountryCode,
-        State: BillingAddress.State,
-        ZipCode: BillingAddress.ZipCode,
-    },
+    BillingAddress: getBillingAddressPayload({
+        billingAddress: BillingAddress,
+        vatId: VatId,
+    }),
     ValidateBillingAddress,
     IsTrial: trial,
     VatId,

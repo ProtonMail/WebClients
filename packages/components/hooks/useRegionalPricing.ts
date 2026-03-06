@@ -1,11 +1,11 @@
 import {
     type CheckSubscriptionData,
     type Currency,
-    type RequestOptions,
     type SubscriptionEstimation,
     isMainCurrency,
 } from '@proton/payments';
 import { getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import type { CheckSubscriptionRequestOptions } from '@proton/payments/core/interface';
 
 import { usePaymentsApi } from '../payments/react-extensions/usePaymentsApi';
 import { usePreferredPlansMap } from './usePreferredPlansMap';
@@ -21,7 +21,7 @@ export const useRegionalPricing = () => {
     }: {
         data: CheckSubscriptionData;
         currency: Currency;
-        requestOptions?: RequestOptions;
+        requestOptions?: CheckSubscriptionRequestOptions;
     }): Promise<SubscriptionEstimation> => {
         const optimisticCheckResult = getOptimisticCheckResult({
             planIDs: data.Plans,

@@ -22,7 +22,6 @@ import PaymentWrapper from '@proton/components/containers/payments/PaymentWrappe
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { IcCode } from '@proton/icons/icons/IcCode';
@@ -31,7 +30,6 @@ import { IcServers } from '@proton/icons/icons/IcServers';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
 import type {
-    BillingAddress,
     ExtendedTokenPayment,
     PaymentProcessorHook,
     SubscriptionEstimation,
@@ -57,6 +55,7 @@ import {
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
+import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
 import { type PaymentsCheckoutUI, getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type {
@@ -64,8 +63,9 @@ import type {
     EstimationChangePayload,
 } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import { PayButton, useTaxCountry, useVatNumber } from '@proton/payments/ui';
+import { PayButton } from '@proton/payments/ui';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
+import { useBillingAddress } from '@proton/payments/ui/hooks/useBillingAddress';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
     APPS,
@@ -458,7 +458,7 @@ const Step1 = ({
         const newPlan = getPlanFromPlanIDs(model.plansMap, newPlanIDs);
         const newBillingAddress = optimistic.billingAddress || options.billingAddress;
         // It's important to allow empty strings here, hence ?? instead of ||
-        const newVatId = optimistic.vatNumber ?? options.vatNumber;
+        const newVatNumber = optimistic.vatNumber ?? options.vatNumber;
 
         // Try a pre-saved check first. If it's not available, then use the default optimistic one.
         // With the regular cycles, it should be available.
@@ -504,7 +504,8 @@ const Step1 = ({
                 coupon: coupon,
                 trial: signupTrial,
                 ValidateBillingAddress: true,
-                VatId: newVatId,
+                VatId: newVatNumber,
+                previousEstimation: model.subscriptionData.checkResult,
             });
 
             if (!validateFlow()) {
@@ -520,8 +521,7 @@ const Step1 = ({
                     planIDs: newPlanIDs,
                     checkResult,
                     billingAddress: newBillingAddress,
-                    zipCodeValid: true,
-                    vatNumber: newVatId,
+                    vatNumber: newVatNumber,
                 },
                 optimistic: {},
             }));
@@ -531,16 +531,6 @@ const Step1 = ({
                 ...old,
                 optimistic: {},
             }));
-
-            if (e instanceof InvalidZipCodeError) {
-                setModel((old) => ({
-                    ...old,
-                    subscriptionData: {
-                        ...old.subscriptionData,
-                        zipCodeValid: false,
-                    },
-                }));
-            }
         }
     };
 
@@ -624,23 +614,21 @@ const Step1 = ({
         });
     };
 
-    const handleChangeBillingAddress = (billingAddress: BillingAddress) => {
-        void handleOptimistic({ billingAddress });
-    };
-
-    const taxCountry = useTaxCountry({
-        onBillingAddressChange: handleChangeBillingAddress,
+    const billingAddressHook = useBillingAddress({
+        onBillingAddressChange: (billingAddress: FullBillingAddressFlat) => {
+            void debouncedHandleOptimistic({
+                billingAddress: {
+                    ...options.billingAddress,
+                    ...billingAddress,
+                },
+                vatNumber: billingAddress.VatId ?? undefined,
+            });
+        },
         paymentStatus: model.paymentStatus,
-        zipCodeBackendValid: model.subscriptionData.zipCodeValid,
-        previousValidZipCode: model.subscriptionData.billingAddress.ZipCode,
         paymentFacade,
         telemetryContext,
-    });
-
-    const vatNumber = useVatNumber({
         selectedPlanName: selectedPlan?.Name,
-        onChange: (vatNumber) => debouncedHandleOptimistic({ vatNumber }),
-        taxCountry,
+        onVatChange: (vatNumber) => debouncedHandleOptimistic({ vatNumber }),
     });
 
     const termsHref = (() => {
@@ -1482,9 +1470,9 @@ const Step1 = ({
                                             {...paymentFacade}
                                             hideFirstLabel
                                             noMaxWidth
-                                            taxCountry={taxCountry}
                                             showCardIcons
-                                            vatNumber={vatNumber}
+                                            taxCountry={billingAddressHook.taxCountry}
+                                            vatNumber={billingAddressHook.vatNumber}
                                             startTrial={checkTrial}
                                             onCurrencyChange={handleChangeCurrency}
                                         />
@@ -1538,7 +1526,8 @@ const Step1 = ({
                                                     size="large"
                                                     color="norm"
                                                     fullWidth
-                                                    taxCountry={taxCountry}
+                                                    taxCountry={billingAddressHook.taxCountry}
+                                                    vatNumber={billingAddressHook.vatNumber}
                                                     paymentFacade={paymentFacade}
                                                     loading={loadingSignup}
                                                     disabled={disablePayButton}

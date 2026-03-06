@@ -1,11 +1,10 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 
 import type { Invoice, InvoiceOwner, InvoiceResponse } from '@proton/payments';
 import { type InvoiceDocument, queryInvoices } from '@proton/payments';
 
 import { usePaginationAsync } from '../../components/pagination';
 import useApiResult from '../../hooks/useApiResult';
-import { useReportRoutingError } from '../../payments/react-extensions/usePaymentsApi';
 import type { DocumentHook } from './types';
 
 export const ELEMENTS_PER_PAGE = 10;
@@ -42,13 +41,6 @@ const useInvoices = ({ owner, Document }: { owner: InvoiceOwner; Document: Invoi
         false,
         true
     );
-
-    const reportRoutingError = useReportRoutingError();
-    useEffect(() => {
-        reportRoutingError(error, {
-            flow: 'invoices',
-        });
-    }, [error]);
 
     return {
         ...pagination,

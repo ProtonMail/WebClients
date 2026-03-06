@@ -26,7 +26,6 @@ import { useCouponConfig } from '@proton/components/containers/payments/subscrip
 import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import type { IconName } from '@proton/icons/types';
@@ -310,6 +309,7 @@ const Step1 = ({
             trial: values.trial,
             ValidateBillingAddress: true,
             VatId: values.vatNumber,
+            previousEstimation: model.subscriptionData.checkResult,
         });
     };
 
@@ -327,7 +327,6 @@ const Step1 = ({
                         checkResult,
                         billingAddress: optimistic.billingAddress,
                         trial: optimistic.trial,
-                        zipCodeValid: true,
                         vatNumber: optimistic.vatNumber,
                     },
                     optimistic: {},
@@ -335,17 +334,7 @@ const Step1 = ({
             }
         } catch (e) {
             if (latestRef.current === latest) {
-                if (e instanceof InvalidZipCodeError) {
-                    setModel((old) => ({
-                        ...old,
-                        subscriptionData: {
-                            ...old.subscriptionData,
-                            zipCodeValid: false,
-                        },
-                    }));
-                } else {
-                    handleError(e);
-                }
+                handleError(e);
                 // Reset any optimistic state on failures
                 setModel((old) => ({
                     ...old,
@@ -1580,8 +1569,11 @@ const Step1 = ({
                                 }}
                                 isFormValid={isFormValid}
                                 withLoadingSignup={withLoadingSignup}
-                                onBillingAddressChange={(billingAddress: BillingAddress) => {
-                                    handleOptimistic({ billingAddress });
+                                onBillingAddressChange={(
+                                    billingAddress: BillingAddress,
+                                    vatNumber: string | undefined
+                                ) => {
+                                    handleOptimistic({ billingAddress, vatNumber });
                                 }}
                                 setCurrencySelectorDisabled={(disableCurrencySelector) =>
                                     setModel((old) => ({ ...old, disableCurrencySelector }))

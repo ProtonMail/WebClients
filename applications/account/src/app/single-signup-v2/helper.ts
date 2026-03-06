@@ -90,7 +90,6 @@ export const getFreeSubscriptionData = (
         ),
         planIDs: {},
         payment: undefined,
-        zipCodeValid: true,
     };
 };
 
@@ -163,7 +162,6 @@ export const getSubscriptionData = async (
         planIDs: planIDs || {},
         skipUpsell: options.skipUpsell ?? false,
         billingAddress: options.billingAddress,
-        zipCodeValid: true,
     };
 };
 
@@ -817,7 +815,6 @@ export const getOptimisticPlanCardSubscriptionData = ({
             PeriodEnd: 0,
         },
         billingAddress,
-        zipCodeValid: true,
     };
 };
 

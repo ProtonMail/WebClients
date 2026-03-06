@@ -1,12 +1,14 @@
 import { act } from 'react';
 
-import { renderHook } from '@testing-library/react';
+import { renderHook as baseRenderHook } from '@testing-library/react';
 
-import useConfig from '@proton/components/hooks/useConfig';
-import { APPS } from '@proton/shared/lib/constants';
+import type { PaymentFacade } from '@proton/components/payments/client-extensions';
+import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
+import { componentWrapper, withConfig, withReduxStore } from '@proton/testing';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { DEFAULT_TAX_BILLING_ADDRESS } from '../../core/billing-address/billing-address';
+import type { SubscriptionEstimation } from '../../core/subscription/interface';
 import { useTaxCountry } from './useTaxCountry';
 
 // Mock the feature flag to be enabled by default for all tests (to match existing test expectations)
@@ -17,16 +19,22 @@ jest.mock('@proton/unleash/useGetFlag', () => ({
     useGetFlag: jest.fn().mockReturnValue(() => true),
 }));
 
-// Mock useConfig to provide APP_NAME
-jest.mock('@proton/components/hooks/useConfig');
-
 const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
+
+const getWrapper = () => componentWrapper(withReduxStore(), withConfig());
+
+const renderHook: typeof baseRenderHook = (render, options) =>
+    baseRenderHook(render, { wrapper: getWrapper(), ...options });
+
+const mockValidZipCode = { checkResult: { error: undefined } as SubscriptionEstimation } as PaymentFacade;
+const mockInvalidZipCode = {
+    checkResult: { error: new InvalidZipCodeError() } as SubscriptionEstimation,
+} as PaymentFacade;
 
 describe('useTaxCountry hook', () => {
     beforeEach(() => {
         // Reset to default (enabled) before each test to match existing test expectations
         mockUseFlag.mockReturnValue(true);
-        (useConfig as jest.Mock).mockReturnValue({ APP_NAME: APPS.PROTONMAIL });
     });
 
     describe('Core Functionality', () => {
@@ -37,7 +45,7 @@ describe('useTaxCountry hook', () => {
                         CountryCode: 'US',
                         State: 'CA',
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -48,7 +56,7 @@ describe('useTaxCountry hook', () => {
 
         it('should initialize with default values when paymentStatus is not provided', () => {
             const { result } = renderHook(() =>
-                useTaxCountry({ zipCodeBackendValid: true, telemetryContext: 'other' })
+                useTaxCountry({ paymentFacade: mockValidZipCode, telemetryContext: 'other' })
             );
 
             expect(result.current.selectedCountryCode).toBe(DEFAULT_TAX_BILLING_ADDRESS.CountryCode);
@@ -62,7 +70,7 @@ describe('useTaxCountry hook', () => {
                         CountryCode: 'US',
                         State: 'CA',
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other' as const,
                 },
             });
@@ -77,7 +85,7 @@ describe('useTaxCountry hook', () => {
                     CountryCode: 'CA',
                     State: 'ON',
                 },
-                zipCodeBackendValid: true,
+                paymentFacade: mockValidZipCode,
                 telemetryContext: 'other',
             });
 
@@ -95,7 +103,7 @@ describe('useTaxCountry hook', () => {
                         State: 'CA',
                     },
                     onBillingAddressChange,
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other' as const,
                 },
             });
@@ -107,7 +115,7 @@ describe('useTaxCountry hook', () => {
                     State: 'CA',
                 },
                 onBillingAddressChange,
-                zipCodeBackendValid: true,
+                paymentFacade: mockValidZipCode,
                 telemetryContext: 'other',
             });
 
@@ -124,7 +132,7 @@ describe('useTaxCountry hook', () => {
                         CountryCode: 'US',
                         State: 'AL',
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -146,7 +154,7 @@ describe('useTaxCountry hook', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -179,7 +187,7 @@ describe('useTaxCountry hook', () => {
         it('should use default values when no paymentStatus props provided', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -189,7 +197,9 @@ describe('useTaxCountry hook', () => {
             expect(result.current.zipCode).toBe(DEFAULT_TAX_BILLING_ADDRESS.ZipCode);
         });
 
-        it('should handle previous valid zip code override functionality', () => {
+        // This case is now handled on the parent level of useTaxCountry by informedFallback property of
+        // checkSubscription
+        it.skip('should handle previous valid zip code override functionality', () => {
             const onBillingAddressChange = jest.fn();
             const { result, rerender } = renderHook((props) => useTaxCountry(props), {
                 initialProps: {
@@ -199,7 +209,7 @@ describe('useTaxCountry hook', () => {
                         State: 'CA',
                         ZipCode: '90000', // Some zip code that might be invalid
                     },
-                    zipCodeBackendValid: false,
+                    paymentFacade: mockInvalidZipCode,
                     previousValidZipCode: '90210', // Previous valid zip code
                     telemetryContext: 'other' as const,
                 },
@@ -215,7 +225,7 @@ describe('useTaxCountry hook', () => {
                     State: 'CA',
                     ZipCode: '90000',
                 },
-                zipCodeBackendValid: true,
+                paymentFacade: mockValidZipCode,
                 previousValidZipCode: '90210',
                 telemetryContext: 'other',
             });
@@ -235,7 +245,7 @@ describe('useTaxCountry hook', () => {
                         State: 'CA',
                         ZipCode: '90210',
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     previousValidZipCode: '90001',
                     telemetryContext: 'other' as const,
                 },
@@ -251,7 +261,7 @@ describe('useTaxCountry hook', () => {
                     State: 'CA',
                     ZipCode: '90210',
                 },
-                zipCodeBackendValid: true,
+                paymentFacade: mockValidZipCode,
                 previousValidZipCode: '90001',
                 telemetryContext: 'other',
             });
@@ -270,7 +280,7 @@ describe('useTaxCountry hook', () => {
                         State: 'CA',
                         ZipCode: '90210',
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -300,6 +310,7 @@ describe('useTaxCountry hook', () => {
                     setCountryCode: jest.fn(),
                     setPostalCode: jest.fn(),
                 },
+                checkResult: { error: undefined } as SubscriptionEstimation,
             };
 
             const { result } = renderHook(() =>
@@ -309,7 +320,6 @@ describe('useTaxCountry hook', () => {
                         ZipCode: '90210',
                     },
                     paymentFacade: mockPaymentFacade as any,
-                    zipCodeBackendValid: true,
                     telemetryContext: 'other',
                 })
             );
@@ -337,7 +347,7 @@ describe('useTaxCountry hook', () => {
                         CountryCode: 'US',
                         State: 'CA',
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -359,7 +369,7 @@ describe('useTaxCountry hook', () => {
                         CountryCode: 'US',
                         // No State provided
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -376,7 +386,7 @@ describe('useTaxCountry hook', () => {
                     paymentStatus: {
                         CountryCode: '',
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -391,7 +401,7 @@ describe('useTaxCountry hook', () => {
                         State: 'CA',
                         // No ZipCode
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -405,7 +415,7 @@ describe('useTaxCountry hook', () => {
                         CountryCode: 'GB',
                         // No ZipCode
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -423,7 +433,7 @@ describe('useTaxCountry hook', () => {
                         State: 'CA',
                         ZipCode: 'invalid',
                     },
-                    zipCodeBackendValid: false,
+                    paymentFacade: mockInvalidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -437,7 +447,7 @@ describe('useTaxCountry hook', () => {
                         CountryCode: 'GB',
                         ZipCode: 'invalid',
                     },
-                    zipCodeBackendValid: false,
+                    paymentFacade: mockInvalidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -450,7 +460,7 @@ describe('useTaxCountry hook', () => {
         it('should handle US states correctly', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -467,7 +477,7 @@ describe('useTaxCountry hook', () => {
         it('should handle Canada states correctly', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -486,7 +496,7 @@ describe('useTaxCountry hook', () => {
         it('should handle countries without states', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -507,7 +517,7 @@ describe('useTaxCountry hook', () => {
                         CountryCode: 'US',
                         State: 'AL',
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -527,7 +537,7 @@ describe('useTaxCountry hook', () => {
                         CountryCode: 'US',
                         State: 'AL',
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -549,7 +559,7 @@ describe('useTaxCountry hook', () => {
                         CountryCode: 'US',
                         State: 'CA',
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -578,7 +588,7 @@ describe('useTaxCountry hook', () => {
                         CountryCode: 'US',
                         State: 'CA',
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -604,7 +614,7 @@ describe('useTaxCountry hook', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -634,7 +644,7 @@ describe('useTaxCountry hook', () => {
                         CountryCode: 'US',
                         State: 'CA',
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -666,12 +676,12 @@ describe('useTaxCountry hook', () => {
                     setCountryCode: jest.fn(),
                     setPostalCode: jest.fn(),
                 },
+                checkResult: { error: undefined } as SubscriptionEstimation,
             };
 
             const { unmount } = renderHook(() =>
                 useTaxCountry({
                     paymentFacade: mockPaymentFacade as any,
-                    zipCodeBackendValid: true,
                     telemetryContext: 'other',
                 })
             );
@@ -688,7 +698,7 @@ describe('useTaxCountry hook', () => {
                         State: '',
                         ZipCode: '',
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -715,7 +725,7 @@ describe('useTaxCountry hook', () => {
                         State: 'CA',
                         ZipCode: '90210',
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -730,7 +740,7 @@ describe('useTaxCountry hook', () => {
                         State: 'CA',
                         ZipCode: '90210',
                     },
-                    zipCodeBackendValid: false,
+                    paymentFacade: mockInvalidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -748,7 +758,7 @@ describe('useTaxCountry hook', () => {
                         State: 'CA',
                         ZipCode: '90210',
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -762,7 +772,7 @@ describe('useTaxCountry hook', () => {
                     paymentStatus: {
                         CountryCode: '',
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -778,7 +788,7 @@ describe('useTaxCountry hook', () => {
                         State: 'CA',
                         ZipCode: '90210',
                     },
-                    zipCodeBackendValid: false,
+                    paymentFacade: mockInvalidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -794,7 +804,7 @@ describe('useTaxCountry hook', () => {
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other',
                 })
             );
@@ -836,7 +846,7 @@ describe('useTaxCountry hook', () => {
                         State: 'CA',
                         ZipCode: '90210',
                     },
-                    zipCodeBackendValid: true,
+                    paymentFacade: mockValidZipCode,
                     telemetryContext: 'other' as const,
                 })
             );
@@ -862,7 +872,6 @@ describe('useTaxCountry hook', () => {
                         CountryCode: 'US',
                         State: 'CA',
                     },
-                    zipCodeBackendValid: true,
                     telemetryContext: 'other',
                 })
             );
@@ -1079,7 +1088,6 @@ describe('useTaxCountry hook', () => {
                         State: 'CA',
                         ZipCode: '90210',
                     },
-                    zipCodeBackendValid: true,
                     telemetryContext: 'other',
                 })
             );
