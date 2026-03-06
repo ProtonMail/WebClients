@@ -44,6 +44,7 @@ export const SearchResultViewToolbar = ({ uids }: SearchResultToolbarProps) => {
                 onDownload={actions.handleDownload}
                 onRename={actions.handleRename}
                 onTrash={actions.handleTrash}
+                onMove={actions.handleMove}
                 onGoToParent={actions.handleGoToParent}
                 onOpenDocsOrSheets={actions.handleOpenDocsOrSheets}
                 onShare={actions.handleShare}
@@ -60,6 +61,7 @@ export const SearchResultViewToolbar = ({ uids }: SearchResultToolbarProps) => {
                     {actions.modals.detailsModal}
                     {actions.modals.renameModal}
                     {actions.modals.sharingModal}
+                    {actions.modals.moveItemsModal}
                 </div>
                 <span className="ml-auto flex flex-nowrap shrink-0">
                     {selectedItems.length ? <Vr className="hidden lg:flex mx-2" /> : null}
