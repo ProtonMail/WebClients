@@ -17,6 +17,7 @@ import {
     parseInstallArguments,
 } from "@proton/shared/lib/squirrel/squirrel";
 import { setInstallSource } from "../store/installInfoStore";
+import { quitTracker } from "../utils/log/quitTracker";
 
 async function spawnUninstallProcess() {
     const uninstallLogPath = resolve(app.getPath("temp"), "proton-mail-uninstall.log");
@@ -109,5 +110,6 @@ export async function handleSquirrelEvents() {
     // WARN: App quit gracefully stops all electron processes asynchronously,
     // so unless we block the execution before this point (like we do during the
     // uninstall process) the app startup will continue.
+    quitTracker.setReason("handle-squirrel-events");
     app.quit();
 }

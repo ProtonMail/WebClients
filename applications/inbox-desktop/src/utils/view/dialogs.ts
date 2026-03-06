@@ -2,6 +2,7 @@ import { app, dialog, WebContentsView } from "electron";
 import { c } from "ttag";
 import { mainLogger, viewLogger } from "../log";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
+import { quitTracker } from "../log/quitTracker";
 
 const beforeUnloadChoice = () => {
     return dialog.showMessageBoxSync({
@@ -37,6 +38,7 @@ export const urlOverrideError = () => {
 
     if (choice === 0) {
         mainLogger.error("Invalid URL override, quitting");
+        quitTracker.setReason("url-override-error");
         app.quit();
     }
 };

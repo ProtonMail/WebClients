@@ -4,6 +4,7 @@ import { clearLogs, mainLogger } from "./log";
 import { DESKTOP_PLATFORMS, MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { c } from "ttag";
 import { release } from "node:os";
+import { quitTracker } from "./log/quitTracker";
 
 export const isMac = process.platform === "darwin";
 export const isWindows = process.platform === "win32";
@@ -70,6 +71,7 @@ export const clearStorage = async () => {
         // Since the app can crash under some circunstances when being restarted
         // We are just keeping it closed after clearing data.
         // app.relaunch();
+        quitTracker.setReason("clear-app-data");
         app.exit();
     }, timeout);
 };

@@ -2,7 +2,7 @@ import { Request } from "electron";
 import { verifyDownloadCertificate, VerificationResult } from "./keyPinning";
 
 jest.mock("electron", () => ({
-    app: { isPackaged: true },
+    app: { on: jest.fn(), isPackaged: true },
 }));
 
 const CERTIFICATE_DATA_rsa4096_badssl_com = `-----BEGIN CERTIFICATE-----

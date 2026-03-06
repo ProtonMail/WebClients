@@ -10,6 +10,7 @@ import { SnapshotRecorder } from "./snapshots";
 import { IpcRecorder } from "./ipc";
 import { StartupRequestRecorder } from "./startupRequests";
 import { systemContext } from "./system";
+import { quitTracker } from "../log/quitTracker";
 
 class Profiler {
     private static instance: Profiler;
@@ -167,6 +168,7 @@ class Profiler {
 
         if (!cold) {
             app.relaunch();
+            quitTracker.setReason("profiler-warm");
             app.quit();
         } else {
             new Notification({

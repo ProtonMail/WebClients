@@ -5,6 +5,7 @@ import { app } from "electron";
 
 jest.mock("electron", () => ({
     app: {
+        on: jest.fn(),
         getPath: jest.fn(() => "/home/potato"),
     },
 }));
