@@ -134,7 +134,7 @@ export const PayButton = ({
      * If we can't edit VAT number inline (shouldEditInModal is true) then it means that error states if
      * {@link useVatNumber} are not applicable, and we need to skip them
      */
-    const mustCheckVatNumberErrors = !vatNumber?.shouldEditInModal;
+    const mustCheckVatNumberErrors = vatNumber && !vatNumber?.shouldEditInModal;
 
     const submitButton = (() => {
         const isChargebeePaypal = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
