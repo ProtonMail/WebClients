@@ -1,8 +1,8 @@
 import type { useConfirmActionModal } from '@proton/components';
 
-import type { BookmarkItem } from '../../../zustand/sections/sharedWithMeListing.store';
 import { OpenBookmarkButton } from '../buttons/OpenBookmarkButton';
 import { RemoveBookmarkButton } from '../buttons/RemoveBookmarkButton';
+import type { BookmarkItem } from '../useSharedWithMe.store';
 import { createItemChecker } from './actionsItemsChecker';
 
 interface BaseBookmarkActionsProps {

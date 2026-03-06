@@ -2,20 +2,18 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { Toolbar, useConfirmActionModal } from '@proton/components';
-import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useSelection } from '../../components/FileBrowser';
 import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
 import { LayoutButton } from '../../components/sections/ToolbarButtons';
 import { useCopyItemsModal } from '../../modals/CopyItemsModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
-import { useResharingModal } from '../../modals/SharingModal/SharingModal';
 import { useDrivePreviewModal } from '../../modals/preview';
 import { useSelectionStore } from '../../modules/selection';
-import type { DirectShareItem } from '../../zustand/sections/sharedWithMeListing.store';
-import { useSharedWithMeListingStore } from '../../zustand/sections/sharedWithMeListing.store';
 import { SharedWithMeActions } from './actions/SharedWithMeActions';
+import type { DirectShareItem } from './types';
+import { useResharingModal } from './useResharingModal';
+import { useSharedWithMeStore } from './useSharedWithMe.store';
 
 interface SharedWithMeToolbarProps {
     uids: string[];
@@ -25,19 +23,16 @@ const getSelectedItemsId = (uids: string[], selectedItemIds: string[]) =>
     selectedItemIds.map((selectedItemId) => uids.find((uid) => selectedItemId === uid)).filter(isTruthy);
 
 const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
-    const useNewSelectionStore = useFlag('DriveWebNewFileBrowser');
-    const legacySelection = useSelection();
     const { selectedItemIds: newSelectedItemIds } = useSelectionStore(
         useShallow((state) => ({
             selectedItemIds: state.selectedItemIds,
         }))
     );
-    const selectedItemsIds = getSelectedItemsId(
-        uids,
-        useNewSelectionStore ? Array.from(newSelectedItemIds) : legacySelection?.selectedItemIds || []
-    );
+
+    const selectedItemsIds = getSelectedItemsId(uids, Array.from(newSelectedItemIds));
+
     const selectedItems = selectedItemsIds
-        .map((uid) => useSharedWithMeListingStore.getState().getSharedWithMeItem(uid))
+        .map((uid) => useSharedWithMeStore.getState().getSharedWithMeItem(uid))
         .filter(isTruthy);
 
     const { previewModal, showPreviewModal } = useDrivePreviewModal();

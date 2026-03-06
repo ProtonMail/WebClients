@@ -19,10 +19,10 @@ import {
 import type { useDetailsModal } from '../../../modals/DetailsModal';
 import type { useDrivePreviewModal } from '../../../modals/preview';
 import { useOpenInDocs } from '../../../store/_documents';
-import type { DirectShareItem } from '../../../zustand/sections/sharedWithMeListing.store';
 import { CopyButton } from '../../folders/buttons/CopyButton';
 import { ShareLinkButton } from '../../folders/buttons/ShareLinkButton';
 import { RemoveMeButton } from '../buttons/RemoveMeButton';
+import type { DirectShareItem } from '../useSharedWithMe.store';
 import { createItemChecker, mapToLegacyFormat } from './actionsItemsChecker';
 
 interface BaseDirectShareActionsProps {
@@ -69,7 +69,7 @@ export const DirectShareActions = ({
                   linkId: splitNodeUid(singleItem.nodeUid).nodeId,
                   mimeType: singleItem.mediaType || '',
                   parentLinkId: '', // No parentLinkId on shared with me item
-                  rootShareId: singleItem.shareId,
+                  rootShareId: singleItem.shareId ?? '',
               }
             : undefined
     );
@@ -97,7 +97,7 @@ export const DirectShareActions = ({
                         <Vr />
                         <RemoveMeButton
                             nodeUid={singleItem.nodeUid}
-                            shareId={singleItem.shareId}
+                            shareId={singleItem.shareId ?? ''}
                             isAlbum={singleItem.type === NodeType.Album}
                             showConfirmModal={showConfirmModal}
                             buttonType="toolbar"
@@ -112,7 +112,7 @@ export const DirectShareActions = ({
         <>
             {hasPreviewAvailable && (
                 <ContextPreviewButton
-                    shareId={singleItem.shareId}
+                    shareId={singleItem.shareId ?? ''}
                     linkId={splitNodeUid(singleItem.nodeUid).nodeId}
                     nodeUid={singleItem.nodeUid}
                     showPreviewModal={showPreviewModal}
@@ -144,7 +144,7 @@ export const DirectShareActions = ({
                     <ContextSeparator />
                     <RemoveMeButton
                         nodeUid={singleItem.nodeUid}
-                        shareId={singleItem.shareId}
+                        shareId={singleItem.shareId ?? ''}
                         isAlbum={singleItem.type === NodeType.Album}
                         showConfirmModal={showConfirmModal}
                         close={close}

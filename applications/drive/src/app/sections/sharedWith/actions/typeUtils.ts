@@ -1,15 +1,7 @@
-import type {
-    BookmarkItem,
-    DirectShareItem,
-    InvitationItem,
-    SharedWithMeListingItemUI,
-} from '../../../zustand/sections/sharedWithMeListing.store';
+import type { BookmarkItem, DirectShareItem, InvitationItem, SharedWithMeItem } from '../useSharedWithMe.store';
 import type { ItemTypeChecker } from './actionsItemsChecker';
 
-function isTypedArrayTrusted<T extends SharedWithMeListingItemUI>(
-    items: SharedWithMeListingItemUI[],
-    condition: boolean
-): items is T[] {
+function isTypedArrayTrusted<T extends SharedWithMeItem>(items: SharedWithMeItem[], condition: boolean): items is T[] {
     return condition;
 }
 

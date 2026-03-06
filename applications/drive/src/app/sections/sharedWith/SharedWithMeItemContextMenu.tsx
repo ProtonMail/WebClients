@@ -5,10 +5,10 @@ import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal'
 import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemContextMenu';
 import { useCopyItemsModal } from '../../modals/CopyItemsModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
-import { useResharingModal } from '../../modals/SharingModal/SharingModal';
 import { useDrivePreviewModal } from '../../modals/preview';
-import type { DirectShareItem, SharedWithMeListingItemUI } from '../../zustand/sections/sharedWithMeListing.store';
 import { SharedWithMeActions } from './actions/SharedWithMeActions';
+import { useResharingModal } from './useResharingModal';
+import type { DirectShareItem, SharedWithMeItem } from './useSharedWithMe.store';
 
 export function SharedWithMeContextMenu({
     selectedBrowserItems,
@@ -18,7 +18,7 @@ export function SharedWithMeContextMenu({
     open,
     close,
 }: ContextMenuProps & {
-    selectedBrowserItems: SharedWithMeListingItemUI[];
+    selectedBrowserItems: SharedWithMeItem[];
 }) {
     const { detailsModal, showDetailsModal } = useDetailsModal();
     const { previewModal, showPreviewModal } = useDrivePreviewModal();

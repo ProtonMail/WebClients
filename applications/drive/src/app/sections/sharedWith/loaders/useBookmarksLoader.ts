@@ -9,14 +9,14 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getBookmark } from '../../../utils/sdk/getBookmark';
-import { ItemType, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
+import { ItemType, useSharedWithMeStore } from '../useSharedWithMe.store';
 
 export const useBookmarksLoader = () => {
     const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
     const { drive } = useDrive();
     const { createNotification } = useNotifications();
 
-    const { setSharedWithMeItemInStore, setLoadingBookmarks, cleanupStaleItems } = useSharedWithMeListingStore(
+    const { setSharedWithMeItemInStore, setLoadingBookmarks, cleanupStaleItems } = useSharedWithMeStore(
         useShallow((state) => ({
             setSharedWithMeItemInStore: state.setSharedWithMeItem,
             setLoadingBookmarks: state.setLoadingBookmarks,
@@ -26,7 +26,7 @@ export const useBookmarksLoader = () => {
 
     const loadBookmarks = useCallback(
         async (abortSignal: AbortSignal) => {
-            if (useSharedWithMeListingStore.getState().isLoadingBookmarks || bookmarksFeatureDisabled) {
+            if (useSharedWithMeStore.getState().isLoadingBookmarks || bookmarksFeatureDisabled) {
                 return;
             }
             setLoadingBookmarks(true);

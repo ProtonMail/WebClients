@@ -8,7 +8,7 @@ import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import { useSharingActions } from '../../../hooks/drive/useSharingActions';
 import { useSharedWithMeActions as useLegacySharedWithMeActions } from '../../../store';
-import { useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
+import { useSharedWithMeStore } from '../useSharedWithMe.store';
 
 interface BaseProps {
     nodeUid: string;
@@ -33,9 +33,7 @@ type Props = ContextMenuProps | ToolbarProps;
 export const RemoveMeButton = ({ nodeUid, shareId, isAlbum, showConfirmModal, close, buttonType }: Props) => {
     const { removeMe } = useSharingActions();
     const { removeMe: legacyRemoveMe } = useLegacySharedWithMeActions();
-    const removeSharedWithMeItemFromStore = useSharedWithMeListingStore(
-        useShallow((state) => state.removeSharedWithMeItem)
-    );
+    const removeSharedWithMeItemFromStore = useSharedWithMeStore(useShallow((state) => state.removeSharedWithMeItem));
 
     const handleRemoveMe = () => {
         if (isAlbum) {

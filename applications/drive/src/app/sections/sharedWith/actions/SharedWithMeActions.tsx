@@ -2,7 +2,7 @@ import type { useConfirmActionModal } from '@proton/components';
 
 import type { useDetailsModal } from '../../../modals/DetailsModal';
 import type { useDrivePreviewModal } from '../../../modals/preview';
-import type { DirectShareItem, SharedWithMeListingItemUI } from '../../../zustand/sections/sharedWithMeListing.store';
+import type { DirectShareItem, SharedWithMeItem } from '../useSharedWithMe.store';
 import { BookmarkActions } from './BookmarkActions';
 import { DirectShareActions } from './DirectShareActions';
 import { InvitationActions } from './InvitationActions';
@@ -10,7 +10,7 @@ import { createItemChecker } from './actionsItemsChecker';
 import { getBookmarksIfOnly, getDirectSharesIfOnly, getInvitationsIfOnly } from './typeUtils';
 
 interface BaseSharedWithMeActionsProps {
-    selectedItems: SharedWithMeListingItemUI[];
+    selectedItems: SharedWithMeItem[];
     showPreviewModal: ReturnType<typeof useDrivePreviewModal>['showPreviewModal'];
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
     showDetailsModal: ReturnType<typeof useDetailsModal>['showDetailsModal'];
