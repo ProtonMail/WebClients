@@ -64,6 +64,16 @@ $meet-background-colors: (
 	}
 }
 
+$meet-background-colors-list:
+	var(--ui-purple-interaction-minor-3), var(--ui-green-interaction-minor-3), var(--interaction-norm-minor-3),
+	var(--ui-blue-interaction-minor-3), var(--ui-red-interaction-norm-minor-2), var(--ui-orange-interaction-minor-3);
+
+@for $i from 1 through 6 {
+	.meet-background-#{$i} {
+		background-color: #{list.nth($meet-background-colors-list, $i)};
+	}
+}
+
 $meet-room-background-colors: (
 	'purple': linear-gradient(141.78deg, #968aef 8.4%, #4a4478 93.76%),
 	'green': linear-gradient(141.78deg, #51cc52 8.4%, #1b3228 93.76%),
