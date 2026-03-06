@@ -1,3 +1,52 @@
+.schedule-meeting-recap-modal {
+	// ------------------------------------------------------------
+	// overrides for themes
+	// ------------------------------------------------------------
+	a,
+	.link,
+	.timezone-button {
+		color: var(--theme-color, var(--link-norm));
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: color-mix(in srgb, var(--theme-color, var(--link-norm-major-1)) 90%, transparent);
+		}
+	}
+
+	.input:not(.disabled):focus-within,
+	.field[aria-expanded='true']:not([aria-controls]),
+	.field:focus {
+		--focus-outline: var(--theme-color);
+	}
+
+	button.primary {
+		background-color: var(--theme-color, var(--interaction-norm));
+		border-color: var(--theme-color, var(--interaction-norm));
+	}
+
+	// ------------------------------------------------------------
+	&.variant-purple {
+		--theme-color: var(--interaction-norm);
+	}
+
+	&.variant-orange {
+		--theme-color: var(--ui-orange-interaction-minor-1);
+	}
+
+	&.variant-blue {
+		--theme-color: var(--ui-blue-interaction-minor-1);
+	}
+
+	&.variant-green {
+		--theme-color: var(--ui-green-interaction-minor-1);
+	}
+
+	&.variant-red {
+		--theme-color: var(--ui-red-interaction-norm);
+	}
+}
+
 .meeting-details-card {
 	border-radius: 2rem;
 	border: 1px solid var(--border-weak);
@@ -81,7 +130,14 @@
 }
 
 .button-copy-meeting-link {
-	background: var(--ui-purple-interaction-minor-3);
+	background-color: color-mix(in srgb, var(--theme-color) 10%, transparent);
+	color: var(--theme-color);
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: color-mix(in srgb, var(--theme-color) 20%, transparent);
+	}
 }
 
 .meeting-link {

@@ -60,7 +60,6 @@ export const TimeBasedMeetingList = ({
                                 <MeetingRow
                                     key={meeting.ID}
                                     meeting={meeting}
-                                    index={index}
                                     isFirst={index === 0}
                                     isLast={index === meetings.length - 1}
                                     handleEditScheduleMeeting={handleScheduleClick}

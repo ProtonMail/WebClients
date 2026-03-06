@@ -26,12 +26,12 @@ import clsx from '@proton/utils/clsx';
 import { getRotatePersonalMeetingDisabledUntil } from '../../utils/disableRotatePersonalMeeting';
 import { getNextOccurrence } from '../../utils/getNextOccurrence';
 import { DeleteMeetingModal } from '../DeleteMeetingModal/DeleteMeetingModal';
+import { getRoomVariantFromId } from '../RoomForm/getRoomVariantFromId';
 
 import './MeetingRow.scss';
 
 interface MeetingRowProps {
     meeting: Meeting & { adjustedStartTime?: number; adjustedEndTime?: number };
-    index: number;
     isFirst?: boolean;
     isLast?: boolean;
     isRoom?: boolean;
@@ -44,7 +44,6 @@ interface MeetingRowProps {
 
 export const MeetingRow = ({
     meeting,
-    index,
     isFirst = true,
     isLast = true,
     isRoom = false,
@@ -82,7 +81,7 @@ export const MeetingRow = ({
     const [userSettings] = useUserSettings();
     const dateFormat = userSettings.DateFormat;
 
-    const colorIndex = (index % 6) + 1;
+    const roomVariant = getRoomVariantFromId(meeting.ID);
 
     const { month, day, startTime, endTime } = useMemo(() => {
         // Use the pre-calculated adjusted time if available, otherwise calculate it
@@ -191,8 +190,8 @@ export const MeetingRow = ({
                     <div
                         className={clsx(
                             'flex flex-column flex-nowrap items-center justify-center w-custom h-custom profile-radius color-white shrink-0',
-                            isRoom && `meet-room-background-${colorIndex}`,
-                            !isRoom && `meet-background-${colorIndex}`
+                            isRoom && `meet-room-background-${roomVariant}`,
+                            !isRoom && `meet-background-${roomVariant}`
                         )}
                         style={{ '--w-custom': '3.75rem', '--h-custom': '3.75rem' }}
                     >
@@ -203,7 +202,7 @@ export const MeetingRow = ({
                                 <div
                                     className={clsx(
                                         'text-xs text-semibold text-uppercase',
-                                        !isRoom && `profile-color-${colorIndex}`
+                                        !isRoom && `profile-color-${roomVariant}`
                                     )}
                                 >
                                     {month}
