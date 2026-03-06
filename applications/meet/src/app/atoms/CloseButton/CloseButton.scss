@@ -1,9 +1,11 @@
 .close-button {
-	background: transparent;
-	border-color: var(--border-weak);
+	&#{&} {
+		background: transparent;
+		border: none;
 
-	&:hover,
-	&:focus-visible {
-		background-color: var(--interaction-weak-minor-2);
+		&:hover,
+		&:focus-visible {
+			background-color: var(--circle-button-transparent);
+		}
 	}
 }
