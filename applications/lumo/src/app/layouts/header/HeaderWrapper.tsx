@@ -9,9 +9,9 @@ import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
+import LumoB2BUpsellLink from '../../upsells/components/B2BUpsellLink';
 import { getIsMobileDevice } from '../../util/device';
 import LumoLogoHeader from './LumoLogo';
-import LumoB2BUpsellLink from "../../upsells/components/B2BUpsellLink";
 
 const HeaderRightSide = ({ children }: { children: React.ReactNode }) => {
     return <div className="flex flex-nowrap items-center gap-4 no-print">{children}</div>;
@@ -28,6 +28,8 @@ export const LumoHeader = ({ children }: { children: ReactNode }) => {
 interface HeaderWrapperProps {
     children: ReactNode;
 }
+
+// TODO: check that this is no longer needed for V2 and delete
 export const HeaderWrapper = ({ children }: HeaderWrapperProps) => {
     const isGuest = useIsGuest();
     const { isVisible: isSideMenuOpen, toggle: toggleSideMenu } = useSidebar();
