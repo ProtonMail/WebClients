@@ -14,7 +14,12 @@ import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { setPreviousMeetingLink, setUpsellModalType } from '@proton/meet/store/slices';
 import { resetMeetingState } from '@proton/meet/store/slices/meetingState';
 import { toggleMeetingLockThunk } from '@proton/meet/store/slices/settings';
-import { PopUpControls, setMeetingReadyPopupOpen, setPopupStateValue } from '@proton/meet/store/slices/uiStateSlice';
+import {
+    PopUpControls,
+    resetUiState,
+    setMeetingReadyPopupOpen,
+    setPopupStateValue,
+} from '@proton/meet/store/slices/uiStateSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -99,6 +104,7 @@ export const ProtonMeetContainer = ({
     const showUpsellModalAfterMeeting = useFlag('MeetShowUpsellModalAfterMeeting');
     const meetUpsellEnabled = useFlag('MeetUpsell');
     const meetOpenLinksInDesktopApp = useFlag('MeetOpenLinksInDesktopApp');
+    const newCTAModal = useFlag('MeetNewCTAModal');
 
     useWakeLock();
 
@@ -662,17 +668,30 @@ export const ProtonMeetContainer = ({
                 cleanupWasmDependencies();
 
                 dispatch(resetMeetingState());
+                if (newCTAModal) {
+                    dispatch(resetUiState());
+                }
 
                 if (reason === DisconnectReason.ROOM_DELETED) {
-                    createNotification({
-                        type: 'info',
-                        text: c('Info').t`The host has ended the meeting`,
-                    });
+                    if (newCTAModal) {
+                        dispatch(setPreviousMeetingLink(meetingLinkRef.current));
+                        dispatch(setUpsellModalType(UpsellModalTypes.MeetingEnded));
+                    } else {
+                        createNotification({
+                            type: 'info',
+                            text: c('Info').t`The host has ended the meeting`,
+                        });
+                    }
                 } else if (reason === DisconnectReason.PARTICIPANT_REMOVED) {
-                    createNotification({
-                        type: 'warning',
-                        text: c('Warning').t`The host has removed you from the meeting`,
-                    });
+                    if (newCTAModal) {
+                        dispatch(setPreviousMeetingLink(meetingLinkRef.current));
+                        dispatch(setUpsellModalType(UpsellModalTypes.RemovedFromMeeting));
+                    } else {
+                        createNotification({
+                            type: 'warning',
+                            text: c('Warning').t`The host has removed you from the meeting`,
+                        });
+                    }
                 } else if (reason !== undefined && reason !== DisconnectReason.CLIENT_INITIATED) {
                     // Log abnormal error to sentry
                     reportMeetError('Room disconnected unexpectedly', DisconnectReason[reason]);
@@ -998,8 +1017,6 @@ export const ProtonMeetContainer = ({
         setJoinedRoom(false);
 
         keyProvider.cleanCurrent();
-
-        prepareUpsell();
     };
 
     const handleMeetingLockToggle = async () => {

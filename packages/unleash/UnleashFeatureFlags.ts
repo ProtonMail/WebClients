@@ -297,6 +297,7 @@ enum MeetFeatureFlag {
     MeetDisableAudioAutoHealing = 'MeetDisableAudioAutoHealing',
     MeetShowReloadTrackButton = 'MeetShowReloadTrackButton',
     MeetH264 = 'MeetH264',
+    MeetNewCTAModal = 'MeetNewCTAModal',
 }
 
 enum LumoFeatureFlag {
