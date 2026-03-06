@@ -15,7 +15,6 @@ const TermsAndConditions = ({ className }: { className?: string }) => {
         : 'https://lumo.proton.me/legal/privacy';
 
     return (
-        // <div className="fixed bottom-0 left-0 right-0 text-center py-5 z-1">
         <p className={clsx('text-sm color-weak', className)}>
             {c('collider_2025: Legal disclaimer').t`By using ${LUMO_SHORT_APP_NAME}, you agree to our`}{' '}
             <InlineLinkButton
@@ -35,7 +34,6 @@ const TermsAndConditions = ({ className }: { className?: string }) => {
             </InlineLinkButton>
             .
         </p>
-        // </div>
     );
 };
 
