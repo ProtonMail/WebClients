@@ -91,6 +91,15 @@ const result = (opts: WebpackEnvArguments): webpack.Configuration => {
             test: /\.wasm$/,
             type: 'webassembly/async',
         });
+        // Override the webassembly/async rule above for this wasm-bindgen output.
+        // The WASM binary declares imports under the 'wbg' namespace. There is no 'wbg' file on
+        // disk, so webassembly/async would fail trying to resolve it. asset/resource skips
+        // static analysis: webpack copies the WASM to the output directory with a hashed URL;
+        // it is then fetched by URL and instantiated at runtime.
+        config.module?.rules.push({
+            test: /proton_foundation_search_bg\.wasm$/,
+            type: 'asset/resource',
+        });
     }
 
     // Suppress the warning "Critical dependency: require function is used
