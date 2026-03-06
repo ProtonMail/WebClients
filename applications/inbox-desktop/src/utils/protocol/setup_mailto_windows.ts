@@ -3,6 +3,7 @@ import { resolve, basename, dirname } from "node:path";
 import { readFileSync, writeFileSync } from "node:fs";
 import { spawn } from "node:child_process";
 import { protocolLogger } from "../log";
+import { quitTracker } from "../log/quitTracker";
 
 export async function registerMailtoApp() {
     const regFile = createRegFile();
@@ -73,6 +74,7 @@ async function spawnRegImport(regFile: string) {
     });
     regProcess.on("close", (code, signal) => {
         protocolLogger.info(`Reg process exited with code ${code}, signal ${signal}`);
+        quitTracker.setReason("register-mailto-exited");
         app.quit();
     });
 }

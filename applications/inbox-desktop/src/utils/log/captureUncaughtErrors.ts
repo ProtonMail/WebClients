@@ -2,6 +2,7 @@ import { app, dialog } from "electron";
 import { c } from "ttag";
 import { mainLogger } from "./index";
 import { MAIL_APP_NAME } from "@proton/shared/lib/constants";
+import { quitTracker } from "./quitTracker";
 
 export function captureUncaughtErrors() {
     process.on("unhandledRejection", (reason) => {
@@ -20,5 +21,6 @@ export function captureTopLevelRejection(reason: unknown, origin?: NodeJS.Uncaug
         c("Error dialog")
             .t`Due to an error, the ${MAIL_APP_NAME} app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.`,
     );
+    quitTracker.setReason("uncaught-exception");
     app.exit(1);
 }
