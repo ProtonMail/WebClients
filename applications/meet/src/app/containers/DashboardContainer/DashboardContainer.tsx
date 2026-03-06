@@ -90,7 +90,11 @@ export const DashboardContainer = () => {
     const personalMeetingLink = personalMeeting ? `${window.location.origin}${personalMeetingLinkPath}` : null;
 
     const handleRejoin = () => {
-        history.push('/join');
+        if (previousMeetingLink) {
+            history.push(previousMeetingLink);
+        } else {
+            history.push('/join');
+        }
     };
 
     const selectedMeeting = selectedMeetingId
