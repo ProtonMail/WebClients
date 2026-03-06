@@ -24,6 +24,7 @@ import { base64ToFile } from '../../util/imageHelpers';
 import { createAttachmentFromPastedContent, getPasteConversionMessage } from '../../util/pastedContentHelper';
 import { AttachmentArea, FileContentModal } from '../Files';
 import GuestDisclaimer from '../Notifications/GuestDisclaimer';
+import TermsAndConditions from '../TermsAndConditions';
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
 import { ComposerEditorArea } from './ComposerEditorArea';
 import { ComposerToolbar } from './ComposerToolbar';
@@ -106,6 +107,7 @@ const ComposerComponentInner = ({
     const { isGhostChatMode } = useGhostChat();
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
+    const isGuest = useIsGuest();
 
     const allRelevantAttachments = useAllRelevantAttachments(messageChain, provisionalAttachments, spaceId);
 
@@ -341,6 +343,7 @@ const ComposerComponentInner = ({
                             fileUploadMode={fileUploadMode}
                         />
                     </div>
+                    {isGuest && <TermsAndConditions className="m-0 hidden md:block" />}
                 </section>
 
                 {isDraggingOverScreen && <AttachmentArea handleFileProcessing={handleFileProcessing} />}
