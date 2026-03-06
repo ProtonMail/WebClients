@@ -12,6 +12,7 @@ import { updateSession } from "../utils/session";
 import { c } from "ttag";
 import { getFeatureFlagManager } from "../utils/flags/manager";
 import { FeatureFlag } from "../utils/flags/flags";
+import { quitTracker } from "../utils/log/quitTracker";
 
 export type LocalDesktopVersion = {
     Version: DesktopVersion["Version"];
@@ -53,9 +54,11 @@ export function initializeUpdateChecks() {
 
         if (response === 0) {
             updateLogger.info("Restarting to apply update.");
+            quitTracker.setReason("quit-and-install");
             autoUpdater.quitAndInstall();
             setTimeout(() => {
                 updateLogger.warn("quitAndInstall did not exit the process in time, forcing exit.");
+                quitTracker.setReason("quit-and-install-forced");
                 app.exit(0);
             }, 2000);
         } else {

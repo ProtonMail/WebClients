@@ -9,7 +9,7 @@ jest.mock("../utils/view/viewManagement", () => ({
 }));
 
 jest.mock("electron", () => ({
-    app: { isPackaged: true },
+    app: { on: jest.fn(), isPackaged: true },
     autoUpdater: {
         on: () => {},
     },
