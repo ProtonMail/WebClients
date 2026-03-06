@@ -12,12 +12,12 @@ import { GridItemContent } from '../../statelessComponents/DriveExplorer/cells/g
 import { GridItemName } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemName';
 import type { CellDefinition, GridDefinition } from '../../statelessComponents/DriveExplorer/types';
 import { useVolumesState } from '../../store/_volumes';
-import { ItemType, useSharedWithMeListingStore } from '../../zustand/sections/sharedWithMeListing.store';
 import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
 import { AcceptRejectCell } from './driveExplorerCells/AcceptRejectCell';
 import { SharedByCell, defaultSharedByCellConfig } from './driveExplorerCells/SharedByCell';
 import { SharedOnCell, defaultSharedOnCellConfig } from './driveExplorerCells/SharedOnCell';
 import { useInvitationsActions } from './hooks/useInvitationsActions';
+import { ItemType, useSharedWithMeStore } from './useSharedWithMe.store';
 
 export const getSharedWithMeCells = ({
     viewportWidth,
@@ -32,7 +32,7 @@ export const getSharedWithMeCells = ({
         ...defaultNameCellConfig,
         render: (uid) => {
             const NameCellComponent = () => {
-                const item = useSharedWithMeListingStore(useShallow((state) => state.getSharedWithMeItem(uid)));
+                const item = useSharedWithMeStore(useShallow((state) => state.getSharedWithMeItem(uid)));
                 const thumbnail = useThumbnailStore(
                     useShallow((state) => (item?.thumbnailId ? state.getThumbnail(item?.thumbnailId) : undefined))
                 );
@@ -64,7 +64,7 @@ export const getSharedWithMeCells = ({
         render: (uid) => {
             const SharedByCellComponent = () => {
                 const { contactEmails } = useContactEmailsCache();
-                const item = useSharedWithMeListingStore(useShallow((state) => state.getSharedWithMeItem(uid)));
+                const item = useSharedWithMeStore(useShallow((state) => state.getSharedWithMeItem(uid)));
                 if (!item) {
                     return null;
                 }
@@ -92,7 +92,7 @@ export const getSharedWithMeCells = ({
             const RenderedSharedOnCell = () => {
                 const { setVolumeShareIds } = useVolumesState();
                 const { acceptInvitation, rejectInvitation } = useInvitationsActions({ setVolumeShareIds });
-                const item = useSharedWithMeListingStore(useShallow((state) => state.getSharedWithMeItem(uid)));
+                const item = useSharedWithMeStore(useShallow((state) => state.getSharedWithMeItem(uid)));
                 if (!item) {
                     return null;
                 }
@@ -151,7 +151,7 @@ export const getSharedWithMeGrid = ({
 }): GridDefinition => ({
     name: (uid) => {
         const NameComponent = () => {
-            const item = useSharedWithMeListingStore(useShallow((state) => state.getSharedWithMeItem(uid)));
+            const item = useSharedWithMeStore(useShallow((state) => state.getSharedWithMeItem(uid)));
             if (!item) {
                 return null;
             }
@@ -167,7 +167,7 @@ export const getSharedWithMeGrid = ({
     },
     mainContent: (uid) => {
         const MainContentComponent = () => {
-            const item = useSharedWithMeListingStore((state) => state.getSharedWithMeItem(uid));
+            const item = useSharedWithMeStore((state) => state.getSharedWithMeItem(uid));
             const thumbnail = useThumbnailStore((state) =>
                 item?.thumbnailId ? state.getThumbnail(item?.thumbnailId) : undefined
             );

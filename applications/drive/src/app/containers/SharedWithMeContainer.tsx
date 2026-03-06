@@ -1,27 +1,18 @@
 import { useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom-v5-compat';
 
-import { useShallow } from 'zustand/react/shallow';
-
 import { SharedWithMeView } from '../sections/sharedWith/SharedWithMeView';
 import { useInvitationsLoader } from '../sections/sharedWith/loaders/useInvitationsLoader';
 import { useSharedWithMeNodesLoader } from '../sections/sharedWith/loaders/useSharedWithMeNodesLoader';
-import { useSharedWithMeListingStore } from '../zustand/sections/sharedWithMeListing.store';
+import { useSharedWithMeStore } from '../sections/sharedWith/useSharedWithMe.store';
 
 const SharedWithMeContainer = () => {
-    const { subscribeToEvents, unsubscribeToEvents } = useSharedWithMeListingStore(
-        useShallow((state) => ({
-            subscribeToEvents: state.subscribeToEvents,
-            unsubscribeToEvents: state.unsubscribeToEvents,
-        }))
-    );
-
     const { loadSharedWithMeNodes } = useSharedWithMeNodesLoader();
     const { loadInvitations } = useInvitationsLoader();
 
     useEffect(() => {
         const abortController = new AbortController();
-        void subscribeToEvents('sharedWithMeContainer', {
+        void useSharedWithMeStore.getState().subscribeToEvents('sharedWithMeContainer', {
             onRefreshSharedWithMe: async () => {
                 await Promise.all([
                     loadSharedWithMeNodes(abortController.signal),
@@ -31,9 +22,9 @@ const SharedWithMeContainer = () => {
         });
         return () => {
             abortController.abort();
-            void unsubscribeToEvents('sharedWithMeContainer');
+            void useSharedWithMeStore.getState().unsubscribeToEvents('sharedWithMeContainer');
         };
-    }, [subscribeToEvents, unsubscribeToEvents, loadInvitations, loadSharedWithMeNodes]);
+    }, [loadInvitations, loadSharedWithMeNodes]);
     return (
         <Routes>
             <Route path="" element={<SharedWithMeView />} />

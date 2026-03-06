@@ -1,8 +1,8 @@
 import type { useConfirmActionModal } from '@proton/components';
 
-import type { InvitationItem } from '../../../zustand/sections/sharedWithMeListing.store';
 import { AcceptButton } from '../buttons/AcceptButton';
 import { DeclineButton } from '../buttons/DeclineButton';
+import type { InvitationItem } from '../useSharedWithMe.store';
 import { createItemChecker } from './actionsItemsChecker';
 
 interface BaseInvitationActionsProps {
