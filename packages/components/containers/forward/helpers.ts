@@ -1,6 +1,7 @@
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { fromSieveTree, toSieveTree } from '@proton/sieve';
-import type { SIEVE_VERSION, SieveBranch } from '@proton/sieve/src/interface';
+import { fromSieveTree } from '@proton/sieve/fromSieveTree';
+import { toSieveTree } from '@proton/sieve/toSieveTree';
+import type { SIEVE_VERSION, SieveBranch } from '@proton/sieve/types';
 import generateUID from '@proton/utils/generateUID';
 
 import { COMPARATORS, OPERATORS, TYPES } from '../filters/constants';
