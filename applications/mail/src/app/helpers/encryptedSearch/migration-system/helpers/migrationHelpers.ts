@@ -1,9 +1,11 @@
 import type { IDBPDatabase } from 'idb';
 
-import type { ESCiphertext, EncryptedSearchDB } from '@proton/encrypted-search/models';
+import type { EncryptedSearchDB } from '@proton/encrypted-search/models';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
-import type { CleanTextFn, EncryptedSearchData, MigrationMethod } from '../interface';
+import type { ESMessageContent } from 'proton-mail/models/encryptedSearch';
+
+import type { CleanTextFn, MigrationMethod, PreparedMessageContent } from '../interface';
 import { getMigrationArray } from './contentMigrations';
 import { getOutdatedContentIterator } from './contentVersionHelpers';
 import { decryptESItem } from './decryptESItem';
@@ -12,7 +14,7 @@ import { getMigrationToRun } from './getMigrationToRun';
 
 interface UpgradeContentProps {
     contentVersion: number;
-    data: EncryptedSearchData;
+    data: ESMessageContent | undefined;
     migrationArray: MigrationMethod[];
 }
 
@@ -43,7 +45,7 @@ export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateConte
 
     let array = [];
     while ((array = await getOutdatedContentIterator(esDB)).length !== 0) {
-        const updatedItems: { original: ESCiphertext; updated: EncryptedSearchData }[] = [];
+        const updatedItems: PreparedMessageContent[] = [];
         for (const data of array) {
             try {
                 const decrypted = await decryptESItem({ esDB, indexKey, itemID: data.key });
@@ -59,7 +61,7 @@ export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateConte
                     continue;
                 }
 
-                const contentVersion = hasVersion ? data.value.version : decrypted.content?.version || -1;
+                const contentVersion = hasVersion ? data.value.version : decrypted?.version || -1;
                 versionsRecord[contentVersion] = (versionsRecord[contentVersion] ?? 0) + 1;
 
                 const result = await upgradeContentArray({
@@ -68,7 +70,7 @@ export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateConte
                     data: decrypted,
                 });
 
-                updatedItems.push({ updated: result, original: data.value });
+                updatedItems.push({ updated: result, original: data.value, itemID: data.key });
             } catch (error) {
                 traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, error);
                 console.error(error);
