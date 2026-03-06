@@ -117,6 +117,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                                 room={room}
                                 keyProvider={keyProvider}
                                 paidUser={false}
+                                isSubUser={false}
                                 keyRotationLogs={keyRotationLogs}
                                 setKeyRotationLogs={setKeyRotationLogs}
                             />
