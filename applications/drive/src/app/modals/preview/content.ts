@@ -1,11 +1,11 @@
 import type { MaybeNode } from '@proton/drive';
 import { isIWAD, isVideo } from '@proton/shared/lib/helpers/mimetype';
-import { isPreviewAvailable, isPreviewTooLarge } from '@proton/shared/lib/helpers/preview';
+import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
 import { streamToBuffer } from '../../utils/stream';
 import { loadCreateReadableStreamWrapper } from '../../utils/webStreamsPolyfill';
-import { getNodeMimeType, getNodeStorageSize } from './nodeUtils';
+import { getNodeMimeType } from './nodeUtils';
 
 export enum ContentPreviewMethod {
     Buffer = 'buffer',
@@ -39,15 +39,7 @@ export function getContentPreviewMethod(node: MaybeNode): ContentPreviewMethod {
         return ContentPreviewMethod.Thumbnail;
     }
 
-    // TOOD: Streaming has many edge cases and doesn't work well for all videos
-    // or all brossers. Due to the nature that indicies for the video files
-    // might be missing or wrong, service worker not working or available,
-    // loading taking a lot of time that playback cannot recover from (yet),
-    // etc. we prefer using buffer solution for video files of reasonable size.
-    // In the future, it might still be wise to use buffered solution for small
-    // videos, but we want to use streaming for majority of video or even audio
-    // files.
-    if (isVideo(mimeType) && isPreviewTooLarge(mimeType, getNodeStorageSize(node))) {
+    if (isVideo(mimeType)) {
         return ContentPreviewMethod.Streaming;
     }
 
