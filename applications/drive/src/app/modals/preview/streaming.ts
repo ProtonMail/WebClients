@@ -30,7 +30,7 @@ export function useVideoStreaming({ nodeUid, mimeType }: UseVideoStreamingProps)
     const [isBrokenVideo, setIsBrokenVideo] = useState(false);
     const [isServiceWorkerReady, setIsServiceWorkerReady] = useState(false);
 
-    const isServiceWorkerAvailable = useMemo(() => 'serviceWorker' in navigator, []);
+    const isServiceWorkerAvailable = useMemo(() => !!navigator.serviceWorker, []);
     const isStreamableVideo = useMemo(() => {
         return mimeType && isVideo(mimeType) && isServiceWorkerAvailable && !isBrokenVideo;
     }, [mimeType, isServiceWorkerAvailable, isBrokenVideo]);
