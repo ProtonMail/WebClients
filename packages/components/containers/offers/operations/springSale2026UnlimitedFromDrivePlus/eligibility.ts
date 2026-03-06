@@ -46,15 +46,14 @@ export function getIsEligible({
 
     const hasMail = offerSubscription.hasMail();
     const hasDrive = offerSubscription.hasDrive();
-    const hasPass = offerSubscription.hasPass();
+    const hasPassWithLifetimeOrSimpleLogin =
+        offerSubscription.hasPass() || hasPassLifetime(user) || hasPassViaSimpleLogin(user);
     const hasVPN = offerSubscription.hasVPN2024();
-    const hasPassWithLifetimeOrSimpleLogin = hasPass || hasPassLifetime(user) || hasPassViaSimpleLogin(user);
 
     if (
         user.isPaid &&
         isInApp(protonConfig, APPS.PROTONDRIVE, parentApp) &&
-        !hasDrive &&
-        (hasMail || hasPassWithLifetimeOrSimpleLogin || hasVPN) &&
+        (hasMail || hasDrive || hasPassWithLifetimeOrSimpleLogin || hasVPN) &&
         notBundle &&
         notDuo &&
         notFamily &&
