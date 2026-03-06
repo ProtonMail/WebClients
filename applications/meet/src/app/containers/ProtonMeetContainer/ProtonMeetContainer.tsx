@@ -80,6 +80,7 @@ interface ProtonMeetContainerProps {
     keyProvider: ProtonMeetKeyProvider;
     user?: UserModel | null;
     paidUser: boolean;
+    isSubUser: boolean;
     keyRotationLogs: KeyRotationLog[];
     setKeyRotationLogs: React.Dispatch<React.SetStateAction<KeyRotationLog[]>>;
 }
@@ -95,6 +96,7 @@ export const ProtonMeetContainer = ({
     keyProvider,
     user = null,
     paidUser = false,
+    isSubUser = false,
     keyRotationLogs,
     setKeyRotationLogs,
 }: ProtonMeetContainerProps) => {
@@ -929,7 +931,7 @@ export const ProtonMeetContainer = ({
             dispatch(setUpsellModalType(UpsellModalTypes.HostFreeAccount));
         }
 
-        if (isLocalParticipantHost && paidUser) {
+        if (isLocalParticipantHost && (paidUser || isSubUser)) {
             dispatch(setUpsellModalType(UpsellModalTypes.HostPaidAccount));
         }
 
@@ -937,7 +939,7 @@ export const ProtonMeetContainer = ({
             dispatch(setUpsellModalType(UpsellModalTypes.FreeAccount));
         }
 
-        if (!isLocalParticipantHost && user && paidUser) {
+        if (!isLocalParticipantHost && user && (paidUser || isSubUser)) {
             dispatch(setUpsellModalType(UpsellModalTypes.PaidAccount));
         }
 
@@ -1218,10 +1220,12 @@ export const ProtonMeetContainer = ({
     );
 };
 
-export const ProtonMeetContainerWithUser = (props: Omit<ProtonMeetContainerProps, 'user' | 'paidUser'>) => {
+export const ProtonMeetContainerWithUser = (
+    props: Omit<ProtonMeetContainerProps, 'user' | 'paidUser' | 'isSubUser'>
+) => {
     const [user] = useUser();
 
-    const paidUser = useIsTreatedAsPaidMeetUser();
+    const { isPaid, isSubUser } = useIsTreatedAsPaidMeetUser();
 
-    return <ProtonMeetContainer {...props} user={user} paidUser={paidUser} />;
+    return <ProtonMeetContainer {...props} user={user} paidUser={isPaid} isSubUser={isSubUser} />;
 };
