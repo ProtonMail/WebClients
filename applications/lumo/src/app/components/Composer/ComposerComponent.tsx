@@ -23,7 +23,7 @@ import { upsertAttachment } from '../../redux/slices/core/attachments';
 import type { Attachment, Message } from '../../types';
 import { base64ToFile } from '../../util/imageHelpers';
 import { createAttachmentFromPastedContent, getPasteConversionMessage } from '../../util/pastedContentHelper';
-import { AttachmentArea, FileContentModal } from '../Files';
+import { AttachmentArea } from '../Files';
 import GuestDisclaimer from '../Notifications/GuestDisclaimer';
 import TermsAndConditions from '../TermsAndConditions';
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
@@ -64,6 +64,7 @@ export type ComposerComponentProps = {
     messageChain?: Message[]; // Optional for MainContainer (no conversation yet)
     handleOpenFiles?: () => void; // Optional for MainContainer (no files management needed)
     onShowDriveBrowser?: () => void; // Optional for Drive browser functionality
+    onOpenFilePreview?: (attachment: Attachment) => void;
     canShowLegalDisclaimer?: boolean;
     initialQuery?: string; // Initial query to populate and auto-execute
     prefillQuery?: string; // Query to prefill without auto-executing
@@ -90,6 +91,7 @@ const ComposerComponentInner = ({
     messageChain = [],
     handleOpenFiles,
     onShowDriveBrowser,
+    onOpenFilePreview,
     canShowLegalDisclaimer,
     initialQuery,
     prefillQuery,
@@ -104,7 +106,6 @@ const ComposerComponentInner = ({
     const { isWebSearchButtonToggled } = useWebSearch();
     const hasAttachments = provisionalAttachments.length > 0;
     const composerContainerRef = useRef<HTMLElement | null>(null);
-    const [fileToView, setFileToView] = useState<Attachment | null>(null);
     const [showDrawingModal, setShowDrawingModal] = useState(false);
     const { isGhostChatMode } = useGhostChat();
     const dispatch = useLumoDispatch();
@@ -280,7 +281,7 @@ const ComposerComponentInner = ({
                                 allRelevantAttachments={allRelevantAttachments}
                                 messageChain={messageChain}
                                 onDeleteAttachment={handleDeleteAttachment}
-                                onViewFile={setFileToView}
+                                onViewFile={onOpenFilePreview ?? (() => {})}
                                 onOpenFiles={handleOpenFiles}
                             />
                         )}
@@ -312,10 +313,6 @@ const ComposerComponentInner = ({
                 {/* drop files area, hidden unless one drags a file */}
                 {isDraggingOverScreen && <AttachmentArea handleFileProcessing={handleFileProcessing} />}
             </div>
-
-            {fileToView && (
-                <FileContentModal attachment={fileToView} onClose={() => setFileToView(null)} open={!!fileToView} />
-            )}
 
             <SketchOverlay
                 isOpen={showDrawingModal}

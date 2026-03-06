@@ -15,7 +15,7 @@ import { useLumoSelector } from '../../../../../redux/hooks';
 import { selectAttachments } from '../../../../../redux/selectors';
 import type { Attachment } from '../../../../../types';
 import { sendMessageEditEvent } from '../../../../../util/telemetry';
-import { AttachmentFileCard, FileContentModal } from '../../../../Files/Common';
+import { AttachmentFileCard } from '../../../../Files/Common';
 import { LazyProgressiveMarkdownRenderer } from '../../../../LumoMarkdown/LazyMarkdownComponents';
 import SiblingSelector from '../../../../SiblingSelector';
 import useCollapsibleMessageContent from '../useCollapsibleMessageContent';
@@ -64,12 +64,11 @@ interface UserMessageProps {
     siblingInfo: SiblingInfo;
     handleEditMessage: HandleEditMessage;
     newMessageRef?: React.MutableRefObject<HTMLDivElement | null>;
-    // onOpenFiles?: (message: Message) => void;
+    onOpenFilePreview?: (attachment: Attachment) => void;
 }
 
-const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, newMessageRef }: UserMessageProps) => {
+const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, newMessageRef, onOpenFilePreview }: UserMessageProps) => {
     const [isEditing, setIsEditing] = useState(false);
-    const [fileToView, setFileToView] = useState<Attachment | null>(null);
     const { isWebSearchButtonToggled } = useWebSearch();
 
     // Get full attachment data from Redux (shallow attachments in message only contain ID and basic metadata)
@@ -108,14 +107,6 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
     const handleEdit = () => {
         sendMessageEditEvent();
         setIsEditing(true);
-    };
-
-    const handleViewFile = (attachment: Attachment) => {
-        setFileToView(attachment);
-    };
-
-    const handleCloseFileView = () => {
-        setFileToView(null);
     };
 
     return (
@@ -162,7 +153,7 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
                             key={attachment.id}
                             attachment={attachment}
                             readonly
-                            onView={handleViewFile}
+                            onView={onOpenFilePreview}
                         />
                     ))}
                 </div>
@@ -187,9 +178,6 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
                         </div>
                     )}
                 </div>
-            )}
-            {fileToView && (
-                <FileContentModal attachment={fileToView} onClose={handleCloseFileView} open={!!fileToView} />
             )}
         </div>
     );
