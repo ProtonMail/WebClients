@@ -13,7 +13,10 @@ export const migrationToolWorker = async ({ user, keyPassword }: MigrationToolPa
 
     try {
         const workerProxy = wrap<MigrationToolAPI>(worker);
-        await workerProxy.migration({ user, keyPassword }, proxy(cleanText));
+        await workerProxy.migration(
+            { user, keyPassword },
+            proxy(async (text: string, includeQuote: boolean) => cleanText(text, includeQuote))
+        );
     } catch (error) {
         traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, error);
     } finally {
