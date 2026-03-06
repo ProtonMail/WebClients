@@ -1,4 +1,4 @@
-import { type Dispatch, type SetStateAction, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -14,21 +14,21 @@ import { selectPreviousMeetingLink } from '@proton/meet/store/slices';
 import { isValidMeetingLink, parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useFeedback } from '../../hooks/useFeedback';
-import { FeedbackOptionColumn } from '../FeedbackOptionColumn/FeedbackOptionColumn';
-import { StarRating } from '../StarRating/StarRating';
+import { useFeedback } from '../../../hooks/useFeedback';
+import { FeedbackOptionColumn } from '../../FeedbackOptionColumn/FeedbackOptionColumn';
+import { StarRating } from '../../StarRating/StarRating';
 
 import './FeedbackForm.scss';
 
 type Props = {
     onClose: () => void;
-    setIsFinished: Dispatch<SetStateAction<boolean>>;
+    onSubmit: () => void;
 };
 
 // Used to determine if the rating is high or low and display the feedback form accordingly.
 const RATING_THRESHOLD = 4;
 
-export const FeedbackForm = ({ onClose, setIsFinished: setIsFinished }: Props) => {
+export const FeedbackForm = ({ onClose, onSubmit }: Props) => {
     const meetFeedbackOnSkipEnabled = useFlag('MeetFeedbackOnSkip');
 
     const [rating, SetRating] = useState<number | undefined>(undefined);
@@ -98,7 +98,7 @@ export const FeedbackForm = ({ onClose, setIsFinished: setIsFinished }: Props) =
                 if (closeAfterSubmit) {
                     onClose();
                 } else {
-                    setIsFinished(true);
+                    onSubmit();
                 }
             })
             .catch(() => {
