@@ -17,6 +17,7 @@ import type { PlainPaymentMethodType } from '../../core/interface';
 import type { PaymentTelemetryContext } from '../../telemetry/helpers';
 import { checkoutTelemetry } from '../../telemetry/telemetry';
 import type { TaxCountryHook } from '../hooks/useTaxCountry';
+import type { VatNumberHook } from '../hooks/useVatNumber';
 import { ApplePayButton } from './ApplePayButton';
 import { ChargebeePaypalButton } from './ChargebeePaypalButton';
 import { GooglePayButton } from './GooglePayButton';
@@ -28,6 +29,7 @@ export type PayButtonOnClickPayload = {
 
 type Props = {
     taxCountry: TaxCountryHook;
+    vatNumber?: VatNumberHook;
     disabled?: boolean;
     children: ReactNode;
     paymentFacade: PaymentFacade;
@@ -80,6 +82,7 @@ export function useOfferUnavailableErrorMessage(
 
 export const PayButton = ({
     taxCountry,
+    vatNumber,
     disabled,
     children,
     paymentFacade,
@@ -127,12 +130,21 @@ export const PayButton = ({
         onClick?.(payload);
     };
 
+    /**
+     * If we can't edit VAT number inline (shouldEditInModal is true) then it means that error states if
+     * {@link useVatNumber} are not applicable, and we need to skip them
+     */
+    const mustCheckVatNumberErrors = !vatNumber?.shouldEditInModal;
+
     const submitButton = (() => {
         const isChargebeePaypal = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
         const isApplePay = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.APPLE_PAY;
         const isGooglePay = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.GOOGLE_PAY;
         const submitButtonDisabled =
-            !taxCountry.billingAddressValid || disabled || offerUnavailableErrorMessage?.paymentDisabled;
+            !taxCountry.billingAddressValid ||
+            (mustCheckVatNumberErrors && !vatNumber?.vatFormValid) ||
+            disabled ||
+            offerUnavailableErrorMessage?.paymentDisabled;
 
         const className = clsx(submitButtonDisabled && 'cursor-not-allowed', classNameProp);
 
@@ -190,7 +202,11 @@ export const PayButton = ({
         }
     })();
 
-    const errorMessage = taxCountry?.billingAddressErrorMessage || offerUnavailableErrorMessage?.message;
+    const errorMessage =
+        taxCountry?.billingAddressErrorMessage ||
+        (mustCheckVatNumberErrors && vatNumber?.vatFormErrorMessage) ||
+        offerUnavailableErrorMessage?.message;
+
     if (!errorMessage) {
         return (
             <>

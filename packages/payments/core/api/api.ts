@@ -2,7 +2,7 @@ import type { Api, User } from '@proton/shared/lib/interfaces';
 import formatSubscription from '@proton/shared/lib/subscription/format';
 import { isAdmin, isPaid } from '@proton/shared/lib/user/helpers';
 
-import type { BillingAddress } from '../billing-address/billing-address';
+import type { BillingAddressExtended } from '../billing-address/billing-address';
 import type {
     Autopay,
     InvoiceOwner,
@@ -100,12 +100,12 @@ export type CheckSubscriptionData = {
     Cycle: Cycle;
     CouponCode?: string;
     Codes?: string[];
+    IsTrial?: boolean;
     /**
      * For taxes
      */
-    BillingAddress?: BillingAddress;
+    BillingAddress?: BillingAddressExtended;
     ProrationMode?: ProrationMode;
-    IsTrial?: boolean;
     ValidateBillingAddress?: boolean;
     VatId?: string;
 };

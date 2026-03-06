@@ -17,7 +17,7 @@ import {
     isFreeSubscription,
     isTrial,
 } from '@proton/payments';
-import { PayButton, type TaxCountryHook } from '@proton/payments/ui';
+import { PayButton, type TaxCountryHook, type VatNumberHook } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import { getSubscriptionManagerName } from '../InAppPurchaseModal';
@@ -35,6 +35,7 @@ export type Props = {
     paymentForbiddenReason: SubscriptionCheckForbiddenReason;
     subscription: Subscription | FreeSubscription;
     taxCountry: TaxCountryHook;
+    vatNumber: VatNumberHook | undefined;
     paymentFacade: PaymentFacade;
     couponConfig?: CouponConfigRendered;
     showVisionaryWarning: boolean;
@@ -52,6 +53,7 @@ export const SubscriptionSubmitButton = ({
     paymentForbiddenReason,
     subscription,
     taxCountry,
+    vatNumber,
     paymentFacade,
     couponConfig,
     showVisionaryWarning,
@@ -154,6 +156,7 @@ export const SubscriptionSubmitButton = ({
             <PayButton
                 color="norm"
                 taxCountry={taxCountry}
+                vatNumber={vatNumber}
                 paymentFacade={paymentFacade}
                 className={className}
                 loading={loading}

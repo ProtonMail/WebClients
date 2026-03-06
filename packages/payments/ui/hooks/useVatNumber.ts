@@ -1,23 +1,34 @@
 import { useEffect, useState } from 'react';
 
+import { c } from 'ttag';
+
 import { selectUser } from '@proton/account/user';
+import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import useLoading from '@proton/hooks/useLoading';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
+import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
+import type { BillingAddressExtraProperties, FullBillingAddressFlat } from '../../core/billing-address/billing-address';
 import type { ADDON_NAMES, PLANS } from '../../core/constants';
 import type { PaymentsApi } from '../../core/interface';
 import { getIsB2BAudienceFromPlan } from '../../core/plan/helpers';
+import { hasWrongBillingAddressError } from '../../core/subscription/subscription-estimation';
 import type { TaxCountryHook } from './useTaxCountry';
+import { getVatFormErrors } from './useVatFormValidation';
+
+export type FullBillingAddressWithoutCountry = Omit<FullBillingAddressFlat, 'CountryCode' | 'State' | 'ZipCode'>;
 
 interface VatNumberHookProps {
     selectedPlanName: PLANS | ADDON_NAMES | undefined;
-    onChange?: (value: string) => unknown;
+    onVatChange?: (value: string) => unknown;
+    onBillingAddressChange?: (fullBillingAddress: FullBillingAddressWithoutCountry) => unknown;
     isAuthenticated?: boolean;
     paymentsApi?: PaymentsApi;
     taxCountry: TaxCountryHook;
     onVatUpdated?: (vatNumber: string | null) => unknown | Promise<unknown>;
+    paymentFacade?: PaymentFacade;
 }
 
 export type VatNumberHook = ReturnType<typeof useVatNumber>;
@@ -60,33 +71,53 @@ const countriesWithVatId = new Set([
     'IS',
 ]);
 
+const INITIAL_BILLING_ADDRESS_EXTRA: BillingAddressExtraProperties = {
+    Company: undefined,
+    FirstName: undefined,
+    LastName: undefined,
+    Address: undefined,
+    City: undefined,
+};
+
 export const useVatNumber = ({
     selectedPlanName,
-    onChange,
+    onVatChange,
+    onBillingAddressChange,
     isAuthenticated: isAuthenticatedProp,
     paymentsApi: paymentsApiProp,
     taxCountry,
     onVatUpdated,
+    paymentFacade,
 }: VatNumberHookProps) => {
+    const showExtendedBillingAddressForm = useFlag('PaymentsValidateBillingAddress');
     const store = useStore();
     const isAuthenticated = isAuthenticatedProp ?? !!selectUser(store.getState())?.value;
     const { paymentsApi: defaultPaymentsApi } = usePaymentsApi();
     const paymentsApi = paymentsApiProp ?? defaultPaymentsApi;
     const [loadingBillingDetails, withLoading] = useLoading();
     const [loaded, setLoaded] = useState(false);
+    const [unauthenticatedCollapsed, setUnauthenticatedCollapsed] = useState(true);
 
     const isB2BPlan = getIsB2BAudienceFromPlan(selectedPlanName);
 
     const enableVatNumber = isB2BPlan;
     const [vatNumber, setVatNumber] = useState('');
+    const [billingAddressExtra, setBillingAddressExtra] =
+        useState<BillingAddressExtraProperties>(INITIAL_BILLING_ADDRESS_EXTRA);
 
     const fetchVatNumber = async () => {
         const result = await paymentsApi.getFullBillingAddress();
-        const vatId = result.VatId;
-        setVatNumber(vatId ?? '');
-        setLoaded(true);
 
-        return vatId;
+        setVatNumber(result.VatId ?? '');
+        setBillingAddressExtra({
+            Company: result.BillingAddress.Company ?? '',
+            FirstName: result.BillingAddress.FirstName ?? '',
+            LastName: result.BillingAddress.LastName ?? '',
+            Address: result.BillingAddress.Address ?? '',
+            City: result.BillingAddress.City ?? '',
+        });
+
+        setLoaded(true);
     };
 
     useEffect(() => {
@@ -97,9 +128,49 @@ export const useVatNumber = ({
         withLoading(fetchVatNumber()).catch(noop);
     }, [isAuthenticated, enableVatNumber]);
 
-    const handleVatNumberChange = (value: string) => {
-        setVatNumber(value);
-        onChange?.(value);
+    const handleVatNumberChange = (newVatNumber: string) => {
+        setVatNumber(newVatNumber);
+        const fullBillingAddress: FullBillingAddressFlat = {
+            CountryCode: taxCountry.selectedCountryCode,
+            State: taxCountry.federalStateCode,
+            ZipCode: taxCountry.zipCode,
+            ...billingAddressExtra,
+            VatId: newVatNumber,
+        };
+
+        const vatFormErrors = getVatFormErrors(fullBillingAddress, showExtendedBillingAddressForm);
+
+        if (!vatFormErrors.hasErrors) {
+            onVatChange?.(newVatNumber);
+        }
+    };
+
+    const handleBillingAddressChange = (billingAddressExtraProperties: BillingAddressExtraProperties) => {
+        const fullBillingAddress: FullBillingAddressFlat = {
+            CountryCode: taxCountry.selectedCountryCode,
+            State: taxCountry.federalStateCode,
+            ZipCode: taxCountry.zipCode,
+            ...billingAddressExtraProperties,
+            VatId: vatNumber,
+        };
+
+        const vatFormErrors = getVatFormErrors(fullBillingAddress, showExtendedBillingAddressForm);
+
+        if (!vatFormErrors.hasErrors) {
+            onBillingAddressChange?.(fullBillingAddress);
+        }
+    };
+
+    const updateBillingAddressField = <K extends keyof BillingAddressExtraProperties>(
+        field: K,
+        value: BillingAddressExtraProperties[K]
+    ) => {
+        const updated: BillingAddressExtraProperties = {
+            ...billingAddressExtra,
+            [field]: value ? value : undefined,
+        };
+        setBillingAddressExtra(updated);
+        handleBillingAddressChange(updated);
     };
 
     useEffect(() => {
@@ -110,21 +181,58 @@ export const useVatNumber = ({
         }
     }, [taxCountry.selectedCountryCode, isB2BPlan]);
 
-    const vatUpdatedInModal = async (vatId: string | undefined) => {
-        handleVatNumberChange(vatId ?? '');
+    const vatUpdatedInModal = async (vatNumber: string | undefined) => {
+        const newVatNumber = vatNumber ?? '';
+        handleVatNumberChange(newVatNumber);
         if (isAuthenticated) {
-            await onVatUpdated?.(vatNumber);
+            await onVatUpdated?.(newVatNumber);
         }
     };
 
+    const renderVatNumberInput = isB2BPlan && countriesWithVatId.has(taxCountry.selectedCountryCode);
+
+    const vatFormErrors = getVatFormErrors(
+        {
+            CountryCode: taxCountry.selectedCountryCode,
+            State: taxCountry.federalStateCode,
+            ZipCode: taxCountry.zipCode,
+            ...billingAddressExtra,
+            VatId: vatNumber,
+        },
+        showExtendedBillingAddressForm
+    );
+
+    const vatFormValid = !vatFormErrors.hasErrors && !hasWrongBillingAddressError(paymentFacade?.checkResult);
+    const vatFormErrorMessage = !vatFormValid ? c('Error').t`Please complete the billing details` : undefined;
+
     return {
+        ...billingAddressExtra,
+        setCompany: (value: string) => updateBillingAddressField('Company', value),
+        setFirstName: (value: string) => updateBillingAddressField('FirstName', value),
+        setLastName: (value: string) => updateBillingAddressField('LastName', value),
+        setAddress: (value: string) => updateBillingAddressField('Address', value),
+        setCity: (value: string) => updateBillingAddressField('City', value),
         loadingBillingDetails,
         vatNumber,
         setVatNumber: handleVatNumberChange,
         enableVatNumber,
-        renderVatNumberInput: isB2BPlan && countriesWithVatId.has(taxCountry.selectedCountryCode),
+        renderVatNumberInput,
+        vatFormValid,
+        vatFormErrorMessage,
         vatUpdatedInModal,
         paymentsApi,
-        isAuthenticated,
+        /**
+         * If user is authenticated, we no longer allow inline editing of VAT number or billing address. Instead, we
+         * will show the modal for editing full billing address.
+         */
+        shouldEditInModal: isAuthenticated,
+        unauthenticatedCollapsed,
+        setUnauthenticatedCollapsed: (isCollapsed: boolean) => {
+            setUnauthenticatedCollapsed(isCollapsed);
+            if (isCollapsed) {
+                setVatNumber('');
+                setBillingAddressExtra(INITIAL_BILLING_ADDRESS_EXTRA);
+            }
+        },
     };
 };

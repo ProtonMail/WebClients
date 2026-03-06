@@ -185,7 +185,6 @@ export type {
     PlanIDs,
     Pricing,
     RemoveEventListener,
-    RequestOptions,
     SavedCardDetails,
     SavedPaymentMethod,
     SavedPaymentMethodExternal,

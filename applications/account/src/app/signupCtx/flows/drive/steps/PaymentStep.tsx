@@ -17,7 +17,8 @@ import {
     getPaymentsVersion,
     getPlanFromPlanIDs,
 } from '@proton/payments';
-import { PayButton, usePaymentOptimistic, useTaxCountry, useVatNumber } from '@proton/payments/ui';
+import { PayButton, usePaymentOptimistic } from '@proton/payments/ui';
+import { useBillingAddress } from '@proton/payments/ui/hooks/useBillingAddress';
 import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Audience } from '@proton/shared/lib/interfaces';
@@ -74,19 +75,13 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
         return true;
     };
 
-    const taxCountry = useTaxCountry({
-        onBillingAddressChange: payments.selectBillingAddress,
+    const billingAddressHook = useBillingAddress({
+        onBillingAddressChange: payments.selectFullBillingAddress,
         paymentStatus: payments.paymentStatus,
-        zipCodeBackendValid: payments.zipCodeValid,
-        previousValidZipCode: payments.options.billingAddress.ZipCode,
         paymentFacade,
         telemetryContext: payments.telemetryContext,
-    });
-
-    const vatNumber = useVatNumber({
         selectedPlanName: payments.selectedPlan.getPlanName(),
-        onChange: payments.setVatNumber,
-        taxCountry,
+        onVatChange: payments.setVatNumber,
     });
 
     const process = (processor: PaymentProcessorHook | undefined) => {
@@ -180,8 +175,8 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                     noMaxWidth
                     hideFirstLabel
                     onCurrencyChange={payments.selectCurrency}
-                    taxCountry={taxCountry}
-                    vatNumber={vatNumber}
+                    taxCountry={billingAddressHook.taxCountry}
+                    vatNumber={billingAddressHook.vatNumber}
                 />
 
                 <PayButton
@@ -189,7 +184,8 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                     color="norm"
                     fullWidth
                     pill
-                    taxCountry={taxCountry}
+                    taxCountry={billingAddressHook.taxCountry}
+                    vatNumber={billingAddressHook.vatNumber}
                     paymentFacade={paymentFacade}
                     loading={submitting}
                     data-testid="pay"

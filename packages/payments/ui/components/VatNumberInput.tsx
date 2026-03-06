@@ -2,10 +2,15 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { backendBillingAddressFieldError } from '@proton/components/payments/react-extensions/errors';
+import { useFlag } from '@proton/unleash/useFlag';
+import clsx from '@proton/utils/clsx';
 
 import type { TaxCountryHook } from '../hooks/useTaxCountry';
+import { useVatFormValidation } from '../hooks/useVatFormValidation';
 import type { VatNumberHook } from '../hooks/useVatNumber';
 
 export function getVatPlaceholder(countryCode: string) {
@@ -86,15 +91,48 @@ type Props = VatNumberHook & {
 export const VatNumberInput = ({
     vatNumber,
     setVatNumber,
+    Company,
+    setCompany,
+    FirstName,
+    setFirstName,
+    LastName,
+    setLastName,
+    Address,
+    setAddress,
+    City,
+    setCity,
     enableVatNumber,
     taxCountry,
     loadingBillingDetails,
     renderVatNumberInput,
-    isAuthenticated,
+    shouldEditInModal,
     onInlineClick,
     loadingBillingAddressModal,
     className,
+    unauthenticatedCollapsed,
+    setUnauthenticatedCollapsed,
 }: Props) => {
+    const showExtendedBillingAddressForm = useFlag('PaymentsValidateBillingAddress');
+    const {
+        errors: { errorMessages },
+        containerRef,
+        handleFormBlur,
+    } = useVatFormValidation(
+        {
+            CountryCode: taxCountry.selectedCountryCode,
+            State: taxCountry.federalStateCode,
+            ZipCode: taxCountry.zipCode,
+            VatId: vatNumber,
+            Company,
+            FirstName,
+            LastName,
+            Address,
+            City,
+        },
+        { collapsed: unauthenticatedCollapsed }
+    );
+    const { billingAddressValidationResult } = taxCountry;
+
     if (!renderVatNumberInput || !enableVatNumber) {
         return null;
     }
@@ -103,7 +141,7 @@ export const VatNumberInput = ({
         return <SkeletonLoader className="w-full" height="5em" />;
     }
 
-    if (isAuthenticated) {
+    if (shouldEditInModal) {
         return (
             <div data-testid="billing-country" className={className}>
                 <span className="text-bold">{c('Payments').t`VAT number`}</span>
@@ -118,20 +156,100 @@ export const VatNumberInput = ({
         );
     }
 
-    return (
-        <div className={className}>
+    const optionalHint = c('info').t`Optional`;
+
+    const inputs = (
+        <>
             <InputFieldTwo
                 label={getVatNumberName(taxCountry.selectedCountryCode)}
-                hint={c('info').t`Optional`}
-                assistiveText={
-                    // translator: This is a hint for the VAT number field
-                    c('Payments').t`This number will be shown on all future invoices`
-                }
+                hint={optionalHint}
                 onValue={setVatNumber}
                 value={vatNumber}
                 placeholder={getVatPlaceholder(taxCountry.selectedCountryCode)}
                 data-testid="vat-id-input"
+                error={errorMessages.VatId || backendBillingAddressFieldError(billingAddressValidationResult?.VatId)}
             />
+            {showExtendedBillingAddressForm && (
+                <>
+                    <InputFieldTwo
+                        label={c('Label').t`Company`}
+                        hint={vatNumber ? undefined : optionalHint}
+                        onValue={setCompany}
+                        value={Company ?? ''}
+                        placeholder={c('Placeholder').t`Cortex Inc.`}
+                        data-testid="company-input"
+                        error={
+                            errorMessages.Company ||
+                            backendBillingAddressFieldError(billingAddressValidationResult?.Company)
+                        }
+                    />
+                    <InputFieldTwo
+                        label={c('Label').t`City`}
+                        hint={vatNumber ? undefined : optionalHint}
+                        onValue={setCity}
+                        value={City ?? ''}
+                        placeholder={c('Placeholder').t`San Francisco`}
+                        data-testid="city-input"
+                        error={
+                            errorMessages.City || backendBillingAddressFieldError(billingAddressValidationResult?.City)
+                        }
+                    />
+                    <InputFieldTwo
+                        label={c('Label').t`Street address`}
+                        hint={vatNumber ? undefined : optionalHint}
+                        onValue={setAddress}
+                        value={Address ?? ''}
+                        placeholder={c('Placeholder').t`Main street 12`}
+                        data-testid="street-address-input"
+                        error={
+                            errorMessages.Address ||
+                            backendBillingAddressFieldError(billingAddressValidationResult?.Address)
+                        }
+                    />
+                    <div className="flex gap-4">
+                        <InputFieldTwo
+                            label={c('Label').t`First name`}
+                            hint={vatNumber ? undefined : optionalHint}
+                            onValue={setFirstName}
+                            value={FirstName ?? ''}
+                            placeholder={c('Placeholder').t`Thomas`}
+                            data-testid="first-name-input"
+                            error={
+                                errorMessages.FirstName ||
+                                backendBillingAddressFieldError(billingAddressValidationResult?.FirstName)
+                            }
+                            rootClassName="flex-1"
+                        />
+                        <InputFieldTwo
+                            label={c('Label').t`Last name`}
+                            hint={vatNumber ? undefined : optionalHint}
+                            onValue={setLastName}
+                            value={LastName ?? ''}
+                            placeholder={c('Placeholder').t`Anderson`}
+                            data-testid="last-name-input"
+                            error={
+                                errorMessages.LastName ||
+                                backendBillingAddressFieldError(billingAddressValidationResult?.LastName)
+                            }
+                            rootClassName="flex-1"
+                        />
+                    </div>
+                </>
+            )}
+        </>
+    );
+
+    return (
+        <div className={className} ref={containerRef} onBlur={handleFormBlur}>
+            <Checkbox
+                checked={!unauthenticatedCollapsed}
+                onChange={() => setUnauthenticatedCollapsed(!unauthenticatedCollapsed)}
+                data-testid="vat-id-checkbox"
+                className={clsx(!unauthenticatedCollapsed && 'mb-4')}
+            >
+                {c('Payments').t`I'm purchasing as a business`}
+            </Checkbox>
+            {unauthenticatedCollapsed ? null : inputs}
         </div>
     );
 };

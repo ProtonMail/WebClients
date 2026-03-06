@@ -19,10 +19,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
-import {
-    InvalidZipCodeError,
-    TaxExemptionNotSupportedError,
-} from '@proton/components/payments/react-extensions/errors';
+import { TaxExemptionNotSupportedError } from '@proton/components/payments/react-extensions/errors';
 import { useLoading } from '@proton/hooks';
 import { IcGift } from '@proton/icons/icons/IcGift';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -76,6 +73,7 @@ import {
     shouldPassIsTrial as shouldPassIsTrialPayments,
     switchPlan,
 } from '@proton/payments';
+import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { computeOptimisticSubscriptionMode } from '@proton/payments/core/optimisticSubscriptionMode';
 import { InvalidChargebeeCardDataError } from '@proton/payments/core/payment-processors/chargebeeCardPayment';
@@ -85,7 +83,8 @@ import type { EstimationChangePayload } from '@proton/payments/telemetry/shared-
 import type { SubscriptionModificationChangeAudienceTelemetry } from '@proton/payments/telemetry/subscription-container';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useSubscriptionModificationChangeStepTelemetry } from '@proton/payments/telemetry/useSubscriptionModificationChangeStepTelemetry';
-import { PaymentsContextProvider, useTaxCountry, useVatNumber } from '@proton/payments/ui';
+import { PaymentsContextProvider } from '@proton/payments/ui';
+import { useBillingAddress } from '@proton/payments/ui/hooks/useBillingAddress';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
@@ -145,7 +144,6 @@ export interface Model {
     initialCheckComplete: boolean;
     taxBillingAddress: BillingAddress;
     paymentForbiddenReason: SubscriptionCheckForbiddenReason;
-    zipCodeValid: boolean;
 }
 
 const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
@@ -414,7 +412,6 @@ const SubscriptionContainerInner = ({
             initialCheckComplete: false,
             taxBillingAddress: getBillingAddressFromPaymentStatus(paymentStatus),
             paymentForbiddenReason: { forbidden: false },
-            zipCodeValid: true,
         };
 
         return model;
@@ -585,7 +582,7 @@ const SubscriptionContainerInner = ({
                     taxBillingAddress: model.taxBillingAddress,
                     StartTrial: isTrial,
                     // eslint-disable-next-line @typescript-eslint/no-use-before-define
-                    vatNumber: vatNumber.vatNumber,
+                    vatNumber: billingAddressHook.vatNumber?.vatNumber,
                 });
 
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define
@@ -669,7 +666,7 @@ const SubscriptionContainerInner = ({
                     taxBillingAddress: model.taxBillingAddress,
                     StartTrial: isTrial,
                     // eslint-disable-next-line @typescript-eslint/no-use-before-define
-                    vatNumber: vatNumber.vatNumber,
+                    vatNumber: billingAddressHook.vatNumber?.vatNumber,
                 },
                 paymentProcessorType,
                 paymentMethodValue: source,
@@ -689,7 +686,7 @@ const SubscriptionContainerInner = ({
         planIDs: model.planIDs,
         coupon: couponCode,
         onBeforeSepaPayment: async () => {
-            if (checkResult.ProrationMode === ProrationMode.Exact) {
+            if (checkResult.requestData.ProrationMode === ProrationMode.Exact) {
                 const currentAmountDue = checkResult.AmountDue;
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define
                 const newCheckResult = await check();
@@ -934,6 +931,10 @@ const SubscriptionContainerInner = ({
         reportChangeTelemetry({ action, selectedPlanIDs: newlySelectedPlanIDs });
     };
 
+    const handleTaxExemptionNotSupportedError = (error: TaxExemptionNotSupportedError) => {
+        createNotification({ text: error.message, type: 'error' });
+    };
+
     const check = async (
         newModel: Model = model,
         wantToApplyNewGiftCode: boolean = false,
@@ -943,7 +944,6 @@ const SubscriptionContainerInner = ({
             ...newModel,
             initialCheckComplete: true,
             paymentForbiddenReason: { forbidden: false },
-            zipCodeValid: true,
         };
 
         if (!hasPlanIDs(copyNewModel.planIDs)) {
@@ -1044,22 +1044,26 @@ const SubscriptionContainerInner = ({
                     ValidateBillingAddress: true,
                 };
 
-                const checkResult = await paymentsApi.checkSubscription(checkPayload, {
+                const newCheckResult = await paymentsApi.checkSubscription(checkPayload, {
                     signal: abortControllerRef.current.signal,
                     silence: true,
+                    previousEstimation: checkResult,
                 });
+                if (newCheckResult.error instanceof TaxExemptionNotSupportedError) {
+                    handleTaxExemptionNotSupportedError(newCheckResult.error);
+                }
 
                 try {
                     await runAdditionalChecks(
                         copyNewModel,
                         checkPayload,
-                        checkResult,
+                        newCheckResult,
                         abortControllerRef.current.signal
                     );
                 } catch {}
 
-                const { Gift = 0 } = checkResult;
-                const { Code = '' } = checkResult.Coupon || {}; // Coupon can equal null
+                const { Gift = 0 } = newCheckResult;
+                const { Code = '' } = newCheckResult.Coupon || {}; // Coupon can equal null
 
                 if (wantToApplyNewGiftCode && copyNewModel.gift?.toLowerCase() !== Code.toLowerCase() && !Gift) {
                     createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
@@ -1075,9 +1079,9 @@ const SubscriptionContainerInner = ({
                     delete copyNewModel.gift;
                 }
 
-                setCheckResult(checkResult);
+                setCheckResult(newCheckResult);
                 setModel(copyNewModel);
-                onCheck?.({ model, newModel: copyNewModel, type: 'success', result: checkResult });
+                onCheck?.({ model, newModel: copyNewModel, type: 'success', result: newCheckResult });
             } catch (error: any) {
                 if (error?.name === 'AbortError') {
                     return;
@@ -1087,17 +1091,8 @@ const SubscriptionContainerInner = ({
                     setModel({ ...model, step: SUBSCRIPTION_STEPS.NETWORK_ERROR });
                 }
 
-                if (error instanceof InvalidZipCodeError) {
-                    setModel({
-                        ...model,
-                        zipCodeValid: false,
-                    });
-                    // We don't want to report this as an error to the parent of SubscriptionContainer
-                    return;
-                }
-
                 if (error instanceof TaxExemptionNotSupportedError) {
-                    createNotification({ text: error.message, type: 'error' });
+                    handleTaxExemptionNotSupportedError(error);
                     return;
                 }
 
@@ -1188,7 +1183,7 @@ const SubscriptionContainerInner = ({
                     taxBillingAddress: model.taxBillingAddress,
                     StartTrial: isTrial,
                     // eslint-disable-next-line @typescript-eslint/no-use-before-define
-                    vatNumber: vatNumber.vatNumber,
+                    vatNumber: billingAddressHook.vatNumber?.vatNumber,
                 });
                 await processor.processPaymentToken();
             } catch (e) {
@@ -1274,23 +1269,17 @@ const SubscriptionContainerInner = ({
         void check({ ...model, currency: planCurrency }, false, context?.paymentMethodType);
     };
 
-    const handleBillingAddressChange = (billingAddress: BillingAddress) => {
+    const handleBillingAddressChange = (billingAddress: BillingAddressExtended) => {
         void check({ ...model, taxBillingAddress: billingAddress });
     };
 
-    const taxCountry = useTaxCountry({
+    const billingAddressHook = useBillingAddress({
         onBillingAddressChange: handleBillingAddressChange,
-        zipCodeBackendValid: model.zipCodeValid,
         paymentStatus,
         paymentFacade,
-        previousValidZipCode: model.taxBillingAddress.ZipCode,
         telemetryContext,
         paymentsApi,
-    });
-
-    const vatNumber = useVatNumber({
         selectedPlanName,
-        taxCountry,
         onVatUpdated: () => check(),
     });
 
@@ -1343,7 +1332,8 @@ const SubscriptionContainerInner = ({
             paymentForbiddenReason={model.paymentForbiddenReason}
             subscription={subscription}
             hasPaymentMethod={hasPaymentMethod}
-            taxCountry={taxCountry}
+            taxCountry={billingAddressHook.taxCountry}
+            vatNumber={billingAddressHook.vatNumber}
             paymentFacade={paymentFacade}
             couponConfig={couponConfig}
             showVisionaryWarning={renderVisionaryDowngradeWarningText}
@@ -1516,8 +1506,8 @@ const SubscriptionContainerInner = ({
                                 hideFirstLabel={true}
                                 hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
                                 onCurrencyChange={handleChangeCurrency}
-                                taxCountry={taxCountry}
-                                vatNumber={vatNumber}
+                                taxCountry={billingAddressHook.taxCountry}
+                                vatNumber={billingAddressHook.vatNumber}
                                 subscription={subscription}
                                 showTaxCountry={paymentFacade.showTaxCountry && !model.paymentForbiddenReason.forbidden}
                                 creditCardDetailsRef={creditCardDetailsRef}
@@ -1547,7 +1537,7 @@ const SubscriptionContainerInner = ({
                                 paymentMethods={paymentFacade.methods}
                                 showPlanDescription={audience !== Audience.B2B}
                                 paymentForbiddenReason={model.paymentForbiddenReason}
-                                taxCountry={taxCountry}
+                                taxCountry={billingAddressHook.taxCountry}
                                 user={user}
                                 couponConfig={couponConfig}
                                 trial={shouldPassIsTrial(model, false)}
