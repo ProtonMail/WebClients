@@ -19,7 +19,7 @@ export type MigrateFn = (data: ESMessageContent) => Promise<ESMessageContent>;
 
 export type MigrationMethod = { targetVersion: CONTENT_VERSION; fn: MigrateFn };
 
-export type PreparedMessageContent = { original: ESCiphertext; updated: ESMessageContent | undefined; itemID: string };
+export type PreparedMessageContent = { original: ESCiphertext; updated: ESMessageContent; itemID: string };
 
 export const CONTENT_EXTRACTION_MAX_RETRIES = 5;
 
