@@ -4,7 +4,11 @@
     "license": "GPL-3.0",
     "author": "ProtonMail",
     "sideEffects": false,
-    "main": "index.ts",
+    "exports": {
+        "./fromSieveTree": "./src/fromSieve/fromSieveTree.ts",
+        "./toSieveTree": "./src/toSieve/toSieveTree.ts",
+        "./types": "./src/interface.ts"
+    },
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint --quiet",
