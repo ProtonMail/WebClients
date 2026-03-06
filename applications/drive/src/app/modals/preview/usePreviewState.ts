@@ -6,15 +6,14 @@ import type { MaybeNode } from '@proton/drive';
 import { AbortError, MemberRole, ProtonDriveError } from '@proton/drive';
 import useLoading from '@proton/hooks/useLoading';
 
-import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
 import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { ContentPreviewMethod, downloadContent, getContentPreviewMethod } from './content';
 import type { Drive } from './interface';
 import { logger } from './logger';
 import { getNavigation } from './navigation';
-import { getNodeActiveRevisionUid, getNodeMimeType, getNodeName, getSharedStatus } from './nodeUtils';
-import { getContentSignatureIssueLabel } from './signatures';
+import { getNodeActiveRevisionUid, getNodeMimeType } from './nodeUtils';
+import { getEffectivePreviewMethod, resolvePreviewOutput } from './resolvePreviewOutput';
 import { useVideoStreaming } from './streaming';
 import { getLargeThumbnail, useThumbnailLoader } from './thumbnails';
 import usePreviewActions from './usePreviewActions';
@@ -54,6 +53,9 @@ export function usePreviewState({
     const { getSmallThumbnailUrl } = useThumbnailLoader({ drive });
 
     const previewMethod = node ? getContentPreviewMethod(node) : undefined;
+    const mimeType = node ? getNodeMimeType(node) : undefined;
+    const videoStreaming = useVideoStreaming({ nodeUid, mimeType });
+    const effectivePreviewMethod = getEffectivePreviewMethod(previewMethod, node, videoStreaming);
     const [isLargeThumbnailLoading, withIsLargeThumbnailLoading] = useLoading(false);
 
     const shouldIgnoreError = (nodeUid: string, error: unknown) => {
@@ -125,7 +127,7 @@ export function usePreviewState({
 
     const loadContents = useCallback(
         (abortSignal: AbortSignal) => {
-            if (!node || previewMethod !== ContentPreviewMethod.Buffer) {
+            if (!node || effectivePreviewMethod !== ContentPreviewMethod.Buffer) {
                 return;
             }
 
@@ -145,7 +147,7 @@ export function usePreviewState({
                     })
             );
         },
-        [drive, node, nodeUid, previewMethod, revisionUid, withIsContentLoading]
+        [drive, node, nodeUid, effectivePreviewMethod, revisionUid, withIsContentLoading]
     );
 
     // Metadata load is triggered by the node UID change.
@@ -173,9 +175,6 @@ export function usePreviewState({
     const directRole = node?.ok ? node.value.directRole : node?.error.directRole;
     const canShare = directRole === MemberRole.Admin;
 
-    const mimeType = node ? getNodeMimeType(node) : undefined;
-    const videoStreaming = useVideoStreaming({ nodeUid, mimeType });
-
     const navigation = getNavigation(nodeUid, previewableNodeUids, (nodeUid) => {
         setNodeUid(nodeUid);
         onNodeChange?.(nodeUid);
@@ -183,35 +182,39 @@ export function usePreviewState({
 
     const actions = usePreviewActions({ drive, nodeUid, node, nodeData: nodeData?.contents, role });
 
-    const result = {
+    const resolved = resolvePreviewOutput({
+        previewMethod,
+        node,
+        videoStreaming,
+        nodeData,
+        largeThumbnail,
+        smallThumbnailUrl,
+        isContentLoading,
+        isLargeThumbnailLoading,
+        errorMessage,
+        verifySignatures,
+    });
+
+    return {
         node: {
             nodeUid,
-            name: node ? getNodeName(node) : undefined,
-            mediaType: mimeType,
-            sharedStatus: getSharedStatus(node),
-            displaySize: node ? getNodeDisplaySize(node) : undefined,
-            contentSignatureIssueLabel: getContentSignatureIssueLabel(
-                verifySignatures,
-                node,
-                nodeData?.hasSignatureIssues
-            ),
+            name: resolved.name,
+            mediaType: resolved.mediaType,
+            sharedStatus: resolved.sharedStatus,
+            displaySize: resolved.displaySize,
+            contentSignatureIssueLabel: resolved.contentSignatureIssueLabel,
         },
         content: {
-            thumbnailUrl: largeThumbnail?.url || smallThumbnailUrl,
-            data: previewMethod === ContentPreviewMethod.Buffer ? nodeData?.contents : largeThumbnail?.data,
-            videoStreaming: previewMethod === ContentPreviewMethod.Streaming ? videoStreaming : undefined,
-            previewMethod,
+            thumbnailUrl: resolved.thumbnailUrl,
+            data: resolved.data,
+            videoStreaming: resolved.videoStreaming,
+            previewMethod: resolved.effectivePreviewMethod,
         },
         canShare,
         isLoading,
-        isContentLoading:
-            previewMethod === ContentPreviewMethod.Thumbnail
-                ? isContentLoading || isLargeThumbnailLoading
-                : isContentLoading,
+        isContentLoading: resolved.isContentLoading,
         errorMessage,
         navigation,
         actions,
     };
-
-    return result;
 }
