@@ -107,6 +107,7 @@ const ComposerComponentInner = ({
     const hasAttachments = provisionalAttachments.length > 0;
     const composerContainerRef = useRef<HTMLElement | null>(null);
     const [showDrawingModal, setShowDrawingModal] = useState(false);
+    const [pendingSketchDescription, setPendingSketchDescription] = useState<string | null>(null);
     const { isGhostChatMode } = useGhostChat();
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
@@ -158,15 +159,12 @@ const ComposerComponentInner = ({
     }, [autoOpenUpload]);
 
     const handleDrawingExport = useCallback(
-        async (imageData: string) => {
+        async (imageData: string, _mode: string, description: string) => {
             const file = base64ToFile(imageData, `sketch-${Date.now()}.png`);
             await handleFileProcessing(file);
-            createNotification({
-                text: c('collider_2025: Info').t`Sketch added as attachment`,
-                type: 'success',
-            });
+            setPendingSketchDescription(description.trim());
         },
-        [handleFileProcessing, createNotification]
+        [handleFileProcessing]
     );
 
     const isAutocompleteActiveRef = useRef(false);
@@ -230,6 +228,22 @@ const ComposerComponentInner = ({
     useEffect(() => {
         setIsEditorEmpty?.(isEditorEmpty ?? true);
     }, [isEditorEmpty, setIsEditorEmpty]);
+
+    // Auto-submit after sketch export: set description as editor content and send
+    useEffect(() => {
+        if (pendingSketchDescription === null || isProcessingAttachment || !editor) return;
+
+        if (pendingSketchDescription) {
+            editor.commands.setContent(pendingSketchDescription);
+        }
+
+        const timer = setTimeout(() => {
+            sendGenerateMessage(editor);
+            setPendingSketchDescription(null);
+        }, 100);
+
+        return () => clearTimeout(timer);
+    }, [pendingSketchDescription, isProcessingAttachment, editor, sendGenerateMessage]);
 
     // Populate editor with query once per unique value; auto-submit when onReady is provided
     useEditorQuery(initialQuery, editor, isProcessingAttachment, sendGenerateMessage);
