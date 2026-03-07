@@ -81,7 +81,10 @@ export const SketchCanvas = ({
                             placeholder={c('collider_2025:Placeholder').t`e.g. "Make the sky purple", "Remove the items circled in red"`}
                             rows={1}
                             onKeyDown={(e) => {
-                                if (e.key === 'Enter' && !e.shiftKey) e.preventDefault();
+                                if (e.key === 'Enter' && !e.shiftKey) {
+                                    e.preventDefault();
+                                    handleExport();
+                                }
                             }}
                             className="sketch-canvas__textarea color-norm"
                         />
