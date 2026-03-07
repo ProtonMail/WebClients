@@ -650,13 +650,16 @@ export function retrySendMessage({
             dispatch(pushMessageRequest({ id: lastUserMessage.id }));
         }
 
-        // Build conversation context for turn preparation (includes attachments for image enrichment)
+        // Build conversation context for turn preparation. Include RAG attachments (full data with
+        // markdown) so prepareTurns can expand them into proper file-content turns for the API.
         const c2: ConversationContext = {
             ...c,
             messageChain: updatedLinearChain,
+            allConversationAttachments: ragResult?.attachments?.length
+                ? [...c.allConversationAttachments, ...ragResult.attachments]
+                : c.allConversationAttachments,
         };
 
-        // Prepare turns with images (prepareTurns handles enrichment internally when c is provided)
         const turns = prepareTurns(
             updatedLinearChain,
             s.personalization ?? DEFAULT_PERSONALIZATION,
