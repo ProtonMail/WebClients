@@ -105,6 +105,7 @@ const ComposerComponentInner = ({
     const hasAttachments = provisionalAttachments.length > 0;
     const composerContainerRef = useRef<HTMLElement | null>(null);
     const [showDrawingModal, setShowDrawingModal] = useState(false);
+    const [pendingSketchDescription, setPendingSketchDescription] = useState<string | null>(null);
     const { isGhostChatMode } = useGhostChat();
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
@@ -166,6 +167,16 @@ const ComposerComponentInner = ({
     //     },
     //     [handleFileProcessing, createNotification]
     // );
+
+   //TODO: check this after rebase
+    const handleDrawingExport = useCallback(
+        async (imageData: string, _mode: string, description: string) => {
+            const file = base64ToFile(imageData, `sketch-${Date.now()}.png`);
+            await handleFileProcessing(file);
+            setPendingSketchDescription(description.trim());
+        },
+        [handleFileProcessing]
+    );
 
     const isAutocompleteActiveRef = useRef(false);
 
@@ -272,6 +283,23 @@ const ComposerComponentInner = ({
         },
         [handleFileProcessing, createNotification]
     );
+
+    //TODO: check this after rebase
+    // Auto-submit after sketch export: set description as editor content and send
+        useEffect(() => {
+            if (pendingSketchDescription === null || isProcessingAttachment || !editor) return;
+    
+            if (pendingSketchDescription) {
+                editor.commands.setContent(pendingSketchDescription);
+            }
+    
+            const timer = setTimeout(() => {
+                sendGenerateMessage(editor);
+                setPendingSketchDescription(null);
+            }, 100);
+    
+            return () => clearTimeout(timer);
+        }, [pendingSketchDescription, isProcessingAttachment, editor, sendGenerateMessage]);
 
     const showLegalDisclaimer = canShowLegalDisclaimer && !isEditorFocused && isEmpty;
 
