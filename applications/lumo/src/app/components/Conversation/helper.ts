@@ -368,12 +368,25 @@ export function sendMessage({
                 dispatch(pushMessageRequest({ id: lastUserMessage.id }));
             }
 
+            // Merge RAG attachments (full data with markdown) into allConversationAttachments so
+            // prepareTurns can expand them into proper file-content turns that the API reads.
+            // On the first message c.allConversationAttachments only contains provisional composer
+            // files; the RAG results are not yet loaded from Redux, so without this they are dropped.
+            const updatedC: ConversationContext = ragResult?.attachments?.length
+                ? {
+                      ...c,
+                      allConversationAttachments: [
+                          ...c.allConversationAttachments,
+                          ...ragResult.attachments,
+                      ],
+                  }
+                : c;
+
             const turns = prepareTurns(
                 updatedLinearChain,
                 s.personalization ?? DEFAULT_PERSONALIZATION,
                 projectInstructions,
-                ragResult?.context,
-                c
+                updatedC
             );
 
             await dispatch(
@@ -522,18 +535,20 @@ export function regenerateMessage({
                 }
             }
 
-            // Build conversation context (Δ₂ pattern)
+            // Build conversation context. Include RAG attachments (full data with markdown) so
+            // prepareTurns can expand them into proper file-content turns for the API.
             c = {
                 ...c,
                 messageChain: updatedMessagesWithContext,
+                allConversationAttachments: ragResult?.attachments?.length
+                    ? [...c.allConversationAttachments, ...ragResult.attachments]
+                    : c.allConversationAttachments,
             };
 
-            // Δ₁ + Δ₂: Use refactored API with RAG context
             const turns = prepareTurns(
                 updatedMessagesWithContext,
                 s.personalization ?? DEFAULT_PERSONALIZATION,
                 projectInstructions,
-                ragResult?.context,
                 c
             );
 
@@ -700,18 +715,20 @@ export function retrySendMessage({
             dispatch(pushMessageRequest({ id: lastUserMessage.id }));
         }
 
-        // Build conversation context for turn preparation (includes attachments for image enrichment)
+        // Build conversation context for turn preparation. Include RAG attachments (full data with
+        // markdown) so prepareTurns can expand them into proper file-content turns for the API.
         const c2: ConversationContext = {
             ...c,
             messageChain: updatedLinearChain,
+            allConversationAttachments: ragResult?.attachments?.length
+                ? [...c.allConversationAttachments, ...ragResult.attachments]
+                : c.allConversationAttachments,
         };
 
-        // Prepare turns with images (prepareTurns handles enrichment internally when c is provided)
         const turns = prepareTurns(
             updatedLinearChain,
             s.personalization ?? DEFAULT_PERSONALIZATION,
             p.projectInstructions,
-            ragResult?.context,
             c2
         );
 
