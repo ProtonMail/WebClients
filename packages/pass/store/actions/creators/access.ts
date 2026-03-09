@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import { toShareAccessKey } from '@proton/pass/lib/access/access.utils';
 import type { AccessKeys } from '@proton/pass/lib/access/types';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
+import { withShareDedupe } from '@proton/pass/store/actions/enhancers/dedupe';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { shareEditMemberRoleRequest, shareLeaveRequest, shareRemoveMemberRequest } from '@proton/pass/store/actions/requests';
 import type { AccessState } from '@proton/pass/store/reducers';
@@ -99,10 +100,13 @@ export const shareLeaveIntent = createAction('share::leave::intent', (payload: {
 export const shareLeaveSuccess = createAction(
     'share::leave::success',
     withRequestSuccess((shareId: string, targetType: ShareType) =>
-        withNotification({
-            type: 'info',
-            text: targetType === ShareType.Vault ? c('Info').t`Successfully left the vault` : c('Info').t`Successfully left the item`,
-        })({ payload: { shareId } })
+        pipe(
+            withShareDedupe,
+            withNotification({
+                type: 'info',
+                text: targetType === ShareType.Vault ? c('Info').t`Successfully left the vault` : c('Info').t`Successfully left the item`,
+            })
+        )({ payload: { shareId } })
     )
 );
 
