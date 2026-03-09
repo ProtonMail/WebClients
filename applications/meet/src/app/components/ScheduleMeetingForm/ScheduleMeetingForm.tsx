@@ -34,6 +34,7 @@ import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { getTimeZoneOptions, getTimezone } from '@proton/shared/lib/date/timezone';
 import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
 
+import { getNextOccurrence } from '../../utils/getNextOccurrence';
 import { formatTimeHHMM } from '../../utils/timeFormat';
 import { ScheduleMeetingRecapModal } from '../ScheduleMeetingRecapModal/ScheduleMeetingRecapModal';
 import { TimeInputBlock } from '../TimeInputBlock';
@@ -123,7 +124,8 @@ export const ScheduleMeetingForm = ({
             }
 
             if (meeting.StartTime && meeting.Timezone) {
-                const startDateTime = utcToZonedTime(new Date(Number(meeting.StartTime) * 1000), meeting.Timezone);
+                const { startTime } = getNextOccurrence(meeting);
+                const startDateTime = utcToZonedTime(new Date(Number(startTime) * 1000), meeting.Timezone);
                 updates.startDate = startDateTime;
                 const startHours = String(startDateTime.getHours()).padStart(2, '0');
                 const startMinutes = String(startDateTime.getMinutes()).padStart(2, '0');
@@ -131,7 +133,8 @@ export const ScheduleMeetingForm = ({
             }
 
             if (meeting.EndTime && meeting.Timezone) {
-                const endDateTime = utcToZonedTime(new Date(Number(meeting.EndTime) * 1000), meeting.Timezone);
+                const { endTime } = getNextOccurrence(meeting);
+                const endDateTime = utcToZonedTime(new Date(Number(endTime) * 1000), meeting.Timezone);
                 updates.endDate = endDateTime;
                 const endHours = String(endDateTime.getHours()).padStart(2, '0');
                 const endMinutes = String(endDateTime.getMinutes()).padStart(2, '0');
