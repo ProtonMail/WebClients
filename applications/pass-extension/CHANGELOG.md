@@ -1,3 +1,11 @@
+### Version 1.35.0
+
+- Support for b2b groups (behind feature flag)
+- Fix an issue on invites when users have many addresses
+- Prevent potential passkeys abuses
+- Fix passkeys on Telegram
+- Improve autofill on numeric inputs
+
 ### Version 1.34.2
 
 - Allow Pass Plus Trial to access all paid features
