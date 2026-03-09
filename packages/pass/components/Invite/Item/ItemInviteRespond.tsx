@@ -1,4 +1,4 @@
-import { type FC, useEffect } from 'react';
+import { type FC, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -34,17 +34,20 @@ type Props = { token: string };
 
 export const ItemInviteRespond: FC<Props> = ({ token }) => {
     const { onInviteResponse } = useInviteActions();
-    const invite = useSelector(selectInviteByToken(token));
+    /** Select once at mount: accepting removes the invite from Redux before
+     * `onSuccess` fires — `useState` pins the value, `() => true` suppresses
+     * store-triggered re-renders so the response flow can complete. */
+    const [invite] = useState(useSelector(selectInviteByToken(token), () => true));
+    const itemInvite = invite?.targetType === ShareType.Item ? invite : undefined;
     const { name, isGroup } = useMaybeGroup(invite?.invitedEmail);
-    const invalid = !invite || invite.targetType !== ShareType.Item;
 
     useEffect(() => {
-        if (invalid) onInviteResponse({ ok: false });
-    }, [invalid]);
+        if (!itemInvite) onInviteResponse({ ok: false });
+    }, []);
 
-    if (invalid) return null;
+    if (!itemInvite) return null;
 
-    const { content, acceptText } = getTexts(invite, name, isGroup);
+    const { content, acceptText } = getTexts(itemInvite, name, isGroup);
 
     return (
         <PassModal
@@ -62,7 +65,7 @@ export const ItemInviteRespond: FC<Props> = ({ token }) => {
             <ModalTwoContent className="text-center">{content}</ModalTwoContent>
 
             <ModalTwoFooter className="flex flex-column items-stretch text-center">
-                <InviteStepResponse invite={invite} acceptText={acceptText} />
+                <InviteStepResponse invite={itemInvite} acceptText={acceptText} />
             </ModalTwoFooter>
         </PassModal>
     );
