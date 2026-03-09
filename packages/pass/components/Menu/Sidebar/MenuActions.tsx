@@ -13,6 +13,7 @@ import { useOrganization } from '@proton/pass/components/Organization/Organizati
 import { AccountPath } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
+import { OrganizationAliasCreateMode } from '@proton/pass/types';
 
 type MenuAction = {
     icon: IconName;
@@ -30,7 +31,9 @@ export const MenuActions: FC<Props> = ({ onLogout }) => {
     const navigate = useNavigate();
     const { createNotification, clearNotifications } = useNotifications();
     const enhance = useNotificationEnhancer();
-    const orgEnabled = useOrganization()?.settings.enabled ?? false;
+    const org = useOrganization();
+    const orgEnabled = org?.settings.enabled ?? false;
+    const orgAliasCreationDisabled = org?.settings.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
 
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
@@ -44,7 +47,9 @@ export const MenuActions: FC<Props> = ({ onLogout }) => {
     const settings = useMemo<MenuAction[]>(
         () => [
             { key: 'general', label: c('Label').t`General`, icon: 'cog-wheel' },
-            { key: 'aliases', label: c('Label').t`Aliases`, icon: 'alias' },
+            ...(!orgAliasCreationDisabled
+                ? [{ key: 'aliases', label: c('Label').t`Aliases`, icon: 'alias' as const }]
+                : []),
             { key: 'security', label: c('Label').t`Security`, icon: 'locks' },
             { key: 'import', label: c('Label').t`Import`, icon: 'arrow-down-line' },
             { key: 'export', label: c('Label').t`Export`, icon: 'arrow-up-line' },
@@ -62,7 +67,7 @@ export const MenuActions: FC<Props> = ({ onLogout }) => {
             { key: 'support', label: c('Label').t`Support`, icon: 'speech-bubble' },
             { key: 'logout', label: c('Action').t`Sign out`, icon: 'arrow-out-from-rectangle', onClick: handleLogout },
         ],
-        [orgEnabled]
+        [orgEnabled, orgAliasCreationDisabled]
     );
 
     return (

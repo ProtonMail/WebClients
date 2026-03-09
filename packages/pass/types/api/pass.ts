@@ -305,6 +305,8 @@ export type OrganizationUpdateInput = {
     ExportMode?: OrganizationExportMode | null;
     /* Who can create vaults in the organization. */
     VaultCreateMode?: OrganizationVaultCreateMode | null;
+    /* Whether alias creation is enabled for organization members. */
+    AliasCreateMode?: OrganizationAliasCreateMode | null;
 };
 export type OrganizationUpdatePasswordPolicyInput = {
     /* Whether subusers are allowed to generate random passwords */
@@ -1290,6 +1292,10 @@ export enum OrganizationVaultCreateMode {
     ONLYORGADMINS = 1,
     ONLYORGADMINSANDPERSONALVAULT = 2,
 }
+export enum OrganizationAliasCreateMode {
+    ALLOWEDFORALLMEMBERS = 0,
+    NOBODY = 1,
+}
 export type AliasSuffixResponse = {
     /* Alias ending including the domain */
     Suffix: string;
@@ -1497,6 +1503,7 @@ export type OrganizationSettingsGetResponse = {
     ExportMode: OrganizationExportMode;
     PasswordPolicy: OrganizationUpdatePasswordPolicyInput;
     VaultCreateMode: OrganizationVaultCreateMode;
+    AliasCreateMode: OrganizationAliasCreateMode;
 };
 export type MemberMonitorReport = {
     /* Primary email for this member */

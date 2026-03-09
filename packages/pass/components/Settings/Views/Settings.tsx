@@ -12,6 +12,7 @@ import { useOrganization } from '@proton/pass/components/Organization/Organizati
 import { Import } from '@proton/pass/components/Settings/Import';
 import { AccountPath } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
+import { OrganizationAliasCreateMode } from '@proton/pass/types';
 import type { Unpack } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -24,9 +25,13 @@ import './Settings.scss';
 
 type SettingTab = Unpack<Exclude<ComponentProps<typeof Tabs>['tabs'], undefined>> & { hash: string };
 
-const getSettingsTabs = (exportTab: ReactNode, orgEnabled: boolean = false): SettingTab[] => [
+const getSettingsTabs = (
+    exportTab: ReactNode,
+    orgEnabled: boolean = false,
+    aliasCreationDisabled: boolean = false
+): SettingTab[] => [
     { hash: 'general', title: c('Label').t`General`, content: <General /> },
-    { hash: 'aliases', title: c('Label').t`Aliases`, content: <Aliases /> },
+    ...(!aliasCreationDisabled ? [{ hash: 'aliases', title: c('Label').t`Aliases`, content: <Aliases /> }] : []),
     { hash: 'security', title: c('Label').t`Security`, content: <Security /> },
     { hash: 'import', title: c('Label').t`Import`, content: <Import /> },
     { hash: 'export', title: c('Label').t`Export`, content: exportTab },
@@ -60,8 +65,12 @@ export const SettingsTabs: FC<Props> = ({ exportTab, ...props }) => {
     const pathname = props.location.hash?.substring(1, props.location.hash.length);
 
     const organization = useOrganization();
+    const orgAliasCreationDisabled = organization?.settings.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
 
-    const tabs = useMemo(() => getSettingsTabs(exportTab, organization?.settings.enabled), [organization]);
+    const tabs = useMemo(
+        () => getSettingsTabs(exportTab, organization?.settings.enabled, orgAliasCreationDisabled),
+        [organization]
+    );
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(tabs, pathname));
 
     const handleOnChange = (nextTab: number) => {
