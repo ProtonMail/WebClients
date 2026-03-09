@@ -51,7 +51,7 @@ const MessageEditor = ({ messageContent, handleEditMessage, handleCancel }: Mess
         <div className="flex flex-column w-full gap-2">
             <EditorContent
                 editor={editor}
-                className="input p-2 max-h-custom overflow-y-auto"
+                className="input p-2 max-h-custom overflow-y-auto border border-weak rounded-md"
                 style={{ '--max-h-custom': '210px' }}
             />
             <div className="flex flex-column flex-nowrap gap-2">
