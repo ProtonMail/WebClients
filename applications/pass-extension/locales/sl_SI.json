@@ -1897,6 +1897,42 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Vaše informacije so bile najdene ${ displayedDate }"
+      ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } želi deliti element s skupino, ki ji administrirate."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } želi deliti predmet s skupino ${ name }."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } član)",
+        "(${ memberCount } člana)",
+        "(${ memberCount } člani)",
+        "(${ memberCount } članov)"
+      ],
+      "An item previously shared with you was removed.": [
+        "Predmet, ki je bil prej v skupni rabi z vami, je bil odstranjen."
+      ],
+      "invites the group ${ name } to access items in": [
+        "povabi skupino ${ name } k dostopu do predmetov v"
+      ],
+      "The group is invited to a vault.": [
+        "Skupina je povabljena v trezor."
+      ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "Trezor \"${ share.content.name }\" je bil odstranjen."
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Morda boste morali odobriti dovoljenje za dostopnost za ${ PASS_APP_NAME }."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Nimate več dostopa do nekaterih trezorjev ali predmetov, ker je bil dostop vaši skupini ${ groupName } odstranjen."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Zdaj imate dostop do \"Predmeta ${ itemName }\", ker je vaši skupini ${ groupName } dodeljen dostop."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Zdaj imate dostop do \"Trezorja ${ vaultName }\", ker je vaši skupini ${ groupName } dodeljen dostop."
       ]
     },
     "Label": {
@@ -3474,6 +3510,9 @@
       ],
       "Your welcome gift": [
         "Vaš darilo za dobrodošlico"
+      ],
+      "Vault shared with a group you administer": [
+        "želi deliti element s skupino, ki ji administrirate"
       ]
     },
     "Today icon tooltip in mini calendar": {

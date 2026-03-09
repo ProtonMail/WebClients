@@ -2804,6 +2804,18 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaša organizácia vyžaduje, aby ste zabezpečili svoj prístup k ${ PASS_APP_NAME }"
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } chce zdieľať položku v skupine ${ name }."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } člen)",
+        "(${ memberCount } členovia)",
+        "(${ memberCount } členov)",
+        "(${ memberCount } členov)"
+      ],
+      "invites the group ${ name } to access items in": [
+        "pozýva skupinu ${ name } na prístup k položkám v"
       ]
     },
     "Keyboard key": {

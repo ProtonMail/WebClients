@@ -2736,6 +2736,16 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "Ο ${ inviterEmail } θέλει να μοιραστεί ένα στοιχείο με την ομάδα ${ name }."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } μέλος)",
+        "(${ memberCount } μέλη)"
+      ],
+      "invites the group ${ name } to access items in": [
+        "προσκαλεί την ομάδα ${ name } να έχει πρόσβαση σε στοιχεία στη"
       ]
     },
     "Keyboard key": {

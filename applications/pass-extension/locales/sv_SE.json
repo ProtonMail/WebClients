@@ -2712,6 +2712,16 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } vill dela ett objekt med gruppen ${ name }."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } medlem)",
+        "(${ memberCount } medlemmar)"
+      ],
+      "invites the group ${ name } to access items in": [
+        "bjuder in gruppen ${ name } att komma åt objekt i"
       ]
     },
     "Keyboard key": {

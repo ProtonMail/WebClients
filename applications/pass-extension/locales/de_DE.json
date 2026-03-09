@@ -2736,6 +2736,16 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Deine Organisation verlangt, dass du deinen Zugang zu ${ PASS_APP_NAME } absicherst."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } möchte einen Beitrag mit der Gruppe ${ name } teilen."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } Mitglied)",
+        "(${ memberCount } Mitglieder)"
+      ],
+      "invites the group ${ name } to access items in": [
+        "lädt die Gruppe ${ name } ein, auf Elemente zuzugreifen in"
       ]
     },
     "Keyboard key": {

@@ -2770,6 +2770,17 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizația vă solicită să vă securizați accesul la ${ PASS_APP_NAME }"
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } dorește să partajeze un articol cu grupul ${ name }."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membru)",
+        "(${ memberCount } membri)",
+        "(${ memberCount } de membri)"
+      ],
+      "invites the group ${ name } to access items in": [
+        "invită grupul ${ name } să acceseze articolele din"
       ]
     },
     "Keyboard key": {
