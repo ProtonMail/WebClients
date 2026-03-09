@@ -3,6 +3,7 @@ import { all, call, put, select } from 'redux-saga/effects';
 import { isShareRemovedError } from '@proton/pass/lib/api/errors';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { getGroupInvites, getUserInvites } from '@proton/pass/lib/invites/invite.requests';
+import { getOrganizationForPlan } from '@proton/pass/lib/organization/organization.requests';
 import { getShareEvents, getShareLatestEventId, getShares } from '@proton/pass/lib/shares/share.requests';
 import { setSyncStrategy } from '@proton/pass/lib/sync/global';
 import { SyncStrategy } from '@proton/pass/lib/sync/types';
@@ -21,7 +22,9 @@ import { syncV1 } from '@proton/pass/lib/sync/v1/sync';
 import { getUserEventLatestID } from '@proton/pass/lib/sync/v2/user-events.requests';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { notification, setUserAccess, syncMigration } from '@proton/pass/store/actions';
+import { setOrganization } from '@proton/pass/store/actions/creators/organization';
 import type { HydratedAccessState } from '@proton/pass/store/reducers';
+import type { OrganizationState } from '@proton/pass/store/reducers/organization';
 import type { SharesState } from '@proton/pass/store/reducers/shares';
 import { selectAllShares, selectShareState } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
@@ -89,7 +92,8 @@ export function* notifyInactiveShares() {
  *    before draining so that V2 polling will cover any events that occur
  *    during the drain window. The drain processes V1 events up to this
  *    point, and V2 continues from here — no gap, no overlap.
- * 2. Revalidate user-access (may have changed while V1 was active).
+ * 2. Revalidate user-access and organization state (may have changed while
+ *    V1 was active).
  * 3. Drain all V1 channels imperatively:
  *    a. Per-share events (parallel across all shares, recursive until no
  *       `EventsPending`)
@@ -103,11 +107,13 @@ export function* migrateV2(options: RootSagaOptions) {
     /** 1. Anchor V2 event cursor at current server state */
     const userEventId: string = yield call(getUserEventLatestID);
 
-    /** 2. Revalidate user-access */
+    /** 2a. Revalidate user-access state */
     const userAccess: HydratedAccessState = yield call(getUserAccess);
     yield put(setUserAccess(userAccess));
+    /** 2b. Revalidate organization state (plan may have changed while V1 was active) */
+    const organization: MaybeNull<OrganizationState> = yield call(getOrganizationForPlan, userAccess.plan.Type);
+    yield put(setOrganization(organization));
 
-    /** 3. Drain all V1 polling channels */
     /** 3a. Drain per-share events in parallel */
     const shares = (yield select(selectAllShares)) as Share[];
     yield all(shares.map((share) => call(drainShareEvents, share, options)));
