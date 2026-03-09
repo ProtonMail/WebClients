@@ -119,10 +119,10 @@ interface FileInfoProps {
 
 const FileInfo = ({ filename, prettyType, processing, autoRetrieved }: FileInfoProps) => (
     <div className="relative flex-1 flex flex-column items-start gap-0.5 min-w-0">
-        <p className="m-0 text-ellipsis w-full font-medium" title={filename}>
+        <p className="m-0 text-ellipsis w-full font-medium file-title" title={filename}>
             {filename}
         </p>
-        <p className="m-0 text-xs color-weak w-full text-ellipsis" title={prettyType}>
+        <p className="m-0 text-xs color-weak w-full text-ellipsis file-subtitle" title={prettyType}>
             {processing ? c('collider_2025:Info').t`Processing...` : prettyType}
         </p>
         {autoRetrieved && (
