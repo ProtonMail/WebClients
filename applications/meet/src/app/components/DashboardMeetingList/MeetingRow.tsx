@@ -202,7 +202,7 @@ export const MeetingRow = ({
                                 <div
                                     className={clsx(
                                         'text-xs text-semibold text-uppercase',
-                                        !isRoom && `profile-color-${roomVariant}`
+                                        !isRoom && `profile-color-room-${roomVariant}`
                                     )}
                                 >
                                     {month}
