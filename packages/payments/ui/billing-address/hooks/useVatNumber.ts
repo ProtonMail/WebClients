@@ -10,11 +10,14 @@ import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import type { BillingAddressExtraProperties, FullBillingAddressFlat } from '../../core/billing-address/billing-address';
-import type { ADDON_NAMES, PLANS } from '../../core/constants';
-import type { PaymentsApi } from '../../core/interface';
-import { getIsB2BAudienceFromPlan } from '../../core/plan/helpers';
-import { hasWrongBillingAddressError } from '../../core/subscription/subscription-estimation';
+import type {
+    BillingAddressExtraProperties,
+    FullBillingAddressFlat,
+} from '../../../core/billing-address/billing-address';
+import type { ADDON_NAMES, PLANS } from '../../../core/constants';
+import { hasWrongBillingAddressError } from '../../../core/errors';
+import type { PaymentsApi } from '../../../core/interface';
+import { getIsB2BAudienceFromPlan } from '../../../core/plan/helpers';
 import type { TaxCountryHook } from './useTaxCountry';
 import { getVatFormErrors } from './useVatFormValidation';
 

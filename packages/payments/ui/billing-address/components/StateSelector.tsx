@@ -8,7 +8,7 @@ import SearchableSelect, {
 } from '@proton/components/components/selectTwo/SearchableSelect';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 
-import { type CountryWithStates, getStateList, isCountryWithStates } from '../../core/countries';
+import { type CountryWithStates, getStateList, isCountryWithStates } from '../../../core/countries';
 
 type StateSelectorProps = {
     onStateChange: (stateCode: string) => void;

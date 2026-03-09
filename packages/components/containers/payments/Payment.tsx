@@ -42,7 +42,7 @@ import {
     type TaxCountryHook,
     type VatNumberHook,
 } from '@proton/payments/ui';
-import { TaxFields } from '@proton/payments/ui/components/TaxFields';
+import { TaxFields } from '@proton/payments/ui/billing-address/components/TaxFields';
 import type { User } from '@proton/shared/lib/interfaces';
 import { isBilledUser } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';

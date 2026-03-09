@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react';
 
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 
-import { CYCLE, PLANS } from '../../core/constants';
-import { SubscriptionMode, TaxInclusive } from '../../core/subscription/constants';
-import type { SubscriptionEstimation } from '../../core/subscription/interface';
+import { CYCLE, PLANS } from '../../../core/constants';
+import { SubscriptionMode, TaxInclusive } from '../../../core/subscription/constants';
+import type { SubscriptionEstimation } from '../../../core/subscription/interface';
 import { InclusiveVatText } from './VatText';
 
 describe('InclusiveVatText', () => {

@@ -7,11 +7,11 @@ import Label from '@proton/components/components/label/Label';
 import clsx from '@proton/utils/clsx';
 
 import { isCountryWithRequiredPostalCode, isCountryWithStates } from '../../../core/countries';
-import type { TaxCountryHook } from '../../hooks/useTaxCountry';
-import { CountriesDropdown, type CountriesHookProps } from '../CountriesDropdown';
-import { InputWithSelectorPrefix, WarningIcon } from '../InputWithSelectorPrefix';
-import { StateSelector } from '../StateSelector';
+import { InputWithSelectorPrefix, WarningIcon } from '../../components/InputWithSelectorPrefix';
+import type { TaxCountryHook } from '../hooks/useTaxCountry';
 import { CollapsedTaxCountrySelector } from './CollapsedTaxCountrySelector';
+import { CountriesDropdown, type CountriesHookProps } from './CountriesDropdown';
+import { StateSelector } from './StateSelector';
 
 import './InlineTaxCountrySelector.scss';
 

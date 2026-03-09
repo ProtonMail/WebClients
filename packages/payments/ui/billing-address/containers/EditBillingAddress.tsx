@@ -14,23 +14,20 @@ import type { ModalTwoPromiseHandlers } from '@proton/components/components/moda
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { BillingAddressValidationResult } from '@proton/components/payments/react-extensions/errors';
-import {
-    WrongBillingAddressError,
-    backendBillingAddressFieldError,
-} from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import type { FullBillingAddress } from '../../../core/billing-address/billing-address';
+import type { BillingAddressValidationResult } from '../../../core/errors';
+import { WrongBillingAddressError, backendBillingAddressFieldError } from '../../../core/errors';
 import type { FreeSubscription, PaymentsApi } from '../../../core/interface';
 import type { Subscription } from '../../../core/subscription/interface';
 import { isFreeSubscription } from '../../../core/type-guards';
-import { CountryStateSelector } from '../../components/CountryStateSelector';
-import { type CountriesWithCustomVatName, getVatNumberName } from '../../components/VatNumberInput';
-import { getVatFormErrors } from '../../hooks/useVatFormValidation';
+import { CountryStateSelector } from '../components/CountryStateSelector';
+import { type CountriesWithCustomVatName, getVatNumberName } from '../components/VatNumberInput';
+import { getVatFormErrors } from '../hooks/useVatFormValidation';
 import { zipCodeValidator } from './helpers';
 
 export interface EditBillingAdressModalInputs {

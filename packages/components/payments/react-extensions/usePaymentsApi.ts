@@ -35,13 +35,13 @@ import {
 import { getLifetimeProductType } from '@proton/payments/core/api/createPaymentSubscription';
 import { getBillingAddressPayload } from '@proton/payments/core/billing-address/billing-address';
 import { getInformedOptimisticSubscriptionEstimation, getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import { TaxExemptionNotSupportedError, WrongBillingAddressError } from '@proton/payments/core/errors';
 import type { CheckSubscriptionRequestOptions } from '@proton/payments/core/interface';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { TaxExemptionNotSupportedError, WrongBillingAddressError } from './errors';
 import { enrichCoupon } from './helpers';
 
 const checkSubscriptionQuery = (data: CheckSubscriptionData, version: PaymentsVersion) => {

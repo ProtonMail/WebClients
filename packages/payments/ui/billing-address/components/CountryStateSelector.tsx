@@ -10,8 +10,8 @@ import {
     type BillingAddress,
     billingCountryValidator,
     billingStateValidator,
-} from '../../core/billing-address/billing-address';
-import { isCountryWithStates } from '../../core/countries';
+} from '../../../core/billing-address/billing-address';
+import { isCountryWithStates } from '../../../core/countries';
 import { CountriesDropdown } from './CountriesDropdown';
 import { StateSelector } from './StateSelector';
 
