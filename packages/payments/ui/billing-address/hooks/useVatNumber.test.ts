@@ -2,8 +2,8 @@ import { act } from 'react';
 
 import { renderHook } from '@testing-library/react';
 
-import { PLANS } from '../../core/constants';
-import type { PaymentsApi } from '../../core/interface';
+import { PLANS } from '../../../core/constants';
+import type { PaymentsApi } from '../../../core/interface';
 import type { TaxCountryHook } from './useTaxCountry';
 import { useVatNumber } from './useVatNumber';
 
@@ -41,7 +41,7 @@ jest.mock('./useVatFormValidation', () => ({
     }),
 }));
 
-jest.mock('../../core/plan/helpers', () => ({
+jest.mock('../../../core/plan/helpers', () => ({
     getIsB2BAudienceFromPlan: (plan: string | undefined) => {
         const b2bPlans = new Set([
             PLANS.MAIL_PRO,

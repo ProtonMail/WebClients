@@ -13,17 +13,14 @@ import type { ModalTwoPromiseHandlers } from '@proton/components/components/moda
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { BillingAddressValidationResult } from '@proton/components/payments/react-extensions/errors';
-import {
-    WrongBillingAddressError,
-    backendBillingAddressFieldError,
-} from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { type FullBillingAddress, type Invoice, isCountryWithRequiredPostalCode } from '@proton/payments';
+import type { BillingAddressValidationResult } from '@proton/payments/core/errors';
+import { WrongBillingAddressError, backendBillingAddressFieldError } from '@proton/payments/core/errors';
 import { getVatNumberName } from '@proton/payments/ui';
-import { zipCodeValidator } from '@proton/payments/ui/containers/EditBillingAddress/helpers';
-import { getVatFormErrors } from '@proton/payments/ui/hooks/useVatFormValidation';
+import { zipCodeValidator } from '@proton/payments/ui/billing-address/containers/helpers';
+import { getVatFormErrors } from '@proton/payments/ui/billing-address/hooks/useVatFormValidation';
 import { useFlag } from '@proton/unleash/useFlag';
 
 export type EditInvoiceModalInputs = {

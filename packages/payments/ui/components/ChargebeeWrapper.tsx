@@ -13,9 +13,9 @@ import clsx from '@proton/utils/clsx';
 
 import type { PAYMENT_METHOD_TYPES } from '../../core/constants';
 import type { ChargeableV5PaymentToken, NonChargeableV5PaymentToken } from '../../core/interface';
+import { CountriesDropdown } from '../billing-address/components/CountriesDropdown';
 import type { CbIframeHandles } from './ChargebeeIframe';
 import { ChargebeeIframe } from './ChargebeeIframe';
-import { CountriesDropdown } from './CountriesDropdown';
 import { InputWithSelectorPrefix } from './InputWithSelectorPrefix';
 
 import './ChargebeeWrapper.scss';

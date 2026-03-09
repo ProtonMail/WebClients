@@ -1,10 +1,7 @@
-import type {
-    TaxExemptionNotSupportedError,
-    WrongBillingAddressError,
-} from '@proton/components/payments/react-extensions/errors';
 import type { Nullable } from '@proton/shared/lib/interfaces';
 
 import type { CheckSubscriptionData } from '../api/api';
+import type { TaxExemptionNotSupportedError, WrongBillingAddressError } from '../errors';
 import type { Currency, Cycle, PlanIDs } from '../interface';
 import type { BasePlansMap, Plan, SubscriptionPlan } from '../plan/interface';
 import type { Renew, SubscriptionMode, SubscriptionPlatform, TaxInclusive, TrialType } from './constants';
