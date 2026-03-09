@@ -64,6 +64,21 @@ $meet-background-colors: (
 	}
 }
 
+$meet-profile-room-colors: (
+	'purple': var(--ui-purple-interaction-minor-1),
+	'green': var(--ui-green-interaction-norm),
+	'norm': var(--interaction-norm-minor-1),
+	'blue': var(--ui-blue-interaction-minor-1),
+	'red': var(--ui-red-interaction-norm),
+	'orange': var(--ui-orange-interaction-minor-1),
+);
+
+@each $name, $value in $meet-profile-room-colors {
+	.profile-color-room-#{$name} {
+		color: #{$value};
+	}
+}
+
 $meet-background-colors-list:
 	var(--ui-purple-interaction-minor-3), var(--ui-green-interaction-minor-3), var(--interaction-norm-minor-3),
 	var(--ui-blue-interaction-minor-3), var(--ui-red-interaction-norm-minor-2), var(--ui-orange-interaction-minor-3);
