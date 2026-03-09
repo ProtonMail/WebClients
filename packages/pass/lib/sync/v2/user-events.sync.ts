@@ -5,16 +5,16 @@ import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { getAllBreaches } from '@proton/pass/lib/monitor/monitor.request';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
+import { createDefaultVault } from '@proton/pass/lib/sync/common/vaults';
 import { notifyInactiveShares } from '@proton/pass/lib/sync/migrate';
 import type { EventProcessor } from '@proton/pass/lib/sync/types';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { syncResult } from '@proton/pass/store/actions';
-import type { HydratedAccessState, ItemsByShareId, SharesState } from '@proton/pass/store/reducers';
+import type { HydratedAccessState, ItemsByShareId, SharesState, VaultShareItem } from '@proton/pass/store/reducers';
 import { selectLoadGroupInvites } from '@proton/pass/store/selectors/invites';
 import type { State } from '@proton/pass/store/types';
-import type { BreachesGetResponse, Invite, Share, ShareGetResponse } from '@proton/pass/types';
+import type { BreachesGetResponse, Invite, Maybe, Share, ShareGetResponse } from '@proton/pass/types';
 import { partition } from '@proton/pass/utils/array/partition';
-import { prop } from '@proton/pass/utils/fp/lens';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { merge } from '@proton/pass/utils/object/merge';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -31,14 +31,7 @@ export type SyncResultV2 = {
     v: 2;
 };
 
-type RemoteShare = { shareId: string; share?: Share };
-
-const intoRemoteShare = async (encryptedShare: ShareGetResponse): Promise<RemoteShare> => ({
-    shareId: encryptedShare.ShareID,
-    share: await parseShareResponse(encryptedShare),
-});
-
-const intoItemsByShareId = async ({ shareId }: RemoteShare): Promise<ItemsByShareId> => ({
+const intoItemsByShareId = async ({ shareId }: Share): Promise<ItemsByShareId> => ({
     [shareId]: toMap(await requestItemsForShareId(shareId), 'itemId'),
 });
 
@@ -55,12 +48,17 @@ export function* syncV2(state: State): Generator<unknown, SyncResultV2> {
     /** 3a. Get all shares */
     const encryptedShares: ShareGetResponse[] = yield call(requestShares);
     /** 3b. Open all shares (may fail on inactive keys) */
-    const shares: RemoteShare[] = yield all(encryptedShares.map((s) => call(intoRemoteShare, s)));
+    const maybeShares: Maybe<Share>[] = yield all(encryptedShares.map((s) => call(parseShareResponse, s)));
     /** 3c. Split active from inactive shares  */
-    const [activeShares, inactiveShares] = partition(shares, (s): s is Required<RemoteShare> => Boolean(s.share));
+    const [shares, inactiveShares] = partition(maybeShares, (s): s is Share => Boolean(s));
+    /** 3d. Notify if any shares could not be opened */
     if (inactiveShares.length > 0) yield call(notifyInactiveShares);
+    /** 3e. Create default vault if necessary */
+    const defaultVault: Maybe<VaultShareItem> = yield call(createDefaultVault, shares);
+    if (defaultVault) shares.push(defaultVault);
+
     /** 4. Get all items for all active shares */
-    const items: ItemsByShareId[] = yield all(activeShares.map((s) => call(intoItemsByShareId, s)));
+    const items: ItemsByShareId[] = yield all(shares.map((s) => call(intoItemsByShareId, s)));
     /** 5. Get all invites — filter out stale accepted invites before parsing */
     const loadGroupInvites: boolean = selectLoadGroupInvites(state);
     const invites: Invite[] = yield call(allInvites, loadGroupInvites);
@@ -72,7 +70,7 @@ export function* syncV2(state: State): Generator<unknown, SyncResultV2> {
         breaches,
         invites,
         items: items.reduce(diadic(merge), {}),
-        shares: toMap(activeShares.map(prop('share')), 'shareId'),
+        shares: toMap(shares, 'shareId'),
         userEventId,
         v: 2,
     };
