@@ -2735,6 +2735,19 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail }, ${ name } grubuyla bir öge paylaşmak istiyor."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } üye)",
+        "(${ memberCount } üye)"
+      ],
+      "invites the group ${ name } to access items in": [
+        "${ name } grubunu şuradaki ögelere erişmeye davet ediyor"
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME } için erişilebilirlik izni vermeniz gerekebilir."
       ]
     },
     "Keyboard key": {

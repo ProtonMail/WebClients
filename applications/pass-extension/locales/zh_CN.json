@@ -1825,7 +1825,7 @@
         "输入您要发送电子邮件的地址。"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "输入第 ${ digit } 位验证码。"
+        "输入验证码，第 ${ digit } 位。"
       ],
       "Enter your extra password": [
         "输入您的额外密码"
@@ -2702,6 +2702,18 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } 希望与群组 ${ name } 共享一个项目。"
+      ],
+      "(${ memberCount } member)": [
+        "（${ memberCount } 位成员）"
+      ],
+      "invites the group ${ name } to access items in": [
+        "邀请群组 ${ name } 访问项目"
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "您可能需要授予 ${ PASS_APP_NAME } 辅助功能权限。"
       ]
     },
     "Keyboard key": {

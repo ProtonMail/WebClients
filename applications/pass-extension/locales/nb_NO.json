@@ -2732,6 +2732,19 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } ønsker å dele et element med gruppen ${ name }."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } medlem)",
+        "(${ memberCount } medlemmer)"
+      ],
+      "invites the group ${ name } to access items in": [
+        "inviterer gruppen ${ name } til å få tilgang til elementer i"
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Du må kanskje gi tilgjengelighetstillatelse til ${ PASS_APP_NAME }."
       ]
     },
     "Keyboard key": {

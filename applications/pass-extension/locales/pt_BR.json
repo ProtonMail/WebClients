@@ -2723,6 +2723,25 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Sua organização exige que você proteja seu acesso ao ${ PASS_APP_NAME }"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membro)",
+        "(${ memberCount } membros)"
+      ],
+      "An item previously shared with you was removed.": [
+        "Um item compartilhado anteriormente com você foi removido."
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Pode ser necessário conceder permissão de acessibilidade a ${ PASS_APP_NAME }."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Você não tem mais acesso a alguns cofres ou itens porque o acesso do seu grupo ${ groupName } foi removido."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Você agora tem acesso ao \"Item ${ itemName }\" porque o seu grupo ${ groupName } recebeu acesso."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Você agora tem acesso ao \"Cofre ${ vaultName }\" porque seu grupo ${ groupName } recebeu acesso."
       ]
     },
     "Keyboard key": {
