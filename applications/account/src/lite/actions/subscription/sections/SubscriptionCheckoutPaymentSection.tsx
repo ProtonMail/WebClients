@@ -21,9 +21,9 @@ import {
     isSubscriptionCheckForbiddenWithReason,
 } from '@proton/payments';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
+import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
 import { usePayments } from '@proton/payments/ui/context/PaymentContext';
-import { useBillingAddress } from '@proton/payments/ui/hooks/useBillingAddress';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Audience } from '@proton/shared/lib/interfaces';
