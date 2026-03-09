@@ -1,5 +1,6 @@
 import type { Participant, TrackPublication } from 'livekit-client';
 import {
+    ConnectionQuality,
     ConnectionState,
     type RemoteParticipant,
     type RemoteTrackPublication,
@@ -341,6 +342,33 @@ export class AudioTrackSubscriptionManager {
         if (this.isRoomReconnecting) {
             // eslint-disable-next-line no-console
             console.log('Skipping recovery attempt, room is reconnecting');
+            return;
+        }
+
+        // Skip recovery if participant connection quality is poor or lost —
+        // audio issues are caused by network degradation, not a broken transceiver,
+        // so resubscribing won't help.
+        if (
+            participant.connectionQuality === ConnectionQuality.Poor ||
+            participant.connectionQuality === ConnectionQuality.Lost
+        ) {
+            // eslint-disable-next-line no-console
+            console.log(
+                `Skipping recovery attempt, participant connection quality is ${participant.connectionQuality} for trackKey: ${trackKey}`
+            );
+            return;
+        }
+
+        // Skip recovery if local participant connection quality is poor or lost —
+        // if we can't receive data reliably, resubscribing won't help.
+        if (
+            this.room.localParticipant.connectionQuality === ConnectionQuality.Poor ||
+            this.room.localParticipant.connectionQuality === ConnectionQuality.Lost
+        ) {
+            // eslint-disable-next-line no-console
+            console.log(
+                `Skipping recovery attempt, local participant connection quality is ${this.room.localParticipant.connectionQuality} for trackKey: ${trackKey}`
+            );
             return;
         }
 
