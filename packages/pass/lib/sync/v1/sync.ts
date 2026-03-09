@@ -5,25 +5,19 @@ import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { dedupeShares } from '@proton/pass/lib/shares/share.dedupe';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
+import { createDefaultVault } from '@proton/pass/lib/sync/common/vaults';
 import { notifyInactiveShares } from '@proton/pass/lib/sync/migrate';
-import { isActiveVault, isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import { createVault } from '@proton/pass/lib/vaults/vault.requests';
 import { asIfNotOptimistic } from '@proton/pass/store//optimistic/selectors/select-is-optimistic';
+import type { VaultShareItem } from '@proton/pass/store/reducers';
 import { type ItemsByShareId, type SharesState, reducerMap } from '@proton/pass/store/reducers';
 import type { ShareDedupeState } from '@proton/pass/store/reducers/shares-dedupe';
-import { selectAllShares, selectOrganizationVaultCreationPolicy } from '@proton/pass/store/selectors';
+import { selectAllShares } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import {
-    type Maybe,
-    OrganizationVaultCreateMode,
-    type Share,
-    type ShareGetResponse,
-    type ShareType,
-} from '@proton/pass/types';
+import type { Maybe, Share, ShareGetResponse } from '@proton/pass/types';
 import { partition } from '@proton/pass/utils/array/partition';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { and, not, notIn } from '@proton/pass/utils/fp/predicates';
+import { not, notIn } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
@@ -80,30 +74,8 @@ export function* syncV1({ getCore }: RootSagaOptions) {
     /* when checking the presence of an active vault we must both
      * check the active remote shares and the local cached shares */
     const incomingShares = activeRemoteShares.map(prop('share')) as Share[];
-    const hasDefaultVault = incomingShares.concat(cachedShares).some(and(isActiveVault, isWritableVault, isOwnVault));
-
-    /* When syncing, if no owned writable vault exists, create it.
-     * For b2b users, don't create vault if org doesn't allow it.
-     * This accounts for first login, default vault being disabled. */
-    if (!hasDefaultVault) {
-        const canCreateVault =
-            selectOrganizationVaultCreationPolicy(state) !== OrganizationVaultCreateMode.ONLYORGADMINS;
-
-        if (canCreateVault) {
-            logger.info(`[Sync] No default vault found, creating initial vault..`);
-            const defaultVault: Share<ShareType.Vault> = yield createVault({
-                content: {
-                    name: 'Personal',
-                    description: 'Personal vault',
-                    display: {},
-                },
-            });
-
-            incomingShares.push(defaultVault);
-        } else {
-            logger.info(`[Sync] No default vault found, cannot create one due to organization policy.`);
-        }
-    }
+    const defaultVault: Maybe<VaultShareItem> = yield call(createDefaultVault, incomingShares.concat(cachedShares));
+    if (defaultVault) incomingShares.push(defaultVault);
 
     logger.info(`[Sync] Discovered ${cachedShareIds.length} share(s) in cache`);
     logger.info(`[Sync] User has ${remote.length} share(s) in database`);
