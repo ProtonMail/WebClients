@@ -6,19 +6,22 @@ import type { ApiImporterOrganizationUser } from '@proton/activation/src/api/api
 import { Checkbox, Table, TableBody, TableCell, TableHeader, TableHeaderCell, TableRow } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
+import ImportStatus from './ImportStatus';
+
 import './ProviderUsersTable.scss';
 
 type Props = {
     users: ApiImporterOrganizationUser[];
     selected: string[];
     setSelected: (users: string[]) => void;
+    selectable: string[];
 };
 
-const ProviderUsersTable: FC<Props> = ({ users, selected, setSelected }) => {
-    const allChecked = selected.length > 0 && selected.length === users.length;
+const ProviderUsersTable: FC<Props> = ({ users, selected, setSelected, selectable }) => {
+    const allChecked = selectable.length > 0 && selected.length === selectable.length;
 
     const handleSelectAll = () => {
-        const nextValue = allChecked ? [] : users.map((u) => u.ID);
+        const nextValue = allChecked ? [] : selectable;
         setSelected(nextValue);
     };
 
@@ -40,12 +43,16 @@ const ProviderUsersTable: FC<Props> = ({ users, selected, setSelected }) => {
                                 onChange={handleSelectAll}
                                 checked={allChecked}
                                 indeterminate={!allChecked && selected.length > 0}
+                                disabled={!selectable.length}
                             />
                             <label htmlFor="select-all" className="m-0 flex-1">{c('BOSS').t`User`}</label>
                         </div>
                     </TableHeaderCell>
-                    <TableHeaderCell className="text-right">
-                        <span className="pr-4">{c('BOSS').t`Estimated size`}</span>
+                    <TableHeaderCell className="w-custom text-right" style={{ '--w-custom': '10em' }}>
+                        {c('BOSS').t`Estimated size`}
+                    </TableHeaderCell>
+                    <TableHeaderCell className="w-custom text-right" style={{ '--w-custom': '10em' }}>
+                        <span className="pr-4">{c('BOSS').t`Status`}</span>
                     </TableHeaderCell>
                 </TableRow>
             </TableHeader>
@@ -57,8 +64,9 @@ const ProviderUsersTable: FC<Props> = ({ users, selected, setSelected }) => {
                                 <Checkbox
                                     className="mr-4"
                                     id={`select-user-${index}`}
-                                    checked={selected.includes(u.ID)}
+                                    checked={selected.includes(u.ID) || Boolean(u.ImporterOrganizationUser)}
                                     onChange={handleSelectSingle(u.ID)}
+                                    disabled={Boolean(u.ImporterOrganizationUser)}
                                 />
                                 <label htmlFor={`select-user-${index}`} className="m-0">
                                     <p className="m-0 text-ellipsis" title={u.AdminSetName}>
@@ -70,8 +78,11 @@ const ProviderUsersTable: FC<Props> = ({ users, selected, setSelected }) => {
                                 </label>
                             </div>
                         </TableCell>
-                        <TableCell className="text-right pr-4 text-left-when-stacked provider-users-table-cell">
-                            <span className="pr-4">{humanSize({ bytes: u.UsedQuota, fraction: 0 })}</span>
+                        <TableCell className="text-right text-left-when-stacked provider-users-table-cell">
+                            {humanSize({ bytes: u.UsedQuota, fraction: 0 })}
+                        </TableCell>
+                        <TableCell className="text-right text-left-when-stacked provider-users-table-cell">
+                            <ImportStatus user={u} className="pr-4" />
                         </TableCell>
                     </TableRow>
                 ))}
