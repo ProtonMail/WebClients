@@ -644,6 +644,10 @@ export enum SETTINGS_PROTON_SENTINEL_STATE {
 export enum ORGANIZATION_FLAGS {
     LOYAL = 1,
     COVID = 2,
+    /**
+     * @deprecated.
+     * Unless you know exactly what you are doing, don't use this flag. This flag is deprecated and will be removed in the future.
+     */
     SMTP_SUBMISSION = 4,
     NO_CYCLE_SCHEDULED = 8,
     DISSIDENT = 64,

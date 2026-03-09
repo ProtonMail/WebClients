@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
@@ -23,7 +23,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
-import { deleteToken, getTokens, isTokenEligible } from '@proton/shared/lib/api/smtptokens';
+import { deleteToken, getTokens } from '@proton/shared/lib/api/smtptokens';
 import {
     ADDRESS_TYPE,
     APP_UPSELL_REF_PATH,
@@ -33,7 +33,6 @@ import {
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
-import { hasSMTPSubmission } from '@proton/shared/lib/helpers/organization';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -63,8 +62,6 @@ const SMTPSubmissionSection = () => {
     const isSMPTEligible = getIsSMPTEligible(organization);
     const [tokenIDToRemove, setTokenIDToRemove] = useState('');
     const [loadingTokens, withLoadingTokens] = useLoading();
-    const [loadingTokenEligible, withloadingTokenEligible] = useLoading();
-    const [tokenEligible, setTokenEligible] = useState<boolean>(false);
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const [confirmModalProps, setConfirmModalOpen, renderConfirmModal] = useModalState();
@@ -72,7 +69,6 @@ const SMTPSubmissionSection = () => {
     const [tokens, setTokens] = useState<SmtpTokens[]>([]);
     const { viewportWidth } = useActiveBreakpoint();
     const showDetails = viewportWidth['>=large'];
-    const submissionTokenAvailable = hasSMTPSubmission(organization);
     const tokenNameToRemove = tokens.find(({ SmtpTokenID }) => SmtpTokenID === tokenIDToRemove)?.Name || '';
     const hasTokens = tokens.length > 0;
     const headers = [
@@ -109,32 +105,12 @@ const SMTPSubmissionSection = () => {
         createNotification({ text: c('Success').t`SMTP token deleted` });
     };
 
-    const getSmtpTokenEligible = async () => {
-        let isEligible = submissionTokenAvailable ?? false; // if null then false
-        // if not eligible and b2b then check
-        if (!isEligible && isSMPTEligible) {
-            isEligible = (await api({ ...isTokenEligible(), silence: true })).IsEligible;
-        }
-        setTokenEligible(isEligible);
-    };
-
     const fetchTokens = async () => {
         const { SmtpTokens } = await api(getTokens());
         setTokens(SmtpTokens);
     };
 
-    useEffect(() => {
-        if (!tokenEligible) {
-            void withloadingTokenEligible(getSmtpTokenEligible());
-            return;
-        }
-
-        if (isSMPTEligible) {
-            void withLoadingTokens(fetchTokens());
-        }
-    }, [submissionTokenAvailable, tokenEligible, isSMPTEligible]);
-
-    if (loadingOrganization || loadingTokenEligible) {
+    if (loadingOrganization) {
         return (
             <SettingsSection>
                 <Loader />
