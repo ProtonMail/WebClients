@@ -9,8 +9,8 @@ import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { useScanAndDownloadInfoModal } from '../../modals/ScanAndDownloadInfoModal';
 
 export interface DownloadDropdownProps {
-    onDownload: () => void;
-    onScanAndDownload: () => void;
+    onDownload: () => Promise<void>;
+    onScanAndDownload: () => Promise<void>;
     nbSelected?: number;
     disabled?: boolean;
     isLoading?: boolean;
@@ -51,8 +51,8 @@ export function DownloadDropdown({
                 <DropdownMenu>
                     <DropdownMenuButton
                         className="flex items-center gap-2"
-                        onClick={() => {
-                            onDownload();
+                        onClick={async () => {
+                            await onDownload();
                             close();
                         }}
                         data-testid="download-button"
@@ -63,8 +63,8 @@ export function DownloadDropdown({
                     <div className="relative">
                         <DropdownMenuButton
                             className="flex items-center gap-2 pr-11"
-                            onClick={() => {
-                                onScanAndDownload();
+                            onClick={async () => {
+                                await onScanAndDownload();
                                 close();
                             }}
                             data-testid="scan-download-button"
