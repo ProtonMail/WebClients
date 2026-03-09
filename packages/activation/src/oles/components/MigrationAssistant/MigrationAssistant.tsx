@@ -1,8 +1,12 @@
-import { type FC, useState } from 'react';
+import { type FC, useState, useEffect } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { useCustomDomains } from '@proton/account/domains/hooks';
+import {
+    type ApiImporterProduct,
+    ProductStatusState,
+} from '@proton/activation/src/api/api.interface';
 import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
@@ -10,29 +14,55 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { SkeletonLoader, useNotifications } from '@proton/components';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
+import noop from '@proton/utils/noop';
 
 import { createMigrationBatch } from '../../thunk';
 import type { MigrationSetupModel } from '../../types';
 import { useProviderTokens } from '../../useProviderTokens';
 import { useProviderUsers } from '../../useProviderUsers';
 import DomainSetup from './DomainSetup';
+import { coalesceStatus } from './ImportStatus';
 import ProviderUsersTable from './ProviderUsersTable';
 
 const MigrationAssistant: FC<{ model: MigrationSetupModel }> = ({ model }) => {
     const { createNotification } = useNotifications();
     const [customDomains] = useCustomDomains();
-    const [providerUsers] = useProviderUsers(model.importerOrganizationId!);
+    const [providerUsers, , refreshProviderUsers] = useProviderUsers(model.importerOrganizationId!);
     const [tokens] = useProviderTokens(OAUTH_PROVIDER.GSUITE);
     const dispatch = useDispatch();
-
-    const [selectedUsers, setSelectedUsers] = useState<string[]>([]);
 
     const loading = !providerUsers || !tokens || !customDomains;
 
     const domain = customDomains?.find((d) => d.DomainName === model.domainName);
+    
+    const [selectedUsers, setSelectedUsers] = useState<string[]>([]);
+    const selectableUsers = providerUsers?.filter(u => !u.ImporterOrganizationUser).map(u => u.ID) ?? [];
+    const filteredSelected = selectedUsers.filter(u => selectableUsers.includes(u));
 
     const [migrating, setMigrating] = useState<boolean>(false);
     const migratingDisabled = migrating || !selectedUsers.length || !domain || !getIsDomainActive(domain);
+
+    const migratedCount =
+        providerUsers?.filter(
+            (u) =>
+                u.ImporterOrganizationUser &&
+                coalesceStatus(u.ImporterOrganizationUser.ProductStatuses) === ProductStatusState.Completed
+        ).length ?? 0;
+
+    const hasIncompleteUsers =
+        providerUsers?.some((u) => {
+            const status = coalesceStatus(u.ImporterOrganizationUser?.ProductStatuses);
+            return status && status !== ProductStatusState.Error && status !== ProductStatusState.Completed;
+        }) ?? false;
+
+    useEffect(() => {
+        if (!hasIncompleteUsers) {
+            return;
+        }
+
+        const interval = setInterval(() => refreshProviderUsers(), 30_000);
+        return () => clearInterval(interval);
+    }, [hasIncompleteUsers, refreshProviderUsers]);
 
     if (loading) {
         return <SkeletonLoader />;
@@ -50,6 +80,22 @@ const MigrationAssistant: FC<{ model: MigrationSetupModel }> = ({ model }) => {
             return c('BOSS').t`Verify your domain to start a migration`;
         }
     };
+
+    const migrationIncludesText = (() => {
+        const translations: Record<ApiImporterProduct | 'Settings', string> = {
+            Mail: c('BOSS').t`Mail`,
+            Calendar: c('BOSS').t`Calendar`,
+            Contacts: c('BOSS').t`Contacts`,
+            Settings: c('BOSS').t`Settings`,
+        };
+
+        const included = [
+            ...model.selectedProducts.map((p) => translations[p]),
+            ...(model.importOrganizationSettings ? [translations.Settings] : []),
+        ];
+
+        return included.join(', ');
+    })();
 
     const handleMigrateUsers = async () => {
         setMigrating(true);
@@ -76,6 +122,7 @@ const MigrationAssistant: FC<{ model: MigrationSetupModel }> = ({ model }) => {
             });
         }
 
+        await refreshProviderUsers().catch(noop);
         setMigrating(false);
     };
 
@@ -92,6 +139,12 @@ const MigrationAssistant: FC<{ model: MigrationSetupModel }> = ({ model }) => {
                     >
                         <div className="flex divide-x divide-weak my-2">
                             <div className="px-6">
+                                <div className="color-weak mb-1">{c('BOSS').t`Users migrated`}</div>
+                                <div className="text-bold text-xl text-tabular-nums">
+                                    {migratedCount} of {providerUsers.length}
+                                </div>
+                            </div>
+                            <div className="px-6">
                                 <div className="color-weak mb-1">{c('BOSS').t`Transfer errors`}</div>
                                 <div className="text-bold text-xl text-tabular-nums">0</div>
                             </div>
@@ -106,7 +159,7 @@ const MigrationAssistant: FC<{ model: MigrationSetupModel }> = ({ model }) => {
                     >
                         <div className="flex my-2 px-6 flex-column flex-nowrap gap-1">
                             <span className="color-weak">{c('BOSS').t`Migration includes`}</span>
-                            <div className="text-xl text-capitalize">{model.selectedProducts.join(', ')}</div>
+                            <div className="text-xl text-capitalize">{migrationIncludesText}</div>
                         </div>
                     </Card>
                 </section>
@@ -142,8 +195,9 @@ const MigrationAssistant: FC<{ model: MigrationSetupModel }> = ({ model }) => {
                         </div>
                         <ProviderUsersTable
                             users={providerUsers}
-                            selected={selectedUsers}
+                            selected={filteredSelected}
                             setSelected={setSelectedUsers}
+                            selectable={selectableUsers}
                         />
                     </Card>
                 </section>
