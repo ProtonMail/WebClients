@@ -10,6 +10,7 @@ import { MoveButton } from '../../../commonButtons/MoveButton';
 import { OpenInDocsOrSheetsButton } from '../../../commonButtons/OpenInDocsOrSheetsButton';
 import { PreviewButton } from '../../../commonButtons/PreviewButton';
 import { RenameButton } from '../../../commonButtons/RenameButton';
+import { RevisionsButton } from '../../../commonButtons/RevisionsButton';
 import { ShareButton } from '../../../commonButtons/ShareButton';
 import type { SearchItemChecker } from './actionsItemChecker';
 
@@ -24,6 +25,7 @@ interface BaseEditActionsProps {
     onTrash: (uids: string[]) => void;
     onMove: (uids: string[]) => void;
     onGoToParent: (parentNodeUid: string) => void;
+    onShowRevisions: (uid: string) => void;
     onOpenDocsOrSheets: (uid: string, openInDocs: OpenInDocsType) => void;
 }
 
@@ -49,6 +51,7 @@ export function EditActions({
     onTrash,
     onMove,
     onGoToParent,
+    onShowRevisions,
     onOpenDocsOrSheets,
     onShare,
     close,
@@ -82,7 +85,10 @@ export function EditActions({
                 <DetailsButton onClick={() => onDetails(itemChecker.firstItemUid)} {...extraProps} />
             )}
 
-            {/* TODO: Add separator and "See version history" for file in context menu */}
+            {itemChecker.canShowRevisions && (
+                <RevisionsButton onClick={() => onShowRevisions(itemChecker.revisionNodeUid)} {...extraProps} />
+            )}
+
             {itemChecker.canDelete && (
                 <>
                     {separator}

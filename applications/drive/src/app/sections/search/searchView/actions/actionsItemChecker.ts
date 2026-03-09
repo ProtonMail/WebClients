@@ -1,4 +1,4 @@
-import { MemberRole } from '@proton/drive';
+import { MemberRole, NodeType } from '@proton/drive';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
@@ -12,6 +12,10 @@ type DocsCapability =
 type ParentCapability =
     | { canGoToParent: true; parentNodeUid: string }
     | { canGoToParent: false; parentNodeUid?: undefined };
+
+type RevisionCapability =
+    | { canShowRevisions: true; revisionNodeUid: string }
+    | { canShowRevisions: false; revisionNodeUid?: undefined };
 
 type ShareCapability = { canShare: true; firstItemUid: string } | { canShare: false };
 
@@ -30,6 +34,7 @@ type SingleItemChecker = BaseSearchItemChecker & {
     firstItemUid: string;
 } & DocsCapability &
     ParentCapability &
+    RevisionCapability &
     ShareCapability;
 
 type MultiItemChecker = BaseSearchItemChecker & {
@@ -38,6 +43,8 @@ type MultiItemChecker = BaseSearchItemChecker & {
     canShowDetails: false;
     canGoToParent: false;
     parentNodeUid?: undefined;
+    canShowRevisions: false;
+    revisionNodeUid?: undefined;
     canOpenInDocs: false;
     openInDocsInfo?: undefined;
 } & ShareCapability;
@@ -108,11 +115,16 @@ export const createActionsItemChecker = (
                 ? { canGoToParent: true as const, parentNodeUid: parentUid }
                 : { canGoToParent: false as const };
 
+        const revisionPart: RevisionCapability =
+            canEdit && firstItem.type === NodeType.File && buttonType === 'contextMenu'
+                ? { canShowRevisions: true as const, revisionNodeUid: firstItem.nodeUid }
+                : { canShowRevisions: false as const };
+
         const docsPart: DocsCapability = openableDocsResult.ok
             ? { canOpenInDocs: true as const, openInDocsInfo: openableDocsResult.value }
             : { canOpenInDocs: false as const };
 
-        return { ...base, ...sharePart, ...parentPart, ...docsPart };
+        return { ...base, ...sharePart, ...parentPart, ...revisionPart, ...docsPart };
     }
 
     // Multi-selection case:
@@ -123,6 +135,7 @@ export const createActionsItemChecker = (
         canMove,
         canShare: false as const,
         canGoToParent: false as const,
+        canShowRevisions: false as const,
         canPreview: false as const,
         canRename: false as const,
         canShowDetails: false as const,
