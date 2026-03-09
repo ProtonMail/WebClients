@@ -1,0 +1,23 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.model-mode-trigger {
+    border-radius: #{rem(20)};
+
+    &:hover,
+    &.is-active {
+        background-color: var(--background-weak);
+    }
+}
+
+.model-mode-checkmark {
+    display: flex;
+    align-items: center;
+    width: #{rem(16)};
+}
+
+.lumo-plus-badge {
+    height: 12px;
+    margin-top: -2px;
+	margin-left: -2px;
+}
