@@ -48,7 +48,8 @@ const areEqual = (prevProps: MessageComponentProps, nextProps: MessageComponentP
         prevProps.message.contextFiles?.length !== nextProps.message.contextFiles?.length ||
         prevProps.message.toolResult !== nextProps.message.toolResult ||
         prevProps.message.reasoning !== nextProps.message.reasoning ||
-        prevProps.message.thinkingTimeline?.length !== nextProps.message.thinkingTimeline?.length;
+        prevProps.message.thinkingTimeline?.length !== nextProps.message.thinkingTimeline?.length ||
+        prevProps.message.suggestedQuestions?.length !== nextProps.message.suggestedQuestions?.length;
 
     // Compare siblingInfo by its key properties
     const siblingInfoChanged =
