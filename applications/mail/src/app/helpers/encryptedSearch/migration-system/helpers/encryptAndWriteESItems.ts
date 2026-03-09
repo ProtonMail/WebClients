@@ -44,11 +44,20 @@ export const encryptAndWriteESItems = async ({ esDB, indexKey, items }: EncryptA
         const storeItemSize = ciphertextSize(storeItem);
         const originalSize = ciphertextSize(data.original);
         // Compare the size of the stored item with the original size to avoid overwriting updated data
-        if (storeItemSize !== originalSize) {
+        if (storeItemSize !== originalSize || !storeItem?.ciphertext) {
             return;
         }
 
-        await tx.objectStore('content').put(data.encryptedContent, data.id);
+        const cipher1 = new Uint8Array(storeItem.ciphertext);
+        const cipher2 = new Uint8Array(data.original.ciphertext);
+
+        for (let i = 0; i < cipher1.byteLength; i++) {
+            if (cipher1[i] !== cipher2[i]) {
+                return;
+            }
+        }
+
+        void tx.objectStore('content').put(data.encryptedContent, data.id);
     });
 
     await tx.done;
