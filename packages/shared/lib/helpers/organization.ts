@@ -10,10 +10,6 @@ export const hasCovid = (organization: Partial<Organization> = {}) => {
     return hasBit(organization.Flags, ORGANIZATION_FLAGS.COVID);
 };
 
-export const hasSMTPSubmission = (organization: Partial<Organization> = {}) => {
-    return hasBit(organization.Flags, ORGANIZATION_FLAGS.SMTP_SUBMISSION);
-};
-
 export const isDissident = (organization: Partial<Organization> = {}) => {
     return hasBit(organization.Flags, ORGANIZATION_FLAGS.DISSIDENT);
 };
