@@ -95,7 +95,7 @@ function* loadRecommendationsOrganizationWorker({
         yield put(
             inviteRecommendationsOrganizationSuccess(request.id, {
                 startsWith: payload.startsWith,
-                name: GroupDisplayName,
+                name: GroupDisplayName ?? null,
                 emails: Entries.map(({ Email }) => Email),
                 more: !!NextToken,
                 next: NextToken ?? null,
