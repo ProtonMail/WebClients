@@ -16,8 +16,3 @@ export const getTokens = () => ({
     method: 'get',
     url: 'mail/v4/smtptokens',
 });
-
-export const isTokenEligible = () => ({
-    method: 'get',
-    url: 'mail/v4/smtptokens/eligible',
-});
