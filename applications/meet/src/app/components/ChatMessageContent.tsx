@@ -65,7 +65,7 @@ export const ChatMessageContent = ({ message }: ChatMessageContentProps) => {
                                 {validatedUrl}
                             </InlineLinkButton>
                         ) : (
-                            <>{c('Info').t`<Removed dangerous URL>`}</>
+                            <>{c('Info').t`-Removed dangerous URL-`}</>
                         )}
                     </>
                 );
