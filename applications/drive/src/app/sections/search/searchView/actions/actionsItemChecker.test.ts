@@ -43,6 +43,7 @@ describe('createActionsItemChecker', () => {
                 canMove: false,
                 canShare: false,
                 canGoToParent: false,
+                canShowRevisions: false,
                 canPreview: false,
                 canRename: false,
                 canShowDetails: false,
@@ -203,6 +204,45 @@ describe('createActionsItemChecker', () => {
             });
         });
 
+        describe('canShowRevisions', () => {
+            it('should be true when file, editor, and buttonType is contextMenu', () => {
+                const result = createActionsItemChecker(
+                    [createItem({ type: NodeType.File, role: MemberRole.Editor })],
+                    'contextMenu'
+                );
+
+                expect(result.canShowRevisions).toBe(true);
+                expect(result).toHaveProperty('revisionNodeUid', 'uid-1');
+            });
+
+            it('should be false when file, editor, but buttonType is toolbar', () => {
+                const result = createActionsItemChecker(
+                    [createItem({ type: NodeType.File, role: MemberRole.Editor })],
+                    'toolbar'
+                );
+
+                expect(result.canShowRevisions).toBe(false);
+            });
+
+            it('should be false when folder, editor, and buttonType is contextMenu', () => {
+                const result = createActionsItemChecker(
+                    [createItem({ type: NodeType.Folder, role: MemberRole.Editor })],
+                    'contextMenu'
+                );
+
+                expect(result.canShowRevisions).toBe(false);
+            });
+
+            it('should be false when file, viewer, and buttonType is contextMenu', () => {
+                const result = createActionsItemChecker(
+                    [createItem({ type: NodeType.File, role: MemberRole.Viewer })],
+                    'contextMenu'
+                );
+
+                expect(result.canShowRevisions).toBe(false);
+            });
+        });
+
         describe('canMove', () => {
             it('should be true for Editor role', () => {
                 const result = createActionsItemChecker([createItem({ role: MemberRole.Editor })], 'toolbar');
@@ -236,6 +276,7 @@ describe('createActionsItemChecker', () => {
             expect(result.canShowDetails).toBe(false);
             expect(result.canOpenInDocs).toBe(false);
             expect(result.canGoToParent).toBe(false);
+            expect(result.canShowRevisions).toBe(false);
             expect(result.canShare).toBe(false);
             expect(result).not.toHaveProperty('firstItemUid');
             expect(result.canMove).toBe(true); // move is available for multi-selection with edit permission

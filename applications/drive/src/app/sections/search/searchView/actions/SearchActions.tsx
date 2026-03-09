@@ -17,6 +17,7 @@ interface BaseSearchActionsProps {
     onTrash: (uids: string[]) => void;
     onMove: (uids: string[]) => void;
     onGoToParent: (parentNodeUid: string) => void;
+    onShowRevisions: (uid: string) => void;
     onOpenDocsOrSheets: (uid: string, openInDocs: OpenInDocsType) => void;
     onShare: (uid: string) => void;
 }
@@ -43,6 +44,7 @@ export function SearchActions({
     onTrash,
     onMove,
     onGoToParent,
+    onShowRevisions,
     onOpenDocsOrSheets,
     onShare,
 }: SearchActionsProps) {
@@ -77,6 +79,7 @@ export function SearchActions({
             onTrash={onTrash}
             onMove={onMove}
             onGoToParent={onGoToParent}
+            onShowRevisions={onShowRevisions}
             onShare={onShare}
             onOpenDocsOrSheets={onOpenDocsOrSheets}
             {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
