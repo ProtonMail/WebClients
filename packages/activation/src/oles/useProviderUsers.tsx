@@ -1,11 +1,10 @@
-import { type ReactNode, createContext, useContext, useEffect, useState } from 'react';
+import { type ReactNode, createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 import { getOrganizationUsers } from '@proton/activation/src/api/api';
-import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { useApi } from '@proton/components/index';
+import noop from '@proton/utils/noop';
 
 import type { ApiImporterOrganizationUser } from '../api/api.interface';
-import { useProviderTokens } from './useProviderTokens';
 
 const Context = createContext<{
     loading: boolean;
@@ -30,30 +29,16 @@ export const useProviderUsers = (
     importerOrganizationId: string
 ): [ApiImporterOrganizationUser[] | undefined, boolean, () => Promise<void>] => {
     const api = useApi();
-    const [providerTokens, providerTokensLoading] = useProviderTokens(OAUTH_PROVIDER.GSUITE);
-    const { data, setData, loading: dataLoading, setLoading } = useContext(Context);
-    const loading = dataLoading || providerTokensLoading;
+    const { data, setData, loading, setLoading } = useContext(Context);
 
-    const refresh = async () => {
-        if (loading) {
-            return;
-        }
-
+    const refresh = useCallback(async () => {
         setLoading(true);
 
-        try {
-            const users = !providerTokens?.length
-                ? undefined
-                : await api<{ Users: ApiImporterOrganizationUser[] }>(
-                      getOrganizationUsers(importerOrganizationId)
-                  ).then((r) => r.Users);
-            setData(users);
-        } catch {
-            setData(undefined);
-        }
-
-        setLoading(false);
-    };
+        return api<{ Users: ApiImporterOrganizationUser[] }>(getOrganizationUsers(importerOrganizationId))
+            .then((r) => setData(r.Users))
+            .catch(noop)
+            .finally(() => setLoading(false));
+    }, []);
 
     useEffect(() => {
         if (data) {
@@ -61,7 +46,7 @@ export const useProviderUsers = (
         }
 
         void refresh();
-    }, [providerTokens]);
+    }, []);
 
     return [data, loading, refresh];
 };
