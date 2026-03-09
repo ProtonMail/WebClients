@@ -74,6 +74,7 @@ export type UiContext = {
     updateSibling?: (message: Message | undefined) => void; // todo remove optional
     enableExternalTools: boolean;
     enableImageTools: boolean;
+    enableReasoning?: boolean;
     enableSmoothing?: boolean; // todo remove optional
     navigateCallback?: (conversationId: ConversationId) => void; // todo remove optional
     isGhostMode?: boolean; // todo remove optional
@@ -332,6 +333,8 @@ export function sendMessage({
                     signal: a.signal,
                     enableExternalTools: noAttachment && ui.enableExternalTools,
                     enableImageTools: ui.enableImageTools,
+                    enableReasoning: ui.enableReasoning,
+                    enableSuggestedQuestions: true,
                     generateTitle,
                     config: {
                         enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
@@ -506,6 +509,8 @@ export function regenerateMessage({
                     signal: a.signal,
                     enableExternalTools: ui.enableExternalTools,
                     enableImageTools: ui.enableImageTools,
+                    enableReasoning: ui.enableReasoning,
+                    enableSuggestedQuestions: true,
                     config: {
                         enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                         enableSmoothing: ui.enableSmoothing,
@@ -677,6 +682,8 @@ export function retrySendMessage({
                     signal: a.signal,
                     enableExternalTools: ui.enableExternalTools,
                     enableImageTools: ui.enableImageTools,
+                    enableReasoning: ui.enableReasoning,
+                    enableSuggestedQuestions: true,
                     generateTitle: requestTitle,
                     config: {
                         enableU2LEncryption: ENABLE_U2L_ENCRYPTION,

@@ -149,7 +149,9 @@ export interface AssistantCallOptions {
     finishCallback?: FinishCallback;
     signal?: AbortSignal;
     enableExternalTools?: boolean;
-    enableImageTools?: boolean,
+    enableImageTools?: boolean;
+    enableReasoning?: boolean;
+    enableSuggestedQuestions?: boolean;
     requestKey?: AesGcmCryptoKey;
     requestId?: RequestId;
     generateTitle?: boolean;
