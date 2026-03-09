@@ -13,6 +13,8 @@ import {useConversation} from '../../providers/ConversationProvider';
 import {DragAreaProvider, useDragArea} from '../../providers/DragAreaProvider';
 import {useGhostChat} from '../../providers/GhostChatProvider';
 import {useIsGuest} from '../../providers/IsGuestProvider';
+import {ComposerActionsProvider} from '../../providers/ComposerActionsProvider';
+import {ThinkingModeProvider} from '../../providers/ThinkingModeProvider';
 import {WebSearchProvider} from '../../providers/WebSearchProvider';
 import {useLumoDispatch, useLumoMemoSelector, useLumoSelector} from '../../redux/hooks';
 import {
@@ -174,6 +176,7 @@ const ConversationPageComponentInner = () => {
 
     // ** Main layout **
     return (
+        <ComposerActionsProvider handleSendMessage={handleSendMessage}>
         <div
             className="relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto"
             onDrop={onDrop}
@@ -222,6 +225,7 @@ const ConversationPageComponentInner = () => {
                 />
             )}
         </div>
+        </ComposerActionsProvider>
     );
 };
 
@@ -229,7 +233,9 @@ export const ConversationPageComponent = () => {
     return (
         <DragAreaProvider>
             <WebSearchProvider>
-                <ConversationPageComponentInner />
+                <ThinkingModeProvider>
+                    <ConversationPageComponentInner />
+                </ThinkingModeProvider>
             </WebSearchProvider>
         </DragAreaProvider>
     );

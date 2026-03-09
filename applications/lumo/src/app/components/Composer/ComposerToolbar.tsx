@@ -12,6 +12,7 @@ import { isIos } from '@proton/shared/lib/helpers/browser';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { getAcceptAttributeString, getAcceptAttributeStringWithoutImages } from '../../util/filetypes';
 import { sendFileUploadEvent, sendVoiceEntryClickEvent } from '../../util/telemetry';
+import { ModelModeDropdown } from './ModelModeDropdown';
 import { ToolMenuDropdown } from './ToolMenuDropdown';
 import { UploadMenuDropdown } from './UploadMenuDropdown';
 import type { FileUploadMode } from './hooks/useFileHandling';
@@ -134,6 +135,7 @@ export const ComposerToolbar = ({
                         <IcMicrophone size={6} />
                     </Button>
                 </div>
+                <ModelModeDropdown />
             </div>
         </div>
     );
