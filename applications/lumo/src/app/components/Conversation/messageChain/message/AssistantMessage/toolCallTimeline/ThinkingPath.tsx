@@ -311,7 +311,10 @@ const ToolCallStep = ({
     const webExtractResult = hasDetails && toolCall.name === 'web_extract' ? parseWebExtractResult(result) : null;
     const hasInlineCard =
         hasDetails &&
-        (toolCall.name === 'stock' || toolCall.name === 'cryptocurrency' || toolCall.name === 'weather');
+        (toolCall.name === 'stock' ||
+            toolCall.name === 'cryptocurrency' ||
+            toolCall.name === 'weather' ||
+            toolCall.name === 'proton_info');
 
     // Image tools render as an inline status row (no accordion)
     const hasInlineImageStatus = imageToolResult !== null && !isActive;
