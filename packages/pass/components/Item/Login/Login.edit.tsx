@@ -30,8 +30,9 @@ import { bindOTPSanitizer, getSanitizedUserIdentifiers, sanitizeExtraField } fro
 import { getSecretOrUri } from '@proton/pass/lib/otp/otp';
 import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
+import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { itemCreate } from '@proton/pass/store/actions';
-import { selectShowUsernameField, selectTOTPLimits } from '@proton/pass/store/selectors';
+import { selectShowUsernameField, selectTOTPLimits, selectUserDefaultShareID } from '@proton/pass/store/selectors';
 import type { LoginItemFormValues } from '@proton/pass/types';
 import { arrayRemove } from '@proton/pass/utils/array/remove';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -49,6 +50,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
     const dispatch = useDispatch();
     const { needsUpgrade } = useSelector(selectTOTPLimits);
     const showUsernameField = useSelector(selectShowUsernameField);
+    const defaultShareID = useSelector(selectUserDefaultShareID);
 
     const domain = url ? resolveSubdomain(url) : null;
     const { shareId } = share;
@@ -104,7 +106,11 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                 !isEmptyString(values.aliasPrefix) &&
                 values.mailboxes.length > 0;
 
-            if (withAlias) {
+            /** NOTE: if we're creating an alias on an ItemShare or a non-writable
+             * vault, fallback to the user's default share ID */
+            const aliasShareID = isWritableVault(share) ? shareId : defaultShareID;
+
+            if (withAlias && aliasShareID) {
                 const aliasOptimisticId = uniqueId();
 
                 dispatch(
@@ -120,7 +126,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                         extraFields: [],
                         metadata: { name: `Alias for ${name}`, note: obfuscate(''), itemUuid: aliasOptimisticId },
                         optimisticId: aliasOptimisticId,
-                        shareId,
+                        shareId: aliasShareID,
                         type: 'alias',
                         optimisticTime: getEpoch() - 1 /* alias will be created before login in saga */,
                     })
