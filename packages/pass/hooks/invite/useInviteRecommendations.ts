@@ -64,22 +64,27 @@ export const useInviteRecommendations = ({ shareId, itemId }: AccessKeys, starts
         typeof inviteRecommendationsOrganizationSuccess,
         typeof inviteRecommendationsOrganizationFailure
     >(inviteRecommendationsOrganizationIntent, {
-        onSuccess: (data) =>
-            setState((prev) => ({
-                ...prev,
-                organization: {
-                    /** on success there might still be an incoming request
-                     * being debounced - to avoid a flickering glitch, set the
-                     * loading state depending on the `pendingCall` value */
-                    loading: pendingOrganizationCall.current ?? false,
-                    data: {
-                        ...data,
-                        /** If the response has a `since` property, it is paginated:
-                         * Append to the current organization emails list */
-                        emails: [...(data.since ? (prev.organization?.data?.emails ?? []) : []), ...data.emails],
+        onSuccess: (data) => {
+            if (data.name === null) {
+                setState((prev) => ({ ...prev, organization: { loading: false, data: null } }));
+            } else {
+                setState((prev) => ({
+                    ...prev,
+                    organization: {
+                        /** on success there might still be an incoming request
+                         * being debounced - to avoid a flickering glitch, set the
+                         * loading state depending on the `pendingCall` value */
+                        loading: pendingOrganizationCall.current ?? false,
+                        data: {
+                            ...data,
+                            /** If the response has a `since` property, it is paginated:
+                             * Append to the current organization emails list */
+                            emails: [...(data.since ? (prev.organization?.data?.emails ?? []) : []), ...data.emails],
+                        },
                     },
-                },
-            })),
+                }));
+            }
+        },
         onFailure: () => setState((prev) => ({ ...prev, organization: { ...prev.organization, loading: false } })),
     });
 
@@ -114,7 +119,8 @@ export const useInviteRecommendations = ({ shareId, itemId }: AccessKeys, starts
         });
 
         suggestions.dispatch({ shareId, startsWith }, uniqueId());
-        if (isB2b) next({ pageSize, shareId, since: null, startsWith }, uniqueId());
+        // Check organization route even for non b2b for duo and family accounts
+        next({ pageSize, shareId, since: null, startsWith }, uniqueId());
     }, [startsWith, shareId, pageSize]);
 
     /** Force initial dispatch on mount */

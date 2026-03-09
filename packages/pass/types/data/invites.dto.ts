@@ -54,7 +54,7 @@ export type InviteRecommendationsOrganizationIntent = {
 };
 export type InviteRecommendationsOrganizationSuccess = {
     startsWith: string;
-    name: string;
+    name: MaybeNull<string>;
     next: MaybeNull<string>;
     more: boolean;
     since: MaybeNull<string>;
