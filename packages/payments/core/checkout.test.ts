@@ -1,4 +1,4 @@
-import { InvalidZipCodeError, WrongBillingAddressError } from '@proton/components/payments/react-extensions/errors';
+import { WrongBillingAddressError } from '@proton/components/payments/react-extensions/errors';
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 import { PLANS_MAP } from '@proton/testing/data';
 
@@ -1151,7 +1151,7 @@ describe('getInformedOptimisticSubscriptionEstimation', () => {
         BaseRenewAmount: null,
         RenewCycle: null,
         PeriodEnd: +addMonths(new Date(), CYCLE.YEARLY) / 1000,
-        error: new InvalidZipCodeError(),
+        error: new WrongBillingAddressError({ ZipCode: 'invalid' }),
         requestData: {
             ...baseRequestData,
             BillingAddress: {
@@ -1168,7 +1168,7 @@ describe('getInformedOptimisticSubscriptionEstimation', () => {
         expect(result.Amount).toBe(7188);
         expect(result.AmountDue).toBe(7188);
         expect(result.optimistic).toBe(true);
-        expect(result.error).toBeInstanceOf(InvalidZipCodeError);
+        expect(result.error).toBeInstanceOf(WrongBillingAddressError);
         expect(result.requestData).toBe(erroredEstimation.requestData);
         expect(result.Taxes).toEqual([]);
     });
@@ -1185,7 +1185,7 @@ describe('getInformedOptimisticSubscriptionEstimation', () => {
         expect(result.CouponDiscount).toBe(-1000);
         expect(result.Coupon?.Code).toBe('SAVE10');
         expect(result.optimistic).toBe(true);
-        expect(result.error).toBeInstanceOf(InvalidZipCodeError);
+        expect(result.error).toBeInstanceOf(WrongBillingAddressError);
     });
 
     it('should return errored estimation as-is when plans differ', () => {

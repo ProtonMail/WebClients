@@ -41,7 +41,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { InvalidZipCodeError, TaxExemptionNotSupportedError, WrongBillingAddressError } from './errors';
+import { TaxExemptionNotSupportedError, WrongBillingAddressError } from './errors';
 import { enrichCoupon } from './helpers';
 
 const checkSubscriptionQuery = (data: CheckSubscriptionData, version: PaymentsVersion) => {
@@ -204,10 +204,6 @@ export const usePaymentsApi = (
             currency: data.Currency,
         });
         optimisticSubscriptionEstimation.requestData = data;
-
-        if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_ZIP_CODE) {
-            optimisticSubscriptionEstimation.error = new InvalidZipCodeError();
-        }
 
         if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.TAX_EXEMPTION_NOT_SUPPORTED) {
             optimisticSubscriptionEstimation.error = new TaxExemptionNotSupportedError();
@@ -383,9 +379,7 @@ export const usePaymentsApi = (
             try {
                 return await updateFullBillingAddress(api, fullBillingAddress);
             } catch (error: any) {
-                if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_ZIP_CODE) {
-                    throw new InvalidZipCodeError();
-                } else if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_BILLING_ADDRESS) {
+                if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_BILLING_ADDRESS) {
                     throw new WrongBillingAddressError(error?.data?.ValidationResult);
                 } else if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.TAX_EXEMPTION_NOT_SUPPORTED) {
                     throw new TaxExemptionNotSupportedError();
@@ -399,9 +393,7 @@ export const usePaymentsApi = (
             try {
                 return await updateInvoiceBillingAddress(api, invoiceId, fullBillingAddress);
             } catch (error: any) {
-                if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_ZIP_CODE) {
-                    throw new InvalidZipCodeError();
-                } else if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_BILLING_ADDRESS) {
+                if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_BILLING_ADDRESS) {
                     throw new WrongBillingAddressError(error?.data?.ValidationResult);
                 }
 
