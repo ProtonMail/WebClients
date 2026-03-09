@@ -9,7 +9,7 @@ import { defaultFilterFunction } from '@proton/components/components/selectTwo/h
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 
-import { type CountryItem, DEFAULT_COUNTRIES_SEPARATOR, getFullList } from '../helpers/countries-sorted';
+import { type CountryItem, DEFAULT_COUNTRIES_SEPARATOR, getFullList } from '../../helpers/countries-sorted';
 
 export type CountriesHookProps = {
     // List of countries that will be shown in the dropdown. It takes precedence over disabledCountries.

@@ -3,12 +3,12 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { User } from '@proton/shared/lib/interfaces';
 
-import type { FreeSubscription } from '../../core/interface';
-import type { Subscription } from '../../core/subscription/interface';
-import { useEditBillingAddressModal } from '../containers/EditBillingAddress/useEditBillingAddressModal';
+import type { FreeSubscription } from '../../../core/interface';
+import type { Subscription } from '../../../core/subscription/interface';
+import { useEditBillingAddressModal } from '../containers/useEditBillingAddressModal';
 import type { TaxCountryHook } from '../hooks/useTaxCountry';
 import type { VatNumberHook } from '../hooks/useVatNumber';
-import { TaxCountrySelector } from './TaxCountrySelector/TaxCountrySelector';
+import { TaxCountrySelector } from './TaxCountrySelector';
 import { VatNumberInput } from './VatNumberInput';
 
 interface Props {

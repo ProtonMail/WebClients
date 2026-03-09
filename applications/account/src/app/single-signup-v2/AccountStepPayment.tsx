@@ -31,7 +31,7 @@ import {
 import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { PayButton } from '@proton/payments/ui';
-import { useBillingAddress } from '@proton/payments/ui/hooks/useBillingAddress';
+import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';

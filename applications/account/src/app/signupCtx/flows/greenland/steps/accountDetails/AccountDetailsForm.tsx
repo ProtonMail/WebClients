@@ -12,7 +12,7 @@ import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcShield2CheckFilled } from '@proton/icons/icons/IcShield2CheckFilled';
 import { PAYMENT_METHOD_TYPES, getPaymentsVersion, getPlanFromPlanIDs } from '@proton/payments';
 import { PayButton, usePaymentOptimistic } from '@proton/payments/ui';
-import { useBillingAddress } from '@proton/payments/ui/hooks/useBillingAddress';
+import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
 import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';

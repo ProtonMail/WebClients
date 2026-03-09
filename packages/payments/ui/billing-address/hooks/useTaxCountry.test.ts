@@ -3,12 +3,12 @@ import { act } from 'react';
 import { renderHook as baseRenderHook } from '@testing-library/react';
 
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
-import { WrongBillingAddressError } from '@proton/components/payments/react-extensions/errors';
 import { componentWrapper, withConfig, withReduxStore } from '@proton/testing';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { DEFAULT_TAX_BILLING_ADDRESS } from '../../core/billing-address/billing-address';
-import type { SubscriptionEstimation } from '../../core/subscription/interface';
+import { DEFAULT_TAX_BILLING_ADDRESS } from '../../../core/billing-address/billing-address';
+import { WrongBillingAddressError } from '../../../core/errors';
+import type { SubscriptionEstimation } from '../../../core/subscription/interface';
 import { useTaxCountry } from './useTaxCountry';
 
 // Mock the feature flag to be enabled by default for all tests (to match existing test expectations)
