@@ -1,4 +1,4 @@
-import type { FullBillingAddressFlat } from '../../core/billing-address/billing-address';
+import type { FullBillingAddressFlat } from '../../../core/billing-address/billing-address';
 import { useTaxCountry } from './useTaxCountry';
 import { useVatNumber } from './useVatNumber';
 

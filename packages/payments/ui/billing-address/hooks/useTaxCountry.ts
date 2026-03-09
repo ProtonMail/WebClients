@@ -3,7 +3,6 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
-import type { BillingAddressValidationResult } from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 
 import {
@@ -11,20 +10,21 @@ import {
     type BillingAddressStatus,
     DEFAULT_TAX_BILLING_ADDRESS,
     getBillingAddressStatus,
-} from '../../core/billing-address/billing-address';
-import { getBillingAddressFromPaymentStatus } from '../../core/billing-address/billing-address-from-payments-status';
-import { getDefaultState, isCountryWithRequiredPostalCode, isCountryWithStates } from '../../core/countries';
-import type { PaymentStatus, PaymentsApi } from '../../core/interface';
+} from '../../../core/billing-address/billing-address';
+import { getBillingAddressFromPaymentStatus } from '../../../core/billing-address/billing-address-from-payments-status';
+import { getDefaultState, isCountryWithRequiredPostalCode, isCountryWithStates } from '../../../core/countries';
 import {
+    type BillingAddressValidationResult,
     getWrongBillingAddressValidationResult,
     hasInvalidZipCodeError,
-} from '../../core/subscription/subscription-estimation';
-import { getDefaultPostalCodeByStateCode } from '../../postal-codes/default-postal-codes';
-import { isPostalCodeValid } from '../../postal-codes/postal-codes-validation';
-import type { PaymentTelemetryContext } from '../../telemetry/helpers';
-import { checkoutTelemetry } from '../../telemetry/telemetry';
-import { type OfferUnavailableErrorMessage, useOfferUnavailableErrorMessage } from '../components/PayButton';
-import { getFullList } from '../helpers/countries-sorted';
+} from '../../../core/errors';
+import type { PaymentStatus, PaymentsApi } from '../../../core/interface';
+import { getDefaultPostalCodeByStateCode } from '../../../postal-codes/default-postal-codes';
+import { isPostalCodeValid } from '../../../postal-codes/postal-codes-validation';
+import type { PaymentTelemetryContext } from '../../../telemetry/helpers';
+import { checkoutTelemetry } from '../../../telemetry/telemetry';
+import { type OfferUnavailableErrorMessage, useOfferUnavailableErrorMessage } from '../../components/PayButton';
+import { type CountryItem, getFullList } from '../../helpers/countries-sorted';
 
 export type OnBillingAddressChange = (billingAddress: BillingAddress) => void;
 
@@ -77,7 +77,7 @@ function getBillingAddressFromPaymentStatusProp(props: HookProps): BillingAddres
     }
 
     if (disabledCountries?.includes(billingAddress.CountryCode)) {
-        const allowedCountry = getFullList().find((country) => !disabledCountries.includes(country.value));
+        const allowedCountry = getFullList().find((country: CountryItem) => !disabledCountries.includes(country.value));
 
         if (allowedCountry) {
             return getBillingAddressFromPaymentStatus({

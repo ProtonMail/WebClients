@@ -6,8 +6,8 @@ import Label from '@proton/components/components/label/Label';
 import clsx from '@proton/utils/clsx';
 
 import { getStateName, isCountryWithRequiredPostalCode, isCountryWithStates } from '../../../core/countries';
-import type { TaxCountryHook } from '../../hooks/useTaxCountry';
-import { useCountries } from '../CountriesDropdown';
+import type { TaxCountryHook } from '../hooks/useTaxCountry';
+import { useCountries } from './CountriesDropdown';
 
 type Props = {
     onClick?: () => void;

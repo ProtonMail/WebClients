@@ -17,7 +17,7 @@ import {
     getPlanFromPlanIDs,
 } from '@proton/payments';
 import { PayButton, usePaymentOptimistic } from '@proton/payments/ui';
-import { useBillingAddress } from '@proton/payments/ui/hooks/useBillingAddress';
+import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
