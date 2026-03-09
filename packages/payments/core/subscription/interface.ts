@@ -1,5 +1,4 @@
 import type {
-    InvalidZipCodeError,
     TaxExemptionNotSupportedError,
     WrongBillingAddressError,
 } from '@proton/components/payments/react-extensions/errors';
@@ -146,7 +145,7 @@ export type SubscriptionEstimation = SubscriptionCheckResponse & {
      */
     optimistic?: boolean;
 
-    error?: InvalidZipCodeError | TaxExemptionNotSupportedError | WrongBillingAddressError;
+    error?: TaxExemptionNotSupportedError | WrongBillingAddressError;
 };
 
 export interface Tax {

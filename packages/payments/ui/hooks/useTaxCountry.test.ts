@@ -3,7 +3,7 @@ import { act } from 'react';
 import { renderHook as baseRenderHook } from '@testing-library/react';
 
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
-import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
+import { WrongBillingAddressError } from '@proton/components/payments/react-extensions/errors';
 import { componentWrapper, withConfig, withReduxStore } from '@proton/testing';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -28,7 +28,7 @@ const renderHook: typeof baseRenderHook = (render, options) =>
 
 const mockValidZipCode = { checkResult: { error: undefined } as SubscriptionEstimation } as PaymentFacade;
 const mockInvalidZipCode = {
-    checkResult: { error: new InvalidZipCodeError() } as SubscriptionEstimation,
+    checkResult: { error: new WrongBillingAddressError({ ZipCode: 'invalid' }) } as SubscriptionEstimation,
 } as PaymentFacade;
 
 describe('useTaxCountry hook', () => {
