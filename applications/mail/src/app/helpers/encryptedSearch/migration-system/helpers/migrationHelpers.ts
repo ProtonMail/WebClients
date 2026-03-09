@@ -1,6 +1,6 @@
 import type { IDBPDatabase } from 'idb';
 
-import { decryptFromDB } from '@proton/encrypted-search/lib/esHelpers';
+import { decryptFromDB } from '@proton/encrypted-search/esHelpers';
 import type { EncryptedSearchDB } from '@proton/encrypted-search/models';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
