@@ -4,6 +4,7 @@ import { getUserAccessSuccess, userEvent } from '@proton/pass/store/actions';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import {
     type MaybeNull,
+    OrganizationAliasCreateMode,
     OrganizationExportMode,
     OrganizationItemShareMode,
     OrganizationPublicLinkMode,
@@ -23,6 +24,7 @@ export const INITIAL_ORGANIZATION_SETTINGS: OrganizationSettings = {
     VaultCreateMode: OrganizationVaultCreateMode.ALLOWED,
     ItemShareMode: OrganizationItemShareMode.DISABLED,
     PublicLinkMode: OrganizationPublicLinkMode.DISABLED,
+    AliasCreateMode: OrganizationAliasCreateMode.ALLOWEDFORALLMEMBERS,
 };
 
 export type OrganizationState = {
