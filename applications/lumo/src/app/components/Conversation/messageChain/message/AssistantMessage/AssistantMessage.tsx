@@ -24,6 +24,7 @@ import LumoCopyButton from '../actionToolbar/LumoCopyButton';
 import { SourcesButton } from '../toolCall/SourcesBlock';
 import { extractSearchResults, parseToolCallBlock } from '../toolCall/toolCallUtils';
 import { AvatarAndNotice } from './AvatarAndNotice';
+import { SuggestedQuestions } from './SuggestedQuestions';
 import { RenderBlocks } from './toolCallTimeline/RenderBlocks';
 
 import './AssistantMessage.scss';
@@ -286,6 +287,10 @@ const AssistantMessage = ({
                                         onRetryPanelToggle={onRetryPanelToggle}
                                         retryButtonRef={retryButtonRef}
                                     />
+
+                                    {isLastMessage && isFinishedGenerating && !generationFailed && message.suggestedQuestions?.length ? (
+                                        <SuggestedQuestions questions={message.suggestedQuestions} />
+                                    ) : null}
                                 </div>
                             )}
                         </div>
@@ -324,6 +329,7 @@ const EmptyMessage = () => (
 export default memo(AssistantMessage, (prevProps, nextProps) => {
     return (
         messagesEqualForRendering(prevProps.message, nextProps.message) &&
+        prevProps.message.suggestedQuestions?.length === nextProps.message.suggestedQuestions?.length &&
         prevProps.isGenerating === nextProps.isGenerating &&
         prevProps.isLastMessage === nextProps.isLastMessage
     );
