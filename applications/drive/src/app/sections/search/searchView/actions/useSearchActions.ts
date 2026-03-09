@@ -5,6 +5,7 @@ import { downloadManager } from '../../../../managers/download/DownloadManager';
 import { useDetailsModal } from '../../../../modals/DetailsModal';
 import { useMoveItemsModal } from '../../../../modals/MoveItemsModal';
 import { useRenameModal } from '../../../../modals/RenameModal';
+import { useRevisionsModal } from '../../../../modals/RevisionsModal';
 import { useSharingModal } from '../../../../modals/SharingModal/SharingModal';
 import { useDrivePreviewModal } from '../../../../modals/preview';
 import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../../utils/docs/openInDocs';
@@ -18,6 +19,7 @@ export const useSearchActions = () => {
     const { renameModal, showRenameModal } = useRenameModal();
     const { sharingModal, showSharingModal } = useSharingModal();
     const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal();
+    const { revisionsModal, showRevisionsModal } = useRevisionsModal();
 
     const { navigateToNodeUid } = useDriveNavigation();
     const { trashItems } = useTrashActions();
@@ -97,6 +99,10 @@ export const useSearchActions = () => {
         showSharingModal({ nodeUid: uid });
     };
 
+    const handleShowRevisions = (uid: string) => {
+        showRevisionsModal({ nodeUid: uid });
+    };
+
     return {
         modals: {
             previewModal,
@@ -104,6 +110,7 @@ export const useSearchActions = () => {
             renameModal,
             sharingModal,
             moveItemsModal,
+            revisionsModal,
         },
         handlePreview,
         handleDetails,
@@ -114,6 +121,6 @@ export const useSearchActions = () => {
         handleMove,
         handleGoToParent,
         handleShare,
-        // TODO: Add show revision modal
+        handleShowRevisions,
     };
 };
