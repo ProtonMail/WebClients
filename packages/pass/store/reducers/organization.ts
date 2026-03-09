@@ -1,7 +1,7 @@
 import type { Reducer } from 'redux';
 
-import { coreEvent, getUserAccessSuccess } from '@proton/pass/store/actions';
-import { getOrganizationSettings, setOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
+import { coreEvent, getUserAccessSuccess, matchSyncAction } from '@proton/pass/store/actions';
+import { getOrganizationSettings, setOrganization, setOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import {
     type MaybeNull,
     OrganizationAliasCreateMode,
@@ -36,6 +36,10 @@ export type OrganizationState = {
 };
 
 const organizationReducer: Reducer<MaybeNull<OrganizationState>> = (state = null, action) => {
+    /* Remove all organization state if the user plan changes */
+    if (matchSyncAction(action) && action.payload?.v === 2) return action.payload.organization;
+    if (setOrganization.match(action)) return action.payload;
+
     /* Remove all organization state if the user plan is no longer B2B.
      * Pass Essentials is currently considered Plus and not Business */
     if (getUserAccessSuccess.match(action)) {

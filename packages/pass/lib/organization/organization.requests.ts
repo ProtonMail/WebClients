@@ -8,6 +8,7 @@ import type {
     OrganizationUpdatePasswordPolicyInput,
     OrganizationUrlPauseEntryDto,
 } from '@proton/pass/types';
+import { PlanType } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import { logger } from '@proton/pass/utils/logger';
 import { getOrganization as coreGetOrganization, getOrganizationKeys } from '@proton/shared/lib/api/organization';
@@ -47,6 +48,9 @@ export const getOrganization = async (): Promise<MaybeNull<OrganizationState>> =
     const { Settings, CanUpdate }: OrganizationGetResponse = await getOrganizationSettings();
     return { settings: Settings, canUpdate: CanUpdate, organization };
 };
+
+export const getOrganizationForPlan = async (plan: PlanType): Promise<MaybeNull<OrganizationState>> =>
+    plan === PlanType.BUSINESS ? getOrganization() : null;
 
 export const setPasswordGeneratorPolicySettings = async (
     settings: OrganizationUpdatePasswordPolicyInput

@@ -3,6 +3,7 @@ import { all, call, put, select } from 'redux-saga/effects';
 import { allInvites } from '@proton/pass/lib/invites/invite.requests';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { getAllBreaches } from '@proton/pass/lib/monitor/monitor.request';
+import { getOrganizationForPlan } from '@proton/pass/lib/organization/organization.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
 import { createDefaultVault } from '@proton/pass/lib/sync/common/vaults';
@@ -11,9 +12,10 @@ import type { EventProcessor } from '@proton/pass/lib/sync/types';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { syncResult } from '@proton/pass/store/actions';
 import type { HydratedAccessState, ItemsByShareId, SharesState, VaultShareItem } from '@proton/pass/store/reducers';
+import type { OrganizationState } from '@proton/pass/store/reducers/organization';
 import { selectLoadGroupInvites } from '@proton/pass/store/selectors/invites';
 import type { State } from '@proton/pass/store/types';
-import type { BreachesGetResponse, Invite, Maybe, Share, ShareGetResponse } from '@proton/pass/types';
+import type { BreachesGetResponse, Invite, Maybe, MaybeNull, Share, ShareGetResponse } from '@proton/pass/types';
 import { partition } from '@proton/pass/utils/array/partition';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { merge } from '@proton/pass/utils/object/merge';
@@ -26,6 +28,7 @@ export type SyncResultV2 = {
     breaches: BreachesGetResponse;
     invites: Invite[];
     items: ItemsByShareId;
+    organization: MaybeNull<OrganizationState>;
     shares: SharesState;
     userEventId: string;
     v: 2;
@@ -43,8 +46,10 @@ const intoItemsByShareId = async ({ shareId }: Share): Promise<ItemsByShareId> =
 export function* syncV2(state: State): Generator<unknown, SyncResultV2> {
     /** 1. Get latest user-events eventID */
     const userEventId: string = yield call(getUserEventLatestID);
-    /** 2. Get user info */
+    /** 2a. Get user access state */
     const access: HydratedAccessState = yield call(getUserAccess);
+    /** 2b. Get organization state (no-op for non-business plans) */
+    const organization: MaybeNull<OrganizationState> = yield call(getOrganizationForPlan, access.plan.Type);
     /** 3a. Get all shares */
     const encryptedShares: ShareGetResponse[] = yield call(requestShares);
     /** 3b. Open all shares (may fail on inactive keys) */
@@ -70,6 +75,7 @@ export function* syncV2(state: State): Generator<unknown, SyncResultV2> {
         breaches,
         invites,
         items: items.reduce(diadic(merge), {}),
+        organization,
         shares: toMap(shares, 'shareId'),
         userEventId,
         v: 2,
