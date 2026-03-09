@@ -7,15 +7,20 @@ import './RightDrawer.scss';
 interface RightDrawerProps {
     children: React.ReactNode;
     className?: string;
+    isFullscreen?: boolean;
 }
 
 /**
  * Inline right panel that sits as a flex sibling and pushes the main content left.
  * The parent container must be a flex row.
+ * Pass isFullscreen to expand it to cover the entire viewport.
  */
-export const RightDrawer = ({ children, className }: RightDrawerProps) => {
+export const RightDrawer = ({ children, className, isFullscreen }: RightDrawerProps) => {
     return (
-        <div className={clsx('right-drawer', className)} role="complementary">
+        <div
+            className={clsx('right-drawer', isFullscreen && 'right-drawer--fullscreen', className)}
+            role="complementary"
+        >
             {children}
         </div>
     );
