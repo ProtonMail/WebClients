@@ -2798,6 +2798,21 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } хоча абагуліць элемент з групай ${ name }."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } удзельнік)",
+        "(${ memberCount } удзельнікі)",
+        "(${ memberCount } удзельнікаў)",
+        "(${ memberCount } удзельнікаў)"
+      ],
+      "invites the group ${ name } to access items in": [
+        "запрашае групу ${ name } для доступу да элементаў у"
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Магчыма, што спатрэбіцца даць дазвол на доступ для ${ PASS_APP_NAME }."
       ]
     },
     "Keyboard key": {
@@ -3626,10 +3641,10 @@
         "Прыярытэт:"
       ],
       "Private key": [
-        "Прыватны ключ"
+        "Закрыты ключ"
       ],
       "Private Key": [
-        "Прыватны ключ"
+        "Закрыты ключ"
       ],
       "Product": [
         "Прадукт"
@@ -3650,7 +3665,7 @@
         "публічны дамен"
       ],
       "Public key": [
-        "Публічны ключ"
+        "Адкрыты ключ"
       ],
       "Rate us": [
         "Ацаніце нас"
@@ -4177,10 +4192,10 @@
         "Дадаць пароль"
       ],
       "Add private key": [
-        "Дадаць прыватны ключ"
+        "Дадаць закрыты ключ"
       ],
       "Add public key": [
-        "Дадаць публічны ключ"
+        "Дадаць адкрыты ключ"
       ],
       "Add SSID": [
         "Дадаць SSID"

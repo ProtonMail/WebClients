@@ -2586,6 +2586,19 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisaatiosi vaatii, että suojaat pääsysi ${ PASS_APP_NAME }:iin"
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } haluaa jakaa kohteen ryhmän ${ name } kanssa."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } jäsen)",
+        "(${ memberCount } jäsentä)"
+      ],
+      "invites the group ${ name } to access items in": [
+        "kutsuu ryhmän ${ name } käyttämään kohteita kohteessa"
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Saatat joutua myöntämään käyttöoikeusluvan ${ PASS_APP_NAME } -sovellukselle."
       ]
     },
     "Keyboard key": {

@@ -386,7 +386,7 @@
         "Aan de slag"
       ],
       "Hide": [
-        "Verbergen"
+        "Verberg"
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Hoe exporteer ik mijn gegevens van ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
@@ -2735,6 +2735,19 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Uw organisatie vereist dat u uw toegang tot ${ PASS_APP_NAME } beveiligen"
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } wil een item delen met de groep ${ name }."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } lid)",
+        "(${ memberCount } leden)"
+      ],
+      "invites the group ${ name } to access items in": [
+        "nodigt de groep ${ name } uit voor toegang tot items in"
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "U moet mogelijk toegangsrechten verlenen aan ${ PASS_APP_NAME }."
       ]
     },
     "Keyboard key": {

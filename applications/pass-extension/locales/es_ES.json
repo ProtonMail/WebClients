@@ -2723,6 +2723,19 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Tu organización requiere que asegures tu acceso a ${ PASS_APP_NAME }"
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } quiere compartir un elemento con el grupo ${ name }."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } miembro)",
+        "(${ memberCount } miembros)"
+      ],
+      "invites the group ${ name } to access items in": [
+        "invita al grupo ${ name } a acceder a los elementos de"
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Es posible que debas conceder permisos de accesibilidad a ${ PASS_APP_NAME }."
       ]
     },
     "Keyboard key": {
