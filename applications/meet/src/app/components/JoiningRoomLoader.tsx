@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 
@@ -13,14 +13,18 @@ export const JoiningRoomLoader = ({ participantCount }: JoiningRoomLoaderProps) 
         {
             heading: () => c('Title').t`Protecting meeting with end-to-end encryption...`,
             description: c('Description')
-                .t`Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS) 
+                .t`Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)
 `,
         },
         {
             heading: (participantCount) =>
                 !participantCount
                     ? c('Title').t`Starting meeting as the first participant…`
-                    : c('Title').t`Joining meeting with ${participantCount} other participants…`,
+                    : c('Title').ngettext(
+                          msgid`Joining meeting with ${participantCount} other participant…`,
+                          `Joining meeting with ${participantCount} other participants…`,
+                          participantCount
+                      ),
             description: !participantCount ? '' : c('Description').t`Rotating group encryption key for best security`,
         },
     ];
