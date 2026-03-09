@@ -21,7 +21,6 @@ const RowLoading: FC<{ style: CSSProperties }> = ({ style }) => (
 type Props = ListRowProps &
     Pick<InviteRecommendationsProps, 'onToggle' | 'excluded' | 'selected'> & {
         moreLoading: boolean;
-        rowCount: number;
         suggestions: {
             email: string;
             isGroup: boolean;
@@ -34,35 +33,34 @@ export const InviteRecommendationRow: FC<Props> = ({
     index,
     key,
     moreLoading,
-    rowCount,
     suggestions,
     excluded,
     view,
     selected,
     onToggle,
 }) => {
-    const suggestion = suggestions[index];
+    const suggestion = suggestions.at(index);
+    const { name } = useMaybeGroup(suggestion?.email);
+    const disabled = suggestion && excluded.has(suggestion.email);
 
-    const { name } = useMaybeGroup(suggestion.email);
+    if (suggestion) {
+        return (
+            <div style={style} key={key} className="flex anime-fade-in">
+                <Checkbox
+                    key={`suggestion-${view}-${index}`}
+                    className={clsx('flex flex-row-reverse flex-1 ml-2', disabled && 'opacity-0')}
+                    disabled={disabled}
+                    checked={selected.has(suggestion.email) || disabled}
+                    onChange={({ target }) => onToggle(suggestion.email, suggestion.isGroup, target.checked)}
+                >
+                    <div className="flex flex-nowrap items-center flex-1">
+                        <ShareMemberAvatar email={suggestion.email} isGroup={suggestion.isGroup} />
+                        <div className="flex-1 text-ellipsis mr-2">{name}</div>
+                    </div>
+                </Checkbox>
+            </div>
+        );
+    }
 
-    if (moreLoading && index === rowCount - 1) return <RowLoading key={key} style={style} />;
-
-    const disabled = excluded.has(suggestion.email);
-
-    return (
-        <div style={style} key={key} className="flex anime-fade-in">
-            <Checkbox
-                key={`suggestion-${view}-${index}`}
-                className={clsx('flex flex-row-reverse flex-1 ml-2', disabled && 'opacity-0')}
-                disabled={disabled}
-                checked={selected.has(suggestion.email) || disabled}
-                onChange={({ target }) => onToggle(suggestion.email, suggestion.isGroup, target.checked)}
-            >
-                <div className="flex flex-nowrap items-center flex-1">
-                    <ShareMemberAvatar email={suggestion.email} isGroup={suggestion.isGroup} />
-                    <div className="flex-1 text-ellipsis mr-2">{name}</div>
-                </div>
-            </Checkbox>
-        </div>
-    );
+    return moreLoading && <RowLoading key={key} style={style} />;
 };
