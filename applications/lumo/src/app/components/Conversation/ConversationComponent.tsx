@@ -10,9 +10,12 @@ import { useLumoSelector } from '../../redux/hooks';
 import type { ConversationError } from '../../redux/slices/meta/errors';
 import { selectConversationErrors, selectTierErrors } from '../../redux/slices/meta/errors';
 import type { Attachment, Conversation, Message, RetryStrategy, SiblingInfo } from '../../types';
+import { Role } from '../../types-api';
+import { HtmlPreviewContext } from '../../contexts/HtmlPreviewContext';
 import ErrorCard from '../Notifications/ErrorCard';
 import { FilesManagementView } from '../Files';
 import { FilePreviewPanel } from '../Files/Common/FilePreviewPanel';
+import { HtmlPreviewPanel } from '../HtmlPreview/HtmlPreviewPanel';
 import { RightDrawer } from '../RightDrawer';
 import { RetryPanel } from '../RetryPanel';
 import { ConversationSurvey } from '../Survey/ConversationSurvey';
@@ -145,12 +148,14 @@ const ConversationComponent = ({
     const inputContainerRef = useRef<HTMLDivElement>(null);
     const { isWebSearchButtonToggled } = useWebSearch();
     const [openPanel, setOpenPanel] = useState<{
-        type: 'sources' | 'files' | 'file-preview' | null;
+        type: 'sources' | 'files' | 'file-preview' | 'html-preview' | null;
         message?: Message;
         filterMessage?: Message;
         autoShowDriveBrowser?: boolean;
         attachment?: Attachment;
+        htmlContent?: string;
     }>({ type: null });
+    const [isHtmlPreviewFullscreen, setIsHtmlPreviewFullscreen] = useState(false);
 
     // Retry panel state
     const [retryPanelState, setRetryPanelState] = useState<{
@@ -200,6 +205,10 @@ const ConversationComponent = ({
         setOpenPanel({ type: 'file-preview', attachment });
     }, []);
 
+    const handleOpenHtmlPreview = useCallback((html: string) => {
+        setOpenPanel({ type: 'html-preview', htmlContent: html });
+    }, []);
+
     const handleClearFilter = useCallback(() => {
         // Keep files panel open but remove the filter
         setOpenPanel((prev) => (prev.type === 'files' ? { type: 'files', filterMessage: undefined } : prev));
@@ -237,7 +246,23 @@ const ConversationComponent = ({
         ]
     );
 
+    const handleHtmlPreviewRetry = useCallback(
+        (error: string) => {
+            const lastAssistantMessage = [...messageChain].reverse().find((m) => m.role === Role.Assistant);
+            if (lastAssistantMessage) {
+                void handleRegenerateMessage(
+                    lastAssistantMessage,
+                    isWebSearchButtonToggled,
+                    'custom',
+                    `The HTML you generated has a rendering error: "${error}". Please fix the HTML to resolve this issue.`
+                );
+            }
+        },
+        [messageChain, handleRegenerateMessage, isWebSearchButtonToggled]
+    );
+
     return (
+        <HtmlPreviewContext.Provider value={{ onPreviewHtml: handleOpenHtmlPreview }}>
         <>
             <div className="lumo-chat-container flex flex-row flex-nowrap flex-1 relative reset4print overflow-hidden">
                 <div className="outer flex flex-column flex-nowrap flex-1 reset4print overflow-hidden">
@@ -322,6 +347,20 @@ const ConversationComponent = ({
                         />
                     </RightDrawer>
                 )}
+                {openPanel.type === 'html-preview' && openPanel.htmlContent && (
+                    <RightDrawer isFullscreen={isHtmlPreviewFullscreen}>
+                        <HtmlPreviewPanel
+                            html={openPanel.htmlContent}
+                            isFullscreen={isHtmlPreviewFullscreen}
+                            onToggleFullscreen={() => setIsHtmlPreviewFullscreen((v) => !v)}
+                            onClose={() => {
+                                setIsHtmlPreviewFullscreen(false);
+                                setOpenPanel({ type: null });
+                            }}
+                            onRetryWithError={handleHtmlPreviewRetry}
+                        />
+                    </RightDrawer>
+                )}
             </div>
 
             {/* Floating Retry Panel */}
@@ -333,6 +372,7 @@ const ConversationComponent = ({
                 />
             )}
         </>
+        </HtmlPreviewContext.Provider>
     );
 };
 

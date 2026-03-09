@@ -21,6 +21,16 @@ im.$media-expressions: $media-expressions;
 		border-block-start: 1px solid var(--border-weak);
 	}
 
+	&--fullscreen {
+		position: fixed;
+		inset: 0;
+		width: 100% !important;
+		max-width: 100%;
+		block-size: 100%;
+		z-index: 100;
+		border-inline-start: none;
+		animation: rightDrawerFullscreenIn 0.2s ease-out;
+	}
 }
 
 @keyframes rightDrawerSlideIn {
@@ -32,5 +42,17 @@ im.$media-expressions: $media-expressions;
 	to {
 		transform: translateX(0);
 		opacity: 1;
+	}
+}
+
+@keyframes rightDrawerFullscreenIn {
+	from {
+		opacity: 0;
+		transform: scale(0.98);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1);
 	}
 }
