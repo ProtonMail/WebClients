@@ -20,6 +20,7 @@ import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
 import { applyRetentionPolicy, categorizeConversations } from '../../layouts/sidepanel/helpers';
 import { DragAreaProvider } from '../../providers/DragAreaProvider';
+import { ThinkingModeProvider } from '../../providers/ThinkingModeProvider';
 import { WebSearchProvider, useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import {
@@ -454,7 +455,9 @@ export const ProjectDetailView = () => {
     return (
         <DragAreaProvider>
             <WebSearchProvider>
-                <ProjectDetailViewInner />
+                <ThinkingModeProvider>
+                    <ProjectDetailViewInner />
+                </ThinkingModeProvider>
             </WebSearchProvider>
         </DragAreaProvider>
     );

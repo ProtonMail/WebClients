@@ -27,6 +27,7 @@ import {
     sendMessage,
 } from '../components/Conversation/helper';
 import { sendMessageGenerationAbortedEvent, sendMessageSendEvent, sendNewMessageDataEvent } from '../util/telemetry';
+import { useThinkingMode } from '../providers/ThinkingModeProvider';
 import { useAbortController } from './useAbortController';
 import { useConversationErrors } from './useConversationErrors';
 import { useConversationState } from './useConversationState';
@@ -91,6 +92,7 @@ export const useLumoActions = ({
 
     // Custom hooks
     const { isGhostChatMode: isGhostMode } = useGhostChat();
+    const { isThinkingEnabled } = useThinkingMode();
     const { ensureConversationAndSpace } = useConversationState({
         conversationId,
         spaceId: space?.id,
@@ -256,6 +258,7 @@ export const useLumoActions = ({
                 uiContext: {
                     enableExternalTools,
                     enableImageTools,
+                    enableReasoning: isThinkingEnabled,
                     navigateCallback,
                     enableSmoothing,
                     isGhostMode,
@@ -339,6 +342,7 @@ export const useLumoActions = ({
                 },
                 uiContext: {
                     enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
+                    enableReasoning: isThinkingEnabled,
                     navigateCallback,
                     isGhostMode,
                     enableSmoothing: ffSmoothRendering,
@@ -402,6 +406,7 @@ export const useLumoActions = ({
                     updateSibling: preferSibling,
                     enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
                     enableImageTools: ffImageTools,
+                    enableReasoning: isThinkingEnabled,
                     navigateCallback,
                     enableSmoothing: ffSmoothRendering,
                     isGhostMode,
@@ -502,6 +507,7 @@ export const useLumoActions = ({
                 uiContext: {
                     enableExternalTools,
                     enableImageTools,
+                    enableReasoning: isThinkingEnabled,
                     navigateCallback,
                     isGhostMode,
                     enableSmoothing: ffSmoothRendering,

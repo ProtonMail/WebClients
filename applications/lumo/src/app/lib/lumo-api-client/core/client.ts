@@ -73,6 +73,8 @@ export class LumoApiClient {
             signal,
             enableExternalTools = false,
             enableImageTools = false,
+            enableReasoning = false,
+            enableSuggestedQuestions = true,
             requestKey,
             requestId,
             generateTitle = false,
@@ -92,6 +94,8 @@ export class LumoApiClient {
             enableExternalTools,
             enableImageTools,
             generateTitle,
+            enableReasoning,
+            enableSuggestedQuestions,
         });
 
         // Prepare request context and run interceptors
@@ -188,10 +192,12 @@ export class LumoApiClient {
             enableExternalTools: boolean;
             enableImageTools: boolean;
             generateTitle: boolean;
+            enableReasoning: boolean;
+            enableSuggestedQuestions: boolean;
         }
     ): Promise<LumoApiGenerationRequest> {
         const { lumoPubKey } = this.config;
-        const { enableExternalTools, enableImageTools, generateTitle } = flags;
+        const { enableExternalTools, enableImageTools, generateTitle, enableReasoning, enableSuggestedQuestions } = flags;
 
         // Encrypt request if needed
         if (encryption) {
@@ -205,7 +211,11 @@ export class LumoApiClient {
         return {
             type: 'generation_request',
             turns,
-            options: { tools },
+            options: {
+                tools,
+                reasoning: enableReasoning,
+                suggested_questions: enableSuggestedQuestions,
+            },
             targets,
             request_key: (await encryption?.encryptRequestKey(lumoPubKey)) || undefined,
             request_id: encryption?.requestId,
