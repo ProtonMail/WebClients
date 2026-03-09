@@ -20,6 +20,7 @@ import { useNavigate } from '@proton/pass/components/Navigation/NavigationAction
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
+import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { usePasswordGeneratorAction } from '@proton/pass/components/Password/PasswordGeneratorAction';
 import { usePasswordHistoryActions } from '@proton/pass/components/Password/PasswordHistoryActions';
 import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
@@ -28,6 +29,7 @@ import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNewItemShortcut } from '@proton/pass/hooks/useNewItemShortcut';
 import { selectAliasLimits, selectCanCreateItems, selectPassPlan } from '@proton/pass/store/selectors';
 import type { ItemType, MaybeNull } from '@proton/pass/types';
+import { OrganizationAliasCreateMode } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -55,6 +57,9 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
     const showCustomItem = useFeatureFlag(PassFeature.PassCustomTypeV1);
 
     const onCreate = useCallback((type: ItemType) => navigate(getNewItemRoute(type, scope)), [scope]);
+
+    const org = useOrganization();
+    const orgAliasCreationDisabled = org?.settings.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
 
     const { needsUpgrade, aliasLimit, aliasLimited, aliasTotalCount } = useSelector(selectAliasLimits);
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
@@ -86,7 +91,7 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
     const quickActions = useMemo<QuickAction[]>(() => {
         const actions: QuickAction[] = [
             { label: c('Label').t`Login`, type: 'login' },
-            { label: c('Label').t`Alias`, type: 'alias' },
+            { label: c('Label').t`Alias`, type: 'alias', hidden: orgAliasCreationDisabled },
             { label: c('Label').t`Card`, type: 'creditCard', locked: creditCardLock },
             { label: c('Label').t`Note`, type: 'note' },
             { label: c('Label').t`Identity`, type: 'identity' },
@@ -94,7 +99,7 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
         ];
 
         return actions.filter(({ hidden }) => !hidden);
-    }, [showCustomItem, isFreePlan]);
+    }, [showCustomItem, isFreePlan, orgAliasCreationDisabled]);
 
     const disabled = !useSelector(selectCanCreateItems);
     const { vaultCreationDisabled } = useVaultCreationPolicy();
