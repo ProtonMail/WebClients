@@ -15,7 +15,7 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import { useEventManagerV6 } from '@proton/components/containers/eventManager/EventManagerV6Provider';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { InvoiceDocument, InvoiceOwner, InvoiceState } from '@proton/payments';
-import { useEditBillingAddressModal } from '@proton/payments/ui/containers/EditBillingAddress/useEditBillingAddressModal';
+import { useEditBillingAddressModal } from '@proton/payments/ui/billing-address/containers/useEditBillingAddressModal';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';

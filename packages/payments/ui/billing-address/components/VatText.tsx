@@ -1,6 +1,6 @@
-import { isTaxInclusive } from '../../core/subscription/helpers';
-import type { SubscriptionEstimation } from '../../core/subscription/interface';
-import { formatTax } from '../headless-checkout/tax-helpers';
+import { isTaxInclusive } from '../../../core/subscription/helpers';
+import type { SubscriptionEstimation } from '../../../core/subscription/interface';
+import { formatTax } from '../../headless-checkout/tax-helpers';
 
 interface Props {
     checkResult: SubscriptionEstimation;

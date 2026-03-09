@@ -30,7 +30,7 @@ import {
     type ChargebeePaypalButtonProps,
     ChargebeeSavedCardWrapper,
 } from '@proton/payments/ui';
-import { TaxFields } from '@proton/payments/ui/components/TaxFields';
+import { TaxFields } from '@proton/payments/ui/billing-address/components/TaxFields';
 import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { isBilledUser } from '@proton/shared/lib/interfaces';
 
