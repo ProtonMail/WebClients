@@ -124,7 +124,6 @@ export const InviteRecommendations: FC<InviteRecommendationsProps> = (props) => 
                                 {...rendererProps}
                                 {...props}
                                 moreLoading={moreLoading}
-                                rowCount={rowCount}
                                 view={view}
                                 suggestions={suggestions}
                             />
