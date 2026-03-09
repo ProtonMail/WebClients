@@ -69,7 +69,7 @@ export const PublicFileView = ({ rootNode, customPassword, isPartialView }: Publ
                     undefined
                 }
                 onDetails={() => handleDetails(rootNode.uid)}
-                onDownload={() => handleDownload()}
+                onDownload={handleDownload}
                 onScanAndDownload={() => handleDownload(true)}
                 onCopyLink={handleCopyLink}
                 customPassword={customPassword}
