@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -19,7 +19,7 @@ interface HtmlPreviewPanelProps {
 }
 
 /**
- * Script injected into the srcdoc so we can safely cross the sandbox boundary.
+ * Script injected into the generated HTML so we can safely cross the sandbox boundary.
  * The parent posts { type: 'lumo-resize' } via postMessage (the only API that
  * works across a sandboxed iframe origin), and this listener re-dispatches a
  * native resize event on the iframe's own window so D3/canvas/etc. recalculate.
@@ -52,8 +52,21 @@ export const HtmlPreviewPanel = ({ html, isFullscreen, onToggleFullscreen, onClo
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const [renderError, setRenderError] = useState<string | null>(null);
+    const [blobUrl, setBlobUrl] = useState<string | null>(null);
 
-    const srcDoc = useMemo(() => injectScripts(html), [html]);
+    // Using a blob: URL instead of srcdoc so the iframe does not inherit the
+    // parent page's CSP. srcdoc iframes inherit the parent CSP by spec, which
+    // blocks external CDN scripts (e.g. D3) and inline scripts in the generated
+    // HTML. Blob URL iframes have no inherited CSP and blob: is already allowed
+    // in the parent's script-src directive.
+    useEffect(() => {
+        const blob = new Blob([injectScripts(html)], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        setBlobUrl(url);
+        return () => {
+            URL.revokeObjectURL(url);
+        };
+    }, [html]);
 
     // Clear any previous error when new HTML is loaded
     useEffect(() => {
@@ -155,7 +168,7 @@ export const HtmlPreviewPanel = ({ html, isFullscreen, onToggleFullscreen, onClo
                     title={c('collider_2025: Label').t`HTML Preview`}
                     className="w-full h-full border-none"
                     sandbox="allow-scripts"
-                    srcDoc={srcDoc}
+                    src={blobUrl ?? undefined}
                 />
             </div>
         </div>
