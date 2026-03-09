@@ -361,9 +361,12 @@ export type MessagePriv = {
     // Reasoning: Model's internal thinking process (extended thinking models)
     reasoning?: string; // Legacy: concatenated reasoning
     reasoningChunks?: ReasoningChunk[]; // New: reasoning with sequence numbers for proper interleaving
-    
+
     // Thinking timeline: events showing when reasoning/tool calls happened
     thinkingTimeline?: ThinkingTimelineEvent[];
+
+    // Suggested follow-up questions from the model
+    suggestedQuestions?: string[];
 };
 
 export type Message = MessagePub & MessagePriv;
