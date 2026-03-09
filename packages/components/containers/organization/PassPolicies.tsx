@@ -31,6 +31,7 @@ import { PasswordGeneratorPolicyForm } from '../pass/PasswordGeneratorPolicyForm
 import './PassPolicies.scss';
 
 type GetPoliciesProps = {
+    showAliasCreation: boolean;
     showItemSharing: boolean;
     showSecureLink: boolean;
 };
@@ -58,7 +59,11 @@ const getVaultCreateOptions = (showAllOptions = false) => [
     },
 ];
 
-const getPolicies = ({ showItemSharing = false, showSecureLink = false }: GetPoliciesProps): PolicyItem[] => [
+const getPolicies = ({
+    showAliasCreation = false,
+    showItemSharing = false,
+    showSecureLink = false,
+}: GetPoliciesProps): PolicyItem[] => [
     {
         setting: 'ShareMode',
         label: c('Label').t`Allow sharing outside the organization`,
@@ -92,6 +97,17 @@ const getPolicies = ({ showItemSharing = false, showSecureLink = false }: GetPol
         description: c('Info').t`If disabled, only administrators will be able to export data.`,
         isBooleanInverted: true,
     },
+    ...(showAliasCreation
+        ? [
+              {
+                  setting: 'AliasCreateMode',
+                  label: c('Label').t`Allow alias creation`,
+                  description: c('Info')
+                      .t`If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.`,
+                  isBooleanInverted: true,
+              } as const,
+          ]
+        : []),
 ];
 
 const PassPolicies = () => {
@@ -105,10 +121,11 @@ const PassPolicies = () => {
     const showVaultCreationV2 = useFlag('PassB2BVaultCreationV2');
     const showItemSharing = useFlag('PassB2BItemSharing');
     const showSecureLink = useFlag('PassB2BSecureLinkSharing');
+    const showAliasCreation = useFlag('PassB2BAliasCreation');
     const showPauseList = useFlag('PassB2BPauseList');
     const [organizationSettings, setOrganizationSettings] = useState<Maybe<OrganizationGetResponse>>();
 
-    const policies = getPolicies({ showItemSharing, showSecureLink });
+    const policies = getPolicies({ showAliasCreation, showItemSharing, showSecureLink });
 
     const touched = useRef<keyof OrganizationSettings>();
     const didLoad = useRef(false);
