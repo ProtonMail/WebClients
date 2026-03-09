@@ -5,14 +5,19 @@ import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import { IcAppSwitch } from '@proton/icons/icons/IcAppSwitch';
 import type { AppLinkProps } from '@proton/components/components/link/AppLink';
+import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
+import { IcAppSwitch } from '@proton/icons/icons/IcAppSwitch';
+import { TelemetryAppSwitcher, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail, isElectronOnInboxApps, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
+import { isPassUser } from '@proton/shared/lib/helpers/usedClientsFlags';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -27,11 +32,12 @@ interface AppsDropdownProps {
     organization?: OrganizationExtended;
     title?: string;
     reloadDocument?: AppLinkProps['reloadDocument'];
+    onAppClick?: (appToLinkTo: APP_NAMES) => void;
 }
 
 const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
     (
-        { onDropdownClick, app, user, organization, title, reloadDocument, ...rest }: AppsDropdownProps,
+        { onDropdownClick, app, user, organization, title, reloadDocument, onAppClick, ...rest }: AppsDropdownProps,
         ref: ForwardedRef<HTMLButtonElement>
     ) => {
         const { APP_NAME } = useConfig();
@@ -89,6 +95,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                                         reloadDocument={reloadDocument}
                                         // The same app opens in the same window, other apps in new windows
                                         target={APP_NAME === appToLinkTo ? '_self' : '_blank'}
+                                        onAppClick={() => onAppClick?.(appToLinkTo)}
                                     >
                                         <ProductIcon appToLinkTo={appToLinkTo} current={current} />
                                     </ProductLink>
@@ -111,14 +118,43 @@ const AuthenticatedAppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProp
         const [user] = useUser();
         const [organization] = useOrganization();
         const { APP_NAME } = useConfig();
+        const api = useApi();
         const isInboxCustomAppSwitcher = useFlag('InboxDesktopWinLinNewAppSwitcher');
+        const [userSettings] = useUserSettings();
+
+        const handleAppClick = (toApp: APP_NAMES) => {
+            try {
+                const { UsedClientFlags } = userSettings;
+                if (!UsedClientFlags) {
+                    return;
+                }
+
+                if (toApp === APPS.PROTONPASS) {
+                    const alreadyUsedPass = isPassUser(BigInt(UsedClientFlags));
+
+                    void sendTelemetryReport({
+                        api,
+                        measurementGroup: TelemetryMeasurementGroups.appSwitcher,
+                        event: TelemetryAppSwitcher.dropdown_app_click,
+                        dimensions: {
+                            fromApp: APP_NAME,
+                            toApp: toApp,
+                            alreadyUsedApp: alreadyUsedPass.toString(),
+                        },
+                        delay: false,
+                    });
+                }
+            } catch {}
+        };
 
         // The app swicher on Mail, Calendar and account desktop application is different
         if (isElectronOnInboxApps(APP_NAME) && (isElectronOnMac || (isInboxCustomAppSwitcher && isElectronMail))) {
             return <InboxDesktopAppSwitcher appToLinkTo={props.app} />;
         }
 
-        return <AppsDropdown ref={ref} {...props} user={user} organization={organization} />;
+        return (
+            <AppsDropdown ref={ref} {...props} user={user} organization={organization} onAppClick={handleAppClick} />
+        );
     }
 );
 
