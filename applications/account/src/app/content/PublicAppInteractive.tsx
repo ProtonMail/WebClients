@@ -46,6 +46,7 @@ import RemoveEmailContainer from '../public/RemoveEmailContainer';
 import SigninHelpContainer from '../public/SigninHelpContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
 import VerifyEmailContainer from '../public/VerifyEmailContainer';
+import PassExtensionOnboarding from '../public/pass/PassExtensionOnboarding';
 import SignInWithAnotherDeviceContainer from '../public/signInWithAnotherDevice/SignInWithAnotherDeviceContainer';
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
@@ -317,6 +318,11 @@ const PublicAppInteractive = ({
                 <UnAuthenticated>
                     <CallScheduledPage />
                 </UnAuthenticated>
+            </Route>
+            <Route path={SSO_PATHS.PASS_EXTENSION_ONBOARDING}>
+                <UnauthenticatedApiProvider unauthenticatedApi={extraThunkArguments.unauthenticatedApi}>
+                    <PassExtensionOnboarding />
+                </UnauthenticatedApiProvider>
             </Route>
             {blockingLoginEffect && <Route path="*">{blockingLoginEffect}</Route>}
             <Route path="*">
