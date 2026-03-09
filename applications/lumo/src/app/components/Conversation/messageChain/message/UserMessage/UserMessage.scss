@@ -15,15 +15,16 @@
 	// so text must always be dark — never inherit the theme's light-mode text token.
 	&.markdown-rendering {
 		background-color: #e2e4fb;
-		color: #1c1b4b !important;
 
-		// Force all descendant text nodes (including those rendered inside
-		// the LazyProgressiveMarkdownRenderer .prose wrapper) to stay dark.
-		* {
+		// Scope forced dark color only to the markdown content wrapper — do NOT set
+		// color on the container itself, as inherited values bleed into all descendants
+		// (toolbar, attachment cards, etc.) even when scoped rules are used.
+		.lumo-markdown,
+		.lumo-markdown * {
 			color: #1c1b4b !important;
 		}
 
-		a {
+		.lumo-markdown a {
 			color: #4740d4 !important;
 		}
 	}
