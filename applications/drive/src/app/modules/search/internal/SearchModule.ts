@@ -7,7 +7,9 @@ import { Version } from '@proton/shared/lib/helpers/version';
 
 import { Logger } from './Logger';
 import { MainThreadBridge } from './MainThreadBridge';
-import type { ClientId, UserId } from './types';
+import type { SearchModuleStateUpdateChannel } from './searchModuleStateUpdateChannel';
+import { createSearchModuleStateUpdateChannel } from './searchModuleStateUpdateChannel';
+import type { ClientId, SearchModuleState, UserId } from './types';
 import { WorkerClient } from './workerClient';
 
 let instance: SearchModule | null = null;
@@ -21,7 +23,17 @@ export type SearchModuleContext = {
 };
 
 export class SearchModule {
-    private clientId: ClientId;
+    private state: SearchModuleState = {
+        isInitialIndexing: false,
+        isSearchable: false,
+    };
+
+    // Callbacks notified whenever the search module state changes (e.g. React hooks).
+    private stateUpdateListeners = new Set<(state: SearchModuleState) => void>();
+
+    // Receives state updates from the SharedWorker (EngineOrchestrator) via BroadcastChannel.
+    // Never closed: lives for the page lifetime.
+    private updateChannel: SearchModuleStateUpdateChannel;
 
     private constructor(context: SearchModuleContext) {
         if (!SearchModule.isEnvironmentCompatible()) {
@@ -32,11 +44,24 @@ export class SearchModule {
             throw new Error(`SearchModule singleton already exists`);
         }
 
-        // Assign a unique ID to this client instance (e.g. a browser tab or window)
+        // Create a unique ID to this client instance (e.g. a browser tab or window)
         // so the search worker can distinguish between concurrent clients.
-        this.clientId = uuidv4() as ClientId;
+        const clientId = uuidv4() as ClientId;
 
-        new WorkerClient(context.userId, this.clientId, new MainThreadBridge(context.driveClient));
+        const bridge = new MainThreadBridge(context.driveClient);
+        new WorkerClient(context.userId, clientId, bridge);
+
+        this.updateChannel = createSearchModuleStateUpdateChannel(context.userId);
+        this.updateChannel.onmessage = ({ data: newState }) => {
+            let key: keyof SearchModuleState;
+            for (key in newState) {
+                // If any field changed in the state, update the whole state.
+                if (newState[key] !== this.state[key]) {
+                    this.setState(newState);
+                    break;
+                }
+            }
+        };
 
         Logger.listenForWorkerLogs();
     }
@@ -51,6 +76,24 @@ export class SearchModule {
 
         return instance;
     }
+
+    getState(): SearchModuleState {
+        return this.state;
+    }
+
+    onStateChange(cb: (state: SearchModuleState) => void): () => void {
+        this.stateUpdateListeners.add(cb);
+        return () => {
+            this.stateUpdateListeners.delete(cb);
+        };
+    }
+
+    private setState(state: SearchModuleState): void {
+        this.state = state;
+        this.stateUpdateListeners.forEach((cb) => cb(state));
+    }
+
+    // TODO: search(query: SearchQuery): Promise<SearchResult[]> — delegate to WorkerClient.
 
     static isEnvironmentCompatible(): boolean {
         if (isSafari()) {

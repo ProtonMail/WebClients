@@ -7,7 +7,7 @@ type BridgeListener = (bridge: MainThreadBridge) => void;
  * When a client disconnects and another connects, the internal main thread bridge
  * will change and notify any consumer of this service.
  */
-export class MainThreadBridgeService {
+export class ActiveMainThreadBridgeService {
     private current: MainThreadBridge | null = null;
     private readonly listeners = new Set<BridgeListener>();
 
