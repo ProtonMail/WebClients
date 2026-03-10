@@ -37,6 +37,9 @@
       ]
     },
     "authenticator-2025:Action": {
+      "Change folder": [
+        "Cambiar carpeta"
+      ],
       "Confirm": [
         "Confirmar"
       ],
@@ -51,6 +54,9 @@
       ],
       "Got it": [
         "Entendido"
+      ],
+      "How to use ${ AUTHENTICATOR_SHORT_APP_NAME }": [
+        "Cómo usar ${ AUTHENTICATOR_SHORT_APP_NAME }"
       ],
       "Import": [
         "Importar"
@@ -69,6 +75,9 @@
       ],
       "Sign in": [
         "Iniciar sesión"
+      ],
+      "Sync between devices": [
+        "Sincronizar entre dispositivos"
       ]
     },
     "authenticator-2025:Error": {
@@ -87,6 +96,9 @@
       ]
     },
     "authenticator-2025:Info": {
+      "Backup files will not be erased.": [
+        "Los archivos de copia de seguridad no se borrarán."
+      ],
       "Choose ${ plainTextBold }, this will create a txt file that you can use here.": [
         "Elige ${ plainTextBold }, esto creará un archivo txt que puedes usar aquí."
       ],
@@ -131,6 +143,9 @@
       "60 seconds": [
         "60 segundos"
       ],
+      "Account: ${ user.Email }": [
+        "Cuenta: ${ user.Email }"
+      ],
       "Add": [
         "Añadir"
       ],
@@ -148,6 +163,9 @@
       ],
       "Dark": [
         "Oscuro"
+      ],
+      "Discover ${ BRAND_NAME }": [
+        "Descubre ${ BRAND_NAME }"
       ],
       "Enabled, temporarily offline": [
         "Activado, temporalmente sin conexión"
@@ -190,11 +208,17 @@
       "Log in": [
         "Iniciar sesión"
       ],
+      "Settings": [
+        "Configuración"
+      ],
       "Sign up": [
         "Regístrate"
       ]
     },
     "authenticator-2025:Warning": {
+      "For enhanced security, un-encrypted automatic backup has been disabled. You can re-enable it in the Settings.": [
+        "Para mayor seguridad, la copia de seguridad automática no cifrada se ha desactivado. Puedes volver a activarla en los Ajustes."
+      ],
       "Nothing to import.": [
         "No hay nada que importar."
       ],
@@ -316,6 +340,9 @@
       ]
     },
     "Warning": {
+      "No backup location selected.": [
+        "No se ha seleccionado ninguna ubicación de copia de seguridad."
+      ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "No se puede iniciar sesión en ${ PASS_APP_NAME }. ${ additionalMessage }"
       ]
