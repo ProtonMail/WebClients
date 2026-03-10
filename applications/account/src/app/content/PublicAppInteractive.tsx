@@ -21,6 +21,8 @@ import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { FlagProvider } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
 
+import bornPrivateActivatePage from '../../pages/born-private.activate';
+import bornPrivateRecoveryPage from '../../pages/born-private.recovery';
 import forgotUsernamePage from '../../pages/forgot-username';
 import resetPasswordPage from '../../pages/reset-password';
 import locales from '../locales';
@@ -51,6 +53,8 @@ import SignInWithAnotherDeviceContainer from '../public/signInWithAnotherDevice/
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
 import { getSignupMeta } from '../signup/signupPagesJson';
+import Activation from '../signupCtx/flows/bornPrivate/activation/Activation';
+import Recovery from '../signupCtx/flows/bornPrivate/recovery/Recovery';
 import SingleSignupContainer from '../single-signup/SingleSignupContainer';
 import { extraThunkArguments } from '../store/public-thunk';
 import type useLocationWithoutLocale from '../useLocationWithoutLocale';
@@ -392,6 +396,19 @@ const PublicAppInteractive = ({
                                                 />
                                             </UnAuthenticated>
                                         </Route>
+                                        <Route path={SSO_PATHS.BORN_PRIVATE_ACTIVATE}>
+                                            <UnAuthenticated>
+                                                <Activation
+                                                    metaTags={bornPrivateActivatePage()}
+                                                    onLogin={handleLogin}
+                                                />
+                                            </UnAuthenticated>
+                                        </Route>
+                                        <Route path={SSO_PATHS.BORN_PRIVATE_RECOVERY}>
+                                            <UnAuthenticated>
+                                                <Recovery metaTags={bornPrivateRecoveryPage()} />
+                                            </UnAuthenticated>
+                                        </Route>
                                         <Route
                                             path={[
                                                 SSO_PATHS.SIGNUP,
@@ -414,8 +431,8 @@ const PublicAppInteractive = ({
                                                 SSO_PATHS.MEET_SIGNUP_B2B,
                                                 SSO_PATHS.PORKBUN_SIGNUP,
                                                 SSO_PATHS.PORKBUN_SIGN_IN,
-                                                SSO_PATHS.FIRST_EMAIL,
                                                 SSO_PATHS.GREENLAND_SIGNUP,
+                                                SSO_PATHS.BORN_PRIVATE,
                                             ]}
                                         >
                                             <SingleSignupSwitchContainer

@@ -1,0 +1,17 @@
+.icon-confirmation {
+	animation: checkmarkAnimation 0.8s cubic-bezier(0.38, 1.71, 0.64, 1) both;
+	animation-delay: 0.5s;
+	transform-origin: center;
+
+	@keyframes checkmarkAnimation {
+		0% {
+			opacity: 0;
+			transform: scale(0);
+		}
+
+		100% {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+}

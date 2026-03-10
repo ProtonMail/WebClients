@@ -602,6 +602,7 @@ export class PaymentMethods {
             'signup-v2-upgrade',
             'signup-vpn',
             'subscription',
+            'reservation-donation',
         ] as PaymentMethodFlow[];
         const isAllowedFlow = flows.includes(this.flow);
 
