@@ -51,7 +51,8 @@ export const getThemeFromLocation = (
         location.pathname === SSO_PATHS.DOCS_SIGNUP ||
         location.pathname === SSO_PATHS.VPN_SIGNUP ||
         location.pathname === SSO_PATHS.LUMO_SIGNUP ||
-        location.pathname === SSO_PATHS.MEET_SIGNUP
+        location.pathname === SSO_PATHS.MEET_SIGNUP ||
+        location.pathname.startsWith(SSO_PATHS.BORN_PRIVATE)
     ) {
         return {
             LightTheme: ThemeTypes.Storefront,

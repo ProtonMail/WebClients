@@ -23,6 +23,8 @@ import {
     LUMO_SHORT_APP_NAME,
     MAIL_APP_NAME,
     MAIL_SHORT_APP_NAME,
+    MEET_APP_NAME,
+    MEET_SHORT_APP_NAME,
     PASS_APP_NAME,
     PASS_SHORT_APP_NAME,
     SHEETS_APP_NAME,
@@ -34,6 +36,8 @@ import {
 } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
+
+import MeetLogo from '../logo/MeetLogo';
 
 interface AppLogo {
     title: string;
@@ -50,7 +54,8 @@ type SupportedApp =
     | typeof APPS.PROTONWALLET
     | typeof APPS.PROTONDOCS
     | typeof APPS.PROTONSHEETS
-    | typeof APPS.PROTONLUMO;
+    | typeof APPS.PROTONLUMO
+    | typeof APPS.PROTONMEET;
 
 const supportedAppLogosMap: Record<SupportedApp, AppLogo> = {
     [APPS.PROTONMAIL]: {
@@ -97,6 +102,11 @@ const supportedAppLogosMap: Record<SupportedApp, AppLogo> = {
         title: LUMO_APP_NAME,
         shortTitle: LUMO_SHORT_APP_NAME,
         Logo: LumoLogo,
+    },
+    [APPS.PROTONMEET]: {
+        title: MEET_APP_NAME,
+        shortTitle: MEET_SHORT_APP_NAME,
+        Logo: MeetLogo,
     },
 } as const;
 

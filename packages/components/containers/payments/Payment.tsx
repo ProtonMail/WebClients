@@ -32,7 +32,7 @@ import {
     savedMethodRequires3DS,
     type useSepaCurrencyOverride,
 } from '@proton/payments';
-import { getMinCreditAmount } from '@proton/payments/core/amount-limits';
+import { getMinCreditAmount, getMinDonationAmount } from '@proton/payments/core/amount-limits';
 import {
     type CbIframeHandles,
     type ChargebeeCardWrapperProps,
@@ -178,6 +178,16 @@ export const PaymentsNoApi = ({
         );
     }
 
+    const minDonationAmount = getMinDonationAmount(currency);
+    if (flow === 'reservation-donation' && amount < minDonationAmount) {
+        const price = (
+            <Price key="price" currency={currency}>
+                {minDonationAmount}
+            </Price>
+        );
+        return <Alert className="mb-4" type="error">{c('Error').jt`The minimum donation amount is ${price}`}</Alert>;
+    }
+
     if (loading) {
         return <Loader />;
     }
@@ -192,7 +202,8 @@ export const PaymentsNoApi = ({
         isSignupVpn ||
         isSignupWallet ||
         flow === 'signup-v2' ||
-        flow === 'signup-v2-upgrade'
+        flow === 'signup-v2-upgrade' ||
+        flow === 'reservation-donation'
     );
 
     const sharedCbProps: Pick<

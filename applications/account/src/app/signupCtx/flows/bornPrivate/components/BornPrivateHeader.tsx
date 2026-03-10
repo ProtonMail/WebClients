@@ -1,12 +1,12 @@
 import { Logo } from '@proton/components/index';
 import { APPS } from '@proton/shared/lib/constants';
 
-const Header = () => {
+const BornPrivateHeader = () => {
     return (
-        <header className="flex shrink-0 w-full mx-auto pt-6 px-6 pb-0 md:pb-6 max-w-custom">
+        <header className="flex items-center justify-space-between shrink-0 w-full mx-auto py-6">
             <Logo appName={APPS.PROTONMAIL} hasTitle />
         </header>
     );
 };
 
-export default Header;
+export default BornPrivateHeader;

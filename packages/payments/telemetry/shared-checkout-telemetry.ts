@@ -50,6 +50,7 @@ function getMapping(suffix: string): Record<PaymentTelemetryContext, string> {
         'ctx-signup-greenland': `ctx_signup_greenland_${suffix}`,
         'ctx-signup-meet': `ctx_signup_meet_${suffix}`,
         'ctx-signup-referral': `ctx_signup_referral_${suffix}`,
+        'ctx-email-reservation': `ctx_email_reservation_${suffix}`,
         'subscription-modification': `subscription_modification_${suffix}`,
         other: `other_${suffix}`,
     } as const satisfies Record<PaymentTelemetryContext, string>;

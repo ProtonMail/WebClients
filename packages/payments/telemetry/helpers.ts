@@ -232,6 +232,8 @@ export type PaymentTelemetryContext =
     | 'ctx-signup-meet'
     /** Context-based referral signup */
     | 'ctx-signup-referral'
+    /** Context-based email reservation */
+    | 'ctx-email-reservation'
     /** Subscription modification modal for existing users */
     | 'subscription-modification'
     /** Fallback for unmapped contexts */
