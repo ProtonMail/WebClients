@@ -6,35 +6,23 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Time from '@proton/components/components/time/Time';
 import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
 import { getReactivateSubscriptionAction } from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
-import useShowDashboard, { getDashboardFeatureFlag } from '@proton/components/hooks/accounts/useShowDashboard';
-import useConfig from '@proton/components/hooks/useConfig';
-import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
-import { SubscriptionPlatform, isTrial, subscriptionExpires } from '@proton/payments';
+import { SubscriptionPlatform, subscriptionExpires } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS } from '@proton/shared/lib/constants';
 
+import { useHideBanner } from './SubscriptionEndsBannerHelpers';
 import TopBanner from './TopBanner';
 
 const SubscriptionEndsBanner = ({ app }: { app: APP_NAMES }) => {
-    const { APP_NAME } = useConfig();
     const [subscription] = useSubscription();
-    const { subscriptionExpiresSoon, planName, expirationDate } = subscriptionExpires(subscription!);
-    const { showVPNDashboard } = useShowVPNDashboard(app);
-    const { showDashboard } = useShowDashboard(app, getDashboardFeatureFlag(app));
+    const { subscriptionExpiresSoon, planName, expirationDate } = subscriptionExpires(subscription);
 
-    if (!([APPS.PROTONACCOUNT, APPS.PROTONVPN_SETTINGS] as APP_NAMES[]).includes(APP_NAME)) {
+    const shouldHideBanner = useHideBanner(app, subscription, subscriptionExpiresSoon, expirationDate);
+
+    if (!subscription) {
         return null;
     }
 
-    if (showVPNDashboard || showDashboard) {
-        return null;
-    }
-
-    if (isTrial(subscription)) {
-        return null;
-    }
-
-    if (!subscriptionExpiresSoon || !subscription) {
+    if (shouldHideBanner) {
         return null;
     }
 
