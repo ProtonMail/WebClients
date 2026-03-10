@@ -22,7 +22,6 @@ import PaymentWrapper from '@proton/components/containers/payments/PaymentWrappe
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { IcCode } from '@proton/icons/icons/IcCode';
@@ -531,16 +530,6 @@ const Step1B = ({
                 ...old,
                 optimistic: {},
             }));
-
-            if (e instanceof InvalidZipCodeError) {
-                setModel((old) => ({
-                    ...old,
-                    subscriptionData: {
-                        ...old.subscriptionData,
-                        zipCodeValid: false,
-                    },
-                }));
-            }
         }
     };
 

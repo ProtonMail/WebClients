@@ -13,7 +13,7 @@ import type TopNavbarOffer from './TopNavbarOffer';
 import TopNavbarUpgradeButton from './TopNavbarUpgradeButton';
 
 interface Props {
-    offerProps?: Omit<ComponentPropsWithoutRef<typeof TopNavbarOffer>, 'offerConfig' | 'app'>;
+    offerProps?: Omit<ComponentPropsWithoutRef<typeof TopNavbarOffer>, 'offerConfig' | 'app' | 'shouldPrefetch'>;
     app: APP_NAMES;
 }
 

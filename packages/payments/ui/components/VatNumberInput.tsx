@@ -5,10 +5,10 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import Checkbox from '@proton/components/components/input/Checkbox';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import { backendBillingAddressFieldError } from '@proton/components/payments/react-extensions/errors';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { backendBillingAddressFieldError } from '../../core/errors';
 import type { TaxCountryHook } from '../hooks/useTaxCountry';
 import { useVatFormValidation } from '../hooks/useVatFormValidation';
 import type { VatNumberHook } from '../hooks/useVatNumber';
