@@ -1803,7 +1803,7 @@
         "小计"
       ],
       "Subtotal for ${ cycle } month": [
-        "小计 ${ cycle } 个月"
+        "${ cycle } 个月小计"
       ],
       "Total": [
         "总计"
@@ -3528,6 +3528,9 @@
       "Checkout expired, please try again": [
         "支付超时，请重试"
       ],
+      "Company name or personal name is required": [
+        "公司名称或个人姓名为必填项"
+      ],
       "Contact could not be saved": [
         "无法保存联系人"
       ],
@@ -3684,11 +3687,11 @@
       "Invalid public key file": [
         "公钥文件无效"
       ],
+      "Invalid VAT number": [
+        "无效增值税号"
+      ],
       "Invalid verification code": [
         "验证码无效"
-      ],
-      "Invalid ZIP code": [
-        "无效的邮政编码"
       ],
       "Invitation failed to be sent": [
         "邀请发送失败"
@@ -3788,6 +3791,9 @@
       ],
       "Please activate your search again": [
         "请重新开启全文搜索"
+      ],
+      "Please complete the billing details": [
+        "请填写账单信息"
       ],
       "Please create an address first.": [
         "请先创建地址。"
@@ -3930,6 +3936,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此项超过了 ${ maximumLength } 个字符的长度限制。"
       ],
+      "This field is invalid": [
+        "字段无效"
+      ],
       "This field is required": [
         "此项必须填写"
       ],
@@ -3974,6 +3983,9 @@
       ],
       "Validation error": [
         "验证失败"
+      ],
+      "Wrong billing address": [
+        "错误的账单地址"
       ],
       "You already added this holidays calendar": [
         "您已添加此假期日历"
@@ -6326,6 +6338,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "如果您在 ${ trialEndsOnFormatted } 之前取消，将不会被收取费用。"
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "您将在好友订阅年度套餐 1 个月后获得推荐奖励，若好友订阅月度套餐则在 2 个月后获得。"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "此后每 ${ renewCycle } 个月按 ${ renewAmountStr } 收费。您可以随时取消。"
       ],
@@ -6801,6 +6816,9 @@
       "Emails (last 3 months)": [
         "邮件（过去 3 个月）"
       ],
+      "Emails (last 6 months)": [
+        "邮件（过去 6 个月）"
+      ],
       "Emails (last month)": [
         "邮件（上个月）"
       ],
@@ -6893,6 +6911,9 @@
       ],
       "Last 3 months only": [
         "仅过去 3 个月"
+      ],
+      "Last 6 months only": [
+        "仅过去 6 个月"
       ],
       "Last month only": [
         "仅上个月"
@@ -9221,6 +9242,9 @@
       "Got it": [
         "了解"
       ],
+      "I'm purchasing as a business": [
+        "以企业身份购买"
+      ],
       "Including ${ rate }% tax": [
         "含 ${ rate }% 税费"
       ],
@@ -9286,9 +9310,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "此操作将扩展您现有的订阅。您只需支付新增附加项的费用以及当前计费周期剩余时间的费用。您的订阅续订日期将不会改变。"
-      ],
-      "This number will be shown on all future invoices": [
-        "此编号将显示在所有未来的发票上。"
       ],
       "This offer is not available with your current plan.": [
         "此优惠不适用于您当前的套餐"
@@ -9499,6 +9520,9 @@
       "Company name": [
         "公司名称"
       ],
+      "Cortex Inc.": [
+        "Cortex 公司"
+      ],
       "E.g., ": [
         "例如："
       ],
@@ -9567,6 +9591,9 @@
       ],
       "Postal code": [
         "邮政编码"
+      ],
+      "San Francisco": [
+        "旧金山"
       ],
       "Search events": [
         "搜索事件"
@@ -11844,6 +11871,9 @@
       ],
       "Simplify password management": [
         "简化密码管理"
+      ],
+      "Spring Sale": [
+        "春季特惠"
       ],
       "Start a new import": [
         "开始导入"

@@ -3559,6 +3559,9 @@
       "Checkout expired, please try again": [
         "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
       ],
+      "Company name or personal name is required": [
+        "Απαιτείται το όνομα της εταιρείας ή το προσωπικό όνομα"
+      ],
       "Contact could not be saved": [
         "Η αποθήκευση της επαφής απέτυχε"
       ],
@@ -3717,11 +3720,11 @@
       "Invalid public key file": [
         "Μη έγκυρο δημόσιο κλειδί (public key)"
       ],
+      "Invalid VAT number": [
+        "Μη έγκυρος αριθμός ΦΠΑ"
+      ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
-      ],
-      "Invalid ZIP code": [
-        "Μη έγκυρος Ταχυδρομικός Κωδικός"
       ],
       "Invitation failed to be sent": [
         "Η πρόσκληση απέτυχε να σταλεί"
@@ -3824,6 +3827,9 @@
       ],
       "Please activate your search again": [
         "Παρακαλούμε ενεργοποιήστε ξανά την αναζήτησή σας"
+      ],
+      "Please complete the billing details": [
+        "Παρακαλούμε συμπληρώστε τα στοιχεία χρέωσης"
       ],
       "Please create an address first.": [
         "Παρακαλούμε δημιουργήστε πρώτα μια διεύθυνση."
@@ -3968,6 +3974,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
       ],
+      "This field is invalid": [
+        "Αυτό το πεδίο δεν είναι έγκυρο"
+      ],
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
       ],
@@ -4012,6 +4021,9 @@
       ],
       "Validation error": [
         "Σφάλμα επικύρωσης"
+      ],
+      "Wrong billing address": [
+        "Λανθασμένη διεύθυνσης χρέωσης"
       ],
       "You already added this holidays calendar": [
         "Έχετε ήδη προσθέσει αυτό το εορτολόγιο"
@@ -6413,6 +6425,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ trialEndsOnFormatted }."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Θα λάβετε την ανταμοιβή πίστωσης 1 μήνα αφότου ο φίλος σας εγγραφεί σε ετήσιο πλάνο και 2 μήνες αφότου εγγραφεί σε μηνιαίο πλάνο."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή.",
@@ -9388,6 +9403,9 @@
       "Got it": [
         "Το κατάλαβα"
       ],
+      "I'm purchasing as a business": [
+        "Αγοράζω ως επιχείρηση"
+      ],
       "Including ${ rate }% tax": [
         "Συμπεριλαμβανόμενος ${ rate }% φόρος"
       ],
@@ -9459,9 +9477,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Αυτή η ενέργεια επεκτείνει την υπάρχουσα συνδρομή. Θα χρεωθείτε μόνο για τα νέα πρόσθετα και τον υπόλοιπο χρόνο του τρέχοντος κύκλου χρέωσης. Η ημερομηνία ανανέωσης της συνδρομής σας δε θα αλλάξει."
-      ],
-      "This number will be shown on all future invoices": [
-        "Αυτός ο αριθμός θα εμφανίζεται σε όλα τα μελλοντικά τιμολόγια."
       ],
       "This offer is not available with your current plan.": [
         "Αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
@@ -9672,6 +9687,9 @@
       "Company name": [
         "Όνομα εταιρείας"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Για παράδειγμα, "
       ],
@@ -9740,6 +9758,9 @@
       ],
       "Postal code": [
         "Τ.Κ."
+      ],
+      "San Francisco": [
+        "Σαν Φρανσίσκο"
       ],
       "Search events": [
         "Αναζήτηση εκδηλώσεων"
@@ -12072,6 +12093,9 @@
       ],
       "Simplify password management": [
         "Απλοποιήστε τη διαχείριση κωδικών πρόσβασης"
+      ],
+      "Spring Sale": [
+        "Ανοιξιάτικες Εκπτώσεις"
       ],
       "Start a new import": [
         "Ξεκινήστε μια νέα εισαγωγή"
