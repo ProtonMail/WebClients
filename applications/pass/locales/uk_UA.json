@@ -1325,6 +1325,12 @@
         "Виявлено ${ row.breachCount } витоків",
         "Виявлено ${ row.breachCount } витоків"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } учасник)",
+        "(${ memberCount } учасники)",
+        "(${ memberCount } учасників)",
+        "(${ memberCount } учасників)"
+      ],
       "(Empty)": [
         "(Порожньо)"
       ],

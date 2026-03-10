@@ -124,14 +124,8 @@
       "Confirm all": [
         "確認全部"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "連接您的${ BRAND_NAME }帳號"
-      ],
       "Continue": [
         "繼續"
-      ],
-      "Continue without pinning": [
-        "不釘選繼續"
       ],
       "Copy and close": [
         "複製並關閉"
@@ -151,17 +145,11 @@
       "Create a ${ BRAND_NAME } account": [
         "創建一個${ BRAND_NAME } 帳號"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "創建一個${ BRAND_NAME } 帳號"
-      ],
       "Create a new vault": [
         "新建加密檔案庫"
       ],
       "Create alias": [
         "創建別名"
-      ],
-      "Create an account": [
-        "創建新帳號"
       ],
       "Create card": [
         "創建一個卡片"
@@ -240,9 +228,6 @@
       ],
       "Do not suggest on this website": [
         "不要於此網站推薦"
-      ],
-      "Done": [
-        "完成"
       ],
       "Download this CSV template": [
         "下載此CSV模板"
@@ -552,9 +537,6 @@
       ],
       "Sign back in": [
         "重新登入"
-      ],
-      "Sign in": [
-        "登入"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "使用 ${ BRAND_NAME } 登入"
@@ -887,9 +869,6 @@
       "PIN codes do not match": [
         "PIN 碼不符"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "請釘至擴充或選取「繼續不釘至」。"
-      ],
       "Registration failure: ${ message }": [
         "註冊失敗: ${ message }"
       ],
@@ -1103,6 +1082,9 @@
       "${ trialDaysLeft } day left": [
         "剩下${ trialDaysLeft }天"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } 位成員)"
+      ],
       "(Empty)": [
         "(清空)"
       ],
@@ -1177,9 +1159,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "選擇一個通行密鑰登入${ domain }"
-      ],
-      "Click the icon to open it anytime.": [
-        "點擊圖示以隨時打開。"
       ],
       "Close this window in order to use a security key or another passkey.": [
         "關閉此視窗以使用安全金鑰或其他密碼金鑰"
@@ -1273,9 +1252,6 @@
       ],
       "finance": [
         "金融"
-      ],
-      "For easy access to your passwords and more.": [
-        "容易存取密碼及更多。"
       ],
       "For security reason, your access needs to be confirmed": [
         "基於安全性理由，您的存取需要得到確認"
@@ -1418,9 +1394,6 @@
       "Offline mode could not be disabled at the moment": [
         "離線模式目前無法被停用"
       ],
-      "Open the Extensions menu": [
-        "開啟擴充功能選單"
-      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "我們的警示偏向於謹慎。如果您不認識任何外洩的資訊，您可以放心地忽略此報告。"
       ],
@@ -1453,9 +1426,6 @@
       ],
       "Permanently deleting selected items": [
         "永久刪除選取項目"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "固定${ PASS_APP_NAME }到工具列"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "個人識別數字代碼已成功登記。使用代碼以解鎖${ PASS_APP_NAME }。"
@@ -1529,9 +1499,6 @@
       "Secure links": [
         "安全加密連結"
       ],
-      "Select an existing login or create a new one.": [
-        "選取一個現有的登入或創建新的。"
-      ],
       "Select destination vault": [
         "選取目標保管庫"
       ],
@@ -1552,9 +1519,6 @@
       ],
       "Settings successfully updated": [
         "設定已成功更新"
-      ],
-      "Sign in or create an account to continue.": [
-        "請登入或註冊一個帳號以繼續。"
       ],
       "Sign in to your account": [
         "登入您的帳戶"
@@ -3039,9 +3003,6 @@
       "Confirm your email": [
         "確認您的電子郵件"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "連接您的${ BRAND_NAME }帳號"
-      ],
       "Contacts": [
         "通訊錄"
       ],
@@ -3237,9 +3198,6 @@
       "Pending access to the shared data": [
         "暫緩存取分享的資料"
       ],
-      "Pin the extension": [
-        "定置擴充功能"
-      ],
       "Pinned (${ items.length })": [
         "地址 (${ items.length })"
       ],
@@ -3362,9 +3320,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "歡迎使用 ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "歡迎來到你的新密碼管理器!"
       ],
       "What is an alias?": [
         "甚麼是別名?"

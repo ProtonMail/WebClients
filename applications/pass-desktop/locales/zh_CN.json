@@ -1449,8 +1449,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } 希望与您管理的群组共享一个项目"
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } 希望与群组 ${ invitedGroup.Name } 共享一个项目"
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } 希望与群组 ${ name } 共享一个项目。"
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } 希望与您分享一个项目。"
@@ -1494,8 +1494,8 @@
       "${ row.breachCount } breach detected": [
         "检测到 ${ row.breachCount } 泄露"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } 位成员)"
+      "(${ memberCount } member)": [
+        "（${ memberCount } 位成员）"
       ],
       "(Empty)": [
         "（空）"
@@ -1881,8 +1881,8 @@
       "Invite successfully resent": [
         "已重新发送邀请"
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "邀请群组 ${ invitedGroup.Name } 访问项目"
+      "invites the group ${ name } to access items in": [
+        "邀请群组 ${ name } 访问项目"
       ],
       "invites you to access items in": [
         "邀请您访问其中的项目"

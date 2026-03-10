@@ -2314,11 +2314,11 @@
       "Invalid postal code": [
         "O código postal não é válido."
       ],
+      "Invalid VAT number": [
+        "Número de IVA inválido"
+      ],
       "Invalid verification code": [
         "O código de verificação não é válido."
-      ],
-      "Invalid ZIP code": [
-        "O código não é valido."
       ],
       "Not a valid number": [
         "Não é um número válido"
@@ -2340,6 +2340,9 @@
       ],
       "Payment process not supported": [
         "Processo de pagamento não suportado"
+      ],
+      "Please complete the billing details": [
+        "Complete os detalhes de faturamento"
       ],
       "Please enter a valid postal code": [
         "Insira um código postal válido"
@@ -2401,6 +2404,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede o máximo de ${ maximumLength } caracteres."
       ],
+      "This field is invalid": [
+        "Este campo é inválido"
+      ],
       "This field is required": [
         "Este campo é obrigatório"
       ],
@@ -2424,6 +2430,9 @@
       ],
       "Username must end with a letter or digit": [
         "O nome de usuário deve terminar com uma letra ou dígito"
+      ],
+      "Wrong billing address": [
+        "Endereço de cobrança incorreto"
       ],
       "ZIP code is required": [
         "O CEP é obrigatório."
@@ -4620,6 +4629,9 @@
       "Got it": [
         "Entendi"
       ],
+      "I'm purchasing as a business": [
+        "Estou comprando como empresa"
+      ],
       "Including ${ rate }% tax": [
         "Incluindo ${ rate }% de imposto"
       ],
@@ -4691,9 +4703,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Esta ação expande a assinatura existente. Você será cobrado apenas pelos novos complementos e pelo tempo restante do ciclo de faturamento atual. A data de renovação da sua assinatura não será alterada."
-      ],
-      "This number will be shown on all future invoices": [
-        "Este número será mostrado em todas as faturas futuras"
       ],
       "This offer is not available with your current plan.": [
         "Essa oferta não está disponível com seu plano atual."
@@ -4859,6 +4868,9 @@
       "Confirm passphrase or leave empty": [
         "Confirme a frase secreta ou deixe vazio"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Ex., "
       ],
@@ -4885,6 +4897,9 @@
       ],
       "Postal code": [
         "Código postal"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Pesquisar"
@@ -5582,6 +5597,9 @@
       ],
       "Simplify password management": [
         "Facilite o gerenciamento de senhas"
+      ],
+      "Spring Sale": [
+        "Promoção de primavera"
       ],
       "Summary": [
         "Resumo"

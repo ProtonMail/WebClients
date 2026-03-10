@@ -2272,6 +2272,9 @@
       "Checkout expired, please try again": [
         "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
       ],
+      "Company name or personal name is required": [
+        "Απαιτείται το όνομα της εταιρείας ή το προσωπικό όνομα"
+      ],
       "Contact could not be saved": [
         "Η αποθήκευση της επαφής απέτυχε"
       ],
@@ -2314,11 +2317,11 @@
       "Invalid postal code": [
         "Μη έγκυρος ταχυδρομικός κώδικας"
       ],
+      "Invalid VAT number": [
+        "Μη έγκυρος αριθμός ΦΠΑ"
+      ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
-      ],
-      "Invalid ZIP code": [
-        "Μη έγκυρος Ταχυδρομικός Κωδικός"
       ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
@@ -2340,6 +2343,9 @@
       ],
       "Payment process not supported": [
         "Η διαδικασία πληρωμής δεν υποστηρίζεται"
+      ],
+      "Please complete the billing details": [
+        "Παρακαλούμε συμπληρώστε τα στοιχεία χρέωσης"
       ],
       "Please enter a valid postal code": [
         "Παρακαλούμε εισάγετε έναν έγκυρο ταχυδρομικό κώδικα"
@@ -2401,6 +2407,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
       ],
+      "This field is invalid": [
+        "Αυτό το πεδίο δεν είναι έγκυρο"
+      ],
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
       ],
@@ -2424,6 +2433,9 @@
       ],
       "Username must end with a letter or digit": [
         "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
+      ],
+      "Wrong billing address": [
+        "Λανθασμένη διεύθυνσης χρέωσης"
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
@@ -4614,6 +4626,9 @@
       "Got it": [
         "Το κατάλαβα"
       ],
+      "I'm purchasing as a business": [
+        "Αγοράζω ως επιχείρηση"
+      ],
       "Including ${ rate }% tax": [
         "Συμπεριλαμβανόμενος ${ rate }% φόρος"
       ],
@@ -4685,9 +4700,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Αυτή η ενέργεια επεκτείνει την υπάρχουσα συνδρομή. Θα χρεωθείτε μόνο για τα νέα πρόσθετα και τον υπόλοιπο χρόνο του τρέχοντος κύκλου χρέωσης. Η ημερομηνία ανανέωσης της συνδρομής σας δε θα αλλάξει."
-      ],
-      "This number will be shown on all future invoices": [
-        "Αυτός ο αριθμός θα εμφανίζεται σε όλα τα μελλοντικά τιμολόγια."
       ],
       "This offer is not available with your current plan.": [
         "Αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
@@ -4853,6 +4865,9 @@
       "Confirm passphrase or leave empty": [
         "Εισάγετε συνθηματικό ή αφήστε το κενό"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Για παράδειγμα, "
       ],
@@ -4879,6 +4894,9 @@
       ],
       "Postal code": [
         "Τ.Κ."
+      ],
+      "San Francisco": [
+        "Σαν Φρανσίσκο"
       ],
       "Search": [
         "Αναζήτηση"
@@ -5576,6 +5594,9 @@
       ],
       "Simplify password management": [
         "Απλοποιήστε τη διαχείριση κωδικών πρόσβασης"
+      ],
+      "Spring Sale": [
+        "Ανοιξιάτικες Εκπτώσεις"
       ],
       "Summary": [
         "Περίληψη"

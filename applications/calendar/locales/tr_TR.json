@@ -3559,6 +3559,9 @@
       "Checkout expired, please try again": [
         "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
       ],
+      "Company name or personal name is required": [
+        "Kuruluş adının veya kişi adının yazılması zorunludur"
+      ],
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
       ],
@@ -3717,11 +3720,11 @@
       "Invalid public key file": [
         "Herkese açık anahtar dosyası geçersiz"
       ],
+      "Invalid VAT number": [
+        "KDV numarası geçersiz"
+      ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
-      ],
-      "Invalid ZIP code": [
-        "Posta kodu geçersiz"
       ],
       "Invitation failed to be sent": [
         "Davet gönderilemedi"
@@ -3824,6 +3827,9 @@
       ],
       "Please activate your search again": [
         "Lütfen arama özelliğini yeniden açın"
+      ],
+      "Please complete the billing details": [
+        "Lütfen fatura bilgilerini tamamlayın"
       ],
       "Please create an address first.": [
         "Lütfen önce bir adres ekleyin."
@@ -3968,6 +3974,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
       ],
+      "This field is invalid": [
+        "Bu alan geçersiz"
+      ],
       "This field is required": [
         "Bu alanın doldurulması zorunludur"
       ],
@@ -4012,6 +4021,9 @@
       ],
       "Validation error": [
         "Doğrulama sorunu"
+      ],
+      "Wrong billing address": [
+        "Fatura adresi yanlış"
       ],
       "You already added this holidays calendar": [
         "Bu tatil takvimini zaten eklemişsiniz"
@@ -6414,6 +6426,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Arkadaşınızın yıllık bir tarifeye abone olmasından 1 ay sonra, aylık bir tarifeye abone oldmasından 2 ay sonra kredi ödülünü alacaksınız."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz.",
         "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz."
@@ -6993,7 +7008,7 @@
         "Yalnızca son 3 ay"
       ],
       "Last 6 months only": [
-        "Sadece son 6 ay"
+        "Yalnızca son 6 ay"
       ],
       "Last month only": [
         "Yalnızca son ay"
@@ -9388,6 +9403,9 @@
       "Got it": [
         "Anladım"
       ],
+      "I'm purchasing as a business": [
+        "Kurumsal olarak satın alıyorum"
+      ],
       "Including ${ rate }% tax": [
         "%${ rate } vergi dahil"
       ],
@@ -9459,9 +9477,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Bu işlem geçerli aboneliğin kapsamını genişletir. Yalnızca yeni eklentiler ve geçerli fatura döneminin kalan süresi için ücret alınır. Aboneliğinizin yenilenme tarihi değişmeyecek."
-      ],
-      "This number will be shown on all future invoices": [
-        "Bu numara, sonraki tüm faturalarda görüntülenecek"
       ],
       "This offer is not available with your current plan.": [
         "Bu teklif, geçerli tarifeniz ile kullanılamıyor."
@@ -9672,6 +9687,9 @@
       "Company name": [
         "Kuruluş adı"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Örneğin, "
       ],
@@ -9740,6 +9758,9 @@
       ],
       "Postal code": [
         "Posta kodu"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search events": [
         "Etkinlik ara"
@@ -9885,6 +9906,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "${ BRAND_NAME } tarafından gelen resmi e-posta"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Bu teklif bir daha görüntülenmesin"
+      ],
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/ay"
+      ],
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "2 TB data storage": [
+        "2 TB veri depolama alanı"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB depolama alanı: Geçerli tarifenizin 40 katı"
+      ],
+      "3 TB data storage": [
+        "3 TB veri depolama alanı"
+      ],
+      "500 GB storage": [
+        "500 GB depolama alanı"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
+      ],
+      "Access advanced AI models": [
+        "Gelişmiş yapay zeka modellerine erişim"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Mail, Pass, Drive, VPN ve Calender'ın tüm ücretli özellikleri"
+      ],
+      "Block ads, trackers, and malware": [
+        "Reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyin"
+      ],
+      "Built-in 2FA authenticator": [
+        "Dahili iki adımlı kimlik doğrulayıcı"
+      ],
+      "Connect 10 devices at once": [
+        "Aynı anda 10 aygıtla bağlanın"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } uygulamasına tam erişim"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Kolay arama ve favoriler ile tüm sohbet geçmişi"
+      ],
+      "Individual accounts for 6 users": [
+        "6 kullanıcı için bireysel hesaplar"
+      ],
+      "Individual accounts for you and a partner": [
+        "Siz ve bir partneriniz için bireysel hesaplar"
+      ],
+      "Online document editor": [
+        "Çevrim içi belge düzenleyici"
+      ],
+      "Recover previous file versions": [
+        "Önceki dosya sürümlerini geri yükleyin"
+      ],
+      "Stronger protection against cyber threats": [
+        "Siber tehditlere karşı daha güçlü koruma"
+      ],
+      "Unlimited daily chats": [
+        "Sınırsız günlük sohbet"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Sınırsız klasör, etiket ve filtre"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adı"
+      ],
+      "Use your own email domain": [
+        "Kendi e-posta etki alanınızı kullanın"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "bir kelebek"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "12 aylığına"
+      ],
+      "SPRING SALE": [
+        "BAHAR İNDİRİMİ"
       ]
     },
     "Referral": {
@@ -12072,6 +12188,9 @@
       ],
       "Simplify password management": [
         "Parola yönetimini kolaylaştırın"
+      ],
+      "Spring Sale": [
+        "Bahar indirimi"
       ],
       "Start a new import": [
         "Yeni bir içe aktarma başlatın"

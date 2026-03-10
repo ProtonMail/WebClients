@@ -284,6 +284,9 @@
       "Delete Gateway": [
         "რაუტერის წაშლა"
       ],
+      "Delete gateway": [
+        "რაუტერის წაშლა"
+      ],
       "Delete group": [
         "ჯგუფის წაშლა"
       ],
@@ -4026,9 +4029,6 @@
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
       ],
-      "Invalid ZIP code": [
-        "არასწორი ZIP კოდი"
-      ],
       "Label name cannot be empty.": [
         "ჭდის სახელი ცარიელი არ შეიძლება იყოს."
       ],
@@ -6549,6 +6549,9 @@
       ],
       "Free trial": [
         "უფასო საცდელი პერიოდი"
+      ],
+      "Gateway deleted": [
+        "რაუტერი წაიშალა"
       ],
       "Gateway monitor": [
         "რაუტერის მონიტორი"
@@ -11596,6 +11599,9 @@
       "Got it": [
         "გავიგე"
       ],
+      "I'm purchasing as a business": [
+        "ვაპირებ შევიძინო ბიზნესისთვის"
+      ],
       "Including ${ rate }% tax": [
         "${ rate }% გადასახადის ჩათვლით"
       ],
@@ -11656,9 +11662,6 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ.",
         "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ."
-      ],
-      "This number will be shown on all future invoices": [
-        "ეს რიცხვი ყველა მომავალ ინვოისზე გამოჩნდება"
       ],
       "This offer is not available with your current plan.": [
         "ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
@@ -14896,6 +14899,9 @@
       ],
       "Device name": [
         "მოწყობილობის სახელი"
+      ],
+      "Disable account monitor?": [
+        "გაითიშოს ანგარიშის მონიტორი?"
       ],
       "Disable two-factor authentication": [
         "2FA-ის გამორთვა"

@@ -5,11 +5,17 @@
   },
   "contexts": {
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "„Jetzt neu starten und Profil erstellen“ startet die App sofort neu und erstellt ein Startprofil.\n\n„Profil beim nächsten Start erstellen“ erstellt das Profil beim nächsten Öffnen der App. Verwenden Sie diese Option, um die Startgeschwindigkeit nach einem Neustart zu messen."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "Über ${ MAIL_APP_NAME }"
       ],
       "Actual Size": [
         "Tatsächliche Größe"
+      ],
+      "Cancel": [
+        "Abbrechen"
       ],
       "Check spelling while typing": [
         "Rechtschreibung während des Tippens prüfen"
@@ -19,6 +25,9 @@
       ],
       "Close Window": [
         "Fenster schließen"
+      ],
+      "Collect startup performance data": [
+        "Startvorgangsdaten erfassen"
       ],
       "Copy": [
         "Kopieren"
@@ -47,6 +56,12 @@
       "Paste and Match Style": [
         "Einfügen und Stil anpassen"
       ],
+      "Profile app startup": [
+        "App-Start analysieren"
+      ],
+      "Profile on next launch": [
+        "Profil beim nächsten Start erstellen"
+      ],
       "Quit": [
         "Beenden"
       ],
@@ -58,6 +73,9 @@
       ],
       "Reload": [
         "Neu laden"
+      ],
+      "Restart and profile now": [
+        "Jetzt neu starten und Profil erstellen"
       ],
       "Select All": [
         "Alles auswählen"
@@ -79,6 +97,9 @@
       ],
       "Stop Speaking": [
         "Höre auf zu sprechen"
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "Dadurch wird gemessen, wie lange die App benötigt, um zu starten und einen Bericht in Ihrem Protokollordner zu speichern."
       ],
       "Toggle Full Screen": [
         "Vollbildmodus ein-/ausschalten"

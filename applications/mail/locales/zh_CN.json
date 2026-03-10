@@ -2595,7 +2595,7 @@
         "小计"
       ],
       "Subtotal for ${ cycle } month": [
-        "小计 ${ cycle } 个月"
+        "${ cycle } 个月小计"
       ],
       "Total": [
         "总计"
@@ -4520,6 +4520,9 @@
       "Choose a date within the next ${ n } day.": [
         "选择接下来 ${ n } 天内的一个日期。"
       ],
+      "Company name or personal name is required": [
+        "公司名称或个人姓名为必填项"
+      ],
       "Condition incomplete": [
         "条件不完整"
       ],
@@ -4670,11 +4673,11 @@
       "Invalid public key file": [
         "公钥文件无效"
       ],
+      "Invalid VAT number": [
+        "无效增值税号"
+      ],
       "Invalid verification code": [
         "验证码无效"
-      ],
-      "Invalid ZIP code": [
-        "无效的邮政编码"
       ],
       "Item content cannot exceed 40KB": [
         "项目内容不能超过 40KB"
@@ -4774,6 +4777,9 @@
       ],
       "Please activate your search again": [
         "请重新开启全文搜索"
+      ],
+      "Please complete the billing details": [
+        "请填写账单信息"
       ],
       "Please enter a valid postal code": [
         "请输入有效的邮政编码"
@@ -4979,6 +4985,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此项超过了 ${ maximumLength } 个字符的长度限制。"
       ],
+      "This field is invalid": [
+        "字段无效"
+      ],
       "This field is required": [
         "此项必须填写"
       ],
@@ -5029,6 +5038,9 @@
       ],
       "Username must end with a letter or digit": [
         "用户名必须以字母或数字结尾"
+      ],
+      "Wrong billing address": [
+        "错误的账单地址"
       ],
       "Wrong password": [
         "密码错误"
@@ -8097,7 +8109,7 @@
         "此会话包含回收站中的邮件。"
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "标为垃圾邮件后，是否要退订此类邮件？"
+        "这些会话将被标记为垃圾邮件。您是否还希望退订未来的电子邮件？"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "不能确定此邮件是否来自该域名，这可能是欺诈邮件，也可能是投递过程出现了问题。"
@@ -8635,6 +8647,9 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "您提到了“${ attachmentsFoundKeyword }”，但没有添加附件。是否仍要发送邮件？"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "您将在好友订阅年度套餐 1 个月后获得推荐奖励，若好友订阅月度套餐则在 2 个月后获得。"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "此后每 ${ renewCycle } 个月按 ${ renewAmountStr } 收费。您可以随时取消。"
@@ -9300,6 +9315,9 @@
       "Emails (last 3 months)": [
         "邮件（过去 3 个月）"
       ],
+      "Emails (last 6 months)": [
+        "邮件（过去 6 个月）"
+      ],
       "Emails (last month)": [
         "邮件（上个月）"
       ],
@@ -9440,6 +9458,9 @@
       ],
       "Last 3 months only": [
         "仅过去 3 个月"
+      ],
+      "Last 6 months only": [
+        "仅过去 6 个月"
       ],
       "Last month only": [
         "仅上个月"
@@ -12057,6 +12078,9 @@
       "Got it": [
         "了解"
       ],
+      "I'm purchasing as a business": [
+        "以企业身份购买"
+      ],
       "Including ${ rate }% tax": [
         "含 ${ rate }% 税费"
       ],
@@ -12122,9 +12146,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "此操作将扩展您现有的订阅。您只需支付新增附加项的费用以及当前计费周期剩余时间的费用。您的订阅续订日期将不会改变。"
-      ],
-      "This number will be shown on all future invoices": [
-        "此编号将显示在所有未来的发票上。"
       ],
       "This offer is not available with your current plan.": [
         "此优惠不适用于您当前的套餐"
@@ -12317,6 +12338,9 @@
       "Company name": [
         "公司名称"
       ],
+      "Cortex Inc.": [
+        "Cortex 公司"
+      ],
       "Describe what to change": [
         "描述需要改进的内容"
       ],
@@ -12400,6 +12424,9 @@
       ],
       "Postal code": [
         "邮政编码"
+      ],
+      "San Francisco": [
+        "旧金山"
       ],
       "Search date, name, email address, or subject line": [
         "搜索日期、名称、邮箱地址或邮件主题"
@@ -13997,7 +14024,7 @@
         "${ elementsCount } 项会话中的邮件已标为垃圾邮件，其发件人已加入黑名单。"
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
-        "${ elementsCount } 项会话已移除 ${ labelName } 标签。"
+        "${ elementsCount } 项会话已从 ${ labelName } 中移除。"
       ],
       "${ elementsCount } conversation removed from Starred.": [
         "${ elementsCount } 项会话已从收藏中移除。"
@@ -15292,6 +15319,9 @@
       ],
       "Sort messages": [
         "邮件排序"
+      ],
+      "Spring Sale": [
+        "春季特惠"
       ],
       "Start a new import": [
         "开始导入"

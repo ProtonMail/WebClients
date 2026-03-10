@@ -26,6 +26,9 @@
       "Authenticate": [
         "Autenticar"
       ],
+      "Back to dashboard": [
+        "Volver al panel de control"
+      ],
       "Background blur": [
         "Desenfoque de fondo"
       ],
@@ -1705,8 +1708,8 @@
       "(You)": [
         "(Usted)"
       ],
-      "<Removed dangerous URL>": [
-        "<Removed dangerous URL>"
+      "-Removed dangerous URL-": [
+        "-Se ha eliminado una URL peligrosa-"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
@@ -1909,6 +1912,9 @@
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
         "Reuniones sin restricciones. Actualice a un plan superior para quitar el límite de 1 hora y reunir hasta a 100 participantes."
       ],
+      "Meeting ended": [
+        "Reunión finalizada"
+      ],
       "Meeting full (${ maxParticipants } participants)": [
         "Reunión llena (${ maxParticipants } participantes)"
       ],
@@ -2083,8 +2089,14 @@
       "Thank you for joining.": [
         "Gracias por unirse."
       ],
+      "The host ended this meeting.": [
+        "El anfitrión finalizó esta reunión."
+      ],
       "The host has ended the meeting": [
         "El anfitrión ha finalizado la reunión"
+      ],
+      "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
+        "El anfitrión le ha retirado de esta reunión. Si ha sido un error, solicite que vuelva a invitarle."
       ],
       "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
         "Este es un chat cifrado de extremo a extremo con mensajes efímeros. Después de abandonar la llamada, no podrá acceder a este chat."
@@ -2181,6 +2193,9 @@
       ],
       "You left your meeting": [
         "Abandonó su reunión"
+      ],
+      "You were removed from the meeting": [
+        "Se le ha retirado de la reunión"
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "Se le invitó unirse a una reunión segura. Confirme su nombre y pulse abajo para ingresar."
@@ -2748,8 +2763,9 @@
       "Joined at epoch ${ log.epoch }": [
         "Se unió en epoch ${ log.epoch }"
       ],
-      "Joining meeting with ${ participantCount } other participants…": [
-        "Uniéndose a la reunión con ${ participantCount } participante(s)…"
+      "Joining meeting with ${ participantCount } other participant…": [
+        "Uniéndose a la reunión con ${ participantCount } participante más…",
+        "Uniéndose a la reunión con ${ participantCount } participantes más…"
       ],
       "Local Participant": [
         "Participante local"

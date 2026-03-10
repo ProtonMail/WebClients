@@ -4607,6 +4607,9 @@
         "Vyberte dátum v rámci nasledujúcich ${ n } dní.",
         "Vyberte dátum v rámci nasledujúcich ${ n } dní."
       ],
+      "Company name or personal name is required": [
+        "Názov spoločnosti alebo meno je povinné"
+      ],
       "Condition incomplete": [
         "Neúplná podmienka"
       ],
@@ -4763,11 +4766,11 @@
       "Invalid public key file": [
         "Zlý verejný kľúč"
       ],
+      "Invalid VAT number": [
+        "Naplatné IČ DPH"
+      ],
       "Invalid verification code": [
         "Nesprávny overovací kód"
-      ],
-      "Invalid ZIP code": [
-        "Neplatné PSČ"
       ],
       "Item content cannot exceed 40KB": [
         "Obsah položky nesmie presiahnuť 40KB"
@@ -4876,6 +4879,9 @@
       ],
       "Please activate your search again": [
         "Aktivujte znovu vyhľadávanie"
+      ],
+      "Please complete the billing details": [
+        "Doplňte fakturačné údaje, prosím"
       ],
       "Please enter a valid postal code": [
         "Zadajte platné PSČ, prosím"
@@ -5090,6 +5096,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
       ],
+      "This field is invalid": [
+        "Toto pole je neplatné"
+      ],
       "This field is required": [
         "Povinné pole"
       ],
@@ -5140,6 +5149,9 @@
       ],
       "Username must end with a letter or digit": [
         "Používateľské meno musí končiť písmenom alebo číslom"
+      ],
+      "Wrong billing address": [
+        "Nesprávna fakturačná adresa"
       ],
       "Wrong password": [
         "Nesprávne heslo"
@@ -9065,6 +9077,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Napísali ste \"${ attachmentsFoundKeyword }\", ale príloha nebola pridaná. Chcete napriek tomu správu poslať?"
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Kreditné odmeny získate 1 mesiac po tom, ako si váš priateľ predplatí ročný plán, a 2 mesiace po tom, ako si predplatí mesačný plán."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
         "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
@@ -12645,6 +12660,9 @@
       "Got it": [
         "Rozumiem"
       ],
+      "I'm purchasing as a business": [
+        "Nakupujem ako firma"
+      ],
       "Including ${ rate }% tax": [
         "Vrátane ${ rate }% dane"
       ],
@@ -12728,9 +12746,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Táto akcia rozširuje existujúce predplatné. Bude vám účtovaný poplatok len za nové doplnky a zostávajúci čas aktuálneho fakturačného obdobia. Dátum obnovenia vášho predplatného sa nezmení."
-      ],
-      "This number will be shown on all future invoices": [
-        "Toto číslo bude uvedené na všetkých budúcich faktúrach."
       ],
       "This offer is not available with your current plan.": [
         "Táto ponuka nie je s vaším aktuálnym programom dostupná."
@@ -12923,6 +12938,9 @@
       "Company name": [
         "Názov spoločnosti"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "Describe what to change": [
         "Popíšte, čo zmeniť"
       ],
@@ -13006,6 +13024,9 @@
       ],
       "Postal code": [
         "PSČ"
+      ],
+      "San Francisco": [
+        "San Francisko"
       ],
       "Search date, name, email address, or subject line": [
         "Vyhľadávanie podľa dátumu, mena, emailovej adresy alebo predmetu správy"
@@ -16171,6 +16192,9 @@
       ],
       "Sort messages": [
         "Triedenie správ"
+      ],
+      "Spring Sale": [
+        "Jarná akcia"
       ],
       "Start a new import": [
         "Zahájiť nový import"

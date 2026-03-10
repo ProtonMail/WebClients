@@ -1328,8 +1328,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } haluaa jakaa kohteen ryhmässä, jota hallinnoit."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } haluaa jakaa kohteen ryhmän ${ invitedGroup.Name } kanssa."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } haluaa jakaa kohteen ryhmän ${ name } kanssa."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } haluaa jakaa kohteen kanssasi."
@@ -1378,9 +1378,9 @@
         "${ row.breachCount } tietomurto on havaittu",
         "${ row.breachCount } tietomurtoa on havaittu"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } jäsen)",
-        "(${ membersCount } jäsentä)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } jäsen)",
+        "(${ memberCount } jäsentä)"
       ],
       "(Empty)": [
         "(Tyhjä)"
@@ -1747,8 +1747,8 @@
       "Invite successfully resent": [
         "Kutsu lähetettiin uudelleen"
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "kutsuu ryhmän ${ invitedGroup.Name } käyttämään kohteita kohteessa"
+      "invites the group ${ name } to access items in": [
+        "kutsuu ryhmän ${ name } käyttämään kohteita kohteessa"
       ],
       "invites you to access items in": [
         "kutsui sinut käyttämään sisältöä holvista"
@@ -1844,10 +1844,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"

@@ -3559,6 +3559,9 @@
       "Checkout expired, please try again": [
         "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal."
       ],
+      "Company name or personal name is required": [
+        "Firmenname oder Name der Person erforderlich"
+      ],
       "Contact could not be saved": [
         "Der Kontakt konnte nicht gespeichert werden"
       ],
@@ -3717,11 +3720,11 @@
       "Invalid public key file": [
         "Ungültige öffentliche Schlüsseldatei"
       ],
+      "Invalid VAT number": [
+        "Ungültige USt-IdNr."
+      ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
-      ],
-      "Invalid ZIP code": [
-        "Ungültige Postleitzahl"
       ],
       "Invitation failed to be sent": [
         "Einladung konnte nicht gesendet werden"
@@ -3824,6 +3827,9 @@
       ],
       "Please activate your search again": [
         "Bitte aktiviere die Inhaltssuche erneut."
+      ],
+      "Please complete the billing details": [
+        "Bitte die Rechnungsdaten eintragen"
       ],
       "Please create an address first.": [
         "Bitte erstelle zuerst eine E-Mail-Adresse."
@@ -3968,6 +3974,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
       ],
+      "This field is invalid": [
+        "Dieses Feld ist ungültig"
+      ],
       "This field is required": [
         "Pflichtfeld"
       ],
@@ -4012,6 +4021,9 @@
       ],
       "Validation error": [
         "Überprüfungsfehler"
+      ],
+      "Wrong billing address": [
+        "Ungültige Rechnungsadresse"
       ],
       "You already added this holidays calendar": [
         "Du hast diesen Feiertagskalender bereits hinzugefügt."
@@ -6414,6 +6426,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Dir wird nichts berechnet, wenn du vor ${ trialEndsOnFormatted } kündigst."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Du erhältst eine Gutschrift von einem Monat, nachdem die von dir geworbene Person ein Jahresabo abgeschlossen hat, und von zwei Monaten, nachdem sie ein Monatsabo abgeschlossen hat."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Du erhältst dann aller ${ renewCycle } Monat eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich.",
         "Du erhältst dann aller ${ renewCycle } Monate eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich."
@@ -7582,7 +7597,7 @@
         "Ende-zu-Ende-verschlüsselte Bildschirmfreigabe und temporärer Chat während des Anrufs"
       ],
       "Meeting recording": [
-        "Besprechung aufzeichnen"
+        "Meeting wird aufgezeichnet"
       ],
       "One active meeting at a time": [
         "Ein aktives Meeting gleichzeitig"
@@ -9388,6 +9403,9 @@
       "Got it": [
         "Verstanden"
       ],
+      "I'm purchasing as a business": [
+        "Ich kaufe als Unternehmen"
+      ],
       "Including ${ rate }% tax": [
         "Einschließlich ${ rate } % Steuern"
       ],
@@ -9459,9 +9477,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Diese Aktion erweitert dein bestehendes Abonnement. Dir werden nur die neuen Ergänzungen für die verbleibende Zeit des aktuellen Abrechnungszeitraums in Rechnung gestellt. Das Verlängerungsdatum deines Abonnements wird nicht geändert."
-      ],
-      "This number will be shown on all future invoices": [
-        "Diese Nummer wird auf allen zukünftigen Rechnungen angezeigt."
       ],
       "This offer is not available with your current plan.": [
         "Dieses Angebot ist mit deinem aktuellen Abonnement nicht verfügbar."
@@ -9672,6 +9687,9 @@
       "Company name": [
         "Unternehmensname"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Z. B. "
       ],
@@ -9740,6 +9758,9 @@
       ],
       "Postal code": [
         "Postleitzahl"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search events": [
         "Termine durchsuchen"
@@ -9885,6 +9906,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Offizielle E-Mail von ${ BRAND_NAME }"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Angebot nicht erneut anzeigen"
+      ],
+      "Get the deal": [
+        "Deal sichern"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/Monat"
+      ],
+      "15 GB storage": [
+        "15 GB Speicher"
+      ],
+      "2 TB data storage": [
+        "2 TB Datenspeicher"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB Speicher: 40-mal dein aktuelles Abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB Datenspeicher"
+      ],
+      "500 GB storage": [
+        "500 GB Speicher"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Auf über 15.000 Server in mehr als 120 Ländern zugreifen"
+      ],
+      "Access advanced AI models": [
+        "Auf erweiterte KI-Modelle zugreifen"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Alle Premium-Funktionen von Mail, Pass, Drive, VPN und Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blockiere Werbung, Tracker und Malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Integrierter 2FA-Authentifikator"
+      ],
+      "Connect 10 devices at once": [
+        "Verbinde 10 Geräte gleichzeitig"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte basieren auf den monatlichen Standardpreisen. Dein Abonnement wird am Ende des Abrechnungszeitraums zum jährlichen Standardtarif verlängert."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Voller Zugriff auf ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Vollständiger Chatverlauf mit einfacher Suche und Favoriten"
+      ],
+      "Individual accounts for 6 users": [
+        "Eigene Konten für 6 Benutzer"
+      ],
+      "Individual accounts for you and a partner": [
+        "Eigene Konten für dich und einen Partner"
+      ],
+      "Online document editor": [
+        "Online-Dokumenteneditor"
+      ],
+      "Recover previous file versions": [
+        "Stelle frühere Dateiversionen wieder her"
+      ],
+      "Stronger protection against cyber threats": [
+        "Stärkerer Schutz vor Cyber-Bedrohungen"
+      ],
+      "Unlimited daily chats": [
+        "Unbegrenzte tägliche Chats"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Unbegrenzte Hide-my-email-Aliasse"
+      ],
+      "Use your own email domain": [
+        "Nutze deine eigene E-Mail-Domain"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "ein Schmetterling"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "für 12 Monate"
+      ],
+      "SPRING SALE": [
+        "FRÜHLINGS-SALE"
       ]
     },
     "Referral": {
@@ -12072,6 +12188,9 @@
       ],
       "Simplify password management": [
         "Vereinfache die Passwortverwaltung"
+      ],
+      "Spring Sale": [
+        "Frühlingsangebot"
       ],
       "Start a new import": [
         "Neuer Importvorgang"

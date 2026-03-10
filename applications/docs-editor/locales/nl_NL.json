@@ -502,9 +502,6 @@
       "Comments": [
         "Reacties"
       ],
-      "Copied to clipboard": [
-        "Gekopieerd naar het klembord"
-      ],
       "Editing": [
         "Bewerken"
       ],
@@ -690,6 +687,12 @@
       ]
     },
     "sheets_2025:Color picker": {
+      "Recent colors": [
+        "Recente kleuren"
+      ],
+      "Reset": [
+        "Resetten"
+      ],
       "Standard colors": [
         "Standaardkleuren"
       ],
@@ -698,6 +701,9 @@
       ]
     },
     "sheets_2025:Range selector menu": {
+      "Add new": [
+        "Nieuw toevoegen"
+      ],
       "Named ranges": [
         "Benoemde bereiken"
       ],
@@ -715,6 +721,12 @@
       "Delete": [
         "Verwijderen"
       ],
+      "Duplicate": [
+        "Dupliceren"
+      ],
+      "Hide sheet": [
+        "Werkblad verbergen"
+      ],
       "Move left": [
         "Links verplaatsen"
       ],
@@ -726,8 +738,20 @@
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {
+      "All borders": [
+        "Alle randen"
+      ],
+      "Bottom border": [
+        "Onderste rand"
+      ],
+      "Dashed": [
+        "Gestreept"
+      ],
       "Dotted": [
         "Gestippeld"
+      ],
+      "Double": [
+        "Dubbel"
       ],
       "Horizontal borders": [
         "Horizontale randen"
@@ -749,6 +773,12 @@
       ],
       "Solid": [
         "Vast"
+      ],
+      "Solid medium": [
+        "Solide middel"
+      ],
+      "Solid thick": [
+        "Massief dik"
       ],
       "Top border": [
         "Bovenrand"
@@ -772,17 +802,29 @@
       "AI Quick Edit": [
         "AI Snelle Bewerking"
       ],
+      "Auto fit to data": [
+        "Automatisch aanpassen aan gegevens"
+      ],
       "Cell value": [
         "Celwaarde"
       ],
       "Clear": [
         "Wissen"
       ],
+      "Clear content": [
+        "Inhoud wissen"
+      ],
       "Clear formatting": [
         "Opmaak wissen"
       ],
+      "Comma": [
+        "Komma"
+      ],
       "Conditional format": [
         "Voorwaardelijke opmaak"
+      ],
+      "Convert to range": [
+        "Converteren naar bereik"
       ],
       "Convert to table": [
         "Converteren naar tabel"
@@ -802,6 +844,12 @@
       "Define named range": [
         "Benoemd bereik definiëren"
       ],
+      "Delete": [
+        "Verwijderen"
+      ],
+      "Delete cells and shift cells left": [
+        "Cellen verwijderen en cellen naar links schuiven"
+      ],
       "Delete cells and shift cells up": [
         "Cellen verwijderen en cellen omhoog schuiven"
       ],
@@ -814,17 +862,41 @@
       "Delete table column": [
         "Tabelkolom verwijderen"
       ],
+      "Delete table row": [
+        "Tabelrij verwijderen"
+      ],
+      "Edit table": [
+        "Tabel bewerken"
+      ],
+      "Filter": [
+        "Filter"
+      ],
       "Formatting only": [
         "Alleen opmaak"
+      ],
+      "Formula only": [
+        "Alleen formule"
       ],
       "Freeze up to column": [
         "Vries tot kolom"
       ],
+      "Freeze up to row": [
+        "Vries tot rij"
+      ],
       "Hide column": [
         "Kolom verbergen"
       ],
+      "Hide row": [
+        "Rij verbergen"
+      ],
+      "Insert cells and shift cells down": [
+        "Cellen invoegen en cellen naar beneden schuiven"
+      ],
       "Insert cells and shift cells right": [
         "Cellen invoegen en cellen naar rechts verschuiven"
+      ],
+      "Insert link": [
+        "Link invoegen"
       ],
       "Insert note": [
         "Notitie invoegen"
@@ -837,6 +909,9 @@
       ],
       "Insert table row": [
         "Tabelrij invoegen"
+      ],
+      "Link only": [
+        "Alleen link"
       ],
       "More cell actions": [
         "Meer celacties"
@@ -853,17 +928,47 @@
       "Pipe": [
         "Pijp"
       ],
+      "Remove filter": [
+        "Filter verwijderen"
+      ],
+      "Resize column": [
+        "Kolomgrootte aanpassen"
+      ],
+      "Resize row": [
+        "Rij grootte aanpassen"
+      ],
       "Semicolon": [
         "Puntkomma"
+      ],
+      "Sort": [
+        "Sorteren"
       ],
       "Sort range A → Z": [
         "Bereik A → Z sorteren"
       ],
+      "Sort range Z → A": [
+        "Bereik Z → A sorteren"
+      ],
+      "Sort sheet A to Z": [
+        "Werkblad sorteren van A tot Z"
+      ],
       "Sort sheet Z to A": [
         "Werkblad sorteren van Z naar A"
       ],
+      "Space": [
+        "Spatie"
+      ],
       "Table": [
         "Tabel"
+      ],
+      "Transposed": [
+        "Getransponeerd"
+      ],
+      "Unfreeze columns": [
+        "Kolommen ontdooien"
+      ],
+      "Unfreeze rows": [
+        "Rijen ontdooien"
       ],
       "Values only": [
         "Alleen waarden"
@@ -881,16 +986,25 @@
       "above": [
         "boven"
       ],
+      "below": [
+        "onder"
+      ],
       "Insert": [
         "Invoegen"
       ],
       "left": [
         "links"
+      ],
+      "right": [
+        "rechts"
       ]
     },
     "sheets_2025:Spreadsheet delete sheet dialog": {
       "Are you sure you want to delete ${ sheetName }?": [
         "Weet u zeker dat u \"${ sheetName }\" wilt verwijderen?"
+      ],
+      "Cancel": [
+        "Annuleren"
       ],
       "Delete": [
         "Verwijderen"
@@ -903,11 +1017,20 @@
       "Mobile Editing Coming Soon": [
         "Bewerken op mobiel binnenkort beschikbaar"
       ],
+      "Screen too small for editing": [
+        "Scherm te klein om te bewerken"
+      ],
+      "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
+        "We werken eraan om deze functie binnenkort naar u toe te brengen. Voorlopig kunnen werkbladen alleen op desktop worden bewerkt"
+      ],
       "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
         "Uw scherm is te klein om dit spreadsheet te bewerken. U bevindt zich in de alleen-lezenmodus. Om wijzigingen aan te brengen, opent u dit spreadsheet op een groter scherm of vergroot u uw browservenster."
       ]
     },
     "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "Kan niet alle kolommen verwijderen"
+      ],
       "Cannot delete all rows": [
         "Kan niet alle rijen verwijderen"
       ],
@@ -919,8 +1042,14 @@
       "Merge all": [
         "Alles samenvoegen"
       ],
+      "Merge cells": [
+        "Cellen samenvoegen"
+      ],
       "Merge horizontally": [
         "Horizontaal samenvoegen"
+      ],
+      "Merge vertically": [
+        "Verticaal samenvoegen"
       ],
       "Unmerge": [
         "Samenvoegen opheffen"
@@ -932,6 +1061,9 @@
       ],
       "Data validation": [
         "Gegevensvalidatie"
+      ],
+      "Protect range": [
+        "Bereik beveiligen"
       ],
       "Remove filter": [
         "Filter verwijderen"
@@ -946,6 +1078,9 @@
     "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
       "(A to Z)": [
         "(A tot Z)"
+      ],
+      "(Z to A)": [
+        "(Z tot A)"
       ],
       "column ${ columnLetter }": [
         "kolom ${ columnLetter }"
@@ -976,6 +1111,12 @@
       "Paste": [
         "Plakken"
       ],
+      "Paste special": [
+        "Speciaal plakken"
+      ],
+      "Redo": [
+        "Opnieuw uitvoeren"
+      ],
       "Transposed": [
         "Getransponeerd"
       ],
@@ -993,14 +1134,29 @@
       "Download": [
         "Download"
       ],
+      "Download logs": [
+        "Logboeken downloaden"
+      ],
       "Help": [
         "Hulp"
+      ],
+      "Import": [
+        "Importeren"
       ],
       "Make a copy": [
         "Maak een kopie"
       ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Move to folder": [
+        "Naar map verplaatsen"
+      ],
       "Move to trash": [
         "Naar prullenbak verplaatsen"
+      ],
+      "New document": [
+        "Nieuw document"
       ],
       "New spreadsheet": [
         "Nieuw spreadsheet"
@@ -1013,6 +1169,9 @@
       ],
       "Print": [
         "Afdrukken"
+      ],
+      "See version history": [
+        "Versiegeschiedenis bekijken"
       ],
       "Settings": [
         "Instellingen"
@@ -1040,6 +1199,12 @@
       "Clear": [
         "Wissen"
       ],
+      "Clear content": [
+        "Inhoud wissen"
+      ],
+      "Clear formatting": [
+        "Opmaak wissen"
+      ],
       "Conditional formatting": [
         "Voorwaardelijke opmaak"
       ],
@@ -1049,6 +1214,9 @@
       "Italic": [
         "Cursief"
       ],
+      "Number": [
+        "Nummer"
+      ],
       "Strikethrough": [
         "Doorstrepen"
       ],
@@ -1057,6 +1225,9 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "Theme": [
+        "Thema"
       ],
       "Underline": [
         "Onderstrepen"
@@ -1069,11 +1240,17 @@
       "Bottom": [
         "Onderkant"
       ],
+      "Center": [
+        "Midden"
+      ],
       "Left": [
         "Links"
       ],
       "Middle": [
         "Midden"
+      ],
+      "Right": [
+        "Rechts"
       ],
       "Top": [
         "Bovenaan"
@@ -1082,9 +1259,21 @@
     "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
       "Clip": [
         "Klemmen"
+      ],
+      "Overflow": [
+        "Overloop"
+      ],
+      "Wrap": [
+        "Omvouwen"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu": {
+      "Cells": [
+        "Cellen"
+      ],
+      "Chart": [
+        "Grafiek"
+      ],
       "Checkbox": [
         "Selectievakje"
       ],
@@ -1100,8 +1289,17 @@
       "Image": [
         "Afbeelding"
       ],
+      "Insert cells and shift down": [
+        "Cellen invoegen en naar beneden verschuiven"
+      ],
       "Insert cells and shift right": [
         "Cellen invoegen en naar rechts verschuiven"
+      ],
+      "Link": [
+        "Link"
+      ],
+      "Note": [
+        "Opmerking"
       ],
       "Rows": [
         "Rijen"
@@ -1122,6 +1320,9 @@
       "above": [
         "boven"
       ],
+      "below": [
+        "onder"
+      ],
       "Insert": [
         "Invoegen"
       ],
@@ -1139,6 +1340,9 @@
       "Edit": [
         "Bewerken"
       ],
+      "File": [
+        "Bestand"
+      ],
       "Format": [
         "Formaat"
       ],
@@ -1150,8 +1354,17 @@
       ]
     },
     "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Formula bar": [
+        "Formulebalk"
+      ],
+      "Freeze": [
+        "Bevriezen"
+      ],
       "Gridlines": [
         "Rasterlijnen"
+      ],
+      "Show": [
+        "Tonen"
       ],
       "Zoom": [
         "Vergroten"
@@ -1160,6 +1373,9 @@
     "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
       "column ${ columnLetter }": [
         "kolom ${ columnLetter }"
+      ],
+      "row ${ rowNumber }": [
+        "rij ${ rowNumber }"
       ],
       "Up to": [
         "Tot aan"
@@ -1183,11 +1399,23 @@
       "Currency": [
         "Valuta"
       ],
+      "Currency rounded": [
+        "Valuta afgerond"
+      ],
       "Custom currency": [
         "Aangepaste valuta"
       ],
       "Custom number format": [
         "Aangepaste getalnotatie"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Date time": [
+        "Datum tijd"
+      ],
+      "Duration": [
+        "Duur"
       ],
       "Financial": [
         "Financieel"
@@ -1201,6 +1429,9 @@
       "More currency": [
         "Meer valuta"
       ],
+      "Number": [
+        "Getal"
+      ],
       "Percent": [
         "Percentage"
       ],
@@ -1212,6 +1443,9 @@
       ],
       "Time": [
         "Tijd"
+      ],
+      "£ Pound": [
+        "£ Pond"
       ],
       "¥ Yen": [
         "¥ Yen"
@@ -1238,6 +1472,9 @@
       "Auto": [
         "Automatisch"
       ],
+      "Cancel": [
+        "Annuleren"
+      ],
       "Locale": [
         "Taal"
       ],
@@ -1258,14 +1495,32 @@
       "Border": [
         "Rand"
       ],
+      "Clear formatting": [
+        "Opmaak wissen"
+      ],
+      "Create a filter": [
+        "Maak een filter"
+      ],
       "Decrease decimal places": [
         "Aantal decimalen verlagen"
+      ],
+      "Decrease font size": [
+        "Verklein lettertype"
+      ],
+      "Default (${ defaultFont })": [
+        "Standaard (${ defaultFont })"
       ],
       "Fill color": [
         "Vulkleur"
       ],
+      "Find": [
+        "Zoeken"
+      ],
       "Font": [
         "Lettertype"
+      ],
+      "Font size": [
+        "Lettertypegrootte"
       ],
       "Format as currency": [
         "Formuleer als valuta"
@@ -1276,14 +1531,26 @@
       "Horizontal align": [
         "Horizontale uitlijning"
       ],
+      "Increase decimal places": [
+        "Aantal decimalen verhogen"
+      ],
       "Increase font size": [
         "Vergroot lettertype"
+      ],
+      "Insert chart": [
+        "Grafiek invoegen"
       ],
       "Insert function": [
         "Functie invoegen"
       ],
+      "Insert link": [
+        "Link invoegen"
+      ],
       "Insert note": [
         "Notitie invoegen"
+      ],
+      "Italic": [
+        "Cursief"
       ],
       "Merge cells": [
         "Cellen samenvoegen"
@@ -1300,6 +1567,9 @@
       "Redo": [
         "Herstellen"
       ],
+      "Remove filter": [
+        "Filter verwijderen"
+      ],
       "Select merge type": [
         "Selecteer paginatype"
       ],
@@ -1315,16 +1585,34 @@
       "Underline": [
         "Onderstrepen"
       ],
+      "Undo": [
+        "Ongedaan maken"
+      ],
+      "Unmerge cells": [
+        "Cellen samenvoegen opheffen"
+      ],
+      "Vertical align": [
+        "Verticale uitlijning"
+      ],
       "Zoom": [
         "Vergroten"
       ]
     },
     "sheets_2025:Spreadsheet filter menu": {
+      "Apply": [
+        "Toepassen"
+      ],
       "Cancel": [
         "Annuleren"
       ],
+      "Clear": [
+        "Wissen"
+      ],
       "Copy": [
         "Kopieer"
+      ],
+      "Delete table column": [
+        "Tabelkolom verwijderen"
       ],
       "Enter value": [
         "Waarde invoeren"
@@ -1338,6 +1626,15 @@
       "Insert 1 table column left": [
         "1 tabelkolom links invoegen"
       ],
+      "Insert 1 table column right": [
+        "Voeg 1 tabelkolom rechts in"
+      ],
+      "Paste": [
+        "Plakken"
+      ],
+      "Select all": [
+        "Alles selecteren"
+      ],
       "Sort A → Z": [
         "Sorteren A → Z"
       ],
@@ -1346,11 +1643,17 @@
       ]
     },
     "sheets_2025:Spreadsheet insert link dialog": {
+      "Apply": [
+        "Toepassen"
+      ],
       "Cancel": [
         "Annuleren"
       ],
       "Insert link": [
         "Link invoegen"
+      ],
+      "Paste link": [
+        "Plak link"
       ]
     },
     "sheets_2025:Spreadsheet link tooltip": {
@@ -1359,6 +1662,15 @@
       ],
       "Edit link": [
         "Link bewerken"
+      ],
+      "Link copied to clipboard": [
+        "Link gekopieerd naar klembord"
+      ],
+      "Link removed": [
+        "Link verwijderd"
+      ],
+      "Remove link": [
+        "Link verwijderen"
       ]
     },
     "sheets_2025:Spreadsheet resize dimension dialog": {
@@ -1373,6 +1685,15 @@
       ],
       "Default": [
         "Standaard"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "row": [
+        "rij"
+      ],
+      "row height": [
+        "rijhoogte"
       ]
     },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
@@ -1385,8 +1706,20 @@
       "Border": [
         "Rand"
       ],
+      "Border style": [
+        "Kaderstijl"
+      ],
+      "Cancel": [
+        "Annuleren"
+      ],
       "Choose Category": [
         "Categorie kiezen"
+      ],
+      "Color": [
+        "Kleur"
+      ],
+      "Currency Symbol": [
+        "Valutasymbool"
       ],
       "Custom": [
         "Aangepast"
@@ -1397,17 +1730,29 @@
       "Effects": [
         "Effecten"
       ],
+      "Font": [
+        "Lettertype"
+      ],
       "Font size": [
         "Lettergrootte"
       ],
+      "Format cells": [
+        "Cel opmaken"
+      ],
       "General": [
         "Algemeen"
+      ],
+      "Horizontal Alignment": [
+        "Horizontale uitlijning"
       ],
       "Indent": [
         "Inspringen"
       ],
       "Italic": [
         "Cursief"
+      ],
+      "Merge": [
+        "Samenvoegen"
       ],
       "Merge all": [
         "Alles samenvoegen"
@@ -1417,6 +1762,9 @@
       ],
       "Merge vertically": [
         "Verticaal samenvoegen"
+      ],
+      "Number": [
+        "Getal"
       ],
       "Overflow": [
         "Overloop"
@@ -1430,8 +1778,14 @@
       "Strikethrough": [
         "Doorstrepen"
       ],
+      "Text control": [
+        "Tekstcontrole"
+      ],
       "Thousands separator": [
         "Duizendtal scheidingsteken"
+      ],
+      "Type": [
+        "Type"
       ],
       "Underline": [
         "Onderstrepen"
@@ -1450,14 +1804,23 @@
       "Add": [
         "Toevoegen"
       ],
+      "Aggregate": [
+        "Aggregaat"
+      ],
       "Cancel": [
         "Annuleren"
       ],
       "Chart data range": [
         "Bereik van grafiekgegevens"
       ],
+      "Chart editor": [
+        "Grafiek bewerker"
+      ],
       "Chart title": [
         "Grafiek titel"
+      ],
+      "Chart type": [
+        "Grafiektype"
       ],
       "Enter title": [
         "Voer titel in"
@@ -1483,11 +1846,26 @@
       "Series": [
         "Reeks"
       ],
+      "Show data in hidden rows and columns": [
+        "Gegevens weergeven in verborgen rijen en kolommen"
+      ],
       "Value": [
         "Waarde"
+      ],
+      "Vertical axis title": [
+        "Titel van de verticale as"
       ]
     },
     "sheets_2025:Spreadsheet sidebar conditional format dialog": {
+      "Add another range": [
+        "Voeg nog een bereik toe"
+      ],
+      "Add another rule": [
+        "Voeg nog een regel toe"
+      ],
+      "Add rule": [
+        "Regel toevoegen"
+      ],
       "Apply to range": [
         "Toepassen op bereik"
       ],
@@ -1500,11 +1878,26 @@
       "Color scale": [
         "Kleurenschaal"
       ],
+      "Conditional formatting": [
+        "Voorwaardelijke opmaak"
+      ],
       "Delete range": [
         "Bereik verwijderen"
       ],
+      "Delete rule": [
+        "Regel verwijderen"
+      ],
+      "Enter a formula": [
+        "Voer een formule in"
+      ],
       "Enter value": [
         "Waarde invoeren"
+      ],
+      "Format rules": [
+        "Formateer regels"
+      ],
+      "Format style": [
+        "Opmaakstijl"
       ],
       "Max point": [
         "Eindpunt"
@@ -1518,8 +1911,20 @@
       "Min point": [
         "Minpunt"
       ],
+      "Min value": [
+        "Min waarde"
+      ],
+      "None": [
+        "Geen"
+      ],
+      "Number": [
+        "Getal"
+      ],
       "Preview": [
         "Voorbeeld"
+      ],
+      "Save": [
+        "Opslaan"
       ],
       "Select a range": [
         "Selecteer een bereik"
@@ -1552,6 +1957,15 @@
       "Add another range": [
         "Voeg een bereik toe"
       ],
+      "Add named range": [
+        "Benoemd bereik toevoegen"
+      ],
+      "Allow blanks": [
+        "Sta legen velden toe"
+      ],
+      "Apply to range": [
+        "Toepassen op bereik"
+      ],
       "Cancel": [
         "Annuleren"
       ],
@@ -1564,11 +1978,17 @@
       "Enter a formula": [
         "Voer een formule in"
       ],
+      "Enter value": [
+        "Waarde invoeren"
+      ],
       "Formula": [
         "Formule"
       ],
       "Save": [
         "Opslaan"
+      ],
+      "Select a range": [
+        "Selecteer een bereik"
       ],
       "Validation rules": [
         "Validatieregels"
@@ -1580,6 +2000,9 @@
       ]
     },
     "sheets_2025:Spreadsheet sidebar named ranges dialog": {
+      "Add another named range": [
+        "Voeg nog een benoemd bereik toe"
+      ],
       "Add named range": [
         "Benoemd bereik toevoegen"
       ],
@@ -1588,6 +2011,9 @@
       ],
       "Cancel": [
         "Annuleren"
+      ],
+      "Delete named range": [
+        "Benoemd bereik verwijderen"
       ],
       "Enter a formula": [
         "Voer een formule in"
@@ -1598,14 +2024,29 @@
       "Name": [
         "Naam"
       ],
+      "Name should not contain spaces": [
+        "Naam mag geen spaties bevatten"
+      ],
       "Named Ranges": [
         "Benoemde Bereiken"
       ],
+      "Range": [
+        "Bereik"
+      ],
       "Save": [
         "Opslaan"
+      ],
+      "Text or formula": [
+        "Tekst of formule"
+      ],
+      "Type": [
+        "Type"
       ]
     },
     "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Banded columns": [
+        "Gestreepte kolommen"
+      ],
       "Banded rows": [
         "Gebande rijen"
       ],
@@ -1614,6 +2055,12 @@
       ],
       "Edit table": [
         "Tabel bewerken"
+      ],
+      "More settings": [
+        "Meer instellingen"
+      ],
+      "Save": [
+        "Opslaan"
       ],
       "Select a range": [
         "Selecteer een bereik"

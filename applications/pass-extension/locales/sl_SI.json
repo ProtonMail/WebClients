@@ -145,17 +145,11 @@
       "Confirm all": [
         "Potrdi vse"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Povežite svoj račun ${ BRAND_NAME }"
-      ],
       "Continue": [
         "Nadaljuj"
       ],
       "Continue offline": [
         "Nadaljuj brez povezave"
-      ],
-      "Continue without pinning": [
-        "Nadaljujte brez pripenjanja"
       ],
       "Copy and close": [
         "Kopiraj in zapri"
@@ -175,17 +169,11 @@
       "Create a ${ BRAND_NAME } account": [
         "Ustvarite račun ${ BRAND_NAME }."
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Ustvarite račun ${ BRAND_NAME }"
-      ],
       "Create a new vault": [
         "Ustvari nov trezor"
       ],
       "Create alias": [
         "Ustvari vzdevek"
-      ],
-      "Create an account": [
-        "Ustvarite račun"
       ],
       "Create card": [
         "Ustvari kartico"
@@ -258,9 +246,6 @@
       ],
       "Do not suggest on this website": [
         "Ne predlagaj na tem spletnem mestu"
-      ],
-      "Done": [
-        "Opravljeno"
       ],
       "Download this CSV template": [
         "Prenesite to predlogo CSV"
@@ -573,9 +558,6 @@
       ],
       "Sign back in": [
         "Ponovno se prijavite"
-      ],
-      "Sign in": [
-        "Prijava"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Prijava z ${ BRAND_NAME }."
@@ -959,9 +941,6 @@
       "PIN codes do not match": [
         "Kodi PIN se ne ujemata"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Pripnite razširitev ali izberite »Nadaljuj brez pripenjanja«."
-      ],
       "Registration failure: ${ message }": [
         "Neuspešna registracija: ${ message }"
       ],
@@ -1151,6 +1130,12 @@
         "${ count }-krat",
         "${ count }-krat"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } želi deliti element s skupino, ki ji administrirate."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } želi deliti predmet s skupino ${ name }."
+      ],
       "${ memberCount } member": [
         "${ memberCount } član",
         "${ memberCount } člana",
@@ -1202,6 +1187,12 @@
         "Še ${ trialDaysLeft } dni",
         "Še ${ trialDaysLeft } dni"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } član)",
+        "(${ memberCount } člana)",
+        "(${ memberCount } člani)",
+        "(${ memberCount } članov)"
+      ],
       "(Empty)": [
         "(Prazno)"
       ],
@@ -1250,6 +1241,9 @@
       "All trashed items successfully restored": [
         "Vsi predmeti v smetnjaku so bili obnovljeni."
       ],
+      "An item previously shared with you was removed.": [
+        "Predmet, ki je bil prej v skupni rabi z vami, je bil odstranjen."
+      ],
       "Auto-lock successfully disabled.": [
         "Samodejno zaklepanje je onemogočeno."
       ],
@@ -1291,9 +1285,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Za prijavo v ${ domain } izberite shranjen identifikacijski ključ"
-      ],
-      "Click the icon to open it anytime.": [
-        "Kliknite ikono, da jo odprete kadar koli."
       ],
       "Close this window in order to use a security key or another passkey.": [
         "Če želite uporabiti varnostni ali drug identifikacijski ključ, zaprite to okno."
@@ -1385,9 +1376,6 @@
       "finance": [
         "finance"
       ],
-      "For easy access to your passwords and more.": [
-        "Za enostaven dostop do vaših gesel in več."
-      ],
       "For security reason, your access needs to be confirmed": [
         "Iz varnostnih razlogov mora biti vaš dostop potrjen"
       ],
@@ -1435,6 +1423,9 @@
       ],
       "Invite successfully resent": [
         "Povabilo ponovno poslano"
+      ],
+      "invites the group ${ name } to access items in": [
+        "povabi skupino ${ name } k dostopu do predmetov v"
       ],
       "invites you to access items in": [
         "vas vabi k dostopu do predmetov v"
@@ -1550,9 +1541,6 @@
       "Offline support successfully disabled": [
         "Način brez povezave je bil onemogočen."
       ],
-      "Open the Extensions menu": [
-        "Odprite meni Razširitve"
-      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Naša opozorila dajejo prednost varnosti. Če ne prepoznate nobenih informacij o vdorih, lahko to poročilo varno prezrete."
       ],
@@ -1588,9 +1576,6 @@
       ],
       "Permanently deleting selected items": [
         "Trajno brisanje izbranih predmetov"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Pripni ${ PASS_APP_NAME } v orodno vrstico"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN koda registrirana. Uporabite jo za odklepanje ${ PASS_APP_NAME }"
@@ -1673,9 +1658,6 @@
       "See more info": [
         "Oglejte si več informacij"
       ],
-      "Select an existing login or create a new one.": [
-        "Izberite obstoječo prijavo ali ustvarite novo."
-      ],
       "Select destination vault": [
         "Izberite ciljni trezor"
       ],
@@ -1696,9 +1678,6 @@
       ],
       "Settings successfully updated": [
         "Nastavitve so bile posodobljene"
-      ],
-      "Sign in or create an account to continue.": [
-        "Za nadaljevanje se vpišite ali ustvarite račun."
       ],
       "Sign in to your account": [
         "Vpišite se v svoj račun"
@@ -1738,6 +1717,9 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Za uporabo ${ PASS_APP_NAME } bo potrebno dodatno geslo. Deluje kot dodatno geslo poleg vašega gesla ${ BRAND_NAME }."
+      ],
+      "The group is invited to a vault.": [
+        "Skupina je povabljena v trezor."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Besedilo, ki ga poskušate prilepiti, presega največjo dovoljeno dolžino ${ maxLength } znakov."
@@ -1811,6 +1793,9 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Trezor \"${ payload.share.content.name }\" je bil posodobljen"
       ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "Trezor \"${ share.content.name }\" je bil odstranjen."
+      ],
       "Verification code": [
         "Koda za preverjanje"
       ],
@@ -1861,6 +1846,18 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Dosegli ste največjo dovoljeno dolžino ${ maxLength } znakov."
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Morda boste morali odobriti dovoljenje za dostopnost za ${ PASS_APP_NAME }."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Nimate več dostopa do nekaterih trezorjev ali predmetov, ker je bil dostop vaši skupini ${ groupName } odstranjen."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Zdaj imate dostop do \"Predmeta ${ itemName }\", ker je vaši skupini ${ groupName } dodeljen dostop."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Zdaj imate dostop do \"Trezorja ${ vaultName }\", ker je vaši skupini ${ groupName } dodeljen dostop."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Odjavljeni boste in se boste morali znova prijaviti na vseh svojih drugih napravah."
@@ -3121,9 +3118,6 @@
       "Confirm your email": [
         "Potrdite svoj elektronski naslov."
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Povežite svoj račun ${ BRAND_NAME }"
-      ],
       "Contacts": [
         "Stiki"
       ],
@@ -3328,9 +3322,6 @@
       "Permanently remove all items?": [
         "Ali želite trajno odstraniti vse elemente?"
       ],
-      "Pin the extension": [
-        "Pripnite razširitev"
-      ],
       "Pinned (${ items.length })": [
         "Pripeto (${ items.length })"
       ],
@@ -3442,6 +3433,9 @@
       "Vault": [
         "Trezor"
       ],
+      "Vault shared with a group you administer": [
+        "želi deliti element s skupino, ki ji administrirate"
+      ],
       "Vault shared with you": [
         "Trezor v skupni rabi z vami"
       ],
@@ -3456,9 +3450,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "Dobrodošli v ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "Dobrodošli v svojem novem upravitelju gesel!"
       ],
       "What is an alias?": [
         "Kaj je vzdevek?"
