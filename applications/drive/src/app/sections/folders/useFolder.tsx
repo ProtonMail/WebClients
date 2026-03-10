@@ -74,6 +74,7 @@ export function useFolder() {
                     canCreateNode: canEdit,
                     canCreateDocs: isDocsEnabled && canEdit && !isDeviceFolder,
                     canCreateSheets: isSheetsEnabled && canEdit && !isDeviceFolder,
+                    canOpenInDocs: canEdit,
                     canShareNode: isAdmin && !isDeviceRoot && !isRoot,
                     canMove: canEdit,
                     canCopy: copyFeatureEnabled,

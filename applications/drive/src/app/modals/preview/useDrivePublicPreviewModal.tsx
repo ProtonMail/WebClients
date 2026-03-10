@@ -9,7 +9,8 @@ export function useDrivePublicPreviewModal() {
     const [props, setProps] = useState<PreviewPropsWithoutOnClose | undefined>(undefined);
 
     const showPreviewModal = useCallback((props: PreviewPropsWithoutOnClose) => {
-        setProps(props);
+        // Conversion of docs/sheets is not available in public context
+        setProps({ canOpenInDocs: false, ...props });
         setOpen(true);
     }, []);
 

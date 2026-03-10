@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { MemberRole, type NodeEntity } from '@proton/drive';
+import type { NodeEntity } from '@proton/drive';
 
 import { FileName } from '../../components/FileName';
 import { downloadManager } from '../../managers/download/DownloadManager';
@@ -21,12 +21,12 @@ interface PublicFileViewProps {
 export const PublicFileView = ({ rootNode, customPassword, isPartialView }: PublicFileViewProps) => {
     const [contentData, setContentData] = useState<Uint8Array<ArrayBuffer>[] | undefined>(undefined);
     const { modals, handleDetails, handleOpenDocsOrSheets, handleCopyLink } = usePublicActions();
-
+    const isLoggedIn = usePublicAuthStore((state) => state.isLoggedIn);
     useEffect(() => {
         const openInDocsInfo = rootNode.mediaType ? getOpenInDocsInfo(rootNode.mediaType) : undefined;
 
-        // Do not open/convert in case of viewer for non-native docs/sheets files
-        if (openInDocsInfo && usePublicAuthStore.getState().publicRole !== MemberRole.Viewer) {
+        // Conversion cannot be done for single public file as we can't write on parent folder
+        if (openInDocsInfo?.isNative) {
             handleOpenDocsOrSheets(rootNode.uid, openInDocsInfo, customPassword);
         }
     }, [rootNode.uid, rootNode.mediaType, rootNode.parentUid, handleOpenDocsOrSheets, customPassword]);
@@ -79,7 +79,9 @@ export const PublicFileView = ({ rootNode, customPassword, isPartialView }: Publ
                 className="flex-1"
                 drive={getPublicLinkClient()}
                 nodeUid={rootNode.uid}
-                verifySignatures={false}
+                verifySignatures={isLoggedIn}
+                // We cannot convert a doc/sheets for single file view
+                canOpenInDocs={false}
                 onContentLoaded={handleContentLoaded}
                 onDownload={() => handleDownload()}
             />

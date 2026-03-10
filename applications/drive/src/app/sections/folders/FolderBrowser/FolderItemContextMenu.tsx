@@ -94,8 +94,12 @@ export function FolderItemContextMenu({
                         onClick={showPreviewModal}
                     />
                 )}
-                {isOnlyOneFileItem && <OpenInDocsButton type="context" selectedItems={selectedItems} close={close} />}
-                {(hasPreviewAvailable || (isOnlyOneFileItem && openInDocs.canOpen)) && <ContextSeparator />}
+                {isOnlyOneFileItem && permissions.canOpenInDocs && (
+                    <OpenInDocsButton type="context" selectedItems={selectedItems} close={close} />
+                )}
+                {(hasPreviewAvailable || (isOnlyOneFileItem && openInDocs.canOpen && permissions.canOpenInDocs)) && (
+                    <ContextSeparator />
+                )}
                 <DownloadButton type="context" selectedItems={selectedItems} onClick={downloadItems} close={close} />
                 {canCopyPublicLink && <CopyLinkContextButton getPublicLinkInfo={getPublicLinkInfo} close={close} />}
                 {isAdmin && isOnlyOneItem && (
