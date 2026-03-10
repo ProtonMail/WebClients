@@ -2272,6 +2272,9 @@
       "Checkout expired, please try again": [
         "El termini de pagament ha expirat. Torneu-ho a provar"
       ],
+      "Company name or personal name is required": [
+        "S'ha de proporcionar el nom de l'empresa o el de la persona"
+      ],
       "Contact could not be saved": [
         "El contacte no pot ser desat"
       ],
@@ -2314,11 +2317,11 @@
       "Invalid postal code": [
         "Codi de país invàlid"
       ],
+      "Invalid VAT number": [
+        "El número d'IVA no és vàlid"
+      ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
-      ],
-      "Invalid ZIP code": [
-        "Aquest codi postal no és vàlid"
       ],
       "Not a valid number": [
         "Número no vàlid"
@@ -2340,6 +2343,9 @@
       ],
       "Payment process not supported": [
         "Procés de pagament no soportat"
+      ],
+      "Please complete the billing details": [
+        "Empleneu les dades de facturació"
       ],
       "Please enter a valid postal code": [
         "Introduïu un codi postal vàlid"
@@ -2401,6 +2407,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
       ],
+      "This field is invalid": [
+        "Aquest camp no és vàlid"
+      ],
       "This field is required": [
         "Aquest camp és obligatori."
       ],
@@ -2424,6 +2433,9 @@
       ],
       "Username must end with a letter or digit": [
         "El nom d'usuari ha d'acabar amb una lletra o un dígit."
+      ],
+      "Wrong billing address": [
+        "L'adreça de facturació és incorrecta"
       ],
       "ZIP code is required": [
         "Es requereix el codi postal."
@@ -4614,6 +4626,9 @@
       "Got it": [
         "Fet"
       ],
+      "I'm purchasing as a business": [
+        "Estic comprant com a empresa"
+      ],
       "Including ${ rate }% tax": [
         "Inclou un impost del ${ rate }%"
       ],
@@ -4685,9 +4700,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Aquesta acció amplia la subscripció existent. Se us cobraran només els nous complements i el temps restant del cicle de facturació actual. La data de renovació de la subscripció no es modificarà."
-      ],
-      "This number will be shown on all future invoices": [
-        "Aquest número es mostrarà a totes les factures futures"
       ],
       "This offer is not available with your current plan.": [
         "Aquesta oferta no està disponible amb el pla actual."
@@ -4853,6 +4865,9 @@
       "Confirm passphrase or leave empty": [
         "Confirmeu la frase de contrasenya o deixeu el camp en blanc."
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Ex., "
       ],
@@ -4879,6 +4894,9 @@
       ],
       "Postal code": [
         "Codi postal"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Cerca"
@@ -5576,6 +5594,9 @@
       ],
       "Simplify password management": [
         "Simplifiqueu la gestió de contrasenyes"
+      ],
+      "Spring Sale": [
+        "Rebaixes de primavera"
       ],
       "Summary": [
         "Resum"

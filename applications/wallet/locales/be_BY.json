@@ -101,7 +101,7 @@
         "Скапіяваць дэскрыптар"
       ],
       "Copy public key (${ prefix })": [
-        "Скапіяваць публічны ключ (${ prefix })"
+        "Скапіяваць адкрыты ключ (${ prefix })"
       ],
       "Copy version number to clipboard": [
         "Скапіяваць нумар версіі ў буфер абмену"
@@ -2296,6 +2296,9 @@
       "Checkout expired, please try again": [
         "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
       ],
+      "Company name or personal name is required": [
+        "Патрабуецца назва кампаніі або асабістае імя"
+      ],
       "Contact could not be saved": [
         "Не ўдалося захаваць кантакт"
       ],
@@ -2338,11 +2341,11 @@
       "Invalid postal code": [
         "Памылковы паштовы індэкс"
       ],
+      "Invalid VAT number": [
+        "Памылковы нумар ПДВ"
+      ],
       "Invalid verification code": [
         "Памылковы праверачны код"
-      ],
-      "Invalid ZIP code": [
-        "Памылковы паштовы індэкс"
       ],
       "Not a valid number": [
         "Несапраўдны нумар"
@@ -2364,6 +2367,9 @@
       ],
       "Payment process not supported": [
         "Апрацоўка плацяжу не падтрымліваецца"
+      ],
+      "Please complete the billing details": [
+        "Запоўніце плацежныя звесткі"
       ],
       "Please enter a valid postal code": [
         "Увядзіце сапраўдны паштовы індэкс"
@@ -2425,6 +2431,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (максімум: ${ maximumLength })."
       ],
+      "This field is invalid": [
+        "Гэта поле з'яўляецца памылковым"
+      ],
       "This field is required": [
         "Абавязковае поле"
       ],
@@ -2448,6 +2457,9 @@
       ],
       "Username must end with a letter or digit": [
         "Імя карыстальніка павінна заканчвацца літарай або лічбай"
+      ],
+      "Wrong billing address": [
+        "Няправільны плацежны адрас"
       ],
       "ZIP code is required": [
         "Патрабуецца ўвесці паштовы індэкс"
@@ -2492,10 +2504,10 @@
         "Замест гэтага я хачу ${ prefix }"
       ],
       "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
-        "Імпартуйце гэты дэскрыптар у іншы праграмны кашалёк, каб сачыць за сваім балансам і генерыраваць адрасы прымання без раскрыцця вашых прыватных ключоў."
+        "Імпартуйце гэты дэскрыптар у іншы праграмны кашалёк, каб сачыць за сваім балансам і генерыраваць адрасы атрымання без раскрыцця вашых закрытых ключоў."
       ],
       "Public key (${ prefix }) copied to clipboard": [
-        "Публічны ключ (${ prefix }) скапіяваны ў буфер абмену"
+        "Адкрыты ключ (${ prefix }) скапіяваны ў буфер абмену"
       ],
       "Verify the first few derived addresses match those in ${ WALLET_APP_NAME } before proceeding.": [
         "Спраўдзіце, што першыя некалькі атрыманых адрасоў супадаюць з тымі, што ў ${ WALLET_APP_NAME }, перад працягам."
@@ -4732,6 +4744,9 @@
       "Got it": [
         "Зразумела"
       ],
+      "I'm purchasing as a business": [
+        "Я купляю як юрыдычная асоба"
+      ],
       "Including ${ rate }% tax": [
         "Уключаючы падатак у памеры ${ rate }%:"
       ],
@@ -4815,9 +4830,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Гэта дзеянне пашырае існуючую падпіску. З вас будзе спагнана плата толькі за новыя дадаткі і час, якія засталіся ў бягучым перыядзе аплаты. Дата падаўжэння вашай падпіскі не будзе зменена."
-      ],
-      "This number will be shown on all future invoices": [
-        "Гэты нумар будзе паказаны ва ўсіх будучых рахунках"
       ],
       "This offer is not available with your current plan.": [
         "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
@@ -4983,6 +4995,9 @@
       "Confirm passphrase or leave empty": [
         "Пацвердзіце парольную фразу або пакіньце поле пустым"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Напрыклад, "
       ],
@@ -5009,6 +5024,9 @@
       ],
       "Postal code": [
         "Паштовы індэкс"
+      ],
+      "San Francisco": [
+        "Сан-Францыска"
       ],
       "Search": [
         "Пошук"
@@ -5206,7 +5224,7 @@
         "Тып падпісання"
       ],
       "This signature verifies your ownership of this Bitcoin address without revealing your private key.": [
-        "Гэты подпіс правярае ваша права ўласнасці адраса Bitcoin без раскрыцця вашага прыватнага ключа."
+        "Гэты подпіс спраўджвае ваша права ўласнасці адраса Bitcoin без раскрыцця вашага закрытага ключа."
       ],
       "We default to Electrum signing method because it's the easiest and most common method requested by banks. BIP 137 is used for signing transactions offline and is more advanced.": [
         "Прадвызначана выкарыстоўваецца метад подпісу Electrum, бо гэта самы просты і распаўсюджаны метад, які запытваюць банкі. BIP 137 выкарыстоўваецца для падпісання трансакцый у аўтаномным рэжыме і з'яўляецца больш прасунутым."
@@ -5531,7 +5549,7 @@
         "Імпартаваць папяровы кашалёк"
       ],
       "Invalid private key": [
-        "Памылковы прыватны ключ"
+        "Памылковы закрыты ключ"
       ],
       "No funds available": [
         "Сродкі недаступны"
@@ -5549,7 +5567,7 @@
         "У вашым папяровым кашальку адсутнічаюць даступныя сродкі"
       ],
       "Your paper wallet is not valid. Please check your private key and try again": [
-        "Ваш папяровы кашалёк з'яўляецца несапраўдным. Праверце свой прыватны ключ і паспрабуйце яшчэ раз."
+        "Ваш папяровы кашалёк з'яўляецца несапраўдным. Праверце свой закрыты ключ і паспрабуйце яшчэ раз."
       ]
     },
     "Tab subscription modal": {
@@ -5728,6 +5746,9 @@
       ],
       "Simplify password management": [
         "Спрасціць кіраванне паролямі"
+      ],
+      "Spring Sale": [
+        "Вясенні распродаж"
       ],
       "Summary": [
         "Зводка"
@@ -6242,7 +6263,7 @@
         "Не зараз"
       ],
       "Show public key (XPUB)": [
-        "Паказаць публічны ключ (XPUB)"
+        "Паказаць адкрыты ключ (XPUB)"
       ],
       "The Bitcoin blockchain is public, meaning every transaction is publicly visible. However, Bitcoin addresses are pseudonymous, meaning the sender and recipient identities are generally unknown.": [
         "Блокчэйн Bitcoin з'яўляецца публічным і гэта азначае, што кожную трансакцыю бачаць іншыя ўдзельнікі. Звярніце ўвагу, што адрасы Bitcoin абаронены псеўданімамі, што дае магчымасць у большасці выпадкаў захаваць асобы адпраўніка і атрымальніка невядомымі."
@@ -6669,7 +6690,7 @@
         "Здаецца, што ў гэтага кашалька ўсё яшчэ ёсць актывы."
       ],
       "Transfer your paper wallet funds to your account. Paste your private key or scan your QR code.": [
-        "Перавядзіце папяровыя грашовыя сродкі на свой рахунак. Увядзіце прыватны ключ або адсканіруйце QR-код."
+        "Перавядзіце папяровыя грашовыя сродкі на свой рахунак. Увядзіце закрыты ключ або адсканіруйце QR-код."
       ],
       "View wallet seed phrase": [
         "Паглядзець seed-фразу"
@@ -6687,7 +6708,7 @@
         "Seed-фраза кашалька змяшчае невядомае слова: ${ word }. Падтрымліваецца толькі англамоўны спіс слоў BIP39."
       ],
       "Wallet seed phrase encode the private key that controls your digital assets.": [
-        "Seed-фраза кашалька кадзіруе прыватны ключ, які кантралюе вашы лічбавыя актывы."
+        "Seed-фраза кашалька кадзіруе закрыты ключ, які кантралюе вашы лічбавыя актывы."
       ],
       "Wallet seed phrase entropy is invalid. It should be between 128 and 256 bits in length.": [
         "Памылковая энтрапія seed-фразы кашалька. Яна павінна быць у межах ад 128 да 256 біт у даўжыню."
@@ -6717,7 +6738,7 @@
         "Вашы ключы і манеты."
       ],
       "Your private key": [
-        "Ваш прыватны ключ"
+        "Ваш закрыты ключ"
       ]
     },
     "Wallet Sidebar": {

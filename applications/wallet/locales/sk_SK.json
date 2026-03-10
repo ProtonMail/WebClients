@@ -2296,6 +2296,9 @@
       "Checkout expired, please try again": [
         "Objednávka vypršala, skúste to prosím znova"
       ],
+      "Company name or personal name is required": [
+        "Názov spoločnosti alebo meno je povinné"
+      ],
       "Contact could not be saved": [
         "Kontakt sa nepodarilo uložiť"
       ],
@@ -2338,11 +2341,11 @@
       "Invalid postal code": [
         "Neplatné smerovacie číslo"
       ],
+      "Invalid VAT number": [
+        "Naplatné IČ DPH"
+      ],
       "Invalid verification code": [
         "Nesprávny overovací kód"
-      ],
-      "Invalid ZIP code": [
-        "Neplatné PSČ"
       ],
       "Not a valid number": [
         "Neplatné číslo"
@@ -2364,6 +2367,9 @@
       ],
       "Payment process not supported": [
         "Proces platby nie je podporovaný"
+      ],
+      "Please complete the billing details": [
+        "Doplňte fakturačné údaje, prosím"
       ],
       "Please enter a valid postal code": [
         "Zadajte platné PSČ, prosím"
@@ -2425,6 +2431,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
       ],
+      "This field is invalid": [
+        "Toto pole je neplatné"
+      ],
       "This field is required": [
         "Povinné pole"
       ],
@@ -2448,6 +2457,9 @@
       ],
       "Username must end with a letter or digit": [
         "Používateľské meno musí končiť písmenom alebo číslom"
+      ],
+      "Wrong billing address": [
+        "Nesprávna fakturačná adresa"
       ],
       "ZIP code is required": [
         "PSČ je povinné"
@@ -4732,6 +4744,9 @@
       "Got it": [
         "Rozumiem"
       ],
+      "I'm purchasing as a business": [
+        "Nakupujem ako firma"
+      ],
       "Including ${ rate }% tax": [
         "Vrátane ${ rate }% dane"
       ],
@@ -4815,9 +4830,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Táto akcia rozširuje existujúce predplatné. Bude vám účtovaný poplatok len za nové doplnky a zostávajúci čas aktuálneho fakturačného obdobia. Dátum obnovenia vášho predplatného sa nezmení."
-      ],
-      "This number will be shown on all future invoices": [
-        "Toto číslo bude uvedené na všetkých budúcich faktúrach."
       ],
       "This offer is not available with your current plan.": [
         "Táto ponuka nie je s vaším aktuálnym programom dostupná."
@@ -4983,6 +4995,9 @@
       "Confirm passphrase or leave empty": [
         "Potvrďte heslo alebo nechajte prázdne"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Napr., "
       ],
@@ -5009,6 +5024,9 @@
       ],
       "Postal code": [
         "PSČ"
+      ],
+      "San Francisco": [
+        "San Francisko"
       ],
       "Search": [
         "Hľadať"
@@ -5728,6 +5746,9 @@
       ],
       "Simplify password management": [
         "Zjednodušte správu hesiel"
+      ],
+      "Spring Sale": [
+        "Jarná akcia"
       ],
       "Summary": [
         "Zhrnutie"
