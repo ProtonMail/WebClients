@@ -23,6 +23,9 @@ interface Props {
     emailReadOnly?: boolean;
     emailDisabled?: boolean;
     emailLabelHidden?: boolean;
+
+    usernameLabelHidden?: boolean;
+    usernameLabel?: string;
 }
 
 const useEmailInput = ({
@@ -34,6 +37,8 @@ const useEmailInput = ({
     emailLabelHidden,
     bigger,
     inputClassName,
+    usernameLabelHidden,
+    usernameLabel,
 }: Props) => {
     const anchorRef = useRef<HTMLButtonElement | null>(null);
     const accountDataContext = useAccountFormDataContext();
@@ -156,7 +161,7 @@ const useEmailInput = ({
                                 bigger={bigger}
                                 ref={refs.username}
                                 id="username"
-                                label={c('Signup label').t`Username`}
+                                label={usernameLabelHidden ? undefined : usernameLabel || c('Signup label').t`Username`}
                                 error={errors.username}
                                 inputClassName="email-input-field"
                                 suffix={(() => {
