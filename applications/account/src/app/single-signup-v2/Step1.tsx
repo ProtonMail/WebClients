@@ -290,7 +290,12 @@ const Step1 = ({
         trial?: boolean;
         vatNumber?: string;
     }): Promise<SubscriptionEstimation> => {
-        if (isSubscriptionCheckForbidden(subscription, values.planIDs, values.cycle)) {
+        if (
+            isSubscriptionCheckForbidden(subscription, {
+                planIDs: values.planIDs,
+                cycle: values.cycle,
+            })
+        ) {
             return getOptimisticCheckResult({
                 plansMap: model.plansMap,
                 planIDs: values.planIDs,

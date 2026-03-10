@@ -7,7 +7,7 @@ import type { Currency } from '@proton/payments';
 import type { OfferConfig } from '../interface';
 import useFetchOffer from './useFetchOffer';
 
-const useOfferModal = (offerConfig: OfferConfig) => {
+const useOfferModal = (offerConfig: OfferConfig, shouldPrefetch = false) => {
     const [offerModalProps, setOfferModalOpen, renderOfferModal] = useModalState();
     const [fetchOffer, setFetchOffer] = useState(false);
     const [automaticCurrency, loadingCurrency] = useAutomaticCurrency();
@@ -20,8 +20,13 @@ const useOfferModal = (offerConfig: OfferConfig) => {
         }
     }, [automaticCurrency, loadingCurrency]);
 
-    const [offer, loadingOffer] = useFetchOffer({
-        offerConfig: fetchOffer ? offerConfig : undefined,
+    const {
+        offer,
+        loading: loadingOffer,
+        hasEstimationError,
+        initialized,
+    } = useFetchOffer({
+        offerConfig: fetchOffer || shouldPrefetch ? offerConfig : undefined,
         currency,
         onError: () => {
             // This is like a retry. Resetting the offer config so that the calls get retried if the user clicks the button again.
@@ -38,6 +43,8 @@ const useOfferModal = (offerConfig: OfferConfig) => {
         onChangeCurrency: setCurrency,
         setOfferModalOpen,
         setFetchOffer,
+        hasEstimationError,
+        initialized,
     };
 };
 

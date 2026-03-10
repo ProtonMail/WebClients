@@ -93,7 +93,7 @@ const OfferModalRenderer: React.FC<{
 
 export const LumoUpsellModalProvider: React.FC<LumoUpsellModalProviderProps> = ({ children }) => {
     const { APP_NAME } = useConfig();
-    const [offerConfig, loadingOffer] = useGuestSafeOfferConfig();
+    const { config: offerConfig, isLoading: loadingOffer } = useGuestSafeOfferConfig();
 
     const offerFlags = useMemo(() => {
         const hasBlackFridayFreeOffer = false;

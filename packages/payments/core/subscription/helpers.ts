@@ -736,11 +736,31 @@ export function hasIntentionalScheduledModification(
     return !getIsVariableCycleOffer(subscription);
 }
 
+type SubscriptionCheckForbiddenEstimationParameters = {
+    planIDs: PlanIDs;
+    cycle: CYCLE;
+    coupon?: string;
+    Codes?: string[];
+};
+
 export function isSubscriptionCheckForbiddenWithReason(
     subscription: Subscription | FreeSubscription | null | undefined,
-    planIDs: PlanIDs,
-    cycle: CYCLE
+    estimationParameters: SubscriptionCheckForbiddenEstimationParameters
 ): SubscriptionCheckForbiddenReason {
+    const { planIDs, cycle } = estimationParameters;
+
+    const codes: string[] = (() => {
+        if (estimationParameters.Codes) {
+            return estimationParameters.Codes;
+        }
+
+        if (estimationParameters.coupon) {
+            return [estimationParameters.coupon];
+        }
+
+        return [];
+    })();
+
     if (!subscription) {
         return { forbidden: false };
     }
@@ -769,10 +789,13 @@ export function isSubscriptionCheckForbiddenWithReason(
      *
      * | Scenario                       | selectedSameAsCurrent | selectedSameAsUpcoming |
      * |--------------------------------|-----------------------|------------------------|
-     * | hasVariableCycleOffer          | check forbidden       | check forbidden        |
-     * | hasUpcomingPrepaidSubscription | check forbidden       | check forbidden        |
-     * | hasNoUpcomingSubscription      | check forbidden       | n/a                    |
+     * | hasVariableCycleOffer          | check forbidden*      | check forbidden        |
+     * | hasUpcomingPrepaidSubscription | check forbidden*      | check forbidden        |
+     * | hasNoUpcomingSubscription      | check forbidden*      | n/a                    |
      * | hasScheduledUnpaidDowncycling  | check allowed         | check forbidden        |
+     *
+     * *unless a coupon/code is provided — in that case the check is allowed so the backend
+     *  can validate the coupon and return the discounted price. See P2-1927.
      *
      * Please do not join this multi-line comment with others, I keep it separated to prevent some auto-formatting
      * tools from breaking this table.
@@ -794,8 +817,12 @@ export function isSubscriptionCheckForbiddenWithReason(
      * scribe addons and they want to decrease the number of scribes then it creates a scheduled subscription with lower
      * number of scribes.
      *
-     * The four cases described above are handled by: `(selectedSameAsCurrent && !hasScheduledUnpaidModification) ||
-     * selectedSameAsUpcoming`
+     * The four cases described above are handled by:
+     * `(selectedSameAsCurrent && !hasScheduledUnpaidModification && !codes.length) || selectedSameAsUpcoming`
+     *
+     * The `!codes.length` part allows the /check call when a coupon or promo code is present, even if the plan and
+     * cycle are the same as the current subscription. This is needed so the backend can validate the coupon and return
+     * the discounted price. The coupon exception intentionally does not apply to `selectedSameAsUpcoming`.
      *
      * The condition `selectedSameAsCurrentIgnorringCycle && managedExternally` is a special case for multi-subs. If
      * user has a mobile subscription (for example, Lumo) and selects the same plan on web (any cycle) then the check is
@@ -809,7 +836,8 @@ export function isSubscriptionCheckForbiddenWithReason(
      * externally managed Lumo subscription.
      *
      */
-    if ((selectedSameAsCurrent && !hasScheduledUnpaidModification) || selectedSameAsUpcoming) {
+    const forbiddenWithoutCoupon = selectedSameAsCurrent && !hasScheduledUnpaidModification;
+    if ((forbiddenWithoutCoupon && !codes.length) || selectedSameAsUpcoming) {
         return { forbidden: true, reason: 'already-subscribed' };
     }
 
@@ -823,15 +851,34 @@ export function isSubscriptionCheckForbiddenWithReason(
         return { forbidden: true, reason: 'offer-not-available' };
     }
 
+    /**
+     * See comments for {@link isDangerouslyAllowedSubscriptionEstimation} for more details.
+     */
+    if (forbiddenWithoutCoupon && codes.length) {
+        return { forbidden: false, reason: 'possibly-invalid-coupon' };
+    }
+
     return { forbidden: false };
+}
+
+/**
+ * Ticket P2-1927. We now allow subscription estimation calls when user selects the same plan+cycle as the existing
+ * subscription, but only if a coupon is provided. This, however, has dangers: if coupon is valid, then
+ * `subscription/check` endpoint will return the correct estimation as usual. If coupon is invalid, then the endpoint
+ * will throw an error. In this case, it's the job of the consumer to handle the error.
+ */
+export function isDangerouslyAllowedSubscriptionEstimation(
+    ...args: Parameters<typeof isSubscriptionCheckForbiddenWithReason>
+): boolean {
+    const { forbidden, reason } = isSubscriptionCheckForbiddenWithReason(...args);
+    return !forbidden && reason === 'possibly-invalid-coupon';
 }
 
 export function isSubscriptionCheckForbidden(
     subscription: Subscription | FreeSubscription | null | undefined,
-    planIDs: PlanIDs,
-    cycle: CYCLE
+    estimationParameters: SubscriptionCheckForbiddenEstimationParameters
 ): boolean {
-    return isSubscriptionCheckForbiddenWithReason(subscription, planIDs, cycle).forbidden;
+    return isSubscriptionCheckForbiddenWithReason(subscription, estimationParameters).forbidden;
 }
 
 /**

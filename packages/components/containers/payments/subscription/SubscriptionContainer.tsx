@@ -751,7 +751,7 @@ const SubscriptionContainerInner = ({
             .filter((cycle) => cycle !== checkResult.Cycle)
 
             // skip cycles of the currently active subscription, because the backend doesn't allows to check them
-            .filter((cycle) => !isSubscriptionCheckForbidden(subscription, newModel.planIDs, cycle));
+            .filter((cycle) => !isSubscriptionCheckForbidden(subscription, { planIDs: newModel.planIDs, cycle }));
 
         const additionalCyclesHaveCustomBilling = additionalCycles.some((cycle) => {
             const optimisticSubscriptionMode = computeOptimisticSubscriptionMode(
@@ -770,7 +770,7 @@ const SubscriptionContainerInner = ({
         const currentCycleHasCustomBilling = checkResult.SubscriptionMode === SubscriptionMode.CustomBillings;
 
         const hasForbiddenCheck = allAllowedCycles.some((cycle) =>
-            isSubscriptionCheckForbidden(subscription, newModel.planIDs, cycle)
+            isSubscriptionCheckForbidden(subscription, { planIDs: newModel.planIDs, cycle })
         );
 
         const additionalPayloads = additionalCycles.map((Cycle) => {
@@ -972,11 +972,11 @@ const SubscriptionContainerInner = ({
             return;
         }
 
-        const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(
-            subscription,
-            copyNewModel.planIDs,
-            copyNewModel.cycle
-        );
+        const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(subscription, {
+            planIDs: copyNewModel.planIDs,
+            cycle: copyNewModel.cycle,
+            coupon: copyNewModel.gift,
+        });
         if (paymentForbiddenReason.forbidden) {
             setCheckResult({
                 ...getOptimisticCheckResult({

@@ -363,11 +363,10 @@ export const PaymentsContextProvider = ({
         const newBillingAddress = diff.billingAddress ?? stateRef.current.billingAddress;
         const newVatNumber = diff.vatNumber ?? stateRef.current.vatNumber;
 
-        const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(
-            stateRef.current.subscription,
-            newPlanToCheck.planIDs,
-            newPlanToCheck.cycle
-        );
+        const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(stateRef.current.subscription, {
+            planIDs: newPlanToCheck.planIDs,
+            cycle: newPlanToCheck.cycle,
+        });
 
         if (paymentForbiddenReason.forbidden) {
             const newCheckResult = getOptimisticCheckResult(newPlanToCheck);

@@ -48,7 +48,7 @@ export async function runAdditionalCycleChecks(
 ) {
     const additionalCycles = allowedCycles
         .filter((cycle) => cycle !== checkResult.Cycle)
-        .filter((cycle) => !isSubscriptionCheckForbidden(subscription, planIDs, cycle));
+        .filter((cycle) => !isSubscriptionCheckForbidden(subscription, { planIDs, cycle }));
 
     const additionalCyclesHaveCustomBilling =
         subscription &&
