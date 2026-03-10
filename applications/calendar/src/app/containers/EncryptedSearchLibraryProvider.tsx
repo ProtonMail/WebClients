@@ -93,6 +93,10 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, hasReactivatedCalendarsRe
                 Calendars?: CalendarEventManager[];
                 Refresh?: number;
             }) => {
+                if (!isLibraryInitialized || !esEnabled) {
+                    return;
+                }
+
                 /**
                  * If we have `More` core events to handle, the application itself will take care of the pagination so this handler will automatically get called next.
                  */
@@ -109,11 +113,15 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, hasReactivatedCalendarsRe
             }
         );
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-E65FA7
-    }, [esLibraryFunctions, esCallbacks, getCalendarEventRaw]);
+    }, [esLibraryFunctions, esCallbacks, getCalendarEventRaw, isLibraryInitialized, esEnabled]);
 
     // Calendars loop
     useEffect(() => {
         return calendarSubscribe(calendarIDs, async ({ CalendarEvents = [], Refresh = 0, CalendarModelEventID }) => {
+            if (!isLibraryInitialized || !esEnabled) {
+                return;
+            }
+
             /**
              * If we have `More` calendar events (e.g: in case of a large import) to handle, the application itself will take care of the pagination so this handler will automatically get called next.
              */
@@ -132,7 +140,7 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, hasReactivatedCalendarsRe
             return esLibraryFunctions.handleEvent(esEvent);
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-397023
-    }, [calendarIDs, esLibraryFunctions, esCallbacks, cachedIndexKey]);
+    }, [calendarIDs, esLibraryFunctions, esCallbacks, cachedIndexKey, isLibraryInitialized, esEnabled]);
 
     useEffect(() => {
         if (!isConfigFromESDBLoaded) {
