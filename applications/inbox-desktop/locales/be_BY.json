@@ -5,11 +5,17 @@
   },
   "contexts": {
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "\"Перазапусціць і прафіляваць адразу\" неадкладна перазапускае праграму і пачынае прафіляваць праграму.\n\n\"Прафіляваць пры наступным запуску\" пачынае прафіляваць праграму пры наступным запуску. Выкарыстоўвайце гэту функцыю для вымярэння хуткасці запуску пасля перазагрузкі."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "Аб ${ MAIL_APP_NAME }"
       ],
       "Actual Size": [
         "Актуальны памер"
+      ],
+      "Cancel": [
+        "Скасаваць"
       ],
       "Check spelling while typing": [
         "Правяраць правапіс падчас друку"
@@ -19,6 +25,9 @@
       ],
       "Close Window": [
         "Закрыць акно"
+      ],
+      "Collect startup performance data": [
+        "Збор даных аб прадукцыйнасці пры запуску"
       ],
       "Copy": [
         "Скапіяваць"
@@ -47,6 +56,12 @@
       "Paste and Match Style": [
         "Уставіць і дапасаваць стыль"
       ],
+      "Profile app startup": [
+        "Прафіляваць запуск праграмы"
+      ],
+      "Profile on next launch": [
+        "Прафіляваць пры наступным запуску"
+      ],
       "Quit": [
         "Выйсці"
       ],
@@ -58,6 +73,9 @@
       ],
       "Reload": [
         "Перазагрузіць"
+      ],
+      "Restart and profile now": [
+        "Перазапусціць і адразу прафіляваць"
       ],
       "Select All": [
         "Выбраць усе"
@@ -79,6 +97,9 @@
       ],
       "Stop Speaking": [
         "Спыніць агучванне"
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "Гэта функцыя вымярае час, які патрэбны праграме для запуску. Справаздача захоўваецца ў вашай папцы з журналамі."
       ],
       "Toggle Full Screen": [
         "Пераключыцца ў поўнаэкранны рэжым"

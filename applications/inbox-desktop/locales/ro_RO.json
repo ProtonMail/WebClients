@@ -5,11 +5,17 @@
   },
   "contexts": {
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "„Repornire și analizare acum” va reporni aplicația imediat și va captura un profil de pornire.\n\n„Analizare la următoarea pornire” va crea profilul data viitoare când deschideți aplicația. Folosiți aceasta pentru a măsura viteza de pornire după o repornire."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "Despre ${ MAIL_APP_NAME }"
       ],
       "Actual Size": [
         "Mărime actuală"
+      ],
+      "Cancel": [
+        "Anulare"
       ],
       "Check spelling while typing": [
         "Verificarea ortografiei în timpul tastării"
@@ -19,6 +25,9 @@
       ],
       "Close Window": [
         "Închidere fereastră"
+      ],
+      "Collect startup performance data": [
+        "Colectare date de performanță la pornire"
       ],
       "Copy": [
         "Copiere"
@@ -47,6 +56,12 @@
       "Paste and Match Style": [
         "Lipire și potrivire stil"
       ],
+      "Profile app startup": [
+        "Analizare pornire aplicație"
+      ],
+      "Profile on next launch": [
+        "Analizare la următoarea pornire"
+      ],
       "Quit": [
         "Ieșire"
       ],
@@ -58,6 +73,9 @@
       ],
       "Reload": [
         "Reîncărcare"
+      ],
+      "Restart and profile now": [
+        "Repornire și analizare acum"
       ],
       "Select All": [
         "Selectare toate"
@@ -79,6 +97,9 @@
       ],
       "Stop Speaking": [
         "Oprire vorbire"
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "Aceasta va măsura cât timp durează pornirea aplicației și va salva un raport în folderul de jurnale."
       ],
       "Toggle Full Screen": [
         "Comutare ecran complet"

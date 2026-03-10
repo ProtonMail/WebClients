@@ -11,6 +11,9 @@
       "Actual Size": [
         "실제 크기"
       ],
+      "Cancel": [
+        "취소"
+      ],
       "Check spelling while typing": [
         "입력시 맞춤법 검사"
       ],
@@ -79,6 +82,9 @@
       ],
       "Stop Speaking": [
         "말하기 중단"
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "앱이 시작되는 데 걸리는 시간을 측정하고 해당 보고서를 사용자의 로그 폴더에 저장합니다."
       ],
       "Toggle Full Screen": [
         "전체 화면 보기"
@@ -151,6 +157,14 @@
       ],
       "Undo": [
         "실행 취소"
+      ]
+    },
+    "Error dialog": {
+      "${ MAIL_APP_NAME } - Unexpected error": [
+        "${ MAIL_APP_NAME } - 예기치 못한 오류"
+      ],
+      "Due to an error, the ${ MAIL_APP_NAME } app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "오류로 인하여 ${ MAIL_APP_NAME } 앱이 종료됩니다. 다시 실행한 뒤에도 문제가 재발되면 고객 지원 팀으로 문의해 주세요. 오류에 대한 자세한 정보는 어플리케이션 로그에서 확인할 수 있습니다."
       ]
     },
     "error screen": {

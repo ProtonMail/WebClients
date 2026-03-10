@@ -5,11 +5,17 @@
   },
   "contexts": {
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "\"Ponovni zagon in profil zdaj\" bo takoj ponovno zagnal aplikacijo in ustvaril profil zagona.\n\n\"Profil ob naslednjem zagonu\" bo ustvaril profil ob naslednjem odprtju aplikacije. Uporabite to za merjenje hitrosti zagona po ponovnem zagonu."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "Vizitka ${ MAIL_APP_NAME }"
       ],
       "Actual Size": [
         "Dejanska velikost"
+      ],
+      "Cancel": [
+        "Prekliči"
       ],
       "Check spelling while typing": [
         "Preverjanje črkovanja med tipkanjem"
@@ -19,6 +25,9 @@
       ],
       "Close Window": [
         "Zapri okno"
+      ],
+      "Collect startup performance data": [
+        "Zbirajte podatke o uspešnosti ob zagonu"
       ],
       "Copy": [
         "Kopiraj"
@@ -47,6 +56,12 @@
       "Paste and Match Style": [
         "Prilepi in spoji oblikovanje"
       ],
+      "Profile app startup": [
+        "Zagon profila aplikacije"
+      ],
+      "Profile on next launch": [
+        "Profil ob naslednjem zagonu"
+      ],
       "Quit": [
         "Končaj"
       ],
@@ -58,6 +73,9 @@
       ],
       "Reload": [
         "Ponovno naloži"
+      ],
+      "Restart and profile now": [
+        "Znova zaženi in profiliraj zdaj"
       ],
       "Select All": [
         "Izberi vse"
@@ -79,6 +97,9 @@
       ],
       "Stop Speaking": [
         "Nehaj govoriti"
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "To bo merilo, kako dolgo aplikacija potrebuje za zagon, in shranilo poročilo v vašo mapo z dnevniki."
       ],
       "Toggle Full Screen": [
         "Preklopi celozaslonski način"

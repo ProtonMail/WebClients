@@ -5,11 +5,17 @@
   },
   "contexts": {
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "\"Reinicieu i analitzeu el rendiment ara\" reiniciarà l'aplicació immediatament i capturarà un perfil d'inici.\n\n\"Analitzeu el rendiment en el pròxim llançament\" farà l'anàlisi la pròxima vegada que obriu l'aplicació. Utilitzeu-ho per a mesurar la velocitat d'inici després d'una reinicialització."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "Quant a ${ MAIL_APP_NAME }"
       ],
       "Actual Size": [
         "Mida actual"
+      ],
+      "Cancel": [
+        "Cancel·lar-ho"
       ],
       "Check spelling while typing": [
         "Comprova l'ortografia en teclejar"
@@ -19,6 +25,9 @@
       ],
       "Close Window": [
         "Tanca finestra"
+      ],
+      "Collect startup performance data": [
+        "Recopilar les dades de rendiment de l'inici"
       ],
       "Copy": [
         "Copia"
@@ -47,6 +56,12 @@
       "Paste and Match Style": [
         "Enganxa i aplica l'estil"
       ],
+      "Profile app startup": [
+        "Analitzeu el rendiment de l'inici de l'aplicació"
+      ],
+      "Profile on next launch": [
+        "Analitzeu el rendiment en el pròxim llançament"
+      ],
       "Quit": [
         "Abandona"
       ],
@@ -58,6 +73,9 @@
       ],
       "Reload": [
         "Torna a carregar"
+      ],
+      "Restart and profile now": [
+        "Reinicieu i analitzeu el rendiment ara"
       ],
       "Select All": [
         "Selecciona-ho tot"
@@ -79,6 +97,9 @@
       ],
       "Stop Speaking": [
         "Deixeu de parlar"
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "Això mesurarà quant de temps triga l'aplicació a iniciar-se i desarà un informe a la vostra carpeta de registres."
       ],
       "Toggle Full Screen": [
         "Activar/desactivar la pantalla completa"
