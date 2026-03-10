@@ -3245,9 +3245,6 @@
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
       ],
-      "Invalid ZIP code": [
-        "Kod pocztowy jest nieprawidłowy"
-      ],
       "Item content cannot exceed 40KB": [
         "Rozmiar elementu nie może przekraczać 40kb"
       ],
@@ -5279,9 +5276,6 @@
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "Poznaj dysk ${ DRIVE_APP_NAME } i odbierz 3 GB bonusowej przestrzeni dyskowej!"
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Przejdź do sekcji \"Moje pliki\" i zacznij przesyłać pliki."
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Rządy i dostawcy Internetu mogą monitorować Twoją aktywność online. Ukrywając swój prawdziwy adres IP i szyfrując połączenie, przeglądanie staje się prywatne."
@@ -9598,6 +9592,9 @@
       "Got it": [
         "OK"
       ],
+      "I'm purchasing as a business": [
+        "Kupuję jako firma"
+      ],
       "MM/YY": [
         "MM/RR"
       ],
@@ -9627,9 +9624,6 @@
         "Automatycznie odnowienie nastąpi w cenie ${ renewPriceStr } za ${ renewalLength } miesiące. Możesz anulować w dowolnym momencie.",
         "Automatycznie odnowienie nastąpi w cenie ${ renewPriceStr } za ${ renewalLength } miesięcy. Możesz anulować w dowolnym momencie.",
         "Automatycznie odnowienie nastąpi w cenie ${ renewPriceStr } za ${ renewalLength } miesiąca. Możesz anulować w dowolnym momencie."
-      ],
-      "This number will be shown on all future invoices": [
-        "Numer będzie pojawiać się na wszystkich fakturach"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Metoda płatności stanie się domyślna dla przyszłych odnowień."
@@ -9972,6 +9966,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Oficjalna wiadomość od ${ BRAND_NAME }"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Nie pokazuj tej oferty ponownie"
+      ],
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/miesiąc"
+      ],
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "2 TB data storage": [
+        "2 TB przestrzeni dyskowej na dane"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB przestrzeni dyskowej: 40 × Twój obecny plan"
+      ],
+      "3 TB data storage": [
+        "3 TB przestrzeni dyskowej na dane"
+      ],
+      "500 GB storage": [
+        "500 GB przestrzeni dyskowej"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Dostęp do ponad 15 000 serwerów w ponad 120 krajach"
+      ],
+      "Access advanced AI models": [
+        "Uzyskaj dostęp do zaawansowanych modeli AI"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Wszystkie funkcje premium usług Mail, Pass, Drive, VPN i Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokuj reklamy, elementy śledzące i złośliwe oprogramowanie"
+      ],
+      "Built-in 2FA authenticator": [
+        "Wbudowana aplikacja uwierzytelniająca"
+      ],
+      "Connect 10 devices at once": [
+        "Połącz 10 urządzeń jednocześnie"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zniżki są naliczane na podstawie standardowych cen miesięcznych. Twoja subskrypcja odnowi się po standardowej stawce rocznej, gdy zakończy się cykl rozliczeniowy."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Pełny dostęp do ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Pełna historia czatu z łatwym wyszukiwaniem i ulubionymi"
+      ],
+      "Individual accounts for 6 users": [
+        "Indywidualne konta dla 6 użytkowników"
+      ],
+      "Individual accounts for you and a partner": [
+        "Indywidualne konta dla Ciebie i partnera"
+      ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silniejsza ochrona przed cyberzagrożeniami"
+      ],
+      "Unlimited daily chats": [
+        "Nieograniczone codzienne czaty"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nieograniczona liczba aliasów z funkcją hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Możliwość użycia własnej domeny e-mail"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "motyl"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "na 12 miesięcy"
+      ],
+      "SPRING SALE": [
+        "WIOSENNA WYPRZEDAŻ"
       ]
     },
     "Referral": {
@@ -12305,9 +12394,6 @@
       ],
       "You have inaccessible files": [
         "Masz niedostępne pliki"
-      ],
-      "You have no files to share": [
-        "Nie masz plików do udostępnienia"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Darmowa wersja próbna planu ${ planName } zakończy się ${ textDate }"

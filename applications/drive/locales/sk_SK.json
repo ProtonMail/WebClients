@@ -3401,6 +3401,9 @@
       "Checkout expired, please try again": [
         "Objednávka vypršala, skúste to prosím znova"
       ],
+      "Company name or personal name is required": [
+        "Názov spoločnosti alebo meno je povinné"
+      ],
       "Contact could not be saved": [
         "Kontakt sa nepodarilo uložiť"
       ],
@@ -3605,11 +3608,11 @@
       "Invalid public key file": [
         "Zlý verejný kľúč"
       ],
+      "Invalid VAT number": [
+        "Naplatné IČ DPH"
+      ],
       "Invalid verification code": [
         "Nesprávny overovací kód"
-      ],
-      "Invalid ZIP code": [
-        "Neplatné PSČ"
       ],
       "Item content cannot exceed 40KB": [
         "Obsah položky nesmie presiahnuť 40KB"
@@ -3694,6 +3697,9 @@
       ],
       "Please activate your search again": [
         "Aktivujte znovu vyhľadávanie"
+      ],
+      "Please complete the billing details": [
+        "Doplňte fakturačné údaje, prosím"
       ],
       "Please enter a valid postal code": [
         "Zadajte platné PSČ, prosím"
@@ -3866,6 +3872,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
       ],
+      "This field is invalid": [
+        "Toto pole je neplatné"
+      ],
       "This field is required": [
         "Povinné pole"
       ],
@@ -3953,11 +3962,17 @@
       "We were not able to load some search results": [
         "Niektoré výsledky vyhľadávania sa nám nepodarilo načítať."
       ],
+      "We were not able to load the file history": [
+        "Nepodarilo sa nám načítať históriu súborov"
+      ],
       "We were not able to load the folder contents": [
         "Nepodarilo sa nám načítať obsah priečinka"
       ],
       "We're sorry, but free upload is not available right now.": [
         "Je nám ľúto, ale bezplatné nahratie momentálne nie je k dispozícii."
+      ],
+      "Wrong billing address": [
+        "Nesprávna fakturačná adresa"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcovi",
@@ -5774,9 +5789,6 @@
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "Zoznámte sa s ${ DRIVE_APP_NAME } a získajte bonus 3 GB úložného priestoru! Začnite ešte dnes."
       ],
-      "Go to \"My files\" and upload some files first.": [
-        "Prejdite do „Moje súbory“ a najprv nahrajte súbory."
-      ],
       "Google Pay mark": [
         "Google Pay mark"
       ],
@@ -7000,6 +7012,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nebude sa vám nič účtovať, ak službu zrušíte pred ${ trialEndsOnFormatted }."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Kreditné odmeny získate 1 mesiac po tom, ako si váš priateľ predplatí ročný plán, a 2 mesiace po tom, ako si predplatí mesačný plán."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
@@ -10386,6 +10401,9 @@
       "Got it": [
         "Rozumiem"
       ],
+      "I'm purchasing as a business": [
+        "Nakupujem ako firma"
+      ],
       "Including ${ rate }% tax": [
         "Vrátane ${ rate }% dane"
       ],
@@ -10469,9 +10487,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Táto akcia rozširuje existujúce predplatné. Bude vám účtovaný poplatok len za nové doplnky a zostávajúci čas aktuálneho fakturačného obdobia. Dátum obnovenia vášho predplatného sa nezmení."
-      ],
-      "This number will be shown on all future invoices": [
-        "Toto číslo bude uvedené na všetkých budúcich faktúrach."
       ],
       "This offer is not available with your current plan.": [
         "Táto ponuka nie je s vaším aktuálnym programom dostupná."
@@ -10667,6 +10682,9 @@
       "Company name": [
         "Názov spoločnosti"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Napr., "
       ],
@@ -10729,6 +10747,9 @@
       ],
       "Postal code": [
         "PSČ"
+      ],
+      "San Francisco": [
+        "San Francisko"
       ],
       "Search for group name": [
         "Vyhľadať názov skupiny"
@@ -13233,6 +13254,9 @@
       "Sort files/folders": [
         "Zoradiť súbory/priečinky"
       ],
+      "Spring Sale": [
+        "Jarná akcia"
+      ],
       "Start a new import": [
         "Zahájiť nový import"
       ],
@@ -13418,9 +13442,6 @@
       ],
       "You have inaccessible files": [
         "Máte nedostupné súbory"
-      ],
-      "You have no files to share": [
-        "Nemáte žiadne súbory na zdieľanie"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaša bezplatná skúšobná verzia služby ${ planName } končí ${ textDate }"
