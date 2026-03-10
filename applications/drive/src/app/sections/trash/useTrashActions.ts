@@ -1,15 +1,16 @@
 import { c } from 'ttag';
-import { useShallow } from 'zustand/react/shallow';
 
 import type { ProtonDriveClient, ProtonDrivePhotosClient } from '@proton/drive/index';
 import { NodeType, useDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
+import { useDetailsModal } from '../../modals/DetailsModal';
+import { useDrivePreviewModal } from '../../modals/preview';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useTrashStore } from './useTrash.store';
 import { useTrashNotifications } from './useTrashNotifications';
-import { useTrashPhotosStore } from './useTrashPhotos.store';
 
 type SelectedNode = {
     uid: string;
@@ -23,19 +24,18 @@ export const useTrashActions = () => {
         drive,
         internal: { photos },
     } = useDrive();
-    const { createTrashRestoreNotification, createTrashDeleteNotification, createEmptyTrashNotificationSuccess } =
-        useTrashNotifications();
+    const {
+        createTrashRestoreNotification,
+        createTrashDeleteNotification,
+        createEmptyTrashNotificationSuccess,
+        createDeleteConfirmModal,
+        createEmptyTrashConfirmModal,
+        confirmModal,
+    } = useTrashNotifications();
 
-    const { trashNodes: driveTrashNodes } = useTrashStore(
-        useShallow((state) => ({
-            trashNodes: state.trashNodes,
-        }))
-    );
-    const { trashNodes: photoTrashNodes } = useTrashPhotosStore(
-        useShallow((state) => ({
-            trashNodes: state.trashNodes,
-        }))
-    );
+    const { detailsModal, showDetailsModal } = useDetailsModal();
+    const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
+    const { previewModal, showPreviewModal } = useDrivePreviewModal();
 
     const undoFactory = ({
         successDriveUids,
@@ -58,7 +58,7 @@ export const useTrashActions = () => {
         };
     };
 
-    const restoreNodes = async (selectedNodes: SelectedNode[]) => {
+    const handleRestore = async (selectedNodes: SelectedNode[]) => {
         const { setLoading } = useTrashStore.getState();
         const nodesMap = new Map(selectedNodes.map((item) => [item.uid, item]));
         const driveUids = selectedNodes.filter((node) => node.type !== NodeType.Photo).map((n) => n.uid);
@@ -69,7 +69,7 @@ export const useTrashActions = () => {
         const failureItems: { uid: string; error: string }[] = [];
 
         try {
-            setLoading(true);
+            setLoading('restore', true);
             for await (const result of drive.restoreNodes(driveUids)) {
                 if (result.ok) {
                     successDriveUids.push(result.uid);
@@ -87,7 +87,7 @@ export const useTrashActions = () => {
         } catch (e) {
             handleSdkError(e);
         } finally {
-            setLoading(false);
+            setLoading('restore', false);
         }
 
         const successItems = [...successDriveUids, ...successPhotoUids]
@@ -102,10 +102,7 @@ export const useTrashActions = () => {
             items: successItems.map((t) => ({ ...t, parentUid: t.parentUid || undefined })),
         });
 
-        const undoRestore = undoFactory({
-            successDriveUids,
-            successPhotoUids,
-        });
+        const undoRestore = undoFactory({ successDriveUids, successPhotoUids });
         createTrashRestoreNotification(successItems, failureItems, undoRestore);
     };
 
@@ -116,7 +113,7 @@ export const useTrashActions = () => {
         return (await Array.fromAsync(sdk.deleteNodes(uids)).catch(handleSdkError)) ?? [];
     };
 
-    const deleteNodes = async (selectedNodes: SelectedNode[], showNotification = true) => {
+    const deleteNodes = async (selectedNodes: SelectedNode[]) => {
         const nodesMap = new Map(selectedNodes.map((item) => [item.uid, item]));
         const driveUids = selectedNodes.filter((node) => node.type !== NodeType.Photo).map((n) => n.uid);
         const photoUids = selectedNodes.filter((node) => node.type === NodeType.Photo).map((n) => n.uid);
@@ -130,30 +127,47 @@ export const useTrashActions = () => {
         const successItems = successUids.map((uid) => nodesMap.get(uid)).filter(isTruthy);
         const failureItems = deleted.filter((t) => !t.ok);
 
-        if (showNotification) {
-            createTrashDeleteNotification(successItems, failureItems);
-        }
+        createTrashDeleteNotification(successItems, failureItems);
     };
 
-    const emptyTrash = async () => {
-        try {
-            const myfilesEmptyTrashPromise = drive.emptyTrash();
-            const photosEmptyTrashPromise = photos.emptyTrash();
-            await Promise.all([myfilesEmptyTrashPromise, photosEmptyTrashPromise]);
+    const handleDelete = (selectedNodes: SelectedNode[]) => {
+        createDeleteConfirmModal(selectedNodes, () => deleteNodes(selectedNodes));
+    };
 
-            void getBusDriver().emit({
-                type: BusDriverEventName.DELETED_NODES,
-                uids: [...Object.keys(driveTrashNodes), ...Object.keys(photoTrashNodes)],
-            });
-            createEmptyTrashNotificationSuccess();
-        } catch (e) {
-            handleSdkError(e, { fallbackMessage: c('Notification').t`Trash failed to be emptied` });
-        }
+    const handleEmptyTrash = () => {
+        createEmptyTrashConfirmModal(async () => {
+            try {
+                const allItems = useTrashStore.getState().items;
+
+                await Promise.all([drive.emptyTrash(), photos.emptyTrash()]);
+
+                void getBusDriver().emit({
+                    type: BusDriverEventName.DELETED_NODES,
+                    uids: Array.from(allItems.keys()),
+                });
+                createEmptyTrashNotificationSuccess();
+            } catch (e) {
+                handleSdkError(e, { fallbackMessage: c('Notification').t`Trash failed to be emptied` });
+            }
+        });
+    };
+
+    const handlePreview = (props: Parameters<typeof showPreviewModal>[0]) => {
+        showPreviewModal(props);
     };
 
     return {
-        restoreNodes,
-        deleteNodes,
-        emptyTrash,
+        modals: {
+            confirmModal,
+            detailsModal,
+            filesDetailsModal,
+            previewModal,
+        },
+        handleRestore,
+        handleDelete,
+        handleEmptyTrash,
+        handlePreview,
+        handleShowDetails: showDetailsModal,
+        handleShowFilesDetails: showFilesDetailsModal,
     };
 };
