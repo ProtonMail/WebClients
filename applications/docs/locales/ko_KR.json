@@ -414,6 +414,9 @@
       "Help and resources": [
         "지원 및 도움말"
       ],
+      "Hide": [
+        "숨기기"
+      ],
       "Hide advanced PGP settings": [
         "고급 PGP 설정 숨기기"
       ],
@@ -2925,9 +2928,6 @@
       "Invalid verification code": [
         "잘못된 검증 코드"
       ],
-      "Invalid ZIP code": [
-        "유효하지 않은 우편 번호"
-      ],
       "Item content cannot exceed 40KB": [
         "항목 콘텐츠가 40KB를 초과할 수 없습니다."
       ],
@@ -3111,6 +3111,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "이 필드가 최대 ${ maximumLength } 글자를 초과합니다."
       ],
+      "This field is invalid": [
+        "이 필드는 유효하지 않습니다"
+      ],
       "This field is required": [
         "필수 기재 항목입니다"
       ],
@@ -3164,6 +3167,9 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "해당 파일을 ${ SHEETS_APP_NAME }로 불러오지 못했습니다. 이 파일의 내용물을 복사 및 붙여놓기하여 ${ SHEETS_APP_NAME }에 추가 가능합니다."
+      ],
+      "Wrong billing address": [
+        "청구 주소가 잘못되었습니다"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
@@ -3557,7 +3563,15 @@
         "초고속 속도"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입해 주세요."
+      ],
       "Security key": [
         "보안 키"
       ]
@@ -4260,6 +4274,9 @@
       "Converting document...": [
         "문서를 변환하는 중..."
       ],
+      "Copied to clipboard": [
+        "클립보드로 복사함"
+      ],
       "Copy the link to clipboard": [
         "복사한 링크 붙이기"
       ],
@@ -4359,6 +4376,9 @@
       "Duplicate key updated": [
         "중복 키 업데이트됨"
       ],
+      "Each code can only be used once": [
+        "각 코드는 한 번씩만 유효합니다."
+      ],
       "Edit email address": [
         "이메일 주소 변경"
       ],
@@ -4405,7 +4425,7 @@
         "동기화 오류"
       ],
       "Every change you make is automatically and securely saved to Drive.": [
-        "변경한 모든 사항이 안전히 자동으로 Drive에 저장되었습니다."
+        "모든 변경 사항이 안전하게 자동으로 Drive에 저장되었습니다."
       ],
       "Everything in ${ planOrAppName }": [
         "${ planOrAppName }(에)서 하나로"
@@ -4773,6 +4793,9 @@
       "Public documents are not yet enabled for your organization.": [
         "공개 문서는 사용자의 조직에 활성화되지 않았습니다."
       ],
+      "Read-only": [
+        "읽기 전용"
+      ],
       "Recent documents": [
         "최근 문서"
       ],
@@ -4944,6 +4967,9 @@
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "이 문서의 활동량이 너무 많습니다. 일부 기능이 일시적으로 사용 불가합니다."
       ],
+      "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
+        "이 문서에 활성 공동 작업자가 너무 많습니다. 실시간 편집을 일시적으로 사용할 수 없습니다. 새로고침하여 최신 업데이트를 확인하세요."
+      ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "이 문서는 존재하지 않거나 로드하는 데 문제가 발생했을 수 있습니다. 페이지를 새로 고침하고 다시 시도해 주십시오."
       ],
@@ -5112,6 +5138,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "VPN에 연결하여 암호화 기술을 사용하여 IP 주소(기기에 할당된 고유 코드)를 숨길 수 있습니다."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2단계 인증을 설정하면, 인증 앱에 접근할 수 없을때 로그인시 사용할 수 있는 복구 코드를 제공해 드립니다."
+      ],
       "words": [
         "개 (단어)"
       ],
@@ -5189,6 +5218,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } 전까지 취소하는 경우 결제되지 않습니다."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "친구가 연간 플랜을 구독하고 1개월 후, 월간 요금제에 구독하고 2개월 후에 크레딧 보상을 받게 됩니다."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "매 ${ renewCycle }개월마다 ${ renewAmountStr }(으)로 청구됩니다. 언제든지 취소할 수 있습니다."
@@ -5531,6 +5563,9 @@
       "Emails (last 3 months)": [
         "이메일 (지난 3개월)"
       ],
+      "Emails (last 6 months)": [
+        "이메일 (지난 6개월)"
+      ],
       "Emails (last month)": [
         "이마일 (지난 달)"
       ],
@@ -5611,6 +5646,9 @@
       ],
       "Last 3 months only": [
         "지난 3개월"
+      ],
+      "Last 6 months only": [
+        "지난 6개월"
       ],
       "Last month only": [
         "지난 달"
@@ -6409,6 +6447,9 @@
       ],
       "${ n } VPN connection": [
         "${ n } 개 VPN 연결"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-일 파일 버전 기록"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin 평생 이용권"
@@ -7945,6 +7986,101 @@
         "${ BRAND_NAME } 의 공식 이메일"
       ]
     },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "이 제안을 다시 보지 않기"
+      ],
+      "Get the deal": [
+        "할인 받기"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/월"
+      ],
+      "15 GB storage": [
+        "15 GB 저장공간"
+      ],
+      "2 TB data storage": [
+        "2 TB 데이터 저장공간"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 저장공간: 현재 요금제의 40배"
+      ],
+      "3 TB data storage": [
+        "3 TB 데이터 저장공간"
+      ],
+      "500 GB storage": [
+        "500 GB 저장공간"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "120개국 이상에서 15,000개 이상의 서버에 접근"
+      ],
+      "Access advanced AI models": [
+        "고급 AI 모델 이용"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Mail, Pass, 드라이브, VPN 및 캘린더의 모든 premium 기능"
+      ],
+      "Block ads, trackers, and malware": [
+        "광고, 트래커 및 멀웨어 차단"
+      ],
+      "Built-in 2FA authenticator": [
+        "내장형 2단계 인증기"
+      ],
+      "Connect 10 devices at once": [
+        "한 번에 기기 10대 연결"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }에 대한 완전한 접근"
+      ],
+      "Full chat history with easy search and favorites": [
+        "간편한 검색 및 즐겨찾기 기능이 포함된 전체 채팅 기록"
+      ],
+      "Individual accounts for 6 users": [
+        "6인용 개별 계정"
+      ],
+      "Individual accounts for you and a partner": [
+        "귀하와 파트너를 위한 개별 계정"
+      ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
+      "Recover previous file versions": [
+        "이전 파일 버전 복구"
+      ],
+      "Stronger protection against cyber threats": [
+        "사이버 위협에 대한 더욱 강력한 보호"
+      ],
+      "Unlimited daily chats": [
+        "무제한 일일 채팅"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "무제한 폴더, 라벨 및 필터"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "무제한 hide-my-email 별칭"
+      ],
+      "Use your own email domain": [
+        "나만의 이메일 도메인 사용"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "나비"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "12개월 동안"
+      ],
+      "SPRING SALE": [
+        "봄맞이 세일"
+      ]
+    },
     "Recent documents table header": {
       "Created by": [
         "만든이"
@@ -8322,8 +8458,62 @@
       ]
     },
     "sheets_2025:Action": {
+      "Comma Separated Values (.csv)": [
+        "Comma Separated Values (.csv)"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
       "New spreadsheet": [
         "새로운 스트레드시트"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Tab Separated Values (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "새로운 스프레드시트를 생성하는 중..."
+      ],
+      "Detect automatically": [
+        "자동 감지"
+      ],
+      "Insert as new sheet": [
+        "새 시트로 삽입"
+      ],
+      "Replace current sheet": [
+        "현재 시트 바꾸기"
+      ],
+      "Replace data at selected cell": [
+        "선택한 셀에서 데이터 바꾸기"
+      ],
+      "Replace spreadsheet": [
+        "스프레드시트 바꾸기"
+      ],
+      "Select a file to import": [
+        "불러올 파일 선택"
+      ],
+      "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
+        "현재 스프레드시트와 모든 시트는 이 버전으로 대체됩니다."
+      ]
+    },
+    "sheets_2025:Label": {
+      "Convert text to numbers, dates, and formulas": [
+        "텍스트를 숫자, 날짜 및 수식으로 변환"
+      ],
+      "Destination": [
+        "대상"
+      ],
+      "Format": [
+        "서식"
+      ],
+      "Separator type": [
+        "구분자 유형"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "데이터 가져오기"
       ]
     },
     "Signing preference for emails": {
@@ -8573,6 +8763,16 @@
       ],
       "To edit this document, create a copy that you can modify.": [
         "이 문서를 편집하려면, 수정할 수 있는 복사본을 생성하세요."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "2026년 봄맞이 할인"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "봄맞이 할인"
       ]
     },
     "sso": {
@@ -9386,6 +9586,9 @@
       ],
       "Re-signing contacts": [
         "연락처 다시 서명"
+      ],
+      "Read-only": [
+        "읽기 전용"
       ],
       "Recommended actions": [
         "권장하는 조치"

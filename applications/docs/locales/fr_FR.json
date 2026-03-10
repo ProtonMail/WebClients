@@ -2940,9 +2940,6 @@
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
       ],
-      "Invalid ZIP code": [
-        "Le code postal n'est pas valide."
-      ],
       "Item content cannot exceed 40KB": [
         "Le contenu de l'élément ne peut pas dépasser 40 Ko."
       ],
@@ -3131,6 +3128,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Ce champ dépasse le maximum de ${ maximumLength } caractères."
       ],
+      "This field is invalid": [
+        "Ce champ n'est pas valide."
+      ],
       "This field is required": [
         "Ce champ est nécessaire."
       ],
@@ -3184,6 +3184,9 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Nous n'avons pas pu importer ce fichier dans ${ SHEETS_APP_NAME }. Vous pouvez essayer de copier-coller le contenu dans une nouvelle ${ SHEETS_APP_NAME }."
+      ],
+      "Wrong billing address": [
+        "L'adresse de facturation n'est pas correct."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Vous ne pouvez pas envoyer un message à plus de ${ maxContacts } destinataire.",
@@ -4319,6 +4322,9 @@
       "Converting document...": [
         "Conversion du document en cours..."
       ],
+      "Copied to clipboard": [
+        "Copié dans le presse-papiers"
+      ],
       "Copy the link to clipboard": [
         "Copier le lien dans le presse-papiers"
       ],
@@ -5261,6 +5267,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Vous ne serez pas facturé si vous annulez avant le ${ trialEndsOnFormatted }."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Vous recevrez la récompense de crédit 1 mois après que votre ami se soit abonné à un abonnement annuel, et 2 mois après qu'il se soit abonné à un abonnement mensuel."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Vous serez ensuite facturé tous les ${ renewCycle } mois à ${ renewAmountStr }. Vous pouvez annuler à tout moment.",
@@ -8143,6 +8152,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Message officiel de ${ BRAND_NAME }"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Ne plus montrer cette offre"
+      ],
+      "Get the deal": [
+        "Profitez de l'offre"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/mois"
+      ],
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "2 TB data storage": [
+        "2 To d'espace de stockage de données"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 Go d'espace de stockage : 40x votre abonnement actuel"
+      ],
+      "3 TB data storage": [
+        "3 To d'espace de stockage de données"
+      ],
+      "500 GB storage": [
+        "500 Go d'espace de stockage"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
+      ],
+      "Access advanced AI models": [
+        "Accès aux modèles d'IA avancés"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Toutes les fonctionnalités premium de Mail, Pass, Drive, VPN et Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloquez les publicités, les traqueurs et les logiciels malveillants"
+      ],
+      "Built-in 2FA authenticator": [
+        "Authentificateur A2F intégré"
+      ],
+      "Connect 10 devices at once": [
+        "Connectez 10 appareils en même temps"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Accès complet à ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Historique complet des discussions avec recherche facile et favoris"
+      ],
+      "Individual accounts for 6 users": [
+        "Comptes individuels pour 6 utilisateurs"
+      ],
+      "Individual accounts for you and a partner": [
+        "Comptes individuels pour vous et un partenaire"
+      ],
+      "Online document editor": [
+        "Éditeur de documents en ligne"
+      ],
+      "Recover previous file versions": [
+        "Récupérez les versions précédentes des fichiers"
+      ],
+      "Stronger protection against cyber threats": [
+        "Une protection renforcée contre les cybermenaces"
+      ],
+      "Unlimited daily chats": [
+        "Chats quotidiens illimités"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Des dossiers, labels et filtres illimités"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre illimité d'alias « hide-my-email »"
+      ],
+      "Use your own email domain": [
+        "Utilisez votre propre domaine de messagerie"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "un papillon"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "pendant 12 mois"
+      ],
+      "SPRING SALE": [
+        "OFFRE DE PRINTEMPS"
       ]
     },
     "Recent documents table header": {

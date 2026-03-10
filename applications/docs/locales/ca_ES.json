@@ -2952,9 +2952,6 @@
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
       ],
-      "Invalid ZIP code": [
-        "Aquest codi postal no és vàlid"
-      ],
       "Item content cannot exceed 40KB": [
         "El contingut de l'element no pot excedir 40 kB."
       ],
@@ -3143,6 +3140,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
       ],
+      "This field is invalid": [
+        "Aquest camp no és vàlid"
+      ],
       "This field is required": [
         "Aquest camp és obligatori."
       ],
@@ -3196,6 +3196,9 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "No s'ha pogut importar aquest fitxer a ${ SHEETS_APP_NAME }. Podeu provar de copiar i enganxar el contingut en un nou ${ SHEETS_APP_NAME }."
+      ],
+      "Wrong billing address": [
+        "L'adreça de facturació és incorrecta"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
@@ -4339,6 +4342,9 @@
       "Converting document...": [
         "S'està convertint el document..."
       ],
+      "Copied to clipboard": [
+        "S'ha copiat al porta-retalls."
+      ],
       "Copy the link to clipboard": [
         "Copia l'enllaç al porta-retalls"
       ],
@@ -5290,6 +5296,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se us cobrarà res si cancel·leu abans del ${ trialEndsOnFormatted }."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Rebreu la recompensa en crèdit un mes després que el vostre amic se subscrigui a un pla anual, i dos mesos després que ho faci a un pla mensual."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment.",
