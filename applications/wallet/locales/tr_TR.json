@@ -2272,6 +2272,9 @@
       "Checkout expired, please try again": [
         "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
       ],
+      "Company name or personal name is required": [
+        "Kuruluş adının veya kişi adının yazılması zorunludur"
+      ],
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
       ],
@@ -2314,11 +2317,11 @@
       "Invalid postal code": [
         "Posta kodu geçersiz"
       ],
+      "Invalid VAT number": [
+        "KDV numarası geçersiz"
+      ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
-      ],
-      "Invalid ZIP code": [
-        "Posta kodu geçersiz"
       ],
       "Not a valid number": [
         "Numara geçerli değil"
@@ -2340,6 +2343,9 @@
       ],
       "Payment process not supported": [
         "Ödeme işlemi desteklenmiyor"
+      ],
+      "Please complete the billing details": [
+        "Lütfen fatura bilgilerini tamamlayın"
       ],
       "Please enter a valid postal code": [
         "Lütfen geçerli bir posta kodu yazın"
@@ -2401,6 +2407,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
       ],
+      "This field is invalid": [
+        "Bu alan geçersiz"
+      ],
       "This field is required": [
         "Bu alanın doldurulması zorunludur"
       ],
@@ -2424,6 +2433,9 @@
       ],
       "Username must end with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile bitmeli"
+      ],
+      "Wrong billing address": [
+        "Fatura adresi yanlış"
       ],
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
@@ -4614,6 +4626,9 @@
       "Got it": [
         "Anladım"
       ],
+      "I'm purchasing as a business": [
+        "Kurumsal olarak satın alıyorum"
+      ],
       "Including ${ rate }% tax": [
         "%${ rate } vergi dahil"
       ],
@@ -4685,9 +4700,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Bu işlem geçerli aboneliğin kapsamını genişletir. Yalnızca yeni eklentiler ve geçerli fatura döneminin kalan süresi için ücret alınır. Aboneliğinizin yenilenme tarihi değişmeyecek."
-      ],
-      "This number will be shown on all future invoices": [
-        "Bu numara, sonraki tüm faturalarda görüntülenecek"
       ],
       "This offer is not available with your current plan.": [
         "Bu teklif, geçerli tarifeniz ile kullanılamıyor."
@@ -4853,6 +4865,9 @@
       "Confirm passphrase or leave empty": [
         "Parola ifadesini onaylayın veya boş bırakın"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Örneğin, "
       ],
@@ -4879,6 +4894,9 @@
       ],
       "Postal code": [
         "Posta kodu"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Arama"
@@ -5576,6 +5594,9 @@
       ],
       "Simplify password management": [
         "Parola yönetimini kolaylaştırın"
+      ],
+      "Spring Sale": [
+        "Bahar indirimi"
       ],
       "Summary": [
         "Özet"
