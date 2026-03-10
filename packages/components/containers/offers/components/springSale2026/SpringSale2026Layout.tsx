@@ -6,11 +6,12 @@ import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { CYCLE } from '@proton/payments/core/constants';
 
 import type { OfferLayoutProps } from '../../interface';
+import OfferDisableButton from '../shared/OfferDisableButton';
 import butterfly from './butterfly.webp';
 
 import './SpringSale2026Layout.scss';
 
-export function SpringSale2026Layout({ offer, currency, onSelectDeal }: OfferLayoutProps) {
+export function SpringSale2026Layout({ offer, currency, onSelectDeal, onCloseModal }: OfferLayoutProps) {
     if (!offer) {
         return null;
     }
@@ -99,8 +100,7 @@ export function SpringSale2026Layout({ offer, currency, onSelectDeal }: OfferLay
                 <span className="springSaleText text-sm">{c('q1campaign: Info')
                     .t`Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.`}</span>
 
-                <Button shape="underline" size="small" className="springSaleText text-sm">{c('q1campaign: Action')
-                    .t`Don't show this offer again`}</Button>
+                <OfferDisableButton offer={offer} onCloseModal={onCloseModal} />
             </div>
         </div>
     );
