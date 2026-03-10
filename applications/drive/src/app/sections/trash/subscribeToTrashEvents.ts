@@ -2,10 +2,9 @@ import { getDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
-import { getNodeEntity, isPhotoNode } from '../../utils/sdk/getNodeEntity';
+import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { trashLogDebug } from './trashLogger';
 import { useTrashStore } from './useTrash.store';
-import { useTrashPhotosStore } from './useTrashPhotos.store';
 
 const getNode = async (uid: string) => {
     const drive = getDrive();
@@ -23,30 +22,26 @@ export const subscribeToTrashEvents = () => {
     void eventManager.subscribeSdkEventsMyUpdates('trashFiles');
     void eventManager.subscribePhotosEventsMyUpdates('trashPhotos');
     const unsubscribeFromEvents = eventManager.subscribe(BusDriverEventName.ALL, async (event) => {
-        const trashPhotoStore = useTrashPhotosStore.getState();
-        const trashFilesStore = useTrashStore.getState();
+        const store = useTrashStore.getState();
         trashLogDebug('trash event', { event });
         switch (event.type) {
             case BusDriverEventName.RESTORED_NODES:
-                const uids = event.items.map((t) => t.uid);
-                trashPhotoStore.removeNodes(uids);
-                trashFilesStore.removeNodes(uids);
+                for (const item of event.items) {
+                    store.removeItem(item.uid);
+                }
                 break;
             case BusDriverEventName.TRASHED_NODES:
                 for (const uid of event.uids) {
                     const node = await getNode(uid);
                     if (node) {
-                        if (isPhotoNode(node)) {
-                            trashPhotoStore.addNode(node);
-                        } else {
-                            trashFilesStore.addNode(node);
-                        }
+                        store.setItem(node);
                     }
                 }
                 break;
             case BusDriverEventName.DELETED_NODES:
-                trashPhotoStore.removeNodes(event.uids);
-                trashFilesStore.removeNodes(event.uids);
+                for (const uid of event.uids) {
+                    store.removeItem(uid);
+                }
                 break;
         }
     });

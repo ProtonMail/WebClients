@@ -1,13 +1,14 @@
 import { act, renderHook } from '@testing-library/react';
 
-import { type NodeEntity, useDrive } from '@proton/drive/index';
+import { type NodeEntity, getDrive, getDriveForPhotos } from '@proton/drive/index';
 import { getNodeEntityFromMaybeNode } from '@proton/drive/modules/upload/utils/getNodeEntityFromMaybeNode';
 
 import { useTrashStore } from './useTrash.store';
 import { useTrashNodes } from './useTrashNodes';
 
 jest.mock('@proton/drive/index', () => ({
-    useDrive: jest.fn(),
+    getDrive: jest.fn(),
+    getDriveForPhotos: jest.fn(),
 }));
 
 jest.mock('../../utils/errorHandling/handleSdkError');
@@ -22,7 +23,8 @@ jest.mock('./useTrash.store', () => {
     return { useTrashStore: hook };
 });
 
-const mockUseDrive = jest.mocked(useDrive);
+const mockGetDrive = jest.mocked(getDrive);
+const mockGetDriveForPhotos = jest.mocked(getDriveForPhotos);
 const mockGetNodeEntityFromMaybeNode = jest.mocked(getNodeEntityFromMaybeNode);
 const mockUseTrashStore = useTrashStore as jest.MockedFunction<typeof useTrashStore> & { getState: jest.Mock };
 
@@ -40,23 +42,26 @@ const createAsyncIterable = <T>(items: T[]) =>
     })();
 
 describe('useTrashNodes', () => {
-    const setNodes = jest.fn();
+    const setItem = jest.fn();
     const setLoading = jest.fn();
     const iterateTrashedNodes = jest.fn();
+    const iterateTrashedPhotoNodes = jest.fn();
     const handleError = jest.fn();
 
     beforeEach(() => {
         jest.clearAllMocks();
 
         mockUseTrashStore.mockImplementation((selector: (state: any) => any) =>
-            selector({ setNodes, trashNodes: {}, isLoading: false })
+            selector({ setItem, items: new Map(), isLoading: false })
         );
-        mockUseTrashStore.getState.mockReturnValue({ setLoading, isLoading: false, setNodes });
+        mockUseTrashStore.getState.mockReturnValue({ setLoading, isLoading: false, setItem });
 
-        mockUseDrive.mockReturnValue({
-            drive: {
-                iterateTrashedNodes,
-            },
+        mockGetDrive.mockReturnValue({
+            iterateTrashedNodes,
+        } as any);
+
+        mockGetDriveForPhotos.mockReturnValue({
+            iterateTrashedNodes: iterateTrashedPhotoNodes,
         } as any);
 
         mockGetNodeEntityFromMaybeNode.mockImplementation((trashNode: any) => ({
@@ -65,41 +70,55 @@ describe('useTrashNodes', () => {
         }));
     });
 
-    it('loads trashed drive nodes and updates the store', async () => {
-        iterateTrashedNodes.mockReturnValue(
-            createAsyncIterable([
-                { node: createNode('drive-1', 'Drive 1') },
-                { node: createNode('drive-2', 'Drive 2') },
-            ])
-        );
+    describe('loadTrashNodes', () => {
+        it('loads trashed drive nodes and updates the store', async () => {
+            iterateTrashedNodes.mockReturnValue(
+                createAsyncIterable([
+                    { node: createNode('drive-1', 'Drive 1') },
+                    { node: createNode('drive-2', 'Drive 2') },
+                ])
+            );
 
-        const { result } = renderHook(() => useTrashNodes());
-        const abortController = new AbortController();
+            const { result } = renderHook(() => useTrashNodes());
+            const abortController = new AbortController();
 
-        await act(async () => {
-            await result.current.loadTrashNodes(abortController.signal);
+            await act(async () => {
+                await result.current.loadTrashNodes(abortController.signal);
+            });
+
+            expect(iterateTrashedNodes).toHaveBeenCalledWith(abortController.signal);
+            expect(setLoading).toHaveBeenNthCalledWith(1, 'drive', true);
+            expect(setLoading).toHaveBeenLastCalledWith('drive', false);
+            expect(setItem).toHaveBeenCalledTimes(2);
+            expect(setItem).toHaveBeenCalledWith({ uid: 'drive-1', name: 'Drive 1' });
+            expect(setItem).toHaveBeenCalledWith({ uid: 'drive-2', name: 'Drive 2' });
+            expect(handleError).not.toHaveBeenCalled();
         });
-
-        expect(iterateTrashedNodes).toHaveBeenCalledWith(abortController.signal);
-        expect(setLoading).toHaveBeenNthCalledWith(1, true);
-        expect(setLoading).toHaveBeenLastCalledWith(false);
-        expect(setNodes).toHaveBeenCalledTimes(2);
-        expect(setNodes).toHaveBeenCalledWith({ 'drive-1': { uid: 'drive-1', name: 'Drive 1' } });
-        expect(setNodes).toHaveBeenCalledWith({ 'drive-2': { uid: 'drive-2', name: 'Drive 2' } });
-        expect(handleError).not.toHaveBeenCalled();
     });
 
-    it('skips loading when trash nodes are already being loaded', async () => {
-        mockUseTrashStore.getState.mockReturnValue({ setLoading, isLoading: true, setNodes });
+    describe('loadTrashPhotoNodes', () => {
+        it('loads trashed photo nodes and updates the store', async () => {
+            iterateTrashedPhotoNodes.mockReturnValue(
+                createAsyncIterable([
+                    { node: createNode('photo-1', 'Photo 1') },
+                    { node: createNode('photo-2', 'Photo 2') },
+                ])
+            );
 
-        const { result } = renderHook(() => useTrashNodes());
+            const { result } = renderHook(() => useTrashNodes());
+            const abortController = new AbortController();
 
-        await act(async () => {
-            await result.current.loadTrashNodes(new AbortController().signal);
+            await act(async () => {
+                await result.current.loadTrashPhotoNodes(abortController.signal);
+            });
+
+            expect(iterateTrashedPhotoNodes).toHaveBeenCalledWith(abortController.signal);
+            expect(setLoading).toHaveBeenNthCalledWith(1, 'photos', true);
+            expect(setLoading).toHaveBeenLastCalledWith('photos', false);
+            expect(setItem).toHaveBeenCalledTimes(2);
+            expect(setItem).toHaveBeenCalledWith({ uid: 'photo-1', name: 'Photo 1' });
+            expect(setItem).toHaveBeenCalledWith({ uid: 'photo-2', name: 'Photo 2' });
+            expect(handleError).not.toHaveBeenCalled();
         });
-
-        expect(iterateTrashedNodes).not.toHaveBeenCalled();
-        expect(setLoading).not.toHaveBeenCalled();
-        expect(setNodes).not.toHaveBeenCalled();
     });
 });

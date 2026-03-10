@@ -7,7 +7,6 @@ import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useTrashStore } from './useTrash.store';
 import { useTrashActions } from './useTrashActions';
 import { useTrashNotifications } from './useTrashNotifications';
-import { useTrashPhotosStore } from './useTrashPhotos.store';
 
 jest.mock('@proton/drive/index', () => ({
     ...jest.requireActual('@proton/drive/index'),
@@ -22,12 +21,6 @@ jest.mock('./useTrash.store', () => {
     return { useTrashStore: hook };
 });
 
-jest.mock('./useTrashPhotos.store', () => {
-    const hook = jest.fn() as jest.Mock & { getState: jest.Mock };
-    hook.getState = jest.fn();
-    return { useTrashPhotosStore: hook };
-});
-
 jest.mock('./useTrashNotifications', () => ({
     useTrashNotifications: jest.fn(),
 }));
@@ -37,42 +30,51 @@ jest.mock('@proton/drive/internal/BusDriver', () => ({
     getBusDriver: jest.fn(),
 }));
 
+jest.mock('../../modals/DetailsModal', () => ({
+    useDetailsModal: () => ({ detailsModal: null, showDetailsModal: jest.fn() }),
+}));
+
+jest.mock('../../components/modals/FilesDetailsModal', () => ({
+    useFilesDetailsModal: () => [null, jest.fn()],
+}));
+
+jest.mock('../../modals/preview', () => ({
+    useDrivePreviewModal: () => ({ previewModal: null, showPreviewModal: jest.fn() }),
+}));
+
 const mockUseDrive = jest.mocked(useDrive);
 const mockUseTrashStore = useTrashStore as jest.MockedFunction<typeof useTrashStore> & { getState: jest.Mock };
-const mockUseTrashPhotosStore = useTrashPhotosStore as jest.MockedFunction<typeof useTrashPhotosStore> & {
-    getState: jest.Mock;
-};
 const mockUseTrashNotifications = jest.mocked(useTrashNotifications);
 const mockGetActionEventManager = jest.mocked(getBusDriver);
 
 describe('useTrashActions', () => {
-    describe('emptyTrash', () => {
+    describe('handleEmptyTrash', () => {
         const emptyTrashDrive = jest.fn();
         const emptyTrashPhotos = jest.fn();
         const handleError = jest.mocked(handleSdkError);
         const createEmptyTrashNotificationSuccess = jest.fn();
         const emit = jest.fn();
 
-        const driveTrashNodes = {
-            'drive-1': { uid: 'drive-1', name: 'File 1', type: NodeType.File },
-            'drive-2': { uid: 'drive-2', name: 'Folder 1', type: NodeType.Folder },
-        };
+        const allTrashNodes = new Map([
+            ['drive-1', { uid: 'drive-1', name: 'File 1', type: NodeType.File }],
+            ['drive-2', { uid: 'drive-2', name: 'Folder 1', type: NodeType.Folder }],
+            ['photo-1', { uid: 'photo-1', name: 'Photo 1', type: NodeType.Photo }],
+            ['photo-2', { uid: 'photo-2', name: 'Photo 2', type: NodeType.Photo }],
+        ]);
 
-        const photoTrashNodes = {
-            'photo-1': { uid: 'photo-1', name: 'Photo 1', type: NodeType.Photo },
-            'photo-2': { uid: 'photo-2', name: 'Photo 2', type: NodeType.Photo },
-        };
+        // Capture the callback passed to createEmptyTrashConfirmModal so we can invoke it
+        let capturedOnSubmit: (() => Promise<unknown>) | undefined;
+        const createEmptyTrashConfirmModal = jest.fn((onSubmit: () => Promise<unknown>) => {
+            capturedOnSubmit = onSubmit;
+        });
 
         beforeEach(() => {
             jest.clearAllMocks();
+            capturedOnSubmit = undefined;
 
-            mockUseTrashStore.mockImplementation((selector: (state: any) => any) =>
-                selector({ trashNodes: driveTrashNodes })
-            );
-
-            mockUseTrashPhotosStore.mockImplementation((selector: (state: any) => any) =>
-                selector({ trashNodes: photoTrashNodes })
-            );
+            mockUseTrashStore.getState.mockReturnValue({
+                items: allTrashNodes,
+            });
 
             mockUseDrive.mockReturnValue({
                 drive: {
@@ -87,6 +89,7 @@ describe('useTrashActions', () => {
 
             mockUseTrashNotifications.mockReturnValue({
                 createEmptyTrashNotificationSuccess,
+                createEmptyTrashConfirmModal,
             } as any);
 
             mockGetActionEventManager.mockReturnValue({
@@ -100,8 +103,15 @@ describe('useTrashActions', () => {
 
             const { result } = renderHook(() => useTrashActions());
 
+            act(() => {
+                result.current.handleEmptyTrash();
+            });
+
+            expect(createEmptyTrashConfirmModal).toHaveBeenCalledTimes(1);
+
+            // Simulate user confirming the modal
             await act(async () => {
-                await result.current.emptyTrash();
+                await capturedOnSubmit?.();
             });
 
             expect(emptyTrashDrive).toHaveBeenCalledTimes(1);
@@ -121,8 +131,13 @@ describe('useTrashActions', () => {
 
             const { result } = renderHook(() => useTrashActions());
 
+            act(() => {
+                result.current.handleEmptyTrash();
+            });
+
+            // Simulate user confirming the modal
             await act(async () => {
-                await result.current.emptyTrash();
+                await capturedOnSubmit?.();
             });
 
             expect(handleError).toHaveBeenCalledWith(error, {
