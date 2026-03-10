@@ -1406,8 +1406,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } dorește să partajeze un articol cu un grup pe care îl administrați."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } dorește să partajeze un articol cu grupul ${ invitedGroup.Name }."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } dorește să partajeze un articol cu grupul ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } dorește să vă partajeze un articol."
@@ -1461,10 +1461,10 @@
         "${ row.breachCount } divulgări detectate",
         "${ row.breachCount } de divulgări detectate"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } membru)",
-        "(${ membersCount } membri)",
-        "(${ membersCount } de membri)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } membru)",
+        "(${ memberCount } membri)",
+        "(${ memberCount } de membri)"
       ],
       "(Empty)": [
         "(Gol)"
@@ -1851,8 +1851,8 @@
       "Invite successfully resent": [
         "Invitația a fost retrimisă."
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "invită grupul ${ invitedGroup.Name } să acceseze articolele din"
+      "invites the group ${ name } to access items in": [
+        "invită grupul ${ name } să acceseze articolele din"
       ],
       "invites you to access items in": [
         "vă invită să accesați articolele din"
@@ -1950,11 +1950,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."

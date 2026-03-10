@@ -1091,6 +1091,12 @@
         "${ count }-krat",
         "${ count }-krat"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail } želi deliti element s skupino, ki ji administrirate."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } želi deliti predmet s skupino ${ name }."
+      ],
       "${ memberCount } member": [
         "${ memberCount } član",
         "${ memberCount } člana",
@@ -1118,11 +1124,20 @@
         "${ row.breachCount } zaznane kršitve",
         "${ row.breachCount } zaznanih kršitev"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } član)",
+        "(${ memberCount } člana)",
+        "(${ memberCount } člani)",
+        "(${ memberCount } članov)"
+      ],
       "(Empty)": [
         "(Prazno)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Sedem dni, da brezplačno preizkusite premijske funkcije. Samo v prvem tednu ${ BRAND_NAME }."
+      ],
+      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
+        "Nova različica se prenaša. Ko bo prenos dokončan, bo na voljo ob naslednjem ponovnem zagonu."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Na voljo je nova različica aplikacije ${ PASS_APP_NAME }. Posodobite ga, če želite uživati v najnovejših funkcijah in popravkih napak."
@@ -1160,6 +1175,9 @@
       "All trashed items successfully restored": [
         "Vsi predmeti v smetnjaku so bili obnovljeni."
       ],
+      "An item previously shared with you was removed.": [
+        "Predmet, ki je bil prej v skupni rabi z vami, je bil odstranjen."
+      ],
       "Auto-lock successfully disabled.": [
         "Samodejno zaklepanje je onemogočeno."
       ],
@@ -1171,6 +1189,9 @@
       ],
       "Breaches detected": [
         "Zaznane kršitve"
+      ],
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "Prenesite svoja obstoječa gesla v ${ PASS_APP_NAME }."
       ],
       "Built in 2FA authenticator": [
         "Vgrajen overitelj 2FA"
@@ -1283,6 +1304,9 @@
         "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne.",
         "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tednov."
       ],
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "Najbolje izkoristite ${ PASS_APP_NAME } tako, da ustvarite trezor za vsako ekipo ali projekt."
+      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Pridobite neomejeno število vzdevkov, uživajte v ekskluzivnih funkcijah in nas podprite tako, da se naročite na Pass Plus."
       ],
@@ -1318,6 +1342,9 @@
       ],
       "Invite successfully resent": [
         "Povabilo ponovno poslano"
+      ],
+      "invites the group ${ name } to access items in": [
+        "povabi skupino ${ name } k dostopu do predmetov v"
       ],
       "invites you to access items in": [
         "vas vabi k dostopu do predmetov v"
@@ -1417,6 +1444,9 @@
       ],
       "No network connection": [
         "Ni omrežne povezave"
+      ],
+      "No new versions are available at the moment.": [
+        "Trenutno ni na voljo novih različic."
       ],
       "None": [
         "Brez"
@@ -1598,6 +1628,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Za uporabo ${ PASS_APP_NAME } bo potrebno dodatno geslo. Deluje kot dodatno geslo poleg vašega gesla ${ BRAND_NAME }."
       ],
+      "The group is invited to a vault.": [
+        "Skupina je povabljena v trezor."
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Besedilo, ki ga poskušate prilepiti, presega največjo dovoljeno dolžino ${ maxLength } znakov."
       ],
@@ -1616,8 +1649,17 @@
       "This version will be added to the history as the newest version.": [
         "Ta različica bo dodana v zgodovino kot najnovejša različica."
       ],
+      "This will reload the application.": [
+        "S tem se bo aplikacija ponovno naložila."
+      ],
+      "This will trigger a check for new beta releases.": [
+        "To bo sprožilo preverjanje novih beta različic."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Če želite preseliti podatke iz drugega upravitelja gesel, pojdite v upravitelja gesel, izvozite svoje podatke in jih nato naložite v ${ PASS_APP_NAME }. Ko so vaši podatki uvoženi, izbrišite izvoženo datoteko."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
+        "Preizkusite nove funkcije, posodobitve in izdelke ${ BRAND_NAME }, preden bodo dostopni širši javnosti."
       ],
       "Unable to copy to clipboard": [
         "Kopiranje v odložišče ni mogoče"
@@ -1654,6 +1696,9 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Trezor \"${ payload.share.content.name }\" je bil posodobljen"
+      ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "Trezor \"${ share.content.name }\" je bil odstranjen."
       ],
       "Verification code sent.": [
         "Koda za preverjanje je poslana."
@@ -1702,6 +1747,18 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Dosegli ste največjo dovoljeno dolžino ${ maxLength } znakov."
+      ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "Morda boste morali odobriti dovoljenje za dostopnost za ${ PASS_APP_NAME }."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "Nimate več dostopa do nekaterih trezorjev ali predmetov, ker je bil dostop vaši skupini ${ groupName } odstranjen."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "Zdaj imate dostop do \"Predmeta ${ itemName }\", ker je vaši skupini ${ groupName } dodeljen dostop."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "Zdaj imate dostop do \"Trezorja ${ vaultName }\", ker je vaši skupini ${ groupName } dodeljen dostop."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Odjavljeni boste in se boste morali znova prijaviti na vseh svojih drugih napravah."
@@ -3242,6 +3299,9 @@
       ],
       "Vault": [
         "Trezor"
+      ],
+      "Vault shared with a group you administer": [
+        "želi deliti element s skupino, ki ji administrirate"
       ],
       "Vault shared with you": [
         "Trezor v skupni rabi z vami"
