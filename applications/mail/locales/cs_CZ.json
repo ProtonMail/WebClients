@@ -1750,7 +1750,7 @@
         "${ LUMO_APP_NAME } AI licence"
       ],
       "${ LUMO_APP_NAME } seats": [
-        "${ LUMO_APP_NAME } licencí"
+        "Licencí ${ LUMO_APP_NAME }"
       ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
@@ -2113,7 +2113,7 @@
         "Připojte až 10 zařízení současně"
       ],
       "Full chat history with easy search and favorites": [
-        "Celá historie konverzací s snadným vyhledáváním a oblíbenými položkami"
+        "Celá historie konverzací se snadným vyhledáváním a oblíbenými položkami"
       ],
       "Individual accounts for 6 users": [
         "Individuální účty pro 6 uživatelů"
@@ -4763,11 +4763,11 @@
       "Invalid public key file": [
         "Neplatný soubor veřejného klíče"
       ],
+      "Invalid VAT number": [
+        "Neplatné DIČ"
+      ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
-      ],
-      "Invalid ZIP code": [
-        "Neplatné PSČ"
       ],
       "Item content cannot exceed 40KB": [
         "Obsah položky nemůže přesáhnout 40KB"
@@ -5089,6 +5089,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole přesahuje maximální délku ${ maximumLength } znaků."
+      ],
+      "This field is invalid": [
+        "Toto pole je neplatné"
       ],
       "This field is required": [
         "Toto pole je povinné"
@@ -12633,6 +12636,9 @@
       "Got it": [
         "Rozumím"
       ],
+      "I'm purchasing as a business": [
+        "Kupuji jako firma"
+      ],
       "Including ${ rate }% tax": [
         "Včetně ${ rate }% daně"
       ],
@@ -12716,9 +12722,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Tato akce rozšiřuje stávající předplatné. Budou vám účtovány pouze nové doplňky a zbývající čas aktuálního fakturačního cyklu. Datum obnovení vašeho předplatného se nezmění."
-      ],
-      "This number will be shown on all future invoices": [
-        "Toto číslo bude uvedeno na všech budoucích fakturách"
       ],
       "This offer is not available with your current plan.": [
         "Tato nabídka není s vaším aktuálním tarifem k dispozici."
@@ -12811,10 +12814,10 @@
     },
     "Payments.Renewal price dependent on VAT number": {
       "Renewal price is dependent on the billing region and ABN.": [
-        "Cena obnovení závisí na fakturační oblasti a IČ DPH."
+        "Cena za obnovení závisí na fakturační oblasti a DIČ."
       ],
       "Renewal price is dependent on the billing region and Business Number.": [
-        "Cena obnovení závisí na zemi platby a DIČ."
+        "Cena obnovení závisí na fakturační oblasti a DIČ."
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Cena za obnovení závisí na fakturační oblasti a DIČ."
@@ -12994,6 +12997,9 @@
       ],
       "Postal code": [
         "Poštovní směrovací číslo"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search date, name, email address, or subject line": [
         "Vyhledávání podle data, jména, e-mailové adresy nebo předmětu zprávy"
@@ -13181,6 +13187,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Oficiální e-mail od ${ BRAND_NAME }"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Tuto nabídku již nezobrazovat"
+      ],
+      "Get the deal": [
+        "Využít nabídku"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/měsíčně"
+      ],
+      "15 GB storage": [
+        "15GB úložiště"
+      ],
+      "2 TB data storage": [
+        "2TB datové úložiště"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200GB úložiště: 40× váš současný plán"
+      ],
+      "3 TB data storage": [
+        "3TB datové úložiště"
+      ],
+      "500 GB storage": [
+        "500GB úložiště"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Přístup k 15 000+ serverům ve 120+ zemích"
+      ],
+      "Access advanced AI models": [
+        "Přístup k pokročilým modelům AI"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Všechny prémiové funkce služeb Mail, Pass, Drive, VPN a Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokování reklam, sledovacích prvků a malwaru"
+      ],
+      "Built-in 2FA authenticator": [
+        "Vestavěné 2FA ověřování"
+      ],
+      "Connect 10 devices at once": [
+        "Připojte 10 zařízení najednou"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Slevy vycházejí ze standardních měsíčních cen. Vaše předplatné se na konci fakturačního cyklu obnoví za standardní roční sazbu."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Plný přístup k ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Úplná historie konverzací se snadným vyhledáváním a oblíbenými položkami"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuální účty pro 6 uživatelů"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuální účty pro vás a partnera"
+      ],
+      "Online document editor": [
+        "Online editor dokumentů"
+      ],
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnější ochrana proti kybernetickým hrozbám"
+      ],
+      "Unlimited daily chats": [
+        "Neomezený denní limit konverzací"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Neomezený počet aliasů hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Používejte svou vlastní e-mailovou doménu"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "motýl"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "na 12 měsíců"
+      ],
+      "SPRING SALE": [
+        "JARNÍ VÝPRODEJ"
       ]
     },
     "Received email icon": {

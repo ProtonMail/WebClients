@@ -4578,6 +4578,9 @@
         "Alegeți o dată în următoarele ${ n } zile.",
         "Alegeți o dată în următoarele ${ n } de zile."
       ],
+      "Company name or personal name is required": [
+        "Numele companiei sau numele personal este necesar."
+      ],
       "Condition incomplete": [
         "Condiție incompletă"
       ],
@@ -4732,11 +4735,11 @@
       "Invalid public key file": [
         "Cheie publică nevalidă."
       ],
+      "Invalid VAT number": [
+        "Cont TVA nevalid"
+      ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
-      ],
-      "Invalid ZIP code": [
-        "Cod poștal nevalid"
       ],
       "Item content cannot exceed 40KB": [
         "Conținutul articolului nu poate depăși 40 KiB."
@@ -4842,6 +4845,9 @@
       ],
       "Please activate your search again": [
         "Reactivați căutarea."
+      ],
+      "Please complete the billing details": [
+        "Completați detaliile de facturare."
       ],
       "Please enter a valid postal code": [
         "Introduceți un cod poștal valid."
@@ -5053,6 +5059,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Acest câmp depășește maximul de ${ maximumLength } de caractere."
       ],
+      "This field is invalid": [
+        "Acest câmp nu este valid."
+      ],
       "This field is required": [
         "Acest câmp este obligatoriu"
       ],
@@ -5103,6 +5112,9 @@
       ],
       "Username must end with a letter or digit": [
         "Numele de utilizator trebuie să se termine cu o literă sau cifră."
+      ],
+      "Wrong billing address": [
+        "Adresă de facturare incorectă."
       ],
       "Wrong password": [
         "Parolă greșită"
@@ -8922,6 +8934,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Ați scris „${ attachmentsFoundKeyword }”, dar nu a fost adăugat niciun atașament. Doriți să trimiteți totuși mesajul?"
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Vei primi recompensa în credite la o lună după ce persoana se abonează la un plan anual și la două luni după ce se abonează la un plan lunar."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Se va factura apoi la fiecare ${ renewCycle } lună cu ${ renewAmountStr }. Puteți anula oricând.",
         "Se va factura apoi la fiecare ${ renewCycle } luni cu ${ renewAmountStr }. Puteți anula oricând.",
@@ -12451,6 +12466,9 @@
       "Got it": [
         "Am înțeles"
       ],
+      "I'm purchasing as a business": [
+        "Achiziționez în calitate de companie"
+      ],
       "Including ${ rate }% tax": [
         "Inclusiv ${ rate }% TVA"
       ],
@@ -12528,9 +12546,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Această acțiune extinde abonamentul existent. Taxa se va aplica doar pentru noile module și pentru timpul rămas din ciclul de facturare actual. Data reînnoirii abonamentului actual nu va fi modificată."
-      ],
-      "This number will be shown on all future invoices": [
-        "Acest număr va fi afișat pe toate facturile viitoare."
       ],
       "This offer is not available with your current plan.": [
         "Această ofertă nu este disponibilă cu planul actual."
@@ -12723,6 +12738,9 @@
       "Company name": [
         "Nume companie"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "Describe what to change": [
         "Descrieți ce să se schimbe"
       ],
@@ -12806,6 +12824,9 @@
       ],
       "Postal code": [
         "Cod poştal"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search date, name, email address, or subject line": [
         "Căutare dată, nume, adresă de e-mail sau subiect"
@@ -12989,6 +13010,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Mesaj oficial de la ${ BRAND_NAME }"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Nu mai afișați această ofertă"
+      ],
+      "Get the deal": [
+        "Valorificați oferta"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/lună"
+      ],
+      "15 GB storage": [
+        "15 GB de spațiu de stocare"
+      ],
+      "2 TB data storage": [
+        "2 TB de spațiu de stocare pentru date"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de spațiu de stocare: de 40 de ori planul actual"
+      ],
+      "3 TB data storage": [
+        "3 TB de spațiu de stocare pentru date"
+      ],
+      "500 GB storage": [
+        "500 GB de spațiu de stocare"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accesați peste 15.000 de servere din peste 120 de țări"
+      ],
+      "Access advanced AI models": [
+        "Acces la modele AI avansate"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Toate caracteristicile premium ale Mail, Pass, Drive, VPN și Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blocați reclamele, urmăritorii și malware-ul"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autentificator A2F încorporat"
+      ],
+      "Connect 10 devices at once": [
+        "Conectați 10 dispozitive simultan"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul dvs. se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Acces complet la ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Istoric complet al conversațiilor cu căutare ușoară și favorite"
+      ],
+      "Individual accounts for 6 users": [
+        "Conturi individuale pentru 6 utilizatori"
+      ],
+      "Individual accounts for you and a partner": [
+        "Conturi individuale pentru dvs. și un partener"
+      ],
+      "Online document editor": [
+        "Editor de documente online"
+      ],
+      "Recover previous file versions": [
+        "Recuperați versiunile anterioare ale fișierelor"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protecție mai puternică împotriva amenințărilor cibernetice"
+      ],
+      "Unlimited daily chats": [
+        "Conversații zilnice nelimitate"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Număr nelimitat de foldere, etichete și filtre"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Număr nelimitat de aliasuri hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Utilizați propriul domeniu de e-mail"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "un fluture"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "pentru 12 luni"
+      ],
+      "SPRING SALE": [
+        "REDUCERI DE PRIMĂVARĂ"
       ]
     },
     "Received email icon": {
@@ -15880,6 +15996,9 @@
       ],
       "Sort messages": [
         "Sortare mesaje"
+      ],
+      "Spring Sale": [
+        "Reducere de primăvară"
       ],
       "Start a new import": [
         "Începere importare nouă"

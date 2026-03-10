@@ -657,6 +657,9 @@
       "Help and resources": [
         "지원 및 도움말"
       ],
+      "Hide": [
+        "숨기기"
+      ],
       "Hide ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미 가리기"
       ],
@@ -4514,6 +4517,9 @@
       "Choose a date within the next ${ n } day.": [
         "${ n }일 이내의 날짜를 선택하세요."
       ],
+      "Company name or personal name is required": [
+        "법인명 또는 개인 성명을 입력해야 합니다."
+      ],
       "Condition incomplete": [
         "조건 미완료"
       ],
@@ -4664,11 +4670,11 @@
       "Invalid public key file": [
         "공개 키 파일이 유효하지 않습니다"
       ],
+      "Invalid VAT number": [
+        "유효하지 않은 VAT 넘버"
+      ],
       "Invalid verification code": [
         "잘못된 검증 코드"
-      ],
-      "Invalid ZIP code": [
-        "유효하지 않은 우편 번호"
       ],
       "Item content cannot exceed 40KB": [
         "항목 콘텐츠가 40KB를 초과할 수 없습니다."
@@ -4768,6 +4774,9 @@
       ],
       "Please activate your search again": [
         "다시 검색을 활성화 해주세요"
+      ],
+      "Please complete the billing details": [
+        "청구 상세 정보를 입력해 주세요."
       ],
       "Please enter a valid postal code": [
         "유효한 우편 번호를 입력해 주세요"
@@ -4973,6 +4982,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "이 필드가 최대 ${ maximumLength } 글자를 초과합니다."
       ],
+      "This field is invalid": [
+        "이 필드는 유효하지 않습니다"
+      ],
       "This field is required": [
         "필수 기재 항목입니다"
       ],
@@ -5023,6 +5035,9 @@
       ],
       "Username must end with a letter or digit": [
         "사용자 이름은 문자로 시작하여야 합니다."
+      ],
+      "Wrong billing address": [
+        "청구 주소가 잘못되었습니다"
       ],
       "Wrong password": [
         "잘못된 비밀번호입니다"
@@ -5499,7 +5514,15 @@
         "초고속 속도"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입해 주세요."
+      ],
       "Security key": [
         "보안 키"
       ]
@@ -7032,6 +7055,9 @@
       "Duplicate key updated": [
         "중복 키 업데이트됨"
       ],
+      "Each code can only be used once": [
+        "각 코드는 한 번씩만 유효합니다."
+      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "간편하게 뉴스레터 및 메일링 리스트를 관리 및 구독 취소할 수 있어요."
       ],
@@ -8451,6 +8477,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName }에 인증 키를 활성화하면, 공개 키가 연락처 상세 정보에 생성됩니다."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2단계 인증을 설정하면, 인증 앱에 접근할 수 없을때 로그인시 사용할 수 있는 복구 코드를 제공해 드립니다."
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "뉴스래터를 신청할 때, 내 실제 이메일 주소 대신 별칭을 사용해 보세요. 별칭을 언제든 비활성화하고 신원은 비공개로 유지할 수 있답니다."
       ],
@@ -8612,6 +8641,9 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "\"${ attachmentsFoundKeyword }\" 으로 작성하였지만, 추가된 첨부 파일이 없습니다. 이 메시지를 그대로 전송하시겠습니까?"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "친구가 연간 플랜을 구독하고 1개월 후, 월간 요금제에 구독하고 2개월 후에 크레딧 보상을 받게 됩니다."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "매 ${ renewCycle }개월마다 ${ renewAmountStr }(으)로 청구됩니다. 언제든지 취소할 수 있습니다."
@@ -9277,6 +9309,9 @@
       "Emails (last 3 months)": [
         "이메일 (지난 3개월)"
       ],
+      "Emails (last 6 months)": [
+        "이메일 (지난 6개월)"
+      ],
       "Emails (last month)": [
         "이마일 (지난 달)"
       ],
@@ -9417,6 +9452,9 @@
       ],
       "Last 3 months only": [
         "지난 3개월"
+      ],
+      "Last 6 months only": [
+        "지난 6개월"
       ],
       "Last month only": [
         "지난 달"
@@ -10604,6 +10642,9 @@
       ],
       "${ n } VPN connection": [
         "${ n } 개 VPN 연결"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-일 파일 버전 기록"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin 평생 이용권"
@@ -11858,6 +11899,12 @@
       ],
       "No parent folder": [
         "상위 폴더 없음"
+      ],
+      "Remind me later": [
+        "나중에 다시 알림"
+      ],
+      "Yes, don't show again": [
+        "네, 다시 보지 않을게요"
       ]
     },
     "Option group": {
@@ -12025,6 +12072,9 @@
       "Got it": [
         "확인했습니다"
       ],
+      "I'm purchasing as a business": [
+        "사업체 용도로 구매합니다"
+      ],
       "Including ${ rate }% tax": [
         "세금 ${ rate }% 포함"
       ],
@@ -12090,9 +12140,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "이 작업은 기존 구독을 확장합니다. 새로운 추가 기능과 현재 결제일의 남은 기간에 대해서만 청구됩니다. 회워님의 구독 비용 연장 날짜는 변경되지 않습니다."
-      ],
-      "This number will be shown on all future invoices": [
-        "이 번호는 향후 모든 송장에 표시됩니다."
       ],
       "This offer is not available with your current plan.": [
         "현재 플랜에서 이 제안이 제공되지 않습니다."
@@ -12285,6 +12332,9 @@
       "Company name": [
         "법인 이름"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "Describe what to change": [
         "변경되고자 할 사항을 설명해 주세요"
       ],
@@ -12368,6 +12418,9 @@
       ],
       "Postal code": [
         "우편번호"
+      ],
+      "San Francisco": [
+        "샌프란시스코"
       ],
       "Search date, name, email address, or subject line": [
         "날짜, 이름, 이메일 주소 및 제목을 입력하세요"
@@ -12543,6 +12596,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "${ BRAND_NAME } 의 공식 이메일"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "이 제안을 다시 보지 않기"
+      ],
+      "Get the deal": [
+        "할인 받기"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/월"
+      ],
+      "15 GB storage": [
+        "15 GB 저장공간"
+      ],
+      "2 TB data storage": [
+        "2 TB 데이터 저장공간"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 저장공간: 현재 요금제의 40배"
+      ],
+      "3 TB data storage": [
+        "3 TB 데이터 저장공간"
+      ],
+      "500 GB storage": [
+        "500 GB 저장공간"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "120개국 이상에서 15,000개 이상의 서버에 접근"
+      ],
+      "Access advanced AI models": [
+        "고급 AI 모델 이용"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Mail, Pass, 드라이브, VPN 및 캘린더의 모든 premium 기능"
+      ],
+      "Block ads, trackers, and malware": [
+        "광고, 트래커 및 멀웨어 차단"
+      ],
+      "Built-in 2FA authenticator": [
+        "내장형 2단계 인증기"
+      ],
+      "Connect 10 devices at once": [
+        "한 번에 기기 10대 연결"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }에 대한 완전한 접근"
+      ],
+      "Full chat history with easy search and favorites": [
+        "간편한 검색 및 즐겨찾기 기능이 포함된 전체 채팅 기록"
+      ],
+      "Individual accounts for 6 users": [
+        "6인용 개별 계정"
+      ],
+      "Individual accounts for you and a partner": [
+        "귀하와 파트너를 위한 개별 계정"
+      ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
+      "Recover previous file versions": [
+        "이전 파일 버전 복구"
+      ],
+      "Stronger protection against cyber threats": [
+        "사이버 위협에 대한 더욱 강력한 보호"
+      ],
+      "Unlimited daily chats": [
+        "무제한 일일 채팅"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "무제한 폴더, 라벨 및 필터"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "무제한 hide-my-email 별칭"
+      ],
+      "Use your own email domain": [
+        "나만의 이메일 도메인 사용"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "나비"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "12개월 동안"
+      ],
+      "SPRING SALE": [
+        "봄맞이 세일"
       ]
     },
     "Received email icon": {
@@ -13375,6 +13523,16 @@
       ],
       "Your pm.me email is active": [
         "pm.me 이메일이 활성 상태입니다"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "2026년 봄맞이 할인"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "봄맞이 할인"
       ]
     },
     "sso": {
@@ -14864,6 +15022,9 @@
       "Invalid verification code": [
         "잘못된 검증 코드"
       ],
+      "Keep this banner hidden?": [
+        "이 배너를 숨기시겠어요?"
+      ],
       "Label as": [
         "라벨 추가"
       ],
@@ -15247,6 +15408,9 @@
       ],
       "Sort messages": [
         "메시지 정렬"
+      ],
+      "Spring Sale": [
+        "봄맞이 할인"
       ],
       "Start a new import": [
         "신규 불러오기 시작"

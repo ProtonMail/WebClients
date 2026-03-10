@@ -4540,6 +4540,9 @@
         "Välj ett datum inom den kommande ${ n } dagen.",
         "Välj ett datum inom de kommande ${ n } dagarna."
       ],
+      "Company name or personal name is required": [
+        "Företagsnamn eller personnamn är obligatoriskt"
+      ],
       "Condition incomplete": [
         "Villkor ofullständig"
       ],
@@ -4694,9 +4697,6 @@
       ],
       "Invalid verification code": [
         "Ogiltig verifieringskod"
-      ],
-      "Invalid ZIP code": [
-        "Ogiltigt postnummer"
       ],
       "Item content cannot exceed 40KB": [
         "Objektinnehåll får inte överstiga 40 kB"
@@ -5007,6 +5007,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Detta fält överskrider det maximala antalet ${ maximumLength } tecken."
       ],
+      "This field is invalid": [
+        "Detta fält är ogiltigt"
+      ],
       "This field is required": [
         "Detta fält är obligatoriskt"
       ],
@@ -5057,6 +5060,9 @@
       ],
       "Username must end with a letter or digit": [
         "Användarnamn måste sluta med en bokstav eller siffra"
+      ],
+      "Wrong billing address": [
+        "Fel faktureringsadress"
       ],
       "Wrong password": [
         "Fel lösenord"
@@ -12229,6 +12235,9 @@
       "Got it": [
         "Jag förstår"
       ],
+      "I'm purchasing as a business": [
+        "Jag köper som ett företag"
+      ],
       "Including ${ rate }% tax": [
         "Inklusive ${ rate } % moms"
       ],
@@ -12300,9 +12309,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Denna åtgärd utökar den befintliga prenumerationen. Du kommer endast att debiteras för de nya utökningarna och den återstående tiden av den nuvarande faktureringsperioden. Förnyelsedatumet för din prenumeration kommer inte att ändras."
-      ],
-      "This number will be shown on all future invoices": [
-        "Detta nummer kommer att visas på alla framtida fakturor"
       ],
       "This offer is not available with your current plan.": [
         "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
@@ -12489,6 +12495,9 @@
       "Company name": [
         "Företagsnamn"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "Describe what to change": [
         "Beskriv vad som ska ändras"
       ],
@@ -12572,6 +12581,9 @@
       ],
       "Postal code": [
         "Postnummer"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search date, name, email address, or subject line": [
         "Sök datum, namn, e-postadress eller ämnesrad"
@@ -12751,6 +12763,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Officiell e-post från ${ BRAND_NAME }"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Visa inte detta erbjudande igen"
+      ],
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/månad"
+      ],
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "2 TB data storage": [
+        "2 TB lagringsutrymme"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
+      ],
+      "3 TB data storage": [
+        "3 TB lagringsutrymme"
+      ],
+      "500 GB storage": [
+        "500 GB lagringsutrymme"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Åtkomst till 15 000+ servrar i 120+ länder"
+      ],
+      "Access advanced AI models": [
+        "Få åtkomst till avancerade AI-modeller"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Alla premiumfunktioner i Mail, Pass, Drive, VPN och Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blockera annonser, spårare och skadlig kod"
+      ],
+      "Built-in 2FA authenticator": [
+        "Inbyggd 2FA-autentiserare"
+      ],
+      "Connect 10 devices at once": [
+        "Anslut 10 enheter samtidigt"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter baseras på ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Full åtkomst till ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Fullständig chatthistorik med enkelt sök och favoriter"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuella konton för 6 användare"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuella konton för dig och en partner"
+      ],
+      "Online document editor": [
+        "Dokumentredigerare online"
+      ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Starkare skydd mot cyberhot"
+      ],
+      "Unlimited daily chats": [
+        "Obegränsat antal dagliga chattar"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Obegränsade mappar, etiketter och filter"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Obegränsade hide-my-email-alias"
+      ],
+      "Use your own email domain": [
+        "Använd din egen e-postdomän"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "en fjäril"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "för 12 månader"
+      ],
+      "SPRING SALE": [
+        "VÅRREA"
       ]
     },
     "Received email icon": {
@@ -15555,6 +15662,9 @@
       ],
       "Sort messages": [
         "Sortera meddelanden"
+      ],
+      "Spring Sale": [
+        "Vårrea"
       ],
       "Start a new import": [
         "Starta en ny import"

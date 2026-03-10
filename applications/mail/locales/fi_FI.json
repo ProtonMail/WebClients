@@ -2531,6 +2531,10 @@
         "${ users } käyttäjä",
         "${ users } käyttäjää"
       ],
+      "Subtotal for ${ cycle } month": [
+        "Välisumma ${ cycle } kuukaudelle",
+        "Välisumma ${ cycle } kuukaudelle"
+      ],
       "Total": [
         "Summa"
       ],
@@ -4432,6 +4436,9 @@
         "Valitse päiväys seuraavan ${ n } päivän sisältä.",
         "Valitse päiväys seuraavan ${ n } päivän sisältä."
       ],
+      "Company name or personal name is required": [
+        "Yrityksen tai henkilön nimi vaaditaan"
+      ],
       "Condition incomplete": [
         "Puutteellinen ehto"
       ],
@@ -4584,11 +4591,11 @@
       "Invalid public key file": [
         "Virheellinen julkisen avaimen tiedosto"
       ],
+      "Invalid VAT number": [
+        "Virheellinen VAT-numero"
+      ],
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
-      ],
-      "Invalid ZIP code": [
-        "Virheellinen postinumero"
       ],
       "Item content cannot exceed 40KB": [
         "Kohteen sisällön koko ei saa ylittää 40 kt"
@@ -4689,6 +4696,9 @@
       "Please activate your search again": [
         "Aktivoi hakusi uudelleen"
       ],
+      "Please complete the billing details": [
+        "Täydennä laskutustiedot"
+      ],
       "Please enter a valid postal code": [
         "Syötä kelvollinen postinumero"
       ],
@@ -4767,6 +4777,9 @@
       ],
       "re-activate the previous key": [
         "aktivoimalla edellisen avaimen uudelleen"
+      ],
+      "re-importing": [
+        "uudelleentuodaan"
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "Vastaanottajan kaksoiskappale poistettiin: ${ recipents }",
@@ -4890,6 +4903,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Kenttä ylittää ${ maximumLength }-merkin enimmäismäärän."
       ],
+      "This field is invalid": [
+        "Tämän kentän arvo on virheellinen"
+      ],
       "This field is required": [
         "Tämä kenttä vaaditaan"
       ],
@@ -4940,6 +4956,9 @@
       ],
       "Username must end with a letter or digit": [
         "Käyttäjätunnuksen on päätyttävä kirjaimella tai numerolla"
+      ],
+      "Wrong billing address": [
+        "Virheellinen laskutusosoite"
       ],
       "Wrong password": [
         "Väärä salasana"
@@ -8609,6 +8628,10 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Kirjoitit \"${ attachmentsFoundKeyword }\", mutta yhtään liitettä ei ole lisätty. Haluatko silti lähettää viestin?"
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }. Voit peruuttaa tilauksen milloin tahansa.",
+        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }. Voit peruuttaa milloin tahansa."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Olet saavuttanut yhteystietoryhmien osoitteiden enimmäismäärän:"
       ],
@@ -10241,6 +10264,10 @@
       ]
     },
     "meet_2025: Feature": {
+      "${ n } active meeting at a time": [
+        "Enintään ${ n } kokus samanaikaisesti",
+        "Enintään ${ n } kokusta samanaikaisesti"
+      ],
       "${ n } participant": [
         "${ n } osallistuja",
         "${ n } osallistujaa"
@@ -10256,6 +10283,14 @@
       ],
       "Screen-sharing": [
         "Näytön jakaminen"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Enintään ${ n } kokous pävässä",
+        "Enintään ${ n } kokousta pävässä"
+      ],
+      "Up to ${ n } participant": [
+        "Enintää ${ n } osallistuja",
+        "Enintää ${ n } osallistujaa"
       ]
     },
     "Message": {
@@ -12213,6 +12248,9 @@
       "Company name": [
         "Yrityksen nimi"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "Describe what to change": [
         "Kuvaile, mitä tulisi muuttaa"
       ],
@@ -12296,6 +12334,9 @@
       ],
       "Postal code": [
         "Postinumero"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search date, name, email address, or subject line": [
         "Etsi päiväystä, nimeä, sähköpostiosoitetta tai aiheriviä"
@@ -12458,6 +12499,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Virallinen viesti ${ BRAND_NAME }ilta"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Älä näytä tätä tarjousta uudelleen"
+      ],
+      "Get the deal": [
+        "Hyödynnä tarjous"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/kk"
+      ],
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "2 TB data storage": [
+        "2 Tt:n tiedontallennus"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 Gt tallennustilaa: 40x nykyinen tilauksesi"
+      ],
+      "3 TB data storage": [
+        "3 Tt:n tiedontallennus"
+      ],
+      "500 GB storage": [
+        "500 Gt tallennustilaa"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Käytössä yli 15 000 palvelinta yli 120 maassa"
+      ],
+      "Access advanced AI models": [
+        "Pääsy kehittyneisiin tekoälymalleihin"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Kaikki Mailin, Passin, Driven, VPN:n ja kalenterin premium-ominaisuudet"
+      ],
+      "Block ads, trackers, and malware": [
+        "Estä mainokset, seuranta ja haittaohjelmat"
+      ],
+      "Built-in 2FA authenticator": [
+        "Sisäänrakennettu 2FA-todentaja"
+      ],
+      "Connect 10 devices at once": [
+        "Yhdistä 10 laitetta kerralla"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Alennukset perustuvat normaaliin kuukausihintaan. Tilauksesi uusiutuu laskutusjakson päättyessä normaalilla vuosihinnalla."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Täysi ${ VPN_APP_NAME } -käyttöoikeus"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Täysi keskusteluhistoria helpolla haulla ja suosikeilla"
+      ],
+      "Individual accounts for 6 users": [
+        "Henkilökohtaiset tilit 6 käyttäjälle"
+      ],
+      "Individual accounts for you and a partner": [
+        "Henkilökohtaiset tilit sinulle ja kumppanille"
+      ],
+      "Online document editor": [
+        "Dokumenttieditori verkossa"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
+      ],
+      "Stronger protection against cyber threats": [
+        "Vahvempi suoja kyberuhkia vastaan"
+      ],
+      "Unlimited daily chats": [
+        "Rajattomasti päivittäisiä keskusteluja"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Rajattomasti hide-my-email-aliaksia"
+      ],
+      "Use your own email domain": [
+        "Käytä omaa sähköpostin verkkotunnusta"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "perhonen"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "12 kuukaudeksi"
+      ],
+      "SPRING SALE": [
+        "KEVÄTALE"
       ]
     },
     "Received email icon": {
@@ -12956,6 +13092,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Jakanut ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Avaa ${ appName } -sovelluksessa"
       ]
     },
     "Signature verification warning": {
@@ -15193,6 +15334,9 @@
       ],
       "Sort messages": [
         "Järjestä viestit"
+      ],
+      "Spring Sale": [
+        "Kevätale"
       ],
       "Start a new import": [
         "Aloita uusi tuonti"
