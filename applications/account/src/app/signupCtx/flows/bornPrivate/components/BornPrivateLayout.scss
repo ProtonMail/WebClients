@@ -1,0 +1,54 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+// main background gradient
+body:has(.born-private-reservation-main-container) {
+	background:
+		radial-gradient(38.47% 29.48% at 50% -3.24%, white 0%, rgb(255 255 255 / 0) 100%),
+		linear-gradient(90deg, #f7f5ff 0.04%, rgb(247 245 255 / 0) 100%), white;
+	background-attachment: fixed; // small trick in case of low-height viewports
+}
+
+// global namespace for all born private reservation styles
+.born-private {
+	&-reservation-main-container {
+		max-inline-size: rem(1200);
+	}
+
+	&-reservation-heading {
+		.large-font {
+			font-size: rem(40);
+
+			@include im.media('<=small') {
+				font-size: rem(24);
+			}
+		}
+	}
+
+	&-reservation-bg-gradient {
+		position: relative;
+
+		@include im.media('>small') {
+			background: linear-gradient(to top right, rgb(109 74 255 / 0.06) 0%, #fff 100%);
+			border: none;
+
+			&::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				padding: 1px;
+				border-radius: inherit;
+				background: linear-gradient(to bottom left, #e9defa 100%, #f8f5fd 0%);
+				mask:
+					linear-gradient(#fff 0 0) content-box,
+					linear-gradient(#fff 0 0);
+				mask-composite: exclude;
+				pointer-events: none;
+			}
+		}
+	}
+}
