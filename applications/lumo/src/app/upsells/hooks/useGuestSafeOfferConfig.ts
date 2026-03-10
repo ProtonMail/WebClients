@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 
 import useOfferConfig from '@proton/components/containers/offers/hooks/useOfferConfig';
-import type { OfferConfig } from '@proton/components/containers/offers/interface';
 
 import { useIsGuest } from '../../providers/IsGuestProvider';
 
@@ -12,10 +11,16 @@ import { useIsGuest } from '../../providers/IsGuestProvider';
  * the guest status is determined at app initialization and never changes during
  * the component lifecycle.
  */
-const useGuestSafeOfferConfig = (): [OfferConfig | undefined, boolean] => {
+const useGuestSafeOfferConfig = () => {
     const isGuest = useIsGuest();
 
-    const guestResult = useMemo((): [OfferConfig | undefined, boolean] => [undefined, false], []);
+    const guestResult = useMemo(
+        () =>
+            ({ config: undefined, isLoading: false, shouldPrefetch: false }) satisfies ReturnType<
+                typeof useOfferConfig
+            >,
+        []
+    );
 
     // For guest users, return no offer config immediately
     // This prevents any offer-related API calls that would fail
