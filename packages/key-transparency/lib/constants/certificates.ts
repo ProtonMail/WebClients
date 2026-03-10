@@ -41,8 +41,8 @@ export const rootCertificates: Map<KT_CERTIFICATE_ISSUER, string[]> = new Map([
  * See comment at the top of this file.
  */
 export const ctLogs ={
-  version: '83.5',
-  log_list_timestamp: '2026-02-02T12:52:33Z',
+  version: '85.6',
+  log_list_timestamp: '2026-03-05T12:53:02Z',
   operators: [
     {
       name: 'Google',
@@ -450,15 +450,7 @@ export const ctLogs ={
           key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEmdRhcCL6d5MNs8eAliJRvyV5sQFC6UF7iwzHsmVaifT64gJG1IrHzBAHESdFSJAjQN56TYky+9cK616MovH2SQ==',
           url: 'https://oak.ct.letsencrypt.org/2026h1/',
           mmd: 86400,
-          state: {
-            readonly: {
-              timestamp: '2025-12-12T22:30:00Z',
-              final_tree_head: {
-                sha256_root_hash: 'deSRNfTNPgd9wfzoXIznvi+QUTxuK0R+daC6JGKGK3Q=',
-                tree_size: 598614696
-              }
-            }
-          },
+          state: { retired: { timestamp: '2026-02-28T00:00:00Z' } },
           temporal_interval: {
             start_inclusive: '2025-12-20T00:00:00Z',
             end_exclusive: '2026-07-20T00:00:00Z'
@@ -470,15 +462,7 @@ export const ctLogs ={
           key: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEanCds5bj7IU2lcNPnIvZfMnVkSmu69aH3AS8O/Y0D/bbCPdSqYjvuz9Z1tT29PxcqYxf+w1g5CwPFuwqsm3rFQ==',
           url: 'https://oak.ct.letsencrypt.org/2026h2/',
           mmd: 86400,
-          state: {
-            readonly: {
-              timestamp: '2025-12-12T22:30:00Z',
-              final_tree_head: {
-                sha256_root_hash: 'uTgg1k3DUbSFFdXewyyxbsQuCc9RupplMphTwtXqvf4=',
-                tree_size: 130815692
-              }
-            }
-          },
+          state: { retired: { timestamp: '2026-02-28T00:00:00Z' } },
           temporal_interval: {
             start_inclusive: '2026-06-20T00:00:00Z',
             end_exclusive: '2027-01-20T00:00:00Z'
@@ -641,7 +625,7 @@ export const ctLogs ={
           submission_url: 'https://luoshu2027.trustasia.com/luoshu2027/',
           monitoring_url: 'https://luoshu2027.trustasia.com/luoshu2027/',
           mmd: 60,
-          state: { qualified: { timestamp: '2025-12-02T18:30:00Z' } },
+          state: { usable: { timestamp: '2026-02-11T18:30:00Z' } },
           temporal_interval: {
             start_inclusive: '2026-12-24T00:00:00Z',
             end_exclusive: '2028-01-08T00:00:00Z'
