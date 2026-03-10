@@ -30,7 +30,8 @@ export type NotificationRequest =
           passkeys: SelectedPasskey[];
           request: string;
           token: string;
-      };
+      }
+    | { action: NotificationAction.TOAST; message: string };
 
 export interface NotificationApp extends InlineAppHandler<NotificationRequest> {}
 type NotificationEvent<T extends InlineEvent<any>['type']> = Extract<InlineEvent<NotificationRequest>, { type: T }>;
