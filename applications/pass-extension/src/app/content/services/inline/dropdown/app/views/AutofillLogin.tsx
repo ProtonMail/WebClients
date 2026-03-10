@@ -1,4 +1,4 @@
-import { type FC, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { type FC, useCallback, useEffect, useMemo } from 'react';
 
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { DropdownHeader } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownHeader';
@@ -14,17 +14,18 @@ import { ListItem } from 'proton-pass-extension/lib/components/Inline/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/lib/components/Inline/PauseListDropdown';
 import { ScrollableItemsList } from 'proton-pass-extension/lib/components/Inline/ScrollableItemsList';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import { sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Marks from '@proton/components/components/text/Marks';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { matchChunks } from '@proton/pass/lib/search/match-chunks';
+import type { UniqueItem } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
@@ -38,15 +39,13 @@ type Props = Extract<DropdownActions, { action: DropdownAction.AUTOFILL_LOGIN }>
 export const AutofillLogin: FC<Props> = ({ startsWith, action, ...payload }) => {
     const { settings, visible } = useIFrameAppState();
     const controller = useIFrameAppController();
+    const { writeToClipboard } = usePassCore();
 
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_AUTOFILL });
 
     const [state, setState] = useMountedState<MaybeNull<AutofillLoginResult>>(null);
     const [filter, setFilterState] = useMountedState<string>(startsWith);
     const loading = useMemo(() => state === null, [state]);
-
-    const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
-    const [copiedOTP, setCopiedOTP] = useState<MaybeNull<string>>(null);
 
     const resolveCandidates = useCallback(
         () =>
@@ -80,10 +79,33 @@ export const AutofillLogin: FC<Props> = ({ startsWith, action, ...payload }) => 
         else {
             setState(null);
             setFilterState('');
-            setCopiedOTP(null);
         }
-        return () => clearTimeout(timer.current);
     }, [visible]);
+
+    const handleAutofill = async ({ shareId, itemId }: UniqueItem) => {
+        let notification: Maybe<string>;
+
+        if (settings.autofill?.twofaCopy) {
+            const otpRes = await sendMessage(
+                contentScriptMessage({
+                    type: WorkerMessageType.OTP_CODE_GENERATE,
+                    payload: { type: 'item', item: { shareId, itemId } },
+                })
+            );
+
+            if (otpRes.type === 'success' && otpRes.token) {
+                await writeToClipboard(otpRes.token, undefined);
+                notification = c('Info').t`2FA code copied to clipboard`;
+            }
+        }
+
+        controller.forwardMessage({
+            type: InlinePortMessageType.AUTOFILL_ACTION,
+            payload: { ...payload, type: 'login', itemId, shareId, notification },
+        });
+
+        controller.close({ userAction: true });
+    };
 
     const dropdownItems = useMemo(
         () =>
@@ -117,45 +139,7 @@ export const AutofillLogin: FC<Props> = ({ startsWith, action, ...payload }) => 
                                       icon: 'user',
                                       url: settings.loadDomainImages ? url : undefined,
                                   }}
-                                  onClick={() => {
-                                      controller.forwardMessage({
-                                          type: InlinePortMessageType.AUTOFILL_ACTION,
-                                          payload: { ...payload, type: 'login', itemId, shareId },
-                                      });
-
-                                      if (settings.autofill?.twofaCopy) {
-                                          void sendMessage.on(
-                                              contentScriptMessage({
-                                                  type: WorkerMessageType.OTP_CODE_GENERATE,
-                                                  payload: { type: 'item', item: { shareId, itemId } },
-                                              }),
-                                              (res) => {
-                                                  if (res.type === 'success' && res.token) {
-                                                      void navigator.clipboard.writeText(res.token).catch(() => {
-                                                          /* navigator.clipboard.writeText currently doesn't work on Safari and
-                                                           * will throw NotAllowedError. So we copy through the native app instead. */
-                                                          if (BUILD_TARGET === 'safari') {
-                                                              void sendSafariMessage({
-                                                                  writeToClipboard: {
-                                                                      Content: res.token,
-                                                                  },
-                                                              });
-                                                          }
-                                                      });
-                                                      setCopiedOTP(res.token);
-                                                      timer.current = setTimeout(
-                                                          () => controller.close({ userAction: true }),
-                                                          1_000
-                                                      );
-                                                  } else {
-                                                      controller.close({ userAction: true });
-                                                  }
-                                              }
-                                          );
-                                      } else {
-                                          controller.close({ userAction: true });
-                                      }
-                                  }}
+                                  onClick={() => handleAutofill({ shareId, itemId })}
                               />
                           );
                       }),
@@ -165,18 +149,6 @@ export const AutofillLogin: FC<Props> = ({ startsWith, action, ...payload }) => 
     );
 
     if (loading) return <CircleLoader className="absolute inset-center m-auto" />;
-
-    const items =
-        dropdownItems.length > 0 ? (
-            <ScrollableItemsList>{dropdownItems}</ScrollableItemsList>
-        ) : (
-            <ListItem
-                icon={{ type: 'status', icon: PassIconStatus.ACTIVE }}
-                onClick={controller.close}
-                title={PASS_APP_NAME}
-                subTitle={c('Info').t`No login found`}
-            />
-        );
 
     return (
         <>
@@ -191,15 +163,15 @@ export const AutofillLogin: FC<Props> = ({ startsWith, action, ...payload }) => 
                     />
                 }
             />
-            {copiedOTP ? (
-                <ListItem
-                    icon={{ type: 'icon', icon: 'checkmark' }}
-                    subTitle={c('Info').t`2FA code copied to clipboard`}
-                    onClick={controller.close}
-                    autogrow
-                />
+            {dropdownItems.length > 0 ? (
+                <ScrollableItemsList>{dropdownItems}</ScrollableItemsList>
             ) : (
-                items
+                <ListItem
+                    icon={{ type: 'status', icon: PassIconStatus.ACTIVE }}
+                    onClick={controller.close}
+                    title={PASS_APP_NAME}
+                    subTitle={c('Info').t`No login found`}
+                />
             )}
         </>
     );

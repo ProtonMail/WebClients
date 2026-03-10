@@ -209,7 +209,7 @@ export const createAutoFillService = () => {
         );
 
     const onAutofillLogin = async (payload: AutofillActionDTO<'login'>, tabId: TabId) => {
-        const { fieldId, formId, frameId, itemId, shareId } = payload;
+        const { fieldId, formId, frameId, itemId, shareId, notification } = payload;
         const credentials = getCredentials(payload);
         if (!credentials) throw new Error('AutofillLogin: no credentials');
 
@@ -223,6 +223,7 @@ export const createAutoFillService = () => {
                     field: { fieldId, frameId, formId },
                     itemId,
                     shareId,
+                    notification,
                 },
             }),
             { tabId, frameId }
