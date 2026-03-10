@@ -39,7 +39,11 @@ import {
 import { selectItem } from '@proton/pass/store/selectors/items';
 import { selectVaultLimits } from '@proton/pass/store/selectors/limits';
 import { selectOrganizationPasswordGeneratorPolicy } from '@proton/pass/store/selectors/organization';
-import { selectAutosuggestCopyToClipboard, selectPasswordOptions } from '@proton/pass/store/selectors/settings';
+import {
+    selectAutosuggestCopyToClipboard,
+    selectClipboardTTL,
+    selectPasswordOptions,
+} from '@proton/pass/store/selectors/settings';
 import { selectPassPlan } from '@proton/pass/store/selectors/user';
 import type { ItemContent, ItemRevision, SelectedItem } from '@proton/pass/types/data/items';
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils/index';
@@ -384,10 +388,12 @@ export const createAutoFillService = () => {
         WorkerMessageType.AUTOSUGGEST_PASSWORD,
         withContext((ctx) => {
             const state = ctx.service.store.getState();
+            const copy = selectAutosuggestCopyToClipboard(state) ?? getInitialSettings().autosuggest.passwordCopy;
+
             return {
                 config: selectPasswordOptions(state) ?? DEFAULT_RANDOM_PW_OPTIONS,
-                copy: selectAutosuggestCopyToClipboard(state) ?? getInitialSettings().autosuggest.passwordCopy,
                 policy: selectOrganizationPasswordGeneratorPolicy(state),
+                clipboardSettings: copy ? { copy: true, clipboardTTL: selectClipboardTTL(state) } : { copy: false },
             };
         })
     );

@@ -96,7 +96,7 @@ export const DropdownDebug: FC = () => {
                             origin: 'proton.me',
                             frameId: 0,
                             frameOrigin: '',
-                            copy: false,
+                            clipboardSettings: { copy: false },
                             policy: null,
                             fieldId: '',
                             formId: '',
