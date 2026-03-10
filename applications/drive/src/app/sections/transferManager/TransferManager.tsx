@@ -31,7 +31,7 @@ export const TransferManager = ({
     className,
     onReportAbuse,
 }: TransferManagerProps) => {
-    const { items, status } = useTransferManagerState();
+    const { items, status, isVisible } = useTransferManagerState();
     const { clearQueue } = useTransferManagerActions();
     const [isMinimized, setMinimized] = useState(false);
     const [leaveMessage, setLeaveMessage] = useState('');
@@ -109,7 +109,7 @@ export const TransferManager = ({
         }
     };
 
-    if (!items.length) {
+    if (!isVisible) {
         return null;
     }
 
