@@ -1387,8 +1387,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } souhaite partager un élément avec un groupe que vous administrez."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } souhaite partager un élément avec le groupe ${ invitedGroup.Name }."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } souhaite partager un élément avec le groupe ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } souhaite partager un élément avec vous."
@@ -1437,9 +1437,9 @@
         "${ row.breachCount } fuite de données a été détectée.",
         "${ row.breachCount } fuites de données ont été détectées."
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } membre)",
-        "(${ membersCount } membres)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } membre)",
+        "(${ memberCount } membres)"
       ],
       "(Empty)": [
         "(Vide)"
@@ -1821,8 +1821,8 @@
       "Invite successfully resent": [
         "L'invitation a été renvoyée."
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "invite le groupe ${ invitedGroup.Name } à accéder aux éléments dans"
+      "invites the group ${ name } to access items in": [
+        "invite le groupe ${ name } à accéder aux éléments dans"
       ],
       "invites you to access items in": [
         "vous invite à accéder à des éléments dans"
@@ -1920,8 +1920,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"

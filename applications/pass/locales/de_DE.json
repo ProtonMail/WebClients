@@ -1390,8 +1390,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } möchte einen Eintrag mit einer Gruppe teilen, die du verwaltest."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } möchte ein Element mit der Gruppe ${ invitedGroup.Name } teilen."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } möchte einen Beitrag mit der Gruppe ${ name } teilen."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } möchte einen Eintrag mit dir teilen."
@@ -1440,9 +1440,9 @@
         "${ row.breachCount } Datendiebstahl entdeckt",
         "${ row.breachCount } Datendiebstähle entdeckt"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } Mitglied)",
-        "(${ membersCount } Mitglieder)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } Mitglied)",
+        "(${ memberCount } Mitglieder)"
       ],
       "(Empty)": [
         "(Leer)"
@@ -1827,8 +1827,8 @@
       "Invite successfully resent": [
         "Einladung erfolgreich erneut versendet."
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "Lädt die Gruppe ${ invitedGroup.Name } ein, auf Elemente zuzugreifen in"
+      "invites the group ${ name } to access items in": [
+        "lädt die Gruppe ${ name } ein, auf Elemente zuzugreifen in"
       ],
       "invites you to access items in": [
         "hat dich eingeladen auf Elemente in folgenden Tresor zuzugreifen:"
@@ -1924,10 +1924,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
-        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
