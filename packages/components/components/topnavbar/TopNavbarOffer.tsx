@@ -26,9 +26,10 @@ interface Props {
     offerConfig: OfferConfig;
     ignoreVisited?: boolean;
     ignoreOnboarding?: boolean;
+    shouldPrefetch: boolean;
 }
 
-const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: Props) => {
+const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding, shouldPrefetch }: Props) => {
     const { welcomeFlags } = useWelcomeFlags();
     const protonConfig = useConfig();
     const isVPNApp = protonConfig.APP_NAME === APPS.PROTONVPN_SETTINGS;
@@ -37,7 +38,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
     const [subscription, loadingSubscription] = useSubscription();
     const history = useHistory();
     const location = useLocation();
-    const { isVisited, loading } = useOfferFlags(offerConfig);
+    const { isVisited, loading: loadingOfferFlags } = useOfferFlags(offerConfig);
     const {
         offer,
         loadingOffer,
@@ -47,14 +48,16 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
         setOfferModalOpen,
         currency,
         onChangeCurrency,
-    } = useOfferModal(offerConfig);
+        hasEstimationError,
+        initialized,
+    } = useOfferModal(offerConfig, shouldPrefetch);
 
     const { viewportWidth } = useActiveBreakpoint();
 
     // Listen custom event to open offer modal
     useEffect(() => {
         const open = () => {
-            if (renderOfferModal) {
+            if (renderOfferModal || hasEstimationError) {
                 return;
             }
             setOfferModalOpen(true);
@@ -74,7 +77,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
 
         // Common conditions that would prevent the offer modal from showing
         if (
-            loading ||
+            loadingOfferFlags ||
             loadingSubscription ||
             !offerConfig.autoPopUp ||
             // Hide the autopopup during the welcome flow and re-trigger it when the welcome flow completes.
@@ -82,7 +85,8 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
             // If the subscription modal is open. Explicitly not checking if any modal is open since it intereferes with the onboarding modal.
             document.querySelector(`.${subscriptionModalClassName}`) !== null ||
             // Trying to catch if the automatic subscription modal will get opened.
-            !!plan
+            !!plan ||
+            hasEstimationError
         ) {
             return;
         }
@@ -108,7 +112,11 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
         onceRef.current = true;
         setFetchOffer(true);
         setOfferModalOpen(true);
-    }, [loading, loadingSubscription, user.hasPaidMail, subscription, welcomeFlags.isDone]);
+    }, [loadingOfferFlags, loadingSubscription, user.hasPaidMail, subscription, welcomeFlags.isDone]);
+
+    if (hasEstimationError || (shouldPrefetch && !initialized)) {
+        return null;
+    }
 
     const CTAText = offerConfig.topButton?.getCTAContent?.() || c('specialoffer: Action').t`Special offer`;
     const upgradeIcon =

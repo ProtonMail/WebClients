@@ -18,7 +18,7 @@ interface Props {
     onError?: () => void;
 }
 
-function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props): [Offer | undefined, boolean] {
+function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props) {
     const { paymentsApi } = usePaymentsApiWithCheckFallback();
     const [loading, withLoading] = useLoading();
     const [state, setState] = useState<Partial<{ offer: Offer; offerConfig: OfferConfig }>>();
@@ -27,6 +27,8 @@ function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props): [O
     const [subscription] = useSubscription();
     const { APP_NAME } = useConfig();
     const plansMap = plans ? getPlansMap(plans, currency, false) : {};
+    const [hasEstimationError, setHasEstimationError] = useState(false);
+    const [initialized, setInitialized] = useState(false);
 
     useEffect(() => {
         if (!offerConfig || !plans) {
@@ -55,6 +57,15 @@ function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props): [O
                             app: APP_NAME,
                         }) as string;
 
+                        // In long-term, we might encounter 2 types of errors: recoverable and non-recoverable.
+                        // Recoverable errors are treated in the frontend payments network layer, they don't throw an
+                        // error. In this if condition, we check if a recoverable error exists. Even though it's not
+                        // catastrophic, the SubscriptionEstimation is still unusable for the purpose of displaying the
+                        // offer.
+                        if (withCoupon.error) {
+                            setHasEstimationError(true);
+                        }
+
                         return {
                             ...deal,
                             renew,
@@ -73,13 +84,22 @@ function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props): [O
                 onSuccess?.();
             } catch (error) {
                 onError?.();
+                // If the error is not recoverable, we set the flag to true to prevent the offer from being displayed.
+                setHasEstimationError(true);
+            } finally {
+                setInitialized(true);
             }
         };
 
         void withLoading(updateOfferPrices());
     }, [offerConfig, currency, plans]);
 
-    return [state?.offer, loading || plansLoading];
+    return {
+        offer: state?.offer,
+        loading: loading || plansLoading,
+        hasEstimationError,
+        initialized,
+    };
 }
 
 export default useFetchOffer;

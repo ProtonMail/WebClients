@@ -80,3 +80,10 @@ export function getWrongBillingAddressValidationResult(
     }
     return undefined;
 }
+
+export class InvalidCouponError extends PaymentsApiError {
+    constructor() {
+        super(c('Error').t`Invalid coupon`);
+        this.name = 'InvalidCouponError';
+    }
+}

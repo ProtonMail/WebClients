@@ -9,12 +9,12 @@ import { usePostSignupOffers } from './TopNavbarPostSignupPromo/usePostSignupOff
 import TopNavbarUpgradeButton from './TopNavbarUpgradeButton';
 
 interface Props {
-    offerProps?: Omit<ComponentPropsWithoutRef<typeof TopNavbarOffer>, 'offerConfig' | 'app'>;
+    offerProps?: Omit<ComponentPropsWithoutRef<typeof TopNavbarOffer>, 'offerConfig' | 'app' | 'shouldPrefetch'>;
     app: APP_NAMES;
 }
 
 const TopNavbarUpsellInner = ({ offerProps, app }: Props) => {
-    const [offerConfig, loadingOffer] = useOfferConfig();
+    const { config: offerConfig, isLoading: loadingOffer, shouldPrefetch } = useOfferConfig();
     const { loading: loadingPostSignup, eligibleOffer: eligiblePostSignupOffer } = usePostSignupOffers({ app });
 
     if (loadingOffer) {
@@ -29,6 +29,7 @@ const TopNavbarUpsellInner = ({ offerProps, app }: Props) => {
                 offerConfig={offerConfig}
                 app={app}
                 ignoreOnboarding={offerProps?.ignoreOnboarding ?? isElectronApp}
+                shouldPrefetch={shouldPrefetch}
             />
         );
     }
