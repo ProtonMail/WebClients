@@ -25,7 +25,7 @@ export type BookmarkItem = BaseSharedWithMeItem & {
 
 export type DirectShareItem = BaseSharedWithMeItem & {
     nodeUid: string;
-    shareId: string | undefined;
+    shareId: string;
     itemType: ItemType.DIRECT_SHARE;
     haveSignatureIssues: boolean | undefined;
     role: MemberRole;
@@ -37,7 +37,7 @@ export type DirectShareItem = BaseSharedWithMeItem & {
 
 export type InvitationItem = BaseSharedWithMeItem & {
     nodeUid: string;
-    shareId: string | undefined;
+    shareId: string;
     itemType: ItemType.INVITATION;
     invitation: {
         uid: string;
