@@ -1,4 +1,4 @@
-import type { MainThreadBridgeService } from '../../../../MainThreadBridgeService';
+import type { ActiveMainThreadBridgeService } from '../../../../ActiveMainThreadBridgeService';
 import type { EngineConfig, EngineConfigKey } from '../../../configs';
 import type { EngineDB } from '../../../storage/EngineDB';
 import type { IndexWriter } from '../IndexWriter';
@@ -8,7 +8,7 @@ import type { IndexWriter } from '../IndexWriter';
  */
 export interface IndexerContext {
     db: EngineDB;
-    bridgeService: MainThreadBridgeService;
+    bridgeService: ActiveMainThreadBridgeService;
     indexWriter: IndexWriter;
     config: EngineConfig;
     requiredConfigKey: EngineConfigKey;
@@ -21,6 +21,6 @@ export interface IndexerContext {
 export interface IndexerStateMachineParams {
     requiredConfigKey: EngineConfigKey;
     db: EngineDB;
-    bridgeService: MainThreadBridgeService;
+    bridgeService: ActiveMainThreadBridgeService;
     indexWriter: IndexWriter;
 }

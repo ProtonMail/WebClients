@@ -9,7 +9,7 @@ import { runScheduleIncrementalUpdate } from './states/runScheduleIncrementalUpd
 import { runTransientFailure } from './states/runTransientFailure';
 import type { IndexerContext, IndexerStateMachineParams } from './types';
 
-enum IndexerState {
+export enum IndexerState {
     // Not yet started, or cleanly stopped.
     IDLE = 'IDLE',
     // First state: Decide whether to rebuild the index from scratch or resume incremental updates.
@@ -29,7 +29,8 @@ enum IndexerState {
 }
 
 export class IndexerStateMachine {
-    private state: IndexerState = IndexerState.IDLE;
+    private indexerState: IndexerState = IndexerState.IDLE;
+    private subscribers = new Set<(state: IndexerState) => void>();
     private abortController: AbortController = new AbortController();
     private readonly ctx: IndexerContext;
 
@@ -48,11 +49,11 @@ export class IndexerStateMachine {
         // Note: No need to unsubscribe from the bridge service: We never want to stop listening to it.
         params.bridgeService.onChange(() => {
             Logger.info('IndexerStateMachine: bridge updated');
-            switch (this.state) {
+            switch (this.indexerState) {
                 case IndexerState.BULK_UPDATE:
                 case IndexerState.INCREMENTAL_UPDATE:
                     // Restart indexing steps from scratch: Not optimal but robust for now.
-                    this.abortAndReenter(this.state);
+                    this.abortAndReenter(this.indexerState);
                     break;
                 default:
                     // Other states: no interruption needed.
@@ -62,15 +63,27 @@ export class IndexerStateMachine {
     }
 
     getState(): IndexerState {
-        return this.state;
+        return this.indexerState;
+    }
+
+    onStateChange(cb: (state: IndexerState) => void): () => void {
+        this.subscribers.add(cb);
+        return () => {
+            this.subscribers.delete(cb);
+        };
+    }
+
+    private setIndexerState(state: IndexerState): void {
+        this.indexerState = state;
+        this.subscribers.forEach((cb) => cb(state));
     }
 
     /**
      * Start the state machine from INIT.
      */
     async start(): Promise<void> {
-        if (this.state !== IndexerState.IDLE) {
-            Logger.warn(`IndexerStateMachine: cannot start, current state is ${this.state}`);
+        if (this.indexerState !== IndexerState.IDLE) {
+            Logger.warn(`IndexerStateMachine: cannot start, current state is ${this.indexerState}`);
             return;
         }
 
@@ -86,7 +99,7 @@ export class IndexerStateMachine {
         Logger.info('IndexerStateMachine: stopping');
         this.abortController.abort();
         this.abortController = new AbortController();
-        this.state = IndexerState.IDLE;
+        this.setIndexerState(IndexerState.IDLE);
     }
 
     /**
@@ -114,7 +127,7 @@ export class IndexerStateMachine {
             }
 
             Logger.info(`IndexerStateMachine: → ${state}`);
-            this.state = state;
+            this.setIndexerState(state);
 
             try {
                 switch (state) {
@@ -188,7 +201,7 @@ export class IndexerStateMachine {
         // TODO: For corrupted DB permanent failure: Maybe reset DB ?
         // TODO: Increment Grafana counter for permanent failures.
         Logger.error('IndexerStateMachine: permanently stopped', this.ctx.lastError);
-        this.state = IndexerState.STOP;
+        this.setIndexerState(IndexerState.STOP);
         this.abortController.abort();
         this.abortController = new AbortController();
     }
