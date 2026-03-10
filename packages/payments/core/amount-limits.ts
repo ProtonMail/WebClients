@@ -7,6 +7,12 @@ export function getMinCreditAmount(currency: Currency): number {
     return minUsdAmount * rate;
 }
 
+export function getMinDonationAmount(currency: Currency): number {
+    const minUsdAmount = 100;
+    const rate = getNaiveCurrencyRate(currency);
+    return minUsdAmount * rate;
+}
+
 export function getMaxCreditAmount(currency: Currency): number {
     const maxUsdAmount = 4000000;
     const rate = getNaiveCurrencyRate(currency);

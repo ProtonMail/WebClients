@@ -38,13 +38,11 @@ export const IcCheckmarkCircle = ({
             >
                 {title ? <title>{title}</title> : null}
 
+                <path d="M10.213 5.188a.525.525 0 0 1 .887.562l-3.294 5.197a.675.675 0 0 1-1.097.06L4.887 8.735a.526.526 0 0 1 .82-.656l1.492 1.863z"></path>
                 <path
                     fillRule="evenodd"
-                    d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12Zm0 1A7 7 0 1 0 8 1a7 7 0 0 0 0 14Z"
-                ></path>
-                <path
-                    fillRule="evenodd"
-                    d="M11.854 6.146a.5.5 0 0 1 0 .708l-3.859 3.858a.7.7 0 0 1-.99 0L4.646 8.354a.5.5 0 1 1 .708-.708L7.5 9.793l3.646-3.647a.5.5 0 0 1 .708 0Z"
+                    d="M8 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1m0 1a6 6 0 1 0 0 12A6 6 0 0 0 8 2"
+                    clipRule="evenodd"
                 ></path>
             </svg>
             {alt ? <span className="sr-only">{alt}</span> : null}

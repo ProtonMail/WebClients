@@ -6,7 +6,11 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { PaymentTelemetryContext } from '../../telemetry/helpers';
 import type { PaymentTelemetryPayload } from '../../telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '../../telemetry/telemetry';
-import { type BillingAddressProperty, getBillingAddressPayload } from '../billing-address/billing-address';
+import {
+    type BillingAddress,
+    type BillingAddressProperty,
+    getBillingAddressPayload,
+} from '../billing-address/billing-address';
 import { PAYMENT_METHOD_TYPES, PLANS } from '../constants';
 import { isCountryWithRequiredPostalCode, isCountryWithStates } from '../countries';
 import type {
@@ -24,6 +28,14 @@ import { getPlanNameFromIDs, isLifetimePlanSelected } from '../plan/helpers';
 import type { Subscription } from '../subscription/interface';
 import { isTokenPaymentMethod, isV5PaymentToken } from '../type-guards';
 import type { PaymentsVersion } from './api';
+
+interface BuyProductConfigParams {
+    PaymentToken: string;
+    ProductType: string;
+    Amount: number;
+    Currency: Currency;
+    BillingAddress: BillingAddress;
+}
 
 type CommonSubscribeData = {
     Plans: PlanIDs;
@@ -78,20 +90,21 @@ export function getLifetimeProductType(data: Pick<SubscribeData, 'Plans'>) {
     }
 }
 
-const buyProduct = (rawData: SubscribeData, product: ProductParam) => {
-    const sanitizedData = prepareSubscribeDataPayload(rawData) as SubscribeDataV5;
-
+/**
+ * Builds the request config for payments/v5/products (used by buyProduct and by donation capture).
+ */
+export function getBuyProductConfig(product: ProductParam, params: BuyProductConfigParams, quantity = 1) {
     const url = 'payments/v5/products';
-    const config = {
+    return {
         url,
         method: 'post',
         data: {
-            Quantity: 1,
-            PaymentToken: getPaymentTokenFromSubscribeData(sanitizedData),
-            ProductType: getLifetimeProductType(sanitizedData),
-            Amount: sanitizedData.Amount,
-            Currency: sanitizedData.Currency,
-            BillingAddress: sanitizedData.BillingAddress,
+            Quantity: quantity,
+            PaymentToken: params.PaymentToken,
+            ProductType: params.ProductType,
+            Amount: params.Amount,
+            Currency: params.Currency,
+            BillingAddress: params.BillingAddress,
         },
         headers: getProductHeaders(product, {
             endpoint: url,
@@ -99,8 +112,17 @@ const buyProduct = (rawData: SubscribeData, product: ProductParam) => {
         }),
         timeout: 60000 * 2,
     };
+}
 
-    return config;
+const buyProduct = (rawData: SubscribeData, product: ProductParam) => {
+    const sanitizedData = prepareSubscribeDataPayload(rawData) as SubscribeDataV5;
+    return getBuyProductConfig(product, {
+        PaymentToken: getPaymentTokenFromSubscribeData(sanitizedData)!,
+        ProductType: getLifetimeProductType(sanitizedData)!,
+        Amount: sanitizedData.Amount,
+        Currency: sanitizedData.Currency,
+        BillingAddress: sanitizedData.BillingAddress,
+    });
 };
 
 function isCommonSubscribeData(data: any): data is CommonSubscribeData {

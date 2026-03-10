@@ -1,0 +1,45 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.voucher {
+	&-container {
+		max-inline-size: rem(330);
+		border: 1px solid #e7e1ff;
+		background: rgb(255 255 255 / 0.5);
+		padding: rem(5);
+	}
+
+	&-inner-container {
+		border: 1px solid #e7e1ff;
+		background: white;
+		padding: rem(36);
+	}
+
+	&-color-text {
+		color: #2c1e66;
+	}
+
+	&-email {
+		font-size: rem(12);
+		border-radius: rem(20);
+		border: 2px solid #e7e1ff;
+		font-weight: 600;
+
+		&-text {
+			animation: appearAnimation 0.8s cubic-bezier(0.38, 1.71, 0.64, 1) both;
+			animation-delay: 0.6s;
+			transform-origin: center;
+		}
+	}
+
+	@keyframes appearAnimation {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+}
