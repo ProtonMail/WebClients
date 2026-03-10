@@ -87,6 +87,7 @@ import {
 } from '@proton/components';
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
 import { getIsSectionAvailable, getRoutePaths, getSectionPath } from '@proton/components/containers/layout/helper';
+import DashboardComparePlansCTA from '@proton/components/containers/payments/subscription/YourPlanSectionV2/DashboardComparePlansCTA';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import { RewardSection } from '@proton/components/containers/referral/rewards/RewardSection';
 import LiveChatZendesk, { getIsSelfChat } from '@proton/components/containers/zendesk/LiveChatZendesk';
@@ -351,7 +352,11 @@ const MainContainer: FunctionComponent = () => {
                                         wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
                                         style={{ '--max-w-custom': '1500px' }}
                                     >
-                                        <YourPlanSectionV2 app={app} editBillingCycle={true} />
+                                        <YourPlanSectionV2
+                                            app={app}
+                                            editBillingCycle={true}
+                                            cta={<DashboardComparePlansCTA app={app} />}
+                                        />
                                         <SubscriptionsSection />
                                         <PaymentMethodsSection app={app} />
                                         <CreditsSection app={app} />
