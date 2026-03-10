@@ -30,7 +30,7 @@ import { serialize } from '@proton/pass/utils/object/serialize';
 
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOSUGGEST_PASSWORD }>;
 
-export const AutosuggestPassword: FC<Props> = ({ action, config, copy, policy, ...payload }) => {
+export const AutosuggestPassword: FC<Props> = ({ action, config, clipboardSettings, policy, ...payload }) => {
     const { visible } = useIFrameAppState();
     const controller = useIFrameAppController();
     const { writeToClipboard } = usePassCore();
@@ -53,7 +53,9 @@ export const AutosuggestPassword: FC<Props> = ({ action, config, copy, policy, .
     }, [visible]);
 
     const autofillPassword = async () => {
-        if (copy) await writeToClipboard(generator.password, undefined);
+        if (clipboardSettings.copy) {
+            await writeToClipboard(generator.password, clipboardSettings.clipboardTTL);
+        }
 
         controller.forwardMessage({
             type: InlinePortMessageType.AUTOFILL_ACTION,
@@ -67,7 +69,7 @@ export const AutosuggestPassword: FC<Props> = ({ action, config, copy, policy, .
         controller.close({ userAction: true });
     };
 
-    const label = copy ? c('Title').t`Fill & copy password` : c('Title').t`Fill password`;
+    const label = clipboardSettings.copy ? c('Title').t`Fill & copy password` : c('Title').t`Fill password`;
 
     return (
         <>
