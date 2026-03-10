@@ -1,12 +1,17 @@
 import { EngineOrchestrator } from '.';
+import type { ActiveMainThreadBridgeService } from '../ActiveMainThreadBridgeService';
 import { Logger } from '../Logger';
-import type { MainThreadBridgeService } from '../MainThreadBridgeService';
 import { Engine } from '../engine/Engine';
 import { EngineDB } from '../engine/storage/EngineDB';
 import type { UserId } from '../types';
 
 jest.mock('../Logger', () => ({
     Logger: { info: jest.fn(), warn: jest.fn() },
+}));
+
+// BroadcastChannel is not available in Jest.
+jest.mock('../searchModuleStateUpdateChannel', () => ({
+    createSearchModuleStateUpdateChannel: () => ({ postMessage: jest.fn(), close: jest.fn() }),
 }));
 
 // Prevent Jest from loading Engine.ts (which imports the ESM-only WASM library).
@@ -21,12 +26,14 @@ jest.mock('../engine/storage/EngineDB', () => ({
 
 const USER_1 = 'user-1' as UserId;
 
-function makeBridgeService(): MainThreadBridgeService {
-    return {} as MainThreadBridgeService;
+function makeBridgeService(): ActiveMainThreadBridgeService {
+    return {} as ActiveMainThreadBridgeService;
 }
 
 function makeMockEngine() {
     return {
+        getState: jest.fn().mockReturnValue({ isInitialIndexing: false, isSearchable: false }),
+        onStateChange: jest.fn().mockReturnValue(() => {}),
         startIndexing: jest.fn().mockResolvedValue(undefined),
         stopIndexing: jest.fn(),
     };

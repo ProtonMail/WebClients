@@ -1,6 +1,6 @@
+import { ActiveMainThreadBridgeService } from '../ActiveMainThreadBridgeService';
 import { Logger } from '../Logger';
 import type { MainThreadBridge } from '../MainThreadBridge';
-import { MainThreadBridgeService } from '../MainThreadBridgeService';
 import { EngineOrchestrator } from '../engineOrchestrator';
 import type { ClientId, UserId } from '../types';
 import type { ClientContext } from './ClientCoordinator';
@@ -10,12 +10,14 @@ const REQUIRED_CONFIG_KEY_FOR_DEFAULT_ENGINE = 'v1';
 
 export class SharedWorkerAPI {
     private clientsCoordinator = new ClientCoordinator();
-    private readonly bridgeService = new MainThreadBridgeService();
-    private unsubscribe: (() => void) | null = null;
+    private readonly bridgeService = new ActiveMainThreadBridgeService();
+    private unsubscribeClientChanged: (() => void) | null = null;
     private orchestrator: EngineOrchestrator | null = null;
 
     constructor() {
-        this.unsubscribe = this.clientsCoordinator.subscribeClientChanged(this.handleActiveClientChanged.bind(this));
+        this.unsubscribeClientChanged = this.clientsCoordinator.subscribeClientChanged(
+            this.handleActiveClientChanged.bind(this)
+        );
     }
 
     private handleActiveClientChanged(newClientContext: ClientContext | null) {
@@ -44,6 +46,7 @@ export class SharedWorkerAPI {
             this.orchestrator.start();
         } catch (error) {
             Logger.error('SharedWorkerAPI: failed to start the engine orchestrator', error);
+            this.orchestrator = null;
         }
     }
 
@@ -62,13 +65,15 @@ export class SharedWorkerAPI {
         this.clientsCoordinator.disconnect(clientId);
     }
 
+    // TODO: search(query: SearchQuery): Promise<SearchResult[]> — delegate to orchestrator.
+
     dispose() {
         this.orchestrator?.stop();
-        if (this.unsubscribe) {
-            this.unsubscribe();
+        this.orchestrator = null;
+        if (this.unsubscribeClientChanged) {
+            this.unsubscribeClientChanged();
         }
     }
 
-    // TODO: Add search query API.
     // TODO: Monitor network availability and pause/resume indexing accordingly.
 }
