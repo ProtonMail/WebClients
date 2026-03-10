@@ -34,7 +34,10 @@ import noop from '@proton/utils/noop';
 
 import { registerMailToProtocolHandler } from 'proton-mail/helpers/url';
 
-import { shouldLoadMigrationWorker } from './helpers/encryptedSearch/migration-system/helpers/shouldLoadMigrationWorker';
+import {
+    canLoadRunner,
+    shouldLoadMigrationWorker,
+} from './helpers/encryptedSearch/migration-system/helpers/shouldLoadMigrationWorker';
 import { migrationToolWorker } from './helpers/encryptedSearch/migration-system/migrationToolWorker';
 import locales from './locales';
 import { type MailState, extendStore, setupStore } from './store/store';
@@ -175,8 +178,9 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         if (unleashClient.isEnabled('EncryptedSearchMigrationSystem')) {
             const shouldLoad = await shouldLoadMigrationWorker(userData.user);
+            const canLoad = canLoadRunner();
 
-            if (shouldLoad) {
+            if (shouldLoad && canLoad) {
                 void migrationToolWorker({ user: userData.user, keyPassword: authentication.getPassword() });
             }
         }
