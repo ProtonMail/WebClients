@@ -2284,6 +2284,9 @@
       "Checkout expired, please try again": [
         "Finalizarea comenzii a expirat. Reîncercați."
       ],
+      "Company name or personal name is required": [
+        "Numele companiei sau numele personal este necesar."
+      ],
       "Contact could not be saved": [
         "Contactul nu a putut fi salvat"
       ],
@@ -2326,11 +2329,11 @@
       "Invalid postal code": [
         "Cod poștal incorect."
       ],
+      "Invalid VAT number": [
+        "Cont TVA nevalid"
+      ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
-      ],
-      "Invalid ZIP code": [
-        "Cod poștal nevalid"
       ],
       "Not a valid number": [
         "Nu este un număr valid"
@@ -2352,6 +2355,9 @@
       ],
       "Payment process not supported": [
         "Metoda de plată nu este acceptată."
+      ],
+      "Please complete the billing details": [
+        "Completați detaliile de facturare."
       ],
       "Please enter a valid postal code": [
         "Introduceți un cod poștal valid."
@@ -2413,6 +2419,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Acest câmp depășește maximul de ${ maximumLength } de caractere."
       ],
+      "This field is invalid": [
+        "Acest câmp nu este valid."
+      ],
       "This field is required": [
         "Acest câmp este obligatoriu"
       ],
@@ -2436,6 +2445,9 @@
       ],
       "Username must end with a letter or digit": [
         "Numele de utilizator trebuie să se termine cu o literă sau cifră."
+      ],
+      "Wrong billing address": [
+        "Adresă de facturare incorectă."
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
@@ -4673,6 +4685,9 @@
       "Got it": [
         "Am înțeles"
       ],
+      "I'm purchasing as a business": [
+        "Achiziționez în calitate de companie"
+      ],
       "Including ${ rate }% tax": [
         "Inclusiv ${ rate }% TVA"
       ],
@@ -4750,9 +4765,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Această acțiune extinde abonamentul existent. Taxa se va aplica doar pentru noile module și pentru timpul rămas din ciclul de facturare actual. Data reînnoirii abonamentului actual nu va fi modificată."
-      ],
-      "This number will be shown on all future invoices": [
-        "Acest număr va fi afișat pe toate facturile viitoare."
       ],
       "This offer is not available with your current plan.": [
         "Această ofertă nu este disponibilă cu planul actual."
@@ -4918,6 +4930,9 @@
       "Confirm passphrase or leave empty": [
         "Confirmați fraza de acces sau lăsați necompletat"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Ex.: "
       ],
@@ -4944,6 +4959,9 @@
       ],
       "Postal code": [
         "Cod poştal"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Căutare"
@@ -5652,6 +5670,9 @@
       ],
       "Simplify password management": [
         "Simplificați gestionarea parolelor"
+      ],
+      "Spring Sale": [
+        "Reducere de primăvară"
       ],
       "Summary": [
         "Sumar"

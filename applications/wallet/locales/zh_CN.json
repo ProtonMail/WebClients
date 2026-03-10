@@ -1056,7 +1056,7 @@
         "小计"
       ],
       "Subtotal for ${ cycle } month": [
-        "小计 ${ cycle } 个月"
+        "${ cycle } 个月小计"
       ],
       "Total": [
         "总计"
@@ -2260,6 +2260,9 @@
       "Checkout expired, please try again": [
         "支付超时，请重试"
       ],
+      "Company name or personal name is required": [
+        "公司名称或个人姓名为必填项"
+      ],
       "Contact could not be saved": [
         "无法保存联系人"
       ],
@@ -2302,11 +2305,11 @@
       "Invalid postal code": [
         "邮政编码不正确"
       ],
+      "Invalid VAT number": [
+        "无效增值税号"
+      ],
       "Invalid verification code": [
         "验证码无效"
-      ],
-      "Invalid ZIP code": [
-        "无效的邮政编码"
       ],
       "Not a valid number": [
         "无效号码"
@@ -2328,6 +2331,9 @@
       ],
       "Payment process not supported": [
         "不支持此支付流程"
+      ],
+      "Please complete the billing details": [
+        "请填写账单信息"
       ],
       "Please enter a valid postal code": [
         "请输入有效的邮政编码"
@@ -2389,6 +2395,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此项超过了 ${ maximumLength } 个字符的长度限制。"
       ],
+      "This field is invalid": [
+        "字段无效"
+      ],
       "This field is required": [
         "此项必须填写"
       ],
@@ -2412,6 +2421,9 @@
       ],
       "Username must end with a letter or digit": [
         "用户名必须以字母或数字结尾"
+      ],
+      "Wrong billing address": [
+        "错误的账单地址"
       ],
       "ZIP code is required": [
         "必须填写邮政编码"
@@ -4555,6 +4567,9 @@
       "Got it": [
         "了解"
       ],
+      "I'm purchasing as a business": [
+        "以企业身份购买"
+      ],
       "Including ${ rate }% tax": [
         "含 ${ rate }% 税费"
       ],
@@ -4620,9 +4635,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "此操作将扩展您现有的订阅。您只需支付新增附加项的费用以及当前计费周期剩余时间的费用。您的订阅续订日期将不会改变。"
-      ],
-      "This number will be shown on all future invoices": [
-        "此编号将显示在所有未来的发票上。"
       ],
       "This offer is not available with your current plan.": [
         "此优惠不适用于您当前的套餐"
@@ -4788,6 +4800,9 @@
       "Confirm passphrase or leave empty": [
         "确认密码或留空"
       ],
+      "Cortex Inc.": [
+        "Cortex 公司"
+      ],
       "E.g., ": [
         "例如："
       ],
@@ -4814,6 +4829,9 @@
       ],
       "Postal code": [
         "邮政编码"
+      ],
+      "San Francisco": [
+        "旧金山"
       ],
       "Search": [
         "搜索"
@@ -5500,6 +5518,9 @@
       ],
       "Simplify password management": [
         "简化密码管理"
+      ],
+      "Spring Sale": [
+        "春季特惠"
       ],
       "Summary": [
         "概览"

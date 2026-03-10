@@ -439,7 +439,7 @@
         "${ LUMO_APP_NAME } AI licence"
       ],
       "${ LUMO_APP_NAME } seats": [
-        "${ LUMO_APP_NAME } licencí"
+        "Licencí ${ LUMO_APP_NAME }"
       ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
@@ -2338,11 +2338,11 @@
       "Invalid postal code": [
         "Neplatné směrovací číslo"
       ],
+      "Invalid VAT number": [
+        "Neplatné DIČ"
+      ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
-      ],
-      "Invalid ZIP code": [
-        "Neplatné PSČ"
       ],
       "Not a valid number": [
         "Neplatné číslo"
@@ -2424,6 +2424,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole přesahuje maximální délku ${ maximumLength } znaků."
+      ],
+      "This field is invalid": [
+        "Toto pole je neplatné"
       ],
       "This field is required": [
         "Toto pole je povinné"
@@ -4732,6 +4735,9 @@
       "Got it": [
         "Rozumím"
       ],
+      "I'm purchasing as a business": [
+        "Kupuji jako firma"
+      ],
       "Including ${ rate }% tax": [
         "Včetně ${ rate }% daně"
       ],
@@ -4815,9 +4821,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Tato akce rozšiřuje stávající předplatné. Budou vám účtovány pouze nové doplňky a zbývající čas aktuálního fakturačního cyklu. Datum obnovení vašeho předplatného se nezmění."
-      ],
-      "This number will be shown on all future invoices": [
-        "Toto číslo bude uvedeno na všech budoucích fakturách"
       ],
       "This offer is not available with your current plan.": [
         "Tato nabídka není s vaším aktuálním tarifem k dispozici."
@@ -4910,10 +4913,10 @@
     },
     "Payments.Renewal price dependent on VAT number": {
       "Renewal price is dependent on the billing region and ABN.": [
-        "Cena obnovení závisí na fakturační oblasti a IČ DPH."
+        "Cena za obnovení závisí na fakturační oblasti a DIČ."
       ],
       "Renewal price is dependent on the billing region and Business Number.": [
-        "Cena obnovení závisí na zemi platby a DIČ."
+        "Cena obnovení závisí na fakturační oblasti a DIČ."
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Cena za obnovení závisí na fakturační oblasti a DIČ."
@@ -5009,6 +5012,9 @@
       ],
       "Postal code": [
         "Poštovní směrovací číslo"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Vyhledat"
