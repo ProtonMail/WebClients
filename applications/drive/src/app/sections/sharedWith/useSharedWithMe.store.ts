@@ -433,7 +433,7 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
                             }
                             store.setSharedWithMeItem({
                                 nodeUid: node.uid,
-                                shareId: undefined,
+                                shareId: node.deprecatedShareId,
                                 name: node.name,
                                 type: node.type,
                                 mediaType: node.mediaType,
