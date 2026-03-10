@@ -1840,6 +1840,9 @@
       "Calendar": [
         "Calendario"
       ],
+      "Completed": [
+        "Completado"
+      ],
       "Configure migration": [
         "Configurar migración"
       ],
@@ -1860,6 +1863,12 @@
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplicación de Google Marketplace para copiar datos a ${ BRAND_NAME }"
+      ],
+      "Has errors": [
+        "Tiene errores"
+      ],
+      "In progress": [
+        "En progreso"
       ],
       "Install app": [
         "Instale la aplicación"
@@ -1892,6 +1901,9 @@
       "Migration status": [
         "Estado de la migración"
       ],
+      "Not started": [
+        "No iniciado"
+      ],
       "Organization does not have enough seats available": [
         "La organización no tiene suficientes licencias disponibles"
       ],
@@ -1916,8 +1928,14 @@
       "Set up": [
         "Configurar"
       ],
+      "Settings": [
+        "Ajustes"
+      ],
       "Sign in to Google Workspace": [
         "Iniciar sesión en Google Workspace"
+      ],
+      "Status": [
+        "Estado"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Para migrar los datos de su organización, necesita instalar la aplicación Asistente de migración de ${ BRAND_NAME } desde Google Workspace Marketplace. Esto otorgará permiso a ${ BRAND_NAME } para copiar sus datos. Después de instalarla, vuelva aquí para continuar."
@@ -1927,6 +1945,9 @@
       ],
       "User": [
         "Usuario"
+      ],
+      "Users migrated": [
+        "Usuarios migrados"
       ],
       "Verify installation": [
         "Verificar instalación"
@@ -4043,6 +4064,9 @@
       "Code is incorrect or not valid anymore": [
         "El código es incorrecto o ya no es válido."
       ],
+      "Company name or personal name is required": [
+        "Se requiere el nombre de la empresa o el nombre personal"
+      ],
       "Couldn't load invoices. Please try again later.": [
         "No se pudieron cargar las facturas. Intente más tarde."
       ],
@@ -4177,11 +4201,11 @@
       "Invalid private key file": [
         "Archivo de clave privada inválido"
       ],
+      "Invalid VAT number": [
+        "Número de IVA incorrecto"
+      ],
       "Invalid verification code": [
         "Código de verificación inválido"
-      ],
-      "Invalid ZIP code": [
-        "Código ZIP inválido"
       ],
       "Label name cannot be empty.": [
         "El nombre de la etiqueta no puede estar vacío."
@@ -4255,6 +4279,9 @@
       ],
       "Please add a payment method before reactivating your subscription": [
         "Agregue un método de pago antes de reactivar su suscripción"
+      ],
+      "Please complete the billing details": [
+        "Complete los detalles de facturación"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configure un dominio personalizado antes de agregar direcciones."
@@ -4428,6 +4455,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
+      "This field is invalid": [
+        "Este campo no es válido"
+      ],
       "This field is required": [
         "Este campo es obligatorio"
       ],
@@ -4487,6 +4517,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Detuvimos la firma de DKIM por problemas con la configuración de DNS. Siga las instrucciones a continuación para reanudar la firma."
+      ],
+      "Wrong billing address": [
+        "Dirección de facturación incorrecta"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperación incorrecta. Vuelva a intentarlo o use otro método de recuperación."
@@ -6076,6 +6109,21 @@
       "(default)": [
         "(por defecto)"
       ],
+      "(eg. ChatGPT, Gemini, Perplexity)": [
+        "(ej. ChatGPT, Gemini, Perplexity)"
+      ],
+      "(eg. New York Times, BBC)": [
+        "(ej. New York Times, BBC)"
+      ],
+      "(eg. PCMag, TechRadar)": [
+        "(ej. PCMag, TechRadar)"
+      ],
+      "(eg. The Vergecast, Big Technology Podcast)": [
+        "(ej. The Vergecast, Big Technology Podcast)"
+      ],
+      "(formerly Twitter)": [
+        "(anteriormente Twitter)"
+      ],
       "**Enable automatic backups** for peace of mind": [
         "**Habilite las copias de seguridad automáticas** para su tranquilidad"
       ],
@@ -6204,6 +6252,9 @@
       "Affected user is on row": [
         "El usuario afectado está en la fila",
         "Los usuarios afectados están en las filas"
+      ],
+      "AI chatbot": [
+        "Chatbot de IA"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistente con tecnología de IA para ayudarle a crear mejores correos electrónicos de manera rápida y sin esfuerzo."
@@ -6360,6 +6411,9 @@
       ],
       "By leaving now, changes may not be saved": [
         "Al salir ahora, los cambios podrían no ser guardados"
+      ],
+      "Cancel": [
+        "Cancelar"
       ],
       "Can’t access your recovery email?": [
         "¿No puede acceder a el correo de recuperación?"
@@ -6738,6 +6792,9 @@
       "expires ${ expirationDate }": [
         "expira el ${ expirationDate }"
       ],
+      "Facebook": [
+        "Facebook"
+      ],
       "Failed to fetch logs.": [
         "Error el obtener los registros."
       ],
@@ -6755,6 +6812,9 @@
       ],
       "Free trial": [
         "Prueba gratuita"
+      ],
+      "Friends and family": [
+        "Familiares y amigos"
       ],
       "Gateway couldn't be deleted. Please try again": [
         "No se pudo eliminar la puerta de enlace. Intente de nuevo."
@@ -6788,6 +6848,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Vaya al proveedor de identidad, obtenga los metadatos de SAML para ${ appName } e impórtelos aquí."
+      ],
+      "Google or other search engine": [
+        "Google u otro motor de búsqueda"
       ],
       "Google Pay mark": [
         "Marca de Google Pay"
@@ -6900,6 +6963,9 @@
       ],
       "Inherited from parent folder": [
         "Heredada de la carpeta padre"
+      ],
+      "Instagram": [
+        "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Instale un archivo de configuración de País para conectarse a un servidor aleatorio en el país de su elección."
@@ -7151,6 +7217,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Los nuevos datos de conexión VPN dejarán de recopilarse y mostrarse."
       ],
+      "News or media article": [
+        "Noticia o artículo de prensa"
+      ],
       "Next billing date": [
         "Próxima fecha de facturación"
       ],
@@ -7233,6 +7302,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organice sus servidores dedicados en puertas de enlace y decida cuáles miembros pueden acceder a ellas."
+      ],
+      "Other": [
+        "Otro"
       ],
       "Other accounts": [
         "Otras cuentas"
@@ -7329,6 +7401,9 @@
       "Please select the folders you would like to import:": [
         "Seleccione las carpetas que quiere importar:"
       ],
+      "Please specify...": [
+        "Por favor, especifique..."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Intente de nuevo usando un método de pago diferente o contacte con el banco."
       ],
@@ -7346,6 +7421,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Se requiere suscripción Plus o Visionary"
+      ],
+      "Podcast": [
+        "Podcast"
       ],
       "Preference saved": [
         "Preferencia guardada"
@@ -7370,6 +7448,9 @@
       ],
       "Private AI assistant": [
         "Asistente de IA privado"
+      ],
+      "Product reviews, rankings, or guides": [
+        "Reseñas de productos, clasificaciones o guías"
       ],
       "Protected by Swiss privacy laws": [
         "Protegido por las leyes de privacidad de Suiza"
@@ -7412,6 +7493,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "La frase de recuperación no está asociada con ninguna clave desactualizada."
+      ],
+      "Reddit": [
+        "Reddit"
       ],
       "Referral link copied to your clipboard": [
         "Enlace de referencia copiado al portapapeles"
@@ -7588,6 +7672,9 @@
       "Storage used by this user": [
         "Almacenamiento usado por este usuario"
       ],
+      "Submit": [
+        "Enviar"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envíe un depósito usando la siguiente dirección o escanee el código QR. El depósito aparecerá en la cuenta después de la confirmación."
       ],
@@ -7637,6 +7724,9 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Gracias por apoyar nuestra misión de construir un mejor internet donde la privacidad y la libertad son primero."
       ],
+      "Thanks for the feedback!": [
+        "¡Gracias por sus comentarios!"
+      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "El mensaje de ${ boldDataLocked } ya no se mostrará, pero aún puede desbloquear los datos en ${ encryptionAndKeysLink }."
       ],
@@ -7678,6 +7768,9 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "El nombre será visible para sus usuarios mientras inicien sesión."
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
+        "El crédito por referencia puede otorgarse hasta 2 meses después de que finalice la prueba de su amistad, y si su amistad se suscribió a un plan."
       ],
       "The securest way to browse, stream, and be online.": [
         "La manera más segura de navegar, transmitir y estar en línea."
@@ -7795,6 +7888,9 @@
       ],
       "This will wipe all logs for your organization members.": [
         "Esto borrará todos los registros de los miembros de su organización."
+      ],
+      "TikTok": [
+        "TikTok"
       ],
       "to ${ product } Business": [
         "a ${ product } Business"
@@ -8144,6 +8240,9 @@
       "Writing assistant": [
         "Asistente de escritura"
       ],
+      "X": [
+        "X"
+      ],
       "You already have a free account": [
         "Ya tiene una cuenta gratuita"
       ],
@@ -8303,6 +8402,15 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "No podrá recuperar datos bloqueados usando los archivos de recuperación descargados. Esto también desactivará la recuperación desde un dispositivo."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Recibirá la recompensa en créditos 1 mes después de que su amistad se suscriba a un plan anual, y 2 meses después de que se suscriba a un plan mensual."
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "Recibirá la recompensa de crédito 1 mes después de que finalice la prueba de su amistad."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "Recibirá la recompensa de crédito 2 meses después de que finalice la prueba de su amistad."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Después se le cobrará ${ renewAmountStr } cada ${ renewCycle } mes. Puede cancelar en cualquier momento.",
         "Después se le cobrarán ${ renewAmountStr } cada ${ renewCycle } meses. Puede cancelar en cualquier momento."
@@ -8398,6 +8506,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Su prueba finalizará en ${ timeRemaining }"
+      ],
+      "YouTube": [
+        "YouTube"
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "También perderá acceso a las funciones de ${ boldPlanTitle }:"
@@ -11973,6 +12084,9 @@
       "Got it": [
         "Entiendo"
       ],
+      "I'm purchasing as a business": [
+        "Estoy comprando como empresa"
+      ],
       "Including ${ rate }% tax": [
         "Incluye un ${ rate }% de impuestos"
       ],
@@ -12053,9 +12167,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Esta acción ampliará la suscripción existente. Solo se le cargará por las adiciones y el tiempo restante del ciclo de facturación actual. La fecha de renovación de la suscripción no cambiará."
-      ],
-      "This number will be shown on all future invoices": [
-        "Este número se mostrará en todas las facturas futuras"
       ],
       "This offer is not available with your current plan.": [
         "Esta oferta no está disponible con el plan actual."
@@ -12266,6 +12377,9 @@
       "Confirm": [
         "Confirmar"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "domain.com": [
         "dominio.com"
       ],
@@ -12325,6 +12439,9 @@
       ],
       "Postal code": [
         "Código postal"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Buscar"
@@ -12499,6 +12616,101 @@
       ],
       "Unknown": [
         "Desconocido"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "No volver a mostrar esta oferta"
+      ],
+      "Get the deal": [
+        "Aproveche la oferta"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/mes"
+      ],
+      "15 GB storage": [
+        "15 GB de almacenamiento"
+      ],
+      "2 TB data storage": [
+        "2 TB de almacenamiento de datos"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces su plan actual"
+      ],
+      "3 TB data storage": [
+        "3 TB de almacenamiento de datos"
+      ],
+      "500 GB storage": [
+        "500 GB de almacenamiento"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Acceda a más de 15 000 servidores en más de 120 países"
+      ],
+      "Access advanced AI models": [
+        "Acceso a modelos de IA avanzados"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Todas las funciones premium de Mail, Pass, Drive, VPN y Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloquee anuncios, rastreadores y malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador de 2FA integrado"
+      ],
+      "Connect 10 devices at once": [
+        "Conecte 10 dispositivos a la vez"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Acceso completo a ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Historial de chat completo con búsqueda fácil y favoritos"
+      ],
+      "Individual accounts for 6 users": [
+        "Cuentas individuales para 6 usuarios"
+      ],
+      "Individual accounts for you and a partner": [
+        "Cuentas individuales para usted y su pareja"
+      ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
+      "Recover previous file versions": [
+        "Recupere versiones anteriores de archivos"
+      ],
+      "Stronger protection against cyber threats": [
+        "Mayor protección contra ciberamenazas"
+      ],
+      "Unlimited daily chats": [
+        "Chats diarios ilimitados"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Alias de hide-my-email ilimitados"
+      ],
+      "Use your own email domain": [
+        "Use su propio dominio de correo electrónico"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "una mariposa"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "durante 12 meses"
+      ],
+      "SPRING SALE": [
+        "OFERTA DE PRIMAVERA"
       ]
     },
     "Recovery Email": {
@@ -15573,6 +15785,9 @@
       "Home": [
         "Inicio"
       ],
+      "How did you find out about us?": [
+        "¿Cómo nos ha conocido?"
+      ],
       "How to choose a good logo": [
         "Cómo elegir un buen logo"
       ],
@@ -15903,6 +16118,9 @@
       ],
       "Spam, block, and allow lists": [
         "Listas de direcciones permitidas, bloqueadas y spam"
+      ],
+      "Spring Sale": [
+        "Oferta de primavera"
       ],
       "Start a new import": [
         "Iniciar una importación nueva"

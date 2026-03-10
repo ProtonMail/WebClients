@@ -284,6 +284,9 @@
       "Delete Gateway": [
         "Slett porttjener"
       ],
+      "Delete gateway": [
+        "Slett porttjener"
+      ],
       "Delete group": [
         "Slett gruppe"
       ],
@@ -319,6 +322,9 @@
       ],
       "Disable": [
         "Deaktiver"
+      ],
+      "Disable account monitor": [
+        "Deaktiver kontoovervåking"
       ],
       "Disable recovery phrase": [
         "Deaktiver gjenopprettingsfrase"
@@ -4037,6 +4043,9 @@
       "Code is incorrect or not valid anymore": [
         "Koden er feil eller ikke gyldig lenger"
       ],
+      "Company name or personal name is required": [
+        "Firmanavn eller personnavn er obligatorisk"
+      ],
       "Couldn't load invoices. Please try again later.": [
         "Kunne ikke laste inn fakturaer. Prøv igjen senere."
       ],
@@ -4171,11 +4180,11 @@
       "Invalid private key file": [
         "Ugyldig privat nøkkelfil"
       ],
+      "Invalid VAT number": [
+        "Ugyldig MVA-nummer"
+      ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
-      ],
-      "Invalid ZIP code": [
-        "Ugyldig postnummer"
       ],
       "Label name cannot be empty.": [
         "Etikettnavn kan ikke være tomt."
@@ -4249,6 +4258,9 @@
       ],
       "Please add a payment method before reactivating your subscription": [
         "Legg til en betalingsmåte før du reaktiverer abonnementet ditt"
+      ],
+      "Please complete the billing details": [
+        "Fyll ut faktureringsdetaljene"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Konfigurer et egendefinert domene før du legger til adresser."
@@ -4422,6 +4434,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette feltet overskrider maksimalt tillatt ${ maximumLength } tegn."
       ],
+      "This field is invalid": [
+        "Dette feltet er ugyldig"
+      ],
       "This field is required": [
         "Dette feltet er obligatorisk"
       ],
@@ -4481,6 +4496,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Vi sluttet å logge på DKIM på grunn av problemer med DNS-konfigurasjonen. Følg instruksjonene nedenfor for å gjenoppta signering."
+      ],
+      "Wrong billing address": [
+        "Feil faktureringsadresse"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Feil gjenopprettingsfrase. Prøv igjen eller bruk en annen gjenopprettingsmetode."
@@ -4924,6 +4942,9 @@
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Etter å ha forlatt planen din, vil denne brukeren bli flyttet til en ${ BRAND_NAME } Unlimited-plan med en 30-dagers gratis prøveperiode.*"
+      ],
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "Tildel lagringsplass til administratorkontoen. Du kan fordele lagringsplass for ytterligere brukere senere."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Opprett og behandle familiemedlemmer og tildel dem lagringsplass delt mellom ${ DRIVE_APP_NAME } og ${ MAIL_APP_NAME }."
@@ -6067,6 +6088,21 @@
       "(default)": [
         "(standard)"
       ],
+      "(eg. ChatGPT, Gemini, Perplexity)": [
+        "(f.eks. ChatGPT, Gemini, Perplexity)"
+      ],
+      "(eg. New York Times, BBC)": [
+        "(f.eks. New York Times, BBC)"
+      ],
+      "(eg. PCMag, TechRadar)": [
+        "(f.eks. PCMag, TechRadar)"
+      ],
+      "(eg. The Vergecast, Big Technology Podcast)": [
+        "(f.eks. The Vergecast, Big Technology Podcast)"
+      ],
+      "(formerly Twitter)": [
+        "(tidligere Twitter)"
+      ],
       "**Enable automatic backups** for peace of mind": [
         "**Aktiver automatisk sikkerhetskopiering** for trygghetens skyld"
       ],
@@ -6195,6 +6231,9 @@
       "Affected user is on row": [
         "Berørt bruker er på rad",
         "Berørte brukere er på radene"
+      ],
+      "AI chatbot": [
+        "KI-chatbot"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "KI-drevet assistent for å hjelpe deg med å lage bedre e-poster, raskt og enkelt."
@@ -6343,11 +6382,17 @@
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "Ta med dine meldinger, kontakter og kalendere til ${ BRAND_NAME }."
       ],
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Ved å deaktivere kontoovervåking sletter du også hele historikken din. Er du sikker på at du vil deaktivere dette?"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
       ],
       "By leaving now, changes may not be saved": [
         "Ved å forlate nå, kan det hende at endringer ikke lagres"
+      ],
+      "Cancel": [
+        "Avbryt"
       ],
       "Can’t access your recovery email?": [
         "Får du ikke tilgang til gjenopprettings-e-posten din?"
@@ -6726,6 +6771,9 @@
       "expires ${ expirationDate }": [
         "utløper ${ expirationDate }"
       ],
+      "Facebook": [
+        "Facebook"
+      ],
       "Failed to fetch logs.": [
         "Kunne ikke hente logger."
       ],
@@ -6743,6 +6791,15 @@
       ],
       "Free trial": [
         "Gratis prøveperiode"
+      ],
+      "Friends and family": [
+        "Venner og familie"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "Porttjeneren kunne ikke slettes. Prøv igjen"
+      ],
+      "Gateway deleted": [
+        "Porttjener slettet"
       ],
       "Gateway monitor": [
         "Overvåking av porttjener"
@@ -6770,6 +6827,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå til identitetsleverandøren, hent SAML-metadataene for ${ appName } og importer dem her."
+      ],
+      "Google or other search engine": [
+        "Google eller annen søkemotor"
       ],
       "Google Pay mark": [
         "Merk Google Pay"
@@ -6882,6 +6942,9 @@
       ],
       "Inherited from parent folder": [
         "Arvet fra overordnet mappe"
+      ],
+      "Instagram": [
+        "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installer en landkonfigureringsfil for å koble til en vilkårlig tjener i det landet du ønsker."
@@ -7133,6 +7196,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Nye VPN-tilkoblingsdata vil slutte å bli samlet inn og vist."
       ],
+      "News or media article": [
+        "Nyhets- eller medieartikkel"
+      ],
       "Next billing date": [
         "Neste faktureringsdato"
       ],
@@ -7215,6 +7281,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organiser dine dedikerte tjenere i porttjenere og bestem hvilke medlemmer som kan få tilgang til dem."
+      ],
+      "Other": [
+        "Annet"
       ],
       "Other accounts": [
         "Andre kontoer"
@@ -7311,6 +7380,9 @@
       "Please select the folders you would like to import:": [
         "Velg mappene du vil importere:"
       ],
+      "Please specify...": [
+        "Vennligst spesifiser..."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igjen ved å bruke en annen betalingsmåte eller kontakt banken din."
       ],
@@ -7328,6 +7400,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus eller Visionary-abonnement kreves"
+      ],
+      "Podcast": [
+        "Podkast"
       ],
       "Preference saved": [
         "Preferanse lagret"
@@ -7352,6 +7427,9 @@
       ],
       "Private AI assistant": [
         "Privat KI-assistent"
+      ],
+      "Product reviews, rankings, or guides": [
+        "Produktanmeldelser, rangeringer eller guider"
       ],
       "Protected by Swiss privacy laws": [
         "Beskyttet av sveitsiske personvernlover"
@@ -7394,6 +7472,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Gjenopprettingsfrase er ikke tilknyttet noen utdaterte nøkler."
+      ],
+      "Reddit": [
+        "Reddit"
       ],
       "Referral link copied to your clipboard": [
         "Vervekobling kopiert til utklippstavlen din"
@@ -7570,6 +7651,9 @@
       "Storage used by this user": [
         "Lagringsplass anvendt av denne brukeren"
       ],
+      "Submit": [
+        "Send inn"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Send inn et innskudd ved å bruke følgende adresse eller skann QR-koden. Innskuddet ditt vil gjenspeiles i kontoen din etter bekreftelse."
       ],
@@ -7619,6 +7703,9 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Takk for at du støtter vår misjon om å bygge et bedre internett der personvern og frihet kommer først."
       ],
+      "Thanks for the feedback!": [
+        "Takk for tilbakemeldingen!"
+      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked } meldingen vil ikke lenger bli vist, men du kan fremdeles låse opp dine data under ${ encryptionAndKeysLink }."
       ],
@@ -7660,6 +7747,9 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Navnet vil være synlig for brukerne dine mens de er innlogget."
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
+        "Vervekreditten kan tildeles opptil 2 måneder etter at vennens prøveperiode er avsluttet, og hvis vennen din abonnerte på en plan."
       ],
       "The securest way to browse, stream, and be online.": [
         "Den tryggeste måten å surfe, strømme og være på nettet på."
@@ -7777,6 +7867,9 @@
       ],
       "This will wipe all logs for your organization members.": [
         "Dette vil slette alle logger for organisasjonens medlemmer."
+      ],
+      "TikTok": [
+        "TikTok"
       ],
       "to ${ product } Business": [
         "til ${ product } Business"
@@ -8126,6 +8219,9 @@
       "Writing assistant": [
         "Skriveassistent"
       ],
+      "X": [
+        "X"
+      ],
       "You already have a free account": [
         "Du har allerede en gratis konto"
       ],
@@ -8285,6 +8381,15 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Du vil ikke kunne gjenopprette låste data ved hjelp av de nedlastede gjenopprettingsfilene. Dette vil også deaktivere enhetsbasert gjenoppretting."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Du mottar kredittbelønningen én måned etter at vennen din abonnerer på en årsplan, og to måneder etter at de abonnerer på en månedlig plan."
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "Du mottar kredittbelønningen én måned etter at prøveperioden til vennen din er over."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "Du mottar kredittbelønningen to måneder etter at prøveperioden til vennen din var over."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Du vil da bli fakturert hver ${ renewCycle } måned for ${ renewAmountStr }. Du kan avbryte når som helst.",
         "Du vil da bli fakturert hver ${ renewCycle } måned for ${ renewAmountStr }. Du kan avbryte når som helst."
@@ -8380,6 +8485,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Prøveperioden avsluttes om ${ timeRemaining }."
+      ],
+      "YouTube": [
+        "YouTube"
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
@@ -8879,6 +8987,9 @@
       "Emails (last 3 months)": [
         "E-poster (siste 3 måneder)"
       ],
+      "Emails (last 6 months)": [
+        "E-poster (siste 6 måneder)"
+      ],
       "Emails (last month)": [
         "E-poster (siste måned)"
       ],
@@ -9001,6 +9112,9 @@
       ],
       "Last 3 months only": [
         "Kun siste 3 måneder"
+      ],
+      "Last 6 months only": [
+        "Kun siste 6 måneder"
       ],
       "Last month only": [
         "Kun siste måned"
@@ -9820,6 +9934,9 @@
       ]
     },
     "Log preference": {
+      "Account monitor": [
+        "Kontoovervåking"
+      ],
       "Enable ${ reason }": [
         "Aktiver ${ reason }"
       ],
@@ -11946,6 +12063,9 @@
       "Got it": [
         "Skjønner"
       ],
+      "I'm purchasing as a business": [
+        "Jeg kjøper som en bedrift."
+      ],
       "Including ${ rate }% tax": [
         "Inkludert ${ rate }% MVA"
       ],
@@ -12026,9 +12146,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Denne handlingen utvider det eksisterende abonnementet. Du vil kun bli belastet for de nye tilleggene og den gjenværende tiden av den nåværende faktureringssyklusen. Fornyelsesdatoen for abonnementet ditt vil ikke bli endret."
-      ],
-      "This number will be shown on all future invoices": [
-        "Dette nummeret vil bli vist på alle fremtidige fakturaer"
       ],
       "This offer is not available with your current plan.": [
         "Dette tilbudet er ikke tilgjengelig med din nåværende plan."
@@ -12239,6 +12356,9 @@
       "Confirm": [
         "Bekreft"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "domain.com": [
         "domene.no"
       ],
@@ -12298,6 +12418,9 @@
       ],
       "Postal code": [
         "Postnummer"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Søk"
@@ -12472,6 +12595,101 @@
       ],
       "Unknown": [
         "Ukjent"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Ikke vis dette tilbudet igjen"
+      ],
+      "Get the deal": [
+        "Benytt deg av tilbudet"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "2 TB data storage": [
+        "2 TB datalagring"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagring: 40 ganger ditt nåværende abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB datalagring"
+      ],
+      "500 GB storage": [
+        "500 GB lagringsplass"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Tilgang til 15 000+ servere i 120+ land"
+      ],
+      "Access advanced AI models": [
+        "Tilgang til avanserte KI-modeller"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Alle premiumfunksjonene i Mail, Pass, Drive, VPN og Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokker annonser, sporere og skadelig programvare"
+      ],
+      "Built-in 2FA authenticator": [
+        "Innebygd 2FA-autentisering"
+      ],
+      "Connect 10 devices at once": [
+        "Koble til 10 enheter samtidig"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter er basert på standard månedspris. Abonnementet ditt fornyes til standard årspris når faktureringssyklusen utløper."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Full tilgang til ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Full chatlogg med enkelt søk og favoritter"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuelle kontoer for 6 brukere"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuelle kontoer for deg og en partner"
+      ],
+      "Online document editor": [
+        "Dokumentredigerer på nett"
+      ],
+      "Recover previous file versions": [
+        "Gjenopprett tidligere filversjoner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Sterkere beskyttelse mot cybertrusler"
+      ],
+      "Unlimited daily chats": [
+        "Ubegrenset antall daglige chatter"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ubegrensede mapper, etiketter og filtre"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Ubegrenset antall hide-my-email-aliaser"
+      ],
+      "Use your own email domain": [
+        "Bruk ditt eget e-postdomene"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "en sommerfugl"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "i 12 måneder"
+      ],
+      "SPRING SALE": [
+        "VÅRSALG"
       ]
     },
     "Recovery Email": {
@@ -15014,6 +15232,9 @@
       "Account": [
         "Konto"
       ],
+      "Account monitor": [
+        "Kontoovervåking"
+      ],
       "Account recovery": [
         "Kontogjenoppretting"
       ],
@@ -15359,6 +15580,9 @@
       "Device name": [
         "Enhetsnavn"
       ],
+      "Disable account monitor?": [
+        "Deaktivere kontoovervåking?"
+      ],
       "Disable two-factor authentication": [
         "Deaktiver tofaktorautentisering"
       ],
@@ -15539,6 +15763,9 @@
       ],
       "Home": [
         "Hjem"
+      ],
+      "How did you find out about us?": [
+        "Hvordan fant du ut om oss?"
       ],
       "How to choose a good logo": [
         "Hvordan velge en god logo"
@@ -15870,6 +16097,9 @@
       ],
       "Spam, block, and allow lists": [
         "Lister over søppelpost, blokkeringer og tillatelser"
+      ],
+      "Spring Sale": [
+        "Vårsalg"
       ],
       "Start a new import": [
         "Start en ny import"
@@ -16883,6 +17113,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Feilrapporter er ikke ende-til-ende-kryptert, ikke send noe sensitiv informasjon."
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Tjenere i denne porttjeneren vil gå inn i en 10-dagers deaktiveringsperiode. Disse tjenerne kan legges til en ny porttjener, men landet deres kan ikke endres."
       ],
       "Skip verification?": [
         "Hopp over bekreftelse?"

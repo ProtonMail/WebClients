@@ -1840,6 +1840,9 @@
       "Calendar": [
         "Ημερολόγιο"
       ],
+      "Completed": [
+        "Ολοκληρώθηκε"
+      ],
       "Configure migration": [
         "Διαμόρφωση μετεγκατάστασης"
       ],
@@ -1860,6 +1863,12 @@
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Εφαρμογή Google Marketplace για αντιγραφή δεδομένων στο ${ BRAND_NAME }"
+      ],
+      "Has errors": [
+        "Έχει σφάλματα"
+      ],
+      "In progress": [
+        "Σε εξέλιξη"
       ],
       "Install app": [
         "Εγκατάσταση εφαρμογής"
@@ -1892,6 +1901,9 @@
       "Migration status": [
         "Κατάσταση μετεγκατάστασης"
       ],
+      "Not started": [
+        "Δεν ξεκίνησε"
+      ],
       "Organization does not have enough seats available": [
         "Ο οργανισμός δε διαθέτει αρκετές θέσεις διαθέσιμες"
       ],
@@ -1916,8 +1928,14 @@
       "Set up": [
         "Ρύθμιση"
       ],
+      "Settings": [
+        "Ρυθμίσεις"
+      ],
       "Sign in to Google Workspace": [
         "Σύνδεση στο Google Workspace"
+      ],
+      "Status": [
+        "Κατάσταση"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Για να μεταφέρετε τα δεδομένα του οργανισμού σας, πρέπει να εγκαταστήσετε την εφαρμογή ${ BRAND_NAME } Migration Assistant από το Google Workspace Marketplace. Αυτό θα παραχωρήσει άδεια στο ${ BRAND_NAME } να αντιγράψει τα δεδομένα σας. Μετά την εγκατάσταση, επιστρέψτε εδώ για να συνεχίσετε."
@@ -1927,6 +1945,9 @@
       ],
       "User": [
         "Χρήστης"
+      ],
+      "Users migrated": [
+        "Οι χρήστες μεταφέρθηκαν"
       ],
       "Verify installation": [
         "Επαλήθευση εγκατάστασης"
@@ -4043,6 +4064,9 @@
       "Code is incorrect or not valid anymore": [
         "Ο κωδικός είναι λανθασμένος ή δεν είναι πλέον έγκυρος"
       ],
+      "Company name or personal name is required": [
+        "Απαιτείται το όνομα της εταιρείας ή το προσωπικό όνομα"
+      ],
       "Couldn't load invoices. Please try again later.": [
         "Δεν ήταν δυνατή η φόρτωση των τιμολογίων. Παρακαλούμε προσπαθήστε ξανά αργότερα."
       ],
@@ -4177,11 +4201,11 @@
       "Invalid private key file": [
         "Μη έγκυρο αρχείο ιδιωτικού κλειδιού"
       ],
+      "Invalid VAT number": [
+        "Μη έγκυρος αριθμός ΦΠΑ"
+      ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
-      ],
-      "Invalid ZIP code": [
-        "Μη έγκυρος Ταχυδρομικός Κωδικός"
       ],
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
@@ -4255,6 +4279,9 @@
       ],
       "Please add a payment method before reactivating your subscription": [
         "Παρακαλούμε προσθέστε μια μέθοδο πληρωμής πριν ενεργοποιήσετε ξανά τη συνδρομή σας"
+      ],
+      "Please complete the billing details": [
+        "Παρακαλούμε συμπληρώστε τα στοιχεία χρέωσης"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Παρακαλούμε διαμορφώσετε έναν προσαρμοσμένο τομέα πριν προσθέσετε διευθύνσεις"
@@ -4428,6 +4455,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
       ],
+      "This field is invalid": [
+        "Αυτό το πεδίο δεν είναι έγκυρο"
+      ],
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
       ],
@@ -4487,6 +4517,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Σταματήσαμε την υπογραφή DKIM λόγω προβλημάτων με τη ρύθμιση παραμέτρων DNS. Ακολουθήστε τις παρακάτω οδηγίες για να συνεχίσετε την υπογραφή."
+      ],
+      "Wrong billing address": [
+        "Λανθασμένη διεύθυνσης χρέωσης"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Λανθασμένη φράση ανάκτησης. Δοκιμάστε ξανά ή χρησιμοποιήστε άλλη μέθοδο ανάκτησης."
@@ -6076,6 +6109,21 @@
       "(default)": [
         "(προεπιλογή)"
       ],
+      "(eg. ChatGPT, Gemini, Perplexity)": [
+        "(π.χ. ChatGPT, Gemini, Perplexity)"
+      ],
+      "(eg. New York Times, BBC)": [
+        "(π.χ. New York Times, BBC)"
+      ],
+      "(eg. PCMag, TechRadar)": [
+        "(π.χ. PCMag, TechRadar)"
+      ],
+      "(eg. The Vergecast, Big Technology Podcast)": [
+        "(π.χ. The Vergecast, Big Technology Podcast)"
+      ],
+      "(formerly Twitter)": [
+        "(πρώην Twitter)"
+      ],
       "**Enable automatic backups** for peace of mind": [
         "**Ενεργοποιήστε αυτόματη δημιουργία αντιγράφων ασφαλείας** για να έχετε το κεφάλι σας ήσυχο"
       ],
@@ -6204,6 +6252,9 @@
       "Affected user is on row": [
         "Ο χρήστης που επηρεάζεται βρίσκεται στη γραμμή",
         "Οι χρήστες που επηρεάζονται βρίσκονται στις γραμμές"
+      ],
+      "AI chatbot": [
+        "Ρομπότ συνομιλίας Τεχνητής Νοημοσύνης (AI)"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Βοηθός με τεχνητή νοημοσύνη που σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα."
@@ -6360,6 +6411,9 @@
       ],
       "By leaving now, changes may not be saved": [
         "Φεύγοντας τώρα, οι αλλαγές ενδέχεται να μην αποθηκευτούν"
+      ],
+      "Cancel": [
+        "Ακύρωση"
       ],
       "Can’t access your recovery email?": [
         "Δεν μπορείτε να αποκτήσετε πρόσβαση στο email ανάκτησης;"
@@ -6738,6 +6792,9 @@
       "expires ${ expirationDate }": [
         "λήγει ${ expirationDate }"
       ],
+      "Facebook": [
+        "Facebook"
+      ],
       "Failed to fetch logs.": [
         "Αποτυχία ανάκτησης αρχείων καταγραφής."
       ],
@@ -6755,6 +6812,9 @@
       ],
       "Free trial": [
         "Δωρεάν δοκιμή"
+      ],
+      "Friends and family": [
+        "Φίλοι και οικογένεια"
       ],
       "Gateway couldn't be deleted. Please try again": [
         "Δεν ήταν δυνατή η διαγραφή της πύλης. Παρακαλούμε προσπαθήστε ξανά"
@@ -6788,6 +6848,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Μεταβείτε στον πάροχο ταυτότητάς σας, λάβετε τα μεταδεδομένα SAML για το ${ appName } και εισαγάγετε τα εδώ."
+      ],
+      "Google or other search engine": [
+        "Google ή άλλη μηχανή αναζήτησης"
       ],
       "Google Pay mark": [
         "Σήμα Google Pay"
@@ -6900,6 +6963,9 @@
       ],
       "Inherited from parent folder": [
         "Κληρονoμήθηκαν από το γονικό φάκελο"
+      ],
+      "Instagram": [
+        "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Εγκαταστήστε ένα αρχείο διαμόρφωσης χώρας για να συνδεθείτε σε έναν τυχαίο διακομιστή στη χώρα της επιλογής σας."
@@ -7151,6 +7217,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Τα δεδομένα νέων συνδέσεων VPN θα πάψουν να συλλέγονται και να εμφανίζονται."
       ],
+      "News or media article": [
+        "Ειδησεογραφικό ή δημοσιογραφικό άρθρο"
+      ],
       "Next billing date": [
         "Επόμενη ημερομηνία χρέωσης"
       ],
@@ -7233,6 +7302,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Οργανώστε τους αποκλειστικούς διακομιστές σας σε Πύλες και αποφασίστε ποια μέλη μπορούν να έχουν πρόσβαση σε αυτούς."
+      ],
+      "Other": [
+        "Άλλο"
       ],
       "Other accounts": [
         "Άλλοι λογαριασμοί"
@@ -7329,6 +7401,9 @@
       "Please select the folders you would like to import:": [
         "Παρακαλούμε επιλέξτε τους φακέλους που θα θέλετε να εισάγετε:"
       ],
+      "Please specify...": [
+        "Παρακαλούμε καθορίστε..."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Δοκιμάστε ξανά χρησιμοποιώντας διαφορετικό τρόπο πληρωμής ή επικοινωνήστε με την τράπεζά σας."
       ],
@@ -7346,6 +7421,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Απαιτείται συνδρομή Plus ή Visionary"
+      ],
+      "Podcast": [
+        "Podcast"
       ],
       "Preference saved": [
         "Η προτίμηση αποθηκεύτηκε"
@@ -7370,6 +7448,9 @@
       ],
       "Private AI assistant": [
         "Ιδιωτικός βοηθός AI"
+      ],
+      "Product reviews, rankings, or guides": [
+        "Κριτικές προϊόντων, κατατάξεις ή οδηγοί"
       ],
       "Protected by Swiss privacy laws": [
         "Προστατεύεται από τους Ελβετικούς νόμους περί απορρήτου"
@@ -7412,6 +7493,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Η φράση ανάκτησης δεν σχετίζεται με κάποιο παρωχημένο κλειδί."
+      ],
+      "Reddit": [
+        "Reddit"
       ],
       "Referral link copied to your clipboard": [
         "Ο σύνδεσμος παραπομπής αντιγράφηκε στο πρόχειρό σας"
@@ -7588,6 +7672,9 @@
       "Storage used by this user": [
         "Αποθηκευτικός χώρος σε χρήση από αυτόν τον χρήστη"
       ],
+      "Submit": [
+        "Υποβολή"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Υποβάλετε μια κατάθεση χρησιμοποιώντας την ακόλουθη διεύθυνση ή σαρώστε τον κωδικό QR. Η κατάθεσή σας θα εμφανιστεί στον λογαριασμό σας μετά την επιβεβαίωση."
       ],
@@ -7637,6 +7724,9 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Ευχαριστούμε που υποστηρίζετε την αποστολή μας να οικοδομήσουμε ένα καλύτερο διαδίκτυο όπου η ιδιωτικότητα και η ελευθερία έρχονται πρώτες."
       ],
+      "Thanks for the feedback!": [
+        "Ευχαριστούμε για τα σχόλιά σας!"
+      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Το μήνυμα ${ boldDataLocked } δεν θα εμφανίζεται πλέον, ωστόσο μπορείτε να ξεκλειδώσετε τα δεδομένα σας στο ${ encryptionAndKeysLink }."
       ],
@@ -7678,6 +7768,9 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Το όνομα θα είναι ορατό στους χρήστες σας ενώ είναι συνδεδεμένοι."
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
+        "Η πίστωσή παραπομπής μπορεί να δοθεί μέχρι 2 μήνες μετά το τέλος της δοκιμαστικής περιόδου του φίλου σας, και εάν ο φίλος σας εγγράφηκε σε ένα πλάνο."
       ],
       "The securest way to browse, stream, and be online.": [
         "Ο πιο ασφαλής τρόπος περιήγησης, streaming και να είσαι online"
@@ -7795,6 +7888,9 @@
       ],
       "This will wipe all logs for your organization members.": [
         "Αυτό θα διαγράψει όλα τα αρχεία καταγραφής για τα μέλη του οργανισμού σας."
+      ],
+      "TikTok": [
+        "TikTok"
       ],
       "to ${ product } Business": [
         "στο ${ product } Business"
@@ -8144,6 +8240,9 @@
       "Writing assistant": [
         "Βοηθός γραφής"
       ],
+      "X": [
+        "X"
+      ],
       "You already have a free account": [
         "Έχετε ήδη έναν δωρεάν λογαριασμό"
       ],
@@ -8303,6 +8402,15 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Δεν θα μπορείτε να ανακτήσετε κλειδωμένα δεδομένα χρησιμοποιώντας τα αρχεία ανάκτησης που λάβατε. Αυτό θα απενεργοποιήσει επίσης την ανάκτηση βάσει συσκευής."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Θα λάβετε την ανταμοιβή πίστωσης 1 μήνα αφότου ο φίλος σας εγγραφεί σε ετήσιο πλάνο και 2 μήνες αφότου εγγραφεί σε μηνιαίο πλάνο."
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "Θα λάβετε την ανταμοιβή πίστωσης 1 μήνα μετά το τέλος της δοκιμαστικής περιόδου του φίλου σας."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "Θα λάβετε την ανταμοιβή πίστωσης 2 μήνες μετά το τέλος της δοκιμαστικής περιόδου του φίλου σας."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή.",
         "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνες στα ${ renewAmountStr }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή."
@@ -8398,6 +8506,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Η δοκιμή σας θα τελειώσει σε ${ timeRemaining }."
+      ],
+      "YouTube": [
+        "YouTube"
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Θα χάσετε επίσης την πρόσβαση στις δυνατότητες του ${ boldPlanTitle }:"
@@ -11973,6 +12084,9 @@
       "Got it": [
         "Το κατάλαβα"
       ],
+      "I'm purchasing as a business": [
+        "Αγοράζω ως επιχείρηση"
+      ],
       "Including ${ rate }% tax": [
         "Συμπεριλαμβανόμενος ${ rate }% φόρος"
       ],
@@ -12053,9 +12167,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Αυτή η ενέργεια επεκτείνει την υπάρχουσα συνδρομή. Θα χρεωθείτε μόνο για τα νέα πρόσθετα και τον υπόλοιπο χρόνο του τρέχοντος κύκλου χρέωσης. Η ημερομηνία ανανέωσης της συνδρομής σας δε θα αλλάξει."
-      ],
-      "This number will be shown on all future invoices": [
-        "Αυτός ο αριθμός θα εμφανίζεται σε όλα τα μελλοντικά τιμολόγια."
       ],
       "This offer is not available with your current plan.": [
         "Αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
@@ -12266,6 +12377,9 @@
       "Confirm": [
         "Επιβεβαίωση"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "domain.com": [
         "domain.com"
       ],
@@ -12325,6 +12439,9 @@
       ],
       "Postal code": [
         "Τ.Κ."
+      ],
+      "San Francisco": [
+        "Σαν Φρανσίσκο"
       ],
       "Search": [
         "Αναζήτηση"
@@ -15573,6 +15690,9 @@
       "Home": [
         "Αρχική"
       ],
+      "How did you find out about us?": [
+        "Πώς μάθατε για εμάς;"
+      ],
       "How to choose a good logo": [
         "Πώς να επιλέξετε ένα καλό λογότυπο"
       ],
@@ -15903,6 +16023,9 @@
       ],
       "Spam, block, and allow lists": [
         "Λίστες ανεπιθύμητης αλληλογραφίας, αποκλεισμού και αποδοχής"
+      ],
+      "Spring Sale": [
+        "Ανοιξιάτικες Εκπτώσεις"
       ],
       "Start a new import": [
         "Ξεκινήστε μια νέα εισαγωγή"

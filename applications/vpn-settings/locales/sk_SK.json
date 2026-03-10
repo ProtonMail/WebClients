@@ -284,6 +284,9 @@
       "Delete Gateway": [
         "Odstrániť bránu"
       ],
+      "Delete gateway": [
+        "Vymazať bránu"
+      ],
       "Delete group": [
         "Vymazať skupinu"
       ],
@@ -4092,6 +4095,9 @@
       "Code is incorrect or not valid anymore": [
         "Kód je nesprávny alebo už nie je platný"
       ],
+      "Company name or personal name is required": [
+        "Názov spoločnosti alebo meno je povinné"
+      ],
       "Couldn't load invoices. Please try again later.": [
         "Nie je možné načítať faktúry. Skúste to neskôr, prosím."
       ],
@@ -4230,11 +4236,11 @@
       "Invalid private key file": [
         "Neplatný súbor súkromného kľúča"
       ],
+      "Invalid VAT number": [
+        "Naplatné IČ DPH"
+      ],
       "Invalid verification code": [
         "Nesprávny overovací kód"
-      ],
-      "Invalid ZIP code": [
-        "Neplatné PSČ"
       ],
       "Label name cannot be empty.": [
         "Názov štítku nesmie byť prázdny."
@@ -4310,6 +4316,9 @@
       ],
       "Please add a payment method before reactivating your subscription": [
         "Pred opätovnou aktiváciou predplatného pridajte spôsob platby."
+      ],
+      "Please complete the billing details": [
+        "Doplňte fakturačné údaje, prosím"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Pred pridaním adries nastavte vlastnú doménu."
@@ -4485,6 +4494,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
       ],
+      "This field is invalid": [
+        "Toto pole je neplatné"
+      ],
       "This field is required": [
         "Povinné pole"
       ],
@@ -4544,6 +4556,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Zastavili sme podpisovanie DKIM kvôli problémom s vašou konfiguráciou DNS. Ak chcete pokračovať v podpisovaní, postupujte podľa pokynov nižšie."
+      ],
+      "Wrong billing address": [
+        "Nesprávna fakturačná adresa"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Zlá obnovovacia fráza. Skúste to znovu, alebo použite inú metódu obnovenia."
@@ -4999,6 +5014,9 @@
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Po opustení vášho plánu bude tento používateľ presunutý na plán ${ BRAND_NAME } Unlimited s 30-dňovou bezplatnou skúšobnou verziou.*"
+      ],
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "Priradťte úložisko k účtu správcu. Neskôr môžete distribuovať úložisko pre ďalších používateľov."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Vytvárajte a spravujte členov rodiny a priraďte im úložný priestor zdieľaný medzi ${ DRIVE_APP_NAME } a ${ MAIL_APP_NAME }"
@@ -6230,6 +6248,21 @@
       "(default)": [
         "(predvolené)"
       ],
+      "(eg. ChatGPT, Gemini, Perplexity)": [
+        "(napr. ChatGPT, Gemini, Perplexity)"
+      ],
+      "(eg. New York Times, BBC)": [
+        "(napr. New York Times, BBC)"
+      ],
+      "(eg. PCMag, TechRadar)": [
+        "(napr. PCMag, TechRadar)"
+      ],
+      "(eg. The Vergecast, Big Technology Podcast)": [
+        "(napr. The Vergecast, Big Technology Podcast)"
+      ],
+      "(formerly Twitter)": [
+        "(bývalý Twitter)"
+      ],
       "**Enable automatic backups** for peace of mind": [
         "**Povoliť automatické zálohy** pre pokoj v duši"
       ],
@@ -6370,6 +6403,9 @@
         "Zasiahnutí používatelia sú v riadkoch",
         "Zasiahnutí používatelia sú v riadkoch",
         "Zasiahnutí používatelia sú v riadkoch"
+      ],
+      "AI chatbot": [
+        "AI chatbot"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistent s umelou inteligenciou vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
@@ -6532,6 +6568,9 @@
       ],
       "By leaving now, changes may not be saved": [
         "Pokiaľ teraz opustíte stránku, zmeny nemusia byť uložené"
+      ],
+      "Cancel": [
+        "Zrušiť"
       ],
       "Can’t access your recovery email?": [
         "Nemáte prístup k emailu na obnovenie?"
@@ -6920,6 +6959,9 @@
       "expires ${ expirationDate }": [
         "vyprší ${ expirationDate }"
       ],
+      "Facebook": [
+        "Facebook"
+      ],
       "Failed to fetch logs.": [
         "Načítanie záznamov zlyhalo."
       ],
@@ -6937,6 +6979,15 @@
       ],
       "Free trial": [
         "Bezplatné skúšobné obdobie"
+      ],
+      "Friends and family": [
+        "Priatelia a rodina"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "Brána nemohla byť vymazaná. Skúste to znovu, prosím."
+      ],
+      "Gateway deleted": [
+        "Brána vymazaná"
       ],
       "Gateway monitor": [
         "Monitorovanie brány"
@@ -6964,6 +7015,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Prejdite k vášmu poskytovateľovi identity, stiahnite metadáta SAML pre ${ appName } a importujte ich sem."
+      ],
+      "Google or other search engine": [
+        "Google alebo iný vyhľadávač"
       ],
       "Google Pay mark": [
         "Google Pay mark"
@@ -7078,6 +7132,9 @@
       ],
       "Inherited from parent folder": [
         "Zdedené z nadradeného priečinka"
+      ],
+      "Instagram": [
+        "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Nainštalujte konfiguračný súbor krajiny a pripojte sa k náhodnému serveru v krajine podľa vašeho výberu."
@@ -7331,6 +7388,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Nové údaje o VPN pripojení sa prestanú zhromažďovať a zobrazovať."
       ],
+      "News or media article": [
+        "Správy alebo článok v médiách"
+      ],
       "Next billing date": [
         "Dátum ďalšej fakturácie"
       ],
@@ -7417,6 +7477,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Usporiadajte dedikované servery do brán a rozhodnite, ktorí členovia k nim môžu pristupovať."
+      ],
+      "Other": [
+        "Iné"
       ],
       "Other accounts": [
         "Ďalšie účty"
@@ -7517,6 +7580,9 @@
       "Please select the folders you would like to import:": [
         "Vyberte priečinky, ktoré chcete importovať:"
       ],
+      "Please specify...": [
+        "Upresnite, prosím..."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Skúste to znova pomocou iného spôsobu platby, alebo kontaktujte svoju banku."
       ],
@@ -7534,6 +7600,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Je vyžadované predplatné Plus alebo Visionary"
+      ],
+      "Podcast": [
+        "Podcast"
       ],
       "Preference saved": [
         "Nastavenie uložené"
@@ -7558,6 +7627,9 @@
       ],
       "Private AI assistant": [
         "Súkromný AI asistent"
+      ],
+      "Product reviews, rankings, or guides": [
+        "Recenzie produktov, hodnotenia alebo sprievodcovia"
       ],
       "Protected by Swiss privacy laws": [
         "Chránené švajčiarskymi zákonmi o ochrane osobných údajov"
@@ -7600,6 +7672,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Fráza na obnovenie nie je spojená so žiadnymi zastaralými kľúčmi."
+      ],
+      "Reddit": [
+        "Reddit"
       ],
       "Referral link copied to your clipboard": [
         "Odkaz skopírovaný do schránky"
@@ -7778,6 +7853,9 @@
       "Storage used by this user": [
         "Úložisko používané týmto používateľom"
       ],
+      "Submit": [
+        "Odoslať"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Odošlite zálohu pomocou nasledujúcej adresy, alebo naskenujte QR kód. Váš vklad sa po potvrdení prejaví na vašom účte."
       ],
@@ -7829,6 +7907,9 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Ďakujeme, že podporujete naše poslanie budovať lepší internet, v ktorom sú súkromie a sloboda na prvom mieste."
       ],
+      "Thanks for the feedback!": [
+        "Ďakujeme za spätnú väzbu!"
+      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Správa ${ boldDataLocked } sa už nebude zobrazovať, no svoje údaje môžete stále odomknúť pomocou ${ encryptionAndKeysLink }."
       ],
@@ -7876,6 +7957,9 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Meno bude viditeľné pre vašich používateľov, keď budú prihlásení."
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
+        "Odmena za odporúčanie môže byť udelená do 2 mesiacov po skončení skúšobnej doby vášho priateľa, ak si váš priateľ predplatil niektorý z plánov."
       ],
       "The securest way to browse, stream, and be online.": [
         "Najbezpečnejší spôsob, ako prehliadať, streamovať a byť online."
@@ -7993,6 +8077,9 @@
       ],
       "This will wipe all logs for your organization members.": [
         "Toto vymaže všetky záznamy pre členov vašej organizácie."
+      ],
+      "TikTok": [
+        "TikTok"
       ],
       "to ${ product } Business": [
         "na ${ product } Business"
@@ -8342,6 +8429,9 @@
       "Writing assistant": [
         "Asistent písania"
       ],
+      "X": [
+        "X"
+      ],
       "You already have a free account": [
         "Už máte bezplatný účet"
       ],
@@ -8519,6 +8609,15 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Pomocou stiahnutých súborov na obnovu nebudete môcť obnoviť uzamknuté údaje. Tým sa zakáže aj obnovenie na základe zariadenia."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Kreditné odmeny získate 1 mesiac po tom, ako si váš priateľ predplatí ročný plán, a 2 mesiace po tom, ako si predplatí mesačný plán."
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "Odmenu v podobe kreditu dostanete 1 mesiac po skončení skúšobnej doby vášho priateľa."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "Odmenu v podobe kreditu dostanete 2 mesiace po skončení skúšobnej doby vášho priateľa."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
         "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
@@ -8620,6 +8719,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše skúšobné obdobie končí ${ timeRemaining }."
+      ],
+      "YouTube": [
+        "YouTube"
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Taktiež stratíte prístup k funkciám ${ boldPlanTitle }:"
@@ -12293,6 +12395,9 @@
       "Got it": [
         "Rozumiem"
       ],
+      "I'm purchasing as a business": [
+        "Nakupujem ako firma"
+      ],
       "Including ${ rate }% tax": [
         "Vrátane ${ rate }% dane"
       ],
@@ -12385,9 +12490,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Táto akcia rozširuje existujúce predplatné. Bude vám účtovaný poplatok len za nové doplnky a zostávajúci čas aktuálneho fakturačného obdobia. Dátum obnovenia vášho predplatného sa nezmení."
-      ],
-      "This number will be shown on all future invoices": [
-        "Toto číslo bude uvedené na všetkých budúcich faktúrach."
       ],
       "This offer is not available with your current plan.": [
         "Táto ponuka nie je s vaším aktuálnym programom dostupná."
@@ -12598,6 +12700,9 @@
       "Confirm": [
         "Potvrdiť"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "domain.com": [
         "domena.sk"
       ],
@@ -12657,6 +12762,9 @@
       ],
       "Postal code": [
         "PSČ"
+      ],
+      "San Francisco": [
+        "San Francisko"
       ],
       "Search": [
         "Hľadať"
@@ -16039,6 +16147,9 @@
       "Home": [
         "Domov"
       ],
+      "How did you find out about us?": [
+        "Ako ste sa o nás dozvedeli?"
+      ],
       "How to choose a good logo": [
         "Ako vybrať dobré logo"
       ],
@@ -16371,6 +16482,9 @@
       ],
       "Spam, block, and allow lists": [
         "Spam, blokované a povolené"
+      ],
+      "Spring Sale": [
+        "Jarná akcia"
       ],
       "Start a new import": [
         "Zahájiť nový import"
@@ -17414,6 +17528,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlásenia nie sú zabezpečené end-to-end šifrovaním, neposielajte žiadne citlivé informácie, prosím."
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Servery v tejto bráne vstúpia do 10-dňového obdobia deaktivácie. Tieto servery je možné pridať do novej brány, ale ich krajinu nie je možné zmeniť."
       ],
       "Skip verification?": [
         "Preskočiť overenie?"
