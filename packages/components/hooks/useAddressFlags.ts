@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { setAddressFlags } from '@proton/account/addressKeys/actions';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getAddressFlagsData } from '@proton/shared/lib/helpers/address';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 
 import useErrorHandler from './useErrorHandler';
 import useNotifications from './useNotifications';
@@ -18,9 +18,9 @@ interface ReturnValue {
     }) => Promise<void>;
 }
 
-export type UseAddressFlags = (address?: Address) => ReturnValue;
+export type UseAddressFlags = (address: Address, user: UserModel) => ReturnValue;
 
-const useAddressFlags: UseAddressFlags = (initialAddress) => {
+const useAddressFlags: UseAddressFlags = (initialAddress, user) => {
     const dispatch = useDispatch();
     const handleError = useErrorHandler();
     const { createNotification } = useNotifications();
@@ -43,7 +43,7 @@ const useAddressFlags: UseAddressFlags = (initialAddress) => {
     );
 
     return {
-        data: getAddressFlagsData(initialAddress),
+        data: getAddressFlagsData(initialAddress, user),
         handleSetAddressFlags,
     };
 };
