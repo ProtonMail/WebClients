@@ -555,6 +555,9 @@
       "Help and resources": [
         "지원 및 도움말"
       ],
+      "Hide": [
+        "숨기기"
+      ],
       "Hide advanced PGP settings": [
         "고급 PGP 설정 숨기기"
       ],
@@ -3326,8 +3329,14 @@
       "Cannot export this contact": [
         "이 연락처를 불러올 수 없음"
       ],
+      "Cannot find move target": [
+        "이동 대상을 찾을 수 없음"
+      ],
       "Checkout expired, please try again": [
         "체크아웃 만료됨, 다시 시도하십시오"
+      ],
+      "Company name or personal name is required": [
+        "법인명 또는 개인 성명을 입력해야 합니다."
       ],
       "Contact could not be saved": [
         "연락처를 저장할 수 없습니다"
@@ -3412,6 +3421,9 @@
       ],
       "Failed loading group members": [
         "그룹 구성원을 로드하는 데 실패했습니다"
+      ],
+      "Failed to change permissions settings": [
+        "권한 설정을 변경할 수 없습니다."
       ],
       "Failed to copy photo to album": [
         "사진을 앨범에 복사하지 못했습니다."
@@ -3524,11 +3536,11 @@
       "Invalid public key file": [
         "공개 키 파일이 유효하지 않습니다"
       ],
+      "Invalid VAT number": [
+        "유효하지 않은 VAT 넘버"
+      ],
       "Invalid verification code": [
         "잘못된 검증 코드"
-      ],
-      "Invalid ZIP code": [
-        "유효하지 않은 우편 번호"
       ],
       "Item content cannot exceed 40KB": [
         "항목 콘텐츠가 40KB를 초과할 수 없습니다."
@@ -3604,6 +3616,9 @@
       ],
       "Please activate your search again": [
         "다시 검색을 활성화 해주세요"
+      ],
+      "Please complete the billing details": [
+        "청구 상세 정보를 입력해 주세요."
       ],
       "Please enter a valid postal code": [
         "유효한 우편 번호를 입력해 주세요"
@@ -3770,6 +3785,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "이 필드가 최대 ${ maximumLength } 글자를 초과합니다."
       ],
+      "This field is invalid": [
+        "이 필드는 유효하지 않습니다"
+      ],
       "This field is required": [
         "필수 기재 항목입니다"
       ],
@@ -3857,11 +3875,17 @@
       "We were not able to load some search results": [
         "일부 검색 결과를 불러올 수 없습니다."
       ],
+      "We were not able to load the file history": [
+        "파일 기록을 불러올 수 없습니다."
+      ],
       "We were not able to load the folder contents": [
         "폴더의 내용을 불러올 수 없습니다"
       ],
       "We're sorry, but free upload is not available right now.": [
         "죄송합니다. 현재 무료 업로드를 사용할 수 없습니다."
+      ],
+      "Wrong billing address": [
+        "청구 주소가 잘못되었습니다"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
@@ -4287,7 +4311,15 @@
         "초고속 속도"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입해 주세요."
+      ],
       "Security key": [
         "보안 키"
       ]
@@ -5124,11 +5156,26 @@
       "Calendar side panel": [
         "캘린더 사이드 패널"
       ],
+      "Can edit": [
+        "편집 가능"
+      ],
+      "Can edit and manage access": [
+        "편집 및 접근 권한 관리 가능"
+      ],
+      "Can view and edit": [
+        "보거나 편집 가능"
+      ],
+      "Can view only": [
+        "보기만 가능"
+      ],
       "Can't move a folder into itself": [
         "폴더를 자기자신 안으로 옮길 수 없습니다."
       ],
       "Can't rename to same name": [
         "동일한 이름으로 변경할 수 없습니다."
+      ],
+      "Can't write into folder": [
+        "폴더에 쓸 수 없습니다."
       ],
       "Canceled": [
         "취소됨"
@@ -5334,6 +5381,9 @@
       "Duplicate key updated": [
         "중복 키 업데이트됨"
       ],
+      "Each code can only be used once": [
+        "각 코드는 한 번씩만 유효합니다."
+      ],
       "Edit email address": [
         "이메일 주소 변경"
       ],
@@ -5471,9 +5521,6 @@
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "${ DRIVE_APP_NAME }에 대하여 알아보면 저장공간 3GB를 드립니다! 오늘 해봅시다."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "먼저 \"내 파일\"로 이동하여 파일을 업로드해보세요."
       ],
       "Google Pay mark": [
         "Google Pay 표시"
@@ -6540,6 +6587,9 @@
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "동기화된 기기인 ${ deviceName }을(를) 제거시 이 기기에서 내 컴퓨터에 추가된 모든 폴더는 ${ DRIVE_APP_NAME }에서 영구적으로 삭제됩니다."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2단계 인증을 설정하면, 인증 앱에 접근할 수 없을때 로그인시 사용할 수 있는 복구 코드를 제공해 드립니다."
+      ],
       "who": [
         "누가"
       ],
@@ -6665,6 +6715,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } 전까지 취소하는 경우 결제되지 않습니다."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "친구가 연간 플랜을 구독하고 1개월 후, 월간 요금제에 구독하고 2개월 후에 크레딧 보상을 받게 됩니다."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "매 ${ renewCycle }개월마다 ${ renewAmountStr }(으)로 청구됩니다. 언제든지 취소할 수 있습니다."
@@ -7132,6 +7185,9 @@
       "Emails (last 3 months)": [
         "이메일 (지난 3개월)"
       ],
+      "Emails (last 6 months)": [
+        "이메일 (지난 6개월)"
+      ],
       "Emails (last month)": [
         "이마일 (지난 달)"
       ],
@@ -7230,6 +7286,9 @@
       ],
       "Last 3 months only": [
         "지난 3개월"
+      ],
+      "Last 6 months only": [
+        "지난 6개월"
       ],
       "Last month only": [
         "지난 달"
@@ -8173,6 +8232,9 @@
       ],
       "${ n } VPN connection": [
         "${ n } 개 VPN 연결"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-일 파일 버전 기록"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin 평생 이용권"
@@ -9224,6 +9286,12 @@
       "Selected photo(s) already in \"${ albumName }\"": [
         "선택한 사진이 이미 “${ albumName }”에 존재합니다."
       ],
+      "Setting updated. Editors can change permissions and share.": [
+        "설정이 업데이트되었습니다. 편집자가 권한이나 공유 사항을 변경할 수 있습니다."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "설정이 업데이트되었습니다. 편집자는 권한이나 공유 사항을 변경할 수 없습니다."
+      ],
       "Share invitation accepted successfully": [
         "초대장 공유가 성공적으로 수락되었습니다."
       ],
@@ -9817,6 +9885,9 @@
       "Got it": [
         "확인했습니다"
       ],
+      "I'm purchasing as a business": [
+        "사업체 용도로 구매합니다"
+      ],
       "Including ${ rate }% tax": [
         "세금 ${ rate }% 포함"
       ],
@@ -9882,9 +9953,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "이 작업은 기존 구독을 확장합니다. 새로운 추가 기능과 현재 결제일의 남은 기간에 대해서만 청구됩니다. 회워님의 구독 비용 연장 날짜는 변경되지 않습니다."
-      ],
-      "This number will be shown on all future invoices": [
-        "이 번호는 향후 모든 송장에 표시됩니다."
       ],
       "This offer is not available with your current plan.": [
         "현재 플랜에서 이 제안이 제공되지 않습니다."
@@ -10080,6 +10148,9 @@
       "Company name": [
         "법인 이름"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "예, "
       ],
@@ -10142,6 +10213,9 @@
       ],
       "Postal code": [
         "우편번호"
+      ],
+      "San Francisco": [
+        "샌프란시스코"
       ],
       "Search for group name": [
         "그룹 이름을 위해 검색"
@@ -10275,6 +10349,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "${ BRAND_NAME } 의 공식 이메일"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "이 제안을 다시 보지 않기"
+      ],
+      "Get the deal": [
+        "할인 받기"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/월"
+      ],
+      "15 GB storage": [
+        "15 GB 저장공간"
+      ],
+      "2 TB data storage": [
+        "2 TB 데이터 저장공간"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 저장공간: 현재 요금제의 40배"
+      ],
+      "3 TB data storage": [
+        "3 TB 데이터 저장공간"
+      ],
+      "500 GB storage": [
+        "500 GB 저장공간"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "120개국 이상에서 15,000개 이상의 서버에 접근"
+      ],
+      "Access advanced AI models": [
+        "고급 AI 모델 이용"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Mail, Pass, 드라이브, VPN 및 캘린더의 모든 premium 기능"
+      ],
+      "Block ads, trackers, and malware": [
+        "광고, 트래커 및 멀웨어 차단"
+      ],
+      "Built-in 2FA authenticator": [
+        "내장형 2단계 인증기"
+      ],
+      "Connect 10 devices at once": [
+        "한 번에 기기 10대 연결"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }에 대한 완전한 접근"
+      ],
+      "Full chat history with easy search and favorites": [
+        "간편한 검색 및 즐겨찾기 기능이 포함된 전체 채팅 기록"
+      ],
+      "Individual accounts for 6 users": [
+        "6인용 개별 계정"
+      ],
+      "Individual accounts for you and a partner": [
+        "귀하와 파트너를 위한 개별 계정"
+      ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
+      "Recover previous file versions": [
+        "이전 파일 버전 복구"
+      ],
+      "Stronger protection against cyber threats": [
+        "사이버 위협에 대한 더욱 강력한 보호"
+      ],
+      "Unlimited daily chats": [
+        "무제한 일일 채팅"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "무제한 폴더, 라벨 및 필터"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "무제한 hide-my-email 별칭"
+      ],
+      "Use your own email domain": [
+        "나만의 이메일 도메인 사용"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "나비"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "12개월 동안"
+      ],
+      "SPRING SALE": [
+        "봄맞이 세일"
       ]
     },
     "Referral": {
@@ -10868,6 +11037,16 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "이제 데이터를 안전하게 지키면서 쉽게 드라이브 파일을 검색할 수 있습니다."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "2026년 봄맞이 할인"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "봄맞이 할인"
       ]
     },
     "sso": {
@@ -12468,6 +12647,9 @@
       "Sort files/folders": [
         "파일/폴더 분류"
       ],
+      "Spring Sale": [
+        "봄맞이 할인"
+      ],
       "Start a new import": [
         "신규 불러오기 시작"
       ],
@@ -12653,9 +12835,6 @@
       ],
       "You have inaccessible files": [
         "접근이 불가능한 파일이 있습니다"
-      ],
-      "You have no files to share": [
-        "공유할 파일이 없습니다"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."

@@ -3350,6 +3350,9 @@
       "Checkout expired, please try again": [
         "Kassan löpt ut, försök igen"
       ],
+      "Company name or personal name is required": [
+        "Företagsnamn eller personnamn är obligatoriskt"
+      ],
       "Contact could not be saved": [
         "Kontakten kunde inte sparas"
       ],
@@ -3552,9 +3555,6 @@
       ],
       "Invalid verification code": [
         "Ogiltig verifieringskod"
-      ],
-      "Invalid ZIP code": [
-        "Ogiltigt postnummer"
       ],
       "Item content cannot exceed 40KB": [
         "Objektinnehåll får inte överstiga 40 kB"
@@ -3798,6 +3798,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Detta fält överskrider det maximala antalet ${ maximumLength } tecken."
       ],
+      "This field is invalid": [
+        "Detta fält är ogiltigt"
+      ],
       "This field is required": [
         "Detta fält är obligatoriskt"
       ],
@@ -3885,11 +3888,17 @@
       "We were not able to load some search results": [
         "Vi kunde inte ladda några sökresultat"
       ],
+      "We were not able to load the file history": [
+        "Vi kunde inte ladda filhistoriken"
+      ],
       "We were not able to load the folder contents": [
         "Vi kunde inte ladda mappens innehåll"
       ],
       "We're sorry, but free upload is not available right now.": [
         "Vi beklagar, men gratis uppladdning är inte tillgänglig just nu."
+      ],
+      "Wrong billing address": [
+        "Fel faktureringsadress"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
@@ -5578,9 +5587,6 @@
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "Lär känna ${ DRIVE_APP_NAME } och tjäna din bonus på 3 GB lagringsutrymme! Passa på idag."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Gå till \"Mina filer\" och ladda upp några filer först."
       ],
       "Google Pay mark": [
         "Google Pay-märke"
@@ -9462,6 +9468,12 @@
       "Selected photo(s) already in \"${ albumName }\"": [
         "Valda foton finns redan i ”${ albumName }”"
       ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Inställning uppdaterad. Redaktörer kan ändra behörigheter och dela."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Inställning uppdaterad. Redaktörer kan inte ändra behörigheter eller dela."
+      ],
       "Share invitation accepted successfully": [
         "Delningsinbjudan accepterades"
       ],
@@ -10057,6 +10069,9 @@
       "Got it": [
         "Jag förstår"
       ],
+      "I'm purchasing as a business": [
+        "Jag köper som ett företag"
+      ],
       "Including ${ rate }% tax": [
         "Inklusive ${ rate } % moms"
       ],
@@ -10128,9 +10143,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Denna åtgärd utökar den befintliga prenumerationen. Du kommer endast att debiteras för de nya utökningarna och den återstående tiden av den nuvarande faktureringsperioden. Förnyelsedatumet för din prenumeration kommer inte att ändras."
-      ],
-      "This number will be shown on all future invoices": [
-        "Detta nummer kommer att visas på alla framtida fakturor"
       ],
       "This offer is not available with your current plan.": [
         "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
@@ -10320,6 +10332,9 @@
       "Company name": [
         "Företagsnamn"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "T.ex., "
       ],
@@ -10382,6 +10397,9 @@
       ],
       "Postal code": [
         "Postnummer"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search for group name": [
         "Sök efter gruppnamn"
@@ -10519,6 +10537,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Officiell e-post från ${ BRAND_NAME }"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Visa inte detta erbjudande igen"
+      ],
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/månad"
+      ],
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "2 TB data storage": [
+        "2 TB lagringsutrymme"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
+      ],
+      "3 TB data storage": [
+        "3 TB lagringsutrymme"
+      ],
+      "500 GB storage": [
+        "500 GB lagringsutrymme"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Åtkomst till 15 000+ servrar i 120+ länder"
+      ],
+      "Access advanced AI models": [
+        "Få åtkomst till avancerade AI-modeller"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Alla premiumfunktioner i Mail, Pass, Drive, VPN och Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blockera annonser, spårare och skadlig kod"
+      ],
+      "Built-in 2FA authenticator": [
+        "Inbyggd 2FA-autentiserare"
+      ],
+      "Connect 10 devices at once": [
+        "Anslut 10 enheter samtidigt"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter baseras på ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Full åtkomst till ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Fullständig chatthistorik med enkelt sök och favoriter"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuella konton för 6 användare"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuella konton för dig och en partner"
+      ],
+      "Online document editor": [
+        "Dokumentredigerare online"
+      ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Starkare skydd mot cyberhot"
+      ],
+      "Unlimited daily chats": [
+        "Obegränsat antal dagliga chattar"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Obegränsade mappar, etiketter och filter"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Obegränsade hide-my-email-alias"
+      ],
+      "Use your own email domain": [
+        "Använd din egen e-postdomän"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "en fjäril"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "för 12 månader"
+      ],
+      "SPRING SALE": [
+        "VÅRREA"
       ]
     },
     "Referral": {
@@ -12774,6 +12887,9 @@
       "Sort files/folders": [
         "Sortera filer/mappar"
       ],
+      "Spring Sale": [
+        "Vårrea"
+      ],
       "Start a new import": [
         "Starta en ny import"
       ],
@@ -12959,9 +13075,6 @@
       ],
       "You have inaccessible files": [
         "Du har otillgängliga filer"
-      ],
-      "You have no files to share": [
-        "Du har inga filer att dela"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis provperiod för ${ planName } slutar den ${ textDate }"
