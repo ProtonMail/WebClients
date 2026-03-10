@@ -315,6 +315,9 @@
       "Connect to video conferencing": [
         "เชื่อมต่อกับการประชุมทางวิดีโอ"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "เชื่อมต่อบัญชี ${ BRAND_NAME }"
+      ],
       "Connected": [
         "เชื่อมต่อแล้ว"
       ],
@@ -378,8 +381,14 @@
       "Create": [
         "สร้าง"
       ],
+      "Create a ${ BRAND_NAME } Account": [
+        "สร้างบัญชี ${ BRAND_NAME }"
+      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "สร้างลิงก์เพื่อแชร์กับบุคคลภายนอก ${ BRAND_NAME }"
+      ],
+      "Create an account": [
+        "สร้างบัญชีใหม่"
       ],
       "Create calendar": [
         "สร้างปฏิทิน"
@@ -6135,9 +6144,6 @@
       "Invalid verification code": [
         "รหัสการตรวจสอบสิทธิ์ไม่ถูกต้อง"
       ],
-      "Invalid ZIP code": [
-        "รหัสไปรษณีย์ไม่ถูกต้อง"
-      ],
       "Item content cannot exceed 40KB": [
         "เนื้อหารายการต้องไม่เกิน 40KB"
       ],
@@ -8952,6 +8958,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "โปรดคลิก \"ส่งคำร้องขอรหัสใหม่\" เพื่อรับรหัสยืนยันตัวตนใหม่ที่ได้ส่งไปที่ ${ strong } หากหมายเลขโทรศัพท์นี้ไม่ถูกต้อง สามารถเปลี่ยนได้โดยคลิกที่ \"แก้ไข\""
       ],
+      "Click the icon to open it anytime.": [
+        "คลิกไอคอนเพื่อเปิดใช้งานได้ทุกเมื่อ"
+      ],
       "Close this screen to exit.": [
         "ปิดหน้าจอนี้เพื่อออก"
       ],
@@ -9416,6 +9425,9 @@
       ],
       "for choosing ${ product }": [
         "ที่เลือก ${ product }"
+      ],
+      "For easy access to your passwords and more.": [
+        "เพื่อการเข้าถึงรหัสผ่านและอื่นๆ ได้ง่าย"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "สำหรับผู้ใช้ที่กำลังเปลี่ยนมาใช้ ${ MAIL_APP_NAME } จากบริการอีเมลอื่น เลือกแท็บ ${ boldAddresses } และเพิ่มที่อยู่อีเมลที่ใช้งานอยู่ทั้งหมดก่อนเปลี่ยนระเบียน MX เพื่อให้แน่ใจว่าการเปลี่ยนแปลงจะเป็นไปอย่างราบรื่น"
@@ -10002,6 +10014,9 @@
       "Open source": [
         "โอเพนซอร์ส"
       ],
+      "Open the Extensions menu": [
+        "เปิดเมนูส่วนขยาย"
+      ],
       "Open the guide for recommended actions and helpful links.": [
         "เปิดคู่มือสำหรับการดำเนินการที่แนะนำและลิงก์ที่เป็นประโยชน์"
       ],
@@ -10103,6 +10118,9 @@
       ],
       "Phone number": [
         "หมายเลขโทรศัพท์"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "ปักหมุด ${ PASS_APP_NAME } ไว้ที่แถบเครื่องมือ"
       ],
       "Please add a password for the user on row": [
         "โปรดเพิ่มรหัสผ่านของผู้ใช้ในช่อง"
@@ -10415,6 +10433,9 @@
       ],
       "Sign in only": [
         "เข้าสู่ระบบเท่านั้น"
+      ],
+      "Sign in or create an account to continue.": [
+        "เข้าสู่ระบบหรือสร้างบัญชีเพื่อดำเนินการต่อ"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "เข้าสู่ระบบ ${ MAIL_APP_NAME } เพื่อเปิดใช้งานที่อยู่"
@@ -16912,6 +16933,9 @@
       "Got it": [
         "รับทราบ"
       ],
+      "I'm purchasing as a business": [
+        "ฉันกำลังซื้อในนามธุรกิจ"
+      ],
       "MM/YY": [
         "ดด/ปป"
       ],
@@ -16962,9 +16986,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "การดำเนินการนี้จะขยายการสมัครสมาชิกที่มีอยู่ จะถูกเรียกเก็บเงินเฉพาะส่วนเสริมใหม่และเวลาที่เหลือของรอบการชำระเงินปัจจุบัน วันที่ต่ออายุของการสมัครสมาชิกจะไม่เปลี่ยนแปลง"
-      ],
-      "This number will be shown on all future invoices": [
-        "หมายเลขนี้จะแสดงในใบแจ้งหนี้ทั้งหมดในอนาคต"
       ],
       "This offer is not available with your current plan.": [
         "ข้อเสนอนี้ไม่พร้อมใช้งานกับแผนปัจจุบัน"
@@ -21354,6 +21375,9 @@
       "Connect to video conferencing": [
         "เชื่อมต่อกับการประชุมทางวิดีโอ"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "เชื่อมต่อบัญชี ${ BRAND_NAME }"
+      ],
       "Connect your custom domain": [
         "เชื่อมต่อโดเมนที่กำหนดเอง"
       ],
@@ -21476,6 +21500,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "เจาะลึกบทความบล็อก VPN"
+      ],
+      "Delete ${ name }?": [
+        "ลบ ${ name }?"
       ],
       "Delete ${ value }": [
         "ลบ ${ value }"
@@ -22080,6 +22107,9 @@
       "Photos": [
         "รูปภาพ"
       ],
+      "Pin the extension": [
+        "ปักหมุดส่วนขยาย"
+      ],
       "Policies": [
         "นโยบาย"
       ],
@@ -22538,6 +22568,9 @@
       ],
       "Welcome to ${ planName }": [
         "ยินดีต้อนรับสู่ ${ planName }"
+      ],
+      "Welcome to your new password manager!": [
+        "ยินดีต้อนรับสู่โปรแกรมจัดการรหัสผ่านใหม่!"
       ],
       "What is an alias?": [
         "นามแฝงคืออะไร?"

@@ -318,6 +318,9 @@
       "Connect to video conferencing": [
         "Verbinding maken met videovergadering"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Koppel uw ${ BRAND_NAME }-account"
+      ],
       "Connected": [
         "Verbonden"
       ],
@@ -384,8 +387,14 @@
       "Create": [
         "Aanmaken"
       ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Maak een ${ BRAND_NAME }-account aan"
+      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Maak een link om te delen met iedereen buiten ${ BRAND_NAME }"
+      ],
+      "Create an account": [
+        "Een account aanmaken"
       ],
       "Create calendar": [
         "Agenda aanmaken"
@@ -454,6 +463,9 @@
         "Verwijder filter \"${ Name }\""
       ],
       "Delete Gateway": [
+        "Gateway verwijderen"
+      ],
+      "Delete gateway": [
         "Gateway verwijderen"
       ],
       "Delete group": [
@@ -4217,6 +4229,9 @@
       "North Korea": [
         "Noord-Korea"
       ],
+      "North Macedonia": [
+        "Noord-Macedonië"
+      ],
       "Northern Mariana Islands": [
         "Noordelijke Marianen"
       ],
@@ -6403,6 +6418,9 @@
       "Code is incorrect or not valid anymore": [
         "Code is onjuist of niet meer geldig"
       ],
+      "Company name or personal name is required": [
+        "Bedrijfsnaam of persoonsnaam is vereist"
+      ],
       "Condition incomplete": [
         "Onvolledig ingevulde voorwaarde"
       ],
@@ -6585,11 +6603,11 @@
       "Invalid URL": [
         "Ongeldige URL"
       ],
+      "Invalid VAT number": [
+        "Ongeldig btw-nummer"
+      ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
-      ],
-      "Invalid ZIP code": [
-        "Ongeldige postcode"
       ],
       "Item content cannot exceed 40KB": [
         "Item mag niet groter zijn dan 40KB"
@@ -6684,6 +6702,9 @@
       ],
       "Please add a payment method before reactivating your subscription": [
         "Voeg een betaalmethode toe voordat u uw abonnement opnieuw activeert."
+      ],
+      "Please complete the billing details": [
+        "Voltooi de factuurgegevens"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configureer eerst een eigen domein voordat u adressen toevoegt."
@@ -6885,6 +6906,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
       ],
+      "This field is invalid": [
+        "Dit veld is ongeldig"
+      ],
       "This field is required": [
         "Dit veld is vereist"
       ],
@@ -6956,6 +6980,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "We zijn gestopt met het ondertekenen van DKIM-ondertekening, vanwege problemen met uw DNS-configuratie. Volg de onderstaande instructies om ondertekenen te hervatten."
+      ],
+      "Wrong billing address": [
+        "Verkeerd factuuradres"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Verkeerde herstelzijn. Probeer opnieuw of probeer een andere herstelmethode."
@@ -9057,11 +9084,26 @@
       "(default)": [
         "(standaard)"
       ],
+      "(eg. ChatGPT, Gemini, Perplexity)": [
+        "(bijv. ChatGPT, Gemini, Perplexity)"
+      ],
+      "(eg. New York Times, BBC)": [
+        "(bijv. New York Times, BBC)"
+      ],
+      "(eg. PCMag, TechRadar)": [
+        "(bijv. PCMag, TechRadar)"
+      ],
+      "(eg. The Vergecast, Big Technology Podcast)": [
+        "(bijv. The Vergecast, Big Technology Podcast)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filter als aan ALLE van de volgende voorwaarden is voldaan)"
       ],
       "(Filter if ANY of the following conditions are met)": [
         "(Filter als aan EEN van de volgende voorwaarden is voldaan)"
+      ],
+      "(formerly Twitter)": [
+        "(voorheen Twitter)"
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** wordt niet ondersteund in uw organisatie **${ organizationName }**."
@@ -9221,6 +9263,9 @@
       "Affected user is on row": [
         "Deze gebruiker staat op rij",
         "Deze gebruikers staan op rijen"
+      ],
+      "AI chatbot": [
+        "AI chatbot"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
@@ -9483,6 +9528,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Door de volledige agendadetails van deze agenda te delen, gaat u akkoord om ${ BRAND_NAME } toegang te verlenen tot versleutelde informatie van deze agenda."
       ],
+      "Cancel": [
+        "Annuleren"
+      ],
       "Cancel anytime": [
         "Op elk moment opzeggen"
       ],
@@ -9509,6 +9557,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
+      ],
+      "Click the icon to open it anytime.": [
+        "Klik op het icoon om het op eender welk moment te openen"
       ],
       "Close this screen to exit.": [
         "Sluit dit scherm om af te sluiten."
@@ -9950,6 +10001,9 @@
       "Expires on ${ ExpMonth }/${ ExpYear }": [
         "Verloopt op ${ ExpMonth }/${ ExpYear }"
       ],
+      "Facebook": [
+        "Facebook"
+      ],
       "Failed to fetch logs.": [
         "Fout bij het ophalen van logboeken."
       ],
@@ -9992,6 +10046,9 @@
       "for choosing ${ product }": [
         "voor het kiezen van ${ product }"
       ],
+      "For easy access to your passwords and more.": [
+        "Voor eenvoudige toegang tot uw wachtwoorden en meer."
+      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Voor gebruikers die overschakelen naar ${ MAIL_APP_NAME } vanuit een andere e-maildienst, selecteer het tabblad ${ boldAddresses } en voeg alle actieve e-mailadressen toe voordat u het MX-record wijzigt om te zorgen voor een soepele overgang."
       ],
@@ -10006,6 +10063,15 @@
       ],
       "free up space by deleting older messages or other data": [
         "ruimte vrijmaken door oudere berichten of andere gegevens te verwijderen"
+      ],
+      "Friends and family": [
+        "Vrienden en familie"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "Gateway kon niet worden verwijderd. Probeer het opnieuw"
+      ],
+      "Gateway deleted": [
+        "Gateway verwijderd"
       ],
       "Gateway monitor": [
         "Gateway monitor"
@@ -10046,6 +10112,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Ga naar uw identiteitsprovider, haal de SAML-metadata voor ${ appName } op en importeer deze hier."
       ],
+      "Google or other search engine": [
+        "Google of een andere zoekmachine"
+      ],
       "Google Pay mark": [
         "Google Pay merk"
       ],
@@ -10085,8 +10154,8 @@
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Indien uitgeschakeld, kunnen leden van de organisatie alleen kluizen of items binnen de organisatie delen."
       ],
-      "If disabled, organization members won't be able to create secure links.": [
-        "Indien uitgeschakeld, kunnen leden van de organisatie geen beveiligde koppelingen maken."
+      "If disabled, organization members won't be able to create secure links. Previously active secure links remain valid until their expiration.": [
+        "Indien uitgeschakeld, kunnen leden van de organisatie geen beveiligde koppelingen aanmaken. Eerder actieve beveiligde koppelingen blijven geldig tot hun verloopdatum."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Als deze optie is ingeschakeld, kunnen leden van de organisatie individuele items delen bovenop de kluizen."
@@ -10205,6 +10274,9 @@
       ],
       "Insert link": [
         "Koppeling invoegen"
+      ],
+      "Instagram": [
+        "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installeer een Land configuratiebestand om te verbinden met een willekeurige server in het land van uw keuze."
@@ -10507,6 +10579,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Nieuwe VPN-verbindingsgegevens zullen niet langer worden verzameld en getoond."
       ],
+      "News or media article": [
+        "Nieuws- of media-artikel"
+      ],
       "Next billing date": [
         "Volgende factuurdatum"
       ],
@@ -10597,6 +10672,9 @@
       "Open source": [
         "Open source"
       ],
+      "Open the Extensions menu": [
+        "Open het Extensie-menu"
+      ],
       "Open the guide for recommended actions and helpful links.": [
         "Open de handleiding voor aanbevolen acties en nuttige koppelingen."
       ],
@@ -10631,6 +10709,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Orden uw toegewijde servers in Gateways en bepaal welke gebruikers er toegang toe hebben."
+      ],
+      "Other": [
+        "Overige"
       ],
       "Other accounts": [
         "Andere accounts"
@@ -10701,6 +10782,9 @@
       "Phone number": [
         "Telefoonnummer"
       ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Zet ${ PASS_APP_NAME } vast op uw werkbalk"
+      ],
       "Please add a password for the user on row": [
         "Voeg een wachtwoord toe voor de gebruiker op de rij",
         "Voeg wachtwoorden toe voor de gebruikers op rijen"
@@ -10751,6 +10835,9 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Selecteer het soort link dat u wil invoeren en vul alle velden in."
       ],
+      "Please specify...": [
+        "Specificeer..."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
       ],
@@ -10768,6 +10855,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus- of Visionary-abonnement vereist"
+      ],
+      "Podcast": [
+        "Podcast"
       ],
       "Preference saved": [
         "Voorkeur opgeslagen"
@@ -10795,6 +10885,9 @@
       ],
       "Private AI assistant": [
         "Privé AI-assistent"
+      ],
+      "Product reviews, rankings, or guides": [
+        "Productrecensies, ranglijsten of gidsen"
       ],
       "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
         "Bescherm uw account tegen bedreigingen van kwantumcomputing met kwantumbestendige cryptografische sleutels."
@@ -10849,6 +10942,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Herstelzin is niet geassocieerd met een verouderde sleutel."
+      ],
+      "Reddit": [
+        "Reddit"
       ],
       "Referral link copied to your clipboard": [
         "Doorverwijslink gekopieerd naar het klembord"
@@ -11019,6 +11115,9 @@
       "Sign in only": [
         "Alleen inloggen"
       ],
+      "Sign in or create an account to continue.": [
+        "Log in of maak een account aan om verder te gaan."
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Meld aan bij ${ MAIL_APP_NAME } om uw adres te activeren."
       ],
@@ -11079,6 +11178,9 @@
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Bewaar dit wachtwoord en bestand op een veilige plaats. U heeft ze nodig om uw sleutel opnieuw te importeren."
+      ],
+      "Submit": [
+        "Versturen"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
@@ -11150,6 +11252,9 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Bedankt voor het ondersteunen van onze missie om een beter internet te bouwen waar privacy en vrijheid op de eerste plaats staan."
       ],
+      "Thanks for the feedback!": [
+        "Bedankt voor de feedback!"
+      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Het ${ boldDataLocked } bericht wordt niet meer weergegeven, maar u kan nog steeds uw gegevens ontgrendelen via ${ encryptionAndKeysLink }."
       ],
@@ -11209,6 +11314,9 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "De naam zal zichtbaar zijn voor uw gebruikers wanneer ze ingelogd zijn."
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
+        "Het krediet van de verwijzing kan tot 2 maanden nadat de proefversie van uw vriend(in) is beëindigd, en als uw vriend(in) zich heeft geabonneerd op een abonnement, worden toegekend."
       ],
       "The securest way to browse, stream, and be online.": [
         "De veiligste manier om te browsen, streamen en online te zijn."
@@ -11359,6 +11467,9 @@
       ],
       "This will wipe all logs for your organization members.": [
         "Hiermee worden alle logboeken gewist voor de leden van uw organisatie."
+      ],
+      "TikTok": [
+        "TikTok"
       ],
       "to ${ product } Business": [
         "naar ${ product } Business"
@@ -11780,6 +11891,9 @@
       "Writing assistant": [
         "Schrijfassistent"
       ],
+      "X": [
+        "X"
+      ],
       "Yearly": [
         "Jaarlijks"
       ],
@@ -11999,6 +12113,15 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "U zult niet in staat zijn om vergrendelde gegevens te herstellen met behulp van uw gedownloade herstelbestanden. Hiermee schakelt u ook de op toestel-gebaseerde herstelfunctie uit."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "U ontvangt het tegoed 1 maand nadat uw vriend(in) zich abonneert op een jaarlijks abonnement, en 2 maanden nadat zij zich abonneren op een maandelijks abonnement."
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "U ontvangt het tegoed 1 maand nadat de proefversie van uw vriend(in) is beëindigd."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "U ontvangt het tegoed 2 maanden nadat de proefversie van uw vriend(in) is beëindigd."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd. U kunt op elk moment annuleren.",
         "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd. U kunt op elk moment annuleren."
@@ -12119,6 +12242,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Uw proefperiode eindigt over ${ timeRemaining }."
+      ],
+      "YouTube": [
+        "YouTube"
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "U verliest ook toegang tot ${ boldPlanTitle } functies:"
@@ -17774,6 +17900,9 @@
       "Got it": [
         "Begrepen"
       ],
+      "I'm purchasing as a business": [
+        "Ik koop dit voor mijn bedrijf."
+      ],
       "Including ${ rate }% tax": [
         "Inclusief ${ rate }% belasting"
       ],
@@ -17863,9 +17992,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Deze actie breidt het bestaande abonnement uit. U wordt alleen kosten in rekening gebracht voor de nieuwe add-ons en de resterende tijd van de huidige factureringscyclus. De verlengingsdatum van uw abonnement wordt niet gewijzigd."
-      ],
-      "This number will be shown on all future invoices": [
-        "Dit nummer zal op alle toekomstige facturen worden getoond."
       ],
       "This offer is not available with your current plan.": [
         "Deze aanbieding is niet beschikbaar met uw huidige abonnement."
@@ -18092,6 +18218,9 @@
       "Confirm": [
         "Bevestig"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "domain.com": [
         "domein.com"
       ],
@@ -18169,6 +18298,9 @@
       ],
       "Printer": [
         "Printer"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Zoeken"
@@ -18463,6 +18595,101 @@
       ],
       "Unknown": [
         "Onbekend"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Toon deze aanbieding niet opnieuw"
+      ],
+      "Get the deal": [
+        "Pak de aanbieding"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/maand"
+      ],
+      "15 GB storage": [
+        "15 GB opslag"
+      ],
+      "2 TB data storage": [
+        "2 TB dataopslag"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB opslag: 40x uw huidige abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB dataopslag"
+      ],
+      "500 GB storage": [
+        "500 GB opslag"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Toegang tot 15.000+ servers in 120+ landen"
+      ],
+      "Access advanced AI models": [
+        "Toegang tot geavanceerde AI-modellen"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Alle premium functies van Mail, Pass, Drive, VPN en Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokkeer advertenties, trackers en malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Ingebouwde 2FA-authenticator"
+      ],
+      "Connect 10 devices at once": [
+        "Verbind 10 apparaten tegelijkertijd"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Volledige toegang tot ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Volledige chatgeschiedenis met eenvoudig zoeken en favorieten"
+      ],
+      "Individual accounts for 6 users": [
+        "Afzonderlijke accounts voor 6 gebruikers"
+      ],
+      "Individual accounts for you and a partner": [
+        "Afzonderlijke accounts voor u en een partner"
+      ],
+      "Online document editor": [
+        "Online documenteditor"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Stronger protection against cyber threats": [
+        "Krachtigere bescherming tegen cyberdreigingen"
+      ],
+      "Unlimited daily chats": [
+        "Onbeperkt aantal dagelijkse gesprekken"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Onbeperkte mappen, labels en filters"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Onbeperkte hide-my-email-aliassen"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "een vlinder"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "gedurende 12 maanden"
+      ],
+      "SPRING SALE": [
+        "LENTEACTIE"
       ]
     },
     "Recovery Email": {
@@ -22489,6 +22716,9 @@
       "Connect to video conferencing": [
         "Verbinding maken met videoconferentie"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Koppel uw ${ BRAND_NAME }-account"
+      ],
       "Connect your custom domain": [
         "Verbind uw eigen domein"
       ],
@@ -22612,6 +22842,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "Diep duiken in VPN blog posts"
+      ],
+      "Delete ${ name }?": [
+        "Verwijder ${ name }?"
       ],
       "Delete ${ value }": [
         "Verwijder ${ value }"
@@ -22981,6 +23214,9 @@
       "Home": [
         "Home"
       ],
+      "How did you find out about us?": [
+        "Hoe hebt u ons gevonden?"
+      ],
       "How to choose a good logo": [
         "Hoe kiest u een goed logo"
       ],
@@ -23236,6 +23472,9 @@
       ],
       "Photos": [
         "Foto's"
+      ],
+      "Pin the extension": [
+        "Extensie vastpinnen"
       ],
       "Policies": [
         "Beleidsvormen"
@@ -23504,6 +23743,9 @@
       "Special Offer": [
         "Speciale aanbieding"
       ],
+      "Spring Sale": [
+        "Lenteverkoop"
+      ],
       "Start a new import": [
         "Start een nieuwe import"
       ],
@@ -23699,6 +23941,9 @@
       ],
       "Welcome to ${ planName }": [
         "Welkom bij ${ planName }"
+      ],
+      "Welcome to your new password manager!": [
+        "Welkom bij uw nieuwe wachtwoordbeheerder!"
       ],
       "What is an alias?": [
         "Wat is een alias?"
@@ -24900,6 +25145,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Servers in deze gateway zullen een deactivatie periode van 10 dagen ingaan. Deze servers kunnen aan een nieuwe gateway worden toegevoegd, maar hun land kan niet worden gewijzigd."
       ],
       "Skip verification?": [
         "Verificatie overslaan?"

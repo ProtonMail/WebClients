@@ -280,6 +280,9 @@
       "Connect to video conferencing": [
         "連接視訊會議"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "連接您的${ BRAND_NAME }帳號"
+      ],
       "Connected": [
         "已連線"
       ],
@@ -330,6 +333,12 @@
       ],
       "Create": [
         "創建"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "創建一個${ BRAND_NAME } 帳號"
+      ],
+      "Create an account": [
+        "創建新帳號"
       ],
       "Create calendar": [
         "創建行事曆"
@@ -4482,9 +4491,6 @@
       "Invalid verification code": [
         "驗證碼無效"
       ],
-      "Invalid ZIP code": [
-        "無效的郵遞區號"
-      ],
       "Item content cannot exceed 40KB": [
         "項目無法超越40KB"
       ],
@@ -6865,6 +6871,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
       ],
+      "Click the icon to open it anytime.": [
+        "點擊圖示以隨時打開。"
+      ],
       "Close this screen to exit.": [
         "關閉此螢幕以離開。"
       ],
@@ -7221,6 +7230,9 @@
       ],
       "for choosing ${ product }": [
         "選用 ${ product }"
+      ],
+      "For easy access to your passwords and more.": [
+        "容易存取密碼及更多。"
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "將收到的郵件從另一個帳號轉發至您的安全 ${ MAIL_APP_NAME } 收件匣。"
@@ -7714,6 +7726,9 @@
       "Open source": [
         "開放原始碼"
       ],
+      "Open the Extensions menu": [
+        "開啟擴充功能選單"
+      ],
       "Open the guide for recommended actions and helpful links.": [
         "開啟指南，以查看建議的動作和實用連結。"
       ],
@@ -7791,6 +7806,9 @@
       ],
       "Phone number": [
         "電話號碼"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "固定${ PASS_APP_NAME }到工具列"
       ],
       "Please add a password for the user on row": [
         "請在此行使用者處加入密碼"
@@ -8070,6 +8088,9 @@
       ],
       "Show original message": [
         "顯示原始郵件"
+      ],
+      "Sign in or create an account to continue.": [
+        "請登入或註冊一個帳號以繼續。"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "登入 ${ MAIL_APP_NAME } 以啟用您的電子郵件位址"
@@ -13235,6 +13256,9 @@
       "Got it": [
         "瞭解"
       ],
+      "I'm purchasing as a business": [
+        "我以公司名義購買"
+      ],
       "Including ${ rate }% tax: ${ taxAmountElement }": [
         "包含 ${ rate }% 稅金${ taxAmountElement }"
       ],
@@ -13300,9 +13324,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "此行動將擴增現有訂閱。 您將只被收取先新添加和目前帳單週期剩餘的時間。您訂閱的續訂日期將維持不變。"
-      ],
-      "This number will be shown on all future invoices": [
-        "未來所有的帳單將會顯示此統一編號"
       ],
       "This offer is not available with your current plan.": [
         "抱歉，此優惠無法在您的方案中使用。"
@@ -13692,6 +13713,101 @@
       ],
       "Unknown": [
         "未知"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "不再顯示此優惠"
+      ],
+      "Get the deal": [
+        "取得優惠"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/每月"
+      ],
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "2 TB data storage": [
+        "2 TB 資料儲存空間"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 儲存空間：您目前方案的 40 倍"
+      ],
+      "3 TB data storage": [
+        "3 TB 資料儲存空間"
+      ],
+      "500 GB storage": [
+        "500 GB 儲存空間"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "存取位於 120 多個國家/地區的 15,000 台伺服器"
+      ],
+      "Access advanced AI models": [
+        "存取進階 AI 模型"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Mail、Pass、磁碟、VPN 和行事曆的所有頂級質子版功能"
+      ],
+      "Block ads, trackers, and malware": [
+        "封鎖廣告、追蹤程式和惡意軟體"
+      ],
+      "Built-in 2FA authenticator": [
+        "內建雙重驗證驗證器"
+      ],
+      "Connect 10 devices at once": [
+        "同時連線 10 個裝置"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣以標準月費定價為基礎。您的訂閱將在帳單週期結束時以標準年費率續訂。"
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "完整存取 ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "具備輕鬆搜尋與最愛功能的完整聊天記錄"
+      ],
+      "Individual accounts for 6 users": [
+        "6 位使用者的個人帳號"
+      ],
+      "Individual accounts for you and a partner": [
+        "供您與夥伴使用的個人帳號"
+      ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
+      ],
+      "Stronger protection against cyber threats": [
+        "針對網路威脅的更強大保護"
+      ],
+      "Unlimited daily chats": [
+        "無限每日聊天"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "資料夾、標籤與篩選器無上限"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "無限的 hide-my-email 別名"
+      ],
+      "Use your own email domain": [
+        "使用您自己的電子郵件網域"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "蝴蝶"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "12 個月"
+      ],
+      "SPRING SALE": [
+        "春季特賣"
       ]
     },
     "Recovery Email": {
@@ -16499,6 +16615,9 @@
       "Connect to video conferencing": [
         "連接視訊會議"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "連接您的${ BRAND_NAME }帳號"
+      ],
       "Connect your custom domain": [
         "連線您的自訂網域"
       ],
@@ -16609,6 +16728,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "深度了解VPN部落格貼文"
+      ],
+      "Delete ${ name }?": [
+        "刪除 ${ name }？"
       ],
       "Delete ${ value }": [
         "刪除 ${ value }"
@@ -17114,6 +17236,9 @@
       "Photos": [
         "相片"
       ],
+      "Pin the extension": [
+        "定置擴充功能"
+      ],
       "Policies": [
         "政策"
       ],
@@ -17503,6 +17628,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "歡迎使用 ${ BRAND_NAME } 商務版"
+      ],
+      "Welcome to your new password manager!": [
+        "歡迎來到你的新密碼管理器!"
       ],
       "What is an alias?": [
         "甚麼是別名?"
