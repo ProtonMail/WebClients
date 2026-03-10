@@ -10,44 +10,27 @@ import type { UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { clearAll, renderWithProviders } from '../contacts/tests/render';
 import { OffersTestProvider } from './Offers.test.helpers';
+import useOfferConfig from './hooks/useOfferConfig';
 import type { OfferConfig } from './interface';
+
+const mockUseOfferConfig = useOfferConfig as jest.MockedFunction<typeof useOfferConfig>;
 
 const OFFER_CONTENT = 'deal deal deal deal deal';
 
-jest.mock('./hooks/useOfferConfig', function () {
-    const offerConfig: OfferConfig = {
-        deals: [],
-        featureCode: 'testOffer2022' as FeatureCode,
-        layout: () => <div>{OFFER_CONTENT}</div>,
-        ID: 'test-offer-2022' as OfferConfig['ID'],
-        canBeDisabled: true,
-    };
-
-    const offerConfigAutopopup: OfferConfig = {
-        deals: [],
-        featureCode: 'testOffer2022' as FeatureCode,
-        layout: () => <div>{OFFER_CONTENT}</div>,
-        ID: 'test-offer-2022' as OfferConfig['ID'],
-        canBeDisabled: true,
-        autoPopUp: 'one-time',
-    };
-
-    return {
-        __esModule: true,
-        default: jest
-            .fn()
-            .mockReturnValueOnce([undefined, false])
-            .mockReturnValueOnce([undefined, false])
-            .mockReturnValueOnce([offerConfig, false])
-            .mockReturnValueOnce([offerConfig, false])
-            .mockReturnValue([offerConfigAutopopup, false]),
-    };
-});
+jest.mock('./hooks/useOfferConfig', () => ({
+    __esModule: true,
+    default: jest.fn(),
+}));
 
 jest.mock('./hooks/useFetchOffer', function () {
     return {
         __esModule: true,
-        default: jest.fn(({ offerConfig }) => [offerConfig, false]),
+        default: jest.fn(({ offerConfig }) => ({
+            offer: offerConfig,
+            loading: false,
+            hasEstimationError: false,
+            initialized: true,
+        })),
     };
 });
 
@@ -88,6 +71,19 @@ const getUser = ({ isFree }: { isFree: boolean }) => {
     } as UserModel;
 };
 
+const offerConfigData: OfferConfig = {
+    deals: [],
+    featureCode: 'testOffer2022' as FeatureCode,
+    layout: () => <div>{OFFER_CONTENT}</div>,
+    ID: 'test-offer-2022' as OfferConfig['ID'],
+    canBeDisabled: true,
+};
+
+const offerConfigAutopopupData: OfferConfig = {
+    ...offerConfigData,
+    autoPopUp: 'one-time',
+};
+
 describe('Offers', () => {
     beforeEach(() => {
         clearAll();
@@ -95,6 +91,7 @@ describe('Offers', () => {
 
     describe('Offers display', () => {
         it('Should display upgrade button for free users', async () => {
+            mockUseOfferConfig.mockReturnValue({ config: undefined, isLoading: false, shouldPrefetch: false });
             renderWithProviders(<TopNavbarComponent />, {
                 preloadedState: {
                     user: getModelState(getUser({ isFree: true })),
@@ -112,6 +109,7 @@ describe('Offers', () => {
         });
 
         it('Should display nothing for paid users with offers', () => {
+            mockUseOfferConfig.mockReturnValue({ config: undefined, isLoading: false, shouldPrefetch: false });
             renderWithProviders(<TopNavbarComponent />, {
                 preloadedState: {
                     user: getModelState(getUser({ isFree: false })),
@@ -124,6 +122,11 @@ describe('Offers', () => {
 
         describe('Non free user with valid offer', () => {
             it('Should not display an offer button with setting turned off', () => {
+                mockUseOfferConfig.mockReturnValue({
+                    config: offerConfigData,
+                    isLoading: false,
+                    shouldPrefetch: false,
+                });
                 renderWithProviders(<TopNavbarComponent />, {
                     preloadedState: {
                         user: getModelState(getUser({ isFree: false })),
@@ -135,6 +138,11 @@ describe('Offers', () => {
             });
 
             it('Should display an offer button', async () => {
+                mockUseOfferConfig.mockReturnValue({
+                    config: offerConfigData,
+                    isLoading: false,
+                    shouldPrefetch: false,
+                });
                 renderWithProviders(<TopNavbarComponent />, {
                     preloadedState: {
                         user: getModelState(getUser({ isFree: false })),
@@ -150,6 +158,11 @@ describe('Offers', () => {
             });
 
             it('Should open a modal with offer content', () => {
+                mockUseOfferConfig.mockReturnValue({
+                    config: offerConfigData,
+                    isLoading: false,
+                    shouldPrefetch: false,
+                });
                 renderWithProviders(<TopNavbarComponent />, {
                     preloadedState: {
                         user: getModelState(getUser({ isFree: false })),
@@ -165,6 +178,11 @@ describe('Offers', () => {
             });
 
             it.skip('Should open a modal when autopopup', () => {
+                mockUseOfferConfig.mockReturnValue({
+                    config: offerConfigAutopopupData,
+                    isLoading: false,
+                    shouldPrefetch: false,
+                });
                 renderWithProviders(<TopNavbarComponent />, {
                     preloadedState: {
                         user: getModelState(getUser({ isFree: false })),

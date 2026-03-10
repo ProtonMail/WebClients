@@ -208,7 +208,7 @@ function excludingPlansWithAllChecksFordidden(
         const allowedCycles = getAllowedCycles({ subscription, planIDs, currency: subscription.Currency, plansMap });
 
         const allChecksForbidden = allowedCycles.every((cycle) =>
-            isSubscriptionCheckForbidden(subscription, planIDs, cycle)
+            isSubscriptionCheckForbidden(subscription, { planIDs, cycle })
         );
         return !allChecksForbidden;
     };
@@ -980,8 +980,9 @@ const PlanSelection = (props: Props) => {
 
                         const audienceTab = tabs[tabNumber];
 
-                        const hasPlansWithSelectedCurrency =
-                            audienceTab.plans.some((it) => isPlan(it) && it.Currency === currency);
+                        const hasPlansWithSelectedCurrency = audienceTab.plans.some(
+                            (it) => isPlan(it) && it.Currency === currency
+                        );
 
                         if (!hasPlansWithSelectedCurrency && isRegionalCurrency(currency)) {
                             onChangeCurrency(getFallbackCurrency(currency));

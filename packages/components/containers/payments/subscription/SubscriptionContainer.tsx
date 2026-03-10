@@ -19,7 +19,6 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
-import { TaxExemptionNotSupportedError } from '@proton/components/payments/react-extensions/errors';
 import { useLoading } from '@proton/hooks';
 import { IcGift } from '@proton/icons/icons/IcGift';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -75,6 +74,7 @@ import {
 } from '@proton/payments';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import { TaxExemptionNotSupportedError } from '@proton/payments/core/errors';
 import { computeOptimisticSubscriptionMode } from '@proton/payments/core/optimisticSubscriptionMode';
 import { InvalidChargebeeCardDataError } from '@proton/payments/core/payment-processors/chargebeeCardPayment';
 import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
@@ -751,7 +751,7 @@ const SubscriptionContainerInner = ({
             .filter((cycle) => cycle !== checkResult.Cycle)
 
             // skip cycles of the currently active subscription, because the backend doesn't allows to check them
-            .filter((cycle) => !isSubscriptionCheckForbidden(subscription, newModel.planIDs, cycle));
+            .filter((cycle) => !isSubscriptionCheckForbidden(subscription, { planIDs: newModel.planIDs, cycle }));
 
         const additionalCyclesHaveCustomBilling = additionalCycles.some((cycle) => {
             const optimisticSubscriptionMode = computeOptimisticSubscriptionMode(
@@ -770,7 +770,7 @@ const SubscriptionContainerInner = ({
         const currentCycleHasCustomBilling = checkResult.SubscriptionMode === SubscriptionMode.CustomBillings;
 
         const hasForbiddenCheck = allAllowedCycles.some((cycle) =>
-            isSubscriptionCheckForbidden(subscription, newModel.planIDs, cycle)
+            isSubscriptionCheckForbidden(subscription, { planIDs: newModel.planIDs, cycle })
         );
 
         const additionalPayloads = additionalCycles.map((Cycle) => {
@@ -972,11 +972,11 @@ const SubscriptionContainerInner = ({
             return;
         }
 
-        const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(
-            subscription,
-            copyNewModel.planIDs,
-            copyNewModel.cycle
-        );
+        const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(subscription, {
+            planIDs: copyNewModel.planIDs,
+            cycle: copyNewModel.cycle,
+            coupon: copyNewModel.gift,
+        });
         if (paymentForbiddenReason.forbidden) {
             setCheckResult({
                 ...getOptimisticCheckResult({

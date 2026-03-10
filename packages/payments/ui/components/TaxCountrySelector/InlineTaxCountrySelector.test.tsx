@@ -2,11 +2,11 @@ import { fireEvent, screen } from '@testing-library/react';
 
 import useConfig from '@proton/components/hooks/useConfig';
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
-import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { APPS } from '@proton/shared/lib/constants';
 import { renderWithProviders } from '@proton/testing/index';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { WrongBillingAddressError } from '../../../core/errors';
 import type { SubscriptionEstimation } from '../../../core/subscription/interface';
 import { type OnBillingAddressChange, useTaxCountry } from '../../hooks/useTaxCountry';
 import { InlineTaxCountrySelector } from './InlineTaxCountrySelector';
@@ -44,7 +44,9 @@ const TestInlineTaxCountrySelector = ({
     defaultCollapsed?: boolean;
 }) => {
     const zipCodeValidMock = {
-        checkResult: { error: zipCodeValid ? undefined : new InvalidZipCodeError() } as SubscriptionEstimation,
+        checkResult: {
+            error: zipCodeValid ? undefined : new WrongBillingAddressError({ ZipCode: 'invalid' }),
+        } as SubscriptionEstimation,
     } as PaymentFacade;
 
     const taxCountry = useTaxCountry({

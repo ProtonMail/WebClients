@@ -3,7 +3,6 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
-import type { BillingAddressValidationResult } from '@proton/components/payments/react-extensions/errors';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 
 import {
@@ -14,11 +13,12 @@ import {
 } from '../../core/billing-address/billing-address';
 import { getBillingAddressFromPaymentStatus } from '../../core/billing-address/billing-address-from-payments-status';
 import { getDefaultState, isCountryWithRequiredPostalCode, isCountryWithStates } from '../../core/countries';
-import type { PaymentStatus, PaymentsApi } from '../../core/interface';
 import {
+    type BillingAddressValidationResult,
     getWrongBillingAddressValidationResult,
     hasInvalidZipCodeError,
-} from '../../core/subscription/subscription-estimation';
+} from '../../core/errors';
+import type { PaymentStatus, PaymentsApi } from '../../core/interface';
 import { getDefaultPostalCodeByStateCode } from '../../postal-codes/default-postal-codes';
 import { isPostalCodeValid } from '../../postal-codes/postal-codes-validation';
 import type { PaymentTelemetryContext } from '../../telemetry/helpers';
