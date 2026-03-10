@@ -48,7 +48,8 @@ export function getIsEligible({
     const hasDrive = offerSubscription.hasDrive();
     const hasPassWithLifetimeOrSimpleLogin =
         offerSubscription.hasPass() || hasPassLifetime(user) || hasPassViaSimpleLogin(user);
-    const hasVPN = offerSubscription.hasVPN2024();
+    const isMonthly = offerSubscription.hasMonthlyCycle();
+    const hasVPN = !isMonthly && (offerSubscription.hasVPN2024() || offerSubscription.hasDeprecatedVPN());
 
     if (
         user.isPaid &&
