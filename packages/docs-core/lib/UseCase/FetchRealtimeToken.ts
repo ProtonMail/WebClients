@@ -3,6 +3,14 @@ import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import metrics from '@proton/metrics/index'
 import type { DocsApi } from '../Api/DocsApi'
 import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
+import { z } from 'zod'
+
+// Only define needed properties
+export const realtimeTokenPayloadSchema = z.object({
+  Permissions: z.number(),
+})
+
+export type RealtimeTokenPayload = z.infer<typeof realtimeTokenPayloadSchema>
 
 /** Gets a connection token from the Docs API to connect with the RTS */
 export class FetchRealtimeToken {
