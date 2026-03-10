@@ -35,13 +35,18 @@ import {
 import { getLifetimeProductType } from '@proton/payments/core/api/createPaymentSubscription';
 import { getBillingAddressPayload } from '@proton/payments/core/billing-address/billing-address';
 import { getInformedOptimisticSubscriptionEstimation, getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import {
+    InvalidCouponError,
+    type PaymentsApiError,
+    TaxExemptionNotSupportedError,
+    WrongBillingAddressError,
+} from '@proton/payments/core/errors';
 import type { CheckSubscriptionRequestOptions } from '@proton/payments/core/interface';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { InvalidZipCodeError, TaxExemptionNotSupportedError, WrongBillingAddressError } from './errors';
 import { enrichCoupon } from './helpers';
 
 const checkSubscriptionQuery = (data: CheckSubscriptionData, version: PaymentsVersion) => {
@@ -179,6 +184,27 @@ const updateInvoiceBillingAddress = async (api: Api, invoiceId: string, fullBill
 
 const plansSelector = createSelector(selectPlans, (plans) => plans.value?.plans ?? []);
 
+function createPaymentsApiError(error: any): PaymentsApiError | undefined {
+    if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.TAX_EXEMPTION_NOT_SUPPORTED) {
+        return new TaxExemptionNotSupportedError();
+    }
+
+    if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_BILLING_ADDRESS) {
+        return new WrongBillingAddressError(error?.data?.ValidationResult);
+    }
+
+    if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.INVALID_COUPON) {
+        return new InvalidCouponError();
+    }
+}
+
+function throwPaymentsApiErrorIfKnown(error: any): void {
+    const paymentsApiError = createPaymentsApiError(error);
+    if (paymentsApiError) {
+        throw paymentsApiError;
+    }
+}
+
 export const usePaymentsApi = (
     apiOverride?: Api,
     checkV5Fallback?: (data: CheckSubscriptionData) => SubscriptionEstimation | null
@@ -205,16 +231,9 @@ export const usePaymentsApi = (
         });
         optimisticSubscriptionEstimation.requestData = data;
 
-        if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_ZIP_CODE) {
-            optimisticSubscriptionEstimation.error = new InvalidZipCodeError();
-        }
-
-        if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.TAX_EXEMPTION_NOT_SUPPORTED) {
-            optimisticSubscriptionEstimation.error = new TaxExemptionNotSupportedError();
-        }
-
-        if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_BILLING_ADDRESS) {
-            optimisticSubscriptionEstimation.error = new WrongBillingAddressError(error?.data?.ValidationResult);
+        const paymentsApiError = createPaymentsApiError(error);
+        if (paymentsApiError) {
+            optimisticSubscriptionEstimation.error = paymentsApiError;
         }
 
         const hasDetectedError = !!optimisticSubscriptionEstimation.error;
@@ -383,14 +402,7 @@ export const usePaymentsApi = (
             try {
                 return await updateFullBillingAddress(api, fullBillingAddress);
             } catch (error: any) {
-                if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_ZIP_CODE) {
-                    throw new InvalidZipCodeError();
-                } else if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_BILLING_ADDRESS) {
-                    throw new WrongBillingAddressError(error?.data?.ValidationResult);
-                } else if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.TAX_EXEMPTION_NOT_SUPPORTED) {
-                    throw new TaxExemptionNotSupportedError();
-                }
-
+                throwPaymentsApiErrorIfKnown(error);
                 throw error;
             }
         };
@@ -399,12 +411,7 @@ export const usePaymentsApi = (
             try {
                 return await updateInvoiceBillingAddress(api, invoiceId, fullBillingAddress);
             } catch (error: any) {
-                if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_ZIP_CODE) {
-                    throw new InvalidZipCodeError();
-                } else if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_BILLING_ADDRESS) {
-                    throw new WrongBillingAddressError(error?.data?.ValidationResult);
-                }
-
+                throwPaymentsApiErrorIfKnown(error);
                 throw error;
             }
         };
@@ -450,7 +457,10 @@ export const usePaymentsApiWithCheckFallback = () => {
     const checkV5Fallback = (data: CheckSubscriptionData): SubscriptionEstimation | null => {
         const { Cycle, Currency, Plans } = data;
 
-        const checkForbidden = isSubscriptionCheckForbidden(subscription, Plans, Cycle);
+        const checkForbidden = isSubscriptionCheckForbidden(subscription, {
+            planIDs: Plans,
+            cycle: Cycle,
+        });
         if (!checkForbidden) {
             return null;
         }
