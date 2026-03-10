@@ -2,11 +2,13 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import { IcCrossSmall } from '@proton/icons/icons/IcCrossSmall';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import type { Group } from '@proton/shared/lib/interfaces';
 
 import GroupItem from './GroupItem';
@@ -15,6 +17,7 @@ import type { GroupsManagementReturn } from './types';
 interface Props {
     groupsManagement: GroupsManagementReturn;
     canOnlyDelete: boolean;
+    hasUsableDomain: boolean;
 }
 
 // Sort by natural order e.g. [1, 10, 11, 2] -> [1, 2, 10, 11]
@@ -34,8 +37,12 @@ const getSortedGroups = (input: string, groups: Group[]) => {
 const GroupList = ({
     groupsManagement: { uiState, groups, selectedGroup, actions, getSerializedGroup },
     canOnlyDelete,
+    hasUsableDomain,
 }: Props) => {
-    const [input, setInput] = useState<string>('');
+    const [searchInput, setSearchInput] = useState<string>('');
+    const [showSearchButton, setShowSearchButton] = useState(false);
+    const [user] = useUser();
+    const isAdmin = user?.isAdmin;
 
     const sideBarPlaceholder = (
         <div className="flex justify-center items-center w-full m-auto overflow-x-auto p-3 h-full">
@@ -48,28 +55,57 @@ const GroupList = ({
         </div>
     );
 
-    const sortedGroups = getSortedGroups(input.toLowerCase(), groups);
+    const sortedGroups = getSortedGroups(searchInput.toLowerCase(), groups);
     const serializedGroup = getSerializedGroup();
 
     return (
         <>
-            <div className="flex flex-row grow-0 shrink-0 flex-nowrap pb-3 mr-4">
-                {!!groups.length && (
+            {showSearchButton ? (
+                <div className="flex items-center gap-2 border-bottom pb-4 mb-4 shrink-0 flex-nowrap mx-4 pt-4">
                     <Input
-                        value={input}
-                        onValue={setInput}
+                        autoFocus
+                        value={searchInput}
+                        onValue={setSearchInput}
                         placeholder={c('Placeholder').t`Group name`}
                         prefix={<IcMagnifier />}
-                        suffix={
-                            <Button shape="ghost" size="small" icon onClick={() => setInput('')}>
-                                <IcCrossSmall alt={c('Action').t`Delete`} />
-                            </Button>
-                        }
                     />
-                )}
-            </div>
+                    <Button
+                        shape="ghost"
+                        icon
+                        onClick={() => {
+                            setShowSearchButton(false);
+                            setSearchInput('');
+                        }}
+                        title={c('Action').t`Close search`}
+                    >
+                        <IcCross alt={c('Action').t`Close search`} />
+                    </Button>
+                </div>
+            ) : (
+                <div className="flex items-center justify-space-between border-bottom pb-4 mb-4 shrink-0 flex-nowrap mx-4 pt-4">
+                    {isAdmin && (
+                        <Button
+                            className="group-button flex flex-row flex-nowrap items-center px-3"
+                            disabled={!hasUsableDomain || canOnlyDelete}
+                            onClick={() => actions.onCreateGroup()}
+                        >
+                            <IcPlus className="shrink-0 mr-2" />
+                            {c('Action').t`New group`}
+                        </Button>
+                    )}
+                    <Button
+                        icon
+                        className="ml-auto"
+                        onClick={() => setShowSearchButton(true)}
+                        title={c('Action').t`Search groups`}
+                    >
+                        <IcMagnifier alt={c('Action').t`Search groups`} />
+                    </Button>
+                </div>
+            )}
+
             {uiState !== 'new' && groups.length === 0 && sideBarPlaceholder}
-            <Scroll className="mr-4">
+            <Scroll className="px-4 pb-4">
                 {uiState === 'new' && (
                     <GroupItem
                         key="new"
