@@ -300,6 +300,44 @@ describe('useTransferManagerState', () => {
         ]);
     });
 
+    describe('isVisible', () => {
+        it('returns false when queues are empty', () => {
+            const { result } = renderHook(() => useTransferManagerState());
+            expect(result.current.isVisible).toBe(false);
+        });
+
+        it('returns true when there are downloads', () => {
+            addDownloadItems(createDownloadItem({ status: DownloadStatus.InProgress }));
+            const { result } = renderHook(() => useTransferManagerState());
+            expect(result.current.isVisible).toBe(true);
+        });
+
+        it('returns true when there are uploads', () => {
+            addUploadItems(createUploadItem({ status: UploadStatus.InProgress }));
+            const { result } = renderHook(() => useTransferManagerState());
+            expect(result.current.isVisible).toBe(true);
+        });
+
+        it('returns true when there are both downloads and uploads', () => {
+            addDownloadItems(createDownloadItem({ status: DownloadStatus.InProgress }));
+            addUploadItems(createUploadItem({ status: UploadStatus.InProgress }));
+            const { result } = renderHook(() => useTransferManagerState());
+            expect(result.current.isVisible).toBe(true);
+        });
+
+        it('returns true even when all transfers are finished', () => {
+            addDownloadItems(createDownloadItem({ status: DownloadStatus.Finished }));
+            const { result } = renderHook(() => useTransferManagerState());
+            expect(result.current.isVisible).toBe(true);
+        });
+
+        it('returns true even when all transfers are failed', () => {
+            addUploadItems(createUploadItem({ status: UploadStatus.Failed }));
+            const { result } = renderHook(() => useTransferManagerState());
+            expect(result.current.isVisible).toBe(true);
+        });
+    });
+
     it('should handle large queues without significant slowdown', () => {
         const downloadItems = new Map<string, DownloadItem>();
         const queueIds = new Set<string>();

@@ -199,6 +199,7 @@ export const useTransferManagerState = () => {
             transferType,
             progressPercentage,
             status,
+            isVisible: sortedTransfers.length > 0,
         };
     }, [downloadQueue, uploadQueue]);
 };
