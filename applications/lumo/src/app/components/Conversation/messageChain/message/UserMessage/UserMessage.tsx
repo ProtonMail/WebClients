@@ -205,44 +205,7 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
     };
 
     return (
-        <div
-            className={clsx(
-                'user-msg-container group-hover-opacity-container *:min-size-auto gap-2 rounded-xl p-4 min-h-custom relative',
-                !isEditing && 'markdown-rendering',
-                isEditing && 'w-full'
-            )}
-            style={{ '--min-h-custom': '3.25rem' /*52px*/ }} //to prevent the size change when buttons are shown on hover
-            ref={newMessageRef}
-        >
-            {isEditing ? (
-                <MessageEditor
-                    messageContent={messageContent || ''}
-                    handleEditMessage={(newContent) => {
-                        void handleEditMessage(message, newContent, isWebSearchButtonToggled);
-                        setIsEditing(false);
-                    }}
-                    handleCancel={() => setIsEditing(false)}
-                />
-            ) : (
-                <div className="test-container flex *:min-size-auto flex-1 flex-row flex-nowrap gap-2 justify-space-between items-center">
-                    <div
-                        className={clsx(
-                            'lumo-markdown w-full max-w-full flex-1 text-pre-line',
-                            isCollapsed && 'line-clamp-1'
-                        )}
-                        ref={contentRef}
-                    >
-                        <MessageContentWithMentions
-                            content={messageContent || ''}
-                            message={message}
-                            allAttachments={allAttachments}
-                            onView={handleViewFile}
-                        />
-                    </div>
-                </div>
-            )}
-
-            {/* Show manual attachments as cards (auto-retrieved files are not shown here) */}
+        <div className="flex flex-column flex-nowrap gap-2">
             {hasAttachments && (!isCollapsed || isEditing) && (
                 <div className={clsx('overflow-x-scroll flex-nowrap min-w-full max-w-full flex flex-row gap-3')}>
                     {manualAttachments.map((attachment) => (
@@ -255,30 +218,67 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
                     ))}
                 </div>
             )}
-
-            {!isEditing && (
-                <div
-                    className={clsx(
-                        'user-toolbar flex *:min-size-auto flex-row flex-nowrap gap-1 absolute bottom-custom right-0 p-1 items-center',
-                        !isMobile && 'group-hover:opacity-100'
-                    )}
-                    style={{ '--bottom-custom': '-1rem' }}
-                >
-                    <div className=" bg-norm border border-weak rounded-lg">
-                        <UserActionToolbar
-                            onEdit={handleEdit}
-                            onToggleCollapse={toggleCollapse}
-                            isCollapsed={isCollapsed}
-                            canBeCollapsed={canBeCollapsed}
+            <div
+                className={clsx(
+                    'user-msg-container group-hover-opacity-container *:min-size-auto gap-2 rounded-xl p-4 min-h-custom relative',
+                    !isEditing && 'markdown-rendering',
+                    isEditing && 'w-full'
+                )}
+                style={{ '--min-h-custom': '3.25rem' /*52px*/ }} //to prevent the size change when buttons are shown on hover
+                ref={newMessageRef}
+            >
+                {isEditing ? (
+                    <MessageEditor
+                        messageContent={messageContent || ''}
+                        handleEditMessage={(newContent) => {
+                            void handleEditMessage(message, newContent, isWebSearchButtonToggled);
+                            setIsEditing(false);
+                        }}
+                        handleCancel={() => setIsEditing(false)}
+                    />
+                ) : (
+                    <div className="test-container flex *:min-size-auto flex-1 flex-row flex-nowrap gap-2 justify-space-between items-center">
+                        <div
+                            className={clsx(
+                                'lumo-markdown w-full max-w-full flex-1 text-pre-line',
+                                isCollapsed && 'line-clamp-1'
+                            )}
+                            ref={contentRef}
+                        >
+                            <MessageContentWithMentions
+                                content={messageContent || ''}
+                                    message={message}
+                                allAttachments={allAttachments}
+                            onView={handleViewFile}
                         />
-                    </div>
-                    {hasSiblingInfo && (
-                        <div className="bg-norm rounded-lg border border-weak">
-                            <SiblingSelector siblingInfo={siblingInfo} />
                         </div>
-                    )}
-                </div>
-            )}
+                    </div>
+                )}
+
+                {!isEditing && (
+                    <div
+                        className={clsx(
+                            "user-toolbar flex *:min-size-auto flex-row flex-nowrap gap-1 absolute bottom-custom right-0 p-1 items-center",
+                            !isMobile && 'group-hover:opacity-100'
+                        )}
+                        style={{ '--bottom-custom': '-1rem' }}
+                    >
+                        <div className=" bg-norm border border-weak rounded-lg">
+                            <UserActionToolbar
+                                onEdit={handleEdit}
+                                onToggleCollapse={toggleCollapse}
+                                isCollapsed={isCollapsed}
+                                canBeCollapsed={canBeCollapsed}
+                            />
+                        </div>
+                        {hasSiblingInfo && (
+                            <div className="bg-norm rounded-lg border border-weak">
+                                <SiblingSelector siblingInfo={siblingInfo} />
+                            </div>
+                        )}
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
