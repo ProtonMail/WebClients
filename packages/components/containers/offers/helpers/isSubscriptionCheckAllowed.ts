@@ -3,7 +3,14 @@ import { type Subscription, isSubscriptionCheckForbidden } from '@proton/payment
 import type { OfferConfig } from '../interface';
 
 const isSubscriptionCheckAllowed = (subscription: Subscription, offerConfig: OfferConfig) => {
-    return offerConfig.deals.some((deal) => !isSubscriptionCheckForbidden(subscription, deal.planIDs, deal.cycle));
+    return offerConfig.deals.some(
+        (deal) =>
+            !isSubscriptionCheckForbidden(subscription, {
+                planIDs: deal.planIDs,
+                cycle: deal.cycle,
+                coupon: deal.couponCode,
+            })
+    );
 };
 
 export default isSubscriptionCheckAllowed;
