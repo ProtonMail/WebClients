@@ -10,11 +10,12 @@ export interface DriveSdkBridge {
 // Bridge for operations that require main-thread APIs (e.g. ProtonDriveClient).
 // Passed to the SharedWorker as a Comlink.proxy so the worker can invoke these
 // methods while the actual execution happens on the main thread.
+// TODO: Rename to MainThreadCallbacks for clarity.
 export class MainThreadBridge {
-    public driveSdk: DriveSdkBridge;
+    public readonly driveSdk: DriveSdkBridge;
 
-    constructor(private driveClient: ProtonDriveClient) {
-        this.driveSdk = new DriveSdkBridge(this.driveClient);
+    constructor(driveClient: ProtonDriveClient) {
+        this.driveSdk = new DriveSdkBridge(driveClient);
     }
 }
 

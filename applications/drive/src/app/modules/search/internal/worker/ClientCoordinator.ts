@@ -15,6 +15,7 @@ export type ClientContext = {
     bridge: MainThreadBridge;
 };
 
+// TODO: Rename to TabCoordinator for clarity.
 export class ClientCoordinator {
     private clients = new Map<ClientId, ClientContext>();
 
