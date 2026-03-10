@@ -3547,6 +3547,9 @@
       "Checkout expired, please try again": [
         "La commande a expiré, nous vous invitons à réessayer."
       ],
+      "Company name or personal name is required": [
+        "Le nom de l'entreprise ou le nom personnel est requis."
+      ],
       "Contact could not be saved": [
         "Le contact n’a pas pu être enregistré."
       ],
@@ -3705,11 +3708,11 @@
       "Invalid public key file": [
         "Le fichier de clé publique n'est pas valide."
       ],
+      "Invalid VAT number": [
+        "Numéro de TVA incorrect."
+      ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
-      ],
-      "Invalid ZIP code": [
-        "Le code postal n'est pas valide."
       ],
       "Invitation failed to be sent": [
         "L'invitation n'a pas pu être envoyée."
@@ -3812,6 +3815,9 @@
       ],
       "Please activate your search again": [
         "Veuillez réactiver votre recherche."
+      ],
+      "Please complete the billing details": [
+        "Veuillez compléter les informations de facturation."
       ],
       "Please create an address first.": [
         "Créez d'abord une adresse."
@@ -3956,6 +3962,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Ce champ dépasse le maximum de ${ maximumLength } caractères."
       ],
+      "This field is invalid": [
+        "Ce champ n'est pas valide."
+      ],
       "This field is required": [
         "Ce champ est nécessaire."
       ],
@@ -4000,6 +4009,9 @@
       ],
       "Validation error": [
         "Une erreur de validation s'est produite."
+      ],
+      "Wrong billing address": [
+        "L'adresse de facturation n'est pas correct."
       ],
       "You already added this holidays calendar": [
         "Vous avez déjà ajouté ce calendrier de jours fériés."
@@ -6384,6 +6396,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Vous ne serez pas facturé si vous annulez avant le ${ trialEndsOnFormatted }."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Vous recevrez la récompense de crédit 1 mois après que votre ami se soit abonné à un abonnement annuel, et 2 mois après qu'il se soit abonné à un abonnement mensuel."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Vous serez ensuite facturé tous les ${ renewCycle } mois à ${ renewAmountStr }. Vous pouvez annuler à tout moment.",
@@ -9355,6 +9370,9 @@
       "Got it": [
         "J'ai compris"
       ],
+      "I'm purchasing as a business": [
+        "J'achète en tant qu'entreprise."
+      ],
       "Including ${ rate }% tax": [
         "Comprenant ${ rate } % de taxes"
       ],
@@ -9426,9 +9444,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Cette action étend l'abonnement existant. Vous ne serez facturé que pour les nouveaux add-ons complémentaires et le temps restant du cycle de facturation actuel. La date de renouvellement de votre abonnement ne sera pas modifiée."
-      ],
-      "This number will be shown on all future invoices": [
-        "Ce numéro sera indiqué sur toutes les prochaines factures."
       ],
       "This offer is not available with your current plan.": [
         "Cette offre n'est pas disponible avec votre abonnement actuel."
@@ -9639,6 +9654,9 @@
       "Company name": [
         "Nom de l'entreprise"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Par exemple, "
       ],
@@ -9707,6 +9725,9 @@
       ],
       "Postal code": [
         "Code postal"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search events": [
         "Recherche d'événements"
@@ -9852,6 +9873,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Message officiel de ${ BRAND_NAME }"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Ne plus montrer cette offre"
+      ],
+      "Get the deal": [
+        "Profitez de l'offre"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/mois"
+      ],
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "2 TB data storage": [
+        "2 To d'espace de stockage de données"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 Go d'espace de stockage : 40x votre abonnement actuel"
+      ],
+      "3 TB data storage": [
+        "3 To d'espace de stockage de données"
+      ],
+      "500 GB storage": [
+        "500 Go d'espace de stockage"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
+      ],
+      "Access advanced AI models": [
+        "Accès aux modèles d'IA avancés"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Toutes les fonctionnalités premium de Mail, Pass, Drive, VPN et Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloquez les publicités, les traqueurs et les logiciels malveillants"
+      ],
+      "Built-in 2FA authenticator": [
+        "Authentificateur A2F intégré"
+      ],
+      "Connect 10 devices at once": [
+        "Connectez 10 appareils en même temps"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Accès complet à ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Historique complet des discussions avec recherche facile et favoris"
+      ],
+      "Individual accounts for 6 users": [
+        "Comptes individuels pour 6 utilisateurs"
+      ],
+      "Individual accounts for you and a partner": [
+        "Comptes individuels pour vous et un partenaire"
+      ],
+      "Online document editor": [
+        "Éditeur de documents en ligne"
+      ],
+      "Recover previous file versions": [
+        "Récupérez les versions précédentes des fichiers"
+      ],
+      "Stronger protection against cyber threats": [
+        "Une protection renforcée contre les cybermenaces"
+      ],
+      "Unlimited daily chats": [
+        "Chats quotidiens illimités"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Des dossiers, labels et filtres illimités"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre illimité d'alias « hide-my-email »"
+      ],
+      "Use your own email domain": [
+        "Utilisez votre propre domaine de messagerie"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "un papillon"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "pendant 12 mois"
+      ],
+      "SPRING SALE": [
+        "OFFRE DE PRINTEMPS"
       ]
     },
     "Referral": {
@@ -12017,6 +12133,9 @@
       ],
       "Simplify password management": [
         "Simplifiez la gestion des mots de passe"
+      ],
+      "Spring Sale": [
+        "Soldes de printemps"
       ],
       "Start a new import": [
         "Démarrer une nouvelle importation"
