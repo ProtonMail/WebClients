@@ -1,21 +1,25 @@
-import { DocumentRole, DynamicResult } from '@proton/docs-shared'
+import { DocumentRole, DynamicResult, Result } from '@proton/docs-shared'
 import { DocumentState, PublicDocumentState } from '../State/DocumentState'
 import { getCanWrite } from '@proton/shared/lib/drive/permissions'
 import { getErrorString } from '../Util/GetErrorString'
 import { LoadLogger } from '../LoadLogger/LoadLogger'
-import { Result } from '@proton/docs-shared'
 import type { DecryptCommit } from './DecryptCommit'
 import type { DecryptedCommit } from '../Models/DecryptedCommit'
-import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
+import {
+  rawPermissionToRole,
+  type DocumentEntitlements,
+  type PublicDocumentEntitlements,
+} from '../Types/DocumentEntitlements'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import type { GetDocumentKeys } from './GetDocumentKeys'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 import type { GetNode } from './GetNode'
-import type { GetNodePermissions } from './GetNodePermissions'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { NodeMeta, PublicNodeMeta, PublicDriveCompat, DriveCompat } from '@proton/drive-store'
 import type { FetchMetaAndRawCommit } from './FetchMetaAndRawCommit'
 import type { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
+import { jwtDecode } from 'jwt-decode'
+import { realtimeTokenPayloadSchema } from './FetchRealtimeToken'
 
 type LoadDocumentResult<E extends DocumentState | PublicDocumentState> = {
   documentState: E
@@ -35,7 +39,6 @@ export class LoadDocument {
     private getDocumentMeta: GetDocumentMeta,
     private getNode: GetNode,
     private decryptCommit: DecryptCommit,
-    private getNodePermissions: GetNodePermissions,
     private loadMetaAndCommit: FetchMetaAndRawCommit,
     private getDocumentKeys: GetDocumentKeys,
     private logger: LoggerInterface,
@@ -44,7 +47,7 @@ export class LoadDocument {
   async executePrivate(nodeMeta: NodeMeta): Promise<DynamicResult<LoadDocumentResult<DocumentState>, ErrorResult>> {
     LoadLogger.logEventRelativeToLoadTime('[LoadDocument] Beginning to load document')
     try {
-      const [nodeResult, keysResult, metaResult, permissionsResult] = await Promise.all([
+      const [nodeResult, keysResult, metaResult] = await Promise.all([
         this.getNode
           .execute(nodeMeta, { useCache: true })
           .then((result) => {
@@ -72,15 +75,6 @@ export class LoadDocument {
           .catch((error) => {
             throw new Error(`Failed to fetch document metadata: ${error}`)
           }),
-        this.getNodePermissions
-          .execute(nodeMeta, { useCache: true })
-          .then((result) => {
-            LoadLogger.logEventRelativeToLoadTime('[LoadDocument] getNodePermissions')
-            return result
-          })
-          .catch((error) => {
-            throw new Error(`Failed to load permissions: ${error}`)
-          }),
       ])
 
       LoadLogger.logEventRelativeToLoadTime('[LoadDocument] All network requests')
@@ -101,6 +95,8 @@ export class LoadDocument {
       const { keys } = keysResult.getValue()
       const { node, fromCache: nodeIsFromCache } = nodeResult.getValue()
       const { serverBasedMeta, latestCommit: encryptedCommit, realtimeToken } = metaResult.getValue()
+      const jwtPayload = realtimeTokenPayloadSchema.parse(jwtDecode(realtimeToken!.token))
+      const userRole = rawPermissionToRole(jwtPayload.Permissions)
 
       let decryptedCommit: DecryptedCommit | undefined
 
@@ -120,19 +116,9 @@ export class LoadDocument {
         decryptedCommit = decryptResult.getValue()
       }
 
-      if (!permissionsResult) {
-        return DynamicResult.fail({ message: 'Unable to load permissions' })
-      }
-
       if (!keysResult) {
         return DynamicResult.fail({ message: 'Unable to load all necessary data' })
       }
-
-      if (permissionsResult.isFailed()) {
-        return DynamicResult.fail({ message: 'Unable to load all necessary data' })
-      }
-
-      const { role, fromCache: roleIsFromCache } = permissionsResult.getValue()
 
       const entitlements: DocumentEntitlements = {
         keys,
@@ -143,7 +129,7 @@ export class LoadDocument {
         ...DocumentState.defaults,
         documentMeta: serverBasedMeta,
         currentCommitId: serverBasedMeta.latestCommitId(),
-        userRole: role,
+        userRole,
         entitlements,
         baseCommit: decryptedCommit,
         decryptedNode: node,
@@ -163,18 +149,6 @@ export class LoadDocument {
             documentState.setProperty('documentTrashState', node.trashed ? 'trashed' : 'not_trashed')
             documentState.setProperty('documentName', node.name)
           }
-        })
-      }
-
-      if (roleIsFromCache) {
-        void this.getNodePermissions.execute(nodeMeta, { useCache: false }).then((result) => {
-          if (result.isFailed()) {
-            this.logger.error('Failed to load permissions from network', result.getError())
-            return
-          }
-
-          const { role } = result.getValue()
-          documentState.setProperty('userRole', role)
         })
       }
 
