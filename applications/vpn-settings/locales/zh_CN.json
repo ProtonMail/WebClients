@@ -284,6 +284,9 @@
       "Delete Gateway": [
         "删除网关"
       ],
+      "Delete gateway": [
+        "删除网关"
+      ],
       "Delete group": [
         "删除组"
       ],
@@ -319,6 +322,9 @@
       ],
       "Disable": [
         "禁用"
+      ],
+      "Disable account monitor": [
+        "禁用账户监测"
       ],
       "Disable recovery phrase": [
         "禁用恢复密语"
@@ -2132,7 +2138,7 @@
         "小计"
       ],
       "Subtotal for ${ cycle } month": [
-        "小计 ${ cycle } 个月"
+        "${ cycle } 个月小计"
       ],
       "Total": [
         "总计"
@@ -4011,6 +4017,9 @@
       "Code is incorrect or not valid anymore": [
         "验证码错误或失效"
       ],
+      "Company name or personal name is required": [
+        "公司名称或个人姓名为必填项"
+      ],
       "Couldn't load invoices. Please try again later.": [
         "账单加载失败，请稍后再试。"
       ],
@@ -4143,11 +4152,11 @@
       "Invalid private key file": [
         "无效的私钥文件"
       ],
+      "Invalid VAT number": [
+        "无效增值税号"
+      ],
       "Invalid verification code": [
         "验证码无效"
-      ],
-      "Invalid ZIP code": [
-        "无效的邮政编码"
       ],
       "Label name cannot be empty.": [
         "标签名称不能为空。"
@@ -4220,6 +4229,9 @@
       ],
       "Please add a payment method before reactivating your subscription": [
         "请在重新激活您的订阅前添加付款方式"
+      ],
+      "Please complete the billing details": [
+        "请填写账单信息"
       ],
       "Please configure a custom domain before adding addresses.": [
         "添加地址前请先配置自有域名。"
@@ -4392,6 +4404,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此项超过了 ${ maximumLength } 个字符的长度限制。"
       ],
+      "This field is invalid": [
+        "字段无效"
+      ],
       "This field is required": [
         "此项必须填写"
       ],
@@ -4451,6 +4466,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "由于您的 DNS 配置存在问题，我们已中止 DKIM 签名。请参照下列步骤进行配置。"
+      ],
+      "Wrong billing address": [
+        "错误的账单地址"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "密语错误，请重试或使用另一种方式恢复。"
@@ -4888,6 +4906,9 @@
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "离开您的计划后，此用户将被移动到一个无限制的 ${ BRAND_NAME } 计划，并且免费试用30天。*"
+      ],
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "为管理员账户分配存储空间，您可以稍后为其他用户分配存储。"
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "创建和管理家庭成员并分配他们在 ${ DRIVE_APP_NAME } 和 ${ MAIL_APP_NAME } 之间共享的存储空间。"
@@ -5987,6 +6008,21 @@
       "(default)": [
         "(默认)"
       ],
+      "(eg. ChatGPT, Gemini, Perplexity)": [
+        "（例如：ChatGPT、Gemini、Perplexity）"
+      ],
+      "(eg. New York Times, BBC)": [
+        "（例如：纽约时报、BBC）"
+      ],
+      "(eg. PCMag, TechRadar)": [
+        "（例如：PCMag、TechRadar）"
+      ],
+      "(eg. The Vergecast, Big Technology Podcast)": [
+        "（例如：The Vergecast、Big Technology Podcast）"
+      ],
+      "(formerly Twitter)": [
+        "（原 Twitter）"
+      ],
       "**Enable automatic backups** for peace of mind": [
         "**开启自动备份**，安全无忧"
       ],
@@ -6109,6 +6145,9 @@
       ],
       "Affected user is on row": [
         "存在问题的行序号为"
+      ],
+      "AI chatbot": [
+        "AI 聊天机器人"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "由 AI 驱动的助手，帮助您快速、轻松地制作出更好的电子邮件。"
@@ -6254,11 +6293,17 @@
       "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
         "将您的信息、联系人和日历同步至 ${ BRAND_NAME }。"
       ],
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "禁用账户监测后，您的所有历史记录也将被清除。您确定要禁用它吗？"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降级为免费用户，无论今后是否再次付费升级，您都将永远失去这些特权。"
       ],
       "By leaving now, changes may not be saved": [
         "若现在离开，所作更改将不会被保存"
+      ],
+      "Cancel": [
+        "取消"
       ],
       "Can’t access your recovery email?": [
         "找回密码需要的邮箱用不了？"
@@ -6632,6 +6677,9 @@
       "expires ${ expirationDate }": [
         "于 ${ expirationDate } 过期"
       ],
+      "Facebook": [
+        "Facebook"
+      ],
       "Failed to fetch logs.": [
         "获取日志失败。"
       ],
@@ -6649,6 +6697,15 @@
       ],
       "Free trial": [
         "免费试用"
+      ],
+      "Friends and family": [
+        "亲友推荐"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "网关删除失败，请重试"
+      ],
+      "Gateway deleted": [
+        "网关已删除"
       ],
       "Gateway monitor": [
         "网关监视器"
@@ -6676,6 +6733,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "访问身份供应商，获取 ${ appName } 的 SAML 元数据并导入此处。"
+      ],
+      "Google or other search engine": [
+        "谷歌或其他搜索引擎"
       ],
       "Google Pay mark": [
         "Google Pay 标记"
@@ -6787,6 +6847,9 @@
       ],
       "Inherited from parent folder": [
         "与上层文件夹一致"
+      ],
+      "Instagram": [
+        "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "国家/地区配置文件用于在所选国家/地区随机选择某个服务器连接。"
@@ -7037,6 +7100,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "将停止收集和显示新的 VPN 连接数据。"
       ],
+      "News or media article": [
+        "新闻或媒体文章"
+      ],
       "Next billing date": [
         "下一个帐单日期"
       ],
@@ -7117,6 +7183,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "以专用服务器组成网关，设置能访问它们的成员。"
+      ],
+      "Other": [
+        "其他"
       ],
       "Other accounts": [
         "其他账户"
@@ -7211,6 +7280,9 @@
       "Please select the folders you would like to import:": [
         "请选择要导入的文件夹："
       ],
+      "Please specify...": [
+        "请指定..."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "请尝试用其他方式支付，或联系您的发卡银行。"
       ],
@@ -7228,6 +7300,9 @@
       ],
       "Plus or Visionary subscription required": [
         "需开通 Plus 账户或者 Visionary 账户"
+      ],
+      "Podcast": [
+        "播客"
       ],
       "Preference saved": [
         "设置已保存"
@@ -7252,6 +7327,9 @@
       ],
       "Private AI assistant": [
         "私人 AI 助手"
+      ],
+      "Product reviews, rankings, or guides": [
+        "产品评论、排名或指南"
       ],
       "Protected by Swiss privacy laws": [
         "由瑞士隐私法律保护"
@@ -7294,6 +7372,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "恢复密语与任何过时的密钥不相关。"
+      ],
+      "Reddit": [
+        "Reddit"
       ],
       "Referral link copied to your clipboard": [
         "邀请链接已复制"
@@ -7469,6 +7550,9 @@
       "Storage used by this user": [
         "该用户的存储空间使用量"
       ],
+      "Submit": [
+        "提交"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "使用以下地址提交存款或扫描二维码。您的存款将在确认后反映在您的账户中。"
       ],
@@ -7517,6 +7601,9 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "感谢支持我们建立一个更好的互联网的使命，让隐私和自由成为第一位。"
       ],
+      "Thanks for the feedback!": [
+        "感谢您的反馈！"
+      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked }的提示将不会再出现，但您仍然可以在${ encryptionAndKeysLink }设置中解密数据。"
       ],
@@ -7555,6 +7642,9 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "您的用户在登录时将可以看到该名称。"
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
+        "积分奖励可在好友试用结束后的 2 个月内发放，且仅限好友在此期间订阅了套餐。"
       ],
       "The securest way to browse, stream, and be online.": [
         "最安全的浏览、串流和冲浪方式。"
@@ -7672,6 +7762,9 @@
       ],
       "This will wipe all logs for your organization members.": [
         "这将清除您组织所有成员的日志。"
+      ],
+      "TikTok": [
+        "TikTok"
       ],
       "to ${ product } Business": [
         "使用 ${ product } Business"
@@ -8021,6 +8114,9 @@
       "Writing assistant": [
         "写作助手"
       ],
+      "X": [
+        "X"
+      ],
       "You already have a free account": [
         "您的账户已经是免费版了"
       ],
@@ -8171,6 +8267,15 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "您将无法使用下载的恢复文件恢复锁定的数据。这也会禁用基于设备的恢复。"
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "您将在好友订阅年度套餐 1 个月后获得推荐奖励，若好友订阅月度套餐则在 2 个月后获得。"
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "您将在好友试用结束 1 个月后获得积分奖励。"
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "您将在好友试用结束 2 个月后获得积分奖励。"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "此后每 ${ renewCycle } 个月按 ${ renewAmountStr } 收费。您可以随时取消。"
       ],
@@ -8263,6 +8368,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "您的试用将于 ${ timeRemaining } 结束。"
+      ],
+      "YouTube": [
+        "YouTube"
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "您还将失去对 ${ boldPlanTitle } 功能的访问权限："
@@ -8756,6 +8864,9 @@
       "Emails (last 3 months)": [
         "邮件（过去 3 个月）"
       ],
+      "Emails (last 6 months)": [
+        "邮件（过去 6 个月）"
+      ],
       "Emails (last month)": [
         "邮件（上个月）"
       ],
@@ -8878,6 +8989,9 @@
       ],
       "Last 3 months only": [
         "仅过去 3 个月"
+      ],
+      "Last 6 months only": [
+        "仅过去 6 个月"
       ],
       "Last month only": [
         "仅上个月"
@@ -9694,6 +9808,9 @@
       ]
     },
     "Log preference": {
+      "Account monitor": [
+        "账户监测"
+      ],
       "Enable ${ reason }": [
         "启用 ${ reason }"
       ],
@@ -11780,6 +11897,9 @@
       "Got it": [
         "了解"
       ],
+      "I'm purchasing as a business": [
+        "以企业身份购买"
+      ],
       "Including ${ rate }% tax": [
         "含 ${ rate }% 税费"
       ],
@@ -11854,9 +11974,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "此操作将扩展您现有的订阅。您只需支付新增附加项的费用以及当前计费周期剩余时间的费用。您的订阅续订日期将不会改变。"
-      ],
-      "This number will be shown on all future invoices": [
-        "此编号将显示在所有未来的发票上。"
       ],
       "This offer is not available with your current plan.": [
         "此优惠不适用于您当前的套餐"
@@ -12067,6 +12184,9 @@
       "Confirm": [
         "确认"
       ],
+      "Cortex Inc.": [
+        "Cortex 公司"
+      ],
       "domain.com": [
         "域名.com"
       ],
@@ -12126,6 +12246,9 @@
       ],
       "Postal code": [
         "邮政编码"
+      ],
+      "San Francisco": [
+        "旧金山"
       ],
       "Search": [
         "搜索"
@@ -14779,6 +14902,9 @@
       "Account": [
         "账户"
       ],
+      "Account monitor": [
+        "账户监测"
+      ],
       "Account recovery": [
         "账户恢复"
       ],
@@ -15121,6 +15247,9 @@
       "Device name": [
         "设备名称"
       ],
+      "Disable account monitor?": [
+        "禁用账户监测？"
+      ],
       "Disable two-factor authentication": [
         "禁用双因素身份验证"
       ],
@@ -15300,6 +15429,9 @@
       ],
       "Home": [
         "首页"
+      ],
+      "How did you find out about us?": [
+        "您是如何了解到我们的？"
       ],
       "How to choose a good logo": [
         "如何选择一个不错的徽标"
@@ -15630,6 +15762,9 @@
       ],
       "Spam, block, and allow lists": [
         "垃圾邮件与黑白名单"
+      ],
+      "Spring Sale": [
+        "春季特惠"
       ],
       "Start a new import": [
         "开始导入"
@@ -16628,6 +16763,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "该网关中的服务器将进入 10 天的停用期。这些服务器可添加至新的网关，但其国家/地区无法更改。"
       ],
       "Skip verification?": [
         "跳过验证？"

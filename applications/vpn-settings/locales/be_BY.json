@@ -284,6 +284,9 @@
       "Delete Gateway": [
         "Выдаліць шлюз"
       ],
+      "Delete gateway": [
+        "Выдаліць шлюз"
+      ],
       "Delete group": [
         "Выдаліць групу"
       ],
@@ -1869,6 +1872,9 @@
       "Calendar": [
         "Каляндар"
       ],
+      "Completed": [
+        "Завершаныя"
+      ],
       "Configure migration": [
         "Сканфігурыраваць перанос"
       ],
@@ -1889,6 +1895,12 @@
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Праграма Google Marketplace для капіявання даных у ${ BRAND_NAME }"
+      ],
+      "Has errors": [
+        "З памылкамі"
+      ],
+      "In progress": [
+        "Выконваецца"
       ],
       "Install app": [
         "Усталяваць праграму"
@@ -1923,6 +1935,9 @@
       "Migration status": [
         "Статус пераносу"
       ],
+      "Not started": [
+        "Не запушчана"
+      ],
       "Organization does not have enough seats available": [
         "У арганізацыі недастаткова даступных ліцэнзій"
       ],
@@ -1947,8 +1962,14 @@
       "Set up": [
         "Наладзіць"
       ],
+      "Settings": [
+        "Налады"
+      ],
       "Sign in to Google Workspace": [
         "Увайсці ў Google Workspace"
+      ],
+      "Status": [
+        "Статус"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Вам неабходна ўсталяваць праграму ${ BRAND_NAME } Migration Assistant з Google Workspace Marketplace, каб перанесці даныя сваёй арганізацыі. Гэта дзеянне дазволіць ${ BRAND_NAME } скапіяваць вашы даныя. Вярніцеся сюды для працягу пасля таго, як праграма будзе ўсталявана."
@@ -1958,6 +1979,9 @@
       ],
       "User": [
         "Карыстальнік"
+      ],
+      "Users migrated": [
+        "Карыстальнікі перанесены"
       ],
       "Verify installation": [
         "Спраўдзіць усталяванне"
@@ -1969,7 +1993,7 @@
         "Спраўдзіце свой дамен, каб пачаць перанос"
       ],
       "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
-        "Немагчыма спраўдзіць ўусталяванне. Праверце, што ўсталяванне было зроблена ва ўліковым запісе Google Workspace і паспрабуйце яшчэ раз."
+        "Немагчыма спраўдзіць усталяванне. Праверце, што ўсталяванне было зроблена ва ўліковым запісе Google Workspace і паспрабуйце яшчэ раз."
       ],
       "What are you migrating?": [
         "Што вы плануеце перанесці?"
@@ -4066,7 +4090,7 @@
         "Група з такой назвай ужо існуе"
       ],
       "Address primary private key not found": [
-        "Асноўны прыватны ключ адраса не знойдзены"
+        "Асноўны закрыты ключ адраса не знойдзены"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Уся прастора сховішча была размеркавана. Паменшыце сховішча, якое вы вылучылі іншым карыстальнікам."
@@ -4091,6 +4115,9 @@
       ],
       "Code is incorrect or not valid anymore": [
         "Няправільны код або больш несапраўдны"
+      ],
+      "Company name or personal name is required": [
+        "Патрабуецца назва кампаніі або асабістае імя"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Немагчыма загрузіць рахункі. Паспрабуйце яшчэ раз пазней."
@@ -4228,13 +4255,13 @@
         "Памылковы паштовы індэкс"
       ],
       "Invalid private key file": [
-        "Памылковы файл прыватнага ключа"
+        "Памылковы файл закрытага ключа"
+      ],
+      "Invalid VAT number": [
+        "Памылковы нумар ПДВ"
       ],
       "Invalid verification code": [
         "Памылковы праверачны код"
-      ],
-      "Invalid ZIP code": [
-        "Памылковы паштовы індэкс"
       ],
       "Label name cannot be empty.": [
         "Назва меткі не можа быць пустой."
@@ -4310,6 +4337,9 @@
       ],
       "Please add a payment method before reactivating your subscription": [
         "Дадайце спосаб аплаты перад тым, як аднавіць сваю падпіску"
+      ],
+      "Please complete the billing details": [
+        "Запоўніце плацежныя звесткі"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Перад дадаваннем адрасоў неабходна сканфігураваць карыстальніцкі дамен."
@@ -4426,7 +4456,7 @@
         "Назвы некаторых вашых метак перавышаюць абмежаванні колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
       ],
       "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
-        "Нешта пашйло не так пры падключэнні вашага тэлевізара. Паспрабуйце яшчэ раз адсканіраваць QR-код на сваім тэлевізары."
+        "Нешта пайшло не так пры падключэнні вашага тэлевізара. Паспрабуйце яшчэ раз адсканіраваць QR-код на сваім тэлевізары."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Нешта пайшло не так. ${ refresh } для працягу. Калі вы ўсё яшчэ бачыце паведамленне з памылкай, напішыце ў нашу ${ supportTeam }."
@@ -4485,6 +4515,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (максімум: ${ maximumLength })."
       ],
+      "This field is invalid": [
+        "Гэта поле з'яўляецца памылковым"
+      ],
       "This field is required": [
         "Абавязковае поле"
       ],
@@ -4528,10 +4561,10 @@
         "Невядомы статус плацежнага токена"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "Запампаваны файл з'яўляецца несапраўдным прыватным ключом. Спраўдзіце яго і паспрабуйце яшчэ раз."
+        "Запампаваны файл з'яўляецца несапраўдным закрытым ключом. Спраўдзіце яго і паспрабуйце яшчэ раз."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
-        "Запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз."
+        "Запампаваныя файлы з'яўляюцца несапраўднымі закрытымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз."
       ],
       "Username must begin with a letter or digit": [
         "Імя карыстальніка павінна пачынацца з літары або лічбы"
@@ -4544,6 +4577,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Мы прыпынілі падпісанне DKIM з прычыны праблем з канфігурацыяй вашага DNS. Прытрымлівайцеся інструкцый ніжэй, каб узнавіць падпісанне."
+      ],
+      "Wrong billing address": [
+        "Няправільны плацежны адрас"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Няправільная фраза аднаўлення. Паспрабуйце яшчэ раз або скарыстайцеся іншым спосабам аднаўлення."
@@ -4633,7 +4669,7 @@
         "Прапушчаны ўласцівасці FN"
       ],
       "vCard versions < 3.0 not supported": [
-        "Верcіі vCard ніжэйшыя за 3.0 не падтрымліваюцца"
+        "Верcіі vCard ніжэй за 3.0 не падтрымліваюцца"
       ]
     },
     "Error importing contacts": {
@@ -6096,10 +6132,10 @@
         "${ number } серверы"
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "${ numberOfNonPrivateKeys } запампаваны файл з'яўляецца несапраўдным прыватным ключом. Спраўдзіце яго/іх і паспрабуйце яшчэ раз.",
-        "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз.",
-        "${ numberOfNonPrivateKeys } запампаваных файлаў з'яўляюцца несапраўднымі прыватнымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз.",
-        "${ numberOfNonPrivateKeys } запампаваных файлаў з'яўляюцца несапраўднымі прыватнымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз."
+        "${ numberOfNonPrivateKeys } запампаваны файл з'яўляецца несапраўдным закрытым ключом. Спраўдзіце яго/іх і паспрабуйце яшчэ раз.",
+        "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі закрытымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз.",
+        "${ numberOfNonPrivateKeys } запампаваных файлаў з'яўляюцца несапраўднымі закрытымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз.",
+        "${ numberOfNonPrivateKeys } запампаваных файлаў з'яўляюцца несапраўднымі закрытымі ключамі. Спраўдзіце іх і паспрабуйце яшчэ раз."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
@@ -6232,6 +6268,21 @@
       ],
       "(default)": [
         "(прадвызначана)"
+      ],
+      "(eg. ChatGPT, Gemini, Perplexity)": [
+        "(напрыклад, ChatGPT, Gemini, Perplexity)"
+      ],
+      "(eg. New York Times, BBC)": [
+        "(напрыклад, New York Times, BBC)"
+      ],
+      "(eg. PCMag, TechRadar)": [
+        "(напрыклад, PCMag, TechRadar)"
+      ],
+      "(eg. The Vergecast, Big Technology Podcast)": [
+        "(напрыклад, The Vergecast, Big Technology Podcast)"
+      ],
+      "(formerly Twitter)": [
+        "(раней вядомы як Twitter)"
       ],
       "**Enable automatic backups** for peace of mind": [
         "**Уключыць аўтаматычнае рэзерваванне** для душэўнага спакою"
@@ -6373,6 +6424,9 @@
         "Уплывае на карыстальнікаў у радку",
         "Уплывае на карыстальнікаў у радку",
         "Уплывае на карыстальнікаў у радку"
+      ],
+      "AI chatbot": [
+        "Чатбот ШІ"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Асістэнт ШІ дапаможа вам хутка і без намаганняў ствараць лепшыя лісты."
@@ -6535,6 +6589,9 @@
       ],
       "By leaving now, changes may not be saved": [
         "Калі выйсці цяпер, змяненні могуць не захавацца"
+      ],
+      "Cancel": [
+        "Скасаваць"
       ],
       "Can’t access your recovery email?": [
         "Не можаце атрымаць доступ да электроннай пошты для аднаўлення доступу?"
@@ -6923,6 +6980,9 @@
       "expires ${ expirationDate }": [
         "дзейнічае да ${ expirationDate }"
       ],
+      "Facebook": [
+        "Facebook"
+      ],
       "Failed to fetch logs.": [
         "Не ўдалося атрымаць журналы."
       ],
@@ -6940,6 +7000,15 @@
       ],
       "Free trial": [
         "Бясплатны пробны перыяд"
+      ],
+      "Friends and family": [
+        "Сябры і сям’я"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "Шлюз не можа быць выдалены. Паспрабуйце яшчэ раз."
+      ],
+      "Gateway deleted": [
+        "Шлюз выдалены"
       ],
       "Gateway monitor": [
         "Назіранне за шлюзом"
@@ -6968,6 +7037,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Перайдзіце да свайго пастаўшчыка пасведчанняў, каб атрымаць метаданыя SAML для ${ appName } і імпартаваць іх сюды."
       ],
+      "Google or other search engine": [
+        "Google або іншая пошукавая сістэма"
+      ],
       "Google Pay mark": [
         "Пазнака Google Pay"
       ],
@@ -6987,7 +7059,7 @@
         "Высокі прыярытэт"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
-        "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэння аўтэнтыфікацыі. Павінна быць месцам для спампоўвання або капіявання хэшу сертыфіката ад пастаўшчыка пасведчанняў. Проста ўстаўце хэш сертыфіката ў тэкставае поле."
+        "Адкрыты ключ пастаўшчыка пасведчанняў для подпісу сцвярджэння аўтэнтыфікацыі. Павінна быць месцам для спампоўвання або капіявання хэшу сертыфіката ад пастаўшчыка пасведчанняў. Проста ўстаўце хэш сертыфіката ў тэкставае поле."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Калі іншы адміністратар змяніў гэты пароль, вам неабходна будзе спытаць у яго новы пароль арганізацыі."
@@ -7081,6 +7153,9 @@
       ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
+      ],
+      "Instagram": [
+        "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Усталюйце файл канфігурацыі краіны для падключэння да выпадковага сервера ў краіне, якую вы выбралі."
@@ -7334,6 +7409,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Новыя даныя падключэння па VPN перастануць збірацца і паказвацца."
       ],
+      "News or media article": [
+        "Навіна або артыкул са СМІ"
+      ],
       "Next billing date": [
         "Дата наступнай аплаты:"
       ],
@@ -7420,6 +7498,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Арганізуйце свае вылучаныя серверы ў шлюзы і вырашыце, якія ўдзельнікі змогуць атрымаць доступ да іх."
+      ],
+      "Other": [
+        "Іншае"
       ],
       "Other accounts": [
         "Іншыя ўліковыя запісы"
@@ -7520,6 +7601,9 @@
       "Please select the folders you would like to import:": [
         "Выберыце папкі для імпартавання:"
       ],
+      "Please specify...": [
+        "Вызначыце..."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Паспрабуйце яшчэ раз, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі вашага банка."
       ],
@@ -7537,6 +7621,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Патрабуецца падпіска Plus або Visionary"
+      ],
+      "Podcast": [
+        "Падкаст"
       ],
       "Preference saved": [
         "Параметр захаваны"
@@ -7561,6 +7648,9 @@
       ],
       "Private AI assistant": [
         "Прыватны памочнік ШІ"
+      ],
+      "Product reviews, rankings, or guides": [
+        "Агляды прадуктаў, рэйтынгі або дапаможнікі"
       ],
       "Protected by Swiss privacy laws": [
         "Абаронены швейцарскімі законамі аб прыватнасці"
@@ -7603,6 +7693,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Фраза аднаўлення не звязана з састарэлымі ключамі."
+      ],
+      "Reddit": [
+        "Reddit"
       ],
       "Referral link copied to your clipboard": [
         "Рэферальная спасылка скапіявана ў буфер абмену"
@@ -7781,6 +7874,9 @@
       "Storage used by this user": [
         "Сховішча, выкарыстанае гэтым карыстальнікам"
       ],
+      "Submit": [
+        "Адправіць"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Адпраўце дэпазіт выкарыстоўваючы наступны адрас або адсканіруйце QR-код. Ваш дэпазіт адлюструецца на вашым рахунку пасля пацвярджэння."
       ],
@@ -7832,6 +7928,9 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Дзякуй за падтрымку нашай місіі па стварэнні лепшага інтэрнэту, дзе прыватнасць і свабода стаяць на першым месцы."
       ],
+      "Thanks for the feedback!": [
+        "Дзякуй за водгук!"
+      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Паведамленне ${ boldDataLocked } не будзе больш паказвацца, але вы ўсё яшчэ можаце разблакіраваць свае даныя ў ${ encryptionAndKeysLink }."
       ],
@@ -7879,6 +7978,9 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Гэта імя ўбачаць вашы карыстальнікі, калі яны ўвойдуць у сістэму."
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
+        "Узнагарода па рэферальнай праграме ў выглядзе крэдытаў можа быць атрымана на працягу 2 месяцаў пасля завяршэння пробнага перыяду вашага сябра, і калі ваш сябар падпісаўся на тарыфны план."
       ],
       "The securest way to browse, stream, and be online.": [
         "Самы бяспечны спосаб для прагляду старонак у інтэрнэце і трансляцый."
@@ -7996,6 +8098,9 @@
       ],
       "This will wipe all logs for your organization members.": [
         "Гэта прывядзе да сцірання ўсіх журналаў для ўдзельнікаў вашай арганізацыі."
+      ],
+      "TikTok": [
+        "TikTok"
       ],
       "to ${ product } Business": [
         "у ${ product } Business"
@@ -8127,7 +8232,7 @@
         "Запампуйце лагатып сваёй арганізацыі, каб павысіць ідэнтычнасць вашага брэнда і стварыць персаналізаваны досвед для вашых карыстальнікаў."
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "Запампаваны файл з'яўляецца несапраўдным прыватным ключом. Спраўдзіце яго і паспрабуйце яшчэ раз."
+        "Запампаваны файл з'яўляецца несапраўдным закрытым ключом. Спраўдзіце яго і паспрабуйце яшчэ раз."
       ],
       "Uppercase and lowercase letters": [
         "Маленькія і вялікія літары"
@@ -8345,6 +8450,9 @@
       "Writing assistant": [
         "Памочнік у напісанні"
       ],
+      "X": [
+        "X"
+      ],
       "You already have a free account": [
         "У вас ужо ёсць бясплатны ўліковы запіс"
       ],
@@ -8484,7 +8592,7 @@
         "Вы будзеце перанакіраваны на вэб-сайт вашага банка."
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
-        "Вы павінны актываваць прыватны ключ арганізацыі з дапамогай рэзервовага пароля ключа арганізацыі, які вам выдаў адміністратар арганізацыі."
+        "Вы павінны актываваць закрыты ключ арганізацыі з дапамогай рэзервовага пароля ключа арганізацыі, які вам выдаў адміністратар арганізацыі."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Перад тым, як панізіць свой тарыфны план, вам неабходна адключыць або выдаліць для ${ MAIL_APP_NAME } дадатковых карыстальнікаў, паштовыя адрасы і карыстальніцкія дамены."
@@ -8521,6 +8629,15 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "У вас не будзе магчымасці аднавіць заблакіраваныя даныя з дапамогай спампаваных файлаў аднаўлення. Гэта таксама адключыць аднаўленне з дапамогай даверанай прылады."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Вы атрымаеце ўзнагароду ў крэдытах праз 1 месяц пасля таго, як ваш сябар падпішацца на гадавы тарыфны план. Праз 2 месяцы можна разлічваць на ўзнагароду, калі ваш сябар падпішацца на месячны тарыфны план."
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "Вы атрымаеце ўзнагароджанне ў крэдытах праз 1 месяц пасля завяршэння пробнага перыяду вашага сябра."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "Вы атрымаеце ўзнагароджанне ў крэдытах праз 2 месяцы пасля завяршэння пробнага перыяду вашага сябра."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяц у памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
@@ -8623,6 +8740,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Ваш пробны перыяд завершыцца праз ${ timeRemaining }."
+      ],
+      "YouTube": [
+        "YouTube"
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Вы таксама страціце доступ да функцый ${ boldPlanTitle }:"
@@ -12296,6 +12416,9 @@
       "Got it": [
         "Зразумела"
       ],
+      "I'm purchasing as a business": [
+        "Я купляю як юрыдычная асоба"
+      ],
       "Including ${ rate }% tax": [
         "Уключаючы падатак у памеры ${ rate }%:"
       ],
@@ -12388,9 +12511,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Гэта дзеянне пашырае існуючую падпіску. З вас будзе спагнана плата толькі за новыя дадаткі і час, якія засталіся ў бягучым перыядзе аплаты. Дата падаўжэння вашай падпіскі не будзе зменена."
-      ],
-      "This number will be shown on all future invoices": [
-        "Гэты нумар будзе паказаны ва ўсіх будучых рахунках"
       ],
       "This offer is not available with your current plan.": [
         "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
@@ -12601,6 +12721,9 @@
       "Confirm": [
         "Пацвердзіць"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "domain.com": [
         "domain.com"
       ],
@@ -12660,6 +12783,9 @@
       ],
       "Postal code": [
         "Паштовы індэкс"
+      ],
+      "San Francisco": [
+        "Сан-Францыска"
       ],
       "Search": [
         "Пошук"
@@ -15258,7 +15384,7 @@
         "Сертыфікат падоўжаны да ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        "Канфігурацыя \"${ name }\" створана. Звярніце ўвагу, што прыватны ключ не захоўваецца, і не будзе паказаны зноў, вы павінны скапіяваць або спампаваць гэту канфігурацыю."
+        "Канфігурацыя \"${ name }\" створана. Звярніце ўвагу, што закрыты ключ не захоўваецца і не будзе паказаны паўторна. Вам неабходна скапіяваць або спампаваць гэту канфігурацыю."
       ],
       "Creating config file for ${ serverName }": [
         "Стварэнне файла канфігурацыі для ${ serverName }"
@@ -16042,6 +16168,9 @@
       "Home": [
         "Галоўная"
       ],
+      "How did you find out about us?": [
+        "Як вы даведаліся пра нас?"
+      ],
       "How to choose a good logo": [
         "Як выбраць добры лагатып"
       ],
@@ -16375,6 +16504,9 @@
       "Spam, block, and allow lists": [
         "Спам, а таксама спісы заблакіраваных і дазволеных адрасоў"
       ],
+      "Spring Sale": [
+        "Вясенні распродаж"
+      ],
       "Start a new import": [
         "Пачаць новае імпартаванне"
       ],
@@ -16705,7 +16837,7 @@
         "Пошта Gmail аўтаматычна класіфікуе некаторыя лісты, такія як \"Сацыяльныя\" і \"Рэклама\". Вы можаце выбраць куды імпартаваць гэтыя лісты."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
-        "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэнняў аўтэнтыфікацыі. Атрымайце хэш сертыфіката ад свайго пастаўшчыка пасведчанняў."
+        "Адкрыты ключ пастаўшчыка пасведчанняў для подпісу сцвярджэнняў аўтэнтыфікацыі. Атрымайце хэш сертыфіката ад свайго пастаўшчыка пасведчанняў."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Калі вы купілі падарункавы код або атрымалі яго ад нашай каманды падтрымкі, то яго можна ўвесці тут."
@@ -17417,6 +17549,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Серверы ў гэтым шлюзе ўвойдуць у 10-дзённы перыяд дэактывацыі. Гэтыя серверы могуць быць дададзены ў новы шлюз, але іх краіна не можа быць зменена."
       ],
       "Skip verification?": [
         "Прапусціць праверку?"
