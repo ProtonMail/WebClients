@@ -8,7 +8,6 @@ import { handleLegacyError } from '../../utils/errorHandling/useLegacyErrorHandl
 import { type LegacyItem, mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
 import { useJointTrashNodes } from './useJointTrashNodes';
 import { useTrashStore } from './useTrash.store';
-import { useTrashPhotosStore } from './useTrashPhotos.store';
 
 jest.mock('@proton/drive/index', () => {
     const actual = jest.requireActual('@proton/drive/index');
@@ -36,12 +35,6 @@ jest.mock('./useTrash.store', () => {
     return { useTrashStore: hook };
 });
 
-jest.mock('./useTrashPhotos.store', () => {
-    const hook = jest.fn() as jest.Mock & { getState: jest.Mock };
-    hook.getState = jest.fn();
-    return { useTrashPhotosStore: hook };
-});
-
 jest.mock('../../utils/sdk/mapNodeToLegacyItem', () => {
     const actual = jest.requireActual('../../utils/sdk/mapNodeToLegacyItem');
     return {
@@ -55,9 +48,6 @@ const mockUseStableDefaultShare = jest.mocked(useStableDefaultShare);
 const mockUseSortingWithDefault = jest.mocked(useSortingWithDefault);
 const mockMapNodeToLegacyItem = jest.mocked(mapNodeToLegacyItem);
 const mockUseTrashStore = useTrashStore as jest.MockedFunction<typeof useTrashStore> & { getState: jest.Mock };
-const mockUseTrashPhotosStore = useTrashPhotosStore as jest.MockedFunction<typeof useTrashPhotosStore> & {
-    getState: jest.Mock;
-};
 const mockHandleLegacyError = jest.mocked(handleLegacyError);
 
 const createLegacyItem = (uid: string, name: string, type: NodeType = NodeType.File): LegacyItem => ({
@@ -83,13 +73,11 @@ const createLegacyItem = (uid: string, name: string, type: NodeType = NodeType.F
 });
 
 describe('useJointTrashNodes', () => {
-    let driveStoreState: { trashNodes: Record<string, any>; isLoading: boolean };
-    let photoStoreState: { trashNodes: Record<string, any>; isLoading: boolean };
+    let storeState: { items: Map<string, any>; isLoading: boolean };
 
     beforeEach(() => {
         jest.clearAllMocks();
-        driveStoreState = { trashNodes: {}, isLoading: false };
-        photoStoreState = { trashNodes: {}, isLoading: false };
+        storeState = { items: new Map(), isLoading: false };
 
         mockUseDrive.mockReturnValue({
             drive: {},
@@ -108,8 +96,7 @@ describe('useJointTrashNodes', () => {
             setSorting: jest.fn(),
         }));
 
-        mockUseTrashStore.mockImplementation((selector: (state: any) => any) => selector(driveStoreState));
-        mockUseTrashPhotosStore.mockImplementation((selector: (state: any) => any) => selector(photoStoreState));
+        mockUseTrashStore.mockImplementation((selector: (state: any) => any) => selector(storeState));
 
         mockMapNodeToLegacyItem.mockImplementation(async (maybeNode) => {
             const node = 'value' in maybeNode ? maybeNode.value : (maybeNode as unknown as NodeEntity);
@@ -120,9 +107,11 @@ describe('useJointTrashNodes', () => {
     it('returns mapped drive and photo trash nodes', async () => {
         const driveNode = { uid: 'drive-1', name: 'Drive node', type: NodeType.File };
         const photoNode = { uid: 'photo-1', name: 'Photo node', type: NodeType.Photo };
-        driveStoreState.trashNodes = { [driveNode.uid]: driveNode };
-        photoStoreState.trashNodes = { [photoNode.uid]: photoNode };
-        photoStoreState.isLoading = true;
+        storeState.items = new Map([
+            [driveNode.uid, driveNode],
+            [photoNode.uid, photoNode],
+        ]);
+        storeState.isLoading = true;
 
         const { result } = renderHook(() => useJointTrashNodes());
 
@@ -139,9 +128,7 @@ describe('useJointTrashNodes', () => {
     });
 
     it('reports errors when mapping fails', async () => {
-        driveStoreState.trashNodes = {
-            driveError: { uid: 'drive-error', name: 'Drive node', type: NodeType.File },
-        };
+        storeState.items = new Map([['driveError', { uid: 'drive-error', name: 'Drive node', type: NodeType.File }]]);
         mockMapNodeToLegacyItem.mockRejectedValueOnce(new Error('mapping failed'));
 
         const { result } = renderHook(() => useJointTrashNodes());
@@ -157,7 +144,7 @@ describe('useJointTrashNodes', () => {
         const oldNode = { uid: 'old-1', name: 'Old node', type: NodeType.File };
         const newNode = { uid: 'new-1', name: 'New node', type: NodeType.File };
 
-        driveStoreState.trashNodes = { [oldNode.uid]: oldNode };
+        storeState.items = new Map([[oldNode.uid, oldNode]]);
 
         let resolveOldMapping: ((value: LegacyItem) => void) | undefined;
         const oldDelayedPromise = new Promise<LegacyItem>((resolve) => {
@@ -171,7 +158,7 @@ describe('useJointTrashNodes', () => {
         expect(result.current.trashNodes).toEqual([]);
 
         // Change dependencies before old async operation completes
-        driveStoreState.trashNodes = { [newNode.uid]: newNode };
+        storeState.items = new Map([[newNode.uid, newNode]]);
         mockMapNodeToLegacyItem.mockResolvedValueOnce(createLegacyItem(newNode.uid, newNode.name));
         rerender();
 
