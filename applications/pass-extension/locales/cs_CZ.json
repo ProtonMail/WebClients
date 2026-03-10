@@ -166,17 +166,11 @@
       "Confirm all": [
         "Potvrdit vše"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Připojte váš účet ${ BRAND_NAME }"
-      ],
       "Continue": [
         "Pokračovat"
       ],
       "Continue offline": [
         "Pokračovat offline"
-      ],
-      "Continue without pinning": [
-        "Pokračovat bez připnutí"
       ],
       "Copy and close": [
         "Kopírovat a zavřít"
@@ -220,17 +214,11 @@
       "Create a ${ BRAND_NAME } account": [
         "Vytvořit účet ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Vytvořte účet ${ BRAND_NAME }"
-      ],
       "Create a new vault": [
         "Vytvořit nový trezor"
       ],
       "Create alias": [
         "Vytvořit alias"
-      ],
-      "Create an account": [
-        "Vytvořit účet"
       ],
       "Create card": [
         "Vytvořit kartu"
@@ -318,9 +306,6 @@
       ],
       "Do not suggest on this website": [
         "Nenavrhovat na této webové stránce"
-      ],
-      "Done": [
-        "Hotovo"
       ],
       "Download this CSV template": [
         "Stáhnout tuto CSV šablonu"
@@ -666,9 +651,6 @@
       ],
       "Sign back in": [
         "Přihlásit se zpět"
-      ],
-      "Sign in": [
-        "Přihlásit se"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Přihlaste se pomocí ${ BRAND_NAME }"
@@ -1239,9 +1221,6 @@
       "PIN codes do not match": [
         "PIN kódy se neshodují"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Připněte rozšíření nebo vyberte možnost \"Pokračovat bez připnutí\"."
-      ],
       "Registration failure: ${ message }": [
         "Registrace selhala: ${ message }"
       ],
@@ -1494,9 +1473,6 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } chce sdílet položku se skupinou, kterou spravujete."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } si přeje sdílet položku se skupinou ${ invitedGroup.Name }."
-      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } chce s vámi sdílet položku."
       ],
@@ -1575,11 +1551,11 @@
         "Zbývá ${ trialDaysLeft } dnů",
         "Zbývá ${ trialDaysLeft } dnů"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } člen)",
-        "(${ membersCount } členové)",
-        "(${ membersCount } členů)",
-        "(${ membersCount } členů)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } člen)",
+        "(${ memberCount } členové)",
+        "(${ memberCount } členů)",
+        "(${ memberCount } členů)"
       ],
       "(Empty)": [
         "(Prázdné)"
@@ -1758,9 +1734,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Vyberte uložený přístupový klíč pro přihlášení k ${ domain }"
       ],
-      "Click the icon to open it anytime.": [
-        "Otevřete kdykoli kliknutím na ikonu."
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "Zavřete toto okno, abyste mohli použít bezpečnostní klíč nebo jiný přístupový klíč."
       ],
@@ -1932,9 +1905,6 @@
       "Follow those steps to import your data with a generic CSV:": [
         "Postupujte podle těchto kroků pro import vašich dat pomocí obecného CSV:"
       ],
-      "For easy access to your passwords and more.": [
-        "Pro snadný přístup k heslům a dalším údajům."
-      ],
       "For security reason, your access needs to be confirmed": [
         "Z bezpečnostních důvodů musí být váš přístup potvrzen"
       ],
@@ -2003,9 +1973,6 @@
       ],
       "Invite successfully resent": [
         "Pozvánka byla úspěšně odeslána"
-      ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "pozve skupinu ${ invitedGroup.Name } k přístupu k položkám v"
       ],
       "invites you to access items in": [
         "vás zve k přístupu k položkám v"
@@ -2107,10 +2074,7 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2166,9 +2130,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online přístup k ${ PASS_APP_NAME } bude vyžadovat PIN kód. Budete odhlášeni po 3 neúspěšných pokusech."
       ],
-      "Open the Extensions menu": [
-        "Otevřít menu rozšíření"
-      ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Otevřete nastavení Safari, vyhledejte ${ PASS_APP_NAME }, přejděte na \"Oprávnění\" a povolte oprávnění webu."
       ],
@@ -2210,9 +2171,6 @@
       ],
       "Permanently deleting selected items": [
         "Trvalé mazání vybraných položek"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Připněte ${ PASS_APP_NAME } na panel nástrojů"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN kód byl úspěšně zaregistrován. Použijte jej k odemknutí ${ PASS_APP_NAME }"
@@ -2406,9 +2364,6 @@
       "See more info": [
         "Zobrazit další informace"
       ],
-      "Select an existing login or create a new one.": [
-        "Vyberte stávající přihlášení a nebo vytvořte nové."
-      ],
       "Select destination vault": [
         "Vyberte cílový trezor"
       ],
@@ -2447,9 +2402,6 @@
       ],
       "Shared item invitation": [
         "Pozvánka ke sdílené položce"
-      ],
-      "Sign in or create an account to continue.": [
-        "Pro pokračování se přihlaste nebo si vytvořte účet."
       ],
       "Sign in to your account": [
         "Přihlaste se ke svému účtu"
@@ -4521,9 +4473,6 @@
       "Confirm your email": [
         "Potvrďte svůj e-mail"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Připojte váš účet ${ BRAND_NAME }"
-      ],
       "Contacts": [
         "Kontakty"
       ],
@@ -4788,9 +4737,6 @@
       "Permanently remove all items?": [
         "Trvale smazat všechny položky?"
       ],
-      "Pin the extension": [
-        "Připněte rozšíření"
-      ],
       "Pinned (${ items.length })": [
         "Připnuto (${ items.length })"
       ],
@@ -4943,9 +4889,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "Vítejte v ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "Vítejte ve svém novém správci hesel!"
       ],
       "What is an alias?": [
         "Co je alias?"

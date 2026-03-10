@@ -166,17 +166,11 @@
       "Confirm all": [
         "Confirmare tot"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Conectați-vă contul ${ BRAND_NAME }"
-      ],
       "Continue": [
         "Continuare"
       ],
       "Continue offline": [
         "Continuare în mod deconectat"
-      ],
-      "Continue without pinning": [
-        "Continuare fără fixare"
       ],
       "Copy and close": [
         "Copiere și închidere"
@@ -220,17 +214,11 @@
       "Create a ${ BRAND_NAME } account": [
         "Creare cont ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Creați un cont ${ BRAND_NAME }"
-      ],
       "Create a new vault": [
         "Creare seif"
       ],
       "Create alias": [
         "Creare alias"
-      ],
-      "Create an account": [
-        "Creare cont"
       ],
       "Create card": [
         "Creare card"
@@ -318,9 +306,6 @@
       ],
       "Do not suggest on this website": [
         "Nu mai sugera pe acest site web"
-      ],
-      "Done": [
-        "Gata"
       ],
       "Download this CSV template": [
         "Descărcați acest șablon de fișier CSV"
@@ -666,9 +651,6 @@
       ],
       "Sign back in": [
         "Reconectare"
-      ],
-      "Sign in": [
-        "Autentificare"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Conectare cu ${ BRAND_NAME }"
@@ -1234,9 +1216,6 @@
       "PIN codes do not match": [
         "Codurile PIN nu coincid."
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Fixați extensia sau selectați „Continuare fără fixare”."
-      ],
       "Registration failure: ${ message }": [
         "Eșuare înregistrare: ${ message }"
       ],
@@ -1478,8 +1457,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } dorește să partajeze un articol cu un grup pe care îl administrați."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } dorește să partajeze un articol cu grupul ${ invitedGroup.Name }."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } dorește să partajeze un articol cu grupul ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } dorește să vă partajeze un articol."
@@ -1553,10 +1532,10 @@
         "Au mai rămas ${ trialDaysLeft } zile",
         "Au mai rămas ${ trialDaysLeft } de zile"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } membru)",
-        "(${ membersCount } membri)",
-        "(${ membersCount } de membri)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } membru)",
+        "(${ memberCount } membri)",
+        "(${ memberCount } de membri)"
       ],
       "(Empty)": [
         "(Gol)"
@@ -1735,9 +1714,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Alegeți o cheie de acces salvată pentru a vă conecta la ${ domain }"
       ],
-      "Click the icon to open it anytime.": [
-        "Faceți clic pe pictogramă pentru deschide aplicația."
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "Închideți această fereastră pentru a utiliza o cheie de securitate sau o altă cheie de acces."
       ],
@@ -1909,9 +1885,6 @@
       "Follow those steps to import your data with a generic CSV:": [
         "Urmați acești pași pentru a importa datele dintr-un fișier CSV generic:"
       ],
-      "For easy access to your passwords and more.": [
-        "Pentru acces ușor la parole și alte informații."
-      ],
       "For security reason, your access needs to be confirmed": [
         "Din motive de securitate, trebuie să vă confirmăm accesul."
       ],
@@ -1979,8 +1952,8 @@
       "Invite successfully resent": [
         "Invitația a fost retrimisă."
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "invită grupul ${ invitedGroup.Name } să acceseze articolele din"
+      "invites the group ${ name } to access items in": [
+        "invită grupul ${ name } să acceseze articolele din"
       ],
       "invites you to access items in": [
         "vă invită să accesați articolele din"
@@ -2079,11 +2052,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
-      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -2138,9 +2106,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Accesul online la ${ PASS_APP_NAME } va necesita un cod PIN. După 3 încercări nereușite contul va fi deconectat."
       ],
-      "Open the Extensions menu": [
-        "Deschideți meniul de extensii"
-      ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Deschideți setările Safari, găsiți ${ PASS_APP_NAME }, accesați „Permisiuni” și activați permisiunile pentru site."
       ],
@@ -2181,9 +2146,6 @@
       ],
       "Permanently deleting selected items": [
         "Articolele selectate se șterg permanent."
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Fixați ${ PASS_APP_NAME } pe bara de unelte"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "S-a reușit înregistrarea codului PIN. Folosiți-l pentru a debloca ${ PASS_APP_NAME }."
@@ -2377,9 +2339,6 @@
       "See more info": [
         "Mai multe informații"
       ],
-      "Select an existing login or create a new one.": [
-        "Selectați o autentificare existentă sau creați alta."
-      ],
       "Select destination vault": [
         "Selectare seif destinație"
       ],
@@ -2418,9 +2377,6 @@
       ],
       "Shared item invitation": [
         "Invitație articol partajat"
-      ],
-      "Sign in or create an account to continue.": [
-        "Conectați-vă sau creați un cont pentru a continua."
       ],
       "Sign in to your account": [
         "Conectare la cont"
@@ -4468,9 +4424,6 @@
       "Confirm your email": [
         "Confirmare adresă de e-mail"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Conectați-vă la contul ${ BRAND_NAME }"
-      ],
       "Contacts": [
         "Contacte"
       ],
@@ -4732,9 +4685,6 @@
       "Permanently remove all items?": [
         "Ștergeți definitiv toate articolele?"
       ],
-      "Pin the extension": [
-        "Fixare extensie"
-      ],
       "Pinned (${ items.length })": [
         "Fixate (${ items.length })"
       ],
@@ -4885,9 +4835,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "Bun venit la ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "Bun venit la noul manager de parole!"
       ],
       "What is an alias?": [
         "Ce este un alias?"
