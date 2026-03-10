@@ -1681,6 +1681,9 @@
       "Calendar": [
         "Kalenteri"
       ],
+      "Completed": [
+        "Valmis"
+      ],
       "Configure migration": [
         "Määritä siirto"
       ],
@@ -1698,6 +1701,12 @@
       ],
       "Failed to load OAuth": [
         "OAuthin lataaminen epäonnistui"
+      ],
+      "Has errors": [
+        "Virheitä"
+      ],
+      "In progress": [
+        "Käynnissä"
       ],
       "Install migration app": [
         "Asenna migraatio-sovellus"
@@ -1727,6 +1736,9 @@
       "Migration status": [
         "Siirron tila"
       ],
+      "Not started": [
+        "Ei aloitettu"
+      ],
       "Organization does not have enough seats available": [
         "Organisaatiolla ei ole tarpeeksi paikkoja saatavilla"
       ],
@@ -1751,14 +1763,23 @@
       "Set up": [
         "Määritä"
       ],
+      "Settings": [
+        "Asetukset"
+      ],
       "Sign in to Google Workspace": [
         "Kirjaudu Google Workspace -palveluun"
+      ],
+      "Status": [
+        "Tila"
       ],
       "Transfer errors": [
         "Siirtovirheet"
       ],
       "User": [
         "Käyttäjä"
+      ],
+      "Users migrated": [
+        "Käyttäjät siirretty"
       ],
       "Verify your domain": [
         "Vahvista verkkotunnuksesi"
@@ -1957,6 +1978,10 @@
       "${ users } user": [
         "${ users } käyttäjä",
         "${ users } käyttäjää"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Välisumma ${ cycle } kuukaudelle",
+        "Välisumma ${ cycle } kuukaudelle"
       ],
       "Total": [
         "Summa"
@@ -3756,6 +3781,9 @@
       "Checkout expired, please try again": [
         "Maksutapahtuma erääntyi. Yritä uudelleen."
       ],
+      "Company name or personal name is required": [
+        "Yrityksen tai henkilön nimi vaaditaan"
+      ],
       "Couldn't load invoices. Please try again later.": [
         "Laskuja ei voitu ladata. Yritä myöhemmin uudelleen."
       ],
@@ -3881,11 +3909,11 @@
       "Invalid postal code": [
         "Virheellinen postinumero"
       ],
+      "Invalid VAT number": [
+        "Virheellinen VAT-numero"
+      ],
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
-      ],
-      "Invalid ZIP code": [
-        "Virheellinen postinumero"
       ],
       "Label name cannot be empty.": [
         "Tunnisteen nimi ei voi olla tyhjä."
@@ -3953,6 +3981,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Maksut eivät ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen"
+      ],
+      "Please complete the billing details": [
+        "Täydennä laskutustiedot"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Määritä oma verkkotunnus ennen kuin lisäät osoitteita."
@@ -4126,6 +4157,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Kenttä ylittää ${ maximumLength }-merkin enimmäismäärän."
       ],
+      "This field is invalid": [
+        "Tämän kentän arvo on virheellinen"
+      ],
       "This field is required": [
         "Tämä kenttä vaaditaan"
       ],
@@ -4185,6 +4219,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "DKIM-allekirjoitus keskeytettiin DNS-asetuksissasi ilmenneen ongelman vuoksi. Jatka allekirjoitusta seuraamalla alla olevia ohjeita."
+      ],
+      "Wrong billing address": [
+        "Virheellinen laskutusosoite"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Väärä palautuslauseke. Yritä uudelleen tai kokeile toista palautustapaa."
@@ -5746,6 +5783,9 @@
       ],
       "(default)": [
         "(oletus)"
+      ],
+      "(eg. New York Times, BBC)": [
+        "(esim. Helsingin sanomat, Yle)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Hanki ${ BRAND_NAME }-osoite** käyttääksesi kaikkia ${ BRAND_NAME_TWO }-palveluita, kuten ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }."
@@ -7836,6 +7876,10 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Et voi palauttaa lukittuja tietoja lataamillasi palautustiedostoilla. Tämä poistaa myös laitepohjaisen palautuksen käytöstä."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }. Voit peruuttaa tilauksen milloin tahansa.",
+        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }. Voit peruuttaa milloin tahansa."
+      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Olet ottanut käyttöön edelleenlähetyksen ${ MAX_SYNC_PAID_USER } Gmail-osoitteessa. Lisätäksesi toisen, sinun on ensin poistettava jokin niistä käytöstä.",
         "Olet ottanut käyttöön edelleenlähetyksen ${ MAX_SYNC_PAID_USER } Gmail-osoitteissa. Lisätäksesi uuden osoitteen, sinun on ensin poistettava jokin niistä käytöstä."
@@ -9341,6 +9385,10 @@
       ]
     },
     "meet_2025: Feature": {
+      "${ n } active meeting at a time": [
+        "Enintään ${ n } kokus samanaikaisesti",
+        "Enintään ${ n } kokusta samanaikaisesti"
+      ],
       "${ n } participant": [
         "${ n } osallistuja",
         "${ n } osallistujaa"
@@ -9356,6 +9404,14 @@
       ],
       "Screen-sharing": [
         "Näytön jakaminen"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Enintään ${ n } kokous pävässä",
+        "Enintään ${ n } kokousta pävässä"
+      ],
+      "Up to ${ n } participant": [
+        "Enintää ${ n } osallistuja",
+        "Enintää ${ n } osallistujaa"
       ]
     },
     "Member action": {
@@ -11538,6 +11594,9 @@
       "Confirm": [
         "Vahvista"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "domain.com": [
         "verkkotunnus.fi"
       ],
@@ -11597,6 +11656,9 @@
       ],
       "Postal code": [
         "Postinumero"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Etsi"
@@ -11748,6 +11810,101 @@
       ],
       "Unknown": [
         "Tuntematon"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Älä näytä tätä tarjousta uudelleen"
+      ],
+      "Get the deal": [
+        "Hyödynnä tarjous"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/kk"
+      ],
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "2 TB data storage": [
+        "2 Tt:n tiedontallennus"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 Gt tallennustilaa: 40x nykyinen tilauksesi"
+      ],
+      "3 TB data storage": [
+        "3 Tt:n tiedontallennus"
+      ],
+      "500 GB storage": [
+        "500 Gt tallennustilaa"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Käytössä yli 15 000 palvelinta yli 120 maassa"
+      ],
+      "Access advanced AI models": [
+        "Pääsy kehittyneisiin tekoälymalleihin"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Kaikki Mailin, Passin, Driven, VPN:n ja kalenterin premium-ominaisuudet"
+      ],
+      "Block ads, trackers, and malware": [
+        "Estä mainokset, seuranta ja haittaohjelmat"
+      ],
+      "Built-in 2FA authenticator": [
+        "Sisäänrakennettu 2FA-todentaja"
+      ],
+      "Connect 10 devices at once": [
+        "Yhdistä 10 laitetta kerralla"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Alennukset perustuvat normaaliin kuukausihintaan. Tilauksesi uusiutuu laskutusjakson päättyessä normaalilla vuosihinnalla."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Täysi ${ VPN_APP_NAME } -käyttöoikeus"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Täysi keskusteluhistoria helpolla haulla ja suosikeilla"
+      ],
+      "Individual accounts for 6 users": [
+        "Henkilökohtaiset tilit 6 käyttäjälle"
+      ],
+      "Individual accounts for you and a partner": [
+        "Henkilökohtaiset tilit sinulle ja kumppanille"
+      ],
+      "Online document editor": [
+        "Dokumenttieditori verkossa"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
+      ],
+      "Stronger protection against cyber threats": [
+        "Vahvempi suoja kyberuhkia vastaan"
+      ],
+      "Unlimited daily chats": [
+        "Rajattomasti päivittäisiä keskusteluja"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Rajattomasti hide-my-email-aliaksia"
+      ],
+      "Use your own email domain": [
+        "Käytä omaa sähköpostin verkkotunnusta"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "perhonen"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "12 kuukaudeksi"
+      ],
+      "SPRING SALE": [
+        "KEVÄTALE"
       ]
     },
     "Recovery Email": {
@@ -12584,6 +12741,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Jakanut ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Avaa ${ appName } -sovelluksessa"
       ]
     },
     "Signup": {
@@ -14927,6 +15089,9 @@
       ],
       "Spam, block, and allow lists": [
         "Roskapostin, estettyjen ja sallittujen listat"
+      ],
+      "Spring Sale": [
+        "Kevätale"
       ],
       "Start a new import": [
         "Aloita uusi tuonti"
