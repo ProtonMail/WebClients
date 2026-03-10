@@ -1418,6 +1418,10 @@
         "${ row.breachCount } incidente detetado",
         "${ row.breachCount } incidentes detetados"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membro)",
+        "(${ memberCount } membros)"
+      ],
       "(Empty)": [
         "(Vazio)"
       ],

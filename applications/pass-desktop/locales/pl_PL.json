@@ -1471,6 +1471,12 @@
         "Wykryto ${ row.breachCount } wycieków",
         "Wykryto ${ row.breachCount } wycieków"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } członek)",
+        "(${ memberCount } członków)",
+        "(${ memberCount } członków)",
+        "(${ memberCount } członków)"
+      ],
       "(Empty)": [
         "(pusty)"
       ],
