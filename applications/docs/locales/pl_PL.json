@@ -2706,9 +2706,6 @@
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
       ],
-      "Invalid ZIP code": [
-        "Kod pocztowy jest nieprawidłowy"
-      ],
       "Item content cannot exceed 40KB": [
         "Rozmiar elementu nie może przekraczać 40kb"
       ],
@@ -4115,6 +4112,9 @@
       ],
       "Continue": [
         "Kontynuuj"
+      ],
+      "Copied to clipboard": [
+        "Skopiowano do schowka"
       ],
       "Copy the link to clipboard": [
         "Kopiuj link do schowka"
@@ -7865,6 +7865,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Oficjalna wiadomość od ${ BRAND_NAME }"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Nie pokazuj tej oferty ponownie"
+      ],
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/miesiąc"
+      ],
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "2 TB data storage": [
+        "2 TB przestrzeni dyskowej na dane"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB przestrzeni dyskowej: 40 × Twój obecny plan"
+      ],
+      "3 TB data storage": [
+        "3 TB przestrzeni dyskowej na dane"
+      ],
+      "500 GB storage": [
+        "500 GB przestrzeni dyskowej"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Dostęp do ponad 15 000 serwerów w ponad 120 krajach"
+      ],
+      "Access advanced AI models": [
+        "Uzyskaj dostęp do zaawansowanych modeli AI"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Wszystkie funkcje premium usług Mail, Pass, Drive, VPN i Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokuj reklamy, elementy śledzące i złośliwe oprogramowanie"
+      ],
+      "Built-in 2FA authenticator": [
+        "Wbudowana aplikacja uwierzytelniająca"
+      ],
+      "Connect 10 devices at once": [
+        "Połącz 10 urządzeń jednocześnie"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zniżki są naliczane na podstawie standardowych cen miesięcznych. Twoja subskrypcja odnowi się po standardowej stawce rocznej, gdy zakończy się cykl rozliczeniowy."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Pełny dostęp do ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Pełna historia czatu z łatwym wyszukiwaniem i ulubionymi"
+      ],
+      "Individual accounts for 6 users": [
+        "Indywidualne konta dla 6 użytkowników"
+      ],
+      "Individual accounts for you and a partner": [
+        "Indywidualne konta dla Ciebie i partnera"
+      ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silniejsza ochrona przed cyberzagrożeniami"
+      ],
+      "Unlimited daily chats": [
+        "Nieograniczone codzienne czaty"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nieograniczona liczba aliasów z funkcją hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Możliwość użycia własnej domeny e-mail"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "motyl"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "na 12 miesięcy"
+      ],
+      "SPRING SALE": [
+        "WIOSENNA WYPRZEDAŻ"
       ]
     },
     "Recent documents table header": {
