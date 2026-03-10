@@ -318,6 +318,9 @@
       "Connect to video conferencing": [
         "დაკავსირება ვიდეოკონფერენციასთან"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "შემოიერთეთ თქვენი ${ BRAND_NAME }-ის ანგარიში"
+      ],
       "Connected": [
         "დაკავშირებულია"
       ],
@@ -384,8 +387,14 @@
       "Create": [
         "შექმნა"
       ],
+      "Create a ${ BRAND_NAME } Account": [
+        "შექმენით ${ BRAND_NAME }-ის ანგარიში"
+      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "${ BRAND_NAME }-ის გარეთ გაზიარების ბმულის შექმნა"
+      ],
+      "Create an account": [
+        "ანგარიშის შექმნა"
       ],
       "Create calendar": [
         "კალენდრის შექმნა"
@@ -454,6 +463,9 @@
         "ფილტრის \"${ Name }\" წაშლა"
       ],
       "Delete Gateway": [
+        "რაუტერის წაშლა"
+      ],
+      "Delete gateway": [
         "რაუტერის წაშლა"
       ],
       "Delete group": [
@@ -6313,9 +6325,6 @@
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
       ],
-      "Invalid ZIP code": [
-        "არასწორი ZIP კოდი"
-      ],
       "Item content cannot exceed 40KB": [
         "ელემენტის შემცველობა 40კბ-ზე მეტი ვერ იქნება"
       ],
@@ -9168,6 +9177,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "დააწკაპუნეთ \"ახალი კოდის გამოთხოვნაზე\" და თქვენ ${ strong }-ზე ახალი კოდი გამოგეგზავნებათ. თუ ტელეფონის ეს ნომერი არასწორია, ჩაასწორეთ ის."
       ],
+      "Click the icon to open it anytime.": [
+        "მის გასახსნელად ნებისმიერ დროს შეგიძლიათ, ხატულაზე დააწკაპუნოთ."
+      ],
       "Close this screen to exit.": [
         "გასასვლელად დახურეთ ეს ეკრანი."
       ],
@@ -9635,6 +9647,9 @@
       "for choosing ${ product }": [
         "${ product }-ის არჩევისთვის"
       ],
+      "For easy access to your passwords and more.": [
+        "თქვენს პაროლებთან იოლი წვდომისთვის და ა.შ."
+      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "მომხმარებლებისთვს, რომლებიც ${ MAIL_APP_NAME }-ზე სხვა ელფოსტის სერვისიდან გადმოდიან, აირჩიეთ ${ boldAddresses } ჩანართი და დაამატეთ ყველა აქტიური ელფოსტის მისამართი, სანამ MX ჩანაწერს შეცვლით, რათა შუაში ელფოსტა არ დაკარგოთ."
       ],
@@ -9649,6 +9664,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "გაათავისუფლეთ ადგილი ძველი შეტყობინებებისა და სხვა მონაცემების წაშლით"
+      ],
+      "Gateway deleted": [
+        "რაუტერი წაიშალა"
       ],
       "Gateway monitor": [
         "რაუტერის მონიტორი"
@@ -10210,6 +10228,9 @@
       "Open source": [
         "ღია კოდი"
       ],
+      "Open the Extensions menu": [
+        "გაფართოებების მენიუს გახსნა"
+      ],
       "Open the guide for recommended actions and helpful links.": [
         "გახსენით დამხმარე რეკომენდებული ქმედებებისა და სასარგებლო ბმულებისთვის."
       ],
@@ -10310,6 +10331,9 @@
       ],
       "Phone number": [
         "ტელეფონის ნომერი"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "${ PASS_APP_NAME }-ის მიმაგრება თქვენს ხელსაწყოების ზოლში"
       ],
       "Please add a password for the user on row": [
         "მომხმარებლის მწკრივში საჭიროა პაროლის დამატება",
@@ -10625,6 +10649,9 @@
       ],
       "Sign in only": [
         "მხოლოდ შესვლა"
+      ],
+      "Sign in or create an account to continue.": [
+        "გასაგრძელებლად შედით ან შექმენით ანგარიში."
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "თქვენი მისამართის გასააქტიურებლად შედით ${ MAIL_APP_NAME }-ში"
@@ -17157,6 +17184,9 @@
       "Got it": [
         "გავიგე"
       ],
+      "I'm purchasing as a business": [
+        "ვაპირებ შევიძინო ბიზნესისთვის"
+      ],
       "Including ${ rate }% tax": [
         "${ rate }% გადასახადის ჩათვლით"
       ],
@@ -17226,9 +17256,6 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ.",
         "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ."
-      ],
-      "This number will be shown on all future invoices": [
-        "ეს რიცხვი ყველა მომავალ ინვოისზე გამოჩნდება"
       ],
       "This offer is not available with your current plan.": [
         "ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
@@ -21681,6 +21708,9 @@
       "Connect to video conferencing": [
         "დაკავსირება ვიდეოკონფერენციასთან"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "შემოიერთეთ თქვენი ${ BRAND_NAME }-ის ანგარიში"
+      ],
       "Connect your custom domain": [
         "თქვენი დომენის დაკავსირება"
       ],
@@ -21805,6 +21835,9 @@
       "Deep dive into VPN blog posts": [
         "ჩაეფალით VPN-ის ბლოგის პოსტებში"
       ],
+      "Delete ${ name }?": [
+        "წავშალო ${ name }?"
+      ],
       "Delete ${ value }": [
         "${ value }-ის წაშლა"
       ],
@@ -21862,6 +21895,9 @@
       ],
       "Device name": [
         "მოწყობილობის სახელი"
+      ],
+      "Disable account monitor?": [
+        "გაითიშოს ანგარიშის მონიტორი?"
       ],
       "Disable categories?": [
         "გამოვრთო კატეგორიები?"
@@ -22423,6 +22459,9 @@
       "Photos": [
         "ფოტოები"
       ],
+      "Pin the extension": [
+        "გაფართოების მიმაგრება"
+      ],
       "Policies": [
         "პოლიტიკები"
       ],
@@ -22885,6 +22924,9 @@
       ],
       "Welcome to ${ planName }": [
         "მოგესალმებათ ${ planName }"
+      ],
+      "Welcome to your new password manager!": [
+        "მოგესალმებით თქვენი ახალ პაროლების მმართველში!"
       ],
       "What is an alias?": [
         "რა არის ფსევდონიმი?"
