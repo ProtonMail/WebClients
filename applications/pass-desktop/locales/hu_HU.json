@@ -1429,6 +1429,10 @@
         "${ row.breachCount } adatszivárgás észlelve",
         "${ row.breachCount } adatszivárgások észlelve"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } tag)",
+        "(${ memberCount } tag)"
+      ],
       "(Empty)": [
         "(Üres)"
       ],

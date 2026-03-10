@@ -1462,9 +1462,6 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } vuole condividere un elemento con un gruppo che amministri."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } vuole condividere un elemento con il gruppo ${ invitedGroup.Name }."
-      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } vuole condividere un elemento con te."
       ],
@@ -1512,9 +1509,9 @@
         "${ row.breachCount } violazione di dati rilevata",
         "${ row.breachCount } violazioni di dati rilevate"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } membro)",
-        "(${ membersCount } membri)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } membro)",
+        "(${ memberCount } membri)"
       ],
       "(Empty)": [
         "(Vuoto)"
@@ -1892,9 +1889,6 @@
       ],
       "Invite successfully resent": [
         "Invito reinviato con successo"
-      ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "invita il gruppo ${ invitedGroup.Name } ad accedere agli elementi in"
       ],
       "invites you to access items in": [
         "ti invita ad accedere agli elementi in"

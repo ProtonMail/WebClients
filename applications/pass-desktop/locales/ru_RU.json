@@ -1448,6 +1448,12 @@
         "Обнаружены ${ row.breachCount } утечек",
         "Обнаружены ${ row.breachCount } утечек"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } участник)",
+        "(${ memberCount } участника)",
+        "(${ memberCount } участников)",
+        "(${ memberCount } участника)"
+      ],
       "(Empty)": [
         "(Пусто)"
       ],

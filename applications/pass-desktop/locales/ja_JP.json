@@ -1488,6 +1488,9 @@
       "${ row.breachCount } breach detected": [
         "${ row.breachCount } 件の違反が検出されました"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } 人のメンバー)"
+      ],
       "(Empty)": [
         "(空)"
       ],
