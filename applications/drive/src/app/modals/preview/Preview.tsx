@@ -18,6 +18,7 @@ export interface PreviewProps {
     drive?: Drive;
     onNodeChange?: (nodeUid: string) => void;
     verifySignatures?: boolean;
+    canOpenInDocs?: boolean;
     onClose: () => void;
 
     /**
@@ -42,6 +43,7 @@ export function Preview({
     previewableNodeUids,
     onNodeChange,
     verifySignatures = true,
+    canOpenInDocs = false,
     onClose,
     photos,
 }: PreviewProps) {
@@ -91,7 +93,7 @@ export function Preview({
                 onSave={preview.actions.saveFile}
                 onDetails={onDetails}
                 onShare={onShare}
-                onOpenInDocs={preview.actions.openInDocs}
+                onOpenInDocs={canOpenInDocs ? preview.actions.openInDocs : undefined}
                 imgThumbnailUrl={preview.content.thumbnailUrl}
                 navigationControls={
                     preview.navigation && (

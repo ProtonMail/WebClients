@@ -128,7 +128,7 @@ export const FolderToolbar = ({
         return (
             <>
                 <PreviewButton selectedItems={selectedItems} type="toolbar" onClick={showPreviewModal} />
-                <OpenInDocsButton type="toolbar" selectedItems={selectedItems} />
+                {permissions.canOpenInDocs && <OpenInDocsButton type="toolbar" selectedItems={selectedItems} />}
                 <DownloadButton type="toolbar" selectedItems={selectedItems} onClick={downloadItems} />
                 {viewportWidth['<=small'] ? (
                     <ActionsDropdown volumeId={volumeId} selectedItems={selectedItems} role={role} />
