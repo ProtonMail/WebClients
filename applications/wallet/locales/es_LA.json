@@ -2272,6 +2272,9 @@
       "Checkout expired, please try again": [
         "La compra ha expirado, intente de nuevo"
       ],
+      "Company name or personal name is required": [
+        "Se requiere el nombre de la empresa o el nombre personal"
+      ],
       "Contact could not be saved": [
         "El contacto no se pudo guardar"
       ],
@@ -2314,11 +2317,11 @@
       "Invalid postal code": [
         "Código postal inválido"
       ],
+      "Invalid VAT number": [
+        "Número de IVA incorrecto"
+      ],
       "Invalid verification code": [
         "Código de verificación inválido"
-      ],
-      "Invalid ZIP code": [
-        "Código ZIP inválido"
       ],
       "Not a valid number": [
         "Número no válido"
@@ -2340,6 +2343,9 @@
       ],
       "Payment process not supported": [
         "Proceso de pago no soportado"
+      ],
+      "Please complete the billing details": [
+        "Complete los detalles de facturación"
       ],
       "Please enter a valid postal code": [
         "Ingrese un código postal válido"
@@ -2401,6 +2407,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
+      "This field is invalid": [
+        "Este campo no es válido"
+      ],
       "This field is required": [
         "Este campo es obligatorio"
       ],
@@ -2424,6 +2433,9 @@
       ],
       "Username must end with a letter or digit": [
         "El nombre de usuario debe terminar con una letra o dígito"
+      ],
+      "Wrong billing address": [
+        "Dirección de facturación incorrecta"
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
@@ -4614,6 +4626,9 @@
       "Got it": [
         "Entiendo"
       ],
+      "I'm purchasing as a business": [
+        "Estoy comprando como empresa"
+      ],
       "Including ${ rate }% tax": [
         "Incluye un ${ rate }% de impuestos"
       ],
@@ -4685,9 +4700,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Esta acción ampliará la suscripción existente. Solo se le cargará por las adiciones y el tiempo restante del ciclo de facturación actual. La fecha de renovación de la suscripción no cambiará."
-      ],
-      "This number will be shown on all future invoices": [
-        "Este número se mostrará en todas las facturas futuras"
       ],
       "This offer is not available with your current plan.": [
         "Esta oferta no está disponible con el plan actual."
@@ -4853,6 +4865,9 @@
       "Confirm passphrase or leave empty": [
         "Confirme la frase de contraseña o déjela vacía"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Ej., "
       ],
@@ -4879,6 +4894,9 @@
       ],
       "Postal code": [
         "Código postal"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Buscar"
@@ -5576,6 +5594,9 @@
       ],
       "Simplify password management": [
         "Simplifique la gestión de contraseñas"
+      ],
+      "Spring Sale": [
+        "Oferta de primavera"
       ],
       "Summary": [
         "Resumen"

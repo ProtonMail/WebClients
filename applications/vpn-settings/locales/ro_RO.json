@@ -1856,6 +1856,9 @@
       "Calendar": [
         "Calendar"
       ],
+      "Completed": [
+        "Completat"
+      ],
       "Configure migration": [
         "Configurare migrare"
       ],
@@ -1876,6 +1879,12 @@
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplicația Google Marketplace pentru a copia datele în ${ BRAND_NAME }"
+      ],
+      "Has errors": [
+        "Are erori"
+      ],
+      "In progress": [
+        "În derulare"
       ],
       "Install app": [
         "Instalare aplicație"
@@ -1909,6 +1918,9 @@
       "Migration status": [
         "Stare migrare"
       ],
+      "Not started": [
+        "Neîncepută"
+      ],
       "Organization does not have enough seats available": [
         "Organizația nu dispune de suficiente licențe disponibile."
       ],
@@ -1933,8 +1945,14 @@
       "Set up": [
         "Configurare"
       ],
+      "Settings": [
+        "Setări"
+      ],
       "Sign in to Google Workspace": [
         "Conectare la Google Workspace"
+      ],
+      "Status": [
+        "Stare"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Pentru a vă migra datele organizației, trebuie să instalați aplicația ${ BRAND_NAME } Migration Assistant din Google Workspace Marketplace. Aceasta va acorda permisiunea ca ${ BRAND_NAME } să vă copieze datele. După instalare, reveniți aici pentru a continua."
@@ -1944,6 +1962,9 @@
       ],
       "User": [
         "Utilizator"
+      ],
+      "Users migrated": [
+        "Utilizatori migrați"
       ],
       "Verify installation": [
         "Verificare instalare"
@@ -4069,6 +4090,9 @@
       "Code is incorrect or not valid anymore": [
         "Codul nu este corect sau nu mai este valid."
       ],
+      "Company name or personal name is required": [
+        "Numele companiei sau numele personal este necesar."
+      ],
       "Couldn't load invoices. Please try again later.": [
         "Nu s-au putut încărca facturile. Reîncercați mai târziu."
       ],
@@ -4205,11 +4229,11 @@
       "Invalid private key file": [
         "Fișier cheie privată nevalid."
       ],
+      "Invalid VAT number": [
+        "Cont TVA nevalid"
+      ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
-      ],
-      "Invalid ZIP code": [
-        "Cod poștal nevalid"
       ],
       "Label name cannot be empty.": [
         "Numele etichetei nu poate fi gol."
@@ -4284,6 +4308,9 @@
       ],
       "Please add a payment method before reactivating your subscription": [
         "Adăugați o metodă de plată înainte de a vă reactiva abonamentul."
+      ],
+      "Please complete the billing details": [
+        "Completați detaliile de facturare."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configurația un domeniu personal înainte de a adăuga adrese."
@@ -4458,6 +4485,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Acest câmp depășește maximul de ${ maximumLength } de caractere."
       ],
+      "This field is invalid": [
+        "Acest câmp nu este valid."
+      ],
       "This field is required": [
         "Acest câmp este obligatoriu"
       ],
@@ -4517,6 +4547,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Am oprit semnarea cu DKIM din cauza problemelor cu configurația DNS. Urmați instrucțiunile de mai jos pentru a relua semnarea."
+      ],
+      "Wrong billing address": [
+        "Adresă de facturare incorectă."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frază de recuperare greșită. Încercați din nou sau utilizați o altă metodă de recuperare."
@@ -6156,6 +6189,21 @@
       "(default)": [
         "(implicit)"
       ],
+      "(eg. ChatGPT, Gemini, Perplexity)": [
+        "(de ex. ChatGPT, Gemini, Perplexity)"
+      ],
+      "(eg. New York Times, BBC)": [
+        "(de ex. New York Times, BBC)"
+      ],
+      "(eg. PCMag, TechRadar)": [
+        "(de ex. PCMag, TechRadar)"
+      ],
+      "(eg. The Vergecast, Big Technology Podcast)": [
+        "(ex. The Vergecast, Big Technology Podcast)"
+      ],
+      "(formerly Twitter)": [
+        "(fost Twitter)"
+      ],
       "**Enable automatic backups** for peace of mind": [
         "**Activați conservările automate** pentru liniștea personală."
       ],
@@ -6290,6 +6338,9 @@
         "Utilizatorul afectat este pe rândul",
         "Utilizatorii afectați sunt pe rândurile",
         "Utilizatorii afectați sunt pe rândurile"
+      ],
+      "AI chatbot": [
+        "Bot conversațional IA"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistent pe bază de IA pentru a vă ajuta să scrieți mesaje mai bune, mai repede și fără efort."
@@ -6449,6 +6500,9 @@
       ],
       "By leaving now, changes may not be saved": [
         "Dacă ieșiți acum, este posibil ca schimbările să nu fie salvate."
+      ],
+      "Cancel": [
+        "Anulare"
       ],
       "Can’t access your recovery email?": [
         "Nu vă puteți accesa adresa de e-mail de recuperare?"
@@ -6832,6 +6886,9 @@
       "expires ${ expirationDate }": [
         "expiră ${ expirationDate }"
       ],
+      "Facebook": [
+        "Facebook"
+      ],
       "Failed to fetch logs.": [
         "Eșuare preluare jurnale."
       ],
@@ -6849,6 +6906,9 @@
       ],
       "Free trial": [
         "Probare gratuită"
+      ],
+      "Friends and family": [
+        "Prieteni și familie"
       ],
       "Gateway couldn't be deleted. Please try again": [
         "Poarta de acces nu a putut fi ștearsă. Reîncercați."
@@ -6882,6 +6942,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Accesați furnizorul de identitate, obțineți metadatele SAML pentru ${ appName } și importați-le aici."
+      ],
+      "Google or other search engine": [
+        "Google sau alt motor de căutare"
       ],
       "Google Pay mark": [
         "Marcare Google Pay"
@@ -6995,6 +7058,9 @@
       ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte"
+      ],
+      "Instagram": [
+        "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Instalați un fișier de configurare al țării pentru a vă conecta la un server aleatoriu din țara aleasă."
@@ -7247,6 +7313,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Noile date de conectare prin VPN vor înceta să fie colectate și afișate."
       ],
+      "News or media article": [
+        "Articol de știri sau media"
+      ],
       "Next billing date": [
         "Data facturii următoare"
       ],
@@ -7331,6 +7400,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organizați-vă serverele dedicate în porți de acces și decideți care membri le pot accesa."
+      ],
+      "Other": [
+        "Alta"
       ],
       "Other accounts": [
         "Alte conturi"
@@ -7429,6 +7501,9 @@
       "Please select the folders you would like to import:": [
         "Selectați folderele pe care doriți să le importați:"
       ],
+      "Please specify...": [
+        "Vă rugăm să specificați..."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Reîncercați folosind o metodă de plată diferită sau contactați-vă banca."
       ],
@@ -7446,6 +7521,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Este necesar abonamentul „Plus” sau „Visionary”"
+      ],
+      "Podcast": [
+        "Podcast"
       ],
       "Preference saved": [
         "Preferință salvată"
@@ -7470,6 +7548,9 @@
       ],
       "Private AI assistant": [
         "Asistent de IA privat"
+      ],
+      "Product reviews, rankings, or guides": [
+        "Recenzii de produse, clasamente sau ghiduri"
       ],
       "Protected by Swiss privacy laws": [
         "Protejat de legile stricte elvețiene privind confidențialitatea"
@@ -7512,6 +7593,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Fraza de recuperare nu este asociată cu nicio cheie învechită."
+      ],
+      "Reddit": [
+        "Reddit"
       ],
       "Referral link copied to your clipboard": [
         "Legătura de recomandare a fost copiată în memorie."
@@ -7689,6 +7773,9 @@
       "Storage used by this user": [
         "Spațiu folosit de utilizator"
       ],
+      "Submit": [
+        "Trimitere"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faceți o depunere folosind adresa următoare sau scanați codul QR. Depunerea va apărea în cont după confirmare."
       ],
@@ -7739,6 +7826,9 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Vă mulțumim că ne susțineți misiunea de a construi un internet mai bun unde confidențialitatea și libertatea primează."
       ],
+      "Thanks for the feedback!": [
+        "Mulțumim pentru feedback!"
+      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Mesajul ${ boldDataLocked } nu va mai fi afișat, dar încă puteți să vă deblocați datele din ${ encryptionAndKeysLink }."
       ],
@@ -7783,6 +7873,9 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Numele va fi vizibil utilizatorilor când sunt conectați."
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
+        "Creditul de recomandare poate fi acordat până la două luni după încheierea perioadei de probare pentru persoana recomandată și dacă aceasta s-a abonat la un plan."
       ],
       "The securest way to browse, stream, and be online.": [
         "Cea mai sigură cale de navigare, redare în flux și de a fi online."
@@ -7900,6 +7993,9 @@
       ],
       "This will wipe all logs for your organization members.": [
         "Aceasta va șterge toate jurnalele pentru membrii organizației."
+      ],
+      "TikTok": [
+        "TikTok"
       ],
       "to ${ product } Business": [
         "la ${ product } Business"
@@ -8249,6 +8345,9 @@
       "Writing assistant": [
         "Asistent de scriere"
       ],
+      "X": [
+        "X"
+      ],
       "You already have a free account": [
         "Deja aveți un cont gratuit"
       ],
@@ -8417,6 +8516,15 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Nu veți putea recupera datele blocate folosind fișierele de recuperare descărcate. Aceasta va dezactiva și recuperarea pe bază de dispozitiv."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Vei primi recompensa în credite la o lună după ce persoana se abonează la un plan anual și la două luni după ce se abonează la un plan lunar."
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "Vei primi recompensa în credite la o lună după ce perioada de probare pentru persoana recomandată s-a încheiat."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "Vei primi recompensa în credite la două luni după ce perioada de probare pentru persoana recomandată s-a încheiat."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Se va factura apoi la fiecare ${ renewCycle } lună cu ${ renewAmountStr }. Puteți anula oricând.",
         "Se va factura apoi la fiecare ${ renewCycle } luni cu ${ renewAmountStr }. Puteți anula oricând.",
@@ -8515,6 +8623,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Perioada de probare se termină ${ timeRemaining }."
+      ],
+      "YouTube": [
+        "YouTube"
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Veți pierde accesul și la funcțiile ${ boldPlanTitle }:"
@@ -12139,6 +12250,9 @@
       "Got it": [
         "Am înțeles"
       ],
+      "I'm purchasing as a business": [
+        "Achiziționez în calitate de companie"
+      ],
       "Including ${ rate }% tax": [
         "Inclusiv ${ rate }% TVA"
       ],
@@ -12225,9 +12339,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Această acțiune extinde abonamentul existent. Taxa se va aplica doar pentru noile module și pentru timpul rămas din ciclul de facturare actual. Data reînnoirii abonamentului actual nu va fi modificată."
-      ],
-      "This number will be shown on all future invoices": [
-        "Acest număr va fi afișat pe toate facturile viitoare."
       ],
       "This offer is not available with your current plan.": [
         "Această ofertă nu este disponibilă cu planul actual."
@@ -12438,6 +12549,9 @@
       "Confirm": [
         "Confirmare"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "domain.com": [
         "domeniu.com"
       ],
@@ -12497,6 +12611,9 @@
       ],
       "Postal code": [
         "Cod poştal"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Căutare"
@@ -12673,6 +12790,101 @@
       ],
       "Unknown": [
         "Necunoscută."
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Nu mai afișați această ofertă"
+      ],
+      "Get the deal": [
+        "Valorificați oferta"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/lună"
+      ],
+      "15 GB storage": [
+        "15 GB de spațiu de stocare"
+      ],
+      "2 TB data storage": [
+        "2 TB de spațiu de stocare pentru date"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de spațiu de stocare: de 40 de ori planul actual"
+      ],
+      "3 TB data storage": [
+        "3 TB de spațiu de stocare pentru date"
+      ],
+      "500 GB storage": [
+        "500 GB de spațiu de stocare"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accesați peste 15.000 de servere din peste 120 de țări"
+      ],
+      "Access advanced AI models": [
+        "Acces la modele AI avansate"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Toate caracteristicile premium ale Mail, Pass, Drive, VPN și Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blocați reclamele, urmăritorii și malware-ul"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autentificator A2F încorporat"
+      ],
+      "Connect 10 devices at once": [
+        "Conectați 10 dispozitive simultan"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul dvs. se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Acces complet la ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Istoric complet al conversațiilor cu căutare ușoară și favorite"
+      ],
+      "Individual accounts for 6 users": [
+        "Conturi individuale pentru 6 utilizatori"
+      ],
+      "Individual accounts for you and a partner": [
+        "Conturi individuale pentru dvs. și un partener"
+      ],
+      "Online document editor": [
+        "Editor de documente online"
+      ],
+      "Recover previous file versions": [
+        "Recuperați versiunile anterioare ale fișierelor"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protecție mai puternică împotriva amenințărilor cibernetice"
+      ],
+      "Unlimited daily chats": [
+        "Conversații zilnice nelimitate"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Număr nelimitat de foldere, etichete și filtre"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Număr nelimitat de aliasuri hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Utilizați propriul domeniu de e-mail"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "un fluture"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "pentru 12 luni"
+      ],
+      "SPRING SALE": [
+        "REDUCERI DE PRIMĂVARĂ"
       ]
     },
     "Recovery Email": {
@@ -15812,6 +16024,9 @@
       "Home": [
         "Început"
       ],
+      "How did you find out about us?": [
+        "Cum ați aflat de noi?"
+      ],
       "How to choose a good logo": [
         "Cum să alegeți un logo bun"
       ],
@@ -16143,6 +16358,9 @@
       ],
       "Spam, block, and allow lists": [
         "Listă adrese blocate și permise"
+      ],
+      "Spring Sale": [
+        "Reducere de primăvară"
       ],
       "Start a new import": [
         "Începere importare nouă"

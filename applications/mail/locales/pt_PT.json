@@ -4307,9 +4307,6 @@
       "Invalid verification code": [
         "O código de verificação não é válido."
       ],
-      "Invalid ZIP code": [
-        "Código postal inválido"
-      ],
       "Item content cannot exceed 40KB": [
         "O conteúdo do item não pode exceder 40 KB."
       ],
@@ -11358,6 +11355,9 @@
       "Got it": [
         "Entendido"
       ],
+      "I'm purchasing as a business": [
+        "Estou a comprar como empresa"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -11383,9 +11383,6 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Depois, será renovado automaticamente por ${ renewPriceStr } durante ${ renewalLength } mês. Pode cancelar a qualquer momento.",
         "Depois, será renovado automaticamente por ${ renewPriceStr } durante ${ renewalLength } meses. Pode cancelar a qualquer momento."
-      ],
-      "This number will be shown on all future invoices": [
-        "Este número será indicado em todas as facturas futuras"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Este tornar-se-á o seu novo método de pagamento predefinido para todas as renovações futuras."
@@ -11740,6 +11737,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "E-mail oficial de ${ BRAND_NAME }"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Não mostrar esta oferta novamente"
+      ],
+      "Get the deal": [
+        "Aproveite a oferta"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/mês"
+      ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "2 TB data storage": [
+        "2 TB de armazenamento de dados"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de armazenamento: 40x o seu plano atual"
+      ],
+      "3 TB data storage": [
+        "3 TB de armazenamento de dados"
+      ],
+      "500 GB storage": [
+        "500 GB de armazenamento"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Aceda a mais de 15.000 servidores em mais de 120 países"
+      ],
+      "Access advanced AI models": [
+        "Aceda a modelos de IA avançados"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Todas as funcionalidades premium do Mail, Pass, Drive, VPN e Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloqueie anúncios, rastreadores e malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador 2FA integrado"
+      ],
+      "Connect 10 devices at once": [
+        "Ligue 10 dispositivos de uma só vez"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos baseiam-se no preço mensal padrão. A sua subscrição será renovada à taxa anual padrão quando o ciclo de faturação terminar."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Acesso total ao ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Histórico completo de conversas com pesquisa fácil e favoritos"
+      ],
+      "Individual accounts for 6 users": [
+        "Contas individuais para 6 utilizadores"
+      ],
+      "Individual accounts for you and a partner": [
+        "Contas individuais para si e mais uma pessoa"
+      ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
+      "Recover previous file versions": [
+        "Recupere as versões anteriores do ficheiro"
+      ],
+      "Stronger protection against cyber threats": [
+        "Proteção reforçada contra ciberameaças"
+      ],
+      "Unlimited daily chats": [
+        "Conversas diárias ilimitadas"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Aliases hide-my-email ilimitados"
+      ],
+      "Use your own email domain": [
+        "Utilize o seu próprio domínio de e-mail"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "uma borboleta"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "por 12 meses"
+      ],
+      "SPRING SALE": [
+        "PROMOÇÃO DE PRIMAVERA"
       ]
     },
     "Received email icon": {

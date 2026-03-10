@@ -3359,6 +3359,9 @@
       "Checkout expired, please try again": [
         "El termini de pagament ha expirat. Torneu-ho a provar"
       ],
+      "Company name or personal name is required": [
+        "S'ha de proporcionar el nom de l'empresa o el de la persona"
+      ],
       "Contact could not be saved": [
         "El contacte no pot ser desat"
       ],
@@ -3559,11 +3562,11 @@
       "Invalid public key file": [
         "Arxiu de clau pública invàlid"
       ],
+      "Invalid VAT number": [
+        "El número d'IVA no és vàlid"
+      ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
-      ],
-      "Invalid ZIP code": [
-        "Aquest codi postal no és vàlid"
       ],
       "Item content cannot exceed 40KB": [
         "El contingut de l'element no pot excedir 40 kB."
@@ -3642,6 +3645,9 @@
       ],
       "Please activate your search again": [
         "Activeu de nou la vostra cerca."
+      ],
+      "Please complete the billing details": [
+        "Empleneu les dades de facturació"
       ],
       "Please enter a valid postal code": [
         "Introduïu un codi postal vàlid"
@@ -3810,6 +3816,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
       ],
+      "This field is invalid": [
+        "Aquest camp no és vàlid"
+      ],
       "This field is required": [
         "Aquest camp és obligatori."
       ],
@@ -3897,11 +3906,17 @@
       "We were not able to load some search results": [
         "No s'han pogut carregar alguns resultats de la cerca"
       ],
+      "We were not able to load the file history": [
+        "No s'ha pogut carregar l'historial de fitxers"
+      ],
       "We were not able to load the folder contents": [
         "No s'ha pogut carregar el contingut de la carpeta"
       ],
       "We're sorry, but free upload is not available right now.": [
         "Dispenseu, la càrrega gratuïta no està disponible en aquests moments."
+      ],
+      "Wrong billing address": [
+        "L'adreça de facturació és incorrecta"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
@@ -5600,9 +5615,6 @@
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "Coneixeu ${ DRIVE_APP_NAME } i guanyeu una bonificació d'emmagatzematge de 3 GB! Feu-ho avui."
       ],
-      "Go to \"My files\" and upload some files first.": [
-        "Aneu a \"Els meus fitxers\" i pengeu alguns fitxers primer."
-      ],
       "Google Pay mark": [
         "Marca de Google Pay"
       ],
@@ -6806,6 +6818,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se us cobrarà res si cancel·leu abans del ${ trialEndsOnFormatted }."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Rebreu la recompensa en crèdit un mes després que el vostre amic se subscrigui a un pla anual, i dos mesos després que ho faci a un pla mensual."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment.",
@@ -10106,6 +10121,9 @@
       "Got it": [
         "Fet"
       ],
+      "I'm purchasing as a business": [
+        "Estic comprant com a empresa"
+      ],
       "Including ${ rate }% tax": [
         "Inclou un impost del ${ rate }%"
       ],
@@ -10177,9 +10195,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Aquesta acció amplia la subscripció existent. Se us cobraran només els nous complements i el temps restant del cicle de facturació actual. La data de renovació de la subscripció no es modificarà."
-      ],
-      "This number will be shown on all future invoices": [
-        "Aquest número es mostrarà a totes les factures futures"
       ],
       "This offer is not available with your current plan.": [
         "Aquesta oferta no està disponible amb el pla actual."
@@ -10375,6 +10390,9 @@
       "Company name": [
         "Nom de l'empresa"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Ex., "
       ],
@@ -10437,6 +10455,9 @@
       ],
       "Postal code": [
         "Codi postal"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search for group name": [
         "Buscar per nom de grup"
@@ -12829,6 +12850,9 @@
       "Sort files/folders": [
         "Ordenar fitxers/carpetes"
       ],
+      "Spring Sale": [
+        "Rebaixes de primavera"
+      ],
       "Start a new import": [
         "Inicia una nova importació"
       ],
@@ -13014,9 +13038,6 @@
       ],
       "You have inaccessible files": [
         "Teniu fitxers inaccessibles"
-      ],
-      "You have no files to share": [
-        "No teniu fitxers per a compartir"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La vostra prova gratuïta de ${ planName } acaba el ${ textDate }"

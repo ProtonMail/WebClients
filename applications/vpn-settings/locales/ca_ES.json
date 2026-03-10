@@ -1840,6 +1840,9 @@
       "Calendar": [
         "Calendari"
       ],
+      "Completed": [
+        "S'ha completat"
+      ],
       "Configure migration": [
         "Configureu la migració"
       ],
@@ -1860,6 +1863,12 @@
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplicació de Google Marketplace per copiar dades a ${ BRAND_NAME }"
+      ],
+      "Has errors": [
+        "Té errors"
+      ],
+      "In progress": [
+        "En curs"
       ],
       "Install app": [
         "Instal·lar aplicació"
@@ -1892,6 +1901,9 @@
       "Migration status": [
         "Estat de la migració"
       ],
+      "Not started": [
+        "No s'ha iniciat"
+      ],
       "Organization does not have enough seats available": [
         "L'organització no té prou llicències disponibles"
       ],
@@ -1916,8 +1928,14 @@
       "Set up": [
         "Configureu-ho"
       ],
+      "Settings": [
+        "Preferències"
+      ],
       "Sign in to Google Workspace": [
         "Inicieu la sessió a Google Workspace"
+      ],
+      "Status": [
+        "Estat"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Per migrar les dades de la vostra organització, heu d'instal·lar l'aplicació ${ BRAND_NAME } Migration Assistant des de Google Workspace Marketplace. Això atorgarà permís a ${ BRAND_NAME } per copiar les vostres dades. Després d'instal·lar-la, torneu aquí per continuar."
@@ -1927,6 +1945,9 @@
       ],
       "User": [
         "Usuari"
+      ],
+      "Users migrated": [
+        "S'han migrat els usuaris"
       ],
       "Verify installation": [
         "Verifiqueu la instal·lació"
@@ -4043,6 +4064,9 @@
       "Code is incorrect or not valid anymore": [
         "El codi és incorrecte o ja no és vàlid"
       ],
+      "Company name or personal name is required": [
+        "S'ha de proporcionar el nom de l'empresa o el de la persona"
+      ],
       "Couldn't load invoices. Please try again later.": [
         "No s'han pogut carregar les factures. Torneu a provar més tard."
       ],
@@ -4177,11 +4201,11 @@
       "Invalid private key file": [
         "El fitxer de clau privada no és vàlid"
       ],
+      "Invalid VAT number": [
+        "El número d'IVA no és vàlid"
+      ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
-      ],
-      "Invalid ZIP code": [
-        "Aquest codi postal no és vàlid"
       ],
       "Label name cannot be empty.": [
         "El nom de l'etiqueta no pot estar buit."
@@ -4255,6 +4279,9 @@
       ],
       "Please add a payment method before reactivating your subscription": [
         "Afegiu un mètode de pagament abans de reactivar la vostra subscripció"
+      ],
+      "Please complete the billing details": [
+        "Empleneu les dades de facturació"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configureu un domini personalitzat abans d'afegir adreces."
@@ -4428,6 +4455,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
       ],
+      "This field is invalid": [
+        "Aquest camp no és vàlid"
+      ],
       "This field is required": [
         "Aquest camp és obligatori."
       ],
@@ -4487,6 +4517,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Hem aturat la signatura de DKIM per problemes amb la vostra configuració DNS. Seguiu les instruccions a continuació per continuar a signar."
+      ],
+      "Wrong billing address": [
+        "L'adreça de facturació és incorrecta"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperació incorrecta. Torneu-ho a provar o utilitzeu un altre mètode de recuperació."
@@ -6076,6 +6109,21 @@
       "(default)": [
         "(per defecte)"
       ],
+      "(eg. ChatGPT, Gemini, Perplexity)": [
+        "(per exemple. ChatGPT, Gemini, Perplexity)"
+      ],
+      "(eg. New York Times, BBC)": [
+        "(per exemple. New York Times, BBC)"
+      ],
+      "(eg. PCMag, TechRadar)": [
+        "(per exemple, PCMag, TechRadar)"
+      ],
+      "(eg. The Vergecast, Big Technology Podcast)": [
+        "(per exemple. The Vergecast, Big Technology Podcast)"
+      ],
+      "(formerly Twitter)": [
+        "(abansTwitter)"
+      ],
       "**Enable automatic backups** for peace of mind": [
         "**Habiliteu còpies de seguretat automàtiques** per la vostra tranquil·litat"
       ],
@@ -6204,6 +6252,9 @@
       "Affected user is on row": [
         "L'usuari afectat es troba a la fila.",
         "Els usuaris afectats es troben a les files."
+      ],
+      "AI chatbot": [
+        "Xatbot d'IA"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistent amb intel·ligència artificial per ajudar-vos a crear millors correus electrònics, de manera ràpida i sense esforç."
@@ -6360,6 +6411,9 @@
       ],
       "By leaving now, changes may not be saved": [
         "Si surt ara, és possible que els canvis no es desin"
+      ],
+      "Cancel": [
+        "Cancel·lar-ho"
       ],
       "Can’t access your recovery email?": [
         "No podeu accedir al vostre correu de recuperació?"
@@ -6738,6 +6792,9 @@
       "expires ${ expirationDate }": [
         "caduca el ${ expirationDate }"
       ],
+      "Facebook": [
+        "Facebook"
+      ],
       "Failed to fetch logs.": [
         "No s'han pogut obtenir els registres."
       ],
@@ -6755,6 +6812,9 @@
       ],
       "Free trial": [
         "Prova gratuïta"
+      ],
+      "Friends and family": [
+        "Amistats i família"
       ],
       "Gateway couldn't be deleted. Please try again": [
         "No s'ha pogut eliminar la passarel·la. Torneu-ho a provar"
@@ -6788,6 +6848,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Aneu al vostre proveïdor d'identitat, obteniu les metadades SAML per a ${ appName } i importeu-les aquí."
+      ],
+      "Google or other search engine": [
+        "Google o un altre motor de cerca"
       ],
       "Google Pay mark": [
         "Marca de Google Pay"
@@ -6900,6 +6963,9 @@
       ],
       "Inherited from parent folder": [
         "Heretat d'una carpeta principal"
+      ],
+      "Instagram": [
+        "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Instal·leu un arxiu de configuració de país per connectar a un servidor a l'atzar al país que trieu."
@@ -7151,6 +7217,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Les noves dades de connexió VPN deixaran de ser recopilades i mostrades."
       ],
+      "News or media article": [
+        "Notícia o article de mitjans"
+      ],
       "Next billing date": [
         "Pròxima data de facturació"
       ],
@@ -7233,6 +7302,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organitzeu els vostres servidors dedicats en Passarel·les i decidiu quins membres hi poden accedir."
+      ],
+      "Other": [
+        "Altres"
       ],
       "Other accounts": [
         "Altres comptes"
@@ -7329,6 +7401,9 @@
       "Please select the folders you would like to import:": [
         "Seleccioneu les carpetes que voleu importar:"
       ],
+      "Please specify...": [
+        "Si us plau, especifiqueu..."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Torneu-ho a provar amb un mètode de pagament diferent o poseu-vos en contacte amb el vostre banc."
       ],
@@ -7346,6 +7421,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Es requereix una subscripció Plus o Visionary."
+      ],
+      "Podcast": [
+        "Podcast"
       ],
       "Preference saved": [
         "S'ha desat la preferència."
@@ -7370,6 +7448,9 @@
       ],
       "Private AI assistant": [
         "Assistent d'IA privat"
+      ],
+      "Product reviews, rankings, or guides": [
+        "Ressenyes de productes, rànquings o guies"
       ],
       "Protected by Swiss privacy laws": [
         "Protegit per les lleis de privacitat suïsses"
@@ -7412,6 +7493,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "La frase de recuperació no està associada amb cap clau antiquada."
+      ],
+      "Reddit": [
+        "Reddit"
       ],
       "Referral link copied to your clipboard": [
         "S'ha copiat l'enllaç de recomanació al porta-retalls"
@@ -7588,6 +7672,9 @@
       "Storage used by this user": [
         "Emmagatzematge utilitzat per aquest usuari"
       ],
+      "Submit": [
+        "Enviar"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envieu un dipòsit utilitzant l'adreça següent o escanegeu el codi QR. El dipòsit es reflectirà al vostre compte després de confirmar-lo."
       ],
@@ -7637,6 +7724,9 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Gràcies per donar suport a la nostra missió de construir una Internet millor amb la privacitat i la llibertat en primer lloc."
       ],
+      "Thanks for the feedback!": [
+        "Gràcies pels vostres comentaris!"
+      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "El missatge ${ boldDataLocked } ja no es mostrarà, però encara podeu desbloquejar les vostres dades en ${ encryptionAndKeysLink }."
       ],
@@ -7678,6 +7768,9 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "El nom serà visible per als vostres usuaris quan estiguin connectats."
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
+        "El crèdit per recomanació es pot concedir fins dos mesos després que hagi finalitzat la prova del vostre amic, i si aquest s'ha subscrit a un pla."
       ],
       "The securest way to browse, stream, and be online.": [
         "La manera més segura de navegar, reproduir i estar en línia."
@@ -7795,6 +7888,9 @@
       ],
       "This will wipe all logs for your organization members.": [
         "Això esborrarà tots els registres dels membres de la vostra organització."
+      ],
+      "TikTok": [
+        "TikTok"
       ],
       "to ${ product } Business": [
         "a ${ product } Business"
@@ -8144,6 +8240,9 @@
       "Writing assistant": [
         "Assistent d'escriptura"
       ],
+      "X": [
+        "X"
+      ],
       "You already have a free account": [
         "Ja teniu un compte gratuït"
       ],
@@ -8303,6 +8402,15 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "No podreu recuperar dades bloquejades utilitzant els fitxers de recuperació descarregats. També es desactivarà la recuperació basada en dispositiu."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Rebreu la recompensa en crèdit un mes després que el vostre amic se subscrigui a un pla anual, i dos mesos després que ho faci a un pla mensual."
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "Rebreu la recompensa en crèdit un mes després de finalitzar la prova del vostre amic."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "Rebreu la recompensa en crèdit dos mesos després de finalitzar la prova del vostre amic."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment.",
         "Llavors se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment."
@@ -8398,6 +8506,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "El període de prova finalitzarà en ${ timeRemaining }."
+      ],
+      "YouTube": [
+        "YouTube"
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "També perdreu l'accés a les característiques de ${ boldPlanTitle }:"
@@ -11973,6 +12084,9 @@
       "Got it": [
         "Fet"
       ],
+      "I'm purchasing as a business": [
+        "Estic comprant com a empresa"
+      ],
       "Including ${ rate }% tax": [
         "Inclou un impost del ${ rate }%"
       ],
@@ -12053,9 +12167,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Aquesta acció amplia la subscripció existent. Se us cobraran només els nous complements i el temps restant del cicle de facturació actual. La data de renovació de la subscripció no es modificarà."
-      ],
-      "This number will be shown on all future invoices": [
-        "Aquest número es mostrarà a totes les factures futures"
       ],
       "This offer is not available with your current plan.": [
         "Aquesta oferta no està disponible amb el pla actual."
@@ -12266,6 +12377,9 @@
       "Confirm": [
         "Confirma"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "domain.com": [
         "domini.com"
       ],
@@ -12325,6 +12439,9 @@
       ],
       "Postal code": [
         "Codi postal"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Cerca"
@@ -15576,6 +15693,9 @@
       "Home": [
         "Inici"
       ],
+      "How did you find out about us?": [
+        "Com ens heu conegut?"
+      ],
       "How to choose a good logo": [
         "Com triar un bon logo"
       ],
@@ -15906,6 +16026,9 @@
       ],
       "Spam, block, and allow lists": [
         "Llistes de correu brossa, bloquejats i permesos"
+      ],
+      "Spring Sale": [
+        "Rebaixes de primavera"
       ],
       "Start a new import": [
         "Inicia una nova importació"

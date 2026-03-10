@@ -1007,6 +1007,9 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } 成功啟用"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } 位成員)"
+      ],
       "(Empty)": [
         "(清空)"
       ],

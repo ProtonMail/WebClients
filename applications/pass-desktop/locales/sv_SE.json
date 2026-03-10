@@ -1465,8 +1465,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } vill dela ett objekt med en grupp du administrerar."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } vill dela ett objekt med gruppen ${ invitedGroup.Name }."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } vill dela ett objekt med gruppen ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } vill dela ett objekt med dig."
@@ -1515,9 +1515,9 @@
         "${ row.breachCount } intrång upptäckt",
         "${ row.breachCount } intrång upptäckta"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } medlem)",
-        "(${ membersCount } medlemmar)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } medlem)",
+        "(${ memberCount } medlemmar)"
       ],
       "(Empty)": [
         "(Tom)"
@@ -1902,8 +1902,8 @@
       "Invite successfully resent": [
         "Inbjudan skickad"
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "bjuder in gruppen ${ invitedGroup.Name } att komma åt objekt i"
+      "invites the group ${ name } to access items in": [
+        "bjuder in gruppen ${ name } att komma åt objekt i"
       ],
       "invites you to access items in": [
         "bjöd in dig för att komma åt objekt i detta valv"

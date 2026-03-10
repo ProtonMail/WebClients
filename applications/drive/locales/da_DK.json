@@ -3550,9 +3550,6 @@
       "Invalid verification code": [
         "Ugyldig verifikationskode"
       ],
-      "Invalid ZIP code": [
-        "Ugyldig postnummer"
-      ],
       "Item content cannot exceed 40KB": [
         "Element-indhold må ikke overstige 40 kB"
       ],
@@ -5570,9 +5567,6 @@
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "Lær ${ DRIVE_APP_NAME } at kende og optjen din 3 GB lagerbonus! Gør det i dag."
-      ],
-      "Go to \"My files\" and upload some files first.": [
-        "Gå til \"Mine filer\" og upload nogle filer først."
       ],
       "Google Pay mark": [
         "Google Pay-mærke"
@@ -10004,6 +9998,9 @@
       "Got it": [
         "Forstået"
       ],
+      "I'm purchasing as a business": [
+        "Jeg køber som virksomhed"
+      ],
       "Including ${ rate }% tax": [
         "Inkluderer ${ rate }% moms"
       ],
@@ -10075,9 +10072,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Denne handling udvider det eksisterende abonnement. Du vil kun blive opkrævet for de nye tilføjelser og den resterende tid af den nuværende faktureringsperiode. Fornyelsesdatoen for dit abonnement vil ikke blive ændret."
-      ],
-      "This number will be shown on all future invoices": [
-        "Dette nummer vil blive vist på alle fremtidige fakturaer."
       ],
       "This offer is not available with your current plan.": [
         "Dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
@@ -10458,6 +10452,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Officiel e-mail fra ${ BRAND_NAME }"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Vis ikke dette tilbud igen"
+      ],
+      "Get the deal": [
+        "Tag imod tilbuddet"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "2 TB data storage": [
+        "2 TB datalagerplads"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagerplads: 40x dit nuværende abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB datalagerplads"
+      ],
+      "500 GB storage": [
+        "500 GB lagerplads"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Få adgang til 15.000+ servere i 120+ lande"
+      ],
+      "Access advanced AI models": [
+        "Adgang til avancerede AI-modeller"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Alle premiumfunktioner i Mail, Pass, Drive, VPN og Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloker annoncer, trackere og malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Indbygget 2FA-godkender"
+      ],
+      "Connect 10 devices at once": [
+        "Forbind 10 enheder på én gang"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter er baseret på standardpriser pr. måned. Dit abonnement fornyes til standardprisen pr. år, når faktureringscyklussen slutter."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Fuld adgang til ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Fuld chathistorik med nem søgning og favoritter"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuelle konti til 6 brugere"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuelle konti til dig og en partner"
+      ],
+      "Online document editor": [
+        "Online dokumenteditor"
+      ],
+      "Recover previous file versions": [
+        "Gendan tidligere filversioner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Stærkere beskyttelse mod cybertrusler"
+      ],
+      "Unlimited daily chats": [
+        "Ubegrænset antal daglige chats"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ubegrænset antal mapper, etiketter og filtre"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Ubegrænset antal hide-my-email-aliasser"
+      ],
+      "Use your own email domain": [
+        "Brug dit eget e-mail-domæne"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "en sommerfugl"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "i 12 måneder"
+      ],
+      "SPRING SALE": [
+        "FORÅRSUDSALG"
       ]
     },
     "Referral": {
@@ -12691,6 +12780,9 @@
       "Sort files/folders": [
         "Sorter filer/mapper"
       ],
+      "Spring Sale": [
+        "Forårsudsalg"
+      ],
       "Start a new import": [
         "Start en ny import"
       ],
@@ -12876,9 +12968,6 @@
       ],
       "You have inaccessible files": [
         "Du har utilgængelige filer"
-      ],
-      "You have no files to share": [
-        "Du har ingen filer at dele"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveperiode på ${ planName } slutter ${ textDate }"

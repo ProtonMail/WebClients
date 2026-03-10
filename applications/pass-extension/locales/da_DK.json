@@ -166,17 +166,11 @@
       "Confirm all": [
         "Bekræft alle"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Forbind din ${ BRAND_NAME }-konto"
-      ],
       "Continue": [
         "Fortsæt"
       ],
       "Continue offline": [
         "Fortsæt offline"
-      ],
-      "Continue without pinning": [
-        "Fortsæt uden at fastgøre"
       ],
       "Copy and close": [
         "Kopiér og luk"
@@ -220,17 +214,11 @@
       "Create a ${ BRAND_NAME } account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Opret en ${ BRAND_NAME }-konto"
-      ],
       "Create a new vault": [
         "Opret en ny boks"
       ],
       "Create alias": [
         "Opret alias"
-      ],
-      "Create an account": [
-        "Opret en konto"
       ],
       "Create card": [
         "Opret kort"
@@ -318,9 +306,6 @@
       ],
       "Do not suggest on this website": [
         "Foreslå ikke på dette websted"
-      ],
-      "Done": [
-        "Udført"
       ],
       "Download this CSV template": [
         "Download denne CSV-skabelon"
@@ -663,9 +648,6 @@
       ],
       "Sign back in": [
         "Log ind igen"
-      ],
-      "Sign in": [
-        "Log ind"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Log ind på ${ BRAND_NAME }"
@@ -1226,9 +1208,6 @@
       "PIN codes do not match": [
         "Pinkoder stemmer ikke overens"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Fastgør udvidelsen, eller vælg \"Fortsæt uden at fastgøre\"."
-      ],
       "Registration failure: ${ message }": [
         "Registreringsfejl: ${ message }"
       ],
@@ -1459,9 +1438,6 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } ønsker at dele et element med en gruppe, som du administrerer."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } ønsker at dele et element med gruppen ${ invitedGroup.Name }."
-      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } ønsker at dele et element med dig."
       ],
@@ -1528,9 +1504,9 @@
         "${ trialDaysLeft } dag tilbage",
         "${ trialDaysLeft } dage tilbage"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } medlem)",
-        "(${ membersCount } medlemmer)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } medlem)",
+        "(${ memberCount } medlemmer)"
       ],
       "(Empty)": [
         "(Tom)"
@@ -1709,9 +1685,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Vælg en gemt adgangsnøgle til at logge ind på ${ domain }"
       ],
-      "Click the icon to open it anytime.": [
-        "Du kan åbne den når som helst ved at klikke på ikonet."
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "Luk dette vindue for at bruge en sikkerhedsnøgle eller en anden adgangsnøgle."
       ],
@@ -1880,9 +1853,6 @@
       "Follow those steps to import your data with a generic CSV:": [
         "Følg de trin for at importere dine data med en generisk CSV:"
       ],
-      "For easy access to your passwords and more.": [
-        "For nem adgang til dine adgangskoder og mere."
-      ],
       "For security reason, your access needs to be confirmed": [
         "Af en sikkerhedsmæssig årsag skal din adgang bekræftes"
       ],
@@ -1947,9 +1917,6 @@
       ],
       "Invite successfully resent": [
         "Invitation sendt igen"
-      ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "inviterer gruppen ${ invitedGroup.Name } til at få adgang til elementer i"
       ],
       "invites you to access items in": [
         "inviterer dig til at tilgå elementer i"
@@ -2047,8 +2014,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2104,9 +2070,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online adgang til ${ PASS_APP_NAME } kræver en pinkode. Du bliver logget ud efter 3 mislykkede forsøg."
       ],
-      "Open the Extensions menu": [
-        "Åbn menuen Udvidelser"
-      ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Åbn Safari-indstillingerne, find ${ PASS_APP_NAME }, gå til \"Tilladelser\", og aktivér webstedstilladelser."
       ],
@@ -2146,9 +2109,6 @@
       ],
       "Permanently deleting selected items": [
         "Sletter valgte elementer permanent"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Fastgør ${ PASS_APP_NAME } til din værktøjslinje"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Pinkode registreret. Brug den til at låse ${ PASS_APP_NAME } op."
@@ -2342,9 +2302,6 @@
       "See more info": [
         "Se mere info"
       ],
-      "Select an existing login or create a new one.": [
-        "Vælg et eksisterende login, eller opret et nyt."
-      ],
       "Select destination vault": [
         "Vælg destinationsboks"
       ],
@@ -2383,9 +2340,6 @@
       ],
       "Shared item invitation": [
         "Delte element-invitation"
-      ],
-      "Sign in or create an account to continue.": [
-        "Log ind eller opret en konto for at fortsætte."
       ],
       "Sign in to your account": [
         "Log ind på din konto"
@@ -4409,9 +4363,6 @@
       "Confirm your email": [
         "Bekræft din e-mail"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Tilslut din ${ BRAND_NAME }-konto"
-      ],
       "Contacts": [
         "Kontakter"
       ],
@@ -4670,9 +4621,6 @@
       "Permanently remove all items?": [
         "Fjern alle elementer permanent?"
       ],
-      "Pin the extension": [
-        "Fastgør udvidelsen"
-      ],
       "Pinned (${ items.length })": [
         "Fastgjorte (${ items.length })"
       ],
@@ -4821,9 +4769,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "Velkommen til ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "Velkommen til din nye adgangskodeadministrator!"
       ],
       "What is an alias?": [
         "Hvad er et alias?"

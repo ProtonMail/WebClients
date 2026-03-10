@@ -5,11 +5,17 @@
   },
   "contexts": {
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "Το \"Επανεκκίνηση και προφίλ τώρα\" θα επανεκκινήσει την εφαρμογή αμέσως και θα καταγράψει ένα προφίλ εκκίνησης.\n\nΤο \"Προφίλ στην επόμενη εκκίνηση\" θα καταγράψει προφίλ την επόμενη φορά που θα ανοίξετε την εφαρμογή. Χρησιμοποιήστε αυτό για να μετρήσετε την ταχύτητα εκκίνησης μετά από επανεκκίνηση."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "Σχετικά με το ${ MAIL_APP_NAME }"
       ],
       "Actual Size": [
         "Πραγματικό Μέγεθος"
+      ],
+      "Cancel": [
+        "Ακύρωση"
       ],
       "Check spelling while typing": [
         "Ελέγχος ορθογραφικού ελέγχου κατά την πληκτρολόγηση"
@@ -19,6 +25,9 @@
       ],
       "Close Window": [
         "Κλείσιμο Παραθύρου"
+      ],
+      "Collect startup performance data": [
+        "Συλλογή δεδομένων απόδοσης εκκίνησης"
       ],
       "Copy": [
         "Αντιγραφή"
@@ -47,6 +56,12 @@
       "Paste and Match Style": [
         "Επικόλληση και Αντιστοίχιση Στυλ"
       ],
+      "Profile app startup": [
+        "Εκκίνηση εφαρμογής προφίλ"
+      ],
+      "Profile on next launch": [
+        "Προφίλ στην επόμενη εκκίνηση"
+      ],
       "Quit": [
         "Έξοδος"
       ],
@@ -58,6 +73,9 @@
       ],
       "Reload": [
         "Επαναφόρτωση"
+      ],
+      "Restart and profile now": [
+        "Επανεκκίνηση και προφίλ τώρα"
       ],
       "Select All": [
         "Επιλογή Όλων"
@@ -79,6 +97,9 @@
       ],
       "Stop Speaking": [
         "Σταματήστε να Μιλάτε"
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "Αυτό θα μετρήσει πόσο χρόνο χρειάζεται η εφαρμογή για να ξεκινήσει και να αποθηκεύσει μια αναφορά στον φάκελο καταγραφών σας."
       ],
       "Toggle Full Screen": [
         "Εναλλαγή Πλήρους Οθόνης"

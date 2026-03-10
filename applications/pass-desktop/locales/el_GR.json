@@ -1465,8 +1465,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "Ο ${ inviterEmail } θέλει να μοιραστεί ένα στοιχείο με μια ομάδα που διαχειρίζεστε."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "Ο ${ inviterEmail } θέλει να μοιραστεί ένα στοιχείο με την ομάδα ${ invitedGroup.Name }."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "Ο ${ inviterEmail } θέλει να μοιραστεί ένα στοιχείο με την ομάδα ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "Ο ${ inviterEmail } θέλει να μοιραστεί μαζί σας ένα αντικείμενο."
@@ -1515,9 +1515,9 @@
         "${ row.breachCount } παραβίαση εντοπίστηκε",
         "${ row.breachCount } παραβιάσεις εντοπίστηκαν"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } μέλος)",
-        "(${ membersCount } μέλη)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } μέλος)",
+        "(${ memberCount } μέλη)"
       ],
       "(Empty)": [
         "(Άδειο)"
@@ -1905,8 +1905,8 @@
       "Invite successfully resent": [
         "Επιτυχής αποστολή πρόσκλησης εκ νέου"
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "προσκαλεί την ομάδα ${ invitedGroup.Name } να έχει πρόσβαση σε στοιχεία στη"
+      "invites the group ${ name } to access items in": [
+        "προσκαλεί την ομάδα ${ name } να έχει πρόσβαση σε στοιχεία στη"
       ],
       "invites you to access items in": [
         "σας προσκαλεί να αποκτήσετε πρόσβαση σε στοιχεία στη"

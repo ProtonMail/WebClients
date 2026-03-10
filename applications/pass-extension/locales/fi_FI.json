@@ -160,17 +160,11 @@
       "Confirm all": [
         "Vahvista kaikki"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Yhdistä ${ BRAND_NAME }-tilisi"
-      ],
       "Continue": [
         "Jatka"
       ],
       "Continue offline": [
         "Jatka yhteydettömässä tilassa"
-      ],
-      "Continue without pinning": [
-        "Jatka kiinnittämättä"
       ],
       "Copy and close": [
         "Kopioi ja sulje"
@@ -205,17 +199,11 @@
       "Create a ${ BRAND_NAME } account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Luo ${ BRAND_NAME }-tili"
-      ],
       "Create a new vault": [
         "Luo uusi holvi"
       ],
       "Create alias": [
         "Luo alias"
-      ],
-      "Create an account": [
-        "Luo tili"
       ],
       "Create card": [
         "Luo kortti"
@@ -300,9 +288,6 @@
       ],
       "Do not suggest on this website": [
         "Älä tarjoa tällä verkkosivustolla"
-      ],
-      "Done": [
-        "Valmis"
       ],
       "Download this CSV template": [
         "Lataa tämä CSV-malli"
@@ -642,9 +627,6 @@
       ],
       "Sign back in": [
         "Kirjaudu uudelleen"
-      ],
-      "Sign in": [
-        "Kirjaudu sisään"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Kirjaudu ${ BRAND_NAME }illa"
@@ -1161,9 +1143,6 @@
       "PIN codes do not match": [
         "PIN-koodit eivät täsmää"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Kiinnitä laajennus tai valitse \"Jatka kiinnittämättä\"."
-      ],
       "Registration failure: ${ message }": [
         "Rekisteröintivirhe: ${ message }"
       ],
@@ -1388,8 +1367,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } haluaa jakaa kohteen ryhmässä, jota hallinnoit."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } haluaa jakaa kohteen ryhmän ${ invitedGroup.Name } kanssa."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } haluaa jakaa kohteen ryhmän ${ name } kanssa."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } haluaa jakaa kohteen kanssasi."
@@ -1457,9 +1436,9 @@
         "${ trialDaysLeft } päivä jäljellä",
         "${ trialDaysLeft } päivää jäljellä"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } jäsen)",
-        "(${ membersCount } jäsentä)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } jäsen)",
+        "(${ memberCount } jäsentä)"
       ],
       "(Empty)": [
         "(Tyhjä)"
@@ -1623,9 +1602,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Valitse tallennettu pääsyavain, jolla kirjaudutaan osoitteeseen ${ domain }"
       ],
-      "Click the icon to open it anytime.": [
-        "Avaa se koska tahansa klikkaamalla kuvaketta."
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "Sulje tämä ikkuna käyttääksesi suojausavainta tai eri pääsyavainta."
       ],
@@ -1788,9 +1764,6 @@
       "Follow those steps to import your data with a generic CSV:": [
         "Noudata ohjeita tuodaksesi tietosi yleisellä CSV-tiedostolla:"
       ],
-      "For easy access to your passwords and more.": [
-        "Tavoita salasanasi ja muut tietosi helposti."
-      ],
       "For security reason, your access needs to be confirmed": [
         "Käyttöoikeutesi on tietoturvasyistä vahvistettava"
       ],
@@ -1856,8 +1829,8 @@
       "Invite successfully resent": [
         "Kutsu lähetettiin uudelleen"
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "kutsuu ryhmän ${ invitedGroup.Name } käyttämään kohteita kohteessa"
+      "invites the group ${ name } to access items in": [
+        "kutsuu ryhmän ${ name } käyttämään kohteita kohteessa"
       ],
       "invites you to access items in": [
         "kutsui sinut käyttämään sisältöä holvista"
@@ -1954,10 +1927,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
-      ],
       "Moving items": [
         "Siirretään kohteita"
       ],
@@ -2009,9 +1978,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME }in käyttäminen yhdistettynä vaatii PIN-koodin. Kolmen epäonnistuneen yrityksen jälkeen sinut kirjataan ulos."
       ],
-      "Open the Extensions menu": [
-        "Avaa laajennusvalikko"
-      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Turvallisuus on hälytyksissämme etusijalla. Jos et tunnista tietomurron kohteeksi joutuneita tietoja, voit huoletta jättää tämän raportin huomiotta."
       ],
@@ -2048,9 +2014,6 @@
       ],
       "Permanently deleting selected items": [
         "Valittuja kohteita poistetaan pysyvästi"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Kiinnitä ${ PASS_APP_NAME } työkalupalkkiisi"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-lukitus on aktivoitu ja voit nyt avata ${ PASS_APP_NAME }in PIN-koodillasi."
@@ -2217,9 +2180,6 @@
       "See more info": [
         "Katso lisätietoja"
       ],
-      "Select an existing login or create a new one.": [
-        "Valitse olemassa oleva kirjautumistieto tai luo uusi."
-      ],
       "Select destination vault": [
         "Valitse kohdeholvi"
       ],
@@ -2255,9 +2215,6 @@
       ],
       "Shared item invitation": [
         "Kutsu jaettuun kohteeseen"
-      ],
-      "Sign in or create an account to continue.": [
-        "Jatka kirjautumalla tai luomalla tili."
       ],
       "Sign in to your account": [
         "Kirjaudu tilillesi"
@@ -4234,9 +4191,6 @@
       "Confirm your email": [
         "Vahvista sähköpostiosoitteesi"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Yhdistä ${ BRAND_NAME }-tilisi"
-      ],
       "Contacts": [
         "Yhteystiedot"
       ],
@@ -4492,9 +4446,6 @@
       "Permanently remove all items?": [
         "Poistetaanko kaikki kohteet pysyvästi?"
       ],
-      "Pin the extension": [
-        "Kiinnitä laajennus"
-      ],
       "Pinned (${ items.length })": [
         "Kiinnitykset (${ items.length })"
       ],
@@ -4643,9 +4594,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "Tervetuloa ${ brandNameJSX }iin"
-      ],
-      "Welcome to your new password manager!": [
-        "Tervetuloa uuteen salasanahallintaasi!"
       ],
       "What is an alias?": [
         "Mikä on alias?"

@@ -1497,8 +1497,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } хоча абагуліць элемент з групай, якую вы адмініструеце."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } хоча абагуліць элемент з групай ${ invitedGroup.Name }."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } хоча абагуліць элемент з групай ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } хоча абагуліць элемент з вамі."
@@ -1557,11 +1557,11 @@
         "Выяўлена ${ row.breachCount } парушэнняў",
         "Выяўлена ${ row.breachCount } парушэнняў"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } удзельнік)",
-        "(${ membersCount } удзельнікі)",
-        "(${ membersCount } удзельнікаў)",
-        "(${ membersCount } удзельнікаў)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } удзельнік)",
+        "(${ memberCount } удзельнікі)",
+        "(${ memberCount } удзельнікаў)",
+        "(${ memberCount } удзельнікаў)"
       ],
       "(Empty)": [
         "(пуста)"
@@ -1953,8 +1953,8 @@
       "Invite successfully resent": [
         "Запрашэнне адпраўлена паўторна"
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "запрашае групу ${ invitedGroup.Name } для доступу да элементаў у"
+      "invites the group ${ name } to access items in": [
+        "запрашае групу ${ name } для доступу да элементаў у"
       ],
       "invites you to access items in": [
         "запрасіў вас атрымаць доступ да элементаў у"
@@ -3605,10 +3605,10 @@
         "Прыярытэт:"
       ],
       "Private key": [
-        "Прыватны ключ"
+        "Закрыты ключ"
       ],
       "Private Key": [
-        "Прыватны ключ"
+        "Закрыты ключ"
       ],
       "Product": [
         "Прадукт"
@@ -3623,7 +3623,7 @@
         "публічны дамен"
       ],
       "Public key": [
-        "Публічны ключ"
+        "Адкрыты ключ"
       ],
       "Rate us": [
         "Ацаніце нас"
@@ -4214,10 +4214,10 @@
         "Дадаць пароль"
       ],
       "Add private key": [
-        "Дадаць прыватны ключ"
+        "Дадаць закрыты ключ"
       ],
       "Add public key": [
-        "Дадаць публічны ключ"
+        "Дадаць адкрыты ключ"
       ],
       "Add SSID": [
         "Дадаць SSID"

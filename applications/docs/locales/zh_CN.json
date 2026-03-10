@@ -2931,9 +2931,6 @@
       "Invalid verification code": [
         "验证码无效"
       ],
-      "Invalid ZIP code": [
-        "无效的邮政编码"
-      ],
       "Item content cannot exceed 40KB": [
         "项目内容不能超过 40KB"
       ],
@@ -3117,6 +3114,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此项超过了 ${ maximumLength } 个字符的长度限制。"
       ],
+      "This field is invalid": [
+        "字段无效"
+      ],
       "This field is required": [
         "此项必须填写"
       ],
@@ -3170,6 +3170,9 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "我们无法将此文件导入 ${ SHEETS_APP_NAME }，您可以尝试将内容复制并粘贴到新的 ${ SHEETS_APP_NAME } 中。"
+      ],
+      "Wrong billing address": [
+        "错误的账单地址"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "邮件收件人不能超过 ${ maxContacts } 位"
@@ -4274,6 +4277,9 @@
       "Converting document...": [
         "正在转换文档..."
       ],
+      "Copied to clipboard": [
+        "已复制到剪贴板"
+      ],
       "Copy the link to clipboard": [
         "复制链接到剪贴板"
       ],
@@ -5219,6 +5225,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "如果您在 ${ trialEndsOnFormatted } 之前取消，将不会被收取费用。"
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "您将在好友订阅年度套餐 1 个月后获得推荐奖励，若好友订阅月度套餐则在 2 个月后获得。"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "此后每 ${ renewCycle } 个月按 ${ renewAmountStr } 收费。您可以随时取消。"
       ],
@@ -5560,6 +5569,9 @@
       "Emails (last 3 months)": [
         "邮件（过去 3 个月）"
       ],
+      "Emails (last 6 months)": [
+        "邮件（过去 6 个月）"
+      ],
       "Emails (last month)": [
         "邮件（上个月）"
       ],
@@ -5640,6 +5652,9 @@
       ],
       "Last 3 months only": [
         "仅过去 3 个月"
+      ],
+      "Last 6 months only": [
+        "仅过去 6 个月"
       ],
       "Last month only": [
         "仅上个月"

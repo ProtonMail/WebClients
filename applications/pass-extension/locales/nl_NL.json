@@ -166,17 +166,11 @@
       "Confirm all": [
         "Bevestigen alle"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Koppel uw ${ BRAND_NAME }-account"
-      ],
       "Continue": [
         "Doorgaan"
       ],
       "Continue offline": [
         "Offline doorgaan"
-      ],
-      "Continue without pinning": [
-        "Doorgaan zonder vastpinnen"
       ],
       "Copy and close": [
         "Kopiëren en sluiten"
@@ -220,17 +214,11 @@
       "Create a ${ BRAND_NAME } account": [
         "Maak een ${ BRAND_NAME }-account aan"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Maak een ${ BRAND_NAME }-account aan"
-      ],
       "Create a new vault": [
         "Nieuwe kluis aanmaken"
       ],
       "Create alias": [
         "Alias aanmaken"
-      ],
-      "Create an account": [
-        "Een account aanmaken"
       ],
       "Create card": [
         "Kaart aanmaken"
@@ -318,9 +306,6 @@
       ],
       "Do not suggest on this website": [
         "Niet voorstellen op deze website"
-      ],
-      "Done": [
-        "Klaar"
       ],
       "Download this CSV template": [
         "Download dit CSV-sjabloon"
@@ -666,9 +651,6 @@
       ],
       "Sign back in": [
         "Opnieuw inloggen"
-      ],
-      "Sign in": [
-        "Inloggen"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Log in met ${ BRAND_NAME }"
@@ -1229,9 +1211,6 @@
       "PIN codes do not match": [
         "Pincodes komen niet overeen"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Pin de extensie vast of kies \"Doorgaan zonder vastpinnen\"."
-      ],
       "Registration failure: ${ message }": [
         "Registratie mislukt: ${ message }"
       ],
@@ -1462,8 +1441,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } wil een item delen met een groep die u beheert."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } wil een item delen met de groep ${ invitedGroup.Name }."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } wil een item delen met de groep ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } wil een kluis delen met u."
@@ -1531,9 +1510,9 @@
         "${ trialDaysLeft } dag over",
         "${ trialDaysLeft } dagen over"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } lid)",
-        "(${ membersCount } leden)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } lid)",
+        "(${ memberCount } leden)"
       ],
       "(Empty)": [
         "(Leeg)"
@@ -1712,9 +1691,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Kies een opgeslagen toegangssleutel om aan te melden bij ${ domain }"
       ],
-      "Click the icon to open it anytime.": [
-        "Klik op het icoon om het op eender welk moment te openen"
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "Sluit dit venster om een beveiligingssleutel of een andere toegangssleutel te gebruiken."
       ],
@@ -1886,9 +1862,6 @@
       "Follow those steps to import your data with a generic CSV:": [
         "Volg deze stappen om uw gegevens te importeren met een algemeen CSV-bestand:"
       ],
-      "For easy access to your passwords and more.": [
-        "Voor eenvoudige toegang tot uw wachtwoorden en meer."
-      ],
       "For security reason, your access needs to be confirmed": [
         "Voor veiligheidsredenen dient uw toegang bevestigd te worden"
       ],
@@ -1954,8 +1927,8 @@
       "Invite successfully resent": [
         "Uitnodiging succesvol herverzonden"
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "nodigt de groep ${ invitedGroup.Name } voor toegang tot items in"
+      "invites the group ${ name } to access items in": [
+        "nodigt de groep ${ name } uit voor toegang tot items in"
       ],
       "invites you to access items in": [
         "nodigt u uit met toegang tot items in"
@@ -2053,8 +2026,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2110,9 +2082,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online-toegang tot ${ PASS_APP_NAME } vereist een PIN-code. U wordt uitgelogd na 3 mislukte pogingen."
       ],
-      "Open the Extensions menu": [
-        "Open het Extensie-menu"
-      ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Open de Safari-instellingen, zoek ${ PASS_APP_NAME }, ga naar \"Machtigingen\" en schakel sitemachtigingen in."
       ],
@@ -2152,9 +2121,6 @@
       ],
       "Permanently deleting selected items": [
         "Geselecteerde items permanent verwijderen"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Zet ${ PASS_APP_NAME } vast op uw werkbalk"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Pincode succesvol geregistreerd. Gebruik ze om ${ PASS_APP_NAME } te ontgrendelen"
@@ -2348,9 +2314,6 @@
       "See more info": [
         "Zie meer informatie"
       ],
-      "Select an existing login or create a new one.": [
-        "Selecteer een bestaande login of maak een nieuwe aan."
-      ],
       "Select destination vault": [
         "Kies bestemmingskluis"
       ],
@@ -2389,9 +2352,6 @@
       ],
       "Shared item invitation": [
         "Uitnodiging gedeeld item"
-      ],
-      "Sign in or create an account to continue.": [
-        "Log in of maak een account aan om verder te gaan."
       ],
       "Sign in to your account": [
         "Inloggen bij uw account"
@@ -4415,9 +4375,6 @@
       "Confirm your email": [
         "Bevestig uw e-mailadres"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Koppel uw ${ BRAND_NAME }-account"
-      ],
       "Contacts": [
         "Contacten"
       ],
@@ -4676,9 +4633,6 @@
       "Permanently remove all items?": [
         "Alle items permanent verwijderen?"
       ],
-      "Pin the extension": [
-        "Extensie vastpinnen"
-      ],
       "Pinned (${ items.length })": [
         "Vastgemaakt (${ items.length })"
       ],
@@ -4827,9 +4781,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "Welkom bij ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "Welkom bij uw nieuwe wachtwoordbeheerder!"
       ],
       "What is an alias?": [
         "Wat is een alias?"

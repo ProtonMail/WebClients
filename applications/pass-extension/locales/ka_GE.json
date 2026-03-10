@@ -166,17 +166,11 @@
       "Confirm all": [
         "ყველას დადასტურება"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "შემოიერთეთ თქვენი ${ BRAND_NAME }-ის ანგარიში"
-      ],
       "Continue": [
         "გაგრძელება"
       ],
       "Continue offline": [
         "გაგრძელება ქსელის გარეშე"
-      ],
-      "Continue without pinning": [
-        "მიმაგრების გარეშე გაგრძელება"
       ],
       "Copy and close": [
         "კოპირება და დახურვა"
@@ -220,17 +214,11 @@
       "Create a ${ BRAND_NAME } account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "შექმენით ${ BRAND_NAME }-ის ანგარიში"
-      ],
       "Create a new vault": [
         "ახალი საცავის შექმნა"
       ],
       "Create alias": [
         "ფსევდონიმის შექმნა"
-      ],
-      "Create an account": [
-        "ანგარიშის შექმნა"
       ],
       "Create card": [
         "ბარათის შექმნა"
@@ -318,9 +306,6 @@
       ],
       "Do not suggest on this website": [
         "არ მირჩიო ამ ვებგვერდზე"
-      ],
-      "Done": [
-        "მზადაა"
       ],
       "Download this CSV template": [
         "გადმოწერეთ ეს CSV ნიმუში"
@@ -666,9 +651,6 @@
       ],
       "Sign back in": [
         "თავიდან შესვლა"
-      ],
-      "Sign in": [
-        "შესვლა"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME }-ით შესვლა"
@@ -1214,9 +1196,6 @@
       "PIN codes do not match": [
         "Pin-კოდები არ ემთხვევა"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "მიამაგრეთ გაფართოება ან აირჩიეთ \"გაგრძელება მიმაგრების გარეშე\"."
-      ],
       "Registration failure: ${ message }": [
         "რეგისტრაცია ჩავარდა: ${ message }"
       ],
@@ -1513,9 +1492,9 @@
         "დარჩენილია ${ trialDaysLeft } დღე",
         "დარჩენილია ${ trialDaysLeft } დღე"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } წევრი)",
-        "(${ membersCount } წევრი)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } წევრი)",
+        "(${ memberCount } წევრი)"
       ],
       "(Empty)": [
         "(ცარიელი)"
@@ -1691,9 +1670,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "აირჩიეთ შენახული წვდომის გასაღები ${ domain }-ში შესასვლელად"
       ],
-      "Click the icon to open it anytime.": [
-        "მის გასახსნელად ნებისმიერ დროს შეგიძლიათ, ხატულაზე დააწკაპუნოთ."
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "დახურეთ ეს ფანჯარა წვდომის უსაფრთხოების გასაღების ან სხვა წვდომის გასაღების გამოსაყენებლად."
       ],
@@ -1859,9 +1835,6 @@
       "Follow those steps to import your data with a generic CSV:": [
         "მიყევით ამ ნაბიჯებს, რომ შემოიტანოთ თქვენი მონაცემები ზოგადი CSV-ით:"
       ],
-      "For easy access to your passwords and more.": [
-        "თქვენს პაროლებთან იოლი წვდომისთვის და ა.შ."
-      ],
       "For security reason, your access needs to be confirmed": [
         "უსაფრთხოებისთვის თქვენს წვდომას დადასტურება სჭირდება"
       ],
@@ -1923,9 +1896,6 @@
       ],
       "Invite successfully resent": [
         "მოსაწვევი წარმატებით გაიგზავნა თავიდან"
-      ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "იწვევს ჯგუფს ${ invitedGroup.Name } წვდომისთვის ელემენტებზე საცავში"
       ],
       "invites you to access items in": [
         "გიწვევთ ელემენტებზე წვდომისთვის"
@@ -2022,10 +1992,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
-      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -2080,9 +2046,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME }-სთან ინტერნეტით წვდომისთვის PIN-კოდის შეყვანა მოგიწევთ. სისტემიდან გამოვარდებით 3 ჩავარდნილი მცდელობის შემდეგ."
       ],
-      "Open the Extensions menu": [
-        "გაფართოებების მენიუს გახსნა"
-      ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "გახსენით Safari-ის პარამეტრები, იპოვეთ ${ PASS_APP_NAME }, გადადით \"ნებართვებზე\" და ჩართეთ საიტის ნებართვები."
       ],
@@ -2122,9 +2085,6 @@
       ],
       "Permanently deleting selected items": [
         "მონიშნული ელემენტების სამუდამოდ წაშლა"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "${ PASS_APP_NAME }-ის მიმაგრება თქვენს ხელსაწყოების ზოლში"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-კოდის რეგისტრაცია წარმატებულია. გამოიყენეთ ის ${ PASS_APP_NAME }-ის განბლოკვისთვის"
@@ -2309,9 +2269,6 @@
       "See more info": [
         "იხილეთ მეტი"
       ],
-      "Select an existing login or create a new one.": [
-        "აირჩიეთ არსებული შესვლის დეტალი ან შექმენით ახალი."
-      ],
       "Select destination vault": [
         "აირჩიეთ სამიზნე საცავი"
       ],
@@ -2350,9 +2307,6 @@
       ],
       "Shared item invitation": [
         "გაზიარებული ელემენტის მოსაწვევი"
-      ],
-      "Sign in or create an account to continue.": [
-        "გასაგრძელებლად შედით ან შექმენით ანგარიში."
       ],
       "Sign in to your account": [
         "შედით თქვენს ანგარიშში"
@@ -4352,9 +4306,6 @@
       "Confirm your email": [
         "დაადასტურეთ თქვენი ელფოსტა"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "შემოიერთეთ თქვენი ${ BRAND_NAME }-ის ანგარიში"
-      ],
       "Contacts": [
         "კონტაქტები"
       ],
@@ -4613,9 +4564,6 @@
       "Permanently remove all items?": [
         "წავშალო სამუდამოდ ყველა ელემენტი?"
       ],
-      "Pin the extension": [
-        "გაფართოების მიმაგრება"
-      ],
       "Pinned (${ items.length })": [
         "მიმაგრებულია (${ items.length })"
       ],
@@ -4764,9 +4712,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "კეთილი იყოს თქვენი მობრძანება ${ brandNameJSX }-ში"
-      ],
-      "Welcome to your new password manager!": [
-        "მოგესალმებით თქვენი ახალ პაროლების მმართველში!"
       ],
       "What is an alias?": [
         "რა არის ფსევდონიმი?"

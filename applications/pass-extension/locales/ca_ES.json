@@ -166,17 +166,11 @@
       "Confirm all": [
         "Confirma-ho tot"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Connecteu el vostre compte de ${ BRAND_NAME }"
-      ],
       "Continue": [
         "Continua"
       ],
       "Continue offline": [
         "Continuar fora de línia"
-      ],
-      "Continue without pinning": [
-        "Continua sense fixar"
       ],
       "Copy and close": [
         "Copia i tanca"
@@ -220,17 +214,11 @@
       "Create a ${ BRAND_NAME } account": [
         "Crear un compte de ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Crea un compte de ${ BRAND_NAME }"
-      ],
       "Create a new vault": [
         "Crea una caixa forta nova"
       ],
       "Create alias": [
         "Crea un àlies"
-      ],
-      "Create an account": [
-        "Crea un compte"
       ],
       "Create card": [
         "Crea una targeta"
@@ -318,9 +306,6 @@
       ],
       "Do not suggest on this website": [
         "No facis suggeriments en aquest lloc web"
-      ],
-      "Done": [
-        "Fet"
       ],
       "Download this CSV template": [
         "Descarrega aquesta plantilla CSV"
@@ -666,9 +651,6 @@
       ],
       "Sign back in": [
         "Torna a entrar"
-      ],
-      "Sign in": [
-        "Inicia la sessió"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Inicia sessió amb ${ BRAND_NAME }"
@@ -1229,9 +1211,6 @@
       "PIN codes do not match": [
         "Els codis PIN no coincideixen"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Fixeu l'extensió o seleccioneu Continua sense fixar."
-      ],
       "Registration failure: ${ message }": [
         "S'ha produït un error de registre: ${ message }"
       ],
@@ -1462,8 +1441,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } vol compartir un element amb un grup que administreu."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } vol compartir un element amb el grup ${ invitedGroup.Name }."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } vol compartir un element amb el grup ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } vol compartir un element amb vosaltres."
@@ -1531,9 +1510,9 @@
         "Queda ${ trialDaysLeft } dia",
         "Queden ${ trialDaysLeft } dies"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } membre)",
-        "(${ membersCount } membres)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } membre)",
+        "(${ memberCount } membres)"
       ],
       "(Empty)": [
         "(Buit)"
@@ -1712,9 +1691,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Trieu una clau d'accés desada per a iniciar la sessió a ${ domain }"
       ],
-      "Click the icon to open it anytime.": [
-        "Feu clic a la icona per obrir-la en qualsevol moment."
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "Tanqueu aquesta finestra per utilitzar una clau de seguretat o una altra clau d'accés."
       ],
@@ -1886,9 +1862,6 @@
       "Follow those steps to import your data with a generic CSV:": [
         "Seguiu aquests passos per a importar les dades amb un fitxer CSV genèric:"
       ],
-      "For easy access to your passwords and more.": [
-        "Per a un accés fàcil a les contrasenyes i més."
-      ],
       "For security reason, your access needs to be confirmed": [
         "Per motius de seguretat, cal confirmar el vostre accés"
       ],
@@ -1954,8 +1927,8 @@
       "Invite successfully resent": [
         "S'ha reenviat la invitació."
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "convideu el grup ${ invitedGroup.Name } a accedir als elements de"
+      "invites the group ${ name } to access items in": [
+        "convidar el grup ${ name } a accedir a elements de"
       ],
       "invites you to access items in": [
         "us convida a accedir a elements a"
@@ -2053,8 +2026,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2110,9 +2082,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "L'accés en línia a ${ PASS_APP_NAME } requerirà un codi PIN. Se us tancarà la sessió després de 3 intents que no han funcionat."
       ],
-      "Open the Extensions menu": [
-        "Obre el menú d'Extensions"
-      ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Obriu la configuració de Safari, busqueu ${ PASS_APP_NAME }, aneu a \"Permisos\" i activeu-hi els corresponents al lloc."
       ],
@@ -2152,9 +2121,6 @@
       ],
       "Permanently deleting selected items": [
         "S'estan suprimint permanentment els elements seleccionats"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Fixeu ${ PASS_APP_NAME } a la barra d'eines"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "S'ha registrat el codi PIN. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }."
@@ -2348,9 +2314,6 @@
       "See more info": [
         "Mostra més informació"
       ],
-      "Select an existing login or create a new one.": [
-        "Seleccioneu un inici de sessió existent o creeu-ne un de nou."
-      ],
       "Select destination vault": [
         "Selecciona la caixa forta de destinació"
       ],
@@ -2389,9 +2352,6 @@
       ],
       "Shared item invitation": [
         "Invitació a un element compartit"
-      ],
-      "Sign in or create an account to continue.": [
-        "Inicieu sessió o creeu un compte per continuar."
       ],
       "Sign in to your account": [
         "Inicieu sessió al compte"
@@ -4415,9 +4375,6 @@
       "Confirm your email": [
         "Confirmi el vostre correu electrònic"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Connecteu el vostre compte de ${ BRAND_NAME }"
-      ],
       "Contacts": [
         "Contactes"
       ],
@@ -4676,9 +4633,6 @@
       "Permanently remove all items?": [
         "Voleu esborrar els elements de manera permanent?"
       ],
-      "Pin the extension": [
-        "Fixa l'extensió"
-      ],
       "Pinned (${ items.length })": [
         "Ancorat (${ items.length })"
       ],
@@ -4827,9 +4781,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "Us donem la benvinguda a ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "Us donem la benvinguda al vostre nou gestor de contrasenyes!"
       ],
       "What is an alias?": [
         "Què és un àlies?"

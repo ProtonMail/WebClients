@@ -166,17 +166,11 @@
       "Confirm all": [
         "Tümünü onayla"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } hesabınızı bağlayın"
-      ],
       "Continue": [
         "İlerle"
       ],
       "Continue offline": [
         "Çevrim dışı kal"
-      ],
-      "Continue without pinning": [
-        "Sabitlemeden ilerle"
       ],
       "Copy and close": [
         "Kopyala ve kapat"
@@ -220,17 +214,11 @@
       "Create a ${ BRAND_NAME } account": [
         "Bir ${ BRAND_NAME } hesabı açın"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Bir ${ BRAND_NAME } hesabı açın"
-      ],
       "Create a new vault": [
         "Yeni bir kasa oluştur"
       ],
       "Create alias": [
         "Takma ad oluştur"
-      ],
-      "Create an account": [
-        "Hesap açın"
       ],
       "Create card": [
         "Kart ekle"
@@ -318,9 +306,6 @@
       ],
       "Do not suggest on this website": [
         "Bu site için öneride bulunulmasın"
-      ],
-      "Done": [
-        "Tamam"
       ],
       "Download this CSV template": [
         "Bu CSV kalıbını indir"
@@ -666,9 +651,6 @@
       ],
       "Sign back in": [
         "Yeniden oturum aç"
-      ],
-      "Sign in": [
-        "Oturum aç"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME } ile oturum aç"
@@ -1229,9 +1211,6 @@
       "PIN codes do not match": [
         "PIN kodu ile onayı aynı değil"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Lütfen eklentiyi sabitleyin ya da \"Sabitlemeden ilerle\" olarak seçin."
-      ],
       "Registration failure: ${ message }": [
         "Kayıt yapılamadı: ${ message }"
       ],
@@ -1462,8 +1441,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail }, bir ögeyi yönettiğiniz bir grupla paylaşmak istiyor."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail }, bir ögeyi ${ invitedGroup.Name } grubu ile paylaşmak istiyor."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail }, ${ name } grubuyla bir öge paylaşmak istiyor."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } sizinle bir öge paylaşmak istiyor."
@@ -1531,9 +1510,9 @@
         "${ trialDaysLeft } gün kaldı",
         "${ trialDaysLeft } gün kaldı"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } üye)",
-        "(${ membersCount } üye)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } üye)",
+        "(${ memberCount } üye)"
       ],
       "(Empty)": [
         "(Boş)"
@@ -1712,9 +1691,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "${ domain } oturumu açmak için kaydedilmiş bir geçiş anahtarı seçin"
       ],
-      "Click the icon to open it anytime.": [
-        "İstediğiniz zaman açmak için simgeye tıklayın."
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "Bir güvenlik anahtarı ya da başka bir geçiş anahtarı kullanmak için bu pencereyi kapatın."
       ],
@@ -1886,9 +1862,6 @@
       "Follow those steps to import your data with a generic CSV:": [
         "Verilerinizi sıradan bir CSV dosyası ile içe aktarmak için şu adımları izleyin:"
       ],
-      "For easy access to your passwords and more.": [
-        "Parolalarınıza ve diğer bilgilerinize kolayca erişmek için."
-      ],
       "For security reason, your access needs to be confirmed": [
         "Güvenlik nedeniyle erişiminizin onaylanması gerekiyor"
       ],
@@ -1954,8 +1927,8 @@
       "Invite successfully resent": [
         "Davet yeniden gönderildi"
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "${ invitedGroup.Name } grubunu şu kasadaki ögelere erişmeye davet etti:"
+      "invites the group ${ name } to access items in": [
+        "${ name } grubunu şuradaki ögelere erişmeye davet ediyor"
       ],
       "invites you to access items in": [
         "sizi şu kasadaki ögelere erişmeye davet ediyor:"
@@ -2053,8 +2026,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2110,9 +2082,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Çevrim içi olarak ${ PASS_APP_NAME } kullanmak için PIN kodu yazmanız gerekir. 3 başarısız denemeden sonra oturumunuz kapatılır."
       ],
-      "Open the Extensions menu": [
-        "Eklenti menüsünü açın"
-      ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Safari ayarlarını açın, ${ PASS_APP_NAME } uygulamasını bulun. Ardından \"İzinler\" bölümüne gidin ve site izinlerini açın"
       ],
@@ -2152,9 +2121,6 @@
       ],
       "Permanently deleting selected items": [
         "Seçilmiş ögeler kalıcı olarak siliniyor"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "${ PASS_APP_NAME } uygulamasını araç çubuğuna sabitleyin"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN kodu kaydedildi. ${ PASS_APP_NAME } kilidini açmak için kullanabilirsiniz"
@@ -2348,9 +2314,6 @@
       "See more info": [
         "Ayrıntılı bilgi"
       ],
-      "Select an existing login or create a new one.": [
-        "Var olan bir oturum açma kaydı seçin ya da yeni bir tane oluşturun."
-      ],
       "Select destination vault": [
         "Hedef kasayı seçin"
       ],
@@ -2389,9 +2352,6 @@
       ],
       "Shared item invitation": [
         "Öge paylaşma daveti"
-      ],
-      "Sign in or create an account to continue.": [
-        "İlerlemek için oturum ya da hesap açın."
       ],
       "Sign in to your account": [
         "Hesabınızda oturum açın"
@@ -4415,9 +4375,6 @@
       "Confirm your email": [
         "E-posta adresinizi onaylayın"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } hesabınızı bağlayın"
-      ],
       "Contacts": [
         "Kişiler"
       ],
@@ -4676,9 +4633,6 @@
       "Permanently remove all items?": [
         "Tüm ögeler kalıcı olarak silinsin mi?"
       ],
-      "Pin the extension": [
-        "Eklentiyi sabitle"
-      ],
       "Pinned (${ items.length })": [
         "Sabitlenmiş (${ items.length })"
       ],
@@ -4827,9 +4781,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "${ brandNameJSX } uygulamasına hoş geldiniz"
-      ],
-      "Welcome to your new password manager!": [
-        "Yeni parola yöneticinize hoş geldiniz!"
       ],
       "What is an alias?": [
         "Takma ad nedir?"

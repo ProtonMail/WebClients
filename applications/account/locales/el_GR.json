@@ -318,6 +318,9 @@
       "Connect to video conferencing": [
         "Σύνδεση σε τηλεδιάσκεψη"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Συνδέστε τον ${ BRAND_NAME } Λογαριασμό σας"
+      ],
       "Connected": [
         "Συνδεδεμένο"
       ],
@@ -384,8 +387,14 @@
       "Create": [
         "Δημιουργία"
       ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Δημιουργία ενός ${ BRAND_NAME } Λογαριασμού"
+      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Δημιουργία συνδέσμου για κοινή χρήση με οποιονδήποτε εκτός ${ BRAND_NAME }"
+      ],
+      "Create an account": [
+        "Δημιουργία λογαριασμού"
       ],
       "Create calendar": [
         "Δημιουργία ημερολογίου"
@@ -455,6 +464,9 @@
       ],
       "Delete Gateway": [
         "Διαγραφή Πύλης"
+      ],
+      "Delete gateway": [
+        "Διαγραφή πύλης"
       ],
       "Delete group": [
         "Διαγραφή ομάδας"
@@ -1151,6 +1163,9 @@
       ],
       "Reload": [
         "Ανανέωση"
+      ],
+      "Reload page": [
+        "Επαναφόρτωση σελίδας"
       ],
       "Remove": [
         "Αφαίρεση"
@@ -2703,6 +2718,9 @@
       "Change": [
         "Αλλαγή"
       ],
+      "Completed": [
+        "Ολοκληρώθηκε"
+      ],
       "Configure": [
         "Διαμόρφωση"
       ],
@@ -2729,6 +2747,12 @@
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Εφαρμογή Google Marketplace για αντιγραφή δεδομένων στο ${ BRAND_NAME }"
+      ],
+      "Has errors": [
+        "Έχει σφάλματα"
+      ],
+      "In progress": [
+        "Σε εξέλιξη"
       ],
       "Install app": [
         "Εγκατάσταση εφαρμογής"
@@ -2761,6 +2785,9 @@
       "Migration status": [
         "Κατάσταση μετεγκατάστασης"
       ],
+      "Not started": [
+        "Δεν ξεκίνησε"
+      ],
       "Organization does not have enough seats available": [
         "Ο οργανισμός δε διαθέτει αρκετές θέσεις διαθέσιμες"
       ],
@@ -2791,11 +2818,17 @@
       "Set up two-factor authentication": [
         "Δημιουργήστε έλεγχο ταυτότητας δύο παραγόντων"
       ],
+      "Settings": [
+        "Ρυθμίσεις"
+      ],
       "Sign in to Google Workspace": [
         "Σύνδεση στο Google Workspace"
       ],
       "Start migration": [
         "Έναρξη μετεγκατάστασης"
+      ],
+      "Status": [
+        "Κατάσταση"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Για να μεταφέρετε τα δεδομένα του οργανισμού σας, πρέπει να εγκαταστήσετε την εφαρμογή ${ BRAND_NAME } Migration Assistant από το Google Workspace Marketplace. Αυτό θα παραχωρήσει άδεια στο ${ BRAND_NAME } να αντιγράψει τα δεδομένα σας. Μετά την εγκατάσταση, επιστρέψτε εδώ για να συνεχίσετε."
@@ -2805,6 +2838,9 @@
       ],
       "User": [
         "Χρήστης"
+      ],
+      "Users migrated": [
+        "Οι χρήστες μεταφέρθηκαν"
       ],
       "Verify installation": [
         "Επαλήθευση εγκατάστασης"
@@ -6406,6 +6442,9 @@
       "Code is incorrect or not valid anymore": [
         "Ο κωδικός είναι λανθασμένος ή δεν είναι πλέον έγκυρος"
       ],
+      "Company name or personal name is required": [
+        "Απαιτείται το όνομα της εταιρείας ή το προσωπικό όνομα"
+      ],
       "Condition incomplete": [
         "Μη ολοκληρωμένη συνθήκη"
       ],
@@ -6588,11 +6627,11 @@
       "Invalid URL": [
         "Μη έγκυρη διεύθυνση URL"
       ],
+      "Invalid VAT number": [
+        "Μη έγκυρος αριθμός ΦΠΑ"
+      ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
-      ],
-      "Invalid ZIP code": [
-        "Μη έγκυρος Ταχυδρομικός Κωδικός"
       ],
       "Item content cannot exceed 40KB": [
         "Το περιεχόμενο του στοιχείου δεν μπορεί να υπερβαίνει τα 40KB"
@@ -6687,6 +6726,9 @@
       ],
       "Please add a payment method before reactivating your subscription": [
         "Παρακαλούμε προσθέστε μια μέθοδο πληρωμής πριν ενεργοποιήσετε ξανά τη συνδρομή σας"
+      ],
+      "Please complete the billing details": [
+        "Παρακαλούμε συμπληρώστε τα στοιχεία χρέωσης"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Παρακαλούμε διαμορφώσετε έναν προσαρμοσμένο τομέα πριν προσθέσετε διευθύνσεις"
@@ -6888,6 +6930,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
       ],
+      "This field is invalid": [
+        "Αυτό το πεδίο δεν είναι έγκυρο"
+      ],
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
       ],
@@ -6959,6 +7004,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Σταματήσαμε την υπογραφή DKIM λόγω προβλημάτων με τη ρύθμιση παραμέτρων DNS. Ακολουθήστε τις παρακάτω οδηγίες για να συνεχίσετε την υπογραφή."
+      ],
+      "Wrong billing address": [
+        "Λανθασμένη διεύθυνσης χρέωσης"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Λανθασμένη φράση ανάκτησης. Δοκιμάστε ξανά ή χρησιμοποιήστε άλλη μέθοδο ανάκτησης."
@@ -9066,11 +9114,26 @@
       "(default)": [
         "(προεπιλογή)"
       ],
+      "(eg. ChatGPT, Gemini, Perplexity)": [
+        "(π.χ. ChatGPT, Gemini, Perplexity)"
+      ],
+      "(eg. New York Times, BBC)": [
+        "(π.χ. New York Times, BBC)"
+      ],
+      "(eg. PCMag, TechRadar)": [
+        "(π.χ. PCMag, TechRadar)"
+      ],
+      "(eg. The Vergecast, Big Technology Podcast)": [
+        "(π.χ. The Vergecast, Big Technology Podcast)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Φιλτράρετε εάν πληρούνται ΟΛΕΣ οι ακόλουθες συνθήκες)"
       ],
       "(Filter if ANY of the following conditions are met)": [
         "(Φιλτράρετε εάν πληρούνται ΟΠΟΙΕΣΔΗΠΟΤΕ από τις ακόλουθες συνθήκες)"
+      ],
+      "(formerly Twitter)": [
+        "(πρώην Twitter)"
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "Το **${ appName }** δεν υποστηρίζεται στον οργανισμό σας **${ organizationName }**."
@@ -9230,6 +9293,9 @@
       "Affected user is on row": [
         "Ο χρήστης που επηρεάζεται βρίσκεται στη γραμμή",
         "Οι χρήστες που επηρεάζονται βρίσκονται στις γραμμές"
+      ],
+      "AI chatbot": [
+        "Ρομπότ συνομιλίας Τεχνητής Νοημοσύνης (AI)"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Βοηθός με τεχνητή νοημοσύνη που σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα."
@@ -9492,6 +9558,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Κοινοποιώντας όλες τις λεπτομέρειες των εκδηλώσεων αυτού του ημερολογίου, αποδέχεστε να παραχωρήσετε στην ${ BRAND_NAME } πρόσβαση στις κρυπτογραφημένες πληροφορίες του ημερολογίου."
       ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
       "Cancel anytime": [
         "Ακυρώστε ανά πάσα στιγμή"
       ],
@@ -9518,6 +9587,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
+      ],
+      "Click the icon to open it anytime.": [
+        "Κάντε κλικ στο εικονίδιο για να το ανοίξετε ανά πάσα στιγμή."
       ],
       "Close this screen to exit.": [
         "Κλείστε αυτήν την οθόνη για έξοδο."
@@ -9959,6 +10031,9 @@
       "Expires on ${ ExpMonth }/${ ExpYear }": [
         "Λήγει τον ${ ExpMonth }/${ ExpYear }"
       ],
+      "Facebook": [
+        "Facebook"
+      ],
       "Failed to fetch logs.": [
         "Αποτυχία ανάκτησης αρχείων καταγραφής."
       ],
@@ -10001,6 +10076,9 @@
       "for choosing ${ product }": [
         "για την επιλογή ${ product }"
       ],
+      "For easy access to your passwords and more.": [
+        "Για εύκολη πρόσβαση στους κωδικούς πρόσβασής σας και πολλά άλλα."
+      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Για χρήστες που μεταβαίνουν σε ${ MAIL_APP_NAME } από άλλη υπηρεσία ηλεκτρονικού ταχυδρομείου, επιλέξτε την καρτέλα ${ boldAddresses } και προσθέστε όλες τις ενεργές διευθύνσεις ηλεκτρονικού ταχυδρομείου πριν αλλάξετε την εγγραφή MX για να διασφαλίσετε την ομαλή μετάβαση."
       ],
@@ -10015,6 +10093,15 @@
       ],
       "free up space by deleting older messages or other data": [
         "ελευθερώστε χώρο διαγράφοντας παλαιότερα μηνύματα ή άλλα δεδομένα"
+      ],
+      "Friends and family": [
+        "Φίλοι και οικογένεια"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "Δεν ήταν δυνατή η διαγραφή της πύλης. Παρακαλούμε προσπαθήστε ξανά"
+      ],
+      "Gateway deleted": [
+        "Η πύλη διαγράφηκε"
       ],
       "Gateway monitor": [
         "Παρακολούθηση πυλών"
@@ -10055,6 +10142,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Μεταβείτε στον πάροχο ταυτότητάς σας, λάβετε τα μεταδεδομένα SAML για το ${ appName } και εισαγάγετε τα εδώ."
       ],
+      "Google or other search engine": [
+        "Google ή άλλη μηχανή αναζήτησης"
+      ],
       "Google Pay mark": [
         "Σήμα Google Pay"
       ],
@@ -10094,8 +10184,11 @@
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Εάν αυτή η επιλογή είναι απενεργοποιημένη, τα μέλη του οργανισμού θα μπορούν να κάνουν κοινή χρήση κρυπτών ή στοιχείων εντός του οργανισμού."
       ],
-      "If disabled, organization members won't be able to create secure links.": [
-        "Αν απενεργοποιηθεί, τα μέλη του οργανισμού δε θα μπορούν να δημιουργούν ασφαλείς συνδέσμους."
+      "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
+        "Αν απενεργοποιηθεί, τα μέλη του οργανισμού δε θα μπορούν να δημιουργούν νέα ψευδώνυμα. Τα υπάρχοντα ψευδώνυμα θα παραμείνουν ενεργά."
+      ],
+      "If disabled, organization members won't be able to create secure links. Previously active secure links remain valid until their expiration.": [
+        "Εάν απενεργοποιηθεί, τα μέλη της οργάνωσης δε θα μπορούν να δημιουργούν ασφαλείς συνδέσμους. Οι προηγουμένως ενεργοί ασφαλείς σύνδεσμοι παραμένουν έγκυροι έως τη λήξη τους."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Εάν αυτή η επιλογή είναι ενεργοποιημένη, τα μέλη του οργανισμού θα μπορούν να κοινοποιήσουν μεμονωμένα στοιχεία καθώς και τις κρύπτες."
@@ -10214,6 +10307,9 @@
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
+      ],
+      "Instagram": [
+        "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Εγκαταστήστε ένα αρχείο διαμόρφωσης χώρας για να συνδεθείτε σε έναν τυχαίο διακομιστή στη χώρα της επιλογής σας."
@@ -10516,6 +10612,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Τα δεδομένα νέων συνδέσεων VPN θα πάψουν να συλλέγονται και να εμφανίζονται."
       ],
+      "News or media article": [
+        "Ειδησεογραφικό ή δημοσιογραφικό άρθρο"
+      ],
       "Next billing date": [
         "Επόμενη ημερομηνία χρέωσης"
       ],
@@ -10606,6 +10705,9 @@
       "Open source": [
         "Ανοιχτού κώδικα"
       ],
+      "Open the Extensions menu": [
+        "Άνοιγμα του μενού \"Προεκτάσεις\""
+      ],
       "Open the guide for recommended actions and helpful links.": [
         "Ανοίξτε τον οδηγό για προτεινόμενες ενέργειες και χρήσιμους συνδέσμους."
       ],
@@ -10640,6 +10742,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Οργανώστε τους αποκλειστικούς διακομιστές σας σε Πύλες και αποφασίστε ποια μέλη μπορούν να έχουν πρόσβαση σε αυτούς."
+      ],
+      "Other": [
+        "Άλλο"
       ],
       "Other accounts": [
         "Άλλοι λογαριασμοί"
@@ -10710,6 +10815,9 @@
       "Phone number": [
         "Αριθμός τηλεφώνου"
       ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Καρφίτσωμα ${ PASS_APP_NAME } στη γραμμή εργαλείων σας"
+      ],
       "Please add a password for the user on row": [
         "Παρακαλούμε προσθέστε ένα κωδικό πρόσβασης για το χρήστη στη σειρά",
         "Παρακαλούμε προσθέστε κωδικούς πρόσβασης για τους χρήστες στις σειρές"
@@ -10754,11 +10862,17 @@
       "Please open the document to view it.": [
         "Παρακαλούμε ανοίξτε το έγγραφο για να το δείτε."
       ],
+      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
+        "Παρακαλούμε ανοίξτε τις ρυθμίσεις της επέκτασης του προγράμματος περιήγησής σας και επιτρέψτε στην προέκταση ${ PASS_APP_NAME } να έχει πρόσβαση σε δεδομένα ιστοτόπων. Στη συνέχεια, ανανεώστε αυτήν τη σελίδα."
+      ],
       "Please select the folders you would like to import:": [
         "Παρακαλούμε επιλέξτε τους φακέλους που θα θέλετε να εισάγετε:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Επιλέξτε τον τύπο σύνδεσμου που θέλετε να εισαγάγετε και συμπληρώστε όλα τα πεδία."
+      ],
+      "Please specify...": [
+        "Παρακαλούμε καθορίστε..."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Δοκιμάστε ξανά χρησιμοποιώντας διαφορετικό τρόπο πληρωμής ή επικοινωνήστε με την τράπεζά σας."
@@ -10777,6 +10891,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Απαιτείται συνδρομή Plus ή Visionary"
+      ],
+      "Podcast": [
+        "Podcast"
       ],
       "Preference saved": [
         "Η προτίμηση αποθηκεύτηκε"
@@ -10804,6 +10921,9 @@
       ],
       "Private AI assistant": [
         "Ιδιωτικός βοηθός AI"
+      ],
+      "Product reviews, rankings, or guides": [
+        "Κριτικές προϊόντων, κατατάξεις ή οδηγοί"
       ],
       "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
         "Προστατέψτε τον λογαριασμό σας από απειλές κβαντικής υπολογιστικής με κρυπτογραφικά κλειδιά ανθεκτικά στην κβαντική υπολογιστική."
@@ -10858,6 +10978,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Η φράση ανάκτησης δεν σχετίζεται με κάποιο παρωχημένο κλειδί."
+      ],
+      "Reddit": [
+        "Reddit"
       ],
       "Referral link copied to your clipboard": [
         "Ο σύνδεσμος παραπομπής αντιγράφηκε στο πρόχειρό σας"
@@ -11028,6 +11151,9 @@
       "Sign in only": [
         "Σύνδεση μόνο"
       ],
+      "Sign in or create an account to continue.": [
+        "Για να συνεχίσετε, εισέλθετε ή δημιουργήστε λογαριασμό."
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Για ενεργοποίηση της διεύθυνσής σας, συνδεθείτε στο ${ MAIL_APP_NAME }"
       ],
@@ -11074,6 +11200,12 @@
         "Βήμα ${ step }",
         "Βήματα ${ step }"
       ],
+      "Step 1 of 2": [
+        "Βήμα 1 από 2"
+      ],
+      "Step 2 of 2": [
+        "Βήμα 2 από 2"
+      ],
       "Storage allocated to other users in this organisation": [
         "Κατανεμημένος αποθηκευτικός χώρος σε άλλους χρήστες αυτού του οργανισμού"
       ],
@@ -11088,6 +11220,9 @@
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Αποθηκεύστε αυτό το αρχείο και τον κωδικό πρόσβασης σε ασφαλές μέρος. Θα τα χρειαστείτε ξανά για εισαγωγή του κλειδιού σας."
+      ],
+      "Submit": [
+        "Υποβολή"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Υποβάλετε μια κατάθεση χρησιμοποιώντας την ακόλουθη διεύθυνση ή σαρώστε τον κωδικό QR. Η κατάθεσή σας θα εμφανιστεί στον λογαριασμό σας μετά την επιβεβαίωση."
@@ -11159,6 +11294,9 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Ευχαριστούμε που υποστηρίζετε την αποστολή μας να οικοδομήσουμε ένα καλύτερο διαδίκτυο όπου η ιδιωτικότητα και η ελευθερία έρχονται πρώτες."
       ],
+      "Thanks for the feedback!": [
+        "Ευχαριστούμε για τα σχόλιά σας!"
+      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Το μήνυμα ${ boldDataLocked } δεν θα εμφανίζεται πλέον, ωστόσο μπορείτε να ξεκλειδώσετε τα δεδομένα σας στο ${ encryptionAndKeysLink }."
       ],
@@ -11218,6 +11356,9 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Το όνομα θα είναι ορατό στους χρήστες σας ενώ είναι συνδεδεμένοι."
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
+        "Η πίστωσή παραπομπής μπορεί να δοθεί μέχρι 2 μήνες μετά το τέλος της δοκιμαστικής περιόδου του φίλου σας, και εάν ο φίλος σας εγγράφηκε σε ένα πλάνο."
       ],
       "The securest way to browse, stream, and be online.": [
         "Ο πιο ασφαλής τρόπος περιήγησης, streaming και να είσαι online"
@@ -11368,6 +11509,9 @@
       ],
       "This will wipe all logs for your organization members.": [
         "Αυτό θα διαγράψει όλα τα αρχεία καταγραφής για τα μέλη του οργανισμού σας."
+      ],
+      "TikTok": [
+        "TikTok"
       ],
       "to ${ product } Business": [
         "στο ${ product } Business"
@@ -11597,6 +11741,9 @@
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Επαληθεύστε την ταυτότητά σας με έναν κωδικό πρόσβασης μίας χρήσης βάσει χρόνου από μια εφαρμογή ελέγχου ταυτότητας"
       ],
+      "Verifying ${ PASS_APP_NAME } browser extension...": [
+        "Επιβεβαίωση της προέκτασης προγράμματος περιήγησης ${ PASS_APP_NAME }..."
+      ],
       "Verifying your payment": [
         "Επαλήθευση της πληρωμής σας"
       ],
@@ -11788,6 +11935,9 @@
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
+      ],
+      "X": [
+        "X"
       ],
       "Yearly": [
         "Ετησίως"
@@ -12008,6 +12158,15 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Δεν θα μπορείτε να ανακτήσετε κλειδωμένα δεδομένα χρησιμοποιώντας τα αρχεία ανάκτησης που λάβατε. Αυτό θα απενεργοποιήσει επίσης την ανάκτηση βάσει συσκευής."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Θα λάβετε την ανταμοιβή πίστωσης 1 μήνα αφότου ο φίλος σας εγγραφεί σε ετήσιο πλάνο και 2 μήνες αφότου εγγραφεί σε μηνιαίο πλάνο."
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "Θα λάβετε την ανταμοιβή πίστωσης 1 μήνα μετά το τέλος της δοκιμαστικής περιόδου του φίλου σας."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "Θα λάβετε την ανταμοιβή πίστωσης 2 μήνες μετά το τέλος της δοκιμαστικής περιόδου του φίλου σας."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή.",
         "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνες στα ${ renewAmountStr }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή."
@@ -12128,6 +12287,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Η δοκιμή σας θα τελειώσει σε ${ timeRemaining }."
+      ],
+      "YouTube": [
+        "YouTube"
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Θα χάσετε επίσης την πρόσβαση στις δυνατότητες του ${ boldPlanTitle }:"
@@ -12833,6 +12995,9 @@
       ],
       "Allow": [
         "Αποδεκτή"
+      ],
+      "Allow alias creation": [
+        "Να επιτρέπεται η δημιουργία ψευδωνύμων"
       ],
       "Allow all users to create vaults": [
         "Να επιτρέπεται η δημιουργία κρυπτών για όλους τους χρήστες"
@@ -17783,6 +17948,9 @@
       "Got it": [
         "Το κατάλαβα"
       ],
+      "I'm purchasing as a business": [
+        "Αγοράζω ως επιχείρηση"
+      ],
       "Including ${ rate }% tax": [
         "Συμπεριλαμβανόμενος ${ rate }% φόρος"
       ],
@@ -17872,9 +18040,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Αυτή η ενέργεια επεκτείνει την υπάρχουσα συνδρομή. Θα χρεωθείτε μόνο για τα νέα πρόσθετα και τον υπόλοιπο χρόνο του τρέχοντος κύκλου χρέωσης. Η ημερομηνία ανανέωσης της συνδρομής σας δε θα αλλάξει."
-      ],
-      "This number will be shown on all future invoices": [
-        "Αυτός ο αριθμός θα εμφανίζεται σε όλα τα μελλοντικά τιμολόγια."
       ],
       "This offer is not available with your current plan.": [
         "Αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
@@ -18101,6 +18266,9 @@
       "Confirm": [
         "Επιβεβαίωση"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "domain.com": [
         "domain.com"
       ],
@@ -18178,6 +18346,9 @@
       ],
       "Printer": [
         "Εκτυπωτής"
+      ],
+      "San Francisco": [
+        "Σαν Φρανσίσκο"
       ],
       "Search": [
         "Αναζήτηση"
@@ -22170,6 +22341,9 @@
       "${ MAIL_APP_NAME } Export Tool": [
         "Εργαλείο Εξαγωγής ${ MAIL_APP_NAME }"
       ],
+      "${ PASS_APP_NAME } is missing permissions": [
+        "Λείπουν δικαιώματα για το ${ PASS_APP_NAME }"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Αναφορά Παρακολούθησης"
       ],
@@ -22498,6 +22672,9 @@
       "Connect to video conferencing": [
         "Σύνδεση σε τηλεδιάσκεψη"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Συνδέστε τον ${ BRAND_NAME } Λογαριασμό σας"
+      ],
       "Connect your custom domain": [
         "Συνδέστε τον προσαρμοσμένο τομέα σας"
       ],
@@ -22621,6 +22798,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "Περιεκτική ανάλυση στις αναρτήσεις ιστολογίου VPN"
+      ],
+      "Delete ${ name }?": [
+        "Διαγραφή ${ name };"
       ],
       "Delete ${ value }": [
         "Διαγραφή ${ value }"
@@ -22990,6 +23170,9 @@
       "Home": [
         "Αρχική"
       ],
+      "How did you find out about us?": [
+        "Πώς μάθατε για εμάς;"
+      ],
       "How to choose a good logo": [
         "Πώς να επιλέξετε ένα καλό λογότυπο"
       ],
@@ -23245,6 +23428,9 @@
       ],
       "Photos": [
         "Φωτογραφίες"
+      ],
+      "Pin the extension": [
+        "Καρφίτσωμα της προέκτασης"
       ],
       "Policies": [
         "Πολιτικές"
@@ -23513,6 +23699,9 @@
       "Special Offer": [
         "Ειδική Προσφορά"
       ],
+      "Spring Sale": [
+        "Ανοιξιάτικες Εκπτώσεις"
+      ],
       "Start a new import": [
         "Ξεκινήστε μια νέα εισαγωγή"
       ],
@@ -23708,6 +23897,9 @@
       ],
       "Welcome to ${ planName }": [
         "Καλώς ήρθατε στο ${ planName }"
+      ],
+      "Welcome to your new password manager!": [
+        "Καλώς ήρθατε στον νέο σας διαχειριστή κωδικών πρόσβασης!"
       ],
       "What is an alias?": [
         "Τι είναι το ψευδώνυμο;"
@@ -24883,6 +25075,12 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Διαγράφοντας αυτό το νούμερο τηλεφώνου, δεν θα είστε πλέον σε θέση να ανακτήσετε το λογαριασμό σας."
       ],
+      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
+        "Δεν ήταν δυνατή η σύνδεση. Παρακαλούμε ανοίξτε την προέκταση προγράμματος περιήγησης ${ PASS_APP_NAME } και συνδεθείτε από εκεί."
+      ],
+      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
+        "Δεν ήταν δυνατή η εγγραφή. Παρακαλούμε ανοίξτε την προέκταση προγράμματος περιήγησης ${ PASS_APP_NAME } και εγγραφείτε από εκεί."
+      ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Εάν ακυρώσετε αυτήν την εισαγωγή, δεν θα μπορέσετε να τη συνεχίσετε. Το ${ BRAND_NAME } αποθήκευσε όλη την πρόοδο στον λογαριασμό σας. Ακύρωση οπωσδήποτε;"
       ],
@@ -24909,6 +25107,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Οι διακομιστές σε αυτήν την πύλη θα εισέλθουν σε περίοδο απενεργοποίησης 10 ημερών. Αυτοί οι διακομιστές μπορούν να προστεθούν σε μια νέα Πύλη, αλλά η χώρα τους δεν μπορεί να αλλάξει."
       ],
       "Skip verification?": [
         "Παράλειψη επαλήθευσης;"

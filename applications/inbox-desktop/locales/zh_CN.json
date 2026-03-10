@@ -5,11 +5,17 @@
   },
   "contexts": {
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "\"立即重启并分析\"将立即重启应用并捕获启动过程的分析数据。\n\n\"下次启动时分析\"将在您下次打开应用时进行分析，该选项用于测量重启设备后的启动速度。"
+      ],
       "About ${ MAIL_APP_NAME }": [
         "关于 ${ MAIL_APP_NAME }"
       ],
       "Actual Size": [
         "实际大小"
+      ],
+      "Cancel": [
+        "取消"
       ],
       "Check spelling while typing": [
         "输入时检查拼写"
@@ -19,6 +25,9 @@
       ],
       "Close Window": [
         "关闭窗口"
+      ],
+      "Collect startup performance data": [
+        "收集启动性能数据"
       ],
       "Copy": [
         "复制"
@@ -47,6 +56,12 @@
       "Paste and Match Style": [
         "粘贴并匹配样式"
       ],
+      "Profile app startup": [
+        "应用启动时分析"
+      ],
+      "Profile on next launch": [
+        "下次启动时分析"
+      ],
       "Quit": [
         "退出"
       ],
@@ -58,6 +73,9 @@
       ],
       "Reload": [
         "重新加载"
+      ],
+      "Restart and profile now": [
+        "立即重启并分析"
       ],
       "Select All": [
         "全选"
@@ -79,6 +97,9 @@
       ],
       "Stop Speaking": [
         "停止说话"
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "此项将测量应用启动所需时间，并将报告保存到您的日志文件夹中。"
       ],
       "Toggle Full Screen": [
         "切换至全屏"

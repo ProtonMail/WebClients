@@ -145,17 +145,11 @@
       "Confirm all": [
         "Підтвердити все"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Під'єднати обліковий запис ${ BRAND_NAME }"
-      ],
       "Continue": [
         "Продовжити"
       ],
       "Continue offline": [
         "Продовжити в автономному режимі"
-      ],
-      "Continue without pinning": [
-        "Продовжити без закріплення"
       ],
       "Copy and close": [
         "Скопіювати та закрити"
@@ -175,17 +169,11 @@
       "Create a ${ BRAND_NAME } account": [
         "Створіть обліковий запис ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Створіть обліковий запис ${ BRAND_NAME }"
-      ],
       "Create a new vault": [
         "Створити нове сховище"
       ],
       "Create alias": [
         "Створити псевдонім"
-      ],
-      "Create an account": [
-        "Зареєструватися"
       ],
       "Create card": [
         "Створити картку"
@@ -267,9 +255,6 @@
       ],
       "Do not suggest on this website": [
         "Не робити пропозиції на цьому вебсайті"
-      ],
-      "Done": [
-        "Готово"
       ],
       "Download this CSV template": [
         "Завантажте цей шаблон CSV"
@@ -588,9 +573,6 @@
       ],
       "Sign back in": [
         "Увійти знову"
-      ],
-      "Sign in": [
-        "Увійти"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Увійдіть за допомогою ${ BRAND_NAME }"
@@ -1105,9 +1087,6 @@
       "PIN codes do not match": [
         "PIN-коди відрізняються"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Закріпіть розширення або виберіть \"Продовжити без закріплення\"."
-      ],
       "Registration failure: ${ message }": [
         "Помилка реєстрації: ${ message }"
       ],
@@ -1412,6 +1391,12 @@
         "Залишилось ${ trialDaysLeft } днів",
         "Залишилось ${ trialDaysLeft } дні"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } учасник)",
+        "(${ memberCount } учасники)",
+        "(${ memberCount } учасників)",
+        "(${ memberCount } учасників)"
+      ],
       "(Empty)": [
         "(Порожньо)"
       ],
@@ -1546,9 +1531,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Оберіть збережений ключ доступу для входу до ${ domain }"
-      ],
-      "Click the icon to open it anytime.": [
-        "Клацніть на іконку щоб відкрити його будь-коли."
       ],
       "Close this window in order to use a security key or another passkey.": [
         "Закрийте це вікно, щоб скористатися ключем безпеки або іншим ключем доступу."
@@ -1696,9 +1678,6 @@
       ],
       "finance": [
         "фінанси"
-      ],
-      "For easy access to your passwords and more.": [
-        "Для легкого доступу до ваших паролів та більшого."
       ],
       "For security reason, your access needs to be confirmed": [
         "З метою безпеки, ваш доступ має бути підтверджений"
@@ -1895,9 +1874,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Онлайн доступ до ${ PASS_APP_NAME } вимагатиме PIN-код. Ви вийдете з системи після 3 невдалих спроб."
       ],
-      "Open the Extensions menu": [
-        "Відкрити меню розширень"
-      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Пріоритетом наших сповіщень є безпека. Якщо ви не впізнаєте жодної з порушених даних, ви можете сміливо ігнорувати це повідомлення."
       ],
@@ -1936,9 +1912,6 @@
       ],
       "Permanently deleting selected items": [
         "Остаточне видалення обраних елементів"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Закріпіть ${ PASS_APP_NAME } на панелі інструментів"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-код успішно зареєстровано. Використовуйте його для розблокування ${ PASS_APP_NAME }"
@@ -2072,9 +2045,6 @@
       "See more info": [
         "Переглянути більше інформації"
       ],
-      "Select an existing login or create a new one.": [
-        "Оберіть чинний вхід або створіть новий."
-      ],
       "Select destination vault": [
         "Виберіть місце призначення"
       ],
@@ -2107,9 +2077,6 @@
       ],
       "Shared item invitation": [
         "Запрошення на спільний елемент"
-      ],
-      "Sign in or create an account to continue.": [
-        "Увійдіть або створіть обліковий запис, щоб продовжити."
       ],
       "Sign in to your account": [
         "Увійдіть у свій обліковий запис"
@@ -3844,9 +3811,6 @@
       "Confirm your email": [
         "Підтвердьте вашу електронну пошту"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Під'єднати обліковий запис ${ BRAND_NAME }"
-      ],
       "Contacts": [
         "Контакти"
       ],
@@ -4078,9 +4042,6 @@
       "Permanently remove all items?": [
         "Остаточно видалити всі елементи?"
       ],
-      "Pin the extension": [
-        "Закріпити розширення"
-      ],
       "Pinned (${ items.length })": [
         "Закріплено (${ items.length })"
       ],
@@ -4224,9 +4185,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "Ласкаво просимо до ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "Ласкаво просимо до нового менеджера паролів!"
       ],
       "What is an alias?": [
         "Що таке псевдонім?"

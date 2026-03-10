@@ -166,17 +166,11 @@
       "Confirm all": [
         "Xác nhận tất cả"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Kết nối tài khoản ${ BRAND_NAME }"
-      ],
       "Continue": [
         "Tiếp tục"
       ],
       "Continue offline": [
         "Tiếp tục ngoại tuyến"
-      ],
-      "Continue without pinning": [
-        "Tiếp tục nhưng không ghim"
       ],
       "Copy and close": [
         "Sao chép và đóng"
@@ -220,17 +214,11 @@
       "Create a ${ BRAND_NAME } account": [
         "Tạo tài khoản ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Tạo tài khoản ${ BRAND_NAME }"
-      ],
       "Create a new vault": [
         "Tạo kho mới"
       ],
       "Create alias": [
         "Tạo biệt danh"
-      ],
-      "Create an account": [
-        "Tạo tài khoản"
       ],
       "Create card": [
         "Tạo thẻ"
@@ -318,9 +306,6 @@
       ],
       "Do not suggest on this website": [
         "Đừng đề xuất trên trang web này"
-      ],
-      "Done": [
-        "Xong"
       ],
       "Download this CSV template": [
         "Tải xuống mẫu CSV"
@@ -663,9 +648,6 @@
       ],
       "Sign back in": [
         "Đăng nhập lại"
-      ],
-      "Sign in": [
-        "Đăng nhập"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Đăng nhập bằng ${ BRAND_NAME }"
@@ -1218,9 +1200,6 @@
       "PIN codes do not match": [
         "Mã PIN không khớp"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Vui lòng ghim phần mở rộng hoặc chọn \"Tiếp tục nhưng không ghim\"."
-      ],
       "Registration failure: ${ message }": [
         "Đăng ký thất bại: ${ message }"
       ],
@@ -1497,6 +1476,9 @@
       "${ trialDaysLeft } day left": [
         "Còn lại ${ trialDaysLeft } ngày"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } thành viên)"
+      ],
       "(Empty)": [
         "(Trống)"
       ],
@@ -1671,9 +1653,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Chọn mã khóa đã lưu để đăng nhập vào ${ domain }"
       ],
-      "Click the icon to open it anytime.": [
-        "Nhấn vào biểu tượng để mở bất kỳ lúc nào."
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "Đóng cửa sổ này để dùng khóa bảo mật hoặc mã khóa khác."
       ],
@@ -1842,9 +1821,6 @@
       "Follow those steps to import your data with a generic CSV:": [
         "Làm theo các bước sau để nhập dữ liệu bằng tệp CSV chung:"
       ],
-      "For easy access to your passwords and more.": [
-        "Để dễ dàng truy cập vào mật khẩu và hơn thế nữa."
-      ],
       "For security reason, your access needs to be confirmed": [
         "Vì lý do bảo mật, truy cập cần được xác nhận"
       ],
@@ -2002,7 +1978,7 @@
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
+        "Việc chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
       ],
       "Moving items": [
         "Đang chuyển mục"
@@ -2058,9 +2034,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Truy cập trực tuyến vào ${ PASS_APP_NAME } sẽ cần mã PIN. Sẽ bị đăng xuất sau 3 lần thử thất bại."
       ],
-      "Open the Extensions menu": [
-        "Mở menu Phần mở rộng"
-      ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Mở cài đặt Safari, tìm ${ PASS_APP_NAME }, đi tới \"Quyền\" và kích hoạt quyền trang web."
       ],
@@ -2099,9 +2072,6 @@
       ],
       "Permanently deleting selected items": [
         "Đang xóa vĩnh viễn những mục được chọn"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Ghim ${ PASS_APP_NAME } trên thanh công cụ"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Đã đăng ký thành công mã PIN. Sử dụng để mở khóa ${ PASS_APP_NAME }"
@@ -2295,9 +2265,6 @@
       "See more info": [
         "Xem thêm thông tin"
       ],
-      "Select an existing login or create a new one.": [
-        "Chọn đăng nhập có sẵn hoặc tạo mới."
-      ],
       "Select destination vault": [
         "Chọn kho đến"
       ],
@@ -2336,9 +2303,6 @@
       ],
       "Shared item invitation": [
         "Lời mời chia sẻ mục"
-      ],
-      "Sign in or create an account to continue.": [
-        "Đăng nhập hoặc tạo tài khoản để tiếp tục."
       ],
       "Sign in to your account": [
         "Đăng nhập vào tài khoản của bạn"
@@ -4317,9 +4281,6 @@
       "Confirm your email": [
         "Xác nhận email của bạn"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Kết nối tài khoản ${ BRAND_NAME }"
-      ],
       "Contacts": [
         "Liên hệ"
       ],
@@ -4575,9 +4536,6 @@
       "Permanently remove all items?": [
         "Xóa vĩnh viễn tất cả các mục?"
       ],
-      "Pin the extension": [
-        "Ghim phần mở rộng"
-      ],
       "Pinned (${ items.length })": [
         "Đã ghim (${ items.length })"
       ],
@@ -4721,9 +4679,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "Chào mừng tới ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "Chào mừng đến trình quản lý mật khẩu mới!"
       ],
       "What is an alias?": [
         "Biệt danh là gì?"

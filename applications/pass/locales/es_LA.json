@@ -1390,8 +1390,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } desea compartir un elemento con un grupo que usted administra."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } desea compartir un elemento con el grupo ${ invitedGroup.Name }."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } desea compartir un elemento con el grupo ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } desea compartir un elemento con usted."
@@ -1440,9 +1440,9 @@
         "${ row.breachCount } vulneración detectada",
         "${ row.breachCount } vulneraciones detectadas"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } miembro)",
-        "(${ membersCount } miembros)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } miembro)",
+        "(${ memberCount } miembro)"
       ],
       "(Empty)": [
         "(Vacío)"
@@ -1827,8 +1827,8 @@
       "Invite successfully resent": [
         "La invitación fue enviada."
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "invita al grupo ${ invitedGroup.Name } a acceder a los elementos en"
+      "invites the group ${ name } to access items in": [
+        "invita al grupo ${ name } a acceder a los elementos en"
       ],
       "invites you to access items in": [
         "le invita a acceder a elementos de"
@@ -1924,10 +1924,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"

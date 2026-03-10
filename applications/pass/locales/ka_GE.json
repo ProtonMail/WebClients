@@ -1422,9 +1422,9 @@
         "აღმოჩენილია ${ row.breachCount } გაჟონვა",
         "აღმოჩენილია ${ row.breachCount } გაჟონვა"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } წევრი)",
-        "(${ membersCount } წევრი)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } წევრი)",
+        "(${ memberCount } წევრი)"
       ],
       "(Empty)": [
         "(ცარიელი)"
@@ -1788,9 +1788,6 @@
       "Invite successfully resent": [
         "მოსაწვევი წარმატებით გაიგზავნა თავიდან"
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "იწვევს ჯგუფს ${ invitedGroup.Name } წვდომისთვის ელემენტებზე საცავში"
-      ],
       "invites you to access items in": [
         "გიწვევთ ელემენტებზე წვდომისთვის"
       ],
@@ -1885,10 +1882,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
