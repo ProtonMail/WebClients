@@ -2566,7 +2566,7 @@
         "Вы можаце імпартаваць падзеі ў фармаце iCal (файл ICS). Максімальна памер файла павінен быць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець не больш за ${ MAX_IMPORT_EVENTS_STRING } падзей. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Вы можаце пазначыць тыя кантакты, якія вы не хочаце аб'яднаць і пакідаць. Выдаленне адбываецца толькі пасля націску кнопкі аб'яднання"
+        "Вы можаце пазначыць для выдалення кантакты, якія вы не хочаце ні аб'ядноўваць, ні захоўваць. Выдаленне адбываецца толькі пасля націску кнопкі аб'яднання"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Спосабы аднаўлення вашага ўліковага запісу і даных зададзены, а 2ФА уключаны."
@@ -2824,7 +2824,7 @@
         "Уліковы запіс не існуе"
       ],
       "Address primary private key not found": [
-        "Асноўны прыватны ключ адраса не знойдзены"
+        "Асноўны закрыты ключ адраса не знойдзены"
       ],
       "Alias is not valid": [
         "Несапраўдны псеўданім"
@@ -2983,13 +2983,10 @@
         "Памылковая назва"
       ],
       "Invalid public key file": [
-        "Памылковы файл публічнага ключа"
+        "Памылковы файл адкрытага ключа"
       ],
       "Invalid verification code": [
         "Памылковы праверачны код"
-      ],
-      "Invalid ZIP code": [
-        "Памылковы паштовы індэкс"
       ],
       "Item content cannot exceed 40KB": [
         "Змесціва элемента не можа перавышаць 40 КБ"
@@ -3189,6 +3186,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (максімум: ${ maximumLength })."
       ],
+      "This field is invalid": [
+        "Гэта поле з'яўляецца памылковым"
+      ],
       "This field is required": [
         "Абавязковае поле"
       ],
@@ -3242,6 +3242,9 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Нам не ўдалося імпартаваць гэты файл у ${ SHEETS_APP_NAME }. Вы можаце паспрабаваць скапіяваць і ўставіць змесціва ў новы файл ${ SHEETS_APP_NAME }."
+      ],
+      "Wrong billing address": [
+        "Няправільны плацежны адрас"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальніку",
@@ -3313,7 +3316,7 @@
         "Прапушчаны ўласцівасці FN"
       ],
       "vCard versions < 3.0 not supported": [
-        "Верcіі vCard ніжэйшыя за 3.0 не падтрымліваюцца"
+        "Верcіі vCard ніжэй за 3.0 не падтрымліваюцца"
       ]
     },
     "Error importing contacts": {
@@ -4350,7 +4353,7 @@
         "Мэтавая рэклама"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі публічныя ключы, якія можна выкарыстоўваць для адпраўкі."
+        "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі адкрытыя ключы, якія можна выкарыстоўваць для адпраўкі."
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Рэкламадаўцы адсочваюць, якія вэб-старонкі вы наведваеце для паказу мэтавай рэкламы. ${ VPN_APP_NAME } блакіруе праграмы адсочвання і рэкламу, робіць ваша падключэнне хутчэйшым і паляпшае працу ў інтэрнэце."
@@ -4462,6 +4465,9 @@
       ],
       "Converting document...": [
         "Пераўтварэнне дакумента..."
+      ],
+      "Copied to clipboard": [
+        "Скапіявана ў буфер абмену"
       ],
       "Copy the link to clipboard": [
         "Скапіяваць спасылку ў буфер абмену"
@@ -5244,7 +5250,7 @@
         "Для аднаўлення даных неабходна паўторна актываваць ключ уліковага запісу, які выкарыстоўваўся падчас стварэння даных. Для гэтага вам спатрэбіцца ўспомніць пароль, які выкарыстоўваўся для генерацыі гэтага ключа."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Для таго, каб выкарыстоўваць праверку адраса вы павінны давяраць аднаму або некалькім з даступных публічных ключоў, уключаючы той, які вы хочаце выкарыстоўваць для адпраўкі. Гэта прадухіляе падробку ключоў шыфравання."
+        "Для таго, каб выкарыстоўваць праверку адраса вы павінны давяраць аднаму або некалькім з даступных адкрытых ключоў, уключаючы той, які вы хочаце выкарыстоўваць для адпраўкі. Гэта прадухіляе падробку ключоў шыфравання."
       ],
       "Tracking": [
         "Адсочванне"
@@ -5428,6 +5434,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "З вас не будзе спаганяцца плата, калі вы скасуеце да ${ trialEndsOnFormatted }."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Вы атрымаеце ўзнагароду ў крэдытах праз 1 месяц пасля таго, як ваш сябар падпішацца на гадавы тарыфны план. Праз 2 месяцы можна разлічваць на ўзнагароду, калі ваш сябар падпішацца на месячны тарыфны план."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяц у памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
@@ -5954,7 +5963,7 @@
         "публічны дамен"
       ],
       "Public keys": [
-        "Публічныя ключы"
+        "Адкрытыя ключы"
       ],
       "Public link expiration date": [
         "Тэрмін дзеяння публічнай спасылкі"
@@ -8871,7 +8880,7 @@
         "Новая электронная табліца"
       ],
       "Tab Separated Values (.tsv)": [
-        "Значэнні, раздзеленыя ўкладкамі (.tsv)"
+        "Значэнні, раздзеленыя табуляцыяй (.tsv)"
       ]
     },
     "sheets_2025:Info": {
@@ -10337,7 +10346,7 @@
         "Зашыфраваныя паролі (нават скампраметаваныя) застануцца ў бяспецы, пакуль не будуць расшыфраваны."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Запампуйце публічны ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
+        "Запампуйце адкрыты ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
       ],
       "We have sent them an invite to access the item.": [
         "Мы адправілі ім запрашэнне на доступ да элемента."

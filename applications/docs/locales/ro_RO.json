@@ -2967,9 +2967,6 @@
       "Invalid verification code": [
         "Cod de verificare nevalid"
       ],
-      "Invalid ZIP code": [
-        "Cod poștal nevalid"
-      ],
       "Item content cannot exceed 40KB": [
         "Conținutul articolului nu poate depăși 40 KiB."
       ],
@@ -3163,6 +3160,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Acest câmp depășește maximul de ${ maximumLength } de caractere."
       ],
+      "This field is invalid": [
+        "Acest câmp nu este valid."
+      ],
       "This field is required": [
         "Acest câmp este obligatoriu"
       ],
@@ -3216,6 +3216,9 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Nu s-a putut importa acest fișier în ${ SHEETS_APP_NAME }. Puteți încerca să copiați și să inserați conținutul într-un fișier ${ SHEETS_APP_NAME } nou."
+      ],
+      "Wrong billing address": [
+        "Adresă de facturare incorectă."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }",
@@ -4398,6 +4401,9 @@
       "Converting document...": [
         "Se convertește documentul..."
       ],
+      "Copied to clipboard": [
+        "Copiat în memorie."
+      ],
       "Copy the link to clipboard": [
         "Copiați legătura în memorie"
       ],
@@ -5356,6 +5362,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nu se va aplica taxa dacă anulați înainte de ${ trialEndsOnFormatted }."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Vei primi recompensa în credite la o lună după ce persoana se abonează la un plan anual și la două luni după ce se abonează la un plan lunar."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Se va factura apoi la fiecare ${ renewCycle } lună cu ${ renewAmountStr }. Puteți anula oricând.",
@@ -8251,6 +8260,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Mesaj oficial de la ${ BRAND_NAME }"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Nu mai afișați această ofertă"
+      ],
+      "Get the deal": [
+        "Valorificați oferta"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/lună"
+      ],
+      "15 GB storage": [
+        "15 GB de spațiu de stocare"
+      ],
+      "2 TB data storage": [
+        "2 TB de spațiu de stocare pentru date"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de spațiu de stocare: de 40 de ori planul actual"
+      ],
+      "3 TB data storage": [
+        "3 TB de spațiu de stocare pentru date"
+      ],
+      "500 GB storage": [
+        "500 GB de spațiu de stocare"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accesați peste 15.000 de servere din peste 120 de țări"
+      ],
+      "Access advanced AI models": [
+        "Acces la modele AI avansate"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Toate caracteristicile premium ale Mail, Pass, Drive, VPN și Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blocați reclamele, urmăritorii și malware-ul"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autentificator A2F încorporat"
+      ],
+      "Connect 10 devices at once": [
+        "Conectați 10 dispozitive simultan"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul dvs. se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Acces complet la ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Istoric complet al conversațiilor cu căutare ușoară și favorite"
+      ],
+      "Individual accounts for 6 users": [
+        "Conturi individuale pentru 6 utilizatori"
+      ],
+      "Individual accounts for you and a partner": [
+        "Conturi individuale pentru dvs. și un partener"
+      ],
+      "Online document editor": [
+        "Editor de documente online"
+      ],
+      "Recover previous file versions": [
+        "Recuperați versiunile anterioare ale fișierelor"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protecție mai puternică împotriva amenințărilor cibernetice"
+      ],
+      "Unlimited daily chats": [
+        "Conversații zilnice nelimitate"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Număr nelimitat de foldere, etichete și filtre"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Număr nelimitat de aliasuri hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Utilizați propriul domeniu de e-mail"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "un fluture"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "pentru 12 luni"
+      ],
+      "SPRING SALE": [
+        "REDUCERI DE PRIMĂVARĂ"
       ]
     },
     "Recent documents table header": {
