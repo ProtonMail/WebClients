@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { groupOwnerInvitesThunk } from '@proton/account/groupOwnerInvites';
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { DualPaneContent } from '@proton/atoms/DualPane/DualPaneContent';
 import { DualPaneSidebar } from '@proton/atoms/DualPane/DualPaneSidebar';
@@ -13,7 +12,6 @@ import Loader from '@proton/components/components/loader/Loader';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import canUseGroups from '@proton/components/containers/organization/groups/canUseGroups';
-import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -53,10 +51,9 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
         groups,
         domainData: { customDomains },
         suggestedAddressDomainSource,
-        actions,
     } = groupsManagement;
     const hasUsableDomain = customDomains?.some(getIsDomainActive) || isUserGroupsNoCustomDomainEnabled;
-    const isAdmin = user.isAdmin;
+
     const linkToDomainPage = (
         <SettingsLink key="link-to-domain-page" path="/domain-names">{c('Action').t`Domain name`}</SettingsLink>
     );
@@ -82,7 +79,7 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
             {!hasUsableDomain && (
                 <SettingsParagraph>
                     {c('Info')
-                        .jt`A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${linkToDomainPage}.`}
+                        .jt`A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${linkToDomainPage}.`}
                 </SettingsParagraph>
             )}
             {canOnlyDelete && (
@@ -97,24 +94,16 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
                         .t`The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.`}
                 </Card>
             )}
-            {isAdmin && (
-                <Button
-                    className="group-button flex flex-row flex-nowrap items-center px-3"
-                    disabled={!hasUsableDomain || canOnlyDelete}
-                    onClick={() => {
-                        actions.onCreateGroup();
-                    }}
-                >
-                    <IcPlus className="shrink-0 mr-2" />
-                    {c('Action').t`New group`}
-                </Button>
-            )}
             {(hasUsableDomain || usingGroupsDomainButNotActive) && (
                 <div className="content flex-1 overflow-hidden mt-4 h-custom" style={{ '--h-custom': '95%' }}>
                     <div className="flex flex-nowrap flex-column h-full">
                         <div className="flex items-center justify-start flex-nowrap w-full h-full">
                             <DualPaneSidebar>
-                                <GroupList groupsManagement={groupsManagement} canOnlyDelete={canOnlyDelete} />
+                                <GroupList
+                                    groupsManagement={groupsManagement}
+                                    canOnlyDelete={canOnlyDelete}
+                                    hasUsableDomain={hasUsableDomain}
+                                />
                             </DualPaneSidebar>
                             <DualPaneContent>
                                 <GroupForm groupsManagement={groupsManagement} canOnlyDelete={canOnlyDelete} />
