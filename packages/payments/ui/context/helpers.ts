@@ -59,7 +59,14 @@ export const checkMultiplePlans = async ({
         .map((planToCheck) =>
             getSubscriptionDataFromPlanToCheck({ ...planToCheck, BillingAddress: billingAddress, VatId: undefined })
         )
-        .map((datum) => (isSubscriptionCheckForbidden(subscription, datum.Plans, datum.Cycle) ? null : datum));
+        .map((datum) =>
+            isSubscriptionCheckForbidden(subscription, {
+                planIDs: datum.Plans,
+                cycle: datum.Cycle,
+            })
+                ? null
+                : datum
+        );
 
     const indexesToExcludeFromCheck: number[] = [];
     const truthySubscriptionData = checkSubscriptionData.filter((data, index) => {

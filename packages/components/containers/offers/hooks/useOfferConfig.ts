@@ -1,4 +1,6 @@
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { FeatureCode, useFeatures } from '@proton/features';
+import { isDangerouslyAllowedSubscriptionEstimation } from '@proton/payments/core/subscription/helpers';
 
 import type { OfferConfig, OfferId, Operation } from '../interface';
 import { goUnlimited2022Config } from '../operations/goUnlimited2022/configuration';
@@ -18,9 +20,10 @@ const configs: Record<OfferId, OfferConfig> = {
 
 const OFFERS_FEATURE_FLAGS = Object.values(configs).map(({ featureCode }) => featureCode);
 
-const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
+const useOfferConfig = () => {
     // Preload FF to avoid single API requests
     useFeatures([FeatureCode.Offers, ...OFFERS_FEATURE_FLAGS]);
+    const [subscription, loadingSubscription] = useSubscription();
 
     const springSale2026Operations = useSpringSale2026();
 
@@ -37,11 +40,27 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
         goUnlimited2022,
     ];
 
-    const validOffers: Operation[] | undefined = allOffers.filter((offer) => !offer.isLoading && offer.isValid);
-    const isLoading = allOffers.some((offer) => offer.isLoading);
-    const [validOffer] = validOffers;
+    const validOffers: Operation[] = allOffers.filter((offer) => !offer.isLoading && offer.isValid);
+    const isLoading = allOffers.some((offer) => offer.isLoading) || loadingSubscription;
+    const validOffer = validOffers.at(0); // using at(0) for type-safety
 
-    return [validOffer?.config, isLoading];
+    const config = validOffer?.config;
+
+    // Sometimes subscription estimation endpoint will throw an error. In this case, we need to silently prefetch the
+    // subscription estimation without any indication to the user. If it works, then we display the offer. If it
+    // doesn't, then we don't even display the offer button or loading in the navigation.
+    //
+    // At the same time, not all subscription estimation calls are dangerous, so for them we don't do any pre-fetching.
+    const shouldPrefetch =
+        config?.deals.some((deal) => {
+            return isDangerouslyAllowedSubscriptionEstimation(subscription, {
+                planIDs: deal.planIDs,
+                cycle: deal.cycle,
+                coupon: deal.couponCode,
+            });
+        }) ?? false;
+
+    return { config, isLoading, shouldPrefetch };
 };
 
 export default useOfferConfig;
