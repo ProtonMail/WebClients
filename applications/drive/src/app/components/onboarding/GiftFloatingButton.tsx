@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom-v5-compat';
 
 import { c, msgid } from 'ttag';
 
@@ -15,6 +16,7 @@ import {
 import type { IconName } from '@proton/icons/types';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
@@ -23,6 +25,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useIsFreeUploadInProgress } from '../../hooks/drive/freeUpload/useIsFreeUploadInProgress';
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
+import { useIsTransferManagerVisible } from '../../hooks/drive/useIsTransferManagerVisible';
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal';
 import { useSharingModal } from '../../modals/SharingModal/SharingModal';
 import { useFileUploadInput } from '../../store';
@@ -34,9 +37,16 @@ export default function GiftFloatingButton() {
     const checklist = useChecklist();
     const { viewportWidth } = useActiveBreakpoint();
     const isFreeUploadInProgress = useIsFreeUploadInProgress();
+    const isTransferManagerVisible = useIsTransferManagerVisible();
+    const { pathname } = useLocation();
+    const hasPhotosTimeline = stripLocalBasenameFromPathname(pathname) === '/photos';
 
     if (
         isFreeUploadInProgress ||
+        // Avoid overlap with TransferManager
+        isTransferManagerVisible ||
+        // Avoid overlap with photo timeline
+        hasPhotosTimeline ||
         viewportWidth['<=small'] ||
         checklist.isLoading ||
         checklist.expiresInDays === 0 ||
