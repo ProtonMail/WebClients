@@ -166,17 +166,11 @@
       "Confirm all": [
         "确认全部"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "连接 ${ BRAND_NAME } 账户"
-      ],
       "Continue": [
         "继续"
       ],
       "Continue offline": [
         "保持离线"
-      ],
-      "Continue without pinning": [
-        "继续而不固定"
       ],
       "Copy and close": [
         "复制并关闭"
@@ -220,17 +214,11 @@
       "Create a ${ BRAND_NAME } account": [
         "创建 ${ BRAND_NAME } 账户"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "创建 ${ BRAND_NAME } 账户"
-      ],
       "Create a new vault": [
         "创建新保险库"
       ],
       "Create alias": [
         "创建别名"
-      ],
-      "Create an account": [
-        "创建账号"
       ],
       "Create card": [
         "创建卡片"
@@ -318,9 +306,6 @@
       ],
       "Do not suggest on this website": [
         "请勿在本网站上显示建议"
-      ],
-      "Done": [
-        "完成"
       ],
       "Download this CSV template": [
         "下载CSV模板"
@@ -666,9 +651,6 @@
       ],
       "Sign back in": [
         "重新登录"
-      ],
-      "Sign in": [
-        "登录"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "使用${ BRAND_NAME }登录"
@@ -1224,9 +1206,6 @@
       "PIN codes do not match": [
         "两次输入的 PIN 码不一致"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "请固定扩展名或选择“不固定继续”。"
-      ],
       "Registration failure: ${ message }": [
         "注册失败：${ message }"
       ],
@@ -1446,8 +1425,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } 希望与您管理的群组共享一个项目"
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } 希望与群组 ${ invitedGroup.Name } 共享一个项目"
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } 希望与群组 ${ name } 共享一个项目。"
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } 希望与您分享一个项目。"
@@ -1509,8 +1488,8 @@
       "${ trialDaysLeft } day left": [
         "剩余 ${ trialDaysLeft } 天"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } 位成员)"
+      "(${ memberCount } member)": [
+        "（${ memberCount } 位成员）"
       ],
       "(Empty)": [
         "（空）"
@@ -1689,9 +1668,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "请选择一个保存的密钥以登录到 ${ domain }"
       ],
-      "Click the icon to open it anytime.": [
-        "点击图标即可随时打开。"
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "关闭此窗口，以便使用安全密钥或其他通行密钥。"
       ],
@@ -1863,9 +1839,6 @@
       "Follow those steps to import your data with a generic CSV:": [
         "按照这些步骤使用通用 CSV 导入数据："
       ],
-      "For easy access to your passwords and more.": [
-        "方便您访问密码等信息。"
-      ],
       "For security reason, your access needs to be confirmed": [
         "出于安全原因，需要确认您的访问权限"
       ],
@@ -1929,8 +1902,8 @@
       "Invite successfully resent": [
         "已重新发送邀请"
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "邀请群组 ${ invitedGroup.Name } 访问项目"
+      "invites the group ${ name } to access items in": [
+        "邀请群组 ${ name } 访问项目"
       ],
       "invites you to access items in": [
         "邀请您访问其中的项目"
@@ -2026,7 +1999,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2082,9 +2055,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "在线访问 ${ PASS_APP_NAME } 将需要 PIN 码。您将在 3 次尝试失败后注销。"
       ],
-      "Open the Extensions menu": [
-        "打开扩展菜单"
-      ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "打开 Safari 设置，找到 ${ PASS_APP_NAME }，进入“权限”并启用网站权限"
       ],
@@ -2123,9 +2093,6 @@
       ],
       "Permanently deleting selected items": [
         "永久删除选定项目"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "将 ${ PASS_APP_NAME } 置于您的工具栏"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN 码设置成功，该密码可用于解锁 ${ PASS_APP_NAME }"
@@ -2319,9 +2286,6 @@
       "See more info": [
         "查看更多信息"
       ],
-      "Select an existing login or create a new one.": [
-        "选择现有的登录名或创建一个新的登录名。"
-      ],
       "Select destination vault": [
         "选择目标保险库"
       ],
@@ -2360,9 +2324,6 @@
       ],
       "Shared item invitation": [
         "共享的项目邀请"
-      ],
-      "Sign in or create an account to continue.": [
-        "登录或创建账户以继续。"
       ],
       "Sign in to your account": [
         "登录到您的账户"
@@ -4359,9 +4320,6 @@
       "Confirm your email": [
         "确认您的邮箱"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "连接 ${ BRAND_NAME } 账户"
-      ],
       "Contacts": [
         "通讯录"
       ],
@@ -4617,9 +4575,6 @@
       "Permanently remove all items?": [
         "是否永久移除所有项目？"
       ],
-      "Pin the extension": [
-        "固定扩展"
-      ],
       "Pinned (${ items.length })": [
         "已固定 (${ items.length })"
       ],
@@ -4766,9 +4721,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "欢迎来到 ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "欢迎来到您新的密码管理器！"
       ],
       "What is an alias?": [
         "什么是邮箱别名？"

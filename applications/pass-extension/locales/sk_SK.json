@@ -166,17 +166,11 @@
       "Confirm all": [
         "Potvrdiť všetko"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Pripojte svoj ${ BRAND_NAME } účet"
-      ],
       "Continue": [
         "Pokračovať"
       ],
       "Continue offline": [
         "Pokračovať offline"
-      ],
-      "Continue without pinning": [
-        "Pokračovať bez pripnutia"
       ],
       "Copy and close": [
         "Kopírovať a zatvoriť"
@@ -220,17 +214,11 @@
       "Create a ${ BRAND_NAME } account": [
         "Vytvoriť účet ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Vytvoriť ${ BRAND_NAME } účet"
-      ],
       "Create a new vault": [
         "Vytvoriť nový trezor"
       ],
       "Create alias": [
         "Vytvoriť alias"
-      ],
-      "Create an account": [
-        "Vytvoriť účet"
       ],
       "Create card": [
         "Vytvoriť kartu"
@@ -318,9 +306,6 @@
       ],
       "Do not suggest on this website": [
         "Nenavrhovať na tejto webovej stránke"
-      ],
-      "Done": [
-        "Hotovo"
       ],
       "Download this CSV template": [
         "Stiahnuť si túto CSV šablónu"
@@ -666,9 +651,6 @@
       ],
       "Sign back in": [
         "Prihláste sa späť"
-      ],
-      "Sign in": [
-        "Prihlásiť sa"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Prihlásiť sa pomocou ${ BRAND_NAME }"
@@ -1239,9 +1221,6 @@
       "PIN codes do not match": [
         "PIN kódy sa nezhodujú"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Pripnite rozšírenie alebo vyberte možnosť „Pokračovať bez pripnutia“, prosím."
-      ],
       "Registration failure: ${ message }": [
         "Zlyhanie registrácie: ${ message }"
       ],
@@ -1494,8 +1473,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } chce zdieľať položku so skupinou, ktorú spravujete."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } chce zdieľať položku v skupine ${ invitedGroup.Name }."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } chce zdieľať položku v skupine ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } chce s vami zdieľať položku."
@@ -1575,11 +1554,11 @@
         "Zostáva ${ trialDaysLeft } dní",
         "Zostáva ${ trialDaysLeft } dní"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } člen)",
-        "(${ membersCount } členovia)",
-        "(${ membersCount } členov)",
-        "(${ membersCount } členov)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } člen)",
+        "(${ memberCount } členovia)",
+        "(${ memberCount } členov)",
+        "(${ memberCount } členov)"
       ],
       "(Empty)": [
         "(Prázdne)"
@@ -1758,9 +1737,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Vyberte uložený prístupový kľúč na prihlásenie do ${ domain }"
       ],
-      "Click the icon to open it anytime.": [
-        "Kliknutím na ikonu ju kedykoľvek otvoríte."
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "Zatvorte toto okno pre použitie bezpečnostného kľúča alebo iného prístupového kľúča."
       ],
@@ -1932,9 +1908,6 @@
       "Follow those steps to import your data with a generic CSV:": [
         "Pre importovanie údajov pomocou všeobecného CSV súboru, postupujte nasledovne:"
       ],
-      "For easy access to your passwords and more.": [
-        "Pre jednoduchý prístup k vašim heslám a ďalším údajom."
-      ],
       "For security reason, your access needs to be confirmed": [
         "Z bezpečnostných dôvodov musí byť váš prístup potvrdený"
       ],
@@ -2004,8 +1977,8 @@
       "Invite successfully resent": [
         "Pozvánka bola znova úspešne odoslaná"
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "pozýva skupinu ${ invitedGroup.Name } na prístup k položkám v"
+      "invites the group ${ name } to access items in": [
+        "pozýva skupinu ${ name } na prístup k položkám v"
       ],
       "invites you to access items in": [
         "vás pozýva na prístup k položkám v"
@@ -2106,12 +2079,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
-      ],
       "Moving items": [
         "Presúvanie položiek"
       ],
@@ -2166,9 +2133,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online prístup k ${ PASS_APP_NAME } bude vyžadovať PIN kód. Po troch neúspešných pokusoch dôjde k odhláseniu."
       ],
-      "Open the Extensions menu": [
-        "Otvorte menu rozšírenia"
-      ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Otvorte nastavenia Safari, nájdite ${ PASS_APP_NAME }, prejdite do časti „Oprávnenia“ a povolte oprávnenia pre webové stránky."
       ],
@@ -2210,9 +2174,6 @@
       ],
       "Permanently deleting selected items": [
         "Trvalé odstránenie vybraných položiek"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Pripnite ${ PASS_APP_NAME } do svojho panela nástrojov"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN kód bol úspešne zaregistrovaný. Použite ho na odomknutie ${ PASS_APP_NAME }"
@@ -2406,9 +2367,6 @@
       "See more info": [
         "Zobraziť viac informácií"
       ],
-      "Select an existing login or create a new one.": [
-        "Vyberte existujúce prihlásenie alebo vytvorte nové."
-      ],
       "Select destination vault": [
         "Vyberte cieľový trezor"
       ],
@@ -2447,9 +2405,6 @@
       ],
       "Shared item invitation": [
         "Pozvánka ku zdieľanej položke"
-      ],
-      "Sign in or create an account to continue.": [
-        "Pre pokračovanie sa prihláste alebo si vytvorte účet."
       ],
       "Sign in to your account": [
         "Prihláste sa do svojho účtu"
@@ -4521,9 +4476,6 @@
       "Confirm your email": [
         "Potvrďte váš email"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Pripojte svoj ${ BRAND_NAME } účet"
-      ],
       "Contacts": [
         "Kontakty"
       ],
@@ -4788,9 +4740,6 @@
       "Permanently remove all items?": [
         "Natrvalo odstrániť všetky položky?"
       ],
-      "Pin the extension": [
-        "Pripnite rozšírenie"
-      ],
       "Pinned (${ items.length })": [
         "Pripnuté (${ items.length })"
       ],
@@ -4943,9 +4892,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "Víta vás ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "Vitajte vo svojom novom správcovi hesiel!"
       ],
       "What is an alias?": [
         "Čo je alias?"

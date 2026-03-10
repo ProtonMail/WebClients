@@ -166,17 +166,11 @@
       "Confirm all": [
         "Konfirmasi semua"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Hubungkan Akun ${ BRAND_NAME } Anda"
-      ],
       "Continue": [
         "Lanjutkan"
       ],
       "Continue offline": [
         "Lanjutkan luring"
-      ],
-      "Continue without pinning": [
-        "Lanjutkan tanpa penyematan"
       ],
       "Copy and close": [
         "Salin dan tutup"
@@ -220,17 +214,11 @@
       "Create a ${ BRAND_NAME } account": [
         "Buat akun ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Buat Akun ${ BRAND_NAME }"
-      ],
       "Create a new vault": [
         "Buat brankas baru"
       ],
       "Create alias": [
         "Buat alias"
-      ],
-      "Create an account": [
-        "Buat akun"
       ],
       "Create card": [
         "Buat kartu"
@@ -318,9 +306,6 @@
       ],
       "Do not suggest on this website": [
         "Jangan sarankan pada situs web ini"
-      ],
-      "Done": [
-        "Selesai"
       ],
       "Download this CSV template": [
         "Unduh template CSV ini"
@@ -663,9 +648,6 @@
       ],
       "Sign back in": [
         "Masuk kembali"
-      ],
-      "Sign in": [
-        "Masuk"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Masuk dengan ${ BRAND_NAME }"
@@ -1218,9 +1200,6 @@
       "PIN codes do not match": [
         "Kode PIN tidak sesuai"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Silakan sematkan ekstensi atau pilih \"Lanjutkan tanpa menyemat\"."
-      ],
       "Registration failure: ${ message }": [
         "Pendaftaran gagal: ${ message }"
       ],
@@ -1497,6 +1476,9 @@
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } hari tersisa"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } anggota)"
+      ],
       "(Empty)": [
         "(Kosong)"
       ],
@@ -1671,9 +1653,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Pilih kunci sandi yang tersimpan untuk masuk ke ${ domain }"
       ],
-      "Click the icon to open it anytime.": [
-        "Klik pada ikon untuk membukanya kapan pun."
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "Tutup jendela ini untuk menggunakan kunci keamanan atau kunci sandi lainnya."
       ],
@@ -1841,9 +1820,6 @@
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Ikuti langkah-langkah berikut untuk mengimpor data Anda dengan file CSV generik:"
-      ],
-      "For easy access to your passwords and more.": [
-        "Untuk akses mudah ke kata sandi Anda dan lainnya."
       ],
       "For security reason, your access needs to be confirmed": [
         "Demi alasan keamanan, akses Anda harus dikonfirmasi"
@@ -2058,9 +2034,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Akses daring ke ${ PASS_APP_NAME } akan memerlukan kode PIN. Anda akan dikeluarkan setelah 3 upaya percobaan yang gagal."
       ],
-      "Open the Extensions menu": [
-        "Buka menu Ekstensi"
-      ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Buka pengaturan Safari, cari ${ PASS_APP_NAME }, tuju \"Perizinan\", dan aktifkan perizinan situs."
       ],
@@ -2099,9 +2072,6 @@
       ],
       "Permanently deleting selected items": [
         "Menghapus item yang dipilih secara permanen"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Sematkan ${ PASS_APP_NAME } ke toolbar Anda"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Kode PIN berhasil didaftarkan. Gunakan kode PIN ini untuk membuka kunci ${ PASS_APP_NAME }"
@@ -2295,9 +2265,6 @@
       "See more info": [
         "Lihat info selengkapnya"
       ],
-      "Select an existing login or create a new one.": [
-        "Pilih login yang telah ada atau buat baru."
-      ],
       "Select destination vault": [
         "Pilih brankas tujuan"
       ],
@@ -2336,9 +2303,6 @@
       ],
       "Shared item invitation": [
         "Undangan item yang dibagikan"
-      ],
-      "Sign in or create an account to continue.": [
-        "Silakan masuk atau buat akun untuk melanjutkan."
       ],
       "Sign in to your account": [
         "Masuk ke akun Anda"
@@ -4320,9 +4284,6 @@
       "Confirm your email": [
         "Konfirmasi email Anda"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Hubungkan Akun ${ BRAND_NAME } Anda"
-      ],
       "Contacts": [
         "Kontak"
       ],
@@ -4578,9 +4539,6 @@
       "Permanently remove all items?": [
         "Hapus semua item secara permanen?"
       ],
-      "Pin the extension": [
-        "Sematkan ekstensi"
-      ],
       "Pinned (${ items.length })": [
         "Disematkan (${ items.length })"
       ],
@@ -4724,9 +4682,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "Selamat datang di ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "Selamat datang di pengelola kata sandi Anda yang baru!"
       ],
       "What is an alias?": [
         "Apa itu alias?"

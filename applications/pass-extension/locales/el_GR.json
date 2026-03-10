@@ -166,17 +166,11 @@
       "Confirm all": [
         "Επιβεβαίωση όλων"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Συνδέστε τον ${ BRAND_NAME } Λογαριασμό σας"
-      ],
       "Continue": [
         "Συνέχεια"
       ],
       "Continue offline": [
         "Συνεχίστε εκτός σύνδεσης"
-      ],
-      "Continue without pinning": [
-        "Συνέχεια χωρίς καρφίτσωμα"
       ],
       "Copy and close": [
         "Αντιγραφή και κλείσιμο"
@@ -220,17 +214,11 @@
       "Create a ${ BRAND_NAME } account": [
         "Δημιουργία ενός ${ BRAND_NAME } λογαριασμού"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Δημιουργία ενός ${ BRAND_NAME } Λογαριασμού"
-      ],
       "Create a new vault": [
         "Δημιουργία νέας κρύπτης"
       ],
       "Create alias": [
         "Δημιουργία ψευδώνυμου"
-      ],
-      "Create an account": [
-        "Δημιουργία λογαριασμού"
       ],
       "Create card": [
         "Δημιουργήστε κάρτα"
@@ -318,9 +306,6 @@
       ],
       "Do not suggest on this website": [
         "Μην προτείνετε σε αυτόν τον ιστότοπο"
-      ],
-      "Done": [
-        "Ολοκληρώθηκε"
       ],
       "Download this CSV template": [
         "Κατεβάστε αυτό το πρότυπο CSV"
@@ -666,9 +651,6 @@
       ],
       "Sign back in": [
         "Συνδεθείτε ξανά"
-      ],
-      "Sign in": [
-        "Είσοδος"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Σύνδεση με ${ BRAND_NAME }"
@@ -1229,9 +1211,6 @@
       "PIN codes do not match": [
         "Οι κωδικοί PIN δεν ταιριάζουν"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Παρακαλούμε καρφιτσώστε την προέκταση ή επιλέξτε \"Συνέχεια χωρίς καρφίτσωμα\"."
-      ],
       "Registration failure: ${ message }": [
         "Αποτυχία εγγραφής: ${ message }"
       ],
@@ -1462,8 +1441,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "Ο ${ inviterEmail } θέλει να μοιραστεί ένα στοιχείο με μια ομάδα που διαχειρίζεστε."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "Ο ${ inviterEmail } θέλει να μοιραστεί ένα στοιχείο με την ομάδα ${ invitedGroup.Name }."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "Ο ${ inviterEmail } θέλει να μοιραστεί ένα στοιχείο με την ομάδα ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "Ο ${ inviterEmail } θέλει να μοιραστεί μαζί σας ένα αντικείμενο."
@@ -1531,9 +1510,9 @@
         "${ trialDaysLeft } ημέρα απομένει",
         "${ trialDaysLeft } ημέρες απομένουν"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } μέλος)",
-        "(${ membersCount } μέλη)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } μέλος)",
+        "(${ memberCount } μέλη)"
       ],
       "(Empty)": [
         "(Άδειο)"
@@ -1712,9 +1691,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Επιλέξτε ένα αποθηκευμένο κλειδί πρόσβασης για είσοδο στο ${ domain }"
       ],
-      "Click the icon to open it anytime.": [
-        "Κάντε κλικ στο εικονίδιο για να το ανοίξετε ανά πάσα στιγμή."
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "Κλείστε αυτό το παράθυρο για να χρησιμοποιήσετε κλειδί ασφαλείας ή άλλο κλειδί πρόσβασης."
       ],
@@ -1886,9 +1862,6 @@
       "Follow those steps to import your data with a generic CSV:": [
         "Ακολουθήστε αυτά τα βήματα για να εισαγάγετε τα δεδομένα σας με ένα γενικό αρχείο CSV:"
       ],
-      "For easy access to your passwords and more.": [
-        "Για εύκολη πρόσβαση στους κωδικούς πρόσβασής σας και πολλά άλλα."
-      ],
       "For security reason, your access needs to be confirmed": [
         "Για λόγους ασφαλείας, η πρόσβασή σας πρέπει να επιβεβαιωθεί"
       ],
@@ -1954,8 +1927,8 @@
       "Invite successfully resent": [
         "Επιτυχής αποστολή πρόσκλησης εκ νέου"
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "προσκαλεί την ομάδα ${ invitedGroup.Name } να έχει πρόσβαση σε στοιχεία στη"
+      "invites the group ${ name } to access items in": [
+        "προσκαλεί την ομάδα ${ name } να έχει πρόσβαση σε στοιχεία στη"
       ],
       "invites you to access items in": [
         "σας προσκαλεί να αποκτήσετε πρόσβαση σε στοιχεία στη"
@@ -2052,10 +2025,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
-        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
-      ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
       ],
@@ -2110,9 +2079,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Η ηλεκτρονική πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN. Θα αποσυνδεθείτε μετά από 3 αποτυχημένες προσπάθειες."
       ],
-      "Open the Extensions menu": [
-        "Άνοιγμα του μενού \"Προεκτάσεις\""
-      ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Ανοίξτε τις ρυθμίσεις του Safari, βρείτε το ${ PASS_APP_NAME }, μεταβείτε στην ενότητα \"Δικαιώματα\" και ενεργοποιήστε τα δικαιώματα ιστότοπου."
       ],
@@ -2152,9 +2118,6 @@
       ],
       "Permanently deleting selected items": [
         "Οριστική διαγραφή επιλεγμένων στοιχείων"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Καρφίτσωμα ${ PASS_APP_NAME } στη γραμμή εργαλείων σας"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Ο κωδικός PIN καταχωρήθηκε με επιτυχία. Χρησιμοποιήστε το για να ξεκλειδώσετε το ${ PASS_APP_NAME }"
@@ -2348,9 +2311,6 @@
       "See more info": [
         "Δείτε περισσότερες πληροφορίες"
       ],
-      "Select an existing login or create a new one.": [
-        "Επιλέξτε μια υπάρχουσα σύνδεση ή δημιουργήστε μια νέα."
-      ],
       "Select destination vault": [
         "Επιλογή κρύπτης προορισμού"
       ],
@@ -2389,9 +2349,6 @@
       ],
       "Shared item invitation": [
         "Πρόσκληση για κοινόχρηστο στοιχείο"
-      ],
-      "Sign in or create an account to continue.": [
-        "Για να συνεχίσετε, εισέλθετε ή δημιουργήστε λογαριασμό."
       ],
       "Sign in to your account": [
         "Συνδεθείτε στον λογαριασμό σας"
@@ -4415,9 +4372,6 @@
       "Confirm your email": [
         "Επιβεβαιώστε τη διεύθυνση email σας"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Συνδέστε τον ${ BRAND_NAME } Λογαριασμό σας"
-      ],
       "Contacts": [
         "Επαφές"
       ],
@@ -4676,9 +4630,6 @@
       "Permanently remove all items?": [
         "Οριστική αφαίρεση όλων των στοιχείων;"
       ],
-      "Pin the extension": [
-        "Καρφίτσωμα της προέκτασης"
-      ],
       "Pinned (${ items.length })": [
         "Καρφιτσώθηκαν (${ items.length })"
       ],
@@ -4827,9 +4778,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "Καλώς ήρθατε στο ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "Καλώς ήρθατε στον νέο σας διαχειριστή κωδικών πρόσβασης!"
       ],
       "What is an alias?": [
         "Τι είναι το ψευδώνυμο;"

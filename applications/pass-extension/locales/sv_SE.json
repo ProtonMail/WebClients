@@ -166,17 +166,11 @@
       "Confirm all": [
         "Bekräfta alla"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Anslut ditt ${ BRAND_NAME }-konto"
-      ],
       "Continue": [
         "Fortsätt"
       ],
       "Continue offline": [
         "Fortsätt offline"
-      ],
-      "Continue without pinning": [
-        "Fortsätt utan att fästa"
       ],
       "Copy and close": [
         "Kopiera och stäng"
@@ -220,17 +214,11 @@
       "Create a ${ BRAND_NAME } account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Skapa ett ${ BRAND_NAME }-konto"
-      ],
       "Create a new vault": [
         "Skapa ett nytt valv"
       ],
       "Create alias": [
         "Skapa alias"
-      ],
-      "Create an account": [
-        "Skapa ett konto"
       ],
       "Create card": [
         "Skapa kort"
@@ -318,9 +306,6 @@
       ],
       "Do not suggest on this website": [
         "Föreslå inte på denna webbplats"
-      ],
-      "Done": [
-        "Klar"
       ],
       "Download this CSV template": [
         "Ladda ner denna CSV-mall"
@@ -666,9 +651,6 @@
       ],
       "Sign back in": [
         "Logga in igen"
-      ],
-      "Sign in": [
-        "Logga in"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Logga in med ${ BRAND_NAME }"
@@ -1226,9 +1208,6 @@
       "PIN codes do not match": [
         "PIN-koder matchar inte"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Fäst tillägget eller välj “Fortsätt utan att fästa“."
-      ],
       "Registration failure: ${ message }": [
         "Registreringsfel: ${ message }"
       ],
@@ -1459,8 +1438,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } vill dela ett objekt med en grupp du administrerar."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } vill dela ett objekt med gruppen ${ invitedGroup.Name }."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } vill dela ett objekt med gruppen ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } vill dela ett objekt med dig."
@@ -1528,9 +1507,9 @@
         "${ trialDaysLeft } dag kvar",
         "${ trialDaysLeft } dagar kvar"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } medlem)",
-        "(${ membersCount } medlemmar)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } medlem)",
+        "(${ memberCount } medlemmar)"
       ],
       "(Empty)": [
         "(Tom)"
@@ -1703,9 +1682,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Välj en sparad passkey för att logga in på ${ domain }"
       ],
-      "Click the icon to open it anytime.": [
-        "Klicka på ikonen för att öppna den när som helst."
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "Stäng detta fönster för att använda en säkerhetsnyckel eller annan passkey."
       ],
@@ -1877,9 +1853,6 @@
       "Follow those steps to import your data with a generic CSV:": [
         "Följ dessa steg för att importera dina data med en generisk CSV:"
       ],
-      "For easy access to your passwords and more.": [
-        "För enkel åtkomst till dina lösenord och mer."
-      ],
       "For security reason, your access needs to be confirmed": [
         "Av säkerhetsskäl måste din åtkomst bekräftas"
       ],
@@ -1945,8 +1918,8 @@
       "Invite successfully resent": [
         "Inbjudan skickad"
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "bjuder in gruppen ${ invitedGroup.Name } att komma åt objekt i"
+      "invites the group ${ name } to access items in": [
+        "bjuder in gruppen ${ name } att komma åt objekt i"
       ],
       "invites you to access items in": [
         "bjöd in dig för att komma åt objekt i detta valv"
@@ -2043,10 +2016,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
-      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -2098,9 +2067,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Onlineåtkomst till ${ PASS_APP_NAME } kommer kräva en PIN-kod. Du kommer att loggas ut efter 3 misslyckade försök."
       ],
-      "Open the Extensions menu": [
-        "Öppna tilläggsmenyn"
-      ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Öppna Safaris inställningar, hitta ${ PASS_APP_NAME }, gå till “Behörigheter“och aktivera webbplatsbehörigheter."
       ],
@@ -2140,9 +2106,6 @@
       ],
       "Permanently deleting selected items": [
         "Tar bort markerade objekt permanent"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Fäst ${ PASS_APP_NAME } till ditt verktygsfält"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-kod registrerad. Använd den för att låsa upp ${ PASS_APP_NAME }"
@@ -2327,9 +2290,6 @@
       "See more info": [
         "Se mer info"
       ],
-      "Select an existing login or create a new one.": [
-        "Välj en befintlig inloggning eller skapa en ny."
-      ],
       "Select destination vault": [
         "Välj målvalv"
       ],
@@ -2368,9 +2328,6 @@
       ],
       "Shared item invitation": [
         "Inbjudan till delat objekt"
-      ],
-      "Sign in or create an account to continue.": [
-        "Logga in eller skapa ett konto för att fortsätta."
       ],
       "Sign in to your account": [
         "Logga in på ditt konto"
@@ -4385,9 +4342,6 @@
       "Confirm your email": [
         "Bekräfta din e-post"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Anslut ditt ${ BRAND_NAME }-konto"
-      ],
       "Contacts": [
         "Kontakter"
       ],
@@ -4646,9 +4600,6 @@
       "Permanently remove all items?": [
         "Ta bort alla objekt permanent?"
       ],
-      "Pin the extension": [
-        "Fäst tillägget"
-      ],
       "Pinned (${ items.length })": [
         "Fäst (${ items.length })"
       ],
@@ -4797,9 +4748,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "Välkommen till ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "Välkommen till din nya lösenordshanterare!"
       ],
       "What is an alias?": [
         "Vad är ett alias?"
