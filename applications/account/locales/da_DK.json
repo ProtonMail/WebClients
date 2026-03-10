@@ -315,6 +315,9 @@
       "Connect to video conferencing": [
         "Forbind til videokonferencer"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Forbind din ${ BRAND_NAME }-konto"
+      ],
       "Connected": [
         "Forbundet"
       ],
@@ -381,8 +384,14 @@
       "Create": [
         "Opret"
       ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Opret en ${ BRAND_NAME }-konto"
+      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Opret et link, som du kan dele med alle udenfor ${ BRAND_NAME }"
+      ],
+      "Create an account": [
+        "Opret en konto"
       ],
       "Create calendar": [
         "Opret kalender"
@@ -2694,6 +2703,9 @@
       "Change": [
         "Skift"
       ],
+      "Completed": [
+        "Fuldført"
+      ],
       "Configure": [
         "Opsæt"
       ],
@@ -2720,6 +2732,12 @@
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-app til at kopiere data til ${ BRAND_NAME }"
+      ],
+      "Has errors": [
+        "Fejlbehæftet"
+      ],
+      "In progress": [
+        "I gang"
       ],
       "Install app": [
         "Installér app"
@@ -2752,6 +2770,9 @@
       "Migration status": [
         "Migrationsstatus"
       ],
+      "Not started": [
+        "Ikke startet"
+      ],
       "Organization does not have enough seats available": [
         "Organisationen har ikke nok ledige pladser"
       ],
@@ -2782,11 +2803,17 @@
       "Set up two-factor authentication": [
         "Opsæt to-faktor-godkendelse"
       ],
+      "Settings": [
+        "Indstillinger"
+      ],
       "Sign in to Google Workspace": [
         "Log ind på Google Workspace"
       ],
       "Start migration": [
         "Start migrering"
+      ],
+      "Status": [
+        "Status"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "For at migrere din organisations data skal du installere appen ${ BRAND_NAME } Migration Assistant fra Google Workspace Marketplace. Dette giver ${ BRAND_NAME } tilladelse til at kopiere dine data. Når du har installeret den, så vend tilbage hertil for at fortsætte."
@@ -2796,6 +2823,9 @@
       ],
       "User": [
         "Bruger"
+      ],
+      "Users migrated": [
+        "Brugere migreret"
       ],
       "Verify installation": [
         "Bekræft installationen"
@@ -6576,9 +6606,6 @@
       "Invalid verification code": [
         "Ugyldig verifikationskode"
       ],
-      "Invalid ZIP code": [
-        "Ugyldig postnummer"
-      ],
       "Item content cannot exceed 40KB": [
         "Element-indhold må ikke overstige 40 kB"
       ],
@@ -9498,6 +9525,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
       ],
+      "Click the icon to open it anytime.": [
+        "Du kan åbne den når som helst ved at klikke på ikonet."
+      ],
       "Close this screen to exit.": [
         "Luk denne skærm for at afslutte."
       ],
@@ -9966,13 +9996,16 @@
         "finans"
       ],
       "For a 10-year version history, please contact our sales team.": [
-        "For en 10-årig versionshistorik, kontakt vores salgsteam."
+        "Kontakt vores salgsteam for at få en versionhistorik for de sidste 10 år."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "For at få adgang til e-mail når som helst og en optimeret mobiloplevelse kan du downloade vores ${ androidAppLink } eller ${ iosAppLink }."
       ],
       "for choosing ${ product }": [
         "for at vælge ${ product }"
+      ],
+      "For easy access to your passwords and more.": [
+        "For nem adgang til dine adgangskoder og mere."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "For brugere, som skifter til ${ MAIL_APP_NAME } fra en anden e-mailtjeneste, skal du vælge fanen ${ boldAddresses } og tilføje alle aktive e-mailadresser, før du ændrer MX-posten for at sikre en problemfri overgang."
@@ -10066,9 +10099,6 @@
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Hvis deaktiveret, vil organisationsmedlemmer kun kunne dele bokse eller elementer internt i organisationen."
-      ],
-      "If disabled, organization members won't be able to create secure links.": [
-        "Hvis deaktiveret kan organisationens medlemmer ikke oprette sikre links."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Hvis aktiveret, vil organisationsmedlemmer være i stand til at dele individuelle elementer ud over hele bokse."
@@ -10579,6 +10609,9 @@
       "Open source": [
         "Open source"
       ],
+      "Open the Extensions menu": [
+        "Åbn menuen Udvidelser"
+      ],
       "Open the guide for recommended actions and helpful links.": [
         "Åbn vejledningen for anbefalede handlinger og nyttige links."
       ],
@@ -10682,6 +10715,9 @@
       ],
       "Phone number": [
         "Telefonnummer"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Fastgør ${ PASS_APP_NAME } til din værktøjslinje"
       ],
       "Please add a password for the user on row": [
         "Tilføj en adgangskode til brugeren på række",
@@ -11000,6 +11036,9 @@
       ],
       "Sign in only": [
         "Log kun ind"
+      ],
+      "Sign in or create an account to continue.": [
+        "Log ind eller opret en konto for at fortsætte."
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Log ind på ${ MAIL_APP_NAME } for at aktivere din adresse"
@@ -17716,6 +17755,9 @@
       "Got it": [
         "Forstået"
       ],
+      "I'm purchasing as a business": [
+        "Jeg køber som virksomhed"
+      ],
       "Including ${ rate }% tax": [
         "Inkluderer ${ rate }% moms"
       ],
@@ -17805,9 +17847,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Denne handling udvider det eksisterende abonnement. Du vil kun blive opkrævet for de nye tilføjelser og den resterende tid af den nuværende faktureringsperiode. Fornyelsesdatoen for dit abonnement vil ikke blive ændret."
-      ],
-      "This number will be shown on all future invoices": [
-        "Dette nummer vil blive vist på alle fremtidige fakturaer."
       ],
       "This offer is not available with your current plan.": [
         "Dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
@@ -18391,6 +18430,101 @@
       ],
       "Unknown": [
         "Ukendt"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Vis ikke dette tilbud igen"
+      ],
+      "Get the deal": [
+        "Tag imod tilbuddet"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "15 GB storage": [
+        "15 GB lagerplads"
+      ],
+      "2 TB data storage": [
+        "2 TB datalagerplads"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagerplads: 40x dit nuværende abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB datalagerplads"
+      ],
+      "500 GB storage": [
+        "500 GB lagerplads"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Få adgang til 15.000+ servere i 120+ lande"
+      ],
+      "Access advanced AI models": [
+        "Adgang til avancerede AI-modeller"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Alle premiumfunktioner i Mail, Pass, Drive, VPN og Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloker annoncer, trackere og malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Indbygget 2FA-godkender"
+      ],
+      "Connect 10 devices at once": [
+        "Forbind 10 enheder på én gang"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter er baseret på standardpriser pr. måned. Dit abonnement fornyes til standardprisen pr. år, når faktureringscyklussen slutter."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Fuld adgang til ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Fuld chathistorik med nem søgning og favoritter"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuelle konti til 6 brugere"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuelle konti til dig og en partner"
+      ],
+      "Online document editor": [
+        "Online dokumenteditor"
+      ],
+      "Recover previous file versions": [
+        "Gendan tidligere filversioner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Stærkere beskyttelse mod cybertrusler"
+      ],
+      "Unlimited daily chats": [
+        "Ubegrænset antal daglige chats"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ubegrænset antal mapper, etiketter og filtre"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Ubegrænset antal hide-my-email-aliasser"
+      ],
+      "Use your own email domain": [
+        "Brug dit eget e-mail-domæne"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "en sommerfugl"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "i 12 måneder"
+      ],
+      "SPRING SALE": [
+        "FORÅRSUDSALG"
       ]
     },
     "Recovery Email": {
@@ -22395,6 +22529,9 @@
       "Connect to video conferencing": [
         "Forbind til videokonferencer"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Tilslut din ${ BRAND_NAME }-konto"
+      ],
       "Connect your custom domain": [
         "Forbind dit brugerdefinerede domæne"
       ],
@@ -22518,6 +22655,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "Dyk ned i VPN-blogindlæg"
+      ],
+      "Delete ${ name }?": [
+        "Slet ${ name }?"
       ],
       "Delete ${ value }": [
         "Slet ${ value }"
@@ -23143,6 +23283,9 @@
       "Photos": [
         "Fotos"
       ],
+      "Pin the extension": [
+        "Fastgør udvidelsen"
+      ],
       "Policies": [
         "Retningslinjer"
       ],
@@ -23410,6 +23553,9 @@
       "Special Offer": [
         "Særtilbud"
       ],
+      "Spring Sale": [
+        "Forårsudsalg"
+      ],
       "Start a new import": [
         "Start en ny import"
       ],
@@ -23605,6 +23751,9 @@
       ],
       "Welcome to ${ planName }": [
         "Velkommen til ${ planName }."
+      ],
+      "Welcome to your new password manager!": [
+        "Velkommen til din nye adgangskodeadministrator!"
       ],
       "What is an alias?": [
         "Hvad er et alias?"

@@ -318,6 +318,9 @@
       "Connect to video conferencing": [
         "ビデオ会議に接続"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } アカウントを接続してください"
+      ],
       "Connected": [
         "接続済み"
       ],
@@ -381,8 +384,14 @@
       "Create": [
         "作成"
       ],
+      "Create a ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } アカウントを作成する"
+      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "${ BRAND_NAME } 以外の人と共有するリンクを作成"
+      ],
+      "Create an account": [
+        "アカウントを作成"
       ],
       "Create calendar": [
         "カレンダーを作成"
@@ -6394,9 +6403,6 @@
       "Invalid verification code": [
         "無効な検証コード"
       ],
-      "Invalid ZIP code": [
-        "郵便番号が正しくありません"
-      ],
       "Item content cannot exceed 40KB": [
         "アイテムの内容が40KBを超えることはできません"
       ],
@@ -9238,6 +9244,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
       ],
+      "Click the icon to open it anytime.": [
+        "アイコンをクリックするといつでも開くことができます。"
+      ],
       "Close this screen to exit.": [
         "画面を閉じると終了します。"
       ],
@@ -9703,6 +9712,9 @@
       "for choosing ${ product }": [
         "${ product } を選択した場合"
       ],
+      "For easy access to your passwords and more.": [
+        "パスワードなどに簡単にアクセスできます。"
+      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "別のメール サービスから ${ MAIL_APP_NAME } に切り替えるユーザーの場合、スムーズに移行できるように、MX レコードを変更する前に、${ boldAddresses } タブを選択し、アクティブなメール アドレスをすべて追加してください。"
       ],
@@ -9795,9 +9807,6 @@
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "無効にすると、組織メンバーは保管庫やアイテムを組織内でのみ共有できるようになります。"
-      ],
-      "If disabled, organization members won't be able to create secure links.": [
-        "無効にすると、組織のメンバーはセキュアリンクを作成できなくなります。"
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "有効にすると、組織メンバーは保管庫に加えて個々のアイテムを共有することができます。"
@@ -10300,6 +10309,9 @@
       "Open source": [
         "オープンソース"
       ],
+      "Open the Extensions menu": [
+        "拡張機能メニューを開く"
+      ],
       "Open the guide for recommended actions and helpful links.": [
         "推奨されるアクションと役立つリンクのガイドを開きます。"
       ],
@@ -10401,6 +10413,9 @@
       ],
       "Phone number": [
         "電話番号"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "${ PASS_APP_NAME } をツールバーに固定します"
       ],
       "Please add a password for the user on row": [
         "行のユーザーのパスワードを追加してください"
@@ -10716,6 +10731,9 @@
       ],
       "Sign in only": [
         "サインインのみ"
+      ],
+      "Sign in or create an account to continue.": [
+        "サインインするか、アカウントを作成してください。"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "${ MAIL_APP_NAME } にサインインしてアドレスを有効にしてください"
@@ -17336,6 +17354,9 @@
       "Got it": [
         "分かりました"
       ],
+      "I'm purchasing as a business": [
+        "法人として購入します"
+      ],
       "Including ${ rate }% tax": [
         "${ rate }% の税金込み"
       ],
@@ -17419,9 +17440,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "この操作により、既存のサブスクリプションが拡張されます。新しいアドオンと、現在の支払間隔の残りの期間に対してのみ課金されます。お客様のサブスクリプションの更新日は変更されません。"
-      ],
-      "This number will be shown on all future invoices": [
-        "この番号は、今後すべての請求書に表示されます"
       ],
       "This offer is not available with your current plan.": [
         "この特典は現在のプランではご利用いただけません。"
@@ -18011,6 +18029,101 @@
       ],
       "Unknown": [
         "不明"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "今後このオファーを表示しない"
+      ],
+      "Get the deal": [
+        "特典を利用する"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/月"
+      ],
+      "15 GB storage": [
+        "15 GB ストレージ"
+      ],
+      "2 TB data storage": [
+        "2 TB データストレージ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB ストレージで現在のプランの40倍に"
+      ],
+      "3 TB data storage": [
+        "3 TB データストレージ"
+      ],
+      "500 GB storage": [
+        "500 GB ストレージ"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "120か国以上の15,000台以上のサーバーにアクセス"
+      ],
+      "Access advanced AI models": [
+        "高度なAIモデルへのアクセス"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "メール、パスワード、ドライブ、VPN、カレンダーのすべてのプレミアム機能"
+      ],
+      "Block ads, trackers, and malware": [
+        "広告、トラッカー、マルウェアをブロック"
+      ],
+      "Built-in 2FA authenticator": [
+        "2要素認証機能を内蔵"
+      ],
+      "Connect 10 devices at once": [
+        "10台のデバイスを同時接続"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "割引は通常の月額料金を基準に適用されています。サブスクリプションは、請求期間終了後に通常の年額料金で更新されます。"
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME }へのフルアクセス"
+      ],
+      "Full chat history with easy search and favorites": [
+        "簡単な検索とお気に入り機能付きの完全なチャット履歴"
+      ],
+      "Individual accounts for 6 users": [
+        "6ユーザー分の個別アカウント"
+      ],
+      "Individual accounts for you and a partner": [
+        "お客様用とパートナー様用の個別アカウント"
+      ],
+      "Online document editor": [
+        "オンラインで使えるドキュメントエディタ"
+      ],
+      "Recover previous file versions": [
+        "ファイルの以前のバージョンを復元"
+      ],
+      "Stronger protection against cyber threats": [
+        "サイバー脅威に対するより強力な保護"
+      ],
+      "Unlimited daily chats": [
+        "無制限の毎日のチャット"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "無制限のフォルダー、ラベル、フィルター"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Hide-my-emailエイリアスが無制限"
+      ],
+      "Use your own email domain": [
+        "独自のメールドメインを使用"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "蝶"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "12か月プラン"
+      ],
+      "SPRING SALE": [
+        "スプリングセール"
       ]
     },
     "Recovery Email": {
@@ -21909,6 +22022,9 @@
       "Connect to video conferencing": [
         "ビデオ会議に接続"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } アカウントを接続してください"
+      ],
       "Connect your custom domain": [
         "カスタムドメインを接続"
       ],
@@ -22031,6 +22147,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "VPNブログ投稿を深掘りする"
+      ],
+      "Delete ${ name }?": [
+        "${ name } を削除しますか？"
       ],
       "Delete ${ value }": [
         "${ value } を削除"
@@ -22650,6 +22769,9 @@
       "Photos": [
         "写真"
       ],
+      "Pin the extension": [
+        "拡張機能をピン留めする"
+      ],
       "Policies": [
         "ポリシー"
       ],
@@ -23108,6 +23230,9 @@
       ],
       "Welcome to ${ planName }": [
         "ようこそ ${ planName } へ"
+      ],
+      "Welcome to your new password manager!": [
+        "新しいパスワード マネージャーへようこそ!"
       ],
       "What is an alias?": [
         "エイリアスとは？"

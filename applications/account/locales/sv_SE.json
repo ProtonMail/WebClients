@@ -318,6 +318,9 @@
       "Connect to video conferencing": [
         "Anslut till videokonferens"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Anslut ditt ${ BRAND_NAME }-konto"
+      ],
       "Connected": [
         "Ansluten"
       ],
@@ -384,8 +387,14 @@
       "Create": [
         "Skapa"
       ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Skapa ett ${ BRAND_NAME }-konto"
+      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Skapa en länk att dela med alla utanför ${ BRAND_NAME }"
+      ],
+      "Create an account": [
+        "Skapa ett konto"
       ],
       "Create calendar": [
         "Skapa kalender"
@@ -454,6 +463,9 @@
         "Ta bort filter “${ Name }“"
       ],
       "Delete Gateway": [
+        "Ta bort gateway"
+      ],
+      "Delete gateway": [
         "Ta bort gateway"
       ],
       "Delete group": [
@@ -1151,6 +1163,9 @@
       ],
       "Reload": [
         "Ladda om"
+      ],
+      "Reload page": [
+        "Ladda om sida"
       ],
       "Remove": [
         "Ta bort"
@@ -2670,6 +2685,9 @@
       "Change": [
         "Ändra"
       ],
+      "Completed": [
+        "Slutförd"
+      ],
       "Configure": [
         "Konfigurera"
       ],
@@ -2693,6 +2711,15 @@
       ],
       "Finish setting up your business account": [
         "Slutför inställningen av ditt företagskonto"
+      ],
+      "Google Marketplace app to copy data to ${ BRAND_NAME }": [
+        "Google Marketplace-app för att kopiera data till ${ BRAND_NAME }"
+      ],
+      "Has errors": [
+        "Har fel"
+      ],
+      "In progress": [
+        "Pågår"
       ],
       "Install app": [
         "Installera app"
@@ -2725,6 +2752,9 @@
       "Migration status": [
         "Migreringsstatus"
       ],
+      "Not started": [
+        "Inte startad"
+      ],
       "Organization does not have enough seats available": [
         "Organisation har inte tillräckligt med licenser tillgängligt"
       ],
@@ -2755,17 +2785,26 @@
       "Set up two-factor authentication": [
         "Ställ in tvåfaktorsautentisering"
       ],
+      "Settings": [
+        "Inställningar"
+      ],
       "Sign in to Google Workspace": [
         "Logga in på Google Workspace"
       ],
       "Start migration": [
         "Starta migrering"
       ],
+      "Status": [
+        "Status"
+      ],
       "Transfer errors": [
         "Överföringsfel"
       ],
       "User": [
         "Användare"
+      ],
+      "Users migrated": [
+        "Användare migrerade"
       ],
       "Verify installation": [
         "Verifiera installation"
@@ -6339,6 +6378,9 @@
       "Code is incorrect or not valid anymore": [
         "Kod är fel eller inte giltig längre"
       ],
+      "Company name or personal name is required": [
+        "Företagsnamn eller personnamn är obligatoriskt"
+      ],
       "Condition incomplete": [
         "Villkor ofullständig"
       ],
@@ -6523,9 +6565,6 @@
       ],
       "Invalid verification code": [
         "Ogiltig verifieringskod"
-      ],
-      "Invalid ZIP code": [
-        "Ogiltigt postnummer"
       ],
       "Item content cannot exceed 40KB": [
         "Objektinnehåll får inte överstiga 40 kB"
@@ -6821,6 +6860,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Detta fält överskrider det maximala antalet ${ maximumLength } tecken."
       ],
+      "This field is invalid": [
+        "Detta fält är ogiltigt"
+      ],
       "This field is required": [
         "Detta fält är obligatoriskt"
       ],
@@ -6892,6 +6934,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Vi stoppade DKIM-signering på grund av problem med din DNS-konfiguration. Följ instruktionerna nedan för att återuppta signeringen."
+      ],
+      "Wrong billing address": [
+        "Fel faktureringsadress"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Fel återställningsfras. Försök igen eller använd en annan återställningsmetod."
@@ -7489,6 +7534,9 @@
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Efter att ha lämnat ditt paket kommer denna användare att flyttas till ett ${ BRAND_NAME } Unlimited-paket med en 30-dagars gratis provperiod.*"
+      ],
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "Tilldela lagringsutrymme till administratörskontot. Du kan distribuera lagringsutrymme för ytterligare användare senare."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Skapa och hantera familjemedlemmar och tilldela dem lagringsutrymme som delas mellan ${ DRIVE_APP_NAME } och ${ MAIL_APP_NAME }."
@@ -8993,11 +9041,26 @@
       "(default)": [
         "(standard)"
       ],
+      "(eg. ChatGPT, Gemini, Perplexity)": [
+        "(t.ex. ChatGPT, Gemini, Perplexity)"
+      ],
+      "(eg. New York Times, BBC)": [
+        "(t.ex. New York Times, BBC)"
+      ],
+      "(eg. PCMag, TechRadar)": [
+        "(t.ex. PCMag, TechRadar)"
+      ],
+      "(eg. The Vergecast, Big Technology Podcast)": [
+        "(t.ex. The Vergecast, Big Technology Podcast)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrera om ALLA av följande villkor är uppfyllda)"
       ],
       "(Filter if ANY of the following conditions are met)": [
         "(Filtrera om NÅGOT av följande villkor är uppfyllda)"
+      ],
+      "(formerly Twitter)": [
+        "(tidigare Twitter)"
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** stöds inte i din organisation **${ organizationName }**."
@@ -9419,6 +9482,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Genom att dela all information om händelser i denna kalender, accepterar du att ge ${ BRAND_NAME } åtkomst till denna kalenders krypterade information."
       ],
+      "Cancel": [
+        "Avbryt"
+      ],
       "Cancel anytime": [
         "Avbryt när som helst"
       ],
@@ -9445,6 +9511,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
+      ],
+      "Click the icon to open it anytime.": [
+        "Klicka på ikonen för att öppna den när som helst."
       ],
       "Close this screen to exit.": [
         "Stäng denna skärm för att avsluta."
@@ -9883,6 +9952,9 @@
       "Expires on ${ ExpMonth }/${ ExpYear }": [
         "Löper ut ${ ExpMonth }/${ ExpYear }"
       ],
+      "Facebook": [
+        "Facebook"
+      ],
       "Failed to fetch logs.": [
         "Misslyckades att hämta loggar."
       ],
@@ -9925,6 +9997,9 @@
       "for choosing ${ product }": [
         "för att välja ${ product }"
       ],
+      "For easy access to your passwords and more.": [
+        "För enkel åtkomst till dina lösenord och mer."
+      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "För användare som byter till ${ MAIL_APP_NAME } från en annan e-posttjänst, välj fliken ${ boldAddresses } och lägg till alla aktiva e-postadresser innan du ändrar MX-posten för att säkerställa en smidig övergång."
       ],
@@ -9939,6 +10014,15 @@
       ],
       "free up space by deleting older messages or other data": [
         "frigör utrymme genom att radera äldre meddelanden eller annan data"
+      ],
+      "Friends and family": [
+        "Vänner och familj"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "Gateway kunde inte tas bort. Försök igen"
+      ],
+      "Gateway deleted": [
+        "Gateway borttagen"
       ],
       "Gateway monitor": [
         "Övervakning av gateway"
@@ -9979,6 +10063,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå till din identitetsleverantör, hämta SAML-metadatan för ${ appName } och importera den här."
       ],
+      "Google or other search engine": [
+        "Google eller annan sökmotor"
+      ],
       "Google Pay mark": [
         "Google Pay-märke"
       ],
@@ -10017,6 +10104,9 @@
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Om det är inaktiverat kommer organisationsmedlemmar endast att kunna dela valv eller objekt inom organisationen."
+      ],
+      "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
+        "Om inaktiverat kommer organisationsmedlemmar inte att kunna skapa nya alias. Befintliga alias förblir aktiva."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Om det är aktiverat kommer organisationsmedlemmar att kunna dela individuella objekt utöver valv."
@@ -10135,6 +10225,9 @@
       ],
       "Insert link": [
         "Infoga länk"
+      ],
+      "Instagram": [
+        "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installera en landskonfigurationsfil för att ansluta till en slumpmässig server i det land du väljer."
@@ -10434,6 +10527,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Ny VPN-anslutningsdata kommer att sluta samlas in och visas."
       ],
+      "News or media article": [
+        "Nyhets- eller medieartikel"
+      ],
       "Next billing date": [
         "Nästa faktureringsdatum"
       ],
@@ -10524,6 +10620,9 @@
       "Open source": [
         "Öppen källkod"
       ],
+      "Open the Extensions menu": [
+        "Öppna tilläggsmenyn"
+      ],
       "Open the guide for recommended actions and helpful links.": [
         "Öppna guiden för rekommenderade åtgärder och användbara länkar."
       ],
@@ -10558,6 +10657,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organisera dina dedikerade servrar i gateways och bestäm vilka medlemmar som kan komma åt dem."
+      ],
+      "Other": [
+        "Annat"
       ],
       "Other accounts": [
         "Andra konton"
@@ -10628,6 +10730,9 @@
       "Phone number": [
         "Telefonnummer"
       ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Fäst ${ PASS_APP_NAME } till ditt verktygsfält"
+      ],
       "Please add a password for the user on row": [
         "Lägg till ett lösenord för användaren på raden",
         "Lägg till lösenord för användarna på raderna"
@@ -10678,6 +10783,9 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Välj den typ av länk du vill infoga och fyll i alla fält."
       ],
+      "Please specify...": [
+        "Specificera …"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Försök igen med en annan betalningsmetod eller kontakta din bank."
       ],
@@ -10695,6 +10803,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus- eller Visionary-prenumeration krävs"
+      ],
+      "Podcast": [
+        "Podcast"
       ],
       "Preference saved": [
         "Preferens sparad"
@@ -10722,6 +10833,9 @@
       ],
       "Private AI assistant": [
         "Privat AI-assistent"
+      ],
+      "Product reviews, rankings, or guides": [
+        "Produktrecensioner, rankingar eller guider"
       ],
       "Protected by Swiss privacy laws": [
         "Skyddad av schweiziska integritetslagar"
@@ -10773,6 +10887,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Återställningsfras är inte associerad med några föråldrade nycklar."
+      ],
+      "Reddit": [
+        "Reddit"
       ],
       "Referral link copied to your clipboard": [
         "Hänvisningslänk kopierats till ditt urklipp"
@@ -10943,6 +11060,9 @@
       "Sign in only": [
         "Endast inloggning"
       ],
+      "Sign in or create an account to continue.": [
+        "Logga in eller skapa ett konto för att fortsätta."
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Logga in på ${ MAIL_APP_NAME } för att aktivera din adress"
       ],
@@ -10986,6 +11106,12 @@
         "Steg ${ step }",
         "Steg ${ step }"
       ],
+      "Step 1 of 2": [
+        "Steg 1 av 2"
+      ],
+      "Step 2 of 2": [
+        "Steg 2 av 2"
+      ],
       "Storage allocated to other users in this organisation": [
         "Lagringsutrymme tilldelad andra användare i denna organisation"
       ],
@@ -11000,6 +11126,9 @@
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Förvara detta lösenord och fil på ett säkert ställe. Du behöver dem igen för att importera din nyckel."
+      ],
+      "Submit": [
+        "Skicka"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Skicka in en insättning med följande adress eller skanna QR-koden. Din insättning kommer att återspeglas på ditt konto efter bekräftelse."
@@ -11070,6 +11199,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Tack för att du stödjer vårt uppdrag att bygga ett bättre internet där integritet och frihet kommer först."
+      ],
+      "Thanks for the feedback!": [
+        "Tack för feedbacken!"
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Meddelandet ${ boldDataLocked } kommer inte längre att visas, men du kan fortfarande låsa upp dina data under ${ encryptionAndKeysLink }."
@@ -11280,6 +11412,9 @@
       ],
       "This will wipe all logs for your organization members.": [
         "Detta kommer rensa bort alla loggar för dina organisationsmedlemmar."
+      ],
+      "TikTok": [
+        "TikTok"
       ],
       "to ${ product } Business": [
         "till ${ product } Business"
@@ -11701,6 +11836,9 @@
       "Writing assistant": [
         "Skrivassistent"
       ],
+      "X": [
+        "X"
+      ],
       "Yearly": [
         "Årligen"
       ],
@@ -12023,6 +12161,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Din provperiod slutar om ${ timeRemaining }."
+      ],
+      "YouTube": [
+        "YouTube"
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Du kommer också förlora åtkomst till ${ boldPlanTitle }-funktioner:"
@@ -12722,6 +12863,9 @@
       ],
       "Allow": [
         "Tillåt"
+      ],
+      "Allow alias creation": [
+        "Tillåt skapande av alias"
       ],
       "Allow all users to create vaults": [
         "Tillåt alla användare att skapa valv"
@@ -17664,6 +17808,9 @@
       "Got it": [
         "Jag förstår"
       ],
+      "I'm purchasing as a business": [
+        "Jag köper som ett företag"
+      ],
       "Including ${ rate }% tax": [
         "Inklusive ${ rate } % moms"
       ],
@@ -17753,9 +17900,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Denna åtgärd utökar den befintliga prenumerationen. Du kommer endast att debiteras för de nya utökningarna och den återstående tiden av den nuvarande faktureringsperioden. Förnyelsedatumet för din prenumeration kommer inte att ändras."
-      ],
-      "This number will be shown on all future invoices": [
-        "Detta nummer kommer att visas på alla framtida fakturor"
       ],
       "This offer is not available with your current plan.": [
         "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
@@ -17976,6 +18120,9 @@
       "Confirm": [
         "Bekräfta"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "domain.com": [
         "domän.com"
       ],
@@ -18053,6 +18200,9 @@
       ],
       "Printer": [
         "Skrivare"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Sök"
@@ -18323,6 +18473,101 @@
       ],
       "Unknown": [
         "Okänd"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Visa inte detta erbjudande igen"
+      ],
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/månad"
+      ],
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
+      ],
+      "2 TB data storage": [
+        "2 TB lagringsutrymme"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagringsutrymme: 40x ditt nuvarande paket"
+      ],
+      "3 TB data storage": [
+        "3 TB lagringsutrymme"
+      ],
+      "500 GB storage": [
+        "500 GB lagringsutrymme"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Åtkomst till 15 000+ servrar i 120+ länder"
+      ],
+      "Access advanced AI models": [
+        "Få åtkomst till avancerade AI-modeller"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Alla premiumfunktioner i Mail, Pass, Drive, VPN och Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blockera annonser, spårare och skadlig kod"
+      ],
+      "Built-in 2FA authenticator": [
+        "Inbyggd 2FA-autentiserare"
+      ],
+      "Connect 10 devices at once": [
+        "Anslut 10 enheter samtidigt"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter baseras på ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Full åtkomst till ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Fullständig chatthistorik med enkelt sök och favoriter"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuella konton för 6 användare"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuella konton för dig och en partner"
+      ],
+      "Online document editor": [
+        "Dokumentredigerare online"
+      ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Starkare skydd mot cyberhot"
+      ],
+      "Unlimited daily chats": [
+        "Obegränsat antal dagliga chattar"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Obegränsade mappar, etiketter och filter"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Obegränsade hide-my-email-alias"
+      ],
+      "Use your own email domain": [
+        "Använd din egen e-postdomän"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "en fjäril"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "för 12 månader"
+      ],
+      "SPRING SALE": [
+        "VÅRREA"
       ]
     },
     "Recovery Email": {
@@ -20959,6 +21204,9 @@
       "To continue your subscription after the free trial ends, add a payment method before ${ props.periodEnd }.": [
         "För att fortsätta din prenumeration efter att din gratis provperiod är slut, lägg till en betalningsmetod innan ${ props.periodEnd }."
       ],
+      "Total due": [
+        "Totalt belopp"
+      ],
       "Total due on ${ formattedPeriodEnd }": [
         "Totalt att betala den ${ formattedPeriodEnd }"
       ],
@@ -22334,6 +22582,9 @@
       "Connect to video conferencing": [
         "Anslut till videokonferens"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Anslut ditt ${ BRAND_NAME }-konto"
+      ],
       "Connect your custom domain": [
         "Anslut din anpassad domän"
       ],
@@ -22457,6 +22708,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "Djupdyk i VPN-blogginlägg"
+      ],
+      "Delete ${ name }?": [
+        "Ta bort ${ name }?"
       ],
       "Delete ${ value }": [
         "Ta bort ${ value }"
@@ -22826,6 +23080,9 @@
       "Home": [
         "Hem"
       ],
+      "How did you find out about us?": [
+        "Hur fick du reda på oss?"
+      ],
       "How to choose a good logo": [
         "Hur man väljer en bra logga"
       ],
@@ -23084,6 +23341,9 @@
       ],
       "Photos": [
         "Foton"
+      ],
+      "Pin the extension": [
+        "Fäst tillägget"
       ],
       "Policies": [
         "Policyer"
@@ -23352,6 +23612,9 @@
       "Special Offer": [
         "Specialerbjudande"
       ],
+      "Spring Sale": [
+        "Vårrea"
+      ],
       "Start a new import": [
         "Starta en ny import"
       ],
@@ -23547,6 +23810,9 @@
       ],
       "Welcome to ${ planName }": [
         "Välkommen till ${ planName }"
+      ],
+      "Welcome to your new password manager!": [
+        "Välkommen till din nya lösenordshanterare!"
       ],
       "What is an alias?": [
         "Vad är ett alias?"
@@ -24733,6 +24999,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporter är inte end-to-end-krypterade, skicka ingen känslig information."
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Servrar i denna gateway kommer att gå in i en 10-dagars inaktiveringsperiod. Dessa servrar kan läggas till i en ny gateway, men deras land kan inte ändras."
       ],
       "Skip verification?": [
         "Hoppa över verifiering?"

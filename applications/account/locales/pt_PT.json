@@ -266,6 +266,9 @@
       "Connect to video conferencing": [
         "Ligar à videoconferência"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Conecte a sua conta da ${ BRAND_NAME }"
+      ],
       "Connected": [
         "Ligado"
       ],
@@ -316,6 +319,12 @@
       ],
       "Create": [
         "Criar"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Criar uma conta na ${ BRAND_NAME }"
+      ],
+      "Create an account": [
+        "Criar uma conta"
       ],
       "Create calendar": [
         "Criar um calendário"
@@ -4481,9 +4490,6 @@
       "Invalid verification code": [
         "O código de verificação não é válido."
       ],
-      "Invalid ZIP code": [
-        "Código postal inválido"
-      ],
       "Item content cannot exceed 40KB": [
         "O conteúdo do item não pode exceder 40 KB."
       ],
@@ -6967,6 +6973,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorreto, clique em \"Editar\" para o corrigir."
       ],
+      "Click the icon to open it anytime.": [
+        "Clique no ícone para abri-lo a qualquer momento."
+      ],
       "Close this screen to exit.": [
         "Feche este ecrã para sair."
       ],
@@ -7376,6 +7385,9 @@
       ],
       "for choosing ${ product }": [
         "por escolher ${ product }"
+      ],
+      "For easy access to your passwords and more.": [
+        "Para um acesso fácil às suas palavras-passe e a outras informações sensíveis."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Para utilizadores que mudam para o ${ MAIL_APP_NAME } a partir de outro serviço de e-mail, selecione o separador ${ boldAddresses } e adicione todos os endereços de e-mail ativos antes de alterar o registo MX para garantir uma transição sem problemas."
@@ -7877,6 +7889,9 @@
       "Open source": [
         "Código aberto"
       ],
+      "Open the Extensions menu": [
+        "Abra o menu de extensões"
+      ],
       "Open the guide for recommended actions and helpful links.": [
         "Abra o guia para ações recomendadas e ligações úteis."
       ],
@@ -7962,6 +7977,9 @@
       ],
       "Phone number": [
         "Número de telefone"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Fixe ${ PASS_APP_NAME } na sua barra de ferramentas"
       ],
       "Please add a password for the user on row": [
         "Adicione uma palavra-passe para este utilizador na linha.",
@@ -8250,6 +8268,9 @@
       ],
       "Show original message": [
         "Mostrar mensagem original"
+      ],
+      "Sign in or create an account to continue.": [
+        "Inicie sessão ou crie uma conta para continuar."
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicie sessão no ${ MAIL_APP_NAME } para ativar o seu endereço."
@@ -13605,6 +13626,9 @@
       "Got it": [
         "Entendido"
       ],
+      "I'm purchasing as a business": [
+        "Estou a comprar como empresa"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -13636,9 +13660,6 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Depois, será renovado automaticamente por ${ renewPriceStr } durante ${ renewalLength } mês. Pode cancelar a qualquer momento.",
         "Depois, será renovado automaticamente por ${ renewPriceStr } durante ${ renewalLength } meses. Pode cancelar a qualquer momento."
-      ],
-      "This number will be shown on all future invoices": [
-        "Este número será indicado em todas as facturas futuras"
       ],
       "This payment method will become your new default for all future renewals.": [
         "Este tornar-se-á o seu novo método de pagamento predefinido para todas as renovações futuras."
@@ -14021,6 +14042,101 @@
       ],
       "Unknown": [
         "Desconhecido"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Não mostrar esta oferta novamente"
+      ],
+      "Get the deal": [
+        "Aproveite a oferta"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/mês"
+      ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "2 TB data storage": [
+        "2 TB de armazenamento de dados"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de armazenamento: 40x o seu plano atual"
+      ],
+      "3 TB data storage": [
+        "3 TB de armazenamento de dados"
+      ],
+      "500 GB storage": [
+        "500 GB de armazenamento"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Aceda a mais de 15.000 servidores em mais de 120 países"
+      ],
+      "Access advanced AI models": [
+        "Aceda a modelos de IA avançados"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Todas as funcionalidades premium do Mail, Pass, Drive, VPN e Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloqueie anúncios, rastreadores e malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador 2FA integrado"
+      ],
+      "Connect 10 devices at once": [
+        "Ligue 10 dispositivos de uma só vez"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos baseiam-se no preço mensal padrão. A sua subscrição será renovada à taxa anual padrão quando o ciclo de faturação terminar."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Acesso total ao ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Histórico completo de conversas com pesquisa fácil e favoritos"
+      ],
+      "Individual accounts for 6 users": [
+        "Contas individuais para 6 utilizadores"
+      ],
+      "Individual accounts for you and a partner": [
+        "Contas individuais para si e mais uma pessoa"
+      ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
+      "Recover previous file versions": [
+        "Recupere as versões anteriores do ficheiro"
+      ],
+      "Stronger protection against cyber threats": [
+        "Proteção reforçada contra ciberameaças"
+      ],
+      "Unlimited daily chats": [
+        "Conversas diárias ilimitadas"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Aliases hide-my-email ilimitados"
+      ],
+      "Use your own email domain": [
+        "Utilize o seu próprio domínio de e-mail"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "uma borboleta"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "por 12 meses"
+      ],
+      "SPRING SALE": [
+        "PROMOÇÃO DE PRIMAVERA"
       ]
     },
     "Recovery Email": {
@@ -17351,6 +17467,9 @@
       "Connect to video conferencing": [
         "Ligar à videoconferência"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Conecte a sua conta da ${ BRAND_NAME }"
+      ],
       "Connect your custom domain": [
         "Ligue o seu domínio personalizado"
       ],
@@ -17462,6 +17581,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "Análise aprofundada dos nossos artigos de blog sobre VPN"
+      ],
+      "Delete ${ name }?": [
+        "Eliminar ${ name }?"
       ],
       "Delete ${ value }": [
         "Eliminar ${ value }"
@@ -17955,6 +18077,9 @@
       "Photos": [
         "Fotografias"
       ],
+      "Pin the extension": [
+        "Fixe a extensão"
+      ],
       "Policies": [
         "Políticas"
       ],
@@ -18339,6 +18464,9 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Boas-vindas ao ${ BRAND_NAME } for Business"
+      ],
+      "Welcome to your new password manager!": [
+        "Boas-vindas ao seu novo gestor de palavras-passe"
       ],
       "What is an alias?": [
         "O que é um alias?"

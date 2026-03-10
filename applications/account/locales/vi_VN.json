@@ -315,6 +315,9 @@
       "Connect to video conferencing": [
         "Kết nối với hội nghị truyền hình"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Kết nối tài khoản ${ BRAND_NAME }"
+      ],
       "Connected": [
         "Đã kết nối"
       ],
@@ -378,8 +381,14 @@
       "Create": [
         "Tạo"
       ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Tạo tài khoản ${ BRAND_NAME }"
+      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Tạo liên kết để chia sẻ với bất kỳ ai bên ngoài ${ BRAND_NAME }"
+      ],
+      "Create an account": [
+        "Tạo tài khoản"
       ],
       "Create calendar": [
         "Tạo lịch"
@@ -6307,9 +6316,6 @@
       "Invalid verification code": [
         "Mã xác thực không hợp lệ"
       ],
-      "Invalid ZIP code": [
-        "Mã bưu chính không hợp lệ"
-      ],
       "Item content cannot exceed 40KB": [
         "Nội dung mục không được vượt quá 40KB"
       ],
@@ -9133,6 +9139,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Nhấn \"Yêu cầu mã mới\" để lấy mã xác thực mới được gửi tới ${ strong }. Nếu số điện thoại này chưa đúng, nhấn \"Chỉnh sửa\" để sửa cho đúng."
       ],
+      "Click the icon to open it anytime.": [
+        "Nhấn vào biểu tượng để mở bất kỳ lúc nào."
+      ],
       "Close this screen to exit.": [
         "Đóng màn hình này để thoát."
       ],
@@ -9597,6 +9606,9 @@
       ],
       "for choosing ${ product }": [
         "vì đã chọn ${ product }"
+      ],
+      "For easy access to your passwords and more.": [
+        "Để dễ dàng truy cập vào mật khẩu và hơn thế nữa."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Đối với người dùng chuyển sang ${ MAIL_APP_NAME } từ dịch vụ email khác, hãy chọn tab ${ boldAddresses } và thêm tất cả các địa chỉ email đang hoạt động trước khi thay đổi bản ghi MX để đảm bảo quá trình chuyển đổi suôn sẻ."
@@ -10195,6 +10207,9 @@
       "Open source": [
         "Mã nguồn mở"
       ],
+      "Open the Extensions menu": [
+        "Mở menu Phần mở rộng"
+      ],
       "Open the guide for recommended actions and helpful links.": [
         "Mở hướng dẫn để xem các thao tác được đề xuất và liên kết hữu ích."
       ],
@@ -10296,6 +10311,9 @@
       ],
       "Phone number": [
         "Số điện thoại"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Ghim ${ PASS_APP_NAME } trên thanh công cụ"
       ],
       "Please add a password for the user on row": [
         "Vui lòng thêm mật khẩu cho người dùng ở hàng"
@@ -10611,6 +10629,9 @@
       ],
       "Sign in only": [
         "Chỉ đăng nhập"
+      ],
+      "Sign in or create an account to continue.": [
+        "Đăng nhập hoặc tạo tài khoản để tiếp tục."
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Đăng nhập vào ${ MAIL_APP_NAME } để kích hoạt địa chỉ"
@@ -17162,6 +17183,9 @@
       "Got it": [
         "Hiểu rồi"
       ],
+      "I'm purchasing as a business": [
+        "Tôi mua với tư cách doanh nghiệp"
+      ],
       "MM/YY": [
         "Tháng/Năm"
       ],
@@ -17215,9 +17239,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Thao tác này mở rộng gói đăng ký hiện tại. Sẽ chỉ bị tính phí cho các tiện ích bổ sung mới và thời gian còn lại của chu kỳ thanh toán hiện tại. Ngày gia hạn đăng ký sẽ không thay đổi."
-      ],
-      "This number will be shown on all future invoices": [
-        "Số này sẽ hiển thị trên tất cả hóa đơn trong tương lai"
       ],
       "This offer is not available with your current plan.": [
         "Ưu đãi này không khả dụng với gói hiện tại."
@@ -21636,6 +21657,9 @@
       "Connect to video conferencing": [
         "Kết nối với hội nghị truyền hình"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Kết nối tài khoản ${ BRAND_NAME }"
+      ],
       "Connect your custom domain": [
         "Kết nối miền tùy chỉnh"
       ],
@@ -21758,6 +21782,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "Tìm hiểu sâu về các bài đăng blog VPN"
+      ],
+      "Delete ${ name }?": [
+        "Xóa ${ name }?"
       ],
       "Delete ${ value }": [
         "Xóa ${ value }"
@@ -22374,6 +22401,9 @@
       "Photos": [
         "Ảnh"
       ],
+      "Pin the extension": [
+        "Ghim phần mở rộng"
+      ],
       "Policies": [
         "Chính sách"
       ],
@@ -22832,6 +22862,9 @@
       ],
       "Welcome to ${ planName }": [
         "Chào mừng đến với ${ planName }"
+      ],
+      "Welcome to your new password manager!": [
+        "Chào mừng đến trình quản lý mật khẩu mới!"
       ],
       "What is an alias?": [
         "Biệt danh là gì?"
