@@ -504,9 +504,6 @@
       "Comments": [
         "Komentarji"
       ],
-      "Copied to clipboard": [
-        "Kopirano v odložišče"
-      ],
       "Editing": [
         "Urejanje"
       ],
@@ -674,15 +671,480 @@
         "Besedilo"
       ]
     },
+    "sheets_2025:Bottom bar": {
+      "All sheets": [
+        "Vsi listi"
+      ],
+      "New sheet": [
+        "Nov list"
+      ]
+    },
+    "sheets_2025:Color picker": {
+      "Recent colors": [
+        "Nedavne barve"
+      ],
+      "Reset": [
+        "Ponastavi"
+      ],
+      "Standard colors": [
+        "Standardne barve"
+      ],
+      "Theme colors": [
+        "Barve teme"
+      ]
+    },
+    "sheets_2025:Range selector menu": {
+      "Add new": [
+        "Dodaj novo"
+      ],
+      "Named ranges": [
+        "Imenovana območja"
+      ],
+      "Sheets": [
+        "Listi"
+      ],
+      "Tables": [
+        "Tabele"
+      ]
+    },
+    "sheets_2025:Sheet tab options": {
+      "Change color": [
+        "Spremeni barvo"
+      ],
+      "Delete": [
+        "Izbriši"
+      ],
+      "Duplicate": [
+        "Podvoji"
+      ],
+      "Hide sheet": [
+        "Skrij list"
+      ],
+      "Move left": [
+        "Premakni levo"
+      ],
+      "Move right": [
+        "Premakni v desno"
+      ],
+      "Rename": [
+        "Preimenuj"
+      ]
+    },
+    "sheets_2025:Spreadsheet border editor menu": {
+      "All borders": [
+        "Vsi robovi"
+      ],
+      "Bottom border": [
+        "Spodnji rob"
+      ],
+      "Dashed": [
+        "Črtkano"
+      ],
+      "Dotted": [
+        "Pikasto"
+      ],
+      "Double": [
+        "Dvojno"
+      ],
+      "Horizontal borders": [
+        "Horizontalne meje"
+      ],
+      "Inner borders": [
+        "Notranje obrobe"
+      ],
+      "Left border": [
+        "Levi rob"
+      ],
+      "No borders": [
+        "Brez obrob"
+      ],
+      "Outer borders": [
+        "Zunanje obrobe"
+      ],
+      "Right border": [
+        "Desni rob"
+      ],
+      "Solid": [
+        "Trdno"
+      ],
+      "Solid thick": [
+        "Močno debelo"
+      ],
+      "Top border": [
+        "Zgornja obroba"
+      ],
+      "Vertical borders": [
+        "Navpične obrobe"
+      ]
+    },
+    "sheets_2025:Spreadsheet cell tooltip": {
+      "Error": [
+        "Napaka"
+      ],
+      "Invalid": [
+        "Neveljaven"
+      ],
+      "Note": [
+        "Opomba"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu": {
+      "AI Quick Edit": [
+        "Hitro urejanje z UI"
+      ],
+      "Auto fit to data": [
+        "Samodejno prilagodi podatkom"
+      ],
+      "Cell value": [
+        "Vrednost celice"
+      ],
+      "Clear": [
+        "Počisti"
+      ],
+      "Clear content": [
+        "Počisti vsebino"
+      ],
+      "Clear formatting": [
+        "Odstrani oblikovanje"
+      ],
+      "Comma": [
+        "Vejica"
+      ],
+      "Conditional format": [
+        "Pogojno oblikovanje"
+      ],
+      "Convert to range": [
+        "Pretvori v obseg"
+      ],
+      "Convert to table": [
+        "Pretvori v tabelo"
+      ],
+      "Copy": [
+        "Kopiraj"
+      ],
+      "Create a filter": [
+        "Ustvari filter"
+      ],
+      "Custom": [
+        "Po meri"
+      ],
+      "Data validation": [
+        "Preverjanje podatkov"
+      ],
+      "Define named range": [
+        "Izbriši poimenovani obseg"
+      ],
+      "Delete": [
+        "Izbriši"
+      ],
+      "Delete cells and shift cells left": [
+        "Izbriši celice in premakni celice levo"
+      ],
+      "Delete cells and shift cells up": [
+        "Izbriši celice in premakni celice navzgor"
+      ],
+      "Delete column": [
+        "Izbriši stolpec"
+      ],
+      "Delete row": [
+        "Izbriši vrstico"
+      ],
+      "Delete table column": [
+        "Izbriši stolpec tabele"
+      ],
+      "Delete table row": [
+        "Izbriši vrstico v tabeli"
+      ],
+      "Edit table": [
+        "Uredi tabelo"
+      ],
+      "Filter": [
+        "Filter"
+      ],
+      "Formatting only": [
+        "Samo oblikovanje"
+      ],
+      "Formula only": [
+        "Samo formula"
+      ],
+      "Freeze up to column": [
+        "Zamrzni do stolpca"
+      ],
+      "Freeze up to row": [
+        "Zamrzni do vrstice"
+      ],
+      "Hide column": [
+        "Skrij stolpec"
+      ],
+      "Hide row": [
+        "Skrij vrstico"
+      ],
+      "Insert cells and shift cells down": [
+        "Vstavi celice in premakni celice navzdol"
+      ],
+      "Insert cells and shift cells right": [
+        "Vstavi celice in premakni celice v desno"
+      ],
+      "Insert link": [
+        "Vstavi povezavo"
+      ],
+      "Insert note": [
+        "Vstavi beležko"
+      ],
+      "Insert table column to the left": [
+        "Vstavite stolpec tabele na levo"
+      ],
+      "Insert table column to the right": [
+        "Vstavite stolpec tabele na desno"
+      ],
+      "Insert table row": [
+        "Vstavi vrstico v tabelo"
+      ],
+      "Link only": [
+        "Samo povezave"
+      ],
+      "More cell actions": [
+        "Več dejanj celice"
+      ],
+      "Paste": [
+        "Prilepi"
+      ],
+      "Paste special": [
+        "Posebno lepljenje"
+      ],
+      "Period": [
+        "Obdobje"
+      ],
+      "Remove filter": [
+        "Odstrani filter"
+      ],
+      "Resize column": [
+        "Spremeni velikost stolpca"
+      ],
+      "Resize row": [
+        "Spremeni velikost vrstice"
+      ],
+      "Semicolon": [
+        "Podpičje"
+      ],
+      "Sort": [
+        "Razvrsti"
+      ],
+      "Sort range A → Z": [
+        "Razvrsti območje A → Z"
+      ],
+      "Sort range Z → A": [
+        "Razvrsti obseg od Ž→ A"
+      ],
+      "Sort sheet A to Z": [
+        "Razvrsti seznam od A do Ž"
+      ],
+      "Sort sheet Z to A": [
+        "Razvrsti seznam od Ž do A"
+      ],
+      "Space": [
+        "Presledek"
+      ],
+      "Table": [
+        "Tabela"
+      ],
+      "Transposed": [
+        "Prestavljeno"
+      ],
+      "Unfreeze columns": [
+        "Odmrzni stolpce"
+      ],
+      "Unfreeze rows": [
+        "Odstrani blokiranje vrstic"
+      ],
+      "Values only": [
+        "Samo vrednosti"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } stolpec",
+        "${ numberOfColumns } stolpca",
+        "${ numberOfColumns } stolpcev",
+        "${ numberOfColumns } stolpcev"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } vrstica",
+        "${ numberOfRows }} vrstici",
+        "${ numberOfRows } vrstice",
+        "${ numberOfRows } vrstic"
+      ],
+      "above": [
+        "zgoraj"
+      ],
+      "below": [
+        "spodaj"
+      ],
+      "Insert": [
+        "Vstavi"
+      ],
+      "left": [
+        "levo"
+      ],
+      "right": [
+        "desno"
+      ]
+    },
+    "sheets_2025:Spreadsheet delete sheet dialog": {
+      "Are you sure you want to delete ${ sheetName }?": [
+        "Ste prepričani, da želite izbrisati ${ sheetName }?"
+      ],
+      "Cancel": [
+        "Prekliči"
+      ],
+      "Delete": [
+        "Izbriši"
+      ],
+      "Delete sheet": [
+        "Izbriši list"
+      ]
+    },
+    "sheets_2025:Spreadsheet editing disabled dialog": {
+      "Mobile Editing Coming Soon": [
+        "Urejanje na mobilnih napravah kmalu na voljo"
+      ],
+      "Screen too small for editing": [
+        "Zaslon je premajhen za urejanje"
+      ],
+      "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
+        "Delamo na tem, da vam bo ta funkcija kmalu na voljo. Zaenkrat je preglednice mogoče urejati samo v namiznem računalniku."
+      ],
+      "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
+        "Vaš zaslon je premajhen za urejanje te preglednice. Trenutno ste v načinu samo za ogled. Če želite narediti spremembe, odprite to preglednico na večjem zaslonu ali razširite okno brskalnika."
+      ]
+    },
+    "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "Ne morete izbrisati vseh stolpcev"
+      ],
+      "Cannot delete all rows": [
+        "Ne morete izbrisati vseh vrstic"
+      ],
+      "Find in sheet": [
+        "Najdi v listu"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor cell merge options": {
+      "Merge all": [
+        "Združi vse"
+      ],
+      "Merge cells": [
+        "Združi celice"
+      ],
+      "Merge horizontally": [
+        "Združi vodoravno"
+      ],
+      "Merge vertically": [
+        "Združi navpično"
+      ],
+      "Unmerge": [
+        "Razdruži"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu": {
+      "Create a filter": [
+        "Ustvari filter"
+      ],
+      "Data validation": [
+        "Preverjanje podatkov"
+      ],
+      "Protect range": [
+        "Zaščiteno območje"
+      ],
+      "Remove filter": [
+        "Odstrani filter"
+      ],
+      "Sort sheet": [
+        "Razvrsti seznam"
+      ],
+      "Unlock range": [
+        "Odkleni obseg"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
+      "(A to Z)": [
+        "(A do Ž)"
+      ],
+      "(Z to A)": [
+        "(Ž do A)"
+      ],
+      "column ${ columnLetter }": [
+        "stolpec ${ columnLetter }"
+      ],
+      "Sort sheet by": [
+        "Razvrsti seznam po"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar edit menu": {
+      "Copy": [
+        "Kopiraj"
+      ],
+      "Cut": [
+        "Izreži"
+      ],
+      "Find": [
+        "Najdi"
+      ],
+      "Formatting only": [
+        "Samo oblikovanje"
+      ],
+      "Formula only": [
+        "Samo formula"
+      ],
+      "Link only": [
+        "Samo povezave"
+      ],
+      "Paste": [
+        "Prilepi"
+      ],
+      "Paste special": [
+        "Posebno lepljenje"
+      ],
+      "Redo": [
+        "Ponovi"
+      ],
+      "Transposed": [
+        "Prestavljeno"
+      ],
+      "Undo": [
+        "Razveljavi"
+      ],
+      "Values only": [
+        "Samo vrednosti"
+      ]
+    },
     "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "Vrednosti, ločene s vejico (.csv)"
+      ],
       "Download": [
         "Prenos"
+      ],
+      "Download logs": [
+        "Prenesite dnevnike"
+      ],
+      "Help": [
+        "Pomoč"
+      ],
+      "Import": [
+        "Uvozi"
       ],
       "Make a copy": [
         "Naredi kopijo"
       ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (*.xls)"
+      ],
       "Move to folder": [
         "Premakni v mapo"
+      ],
+      "Move to trash": [
+        "Premakni v koš"
       ],
       "New document": [
         "Nov dokument"
@@ -690,8 +1152,922 @@
       "New spreadsheet": [
         "Nova preglednica"
       ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Odpri ${ DRIVE_APP_NAME }"
+      ],
+      "OpenDocument Spreadsheet (.ods) (Beta)": [
+        "OpenDocument preglednica (.ods) (beta)"
+      ],
+      "Print": [
+        "Natisni"
+      ],
       "See version history": [
         "Oglejte si zgodovino različic"
+      ],
+      "Settings": [
+        "Nastavitve"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Vrednosti, ločene s tabulatorji (.tsv)"
+      ],
+      "Toggle debug mode": [
+        "Preklopi način odpravljanja napak"
+      ],
+      "View recent spreadsheets": [
+        "Prikaži nedavne preglednice"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu": {
+      "Alignment": [
+        "Poravnava"
+      ],
+      "Bold": [
+        "Krepko"
+      ],
+      "Cell styles": [
+        "Slog celice"
+      ],
+      "Clear": [
+        "Počisti"
+      ],
+      "Clear content": [
+        "Počisti vsebino"
+      ],
+      "Clear formatting": [
+        "Počisti oblikovanje"
+      ],
+      "Conditional formatting": [
+        "Pogojno oblikovanje"
+      ],
+      "Font size": [
+        "Velikost pisave"
+      ],
+      "Italic": [
+        "Ležeče"
+      ],
+      "Number": [
+        "Številka"
+      ],
+      "Strikethrough": [
+        "Prečrtano"
+      ],
+      "Table formatting": [
+        "Oblikovanje tabele"
+      ],
+      "Text": [
+        "Besedilo"
+      ],
+      "Theme": [
+        "Videz"
+      ],
+      "Underline": [
+        "Podčrtano"
+      ],
+      "Wrapping": [
+        "Prelom"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
+      "Bottom": [
+        "Spodaj"
+      ],
+      "Center": [
+        "Sredina"
+      ],
+      "Left": [
+        "Levo"
+      ],
+      "Middle": [
+        "Sredina"
+      ],
+      "Right": [
+        "Desno"
+      ],
+      "Top": [
+        "Zgoraj"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
+      "Clip": [
+        "Posnetek"
+      ],
+      "Overflow": [
+        "Prekoračitev"
+      ],
+      "Wrap": [
+        "Zavitek"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
+      "Cells": [
+        "Celice"
+      ],
+      "Chart": [
+        "Grafikon"
+      ],
+      "Checkbox": [
+        "Potrditveno polje"
+      ],
+      "Columns": [
+        "Stolpci"
+      ],
+      "Dropdown": [
+        "Spustni meni"
+      ],
+      "Function": [
+        "Funkcija"
+      ],
+      "Image": [
+        "Slika"
+      ],
+      "Insert cells and shift down": [
+        "Vstavi celice in premakni navzdol"
+      ],
+      "Insert cells and shift right": [
+        "Vstavi celice in premakni desno"
+      ],
+      "Link": [
+        "Povezava"
+      ],
+      "Note": [
+        "Opomba"
+      ],
+      "Rows": [
+        "Vrstice"
+      ],
+      "Sheet": [
+        "List"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } stolpec",
+        "${ numberOfColumns }} stolpca",
+        "${ numberOfColumns } stolpci",
+        "${ numberOfColumns } stolpci"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } vrstica",
+        "${ numberOfRows } vrstici",
+        "${ numberOfRows } vrstic",
+        "${ numberOfRows } vrstic"
+      ],
+      "above": [
+        "zgoraj"
+      ],
+      "below": [
+        "spodaj"
+      ],
+      "Insert": [
+        "Vstavi"
+      ],
+      "left": [
+        "levo"
+      ],
+      "right": [
+        "desno"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "Data": [
+        "Podatki"
+      ],
+      "Edit": [
+        "Uredi"
+      ],
+      "File": [
+        "Datoteka"
+      ],
+      "Format": [
+        "Oblika"
+      ],
+      "Insert": [
+        "Vstavi"
+      ],
+      "View": [
+        "Prikaži"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Formula bar": [
+        "Vrstica s formulo"
+      ],
+      "Freeze": [
+        "Zamrzni"
+      ],
+      "Gridlines": [
+        "Mreža"
+      ],
+      "Show": [
+        "Prikaži"
+      ],
+      "Zoom": [
+        "Povečaj"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
+      "column ${ columnLetter }": [
+        "stolpec ${ columnLetter }"
+      ],
+      "row ${ rowNumber }": [
+        "vrstica ${ rowNumber }"
+      ],
+      "Up to": [
+        "Vse do"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)": {
+      "Hidden sheets": [
+        "Skriti listi"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor number formats menu": {
+      "$ US Dollar": [
+        "$ ameriški dolar"
+      ],
+      "Accounting": [
+        "Računovodstvo"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ kitajski juan"
+      ],
+      "Currency": [
+        "Valuta"
+      ],
+      "Currency rounded": [
+        "Zaokrožena valuta"
+      ],
+      "Custom currency": [
+        "Valuta po meri"
+      ],
+      "Custom number format": [
+        "Oblika številke po meri"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Date time": [
+        "Datum in čas"
+      ],
+      "Duration": [
+        "Trajanje"
+      ],
+      "Financial": [
+        "Finančno"
+      ],
+      "General": [
+        "Splošno"
+      ],
+      "Long date": [
+        "Dolgo besedilo"
+      ],
+      "More currency": [
+        "Več valut"
+      ],
+      "Number": [
+        "Številka"
+      ],
+      "Percent": [
+        "Odstotek"
+      ],
+      "Plain text": [
+        "Golo besedilo"
+      ],
+      "Scientific": [
+        "Znanstveni"
+      ],
+      "Time": [
+        "Čas"
+      ],
+      "£ Pound": [
+        "£ Funt"
+      ],
+      "¥ Yen": [
+        "¥ Jen"
+      ],
+      "€ Euro": [
+        "€ Evro"
+      ],
+      "₹ Rupee": [
+        "₹ Rupija"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor search dialog": {
+      "Close": [
+        "Zapri"
+      ],
+      "Go to next": [
+        "Naprej"
+      ],
+      "Go to previous": [
+        "Pojdi na prejšnje"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
+      "Auto": [
+        "Samodejno"
+      ],
+      "Cancel": [
+        "Prekliči"
+      ],
+      "Locale": [
+        "Področne nastavitve"
+      ],
+      "Save and reload": [
+        "Shrani in ponovno naloži"
+      ],
+      "Settings for this spreadsheet": [
+        "Nastavitve za to preglednico"
+      ],
+      "This affects formatting details such as functions, dates and currency": [
+        "To vpliva na podrobnosti oblikovanja, kot so funkcije, datumi in valuta"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Bold": [
+        "Krepko"
+      ],
+      "Border": [
+        "Obroba"
+      ],
+      "Clear formatting": [
+        "Počisti oblikovanje"
+      ],
+      "Create a filter": [
+        "Ustvari filter"
+      ],
+      "Decrease decimal places": [
+        "Zmanjšaj decimalna mesta"
+      ],
+      "Decrease font size": [
+        "Zmanjšaj velikost pisave"
+      ],
+      "Default (${ defaultFont })": [
+        "Privzeto (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Barva polnila"
+      ],
+      "Find": [
+        "Najdi"
+      ],
+      "Font": [
+        "Pisava"
+      ],
+      "Font size": [
+        "Velikost pisave"
+      ],
+      "Format as currency": [
+        "Formatiraj kot valuto"
+      ],
+      "Format as percent": [
+        "Formatiraj kot odstotek"
+      ],
+      "Horizontal align": [
+        "Horizontalna poravnava"
+      ],
+      "Increase decimal places": [
+        "Povečaj decimalna mesta"
+      ],
+      "Increase font size": [
+        "Povečaj velikost pisave"
+      ],
+      "Insert chart": [
+        "Vstavi grafikon"
+      ],
+      "Insert function": [
+        "Vstavi funkcijo"
+      ],
+      "Insert link": [
+        "Vstavi povezavo"
+      ],
+      "Insert note": [
+        "Vstavi beležko"
+      ],
+      "Italic": [
+        "Ležeče"
+      ],
+      "Merge cells": [
+        "Združi celice"
+      ],
+      "More": [
+        "Več"
+      ],
+      "More formats": [
+        "Več formatov"
+      ],
+      "Paint format": [
+        "Oblika slik"
+      ],
+      "Redo": [
+        "Ponovi"
+      ],
+      "Remove filter": [
+        "Odstrani filter"
+      ],
+      "Select merge type": [
+        "Izberi vrsto združevanja"
+      ],
+      "Strikethrough": [
+        "Prečrtano"
+      ],
+      "Text color": [
+        "Barva besedila"
+      ],
+      "Text wrapping": [
+        "Prelom besedila"
+      ],
+      "Underline": [
+        "Podčrtano"
+      ],
+      "Undo": [
+        "Razveljavi"
+      ],
+      "Unmerge cells": [
+        "Razdruži celice"
+      ],
+      "Vertical align": [
+        "Navpična poravnava"
+      ],
+      "Zoom": [
+        "Povečaj"
+      ]
+    },
+    "sheets_2025:Spreadsheet filter menu": {
+      "Apply": [
+        "Uporabi"
+      ],
+      "Cancel": [
+        "Prekliči"
+      ],
+      "Clear": [
+        "Počisti"
+      ],
+      "Copy": [
+        "Kopiraj"
+      ],
+      "Delete table column": [
+        "Izbriši stolpec v tabeli"
+      ],
+      "Enter value": [
+        "Vnesite vrednost"
+      ],
+      "Filter by condition": [
+        "Filtriraj po pogoju"
+      ],
+      "Filter by value": [
+        "Filtriraj po vrednosti"
+      ],
+      "Insert 1 table column left": [
+        "Vstavi stolpec levo"
+      ],
+      "Insert 1 table column right": [
+        "Vstavi tabelni stolpec desno"
+      ],
+      "Paste": [
+        "Prilepi"
+      ],
+      "Select all": [
+        "Izberi vse"
+      ],
+      "Sort A → Z": [
+        "Razvrsti A → Ž"
+      ],
+      "Sort Z → A": [
+        "Razvrsti Ž → A"
+      ]
+    },
+    "sheets_2025:Spreadsheet insert link dialog": {
+      "Apply": [
+        "Potrdi"
+      ],
+      "Cancel": [
+        "Prekliči"
+      ],
+      "Insert link": [
+        "Vstavi povezavo"
+      ],
+      "Paste link": [
+        "Prilepi povezavo"
+      ]
+    },
+    "sheets_2025:Spreadsheet link tooltip": {
+      "Copy link": [
+        "Kopiraj povezavo"
+      ],
+      "Edit link": [
+        "Uredi povezavo"
+      ],
+      "Link copied to clipboard": [
+        "Povezava je kopirana v odložišče"
+      ],
+      "Link removed": [
+        "Povezava je odstranjena"
+      ],
+      "Remove link": [
+        "Odstrani povezavo"
+      ]
+    },
+    "sheets_2025:Spreadsheet resize dimension dialog": {
+      "Cancel": [
+        "Prekliči"
+      ],
+      "column": [
+        "stolpec"
+      ],
+      "column width": [
+        "širina stolpca"
+      ],
+      "Default": [
+        "Privzeto"
+      ],
+      "OK": [
+        "V redu"
+      ],
+      "row": [
+        "vrstica"
+      ],
+      "row height": [
+        "višina vrstice"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
+      "Alignment": [
+        "Poravnava"
+      ],
+      "Bold": [
+        "Krepko"
+      ],
+      "Border": [
+        "Obroba"
+      ],
+      "Border style": [
+        "Slog obrobe"
+      ],
+      "Cancel": [
+        "Prekliči"
+      ],
+      "Choose Category": [
+        "Izberite kategorijo"
+      ],
+      "Color": [
+        "Barva"
+      ],
+      "Currency Symbol": [
+        "Simbol valute"
+      ],
+      "Custom": [
+        "Po meri"
+      ],
+      "Decimal places": [
+        "Decimalna mesta"
+      ],
+      "Effects": [
+        "Učinki"
+      ],
+      "Font": [
+        "Pisava"
+      ],
+      "Font size": [
+        "Velikost pisave"
+      ],
+      "Format cells": [
+        "Oblikuj celice"
+      ],
+      "General": [
+        "Splošno"
+      ],
+      "Horizontal Alignment": [
+        "Vodoravna poravnava"
+      ],
+      "Indent": [
+        "Zamik"
+      ],
+      "Italic": [
+        "Ležeče"
+      ],
+      "Merge": [
+        "Združi"
+      ],
+      "Merge all": [
+        "Združi vse"
+      ],
+      "Merge horizontally": [
+        "Združi vodoravno"
+      ],
+      "Merge vertically": [
+        "Združi navpično"
+      ],
+      "Number": [
+        "Številka"
+      ],
+      "Overflow": [
+        "Prekoračitev"
+      ],
+      "Preview": [
+        "Predogled"
+      ],
+      "Save": [
+        "Shrani"
+      ],
+      "Strikethrough": [
+        "Prečrtano"
+      ],
+      "Text control": [
+        "Pregled besedila"
+      ],
+      "Thousands separator": [
+        "Ločilo tisočic"
+      ],
+      "Type": [
+        "Vrsta"
+      ],
+      "Underline": [
+        "Podčrtano"
+      ],
+      "Unmerge": [
+        "Razdruži"
+      ],
+      "Use 1000 Separator (,)": [
+        "Uporabi 1000 ločilo (,)"
+      ],
+      "Vertical Alignment": [
+        "Navpična poravnava"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar chart editor dialog": {
+      "Add": [
+        "Dodaj"
+      ],
+      "Aggregate": [
+        "Združi"
+      ],
+      "Cancel": [
+        "Prekliči"
+      ],
+      "Chart data range": [
+        "Obseg podatkov grafikona"
+      ],
+      "Chart editor": [
+        "Urejevalnik grafikona"
+      ],
+      "Chart title": [
+        "Naslov grafa"
+      ],
+      "Chart type": [
+        "Vrsta grafikona"
+      ],
+      "Enter title": [
+        "Vnesi naslov"
+      ],
+      "Horizontal (category) axis labels": [
+        "Vodoravna os (kategorija) oznake"
+      ],
+      "Horizontal axis title": [
+        "Naslov vodoravne osi"
+      ],
+      "Name": [
+        "Ime"
+      ],
+      "Range": [
+        "Območje"
+      ],
+      "Save": [
+        "Shrani"
+      ],
+      "Select a range": [
+        "Izberite območje"
+      ],
+      "Series": [
+        "Niz"
+      ],
+      "Show data in hidden rows and columns": [
+        "Pokaži podatke v skritih vrsticah in stolpcih"
+      ],
+      "Value": [
+        "Vrednost"
+      ],
+      "Vertical axis title": [
+        "Naslov navpične osi"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog": {
+      "Add another range": [
+        "Dodaj drugo območje"
+      ],
+      "Add another rule": [
+        "Dodaj drugo pravilo"
+      ],
+      "Add rule": [
+        "Dodaj pravilo"
+      ],
+      "Apply to range": [
+        "Uporabi na območje"
+      ],
+      "Cancel": [
+        "Prekliči"
+      ],
+      "Close": [
+        "Zapri"
+      ],
+      "Color scale": [
+        "Barvna lestvica"
+      ],
+      "Conditional formatting": [
+        "Pogojno oblikovanje"
+      ],
+      "Delete range": [
+        "Izbriši razpon"
+      ],
+      "Delete rule": [
+        "Izbriši pravilo"
+      ],
+      "Enter a formula": [
+        "Vnesi formulo"
+      ],
+      "Enter value": [
+        "Vnesi vrednost"
+      ],
+      "Format rules": [
+        "Pravila oblikovanja"
+      ],
+      "Format style": [
+        "Oblikuj slog"
+      ],
+      "Max point": [
+        "Največja točka"
+      ],
+      "Max value": [
+        "Največja vrednost"
+      ],
+      "Mid point": [
+        "Srednja točka"
+      ],
+      "Min point": [
+        "Najmanjša točka"
+      ],
+      "Min value": [
+        "Najmanjša vrednost"
+      ],
+      "None": [
+        "Brez"
+      ],
+      "Number": [
+        "Številka"
+      ],
+      "Preview": [
+        "Predogled"
+      ],
+      "Save": [
+        "Shrani"
+      ],
+      "Select a range": [
+        "Izberite območje"
+      ],
+      "Single color": [
+        "Ena barva"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
+      "Apply": [
+        "Uporabi"
+      ],
+      "Apply to create a custom currency": [
+        "Uporabi za ustvarjanje valute po meri"
+      ],
+      "Cancel": [
+        "Prekliči"
+      ],
+      "Currency symbol": [
+        "Simbol valute"
+      ],
+      "Custom currencies": [
+        "Valute po meri"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Add another named range": [
+        "Dodaj še eno poimenovano območje"
+      ],
+      "Add another range": [
+        "Dodaj drugo območje"
+      ],
+      "Add named range": [
+        "Dodaj poimenovani obseg"
+      ],
+      "Allow blanks": [
+        "Dovoli prazne"
+      ],
+      "Apply to range": [
+        "Uporabi na območje"
+      ],
+      "Cancel": [
+        "Prekliči"
+      ],
+      "Data validation": [
+        "Preverjanje podatkov"
+      ],
+      "Delete data validation rule": [
+        "Izbriši pravilo za potrjevanje podatkov"
+      ],
+      "Enter a formula": [
+        "Vnesi formulo"
+      ],
+      "Enter value": [
+        "Vnesite vrednost"
+      ],
+      "Formula": [
+        "Formula"
+      ],
+      "Save": [
+        "Shrani"
+      ],
+      "Select a range": [
+        "Izberite območje"
+      ],
+      "Validation rules": [
+        "Pravila preverjanja"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar dialog": {
+      "Close": [
+        "Zapri"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar named ranges dialog": {
+      "Add another named range": [
+        "Dodaj še eno poimenovano območje"
+      ],
+      "Add named range": [
+        "Dodajte imenovani obseg"
+      ],
+      "Apply to range": [
+        "Uporabi na območje"
+      ],
+      "Cancel": [
+        "Prekliči"
+      ],
+      "Delete named range": [
+        "Izbriši poimenovani obseg"
+      ],
+      "Enter a formula": [
+        "Vnesi formulo"
+      ],
+      "Enter text or formula": [
+        "Vnesi besedilo ali formulo"
+      ],
+      "Name": [
+        "Ime"
+      ],
+      "Name should not contain spaces": [
+        "Ime ne sme vsebovati presledkov"
+      ],
+      "Named Ranges": [
+        "Imenovani obsegi"
+      ],
+      "Range": [
+        "Obseg"
+      ],
+      "Save": [
+        "Shrani"
+      ],
+      "Text or formula": [
+        "Besedilo ali formula"
+      ],
+      "Type": [
+        "Vrsta"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Banded columns": [
+        "Vrstice z obrobo"
+      ],
+      "Banded rows": [
+        "Vrstice z obrobo"
+      ],
+      "Cancel": [
+        "Prekliči"
+      ],
+      "Edit table": [
+        "Uredi tabelo"
+      ],
+      "More settings": [
+        "Več nastavitev"
+      ],
+      "Save": [
+        "Shrani"
+      ],
+      "Select a range": [
+        "Izberite območje"
+      ],
+      "Show filter button": [
+        "Prikaži gumb za filter"
+      ],
+      "Table data range": [
+        "Obseg podatkov v tabeli"
+      ],
+      "Table title": [
+        "Naslov tabele"
       ]
     },
     "Title": {
