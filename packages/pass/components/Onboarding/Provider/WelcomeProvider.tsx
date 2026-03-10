@@ -12,11 +12,13 @@ import { OnboardingThemeSelect } from '@proton/pass/components/Onboarding/Onboar
 import type { AvailablePlans } from '@proton/pass/components/Onboarding/OnboardingUpgrade';
 import { AspectRatioBox } from '@proton/pass/components/Utils/AspectRatioBox';
 import { PASS_DOWNLOAD_URL, UpsellRef } from '@proton/pass/constants';
+import { useFeatureFlagVariant } from '@proton/pass/hooks/useFeatureFlagVariant';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { usePassExtensionInstalled } from '@proton/pass/hooks/usePassExtensionInstalled';
 import { useSelectorOnce } from '@proton/pass/hooks/useSelectorOnce';
 import { selectAllItems, selectPassPlan, selectUserPlan } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -35,7 +37,11 @@ import {
 export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
     const { spotlight } = usePassCore();
     const hasExtension = usePassExtensionInstalled(!DESKTOP_BUILD);
-    const [selected, setSelected] = useState<AvailablePlans>(PLANS.PASS);
+    const welcomeUnlimitedVariant = useFeatureFlagVariant(PassFeature.PassOnboardingUpgrade);
+
+    /* For A/B test: variant A shows Pass Plus by default, variant B shows Proton Unlimited */
+    const defaultPlan = welcomeUnlimitedVariant?.name === 'A' ? PLANS.PASS : PLANS.BUNDLE;
+    const [selected, setSelected] = useState<AvailablePlans>(defaultPlan);
     const [enabled, setEnabled] = useState(false);
     const [isActive, setIsActive] = useState(false);
     const [completed, setCompleted] = useState<string[]>([]);

@@ -62,6 +62,7 @@ export type LocalStoreData = {
     ps: string;
     salt: string;
     features: string;
+    featureVariants: string;
     settings: string;
     snapshot: string;
     state: string;
