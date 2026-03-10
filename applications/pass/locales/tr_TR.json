@@ -1390,8 +1390,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail }, bir ögeyi yönettiğiniz bir grupla paylaşmak istiyor."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail }, bir ögeyi ${ invitedGroup.Name } grubu ile paylaşmak istiyor."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail }, ${ name } grubuyla bir öge paylaşmak istiyor."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } sizinle bir öge paylaşmak istiyor."
@@ -1440,9 +1440,9 @@
         "${ row.breachCount } veri sızıntısı bulundu",
         "${ row.breachCount } veri sızıntısı bulundu"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } üye)",
-        "(${ membersCount } üye)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } üye)",
+        "(${ memberCount } üye)"
       ],
       "(Empty)": [
         "(Boş)"
@@ -1827,8 +1827,8 @@
       "Invite successfully resent": [
         "Davet yeniden gönderildi"
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "${ invitedGroup.Name } grubunu şu kasadaki ögelere erişmeye davet etti:"
+      "invites the group ${ name } to access items in": [
+        "${ name } grubunu şuradaki ögelere erişmeye davet ediyor"
       ],
       "invites you to access items in": [
         "sizi şu kasadaki ögelere erişmeye davet ediyor:"
@@ -1926,8 +1926,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Bir ögeyi başka bir kasaya taşımak güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"

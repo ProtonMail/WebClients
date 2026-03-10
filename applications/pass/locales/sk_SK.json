@@ -1422,8 +1422,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } chce zdieľať položku so skupinou, ktorú spravujete."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } chce zdieľať položku v skupine ${ invitedGroup.Name }."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } chce zdieľať položku v skupine ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } chce s vami zdieľať položku."
@@ -1482,11 +1482,11 @@
         "${ row.breachCount } zistené úniky",
         "${ row.breachCount } zistených únikov"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } člen)",
-        "(${ membersCount } členovia)",
-        "(${ membersCount } členov)",
-        "(${ membersCount } členov)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } člen)",
+        "(${ memberCount } členovia)",
+        "(${ memberCount } členov)",
+        "(${ memberCount } členov)"
       ],
       "(Empty)": [
         "(Prázdne)"
@@ -1875,8 +1875,8 @@
       "Invite successfully resent": [
         "Pozvánka bola znova úspešne odoslaná"
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "pozýva skupinu ${ invitedGroup.Name } na prístup k položkám v"
+      "invites the group ${ name } to access items in": [
+        "pozýva skupinu ${ name } na prístup k položkám v"
       ],
       "invites you to access items in": [
         "vás pozýva na prístup k položkám v"
@@ -1976,12 +1976,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
