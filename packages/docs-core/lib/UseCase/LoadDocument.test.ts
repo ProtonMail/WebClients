@@ -1,18 +1,25 @@
-import { DocumentRole, DynamicResult, Result } from '@proton/docs-shared'
+import { DynamicResult, Result } from '@proton/docs-shared'
 import type { DecryptCommit } from './DecryptCommit'
 import type { NodeMeta, PublicDriveCompat } from '@proton/drive-store'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import type { GetDocumentKeys } from './GetDocumentKeys'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 import type { GetNode } from './GetNode'
-import type { GetNodePermissions } from './GetNodePermissions'
 import type { FetchMetaAndRawCommit } from './FetchMetaAndRawCommit'
 import { LoadDocument } from './LoadDocument'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { DocumentState, PublicDocumentState } from '../State/DocumentState'
 import { DecryptedCommit } from '../Models/DecryptedCommit'
 import { LoadLogger } from '../LoadLogger/LoadLogger'
+import { jwtDecode } from 'jwt-decode'
 import { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
+import type { RealtimeTokenPayload } from './FetchRealtimeToken'
+
+jest.mock('jwt-decode', () => ({
+  jwtDecode: jest.fn(),
+}))
+
+const mockJwtDecode = jest.mocked(jwtDecode)
 
 describe('LoadDocument', () => {
   let loadDocument: LoadDocument
@@ -20,7 +27,6 @@ describe('LoadDocument', () => {
   let mockGetDocumentMeta: jest.Mocked<GetDocumentMeta>
   let mockGetNode: jest.Mocked<GetNode>
   let mockDecryptCommit: jest.Mocked<DecryptCommit>
-  let mockGetNodePermissions: jest.Mocked<GetNodePermissions>
   let mockLoadMetaAndCommit: jest.Mocked<FetchMetaAndRawCommit>
   let mockGetDocumentKeys: jest.Mocked<GetDocumentKeys>
   let mockLogger: jest.Mocked<LoggerInterface>
@@ -29,6 +35,8 @@ describe('LoadDocument', () => {
     volumeId: 'volume-1',
     linkId: 'link-1',
   }
+
+  const token = 'token-1'
 
   beforeEach(() => {
     jest.spyOn(LoadLogger, 'logEventRelativeToLoadTime').mockImplementation(jest.fn())
@@ -48,10 +56,6 @@ describe('LoadDocument', () => {
       execute: jest.fn(),
     } as unknown as jest.Mocked<DecryptCommit>
 
-    mockGetNodePermissions = {
-      execute: jest.fn(),
-    } as unknown as jest.Mocked<GetNodePermissions>
-
     mockLoadMetaAndCommit = {
       execute: jest.fn().mockResolvedValue(Result.ok({ realtimeToken: { preferences: {} } })),
     } as unknown as jest.Mocked<FetchMetaAndRawCommit>
@@ -64,12 +68,15 @@ describe('LoadDocument', () => {
       error: jest.fn(),
     } as unknown as jest.Mocked<LoggerInterface>
 
+    mockJwtDecode.mockReturnValue({
+      Permissions: SHARE_URL_PERMISSIONS.EDITOR,
+    } satisfies RealtimeTokenPayload)
+
     loadDocument = new LoadDocument(
       mockCompatWrapper,
       mockGetDocumentMeta,
       mockGetNode,
       mockDecryptCommit,
-      mockGetNodePermissions,
       mockLoadMetaAndCommit,
       mockGetDocumentKeys,
       mockLogger,
@@ -98,11 +105,8 @@ describe('LoadDocument', () => {
         DynamicResult.ok({
           serverBasedMeta: mockMeta,
           latestCommit: undefined,
-          realtimeToken: { token: 'token-1', preferences: {} },
+          realtimeToken: { token, preferences: {} },
         } as any),
-      )
-      mockGetNodePermissions.execute.mockResolvedValue(
-        Result.ok({ role: new DocumentRole('Editor'), fromCache: false }),
       )
     })
 
@@ -123,18 +127,6 @@ describe('LoadDocument', () => {
       expect(mockGetNode.execute).toHaveBeenCalledTimes(2)
       expect(mockGetNode.execute).toHaveBeenCalledWith(nodeMeta, { useCache: true })
       expect(mockGetNode.execute).toHaveBeenCalledWith(nodeMeta, { useCache: false })
-    })
-
-    it('should handle cached permissions and refresh from network', async () => {
-      mockGetNodePermissions.execute
-        .mockResolvedValueOnce(Result.ok({ role: new DocumentRole('Editor'), fromCache: true }))
-        .mockResolvedValueOnce(Result.ok({ role: new DocumentRole('Viewer'), fromCache: false }))
-
-      await loadDocument.executePrivate(nodeMeta)
-
-      expect(mockGetNodePermissions.execute).toHaveBeenCalledTimes(2)
-      expect(mockGetNodePermissions.execute).toHaveBeenCalledWith(nodeMeta, { useCache: true })
-      expect(mockGetNodePermissions.execute).toHaveBeenCalledWith(nodeMeta, { useCache: false })
     })
 
     it('should handle failed node loading', async () => {
@@ -161,7 +153,7 @@ describe('LoadDocument', () => {
         DynamicResult.ok({
           serverBasedMeta: mockMeta,
           latestCommit: mockCommit,
-          realtimeToken: { token: 'token-1', preferences: {} },
+          realtimeToken: { token, preferences: {} },
         } as any),
       )
       mockDecryptCommit.execute.mockResolvedValue(Result.ok(new DecryptedCommit('commit-1', [])))

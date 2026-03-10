@@ -251,7 +251,6 @@ export class AppDependencies extends DependencyContainer {
         this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
         this.get<GetNode>(App_TYPES.GetNode),
         this.get<DecryptCommit>(App_TYPES.DecryptCommit),
-        this.get<GetNodePermissions>(App_TYPES.GetNodePermissions),
         this.get<FetchMetaAndRawCommit>(App_TYPES.FetchMetaAndRawCommit),
         this.get<GetDocumentKeys>(App_TYPES.GetDocumentKeys),
         this.get<LoggerInterface>(App_TYPES.Logger),
