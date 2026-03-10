@@ -1,9 +1,5 @@
-import { c } from 'ttag';
-
 import { Vr } from '@proton/atoms/Vr/Vr';
-import { Toolbar, ToolbarButton } from '@proton/components';
-import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
-import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
+import { Toolbar } from '@proton/components';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useSelection } from '../../../components/FileBrowser';
@@ -14,20 +10,22 @@ import {
     PreviewButton,
 } from '../../../components/sections/ToolbarButtons';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
-import type { useJointTrashNodes } from '../useJointTrashNodes';
-import { useTrashActions } from '../useTrashActions';
-import { useTrashNotifications } from '../useTrashNotifications';
+import { DeletePermanentlyButton } from '../statelessComponents/DeletePermanentlyButton';
+import { RestoreButton } from '../statelessComponents/RestoreButton';
 
 const getSelectedItems = (items: LegacyItem[], selectedItemIds: string[] = []): LegacyItem[] =>
     selectedItemIds
         .map((selectedItemId) => items.find(({ isLocked, id }) => !isLocked && selectedItemId === id))
         .filter(isTruthy);
 
-export const TrashToolbar = ({ trashView }: { trashView: ReturnType<typeof useJointTrashNodes> }) => {
+interface Props {
+    trashNodes: LegacyItem[];
+    onRestore: (items: LegacyItem[]) => void;
+    onDelete: (items: LegacyItem[]) => void;
+}
+
+export const TrashToolbar = ({ trashNodes, onRestore, onDelete }: Props) => {
     const selectionControls = useSelection();
-    const { confirmModal, createDeleteConfirmModal } = useTrashNotifications();
-    const { restoreNodes, deleteNodes } = useTrashActions();
-    const { trashNodes } = trashView;
     const selectedItems = getSelectedItems(trashNodes, selectionControls?.selectedItemIds);
 
     // Opening a file preview opens the file in the context of folder.
@@ -46,10 +44,6 @@ export const TrashToolbar = ({ trashView }: { trashView: ReturnType<typeof useJo
         selectedItems.length > 0 &&
         selectedItems[0].photoProperties?.albums.some((album) => album.albumLinkId === selectedItems[0].parentLinkId);
 
-    const handleDelete = () => {
-        createDeleteConfirmModal(selectedItems, () => deleteNodes(selectedItems));
-    };
-
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
             return null;
@@ -62,19 +56,8 @@ export const TrashToolbar = ({ trashView }: { trashView: ReturnType<typeof useJo
                 <Vr className="section-toolbar--hide-alone" />
                 <DetailsButton selectedBrowserItems={selectedItems} />
                 <Vr />
-                <ToolbarButton
-                    title={c('Action').t`Restore from trash`}
-                    icon={<IcArrowRotateRight />}
-                    onClick={() => restoreNodes(selectedItems)}
-                    data-testid="toolbar-restore"
-                />
-                <ToolbarButton
-                    title={c('Action').t`Delete permanently`}
-                    icon={<IcCrossCircle />}
-                    onClick={() => handleDelete()}
-                    data-testid="toolbar-delete"
-                />
-                {confirmModal}
+                <RestoreButton buttonType="toolbar" onClick={() => onRestore(selectedItems)} />
+                <DeletePermanentlyButton buttonType="toolbar" onClick={() => onDelete(selectedItems)} />
             </>
         );
     };

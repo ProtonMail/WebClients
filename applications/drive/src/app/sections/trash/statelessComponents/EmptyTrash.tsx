@@ -6,9 +6,7 @@ import noContentSvg from '@proton/styles/assets/img/illustrations/empty-trash.sv
 
 import { DriveEmptyView } from '../../../components/layout/DriveEmptyView';
 
-type Props = {};
-
-export const EmptyTrash: FC<Props> = () => {
+export const EmptyTrash: FC = () => {
     return (
         <DriveEmptyView
             image={noContentSvg}

@@ -8,11 +8,11 @@ import { generateNodeUid } from '@proton/drive/index';
 import { FileBrowserStateProvider } from '../../../components/FileBrowser';
 import ToolbarRow from '../../../components/sections/ToolbarRow/ToolbarRow';
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
-import { EmptyTrashBar } from '../menus/EmptyTrashBar';
 import { TrashToolbar } from '../menus/TrashToolbar';
+import { EmptyTrashBar } from '../statelessComponents/EmptyTrashBar';
 import { useJointTrashNodes } from '../useJointTrashNodes';
+import { useTrashActions } from '../useTrashActions';
 import { useTrashNodes } from '../useTrashNodes';
-import { useTrashPhototsNodes } from '../useTrashPhototsNodes';
 import { Trash } from './Trash';
 
 export const TrashView = () => {
@@ -20,21 +20,27 @@ export const TrashView = () => {
     const { activeShareId, setDefaultRoot } = useActiveShare();
     useEffect(setDefaultRoot, [setDefaultRoot]);
 
-    const trashView = useTrashNodes();
-    const trashPhotosView = useTrashPhototsNodes();
+    const { loadTrashNodes, loadTrashPhotoNodes } = useTrashNodes();
     const jointView = useJointTrashNodes();
 
-    const loadTrashNodes = trashView.loadTrashNodes;
-    const loadTrashPhotosNodes = trashPhotosView.loadTrashPhotoNodes;
+    const {
+        modals,
+        handleRestore,
+        handleDelete,
+        handleEmptyTrash,
+        handlePreview,
+        handleShowDetails,
+        handleShowFilesDetails,
+    } = useTrashActions();
 
     useEffect(() => {
         const abortController = new AbortController();
         void loadTrashNodes(abortController.signal);
-        void loadTrashPhotosNodes(abortController.signal);
+        void loadTrashPhotoNodes(abortController.signal);
         return () => {
             abortController.abort();
         };
-    }, [loadTrashNodes, loadTrashPhotosNodes]);
+    }, [loadTrashNodes, loadTrashPhotoNodes]);
 
     return (
         <FileBrowserStateProvider
@@ -42,11 +48,30 @@ export const TrashView = () => {
         >
             <ToolbarRow
                 titleArea={<span className="text-strong pl-1">{c('Info').t`Trash`}</span>}
-                toolbar={<TrashToolbar trashView={jointView} />}
+                toolbar={
+                    <TrashToolbar trashNodes={jointView.trashNodes} onRestore={handleRestore} onDelete={handleDelete} />
+                }
             />
-            <EmptyTrashBar className="border-bottom border-weak" disabled={jointView.trashNodes.length === 0} />
+            <EmptyTrashBar
+                className="border-bottom border-weak"
+                disabled={jointView.trashNodes.length === 0}
+                onEmptyTrash={handleEmptyTrash}
+            />
 
-            <Trash shareId={activeShareId} trashView={jointView} />
+            <Trash
+                shareId={activeShareId}
+                trashView={jointView}
+                onPreview={handlePreview}
+                handleShowDetails={handleShowDetails}
+                handleShowFilesDetails={handleShowFilesDetails}
+                onRestore={handleRestore}
+                onDelete={handleDelete}
+            />
+
+            {modals.confirmModal}
+            {modals.detailsModal}
+            {modals.filesDetailsModal}
+            {modals.previewModal}
         </FileBrowserStateProvider>
     );
 };
