@@ -19,20 +19,26 @@ import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview'
 import { useBatchThumbnailLoader } from '../../../hooks/drive/useBatchThumbnailLoader';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
-import { useDrivePreviewModal } from '../../../modals/preview';
 import { useUserSettings } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
 import { useThumbnailStore } from '../../../zustand/thumbnails/thumbnails.store';
 import { TrashItemContextMenu } from '../menus/TrashItemContextMenu';
+import { EmptyTrash } from '../statelessComponents/EmptyTrash';
 import type { useJointTrashNodes } from '../useJointTrashNodes';
 import { useTrashStore } from '../useTrash.store';
-import { EmptyTrash } from './EmptyTrash';
 
 interface Props {
     shareId: string;
     trashView: ReturnType<typeof useJointTrashNodes>;
+    onPreview: (props: { deprecatedContextShareId: string; nodeUid: string }) => void;
+
+    handleShowDetails: (...args: any[]) => void;
+
+    handleShowFilesDetails: (...args: any[]) => void;
+    onRestore: (items: LegacyItem[]) => void;
+    onDelete: (items: LegacyItem[]) => void;
 }
 
 const { CheckboxCell, ContextMenuCell } = Cells;
@@ -93,7 +99,15 @@ const getSelectedItemsId = (items: LegacyItem[], selectedItemIds: string[]): Leg
     return [];
 };
 
-export function Trash({ shareId, trashView }: Props) {
+export function Trash({
+    shareId,
+    trashView,
+    onPreview,
+    handleShowDetails,
+    handleShowFilesDetails,
+    onRestore,
+    onDelete,
+}: Props) {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
     const browserItemContextMenu = useItemContextMenu();
     const { viewportWidth } = useActiveBreakpoint();
@@ -142,7 +156,6 @@ export function Trash({ shareId, trashView }: Props) {
     };
 
     const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
-    const { previewModal, showPreviewModal } = useDrivePreviewModal();
 
     const nodesWithThumbnail = trashNodes.map((node) => ({
         ...node,
@@ -202,7 +215,7 @@ export function Trash({ shareId, trashView }: Props) {
         }
 
         if (isSDKPreviewEnabled) {
-            showPreviewModal({
+            onPreview({
                 deprecatedContextShareId: item.rootShareId,
                 nodeUid: item.uid,
             });
@@ -251,6 +264,10 @@ export function Trash({ shareId, trashView }: Props) {
                 isOpen={browserItemContextMenu.isOpen}
                 open={browserItemContextMenu.open}
                 position={browserItemContextMenu.position}
+                onRestore={onRestore}
+                onDelete={onDelete}
+                showDetailsModal={handleShowDetails}
+                showFilesDetailsModal={handleShowFilesDetails}
             />
             <FileBrowser
                 caption={c('Title').t`Trash`}
@@ -269,7 +286,6 @@ export function Trash({ shareId, trashView }: Props) {
                 onSort={setSorting}
                 onScroll={browserItemContextMenu.close}
             />
-            {previewModal}
         </>
     );
 }

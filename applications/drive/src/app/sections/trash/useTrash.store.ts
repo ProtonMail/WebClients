@@ -3,52 +3,68 @@ import { create } from 'zustand';
 import type { NodeEntity } from '@proton/drive';
 
 interface TrashStore {
-    clearAllNodes: () => void;
-    trashNodes: Record<string, NodeEntity>;
-    setNodes: (trashNodes: Record<string, NodeEntity>) => void;
-    addNode: (node: NodeEntity) => void;
-    removeNodes: (nodeIds: string[]) => void;
+    items: Map<string, NodeEntity>;
     isLoading: boolean;
     hasEverLoaded: boolean;
-    setLoading: (loading: boolean) => void;
-    setHasEverLoaded: () => void;
-    checkAndSetHasEverLoaded: () => void;
-    eventSubscriptions: (() => void)[] | null;
-    activeContexts: Set<string>;
+
+    setItem: (item: NodeEntity) => void;
+    updateItem: (uid: string, updates: Partial<NodeEntity>) => void;
+    removeItem: (uid: string) => void;
+    clearAll: () => void;
+
+    getItem: (uid: string) => NodeEntity | undefined;
+
+    setLoading: (source: string, loading: boolean) => void;
 }
 
-export const useTrashStore = create<TrashStore>((set, get) => ({
-    trashNodes: {},
-    isLoading: false,
-    hasEverLoaded: false,
-    eventSubscriptions: null,
-    activeContexts: new Set<string>(),
-    addNode: (node: NodeEntity) =>
-        set((state) => {
-            return { trashNodes: { ...state.trashNodes, [node.uid]: node } };
-        }),
-    setNodes: (trashNodes: Record<string, NodeEntity>) =>
-        set((state) => {
-            return { trashNodes: { ...state.trashNodes, ...trashNodes } };
-        }),
-    removeNodes: (nodeUids: string[]) =>
-        set((state) => {
-            const remainingNodes = { ...state.trashNodes };
-            nodeUids.forEach((nodeId) => delete remainingNodes[nodeId]);
-            return { trashNodes: remainingNodes };
-        }),
-    setLoading: (isLoading: boolean) => {
-        set({ isLoading });
-        get().checkAndSetHasEverLoaded();
-    },
+export const useTrashStore = create<TrashStore>((set, get) => {
+    const loadingSources = new Set<string>();
 
-    setHasEverLoaded: () => set({ hasEverLoaded: true }),
-    checkAndSetHasEverLoaded: () => {
-        const state = get();
-        if (!state.isLoading && !state.hasEverLoaded) {
-            state.setHasEverLoaded();
-        }
-    },
+    return {
+        items: new Map(),
+        isLoading: false,
+        hasEverLoaded: false,
 
-    clearAllNodes: () => set({ trashNodes: {} }),
-}));
+        getItem: (uid: string) => get().items.get(uid),
+
+        setItem: (item: NodeEntity) =>
+            set((state) => {
+                const items = new Map(state.items);
+                items.set(item.uid, item);
+                return { items };
+            }),
+
+        updateItem: (uid: string, updates: Partial<NodeEntity>) =>
+            set((state) => {
+                const existing = state.items.get(uid);
+                if (!existing) {
+                    return state;
+                }
+                const items = new Map(state.items);
+                items.set(uid, { ...existing, ...updates });
+                return { items };
+            }),
+
+        removeItem: (uid: string) =>
+            set((state) => {
+                const items = new Map(state.items);
+                items.delete(uid);
+                return { items };
+            }),
+
+        setLoading: (source: string, loading: boolean) => {
+            if (loading) {
+                loadingSources.add(source);
+            } else {
+                loadingSources.delete(source);
+            }
+            const isLoading = loadingSources.size > 0;
+            set((state) => ({
+                isLoading,
+                hasEverLoaded: state.hasEverLoaded || !isLoading,
+            }));
+        },
+
+        clearAll: () => set({ items: new Map() }),
+    };
+});

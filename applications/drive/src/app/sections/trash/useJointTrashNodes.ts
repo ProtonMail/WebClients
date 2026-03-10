@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { useDrive } from '@proton/drive/index';
+import { NodeType, useDrive } from '@proton/drive/index';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { type SortField, useSortingWithDefault } from '../../hooks/util/useSorting';
@@ -11,7 +11,6 @@ import { handleLegacyError } from '../../utils/errorHandling/useLegacyErrorHandl
 import type { LegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
 import { mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
 import { useTrashStore } from './useTrash.store';
-import { useTrashPhotosStore } from './useTrashPhotos.store';
 
 const DEFAULT_SORT = {
     sortField: 'name' as SortField,
@@ -19,8 +18,8 @@ const DEFAULT_SORT = {
 };
 
 /**
- * Joins nodes from useTrashStore (driveSDK) and from useTrashPhotosStore (photoSDK) into a single array
- * after converting them to legacyItems
+ * Reads all trash nodes from the store and maps them to the legacy format,
+ * using the appropriate SDK instance (drive or photos) based on node type.
  */
 export const useJointTrashNodes = () => {
     const {
@@ -28,15 +27,11 @@ export const useJointTrashNodes = () => {
         internal: { photos },
     } = useDrive();
     const { getDefaultShare } = useStableDefaultShare();
-    const { driveTrashNodes, driveLoading } = useTrashStore(
-        useShallow((state) => ({ driveTrashNodes: state.trashNodes, driveLoading: state.isLoading }))
-    );
-    const { photoTrashNodes, photoLoading } = useTrashPhotosStore(
-        useShallow((state) => ({ photoTrashNodes: state.trashNodes, photoLoading: state.isLoading }))
+    const { storeItems, isLoading } = useTrashStore(
+        useShallow((state) => ({ storeItems: state.items, isLoading: state.isLoading }))
     );
 
-    const driveNodesList = useMemo(() => Object.values(driveTrashNodes), [driveTrashNodes]);
-    const photoNodesList = useMemo(() => Object.values(photoTrashNodes), [photoTrashNodes]);
+    const nodesList = useMemo(() => Array.from(storeItems.values()), [storeItems]);
     const [items, setItems] = useState<LegacyItem[]>([]);
 
     useEffect(() => {
@@ -51,18 +46,14 @@ export const useJointTrashNodes = () => {
                     }
                     return;
                 }
-                const driveItems = await Promise.all(
-                    driveNodesList.map((node) =>
-                        mapNodeToLegacyItem({ ok: true, value: node }, defaultShare.shareId, drive)
-                    )
-                );
-                const photoItems = await Promise.all(
-                    photoNodesList.map((node) =>
-                        mapNodeToLegacyItem({ ok: true, value: node }, defaultShare.shareId, photos)
-                    )
+                const mappedItems = await Promise.all(
+                    nodesList.map((node) => {
+                        const sdk = node.type === NodeType.Photo ? photos : drive;
+                        return mapNodeToLegacyItem({ ok: true, value: node }, defaultShare.shareId, sdk);
+                    })
                 );
                 if (!isCancelled) {
-                    setItems([...driveItems, ...photoItems]);
+                    setItems(mappedItems);
                 }
             } catch (error) {
                 if (!isCancelled) {
@@ -73,11 +64,9 @@ export const useJointTrashNodes = () => {
         void convertNodes();
 
         return () => {
-            // Prevent state updates from async operations that complete after the component
-            // unmounts or dependencies change, avoiding race conditions between drive and photo stores.
             isCancelled = true;
         };
-    }, [driveNodesList, photoNodesList, drive, photos, getDefaultShare]);
+    }, [nodesList, drive, photos, getDefaultShare]);
 
     const { sortedList, sortParams, setSorting } = useSortingWithDefault(items, DEFAULT_SORT);
 
@@ -85,6 +74,6 @@ export const useJointTrashNodes = () => {
         trashNodes: sortedList,
         sortParams,
         setSorting,
-        isLoading: driveLoading || photoLoading,
+        isLoading,
     };
 };
