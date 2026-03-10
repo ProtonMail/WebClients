@@ -12,6 +12,7 @@ import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.
 import { CLIPBOARD_PERMISSIONS, requestPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { createPopupController } from 'proton-pass-extension/lib/utils/popup';
 import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
+import { sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
 import { assertTabsAPIAvailable } from 'proton-pass-extension/lib/utils/tabs';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -195,12 +196,22 @@ const getPassCoreProviderProps = (
         writeToClipboard: async (content, clipboardTTL, promptForPermissions) => {
             let granted = !promptForPermissions;
 
-            /** Clipboard write is done directly in the view with clipboard async api.
+            /** Clipboard write is done directly in the view and content script with clipboard async api.
+             * navigator.clipboard.writeText currently doesn't work on Safari content script and
+             * will throw NotAllowedError. So we copy through the native app instead.
              * Chrome needs to wait because requesting permissions will close the popup and
              * the ongoing async write will fail otherwise.
              * Firefox in the contrary requires to not await unless requesting permissions is
              * considered not being in sync with a user interraction. */
-            const writePromise = navigator.clipboard.writeText(content).catch(noop);
+            const writePromise = navigator.clipboard.writeText(content).catch(() => {
+                if (BUILD_TARGET === 'safari') {
+                    void sendSafariMessage({
+                        writeToClipboard: {
+                            Content: content,
+                        },
+                    });
+                }
+            });
             if (BUILD_TARGET === 'chrome') await writePromise;
 
             /** Handle clipboard auto-clear if TTL is specified. Auto-clear must be delegated
