@@ -318,6 +318,9 @@
       "Connect to video conferencing": [
         "Mit Videokonferenzen verbinden"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME }-Konto verbinden"
+      ],
       "Connected": [
         "Verbunden"
       ],
@@ -384,8 +387,14 @@
       "Create": [
         "Erstellen"
       ],
+      "Create a ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME }-Konto erstellen"
+      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Link erstellen, um mit Personen außerhalb von ${ BRAND_NAME } zu teilen"
+      ],
+      "Create an account": [
+        "Konto erstellen"
       ],
       "Create calendar": [
         "Kalender erstellen"
@@ -454,6 +463,9 @@
         "Filter “${ Name }” löschen"
       ],
       "Delete Gateway": [
+        "Gateway löschen"
+      ],
+      "Delete gateway": [
         "Gateway löschen"
       ],
       "Delete group": [
@@ -1151,6 +1163,9 @@
       ],
       "Reload": [
         "Neu laden"
+      ],
+      "Reload page": [
+        "Seite neu laden"
       ],
       "Remove": [
         "Entfernen"
@@ -2703,6 +2718,9 @@
       "Change": [
         "Ändern"
       ],
+      "Completed": [
+        "Abgeschlossen"
+      ],
       "Configure": [
         "Konfigurieren"
       ],
@@ -2729,6 +2747,12 @@
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-App zum Kopieren von Daten nach ${ BRAND_NAME }"
+      ],
+      "Has errors": [
+        "Hat Fehler"
+      ],
+      "In progress": [
+        "In Bearbeitung"
       ],
       "Install app": [
         "App installieren"
@@ -2761,6 +2785,9 @@
       "Migration status": [
         "Migrationsstatus"
       ],
+      "Not started": [
+        "Nicht gestartet"
+      ],
       "Organization does not have enough seats available": [
         "Organisation hat nicht genügend Lizenzen verfügbar"
       ],
@@ -2791,11 +2818,17 @@
       "Set up two-factor authentication": [
         "Zwei-Faktor-Authentifizierung einrichten"
       ],
+      "Settings": [
+        "Einstellungen"
+      ],
       "Sign in to Google Workspace": [
         "Bei Google Workspace anmelden"
       ],
       "Start migration": [
         "Übernahme starten"
+      ],
+      "Status": [
+        "Status"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Um die Daten deiner Organisation zu migrieren, musst du die ${ BRAND_NAME }-Migrations-Assistenten-App aus dem Google Workspace Marketplace installieren. Dadurch erhält ${ BRAND_NAME } die Berechtigung, deine Daten zu kopieren. Komm nach der Installation hierher zurück, um fortzufahren."
@@ -2805,6 +2838,9 @@
       ],
       "User": [
         "Benutzer"
+      ],
+      "Users migrated": [
+        "Benutzer übernommen"
       ],
       "Verify installation": [
         "Installation überprüfen"
@@ -6406,6 +6442,9 @@
       "Code is incorrect or not valid anymore": [
         "Code ist falsch oder nicht mehr gültig"
       ],
+      "Company name or personal name is required": [
+        "Firmenname oder Name der Person erforderlich"
+      ],
       "Condition incomplete": [
         "Bedingung unvollständig"
       ],
@@ -6588,11 +6627,11 @@
       "Invalid URL": [
         "Ungültige URL"
       ],
+      "Invalid VAT number": [
+        "Ungültige USt-IdNr."
+      ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
-      ],
-      "Invalid ZIP code": [
-        "Ungültige Postleitzahl"
       ],
       "Item content cannot exceed 40KB": [
         "Der Inhalt des Eintrags darf 40 KB nicht überschreiten."
@@ -6687,6 +6726,9 @@
       ],
       "Please add a payment method before reactivating your subscription": [
         "Bitte füge eine Zahlungsmethode hinzu, bevor du dein Abonnement reaktivierst."
+      ],
+      "Please complete the billing details": [
+        "Bitte die Rechnungsdaten eintragen"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Bitte richte eine eigene Domain ein, bevor du Adressen hinzufügst."
@@ -6888,6 +6930,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
       ],
+      "This field is invalid": [
+        "Dieses Feld ist ungültig"
+      ],
       "This field is required": [
         "Pflichtfeld"
       ],
@@ -6959,6 +7004,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Wir haben die DKIM-Signatur aufgrund von Problemen mit deiner DNS-Konfiguration gestoppt. Bitte folge den untenstehenden Anweisungen, um die Signierung erneut vorzunehmen."
+      ],
+      "Wrong billing address": [
+        "Ungültige Rechnungsadresse"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Wiederherstellungsphrase ungültig. Versuche es erneut oder verwende eine andere Wiederherstellungsmethode."
@@ -9066,11 +9114,26 @@
       "(default)": [
         "(Standard)"
       ],
+      "(eg. ChatGPT, Gemini, Perplexity)": [
+        "(z. B. ChatGPT, Gemini, Perplexity)"
+      ],
+      "(eg. New York Times, BBC)": [
+        "(z. B. New York Times, BBC)"
+      ],
+      "(eg. PCMag, TechRadar)": [
+        "(z. B. PCMag, TechRadar)"
+      ],
+      "(eg. The Vergecast, Big Technology Podcast)": [
+        "(z. B. The Vergecast, Big Technology Podcast)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtern, wenn ALLE der folgenden Bedingungen erfüllt sind)"
       ],
       "(Filter if ANY of the following conditions are met)": [
         "(Filtern, wenn IRGENDEINE der folgenden Bedingungen erfüllt ist)"
+      ],
+      "(formerly Twitter)": [
+        "(vormals Twitter)"
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** wird in deiner Organisation **${ organizationName }** nicht unterstützt."
@@ -9230,6 +9293,9 @@
       "Affected user is on row": [
         "Betroffener Benutzer ist in Zeile",
         "Betroffene Benutzer sind in Zeilen"
+      ],
+      "AI chatbot": [
+        "KI-Chatbot"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "KI-gestützter Assistent, der dir hilft, schnell und mühelos bessere E-Mails zu verfassen."
@@ -9492,6 +9558,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Indem du die vollständigen Termindetails dieses Kalenders freigibst, erklärst du dich damit einverstanden, ${ BRAND_NAME } Zugriff auf diese verschlüsselten Informationen des Kalenders zu gewähren."
       ],
+      "Cancel": [
+        "Abbrechen"
+      ],
       "Cancel anytime": [
         "Jederzeit kündbar"
       ],
@@ -9518,6 +9587,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
+      ],
+      "Click the icon to open it anytime.": [
+        "Klicke auf das Symbol, um es jederzeit zu öffnen."
       ],
       "Close this screen to exit.": [
         "Schließe zum Beenden das Fenster."
@@ -9959,6 +10031,9 @@
       "Expires on ${ ExpMonth }/${ ExpYear }": [
         "Gültig bis ${ ExpMonth }/${ ExpYear }"
       ],
+      "Facebook": [
+        "Facebook"
+      ],
       "Failed to fetch logs.": [
         "Protokolle konnten nicht abgerufen werden."
       ],
@@ -10001,6 +10076,9 @@
       "for choosing ${ product }": [
         "dass du dich für ${ product } entschieden hast."
       ],
+      "For easy access to your passwords and more.": [
+        "Für einfachen Zugang zu deinen Passwörtern und mehr."
+      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Für Benutzer, die von einem anderen E-Mail-Anbieter zu ${ MAIL_APP_NAME } wechseln, wähle den Tab ${ boldAddresses } aus und füge alle aktiven E-Mail-Adressen hinzu, bevor du den MX-Eintrag änderst, damit ein reibungsloser Übergang gewährleistet ist."
       ],
@@ -10015,6 +10093,15 @@
       ],
       "free up space by deleting older messages or other data": [
         "durch Löschen älterer Nachrichten oder anderer Daten Speicherplatz freigeben"
+      ],
+      "Friends and family": [
+        "Freunde und Familie"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "Gateway konnte nicht gelöscht werden. Bitte versuche es erneut"
+      ],
+      "Gateway deleted": [
+        "Gateway gelöscht"
       ],
       "Gateway monitor": [
         "Gateway-Überwachung"
@@ -10055,6 +10142,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gehe zu deinem Identitätsanbieter, besorge die SAML-Metadaten für ${ appName } und importiere sie hier."
       ],
+      "Google or other search engine": [
+        "Google oder andere Suchmaschine"
+      ],
       "Google Pay mark": [
         "Google Pay markieren"
       ],
@@ -10094,8 +10184,11 @@
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Wenn diese Option deaktiviert ist, können Organisationsmitglieder nur Tresore oder Einträge innerhalb der Organisation freigeben."
       ],
-      "If disabled, organization members won't be able to create secure links.": [
-        "Wenn deaktiviert, können Organisationsmitglieder keine sicheren Links erstellen."
+      "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
+        "Wenn deaktiviert, können Organisationsmitglieder keine neuen Aliase erstellen. Bestehende Aliase bleiben aktiv."
+      ],
+      "If disabled, organization members won't be able to create secure links. Previously active secure links remain valid until their expiration.": [
+        "Wenn diese Option deaktiviert ist, können Mitglieder der Organisation keine geschützen Links erstellen. Zuvor aktive geschützte Links bleiben bis zu ihrem Ablaufdatum gültig."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Wenn aktiviert, können Organisationsmitglieder neben Tresoren auch einzelne Einträge teilen."
@@ -10214,6 +10307,9 @@
       ],
       "Insert link": [
         "Link einfügen"
+      ],
+      "Instagram": [
+        "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installiere eine Länderkonfigurationsdatei, um eine Verbindung zu einem zufälligen Server in dem Land deiner Wahl herzustellen."
@@ -10516,6 +10612,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Neue VPN-Verbindungsdaten werden nicht mehr gesammelt und angezeigt."
       ],
+      "News or media article": [
+        "Nachrichten oder Medienartikel"
+      ],
       "Next billing date": [
         "Nächstes Abrechnungsdatum"
       ],
@@ -10606,6 +10705,9 @@
       "Open source": [
         "Quelloffen"
       ],
+      "Open the Extensions menu": [
+        "Öffne das Erweiterungen-Menü"
+      ],
       "Open the guide for recommended actions and helpful links.": [
         "Öffne die Anleitung für empfohlene Aktionen und hilfreiche Links."
       ],
@@ -10640,6 +10742,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organisiere deine dedizierten Server in Gateways und entscheide, welche Mitglieder darauf zugreifen können."
+      ],
+      "Other": [
+        "Sonstiges"
       ],
       "Other accounts": [
         "Andere Konten"
@@ -10710,6 +10815,9 @@
       "Phone number": [
         "Telefonnummer"
       ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Hefte ${ PASS_APP_NAME } an deine Symbolleiste an"
+      ],
       "Please add a password for the user on row": [
         "Bitte füge ein Passwort für den Benutzer in der folgenden Zeile hinzu:",
         "Bitte füge Passwörter für die Benutzer in den folgenden Zeilen hinzu:"
@@ -10754,11 +10862,17 @@
       "Please open the document to view it.": [
         "Bitte öffne das Dokument, um es anzusehen."
       ],
+      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
+        "Bitte öffne die Einstellungen deiner Browser-Erweiterung und erlaube der ${ PASS_APP_NAME }-Erweiterung, auf Website-Daten zuzugreifen. Lade dann diese Seite neu."
+      ],
       "Please select the folders you would like to import:": [
         "Bitte die zu importierenden Ordner auswählen:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Bitte wähle die Art des einzufügenden Links aus und fülle alle Felder aus."
+      ],
+      "Please specify...": [
+        "Bitte präzisieren ..."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Bitte versuche es mit einer anderen Zahlungsmethode erneut oder kontaktiere deine Bank."
@@ -10777,6 +10891,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus‐ oder Visionary‐Abonnement benötigt"
+      ],
+      "Podcast": [
+        "Podcast"
       ],
       "Preference saved": [
         "Einstellung gespeichert"
@@ -10804,6 +10921,9 @@
       ],
       "Private AI assistant": [
         "Privater KI-Assistent"
+      ],
+      "Product reviews, rankings, or guides": [
+        "Produktbewertungen, Ranglisten oder Leitfäden"
       ],
       "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
         "Schütze dein Konto vor Quantencomputer-Bedrohungen mit quantenresistenten kryptografischen Schlüsseln."
@@ -10858,6 +10978,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Wiederherstellungsphrase ist nicht an einen veralteten Schlüssel gebunden."
+      ],
+      "Reddit": [
+        "Reddit"
       ],
       "Referral link copied to your clipboard": [
         "Empfehlungslink wurde in die Zwischenablage kopiert"
@@ -11028,6 +11151,9 @@
       "Sign in only": [
         "Nur anmelden"
       ],
+      "Sign in or create an account to continue.": [
+        "Melde dich an oder erstelle ein Konto, um fortzufahren."
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Melde dich bei ${ MAIL_APP_NAME } an, um deine Adresse zu aktivieren"
       ],
@@ -11074,6 +11200,12 @@
         "Schritt ${ step }",
         "Schritt ${ step }"
       ],
+      "Step 1 of 2": [
+        "Schritt 1 von 2"
+      ],
+      "Step 2 of 2": [
+        "Schritt 2 von 2"
+      ],
       "Storage allocated to other users in this organisation": [
         "Speicherplatz, der anderen Benutzern in dieser Organisation zugewiesen ist"
       ],
@@ -11088,6 +11220,9 @@
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Bewahre das Passwort und die Datei an einem sicheren Ort auf. Du benötigst sie erneut, um deinen Schlüssel zu importieren."
+      ],
+      "Submit": [
+        "Senden"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
@@ -11159,6 +11294,9 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Vielen Dank für die Unterstützung unserer Mission, ein besseres Internet zu schaffen, in dem Privatsphäre und Freiheit an erster Stelle stehen."
       ],
+      "Thanks for the feedback!": [
+        "Vielen Dank für dein Feedback!"
+      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Die Meldung ${ boldDataLocked } wird nicht mehr angezeigt, aber du kannst deine Daten weiterhin unter ${ encryptionAndKeysLink } entsperren."
       ],
@@ -11218,6 +11356,9 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Der Name wird für deine Benutzer sichtbar sein, solange sie angemeldet sind."
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
+        "Die Gutschrift für die Empfehlung wird bis zu zwei Monate nach Ende der Testphase der von dir empfohlenen Person gutgeschrieben, sofern diese einen Tarif abgeschlossen hat."
       ],
       "The securest way to browse, stream, and be online.": [
         "Die sicherste Art, zu surfen, zu streamen und online zu sein."
@@ -11368,6 +11509,9 @@
       ],
       "This will wipe all logs for your organization members.": [
         "Dadurch werden alle Protokolle für die Mitglieder deiner Organisation gelöscht."
+      ],
+      "TikTok": [
+        "TikTok"
       ],
       "to ${ product } Business": [
         "bei ${ product } Business"
@@ -11597,6 +11741,9 @@
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Bestätige deine Identität mit einem zeitbasierten Einmal-Passwort über eine Authenticator App."
       ],
+      "Verifying ${ PASS_APP_NAME } browser extension...": [
+        "Überprüfung der ${ PASS_APP_NAME }-Browsererweiterung..."
+      ],
       "Verifying your payment": [
         "Deine Zahlung wird verifiziert"
       ],
@@ -11788,6 +11935,9 @@
       ],
       "Writing assistant": [
         "Schreibassistent"
+      ],
+      "X": [
+        "𝕏"
       ],
       "Yearly": [
         "Jährlich"
@@ -12008,6 +12158,15 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Verschlüsselte Daten können mit den heruntergeladenen Wiederherstellungsdateien nicht wiederhergestellt werden. Dadurch wird auch die gerätebasierte Wiederherstellung deaktiviert."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Du erhältst eine Gutschrift von einem Monat, nachdem die von dir geworbene Person ein Jahresabo abgeschlossen hat, und von zwei Monaten, nachdem sie ein Monatsabo abgeschlossen hat."
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "Du erhältst die Gutschrift einen Monat nach Ende der Testphase der geworbenen Person."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "Du erhältst deine Gutschrift zwei Monate nach Ablauf der Testphase der geworbenen Person."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Du erhältst dann aller ${ renewCycle } Monat eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich.",
         "Du erhältst dann aller ${ renewCycle } Monate eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich."
@@ -12128,6 +12287,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Deine Testversion endet in ${ timeRemaining }."
+      ],
+      "YouTube": [
+        "YouTube"
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Du verlierst auch den Zugang zu den Funktionen von ${ boldPlanTitle }:"
@@ -12833,6 +12995,9 @@
       ],
       "Allow": [
         "Zugelassen"
+      ],
+      "Allow alias creation": [
+        "Alias-Erstellung zulassen"
       ],
       "Allow all users to create vaults": [
         "Allen Benutzern das Anlegen von Tresoren erlauben"
@@ -14838,7 +15003,7 @@
         "Ende-zu-Ende-verschlüsselte Bildschirmfreigabe und temporärer Chat während des Anrufs"
       ],
       "Meeting recording": [
-        "Besprechung aufzeichnen"
+        "Meeting wird aufgezeichnet"
       ],
       "One active meeting at a time": [
         "Ein aktives Meeting gleichzeitig"
@@ -17783,6 +17948,9 @@
       "Got it": [
         "Verstanden"
       ],
+      "I'm purchasing as a business": [
+        "Ich kaufe als Unternehmen"
+      ],
       "Including ${ rate }% tax": [
         "Einschließlich ${ rate } % Steuern"
       ],
@@ -17872,9 +18040,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Diese Aktion erweitert dein bestehendes Abonnement. Dir werden nur die neuen Ergänzungen für die verbleibende Zeit des aktuellen Abrechnungszeitraums in Rechnung gestellt. Das Verlängerungsdatum deines Abonnements wird nicht geändert."
-      ],
-      "This number will be shown on all future invoices": [
-        "Diese Nummer wird auf allen zukünftigen Rechnungen angezeigt."
       ],
       "This offer is not available with your current plan.": [
         "Dieses Angebot ist mit deinem aktuellen Abonnement nicht verfügbar."
@@ -18101,6 +18266,9 @@
       "Confirm": [
         "Bestätigen"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "domain.com": [
         "beispiel.de"
       ],
@@ -18178,6 +18346,9 @@
       ],
       "Printer": [
         "Drucker"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Suchen"
@@ -18472,6 +18643,101 @@
       ],
       "Unknown": [
         "Unbekannt"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Angebot nicht erneut anzeigen"
+      ],
+      "Get the deal": [
+        "Deal sichern"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/Monat"
+      ],
+      "15 GB storage": [
+        "15 GB Speicher"
+      ],
+      "2 TB data storage": [
+        "2 TB Datenspeicher"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB Speicher: 40-mal dein aktuelles Abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB Datenspeicher"
+      ],
+      "500 GB storage": [
+        "500 GB Speicher"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Auf über 15.000 Server in mehr als 120 Ländern zugreifen"
+      ],
+      "Access advanced AI models": [
+        "Auf erweiterte KI-Modelle zugreifen"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Alle Premium-Funktionen von Mail, Pass, Drive, VPN und Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blockiere Werbung, Tracker und Malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Integrierter 2FA-Authentifikator"
+      ],
+      "Connect 10 devices at once": [
+        "Verbinde 10 Geräte gleichzeitig"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte basieren auf den monatlichen Standardpreisen. Dein Abonnement wird am Ende des Abrechnungszeitraums zum jährlichen Standardtarif verlängert."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Voller Zugriff auf ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Vollständiger Chatverlauf mit einfacher Suche und Favoriten"
+      ],
+      "Individual accounts for 6 users": [
+        "Eigene Konten für 6 Benutzer"
+      ],
+      "Individual accounts for you and a partner": [
+        "Eigene Konten für dich und einen Partner"
+      ],
+      "Online document editor": [
+        "Online-Dokumenteneditor"
+      ],
+      "Recover previous file versions": [
+        "Stelle frühere Dateiversionen wieder her"
+      ],
+      "Stronger protection against cyber threats": [
+        "Stärkerer Schutz vor Cyber-Bedrohungen"
+      ],
+      "Unlimited daily chats": [
+        "Unbegrenzte tägliche Chats"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Unbegrenzte Hide-my-email-Aliasse"
+      ],
+      "Use your own email domain": [
+        "Nutze deine eigene E-Mail-Domain"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "ein Schmetterling"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "für 12 Monate"
+      ],
+      "SPRING SALE": [
+        "FRÜHLINGS-SALE"
       ]
     },
     "Recovery Email": {
@@ -22170,6 +22436,9 @@
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
+      "${ PASS_APP_NAME } is missing permissions": [
+        "${ PASS_APP_NAME } fehlen Berechtigungen"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME }-Monitor-Bericht"
       ],
@@ -22498,6 +22767,9 @@
       "Connect to video conferencing": [
         "Mit Videokonferenzen verbinden"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME }-Konto verbinden"
+      ],
       "Connect your custom domain": [
         "Verbinde deine eigene Domain"
       ],
@@ -22621,6 +22893,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "Tauche in VPN Blogposts ein"
+      ],
+      "Delete ${ name }?": [
+        "${ name } löschen?"
       ],
       "Delete ${ value }": [
         "${ value } löschen"
@@ -22990,6 +23265,9 @@
       "Home": [
         "Startseite"
       ],
+      "How did you find out about us?": [
+        "Wie bist du auf uns aufmerksam geworden?"
+      ],
       "How to choose a good logo": [
         "Wie man ein gutes Logo auswählt"
       ],
@@ -23245,6 +23523,9 @@
       ],
       "Photos": [
         "Fotos"
+      ],
+      "Pin the extension": [
+        "Erweiterung anheften"
       ],
       "Policies": [
         "Richtlinien"
@@ -23513,6 +23794,9 @@
       "Special Offer": [
         "Sonderangebot"
       ],
+      "Spring Sale": [
+        "Frühlingsangebot"
+      ],
       "Start a new import": [
         "Neuer Importvorgang"
       ],
@@ -23708,6 +23992,9 @@
       ],
       "Welcome to ${ planName }": [
         "Willkommen bei ${ planName }"
+      ],
+      "Welcome to your new password manager!": [
+        "Willkommen bei deinem neuen Passwort-Manager!"
       ],
       "What is an alias?": [
         "Was ist ein Alias?"
@@ -24883,6 +25170,12 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Wenn du diese Telefonnummer löschst, kannst du dein Konto nicht mehr wiederherstellen."
       ],
+      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
+        "Anmeldung fehlgeschlagen. Bitte öffne die ${ PASS_APP_NAME }-Browser-Erweiterung und melde dich von dort an."
+      ],
+      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
+        "Registrierung nicht möglich. Bitte öffne die ${ PASS_APP_NAME }-Browser-Erweiterung und registriere dich dort."
+      ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Wenn du diesen Import abbrichst, wirst du ihn nicht mehr fortsetzen können. ${ BRAND_NAME } hat jeglichen Fortschritt in deinem Konto gespeichert. Trotzdem abbrechen?"
       ],
@@ -24909,6 +25202,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Server in diesem Gateway treten in eine 10-tägige Deaktivierungsphase ein. Diese Server können einem neuen Gateway hinzugefügt werden, aber ihr Land kann nicht geändert werden."
       ],
       "Skip verification?": [
         "Überprüfung überspringen?"

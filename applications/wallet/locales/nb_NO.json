@@ -2272,6 +2272,9 @@
       "Checkout expired, please try again": [
         "Utsjekkingen utløpt. Prøv igjen."
       ],
+      "Company name or personal name is required": [
+        "Firmanavn eller personnavn er obligatorisk"
+      ],
       "Contact could not be saved": [
         "Kontakten kunne ikke lagres."
       ],
@@ -2314,11 +2317,11 @@
       "Invalid postal code": [
         "Ugyldig postnummer"
       ],
+      "Invalid VAT number": [
+        "Ugyldig MVA-nummer"
+      ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
-      ],
-      "Invalid ZIP code": [
-        "Ugyldig postnummer"
       ],
       "Not a valid number": [
         "Ikke et gyldig tall"
@@ -2340,6 +2343,9 @@
       ],
       "Payment process not supported": [
         "Betalingsprosess støttes ikke"
+      ],
+      "Please complete the billing details": [
+        "Fyll ut faktureringsdetaljene"
       ],
       "Please enter a valid postal code": [
         "Skriv inn et gyldig postnummer"
@@ -2401,6 +2407,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette feltet overskrider maksimalt tillatt ${ maximumLength } tegn."
       ],
+      "This field is invalid": [
+        "Dette feltet er ugyldig"
+      ],
       "This field is required": [
         "Dette feltet er obligatorisk"
       ],
@@ -2424,6 +2433,9 @@
       ],
       "Username must end with a letter or digit": [
         "Brukernavn må ende med en bokstav eller ett tall"
+      ],
+      "Wrong billing address": [
+        "Feil faktureringsadresse"
       ],
       "ZIP code is required": [
         "Postnummer kreves"
@@ -4614,6 +4626,9 @@
       "Got it": [
         "Skjønner"
       ],
+      "I'm purchasing as a business": [
+        "Jeg kjøper som en bedrift."
+      ],
       "Including ${ rate }% tax": [
         "Inkludert ${ rate }% MVA"
       ],
@@ -4685,9 +4700,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Denne handlingen utvider det eksisterende abonnementet. Du vil kun bli belastet for de nye tilleggene og den gjenværende tiden av den nåværende faktureringssyklusen. Fornyelsesdatoen for abonnementet ditt vil ikke bli endret."
-      ],
-      "This number will be shown on all future invoices": [
-        "Dette nummeret vil bli vist på alle fremtidige fakturaer"
       ],
       "This offer is not available with your current plan.": [
         "Dette tilbudet er ikke tilgjengelig med din nåværende plan."
@@ -4853,6 +4865,9 @@
       "Confirm passphrase or leave empty": [
         "Bekreft passfrasen eller la stå tom"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "F.eks. "
       ],
@@ -4879,6 +4894,9 @@
       ],
       "Postal code": [
         "Postnummer"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Søk"
@@ -5576,6 +5594,9 @@
       ],
       "Simplify password management": [
         "Forenkle passordadministrasjon"
+      ],
+      "Spring Sale": [
+        "Vårsalg"
       ],
       "Summary": [
         "Sammendrag"

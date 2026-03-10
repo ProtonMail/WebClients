@@ -5,11 +5,17 @@
   },
   "contexts": {
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "\"Herstarten en direct profileren\" start de app onmiddellijk opnieuw op en maakt een profiel van het opstarten aan.\n\n\"Profileer bij volgende lancering\" profileert de volgende keer dat u de app opent. Gebruik dit om de opstartsnelheid na een herstart te meten."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "Over ${ MAIL_APP_NAME }"
       ],
       "Actual Size": [
         "Ware grootte"
+      ],
+      "Cancel": [
+        "Annuleren"
       ],
       "Check spelling while typing": [
         "Controleer de spelling tijden het typen"
@@ -19,6 +25,9 @@
       ],
       "Close Window": [
         "Venster sluiten"
+      ],
+      "Collect startup performance data": [
+        "Opstart prestatiegegevens verzamelen"
       ],
       "Copy": [
         "Kopiëren"
@@ -47,6 +56,12 @@
       "Paste and Match Style": [
         "Plakken en stijl aanpassen"
       ],
+      "Profile app startup": [
+        "Profileer app opstart"
+      ],
+      "Profile on next launch": [
+        "Profileer bij volgende lancering"
+      ],
       "Quit": [
         "Afsluiten"
       ],
@@ -58,6 +73,9 @@
       ],
       "Reload": [
         "Opnieuw laden"
+      ],
+      "Restart and profile now": [
+        "Herstarten en direct profileren"
       ],
       "Select All": [
         "Alles selecteren"
@@ -79,6 +97,9 @@
       ],
       "Stop Speaking": [
         "Stop met spreken"
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "Dit meet hoe lang de app erover doet om te starten en slaat een rapport op in uw logs folder."
       ],
       "Toggle Full Screen": [
         "Volledig scherm in-/uitschakelen"

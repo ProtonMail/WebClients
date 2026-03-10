@@ -4549,6 +4549,9 @@
         "Velg en dato i løpet av ${ n } dag.",
         "Velg en dato i løpet av de neste ${ n } dagene."
       ],
+      "Company name or personal name is required": [
+        "Firmanavn eller personnavn er obligatorisk"
+      ],
       "Condition incomplete": [
         "Betingelse ufullstendig"
       ],
@@ -4701,11 +4704,11 @@
       "Invalid public key file": [
         "Ugyldig offentlig nøkkelfil"
       ],
+      "Invalid VAT number": [
+        "Ugyldig MVA-nummer"
+      ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
-      ],
-      "Invalid ZIP code": [
-        "Ugyldig postnummer"
       ],
       "Item content cannot exceed 40KB": [
         "Elementinnhold kan ikke overskride 40KB"
@@ -4808,6 +4811,9 @@
       ],
       "Please activate your search again": [
         "Aktiver søket ditt på nytt"
+      ],
+      "Please complete the billing details": [
+        "Fyll ut faktureringsdetaljene"
       ],
       "Please enter a valid postal code": [
         "Skriv inn et gyldig postnummer"
@@ -5016,6 +5022,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette feltet overskrider maksimalt tillatt ${ maximumLength } tegn."
       ],
+      "This field is invalid": [
+        "Dette feltet er ugyldig"
+      ],
       "This field is required": [
         "Dette feltet er obligatorisk"
       ],
@@ -5066,6 +5075,9 @@
       ],
       "Username must end with a letter or digit": [
         "Brukernavn må ende med en bokstav eller ett tall"
+      ],
+      "Wrong billing address": [
+        "Feil faktureringsadresse"
       ],
       "Wrong password": [
         "Feil passord"
@@ -8779,6 +8791,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Du skrev \"${ attachmentsFoundKeyword }\", men ingen vedlegg er lagt til. Ønsker du uansett å sende meldingen?"
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Du mottar kredittbelønningen én måned etter at vennen din abonnerer på en årsplan, og to måneder etter at de abonnerer på en månedlig plan."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Du vil da bli fakturert hver ${ renewCycle } måned for ${ renewAmountStr }. Du kan avbryte når som helst.",
         "Du vil da bli fakturert hver ${ renewCycle } måned for ${ renewAmountStr }. Du kan avbryte når som helst."
@@ -9454,6 +9469,9 @@
       "Emails (last 3 months)": [
         "E-poster (siste 3 måneder)"
       ],
+      "Emails (last 6 months)": [
+        "E-poster (siste 6 måneder)"
+      ],
       "Emails (last month)": [
         "E-poster (siste måned)"
       ],
@@ -9594,6 +9612,9 @@
       ],
       "Last 3 months only": [
         "Kun siste 3 måneder"
+      ],
+      "Last 6 months only": [
+        "Kun siste 6 måneder"
       ],
       "Last month only": [
         "Kun siste måned"
@@ -12251,6 +12272,9 @@
       "Got it": [
         "Skjønner"
       ],
+      "I'm purchasing as a business": [
+        "Jeg kjøper som en bedrift."
+      ],
       "Including ${ rate }% tax": [
         "Inkludert ${ rate }% MVA"
       ],
@@ -12322,9 +12346,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Denne handlingen utvider det eksisterende abonnementet. Du vil kun bli belastet for de nye tilleggene og den gjenværende tiden av den nåværende faktureringssyklusen. Fornyelsesdatoen for abonnementet ditt vil ikke bli endret."
-      ],
-      "This number will be shown on all future invoices": [
-        "Dette nummeret vil bli vist på alle fremtidige fakturaer"
       ],
       "This offer is not available with your current plan.": [
         "Dette tilbudet er ikke tilgjengelig med din nåværende plan."
@@ -12517,6 +12538,9 @@
       "Company name": [
         "Foretaksnavn"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "Describe what to change": [
         "Beskriv hva som skal endres"
       ],
@@ -12600,6 +12624,9 @@
       ],
       "Postal code": [
         "Postnummer"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search date, name, email address, or subject line": [
         "Søk dato, navn, e-postadresse eller emnelinje"
@@ -12779,6 +12806,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Offisiell e-post fra ${ BRAND_NAME }"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Ikke vis dette tilbudet igjen"
+      ],
+      "Get the deal": [
+        "Benytt deg av tilbudet"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "15 GB storage": [
+        "15 GB lagringsplass"
+      ],
+      "2 TB data storage": [
+        "2 TB datalagring"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagring: 40 ganger ditt nåværende abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB datalagring"
+      ],
+      "500 GB storage": [
+        "500 GB lagringsplass"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Tilgang til 15 000+ servere i 120+ land"
+      ],
+      "Access advanced AI models": [
+        "Tilgang til avanserte KI-modeller"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Alle premiumfunksjonene i Mail, Pass, Drive, VPN og Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokker annonser, sporere og skadelig programvare"
+      ],
+      "Built-in 2FA authenticator": [
+        "Innebygd 2FA-autentisering"
+      ],
+      "Connect 10 devices at once": [
+        "Koble til 10 enheter samtidig"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter er basert på standard månedspris. Abonnementet ditt fornyes til standard årspris når faktureringssyklusen utløper."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Full tilgang til ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Full chatlogg med enkelt søk og favoritter"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuelle kontoer for 6 brukere"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuelle kontoer for deg og en partner"
+      ],
+      "Online document editor": [
+        "Dokumentredigerer på nett"
+      ],
+      "Recover previous file versions": [
+        "Gjenopprett tidligere filversjoner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Sterkere beskyttelse mot cybertrusler"
+      ],
+      "Unlimited daily chats": [
+        "Ubegrenset antall daglige chatter"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ubegrensede mapper, etiketter og filtre"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Ubegrenset antall hide-my-email-aliaser"
+      ],
+      "Use your own email domain": [
+        "Bruk ditt eget e-postdomene"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "en sommerfugl"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "i 12 måneder"
+      ],
+      "SPRING SALE": [
+        "VÅRSALG"
       ]
     },
     "Received email icon": {
@@ -15583,6 +15705,9 @@
       ],
       "Sort messages": [
         "Sorter meldinger"
+      ],
+      "Spring Sale": [
+        "Vårsalg"
       ],
       "Start a new import": [
         "Start en ny import"

@@ -2670,6 +2670,9 @@
       "North Korea": [
         "Corea del Norte"
       ],
+      "North Macedonia": [
+        "Macedonia del Norte"
+      ],
       "Northern Mariana Islands": [
         "Islas Marianas del Norte"
       ],
@@ -3140,6 +3143,9 @@
       "Checkout expired, please try again": [
         "La compra ha expirado. Inténtalo de nuevo."
       ],
+      "Company name or personal name is required": [
+        "Se requiere el nombre de la empresa o el nombre personal"
+      ],
       "Domain not available, try again later": [
         "Dominio no disponible. Inténtalo de nuevo más tarde."
       ],
@@ -3176,11 +3182,11 @@
       "Invalid postal code": [
         "Código postal no válido"
       ],
+      "Invalid VAT number": [
+        "Número de IVA incorrecto"
+      ],
       "Invalid verification code": [
         "Código de verificación no válido"
-      ],
-      "Invalid ZIP code": [
-        "Código postal inválido"
       ],
       "Not a valid number": [
         "No es un número válido."
@@ -3202,6 +3208,9 @@
       ],
       "Payment process not supported": [
         "Proceso de pago no soportado"
+      ],
+      "Please complete the billing details": [
+        "Completa los detalles de facturación"
       ],
       "Please enter a valid postal code": [
         "Por favor, introduzca un código postal válido"
@@ -3260,6 +3269,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
+      "This field is invalid": [
+        "Este campo no es válido"
+      ],
       "This field is required": [
         "Este campo es obligatorio."
       ],
@@ -3283,6 +3295,9 @@
       ],
       "Username must end with a letter or digit": [
         "El nombre de usuario debe terminar con una letra o un número."
+      ],
+      "Wrong billing address": [
+        "Dirección de facturación incorrecta"
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
@@ -5459,6 +5474,9 @@
       "Got it": [
         "Entiendo"
       ],
+      "I'm purchasing as a business": [
+        "Estoy comprando como empresa"
+      ],
       "Including ${ rate }% tax": [
         "Incluye un ${ rate }% de impuestos"
       ],
@@ -5530,9 +5548,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Esta acción amplía la suscripción existente. Se te cobrará solo por los nuevos complementos y el tiempo restante del ciclo de facturación actual. La fecha de renovación de tu suscripción no cambiará."
-      ],
-      "This number will be shown on all future invoices": [
-        "Este número se mostrará en todas las futuras facturas"
       ],
       "This offer is not available with your current plan.": [
         "Esta oferta no está disponible con tu plan actual."
@@ -5695,6 +5710,9 @@
       "Company name": [
         "Nombre de la empresa"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "Enter a new folder name": [
         "Introduce un nombre nuevo para la carpeta."
       ],
@@ -5715,6 +5733,9 @@
       ],
       "Postal code": [
         "Código postal"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search parent folder": [
         "Buscar en la carpeta principal"
@@ -5775,6 +5796,101 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Mejorar a ${ upsellPlanTitle }"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "No volver a mostrar esta oferta"
+      ],
+      "Get the deal": [
+        "Aprovecha la oferta"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/mes"
+      ],
+      "15 GB storage": [
+        "15 GB de almacenamiento"
+      ],
+      "2 TB data storage": [
+        "2 TB de almacenamiento de datos"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces tu plan actual"
+      ],
+      "3 TB data storage": [
+        "3 TB de almacenamiento de datos"
+      ],
+      "500 GB storage": [
+        "500 GB de almacenamiento"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accede a más de 15 000 servidores en más de 120 países"
+      ],
+      "Access advanced AI models": [
+        "Accede a modelos de IA avanzados"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Todas las funciones prémium de Mail, Pass, Drive, VPN y calendario"
+      ],
+      "Block ads, trackers, and malware": [
+        "Bloquea anuncios, rastreadores y malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador de 2FA integrado"
+      ],
+      "Connect 10 devices at once": [
+        "Conecta 10 dispositivos a la vez"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en el precio mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Acceso completo a ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Historial de chat completo con búsqueda sencilla y favoritos"
+      ],
+      "Individual accounts for 6 users": [
+        "Cuentas individuales para 6 usuarios"
+      ],
+      "Individual accounts for you and a partner": [
+        "Cuentas individuales para ti y otra persona"
+      ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
+      "Recover previous file versions": [
+        "Recupera las versiones previas de los archivos"
+      ],
+      "Stronger protection against cyber threats": [
+        "Mayor protección contra las ciberamenazas"
+      ],
+      "Unlimited daily chats": [
+        "Chats diarios ilimitados"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Alias ilimitados de hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Usa tu propio dominio de correo electrónico"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "una mariposa"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "durante 12 meses"
+      ],
+      "SPRING SALE": [
+        "OFERTA DE PRIMAVERA"
       ]
     },
     "Safety review": {
@@ -6463,6 +6579,9 @@
       ],
       "Simplify password management": [
         "Simplifica la gestión de contraseñas"
+      ],
+      "Spring Sale": [
+        "Oferta de primavera"
       ],
       "Summary": [
         "Resumen"

@@ -5,11 +5,17 @@
   },
   "contexts": {
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "\"Yeniden başlat ve profil çıkar\" seçeneği uygulamayı hemen yeniden başlatır ve bir başlangıç profili çıkarır.\n\n\"Bir sonraki açılışta profil çıkar\" seçeneği ise uygulamayı bir sonraki açışınızda profil çıkarır. Bunu aygıtı yeniden başlattıktan sonraki açılış hızını ölçmek için kullanın."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } hakkında"
       ],
       "Actual Size": [
         "Gerçek boyut"
+      ],
+      "Cancel": [
+        "İptal"
       ],
       "Check spelling while typing": [
         "Yazarken yazım denetimi yapılsın"
@@ -19,6 +25,9 @@
       ],
       "Close Window": [
         "Pencereyi kapat"
+      ],
+      "Collect startup performance data": [
+        "Başlangıç başarımı verilerini topla"
       ],
       "Copy": [
         "Kopyala"
@@ -47,6 +56,12 @@
       "Paste and Match Style": [
         "Yapıştır ve biçeme uy"
       ],
+      "Profile app startup": [
+        "Uygulama başlangıcı profilini çıkar"
+      ],
+      "Profile on next launch": [
+        "Bir sonraki açılışta profil çıkar"
+      ],
       "Quit": [
         "Çık"
       ],
@@ -58,6 +73,9 @@
       ],
       "Reload": [
         "Yeniden yükle"
+      ],
+      "Restart and profile now": [
+        "Yeniden başlat ve profil çıkar"
       ],
       "Select All": [
         "Tümünü seç"
@@ -79,6 +97,9 @@
       ],
       "Stop Speaking": [
         "Konuşmayı durdur"
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "Bu işlem uygulamanın açılış süresini ölçer ve raporu logs klasörünüze kaydeder."
       ],
       "Toggle Full Screen": [
         "Tam ekranı aç/kapat"

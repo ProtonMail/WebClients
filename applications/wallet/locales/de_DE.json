@@ -2272,6 +2272,9 @@
       "Checkout expired, please try again": [
         "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal."
       ],
+      "Company name or personal name is required": [
+        "Firmenname oder Name der Person erforderlich"
+      ],
       "Contact could not be saved": [
         "Der Kontakt konnte nicht gespeichert werden"
       ],
@@ -2314,11 +2317,11 @@
       "Invalid postal code": [
         "Ungültige Postleitzahl"
       ],
+      "Invalid VAT number": [
+        "Ungültige USt-IdNr."
+      ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
-      ],
-      "Invalid ZIP code": [
-        "Ungültige Postleitzahl"
       ],
       "Not a valid number": [
         "Keine gültige Zahl"
@@ -2340,6 +2343,9 @@
       ],
       "Payment process not supported": [
         "Bezahlvorgang nicht unterstützt"
+      ],
+      "Please complete the billing details": [
+        "Bitte die Rechnungsdaten eintragen"
       ],
       "Please enter a valid postal code": [
         "Bitte gib eine gültige Postleitzahl ein"
@@ -2401,6 +2407,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
       ],
+      "This field is invalid": [
+        "Dieses Feld ist ungültig"
+      ],
       "This field is required": [
         "Pflichtfeld"
       ],
@@ -2424,6 +2433,9 @@
       ],
       "Username must end with a letter or digit": [
         "Der Benutzername muss mit einem Buchstaben oder einer Ziffer enden."
+      ],
+      "Wrong billing address": [
+        "Ungültige Rechnungsadresse"
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
@@ -3577,7 +3589,7 @@
         "Ende-zu-Ende-verschlüsselte Bildschirmfreigabe und temporärer Chat während des Anrufs"
       ],
       "Meeting recording": [
-        "Besprechung aufzeichnen"
+        "Meeting wird aufgezeichnet"
       ],
       "One active meeting at a time": [
         "Ein aktives Meeting gleichzeitig"
@@ -4614,6 +4626,9 @@
       "Got it": [
         "Verstanden"
       ],
+      "I'm purchasing as a business": [
+        "Ich kaufe als Unternehmen"
+      ],
       "Including ${ rate }% tax": [
         "Einschließlich ${ rate } % Steuern"
       ],
@@ -4685,9 +4700,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Diese Aktion erweitert dein bestehendes Abonnement. Dir werden nur die neuen Ergänzungen für die verbleibende Zeit des aktuellen Abrechnungszeitraums in Rechnung gestellt. Das Verlängerungsdatum deines Abonnements wird nicht geändert."
-      ],
-      "This number will be shown on all future invoices": [
-        "Diese Nummer wird auf allen zukünftigen Rechnungen angezeigt."
       ],
       "This offer is not available with your current plan.": [
         "Dieses Angebot ist mit deinem aktuellen Abonnement nicht verfügbar."
@@ -4853,6 +4865,9 @@
       "Confirm passphrase or leave empty": [
         "Passphrase bestätigen oder leer lassen"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Z. B. "
       ],
@@ -4879,6 +4894,9 @@
       ],
       "Postal code": [
         "Postleitzahl"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Suchen"
@@ -5576,6 +5594,9 @@
       ],
       "Simplify password management": [
         "Vereinfache die Passwortverwaltung"
+      ],
+      "Spring Sale": [
+        "Frühlingsangebot"
       ],
       "Summary": [
         "Zusammenfassung"

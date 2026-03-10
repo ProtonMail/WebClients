@@ -2985,9 +2985,6 @@
       "Invalid verification code": [
         "Nesprávny overovací kód"
       ],
-      "Invalid ZIP code": [
-        "Neplatné PSČ"
-      ],
       "Item content cannot exceed 40KB": [
         "Obsah položky nesmie presiahnuť 40KB"
       ],
@@ -3186,6 +3183,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
       ],
+      "This field is invalid": [
+        "Toto pole je neplatné"
+      ],
       "This field is required": [
         "Povinné pole"
       ],
@@ -3239,6 +3239,9 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Tento súbor sa nepodarilo importovať do aplikácie ${ SHEETS_APP_NAME }. Môžete skúsiť skopírovať a vložiť obsah do nového dokumentu ${ SHEETS_APP_NAME }."
+      ],
+      "Wrong billing address": [
+        "Nesprávna fakturačná adresa"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Email nemôžete odoslať viac ako ${ maxContacts } príjemcovi",
@@ -4460,6 +4463,9 @@
       "Converting document...": [
         "Konverzia dokumentu..."
       ],
+      "Copied to clipboard": [
+        "Skopírované do schránky"
+      ],
       "Copy the link to clipboard": [
         "Skopírovať odkaz do schránky"
       ],
@@ -5425,6 +5431,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nebude sa vám nič účtovať, ak službu zrušíte pred ${ trialEndsOnFormatted }."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Kreditné odmeny získate 1 mesiac po tom, ako si váš priateľ predplatí ročný plán, a 2 mesiace po tom, ako si predplatí mesačný plán."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",

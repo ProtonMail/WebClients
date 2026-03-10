@@ -1497,9 +1497,6 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } chce sdílet položku se skupinou, kterou spravujete."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } si přeje sdílet položku se skupinou ${ invitedGroup.Name }."
-      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } chce s vámi sdílet položku."
       ],
@@ -1557,11 +1554,11 @@
         "Zjištěno ${ row.breachCount } úniků informací",
         "Zjištěno ${ row.breachCount } úniků informací"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } člen)",
-        "(${ membersCount } členové)",
-        "(${ membersCount } členů)",
-        "(${ membersCount } členů)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } člen)",
+        "(${ memberCount } členové)",
+        "(${ memberCount } členů)",
+        "(${ memberCount } členů)"
       ],
       "(Empty)": [
         "(Prázdné)"
@@ -1952,9 +1949,6 @@
       ],
       "Invite successfully resent": [
         "Pozvánka byla úspěšně odeslána"
-      ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "pozve skupinu ${ invitedGroup.Name } k přístupu k položkám v"
       ],
       "invites you to access items in": [
         "vás zve k přístupu k položkám v"

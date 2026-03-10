@@ -5,11 +5,17 @@
   },
   "contexts": {
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "\"Reštartovať a profilovať teraz\" reštartue aplikáciu okamžite a zachytí profil pri spustení.\n\n„Vytvoriť profil pri ďalšom spustení“ vytvorí profil pri ďalšom otvorení aplikácie. Použite túto možnosť na meranie rýchlosti spustenia po reštarte."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "O aplikácii ${ MAIL_APP_NAME }"
       ],
       "Actual Size": [
         "Skutočná veľkosť"
+      ],
+      "Cancel": [
+        "Zrušiť"
       ],
       "Check spelling while typing": [
         "Kontrola pravopisu počas písania"
@@ -19,6 +25,9 @@
       ],
       "Close Window": [
         "Zavrieť okno"
+      ],
+      "Collect startup performance data": [
+        "Zbierajte údaje o výkone pri spúšťaní"
       ],
       "Copy": [
         "Kopírovať"
@@ -47,6 +56,12 @@
       "Paste and Match Style": [
         "Prilepiť a prispôsobiť štýl"
       ],
+      "Profile app startup": [
+        "Spustenie aplikácie Profil"
+      ],
+      "Profile on next launch": [
+        "Profil pri ďalšom spustení"
+      ],
       "Quit": [
         "Ukončiť"
       ],
@@ -58,6 +73,9 @@
       ],
       "Reload": [
         "Obnoviť"
+      ],
+      "Restart and profile now": [
+        "Reštartovať a profilovať teraz"
       ],
       "Select All": [
         "Vybrať všetko"
@@ -79,6 +97,9 @@
       ],
       "Stop Speaking": [
         "Prestať hovoriť"
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "Takto zmeriate, ako dlho trvá spustenie aplikácie a uloženie správy do priečinka s logmi."
       ],
       "Toggle Full Screen": [
         "Prepnúť na celú obrazovku"

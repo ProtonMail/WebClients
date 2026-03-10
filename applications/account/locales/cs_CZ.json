@@ -211,7 +211,7 @@
         "Zpět"
       ],
       "Back to sign in": [
-        "Zpět k přihlášení se"
+        "Zpět na přihlášení"
       ],
       "Block": [
         "Blokovat"
@@ -318,6 +318,9 @@
       "Connect to video conferencing": [
         "Připojit se k videokonferenci"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Připojte váš účet ${ BRAND_NAME }"
+      ],
       "Connected": [
         "Připojeno"
       ],
@@ -381,8 +384,14 @@
       "Create": [
         "Vytvořit"
       ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Vytvořte účet ${ BRAND_NAME }"
+      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Vytvořte odkaz ke sdílení s kýmkoli mimo ${ BRAND_NAME }"
+      ],
+      "Create an account": [
+        "Vytvořit účet"
       ],
       "Create calendar": [
         "Vytvořit kalendář"
@@ -1759,7 +1768,7 @@
         "${ LUMO_APP_NAME } AI licence"
       ],
       "${ LUMO_APP_NAME } seats": [
-        "${ LUMO_APP_NAME } licencí"
+        "Licencí ${ LUMO_APP_NAME }"
       ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
@@ -2369,7 +2378,7 @@
         "Připojte až 10 zařízení současně"
       ],
       "Full chat history with easy search and favorites": [
-        "Celá historie konverzací s snadným vyhledáváním a oblíbenými položkami"
+        "Celá historie konverzací se snadným vyhledáváním a oblíbenými položkami"
       ],
       "Individual accounts for 6 users": [
         "Individuální účty pro 6 uživatelů"
@@ -6219,7 +6228,7 @@
         "Zobrazit žádost"
       ],
       "Select recovery contact ${ name }": [
-        "Vybrat kontakt pro obnovení ${ name }"
+        "Vyberte kontakt pro obnovení ${ name }"
       ],
       "Send email request": [
         "Odeslat žádost e-mailem"
@@ -6339,7 +6348,7 @@
         "Budete upozorněni, až si někdo vyžádá nouzový přístup."
       ],
       "You will no longer be able to help ${ user } recover their data after they reset their password.": [
-        "Nebudete již moci pomoci ${ user } obnovit jejich data po resetování hesla."
+        "Nebudete již mít možnost pomoci ${ user } obnovit jejich data po tom, co resetují své heslo."
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "V případě nouze již nebudete moci požádat o přístup k účtu uživatele ${ user }."
@@ -6633,11 +6642,11 @@
       "Invalid URL": [
         "Neplatná URL"
       ],
+      "Invalid VAT number": [
+        "Neplatné DIČ"
+      ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
-      ],
-      "Invalid ZIP code": [
-        "Neplatné PSČ"
       ],
       "Item content cannot exceed 40KB": [
         "Obsah položky nemůže přesáhnout 40KB"
@@ -6938,6 +6947,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole přesahuje maximální délku ${ maximumLength } znaků."
+      ],
+      "This field is invalid": [
+        "Toto pole je neplatné"
       ],
       "This field is required": [
         "Toto pole je povinné"
@@ -9213,6 +9225,9 @@
       "(default)": [
         "(výchozí)"
       ],
+      "(eg. PCMag, TechRadar)": [
+        "(např. PCMag, TechRadar)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrování pokud jsou splněny všechny následující podmínky)"
       ],
@@ -9654,6 +9669,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Sdílením úplných údajů o události tohoto kalendáře souhlasíte s udělením přístupu ${ BRAND_NAME } k šifrovaným informacím tohoto kalendáře."
       ],
+      "Cancel": [
+        "Zrušit"
+      ],
       "Cancel anytime": [
         "Zrušit můžete kdykoli"
       ],
@@ -9680,6 +9698,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
+      ],
+      "Click the icon to open it anytime.": [
+        "Otevřete kdykoli kliknutím na ikonu."
       ],
       "Close this screen to exit.": [
         "Pro ukončení zavřete tuto obrazovku."
@@ -10169,6 +10190,9 @@
       ],
       "for choosing ${ product }": [
         "za výběr ${ product }"
+      ],
+      "For easy access to your passwords and more.": [
+        "Pro snadný přístup k heslům a dalším údajům."
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pro uživatele, kteří přecházejí na ${ MAIL_APP_NAME } z jiné e-mailové služby, vyberte kartu ${ boldAddresses } a před změnou záznamu MX přidejte všechny aktivní e-mailové adresy, aby byl zajištěn plynulý přechod."
@@ -10776,6 +10800,9 @@
       "Open source": [
         "Otevřený zdrojový kód"
       ],
+      "Open the Extensions menu": [
+        "Otevřít menu rozšíření"
+      ],
       "Open the guide for recommended actions and helpful links.": [
         "Otevřete průvodce, kde najdete doporučené kroky a užitečné odkazy."
       ],
@@ -10883,6 +10910,9 @@
       ],
       "Phone number": [
         "Telefonní číslo"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Připněte ${ PASS_APP_NAME } na panel nástrojů"
       ],
       "Please add a password for the user on row": [
         "Přidejte prosím heslo uživatele na řádku",
@@ -11208,6 +11238,9 @@
       "Sign in only": [
         "Pouze přihlášení"
       ],
+      "Sign in or create an account to continue.": [
+        "Pro pokračování se přihlaste nebo si vytvořte účet."
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Přihlaste se do ${ MAIL_APP_NAME } pro aktivaci adresy"
       ],
@@ -11499,6 +11532,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Toto ověření může trvat až jednu hodinu. Po úspěšném ověření neodebírejte záznam TXT, protože je potřebný k potvrzení, že jste nadále vlastníkem domény."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Toto smaže všechny předchozí verze vašich souborů, které jsou starší než ${ rententionLabel }."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Tímto bude přístup k **${ email }** zamítnut. Jste si jisti, že chcete pokračovat?"
       ],
@@ -11552,6 +11588,9 @@
       ],
       "This will wipe all logs for your organization members.": [
         "Tím se smažou všechny logy členů vaší organizace."
+      ],
+      "TikTok": [
+        "TikTok"
       ],
       "to ${ product } Business": [
         "do ${ product } Business"
@@ -12332,6 +12371,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše zkušební verze skončí za ${ timeRemaining }."
+      ],
+      "YouTube": [
+        "YouTube"
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Ztratíte také přístup k funkcím ${ boldPlanTitle }:"
@@ -18094,6 +18136,9 @@
       "Got it": [
         "Rozumím"
       ],
+      "I'm purchasing as a business": [
+        "Kupuji jako firma"
+      ],
       "Including ${ rate }% tax": [
         "Včetně ${ rate }% daně"
       ],
@@ -18195,9 +18240,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Tato akce rozšiřuje stávající předplatné. Budou vám účtovány pouze nové doplňky a zbývající čas aktuálního fakturačního cyklu. Datum obnovení vašeho předplatného se nezmění."
-      ],
-      "This number will be shown on all future invoices": [
-        "Toto číslo bude uvedeno na všech budoucích fakturách"
       ],
       "This offer is not available with your current plan.": [
         "Tato nabídka není s vaším aktuálním tarifem k dispozici."
@@ -18306,10 +18348,10 @@
     },
     "Payments.Renewal price dependent on VAT number": {
       "Renewal price is dependent on the billing region and ABN.": [
-        "Cena obnovení závisí na fakturační oblasti a IČ DPH."
+        "Cena za obnovení závisí na fakturační oblasti a DIČ."
       ],
       "Renewal price is dependent on the billing region and Business Number.": [
-        "Cena obnovení závisí na zemi platby a DIČ."
+        "Cena obnovení závisí na fakturační oblasti a DIČ."
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Cena za obnovení závisí na fakturační oblasti a DIČ."
@@ -18501,6 +18543,9 @@
       ],
       "Printer": [
         "Tiskárna"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Vyhledat"
@@ -18799,6 +18844,101 @@
       ],
       "Unknown": [
         "Neznámý"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Tuto nabídku již nezobrazovat"
+      ],
+      "Get the deal": [
+        "Využít nabídku"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/měsíčně"
+      ],
+      "15 GB storage": [
+        "15GB úložiště"
+      ],
+      "2 TB data storage": [
+        "2TB datové úložiště"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200GB úložiště: 40× váš současný plán"
+      ],
+      "3 TB data storage": [
+        "3TB datové úložiště"
+      ],
+      "500 GB storage": [
+        "500GB úložiště"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Přístup k 15 000+ serverům ve 120+ zemích"
+      ],
+      "Access advanced AI models": [
+        "Přístup k pokročilým modelům AI"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Všechny prémiové funkce služeb Mail, Pass, Drive, VPN a Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokování reklam, sledovacích prvků a malwaru"
+      ],
+      "Built-in 2FA authenticator": [
+        "Vestavěné 2FA ověřování"
+      ],
+      "Connect 10 devices at once": [
+        "Připojte 10 zařízení najednou"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Slevy vycházejí ze standardních měsíčních cen. Vaše předplatné se na konci fakturačního cyklu obnoví za standardní roční sazbu."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Plný přístup k ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Úplná historie konverzací se snadným vyhledáváním a oblíbenými položkami"
+      ],
+      "Individual accounts for 6 users": [
+        "Individuální účty pro 6 uživatelů"
+      ],
+      "Individual accounts for you and a partner": [
+        "Individuální účty pro vás a partnera"
+      ],
+      "Online document editor": [
+        "Online editor dokumentů"
+      ],
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnější ochrana proti kybernetickým hrozbám"
+      ],
+      "Unlimited daily chats": [
+        "Neomezený denní limit konverzací"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Neomezený počet aliasů hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Používejte svou vlastní e-mailovou doménu"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "motýl"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "na 12 měsíců"
+      ],
+      "SPRING SALE": [
+        "JARNÍ VÝPRODEJ"
       ]
     },
     "Recovery Email": {
@@ -20505,7 +20645,7 @@
         "Správce hesel pro všechna vaše zařízení"
       ],
       "Pick a service to get started.": [
-        "Vyberte si službu a začněte."
+        "Začněte výběrem služby."
       ],
       "Pick your perfect plan": [
         "Vyberte si ideální tarif"
@@ -21534,7 +21674,7 @@
         "${ trialCycleText } zdarma"
       ],
       "Bound to **${ nameToDisplay }**": [
-        "Přiřazeno organizaci **${ nameToDisplay }**"
+        "Přiřazeno k **${ nameToDisplay }**"
       ],
       "Bound to organization **${ nameToDisplay }**": [
         "Přiřazeno organizaci **${ nameToDisplay }**"
@@ -22987,6 +23127,9 @@
       "Connect to video conferencing": [
         "Připojit se k videokonferenci"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Připojte váš účet ${ BRAND_NAME }"
+      ],
       "Connect your custom domain": [
         "Připojení vlastní domény"
       ],
@@ -23112,6 +23255,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "Začtěte se do článků o VPN na blogu"
+      ],
+      "Delete ${ name }?": [
+        "Smazat ${ name }?"
       ],
       "Delete ${ value }": [
         "Smazat ${ value }"
@@ -23737,6 +23883,9 @@
       "Photos": [
         "Fotky"
       ],
+      "Pin the extension": [
+        "Připněte rozšíření"
+      ],
       "Policies": [
         "Zásady"
       ],
@@ -24201,6 +24350,9 @@
       ],
       "Welcome to ${ planName }": [
         "Vítejte v ${ planName }"
+      ],
+      "Welcome to your new password manager!": [
+        "Vítejte ve svém novém správci hesel!"
       ],
       "What is an alias?": [
         "Co je alias?"

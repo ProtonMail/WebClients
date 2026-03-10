@@ -4549,6 +4549,9 @@
         "Escolliu una data dintre d'${ n } dia.",
         "Escolliu una data dintre dels propers ${ n } dies."
       ],
+      "Company name or personal name is required": [
+        "S'ha de proporcionar el nom de l'empresa o el de la persona"
+      ],
       "Condition incomplete": [
         "La condició està incompleta"
       ],
@@ -4701,11 +4704,11 @@
       "Invalid public key file": [
         "Arxiu de clau pública invàlid"
       ],
+      "Invalid VAT number": [
+        "El número d'IVA no és vàlid"
+      ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
-      ],
-      "Invalid ZIP code": [
-        "Aquest codi postal no és vàlid"
       ],
       "Item content cannot exceed 40KB": [
         "El contingut de l'element no pot excedir 40 kB."
@@ -4808,6 +4811,9 @@
       ],
       "Please activate your search again": [
         "Activeu de nou la vostra cerca."
+      ],
+      "Please complete the billing details": [
+        "Empleneu les dades de facturació"
       ],
       "Please enter a valid postal code": [
         "Introduïu un codi postal vàlid"
@@ -5016,6 +5022,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
       ],
+      "This field is invalid": [
+        "Aquest camp no és vàlid"
+      ],
       "This field is required": [
         "Aquest camp és obligatori."
       ],
@@ -5066,6 +5075,9 @@
       ],
       "Username must end with a letter or digit": [
         "El nom d'usuari ha d'acabar amb una lletra o un dígit."
+      ],
+      "Wrong billing address": [
+        "L'adreça de facturació és incorrecta"
       ],
       "Wrong password": [
         "La contrasenya no es correcta."
@@ -8779,6 +8791,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Heu escrit \"${ attachmentsFoundKeyword }\", però no s'ha afegit cap adjunt. Voleu enviar el missatge de totes maneres?"
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Rebreu la recompensa en crèdit un mes després que el vostre amic se subscrigui a un pla anual, i dos mesos després que ho faci a un pla mensual."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment.",
         "Llavors se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment."
@@ -12257,6 +12272,9 @@
       "Got it": [
         "Fet"
       ],
+      "I'm purchasing as a business": [
+        "Estic comprant com a empresa"
+      ],
       "Including ${ rate }% tax": [
         "Inclou un impost del ${ rate }%"
       ],
@@ -12328,9 +12346,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Aquesta acció amplia la subscripció existent. Se us cobraran només els nous complements i el temps restant del cicle de facturació actual. La data de renovació de la subscripció no es modificarà."
-      ],
-      "This number will be shown on all future invoices": [
-        "Aquest número es mostrarà a totes les factures futures"
       ],
       "This offer is not available with your current plan.": [
         "Aquesta oferta no està disponible amb el pla actual."
@@ -12523,6 +12538,9 @@
       "Company name": [
         "Nom de l'empresa"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "Describe what to change": [
         "Descriviu què voleu canviar"
       ],
@@ -12606,6 +12624,9 @@
       ],
       "Postal code": [
         "Codi postal"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search date, name, email address, or subject line": [
         "Cerca data, nom, adreça de correu electrònic o línia de l'assumpte"
@@ -15589,6 +15610,9 @@
       ],
       "Sort messages": [
         "Ordena els missatges"
+      ],
+      "Spring Sale": [
+        "Rebaixes de primavera"
       ],
       "Start a new import": [
         "Inicia una nova importació"

@@ -166,17 +166,11 @@
       "Confirm all": [
         "Confirmer tout"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Connectez-vous à votre compte ${ BRAND_NAME }"
-      ],
       "Continue": [
         "Continuer"
       ],
       "Continue offline": [
         "Continuer hors-ligne"
-      ],
-      "Continue without pinning": [
-        "Continuer sans épingler"
       ],
       "Copy and close": [
         "Copier et fermer"
@@ -220,17 +214,11 @@
       "Create a ${ BRAND_NAME } account": [
         "Créer un compte ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Créer un compte ${ BRAND_NAME }"
-      ],
       "Create a new vault": [
         "Créé un coffre-fort"
       ],
       "Create alias": [
         "Créer un alias"
-      ],
-      "Create an account": [
-        "Créer un compte"
       ],
       "Create card": [
         "Créer une carte"
@@ -318,9 +306,6 @@
       ],
       "Do not suggest on this website": [
         "Ne pas faire de suggestions sur ce site internet"
-      ],
-      "Done": [
-        "Terminé"
       ],
       "Download this CSV template": [
         "Télécharger ce modèle CSV"
@@ -663,9 +648,6 @@
       ],
       "Sign back in": [
         "Se reconnecter"
-      ],
-      "Sign in": [
-        "Se connecter"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Se connecter avec ${ BRAND_NAME }"
@@ -1226,9 +1208,6 @@
       "PIN codes do not match": [
         "Les codes PIN ne correspondent pas."
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Épinglez l'extension ou sélectionnez « Continuer sans épingler »."
-      ],
       "Registration failure: ${ message }": [
         "L'enregistrement n'a pas abouti : ${ message }"
       ],
@@ -1459,8 +1438,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } souhaite partager un élément avec un groupe que vous administrez."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } souhaite partager un élément avec le groupe ${ invitedGroup.Name }."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } souhaite partager un élément avec le groupe ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } souhaite partager un élément avec vous."
@@ -1528,9 +1507,9 @@
         "Il reste ${ trialDaysLeft } jour.",
         "Il reste ${ trialDaysLeft } jours."
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } membre)",
-        "(${ membersCount } membres)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } membre)",
+        "(${ memberCount } membres)"
       ],
       "(Empty)": [
         "(Vide)"
@@ -1709,9 +1688,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Choisir une clé d'accès enregistrée pour la connexion à ${ domain }"
       ],
-      "Click the icon to open it anytime.": [
-        "Cliquez sur l'icône pour l'ouvrir à tout moment."
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "Fermez cette fenêtre pour utiliser une clé de sécurité ou un autre clé d'accès."
       ],
@@ -1880,9 +1856,6 @@
       "Follow those steps to import your data with a generic CSV:": [
         "Suivez ces étapes pour importer vos données à l'aide d'un fichier CSV générique :"
       ],
-      "For easy access to your passwords and more.": [
-        "Pour un accès facile à vos mots de passe et à d'autres informations sensibles."
-      ],
       "For security reason, your access needs to be confirmed": [
         "Pour des raisons de sécurité, votre accès doit être confirmé."
       ],
@@ -1948,8 +1921,8 @@
       "Invite successfully resent": [
         "L'invitation a été renvoyée."
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "invite le groupe ${ invitedGroup.Name } à accéder aux éléments dans"
+      "invites the group ${ name } to access items in": [
+        "invite le groupe ${ name } à accéder aux éléments dans"
       ],
       "invites you to access items in": [
         "vous invite à accéder à des éléments dans"
@@ -2047,8 +2020,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2104,9 +2076,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "L'accès en ligne à ${ PASS_APP_NAME } nécessitera un code PIN. Vous serez déconnecté après 3 tentatives n'ayant pas abouti."
       ],
-      "Open the Extensions menu": [
-        "Ouvrez le menu des extensions"
-      ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Ouvrez les paramètres Safari, recherchez ${ PASS_APP_NAME }, allez à « Autorisations » et activez les autorisations de site."
       ],
@@ -2146,9 +2115,6 @@
       ],
       "Permanently deleting selected items": [
         "Suppression définitive des éléments sélectionnés"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Épinglez ${ PASS_APP_NAME } à votre barre d'outils."
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Le code PIN a été enregistré. Utilisez-le pour débloquer ${ PASS_APP_NAME }."
@@ -2342,9 +2308,6 @@
       "See more info": [
         "Voir plus d'informations"
       ],
-      "Select an existing login or create a new one.": [
-        "Sélectionnez un identifiant existant ou créez-en un nouveau."
-      ],
       "Select destination vault": [
         "Sélectionner le coffre-fort de destination"
       ],
@@ -2383,9 +2346,6 @@
       ],
       "Shared item invitation": [
         "Invitation à un élément partagé"
-      ],
-      "Sign in or create an account to continue.": [
-        "Connectez-vous ou créez un compte pour continuer."
       ],
       "Sign in to your account": [
         "Connectez-vous à votre compte"
@@ -4409,9 +4369,6 @@
       "Confirm your email": [
         "Confirmez votre e-mail"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Connectez-vous à votre compte ${ BRAND_NAME }"
-      ],
       "Contacts": [
         "Contacts"
       ],
@@ -4670,9 +4627,6 @@
       "Permanently remove all items?": [
         "Voulez-vous retirer définitivement tous les éléments ?"
       ],
-      "Pin the extension": [
-        "Épinglez l'extension"
-      ],
       "Pinned (${ items.length })": [
         "Épinglés (${ items.length })"
       ],
@@ -4821,9 +4775,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "Bienvenue dans ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "Bienvenue dans votre nouveau gestionnaire de mots de passe"
       ],
       "What is an alias?": [
         "Qu'est-ce qu'un alias ?"

@@ -1051,6 +1051,10 @@
         "${ users } utente",
         "${ users } utenti"
       ],
+      "Subtotal for ${ cycle } month": [
+        "Subtotale per ${ cycle } mese",
+        "Subtotale per ${ cycle } mesi"
+      ],
       "Total": [
         "Totale"
       ],
@@ -2295,9 +2299,6 @@
       ],
       "Invalid verification code": [
         "Codice di verifica non valido"
-      ],
-      "Invalid ZIP code": [
-        "CAP non valido"
       ],
       "Not a valid number": [
         "Numero non valido"
@@ -4563,6 +4564,9 @@
       "Got it": [
         "Tutto chiaro"
       ],
+      "I'm purchasing as a business": [
+        "Sto acquistando come azienda"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -4616,9 +4620,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Questa azione estende l'abbonamento esistente. Ti verranno addebitati solo i nuovi add-on e il tempo rimanente del ciclo di fatturazione corrente. La data di rinnovo del tuo abbonamento non verrà modificata."
-      ],
-      "This number will be shown on all future invoices": [
-        "Questo numero sarà mostrato su tutte le fatture future"
       ],
       "This offer is not available with your current plan.": [
         "Questa offerta non è disponibile con il tuo piano attuale."

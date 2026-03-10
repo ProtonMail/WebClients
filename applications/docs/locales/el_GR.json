@@ -2949,9 +2949,6 @@
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
-      "Invalid ZIP code": [
-        "Μη έγκυρος Ταχυδρομικός Κωδικός"
-      ],
       "Item content cannot exceed 40KB": [
         "Το περιεχόμενο του στοιχείου δεν μπορεί να υπερβαίνει τα 40KB"
       ],
@@ -3140,6 +3137,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
       ],
+      "This field is invalid": [
+        "Αυτό το πεδίο δεν είναι έγκυρο"
+      ],
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
       ],
@@ -3193,6 +3193,9 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Δεν ήταν δυνατή η εισαγωγή αυτού του αρχείου στο ${ SHEETS_APP_NAME }. Μπορείτε να δοκιμάσετε να αντιγράψετε και να επικολλήσετε το περιεχόμενο σε ένα νέο ${ SHEETS_APP_NAME }."
+      ],
+      "Wrong billing address": [
+        "Λανθασμένη διεύθυνσης χρέωσης"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτη",
@@ -4336,6 +4339,9 @@
       "Converting document...": [
         "Μετατροπή εγγράφου..."
       ],
+      "Copied to clipboard": [
+        "Αντιγράφηκε στο πρόχειρο"
+      ],
       "Copy the link to clipboard": [
         "Αντιγραφή του συνδέσμου στο πρόχειρο"
       ],
@@ -5287,6 +5293,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ trialEndsOnFormatted }."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Θα λάβετε την ανταμοιβή πίστωσης 1 μήνα αφότου ο φίλος σας εγγραφεί σε ετήσιο πλάνο και 2 μήνες αφότου εγγραφεί σε μηνιαίο πλάνο."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή.",

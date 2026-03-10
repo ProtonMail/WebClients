@@ -2833,9 +2833,6 @@
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
       ],
-      "Invalid ZIP code": [
-        "Virheellinen postinumero"
-      ],
       "Item content cannot exceed 40KB": [
         "Kohteen sisällön koko ei saa ylittää 40 kt"
       ],
@@ -3024,6 +3021,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Kenttä ylittää ${ maximumLength }-merkin enimmäismäärän."
       ],
+      "This field is invalid": [
+        "Tämän kentän arvo on virheellinen"
+      ],
       "This field is required": [
         "Tämä kenttä vaaditaan"
       ],
@@ -3074,6 +3074,9 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Emme voineet tuoda tätä tiedostoa kohteeseen ${ SHEETS_APP_NAME }. Voit yrittää kopioida ja liittää sisällön uuteen ${ SHEETS_APP_NAME }-tiedostoon."
+      ],
+      "Wrong billing address": [
+        "Virheellinen laskutusosoite"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle",
@@ -4206,6 +4209,9 @@
       "Converting document...": [
         "Muunnetaan dokumenttia..."
       ],
+      "Copied to clipboard": [
+        "Kopioitu leikepöydälle"
+      ],
       "Copy the link to clipboard": [
         "Kopioi linkki leikepöydälle"
       ],
@@ -5128,6 +5134,10 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Sinua ei laskuteta, jos peruutat ennen päivää ${ trialEndsOnFormatted }"
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }. Voit peruuttaa tilauksen milloin tahansa.",
+        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }. Voit peruuttaa milloin tahansa."
+      ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Olet kieltäytymässä albumin ${ invitationName } liittymiskutsusta. Jos jatkat, et voi käyttää sitä, ellei omistaja kutsu sinua uudelleen. Haluatko varmasti jatkaa?"
       ],
@@ -5958,6 +5968,10 @@
       ]
     },
     "meet_2025: Feature": {
+      "${ n } active meeting at a time": [
+        "Enintään ${ n } kokus samanaikaisesti",
+        "Enintään ${ n } kokusta samanaikaisesti"
+      ],
       "${ n } participant": [
         "${ n } osallistuja",
         "${ n } osallistujaa"
@@ -5973,6 +5987,14 @@
       ],
       "Screen-sharing": [
         "Näytön jakaminen"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Enintään ${ n } kokous pävässä",
+        "Enintään ${ n } kokousta pävässä"
+      ],
+      "Up to ${ n } participant": [
+        "Enintää ${ n } osallistuja",
+        "Enintää ${ n } osallistujaa"
       ]
     },
     "Message": {
@@ -7823,6 +7845,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Virallinen viesti ${ BRAND_NAME }ilta"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Älä näytä tätä tarjousta uudelleen"
+      ],
+      "Get the deal": [
+        "Hyödynnä tarjous"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/kk"
+      ],
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "2 TB data storage": [
+        "2 Tt:n tiedontallennus"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 Gt tallennustilaa: 40x nykyinen tilauksesi"
+      ],
+      "3 TB data storage": [
+        "3 Tt:n tiedontallennus"
+      ],
+      "500 GB storage": [
+        "500 Gt tallennustilaa"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Käytössä yli 15 000 palvelinta yli 120 maassa"
+      ],
+      "Access advanced AI models": [
+        "Pääsy kehittyneisiin tekoälymalleihin"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Kaikki Mailin, Passin, Driven, VPN:n ja kalenterin premium-ominaisuudet"
+      ],
+      "Block ads, trackers, and malware": [
+        "Estä mainokset, seuranta ja haittaohjelmat"
+      ],
+      "Built-in 2FA authenticator": [
+        "Sisäänrakennettu 2FA-todentaja"
+      ],
+      "Connect 10 devices at once": [
+        "Yhdistä 10 laitetta kerralla"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Alennukset perustuvat normaaliin kuukausihintaan. Tilauksesi uusiutuu laskutusjakson päättyessä normaalilla vuosihinnalla."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Täysi ${ VPN_APP_NAME } -käyttöoikeus"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Täysi keskusteluhistoria helpolla haulla ja suosikeilla"
+      ],
+      "Individual accounts for 6 users": [
+        "Henkilökohtaiset tilit 6 käyttäjälle"
+      ],
+      "Individual accounts for you and a partner": [
+        "Henkilökohtaiset tilit sinulle ja kumppanille"
+      ],
+      "Online document editor": [
+        "Dokumenttieditori verkossa"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
+      ],
+      "Stronger protection against cyber threats": [
+        "Vahvempi suoja kyberuhkia vastaan"
+      ],
+      "Unlimited daily chats": [
+        "Rajattomasti päivittäisiä keskusteluja"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Rajattomasti hide-my-email-aliaksia"
+      ],
+      "Use your own email domain": [
+        "Käytä omaa sähköpostin verkkotunnusta"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "perhonen"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "12 kuukaudeksi"
+      ],
+      "SPRING SALE": [
+        "KEVÄTALE"
       ]
     },
     "Recent documents table header": {

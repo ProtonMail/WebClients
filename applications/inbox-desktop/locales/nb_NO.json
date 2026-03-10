@@ -5,11 +5,17 @@
   },
   "contexts": {
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "\"Start på nytt og profiler nå\" vil starte appen på nytt umiddelbart og registrere en oppstartsprofil.\n\n\"Profiler ved neste oppstart\" vil profilere neste gang du åpner appen. Bruk dette til å måle oppstartshastigheten etter en omstart."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "Om ${ MAIL_APP_NAME }"
       ],
       "Actual Size": [
         "Faktisk størrelse"
+      ],
+      "Cancel": [
+        "Avbryt"
       ],
       "Check spelling while typing": [
         "Stavekontroll mens du skriver"
@@ -19,6 +25,9 @@
       ],
       "Close Window": [
         "Lukk vindu"
+      ],
+      "Collect startup performance data": [
+        "Samle inn data om oppstartsytelse"
       ],
       "Copy": [
         "Kopier"
@@ -47,6 +56,12 @@
       "Paste and Match Style": [
         "Lim inn i samsvar med stil"
       ],
+      "Profile app startup": [
+        "Profiler oppstart av app"
+      ],
+      "Profile on next launch": [
+        "Profiler ved neste oppstart"
+      ],
       "Quit": [
         "Avslutt"
       ],
@@ -58,6 +73,9 @@
       ],
       "Reload": [
         "Last inn på nytt"
+      ],
+      "Restart and profile now": [
+        "Start på nytt og profiler nå"
       ],
       "Select All": [
         "Velg alle"
@@ -79,6 +97,9 @@
       ],
       "Stop Speaking": [
         "Slutt å snakke"
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "Dette vil måle hvor lang tid det tar for appen å starte og lagre en rapport i loggmappen din."
       ],
       "Toggle Full Screen": [
         "Slå full skjerm på/av"

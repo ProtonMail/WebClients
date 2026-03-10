@@ -1462,9 +1462,6 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } ønsker at dele et element med en gruppe, som du administrerer."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } ønsker at dele et element med gruppen ${ invitedGroup.Name }."
-      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } ønsker at dele et element med dig."
       ],
@@ -1512,9 +1509,9 @@
         "${ row.breachCount } databrud registreret",
         "${ row.breachCount } databrud registreret"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } medlem)",
-        "(${ membersCount } medlemmer)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } medlem)",
+        "(${ memberCount } medlemmer)"
       ],
       "(Empty)": [
         "(Tom)"
@@ -1898,9 +1895,6 @@
       ],
       "Invite successfully resent": [
         "Invitation sendt igen"
-      ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "inviterer gruppen ${ invitedGroup.Name } til at få adgang til elementer i"
       ],
       "invites you to access items in": [
         "inviterer dig til at tilgå elementer i"

@@ -3228,7 +3228,7 @@
         "Вы можаце імпартаваць падзеі ў фармаце iCal (файл ICS). Максімальна памер файла павінен быць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець не больш за ${ MAX_IMPORT_EVENTS_STRING } падзей. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Вы можаце пазначыць тыя кантакты, якія вы не хочаце аб'яднаць і пакідаць. Выдаленне адбываецца толькі пасля націску кнопкі аб'яднання"
+        "Вы можаце пазначыць для выдалення кантакты, якія вы не хочаце ні аб'ядноўваць, ні захоўваць. Выдаленне адбываецца толькі пасля націску кнопкі аб'яднання"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Спосабы аднаўлення вашага ўліковага запісу і даных зададзены, а 2ФА уключаны."
@@ -3568,7 +3568,7 @@
         "Уліковы запіс не існуе"
       ],
       "Address primary private key not found": [
-        "Асноўны прыватны ключ адраса не знойдзены"
+        "Асноўны закрыты ключ адраса не знойдзены"
       ],
       "Alias is not valid": [
         "Несапраўдны псеўданім"
@@ -3620,6 +3620,9 @@
       ],
       "Checkout expired, please try again": [
         "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
+      ],
+      "Company name or personal name is required": [
+        "Патрабуецца назва кампаніі або асабістае імя"
       ],
       "Contact could not be saved": [
         "Не ўдалося захаваць кантакт"
@@ -3781,13 +3784,13 @@
         "Памылковы паштовы індэкс"
       ],
       "Invalid public key file": [
-        "Памылковы файл публічнага ключа"
+        "Памылковы файл адкрытага ключа"
+      ],
+      "Invalid VAT number": [
+        "Памылковы нумар ПДВ"
       ],
       "Invalid verification code": [
         "Памылковы праверачны код"
-      ],
-      "Invalid ZIP code": [
-        "Памылковы паштовы індэкс"
       ],
       "Invitation failed to be sent": [
         "Не ўдалося адправіць запрашэнне"
@@ -3896,6 +3899,9 @@
       ],
       "Please activate your search again": [
         "Актывуйце пошук яшчэ раз"
+      ],
+      "Please complete the billing details": [
+        "Запоўніце плацежныя звесткі"
       ],
       "Please create an address first.": [
         "Спачатку стварыце адрас."
@@ -4044,6 +4050,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (максімум: ${ maximumLength })."
       ],
+      "This field is invalid": [
+        "Гэта поле з'яўляецца памылковым"
+      ],
       "This field is required": [
         "Абавязковае поле"
       ],
@@ -4088,6 +4097,9 @@
       ],
       "Validation error": [
         "Памылка праверкі"
+      ],
+      "Wrong billing address": [
+        "Няправільны плацежны адрас"
       ],
       "You already added this holidays calendar": [
         "Вы ўжо дадавалі гэтыя святы ў каляндар"
@@ -4184,7 +4196,7 @@
         "Прапушчаны ўласцівасці FN"
       ],
       "vCard versions < 3.0 not supported": [
-        "Верcіі vCard ніжэйшыя за 3.0 не падтрымліваюцца"
+        "Верcіі vCard ніжэй за 3.0 не падтрымліваюцца"
       ]
     },
     "Error importing contacts": {
@@ -4704,7 +4716,7 @@
         "Менш падрабязна"
       ],
       "Meeting host:": [
-        "Вядучы сустрэчы:"
+        "Арганізатар сустрэчы:"
       ],
       "Meeting link:": [
         "Спасылка на сустрэчу:"
@@ -5352,7 +5364,7 @@
         "Адрас скапіяваны ў буфер абмену"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі публічныя ключы, якія можна выкарыстоўваць для адпраўкі."
+        "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі адкрытыя ключы, якія можна выкарыстоўваць для адпраўкі."
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Рэкламадаўцы адсочваюць, якія вэб-старонкі вы наведваеце для паказу мэтавай рэкламы. ${ VPN_APP_NAME } блакіруе праграмы адсочвання і рэкламу, робіць ваша падключэнне хутчэйшым і паляпшае працу ў інтэрнэце."
@@ -5742,7 +5754,7 @@
         "Высокі прыярытэт"
       ],
       "Host": [
-        "Вядучы"
+        "Арганізатар"
       ],
       "How far in advance can someone book?": [
         "За які час загадзя можна забраніраваць?"
@@ -6336,7 +6348,7 @@
         "Для аднаўлення даных неабходна паўторна актываваць ключ уліковага запісу, які выкарыстоўваўся падчас стварэння даных. Для гэтага вам спатрэбіцца ўспомніць пароль, які выкарыстоўваўся для генерацыі гэтага ключа."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Для таго, каб выкарыстоўваць праверку адраса вы павінны давяраць аднаму або некалькім з даступных публічных ключоў, уключаючы той, які вы хочаце выкарыстоўваць для адпраўкі. Гэта прадухіляе падробку ключоў шыфравання."
+        "Для таго, каб выкарыстоўваць праверку адраса вы павінны давяраць аднаму або некалькім з даступных адкрытых ключоў, уключаючы той, які вы хочаце выкарыстоўваць для адпраўкі. Гэта прадухіляе падробку ключоў шыфравання."
       ],
       "Total email addresses": [
         "Колькасць адрасоў электроннай пошты"
@@ -6590,6 +6602,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "З вас не будзе спаганяцца плата, калі вы скасуеце да ${ trialEndsOnFormatted }."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Вы атрымаеце ўзнагароду ў крэдытах праз 1 месяц пасля таго, як ваш сябар падпішацца на гадавы тарыфны план. Праз 2 месяцы можна разлічваць на ўзнагароду, калі ваш сябар падпішацца на месячны тарыфны план."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяц у памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцы ў памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
@@ -6724,7 +6739,7 @@
     },
     "Info calendar search": {
       "You can either update your search query or close search to go back to calendar views": [
-        "Вы можаце або абнавіць ваш пошукавы запыт, або закрыць пошук і вярнуцца да прагляду календара."
+        "Вы можаце абнавіць свой пошукавы запыт або закрыць пошук і вярнуцца да прагляду календара."
       ]
     },
     "Info for cash payment method": {
@@ -7306,7 +7321,7 @@
         "публічны дамен"
       ],
       "Public keys": [
-        "Публічныя ключы"
+        "Адкрытыя ключы"
       ],
       "Region": [
         "Вобласць"
@@ -7944,109 +7959,109 @@
         "у ${ shortenedDay }"
       ],
       "on the first Friday": [
-        "у першую пятніцу месяца"
+        "у першую пятніцу"
       ],
       "on the first Monday": [
-        "у першы панядзелак месяца"
+        "у першы панядзелак"
       ],
       "on the first Saturday": [
-        "у першую суботу месяца"
+        "у першую суботу"
       ],
       "on the first Sunday": [
-        "у першую нядзелю месяца"
+        "у першую нядзелю"
       ],
       "on the first Thursday": [
-        "у першы чацвер месяца"
+        "у першы чацвер"
       ],
       "on the first Tuesday": [
-        "у першы аўторак месяца"
+        "у першы аўторак"
       ],
       "on the first Wednesday": [
-        "у першую сераду месяца"
+        "у першую сераду"
       ],
       "on the fourth Friday": [
-        "у чацвёртую пятніцу месяца"
+        "у чацвёртую пятніцу"
       ],
       "on the fourth Monday": [
-        "у чацвёрты панядзелак месяца"
+        "у чацвёрты панядзелак"
       ],
       "on the fourth Saturday": [
-        "у чацвёртую суботу месяца"
+        "у чацвёртую суботу"
       ],
       "on the fourth Sunday": [
-        "у чацвёртую нядзелю месяца"
+        "у чацвёртую нядзелю"
       ],
       "on the fourth Thursday": [
-        "у чацвёрты чацвер месяца"
+        "у чацвёрты чацвер"
       ],
       "on the fourth Tuesday": [
-        "у чацвёрты аўторак месяца"
+        "у чацвёрты аўторак"
       ],
       "on the fourth Wednesday": [
-        "у чацвёртую сераду месяца"
+        "у чацвёртую сераду"
       ],
       "on the last Friday": [
-        "у апошнюю пятніцу месяца"
+        "у апошнюю пятніцу"
       ],
       "on the last Monday": [
-        "у апошні панядзелак месяца"
+        "у апошні панядзелак"
       ],
       "on the last Saturday": [
-        "у апошнюю суботу месяца"
+        "у апошнюю суботу"
       ],
       "on the last Sunday": [
-        "у апошнюю нядзелю месяца"
+        "у апошнюю нядзелю"
       ],
       "on the last Thursday": [
-        "у апошні чацвер месяца"
+        "у апошні чацвер"
       ],
       "on the last Tuesday": [
-        "у апошні аўторак месяца"
+        "у апошні аўторак"
       ],
       "on the last Wednesday": [
-        "у апошнюю сераду месяца"
+        "у апошнюю сераду"
       ],
       "on the second Friday": [
-        "у другую пятніцу месяца"
+        "у другую пятніцу"
       ],
       "on the second Monday": [
-        "у другі панядзелак месяца"
+        "у другі панядзелак"
       ],
       "on the second Saturday": [
-        "у другую суботу месяца"
+        "у другую суботу"
       ],
       "on the second Sunday": [
-        "у другую нядзелю месяца"
+        "у другую нядзелю"
       ],
       "on the second Thursday": [
-        "у другі чацвер месяца"
+        "у другі чацвер"
       ],
       "on the second Tuesday": [
-        "у другі аўторак месяца"
+        "у другі аўторак"
       ],
       "on the second Wednesday": [
-        "у другую сераду месяца"
+        "у другую сераду"
       ],
       "on the third Friday": [
-        "у трэцюю пятніцу месяца"
+        "у трэцюю пятніцу"
       ],
       "on the third Monday": [
-        "у трэці панядзелак месяца"
+        "у трэці панядзелак"
       ],
       "on the third Saturday": [
-        "у трэцюю суботу месяца"
+        "у трэцюю суботу"
       ],
       "on the third Sunday": [
-        "у трэцюю нядзелю месяца"
+        "у трэцюю нядзелю"
       ],
       "on the third Thursday": [
-        "у трэці чацвер месяца"
+        "у трэці чацвер"
       ],
       "on the third Tuesday": [
-        "у трэці аўторак месяца"
+        "у трэці аўторак"
       ],
       "on the third Wednesday": [
-        "у трэцюю сераду месяца"
+        "у трэцюю сераду"
       ]
     },
     "New Label form": {
@@ -9710,6 +9725,9 @@
       "Got it": [
         "Зразумела"
       ],
+      "I'm purchasing as a business": [
+        "Я купляю як юрыдычная асоба"
+      ],
       "Including ${ rate }% tax": [
         "Уключаючы падатак у памеры ${ rate }%:"
       ],
@@ -9793,9 +9811,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Гэта дзеянне пашырае існуючую падпіску. З вас будзе спагнана плата толькі за новыя дадаткі і час, якія засталіся ў бягучым перыядзе аплаты. Дата падаўжэння вашай падпіскі не будзе зменена."
-      ],
-      "This number will be shown on all future invoices": [
-        "Гэты нумар будзе паказаны ва ўсіх будучых рахунках"
       ],
       "This offer is not available with your current plan.": [
         "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
@@ -10006,6 +10021,9 @@
       "Company name": [
         "Назва кампаніі"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Напрыклад, "
       ],
@@ -10074,6 +10092,9 @@
       ],
       "Postal code": [
         "Паштовы індэкс"
+      ],
+      "San Francisco": [
+        "Сан-Францыска"
       ],
       "Search events": [
         "Пошук падзей"
@@ -12248,7 +12269,7 @@
         "Высокая бяспека для вашага ўліковага запісу"
       ],
       "Host": [
-        "Вядучы"
+        "Арганізатар"
       ],
       "How does it all work?": [
         "Як гэта ўсё працуе?"
@@ -12517,6 +12538,9 @@
       "Simplify password management": [
         "Спрасціць кіраванне паролямі"
       ],
+      "Spring Sale": [
+        "Вясенні распродаж"
+      ],
       "Start a new import": [
         "Пачаць новае імпартаванне"
       ],
@@ -12756,7 +12780,7 @@
         "Зашыфраваныя паролі (нават скампраметаваныя) застануцца ў бяспецы, пакуль не будуць расшыфраваны."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Запампуйце публічны ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
+        "Запампуйце адкрыты ключ, каб уключыць адпраўку лістоў з шыфраваннем скразным метадам на гэты адрас электроннай пошты"
       ]
     },
     "tooltip": {

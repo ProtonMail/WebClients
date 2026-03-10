@@ -157,17 +157,11 @@
       "Confirm all": [
         "Подтвердить все"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Подключите свой аккаунт ${ BRAND_NAME }"
-      ],
       "Continue": [
         "Продолжить"
       ],
       "Continue offline": [
         "Продолжить оффлайн"
-      ],
-      "Continue without pinning": [
-        "Продолжить без закрепления"
       ],
       "Copy and close": [
         "Скопировать и закрыть"
@@ -190,17 +184,11 @@
       "Create a ${ BRAND_NAME } account": [
         "Создать аккаунт ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Создайте свой аккаунт ${ BRAND_NAME }"
-      ],
       "Create a new vault": [
         "Создать новое хранилище"
       ],
       "Create alias": [
         "Создать псевдоним"
-      ],
-      "Create an account": [
-        "Создать аккаунт"
       ],
       "Create card": [
         "Создать карту"
@@ -282,9 +270,6 @@
       ],
       "Do not suggest on this website": [
         "Не предлагать на этом веб-сайте"
-      ],
-      "Done": [
-        "Готово"
       ],
       "Download this CSV template": [
         "Скачайте этот шаблон CSV"
@@ -615,9 +600,6 @@
       ],
       "Sign back in": [
         "Войти обратно"
-      ],
-      "Sign in": [
-        "Войти"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Войти с ${ BRAND_NAME }"
@@ -1165,9 +1147,6 @@
       "PIN codes do not match": [
         "PIN-коды не совпадают"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Пожалуйста, закрепите расширение или выберите \"Продолжить без закрепления\"."
-      ],
       "Registration failure: ${ message }": [
         "Сбой регистрации: ${ message }"
       ],
@@ -1475,6 +1454,12 @@
         "${ trialDaysLeft } дней осталось",
         "${ trialDaysLeft } дней осталось"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } участник)",
+        "(${ memberCount } участника)",
+        "(${ memberCount } участников)",
+        "(${ memberCount } участника)"
+      ],
       "(Empty)": [
         "(Пусто)"
       ],
@@ -1637,9 +1622,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Выберите сохраненный passkey для входа в ${ domain }"
       ],
-      "Click the icon to open it anytime.": [
-        "Нажмите на значок, чтобы открыть его в любое время."
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "Закройте это окно, чтобы использовать ключ безопасности или другой passkey"
       ],
@@ -1798,9 +1780,6 @@
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Выполните эти шаги, чтобы импортировать данные с помощью стандартного CSV:"
-      ],
-      "For easy access to your passwords and more.": [
-        "Для легкого доступа к паролям и прочего."
       ],
       "For security reason, your access needs to be confirmed": [
         "В целях безопасности ваш доступ должен быть подтвержден"
@@ -1970,12 +1949,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
-      ],
       "Moving items": [
         "Перемещение элементов"
       ],
@@ -2024,9 +1997,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Для онлайн-доступа к ${ PASS_APP_NAME } потребуется PIN-код. Вы выйдете из системы после 3 неудачных попыток."
       ],
-      "Open the Extensions menu": [
-        "Откройте меню Расширения"
-      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Наши предупреждения приоритизируют безопасность. Если вы не узнаёте ничего из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
       ],
@@ -2065,9 +2035,6 @@
       ],
       "Permanently deleting selected items": [
         "Выбранные элементы удаляются безвозвратно"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Закрепить ${ PASS_APP_NAME } на панели инструментов."
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-код успешно зарегистрирован. Используйте его для разблокировки ${ PASS_APP_NAME }"
@@ -2246,9 +2213,6 @@
       "See more info": [
         "Подробнее"
       ],
-      "Select an existing login or create a new one.": [
-        "Выберите существующее имя пользователя, чтобы создать новое."
-      ],
       "Select destination vault": [
         "Выберите целевое хранилище:"
       ],
@@ -2284,9 +2248,6 @@
       ],
       "Shared item invitation": [
         "Приглашение для общего предмета"
-      ],
-      "Sign in or create an account to continue.": [
-        "Войдите или создайте аккаунт для продолжения."
       ],
       "Sign in to your account": [
         "Войдите в свой аккаунт"
@@ -4222,9 +4183,6 @@
       "Confirm your email": [
         "Подтвердите свою электронную почту"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Подключите свой аккаунт ${ BRAND_NAME }"
-      ],
       "Contacts": [
         "Контакты"
       ],
@@ -4480,9 +4438,6 @@
       "Permanently remove all items?": [
         "Безвозвратно удалить все элементы?"
       ],
-      "Pin the extension": [
-        "Закрепить расширение"
-      ],
       "Pinned (${ items.length })": [
         "Закреплено (${ items.length })"
       ],
@@ -4629,9 +4584,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "Добро пожаловать в ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "Добро пожаловать в ваш новый менеджер паролей!"
       ],
       "What is an alias?": [
         "Что такое псевдоним?"

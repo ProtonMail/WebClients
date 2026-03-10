@@ -157,17 +157,11 @@
       "Confirm all": [
         "Potwierdź wszystko"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Połącz konto ${ BRAND_NAME }"
-      ],
       "Continue": [
         "Kontynuuj"
       ],
       "Continue offline": [
         "Kontynuuj w trybie offline"
-      ],
-      "Continue without pinning": [
-        "Kontynuuj bez przypinania"
       ],
       "Copy and close": [
         "Kopiuj i zamknij"
@@ -190,17 +184,11 @@
       "Create a ${ BRAND_NAME } account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Utwórz konto ${ BRAND_NAME }"
-      ],
       "Create a new vault": [
         "Utwórz nowy sejf"
       ],
       "Create alias": [
         "Utwórz alias"
-      ],
-      "Create an account": [
-        "Utwórz konto"
       ],
       "Create card": [
         "Utwórz kartę"
@@ -282,9 +270,6 @@
       ],
       "Do not suggest on this website": [
         "Nie sugeruj na tej stronie"
-      ],
-      "Done": [
-        "Gotowe"
       ],
       "Download this CSV template": [
         "Pobierz szablon pliku CSV"
@@ -621,9 +606,6 @@
       ],
       "Sign back in": [
         "Zaloguj się ponownie"
-      ],
-      "Sign in": [
-        "Zaloguj się"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Zaloguj się przez ${ BRAND_NAME }"
@@ -1174,9 +1156,6 @@
       "PIN codes do not match": [
         "Kody PIN nie pasują do siebie"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Przypnij rozszerzenie lub kliknij \"Kontynuuj bez przypinania\"."
-      ],
       "Registration failure: ${ message }": [
         "Błąd rejestracji: ${ message }"
       ],
@@ -1492,6 +1471,12 @@
         "Pozostało ${ trialDaysLeft } dni",
         "Pozostało ${ trialDaysLeft } dnia"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } członek)",
+        "(${ memberCount } członków)",
+        "(${ memberCount } członków)",
+        "(${ memberCount } członków)"
+      ],
       "(Empty)": [
         "(pusty)"
       ],
@@ -1657,9 +1642,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Wybierz zapisany klucz dostępu, aby zalogować się do ${ domain }"
       ],
-      "Click the icon to open it anytime.": [
-        "Kliknij ikonę, aby otworzyć."
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "Zamknij okno, aby użyć klucza bezpieczeństwa lub klucza dostępu."
       ],
@@ -1821,9 +1803,6 @@
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Wykonaj te kroki, aby zaimportować dane za pomocą pliku CSV:"
-      ],
-      "For easy access to your passwords and more.": [
-        "Dla łatwego dostępu do haseł i nie tylko."
       ],
       "For security reason, your access needs to be confirmed": [
         "Ze względów bezpieczeństwa dostęp musi zostać potwierdzony"
@@ -1994,10 +1973,7 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -2047,9 +2023,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Dostęp online do ${ PASS_APP_NAME } będzie wymagał kodu PIN. Wylogowanie nastąpi po 3 nieudanych próbach."
       ],
-      "Open the Extensions menu": [
-        "Otwórz menu rozszerzenia"
-      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Priorytetem naszych alertów jest bezpieczeństwo. Jeśli nie rozpoznajesz żadnej informacji, możesz bezpiecznie zignorować ten raport."
       ],
@@ -2088,9 +2061,6 @@
       ],
       "Permanently deleting selected items": [
         "Trwałe usuwanie zaznaczonych elementów"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Przypnij ${ PASS_APP_NAME } do paska narzędzi"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Kod PIN został zapisany. Użyj go, aby odblokować ${ PASS_APP_NAME }"
@@ -2269,9 +2239,6 @@
       "See more info": [
         "Pokaż więcej informacji"
       ],
-      "Select an existing login or create a new one.": [
-        "Wybierz dane logowania lub utwórz nowe."
-      ],
       "Select destination vault": [
         "Wybierz docelowy sejf"
       ],
@@ -2307,9 +2274,6 @@
       ],
       "Shared item invitation": [
         "Zaproszenie do udostępnionego elementu"
-      ],
-      "Sign in or create an account to continue.": [
-        "Zaloguj się lub utwórz konto, aby kontynuować."
       ],
       "Sign in to your account": [
         "Zaloguj się"
@@ -4329,9 +4293,6 @@
       "Confirm your email": [
         "Potwierdź adres"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Połącz konto ${ BRAND_NAME }"
-      ],
       "Contacts": [
         "Kontakty"
       ],
@@ -4587,9 +4548,6 @@
       "Permanently remove all items?": [
         "Usunąć trwale wszystkie elementy?"
       ],
-      "Pin the extension": [
-        "Przypnij rozszerzenie"
-      ],
       "Pinned (${ items.length })": [
         "Przypięte (${ items.length })"
       ],
@@ -4736,9 +4694,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "Witaj w ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "Witaj w nowym menadżerze haseł!"
       ],
       "What is an alias?": [
         "Co to jest alias?"

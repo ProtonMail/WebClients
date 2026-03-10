@@ -2632,6 +2632,9 @@
       "North Korea": [
         "Noord-Korea"
       ],
+      "North Macedonia": [
+        "Noord-Macedonië"
+      ],
       "Northern Mariana Islands": [
         "Noordelijke Marianen"
       ],
@@ -3556,6 +3559,9 @@
       "Checkout expired, please try again": [
         "Checkout is verlopen, probeer het opnieuw"
       ],
+      "Company name or personal name is required": [
+        "Bedrijfsnaam of persoonsnaam is vereist"
+      ],
       "Contact could not be saved": [
         "Contact kan niet opgeslagen worden"
       ],
@@ -3714,11 +3720,11 @@
       "Invalid public key file": [
         "Ongeldige openbare sleutel"
       ],
+      "Invalid VAT number": [
+        "Ongeldig btw-nummer"
+      ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
-      ],
-      "Invalid ZIP code": [
-        "Ongeldige postcode"
       ],
       "Invitation failed to be sent": [
         "Uitnodiging kon niet verzonden worden"
@@ -3821,6 +3827,9 @@
       ],
       "Please activate your search again": [
         "Activeer het zoeken opnieuw"
+      ],
+      "Please complete the billing details": [
+        "Voltooi de factuurgegevens"
       ],
       "Please create an address first.": [
         "Maak eerst een adres."
@@ -3965,6 +3974,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
       ],
+      "This field is invalid": [
+        "Dit veld is ongeldig"
+      ],
       "This field is required": [
         "Dit veld is vereist"
       ],
@@ -4009,6 +4021,9 @@
       ],
       "Validation error": [
         "Validatiefout"
+      ],
+      "Wrong billing address": [
+        "Verkeerd factuuradres"
       ],
       "You already added this holidays calendar": [
         "U hebt deze feestdagenkalender al toegevoegd"
@@ -6402,6 +6417,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "U wordt niets in rekening gebracht als u annuleert voor ${ trialEndsOnFormatted }."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "U ontvangt het tegoed 1 maand nadat uw vriend(in) zich abonneert op een jaarlijks abonnement, en 2 maanden nadat zij zich abonneren op een maandelijks abonnement."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd. U kunt op elk moment annuleren.",
@@ -9377,6 +9395,9 @@
       "Got it": [
         "Begrepen"
       ],
+      "I'm purchasing as a business": [
+        "Ik koop dit voor mijn bedrijf."
+      ],
       "Including ${ rate }% tax": [
         "Inclusief ${ rate }% belasting"
       ],
@@ -9448,9 +9469,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Deze actie breidt het bestaande abonnement uit. U wordt alleen kosten in rekening gebracht voor de nieuwe add-ons en de resterende tijd van de huidige factureringscyclus. De verlengingsdatum van uw abonnement wordt niet gewijzigd."
-      ],
-      "This number will be shown on all future invoices": [
-        "Dit nummer zal op alle toekomstige facturen worden getoond."
       ],
       "This offer is not available with your current plan.": [
         "Deze aanbieding is niet beschikbaar met uw huidige abonnement."
@@ -9661,6 +9679,9 @@
       "Company name": [
         "Bedrijfsnaam"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Bijv., "
       ],
@@ -9729,6 +9750,9 @@
       ],
       "Postal code": [
         "Postcode"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search events": [
         "Afspraken zoeken"
@@ -9874,6 +9898,101 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Officiële e-mail van ${ BRAND_NAME }"
+      ]
+    },
+    "q1campaign: Action": {
+      "Don't show this offer again": [
+        "Toon deze aanbieding niet opnieuw"
+      ],
+      "Get the deal": [
+        "Pak de aanbieding"
+      ]
+    },
+    "q1campaign: Info": {
+      "/month": [
+        "/maand"
+      ],
+      "15 GB storage": [
+        "15 GB opslag"
+      ],
+      "2 TB data storage": [
+        "2 TB dataopslag"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB opslag: 40x uw huidige abonnement"
+      ],
+      "3 TB data storage": [
+        "3 TB dataopslag"
+      ],
+      "500 GB storage": [
+        "500 GB opslag"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Toegang tot 15.000+ servers in 120+ landen"
+      ],
+      "Access advanced AI models": [
+        "Toegang tot geavanceerde AI-modellen"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Alle premium functies van Mail, Pass, Drive, VPN en Calendar"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokkeer advertenties, trackers en malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Ingebouwde 2FA-authenticator"
+      ],
+      "Connect 10 devices at once": [
+        "Verbind 10 apparaten tegelijkertijd"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
+      ],
+      "Full access to ${ VPN_APP_NAME }": [
+        "Volledige toegang tot ${ VPN_APP_NAME }"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Volledige chatgeschiedenis met eenvoudig zoeken en favorieten"
+      ],
+      "Individual accounts for 6 users": [
+        "Afzonderlijke accounts voor 6 gebruikers"
+      ],
+      "Individual accounts for you and a partner": [
+        "Afzonderlijke accounts voor u en een partner"
+      ],
+      "Online document editor": [
+        "Online documenteditor"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Stronger protection against cyber threats": [
+        "Krachtigere bescherming tegen cyberdreigingen"
+      ],
+      "Unlimited daily chats": [
+        "Onbeperkt aantal dagelijkse gesprekken"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Onbeperkte mappen, labels en filters"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Onbeperkte hide-my-email-aliassen"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ]
+    },
+    "q1campaign: Label": {
+      "a butterfly": [
+        "een vlinder"
+      ]
+    },
+    "q1campaign: Title": {
+      "for 12 months": [
+        "gedurende 12 maanden"
+      ],
+      "SPRING SALE": [
+        "LENTEACTIE"
       ]
     },
     "Referral": {
@@ -12061,6 +12180,9 @@
       ],
       "Simplify password management": [
         "Vereenvoudig wachtwoordbeheer"
+      ],
+      "Spring Sale": [
+        "Lenteverkoop"
       ],
       "Start a new import": [
         "Start een nieuwe import"

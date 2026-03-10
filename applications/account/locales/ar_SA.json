@@ -286,6 +286,9 @@
       "Connect to video conferencing": [
         "الاتصال بمؤتمرات الفيديو"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "اربط حساب ${ BRAND_NAME } الخاص بك"
+      ],
       "Connected": [
         "مُتصل"
       ],
@@ -336,6 +339,12 @@
       ],
       "Create": [
         "أَنشِئ"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "إنشاء حساب ${ BRAND_NAME }"
+      ],
+      "Create an account": [
+        "إنشاء حساب"
       ],
       "Create calendar": [
         "إنشاء رزنامة"
@@ -395,6 +404,9 @@
         "حذف الحساب"
       ],
       "Delete Gateway": [
+        "حذف البوابة"
+      ],
+      "Delete gateway": [
         "حذف البوابة"
       ],
       "Delete group": [
@@ -1519,6 +1531,11 @@
         "إعادة تفعيل"
       ]
     },
+    "Action: Sheets": {
+      "Open in ${ SHEETS_APP_NAME }": [
+        "افتح في ${ SHEETS_APP_NAME }"
+      ]
+    },
     "Addon": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "مساعد الكتابة Scribe من  ${ BRAND_NAME }"
@@ -1549,6 +1566,12 @@
         "مساعد الذكاء الاصطناعي ${ LUMO_APP_NAME } (لـ ${ quantity } مستخدمين)",
         "مساعد الذكاء الاصطناعي ${ LUMO_APP_NAME } (لـ ${ quantity } مستخدمًا)",
         "مساعد الذكاء الاصطناعي ${ LUMO_APP_NAME } (لـ ${ quantity } مستخدم)"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } رخصة الذكاء الاصطناعي"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "مقاعد مستخدمي ${ LUMO_APP_NAME }"
       ],
       "${ price } per dedicated server": [
         "${ price } لكل خادم مخصص"
@@ -1593,6 +1616,24 @@
         "${ users } مستخدمين",
         "${ users } مستخدمين",
         "${ users } مستخدمين"
+      ],
+      "Dedicated VPN servers": [
+        "خوادم VPN مخصصة"
+      ],
+      "Domains": [
+        "النطاقات"
+      ],
+      "Servers": [
+        "خوادم"
+      ],
+      "Users": [
+        "مستخدمون"
+      ],
+      "Writing assistant": [
+        "مساعد الكتابة"
+      ],
+      "Writing assistant seats": [
+        "مقاعد مساعد الكتابة"
       ]
     },
     "Address action": {
@@ -1813,6 +1854,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "بعد انتهاء الفترة التجريبية في ${ formattedDate1 }، ستتحول إلى اشتراك مدفوع يتجدد تلقائيًا كل ${ renewCycle } أشهر. لن يتم تحصيل أي رسوم إذا قمت بالإلغاء قبل ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "بعد انتهاء الفترة التجريبية في ${ formattedDate1 }، سيتحول الاشتراك إلى مدفوع ويتجدد تلقائيًا كل شهر. لن يتم تحصيل أي رسوم إذا قمت بالإلغاء قبل ${ formattedDate2 }."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "بالنقر على \"جرّب\"، فإنك توافق على ${ termsAndConditions } الخاصة بنا."
       ],
@@ -2063,8 +2110,49 @@
       ]
     },
     "BF2025: Deal details": {
+      "2 TB data storage": [
+        "تخزين بيانات 2 تيرابايت"
+      ],
+      "3 TB data storage": [
+        "تخزين بيانات 3 تيرابايت"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "الوصول إلى أكثر من 15000 خادم في أكثر من 120 دولة"
+      ],
+      "Access advanced AI models": [
+        "الوصول إلى نماذج الذكاء الاصطناعي المتقدمة"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "جميع الميزات المميزة في ${ MAIL_SHORT_APP_NAME } و${ PASS_SHORT_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ VPN_SHORT_APP_NAME } و${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Block ads, trackers, and malware": [
         "حظر الإعلانات،المتتبعات والبرامج المشبوهة"
+      ],
+      "Built-in 2FA authenticator": [
+        "مُصادِق مدمج للمصادقة الثنائية (2FA)"
+      ],
+      "Connect 10 devices at once": [
+        "قم بتوصيل 10 أجهزة في وقت واحد"
+      ],
+      "Full chat history with easy search and favorites": [
+        "سجل الدردشة الكامل مع البحث السهل والمفضلة"
+      ],
+      "Individual accounts for 6 users": [
+        "حسابات فردية ل 6 مستخدمين"
+      ],
+      "Individual accounts for you and a partner": [
+        "حسابات فردية لك ولشريك"
+      ],
+      "Stronger protection against cyber threats": [
+        "حماية أقوى ضد التهديدات السيبرانية"
+      ],
+      "Unlimited daily chats": [
+        "دردشات يومية غير محدودة"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "يحمي NetShield المصمم خصيصا أجهزتك ويسرع تصفحك عن طريق حظر الإعلانات والمتتبعين والبرامج الضارة."
       ]
     },
     "Billing cycle": {
@@ -2082,8 +2170,14 @@
       "Annually": [
         "سنويًا"
       ],
+      "Billed monthly": [
+        "فاتورة شهرية"
+      ],
       "Lifetime": [
         "مدى الحياة"
+      ],
+      "Lifetime access": [
+        "الوصول مدى الحياة"
       ],
       "Monthly": [
         "شهريًا"
@@ -2674,6 +2768,9 @@
         "${ users } مستخدمين",
         "${ users } مستخدمين"
       ],
+      "Subtotal": [
+        "المجموع الفرعي"
+      ],
       "Total": [
         "الإجمالي"
       ],
@@ -2706,6 +2803,15 @@
       "Basic chat history": [
         "سجل الدردشة الأساسي"
       ],
+      "Built and based in Europe": [
+        "مطوَّر ومقرّه في أوروبا"
+      ],
+      "Compliance with data protection regulations": [
+        "الامتثال للوائح حماية البيانات"
+      ],
+      "Data never used for AI training": [
+        "لم يتم استخدام البيانات أبدا للتدريب على الذكاء الاصطناعي"
+      ],
       "Full chat history with search": [
         "سجل الدردشة الكامل مع البحث"
       ],
@@ -2717,6 +2823,9 @@
       ],
       "Limited favorites": [
         "مفضلات محدودة"
+      ],
+      "Strict no-logs policy": [
+        "سياسة صارمة لعدم وجود سجلات"
       ],
       "Unlimited daily chats": [
         "دردشات يومية غير محدودة"
@@ -2732,6 +2841,9 @@
       ],
       "Web search access": [
         "الوصول إلى بحث الويب"
+      ],
+      "Zero-access encryption": [
+        "تشفير الوصول الصفري"
       ]
     },
     "collider_2025: Feature": {
@@ -2760,6 +2872,9 @@
       ],
       "Open source": [
         "مفتوح المصدر"
+      ],
+      "Private video calls for the conversations that matter.": [
+        "مكالمات فيديو خاصة للمحادثات المهمة."
       ]
     },
     "collider_2025: Navigation": {
@@ -3958,6 +4073,11 @@
         "لـ ${ MAIL_APP_NAME }"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "لـ ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "لـ ${ PASS_APP_NAME }"
@@ -4243,6 +4363,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "بسّط المزامنة والجدولة باستخدام التقويمات المشتركة."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "لاستيراد جهات الاتصال عبر ملف CSV أو VCF، تأكد من أن حجم الملف لا يتجاوز ${ MAX_IMPORT_FILE_SIZE_STRING } أو ${ maxContactString } جهة اتصال. إذا كان ملفك أكبر من ذلك، يرجى تقسيمه إلى ملفات أصغر. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "لاستيراد جهات اتصالك من Google أو Outlook، ${ easySwitchLink }."
@@ -4669,6 +4792,9 @@
         "30 دقيقة"
       ],
       "60 minutes": [
+        "60 دقيقة"
+      ],
+      "60m": [
         "60 دقيقة"
       ],
       "90 minutes": [
@@ -5490,6 +5616,9 @@
       "Checkout expired, please try again": [
         "انتهت صلاحية تسجيل الخروج، حاول مره اخرى"
       ],
+      "Company name or personal name is required": [
+        "اسم الشركة أو الاسم الشخصي مطلوب"
+      ],
       "Condition incomplete": [
         "الشرط غير مكتمل"
       ],
@@ -5668,11 +5797,11 @@
       "Invalid URL": [
         "الرابط غير صحيح"
       ],
+      "Invalid VAT number": [
+        "رقم ضريبة القيمة المضافة غير صالح"
+      ],
       "Invalid verification code": [
         "رمز التحقق خاطئ"
-      ],
-      "Invalid ZIP code": [
-        "رمز بريدي (ZIP) غير صالح"
       ],
       "Item content cannot exceed 40KB": [
         "لا يمكن أن يتجاوز محتوى العنصر 40 كيلوبايت"
@@ -5771,6 +5900,9 @@
       ],
       "Please add a payment method before reactivating your subscription": [
         "يرجى إضافة طريقة دفع قبل إعادة تفعيل اشتراكك."
+      ],
+      "Please complete the billing details": [
+        "يرجى إكمال تفاصيل الفوترة"
       ],
       "Please configure a custom domain before adding addresses.": [
         "يرجى تكوين نطاق مخصَّص قبل إضافة العناوين."
@@ -5923,6 +6055,9 @@
       "Tab closed": [
         "تم إغلاق التبويب"
       ],
+      "Tax exemption is not supported for this plan": [
+        "الإعفاء الضريبي غير مدعوم لهذه الخطة"
+      ],
       "The address might be misspelled": [
         "قد يكون العنوان مكتوبًا بشكل خاطئ"
       ],
@@ -5974,6 +6109,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "يتجاوز هذا الحقل الحد الأقصى البالغ ${ maximumLength } حرفًا."
       ],
+      "This field is invalid": [
+        "هذا الحقل غير صالح"
+      ],
       "This field is required": [
         "هذه الخانة مطلوبه"
       ],
@@ -5988,6 +6126,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "قد تحتوي هذه الرسالة على بعض روابط URL التي لا يمكن فتحها بشكل صحيح بواسطة متصفحك الحالي."
+      ],
+      "This offer is not available in your country": [
+        "هذا العرض غير متوفر في بلدك"
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "لإنشاء حسابات مستخدمين غير خاصة والوصول إليها، ستحتاج إلى استعادة امتيازاتك الإدارية."
@@ -6042,6 +6183,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "لقد أوقفنا توقيع DKIM بسبب مشاكل في تكوين DNS الخاص بك. يرجى اتباع التعليمات التالية لاستئناف العملية."
+      ],
+      "Wrong billing address": [
+        "عنوان إرسال الفواتير غير صحيح"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "عبارة الاسترداد خاطئة. حاول مرة أخرى أو استخدم طريقة استرداد أخرى."
@@ -6151,6 +6295,9 @@
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "حدث خطأ أثناء تحميل الملف الخاص بك. لم يتم تحديد أي ملف."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
+        "يحتوي ملفك ${ formattedFilename } على أكثر من جهات اتصال ${ maxContactString }."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
         "الملف الخاص بك ${ formattedFilename } ليس لديه جهات اتصال لاستيرادها."
@@ -7609,6 +7756,12 @@
       "Too many recent requests. Please try again in a few moments.": [
         "عدة طلبات محفوظات متكررة. يرجى المحاولة مرة أخرى في بضع لحظات."
       ],
+      "Two-factor authentication is enabled in your external account.": [
+        "يتم تمكين المصادقة الثنائية في حسابك الخارجي."
+      ],
+      "Two-factor authentication is enabled in your external email account.": [
+        "يتم تمكين المصادقة الثنائية في حساب بريدك الإلكتروني الخارجي."
+      ],
       "Use your app password if:": [
         "استخدم كلمة مرور التطبيق إذا:"
       ],
@@ -8566,6 +8719,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "انقر فوق \"طلب رمز جديد\" للحصول على رمز تحقق جديد أرسل إلى ${ strong }. إذا كان رقم الهاتف هذا غير صحيح، انقر فوق \"تعديل\" لتصحيحه."
       ],
+      "Click the icon to open it anytime.": [
+        "انقر على الأيقونة لفتحه في أي وقت."
+      ],
       "Close this screen to exit.": [
         "أغلق هذه الشاشة للخروج."
       ],
@@ -9023,6 +9179,9 @@
       "for choosing ${ product }": [
         "لاختيارك ${ product }"
       ],
+      "For easy access to your passwords and more.": [
+        "لسهولة الوصول إلى كلمات المرور الخاصة بك والمزيد."
+      ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "للمستخدمين الذين يرغبون في الانتقال إلى ${ MAIL_APP_NAME } من خدمة بريد إلكتروني أخرى، اختارو علامة التبويب ${ boldAddresses } وأضيفو جميع عناوين البريد الإلكتروني النشطة قبل تغيير سجل MX لضمان انتقال سلس."
       ],
@@ -9037,6 +9196,12 @@
       ],
       "free up space by deleting older messages or other data": [
         "توفير المساحة عن طريق حذف الرسائل القديمة أو البيانات الأخرى"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "تعذّر حذف البوابة. يُرجى المحاولة مرة أخرى."
+      ],
+      "Gateway deleted": [
+        "تم حذف البوابة"
       ],
       "Gateway monitor": [
         "مراقبة البوابة"
@@ -9573,6 +9738,9 @@
       "Open source": [
         "مفتوح المصدر"
       ],
+      "Open the Extensions menu": [
+        "فتح قائمة الإضافات"
+      ],
       "Open the guide for recommended actions and helpful links.": [
         "افتح الدليل للاطلاع على الإجراءات الموصى بها والروابط المفيدة."
       ],
@@ -9672,6 +9840,9 @@
       ],
       "Phone number": [
         "رقم الهاتف"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "ثبّت ${ PASS_APP_NAME } في شريط الأدوات"
       ],
       "Please add email addresses for the users on rows": [
         "يُرجى إضافة عناوين البريد الإلكتروني للمستخدمين في الصفوف",
@@ -9982,6 +10153,9 @@
       "Sign in only": [
         "تسجيل الدخول فقط"
       ],
+      "Sign in or create an account to continue.": [
+        "سجّل الدخول أو أنشئ حسابًا للمتابعة."
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "سجل الدخول إلى ${ MAIL_APP_NAME } لتفعيل عنوانك"
       ],
@@ -10168,6 +10342,9 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "سيكون الاسم مرئيًا للمستخدمين أثناء تسجيل دخولهم."
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
+        "يمكن منح رصيد الإحالة خلال مدة تصل إلى شهرين بعد انتهاء الفترة التجريبية لصديقك، وذلك إذا اشترك صديقك في إحدى الخطط."
       ],
       "The securest way to browse, stream, and be online.": [
         "الطريقة المضمونة لتصفح الإنترنت، المشاهدة، و البقاء متصلاً."
@@ -10907,6 +11084,15 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "لن تتمكن من استرداد البيانات المقفلة باستخدام ملفات الاسترداد التي نزّلتها. سيؤدي هذا أيضًا إلى تعطيل الاسترداد بالأجهزة."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "ستتلقى مكافأة الائتمان بعد شهر واحد من اشتراك صديقك في خطة سنوية، وبعد شهرين من اشتراكه في خطة شهرية."
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "ستحصل على مكافأة الائتمان بعد شهر واحد من انتهاء تجربة صديقك."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "ستحصل على مكافأة الائتمان بعد شهرين من انتهاء تجربة صديقك."
+      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail addresses. To add another, first disable one of them.": [
         "لقد فعَلتً إعادة التوجيه على ${ MAX_SYNC_PAID_USER } عنوان Gmail. لإضافة عنوان آخر، قم بتعطيل أحدها أولاً.",
         "لقد فعَلتً إعادة التوجيه على ${ MAX_SYNC_PAID_USER } عنوان Gmail. لإضافة عنوان آخر، قم بتعطيل أحدها أولاً.",
@@ -10976,6 +11162,12 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "لن يتم حفظ معلومات تسجيل الدخول الخاصة بك بعد اكتمال الاستيراد."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "تاريخ الفوترة التالي هو ${ renewalTime }. يمكنك الإلغاء في أي وقت."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "تاريخ الفوترة التالي هو ${ renewalTime }. يمكنك الإلغاء في أي وقت. يرجى الاتصال بالدعم إذا كنت بحاجة إلى تغيير فوري في الخطة."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "تستخدم مؤسستك تسجيل الدخول الأحادي (SSO). اضغط على تسجيل الدخول للمتابعة مع موفر خدمة SSO الخاص بك."
@@ -11561,6 +11753,9 @@
       "6 Pass Plus accounts": [
         "6 حسابات Pass Plus"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "يمكنك الوصول إلى ${ PASS_APP_NAME } بأمان من خلال الطرفية، وهو مثالي لعمليات البرمجة النصية والأتمتة وتدفقات عمل التطوير."
+      ],
       "Account holder": [
         "صاحب الحساب"
       ],
@@ -11770,6 +11965,9 @@
       ],
       "Colors": [
         "الألوان"
+      ],
+      "Command line interface (CLI)": [
+        "واجهة سطر الأوامر (CLI)"
       ],
       "Common passwords": [
         "كلمات المرور الشائعة"
@@ -13274,6 +13472,42 @@
       ]
     },
     "meet_2025: Feature": {
+      "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
+        "${ MEET_APP_NAME }: مؤتمرات فيديو سرية للمحادثات التي تهمك"
+      ],
+      "24 hours per meeting": [
+        "24 ساعة لكل اجتماع"
+      ],
+      "60 minutes per meeting": [
+        "60 دقيقة لكل اجتماع"
+      ],
+      "Appointment scheduling": [
+        "جدولة المواعيد"
+      ],
+      "Booking pages": [
+        "صفحات الحجز"
+      ],
+      "Browser, mobile, and desktop apps": [
+        "تطبيقات المتصفح والجوال وسطح المكتب"
+      ],
+      "Built-in chat": [
+        "دردشة مدمجة"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "مشاركة شاشة مشفّرة من الطرف إلى الطرف ودردشة مؤقتة أثناء المكالمة"
+      ],
+      "Meeting recording": [
+        "تسجيل الاجتماع"
+      ],
+      "One active meeting at a time": [
+        "اجتماع نشط واحد في كل مرة"
+      ],
+      "Screen-sharing": [
+        "مشاركة الشاشة"
+      ],
+      "Unlimited meetings per day": [
+        "اجتماعات غير محدودة يوميا"
+      ],
       "Up to ${ n } meetings per day": [
         "ما يصل إلى ${ n } إجتماعات يوميًا",
         "ما يصل إلى ${ n } إجتماع يوميًا",
@@ -14056,6 +14290,9 @@
       "Password-protected Emails": [
         "رسائل بريد إلكتروني محمية بكلمة مرور"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "الدعم عبر الهاتف (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ مستخدمين)"
+      ],
       "Priority email support": [
         "دعم ذو أولوية عبر البريد الإلكتروني"
       ],
@@ -14589,6 +14826,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "خصص توقيع بريدك الإلكتروني بالشعارات والصور وأيقونات وسائل التواصل الاجتماعي وروابط تفاصيل الاتصال الخاصة بك والمزيد"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "يتوفر الدعم عبر الهاتف من فريق دعم عملاء ${ BRAND_NAME } خلال ساعات العمل الأوروبية، وذلك للعملاء الذين لديهم ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } مستخدمين أو أكثر."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "يمنع الوصول إلى الرسائل من قِبل ${ BRAND_NAME } أو الأطراف الثالثة. الأشخاص الوحيدون الذين يمكنهم قراءة الرسائل هم المُرسِل والمستلم المقصود."
@@ -15997,6 +16237,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (بدون ضريبة)"
+      ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -16029,6 +16272,9 @@
       ],
       "Got it": [
         "أحصل عليها"
+      ],
+      "I'm purchasing as a business": [
+        "أقوم بالشراء كشركة"
       ],
       "Including ${ rate }% tax": [
         "شامل ضريبة بنسبة ${ rate }٪"
@@ -16137,9 +16383,6 @@
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "يؤدي هذا الإجراء إلى توسيع الاشتراك الحالي. سيتم محاسبتك فقط على الإضافات الجديدة والوقت المتبقي من دورة الفوترة الحالية. لن يتغير تاريخ تجديد اشتراكك."
-      ],
-      "This number will be shown on all future invoices": [
-        "سيظهر هذا الرقم في جميع الفواتير المستقبلية"
       ],
       "This offer is not available with your current plan.": [
         "هذا العرض غير متوفر مع خطتك الحالية."
@@ -16361,6 +16604,9 @@
       "Confirm": [
         "تأكيد"
       ],
+      "Cortex Inc.": [
+        "شركة Cortex Inc."
+      ],
       "domain.com": [
         "domain.com"
       ],
@@ -16435,6 +16681,9 @@
       ],
       "Postal code": [
         "الرمز البريدي"
+      ],
+      "San Francisco": [
+        "سان فرانسيسكو"
       ],
       "Search": [
         "البحث"
@@ -18059,6 +18308,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "فتح في ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "فتح في ${ appName } (بيتا)"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -19910,6 +20162,9 @@
       "Billing details updated": [
         "تم تحديث تفاصيل الفوترة"
       ],
+      "Billing information updated": [
+        "تم تحديث معلومات الفوترة"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "تمت إضافة التقويم. قد يستغرق الأمر بضع دقائق للمزامنة."
       ],
@@ -20700,6 +20955,9 @@
       "Connect to video conferencing": [
         "الاتصال بمؤتمرات الفيديو"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "اربط حساب ${ BRAND_NAME } الخاص بك"
+      ],
       "Connect your custom domain": [
         "اربط نطاقك المخصَّص"
       ],
@@ -20827,6 +21085,9 @@
       ],
       "Deep dive into VPN blog posts": [
         "الغوص العميق في منشورات مدونة VPN"
+      ],
+      "Delete ${ name }?": [
+        "حذف ${ name }?"
       ],
       "Delete ${ value }": [
         "حذف ${ value }"
@@ -21392,6 +21653,9 @@
       "Photos": [
         "الصور"
       ],
+      "Pin the extension": [
+        "تثبيت الملحق"
+      ],
       "Policies": [
         "السياسات"
       ],
@@ -21653,6 +21917,9 @@
       "Special Offer": [
         "عرض خاص"
       ],
+      "Spring Sale": [
+        "تخفيضات الربيع"
+      ],
       "Start a new import": [
         "بدء عملية استيراد جديدة"
       ],
@@ -21723,6 +21990,12 @@
       ],
       "Time zone": [
         "المنطقة الزمنية"
+      ],
+      "To preview this spreadsheet, download it.": [
+        "لمعاينة جدول البيانات هذا، قم بتنزيله."
+      ],
+      "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
+        "لمعاينة جدول البيانات هذا، افتحه في ${ SHEETS_APP_NAME } أو قم بتنزيله."
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "جرب ${ AUTHENTICATOR_APP_NAME }"
@@ -21832,6 +22105,9 @@
       "Welcome to ${ planName }": [
         "مرحبًا بك في ${ planName }"
       ],
+      "Welcome to your new password manager!": [
+        "مرحبًا بك في مدير كلمات المرور الجديد!"
+      ],
       "What is an alias?": [
         "ما هو الاسم المستعار؟"
       ],
@@ -21861,6 +22137,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "تنتهي الفترة التجريبية المجانية لخطة ${ planName } في ${ textDate }"
+      ],
+      "Your ${ planTitle } subscription has started": [
+        "بدأ اشتراكك ${ planTitle }"
       ],
       "Your calendar link": [
         "رابط تقويمك"
@@ -22878,6 +23157,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "التقارير ليست مشفرة من النهاية إلى النهاية، يرجى عدم إرسال أي معلومات حساسة."
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "ستدخل الخوادم في هذه البوابة فترة إلغاء تنشيط مدتها 10 أيام. يمكن إضافة هذه الخوادم إلى بوابة جديدة، ولكن لا يمكن تغيير بلدها."
       ],
       "Skip verification?": [
         "تخطي التحقق؟"

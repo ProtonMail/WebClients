@@ -157,17 +157,11 @@
       "Confirm all": [
         "Összes megerősítése"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Összekapcsolás a ${ BRAND_NAME } fiókjával"
-      ],
       "Continue": [
         "Tovább"
       ],
       "Continue offline": [
         "Folytatás offline módban"
-      ],
-      "Continue without pinning": [
-        "Folytatás rögzítés nélkül"
       ],
       "Copy and close": [
         "Másolás és bezárás"
@@ -190,17 +184,11 @@
       "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } fiók létrehozása"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } fiók létrehozása"
-      ],
       "Create a new vault": [
         "Új tároló létrehozása"
       ],
       "Create alias": [
         "E-mail álnév létrehozása"
-      ],
-      "Create an account": [
-        "Fiók létrehozása"
       ],
       "Create card": [
         "Bankkártya létrehozása"
@@ -282,9 +270,6 @@
       ],
       "Do not suggest on this website": [
         "Ne javasoljon ezen a weboldalon"
-      ],
-      "Done": [
-        "Kész"
       ],
       "Download this CSV template": [
         "Töltse le ezt a CSV sablont"
@@ -621,9 +606,6 @@
       ],
       "Sign back in": [
         "Ismét bejelentkezés"
-      ],
-      "Sign in": [
-        "Bejelentkezés"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Bejelentkezés ${ BRAND_NAME }nal"
@@ -1164,9 +1146,6 @@
       "PIN codes do not match": [
         "A PIN-kódok nem egyeznek"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Rögzítse a bővítményt, vagy válassza a \"Folytatás rögzítés nélkül\"-t."
-      ],
       "Registration failure: ${ message }": [
         "Hiba a regisztráció során: ${ message }"
       ],
@@ -1454,6 +1433,10 @@
         "${ trialDaysLeft } nap van hátra",
         "${ trialDaysLeft } nap van hátra"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } tag)",
+        "(${ memberCount } tag)"
+      ],
       "(Empty)": [
         "(Üres)"
       ],
@@ -1619,9 +1602,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Válasszon egy hitelesítő kulcsot a(z) ${ domain } bejelentkezéshez"
       ],
-      "Click the icon to open it anytime.": [
-        "Az ikonra kattintva bármikor megnyithatja."
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "Zárja be ezt az ablakot egy biztonsági kulcs vagy másik hitelesítő kulcs használatához."
       ],
@@ -1780,9 +1760,6 @@
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "A következő lépésekkel importálhat adatokat általános CSV fájlból:"
-      ],
-      "For easy access to your passwords and more.": [
-        "A jelszavai és a többi adat könnyű eléréséhez."
       ],
       "For security reason, your access needs to be confirmed": [
         "Biztonsági okokból a hozzáférése jóváhagyást igényel"
@@ -1944,10 +1921,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Az összes elem áthelyezése innen: \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Egy elem másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat.",
-        "Az elemek másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat."
-      ],
       "Moving items": [
         "Elemek áthelyezése"
       ],
@@ -1996,9 +1969,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "A ${ PASS_APP_NAME } alkalmazáshoz való online hozzáféréshez PIN kód szükséges. 3 sikertelen próbálkozás után ki lesz jelentkeztetve."
       ],
-      "Open the Extensions menu": [
-        "Nyissa meg a bővítmények menüt"
-      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Figyelmeztetéseink a biztonságot helyezik előtérbe.Ha nem ismeri fel ezeket a feltört információkat nyugodtan figyelmen kívül hagyhatja ezt."
       ],
@@ -2035,9 +2005,6 @@
       ],
       "Permanently deleting selected items": [
         "A kiválasztott elemek végleges törlése"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Rögzítse a ${ PASS_APP_NAME }-t az eszköztárra"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-kód regisztrálva. Mostantól ezt használhatja a ${ PASS_APP_NAME } feloldására."
@@ -2216,9 +2183,6 @@
       "See more info": [
         "További információ"
       ],
-      "Select an existing login or create a new one.": [
-        "Válasszon ki egy meglévő bejelentkezést, vagy hozzon létre egy újat."
-      ],
       "Select destination vault": [
         "Céltároló kiválasztása"
       ],
@@ -2254,9 +2218,6 @@
       ],
       "Shared item invitation": [
         "Megosztott elem meghívás"
-      ],
-      "Sign in or create an account to continue.": [
-        "Jelentkezzen be vagy regisztráljon a folytatáshoz."
       ],
       "Sign in to your account": [
         "Jelentkezzen be a fiókjába"
@@ -4228,9 +4189,6 @@
       "Confirm your email": [
         "E-mail cím megerősítése"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Összekapcsolás az Ön ${ BRAND_NAME } fiókjával"
-      ],
       "Contacts": [
         "Névjegyek"
       ],
@@ -4480,9 +4438,6 @@
       "Permanently remove all items?": [
         "Véglegesen töröl minden elemet?"
       ],
-      "Pin the extension": [
-        "Rögzítse a bővítményt"
-      ],
       "Pinned (${ items.length })": [
         "Kitűzve (${ items.length })"
       ],
@@ -4625,9 +4580,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "Üdvözli a ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "Üdvözli az új jelszókezelője!"
       ],
       "What is an alias?": [
         "Mi az az e-mail álnév?"

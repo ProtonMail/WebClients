@@ -1465,8 +1465,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } vol compartir un element amb un grup que administreu."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } vol compartir un element amb el grup ${ invitedGroup.Name }."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } vol compartir un element amb el grup ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } vol compartir un element amb vosaltres."
@@ -1515,9 +1515,9 @@
         "S'ha detectat ${ row.breachCount } infracció.",
         "S'han detectat ${ row.breachCount } infraccions."
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } membre)",
-        "(${ membersCount } membres)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } membre)",
+        "(${ memberCount } membres)"
       ],
       "(Empty)": [
         "(Buit)"
@@ -1905,8 +1905,8 @@
       "Invite successfully resent": [
         "S'ha reenviat la invitació."
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "convideu el grup ${ invitedGroup.Name } a accedir als elements de"
+      "invites the group ${ name } to access items in": [
+        "convidar el grup ${ name } a accedir a elements de"
       ],
       "invites you to access items in": [
         "us convida a accedir a elements a"
