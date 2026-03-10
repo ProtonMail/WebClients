@@ -104,7 +104,12 @@ export const getSubscriptionData = async (
     const checkResultPromise = (async () => {
         const planIDs = options.planIDs ?? {};
 
-        if (isSubscriptionCheckForbidden(options.subscription, planIDs, options.cycle)) {
+        if (
+            isSubscriptionCheckForbidden(options.subscription, {
+                planIDs,
+                cycle: options.cycle,
+            })
+        ) {
             return getOptimisticCheckResult({
                 plansMap: options.plansMap,
                 planIDs,

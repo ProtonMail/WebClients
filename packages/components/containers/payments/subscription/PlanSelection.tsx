@@ -208,7 +208,7 @@ function excludingPlansWithAllChecksFordidden(
         const allowedCycles = getAllowedCycles({ subscription, planIDs, currency: subscription.Currency, plansMap });
 
         const allChecksForbidden = allowedCycles.every((cycle) =>
-            isSubscriptionCheckForbidden(subscription, planIDs, cycle)
+            isSubscriptionCheckForbidden(subscription, { planIDs, cycle })
         );
         return !allChecksForbidden;
     };
