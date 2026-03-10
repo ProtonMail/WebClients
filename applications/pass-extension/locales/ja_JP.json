@@ -166,17 +166,11 @@
       "Confirm all": [
         "全て確認"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } アカウントを接続してください"
-      ],
       "Continue": [
         "続行"
       ],
       "Continue offline": [
         "オフラインで続行"
-      ],
-      "Continue without pinning": [
-        "ピンを留めずに続ける"
       ],
       "Copy and close": [
         "コピーして閉じる"
@@ -220,17 +214,11 @@
       "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } アカウントを作成"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } アカウントを作成する"
-      ],
       "Create a new vault": [
         "新しい保管庫を作成する"
       ],
       "Create alias": [
         "エイリアスを作成"
-      ],
-      "Create an account": [
-        "アカウントを作成"
       ],
       "Create card": [
         "カードを作成"
@@ -318,9 +306,6 @@
       ],
       "Do not suggest on this website": [
         "このウェブサイトでは提案しないでください"
-      ],
-      "Done": [
-        "完了"
       ],
       "Download this CSV template": [
         "この CSV テンプレートをダウンロード"
@@ -666,9 +651,6 @@
       ],
       "Sign back in": [
         "再度サインインする"
-      ],
-      "Sign in": [
-        "サインイン"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME } でサインイン"
@@ -1224,9 +1206,6 @@
       "PIN codes do not match": [
         "PINコードが一致しません"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "拡張機能をピン留めするか、「ピン留めせずに続行」を選択してください。"
-      ],
       "Registration failure: ${ message }": [
         "登録失敗: ${ message }"
       ],
@@ -1503,6 +1482,9 @@
       "${ trialDaysLeft } day left": [
         "残り ${ trialDaysLeft } 日"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } 人のメンバー)"
+      ],
       "(Empty)": [
         "(空)"
       ],
@@ -1677,9 +1659,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "${ domain } にサインインするための保存されたパスキーを選択してください"
       ],
-      "Click the icon to open it anytime.": [
-        "アイコンをクリックするといつでも開くことができます。"
-      ],
       "Close this window in order to use a security key or another passkey.": [
         "セキュリティ キーまたは別のパスキーを使用するには、このウィンドウを閉じます。"
       ],
@@ -1848,9 +1827,6 @@
       "Follow those steps to import your data with a generic CSV:": [
         "以下の手順に従って、汎用 CSV を使用してデータをインポートします:"
       ],
-      "For easy access to your passwords and more.": [
-        "パスワードなどに簡単にアクセスできます。"
-      ],
       "For security reason, your access needs to be confirmed": [
         "セキュリティ上の理由から、アクセスを確認する必要があります"
       ],
@@ -2007,9 +1983,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
-      ],
       "Moving items": [
         "アイテムの移動"
       ],
@@ -2064,9 +2037,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME } へのオンラインアクセスにはPINコードが必要です。3回の試行に失敗するとログアウトされます。"
       ],
-      "Open the Extensions menu": [
-        "拡張機能メニューを開く"
-      ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Safari の設定を開き、${ PASS_APP_NAME } を見つけ、「権限」に進み、サイトの権限を有効にしてください。"
       ],
@@ -2105,9 +2075,6 @@
       ],
       "Permanently deleting selected items": [
         "選択したアイテムを完全に削除する"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "${ PASS_APP_NAME } をツールバーに固定します"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PINコードの登録が完了しました。 それを使用して ${ PASS_APP_NAME } のロックを解除します"
@@ -2301,9 +2268,6 @@
       "See more info": [
         "さらに詳しい情報を見る"
       ],
-      "Select an existing login or create a new one.": [
-        "既存のログインを選択するか、新しいログインを作成します。"
-      ],
       "Select destination vault": [
         "移動先の保管庫を選択"
       ],
@@ -2342,9 +2306,6 @@
       ],
       "Shared item invitation": [
         "共有アイテムの招待状"
-      ],
-      "Sign in or create an account to continue.": [
-        "サインインするか、アカウントを作成してください。"
       ],
       "Sign in to your account": [
         "アカウントにサインインする"
@@ -4326,9 +4287,6 @@
       "Confirm your email": [
         "メールを確認してください"
       ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } アカウントを接続してください"
-      ],
       "Contacts": [
         "連絡先"
       ],
@@ -4584,9 +4542,6 @@
       "Permanently remove all items?": [
         "全てのアイテムを完全に削除しますか？"
       ],
-      "Pin the extension": [
-        "拡張機能をピン留めする"
-      ],
       "Pinned (${ items.length })": [
         "ピン留め (${ items.length })"
       ],
@@ -4730,9 +4685,6 @@
       ],
       "Welcome to ${ brandNameJSX }": [
         "${ brandNameJSX } へようこそ"
-      ],
-      "Welcome to your new password manager!": [
-        "新しいパスワード マネージャーへようこそ!"
       ],
       "What is an alias?": [
         "エイリアスとは？"
