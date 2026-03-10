@@ -26,6 +26,9 @@
       "Authenticate": [
         "Autenticar"
       ],
+      "Back to dashboard": [
+        "Volver al panel de control"
+      ],
       "Background blur": [
         "Desenfoque de fondo"
       ],
@@ -1133,6 +1136,9 @@
       "North Korea": [
         "Corea del Norte"
       ],
+      "North Macedonia": [
+        "Macedonia del Norte"
+      ],
       "Northern Mariana Islands": [
         "Islas Marianas del Norte"
       ],
@@ -1694,6 +1700,9 @@
       "(You)": [
         "(Tú)"
       ],
+      "-Removed dangerous URL-": [
+        "-Se ha eliminado una URL peligrosa-"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número telefónico solo puede utilizarse para verificar una cuenta de ${ BRAND_NAME }."
       ],
@@ -1886,6 +1895,9 @@
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
         "Reuniones sin restricciones. Pásate a un plan superior para eliminar el límite de 1 hora y reunir hasta a 100 participantes."
       ],
+      "Meeting ended": [
+        "Reunión finalizada"
+      ],
       "Meeting full (${ maxParticipants } participants)": [
         "Reunión completa (${ maxParticipants } participantes)"
       ],
@@ -2057,8 +2069,14 @@
       "Thank you for joining.": [
         "Gracias por unirte."
       ],
+      "The host ended this meeting.": [
+        "El anfitrión finalizó esta reunión."
+      ],
       "The host has ended the meeting": [
         "El anfitrión ha finalizado la reunión"
+      ],
+      "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
+        "El anfitrión te ha retirado de esta reunión. Si ha sido un error, pídele que vuelva a invitarte."
       ],
       "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
         "Esto es un chat cifrado de extremo a extremo con mensajes efímeros. Después de que salgas de la llamada, no podrás acceder a este chat."
@@ -2149,6 +2167,9 @@
       ],
       "You left your meeting": [
         "Has dejado tu reunión"
+      ],
+      "You were removed from the meeting": [
+        "Te han retirado de la reunión"
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "Te han invitado a unirte a una reunión segura. Confirma tu nombre y haz clic abajo para ingresar."
@@ -2716,7 +2737,8 @@
       "Joined at epoch ${ log.epoch }": [
         "Unido en el Epoch ${ log.epoch }"
       ],
-      "Joining meeting with ${ participantCount } other participants…": [
+      "Joining meeting with ${ participantCount } other participant…": [
+        "Uniéndote a la reunión con ${ participantCount } participante más…",
         "Uniéndote a la reunión con ${ participantCount } participantes más…"
       ],
       "Local Participant": [
