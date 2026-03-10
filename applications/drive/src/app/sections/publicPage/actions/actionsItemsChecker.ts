@@ -16,27 +16,6 @@ export interface PublicItemChecker {
     openInDocsInfo: OpenInDocsType | undefined;
 }
 
-const getOpenableDocsInfo = (
-    openInDocsInfo: OpenInDocsType | undefined,
-    canEdit: boolean
-): { ok: true; value: OpenInDocsType } | { ok: false } => {
-    if (!openInDocsInfo) {
-        return { ok: false };
-    }
-
-    // Native documents can always be opened
-    if (openInDocsInfo.isNative) {
-        return { ok: true, value: openInDocsInfo };
-    }
-
-    // Non-native documents require edit permissions for conversion
-    if (canEdit) {
-        return { ok: true, value: openInDocsInfo };
-    }
-
-    return { ok: false };
-};
-
 const isWithinEditWindow = (creationTime: Date | undefined): boolean => {
     if (!creationTime) {
         return false;
@@ -66,13 +45,13 @@ export const createActionsItemChecker = (items: PublicFolderItem[]): PublicItemC
     const canEdit = items.length > 0 && publicRole !== MemberRole.Viewer && items.every(getIsOwnedByUser);
     const openInDocsInfo = firstItem?.mediaType ? getOpenInDocsInfo(firstItem.mediaType) : undefined;
 
-    const openableDocsResult = getOpenableDocsInfo(openInDocsInfo, canEdit);
     const scanDisabled = unleashVanillaStore.getState().isEnabled('DriveDownloadScanDisabled');
     return {
         hasPreviewAvailable,
         canEdit,
         canScanMalware: !scanDisabled,
         isSingleSelection,
-        openInDocsInfo: openableDocsResult.ok ? openableDocsResult.value : undefined,
+        // We can't convert docs/sheets on public page
+        openInDocsInfo: openInDocsInfo?.isNative ? openInDocsInfo : undefined,
     };
 };
