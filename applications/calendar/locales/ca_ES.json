@@ -4043,6 +4043,21 @@
       ],
       "ZIP code is required": [
         "Es requereix el codi postal."
+      ],
+      "Company name or personal name is required": [
+        "S'ha de proporcionar el nom de l'empresa o el de la persona"
+      ],
+      "Invalid VAT number": [
+        "El número d'IVA no és vàlid"
+      ],
+      "Please complete the billing details": [
+        "Empleneu les dades de facturació"
+      ],
+      "This field is invalid": [
+        "Aquest camp no és vàlid"
+      ],
+      "Wrong billing address": [
+        "L'adreça de facturació és incorrecta"
       ]
     },
     "error": {
@@ -6526,6 +6541,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Heu arribat al límit de reserves (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Rebreu la recompensa en crèdit un mes després que el vostre amic se subscrigui a un pla anual, i dos mesos després que ho faci a un pla mensual."
       ]
     },
     "info": {
@@ -9495,6 +9513,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "La vostra subscripció ja té un descompte aplicat. Canviar a aquesta nova promoció implica que el descompte actual ja no s'aplicarà."
+      ],
+      "I'm purchasing as a business": [
+        "Estic comprant com a empresa"
       ]
     },
     "Payments.Error": {
@@ -9779,6 +9800,12 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "San Francisco"
       ]
     },
     "Placeholder for contact group name": {
@@ -12203,6 +12230,9 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Spring Sale": [
+        "Rebaixes de primavera"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

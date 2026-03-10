@@ -4043,6 +4043,21 @@
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
+      ],
+      "Company name or personal name is required": [
+        "Απαιτείται το όνομα της εταιρείας ή το προσωπικό όνομα"
+      ],
+      "Invalid VAT number": [
+        "Μη έγκυρος αριθμός ΦΠΑ"
+      ],
+      "Please complete the billing details": [
+        "Παρακαλούμε συμπληρώστε τα στοιχεία χρέωσης"
+      ],
+      "This field is invalid": [
+        "Αυτό το πεδίο δεν είναι έγκυρο"
+      ],
+      "Wrong billing address": [
+        "Λανθασμένη διεύθυνσης χρέωσης"
       ]
     },
     "error": {
@@ -6526,6 +6541,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Έχετε φτάσει στο όριο των διαθέσιμων θέσεων κράτησης (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Θα λάβετε την ανταμοιβή πίστωσης 1 μήνα αφότου ο φίλος σας εγγραφεί σε ετήσιο πλάνο και 2 μήνες αφότου εγγραφεί σε μηνιαίο πλάνο."
       ]
     },
     "info": {
@@ -9495,6 +9513,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Η συνδρομή σας έχει ήδη μια υπάρχουσα έκπτωση. Η μετάβαση σε αυτή τη νέα προσφορά σημαίνει ότι η υπάρχουσα έκπτωση δε θα ισχύει πλέον."
+      ],
+      "I'm purchasing as a business": [
+        "Αγοράζω ως επιχείρηση"
       ]
     },
     "Payments.Error": {
@@ -9779,6 +9800,12 @@
       ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "Σαν Φρανσίσκο"
       ]
     },
     "Placeholder for contact group name": {
@@ -12203,6 +12230,9 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Spring Sale": [
+        "Ανοιξιάτικες Εκπτώσεις"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

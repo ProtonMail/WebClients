@@ -3998,6 +3998,21 @@
       ],
       "ZIP code is required": [
         "우편번호가 필요합니다"
+      ],
+      "Company name or personal name is required": [
+        "법인명 또는 개인 성명을 입력해야 합니다."
+      ],
+      "Invalid VAT number": [
+        "유효하지 않은 VAT 넘버"
+      ],
+      "Please complete the billing details": [
+        "청구 상세 정보를 입력해 주세요."
+      ],
+      "This field is invalid": [
+        "이 필드는 유효하지 않습니다"
+      ],
+      "Wrong billing address": [
+        "청구 주소가 잘못되었습니다"
       ]
     },
     "error": {
@@ -4460,7 +4475,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입하십시오."
+        "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입해 주세요."
       ],
       "Security key": [
         "보안 키"
@@ -5391,7 +5406,7 @@
         "중복 키 업데이트됨"
       ],
       "Each code can only be used once": [
-        "각각의 코드는 한 번만 사용 가능합니다"
+        "각 코드는 한 번씩만 유효합니다."
       ],
       "Edit email address": [
         "이메일 주소 변경"
@@ -6171,7 +6186,7 @@
         "VPN에 연결하여 암호화 기술을 사용하여 IP 주소(기기에 할당된 고유 코드)를 숨길 수 있습니다."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "이중 인증을 설정하면, 인증 앱에 접근할 수 없을 때 로그인 시 사용할 수 없는 복구 코드를 제공해드립니다."
+        "2단계 인증을 설정하면, 인증 앱에 접근할 수 없을때 로그인시 사용할 수 있는 복구 코드를 제공해 드립니다."
       ],
       "Where will the appointment take place?": [
         "약속은 어디에서 진행되나요?"
@@ -6427,6 +6442,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "예약 슬롯 한도에 도달했습니다 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "친구가 연간 플랜을 구독하고 1개월 후, 월간 요금제에 구독하고 2개월 후에 크레딧 보상을 받게 됩니다."
       ]
     },
     "info": {
@@ -7151,6 +7169,12 @@
       ],
       "Zoom meeting": [
         "Zoom 화상 회의"
+      ],
+      "Emails (last 6 months)": [
+        "이메일 (지난 6개월)"
+      ],
+      "Last 6 months only": [
+        "지난 6개월"
       ]
     },
     "label": {
@@ -8183,6 +8207,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
+      ],
+      "${ options }-day file version history": [
+        "${ options }-일 파일 버전 기록"
       ]
     },
     "new_plans: feature highlight": {
@@ -9310,6 +9337,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "구독에 현재 기존 할인이 적용되어 있습니다. 새로운 프로모션으로 변경하면 기존 할인이 더 이상 적용되지 않습니다."
+      ],
+      "I'm purchasing as a business": [
+        "사업체 용도로 구매합니다"
       ]
     },
     "Payments.Error": {
@@ -9594,6 +9624,12 @@
       ],
       "ZIP code": [
         "우편 번호"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "샌프란시스코"
       ]
     },
     "Placeholder for contact group name": {
@@ -11963,6 +11999,9 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Spring Sale": [
+        "봄맞이 할인"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12587,6 +12626,16 @@
       ],
       "SPRING SALE": [
         "봄맞이 세일"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "2026년 봄맞이 할인"
+      ]
+    },
+    "springSale2026: Title": {
+      "SPRING SALE": [
+        "봄맞이 할인"
       ]
     }
   }
