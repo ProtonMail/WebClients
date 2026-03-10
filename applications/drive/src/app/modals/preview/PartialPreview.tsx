@@ -13,6 +13,7 @@ export interface PartialPreviewProps {
     drive: Drive;
     nodeUid: string;
     verifySignatures?: boolean;
+    canOpenInDocs?: boolean;
     onContentLoaded?: (data: Uint8Array<ArrayBuffer>[], previewMethod?: ContentPreviewMethod) => void;
     onDownload?: () => void;
     className?: string;
@@ -27,6 +28,7 @@ export function PartialPreview({
     drive,
     nodeUid,
     verifySignatures = true,
+    canOpenInDocs = true,
     onContentLoaded,
     onDownload,
     className,
@@ -58,7 +60,7 @@ export function PartialPreview({
                 fileSize={preview.node.displaySize}
                 onDownload={onDownload}
                 videoStreaming={preview.content.videoStreaming}
-                onOpenInDocs={preview.actions.openInDocs}
+                onOpenInDocs={canOpenInDocs ? preview.actions.openInDocs : undefined}
                 imgThumbnailUrl={preview.content.thumbnailUrl}
                 signatureConfirmation={
                     preview.node.contentSignatureIssueLabel && (
