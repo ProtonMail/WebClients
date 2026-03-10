@@ -346,6 +346,9 @@
       "Get Started": [
         "시작하기"
       ],
+      "Hide": [
+        "숨기기"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "어떻게 ${ PROVIDER_INFO_MAP[form.values.provider].title }에서 데이터를 내보낼 수 있죠?"
       ],
@@ -1454,6 +1457,9 @@
       ],
       "${ row.breachCount } breach detected": [
         "${ row.breachCount }개 침해 사례 감지됨"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } 회원)"
       ],
       "(Empty)": [
         "(비어 있음)"

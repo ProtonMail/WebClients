@@ -1465,8 +1465,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } wil een item delen met een groep die u beheert."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } wil een item delen met de groep ${ invitedGroup.Name }."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } wil een item delen met de groep ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } wil een kluis delen met u."
@@ -1515,9 +1515,9 @@
         "${ row.breachCount } inbreuk gedetecteerd",
         "${ row.breachCount } inbreuken gedetecteerd"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } lid)",
-        "(${ membersCount } leden)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } lid)",
+        "(${ memberCount } leden)"
       ],
       "(Empty)": [
         "(Leeg)"
@@ -1905,8 +1905,8 @@
       "Invite successfully resent": [
         "Uitnodiging succesvol herverzonden"
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "nodigt de groep ${ invitedGroup.Name } voor toegang tot items in"
+      "invites the group ${ name } to access items in": [
+        "nodigt de groep ${ name } uit voor toegang tot items in"
       ],
       "invites you to access items in": [
         "nodigt u uit met toegang tot items in"

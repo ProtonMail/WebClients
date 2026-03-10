@@ -1465,8 +1465,8 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } quer compartilhar um item com um grupo que você administra."
       ],
-      "${ inviterEmail } wants to share an item with the group ${ invitedGroup.Name }.": [
-        "${ inviterEmail } quer compartilhar um item com o grupo ${ invitedGroup.Name }."
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } quer compartilhar um item com o grupo ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } deseja compartilhar um item com você."
@@ -1515,9 +1515,9 @@
         "${ row.breachCount } violação detectada",
         "${ row.breachCount } violações detectadas"
       ],
-      "(${ membersCount } member)": [
-        "(${ membersCount } membro)",
-        "(${ membersCount } membros)"
+      "(${ memberCount } member)": [
+        "(${ memberCount } membro)",
+        "(${ memberCount } membros)"
       ],
       "(Empty)": [
         "(Vazio)"
@@ -1905,8 +1905,8 @@
       "Invite successfully resent": [
         "O convite foi enviado."
       ],
-      "invites the group ${ invitedGroup.Name } to access items in": [
-        "convida o grupo ${ invitedGroup.Name } a acessar itens em"
+      "invites the group ${ name } to access items in": [
+        "convida o grupo ${ name } a acessar itens em"
       ],
       "invites you to access items in": [
         "convida você a acessar itens em"
