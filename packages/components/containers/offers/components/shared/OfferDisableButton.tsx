@@ -6,8 +6,8 @@ import { useLoading } from '@proton/hooks';
 import useOfferFlags from '../../hooks/useOfferFlags';
 import type { OfferProps } from '../../interface';
 
-const OfferDisableButton = (props: OfferProps) => {
-    const { handleHide } = useOfferFlags(props.offer);
+const OfferDisableButton = ({ offer, onCloseModal }: Pick<OfferProps, 'offer' | 'onCloseModal'>) => {
+    const { handleHide } = useOfferFlags(offer);
 
     const [loading, withLoading] = useLoading();
 
@@ -21,7 +21,7 @@ const OfferDisableButton = (props: OfferProps) => {
             className="offer-disable-button color-weak text-sm hover:color-weak"
             onClick={async () => {
                 await withLoading(handleHide());
-                props.onCloseModal?.();
+                onCloseModal?.();
             }}
         >{c('specialoffer: Action').t`Don't show this offer again`}</Button>
     );
