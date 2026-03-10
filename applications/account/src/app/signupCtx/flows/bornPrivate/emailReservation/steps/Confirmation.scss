@@ -1,0 +1,21 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+$confirmation-two-column-breakpoint: em(840, 16);
+
+.confirmation-two-column {
+	&-show-mobile {
+		@include im.media('>=#{$confirmation-two-column-breakpoint}') {
+			display: none;
+		}
+	}
+
+	&-aside {
+		@include im.media('<=#{$confirmation-two-column-breakpoint}') {
+			display: none;
+		}
+	}
+}

@@ -370,8 +370,8 @@ const getErrorAssistDetails = (
     const emailAssistError = getAssistVisible(inputStates.email) ? errorDetails.email : undefined;
     const emailAlreadyUsed = Boolean(
         emailAssistError &&
-            asyncStates.email.error &&
-            getApiError(asyncStates.email.error)?.code === API_CUSTOM_ERROR_CODES.ALREADY_USED
+        asyncStates.email.error &&
+        getApiError(asyncStates.email.error)?.code === API_CUSTOM_ERROR_CODES.ALREADY_USED
     );
 
     return {

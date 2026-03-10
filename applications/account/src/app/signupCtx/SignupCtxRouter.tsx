@@ -2,13 +2,12 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { PaymentsContextOptimisticProvider } from '@proton/payments/ui';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { cachedPlans } from '../defaultPlans';
 import type { BaseSignupContextProps } from './context/SignupContext';
+import EmailReservationSignup from './flows/bornPrivate/emailReservation/EmailReservationSignup';
 import DrivePricing from './flows/drive/DrivePricing';
 import DriveSignup from './flows/drive/DriveSignup';
-import FirstEmailReservationFlowSignup from './flows/firstEmailReservation/FirstEmailReservationFlow';
 import GenericStartSignup from './flows/genericStart/GenericStartSignup';
 import GreenlandSignup from './flows/greenland/GreenlandSignup';
 import MeetB2CSignup from './flows/meet/MeetB2CSignup';
@@ -45,9 +44,17 @@ const GenericSignupController = (props: BaseSignupContextProps) => {
     );
 };
 
-const SignupCtxRouter = (props: BaseSignupContextProps) => {
-    const firstEmailEnabled = useFlag('FirstEmail');
+const EmailReservationController = () => {
+    return (
+        <Switch>
+            <Route>
+                <EmailReservationSignup />
+            </Route>
+        </Switch>
+    );
+};
 
+const SignupCtxRouter = (props: BaseSignupContextProps) => {
     return (
         <PaymentsContextOptimisticProvider preload={false} authenticated={false} cachedPlans={cachedPlans}>
             <Switch>
@@ -63,19 +70,17 @@ const SignupCtxRouter = (props: BaseSignupContextProps) => {
                 <Route path={SSO_PATHS.MEET_SIGNUP}>
                     <MeetB2CSignup {...props} />
                 </Route>
-                {firstEmailEnabled && (
-                    <Route path={SSO_PATHS.FIRST_EMAIL}>
-                        <FirstEmailReservationFlowSignup {...props} />
-                    </Route>
-                )}
                 <Route path={SSO_PATHS.GREENLAND_SIGNUP}>
                     <GreenlandSignup {...props} />
+                </Route>
+                <Route path={SSO_PATHS.BORN_PRIVATE}>
+                    <EmailReservationController />
                 </Route>
                 <Route>
                     <GenericSignupController {...props} />
                 </Route>
-            </Switch>
-        </PaymentsContextOptimisticProvider>
+            </Switch >
+        </PaymentsContextOptimisticProvider >
     );
 };
 

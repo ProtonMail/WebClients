@@ -104,13 +104,14 @@ enum AccountFlag {
     PassDashboard = 'PassDashboard',
     DriveDashboard = 'DriveDashboard',
     MeetDashboard = 'MeetDashboard',
-    FirstEmail = 'FirstEmail',
     SocialRecovery = 'SocialRecovery',
     MembersRemote = 'MembersRemote',
     ShowLiteAppCheckoutV2 = 'ShowLiteAppCheckoutV2',
     AdminRoleMVP = 'AdminRoleMVP',
     UseZendeskV2 = 'UseZendeskV2',
     PurchaseAttributionSurveyEnabled = 'PurchaseAttributionSurveyEnabled',
+    BornPrivateReservation = 'BornPrivateReservation',
+    BornPrivateActivationRecovery = 'BornPrivateActivationRecovery',
 }
 
 enum PaymentsFlag {
