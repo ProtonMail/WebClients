@@ -6,6 +6,7 @@ import { getItem } from '@proton/shared/lib/helpers/storage';
 import { DriveEventType, getDrive, getDriveForPhotos } from '../..';
 import { Logging } from '../../modules/logging';
 import {
+    type BusDriverClient,
     type BusDriverEvent,
     type BusDriverEventListener,
     type BusDriverEventMap,
@@ -312,7 +313,7 @@ class BusDriver {
 
         const drive = getDrive();
         const subscription = drive.subscribeToTreeEvents(treeEventScopeId, async (event: DriveEvent) => {
-            await this.handleSdkEvent(event);
+            await this.handleSdkEvent(event, drive);
         });
 
         this.treeEventSubscriptions.set(key, {
@@ -360,8 +361,9 @@ class BusDriver {
             return;
         }
 
-        const subscription = getDriveForPhotos().subscribeToTreeEvents(treeEventScopeId, async (event: DriveEvent) => {
-            await this.handleSdkEvent(event);
+        const photosClient = getDriveForPhotos();
+        const subscription = photosClient.subscribeToTreeEvents(treeEventScopeId, async (event: DriveEvent) => {
+            await this.handleSdkEvent(event, photosClient);
         });
 
         this.treeEventSubscriptions.set(key, {
@@ -451,7 +453,7 @@ class BusDriver {
         } else {
             const drive = getDrive();
             const subscription = drive.subscribeToDriveEvents(async (event: DriveEvent) => {
-                await this.handleSdkEvent(event);
+                await this.handleSdkEvent(event, drive);
             });
             this.driveEventSubscription = {
                 subscription,
@@ -503,7 +505,7 @@ class BusDriver {
     /**
      * Handle incoming SDK events and emit corresponding BusDriverEvents
      */
-    private async handleSdkEvent(event: DriveEvent): Promise<void> {
+    private async handleSdkEvent(event: DriveEvent, driveClient: BusDriverClient): Promise<void> {
         if (this.debugMode) {
             logDebug('[BusDriver] Handling SDK event', {
                 eventType: event.type,
@@ -516,6 +518,7 @@ class BusDriver {
                 case DriveEventType.NodeCreated:
                     await this.emit({
                         type: BusDriverEventName.CREATED_NODES,
+                        driveClient,
                         items: [
                             {
                                 uid: event.nodeUid,
@@ -529,6 +532,7 @@ class BusDriver {
                 case DriveEventType.NodeUpdated:
                     await this.emit({
                         type: BusDriverEventName.UPDATED_NODES,
+                        driveClient,
                         items: [
                             {
                                 uid: event.nodeUid,
@@ -542,12 +546,14 @@ class BusDriver {
                 case DriveEventType.NodeDeleted:
                     await this.emit({
                         type: BusDriverEventName.DELETED_NODES,
+                        driveClient,
                         uids: [event.nodeUid],
                     });
                     break;
                 case DriveEventType.SharedWithMeUpdated:
                     await this.emit({
                         type: BusDriverEventName.REFRESH_SHARED_WITH_ME,
+                        driveClient,
                     });
                     break;
             }

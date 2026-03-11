@@ -139,10 +139,11 @@ describe('subscribeToSharedByMeEvents', () => {
             )[1];
         });
 
-        it('should update shared items that are already in store', async () => {
-            mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
+        it('should add new shared items not yet in store', async () => {
+            mockStore.getSharedByMeItem.mockReturnValue(undefined);
 
             const event = {
+                driveClient: mockDrive,
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
 
@@ -156,10 +157,11 @@ describe('subscribeToSharedByMeEvents', () => {
             );
         });
 
-        it('should not add items that are not already in store', async () => {
-            mockStore.getSharedByMeItem.mockReturnValue(undefined);
+        it('should not add items that are already in store', async () => {
+            mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
 
             const event = {
+                driveClient: mockDrive,
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
 
@@ -179,12 +181,13 @@ describe('subscribeToSharedByMeEvents', () => {
         });
 
         it('should handle errors and not add items when node creation fails', async () => {
-            mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
+            mockStore.getSharedByMeItem.mockReturnValue(undefined);
             mockGetNodeEntity.mockImplementation(() => {
                 throw new Error('Node fetch failed');
             });
 
             const event = {
+                driveClient: mockDrive,
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
 
@@ -222,6 +225,7 @@ describe('subscribeToSharedByMeEvents', () => {
             mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
 
             const event = {
+                driveClient: mockDrive,
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
 
@@ -254,6 +258,7 @@ describe('subscribeToSharedByMeEvents', () => {
             });
 
             const event = {
+                driveClient: mockDrive,
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
 
@@ -311,9 +316,10 @@ describe('subscribeToSharedByMeEvents', () => {
         });
 
         it('should create item with public link when available', async () => {
-            mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
+            mockStore.getSharedByMeItem.mockReturnValue(undefined);
 
             const event = {
+                driveClient: mockDrive,
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
 
@@ -331,10 +337,11 @@ describe('subscribeToSharedByMeEvents', () => {
         });
 
         it('should create item without public link when not available', async () => {
-            mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
+            mockStore.getSharedByMeItem.mockReturnValue(undefined);
             mockDrive.getSharingInfo.mockResolvedValue({});
 
             const event = {
+                driveClient: mockDrive,
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
 
@@ -348,7 +355,7 @@ describe('subscribeToSharedByMeEvents', () => {
         });
 
         it('should set signature issues when present', async () => {
-            mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
+            mockStore.getSharedByMeItem.mockReturnValue(undefined);
             mockGetSignatureIssues.mockReturnValue({
                 ok: false,
                 issues: {
@@ -359,6 +366,7 @@ describe('subscribeToSharedByMeEvents', () => {
             });
 
             const event = {
+                driveClient: mockDrive,
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
 
@@ -372,13 +380,14 @@ describe('subscribeToSharedByMeEvents', () => {
         });
 
         it('should handle missing deprecatedShareId', async () => {
-            mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
+            mockStore.getSharedByMeItem.mockReturnValue(undefined);
             mockGetNodeEntity.mockReturnValue({
                 node: createMockNode({ deprecatedShareId: undefined }),
                 errors: new Map(),
             });
 
             const event = {
+                driveClient: mockDrive,
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
 

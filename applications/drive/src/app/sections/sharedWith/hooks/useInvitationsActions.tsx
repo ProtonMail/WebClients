@@ -41,6 +41,7 @@ export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActio
 
                 await getBusDriver().emit({
                     type: BusDriverEventName.ACCEPT_INVITATIONS,
+                    driveClient: getDrivePerNodeType(type),
                     uids: [node.uid],
                 });
 
@@ -62,6 +63,7 @@ export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActio
 
             await getBusDriver().emit({
                 type: BusDriverEventName.REJECT_INVITATIONS,
+                driveClient: getDrivePerNodeType(type),
                 uids: [uid],
             });
 

@@ -1,4 +1,4 @@
-import { NodeWithSameNameExistsValidationError, useDrive } from '@proton/drive';
+import { NodeWithSameNameExistsValidationError, getDrive, useDrive } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
@@ -81,7 +81,11 @@ export const useCopyItems = () => {
         }
 
         const copiesList = Object.values(copies);
-        await getBusDriver().emit({ type: BusDriverEventName.CREATED_NODES, items: copiesList });
+        await getBusDriver().emit({
+            type: BusDriverEventName.CREATED_NODES,
+            driveClient: getDrive(),
+            items: copiesList,
+        });
         const undoHandler = async () => {
             await undoCopy(copiesList);
         };
