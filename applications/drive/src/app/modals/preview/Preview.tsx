@@ -19,6 +19,7 @@ export interface PreviewProps {
     onNodeChange?: (nodeUid: string) => void;
     verifySignatures?: boolean;
     canOpenInDocs?: boolean;
+    canOpenDetails?: boolean;
     onClose: () => void;
 
     /**
@@ -43,7 +44,8 @@ export function Preview({
     previewableNodeUids,
     onNodeChange,
     verifySignatures = true,
-    canOpenInDocs = false,
+    canOpenInDocs = true,
+    canOpenDetails = true,
     onClose,
     photos,
 }: PreviewProps) {
@@ -91,7 +93,7 @@ export function Preview({
                 onDownload={preview.actions.downloadFile}
                 videoStreaming={preview.content.videoStreaming}
                 onSave={preview.actions.saveFile}
-                onDetails={onDetails}
+                onDetails={canOpenDetails ? onDetails : undefined}
                 onShare={onShare}
                 onOpenInDocs={canOpenInDocs ? preview.actions.openInDocs : undefined}
                 imgThumbnailUrl={preview.content.thumbnailUrl}

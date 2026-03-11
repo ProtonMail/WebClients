@@ -77,10 +77,14 @@ export const PublicHeader = ({
                             {breadcrumbOrName}
                         </div>
 
-                        {sharedBy && (
+                        {sharedBy ? (
                             <span className="flex gap-1 ml-11 pl-0.5 color-weak">
                                 {c('Subtitle').t`Shared by ${sharedBy}`}
                                 <span className="text-norm mx-1">&#x2022;</span>
+                                {c('Info').t`End-to-end encrypted`}
+                            </span>
+                        ) : (
+                            <span className="flex gap-1 ml-11 pl-0.5 color-weak">
                                 {c('Info').t`End-to-end encrypted`}
                             </span>
                         )}

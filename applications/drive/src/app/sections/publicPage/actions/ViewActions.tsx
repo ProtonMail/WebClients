@@ -1,7 +1,6 @@
 import { ContextSeparator } from '@proton/components/index';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
-import { DetailsButton } from '../../commonButtons/DetailsButton';
 import { DownloadButton } from '../../commonButtons/DownloadButton';
 import { OpenInDocsOrSheetsButton } from '../../commonButtons/OpenInDocsOrSheetsButton';
 import { PreviewButton } from '../../commonButtons/PreviewButton';
@@ -12,7 +11,6 @@ interface BaseViewActionsProps {
     selectedUids: string[];
     onPreview: (uid: string) => void;
     onDownload: (uids: string[], shouldScan?: boolean) => void;
-    onDetails: (uid: string) => void;
     onOpenDocsOrSheets: (uid: string, openInDocs: OpenInDocsType) => void;
 }
 
@@ -33,7 +31,6 @@ export function ViewActions({
     selectedUids,
     onPreview,
     onDownload,
-    onDetails,
     onOpenDocsOrSheets,
     close,
     buttonType,
@@ -70,16 +67,6 @@ export function ViewActions({
                     withScan
                     {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
                 />
-            )}
-
-            {itemChecker.isSingleSelection && firstItemUid && (
-                <>
-                    <ContextSeparator />
-                    <DetailsButton
-                        onClick={() => onDetails(firstItemUid)}
-                        {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
-                    />
-                </>
             )}
         </>
     );
