@@ -41,7 +41,8 @@ export function SpringSale2026Layout({ offer, currency, onSelectDeal, onCloseMod
 
     return (
         <div>
-            <h1 className="springSaleHeader text-bold mt-8">{c('q1campaign: Title').t`SPRING SALE`}</h1>
+            <h1 className="springSaleHeader text-bold mt-2 pr-4">{c('q1campaign: Title').t`SPRING SALE`}</h1>
+
             {/* Offer type */}
             <div className="springSaleText flex gap-2 mb-4">
                 <div className="flex flex-column mt-8">
@@ -55,11 +56,12 @@ export function SpringSale2026Layout({ offer, currency, onSelectDeal, onCloseMod
                 </div>
 
                 <div>
-                    <img className="springSaleButterfly" src={butterfly} alt={c('q1campaign: Label').t`a butterfly`} />
+                    <img className="springSaleButterfly" src={butterfly} alt="" />
                 </div>
             </div>
+
             {/* Price and discount */}
-            <span className="springSaleDiscount h1 text-bold px-2 mb-6">{`-${discountPercent}%`}</span>
+            <span className="springSaleDiscount h1 text-bold px-2 mb-5">{`-${discountPercent}%`}</span>
             <div className="springSaleText mb-4">
                 <div className="flex items-end mb-1">
                     <span className="springSalePrice text-bold mr-2">{promoPricePerMonth}</span>
@@ -87,8 +89,9 @@ export function SpringSale2026Layout({ offer, currency, onSelectDeal, onCloseMod
             <Button className="springSaleCTA" size="large" onClick={acceptDeal} color="norm" fullWidth>{c(
                 'q1campaign: Action'
             ).t`Get the deal`}</Button>
+
             {/* Features */}
-            <ul className="springSaleFeatures mb-4">
+            <ul className="springSaleFeatures mt-4 mb-4">
                 {features.map((feature) => (
                     <li key={feature.name} className="text-lg py-2 px-3">
                         <IcCheckmark />
@@ -96,7 +99,9 @@ export function SpringSale2026Layout({ offer, currency, onSelectDeal, onCloseMod
                     </li>
                 ))}
             </ul>
-            <div className="flex flex-column items-center gap-2 mb-10">
+
+            {/* Footer */}
+            <div className="flex flex-column items-center gap-2 mb-4">
                 <span className="springSaleText text-sm">{c('q1campaign: Info')
                     .t`Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.`}</span>
 
