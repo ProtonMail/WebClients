@@ -314,7 +314,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
     const syncIndexedDB = async (event: ESEvent<ESItemMetadata>, indexKey: IndexKey | undefined) => {
         const { Items, attemptReDecryption } = event;
 
-        const { permanentResults, setResultsList } = esStatus;
+        const { permanentResults, setResultsList, esEnabled } = esStatus;
 
         // In case a key is reactivated, try to fix any decryption error that might
         // have happened during indexing, but only if content indexing is done, otherwise
@@ -352,7 +352,10 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             esCallbacks,
         });
 
-        if (searchChanged) {
+        // Do not update results list when ES is disabled
+        // User could make a ES search, then switch to a backend search, and receive an item matching the search.
+        // This would lead to add to a list mixing backend and ES results
+        if (searchChanged && esEnabled) {
             setResultsList(permanentResults);
             setESStatus((esStatus) => ({
                 ...esStatus,
