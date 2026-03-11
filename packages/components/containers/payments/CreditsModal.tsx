@@ -129,6 +129,9 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
 
     const methodValue = paymentFacade.selectedMethodValue;
 
+    const minCreditAmount = getMinCreditAmount(currency);
+    const lowAmount = debouncedAmount < minCreditAmount;
+
     const submit = (() => {
         const bitcoinAmountInRange =
             debouncedAmount >= getMinBitcoinAmount(currency) && debouncedAmount <= getMaxBitcoinAmount(currency);
@@ -189,9 +192,6 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
             );
         }
 
-        const minCreditAmount = getMinCreditAmount(currency);
-        const lowAmount = debouncedAmount < minCreditAmount;
-
         return (
             <Button
                 color="norm"
@@ -240,7 +240,7 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
     const disableCurrencySelector = !isFreeSubscription(subscription);
 
     const amountToCharge =
-        amountLoading || nonChargeableMethods.has(paymentFacade.selectedMethodType) ? null : (
+        amountLoading || nonChargeableMethods.has(paymentFacade.selectedMethodType) || lowAmount ? null : (
             <Price currency={currency} key="amount-to-charge">
                 {debouncedAmount}
             </Price>
@@ -282,16 +282,17 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
                     disableCurrencySelector={disableCurrencySelector}
                 />
                 <PaymentWrapper {...paymentFacade} noMaxWidth />
-                <p
-                    className="text-sm text-center color-weak min-h-custom"
-                    style={{
-                        '--min-h-custom': '1.5rem',
-                    }}
-                >
-                    {amountToCharge
-                        ? c('Payments').jt`You will be charged ${amountToCharge} from your selected payment method.`
-                        : null}
-                </p>
+                {amountToCharge && (
+                    <p
+                        className="text-sm text-center color-weak min-h-custom"
+                        style={{
+                            '--min-h-custom': '1.5rem',
+                        }}
+                        data-testid="amountToCharge-text"
+                    >
+                        {c('Payments').jt`You will be charged ${amountToCharge} from your selected payment method.`}
+                    </p>
+                )}
             </ModalTwoContent>
 
             <ModalTwoFooter>
