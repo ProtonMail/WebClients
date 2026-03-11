@@ -40,6 +40,7 @@ describe('getNodeEffectiveRole', () => {
         activeRevision: undefined,
         folder: undefined,
         treeEventScopeId: 'treeEventScopeId',
+        ownedBy: {},
     });
 
     describe('when has no parent node', () => {
