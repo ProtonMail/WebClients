@@ -60,7 +60,7 @@ export function getIsEligible({
 
     if (
         user.isPaid &&
-        isInApp(protonConfig, APPS.PROTONMAIL, parentApp) &&
+        (isInApp(protonConfig, APPS.PROTONMAIL, parentApp) || isInApp(protonConfig, APPS.PROTONCALENDAR, parentApp)) &&
         (hasMail || hasDrive || hasPassWithLifetimeOrSimpleLogin || hasVPN) &&
         notBundle &&
         notDuo &&
