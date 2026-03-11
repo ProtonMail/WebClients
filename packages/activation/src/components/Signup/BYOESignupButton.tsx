@@ -109,7 +109,12 @@ const BYOESignupButton = ({
             )}
 
             {renderAddBYOEModal && (
-                <AddBYOEModal {...addBYOEModalProps} onSubmit={handleShowOauthPopup} isLoading={loading} />
+                <AddBYOEModal
+                    {...addBYOEModalProps}
+                    onSubmit={handleShowOauthPopup}
+                    isLoading={loading}
+                    source="signup"
+                />
             )}
         </div>
     );
