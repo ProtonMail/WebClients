@@ -1,5 +1,3 @@
-import { useShallow } from 'zustand/react/shallow';
-
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -40,11 +38,7 @@ export function PublicFolderActions({
     onDelete,
     onOpenDocsOrSheets,
 }: PublicFolderActionsProps) {
-    const { selectedUids } = useSelectionStore(
-        useShallow((state) => ({
-            selectedUids: Array.from(state.selectedItemIds.values()),
-        }))
-    );
+    const selectedUids = useSelectionStore((state) => Array.from(state.selectedItemIds.values()));
 
     const items = selectedUids.map(usePublicFolderStore.getState().getFolderItem).filter(isTruthy);
 
@@ -70,7 +64,6 @@ export function PublicFolderActions({
                     selectedUids={selectedUids}
                     onPreview={onPreview}
                     onDownload={onDownload}
-                    onDetails={onDetails}
                     onOpenDocsOrSheets={onOpenDocsOrSheets}
                     {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
                 />
