@@ -305,7 +305,7 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 	background-size: cover;
 	max-inline-size: 31rem;
 	padding-inline: 1rem;
-	padding-block-start: 1.5rem;
+	padding-block-start: 0.5rem;
 
 	.scroll-child {
 		overflow-y: scroll;
