@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom-v5-compat';
 
 import { Loader } from '@proton/components';
-import { generateNodeUid } from '@proton/drive';
+import { generateNodeUid, getDrive } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
@@ -58,6 +58,7 @@ export const VolumeLinkContainer: FC = () => {
                     // - We can't do a single getInvitation on drive sdk
                     await getBusDriver().emit({
                         type: BusDriverEventName.ACCEPT_INVITATIONS,
+                        driveClient: getDrive(),
                         uids: [generateNodeUid(volumeId, linkId)],
                     });
                     navigateToLink(linkInfo.shareId, linkInfo.linkId, linkInfo.isFile, '/shared-with-me');

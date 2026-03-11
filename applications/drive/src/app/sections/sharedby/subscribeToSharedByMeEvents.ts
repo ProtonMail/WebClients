@@ -29,7 +29,7 @@ const createSharedByMeItemFromNode = async (nodeUid: string, drive: Drive): Prom
         }
 
         const location = await getFormattedNodeLocation(drive, sharedByMeMaybeNode);
-        const shareResult = await drive.getSharingInfo(node.uid);
+        const shareResult = await getDrivePerNodeType(node.type).getSharingInfo(node.uid);
         const oldestCreationTime = shareResult ? getOldestShareCreationTime(shareResult) : undefined;
 
         return {
@@ -65,11 +65,8 @@ export const subscribeToSharedByMeEvents = () => {
 
         for (const item of event.items) {
             const storeItem = store.getSharedByMeItem(item.uid);
-            if (item.isShared && storeItem) {
-                const sharedByMeItem = await createSharedByMeItemFromNode(
-                    item.uid,
-                    getDrivePerNodeType(storeItem.type)
-                );
+            if (item.isShared && !storeItem && 'getSharingInfo' in event.driveClient) {
+                const sharedByMeItem = await createSharedByMeItemFromNode(item.uid, event.driveClient);
                 if (sharedByMeItem) {
                     store.setSharedByMeItem(sharedByMeItem);
                 }
@@ -84,11 +81,8 @@ export const subscribeToSharedByMeEvents = () => {
             const storeItem = store.getSharedByMeItem(item.uid);
             if (item.isShared === false && storeItem) {
                 store.removeSharedByMeItem(item.uid);
-            } else if (item.isShared && storeItem) {
-                const sharedByMeItem = await createSharedByMeItemFromNode(
-                    item.uid,
-                    getDrivePerNodeType(storeItem.type)
-                );
+            } else if (item.isShared && 'getSharingInfo' in event.driveClient) {
+                const sharedByMeItem = await createSharedByMeItemFromNode(item.uid, event.driveClient);
                 if (sharedByMeItem) {
                     store.setSharedByMeItem(sharedByMeItem);
                 }

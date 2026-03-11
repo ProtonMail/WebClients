@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react';
 
 import { useNotifications } from '@proton/components';
-import { useDrive } from '@proton/drive/index';
+import { getDrive, useDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { sendErrorReport } from '../../../utils/errorHandling';
@@ -14,7 +14,10 @@ jest.mock('@proton/components', () => ({
 
 jest.mock('@proton/drive/index', () => ({
     useDrive: jest.fn(),
+    getDrive: jest.fn(),
 }));
+
+const mockDriveClient = { type: 'drive' } as any;
 
 jest.mock('@proton/drive/internal/BusDriver', () => ({
     ...jest.requireActual('@proton/drive/internal/BusDriver'),
@@ -56,6 +59,7 @@ describe('useBookmarksActions', () => {
             },
         } as any);
 
+        jest.mocked(getDrive).mockReturnValue(mockDriveClient);
         jest.mocked(getBusDriver).mockReturnValue(mockEventManager as any);
 
         Object.defineProperty(window, 'location', {
@@ -108,6 +112,7 @@ describe('useBookmarksActions', () => {
             expect(mockRemoveBookmark).toHaveBeenCalledWith(uid);
             expect(mockEventManagerEmit).toHaveBeenCalledWith({
                 type: BusDriverEventName.DELETE_BOOKMARKS,
+                driveClient: mockDriveClient,
                 uids: [uid],
             });
             expect(countActionWithTelemetry).toHaveBeenCalledWith(Actions.DeleteBookmarkFromSharedWithMe, 1);
@@ -144,6 +149,7 @@ describe('useBookmarksActions', () => {
             expect(mockRemoveBookmark).toHaveBeenCalledWith(uids[1]);
             expect(mockEventManagerEmit).toHaveBeenCalledWith({
                 type: BusDriverEventName.DELETE_BOOKMARKS,
+                driveClient: mockDriveClient,
                 uids: uids,
             });
             expect(countActionWithTelemetry).toHaveBeenCalledWith(Actions.DeleteBookmarkFromSharedWithMe, 2);
@@ -170,6 +176,7 @@ describe('useBookmarksActions', () => {
 
             expect(mockEventManagerEmit).toHaveBeenCalledWith({
                 type: BusDriverEventName.DELETE_BOOKMARKS,
+                driveClient: mockDriveClient,
                 uids: ['bookmark-uid-1', 'bookmark-uid-3'],
             });
             expect(countActionWithTelemetry).toHaveBeenCalledWith(Actions.DeleteBookmarkFromSharedWithMe, 2);

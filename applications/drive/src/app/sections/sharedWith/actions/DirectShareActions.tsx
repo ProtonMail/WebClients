@@ -1,7 +1,7 @@
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { ContextSeparator } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
-import { NodeType, splitNodeUid } from '@proton/drive';
+import { splitNodeUid } from '@proton/drive';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import {
@@ -97,8 +97,7 @@ export const DirectShareActions = ({
                         <Vr />
                         <RemoveMeButton
                             nodeUid={singleItem.nodeUid}
-                            shareId={singleItem.shareId ?? ''}
-                            isAlbum={singleItem.type === NodeType.Album}
+                            type={singleItem.type}
                             showConfirmModal={showConfirmModal}
                             buttonType="toolbar"
                         />
@@ -144,8 +143,7 @@ export const DirectShareActions = ({
                     <ContextSeparator />
                     <RemoveMeButton
                         nodeUid={singleItem.nodeUid}
-                        shareId={singleItem.shareId ?? ''}
-                        isAlbum={singleItem.type === NodeType.Album}
+                        type={singleItem.type}
                         showConfirmModal={showConfirmModal}
                         close={close}
                         buttonType="contextMenu"

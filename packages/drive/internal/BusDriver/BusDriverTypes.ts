@@ -8,6 +8,18 @@
  *      - `uids` for string array of uids
  *      - `items` for all else
  */
+import type { ProtonDriveClient } from '@protontech/drive-sdk';
+import type { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
+import type { ProtonDrivePublicLinkClient } from '@protontech/drive-sdk/dist/protonDrivePublicLinkClient';
+
+export type BusDriverClient =
+    | Pick<ProtonDriveClient, 'getNode' | 'getSharingInfo'>
+    | Pick<ProtonDrivePhotosClient, 'getNode' | 'getSharingInfo'>
+    | Pick<ProtonDrivePublicLinkClient, 'getNode'>;
+
+export interface BusDriverBaseEvent {
+    driveClient: BusDriverClient;
+}
 
 export type NodeEventMeta = { uid: string; parentUid: string | undefined; isTrashed?: boolean; isShared?: boolean };
 
@@ -44,70 +56,70 @@ export enum BusDriverEventName {
     ALL = '*',
 }
 
-export interface MovedNodesEvent {
+export interface MovedNodesEvent extends BusDriverBaseEvent {
     type: BusDriverEventName.MOVED_NODES;
     items: { uid: string; parentUid: string | undefined }[];
 }
 
-export interface TrashedNodesEvent {
+export interface TrashedNodesEvent extends BusDriverBaseEvent {
     type: BusDriverEventName.TRASHED_NODES;
     uids: string[];
 }
-export interface RestoredNodesEvent {
+export interface RestoredNodesEvent extends BusDriverBaseEvent {
     type: BusDriverEventName.RESTORED_NODES;
     items: { uid: string; parentUid: string | undefined }[];
 }
 
-export interface RenamedNodesEvent {
+export interface RenamedNodesEvent extends BusDriverBaseEvent {
     type: BusDriverEventName.RENAMED_NODES;
     items: { newName: string; uid: string }[];
 }
 
-export interface UpdatedNodesEvent {
+export interface UpdatedNodesEvent extends BusDriverBaseEvent {
     type: BusDriverEventName.UPDATED_NODES;
     items: NodeEventMeta[];
 }
 
-export interface CreatedNodesEvent {
+export interface CreatedNodesEvent extends BusDriverBaseEvent {
     type: BusDriverEventName.CREATED_NODES;
     items: NodeEventMeta[];
 }
 
-export interface DeletedNodesEvent {
+export interface DeletedNodesEvent extends BusDriverBaseEvent {
     type: BusDriverEventName.DELETED_NODES;
     uids: string[];
 }
 
-export interface RenamedDevicesEvent {
+export interface RenamedDevicesEvent extends BusDriverBaseEvent {
     type: BusDriverEventName.RENAMED_DEVICES;
     items: { newName: string; deviceUid: string }[];
 }
 
-export interface RemovedDevicesEvent {
+export interface RemovedDevicesEvent extends BusDriverBaseEvent {
     type: BusDriverEventName.REMOVED_DEVICES;
     deviceUids: string[];
 }
-export interface DeleteBookmarksEvent {
+export interface DeleteBookmarksEvent extends BusDriverBaseEvent {
     type: BusDriverEventName.DELETE_BOOKMARKS;
     uids: string[];
 }
 
-export interface AcceptInvitationsEvent {
+export interface AcceptInvitationsEvent extends BusDriverBaseEvent {
     type: BusDriverEventName.ACCEPT_INVITATIONS;
     uids: string[];
 }
 
-export interface RejectInvitationsEvent {
+export interface RejectInvitationsEvent extends BusDriverBaseEvent {
     type: BusDriverEventName.REJECT_INVITATIONS;
     uids: string[];
 }
 
-export interface RemoveMeEvent {
+export interface RemoveMeEvent extends BusDriverBaseEvent {
     type: BusDriverEventName.REMOVE_ME;
     uids: string[];
 }
 
-export interface RefreshShareWithMeEvent {
+export interface RefreshShareWithMeEvent extends BusDriverBaseEvent {
     type: BusDriverEventName.REFRESH_SHARED_WITH_ME;
 }
 

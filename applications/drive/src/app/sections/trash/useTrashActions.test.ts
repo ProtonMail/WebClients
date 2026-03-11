@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 
-import { NodeType, useDrive } from '@proton/drive/index';
+import { NodeType, getDrive, getDriveForPhotos, useDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
@@ -11,7 +11,12 @@ import { useTrashNotifications } from './useTrashNotifications';
 jest.mock('@proton/drive/index', () => ({
     ...jest.requireActual('@proton/drive/index'),
     useDrive: jest.fn(),
+    getDrive: jest.fn(),
+    getDriveForPhotos: jest.fn(),
 }));
+
+const mockGetDrive = jest.mocked(getDrive);
+const mockGetDriveForPhotos = jest.mocked(getDriveForPhotos);
 
 jest.mock('../../utils/errorHandling/handleSdkError');
 
@@ -68,9 +73,15 @@ describe('useTrashActions', () => {
             capturedOnSubmit = onSubmit;
         });
 
+        const mockDriveClient = { type: 'drive' } as any;
+        const mockPhotosClient = { type: 'photos' } as any;
+
         beforeEach(() => {
             jest.clearAllMocks();
             capturedOnSubmit = undefined;
+
+            mockGetDrive.mockReturnValue(mockDriveClient);
+            mockGetDriveForPhotos.mockReturnValue(mockPhotosClient);
 
             mockUseTrashStore.getState.mockReturnValue({
                 items: allTrashNodes,
@@ -118,8 +129,16 @@ describe('useTrashActions', () => {
             expect(emptyTrashPhotos).toHaveBeenCalledTimes(1);
             expect(emit).toHaveBeenCalledWith({
                 type: BusDriverEventName.DELETED_NODES,
-                uids: ['drive-1', 'drive-2', 'photo-1', 'photo-2'],
+                driveClient: mockDriveClient,
+                uids: ['drive-1', 'drive-2'],
             });
+            expect(emit).toHaveBeenCalledWith({
+                type: BusDriverEventName.DELETED_NODES,
+                driveClient: mockPhotosClient,
+                uids: ['photo-1', 'photo-2'],
+            });
+
+            expect(emit).toHaveBeenCalledTimes(2);
             expect(createEmptyTrashNotificationSuccess).toHaveBeenCalledTimes(1);
             expect(handleError).not.toHaveBeenCalled();
         });
