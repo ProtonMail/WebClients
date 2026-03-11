@@ -315,8 +315,13 @@ class DownloadServiceWorker {
                             };
                         });
 
-                        // For open-ended ranges, request a reasonable chunk size
-                        const requestedEnd = end ?? start + 4 * 1024 * 1024 - 1;
+                        // Cap chunk size to 4MB for both open-ended and large ranges.
+                        // Safari can request the entire file in a single range
+                        // (e.g. bytes=0-605138070), which would stall the stream.
+                        // Returning a smaller range is valid per HTTP spec (RFC 7233 §4.1)
+                        // — the browser will make follow-up requests.
+                        const maxChunkSize = 4 * 1024 * 1024;
+                        const requestedEnd = Math.min(end ?? start + maxChunkSize - 1, start + maxChunkSize - 1);
 
                         client.postMessage(
                             {
