@@ -38,6 +38,7 @@ describe('getNodeAncestry', () => {
         activeRevision: undefined,
         folder: undefined,
         treeEventScopeId: 'treeEventScopeId',
+        ownedBy: {},
     });
 
     const NO_PARENT_UID = undefined;
