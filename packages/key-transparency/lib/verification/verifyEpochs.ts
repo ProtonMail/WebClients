@@ -7,12 +7,12 @@ import { parseCertChain, parseCertTime, verifyAltName, verifyCertChain, verifySC
 /**
  * Verify the consistency and correctness of an epoch
  */
-export const verifyEpoch = async (epoch: Epoch) => {
+export const verifyEpoch = async (epoch: Epoch, verificationTime = serverTime()) => {
     const { ChainHash, PrevChainHash, TreeHash, Certificate, EpochID, CertificateIssuer, CertificateTime } = epoch;
 
     // 1. Validate the certificate
     const certChain = await parseCertChain(Certificate);
-    await verifyCertChain(certChain, CertificateIssuer, serverTime());
+    await verifyCertChain(certChain, CertificateIssuer, verificationTime);
     const [epochCert, issuerCert] = certChain;
     await verifySCT(epochCert, issuerCert);
 

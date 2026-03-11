@@ -1,5 +1,7 @@
 import type { KeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import { KEY_FLAG } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type {
     Api,
     FetchedSignedKeyList,
@@ -14,7 +16,7 @@ import { ParsedSignedKeyList } from '@proton/shared/lib/keys';
 
 import { KT_SKL_VERIFICATION_CONTEXT } from '../constants/constants';
 import { NO_KT_DOMAINS } from '../constants/domains';
-import { fetchProof } from '../helpers/apiHelpers';
+import { fetchEpochByEpochID, fetchProof } from '../helpers/apiHelpers';
 import { KeyTransparencyError, StaleEpochError, getEmailDomain, throwKTError } from '../helpers/utils';
 import type { Proof } from '../interfaces';
 import { saveSKLToLS } from '../storage/saveSKLToLS';
@@ -330,4 +332,67 @@ export const verifyPublicKeysAddressAndCatchall = async ({
         addressKTResult: addressKTStatus,
         catchAllKTResult: catchAllKTStatus,
     };
+};
+
+export const verifyAddressKeyToRecover = async ({
+    api,
+    addressKeyToRecover,
+    signedKeyList,
+    email,
+}: {
+    api: Api;
+    signedKeyList: FetchedSignedKeyList | null;
+    email: string;
+    addressKeyToRecover: Pick<ProcessedApiKey, 'armoredKey' | 'flags' | 'primary' | 'publicKey'>;
+}): Promise<
+    | { status: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS; errorDetails: string }
+    | { status: KT_VERIFICATION_STATUS.VERIFIED_KEYS }
+> => {
+    // NOTE: All these are manually overridable errors, in that the user gets prompted if she wishes to continue anyway.
+    {
+        if (!signedKeyList) {
+            return { status: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS, errorDetails: 'SKL is missing' };
+        }
+        if (!signedKeyList.Data) {
+            return { status: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS, errorDetails: "SKL doesn't have data" };
+        }
+        if (!signedKeyList.Signature) {
+            return { status: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS, errorDetails: "SKL doesn't have signature" };
+        }
+        // check that the SKL was in KT
+        if (!signedKeyList.MaxEpochID) {
+            return { status: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS, errorDetails: 'SKL does not have MaxEpochID' };
+        }
+    }
+
+    // Find the key in the SKL -- we only check for fingerprints, and that the key was not marked compromised
+    const signedKeyListInfo = new ParsedSignedKeyList(signedKeyList.Data).getParsedSignedKeyList();
+    if (!signedKeyListInfo) {
+        return throwKTError('SignedKeyList data parsing failed', { sklData: signedKeyList.Data });
+    }
+    const matchingKeyInSKL = signedKeyListInfo.find((keyInfo) =>
+        keyInfo.SHA256Fingerprints.every(
+            (sha256Fingerprint, i) => sha256Fingerprint === addressKeyToRecover.publicKey.getSHA256Fingerprints()[i]
+        )
+    );
+    if (!matchingKeyInSKL) {
+        throw new Error('Key not found in SignedKeyList');
+    }
+    if (!hasBit(matchingKeyInSKL.Flags, KEY_FLAG.FLAG_NOT_COMPROMISED)) {
+        throw new Error('Key is marked as compromised');
+    }
+
+    // Verifies that the SKL was signed by the inactive key
+    const timestamp = await verifySKLSignature({
+        verificationKeys: [addressKeyToRecover.publicKey],
+        signedKeyListData: signedKeyList.Data,
+        signedKeyListSignature: signedKeyList.Signature,
+    });
+    if (!timestamp) {
+        throw new Error('Signed key list not verified');
+    }
+    const proof = await fetchProof(signedKeyList.MaxEpochID, email, signedKeyList.Revision, api);
+    const epoch = await fetchEpochByEpochID(api, signedKeyList.MaxEpochID, true);
+    await verifyProofOfExistence(proof, email, epoch.TreeHash, signedKeyList);
+    return { status: KT_VERIFICATION_STATUS.VERIFIED_KEYS };
 };
