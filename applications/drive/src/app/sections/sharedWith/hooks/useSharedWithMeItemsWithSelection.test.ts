@@ -14,10 +14,8 @@ jest.mock('../../../components/FileBrowser', () => ({
     }),
 }));
 
-jest.mock('../../../hooks/drive/useBatchThumbnailLoader', () => ({
-    useBatchThumbnailLoader: () => ({
-        loadThumbnail: jest.fn(),
-    }),
+jest.mock('@proton/drive/modules/thumbnails', () => ({
+    loadThumbnail: jest.fn(),
 }));
 
 jest.mock('./useBookmarksActions', () => ({

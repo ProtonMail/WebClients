@@ -16,7 +16,7 @@ export interface PreviewRawState {
     node: MaybeNode | undefined;
     videoStreaming: VideoStreamingResult | undefined;
     nodeData: { contents: Uint8Array<ArrayBuffer>[]; hasSignatureIssues: boolean } | undefined;
-    largeThumbnail: { url: string; data: Uint8Array<ArrayBuffer>[] } | undefined;
+    largeThumbnail: { url: string } | undefined;
     smallThumbnailUrl: string | undefined;
     isContentLoading: boolean;
     isLargeThumbnailLoading: boolean;
@@ -78,8 +78,7 @@ export function resolvePreviewOutput(state: PreviewRawState): PreviewResolvedOut
             ? undefined
             : state.largeThumbnail?.url || state.smallThumbnailUrl;
 
-    const data =
-        effectivePreviewMethod === ContentPreviewMethod.Buffer ? state.nodeData?.contents : state.largeThumbnail?.data;
+    const data = effectivePreviewMethod === ContentPreviewMethod.Buffer ? state.nodeData?.contents : undefined;
 
     const videoStreaming = effectivePreviewMethod === ContentPreviewMethod.Streaming ? state.videoStreaming : undefined;
 

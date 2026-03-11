@@ -15,7 +15,7 @@ export type SharedByMeItem = {
     name: string;
     type: NodeType;
     mediaType: string | undefined;
-    thumbnailId: string | undefined;
+    activeRevisionUid: string | undefined;
     size: number | undefined;
     parentUid: string | undefined;
     location?: string;

@@ -4,7 +4,8 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { NodeType, getDrive, getDriveForPhotos } from '@proton/drive';
+import { NodeType, getDrivePerNodeType } from '@proton/drive';
+import { getThumbnail, loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -16,14 +17,12 @@ import { DeletedCell, LocationCell, SizeCell } from '../../../components/section
 import headerItems from '../../../components/sections/FileBrowser/headerCells';
 import { translateSortField } from '../../../components/sections/SortDropdown';
 import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
-import { useBatchThumbnailLoader } from '../../../hooks/drive/useBatchThumbnailLoader';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import { useUserSettings } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
-import { useThumbnailStore } from '../../../zustand/thumbnails/thumbnails.store';
 import { TrashItemContextMenu } from '../menus/TrashItemContextMenu';
 import { EmptyTrash } from '../statelessComponents/EmptyTrash';
 import type { useJointTrashNodes } from '../useJointTrashNodes';
@@ -44,9 +43,8 @@ interface Props {
 const { CheckboxCell, ContextMenuCell } = Cells;
 
 const NameCellWithThumbnail = ({ item }: { item: LegacyItem }) => {
-    const thumbnail = useThumbnailStore((state) =>
-        item.thumbnailId ? state.getThumbnail(item.thumbnailId) : undefined
-    );
+    const thumbnail = useThumbnail(item?.activeRevisionUid);
+
     return (
         <NameCell
             name={item.name}
@@ -117,20 +115,11 @@ export function Trash({
     const selectionControls = useSelection();
     const { trashNodes, isLoading, sortParams, setSorting } = trashView;
 
-    const { getThumbnail } = useThumbnailStore(
-        useShallow((state) => ({
-            getThumbnail: state.getThumbnail,
-        }))
-    );
-
     const { hasEverLoaded } = useTrashStore(
         useShallow((state) => ({
             hasEverLoaded: state.hasEverLoaded,
         }))
     );
-    // TODO: We should refactor the useBatchThumbnailLoader to support passing instance per item
-    const { loadThumbnail } = useBatchThumbnailLoader({ drive: getDrive() });
-    const { loadThumbnail: loadPhotosThumbnail } = useBatchThumbnailLoader({ drive: getDriveForPhotos() });
     const { layout } = useUserSettings();
     const selectedItems = getSelectedItemsId(trashNodes, selectionControls?.selectedItemIds || []);
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
@@ -138,19 +127,10 @@ export function Trash({
     const handleItemRender = async (item: LegacyItem) => {
         incrementItemRenderedCounter();
 
-        if (item.type === NodeType.Photo) {
-            loadPhotosThumbnail({
-                uid: item.uid,
-                thumbnailId: item.thumbnailId || item.uid,
-                hasThumbnail: !!item.thumbnailId,
-                cachedThumbnailUrl: undefined,
-            });
-        } else {
-            loadThumbnail({
-                uid: item.uid,
-                thumbnailId: item.thumbnailId || item.uid,
-                hasThumbnail: !!item.thumbnailId,
-                cachedThumbnailUrl: undefined,
+        if (item.activeRevisionUid) {
+            loadThumbnail(getDrivePerNodeType(item.type), {
+                nodeUid: item.uid,
+                revisionUid: item.activeRevisionUid,
             });
         }
     };
@@ -159,7 +139,7 @@ export function Trash({
 
     const nodesWithThumbnail = trashNodes.map((node) => ({
         ...node,
-        cachedThumbnailUrl: getThumbnail(node.thumbnailId)?.sdUrl,
+        cachedThumbnailUrl: node.activeRevisionUid ? getThumbnail(node.activeRevisionUid)?.sdUrl : undefined,
     }));
 
     const handleClick = (id: BrowserItemId) => {

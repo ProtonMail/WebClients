@@ -1,14 +1,13 @@
 import { c } from 'ttag';
 
-import { type useConfirmActionModal, useNotifications } from '@proton/components';
+import type { useConfirmActionModal } from '@proton/components';
 import { type ProtonDriveClient, getDrive } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
+import { getNotificationsManager } from '../../modules/notifications';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 
 export const useSharingActions = () => {
-    const { createNotification } = useNotifications();
-
     const stopSharing = (
         showConfirmModal: ReturnType<typeof useConfirmActionModal>[1],
         drive: Pick<ProtonDriveClient, 'unshareNode' | 'getNode'>,
@@ -24,7 +23,7 @@ export const useSharingActions = () => {
                     items: [{ uid, parentUid, isShared: false }],
                 });
 
-                createNotification({
+                getNotificationsManager().createNotification({
                     text: c('Notification').t`You stopped sharing this item`,
                 });
             } catch (e) {
@@ -49,7 +48,7 @@ export const useSharingActions = () => {
         const onSubmit = async () => {
             try {
                 await drive.leaveSharedNode(uid);
-                createNotification({
+                getNotificationsManager().createNotification({
                     text: c('Notification').t`File removed`,
                 });
                 await getBusDriver().emit({

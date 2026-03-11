@@ -23,7 +23,7 @@ const addPublicFolderItemToStore = async (uid: string) => {
             name: node.name,
             type: node.type,
             mediaType: node.mediaType,
-            thumbnailId: node.activeRevision?.uid || node.uid,
+            activeRevisionUid: node.activeRevision?.uid,
             size,
             parentUid: node.parentUid,
             creationTime: node.creationTime,

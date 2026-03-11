@@ -43,7 +43,7 @@ export const useBookmarksLoader = () => {
                             type: bookmark.node.type,
                             mediaType: bookmark.node.mediaType,
                             itemType: ItemType.BOOKMARK,
-                            thumbnailId: undefined,
+                            activeRevisionUid: undefined,
                             size: undefined,
                             bookmark: {
                                 uid: bookmark.uid,

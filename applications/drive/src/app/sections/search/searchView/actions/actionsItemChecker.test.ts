@@ -19,7 +19,7 @@ const createItem = (overrides: Partial<SearchResultItemUI> = {}): SearchResultIt
     role: MemberRole.Editor,
     size: 1024,
     mediaType: 'text/plain',
-    thumbnailId: undefined,
+    activeRevisionUid: undefined,
     modificationTime: new Date(),
     location: '/My files',
     haveSignatureIssues: false,

@@ -6,13 +6,13 @@ import { useShallow } from 'zustand/react/shallow';
 import { Badge, type Breakpoints, useContactEmailsCache } from '@proton/components';
 import type { ConfirmActionModalProps } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import { NodeType } from '@proton/drive';
+import { useThumbnail } from '@proton/drive/modules/thumbnails';
 
 import { NameCell, defaultNameCellConfig } from '../../sections/commonDriveExplorerCells/NameCell';
 import { GridItemContent } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';
 import { GridItemName } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemName';
 import type { CellDefinition, GridDefinition } from '../../statelessComponents/DriveExplorer/types';
 import { useVolumesState } from '../../store/_volumes';
-import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
 import { AcceptRejectCell } from './driveExplorerCells/AcceptRejectCell';
 import { SharedByCell, defaultSharedByCellConfig } from './driveExplorerCells/SharedByCell';
 import { SharedOnCell, defaultSharedOnCellConfig } from './driveExplorerCells/SharedOnCell';
@@ -33,9 +33,7 @@ export const getSharedWithMeCells = ({
         render: (uid) => {
             const NameCellComponent = () => {
                 const item = useSharedWithMeStore(useShallow((state) => state.getSharedWithMeItem(uid)));
-                const thumbnail = useThumbnailStore(
-                    useShallow((state) => (item?.thumbnailId ? state.getThumbnail(item?.thumbnailId) : undefined))
-                );
+                const thumbnail = useThumbnail(item?.activeRevisionUid);
 
                 if (!item) {
                     return null;
@@ -49,7 +47,7 @@ export const getSharedWithMeCells = ({
                         mediaType={
                             item.type === NodeType.File || item.type === NodeType.Photo ? item.mediaType : undefined
                         }
-                        thumbnail={thumbnail}
+                        thumbnailUrl={thumbnail?.sdUrl}
                         isInvitation={item.itemType === ItemType.INVITATION}
                         haveSignatureIssues={item.itemType === ItemType.DIRECT_SHARE ? item.haveSignatureIssues : false}
                     />
@@ -168,9 +166,7 @@ export const getSharedWithMeGrid = ({
     mainContent: (uid) => {
         const MainContentComponent = () => {
             const item = useSharedWithMeStore((state) => state.getSharedWithMeItem(uid));
-            const thumbnail = useThumbnailStore((state) =>
-                item?.thumbnailId ? state.getThumbnail(item?.thumbnailId) : undefined
-            );
+            const thumbnail = useThumbnail(item?.activeRevisionUid);
 
             if (!item) {
                 return null;
