@@ -4,12 +4,12 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { NodeType, getDrive, getDriveForPhotos, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
+import { NodeType, getDriveForPhotos, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
+import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
 import { useFlagsDriveSDKPreview } from '../../flags/useFlagsDriveSDKPreview';
-import { useBatchThumbnailLoader } from '../../hooks/drive/useBatchThumbnailLoader';
 import useDriveNavigation from '../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { useDrivePreviewModal } from '../../modals/preview';
@@ -36,8 +36,6 @@ export const SharedByMe = () => {
 
     const { layout } = useUserSettings();
     const { navigateToAlbum, navigateToNodeUid } = useDriveNavigation();
-    const { loadThumbnail } = useBatchThumbnailLoader({ drive: getDrive() });
-    const { loadThumbnail: loadPhotosThumbnail } = useBatchThumbnailLoader({ drive: getDriveForPhotos() });
     const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
     const { previewModal, showPreviewModal } = useDrivePreviewModal();
 
@@ -67,25 +65,14 @@ export const SharedByMe = () => {
                 return;
             }
 
-            if (storeItem.thumbnailId) {
-                if (storeItem.type === NodeType.Photo) {
-                    loadPhotosThumbnail({
-                        uid: storeItem.nodeUid,
-                        thumbnailId: storeItem.thumbnailId,
-                        hasThumbnail: true,
-                        cachedThumbnailUrl: '',
-                    });
-                } else {
-                    loadThumbnail({
-                        uid: storeItem.nodeUid,
-                        thumbnailId: storeItem.thumbnailId,
-                        hasThumbnail: true,
-                        cachedThumbnailUrl: '',
-                    });
-                }
+            if (storeItem.activeRevisionUid) {
+                loadThumbnail(getDrivePerNodeType(storeItem.type), {
+                    nodeUid: storeItem.nodeUid,
+                    revisionUid: storeItem.activeRevisionUid,
+                });
             }
         },
-        [incrementItemRenderedCounter, loadThumbnail, loadPhotosThumbnail]
+        [incrementItemRenderedCounter]
     );
 
     const handleSorting = useCallback(

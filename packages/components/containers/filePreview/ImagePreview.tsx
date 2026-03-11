@@ -190,6 +190,9 @@ const ImagePreview = ({
 
         if (!contents) {
             setImageSrc('');
+            if (placeholderSrc && !isLoading) {
+                setIsFallbackToThumbnail(true);
+            }
             return;
         }
 
@@ -208,7 +211,7 @@ const ImagePreview = ({
                 URL.revokeObjectURL(srcUrl);
             }
         };
-    }, [contents, mimeType]);
+    }, [contents, mimeType, isLoading, placeholderSrc]);
 
     useEffect(() => {
         return () => {

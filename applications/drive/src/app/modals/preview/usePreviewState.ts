@@ -4,18 +4,17 @@ import { c } from 'ttag';
 
 import type { MaybeNode } from '@proton/drive';
 import { AbortError, MemberRole, ProtonDriveError } from '@proton/drive';
+import { loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import useLoading from '@proton/hooks/useLoading';
 
 import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { ContentPreviewMethod, downloadContent, getContentPreviewMethod } from './content';
 import type { Drive } from './interface';
-import { logger } from './logger';
 import { getNavigation } from './navigation';
 import { getNodeActiveRevisionUid, getNodeMimeType } from './nodeUtils';
 import { getEffectivePreviewMethod, resolvePreviewOutput } from './resolvePreviewOutput';
 import { useVideoStreaming } from './streaming';
-import { getLargeThumbnail, useThumbnailLoader } from './thumbnails';
 import usePreviewActions from './usePreviewActions';
 
 export function usePreviewState({
@@ -46,17 +45,14 @@ export function usePreviewState({
     const [role, setRole] = useState<MemberRole>();
     const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
 
-    const [smallThumbnailUrl, setSmallThumbnailUrl] = useState<string | undefined>(undefined);
-    const [largeThumbnail, setLargeThumbnail] = useState<{ url: string; data: Uint8Array<ArrayBuffer>[] } | undefined>(
-        undefined
-    );
-    const { getSmallThumbnailUrl } = useThumbnailLoader({ drive });
+    const activeRevisionUid = node ? getNodeActiveRevisionUid(node) : undefined;
+
+    const thumbnailData = useThumbnail(activeRevisionUid);
 
     const previewMethod = node ? getContentPreviewMethod(node) : undefined;
     const mimeType = node ? getNodeMimeType(node) : undefined;
     const videoStreaming = useVideoStreaming({ nodeUid, mimeType });
     const effectivePreviewMethod = getEffectivePreviewMethod(previewMethod, node, videoStreaming);
-    const [isLargeThumbnailLoading, withIsLargeThumbnailLoading] = useLoading(false);
 
     const shouldIgnoreError = (nodeUid: string, error: unknown) => {
         return nodeUid !== nodeUidRef.current || error instanceof AbortError;
@@ -66,8 +62,6 @@ export function usePreviewState({
         setNode(undefined);
         setNodeData(undefined);
         setErrorMessage(undefined);
-        setSmallThumbnailUrl(undefined);
-        setLargeThumbnail(undefined);
         void withIsLoading(
             drive
                 .getNode(nodeUid)
@@ -88,42 +82,16 @@ export function usePreviewState({
         );
     }, [drive, nodeUid, withIsLoading]);
 
-    const loadSmallThumbnail = useCallback(() => {
-        if (!node) {
+    useEffect(() => {
+        if (!activeRevisionUid || previewMethod === ContentPreviewMethod.Streaming) {
             return;
         }
-
-        const activeRevisionUid = getNodeActiveRevisionUid(node);
-        if (activeRevisionUid) {
-            void getSmallThumbnailUrl(nodeUid, activeRevisionUid)
-                .then((url) => {
-                    setSmallThumbnailUrl(url);
-                })
-                .catch((error: unknown) => {
-                    if (shouldIgnoreError(nodeUid, error)) {
-                        return;
-                    }
-
-                    logger.debug(`Failed to get small thumbnail: ${error}`);
-                });
-        }
-    }, [getSmallThumbnailUrl, node, nodeUid]);
-
-    const loadLargeThumbnail = useCallback(() => {
-        void withIsLargeThumbnailLoading(
-            getLargeThumbnail(drive, nodeUid)
-                .then((thumbnail) => {
-                    setLargeThumbnail(thumbnail);
-                })
-                .catch((error: unknown) => {
-                    if (shouldIgnoreError(nodeUid, error)) {
-                        return;
-                    }
-
-                    logger.debug(`Failed to get large thumbnail: ${error}`);
-                })
-        );
-    }, [drive, nodeUid, withIsLargeThumbnailLoading]);
+        loadThumbnail(drive, {
+            nodeUid,
+            revisionUid: activeRevisionUid,
+            thumbnailTypes: previewMethod === ContentPreviewMethod.Buffer ? ['sd'] : ['sd', 'hd'],
+        });
+    }, [nodeUid, activeRevisionUid, drive, previewMethod]);
 
     const loadContents = useCallback(
         (abortSignal: AbortSignal) => {
@@ -154,16 +122,7 @@ export function usePreviewState({
     useEffect(() => {
         loadMetadata();
     }, [loadMetadata]);
-    // To load the small thumbnail, we need to know the node info and we need to reload it from the zustand store.
-    // TODO: We need to remove the dependency on implementation details.
-    useEffect(() => {
-        loadSmallThumbnail();
-    }, [loadSmallThumbnail]);
-    // To load the large thumbnail, we need only the nodeUid as we use SDK directly.
-    useEffect(() => {
-        loadLargeThumbnail();
-    }, [loadLargeThumbnail]);
-    // To load the contents, we need to know ifno about the node and load content based on the mimetype etc.
+    // To load the contents, we need to know info about the node and load content based on the mimetype etc.
     useEffect(() => {
         const ac = new AbortController();
         loadContents(ac.signal);
@@ -181,6 +140,10 @@ export function usePreviewState({
     });
 
     const actions = usePreviewActions({ drive, nodeUid, node, nodeData: nodeData?.contents, role });
+
+    const isLargeThumbnailLoading = !thumbnailData?.hdUrl && thumbnailData?.hdStatus !== 'loaded';
+    const largeThumbnail = thumbnailData?.hdUrl ? { url: thumbnailData.hdUrl } : undefined;
+    const smallThumbnailUrl = thumbnailData?.sdUrl;
 
     const resolved = resolvePreviewOutput({
         previewMethod,

@@ -5,12 +5,12 @@ import { useShallow } from 'zustand/react/shallow';
 import { useActiveBreakpoint } from '@proton/components';
 import type { NodeEntity, ProtonDrivePublicLinkClient } from '@proton/drive';
 import { MemberRole, NodeType } from '@proton/drive';
+import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { uploadManager } from '@proton/drive/modules/upload';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import { useBatchThumbnailLoader } from '../../hooks/drive/useBatchThumbnailLoader';
 import { useUploadInput } from '../../hooks/drive/useUploadInput';
 import { useContextMenuStore } from '../../modules/contextMenu';
 import { useSelectionStore } from '../../modules/selection';
@@ -90,7 +90,6 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
     const contextMenuControls = useContextMenuStore();
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
-    const { loadThumbnail } = useBatchThumbnailLoader({ drive: publicDriveClient });
     const { selectedItemIds } = useSelectionStore(
         useShallow((state) => ({
             selectedItemIds: state.selectedItemIds,
@@ -218,18 +217,16 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
     const handleRenderItem = useCallback(
         (uid: string) => {
             const storeItem = usePublicFolderStore.getState().getFolderItem(uid);
-            if (!storeItem) {
+            if (!storeItem?.activeRevisionUid) {
                 return;
             }
 
-            loadThumbnail({
-                uid: storeItem.uid,
-                thumbnailId: storeItem.thumbnailId || storeItem.uid,
-                hasThumbnail: !!storeItem.thumbnailId,
-                cachedThumbnailUrl: undefined,
+            loadThumbnail(publicDriveClient, {
+                nodeUid: storeItem.uid,
+                revisionUid: storeItem.activeRevisionUid,
             });
         },
-        [loadThumbnail]
+        [publicDriveClient]
     );
 
     useEffect(() => {

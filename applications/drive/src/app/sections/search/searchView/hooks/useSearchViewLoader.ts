@@ -59,7 +59,7 @@ const addNodeToStore = async (maybeNode: MaybeNode, drive: ProtonDriveClient): P
         type: node.type,
         role,
         mediaType: node.mediaType,
-        thumbnailId: node.activeRevision?.uid || node.uid,
+        activeRevisionUid: node.activeRevision?.uid,
         size: node.totalStorageSize,
         modificationTime: node.modificationTime || node.creationTime,
         location,
