@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import type { NodeEntity } from '@proton/drive';
+import { useShallow } from 'zustand/react/shallow';
+
+import { MemberRole, type NodeEntity } from '@proton/drive';
 
 import { FileName } from '../../components/FileName';
 import { downloadManager } from '../../managers/download/DownloadManager';
@@ -21,7 +23,9 @@ interface PublicFileViewProps {
 export const PublicFileView = ({ rootNode, customPassword, isPartialView }: PublicFileViewProps) => {
     const [contentData, setContentData] = useState<Uint8Array<ArrayBuffer>[] | undefined>(undefined);
     const { modals, handleDetails, handleOpenDocsOrSheets, handleCopyLink } = usePublicActions();
-    const isLoggedIn = usePublicAuthStore((state) => state.isLoggedIn);
+    const { isLoggedIn, isEditor } = usePublicAuthStore(
+        useShallow((state) => ({ isEditor: state.publicRole === MemberRole.Editor, isLoggedIn: state.isLoggedIn }))
+    );
     useEffect(() => {
         const openInDocsInfo = rootNode.mediaType ? getOpenInDocsInfo(rootNode.mediaType) : undefined;
 
@@ -65,10 +69,11 @@ export const PublicFileView = ({ rootNode, customPassword, isPartialView }: Publ
                     />
                 }
                 sharedBy={
-                    (rootNode.keyAuthor.ok ? rootNode.keyAuthor.value : rootNode.keyAuthor.error.claimedAuthor) ||
+                    (isEditor &&
+                        (rootNode.keyAuthor.ok ? rootNode.keyAuthor.value : rootNode.keyAuthor.error.claimedAuthor)) ||
                     undefined
                 }
-                onDetails={() => handleDetails(rootNode.uid)}
+                onDetails={isEditor ? () => handleDetails(rootNode.uid) : undefined}
                 onDownload={handleDownload}
                 onScanAndDownload={() => handleDownload(true)}
                 onCopyLink={handleCopyLink}
