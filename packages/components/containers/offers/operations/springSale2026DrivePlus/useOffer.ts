@@ -13,8 +13,8 @@ export const useOffer = (): Operation => {
     const [subscription, loadSubscription] = useSubscription();
     const protonConfig = useConfig();
     const [preferredCurrency, loadingCurrency] = useAutomaticCurrency();
-    const { loading: flagsLoading } = useOfferFlags(configuration);
-    getIsEligible({
+    const { loading: flagsLoading, isActive } = useOfferFlags(configuration);
+    const isEligible = getIsEligible({
         user,
         subscription,
         protonConfig,
@@ -23,9 +23,9 @@ export const useOffer = (): Operation => {
     });
 
     return {
-        isValid: true,
+        isValid: isEligible && isActive,
         config: configuration,
         isLoading: flagsLoading || loadingUser || loadSubscription || loadingCurrency,
-        isEligible: true,
+        isEligible: isEligible,
     };
 };
