@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectExpirationTime, selectMaxDuration } from '@proton/meet/store/slices/meetingInfo';
 import { MINUTE } from '@proton/shared/lib/constants';
 
-import { useMeetContext } from '../contexts/MeetContext';
-
 export const useMeetingDuration = () => {
-    const { expirationTime, maxDuration } = useMeetContext();
+    const expirationTime = useMeetSelector(selectExpirationTime);
+    const maxDuration = useMeetSelector(selectMaxDuration);
 
     const [meetingDurationMs, setMeetingDurationMs] = useState(0);
     const [timeLeftMs, setTimeLeftMs] = useState(0);

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectRoomName } from '@proton/meet/store/slices/meetingInfo';
 import { markChatMessagesAsSeen } from '@proton/meet/store/slices/meetingState';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
@@ -13,7 +14,6 @@ import placeholderSearch from '@proton/styles/assets/img/meet/search-empty-state
 
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { SideBar } from '../../atoms/SideBar/SideBar';
-import { useMeetContext } from '../../contexts/MeetContext';
 import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useChatMessage } from '../../hooks/bridges/useChatMessage';
 import { useMeetingRoomUpdates } from '../../hooks/useMeetingRoomUpdates';
@@ -30,7 +30,7 @@ export const Chat = () => {
 
     const [isScrolled, setIsScrolled] = useState(false);
 
-    const { roomName } = useMeetContext();
+    const roomName = useMeetSelector(selectRoomName);
 
     const sideBarState = useMeetSelector(selectSideBarState);
 

@@ -4,6 +4,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
 
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
+import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices/meetingInfo';
 import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
@@ -28,11 +29,12 @@ vi.mock('@proton/meet/store/hooks/useMeetings', () => ({
     ],
 }));
 
-const createMockStore = (sideBarOpen = false) => {
+const createMockStore = ({ sideBarOpen = false, passphrase = '' }) => {
     return configureStore({
         // @ts-expect-error - mock data
         reducer: {
             ...uiStateReducer,
+            ...meetingInfoReducer,
         },
         preloadedState: {
             uiState: {
@@ -55,13 +57,19 @@ const createMockStore = (sideBarOpen = false) => {
                 permissionPromptStatus: 'CLOSED',
                 noDeviceDetected: 'CLOSED',
             },
+            meetingInfo: {
+                ...initialMeetingInfoState,
+                meetingLink: mockLink,
+                roomName: mockMeetingName,
+                passphrase,
+            },
         },
     });
 };
 
 describe('MeetingDetails', () => {
     it('should return null if not open', () => {
-        const store = createMockStore(false);
+        const store = createMockStore({ sideBarOpen: false });
 
         render(<WrappedMeetingDetails />, {
             wrapper: ({ children }) => (
@@ -69,10 +77,7 @@ describe('MeetingDetails', () => {
                     <NotificationsProvider>
                         <MeetContext.Provider
                             // @ts-expect-error - mock data
-                            value={{
-                                meetingLink: mockLink,
-                                roomName: mockMeetingName,
-                            }}
+                            value={{}}
                         >
                             {children}
                         </MeetContext.Provider>
@@ -85,7 +90,7 @@ describe('MeetingDetails', () => {
     });
 
     it('should display the meeting name and the meeting link', () => {
-        const store = createMockStore(true);
+        const store = createMockStore({ sideBarOpen: true });
 
         render(<WrappedMeetingDetails />, {
             wrapper: ({ children }) => (
@@ -93,10 +98,7 @@ describe('MeetingDetails', () => {
                     <NotificationsProvider>
                         <MeetContext.Provider
                             // @ts-expect-error\
-                            value={{
-                                meetingLink: mockLink,
-                                roomName: mockMeetingName,
-                            }}
+                            value={{}}
                         >
                             {children}
                         </MeetContext.Provider>
@@ -110,7 +112,7 @@ describe('MeetingDetails', () => {
     });
 
     it('should display the meeting details', () => {
-        const store = createMockStore(true);
+        const store = createMockStore({ sideBarOpen: true, passphrase: '123' });
 
         render(<WrappedMeetingDetails />, {
             wrapper: ({ children }) => (
@@ -118,7 +120,7 @@ describe('MeetingDetails', () => {
                     <NotificationsProvider>
                         <MeetContext.Provider
                             // @ts-expect-error - mock data
-                            value={{ meetingLink: mockLink, roomName: mockMeetingName, passphrase: '123' }}
+                            value={{}}
                         >
                             {children}
                         </MeetContext.Provider>

@@ -13,12 +13,21 @@ import { IcMeetCopy } from '@proton/icons/icons/IcMeetCopy';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { useMeetings } from '@proton/meet/store/hooks/useMeetings';
 import {
+    selectKeyRotationLogs,
+    selectMeetingLink,
+    selectMlsGroupState,
+    selectPaidUser,
+    selectPassphrase,
+    selectRoomName,
+} from '@proton/meet/store/slices/meetingInfo';
+import {
     MeetingSideBars,
     selectShowDuration,
     selectSideBarState,
     toggleShowDuration,
     toggleSideBarState,
 } from '@proton/meet/store/slices/uiStateSlice';
+import type { KeyRotationLog } from '@proton/meet/types/types';
 import { parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
@@ -27,7 +36,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useCopyTextToClipboard } from '../../hooks/useCopyTextToClipboard';
-import type { KeyRotationLog } from '../../types';
 
 import './MeetingDetails.scss';
 
@@ -37,8 +45,14 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
     const isMeetAllowMLSLogExportEnabled = useFlag('MeetAllowMLSLogExport');
     const copyTextToClipboard = useCopyTextToClipboard();
 
-    const { meetingLink, roomName, passphrase, mlsGroupState, keyRotationLogs, getKeychainIndexInformation, paidUser } =
-        useMeetContext();
+    const { getKeychainIndexInformation } = useMeetContext();
+    const keyRotationLogs = useMeetSelector(selectKeyRotationLogs);
+    const mlsGroupState = useMeetSelector(selectMlsGroupState);
+    const passphrase = useMeetSelector(selectPassphrase);
+    const paidUser = useMeetSelector(selectPaidUser);
+    const meetingLink = useMeetSelector(selectMeetingLink);
+
+    const roomName = useMeetSelector(selectRoomName);
 
     const sideBarState = useMeetSelector(selectSideBarState);
     const showDuration = useMeetSelector(selectShowDuration);
@@ -277,8 +291,7 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
 };
 
 export const WrappedMeetingDetails = () => {
-    const { meetingLink } = useMeetContext();
-
+    const meetingLink = useMeetSelector(selectMeetingLink);
     const { meetingId } = parseMeetingLink(meetingLink);
 
     const [meetings] = useMeetings();

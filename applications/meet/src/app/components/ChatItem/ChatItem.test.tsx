@@ -1,9 +1,13 @@
+import { Provider } from 'react-redux';
+
+import { configureStore } from '@reduxjs/toolkit';
 import { cleanup, render, screen } from '@testing-library/react';
 
+import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices';
 import type { MeetChatMessage, ParticipantEventRecord } from '@proton/meet/types/types';
 import { ParticipantEvent } from '@proton/meet/types/types';
+import { ProtonStoreContext } from '@proton/react-redux-store';
 
-import { MeetContext } from '../../contexts/MeetContext';
 import { ChatItem } from './ChatItem';
 
 const timestamp = 1718534400;
@@ -27,29 +31,40 @@ const mockParticipantEventRecord: ParticipantEventRecord = {
     eventType: ParticipantEvent.Join,
 };
 
-const mockContextValue = {
-    participantNameMap: {
-        '123': mockParticipantName,
-    },
-};
-
 const date = new Date(timestamp).toLocaleTimeString([], {
     hour: 'numeric',
     minute: '2-digit',
     hour12: true,
 });
 
+const createMockStore = () => {
+    return configureStore({
+        reducer: {
+            ...meetingInfoReducer,
+        },
+        preloadedState: {
+            meetingInfo: {
+                ...initialMeetingInfoState,
+                participantNameMap: {
+                    '123': mockParticipantName,
+                },
+            },
+        },
+    });
+};
+
 describe('ChatItem', () => {
     afterEach(cleanup);
 
-    const Wrapper = ({ children }: { children: React.ReactNode }) => (
-        <MeetContext.Provider
-            // @ts-expect-error - mock data
-            value={mockContextValue}
-        >
-            {children}
-        </MeetContext.Provider>
-    );
+    const Wrapper = ({ children }: { children: React.ReactNode }) => {
+        const store = createMockStore();
+
+        return (
+            <Provider context={ProtonStoreContext} store={store}>
+                {children}
+            </Provider>
+        );
+    };
 
     it('should render a chat message', () => {
         render(

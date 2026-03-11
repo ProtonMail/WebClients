@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 import { VideoTrack, useLocalParticipant, useParticipantTracks } from '@livekit/components-react';
 import type { Participant, RemoteTrackPublication } from 'livekit-client';
@@ -8,6 +8,7 @@ import { c } from 'ttag';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectDisplayName, selectParticipantNameMap } from '@proton/meet/store/slices/meetingInfo';
 import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -18,7 +19,6 @@ import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
 import { useCameraTrackSubscriptionManager } from '../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import { useMeetContext } from '../../contexts/MeetContext';
 import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStatus';
 import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';
@@ -53,8 +53,9 @@ const indicatorSizeBySize = {
     midLarge: 32,
 };
 
-export const ParticipantTile = ({ participant, viewSize = 'large' }: ParticipantTileProps) => {
-    const { participantNameMap, displayName } = useMeetContext();
+export const ParticipantTile = memo(({ participant, viewSize = 'large' }: ParticipantTileProps) => {
+    const participantNameMap = useMeetSelector(selectParticipantNameMap);
+    const displayName = useMeetSelector(selectDisplayName);
     const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
     const { register, unregister } = useCameraTrackSubscriptionManager();
     const [isRefreshing, setIsRefreshing] = useState(false);
@@ -300,4 +301,6 @@ export const ParticipantTile = ({ participant, viewSize = 'large' }: Participant
             </div>
         </div>
     );
-};
+});
+
+ParticipantTile.displayName = 'ParticipantTile';
