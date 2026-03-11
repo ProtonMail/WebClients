@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { Info, useModalState } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
-import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { getCategoryTabFromLabel } from '@proton/mail/features/categoriesView/categoriesHelpers';
+import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { updateLabel } from '@proton/mail/store/labels/actions';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -62,7 +62,15 @@ export const CategoriesViewSections = () => {
                 <div className={clsx('wrapper border border-weak', mailSettings.MailCategoryView && 'is-open')}>
                     <div className="inner">
                         <div className="categories-header flex justify-space-between items-center border-bottom border-weak p-4">
-                            <p className="m-0 text-semibold text-sm">{c('Label').t`Categories`}</p>
+                            <p className="m-0 text-semibold text-sm">
+                                {c('Label').t`Categories`}{' '}
+                                {/* This is intentionally not translated, will be removed after the alpha */}
+                                <Info
+                                    colorPrimary={false}
+                                    className="color-weak"
+                                    title="Categories cannot be disabled during the alpha testing"
+                                />
+                            </p>
                             <p className="m-0 text-semibold text-sm">
                                 {c('Label').t`Notifications`} <Info title={c('Tooltip').t`System notification`} />
                             </p>
