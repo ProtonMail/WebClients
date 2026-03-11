@@ -35,11 +35,17 @@ const ConnectGmailButton = ({
     const [user, loadingUser] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
 
+    const [connectedAddress, setConnectedAddress] = useState<string | undefined>(undefined);
+
     const [byoeSetupSuccessModal, setBYOESetupSuccessModal, renderBYOESetupSuccessModal] = useModalState();
 
-    const { hasAccessToBYOE, isInMaintenance, handleSyncCallback } = useSetupGmailBYOEAddress({
-        showSuccessModal: () => setBYOESetupSuccessModal(true),
-    });
+    const { hasAccessToBYOE, isInMaintenance, handleSyncCallback, handleBYOEWithImportCallback } =
+        useSetupGmailBYOEAddress({
+            showSuccessModal: (connectedAddress: string) => {
+                setConnectedAddress(connectedAddress);
+                setBYOESetupSuccessModal(true);
+            },
+        });
     const { activeBYOEAddresses, forwardingList, isLoadingAddressesCount } = useBYOEAddressesCounts();
 
     const [syncModalProps, setSyncModalOpen, renderSyncModal] = useModalState();
@@ -99,6 +105,7 @@ const ConnectGmailButton = ({
                 <GmailSyncModal
                     noSkip
                     onSyncCallback={hasAccessToBYOE ? handleSyncCallback : handleCloseForwardingModal}
+                    onBYOEWithImportCallback={handleBYOEWithImportCallback}
                     source={
                         hasAccessToBYOE
                             ? EASY_SWITCH_SOURCES.ACCOUNT_WEB_ADDRESSES_BYOE
@@ -126,7 +133,9 @@ const ConnectGmailButton = ({
                 <UpsellForwardingModal hasAccessToBYOE={hasAccessToBYOE} modalProps={upsellForwardingModalProps} />
             )}
             {renderRemoveForwardingModal && <RemoveForwardingModal {...removeForwardingModalProps} />}
-            {renderBYOESetupSuccessModal && <BYOESetupSuccessModal {...byoeSetupSuccessModal} />}
+            {renderBYOESetupSuccessModal && connectedAddress && (
+                <BYOESetupSuccessModal connectedAddress={connectedAddress} {...byoeSetupSuccessModal} />
+            )}
         </>
     );
 };

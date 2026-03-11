@@ -504,11 +504,11 @@ export const handleSetupUser = async ({
         newCache.setupData?.addresses &&
         newCache.setupData?.addresses.length > 0
     ) {
-        const addressID = newCache.setupData.addresses[0].ID;
+        const emailAddress = newCache.setupData.addresses[0].Email;
         await api(
             startEasySwitchSignupImportTask({
                 Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SIGNUP,
-                AddressId: addressID,
+                Account: emailAddress,
                 Provider: OAUTH_PROVIDER.GOOGLE,
             })
         );
