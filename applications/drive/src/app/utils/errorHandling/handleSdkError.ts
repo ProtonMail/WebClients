@@ -34,7 +34,7 @@ type HandleErrorOptions = {
 };
 
 /**
- * It DOES NOT show any notification to the user.
+ * Sdk error handler, shows notifications by default
  */
 export const handleSdkError = (
     error: Error | unknown,

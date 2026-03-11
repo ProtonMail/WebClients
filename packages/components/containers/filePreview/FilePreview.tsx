@@ -239,7 +239,7 @@ export const FilePreviewContent = ({
             return <ExcelPreview onDownload={onDownload} onOpenInDocs={onOpenInDocs} />;
         }
 
-        if (mimeType && isImage(mimeType) && (contents || (imgThumbnailUrl && isLoading))) {
+        if (mimeType && isImage(mimeType) && (contents || imgThumbnailUrl)) {
             return (
                 <ImagePreview
                     isLoading={isLoading}

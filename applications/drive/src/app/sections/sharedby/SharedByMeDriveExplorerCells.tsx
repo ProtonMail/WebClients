@@ -2,11 +2,11 @@ import { useShallow } from 'zustand/react/shallow';
 
 import type { Breakpoints } from '@proton/components';
 import { NodeType } from '@proton/drive';
+import { useThumbnail } from '@proton/drive/modules/thumbnails';
 
 import { GridItemContent } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';
 import { GridItemName } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemName';
 import type { CellDefinition, GridDefinition } from '../../statelessComponents/DriveExplorer/types';
-import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
 import { NameCell, defaultNameCellConfig } from '../commonDriveExplorerCells/NameCell';
 import { AccessCountCell, defaultAccessCountCellConfig } from './driveExplorerCells/AccessCountCell';
 import { CreatedCell, defaultCreatedCellConfig } from './driveExplorerCells/CreatedCell';
@@ -23,21 +23,19 @@ export const getSharedByMeCells = ({
         ...defaultNameCellConfig,
         render: (uid) => {
             const NameCellComponent = () => {
-                const { name, type, mediaType, thumbnailId, haveSignatureIssues } = useSharedByMeStore(
+                const { name, type, mediaType, activeRevisionUid, haveSignatureIssues } = useSharedByMeStore(
                     useShallow((state) => {
                         const item = state.getSharedByMeItem(uid);
                         return {
                             name: item?.name,
                             type: item?.type,
                             mediaType: item?.mediaType,
-                            thumbnailId: item?.thumbnailId,
+                            activeRevisionUid: item?.activeRevisionUid,
                             haveSignatureIssues: item?.haveSignatureIssues,
                         };
                     })
                 );
-                const thumbnail = useThumbnailStore((state) =>
-                    thumbnailId ? state.getThumbnail(thumbnailId) : undefined
-                );
+                const thumbnail = useThumbnail(activeRevisionUid);
 
                 if (!name || !type) {
                     return null;
@@ -49,7 +47,7 @@ export const getSharedByMeCells = ({
                         name={name}
                         type={type}
                         mediaType={type === NodeType.File || type === NodeType.Photo ? mediaType : undefined}
-                        thumbnail={thumbnail}
+                        thumbnailUrl={thumbnail?.sdUrl}
                         haveSignatureIssues={haveSignatureIssues}
                     />
                 );
@@ -131,18 +129,18 @@ export const getSharedByMeGrid = (): GridDefinition => ({
     },
     mainContent: (uid) => {
         const MainContentComponent = () => {
-            const { type, name, mediaType, thumbnailId } = useSharedByMeStore(
+            const { type, name, mediaType, activeRevisionUid } = useSharedByMeStore(
                 useShallow((state) => {
                     const item = state.getSharedByMeItem(uid);
                     return {
                         type: item?.type,
                         name: item?.name,
                         mediaType: item?.mediaType,
-                        thumbnailId: item?.thumbnailId,
+                        activeRevisionUid: item?.activeRevisionUid,
                     };
                 })
             );
-            const thumbnail = useThumbnailStore((state) => (thumbnailId ? state.getThumbnail(thumbnailId) : undefined));
+            const thumbnail = useThumbnail(activeRevisionUid);
 
             if (!type || !name) {
                 return null;

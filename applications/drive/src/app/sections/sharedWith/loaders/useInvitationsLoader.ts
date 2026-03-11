@@ -50,7 +50,7 @@ export const useInvitationsLoader = () => {
                             type: invitation.node.type,
                             mediaType: invitation.node.mediaType,
                             itemType: ItemType.INVITATION,
-                            thumbnailId: undefined,
+                            activeRevisionUid: undefined,
                             size: undefined,
                             invitation: {
                                 uid: invitation.uid,
@@ -83,7 +83,7 @@ export const useInvitationsLoader = () => {
                             type: invitation.node.type,
                             mediaType: invitation.node.mediaType,
                             itemType: ItemType.INVITATION,
-                            thumbnailId: undefined,
+                            activeRevisionUid: undefined,
                             size: undefined,
                             invitation: {
                                 uid: invitation.uid,

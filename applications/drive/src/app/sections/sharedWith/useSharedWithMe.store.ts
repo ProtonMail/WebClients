@@ -438,7 +438,7 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
                                 type: node.type,
                                 mediaType: node.mediaType,
                                 itemType: ItemType.DIRECT_SHARE,
-                                thumbnailId: node.activeRevision?.uid || node.uid,
+                                activeRevisionUid: node.activeRevision?.uid,
                                 size: node.totalStorageSize,
                                 directShare: {
                                     sharedOn: node.membership.inviteTime,
