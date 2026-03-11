@@ -260,11 +260,13 @@ function useBaseUpload(
                                 nextFolderUpload.shareId,
                                 nextFolderUpload.parentId
                             );
-                            await getBusDriver().emit({
-                                type: BusDriverEventName.CREATED_NODES,
-                                driveClient: getDrive(),
-                                items: [{ uid, parentUid }],
-                            });
+                            await getBusDriver().emit(
+                                {
+                                    type: BusDriverEventName.CREATED_NODES,
+                                    items: [{ uid, parentUid }],
+                                },
+                                getDrive()
+                            );
                         } catch (e) {
                             handleSdkError(e);
                         }
@@ -339,13 +341,15 @@ function useBaseUpload(
                             if (!file.isNewFile) {
                                 await unsafeRemoveNodeFromCache(uid);
                             }
-                            await getBusDriver().emit({
-                                type: file.isNewFile
-                                    ? BusDriverEventName.CREATED_NODES
-                                    : BusDriverEventName.UPDATED_NODES,
-                                driveClient: getDrive(),
-                                items: [{ uid, parentUid }],
-                            });
+                            await getBusDriver().emit(
+                                {
+                                    type: file.isNewFile
+                                        ? BusDriverEventName.CREATED_NODES
+                                        : BusDriverEventName.UPDATED_NODES,
+                                    items: [{ uid, parentUid }],
+                                },
+                                getDrive()
+                            );
                         } catch (e) {
                             handleSdkError(e);
                         }

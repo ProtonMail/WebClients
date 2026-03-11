@@ -151,11 +151,13 @@ export const usePublicActions = () => {
 
                     createDeleteNotification(successItems, failureItems);
 
-                    void getBusDriver().emit({
-                        type: BusDriverEventName.DELETED_NODES,
-                        driveClient: getPublicLinkClient(),
-                        uids: successItems.map((item) => item.uid),
-                    });
+                    void getBusDriver().emit(
+                        {
+                            type: BusDriverEventName.DELETED_NODES,
+                            uids: successItems.map((item) => item.uid),
+                        },
+                        getPublicLinkClient()
+                    );
                 }),
         });
     };
@@ -192,11 +194,13 @@ export const usePublicActions = () => {
                 documentType === 'document' ? 1 : 2
             );
             const { node } = getNodeEntity(maybeNode);
-            await getBusDriver().emit({
-                type: BusDriverEventName.CREATED_NODES,
-                driveClient: getPublicLinkClient(),
-                items: [{ uid: node.uid, parentUid: node.parentUid }],
-            });
+            await getBusDriver().emit(
+                {
+                    type: BusDriverEventName.CREATED_NODES,
+                    items: [{ uid: node.uid, parentUid: node.parentUid }],
+                },
+                getPublicLinkClient()
+            );
             handleOpenDocsOrSheets(node.uid, { isNative: true, type: documentType }, customPassword);
         } catch (e) {
             handleSdkError(e);

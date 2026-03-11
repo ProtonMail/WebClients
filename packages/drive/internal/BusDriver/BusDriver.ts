@@ -117,7 +117,7 @@ class BusDriver {
         this.debugMode = debugValue === 'true';
     }
 
-    async emit(event: BusDriverEvent): Promise<void> {
+    async emit(event: BusDriverEvent, driveClient: BusDriverClient): Promise<void> {
         const eventListeners = this.listeners.get(event.type) || [];
         const allEventListeners = this.listeners.get(BusDriverEventName.ALL) || [];
 
@@ -129,7 +129,7 @@ class BusDriver {
         await Promise.allSettled(
             allListeners.map(async (listener) => {
                 try {
-                    await listener(event);
+                    await listener(event, driveClient);
                 } catch (error) {
                     sendErrorReport(new Error('Error in action event listener'));
                 }
@@ -146,7 +146,7 @@ class BusDriver {
      */
     subscribe<K extends keyof BusDriverEventMap>(
         eventType: K,
-        listener: (event: BusDriverEventMap[K]) => Promise<void>
+        listener: (event: BusDriverEventMap[K], driveClient: BusDriverClient) => Promise<void>
     ): () => void {
         if (!this.listeners.has(eventType)) {
             this.listeners.set(eventType, []);
@@ -171,7 +171,7 @@ class BusDriver {
      */
     private unsubscribe<K extends keyof BusDriverEventMap>(
         eventType: K,
-        listener: (event: BusDriverEventMap[K]) => Promise<void>
+        listener: (event: BusDriverEventMap[K], driveClient: BusDriverClient) => Promise<void>
     ): void {
         const eventListeners = this.listeners.get(eventType);
         if (eventListeners) {
@@ -516,45 +516,42 @@ class BusDriver {
         try {
             switch (event.type) {
                 case DriveEventType.NodeCreated:
-                    await this.emit({
-                        type: BusDriverEventName.CREATED_NODES,
-                        driveClient,
-                        items: [
-                            {
-                                uid: event.nodeUid,
-                                parentUid: event.parentNodeUid,
-                                isTrashed: event.isTrashed,
-                                isShared: event.isShared,
-                            },
-                        ],
-                    });
+                    await this.emit(
+                        {
+                            type: BusDriverEventName.CREATED_NODES,
+                            items: [
+                                {
+                                    uid: event.nodeUid,
+                                    parentUid: event.parentNodeUid,
+                                    isTrashed: event.isTrashed,
+                                    isShared: event.isShared,
+                                },
+                            ],
+                        },
+                        driveClient
+                    );
                     break;
                 case DriveEventType.NodeUpdated:
-                    await this.emit({
-                        type: BusDriverEventName.UPDATED_NODES,
-                        driveClient,
-                        items: [
-                            {
-                                uid: event.nodeUid,
-                                parentUid: event.parentNodeUid,
-                                isTrashed: event.isTrashed,
-                                isShared: event.isShared,
-                            },
-                        ],
-                    });
+                    await this.emit(
+                        {
+                            type: BusDriverEventName.UPDATED_NODES,
+                            items: [
+                                {
+                                    uid: event.nodeUid,
+                                    parentUid: event.parentNodeUid,
+                                    isTrashed: event.isTrashed,
+                                    isShared: event.isShared,
+                                },
+                            ],
+                        },
+                        driveClient
+                    );
                     break;
                 case DriveEventType.NodeDeleted:
-                    await this.emit({
-                        type: BusDriverEventName.DELETED_NODES,
-                        driveClient,
-                        uids: [event.nodeUid],
-                    });
+                    await this.emit({ type: BusDriverEventName.DELETED_NODES, uids: [event.nodeUid] }, driveClient);
                     break;
                 case DriveEventType.SharedWithMeUpdated:
-                    await this.emit({
-                        type: BusDriverEventName.REFRESH_SHARED_WITH_ME,
-                        driveClient,
-                    });
+                    await this.emit({ type: BusDriverEventName.REFRESH_SHARED_WITH_ME }, driveClient);
                     break;
             }
         } catch (error) {

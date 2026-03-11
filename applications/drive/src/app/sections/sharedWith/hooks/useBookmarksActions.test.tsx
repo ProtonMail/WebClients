@@ -110,11 +110,13 @@ describe('useBookmarksActions', () => {
             await onSubmit();
 
             expect(mockRemoveBookmark).toHaveBeenCalledWith(uid);
-            expect(mockEventManagerEmit).toHaveBeenCalledWith({
-                type: BusDriverEventName.DELETE_BOOKMARKS,
-                driveClient: mockDriveClient,
-                uids: [uid],
-            });
+            expect(mockEventManagerEmit).toHaveBeenCalledWith(
+                {
+                    type: BusDriverEventName.DELETE_BOOKMARKS,
+                    uids: [uid],
+                },
+                mockDriveClient
+            );
             expect(countActionWithTelemetry).toHaveBeenCalledWith(Actions.DeleteBookmarkFromSharedWithMe, 1);
             expect(mockCreateNotification).toHaveBeenCalledWith({
                 type: 'success',
@@ -147,11 +149,13 @@ describe('useBookmarksActions', () => {
             expect(mockRemoveBookmark).toHaveBeenCalledTimes(2);
             expect(mockRemoveBookmark).toHaveBeenCalledWith(uids[0]);
             expect(mockRemoveBookmark).toHaveBeenCalledWith(uids[1]);
-            expect(mockEventManagerEmit).toHaveBeenCalledWith({
-                type: BusDriverEventName.DELETE_BOOKMARKS,
-                driveClient: mockDriveClient,
-                uids: uids,
-            });
+            expect(mockEventManagerEmit).toHaveBeenCalledWith(
+                {
+                    type: BusDriverEventName.DELETE_BOOKMARKS,
+                    uids: uids,
+                },
+                mockDriveClient
+            );
             expect(countActionWithTelemetry).toHaveBeenCalledWith(Actions.DeleteBookmarkFromSharedWithMe, 2);
             expect(mockCreateNotification).toHaveBeenCalledWith({
                 type: 'success',
@@ -174,11 +178,13 @@ describe('useBookmarksActions', () => {
             const { onSubmit } = mockShowConfirmModal.mock.lastCall[0];
             await onSubmit();
 
-            expect(mockEventManagerEmit).toHaveBeenCalledWith({
-                type: BusDriverEventName.DELETE_BOOKMARKS,
-                driveClient: mockDriveClient,
-                uids: ['bookmark-uid-1', 'bookmark-uid-3'],
-            });
+            expect(mockEventManagerEmit).toHaveBeenCalledWith(
+                {
+                    type: BusDriverEventName.DELETE_BOOKMARKS,
+                    uids: ['bookmark-uid-1', 'bookmark-uid-3'],
+                },
+                mockDriveClient
+            );
             expect(countActionWithTelemetry).toHaveBeenCalledWith(Actions.DeleteBookmarkFromSharedWithMe, 2);
             expect(mockCreateNotification).toHaveBeenCalledWith({
                 type: 'error',

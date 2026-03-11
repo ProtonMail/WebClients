@@ -39,11 +39,13 @@ export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActio
                     setVolumeShareIds(volumeId, [shareId]);
                 }
 
-                await getBusDriver().emit({
-                    type: BusDriverEventName.ACCEPT_INVITATIONS,
-                    driveClient: getDrivePerNodeType(type),
-                    uids: [node.uid],
-                });
+                await getBusDriver().emit(
+                    {
+                        type: BusDriverEventName.ACCEPT_INVITATIONS,
+                        uids: [node.uid],
+                    },
+                    getDrivePerNodeType(type)
+                );
 
                 createNotification({
                     type: 'success',
@@ -61,11 +63,13 @@ export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActio
         try {
             await drive.rejectInvitation(invitationUid);
 
-            await getBusDriver().emit({
-                type: BusDriverEventName.REJECT_INVITATIONS,
-                driveClient: getDrivePerNodeType(type),
-                uids: [uid],
-            });
+            await getBusDriver().emit(
+                {
+                    type: BusDriverEventName.REJECT_INVITATIONS,
+                    uids: [uid],
+                },
+                getDrivePerNodeType(type)
+            );
 
             createNotification({
                 type: 'success',

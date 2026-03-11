@@ -77,11 +77,13 @@ export const useCreateFolderModalState = ({
 
             const { node } = getNodeEntity(newFolder);
             const { nodeId } = splitNodeUid(node.uid);
-            await getBusDriver().emit({
-                type: BusDriverEventName.CREATED_NODES,
-                driveClient: drive,
-                items: [{ uid: node.uid, parentUid: node.parentUid, isShared: node.isShared, isTrashed: false }],
-            });
+            await getBusDriver().emit(
+                {
+                    type: BusDriverEventName.CREATED_NODES,
+                    items: [{ uid: node.uid, parentUid: node.parentUid, isShared: node.isShared, isTrashed: false }],
+                },
+                drive
+            );
             onSuccess?.({ uid: node.uid, parentUid: node.parentUid, nodeId, name });
             createNotification({
                 type: 'success',

@@ -1,4 +1,4 @@
-import { type ProtonDriveClient, getDrivePerNodeType } from '@proton/drive';
+import type { ProtonDriveClient } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -29,7 +29,7 @@ const createSharedByMeItemFromNode = async (nodeUid: string, drive: Drive): Prom
         }
 
         const location = await getFormattedNodeLocation(drive, sharedByMeMaybeNode);
-        const shareResult = await getDrivePerNodeType(node.type).getSharingInfo(node.uid);
+        const shareResult = await drive.getSharingInfo(node.uid);
         const oldestCreationTime = shareResult ? getOldestShareCreationTime(shareResult) : undefined;
 
         return {
@@ -60,13 +60,13 @@ const createSharedByMeItemFromNode = async (nodeUid: string, drive: Drive): Prom
 export const subscribeToSharedByMeEvents = () => {
     const eventManager = getBusDriver();
 
-    const createSubscription = eventManager.subscribe(BusDriverEventName.CREATED_NODES, async (event) => {
+    const createSubscription = eventManager.subscribe(BusDriverEventName.CREATED_NODES, async (event, driveClient) => {
         const store = useSharedByMeStore.getState();
 
         for (const item of event.items) {
             const storeItem = store.getSharedByMeItem(item.uid);
-            if (item.isShared && !storeItem && 'getSharingInfo' in event.driveClient) {
-                const sharedByMeItem = await createSharedByMeItemFromNode(item.uid, event.driveClient);
+            if (item.isShared && !storeItem && 'getSharingInfo' in driveClient) {
+                const sharedByMeItem = await createSharedByMeItemFromNode(item.uid, driveClient);
                 if (sharedByMeItem) {
                     store.setSharedByMeItem(sharedByMeItem);
                 }
@@ -74,15 +74,15 @@ export const subscribeToSharedByMeEvents = () => {
         }
     });
 
-    const updateSubscription = eventManager.subscribe(BusDriverEventName.UPDATED_NODES, async (event) => {
+    const updateSubscription = eventManager.subscribe(BusDriverEventName.UPDATED_NODES, async (event, driveClient) => {
         const store = useSharedByMeStore.getState();
 
         for (const item of event.items) {
             const storeItem = store.getSharedByMeItem(item.uid);
             if (item.isShared === false && storeItem) {
                 store.removeSharedByMeItem(item.uid);
-            } else if (item.isShared && 'getSharingInfo' in event.driveClient) {
-                const sharedByMeItem = await createSharedByMeItemFromNode(item.uid, event.driveClient);
+            } else if (item.isShared && 'getSharingInfo' in driveClient) {
+                const sharedByMeItem = await createSharedByMeItemFromNode(item.uid, driveClient);
                 if (sharedByMeItem) {
                     store.setSharedByMeItem(sharedByMeItem);
                 }

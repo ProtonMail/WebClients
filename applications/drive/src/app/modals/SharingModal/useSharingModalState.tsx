@@ -102,17 +102,19 @@ export const useSharingModalState = ({
 
     const updateSharingState = async (updatedShareResult: ShareResult | undefined) => {
         const shareResult = updatedShareResult || defaultSharingInfo;
-        await getBusDriver().emit({
-            type: BusDriverEventName.UPDATED_NODES,
-            driveClient: drive,
-            items: [
-                {
-                    uid: nodeUid,
-                    parentUid,
-                    isShared: getIsShared(shareResult),
-                },
-            ],
-        });
+        await getBusDriver().emit(
+            {
+                type: BusDriverEventName.UPDATED_NODES,
+                items: [
+                    {
+                        uid: nodeUid,
+                        parentUid,
+                        isShared: getIsShared(shareResult),
+                    },
+                ],
+            },
+            drive
+        );
         setSharingInfo(shareResult);
     };
 
