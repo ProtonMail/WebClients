@@ -82,12 +82,12 @@ export interface CreateSyncNeedsToken {
 }
 
 export type CreateSyncProps = (CreateSyncNeedsToken | CreateSyncExistingToken) & {
-    type: SyncTokenStrategy,
+    type: SyncTokenStrategy;
     successNotification?: CreateNotificationOptions;
     errorNotification?: CreateNotificationOptions;
     expectedEmailAddress?: { address: string; type: 'reconnect' | 'convertToBYOE' };
     Source: EASY_SWITCH_SOURCES;
-}
+};
 
 export const createSyncItem = createAsyncThunk<
     any,
@@ -118,7 +118,7 @@ export const createSyncItem = createAsyncThunk<
 
             token = Token;
         } else {
-            const {token: inputToken} = props
+            const { token: inputToken } = props;
             token = inputToken;
         }
 
@@ -186,13 +186,13 @@ export interface ResumeSyncNeedsToken {
 }
 
 export type ResumeSyncProps = (ResumeSyncNeedsToken | ResumeSyncExistingToken) & {
-    type: SyncTokenStrategy,
+    type: SyncTokenStrategy;
     syncId: string;
     importerId: string;
     successNotification?: CreateNotificationOptions;
     errorNotification?: CreateNotificationOptions;
     expectedEmailAddress?: { address: string; type: 'reconnect' | 'convertToBYOE' };
-}
+};
 
 export const resumeSyncItem = createAsyncThunk<
     any,
@@ -219,9 +219,9 @@ export const resumeSyncItem = createAsyncThunk<
             );
 
             token = Token;
-        }else {
-            const {token: inputToken} = props
-            token = inputToken
+        } else {
+            const { token: inputToken } = props;
+            token = inputToken;
         }
 
         await thunkApi.extra.api(updateImport(importerId, { TokenID: token.ID }));
@@ -233,6 +233,44 @@ export const resumeSyncItem = createAsyncThunk<
         }
         return;
     } catch (error: any) {
+        return thunkApi.rejectWithValue(error.data as SubmitError);
+    }
+});
+
+export type CreateTokenProps = {
+    errorNotification?: CreateNotificationOptions;
+    Source: EASY_SWITCH_SOURCES;
+    Code: string;
+    Provider: OAUTH_PROVIDER;
+    RedirectUri: string;
+};
+
+export const createTokenItem = createAsyncThunk<
+    any,
+    CreateTokenProps,
+    EasySwitchThunkExtra & {
+        rejectValue: SubmitError;
+        fulfillValue: ImportToken;
+    }
+>('token/create', async (props, thunkApi) => {
+    const { Source, errorNotification, Code, Provider, RedirectUri } = props;
+
+    try {
+        const { Token }: { Token: ImportToken; DisplayName: string } = await thunkApi.extra.api(
+            createToken({
+                Provider,
+                Code,
+                RedirectUri,
+                Source,
+                Features: getEasySwitchFeaturesFromProducts([ImportType.MAIL]),
+            })
+        );
+
+        return Token;
+    } catch (error: any) {
+        if (errorNotification) {
+            thunkApi.extra.notificationManager.createNotification(errorNotification);
+        }
         return thunkApi.rejectWithValue(error.data as SubmitError);
     }
 });
