@@ -1156,6 +1156,12 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Close search": [
+        "Κλείσιμο αναζήτησης"
+      ],
+      "Search groups": [
+        "Αναζήτηση ομάδων"
       ]
     },
     "action": {
@@ -4556,6 +4562,12 @@
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
+      ],
+      "Invalid coupon": [
+        "Μη έγκυρο κουπόνι"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Το ελάχιστο ποσό δωρεάς είναι ${ price }"
       ]
     },
     "error": {
@@ -8524,6 +8536,9 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Απαιτείται προσαρμοσμένος τομέας για τη δημιουργία ομάδων. Εάν δεν έχετε ρυθμίσει έναν προσαρμοσμένο τομέα, κάντε το πρώτα στο ${ linkToDomainPage }."
       ]
     },
     "info": {

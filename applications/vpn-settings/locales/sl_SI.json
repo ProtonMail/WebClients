@@ -1079,6 +1079,12 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Close search": [
+        "Zapri iskanje"
+      ],
+      "Search groups": [
+        "Išči med skupinami"
       ]
     },
     "action": {
@@ -1722,6 +1728,9 @@
       ],
       "Website access problem": [
         "Težava z dostopom do spletnega mesta"
+      ],
+      "Sheets problem": [
+        "Težava z listo"
       ]
     },
     "Button": {
@@ -4013,6 +4022,12 @@
       ],
       "Zero keys reactivated": [
         "Nič ključev ponovno aktiviranih"
+      ],
+      "Invalid coupon": [
+        "Neveljaven kupon"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Najmanjši znesek donacije je ${ price }"
       ]
     },
     "error": {
@@ -4403,6 +4418,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Vaš račun zaseda ${ usedSpace } prostora za shranjevanje, kar presega vam dodeljenih ${ inviteSpace }. Izbrišite nekaj podatkov ali prosite skrbnika paketa, naj vam dodeli več prostora."
+      ],
+      "Pending invitation": [
+        "Čaka na povabilo",
+        "Čakata na povabilo",
+        "Čakajo na povabilo",
+        "Čakajo na povabilo"
       ]
     },
     "familyOffer_2023:Info": {
@@ -7453,6 +7474,21 @@
       ],
       "Zoom meeting": [
         "sestanek prek Zooma"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Za ustvarjanje skupin je potrebna domena po meri. Če nimate nastavljene domene po meri, jo najprej nastavite pod ${ linkToDomainPage }."
+      ],
+      "Coming soon": [
+        "Kmalu na voljo"
+      ],
+      "New activity data will stop being collected and shown.": [
+        "Zbirajo podatkov o dejavnosti se bo ustavilo in podatki ne bodo več prikazani."
+      ],
+      "You have ${ availableCount } new server available.": [
+        "Na voljo imate ${ availableCount } nov strežnik.",
+        "Na voljo imate ${ availableCount } nova strežnika.",
+        "Na voljo imate ${ availableCount } novih strežnikov.",
+        "Na voljo imate ${ availableCount } novih strežnikov."
       ]
     },
     "info": {
@@ -14200,6 +14236,12 @@
       ],
       "Your subscriptions": [
         "Vaše naročnine"
+      ],
+      "Add ${ totalServerCount } server?": [
+        "Dodaj ${ totalServerCount } strežnik?",
+        "Dodaj ${ totalServerCount } strežnika?",
+        "Dodaj ${ totalServerCount } strežnike?",
+        "Dodaj ${ totalServerCount } strežnike?"
       ]
     },
     "Title for payment methods table": {

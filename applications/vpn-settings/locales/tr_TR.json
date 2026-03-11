@@ -1156,6 +1156,12 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Close search": [
+        "Aramayı kapat"
+      ],
+      "Search groups": [
+        "Gruplarda ara"
       ]
     },
     "action": {
@@ -4556,6 +4562,12 @@
       ],
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
+      ],
+      "Invalid coupon": [
+        "Geçersiz kupon"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimum bağış tutarı ${ price }"
       ]
     },
     "error": {
@@ -8524,6 +8536,9 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Grup oluşturmak için özel etki alanı gereklidir. Eğer ayarlanmış bir özel etki alanınız yoksa önce ${ linkToDomainPage } kısmından bunu yapın."
       ]
     },
     "info": {
@@ -13848,7 +13863,7 @@
         "1 yıl sonra ${ regularAmount } yerine ${ discountedAmount } olarak yenilenir (${ discount }% indirim ile)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "2 yıl sonra ${ regularAmount } yerine ${ discountedAmount } ile yenilenir (${ discount }% indirim ile)"
+        "2 yıl sonra ${ regularAmount } yerine ${ discountedAmount } ile yenilenir (%${ discount } indirim ile)"
       ],
       "Save ${ discount }%": [
         "%${ discount } indirim"

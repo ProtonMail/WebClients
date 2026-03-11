@@ -1156,6 +1156,12 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Close search": [
+        "Fechar pesquisa"
+      ],
+      "Search groups": [
+        "Pesquisar grupos"
       ]
     },
     "action": {
@@ -1951,6 +1957,9 @@
       ],
       "What are you migrating?": [
         "O que você está migrando?"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "Para migrar os dados da sua organização, você precisa instalar o aplicativo Assistente de Migração do ${ BRAND_NAME } na Google Workspace Marketplace. Isso concederá permissão ao ${ BRAND_NAME } para copiar seus dados. Após a instalação, volte aqui para continuar."
       ]
     },
     "Browser": {
@@ -4538,6 +4547,9 @@
       ],
       "ZIP code is required": [
         "O CEP é obrigatório."
+      ],
+      "Invalid coupon": [
+        "Cupom inválido"
       ]
     },
     "error": {

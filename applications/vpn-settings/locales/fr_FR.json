@@ -1153,6 +1153,12 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Close search": [
+        "Fermer la recherche"
+      ],
+      "Search groups": [
+        "Rechercher des groupes"
       ]
     },
     "action": {
@@ -4544,6 +4550,12 @@
       ],
       "ZIP code is required": [
         "Le code postal est nécessaire."
+      ],
+      "Invalid coupon": [
+        "Le code cadeau n'est pas valide."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Le montant minimum du don est de ${ price }."
       ]
     },
     "error": {
@@ -8497,6 +8509,9 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Un domaine personnalisé est requis pour créer des groupes. Si vous n'avez pas configuré de domaine personnalisé, faites-le d'abord sous ${ linkToDomainPage }."
       ]
     },
     "info": {

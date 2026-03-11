@@ -1156,6 +1156,12 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Close search": [
+        "Stäng sök"
+      ],
+      "Search groups": [
+        "Sök grupper"
       ]
     },
     "action": {
@@ -4529,6 +4535,12 @@
       ],
       "ZIP code is required": [
         "Postnummer är obligatoriskt"
+      ],
+      "Invalid coupon": [
+        "Ogiltig rabattkod"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minsta donationsbelopp är ${ price }"
       ]
     },
     "error": {
@@ -8453,6 +8465,15 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "En anpassad domän är obligatoriskt för att skapa grupper. Om du inte har ställt in en anpassad domän, gör det först under ${ linkToDomainPage }."
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "Du får kreditbelöningen 1 månad efter att din väns provperiod har avslutats."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "Du får kreditbelöningen 2 månader efter att din väns provperiod avslutades."
       ]
     },
     "info": {
@@ -16657,6 +16678,9 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Du kan skydda upp till ${ FAMILY_MAX_USERS } personer med ${ PLAN_NAMES[plan] }. Från bara ${ priceString }/månad per konto."
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Allt du behöver för att samarbeta säkert i en enda prenumeration. Få åtkomst till ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ LUMO_SHORT_APP_NAME } AI-assistent."
       ]
     },
     "upsell panel": {

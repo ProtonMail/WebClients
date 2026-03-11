@@ -1156,6 +1156,12 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Close search": [
+        "Tancar la cerca"
+      ],
+      "Search groups": [
+        "Cercar grups"
       ]
     },
     "action": {
@@ -4556,6 +4562,12 @@
       ],
       "ZIP code is required": [
         "Es requereix el codi postal."
+      ],
+      "Invalid coupon": [
+        "El cupó no és vàlid"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "La donació mínima és de ${ price }"
       ]
     },
     "error": {
@@ -8524,6 +8536,9 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Es requereix un domini personalitzat per crear grups. Si no en teniu cap de configurat, feu-ho primer a ${ linkToDomainPage }."
       ]
     },
     "info": {
