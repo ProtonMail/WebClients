@@ -1,12 +1,12 @@
 .springSaleHeader {
-	font-size: 4.5rem;
+	font-size: 4rem;
 	color: #372580;
 	line-height: 1;
 	letter-spacing: -3%;
 }
 
 .springSaleButterfly {
-	block-size: 7rem;
+	block-size: 6rem;
 	transform: scaleX(-1);
 }
 
@@ -27,7 +27,7 @@
 }
 
 .springSalePrice {
-	font-size: 3rem;
+	font-size: 2.5rem;
 	line-height: 1;
 }
 
@@ -49,4 +49,9 @@
 	.offer-disable-button {
 		color: #372580;
 	}
+}
+
+.modal-two:has([class*='offer-spring-sale-2026-']) {
+	padding-block: 1rem;
+	padding-inline: 3.5rem;
 }
