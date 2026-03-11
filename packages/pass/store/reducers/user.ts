@@ -15,6 +15,7 @@ import {
     sentinelToggle,
     setUserAccess,
     setUserEventID,
+    setUserFeatureFlags,
     syncMigration,
     userRefresh,
 } from '@proton/pass/store/actions';
@@ -207,6 +208,8 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
         const next: UserState = { ...state, features: null, featureVariants: null }; /* wipe all features before merge */
         return partialMerge(next, { features: action.payload.features, featureVariants: action.payload.variants });
     }
+
+    if (setUserFeatureFlags.match(action)) return { ...state, features: action.payload };
 
     if (sentinelToggle.success.match(action)) {
         return partialMerge(state, { userSettings: { HighSecurity: { Value: action.payload.value } } });
