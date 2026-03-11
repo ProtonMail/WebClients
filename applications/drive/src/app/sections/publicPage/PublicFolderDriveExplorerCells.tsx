@@ -2,10 +2,10 @@ import { useShallow } from 'zustand/react/shallow';
 
 import type { Breakpoints } from '@proton/components';
 import { NodeType } from '@proton/drive';
+import { useThumbnail } from '@proton/drive/modules/thumbnails';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import type { CellDefinition } from '../../statelessComponents/DriveExplorer/types';
-import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
 import { NameCell, defaultNameCellConfig } from '../commonDriveExplorerCells/NameCell';
 import { SizeCell, defaultSizeCellConfig } from '../commonDriveExplorerCells/SizeCell';
 import { DownloadCell, defaultDownloadCellConfig } from './driveExplorerCells/DownloadCell';
@@ -25,9 +25,7 @@ export const getPublicFolderCells = ({
             render: (uid) => {
                 const NameCellComponent = () => {
                     const item = usePublicFolderStore(useShallow((state) => state.getFolderItem(uid)));
-                    const thumbnail = useThumbnailStore(
-                        useShallow((state) => (item?.thumbnailId ? state.getThumbnail(item.thumbnailId) : undefined))
-                    );
+                    const thumbnail = useThumbnail(item?.activeRevisionUid);
 
                     if (!item) {
                         return null;
@@ -39,7 +37,7 @@ export const getPublicFolderCells = ({
                             name={item.name}
                             type={item.type}
                             mediaType={item.type === NodeType.File ? item.mediaType : undefined}
-                            thumbnail={thumbnail}
+                            thumbnailUrl={thumbnail?.sdUrl}
                             haveSignatureIssues={item.haveSignatureIssues}
                         />
                     );

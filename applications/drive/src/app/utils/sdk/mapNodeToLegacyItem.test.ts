@@ -135,7 +135,7 @@ describe('mapNodeToLegacyItem', () => {
             linkId: linkId,
             volumeId: volumeId,
             isAnonymous: false,
-            thumbnailId: 'nodeRevId',
+            activeRevisionUid: revUid,
             rootUid: 'root-uid',
             treeEventScopeId: 'treeEventScopeId',
             hasSignatureIssues: false,

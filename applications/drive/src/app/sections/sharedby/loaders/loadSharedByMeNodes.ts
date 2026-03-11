@@ -22,7 +22,7 @@ const fetchSharedByMeNodes = async (abortSignal: AbortSignal, drive: Drive) => {
                 name: node.name,
                 type: node.type,
                 mediaType: node.mediaType,
-                thumbnailId: node.activeRevision?.uid || node.uid,
+                activeRevisionUid: node.activeRevision?.uid,
                 size: node.activeRevision?.storageSize || node.totalStorageSize,
                 parentUid: node.parentUid,
                 haveSignatureIssues: !signatureResult.ok,

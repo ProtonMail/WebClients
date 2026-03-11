@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 import {
     AbortError,
     ConnectionError,
@@ -8,11 +6,10 @@ import {
     RateLimitedError,
     ServerError,
     ValidationError,
-} from '@proton/drive';
+} from '@protontech/drive-sdk';
+import { c } from 'ttag';
 
-import { sendErrorReport } from '.';
-import { getNotificationsManager } from '../../modules/notifications';
-import { EnrichedError } from './EnrichedError';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 export const shouldTrackError = (err: Error) =>
     !(err instanceof ValidationError) &&
@@ -34,25 +31,22 @@ type HandleErrorOptions = {
 };
 
 /**
- * Sdk error handler, shows notifications by default
+ * Drive error handler
  */
-export const handleSdkError = (
+export const handleDriveError = (
     error: Error | unknown,
-    { fallbackMessage = c('Error').t`An error occurred`, extra = {}, showNotification = true }: HandleErrorOptions = {}
+    { fallbackMessage = c('Error').t`An error occurred`, extra = {} }: HandleErrorOptions = {}
 ) => {
-    const errorToHandle = error instanceof Error ? error : new Error(fallbackMessage);
-    const message = error instanceof ProtonDriveError ? errorToHandle.message : fallbackMessage;
+    const errorToHandle =
+        error instanceof Error ? error : new Error(error instanceof ProtonDriveError ? error.message : fallbackMessage);
 
     console.error(errorToHandle);
     if (shouldTrackError(errorToHandle)) {
-        const enrichedError = new EnrichedError(errorToHandle.message, {
+        const errorContext = {
             tags: {
-                component: 'drive-sdk',
+                component: 'drive-package',
             },
             extra: {
-                ...(error instanceof EnrichedError && {
-                    ...error.context?.extra,
-                }),
                 // Do not use fallbackMessage here, as it might include PII in some cases.
                 ...(error instanceof ServerError && {
                     serverErrorCode: error.code,
@@ -60,14 +54,8 @@ export const handleSdkError = (
                 }),
                 ...extra,
             },
-        });
-        enrichedError.name = errorToHandle.name;
-        enrichedError.stack = errorToHandle.stack;
-        enrichedError.cause = errorToHandle.cause;
+        };
 
-        sendErrorReport(enrichedError);
-    }
-    if (showNotification && shouldShowNotification(errorToHandle)) {
-        getNotificationsManager().createNotification({ type: 'error', text: message, preWrap: true });
+        traceError(errorToHandle, errorContext);
     }
 };

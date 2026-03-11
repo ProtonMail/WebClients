@@ -13,7 +13,7 @@ export type FolderViewItem = {
     parentLinkId: string;
     linkId: string;
     volumeId: string;
-    thumbnailId: string;
+    activeRevisionUid: string | undefined;
     id: string;
     mimeType: string;
     isFile: boolean;

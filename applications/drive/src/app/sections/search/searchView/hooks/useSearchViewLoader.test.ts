@@ -105,7 +105,7 @@ describe('useSearchViewLoader', () => {
                         type: mockNode.type,
                         role: 'viewer',
                         mediaType: mockNode.mediaType,
-                        thumbnailId: mockNode.activeRevision?.uid,
+                        activeRevisionUid: mockNode.activeRevision?.uid,
                         size: mockNode.totalStorageSize,
                         modificationTime: mockNode.modificationTime,
                         location: '/some/location',
@@ -289,27 +289,6 @@ describe('useSearchViewLoader', () => {
                     expect.objectContaining({
                         nodeUid: 'node-1',
                         haveSignatureIssues: true,
-                    })
-                );
-            });
-        });
-
-        it('should use node uid as thumbnailId when activeRevision is not available', async () => {
-            const mockNode = createMockNodeEntity({ uid: 'node-1', activeRevision: undefined });
-            const mockMaybeNode = { ok: true, value: mockNode };
-
-            mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
-                yield mockMaybeNode;
-            });
-
-            const { result } = renderHook(() => useSearchViewNodesLoader());
-
-            await result.current.loadNodes(['node-1'], mockAbortSignal);
-
-            await waitFor(() => {
-                expect(mockAddSearchResultItem).toHaveBeenCalledWith(
-                    expect.objectContaining({
-                        thumbnailId: 'node-1',
                     })
                 );
             });

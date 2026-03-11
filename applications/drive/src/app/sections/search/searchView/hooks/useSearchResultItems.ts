@@ -3,11 +3,11 @@ import { useCallback, useMemo } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 
 import { NodeType, getDrive, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
+import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useFlagsDriveSDKPreview } from '../../../../flags/useFlagsDriveSDKPreview';
-import { useBatchThumbnailLoader } from '../../../../hooks/drive/useBatchThumbnailLoader';
 import useDriveNavigation from '../../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../../hooks/drive/useOnItemRenderedMetrics';
 import { useDrivePreviewModal } from '../../../../modals/preview';
@@ -22,7 +22,6 @@ import { useSearchViewStore } from '../../searchView/store';
 export const useSearchResultItems = () => {
     const { navigateToLink, navigateToAlbum } = useDriveNavigation();
 
-    const { loadThumbnail } = useBatchThumbnailLoader({ drive: getDrive() });
     const { layout } = useUserSettings();
     const {
         selectedItemIds,
@@ -65,16 +64,14 @@ export const useSearchResultItems = () => {
             incrementItemRenderedCounter();
             const renderedItem = useSearchViewStore.getState().getSearchResultItem(id);
 
-            if (renderedItem?.thumbnailId) {
-                loadThumbnail({
-                    uid: renderedItem.nodeUid,
-                    thumbnailId: renderedItem.thumbnailId,
-                    hasThumbnail: true,
-                    cachedThumbnailUrl: '',
+            if (renderedItem?.activeRevisionUid) {
+                loadThumbnail(getDrive(), {
+                    nodeUid: renderedItem.nodeUid,
+                    revisionUid: renderedItem.activeRevisionUid,
                 });
             }
         },
-        [incrementItemRenderedCounter, loadThumbnail]
+        [incrementItemRenderedCounter]
     );
 
     const handleSorting = ({

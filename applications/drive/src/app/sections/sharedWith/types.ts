@@ -11,7 +11,7 @@ type BaseSharedWithMeItem = {
     type: NodeType;
     size: number | undefined;
     mediaType: string | undefined;
-    thumbnailId: string | undefined;
+    activeRevisionUid: string | undefined;
 };
 
 export type BookmarkItem = BaseSharedWithMeItem & {

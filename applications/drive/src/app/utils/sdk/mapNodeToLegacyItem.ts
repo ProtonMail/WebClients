@@ -40,7 +40,7 @@ export type LegacyItem = FileBrowserBaseItem & {
     isLegacy?: boolean;
     metaDataModifyTime: number;
     isLocked?: boolean;
-    thumbnailId: string;
+    activeRevisionUid: string | undefined;
     isShared?: boolean;
     isSharedPublicly?: boolean;
     parentUid: string | undefined;
@@ -134,7 +134,7 @@ export const mapNodeToLegacyItem = async (
         isLocked: false,
         activeRevision,
         isAnonymous: getLegacyIsAnonymous(node),
-        thumbnailId: activeRevision?.id || node.uid,
+        activeRevisionUid: nodeRevision?.uid,
         parentUid: node.parentUid,
         deprecatedShareId: node.deprecatedShareId,
         shareId: node.deprecatedShareId || defaultShareId,
