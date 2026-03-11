@@ -26,7 +26,7 @@ export const CategorySettingsItem = ({ category, loading, categoriesEnabled, onU
         <div key={category.id} className="flex items-center px-4 py-2">
             <Toggle
                 id={`enable-${category.id}`}
-                className={clsx('self-center mr-3', categoriesEnabled ? 'w-auto' : 'hidden')}
+                className={clsx('mr-3', categoriesEnabled ? 'visible' : 'hidden')}
                 // checked={category.display}
                 checked={true}
                 // onClick={() => onUpdate({ ...category, display: !category.display })}
@@ -52,15 +52,14 @@ export const CategorySettingsItem = ({ category, loading, categoriesEnabled, onU
                 {c('Info').t`Receive notifications for ${categoryLabel}`}
             </label>
 
-            {categoriesEnabled && (
-                <Checkbox
-                    id={`notification-${category.id}`}
-                    checked={category.notify}
-                    onChange={() => onUpdate({ ...category, notify: !category.notify })}
-                    data-testid={`${category.id}-notify`}
-                    disabled={loading}
-                />
-            )}
+            <Checkbox
+                id={`notification-${category.id}`}
+                className={categoriesEnabled ? 'visible' : 'hidden'}
+                checked={category.notify}
+                onChange={() => onUpdate({ ...category, notify: !category.notify })}
+                data-testid={`${category.id}-notify`}
+                disabled={loading}
+            />
         </div>
     );
 };
