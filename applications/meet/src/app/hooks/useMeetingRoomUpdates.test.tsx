@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { renderHook } from '@testing-library/react';
 
+import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices/meetingInfo';
 import { meetingStateReducer } from '@proton/meet/store/slices/meetingState';
 import type { MeetChatMessage, ParticipantEventRecord } from '@proton/meet/types/types';
 import { ParticipantEvent } from '@proton/meet/types/types';
@@ -35,6 +36,7 @@ const createMockStore = () => {
     return configureStore({
         reducer: {
             ...meetingStateReducer,
+            ...meetingInfoReducer,
         },
         preloadedState: {
             meetingState: {
@@ -42,6 +44,10 @@ const createMockStore = () => {
                 pageSize: 12,
                 chatMessages: mockChatMessages,
                 events: mockParticipantEvents,
+            },
+            meetingInfo: {
+                ...initialMeetingInfoState,
+                participantNameMap: mockParticipantNameMap,
             },
         },
     });
@@ -56,9 +62,7 @@ describe('useMeetingRoomUpdates', () => {
                 <Provider context={ProtonStoreContext} store={store}>
                     <MeetContext.Provider
                         // @ts-expect-error - mock data
-                        value={{
-                            participantNameMap: mockParticipantNameMap,
-                        }}
+                        value={{}}
                     >
                         {children}
                     </MeetContext.Provider>

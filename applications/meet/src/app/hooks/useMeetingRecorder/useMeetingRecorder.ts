@@ -10,6 +10,7 @@ import { RecordingStatus } from '../../types';
 import { calculateGridLayout } from '../../utils/calculateGridLayout';
 import { useIsLargerThanMd } from '../useIsLargerThanMd';
 import { useIsNarrowHeight } from '../useIsNarrowHeight';
+import { useStableCallback } from '../useStableCallback';
 import { MessageType } from './recordingWorkerTypes';
 import type { FrameReaderInfo, MeetingRecordingState, RecordingTrackInfo } from './types';
 import { useRecordingStatusPublish } from './useRecordingStatusPublish';
@@ -379,7 +380,7 @@ export function useMeetingRecorder(
         return { stream: destination.stream };
     };
 
-    const startRecording = async () => {
+    const startRecording = useStableCallback(async () => {
         try {
             if (workerStorageRef.current) {
                 await workerStorageRef.current.clear().catch(() => {
@@ -478,9 +479,9 @@ export function useMeetingRecorder(
             console.error('Failed to start recording:', error);
             throw error;
         }
-    };
+    });
 
-    const stopRecording = () => {
+    const stopRecording = useStableCallback(async () => {
         return new Promise<Blob | null>(async (resolve) => {
             const mediaRecorder = mediaRecorderRef.current;
 
@@ -534,9 +535,9 @@ export function useMeetingRecorder(
                 resolve(null);
             }
         });
-    };
+    });
 
-    const downloadRecording = async () => {
+    const downloadRecording = useStableCallback(async () => {
         if (!recordingState.isRecording) {
             return;
         }
@@ -571,7 +572,7 @@ export function useMeetingRecorder(
             // eslint-disable-next-line no-console
             console.error('Failed to download recording:', error);
         }
-    };
+    });
 
     useEffect(() => {
         if (!recordingState.isRecording || !renderWorkerRef.current) {

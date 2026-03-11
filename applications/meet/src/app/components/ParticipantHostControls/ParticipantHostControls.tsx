@@ -13,11 +13,12 @@ import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectParticipantNameMap, selectParticipantsMap } from '@proton/meet/store/slices/meetingInfo';
+import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
 import clsx from '@proton/utils/clsx';
 
 import { useMLSContext } from '../../contexts/MLSContext';
-import { useMeetContext } from '../../contexts/MeetContext';
-import { ParticipantCapabilityPermission } from '../../types';
 
 import './ParticipantHostControls.scss';
 
@@ -41,12 +42,11 @@ export const ParticipantHostControls = ({
     const { localParticipant } = useLocalParticipant();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    const { participantNameMap } = useMeetContext();
+    const participantNameMap = useMeetSelector(selectParticipantNameMap);
+    const participantsMap = useMeetSelector(selectParticipantsMap);
     const participantName = participantNameMap[participant.identity] ?? c('Info').t`participant`;
 
     const mls = useMLSContext();
-
-    const { participantsMap } = useMeetContext();
 
     const participantData = participantsMap[participant.identity];
 

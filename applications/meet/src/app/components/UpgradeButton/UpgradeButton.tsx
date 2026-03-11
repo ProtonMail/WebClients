@@ -2,9 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { SettingsLink } from '@proton/components';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectPaidUser } from '@proton/meet/store/slices/meetingInfo';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useMeetContext } from '../../contexts/MeetContext';
 import { UpgradeIcon } from '../UpgradeIcon/UpgradeIcon';
 
 import './UpgradeButton.scss';
@@ -12,7 +13,7 @@ import './UpgradeButton.scss';
 export const UpgradeButton = () => {
     const meetUpsellEnabled = useFlag('MeetUpsell');
 
-    const { paidUser } = useMeetContext();
+    const paidUser = useMeetSelector(selectPaidUser);
 
     if (!meetUpsellEnabled || paidUser) {
         return null;

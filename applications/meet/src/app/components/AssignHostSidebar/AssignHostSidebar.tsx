@@ -9,6 +9,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectParticipantNameMap, selectParticipantsMap } from '@proton/meet/store/slices/meetingInfo';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import clsx from '@proton/utils/clsx';
 
@@ -27,7 +28,9 @@ export const AssignHostSidebar = () => {
 
     const { localParticipant } = useLocalParticipant();
 
-    const { participantNameMap, assignHost, participantsMap } = useMeetContext();
+    const { assignHost } = useMeetContext();
+    const participantsMap = useMeetSelector(selectParticipantsMap);
+    const participantNameMap = useMeetSelector(selectParticipantNameMap);
     const { sortedParticipants } = useSortedParticipantsContext();
 
     const [isScrolled, setIsScrolled] = useState(false);

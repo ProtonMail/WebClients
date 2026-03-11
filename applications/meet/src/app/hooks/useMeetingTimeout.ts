@@ -1,12 +1,16 @@
 import { useEffect } from 'react';
 
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectExpirationTime, selectIsGuestAdmin } from '@proton/meet/store/slices/meetingInfo';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetContext } from '../contexts/MeetContext';
 import { useIsLocalParticipantAdmin } from './useIsLocalParticipantAdmin';
 
 export const useMeetingTimeout = () => {
-    const { expirationTime, handleLeave, handleEndMeeting, isGuestAdmin } = useMeetContext();
+    const { handleLeave, handleEndMeeting } = useMeetContext();
+    const isGuestAdmin = useMeetSelector(selectIsGuestAdmin);
+    const expirationTime = useMeetSelector(selectExpirationTime);
     const { isLocalParticipantHost } = useIsLocalParticipantAdmin();
 
     const meetUpsellEnabled = useFlag('MeetUpsell');

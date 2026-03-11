@@ -45,3 +45,29 @@ export interface ParticipantEventRecord {
 }
 
 export type MeetingRoomUpdate = ParticipantEventRecord | MeetChatMessage;
+
+export enum ParticipantCapabilityPermission {
+    NotAllowed = 0,
+    Allowed = 1,
+}
+
+export interface ParticipantEntity {
+    ParticipantUUID: string;
+    DisplayName: string;
+    CanSubscribe?: ParticipantCapabilityPermission;
+    CanPublish?: ParticipantCapabilityPermission;
+    CanPublishData?: ParticipantCapabilityPermission;
+    IsAdmin?: ParticipantCapabilityPermission;
+    IsHost?: ParticipantCapabilityPermission;
+}
+
+export type MLSGroupState = {
+    displayCode: string | null;
+    epoch: bigint;
+};
+export interface KeyRotationLog {
+    timestamp: number;
+    epoch: number;
+    type: 'log' | 'error';
+    message: string;
+}
