@@ -59,7 +59,12 @@ export const CategoriesViewSections = () => {
         <>
             <div className="categories-section">
                 <CategoryViewToggle />
-                <div className={clsx('wrapper border border-weak', mailSettings.MailCategoryView && 'is-open')}>
+                <div
+                    className={clsx(
+                        'border border-weak rounded-xl',
+                        mailSettings.MailCategoryView ? 'opacity-100' : 'opacity-50'
+                    )}
+                >
                     <div className="inner">
                         <div className="categories-header flex justify-space-between items-center border-bottom border-weak p-4">
                             <p className="m-0 text-semibold text-sm">
@@ -71,9 +76,11 @@ export const CategoriesViewSections = () => {
                                     title="Categories cannot be disabled during the alpha testing"
                                 />
                             </p>
-                            <p className="m-0 text-semibold text-sm">
-                                {c('Label').t`Notifications`} <Info title={c('Tooltip').t`System notification`} />
-                            </p>
+                            {mailSettings.MailCategoryView && (
+                                <p className="m-0 text-semibold text-sm">
+                                    {c('Label').t`Notifications`} <Info title={c('Tooltip').t`System notification`} />
+                                </p>
+                            )}
                         </div>
 
                         {categoriesStore
@@ -84,6 +91,7 @@ export const CategoriesViewSections = () => {
                                 return (
                                     <CategorySettingsItem
                                         key={category.id}
+                                        categoriesEnabled={mailSettings.MailCategoryView}
                                         onUpdate={handleCategoryUpdate}
                                         category={category}
                                         loading={loading}
