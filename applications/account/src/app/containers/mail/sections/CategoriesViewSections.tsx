@@ -76,11 +76,14 @@ export const CategoriesViewSections = () => {
                                     title="Categories cannot be disabled during the alpha testing"
                                 />
                             </p>
-                            {mailSettings.MailCategoryView && (
-                                <p className="m-0 text-semibold text-sm">
-                                    {c('Label').t`Notifications`} <Info title={c('Tooltip').t`System notification`} />
-                                </p>
-                            )}
+                            <p
+                                className={clsx(
+                                    'm-0 text-semibold text-sm',
+                                    mailSettings.MailCategoryView ? 'visible' : 'hidden'
+                                )}
+                            >
+                                {c('Label').t`Notifications`} <Info title={c('Tooltip').t`System notification`} />
+                            </p>
                         </div>
 
                         {categoriesStore
