@@ -15,10 +15,12 @@ import { useNavigate } from '@proton/pass/components/Navigation/NavigationAction
 import { useNavigationFilters } from '@proton/pass/components/Navigation/NavigationFilters';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
+import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectAllVaults, selectCanCreateItems, selectShare } from '@proton/pass/store/selectors';
 import type { ItemType } from '@proton/pass/types';
+import { OrganizationAliasCreateMode } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import clsx from '@proton/utils/clsx';
 
@@ -46,6 +48,8 @@ export const QuickActionsPlaceholder: FC = () => {
 
     const canCreate = useSelector(selectCanCreateItems);
     const showCustomItem = useFeatureFlag(PassFeature.PassCustomTypeV1);
+    const org = useOrganization();
+    const orgAliasCreationDisabled = org?.settings.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
 
     const quickActions = useMemo<ItemQuickAction[]>(() => {
         const actions: ItemQuickAction[] = [
@@ -57,6 +61,7 @@ export const QuickActionsPlaceholder: FC = () => {
                 onClick: () => onCreate('login'),
             },
             {
+                hidden: orgAliasCreationDisabled,
                 icon: itemTypeToIconName.alias,
                 label: c('Label').t`Create a hide-my-email alias`,
                 subTheme: SubTheme.TEAL,
@@ -101,7 +106,7 @@ export const QuickActionsPlaceholder: FC = () => {
         ];
 
         return actions.filter(({ hidden }) => !hidden);
-    }, [onCreate, showCustomItem]);
+    }, [onCreate, showCustomItem, orgAliasCreationDisabled]);
 
     return (
         <div className="flex flex-column gap-3 text-center">
