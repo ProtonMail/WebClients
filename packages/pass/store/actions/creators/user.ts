@@ -14,6 +14,10 @@ export const getUserFeaturesIntent = createAction('user::features::get::intent',
     withRequest({ status: 'start', id: userFeaturesRequest(userId) })({ payload: {} })
 );
 
+export const setUserFeatureFlags = createAction('user::feature-flags::set', (payload: FeatureFlagState) =>
+    pipe(withCache, withSettings)({ payload })
+);
+
 export const getUserFeaturesSuccess = createAction(
     'user::features::get::success',
     withRequestSuccess((payload: { features: FeatureFlagState; variants: FeatureFlagVariants }) => withCache({ payload }), {
