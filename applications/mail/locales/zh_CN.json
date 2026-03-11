@@ -2595,7 +2595,7 @@
         "小计"
       ],
       "Subtotal for ${ cycle } month": [
-        "小计 ${ cycle } 个月"
+        "${ cycle } 个月小计"
       ],
       "Total": [
         "总计"
@@ -5071,6 +5071,21 @@
       ],
       "ZIP code is required": [
         "必须填写邮政编码"
+      ],
+      "Company name or personal name is required": [
+        "公司名称或个人姓名为必填项"
+      ],
+      "Invalid VAT number": [
+        "无效增值税号"
+      ],
+      "Please complete the billing details": [
+        "请填写账单信息"
+      ],
+      "This field is invalid": [
+        "字段无效"
+      ],
+      "Wrong billing address": [
+        "错误的账单地址"
       ]
     },
     "error": {
@@ -7326,7 +7341,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -8097,7 +8112,7 @@
         "此会话包含回收站中的邮件。"
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "标为垃圾邮件后，是否要退订此类邮件？"
+        "这些会话将被标记为垃圾邮件。您是否还希望退订未来的电子邮件？"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "不能确定此邮件是否来自该域名，这可能是欺诈邮件，也可能是投递过程出现了问题。"
@@ -8749,6 +8764,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "只需点击几下，您的收件箱就不会杂乱无章了"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "您将在好友订阅年度套餐 1 个月后获得推荐奖励，若好友订阅月度套餐则在 2 个月后获得。"
       ]
     },
     "info": {
@@ -12164,6 +12182,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您当前的订阅已享有一个现有折扣，转用此新促销意味着现有折扣将不再适用。"
+      ],
+      "I'm purchasing as a business": [
+        "以企业身份购买"
       ]
     },
     "Payments.Error": {
@@ -12484,6 +12505,12 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Cortex Inc.": [
+        "Cortex 公司"
+      ],
+      "San Francisco": [
+        "旧金山"
       ]
     },
     "Placeholder for contact group name": {
@@ -13993,7 +14020,7 @@
         "${ elementsCount } 项会话中的邮件已标为垃圾邮件，其发件人已加入黑名单。"
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
-        "${ elementsCount } 项会话已移除 ${ labelName } 标签。"
+        "${ elementsCount } 项会话已从 ${ labelName } 中移除。"
       ],
       "${ elementsCount } conversation removed from Starred.": [
         "${ elementsCount } 项会话已从收藏中移除。"
@@ -15453,6 +15480,9 @@
       ],
       "Keep this banner hidden?": [
         "是否隐藏此横幅？"
+      ],
+      "Spring Sale": [
+        "春季特惠"
       ]
     },
     "Today icon tooltip in mini calendar": {

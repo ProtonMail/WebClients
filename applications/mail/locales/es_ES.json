@@ -5110,6 +5110,27 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Company name or personal name is required": [
+        "Se requiere el nombre de la empresa o el nombre personal"
+      ],
+      "Invalid coupon": [
+        "Cupón no válido"
+      ],
+      "Invalid VAT number": [
+        "Número de IVA incorrecto"
+      ],
+      "Please complete the billing details": [
+        "Completa los detalles de facturación"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "El importe mínimo de la donación es de ${ price }"
+      ],
+      "This field is invalid": [
+        "Este campo no es válido"
+      ],
+      "Wrong billing address": [
+        "Dirección de facturación incorrecta"
       ]
     },
     "error": {
@@ -8896,6 +8917,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Estás a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Recibirás la recompensa en créditos 1 mes después de que tu amigo se suscriba a un plan anual, y 2 meses después de que se suscriba a un plan mensual."
       ]
     },
     "info": {
@@ -12361,6 +12385,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tu suscripción tiene un descuento existente. Al cambiarte a esta nueva promoción, el descuento existente ya no se aplicará."
+      ],
+      "I'm purchasing as a business": [
+        "Estoy comprando como empresa"
       ]
     },
     "Payments.Error": {
@@ -12681,6 +12708,12 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "San Francisco"
       ]
     },
     "Placeholder for contact group name": {
@@ -13166,6 +13199,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Tienes ${ timeRemaining.inDays } día para restablecer tu contraseña.",
         "Tienes ${ timeRemaining.inDays } días para restablecer tu contraseña."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tienes ${ timeRemaining.inHours } hora para restablecer tu contraseña.",
+        "Tienes ${ timeRemaining.inHours } horas para restablecer tu contraseña."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tienes ${ timeRemaining.inMinutes } minuto para restablecer tu contraseña.",
+        "Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tienes ${ timeRemaining.inSeconds } segundo para restablecer tu contraseña.",
+        "Tienes ${ timeRemaining.inSeconds } segundos para restablecer tu contraseña."
       ]
     },
     "session_recovery:available:link": {
@@ -15731,6 +15776,9 @@
       ],
       "Keep this banner hidden?": [
         "¿Mantener este banner oculto?"
+      ],
+      "Spring Sale": [
+        "Oferta de primavera"
       ]
     },
     "Today icon tooltip in mini calendar": {

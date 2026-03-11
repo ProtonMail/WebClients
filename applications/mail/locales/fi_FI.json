@@ -2540,6 +2540,10 @@
       "Total for ${ n } month": [
         "Summa ${ n } kuukaudelle",
         "Summa ${ n } kuukaudelle"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Välisumma ${ cycle } kuukaudelle",
+        "Välisumma ${ cycle } kuukaudelle"
       ]
     },
     "Collapsible tooltip": {
@@ -4984,6 +4988,27 @@
       ],
       "ZIP code is required": [
         "Postinumero vaaditaan"
+      ],
+      "Company name or personal name is required": [
+        "Yrityksen tai henkilön nimi vaaditaan"
+      ],
+      "Invalid coupon": [
+        "Virheellinen kuponki"
+      ],
+      "Invalid VAT number": [
+        "Virheellinen VAT-numero"
+      ],
+      "Please complete the billing details": [
+        "Täydennä laskutustiedot"
+      ],
+      "re-importing": [
+        "uudelleentuodaan"
+      ],
+      "This field is invalid": [
+        "Tämän kentän arvo on virheellinen"
+      ],
+      "Wrong billing address": [
+        "Virheellinen laskutusosoite"
       ]
     },
     "error": {
@@ -8730,6 +8755,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
+        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }. Voit peruuttaa tilauksen milloin tahansa.",
+        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }. Voit peruuttaa milloin tahansa."
       ]
     },
     "info": {
@@ -10280,6 +10309,18 @@
       ],
       "Screen-sharing": [
         "Näytön jakaminen"
+      ],
+      "${ n } active meeting at a time": [
+        "Enintään ${ n } kokus samanaikaisesti",
+        "Enintään ${ n } kokusta samanaikaisesti"
+      ],
+      "Up to ${ n } meeting per day": [
+        "Enintään ${ n } kokous pävässä",
+        "Enintään ${ n } kokousta pävässä"
+      ],
+      "Up to ${ n } participant": [
+        "Enintää ${ n } osallistuja",
+        "Enintää ${ n } osallistujaa"
       ]
     },
     "Message": {
@@ -12398,6 +12439,12 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "San Francisco"
       ]
     },
     "Placeholder for contact group name": {
@@ -15378,6 +15425,9 @@
       ],
       "Keep this banner hidden?": [
         "Pidä tämä ilmoitus piilossa?"
+      ],
+      "Spring Sale": [
+        "Kevätale"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16044,6 +16094,11 @@
       ],
       "SPRING SALE": [
         "KEVÄTALE"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Avaa ${ appName } -sovelluksessa"
       ]
     }
   }

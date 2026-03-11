@@ -5103,6 +5103,27 @@
       ],
       "ZIP code is required": [
         "Le code postal est nécessaire."
+      ],
+      "Company name or personal name is required": [
+        "Le nom de l'entreprise ou le nom personnel est requis."
+      ],
+      "Invalid coupon": [
+        "Le code cadeau n'est pas valide."
+      ],
+      "Invalid VAT number": [
+        "Numéro de TVA incorrect."
+      ],
+      "Please complete the billing details": [
+        "Veuillez compléter les informations de facturation."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Le montant minimum du don est de ${ price }."
+      ],
+      "This field is invalid": [
+        "Ce champ n'est pas valide."
+      ],
+      "Wrong billing address": [
+        "L'adresse de facturation n'est pas correct."
       ]
     },
     "error": {
@@ -8889,6 +8910,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Vous recevrez la récompense de crédit 1 mois après que votre ami se soit abonné à un abonnement annuel, et 2 mois après qu'il se soit abonné à un abonnement mensuel."
       ]
     },
     "info": {
@@ -12354,6 +12378,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
+      ],
+      "I'm purchasing as a business": [
+        "J'achète en tant qu'entreprise."
       ]
     },
     "Payments.Error": {
@@ -12674,6 +12701,12 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "San Francisco"
       ]
     },
     "Placeholder for contact group name": {
@@ -15724,6 +15757,9 @@
       ],
       "Keep this banner hidden?": [
         "Masquer cette bannière ?"
+      ],
+      "Spring Sale": [
+        "Soldes de printemps"
       ]
     },
     "Today icon tooltip in mini calendar": {

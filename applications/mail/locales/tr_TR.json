@@ -5109,6 +5109,27 @@
       ],
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
+      ],
+      "Company name or personal name is required": [
+        "Kuruluş adının veya kişi adının yazılması zorunludur"
+      ],
+      "Invalid coupon": [
+        "Geçersiz kupon"
+      ],
+      "Invalid VAT number": [
+        "KDV numarası geçersiz"
+      ],
+      "Please complete the billing details": [
+        "Lütfen fatura bilgilerini tamamlayın"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimum bağış tutarı ${ price }"
+      ],
+      "This field is invalid": [
+        "Bu alan geçersiz"
+      ],
+      "Wrong billing address": [
+        "Fatura adresi yanlış"
       ]
     },
     "error": {
@@ -8895,6 +8916,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Arkadaşınızın yıllık bir tarifeye abone olmasından 1 ay sonra, aylık bir tarifeye abone oldmasından 2 ay sonra kredi ödülünü alacaksınız."
       ]
     },
     "info": {
@@ -9977,7 +10001,7 @@
         "E-postalar (son 6 ay)"
       ],
       "Last 6 months only": [
-        "Sadece son 6 ay"
+        "Yalnızca son 6 ay"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12364,6 +12388,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
+      ],
+      "I'm purchasing as a business": [
+        "Kurumsal olarak satın alıyorum"
       ]
     },
     "Payments.Error": {
@@ -12684,6 +12711,12 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "San Francisco"
       ]
     },
     "Placeholder for contact group name": {
@@ -13542,7 +13575,7 @@
         "1 yıl sonra ${ regularAmount } yerine ${ discountedAmount } olarak yenilenir (${ discount }% indirim ile)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "2 yıl sonra ${ regularAmount } yerine ${ discountedAmount } ile yenilenir (${ discount }% indirim ile)"
+        "2 yıl sonra ${ regularAmount } yerine ${ discountedAmount } ile yenilenir (%${ discount } indirim ile)"
       ],
       "Save ${ discount }%": [
         "%${ discount } indirim"
@@ -15746,6 +15779,9 @@
       ],
       "Keep this banner hidden?": [
         "Bu uyarı gizli tutulsun mu?"
+      ],
+      "Spring Sale": [
+        "Bahar indirimi"
       ]
     },
     "Today icon tooltip in mini calendar": {

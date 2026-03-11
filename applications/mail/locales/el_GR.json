@@ -5109,6 +5109,27 @@
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
+      ],
+      "Company name or personal name is required": [
+        "Απαιτείται το όνομα της εταιρείας ή το προσωπικό όνομα"
+      ],
+      "Invalid coupon": [
+        "Μη έγκυρο κουπόνι"
+      ],
+      "Invalid VAT number": [
+        "Μη έγκυρος αριθμός ΦΠΑ"
+      ],
+      "Please complete the billing details": [
+        "Παρακαλούμε συμπληρώστε τα στοιχεία χρέωσης"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Το ελάχιστο ποσό δωρεάς είναι ${ price }"
+      ],
+      "This field is invalid": [
+        "Αυτό το πεδίο δεν είναι έγκυρο"
+      ],
+      "Wrong billing address": [
+        "Λανθασμένη διεύθυνσης χρέωσης"
       ]
     },
     "error": {
@@ -7079,7 +7100,7 @@
         "Γνωρίζατε ότι έχετε κρυπτογραφήσει τον χώρο αποθήκευσης στο cloud που περιλαμβάνεται στον ${ BRAND_NAME } λογαριασμό σας; Μεταβείτε στο ${ DRIVE_APP_NAME } και αξιοποιήστε στο έπακρο τον χώρο σας. Είναι δωρεάν."
       ],
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
-        "Το γνωρίζατε; Έχουμε κρατήσει μια μικρότερη διεύθυνση ηλεκτρονικού ταχυδρομείου μόνο για εσάς. Είναι το όνομα χρήστη σας ακολουθούμενο από \"@${ PM_DOMAIN }\"."
+        "Το γνωρίζατε; Έχουμε δεσμεύσει μια μικρότερη διεύθυνση ηλεκτρονικού ταχυδρομείου μόνο για εσάς. Είναι το όνομα χρήστη σας ακολουθούμενο από \"@${ PM_DOMAIN }\"."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Ανακαλύψτε νέες δυνατότητες που ξεκλειδώθηκαν και αρχίστε να τις χρησιμοποιείτε αμέσως!"
@@ -8895,6 +8916,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Θα λάβετε την ανταμοιβή πίστωσης 1 μήνα αφότου ο φίλος σας εγγραφεί σε ετήσιο πλάνο και 2 μήνες αφότου εγγραφεί σε μηνιαίο πλάνο."
       ]
     },
     "info": {
@@ -12364,6 +12388,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Η συνδρομή σας έχει ήδη μια υπάρχουσα έκπτωση. Η μετάβαση σε αυτή τη νέα προσφορά σημαίνει ότι η υπάρχουσα έκπτωση δε θα ισχύει πλέον."
+      ],
+      "I'm purchasing as a business": [
+        "Αγοράζω ως επιχείρηση"
       ]
     },
     "Payments.Error": {
@@ -12684,6 +12711,12 @@
       ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "Σαν Φρανσίσκο"
       ]
     },
     "Placeholder for contact group name": {
@@ -15746,6 +15779,9 @@
       ],
       "Keep this banner hidden?": [
         "Απόκρυψη αυτού του πανό;"
+      ],
+      "Spring Sale": [
+        "Ανοιξιάτικες Εκπτώσεις"
       ]
     },
     "Today icon tooltip in mini calendar": {
