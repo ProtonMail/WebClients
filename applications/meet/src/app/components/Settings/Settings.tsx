@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { useLoading } from '@proton/hooks';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectIsLocalScreenShare } from '@proton/meet/store/slices/meetingInfo';
 import { selectMeetSettings, setDisableVideos, setPipEnabled, setSelfView } from '@proton/meet/store/slices/settings';
 import {
     MeetingSideBars,
@@ -27,7 +28,8 @@ export const Settings = () => {
 
     const { backgroundBlur, toggleBackgroundBlur, isBackgroundBlurSupported, noiseFilter, toggleNoiseFilter } =
         useMediaManagementContext();
-    const { handleMeetingLockToggle, isLocalScreenShare } = useMeetContext();
+    const { handleMeetingLockToggle } = useMeetContext();
+    const isLocalScreenShare = useMeetSelector(selectIsLocalScreenShare);
 
     const sideBarState = useMeetSelector(selectSideBarState);
 

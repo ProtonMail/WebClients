@@ -4,6 +4,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices';
 import type { MeetSettingsState } from '@proton/meet/store/slices/settings';
 import { settingsReducer } from '@proton/meet/store/slices/settings';
 import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
@@ -46,6 +47,7 @@ const createMockStore = (settingsState: Partial<MeetSettingsState> = {}) => {
         reducer: {
             ...settingsReducer,
             ...uiStateReducer,
+            ...meetingInfoReducer,
         },
         preloadedState: {
             meetSettings: {
@@ -75,6 +77,9 @@ const createMockStore = (settingsState: Partial<MeetSettingsState> = {}) => {
                 },
                 permissionPromptStatus: 'CLOSED',
                 noDeviceDetected: 'CLOSED',
+            },
+            meetingInfo: {
+                ...initialMeetingInfoState,
             },
         },
     });

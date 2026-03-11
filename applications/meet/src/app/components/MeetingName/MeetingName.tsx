@@ -5,13 +5,12 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Dropdown, SettingsLink } from '@proton/components';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectShowDuration } from '@proton/meet/store/slices';
+import { selectIsGuestAdmin, selectPaidUser, selectRoomName, selectShowDuration } from '@proton/meet/store/slices';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
-import { useMeetContext } from '../../contexts/MeetContext';
 import { useMeetingDuration } from '../../hooks/useMeetingDuration';
 import { formatDuration } from '../../utils/formatDuration';
 import { MeetingDuration } from '../MeetingDuration/MeetingDuration';
@@ -28,7 +27,7 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
     const showRemainingTimeEnabled = useFlag('MeetRemainingTime');
 
     const anchorRef = useRef<HTMLDivElement>(null);
-    const { paidUser } = useMeetContext();
+    const paidUser = useMeetSelector(selectPaidUser);
 
     const { timeLeftMs, isExpiringSoon } = useMeetingDuration();
 
@@ -138,7 +137,9 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
 };
 
 export const MeetingName = ({ classNames }: MeetingNameProps) => {
-    const { isGuestAdmin, roomName, paidUser } = useMeetContext();
+    const isGuestAdmin = useMeetSelector(selectIsGuestAdmin);
+    const paidUser = useMeetSelector(selectPaidUser);
+    const roomName = useMeetSelector(selectRoomName);
     const forceShowDuration = !paidUser;
     const showDuration = useMeetSelector(selectShowDuration) || forceShowDuration;
 

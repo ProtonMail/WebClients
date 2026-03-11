@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectIsRecordingInProgress } from '@proton/meet/store/slices/meetingInfo';
 import scheduleIcon from '@proton/styles/assets/img/meet/schedule-icon.png';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
@@ -12,7 +14,7 @@ import { useMeetContext } from '../../contexts/MeetContext';
 import './RecordingInProgressModal.scss';
 
 export const RecordingInProgressModal = () => {
-    const { isRecordingInProgress } = useMeetContext();
+    const isRecordingInProgress = useMeetSelector(selectIsRecordingInProgress);
     const prevIsRecordingInProgressRef = useRef<boolean | null>(null);
 
     const { handleLeave } = useMeetContext();

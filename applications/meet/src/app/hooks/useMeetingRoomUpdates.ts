@@ -1,14 +1,12 @@
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectParticipantNameMap } from '@proton/meet/store/slices/meetingInfo';
 import { selectChatMessages, selectEvents } from '@proton/meet/store/slices/meetingState';
 import type { MeetChatMessage, ParticipantEventRecord } from '@proton/meet/types/types';
-
-import { useMeetContext } from '../contexts/MeetContext';
 
 export const useMeetingRoomUpdates = (): (MeetChatMessage | ParticipantEventRecord)[] => {
     const participantEvents = useMeetSelector(selectEvents);
     const chatMessages = useMeetSelector(selectChatMessages);
-
-    const { participantNameMap } = useMeetContext();
+    const participantNameMap = useMeetSelector(selectParticipantNameMap);
 
     const combinedData = [
         ...participantEvents.map((event) => ({

@@ -4,10 +4,9 @@ import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 
 import useApi from '@proton/components/hooks/useApi';
+import { ParticipantCapabilityPermission, type ParticipantEntity } from '@proton/meet/types/types';
 import { queryParticipants, queryParticipantsCount } from '@proton/shared/lib/api/meet';
 import isTruthy from '@proton/utils/isTruthy';
-
-import { ParticipantCapabilityPermission, type ParticipantEntity } from '../types';
 
 const FETCH_TIME_CONSTRAINT_MS = 5000;
 const PARTICIPANT_COUNT_THRESHOLD = 10;

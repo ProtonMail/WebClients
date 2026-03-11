@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectRoomName } from '@proton/meet/store/slices/meetingInfo';
 import { MeetingSideBars, selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 
 import { CloseButton } from '../atoms/CloseButton/CloseButton';
-import { useMeetContext } from '../contexts/MeetContext';
 import { useSortedParticipantsContext } from '../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useMeetingRoomUpdates } from '../hooks/useMeetingRoomUpdates';
@@ -17,7 +17,8 @@ const PARTICIPANT_COUNT_THRESHOLD = 5;
 export const ChatPreview = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const { roomName } = useMeetContext();
+    const roomName = useMeetSelector(selectRoomName);
+
     const { sortedParticipants, sortedParticipantsDisplayColorsMap } = useSortedParticipantsContext();
 
     const meetingRoomUpdates = useMeetingRoomUpdates();

@@ -1,6 +1,8 @@
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectParticipantNameMap } from '@proton/meet/store/slices/meetingInfo';
 import {
     type MeetChatMessage,
     type MeetingRoomUpdate,
@@ -8,7 +10,6 @@ import {
     type ParticipantEventRecord,
 } from '@proton/meet/types/types';
 
-import { useMeetContext } from '../../contexts/MeetContext';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
 import { ChatMessageContent } from '../ChatMessageContent';
 
@@ -44,7 +45,7 @@ export const ChatItem = ({
 }: ChatItemProps) => {
     const { type, identity, timestamp } = item;
 
-    const { participantNameMap } = useMeetContext();
+    const participantNameMap = useMeetSelector(selectParticipantNameMap);
 
     const participantName = participantNameMap[identity];
 
