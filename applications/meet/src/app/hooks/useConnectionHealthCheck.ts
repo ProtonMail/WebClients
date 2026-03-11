@@ -3,8 +3,7 @@ import { useEffect, useRef } from 'react';
 import type { App } from '@proton-meet/proton-meet-core';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
-
-import type { MLSGroupState } from '../types';
+import type { MLSGroupState } from '@proton/meet/types/types';
 
 interface UseConnectionHealthCheckParams {
     wasmApp: App | null;

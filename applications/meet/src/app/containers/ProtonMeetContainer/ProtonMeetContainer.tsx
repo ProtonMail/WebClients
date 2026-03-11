@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { type GroupKeyInfo, JoinTypeInfo, MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
@@ -12,6 +12,7 @@ import { useMeetErrorReporting } from '@proton/meet';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { setPreviousMeetingLink, setUpsellModalType } from '@proton/meet/store/slices';
+import { addKeyRotationLog, setMlsGroupState } from '@proton/meet/store/slices/meetingInfo';
 import { resetMeetingState } from '@proton/meet/store/slices/meetingState';
 import { toggleMeetingLockThunk } from '@proton/meet/store/slices/settings';
 import {
@@ -21,6 +22,7 @@ import {
     setPopupStateValue,
 } from '@proton/meet/store/slices/uiStateSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
+import type { KeyRotationLog, MLSGroupState } from '@proton/meet/types/types';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
@@ -55,8 +57,8 @@ import { useIsRecordingInProgress } from '../../hooks/useMeetingRecorder/useIsRe
 import { useParticipantNameMap } from '../../hooks/useParticipantNameMap';
 import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureInPicture';
 import { useSafariWebsocketVisibilityHandler } from '../../hooks/useSafariWebsocketVisibilityHandler';
+import { useStableCallback } from '../../hooks/useStableCallback';
 import { useWakeLock } from '../../hooks/useWakeLock';
-import type { KeyRotationLog, MLSGroupState } from '../../types';
 import { LoadingState } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { KeyRotationScheduler } from '../../utils/SeamlessKeyRotationScheduler';
@@ -81,8 +83,6 @@ interface ProtonMeetContainerProps {
     user?: UserModel | null;
     paidUser: boolean;
     isSubUser: boolean;
-    keyRotationLogs: KeyRotationLog[];
-    setKeyRotationLogs: React.Dispatch<React.SetStateAction<KeyRotationLog[]>>;
 }
 
 const isConnectionError = (error: any): boolean => {
@@ -97,8 +97,6 @@ export const ProtonMeetContainer = ({
     user = null,
     paidUser = false,
     isSubUser = false,
-    keyRotationLogs,
-    setKeyRotationLogs,
 }: ProtonMeetContainerProps) => {
     const dispatch = useMeetDispatch();
 
@@ -207,8 +205,7 @@ export const ProtonMeetContainer = ({
     const joinedRoomLoggedRef = useRef(false);
 
     const loadingStartTimeRef = useRef(0);
-    const [mlsGroupState, setMlsGroupState] = useState<MLSGroupState | null>(null);
-    const mlsGroupStateRef = useRef(mlsGroupState);
+    const mlsGroupStateRef = useRef<MLSGroupState | null>(null);
 
     const wasmApp = useWasmApp();
 
@@ -301,7 +298,7 @@ export const ProtonMeetContainer = ({
                 displayCode: displayCode?.full_code || null,
                 epoch: newGroupKeyInfo.epoch,
             };
-            setMlsGroupState(nextMlsGroupState);
+            dispatch(setMlsGroupState(nextMlsGroupState));
             mlsGroupStateRef.current = nextMlsGroupState;
             return { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch };
         } catch (err: any) {
@@ -324,7 +321,7 @@ export const ProtonMeetContainer = ({
                 displayCode: displayCode?.full_code || null,
                 epoch: epoch,
             };
-            setMlsGroupState(nextMlsGroupState);
+            dispatch(setMlsGroupState(nextMlsGroupState));
             mlsGroupStateRef.current = nextMlsGroupState;
 
             if (isMeetClientMetricsLogEnabled) {
@@ -344,19 +341,18 @@ export const ProtonMeetContainer = ({
                 message: errorMessage ?? 'Key rotation successful',
             };
 
-            setKeyRotationLogs((prev) => [...prev, newLog as KeyRotationLog]);
+            dispatch(addKeyRotationLog(newLog as KeyRotationLog));
 
             lastEpochRef.current = epoch;
         } catch (err) {
-            setKeyRotationLogs((prev) => [
-                ...prev,
-                {
+            dispatch(
+                addKeyRotationLog({
                     timestamp: Date.now(),
                     epoch: Number(epoch),
                     type: 'error',
                     message: 'Could not set new encryption key',
-                },
-            ]);
+                })
+            );
             reportMeetError('Could not set new encryption key', err);
         }
     };
@@ -408,7 +404,7 @@ export const ProtonMeetContainer = ({
                 displayCode: displayCode?.full_code || null,
                 epoch: groupKeyData.epoch,
             };
-            setMlsGroupState(nextMlsGroupState);
+            dispatch(setMlsGroupState(nextMlsGroupState));
             mlsGroupStateRef.current = nextMlsGroupState;
 
             allowHealthCheck();
@@ -546,15 +542,14 @@ export const ProtonMeetContainer = ({
                 throw new Error('Group key or epoch is missing');
             }
 
-            setKeyRotationLogs((prev) => [
-                ...prev,
-                {
+            dispatch(
+                addKeyRotationLog({
                     timestamp: Date.now(),
                     epoch: Number(epoch),
                     type: 'log',
                     message: 'Key rotation successful',
-                },
-            ]);
+                })
+            );
 
             if (isMeetSeamlessKeyRotationEnabled) {
                 // eslint-disable-next-line no-console
@@ -1021,11 +1016,11 @@ export const ProtonMeetContainer = ({
         keyProvider.cleanCurrent();
     };
 
-    const handleMeetingLockToggle = async () => {
+    const handleMeetingLockToggle = useStableCallback(async () => {
         await dispatch(
             toggleMeetingLockThunk({ meetingLinkName: token, accessToken: accessTokenRef.current as string })
         );
-    };
+    });
 
     // Warn user before leaving if in a meeting
     useEffect(() => {
@@ -1113,6 +1108,10 @@ export const ProtonMeetContainer = ({
         };
     }, [joinedRoom, isLocalParticipantHost, isLocalParticipantAdminLevelUser, hasAnotherAdmin, history]);
 
+    const getKeychainIndexInformation = useCallback(() => {
+        return keyProvider.getKeychainIndexInformation() ?? [];
+    }, [keyProvider]);
+
     if (openedInDesktopApp) {
         return <MeetingOpenedInDesktopApp />;
     }
@@ -1137,17 +1136,14 @@ export const ProtonMeetContainer = ({
                     <MeetContainer
                         displayName={displayName}
                         handleLeave={handleLeave}
-                        handleUngracefulLeave={handleUngracefulLeave}
                         handleEndMeeting={handleEndMeeting}
                         shareLink={shareLink}
                         roomName={displayRoomName as string}
                         participantNameMap={participantNameMap}
                         participantsMap={participantsMap}
-                        getParticipants={() => getParticipants(meetingDetails.meetingId as string)}
                         passphrase={password}
                         guestMode={guestMode}
                         handleMeetingLockToggle={handleMeetingLockToggle}
-                        mlsGroupState={mlsGroupState}
                         isDisconnected={connectionLost}
                         startPiP={startPiP}
                         stopPiP={stopPiP}
@@ -1160,9 +1156,8 @@ export const ProtonMeetContainer = ({
                         instantMeeting={instantMeetingRef.current}
                         assignHost={assignHost}
                         paidUser={paidUser}
-                        keyRotationLogs={keyRotationLogs}
                         isRecordingInProgress={isRecordingInProgress}
-                        getKeychainIndexInformation={() => keyProvider.getKeychainIndexInformation() ?? []}
+                        getKeychainIndexInformation={getKeychainIndexInformation}
                         expirationTime={meetingDetails.expirationTime}
                         isGuestAdmin={isGuestAdminRef.current}
                         isUsingTurnRelay={isUsingTurnRelay}

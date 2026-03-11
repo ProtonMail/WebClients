@@ -11,7 +11,6 @@ import { MediaManagementProvider } from '../../contexts/MediaManagementProvider/
 import { SortedParticipantsProvider } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { SubscriptionManagementProvider } from '../../contexts/SubscriptionManagementProvider';
 import { audioQuality, legacyQualityConstants, qualityConstants, screenShareQuality } from '../../qualityConstants';
-import type { KeyRotationLog } from '../../types';
 import { QualityScenarios } from '../../types';
 import { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import { isLiveKitLogAllowedToSendToSentry } from '../../utils/isLiveKitLogAllowedToSendToSentry';
@@ -20,8 +19,6 @@ import { ProtonMeetContainer, ProtonMeetContainerWithUser } from './ProtonMeetCo
 
 export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean }) => {
     const reportMeetError = useMeetErrorReporting();
-
-    const [keyRotationLogs, setKeyRotationLogs] = useState<KeyRotationLog[]>([]);
 
     const isMeetVp9Allowed = useFlag('MeetVp9');
     const isMeetHigherBitrate = useFlag('MeetHigherBitrate');
@@ -118,17 +115,9 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                                 keyProvider={keyProvider}
                                 paidUser={false}
                                 isSubUser={false}
-                                keyRotationLogs={keyRotationLogs}
-                                setKeyRotationLogs={setKeyRotationLogs}
                             />
                         ) : (
-                            <ProtonMeetContainerWithUser
-                                guestMode={false}
-                                room={room}
-                                keyProvider={keyProvider}
-                                keyRotationLogs={keyRotationLogs}
-                                setKeyRotationLogs={setKeyRotationLogs}
-                            />
+                            <ProtonMeetContainerWithUser guestMode={false} room={room} keyProvider={keyProvider} />
                         )}
                     </SortedParticipantsProvider>
                 </MediaManagementProvider>

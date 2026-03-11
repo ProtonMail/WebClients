@@ -3,10 +3,10 @@ import { c, msgid } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { IcMeetParticipants } from '@proton/icons/icons/IcMeetParticipants';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectGuestMode, selectInstantMeeting, selectMaxParticipants } from '@proton/meet/store/slices/meetingInfo';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
-import { useMeetContext } from '../contexts/MeetContext';
 import { useSortedParticipantsContext } from '../contexts/ParticipantsProvider/SortedParticipantsProvider';
 
 export const ParticipantsButton = ({
@@ -17,7 +17,9 @@ export const ParticipantsButton = ({
     isPaid: boolean;
 }) => {
     const dispatch = useMeetDispatch();
-    const { maxParticipants, guestMode, instantMeeting } = useMeetContext();
+    const instantMeeting = useMeetSelector(selectInstantMeeting);
+    const maxParticipants = useMeetSelector(selectMaxParticipants);
+    const guestMode = useMeetSelector(selectGuestMode);
     const { sortedParticipants } = useSortedParticipantsContext();
     const participantCount = sortedParticipants.length;
 
