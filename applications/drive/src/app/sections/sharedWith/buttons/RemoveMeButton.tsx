@@ -1,19 +1,16 @@
 import { c } from 'ttag';
-import { useShallow } from 'zustand/react/shallow';
 
 import type { useConfirmActionModal } from '@proton/components';
 import { ToolbarButton } from '@proton/components';
+import { type NodeType, getDrivePerNodeType } from '@proton/drive';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import { useSharingActions } from '../../../hooks/drive/useSharingActions';
-import { useSharedWithMeActions as useLegacySharedWithMeActions } from '../../../store';
-import { useSharedWithMeStore } from '../useSharedWithMe.store';
 
 interface BaseProps {
     nodeUid: string;
-    shareId: string;
-    isAlbum: boolean;
+    type: NodeType;
 }
 
 interface ContextMenuProps extends BaseProps {
@@ -30,19 +27,11 @@ interface ToolbarProps extends BaseProps {
 
 type Props = ContextMenuProps | ToolbarProps;
 
-export const RemoveMeButton = ({ nodeUid, shareId, isAlbum, showConfirmModal, close, buttonType }: Props) => {
+export const RemoveMeButton = ({ nodeUid, type, showConfirmModal, close, buttonType }: Props) => {
     const { removeMe } = useSharingActions();
-    const { removeMe: legacyRemoveMe } = useLegacySharedWithMeActions();
-    const removeSharedWithMeItemFromStore = useSharedWithMeStore(useShallow((state) => state.removeSharedWithMeItem));
 
     const handleRemoveMe = () => {
-        if (isAlbum) {
-            legacyRemoveMe(new AbortController().signal, showConfirmModal, shareId, () => {
-                removeSharedWithMeItemFromStore(nodeUid);
-            });
-        } else {
-            removeMe(showConfirmModal, nodeUid);
-        }
+        removeMe(showConfirmModal, getDrivePerNodeType(type), nodeUid);
     };
 
     if (buttonType === 'toolbar') {

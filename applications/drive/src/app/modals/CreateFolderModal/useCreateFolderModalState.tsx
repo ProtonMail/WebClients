@@ -79,6 +79,7 @@ export const useCreateFolderModalState = ({
             const { nodeId } = splitNodeUid(node.uid);
             await getBusDriver().emit({
                 type: BusDriverEventName.CREATED_NODES,
+                driveClient: drive,
                 items: [{ uid: node.uid, parentUid: node.parentUid, isShared: node.isShared, isTrashed: false }],
             });
             onSuccess?.({ uid: node.uid, parentUid: node.parentUid, nodeId, name });

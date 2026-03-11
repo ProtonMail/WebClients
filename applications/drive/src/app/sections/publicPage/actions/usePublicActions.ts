@@ -152,6 +152,7 @@ export const usePublicActions = () => {
 
                     void getBusDriver().emit({
                         type: BusDriverEventName.DELETED_NODES,
+                        driveClient: getPublicLinkClient(),
                         uids: successItems.map((item) => item.uid),
                     });
                 }),
@@ -192,6 +193,7 @@ export const usePublicActions = () => {
             const { node } = getNodeEntity(maybeNode);
             await getBusDriver().emit({
                 type: BusDriverEventName.CREATED_NODES,
+                driveClient: getPublicLinkClient(),
                 items: [{ uid: node.uid, parentUid: node.parentUid }],
             });
             handleOpenDocsOrSheets(node.uid, { isNative: true, type: documentType }, customPassword);
