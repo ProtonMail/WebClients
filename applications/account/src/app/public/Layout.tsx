@@ -29,6 +29,7 @@ export interface Props {
     hasThemeToggle?: boolean;
     onBack?: () => void;
     hasWelcome?: boolean;
+    hasAppLogos?: boolean;
     headerClassName?: string;
     stepper?: ReactNode;
     centeredContent?: boolean;
@@ -68,6 +69,8 @@ const Layout = ({
     centeredContent,
     layoutClassName,
     topRight,
+    hasFooter = true,
+    hasAppLogos = true,
     hasThemeToggle = true,
 }: Props) => {
     const { APP_VERSION, APP_NAME } = useConfig();
@@ -157,14 +160,14 @@ const Layout = ({
             >
                 <main className={clsx(centeredContent && 'flex self-center my-auto')}>
                     {children}
-                    {hasDecoration && (
+                    {hasDecoration && hasAppLogos && (
                         <div className="shrink-0 text-center px-4 pt-0 pb-0 sm:px-5 sm:pt-8 sm:pb-0">
                             <LayoutLogos size={7} />
                         </div>
                     )}
                 </main>
             </div>
-            {hasDecoration ? (
+            {hasDecoration && hasFooter ? (
                 <>
                     <LayoutFooter app={toApp || APP_NAME} className="shrink-0 text-center p-4" version={version} />
                     <div className="static lg:fixed m-0 lg:m-8 lg:mr-12 mb-4 lg:mb-12 bottom-0 right-0 text-center lg:text-right">
