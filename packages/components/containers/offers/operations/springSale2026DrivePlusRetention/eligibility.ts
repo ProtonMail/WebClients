@@ -1,4 +1,5 @@
 import { CYCLE, type Currency, PLANS, type Subscription } from '@proton/payments';
+import { hasIntentionalScheduledModification } from '@proton/payments/core/subscription/helpers';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
@@ -28,7 +29,7 @@ export function getIsEligible({
         return false;
     }
 
-    if (user.isDelinquent || !user.canPay || subscription?.UpcomingSubscription) {
+    if (user.isDelinquent || !user.canPay || hasIntentionalScheduledModification(subscription)) {
         return false;
     }
 
