@@ -69,7 +69,7 @@ const createLegacyItem = (uid: string, name: string, type: NodeType = NodeType.F
     size: 0,
     trashed: null,
     metaDataModifyTime: 0,
-    thumbnailId: uid,
+    activeRevisionUid: uid,
 });
 
 describe('useJointTrashNodes', () => {

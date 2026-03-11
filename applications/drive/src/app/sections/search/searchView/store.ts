@@ -17,7 +17,7 @@ export type SearchResultItemUI = {
     role: EffectiveRole;
     size: number | undefined;
     mediaType: string | undefined;
-    thumbnailId: string | undefined;
+    activeRevisionUid: string | undefined;
     modificationTime: Date;
     location: string;
     haveSignatureIssues: boolean;

@@ -1,6 +1,6 @@
 import { ThumbnailType } from '@protontech/drive-sdk';
 
-import { generateThumbnail } from '@proton/drive/modules/thumbnails/thumbnailGenerator';
+import { generateThumbnail } from '@proton/drive/modules/thumbnails';
 
 import { getProcessingCategory } from '../util/filetypes';
 import type { InternalImageResult } from './files/types';

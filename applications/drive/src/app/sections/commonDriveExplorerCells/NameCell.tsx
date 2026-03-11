@@ -15,9 +15,7 @@ export interface NameCellProps {
     name: string;
     type: NodeType;
     mediaType?: string;
-    thumbnail?: {
-        sdUrl?: string;
-    };
+    thumbnailUrl?: string;
     haveSignatureIssues: boolean | undefined;
     isInvitation?: boolean;
 }
@@ -26,7 +24,7 @@ export const NameCell = ({
     name,
     type,
     mediaType,
-    thumbnail,
+    thumbnailUrl,
     isInvitation = false,
     haveSignatureIssues = false,
 }: NameCellProps) => {
@@ -42,9 +40,9 @@ export const NameCell = ({
                 />
             )}
             {type !== NodeType.Album &&
-                (thumbnail?.sdUrl ? (
+                (thumbnailUrl ? (
                     <img
-                        src={thumbnail.sdUrl}
+                        src={thumbnailUrl}
                         alt={name}
                         className="file-browser-list-item--thumbnail shrink-0 mr-2"
                         style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}

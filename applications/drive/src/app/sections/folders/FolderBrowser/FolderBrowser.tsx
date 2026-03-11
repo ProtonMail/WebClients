@@ -4,6 +4,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
 import { MemberRole, NodeType, generateNodeUid, getDrive, splitNodeUid } from '@proton/drive';
+import { getThumbnail, loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
@@ -26,7 +27,6 @@ import { translateSortField } from '../../../components/sections/SortDropdown';
 import useOpenPreview from '../../../components/useOpenPreview';
 import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
 import type { DriveFolder } from '../../../hooks/drive/useActiveShare';
-import { useBatchThumbnailLoader } from '../../../hooks/drive/useBatchThumbnailLoader';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
@@ -38,7 +38,6 @@ import { useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
 import { isPreviewOrFallbackAvailable } from '../../../utils/isPreviewOrFallbackAvailable';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
-import { useThumbnailStore } from '../../../zustand/thumbnails/thumbnails.store';
 import { EmptyDeviceRoot } from '../EmptyFolder/EmptyDeviceRoot';
 import { EmptyFolder } from '../EmptyFolder/EmptyFolder';
 import { getSelectedItems } from '../getSelectedItems';
@@ -81,9 +80,7 @@ type ItemWithAdditionalProps = LegacyItem & {
 };
 
 const NameCellWithThumbnail = ({ item }: { item: ItemWithAdditionalProps }) => {
-    const thumbnail = useThumbnailStore((state) =>
-        item.thumbnailId ? state.getThumbnail(item.thumbnailId) : undefined
-    );
+    const thumbnail = useThumbnail(item.activeRevisionUid);
 
     return (
         <NameCell
@@ -130,13 +127,6 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
     const { openDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const { sharingModal, showSharingModal } = useSharingModal();
-    const { getThumbnail } = useThumbnailStore(
-        useShallow((state) => ({
-            getThumbnail: state.getThumbnail,
-        }))
-    );
-    const { loadThumbnail } = useBatchThumbnailLoader({ drive: getDrive() });
-
     const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
     const openLegacyPreview = useOpenPreview();
     const { previewModal, showPreviewModal } = useDrivePreviewModal();
@@ -157,7 +147,7 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
     const browserItems = sortedList.map((node) => ({
         ...node,
         isAdmin,
-        cachedThumbnailUrl: getThumbnail(node.thumbnailId)?.sdUrl,
+        cachedThumbnailUrl: node.activeRevisionUid ? getThumbnail(node.activeRevisionUid)?.sdUrl : undefined,
         // TODO:FILEBROWSER Not super ideal but to avoid passing onShareClick inside the item we need to modify FB
         onShareClick: node.isShared
             ? () => showSharingModal({ nodeUid: generateNodeUid(node.volumeId, node.linkId) })
@@ -196,14 +186,14 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
         async (item: ItemWithAdditionalProps) => {
             incrementItemRenderedCounter();
 
-            loadThumbnail({
-                uid: item.uid,
-                thumbnailId: item.thumbnailId || item.uid,
-                hasThumbnail: !!item.thumbnailId,
-                cachedThumbnailUrl: undefined,
-            });
+            if (item.activeRevisionUid) {
+                loadThumbnail(getDrive(), {
+                    nodeUid: item.uid,
+                    revisionUid: item.activeRevisionUid,
+                });
+            }
         },
-        [incrementItemRenderedCounter, loadThumbnail]
+        [incrementItemRenderedCounter]
     );
 
     const handleClick = useCallback(

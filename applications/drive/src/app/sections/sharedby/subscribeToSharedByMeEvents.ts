@@ -39,7 +39,7 @@ const createSharedByMeItemFromNode = async (nodeUid: string, drive: Drive): Prom
             mediaType: node.mediaType,
             size: node.activeRevision?.storageSize || node.totalStorageSize,
             parentUid: node.parentUid,
-            thumbnailId: node.activeRevision?.uid || node.uid,
+            activeRevisionUid: node.activeRevision?.uid,
             location,
             creationTime: oldestCreationTime,
             publicLink: shareResult?.publicLink
