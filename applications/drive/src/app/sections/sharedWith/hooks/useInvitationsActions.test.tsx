@@ -110,11 +110,13 @@ describe('useInvitationsActions', () => {
             expect(mockAcceptInvitation).toHaveBeenCalledWith(invitationUid);
             expect(mockGetNode).toHaveBeenCalledWith(uid);
             expect(mockSetVolumeShareIds).toHaveBeenCalledWith('volume-id-1', ['share-id-1']);
-            expect(mockEventManagerEmit).toHaveBeenCalledWith({
-                type: BusDriverEventName.ACCEPT_INVITATIONS,
-                driveClient: mockDrive,
-                uids: [mockNode.uid],
-            });
+            expect(mockEventManagerEmit).toHaveBeenCalledWith(
+                {
+                    type: BusDriverEventName.ACCEPT_INVITATIONS,
+                    uids: [mockNode.uid],
+                },
+                mockDrive
+            );
             expect(mockCreateNotification).toHaveBeenCalledWith({
                 type: 'success',
                 text: 'Share invitation accepted successfully',
@@ -232,11 +234,13 @@ describe('useInvitationsActions', () => {
 
             expect(getDrivePerNodeType).toHaveBeenCalled();
             expect(mockRejectInvitation).toHaveBeenCalledWith(invitationUid);
-            expect(mockEventManagerEmit).toHaveBeenCalledWith({
-                type: BusDriverEventName.REJECT_INVITATIONS,
-                driveClient: mockDrive,
-                uids: [uid],
-            });
+            expect(mockEventManagerEmit).toHaveBeenCalledWith(
+                {
+                    type: BusDriverEventName.REJECT_INVITATIONS,
+                    uids: [uid],
+                },
+                mockDrive
+            );
             expect(mockCreateNotification).toHaveBeenCalledWith({
                 type: 'success',
                 text: 'Share invitation declined',

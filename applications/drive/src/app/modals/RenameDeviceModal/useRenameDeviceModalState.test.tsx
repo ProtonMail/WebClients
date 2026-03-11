@@ -128,11 +128,13 @@ describe('useRenameDeviceModalState', () => {
         });
 
         expect(mockOnFormSubmit).toHaveBeenCalled();
-        expect(mockEmit).toHaveBeenCalledWith({
-            type: BusDriverEventName.RENAMED_DEVICES,
-            driveClient: mockDrive,
-            items: [{ deviceUid: DEVICE_UID, newName: 'Renamed device' }],
-        });
+        expect(mockEmit).toHaveBeenCalledWith(
+            {
+                type: BusDriverEventName.RENAMED_DEVICES,
+                items: [{ deviceUid: DEVICE_UID, newName: 'Renamed device' }],
+            },
+            mockDrive
+        );
         expect(mockDrive.renameDevice).toHaveBeenCalledWith(DEVICE_UID, 'Renamed device');
         expect(mockCreateNotification).toHaveBeenCalledWith({ text: 'Device renamed' });
         expect(onClose).toHaveBeenCalled();

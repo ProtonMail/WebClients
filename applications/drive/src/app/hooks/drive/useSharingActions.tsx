@@ -17,11 +17,13 @@ export const useSharingActions = () => {
         const onSubmit = async () => {
             try {
                 await drive.unshareNode(uid);
-                await getBusDriver().emit({
-                    type: BusDriverEventName.UPDATED_NODES,
-                    driveClient: drive,
-                    items: [{ uid, parentUid, isShared: false }],
-                });
+                await getBusDriver().emit(
+                    {
+                        type: BusDriverEventName.UPDATED_NODES,
+                        items: [{ uid, parentUid, isShared: false }],
+                    },
+                    drive
+                );
 
                 getNotificationsManager().createNotification({
                     text: c('Notification').t`You stopped sharing this item`,
@@ -51,11 +53,13 @@ export const useSharingActions = () => {
                 getNotificationsManager().createNotification({
                     text: c('Notification').t`File removed`,
                 });
-                await getBusDriver().emit({
-                    type: BusDriverEventName.REMOVE_ME,
-                    driveClient: getDrive(),
-                    uids: [uid],
-                });
+                await getBusDriver().emit(
+                    {
+                        type: BusDriverEventName.REMOVE_ME,
+                        uids: [uid],
+                    },
+                    getDrive()
+                );
             } catch (e) {
                 handleSdkError(e, { fallbackMessage: c('Notification').t`Failed to remove the file` });
                 throw e;
