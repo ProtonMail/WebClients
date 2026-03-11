@@ -14,6 +14,7 @@ import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetEyeClosed } from '@proton/icons/icons/IcMeetEyeClosed';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectMaxParticipants, selectParticipantNameMap } from '@proton/meet/store/slices/meetingInfo';
 import {
     disableParticipantVideo,
     enableParticipantVideo,
@@ -26,7 +27,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import { useMeetContext } from '../../contexts/MeetContext';
 import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useDebouncedActiveSpeakers } from '../../hooks/useDebouncedActiveSpeakers';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
@@ -76,7 +76,8 @@ export const Participants = () => {
         .map((participant) => participantsMap.get(participant.identity))
         .filter(isTruthy);
 
-    const { participantNameMap, maxParticipants } = useMeetContext();
+    const participantNameMap = useMeetSelector(selectParticipantNameMap);
+    const maxParticipants = useMeetSelector(selectMaxParticipants);
     const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
     const dispatch = useMeetDispatch();
 

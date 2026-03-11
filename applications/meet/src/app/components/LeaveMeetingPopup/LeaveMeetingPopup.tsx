@@ -6,6 +6,7 @@ import usePopperAnchor from '@proton/components/components/popper/usePopperAncho
 import useLoading from '@proton/hooks/useLoading';
 import { IcMeetPhone } from '@proton/icons/icons/IcMeetPhone';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectIsLocalScreenShare } from '@proton/meet/store/slices/meetingInfo';
 import {
     MeetingSideBars,
     PopUpControls,
@@ -33,7 +34,8 @@ export const LeaveMeetingPopup = () => {
     const allowNewHostAssignment = useFlag('MeetAllowNewHostAssignment');
 
     const { anchorRef } = usePopperAnchor<HTMLButtonElement>();
-    const { handleEndMeeting, handleLeave, isLocalScreenShare } = useMeetContext();
+    const { handleEndMeeting, handleLeave } = useMeetContext();
+    const isLocalScreenShare = useMeetSelector(selectIsLocalScreenShare);
     const { sortedParticipants } = useSortedParticipantsContext();
     const popupState = useMeetSelector(selectPopupState);
     const [loadingEndMeeting, withLoadingEndMeeting] = useLoading();

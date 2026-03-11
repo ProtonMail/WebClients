@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 
 import { PAGE_SIZE, SCREEN_SHARE_PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '@proton/meet/constants';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectIsScreenShare } from '@proton/meet/store/slices/meetingInfo';
 import { selectPage, selectPageSize, setPage, setPageSize } from '@proton/meet/store/slices/meetingState';
 
-import { useMeetContext } from '../contexts/MeetContext';
 import { useSortedParticipantsContext } from '../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useIsLargerThanMd } from './useIsLargerThanMd';
 import { useIsNarrowHeight } from './useIsNarrowHeight';
@@ -14,7 +14,7 @@ export const usePaginationSizeUpdates = () => {
     const page = useMeetSelector(selectPage);
     const pageSize = useMeetSelector(selectPageSize);
     const { sortedParticipants } = useSortedParticipantsContext();
-    const { isScreenShare } = useMeetContext();
+    const isScreenShare = useMeetSelector(selectIsScreenShare);
 
     const pageCount = Math.ceil(sortedParticipants.length / pageSize);
 

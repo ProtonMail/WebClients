@@ -9,6 +9,7 @@ import { IcMeetMicrophone } from '@proton/icons/icons/IcMeetMicrophone';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectGuestMode, selectIsScreenShare } from '@proton/meet/store/slices/meetingInfo';
 import { selectPage, setPage } from '@proton/meet/store/slices/meetingState';
 import {
     MeetingSideBars,
@@ -27,7 +28,6 @@ import clsx from '@proton/utils/clsx';
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { Pagination } from '../../atoms/Pagination/Pagination';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import { useMeetContext } from '../../contexts/MeetContext';
 import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
@@ -51,7 +51,8 @@ import './ParticipantControls.scss';
 export const ParticipantControls = () => {
     const dispatch = useMeetDispatch();
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
-    const { isScreenShare, guestMode } = useMeetContext();
+    const isScreenShare = useMeetSelector(selectIsScreenShare);
+    const guestMode = useMeetSelector(selectGuestMode);
     const page = useMeetSelector(selectPage);
     const isLargerThanMd = useIsLargerThanMd();
     const isNarrowHeight = useIsNarrowHeight();
