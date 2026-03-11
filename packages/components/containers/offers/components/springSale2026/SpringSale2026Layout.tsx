@@ -93,9 +93,9 @@ export function SpringSale2026Layout({ offer, currency, onSelectDeal, onCloseMod
             {/* Features */}
             <ul className="springSaleFeatures mt-4 mb-4">
                 {features.map((feature) => (
-                    <li key={feature.name} className="text-lg py-2 px-3">
-                        <IcCheckmark />
-                        <span>{feature.name}</span>
+                    <li key={feature.name} className="text-lg py-2 px-3 flex flex-nowrap flex-row items-center gap-1">
+                        <IcCheckmark className="shrink-0" />
+                        <span className="flex-1">{feature.name}</span>
                     </li>
                 ))}
             </ul>
