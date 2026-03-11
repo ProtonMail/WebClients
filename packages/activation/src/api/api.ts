@@ -105,16 +105,16 @@ export const startImportTask = (data: LaunchImportPayload) => ({
 
 export const startEasySwitchSignupImportTask = ({
     Source,
-    AddressId,
+    Account,
     Provider,
 }: {
     Source: string;
-    AddressId: string;
+    Account: string;
     Provider: OAUTH_PROVIDER;
 }) => ({
     url: 'importer/v1/mail/importers/start/all',
     method: 'POST',
-    data: { Source, AddressId, Provider },
+    data: { Source, Account, Provider },
 });
 
 export const getImportsList = () => ({
