@@ -68,7 +68,7 @@ const ItemColumnLayout = ({
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
-    const { contentIndexingDone } = esStatus;
+    const { contentIndexingDone, esEnabled } = esStatus;
     const snoozedElement = useMailSelector(selectSnoozeElement);
     const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
 
@@ -76,7 +76,7 @@ const ItemColumnLayout = ({
 
     const { expirationTime, hasExpiration } = useExpiringElement(element, labelID);
 
-    const body = contentIndexingDone ? (element as ESMessage).decryptedBody : undefined;
+    const body = contentIndexingDone && esEnabled ? (element as ESMessage).decryptedBody : undefined;
     const { Subject } = element;
 
     const subjectContent = useMemo(
