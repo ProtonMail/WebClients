@@ -41,6 +41,7 @@ describe('getNodeEntity', () => {
         activeRevision: mockRevision,
         folder: undefined,
         treeEventScopeId: 'tree-event-scope-id',
+        ownedBy: {},
     };
 
     describe('when maybeNode is successful', () => {

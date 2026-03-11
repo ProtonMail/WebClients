@@ -26,6 +26,7 @@ const createMockNode = (
     activeRevision: undefined,
     folder: undefined,
     treeEventScopeId: 'treeEventScopeId',
+    ownedBy: {},
     ...(includeMembership && {
         membership: {
             role,

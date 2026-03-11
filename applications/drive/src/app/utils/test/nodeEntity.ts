@@ -37,6 +37,7 @@ export const createMockNodeEntity = (overrides: Partial<NodeEntity> = {}): NodeE
     },
     folder: undefined,
     treeEventScopeId: 'tree-scope-id',
+    ownedBy: {},
     ...overrides,
 });
 
@@ -76,5 +77,6 @@ export const createMockDegradedNode = (overrides: Partial<DegradedNode> = {}): D
     },
     folder: undefined,
     treeEventScopeId: 'tree-scope-id',
+    ownedBy: {},
     ...overrides,
 });
