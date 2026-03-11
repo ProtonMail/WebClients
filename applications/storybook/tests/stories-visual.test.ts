@@ -22,8 +22,14 @@ test.describe('visual tests', () => {
                     }
                 `,
             });
+
             // Wait for SB to fully render the components
             await page.waitForTimeout(300);
+
+            await expect(
+                page.locator('.sb-errordisplay'),
+                `Storybook error page displayed instead of the story`
+            ).not.toBeVisible();
 
             await expect(page).toHaveScreenshot({
                 animations: 'disabled',
