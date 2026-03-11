@@ -17,6 +17,7 @@ import type {
     ItemType,
     LoginItem,
     LoginItemPreview,
+    Maybe,
     MaybeNull,
     SelectedItem,
     SelectedRevision,
@@ -27,7 +28,7 @@ import { deobfuscate, deobfuscateCCField } from '@proton/pass/utils/obfuscate/xo
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
-import { hasUserIdentifier, isEditItemDraft } from './item.predicates';
+import { hasUserIdentifier, isEditItemDraft, isExtraOTPField } from './item.predicates';
 
 export const compoundItemFilters: Partial<Record<ItemType, ItemType[]>> = {
     custom: ['custom', 'sshKey', 'wifi'],
@@ -287,4 +288,12 @@ export const cloneItemName = (name: string): string => {
     const truncatedName = name.length > maxNameLength ? name.substring(0, maxNameLength) : name;
 
     return `${truncatedName}${suffix}`;
+};
+
+export const getItemTOTPUri = (item: LoginItem): Maybe<string> => {
+    /** First check if we have a top-level totp URI */
+    if (item?.data.content.totpUri.v.length) return deobfuscate(item.data.content.totpUri);
+    /** Check if any extra fields are of type TOTP */
+    const extraOTPs = item?.data.extraFields.filter(isExtraOTPField);
+    if (extraOTPs && extraOTPs.length > 0) return deobfuscate(extraOTPs[0].data.totpUri);
 };
