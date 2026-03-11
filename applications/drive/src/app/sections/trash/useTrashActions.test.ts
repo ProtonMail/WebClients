@@ -127,16 +127,20 @@ describe('useTrashActions', () => {
 
             expect(emptyTrashDrive).toHaveBeenCalledTimes(1);
             expect(emptyTrashPhotos).toHaveBeenCalledTimes(1);
-            expect(emit).toHaveBeenCalledWith({
-                type: BusDriverEventName.DELETED_NODES,
-                driveClient: mockDriveClient,
-                uids: ['drive-1', 'drive-2'],
-            });
-            expect(emit).toHaveBeenCalledWith({
-                type: BusDriverEventName.DELETED_NODES,
-                driveClient: mockPhotosClient,
-                uids: ['photo-1', 'photo-2'],
-            });
+            expect(emit).toHaveBeenCalledWith(
+                {
+                    type: BusDriverEventName.DELETED_NODES,
+                    uids: ['drive-1', 'drive-2'],
+                },
+                mockDriveClient
+            );
+            expect(emit).toHaveBeenCalledWith(
+                {
+                    type: BusDriverEventName.DELETED_NODES,
+                    uids: ['photo-1', 'photo-2'],
+                },
+                mockPhotosClient
+            );
 
             expect(emit).toHaveBeenCalledTimes(2);
             expect(createEmptyTrashNotificationSuccess).toHaveBeenCalledTimes(1);

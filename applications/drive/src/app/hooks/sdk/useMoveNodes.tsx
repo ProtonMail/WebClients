@@ -57,7 +57,7 @@ export const useMoveNodes = () => {
             }
         }
 
-        await getBusDriver().emit({ type: BusDriverEventName.MOVED_NODES, driveClient: getDrive(), items: eventItems });
+        await getBusDriver().emit({ type: BusDriverEventName.MOVED_NODES, items: eventItems }, getDrive());
         createMovedItemsNotifications(successItems, failedItems);
 
         volumeIdSet.forEach(async (volumeId) => {
@@ -92,11 +92,13 @@ export const useMoveNodes = () => {
             const undoFunc = () => undoMove(successItemMap);
             createMovedItemsNotifications(successItems, failedItems, undoFunc);
 
-            await getBusDriver().emit({
-                type: BusDriverEventName.MOVED_NODES,
-                driveClient: getDrive(),
-                items: eventItems,
-            });
+            await getBusDriver().emit(
+                {
+                    type: BusDriverEventName.MOVED_NODES,
+                    items: eventItems,
+                },
+                getDrive()
+            );
             const { volumeId } = splitNodeUid(targetFolderUid);
             await events.pollEvents.volumes(volumeId);
         } catch (e) {

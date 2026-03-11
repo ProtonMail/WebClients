@@ -63,14 +63,13 @@ describe('BusDriver', () => {
             const mockListener = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
-                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
             eventBus.subscribe(BusDriverEventName.TRASHED_NODES, mockListener);
-            await eventBus.emit(testEvent);
+            await eventBus.emit(testEvent, mockDriveClient);
 
-            expect(mockListener).toHaveBeenCalledWith(testEvent);
+            expect(mockListener).toHaveBeenCalledWith(testEvent, mockDriveClient);
             expect(mockListener).toHaveBeenCalledTimes(1);
         });
 
@@ -79,16 +78,15 @@ describe('BusDriver', () => {
             const mockListener2 = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
-                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
             eventBus.subscribe(BusDriverEventName.TRASHED_NODES, mockListener1);
             eventBus.subscribe(BusDriverEventName.TRASHED_NODES, mockListener2);
-            await eventBus.emit(testEvent);
+            await eventBus.emit(testEvent, mockDriveClient);
 
-            expect(mockListener1).toHaveBeenCalledWith(testEvent);
-            expect(mockListener2).toHaveBeenCalledWith(testEvent);
+            expect(mockListener1).toHaveBeenCalledWith(testEvent, mockDriveClient);
+            expect(mockListener2).toHaveBeenCalledWith(testEvent, mockDriveClient);
         });
 
         it('should only call listeners for the correct event type', async () => {
@@ -96,15 +94,14 @@ describe('BusDriver', () => {
             const createListener = jest.fn().mockResolvedValue(undefined);
             const trashEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
-                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
             eventBus.subscribe(BusDriverEventName.TRASHED_NODES, trashListener);
             eventBus.subscribe(BusDriverEventName.CREATED_NODES, createListener);
-            await eventBus.emit(trashEvent);
+            await eventBus.emit(trashEvent, mockDriveClient);
 
-            expect(trashListener).toHaveBeenCalledWith(trashEvent);
+            expect(trashListener).toHaveBeenCalledWith(trashEvent, mockDriveClient);
             expect(createListener).not.toHaveBeenCalled();
         });
     });
@@ -114,13 +111,12 @@ describe('BusDriver', () => {
             const mockListener = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
-                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
             const unsubscribe = eventBus.subscribe(BusDriverEventName.TRASHED_NODES, mockListener);
             unsubscribe();
-            await eventBus.emit(testEvent);
+            await eventBus.emit(testEvent, mockDriveClient);
 
             expect(mockListener).not.toHaveBeenCalled();
         });
@@ -130,17 +126,16 @@ describe('BusDriver', () => {
             const mockListener2 = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
-                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
             const unsubscribe1 = eventBus.subscribe(BusDriverEventName.TRASHED_NODES, mockListener1);
             eventBus.subscribe(BusDriverEventName.TRASHED_NODES, mockListener2);
             unsubscribe1();
-            await eventBus.emit(testEvent);
+            await eventBus.emit(testEvent, mockDriveClient);
 
             expect(mockListener1).not.toHaveBeenCalled();
-            expect(mockListener2).toHaveBeenCalledWith(testEvent);
+            expect(mockListener2).toHaveBeenCalledWith(testEvent, mockDriveClient);
         });
     });
 
@@ -154,37 +149,31 @@ describe('BusDriver', () => {
 
             const trashEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
-                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
             const createEvent: CreatedNodesEvent = {
                 type: BusDriverEventName.CREATED_NODES,
-                driveClient: mockDriveClient,
                 items: [{ uid: mockNodeEntity.uid, parentUid: undefined }],
             };
 
             const deleteBookmarkEvent: DeleteBookmarksEvent = {
                 type: BusDriverEventName.DELETE_BOOKMARKS,
-                driveClient: mockDriveClient,
                 uids: ['bookmark-1'],
             };
 
             const acceptInvitationEvent: AcceptInvitationsEvent = {
                 type: BusDriverEventName.ACCEPT_INVITATIONS,
-                driveClient: mockDriveClient,
                 uids: [mockNodeEntity.uid],
             };
 
             const rejectInvitationEvent: RejectInvitationsEvent = {
                 type: BusDriverEventName.REJECT_INVITATIONS,
-                driveClient: mockDriveClient,
                 uids: ['invitation-1'],
             };
 
             const refreshShareWithMeEvent: RefreshShareWithMeEvent = {
                 type: BusDriverEventName.REFRESH_SHARED_WITH_ME,
-                driveClient: mockDriveClient,
             };
 
             eventBus.subscribe(BusDriverEventName.TRASHED_NODES, trashListener);
@@ -193,18 +182,18 @@ describe('BusDriver', () => {
             eventBus.subscribe(BusDriverEventName.ACCEPT_INVITATIONS, acceptInvitationListener);
             eventBus.subscribe(BusDriverEventName.REJECT_INVITATIONS, rejectInvitationListener);
 
-            await eventBus.emit(trashEvent);
-            await eventBus.emit(createEvent);
-            await eventBus.emit(deleteBookmarkEvent);
-            await eventBus.emit(acceptInvitationEvent);
-            await eventBus.emit(rejectInvitationEvent);
-            await eventBus.emit(refreshShareWithMeEvent);
+            await eventBus.emit(trashEvent, mockDriveClient);
+            await eventBus.emit(createEvent, mockDriveClient);
+            await eventBus.emit(deleteBookmarkEvent, mockDriveClient);
+            await eventBus.emit(acceptInvitationEvent, mockDriveClient);
+            await eventBus.emit(rejectInvitationEvent, mockDriveClient);
+            await eventBus.emit(refreshShareWithMeEvent, mockDriveClient);
 
-            expect(trashListener).toHaveBeenCalledWith(trashEvent);
-            expect(createListener).toHaveBeenCalledWith(createEvent);
-            expect(bookmarkDeleteListener).toHaveBeenCalledWith(deleteBookmarkEvent);
-            expect(acceptInvitationListener).toHaveBeenCalledWith(acceptInvitationEvent);
-            expect(rejectInvitationListener).toHaveBeenCalledWith(rejectInvitationEvent);
+            expect(trashListener).toHaveBeenCalledWith(trashEvent, mockDriveClient);
+            expect(createListener).toHaveBeenCalledWith(createEvent, mockDriveClient);
+            expect(bookmarkDeleteListener).toHaveBeenCalledWith(deleteBookmarkEvent, mockDriveClient);
+            expect(acceptInvitationListener).toHaveBeenCalledWith(acceptInvitationEvent, mockDriveClient);
+            expect(rejectInvitationListener).toHaveBeenCalledWith(rejectInvitationEvent, mockDriveClient);
         });
     });
 
@@ -215,14 +204,13 @@ describe('BusDriver', () => {
 
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
-                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
             eventBus.subscribe(BusDriverEventName.TRASHED_NODES, errorListener);
             eventBus.subscribe(BusDriverEventName.TRASHED_NODES, successListener);
 
-            await expect(eventBus.emit(testEvent)).resolves.not.toThrow();
+            await expect(eventBus.emit(testEvent, mockDriveClient)).resolves.not.toThrow();
             expect(errorListener).toHaveBeenCalled();
             expect(successListener).toHaveBeenCalled();
         });
@@ -233,52 +221,46 @@ describe('BusDriver', () => {
             const allListener = jest.fn().mockResolvedValue(undefined);
             const trashEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
-                driveClient: mockDriveClient,
                 uids: ['1'],
             };
             const createEvent: CreatedNodesEvent = {
                 type: BusDriverEventName.CREATED_NODES,
-                driveClient: mockDriveClient,
                 items: [{ uid: mockNodeEntity.uid, parentUid: undefined }],
             };
             const bookmarkEvent: DeleteBookmarksEvent = {
                 type: BusDriverEventName.DELETE_BOOKMARKS,
-                driveClient: mockDriveClient,
                 uids: ['bookmark1'],
             };
 
             const acceptInvitationEvent: AcceptInvitationsEvent = {
                 type: BusDriverEventName.ACCEPT_INVITATIONS,
-                driveClient: mockDriveClient,
                 uids: [mockNodeEntity.uid],
             };
 
             const rejectInvitationEvent: RejectInvitationsEvent = {
                 type: BusDriverEventName.REJECT_INVITATIONS,
-                driveClient: mockDriveClient,
                 uids: ['invitation1'],
             };
 
             const refreshShareWithMeEvent: RefreshShareWithMeEvent = {
                 type: BusDriverEventName.REFRESH_SHARED_WITH_ME,
-                driveClient: mockDriveClient,
             };
 
             eventBus.subscribe(BusDriverEventName.ALL, allListener);
-            await eventBus.emit(trashEvent);
-            await eventBus.emit(createEvent);
-            await eventBus.emit(bookmarkEvent);
-            await eventBus.emit(acceptInvitationEvent);
-            await eventBus.emit(rejectInvitationEvent);
-            await eventBus.emit(refreshShareWithMeEvent);
+            await eventBus.emit(trashEvent, mockDriveClient);
+            await eventBus.emit(createEvent, mockDriveClient);
+            await eventBus.emit(bookmarkEvent, mockDriveClient);
+            await eventBus.emit(acceptInvitationEvent, mockDriveClient);
+            await eventBus.emit(rejectInvitationEvent, mockDriveClient);
+            await eventBus.emit(refreshShareWithMeEvent, mockDriveClient);
 
             expect(allListener).toHaveBeenCalledTimes(6);
-            expect(allListener).toHaveBeenCalledWith(trashEvent);
-            expect(allListener).toHaveBeenCalledWith(createEvent);
-            expect(allListener).toHaveBeenCalledWith(bookmarkEvent);
-            expect(allListener).toHaveBeenCalledWith(acceptInvitationEvent);
-            expect(allListener).toHaveBeenCalledWith(rejectInvitationEvent);
-            expect(allListener).toHaveBeenCalledWith(refreshShareWithMeEvent);
+            expect(allListener).toHaveBeenCalledWith(trashEvent, mockDriveClient);
+            expect(allListener).toHaveBeenCalledWith(createEvent, mockDriveClient);
+            expect(allListener).toHaveBeenCalledWith(bookmarkEvent, mockDriveClient);
+            expect(allListener).toHaveBeenCalledWith(acceptInvitationEvent, mockDriveClient);
+            expect(allListener).toHaveBeenCalledWith(rejectInvitationEvent, mockDriveClient);
+            expect(allListener).toHaveBeenCalledWith(refreshShareWithMeEvent, mockDriveClient);
         });
 
         it('should call both specific and ALL listeners when event is emitted', async () => {
@@ -286,16 +268,15 @@ describe('BusDriver', () => {
             const allListener = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
-                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
             eventBus.subscribe(BusDriverEventName.TRASHED_NODES, specificListener);
             eventBus.subscribe(BusDriverEventName.ALL, allListener);
-            await eventBus.emit(testEvent);
+            await eventBus.emit(testEvent, mockDriveClient);
 
-            expect(specificListener).toHaveBeenCalledWith(testEvent);
-            expect(allListener).toHaveBeenCalledWith(testEvent);
+            expect(specificListener).toHaveBeenCalledWith(testEvent, mockDriveClient);
+            expect(allListener).toHaveBeenCalledWith(testEvent, mockDriveClient);
             expect(specificListener).toHaveBeenCalledTimes(1);
             expect(allListener).toHaveBeenCalledTimes(1);
         });
@@ -304,13 +285,12 @@ describe('BusDriver', () => {
             const allListener = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
-                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
             const unsubscribe = eventBus.subscribe(BusDriverEventName.ALL, allListener);
             unsubscribe();
-            await eventBus.emit(testEvent);
+            await eventBus.emit(testEvent, mockDriveClient);
 
             expect(allListener).not.toHaveBeenCalled();
         });
@@ -320,16 +300,15 @@ describe('BusDriver', () => {
             const allListener2 = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
-                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
             eventBus.subscribe(BusDriverEventName.ALL, allListener1);
             eventBus.subscribe(BusDriverEventName.ALL, allListener2);
-            await eventBus.emit(testEvent);
+            await eventBus.emit(testEvent, mockDriveClient);
 
-            expect(allListener1).toHaveBeenCalledWith(testEvent);
-            expect(allListener2).toHaveBeenCalledWith(testEvent);
+            expect(allListener1).toHaveBeenCalledWith(testEvent, mockDriveClient);
+            expect(allListener2).toHaveBeenCalledWith(testEvent, mockDriveClient);
         });
 
         it('should only remove specific ALL listener when unsubscribed', async () => {
@@ -337,17 +316,16 @@ describe('BusDriver', () => {
             const allListener2 = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
-                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
             const unsubscribe1 = eventBus.subscribe(BusDriverEventName.ALL, allListener1);
             eventBus.subscribe(BusDriverEventName.ALL, allListener2);
             unsubscribe1();
-            await eventBus.emit(testEvent);
+            await eventBus.emit(testEvent, mockDriveClient);
 
             expect(allListener1).not.toHaveBeenCalled();
-            expect(allListener2).toHaveBeenCalledWith(testEvent);
+            expect(allListener2).toHaveBeenCalledWith(testEvent, mockDriveClient);
         });
     });
 
@@ -461,18 +439,20 @@ describe('BusDriver', () => {
 
             await (eventBus as any).handleSdkEvent(mockDriveEvent, mockDriveClient);
 
-            expect(emitSpy).toHaveBeenCalledWith({
-                type: BusDriverEventName.CREATED_NODES,
-                driveClient: mockDriveClient,
-                items: [
-                    {
-                        uid: 'node-123',
-                        parentUid: 'parent-456',
-                        isTrashed: false,
-                        isShared: true,
-                    },
-                ],
-            });
+            expect(emitSpy).toHaveBeenCalledWith(
+                {
+                    type: BusDriverEventName.CREATED_NODES,
+                    items: [
+                        {
+                            uid: 'node-123',
+                            parentUid: 'parent-456',
+                            isTrashed: false,
+                            isShared: true,
+                        },
+                    ],
+                },
+                mockDriveClient
+            );
             expect(emitSpy).toHaveBeenCalledTimes(1);
         });
 
@@ -487,18 +467,20 @@ describe('BusDriver', () => {
 
             await (eventBus as any).handleSdkEvent(mockDriveEvent, mockDriveClient);
 
-            expect(emitSpy).toHaveBeenCalledWith({
-                type: BusDriverEventName.UPDATED_NODES,
-                driveClient: mockDriveClient,
-                items: [
-                    {
-                        uid: 'node-789',
-                        parentUid: 'parent-101',
-                        isTrashed: true,
-                        isShared: false,
-                    },
-                ],
-            });
+            expect(emitSpy).toHaveBeenCalledWith(
+                {
+                    type: BusDriverEventName.UPDATED_NODES,
+                    items: [
+                        {
+                            uid: 'node-789',
+                            parentUid: 'parent-101',
+                            isTrashed: true,
+                            isShared: false,
+                        },
+                    ],
+                },
+                mockDriveClient
+            );
             expect(emitSpy).toHaveBeenCalledTimes(1);
         });
 
@@ -510,11 +492,10 @@ describe('BusDriver', () => {
 
             await (eventBus as any).handleSdkEvent(mockDriveEvent, mockDriveClient);
 
-            expect(emitSpy).toHaveBeenCalledWith({
-                type: BusDriverEventName.DELETED_NODES,
-                driveClient: mockDriveClient,
-                uids: ['deleted-node-123'],
-            });
+            expect(emitSpy).toHaveBeenCalledWith(
+                { type: BusDriverEventName.DELETED_NODES, uids: ['deleted-node-123'] },
+                mockDriveClient
+            );
             expect(emitSpy).toHaveBeenCalledTimes(1);
         });
 
@@ -525,10 +506,7 @@ describe('BusDriver', () => {
 
             await (eventBus as any).handleSdkEvent(mockDriveEvent, mockDriveClient);
 
-            expect(emitSpy).toHaveBeenCalledWith({
-                type: BusDriverEventName.REFRESH_SHARED_WITH_ME,
-                driveClient: mockDriveClient,
-            });
+            expect(emitSpy).toHaveBeenCalledWith({ type: BusDriverEventName.REFRESH_SHARED_WITH_ME }, mockDriveClient);
             expect(emitSpy).toHaveBeenCalledTimes(1);
         });
 
@@ -554,18 +532,20 @@ describe('BusDriver', () => {
 
             await (eventBus as any).handleSdkEvent(mockDriveEvent, mockDriveClient);
 
-            expect(emitSpy).toHaveBeenCalledWith({
-                type: BusDriverEventName.CREATED_NODES,
-                driveClient: mockDriveClient,
-                items: [
-                    {
-                        uid: 'root-node-123',
-                        parentUid: undefined,
-                        isTrashed: false,
-                        isShared: false,
-                    },
-                ],
-            });
+            expect(emitSpy).toHaveBeenCalledWith(
+                {
+                    type: BusDriverEventName.CREATED_NODES,
+                    items: [
+                        {
+                            uid: 'root-node-123',
+                            parentUid: undefined,
+                            isTrashed: false,
+                            isShared: false,
+                        },
+                    ],
+                },
+                mockDriveClient
+            );
         });
 
         it('should handle errors in handleSdkEvent and report them', async () => {

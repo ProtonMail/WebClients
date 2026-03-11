@@ -11,7 +11,7 @@ export const useTrashActions = () => {
     const { createTrashedItemsNotifications } = useListNotifications();
     const restoreItems = async (items: Item[]) => {
         const restored = [];
-        await getBusDriver().emit({ type: BusDriverEventName.RESTORED_NODES, driveClient: getDrive(), items });
+        await getBusDriver().emit({ type: BusDriverEventName.RESTORED_NODES, items }, getDrive());
 
         try {
             const uids = items.map((t) => t.uid);
@@ -30,7 +30,7 @@ export const useTrashActions = () => {
         const uids = items.map((d) => d.uid);
         const success = [];
         const failures = [];
-        await getBusDriver().emit({ type: BusDriverEventName.TRASHED_NODES, driveClient: getDrive(), uids });
+        await getBusDriver().emit({ type: BusDriverEventName.TRASHED_NODES, uids }, getDrive());
 
         try {
             for await (const result of drive.trashNodes(uids)) {

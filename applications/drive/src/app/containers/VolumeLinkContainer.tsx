@@ -56,11 +56,13 @@ export const VolumeLinkContainer: FC = () => {
                     // - invitationId/invitationUid, we only have invitationId and sdk is waiting of invitationUid
                     // - We don't get the mimeType so we can't switch between legacy/sdk accept invitation
                     // - We can't do a single getInvitation on drive sdk
-                    await getBusDriver().emit({
-                        type: BusDriverEventName.ACCEPT_INVITATIONS,
-                        driveClient: getDrive(),
-                        uids: [generateNodeUid(volumeId, linkId)],
-                    });
+                    await getBusDriver().emit(
+                        {
+                            type: BusDriverEventName.ACCEPT_INVITATIONS,
+                            uids: [generateNodeUid(volumeId, linkId)],
+                        },
+                        getDrive()
+                    );
                     navigateToLink(linkInfo.shareId, linkInfo.linkId, linkInfo.isFile, '/shared-with-me');
                 } else {
                     navigateToNoAccess();
