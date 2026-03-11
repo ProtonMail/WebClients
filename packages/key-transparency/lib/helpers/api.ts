@@ -10,6 +10,11 @@ export const getEpochsRoute = (params: GetEpochsParams) => ({
     params,
 });
 
+export const getSingleEpochRoute = ({ EpochID }: { EpochID: number }) => ({
+    url: `kt/epochs/${EpochID}`, 
+    method: 'get',
+});
+
 export interface GetCertificateParams {
     EpochID: number;
 }

@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { recoverDelegatedAccessStep1Thunk } from '@proton/account/delegatedAccess/outgoingActions';
 import {
-    recoverDelegatedAccessStep1Thunk,
-    recoverDelegatedAccessStep2Thunk,
-} from '@proton/account/delegatedAccess/outgoingActions';
-import { getViewRecoveryContactInfoRoute } from '@proton/account/delegatedAccess/routes';
+    getViewRecoveryContactInfoRoute,
+    getViewRecoveryContactRecoverRoute,
+} from '@proton/account/delegatedAccess/routes';
 import { ContactView } from '@proton/account/delegatedAccess/shared/ContactView';
 import { useOutgoingController } from '@proton/account/delegatedAccess/shared/OutgoingDelegatedAccessProvider';
 import {
@@ -17,7 +17,6 @@ import type { EnrichedOutgoingDelegatedAccess } from '@proton/account/delegatedA
 import { useDispatch } from '@proton/account/delegatedAccess/useDispatch';
 import Radio from '@proton/components/components/input/Radio';
 import type { ReactivateKeysContentProps } from '@proton/components/containers/keys/reactivateKeys/interface';
-import { getKeyReactivationNotification } from '@proton/components/containers/keys/reactivateKeys/reactivateHelper';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSettingsLink } from '@proton/components/index';
@@ -165,40 +164,20 @@ export const RecoveryContactFormStep1 = ({
 };
 
 export const RecoveryContactFormStep2 = ({
-    onLoading,
     onClose,
     recoveryContact,
 }: ReactivateKeysContentProps & { recoveryContact: EnrichedOutgoingDelegatedAccess }) => {
-    const handleError = useErrorHandler();
-    const { createNotification } = useNotifications();
-    const dispatch = useDispatch();
-
-    const handleSubmit = async () => {
-        try {
-            onLoading(true);
-
-            const result = await dispatch(
-                recoverDelegatedAccessStep2Thunk({
-                    outgoingDelegatedAccess: recoveryContact.outgoingDelegatedAccess,
-                    ignoreVerification: false,
-                })
-            );
-
-            createNotification(getKeyReactivationNotification(result));
-            onClose?.();
-        } catch (error) {
-            handleError(error);
-        } finally {
-            onLoading(false);
-        }
-    };
-
+    const goToSettings = useSettingsLink();
     return (
         <form
             id={RecoveryContactFormId}
             onSubmit={(event) => {
                 event.preventDefault();
-                void handleSubmit();
+                onClose?.();
+                const route = getViewRecoveryContactRecoverRoute(
+                    recoveryContact.outgoingDelegatedAccess.DelegatedAccessID
+                );
+                goToSettings(route);
             }}
         >
             <div className="mb-4">{c('emergency_access').t`Your recovery contact has helped you recover data.`}</div>
