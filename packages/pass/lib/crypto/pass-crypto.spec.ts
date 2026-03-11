@@ -526,6 +526,7 @@ describe('PassCrypto', () => {
             await PassCrypto.hydrate({ user, addresses: [address], keyPassword: TEST_KEY_PASSWORD });
 
             const encryptedItem: ItemRevisionContentsResponse = {
+                AliasOwner: false,
                 Content: 'base64encoded',
                 ContentFormatVersion: ContentFormatVersion.Item,
                 CreateTime: 0,
@@ -561,6 +562,7 @@ describe('PassCrypto', () => {
             const itemContent = randomContents();
             const item = await processes.createItem({ content: itemContent, vaultKey });
             const encryptedItem: ItemRevisionContentsResponse = {
+                AliasOwner: false,
                 Content: item.Content,
                 ContentFormatVersion: ContentFormatVersion.Item,
                 CreateTime: 0,
