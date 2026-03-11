@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { splitNodeUid, useDrive } from '@proton/drive';
+import { getDrive, splitNodeUid, useDrive } from '@proton/drive';
 import { BusDriverEventName, type NodeEventMeta, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { useMovedItemsNotification } from '../../modals/MoveItemsModal/useMovedItemsNotification';
@@ -57,7 +57,7 @@ export const useMoveNodes = () => {
             }
         }
 
-        await getBusDriver().emit({ type: BusDriverEventName.MOVED_NODES, items: eventItems });
+        await getBusDriver().emit({ type: BusDriverEventName.MOVED_NODES, driveClient: getDrive(), items: eventItems });
         createMovedItemsNotifications(successItems, failedItems);
 
         volumeIdSet.forEach(async (volumeId) => {
@@ -92,7 +92,11 @@ export const useMoveNodes = () => {
             const undoFunc = () => undoMove(successItemMap);
             createMovedItemsNotifications(successItems, failedItems, undoFunc);
 
-            await getBusDriver().emit({ type: BusDriverEventName.MOVED_NODES, items: eventItems });
+            await getBusDriver().emit({
+                type: BusDriverEventName.MOVED_NODES,
+                driveClient: getDrive(),
+                items: eventItems,
+            });
             const { volumeId } = splitNodeUid(targetFolderUid);
             await events.pollEvents.volumes(volumeId);
         } catch (e) {

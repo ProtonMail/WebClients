@@ -67,7 +67,7 @@ export const useSharedByMeActions = () => {
         if (!item) {
             return;
         }
-        stopSharing(showConfirmModal, item.nodeUid, item.parentUid);
+        stopSharing(showConfirmModal, getDrivePerNodeType(item.type), item.nodeUid, item.parentUid);
     };
 
     const handleOpenDocsOrSheets = (uid: string, openInDocs: OpenInDocsType) => {

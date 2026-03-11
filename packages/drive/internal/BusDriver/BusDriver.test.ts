@@ -2,6 +2,7 @@ import type { NodeEntity } from '../..';
 import { getBusDriver } from './BusDriver';
 import type {
     AcceptInvitationsEvent,
+    BusDriverClient,
     CreatedNodesEvent,
     DeleteBookmarksEvent,
     RefreshShareWithMeEvent,
@@ -9,6 +10,8 @@ import type {
     TrashedNodesEvent,
 } from './BusDriverTypes';
 import { BusDriverEventName } from './BusDriverTypes';
+
+const mockDriveClient = {} as BusDriverClient;
 
 jest.mock('./errorHandling', () => {
     const actual = jest.requireActual('./errorHandling');
@@ -60,6 +63,7 @@ describe('BusDriver', () => {
             const mockListener = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
+                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
@@ -75,6 +79,7 @@ describe('BusDriver', () => {
             const mockListener2 = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
+                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
@@ -91,6 +96,7 @@ describe('BusDriver', () => {
             const createListener = jest.fn().mockResolvedValue(undefined);
             const trashEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
+                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
@@ -108,6 +114,7 @@ describe('BusDriver', () => {
             const mockListener = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
+                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
@@ -123,6 +130,7 @@ describe('BusDriver', () => {
             const mockListener2 = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
+                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
@@ -146,31 +154,37 @@ describe('BusDriver', () => {
 
             const trashEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
+                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
             const createEvent: CreatedNodesEvent = {
                 type: BusDriverEventName.CREATED_NODES,
+                driveClient: mockDriveClient,
                 items: [{ uid: mockNodeEntity.uid, parentUid: undefined }],
             };
 
             const deleteBookmarkEvent: DeleteBookmarksEvent = {
                 type: BusDriverEventName.DELETE_BOOKMARKS,
+                driveClient: mockDriveClient,
                 uids: ['bookmark-1'],
             };
 
             const acceptInvitationEvent: AcceptInvitationsEvent = {
                 type: BusDriverEventName.ACCEPT_INVITATIONS,
+                driveClient: mockDriveClient,
                 uids: [mockNodeEntity.uid],
             };
 
             const rejectInvitationEvent: RejectInvitationsEvent = {
                 type: BusDriverEventName.REJECT_INVITATIONS,
+                driveClient: mockDriveClient,
                 uids: ['invitation-1'],
             };
 
             const refreshShareWithMeEvent: RefreshShareWithMeEvent = {
                 type: BusDriverEventName.REFRESH_SHARED_WITH_ME,
+                driveClient: mockDriveClient,
             };
 
             eventBus.subscribe(BusDriverEventName.TRASHED_NODES, trashListener);
@@ -201,6 +215,7 @@ describe('BusDriver', () => {
 
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
+                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
@@ -218,29 +233,35 @@ describe('BusDriver', () => {
             const allListener = jest.fn().mockResolvedValue(undefined);
             const trashEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
+                driveClient: mockDriveClient,
                 uids: ['1'],
             };
             const createEvent: CreatedNodesEvent = {
                 type: BusDriverEventName.CREATED_NODES,
+                driveClient: mockDriveClient,
                 items: [{ uid: mockNodeEntity.uid, parentUid: undefined }],
             };
             const bookmarkEvent: DeleteBookmarksEvent = {
                 type: BusDriverEventName.DELETE_BOOKMARKS,
+                driveClient: mockDriveClient,
                 uids: ['bookmark1'],
             };
 
             const acceptInvitationEvent: AcceptInvitationsEvent = {
                 type: BusDriverEventName.ACCEPT_INVITATIONS,
+                driveClient: mockDriveClient,
                 uids: [mockNodeEntity.uid],
             };
 
             const rejectInvitationEvent: RejectInvitationsEvent = {
                 type: BusDriverEventName.REJECT_INVITATIONS,
+                driveClient: mockDriveClient,
                 uids: ['invitation1'],
             };
 
             const refreshShareWithMeEvent: RefreshShareWithMeEvent = {
                 type: BusDriverEventName.REFRESH_SHARED_WITH_ME,
+                driveClient: mockDriveClient,
             };
 
             eventBus.subscribe(BusDriverEventName.ALL, allListener);
@@ -265,6 +286,7 @@ describe('BusDriver', () => {
             const allListener = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
+                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
@@ -282,6 +304,7 @@ describe('BusDriver', () => {
             const allListener = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
+                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
@@ -297,6 +320,7 @@ describe('BusDriver', () => {
             const allListener2 = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
+                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
@@ -313,6 +337,7 @@ describe('BusDriver', () => {
             const allListener2 = jest.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
+                driveClient: mockDriveClient,
                 uids: ['1'],
             };
 
@@ -434,10 +459,11 @@ describe('BusDriver', () => {
                 isShared: true,
             };
 
-            await (eventBus as any).handleSdkEvent(mockDriveEvent);
+            await (eventBus as any).handleSdkEvent(mockDriveEvent, mockDriveClient);
 
             expect(emitSpy).toHaveBeenCalledWith({
                 type: BusDriverEventName.CREATED_NODES,
+                driveClient: mockDriveClient,
                 items: [
                     {
                         uid: 'node-123',
@@ -459,10 +485,11 @@ describe('BusDriver', () => {
                 isShared: false,
             };
 
-            await (eventBus as any).handleSdkEvent(mockDriveEvent);
+            await (eventBus as any).handleSdkEvent(mockDriveEvent, mockDriveClient);
 
             expect(emitSpy).toHaveBeenCalledWith({
                 type: BusDriverEventName.UPDATED_NODES,
+                driveClient: mockDriveClient,
                 items: [
                     {
                         uid: 'node-789',
@@ -481,10 +508,11 @@ describe('BusDriver', () => {
                 nodeUid: 'deleted-node-123',
             };
 
-            await (eventBus as any).handleSdkEvent(mockDriveEvent);
+            await (eventBus as any).handleSdkEvent(mockDriveEvent, mockDriveClient);
 
             expect(emitSpy).toHaveBeenCalledWith({
                 type: BusDriverEventName.DELETED_NODES,
+                driveClient: mockDriveClient,
                 uids: ['deleted-node-123'],
             });
             expect(emitSpy).toHaveBeenCalledTimes(1);
@@ -495,10 +523,11 @@ describe('BusDriver', () => {
                 type: 'SharedWithMeUpdated',
             };
 
-            await (eventBus as any).handleSdkEvent(mockDriveEvent);
+            await (eventBus as any).handleSdkEvent(mockDriveEvent, mockDriveClient);
 
             expect(emitSpy).toHaveBeenCalledWith({
                 type: BusDriverEventName.REFRESH_SHARED_WITH_ME,
+                driveClient: mockDriveClient,
             });
             expect(emitSpy).toHaveBeenCalledTimes(1);
         });
@@ -509,7 +538,7 @@ describe('BusDriver', () => {
                 nodeUid: 'some-node',
             };
 
-            await (eventBus as any).handleSdkEvent(mockDriveEvent);
+            await (eventBus as any).handleSdkEvent(mockDriveEvent, mockDriveClient);
 
             expect(emitSpy).not.toHaveBeenCalled();
         });
@@ -523,10 +552,11 @@ describe('BusDriver', () => {
                 isShared: false,
             };
 
-            await (eventBus as any).handleSdkEvent(mockDriveEvent);
+            await (eventBus as any).handleSdkEvent(mockDriveEvent, mockDriveClient);
 
             expect(emitSpy).toHaveBeenCalledWith({
                 type: BusDriverEventName.CREATED_NODES,
+                driveClient: mockDriveClient,
                 items: [
                     {
                         uid: 'root-node-123',
@@ -549,7 +579,7 @@ describe('BusDriver', () => {
                 isShared: false,
             };
 
-            await (eventBus as any).handleSdkEvent(mockDriveEvent);
+            await (eventBus as any).handleSdkEvent(mockDriveEvent, mockDriveClient);
         });
     });
 });
