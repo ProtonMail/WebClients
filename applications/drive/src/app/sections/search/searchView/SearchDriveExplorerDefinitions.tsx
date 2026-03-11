@@ -1,11 +1,11 @@
 import { useShallow } from 'zustand/react/shallow';
 
 import type { Breakpoints } from '@proton/components';
+import { useThumbnail } from '@proton/drive/modules/thumbnails';
 
 import { GridItemContent } from '../../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';
 import { GridItemName } from '../../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemName';
 import type { CellDefinition, GridDefinition } from '../../../statelessComponents/DriveExplorer/types';
-import { useThumbnailStore } from '../../../zustand/thumbnails/thumbnails.store';
 import { LocationCell, defaultLocationCellConfig } from '../../commonDriveExplorerCells/LocationCell';
 import { ModifiedCell, defaultModifiedCellConfig } from '../../commonDriveExplorerCells/ModifiedCell';
 import { NameCell, defaultNameCellConfig } from '../../commonDriveExplorerCells/NameCell';
@@ -22,11 +22,7 @@ export const getCellDefinitions = ({
         render: (uid) => {
             const NameCellComponent = () => {
                 const item = useSearchViewStore(useShallow((state) => state.getSearchResultItem(uid)));
-                const thumbnail = useThumbnailStore(
-                    useShallow((state) => {
-                        return item?.thumbnailId ? state.getThumbnail(item?.thumbnailId) : undefined;
-                    })
-                );
+                const thumbnail = useThumbnail(item?.activeRevisionUid);
                 if (!item) {
                     return null;
                 }
@@ -37,7 +33,7 @@ export const getCellDefinitions = ({
                         name={item.name}
                         type={item.type}
                         mediaType={item.mediaType}
-                        thumbnail={thumbnail}
+                        thumbnailUrl={thumbnail?.sdUrl}
                         haveSignatureIssues={item.haveSignatureIssues}
                     />
                 );
@@ -106,9 +102,7 @@ export const getGridDefinition = (): GridDefinition => ({
     mainContent: (uid) => {
         const MainContentComponent = () => {
             const item = useSearchViewStore((state) => state.getSearchResultItem(uid));
-            const thumbnail = useThumbnailStore((state) =>
-                item?.thumbnailId ? state.getThumbnail(item?.thumbnailId) : undefined
-            );
+            const thumbnail = useThumbnail(item?.activeRevisionUid);
 
             if (!item) {
                 return null;

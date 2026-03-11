@@ -14,7 +14,7 @@ const node = {
     },
 } as any;
 const nodeData = { contents: [], hasSignatureIssues: false };
-const largeThumbnail = { url: 'large-thumb-url', data: [] };
+const largeThumbnail = { url: 'large-thumb-url' };
 const smallThumbnailUrl = 'small-thumb-url';
 const videoStreaming: VideoStreamingResult = {
     url: '/sw/stream/abc',
@@ -215,14 +215,13 @@ describe('resolvePreviewOutput — data source per method', () => {
         expect(result.data).toBe(contents);
     });
 
-    it('returns largeThumbnail.data for Thumbnail method', () => {
-        const data = [new Uint8Array([4, 5, 6])] as unknown as Uint8Array<ArrayBuffer>[];
+    it('returns undefined data for Thumbnail method', () => {
         const result = resolvePreviewOutput({
             ...defaults,
             previewMethod: ContentPreviewMethod.Thumbnail,
-            largeThumbnail: { url: 'url', data },
+            largeThumbnail: { url: 'url' },
         });
-        expect(result.data).toBe(data);
+        expect(result.data).toBeUndefined();
     });
 
     it('returns undefined data for Buffer method when nodeData is not loaded', () => {

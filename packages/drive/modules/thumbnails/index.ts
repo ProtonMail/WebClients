@@ -1,12 +1,28 @@
+import { useShallow } from 'zustand/react/shallow';
+
+import type { DriveClient, ThumbnailRequest } from './loader/types';
+import { useThumbnailsStore } from './loader/useThumbnails.store';
+
 /**
- * Thumbnails module providing generator of thumbnails for various file types
- * in the browser.
- *
- * The module might use various 3rd party libraries to generate the thumbnails
- * that runs in the web worker, or it might use the native browser APIs to
- * generate the thumbnails.
+ * Thumbnails module
+ * Two modules available:
+ * 1. Generator: providing generator of thumbnails for various file types
+ *    in the browser.
+ * 2. Loader: providing interface to load thumbnails by batch and stored in cache.
  */
 
-export type { ThumbnailError } from './thumbnailError';
-export { generateThumbnail } from './thumbnailGenerator';
-export type { ThumbnailResult } from './utils';
+export type { ThumbnailError } from './generator/thumbnailError';
+export { generateThumbnail } from './generator/thumbnailGenerator';
+export type { ThumbnailResult } from './generator/utils';
+
+export const loadThumbnail = (drive: DriveClient, params: ThumbnailRequest) => {
+    return useThumbnailsStore.getState().loadThumbnail(drive, params);
+};
+
+export const getThumbnail = (revisionUid: string) => {
+    return revisionUid ? useThumbnailsStore.getState().getThumbnail(revisionUid) : undefined;
+};
+
+export const useThumbnail = (revisionUid: string | undefined) => {
+    return useThumbnailsStore(useShallow((state) => (revisionUid ? state.getThumbnail(revisionUid) : undefined)));
+};
