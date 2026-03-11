@@ -47,7 +47,7 @@ const redirectToPrivateApp = async (
 ) => {
     if (mediaType) {
         const openInDocsInfo = getOpenInDocsInfo(mediaType);
-        if (openInDocsInfo) {
+        if (openInDocsInfo?.isNative) {
             await openDocsOrSheetsDocument({
                 uid,
                 type: openInDocsInfo.type,
