@@ -19,6 +19,7 @@ export const RecoverAction = () => {
     const { subscribe } = useOutgoingController();
     const [modal, setModalOpen, renderModal] = useModalState();
     const [warningModal, setWarningModalOpen, renderWarningModal] = useModalState();
+    const [errorDetails, setErrorDetails] = useState<string | null>(null);
 
     const handleError = useErrorHandler();
     const dispatch = useDispatch();
@@ -58,6 +59,7 @@ export const RecoverAction = () => {
             } catch (e) {
                 if (e instanceof RetrySignedKeyListError) {
                     setTmpOutgoingDelegatedAccess(value);
+                    setErrorDetails(e.message);
                     setWarningModalOpen(true);
                     return;
                 }
@@ -97,6 +99,7 @@ export const RecoverAction = () => {
             {renderWarningModal && tmpOutgoingDelegatedAccess && (
                 <RetryWarningRecoverOutgoingRecoveryContactModal
                     {...warningModal}
+                    errorDetails={errorDetails}
                     onProceed={() => {
                         recoverStep2(tmpOutgoingDelegatedAccess, { ignoreVerification: true }).catch(noop);
                     }}

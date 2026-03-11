@@ -7,10 +7,11 @@ import type { EnrichedOutgoingDelegatedAccess } from '../../../shared/outgoing/i
 
 interface Props extends Omit<PromptProps, 'children' | 'buttons'> {
     value: EnrichedOutgoingDelegatedAccess;
+    errorDetails: string | null;
     onProceed: () => void;
 }
 
-export const RetryWarningRecoverOutgoingRecoveryContactModal = ({ value, onProceed, ...rest }: Props) => {
+export const RetryWarningRecoverOutgoingRecoveryContactModal = ({ value, onProceed, errorDetails, ...rest }: Props) => {
     return (
         <Prompt
             {...rest}
@@ -23,6 +24,13 @@ export const RetryWarningRecoverOutgoingRecoveryContactModal = ({ value, onProce
             ]}
         >
             {c('emergency_access').jt`We were not able to verify the recovery data. Proceed anyway?`}
+            {errorDetails && (
+                <>
+                    <br />
+                    <br />
+                    <span className="text-sm color-weak">Error: {errorDetails}</span>
+                </>
+            )}
         </Prompt>
     );
 };
