@@ -25,6 +25,7 @@ describe('openItem crypto process', () => {
         const createItemRequest = await createItem({ content, vaultKey });
 
         const encryptedItem: ItemRevisionContentsResponse = {
+            AliasOwner: false,
             Content: createItemRequest.Content,
             ContentFormatVersion: createItemRequest.ContentFormatVersion,
             CreateTime: timestamp,
@@ -71,6 +72,7 @@ describe('openItem crypto process', () => {
         });
 
         const encryptedItem: ItemRevisionContentsResponse = {
+            AliasOwner: false,
             Content: createItemRequest.Content,
             ContentFormatVersion: createItemRequest.ContentFormatVersion,
             CreateTime: timestamp,
