@@ -1,3 +1,9 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
 .springSaleHeader {
 	font-size: 4rem;
 	color: #372580;
@@ -14,12 +20,6 @@
 	padding: 0;
 	list-style-type: none;
 	color: #372580;
-
-	li {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-	}
 
 	li:not(:last-child) {
 		border-block-end: 1px solid rgb(55 37 128 / 0.28);
@@ -49,9 +49,21 @@
 	.offer-disable-button {
 		color: #372580;
 	}
+
+	&.offer-modal--one-deal {
+		&#{&} {
+			.scroll-outer-vertical .scroll-inner,
+			.scroll-outer-vertical .scroll-child {
+				overflow: overlay;
+			}
+		}
+	}
 }
 
 .modal-two:has([class*='offer-spring-sale-2026-']) {
 	padding-block: 1rem;
 	padding-inline: 3.5rem;
+	@include im.media('<=small') {
+		padding-inline: 1rem;
+	}
 }
