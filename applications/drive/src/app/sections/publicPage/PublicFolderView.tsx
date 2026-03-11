@@ -108,11 +108,7 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
         handleCreateDocsOrSheets,
     } = usePublicActions();
 
-    const { publicRole } = usePublicAuthStore(
-        useShallow((state) => ({
-            publicRole: state.publicRole,
-        }))
-    );
+    const isEditor = usePublicAuthStore((state) => state.publicRole === MemberRole.Editor);
 
     const { isLoading, hasEverLoaded, sortField, direction, itemUids, folder } = usePublicFolderStore(
         useShallow((state) => ({
@@ -298,10 +294,8 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
         isDraggable: () => false,
     };
 
-    const isViewer = publicRole === MemberRole.Viewer;
-
     return (
-        <UploadDragDrop className="h-full" disabled={isViewer} onDrop={handleDrop}>
+        <UploadDragDrop className="h-full" disabled={!isEditor} onDrop={handleDrop}>
             <input multiple type="file" ref={fileInputRef} className="hidden" onChange={handleFileChange} />
             <input multiple type="file" ref={folderInputRef} className="hidden" onChange={handleFolderChange} />
             <PublicFolderItemContextMenu
@@ -325,21 +319,22 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
                     />
                 }
                 sharedBy={
-                    (rootNode.keyAuthor.ok ? rootNode.keyAuthor.value : rootNode.keyAuthor.error.claimedAuthor) ||
+                    (isEditor &&
+                        (rootNode.keyAuthor.ok ? rootNode.keyAuthor.value : rootNode.keyAuthor.error.claimedAuthor)) ||
                     undefined
                 }
                 onDownload={() => handleHeaderDownload()}
                 onScanAndDownload={() => handleHeaderDownload(true)}
-                onDetails={() => handleDetails(currentFolderUid)}
+                onDetails={isEditor ? () => handleDetails(currentFolderUid) : undefined}
                 onCopyLink={handleCopyLink}
-                onUploadFile={!isViewer ? handleClickFileUpload : undefined}
-                onUploadFolder={!isViewer ? handleClickFolderUpload : undefined}
-                onCreateFolder={!isViewer ? () => handleCreateFolder(currentFolderUid) : undefined}
+                onUploadFile={isEditor ? handleClickFileUpload : undefined}
+                onUploadFolder={isEditor ? handleClickFolderUpload : undefined}
+                onCreateFolder={isEditor ? () => handleCreateFolder(currentFolderUid) : undefined}
                 onCreateDocument={
-                    !isViewer ? () => handleCreateDocsOrSheets(currentFolderUid, 'document', customPassword) : undefined
+                    isEditor ? () => handleCreateDocsOrSheets(currentFolderUid, 'document', customPassword) : undefined
                 }
                 onCreateSpreadsheet={
-                    !isViewer
+                    isEditor
                         ? () => handleCreateDocsOrSheets(currentFolderUid, 'spreadsheet', customPassword)
                         : undefined
                 }
@@ -350,7 +345,7 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
             />
 
             {isEmpty ? (
-                <PublicFolderEmptyView uploadEnabled={!isViewer} onUpload={handleUpload} />
+                <PublicFolderEmptyView uploadEnabled={isEditor} onUpload={handleUpload} />
             ) : (
                 <DriveExplorer
                     itemIds={Array.from(itemUids.values())}

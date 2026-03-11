@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
-import { NodeType } from '@proton/drive';
+import { MemberRole, NodeType } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
@@ -40,12 +40,13 @@ export const usePublicActions = () => {
 
     const handlePreview = (uid: string) => {
         const { itemUids, getFolderItem } = usePublicFolderStore.getState();
-        const isLoggedIn = usePublicAuthStore.getState().isLoggedIn;
+        const { isLoggedIn, publicRole } = usePublicAuthStore.getState();
 
         showPreviewModal({
             drive: getPublicLinkClient(),
             nodeUid: uid,
             verifySignatures: isLoggedIn,
+            canOpenDetails: publicRole === MemberRole.Editor,
             previewableNodeUids: Array.from(itemUids).filter((itemUid) => {
                 const item = getFolderItem(itemUid);
                 if (!item) {

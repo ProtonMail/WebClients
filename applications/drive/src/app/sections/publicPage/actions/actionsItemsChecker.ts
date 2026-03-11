@@ -40,9 +40,7 @@ export const createActionsItemChecker = (items: PublicFolderItem[]): PublicItemC
 
     const hasPreviewAvailable = !!firstItem?.mediaType && isPreviewAvailable(firstItem.mediaType, firstItem.size);
 
-    // TODO: Add that back once API is fixed, which means owner of the share will have admin permissions
-    // const role = await getNodeEffectiveRole(folderNode, driveClient);
-    const canEdit = items.length > 0 && publicRole !== MemberRole.Viewer && items.every(getIsOwnedByUser);
+    const canEdit = items.length > 0 && publicRole === MemberRole.Editor && items.every(getIsOwnedByUser);
     const openInDocsInfo = firstItem?.mediaType ? getOpenInDocsInfo(firstItem.mediaType) : undefined;
 
     const scanDisabled = unleashVanillaStore.getState().isEnabled('DriveDownloadScanDisabled');
