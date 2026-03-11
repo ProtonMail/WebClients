@@ -46,18 +46,22 @@ export const useTrashActions = () => {
     }) => {
         return async () => {
             if (successDriveUids.length) {
-                void getBusDriver().emit({
-                    type: BusDriverEventName.TRASHED_NODES,
-                    driveClient: getDrive(),
-                    uids: successDriveUids,
-                });
+                void getBusDriver().emit(
+                    {
+                        type: BusDriverEventName.TRASHED_NODES,
+                        uids: successDriveUids,
+                    },
+                    getDrive()
+                );
             }
             if (successPhotoUids.length) {
-                void getBusDriver().emit({
-                    type: BusDriverEventName.TRASHED_NODES,
-                    driveClient: getDriveForPhotos(),
-                    uids: successPhotoUids,
-                });
+                void getBusDriver().emit(
+                    {
+                        type: BusDriverEventName.TRASHED_NODES,
+                        uids: successPhotoUids,
+                    },
+                    getDriveForPhotos()
+                );
             }
             if (successDriveUids.length) {
                 await Array.fromAsync(drive.trashNodes(successDriveUids));
@@ -110,18 +114,22 @@ export const useTrashActions = () => {
         const driveSuccessItems = successDriveUids.map((uid) => nodesMap.get(uid)).filter(isTruthy);
         const photosSuccessItems = successPhotoUids.map((uid) => nodesMap.get(uid)).filter(isTruthy);
         if (driveSuccessItems.length) {
-            void getBusDriver().emit({
-                type: BusDriverEventName.RESTORED_NODES,
-                driveClient: getDrive(),
-                items: driveSuccessItems.map((t) => ({ ...t, parentUid: t.parentUid || undefined })),
-            });
+            void getBusDriver().emit(
+                {
+                    type: BusDriverEventName.RESTORED_NODES,
+                    items: driveSuccessItems.map((t) => ({ ...t, parentUid: t.parentUid || undefined })),
+                },
+                getDrive()
+            );
         }
         if (photosSuccessItems.length) {
-            void getBusDriver().emit({
-                type: BusDriverEventName.RESTORED_NODES,
-                driveClient: getDriveForPhotos(),
-                items: photosSuccessItems.map((t) => ({ ...t, parentUid: t.parentUid || undefined })),
-            });
+            void getBusDriver().emit(
+                {
+                    type: BusDriverEventName.RESTORED_NODES,
+                    items: photosSuccessItems.map((t) => ({ ...t, parentUid: t.parentUid || undefined })),
+                },
+                getDriveForPhotos()
+            );
         }
 
         const undoRestore = undoFactory({ successDriveUids, successPhotoUids });
@@ -140,18 +148,22 @@ export const useTrashActions = () => {
         const driveUids = selectedNodes.filter((node) => node.type !== NodeType.Photo).map((n) => n.uid);
         const photoUids = selectedNodes.filter((node) => node.type === NodeType.Photo).map((n) => n.uid);
         if (driveUids.length) {
-            void getBusDriver().emit({
-                type: BusDriverEventName.DELETED_NODES,
-                driveClient: getDrive(),
-                uids: driveUids,
-            });
+            void getBusDriver().emit(
+                {
+                    type: BusDriverEventName.DELETED_NODES,
+                    uids: driveUids,
+                },
+                getDrive()
+            );
         }
         if (photoUids.length) {
-            void getBusDriver().emit({
-                type: BusDriverEventName.DELETED_NODES,
-                driveClient: getDriveForPhotos(),
-                uids: photoUids,
-            });
+            void getBusDriver().emit(
+                {
+                    type: BusDriverEventName.DELETED_NODES,
+                    uids: photoUids,
+                },
+                getDriveForPhotos()
+            );
         }
 
         const filesDeleted = await deletePermanently(driveUids, drive);
@@ -193,18 +205,22 @@ export const useTrashActions = () => {
                 await Promise.all([drive.emptyTrash(), photos.emptyTrash()]);
 
                 if (driveUids.length) {
-                    void getBusDriver().emit({
-                        type: BusDriverEventName.DELETED_NODES,
-                        driveClient: getDrive(),
-                        uids: driveUids,
-                    });
+                    void getBusDriver().emit(
+                        {
+                            type: BusDriverEventName.DELETED_NODES,
+                            uids: driveUids,
+                        },
+                        getDrive()
+                    );
                 }
                 if (photoUids.length) {
-                    void getBusDriver().emit({
-                        type: BusDriverEventName.DELETED_NODES,
-                        driveClient: getDriveForPhotos(),
-                        uids: photoUids,
-                    });
+                    void getBusDriver().emit(
+                        {
+                            type: BusDriverEventName.DELETED_NODES,
+                            uids: photoUids,
+                        },
+                        getDriveForPhotos()
+                    );
                 }
                 createEmptyTrashNotificationSuccess();
             } catch (e) {

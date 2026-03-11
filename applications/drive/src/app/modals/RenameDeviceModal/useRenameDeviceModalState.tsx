@@ -64,11 +64,13 @@ export const useRenameDeviceModalState = ({
 
         const successNotificationText = c('Notification').t`Device renamed`;
         const unhandledErrorNotificationText = c('Notification').t`Failed to rename device`;
-        await getBusDriver().emit({
-            type: BusDriverEventName.RENAMED_DEVICES,
-            driveClient: drive,
-            items: [{ deviceUid: deviceUid, newName: inputName }],
-        });
+        await getBusDriver().emit(
+            {
+                type: BusDriverEventName.RENAMED_DEVICES,
+                items: [{ deviceUid: deviceUid, newName: inputName }],
+            },
+            drive
+        );
         await drive
             .renameDevice(deviceUid, inputName)
             .then(async () => {

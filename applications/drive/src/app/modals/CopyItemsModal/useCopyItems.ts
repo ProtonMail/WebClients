@@ -81,11 +81,13 @@ export const useCopyItems = () => {
         }
 
         const copiesList = Object.values(copies);
-        await getBusDriver().emit({
-            type: BusDriverEventName.CREATED_NODES,
-            driveClient: getDrive(),
-            items: copiesList,
-        });
+        await getBusDriver().emit(
+            {
+                type: BusDriverEventName.CREATED_NODES,
+                items: copiesList,
+            },
+            getDrive()
+        );
         const undoHandler = async () => {
             await undoCopy(copiesList);
         };
