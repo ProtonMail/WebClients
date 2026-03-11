@@ -1,7 +1,8 @@
 import { useParticipants } from '@livekit/components-react';
 import { RoomEvent, VideoQuality } from 'livekit-client';
 
-import { useMeetContext } from '../contexts/MeetContext';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectIsScreenShare } from '@proton/meet/store/slices/meetingInfo';
 
 const updateOnlyOn = [
     RoomEvent.Connected,
@@ -17,7 +18,7 @@ export const useParticipantQuality = () => {
         updateOnlyOn,
     });
 
-    const { isScreenShare } = useMeetContext();
+    const isScreenShare = useMeetSelector(selectIsScreenShare);
 
     if (isScreenShare || participants.length > 8) {
         return VideoQuality.LOW;

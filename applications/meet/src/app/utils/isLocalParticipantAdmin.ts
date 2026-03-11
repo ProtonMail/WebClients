@@ -1,6 +1,6 @@
 import type { LocalParticipant } from 'livekit-client';
 
-import type { ParticipantEntity } from '../types';
+import type { ParticipantEntity } from '@proton/meet/types/types';
 
 export const isLocalParticipantAdmin = (
     participantsMap: Record<string, ParticipantEntity>,

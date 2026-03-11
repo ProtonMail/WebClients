@@ -12,21 +12,6 @@ export enum QualityScenarios {
     SmallView = 'SmallView',
 }
 
-export enum ParticipantCapabilityPermission {
-    NotAllowed = 0,
-    Allowed = 1,
-}
-
-export interface ParticipantEntity {
-    ParticipantUUID: string;
-    DisplayName: string;
-    CanSubscribe?: ParticipantCapabilityPermission;
-    CanPublish?: ParticipantCapabilityPermission;
-    CanPublishData?: ParticipantCapabilityPermission;
-    IsAdmin?: ParticipantCapabilityPermission;
-    IsHost?: ParticipantCapabilityPermission;
-}
-
 export interface MeetingDetails {
     meetingId: string;
     meetingName: string;
@@ -36,10 +21,6 @@ export interface MeetingDetails {
     duration: string;
 }
 
-export type MLSGroupState = {
-    displayCode: string | null;
-    epoch: bigint;
-};
 export type SwitchActiveDevice = (params: {
     deviceType: 'audioinput' | 'audiooutput' | 'videoinput';
     deviceId: string;
@@ -53,13 +34,6 @@ export interface DeviceState {
     useSystemDefault: boolean;
     preferredAvailable: boolean;
     preferredDevice: MediaDeviceInfo | null;
-}
-
-export interface KeyRotationLog {
-    timestamp: number;
-    epoch: number;
-    type: 'log' | 'error';
-    message: string;
 }
 
 export enum RecordingStatus {

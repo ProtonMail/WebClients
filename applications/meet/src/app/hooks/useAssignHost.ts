@@ -3,9 +3,10 @@ import { c } from 'ttag';
 import { useApi, useNotifications } from '@proton/components';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { MeetingSideBars, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
+import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
 import { updateParticipantPermissions } from '@proton/shared/lib/api/meet';
 
-import { ParticipantCapabilityPermission } from '../types';
+import { useStableCallback } from './useStableCallback';
 
 export const useAssignHost = (accessToken: string, meetingLinkName: string) => {
     const dispatch = useMeetDispatch();
@@ -13,7 +14,7 @@ export const useAssignHost = (accessToken: string, meetingLinkName: string) => {
 
     const notifications = useNotifications();
 
-    const assignHost = async (participantUuid: string) => {
+    const assignHost = useStableCallback(async (participantUuid: string) => {
         try {
             await api(
                 updateParticipantPermissions(meetingLinkName, participantUuid, {
@@ -36,7 +37,7 @@ export const useAssignHost = (accessToken: string, meetingLinkName: string) => {
                 text: c('Error').t`Failed to assign host`,
             });
         }
-    };
+    });
 
     return assignHost;
 };

@@ -10,6 +10,7 @@ import { isMobile, isSafari, isWindows } from '@proton/shared/lib/helpers/browse
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
 import { screenShareQuality } from '../qualityConstants';
+import { useStableCallback } from './useStableCallback';
 
 export function useCurrentScreenShare({
     stopPiP,
@@ -32,12 +33,12 @@ export function useCurrentScreenShare({
 
     const room = useRoomContext();
 
-    const stopScreenShare = () => {
+    const stopScreenShare = useStableCallback(() => {
         stopPiP();
         void room.localParticipant.setScreenShareEnabled(false);
-    };
+    });
 
-    const startScreenShare = async () => {
+    const startScreenShare = useStableCallback(async () => {
         try {
             const isOnMobile = isMobile();
 
@@ -103,7 +104,7 @@ export function useCurrentScreenShare({
                 });
             }
         }
-    };
+    });
 
     useEffect(() => {
         if (screenShareTrack?.publication?.track) {

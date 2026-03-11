@@ -6,6 +6,7 @@ import Popper from '@proton/components/components/popper/Popper';
 import usePopper from '@proton/components/components/popper/usePopper';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectMeetingLink } from '@proton/meet/store/slices/meetingInfo';
 import {
     selectMeetingReadyPopupOpen,
     selectSideBarState,
@@ -13,7 +14,6 @@ import {
 } from '@proton/meet/store/slices/uiStateSlice';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
-import { useMeetContext } from '../../contexts/MeetContext';
 import { MeetingSideBars } from '../../types';
 import { MeetingReadyPopup } from '../MeetingReadyPopup/MeetingReadyPopup';
 
@@ -21,7 +21,7 @@ export const InfoButton = () => {
     const dispatch = useMeetDispatch();
     const sideBarState = useMeetSelector(selectSideBarState);
     const meetingReadyPopupOpen = useMeetSelector(selectMeetingReadyPopupOpen);
-    const { meetingLink } = useMeetContext();
+    const meetingLink = useMeetSelector(selectMeetingLink);
     const anchorRef = useRef<HTMLButtonElement>(null);
 
     const { floating, position } = usePopper({
