@@ -1706,6 +1706,33 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Activate reserved address": [
+        "Aktivovať rezervovanú adresu"
+      ],
+      "Activate this address": [
+        "Aktivovať túto adresu"
+      ],
+      "Close search": [
+        "Zavrieť vyhľadávanie"
+      ],
+      "Donate": [
+        "Darovať"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Získajte vlastnú ${ MAIL_APP_NAME } adresu"
+      ],
+      "Reload page": [
+        "Znova načítať stránku"
+      ],
+      "Search groups": [
+        "Hľadať skupiny"
+      ],
+      "Send verification code": [
+        "Odoslať overovací kód"
+      ],
+      "Try payment again": [
+        "Skúsiť zaplatiť znova"
       ]
     },
     "action": {
@@ -2872,6 +2899,27 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Musíte udeliť povolenie pre ${ BRAND_NAME } na kopírovanie vašich údajov. Po udelení povolení sa vráťte sem a pokračujte."
+      ],
+      "Completed": [
+        "Dokončené"
+      ],
+      "Has errors": [
+        "Má chyby"
+      ],
+      "In progress": [
+        "Prebieha"
+      ],
+      "Not started": [
+        "Nezačaté"
+      ],
+      "Settings": [
+        "Nastavenia"
+      ],
+      "Status": [
+        "Stav"
+      ],
+      "Users migrated": [
+        "Používatelia zmigrovaní"
       ]
     },
     "breadcrumb": {
@@ -7118,6 +7166,18 @@
       ],
       "ZIP code is required": [
         "PSČ je povinné"
+      ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Aktivácia zlyhala. Údaje môžu byť nesprávne alebo je emailová adresa už aktívna. Skontrolujte svoje údaje alebo sa prihláste, prosím."
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Aktivácia vašej adresy zlyhala. Skúste to znovu, prosím."
+      ],
+      "Invalid coupon": [
+        "Neplatná poukážka"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimálna výška daru je ${ price }"
       ]
     },
     "error": {
@@ -12542,6 +12602,63 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Na vytvorenie skupín je potrebná vlastná doména. Ak nemáte nastavenú vlastnú doménu, urobte tak najprv v časti ${ linkToDomainPage }."
+      ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Zadajte emailovú adresu použitú na rezerváciu ${ reservedEmail }."
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Zadajte rezervovanú emailovú adresu a emailovú adresu použitú pri rezervácii."
+      ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Pomôžte iným rodinám poskytnúť ich deťom bezpečný štart na internete. Zdieľajte tento míľnik a šírte informácie ďalej."
+      ],
+      "How it works": [
+        "Ako to funguje"
+      ],
+      "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
+        "Ak je táto funkcia vypnutá, členovia organizácie nebudú môcť vytvárať nové aliasy. Existujúce aliasy zostanú aktívne."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Ak bola zadaná emailová adresa použitá na rezerváciu emailovej adresy dieťaťa, zašleme aktivačný kód znovu."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Uložte si poukaz na bezpečnom mieste, napríklad v ${ DRIVE_APP_NAME }, kým ho nebudete potrebovať."
+      ],
+      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
+        "Otvorte nastavenia rozšírenia prehliadača a povoľte rozšíreniu ${ PASS_APP_NAME } prístup k údajom webovej stránky. Potom znovu načítajte túto stránku."
+      ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Rezervačný poukaz dostanete emailom. Vy alebo vaše dieťa ho môžete použiť na aktiváciu adresy v priebehu nasledujúcich 15 rokov. ${ learnMoreLink }"
+      ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Niečo sa pokazilo. Skúste to znovu alebo kontaktujte zákaznícku podporu, prosím."
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Krok ${ step }/${ totalSteps }"
+      ],
+      "Step 1 of 2": [
+        "Krok 1 z 2"
+      ],
+      "Step 2 of 2": [
+        "Krok 2 z 2"
+      ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Aby sme zabránili zneužívaniu alebo podvodom, žiadame o malý príspevok vo výške najmenej ${ minimumDonation }. Tým podporíte prácu organizácie ${ protonFoundationLink } v oblasti ochrany digitálneho súkromia na celom svete a pomôžete chrániť budúcu generáciu."
+      ],
+      "Verifying ${ PASS_APP_NAME } browser extension...": [
+        "Overovanie rozšírenia prehliadača ${ PASS_APP_NAME }..."
+      ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Transakciu sa nepodarilo dokončiť. Skúste to znova, prosím."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Keď budete chcieť aktivovať adresu, naskenujte QR kód alebo použite odkaz uvedený na poukážke."
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Váš poukaz na rezervovanú emailovú adresu ${ BRAND_NAME }: ${ reservedEmail }"
       ]
     },
     "info": {
@@ -14551,6 +14668,45 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Activation code": [
+        "Aktivačný kód"
+      ],
+      "Allow alias creation": [
+        "Povoliť vytváranie aliasov"
+      ],
+      "Choose an address to reserve for your child": [
+        "Vyberte adresu, ktorú chcete rezervovať pre svoje dieťa"
+      ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Darujte 1$ alebo viac nadácii ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Výška daru"
+      ],
+      "Enter your email address": [
+        "Zadajte vašu emailovú adresu"
+      ],
+      "Reserved address": [
+        "Rezervovaná adresa"
+      ],
+      "Reserved email address": [
+        "Rezervovaná emailová adresa"
+      ],
+      "Set password": [
+        "Nastavte heslo"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Na aktiváciu naskenujte QR kód alebo prejdite na:"
+      ],
+      "Your activation code:": [
+        "Váš aktivačný kód:"
+      ],
+      "Your email address": [
+        "Vaša emailová adresa"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Váš poukaz na rezervovanú emailovú adresu ${ BRAND_NAME }:"
       ]
     },
     "label": {
@@ -14940,6 +15096,12 @@
       ],
       "What’s this?": [
         "Čo je to?"
+      ],
+      "${ BRAND_NAME } Foundation's": [
+        "nadácie ${ BRAND_NAME }"
+      ],
+      "Can't find your code?": [
+        "Neviete nájsť váš kód?"
       ]
     },
     "Link (Scribe)": {
@@ -15466,6 +15628,18 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Prihláste sa do svojho účtu ${ BRAND_NAME } a získajte prístup ku všetkým šifrovaným službám ${ BRAND_NAME }, ako sú ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ďalšie. Nemáte účet? Vytvorte si ho ZADARMO."
+      ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Aktivujte súkromnú emailovú ${ BRAND_NAME } adresu vyhradenú pre vaše dieťa a nastavte jeho účet."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Aktivujte ${ BRAND_NAME } účet vášho dieťaťa | ${ BRAND_NAME }"
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "Obnovte prístup k súkromnej emailovej adrese ${ BRAND_NAME } vyhradenej pre vaše dieťa."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Obnovte ${ BRAND_NAME } účet vášho dieťaťa | ${ BRAND_NAME }"
       ]
     },
     "Modal title": {
@@ -18768,6 +18942,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Amount": [
+        "Čiastka"
       ]
     },
     "placeholder": {
@@ -22546,6 +22723,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Ak ste zadali platné telefónne číslo na obnovenie, dostanete do minúty svoje používateľské meno prostredníctvom SMS."
+      ],
+      "Verification code sent to ${ parentEmail }": [
+        "Overovací kód bol odoslaný na ${ parentEmail }"
+      ],
+      "Your address has been activated": [
+        "Vaša adresa bola aktivovaná"
       ]
     },
     "Success message": {
@@ -24501,6 +24684,15 @@
       ],
       "Your subscriptions": [
         "Vaše predplatné"
+      ],
+      "${ PASS_APP_NAME } is missing permissions": [
+        "Aplikácii ${ PASS_APP_NAME } chýbajú povolenia"
+      ],
+      "Problem processing your payment": [
+        "Problém so spracovaním vašej platby"
+      ],
+      "Problem processing your request": [
+        "Problém so spracovaním vašej žiadosti"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25720,6 +25912,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše skúšobné obdobie skončí dňa ${ textDate }. Ak ho zrušíte pred ${ textDate }, nebudú vám účtované žiadne poplatky. ${ action }"
+      ],
+      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
+        "Prihlásenie sa nepodarilo. Otvorte rozšírenie prehliadača ${ PASS_APP_NAME } a prihláste sa odtiaľ."
+      ],
+      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
+        "Prihlásenie sa nepodarilo. Otvorte rozšírenie prehliadača ${ PASS_APP_NAME } a prihláste sa odtiaľ."
       ]
     },
     "Warning for domain modal": {
@@ -26035,6 +26233,61 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročne, ${ untilString }"
+      ]
+    },
+    "Form heading": {
+      "Enter your email address": [
+        "Zadajte vašu emailovú adresu"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Poukaz bude zaslaný sem."
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Jednoduchý krok dnes, aby ste zaistili digitálnu bezpečnosť svojho dieťaťa zajtra"
+      ],
+      "Activate your reserved email address": [
+        "Aktivujte si rezervovanú emailovú adresu"
+      ],
+      "Address reservation voucher": [
+        "Poukaz rezervovanej adresy"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Prispejte nadácii ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Zadajte overovací kód"
+      ],
+      "Recover activation voucher": [
+        "Aktivačný obnovovací poukaz"
+      ],
+      "Reserve child's email address": [
+        "Rezervovať emailovú adresu dieťaťa"
+      ],
+      "We emailed you the voucher": [
+        "Poslali sme vám poukaz emailom."
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Zadajte overovací kód, ktorý bol odoslaný na adresu ${ parentEmail }."
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Email"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     }
   }
