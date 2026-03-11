@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
@@ -109,6 +109,12 @@ const SMTPSubmissionSection = () => {
         const { SmtpTokens } = await api(getTokens());
         setTokens(SmtpTokens);
     };
+
+    useEffect(() => {
+        if (isSMPTEligible) {
+            void withLoadingTokens(fetchTokens());
+        }
+    }, [isSMPTEligible]);
 
     if (loadingOrganization) {
         return (
