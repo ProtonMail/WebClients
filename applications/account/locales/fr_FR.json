@@ -1703,6 +1703,30 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Activate reserved address": [
+        "Activer l'adresse réservée"
+      ],
+      "Activate this address": [
+        "Activer cette adresse"
+      ],
+      "Close search": [
+        "Fermer la recherche"
+      ],
+      "Donate": [
+        "Faire un don"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Obtenez votre propre adresse ${ MAIL_APP_NAME }"
+      ],
+      "Search groups": [
+        "Rechercher des groupes"
+      ],
+      "Send verification code": [
+        "Envoyer un code de vérification"
+      ],
+      "Try payment again": [
+        "Essayer à nouveau le paiement"
       ]
     },
     "action": {
@@ -7037,6 +7061,18 @@
       ],
       "ZIP code is required": [
         "Le code postal est nécessaire."
+      ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "L'activation n'a pas abouti. Les informations peuvent être incorrectes ou l'e-mail est déjà actif. Veuillez vérifier votre saisie ou vous connecter."
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Impossible d'activer votre adresse. Veuillez réessayer."
+      ],
+      "Invalid coupon": [
+        "Le code cadeau n'est pas valide."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Le montant minimum du don est de ${ price }."
       ]
     },
     "error": {
@@ -12281,6 +12317,48 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Un domaine personnalisé est requis pour créer des groupes. Si vous n'avez pas configuré de domaine personnalisé, faites-le d'abord sous ${ linkToDomainPage }."
+      ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Saisissez l'adresse e-mail utilisée pour réserver ${ reservedEmail }."
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Saisissez l'adresse e-mail réservée et l'adresse e-mail utilisée lors de la réservation."
+      ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Aidez d'autres familles à offrir à leurs enfants un démarrage en toute sécurité sur Internet. Partagez cette réussite et faites passer le mot."
+      ],
+      "How it works": [
+        "Comment ça marche"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Si l'adresse e-mail que vous avez saisie a été utilisée pour réserver l'adresse e-mail d'un enfant, nous renverrons le bon d'activation."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Conservez le bon de réduction en lieu sûr jusqu'à ce que vous en ayez besoin, par exemple dans ${ DRIVE_APP_NAME }."
+      ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Recevez le bon de réservation par e-mail. Vous ou l'enfant pouvez l'utiliser pour activer l'adresse dans les 15 prochaines années. ${ learnMoreLink }"
+      ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Quelque chose n'a pas fonctionné. Veuillez réessayer ou contacter le service clients."
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Étape ${ step }/${ totalSteps }"
+      ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Pour prévenir les abus ou la fraude, nous demandons un don minimum de ${ minimumDonation }. Ceci soutient le travail de la ${ protonFoundationLink } pour défendre la confidentialité numérique à l'échelle mondiale et aide à protéger la génération future."
+      ],
+      "We couldn't complete the transaction. Please try again.": [
+        "La transaction n'a pas pu être complétée. Veuillez réessayer."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Lorsque vous êtes prêt à activer l'adresse, scannez le QR code ou utilisez le lien dans le bon."
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Votre bon pour votre adresse e-mail réservée ${ BRAND_NAME } : ${ reservedEmail }"
       ]
     },
     "info": {
@@ -14277,6 +14355,42 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Activation code": [
+        "Code d'activation"
+      ],
+      "Choose an address to reserve for your child": [
+        "Choisissez une adresse à réserver pour votre enfant"
+      ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Faites un don d'au moins 1 $ à la Fondation ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Montant du don"
+      ],
+      "Enter your email address": [
+        "Saisissez votre adresse e-mail"
+      ],
+      "Reserved address": [
+        "Adresse réservée"
+      ],
+      "Reserved email address": [
+        "Adresse e-mail réservée"
+      ],
+      "Set password": [
+        "Définir le mot de passe"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Pour activer, scannez le QR code ou allez à :"
+      ],
+      "Your activation code:": [
+        "Votre code d'activation :"
+      ],
+      "Your email address": [
+        "Votre adresse e-mail"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Votre bon pour votre adresse e-mail réservée ${ BRAND_NAME } :"
       ]
     },
     "label": {
@@ -14661,6 +14775,12 @@
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
+      ],
+      "${ BRAND_NAME } Foundation's": [
+        "Fondation ${ BRAND_NAME }"
+      ],
+      "Can't find your code?": [
+        "Vous ne trouvez pas votre code ?"
       ]
     },
     "Link (Scribe)": {
@@ -15144,6 +15264,18 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Connectez-vous à votre compte ${ BRAND_NAME } pour accéder à tous les services chiffrés de ${ BRAND_NAME } comme ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et d'autres encore. Vous n'avez pas de compte ? Créez un compte GRATUITEMENT."
+      ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Activez l'adresse e-mail privée ${ BRAND_NAME } réservée à votre enfant et configurez son compte."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Activez le compte ${ BRAND_NAME } de votre enfant | ${ BRAND_NAME }"
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "Récupérez l'accès à l'adresse e-mail privée ${ BRAND_NAME } réservée à votre enfant."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Récupérez le compte ${ BRAND_NAME } de votre enfant | ${ BRAND_NAME }"
       ]
     },
     "Modal title": {
@@ -18348,6 +18480,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Amount": [
+        "Montant"
       ]
     },
     "placeholder": {
@@ -22056,6 +22191,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Vous recevrez votre nom d’utilisateur par SMS dans une minute si vous avez saisi un numéro de téléphone récupération valide."
+      ],
+      "Verification code sent to ${ parentEmail }": [
+        "Le code de vérification a été envoyé à ${ parentEmail }."
+      ],
+      "Your address has been activated": [
+        "Votre adresse a été activée"
       ]
     },
     "Success message": {
@@ -23978,6 +24119,12 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Problem processing your payment": [
+        "Un problème est survenu pendant le traitement de votre paiement."
+      ],
+      "Problem processing your request": [
+        "Un problème est survenu pendant le traitement de votre demande."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25428,6 +25575,61 @@
       ],
       "Yearly, ${ untilString }": [
         "Chaque année, ${ untilString }"
+      ]
+    },
+    "Form heading": {
+      "Enter your email address": [
+        "Saisissez votre adresse e-mail"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Le bon sera envoyé ici."
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Une simple démarche aujourd'hui pour assurer la sécurité numérique de votre enfant demain"
+      ],
+      "Activate your reserved email address": [
+        "Activer votre adresse e-mail réservée"
+      ],
+      "Address reservation voucher": [
+        "Bon de réservation d'adresse"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Faites un don à la Fondation ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Saisissez le code de vérification"
+      ],
+      "Recover activation voucher": [
+        "Récupérer le bon d'activation"
+      ],
+      "Reserve child's email address": [
+        "Réserver l'adresse e-mail de l'enfant"
+      ],
+      "We emailed you the voucher": [
+        "Nous vous avons envoyé le bon par e-mail"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Saisissez le code de vérification qui a été envoyé à ${ parentEmail } ."
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "E-mail"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     }
   }

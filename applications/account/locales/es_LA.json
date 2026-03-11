@@ -1709,6 +1709,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Close search": [
+        "Cerrar búsqueda"
+      ],
+      "Search groups": [
+        "Buscar grupos"
       ]
     },
     "action": {
@@ -7052,6 +7058,9 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Invalid coupon": [
+        "Cupón invalido"
       ]
     },
     "error": {
@@ -12314,6 +12323,9 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Se necesita un dominio personalizado para crear grupos. Si no ha configurado ninguno, hágalo primero en ${ linkToDomainPage }."
       ]
     },
     "info": {

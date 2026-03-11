@@ -1709,6 +1709,30 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Activate reserved address": [
+        "Ενεργοποίηση δεσμευμένης διεύθυνσης"
+      ],
+      "Activate this address": [
+        "Ενεργοποιήστε αυτή τη διεύθυνση"
+      ],
+      "Close search": [
+        "Κλείσιμο αναζήτησης"
+      ],
+      "Donate": [
+        "Δωρεές"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Αποκτήστε τη δική σας διεύθυνση ${ MAIL_APP_NAME }"
+      ],
+      "Search groups": [
+        "Αναζήτηση ομάδων"
+      ],
+      "Send verification code": [
+        "Αποστολή Κωδικού Επαλήθευσης"
+      ],
+      "Try payment again": [
+        "Δοκιμάστε ξανά την πληρωμή"
       ]
     },
     "action": {
@@ -7052,6 +7076,18 @@
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
+      ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Η ενεργοποίηση απέτυχε. Οι λεπτομέρειες ενδέχεται να είναι λανθασμένες ή το email είναι ήδη ενεργό. Παρακαλούμε ελέγξτε την εισαγωγή σας ή συνδεθείτε."
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Αποτυχία ενεργοποίησης της διεύθυνσής σας. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Invalid coupon": [
+        "Μη έγκυρο κουπόνι"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Το ελάχιστο ποσό δωρεάς είναι ${ price }"
       ]
     },
     "error": {
@@ -12311,6 +12347,48 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Απαιτείται προσαρμοσμένος τομέας για τη δημιουργία ομάδων. Εάν δεν έχετε ρυθμίσει έναν προσαρμοσμένο τομέα, κάντε το πρώτα στο ${ linkToDomainPage }."
+      ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Εισαγάγετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου που χρησιμοποιήθηκε για τη δέσμευση του ${ reservedEmail }."
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Εισαγάγετε τη δεσμευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου και τη διεύθυνση ηλεκτρονικού ταχυδρομείου που χρησιμοποιήθηκε κατά την δέσμευση."
+      ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Βοηθήστε άλλες οικογένειες να προσφέρουν στα παιδιά τους μια ασφαλή αρχή στο διαδίκτυο. Μοιραστείτε αυτό το ορόσημο και διαδώστε το μήνυμα."
+      ],
+      "How it works": [
+        "Πώς λειτουργεί"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Αν το email που καταχωρήσατε χρησιμοποιήθηκε για να δεσμεύσετε τη διεύθυνση email ενός παιδιού, θα στείλουμε ξανά το κουπόνι ενεργοποίησης."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Κρατήστε το κουπόνι ασφαλές μέχρι να χρειαστεί, για παράδειγμα στο ${ DRIVE_APP_NAME }."
+      ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Λάβετε το κουπόνι δέσμευσης μέσω email. Εσείς ή το παιδί μπορείτε να το χρησιμοποιήσετε για να ενεργοποιήσετε τη διεύθυνση μέσα στα επόμενα 15 χρόνια. ${ learnMoreLink }"
+      ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε ξανά ή επικοινωνήστε με την υποστήριξη πελατών."
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Βήμα ${ step }/${ totalSteps }"
+      ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Για να αποτραπεί η κατάχρηση ή η απάτη, ζητάμε μια ελάχιστη δωρεά ${ minimumDonation }. Αυτό στηρίζει το έργο της ${ protonFoundationLink } στην υπεράσπιση της ψηφιακής ιδιωτικότητας παγκοσμίως και βοηθά στην προστασία της επόμενης γενιάς."
+      ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Δεν μπορέσαμε να ολοκληρώσουμε τη συναλλαγή. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Όταν είστε έτοιμοι να ενεργοποιήσετε τη διεύθυνση, σαρώστε τον κωδικό QR ή χρησιμοποιήστε τον σύνδεσμο στο κουπόνι."
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Το κουπόνι σας για τη δεσμευμένη διεύθυνση email ${ BRAND_NAME }: ${ reservedEmail }"
       ]
     },
     "info": {
@@ -14307,6 +14385,42 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Activation code": [
+        "Κωδικός ενεργοποίησης"
+      ],
+      "Choose an address to reserve for your child": [
+        "Επιλέξτε μια διεύθυνση για να δεσμεύσετε για το παιδί σας"
+      ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Δωρίστε 1$ ή περισσότερα στο Ίδρυμα ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Ποσό δωρεάς"
+      ],
+      "Enter your email address": [
+        "Εισάγετε τη διεύθυνση του ηλεκτρονικού ταχυδρομείου σας"
+      ],
+      "Reserved address": [
+        "Δεσμευμένη διεύθυνση"
+      ],
+      "Reserved email address": [
+        "Δεσμευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Set password": [
+        "Ορισμός κωδικού"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Για να ενεργοποιήσετε, σαρώστε τον κωδικό QR ή μεταβείτε στο:"
+      ],
+      "Your activation code:": [
+        "Ο κωδικός ενεργοποίησης σας:"
+      ],
+      "Your email address": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου σας"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Το κουπόνι σας για τη δεσμευμένη διεύθυνση email ${ BRAND_NAME }:"
       ]
     },
     "label": {
@@ -14694,6 +14808,12 @@
       ],
       "What’s this?": [
         "Τι είναι αυτό;"
+      ],
+      "${ BRAND_NAME } Foundation's": [
+        "του ${ BRAND_NAME } Ιδρύματος"
+      ],
+      "Can't find your code?": [
+        "Δεν μπορείτε να βρείτε τον κωδικό σας;"
       ]
     },
     "Link (Scribe)": {
@@ -15198,6 +15318,18 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Συνδεθείτε στον λογαριασμό σας ${ BRAND_NAME } για να αποκτήσετε πρόσβαση σε όλες τις κρυπτογραφημένες υπηρεσίες του ${ BRAND_NAME }, όπως ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } και περισσότερα. Δεν έχετε λογαριασμό; Δημιουργήστε ένα ΔΩΡΕΑΝ."
+      ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Ενεργοποιήστε την ιδιωτική διεύθυνση ηλεκτρονικού ταχυδρομείου ${ BRAND_NAME } που είναι δεσμευμένη για το παιδί σας και ρυθμίστε τον λογαριασμό του."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Ενεργοποιήστε τον λογαριασμό ${ BRAND_NAME } του παιδιού σας | ${ BRAND_NAME }"
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "Ανακτήστε την πρόσβαση στη διεύθυνση ηλεκτρονικού ταχυδρομείου ${ BRAND_NAME } που έχει δεσμευτεί για το παιδί σας."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Ανάκτηση του λογαριασμού ${ BRAND_NAME } του παιδιού σας | ${ BRAND_NAME }"
       ]
     },
     "Modal title": {
@@ -18406,6 +18538,9 @@
       ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
+      ],
+      "Amount": [
+        "Ποσό"
       ]
     },
     "placeholder": {
@@ -22038,6 +22173,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Θα λάβετε το όνομα χρήστη σας μέσω SMS μέσα σε ένα λεπτό εάν εισαγάγατε έναν έγκυρο αριθμό τηλεφώνου ανάκτησης."
+      ],
+      "Verification code sent to ${ parentEmail }": [
+        "Στάλθηκε κωδικός επαλήθευσης στο ${ parentEmail }"
+      ],
+      "Your address has been activated": [
+        "Η διεύθυνσή σας έχει ενεργοποιηθεί"
       ]
     },
     "Success message": {
@@ -23960,6 +24101,12 @@
       ],
       "Your subscriptions": [
         "Οι συνδρομές σας"
+      ],
+      "Problem processing your payment": [
+        "Πρόβλημα κατά την επεξεργασία της πληρωμής σας"
+      ],
+      "Problem processing your request": [
+        "Πρόβλημα κατά την επεξεργασία του αιτήματός σας"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25410,6 +25557,61 @@
       ],
       "Yearly, ${ untilString }": [
         "Ετησίως, ${ untilString }"
+      ]
+    },
+    "Form heading": {
+      "Enter your email address": [
+        "Εισάγετε τη διεύθυνση του ηλεκτρονικού ταχυδρομείου σας"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Το κουπόνι θα σταλεί εδώ."
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Ένα απλό βήμα σήμερα για να διασφαλίσετε την ψηφιακή ασφάλεια του παιδιού σας αύριο"
+      ],
+      "Activate your reserved email address": [
+        "Ενεργοποιήστε τη δεσμευμένη διεύθυνση email σας"
+      ],
+      "Address reservation voucher": [
+        "Κουπόνι δέσμευσης διεύθυνσης"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Δωρίστε στο Ίδρυμα ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Εισάγετε τον κωδικό επαλήθευσης."
+      ],
+      "Recover activation voucher": [
+        "Ανάκτηση κουπονιού ενεργοποίησης"
+      ],
+      "Reserve child's email address": [
+        "Δέσμευση διεύθυνσης email παιδιού"
+      ],
+      "We emailed you the voucher": [
+        "Σας στείλαμε το κουπόνι μέσω μηνύματος ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Εισάγετε τον κωδικό επαλήθευσης που εστάλη στο ${ parentEmail }."
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Email"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     }
   }

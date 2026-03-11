@@ -1709,6 +1709,30 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Activate reserved address": [
+        "Aktivera reserverad adress"
+      ],
+      "Activate this address": [
+        "Aktivera denna adress"
+      ],
+      "Close search": [
+        "Stäng sök"
+      ],
+      "Donate": [
+        "Donera"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Skaffa din egen ${ MAIL_APP_NAME }-adress"
+      ],
+      "Search groups": [
+        "Sök grupper"
+      ],
+      "Send verification code": [
+        "Skicka verifieringskod"
+      ],
+      "Try payment again": [
+        "Försök betalning igen"
       ]
     },
     "action": {
@@ -6982,6 +7006,18 @@
       ],
       "ZIP code is required": [
         "Postnummer är obligatoriskt"
+      ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Aktivering misslyckades. Detaljerna kan vara felaktiga eller så är e-posten redan aktiv. Kontrollera din inmatning eller logga in."
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Misslyckades att aktivera din adress. Försök igen."
+      ],
+      "Invalid coupon": [
+        "Ogiltig rabattkod"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minsta donationsbelopp är ${ price }"
       ]
     },
     "error": {
@@ -12185,6 +12221,51 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "En anpassad domän är obligatoriskt för att skapa grupper. Om du inte har ställt in en anpassad domän, gör det först under ${ linkToDomainPage }."
+      ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Ange e-postadressen som användes för att reservera ${ reservedEmail }."
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Ange den reserverade e-postadressen och den e-postadress som användes vid reservationen."
+      ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Hjälp andra familjer att ge sina barn en trygg start online. Dela denna milstolpe och sprid budskapet."
+      ],
+      "How it works": [
+        "Hur det fungerar"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Om e-postadressen du angav användes för att reservera ett barns e-postadress skickar vi aktiveringskupongen igen."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Förvara kupongen säkert tills den behövs, till exempel i ${ DRIVE_APP_NAME }."
+      ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Något gick fel. Försök igen eller kontakta kundsupport."
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Steg ${ step }/${ totalSteps }"
+      ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "För att förhindra missbruk eller bedrägerier ber vi om en donation på minst ${ minimumDonation }. Detta stöder ${ protonFoundationLink } arbete med att försvara digital integritet globalt och hjälper till att skydda nästa generation."
+      ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Vi kunde inte slutföra transaktionen. Försök igen."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "När du är redo att aktivera adressen, skanna QR-koden eller använd länken i kupongen."
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "Du får kreditbelöningen 1 månad efter att din väns provperiod har avslutats."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "Du får kreditbelöningen 2 månader efter att din väns provperiod avslutades."
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Din kupong för din reserverade e-postadress för ${ BRAND_NAME }: ${ reservedEmail }"
       ]
     },
     "info": {
@@ -14172,6 +14253,42 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Activation code": [
+        "Aktiveringskod"
+      ],
+      "Choose an address to reserve for your child": [
+        "Välj en adress att reservera för ditt barn"
+      ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Donera $1 eller mer till stiftelsen ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Donationsbelopp"
+      ],
+      "Enter your email address": [
+        "Ange din e-postadress"
+      ],
+      "Reserved address": [
+        "Reserverad adress"
+      ],
+      "Reserved email address": [
+        "Reserverad e-postadress"
+      ],
+      "Set password": [
+        "Ställ in lösenord"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "För att aktivera, skanna QR-koden eller gå till:"
+      ],
+      "Your activation code:": [
+        "Din aktiveringskod:"
+      ],
+      "Your email address": [
+        "Din e-postadress"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Din kupong för din reserverade e-postadress för ${ BRAND_NAME }:"
       ]
     },
     "label": {
@@ -14559,6 +14676,12 @@
       ],
       "What’s this?": [
         "Vad är detta?"
+      ],
+      "${ BRAND_NAME } Foundation's": [
+        "Stiftelsen ${ BRAND_NAME }"
+      ],
+      "Can't find your code?": [
+        "Kan du inte hitta din kod?"
       ]
     },
     "Link (Scribe)": {
@@ -15052,6 +15175,18 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Logga in på ditt ${ BRAND_NAME }-konto för att komma åt alla krypterade ${ BRAND_NAME }-tjänster som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och mer. Har du inget konto? Skapa ett GRATIS."
+      ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Aktivera den privata e-postadressen ${ BRAND_NAME } som är reserverad för ditt barn och ställ in deras konto."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Aktivera ditt barns ${ BRAND_NAME }-konto | ${ BRAND_NAME }"
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "Återställ åtkomsten till den privata e-postadressen ${ BRAND_NAME } som är reserverad för ditt barn."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Återställ ditt barns ${ BRAND_NAME }-konto | ${ BRAND_NAME }"
       ]
     },
     "Modal title": {
@@ -18260,6 +18395,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Amount": [
+        "Belopp"
       ]
     },
     "placeholder": {
@@ -21948,6 +22086,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Du kommer få ditt användarnamn via SMS inom en minut om du har angett ett giltigt telefonnummer för återställning."
+      ],
+      "Verification code sent to ${ parentEmail }": [
+        "Verifieringskod skickat till ${ parentEmail }"
+      ],
+      "Your address has been activated": [
+        "Din adress har aktiverats"
       ]
     },
     "Success message": {
@@ -23876,6 +24020,15 @@
       ],
       "Your subscriptions": [
         "Din prenumeration"
+      ],
+      "${ PASS_APP_NAME } is missing permissions": [
+        "${ PASS_APP_NAME } saknar behörigheter"
+      ],
+      "Problem processing your payment": [
+        "Problem att hantera din betalning"
+      ],
+      "Problem processing your request": [
+        "Problem att behandla din begäran"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24558,6 +24711,9 @@
       ],
       "You can protect up to ${ FAMILY_MAX_USERS } people with ${ PLAN_NAMES[plan] }. Starting from just ${ priceString }/month per account.": [
         "Du kan skydda upp till ${ FAMILY_MAX_USERS } personer med ${ PLAN_NAMES[plan] }. Från bara ${ priceString }/månad per konto."
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Allt du behöver för att samarbeta säkert i en enda prenumeration. Få åtkomst till ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ LUMO_SHORT_APP_NAME } AI-assistent."
       ]
     },
     "upsell panel": {
@@ -25302,6 +25458,58 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligen, ${ untilString }"
+      ]
+    },
+    "Form heading": {
+      "Enter your email address": [
+        "Ange din e-postadress"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Kupongen kommer skickas hit."
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Ett enkelt steg idag för att säkerställa ditt barns digitala säkerhet imorgon"
+      ],
+      "Activate your reserved email address": [
+        "Aktivera din reserverade e-postadress"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Donera till stiftelsen ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Ange verifieringskod"
+      ],
+      "Recover activation voucher": [
+        "Återställer aktiveringskupong"
+      ],
+      "Reserve child's email address": [
+        "Reservera barnets e-postadress"
+      ],
+      "We emailed you the voucher": [
+        "Vi skickade kupongen till dig via e-post"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Ange verifieringskoden som skickades till ${ parentEmail }."
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "E-post"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     }
   }

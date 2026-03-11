@@ -1483,6 +1483,33 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Activate reserved address": [
+        "Aktiviraj rezerviran naslov"
+      ],
+      "Activate this address": [
+        "Aktiviraj ta naslov"
+      ],
+      "Close search": [
+        "Zapri iskanje"
+      ],
+      "Donate": [
+        "Doniraj"
+      ],
+      "Export key before deleting": [
+        "Pred brisanjem izvozi ključ"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Pridobite svoj naslov ${ MAIL_APP_NAME }"
+      ],
+      "Search groups": [
+        "Išči med skupinami"
+      ],
+      "Send verification code": [
+        "Pošlji kodo za preverjanje"
+      ],
+      "Try payment again": [
+        "Poskusi ponovno plačati"
       ]
     },
     "action": {
@@ -2244,6 +2271,9 @@
       ],
       "Website access problem": [
         "Težava z dostopom do spletnega mesta"
+      ],
+      "Sheets problem": [
+        "Težava z listo"
       ]
     },
     "Button": {
@@ -5499,6 +5529,18 @@
       ],
       "Zero keys reactivated": [
         "Nič ključev ponovno aktiviranih"
+      ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Aktivacija ni uspela. Podatki so morda napačni ali pa je e-pošta že aktivna. Preverite vnos ali se prijavite."
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Ni mogoče aktivirati vašega naslova. Poskusite znova."
+      ],
+      "Invalid coupon": [
+        "Neveljaven kupon"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Najmanjši znesek donacije je ${ price }"
       ]
     },
     "error": {
@@ -5965,6 +6007,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Vaš račun zaseda ${ usedSpace } prostora za shranjevanje, kar presega vam dodeljenih ${ inviteSpace }. Izbrišite nekaj podatkov ali prosite skrbnika paketa, naj vam dodeli več prostora."
+      ],
+      "Pending invitation": [
+        "Čaka na povabilo",
+        "Čakata na povabilo",
+        "Čakajo na povabilo",
+        "Čakajo na povabilo"
       ]
     },
     "familyOffer_2023:Info": {
@@ -9799,6 +9847,60 @@
       ],
       "Zoom meeting": [
         "sestanek prek Zooma"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Za ustvarjanje skupin je potrebna domena po meri. Če nimate nastavljene domene po meri, jo najprej nastavite pod ${ linkToDomainPage }."
+      ],
+      "Coming soon": [
+        "Kmalu na voljo"
+      ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Vnesite e-poštni naslov, ki ste ga uporabili za rezervacijo ${ reservedEmail }."
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Vnesite rezervirani e-poštni naslov in e-poštni naslov, uporabljen med rezervacijo."
+      ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Pomagajte drugim družinam zagotoviti svojim otrokom varen začetek na spletu. Dajte v skupno ravo ta mejnik in razširite novico."
+      ],
+      "How it works": [
+        "Kako deluje"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Če je bil vneseni e-poštni naslov uporabljen za rezervacijo otrokovega e-poštnega naslova, vam bomo ponovno poslali aktivacijski kupon."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Kupon hranite na varnem mestu, dokler ga ne potrebujete, na primer v ${ DRIVE_APP_NAME }."
+      ],
+      "New activity data will stop being collected and shown.": [
+        "Zbirajo podatkov o dejavnosti se bo ustavilo in podatki ne bodo več prikazani."
+      ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Prejmite rezervacijski kupon po e-pošti. Vi ali otrok ga lahko uporabite za aktivacijo naslova v naslednjih 15 letih. ${ learnMoreLink }"
+      ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Nekaj je šlo narobe. Prosimo, poskusite znova ali se obrnite na podporo strankam."
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Korak ${ step }/${ totalSteps }"
+      ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Da bi preprečili zlorabe ali goljufije, prosimo za donacijo v višini najmanj ${ minimumDonation }. To podpira delo ${ protonFoundationLink } za zaščito digitalne zasebnosti po vsem svetu in pomaga zaščititi naslednjo generacijo."
+      ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Transakcije nismo mogli dokončati. Poskusite znova."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Ko ste pripravljeni aktivirati naslov, odčitajte kodo QR ali uporabite povezavo v kuponu."
+      ],
+      "You have ${ availableCount } new server available.": [
+        "Na voljo imate ${ availableCount } nov strežnik.",
+        "Na voljo imate ${ availableCount } nova strežnika.",
+        "Na voljo imate ${ availableCount } novih strežnikov.",
+        "Na voljo imate ${ availableCount } novih strežnikov."
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Vaš kupon za rezervirani e-poštni naslov ${ BRAND_NAME }: ${ reservedEmail }"
       ]
     },
     "info": {
@@ -11343,6 +11445,42 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Activation code": [
+        "Aktivacijska koda"
+      ],
+      "Choose an address to reserve for your child": [
+        "Izberite naslov, ki ga želite rezervirati za svojega otroka"
+      ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Donirajte 1 $ ali več fundaciji ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Znesek donacije"
+      ],
+      "Enter your email address": [
+        "Vnesite svoj e-poštni naslov"
+      ],
+      "Reserved address": [
+        "Rezerviran naslov"
+      ],
+      "Reserved email address": [
+        "Rezerviran e-poštni naslov"
+      ],
+      "Set password": [
+        "Nastavi geslo"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Za aktivacijo odčitajte QR kodo ali pojdite na:"
+      ],
+      "Your activation code:": [
+        "Vaša aktivacijska koda:"
+      ],
+      "Your email address": [
+        "Vaš e-poštni naslov"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Vaš kupon za rezervirani e-poštni naslov ${ BRAND_NAME }:"
       ]
     },
     "label": {
@@ -11681,6 +11819,12 @@
       ],
       "What’s this?": [
         "Kaj je to?"
+      ],
+      "${ BRAND_NAME } Foundation's": [
+        "Fundacija ${ BRAND_NAME }"
+      ],
+      "Can't find your code?": [
+        "Ne najdete svoje kode?"
       ]
     },
     "Link label (optional)": {
@@ -12008,6 +12152,18 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Prijavite se v svoj račun ${ BRAND_NAME } in dostopajte do vseh šifriranih storitev ${ BRAND_NAME }, kot so ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } in še več. Nimate računa? Brezplačno ga ustvarite."
+      ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Aktivirajte zasebni e-poštni naslov ${ BRAND_NAME }, rezerviran za vašega otroka, in nastavite njegov račun."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Aktivirajte račun svojega otroka ${ BRAND_NAME } | ${ BRAND_NAME }"
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "Obnovi dostop do zasebnega e-poštnega naslova ${ BRAND_NAME }, ki je rezerviran za vašega otroka."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Obnovite račun svojega otroka ${ BRAND_NAME } | ${ BRAND_NAME }"
       ]
     },
     "Modal title": {
@@ -14892,6 +15048,9 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Amount": [
+        "Znesek"
       ]
     },
     "placeholder": {
@@ -15375,6 +15534,9 @@
       ],
       "Your recovery phone number is:": [
         "Vaša telefonska številka za obnovitev je:"
+      ],
+      "Add an alternative email address": [
+        "Dodajte nadomestni e-poštni naslov"
       ]
     },
     "saml: Action": {
@@ -17530,6 +17692,12 @@
       ],
       "You have successfully unsubscribed": [
         "Naročnina je preklicana"
+      ],
+      "Verification code sent to ${ parentEmail }": [
+        "Varnostno kodo pošlji na ${ parentEmail }"
+      ],
+      "Your address has been activated": [
+        "Vaš naslov je bil aktiviran"
       ]
     },
     "Success message": {
@@ -19147,6 +19315,18 @@
       ],
       "Your subscriptions": [
         "Vaše naročnine"
+      ],
+      "Add ${ totalServerCount } server?": [
+        "Dodaj ${ totalServerCount } strežnik?",
+        "Dodaj ${ totalServerCount } strežnika?",
+        "Dodaj ${ totalServerCount } strežnike?",
+        "Dodaj ${ totalServerCount } strežnike?"
+      ],
+      "Problem processing your payment": [
+        "Težava pri obdelavi plačila"
+      ],
+      "Problem processing your request": [
+        "Težava pri obdelavi vaše zahteve"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -20278,6 +20458,61 @@
       ],
       "Yearly, ${ untilString }": [
         "Letno, ${ untilString }"
+      ]
+    },
+    "Form heading": {
+      "Enter your email address": [
+        "Vnesite svoj e-poštni naslov"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Kupon bo poslan sem."
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Preprost korak danes za zagotovitev digitalne varnosti vašega otroka jutri"
+      ],
+      "Activate your reserved email address": [
+        "Aktivirajte rezerviran e-poštni naslov"
+      ],
+      "Address reservation voucher": [
+        "Kupon za rezervacijo naslova"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Doniraj Fundaciji ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Vnesi kodo za preverjanje"
+      ],
+      "Recover activation voucher": [
+        "Obnovi kupon za aktivacijo"
+      ],
+      "Reserve child's email address": [
+        "Rezerviraj otrokov e-poštni naslov"
+      ],
+      "We emailed you the voucher": [
+        "Poslali smo vam e-pošto s kuponom"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Vnesite kodo za preverjanje, ki je bila poslana na ${ parentEmail }."
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "E-pošta"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     }
   }

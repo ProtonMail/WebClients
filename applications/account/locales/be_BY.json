@@ -829,7 +829,7 @@
         "Атрымаць памочніка ў напісанні"
       ],
       "Get verification code": [
-        "Атрымаць праверачны код"
+        "Атрымаць код спраўджання"
       ],
       "Go back": [
         "Вярнуцца"
@@ -1706,6 +1706,33 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Activate reserved address": [
+        "Актываваць зарэзерваваны адрас"
+      ],
+      "Activate this address": [
+        "Актываваць гэты адрас"
+      ],
+      "Close search": [
+        "Закрыць пошук"
+      ],
+      "Donate": [
+        "Ахвяраваць"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Атрымайце ўласны адрас ${ MAIL_APP_NAME }"
+      ],
+      "Reload page": [
+        "Перазагрузіць старонку"
+      ],
+      "Search groups": [
+        "Пошук груп"
+      ],
+      "Send verification code": [
+        "Адправіць код спраўджання"
+      ],
+      "Try payment again": [
+        "Паўтарыць плацеж"
       ]
     },
     "action": {
@@ -6712,7 +6739,7 @@
         "Памылковы нумар ПДВ"
       ],
       "Invalid verification code": [
-        "Памылковы праверачны код"
+        "Памылковы код спраўджання"
       ],
       "Item content cannot exceed 40KB": [
         "Змесціва элемента не можа перавышаць 40 КБ"
@@ -7099,7 +7126,7 @@
         "Няправільная фраза аднаўлення. Паспрабуйце яшчэ раз або скарыстайцеся іншым спосабам аднаўлення."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
-        "Няправільны праверачны код. Пераканайцеся, што вы правільна скапіявалі код і паспрабуйце яшчэ раз. Змяненні ўступяць у сілу на працягу 24 гадзін."
+        "Няправільны код спраўджання. Пераканайцеся, што вы правільна скапіявалі код і паспрабуйце яшчэ раз. Змяненні ўступяць у сілу на працягу 24 гадзін."
       ],
       "You already added this holidays calendar": [
         "Вы ўжо дадавалі гэтыя святы ў каляндар"
@@ -7139,6 +7166,18 @@
       ],
       "ZIP code is required": [
         "Патрабуецца ўвесці паштовы індэкс"
+      ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Збой актывацыі. Падрабязнасці могуць быць няправільнымі або электронная пошта ўжо актыўная. Праверце ўведзеныя даныя або ўвайдзіце."
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Не ўдалося актываваць ваш адрас. Паспрабуйце яшчэ раз."
+      ],
+      "Invalid coupon": [
+        "Памылковы купон"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Мінімальная сума ахвяравання складае ${ price }"
       ]
     },
     "error": {
@@ -9727,7 +9766,7 @@
         "Перад стварэннем гэтага адраса неабходна ўвесці пароль і стварыць для яго ключы шыфравання."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна ўказаны адрас ${ strong }."
+        "Перад запытам новага кода спраўджання праверце папку са спамам, а таксама ці правільна ўказаны адрас ${ strong }."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Каб вы змаглі атрымліваць электронныя лісты для адрасоў вашага карыстальніцкага дамена ў ${ MAIL_APP_NAME }, вам трэба дадаць наступныя два запісы MX у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Тут вы можаце знайсці прыклад і некалькі карысных парад ${ kbLink }."
@@ -9793,7 +9832,7 @@
         "Выберыце Entity ID для працягу."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Націсніце \"Запытаць новы код\", каб атрымаць новы праверачны код на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
+        "Націсніце \"Запытаць новы код\", каб атрымаць новы код спраўджання на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
       ],
       "Click the icon to open it anytime.": [
         "Націсніце па значку, каб адкрыць яго ў любы час."
@@ -10204,7 +10243,7 @@
         "Увядзіце код спраўджання, які быў адпраўлены на ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Увядзіце праверачны код. Лічба ${ digit }."
+        "Увядзіце код спраўджання. Лічба ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Увядзіце падрабязнасці вашага ўліковага запісу ${ BRAND_NAME }."
@@ -12067,7 +12106,7 @@
         "Вы атрымаеце апавяшчэнне, калі імпартаванне будзе завершана."
       ],
       "We'll send a new verification code to ${ strong }": [
-        "Мы адправім новы праверачны код на ${ strong }"
+        "Вам адпраўлены новы код спраўджання на ${ strong }"
       ],
       "Web URL": [
         "URL-адрас"
@@ -12157,10 +12196,10 @@
         "Без актывацыі вы не зможаце ствараць новых карыстальнікаў, дадаваць адрасы да існуючых карыстальнікаў або атрымаць доступ да непрыватных уліковых запісаў."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным спосабам праверкі?"
+        "Ці хочаце вы атрымаць новы код спраўджання або скарыстацца альтэрнатыўным спосабам праверкі?"
       ],
       "Would you like to receive a new verification code?": [
-        "Ці хочаце вы атрымаць новы праверачны код?"
+        "Ці хочаце вы атрымаць новы код спраўджання?"
       ],
       "Writing assistant": [
         "Памочнік у напісанні"
@@ -12566,6 +12605,60 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Для стварэння груп патрабуецца карыстальніцкі дамен. Калі ў вас адсутнічае наладжаны карыстальніцкі дамен, то спачатку стварыце яго па спасылцы ${ linkToDomainPage }."
+      ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Увядзіце адрас электроннай пошты, які выкарыстоўваўся для рэзервацыі ${ reservedEmail }."
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Увядзіце зарэзерваваны адрас электроннай пошты і адрас электроннай пошты, які выкарыстоўваўся падчас рэзервацыі."
+      ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Дапамажыце іншым сем'ям, каб іх дзеці зрабілі першыя крокі ў інтэрнэце бяспечна. Абагуліце гэты этап і распаўсюдзьце інфармацыю."
+      ],
+      "How it works": [
+        "Як гэта працуе"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Вам будзе паўторна адпраўлены ваўчар актывацыі, калі ўведзены вамі адрас электроннай пошты выкарыстоўваўся для рэзервацыі дзіцячага адраса электроннай пошты."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Захоўвайце ваўчар у бяспечным месцы, пакуль ён не спатрэбіцца. Напрыклад, ён можа прыдасца ў ${ DRIVE_APP_NAME }."
+      ],
+      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
+        "Адкрыйце налады пашырэння свайго браўзера і дазвольце пашырэнню ${ PASS_APP_NAME } доступ да даных вэб-сайта. Перазагрузіце старонку пасля выканання гэтых дзеянняў."
+      ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Атрымайце ваўчар на рэзервацыю па электроннай пошце. Вы або дзіця можаце выкарыстоўваць яго для актывацыі адраса на працягу наступных 15 гадоў. ${ learnMoreLink }"
+      ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Нешта пайшло не так. Паспрабуйце яшчэ раз або звярніцеся ў службу падтрымкі кліентаў."
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Крок ${ step }/${ totalSteps }"
+      ],
+      "Step 1 of 2": [
+        "Крок 1 з 2"
+      ],
+      "Step 2 of 2": [
+        "Крок 2 з 2"
+      ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Унясіце мінімальнае ахвяраванне ў памеры ${ minimumDonation }, каб прадухіліць злоўжыванне або махлярства. Гэта таксама падтрымлівае працу ${ protonFoundationLink }, які абараняе лічбавую прыватнасць ва ўсім свеце, і дапамагае абараніць наступнае пакаленне."
+      ],
+      "Verifying ${ PASS_APP_NAME } browser extension...": [
+        "Спраўджанне пашырэння браўзера ${ PASS_APP_NAME }..."
+      ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Немагчыма завяршыць трансакцыю. Паспрабуйце яшчэ раз."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Адсканіруйце QR-код або скарыстайцеся спасылкай з ваўчара, калі будзеце гатовы актываваць адрас."
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Ваш ваўчар на зарэзерваваны адрас электроннай пошты ${ BRAND_NAME }: ${ reservedEmail }"
       ]
     },
     "info": {
@@ -14578,6 +14671,42 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Activation code": [
+        "Код актывацыі"
+      ],
+      "Choose an address to reserve for your child": [
+        "Выберыце адрас, каб зарэзерваваць яго для вашага дзіцяці"
+      ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Ахвяруйце 1$ або больш у ${ BRAND_NAME } Foundation"
+      ],
+      "Donation amount": [
+        "Сума ахвяравання"
+      ],
+      "Enter your email address": [
+        "Увядзіце свой адрас электроннай пошты"
+      ],
+      "Reserved address": [
+        "Зарезерваваны адрас"
+      ],
+      "Reserved email address": [
+        "Зарэзерваваны адрас электроннай пошты"
+      ],
+      "Set password": [
+        "Задаць пароль"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Адсканіруйце QR-код або перайдзіце па спасылцы, каб актываваць:"
+      ],
+      "Your activation code:": [
+        "Ваш код актывацыі:"
+      ],
+      "Your email address": [
+        "Ваш адрас электроннай пошты"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Ваш ваўчар на зарэзерваваны адрас электроннай пошты ${ BRAND_NAME }:"
       ]
     },
     "label": {
@@ -14967,6 +15096,12 @@
       ],
       "What’s this?": [
         "Што гэта?"
+      ],
+      "${ BRAND_NAME } Foundation's": [
+        "фонду ${ BRAND_NAME }"
+      ],
+      "Can't find your code?": [
+        "Не можаце знайсці код?"
       ]
     },
     "Link (Scribe)": {
@@ -15493,6 +15628,18 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Увайдзіце ў свой уліковы запіс ${ BRAND_NAME }, каб атрымаць доступ да ўсіх зашыфраваных сэрвісаў ${ BRAND_NAME }, такіх як ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншых. Не маеце ўліковага запісу? Стварыце яго БЯСПЛАТНА."
+      ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Актывацыя прыватнага адраса электроннай пошты ${ BRAND_NAME }, які зарэзерваваны для вашага дзіцяці і яго наладжванне."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Актывуйце дзіцячы ўліковы запіс ${ BRAND_NAME } | ${ BRAND_NAME }"
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "Аднавіце доступ да прыватнага адраса электроннай пошты ${ BRAND_NAME }, які зарэзерваваны для вашага дзіцяці."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Аднаўленне дзіцячага ўліковага запісу ${ BRAND_NAME } | ${ BRAND_NAME }"
       ]
     },
     "Modal title": {
@@ -18795,6 +18942,9 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Amount": [
+        "Сума"
       ]
     },
     "placeholder": {
@@ -22573,6 +22723,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Вы атрымаеце сваё імя карыстальніка праз SMS на працягу хвіліны, калі вы ўвялі слушны нумар тэлефона для аднаўлення доступу."
+      ],
+      "Verification code sent to ${ parentEmail }": [
+        "Код спраўджання адпраўлены на ${ parentEmail }"
+      ],
+      "Your address has been activated": [
+        "Ваш адрас быў актываваны"
       ]
     },
     "Success message": {
@@ -23792,7 +23948,7 @@
         "Інтэграцыі"
       ],
       "Invalid verification code": [
-        "Памылковы праверачны код"
+        "Памылковы код спраўджання"
       ],
       "Invitations": [
         "Запрашэнні"
@@ -24528,6 +24684,15 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "${ PASS_APP_NAME } is missing permissions": [
+        "Адсутнічаюць дазволы для ${ PASS_APP_NAME }"
+      ],
+      "Problem processing your payment": [
+        "Праблема з апрацоўкай вашага плацяжу"
+      ],
+      "Problem processing your request": [
+        "Праблема з апрацоўкай вашага запыту"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25744,6 +25909,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Ваш пробны перыяд завершыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
+      ],
+      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
+        "Немагчыма ўвайсці. Адкрыйце пашырэнне для браўзера ${ PASS_APP_NAME } і ўвайдзіце праз яго."
+      ],
+      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
+        "Немагчыма зарэгістравацца. Адкрыйце пашырэнне для браўзера ${ PASS_APP_NAME } і зарэгіструйцеся праз яго."
       ]
     },
     "Warning for domain modal": {
@@ -26059,6 +26230,61 @@
       ],
       "Yearly, ${ untilString }": [
         "Штогод, ${ untilString }"
+      ]
+    },
+    "Form heading": {
+      "Enter your email address": [
+        "Увядзіце адрас сваёй электроннай пошты"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Ваўчар будзе адпраўлены сюды."
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Адзін просты крок сёння, які дазволіць забяспечыць лічбавую бяспеку вашага дзіцяці заўтра"
+      ],
+      "Activate your reserved email address": [
+        "Актывацыя вашага зарэзерваванага адраса электроннай пошты"
+      ],
+      "Address reservation voucher": [
+        "Ваўчар зарэзерваванага адраса"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Ахвяраванне ${ BRAND_NAME } Foundation"
+      ],
+      "Enter verification code": [
+        "Увядзіце код спраўджання"
+      ],
+      "Recover activation voucher": [
+        "Аднавіць ваўчар актывацыі"
+      ],
+      "Reserve child's email address": [
+        "Рэзервацыя адраса электроннай пошты дзіцяці"
+      ],
+      "We emailed you the voucher": [
+        "Вам адпраўлены ліст з ваўчарам"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Увядзіце код спраўджання, які быў адпраўлены на ${ parentEmail }."
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Электронная пошта"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     }
   }

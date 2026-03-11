@@ -1709,6 +1709,30 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Activate reserved address": [
+        "Rezerve edilmiş adresi etkinleştir"
+      ],
+      "Activate this address": [
+        "Bu adresi etkinleştir"
+      ],
+      "Close search": [
+        "Aramayı kapat"
+      ],
+      "Donate": [
+        "Bağış yap"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Kendi ${ MAIL_APP_NAME } adresinizi alın"
+      ],
+      "Search groups": [
+        "Gruplarda ara"
+      ],
+      "Send verification code": [
+        "Doğrulama kodunu gönder"
+      ],
+      "Try payment again": [
+        "Ödemeyi tekrar dene"
       ]
     },
     "action": {
@@ -7052,6 +7076,18 @@
       ],
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
+      ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Etkinleştirme başarısız oldu. Bilgiler yanlış olabilir veya e-posta adresi zaten etkinleştirilmiş olabilir. Lütfen girdilerinizi kontrol edin veya oturum açın."
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Adresiniz etkinleştirilemedi. Lütfen tekrar deneyin."
+      ],
+      "Invalid coupon": [
+        "Geçersiz kupon"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimum bağış tutarı ${ price }"
       ]
     },
     "error": {
@@ -12311,6 +12347,48 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Grup oluşturmak için özel etki alanı gereklidir. Eğer ayarlanmış bir özel etki alanınız yoksa önce ${ linkToDomainPage } kısmından bunu yapın."
+      ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "${ reservedEmail } adresini rezerve etmek için kullanılan e-posta adresini yazın."
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Rezervasyon sırasında kullanılan e-posta adresini ve rezerve edilen e-posta adresini yazın."
+      ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Diğer ailelerin çocuklarına internette güvenli bir başlangıç yapmalarına yardımcı olun. Bu önemli gelişmeyi paylaşın ve herkese duyurun."
+      ],
+      "How it works": [
+        "Nasıl çalışır"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Yazdığınız e-posta adresi bir çocuğun e-posta adresini rezerve etmek için kullanılmışsa aktivasyon kuponunu yeniden göndereceğiz."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Kuponu ihtiyaç duyulana kadar, örneğin ${ DRIVE_APP_NAME } içinde güvenli bir şekilde saklayın."
+      ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Rezervasyon kuponunu e-posta ile alın. Siz veya çocuğunuz bu kuponu kullanarak 15 yıl içinde adresi etkinleştirebilirsiniz. ${ learnMoreLink }"
+      ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Bir şeyler ters gitti. Lütfen tekrar deneyin veya müşteri desteği ile iletişime geçin."
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Adım ${ step }/${ totalSteps }"
+      ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Kötüye kullanımı veya dolandırıcılığı önlemek için en az ${ minimumDonation } tutarında bir bağış rica ediyoruz. Bu bağış dünya çapında dijital gizliliği savunan ${ protonFoundationLink } çalışmalarını desteklemekte ve gelecek neslin korunmasına yardımcı olmaktadır."
+      ],
+      "We couldn't complete the transaction. Please try again.": [
+        "İşlemi tamamlayamadık. Lütfen tekrar deneyin."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Adresi etkinleştirmeye hazır olduğunuzda karekodu tarayın veya kupondaki bağlantıyı kullanın."
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Rezerve ettiğiniz ${ BRAND_NAME } e-posta adresiniz için kuponunuz: ${ reservedEmail }"
       ]
     },
     "info": {
@@ -14307,6 +14385,42 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Activation code": [
+        "Aktivasyon kodu"
+      ],
+      "Choose an address to reserve for your child": [
+        "Çocuğunuz için rezerve etmek istediğiniz adresi seçin"
+      ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "${ BRAND_NAME } Vakfı'na 1$ veya daha fazla bağış yapın"
+      ],
+      "Donation amount": [
+        "Bağış tutarı"
+      ],
+      "Enter your email address": [
+        "E-posta adresinizi girin"
+      ],
+      "Reserved address": [
+        "Rezerve edilmiş adres"
+      ],
+      "Reserved email address": [
+        "Rezerve edilmiş e-posta adresi"
+      ],
+      "Set password": [
+        "Parola belirle"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Etkinleştirmek için karekodu tarayın veya şuraya gidin:"
+      ],
+      "Your activation code:": [
+        "Aktivasyon kodunuz:"
+      ],
+      "Your email address": [
+        "E-posta adresiniz"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Rezerve ettiğiniz ${ BRAND_NAME } e-posta adresiniz için kuponunuz:"
       ]
     },
     "label": {
@@ -14694,6 +14808,12 @@
       ],
       "What’s this?": [
         "Bu nedir?"
+      ],
+      "${ BRAND_NAME } Foundation's": [
+        "${ BRAND_NAME } Vakfı'nın"
+      ],
+      "Can't find your code?": [
+        "Kodunuzu bulamıyor musunuz?"
       ]
     },
     "Link (Scribe)": {
@@ -15198,6 +15318,18 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "${ BRAND_NAME } hesabınızda oturum açarak, ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi şifrelenmiş tüm ${ BRAND_NAME } hizmetlerine erişin. Hesabınız yok mu? Ücretsiz bir hesap açın."
+      ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Çocuğunuz için rezerve edilmiş özel ${ BRAND_NAME } e-posta adresini etkinleştirin ve hesabını oluşturun."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Çocuğunuzun ${ BRAND_NAME } hesabını etkinleştirin | ${ BRAND_NAME }"
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "Çocuğunuz için ayrılmış özel ${ BRAND_NAME } e-posta adresine erişimi kurtarın."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Çocuğunuzun ${ BRAND_NAME } hesabını kurtarın | ${ BRAND_NAME }"
       ]
     },
     "Modal title": {
@@ -18406,6 +18538,9 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Amount": [
+        "Tutar"
       ]
     },
     "placeholder": {
@@ -20840,7 +20975,7 @@
         "1 yıl sonra ${ regularAmount } yerine ${ discountedAmount } olarak yenilenir (${ discount }% indirim ile)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "2 yıl sonra ${ regularAmount } yerine ${ discountedAmount } ile yenilenir (${ discount }% indirim ile)"
+        "2 yıl sonra ${ regularAmount } yerine ${ discountedAmount } ile yenilenir (%${ discount } indirim ile)"
       ],
       "Save ${ discount }%": [
         "%${ discount } indirim"
@@ -22133,6 +22268,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Geçerli bir kurtarma telefon numarası yazdıysanız, bir dakika içinde kullanıcı adınızın bulunduğu bir SMS alacaksınız."
+      ],
+      "Verification code sent to ${ parentEmail }": [
+        "Doğrulama kodu ${ parentEmail } adresine gönderildi"
+      ],
+      "Your address has been activated": [
+        "Adresiniz etkinleştirildi"
       ]
     },
     "Success message": {
@@ -24055,6 +24196,12 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "Problem processing your payment": [
+        "Ödemeniz işlenirken sorun çıktı"
+      ],
+      "Problem processing your request": [
+        "İsteğiniz işlenirken bir sorun çıktı"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25505,6 +25652,61 @@
       ],
       "Yearly, ${ untilString }": [
         "Yılda bir, ${ untilString }"
+      ]
+    },
+    "Form heading": {
+      "Enter your email address": [
+        "E-posta adresinizi yazın"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Kupon buraya gönderilecek."
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Çocuğunuzun yarınki dijital güvenliğini sağlamak için bugün atabileceğiniz basit bir adım"
+      ],
+      "Activate your reserved email address": [
+        "Rezerve ettiğiniz e-posta adresini etkinleştirin"
+      ],
+      "Address reservation voucher": [
+        "Adres rezervasyon kuponu"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "${ BRAND_NAME } Vakfı'na bağış yapın"
+      ],
+      "Enter verification code": [
+        "Doğrulama kodunu yazın"
+      ],
+      "Recover activation voucher": [
+        "Aktivasyon kuponunu kurtar"
+      ],
+      "Reserve child's email address": [
+        "Çocuğun e-posta adresini rezerve et"
+      ],
+      "We emailed you the voucher": [
+        "Kuponunuzu e-posta ile gönderdik"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "${ parentEmail } adresine gönderilen doğrulama kodunu girin."
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "E-Posta"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     }
   }

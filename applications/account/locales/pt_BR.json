@@ -1709,6 +1709,24 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Activate reserved address": [
+        "Ativar endereço reservado"
+      ],
+      "Activate this address": [
+        "Ativar este endereço"
+      ],
+      "Close search": [
+        "Fechar pesquisa"
+      ],
+      "Donate": [
+        "Doar"
+      ],
+      "Search groups": [
+        "Pesquisar grupos"
+      ],
+      "Send verification code": [
+        "Enviar código de verificação"
       ]
     },
     "action": {
@@ -2847,6 +2865,9 @@
       ],
       "What are you migrating?": [
         "O que você está migrando?"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "Para migrar os dados da sua organização, você precisa instalar o aplicativo Assistente de Migração do ${ BRAND_NAME } na Google Workspace Marketplace. Isso concederá permissão ao ${ BRAND_NAME } para copiar seus dados. Após a instalação, volte aqui para continuar."
       ]
     },
     "breadcrumb": {
@@ -7034,6 +7055,9 @@
       ],
       "ZIP code is required": [
         "O CEP é obrigatório."
+      ],
+      "Invalid coupon": [
+        "Cupom inválido"
       ]
     },
     "error": {
@@ -12266,6 +12290,12 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "How it works": [
+        "Como funciona"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Etapa ${ step }/${ totalSteps }"
       ]
     },
     "info": {
@@ -14262,6 +14292,33 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Activation code": [
+        "Código de ativação"
+      ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Doe $1 ou mais para a ${ BRAND_NAME } Foundation"
+      ],
+      "Donation amount": [
+        "Valor da doação"
+      ],
+      "Enter your email address": [
+        "Digite seu endereço de e-mail"
+      ],
+      "Reserved address": [
+        "Endereço reservado"
+      ],
+      "Reserved email address": [
+        "Endereço de e-mail reservado"
+      ],
+      "Set password": [
+        "Definir senha"
+      ],
+      "Your activation code:": [
+        "Seu código de ativação:"
+      ],
+      "Your email address": [
+        "Seu endereço de e-mail"
       ]
     },
     "label": {
@@ -14649,6 +14706,12 @@
       ],
       "What’s this?": [
         "O que é isso?"
+      ],
+      "${ BRAND_NAME } Foundation's": [
+        "Fundadores da ${ BRAND_NAME }"
+      ],
+      "Can't find your code?": [
+        "Não encontrou seu código?"
       ]
     },
     "Link (Scribe)": {
@@ -18370,6 +18433,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Amount": [
+        "Valor"
       ]
     },
     "placeholder": {
@@ -22097,6 +22163,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Você receberá seu nome de usuário por SMS em um minuto se tiver inserido um número de telefone de recuperação válido."
+      ],
+      "Verification code sent to ${ parentEmail }": [
+        "O código de verificação foi enviado para ${ parentEmail }."
+      ],
+      "Your address has been activated": [
+        "Seu endereço foi ativado"
       ]
     },
     "Success message": {
@@ -24025,6 +24097,12 @@
       ],
       "Your subscriptions": [
         "Suas assinaturas"
+      ],
+      "Problem processing your payment": [
+        "Problema ao processar o seu pagamento"
+      ],
+      "Problem processing your request": [
+        "Problema ao processar sua solicitação"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25466,6 +25544,39 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "Form heading": {
+      "Enter your email address": [
+        "Digite seu endereço de e-mail"
+      ]
+    },
+    "Heading": {
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Doe para a ${ BRAND_NAME } Foundation"
+      ],
+      "Enter verification code": [
+        "Insira o código de verificação"
+      ],
+      "Recover activation voucher": [
+        "Recuperar voucher de ativação"
+      ],
+      "We emailed you the voucher": [
+        "Enviamos o voucher para o seu e-mail"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "E-mail"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     }
   }

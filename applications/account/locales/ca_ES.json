@@ -1709,6 +1709,30 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Activate reserved address": [
+        "Activar l'adreça reservada"
+      ],
+      "Activate this address": [
+        "Activar aquesta adreça"
+      ],
+      "Close search": [
+        "Tancar la cerca"
+      ],
+      "Donate": [
+        "Fer un donatiu"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Obtingueu la vostra pròpia adreça de ${ MAIL_APP_NAME }"
+      ],
+      "Search groups": [
+        "Cercar grups"
+      ],
+      "Send verification code": [
+        "Enviar el codi de verificació"
+      ],
+      "Try payment again": [
+        "Torneu a intentar el pagament"
       ]
     },
     "action": {
@@ -7052,6 +7076,18 @@
       ],
       "ZIP code is required": [
         "Es requereix el codi postal."
+      ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "L'activació ha fallat. Pot ser que les dades siguin incorrectes o que l'adreça ja estigui activa. Comproveu el que heu introduït o inicieu la sessió."
+      ],
+      "Failed to activate your address. Please try again.": [
+        "No s'ha pogut activar la vostra adreça. Torneu-ho a provar."
+      ],
+      "Invalid coupon": [
+        "El cupó no és vàlid"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "La donació mínima és de ${ price }"
       ]
     },
     "error": {
@@ -12311,6 +12347,48 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Es requereix un domini personalitzat per crear grups. Si no en teniu cap de configurat, feu-ho primer a ${ linkToDomainPage }."
+      ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Introduïu l'adreça de correu electrònic utilitzada per reservar ${ reservedEmail }."
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Introduïu l'adreça de correu electrònic reservada i l'adreça de correu electrònic utilitzada per fer la reserva."
+      ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Ajudeu altres famílies a donar als seus infants un inici segur a internet. Compartiu aquesta fita i feu-ne difusió."
+      ],
+      "How it works": [
+        "Com funciona"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Si l'adreça de correu electrònic que heu introduït s'ha fet servir per a reservar l'adreça de correu electrònic d'un infant, tornarem a enviar el val d'activació."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Guardeu el val en un lloc segur fins que el necessiteu, per exemple a ${ DRIVE_APP_NAME }."
+      ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Rebeu el val de reserva per correu electrònic. Vosaltres o el vostre infant el podreu fer servir per a activar l'adreça durant els pròxims 15 anys. ${ learnMoreLink }"
+      ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Alguna cosa ha anat malament. Torneu-ho a provar o poseu-vos en contacte amb el servei d'atenció al client."
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Pas ${ step }/${ totalSteps }"
+      ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Per prevenir abusos o fraus, sol·licitem una donació mínima de ${ minimumDonation }. Això donarà suport a la tasca de ${ protonFoundationLink } en defensa de la privacitat digital a escala mundial i ajudarà a protegir la propera generació."
+      ],
+      "We couldn't complete the transaction. Please try again.": [
+        "No s'ha pogut completar la transacció. Torneu-ho a provar."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Quan estigueu a punt per activar l'adreça, escanegeu el codi QR o feu servir l'enllaç del val."
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "El vostre comprovant per l'adreça de correu electrònic reservada de ${ BRAND_NAME }: ${ reservedEmail }"
       ]
     },
     "info": {
@@ -14307,6 +14385,42 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Activation code": [
+        "Codi d'activació"
+      ],
+      "Choose an address to reserve for your child": [
+        "Trieu una adreça per reservar per al vostre infant"
+      ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Feu un donatiu d'$1 o més a la Fundació ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Import del donatiu"
+      ],
+      "Enter your email address": [
+        "Introduïu la vostra adreça de correu electrònic"
+      ],
+      "Reserved address": [
+        "Adreça reservada"
+      ],
+      "Reserved email address": [
+        "Adreça de correu electrònic reservada"
+      ],
+      "Set password": [
+        "Establiu una contrasenya"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Per activar-la, escanegeu el codi QR o aneu a:"
+      ],
+      "Your activation code:": [
+        "El vostre codi d'activació:"
+      ],
+      "Your email address": [
+        "La vostra adreça de correu electrònic"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "El vostre comprovant per l'adreça de correu electrònic reservada de ${ BRAND_NAME }:"
       ]
     },
     "label": {
@@ -14694,6 +14808,12 @@
       ],
       "What’s this?": [
         "Què és això?"
+      ],
+      "${ BRAND_NAME } Foundation's": [
+        "De la Fundació ${ BRAND_NAME }"
+      ],
+      "Can't find your code?": [
+        "No trobeu el vostre codi?"
       ]
     },
     "Link (Scribe)": {
@@ -15198,6 +15318,18 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Inicieu la sessió al vostre compte ${ BRAND_NAME } per a accedir a tots els serveis xifrats de ${ BRAND_NAME } com ara ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, etc. No teniu un compte? Creeu-ne un GRATUÏTAMENT."
+      ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Activeu l'adreça de correu electrònic privada de ${ BRAND_NAME } reservada per al vostre infant i configureu-ne el compte."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Activeu el compte de ${ BRAND_NAME } del vostre infant | ${ BRAND_NAME }"
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "Recupereu l'accés a l'adreça de correu privada de ${ BRAND_NAME } reservada per a la vostra filla o fill."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Recupereu el compte de ${ BRAND_NAME } del vostre infant | ${ BRAND_NAME }"
       ]
     },
     "Modal title": {
@@ -18406,6 +18538,9 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Amount": [
+        "Import"
       ]
     },
     "placeholder": {
@@ -22041,6 +22176,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Rebreu el vostre nom d'usuari per SMS en un minut si heu introduït un número de telèfon de recuperació vàlid."
+      ],
+      "Verification code sent to ${ parentEmail }": [
+        "S'ha enviat el codi de verificació a ${ parentEmail }"
+      ],
+      "Your address has been activated": [
+        "La vostra adreça s'ha activat"
       ]
     },
     "Success message": {
@@ -23963,6 +24104,12 @@
       ],
       "Your subscriptions": [
         "Les vostres subscripcions"
+      ],
+      "Problem processing your payment": [
+        "Hi ha hagut un problema en processar el vostre pagament"
+      ],
+      "Problem processing your request": [
+        "Hi ha hagut un problema en processar la vostra sol·licitud"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25413,6 +25560,61 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada any, ${ untilString }"
+      ]
+    },
+    "Form heading": {
+      "Enter your email address": [
+        "Introduïu la vostra adreça de correu electrònic"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "El val s'enviarà aquí."
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Un pas senzill avui per garantir la seguretat digital de les vostres criatures demà"
+      ],
+      "Activate your reserved email address": [
+        "Activeu la vostra adreça de correu electrònic reservada"
+      ],
+      "Address reservation voucher": [
+        "Comprovant de reserva d'adreça"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Feu un donatiu a la Fundació ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Introduir el codi de verificació"
+      ],
+      "Recover activation voucher": [
+        "Recupereu el val d'activació"
+      ],
+      "Reserve child's email address": [
+        "Reserveu l'adreça de correu electrònic per al vostre infant"
+      ],
+      "We emailed you the voucher": [
+        "Us hem enviat el val per correu electrònic"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Introduïu el codi de verificació que s'ha enviat a ${ parentEmail }."
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Correu electrònic"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     }
   }

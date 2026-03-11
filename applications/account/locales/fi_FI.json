@@ -1620,6 +1620,12 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Close search": [
+        "Sulje haku"
+      ],
+      "Search groups": [
+        "Hae ryhmiä"
       ]
     },
     "action": {
@@ -6026,6 +6032,9 @@
       ],
       "ZIP code is required": [
         "Postinumero vaaditaan"
+      ],
+      "Invalid coupon": [
+        "Virheellinen kuponki"
       ]
     },
     "error": {
@@ -10717,6 +10726,9 @@
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Ryhmien luominen vaatii oman verkkotunnuksen. Jos et ole vielä määrittänyt omaa verkkotunnusta, tee se ensin: ${ linkToDomainPage }."
       ]
     },
     "info": {
