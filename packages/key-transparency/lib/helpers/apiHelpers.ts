@@ -13,8 +13,8 @@ import type { Address, Api, FetchedSignedKeyList, SignedKeyList } from '@proton/
 import { KT_VE_SIGNING_CONTEXT, KT_VE_VERIFICATION_CONTEXT } from '../constants/constants';
 import type { Epoch, Proof, VerifiedEpoch } from '../interfaces';
 import { verifyEpoch } from '../verification/verifyEpochs';
-import { getEpochsRoute, getLatestVerifiedEpochRoute, getProofRoute, uploadVerifiedEpochRoute } from './api';
-import { StaleEpochError, isTimestampTooOld, throwKTError } from './utils';
+import { getEpochsRoute, getLatestVerifiedEpochRoute, getProofRoute, getSingleEpochRoute, uploadVerifiedEpochRoute } from './api';
+import { StaleEpochError, isTimestampOlderThanThreshold, isTimestampTooOld, throwKTError } from './utils';
 
 /**
  * Fetch the latest issued epoch. Note that there is no guarantee that the
@@ -37,6 +37,23 @@ export const fetchLatestEpoch = async (api: Api, verify: boolean = true): Promis
         }
     }
     return lastEpoch;
+};
+
+/**
+ * Fetch a specific epoch by its EpochID.
+ * If `verified` is passed, the epoch is verified at its ClaimedTime.
+ * NB: the returned epoch may be older than MAX_EPOCH_INTERVAL, but must be newer than a threshold time,
+ * bound to its certificate expiration.
+ */
+export const fetchEpochByEpochID = async (api: Api, epochID: number, verify: boolean = true): Promise<Epoch> => {
+    const epoch = await api<Epoch>(getSingleEpochRoute({ EpochID: epochID }));
+    if (isTimestampOlderThanThreshold(epoch.ClaimedTime)) {
+        throw throwKTError('Epoch is older than threshold time');
+    }
+    if (verify) {
+        await verifyEpoch(epoch, new Date(epoch.ClaimedTime));
+    }
+    return epoch;
 };
 
 /**

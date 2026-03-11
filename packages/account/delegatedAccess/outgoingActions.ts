@@ -2,7 +2,7 @@ import { type UnknownAction, miniSerializeError } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
 import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@proton/crypto';
-import { verifySKLSignature } from '@proton/key-transparency/verification';
+import { verifyAddressKeyToRecover } from '@proton/key-transparency/verification';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType, cacheHelper, createPromiseStore, previousSelector } from '@proton/redux-utilities';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
@@ -11,14 +11,14 @@ import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerify
 import { APPS } from '@proton/shared/lib/constants';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
-import type {
-    Address,
-    Api,
-    DecryptedAddressKey,
-    DecryptedKey,
-    FetchedSignedKeyList,
+import {
+    type Address,
+    type Api,
+    type DecryptedKey,
+    type FetchedSignedKeyList,
+    KT_VERIFICATION_STATUS,
 } from '@proton/shared/lib/interfaces';
-import { ParsedSignedKeyList, type ReactivateKeysResult } from '@proton/shared/lib/keys';
+import type { ReactivateKeysResult } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { addressKeysThunk } from '../addressKeys';
@@ -420,59 +420,6 @@ export const updateAllDelegatedAccesses = ({
     };
 };
 
-export const verifyRecoveryKeys = async ({
-    signatureAddressKeyID,
-    signedKeyList,
-    address,
-    decryptedAddressKeys,
-}: {
-    signatureAddressKeyID: string;
-    signedKeyList: FetchedSignedKeyList;
-    address: Address;
-    decryptedAddressKeys: DecryptedAddressKey<PrivateKeyReference>[];
-}) => {
-    if (!signedKeyList.Data) {
-        throw new Error('Signed key list not found');
-    }
-    if (!signedKeyList.Signature) {
-        throw new Error('Signed key list signature not found');
-    }
-    const parsedSignedKeyList = new ParsedSignedKeyList(signedKeyList.Data);
-    const signedKeyListItems = parsedSignedKeyList.getParsedSignedKeyList();
-    if (!signedKeyListItems) {
-        throw new Error('Unparseable signed key list');
-    }
-    const signatureAddressKey = address.Keys.find(({ ID }) => ID === signatureAddressKeyID);
-    if (!signatureAddressKey) {
-        throw new Error('Signature address key not found');
-    }
-    if (decryptedAddressKeys.some((key) => key.ID === signatureAddressKey.ID)) {
-        /*
-            TODO: Check if this is needed. We might need to let it pass through to reactivate previous keys?
-            throw new NoAssociatedKeysError('Key is already decrypted, no data to recover');
-         */
-    }
-    const verificationKey = await CryptoProxy.importPublicKey({ armoredKey: signatureAddressKey.PrivateKey });
-    // Verifies that the SKL was signed by the inactive key
-    const timestamp = await verifySKLSignature({
-        verificationKeys: [verificationKey],
-        signedKeyListData: signedKeyList.Data,
-        signedKeyListSignature: signedKeyList.Signature,
-    });
-    if (!timestamp) {
-        throw new Error('Signed key list not verified');
-    }
-    // Verifies that the key used for verification already existed in key transparency before re-activation
-    if (
-        !signedKeyListItems.some(
-            (key) => verificationKey.getSHA256Fingerprints().join(',') === key.SHA256Fingerprints.join(',')
-        )
-    ) {
-        throw new Error('Signature address key not found in signed key list');
-    }
-    return { verificationKeys: [verificationKey] };
-};
-
 interface RecoverDelegatedAccessStep2Output {
     UserKeys: { UserKeyID: string; PrivateKey: string }[];
     RecoveryToken: string;
@@ -487,7 +434,7 @@ export const recoverDelegatedAccessStep2Thunk = ({
     ignoreVerification: boolean;
 }): ThunkAction<Promise<ReactivateKeysResult>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState, extra) => {
-        let importedVerificationKeys: PublicKeyReference[] | null = null;
+        let untrustedSignatureAddressKey: PublicKeyReference | null = null;
 
         const state = getState();
         const loadingKeys = Object.keys(state.delegatedAccess.outgoingDelegatedAccess.ephemeral || {});
@@ -525,26 +472,47 @@ export const recoverDelegatedAccessStep2Thunk = ({
                 throw new Error('Source address keys not found');
             }
 
-            // In case the SignedKeyList does not exist, let the user take manual action to proceed.
-            if (!SignedKeyList && !ignoreVerification) {
-                throw new RetrySignedKeyListError();
+            const signatureAddressKey = address.Keys.find(({ ID }) => ID === SignatureAddressKeyID);
+            if (!signatureAddressKey) {
+                throw new Error('Signature address key not found');
+            }
+            if (decryptedAddressKeys.some((key) => key.ID === signatureAddressKey.ID)) {
+                /*
+                TODO: Check if this is needed. We might need to let it pass through to reactivate previous keys?
+                throw new NoAssociatedKeysError('Key is already decrypted, no data to recover');
+                */
             }
 
-            const verificationResult = !SignedKeyList
-                ? { verificationKeys: null }
-                : await verifyRecoveryKeys({
-                      address,
-                      signedKeyList: SignedKeyList,
-                      signatureAddressKeyID: SignatureAddressKeyID,
-                      decryptedAddressKeys,
-                  });
+            untrustedSignatureAddressKey = await CryptoProxy.importPublicKey({
+                armoredKey: signatureAddressKey.PrivateKey,
+            });
+            const verificationResult = await verifyAddressKeyToRecover({
+                api,
+                email: address.Email,
+                signedKeyList: SignedKeyList,
+                addressKeyToRecover: {
+                    publicKey: untrustedSignatureAddressKey,
+                    armoredKey: signatureAddressKey.PrivateKey,
+                    primary: signatureAddressKey.Primary,
+                    flags: signatureAddressKey.Flags,
+                },
+            });
 
-            importedVerificationKeys = verificationResult.verificationKeys;
+            // Allow the user to ignore unverified keys (the user has been prompted).
+            if (verificationResult.status === KT_VERIFICATION_STATUS.UNVERIFIED_KEYS && !ignoreVerification) {
+                throw new RetrySignedKeyListError(verificationResult.errorDetails);
+            }
+
+            // verificationKeys may be null in case verification is being ignored.
+            let verificationKeys: PublicKeyReference[] | null = null;
+            if (verificationResult.status === KT_VERIFICATION_STATUS.VERIFIED_KEYS) {
+                verificationKeys = [untrustedSignatureAddressKey];
+            }
 
             const recoveryToken = await getDecryptedDelegatedAccessToken({
                 armoredMessage: RecoveryToken,
                 decryptionKeys: decryptedAddressKeys.map((addressKey) => addressKey.privateKey),
-                verificationKeys: importedVerificationKeys,
+                verificationKeys,
             });
 
             const [user, userKeys] = await Promise.all([dispatch(userThunk()), dispatch(userKeysThunk())]);
@@ -583,9 +551,9 @@ export const recoverDelegatedAccessStep2Thunk = ({
             extra.eventManager.start();
 
             // Clean up imported verification keys
-            importedVerificationKeys?.forEach((verificationKey) => {
-                CryptoProxy.clearKey({ key: verificationKey }).catch(noop);
-            });
+            if (untrustedSignatureAddressKey) {
+                void CryptoProxy.clearKey({ key: untrustedSignatureAddressKey }).catch(noop);
+            }
 
             dispatch(
                 delegatedAccessActions.setOutgoingEphemeral({
