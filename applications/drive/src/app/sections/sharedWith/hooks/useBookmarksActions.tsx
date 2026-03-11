@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import type { useConfirmActionModal } from '@proton/components';
 import { useNotifications } from '@proton/components';
-import { useDrive } from '@proton/drive/index';
+import { getDrive, useDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { PROTON_LOCAL_DOMAIN } from '@proton/shared/lib/localDev';
 
@@ -47,6 +47,7 @@ export const useBookmarksActions = () => {
         if (deletedBookmarkUids.length > 0) {
             await getBusDriver().emit({
                 type: BusDriverEventName.DELETE_BOOKMARKS,
+                driveClient: getDrive(),
                 uids: deletedBookmarkUids,
             });
             void countActionWithTelemetry(Actions.DeleteBookmarkFromSharedWithMe, deletedBookmarkUids.length);

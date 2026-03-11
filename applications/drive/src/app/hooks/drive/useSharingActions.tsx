@@ -1,17 +1,17 @@
 import { c } from 'ttag';
 
 import { type useConfirmActionModal, useNotifications } from '@proton/components';
-import { useDrive } from '@proton/drive';
+import { type ProtonDriveClient, getDrive } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 
 export const useSharingActions = () => {
-    const { drive } = useDrive();
     const { createNotification } = useNotifications();
 
     const stopSharing = (
         showConfirmModal: ReturnType<typeof useConfirmActionModal>[1],
+        drive: Pick<ProtonDriveClient, 'unshareNode' | 'getNode'>,
         uid: string,
         parentUid: string | undefined
     ) => {
@@ -20,6 +20,7 @@ export const useSharingActions = () => {
                 await drive.unshareNode(uid);
                 await getBusDriver().emit({
                     type: BusDriverEventName.UPDATED_NODES,
+                    driveClient: drive,
                     items: [{ uid, parentUid, isShared: false }],
                 });
 
@@ -40,7 +41,11 @@ export const useSharingActions = () => {
         });
     };
 
-    const removeMe = (showConfirmModal: ReturnType<typeof useConfirmActionModal>[1], uid: string) => {
+    const removeMe = (
+        showConfirmModal: ReturnType<typeof useConfirmActionModal>[1],
+        drive: Pick<ProtonDriveClient, 'leaveSharedNode' | 'getNode'>,
+        uid: string
+    ) => {
         const onSubmit = async () => {
             try {
                 await drive.leaveSharedNode(uid);
@@ -49,6 +54,7 @@ export const useSharingActions = () => {
                 });
                 await getBusDriver().emit({
                     type: BusDriverEventName.REMOVE_ME,
+                    driveClient: getDrive(),
                     uids: [uid],
                 });
             } catch (e) {

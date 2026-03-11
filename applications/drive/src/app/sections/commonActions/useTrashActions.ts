@@ -1,4 +1,4 @@
-import { useDrive } from '@proton/drive/index';
+import { getDrive, useDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import useListNotifications from '../../store/_actions/useListNotifications';
@@ -11,7 +11,7 @@ export const useTrashActions = () => {
     const { createTrashedItemsNotifications } = useListNotifications();
     const restoreItems = async (items: Item[]) => {
         const restored = [];
-        await getBusDriver().emit({ type: BusDriverEventName.RESTORED_NODES, items });
+        await getBusDriver().emit({ type: BusDriverEventName.RESTORED_NODES, driveClient: getDrive(), items });
 
         try {
             const uids = items.map((t) => t.uid);
@@ -30,7 +30,7 @@ export const useTrashActions = () => {
         const uids = items.map((d) => d.uid);
         const success = [];
         const failures = [];
-        await getBusDriver().emit({ type: BusDriverEventName.TRASHED_NODES, uids });
+        await getBusDriver().emit({ type: BusDriverEventName.TRASHED_NODES, driveClient: getDrive(), uids });
 
         try {
             for await (const result of drive.trashNodes(uids)) {

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useBeforeUnload, useConfirmActionModal } from '@proton/components';
-import { splitNodeUid } from '@proton/drive/index';
+import { getDrive, splitNodeUid } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { uploadManager } from '@proton/drive/modules/upload';
 import clsx from '@proton/utils/clsx';
@@ -69,6 +69,7 @@ export const TransferManager = ({
             if (event.type === 'file:complete' && event.isUpdatedNode) {
                 await busDriver.emit({
                     type: BusDriverEventName.UPDATED_NODES,
+                    driveClient: getDrive(),
                     items: [{ uid: event.nodeUid, parentUid: event.parentUid }],
                 });
             } else if (event.type === 'file:complete' && event.isForPhotos) {
@@ -78,6 +79,7 @@ export const TransferManager = ({
             } else if (event.type === 'file:complete' || event.type === 'folder:complete') {
                 await busDriver.emit({
                     type: BusDriverEventName.CREATED_NODES,
+                    driveClient: getDrive(),
                     items: [{ uid: event.nodeUid, parentUid: event.parentUid }],
                 });
             }

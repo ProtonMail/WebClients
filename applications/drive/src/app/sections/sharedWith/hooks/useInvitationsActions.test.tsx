@@ -63,18 +63,17 @@ const mockNode: Partial<NodeEntity> = {
         },
     },
 };
+const mockDrive = {
+    acceptInvitation: mockAcceptInvitation,
+    rejectInvitation: mockRejectInvitation,
+    getNode: mockGetNode,
+};
 
 describe('useInvitationsActions', () => {
     beforeEach(() => {
         jest.mocked(useNotifications).mockReturnValue({
             createNotification: mockCreateNotification,
         } as any);
-
-        const mockDrive = {
-            acceptInvitation: mockAcceptInvitation,
-            rejectInvitation: mockRejectInvitation,
-            getNode: mockGetNode,
-        };
 
         jest.mocked(getDrivePerNodeType).mockReturnValue(mockDrive as any);
 
@@ -113,6 +112,7 @@ describe('useInvitationsActions', () => {
             expect(mockSetVolumeShareIds).toHaveBeenCalledWith('volume-id-1', ['share-id-1']);
             expect(mockEventManagerEmit).toHaveBeenCalledWith({
                 type: BusDriverEventName.ACCEPT_INVITATIONS,
+                driveClient: mockDrive,
                 uids: [mockNode.uid],
             });
             expect(mockCreateNotification).toHaveBeenCalledWith({
@@ -234,6 +234,7 @@ describe('useInvitationsActions', () => {
             expect(mockRejectInvitation).toHaveBeenCalledWith(invitationUid);
             expect(mockEventManagerEmit).toHaveBeenCalledWith({
                 type: BusDriverEventName.REJECT_INVITATIONS,
+                driveClient: mockDrive,
                 uids: [uid],
             });
             expect(mockCreateNotification).toHaveBeenCalledWith({

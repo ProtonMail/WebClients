@@ -125,6 +125,7 @@ describe('useRemoveDeviceModalState', () => {
         expect(mockOnFormSubmit).toHaveBeenCalled();
         expect(mockEmit).toHaveBeenCalledWith({
             type: BusDriverEventName.REMOVED_DEVICES,
+            driveClient: mockDrive,
             deviceUids: [DEVICE_UID],
         });
         expect(mockDrive.deleteDevice).toHaveBeenCalledWith(DEVICE_UID);

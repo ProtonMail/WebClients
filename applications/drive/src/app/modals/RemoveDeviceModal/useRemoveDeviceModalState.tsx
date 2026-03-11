@@ -56,7 +56,11 @@ export const useRemoveDeviceModalState = ({
         }
         const successNotificationText = c('Notification').t`Device removed`;
         const unhandledErrorNotificationText = c('Notification').t`Failed to remove device`;
-        await getBusDriver().emit({ type: BusDriverEventName.REMOVED_DEVICES, deviceUids: [deviceUid] });
+        await getBusDriver().emit({
+            type: BusDriverEventName.REMOVED_DEVICES,
+            driveClient: drive,
+            deviceUids: [deviceUid],
+        });
         await drive
             .deleteDevice(deviceUid)
             .then(async () => {

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useGetUser } from '@proton/account/user/hooks';
 import { useEventManager, useNotifications, useOnline, usePreventLeave } from '@proton/components';
-import { useDrive } from '@proton/drive';
+import { getDrive, useDrive } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { APPS } from '@proton/shared/lib/constants';
 import { MAX_SAFE_UPLOADING_FILE_COUNT, MAX_SAFE_UPLOADING_FILE_SIZE } from '@proton/shared/lib/drive/constants';
@@ -262,6 +262,7 @@ function useBaseUpload(
                             );
                             await getBusDriver().emit({
                                 type: BusDriverEventName.CREATED_NODES,
+                                driveClient: getDrive(),
                                 items: [{ uid, parentUid }],
                             });
                         } catch (e) {
@@ -342,6 +343,7 @@ function useBaseUpload(
                                 type: file.isNewFile
                                     ? BusDriverEventName.CREATED_NODES
                                     : BusDriverEventName.UPDATED_NODES,
+                                driveClient: getDrive(),
                                 items: [{ uid, parentUid }],
                             });
                         } catch (e) {
