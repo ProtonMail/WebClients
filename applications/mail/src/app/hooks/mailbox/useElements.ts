@@ -209,6 +209,20 @@ export const useElements: UseElements = ({
             // For other changes, only reset if not in newsletter view
             (!isNavigatingToNewsletterView && (hasESEnabledChange || hasPageJump || hasSortChange));
 
+        /* When switching between encrypted and backend search, we have to reset the page in case the user is not on the first one
+         * We have to do this BEFORE triggering a reset.
+         * If we reset too early, it will trigger a loading on the previous page, which is wrong
+         * The flow will be the following:
+         * - Pass 1, page !== 0, navigate to page 0 and early return
+         * - Pass 2, the location change triggers a reset, which is triggering a loading of the first page
+         */
+        if (hasESEnabledChange && page !== 0) {
+            onPage(0);
+            return;
+        }
+
+        esEnabledRef.current = esEnabled;
+
         if (shouldResetElementsState) {
             dispatch(
                 reset({
@@ -248,7 +262,7 @@ export const useElements: UseElements = ({
             );
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-577287
-    }, [location.pathname, location.hash, mailSettings.ViewMode, labelIDs, esEnabled]);
+    }, [location.pathname, location.hash, mailSettings.ViewMode, labelIDs, esEnabled, onPage]);
 
     // Reset the element state when receiving a setting update for page size or conversation mode
     useEffect(() => {
@@ -375,11 +389,6 @@ export const useElements: UseElements = ({
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-3D8BC7
     }, [stateInconsistency]);
-
-    // Keep track of previous esEnabled status
-    useEffect(() => {
-        esEnabledRef.current = esEnabled;
-    }, [esEnabled]);
 
     useElementsEvents(conversationMode);
 
