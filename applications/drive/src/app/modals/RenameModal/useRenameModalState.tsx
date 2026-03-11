@@ -104,11 +104,13 @@ export const useRenameModalState = ({
             .renameNode(nodeUid, newName)
             .then(async () => {
                 createNotification({ text: successNotificationText, preWrap: true });
-                await getBusDriver().emit({
-                    type: BusDriverEventName.RENAMED_NODES,
-                    driveClient: drive,
-                    items: [{ uid: nodeUid, newName }],
-                });
+                await getBusDriver().emit(
+                    {
+                        type: BusDriverEventName.RENAMED_NODES,
+                        items: [{ uid: nodeUid, newName }],
+                    },
+                    drive
+                );
                 onClose();
             })
             .catch((e) => {

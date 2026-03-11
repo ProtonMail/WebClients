@@ -143,11 +143,10 @@ describe('subscribeToSharedByMeEvents', () => {
             mockStore.getSharedByMeItem.mockReturnValue(undefined);
 
             const event = {
-                driveClient: mockDrive,
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
 
-            await createdNodesHandler(event);
+            await createdNodesHandler(event, mockDrive);
 
             expect(mockStore.setSharedByMeItem).toHaveBeenCalledWith(
                 expect.objectContaining({
@@ -161,11 +160,10 @@ describe('subscribeToSharedByMeEvents', () => {
             mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
 
             const event = {
-                driveClient: mockDrive,
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
 
-            await createdNodesHandler(event);
+            await createdNodesHandler(event, mockDrive);
 
             expect(mockStore.setSharedByMeItem).not.toHaveBeenCalled();
         });
@@ -175,7 +173,7 @@ describe('subscribeToSharedByMeEvents', () => {
                 items: [{ uid: 'node-uid-123', isShared: false }],
             };
 
-            await createdNodesHandler(event);
+            await createdNodesHandler(event, mockDrive);
 
             expect(mockStore.setSharedByMeItem).not.toHaveBeenCalled();
         });
@@ -187,11 +185,10 @@ describe('subscribeToSharedByMeEvents', () => {
             });
 
             const event = {
-                driveClient: mockDrive,
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
 
-            await createdNodesHandler(event);
+            await createdNodesHandler(event, mockDrive);
 
             expect(mockHandleSdkError).toHaveBeenCalledWith(expect.any(Error), { showNotification: false });
             expect(mockStore.setSharedByMeItem).not.toHaveBeenCalled();
@@ -215,7 +212,7 @@ describe('subscribeToSharedByMeEvents', () => {
                 items: [{ uid: 'node-uid-123', isShared: false }],
             };
 
-            await updatedNodesHandler(event);
+            await updatedNodesHandler(event, mockDrive);
 
             expect(mockStore.removeSharedByMeItem).toHaveBeenCalledWith('node-uid-123');
             expect(mockStore.setSharedByMeItem).not.toHaveBeenCalled();
@@ -225,11 +222,10 @@ describe('subscribeToSharedByMeEvents', () => {
             mockStore.getSharedByMeItem.mockReturnValue(createMockSharedByMeItem());
 
             const event = {
-                driveClient: mockDrive,
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
 
-            await updatedNodesHandler(event);
+            await updatedNodesHandler(event, mockDrive);
 
             expect(mockStore.setSharedByMeItem).toHaveBeenCalledWith(
                 expect.objectContaining({
@@ -246,7 +242,7 @@ describe('subscribeToSharedByMeEvents', () => {
                 items: [{ uid: 'node-uid-123', isShared: false }],
             };
 
-            await updatedNodesHandler(event);
+            await updatedNodesHandler(event, mockDrive);
 
             expect(mockStore.removeSharedByMeItem).not.toHaveBeenCalled();
         });
@@ -258,11 +254,10 @@ describe('subscribeToSharedByMeEvents', () => {
             });
 
             const event = {
-                driveClient: mockDrive,
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
 
-            await updatedNodesHandler(event);
+            await updatedNodesHandler(event, mockDrive);
 
             expect(mockHandleSdkError).toHaveBeenCalledWith(expect.any(Error), { showNotification: false });
             expect(mockStore.setSharedByMeItem).not.toHaveBeenCalled();
@@ -319,11 +314,10 @@ describe('subscribeToSharedByMeEvents', () => {
             mockStore.getSharedByMeItem.mockReturnValue(undefined);
 
             const event = {
-                driveClient: mockDrive,
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
 
-            await createdNodesHandler(event);
+            await createdNodesHandler(event, mockDrive);
 
             expect(mockStore.setSharedByMeItem).toHaveBeenCalledWith(
                 expect.objectContaining({
@@ -341,11 +335,10 @@ describe('subscribeToSharedByMeEvents', () => {
             mockDrive.getSharingInfo.mockResolvedValue({});
 
             const event = {
-                driveClient: mockDrive,
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
 
-            await createdNodesHandler(event);
+            await createdNodesHandler(event, mockDrive);
 
             expect(mockStore.setSharedByMeItem).toHaveBeenCalledWith(
                 expect.objectContaining({
@@ -366,11 +359,10 @@ describe('subscribeToSharedByMeEvents', () => {
             });
 
             const event = {
-                driveClient: mockDrive,
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
 
-            await createdNodesHandler(event);
+            await createdNodesHandler(event, mockDrive);
 
             expect(mockStore.setSharedByMeItem).toHaveBeenCalledWith(
                 expect.objectContaining({
@@ -387,11 +379,10 @@ describe('subscribeToSharedByMeEvents', () => {
             });
 
             const event = {
-                driveClient: mockDrive,
                 items: [{ uid: 'node-uid-123', isShared: true }],
             };
 
-            await createdNodesHandler(event);
+            await createdNodesHandler(event, mockDrive);
 
             expect(mockHandleSdkError).toHaveBeenCalledWith(
                 expect.objectContaining({
