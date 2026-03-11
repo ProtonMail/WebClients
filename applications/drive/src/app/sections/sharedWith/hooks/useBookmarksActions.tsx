@@ -45,11 +45,13 @@ export const useBookmarksActions = () => {
         }
 
         if (deletedBookmarkUids.length > 0) {
-            await getBusDriver().emit({
-                type: BusDriverEventName.DELETE_BOOKMARKS,
-                driveClient: getDrive(),
-                uids: deletedBookmarkUids,
-            });
+            await getBusDriver().emit(
+                {
+                    type: BusDriverEventName.DELETE_BOOKMARKS,
+                    uids: deletedBookmarkUids,
+                },
+                getDrive()
+            );
             void countActionWithTelemetry(Actions.DeleteBookmarkFromSharedWithMe, deletedBookmarkUids.length);
         }
 

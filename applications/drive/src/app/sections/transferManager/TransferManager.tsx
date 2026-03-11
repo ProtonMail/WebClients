@@ -67,21 +67,25 @@ export const TransferManager = ({
         const busDriver = getBusDriver();
         uploadManager.subscribeToEvents('transfer-manager', async (event) => {
             if (event.type === 'file:complete' && event.isUpdatedNode) {
-                await busDriver.emit({
-                    type: BusDriverEventName.UPDATED_NODES,
-                    driveClient: getDrive(),
-                    items: [{ uid: event.nodeUid, parentUid: event.parentUid }],
-                });
+                await busDriver.emit(
+                    {
+                        type: BusDriverEventName.UPDATED_NODES,
+                        items: [{ uid: event.nodeUid, parentUid: event.parentUid }],
+                    },
+                    getDrive()
+                );
             } else if (event.type === 'file:complete' && event.isForPhotos) {
                 // TODO: Remove when photos section listing is using the sdk
                 const { volumeId } = splitNodeUid(event.nodeUid);
                 await driveEventManager.pollEvents.volumes(volumeId);
             } else if (event.type === 'file:complete' || event.type === 'folder:complete') {
-                await busDriver.emit({
-                    type: BusDriverEventName.CREATED_NODES,
-                    driveClient: getDrive(),
-                    items: [{ uid: event.nodeUid, parentUid: event.parentUid }],
-                });
+                await busDriver.emit(
+                    {
+                        type: BusDriverEventName.CREATED_NODES,
+                        items: [{ uid: event.nodeUid, parentUid: event.parentUid }],
+                    },
+                    getDrive()
+                );
             }
         });
 
