@@ -54,5 +54,5 @@ export function getIsEligible({
     }
 
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
-    return isInApp(protonConfig, APPS.PROTONMAIL, parentApp);
+    return isInApp(protonConfig, APPS.PROTONMAIL, parentApp) || isInApp(protonConfig, APPS.PROTONCALENDAR, parentApp);
 }

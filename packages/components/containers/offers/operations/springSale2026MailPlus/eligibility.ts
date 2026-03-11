@@ -39,7 +39,7 @@ export function getIsEligible({
     }
 
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
-    if (isInApp(protonConfig, APPS.PROTONMAIL, parentApp)) {
+    if (isInApp(protonConfig, APPS.PROTONMAIL, parentApp) || isInApp(protonConfig, APPS.PROTONCALENDAR, parentApp)) {
         return true;
     }
 
