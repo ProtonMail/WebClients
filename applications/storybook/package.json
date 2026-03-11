@@ -4,7 +4,8 @@
     "keywords": [],
     "license": "GPL-3.0",
     "scripts": {
-        "build": "storybook build --loglevel warn --quiet",
+        "build": "yarn build:clean && storybook build --loglevel warn --quiet",
+        "build:clean": "rimraf ./storybook-static",
         "build:serve": "http-server ./storybook-static --cors --port 3000 --silent",
         "build:wait": "wait-on http://localhost:3000",
         "check-types": "tsc",

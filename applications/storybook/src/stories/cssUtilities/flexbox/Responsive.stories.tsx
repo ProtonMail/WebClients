@@ -1,60 +1,49 @@
-import mdx from './Responsive.mdx';
+import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-export default {
+const meta: Meta = {
     title: 'CSS Utilities/Flexbox/Responsive',
     parameters: {
         docs: {
-            page: mdx,
-            inlineStories: false,
+            description: {
+                component:
+                    'All flex helper classes can be prefixed with `sm:`, `md:`, `lg:` or `xl:` for responsive behavior.',
+            },
         },
         layout: 'fullscreen',
     },
+    tags: ['autodocs'],
 };
 
-export const ColumnMobile = () => {
-    return (
+export default meta;
+
+type Story = StoryObj;
+
+export const ColumnMobile: Story = {
+    render: () => (
         <div className="flex gap-2 justify-space-between flex-column md:flex-row rounded overflow-hidden border">
             <div className="bg-primary p-4">div</div>
             <span className="bg-primary p-4">span</span>
             <em className="bg-primary p-4">em</em>
         </div>
-    );
+    ),
 };
 
-ColumnMobile.parameters = {
-    docs: {
-        iframeHeight: '200px',
-    },
-};
-
-export const ColumnTablet = () => {
-    return (
+export const ColumnTablet: Story = {
+    render: () => (
         <div className="flex gap-2 justify-space-between flex-column lg:flex-row rounded overflow-hidden border">
             <div className="bg-primary p-4">div</div>
             <span className="bg-primary p-4">span</span>
             <em className="bg-primary p-4">em</em>
         </div>
-    );
+    ),
 };
 
-ColumnTablet.parameters = {
-    docs: {
-        iframeHeight: '200px',
-    },
-};
-
-export const FlexGap0 = () => {
-    return (
+export const FlexGap0: Story = {
+    render: () => (
         <div className="flex gap-0 md:gap-4 rounded overflow-hidden border">
             <div className="bg-primary p-4">div</div>
             <span className="bg-primary p-4">span</span>
             <em className="bg-primary p-4">em</em>
         </div>
-    );
-};
-
-FlexGap0.parameters = {
-    docs: {
-        iframeHeight: '100px',
-    },
+    ),
 };
