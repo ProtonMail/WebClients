@@ -9,22 +9,24 @@ import {
     getDescriptionFromCategoryId,
     getLabelFromCategoryId,
 } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 interface CategoryItemProps {
     category: CategoryTab;
     loading: boolean;
+    categoriesEnabled: boolean;
     onUpdate: (category: CategoryTab) => void;
 }
 
-export const CategorySettingsItem = ({ category, loading, onUpdate }: CategoryItemProps) => {
+export const CategorySettingsItem = ({ category, loading, categoriesEnabled, onUpdate }: CategoryItemProps) => {
     const categoryLabel = getLabelFromCategoryId(category.id);
 
     return (
         <div key={category.id} className="flex items-center px-4 py-2">
             <Toggle
                 id={`enable-${category.id}`}
-                className="self-center mr-3"
+                className={clsx('self-center mr-3', categoriesEnabled ? 'w-auto' : 'hidden')}
                 // checked={category.display}
                 checked={true}
                 // onClick={() => onUpdate({ ...category, display: !category.display })}
@@ -50,13 +52,15 @@ export const CategorySettingsItem = ({ category, loading, onUpdate }: CategoryIt
                 {c('Info').t`Receive notifications for ${categoryLabel}`}
             </label>
 
-            <Checkbox
-                id={`notification-${category.id}`}
-                checked={category.notify}
-                onChange={() => onUpdate({ ...category, notify: !category.notify })}
-                data-testid={`${category.id}-notify`}
-                disabled={loading}
-            />
+            {categoriesEnabled && (
+                <Checkbox
+                    id={`notification-${category.id}`}
+                    checked={category.notify}
+                    onChange={() => onUpdate({ ...category, notify: !category.notify })}
+                    data-testid={`${category.id}-notify`}
+                    disabled={loading}
+                />
+            )}
         </div>
     );
 };

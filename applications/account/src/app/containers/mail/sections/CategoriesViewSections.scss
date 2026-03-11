@@ -16,25 +16,6 @@
 	--color-blue-400: #5094fb;
 	--color-blue-500: #3e87fb;
 
-	.wrapper {
-		display: grid;
-		grid-template-rows: minmax(185px, 0fr);
-		border-radius: 1rem;
-		opacity: 0.5;
-		transition:
-			grid-template-rows 0.5s ease-out,
-			opacity 0.5s ease-out;
-
-		.inner {
-			overflow: hidden;
-		}
-
-		&.is-open {
-			grid-template-rows: minmax(185px, 1fr);
-			opacity: 1;
-		}
-	}
-
 	.mail-category-color {
 		color: var(--cat-foreground);
 
