@@ -5,6 +5,7 @@ import { PAYMENT_TOKEN_STATUS, buyCredit, createTokenV4 } from '@proton/payments
 import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import {
+    MOCK_PAYMENT_STATUS,
     addApiMock,
     applyHOCs,
     mockEventManager,
@@ -17,6 +18,7 @@ import {
     withDeprecatedModals,
     withEventManager,
     withNotifications,
+    withReduxStore,
 } from '@proton/testing';
 
 import CreditsModal from './CreditsModal';
@@ -58,6 +60,7 @@ beforeEach(() => {
 
 const ContextCreditsModal = applyHOCs(
     withConfig(),
+    withReduxStore(),
     withNotifications(),
     withEventManager(),
     withApi(),
@@ -66,9 +69,9 @@ const ContextCreditsModal = applyHOCs(
     withAuthentication()
 )(CreditsModal);
 
-const status = {} as any;
+const status = MOCK_PAYMENT_STATUS;
 
-it.skip('should render', () => {
+it('should render', () => {
     const { container } = render(<ContextCreditsModal paymentStatus={status} open={true} app={APPS.PROTONMAIL} />);
 
     expect(container).not.toBeEmptyDOMElement();
@@ -419,7 +422,7 @@ it.skip('should create payment token for paypal and then buy credits with it - c
 const paypalPayerId = 'AAAAAAAAAAAAA';
 const paypalShort = `PayPal - ${paypalPayerId}`;
 
-it.skip('should display the saved credit cards', async () => {
+it('should display the saved credit cards', async () => {
     mockPaymentMethods().noSaved().withCard({
         Last4: '4242',
         Brand: 'Visa',
@@ -447,7 +450,7 @@ it.skip('should display the saved credit cards', async () => {
     expect(container).toHaveTextContent('01/2025');
 });
 
-it.skip('should display the saved paypal account', async () => {
+it('should display the saved paypal account', async () => {
     mockPaymentMethods().noSaved().withPaypal({
         BillingAgreementID: 'B-22222222222222222',
         PayerID: paypalPayerId,
@@ -567,5 +570,25 @@ it.skip('should create payment token for saved paypal and then buy credits with 
     });
     await waitFor(() => {
         expect(onClose).toHaveBeenCalled();
+    });
+});
+it('should hide "You will be charged" text when amount is below minimum', async () => {
+    const { queryByTestId } = render(<ContextCreditsModal paymentStatus={status} open={true} app={APPS.PROTONMAIL} />);
+
+    // Default amount (5000) is above the EUR minimum (500) — text should be visible
+    await waitFor(() => {
+        expect(queryByTestId('amountToCharge-text')).toBeTruthy();
+    });
+
+    // Enter an amount below the minimum into the "other amount" field
+    const otherAmountInput = queryByTestId('other-amount') as HTMLInputElement;
+    await userEvent.clear(otherAmountInput);
+    await userEvent.type(otherAmountInput, '1'); // 1 cent — well below 500
+
+    // Wait for debounce (500ms)
+    await wait(500);
+
+    await waitFor(() => {
+        expect(queryByTestId('amountToCharge-text')).toBeFalsy();
     });
 });
