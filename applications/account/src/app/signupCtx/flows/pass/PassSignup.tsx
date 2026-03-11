@@ -46,7 +46,7 @@ const PassSignup = () => {
          * check the pricing with the coupon to ensure the UI data is available
          */
         void payments.checkMultiplePlans([getPassPlusOfferPlan(payments.selectedPlan.currency)]);
-    }, []);
+    }, [payments.selectedPlan.currency]);
 
     const searchParams = new URLSearchParams(location.search);
     const cycleSelectorFlag = searchParams.has('cycle');
