@@ -49,6 +49,8 @@ export async function getPaymentMethodStatus(api: Api) {
 export type PaymentsVersion = 'v4' | 'v5';
 let paymentsVersion: PaymentsVersion = 'v5';
 
+const plansVersion: PaymentsVersion = 'v4';
+
 export function setPaymentsVersion(version: PaymentsVersion) {
     paymentsVersion = version;
 }
@@ -58,7 +60,7 @@ export function getPaymentsVersion(): PaymentsVersion {
 }
 
 export const queryFreePlan = (params?: QueryPlansParams) => ({
-    url: `payments/${paymentsVersion}/plans/default`,
+    url: `payments/${plansVersion}/plans/default`,
     method: 'get',
     params,
 });
@@ -142,7 +144,7 @@ export interface QueryPlansParams {
 }
 
 export const queryPlans = (params?: QueryPlansParams) => ({
-    url: `payments/${paymentsVersion}/plans`,
+    url: `payments/${plansVersion}/plans`,
     method: 'get',
     params,
 });
