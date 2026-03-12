@@ -1,6 +1,7 @@
 import type { APP_NAMES } from '../../constants';
 import { APPS, APPS_CONFIGURATION } from '../../constants';
 import { validateEmailAddress } from '../../helpers/email';
+import type { ForkPayloadVersion } from './constants';
 import { ExtraSessionForkSearchParameters, ForkSearchParameters, ForkType, ForkableApps } from './constants';
 
 export const getValidatedApp = (app = ''): APP_NAMES | undefined => {
@@ -58,6 +59,17 @@ export const getValidatedForkType = (str: string) => {
     if (Object.values(ForkType).includes(str as ForkType)) {
         return str as ForkType;
     }
+};
+
+export const getValidatedPayloadVersion = (str: string | null): ForkPayloadVersion => {
+    if (str === null) {
+        return 1;
+    }
+    const value = Number(str);
+    if (value >= 1 && value <= 3) {
+        return value as ForkPayloadVersion;
+    }
+    return 1;
 };
 
 export const getEmailSessionForkSearchParameter = (searchParams: URLSearchParams) => {
