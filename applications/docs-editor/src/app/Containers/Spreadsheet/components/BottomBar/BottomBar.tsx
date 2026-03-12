@@ -1,5 +1,13 @@
 import type { MouseEvent, ComponentPropsWithoutRef, Ref } from 'react'
-import { memo, useCallback, useEffect, useState } from 'react'
+import { memo, useCallback, useEffect, useRef, useState } from 'react'
+import { DragDropProvider, type DragEndEvent } from '@dnd-kit/react'
+import { isSortable, useSortable } from '@dnd-kit/react/sortable'
+import { closestCenter } from '@dnd-kit/collision'
+import { RestrictToHorizontalAxis } from '@dnd-kit/abstract/modifiers'
+import { RestrictToElement } from '@dnd-kit/dom/modifiers'
+
+import { PointerSensor, PointerActivationConstraints } from '@dnd-kit/dom'
+
 import { Icon } from '../ui'
 import * as Ariakit from '@ariakit/react'
 import * as UI from '../ui'
@@ -10,11 +18,6 @@ import { c } from 'ttag'
 import { createComponent, useEvent } from '../utils'
 import { useUI } from '../../ui-store'
 import type { ProtonSheetsUIState } from '../../ui-state'
-import type { DragEndEvent } from '@dnd-kit/core'
-import { closestCenter, DndContext, MouseSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core'
-import { restrictToHorizontalAxis, restrictToParentElement } from '@dnd-kit/modifiers'
-import { horizontalListSortingStrategy, SortableContext, useSortable } from '@dnd-kit/sortable'
-import { CSS } from '@dnd-kit/utilities'
 import { getStringifiedColor } from '@rowsncolumns/spreadsheet'
 import { ColorPicker } from '../shared/ColorPicker'
 
@@ -194,7 +197,7 @@ function SheetTab({ sheet, index, isActive }: SheetTabProps) {
     setIsRenaming(false)
   }, [rename, sheet.id, sheet.name, title])
 
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: sheet.id })
+  const { ref, isDragging } = useSortable({ id: sheet.id, index, collisionDetector: closestCenter })
 
   const tabColor = getStringifiedColor(
     sheet.tabColor,
@@ -204,17 +207,8 @@ function SheetTab({ sheet, index, isActive }: SheetTabProps) {
   return (
     <div
       className="relative flex h-full shrink-0 items-center"
-      ref={setNodeRef}
-      {...attributes}
-      {...listeners}
+      ref={ref}
       style={{
-        transform: transform
-          ? CSS.Translate.toString({
-              ...transform,
-              y: 0,
-            })
-          : undefined,
-        transition,
         zIndex: isDragging ? 1 : 0,
       }}
     >
@@ -289,45 +283,46 @@ function SheetTab({ sheet, index, isActive }: SheetTabProps) {
 interface SheetTabsProps extends ComponentPropsWithoutRef<'div'> {}
 const SheetTabs = memo(function SheetTabs(props: SheetTabsProps) {
   const activeId = useUI((ui) => ui.sheets.activeId)
+  const containerRef = useRef<HTMLDivElement>(null)
 
-  const sensors = useSensors(
-    useSensor(MouseSensor, {
-      activationConstraint: { distance: 5 },
-    }),
-    useSensor(TouchSensor, {
-      activationConstraint: { delay: 250, tolerance: 5 },
-    }),
-  )
-
-  const sheets = useUI((ui) => ui.sheets.list)
   const moveSheet = useUI.$.sheets.move
-  const handleDragEnd = useEvent((event: DragEndEvent) => {
-    const { active, over } = event
-    if (active.id && over?.id && active.id !== over.id) {
-      const currentPosition = sheets.findIndex((sheet) => sheet.id === active.id)
-      const newPosition = sheets.findIndex((sheet) => sheet.id === over.id)
-      moveSheet(Number(active.id), currentPosition, newPosition)
+  const handleDragEnd = useEvent<DragEndEvent>((event) => {
+    const { source } = event.operation
+    if (isSortable(source)) {
+      const oldIndex = source.initialIndex
+      const newIndex = source.index
+
+      if (oldIndex === newIndex || newIndex === -1) {
+        return
+      }
+
+      moveSheet(Number(source.id), oldIndex, newIndex)
     }
   })
 
   return (
-    <DndContext
-      sensors={sensors}
-      collisionDetection={closestCenter}
-      modifiers={[restrictToParentElement, restrictToHorizontalAxis]}
+    <DragDropProvider
+      sensors={[
+        PointerSensor.configure({
+          activationConstraints: [
+            new PointerActivationConstraints.Distance({ value: 5 }),
+            new PointerActivationConstraints.Delay({ value: 250, tolerance: 5 }),
+          ],
+        }),
+      ]}
+      modifiers={(defaults) => [
+        ...defaults,
+        RestrictToElement.configure({ element: containerRef.current }),
+        RestrictToHorizontalAxis,
+      ]}
       onDragEnd={handleDragEnd}
     >
-      <SortableContext
-        items={useUI((ui) => ui.sheets.visible).map((sheet) => sheet.id)}
-        strategy={horizontalListSortingStrategy}
-      >
-        <div {...props} className="flex h-full items-center gap-2.5 overflow-x-auto">
-          {useUI((ui) => ui.sheets.visible).map((sheet, index) => (
-            <SheetTab key={sheet.id} sheet={sheet} index={index} isActive={sheet.id === activeId} />
-          ))}
-        </div>
-      </SortableContext>
-    </DndContext>
+      <div ref={containerRef} {...props} className="flex h-full items-center gap-2.5 overflow-x-auto">
+        {useUI((ui) => ui.sheets.visible).map((sheet, index) => (
+          <SheetTab key={sheet.id} sheet={sheet} index={index} isActive={sheet.id === activeId} />
+        ))}
+      </div>
+    </DragDropProvider>
   )
 })
 

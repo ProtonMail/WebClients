@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
+import { useSortable } from '@dnd-kit/react/sortable';
 import isDeepEqual from 'lodash/isEqual';
 import { c, msgid } from 'ttag';
 
@@ -14,7 +15,6 @@ import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Alert from '@proton/components/components/alert/Alert';
 import { SortableList } from '@proton/components/components/dnd/SortableList';
-import { useSortableListItem } from '@proton/components/components/dnd/SortableListItem';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { Handle } from '@proton/components/components/table/Handle';
 import Table from '@proton/components/components/table/Table';
@@ -93,23 +93,22 @@ const SortableListItem = ({
     addressStatuses: AddressStatuses;
     disableSort?: boolean;
 }) => {
-    const { isDragging, style, listeners, setNodeRef, attributes } = useSortableListItem({
+    const {
+        isDragging,
+        ref: sortableRef,
+        handleRef,
+    } = useSortable({
         id: address.ID,
-        disabled: disableSort
-            ? {
-                  draggable: false,
-                  /* droppable allows a nicer UX when dragging another item on top of a disabled item */
-                  droppable: true,
-              }
-            : undefined,
+        index,
+        disabled: disableSort,
     });
 
     return (
-        <TableRow ref={setNodeRef} style={style} dragging={isDragging}>
+        <TableRow ref={sortableRef} dragging={isDragging}>
             {disableSort ? (
                 <TableCell> </TableCell>
             ) : (
-                <TableCell {...attributes} {...listeners}>
+                <TableCell ref={handleRef}>
                     <Handle />
                 </TableCell>
             )}
@@ -161,6 +160,7 @@ const AddressesUser = ({
     const [addresses, loadingAddresses] = useAddresses();
     const [list, setAddresses] = useState<Address[]>(() => sortAddresses(addresses || []));
     const sendTelemetryEvent = usePostSubscriptionTourTelemetry();
+    const containerRef = useRef<HTMLTableSectionElement>(null);
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
     const [claimProtonAddressModalProps, setClaimProtonAddressModalOpen, renderClaimProtonAddressModal] =
@@ -249,7 +249,6 @@ const AddressesUser = ({
     };
 
     const disabledSortItems = new Set(addresses?.filter((address) => getIsNonDefault(address)).map((item) => item.ID));
-    const itemIds = addresses?.map((item) => item.ID).filter((id) => !disabledSortItems.has(id)) ?? [];
 
     return (
         <>
@@ -309,8 +308,8 @@ const AddressesUser = ({
                         <th scope="col">{c('Header for addresses table').t`Actions`}</th>
                     </tr>
                 </TableHeader>
-                <TableBody colSpan={4} loading={loadingAddresses}>
-                    <SortableList onSortEnd={handleSortEnd} items={itemIds}>
+                <TableBody colSpan={4} loading={loadingAddresses} ref={containerRef}>
+                    <SortableList onSortEnd={handleSortEnd} containerRef={containerRef}>
                         {list.map((address, index) => {
                             return (
                                 <SortableListItem

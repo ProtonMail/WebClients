@@ -1,24 +1,23 @@
 import type { PropsWithChildren } from 'react';
 
-import { useSortable } from '@dnd-kit/sortable';
-import { CSS } from '@dnd-kit/utilities';
+import { useSortable } from '@dnd-kit/react/sortable';
+import { closestCenter } from '@dnd-kit/collision';
 import type { VirtualItem } from '@tanstack/react-virtual';
 
 import type { GridConfiguration } from './hooks/useGridConfig';
 
 type Props = {
+    index: number;
     id: string;
     config: GridConfiguration;
     virtualItem: Pick<VirtualItem, 'start' | 'lane'>;
     disabled?: boolean;
 };
 
-export const VirtualGridItem = ({ id, config, children, virtualItem, disabled }: PropsWithChildren<Props>) => {
-    const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id, disabled });
+export const VirtualGridItem = ({ index, id, config, children, virtualItem, disabled }: PropsWithChildren<Props>) => {
+    const { ref, isDragging } = useSortable({ id, index, disabled, collisionDetector: closestCenter });
 
     const style = {
-        transform: CSS.Transform.toString(transform),
-        transition,
         height: '100%',
         position: 'absolute',
         width: '100%',
@@ -35,7 +34,7 @@ export const VirtualGridItem = ({ id, config, children, virtualItem, disabled }:
                 height: config.itemHeight,
             }}
         >
-            <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
+            <div ref={ref} style={style}>
                 {children}
             </div>
         </div>

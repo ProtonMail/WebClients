@@ -10,7 +10,7 @@ import TableRow from '../../../components/table/TableRow';
 import PaymentMethodsTable from './PaymentMethodsTable';
 
 jest.mock('../../../components/table/TableRow', () => jest.fn());
-jest.mock('../../../components/table/TableBody');
+jest.mock('../../../components/table/TableBody', () => jest.fn());
 jest.mock('./PaymentMethodActions', () => jest.fn().mockReturnValue(null));
 
 describe('PaymentMethodsTable', () => {
