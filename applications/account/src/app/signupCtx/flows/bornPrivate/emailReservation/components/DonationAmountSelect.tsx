@@ -105,11 +105,12 @@ const DonationAmountSelect = ({ currency, donationAmount, setDonationAmount }: D
                         type="text"
                         inputMode="numeric"
                         onBlur={onBlur}
-                        className="invisible-number-input-arrow"
+                        className="invisible-number-input-arrow min-w-custom"
                         placeholder={c('Placeholder').t`Amount`}
                         suffix={CurrencySymbols[currency]}
                         autoFocus
                         value={donationAmount / divisor}
+                        containerProps={{ style: { '--min-w-custom': '6rem' } }}
                         onChange={handleChange}
                     />
                 )}

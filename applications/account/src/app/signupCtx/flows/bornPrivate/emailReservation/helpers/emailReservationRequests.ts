@@ -122,17 +122,14 @@ export const captureDonationPayment = async ({
     const { divisor } = getCurrencyFormattingConfig(currency);
     const quantity = amount / divisor;
 
-    const config = getBuyProductConfig(
-        APPS.PROTONMAIL,
-        {
-            PaymentToken: paymentToken,
-            ProductType: DONATION_PRODUCT_TYPE,
-            Amount: amount,
-            Currency: currency,
-            BillingAddress: billingAddress,
-        },
-        quantity
-    );
+    const config = getBuyProductConfig(APPS.PROTONMAIL, {
+        PaymentToken: paymentToken,
+        ProductType: DONATION_PRODUCT_TYPE,
+        Amount: amount,
+        Currency: currency,
+        BillingAddress: billingAddress,
+        Quantity: quantity,
+    });
 
     await api(withAuthHeaders(auth.UID, auth.AccessToken, config));
 };

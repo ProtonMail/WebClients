@@ -37,7 +37,7 @@ import type { FormData, ReservedAccount } from '../EmailReservationSignup';
 import { Steps, TOTAL_STEPS } from '../EmailReservationSignup';
 import DonationAmountSelect from '../components/DonationAmountSelect';
 import ReservationErrorModal from '../components/ReservationErrorModal';
-import { generateReadableActivationCode } from '../helpers/emailReservationHelpers';
+import { ErrorTypes, generateReadableActivationCode } from '../helpers/emailReservationHelpers';
 import {
     type AuthenticateDonationUserResult,
     authenticateDonationUser,
@@ -88,16 +88,14 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
     const [donationProcessing, setDonationProcessing] = useState(false);
     const { options } = payments;
     const [showErrorModal, setShowErrorModal] = useState(false);
-    const [errorType, setErrorType] = useState<'payment' | 'post-account-creation'>('payment');
+    const [errorType, setErrorType] = useState<ErrorTypes | null>(null);
     const [retryBornPrivateRequest, setRetryBornPrivateRequest] = useState(false);
     const api = useApi();
 
     const [apiStatuses, setApiStatuses] = useState<DonationApiStatuses>(INITIAL_STATUSES);
     const activationKeyRef = useRef<string | null>(null);
 
-    type StepResult = void | AuthenticateDonationUserResult;
-
-    const runStep = async (key: keyof DonationApiStatuses, request: () => Promise<StepResult>): Promise<StepResult> => {
+    const runStep = async<T,>(key: keyof DonationApiStatuses, request: () => Promise<T>): Promise<T> => {
         setApiStatuses((prev) => ({ ...prev, [key]: 'pending' }));
         try {
             const result = await request();
@@ -109,10 +107,10 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
         }
     };
 
-    const runStepIfNeeded = async (
+    const runStepIfNeeded = async <T,>(
         key: keyof DonationApiStatuses,
-        request: () => Promise<StepResult>
-    ): Promise<StepResult | undefined> => {
+        request: () => Promise<T>
+    ): Promise<T | undefined> => {
         if (apiStatuses[key] === 'success') {
             return undefined;
         }
@@ -165,7 +163,7 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
     const onChargeable: OnChargeable = async (_, data) => {
         const paymentToken = data.chargeablePaymentParameters.PaymentToken;
         if (!paymentToken) {
-            setErrorType('payment');
+            setErrorType(ErrorTypes.paymentError);
             setShowErrorModal(true);
             throw new Error('Payment token is missing');
         }
@@ -182,9 +180,9 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
         const activationKey = activationKeyRef.current ?? generateReadableActivationCode();
         activationKeyRef.current = activationKey;
 
-        let session: AuthenticateDonationUserResult | null = null;
+        let session: AuthenticateDonationUserResult;
 
-        let errorCategory: 'payment' | 'post-account-creation' = 'payment';
+        let errorCategory: ErrorTypes = ErrorTypes.paymentError;
 
         try {
             setDonationProcessing(true);
@@ -199,7 +197,7 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
                 })
             );
 
-            errorCategory = 'post-account-creation';
+            errorCategory = ErrorTypes.postAccountCreationError;
 
             const authResult = await runStep('authenticateDonationUser', () =>
                 authenticateDonationUser({
@@ -209,7 +207,8 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
                     api,
                 })
             );
-            session = authResult ?? null;
+
+            session = authResult;
 
             let completedSuccessfully = false;
             try {
@@ -220,7 +219,7 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
                         currency: chargeableResult.currency,
                         billingAddress: chargeableResult.billingAddress,
                         api,
-                        auth: session!,
+                        auth: session,
                         hasZipCodeValidation: false,
                     })
                 );
@@ -230,7 +229,7 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
                 await runStepIfNeeded('setBornPrivateDetails', () =>
                     setBornPrivateDetails({
                         api,
-                        auth: session!,
+                        auth: session,
                         parentEmail,
                         activationKey,
                     })
@@ -347,7 +346,7 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
                             disabled={
                                 submitting ||
                                 donationProcessing ||
-                                errorType === 'post-account-creation' ||
+                                errorType === ErrorTypes.postAccountCreationError ||
                                 retryBornPrivateRequest
                             }
                         >
@@ -378,7 +377,7 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
                 {selectedMethodCard && <Alert3ds />}
             </BornPrivateMain>
             <BornPrivateFooter />
-            {showErrorModal && (
+            {showErrorModal && errorType && (
                 <ReservationErrorModal
                     onClose={() => setShowErrorModal(false)}
                     onExit={() => setShowErrorModal(false)}
