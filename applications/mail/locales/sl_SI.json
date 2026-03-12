@@ -1719,6 +1719,42 @@
         "${ users } uporabnika",
         "${ users } uporabnikov",
         "${ users } uporabniki"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } namenski VPN strežnik",
+        "${ ips } namenska VPN strežnika",
+        "${ ips } namenski VPN strežniki",
+        "${ ips } namenski VPN strežniki"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } licenca UI"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } uporabniška mesta"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } AI license": [
+        "${ seats } ${ LUMO_APP_NAME } licenca UI",
+        "${ seats } ${ LUMO_APP_NAME } licenci UI",
+        "${ seats } ${ LUMO_APP_NAME } licenc UI",
+        "${ seats } ${ LUMO_APP_NAME } licenc UI"
+      ],
+      "Dedicated VPN servers": [
+        "Namenski VPN strežniki"
+      ],
+      "Domains": [
+        "Domene"
+      ],
+      "Servers": [
+        "Strežniki"
+      ],
+      "Users": [
+        "Uporabniki"
+      ],
+      "Writing assistant": [
+        "Pomočnik pri pisanju"
+      ],
+      "Writing assistant seats": [
+        "Licenc za pomočnika pri pisanju"
       ]
     },
     "Alert": {
@@ -1978,6 +2014,24 @@
       ],
       "Yearly": [
         "Letno"
+      ],
+      "${ n } month": [
+        "${ n } mesec",
+        "${ n } meseca",
+        "${ n } mesecev",
+        "${ n } mesecev"
+      ],
+      "${ n } year": [
+        "${ n } leto",
+        "${ n } leti",
+        "${ n } let",
+        "${ n } let"
+      ],
+      "Billed monthly": [
+        "Obračunano mesečno"
+      ],
+      "Lifetime access": [
+        "Doživljenjski dostop"
       ]
     },
     "Browser": {
@@ -2063,6 +2117,9 @@
       ],
       "Website access problem": [
         "Težava z dostopom do spletnega mesta"
+      ],
+      "Sheets problem": [
+        "Težava z listo"
       ]
     },
     "Button": {
@@ -2444,6 +2501,15 @@
         "Skupaj za ${ n } meseca",
         "Skupaj za ${ n } mesece",
         "Skupaj za ${ n } mesecev"
+      ],
+      "Subtotal": [
+        "Vmesni seštevek"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "Vmesni seštevek za ${ cycle } mesec",
+        "Vmesni seštevek za ${ cycle } meseca",
+        "Vmesni seštevek za ${ cycle } mesecev",
+        "Vmesni seštevek za ${ cycle } mesecev"
       ]
     },
     "Collapsible tooltip": {
@@ -4837,6 +4903,30 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vašemu iskanju ustreza preveč rezultatov. Omejite iskanje in poskusite znova."
+      ],
+      "Company name or personal name is required": [
+        "Naziv podjetja ali osebno ime je obvezno"
+      ],
+      "Invalid coupon": [
+        "Neveljaven kupon"
+      ],
+      "Invalid VAT number": [
+        "Neveljavna DDV številka"
+      ],
+      "Please complete the billing details": [
+        "Prosimo dopolnite podatke o plačilu"
+      ],
+      "Tax exemption is not supported for this plan": [
+        "Oprostitev davka ni podprta za ta načrt"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Najmanjši znesek donacije je ${ price }"
+      ],
+      "This field is invalid": [
+        "To polje je neveljavno"
+      ],
+      "Wrong billing address": [
+        "Napačen naslov za izstavitev računa"
       ]
     },
     "error": {
@@ -8651,6 +8741,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Do urejenega poštnega predala vas loči le nekaj klikov."
+      ],
+      "Moving this message will cancel its scheduled send.": [
+        "Premikanje tega sporočila bo preklicalo njegovo načrtovano pošiljanje."
+      ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "Ta pogovor vsebuje načrtovano sporočilo. Če ga premaknete, boste preklicali načrtovano pošiljanje."
+      ],
+      "This message has a key attached, that has not been trusted yet.": [
+        "Temu sporočilu je pripet ključ, ki še ni bil zaupanja vreden."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Dobroimetje boste prejeli 1 mesec po tem, ko se bo vaš prijatelj naročil na letni paket, in 2 meseca po tem, ko se bo naročil na mesečni paket."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Vaš naslednji datum obračuna je ${ renewalTime }. Prekličete lahko kadarkoli."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "Vaš naslednji datum obračuna je ${ renewalTime }. Kadar koli lahko prekličete naročnino. Če potrebujete takojšnjo spremembo paketa, se obrnite na podporo."
       ]
     },
     "info": {
@@ -9672,6 +9780,9 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Import recent mails": [
+        "Uvozi nedavna e-poštna sporočila"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11935,6 +12046,33 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaša naročnina trenutno vsebuje obstoječi popust. Premik na to novo promocijo pomeni, da obstoječi popust ne bo več veljal."
+      ],
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (brez DDV)"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% davek: ${ taxAmountElement }"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "Vključno z ${ rate }% davka: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "Vključno z ${ rate }% davka"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Vključno z ${ rate }% davka: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes": [
+        "Vključno z ${ rate }% davkov"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Vključno z ${ rate }% davka: ${ taxAmountElement }"
+      ],
+      "Tax ${ rate }%": [
+        "Davek ${ rate }%"
+      ],
+      "Taxes ${ rate }%": [
+        "Davki ${ rate } %"
       ]
     },
     "Payments.Error": {
@@ -12200,6 +12338,12 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "San Francisco"
       ]
     },
     "Placeholder for contact group name": {
@@ -13035,6 +13179,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Nadgradite in prihranite več z 2 leti ${ planName }"
+      ],
+      "Keep your passwords safe and organized in multiple vaults": [
+        "Imejte svoja gesla varna in organizirana v več trezorjih"
       ]
     },
     "specialoffer: Tooltip": {
@@ -14001,6 +14148,9 @@
       ],
       "You have successfully unsubscribed": [
         "Naročnina je preklicana"
+      ],
+      "Billing information updated": [
+        "Informacije o plačilu posodobljene"
       ]
     },
     "Success notification": {
@@ -15226,6 +15376,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorije prihajajo!"
+      ],
+      "Spring Sale": [
+        "Pomladanska akcija"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15873,6 +16026,74 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB prostora za shranjevanje"
+      ],
+      "3 TB data storage": [
+        "3 TB prostora za shranjevanje"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Dostop do 15.000+ strežnikov v 120+ državah"
+      ],
+      "Access advanced AI models": [
+        "Dostop do naprednih modelov UI"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Vse premijske funkcije ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blokiranje oglasov, sledilnikov in zlonamerne programske opreme"
+      ],
+      "Built-in 2FA authenticator": [
+        "Vgrajen overitelj 2FA"
+      ],
+      "Connect 10 devices at once": [
+        "Povežite 10 naprav hkrati"
+      ],
+      "Full chat history with easy search and favorites": [
+        "Celotna zgodovina klepetov z enostavnim iskanjem in možnostjo priljubljenih"
+      ],
+      "Individual accounts for 6 users": [
+        "Posamezni računi za 6 uporabnikov"
+      ],
+      "Individual accounts for you and a partner": [
+        "Posamezni računi za vas in partnerja"
+      ],
+      "Stronger protection against cyber threats": [
+        "Močnejša zaščita pred kibernetskimi grožnjami"
+      ],
+      "Unlimited daily chats": [
+        "Neomejeno število dnevnih pogovorov"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Posebej zasnovan NetShield ščiti vaše naprave in pospeši vaše brskanje z blokiranjem oglasov, sledilnikov in zlonamerne programske opreme."
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Cena prenove je odvisna od regije obračuna in davčne številke."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Cena prenove je odvisna od regije obračuna in davčne številke."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Cena prenove je odvisna od regije obračuna in davčne številke."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Cena prenove je odvisna od regije obračuna in DDV številke."
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Odpri v ${ appName }"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Odpri v ${ appName } (beta)"
       ]
     }
   }
