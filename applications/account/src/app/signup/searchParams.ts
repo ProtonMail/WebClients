@@ -159,6 +159,12 @@ export const getSignupSearchParams = (
     const noPromo = searchParams.get('noPromo');
     const trial = searchParams.get('trial') === 'true';
 
+    const firstName = searchParams.get('firstName') || undefined;
+    const lastName = searchParams.get('lastName') || undefined;
+    const vatNumber = searchParams.get('vatNumber') || undefined;
+    const city = searchParams.get('city') || undefined;
+    const streetAddress = searchParams.get('streetAddress') || undefined;
+
     return {
         email,
         coupon,
@@ -179,6 +185,11 @@ export const getSignupSearchParams = (
         orgName,
         source,
         trial,
+        firstName,
+        lastName,
+        vatNumber,
+        city,
+        streetAddress,
     };
 };
 

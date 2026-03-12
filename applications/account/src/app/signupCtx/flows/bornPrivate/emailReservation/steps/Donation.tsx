@@ -11,6 +11,7 @@ import PaymentWrapper from '@proton/components/containers/payments/PaymentWrappe
 import { type OnChargeable, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
 import type { BillingAddress, Currency, PaymentProcessorHook } from '@proton/payments';
+import { getBillingAddressFromPaymentStatus } from '@proton/payments';
 import { getMinDonationAmount } from '@proton/payments/core/amount-limits';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { useTaxCountry } from '@proton/payments/ui';
@@ -263,7 +264,9 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
 
     const taxCountry = useTaxCountry({
         onBillingAddressChange: payments.selectFullBillingAddress,
-        paymentStatus: payments.paymentStatus,
+        initialBillingAddress: payments.paymentStatus
+            ? getBillingAddressFromPaymentStatus(payments.paymentStatus)
+            : undefined,
         paymentFacade,
         telemetryContext: payments.telemetryContext,
     });

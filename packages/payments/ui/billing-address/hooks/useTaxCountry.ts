@@ -7,6 +7,7 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 
 import {
     type BillingAddress,
+    type BillingAddressExtended,
     type BillingAddressStatus,
     DEFAULT_TAX_BILLING_ADDRESS,
     getBillingAddressStatus,
@@ -18,7 +19,7 @@ import {
     getWrongBillingAddressValidationResult,
     hasInvalidZipCodeError,
 } from '../../../core/errors';
-import type { PaymentStatus, PaymentsApi } from '../../../core/interface';
+import type { PaymentsApi } from '../../../core/interface';
 import { getDefaultPostalCodeByStateCode } from '../../../postal-codes/default-postal-codes';
 import { isPostalCodeValid } from '../../../postal-codes/postal-codes-validation';
 import type { PaymentTelemetryContext } from '../../../telemetry/helpers';
@@ -30,7 +31,7 @@ export type OnBillingAddressChange = (billingAddress: BillingAddress) => void;
 
 interface HookProps {
     onBillingAddressChange?: OnBillingAddressChange;
-    paymentStatus?: Pick<PaymentStatus, 'CountryCode' | 'State' | 'ZipCode'>;
+    initialBillingAddress?: BillingAddressExtended;
     paymentFacade?: PaymentFacade;
     telemetryContext: PaymentTelemetryContext;
     allowedCountries?: string[];
@@ -57,12 +58,12 @@ export interface TaxCountryHook {
     billingAddressValidationResult?: BillingAddressValidationResult;
 }
 
-function getBillingAddressFromPaymentStatusProp(props: HookProps): BillingAddress {
-    const billingAddress = props.paymentStatus
+function getBillingAddressFromProp(props: HookProps): BillingAddress {
+    const billingAddress = props.initialBillingAddress
         ? ({
-              CountryCode: props.paymentStatus.CountryCode,
-              State: props.paymentStatus.State,
-              ZipCode: props.paymentStatus.ZipCode,
+              CountryCode: props.initialBillingAddress.CountryCode,
+              State: props.initialBillingAddress.State,
+              ZipCode: props.initialBillingAddress.ZipCode,
           } satisfies BillingAddress)
         : DEFAULT_TAX_BILLING_ADDRESS;
 
@@ -112,7 +113,7 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
 
     const offerUnavailableErrorMessage = useOfferUnavailableErrorMessage(props.paymentFacade);
 
-    const currentFromPaymentStatus: BillingAddress = getBillingAddressFromPaymentStatusProp(props);
+    const currentFromPaymentStatus: BillingAddress = getBillingAddressFromProp(props);
 
     const taxBillingAddressRef = useRef<BillingAddress>(currentFromPaymentStatus);
     const [, forceRender] = useState(0);

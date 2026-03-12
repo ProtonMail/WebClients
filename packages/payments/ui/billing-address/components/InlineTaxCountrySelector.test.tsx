@@ -50,7 +50,7 @@ const TestInlineTaxCountrySelector = ({
     } as PaymentFacade;
 
     const taxCountry = useTaxCountry({
-        paymentStatus: {
+        initialBillingAddress: {
             CountryCode: initialCountryCode,
             State: initialStateCode,
             ZipCode: initialZipCode,

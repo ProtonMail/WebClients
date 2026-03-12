@@ -5,7 +5,6 @@ import type { LocationDescriptor } from 'history';
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import type { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import type {
-    BillingAddress,
     CYCLE,
     Currency,
     FreePlanDefault,
@@ -128,7 +127,7 @@ export interface Options {
     coupon?: string;
     plansMap: PlansMap;
     planIDs: PlanIDs | undefined;
-    billingAddress: BillingAddress;
+    billingAddress: BillingAddressExtended;
     skipUpsell?: boolean;
     trial?: boolean;
     ValidateBillingAddress?: boolean;
