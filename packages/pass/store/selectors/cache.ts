@@ -16,7 +16,6 @@ export const selectCachableState = (state: State) => {
     cachable.access = {};
     cachable.alias = { aliasDetails: {}, aliasOptions: null, mailboxes: null };
     cachable.files = {};
-    cachable.groups = {};
 
     /** Filter stale request metadata and optimisticIds */
     cachable.items.byOptimisticId = {};
