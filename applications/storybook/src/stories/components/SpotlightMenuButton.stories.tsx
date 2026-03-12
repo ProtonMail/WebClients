@@ -6,11 +6,14 @@ import { c } from 'ttag';
 import Icon from '@proton/components/components/icon/Icon';
 import type { DisplayItem } from '@proton/components/components/topnavbar/SpotlightMenuButton';
 import { SpotlightMenuButton } from '@proton/components/components/topnavbar/SpotlightMenuButton';
-import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+import ConfigContext from '@proton/components/containers/config/configContext';
+import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import globeVpnImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-globe-vpn.svg';
 import networkConfigurationImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-network-configuration.svg';
 import profilesImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-profiles.svg';
 import recoveryImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-recovery.svg';
+
+const config = APPS_CONFIGURATION[APPS.PROTONVPN_SETTINGS];
 
 const meta: Meta<typeof SpotlightMenuButton> = {
     title: 'Components/SpotlightMenuButton',
@@ -24,6 +27,14 @@ const meta: Meta<typeof SpotlightMenuButton> = {
         },
     },
     tags: ['autodocs'],
+    decorators: [
+        (Story) => (
+            // @ts-expect-error - Passing only what's needed for the story
+            <ConfigContext.Provider value={{ APP_NAME: APPS.PROTONVPN_SETTINGS }}>
+                <Story />
+            </ConfigContext.Provider>
+        ),
+    ],
 };
 
 export default meta;
@@ -68,7 +79,7 @@ export const Default: Story = {
                         imgSrc: recoveryImg,
                         title: c('Info').t`Secure your organization`,
                         description: c('Info')
-                            .t`If you haven't already, enable some recovery methods to make sure you never lose access to ${VPN_APP_NAME}.`,
+                            .t`If you haven't already, enable some recovery methods to make sure you never lose access to ${config.name}.`,
                         type: 'link',
                         linkHref: '#/authentication-security',
                     },
@@ -81,10 +92,9 @@ export const Default: Story = {
                 <div className="flex flex-1 items-center justify-center border">
                     {show && (
                         <SpotlightMenuButton
-                            initiallyOpen
                             buttonIcon={<Icon name="buildings" />}
                             buttonText={c('Title').t`Get started`}
-                            items={items}
+                            dismissTitle={c('Title').t`Dismiss setup checklist`}
                             header={
                                 <>
                                     <h3 className="text-bold">{c('Info').t`Get started`}</h3>
@@ -94,8 +104,9 @@ export const Default: Story = {
                                     </span>
                                 </>
                             }
+                            initiallyOpen={false}
+                            items={[...items].sort((a, b) => a.title.localeCompare(b.title))}
                             onDismiss={() => setShow(null)}
-                            dismissTitle={c('Title').t`Dismiss setup checklist`}
                         />
                     )}
                 </div>
