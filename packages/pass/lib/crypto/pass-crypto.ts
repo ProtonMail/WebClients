@@ -344,7 +344,6 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
 
                 return manager.getShare() as TypedOpenedShare<T>;
             } catch (err: any) {
-                console.error('err', data.encryptedShare.ShareID, err);
                 throw isPassCryptoError(err) ? err : new PassCryptoError(err);
             }
         },
