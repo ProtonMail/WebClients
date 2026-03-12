@@ -1090,7 +1090,7 @@
         "${ LUMO_APP_NAME } AI licence"
       ],
       "${ LUMO_APP_NAME } seats": [
-        "${ LUMO_APP_NAME } licencí"
+        "Licencí ${ LUMO_APP_NAME }"
       ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
@@ -1417,7 +1417,7 @@
         "Připojte až 10 zařízení současně"
       ],
       "Full chat history with easy search and favorites": [
-        "Celá historie konverzací s snadným vyhledáváním a oblíbenými položkami"
+        "Celá historie konverzací se snadným vyhledáváním a oblíbenými položkami"
       ],
       "Individual accounts for 6 users": [
         "Individuální účty pro 6 uživatelů"
@@ -4121,6 +4121,12 @@
       ],
       "ZIP code is required": [
         "PSČ je potřeba vyplnit"
+      ],
+      "Invalid VAT number": [
+        "Neplatné DIČ"
+      ],
+      "This field is invalid": [
+        "Toto pole je neplatné"
       ]
     },
     "error": {
@@ -9823,6 +9829,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše předplatné má v současné době platnou slevu. Přechodem na tuto novou akci bude stávající sleva zrušena."
+      ],
+      "I'm purchasing as a business": [
+        "Kupuji jako firma"
       ]
     },
     "Payments.Error": {
@@ -9882,10 +9891,10 @@
     },
     "Payments.Renewal price dependent on VAT number": {
       "Renewal price is dependent on the billing region and ABN.": [
-        "Cena obnovení závisí na fakturační oblasti a IČ DPH."
+        "Cena za obnovení závisí na fakturační oblasti a DIČ."
       ],
       "Renewal price is dependent on the billing region and Business Number.": [
-        "Cena obnovení závisí na zemi platby a DIČ."
+        "Cena obnovení závisí na fakturační oblasti a DIČ."
       ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Cena za obnovení závisí na fakturační oblasti a DIČ."
@@ -10107,6 +10116,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ]
     },
     "Placeholder for contact group name": {

@@ -4043,6 +4043,27 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ],
+      "Company name or personal name is required": [
+        "Firmenname oder Name der Person erforderlich"
+      ],
+      "Invalid coupon": [
+        "Ungültiger Gutschein"
+      ],
+      "Invalid VAT number": [
+        "Ungültige USt-IdNr."
+      ],
+      "Please complete the billing details": [
+        "Bitte die Rechnungsdaten eintragen"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Der Mindestspendenbetrag ist ${ price }"
+      ],
+      "This field is invalid": [
+        "Dieses Feld ist ungültig"
+      ],
+      "Wrong billing address": [
+        "Ungültige Rechnungsadresse"
       ]
     },
     "error": {
@@ -6526,6 +6547,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du hast das Limit für Buchungsplätze erreicht (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Du erhältst eine Gutschrift von einem Monat, nachdem die von dir geworbene Person ein Jahresabo abgeschlossen hat, und von zwei Monaten, nachdem sie ein Monatsabo abgeschlossen hat."
       ]
     },
     "info": {
@@ -7582,7 +7606,7 @@
         "Ende-zu-Ende-verschlüsselte Bildschirmfreigabe und temporärer Chat während des Anrufs"
       ],
       "Meeting recording": [
-        "Besprechung aufzeichnen"
+        "Meeting wird aufgezeichnet"
       ],
       "One active meeting at a time": [
         "Ein aktives Meeting gleichzeitig"
@@ -9495,6 +9519,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dein Abonnement hat derzeit einen bestehenden Rabatt. Der Wechsel zu dieser neuen Aktion bedeutet, dass der bestehende Rabatt nicht länger angewendet wird."
+      ],
+      "I'm purchasing as a business": [
+        "Ich kaufe als Unternehmen"
       ]
     },
     "Payments.Error": {
@@ -9779,6 +9806,12 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "San Francisco"
       ]
     },
     "Placeholder for contact group name": {
@@ -12213,6 +12246,9 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Spring Sale": [
+        "Frühlingsangebot"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

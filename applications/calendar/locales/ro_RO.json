@@ -4082,6 +4082,27 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Company name or personal name is required": [
+        "Numele companiei sau numele personal este necesar."
+      ],
+      "Invalid coupon": [
+        "Cupon nevalid"
+      ],
+      "Invalid VAT number": [
+        "Cont TVA nevalid"
+      ],
+      "Please complete the billing details": [
+        "Completați detaliile de facturare."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Suma minimă de donație este de ${ price }."
+      ],
+      "This field is invalid": [
+        "Acest câmp nu este valid."
+      ],
+      "Wrong billing address": [
+        "Adresă de facturare incorectă."
       ]
     },
     "error": {
@@ -9665,6 +9686,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
+      ],
+      "I'm purchasing as a business": [
+        "Achiziționez în calitate de companie"
       ]
     },
     "Payments.Error": {
@@ -9949,6 +9973,12 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "San Francisco"
       ]
     },
     "Placeholder for contact group name": {
@@ -12438,6 +12468,9 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Spring Sale": [
+        "Reducere de primăvară"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -4043,6 +4043,21 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
+      ],
+      "Company name or personal name is required": [
+        "Firmanavn eller personnavn er obligatorisk"
+      ],
+      "Invalid VAT number": [
+        "Ugyldig MVA-nummer"
+      ],
+      "Please complete the billing details": [
+        "Fyll ut faktureringsdetaljene"
+      ],
+      "This field is invalid": [
+        "Dette feltet er ugyldig"
+      ],
+      "Wrong billing address": [
+        "Feil faktureringsadresse"
       ]
     },
     "error": {
@@ -6526,6 +6541,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nådd grensen for antall bestillingsplasser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Du mottar kredittbelønningen én måned etter at vennen din abonnerer på en årsplan, og to måneder etter at de abonnerer på en månedlig plan."
       ]
     },
     "info": {
@@ -7256,6 +7274,12 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "Emails (last 6 months)": [
+        "E-poster (siste 6 måneder)"
+      ],
+      "Last 6 months only": [
+        "Kun siste 6 måneder"
       ]
     },
     "label": {
@@ -9489,6 +9513,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "I'm purchasing as a business": [
+        "Jeg kjøper som en bedrift."
       ]
     },
     "Payments.Error": {
@@ -9773,6 +9800,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "San Francisco"
       ]
     },
     "Placeholder for contact group name": {
@@ -12207,6 +12240,9 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "Spring Sale": [
+        "Vårsalg"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

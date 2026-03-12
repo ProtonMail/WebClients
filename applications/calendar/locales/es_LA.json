@@ -4043,6 +4043,24 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Company name or personal name is required": [
+        "Se requiere el nombre de la empresa o el nombre personal"
+      ],
+      "Invalid coupon": [
+        "Cupón invalido"
+      ],
+      "Invalid VAT number": [
+        "Número de IVA incorrecto"
+      ],
+      "Please complete the billing details": [
+        "Complete los detalles de facturación"
+      ],
+      "This field is invalid": [
+        "Este campo no es válido"
+      ],
+      "Wrong billing address": [
+        "Dirección de facturación incorrecta"
       ]
     },
     "error": {
@@ -6526,6 +6544,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ha alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Recibirá la recompensa en créditos 1 mes después de que su amistad se suscriba a un plan anual, y 2 meses después de que se suscriba a un plan mensual."
       ]
     },
     "info": {
@@ -9495,6 +9516,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
+      ],
+      "I'm purchasing as a business": [
+        "Estoy comprando como empresa"
       ]
     },
     "Payments.Error": {
@@ -9779,6 +9803,12 @@
       ],
       "ZIP code": [
         "Código ZIP"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "San Francisco"
       ]
     },
     "Placeholder for contact group name": {
@@ -12213,6 +12243,9 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "Spring Sale": [
+        "Oferta de primavera"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -4121,6 +4121,27 @@
       ],
       "ZIP code is required": [
         "PSČ je povinné"
+      ],
+      "Company name or personal name is required": [
+        "Názov spoločnosti alebo meno je povinné"
+      ],
+      "Invalid coupon": [
+        "Neplatná poukážka"
+      ],
+      "Invalid VAT number": [
+        "Naplatné IČ DPH"
+      ],
+      "Please complete the billing details": [
+        "Doplňte fakturačné údaje, prosím"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimálna výška daru je ${ price }"
+      ],
+      "This field is invalid": [
+        "Toto pole je neplatné"
+      ],
+      "Wrong billing address": [
+        "Nesprávna fakturačná adresa"
       ]
     },
     "error": {
@@ -6706,6 +6727,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosiahli ste limit rezervačných slotov (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Kreditné odmeny získate 1 mesiac po tom, ako si váš priateľ predplatí ročný plán, a 2 mesiace po tom, ako si predplatí mesačný plán."
       ]
     },
     "info": {
@@ -9829,6 +9853,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše predplatné má v súčasnosti platnú zľavu. Prechodom na túto novú akciu sa existujúca zľava prestane uplatňovať."
+      ],
+      "I'm purchasing as a business": [
+        "Nakupujem ako firma"
       ]
     },
     "Payments.Error": {
@@ -10113,6 +10140,12 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "San Francisko"
       ]
     },
     "Placeholder for contact group name": {
@@ -12657,6 +12690,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Spring Sale": [
+        "Jarná akcia"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
