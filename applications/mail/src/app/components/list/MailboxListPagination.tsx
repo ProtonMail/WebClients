@@ -12,7 +12,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
 import { isPageConsecutive } from 'proton-mail/helpers/paging';
-import useTelemetryPagingControls from 'proton-mail/hooks/useTelemetryPagingControls';
+import { PaginationSources, useTelemetryPagingControls } from 'proton-mail/hooks/useTelemetryPagingControls';
 import { contextPages } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
@@ -64,12 +64,18 @@ const MailboxListPagination = ({
 
     const handleClickPrevious = () => {
         handlePrevious();
-        void sendPagingTelemetryReport({ event: TelemetryMailPagingControlsEvents.move_to_previous_page });
+        void sendPagingTelemetryReport({
+            event: TelemetryMailPagingControlsEvents.move_to_previous_page,
+            dimensions: { source: PaginationSources.list },
+        });
     };
 
     const handleClickNext = () => {
         handleNext();
-        void sendPagingTelemetryReport({ event: TelemetryMailPagingControlsEvents.move_to_previous_page });
+        void sendPagingTelemetryReport({
+            event: TelemetryMailPagingControlsEvents.move_to_previous_page,
+            dimensions: { source: PaginationSources.list },
+        });
     };
 
     const handleClickCustomPage = (page: number) => {
@@ -84,7 +90,10 @@ const MailboxListPagination = ({
          */
         void sendPagingTelemetryReport({
             event: TelemetryMailPagingControlsEvents.move_to_custom_page,
-            dimensions: { isPageConsecutive: isPageConsecutive(pagesState, page - 1) ? 'true' : 'false' },
+            dimensions: {
+                isPageConsecutive: isPageConsecutive(pagesState, page - 1) ? 'true' : 'false',
+                source: PaginationSources.list,
+            },
         });
     };
 
