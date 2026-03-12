@@ -8,7 +8,11 @@ import { c } from 'ttag';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectDisplayName, selectParticipantNameMap } from '@proton/meet/store/slices/meetingInfo';
+import {
+    selectDisplayName,
+    selectIsScreenShare,
+    selectParticipantNameMap,
+} from '@proton/meet/store/slices/meetingInfo';
 import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -57,6 +61,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
     const participantNameMap = useMeetSelector(selectParticipantNameMap);
     const displayName = useMeetSelector(selectDisplayName);
     const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
+    const isScreenShare = useMeetSelector(selectIsScreenShare);
     const { register, unregister } = useCameraTrackSubscriptionManager();
     const [isRefreshing, setIsRefreshing] = useState(false);
     const showReloadTrackButton = useFlag('MeetShowReloadTrackButton');
@@ -192,7 +197,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                     '--right-custom': `${positionBySize[viewSize]}rem`,
                 }}
             >
-                {!isLocalParticipant && showReloadTrackButton && (
+                {!isLocalParticipant && showReloadTrackButton && !isScreenShare && (
                     <button
                         className={clsx(
                             'user-select-none flex items-center justify-center w-custom h-custom bg-weak rounded-full border-none cursor-pointer transition-opacity',
