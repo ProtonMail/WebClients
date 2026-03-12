@@ -34,7 +34,7 @@ const MailboxListPagination = ({
     total,
 }: MailboxListPaginationProps) => {
     const pagesState = useMailSelector(contextPages);
-    const sendPagingTelemetryReport = useTelemetryPagingControls();
+    const { sendPaginationTelemetry } = useTelemetryPagingControls();
 
     const goToPageTitle = (page: number) => c('Action').t`Go to page ${page}`;
     const disablePrevious = page === 1;
@@ -64,7 +64,7 @@ const MailboxListPagination = ({
 
     const handleClickPrevious = () => {
         handlePrevious();
-        void sendPagingTelemetryReport({
+        void sendPaginationTelemetry({
             event: TelemetryMailPagingControlsEvents.move_to_previous_page,
             dimensions: { source: PaginationSources.list },
         });
@@ -72,7 +72,7 @@ const MailboxListPagination = ({
 
     const handleClickNext = () => {
         handleNext();
-        void sendPagingTelemetryReport({
+        void sendPaginationTelemetry({
             event: TelemetryMailPagingControlsEvents.move_to_previous_page,
             dimensions: { source: PaginationSources.list },
         });
@@ -88,7 +88,7 @@ const MailboxListPagination = ({
          * => Here we want to track how often users are creating this gap.
          * note: in the state pages start with index 0, so we need to decrease the destination page to compare them
          */
-        void sendPagingTelemetryReport({
+        void sendPaginationTelemetry({
             event: TelemetryMailPagingControlsEvents.move_to_custom_page,
             dimensions: {
                 isPageConsecutive: isPageConsecutive(pagesState, page - 1) ? 'true' : 'false',

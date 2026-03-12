@@ -58,7 +58,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
     const { dbExists, esEnabled, isSearchPartial, getCacheStatus, isSearching } = esStatus;
     const searchParameters = extractSearchParameters(location);
     const isSearch = testIsSearch(searchParameters);
-    const sendPagingTelemetryReport = useTelemetryPagingControls();
+    const { sendPaginationTelemetry } = useTelemetryPagingControls();
 
     const { isCacheLimited } = getCacheStatus();
 
@@ -73,7 +73,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
         }
 
         onPrevious();
-        void sendPagingTelemetryReport({
+        void sendPaginationTelemetry({
             event: TelemetryMailPagingControlsEvents.move_to_previous_page,
             dimensions: { source: PaginationSources.toolbar },
         });
@@ -85,7 +85,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
         }
 
         onNext();
-        void sendPagingTelemetryReport({
+        void sendPaginationTelemetry({
             event: TelemetryMailPagingControlsEvents.move_to_next_page,
             dimensions: { source: PaginationSources.toolbar },
         });
@@ -101,7 +101,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
          * => Here we want to track how often users are creating this gap.
          * note: in the state pages start with index 0, so we need to decrease the destination page to compare them
          */
-        void sendPagingTelemetryReport({
+        void sendPaginationTelemetry({
             event: TelemetryMailPagingControlsEvents.move_to_custom_page,
             dimensions: {
                 isPageConsecutive: isPageConsecutive(pagesState, page - 1) ? 'true' : 'false',
@@ -112,7 +112,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
 
     const handleClickLoadMore = () => {
         onPage(total);
-        void sendPagingTelemetryReport({
+        void sendPaginationTelemetry({
             event: TelemetryMailPagingControlsEvents.clicked_load_more_search_results,
             dimensions: { source: PaginationSources.toolbar },
         });
