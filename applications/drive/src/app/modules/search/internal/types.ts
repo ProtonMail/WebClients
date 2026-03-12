@@ -8,4 +8,10 @@ export type SearchModuleState = {
     isSearchable: boolean;
 };
 
-// TODO: Define SearchQuery and SearchResult shapes once the WASM searcher is wired up.
+export type SearchQuery = {
+    filename: string;
+};
+
+export type SearchResult = {
+    nodeUids: string[];
+};
