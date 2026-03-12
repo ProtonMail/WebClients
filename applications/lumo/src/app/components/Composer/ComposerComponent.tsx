@@ -32,6 +32,10 @@ import { ComposerToolbar } from './ComposerToolbar';
 import { useAllRelevantAttachments } from './hooks/useAllRelevantAttachments';
 import { useEditorQuery } from './hooks/useEditorQuery';
 import { useFileHandling } from './hooks/useFileHandling';
+import { useNativeComposerFeatureFlagsApi } from './hooks/useNativeComposerFeatureFlagsApi';
+import { useNativeComposerFileApi } from './hooks/useNativeComposerFileApi';
+import { useNativeComposerLumoStateApi } from './hooks/useNativeComposerLumoStateApi';
+import { useNativeComposerVisibilityApi } from './hooks/useNativeComposerVisibilityApi';
 
 import './ComposerComponent.scss';
 
@@ -115,8 +119,14 @@ const ComposerComponentInner = ({
 
     const allRelevantAttachments = useAllRelevantAttachments(messageChain, provisionalAttachments, spaceId);
 
-    const { handleFileProcessing, handleFilesSelected, handleBrowseDrive, handleDeleteAttachment, fileUploadMode } =
-        useFileHandling({ messageChain, onShowDriveBrowser, spaceId, uploadToDrive: driveContext?.uploadFile });
+    const {
+        handleFileProcessing,
+        handleFilesSelected,
+        handleBrowseDrive,
+        handleDeleteAttachment,
+        handleFilesFromNative,
+        fileUploadMode,
+    } = useFileHandling({ messageChain, onShowDriveBrowser, spaceId, uploadToDrive: driveContext?.uploadFile });
 
     const sendGenerateMessage = useCallback(
         async (editor: any) => {
@@ -157,6 +167,21 @@ const ComposerComponentInner = ({
             return () => clearTimeout(timer);
         }
     }, [autoOpenUpload]);
+
+    const nativeComposerVisibilityApi = useNativeComposerVisibilityApi({
+        showDrawingModal,
+    });
+    useNativeComposerFeatureFlagsApi();
+
+    // registers a hook that updates the native composer state
+    useNativeComposerFileApi(
+        hasAttachments,
+        allRelevantAttachments,
+        handleFilesFromNative,
+        handleBrowseDrive,
+        handleDrawSketch,
+        handleDeleteAttachment
+    );
 
     const handleDrawingExport = useCallback(
         async (imageData: string, _mode: string, description: string) => {
@@ -237,8 +262,8 @@ const ComposerComponentInner = ({
             editor.commands.setContent(pendingSketchDescription);
         }
 
-        const timer = setTimeout(() => {
-            sendGenerateMessage(editor);
+        const timer = setTimeout(async () => {
+            await sendGenerateMessage(editor);
             setPendingSketchDescription(null);
         }, 100);
 
@@ -251,6 +276,8 @@ const ComposerComponentInner = ({
     useEditorQuery(prefillQuery, editor, false);
 
     const showLegalDisclaimer = canShowLegalDisclaimer && !isEditorFocused && isEditorEmpty;
+
+    useNativeComposerLumoStateApi(isGenerating);
 
     return (
         <>
@@ -268,7 +295,11 @@ const ComposerComponentInner = ({
                     }
                 }}
             />
-            <div className="w-full" ref={inputContainerRef}>
+            <div
+                style={{ visibility: nativeComposerVisibilityApi.showWebComposer() ? 'visible' : 'hidden' }}
+                className="w-full"
+                ref={inputContainerRef}
+            >
                 <section
                     ref={composerContainerRef}
                     className={clsx(

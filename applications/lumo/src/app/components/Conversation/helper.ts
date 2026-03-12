@@ -26,6 +26,7 @@ import {
 import { addSpace, newSpaceId, pushSpaceRequest } from '../../redux/slices/core/spaces';
 import { PERSONALITY_OPTIONS, type PersonalizationSettings } from '../../redux/slices/personalization';
 import type { LumoDispatch as AppDispatch, LumoDispatch } from '../../redux/store';
+import { onComposerError } from '../../remote/nativeComposerBridgeHelpers';
 import { createGenerationError, getErrorTypeFromMessage } from '../../services/errors/errorHandling';
 import type { MessageId, ShallowAttachment } from '../../types';
 import {
@@ -41,8 +42,11 @@ import {
 import type { GenerationResponseMessage } from '../../types-api';
 import { parseFileReferences } from '../../util/fileReferences';
 
-const createLumoErrorHandler = () => (message: GenerationResponseMessage, cId: string) =>
-    createGenerationError(getErrorTypeFromMessage(message.type), cId, message);
+const createLumoErrorHandler = () => (message: GenerationResponseMessage, cId: string) => {
+    const errorMessage = getErrorTypeFromMessage(message.type);
+    onComposerError(errorMessage);
+    createGenerationError(errorMessage, cId, message);
+};
 
 export type ApplicationContext = {
     api: Api;
@@ -376,10 +380,7 @@ export function sendMessage({
             const updatedC: ConversationContext = ragResult?.attachments?.length
                 ? {
                       ...c,
-                      allConversationAttachments: [
-                          ...c.allConversationAttachments,
-                          ...ragResult.attachments,
-                      ],
+                      allConversationAttachments: [...c.allConversationAttachments, ...ragResult.attachments],
                   }
                 : c;
 
