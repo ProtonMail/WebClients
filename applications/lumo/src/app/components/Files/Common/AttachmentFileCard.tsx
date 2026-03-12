@@ -10,6 +10,7 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { IcMagicWand } from '@proton/icons/icons/IcMagicWand';
 
+import { setNativeComposerVisibility } from '../../../remote/nativeComposerBridgeHelpers';
 import { attachmentDataCache } from '../../../services/attachmentDataCache';
 import type { Attachment } from '../../../types';
 import { mimeToHuman } from '../../../util/filetypes';
@@ -180,6 +181,7 @@ export const AttachmentFileCard = ({
 
     const handleCardClick = () => {
         if (canClick && onView) {
+            setNativeComposerVisibility(false);
             onView(attachment);
         }
     };

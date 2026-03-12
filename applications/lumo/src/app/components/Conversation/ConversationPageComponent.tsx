@@ -1,22 +1,22 @@
-import {useCallback, useEffect, lazy, Suspense} from 'react';
-import {useParams, useRouteMatch} from 'react-router-dom';
+import { Suspense, lazy, useCallback, useEffect } from 'react';
+import { useParams, useRouteMatch } from 'react-router-dom';
 
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
 
-import {LUMO_FULL_APP_TITLE} from '../../constants';
-import {useSafeUser} from '../../contexts/SafeUserContext';
-import type {RouteParams} from '../../entrypoint/auth/RouterContainer';
-import {useLumoActions} from '../../hooks/useLumoActions';
-import {useLumoNavigate as useNavigate} from '../../hooks/useLumoNavigate';
-import {useQueryParam} from '../../hooks';
-import {useConversation} from '../../providers/ConversationProvider';
-import {DragAreaProvider, useDragArea} from '../../providers/DragAreaProvider';
-import {useGhostChat} from '../../providers/GhostChatProvider';
-import {useIsGuest} from '../../providers/IsGuestProvider';
-import {ComposerActionsProvider} from '../../providers/ComposerActionsProvider';
-import {ThinkingModeProvider} from '../../providers/ThinkingModeProvider';
-import {WebSearchProvider} from '../../providers/WebSearchProvider';
-import {useLumoDispatch, useLumoMemoSelector, useLumoSelector} from '../../redux/hooks';
+import { LUMO_FULL_APP_TITLE } from '../../constants';
+import { useSafeUser } from '../../contexts/SafeUserContext';
+import type { RouteParams } from '../../entrypoint/auth/RouterContainer';
+import { useQueryParam } from '../../hooks';
+import { useLumoActions } from '../../hooks/useLumoActions';
+import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
+import { ComposerActionsProvider } from '../../providers/ComposerActionsProvider';
+import { useConversation } from '../../providers/ConversationProvider';
+import { DragAreaProvider, useDragArea } from '../../providers/DragAreaProvider';
+import { useGhostChat } from '../../providers/GhostChatProvider';
+import { useIsGuest } from '../../providers/IsGuestProvider';
+import { ThinkingModeProvider } from '../../providers/ThinkingModeProvider';
+import { WebSearchProvider } from '../../providers/WebSearchProvider';
+import { useLumoDispatch, useLumoMemoSelector, useLumoSelector } from '../../redux/hooks';
 import {
     selectConversationById,
     selectConversations,
@@ -24,20 +24,19 @@ import {
     selectProvisionalAttachments,
     selectSpaceByConversationId,
 } from '../../redux/selectors';
-import {clearPendingPrefill} from '../../redux/slices/composerActions';
-import {resetAllContextFilters} from '../../redux/slices/contextFilters';
-import {clearProvisionalAttachments} from '../../redux/slices/core/attachments';
-import {EMPTY_CONVERSATION_MAP, pullConversationRequest} from '../../redux/slices/core/conversations';
-import {type ConversationId, ConversationStatus} from '../../types';
+import { clearPendingPrefill } from '../../redux/slices/composerActions';
+import { resetAllContextFilters } from '../../redux/slices/contextFilters';
+import { clearProvisionalAttachments } from '../../redux/slices/core/attachments';
+import { EMPTY_CONVERSATION_MAP, pullConversationRequest } from '../../redux/slices/core/conversations';
+import { setNativeTsAndCsVisibility } from '../../remote/nativeComposerBridgeHelpers';
+import { type ConversationId, ConversationStatus } from '../../types';
 import ConversationSkeleton from '../ConversationSkeleton';
 import ConversationComponent from './ConversationComponent';
 import MainContainer from './MainContainer';
 
-const GalleryView = lazy(() =>
-    import('../../features/gallery/GalleryView').then((m) => ({default: m.GalleryView}))
-);
-
 import './Conversation.scss';
+
+const GalleryView = lazy(() => import('../../features/gallery/GalleryView').then((m) => ({ default: m.GalleryView })));
 
 const ConversationPageComponentInner = () => {
     // ** Hooks **
@@ -120,6 +119,8 @@ const ConversationPageComponentInner = () => {
             dispatch(clearProvisionalAttachments());
         }
 
+        setNativeTsAndCsVisibility(!curConversationId);
+
         return () => setConversationId(undefined);
     }, [curConversationId, dispatch]);
 
@@ -177,54 +178,54 @@ const ConversationPageComponentInner = () => {
     // ** Main layout **
     return (
         <ComposerActionsProvider handleSendMessage={handleSendMessage}>
-        <div
-            className="relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto"
-            onDrop={onDrop}
-            onDragLeave={onDragLeave}
-            onDragEnter={onDragEnter}
-            onDragOver={onDragOver}
-        >
-            {!curConversationId && isGalleryRoute && (
-                <Suspense fallback={<ConversationSkeleton />}>
-                    <GalleryView
-                        handleSendMessage={handleSendMessage}
+            <div
+                className="relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto"
+                onDrop={onDrop}
+                onDragLeave={onDragLeave}
+                onDragEnter={onDragEnter}
+                onDragOver={onDragOver}
+            >
+                {!curConversationId && isGalleryRoute && (
+                    <Suspense fallback={<ConversationSkeleton />}>
+                        <GalleryView
+                            handleSendMessage={handleSendMessage}
+                            isProcessingAttachment={isProcessingAttachment}
+                            prefillQuery={prefillQuery || undefined}
+                            autoOpenSketch={!!autoOpenSketch}
+                            autoOpenUpload={!!autoOpenUpload}
+                        />
+                    </Suspense>
+                )}
+                {!curConversationId && !isGalleryRoute && (
+                    <MainContainer
                         isProcessingAttachment={isProcessingAttachment}
+                        handleSendMessage={handleSendMessage}
+                        initialQuery={initialQuery || undefined}
                         prefillQuery={prefillQuery || undefined}
                         autoOpenSketch={!!autoOpenSketch}
                         autoOpenUpload={!!autoOpenUpload}
                     />
-                </Suspense>
-            )}
-            {!curConversationId && !isGalleryRoute && (
-                <MainContainer
-                    isProcessingAttachment={isProcessingAttachment}
-                    handleSendMessage={handleSendMessage}
-                    initialQuery={initialQuery || undefined}
-                    prefillQuery={prefillQuery || undefined}
-                    autoOpenSketch={!!autoOpenSketch}
-                    autoOpenUpload={!!autoOpenUpload}
-                />
-            )}
-            {curConversationId && isLoading && <ConversationSkeleton />}
-            {curConversationId && !isLoading && (
-                <ConversationComponent
-                    key={curConversationId}
-                    conversation={conversation}
-                    handleSendMessage={handleSendMessage}
-                    handleAbort={handleAbort}
-                    isGenerating={isGenerating}
-                    isProcessingAttachment={isProcessingAttachment}
-                    messageChainRef={messageChainRef}
-                    messageChain={messageChain}
-                    handleRegenerateMessage={handleRegenerateMessage}
-                    handleEditMessage={handleEditMessage}
-                    getSiblingInfo={getSiblingInfo}
-                    handleRetryGeneration={handleRetryGeneration}
-                    initialQuery={initialQuery || undefined}
-                    prefillQuery={pendingPrefill || undefined}
-                />
-            )}
-        </div>
+                )}
+                {curConversationId && isLoading && <ConversationSkeleton />}
+                {curConversationId && !isLoading && (
+                    <ConversationComponent
+                        key={curConversationId}
+                        conversation={conversation}
+                        handleSendMessage={handleSendMessage}
+                        handleAbort={handleAbort}
+                        isGenerating={isGenerating}
+                        isProcessingAttachment={isProcessingAttachment}
+                        messageChainRef={messageChainRef}
+                        messageChain={messageChain}
+                        handleRegenerateMessage={handleRegenerateMessage}
+                        handleEditMessage={handleEditMessage}
+                        getSiblingInfo={getSiblingInfo}
+                        handleRetryGeneration={handleRetryGeneration}
+                        initialQuery={initialQuery || undefined}
+                        prefillQuery={pendingPrefill || undefined}
+                    />
+                )}
+            </div>
         </ComposerActionsProvider>
     );
 };

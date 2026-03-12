@@ -4,18 +4,19 @@ import { c } from 'ttag';
 
 import { useModalStateObject } from '@proton/components';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
-import {useLumoFlags} from '../../hooks/useLumoFlags';
 
+import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoNavigate } from '../../hooks/useLumoNavigate';
 import { useStaggeredWhatsNewFeatures } from '../../hooks/useStaggeredWhatsNewFeatures';
 import { useLumoTheme } from '../../providers';
+import { useNativeComposerVisibilityApi } from '../Composer/hooks/useNativeComposerVisibilityApi';
 import WhatsNewModal from './WhatsNewModal';
 import type { WhatsNewFeature } from './types';
 
 import './WhatsNew.scss';
 
 const WhatsNew = () => {
-    const { whatsNew} = useLumoFlags();
+    const { whatsNew } = useLumoFlags();
     const { isDarkLumoTheme, isAutoMode } = useLumoTheme();
     const navigate = useLumoNavigate();
 
@@ -149,10 +150,11 @@ const WhatsNew = () => {
     const declineCurrentFeature = () => {
         if (currentFeature) {
             declineFeature(currentFeature.id, currentFeature.versionFlag);
+            nativeComposerVisibilityApi.toggle();
         }
     };
-
     const whatsNewModalProps = useModalStateObject({ onClose: declineCurrentFeature });
+    const nativeComposerVisibilityApi = useNativeComposerVisibilityApi({ showNewModal: whatsNewModalProps.render });
 
     useEffect(() => {
         if (currentFeature) {
