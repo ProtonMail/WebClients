@@ -38,7 +38,7 @@ import { getInformedOptimisticSubscriptionEstimation, getOptimisticCheckResult }
 import {
     InvalidCouponError,
     type PaymentsApiError,
-    TaxExemptionNotSupportedError,
+    VatReverseChargeNotSupportedError,
     WrongBillingAddressError,
 } from '@proton/payments/core/errors';
 import type { CheckSubscriptionRequestOptions } from '@proton/payments/core/interface';
@@ -185,8 +185,8 @@ const updateInvoiceBillingAddress = async (api: Api, invoiceId: string, fullBill
 const plansSelector = createSelector(selectPlans, (plans) => plans.value?.plans ?? []);
 
 function createPaymentsApiError(error: any): PaymentsApiError | undefined {
-    if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.TAX_EXEMPTION_NOT_SUPPORTED) {
-        return new TaxExemptionNotSupportedError();
+    if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.VAT_REVERSE_CHARGE_NOT_SUPPORTED) {
+        return new VatReverseChargeNotSupportedError();
     }
 
     if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.WRONG_BILLING_ADDRESS) {
@@ -321,6 +321,10 @@ export const usePaymentsApi = (
 
                 return enrichedCheckResponse;
             } catch (error: any) {
+                if (error?.data?.Code === PAYMENTS_API_ERROR_CODES.VAT_REVERSE_CHARGE_NOT_SUPPORTED) {
+                    throw new VatReverseChargeNotSupportedError();
+                }
+
                 const optimisticFallback = getOptimisticFallback(data, requestOptions, error);
                 if (optimisticFallback) {
                     return optimisticFallback;
@@ -339,15 +343,13 @@ export const usePaymentsApi = (
 
         const multiCheck = (
             requestData: CheckSubscriptionData[],
-            { cached, signal, silence, ...optimisticFallbackOptions }: MultiCheckOptions = {}
+            { signal, silence, plansMap }: MultiCheckOptions
         ): Promise<SubscriptionEstimation[]> => {
             return Promise.all(
                 requestData.map(async (data) => {
-                    if (cached) {
-                        const cachedResult = multiCheckCache.get(data);
-                        if (cachedResult) {
-                            return cachedResult;
-                        }
+                    const cachedResult = multiCheckCache.get(data);
+                    if (cachedResult) {
+                        return cachedResult;
                     }
 
                     let result: SubscriptionEstimation;
@@ -357,30 +359,19 @@ export const usePaymentsApi = (
                             silence: silence,
                         });
                     } catch (error: any) {
-                        if (optimisticFallbackOptions.optimisticFallback) {
-                            result = getOptimisticCheckResult({
-                                planIDs: data.Plans,
-                                plansMap: optimisticFallbackOptions.plansMap,
-                                cycle: data.Cycle,
-                                currency: data.Currency,
-                            });
-                        } else {
-                            throw error;
-                        }
+                        result = getOptimisticCheckResult({
+                            plansMap,
+                            planIDs: data.Plans,
+                            cycle: data.Cycle,
+                            currency: data.Currency,
+                        });
                     }
 
-                    if (cached) {
-                        multiCheckCache.set(data, result);
-                    }
+                    multiCheckCache.set(data, result);
 
                     return result;
                 })
             );
-        };
-
-        const cachedCheck = async (data: CheckSubscriptionData): Promise<SubscriptionEstimation> => {
-            const result = await multiCheck([data], { cached: true });
-            return result[0];
         };
 
         const cacheMultiCheck = (data: CheckSubscriptionData, result: SubscriptionEstimation) => {
@@ -430,7 +421,6 @@ export const usePaymentsApi = (
             updateFullBillingAddress: innerUpdateFullBillingAddress,
             updateInvoiceBillingAddress: innerUpdateInvoiceBillingAddress,
             getInvoiceBillingAddress: innerGetInvoiceBillingAddress,
-            cachedCheck,
             getCachedCheck,
             getCachedCheckByPlans,
         };
