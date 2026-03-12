@@ -90,6 +90,12 @@
       "Activate recovery": [
         "Aktiver gendannelse"
       ],
+      "Activate reserved address": [
+        "Aktiver reserveret adresse"
+      ],
+      "Activate this address": [
+        "Aktiver denne adresse"
+      ],
       "Add": [
         "Tilføj"
       ],
@@ -275,6 +281,9 @@
       ],
       "Close navigation": [
         "Luk navigation"
+      ],
+      "Close search": [
+        "Luk søgning"
       ],
       "Close tab": [
         "Luk fane"
@@ -552,6 +561,9 @@
       "Don't show again": [
         "Vis ikke igen"
       ],
+      "Donate": [
+        "Doner"
+      ],
       "Done": [
         "Udført"
       ],
@@ -821,6 +833,9 @@
       ],
       "Get verification code": [
         "Få bekræftelseskode"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Få din egen ${ MAIL_APP_NAME }-adresse"
       ],
       "Go back": [
         "Gå tilbage"
@@ -1287,6 +1302,9 @@
       "Search countries": [
         "Søg lande"
       ],
+      "Search groups": [
+        "Søg i grupper"
+      ],
       "Search settings": [
         "Søgeindstillinger"
       ],
@@ -1358,6 +1376,9 @@
       ],
       "Send reminder": [
         "Send påmindelse"
+      ],
+      "Send verification code": [
+        "Send bekræftelseskode"
       ],
       "Set as album cover": [
         "Indstil som albumcover"
@@ -1526,6 +1547,9 @@
       ],
       "Try for free": [
         "Prøv gratis"
+      ],
+      "Try payment again": [
+        "Prøv betaling igen"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Prøv at gemme igen. Det lykkedes ikke at gemme på grund af: ${ saveError }"
@@ -6370,6 +6394,9 @@
       "Account does not exist": [
         "Konto findes ikke"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Aktivering mislykkedes. Detaljerne kan være forkerte, eller e-mailen er allerede aktiv. Tjek venligst dine oplysninger eller log ind."
+      ],
       "Add at least one action": [
         "Tilføj mindst én handling"
       ],
@@ -6494,6 +6521,9 @@
       ],
       "Failed loading group members": [
         "Kunne ikke indlæse gruppemedlemmer"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Aktivering af din adresse mislykkedes. Prøv igen."
       ],
       "Failed to add group member": [
         "Kunne ikke tilføje gruppemedlem"
@@ -8080,6 +8110,16 @@
         "Jeg forstår, at jeg ikke længere vil kunne logge ind fra ældre versioner af ${ BRAND_NAME }-mobilapps."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Indtast din e-mailadresse"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Værdikuponen sendes hertil."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "webapp"
@@ -8380,6 +8420,32 @@
       ],
       "Subscribed": [
         "Abonneret"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Et simpelt skridt i dag for at sikre dit barns digitale sikkerhed i morgen"
+      ],
+      "Activate your reserved email address": [
+        "Aktiver din reserverede e-mailadresse"
+      ],
+      "Address reservation voucher": [
+        "Værdikupon til adressereservation"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Doner til ${ BRAND_NAME } Foundation"
+      ],
+      "Enter verification code": [
+        "Indtast bekræftelseskode"
+      ],
+      "Recover activation voucher": [
+        "Gendan aktiveringsværdikupon"
+      ],
+      "Reserve child's email address": [
+        "Reserver barns e-mailadresse"
+      ],
+      "We emailed you the voucher": [
+        "Vi har sendt dig værdikuponen via e-mail"
       ]
     },
     "Headline": {
@@ -9143,8 +9209,8 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Et ${ protonSubdomain } hostes af ${ BRAND_NAME }, hvor du hurtigt kan oprette et underdomæne. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "For at oprette grupper kræves et tilpasset domæne. Hvis det ikke er sat op, skal det først gøres under ${ linkToDomainPage }."
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Et brugerdefineret domæne er påkrævet for at oprette grupper. Hvis du ikke har et brugerdefineret domæne konfigureret, skal du gøre det først under ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Et navn, så du kan fastslå, hvor du bruger den, så du nemt kan tilbagekalde den eller forlænge den senere."
@@ -9911,11 +9977,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "Indtast loginoplysningerne for den e-mail-konto, du ønsker at importere fra."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Indtast e-mailadressen, der blev brugt til at reservere ${ reservedEmail }."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Indtast entitets-ID'et for en **eduGAIN** organisation til **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Indtast Organisationsadgangskoden for at gendanne administratorprivilegier. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Indtast den reserverede e-mailadresse og den e-mailadresse, der blev brugt under reservationen."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
@@ -10076,6 +10148,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Hjælp andre familier med at give deres børn en sikker start online. Del denne milepæl og spred budskabet."
+      ],
       "here": [
         "her"
       ],
@@ -10084,6 +10159,9 @@
       ],
       "High Priority": [
         "Høj prioritet"
+      ],
+      "How it works": [
+        "Sådan fungerer det"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -10105,6 +10183,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Hvis tastaturgenveje er aktiveret, kan du bruge følgende taster til hurtige handlinger eller til at springe til forskellige visninger. ${ metaKey } + K er altid aktiveret."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Hvis den e-mail, du indtastede, blev brugt til at reservere et barns e-mailadresse, gensender vi aktiveringsværdikuponen."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Hvis systemets tidszone ikke matcher den aktuelle tidszonepræference, vil du blive bedt om at opdatere den (højst én gang om dagen)."
@@ -10338,6 +10419,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Du skal blot bekræfte dit valg, og så klarer vi resten."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Opbevar værdikuponen sikkert, indtil den skal bruges, for eksempel i ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Hold dine oplysninger mere sikre og private med disse vejledninger og tips."
@@ -10838,6 +10922,9 @@
       "Receive notifications for ${ categoryLabel }": [
         "Modtag notifikationer for ${ categoryLabel }"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Modtag reservationsværdikuponen via e-mail. Du eller barnet kan bruge den til at aktivere adressen inden for de næste 15 år. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Nyligt anvendte servere:"
       ],
@@ -11067,6 +11154,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Nogle servere vises muligvis ikke på listen ovenfor. Søg med servernavn (f.eks. AT#62) for at finde dem."
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Noget gik galt. Prøv igen eller kontakt kundesupport."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Angiv det domæne, der har tilladelse til at autentificere med SAML SSO."
       ],
@@ -11085,6 +11175,9 @@
       "Step ${ step }": [
         "Trin ${ step }",
         "Trin ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Trin ${ step }/${ totalSteps }"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagerplads tildelt andre brugere i denne organisation"
@@ -11420,6 +11513,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "For at holde trit med den seneste udvikling af produkter hos ${ BRAND_NAME } kan du abonnere på vores forskellige e-mails og ${ blogLink } fra tid til anden."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "For at forhindre misbrug eller svindel beder vi om en minimumsdonation på ${ minimumDonation }. Dette støtter ${ protonFoundationLink } arbejde for at forsvare digitalt privatliv globalt og hjælper med at beskytte den næste generation."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "For at fortsætte skal du vælge en metode til kontogendannelse, så vi kan bekræfte anmodningen."
       ],
@@ -11645,6 +11741,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Vi råder dig til at bruge officielle ${ VPN_APP_NAME }-applikationer, når det er muligt."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Vi kunne ikke gennemføre transaktionen. Prøv igen."
+      ],
       "We couldn’t process your payment.": [
         "Vi kunne ikke gennemføre din betaling."
       ],
@@ -11752,6 +11851,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Når du fjerner en server fra en gateway, indledes en deaktiveringsperiode på 10 dage. Denne server kan føjes til en ny gateway, men dens land kan ikke ændres."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Når du er klar til at aktivere adressen, skal du scanne QR-koden eller bruge linket i værdikuponen."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Når dit abonnement fornyes, vil alle tilgængelige kreditter blive brugt først, før vi laver en opkrævning på dine betalingsmetoder ovenfor."
@@ -12135,6 +12237,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Din prøveversion slutter om ${ timeRemaining }."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Din værdikupon til din reserverede ${ BRAND_NAME }-e-mailadresse: ${ reservedEmail }"
+      ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Du vil også miste adgang til ${ boldPlanTitle }-funktioner:"
       ],
@@ -12174,6 +12279,11 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "Hjælper med at skrive, svare på og korrekturlæse e-mails. Hvis deaktiveret, vil kun administratorer få adgang. Administrér for individuelle brugere i ${ userAndAddresses } eller ${ addMoreSeats }"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Indtast bekræftelseskoden, der blev sendt til ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -12804,6 +12914,9 @@
       "Actions": [
         "Handlinger"
       ],
+      "Activation code": [
+        "Aktiveringskode"
+      ],
       "Activity": [
         "Aktivitet"
       ],
@@ -13047,6 +13160,9 @@
       "Choose a name for the generated certificate file": [
         "Vælg et navn til den genererede certifikatfil"
       ],
+      "Choose an address to reserve for your child": [
+        "Vælg en adresse at reservere til dit barn"
+      ],
       "Choose your billing": [
         "Vælg din fakturering"
       ],
@@ -13251,6 +13367,12 @@
       "Don't show this again": [
         "Vis ikke dette igen"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Doner $1 eller mere til ${ BRAND_NAME } Foundation"
+      ],
+      "Donation amount": [
+        "Donationsbeløb"
+      ],
       "Duration": [
         "Varighed"
       ],
@@ -13307,6 +13429,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Angiv adgangskoden til nøgle med fingeraftryk: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Indtast din e-mailadresse"
       ],
       "Enter your password": [
         "Indtast din adgangskode"
@@ -13821,6 +13946,12 @@
       "Require 2FA for everyone": [
         "Kræv 2FA for alle"
       ],
+      "Reserved address": [
+        "Reserveret adresse"
+      ],
+      "Reserved email address": [
+        "Reserveret e-mailadresse"
+      ],
       "Reveal password": [
         "Vis adgangskode"
       ],
@@ -13862,6 +13993,9 @@
       ],
       "Server name": [
         "Servernavn"
+      ],
+      "Set password": [
+        "Indstil adgangskode"
       ],
       "Share your referral link": [
         "Del dit henvisningslink"
@@ -13992,6 +14126,9 @@
       ],
       "Tips and insights": [
         "Tips og indsigt"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Scan QR-koden for at aktivere, eller gå til:"
       ],
       "To help us improve, please explain why you are leaving.": [
         "Hjælpe os med at forbedre os: Forklar, hvorfor du forlader os."
@@ -14125,11 +14262,17 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jeg ønsker at slette denne konto og alle dens data permanent."
       ],
+      "Your activation code:": [
+        "Din aktiveringskode:"
+      ],
       "Your calendar URL": [
         "Din kalender-URL"
       ],
       "Your credit balance": [
         "Din kreditbalance"
+      ],
+      "Your email address": [
+        "Din e-mailadresse"
       ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
@@ -14139,6 +14282,9 @@
       ],
       "Your plan": [
         "Dit abonnement"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Din værdikupon til din reserverede ${ BRAND_NAME }-e-mailadresse:"
       ],
       "ZIP code": [
         "Postnummer"
@@ -14311,6 +14457,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "${ BRAND_NAME } Foundations"
+      ],
       "Activity log": [
         "Aktivitetslog"
       ],
@@ -14331,6 +14480,9 @@
       ],
       "Calendars": [
         "Kalendere"
+      ],
+      "Can't find your code?": [
+        "Kan du ikke finde din kode?"
       ],
       "clearing your browser cache": [
         "rydder din browser-cache"
@@ -14531,6 +14683,20 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Brugere og adresser"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "E-mail"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -18041,6 +18207,9 @@
       "Address": [
         "Adresse"
       ],
+      "Amount": [
+        "Beløb"
+      ],
       "Anderson": [
         "Andersen"
       ],
@@ -18433,9 +18602,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Vis ikke dette tilbud igen"
-      ],
       "Get the deal": [
         "Tag imod tilbuddet"
       ]
@@ -18512,11 +18678,6 @@
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "en sommerfugl"
       ]
     },
     "q1campaign: Title": {
@@ -21875,6 +22036,9 @@
       "Verification code copied to clipboard": [
         "Bekræftelseskode kopieret til udklipsholder"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Bekræftelseskode afsendt til ${ parentEmail }"
+      ],
       "Verification successful": [
         "Bekræftelse gennemført"
       ],
@@ -21898,6 +22062,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Du vil modtage dit brugernavn via SMS indenfor et minut, hvis du har indtastet et gyldigt telefonnummer til gendannelse."
+      ],
+      "Your address has been activated": [
+        "Din adresse er blevet aktiveret"
       ]
     },
     "Success message": {
@@ -23303,6 +23470,12 @@
       ],
       "Privacy and data collection": [
         "Privatliv og dataindsamling"
+      ],
+      "Problem processing your payment": [
+        "Problem med at behandle din betaling"
+      ],
+      "Problem processing your request": [
+        "Problem med at behandle din anmodning"
       ],
       "Processing...": [
         "Behandler..."

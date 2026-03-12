@@ -71,6 +71,12 @@
       "Activate recovery": [
         "Aktivirajte obnovitev."
       ],
+      "Activate reserved address": [
+        "Aktiviraj rezerviran naslov"
+      ],
+      "Activate this address": [
+        "Aktiviraj ta naslov"
+      ],
       "Add": [
         "Dodaj"
       ],
@@ -226,6 +232,9 @@
       ],
       "Close navigation": [
         "Zapri krmarjenje"
+      ],
+      "Close search": [
+        "Zapri iskanje"
       ],
       "Close tab": [
         "Zapri zavihek"
@@ -491,6 +500,9 @@
       "Don't show again": [
         "Ne prikaži več"
       ],
+      "Donate": [
+        "Doniraj"
+      ],
       "Done": [
         "Opravljeno"
       ],
@@ -608,6 +620,9 @@
       "Export key": [
         "Izvozi ključ"
       ],
+      "Export key before deleting": [
+        "Pred brisanjem izvozi ključ"
+      ],
       "Extend": [
         "Razširi"
       ],
@@ -700,6 +715,9 @@
       ],
       "Get verification code": [
         "Pridobi kodo za preverjanje"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Pridobite svoj naslov ${ MAIL_APP_NAME }"
       ],
       "Go back": [
         "Pojdi nazaj"
@@ -1115,6 +1133,9 @@
       "Search countries": [
         "Iskanje držav"
       ],
+      "Search groups": [
+        "Išči med skupinami"
+      ],
       "Search settings": [
         "Nastavitve iskanja"
       ],
@@ -1174,6 +1195,9 @@
       ],
       "Send reminder": [
         "Pošlji opomnik"
+      ],
+      "Send verification code": [
+        "Pošlji kodo za preverjanje"
       ],
       "Set as album cover": [
         "Nastavi kot naslovnico albuma"
@@ -1327,6 +1351,9 @@
       ],
       "Try for free": [
         "Preizkusite brezplačno"
+      ],
+      "Try payment again": [
+        "Poskusi ponovno plačati"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Poskusite znova. Shranjevanje ni uspelo iz naslednjega razloga: ${ saveError }"
@@ -2217,6 +2244,9 @@
       ],
       "Payments problem": [
         "Težava s plačili"
+      ],
+      "Sheets problem": [
+        "Težava z listo"
       ],
       "Sign in problem": [
         "Težave s prijavo"
@@ -4915,6 +4945,9 @@
       "Account does not exist": [
         "Račun ne obstaja"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Aktivacija ni uspela. Podatki so morda napačni ali pa je e-pošta že aktivna. Preverite vnos ali se prijavite."
+      ],
       "Add at least one action": [
         "Dodajte vsaj eno dejanje"
       ],
@@ -5026,6 +5059,9 @@
       "Failed loading group members": [
         "Napaka pri nalaganju članov skupine"
       ],
+      "Failed to activate your address. Please try again.": [
+        "Ni mogoče aktivirati vašega naslova. Poskusite znova."
+      ],
       "Failed to add group member": [
         "Člana skupine ni bilo mogoče dodati"
       ],
@@ -5097,6 +5133,9 @@
       ],
       "Invalid code": [
         "Neveljavna koda"
+      ],
+      "Invalid coupon": [
+        "Neveljaven kupon"
       ],
       "Invalid domain": [
         "Neveljavna domena"
@@ -5376,6 +5415,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Najmanjši znesek, ki ga lahko dodate, je ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Najmanjši znesek donacije je ${ price }"
       ],
       "The sending key is not valid": [
         "Ključ za pošiljanje ni veljaven"
@@ -5902,6 +5944,12 @@
       ],
       "Pending": [
         "V teku"
+      ],
+      "Pending invitation": [
+        "Čaka na povabilo",
+        "Čakata na povabilo",
+        "Čakajo na povabilo",
+        "Čakajo na povabilo"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Oprostite, trenutno ne morete zamenjati paketa."
@@ -6443,6 +6491,16 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Vnesite svoj e-poštni naslov"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Kupon bo poslan sem."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "spletna aplikacija"
@@ -6691,6 +6749,32 @@
     "Header for table": {
       "Token name": [
         "Ime žetona"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Preprost korak danes za zagotovitev digitalne varnosti vašega otroka jutri"
+      ],
+      "Activate your reserved email address": [
+        "Aktivirajte rezerviran e-poštni naslov"
+      ],
+      "Address reservation voucher": [
+        "Kupon za rezervacijo naslova"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Doniraj Fundaciji ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Vnesi kodo za preverjanje"
+      ],
+      "Recover activation voucher": [
+        "Obnovi kupon za aktivacijo"
+      ],
+      "Reserve child's email address": [
+        "Rezerviraj otrokov e-poštni naslov"
+      ],
+      "We emailed you the voucher": [
+        "Poslali smo vam e-pošto s kuponom"
       ]
     },
     "Headline": {
@@ -7394,6 +7478,9 @@
       "30-day money-back guarantee.": [
         "30-dnevno jamstvo z vračilom denarja."
       ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Za ustvarjanje skupin je potrebna domena po meri. Če nimate nastavljene domene po meri, jo najprej nastavite pod ${ linkToDomainPage }."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Ime, ki vam pomaga prepoznati, kje ga uporabljate, da ga lahko enostavno prekličete ali ga pozneje podaljšate."
       ],
@@ -7700,6 +7787,9 @@
       "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
         "Shramba v oblaku integrirana z ${ DOCS_APP_NAME }"
       ],
+      "Coming soon": [
+        "Kmalu na voljo"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Konfigurirajte preverjanje pristnosti SAML za svojo organizacijo prek ponudnika identitete (IdP). S tem boste omogočili SAML za celotno organizacijo."
       ],
@@ -7994,8 +8084,14 @@
       "Enter the credentials of the email account you want to import from.": [
         "Vnesite poverilnice e-poštnega računa, iz katerega želite uvoziti podatke."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Vnesite e-poštni naslov, ki ste ga uporabili za rezervacijo ${ reservedEmail }."
+      ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Vnesite organizacijsko geslo za obnovitev skrbniških privilegijev. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Vnesite rezervirani e-poštni naslov in e-poštni naslov, uporabljen med rezervacijo."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vnesite kodo za preverjanje, ki je bila poslana na ${ destinationText }."
@@ -8147,6 +8243,9 @@
       "Groups": [
         "Skupine"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Pomagajte drugim družinam zagotoviti svojim otrokom varen začetek na spletu. Dajte v skupno ravo ta mejnik in razširite novico."
+      ],
       "here": [
         "tukaj"
       ],
@@ -8155,6 +8254,9 @@
       ],
       "High Priority": [
         "Visoka pomembnost"
+      ],
+      "How it works": [
+        "Kako deluje"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -8173,6 +8275,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Če so bližnjice na tipkovnici omogočene, lahko uporabite naslednje tipke za hitra dejanja ali za skok na različne poglede. ${ metaKey } + K je vedno omogočeno."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Če je bil vneseni e-poštni naslov uporabljen za rezervacijo otrokovega e-poštnega naslova, vam bomo ponovno poslali aktivacijski kupon."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Če je to posledica ponastavitve starega gesla, lahko preprečite, da se sporočilo prikaže znova."
@@ -8342,6 +8447,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Samo potrdite svoj izbor, vse ostalo opravimo mi."
       ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Kupon hranite na varnem mestu, dokler ga ne potrebujete, na primer v ${ DRIVE_APP_NAME }."
+      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Poskrbite, da bodo vaši podatki bolj varni in zasebni s temi vodniki in nasveti."
       ],
@@ -8476,6 +8584,9 @@
       ],
       "New": [
         "Novo"
+      ],
+      "New activity data will stop being collected and shown.": [
+        "Zbirajo podatkov o dejavnosti se bo ustavilo in podatki ne bodo več prikazani."
       ],
       "News or media article": [
         "Novice ali medijski članki"
@@ -8738,6 +8849,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Za pomoč pri vsem, kar je povezano z ${ BRAND_NAME }, se obrnite na nas."
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Prejmite rezervacijski kupon po e-pošti. Vi ali otrok ga lahko uporabite za aktivacijo naslova v naslednjih 15 letih. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Nedavno uporabljeni strežniki:"
       ],
@@ -8921,6 +9035,9 @@
       "Some keys successfully reactivated": [
         "Nekateri ključi so uspešno ponovno aktivirani."
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Nekaj je šlo narobe. Prosimo, poskusite znova ali se obrnite na podporo strankam."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Določite domeno, ki ima dovoljenje za preverjanje pristnosti s SAML SSO."
       ],
@@ -8938,6 +9055,9 @@
         "${ step }. korak",
         "${ step }. korak",
         "${ step }. korak"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Korak ${ step }/${ totalSteps }"
       ],
       "Step 1 of 2": [
         "Korak 1 od 2"
@@ -9215,6 +9335,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Če želite ostati na tekočem z novicami o razvoju izdelkov ${ BRAND_NAME }, se lahko naročite na naše različne e-poštne novice in občasno ${ blogLink }."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Da bi preprečili zlorabe ali goljufije, prosimo za donacijo v višini najmanj ${ minimumDonation }. To podpira delo ${ protonFoundationLink } za zaščito digitalne zasebnosti po vsem svetu in pomaga zaščititi naslednjo generacijo."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Za nadaljevanje izberite način obnovitve računa, da lahko preverimo zahtevo."
       ],
@@ -9404,6 +9527,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Svetujemo vam, da če je le mogoče, uporabljate uradne aplikacije ${ VPN_APP_NAME }."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Transakcije nismo mogli dokončati. Poskusite znova."
+      ],
       "We couldn’t process your payment.": [
         "Vašega plačila ni bilo mogoče obdelati."
       ],
@@ -9496,6 +9622,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Ko odstranite strežnik iz prehoda, ta vstopi v 10-dnevno obdobje deaktivacije. Ta strežnik je mogoče dodati novemu prehodu, vendar njegove države ni mogoče spremeniti."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Ko ste pripravljeni aktivirati naslov, odčitajte kodo QR ali uporabite povezavo v kuponu."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Ko se vaša naročnina obnovi, bomo uporabili vso razpoložljivo dobroimetje, preden bomo zaračunali zgornji način plačila."
@@ -9640,6 +9769,12 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe."
+      ],
+      "You have ${ availableCount } new server available.": [
+        "Na voljo imate ${ availableCount } nov strežnik.",
+        "Na voljo imate ${ availableCount } nova strežnika.",
+        "Na voljo imate ${ availableCount } novih strežnikov.",
+        "Na voljo imate ${ availableCount } novih strežnikov."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Imate preizkusno naročnino ${ planTitle }. Če želite nadaljevati naročnino po preizkusnem obdobju, dodajte način plačila."
@@ -9791,6 +9926,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše preizkusno obdobje se bo končalo čez ${ timeRemaining }."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Vaš kupon za rezervirani e-poštni naslov ${ BRAND_NAME }: ${ reservedEmail }"
+      ],
       "YouTube": [
         "YouTube"
       ],
@@ -9813,6 +9951,11 @@
       ],
       "Selected color:": [
         "Izberi barvo:"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Vnesite kodo za preverjanje, ki je bila poslana na ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -10300,6 +10443,9 @@
       "Actions": [
         "Dejanja"
       ],
+      "Activation code": [
+        "Aktivacijska koda"
+      ],
       "Activity": [
         "Opravilo"
       ],
@@ -10486,6 +10632,9 @@
       "Choose a name for the generated certificate file": [
         "Izberite ime za ustvarjeno datoteko potrdila."
       ],
+      "Choose an address to reserve for your child": [
+        "Izberite naslov, ki ga želite rezervirati za svojega otroka"
+      ],
       "Choose your billing": [
         "Izberite svoje obračunavanje"
       ],
@@ -10660,6 +10809,12 @@
       "Don't show this again": [
         "Ne prikazuj več"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Donirajte 1 $ ali več fundaciji ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Znesek donacije"
+      ],
       "e.g. example.com": [
         "npr. primer.com"
       ],
@@ -10701,6 +10856,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Vnesite geslo za ključ s prstnim odtisom: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Vnesite svoj e-poštni naslov"
       ],
       "Enter your password": [
         "Vnesite svoje geslo"
@@ -10794,6 +10952,9 @@
       ],
       "Import interval": [
         "Interval uvoza"
+      ],
+      "Import recent mails": [
+        "Uvozi nedavna e-poštna sporočila"
       ],
       "Import to email address": [
         "Uvozi na e-poštni naslov"
@@ -11104,6 +11265,12 @@
       "Require 2FA for everyone": [
         "Zahtevajte dvojno preverjanje pristnosti za vse."
       ],
+      "Reserved address": [
+        "Rezerviran naslov"
+      ],
+      "Reserved email address": [
+        "Rezerviran e-poštni naslov"
+      ],
       "Reveal password": [
         "Razkrij geslo"
       ],
@@ -11127,6 +11294,9 @@
       ],
       "Sequences": [
         "Zaporedja"
+      ],
+      "Set password": [
+        "Nastavi geslo"
       ],
       "Share your referral link": [
         "Delite vašo povezavo za priporočilo"
@@ -11226,6 +11396,9 @@
       ],
       "Time zone": [
         "Časovni pas"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Za aktivacijo odčitajte QR kodo ali pojdite na:"
       ],
       "To: ${ toEmail }": [
         "Za: ${ toEmail }"
@@ -11329,17 +11502,26 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, želim trajno izbrisati ta račun in vse njegove podatke."
       ],
+      "Your activation code:": [
+        "Vaša aktivacijska koda:"
+      ],
       "Your calendar URL": [
         "Povezava do vašega koledarja"
       ],
       "Your credit balance": [
         "Vaše dobroimetje na računu"
       ],
+      "Your email address": [
+        "Vaš e-poštni naslov"
+      ],
       "Your password (admin)": [
         "Vaše geslo (admin)"
       ],
       "Your plan": [
         "Vaš paket"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Vaš kupon za rezervirani e-poštni naslov ${ BRAND_NAME }:"
       ],
       "ZIP code": [
         "Poštna številka"
@@ -11487,6 +11669,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "Fundacija ${ BRAND_NAME }"
+      ],
       "Activity log": [
         "Dnevnik aktivnosti"
       ],
@@ -11504,6 +11689,9 @@
       ],
       "Calendars": [
         "Koledarji"
+      ],
+      "Can't find your code?": [
+        "Ne najdete svoje kode?"
       ],
       "clearing your browser cache": [
         "izpraznitev predpomnilnika brskalnika"
@@ -11681,6 +11869,20 @@
       ],
       "What’s this?": [
         "Kaj je to?"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "E-pošta"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -11997,6 +12199,12 @@
       "${ BRAND_NAME } Account": [
         "Račun ${ BRAND_NAME }"
       ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Aktivirajte zasebni e-poštni naslov ${ BRAND_NAME }, rezerviran za vašega otroka, in nastavite njegov račun."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Aktivirajte račun svojega otroka ${ BRAND_NAME } | ${ BRAND_NAME }"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Ustvarite račun ${ BRAND_NAME } in dostopajte do vseh šifriranih storitev ${ BRAND_NAME }, kot so ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } in še več samo z enim vpisom. Pridobite brezplačni račun ${ BRAND_NAME }."
       ],
@@ -12005,6 +12213,12 @@
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Poiščite uporabniško ime za svoj račun ${ BRAND_NAME }"
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "Obnovi dostop do zasebnega e-poštnega naslova ${ BRAND_NAME }, ki je rezerviran za vašega otroka."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Obnovite račun svojega otroka ${ BRAND_NAME } | ${ BRAND_NAME }"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Prijavite se v svoj račun ${ BRAND_NAME } in dostopajte do vseh šifriranih storitev ${ BRAND_NAME }, kot so ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } in še več. Nimate računa? Brezplačno ga ustvarite."
@@ -14746,6 +14960,9 @@
       "Address": [
         "Naslov"
       ],
+      "Amount": [
+        "Znesek"
+      ],
       "Anderson": [
         "Novak"
       ],
@@ -15210,6 +15427,9 @@
       ],
       "Add a recovery phone number": [
         "Dodajte telefonsko številko za obnovitev"
+      ],
+      "Add an alternative email address": [
+        "Dodajte nadomestni e-poštni naslov"
       ],
       "Back to Safety Review": [
         "Nazaj na varnostni pregled"
@@ -17516,6 +17736,9 @@
       "Verification code copied to clipboard": [
         "Koda za preverjanje je bila kopirana v odložišče."
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Varnostno kodo pošlji na ${ parentEmail }"
+      ],
       "Verification successful": [
         "Preverjanje uspešno"
       ],
@@ -17530,6 +17753,9 @@
       ],
       "You have successfully unsubscribed": [
         "Naročnina je preklicana"
+      ],
+      "Your address has been activated": [
+        "Vaš naslov je bil aktiviran"
       ]
     },
     "Success message": {
@@ -17875,6 +18101,12 @@
       ],
       "Activate user": [
         "Aktivirajte uporabnika"
+      ],
+      "Add ${ totalServerCount } server?": [
+        "Dodaj ${ totalServerCount } strežnik?",
+        "Dodaj ${ totalServerCount } strežnika?",
+        "Dodaj ${ totalServerCount } strežnike?",
+        "Dodaj ${ totalServerCount } strežnike?"
       ],
       "Add a custom logo": [
         "Dodaj logotip po meri"
@@ -18721,6 +18953,12 @@
       ],
       "Privacy and data collection": [
         "Zasebnost in zbiranje podatkov"
+      ],
+      "Problem processing your payment": [
+        "Težava pri obdelavi plačila"
+      ],
+      "Problem processing your request": [
+        "Težava pri obdelavi vaše zahteve"
       ],
       "Processing...": [
         "Obdelovanje ..."

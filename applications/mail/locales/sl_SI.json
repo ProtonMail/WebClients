@@ -1453,10 +1453,7 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Ključ zaupanja",
-        "Ključa zaupanja",
-        "Ključi zaupanja",
-        "Ključev zaupanja"
+        "Zaupaj ključu"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -2136,6 +2133,9 @@
       ],
       "Payments problem": [
         "Težava s plačili"
+      ],
+      "Sheets problem": [
+        "Težava z listo"
       ],
       "Sign in problem": [
         "Težave s prijavo"
@@ -4545,6 +4545,9 @@
       "Invalid code": [
         "Neveljavna koda"
       ],
+      "Invalid coupon": [
+        "Neveljaven kupon"
+      ],
       "Invalid email address": [
         "Neveljaven e-poštni naslov"
       ],
@@ -4841,6 +4844,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Najmanjši znesek, ki ga lahko dodate, je ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Najmanjši znesek donacije je ${ price }"
       ],
       "The sending key is not valid": [
         "Ključ za pošiljanje ni veljaven"
@@ -7376,7 +7382,10 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko"
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -9436,6 +9445,9 @@
       ],
       "Import interval": [
         "Interval uvoza"
+      ],
+      "Import recent mails": [
+        "Uvozi nedavna e-poštna sporočila"
       ],
       "Import to email address": [
         "Uvozi na e-poštni naslov"

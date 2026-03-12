@@ -176,6 +176,9 @@
       "Close navigation": [
         "Închidere navigare"
       ],
+      "Close search": [
+        "Închidere căutare"
+      ],
       "Close this banner": [
         "Închidere norificare"
       ],
@@ -838,6 +841,9 @@
       ],
       "Search countries": [
         "Căutare țări"
+      ],
+      "Search groups": [
+        "Căutare grupuri"
       ],
       "See DNS TXT record": [
         "Afișare înregistrare TXT DNS"
@@ -4205,6 +4211,9 @@
       "Invalid code": [
         "Cod nevalid"
       ],
+      "Invalid coupon": [
+        "Cupon nevalid"
+      ],
       "Invalid domain": [
         "Domeniu nevalid"
       ],
@@ -4475,6 +4484,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Creditul minim care poate fi adăugat este de ${ price }."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Suma minimă de donație este de ${ price }."
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Numele regulei trebuie să aibă între 3 și 40 de caractere."
@@ -6259,8 +6271,8 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Un ${ protonSubdomain } este găzduit de ${ BRAND_NAME }, ceea ce vă permite să configurați rapid un subdomeniu. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Este necesar un domeniu personal pentru a crea grupuri. Dacă nu aveți un domeniu personal configurat, faceți-o mai întâi pe ${ linkToDomainPage }."
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Este necesar un domeniu personal pentru a crea grupuri. Dacă nu aveți un domeniu personal configurat, faceți-o mai întâi în secțiunea ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nume care vă ajută să identificați unde o folosiți pentru a o anula sau extinde mai târziu."
@@ -9220,6 +9232,9 @@
       ],
       "Import interval": [
         "Interval de importare"
+      ],
+      "Import recent mails": [
+        "Importare mesaje recente"
       ],
       "Import to email address": [
         "Importare în adresa de e-mail"
@@ -12793,9 +12808,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Nu mai afișați această ofertă"
-      ],
       "Get the deal": [
         "Valorificați oferta"
       ]
@@ -12872,11 +12884,6 @@
       ],
       "Use your own email domain": [
         "Utilizați propriul domeniu de e-mail"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "un fluture"
       ]
     },
     "q1campaign: Title": {

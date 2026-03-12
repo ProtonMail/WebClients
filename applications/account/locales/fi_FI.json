@@ -82,6 +82,12 @@
       "Activate recovery": [
         "Aktivoi palautus"
       ],
+      "Activate reserved address": [
+        "Aktivoi varattu osoite"
+      ],
+      "Activate this address": [
+        "Aktivoi tämä osoite"
+      ],
       "Add": [
         "Lisää"
       ],
@@ -264,6 +270,9 @@
       ],
       "Close navigation": [
         "Sulje navigaatio"
+      ],
+      "Close search": [
+        "Sulje haku"
       ],
       "Close tab": [
         "Sulje välilehti"
@@ -535,6 +544,9 @@
       "Don't show again": [
         "Älä näytä uudelleen"
       ],
+      "Donate": [
+        "Lahjoita"
+      ],
       "Done": [
         "Valmis"
       ],
@@ -783,6 +795,9 @@
       ],
       "Get verification code": [
         "Hanki vahvistuskoodi"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Hanki oma ${ MAIL_APP_NAME }-osoite"
       ],
       "Go back": [
         "Takaisin"
@@ -1231,6 +1246,9 @@
       "Search countries": [
         "Etsi maata"
       ],
+      "Search groups": [
+        "Hae ryhmiä"
+      ],
       "Search settings": [
         "Etsi asetuksista"
       ],
@@ -1296,6 +1314,9 @@
       ],
       "Send reminder": [
         "Lähetä muistutus"
+      ],
+      "Send verification code": [
+        "Lähetä vahvistuskoodi"
       ],
       "Set as album cover": [
         "Aseta albumin kansikuvaksi"
@@ -1458,6 +1479,9 @@
       ],
       "Try for free": [
         "Kokeile ilmaiseksi"
+      ],
+      "Try payment again": [
+        "Yritä maksua uudelleen"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yritä tallennusta uudelleen. Tallennus epäonnistui: ${ saveError }"
@@ -5395,6 +5419,9 @@
       "Account does not exist": [
         "Tiliä ei ole olemassa"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Aktivointi epäonnistui. Tiedot voivat olla virheellisiä, tai sähköposti on jo aktiivinen. Tarkista syöttämäsi tiedot tai kirjaudu sisään."
+      ],
       "Add at least one action": [
         "Lisää ainakin yksi toiminto"
       ],
@@ -5514,6 +5541,9 @@
       "Failed loading group members": [
         "Ryhmän jäsenten lataaminen epäonnistui"
       ],
+      "Failed to activate your address. Please try again.": [
+        "Osoitteesi aktivointi epäonnistui. Yritä uudelleen."
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Aktiivisten istuntojen nouto epäonnistui. ${ refresh } tai yritä myöhemmin uudelleen."
       ],
@@ -5585,6 +5615,9 @@
       ],
       "Invalid code": [
         "Virheellinen koodi"
+      ],
+      "Invalid coupon": [
+        "Virheellinen kuponki"
       ],
       "Invalid domain": [
         "Virheellinen verkkotunnus"
@@ -7036,6 +7069,16 @@
         "Ymmärrän, etten voi enää kirjautua sisään vanhempiin ${ BRAND_NAME } -mobiilisovellusten versioihin."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Syötä sähköpostiosoitteesi"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Kuponki lähetetään tänne."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "verkkosovellus"
@@ -7306,6 +7349,32 @@
     "Header; Table with list of calendars arranged by type": {
       "Other": [
         "Muu"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Yksinkertainen askel tänään lapsesi digitaalisen turvallisuuden takaamiseksi huomenna"
+      ],
+      "Activate your reserved email address": [
+        "Aktivoi varattu sähköpostiosoitteesi"
+      ],
+      "Address reservation voucher": [
+        "Osoitteen varauskuponki"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Lahjoita ${ BRAND_NAME }-säätiölle"
+      ],
+      "Enter verification code": [
+        "Syötä vahvistuskoodi"
+      ],
+      "Recover activation voucher": [
+        "Palauta aktivointikuponki"
+      ],
+      "Reserve child's email address": [
+        "Varaa lapsen sähköpostiosoite"
+      ],
+      "We emailed you the voucher": [
+        "Lähetimme kupongin sinulle sähköpostitse"
       ]
     },
     "Headline": {
@@ -8035,7 +8104,7 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } on ${ BRAND_NAME }in isännöimä, jonka ansiosta voit määrittä aliverkkotunnuksen nopeasti. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
         "Ryhmien luominen vaatii oman verkkotunnuksen. Jos et ole vielä määrittänyt omaa verkkotunnusta, tee se ensin: ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
@@ -8707,11 +8776,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "Syötä tuotavan tilin kirjautumistiedot."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Syötä sähköpostiosoite, jota käytettiin osoitteen ${ reservedEmail } varaamiseen."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Syötä **eduGAIN**-organisaation entiteetti-ID verkkotunnukselle **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Palauta hallintaoikeudet syöttämällä organisaation salasana. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Syötä varattu sähköpostiosoite sekä varauksen yhteydessä käytetty sähköpostiosoite."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Syötä kohteeseen ${ destinationText } lähetetty vahvistuskoodi."
@@ -8851,6 +8926,9 @@
       "Groups": [
         "Ryhmät"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Auta muita perheitä tarjoamaan lapsilleen turvallinen alku verkossa. Jaa tämä virstanpylväs ja kerro asiasta eteenpäin."
+      ],
       "here": [
         "tässä"
       ],
@@ -8859,6 +8937,9 @@
       ],
       "High Priority": [
         "Korkea tärkeys"
+      ],
+      "How it works": [
+        "Näin se toimii"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -8874,6 +8955,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Jos pikanäppäimet ovat käytössä, voit käyttää seuraavia näppäimiä pikatoimintoihin tai eri näkymiin siirtymiseen. ${ metaKey } + K on aina käytössä."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Jos syöttämääsi sähköpostia käytettiin lapsen sähköpostiosoitteen varaamiseen, lähetämme aktivointikupongin uudelleen."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Jos tämä johtuu vanhasta salasanan nollauksesta, voit estää viestiä näkymästä uudelleen."
@@ -9098,6 +9182,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Vahvista vain valintasi niin me teemme loput."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Säilytä kuponki turvallisessa paikassa, kunnes sitä tarvitaan, esimerkiksi ${ DRIVE_APP_NAME }-palvelussa."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Suojaa tietosi paremmin ja vahvista niiden yksityisyyttä näillä oppailla ja vinkeillä."
@@ -9544,6 +9631,9 @@
       "Receive notifications for ${ categoryLabel }": [
         "Vastaanota ilmoituksia kategoriasta ${ categoryLabel }"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Vastaanota varauskuponki sähköpostitse. Sinä tai lapsi voitte käyttää sitä osoitteen aktivoimiseksi seuraavien 15 vuoden aikana. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Viimeksi käytetyt palvelimet:"
       ],
@@ -9758,6 +9848,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Jotkin palvelimet eivät välttämättä näy yllä olevassa luettelossa. Etsi ne palvelimen nimen (esim. AT#62) perusteella."
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Jotain meni pieleen. Yritä uudelleen tai ota yhteyttä asiakaspalveluun."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Määritä toimialue, joka saa todentaa SAML SSO:lla."
       ],
@@ -9773,6 +9866,9 @@
       "Step ${ step }": [
         "${ step }. vaihe",
         "${ step }. vaihe"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Vaihe ${ step }/${ totalSteps }"
       ],
       "Step 1 of 2": [
         "Vaihe 1/2"
@@ -10072,6 +10168,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Pysyäksesi ajan tasalla ${ BRAND_NAME }-tuotteiden viimeisimmistä muutoksista, voit tilata erilaisia sähköpostiuutiskirjeitä ja vierailla silloin tällöin ${ blogLink }."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Väärinkäytösten ja petosten estämiseksi pyydämme vähintään ${ minimumDonation } lahjoitusta. Tämä tukee ${ protonFoundationLink } työtä digitaalisen yksityisyyden puolustamiseksi maailmanlaajuisesti ja auttaa suojelemaan seuraavaa sukupolvea."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Jatka valitsemalla tilin palautustapa, jolla pyyntö voidaan vahvistaa."
       ],
@@ -10276,6 +10375,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Suosittelemme aina virallisten ${ VPN_APP_NAME } -sovellusten käyttöä, jos mahdollista."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Tapahtuman suorittaminen epäonnistui. Yritä uudelleen."
+      ],
       "We couldn’t process your payment.": [
         "Maksuasi ei voitu käsitellä."
       ],
@@ -10374,6 +10476,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Kun poistat palvelimen yhdyskäytävästä, se deaktivoidaan 10 päivän ajaksi. Tämä palvelin voidaan lisätä uuteen yhdyskäytävään, mutta sen maata ei voi muuttaa."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Kun olet valmis aktivoimaan osoitteen, skannaa QR-koodi tai käytä kupongissa olevaa linkkiä."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Kun tilauksesi uudistuu, kulutetaan ensin kaikki tilillä olevat krediitit ennen yllä määritetyn maksutavan veloitusta."
@@ -10706,6 +10811,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Tilauksesi päättyy ajassa ${ timeRemaining }."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Kuponkisi varattua ${ BRAND_NAME }-sähköpostiosoitetta varten: ${ reservedEmail }"
+      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Voit lisätä nämä palvelimet toiseen yhdyskäytävään välittömästi."
       ],
@@ -10736,6 +10844,11 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "Auttaa kirjoittamaan, vastaamaan ja oikolukemaan sähköposteja. Jos toiminto on poistettu käytöstä, vain järjestelmänvalvojat voivat käyttää sitä. Hallitse yksittäisiä käyttäjiä kohdassa ${ userAndAddresses } tai ${ addMoreSeats }."
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Syötä vahvistuskoodi, joka lähetettiin osoitteeseen ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -11270,6 +11383,9 @@
       "Actions": [
         "Toiminnot"
       ],
+      "Activation code": [
+        "Aktivointikoodi"
+      ],
       "Activity": [
         "Tapahtumat"
       ],
@@ -11498,6 +11614,9 @@
       "Choose a name for the generated certificate file": [
         "Valitse luodulle varmennetiedostolle nimi"
       ],
+      "Choose an address to reserve for your child": [
+        "Valitse lapsellesi varattava osoite"
+      ],
       "Choose your billing": [
         "Valitse laskutus"
       ],
@@ -11687,6 +11806,12 @@
       "Don't show this again": [
         "Älä näytä tätä uudelleen"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Lahjoita vähintään 1 $ ${ BRAND_NAME }-säätiölle"
+      ],
+      "Donation amount": [
+        "Lahjoitussumma"
+      ],
       "Duration": [
         "Kesto"
       ],
@@ -11734,6 +11859,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Syötä salasana avaimelle sormenjäljellä: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Syötä sähköpostiosoitteesi"
       ],
       "Enter your password": [
         "Syötä salasanasi"
@@ -11854,6 +11982,9 @@
       ],
       "Import interval": [
         "Tuontiväli"
+      ],
+      "Import recent mails": [
+        "Tuo viimeisimmät sähköpostit"
       ],
       "Import to email address": [
         "Tuo sähköpostiosoitteelle"
@@ -12221,6 +12352,12 @@
       "Require 2FA for everyone": [
         "Vaadi 2FA kaikilta"
       ],
+      "Reserved address": [
+        "Varattu osoite"
+      ],
+      "Reserved email address": [
+        "Varattu sähköpostiosoite"
+      ],
       "Reveal password": [
         "Näytä salasana"
       ],
@@ -12256,6 +12393,9 @@
       ],
       "Server name": [
         "Palvelimen nimi"
+      ],
+      "Set password": [
+        "Aseta salasana"
       ],
       "Share your referral link": [
         "Jaa suosittelulinkkisi"
@@ -12381,6 +12521,9 @@
       "Tips and insights": [
         "Vinkkejä ja näkemyksiä"
       ],
+      "To activate, scan the QR-code or go to:": [
+        "Aktivoidaksesi skannaa QR-koodi tai mene osoitteeseen:"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Auttaaksesi meitä kehittymään, kertoisitko miksi olet lähdössä."
       ],
@@ -12498,17 +12641,26 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Kyllä, haluan poistaa tilin ja kaikki sen tiedot pysyvästi."
       ],
+      "Your activation code:": [
+        "Aktivointikoodisi:"
+      ],
       "Your calendar URL": [
         "Kalenterisi URL-osoite"
       ],
       "Your credit balance": [
         "Krediittisaldosi"
       ],
+      "Your email address": [
+        "Sähköpostiosoitteesi"
+      ],
       "Your password (admin)": [
         "Salasanasi (ylläpitäjä)"
       ],
       "Your plan": [
         "Tilauksesi"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Kuponkisi varattua ${ BRAND_NAME }-sähköpostiosoitetta varten:"
       ],
       "ZIP code": [
         "Postinumero"
@@ -12675,6 +12827,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "${ BRAND_NAME }-säätiön"
+      ],
       "Activity log": [
         "Tapahtumaloki"
       ],
@@ -12695,6 +12850,9 @@
       ],
       "Calendars": [
         "Kalenterit"
+      ],
+      "Can't find your code?": [
+        "Etkö löydä koodiasi?"
       ],
       "clearing your browser cache": [
         "selaimen välimuistin tyhjennys"
@@ -12892,6 +13050,20 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Käyttäjät ja osoitteet"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Sähköposti"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -16154,6 +16326,9 @@
       "Address": [
         "Osoite"
       ],
+      "Amount": [
+        "Summa"
+      ],
       "Anderson": [
         "Andersson"
       ],
@@ -16490,9 +16665,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Älä näytä tätä tarjousta uudelleen"
-      ],
       "Get the deal": [
         "Hyödynnä tarjous"
       ]
@@ -16569,11 +16741,6 @@
       ],
       "Use your own email domain": [
         "Käytä omaa sähköpostin verkkotunnusta"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "perhonen"
       ]
     },
     "q1campaign: Title": {
@@ -19544,6 +19711,9 @@
       "Verification code copied to clipboard": [
         "Vahvistuskoodi kopioitiin leikepöydälle"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Vahvistuskoodi lähetettiin osoitteeseen ${ parentEmail }"
+      ],
       "Verification successful": [
         "Vahvistus onnistui"
       ],
@@ -19567,6 +19737,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Saat käyttäjätunnuksesi tekstiviestitse minuutin kuluessa, jos syötit kelvollisen palautuspuhelinnumeron."
+      ],
+      "Your address has been activated": [
+        "Osoitteesi on aktivoitu"
       ]
     },
     "Success message": {
@@ -20837,6 +21010,12 @@
       ],
       "Privacy and data collection": [
         "Yksityisyys ja tiedonkeruu"
+      ],
+      "Problem processing your payment": [
+        "Ongelma käsiteltäessä maksuasi"
+      ],
+      "Problem processing your request": [
+        "Ongelma pyyntöäsi käsiteltäessä"
       ],
       "Processing...": [
         "Käsitellään..."
