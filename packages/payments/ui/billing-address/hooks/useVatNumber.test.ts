@@ -511,8 +511,8 @@ describe('useVatNumber', () => {
             expect(result.current.renderVatNumberInput).toBe(true);
         });
 
-        it.each(['US', 'JP', 'AU', 'BR', 'CN'])(
-            'should NOT render VAT input for non-EU/EFTA country %s',
+        it.each(['US', 'JP', 'KR', 'BR', 'CN'])(
+            'should NOT render VAT input for country not on the list of VAT enabled countries %s',
             (countryCode) => {
                 const { result } = renderHook(() =>
                     useVatNumber(
