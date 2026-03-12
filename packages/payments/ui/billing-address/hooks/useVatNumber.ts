@@ -7,10 +7,13 @@ import type { PaymentFacade } from '@proton/components/payments/client-extension
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import useLoading from '@proton/hooks/useLoading';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
+import { pick } from '@proton/shared/lib/helpers/object';
 import { useFlag } from '@proton/unleash/useFlag';
+import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import type {
+    BillingAddressExtended,
     BillingAddressExtraProperties,
     FullBillingAddressFlat,
 } from '../../../core/billing-address/billing-address';
@@ -32,6 +35,8 @@ interface VatNumberHookProps {
     taxCountry: TaxCountryHook;
     onVatUpdated?: (vatNumber: string | null) => unknown | Promise<unknown>;
     paymentFacade?: PaymentFacade;
+    initialBillingAddress?: BillingAddressExtended;
+    initialVatNumber?: string;
 }
 
 export type VatNumberHook = ReturnType<typeof useVatNumber>;
@@ -91,6 +96,8 @@ export const useVatNumber = ({
     taxCountry,
     onVatUpdated,
     paymentFacade,
+    initialBillingAddress,
+    initialVatNumber,
 }: VatNumberHookProps) => {
     const showExtendedBillingAddressForm = useFlag('PaymentsValidateBillingAddress');
     const store = useStore();
@@ -99,14 +106,22 @@ export const useVatNumber = ({
     const paymentsApi = paymentsApiProp ?? defaultPaymentsApi;
     const [loadingBillingDetails, withLoading] = useLoading();
     const [loaded, setLoaded] = useState(false);
-    const [unauthenticatedCollapsed, setUnauthenticatedCollapsed] = useState(true);
 
     const isB2BPlan = getIsB2BAudienceFromPlan(selectedPlanName);
 
     const enableVatNumber = isB2BPlan;
-    const [vatNumber, setVatNumber] = useState('');
-    const [billingAddressExtra, setBillingAddressExtra] =
-        useState<BillingAddressExtraProperties>(INITIAL_BILLING_ADDRESS_EXTRA);
+    const [vatNumber, setVatNumber] = useState(initialVatNumber ?? '');
+    const [billingAddressExtra, setBillingAddressExtra] = useState<BillingAddressExtraProperties>({
+        ...INITIAL_BILLING_ADDRESS_EXTRA,
+        ...pick(
+            initialBillingAddress ?? ({} as BillingAddressExtraProperties),
+            Object.keys(INITIAL_BILLING_ADDRESS_EXTRA) as (keyof BillingAddressExtraProperties)[]
+        ),
+    });
+
+    const [unauthenticatedCollapsed, setUnauthenticatedCollapsed] = useState(
+        !Object.values(billingAddressExtra).some(isTruthy)
+    );
 
     const fetchVatNumber = async () => {
         const result = await paymentsApi.getFullBillingAddress();

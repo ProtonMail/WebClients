@@ -42,7 +42,7 @@ import {
     WrongBillingAddressError,
 } from '@proton/payments/core/errors';
 import type { CheckSubscriptionRequestOptions } from '@proton/payments/core/interface';
-import { useSelector } from '@proton/redux-shared-store/sharedProvider';
+import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -216,13 +216,14 @@ export const usePaymentsApi = (
     const apiHook = apiOverride ?? regularApi;
     const { APP_NAME } = useConfig();
     const multiCheckCache = useMultiCheckCache();
-    const plans = useSelector(plansSelector);
+    const store = useStore();
 
     const getOptimisticFallback = (
         data: CheckSubscriptionData,
         requestOptions: CheckSubscriptionRequestOptions,
         error: any
     ): SubscriptionEstimation | null => {
+        const plans = plansSelector(store.getState());
         const optimisticSubscriptionEstimation = getOptimisticCheckResult({
             cycle: data.Cycle,
             planIDs: data.Plans,

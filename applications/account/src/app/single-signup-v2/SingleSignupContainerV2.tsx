@@ -593,7 +593,14 @@ const SingleSignupContainerV2 = ({
 
             void getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
-            const billingAddress = getBillingAddressFromPaymentStatus(paymentMethodStatus);
+            const billingAddress = {
+                ...getBillingAddressFromPaymentStatus(paymentMethodStatus),
+                Company: modifiedSignupParameters.orgName,
+                FirstName: modifiedSignupParameters.firstName,
+                LastName: modifiedSignupParameters.lastName,
+                Address: modifiedSignupParameters.streetAddress,
+                City: modifiedSignupParameters.city,
+            };
 
             const [
                 { Domains: domains },
@@ -629,7 +636,7 @@ const SingleSignupContainerV2 = ({
                         billingAddress,
                         trial: signupTrial,
                         ValidateBillingAddress: true,
-                        VatId: undefined,
+                        VatId: modifiedSignupParameters.vatNumber,
                     },
                     toApp: product,
                     availableCycles: signupConfiguration.cycles,
@@ -709,7 +716,7 @@ const SingleSignupContainerV2 = ({
                 referralData,
                 inviteData: signupParameters.invite?.type === 'generic' ? signupParameters.invite.data : undefined,
                 paymentStatus: paymentMethodStatus,
-                subscriptionData,
+                subscriptionData: { ...subscriptionData, vatNumber: modifiedSignupParameters.vatNumber },
                 cache: undefined,
                 source: signupParameters.source,
                 loadingDependencies: false,
