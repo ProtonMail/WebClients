@@ -1,10 +1,10 @@
 import type { ChangeEvent } from 'react';
 import { useState } from 'react';
 
+import { useSortable } from '@dnd-kit/react/sortable';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { useSortableListItem } from '@proton/components/components/dnd/SortableListItem';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -29,13 +29,14 @@ import AdvancedFilterModal from './modal/advanced/AdvancedFilterModal';
 import { isSieve } from './utils';
 
 interface Props {
+    index: number;
     filter: Filter;
     filters: Filter[];
     onApplyFilter: (filterID: string) => void;
 }
 
-function FilterItemRow({ filter, filters, onApplyFilter }: Props) {
-    const { isDragging, style, listeners, setNodeRef, attributes } = useSortableListItem({ id: filter.ID });
+function FilterItemRow({ index, filter, filters, onApplyFilter }: Props) {
+    const { isDragging, ref: sortableRef, handleRef } = useSortable({ id: filter.ID, index });
     const [user] = useUser();
     const [loading, withLoading] = useLoading();
     const dispatch = useDispatch();
@@ -107,8 +108,8 @@ function FilterItemRow({ filter, filters, onApplyFilter }: Props) {
 
     return (
         <>
-            <TableRow ref={setNodeRef} style={style} dragging={isDragging}>
-                <TableCell {...attributes} {...listeners}>
+            <TableRow ref={sortableRef} dragging={isDragging}>
+                <TableCell ref={handleRef}>
                     <Handle />
                 </TableCell>
                 <TableCell>
