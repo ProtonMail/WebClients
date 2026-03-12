@@ -10,6 +10,7 @@ import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/const
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 
 import { ComposerComponent } from '../../components/Composer/ComposerComponent';
+import { useNativeComposerPromptApi } from '../../components/Composer/hooks/useNativeComposerPromptApi';
 import { sendMessage } from '../../components/Conversation/helper';
 import { FilesManagementView } from '../../components/Files';
 import { type ConversationGroup, SelectableConversationList } from '../../components/SelectableConversationList';
@@ -127,7 +128,7 @@ const ProjectDetailViewInner = () => {
     }, [driveBrowserModal]);
 
     const handleSendInProject = useCallback(
-        async (content: string) => {
+        async (content: string, webSearchEnabled: boolean) => {
             try {
                 if (!content.trim()) {
                     console.log('Empty content, skipping send');
@@ -154,8 +155,6 @@ const ProjectDetailViewInner = () => {
                 // Navigate to the conversation first
                 history.push(`/c/${conversationId}`);
 
-                const isWebSearchButtonToggled = false; // todo wire the web search button
-
                 // Send the message using the helper function
                 // sendMessage returns a thunk, so we need to dispatch it
                 console.log('Sending message...');
@@ -181,7 +180,7 @@ const ProjectDetailViewInner = () => {
                                 console.log('Navigate callback:', newConvId);
                                 history.push(`/c/${newConvId}`);
                             },
-                            enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
+                            enableExternalTools: webSearchEnabled && ffExternalTools,
                             enableImageTools: ffImageTools,
                             enableSmoothing: ffSmoothRendering,
                         },
@@ -205,6 +204,11 @@ const ProjectDetailViewInner = () => {
             history,
             isWebSearchButtonToggled,
         ]
+    );
+
+    useNativeComposerPromptApi(
+        handleSendInProject,
+        () => {} // todo: abort handler missing at this point, known bug
     );
 
     const handleSaveTitle = useCallback(
