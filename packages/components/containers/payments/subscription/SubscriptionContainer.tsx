@@ -1275,7 +1275,7 @@ const SubscriptionContainerInner = ({
 
     const billingAddressHook = useBillingAddress({
         onBillingAddressChange: handleBillingAddressChange,
-        paymentStatus,
+        initialBillingAddress: getBillingAddressFromPaymentStatus(paymentStatus),
         paymentFacade,
         telemetryContext,
         paymentsApi,

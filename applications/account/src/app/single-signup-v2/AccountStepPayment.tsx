@@ -23,6 +23,7 @@ import {
     PAYMENT_METHOD_TYPES,
     type Plan,
     SubscriptionMode,
+    getBillingAddressFromPaymentStatus,
     getIsB2BAudienceFromPlan,
     getPaymentsVersion,
     isV5PaymentToken,
@@ -269,7 +270,17 @@ const AccountStepPayment = ({
                 billingAddress.VatId ?? undefined
             );
         },
-        paymentStatus: paymentFacade.paymentStatus,
+        initialBillingAddress: paymentFacade.paymentStatus
+            ? {
+                  ...getBillingAddressFromPaymentStatus(paymentFacade.paymentStatus),
+                  Company: signupParameters.orgName,
+                  FirstName: signupParameters.firstName,
+                  LastName: signupParameters.lastName,
+                  Address: signupParameters.streetAddress,
+                  City: signupParameters.city,
+              }
+            : undefined,
+        initialVatNumber: signupParameters.vatNumber,
         selectedPlanName: selectedPlan?.Name,
         onVatChange: onVatNumberChange,
         onVatUpdated: () => handleOptimistic({}),

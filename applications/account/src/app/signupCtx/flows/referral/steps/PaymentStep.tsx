@@ -13,6 +13,7 @@ import {
     PAYMENT_METHOD_TYPES,
     type PaymentProcessorHook,
     TRIAL_DURATION_DAYS,
+    getBillingAddressFromPaymentStatus,
     getPaymentsVersion,
     getPlanFromPlanIDs,
 } from '@proton/payments';
@@ -82,7 +83,9 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
 
     const billingAddressHook = useBillingAddress({
         onBillingAddressChange: payments.selectFullBillingAddress,
-        paymentStatus: payments.paymentStatus,
+        initialBillingAddress: payments.paymentStatus
+            ? getBillingAddressFromPaymentStatus(payments.paymentStatus)
+            : undefined,
         paymentFacade,
         telemetryContext: payments.telemetryContext,
         selectedPlanName: payments.selectedPlan.getPlanName(),

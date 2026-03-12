@@ -13,6 +13,7 @@ import { IcShield } from '@proton/icons/icons/IcShield';
 import {
     PAYMENT_METHOD_TYPES,
     type PaymentProcessorHook,
+    getBillingAddressFromPaymentStatus,
     getIsB2BAudienceFromPlan,
     getPaymentsVersion,
     getPlanFromPlanIDs,
@@ -77,7 +78,9 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
 
     const billingAddressHook = useBillingAddress({
         onBillingAddressChange: payments.selectFullBillingAddress,
-        paymentStatus: payments.paymentStatus,
+        initialBillingAddress: payments.paymentStatus
+            ? getBillingAddressFromPaymentStatus(payments.paymentStatus)
+            : undefined,
         paymentFacade,
         telemetryContext: payments.telemetryContext,
         selectedPlanName: payments.selectedPlan.getPlanName(),
