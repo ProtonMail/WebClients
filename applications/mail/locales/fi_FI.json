@@ -1480,10 +1480,6 @@
       "Trust": [
         "Luota"
       ],
-      "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
-      ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
       ],
@@ -4570,6 +4566,9 @@
       "Invalid code": [
         "Virheellinen koodi"
       ],
+      "Invalid coupon": [
+        "Virheellinen kuponki"
+      ],
       "Invalid email address": [
         "Virheellinen sähköpostiosoite"
       ],
@@ -7316,7 +7315,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -9398,6 +9398,9 @@
       ],
       "Import interval": [
         "Tuontiväli"
+      ],
+      "Import recent mails": [
+        "Tuo viimeisimmät sähköpostit"
       ],
       "Import to email address": [
         "Tuo sähköpostiosoitteelle"
@@ -12502,9 +12505,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Älä näytä tätä tarjousta uudelleen"
-      ],
       "Get the deal": [
         "Hyödynnä tarjous"
       ]
@@ -12581,11 +12581,6 @@
       ],
       "Use your own email domain": [
         "Käytä omaa sähköpostin verkkotunnusta"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "perhonen"
       ]
     },
     "q1campaign: Title": {
