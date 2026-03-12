@@ -1,8 +1,8 @@
 import type { UPSELL_FEATURE } from '@proton/shared/lib/constants';
 import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
-import { BlackFridayOfferNavbarButton } from '../primitives/BlackFridayOfferNavbarButton';
 import GetLumoPlusButton from '../primitives/GetLumoPlusButton';
+import { SpringSaleOfferNavbarButton } from '../primitives/SpringSaleOfferNavbarButton';
 import useLumoPlusUpsellButtonConfig from '../useLumoPlusUpsellButtonConfig';
 
 interface LumoNavbarUpsellProps {
@@ -20,10 +20,10 @@ const LumoNavbarUpsell = ({
     // Don't show anything if no config or shouldn't show in navbar
     if (!lumoPlusConfig || !lumoPlusConfig.showInNavbar) return null;
 
-    // Prioritize Black Friday offers when available
-    if (lumoPlusConfig.hasBlackFridayOffer) {
+    // Prioritize Spring Sale offers when available (keeping as fallback)
+    if (lumoPlusConfig.hasSpringSaleOffer) {
         return (
-            <BlackFridayOfferNavbarButton onUpgrade={lumoPlusConfig.onUpgrade} className={lumoPlusConfig.className} />
+            <SpringSaleOfferNavbarButton onUpgrade={lumoPlusConfig.onUpgrade} className={lumoPlusConfig.className} />
         );
     }
 

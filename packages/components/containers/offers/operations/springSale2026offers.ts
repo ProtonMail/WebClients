@@ -54,7 +54,7 @@ const mailPlusRetention: SpringOffer = {
     featureCode: FeatureCode.OfferMar26MailPlusRetention,
     ref: 'proton_mar_26_mail_plus_retention_web',
     dealName: `${MAIL_SHORT_APP_NAME} Plus`,
-    couponCode: COUPON_CODES.MAR26SALE,
+    couponCode: COUPON_CODES.MAR26OFFER,
     features: () => [
         { name: c('q1campaign: Info').t`15 GB storage` },
         { name: c('q1campaign: Info').t`Unlimited folders, labels, and filters` },
@@ -93,7 +93,7 @@ const vpnPlusRetention: SpringOffer = {
     featureCode: FeatureCode.OfferMar26VpnPlusRetention,
     ref: 'proton_mar_26_vpn_plus_retention_web',
     dealName: `${VPN_SHORT_APP_NAME} Plus`,
-    couponCode: COUPON_CODES.MAR26SALE,
+    couponCode: COUPON_CODES.MAR26OFFER,
     features: () => [
         { name: c('q1campaign: Info').t`Connect 10 devices at once` },
         { name: c('q1campaign: Info').t`Access 15,000+ servers in 120+ countries` },
@@ -119,7 +119,7 @@ const drivePlusRetention: SpringOffer = {
     featureCode: FeatureCode.OfferMar26DrivePlusRetention,
     ref: 'proton_mar_26_drive_plus_retention_web',
     dealName: `${DRIVE_SHORT_APP_NAME} Plus`,
-    couponCode: COUPON_CODES.MAR26SALE,
+    couponCode: COUPON_CODES.MAR26OFFER,
     features: () => [
         { name: c('q1campaign: Info').t`200 GB storage: 40x your current plan` },
         { name: c('q1campaign: Info').t`Online document editor` },
@@ -145,7 +145,7 @@ const passPlusRetention: SpringOffer = {
     featureCode: FeatureCode.OfferMar26PassPlusRetention,
     ref: 'proton_sep_25_pass_free_retention_extension',
     dealName: `${PASS_SHORT_APP_NAME} Plus`,
-    couponCode: COUPON_CODES.MAR26SALE,
+    couponCode: COUPON_CODES.MAR26OFFER,
     features: () => [
         { name: c('q1campaign: Info').t`Unlimited hide-my-email aliases` },
         { name: c('q1campaign: Info').t`Built-in 2FA authenticator` },
@@ -184,7 +184,7 @@ const lumoPlusRetention: SpringOffer = {
     featureCode: FeatureCode.OfferMar26LumoPlusRetention,
     ref: 'proton_mar_26_lumo_plus_retention_web',
     dealName: `${LUMO_SHORT_APP_NAME} Plus`,
-    couponCode: COUPON_CODES.MAR26SALE,
+    couponCode: COUPON_CODES.MAR26OFFER,
     features: () => [
         { name: c('q1campaign: Info').t`Unlimited daily chats` },
         { name: c('q1campaign: Info').t`Access advanced AI models` },
