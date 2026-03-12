@@ -10,7 +10,13 @@ import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/c
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcShield } from '@proton/icons/icons/IcShield';
-import { PAYMENT_METHOD_TYPES, PLANS, getPaymentsVersion, getPlanFromPlanIDs } from '@proton/payments';
+import {
+    PAYMENT_METHOD_TYPES,
+    PLANS,
+    getBillingAddressFromPaymentStatus,
+    getPaymentsVersion,
+    getPlanFromPlanIDs,
+} from '@proton/payments';
 import { PayButton, usePaymentOptimistic } from '@proton/payments/ui';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
 import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -66,7 +72,9 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
 
     const billingAddressHook = useBillingAddress({
         onBillingAddressChange: payments.selectFullBillingAddress,
-        paymentStatus: payments.paymentStatus,
+        initialBillingAddress: payments.paymentStatus
+            ? getBillingAddressFromPaymentStatus(payments.paymentStatus)
+            : undefined,
         paymentFacade,
         telemetryContext: payments.telemetryContext,
         selectedPlanName: payments.selectedPlan.getPlanName(),
