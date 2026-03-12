@@ -1,6 +1,7 @@
 import React, { createContext, useCallback, useContext, useMemo, useState } from 'react';
 
 import { useIsLumoSmallScreen } from '../hooks/useIsLumoSmallScreen';
+import { setNativeGhostMode } from '../remote/nativeComposerBridgeHelpers';
 import { useGhostChat } from './GhostChatProvider';
 
 /**
@@ -62,6 +63,7 @@ export const SidebarProvider = ({ children, defaultMode = 'collapsed' }: Sidebar
 
     const closeOnItemClick = useCallback(() => {
         setGhostChatMode(false);
+        setNativeGhostMode(false);
         if (!isSmallScreen) {
             return;
         }
