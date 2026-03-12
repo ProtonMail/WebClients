@@ -176,6 +176,9 @@
       "Close navigation": [
         "Navigation schließen"
       ],
+      "Close search": [
+        "Suche schließen"
+      ],
       "Close this banner": [
         "Dieses Banner schließen"
       ],
@@ -838,6 +841,9 @@
       ],
       "Search countries": [
         "Länder durchsuchen"
+      ],
+      "Search groups": [
+        "Gruppen durchsuchen"
       ],
       "See DNS TXT record": [
         "Siehe DNS TXT-Eintrag"
@@ -4177,6 +4183,9 @@
       "Invalid code": [
         "Ungültiger Code"
       ],
+      "Invalid coupon": [
+        "Ungültiger Gutschein"
+      ],
       "Invalid domain": [
         "Ungültige Domain"
       ],
@@ -4445,6 +4454,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Der Mindestspendenbetrag ist ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Der Name der Richtlinie muss zwischen 3 und 40 Zeichen lang sein."
@@ -6177,8 +6189,8 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Eine ${ protonSubdomain } wird von ${ BRAND_NAME } gehostet, wodurch du schnell eine Subdomain einrichten kannst. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Um Gruppen zu erstellen, ist eine benutzerdefinierte Domäne erforderlich. Wenn Du noch keine benutzerdefinierte Domäne eingerichtet hast, tu dies zuerst unter ${ linkToDomainPage }"
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Für die Erstellung von Gruppen ist eine eigene Domain erforderlich. Wenn du noch keine eigene Domain eingerichtet hast, richte sie zuerst unter ${ linkToDomainPage } ein."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Ein Name, mit dem du erkennen kannst, wo es im Einsatz ist, damit du es später leicht widerrufen oder verlängern kannst."
@@ -9097,6 +9109,9 @@
       ],
       "Import interval": [
         "Importintervall"
+      ],
+      "Import recent mails": [
+        "Neueste E-Mails importieren"
       ],
       "Import to email address": [
         "In E-Mail-Adresse importieren"
@@ -12619,9 +12634,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Angebot nicht erneut anzeigen"
-      ],
       "Get the deal": [
         "Deal sichern"
       ]
@@ -12698,11 +12710,6 @@
       ],
       "Use your own email domain": [
         "Nutze deine eigene E-Mail-Domain"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "ein Schmetterling"
       ]
     },
     "q1campaign: Title": {

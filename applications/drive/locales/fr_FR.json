@@ -3529,6 +3529,9 @@
       "Invalid code": [
         "Le code n'est pas valide."
       ],
+      "Invalid coupon": [
+        "Le code cadeau n'est pas valide."
+      ],
       "Invalid email address": [
         "L'adresse e-mail n'est pas valide."
       ],
@@ -3776,6 +3779,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Le montant minimum du crédit qui peut être ajouté est de ${ price }."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Le montant minimum du don est de ${ price }."
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "La nouvelle révision du fichier d'origine n'est pas encore chargée, nous vous invitons à réessayer plus tard."
@@ -10565,9 +10571,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Ne plus montrer cette offre"
-      ],
       "Get the deal": [
         "Profitez de l'offre"
       ]
@@ -10644,11 +10647,6 @@
       ],
       "Use your own email domain": [
         "Utilisez votre propre domaine de messagerie"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "un papillon"
       ]
     },
     "q1campaign: Title": {

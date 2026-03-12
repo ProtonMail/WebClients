@@ -176,6 +176,9 @@
       "Close navigation": [
         "Zavrieť menu"
       ],
+      "Close search": [
+        "Zavrieť vyhľadávanie"
+      ],
       "Close this banner": [
         "Zatvoriť tento banner"
       ],
@@ -838,6 +841,9 @@
       ],
       "Search countries": [
         "Vyhľadať krajiny"
+      ],
+      "Search groups": [
+        "Hľadať skupiny"
       ],
       "See DNS TXT record": [
         "Zobraziť DNS TXT záznam"
@@ -1872,6 +1878,9 @@
       "Calendar": [
         "Kalendár"
       ],
+      "Completed": [
+        "Dokončené"
+      ],
       "Configure migration": [
         "Nastaviť migráciu"
       ],
@@ -1892,6 +1901,12 @@
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplikácia Google Marketplace na kopírovanie údajov do ${ BRAND_NAME }"
+      ],
+      "Has errors": [
+        "Má chyby"
+      ],
+      "In progress": [
+        "Prebieha"
       ],
       "Install app": [
         "Inštalovať aplikáciu"
@@ -1926,6 +1941,9 @@
       "Migration status": [
         "Stav migrácie"
       ],
+      "Not started": [
+        "Nezačaté"
+      ],
       "Organization does not have enough seats available": [
         "Organizaícia nemá dostatok voľných licencií"
       ],
@@ -1950,8 +1968,14 @@
       "Set up": [
         "Nastaviť"
       ],
+      "Settings": [
+        "Nastavenia"
+      ],
       "Sign in to Google Workspace": [
         "Prihlásiť sa do Google Workspace"
+      ],
+      "Status": [
+        "Stav"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Ak chcete migrovať dáta vašej organizácie, potrebujete nainštalovať aplikáciu ${ BRAND_NAME } Migration Assistant z Google Workspace Marketplace. Toto udelí povolenie pre ${ BRAND_NAME } na kopírovanie vašich dát. Po jej nainštalovaní sa vráťte sem, aby ste pokračovali."
@@ -1961,6 +1985,9 @@
       ],
       "User": [
         "Používateľ"
+      ],
+      "Users migrated": [
+        "Používatelia zmigrovaní"
       ],
       "Verify installation": [
         "Overiť inštaláciu"
@@ -4212,6 +4239,9 @@
       "Invalid code": [
         "Neplatný kód"
       ],
+      "Invalid coupon": [
+        "Neplatná poukážka"
+      ],
       "Invalid domain": [
         "Neplatná doména"
       ],
@@ -4484,6 +4514,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimálna výška kreditu, ktorý je možné pridať, je ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimálna výška daru je ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Názov politiky musí mať 3 až 40 znakov."
@@ -6320,7 +6353,7 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } hosťuje ${ BRAND_NAME }, čo umožňuje rýchle sprevádzkovanie subdomény. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
         "Na vytvorenie skupín je potrebná vlastná doména. Ak nemáte nastavenú vlastnú doménu, urobte tak najprv v časti ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [

@@ -176,6 +176,9 @@
       "Close navigation": [
         "Stäng navigering"
       ],
+      "Close search": [
+        "Stäng sök"
+      ],
       "Close this banner": [
         "Stäng denna banner"
       ],
@@ -838,6 +841,9 @@
       ],
       "Search countries": [
         "Sök länder"
+      ],
+      "Search groups": [
+        "Sök grupper"
       ],
       "See DNS TXT record": [
         "Se DNS TXT-post"
@@ -4156,6 +4162,9 @@
       "Invalid code": [
         "Ogiltig kod"
       ],
+      "Invalid coupon": [
+        "Ogiltig rabattkod"
+      ],
       "Invalid domain": [
         "Ogiltig domän"
       ],
@@ -4418,6 +4427,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minsta antal krediter som kan läggas till är ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minsta donationsbelopp är ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Policynamnet måste vara mellan 3 och 40 tecken."
@@ -6144,7 +6156,7 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ BRAND_NAME } är värd för en ${ protonSubdomain }, vilket låter dig snabbt konfigurera en underdomän. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
         "En anpassad domän är obligatoriskt för att skapa grupper. Om du inte har ställt in en anpassad domän, gör det först under ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
@@ -8350,6 +8362,12 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Du kommer inte att kunna återställa låsta data med dina nedladdade återställningsfiler. Detta kommer också att inaktivera enhetsbaserad återställning."
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "Du får kreditbelöningen 1 månad efter att din väns provperiod har avslutats."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "Du får kreditbelöningen 2 månader efter att din väns provperiod avslutades."
       ],
       "You've reached the limit of 50 users for this filter. Remove one to add another.": [
         "Du har nått gränsen på 50 användare för detta filter. Ta bort ett för att lägga till ett annat."
@@ -12537,9 +12555,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Visa inte detta erbjudande igen"
-      ],
       "Get the deal": [
         "Ta del av erbjudandet"
       ]
@@ -12616,11 +12631,6 @@
       ],
       "Use your own email domain": [
         "Använd din egen e-postdomän"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "en fjäril"
       ]
     },
     "q1campaign: Title": {
@@ -16633,6 +16643,9 @@
       ],
       "Did you know?": [
         "Visste du att?"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Allt du behöver för att samarbeta säkert i en enda prenumeration. Få åtkomst till ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ LUMO_SHORT_APP_NAME } AI-assistent."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Integritetssvit med säker e-post, ${ VPN_SHORT_APP_NAME }, molnlagringsutrymme och lösenordshanterare i ett paket. Från endast ${ fallBackString } per månad"

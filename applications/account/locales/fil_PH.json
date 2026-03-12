@@ -90,6 +90,12 @@
       "Activate recovery": [
         "I-activate ang recovery"
       ],
+      "Activate reserved address": [
+        "I-activate ang na-reserve na address"
+      ],
+      "Activate this address": [
+        "I-activate ang address na ito"
+      ],
       "Add": [
         "Magdagdag"
       ],
@@ -540,6 +546,9 @@
       "Don't show again": [
         "Huwag ipakita muli"
       ],
+      "Donate": [
+        "Mag-donate"
+      ],
       "Done": [
         "Tapos na"
       ],
@@ -809,6 +818,9 @@
       ],
       "Get verification code": [
         "Kumuha ng verification code"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Kumuha ng sariling ${ MAIL_APP_NAME } address"
       ],
       "Go back": [
         "Bumalik"
@@ -1338,6 +1350,9 @@
       "Send reminder": [
         "Magpadala ng paalala"
       ],
+      "Send verification code": [
+        "Ipadala ang verification code"
+      ],
       "Set as album cover": [
         "Itakda bilang cover ng album"
       ],
@@ -1505,6 +1520,9 @@
       ],
       "Try for free": [
         "Subukan nang libre"
+      ],
+      "Try payment again": [
+        "Subukang muli ang pagbabayad"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Subukang i-save muli. Nabigo ang pag-save dahil sa: ${ saveError }"
@@ -5947,6 +5965,9 @@
       "Account does not exist": [
         "Hindi umiiral ang account"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Nabigo ang activation. Maaaring mali ang mga detalye, o aktibo na ang email. Pakisuri ang input o mag-sign in."
+      ],
       "Add at least one action": [
         "Magdagdag ng kahit isang aksyon"
       ],
@@ -6065,6 +6086,9 @@
       ],
       "Expired": [
         "Nag-expire"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Nabigong i-activate ang address. Pakisubukang muli."
       ],
       "Failed to add group member": [
         "Nabigong magdagdag ng miyembro ng pangkat"
@@ -7616,6 +7640,16 @@
         "Nauunawaan kong hindi na ako makakapag-sign in sa mga lumang bersyon ng ${ BRAND_NAME } mobile app."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Ilagay ang email address"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Ipapadala ang voucher dito."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "web app"
@@ -7916,6 +7950,32 @@
       ],
       "Subscribed": [
         "Naka-subscribe"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Isang simpleng hakbang ngayon para matiyak ang digital na kaligtasan ng anak bukas"
+      ],
+      "Activate your reserved email address": [
+        "I-activate ang na-reserve na email address"
+      ],
+      "Address reservation voucher": [
+        "Voucher sa pag-reserve ng address"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Mag-donate sa ${ BRAND_NAME } Foundation"
+      ],
+      "Enter verification code": [
+        "Ilagay ang verification code"
+      ],
+      "Recover activation voucher": [
+        "I-recover ang activation voucher"
+      ],
+      "Reserve child's email address": [
+        "I-reserve ang email address ng bata"
+      ],
+      "We emailed you the voucher": [
+        "Na-email na ang voucher"
       ]
     },
     "Headline": {
@@ -8667,9 +8727,6 @@
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Ang ${ protonSubdomain } ay hino-host ng ${ BRAND_NAME }, na nagbibigay-daan upang mabilis na i-set up ang subdomain. ${ learnMoreLink }"
-      ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Kailangan ng custom na domain para gumawa ng mga pangkat. Kung wala ka pang naka-set up na custom na domain, gawin muna ito sa ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Isang pangalan upang matulungan kang tukuyin kung saan mo ito ginagamit para madali mo itong mabawi o ma-extend sa huli."
@@ -9423,11 +9480,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "Ilagay ang mga kredensyal ng email account na gusto mong pagmulan ng import."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Ilagay ang email address na ginamit upang i-reserve ang ${ reservedEmail }."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Ilagay ang Entity ID ng organisasyon sa **eduGAIN** para sa **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Ilagay ang Password ng Organisasyon upang ibalik ang mga pribilehiyo ng administrator. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Ilagay ang na-reserve na email address at ang email address na ginamit sa pag-reserve."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ilagay ang verification code na ipinadala sa ${ destinationText }."
@@ -9579,6 +9642,9 @@
       "Groups": [
         "Mga Pangkat"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Tumulong sa ibang mga pamilya na mabigyan ang kanilang mga anak ng ligtas na simula online. I-share ang milestone na ito at ipaalam sa iba."
+      ],
       "here": [
         "dito"
       ],
@@ -9587,6 +9653,9 @@
       ],
       "High Priority": [
         "Mataas na Prayoridad"
+      ],
+      "How it works": [
+        "Paano ito gumagana"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Pampublikong key ng provider ng pagkakakilanlan para lagdaan ang mga assertion ng pag-authenticate. Dapat may lugar para i-download o kopyahin ang certificate hash mula sa provider ng pagkakakilanlan. I-paste lang ang certificate hash sa field ng text area."
@@ -9605,6 +9674,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Kung pinagana ang mga shortcut sa keyboard, magagamit mo ang sumusunod na mga key para sa mabibilis na aksyon o para pumunta sa ibang view. Ang ${ metaKey } + K ay laging naka-enable."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Kung ginamit ang inilagay na email para mag-reserve ng email address ng bata, ipapadala muli ang activation voucher."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Kung hindi tugma ang time zone ng system sa kasalukuyang kagustuhan sa time zone, hihilingin sa iyong i-update ito (sa pinakamadalas ay isang beses bawat araw)."
@@ -9835,6 +9907,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Kumpirmahin lang ang pagpili at kami na ang bahala sa iba pa."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Panatilihing secure ang voucher hanggang kailanganin, halimbawa sa ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Panatilihing mas secure at pribado ang iyong impormasyon gamit ang mga gabay at tip na ito."
@@ -10326,6 +10401,9 @@
       "Receive notifications for ${ categoryLabel }": [
         "Makatanggap ng mga abiso para sa ${ categoryLabel }"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Tanggapin ang reservation voucher sa pamamagitan ng email. Maaari itong gamitin upang i-activate ang address sa loob ng susunod na 15 taon. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Mga kamakailang ginamit na server:"
       ],
@@ -10555,6 +10633,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Maaaring hindi lumabas ang ilang server sa listahan sa itaas. Maghanap gamit ang pangalan ng server (hal., AT#62) upang mahanap ang mga ito."
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Nagkaproblema. Pakisubukang muli o makipag-ugnayan sa suporta sa customer."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Tukuyin ang domain na pinapayagang mag-authenticate gamit ang SAML SSO."
       ],
@@ -10569,6 +10650,9 @@
       ],
       "Starts on ${ startsOnTime }": [
         "Magsisimula sa ${ startsOnTime }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Hakbang ${ step }/${ totalSteps }"
       ],
       "Storage allocated to other users in this organisation": [
         "Storage na inilaan sa ibang mga user sa organisasyong ito"
@@ -10898,6 +10982,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Upang makasabay sa pinakabagong development sa mga produkto ng ${ BRAND_NAME }, maaari kang mag-subscribe sa aming iba't ibang email at ${ blogLink } paminsan-minsan."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Upang maiwasan ang pang-aabuso o panloloko, hinihingi ang minimum na donasyong ${ minimumDonation }. Sinusuportahan nito ang trabaho ng ${ protonFoundationLink } sa pagdepensa sa digital privacy sa buong mundo at tumutulong na protektahan ang susunod na henerasyon."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Upang magpatuloy, pumili ng paraan ng pag-recover ng account upang ma-verify namin ang kahilingan."
       ],
@@ -11111,6 +11198,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Ipinapayo namin na gamitin ang mga opisyal na application ng ${ VPN_APP_NAME } kung maaari."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Hindi makumpleto ang transaksyon. Pakisubukang muli."
+      ],
       "We couldn’t process your payment.": [
         "Hindi maproseso ang pagbabayad."
       ],
@@ -11215,6 +11305,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Kapag inalis mo ang isang server mula sa Gateway, papasok ito sa 10 araw na panahon ng deactivation. Maaaring idagdag ang server na ito sa bagong Gateway, ngunit hindi mapapalitan ang bansa nito."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Kapag handa na i-activate ang address, i-scan ang QR code o gamitin ang link sa voucher."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Kapag nag-renew ang subscription, ilalapat namin ang anumang available na credit bago singilin ang paraan ng pagbabayad sa itaas."
@@ -11576,6 +11669,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Magtatapos ang pagsubok sa loob ng ${ timeRemaining }."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Voucher para sa na-reserve na ${ BRAND_NAME } email address: ${ reservedEmail }"
+      ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Mawawalan ka rin ng access sa mga feature ng ${ boldPlanTitle }:"
       ],
@@ -11615,6 +11711,11 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "Tumutulong sa pagsulat, mag-reply sa, at mag-proofread ng mga email. Kung hindi pinagana, mga administrator lang ang magkakaroon ng access. Pamahalaan para sa mga indibidwal na user sa ${ userAndAddresses } o ${ addMoreSeats }"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Ilagay ang verification code na ipinadala sa ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -12233,6 +12334,9 @@
       "Actions": [
         "Mga Aksyon"
       ],
+      "Activation code": [
+        "Activation code"
+      ],
       "Activity": [
         "Aktibidad"
       ],
@@ -12464,6 +12568,9 @@
       "Choose a name for the generated certificate file": [
         "Pumili ng pangalan para sa nabuong file ng sertipiko"
       ],
+      "Choose an address to reserve for your child": [
+        "Pumili ng address na ire-reserve para sa anak"
+      ],
       "City": [
         "Lungsod"
       ],
@@ -12662,6 +12769,12 @@
       "Don't show this again": [
         "Huwag na itong ipakita muli"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Mag-donate ng $1 o higit pa sa ${ BRAND_NAME } Foundation"
+      ],
+      "Donation amount": [
+        "Halaga ng donasyon"
+      ],
       "Duration": [
         "Tagal"
       ],
@@ -12718,6 +12831,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Ilagay ang password para sa key na may fingerprint: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Ilagay ang email address"
       ],
       "Enter your password": [
         "Ilagay ang password"
@@ -13223,6 +13339,12 @@
       "Require 2FA for everyone": [
         "I-require ang 2FA para sa lahat"
       ],
+      "Reserved address": [
+        "Na-reserve na address"
+      ],
+      "Reserved email address": [
+        "Na-reserve na email address"
+      ],
       "Reveal password": [
         "Ipakita ang password"
       ],
@@ -13264,6 +13386,9 @@
       ],
       "Server name": [
         "Pangalan ng server"
+      ],
+      "Set password": [
+        "I-set ang password"
       ],
       "Share your referral link": [
         "I-share ang iyong referral link"
@@ -13395,6 +13520,9 @@
       "Tips and insights": [
         "Mga tip at insight"
       ],
+      "To activate, scan the QR-code or go to:": [
+        "Para i-activate, i-scan ang QR-code o pumunta sa:"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Upang matulungan kaming mapabuti, pakipaliwanag kung bakit ka aalis."
       ],
@@ -13518,14 +13646,23 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Oo, gusto kong permanenteng i-delete ang account na ito at lahat ng data nito."
       ],
+      "Your activation code:": [
+        "Activation code:"
+      ],
       "Your calendar URL": [
         "URL ng kalendaryo"
+      ],
+      "Your email address": [
+        "Email address"
       ],
       "Your password (admin)": [
         "Password (admin)"
       ],
       "Your password (trusted contact)": [
         "Ang password (pinagkakatiwalaang contact)"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Voucher para sa na-reserve na ${ BRAND_NAME } email address:"
       ],
       "ZIP code": [
         "ZIP code"
@@ -13698,6 +13835,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "${ BRAND_NAME } Foundation"
+      ],
       "Activity log": [
         "Log ng aktibidad"
       ],
@@ -13715,6 +13855,9 @@
       ],
       "Calendars": [
         "Mga kalendaryo"
+      ],
+      "Can't find your code?": [
+        "Hindi mahanap ang code?"
       ],
       "clearing your browser cache": [
         "pag-clear ng browser cache"
@@ -13912,6 +14055,20 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Mga user at address"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Email"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -17325,6 +17482,9 @@
       ],
       "Address": [
         "Address"
+      ],
+      "Amount": [
+        "Halaga"
       ],
       "Anderson": [
         "Anderson"
@@ -20920,6 +21080,9 @@
       "Verification code copied to clipboard": [
         "Kinopya ang verification code sa clipboard"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Ipinadala ang verification code sa ${ parentEmail }"
+      ],
       "Verification successful": [
         "Matagumpay ang pag-verify"
       ],
@@ -20943,6 +21106,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Matatanggap mo ang iyong username sa pamamagitan ng SMS sa loob ng isang minuto kung naglagay ka ng valid na recovery phone number."
+      ],
+      "Your address has been activated": [
+        "Na-activate na ang address"
       ]
     },
     "Success message": {
@@ -22306,6 +22472,12 @@
       ],
       "Privacy and data collection": [
         "Privacy at pangongolekta ng data"
+      ],
+      "Problem processing your payment": [
+        "Problema sa pagproseso ng pagbabayad"
+      ],
+      "Problem processing your request": [
+        "Problema sa pagproseso ng request"
       ],
       "Processing...": [
         "Pinoproseso..."

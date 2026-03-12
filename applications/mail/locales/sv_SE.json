@@ -1484,8 +1484,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -4674,6 +4673,9 @@
       "Invalid code": [
         "Ogiltig kod"
       ],
+      "Invalid coupon": [
+        "Ogiltig rabattkod"
+      ],
       "Invalid email address": [
         "Ogiltig e-postadress"
       ],
@@ -4979,6 +4981,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minsta antal krediter som kan läggas till är ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minsta donationsbelopp är ${ price }"
       ],
       "The sending key is not valid": [
         "Den skickande nyckeln är inte giltig"
@@ -7443,7 +7448,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -12766,9 +12772,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Visa inte detta erbjudande igen"
-      ],
       "Get the deal": [
         "Ta del av erbjudandet"
       ]
@@ -12845,11 +12848,6 @@
       ],
       "Use your own email domain": [
         "Använd din egen e-postdomän"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "en fjäril"
       ]
     },
     "q1campaign: Title": {

@@ -90,6 +90,12 @@
       "Activate recovery": [
         "აღდგენის აქტივაცია"
       ],
+      "Activate reserved address": [
+        "დაჯავშნილი მისამართის გააქტიურება"
+      ],
+      "Activate this address": [
+        "ამ მისამართის გააქტიურება"
+      ],
       "Add": [
         "დამატება"
       ],
@@ -558,6 +564,9 @@
       "Don't show again": [
         "აღარ მაჩვენო"
       ],
+      "Donate": [
+        "შემოწირულობა"
+      ],
       "Done": [
         "მზადაა"
       ],
@@ -827,6 +836,9 @@
       ],
       "Get verification code": [
         "შემოწმების კოდის მიღება"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "მიიღეთ საკუთარი ${ MAIL_APP_NAME }-ის მისამართი"
       ],
       "Go back": [
         "უკან დაბრუნება"
@@ -1368,6 +1380,9 @@
       "Send reminder": [
         "შეხსენების გაგზავნა"
       ],
+      "Send verification code": [
+        "დამოწმების კოდის გაგზავნა"
+      ],
       "Set as album cover": [
         "ალბომის ყდად დაყენება"
       ],
@@ -1535,6 +1550,9 @@
       ],
       "Try for free": [
         "სცადეთ უფასოდ"
+      ],
+      "Try payment again": [
+        "სცადეთ გადახდა თავიდან"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "შენახვა კიდევ ერთხელ სცადეთ. შენახვის შეცდომის მიზეზი: ${ saveError }"
@@ -6095,6 +6113,9 @@
       "Account does not exist": [
         "ანგარიში არ არსებობს"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "გააქტიურება ჩავარდა. დეტალები შეიძლება არასწორი იყოს, ან ელფოსტა უკვე აქტიურია. გთხოვთ, შეამოწმოთ შეყვანილი ინფორმაცია ან შეხვიდეთ სისტემაში."
+      ],
       "Add at least one action": [
         "დაამატეთ, სულ ცოტა, ერთი ქმედება"
       ],
@@ -6216,6 +6237,9 @@
       ],
       "Failed loading group members": [
         "ჯგუფის წევრების ჩატვირთვა ჩავარდა"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "თქვენი მისამართის გააქტიურება ჩავარდა. თავიდან სცადეთ."
       ],
       "Failed to add group member": [
         "ჯგუფის წევრის დამატება ჩავარდა"
@@ -7781,6 +7805,16 @@
         "მე მესმის, რომ ვეღარ შევალ ${ BRAND_NAME }-ის მობილური პროგრამების ძველ ვერსიებში."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "შეიყვანეთ თქვენი ელფოსტის მისამართი"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "ვაუჩერი აქ გამოიგზავნება."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "ვებ-აპლიკაცია"
@@ -8081,6 +8115,32 @@
       ],
       "Subscribed": [
         "გამოწერილია"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "მარტივი ნაბიჯი დღეს, თქვენი შვილის ციფრული უსაფრთხოების უზრუნველსაყოფად ხვალ"
+      ],
+      "Activate your reserved email address": [
+        "გაააქტიურეთ თქვენი დაჯავშნილი ელფოსტის მისამართი"
+      ],
+      "Address reservation voucher": [
+        "მისამართის ჯავშნის ვაუჩერი"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "გაიღეთ შემოწირულობა ${ BRAND_NAME }-ის ფონდისთვის"
+      ],
+      "Enter verification code": [
+        "შეიყვანეთ დამოწმების კოდი"
+      ],
+      "Recover activation voucher": [
+        "გააქტიურების ვაუჩერის აღდგენა"
+      ],
+      "Reserve child's email address": [
+        "ბავშვის ელფოსტის მისამართის დაჯავშნა"
+      ],
+      "We emailed you the voucher": [
+        "ვაუჩერი ელფოსტით გამოგიგზავნეთ"
       ]
     },
     "Headline": {
@@ -8822,9 +8882,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } დაჰოსტილია ${ BRAND_NAME }-ის მიერ, რაც ქვედომენების სწრაფად მორგების საშუალება გაძლევთ. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "ჯგუფების შესაქმნელად აუცილებელია მორგებული დომენი. თუ მორგებული დომენი არ გაქვთ, დაამატეთ პირველი, ბმულზე ${ linkToDomainPage }."
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "სახელი, რომლითაც ადვილად იცნობთ, თუ მისი გაფართოება ან გაუქმება დაგჭირდათ."
       ],
@@ -9560,11 +9617,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "შეიყვანეთ ელფოსტის მომხმარებელი და პაროლი, საიდანაც შემოტანას აპირებთ."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "შეიყვანეთ ელფოსტის მისამართი, რომელიც გამოიყენეთ ${ reservedEmail }-ის დასაჯავშნად."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "შეიყვანეთ ობიექტის ID **eduGAIN** ორგანიზაციისთვის **${ domain.DomainName }**-სთვის."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "ადმინისტრატორის პრივილეგიების აღსადგენად შეიყვანეთ ორგანიზაციის პაროლი. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "შეიყვანეთ დაჯავშნილი ელფოსტის მისამართი და ჯავშნის დროს გამოყენებული ელფოსტის მისამართი."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "შეიყვანეთ ${ destinationText }-ზე გამოგზავნილი შემოწმების კოდი."
@@ -9716,11 +9779,17 @@
       "Groups": [
         "ჯგუფები"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "დაეხმარეთ სხვა ოჯახებს, მისცენ თავიანთ შვილებს უსაფრთხო დასაწყისი ონლაინ. გააზიარეთ ეს მიღწევა და გაავრცელეთ ინფორმაცია."
+      ],
       "here": [
         "აქ"
       ],
       "High Priority": [
         "მაღალი პრიორიტეტი"
+      ],
+      "How it works": [
+        "როგორ მუშაობს"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -9742,6 +9811,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "თუ კლავიატურის მალსახმობები ჩართულია, შეგიძლიათ გამოიყენოთ შემდეგი ღილაკები სწრაფი ქმედებებისთვის ან სხვა ხედზე გადასართველად. ${ metaKey } + K ყოველთვის ჩართულია."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "თუ თქვენ მიერ შეყვანილი ელფოსტა გამოყენებული იყო ბავშვის ელფოსტის მისამართის დასაჯავშნად, ჩვენ თავიდან გამოვგზავნით გააქტიურების ვაუჩერს."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "თუ ეს ძველი პაროლის დაბრუნების გამოა, შეგიძლიათ, თავიდან მოიშოროთ ეს შეტყობინება"
@@ -9966,6 +10038,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "დაადასტურეთ თქვენი არჩევანი. დანარჩენს ჩვენ გავაკეთებთ."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "შეინახეთ ვაუჩერი უსაფრთხოდ საჭიროებამდე, მაგალითად ${ DRIVE_APP_NAME }-ში."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "იქონიეთ თქვენი ინფორმაცია უფრო დაცული და კონფიდენციალური ამ სახელმძღვანელოებით და მინიშნებებით."
@@ -10451,6 +10526,9 @@
       "Receive notifications for ${ categoryLabel }": [
         "შეტყობინებების მიღება ${ categoryLabel }-ისთვის"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "მიიღეთ ჯავშნის ვაუჩერი ელფოსტით. თქვენ ან თქვენს შვილს შეგიძლიათ გამოიყენოთ იგი მისამართის გასააქტიურებლად მომდევნო 15 წლის განმავლობაში. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "ახლახან გამოყენებული სერვერები:"
       ],
@@ -10671,6 +10749,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "ზოგიერთი სერვერი, შეიძლება, ზედა სიაში არ გამოჩნდეს. საპოვნელად მოძებნეთ სერვერის სახელით (მაგ: AT#62)."
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "რაღაც არასწორად წავიდა. კიდევ სცადეთ ან დაუკავშირდით მომხმარებელთა მხარდაჭერას."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "მიუთითეთ დომენი, რომელსაც SAML SSO-ით ავთენტიკაციის უფლება აქვს."
       ],
@@ -10689,6 +10770,9 @@
       "Step ${ step }": [
         "ნაბიჯი ${ step }",
         "ნაბიჯი ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "ნაბიჯი ${ step } / ${ totalSteps }-დან"
       ],
       "Storage allocated to other users in this organisation": [
         "ამ ორგანიზაციის სხვა მომხმარებლებისთვის გამოყოფილი საცავი"
@@ -11003,6 +11087,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "იმისათვის, რომ ყოველთვის იცოდეთ ყველა სიახლე ${ BRAND_NAME }-ის პროდუქტების შესახებ, შეგიძლიათ გამოიწეროთ ჩვენი სხვადასხვა საფოსტო დაგზავნები და ხანდახან ჩვენს ${ blogLink }-ზე შეიხედოთ ხოლმე."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "ბოროტად გამოყენების ან თაღლითობის თავიდან ასაცილებლად, ჩვენ ვითხოვთ მინიმუმ ${ minimumDonation } შემოწირულობას. ეს მხარს უჭერს ${ protonFoundationLink }-ის მუშაობას ციფრული კონფიდენციალურობის გლობალურად დასაცავად და გვეხმარება მომავალი თაობის დაცვაში."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "გასაგრძელებლად აირჩიეთ ანგარიშის აღდგენის მეთოდი, რათა შევძლოთ მოთხოვნის გადამოწმება."
       ],
@@ -11216,6 +11303,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "გირჩევთ, როცა ეს შესაძლებელია, ${ VPN_APP_NAME }-ის ოფიცალური აპლიკაციები გამოიყენოთ ."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "ტრანზაქციის დასრულება ვერ მოხერხდა. თავიდან სცადეთ."
+      ],
       "We couldn’t process your payment.": [
         "თქვენი გადახდა ვერ დავამუშავეთ."
       ],
@@ -11305,6 +11395,9 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "როცა ბმულზე დააწკაპუნებთ, ფიშინგის საწინააღმდეგო ეს ფუნქცია გკითხავთ, მართლა გნებავთ თუ არა ამ ბმულის გახსნა."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "როცა მზად იქნებით მისამართის გასააქტიურებლად, დაასკანერეთ QR კოდი ან გამოიყენეთ ვაუჩერში მოცემული ბმული."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "როცა თქვენი გამოწერის განახლების დრო მოვა, ანგარიშიდან თანხის ჩამოჭრამდე ჩვენ ყველა არსებულ კრედიტს გამოვიყენებთ."
@@ -11644,6 +11737,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "თქვენი გამოსაცდელი პერიოდის დასრულების დროა: ${ timeRemaining }."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "თქვენი დაჯავშნილი ${ BRAND_NAME }-ის ელფოსტის მისამართის ვაუჩერი: ${ reservedEmail }"
+      ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "თქვენ დაკარგავთ წვდომას ${ boldPlanTitle }-ის ფუნქციებთან:"
       ],
@@ -11675,6 +11771,11 @@
       ],
       "Selected color:": [
         "არჩეული ფერი:"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "შეიყვანეთ დამოწმების კოდი, რომელიც გაიგზავნა ${ parentEmail }-ზე."
       ]
     },
     "Info - folder colouring feature": {
@@ -12282,6 +12383,9 @@
       "Actions": [
         "ქმედებები"
       ],
+      "Activation code": [
+        "გააქტიურების კოდი"
+      ],
       "Activity": [
         "აქტიურობა"
       ],
@@ -12525,6 +12629,9 @@
       "Choose a name for the generated certificate file": [
         "შეიყვანეთ გენერირებული სერტიფიკატის ფაილის სახელი"
       ],
+      "Choose an address to reserve for your child": [
+        "აირჩიეთ მისამართი თქვენი შვილისთვის დასაჯავშნად"
+      ],
       "Choose your billing": [
         "აირჩიეთ თქვენი გადახდის ტიპი"
       ],
@@ -12729,6 +12836,12 @@
       "Don't show this again": [
         "აღარ მაჩვენო"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "გაიღეთ შემოწირულობა 1 $ ან მეტი ${ BRAND_NAME }-ის ფონდისთვის"
+      ],
+      "Donation amount": [
+        "შემოწირულობის რაოდენობა"
+      ],
       "Duration": [
         "ხანგრძლივობა"
       ],
@@ -12788,6 +12901,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "შეიყვანეთ იმ გასაღების პაროლი, რომლის ანაბეჭდია: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "შეიყვანეთ თქვენი ელფოსტის მისამართი"
       ],
       "Enter your password": [
         "შეიყვანეთ თქვენი პაროლი"
@@ -13302,6 +13418,12 @@
       "Require 2FA for everyone": [
         "2FA-ის ყველასთვის მოთხოვნა"
       ],
+      "Reserved address": [
+        "დაჯავშნილი მისამართი"
+      ],
+      "Reserved email address": [
+        "დაჯავშნილი ელფოსტის მისამართი"
+      ],
       "Reveal password": [
         "პაროლის ჩვენება"
       ],
@@ -13343,6 +13465,9 @@
       ],
       "Server name": [
         "სერვერის სახელი"
+      ],
+      "Set password": [
+        "პაროლის დაყენება"
       ],
       "Share your referral link": [
         "თქვენი მიმართვის ბმულის გაზიარება"
@@ -13470,6 +13595,9 @@
       ],
       "Tips and insights": [
         "მინიშნებები და ანალიტიკა"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "გასააქტიურებლად, დაასკანერეთ QR-კოდი ან გადადით:"
       ],
       "To help us improve, please explain why you are leaving.": [
         "იმისათვის, რომ უკეთესები გავხდეთ, აგვიხსენთ, რატომ გვტოვებთ."
@@ -13603,11 +13731,17 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "დიახ, მე მინდა ამ ანგარიშის და მისი მონაცემების სამუდამოდ წაშლა."
       ],
+      "Your activation code:": [
+        "თქვენი გააქტიურების კოდი:"
+      ],
       "Your calendar URL": [
         "თქვენი კალენდრის ბმული"
       ],
       "Your credit balance": [
         "თქვენი საკრედიტო ბალანსი"
+      ],
+      "Your email address": [
+        "თქვენი ელფოსტის მისამართი"
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
@@ -13617,6 +13751,9 @@
       ],
       "Your plan": [
         "თქვენი პაკეტი"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "თქვენი დაჯავშნილი ${ BRAND_NAME }-ის ელფოსტის მისამართის ვაუჩერი:"
       ],
       "ZIP code": [
         "საფოსტო კოდი"
@@ -13789,6 +13926,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "${ BRAND_NAME }-ის ფონდის"
+      ],
       "Activity log": [
         "აქტივობის ჟურნალი"
       ],
@@ -13809,6 +13949,9 @@
       ],
       "Calendars": [
         "კალენდრები"
+      ],
+      "Can't find your code?": [
+        "ვერ პოულობთ თქვენს კოდს?"
       ],
       "clearing your browser cache": [
         "ბრაუზერის ქეშის გასუფთავება"
@@ -14009,6 +14152,20 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "მომხმარებლები და მისამართები"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "ელფოსტა"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -17440,6 +17597,9 @@
       ],
       "Address": [
         "მისამართი"
+      ],
+      "Amount": [
+        "რაოდენობა"
       ],
       "Anderson": [
         "ღობეგლეჯიაშვილი"
@@ -21054,6 +21214,9 @@
       "Verification code copied to clipboard": [
         "შემოწმების კოდი დაკოპირებულია მიმოცვლის ბაფერში"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "დამოწმების კოდი გაგზავნილია ${ parentEmail }-ზე"
+      ],
       "Verification successful": [
         "გადამოწმება წარმატებულია"
       ],
@@ -21077,6 +21240,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "თუ ტელეფონის ნომერი სწორია, რამდენიმე წუთში თქვენ მიიღებთ SMS-ს თქვენი მომხმარებლის სახელით."
+      ],
+      "Your address has been activated": [
+        "თქვენი მისამართი გააქტიურებულია"
       ]
     },
     "Success message": {
@@ -22479,6 +22645,12 @@
       ],
       "Privacy and data collection": [
         "კონფიდენციალურობა და მონაცემების შეგროვება"
+      ],
+      "Problem processing your payment": [
+        "გადახდის დამუშავებისას დაფიქსირდა შეცდომა"
+      ],
+      "Problem processing your request": [
+        "თქვენი მოთხოვნის დამუშავებისას დაფიქსირდა შეცდომა"
       ],
       "Processing...": [
         "დამუშავება..."

@@ -90,6 +90,12 @@
       "Activate recovery": [
         "Aktivera återställning"
       ],
+      "Activate reserved address": [
+        "Aktivera reserverad adress"
+      ],
+      "Activate this address": [
+        "Aktivera denna adress"
+      ],
       "Add": [
         "Lägg till"
       ],
@@ -278,6 +284,9 @@
       ],
       "Close navigation": [
         "Stäng navigering"
+      ],
+      "Close search": [
+        "Stäng sök"
       ],
       "Close tab": [
         "Stäng flik"
@@ -561,6 +570,9 @@
       "Don't show again": [
         "Visa inte igen"
       ],
+      "Donate": [
+        "Donera"
+      ],
       "Done": [
         "Klar"
       ],
@@ -830,6 +842,9 @@
       ],
       "Get verification code": [
         "Skaffa verifieringskod"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Skaffa din egen ${ MAIL_APP_NAME }-adress"
       ],
       "Go back": [
         "Gå tillbaka"
@@ -1302,6 +1317,9 @@
       "Search countries": [
         "Sök länder"
       ],
+      "Search groups": [
+        "Sök grupper"
+      ],
       "Search settings": [
         "Sök inställningar"
       ],
@@ -1373,6 +1391,9 @@
       ],
       "Send reminder": [
         "Skicka påminnelse"
+      ],
+      "Send verification code": [
+        "Skicka verifieringskod"
       ],
       "Set as album cover": [
         "Ställ in som albumomslag"
@@ -1541,6 +1562,9 @@
       ],
       "Try for free": [
         "Prova gratis"
+      ],
+      "Try payment again": [
+        "Försök betalning igen"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Försök att spara igen. Det gick inte att spara på grund av: ${ saveError }"
@@ -6327,6 +6351,9 @@
       "Account does not exist": [
         "Konto finns inte"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Aktivering misslyckades. Detaljerna kan vara felaktiga eller så är e-posten redan aktiv. Kontrollera din inmatning eller logga in."
+      ],
       "Add at least one action": [
         "Lägg till minst en åtgärd"
       ],
@@ -6455,6 +6482,9 @@
       "Failed loading group members": [
         "Misslyckades att ladda gruppmedlemmar"
       ],
+      "Failed to activate your address. Please try again.": [
+        "Misslyckades att aktivera din adress. Försök igen."
+      ],
       "Failed to add group member": [
         "Misslyckades att lägga till gruppmedlem"
       ],
@@ -6532,6 +6562,9 @@
       ],
       "Invalid code": [
         "Ogiltig kod"
+      ],
+      "Invalid coupon": [
+        "Ogiltig rabattkod"
       ],
       "Invalid domain": [
         "Ogiltig domän"
@@ -6844,6 +6877,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minsta antal krediter som kan läggas till är ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minsta donationsbelopp är ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Policynamnet måste vara mellan 3 och 40 tecken."
@@ -8052,6 +8088,16 @@
         "Jag förstår att jag inte längre kommer att kunna logga in från äldre versioner av mobilappar för ${ BRAND_NAME }."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Ange din e-postadress"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Kupongen kommer skickas hit."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "webbapp"
@@ -8352,6 +8398,32 @@
       ],
       "Subscribed": [
         "Prenumererad"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Ett enkelt steg idag för att säkerställa ditt barns digitala säkerhet imorgon"
+      ],
+      "Activate your reserved email address": [
+        "Aktivera din reserverade e-postadress"
+      ],
+      "Address reservation voucher": [
+        "Värdebevis för adressreservation"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Donera till stiftelsen ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Ange verifieringskod"
+      ],
+      "Recover activation voucher": [
+        "Återställer aktiveringskupong"
+      ],
+      "Reserve child's email address": [
+        "Reservera barnets e-postadress"
+      ],
+      "We emailed you the voucher": [
+        "Vi skickade kupongen till dig via e-post"
       ]
     },
     "Headline": {
@@ -9127,7 +9199,7 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ BRAND_NAME } är värd för en ${ protonSubdomain }, vilket låter dig snabbt konfigurera en underdomän. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
         "En anpassad domän är obligatoriskt för att skapa grupper. Om du inte har ställt in en anpassad domän, gör det först under ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
@@ -9898,11 +9970,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "Ange inloggningsuppgifter till e-postkontot du vill importera från."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Ange e-postadressen som användes för att reservera ${ reservedEmail }."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Ange entitets-ID:t för en **eduGAIN**-organisation för **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Ange organisationslösenordet för att återställa administratörsprivilegier. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Ange den reserverade e-postadressen och den e-postadress som användes vid reservationen."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ange verifieringskoden som skickades till ${ destinationText }."
@@ -10081,6 +10159,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Hjälp andra familjer att ge sina barn en trygg start online. Dela denna milstolpe och sprid budskapet."
+      ],
       "here": [
         "här"
       ],
@@ -10089,6 +10170,9 @@
       ],
       "High Priority": [
         "Hög prioritet"
+      ],
+      "How it works": [
+        "Hur det fungerar"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -10113,6 +10197,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Om tangentbordsgenvägar är aktiverade kan du använda följande tangenter för snabba åtgärder eller för att hoppa till olika vyer. ${ metaKey } + K är alltid aktiverat."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Om e-postadressen du angav användes för att reservera ett barns e-postadress skickar vi aktiveringskupongen igen."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Om systemets tidszon inte matchar den nuvarande tidszonen kommer du att bli ombedd att uppdatera den (högst en gång per dag)."
@@ -10349,6 +10436,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bekräfta bara ditt val och vi gör resten."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Förvara kupongen säkert tills den behövs, till exempel i ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Håll din information mer säker och privat med dessa guider och tips."
@@ -10858,6 +10948,9 @@
       "Receive notifications for ${ categoryLabel }": [
         "Ta emot aviseringar för ${ categoryLabel }"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Få värdebeviset för reservationen via e-post. Du eller barnet kan använda det för att aktivera adressen inom de närmaste 15 åren. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Nyligen använda servrar:"
       ],
@@ -11087,6 +11180,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Vissa servrar kanske inte visas i listan ovan. Sök efter servernamn (t.ex. AT#62) för att hitta dem."
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Något gick fel. Försök igen eller kontakta kundsupport."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Ange den domän som tillåts autentisera med SAML SSO."
       ],
@@ -11105,6 +11201,9 @@
       "Step ${ step }": [
         "Steg ${ step }",
         "Steg ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Steg ${ step }/${ totalSteps }"
       ],
       "Step 1 of 2": [
         "Steg 1 av 2"
@@ -11458,6 +11557,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "För att hänga med i den senaste utvecklingen av ${ BRAND_NAME }-produkter kan du prenumerera på våra olika e-postmeddelanden och ${ blogLink } då och då."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "För att förhindra missbruk eller bedrägerier ber vi om en donation på minst ${ minimumDonation }. Detta stöder ${ protonFoundationLink } arbete med att försvara digital integritet globalt och hjälper till att skydda nästa generation."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "För att fortsätta, välj en metod för kontoåterställning så att vi kan verifiera begäran."
       ],
@@ -11683,6 +11785,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Vi rekommenderar att du använder officiella ${ VPN_APP_NAME }-applikationer när det är möjligt."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Vi kunde inte slutföra transaktionen. Försök igen."
+      ],
       "We couldn’t process your payment.": [
         "Vi kunde inte behandla din betalning."
       ],
@@ -11793,6 +11898,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "När du är redo att aktivera adressen, skanna QR-koden eller använd länken i kupongen."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "När din prenumeration förnyas kommer vi att använda alla tillgängliga krediter innan vi debiterar betalningsmetoden ovan."
@@ -12052,6 +12160,12 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Du kommer inte att kunna återställa låsta data med dina nedladdade återställningsfiler. Detta kommer också att inaktivera enhetsbaserad återställning."
       ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "Du får kreditbelöningen 1 månad efter att din väns provperiod har avslutats."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "Du får kreditbelöningen 2 månader efter att din väns provperiod avslutades."
+      ],
       "You've reached the limit of 50 users for this filter. Remove one to add another.": [
         "Du har nått gränsen på 50 användare för detta filter. Ta bort ett för att lägga till ett annat."
       ],
@@ -12162,6 +12276,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Din provperiod slutar om ${ timeRemaining }."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Din kupong för din reserverade e-postadress för ${ BRAND_NAME }: ${ reservedEmail }"
+      ],
       "YouTube": [
         "YouTube"
       ],
@@ -12204,6 +12321,11 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "Hjälper till att skriva, svara på och korrekturläsa e-post. Om inaktiverad kommer endast administratörer ha åtkomst. Hantera för enskilda användare i ${ userAndAddresses } eller ${ addMoreSeats }"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Ange verifieringskoden som skickades till ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -12828,6 +12950,9 @@
       "Actions": [
         "Åtgärder"
       ],
+      "Activation code": [
+        "Aktiveringskod"
+      ],
       "Activity": [
         "Aktivitet"
       ],
@@ -13074,6 +13199,9 @@
       "Choose a name for the generated certificate file": [
         "Välj ett namn för den genererade certifikatfilen"
       ],
+      "Choose an address to reserve for your child": [
+        "Välj en adress att reservera för ditt barn"
+      ],
       "Choose your billing": [
         "Välj din fakturering"
       ],
@@ -13275,6 +13403,12 @@
       "Don't show this again": [
         "Visa inte detta igen"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Donera $1 eller mer till stiftelsen ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Donationsbelopp"
+      ],
       "Duration": [
         "Varaktighet"
       ],
@@ -13334,6 +13468,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Ange lösenordet för nyckeln med fingeravtrycket: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Ange din e-postadress"
       ],
       "Enter your password": [
         "Ange ditt lösenord"
@@ -13851,6 +13988,12 @@
       "Require 2FA for everyone": [
         "Kräv 2FA för alla"
       ],
+      "Reserved address": [
+        "Reserverad adress"
+      ],
+      "Reserved email address": [
+        "Reserverad e-postadress"
+      ],
       "Reveal password": [
         "Visa lösenord"
       ],
@@ -13892,6 +14035,9 @@
       ],
       "Server name": [
         "Servernamn"
+      ],
+      "Set password": [
+        "Ställ in lösenord"
       ],
       "Share your referral link": [
         "Dela din hänvisningslänk"
@@ -14022,6 +14168,9 @@
       ],
       "Tips and insights": [
         "Tips och insikter"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "För att aktivera, skanna QR-koden eller gå till:"
       ],
       "To help us improve, please explain why you are leaving.": [
         "För att hjälpa oss att bli bättre, förklara varför du lämnar."
@@ -14155,11 +14304,17 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jag vill permanent ta bort detta konto och alla dess data."
       ],
+      "Your activation code:": [
+        "Din aktiveringskod:"
+      ],
       "Your calendar URL": [
         "Din kalender-URL"
       ],
       "Your credit balance": [
         "Ditt kreditsaldo"
+      ],
+      "Your email address": [
+        "Din e-postadress"
       ],
       "Your password (admin)": [
         "Ditt lösenord (admin)"
@@ -14169,6 +14324,9 @@
       ],
       "Your plan": [
         "Ditt paket"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Din kupong för din reserverade e-postadress för ${ BRAND_NAME }:"
       ],
       "ZIP code": [
         "Postnummer"
@@ -14341,6 +14499,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "Stiftelsen ${ BRAND_NAME }"
+      ],
       "Activity log": [
         "Aktivitetslogg"
       ],
@@ -14361,6 +14522,9 @@
       ],
       "Calendars": [
         "Kalendrar"
+      ],
+      "Can't find your code?": [
+        "Kan du inte hitta din kod?"
       ],
       "clearing your browser cache": [
         "rensar din webbläsares cache"
@@ -14564,6 +14728,20 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Användare och adresser"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "E-post"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -15020,6 +15198,12 @@
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-konto"
       ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Aktivera den privata e-postadressen ${ BRAND_NAME } som är reserverad för ditt barn och ställ in deras konto."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Aktivera ditt barns ${ BRAND_NAME }-konto | ${ BRAND_NAME }"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Skapa ett ${ BRAND_NAME }-konto för att använda alla krypterade ${ BRAND_NAME }-tjänster som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och fler, med endast en inloggning. Skaffa ett gratis ${ BRAND_NAME }-konto."
       ],
@@ -15043,6 +15227,12 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Har du glömt ditt användarnamn för ditt ${ BRAND_NAME }-konto? Hitta den med din e-postadress eller ditt telefonnummer för återställning och återfå åtkomst till dina ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och fler."
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "Återställ åtkomsten till den privata e-postadressen ${ BRAND_NAME } som är reserverad för ditt barn."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Återställ ditt barns ${ BRAND_NAME }-konto | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Återställ lösenordet för ditt ${ BRAND_NAME }-konto"
@@ -18102,6 +18292,9 @@
       "Address": [
         "Adress"
       ],
+      "Amount": [
+        "Belopp"
+      ],
       "Anderson": [
         "Andersson"
       ],
@@ -18476,9 +18669,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Visa inte detta erbjudande igen"
-      ],
       "Get the deal": [
         "Ta del av erbjudandet"
       ]
@@ -18555,11 +18745,6 @@
       ],
       "Use your own email domain": [
         "Använd din egen e-postdomän"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "en fjäril"
       ]
     },
     "q1campaign: Title": {
@@ -21925,6 +22110,9 @@
       "Verification code copied to clipboard": [
         "Verifieringskod kopierat till urklipp"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Verifieringskod skickat till ${ parentEmail }"
+      ],
       "Verification successful": [
         "Verifiering lyckades"
       ],
@@ -21948,6 +22136,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Du kommer få ditt användarnamn via SMS inom en minut om du har angett ett giltigt telefonnummer för återställning."
+      ],
+      "Your address has been activated": [
+        "Din adress har aktiverats"
       ]
     },
     "Success message": {
@@ -22253,6 +22444,9 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Exportverktyg för ${ MAIL_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } is missing permissions": [
+        "${ PASS_APP_NAME } saknar behörigheter"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor-rapport"
@@ -23362,6 +23556,12 @@
       ],
       "Privacy and data collection": [
         "Integritet och datainsamling"
+      ],
+      "Problem processing your payment": [
+        "Problem att hantera din betalning"
+      ],
+      "Problem processing your request": [
+        "Problem att behandla din begäran"
       ],
       "Processing...": [
         "Bearbetar..."
@@ -24534,6 +24734,9 @@
       ],
       "Did you know?": [
         "Visste du att?"
+      ],
+      "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
+        "Allt du behöver för att samarbeta säkert i en enda prenumeration. Få åtkomst till ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ LUMO_SHORT_APP_NAME } AI-assistent."
       ],
       "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle. From only ${ fallBackString } per month": [
         "Integritetssvit med säker e-post, ${ VPN_SHORT_APP_NAME }, molnlagringsutrymme och lösenordshanterare i ett paket. Från endast ${ fallBackString } per månad"
