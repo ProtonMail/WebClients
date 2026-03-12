@@ -4,6 +4,7 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { addConversationError, addTierError } from '../../redux/slices/meta/errors';
 import type { LumoDispatch } from '../../redux/store';
+import { onComposerError } from '../../remote/nativeComposerBridgeHelpers';
 import { type ConversationId, type GenerationError, LUMO_API_ERRORS, type LUMO_USER_TYPE } from '../../types';
 import type { GenerationResponseMessage } from '../../types-api';
 import { getExceedTierErrorMessage, getExceededTierErrorTitle } from '../../util/errorMessages';
@@ -120,6 +121,7 @@ export const handleGenerationError = (error: GenerationError) => (dispatch: Lumo
                 })
             );
     }
+    onComposerError(error.type);
 };
 
 export const handleTierError = (userType: LUMO_USER_TYPE) => (dispatch: LumoDispatch) => {
@@ -131,4 +133,5 @@ export const handleTierError = (userType: LUMO_USER_TYPE) => (dispatch: LumoDisp
             errorType: LUMO_API_ERRORS.TIER_LIMIT,
         })
     );
+    onComposerError(LUMO_API_ERRORS.TIER_LIMIT);
 };

@@ -8,6 +8,7 @@ import { useModalStateObject } from '@proton/components';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 
+import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { GuestSignInState } from '../../components/GuestSignInState/GuestSignInState';
 import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
 import { useIsGuest } from '../../providers/IsGuestProvider';
@@ -61,6 +62,8 @@ export const ProjectsView = () => {
             history.push(`/projects/${projectId}`);
         }
     };
+
+    useNativeComposerVisibilityApi({ isBlocking: true });
 
     const renderContent = () => {
         if (isGuest) {

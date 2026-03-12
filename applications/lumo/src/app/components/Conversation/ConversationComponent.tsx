@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { HtmlPreviewContext } from '../../contexts/HtmlPreviewContext';
 import type { HandleEditMessage, HandleRegenerateMessage, HandleSendMessage } from '../../hooks/useLumoActions';
 import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../redux/hooks';
@@ -11,11 +12,13 @@ import type { ConversationError } from '../../redux/slices/meta/errors';
 import { selectConversationErrors, selectTierErrors } from '../../redux/slices/meta/errors';
 import type { Attachment, Conversation, Message, RetryStrategy, SiblingInfo } from '../../types';
 import { Role } from '../../types-api';
-import { HtmlPreviewContext } from '../../contexts/HtmlPreviewContext';
-import ErrorCard from '../Notifications/ErrorCard';
+import UpsellCard from '../../upsells/components/UpsellCard';
+import { ComposerComponent } from '../Composer/ComposerComponent';
 import { FilesManagementView } from '../Files';
 import { FilePreviewPanel } from '../Files/Common/FilePreviewPanel';
 import { HtmlPreviewPanel } from '../HtmlPreview/HtmlPreviewPanel';
+import ErrorCard from '../Notifications/ErrorCard';
+import { RetryPanel } from '../RetryPanel';
 import { RightDrawer } from '../RightDrawer';
 import { RetryPanel } from '../RetryPanel';
 import { ConversationSurvey } from '../Survey/ConversationSurvey';
@@ -228,7 +231,7 @@ const ConversationComponent = ({
     }, []);
 
     const handleRetry = useCallback(
-        (retryStrategy: RetryStrategy, customInstructions?: string) => {
+        async (retryStrategy: RetryStrategy, customInstructions?: string) => {
             if (retryPanelState.messageId) {
                 const message = messageChain.find((m) => m.id === retryPanelState.messageId);
                 if (message) {
@@ -263,115 +266,115 @@ const ConversationComponent = ({
 
     return (
         <HtmlPreviewContext.Provider value={{ onPreviewHtml: handleOpenHtmlPreview }}>
-        <>
-            <div className="lumo-chat-container flex flex-row flex-nowrap flex-1 relative reset4print overflow-hidden">
-                <div className="outer flex flex-column flex-nowrap flex-1 reset4print overflow-hidden">
-                    {conversation && (
-                        <ConversationHeader
-                            conversation={conversation}
+            <>
+                <div className="lumo-chat-container flex flex-row flex-nowrap flex-1 relative reset4print overflow-hidden">
+                    <div className="outer flex flex-column flex-nowrap flex-1 reset4print overflow-hidden">
+                        {conversation && (
+                            <ConversationHeader
+                                conversation={conversation}
+                                messageChain={messageChain}
+                                onOpenFiles={handleOpenFiles}
+                            />
+                        )}
+                        <MessageChainComponent
+                            messageChainRef={messageChainRef}
                             messageChain={messageChain}
-                            onOpenFiles={handleOpenFiles}
-                        />
-                    )}
-                    <MessageChainComponent
-                        messageChainRef={messageChainRef}
-                        messageChain={messageChain}
-                        handleRegenerateMessage={handleRegenerateMessage}
-                        handleEditMessage={handleEditMessage}
-                        getSiblingInfo={getSiblingInfo}
-                        isGenerating={isGenerating}
-                        sourcesContainerRef={sourcesContainerRef}
-                        handleOpenSources={handleOpenSources}
-                        handleOpenFiles={handleOpenFiles}
-                        handleOpenFilePreview={handleOpenFilePreview}
-                        onRetryPanelToggle={handleRetryPanelToggle}
-                        composerContainerRef={composerContainerRef}
-                    />
-                    {/* TODO: update to show all conversations errors at some point */}
-                    {conversationErrors.length > 0 && (
-                        <ErrorCard error={conversationErrors[0]} index={0} onRetry={handleRetryGeneration} />
-                    )}
-                    {tierErrors.length > 0 && <UpsellCard error={tierErrors[0]} />}
-                    <ConversationSurvey isGenerating={isGenerating} />
-                    <div
-                        ref={composerContainerRef}
-                        className="lumo-chat-item flex flex-column w-full md:w-2/3 mx-auto max-w-custom no-print"
-                        style={{
-                            '--max-w-custom': '51.25rem',
-                        }}
-                    >
-                        <ComposerComponent
-                            handleSendMessage={handleSendMessage}
-                            onAbort={handleAbort}
+                            handleRegenerateMessage={handleRegenerateMessage}
+                            handleEditMessage={handleEditMessage}
+                            getSiblingInfo={getSiblingInfo}
                             isGenerating={isGenerating}
-                            isProcessingAttachment={isProcessingAttachment}
-                            inputContainerRef={inputContainerRef}
-                            messageChain={messageChain}
+                            sourcesContainerRef={sourcesContainerRef}
+                            handleOpenSources={handleOpenSources}
                             handleOpenFiles={handleOpenFiles}
-                            onShowDriveBrowser={handleShowDriveBrowser}
-                            onOpenFilePreview={handleOpenFilePreview}
-                            initialQuery={initialQuery}
-                            prefillQuery={prefillQuery}
-                            spaceId={conversation?.spaceId}
+                            handleOpenFilePreview={handleOpenFilePreview}
+                            onRetryPanelToggle={handleRetryPanelToggle}
+                            composerContainerRef={composerContainerRef}
                         />
+                        {/* TODO: update to show all conversations errors at some point */}
+                        {conversationErrors.length > 0 && (
+                            <ErrorCard error={conversationErrors[0]} index={0} onRetry={handleRetryGeneration} />
+                        )}
+                        {tierErrors.length > 0 && <UpsellCard error={tierErrors[0]} />}
+                        <ConversationSurvey isGenerating={isGenerating} />
+                    <div
+                            ref={composerContainerRef}
+                            className="lumo-chat-item flex flex-column w-full md:w-2/3 mx-auto max-w-custom no-print"
+                            style={{
+                                '--max-w-custom': '51.25rem',
+                            }}
+                        >
+                            <ComposerComponent
+                                handleSendMessage={handleSendMessage}
+                                onAbort={handleAbort}
+                                isGenerating={isGenerating}
+                                isProcessingAttachment={isProcessingAttachment}
+                                inputContainerRef={inputContainerRef}
+                                messageChain={messageChain}
+                                handleOpenFiles={handleOpenFiles}
+                                onShowDriveBrowser={handleShowDriveBrowser}
+                                onOpenFilePreview={handleOpenFilePreview}
+                                initialQuery={initialQuery}
+                                prefillQuery={prefillQuery}
+                                spaceId={conversation?.spaceId}
+                            />
+                        </div>
+                        <p className="text-center relative color-weak text-xs my-2 hidden md:block">
+                            {c('collider_2025: Disclosure')
+                                .t`${LUMO_SHORT_APP_NAME} can make mistakes. Please double-check responses.`}
+                        </p>
                     </div>
-                    <p className="text-center relative color-weak text-xs my-2 hidden md:block">
-                        {c('collider_2025: Disclosure')
-                            .t`${LUMO_SHORT_APP_NAME} can make mistakes. Please double-check responses.`}
-                    </p>
-                </div>
-                {openPanel.type === 'sources' && openPanel.message && (
-                    <WebSearchSourcesView
-                        message={openPanel.message}
-                        sourcesContainerRef={sourcesContainerRef}
-                        onClose={() => setOpenPanel({ type: null })}
-                    />
-                )}
-                {openPanel.type === 'files' && (
-                    <FilesManagementView
-                        messageChain={messageChain}
-                        filesContainerRef={filesContainerRef}
-                        onClose={handleCloseFiles}
-                        filterMessage={openPanel.filterMessage}
-                        onClearFilter={handleClearFilter}
-                        initialShowDriveBrowser={openPanel.autoShowDriveBrowser}
-                        spaceId={conversation?.spaceId}
-                    />
-                )}
-                {openPanel.type === 'file-preview' && openPanel.attachment && (
-                    <RightDrawer>
-                        <FilePreviewPanel
-                            attachment={openPanel.attachment}
-                            onBack={() => setOpenPanel({ type: 'files' })}
+                    {openPanel.type === 'sources' && openPanel.message && (
+                        <WebSearchSourcesView
+                            message={openPanel.message}
+                            sourcesContainerRef={sourcesContainerRef}
                             onClose={() => setOpenPanel({ type: null })}
                         />
-                    </RightDrawer>
-                )}
-                {openPanel.type === 'html-preview' && openPanel.htmlContent && (
-                    <RightDrawer isFullscreen={isHtmlPreviewFullscreen}>
-                        <HtmlPreviewPanel
-                            html={openPanel.htmlContent}
-                            isFullscreen={isHtmlPreviewFullscreen}
-                            onToggleFullscreen={() => setIsHtmlPreviewFullscreen((v) => !v)}
-                            onClose={() => {
-                                setIsHtmlPreviewFullscreen(false);
-                                setOpenPanel({ type: null });
-                            }}
-                            onRetryWithError={handleHtmlPreviewRetry}
+                    )}
+                    {openPanel.type === 'files' && (
+                        <FilesManagementView
+                            messageChain={messageChain}
+                            filesContainerRef={filesContainerRef}
+                            onClose={handleCloseFiles}
+                            filterMessage={openPanel.filterMessage}
+                            onClearFilter={handleClearFilter}
+                            initialShowDriveBrowser={openPanel.autoShowDriveBrowser}
+                            spaceId={conversation?.spaceId}
                         />
-                    </RightDrawer>
-                )}
-            </div>
+                    )}
+                    {openPanel.type === 'file-preview' && openPanel.attachment && (
+                        <RightDrawer>
+                            <FilePreviewPanel
+                                attachment={openPanel.attachment}
+                                onBack={() => setOpenPanel({ type: 'files' })}
+                                onClose={() => setOpenPanel({ type: null })}
+                            />
+                        </RightDrawer>
+                    )}
+                    {openPanel.type === 'html-preview' && openPanel.htmlContent && (
+                        <RightDrawer isFullscreen={isHtmlPreviewFullscreen}>
+                            <HtmlPreviewPanel
+                                html={openPanel.htmlContent}
+                                isFullscreen={isHtmlPreviewFullscreen}
+                                onToggleFullscreen={() => setIsHtmlPreviewFullscreen((v) => !v)}
+                                onClose={() => {
+                                    setIsHtmlPreviewFullscreen(false);
+                                    setOpenPanel({ type: null });
+                                }}
+                                onRetryWithError={handleHtmlPreviewRetry}
+                            />
+                        </RightDrawer>
+                    )}
+                </div>
 
-            {/* Floating Retry Panel */}
-            {retryPanelState.show && retryPanelState.buttonRef && (
-                <FloatingRetryPanel
-                    buttonRef={retryPanelState.buttonRef}
-                    onRetry={handleRetry}
-                    onClose={handleRetryPanelClose}
-                />
-            )}
-        </>
+                {/* Floating Retry Panel */}
+                {retryPanelState.show && retryPanelState.buttonRef && (
+                    <FloatingRetryPanel
+                        buttonRef={retryPanelState.buttonRef}
+                        onRetry={handleRetry}
+                        onClose={handleRetryPanelClose}
+                    />
+                )}
+            </>
         </HtmlPreviewContext.Provider>
     );
 };
