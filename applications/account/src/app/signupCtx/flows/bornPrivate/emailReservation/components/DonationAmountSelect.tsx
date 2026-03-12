@@ -59,9 +59,7 @@ const DonationAmountSelect = ({ currency, donationAmount, setDonationAmount }: D
     };
 
     const onBlur = (event: FocusEvent<HTMLInputElement>) => {
-        const value = event.target.value;
-        const stripped = value.replace(/^0+/, '');
-        const parsed = parseInt(stripped);
+        const parsed = parseInt(event.target.value) || 0;
         setDonationAmount(parsed * divisor);
     };
 
