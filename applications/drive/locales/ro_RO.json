@@ -3564,6 +3564,9 @@
       "Invalid code": [
         "Cod nevalid"
       ],
+      "Invalid coupon": [
+        "Cupon nevalid"
+      ],
       "Invalid email address": [
         "Adresă de e-mail nevalidă."
       ],
@@ -3816,6 +3819,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Creditul minim care poate fi adăugat este de ${ price }."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Suma minimă de donație este de ${ price }."
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Noua revizie a fișierului original nu a fost încărcată încă,. Reîncercați mai târziu."
@@ -10718,9 +10724,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Nu mai afișați această ofertă"
-      ],
       "Get the deal": [
         "Valorificați oferta"
       ]
@@ -10797,11 +10800,6 @@
       ],
       "Use your own email domain": [
         "Utilizați propriul domeniu de e-mail"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "un fluture"
       ]
     },
     "q1campaign: Title": {
