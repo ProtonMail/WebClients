@@ -5940,9 +5940,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain }は${ BRAND_NAME }によってホストされており、迅速にサブドメインの設定ができます。詳しくは${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "カスタムドメインはグループを作成するために必要です。カスタムドメインが設定されていない場合は、まず ${ linkToDomainPage } で設定してください。"
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "名前をつけることで何に使用しているか判別しやすくなり、簡単に失効させたり期限を延長したりできます。"
       ],
@@ -12162,9 +12159,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "今後このオファーを表示しない"
-      ],
       "Get the deal": [
         "特典を利用する"
       ]
@@ -12241,11 +12235,6 @@
       ],
       "Use your own email domain": [
         "独自のメールドメインを使用"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "蝶"
       ]
     },
     "q1campaign: Title": {

@@ -176,6 +176,9 @@
       "Close navigation": [
         "Tanca la navegació"
       ],
+      "Close search": [
+        "Tancar la cerca"
+      ],
       "Close this banner": [
         "Tanca aquest bàner"
       ],
@@ -838,6 +841,9 @@
       ],
       "Search countries": [
         "Cerca països"
+      ],
+      "Search groups": [
+        "Cercar grups"
       ],
       "See DNS TXT record": [
         "Mostra el registre DNS TXT"
@@ -4177,6 +4183,9 @@
       "Invalid code": [
         "Codi invàlid"
       ],
+      "Invalid coupon": [
+        "El cupó no és vàlid"
+      ],
       "Invalid domain": [
         "Domini invàlid"
       ],
@@ -4445,6 +4454,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La quantitat mínima de crèdit que es pot afegir és ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "La donació mínima és de ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "El nom de la política ha de tenir entre 3 i 40 caràcters."
@@ -6177,8 +6189,8 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ BRAND_NAME } allotja un ${ protonSubdomain } que us permet configurar ràpidament un subdomini. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Es requereix un domini personalitzat per crear grups. Si no teniu un domini personalitzat configurat, feu-ho primer a ${ linkToDomainPage }."
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Es requereix un domini personalitzat per crear grups. Si no en teniu cap de configurat, feu-ho primer a ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nom que us ajudarà a identificar on l'utilitzeu perquè pugueu revocar-lo o ampliar-lo fàcilment més tard."
@@ -9097,6 +9109,9 @@
       ],
       "Import interval": [
         "Interval d'importació"
+      ],
+      "Import recent mails": [
+        "Importar els correus electrònics recents"
       ],
       "Import to email address": [
         "Importar a l'adreça de correu electrònic"

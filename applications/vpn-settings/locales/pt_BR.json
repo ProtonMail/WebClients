@@ -176,6 +176,9 @@
       "Close navigation": [
         "Fechar navegação"
       ],
+      "Close search": [
+        "Fechar pesquisa"
+      ],
       "Close this banner": [
         "Fechar este painel"
       ],
@@ -838,6 +841,9 @@
       ],
       "Search countries": [
         "Pesquisar países"
+      ],
+      "Search groups": [
+        "Pesquisar grupos"
       ],
       "See DNS TXT record": [
         "Ver registro TXT de DNS"
@@ -1930,6 +1936,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
+        "Para migrar os dados da sua organização, você precisa instalar o aplicativo Assistente de Migração do ${ BRAND_NAME } na Google Workspace Marketplace. Isso concederá permissão ao ${ BRAND_NAME } para copiar seus dados. Após a instalação, volte aqui para continuar."
       ],
       "Transfer errors": [
         "Erros de transferência"
@@ -4159,6 +4168,9 @@
       "Invalid code": [
         "O código não é válido."
       ],
+      "Invalid coupon": [
+        "Cupom inválido"
+      ],
       "Invalid domain": [
         "O domínio não é válido."
       ],
@@ -6155,9 +6167,6 @@
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Um ${ protonSubdomain } é hospedado pela ${ BRAND_NAME }, que permite que você configure rapidamente um subdomínio. ${ learnMoreLink }"
-      ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Um domínio personalizado é obrigatório para criar grupos. Se você não tem um domínio personalizado configurado, pode configurar em ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Um nome para ajudá-lo a identificar onde você o utiliza, para poder revogá-lo ou estendê-lo facilmente mais tarde."
@@ -12586,9 +12595,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Não mostrar mais esta oferta"
-      ],
       "Get the deal": [
         "Aproveitar a oferta"
       ]
@@ -12665,11 +12671,6 @@
       ],
       "Use your own email domain": [
         "Use seu próprio domínio de e-mail"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "uma borboleta"
       ]
     },
     "q1campaign: Title": {

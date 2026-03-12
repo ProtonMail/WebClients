@@ -176,6 +176,9 @@
       "Close navigation": [
         "Закрыць панэль навігацыі"
       ],
+      "Close search": [
+        "Закрыць пошук"
+      ],
       "Close this banner": [
         "Закрыць гэты банер"
       ],
@@ -519,7 +522,7 @@
         "Атрымаць памочніка ў напісанні"
       ],
       "Get verification code": [
-        "Атрымаць праверачны код"
+        "Атрымаць код спраўджання"
       ],
       "Go to ${ planOrAppName }": [
         "Перайсці ў ${ planOrAppName }"
@@ -838,6 +841,9 @@
       ],
       "Search countries": [
         "Пошук краін"
+      ],
+      "Search groups": [
+        "Пошук груп"
       ],
       "See DNS TXT record": [
         "Паглядзець запіс DNS TXT"
@@ -4233,6 +4239,9 @@
       "Invalid code": [
         "Памылковы код"
       ],
+      "Invalid coupon": [
+        "Памылковы купон"
+      ],
       "Invalid domain": [
         "Памылковы дамен"
       ],
@@ -4261,7 +4270,7 @@
         "Памылковы нумар ПДВ"
       ],
       "Invalid verification code": [
-        "Памылковы праверачны код"
+        "Памылковы код спраўджання"
       ],
       "Label name cannot be empty.": [
         "Назва меткі не можа быць пустой."
@@ -4506,6 +4515,9 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Мінімальная сума крэдытаў, якую можна ўнесці, складае ${ price }"
       ],
+      "The minimum donation amount is ${ price }": [
+        "Мінімальная сума ахвяравання складае ${ price }"
+      ],
       "The policy name must be between 3 and 40 characters.": [
         "Назва палітыкі павінна мець даўжыню ад 3 да 40 сімвалаў."
       ],
@@ -4585,7 +4597,7 @@
         "Няправільная фраза аднаўлення. Паспрабуйце яшчэ раз або скарыстайцеся іншым спосабам аднаўлення."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
-        "Няправільны праверачны код. Пераканайцеся, што вы правільна скапіявалі код і паспрабуйце яшчэ раз. Змяненні ўступяць у сілу на працягу 24 гадзін."
+        "Няправільны код спраўджання. Пераканайцеся, што вы правільна скапіявалі код і паспрабуйце яшчэ раз. Змяненні ўступяць у сілу на працягу 24 гадзін."
       ],
       "You have reached the maximum number of calendars.": [
         "Вы дасягнулі максімальнай колькасці календароў."
@@ -6341,7 +6353,7 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } размешчаны на ${ BRAND_NAME }. Ён дазваляе хутка наладжваць паддамены. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
         "Для стварэння груп патрабуецца карыстальніцкі дамен. Калі ў вас адсутнічае наладжаны карыстальніцкі дамен, то спачатку стварыце яго па спасылцы ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
@@ -6564,7 +6576,7 @@
         "Перад стварэннем гэтага адраса неабходна ўвесці пароль і стварыць для яго ключы шыфравання."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна ўказаны адрас ${ strong }."
+        "Перад запытам новага кода спраўджання праверце папку са спамам, а таксама ці правільна ўказаны адрас ${ strong }."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Каб вы змаглі атрымліваць электронныя лісты для адрасоў вашага карыстальніцкага дамена ў ${ MAIL_APP_NAME }, вам трэба дадаць наступныя два запісы MX у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Тут вы можаце знайсці прыклад і некалькі карысных парад ${ kbLink }."
@@ -6609,7 +6621,7 @@
         "Выберыце Entity ID для працягу."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Націсніце \"Запытаць новы код\", каб атрымаць новы праверачны код на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
+        "Націсніце \"Запытаць новы код\", каб атрымаць новы код спраўджання на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
       ],
       "Close this screen to exit.": [
         "Закрыйце гэта акно, каб выйсці."
@@ -6945,7 +6957,7 @@
         "Увядзіце код спраўджання, які быў адпраўлены на ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Увядзіце праверачны код. Лічба ${ digit }."
+        "Увядзіце код спраўджання. Лічба ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Увядзіце падрабязнасці вашага ўліковага запісу ${ BRAND_NAME }."
@@ -8376,7 +8388,7 @@
         "Вы атрымаеце апавяшчэнне, калі імпартаванне будзе завершана."
       ],
       "We'll send a new verification code to ${ strong }": [
-        "Мы адправім новы праверачны код на ${ strong }"
+        "Вам адпраўлены новы код спраўджання на ${ strong }"
       ],
       "Week": [
         "Тыдзень"
@@ -8442,10 +8454,10 @@
         "Без актывацыі вы не зможаце ствараць новых карыстальнікаў, дадаваць адрасы да існуючых карыстальнікаў або атрымаць доступ да непрыватных уліковых запісаў."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным спосабам праверкі?"
+        "Ці хочаце вы атрымаць новы код спраўджання або скарыстацца альтэрнатыўным спосабам праверкі?"
       ],
       "Would you like to receive a new verification code?": [
-        "Ці хочаце вы атрымаць новы праверачны код?"
+        "Ці хочаце вы атрымаць новы код спраўджання?"
       ],
       "Writing assistant": [
         "Памочнік у напісанні"
@@ -16205,7 +16217,7 @@
         "Звесткі, якія былі скампраметаваныя ў выніку парушэння"
       ],
       "Invalid verification code": [
-        "Памылковы праверачны код"
+        "Памылковы код спраўджання"
       ],
       "Invite friends. Get credits.": [
         "Запрашайце сяброў і атрымлівайце крэдыты."

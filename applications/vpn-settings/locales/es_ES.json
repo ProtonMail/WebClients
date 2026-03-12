@@ -176,6 +176,9 @@
       "Close navigation": [
         "Cerrar la navegación"
       ],
+      "Close search": [
+        "Cerrar búsqueda"
+      ],
       "Close this banner": [
         "Cerrar este banner"
       ],
@@ -835,6 +838,9 @@
       ],
       "Search countries": [
         "Buscar países"
+      ],
+      "Search groups": [
+        "Buscar grupos"
       ],
       "See DNS TXT record": [
         "Ver el registro TXT de DNS"
@@ -4141,6 +4147,9 @@
       "Invalid code": [
         "Código no válido"
       ],
+      "Invalid coupon": [
+        "Cupón no válido"
+      ],
       "Invalid domain": [
         "Dominio no válido"
       ],
@@ -4406,6 +4415,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que puede añadirse es de ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "El importe mínimo de la donación es de ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "El nombre de la política debe tener entre 3 y 40 caracteres."
@@ -6129,8 +6141,8 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Un ${ protonSubdomain } es alojado por ${ BRAND_NAME }, que fácilmente te permite configurar un subdominio. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Se requiere un dominio personalizado para crear grupos. Si aún no tienes uno, puedes configurarlo desde ${ linkToDomainPage }."
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Se necesita un dominio personalizado para crear grupos. Si no has configurado ninguno, hazlo primero en ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nombre que te ayude a identificar dónde lo utilizas para poder revocarlo o ampliarlo fácilmente más adelante."
@@ -9022,6 +9034,9 @@
       ],
       "Import interval": [
         "Intervalo de importación"
+      ],
+      "Import recent mails": [
+        "Importar correos recientes"
       ],
       "Import to email address": [
         "Importar a la dirección de correo electrónico"
@@ -12496,9 +12511,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "No volver a mostrar esta oferta"
-      ],
       "Get the deal": [
         "Aprovecha la oferta"
       ]
@@ -12575,11 +12587,6 @@
       ],
       "Use your own email domain": [
         "Usa tu propio dominio de correo electrónico"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "una mariposa"
       ]
     },
     "q1campaign: Title": {
