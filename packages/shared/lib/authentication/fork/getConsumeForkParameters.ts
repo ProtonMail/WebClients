@@ -1,7 +1,7 @@
 import { SessionSource } from '../SessionInterface';
 import { getReturnUrlParameter } from '../returnUrl';
-import { ForkSearchParameters, type ForkType } from './constants';
-import { getValidatedForkType, getValidatedRawKey } from './validation';
+import { type ForkPayloadVersion, ForkSearchParameters, type ForkType } from './constants';
+import { getValidatedForkType, getValidatedPayloadVersion, getValidatedRawKey } from './validation';
 
 export interface ConsumeForkParameters {
     selector: string;
@@ -10,7 +10,7 @@ export interface ConsumeForkParameters {
     persistent: boolean;
     source: SessionSource;
     trusted: boolean;
-    payloadVersion: 1 | 2;
+    payloadVersion: ForkPayloadVersion;
     payloadType: 'offline' | 'default';
     forkType: ForkType | undefined;
     returnUrl?: string;
@@ -54,7 +54,7 @@ export const getConsumeForkParameters = (searchParams: URLSearchParams): Consume
         forkType: getValidatedForkType(type),
         persistent: persistent === '1',
         trusted: trusted === '1',
-        payloadVersion: payloadVersion === '2' ? 2 : 1,
+        payloadVersion: getValidatedPayloadVersion(payloadVersion),
         payloadType: payloadType === 'offline' ? payloadType : 'default',
         returnUrl: getReturnUrlParameter(searchParams),
     };

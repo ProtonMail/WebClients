@@ -8,6 +8,8 @@ export enum ForkType {
     LOGIN = '3',
 }
 
+export type ForkPayloadVersion = 1 | 2 | 3;
+
 export const ForkableApps = new Set(
     [
         APPS.PROTONMAIL,
