@@ -63,7 +63,7 @@ export interface ParticipantEntity {
 
 export type MLSGroupState = {
     displayCode: string | null;
-    epoch: bigint;
+    epoch: Number;
 };
 export interface KeyRotationLog {
     timestamp: number;
