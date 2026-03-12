@@ -100,7 +100,11 @@ export const DriveExplorerGridBody = ({
     );
 
     return (
-        <div ref={containerRef} className="h-full max-h-full overflow-x-hidden flex-1 overflow-auto">
+        <div
+            ref={containerRef}
+            className="h-full max-h-full overflow-x-hidden flex-1 overflow-auto"
+            data-testid="drive-explorer-scroll"
+        >
             <div ref={gridContainerRef} className="w-full h-full">
                 <div
                     className="w-full h-custom relative"
