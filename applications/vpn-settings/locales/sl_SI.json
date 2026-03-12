@@ -150,6 +150,9 @@
       "Close navigation": [
         "Zapri krmarjenje"
       ],
+      "Close search": [
+        "Zapri iskanje"
+      ],
       "Close this banner": [
         "Zapri to pasico"
       ],
@@ -782,6 +785,9 @@
       ],
       "Search countries": [
         "Iskanje držav"
+      ],
+      "Search groups": [
+        "Išči med skupinami"
       ],
       "See DNS TXT record": [
         "Oglejte si zapis DNS TXT"
@@ -1695,6 +1701,9 @@
       ],
       "Payments problem": [
         "Težava s plačili"
+      ],
+      "Sheets problem": [
+        "Težava z listo"
       ],
       "Sign in problem": [
         "Težave s prijavo"
@@ -3684,6 +3693,9 @@
       "Invalid code": [
         "Neveljavna koda"
       ],
+      "Invalid coupon": [
+        "Neveljaven kupon"
+      ],
       "Invalid domain": [
         "Neveljavna domena"
       ],
@@ -3917,6 +3929,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Najmanjši znesek, ki ga lahko dodate, je ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Najmanjši znesek donacije je ${ price }"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "V vašem zunanjem računu je preveč map. Prilagodite uvoz in izbrišite nekaj map."
@@ -4343,6 +4358,12 @@
       ],
       "Pending": [
         "V teku"
+      ],
+      "Pending invitation": [
+        "Čaka na povabilo",
+        "Čakata na povabilo",
+        "Čakajo na povabilo",
+        "Čakajo na povabilo"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Oprostite, trenutno ne morete zamenjati paketa."
@@ -5561,6 +5582,9 @@
       "30-day money-back guarantee.": [
         "30-dnevno jamstvo z vračilom denarja."
       ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Za ustvarjanje skupin je potrebna domena po meri. Če nimate nastavljene domene po meri, jo najprej nastavite pod ${ linkToDomainPage }."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Ime, ki vam pomaga prepoznati, kje ga uporabljate, da ga lahko enostavno prekličete ali ga pozneje podaljšate."
       ],
@@ -5791,6 +5815,9 @@
       ],
       "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
         "Shramba v oblaku integrirana z ${ DOCS_APP_NAME }"
+      ],
+      "Coming soon": [
+        "Kmalu na voljo"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Konfigurirajte preverjanje pristnosti SAML za svojo organizacijo prek ponudnika identitete (IdP). S tem boste omogočili SAML za celotno organizacijo."
@@ -6391,6 +6418,9 @@
       ],
       "New": [
         "Novo"
+      ],
+      "New activity data will stop being collected and shown.": [
+        "Zbirajo podatkov o dejavnosti se bo ustavilo in podatki ne bodo več prikazani."
       ],
       "News or media article": [
         "Novice ali medijski članki"
@@ -7325,6 +7355,12 @@
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe."
       ],
+      "You have ${ availableCount } new server available.": [
+        "Na voljo imate ${ availableCount } nov strežnik.",
+        "Na voljo imate ${ availableCount } nova strežnika.",
+        "Na voljo imate ${ availableCount } novih strežnikov.",
+        "Na voljo imate ${ availableCount } novih strežnikov."
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Imate preizkusno naročnino ${ planTitle }. Če želite nadaljevati naročnino po preizkusnem obdobju, dodajte način plačila."
       ],
@@ -7979,6 +8015,9 @@
       ],
       "Import interval": [
         "Interval uvoza"
+      ],
+      "Import recent mails": [
+        "Uvozi nedavna e-poštna sporočila"
       ],
       "Import to email address": [
         "Uvozi na e-poštni naslov"
@@ -13288,6 +13327,12 @@
       ],
       "Activate user": [
         "Aktivirajte uporabnika"
+      ],
+      "Add ${ totalServerCount } server?": [
+        "Dodaj ${ totalServerCount } strežnik?",
+        "Dodaj ${ totalServerCount } strežnika?",
+        "Dodaj ${ totalServerCount } strežnike?",
+        "Dodaj ${ totalServerCount } strežnike?"
       ],
       "Add address": [
         "Dodajte naslov"
