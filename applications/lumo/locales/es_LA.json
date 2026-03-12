@@ -3939,6 +3939,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Cantidad inferior al mínimo (${ minimumAmount })."
       ],
+      "An error occurred": [
+        "Ocurrió un error"
+      ],
       "Checkout expired, please try again": [
         "La compra ha expirado, intente de nuevo"
       ],
@@ -3971,6 +3974,9 @@
       ],
       "Invalid code": [
         "Código inválido"
+      ],
+      "Invalid coupon": [
+        "Cupón invalido"
       ],
       "Invalid expiration date": [
         "Fecha de expiración inválida"
@@ -6781,9 +6787,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "No volver a mostrar esta oferta"
-      ],
       "Get the deal": [
         "Aproveche la oferta"
       ]
@@ -6860,11 +6863,6 @@
       ],
       "Use your own email domain": [
         "Use su propio dominio de correo electrónico"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "una mariposa"
       ]
     },
     "q1campaign: Title": {

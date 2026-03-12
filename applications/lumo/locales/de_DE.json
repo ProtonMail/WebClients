@@ -3939,6 +3939,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Mindestbetrag unterschritten (${ minimumAmount })."
       ],
+      "An error occurred": [
+        "Ein Fehler ist aufgetreten"
+      ],
       "Checkout expired, please try again": [
         "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal."
       ],
@@ -3971,6 +3974,9 @@
       ],
       "Invalid code": [
         "Ungültiger Code"
+      ],
+      "Invalid coupon": [
+        "Ungültiger Gutschein"
       ],
       "Invalid expiration date": [
         "Ungültiges Ablaufdatum"
@@ -4064,6 +4070,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Der Mindestspendenbetrag ist ${ price }"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
@@ -6781,9 +6790,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Angebot nicht erneut anzeigen"
-      ],
       "Get the deal": [
         "Deal sichern"
       ]
@@ -6860,11 +6866,6 @@
       ],
       "Use your own email domain": [
         "Nutze deine eigene E-Mail-Domain"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "ein Schmetterling"
       ]
     },
     "q1campaign: Title": {
