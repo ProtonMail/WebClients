@@ -21,6 +21,8 @@
         "test:watch": "yarn test --watch"
     },
     "dependencies": {
+        "@dnd-kit/dom": "^0.3.2",
+        "@dnd-kit/react": "^0.3.2",
         "@livekit/components-react": "^2.9.20",
         "@livekit/krisp-noise-filter": "^0.4.1",
         "@livekit/track-processors": "^0.7.2",
