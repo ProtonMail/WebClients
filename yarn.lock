@@ -37767,6 +37767,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-meet@workspace:applications/meet"
   dependencies:
+    "@dnd-kit/dom": "npm:^0.3.2"
+    "@dnd-kit/react": "npm:^0.3.2"
     "@livekit/components-react": "npm:^2.9.20"
     "@livekit/krisp-noise-filter": "npm:^0.4.1"
     "@livekit/track-processors": "npm:^0.7.2"
