@@ -3,6 +3,7 @@ import { NodeType, SDKEvent } from '@proton/drive';
 import { TransferSpeedMetrics } from '@proton/drive/internal/performance/transferSpeedMetrics';
 import metrics from '@proton/metrics';
 
+import { getNodeStorageSize } from '../../utils/sdk/getNodeStorageSize';
 import { bufferToStream } from '../../utils/stream';
 import { TransferCancel } from '../../utils/transfer';
 import { loadCreateReadableStreamWrapper } from '../../utils/webStreamsPolyfill';
@@ -22,7 +23,6 @@ import type { DownloadOptions } from './downloadTypes';
 import { MalwareDetection } from './malwareDetection/malwareDetection';
 import { createFileDownloadStream } from './utils/createFileDownloadStream';
 import { downloadLogDebug } from './utils/downloadLogger';
-import { getNodeStorageSize } from './utils/getNodeStorageSize';
 import { validateDownloadSignatures } from './utils/handleDownloadCompletion';
 import { handleDownloadError } from './utils/handleError';
 import { hydrateAndCheckNodes, hydratePhotos } from './utils/hydrateAndCheckNodes';

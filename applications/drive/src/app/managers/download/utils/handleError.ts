@@ -5,10 +5,10 @@ import { getFileExtension } from '@proton/shared/lib/helpers/mimetype';
 
 import { sendErrorReport } from '../../../utils/errorHandling';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
+import { getNodeStorageSize } from '../../../utils/sdk/getNodeStorageSize';
 import { isTransferCancelError } from '../../../utils/transfer';
 import { DownloadStatus, useDownloadManagerStore } from '../../../zustand/download/downloadManager.store';
 import { downloadLogDebug } from './downloadLogger';
-import { getNodeStorageSize } from './getNodeStorageSize';
 
 function trackError(error: unknown, downloadId: string, nodes: NodeEntity[]) {
     const errorMessage = c('Info').t`Unexpected download error`;
