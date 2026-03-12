@@ -90,6 +90,7 @@ export const useLegacySearchAdapter = (): SearchViewModelAdapter => {
     }, []);
 
     return {
+        isSearchAvailable: dbExists,
         isSearchEnabled: dbExists,
         isComputingSearchIndex: isEnablingSearch,
         startIndexing: enableSearchAction,
