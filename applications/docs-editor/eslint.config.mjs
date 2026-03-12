@@ -20,8 +20,6 @@ export default defineConfig([
           classes: false,
         },
       ],
-      'monorepo-cop/no-disable-monorepo-no-relative-rule': 'off',
-      'monorepo-cop/no-relative-import-outside-package': 'warn',
       'no-console': [
         'warn',
         {
