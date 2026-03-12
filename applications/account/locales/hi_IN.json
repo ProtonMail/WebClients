@@ -71,6 +71,12 @@
       "Activate recovery": [
         "पुनर्प्राप्ति सक्रिय करें"
       ],
+      "Activate reserved address": [
+        "रिज़र्व किया गया पता सक्रिय करें"
+      ],
+      "Activate this address": [
+        "इस पते को सक्रिय करें"
+      ],
       "Add": [
         "जोड़ें"
       ],
@@ -419,6 +425,9 @@
       "Don't show again": [
         "फिर से न दिखाएं"
       ],
+      "Donate": [
+        "दान करें"
+      ],
       "Done": [
         "पूरा हुआ"
       ],
@@ -583,6 +592,9 @@
       ],
       "Get verification code": [
         "सत्यापन कोड लें"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "अपना खुद का ${ MAIL_APP_NAME } पता लें"
       ],
       "Go back": [
         "वापस जाएं"
@@ -992,6 +1004,9 @@
       "Send reminder": [
         "अनुस्मारक भेजें"
       ],
+      "Send verification code": [
+        "सत्यापन कोड भेजें"
+      ],
       "Set as default": [
         "डिफॉल्ट सेट करें"
       ],
@@ -1120,6 +1135,9 @@
       ],
       "Try for free": [
         "मुफ्त में आजमाएं"
+      ],
+      "Try payment again": [
+        "फिर से भुगतान का प्रयास करें"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "सेव करने की कोशिश वापस करें। सेव करने में असफल इस वजह से हुए: ${ saveError }"
@@ -3638,6 +3656,9 @@
       "Account does not exist": [
         "खाता मौजूद नहीं हैं"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "सक्रियण विफल रहा। जानकारी गलत हो सकती है, या ईमेल पहले से ही सक्रिय है। कृपया अपना इनपुट जांचें या साइनइन करें।"
+      ],
       "Address primary private key not found": [
         "पता प्राथमिक निजी कुंजी नहीं मिली"
       ],
@@ -3732,6 +3753,9 @@
       ],
       "Expired": [
         "समय खत्म"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "आपका पता सक्रिय करने में विफल। कृपया पुनः प्रयास करें।"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "सक्रिय सत्र प्राप्त करने में विफल। कृपया ${ refresh } या बाद में पुन: प्रयास करें।"
@@ -4988,6 +5012,16 @@
         "${ BRAND_NAME }. Privacy by default।"
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "अपना ईमेल पता दर्ज करें"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "वाउचर यहाँ भेजा जाएगा।"
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "वेब ऐप"
@@ -5216,6 +5250,32 @@
       ],
       "Value / Data / Points to": [
         "मान / डेटा / अंक को"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "कल आपके बच्चे की डिजिटल सुरक्षा सुनिश्चित करने के लिए आज एक आसान कदम"
+      ],
+      "Activate your reserved email address": [
+        "अपना रिज़र्व किया गया ईमेल पता सक्रिय करें"
+      ],
+      "Address reservation voucher": [
+        "पता रिज़र्वेशन वाउचर"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "${ BRAND_NAME } Foundation को दान करें"
+      ],
+      "Enter verification code": [
+        "सत्यापन कोड दर्ज करें"
+      ],
+      "Recover activation voucher": [
+        "एक्टिवेशन वाउचर रिकवर करें"
+      ],
+      "Reserve child's email address": [
+        "बच्चे का ईमेल पता रिज़र्व करें"
+      ],
+      "We emailed you the voucher": [
+        "हमने आपको वाउचर ईमेल कर दिया है"
       ]
     },
     "Headline": {
@@ -5826,9 +5886,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "एक ${ protonSubdomain } की मेजबानी ${ BRAND_NAME } द्वारा की जाती है, जो आपको जल्दी से एक सबडोमेन सेटअप करने की अनुमति देती है. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "ग्रुप बनाने के लिए एक कस्टम डोमेन आवश्यक है। यदि आपके पास कस्टम डोमेन सेट नहीं है, तो पहले ${ linkToDomainPage } के अंतर्गत इसे सेटअप करें।"
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "एक नाम यह पहचानने में आपकी मदद करता है कि आप इसका उपयोग कहां करते हैं ताकि आप इसे आसानी से रद्द कर सकें या बाद में इसे बढ़ा सकें।"
       ],
@@ -6379,11 +6436,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "आप जिस ईमेल खाते से आयात करना चाहते हैं, उसके क्रेडेंशियल दर्ज करें।"
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "${ reservedEmail } को रिज़र्व करने के लिए इस्तेमाल किया गया ईमेल पता दर्ज करें।"
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "एक **eduGAIN** संगठन के लिए **${ domain.DomainName }** का Entity ID दर्ज करें।"
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "व्यवस्थापक विशेषाधिकार बहाल करने के लिए संगठन पासवर्ड दर्ज करें। ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "रिज़र्व किया गया ईमेल पता और रिज़र्वेशन के दौरान इस्तेमाल किया गया ईमेल पता दर्ज करें।"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "वह सत्यापन कोड दर्ज करें जो ${ destinationText } को भेजा गया था।"
@@ -6475,11 +6538,17 @@
       "Groups": [
         "ग्रुप"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "अन्य परिवारों को उनके बच्चों के लिए ऑनलाइन एक सुरक्षित शुरुआत देने में मदद करें। इस उपलब्धि को शेयर करें और इसके बारे में सबको बताएँ।"
+      ],
       "here": [
         "यहां"
       ],
       "High Priority": [
         "उच्च प्राथमिकता"
+      ],
+      "How it works": [
+        "यह कैसे काम करता है"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "सत्यापन अभिकथन पर हस्ताक्षर करने के लिए पहचान प्रदाता की सार्वजनिक कुंजी। पहचान प्रदाता से प्रमाणपत्र हैश को डाउनलोड या कॉपी करने के लिए एक स्थान होना चाहिए। बस प्रमाणपत्र हैश को टेक्स्ट क्षेत्र फील्ड में पेस्ट करें।"
@@ -6489,6 +6558,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "यदि कीबोर्ड शॉर्टकट सक्षम हैं, तो आप त्वरित कार्यों के लिए या अलग-अलग दृश्यों पर जाने के लिए निम्नलिखित कुंजियों का उपयोग कर सकते हैं। ${ metaKey } + K हमेशा सक्षम रहता है।"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "यदि आपके द्वारा दर्ज किया गया ईमेल किसी बच्चे का ईमेल पता रिज़र्व करने के लिए इस्तेमाल किया गया था, तो हम एक्टिवेशन वाउचर फिर से भेजेंगे।"
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "यदि यह पुराने पासवर्ड रीसेट के कारण है, तो आप संदेश को फिर से प्रदर्शित होने से रोक सकते हैं"
@@ -6695,6 +6767,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "बस अपने चयन की पुष्टि करें और हम बाकी काम करेंगे।"
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "ज़रूरत पड़ने तक वाउचर को सुरक्षित रखें, उदाहरण के लिए ${ DRIVE_APP_NAME } में।"
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "इन निर्देश और सुझावों से अपनी जानकारी को और अधिक सुरक्षित और निजी रखें।"
@@ -7045,6 +7120,9 @@
       "purchase additional storage": [
         "अतिरिक्त भंडारण खरीद"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "रिज़र्वेशन वाउचर ईमेल द्वारा प्राप्त करें। आप या बच्चा अगले 15 वर्षों के भीतर पते को सक्रिय करने के लिए इसका उपयोग कर सकते हैं। ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "हाल में उपयोग किए गए सर्वर:"
       ],
@@ -7226,6 +7304,9 @@
       "Some keys successfully reactivated": [
         "कुछ कुंजियाँ सफलतापूर्वक पुन: सक्रिय हो गईं"
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "कुछ गड़बड़ हुई। कृपया पुनः प्रयास करें या ग्राहक सहायता से संपर्क करें।"
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "वह डोमेन निर्दिष्ट करें जिसे SAML SSO के साथ प्रमाणित करने की अनुमति है।"
       ],
@@ -7238,6 +7319,9 @@
       "Step ${ step }": [
         "कदम ${ step }",
         "कदम ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "चरण ${ step }/${ totalSteps }"
       ],
       "Storage allocated to other users in this organisation": [
         "इस संगठन में अन्य उपयोगकर्ताओं को आवंटित संग्रहण"
@@ -7500,6 +7584,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "${ BRAND_NAME } उत्पादों के नवीनतम विकास से जुड़े रहने के लिए, आप समय-समय पर हमारे विभिन्न ईमेल और ${ blogLink } की सदस्यता ले सकते हैं।"
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "दुरुपयोग या धोखाधड़ी को रोकने के लिए, हम न्यूनतम ${ minimumDonation } के दान का अनुरोध करते हैं। यह विश्व स्तर पर डिजिटल निजता की रक्षा करने वाले ${ protonFoundationLink } के काम का समर्थन करता है और अगली पीढ़ी को सुरक्षित रखने में मदद करता है।"
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "आगे बढ़ने के लिए, खाता पुनर्प्राप्ति विधि चुनें ताकि हम अनुरोध को सत्यापित कर सकें।"
       ],
@@ -7674,6 +7761,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "हम आपको सलाह देते हैं कि जब भी संभव हो आधिकारिक ${ VPN_APP_NAME } एप्लिकेशन का उपयोग करें।"
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "हम लेनदेन पूरा नहीं कर सके। कृपया पुनः प्रयास करें।"
+      ],
       "We couldn’t process your payment.": [
         "आपका भुगतान प्रॉसेस नहीं कर सके।"
       ],
@@ -7760,6 +7850,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "जब आप एक सर्वर को गेटवे से हटाते हैं, तो वह 10 दिनों की निष्क्रियता अवधि में चला जाता है। इस सर्वर को नए गेटवे में जोड़ा जा सकता है, लेकिन इसका देश परिवर्तित नहीं किया जा सकता।"
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "जब आप पता सक्रिय करने के लिए तैयार हों, तो QR कोड स्कैन करें या वाउचर में दिए गए लिंक का उपयोग करें।"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "जब आपकी सदस्यता नवीनीकृत हो जाती है, तो हम उपरोक्त भुगतान विधि से शुल्क लेने से पहले कोई भी उपलब्ध क्रेडिट लागू करेंगे।"
@@ -8014,6 +8107,9 @@
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "आपकी सहायता टिकट बंद कर दि गयी है। ${ BRAND_NAME } सहायता से संपर्क करने के लिए धन्यवाद।"
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "आपके रिज़र्व किए गए ${ BRAND_NAME } ईमेल पते का वाउचर: ${ reservedEmail }"
+      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "आप इन्हें तुरंत किसी अन्य गेटवे में जोड़ सकेंगे।"
       ],
@@ -8033,6 +8129,11 @@
       ],
       "Selected color:": [
         "रंग चुनें:"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "${ parentEmail } पर भेजा गया सत्यापन कोड दर्ज करें।"
       ]
     },
     "Info - folder colouring feature": {
@@ -8456,6 +8557,9 @@
       "Actions": [
         "एक्शन"
       ],
+      "Activation code": [
+        "एक्टिवेशन कोड"
+      ],
       "Activity": [
         "चहलपहल"
       ],
@@ -8624,6 +8728,9 @@
       "Choose a name for the generated certificate file": [
         "बनाए गए प्रमाण फाइल के लिए नाम चुनें"
       ],
+      "Choose an address to reserve for your child": [
+        "अपने बच्चे के लिए रिज़र्व करने हेतु एक पता चुनें"
+      ],
       "City": [
         "शहर"
       ],
@@ -8771,6 +8878,12 @@
       "Don't show this again": [
         "फिर से न दिखाएं"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "${ BRAND_NAME } Foundation को $1 या अधिक दान करें"
+      ],
+      "Donation amount": [
+        "दान की रकम"
+      ],
       "e.g. example.com": [
         "उदा. udaaharan.in"
       ],
@@ -8809,6 +8922,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "फिंगरप्रिंट के साथ कुंजी के लिए पासवर्ड दर्ज करें: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "अपना ईमेल पता दर्ज करें"
       ],
       "Enter your password": [
         "आपका पासवर्ड डालें"
@@ -9173,6 +9289,12 @@
       "Require 2FA for everyone": [
         "सभी के लिए 2FA अनिवार्य करें"
       ],
+      "Reserved address": [
+        "रिज़र्व किया गया पता"
+      ],
+      "Reserved email address": [
+        "रिज़र्व किया गया ईमेल पता"
+      ],
       "Reveal password": [
         "पासवर्ड प्रकट"
       ],
@@ -9187,6 +9309,9 @@
       ],
       "Send crash reports": [
         "क्रेश रिपोर्ट भेजे"
+      ],
+      "Set password": [
+        "पासवर्ड सेट करें"
       ],
       "Show ${ n } administrator": [
         "${ n } एडमिनिस्ट्रेटर दिखाएं",
@@ -9260,6 +9385,9 @@
       ],
       "Time zone": [
         "समय क्षेत्र"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "सक्रिय करने के लिए, QR-कोड स्कैन करें या यहाँ जाएँ:"
       ],
       "To help us improve, please explain why you are leaving.": [
         "हमें सुधार करने में मदद करने के लिए, कृपया बताएं कि आप क्यों जा रहे हैं।"
@@ -9348,11 +9476,20 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "हां, मैं इस खाते और इसके सभी डेटा को स्थायी रूप से हटाना चाहता हूं।"
       ],
+      "Your activation code:": [
+        "आपका एक्टिवेशन कोड:"
+      ],
       "Your calendar URL": [
         "आपका कैलेंडर यूआरएल"
       ],
+      "Your email address": [
+        "आपका ईमेल पता"
+      ],
       "Your password (admin)": [
         "आपका पासवर्ड (व्यवस्थापक)"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "आपके रिज़र्व किए गए ${ BRAND_NAME } ईमेल पते का वाउचर:"
       ],
       "ZIP code": [
         "ज़िप कोड"
@@ -9474,6 +9611,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "${ BRAND_NAME } Foundation का"
+      ],
       "Activity log": [
         "गतिविधि लॉग"
       ],
@@ -9491,6 +9631,9 @@
       ],
       "Calendars": [
         "कैलेंडर"
+      ],
+      "Can't find your code?": [
+        "अपना कोड नहीं मिल रहा?"
       ],
       "clearing your browser cache": [
         "अपना ब्राउज़र कैश साफ़ करना"
@@ -9608,6 +9751,20 @@
       ],
       "What’s this?": [
         "यह क्या है?"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "ईमेल"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -11907,6 +12064,9 @@
       ],
       "Address": [
         "पता"
+      ],
+      "Amount": [
+        "रकम"
       ],
       "Anderson": [
         "उदा. विकास"
@@ -14239,6 +14399,9 @@
       "Verification code copied to clipboard": [
         "सत्यापन कोड क्लिपबोर्ड पर कॉपी किया गया"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "${ parentEmail } पर सत्यापन कोड भेजा गया"
+      ],
       "Verification successful": [
         "सत्यापन सफल रहा"
       ],
@@ -14259,6 +14422,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "यदि आपने एक मान्य रिकवरी फोन नंबर दर्ज किया है, तो आपको एक मिनट के भीतर आपका यूज़रनेम SMS के द्वारा प्राप्त होगा।"
+      ],
+      "Your address has been activated": [
+        "आपका पता सक्रिय कर दिया गया है"
       ]
     },
     "Success message": {
@@ -15290,6 +15456,12 @@
       ],
       "Privacy and data collection": [
         "निजता और डाटा संग्रह"
+      ],
+      "Problem processing your payment": [
+        "आपका भुगतान प्रॉसेस करने में समस्या"
+      ],
+      "Problem processing your request": [
+        "आपका अनुरोध प्रॉसेस करने में समस्या"
       ],
       "Processing...": [
         "प्रोसेस हो रहा है..."
