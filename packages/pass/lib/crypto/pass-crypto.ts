@@ -91,7 +91,7 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
 
     const unregisterInactiveShares = () => {
         context.shareManagers.forEach((shareManager, shareId) => {
-            if (!shareManager.isActive(context.userKeys)) {
+            if (!shareManager.isActive()) {
                 logger.info(`[PassCrypto] Unregistering share ${logId(shareId)} (inactive)`);
                 context.shareManagers.delete(shareId);
             }
@@ -183,7 +183,7 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
 
         getContext: () => context,
 
-        async hydrate({ user, addresses, keyPassword, snapshot, clear }) {
+        async hydrate({ user, addresses, keyPassword, snapshot, groups, clear }) {
             logger.info('[PassCrypto] Hydrating crypto state');
 
             if (clear) worker.clear();
@@ -207,6 +207,8 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
                     context.shareManagers = new Map(shareManagers);
                     logger.info('[PassCrypto] Hydrated from local snapshot');
                 }
+
+                if (groups) groups.forEach(setGroupKeys);
             } catch (err) {
                 logger.warn('[PassCrypto] Hydration failed', err);
                 const message = err instanceof Error ? err.message : 'unknown error';
@@ -266,7 +268,7 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
 
         canOpenShare(shareId) {
             try {
-                return worker.getShareManager(shareId).isActive(context.userKeys);
+                return worker.getShareManager(shareId).isActive();
             } catch (_) {
                 return false;
             }
@@ -284,9 +286,9 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
 
             try {
                 const { encryptedShare, encryptedShareKeys } = data;
-                const { ShareID: shareId } = encryptedShare;
+                const { ShareID: shareId, GroupID: groupId } = encryptedShare;
                 const shareManager = hasShareManager(shareId) ? getShareManager(shareId) : undefined;
-                const groupKeys = encryptedShare.GroupID ? await getGroupKeys(encryptedShare.GroupID) : undefined;
+                const groupKeys = groupId ? await getGroupKeys(groupId) : undefined;
                 const canOpenShare = processes.canOpenShare(
                     encryptedShare,
                     encryptedShareKeys,
