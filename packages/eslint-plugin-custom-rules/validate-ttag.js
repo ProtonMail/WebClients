@@ -1,5 +1,3 @@
-/* eslint-env es6 */
-
 /*
 
 // ❌ Wrong
@@ -71,7 +69,7 @@ const getTemplateExpressions = (node, context) => {
     if (node.type === 'TemplateLiteral') {
         return node.expressions.map((exp) => {
             if (exp.type === 'MemberExpression') {
-                return context.getSourceCode().getText(exp);
+                return context.sourceCode.getText(exp);
             }
             return exp.name || exp.value;
         });
@@ -79,7 +77,7 @@ const getTemplateExpressions = (node, context) => {
     if (node.type === 'TaggedTemplateExpression' && node.quasi) {
         return node.quasi.expressions.map((exp) => {
             if (exp.type === 'MemberExpression') {
-                return context.getSourceCode().getText(exp);
+                return context.sourceCode.getText(exp);
             }
             return exp.name || exp.value;
         });
