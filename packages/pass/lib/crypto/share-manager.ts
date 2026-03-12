@@ -113,7 +113,7 @@ export const createShareManager = <T extends ShareType = ShareType>(
                     const { addresses, groupKeys: groupKeysContext } = PassCrypto.getContext();
                     const { addressId, groupId } = manager.getShare();
                     const addressKeys = addresses?.find((address) => address.ID === addressId)?.Keys;
-                    const groupKeys = groupKeysContext.get(groupId as string);
+                    const groupKeys = groupId ? groupKeysContext.get(groupId) : [];
                     return !!(addressKeys?.length && groupKeys?.length);
                 }
 
