@@ -16,7 +16,7 @@ import BornPrivateFormContainer from '../../components/form/BornPrivateFormConta
 import BornPrivateFormHeading from '../../components/form/BornPrivateFormHeading';
 
 interface RecoveryEmailProps {
-    reservedEmail?: string;
+    reservedEmail: string;
     onContinue: (reservedEmail: string, parentEmail: string) => void;
     onBack: () => void;
 }
@@ -28,8 +28,8 @@ const RecoveryEmail = ({ reservedEmail, onContinue, onBack }: RecoveryEmailProps
     const [localReservedEmail, setLocalReservedEmail] = useState('');
     const [parentEmail, setParentEmail] = useState('');
     const { validator, onFormSubmit } = useFormErrors();
-    const hasUsername = Boolean(reservedEmail && reservedEmail.includes('@') && reservedEmail.split('@')[0]);
-    const usernameToUse = hasUsername ? reservedEmail! : localReservedEmail;
+    const hasUsername = Boolean(reservedEmail.split('@')[0]);
+    const usernameToUse = hasUsername ? reservedEmail : localReservedEmail;
 
     const handleSubmit = async () => {
         if (!onFormSubmit()) {
