@@ -79,7 +79,7 @@ export const getSettings = (): SettingsStore => {
 
 export function setReleaseCategory(targetEnv: Environment | undefined) {
     settingsLogger.info("Updating release category", targetEnv);
-    let releaseCategory = RELEASE_CATEGORIES.STABLE;
+    let releaseCategory: RELEASE_CATEGORIES;
     switch (targetEnv) {
         case "alpha":
             releaseCategory = RELEASE_CATEGORIES.ALPHA;
