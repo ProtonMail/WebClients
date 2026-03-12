@@ -2,10 +2,10 @@ import type { NodeEntity } from '@proton/drive';
 import { NodeType } from '@proton/drive';
 
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
+import { getNodeStorageSize } from '../../../utils/sdk/getNodeStorageSize';
 import { DownloadDriveClientRegistry } from '../DownloadDriveClientRegistry';
 import type { AsyncQueue } from './asyncQueue';
 import { createAsyncQueue } from './asyncQueue';
-import { getNodeStorageSize } from './getNodeStorageSize';
 import { checkUnsupportedNode } from './hydrateAndCheckNodes';
 
 export type ArchiveTraversalResult = {
