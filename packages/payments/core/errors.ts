@@ -19,10 +19,10 @@ export class PaymentsApiError extends Error {
     }
 }
 
-export class TaxExemptionNotSupportedError extends PaymentsApiError {
+export class VatReverseChargeNotSupportedError extends PaymentsApiError {
     constructor() {
-        super(c('Error').t`Tax exemption is not supported for this plan`);
-        this.name = 'TaxExemptionNotSupportedError';
+        super(c('Error').t`Reverse charge scheme is not supported for this plan`);
+        this.name = 'VatReverseChargeNotSupportedError';
     }
 }
 

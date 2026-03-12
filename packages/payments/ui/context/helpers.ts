@@ -55,6 +55,10 @@ export const checkMultiplePlans = async ({
     getLocalizedPlansMap: (params: { paramCurrency?: Currency }) => FullPlansMap;
     billingAddress: BillingAddress;
 }) => {
+    if (plansToCheck.length === 0) {
+        return [];
+    }
+
     const checkSubscriptionData = plansToCheck
         .map((planToCheck) =>
             getSubscriptionDataFromPlanToCheck({ ...planToCheck, BillingAddress: billingAddress, VatId: undefined })
@@ -77,7 +81,9 @@ export const checkMultiplePlans = async ({
         return data !== null;
     });
 
-    const resultsPromise = paymentsApi.multiCheck(truthySubscriptionData, { cached: true, silence: true });
+    const currency = plansToCheck.at(0)?.currency;
+    const plansMap = getLocalizedPlansMap({ paramCurrency: currency });
+    const resultsPromise = paymentsApi.multiCheck(truthySubscriptionData, { silence: true, plansMap });
 
     plansToCheck
         .map((planToCheck) => planToCheck.groupId)
@@ -91,7 +97,6 @@ export const checkMultiplePlans = async ({
     for (let index = 0; index < plansToCheck.length; index++) {
         if (indexesToExcludeFromCheck.includes(index)) {
             const planToCheck = plansToCheck[index];
-            const plansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
             normalizedResults.push(
                 computeOptimisticCheckResult({ plansMap, ...planToCheck }, subscription, { isTrial: planToCheck.trial })
             );

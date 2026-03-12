@@ -34,14 +34,33 @@ export interface SessionData {
     subscription: Subscription | FreeSubscription | undefined;
     organization: Organization | undefined;
     state: {
+        /**
+         * If true then the user has permission to make payments (free user or organization admin,
+         * but not an organization member)
+         */
         payable: boolean;
+        /**
+         * If true then the user is an organization admin
+         */
         admin: boolean;
+        /**
+         * If true then the user has any active paid subscription
+         */
         subscribed: boolean;
+        /**
+         * If true then the user already has paid access to the target app's premium features
+         * and no upsell is available
+         */
         access: boolean;
         /**
-         * If true then the current plan can't be purchased by the user
+         * If true then the selected plan can't be purchased by the user
          */
         unavailable: boolean;
+        /**
+         * If true then user can't buy the selected plan because currently they use the reverse charge scheme, while the
+         * selected plan doesn't support it
+         */
+        vatReverseChargeNotSupported: boolean;
     };
 }
 
@@ -56,6 +75,7 @@ export interface SubscriptionData {
     type?: 'cc' | 'pp' | 'btc';
     billingAddress: BillingAddress;
     vatNumber?: string;
+    vatReverseChargeNotSupported?: boolean;
 }
 
 export interface ReferralData {
