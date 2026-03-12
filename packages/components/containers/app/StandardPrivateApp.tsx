@@ -15,9 +15,10 @@ import StorageListener from './StorageListener';
 interface Props {
     children: ReactNode;
     noModals?: boolean;
+    noNotifications?: boolean;
 }
 
-const StandardPrivateApp = ({ children, noModals }: Props) => {
+const StandardPrivateApp = ({ children, noModals, noNotifications }: Props) => {
     const { isElectronDisabled } = useIsInboxElectronApp();
     const refreshRef = useRef<RefreshFn>(() => {});
     const refresh = useCallback(() => {
@@ -32,7 +33,7 @@ const StandardPrivateApp = ({ children, noModals }: Props) => {
         <SessionRecoveryLocalStorageManager>
             <ThemeInjector />
             <DensityInjector />
-            <NotificationsChildren />
+            {!noNotifications && <NotificationsChildren />}
             <LocaleInjector onRerender={refresh} />
             {!noModals && <ModalsChildren />}
             <StorageListener />

@@ -321,6 +321,9 @@ enum LumoFeatureFlag {
     LumoProjects = 'LumoProjects',
     LumoSmoothedRendering = 'LumoSmoothedRendering',
     LumoImageTools = 'LumoImageTools',
+    LumoNativeComposer = 'LumoNativeComposer',
+    LumoNativeComposerImage = 'LumoNativeComposerImage',
+    LumoNativeComposerModelSelection = 'LumoNativeComposerModelSelection',
     LumoAPIKeyManagement = 'LumoAPIKeyManagement',
 }
 

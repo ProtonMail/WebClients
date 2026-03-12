@@ -7,7 +7,6 @@ import {
     AuthenticationProvider,
     ErrorBoundary,
     ModalsChildren,
-    NotificationsChildren,
     ProtonApp,
     StandardErrorPage,
 } from '@proton/components';
@@ -26,6 +25,7 @@ import { createUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthent
 import { FlagProvider } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
 
+import ConditionalNotificationsChildren from '../../components/ConditionalNotificationsChildren';
 import { IndexedDBConnectionMonitor } from '../../components/IndexedDBConnectionMonitor';
 import LumoLoader from '../../components/Loading/LumoLoader';
 import ProtectGuestRouteGuard from '../../components/ProtectGuestRouteGuard/ProtectGuestRouteGuard';
@@ -138,7 +138,7 @@ const GuestApp = () => {
                                 <ProtectGuestRouteGuard>
                                     <ApiProvider api={extraThunkArguments.api}>
                                         <ErrorBoundary big component={<StandardErrorPage big />}>
-                                            <NotificationsChildren />
+                                            <ConditionalNotificationsChildren />
                                             <ModalsChildren />
                                             <IndexedDBConnectionMonitor />
                                             <OnboardingProvider>
