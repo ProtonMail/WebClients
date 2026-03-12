@@ -2,6 +2,7 @@ import useSettingsLink from '@proton/components/components/link/useSettingsLink'
 import useConfig from '@proton/components/hooks/useConfig';
 import { type Currency, getPlanNameFromIDs } from '@proton/payments';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, APPS_WITH_IN_APP_PAYMENTS } from '@proton/shared/lib/constants';
 import { isElectronApp, isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
@@ -58,7 +59,7 @@ const useSelectDeal = (callback?: () => void) => {
 
         const url = `/dashboard?${urlSearchParams.toString()}`;
         if (isElectronApp && !hasInboxDesktopInAppPayments) {
-            openLinkInBrowser(getAppHref(url, APPS.PROTONACCOUNT));
+            openLinkInBrowser(getAppHref(`/${getSlugFromApp(APP_NAME)}${url}`, APPS.PROTONACCOUNT));
             return;
         } else {
             goToSettingsLink(url);
