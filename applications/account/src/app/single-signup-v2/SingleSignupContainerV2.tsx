@@ -36,6 +36,7 @@ import {
     hasPlanIDs,
 } from '@proton/payments';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
+import { VatReverseChargeErrorModal } from '@proton/payments/ui/billing-address/containers/VatReverseChargeErrorModal';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 // eslint-disable-next-line no-restricted-imports
@@ -256,7 +257,8 @@ const SingleSignupContainerV2 = ({
     const [subUserModalProps, setSubUserModal, renderSubUserModal] = useModalState();
     const [accessModalProps, setHasAccessModal, renderAccessModal] = useModalState();
     const [planUnavailableModalProps, setHasPlanUnavailableModal, renderPlanUnavailableModal] = useModalState();
-
+    const [vatReverseChargeErrorModalProps, setHasVatReverseChargeErrorModal, renderVatReverseChargeErrorModal] =
+        useModalState();
     const [signupParameters, setSignupParameters] = useState((): SignupParameters2 => {
         return getSignupParameters({
             toApp,
@@ -467,6 +469,11 @@ const SingleSignupContainerV2 = ({
                 setSubUserModal(true);
                 return;
             }
+        }
+
+        if (session.state.vatReverseChargeNotSupported) {
+            setHasVatReverseChargeErrorModal(true);
+            return;
         }
     };
 
@@ -1375,6 +1382,26 @@ const SingleSignupContainerV2 = ({
                     onContinue={async () => {
                         await handleStartUserOnboarding(getFreeSubscriptionData(model.subscriptionData));
                     }}
+                />
+            )}
+            {renderVatReverseChargeErrorModal && (
+                <VatReverseChargeErrorModal
+                    {...vatReverseChargeErrorModalProps}
+                    onCancel={() => {
+                        const b2bAudience = signupConfiguration.audiences?.find(
+                            (audience) => audience.value === Audience.B2B
+                        );
+
+                        if (b2bAudience) {
+                            const descriptor = b2bAudience.locationDescriptor;
+                            const href = typeof descriptor === 'string' ? descriptor : history.createHref(descriptor);
+
+                            // To avoid any potential problems with the state management, we are redirecting user back
+                            // to B2B plans selection page by opening the URL directly.
+                            window.location.replace(href);
+                        }
+                    }}
+                    disableSpaNavigation
                 />
             )}
             <UnAuthenticated>

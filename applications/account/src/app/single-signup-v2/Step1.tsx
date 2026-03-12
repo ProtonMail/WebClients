@@ -56,6 +56,7 @@ import {
     switchPlan,
 } from '@proton/payments';
 import { getCheckoutUi, getOptimisticCheckResult, getOptimisticCheckout } from '@proton/payments/core/checkout';
+import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type {
     EstimationChangeAction,
@@ -338,6 +339,20 @@ const Step1 = ({
                 }));
             }
         } catch (e) {
+            if (e instanceof VatReverseChargeNotSupportedError && model.session) {
+                onTriggerModals({
+                    session: {
+                        ...model.session,
+                        state: {
+                            ...model.session.state,
+                            vatReverseChargeNotSupported: true,
+                        },
+                    },
+                    upsell: model.upsell,
+                    subscriptionData: model.subscriptionData,
+                });
+            }
+
             if (latestRef.current === latest) {
                 handleError(e);
                 // Reset any optimistic state on failures

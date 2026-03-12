@@ -74,7 +74,7 @@ import {
 } from '@proton/payments';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/payments/core/checkout';
-import { TaxExemptionNotSupportedError } from '@proton/payments/core/errors';
+import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
 import { computeOptimisticSubscriptionMode } from '@proton/payments/core/optimisticSubscriptionMode';
 import { InvalidChargebeeCardDataError } from '@proton/payments/core/payment-processors/chargebeeCardPayment';
 import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
@@ -84,6 +84,7 @@ import type { SubscriptionModificationChangeAudienceTelemetry } from '@proton/pa
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useSubscriptionModificationChangeStepTelemetry } from '@proton/payments/telemetry/useSubscriptionModificationChangeStepTelemetry';
 import { PaymentsContextProvider } from '@proton/payments/ui';
+import { VatReverseChargeErrorModal } from '@proton/payments/ui/billing-address/containers/VatReverseChargeErrorModal';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
@@ -499,6 +500,8 @@ const SubscriptionContainerInner = ({
         return APPS.PROTONACCOUNT;
     }, [APP_NAME]);
 
+    const isAccountLiteApp = application === APPS.PROTONACCOUNTLITE;
+
     const metricsProps = {
         ...outerMetricsProps,
         step: metricStepMap[model.step],
@@ -812,9 +815,7 @@ const SubscriptionContainerInner = ({
 
         const additionalChecks = await paymentsApi.multiCheck(additionalPayloads, {
             signal,
-            cached: true,
             silence: true,
-            optimisticFallback: true,
             plansMap: plansMapRef.current,
         });
 
@@ -931,9 +932,8 @@ const SubscriptionContainerInner = ({
         reportChangeTelemetry({ action, selectedPlanIDs: newlySelectedPlanIDs });
     };
 
-    const handleTaxExemptionNotSupportedError = (error: TaxExemptionNotSupportedError) => {
-        createNotification({ text: error.message, type: 'error' });
-    };
+    const [vatReverseChargeErrorModalProps, setVatReverseChargeErrorModal, renderVatReverseChargeErrorModal] =
+        useModalState();
 
     const check = async (
         newModel: Model = model,
@@ -1049,9 +1049,6 @@ const SubscriptionContainerInner = ({
                     silence: true,
                     previousEstimation: checkResult,
                 });
-                if (newCheckResult.error instanceof TaxExemptionNotSupportedError) {
-                    handleTaxExemptionNotSupportedError(newCheckResult.error);
-                }
 
                 try {
                     await runAdditionalChecks(
@@ -1091,8 +1088,8 @@ const SubscriptionContainerInner = ({
                     setModel({ ...model, step: SUBSCRIPTION_STEPS.NETWORK_ERROR });
                 }
 
-                if (error instanceof TaxExemptionNotSupportedError) {
-                    handleTaxExemptionNotSupportedError(error);
+                if (error instanceof VatReverseChargeNotSupportedError) {
+                    setVatReverseChargeErrorModal(true);
                     return;
                 }
 
@@ -1504,7 +1501,7 @@ const SubscriptionContainerInner = ({
                                 {...paymentFacade}
                                 noMaxWidth
                                 hideFirstLabel={true}
-                                hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
+                                hideSavedMethodsDetails={isAccountLiteApp}
                                 onCurrencyChange={handleChangeCurrency}
                                 taxCountry={billingAddressHook.taxCountry}
                                 vatNumber={billingAddressHook.vatNumber}
@@ -1616,6 +1613,30 @@ const SubscriptionContainerInner = ({
                 );
             })}
             {cancelSubscriptionModals}
+            {renderVatReverseChargeErrorModal && (
+                <VatReverseChargeErrorModal
+                    {...vatReverseChargeErrorModalProps}
+                    disableSpaNavigation={isAccountLiteApp}
+                    onEditAddress={() => {
+                        // Do nothing for account lite app, because we have disableSpaNavigation=true, so "Edit billing address"
+                        // button is just <a> link which will redirect user to the dashboard. So basically onEditAddress
+                        // callback is irrelevant for account lite app.
+
+                        if (!isAccountLiteApp) {
+                            onCancel?.();
+                        }
+                    }}
+                    onCancel={() => {
+                        if (isAccountLiteApp) {
+                            // after VatReverseChargeErrorModal is closed, switch back to plan selection
+                            setModel({ ...model, step: SUBSCRIPTION_STEPS.PLAN_SELECTION });
+                        } else {
+                            // after VatReverseChargeErrorModal is closed, close the subscription modal too
+                            onCancel?.();
+                        }
+                    }}
+                />
+            )}
             {render({
                 onSubmit,
                 title: TITLE[model.step],
