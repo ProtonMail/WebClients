@@ -44,16 +44,6 @@ const GenericSignupController = (props: BaseSignupContextProps) => {
     );
 };
 
-const EmailReservationController = () => {
-    return (
-        <Switch>
-            <Route>
-                <EmailReservationSignup />
-            </Route>
-        </Switch>
-    );
-};
-
 const SignupCtxRouter = (props: BaseSignupContextProps) => {
     return (
         <PaymentsContextOptimisticProvider preload={false} authenticated={false} cachedPlans={cachedPlans}>
@@ -74,13 +64,13 @@ const SignupCtxRouter = (props: BaseSignupContextProps) => {
                     <GreenlandSignup {...props} />
                 </Route>
                 <Route path={SSO_PATHS.BORN_PRIVATE}>
-                    <EmailReservationController />
+                    <EmailReservationSignup />
                 </Route>
                 <Route>
                     <GenericSignupController {...props} />
                 </Route>
-            </Switch >
-        </PaymentsContextOptimisticProvider >
+            </Switch>
+        </PaymentsContextOptimisticProvider>
     );
 };
 

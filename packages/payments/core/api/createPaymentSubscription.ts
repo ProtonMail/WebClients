@@ -35,6 +35,7 @@ interface BuyProductConfigParams {
     Amount: number;
     Currency: Currency;
     BillingAddress: BillingAddress;
+    Quantity: number;
 }
 
 type CommonSubscribeData = {
@@ -93,13 +94,13 @@ export function getLifetimeProductType(data: Pick<SubscribeData, 'Plans'>) {
 /**
  * Builds the request config for payments/v5/products (used by buyProduct and by donation capture).
  */
-export function getBuyProductConfig(product: ProductParam, params: BuyProductConfigParams, quantity = 1) {
+export function getBuyProductConfig(product: ProductParam, params: BuyProductConfigParams) {
     const url = 'payments/v5/products';
     return {
         url,
         method: 'post',
         data: {
-            Quantity: quantity,
+            Quantity: params.Quantity,
             PaymentToken: params.PaymentToken,
             ProductType: params.ProductType,
             Amount: params.Amount,
@@ -122,6 +123,7 @@ const buyProduct = (rawData: SubscribeData, product: ProductParam) => {
         Amount: sanitizedData.Amount,
         Currency: sanitizedData.Currency,
         BillingAddress: sanitizedData.BillingAddress,
+        Quantity: 1,
     });
 };
 
