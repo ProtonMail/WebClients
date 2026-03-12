@@ -3,7 +3,7 @@
     "description": "React web application to manage ProtonMail calendar",
     "keywords": [],
     "license": "GPL-3.0",
-    "author": "",
+    "author": "test",
     "main": "index.js",
     "scripts": {
         "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso",
