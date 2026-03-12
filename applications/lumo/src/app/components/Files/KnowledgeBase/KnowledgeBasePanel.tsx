@@ -23,8 +23,9 @@ import { SearchService } from '../../../services/search/searchService';
 import { type Attachment, type Message, getProjectInfo } from '../../../types';
 import type { DriveDocument } from '../../../types/documents';
 import { getMimeTypeFromExtension } from '../../../util/filetypes';
-import { DriveBrowser } from '../DriveBrowser';
+import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import { FilePreviewPanel } from '../Common/FilePreviewPanel';
+import { DriveBrowser } from '../DriveBrowser';
 import { KnowledgeBaseContextProgressBar } from './KnowledgeBaseContextProgressBar';
 import { KnowledgeBaseFileItem } from './KnowledgeBaseFileItem';
 import { KnowledgeBaseGuestDriveUpsell } from './KnowledgeBaseGuestDriveUpsell';
@@ -259,8 +260,7 @@ const ExcludedFilesSection = ({
     return (
         <div className="mb-4 w-full">
             <h3 className="text-sm text-bold mb-1">
-                {c('collider_2025: Info').t`Excluded`}{' '}
-                <span className="color-weak text-normal">{totalExcluded}</span>
+                {c('collider_2025: Info').t`Excluded`} <span className="color-weak text-normal">{totalExcluded}</span>
             </h3>
             <p className="text-xs color-weak mb-3">
                 {c('collider_2025: Info').t`These files won't be used for future questions.`}
@@ -320,6 +320,7 @@ export const KnowledgeBasePanel = ({
     const { createNotification } = useNotifications();
     const contextFilters = useLumoSelector(selectContextFilters);
     const fileProcessingService = useFileProcessing();
+    useNativeComposerVisibilityApi({ isBlocking: true });
 
     const [showDriveBrowser, setShowDriveBrowser] = useState(initialShowDriveBrowser);
     const [showKnowledgeExplanation, setShowKnowledgeExplanation] = useState(false);
@@ -450,11 +451,7 @@ export const KnowledgeBasePanel = ({
                         'bg-weak rounded-xl shadow-lifted': !isModal,
                     })}
                 >
-                    <FilePreviewPanel
-                        attachment={previewFile}
-                        onBack={() => setPreviewFile(null)}
-                        onClose={onClose}
-                    />
+                    <FilePreviewPanel attachment={previewFile} onBack={() => setPreviewFile(null)} onClose={onClose} />
                 </div>
             </div>
         );
