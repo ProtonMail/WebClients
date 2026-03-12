@@ -296,7 +296,7 @@ export const ProtonMeetContainer = ({
             const displayCode = await wasmApp?.getGroupDisplayCode();
             const nextMlsGroupState = {
                 displayCode: displayCode?.full_code || null,
-                epoch: newGroupKeyInfo.epoch,
+                epoch: Number(newGroupKeyInfo.epoch),
             };
             dispatch(setMlsGroupState(nextMlsGroupState));
             mlsGroupStateRef.current = nextMlsGroupState;
@@ -319,7 +319,7 @@ export const ProtonMeetContainer = ({
             const displayCode = await wasmApp?.getGroupDisplayCode();
             const nextMlsGroupState = {
                 displayCode: displayCode?.full_code || null,
-                epoch: epoch,
+                epoch: Number(epoch),
             };
             dispatch(setMlsGroupState(nextMlsGroupState));
             mlsGroupStateRef.current = nextMlsGroupState;
@@ -402,7 +402,7 @@ export const ProtonMeetContainer = ({
             const displayCode = await wasmApp?.getGroupDisplayCode();
             const nextMlsGroupState = {
                 displayCode: displayCode?.full_code || null,
-                epoch: groupKeyData.epoch,
+                epoch: Number(groupKeyData.epoch),
             };
             dispatch(setMlsGroupState(nextMlsGroupState));
             mlsGroupStateRef.current = nextMlsGroupState;
