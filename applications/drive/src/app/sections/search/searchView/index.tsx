@@ -46,8 +46,15 @@ export const SearchView = () => {
     const isFoudationSearchEnabled = useFlagsDriveFoundationSearch();
     const searchModel = isFoudationSearchEnabled ? foundationSearchModel : legacySearchModel;
 
-    const { isSearchEnabled, isComputingSearchIndex, startIndexing, isSearching, resultUids, refreshResults } =
-        searchModel;
+    const {
+        isSearchAvailable,
+        isSearchEnabled,
+        isComputingSearchIndex,
+        startIndexing,
+        isSearching,
+        resultUids,
+        refreshResults,
+    } = searchModel;
 
     const contextMenuControls = useContextMenuStore();
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
@@ -112,6 +119,9 @@ export const SearchView = () => {
         useSelectionStore.getState().setAllItemIds(new Set(sortedItemUids));
     }, [sortedItemUids]);
 
+    if (!isSearchAvailable) {
+        return null;
+    }
     if (!isSearchEnabled) {
         return <EnableSearchView enableSearch={startIndexing} isComputingSearchIndex={isComputingSearchIndex} />;
     }

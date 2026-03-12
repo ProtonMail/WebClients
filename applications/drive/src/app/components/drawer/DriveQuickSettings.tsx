@@ -26,7 +26,7 @@ const DriveQuickSettings = () => {
 
     const isSearchFoundationEnabled = useFlagsDriveFoundationSearch();
     const clearSearchButton = isSearchFoundationEnabled ? (
-        <ClearSearchDataButton />
+        <ClearSearchDataButton showConfirmModal={showConfirmModal} />
     ) : (
         <LegacyClearSearchDataButton showConfirmModal={showConfirmModal} />
     );
