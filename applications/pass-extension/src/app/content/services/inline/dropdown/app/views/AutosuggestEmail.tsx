@@ -157,7 +157,7 @@ export const AutosuggestEmail: FC<Props> = ({ origin, prefix }) => {
                     }}
                 />
             )}
-            {aliasCreationDisabled === false && (
+            {!aliasCreationDisabled && (
                 <ListItem
                     title={
                         needsUpgrade
