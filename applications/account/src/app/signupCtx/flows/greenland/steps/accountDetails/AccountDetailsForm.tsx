@@ -10,7 +10,12 @@ import { usePaymentFacade } from '@proton/components/payments/client-extensions'
 import useLoading from '@proton/hooks/useLoading';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcShield2CheckFilled } from '@proton/icons/icons/IcShield2CheckFilled';
-import { PAYMENT_METHOD_TYPES, getPaymentsVersion, getPlanFromPlanIDs } from '@proton/payments';
+import {
+    PAYMENT_METHOD_TYPES,
+    getBillingAddressFromPaymentStatus,
+    getPaymentsVersion,
+    getPlanFromPlanIDs,
+} from '@proton/payments';
 import { PayButton, usePaymentOptimistic } from '@proton/payments/ui';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
 import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -113,7 +118,9 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
 
     const billingAddressHook = useBillingAddress({
         onBillingAddressChange: payments.selectFullBillingAddress,
-        paymentStatus: payments.paymentStatus,
+        initialBillingAddress: payments.paymentStatus
+            ? getBillingAddressFromPaymentStatus(payments.paymentStatus)
+            : undefined,
         paymentFacade,
         telemetryContext: payments.telemetryContext,
         allowedCountries: greenlandOfferCountryCodes,

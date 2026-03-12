@@ -19,7 +19,6 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import metrics, { observeApiError } from '@proton/metrics';
 import {
     ADDON_NAMES,
-    type BillingAddress,
     CYCLE,
     type Currency,
     FREE_PLAN,
@@ -38,6 +37,7 @@ import {
     getPlansMap,
     hasPlanIDs,
 } from '@proton/payments';
+import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -115,7 +115,8 @@ interface CheckPlansArgs {
     plans: Plan[];
     preferredCurrency: Currency;
     withModel?: boolean;
-    billingAddress?: BillingAddress;
+    billingAddress?: BillingAddressExtended;
+    vatNumber?: string;
 }
 
 const vpnPlanName = PLANS.VPN2024;
@@ -316,6 +317,7 @@ const SingleSignupContainer = ({
         preferredCurrency,
         billingAddress: maybeBillingAddress,
         withModel = false,
+        vatNumber,
     }: CheckPlansArgs) => {
         let coupon = withModel ? model.subscriptionData.checkResult.Coupon?.Code : signupParameters.coupon;
 
@@ -411,7 +413,7 @@ const SingleSignupContainer = ({
                 billingAddress,
                 trial: checkSignupTrial,
                 ValidateBillingAddress: true,
-                VatId: model.subscriptionData.vatNumber,
+                VatId: vatNumber ?? model.subscriptionData.vatNumber,
             });
         }
 
@@ -491,7 +493,15 @@ const SingleSignupContainer = ({
             const { plansMap, subscriptionData, cycleData, subscriptionDataCycleMapping } = await checkPlans({
                 plans,
                 preferredCurrency,
-                billingAddress: getBillingAddressFromPaymentStatus(paymentStatus),
+                billingAddress: {
+                    ...getBillingAddressFromPaymentStatus(paymentStatus),
+                    Company: signupParameters.orgName,
+                    FirstName: signupParameters.firstName,
+                    LastName: signupParameters.lastName,
+                    Address: signupParameters.streetAddress,
+                    City: signupParameters.city,
+                },
+                vatNumber: signupParameters.vatNumber,
             });
 
             sendSignupLoadTelemetry({
@@ -521,7 +531,7 @@ const SingleSignupContainer = ({
                 freePlan,
                 plansMap,
                 paymentStatus,
-                subscriptionData,
+                subscriptionData: { ...subscriptionData, vatNumber: signupParameters.vatNumber },
                 subscriptionDataCycleMapping,
                 cycleData,
                 signupType: 'default' as const,
@@ -655,9 +665,9 @@ const SingleSignupContainer = ({
             <UnAuthenticated>
                 {model.step === Steps.Account && (
                     <Step1
+                        signupParameters={signupParameters}
                         activeBreakpoint={activeBreakpoint}
                         mode={model.mode}
-                        defaultEmail={signupParameters.email}
                         selectedPlan={selectedPlan}
                         cycleData={model.cycleData}
                         isB2bPlan={isB2bPlan}
@@ -666,7 +676,6 @@ const SingleSignupContainer = ({
                         model={model}
                         setModel={setModel}
                         measure={measure}
-                        currencyUrlParam={signupParameters.currency}
                         onComplete={async (data) => {
                             const { accountData, subscriptionData } = data;
                             const accountType =
@@ -718,11 +727,8 @@ const SingleSignupContainer = ({
                             }
                         }}
                         onCurrencyChange={updatePlans}
-                        hideFreePlan={signupParameters.hideFreePlan}
                         upsellImg={<img src={vpnUpsellIllustration} alt={upsellShortPlan?.description || ''} />}
-                        signupTrial={signupParameters.trial}
                         toAppName={toAppName}
-                        couponUrlParam={signupParameters.coupon}
                         telemetryContext={telemetryContext}
                         toApp={toApp}
                     />

@@ -48,6 +48,7 @@ import {
     type StrictPlan,
     SubscriptionMode,
     TRIAL_DURATION_DAYS,
+    getBillingAddressFromPaymentStatus,
     getHas2025OfferCoupon,
     getPaymentsVersion,
     getPlanFromPlanIDs,
@@ -87,6 +88,7 @@ import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
 import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import { SignupType } from '../signup/interfaces';
+import type { getSignupSearchParams } from '../signup/searchParams';
 import { AccountFormDataContextProvider } from '../signupCtx/context/accountData/AccountFormDataContext';
 import type { AccountStepDetailsRef } from '../single-signup-v2/AccountStepDetails';
 import AccountStepDetails from '../single-signup-v2/AccountStepDetails';
@@ -163,7 +165,6 @@ type HasBeenCountedState = {
 
 const Step1 = ({
     activeBreakpoint,
-    defaultEmail,
     mode,
     selectedPlan,
     cycleData,
@@ -173,19 +174,15 @@ const Step1 = ({
     onCurrencyChange,
     model,
     setModel,
-    hideFreePlan,
     upsellImg,
     measure,
     className,
-    currencyUrlParam,
-    signupTrial,
     toAppName,
-    couponUrlParam,
     toApp,
     telemetryContext,
+    signupParameters,
 }: {
     activeBreakpoint: Breakpoints;
-    defaultEmail?: string;
     mode: 'signup' | 'pricing' | 'vpn-pass-promotion';
     selectedPlan: StrictPlan;
     cycleData: { cycles: Cycle[]; upsellCycle: Cycle };
@@ -200,17 +197,22 @@ const Step1 = ({
     onCurrencyChange: (currency: Currency) => Promise<unknown>;
     model: VPNSignupModel;
     setModel: Dispatch<SetStateAction<VPNSignupModel>>;
-    hideFreePlan: boolean;
     upsellImg: ReactElement;
     measure: Measure;
     className?: string;
-    currencyUrlParam?: Currency;
-    signupTrial: boolean; // true iff trial detected through signupParameters (thus the signup prefix)
     toAppName: string;
-    couponUrlParam: string | undefined;
     toApp: APP_NAMES;
     telemetryContext: PaymentTelemetryContext;
+    signupParameters: ReturnType<typeof getSignupSearchParams>;
 }) => {
+    const {
+        coupon: couponUrlParam,
+        trial: signupTrial,
+        hideFreePlan,
+        currency: currencyUrlParam,
+        email: defaultEmail,
+    } = signupParameters;
+
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const silentApi = useSilentApi();
     const { getPaymentsApi } = usePaymentsApi();
@@ -624,7 +626,15 @@ const Step1 = ({
                 vatNumber: billingAddress.VatId ?? undefined,
             });
         },
-        paymentStatus: model.paymentStatus,
+        initialBillingAddress: {
+            ...getBillingAddressFromPaymentStatus(model.paymentStatus),
+            Company: signupParameters.orgName ?? '',
+            City: signupParameters.city ?? '',
+            Address: signupParameters.streetAddress ?? '',
+            FirstName: signupParameters.firstName ?? '',
+            LastName: signupParameters.lastName ?? '',
+        },
+        initialVatNumber: signupParameters.vatNumber ?? '',
         paymentFacade,
         telemetryContext,
         selectedPlanName: selectedPlan?.Name,
