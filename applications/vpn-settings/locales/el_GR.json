@@ -176,6 +176,9 @@
       "Close navigation": [
         "Κλείσιμο μενού πλοήγησης"
       ],
+      "Close search": [
+        "Κλείσιμο αναζήτησης"
+      ],
       "Close this banner": [
         "Κλείσιμο αυτού του banner"
       ],
@@ -838,6 +841,9 @@
       ],
       "Search countries": [
         "Αναζήτηση χωρών"
+      ],
+      "Search groups": [
+        "Αναζήτηση ομάδων"
       ],
       "See DNS TXT record": [
         "Εμφάνιση DNS TXT εγγραφής"
@@ -4177,6 +4183,9 @@
       "Invalid code": [
         "Μη έγκυρος κωδικός"
       ],
+      "Invalid coupon": [
+        "Μη έγκυρο κουπόνι"
+      ],
       "Invalid domain": [
         "Μη έγκυρος τομέας"
       ],
@@ -4445,6 +4454,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Το ελάχιστο ποσό πίστωσης που μπορεί να προστεθεί είναι ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Το ελάχιστο ποσό δωρεάς είναι ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Το όνομα πολιτικής πρέπει να αποτελείται από 3 έως 40 χαρακτήρες."
@@ -6177,7 +6189,7 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Ένα ${ protonSubdomain } φιλοξενείται από το ${ BRAND_NAME }, το οποίο σας επιτρέπει να ρυθμίσετε γρήγορα έναν υποτομέα. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
         "Απαιτείται προσαρμοσμένος τομέας για τη δημιουργία ομάδων. Εάν δεν έχετε ρυθμίσει έναν προσαρμοσμένο τομέα, κάντε το πρώτα στο ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
@@ -9097,6 +9109,9 @@
       ],
       "Import interval": [
         "Μεσοδιάστημα εισαγωγών"
+      ],
+      "Import recent mails": [
+        "Εισαγωγή πρόσφατων μηνυμάτων"
       ],
       "Import to email address": [
         "Εισαγωγή σε διεύθυνση email"
