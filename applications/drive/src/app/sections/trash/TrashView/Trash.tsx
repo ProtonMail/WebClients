@@ -1,270 +1,194 @@
-import { useMemo, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
 import { NodeType, getDrivePerNodeType } from '@proton/drive';
-import { getThumbnail, loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
-import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
-import isTruthy from '@proton/utils/isTruthy';
+import { loadThumbnail } from '@proton/drive/modules/thumbnails';
+import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
-import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../../components/FileBrowser';
-import type { BrowserItemId, ListViewHeaderItem } from '../../../components/FileBrowser/interface';
-import { GridViewItemWithThumbnail } from '../../../components/GridViewItemWithThumbnail';
-import { NameCell } from '../../../components/cells/NameCell';
-import { DeletedCell, LocationCell, SizeCell } from '../../../components/sections/FileBrowser/contentCells';
-import headerItems from '../../../components/sections/FileBrowser/headerCells';
-import { translateSortField } from '../../../components/sections/SortDropdown';
-import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
-import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
+import { useContextMenuStore } from '../../../modules/contextMenu';
+import { useSelectionStore } from '../../../modules/selection';
+import type { SortConfig, SortField } from '../../../modules/sorting';
+import { DriveExplorer } from '../../../statelessComponents/DriveExplorer/DriveExplorer';
+import type {
+    DriveExplorerEvents,
+    DriveExplorerSelection,
+    DriveExplorerSort,
+} from '../../../statelessComponents/DriveExplorer/types';
 import { useUserSettings } from '../../../store';
-import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
-import { SortField } from '../../../store/_views/utils/useSorting';
-import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
+import { getTrashCells, getTrashGrid } from '../TrashDriveExplorerCells';
 import { TrashItemContextMenu } from '../menus/TrashItemContextMenu';
 import { EmptyTrash } from '../statelessComponents/EmptyTrash';
-import type { useJointTrashNodes } from '../useJointTrashNodes';
+import type { TrashItem } from '../useTrash.store';
 import { useTrashStore } from '../useTrash.store';
 
 interface Props {
-    shareId: string;
-    trashView: ReturnType<typeof useJointTrashNodes>;
-    onPreview: (props: { deprecatedContextShareId: string; nodeUid: string }) => void;
-
-    handleShowDetails: (...args: any[]) => void;
-
-    handleShowFilesDetails: (...args: any[]) => void;
-    onRestore: (items: LegacyItem[]) => void;
-    onDelete: (items: LegacyItem[]) => void;
+    onPreview: (props: { deprecatedContextShareId: string; nodeUid: string; canOpenInDocs: boolean }) => void;
+    handleShowDetails: (props: { nodeUid: string }) => void;
+    handleShowFilesDetails: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;
+    onRestore: (items: TrashItem[]) => void;
+    onDelete: (items: TrashItem[]) => void;
 }
 
-const { CheckboxCell, ContextMenuCell } = Cells;
-
-const NameCellWithThumbnail = ({ item }: { item: LegacyItem }) => {
-    const thumbnail = useThumbnail(item?.activeRevisionUid);
-
-    return (
-        <NameCell
-            name={item.name}
-            mediaType={item.mimeType}
-            type={item.isFile ? NodeType.File : NodeType.Folder}
-            thumbnailUrl={thumbnail?.sdUrl}
-            isInvitation={false}
-            haveSignatureIssues={undefined}
-        />
-    );
-};
-
-const largeScreenCells: React.FC<{ item: LegacyItem }>[] = [
-    CheckboxCell,
-    NameCellWithThumbnail,
-    LocationCell,
-    DeletedCell,
-    SizeCell,
-    ContextMenuCell,
-];
-const smallScreenCells = [CheckboxCell, NameCellWithThumbnail, LocationCell, SizeCell, ContextMenuCell];
-
-const headerItemsLargeScreen: ListViewHeaderItem[] = [
-    headerItems.checkbox,
-    headerItems.name,
-    headerItems.location,
-    headerItems.trashed,
-    headerItems.size,
-    headerItems.placeholder,
-];
-
-const headerItemsSmallScreen: ListViewHeaderItem[] = [
-    headerItems.checkbox,
-    headerItems.name,
-    headerItems.location,
-    headerItems.size,
-    headerItems.placeholder,
-];
-
-type TrashSortFields = Extract<SortField, SortField.name | SortField.size | SortField.trashed>;
-const SORT_FIELDS: TrashSortFields[] = [SortField.name, SortField.trashed, SortField.size];
-
-const getSelectedItemsId = (items: LegacyItem[], selectedItemIds: string[]): LegacyItem[] => {
-    if (items) {
-        return selectedItemIds
-            .map((selectedItemId) => items.find(({ isLocked, ...item }) => !isLocked && selectedItemId === item.id))
-            .filter(isTruthy);
-    }
-
-    return [];
-};
-
-export function Trash({
-    shareId,
-    trashView,
-    onPreview,
-    handleShowDetails,
-    handleShowFilesDetails,
-    onRestore,
-    onDelete,
-}: Props) {
+export function Trash({ onPreview, handleShowDetails, handleShowFilesDetails, onRestore, onDelete }: Props) {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
-    const browserItemContextMenu = useItemContextMenu();
+    const contextMenu = useContextMenuStore();
     const { viewportWidth } = useActiveBreakpoint();
-    const { isDocsEnabled } = useDriveDocsFeatureFlag();
-    const { openDocument } = useDocumentActions();
-    const { navigateToLink } = useDriveNavigation();
-    const selectionControls = useSelection();
-    const { trashNodes, isLoading, sortParams, setSorting } = trashView;
 
-    const { hasEverLoaded } = useTrashStore(
+    const { hasEverLoaded, isLoading, sortedItemUids, sortField, direction } = useTrashStore(
         useShallow((state) => ({
             hasEverLoaded: state.hasEverLoaded,
+            isLoading: state.isLoading,
+            sortedItemUids: state.sortedItemUids,
+            sortField: state.sortField,
+            direction: state.direction,
         }))
     );
     const { layout } = useUserSettings();
-    const selectedItems = getSelectedItemsId(trashNodes, selectionControls?.selectedItemIds || []);
+
+    const selectedItemIds = useSelectionStore(useShallow((state) => state.selectedItemIds));
+    const selectedItems = Array.from(selectedItemIds)
+        .map((id) => useTrashStore.getState().getItem(id))
+        .filter((item) => item !== undefined);
+
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
 
-    const handleItemRender = async (item: LegacyItem) => {
-        incrementItemRenderedCounter();
+    useEffect(() => {
+        useSelectionStore.getState().setAllItemIds(sortedItemUids);
+    }, [sortedItemUids]);
 
-        if (item.activeRevisionUid) {
-            loadThumbnail(getDrivePerNodeType(item.type), {
-                nodeUid: item.uid,
-                revisionUid: item.activeRevisionUid,
-            });
-        }
-    };
+    const handleRenderItem = useCallback(
+        (uid: string) => {
+            incrementItemRenderedCounter();
+            const item = useTrashStore.getState().getItem(uid);
+            if (!item) {
+                return;
+            }
 
-    const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
+            if (item.activeRevisionUid) {
+                loadThumbnail(getDrivePerNodeType(item.type), {
+                    nodeUid: item.uid,
+                    revisionUid: item.activeRevisionUid,
+                });
+            }
+        },
+        [incrementItemRenderedCounter]
+    );
 
-    const nodesWithThumbnail = trashNodes.map((node) => ({
-        ...node,
-        cachedThumbnailUrl: node.activeRevisionUid ? getThumbnail(node.activeRevisionUid)?.sdUrl : undefined,
-    }));
+    const handleDriveExplorerSorting = useCallback(
+        ({
+            sortField: newSortField,
+            direction: newDirection,
+            sortConfig,
+        }: {
+            sortField: SortField;
+            direction: SORT_DIRECTION;
+            sortConfig: SortConfig;
+        }) => {
+            useTrashStore.getState().setSorting({ sortField: newSortField, direction: newDirection, sortConfig });
+        },
+        []
+    );
 
-    const handleClick = (id: BrowserItemId) => {
-        const item = trashNodes.find((item) => item.id === id);
+    const handleClick = (uid: string) => {
+        const item = useTrashStore.getState().getItem(uid);
 
         if (!item) {
             return;
         }
         document.getSelection()?.removeAllRanges();
 
-        if (isProtonDocsDocument(item.mimeType)) {
-            if (isDocsEnabled) {
-                return openDocument({
-                    type: 'doc',
-                    linkId: id,
-                    shareId,
-                    openBehavior: 'tab',
-                });
-            }
-            return;
-        } else if (isProtonDocsSpreadsheet(item.mimeType)) {
-            if (isDocsEnabled) {
-                return openDocument({
-                    type: 'sheet',
-                    linkId: id,
-                    shareId,
-                    openBehavior: 'tab',
-                });
-            }
+        if (item.mediaType && isNativeProtonDocsAppFile(item.mediaType)) {
             return;
         }
 
-        if (!item.isFile) {
-            return;
-        }
-        /**
-                Opening a file preview opens the file in the context of folder.
-                For photos in the photo stream, it is fine as it is regular folder.
-                But photos in albums only (uploaded by other users) are not in the
-                context of folder and it requires dedicated album endpoints to load
-                "folder". We do not support this in regular preview, so the easiest
-                is to disable opening preview for such a link.
-                In the future, ideally we want trash of photos to separate to own
-                screen or app, then it will not be a problem. In mid-term, we want
-                to open preview without folder context - that is to not redirect to
-                FolderContainer, but open preview on the same page. That will also
-                fix the problem with returning back to trash and stay on the same
-                place in the view.
-             **/
-
-        if (item.photoProperties?.albums.some((album) => album.albumLinkId === item.parentLinkId)) {
+        if (item.type !== NodeType.File && item.type !== NodeType.Photo) {
             return;
         }
 
-        if (isSDKPreviewEnabled) {
-            onPreview({
-                deprecatedContextShareId: item.rootShareId,
-                nodeUid: item.uid,
-            });
-            return;
-        }
-
-        navigateToLink(item.rootShareId, id, item.isFile);
+        onPreview({ deprecatedContextShareId: '', nodeUid: item.uid, canOpenInDocs: false });
     };
 
-    /* eslint-disable react/display-name */
-    const GridHeaderComponent = useMemo(
-        () =>
-            ({ scrollAreaRef }: { scrollAreaRef: React.RefObject<HTMLDivElement> }) => {
-                const activeSortingText = translateSortField(sortParams.sortField);
-                return (
-                    <GridHeader
-                        isLoading={isLoading}
-                        sortFields={SORT_FIELDS}
-                        onSort={setSorting}
-                        sortField={sortParams.sortField}
-                        sortOrder={sortParams.sortOrder}
-                        itemCount={trashNodes.length}
-                        scrollAreaRef={scrollAreaRef}
-                        activeSortingText={activeSortingText}
-                    />
-                );
-            },
-        [sortParams.sortField, sortParams.sortOrder, isLoading]
-    );
-
-    const isEmpty = hasEverLoaded && !isLoading && !trashNodes.length;
+    const isEmpty = hasEverLoaded && !isLoading && sortedItemUids.size === 0;
 
     if (isEmpty) {
         return <EmptyTrash />;
     }
 
-    const Cells = viewportWidth['>=large'] ? largeScreenCells : smallScreenCells;
-    const headerItems = viewportWidth['>=large'] ? headerItemsLargeScreen : headerItemsSmallScreen;
+    const cells = getTrashCells({ viewportWidth });
+    const grid = getTrashGrid();
+
+    const selectionStore = useSelectionStore.getState();
+    const selection: DriveExplorerSelection = {
+        selectedItems: selectedItemIds,
+        selectionMethods: {
+            selectionState: selectionStore.getSelectionState(),
+            selectItem: selectionStore.selectItem,
+            toggleSelectItem: selectionStore.toggleSelectItem,
+            toggleRange: selectionStore.toggleRange,
+            toggleAllSelected: selectionStore.toggleAllSelected,
+            clearSelections: selectionStore.clearSelections,
+            isSelected: selectionStore.isSelected,
+        },
+    };
+
+    const events: DriveExplorerEvents = {
+        onItemClick: () => {
+            if (contextMenu.isOpen) {
+                contextMenu.close();
+            }
+        },
+        onItemDoubleClick: (uid) => {
+            void handleClick(uid);
+        },
+        onItemContextMenu: (_uid, event) => {
+            contextMenu.handleContextMenu(event);
+        },
+        onItemRender: (uid) => {
+            handleRenderItem(uid);
+        },
+    };
+
+    const sort: DriveExplorerSort = {
+        sortBy: sortField,
+        sortDirection: direction,
+        onSort: handleDriveExplorerSorting,
+    };
 
     return (
         <>
             <TrashItemContextMenu
                 selectedItems={selectedItems}
                 anchorRef={contextMenuAnchorRef}
-                close={browserItemContextMenu.close}
-                isOpen={browserItemContextMenu.isOpen}
-                open={browserItemContextMenu.open}
-                position={browserItemContextMenu.position}
+                close={contextMenu.close}
+                isOpen={contextMenu.isOpen}
+                open={contextMenu.open}
+                position={contextMenu.position}
                 onRestore={onRestore}
                 onDelete={onDelete}
+                onPreview={onPreview}
                 showDetailsModal={handleShowDetails}
                 showFilesDetailsModal={handleShowFilesDetails}
             />
-            <FileBrowser
-                caption={c('Title').t`Trash`}
-                items={nodesWithThumbnail}
-                headerItems={headerItems}
+            <DriveExplorer
+                itemIds={Array.from(sortedItemUids)}
                 layout={layout}
+                cells={cells}
+                grid={grid}
+                selection={selection}
+                events={events}
+                sort={sort}
                 loading={isLoading}
-                sortParams={sortParams}
-                Cells={Cells}
-                GridHeaderComponent={GridHeaderComponent}
-                GridViewItem={GridViewItemWithThumbnail}
-                onItemOpen={handleClick}
-                contextMenuAnchorRef={contextMenuAnchorRef}
-                onItemContextMenu={browserItemContextMenu.handleContextMenu}
-                onItemRender={handleItemRender}
-                onSort={setSorting}
-                onScroll={browserItemContextMenu.close}
+                caption={c('Title').t`Trash`}
+                contextMenuControls={{
+                    isOpen: contextMenu.isOpen,
+                    showContextMenu: contextMenu.handleContextMenu,
+                    close: contextMenu.close,
+                }}
             />
         </>
     );

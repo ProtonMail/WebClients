@@ -1,60 +1,76 @@
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { Toolbar } from '@proton/components';
-import isTruthy from '@proton/utils/isTruthy';
+import { NodeType, splitNodeUid } from '@proton/drive';
+import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import { useSelection } from '../../../components/FileBrowser';
-import {
-    DetailsButton,
-    DownloadButton,
-    LayoutButton,
-    PreviewButton,
-} from '../../../components/sections/ToolbarButtons';
-import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
+import { DownloadManager } from '../../../managers/download/DownloadManager';
+import { useSelectionStore } from '../../../modules/selection';
+import { DetailsButton } from '../../commonButtons/DetailsButton';
+import { DownloadButton } from '../../commonButtons/DownloadButton';
+import { PreviewButton } from '../../commonButtons/PreviewButton';
+import { LayoutToolbarButton } from '../../folders/buttons/LayoutButton';
 import { DeletePermanentlyButton } from '../statelessComponents/DeletePermanentlyButton';
 import { RestoreButton } from '../statelessComponents/RestoreButton';
-
-const getSelectedItems = (items: LegacyItem[], selectedItemIds: string[] = []): LegacyItem[] =>
-    selectedItemIds
-        .map((selectedItemId) => items.find(({ isLocked, id }) => !isLocked && selectedItemId === id))
-        .filter(isTruthy);
+import type { TrashItem } from '../useTrash.store';
+import { useTrashStore } from '../useTrash.store';
 
 interface Props {
-    trashNodes: LegacyItem[];
-    onRestore: (items: LegacyItem[]) => void;
-    onDelete: (items: LegacyItem[]) => void;
+    onRestore: (items: TrashItem[]) => void;
+    onDelete: (items: TrashItem[]) => void;
+    onPreview: (props: { deprecatedContextShareId: string; nodeUid: string; canOpenInDocs: boolean }) => void;
+    showDetailsModal: (props: { nodeUid: string }) => void;
+    showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;
 }
 
-export const TrashToolbar = ({ trashNodes, onRestore, onDelete }: Props) => {
-    const selectionControls = useSelection();
-    const selectedItems = getSelectedItems(trashNodes, selectionControls?.selectedItemIds);
+export const TrashToolbar = ({ onRestore, onDelete, onPreview, showDetailsModal, showFilesDetailsModal }: Props) => {
+    const selectedItemIds = useSelectionStore((state) => Array.from(state.selectedItemIds));
+    const selectedItems = selectedItemIds
+        .map((id) => useTrashStore.getState().getItem(id))
+        .filter((item) => item !== undefined);
+    const selectedItem = selectedItems[0];
+    const isFileOrPhoto = (item: TrashItem) => item.type === NodeType.File || item.type === NodeType.Photo;
 
-    // Opening a file preview opens the file in the context of folder.
-    // For photos in the photo stream, it is fine as it is regular folder.
-    // But photos in albums only (uploaded by other users) are not in the
-    // context of folder and it requires dedicated album endpoints to load
-    // "folder". We do not support this in regular preview, so the easiest
-    // is to disable opening preview for such a link.
-    // In the future, ideally we want trash of photos to separate to own
-    // screen or app, then it will not be a problem. In mid-term, we want
-    // to open preview without folder context - that is to not redirect to
-    // FolderContainer, but open preview on the same page. That will also
-    // fix the problem with returning back to trash and stay on the same
-    // place in the view.
-    const disabledPreview =
-        selectedItems.length > 0 &&
-        selectedItems[0].photoProperties?.albums.some((album) => album.albumLinkId === selectedItems[0].parentLinkId);
+    const dm = DownloadManager.getInstance();
+    const handlePreviewClick = () =>
+        onPreview({ deprecatedContextShareId: '', nodeUid: selectedItem.uid, canOpenInDocs: false });
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
             return null;
         }
 
+        const hasPreview =
+            selectedItems.length === 1 &&
+            isFileOrPhoto(selectedItem) &&
+            selectedItem.mediaType &&
+            isPreviewAvailable(selectedItem.mediaType, selectedItem.size);
+
+        const hasDownload = selectedItems.every(isFileOrPhoto);
+
+        const handleDetailsClick = () => {
+            if (selectedItems.length === 1) {
+                showDetailsModal({ nodeUid: selectedItem.uid });
+            } else {
+                showFilesDetailsModal({
+                    selectedItems: selectedItems.map((item) => ({
+                        rootShareId: item.rootShareId ?? '',
+                        linkId: splitNodeUid(item.uid).nodeId,
+                    })),
+                });
+            }
+        };
+
         return (
             <>
-                {!disabledPreview && <PreviewButton selectedBrowserItems={selectedItems} />}
-                <DownloadButton selectedBrowserItems={selectedItems} disabledFolders />
+                {hasPreview && <PreviewButton buttonType="toolbar" onClick={handlePreviewClick} />}
+                {hasDownload && (
+                    <DownloadButton
+                        buttonType="toolbar"
+                        onClick={() => dm.download(selectedItems.map((item) => item.uid))}
+                    />
+                )}
                 <Vr className="section-toolbar--hide-alone" />
-                <DetailsButton selectedBrowserItems={selectedItems} />
+                {selectedItem && <DetailsButton buttonType="toolbar" onClick={handleDetailsClick} />}
                 <Vr />
                 <RestoreButton buttonType="toolbar" onClick={() => onRestore(selectedItems)} />
                 <DeletePermanentlyButton buttonType="toolbar" onClick={() => onDelete(selectedItems)} />
@@ -67,7 +83,7 @@ export const TrashToolbar = ({ trashNodes, onRestore, onDelete }: Props) => {
             <div className="gap-2 flex flex-nowrap shrink-0">{renderSelectionActions()}</div>
             <span className="ml-auto flex flex-nowrap shrink-0">
                 {selectedItems.length > 0 && <Vr className="hidden lg:flex mx-2" />}
-                <LayoutButton />
+                <LayoutToolbarButton />
             </span>
         </Toolbar>
     );

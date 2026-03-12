@@ -1,6 +1,7 @@
 import type { NodeEntity } from '@proton/drive/index';
 import { AbortError, NodeType } from '@proton/drive/index';
 
+import { getNodeStorageSize } from '../../utils/sdk/getNodeStorageSize';
 import { TransferCancel } from '../../utils/transfer';
 import { useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
 import type { DownloadController } from './DownloadManager';
@@ -9,7 +10,6 @@ import type { MalwareDetection } from './malwareDetection/malwareDetection';
 import { createAsyncQueue } from './utils/asyncQueue';
 import { createFileDownloadStream } from './utils/createFileDownloadStream';
 import { downloadLogDebug } from './utils/downloadLogger';
-import { getNodeStorageSize } from './utils/getNodeStorageSize';
 import { validateDownloadSignatures } from './utils/handleDownloadCompletion';
 import { handleDownloadError } from './utils/handleError';
 import { getNodeModifiedTime } from './utils/nodeHelpers';

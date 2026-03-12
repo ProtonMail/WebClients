@@ -3,6 +3,7 @@ import { act, renderHook } from '@testing-library/react';
 import { type NodeEntity, getDrive, getDriveForPhotos } from '@proton/drive/index';
 import { getNodeEntityFromMaybeNode } from '@proton/drive/modules/upload/utils/getNodeEntityFromMaybeNode';
 
+import { getFormattedNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { useTrashStore } from './useTrash.store';
 import { useTrashNodes } from './useTrashNodes';
 
@@ -13,19 +14,31 @@ jest.mock('@proton/drive/index', () => ({
 
 jest.mock('../../utils/errorHandling/handleSdkError');
 
+jest.mock('../../utils/sdk/getNodeLocation', () => ({
+    getFormattedNodeLocation: jest.fn(),
+}));
+
 jest.mock('@proton/drive/modules/upload/utils/getNodeEntityFromMaybeNode', () => ({
     getNodeEntityFromMaybeNode: jest.fn(),
+}));
+
+jest.mock('../../utils/sdk/getSignatureIssues', () => ({
+    getSignatureIssues: jest.fn(() => ({ ok: true })),
 }));
 
 jest.mock('./useTrash.store', () => {
     const hook = jest.fn() as jest.Mock & { getState: jest.Mock };
     hook.getState = jest.fn();
-    return { useTrashStore: hook };
+    return {
+        useTrashStore: hook,
+        createTrashItem: async (node: any, location?: string) => ({ ...node, location }),
+    };
 });
 
 const mockGetDrive = jest.mocked(getDrive);
 const mockGetDriveForPhotos = jest.mocked(getDriveForPhotos);
 const mockGetNodeEntityFromMaybeNode = jest.mocked(getNodeEntityFromMaybeNode);
+const mockGetFormattedNodeLocation = jest.mocked(getFormattedNodeLocation);
 const mockUseTrashStore = useTrashStore as jest.MockedFunction<typeof useTrashStore> & { getState: jest.Mock };
 
 const createNode = (uid: string, name: string): NodeEntity =>
@@ -50,6 +63,7 @@ describe('useTrashNodes', () => {
 
     beforeEach(() => {
         jest.clearAllMocks();
+        mockGetFormattedNodeLocation.mockResolvedValue('/location');
 
         mockUseTrashStore.mockImplementation((selector: (state: any) => any) =>
             selector({ setItem, items: new Map(), isLoading: false })
@@ -78,6 +92,9 @@ describe('useTrashNodes', () => {
                     { node: createNode('drive-2', 'Drive 2') },
                 ])
             );
+            mockGetFormattedNodeLocation
+                .mockResolvedValueOnce('/Trash/Drive 1')
+                .mockResolvedValueOnce('/Trash/Drive 2');
 
             const { result } = renderHook(() => useTrashNodes());
             const abortController = new AbortController();
@@ -90,8 +107,12 @@ describe('useTrashNodes', () => {
             expect(setLoading).toHaveBeenNthCalledWith(1, 'drive', true);
             expect(setLoading).toHaveBeenLastCalledWith('drive', false);
             expect(setItem).toHaveBeenCalledTimes(2);
-            expect(setItem).toHaveBeenCalledWith({ uid: 'drive-1', name: 'Drive 1' });
-            expect(setItem).toHaveBeenCalledWith({ uid: 'drive-2', name: 'Drive 2' });
+            expect(setItem).toHaveBeenCalledWith(
+                expect.objectContaining({ uid: 'drive-1', name: 'Drive 1', location: '/Trash/Drive 1' })
+            );
+            expect(setItem).toHaveBeenCalledWith(
+                expect.objectContaining({ uid: 'drive-2', name: 'Drive 2', location: '/Trash/Drive 2' })
+            );
             expect(handleError).not.toHaveBeenCalled();
         });
     });
@@ -104,6 +125,9 @@ describe('useTrashNodes', () => {
                     { node: createNode('photo-2', 'Photo 2') },
                 ])
             );
+            mockGetFormattedNodeLocation
+                .mockResolvedValueOnce('/Trash/Photo 1')
+                .mockResolvedValueOnce('/Trash/Photo 2');
 
             const { result } = renderHook(() => useTrashNodes());
             const abortController = new AbortController();
@@ -116,8 +140,12 @@ describe('useTrashNodes', () => {
             expect(setLoading).toHaveBeenNthCalledWith(1, 'photos', true);
             expect(setLoading).toHaveBeenLastCalledWith('photos', false);
             expect(setItem).toHaveBeenCalledTimes(2);
-            expect(setItem).toHaveBeenCalledWith({ uid: 'photo-1', name: 'Photo 1' });
-            expect(setItem).toHaveBeenCalledWith({ uid: 'photo-2', name: 'Photo 2' });
+            expect(setItem).toHaveBeenCalledWith(
+                expect.objectContaining({ uid: 'photo-1', name: 'Photo 1', location: '/Trash/Photo 1' })
+            );
+            expect(setItem).toHaveBeenCalledWith(
+                expect.objectContaining({ uid: 'photo-2', name: 'Photo 2', location: '/Trash/Photo 2' })
+            );
             expect(handleError).not.toHaveBeenCalled();
         });
     });

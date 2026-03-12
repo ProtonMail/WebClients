@@ -1,6 +1,6 @@
+import { getNodeStorageSize } from '../../utils/sdk/getNodeStorageSize';
 import type { DownloadQueueTask } from './downloadTypes';
 import { downloadLogDebug } from './utils/downloadLogger';
-import { getNodeStorageSize } from './utils/getNodeStorageSize';
 
 const ALLOWED_BYTES_PER_FILE = 40 * 1024 * 1024; // 40 MiB
 const ALLOWED_BYTES_TOTAL_LOAD = 60 * 1024 * 1024; // 60 MiB

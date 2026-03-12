@@ -1,8 +1,8 @@
 import { type NodeEntity, NodeType } from '@proton/drive';
 
+import { getNodeStorageSize } from '../../../utils/sdk/getNodeStorageSize';
 import { DownloadStatus, IssueStatus, useDownloadManagerStore } from '../../../zustand/download/downloadManager.store';
 import type { DownloadOptions } from '../downloadTypes';
-import { getNodeStorageSize } from './getNodeStorageSize';
 
 type QueueDownloadRequestParams = DownloadOptions & {
     nodes: NodeEntity[];
