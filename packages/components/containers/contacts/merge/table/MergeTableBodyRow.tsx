@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import { useSortable } from '@dnd-kit/react/sortable';
 import { c } from 'ttag';
 
 import { useUserKeys } from '@proton/account/userKeys/hooks';
-import { useSortableListItem } from '@proton/components/components/dnd/SortableListItem';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import { Handle } from '@proton/components/components/table/Handle';
 import TableCell from '@proton/components/components/table/TableCell';
@@ -17,6 +17,7 @@ import EmailsTableCell from './EmailsTableCell';
 import NameTableCell from './NameTableCell';
 
 interface Props {
+    index: number;
     ID: string;
     Contact: ContactFormatted;
     highlightedID: string;
@@ -28,6 +29,7 @@ interface Props {
 }
 
 const MergeTableBodyRow = ({
+    index,
     ID,
     Contact,
     highlightedID,
@@ -40,14 +42,14 @@ const MergeTableBodyRow = ({
     const deleted = beDeleted[ID];
     const disableSort = deleted;
 
-    const { isDragging, style, listeners, setNodeRef, attributes } = useSortableListItem({
+    const {
+        isDragging,
+        ref: sortableRef,
+        handleRef,
+    } = useSortable({
         id: Contact.ID,
-        disabled: disableSort
-            ? {
-                  draggable: false,
-                  droppable: true,
-              }
-            : undefined,
+        index,
+        disabled: disableSort,
     });
     const rowRef = useRef<HTMLTableRowElement | null>();
     const [isIntersecting, setIsIntersecting] = useState(false);
@@ -95,15 +97,14 @@ const MergeTableBodyRow = ({
             key={ID}
             ref={useCallback((el: HTMLTableRowElement | null) => {
                 rowRef.current = el;
-                setNodeRef(el);
+                sortableRef(el);
             }, [])}
             dragging={isDragging}
-            style={style}
         >
             {disableSort ? (
                 <TableCell> </TableCell>
             ) : (
-                <TableCell {...listeners} {...attributes}>
+                <TableCell ref={handleRef}>
                     <Handle />
                 </TableCell>
             )}

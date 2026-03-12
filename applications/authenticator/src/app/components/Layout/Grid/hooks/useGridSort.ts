@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import type { DragEndEvent, DragStartEvent } from '@dnd-kit/core';
-import { arrayMove } from '@dnd-kit/sortable';
+import { arrayMove } from '@dnd-kit/helpers';
+import type { DragEndEvent, DragOverEvent, DragStartEvent } from '@dnd-kit/react';
 
 import type { IdentifiableItem } from './useGridVirtualizer';
 
@@ -14,29 +14,38 @@ const intoIds = <T extends IdentifiableItem>(items: T[]) => items.map((item) => 
 export const useGridSort = <T extends IdentifiableItem>(items: T[], onReorder: OnGridReorder<string>) => {
     const base = useMemo(() => intoIds(items), [items]);
 
+    // We store the original order in a ref to rollback to it if
+    // the reorder is canceled or failed.
+    const snapshot = useRef<string[]>([]);
     const [order, setOrder] = useState<string[]>(base);
     const [active, setActive] = useState<string | null>(null);
 
-    const onDragStart = useCallback((event: DragStartEvent) => {
-        setActive(event.active.id.toString());
-    }, []);
+    const onDragStart = useCallback<DragStartEvent>(
+        (event) => {
+            const { source } = event.operation;
+            snapshot.current = order;
+            setActive(source?.id?.toString() ?? null);
+        },
+        [order]
+    );
 
-    const onDragEnd = useCallback(
-        (event: DragEndEvent) => {
-            const { active: dragActive, over } = event;
+    const onDragEnd = useCallback<DragEndEvent>(
+        (event) => {
+            if (event.canceled) {
+                setOrder(snapshot.current);
+                setActive(null);
+                return;
+            }
 
-            if (over && dragActive.id !== over?.id) {
+            const { source } = event.operation;
+            if (source) {
                 setOrder((prev) => {
-                    const oldIndex = prev.indexOf(dragActive.id.toString());
-                    const newIndex = prev.indexOf(over.id.toString());
-
-                    const result = arrayMove(prev, oldIndex, newIndex);
-                    const before = newIndex > 0 ? result[newIndex - 1] : undefined;
-                    const after = newIndex < result.length - 1 ? result[newIndex + 1] : undefined;
+                    const newIndex = prev.indexOf(source.id.toString());
+                    const before = newIndex > 0 ? prev[newIndex - 1] : undefined;
+                    const after = newIndex < prev.length - 1 ? prev[newIndex + 1] : undefined;
                     const first = prev[0];
                     const last = prev[prev.length - 1];
-
-                    return onReorder(dragActive.id.toString(), { before, after, first, last }) ? result : prev;
+                    return onReorder(source.id.toString(), { before, after, first, last }) ? prev : snapshot.current;
                 });
             }
 
@@ -45,6 +54,21 @@ export const useGridSort = <T extends IdentifiableItem>(items: T[], onReorder: O
         [onReorder]
     );
 
+    const onDragOver = useCallback<DragOverEvent>((event) => {
+        // Disable default reordering by OptimisticSortingPlugin,
+        // manual sorting is handled below.
+        event.preventDefault();
+        const { source, target } = event.operation;
+
+        if (!source || !target || source.id === target.id) return;
+        setOrder((prev) => {
+            const oldIndex = prev.indexOf(source.id.toString());
+            const newIndex = prev.indexOf(target.id.toString());
+            if (oldIndex === -1 || newIndex === -1) return prev;
+            return arrayMove(prev, oldIndex, newIndex);
+        });
+    }, []);
+
     useEffect(() => {
         setOrder(base);
         /** Active state should be reset if the next `itemIds`
@@ -52,5 +76,5 @@ export const useGridSort = <T extends IdentifiableItem>(items: T[], onReorder: O
         setActive((current) => (current && !base.includes(current) ? null : current));
     }, [base]);
 
-    return useMemo(() => ({ order, active, onDragStart, onDragEnd }), [order, active, onDragEnd]);
+    return useMemo(() => ({ order, active, onDragStart, onDragEnd, onDragOver }), [order, active, onDragEnd]);
 };

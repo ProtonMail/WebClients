@@ -1,9 +1,9 @@
 import type { Ref } from 'react';
 import { forwardRef } from 'react';
 
+import type { useSortable } from '@dnd-kit/react/sortable';
 import { c } from 'ttag';
 
-import type { useSortableListItem } from '@proton/components/components/dnd/SortableListItem';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import { IcTextAlignJustify } from '@proton/icons/icons/IcTextAlignJustify';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
@@ -25,7 +25,7 @@ interface Props {
     vCardContact: VCardContact;
     onChangeVCard: (vCardProperty: VCardProperty) => void;
     onRemove: (value: string) => void;
-    sortable?: ReturnType<typeof useSortableListItem>;
+    sortable?: ReturnType<typeof useSortable>;
     isSubmitted?: boolean;
     actionRow?: boolean;
     fixedType?: boolean;
@@ -95,14 +95,9 @@ const ContactEditProperty = (
 
     // The data-contact-property-id is used to focus on the element in ContactEditProperties
     return (
-        <div
-            className="flex flex-nowrap shrink-0"
-            data-contact-property-id={vCardProperty.uid}
-            ref={sortable?.setNodeRef}
-            style={sortable?.style}
-        >
+        <div className="flex flex-nowrap shrink-0" data-contact-property-id={vCardProperty.uid} ref={sortable?.ref}>
             {sortable ? (
-                <div {...sortable.attributes} {...sortable.listeners}>
+                <div ref={sortable.handleRef}>
                     <div className="cursor-row-resize mr-2 flex shrink-0 mb-4 mt-0.5">
                         <IcTextAlignJustify className="mt-2" />
                     </div>

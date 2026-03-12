@@ -1,29 +1,31 @@
+import { useRef } from 'react';
+
+import { useSortable } from '@dnd-kit/react/sortable';
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { SortableList } from '@proton/components/components/dnd/SortableList';
-import { useSortableListItem } from '@proton/components/components/dnd/SortableListItem';
-import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
-import { IcTag } from '@proton/icons/icons/IcTag';
 import { Handle } from '@proton/components/components/table/Handle';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
+import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
+import { IcTag } from '@proton/icons/icons/IcTag';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
 
 import ActionsLabel from './ActionsLabel';
 
-const SortableListItem = ({ label }: { label: Label }) => {
-    const { isDragging, style, listeners, setNodeRef, attributes } = useSortableListItem({ id: label.ID });
+const SortableListItem = ({ label, index }: { label: Label; index: number }) => {
+    const { isDragging, ref: sortableRef, handleRef } = useSortable({ id: label.ID, index });
 
     const { Name, Color } = label;
 
     return (
-        <TableRow data-testid="folders/labels:item-type:label" ref={setNodeRef} style={style} dragging={isDragging}>
-            <TableCell {...attributes} {...listeners}>
+        <TableRow data-testid="folders/labels:item-type:label" ref={sortableRef} dragging={isDragging}>
+            <TableCell ref={handleRef}>
                 <Handle />
             </TableCell>
             <TableCell>
@@ -47,7 +49,7 @@ interface Props {
 }
 
 const LabelSortableList = ({ items, onSortEnd }: Props) => {
-    const itemIds = items.map((item) => item.ID);
+    const containerRef = useRef<HTMLTableSectionElement>(null);
 
     return (
         <Scroll className={clsx('overflow-hidden', items.length > 17 && 'h-custom')} style={{ '--h-custom': '50rem' }}>
@@ -64,10 +66,10 @@ const LabelSortableList = ({ items, onSortEnd }: Props) => {
                         </th>
                     </tr>
                 </TableHeader>
-                <TableBody colSpan={0}>
-                    <SortableList onSortEnd={onSortEnd} items={itemIds}>
-                        {items.map((label) => (
-                            <SortableListItem key={label.ID} label={label} />
+                <TableBody colSpan={0} ref={containerRef}>
+                    <SortableList onSortEnd={onSortEnd} containerRef={containerRef}>
+                        {items.map((label, index) => (
+                            <SortableListItem key={label.ID} label={label} index={index} />
                         ))}
                     </SortableList>
                 </TableBody>
