@@ -31,6 +31,12 @@
       "Activate recovery": [
         "Aktivirajte oporavak"
       ],
+      "Activate reserved address": [
+        "Aktivirajte rezerviranu adresu"
+      ],
+      "Activate this address": [
+        "Aktiviraj ovu adresu"
+      ],
       "Add": [
         "Dodaj"
       ],
@@ -358,6 +364,9 @@
       "Don't show again": [
         "Ne prikazuj ponovno"
       ],
+      "Donate": [
+        "Doniraj"
+      ],
       "Done": [
         "Gotovo"
       ],
@@ -498,6 +507,9 @@
       ],
       "Get verification code": [
         "Nabavi kôd za provjeru"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Nabavite vlastitu ${ MAIL_APP_NAME } adresu"
       ],
       "Go back": [
         "Idi natrag"
@@ -874,6 +886,9 @@
       "Send reminder": [
         "Pošalji podsjetnik"
       ],
+      "Send verification code": [
+        "Pošalji kôd za potvrdu"
+      ],
       "Set as album cover": [
         "Postavi kao naslovnicu albuma"
       ],
@@ -981,6 +996,9 @@
       ],
       "Try another method": [
         "Isprobajte drugu metodu"
+      ],
+      "Try payment again": [
+        "Pokušajte ponovno s plaćanjem"
       ],
       "Underline": [
         "Podvučeno"
@@ -3420,6 +3438,9 @@
       "Account does not exist": [
         "Račun ne postoji"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Aktivacija nije uspjela. Pojedinosti su možda netočne ili je e-pošta već aktivna. Provjerite svoj unos ili se prijavite."
+      ],
       "Address primary private key not found": [
         "Primarni privatni ključ adrese nije pronađen"
       ],
@@ -3482,6 +3503,9 @@
       ],
       "Expired": [
         "Isteklo"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Aktivacija vaše adrese nije uspjela. Molimo pokušajte ponovno."
       ],
       "Failed to process the logo": [
         "Obrada logotipa nije uspjela"
@@ -4403,6 +4427,16 @@
         "${ BRAND_NAME }. Privatnost zadana."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Unesite svoju adresu e-pošte"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Vaučer će biti poslan ovdje."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "mrežna aplikacija"
@@ -4602,6 +4636,32 @@
       ],
       "Value / Data / Points to": [
         "Vrijednost / Podaci / Ukazuje na"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Jednostavan korak danas za digitalnu sigurnost vašeg djeteta sutra"
+      ],
+      "Activate your reserved email address": [
+        "Aktivirajte svoju rezerviranu adresu e-pošte"
+      ],
+      "Address reservation voucher": [
+        "Vaučer za rezervaciju adrese"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Donirajte za Zakladu ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Unesite kôd za potvrdu"
+      ],
+      "Recover activation voucher": [
+        "Oporavite vaučer za aktivaciju"
+      ],
+      "Reserve child's email address": [
+        "Rezervirajte djetetovu adresu e-pošte"
+      ],
+      "We emailed you the voucher": [
+        "Poslali smo vam vaučer e-poštom"
       ]
     },
     "Headline": {
@@ -5000,9 +5060,6 @@
       "30-day money-back guarantee.": [
         "Povrat novca do 30 dana."
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Za stvaranje grupa potrebna je prilagođena domena. Ako nemate postavljenu prilagođenu domenu, najprije to učinite na ${ linkToDomainPage }."
-      ],
       "A recovery file lets you unlock and view your data after account recovery": [
         "Datoteka za oporavak omogućuje Vam otključavanje i pregledavanje Vaših podataka nakon oporavka korisničkog računa"
       ],
@@ -5335,11 +5392,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "Unesite podatke za prijavu računa e-pošte s kojeg želite uvesti."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Unesite adresu e-pošte upotrijebljenu za rezervaciju adrese ${ reservedEmail }."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Unesite ID entiteta **eduGAIN** organizacije za **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Unesite lozinku organizacije za vraćanje privilegija administratora. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Unesite rezerviranu adresu e-pošte i adresu e-pošte korištenu tijekom rezervacije."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
@@ -5422,14 +5485,23 @@
       "Groups": [
         "Grupe"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Pomozite drugim obiteljima da svojoj djeci pruže siguran početak na mreži. Podijelite ovu prekretnicu i proširite vijest."
+      ],
       "here": [
         "ovdje"
       ],
       "High Priority": [
         "Visoki prioritet"
       ],
+      "How it works": [
+        "Kako funkcionira"
+      ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Ako je drugi administrator promijenio ovu lozinku, morat ćete ih pitati za novu lozinku organizacije."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Ako je e-pošta koju ste unijeli korištena za rezervaciju djetetove adrese e-pošte, ponovno ćemo poslati vaučer za aktivaciju."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Ako je to zbog starog reseta lozinke, možete spriječiti da se poruka ponovno prikazuje."
@@ -5567,6 +5639,9 @@
       ],
       "JCB logo": [
         "Logotip JCB"
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Čuvajte vaučer na sigurnom dok ne zatreba, na primjer u ${ DRIVE_APP_NAME }."
       ],
       "Label all imported messages as": [
         "Označi sve uvezene poruke kao"
@@ -5796,6 +5871,9 @@
       "purchase additional storage": [
         "kupite dodatni prostor za pohranu"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Primite vaučer za rezervaciju putem e-pošte. Vi ili dijete možete ga upotrijebiti za aktivaciju adrese u sljedećih 15 godina. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Nedavno korišteni poslužitelji:"
       ],
@@ -5901,6 +5979,9 @@
       "Snooze messages for later so they are top of your inbox when you want": [
         "Odgodite poruke na kasnije vrijeme kako bi bile na vrhu Vaše pristigle pošte kada to Vi želite"
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Nešto je pošlo po zlu. Molimo pokušajte ponovno ili kontaktirajte korisničku podršku."
+      ],
       "Starts on ${ startsOnTime }": [
         "Počinje u ${ startsOnTime }"
       ],
@@ -5908,6 +5989,9 @@
         "Korak ${ step }",
         "Korak ${ step }",
         "Korak ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Korak ${ step }/${ totalSteps }"
       ],
       "Storage for users": [
         "Pohrana za korisnike"
@@ -6056,6 +6140,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Kako biste bili u toku s najnovijim razvojem proizvoda ${ BRAND_NAME }, možete se pretplatiti na naše razne e-mailove i povremeno posjećivati ${ blogLink }."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Kako bismo spriječili zloupotrebu ili prijevaru, tražimo minimalnu donaciju u iznosu od ${ minimumDonation }. Time se podržava rad ${ protonFoundationLink } na zaštiti digitalne privatnosti diljem svijeta i pomaže u zaštiti sljedećih generacija."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Za nastavak, odaberite način za oporavak računa kako bismo mogli potvrditi zahtjev."
       ],
@@ -6173,6 +6260,9 @@
       "Warning:": [
         "Upozorenje:"
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Nismo uspjeli dovršiti transakciju. Molimo pokušajte ponovno."
+      ],
       "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
         "Pratimo tamni web za slučajeve u kojima su vaši osobni podaci (kao što je e-pošta ili lozinka korištena na web-mjestu treće strane) procurili ili su kompromitirani."
       ],
@@ -6208,6 +6298,9 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Kada kliknete na poveznicu, ova značajka za zaštitu od krađe identiteta će tražiti da potvrdite točnost URL-a web stranice."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Kada budete spremni za aktivaciju adrese, skenirajte QR kôd ili upotrijebite poveznicu u vaučeru."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Kada se vaša pretplata obnovi, primijenit ćemo sve dostupne kredite prije nego što naplatimo gore navedeni način plaćanja."
@@ -6351,6 +6444,9 @@
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Vaša fraza za oporavak je niz od 12 nasumično generiranih riječi u određenom redoslijedu."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Vaš vaučer za vašu rezerviranu ${ BRAND_NAME } adresu e-pošte: ${ reservedEmail }"
+      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Moći ćete odmah dodati ove poslužitelje drugom pristupniku."
       ],
@@ -6370,6 +6466,11 @@
       ],
       "Optional": [
         "Neobavezno"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Unesite kôd za potvrdu koji je poslan na ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -6782,6 +6883,9 @@
       "Actions": [
         "Radnje"
       ],
+      "Activation code": [
+        "Kôd za aktivaciju"
+      ],
       "Activity": [
         "Aktivnost"
       ],
@@ -6923,6 +7027,9 @@
       "Category": [
         "Kategorija"
       ],
+      "Choose an address to reserve for your child": [
+        "Odaberite adresu koju želite rezervirati za svoje dijete"
+      ],
       "City": [
         "Grad"
       ],
@@ -7061,6 +7168,12 @@
       "Don't show this again": [
         "Ne prikazuj ponovno"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Donirajte 1 $ ili više za Zakladu ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Iznos donacije"
+      ],
       "Email": [
         "E-pošta"
       ],
@@ -7084,6 +7197,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Unesite lozinku za ključ s otiskom prsta: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Unesite svoju adresu e-pošte"
       ],
       "Enter your password": [
         "Unesite lozinku"
@@ -7403,6 +7519,12 @@
       "Require 2FA for everyone": [
         "Zahtijevaj 2FA za sve"
       ],
+      "Reserved address": [
+        "Rezervirana adresa"
+      ],
+      "Reserved email address": [
+        "Rezervirana adresa e-pošte"
+      ],
       "Reveal password": [
         "Prikaži lozinku"
       ],
@@ -7423,6 +7545,9 @@
       ],
       "Sequences": [
         "Sekvence"
+      ],
+      "Set password": [
+        "Postavi lozinku"
       ],
       "Share your referral link": [
         "Podijeli svoju poveznicu preporuke"
@@ -7477,6 +7602,9 @@
       ],
       "Time zone": [
         "Vremenska zona"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Za aktivaciju skenirajte QR kôd ili idite na:"
       ],
       "To: ${ toEmail }": [
         "Za: ${ toEmail }"
@@ -7559,8 +7687,17 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, želim trajno izbrisati ovaj račun i sve njegove podatke."
       ],
+      "Your activation code:": [
+        "Vaš kôd za aktivaciju:"
+      ],
+      "Your email address": [
+        "Vaša adresa e-pošte"
+      ],
       "Your password (admin)": [
         "Vaša lozinka (administrator)"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Vaš vaučer za vašu rezerviranu ${ BRAND_NAME } adresu e-pošte:"
       ],
       "ZIP code": [
         "Poštanski broj"
@@ -7671,6 +7808,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "zaklade ${ BRAND_NAME }"
+      ],
       "Activity log": [
         "Zapisnici aktivnosti"
       ],
@@ -7685,6 +7825,9 @@
       ],
       "Calendars": [
         "Kalendari"
+      ],
+      "Can't find your code?": [
+        "Ne možete pronaći svoj kôd?"
       ],
       "clearing your browser cache": [
         "čišćenje predmemorije preglednika"
@@ -7790,6 +7933,20 @@
       ],
       "What’s this?": [
         "Što je ovo?"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "E-pošta"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -9529,6 +9686,9 @@
       ],
       "Address": [
         "Adresa"
+      ],
+      "Amount": [
+        "Iznos"
       ],
       "Anderson": [
         "Andrić"
@@ -11418,6 +11578,9 @@
       "Verification code copied to clipboard": [
         "Kôd za provjeru kopiran u međuspremnik"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Kôd za potvrdu poslan na ${ parentEmail }"
+      ],
       "Verification successful": [
         "Uspješna provjera"
       ],
@@ -11429,6 +11592,9 @@
       ],
       "You will receive your username via email within a minute if you entered a valid recovery email address.": [
         "Svoje korisničko ime dobit ćete putem e-pošte unutar jedne minute ako ste unijeli ispravnu adresu e-pošte za oporavak."
+      ],
+      "Your address has been activated": [
+        "Vaša adresa je aktivirana"
       ]
     },
     "Success message": {
@@ -12292,6 +12458,12 @@
       ],
       "Privacy and data collection": [
         "Privatnost i prikupljanje podataka"
+      ],
+      "Problem processing your payment": [
+        "Problem prilikom obrade plaćanja"
+      ],
+      "Problem processing your request": [
+        "Problem prilikom obrade vašeg zahtjeva"
       ],
       "Processing...": [
         "Obrada..."

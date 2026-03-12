@@ -71,6 +71,12 @@
       "Activate recovery": [
         "Helyreállítás aktiválása"
       ],
+      "Activate reserved address": [
+        "Lefoglalt cím aktiválása"
+      ],
+      "Activate this address": [
+        "Cím aktiválása"
+      ],
       "Add": [
         "Hozzáadás"
       ],
@@ -452,6 +458,9 @@
       "Don't show again": [
         "Ne jelenjen meg újra"
       ],
+      "Donate": [
+        "Adományozás"
+      ],
       "Done": [
         "Kész"
       ],
@@ -649,6 +658,9 @@
       ],
       "Get verification code": [
         "Ellenőrző kód küldése"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Szerezze be saját ${ MAIL_APP_NAME } címét"
       ],
       "Go back": [
         "Vissza"
@@ -1106,6 +1118,9 @@
       "Send reminder": [
         "Emlékeztető beállítása"
       ],
+      "Send verification code": [
+        "Ellenőrző kód küldése"
+      ],
       "Set as album cover": [
         "Beállítás albumborítónak"
       ],
@@ -1255,6 +1270,9 @@
       ],
       "Try for free": [
         "Próbálja ki díjmentesen"
+      ],
+      "Try payment again": [
+        "Fizetés újrapróbálása"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Próbálja újra. Sikertelen mentés oka: ${ saveError }"
@@ -4393,6 +4411,9 @@
       "Account does not exist": [
         "Fiók nem létezik"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Az aktiválás nem sikerült. Lehet, hogy a megadott adatok helytelenek, vagy az e-mail már aktív. Kérjük, ellenőrizze a megadott adatokat, vagy jelentkezzen be."
+      ],
       "Add at least one action": [
         "Adjon hozzá legalább egy műveletet"
       ],
@@ -4496,6 +4517,9 @@
       ],
       "Expired": [
         "Lejárt"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Nem sikerült aktiválni a címét. Kérjük, próbálja újra."
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Az aktív munkamenetek betöltése nem sikerült, ${ refresh } vagy próbálja meg később."
@@ -5890,6 +5914,16 @@
         "${ BRAND_NAME }. Adatvédelem az első."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Adja meg az e-mail címét"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Ide küldjük el az utalványt."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "webalkalmazásban"
@@ -6130,6 +6164,32 @@
       ],
       "Value / Data / Points to": [
         "Érték / Adat / Cél cím"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Egy egyszerű lépés ma, amellyel holnapra biztosíthatja gyermeke digitális biztonságát"
+      ],
+      "Activate your reserved email address": [
+        "Lefoglalt e-mail címének aktiválása"
+      ],
+      "Address reservation voucher": [
+        "Címfoglalási utalvány"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Adományozás a(z) ${ BRAND_NAME } Foundation részére"
+      ],
+      "Enter verification code": [
+        "Ellenőrző kód megadása"
+      ],
+      "Recover activation voucher": [
+        "Aktiválási utalvány helyreállítása"
+      ],
+      "Reserve child's email address": [
+        "Gyermek e-mail címének lefoglalása"
+      ],
+      "We emailed you the voucher": [
+        "Elküldtük Önnek az utalványt e-mailben"
       ]
     },
     "Headline": {
@@ -6807,9 +6867,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "A(z) ${ protonSubdomain } domain nevet a ${ BRAND_NAME } tárolja, így gyorsan létrehozhat egy aldomain nevet. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Csoportok létrehozásához saját domain név szükséges. Ha nincs saját domain neve beállítva, kezdjen azzal a ${ linkToDomainPage } részen."
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Egy név, ami segít azonosítani, hogy hol használja, így később könnyedén visszavonhatja vagy kiterjesztheti."
       ],
@@ -7436,11 +7493,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "Adja meg az e-mail fiók belépési adatait, amelyről importálni szeretne."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Adja meg a(z) ${ reservedEmail } lefoglalásához használt e-mail címet."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Adja meg az **eduGAIN** szervezet entitásazonosítóját a **${ domain.DomainName }** számára."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Írja be a Szervezeti Jelszót az adminisztrátori jogosultságok visszaállításához. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Adja meg a lefoglalt e-mail címet és a foglalás során használt e-mail címet."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
@@ -7562,11 +7625,17 @@
       "Groups": [
         "Csoportok"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Segítsen más családoknak is biztonságos online indulást biztosítani gyermekeik számára. Ossza meg ezt a mérföldkövet, és vigye hírét."
+      ],
       "here": [
         "ide"
       ],
       "High Priority": [
         "Magas prioritású"
+      ],
+      "How it works": [
+        "Hogyan működik?"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Azonosságszolgáltató nyilvános kulcsa a hitelesítési állítások aláírásához. Biztosítani kell egy helyet a tanúsítvány ellenőrző összegének letöltéséhez vagy másolásához az azonosságszolgáltatótól. Illessze be a tanúsítvány ellenőrző összegét a szövegmezőbe."
@@ -7576,6 +7645,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Ha a gyorsbillentyűk engedélyezve vannak, a következő billentyűkkel gyors műveleteket végezhet, illetve különböző nézetekre ugorhat. ${ metaKey } + K mindig engedélyezve van."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Ha a megadott e-mail címet egy gyermek e-mail címének lefoglalására használták, újra elküldjük az aktiválási utalványt."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Ha ez egy régi jelszó visszaállításból adódik, megtilthatja az üzenet újbóli megjelenését"
@@ -7794,6 +7866,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Hagyja jóvá a kiválasztást aztán elindul a folyamat."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Tartsa biztonságban az utalványt, amíg szüksége nem lesz rá, például a(z) ${ DRIVE_APP_NAME } szolgáltatásban."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Tartsa adatait biztonságban és kezelje bizalmasan ezekkel az útmutatókkal és tippekkel."
@@ -8201,6 +8276,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Forduljon hozzánk segítségért bármilyen ${ BRAND_NAME } témában."
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Kapja meg a foglalási utalványt e-mailben. Ön vagy a gyermek a következő 15 éven belül felhasználhatja a cím aktiválására. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Nemrég használt szerverek:"
       ],
@@ -8400,6 +8478,9 @@
       "Some keys successfully reactivated": [
         "Néhány kulcsot sikerült újraaktiválni"
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Hiba történt. Kérjük, próbálja újra, vagy vegye fel a kapcsolatot az ügyfélszolgálattal."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Adja meg azt a domain nevet, amely a SAML SSO-val hitelesíthető."
       ],
@@ -8418,6 +8499,9 @@
       "Step ${ step }": [
         "${ step }. lépés",
         "${ step }. lépés"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "${ step }/${ totalSteps } lépés"
       ],
       "Storage allocated to other users in this organisation": [
         "A szervezet további felhasználói számára lefoglalt tárhely"
@@ -8720,6 +8804,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "A ${ BRAND_NAME } termékekről szóló legfrissebb híreinkhez iratkozzon fel a hírleveleinkre és időnként nézze meg a ${ blogLink } oldalunkat."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "A visszaélések vagy csalások elkerülése érdekében legalább ${ minimumDonation } összegű adományt kérünk. Ez támogatja a(z) ${ protonFoundationLink } munkáját a digitális adatvédelem globális védelmében, és segít megvédeni a következő generációt."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "A folytatáshoz válasszon egy fiók helyreállítási módszert, hogy ellenőrizhessük a kérést."
       ],
@@ -8909,6 +8996,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Amikor lehetséges, javasoljuk inkább a hivatalos ${ VPN_APP_NAME } alkalmazás használatát."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Nem tudtuk befejezni a tranzakciót. Kérjük, próbálja újra."
+      ],
       "We couldn’t process your payment.": [
         "Nem tudjuk feldolgozni az Ön befizetését."
       ],
@@ -9001,6 +9091,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Amikor eltávolít egy szervert az átjáróból, az egy 10 napos deaktiválási időszakba lép. Ez a szerver hozzáadható egy új átjáróhoz, de az országa nem változtatható meg."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Ha készen áll a cím aktiválására, olvassa be a QR-kódot, vagy használja az utalványban található hivatkozást."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Az előfizetés megújításakor a meglévő krediktjeiből egyenlítjük ki a számlát, mielőtt a megadott fizetési módokat terhelnénk."
@@ -9311,6 +9404,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Próbaideje ${ timeRemaining } múlva véget ér."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Az Ön utalványa a lefoglalt ${ BRAND_NAME } e-mail címéhez: ${ reservedEmail }"
+      ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Elveszíti a hozzáférést a(z) ${ boldPlanTitle } funkciókhoz:"
       ],
@@ -9342,6 +9438,11 @@
       ],
       "Selected color:": [
         "A kiválasztott szín:"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Írja be a(z) ${ parentEmail } címre küldött ellenőrző kódot."
       ]
     },
     "Info - folder colouring feature": {
@@ -9782,6 +9883,9 @@
       "Actions": [
         "Műveletek"
       ],
+      "Activation code": [
+        "Aktiválási kód"
+      ],
       "Activity": [
         "Tevékenység"
       ],
@@ -9959,6 +10063,9 @@
       "Choose a name for the generated certificate file": [
         "Válasszon nevet a létrehozott tanúsítvány fájlnak"
       ],
+      "Choose an address to reserve for your child": [
+        "Válassza ki a gyermekének lefoglalni kívánt címet"
+      ],
       "City": [
         "Település"
       ],
@@ -10121,6 +10228,12 @@
       "Don't show this again": [
         "Ne jelenjen meg többet"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Adományozzon legalább 1 $-t a(z) ${ BRAND_NAME } Foundation részére"
+      ],
+      "Donation amount": [
+        "Adomány összege"
+      ],
       "e.g. example.com": [
         "pl. példa.hu"
       ],
@@ -10159,6 +10272,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Írja be a következő ujjlenyomattal rendelkező kulcshoz tartozó jelszót: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Adja meg az e-mail címét"
       ],
       "Enter your password": [
         "Adja meg a jelszavát"
@@ -10574,6 +10690,12 @@
       "Require 2FA for everyone": [
         "Mindenkinek kötelező a 2FA"
       ],
+      "Reserved address": [
+        "Lefoglalt cím"
+      ],
+      "Reserved email address": [
+        "Lefoglalt e-mail cím"
+      ],
       "Reveal password": [
         "Jelszó felfedése"
       ],
@@ -10597,6 +10719,9 @@
       ],
       "Sequences": [
         "Sorozatok"
+      ],
+      "Set password": [
+        "Jelszó beállítása"
       ],
       "Share your referral link": [
         "Ajánló hivatkozás megosztása"
@@ -10685,6 +10810,9 @@
       ],
       "Time zone": [
         "Időzóna"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Az aktiváláshoz olvassa be a QR-kódot, vagy lépjen ide:"
       ],
       "To help us improve, please explain why you are leaving.": [
         "Kérjük, segítsen nekünk a fejlődésben, mondja el, miért távozik."
@@ -10782,11 +10910,20 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Igen, törölni szeretném a fiókomat és az összes adatát."
       ],
+      "Your activation code:": [
+        "Aktiválási kódja:"
+      ],
       "Your calendar URL": [
         "Az ön naptárának URL-je"
       ],
+      "Your email address": [
+        "Az Ön e-mail címe"
+      ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Utalványa a lefoglalt ${ BRAND_NAME } e-mail címéhez:"
       ],
       "ZIP code": [
         "Irányítószám"
@@ -10911,6 +11048,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "${ BRAND_NAME } Foundation"
+      ],
       "Activity log": [
         "Tevékenységnapló"
       ],
@@ -10928,6 +11068,9 @@
       ],
       "Calendars": [
         "Naptárak"
+      ],
+      "Can't find your code?": [
+        "Nem találja a kódját?"
       ],
       "clearing your browser cache": [
         "böngésző gyorsítótárának ürítése"
@@ -11108,6 +11251,20 @@
       ],
       "What’s this?": [
         "Mi ez?"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "E-mail"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -14003,6 +14160,9 @@
       ],
       "Address": [
         "Cím"
+      ],
+      "Amount": [
+        "Összeg"
       ],
       "Anderson": [
         "Kovács"
@@ -16920,6 +17080,9 @@
       "Verification code copied to clipboard": [
         "Ellenőrző kód a vágólapra másolva"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Ellenőrző kód elküldve erre a címre: ${ parentEmail }"
+      ],
       "Verification successful": [
         "Sikeres ellenőrzés"
       ],
@@ -16943,6 +17106,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Ha érvényes helyreállítási telefonszámot adott meg, egy percen belül SMS-ben megkapja a felhasználónevét."
+      ],
+      "Your address has been activated": [
+        "A címe aktiválva lett"
       ]
     },
     "Success message": {
@@ -18085,6 +18251,12 @@
       ],
       "Privacy and data collection": [
         "Adatvédelem és adatgyűjtés"
+      ],
+      "Problem processing your payment": [
+        "Probléma a fizetési folyamatban"
+      ],
+      "Problem processing your request": [
+        "Probléma a kérés feldolgozása során"
       ],
       "Processing...": [
         "Folyamatban..."

@@ -90,6 +90,12 @@
       "Activate recovery": [
         "Attiva il ripristino"
       ],
+      "Activate reserved address": [
+        "Attiva l'indirizzo prenotato"
+      ],
+      "Activate this address": [
+        "Attiva questo indirizzo"
+      ],
       "Add": [
         "Aggiungi"
       ],
@@ -543,6 +549,9 @@
       "Don't show again": [
         "Non mostrare nuovamente"
       ],
+      "Donate": [
+        "Dona"
+      ],
       "Done": [
         "Fatto"
       ],
@@ -812,6 +821,9 @@
       ],
       "Get verification code": [
         "Invia il codice di verifica"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Ottieni il tuo indirizzo ${ MAIL_APP_NAME }"
       ],
       "Go back": [
         "Torna indietro"
@@ -1347,6 +1359,9 @@
       "Send reminder": [
         "Invia promemoria"
       ],
+      "Send verification code": [
+        "Invia il codice di verifica"
+      ],
       "Set as album cover": [
         "Imposta come copertina dell'album"
       ],
@@ -1514,6 +1529,9 @@
       ],
       "Try for free": [
         "Prova gratis"
+      ],
+      "Try payment again": [
+        "Riprova il pagamento"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Salvataggio non riuscito a causa di: ${ saveError }. Prova a salvare di nuovo. "
@@ -6031,6 +6049,9 @@
       "Account does not exist": [
         "L'account non esiste"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Attivazione non riuscita. I dettagli potrebbero essere errati, oppure l'email è già attiva. Controlla il tuo input o accedi."
+      ],
       "Add at least one action": [
         "Aggiungi almeno un'azione"
       ],
@@ -6152,6 +6173,9 @@
       ],
       "Failed loading group members": [
         "Impossibile caricare i membri del gruppo"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Impossibile attivare il tuo indirizzo. Riprova."
       ],
       "Failed to add group member": [
         "Impossibile aggiungere un membro al gruppo"
@@ -7723,6 +7747,16 @@
         "Capisco che non potrò più accedere alle versioni precedenti delle app mobili di ${ BRAND_NAME }."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Inserisci il tuo indirizzo email"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Il voucher verrà inviato qui."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "app web"
@@ -8023,6 +8057,32 @@
       ],
       "Subscribed": [
         "Iscrizione"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Un semplice passo oggi per garantire la sicurezza digitale di tuo figlio domani"
+      ],
+      "Activate your reserved email address": [
+        "Attiva il tuo indirizzo email prenotato"
+      ],
+      "Address reservation voucher": [
+        "Voucher di prenotazione dell'indirizzo"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Dona alla Fondazione ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Inserisci il codice di verifica"
+      ],
+      "Recover activation voucher": [
+        "Recupera il voucher di attivazione"
+      ],
+      "Reserve child's email address": [
+        "Prenota l'indirizzo email del bambino"
+      ],
+      "We emailed you the voucher": [
+        "Ti abbiamo inviato il voucher via email"
       ]
     },
     "Headline": {
@@ -8783,9 +8843,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Un ${ protonSubdomain } è ospitato da ${ BRAND_NAME }, che ti permette di configurare velocemente un sottodominio. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Per creare gruppi è necessario un dominio personalizzato. Se non hai configurato un dominio personalizzato, fallo prima in ${ linkToDomainPage }."
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nome che ti aiuta a identificare dove viene usato, in modo che potrai revocarlo o estenderlo in futuro."
       ],
@@ -9545,11 +9602,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "Inserisci le credenziali dell'account email da cui vuoi importare."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Inserisci l'indirizzo email utilizzato per prenotare ${ reservedEmail }."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Inserisci l'ID Entità di un'organizzazione **eduGAIN** per **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Inserisci la password dell'organizzazione per ripristinare i privilegi di amministratore. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Inserisci l'indirizzo email prenotato e l'indirizzo email utilizzato durante la prenotazione."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Inserisci il codice di verifica inviato a ${ destinationText }."
@@ -9704,6 +9767,9 @@
       "Groups": [
         "Gruppi"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Aiuta altre famiglie a dare ai propri figli un inizio sicuro online. Condividi questo traguardo e spargi la voce."
+      ],
       "here": [
         "qui"
       ],
@@ -9712,6 +9778,9 @@
       ],
       "High Priority": [
         "Priorità alta"
+      ],
+      "How it works": [
+        "Come funziona"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Chiave pubblica del fornitore di identità per firmare le autenticazioni e le autorizzazioni. Dovresti riuscire a scaricare o copiare l'hash del certificato dal fornitore di identità. Incolla l'hash del certificato nel campo di testo."
@@ -9730,6 +9799,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Se le scorciatoie da tastiera sono abilitate, puoi utilizzare i seguenti tasti per azioni rapide o per passare a viste diverse. ${ metaKey } + K è sempre abilitato."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Se l'email che hai inserito è stata utilizzata per prenotare l'indirizzo email di un bambino, ti invieremo nuovamente il voucher di attivazione."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Se il fuso orario di sistema non corrisponde all'attuale preferenza per il fuso orario, ti verrà chiesto di aggiornarlo (al massimo una volta al giorno)."
@@ -9960,6 +10032,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Devi solo confermare la tua selezione e noi faremo il resto."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Conserva il voucher al sicuro finché non ti serve, ad esempio su ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Mantieni le tue informazioni più sicure e private con queste guide e suggerimenti."
@@ -10454,6 +10529,9 @@
       "Receive notifications for ${ categoryLabel }": [
         "Ricevi notifiche per ${ categoryLabel }"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Ricevi il voucher di prenotazione via email. Tu o il bambino potrete utilizzarlo per attivare l'indirizzo entro i prossimi 15 anni. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Server usati di recente:"
       ],
@@ -10683,6 +10761,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Alcuni server potrebbero non apparire nell'elenco qui sopra. Cerca per nome server (ad es. AT#62) per trovarli."
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Qualcosa è andato storto. Riprova o contatta l'assistenza clienti."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Specifica il dominio autorizzato all'autenticazione con SAML SSO."
       ],
@@ -10701,6 +10782,9 @@
       "Step ${ step }": [
         "Passaggio ${ step }",
         "Passaggio ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Passo ${ step }/${ totalSteps }"
       ],
       "Storage allocated to other users in this organisation": [
         "Spazio di archiviazione allocato ad altri utenti in questa organizzazione"
@@ -11030,6 +11114,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Per rimanere informato sugli ultimi aggiornamenti dei prodotti ${ BRAND_NAME }, puoi iscriverti alle nostre mailing list e ${ blogLink } occasionalmente."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Per prevenire abusi o frodi, chiediamo una donazione minima di ${ minimumDonation }. Questo sostiene il lavoro della ${ protonFoundationLink } per difendere la privacy digitale a livello globale e aiuta a proteggere la prossima generazione."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Per procedere, seleziona un metodo di recupero dell'account in modo da poter verificare la richiesta."
       ],
@@ -11243,6 +11330,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Ti consigliamo di usare le applicazioni ufficiali di ${ VPN_APP_NAME } quando possibile."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Impossibile completare la transazione. Riprova."
+      ],
       "We couldn’t process your payment.": [
         "Il pagamento non può essere completato."
       ],
@@ -11350,6 +11440,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Quando rimuovi un server da un Gateway, entra in un periodo di disattivazione di 10 giorni. Questo server può essere aggiunto a un nuovo Gateway, ma il suo paese non può essere modificato."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Quando sei pronto ad attivare l'indirizzo, scansiona il codice QR o usa il link nel voucher."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando il tuo abbonamento si rinnova, applicheremo tutti i crediti disponibili prima di addebitare il metodo di pagamento indicato qui sopra."
@@ -11727,6 +11820,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "La tua prova terminerà tra ${ timeRemaining }."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Il voucher per il tuo indirizzo email ${ BRAND_NAME } prenotato: ${ reservedEmail }"
+      ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Perderai anche l'accesso alle funzionalità di ${ boldPlanTitle }:"
       ],
@@ -11766,6 +11862,11 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "Aiuta a scrivere, rispondere a e correggere le email. Se disabilitato, solo gli amministratori avranno accesso. Gestisci per i singoli utenti in ${ userAndAddresses } o ${ addMoreSeats }"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Inserisci il codice di verifica inviato a ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -12390,6 +12491,9 @@
       "Actions": [
         "Azioni"
       ],
+      "Activation code": [
+        "Codice di attivazione"
+      ],
       "Activity": [
         "Attività"
       ],
@@ -12627,6 +12731,9 @@
       "Choose a name for the generated certificate file": [
         "Scegli un nome per il file"
       ],
+      "Choose an address to reserve for your child": [
+        "Scegli un indirizzo da prenotare per il tuo bambino"
+      ],
       "City": [
         "Città"
       ],
@@ -12825,6 +12932,12 @@
       "Don't show this again": [
         "Non mostrare più"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Dona 1 $ o più alla Fondazione ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Importo della donazione"
+      ],
       "Duration": [
         "Durata"
       ],
@@ -12881,6 +12994,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Inserisci la password per la chiave con l'impronta digitale: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Inserisci il tuo indirizzo email"
       ],
       "Enter your password": [
         "Inserisci la tua password"
@@ -13392,6 +13508,12 @@
       "Require 2FA for everyone": [
         "Richiedi 2FA per tutti"
       ],
+      "Reserved address": [
+        "Indirizzo prenotato"
+      ],
+      "Reserved email address": [
+        "Indirizzo email prenotato"
+      ],
       "Reveal password": [
         "Mostra la password"
       ],
@@ -13433,6 +13555,9 @@
       ],
       "Server name": [
         "Nome del server"
+      ],
+      "Set password": [
+        "Imposta la password"
       ],
       "Share your referral link": [
         "Condividi il tuo link affiliato"
@@ -13564,6 +13689,9 @@
       "Tips and insights": [
         "Suggerimenti e approfondimenti"
       ],
+      "To activate, scan the QR-code or go to:": [
+        "Per attivare, scansiona il codice QR o vai su:"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Per aiutarci a migliorare, spiegaci il motivo per cui vuoi andartene."
       ],
@@ -13693,14 +13821,23 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Sì, voglio eliminare definitivamente questo account e tutti i suoi dati."
       ],
+      "Your activation code:": [
+        "Il tuo codice di attivazione:"
+      ],
       "Your calendar URL": [
         "URL del tuo calendario"
+      ],
+      "Your email address": [
+        "Il tuo indirizzo email"
       ],
       "Your password (admin)": [
         "La tua password (admin)"
       ],
       "Your password (trusted contact)": [
         "La tua password (contatto attendibile)"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Il voucher per il tuo indirizzo email ${ BRAND_NAME } prenotato:"
       ],
       "ZIP code": [
         "Codice postale"
@@ -13873,6 +14010,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "Fondazione ${ BRAND_NAME }"
+      ],
       "Activity log": [
         "Registro delle attività"
       ],
@@ -13893,6 +14033,9 @@
       ],
       "Calendars": [
         "Calendari"
+      ],
+      "Can't find your code?": [
+        "Non trovi il tuo codice?"
       ],
       "clearing your browser cache": [
         "cancellare la cache del browser"
@@ -14090,6 +14233,20 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Utenti e indirizzi"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Email"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -17558,6 +17715,9 @@
       "Address": [
         "Indirizzo"
       ],
+      "Amount": [
+        "Importo"
+      ],
       "Anderson": [
         "Rossi"
       ],
@@ -17941,9 +18101,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Non mostrare più quest'offerta"
-      ],
       "Get the deal": [
         "Ottieni l'offerta"
       ]
@@ -18020,11 +18177,6 @@
       ],
       "Use your own email domain": [
         "Usa il tuo dominio email personale"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "una farfalla"
       ]
     },
     "q1campaign: Title": {
@@ -21318,6 +21470,9 @@
       "Verification code copied to clipboard": [
         "Codice di verifica copiato negli appunti"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Codice di verifica inviato a ${ parentEmail }"
+      ],
       "Verification successful": [
         "Verifica riuscita"
       ],
@@ -21341,6 +21496,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Riceverai il tuo nome utente via SMS entro un minuto se hai inserito un numero di telefono di recupero valido."
+      ],
+      "Your address has been activated": [
+        "Il tuo indirizzo è stato attivato"
       ]
     },
     "Success message": {
@@ -22737,6 +22895,12 @@
       ],
       "Privacy and data collection": [
         "Privacy e raccolta dati"
+      ],
+      "Problem processing your payment": [
+        "Problema durante l'elaborazione del pagamento"
+      ],
+      "Problem processing your request": [
+        "Problema durante l'elaborazione della tua richiesta"
       ],
       "Processing...": [
         "Elaborazione..."

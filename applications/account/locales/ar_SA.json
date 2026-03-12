@@ -76,6 +76,12 @@
       "Activate recovery": [
         "تنشيط الاسترداد"
       ],
+      "Activate reserved address": [
+        "تنشيط العنوان المحجوز"
+      ],
+      "Activate this address": [
+        "تنشيط هذا العنوان"
+      ],
       "Add": [
         "أضف"
       ],
@@ -487,6 +493,9 @@
       "Don't show again": [
         "لا تظهره مرة اخرى"
       ],
+      "Donate": [
+        "تبرع"
+      ],
       "Done": [
         "تم"
       ],
@@ -702,6 +711,9 @@
       ],
       "Get verification code": [
         "احصل على رمز التحقق"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "احصل على عنوان ${ MAIL_APP_NAME } الخاص بك"
       ],
       "Go back": [
         "رجوع"
@@ -1180,6 +1192,9 @@
       "Send reminder": [
         "إرسال تذكير"
       ],
+      "Send verification code": [
+        "إرسال رمز التحقق"
+      ],
       "Set as album cover": [
         "تعيين كغلاف للألبوم"
       ],
@@ -1344,6 +1359,9 @@
       ],
       "Try for free": [
         "جرب مجانًا"
+      ],
+      "Try payment again": [
+        "حاول الدفع مرة أخرى"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "حاول الحفظ مرة أخرى. فشل الحفظ بسبب: ${ saveError }"
@@ -5577,6 +5595,9 @@
       "Account does not exist": [
         "الحساب غير موجود"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "فشل التنشيط. قد تكون التفاصيل غير صحيحة، أو أن البريد الإلكتروني نشط بالفعل. يرجى التحقق من مدخلاتك أو تسجيل الدخول."
+      ],
       "Add at least one action": [
         "أضف إجراءً واحدًا على الأقل"
       ],
@@ -5697,6 +5718,9 @@
       ],
       "Failed loading group members": [
         "فشل في إضافة أعضاء المجموعة"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "فشل تنشيط عنوانك. يرجى المحاولة مرة أخرى."
       ],
       "Failed to add group member": [
         "فشلت إضافة عضو إلى المجموعة"
@@ -7255,6 +7279,16 @@
         "${ BRAND_NAME }. الخصوصية بشكل افتراضي"
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "أدخل عنوان بريدك الإلكتروني"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "سيتم إرسال القسيمة إلى هنا."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "تطبيق الويب"
@@ -7508,6 +7542,32 @@
       ],
       "Value / Data / Points to": [
         "القيمة / البيانات / النقاط إلى"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "خطوة بسيطة اليوم لضمان السلامة الرقمية لطفلك غدًا"
+      ],
+      "Activate your reserved email address": [
+        "تنشيط عنوان بريدك الإلكتروني المحجوز"
+      ],
+      "Address reservation voucher": [
+        "قسيمة حجز العنوان"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "تبرع لمؤسسة ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "أدخل رمز التحقق"
+      ],
+      "Recover activation voucher": [
+        "استرداد قسيمة التنشيط"
+      ],
+      "Reserve child's email address": [
+        "حجز عنوان البريد الإلكتروني للطفل"
+      ],
+      "We emailed you the voucher": [
+        "أرسلنا لك القسيمة عبر البريد الإلكتروني"
       ]
     },
     "Headline": {
@@ -8360,9 +8420,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "النطاق الفرعي ${ protonSubdomain } مستضاف بواسطة ${ BRAND_NAME }، مما يسمح لك بإعداد نطاق فرعي بسرعة. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "يتطلب إنشاء المجموعات وجود نطاق مخصّص. إذا لم يكن لديك نطاق مخصّص جاهز، فأنشئه أولاً عبر ${ linkToDomainPage }."
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "اسم لمساعدتك على تحديد مكان استخدامه حتى تتمكن من إبطاله أو تمديده بسهولة في وقت لاحق."
       ],
@@ -9101,11 +9158,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "أدخل بيانات اعتماد حساب البريد الإلكتروني الذي تريد الاستيراد منه."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "أدخل عنوان البريد الإلكتروني المستخدم لحجز ${ reservedEmail }."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "أدخل معرّف المؤسسة في **eduGAIN** لنطاق **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "أدخل كلمة مرور المؤسسة لاستعادة امتيازات المسؤول. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "أدخل عنوان البريد الإلكتروني المحجوز وعنوان البريد الإلكتروني المستخدم أثناء الحجز."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "أدخل رمز التحقق الذي تم إرساله إلى ${ destinationText }."
@@ -9251,11 +9314,17 @@
       "Groups": [
         "المجموعات"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "ساعد العائلات الأخرى على منح أطفالهم بداية آمنة على الإنترنت. شارك هذا الإنجاز وانشر الكلمة."
+      ],
       "here": [
         "هنا"
       ],
       "High Priority": [
         "أولوية عالية"
+      ],
+      "How it works": [
+        "كيفية العمل"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "المفتاح العمومي لمقدم خدمات الهوية لتوقيع تأكيدات المصادقة. ينبغي أن يكون هناك مكان لتنزيل أو نسخ شهادة التشفير من موفر الهوية. الصق شهادة التشفير في منطقة النص."
@@ -9265,6 +9334,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "إذا تم تفعيل اختصارات لوحة المفاتيح، فيمكنك استخدام المفاتيح التالية لإجراءات سريعة أو للانتقال إلى طرق عرض مختلفة. ${ metaKey } + K مُفعَّل دائمًا."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "إذا كان البريد الإلكتروني الذي أدخلته مستخدمًا لحجز عنوان بريد إلكتروني للطفل، فسنعيد إرسال قسيمة التنشيط."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "إذا كان هذا بسبب إعادة تعيين كلمة المرور القديمة، فيمكنك إيقاف عرض الرسالة مرة أخرى"
@@ -9500,6 +9572,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "ما عليك سوى تأكيد اختيارك وسنتولى الباقي."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "احتفظ بالقسيمة في مكان آمن لحين الحاجة إليها، على سبيل المثال في ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "حافظ على معلوماتك أكثر أمانًا وخصوصية مع هذه الإرشادات والنصائح."
@@ -9956,6 +10031,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "تواصل معنا للحصول على المساعدة بشأن أي شيء يتعلق بـ ${ BRAND_NAME }."
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "احصل على قسيمة الحجز عبر البريد الإلكتروني. يمكنك أو يمكن للطفل استخدامها لتنشيط العنوان خلال الـ 15 عامًا القادمة. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "الخوادم المستخدمة مؤخرًا:"
       ],
@@ -10174,6 +10252,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "قد لا تظهر بعض الخوادم في القائمة أعلاه. يمكن البحث باستخدام اسم الخادم (على سبيل المثال، AT#62) للعثور عليها."
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "حدث خطأ ما. يرجى المحاولة مرة أخرى أو الاتصال بدعم العملاء."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "حدد النطاق المسموح به للمصادقة باستخدام SAML SSO."
       ],
@@ -10196,6 +10277,9 @@
         "الخطوة ${ step }",
         "الخطوة ${ step }",
         "الخطوة ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "الخطوة ${ step }/${ totalSteps }"
       ],
       "Storage allocated to other users in this organisation": [
         "مساحة التخزين المخصصة للمستخدمين الآخرين في هذه المؤسسة"
@@ -10520,6 +10604,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "لمواكبة آخر التطورات في منتجات ${ BRAND_NAME }، يمكنك الاشتراك في رسائل البريد الإلكتروني المختلفة لدينا و ${ blogLink } من وقت لآخر."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "لمنع إساءة الاستخدام أو الاحتيال، نطلب تبرعًا بحد أدنى قدره ${ minimumDonation }. يدعم ذلك عمل ${ protonFoundationLink } في الدفاع عن الخصوصية الرقمية عالميًا ويساعد على حماية الجيل القادم."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "للمتابعة، حدد طريقة استرداد الحساب حتى نتمكن من التحقق من الطلب."
       ],
@@ -10721,6 +10808,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "ننصحك باستعمال تطبيقات ${ VPN_APP_NAME } الرسمية قدر الإمكان"
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "تعذر إكمال المعاملة. يرجى المحاولة مرة أخرى."
+      ],
       "We couldn’t process your payment.": [
         "تعذر علينا معالجة دفعتك."
       ],
@@ -10816,6 +10906,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "عند إزالة خادم من بوابة، فإنه يدخل فترة إلغاء تنشيط مدتها 10 أيام. يمكن إضافة هذا الخادم إلى بوابة جديدة، ولكن لا يمكن تغيير بلده."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "عند الاستعداد لتنشيط العنوان، امسح رمز QR أو استخدم الرابط الموجود في القسيمة."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "عند تجديد اشتراكك ، سيتم استخدام أي رصيد متاح أولاً قبل أن نفرض على طرق الدفع الخاصة بك أعلاه."
@@ -11216,6 +11309,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "ستنتهي تجربتك في غضون ${ timeRemaining }."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "قسيمتك لعنوان بريد ${ BRAND_NAME } الإلكتروني المحجوز: ${ reservedEmail }"
+      ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "ستفقد أيضًا الوصول إلى ميزات ${ boldPlanTitle }:"
       ],
@@ -11250,6 +11346,11 @@
       ],
       "Selected color:": [
         "اللون المحدد:"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "أدخل رمز التحقق الذي أُرسل إلى ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -11765,6 +11866,9 @@
       "Actions": [
         "العمليات"
       ],
+      "Activation code": [
+        "رمز التنشيط"
+      ],
       "Activity": [
         "النشاط"
       ],
@@ -11948,6 +12052,9 @@
       "Choose a name for the generated certificate file": [
         "اختر اسما لملف الشهادة الذي تم إنشاؤه"
       ],
+      "Choose an address to reserve for your child": [
+        "اختر عنوانًا لحجزه لطفلك"
+      ],
       "City": [
         "المدينة"
       ],
@@ -12116,6 +12223,12 @@
       "Don't show this again": [
         "لا تظهر لي هذا مرة أخرى"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "تبرع بـ 1$ أو أكثر لمؤسسة ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "مبلغ التبرع"
+      ],
       "e.g. example.com": [
         "على سبيل المثال example.com"
       ],
@@ -12160,6 +12273,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "أدخل كلمة المرور للمفتاح مع بصمة الإصبع: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "أدخل عنوان بريدك الإلكتروني"
       ],
       "Enter your password": [
         "أدخِل كلمة مرورك"
@@ -12617,6 +12733,12 @@
       "Require 2FA for everyone": [
         "طلب المصادقة الثنائية (2FA) للجميع"
       ],
+      "Reserved address": [
+        "العنوان المحجوز"
+      ],
+      "Reserved email address": [
+        "عنوان البريد الإلكتروني المحجوز"
+      ],
       "Reveal password": [
         "إظهار كلمة السر"
       ],
@@ -12649,6 +12771,9 @@
       ],
       "Server name": [
         "اسم الخادم"
+      ],
+      "Set password": [
+        "تعيين كلمة مرور"
       ],
       "Share your referral link": [
         "شارك رابط إحالتك"
@@ -12747,6 +12872,9 @@
       ],
       "Time zone": [
         "المنطقة الزمنية"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "للتنشيط، امسح رمز QR أو انتقل إلى:"
       ],
       "To help us improve, please explain why you are leaving.": [
         "لمساعدتنا على التحسين، يُرجى توضيح سبب مغادرتك."
@@ -12853,14 +12981,23 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "نعم، أريد حذف هذا الحساب وجميع بياناته نهائيًا."
       ],
+      "Your activation code:": [
+        "رمز التنشيط:"
+      ],
       "Your calendar URL": [
         "عنوان URL الخاص بتقويمك"
+      ],
+      "Your email address": [
+        "عنوان بريدك الإلكتروني"
       ],
       "Your password (admin)": [
         "كلمة المرور الخاصة بك (المشرف)"
       ],
       "Your password (trusted contact)": [
         "كلمة مرورك (جهة اتصال موثوق بها)"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "قسيمتك لعنوان بريد ${ BRAND_NAME } الإلكتروني المحجوز:"
       ],
       "ZIP code": [
         "الرمز البريدي"
@@ -12995,6 +13132,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "مؤسسة ${ BRAND_NAME }"
+      ],
       "Activity log": [
         "سجل النشاط"
       ],
@@ -13015,6 +13155,9 @@
       ],
       "Calendars": [
         "التقويمات"
+      ],
+      "Can't find your code?": [
+        "ألا يمكنك العثور على الرمز؟"
       ],
       "clearing your browser cache": [
         "مسح ذاكرة التخزين المؤقت للمتصفح"
@@ -13198,6 +13341,20 @@
       ],
       "What’s this?": [
         "ما هذا؟"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "البريد الإلكتروني"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "لينكد إن"
+      ],
+      "Twitter (X)": [
+        "تويتر (X)"
       ]
     },
     "Link label (optional)": {
@@ -16585,6 +16742,9 @@
       ],
       "Address": [
         "العنوان"
+      ],
+      "Amount": [
+        "المبلغ"
       ],
       "Anderson": [
         "Anderson"
@@ -20324,6 +20484,9 @@
       "Verification code copied to clipboard": [
         "تم نسخ رمز التحقق إلى الحافظة"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "أُرسل رمز التحقق إلى ${ parentEmail }"
+      ],
       "Verification successful": [
         "تم التحقق بنجاح"
       ],
@@ -20347,6 +20510,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "ستتلقى اسم المستخدم الخاص بك عبر رسالة نصية قصيرة (SMS) في غضون دقيقة إذا أدخلت رقم هاتف صالحًا للاسترداد."
+      ],
+      "Your address has been activated": [
+        "تم تنشيط عنوانك"
       ]
     },
     "Success message": {
@@ -21673,6 +21839,12 @@
       ],
       "Privacy and data collection": [
         "جمع البيانات والخصوصية"
+      ],
+      "Problem processing your payment": [
+        "مشكلة في معالجة الدفع"
+      ],
+      "Problem processing your request": [
+        "مشكلة في معالجة طلبك"
       ],
       "Processing...": [
         "قيد المعالجة..."
