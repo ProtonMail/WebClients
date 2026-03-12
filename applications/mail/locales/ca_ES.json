@@ -1484,8 +1484,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -4683,6 +4682,9 @@
       "Invalid code": [
         "Codi invàlid"
       ],
+      "Invalid coupon": [
+        "El cupó no és vàlid"
+      ],
       "Invalid email address": [
         "L'adreça de correu electrònic no és vàlida."
       ],
@@ -4994,6 +4996,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La quantitat mínima de crèdit que es pot afegir és ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "La donació mínima és de ${ price }"
       ],
       "The sending key is not valid": [
         "La clau enviada no es vàlida"
@@ -7461,7 +7466,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9579,6 +9585,9 @@
       ],
       "Import interval": [
         "Interval d'importació"
+      ],
+      "Import recent mails": [
+        "Importar els correus electrònics recents"
       ],
       "Import to email address": [
         "Importar a l'adreça de correu electrònic"

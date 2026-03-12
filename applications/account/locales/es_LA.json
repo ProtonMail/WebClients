@@ -279,6 +279,9 @@
       "Close navigation": [
         "Cerrar navegación"
       ],
+      "Close search": [
+        "Cerrar búsqueda"
+      ],
       "Close tab": [
         "Cerrar pestaña"
       ],
@@ -1301,6 +1304,9 @@
       ],
       "Search countries": [
         "Buscar países"
+      ],
+      "Search groups": [
+        "Buscar grupos"
       ],
       "Search settings": [
         "Ajustes de búsqueda"
@@ -6597,6 +6603,9 @@
       "Invalid code": [
         "Código inválido"
       ],
+      "Invalid coupon": [
+        "Cupón invalido"
+      ],
       "Invalid domain": [
         "Dominio inválido"
       ],
@@ -9203,8 +9212,8 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Un ${ protonSubdomain } es alojado por ${ BRAND_NAME }, que fácilmente le permite configurar un subdominio. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Se requiere un dominio personalizado para crear grupos. Si no tiene un dominio personalizado configurado, hágalo primero en ${ linkToDomainPage }."
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Se necesita un dominio personalizado para crear grupos. Si no ha configurado ninguno, hágalo primero en ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nombre que le ayude a identificar dónde lo usa para poder revocarlo o ampliarlo fácilmente más adelante."
@@ -13604,6 +13613,9 @@
       ],
       "Import interval": [
         "Importar intervalo"
+      ],
+      "Import recent mails": [
+        "Importar correos recientes"
       ],
       "Import to email address": [
         "Importar a la dirección de correo"
@@ -18649,9 +18661,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "No volver a mostrar esta oferta"
-      ],
       "Get the deal": [
         "Aproveche la oferta"
       ]
@@ -18728,11 +18737,6 @@
       ],
       "Use your own email domain": [
         "Use su propio dominio de correo electrónico"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "una mariposa"
       ]
     },
     "q1campaign: Title": {

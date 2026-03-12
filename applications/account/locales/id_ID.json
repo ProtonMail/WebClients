@@ -90,6 +90,12 @@
       "Activate recovery": [
         "Aktifkan metode pemulihan"
       ],
+      "Activate reserved address": [
+        "Aktifkan alamat yang dipesan"
+      ],
+      "Activate this address": [
+        "Aktifkan alamat ini"
+      ],
       "Add": [
         "Tambah"
       ],
@@ -540,6 +546,9 @@
       "Don't show again": [
         "Jangan tampilkan lagi"
       ],
+      "Donate": [
+        "Berdonasi"
+      ],
       "Done": [
         "Selesai"
       ],
@@ -809,6 +818,9 @@
       ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Dapatkan alamat ${ MAIL_APP_NAME } sendiri"
       ],
       "Go back": [
         "Kembali"
@@ -1338,6 +1350,9 @@
       "Send reminder": [
         "Kirim pengingat"
       ],
+      "Send verification code": [
+        "Kirim kode verifikasi"
+      ],
       "Set as album cover": [
         "Pasang sebagai sampul album"
       ],
@@ -1505,6 +1520,9 @@
       ],
       "Try for free": [
         "Coba gratis"
+      ],
+      "Try payment again": [
+        "Coba pembayaran lagi"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Cobalah untuk menyimpan kembali. Penyimpanan gagal karena: ${ saveError }"
@@ -5919,6 +5937,9 @@
       "Account does not exist": [
         "Akun tidak ada"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Aktivasi gagal. Rincian mungkin salah, atau email sudah aktif. Silakan periksa input atau masuk."
+      ],
       "Add at least one action": [
         "Tambah setidaknya satu tindakan"
       ],
@@ -6035,6 +6056,9 @@
       ],
       "Expired": [
         "Kedaluwarsa"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Gagal mengaktifkan alamat. Silakan coba lagi."
       ],
       "Failed to add group member": [
         "Anggota grup gagal ditambahkan"
@@ -7574,6 +7598,16 @@
         "Saya mengerti bahwa saya tidak lagi dapat masuk ke aplikasi seluler ${ BRAND_NAME } versi lama."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Masukkan alamat email"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Voucher akan dikirim ke sini."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "aplikasi web"
@@ -7873,6 +7907,32 @@
       ],
       "Subscribed": [
         "Berlangganan"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Langkah sederhana hari ini untuk memastikan keamanan digital anak esok hari"
+      ],
+      "Activate your reserved email address": [
+        "Aktifkan alamat email yang dipesan"
+      ],
+      "Address reservation voucher": [
+        "Voucher pemesanan alamat"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Berdonasi ke ${ BRAND_NAME } Foundation"
+      ],
+      "Enter verification code": [
+        "Masukkan kode verifikasi"
+      ],
+      "Recover activation voucher": [
+        "Pulihkan voucher aktivasi"
+      ],
+      "Reserve child's email address": [
+        "Pesan alamat email anak"
+      ],
+      "We emailed you the voucher": [
+        "Voucher telah dikirimkan melalui email"
       ]
     },
     "Headline": {
@@ -8594,9 +8654,6 @@
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } di-host oleh ${ BRAND_NAME }, yang memungkinkan Anda untuk mengatur subdomain secara cepat. ${ learnMoreLink }"
-      ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Domain khusus diperlukan untuk membuat grup. Jika Anda belum menyiapkan domain khusus, lakukan terlebih dahulu dalam ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Nama untuk membantu Anda mengidentifikasi tempat penggunaannya agar Anda bisa dengan mudah mencabut atau memperpanjangnya nanti."
@@ -9339,11 +9396,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "Masukkan kredensial akun email yang ingin Anda impor."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Masukkan alamat email yang digunakan untuk memesan ${ reservedEmail }."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Masukkan ID Entitas organisasi **eduGAIN** untuk **${ domain.DomainName }**"
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Masukkan Kata Sandi Organisasi untuk memulihkan hak administrator. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Masukkan alamat email yang dipesan dan alamat email yang digunakan selama pemesanan."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
@@ -9495,6 +9558,9 @@
       "Groups": [
         "Grup"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Bantu keluarga lain memberikan awal yang aman secara daring bagi anak mereka. Bagikan pencapaian ini dan sebarkan."
+      ],
       "here": [
         "di sini"
       ],
@@ -9503,6 +9569,9 @@
       ],
       "High Priority": [
         "Prioritas Tinggi"
+      ],
+      "How it works": [
+        "Cara kerjanya"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Kunci publik penyedia identitas untuk menandatangani pernyataan autentikasi. Harus ada tempat untuk mengunduh atau menyalin hash sertifikat dari penyedia identitas. Cukup tempelkan hash sertifikat di bidang area teks."
@@ -9521,6 +9590,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Jika pintasan keyboard diaktifkan, Anda dapat menggunakan tombol-tombol berikut untuk tindakan cepat atau menuju tampilan berbeda. ${ metaKey } + K selalu diaktifkan."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Jika email yang dimasukkan digunakan untuk memesan alamat email anak, voucher aktivasi akan dikirim ulang."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Apabila zona waktu sistem tidak sesuai dengan preferensi zona waktu saat ini, Anda akan diminta untuk memperbaruinya (paling banyak sekali per hari)."
@@ -9749,6 +9821,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Simpan voucher dengan aman hingga dibutuhkan, misalnya di ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Jadikan informasi seputar diri Anda lebih aman dan privat dengan berbagai panduan dan tips berikut."
@@ -10236,6 +10311,9 @@
       "Receive notifications for ${ categoryLabel }": [
         "Terima notifikasi untuk ${ categoryLabel }"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Terima voucher pemesanan melalui email. Anda atau anak dapat menggunakannya untuk mengaktifkan alamat dalam kurun waktu 15 tahun ke depan. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Server yang baru digunakan:"
       ],
@@ -10464,6 +10542,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Beberapa server mungkin tidak muncul dalam daftar di atas. Cari berdasarkan nama server (mis., AT#62) untuk menemukannya."
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Terjadi kesalahan. Silakan coba lagi atau hubungi dukungan pelanggan."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Tentukan domain yang diizinkan untuk mengautentikasi dengan SSO SAML."
       ],
@@ -10481,6 +10562,9 @@
       ],
       "Step ${ step }": [
         "Langkah ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Langkah ${ step }/${ totalSteps }"
       ],
       "Storage allocated to other users in this organisation": [
         "Ruang penyimpanan yang dialokasikan kepada pengguna lain di dalam organisasi ini"
@@ -10806,6 +10890,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Untuk mengikuti pengembangan terkini seputar produk ${ BRAND_NAME }, Anda dapat berlangganan ke milis kami serta ${ blogLink } dari waktu ke waktu."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Untuk mencegah penyalahgunaan atau penipuan, diperlukan donasi minimal sebesar ${ minimumDonation }. Hal ini mendukung pekerjaan ${ protonFoundationLink } dalam membela privasi digital secara global dan membantu melindungi generasi penerus."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Untuk dapat melanjutkan, pilih metode pemulihan akun yang Anda kehendaki agar kami dapat memverifikasi permintaan Anda."
       ],
@@ -11019,6 +11106,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Kami menyarankan Anda untuk menggunakan aplikasi resmi ${ VPN_APP_NAME } apabila memungkinkan."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Transaksi tidak dapat diselesaikan. Silakan coba lagi."
+      ],
       "We couldn’t process your payment.": [
         "Kami tidak dapat memproses pembayaran Anda."
       ],
@@ -11123,6 +11213,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Ketika Anda menghapus server dari Gateway, server tersebut memasuki periode deaktivasi selama 10 hari. Server ini dapat ditambahkan ke Gateway baru, tetapi negaranya tidak dapat diubah."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Saat siap untuk mengaktifkan alamat, pindai kode QR atau gunakan tautan dalam voucher."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Saat langganan Anda diperpanjang, kami akan menerapkan kredit yang tersedia terlebih dahulu sebelum menagih metode pembayaran di atas."
@@ -11472,6 +11565,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Masa uji coba Anda akan berakhir dalam ${ timeRemaining }."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Voucher untuk alamat email ${ BRAND_NAME } yang dipesan: ${ reservedEmail }"
+      ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Anda juga akan kehilangan akses ke berbagai fitur ${ boldPlanTitle } berikut:"
       ],
@@ -11511,6 +11607,11 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "Membantu menulis, membalas, dan mengoreksi email. Apabila dinonaktifkan, fitur ini hanya akan dapat diakses oleh administrator. Kelola fitur ini bagi pengguna individu di ${ userAndAddresses } atau ${ addMoreSeats }"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Masukkan kode verifikasi yang dikirim ke ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -12122,6 +12223,9 @@
       "Actions": [
         "Tindakan"
       ],
+      "Activation code": [
+        "Kode aktivasi"
+      ],
       "Activity": [
         "Aktivitas"
       ],
@@ -12353,6 +12457,9 @@
       "Choose a name for the generated certificate file": [
         "Pilih nama untuk file sertifikat yang dihasilkan"
       ],
+      "Choose an address to reserve for your child": [
+        "Pilih alamat untuk dipesan bagi anak Anda"
+      ],
       "City": [
         "Kota"
       ],
@@ -12551,6 +12658,12 @@
       "Don't show this again": [
         "Jangan tampilkan lagi"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Berdonasi sebesar $1 atau lebih ke ${ BRAND_NAME } Foundation"
+      ],
+      "Donation amount": [
+        "Jumlah donasi"
+      ],
       "Duration": [
         "Durasi"
       ],
@@ -12607,6 +12720,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Masukkan kata sandi untuk kunci dengan kode sidik jari berikut: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Masukkan alamat email"
       ],
       "Enter your password": [
         "Masukkan kata sandi Anda"
@@ -13112,6 +13228,12 @@
       "Require 2FA for everyone": [
         "Wajibkan penggunaan 2FA bagi semua pengguna"
       ],
+      "Reserved address": [
+        "Alamat yang dipesan"
+      ],
+      "Reserved email address": [
+        "Alamat email yang dipesan"
+      ],
       "Reveal password": [
         "Perlihatkan kata sandi"
       ],
@@ -13153,6 +13275,9 @@
       ],
       "Server name": [
         "Nama server"
+      ],
+      "Set password": [
+        "Atur kata sandi"
       ],
       "Share your referral link": [
         "Bagikan tautan rujukan Anda"
@@ -13283,6 +13408,9 @@
       "Tips and insights": [
         "Tip dan wawasan"
       ],
+      "To activate, scan the QR-code or go to:": [
+        "Untuk mengaktifkan, pindai kode QR atau kunjungi:"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Untuk membantu kami meningkatkan, silakan menjelaskan mengapa Anda keluar."
       ],
@@ -13406,14 +13534,23 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ya, saya ingin menghapus akun ini beserta seluruh data yang terkandung di dalamnya secara permanen."
       ],
+      "Your activation code:": [
+        "Kode aktivasi Anda:"
+      ],
       "Your calendar URL": [
         "URL kalender Anda"
+      ],
+      "Your email address": [
+        "Alamat email Anda"
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
       ],
       "Your password (trusted contact)": [
         "Kata sandi Anda (kontak tepercaya)"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Voucher untuk alamat email ${ BRAND_NAME } yang dipesan:"
       ],
       "ZIP code": [
         "Kode pos"
@@ -13585,6 +13722,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "${ BRAND_NAME } Foundation"
+      ],
       "Activity log": [
         "Log aktivitas"
       ],
@@ -13602,6 +13742,9 @@
       ],
       "Calendars": [
         "Kalender"
+      ],
+      "Can't find your code?": [
+        "Tidak dapat menemukan kode?"
       ],
       "clearing your browser cache": [
         "membersihkan cache browser Anda"
@@ -13799,6 +13942,20 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Pengguna dan alamat"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Email"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -17179,6 +17336,9 @@
       ],
       "Address": [
         "Alamat"
+      ],
+      "Amount": [
+        "Jumlah"
       ],
       "Anderson": [
         "Anderson"
@@ -20758,6 +20918,9 @@
       "Verification code copied to clipboard": [
         "Kode verifikasi disalin ke papan klip"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Kode verifikasi dikirim ke ${ parentEmail }"
+      ],
       "Verification successful": [
         "Verifikasi berhasil"
       ],
@@ -20781,6 +20944,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Apabila Anda memasukkan nomor telepon pemulihan yang valid, Anda akan menerima nama pengguna Anda via SMS dalam rentang waktu satu menit."
+      ],
+      "Your address has been activated": [
+        "Alamat telah diaktifkan"
       ]
     },
     "Success message": {
@@ -22127,6 +22293,12 @@
       ],
       "Privacy and data collection": [
         "Privasi dan pengumpulan data"
+      ],
+      "Problem processing your payment": [
+        "Masalah dalam memproses pembayaran Anda"
+      ],
+      "Problem processing your request": [
+        "Masalah dalam memproses permintaan Anda"
       ],
       "Processing...": [
         "Memproses..."

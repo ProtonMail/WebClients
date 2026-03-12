@@ -1492,10 +1492,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -4745,6 +4742,9 @@
       "Invalid code": [
         "Neplatný kód"
       ],
+      "Invalid coupon": [
+        "Neplatná poukážka"
+      ],
       "Invalid email address": [
         "Neplatná emailová adresa"
       ],
@@ -5068,6 +5068,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimálna výška kreditu, ktorý je možné pridať, je ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimálna výška daru je ${ price }"
       ],
       "The sending key is not valid": [
         "Kľúč na odosielanie je neplatný"
@@ -7707,7 +7710,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"

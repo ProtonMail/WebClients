@@ -90,6 +90,12 @@
       "Activate recovery": [
         "Herstel activeren"
       ],
+      "Activate reserved address": [
+        "Gereserveerd adres activeren"
+      ],
+      "Activate this address": [
+        "Dit adres activeren"
+      ],
       "Add": [
         "Voeg toe"
       ],
@@ -561,6 +567,9 @@
       "Don't show again": [
         "Niet meer weergeven"
       ],
+      "Donate": [
+        "Doneren"
+      ],
       "Done": [
         "Klaar"
       ],
@@ -830,6 +839,9 @@
       ],
       "Get verification code": [
         "Krijg verificatie code"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Krijg uw eigen ${ MAIL_APP_NAME }-adres"
       ],
       "Go back": [
         "Ga terug"
@@ -1371,6 +1383,9 @@
       "Send reminder": [
         "Herinnering versturen"
       ],
+      "Send verification code": [
+        "Verificatiecode verzenden"
+      ],
       "Set as album cover": [
         "Instellen als omslag"
       ],
@@ -1538,6 +1553,9 @@
       ],
       "Try for free": [
         "Probeer het gratis"
+      ],
+      "Try payment again": [
+        "Probeer betaling opnieuw"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Probeer opnieuw op te slaan. Opslaan mislukt door: ${ saveError }"
@@ -6367,6 +6385,9 @@
       "Account does not exist": [
         "Account bestaat niet"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Activering is mislukt. De gegevens zijn mogelijk onjuist, of de e-mail is al actief. Controleer uw invoer of log in."
+      ],
       "Add at least one action": [
         "Voeg minimaal één actie toe"
       ],
@@ -6494,6 +6515,9 @@
       ],
       "Failed loading group members": [
         "Kon geen groepslid toevoegen."
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Activeren van uw adres is mislukt. Probeer het opnieuw."
       ],
       "Failed to add group member": [
         "Kon geen groepslid toevoegen."
@@ -8092,6 +8116,16 @@
         "Ik begrijp dat ik niet langer kan inloggen via oudere versies van de ${ BRAND_NAME } mobiele app."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Voer uw e-mailadres in"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "De voucher zal hiernaartoe worden verzonden."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "web-app"
@@ -8392,6 +8426,32 @@
       ],
       "Subscribed": [
         "Geabonneerd"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Een eenvoudige stap vandaag om de digitale veiligheid van uw kind morgen te garanderen"
+      ],
+      "Activate your reserved email address": [
+        "Activeer uw gereserveerde e-mailadres"
+      ],
+      "Address reservation voucher": [
+        "Voucher voor adresreservering"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Doneer aan de ${ BRAND_NAME } Foundation"
+      ],
+      "Enter verification code": [
+        "Voer de verificatiecode in"
+      ],
+      "Recover activation voucher": [
+        "Activeringsvoucher herstellen"
+      ],
+      "Reserve child's email address": [
+        "E-mailadres van kind reserveren"
+      ],
+      "We emailed you the voucher": [
+        "We hebben u de voucher ge-e-maild"
       ]
     },
     "Headline": {
@@ -9170,9 +9230,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Een ${ protonSubdomain } wordt gehost door ${ BRAND_NAME }, waardoor u snel een subdomein kunt instellen. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Een aangepast domein is vereist voor het maken van groepen. Als u geen aangepast domein heeft ingesteld, doe dit dan eerst onder ${ linkToDomainPage }."
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Een naam om u te helpen identificeren waar u het gebruikt zodat u het later eenvoudig kan intrekken of verlengen."
       ],
@@ -9947,11 +10004,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Voer het e-mailadres in dat is gebruikt om ${ reservedEmail } te reserveren."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Voer de entiteit-ID van een **eduGAIN** organisatie in voor **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Voer het wachtwoord van de organisatie in om de beheerdersrechten te herstellen. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Voer het gereserveerde e-mailadres in en het e-mailadres dat is gebruikt tijdens het reserveren."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
@@ -10130,6 +10193,9 @@
       "Groups": [
         "Groepen"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Help andere gezinnen om hun kinderen een veilige start online te geven. Deel deze mijlpaal en zeg het voort."
+      ],
       "here": [
         "hier"
       ],
@@ -10138,6 +10204,9 @@
       ],
       "High Priority": [
         "Hoge Prioriteit"
+      ],
+      "How it works": [
+        "Hoe het werkt"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -10162,6 +10231,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Als sneltoetsen ingeschakeld zijn, kunt u de volgende toetsen gebruiken voor snelle acties of naar verschillende weergaven springen. ${ metaKey } + K is altijd ingeschakeld."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Als de e-mail die u hebt ingevoerd is gebruikt om het e-mailadres van een kind te reserveren, sturen we de activeringsvoucher opnieuw."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Als de tijdzone niet overeenkomt met de huidige tijdzone, dan wordt u gevraagd om deze bij te werken (maximaal één keer per dag)."
@@ -10398,6 +10470,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bevestig uw keuze en wij doen de rest."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Bewaar de voucher veilig totdat deze nodig is, bijvoorbeeld in ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Houd uw info veiliger en privé met deze handleidingen en tips."
@@ -10913,6 +10988,9 @@
       "Receive notifications for ${ categoryLabel }": [
         "Ontvang meldingen voor ${ categoryLabel }"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Ontvang de reserveringsvoucher via e-mail. U of het kind kan deze gebruiken om het adres binnen de komende 15 jaar te activeren. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Recent gebruikte servers:"
       ],
@@ -11145,6 +11223,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Sommige servers verschijnen mogelijk niet in de bovenstaande lijst. Zoek op servernaam (bijv. AT#62) om ze te vinden."
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Er is iets misgegaan. Probeer het opnieuw of neem contact op met de klantenondersteuning."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Geef het domein op dat is toegestaan om te verifiëren met SAML SSO."
       ],
@@ -11163,6 +11244,9 @@
       "Step ${ step }": [
         "Stap ${ step }",
         "Stap ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Stap ${ step }/${ totalSteps }"
       ],
       "Storage allocated to other users in this organisation": [
         "Opslagruimte toegewezen aan andere gebruikers binnen deze organisatie"
@@ -11513,6 +11597,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Om de laatste ontwikkeling bij ${ BRAND_NAME }-producten te kunnen bijhouden, kunt u zich abonneren op onze verschillende e-mails en van tijd tot tijd ${ blogLink }."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Om misbruik of fraude te voorkomen, vragen we om een minimale donatie van ${ minimumDonation }. Dit ondersteunt het werk van de ${ protonFoundationLink } bij de wereldwijde verdediging van digitale privacy en helpt de volgende generatie te beschermen."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Om verder te gaan, selecteer een herstelmethode voor uw account zodat we het verzoek kunnen verifiëren."
       ],
@@ -11738,6 +11825,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "We raden u aan om officiële ${ VPN_APP_NAME }-applicaties te gebruiken waar mogelijk."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "We konden de transactie niet voltooien. Probeer het opnieuw."
+      ],
       "We couldn’t process your payment.": [
         "We konden uw betaling niet verwerken."
       ],
@@ -11848,6 +11938,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Wanneer u tweestapsverificatie instelt, bieden we herstelcodes die u kunt gebruiken om u aan te melden als u de toegang tot uw authenticatie app verliest."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Wanneer u klaar bent om het adres te activeren, scan dan de QR-code of gebruik de koppeling in de voucher."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wanneer uw abonnement verlengt, passen we alle beschikbare credits toe voordat we de bovenstaande betaalmethode in rekening brengen."
@@ -12243,6 +12336,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Uw proefperiode eindigt over ${ timeRemaining }."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Uw voucher voor uw gereserveerde ${ BRAND_NAME }-e-mailadres: ${ reservedEmail }"
+      ],
       "YouTube": [
         "YouTube"
       ],
@@ -12285,6 +12381,11 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "Helpt bij het schrijven, beantwoorden en proeflezen van e-mails. Indien uitgeschakeld hebben alleen beheerders toegang. Beheer voor individuele gebruikers in ${ userAndAddresses } of ${ addMoreSeats }"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Voer de verificatiecode in die is verzonden naar ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -12915,6 +13016,9 @@
       "Actions": [
         "Acties"
       ],
+      "Activation code": [
+        "Activeringscode"
+      ],
       "Activity": [
         "Activiteit"
       ],
@@ -13158,6 +13262,9 @@
       "Choose a name for the generated certificate file": [
         "Kies een naam voor het gegenereerde certifcaatbestand"
       ],
+      "Choose an address to reserve for your child": [
+        "Kies een adres om te reserveren voor uw kind"
+      ],
       "Choose your billing": [
         "Kies uw facturering"
       ],
@@ -13362,6 +13469,12 @@
       "Don't show this again": [
         "Toon dit niet opnieuw"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Doneer $ 1 of meer aan de ${ BRAND_NAME } Foundation"
+      ],
+      "Donation amount": [
+        "Donatiebedrag"
+      ],
       "Duration": [
         "Duur"
       ],
@@ -13421,6 +13534,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Voer het wachtwoord in voor de sleutel met vingerafdruk: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Voer uw e-mailadres in"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
@@ -13938,6 +14054,12 @@
       "Require 2FA for everyone": [
         "2FA vereisen voor iedereen"
       ],
+      "Reserved address": [
+        "Gereserveerd adres"
+      ],
+      "Reserved email address": [
+        "Gereserveerd e-mailadres"
+      ],
       "Reveal password": [
         "Wachtwoord tonen"
       ],
@@ -13979,6 +14101,9 @@
       ],
       "Server name": [
         "Servernaam"
+      ],
+      "Set password": [
+        "Wachtwoord instellen"
       ],
       "Share your referral link": [
         "Deel uw verwijzingslink:"
@@ -14109,6 +14234,9 @@
       ],
       "Tips and insights": [
         "Tips en inzichten"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Scan de QR-code om te activeren of ga naar:"
       ],
       "To help us improve, please explain why you are leaving.": [
         "Om ons te helpen verbeteren, willen we u vragen om uit te leggen waarom u weggaat."
@@ -14242,11 +14370,17 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, ik wil permanent mijn account inclusief alle gegevens verwijderen."
       ],
+      "Your activation code:": [
+        "Uw activeringscode:"
+      ],
       "Your calendar URL": [
         "Uw agenda-URL"
       ],
       "Your credit balance": [
         "Uw tegoed"
+      ],
+      "Your email address": [
+        "Uw e-mailadres"
       ],
       "Your password (admin)": [
         "Uw wachtwoord (beheerder)"
@@ -14256,6 +14390,9 @@
       ],
       "Your plan": [
         "Uw abonnement"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Uw voucher voor uw gereserveerde ${ BRAND_NAME }-e-mailadres:"
       ],
       "ZIP code": [
         "Postcode"
@@ -14428,6 +14565,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "${ BRAND_NAME } Foundation"
+      ],
       "Activity log": [
         "Activiteitenlog"
       ],
@@ -14448,6 +14588,9 @@
       ],
       "Calendars": [
         "Agenda's"
+      ],
+      "Can't find your code?": [
+        "Kunt u uw code niet vinden?"
       ],
       "clearing your browser cache": [
         "browsercache legen"
@@ -14651,6 +14794,20 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Gebruikers en adressen"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "E-mail"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -18200,6 +18357,9 @@
       "Address": [
         "Adres"
       ],
+      "Amount": [
+        "Bedrag"
+      ],
       "Anderson": [
         "Anderson"
       ],
@@ -18598,9 +18758,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Toon deze aanbieding niet opnieuw"
-      ],
       "Get the deal": [
         "Pak de aanbieding"
       ]
@@ -18677,11 +18834,6 @@
       ],
       "Use your own email domain": [
         "Gebruik uw eigen e-maildomein"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "een vlinder"
       ]
     },
     "q1campaign: Title": {
@@ -22062,6 +22214,9 @@
       "Verification code copied to clipboard": [
         "Verificatiecode gekopieerd naar klembord"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Verificatiecode verzonden naar ${ parentEmail }"
+      ],
       "Verification successful": [
         "Verificatie gelukt"
       ],
@@ -22085,6 +22240,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "U ontvangt uw gebruikersnaam binnen een minuut via SMS als u een geldig herstel-telefoonnummer hebt ingevoerd."
+      ],
+      "Your address has been activated": [
+        "Uw adres is geactiveerd"
       ]
     },
     "Success message": {
@@ -23493,6 +23651,12 @@
       ],
       "Privacy and data collection": [
         "Privacy en gegevensverzameling"
+      ],
+      "Problem processing your payment": [
+        "Probleem tijdens de verwerking van uw betaling"
+      ],
+      "Problem processing your request": [
+        "Probleem tijdens de verwerking van uw verzoek"
       ],
       "Processing...": [
         "Wordt verwerkt..."

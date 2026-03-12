@@ -3971,6 +3971,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Částka je nižší než minimální možná hodnota (${ minimumAmount })."
       ],
+      "An error occurred": [
+        "Došlo k chybě"
+      ],
       "Checkout expired, please try again": [
         "Objednávka vypršela, zkuste to prosím znovu"
       ],
@@ -6907,9 +6910,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Tuto nabídku již nezobrazovat"
-      ],
       "Get the deal": [
         "Využít nabídku"
       ]
@@ -6986,11 +6986,6 @@
       ],
       "Use your own email domain": [
         "Používejte svou vlastní e-mailovou doménu"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "motýl"
       ]
     },
     "q1campaign: Title": {

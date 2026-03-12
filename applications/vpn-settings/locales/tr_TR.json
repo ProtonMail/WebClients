@@ -176,6 +176,9 @@
       "Close navigation": [
         "Gezinmeyi kapat"
       ],
+      "Close search": [
+        "Aramayı kapat"
+      ],
       "Close this banner": [
         "Bu uyarıyı kapat"
       ],
@@ -838,6 +841,9 @@
       ],
       "Search countries": [
         "Ülke ara"
+      ],
+      "Search groups": [
+        "Gruplarda ara"
       ],
       "See DNS TXT record": [
         "DNS TXT kaydını görüntüle"
@@ -4177,6 +4183,9 @@
       "Invalid code": [
         "Kod geçersiz"
       ],
+      "Invalid coupon": [
+        "Geçersiz kupon"
+      ],
       "Invalid domain": [
         "Etki alanı geçersiz"
       ],
@@ -4445,6 +4454,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Eklenebilecek en az kredi tutarı: ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimum bağış tutarı ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "İlke adının uzunluğu 3 ile 40 karakter arasında olmalıdır."
@@ -6177,8 +6189,8 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ BRAND_NAME } tarafından sunulan bir ${ protonSubdomain }, hızlıca bir alt etki alanı kurmanızı sağlar. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Gruplar oluşturmak için özel bir etki alanı gereklidir. Bir özel etki alanınız yoksa, önce ${ linkToDomainPage } bölümünden bu işlemi tamamlayın."
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Grup oluşturmak için özel etki alanı gereklidir. Eğer ayarlanmış bir özel etki alanınız yoksa önce ${ linkToDomainPage } kısmından bunu yapın."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Daha sonra sertifikayı kolayca geçersiz kılmaya ya da uzatmaya yardımcı olacak bir ad."
@@ -9097,6 +9109,9 @@
       ],
       "Import interval": [
         "İçe aktarma aralığı"
+      ],
+      "Import recent mails": [
+        "Son e-postaları içe aktar"
       ],
       "Import to email address": [
         "E-posta adresi içine aktar"
@@ -12619,9 +12634,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Bu teklif bir daha görüntülenmesin"
-      ],
       "Get the deal": [
         "Tekliften yararlanın"
       ]
@@ -12698,11 +12710,6 @@
       ],
       "Use your own email domain": [
         "Kendi e-posta etki alanınızı kullanın"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "bir kelebek"
       ]
     },
     "q1campaign: Title": {
@@ -13848,7 +13855,7 @@
         "1 yıl sonra ${ regularAmount } yerine ${ discountedAmount } olarak yenilenir (${ discount }% indirim ile)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "2 yıl sonra ${ regularAmount } yerine ${ discountedAmount } ile yenilenir (${ discount }% indirim ile)"
+        "2 yıl sonra ${ regularAmount } yerine ${ discountedAmount } ile yenilenir (%${ discount } indirim ile)"
       ],
       "Save ${ discount }%": [
         "%${ discount } indirim"

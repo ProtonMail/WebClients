@@ -3532,6 +3532,9 @@
       "Invalid code": [
         "Ogiltig kod"
       ],
+      "Invalid coupon": [
+        "Ogiltig rabattkod"
+      ],
       "Invalid email address": [
         "Ogiltig e-postadress"
       ],
@@ -3770,6 +3773,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minsta antal krediter som kan läggas till är ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minsta donationsbelopp är ${ price }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Den nya versionen av originalfilen är inte uppladdad ännu, försök igen senare"
@@ -10540,9 +10546,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Visa inte detta erbjudande igen"
-      ],
       "Get the deal": [
         "Ta del av erbjudandet"
       ]
@@ -10619,11 +10622,6 @@
       ],
       "Use your own email domain": [
         "Använd din egen e-postdomän"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "en fjäril"
       ]
     },
     "q1campaign: Title": {
