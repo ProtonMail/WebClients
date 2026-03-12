@@ -3,22 +3,30 @@ import type { TelemetryMailPagingControlsEvents } from '@proton/shared/lib/api/t
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
+export enum PaginationSources {
+    toolbar = 'toolbar',
+    list = 'list',
+}
+
 type TelemetryPagingControlsOptions =
     | {
           event: TelemetryMailPagingControlsEvents.move_to_previous_page;
+          dimensions: { source: PaginationSources };
       }
     | {
           event: TelemetryMailPagingControlsEvents.move_to_next_page;
+          dimensions: { source: PaginationSources };
       }
     | {
           event: TelemetryMailPagingControlsEvents.clicked_load_more_search_results;
+          dimensions: { source: PaginationSources };
       }
     | {
           event: TelemetryMailPagingControlsEvents.move_to_custom_page;
-          dimensions: { isPageConsecutive: 'true' | 'false' };
+          dimensions: { isPageConsecutive: 'true' | 'false'; source: PaginationSources };
       };
 
-const useTelemetryPagingControls = () => {
+export const useTelemetryPagingControls = () => {
     const api = useApi();
 
     return (options: TelemetryPagingControlsOptions) =>
@@ -30,5 +38,3 @@ const useTelemetryPagingControls = () => {
             delay: false,
         });
 };
-
-export default useTelemetryPagingControls;

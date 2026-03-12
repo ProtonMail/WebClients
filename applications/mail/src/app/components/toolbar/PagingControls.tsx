@@ -18,7 +18,7 @@ import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { TelemetryMailPagingControlsEvents } from '@proton/shared/lib/api/telemetry';
 
 import { isPageConsecutive } from 'proton-mail/helpers/paging';
-import useTelemetryPagingControls from 'proton-mail/hooks/useTelemetryPagingControls';
+import { PaginationSources, useTelemetryPagingControls } from 'proton-mail/hooks/useTelemetryPagingControls';
 import { contextPages, pageSize as selectPageSize } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
@@ -73,7 +73,10 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
         }
 
         onPrevious();
-        void sendPagingTelemetryReport({ event: TelemetryMailPagingControlsEvents.move_to_previous_page });
+        void sendPagingTelemetryReport({
+            event: TelemetryMailPagingControlsEvents.move_to_previous_page,
+            dimensions: { source: PaginationSources.toolbar },
+        });
     };
 
     const handleClickNext = () => {
@@ -82,7 +85,10 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
         }
 
         onNext();
-        void sendPagingTelemetryReport({ event: TelemetryMailPagingControlsEvents.move_to_next_page });
+        void sendPagingTelemetryReport({
+            event: TelemetryMailPagingControlsEvents.move_to_next_page,
+            dimensions: { source: PaginationSources.toolbar },
+        });
     };
 
     const handleClickCustomPage = (page: number) => {
@@ -97,13 +103,19 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
          */
         void sendPagingTelemetryReport({
             event: TelemetryMailPagingControlsEvents.move_to_custom_page,
-            dimensions: { isPageConsecutive: isPageConsecutive(pagesState, page - 1) ? 'true' : 'false' },
+            dimensions: {
+                isPageConsecutive: isPageConsecutive(pagesState, page - 1) ? 'true' : 'false',
+                source: PaginationSources.toolbar,
+            },
         });
     };
 
     const handleClickLoadMore = () => {
         onPage(total);
-        void sendPagingTelemetryReport({ event: TelemetryMailPagingControlsEvents.clicked_load_more_search_results });
+        void sendPagingTelemetryReport({
+            event: TelemetryMailPagingControlsEvents.clicked_load_more_search_results,
+            dimensions: { source: PaginationSources.toolbar },
+        });
     };
 
     // total is 0 when no items
