@@ -43,7 +43,7 @@ export function getIsEligible({
     }
 
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
-    const vpnSubscription = subscription?.Plans?.find((plan) => plan.Name === PLANS.VPN2024);
+    const vpnSubscription = subscription?.Plans?.find((plan) => plan.Name === PLANS.VPN2024 || plan.Name === PLANS.VPN);
     if (isInApp(protonConfig, APPS.PROTONVPN_SETTINGS, parentApp) && vpnSubscription?.Cycle === CYCLE.MONTHLY) {
         return true;
     }
