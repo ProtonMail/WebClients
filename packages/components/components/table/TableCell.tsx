@@ -1,4 +1,4 @@
-import type { ReactNode, ThHTMLAttributes } from 'react';
+import { forwardRef, type ReactNode, type ThHTMLAttributes } from 'react';
 
 interface Props extends ThHTMLAttributes<HTMLTableCellElement> {
     children: ReactNode;
@@ -10,21 +10,27 @@ interface Props extends ThHTMLAttributes<HTMLTableCellElement> {
 /**
  * TableCell with type 'header' is deprecated. Please use TableHeaderCell component for header cells.
  */
-const TableCell = ({ children, label, type = 'body', 'data-testid': dataTestId, ...rest }: Props) => {
+const TableCell = forwardRef<HTMLTableCellElement, Props>(
+    (
+        { children, label, type = 'body', 'data-testid': dataTestId, ...rest },
+        ref
+    ) => {
     if (type === 'header' || type === 'footer') {
         return (
-            <th scope="col" {...rest}>
+            <th scope="col" {...rest} ref={ref}>
                 {children}
             </th>
         );
     }
 
     return (
-        <td role="cell" {...rest} data-testid={dataTestId}>
+        <td role="cell" {...rest} data-testid={dataTestId} ref={ref}>
             {label && <p className="simple-table__th-small">{label}</p>}
             {children}
         </td>
     );
-};
+});
+
+TableCell.displayName = 'TableCell';
 
 export default TableCell;

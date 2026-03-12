@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+
 import { c } from 'ttag';
 
 import { SortableList } from '@proton/components/components/dnd/SortableList';
@@ -15,7 +17,7 @@ interface Props {
 }
 
 const FilterSortableList = ({ items, onApplyFilter, onSortEnd, ...rest }: Props) => {
-    const itemIds = items.map((item) => item.ID);
+    const containerRef = useRef<HTMLTableSectionElement>(null);
 
     return (
         <Table hasActions={true} responsive="cards" className="border-none border-collapse mt-4" {...rest}>
@@ -33,11 +35,12 @@ const FilterSortableList = ({ items, onApplyFilter, onSortEnd, ...rest }: Props)
                     </th>
                 </tr>
             </TableHeader>
-            <TableBody colSpan={0}>
-                <SortableList onSortEnd={onSortEnd} items={itemIds}>
-                    {items.map((filter) => (
+            <TableBody colSpan={0} ref={containerRef}>
+                <SortableList onSortEnd={onSortEnd} containerRef={containerRef}>
+                    {items.map((filter, index) => (
                         <FilterItemRow
                             key={`item-${filter.ID}`}
+                            index={index}
                             filter={filter}
                             filters={items}
                             onApplyFilter={onApplyFilter}
