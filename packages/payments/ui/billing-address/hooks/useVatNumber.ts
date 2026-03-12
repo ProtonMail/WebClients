@@ -77,6 +77,10 @@ const countriesWithVatId = new Set([
     'NO',
     'LI',
     'IS',
+
+    // Countries for Batch 1 tax exclusive
+    'AU',
+    'SG',
 ]);
 
 const INITIAL_BILLING_ADDRESS_EXTRA: BillingAddressExtraProperties = {
