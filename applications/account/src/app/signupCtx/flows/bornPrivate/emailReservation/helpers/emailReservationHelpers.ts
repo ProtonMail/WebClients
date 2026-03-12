@@ -1,6 +1,11 @@
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
+export enum ErrorTypes {
+    paymentError = 'payment',
+    postAccountCreationError = 'post-account-creation',
+}
+
 /** Base32 alphabet (0-9, A-Z excluding I, L, O, U) to avoid confusing characters */
 const BASE32_CHARS = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
 
