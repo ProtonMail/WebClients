@@ -2937,6 +2937,9 @@
       "Incorrect username": [
         "Kullanıcı adı yanlış"
       ],
+      "Invalid coupon": [
+        "Geçersiz kupon"
+      ],
       "Invalid email address": [
         "E-posta adresi geçersiz"
       ],
@@ -8128,9 +8131,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Bu teklif bir daha görüntülenmesin"
-      ],
       "Get the deal": [
         "Tekliften yararlanın"
       ]
@@ -8207,11 +8207,6 @@
       ],
       "Use your own email domain": [
         "Kendi e-posta etki alanınızı kullanın"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "bir kelebek"
       ]
     },
     "q1campaign: Title": {
@@ -8844,7 +8839,7 @@
         "1 yıl sonra ${ regularAmount } yerine ${ discountedAmount } olarak yenilenir (${ discount }% indirim ile)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "2 yıl sonra ${ regularAmount } yerine ${ discountedAmount } ile yenilenir (${ discount }% indirim ile)"
+        "2 yıl sonra ${ regularAmount } yerine ${ discountedAmount } ile yenilenir (%${ discount } indirim ile)"
       ],
       "Save ${ discount }%": [
         "%${ discount } indirim"
