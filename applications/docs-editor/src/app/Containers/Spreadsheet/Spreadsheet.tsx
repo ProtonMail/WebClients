@@ -1,5 +1,3 @@
-/* eslint-disable monorepo-cop/no-relative-import-outside-package */
-
 import type { EditorControllerInterface } from '@proton/docs-core'
 import type {
   DataTypesThatDocumentCanBeExportedAs,
