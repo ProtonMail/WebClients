@@ -122,20 +122,22 @@ const RecoveryVerificationCode = ({
 
                     <div className="mt-2 flex flex-column-reverse md:flex-row gap-4">
                         <Button
+                            fullWidth
                             type="button"
                             color="weak"
                             size="large"
-                            className="w-full md:w-1/4 rounded-lg"
+                            className="md:w-1/4 rounded-lg"
                             onClick={onBack}
                             disabled={loading}
                         >
                             {c('Action').t`Back`}
                         </Button>
                         <Button
+                            fullWidth
                             type="submit"
                             color="norm"
                             size="large"
-                            className="w-full md:flex-1 md:w-3/4 rounded-lg"
+                            className="md:flex-1 md:w-3/4 rounded-lg"
                             loading={loading}
                         >
                             {c('Action').t`Verify code`}
