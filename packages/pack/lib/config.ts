@@ -102,7 +102,7 @@ export const getWebpackOptions = (envArguments: WebpackEnvArguments, extra: Extr
         version: appData.version,
     };
 
-    const defaultBrowsersList = isProduction
+    const defaultBrowsersList = isProduction || process.env.MOBILE_DEV
         ? `> 0.5%, not IE 11, Firefox ESR, Safari 14, iOS 14, Chrome 80`
         : 'last 1 chrome version, last 1 firefox version, last 1 safari version';
 

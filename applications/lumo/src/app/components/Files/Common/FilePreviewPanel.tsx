@@ -7,6 +7,7 @@ import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcFileSlash } from '@proton/icons/icons/IcFileSlash';
 
+import { setNativeComposerVisibility } from '../../../remote/nativeComposerBridgeHelpers';
 import { attachmentDataCache } from '../../../services/attachmentDataCache';
 import type { Attachment } from '../../../types';
 import { Role } from '../../../types';
@@ -107,6 +108,10 @@ export const FilePreviewPanel = ({ attachment, onBack, onClose }: FilePreviewPan
     const hasError = attachment.error;
     const isUnsupported = !isFileTypeSupported(attachment.filename, attachment.mimeType);
     const isProcessing = attachment.processing;
+    const handleClose = () => {
+        onClose();
+        setNativeComposerVisibility(true);
+    };
 
     const renderTableView = (content: string) => {
         try {
@@ -257,7 +262,13 @@ export const FilePreviewPanel = ({ attachment, onBack, onClose }: FilePreviewPan
                         {attachment.rawBytes ? ` • ${getFileSize(attachment.rawBytes)}` : ''}
                     </p>
                 </div>
-                <Button icon size="small" shape="ghost" onClick={onClose} title={c('collider_2025: Action').t`Close`}>
+                <Button
+                    icon
+                    size="small"
+                    shape="ghost"
+                    onClick={handleClose}
+                    title={c('collider_2025: Action').t`Close`}
+                >
                     <IcCross size={4} />
                 </Button>
             </div>

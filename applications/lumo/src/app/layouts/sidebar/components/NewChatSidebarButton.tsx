@@ -9,6 +9,7 @@ import { GuestChatDisclaimerModal } from '../../../components/Modals/GuestChatDi
 import { useGuestChatHandler } from '../../../hooks/useGuestChatHandler';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
+import { setNativeGhostMode } from '../../../remote/nativeComposerBridgeHelpers';
 import { SidebarItem } from './SidebarItem';
 
 interface Props {
@@ -24,6 +25,7 @@ export const NewChatSidebarButton = ({ showText, isSmallScreen }: Props) => {
 
     const handleNewChat = useCallback(() => {
         setGhostChatMode(false);
+        setNativeGhostMode(false);
         history.push('/');
     }, [setGhostChatMode, history]);
 

@@ -13,6 +13,7 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - whatsNew: Show "What's New" feature
  * - earlyAccess: Show early access features
  * - highLoad: Show high load warning
+ * - nativeComposer: Hides the web composer and allows the mobile clients to use their own
  */
 export const useLumoFlags = () => {
     const imageTools = useFlag('LumoImageTools');
@@ -23,6 +24,9 @@ export const useLumoFlags = () => {
     const whatsNew = useFlag('WhatsNewV1p3');
     const earlyAccess = useFlag('LumoEarlyAccess');
     const highLoad = useFlag('LumoHighLoad');
+    const nativeComposer = useFlag('LumoNativeComposer');
+    const nativeComposerImages = useFlag('LumoNativeComposerImage');
+    const nativeComposerModelSelection = useFlag('LumoNativeComposerModelSelection');
     const apiKeyManagement = useFlag('LumoAPIKeyManagement');
 
     return {
@@ -34,6 +38,9 @@ export const useLumoFlags = () => {
         whatsNew,
         earlyAccess,
         highLoad,
+        nativeComposer,
+        nativeComposerImages,
+        nativeComposerModelSelection,
         apiKeyManagement,
     };
 };

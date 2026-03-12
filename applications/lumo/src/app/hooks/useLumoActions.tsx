@@ -3,6 +3,14 @@ import { useRef } from 'react';
 import useApi from '@proton/components/hooks/useApi';
 import type { User } from '@proton/shared/lib/interfaces';
 
+import { useNativeComposerPromptApi } from '../components/Composer/hooks/useNativeComposerPromptApi';
+import {
+    formatPersonalization,
+    generateFakeConversationToShowTierError,
+    regenerateMessage,
+    retrySendMessage,
+    sendMessage,
+} from '../components/Conversation/helper';
 import type { AesGcmCryptoKey } from '../crypto/types';
 import { addContextToMessages, fillAttachmentData, fillOneAttachmentData } from '../llm/attachments';
 import { getApproximateTokenCount } from '../llm/tokenizer';
@@ -10,6 +18,7 @@ import { SearchService } from '../services/search/searchService';
 import { buildLinearChain } from '../messageTree';
 import { useGhostChat } from '../providers/GhostChatProvider';
 import { useGuestTracking } from '../providers/GuestTrackingProvider';
+import { useThinkingMode } from '../providers/ThinkingModeProvider';
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
 import { selectAttachments, selectAttachmentsBySpaceId, selectContextFilters } from '../redux/selectors';
 import type { MessageMap } from '../redux/slices/core/messages';
@@ -19,15 +28,7 @@ import type { ConversationError } from '../redux/slices/meta/errors';
 import { useActionErrorHandler } from '../services/errors/useActionErrorHandler';
 import type { ActionParams, Attachment, ErrorContext, RetryStrategy } from '../types';
 import { type ConversationId, type Message, Role, type Space, type SpaceId, getSpaceDek } from '../types';
-import {
-    formatPersonalization,
-    generateFakeConversationToShowTierError,
-    regenerateMessage,
-    retrySendMessage,
-    sendMessage,
-} from '../components/Conversation/helper';
 import { sendMessageGenerationAbortedEvent, sendMessageSendEvent, sendNewMessageDataEvent } from '../util/telemetry';
-import { useThinkingMode } from '../providers/ThinkingModeProvider';
 import { useAbortController } from './useAbortController';
 import { useConversationErrors } from './useConversationErrors';
 import { useConversationState } from './useConversationState';
@@ -82,7 +83,11 @@ export const useLumoActions = ({
     const guestTracking = useGuestTracking();
     const { hasConversationErrors, clearErrors } = useConversationErrors(conversationId);
     const { hasTierErrors } = useTierErrors();
-    const { smoothRendering: ffSmoothRendering, externalTools: ffExternalTools, imageTools: ffImageTools } = useLumoFlags();
+    const {
+        smoothRendering: ffSmoothRendering,
+        externalTools: ffExternalTools,
+        imageTools: ffImageTools,
+    } = useLumoFlags();
     const contextFilters = useLumoSelector(selectContextFilters);
     const allAttachments = useLumoSelector(selectAttachments);
     const lumoUserSettings = useLumoSelector((state) => state.lumoUserSettings);
@@ -664,6 +669,8 @@ export const useLumoActions = ({
             abortOperation();
         }
     };
+
+    useNativeComposerPromptApi(handleSendMessage, handleAbort);
 
     // For retry actions initiated in ErrorCard component due to generation errors
     const handleRetryGeneration = async (error: ConversationError) => {
