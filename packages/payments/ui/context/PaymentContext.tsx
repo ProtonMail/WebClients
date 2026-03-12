@@ -411,7 +411,6 @@ export const PaymentsContextProvider = ({
             paymentsApiRef.current.cacheMultiCheck(subscriptionData, newCheckResult);
             return newCheckResult;
         } catch (error) {
-            // todo: keeping the silly re-throw as a placeholder for now, in case if we want special handling for the code 800_001
             throw error;
         } finally {
             setState({ loading: false });

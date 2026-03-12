@@ -4,7 +4,7 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import { getInvoicesPathname } from '@proton/shared/lib/apps/helper';
+import { getInvoicesPathname } from '@proton/components/containers/invoices/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 interface Props extends ModalProps {}
