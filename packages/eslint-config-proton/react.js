@@ -32,7 +32,10 @@ export default defineConfig(
             'react/require-default-props': 'off',
             'react/jsx-uses-react': 'off',
             'react/react-in-jsx-scope': 'off',
-            'react/no-unknown-property': 'error',
+
+            // TODO: Temporarily disabling this to merge the update.
+            // Will enable once https://github.com/jsx-eslint/eslint-plugin-react/pull/3979 is merged
+            'react/no-unknown-property': 'off',
 
             'react/forbid-component-props': [
                 'warn',
@@ -72,7 +75,7 @@ export default defineConfig(
         },
         settings: {
             react: {
-                version: '18.3',
+                version: 'detect',
             },
         },
     }
