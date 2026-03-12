@@ -42,8 +42,6 @@ interface MigrateContentProps {
 
 export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateContentProps) => {
     const migrationArray = getMigrationArray(cleanText);
-    const versionsRecord: Record<number, number> = {};
-
     let array = [];
     while ((array = await readNextOudatedBatch(esDB)).length !== 0) {
         const items: PreparedMessageContent[] = (
@@ -57,9 +55,7 @@ export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateConte
                         });
 
                         const hasVersion = data.value.version !== -1;
-
                         const contentVersion = hasVersion ? data.value.version : decrypted?.version || -1;
-                        versionsRecord[contentVersion] = (versionsRecord[contentVersion] ?? 0) + 1;
 
                         const result = await upgradeContentArray({
                             contentVersion,
@@ -70,7 +66,6 @@ export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateConte
                         return { updated: result, original: data.value, itemID: data.key };
                     } catch (error) {
                         traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, error);
-                        console.error(error);
                         return null;
                     }
                 })
@@ -79,6 +74,4 @@ export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateConte
 
         await encryptAndWriteESItems({ esDB, indexKey, items });
     }
-
-    console.log(`versionsRecord: ${JSON.stringify(versionsRecord)}`);
 };
