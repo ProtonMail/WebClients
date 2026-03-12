@@ -1,7 +1,9 @@
 import { useApi } from '@proton/components';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { TelemetryMailPagingControlsEvents } from '@proton/shared/lib/api/telemetry';
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
+import { VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 
 export enum PaginationSources {
     toolbar = 'toolbar',
@@ -28,13 +30,22 @@ type TelemetryPagingControlsOptions =
 
 export const useTelemetryPagingControls = () => {
     const api = useApi();
+    const [mailSettings] = useMailSettings();
 
-    return (options: TelemetryPagingControlsOptions) =>
-        sendTelemetryReport({
+    const sendPaginationTelemetry = (options: TelemetryPagingControlsOptions) => {
+        const layout = mailSettings.ViewLayout === VIEW_LAYOUT.COLUMN ? 'column' : 'row';
+
+        void sendTelemetryReport({
             api,
             measurementGroup: TelemetryMeasurementGroups.mailPagingControls,
             event: options.event,
-            dimensions: 'dimensions' in options ? options.dimensions : undefined,
+            dimensions: {
+                layout,
+                ...options.dimensions,
+            },
             delay: false,
         });
+    };
+
+    return { sendPaginationTelemetry };
 };
