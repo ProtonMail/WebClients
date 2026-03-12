@@ -1492,7 +1492,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -5200,6 +5203,12 @@
       ],
       "Wrong billing address": [
         "Nesprávna fakturačná adresa"
+      ],
+      "Invalid coupon": [
+        "Neplatná poukážka"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimálna výška daru je ${ price }"
       ]
     },
     "error": {
@@ -7707,10 +7716,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10304,6 +10310,9 @@
       ],
       "Last 6 months only": [
         "Len posledných 6 mesiacov"
+      ],
+      "Import recent mails": [
+        "Importovať nedávne emaily"
       ]
     },
     "Label (begin date/advanced search)": {

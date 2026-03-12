@@ -5164,6 +5164,12 @@
       ],
       "Wrong billing address": [
         "Adresă de facturare incorectă."
+      ],
+      "Invalid coupon": [
+        "Cupon nevalid"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Suma minimă de donație este de ${ price }."
       ]
     },
     "error": {
@@ -7587,9 +7593,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -10152,6 +10156,9 @@
       ],
       "Last 6 months only": [
         "Doar ultimele 6 luni"
+      ],
+      "Import recent mails": [
+        "Importare mesaje recente"
       ]
     },
     "Label (begin date/advanced search)": {
