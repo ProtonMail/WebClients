@@ -3939,6 +3939,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Tutar en az miktarın altında (${ minimumAmount })."
       ],
+      "An error occurred": [
+        "Bir sorun çıktı"
+      ],
       "Checkout expired, please try again": [
         "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
       ],
@@ -3971,6 +3974,9 @@
       ],
       "Invalid code": [
         "Kod geçersiz"
+      ],
+      "Invalid coupon": [
+        "Geçersiz kupon"
       ],
       "Invalid expiration date": [
         "Son kullanma tarihi geçersiz"
@@ -4064,6 +4070,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Eklenebilecek en az kredi tutarı: ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimum bağış tutarı ${ price }"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
@@ -6781,9 +6790,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Bu teklif bir daha görüntülenmesin"
-      ],
       "Get the deal": [
         "Tekliften yararlanın"
       ]
@@ -6860,11 +6866,6 @@
       ],
       "Use your own email domain": [
         "Kendi e-posta etki alanınızı kullanın"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "bir kelebek"
       ]
     },
     "q1campaign: Title": {
@@ -7063,7 +7064,7 @@
         "1 yıl sonra ${ regularAmount } yerine ${ discountedAmount } olarak yenilenir (${ discount }% indirim ile)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "2 yıl sonra ${ regularAmount } yerine ${ discountedAmount } ile yenilenir (${ discount }% indirim ile)"
+        "2 yıl sonra ${ regularAmount } yerine ${ discountedAmount } ile yenilenir (%${ discount } indirim ile)"
       ],
       "Save ${ discount }%": [
         "%${ discount } indirim"
