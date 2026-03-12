@@ -1480,10 +1480,6 @@
       "Trust": [
         "Confiar"
       ],
-      "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
-      ],
       "Trust public key": [
         "Confiar en la clave pública"
       ],
@@ -4680,6 +4676,9 @@
       "Invalid code": [
         "Código no válido"
       ],
+      "Invalid coupon": [
+        "Cupón no válido"
+      ],
       "Invalid email address": [
         "Dirección de correo electrónico no válida"
       ],
@@ -4991,6 +4990,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que puede añadirse es de ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "El importe mínimo de la donación es de ${ price }"
       ],
       "The sending key is not valid": [
         "La clave de envío no es válida."
@@ -7444,7 +7446,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar una imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9559,6 +9562,9 @@
       ],
       "Import interval": [
         "Intervalo de importación"
+      ],
+      "Import recent mails": [
+        "Importar correos recientes"
       ],
       "Import to email address": [
         "Importar a la dirección de correo electrónico"
@@ -12785,9 +12791,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "No volver a mostrar esta oferta"
-      ],
       "Get the deal": [
         "Aprovecha la oferta"
       ]
@@ -12864,11 +12867,6 @@
       ],
       "Use your own email domain": [
         "Usa tu propio dominio de correo electrónico"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "una mariposa"
       ]
     },
     "q1campaign: Title": {
