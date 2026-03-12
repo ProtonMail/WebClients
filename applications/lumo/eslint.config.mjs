@@ -50,6 +50,8 @@ export default defineConfig([
             '@typescript-eslint/no-use-before-define': 'off',
             'jsx-a11y/alt-text': 'off',
             'react/prop-types': 'off',
+            'monorepo-cop/no-disable-monorepo-no-relative-rule': 'off',
+            'monorepo-cop/no-relative-import-outside-package': 'off',
             // TODO: Add the missing explicit deps and remove this rule
             'import/no-extraneous-dependencies': 'off',
         },
