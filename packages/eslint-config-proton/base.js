@@ -2,6 +2,7 @@
 import protontechEnforceUint8ArrayArraybuffer from '@protontech/eslint-plugin-enforce-uint8array-arraybuffer';
 import importPlugin from 'eslint-plugin-import';
 import lodash from 'eslint-plugin-lodash';
+import monorepoCop from 'eslint-plugin-monorepo-cop';
 import noOnlyTests from 'eslint-plugin-no-only-tests';
 import testingLibrary from 'eslint-plugin-testing-library';
 import { defineConfig, globalIgnores } from 'eslint/config';
@@ -16,6 +17,8 @@ export default defineConfig(
         plugins: {
             '@typescript-eslint': plugin,
             import: importPlugin,
+            // @ts-expect-error -- Temporary types incompatibility pending flat config support
+            'monorepo-cop': monorepoCop,
             'no-only-tests': noOnlyTests,
             // @ts-expect-error -- Temporary types incompatibility pending flat config support
             lodash,
@@ -23,6 +26,8 @@ export default defineConfig(
             testingLibrary,
         },
     },
+
+    { name: 'monorepo', rules: monorepoCop.configs.recommended.rules },
 
     // Unfortunately we are not using prettier recommended
     //eslintPluginPrettierRecommended,
