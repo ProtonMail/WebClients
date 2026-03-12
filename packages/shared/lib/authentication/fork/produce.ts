@@ -12,7 +12,7 @@ import type { Api, User } from '../../interfaces';
 import type { PushForkResponse } from '../interface';
 import type { ResumedSessionResult } from '../persistedSessionHelper';
 import { getForkEncryptedBlob } from './blob';
-import type { ForkType } from './constants';
+import type { ForkPayloadVersion, ForkType } from './constants';
 import { ForkSearchParameters } from './constants';
 import { getValidatedProtonProtocol } from './getValidatedProtonProtocol';
 import {
@@ -20,6 +20,7 @@ import {
     getLocalIDForkSearchParameter,
     getValidatedApp,
     getValidatedForkType,
+    getValidatedPayloadVersion,
 } from './validation';
 
 export interface ProduceForkPayload {
@@ -32,7 +33,7 @@ export interface ProduceForkPayload {
     forkVersion: number;
     source: SessionSource;
     app: APP_NAMES;
-    encryptedPayload: { payloadVersion: 1 | 2; payloadType: 'offline' | 'default' };
+    encryptedPayload: { payloadVersion: ForkPayloadVersion; payloadType: 'offline' | 'default' };
 }
 
 interface ProduceForkArguments {
@@ -174,7 +175,7 @@ export interface ProduceForkParameters {
     promptType: 'offline-bypass' | 'offline' | 'default';
     promptBypass: 'none' | 'sso';
     payloadType: 'offline' | 'default';
-    payloadVersion: 1 | 2;
+    payloadVersion: ForkPayloadVersion;
     unauthenticatedReturnUrl: string;
     returnUrl: ReturnUrlResult | undefined;
     redirectUrl: string;
@@ -219,13 +220,7 @@ export const getProduceForkParameters = (
         }
         return 'default';
     })();
-    const payloadVersion = (() => {
-        const value = Number(searchParams.get(ForkSearchParameters.PayloadVersion) || '1');
-        if (value === 1 || value === 2) {
-            return value;
-        }
-        return 1;
-    })();
+    const payloadVersion = getValidatedPayloadVersion(searchParams.get(ForkSearchParameters.PayloadVersion));
     const promptType = (() => {
         const value = searchParams.get(ForkSearchParameters.PromptType) || '';
         if (value === 'offline' || value === 'offline-bypass') {

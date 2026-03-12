@@ -18,7 +18,13 @@ import type { Api, User } from '../../interfaces';
 import type { SessionSource } from '../SessionInterface';
 import { getUser } from '../getUser';
 import { getForkDecryptedBlob } from './blob';
-import { ExtraSessionForkSearchParameters, ForkSearchParameters, ForkType, ForkVersion } from './constants';
+import {
+    ExtraSessionForkSearchParameters,
+    type ForkPayloadVersion,
+    ForkSearchParameters,
+    ForkType,
+    ForkVersion,
+} from './constants';
 import { type ForkState, getCurrentUrl, getForkStateData, setForkStateData } from './forkState';
 import type { ConsumeForkParameters } from './getConsumeForkParameters';
 
@@ -38,7 +44,7 @@ export const requestFork = ({
     reason,
     forkType: maybeForkType,
     payloadType,
-    payloadVersion,
+    payloadVersion = 3,
     extra,
 }: {
     fromApp: APP_NAMES;
@@ -46,7 +52,7 @@ export const requestFork = ({
     forkType?: ForkType;
     reason?: 'signout' | 'session-expired';
     payloadType?: 'offline';
-    payloadVersion?: 2;
+    payloadVersion?: ForkPayloadVersion;
     extra?: ExtraSessionForkData;
 }) => {
     const searchParams = new URLSearchParams();
@@ -164,7 +170,7 @@ export const resolveForkPasswords = async ({
     pullForkResponse,
 }: {
     key: ConsumeForkParameters['key'];
-    payloadVersion: ConsumeForkParameters['payloadVersion'];
+    payloadVersion: ForkPayloadVersion;
     pullForkResponse: PullForkResponse;
 }) => {
     let keyPassword = '';
