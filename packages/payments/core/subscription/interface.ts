@@ -1,7 +1,7 @@
 import type { Nullable } from '@proton/shared/lib/interfaces';
 
 import type { CheckSubscriptionData } from '../api/api';
-import type { InvalidCouponError, TaxExemptionNotSupportedError, WrongBillingAddressError } from '../errors';
+import type { InvalidCouponError, WrongBillingAddressError } from '../errors';
 import type { Currency, Cycle, PlanIDs } from '../interface';
 import type { BasePlansMap, Plan, SubscriptionPlan } from '../plan/interface';
 import type { Renew, SubscriptionMode, SubscriptionPlatform, TaxInclusive, TrialType } from './constants';
@@ -142,7 +142,7 @@ export type SubscriptionEstimation = SubscriptionCheckResponse & {
      */
     optimistic?: boolean;
 
-    error?: TaxExemptionNotSupportedError | WrongBillingAddressError | InvalidCouponError;
+    error?: WrongBillingAddressError | InvalidCouponError;
 };
 
 export interface Tax {

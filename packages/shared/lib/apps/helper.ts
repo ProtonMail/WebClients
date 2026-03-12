@@ -123,7 +123,3 @@ export const getAppShortName = (appName: APP_NAMES) => {
 export const getProduct = (appName: APP_NAMES) => {
     return APPS_CONFIGURATION[appName].product;
 };
-
-export const getInvoicesPathname = () => {
-    return '/dashboard#invoices';
-};

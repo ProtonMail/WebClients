@@ -350,19 +350,9 @@ export type CheckSubscriptionRequestOptions = {
     previousEstimation?: SubscriptionEstimation;
 };
 
-type OptimisticFallbackOptions =
-    | {
-          plansMap: PlansMap;
-          optimisticFallback: true;
-      }
-    | {
-          optimisticFallback?: false | never;
-      };
-
 export type MultiCheckOptions = {
-    cached?: boolean;
-} & Omit<CheckSubscriptionRequestOptions, 'previousEstimation'> &
-    OptimisticFallbackOptions;
+    plansMap: PlansMap;
+} & Omit<CheckSubscriptionRequestOptions, 'previousEstimation'>;
 
 export type GetPlansData = {
     currency?: Currency;
@@ -374,9 +364,7 @@ export interface PaymentsApi {
         requestOptions?: CheckSubscriptionRequestOptions
     ) => Promise<SubscriptionEstimation>;
 
-    multiCheck: (data: CheckSubscriptionData[], options?: MultiCheckOptions) => Promise<SubscriptionEstimation[]>;
-
-    cachedCheck: (data: CheckSubscriptionData) => Promise<SubscriptionEstimation>;
+    multiCheck: (data: CheckSubscriptionData[], options: MultiCheckOptions) => Promise<SubscriptionEstimation[]>;
 
     cacheMultiCheck: (data: CheckSubscriptionData, result: SubscriptionEstimation) => void;
 
