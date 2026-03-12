@@ -1,57 +1,45 @@
-import type { ReactNode } from 'react';
+import type { ReactNode, RefObject } from 'react';
 
-import {
-    DndContext,
-    type DragEndEvent,
-    KeyboardSensor,
-    PointerSensor,
-    closestCenter,
-    useSensor,
-    useSensors,
-} from '@dnd-kit/core';
-import { restrictToParentElement, restrictToVerticalAxis } from '@dnd-kit/modifiers';
-import { SortableContext, sortableKeyboardCoordinates, verticalListSortingStrategy } from '@dnd-kit/sortable';
+import { RestrictToVerticalAxis } from '@dnd-kit/abstract/modifiers';
+import { RestrictToElement } from '@dnd-kit/dom/modifiers';
+import { DragDropProvider, type DragEndEvent, KeyboardSensor, PointerSensor } from '@dnd-kit/react';
+import { isSortable } from '@dnd-kit/react/sortable';
 
 export const SortableList = ({
     onSortEnd,
     children,
-    items,
+    containerRef,
 }: {
     onSortEnd?: (event: { oldIndex: number; newIndex: number }) => void;
     onActiveId?: (id: string | null) => void;
     children: ReactNode;
-    items: string[];
+    containerRef?: RefObject<HTMLElement>;
 }) => {
-    const handleDragEnd = (event: DragEndEvent) => {
-        const { active, over } = event;
-        if (typeof active.id === 'string' && typeof over?.id === 'string' && active.id !== over.id) {
-            const oldIndex = items.indexOf(active.id);
-            const newIndex = items.indexOf(over.id);
+    const handleDragEnd: DragEndEvent = (event) => {
+        const { operation } = event;
+        const { source } = operation;
+        if (isSortable(source)) {
+            const oldIndex = source.initialIndex;
+            const newIndex = source.index;
             // If new index doesn't exist (maybe it's a disabled item)
-            if (newIndex === -1) {
+            if (newIndex === -1 || oldIndex === newIndex) {
                 return;
             }
             onSortEnd?.({ oldIndex, newIndex });
         }
     };
 
-    const sensors = useSensors(
-        useSensor(PointerSensor),
-        useSensor(KeyboardSensor, {
-            coordinateGetter: sortableKeyboardCoordinates,
-        })
-    );
-
     return (
-        <DndContext
-            sensors={sensors}
-            collisionDetection={closestCenter}
+        <DragDropProvider
             onDragEnd={handleDragEnd}
-            modifiers={[restrictToVerticalAxis, restrictToParentElement]}
+            sensors={[PointerSensor, KeyboardSensor]}
+            modifiers={(defaults) => [
+                ...defaults,
+                RestrictToVerticalAxis,
+                ...(containerRef ? [RestrictToElement.configure({ element: () => containerRef.current })] : []),
+            ]}
         >
-            <SortableContext items={items} strategy={verticalListSortingStrategy}>
-                {children}
-            </SortableContext>
-        </DndContext>
+            {children}
+        </DragDropProvider>
     );
 };

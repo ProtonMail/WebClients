@@ -1,12 +1,12 @@
-import { type ReactNode, type Ref, cloneElement, forwardRef, useCallback, useMemo } from 'react';
+import { type ReactNode, type Ref, cloneElement, forwardRef, useCallback, useMemo, useRef } from 'react';
 
+import { useSortable } from '@dnd-kit/react/sortable';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { SortableList } from '@proton/components/components/dnd/SortableList';
-import { useSortableListItem } from '@proton/components/components/dnd/SortableListItem';
-import { IcTextAlignJustify } from '@proton/icons/icons/IcTextAlignJustify';
 import Icon from '@proton/components/components/icon/Icon';
+import { IcTextAlignJustify } from '@proton/icons/icons/IcTextAlignJustify';
 import type { IconName } from '@proton/icons/types';
 import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants';
 import {
@@ -57,12 +57,14 @@ interface Props {
 
 const SortableItem = ({
     id,
+    index,
     children,
 }: {
     id: string;
-    children: (props: ReturnType<typeof useSortableListItem>) => ReactNode;
+    index: number;
+    children: (props: ReturnType<typeof useSortable>) => ReactNode;
 }) => {
-    const props = useSortableListItem({ id });
+    const props = useSortable({ id, index });
     return children(props);
 };
 
@@ -85,6 +87,8 @@ const ContactEditProperties = (
     }: Props,
     ref: Ref<HTMLInputElement>
 ) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+
     const TITLES: { [key: string]: string } = {
         fn: c('Title').t`Other names`,
         email: c('Title').t`Email addresses`,
@@ -220,8 +224,6 @@ const ContactEditProperties = (
         }
     };
 
-    const itemIds = rows.map((row) => row.id);
-
     return (
         <div className="border-bottom mb-4" data-testid={title}>
             <h3 className="mb-4 flex flex-nowrap items-center shrink-0">
@@ -238,10 +240,10 @@ const ContactEditProperties = (
                 <span className="text-semibold ml-5 pl-1 mb-2">{c('Info').t`Primary`}</span>
             )}
             {sortable ? (
-                <SortableList onSortEnd={handleSortEnd} items={itemIds}>
-                    <div>
-                        {rows.map((row) => (
-                            <SortableItem id={row.id} key={row.id}>
+                <SortableList onSortEnd={handleSortEnd} containerRef={containerRef}>
+                    <div ref={containerRef}>
+                        {rows.map((row, index) => (
+                            <SortableItem id={row.id} index={index} key={row.id}>
                                 {(props) => cloneElement(row.component, { sortable: props })}
                             </SortableItem>
                         ))}
