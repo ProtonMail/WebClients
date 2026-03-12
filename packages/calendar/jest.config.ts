@@ -4,7 +4,7 @@ import type { JestConfigWithTsJest } from 'ts-jest';
 const jestConfig: JestConfigWithTsJest = {
     preset: 'ts-jest',
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|mutex-browser|pmcrypto|bip39)/)',
+        'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|mutex-browser|pmcrypto|bip39|@preact/signals-core)/)',
     ],
     transform: {
         '^.+\\.(ts|js|mjs)x?$': [

@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+
 import { SortableList } from '@proton/components/components/dnd/SortableList';
 import TableBody from '@proton/components/components/table/TableBody';
 import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
@@ -28,14 +30,16 @@ const MergeTableBody = ({
     onSortEnd,
     ...rest
 }: Props) => {
-    const itemIds = contacts.map((item) => item.ID);
+    const containerRef = useRef<HTMLTableSectionElement>(null);
+
     return (
-        <TableBody {...rest} data-testid="merge-model:merge-table">
-            <SortableList items={itemIds} onSortEnd={onSortEnd}>
-                {contacts.map((Contact) => (
+        <TableBody {...rest} data-testid="merge-model:merge-table" ref={containerRef}>
+            <SortableList onSortEnd={onSortEnd} containerRef={containerRef}>
+                {contacts.map((Contact, index) => (
                     <MergeTableBodyRow
                         key={Contact.ID}
                         ID={Contact.ID}
+                        index={index}
                         Contact={Contact}
                         highlightedID={highlightedID}
                         isChecked={isChecked}

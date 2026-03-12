@@ -5,7 +5,7 @@ export default {
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     testEnvironment: '@proton/jest-env',
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|mutex-browser|pmcrypto|bip39)/)',
+        'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|mutex-browser|pmcrypto|bip39|@preact/signals-core)/)',
     ],
     transform: {
         '^.+\\.(ts|js|mjs)x?$': [

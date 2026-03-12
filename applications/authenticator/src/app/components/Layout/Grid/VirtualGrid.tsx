@@ -1,15 +1,7 @@
 import { type ReactNode, useCallback, useMemo } from 'react';
 
-import {
-    DndContext,
-    DragOverlay,
-    KeyboardSensor,
-    PointerSensor,
-    closestCenter,
-    useSensor,
-    useSensors,
-} from '@dnd-kit/core';
-import { SortableContext, rectSortingStrategy, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
+import { AutoScroller, PointerActivationConstraints } from '@dnd-kit/dom';
+import { DragDropProvider, DragOverlay, KeyboardSensor, PointerSensor } from '@dnd-kit/react';
 
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -52,13 +44,8 @@ export const VirtualGrid = <T extends IdentifiableItem>({
     );
 
     const { config, virtualizer } = useGridVirtualizer(definition, items);
-    const { order, active, onDragStart, onDragEnd } = useGridSort(items, onItemsReorder);
+    const { order, active, onDragStart, onDragEnd, onDragOver } = useGridSort(items, onItemsReorder);
     const autoscroll = useVirtualGridAutoscroll(active, config.container, virtualizer);
-
-    const sensors = useSensors(
-        useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
-        useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
-    );
 
     /** Track whether the currently dragged item is rendered by the virtualizer.
      * During drag operations, if the user scrolls far enough that the active item
@@ -67,83 +54,97 @@ export const VirtualGrid = <T extends IdentifiableItem>({
     let activeRendered = false;
 
     return (
-        <DndContext
-            sensors={sensors}
-            collisionDetection={closestCenter}
+        <DragDropProvider
+            sensors={[
+                PointerSensor.configure({
+                    activationConstraints: [new PointerActivationConstraints.Distance({ value: 8 })],
+                    preventActivation: () => {
+                        // Default behaviour disables dnd when clicking on an interactive element (eg button)
+                        // We disable it because root element in GridItem is a button
+                        // https://github.com/clauderic/dnd-kit/blob/main/packages/dom/src/core/sensors/pointer/PointerSensor.ts#L81
+                        return false;
+                    },
+                }),
+                KeyboardSensor,
+            ]}
+            plugins={(defaults) => [...defaults.filter((plugin) => plugin !== AutoScroller)]}
             onDragStart={onDragStart}
             onDragEnd={pipe(onDragEnd, autoscroll.cleanup)}
-            autoScroll={false}
+            onDragOver={onDragOver}
         >
-            <SortableContext items={order} strategy={rectSortingStrategy}>
-                <div className={className} ref={config.container}>
-                    <div
-                        style={{
-                            height: `${virtualizer.getTotalSize()}px`,
-                            width: '100%',
-                            position: 'relative',
-                        }}
-                    >
-                        {virtualizer.getVirtualItems().map((virtualItem) => {
-                            const id = order[virtualItem.index];
-                            const item = id ? itemsMap[id] : null;
+            <div className={className} ref={config.container}>
+                <div
+                    style={{
+                        height: `${virtualizer.getTotalSize()}px`,
+                        width: '100%',
+                        position: 'relative',
+                    }}
+                >
+                    {virtualizer.getVirtualItems().map((virtualItem) => {
+                        const id = order[virtualItem.index];
+                        const item = id ? itemsMap[id] : null;
+                        if (!item) return null;
+
+                        activeRendered = activeRendered || item.id === active;
+
+                        return (
+                            <VirtualGridItem
+                                index={virtualItem.index}
+                                id={item.id}
+                                key={item.id}
+                                virtualItem={virtualItem}
+                                config={config}
+                                disabled={disabled}
+                            >
+                                {renderGridItem(item)}
+                            </VirtualGridItem>
+                        );
+                    })}
+                    {active &&
+                        !activeRendered &&
+                        (() => {
+                            /* Fallback render for dragged items that have been virtualized away.
+                             * When the active item is not in the current virtual window, we manually
+                             * render it at its calculated position to maintain visual continuity. */
+                            const item = itemsMap[active];
                             if (!item) return null;
 
-                            activeRendered = activeRendered || item.id === active;
+                            const index = order.indexOf(active);
+                            const row = Math.floor(index / config.columns);
+                            const lane = index % config.columns;
+                            const start = row * (config.itemHeight + config.gap);
 
                             return (
                                 <VirtualGridItem
+                                    index={index}
                                     id={item.id}
                                     key={item.id}
-                                    virtualItem={virtualItem}
+                                    virtualItem={{ start, lane }}
                                     config={config}
-                                    disabled={disabled}
                                 >
                                     {renderGridItem(item)}
                                 </VirtualGridItem>
                             );
-                        })}
-                        {active &&
-                            !activeRendered &&
-                            (() => {
-                                /* Fallback render for dragged items that have been virtualized away.
-                                 * When the active item is not in the current virtual window, we manually
-                                 * render it at its calculated position to maintain visual continuity. */
-                                const item = itemsMap[active];
-                                if (!item) return null;
-
-                                const index = order.indexOf(active);
-                                const row = Math.floor(index / config.columns);
-                                const lane = index % config.columns;
-                                const start = row * (config.itemHeight + config.gap);
-
-                                return (
-                                    <VirtualGridItem
-                                        id={item.id}
-                                        key={item.id}
-                                        virtualItem={{ start, lane }}
-                                        config={config}
-                                    >
-                                        {renderGridItem(item)}
-                                    </VirtualGridItem>
-                                );
-                            })()}
-                    </div>
+                        })()}
                 </div>
-            </SortableContext>
+            </div>
             <DragOverlay>
-                {active && itemsMap[active] && (
-                    <div
-                        style={{
-                            width: config.itemWidth,
-                            height: config.itemHeight,
-                            cursor: 'grabbing',
-                            opacity: 1,
-                        }}
-                    >
-                        {renderGridItem(itemsMap[active])}
-                    </div>
-                )}
+                {(source) =>
+                    active &&
+                    itemsMap[active] && (
+                        <div
+                            style={{
+                                width: config.itemWidth,
+                                height: config.itemHeight,
+                                cursor: 'grabbing',
+                                opacity: 1,
+                            }}
+                        >
+                            {renderGridItem(itemsMap[source.id])}
+                        </div>
+                    )
+                }
             </DragOverlay>
-        </DndContext>
+        </DragDropProvider>
     );
 };
