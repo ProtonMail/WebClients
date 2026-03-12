@@ -20,6 +20,8 @@ interface OfferFlagsContextValue {
     hasBlackFridayOffer: boolean;
     hasBlackFridayFreeOffer: boolean;
     hasBlackFridayPaidOffer: boolean;
+    hasSpringSaleOffer: boolean;
+    hasSpringSaleFreeOffer: boolean;
     loadingOffer: boolean;
 }
 
@@ -96,12 +98,17 @@ export const LumoUpsellModalProvider: React.FC<LumoUpsellModalProviderProps> = (
     const { config: offerConfig, isLoading: loadingOffer } = useGuestSafeOfferConfig();
 
     const offerFlags = useMemo(() => {
-        const hasBlackFridayFreeOffer = false;
-        const hasBlackFridayPaidOffer = false;
+        const hasBlackFridayFreeOffer = false; // Keeping for backward compatibility
+        const hasBlackFridayPaidOffer = false; // Keeping for backward compatibility
+        const hasSpringSaleOffer = !!offerConfig && offerConfig.ID.includes('spring-sale-2026');
+        const hasSpringSaleFreeOffer = !!offerConfig && offerConfig.ID === 'spring-sale-2026-lumo-plus';
+
         return {
             hasBlackFridayFreeOffer,
             hasBlackFridayPaidOffer,
             hasBlackFridayOffer: hasBlackFridayFreeOffer || hasBlackFridayPaidOffer,
+            hasSpringSaleOffer,
+            hasSpringSaleFreeOffer,
         };
     }, [offerConfig?.ID]);
 
@@ -150,12 +157,16 @@ export const LumoUpsellModalProvider: React.FC<LumoUpsellModalProviderProps> = (
             hasBlackFridayOffer: offerFlags.hasBlackFridayOffer,
             hasBlackFridayFreeOffer: offerFlags.hasBlackFridayFreeOffer,
             hasBlackFridayPaidOffer: offerFlags.hasBlackFridayPaidOffer,
+            hasSpringSaleOffer: offerFlags.hasSpringSaleOffer,
+            hasSpringSaleFreeOffer: offerFlags.hasSpringSaleFreeOffer,
             loadingOffer,
         }),
         [
             offerFlags.hasBlackFridayOffer,
             offerFlags.hasBlackFridayFreeOffer,
             offerFlags.hasBlackFridayPaidOffer,
+            offerFlags.hasSpringSaleOffer,
+            offerFlags.hasSpringSaleFreeOffer,
             loadingOffer,
         ]
     );
@@ -173,7 +184,6 @@ export const LumoUpsellModalProvider: React.FC<LumoUpsellModalProviderProps> = (
                 />
             )}
 
-            {/* Render offer modal when offer config is available */}
             {offerConfig && (
                 <OfferModalRenderer
                     offerConfig={offerConfig}
