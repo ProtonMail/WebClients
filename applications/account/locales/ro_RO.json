@@ -90,6 +90,12 @@
       "Activate recovery": [
         "Activare recuperare"
       ],
+      "Activate reserved address": [
+        "Activare adresă rezervată"
+      ],
+      "Activate this address": [
+        "Activare această adresă"
+      ],
       "Add": [
         "Adăugare"
       ],
@@ -278,6 +284,9 @@
       ],
       "Close navigation": [
         "Închidere navigare"
+      ],
+      "Close search": [
+        "Închidere căutare"
       ],
       "Close tab": [
         "Închidere filă"
@@ -561,6 +570,9 @@
       "Don't show again": [
         "Nu mai arăta"
       ],
+      "Donate": [
+        "Donație"
+      ],
       "Done": [
         "Gata"
       ],
@@ -830,6 +842,9 @@
       ],
       "Get verification code": [
         "Obținere cod de verificare"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Obțineți propria adresă ${ MAIL_APP_NAME }"
       ],
       "Go back": [
         "Înapoi"
@@ -1302,6 +1317,9 @@
       "Search countries": [
         "Căutare țări"
       ],
+      "Search groups": [
+        "Căutare grupuri"
+      ],
       "Search settings": [
         "Căutare setări"
       ],
@@ -1373,6 +1391,9 @@
       ],
       "Send reminder": [
         "Trimitere notificare"
+      ],
+      "Send verification code": [
+        "Trimitere cod de verificare"
       ],
       "Set as album cover": [
         "Setare ca o copertă de album"
@@ -1541,6 +1562,9 @@
       ],
       "Try for free": [
         "Încercați gratis"
+      ],
+      "Try payment again": [
+        "Reîncercați plata"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Reîncercați salvarea. Aceasta a eșuat deoarece: ${ saveError }"
@@ -6431,6 +6455,9 @@
       "Account does not exist": [
         "Contul nu există."
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Activarea a eșuat. Detaliile pot fi incorecte sau e-mailul este deja activ. Verificați datele introduse sau conectați-vă."
+      ],
       "Add at least one action": [
         "Adăugați cel puțin o acțiune."
       ],
@@ -6561,6 +6588,9 @@
       "Failed loading group members": [
         "Eroare la încărcarea membrilor grupului."
       ],
+      "Failed to activate your address. Please try again.": [
+        "Activarea adresei a eșuat. Reîncercați."
+      ],
       "Failed to add group member": [
         "Membrul nu s-a putut adăuga în grup"
       ],
@@ -6638,6 +6668,9 @@
       ],
       "Invalid code": [
         "Cod nevalid"
+      ],
+      "Invalid coupon": [
+        "Cupon nevalid"
       ],
       "Invalid domain": [
         "Domeniu nevalid"
@@ -6959,6 +6992,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Creditul minim care poate fi adăugat este de ${ price }."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Suma minimă de donație este de ${ price }."
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Numele regulei trebuie să aibă între 3 și 40 de caractere."
@@ -8184,6 +8220,16 @@
         "Înțeleg că nu mă voi mai putea conecta în versiunile mai vechi ale aplicațiilor mobile ${ BRAND_NAME }."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Introduceți adresa de e-mail"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Cuponul va fi trimis aici."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "aplicație web"
@@ -8485,6 +8531,32 @@
       ],
       "Subscribed": [
         "Abonat"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Un pas simplu astăzi pentru a vă asigura siguranța digitală a copilului mâine"
+      ],
+      "Activate your reserved email address": [
+        "Activați-vă adresa de e-mail rezervată"
+      ],
+      "Address reservation voucher": [
+        "Cupon de rezervare adresă"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Donați Fundației ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Introduceți codul de verificare"
+      ],
+      "Recover activation voucher": [
+        "Recuperare cupon de activare"
+      ],
+      "Reserve child's email address": [
+        "Rezervați adresa de e-mail a copilului"
+      ],
+      "We emailed you the voucher": [
+        "Cuponul a fost trimis prin e-mail"
       ]
     },
     "Headline": {
@@ -9298,8 +9370,8 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Un ${ protonSubdomain } este găzduit de ${ BRAND_NAME }, ceea ce vă permite să configurați rapid un subdomeniu. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Este necesar un domeniu personal pentru a crea grupuri. Dacă nu aveți un domeniu personal configurat, faceți-o mai întâi pe ${ linkToDomainPage }."
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Este necesar un domeniu personal pentru a crea grupuri. Dacă nu aveți un domeniu personal configurat, faceți-o mai întâi în secțiunea ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nume care vă ajută să identificați unde o folosiți pentru a o anula sau extinde mai târziu."
@@ -10087,11 +10159,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "Introduceți datele de conectare a contului de e-mail din care doriți să importați."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Introduceți adresa de e-mail utilizată pentru a rezerva ${ reservedEmail }."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Introduceți ID-ul entității dintr-o organizație **eduGAIN** pentru **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Introduceți parola organizației pentru a restaura privilegiile administratorului. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Introduceți adresa de e-mail rezervată și adresa de e-mail utilizată la rezervare."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
@@ -10270,6 +10348,9 @@
       "Groups": [
         "Grupuri"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Ajutați alte familii să ofere copiilor lor un start sigur online. Distribuiți această știre importantă și răspândiți vestea."
+      ],
       "here": [
         "aici"
       ],
@@ -10278,6 +10359,9 @@
       ],
       "High Priority": [
         "Prioritate înaltă"
+      ],
+      "How it works": [
+        "Cum funcționează"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -10305,6 +10389,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Dacă sunt activate combinațiile de taste, puteți utiliza următoarele taste pentru acțiuni rapide sau pentru a trece la diferite vizualizări. ${ metaKey } + K este întotdeauna activată."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Dacă adresa de e-mail introdusă a fost folosită pentru a rezerva adresa de e-mail a unui copil, se va retrimite cuponul de activare."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Dacă fusul orar al sistemului nu se potrivește cu cel din preferințe, vi se va solicita să-l actualizați (maxim o dată pe zi)."
@@ -10543,6 +10630,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Doar confirmați selecția aleasă, restul se va face automat."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Păstrați cuponul în siguranță până când este necesar, de exemplu în ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Păstrați informațiile mai sigure și private cu aceste ghiduri și sfaturi."
@@ -11065,6 +11155,9 @@
       "Receive notifications for ${ categoryLabel }": [
         "Primire notificări pentru ${ categoryLabel }"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Primiți cuponul de rezervare prin e-mail. Dumneavoastră sau copilul îl puteți folosi pentru a activa adresa în următorii 15 ani. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Servere utilizate recent:"
       ],
@@ -11298,6 +11391,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Unele servere s-ar putea să nu apară în lista de mai sus. Căutați după numele serverului (de exemplu, AT#62) pentru a le găsi."
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "A apărut o problemă. Reîncercați sau contactați asistența pentru clienți."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Specificați domeniul căruia i se permite autentificarea cu SAML SSO."
       ],
@@ -11317,6 +11413,9 @@
         "Pasul ${ step }",
         "Pasul ${ step }",
         "Pasul ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Pasul ${ step }/${ totalSteps }"
       ],
       "Step 1 of 2": [
         "Pasul 1 din 2"
@@ -11677,6 +11776,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Pentru a fi la curent cu ultimele actualizări ale produselor ${ BRAND_NAME }, puteți să vă abonați la diferitele noastre categorii de anunțuri pe e-mail și periodic să ${ blogLink }."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Pentru a preveni abuzul sau frauda, solicităm o donație minimă de ${ minimumDonation }. Aceasta susține munca ${ protonFoundationLink } în apărarea confidențialității digitale la nivel global și ajută la protejarea generației următoare."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Pentru a continua, selectați o metodă de recuperare a contului pentru a putea verifica solicitarea."
       ],
@@ -11905,6 +12007,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Vă sfătuim să utilizați aplicațiile oficiale ${ VPN_APP_NAME } atunci când este posibil."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Tranzacția nu s-a putut finaliza. Reîncercați."
+      ],
       "We couldn’t process your payment.": [
         "Nu vi s-a putut procesa plata."
       ],
@@ -12015,6 +12120,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Când sunteți gata să activați adresa, scanați codul QR sau utilizați legătura web din cupon."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Când abonamentul se înnoiește, se va folosi mai întâi creditul disponibil înainte de a folosi metoda de plată de mai sus."
@@ -12423,6 +12531,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Perioada de probare se termină ${ timeRemaining }."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Cuponul personal pentru adresa de e-mail ${ BRAND_NAME } rezervată: ${ reservedEmail }"
+      ],
       "YouTube": [
         "YouTube"
       ],
@@ -12465,6 +12576,11 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "Vă ajută să scrieți, să răspundeți și să corectați mesajele. Dacă e dezactivată, doar administratorii vor avea acces. Gestionați opțiunea pentru fiecare utilizator în ${ userAndAddresses } sau ${ addMoreSeats }."
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Introduceți codul de verificare trimis la ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -13102,6 +13218,9 @@
       "Actions": [
         "Acțiuni"
       ],
+      "Activation code": [
+        "Cod de activare"
+      ],
       "Activity": [
         "Activitate"
       ],
@@ -13348,6 +13467,9 @@
       "Choose a name for the generated certificate file": [
         "Alegeți un nume pentru fișierul certificatului generat"
       ],
+      "Choose an address to reserve for your child": [
+        "Alegeți adresa de rezervat pentru copil"
+      ],
       "Choose your billing": [
         "Alegeți-vă abonamentul"
       ],
@@ -13552,6 +13674,12 @@
       "Don't show this again": [
         "Nu mai arăta asta"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Donați 1 USD sau mai mult fundației ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Sumă donație"
+      ],
       "Duration": [
         "Durata"
       ],
@@ -13611,6 +13739,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Introduceți parola pentru cheia cu amprenta: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Introduceți adresa de e-mail personală"
       ],
       "Enter your password": [
         "Introduceți parola"
@@ -13743,6 +13874,9 @@
       ],
       "Import interval": [
         "Interval de importare"
+      ],
+      "Import recent mails": [
+        "Importare mesaje recente"
       ],
       "Import to email address": [
         "Importare în adresa de e-mail"
@@ -14128,6 +14262,12 @@
       "Require 2FA for everyone": [
         "Solicitare A2F pentru toți"
       ],
+      "Reserved address": [
+        "Adresă rezervată"
+      ],
+      "Reserved email address": [
+        "Adresă de e-mail rezervată"
+      ],
       "Reveal password": [
         "Afișare parolă"
       ],
@@ -14169,6 +14309,9 @@
       ],
       "Server name": [
         "Nume server"
+      ],
+      "Set password": [
+        "Setare parolă"
       ],
       "Share your referral link": [
         "Partajați-vă legătura web de recomandare"
@@ -14300,6 +14443,9 @@
       ],
       "Tips and insights": [
         "Sfaturi și aspecte generale"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Pentru activare, scanați codul QR sau accesați:"
       ],
       "To help us improve, please explain why you are leaving.": [
         "Pentru a ne ajuta să îmbunătățim serviciul, vă rugăm să ne explicați de ce închideți contul."
@@ -14433,11 +14579,17 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, vreau să șterg definitiv acest cont și toate datele sale."
       ],
+      "Your activation code:": [
+        "Cod de activare:"
+      ],
       "Your calendar URL": [
         "URL calendar"
       ],
       "Your credit balance": [
         "Sold credite"
+      ],
+      "Your email address": [
+        "Adresa dvs. de e-mail"
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
@@ -14447,6 +14599,9 @@
       ],
       "Your plan": [
         "Plan actual"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Cuponul personal pentru adresa de e-mail ${ BRAND_NAME } rezervată:"
       ],
       "ZIP code": [
         "Cod poștal"
@@ -14620,6 +14775,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "Fundației ${ BRAND_NAME }"
+      ],
       "Activity log": [
         "Jurnalul de activitate"
       ],
@@ -14640,6 +14798,9 @@
       ],
       "Calendars": [
         "Calendare"
+      ],
+      "Can't find your code?": [
+        "Nu puteți găsi codul?"
       ],
       "clearing your browser cache": [
         "golind bufferul navigatorului web"
@@ -14843,6 +15004,20 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Utilizatori și adrese"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "E-mail"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -15321,6 +15496,12 @@
       "${ BRAND_NAME } Account": [
         "Cont ${ BRAND_NAME }"
       ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Activați adresa de e-mail privată ${ BRAND_NAME } rezervată copilului dvs. și configurați contul acestuia."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Activați contul ${ BRAND_NAME } pentru copilul dvs. | ${ BRAND_NAME }"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Creați un cont ${ BRAND_NAME } pentru a folosi toate serviciile ${ BRAND_NAME } criptate, cum ar fi ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și multe altele, cu doar o singură autentificare. Obțineți un cont ${ BRAND_NAME } gratuit."
       ],
@@ -15344,6 +15525,12 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "V-ați uitat numele de utilizator al contului ${ BRAND_NAME }? Aflați-l folosind adresa de e-mail de recuperare sau numărul de telefon și redobândiți accesul la ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și multe altele."
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "Recuperați accesul la adresa de e-mail privată ${ BRAND_NAME } rezervată copilului dvs."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Recuperați contul ${ BRAND_NAME } pentru copilul dvs. | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Resetare parolă cont ${ BRAND_NAME }"
@@ -18450,6 +18637,9 @@
       "Address": [
         "Adresa"
       ],
+      "Amount": [
+        "Sumă"
+      ],
       "Anderson": [
         "Andrei"
       ],
@@ -18850,9 +19040,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Nu mai afișați această ofertă"
-      ],
       "Get the deal": [
         "Valorificați oferta"
       ]
@@ -18929,11 +19116,6 @@
       ],
       "Use your own email domain": [
         "Utilizați propriul domeniu de e-mail"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "un fluture"
       ]
     },
     "q1campaign: Title": {
@@ -22385,6 +22567,9 @@
       "Verification code copied to clipboard": [
         "Codul de verificare a fost copiat în memorie"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Cod de verificare trimis la ${ parentEmail }"
+      ],
       "Verification successful": [
         "Verificare reușită"
       ],
@@ -22408,6 +22593,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Veți primi numele de utilizator prin SMS într-un minut dacă ați introdus un număr de telefon de recuperare valid."
+      ],
+      "Your address has been activated": [
+        "Adresa v-a fost activată."
       ]
     },
     "Success message": {
@@ -23836,6 +24024,12 @@
       ],
       "Privacy and data collection": [
         "Confidențialitate și colectare de date"
+      ],
+      "Problem processing your payment": [
+        "Au apărut probleme la procesarea plății"
+      ],
+      "Problem processing your request": [
+        "Au apărut probleme la procesarea solicitării"
       ],
       "Processing...": [
         "Se procesează..."

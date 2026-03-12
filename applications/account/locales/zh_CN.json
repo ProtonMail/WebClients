@@ -90,6 +90,12 @@
       "Activate recovery": [
         "激活恢复"
       ],
+      "Activate reserved address": [
+        "激活保留地址"
+      ],
+      "Activate this address": [
+        "激活此地址"
+      ],
       "Add": [
         "添加"
       ],
@@ -561,6 +567,9 @@
       "Don't show again": [
         "不再显示"
       ],
+      "Donate": [
+        "捐赠"
+      ],
       "Done": [
         "完成"
       ],
@@ -830,6 +839,9 @@
       ],
       "Get verification code": [
         "获取验证码"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "获取您自己的 ${ MAIL_APP_NAME } 地址"
       ],
       "Go back": [
         "返回"
@@ -1371,6 +1383,9 @@
       "Send reminder": [
         "发送提醒"
       ],
+      "Send verification code": [
+        "发送验证码"
+      ],
       "Set as album cover": [
         "设置为专辑封面"
       ],
@@ -1538,6 +1553,9 @@
       ],
       "Try for free": [
         "免费试用"
+      ],
+      "Try payment again": [
+        "再次尝试付款"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "保存失败，请重试。失败原因：${ saveError }"
@@ -6327,6 +6345,9 @@
       "Account does not exist": [
         "账户不存在"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "激活失败。详细信息可能不正确，或该电子邮件已激活。请检查您的输入或登入。"
+      ],
       "Add at least one action": [
         "至少添加一项操作"
       ],
@@ -6452,6 +6473,9 @@
       ],
       "Failed loading group members": [
         "加载群组成员失败"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "激活您的地址失败。请重试。"
       ],
       "Failed to add group member": [
         "添加群组成员失败"
@@ -8036,6 +8060,16 @@
         "我理解我将无法再登录旧版本的 ${ BRAND_NAME } 移动应用。"
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "输入您的电子邮件地址"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "凭证将发送至此处。"
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "网页应用"
@@ -8335,6 +8369,32 @@
       ],
       "Subscribed": [
         "已订阅"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "今天采取简单的一步，确保您的孩子明天的数字安全"
+      ],
+      "Activate your reserved email address": [
+        "激活您保留的电子邮件地址"
+      ],
+      "Address reservation voucher": [
+        "地址保留凭证"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "向 ${ BRAND_NAME } 基金会捐赠"
+      ],
+      "Enter verification code": [
+        "输入验证码"
+      ],
+      "Recover activation voucher": [
+        "恢复激活凭证"
+      ],
+      "Reserve child's email address": [
+        "保留孩子的电子邮件地址"
+      ],
+      "We emailed you the voucher": [
+        "我们已通过电子邮件向您发送了凭证"
       ]
     },
     "Headline": {
@@ -9077,9 +9137,6 @@
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } 由 ${ BRAND_NAME } 托管，可让您快速建立子域。${ learnMoreLink }"
-      ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "创建群组需要自定义域名。如果没有设置自定义域，请先在 ${ linkToDomainPage } 下进行设置。"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "名称中可注明证书用途，便于今后续期或吊销。"
@@ -9843,11 +9900,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "输入您要导入的邮箱账号和密码。"
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "输入用于保留 ${ reservedEmail } 的电子邮件地址。"
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "输入**${ domain.DomainName }**的**eduGAIN**组织的实体 ID。"
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "输入机构密码方可恢复管理员权限。${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "输入保留的电子邮件地址以及在保留期间使用的电子邮件地址。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
@@ -10026,6 +10089,9 @@
       "Groups": [
         "群组"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "帮助其他家庭为他们的孩子提供一个安全的在线起点。分享这一里程碑并广为传播。"
+      ],
       "here": [
         "此处"
       ],
@@ -10034,6 +10100,9 @@
       ],
       "High Priority": [
         "首要优先顺序"
+      ],
+      "How it works": [
+        "如何运作"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN：${ formattedIBAN }"
@@ -10058,6 +10127,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "如果启用了键盘快捷键，可以使用以下按键进行快速操作或跳转到不同视图。${ metaKey } + K 始终处于启用状态。"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "如果您输入的电子邮件曾用于保留孩子的电子邮件地址，我们将重新发送激活凭证。"
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "如果系统时区与当前时区偏好设置不匹配，系统将提示您更新（每天最多一次）。"
@@ -10292,6 +10364,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "只需确认您的选择，剩下的交给我们即可。"
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "请妥善保管凭证直到需要使用时，例如保存在 ${ DRIVE_APP_NAME } 中。"
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "使用这些指南和技巧，让您的信息更安全、更私密。"
@@ -10803,6 +10878,9 @@
       "Receive notifications for ${ categoryLabel }": [
         "接收关于 ${ categoryLabel } 的通知"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "通过电子邮件接收保留凭证。您或您的孩子可以使用它在未来 15 年内激活该地址。${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "近期使用的服务器："
       ],
@@ -11034,6 +11112,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "部分服务器可能未显示在上方列表中，可通过服务器名称（例如 AT#62）进行搜索查找"
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "出错了。请重试或联系客户支持。"
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "指定允许使用 SAML SSO 进行身份验证的域。"
       ],
@@ -11051,6 +11132,9 @@
       ],
       "Step ${ step }": [
         "步骤 ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "第 ${ step }/${ totalSteps } 步"
       ],
       "Storage allocated to other users in this organisation": [
         "此组织其他成员的存储空间分配量"
@@ -11397,6 +11481,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "您可以订阅我们的各类邮件或${ blogLink }了解 ${ BRAND_NAME } 产品的动态。"
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "为防止滥用或欺诈，我们要求最低捐赠 ${ minimumDonation }。这支持了 ${ protonFoundationLink } 在全球范围内捍卫数字隐私的工作，并有助于保护下一代。"
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "您需要选择一种账户恢复方式，验证身份后方可继续操作。"
       ],
@@ -11622,6 +11709,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "我们建议尽可能使用官方 ${ VPN_APP_NAME } 客户端。"
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "我们无法完成交易。请重试。"
+      ],
       "We couldn’t process your payment.": [
         "我们未能处理您的支付。"
       ],
@@ -11732,6 +11822,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "当您设置双因素身份验证时，我们会提供恢复码。如果您无法使用验证器，可以使用这些恢复码登录。"
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "当您准备好激活该地址时，请扫描二维码或使用凭证中的链接。"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "账户续费将先扣除余额，再通过上述支付方式扣费。"
@@ -12114,6 +12207,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "您的试用将于 ${ timeRemaining } 结束。"
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "您保留的 ${ BRAND_NAME } 电子邮件地址的凭证：${ reservedEmail }"
+      ],
       "YouTube": [
         "YouTube"
       ],
@@ -12156,6 +12252,11 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "协助撰写、回复和校阅电子邮件。如果禁用，则只有管理员可以访问。可在 ${ userAndAddresses } 或 ${ addMoreSeats } 中为单个用户管理此功能"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "输入发送至 ${ parentEmail } 的验证码。"
       ]
     },
     "Info - folder colouring feature": {
@@ -12779,6 +12880,9 @@
       "Actions": [
         "操作"
       ],
+      "Activation code": [
+        "激活代码"
+      ],
       "Activity": [
         "进展"
       ],
@@ -13022,6 +13126,9 @@
       "Choose a name for the generated certificate file": [
         "输入所创建证书文件的名称"
       ],
+      "Choose an address to reserve for your child": [
+        "选择一个地址为您的孩子保留"
+      ],
       "Choose your billing": [
         "选择您的账单周期"
       ],
@@ -13226,6 +13333,12 @@
       "Don't show this again": [
         "不再显示此内容"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "向 ${ BRAND_NAME } 基金会捐赠 1 美元或以上"
+      ],
+      "Donation amount": [
+        "捐赠金额"
+      ],
       "Duration": [
         "持续时间"
       ],
@@ -13285,6 +13398,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "输入以下密钥的密码：${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "输入您的电子邮件地址"
       ],
       "Enter your password": [
         "请输入您的密码"
@@ -13802,6 +13918,12 @@
       "Require 2FA for everyone": [
         "要求所有人启用 2FA"
       ],
+      "Reserved address": [
+        "保留地址"
+      ],
+      "Reserved email address": [
+        "保留的电子邮件地址"
+      ],
       "Reveal password": [
         "显示密码"
       ],
@@ -13843,6 +13965,9 @@
       ],
       "Server name": [
         "服务器名称"
+      ],
+      "Set password": [
+        "设置密码"
       ],
       "Share your referral link": [
         "分享您的推荐链接"
@@ -13972,6 +14097,9 @@
       ],
       "Tips and insights": [
         "提示与洞察"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "若要激活，请扫描二维码或转至："
       ],
       "To help us improve, please explain why you are leaving.": [
         "为了帮助我们改进工作，请解释您离开的原因。"
@@ -14105,11 +14233,17 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "我确定要永久删除此账户及其所有数据。"
       ],
+      "Your activation code:": [
+        "您的激活代码："
+      ],
       "Your calendar URL": [
         "您的日历链接"
       ],
       "Your credit balance": [
         "您的信用余额"
+      ],
+      "Your email address": [
+        "您的电子邮件地址"
       ],
       "Your password (admin)": [
         "您的密码（管理员）"
@@ -14119,6 +14253,9 @@
       ],
       "Your plan": [
         "您的套餐"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "您保留的 ${ BRAND_NAME } 电子邮件地址的凭证："
       ],
       "ZIP code": [
         "邮政编码"
@@ -14290,6 +14427,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "${ BRAND_NAME } 基金会的"
+      ],
       "Activity log": [
         "活动日志"
       ],
@@ -14310,6 +14450,9 @@
       ],
       "Calendars": [
         "日历"
+      ],
+      "Can't find your code?": [
+        "找不到您的代码？"
       ],
       "clearing your browser cache": [
         "清除浏览器缓存"
@@ -14513,6 +14656,20 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "用户与地址"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "电子邮件"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -18003,6 +18160,9 @@
       ],
       "Address": [
         "地址"
+      ],
+      "Amount": [
+        "金额"
       ],
       "Anderson": [
         "Anderson"
@@ -21698,6 +21858,9 @@
       "Verification code copied to clipboard": [
         "验证码已复制到剪贴板"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "验证码已发送至 ${ parentEmail }"
+      ],
       "Verification successful": [
         "验证成功"
       ],
@@ -21721,6 +21884,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "如果您输入了有效的密保手机号码，您将在一分钟内通过短信收到您的用户名。"
+      ],
+      "Your address has been activated": [
+        "您的地址已激活"
       ]
     },
     "Success message": {
@@ -23112,6 +23278,12 @@
       ],
       "Privacy and data collection": [
         "隐私与数据收集"
+      ],
+      "Problem processing your payment": [
+        "处理您的付款遇到问题"
+      ],
+      "Problem processing your request": [
+        "处理您的请求遇到问题"
       ],
       "Processing...": [
         "正在处理..."

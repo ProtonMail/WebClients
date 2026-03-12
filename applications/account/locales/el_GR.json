@@ -90,6 +90,12 @@
       "Activate recovery": [
         "Ενεργοποίηση ανάκτησης"
       ],
+      "Activate reserved address": [
+        "Ενεργοποίηση δεσμευμένης διεύθυνσης"
+      ],
+      "Activate this address": [
+        "Ενεργοποιήστε αυτή τη διεύθυνση"
+      ],
       "Add": [
         "Προσθήκη"
       ],
@@ -278,6 +284,9 @@
       ],
       "Close navigation": [
         "Κλείσιμο μενού πλοήγησης"
+      ],
+      "Close search": [
+        "Κλείσιμο αναζήτησης"
       ],
       "Close tab": [
         "Κλείσιμο καρτέλας"
@@ -561,6 +570,9 @@
       "Don't show again": [
         "Να μην εμφανιστεί ξανά"
       ],
+      "Donate": [
+        "Δωρεές"
+      ],
       "Done": [
         "Ολοκληρώθηκε"
       ],
@@ -830,6 +842,9 @@
       ],
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Αποκτήστε τη δική σας διεύθυνση ${ MAIL_APP_NAME }"
       ],
       "Go back": [
         "Επιστροφή"
@@ -1302,6 +1317,9 @@
       "Search countries": [
         "Αναζήτηση χωρών"
       ],
+      "Search groups": [
+        "Αναζήτηση ομάδων"
+      ],
       "Search settings": [
         "Ρυθμίσεις αναζήτησης"
       ],
@@ -1373,6 +1391,9 @@
       ],
       "Send reminder": [
         "Αποστολή υπενθύμισης"
+      ],
+      "Send verification code": [
+        "Αποστολή Κωδικού Επαλήθευσης"
       ],
       "Set as album cover": [
         "Ορισμός ως εξώφυλλο άλμπουμ"
@@ -1541,6 +1562,9 @@
       ],
       "Try for free": [
         "Δοκιμάστε δωρεάν"
+      ],
+      "Try payment again": [
+        "Δοκιμάστε ξανά την πληρωμή"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Παρακαλώ προσπαθήστε να αποθηκεύσετε ξανά. Η αποθήκευση απέτυχε λόγω: ${ saveError }"
@@ -6391,6 +6415,9 @@
       "Account does not exist": [
         "Ο λογαριασμός δεν υπάρχει"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Η ενεργοποίηση απέτυχε. Οι λεπτομέρειες ενδέχεται να είναι λανθασμένες ή το email είναι ήδη ενεργό. Παρακαλούμε ελέγξτε την εισαγωγή σας ή συνδεθείτε."
+      ],
       "Add at least one action": [
         "Προσθέστε τουλάχιστον μία ενέργεια"
       ],
@@ -6519,6 +6546,9 @@
       "Failed loading group members": [
         "Αποτυχία φόρτωσης μελών ομάδας"
       ],
+      "Failed to activate your address. Please try again.": [
+        "Αποτυχία ενεργοποίησης της διεύθυνσής σας. Παρακαλούμε δοκιμάστε ξανά."
+      ],
       "Failed to add group member": [
         "Αποτυχία προσθήκης μέλους ομάδας"
       ],
@@ -6596,6 +6626,9 @@
       ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
+      ],
+      "Invalid coupon": [
+        "Μη έγκυρο κουπόνι"
       ],
       "Invalid domain": [
         "Μη έγκυρος τομέας"
@@ -6914,6 +6947,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Το ελάχιστο ποσό πίστωσης που μπορεί να προστεθεί είναι ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Το ελάχιστο ποσό δωρεάς είναι ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Το όνομα πολιτικής πρέπει να αποτελείται από 3 έως 40 χαρακτήρες."
@@ -8122,6 +8158,16 @@
         "Κατανοώ ότι δε θα μπορώ πλέον να συνδεθώ σε παλαιότερες εκδόσεις των εφαρμογών ${ BRAND_NAME } για κινητά."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Εισάγετε τη διεύθυνση του ηλεκτρονικού ταχυδρομείου σας"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Το κουπόνι θα σταλεί εδώ."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "εφαρμογή ιστού"
@@ -8422,6 +8468,32 @@
       ],
       "Subscribed": [
         "Εγγεγραμμένα"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Ένα απλό βήμα σήμερα για να διασφαλίσετε την ψηφιακή ασφάλεια του παιδιού σας αύριο"
+      ],
+      "Activate your reserved email address": [
+        "Ενεργοποιήστε τη δεσμευμένη διεύθυνση email σας"
+      ],
+      "Address reservation voucher": [
+        "Κουπόνι δέσμευσης διεύθυνσης"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Δωρίστε στο Ίδρυμα ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Εισάγετε τον κωδικό επαλήθευσης."
+      ],
+      "Recover activation voucher": [
+        "Ανάκτηση κουπονιού ενεργοποίησης"
+      ],
+      "Reserve child's email address": [
+        "Δέσμευση διεύθυνσης email παιδιού"
+      ],
+      "We emailed you the voucher": [
+        "Σας στείλαμε το κουπόνι μέσω μηνύματος ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "Headline": {
@@ -9200,7 +9272,7 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Ένα ${ protonSubdomain } φιλοξενείται από το ${ BRAND_NAME }, το οποίο σας επιτρέπει να ρυθμίσετε γρήγορα έναν υποτομέα. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
         "Απαιτείται προσαρμοσμένος τομέας για τη δημιουργία ομάδων. Εάν δεν έχετε ρυθμίσει έναν προσαρμοσμένο τομέα, κάντε το πρώτα στο ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
@@ -9977,11 +10049,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "Συμπληρώστε τα διαπιστευτήρια του λογαριασμού email από τον οποίο θέλετε να εισάγετε."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Εισαγάγετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου που χρησιμοποιήθηκε για τη δέσμευση του ${ reservedEmail }."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Εισαγάγετε το Αναγνωριστικό Οντότητας (Entity ID) ενός οργανισμού **eduGAIN** για τον τομέα **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Καταχωρίστε τον κωδικό οργανισμού για να επαναφέρετε τα προνόμια διαχειριστή. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Εισαγάγετε τη δεσμευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου και τη διεύθυνση ηλεκτρονικού ταχυδρομείου που χρησιμοποιήθηκε κατά την δέσμευση."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης που εστάλη στο ${ destinationText }."
@@ -10160,6 +10238,9 @@
       "Groups": [
         "Ομάδες"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Βοηθήστε άλλες οικογένειες να προσφέρουν στα παιδιά τους μια ασφαλή αρχή στο διαδίκτυο. Μοιραστείτε αυτό το ορόσημο και διαδώστε το μήνυμα."
+      ],
       "here": [
         "εδώ"
       ],
@@ -10168,6 +10249,9 @@
       ],
       "High Priority": [
         "Υψηλή προτεραιότητα"
+      ],
+      "How it works": [
+        "Πώς λειτουργεί"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -10195,6 +10279,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Εάν είναι ενεργοποιημένες οι συντομεύσεις πληκτρολογίου, μπορείτε να χρησιμοποιήσετε τα ακόλουθα πλήκτρα για γρήγορες ενέργειες ή για να μεταβείτε σε διαφορετικές προβολές. Το ${ metaKey } + K είναι πάντα ενεργοποιημένο."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Αν το email που καταχωρήσατε χρησιμοποιήθηκε για να δεσμεύσετε τη διεύθυνση email ενός παιδιού, θα στείλουμε ξανά το κουπόνι ενεργοποίησης."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Εάν η ζώνη ώρας του συστήματος δεν ταιριάζει με την τρέχουσα προτίμηση ζώνης ώρας, θα σας ζητηθεί να την ενημερώσετε (το πολύ μία φορά την ημέρα)."
@@ -10431,6 +10518,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Κρατήστε το κουπόνι ασφαλές μέχρι να χρειαστεί, για παράδειγμα στο ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Διατηρήστε τις πληροφορίες σας πιο ασφαλείς και ιδιωτικές με αυτούς τους οδηγούς και συμβουλές."
@@ -10949,6 +11039,9 @@
       "Receive notifications for ${ categoryLabel }": [
         "Λάβετε ειδοποιήσεις για ${ categoryLabel }"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Λάβετε το κουπόνι δέσμευσης μέσω email. Εσείς ή το παιδί μπορείτε να το χρησιμοποιήσετε για να ενεργοποιήσετε τη διεύθυνση μέσα στα επόμενα 15 χρόνια. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Πρόσφατα χρησιμοποιημένοι διακομιστές:"
       ],
@@ -11181,6 +11274,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Ορισμένοι διακομιστές ενδέχεται να μην εμφανίζονται στην παραπάνω λίστα. Αναζητήστε τους με βάση το όνομα του διακομιστή (π.χ. AT#62)."
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε ξανά ή επικοινωνήστε με την υποστήριξη πελατών."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Καθορίστε τον τομέα στον οποίο επιτρέπεται ο έλεγχος ταυτότητας με SAML SSO."
       ],
@@ -11199,6 +11295,9 @@
       "Step ${ step }": [
         "Βήμα ${ step }",
         "Βήματα ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Βήμα ${ step }/${ totalSteps }"
       ],
       "Step 1 of 2": [
         "Βήμα 1 από 2"
@@ -11555,6 +11654,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Για να ακολουθείτε την τελευταία εξέλιξη στα προϊόντα ${ BRAND_NAME }, μπορείτε να εγγραφείτε στα διάφορα email μας και ${ blogLink } κατά διαστήματα."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Για να αποτραπεί η κατάχρηση ή η απάτη, ζητάμε μια ελάχιστη δωρεά ${ minimumDonation }. Αυτό στηρίζει το έργο της ${ protonFoundationLink } στην υπεράσπιση της ψηφιακής ιδιωτικότητας παγκοσμίως και βοηθά στην προστασία της επόμενης γενιάς."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Για να συνεχίσετε, επιλέξτε μια μέθοδο ανάκτησης λογαριασμού, ώστε να επαληθεύσουμε το αίτημα."
       ],
@@ -11783,6 +11885,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Σας συμβουλεύουμε όταν είναι δυνατόν να χρησιμοποιείτε επίσημες εφαρμογές ${ VPN_APP_NAME }."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Δεν μπορέσαμε να ολοκληρώσουμε τη συναλλαγή. Παρακαλούμε προσπαθήστε ξανά."
+      ],
       "We couldn’t process your payment.": [
         "Δεν ήταν δυνατή η επεξεργασία της πληρωμής σας."
       ],
@@ -11893,6 +11998,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Όταν είστε έτοιμοι να ενεργοποιήσετε τη διεύθυνση, σαρώστε τον κωδικό QR ή χρησιμοποιήστε τον σύνδεσμο στο κουπόνι."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Κατά την ανανέωση της συνδρομής σας, θα χρησιμοποιηθούν τυχόν διαθέσιμες πιστώσεις πριν σας χρεώσουμε με τον παραπάνω τρόπο πληρωμής."
@@ -12288,6 +12396,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Η δοκιμή σας θα τελειώσει σε ${ timeRemaining }."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Το κουπόνι σας για τη δεσμευμένη διεύθυνση email ${ BRAND_NAME }: ${ reservedEmail }"
+      ],
       "YouTube": [
         "YouTube"
       ],
@@ -12330,6 +12441,11 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "Βοηθά στη σύνταξη, την απάντηση και τη διόρθωση μηνυμάτων ηλεκτρονικού ταχυδρομείου. Εάν απενεργοποιηθεί, μόνο οι διαχειριστές θα έχουν πρόσβαση. Διαχείριση για μεμονωμένους χρήστες στο ${ userAndAddresses } ή ${ addMoreSeats }"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Εισάγετε τον κωδικό επαλήθευσης που εστάλη στο ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -12960,6 +13076,9 @@
       "Actions": [
         "Ενέργειες"
       ],
+      "Activation code": [
+        "Κωδικός ενεργοποίησης"
+      ],
       "Activity": [
         "Δραστηριότητα"
       ],
@@ -13206,6 +13325,9 @@
       "Choose a name for the generated certificate file": [
         "Επιλέξτε όνομα για το παραγόμενο αρχείο διαμόρφωσης"
       ],
+      "Choose an address to reserve for your child": [
+        "Επιλέξτε μια διεύθυνση για να δεσμεύσετε για το παιδί σας"
+      ],
       "Choose your billing": [
         "Επιλέξτε τον τρόπο χρέωσης σας"
       ],
@@ -13410,6 +13532,12 @@
       "Don't show this again": [
         "Να μην εμφανιστεί ξανά"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Δωρίστε 1$ ή περισσότερα στο Ίδρυμα ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Ποσό δωρεάς"
+      ],
       "Duration": [
         "Διάρκεια"
       ],
@@ -13469,6 +13597,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Εισάγετε τον κωδικό πρόσβασης για το κλειδί με δακτυλικό αποτύπωμα: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Εισάγετε τη διεύθυνση του ηλεκτρονικού ταχυδρομείου σας"
       ],
       "Enter your password": [
         "Εισάγετε τον κωδικό πρόσβασης σας"
@@ -13601,6 +13732,9 @@
       ],
       "Import interval": [
         "Μεσοδιάστημα εισαγωγών"
+      ],
+      "Import recent mails": [
+        "Εισαγωγή πρόσφατων μηνυμάτων"
       ],
       "Import to email address": [
         "Εισαγωγή σε διεύθυνση email"
@@ -13986,6 +14120,12 @@
       "Require 2FA for everyone": [
         "Απαιτείται έλεγχος ταυτότητας δύο παραγόντων (2FA) για όλους"
       ],
+      "Reserved address": [
+        "Δεσμευμένη διεύθυνση"
+      ],
+      "Reserved email address": [
+        "Δεσμευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
@@ -14027,6 +14167,9 @@
       ],
       "Server name": [
         "Όνομα διακομιστή"
+      ],
+      "Set password": [
+        "Ορισμός κωδικού"
       ],
       "Share your referral link": [
         "Κοινοποιήστε τον σύνδεσμο παραπομπής σας"
@@ -14157,6 +14300,9 @@
       ],
       "Tips and insights": [
         "Συμβουλές και πληροφορίες"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Για να ενεργοποιήσετε, σαρώστε τον κωδικό QR ή μεταβείτε στο:"
       ],
       "To help us improve, please explain why you are leaving.": [
         "Για να μας βοηθήσετε να βελτιωθούμε, παρακαλούμε εξηγήστε γιατί φεύγετε."
@@ -14290,11 +14436,17 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ναι, θέλω να διαγράψω οριστικά αυτόν τον λογαριασμό και όλα τα δεδομένα του."
       ],
+      "Your activation code:": [
+        "Ο κωδικός ενεργοποίησης σας:"
+      ],
       "Your calendar URL": [
         "Η διεύθυνση URL του ημερολογίου σας"
       ],
       "Your credit balance": [
         "Το πιστωτικό σας υπόλοιπο"
+      ],
+      "Your email address": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου σας"
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
@@ -14304,6 +14456,9 @@
       ],
       "Your plan": [
         "Το πλάνο σας"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Το κουπόνι σας για τη δεσμευμένη διεύθυνση email ${ BRAND_NAME }:"
       ],
       "ZIP code": [
         "Τ.Κ."
@@ -14476,6 +14631,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "του ${ BRAND_NAME } Ιδρύματος"
+      ],
       "Activity log": [
         "Αρχείο δραστηριοτήτων"
       ],
@@ -14496,6 +14654,9 @@
       ],
       "Calendars": [
         "Ημερολόγια"
+      ],
+      "Can't find your code?": [
+        "Δεν μπορείτε να βρείτε τον κωδικό σας;"
       ],
       "clearing your browser cache": [
         "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
@@ -14699,6 +14860,20 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Χρήστες και διευθύνσεις"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Email"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -15166,6 +15341,12 @@
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } Λογαριασμός"
       ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Ενεργοποιήστε την ιδιωτική διεύθυνση ηλεκτρονικού ταχυδρομείου ${ BRAND_NAME } που είναι δεσμευμένη για το παιδί σας και ρυθμίστε τον λογαριασμό του."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Ενεργοποιήστε τον λογαριασμό ${ BRAND_NAME } του παιδιού σας | ${ BRAND_NAME }"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Δημιουργήστε ένα ${ BRAND_NAME } λογαριασμό για να χρησιμοποιήσετε όλες τις κρυπτογραφημένες υπηρεσίες του ${ BRAND_NAME }, όπως ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } και περισσότερα, με μία μόνο σύνδεση. Αποκτήστε έναν δωρεάν λογαριασμό ${ BRAND_NAME }."
       ],
@@ -15189,6 +15370,12 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Ξεχάσατε τον όνομα χρήστη του ${ BRAND_NAME } λογαριασμού σας; Βρείτε το χρησιμοποιώντας τη διεύθυνση ηλεκτρονικού ταχυδρομείου ή τον αριθμό τηλεφώνου ανάκτησης και αποκτήστε ξανά πρόσβαση στα ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } σας, και παραπάνω."
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "Ανακτήστε την πρόσβαση στη διεύθυνση ηλεκτρονικού ταχυδρομείου ${ BRAND_NAME } που έχει δεσμευτεί για το παιδί σας."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Ανάκτηση του λογαριασμού ${ BRAND_NAME } του παιδιού σας | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Επαναφορά κωδικού πρόσβασης του ${ BRAND_NAME } λογαριασμού σας"
@@ -18247,6 +18434,9 @@
       ],
       "Address": [
         "Διεύθυνση"
+      ],
+      "Amount": [
+        "Ποσό"
       ],
       "Anderson": [
         "Καρανικολής"
@@ -22015,6 +22205,9 @@
       "Verification code copied to clipboard": [
         "Ο κωδικός επαλήθευσης αντιγράφηκε στο πρόχειρο"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Στάλθηκε κωδικός επαλήθευσης στο ${ parentEmail }"
+      ],
       "Verification successful": [
         "Επιτυχία επαλήθευσης"
       ],
@@ -22038,6 +22231,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Θα λάβετε το όνομα χρήστη σας μέσω SMS μέσα σε ένα λεπτό εάν εισαγάγατε έναν έγκυρο αριθμό τηλεφώνου ανάκτησης."
+      ],
+      "Your address has been activated": [
+        "Η διεύθυνσή σας έχει ενεργοποιηθεί"
       ]
     },
     "Success message": {
@@ -23449,6 +23645,12 @@
       ],
       "Privacy and data collection": [
         "Απόρρητο και συλλογή δεδομένων"
+      ],
+      "Problem processing your payment": [
+        "Πρόβλημα κατά την επεξεργασία της πληρωμής σας"
+      ],
+      "Problem processing your request": [
+        "Πρόβλημα κατά την επεξεργασία του αιτήματός σας"
       ],
       "Processing...": [
         "Γίνεται επεξεργασία..."

@@ -90,6 +90,12 @@
       "Activate recovery": [
         "Kurtarma özelliğini aç"
       ],
+      "Activate reserved address": [
+        "Rezerve edilmiş adresi etkinleştir"
+      ],
+      "Activate this address": [
+        "Bu adresi etkinleştir"
+      ],
       "Add": [
         "Ekle"
       ],
@@ -278,6 +284,9 @@
       ],
       "Close navigation": [
         "Gezinmeyi kapat"
+      ],
+      "Close search": [
+        "Aramayı kapat"
       ],
       "Close tab": [
         "Sekmeyi kapat"
@@ -561,6 +570,9 @@
       "Don't show again": [
         "Bir daha görüntülenmesin"
       ],
+      "Donate": [
+        "Bağış yap"
+      ],
       "Done": [
         "Tamam"
       ],
@@ -830,6 +842,9 @@
       ],
       "Get verification code": [
         "Doğrulama kodu alın"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Kendi ${ MAIL_APP_NAME } adresinizi alın"
       ],
       "Go back": [
         "Geri dön"
@@ -1302,6 +1317,9 @@
       "Search countries": [
         "Ülke ara"
       ],
+      "Search groups": [
+        "Gruplarda ara"
+      ],
       "Search settings": [
         "Ayar arayın"
       ],
@@ -1373,6 +1391,9 @@
       ],
       "Send reminder": [
         "Hatırlatıcı gönder"
+      ],
+      "Send verification code": [
+        "Doğrulama kodunu gönder"
       ],
       "Set as album cover": [
         "Albüm kapağı olarak ayarla"
@@ -1541,6 +1562,9 @@
       ],
       "Try for free": [
         "Ücretsiz deneyin"
+      ],
+      "Try payment again": [
+        "Ödemeyi tekrar dene"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yeniden kaydetmeyi deneyin. Şu sorun nedeniyle kaydedilemedi: ${ saveError }"
@@ -6391,6 +6415,9 @@
       "Account does not exist": [
         "Hesap bulunamadı"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Etkinleştirme başarısız oldu. Bilgiler yanlış olabilir veya e-posta adresi zaten etkinleştirilmiş olabilir. Lütfen girdilerinizi kontrol edin veya oturum açın."
+      ],
       "Add at least one action": [
         "En az bir işlem ekleyin"
       ],
@@ -6519,6 +6546,9 @@
       "Failed loading group members": [
         "Grup üyeleri yüklenemedi"
       ],
+      "Failed to activate your address. Please try again.": [
+        "Adresiniz etkinleştirilemedi. Lütfen tekrar deneyin."
+      ],
       "Failed to add group member": [
         "Grup üyesi eklenemedi"
       ],
@@ -6596,6 +6626,9 @@
       ],
       "Invalid code": [
         "Kod geçersiz"
+      ],
+      "Invalid coupon": [
+        "Geçersiz kupon"
       ],
       "Invalid domain": [
         "Etki alanı geçersiz"
@@ -6914,6 +6947,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Eklenebilecek en az kredi tutarı: ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimum bağış tutarı ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "İlke adının uzunluğu 3 ile 40 karakter arasında olmalıdır."
@@ -8122,6 +8158,16 @@
         "Artık ${ BRAND_NAME } mobil uygulamalarının eski sürümlerinde oturum açamayacağımı anladım."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "E-posta adresinizi yazın"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Kupon buraya gönderilecek."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "İnternet uygulaması"
@@ -8422,6 +8468,32 @@
       ],
       "Subscribed": [
         "Abone olunmuş"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Çocuğunuzun yarınki dijital güvenliğini sağlamak için bugün atabileceğiniz basit bir adım"
+      ],
+      "Activate your reserved email address": [
+        "Rezerve ettiğiniz e-posta adresini etkinleştirin"
+      ],
+      "Address reservation voucher": [
+        "Adres rezervasyon kuponu"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "${ BRAND_NAME } Vakfı'na bağış yapın"
+      ],
+      "Enter verification code": [
+        "Doğrulama kodunu yazın"
+      ],
+      "Recover activation voucher": [
+        "Aktivasyon kuponunu kurtar"
+      ],
+      "Reserve child's email address": [
+        "Çocuğun e-posta adresini rezerve et"
+      ],
+      "We emailed you the voucher": [
+        "Kuponunuzu e-posta ile gönderdik"
       ]
     },
     "Headline": {
@@ -9200,8 +9272,8 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ BRAND_NAME } tarafından sunulan bir ${ protonSubdomain }, hızlıca bir alt etki alanı kurmanızı sağlar. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Gruplar oluşturmak için özel bir etki alanı gereklidir. Bir özel etki alanınız yoksa, önce ${ linkToDomainPage } bölümünden bu işlemi tamamlayın."
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Grup oluşturmak için özel etki alanı gereklidir. Eğer ayarlanmış bir özel etki alanınız yoksa önce ${ linkToDomainPage } kısmından bunu yapın."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Daha sonra sertifikayı kolayca geçersiz kılmaya ya da uzatmaya yardımcı olacak bir ad."
@@ -9977,11 +10049,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "İçe aktarmak istediğiniz e-posta hesabının kimlik doğrulama bilgilerini yazın."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "${ reservedEmail } adresini rezerve etmek için kullanılan e-posta adresini yazın."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "**${ domain.DomainName }** için bir **eduGAIN** kuruluşunun Entity ID değerini yazın."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Yönetici yetkilerini geri yüklemek için kuruluş parolasını yazın. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Rezervasyon sırasında kullanılan e-posta adresini ve rezerve edilen e-posta adresini yazın."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
@@ -10160,6 +10238,9 @@
       "Groups": [
         "Gruplar"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Diğer ailelerin çocuklarına internette güvenli bir başlangıç yapmalarına yardımcı olun. Bu önemli gelişmeyi paylaşın ve herkese duyurun."
+      ],
       "here": [
         "buraya"
       ],
@@ -10168,6 +10249,9 @@
       ],
       "High Priority": [
         "Yüksek öncelik"
+      ],
+      "How it works": [
+        "Nasıl çalışır"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -10195,6 +10279,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Klavye kısayolları etkinleştirilmişse, hızlı işlemler yapmak veya farklı görünümlere geçmek için aşağıdaki tuşları kullanabilirsiniz. ${ metaKey } + K her zaman kullanılabilir."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Yazdığınız e-posta adresi bir çocuğun e-posta adresini rezerve etmek için kullanılmışsa aktivasyon kuponunu yeniden göndereceğiz."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Sistem saat dilimi geçerli saat dilimi ayarıyla aynı değilse, güncellemeniz istenir (günde en fazla bir kez)."
@@ -10431,6 +10518,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Yalnızca seçiminizi onaylayın, gerisini biz halledeceğiz."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Kuponu ihtiyaç duyulana kadar, örneğin ${ DRIVE_APP_NAME } içinde güvenli bir şekilde saklayın."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Bu rehberler ve ipuçları ile bilgilerinizi daha güvenli ve gizli tutun."
@@ -10949,6 +11039,9 @@
       "Receive notifications for ${ categoryLabel }": [
         "${ categoryLabel } bildirimlerini al"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Rezervasyon kuponunu e-posta ile alın. Siz veya çocuğunuz bu kuponu kullanarak 15 yıl içinde adresi etkinleştirebilirsiniz. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Son kullanılan sunucular:"
       ],
@@ -11181,6 +11274,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Bazı sunucular yukarıdaki listede görünmeyebilir. Bu sunucuları bulmak için sunucu adına göre (AT#62 gibi) arama yapın."
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Bir şeyler ters gitti. Lütfen tekrar deneyin veya müşteri desteği ile iletişime geçin."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML tek oturum açma ile kimlik doğrulamasına izin verilecek alanı belirtin."
       ],
@@ -11199,6 +11295,9 @@
       "Step ${ step }": [
         "${ step }. adım",
         "${ step }. adım"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Adım ${ step }/${ totalSteps }"
       ],
       "Step 1 of 2": [
         "Adım 1 / 2"
@@ -11555,6 +11654,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "${ BRAND_NAME } ürünlerindeki son gelişmeleri izlemek için çeşitli e-posta gruplarımıza abone olabilir ve zaman zaman ${ blogLink } sayfamıza bakabilirsiniz."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Kötüye kullanımı veya dolandırıcılığı önlemek için en az ${ minimumDonation } tutarında bir bağış rica ediyoruz. Bu bağış dünya çapında dijital gizliliği savunan ${ protonFoundationLink } çalışmalarını desteklemekte ve gelecek neslin korunmasına yardımcı olmaktadır."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "İlerlemek için, isteği doğrulayabileceğimiz bir hesap kurtarma yöntemi seçin."
       ],
@@ -11783,6 +11885,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Olabildiğince resmi ${ VPN_APP_NAME } uygulamalarını kullanmanızı öneririz."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "İşlemi tamamlayamadık. Lütfen tekrar deneyin."
+      ],
       "We couldn’t process your payment.": [
         "Ödemenizi işleyemedik."
       ],
@@ -11893,6 +11998,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları veriyoruz."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Adresi etkinleştirmeye hazır olduğunuzda karekodu tarayın veya kupondaki bağlantıyı kullanın."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm krediyi kullanacağız."
@@ -12288,6 +12396,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Deneme süreniz ${ timeRemaining } sonra sona erecek."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Rezerve ettiğiniz ${ BRAND_NAME } e-posta adresiniz için kuponunuz: ${ reservedEmail }"
+      ],
       "YouTube": [
         "YouTube"
       ],
@@ -12330,6 +12441,11 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "E-postaları yazmaya, yanıtlamaya ve düzeltmeye yardımcı olur. Kapatılırsa yalnızca yöneticiler erişebilir. Bireysel kullanıcıları ${ userAndAddresses } veya ${ addMoreSeats } içinden yönetin"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "${ parentEmail } adresine gönderilen doğrulama kodunu girin."
       ]
     },
     "Info - folder colouring feature": {
@@ -12960,6 +13076,9 @@
       "Actions": [
         "İşlemler"
       ],
+      "Activation code": [
+        "Aktivasyon kodu"
+      ],
       "Activity": [
         "Etkinlik"
       ],
@@ -13206,6 +13325,9 @@
       "Choose a name for the generated certificate file": [
         "Oluşturulan sertifika dosyasının adını yazın"
       ],
+      "Choose an address to reserve for your child": [
+        "Çocuğunuz için rezerve etmek istediğiniz adresi seçin"
+      ],
       "Choose your billing": [
         "Faturanızı seçin"
       ],
@@ -13410,6 +13532,12 @@
       "Don't show this again": [
         "Bu bir daha görüntülenmesin"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "${ BRAND_NAME } Vakfı'na 1$ veya daha fazla bağış yapın"
+      ],
+      "Donation amount": [
+        "Bağış tutarı"
+      ],
       "Duration": [
         "Süre"
       ],
@@ -13469,6 +13597,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Şu parmak izli anahtar için parolayı yazın: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "E-posta adresinizi girin"
       ],
       "Enter your password": [
         "Parolanızı yazın"
@@ -13601,6 +13732,9 @@
       ],
       "Import interval": [
         "İçe aktarma aralığı"
+      ],
+      "Import recent mails": [
+        "Son e-postaları içe aktar"
       ],
       "Import to email address": [
         "E-posta adresi içine aktar"
@@ -13986,6 +14120,12 @@
       "Require 2FA for everyone": [
         "İki adımlı doğrulama herkes için zorunlu olsun"
       ],
+      "Reserved address": [
+        "Rezerve edilmiş adres"
+      ],
+      "Reserved email address": [
+        "Rezerve edilmiş e-posta adresi"
+      ],
       "Reveal password": [
         "Parolayı görüntüle"
       ],
@@ -14027,6 +14167,9 @@
       ],
       "Server name": [
         "Sunucu adı"
+      ],
+      "Set password": [
+        "Parola belirle"
       ],
       "Share your referral link": [
         "Öneri bağlantınızı paylaşın"
@@ -14157,6 +14300,9 @@
       ],
       "Tips and insights": [
         "İpuçları ve öngörüler"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Etkinleştirmek için karekodu tarayın veya şuraya gidin:"
       ],
       "To help us improve, please explain why you are leaving.": [
         "Gelişmemize yardımcı olmak için, lütfen neden ayrıldığınızı açıklayın."
@@ -14290,11 +14436,17 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Evet, bu hesabı ve tüm verilerini kalıcı olarak silmek istiyorum."
       ],
+      "Your activation code:": [
+        "Aktivasyon kodunuz:"
+      ],
       "Your calendar URL": [
         "Takvim adresiniz"
       ],
       "Your credit balance": [
         "Kredi hesabınız"
+      ],
+      "Your email address": [
+        "E-posta adresiniz"
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
@@ -14304,6 +14456,9 @@
       ],
       "Your plan": [
         "Tarifeniz"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Rezerve ettiğiniz ${ BRAND_NAME } e-posta adresiniz için kuponunuz:"
       ],
       "ZIP code": [
         "Posta kodu"
@@ -14476,6 +14631,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "${ BRAND_NAME } Vakfı'nın"
+      ],
       "Activity log": [
         "Etkinlik günlüğü"
       ],
@@ -14496,6 +14654,9 @@
       ],
       "Calendars": [
         "Takvimler"
+      ],
+      "Can't find your code?": [
+        "Kodunuzu bulamıyor musunuz?"
       ],
       "clearing your browser cache": [
         "tarayıcınızın ön belleğini temizlemek"
@@ -14699,6 +14860,20 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Kullanıcılar ve adresler"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "E-Posta"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -15166,6 +15341,12 @@
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } hesabı"
       ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Çocuğunuz için rezerve edilmiş özel ${ BRAND_NAME } e-posta adresini etkinleştirin ve hesabını oluşturun."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Çocuğunuzun ${ BRAND_NAME } hesabını etkinleştirin | ${ BRAND_NAME }"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "${ BRAND_NAME } hesabı açarak, tek hesap ile ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi şifrelenmiş tüm ${ BRAND_NAME } hizmetlerini kullanın. Ücretsiz bir ${ BRAND_NAME } hesabı açın."
       ],
@@ -15189,6 +15370,12 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "${ BRAND_NAME } hesabınızın kullanıcı adını mı unuttunuz? Kurtarma e-posta adresinizi ya da telefon numaranızı kullanarak ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi hizmetlere yeniden erişin."
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "Çocuğunuz için ayrılmış özel ${ BRAND_NAME } e-posta adresine erişimi kurtarın."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Çocuğunuzun ${ BRAND_NAME } hesabını kurtarın | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "${ BRAND_NAME } hesabınızın parolasını sıfırlayın"
@@ -18248,6 +18435,9 @@
       "Address": [
         "Adres"
       ],
+      "Amount": [
+        "Tutar"
+      ],
       "Anderson": [
         "Kaya"
       ],
@@ -18646,9 +18836,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Bu teklif bir daha görüntülenmesin"
-      ],
       "Get the deal": [
         "Tekliften yararlanın"
       ]
@@ -18725,11 +18912,6 @@
       ],
       "Use your own email domain": [
         "Kendi e-posta etki alanınızı kullanın"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "bir kelebek"
       ]
     },
     "q1campaign: Title": {
@@ -20840,7 +21022,7 @@
         "1 yıl sonra ${ regularAmount } yerine ${ discountedAmount } olarak yenilenir (${ discount }% indirim ile)"
       ],
       "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "2 yıl sonra ${ regularAmount } yerine ${ discountedAmount } ile yenilenir (${ discount }% indirim ile)"
+        "2 yıl sonra ${ regularAmount } yerine ${ discountedAmount } ile yenilenir (%${ discount } indirim ile)"
       ],
       "Save ${ discount }%": [
         "%${ discount } indirim"
@@ -22110,6 +22292,9 @@
       "Verification code copied to clipboard": [
         "Doğrulama kodu panoya kopyalandı"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Doğrulama kodu ${ parentEmail } adresine gönderildi"
+      ],
       "Verification successful": [
         "Doğrulandı"
       ],
@@ -22133,6 +22318,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Geçerli bir kurtarma telefon numarası yazdıysanız, bir dakika içinde kullanıcı adınızın bulunduğu bir SMS alacaksınız."
+      ],
+      "Your address has been activated": [
+        "Adresiniz etkinleştirildi"
       ]
     },
     "Success message": {
@@ -23544,6 +23732,12 @@
       ],
       "Privacy and data collection": [
         "Gizlilik ve veri toplama"
+      ],
+      "Problem processing your payment": [
+        "Ödemeniz işlenirken sorun çıktı"
+      ],
+      "Problem processing your request": [
+        "İsteğiniz işlenirken bir sorun çıktı"
       ],
       "Processing...": [
         "İşleniyor..."

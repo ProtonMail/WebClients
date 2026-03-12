@@ -90,6 +90,12 @@
       "Activate recovery": [
         "Aktivovat obnovení"
       ],
+      "Activate reserved address": [
+        "Aktivovat rezervovanou adresu"
+      ],
+      "Activate this address": [
+        "Aktivovat tuto adresu"
+      ],
       "Add": [
         "Přidat"
       ],
@@ -546,6 +552,9 @@
       "Don't show again": [
         "Příště nezobrazovat"
       ],
+      "Donate": [
+        "Přispět"
+      ],
       "Done": [
         "Hotovo"
       ],
@@ -815,6 +824,9 @@
       ],
       "Get verification code": [
         "Odeslat ověřovací kód"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Získejte vlastní adresu ${ MAIL_APP_NAME }"
       ],
       "Go back": [
         "Zpět"
@@ -1356,6 +1368,9 @@
       "Send reminder": [
         "Poslat připomenutí"
       ],
+      "Send verification code": [
+        "Odeslat ověřovací kód"
+      ],
       "Set as album cover": [
         "Nastavit jako obálku alba"
       ],
@@ -1523,6 +1538,9 @@
       ],
       "Try for free": [
         "Vyzkoušet zdarma"
+      ],
+      "Try payment again": [
+        "Zkuste platbu znovu"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokuste se znovu uložit. Uložení se nezdařilo z důvodu: ${ saveError }"
@@ -6405,6 +6423,9 @@
       "Account does not exist": [
         "Účet neexistuje"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Aktivace selhala. Detaily mohou být nesprávné nebo je e-mail již aktivní. Zkontrolujte prosím svůj vstup nebo se přihlaste."
+      ],
       "Add at least one action": [
         "Přidejte alespoň jednu akci"
       ],
@@ -6533,6 +6554,9 @@
       ],
       "Failed loading group members": [
         "Načtení členů skupiny selhalo"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Aktivace vaší adresy selhala. Zkuste to prosím znovu."
       ],
       "Failed to add group member": [
         "Přidání člena skupiny selhalo"
@@ -8168,6 +8192,16 @@
         "Chápu, že se již nebudu moci přihlásit ve starších verzích mobilních aplikací ${ BRAND_NAME }."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Zadejte svou e-mailovou adresu"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Poukaz bude odeslán sem."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "webová aplikace"
@@ -8470,6 +8504,32 @@
       ],
       "Subscribed": [
         "Odebíráno"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Jednoduchý krok dnes pro zajištění digitální bezpečnosti vašeho dítěte zítra"
+      ],
+      "Activate your reserved email address": [
+        "Aktivujte svou rezervovanou e-mailovou adresu"
+      ],
+      "Address reservation voucher": [
+        "Poukaz na rezervaci adresy"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Přispějte nadačnímu fonfu ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Zadejte ověřovací kód"
+      ],
+      "Recover activation voucher": [
+        "Obnovit aktivační poukaz"
+      ],
+      "Reserve child's email address": [
+        "Rezervovat e-mailovou adresu dítěte"
+      ],
+      "We emailed you the voucher": [
+        "Poukaz jsme vám zaslali e-mailem"
       ]
     },
     "Headline": {
@@ -9303,9 +9363,6 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } hostuje ${ BRAND_NAME }, což umožňuje rychlé zprovoznění subdomény. ${ learnMoreLink }"
       ],
-      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "K vytvoření skupin je nutná vlastní doména. Pokud nemáte nastavenou vlastní doménu, udělejte to nejprve v části ${ linkToDomainPage }."
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Název, který vám pomůže zapamatovat si jeho použití, abyste později mohli konfiguraci snadno zrušit nebo rozšířit."
       ],
@@ -10098,11 +10155,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "Zadejte přihlašovací údaje e-mailového účtu, ze kterého chcete importovat."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Zadejte e-mailovou adresu použitou k rezervaci adresy ${ reservedEmail }."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Zadejte ID subjektu organizace **eduGAIN** pro **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Zadejte heslo organizace pro obnovení oprávnění správce. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Zadejte rezervovanou e-mailovou adresu a e-mailovou adresu použitou při rezervaci."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
@@ -10263,6 +10326,9 @@
       "Groups": [
         "Skupiny"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Pomozte dalším rodinám dopřát jejich dětem bezpečný start online. Sdílejte tento milník a šiřte povědomí dál."
+      ],
       "here": [
         "zde"
       ],
@@ -10271,6 +10337,9 @@
       ],
       "High Priority": [
         "Vysoká priorita"
+      ],
+      "How it works": [
+        "Jak to funguje"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -10292,6 +10361,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Pokud jsou povoleny klávesové zkratky, můžete pro rychlé akce nebo pro přechod do různých zobrazení použít následující klávesy. Zkratka ${ metaKey } + K je vždy povolena."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Pokud e-mail, který jste zadali, byl použit k rezervaci e-mailové adresy dítěte, znovu vám zašleme aktivační poukaz."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Pokud časové pásmo nastavené v systému neodpovídá aktuálnímu nastavení časového pásma, budete vyzváni k aktualizaci (maximálně jednou denně)."
@@ -10529,6 +10601,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Stačí potvrdit výběr a my se postaráme o zbytek."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Uchovejte poukaz v bezpečí, dokud jej nebudete potřebovat, například v aplikaci ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Udržujte své informace v bezpečí a soukromí pomocí těchto návodů a tipů."
@@ -11037,6 +11112,9 @@
       "Receive notifications for ${ categoryLabel }": [
         "Přijímat oznámení ohledně ${ categoryLabel }"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Obdržíte rezervační poukaz e-mailem. Vy nebo dítě jej můžete použít k aktivaci adresy v příštích 15 letech. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Nedávno použité servery:"
       ],
@@ -11268,6 +11346,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Některé servery se nemusí objevit v seznamu výše. Najděte je vyhledáním podle názvu serveru (např. AT#62)."
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Něco se pokazilo. Zkuste to prosím znovu nebo kontaktujte zákaznickou podporu."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Určete doménu, která se smí ověřovat pomocí SAML SSO."
       ],
@@ -11288,6 +11369,9 @@
         "Krok ${ step }",
         "Krok ${ step }",
         "Krok ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Krok ${ step }/${ totalSteps }"
       ],
       "Storage allocated to other users in this organisation": [
         "Úložný prostor přidělený ostatním uživatelům v této organizaci"
@@ -11634,6 +11718,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Chcete-li držet krok s nejnovějším vývojem produktů ${ BRAND_NAME }, můžete se přihlásit k odběru našich e-mailů a občas ${ blogLink }."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Abychom předešli zneužití nebo podvodům, žádáme o minimální dar ve výši ${ minimumDonation }. Podpoříte tím práci organizace ${ protonFoundationLink } při obraně digitálního soukromí po celém světě a pomůžete chránit další generaci."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Chcete-li pokračovat, vyberte způsob obnovení účtu, abychom mohli žádost ověřit."
       ],
@@ -11853,6 +11940,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Doporučujeme používat jen oficiální aplikace ${ VPN_APP_NAME }, pokud je to možné."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Transakci se nepodařilo dokončit. Zkuste to prosím znovu."
+      ],
       "We couldn’t process your payment.": [
         "Vaši platbu jsme nemohli zpracovat."
       ],
@@ -11963,6 +12053,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Až budete připraveni aktivovat adresu, naskenujte QR kód nebo použijte odkaz v poukazu."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Při obnovení vašeho předplatného, ještě před použitím vaší platební metody, budou použity všechny dostupné kredity."
@@ -12372,6 +12465,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše zkušební verze skončí za ${ timeRemaining }."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Váš poukaz pro vaši rezervovanou e-mailovou adresu ${ BRAND_NAME }: ${ reservedEmail }"
+      ],
       "YouTube": [
         "YouTube"
       ],
@@ -12414,6 +12510,11 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "Pomáhá s psaním, odpovídáním a jazykovou kontrolou e-mailů. Po deaktivaci budou mít přístup pouze správci. Spravujte pro jednotlivé uživatele v části ${ userAndAddresses } nebo ${ addMoreSeats }"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Zadejte ověřovací kód, který byl odeslán na ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -13058,6 +13159,9 @@
       "Actions": [
         "Akce"
       ],
+      "Activation code": [
+        "Aktivační kód"
+      ],
       "Activity": [
         "Aktivita"
       ],
@@ -13298,6 +13402,9 @@
       "Choose a name for the generated certificate file": [
         "Zvolte název vygenerovaného souboru certifikátu"
       ],
+      "Choose an address to reserve for your child": [
+        "Vyberte adresu, kterou chcete rezervovat pro své dítě"
+      ],
       "Choose your billing": [
         "Zvolte způsob platby"
       ],
@@ -13499,6 +13606,12 @@
       "Don't show this again": [
         "Příště nezobrazovat"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Darujte 1 $ nebo více nadaci nadačnímu fondu ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Výše daru"
+      ],
       "Duration": [
         "Doba trvání"
       ],
@@ -13555,6 +13668,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Zadejte heslo pro klíč s otiskem: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Zadejte svou e-mailovou adresu"
       ],
       "Enter your password": [
         "Zadejte své heslo"
@@ -14069,6 +14185,12 @@
       "Require 2FA for everyone": [
         "Vyžaduje dvoufázové ověření pro všechny"
       ],
+      "Reserved address": [
+        "Rezervovaná adresa"
+      ],
+      "Reserved email address": [
+        "Rezervovaná e-mailová adresa"
+      ],
       "Reveal password": [
         "Zobrazit heslo"
       ],
@@ -14110,6 +14232,9 @@
       ],
       "Server name": [
         "Název serveru"
+      ],
+      "Set password": [
+        "Nastavit heslo"
       ],
       "Share your referral link": [
         "Sdílejte svůj doporučující odkaz"
@@ -14243,6 +14368,9 @@
       "Tips and insights": [
         "Doporučení a postřehy"
       ],
+      "To activate, scan the QR-code or go to:": [
+        "Pro aktivaci naskenujte QR kód nebo přejděte na:"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "Chcete-li nám pomoci se zlepšit, vysvětlete, proč odcházíte."
       ],
@@ -14375,11 +14503,17 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ano, chci trvale smazat tento účet a všechna data s ním spojená."
       ],
+      "Your activation code:": [
+        "Váš aktivační kód:"
+      ],
       "Your calendar URL": [
         "URL adresa vašeho kalendáře"
       ],
       "Your credit balance": [
         "Váš zůstatek kreditu"
+      ],
+      "Your email address": [
+        "Vaše e-mailová adresa"
       ],
       "Your password (admin)": [
         "Vaše heslo (správce)"
@@ -14389,6 +14523,9 @@
       ],
       "Your plan": [
         "Váš tarif"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Váš poukaz pro vaši rezervovanou e-mailovou adresu ${ BRAND_NAME }:"
       ],
       "ZIP code": [
         "PSČ"
@@ -14563,6 +14700,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "${ BRAND_NAME } Foundation"
+      ],
       "Activity log": [
         "Protokol o činnosti"
       ],
@@ -14583,6 +14723,9 @@
       ],
       "Calendars": [
         "Kalendáře"
+      ],
+      "Can't find your code?": [
+        "Nemůžete najít svůj kód?"
       ],
       "clearing your browser cache": [
         "vyprazdňuji cache ve vašem prohlížeči"
@@ -14786,6 +14929,20 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Uživatelé a adresy"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "E-mail"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -18448,6 +18605,9 @@
       "Address": [
         "Adresa"
       ],
+      "Amount": [
+        "Částka"
+      ],
       "Anderson": [
         "Příjmení"
       ],
@@ -18658,7 +18818,7 @@
         "Cloudové úložiště a sdílení souborů zabezpečené koncovým šifrováním."
       ],
       "Comprehensive privacy and security suite.": [
-        "Komplexní sada pro ochranu soukromí a zabezpečení."
+        "Komplexní sada pro ochranu soukromí a bezpečnosti."
       ],
       "Defeat spam, tracking, and ads with encrypted email and a secure calendar.": [
         "Zlikvidujte spam, sledování a reklamy pomocí šifrovaného e-mailu a zabezpečeného kalendáře."
@@ -18847,9 +19007,6 @@
       ]
     },
     "q1campaign: Action": {
-      "Don't show this offer again": [
-        "Tuto nabídku již nezobrazovat"
-      ],
       "Get the deal": [
         "Využít nabídku"
       ]
@@ -18926,11 +19083,6 @@
       ],
       "Use your own email domain": [
         "Používejte svou vlastní e-mailovou doménu"
-      ]
-    },
-    "q1campaign: Label": {
-      "a butterfly": [
-        "motýl"
       ]
     },
     "q1campaign: Title": {
@@ -22450,6 +22602,9 @@
       "Verification code copied to clipboard": [
         "Ověřovací kód byl zkopírován do schránky"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Ověřovací kód byl odeslán na ${ parentEmail }"
+      ],
       "Verification successful": [
         "Ověření proběhlo úspěšně"
       ],
@@ -22473,6 +22628,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Pokud jste zadali platné telefonní číslo pro obnovení, obdržíte do minuty své uživatelské jméno prostřednictvím SMS."
+      ],
+      "Your address has been activated": [
+        "Vaše adresa byla aktivována"
       ]
     },
     "Success message": {
@@ -23903,6 +24061,12 @@
       ],
       "Privacy and data collection": [
         "Soukromí a sběr dat"
+      ],
+      "Problem processing your payment": [
+        "Problém se zpracováním vaší platby"
+      ],
+      "Problem processing your request": [
+        "Problém se zpracováním vašeho požadavku"
       ],
       "Processing...": [
         "Zpracovávání..."
