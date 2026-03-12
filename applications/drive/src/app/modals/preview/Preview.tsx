@@ -21,6 +21,7 @@ export interface PreviewProps {
     canOpenInDocs?: boolean;
     canOpenDetails?: boolean;
     onClose: () => void;
+    date?: Date;
 
     /**
      * @deprecated It is to connect preview to the legacy Drive photo section.
@@ -47,6 +48,7 @@ export function Preview({
     canOpenInDocs = true,
     canOpenDetails = true,
     onClose,
+    date,
     photos,
 }: PreviewProps) {
     const preview = usePreviewState({
@@ -115,6 +117,7 @@ export function Preview({
                     )
                 }
                 sheetsEnabled={sheetsEnabled}
+                date={date}
                 {...photos}
             />
             {detailsModal}
