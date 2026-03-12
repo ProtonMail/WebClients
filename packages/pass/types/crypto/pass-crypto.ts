@@ -64,6 +64,7 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         keyPassword: string;
         snapshot?: SerializedCryptoContext<PassCryptoSnapshot>;
         user: User;
+        groups?: Group[];
         clear?: boolean;
     }) => Promise<void>;
     clear: () => void;
@@ -194,7 +195,7 @@ export interface ShareManager<T extends ShareType = ShareType> extends Serializa
     getType: () => ShareType;
     isGroupShare: () => boolean;
 
-    isActive: (userKeys?: DecryptedKey[]) => boolean;
+    isActive: () => boolean;
 
     getLatestRotation: () => Rotation;
     setLatestRotation: (rotation: Rotation) => void;
