@@ -96,7 +96,7 @@ export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
                     return (
                         <div
                             key={category.id}
-                            className="tab-wrapper"
+                            className="tab-wrapper shrink-0"
                             onDragOver={handleDragOver(category.id)}
                             onDrop={handleDrop(category.id)}
                         >
