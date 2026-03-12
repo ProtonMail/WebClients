@@ -235,11 +235,83 @@ export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, upl
         [dispatch]
     );
 
+    const handleFilesFromNative = useCallback(
+        (files: { base64: string; name: string }[]) => {
+            files
+                .map(({ base64, name }) => {
+                    // Convert base64 to File object
+                    const base64Data = base64.split(',')[1] || base64; // Remove data URL prefix if present
+                    const byteCharacters = atob(base64Data);
+                    const byteNumbers = new Array(byteCharacters.length);
+                    for (let i = 0; i < byteCharacters.length; i++) {
+                        byteNumbers[i] = byteCharacters.charCodeAt(i);
+                    }
+                    const byteArray = new Uint8Array(byteNumbers);
+
+                    // Infer MIME type from file extension
+                    const extension = name.split('.').pop()?.toLowerCase() || '';
+                    const mimeType = getMimeType(extension);
+
+                    return new File([byteArray], name, { type: mimeType });
+                })
+                .forEach(handleFileProcessing);
+        },
+        [handleFileProcessing]
+    );
+
+    // Helper function to get MIME type from file extension
+    const getMimeType = (extension: string): string => {
+        const mimeTypes: { [key: string]: string } = {
+            // Images
+            jpg: 'image/jpeg',
+            jpeg: 'image/jpeg',
+            png: 'image/png',
+            gif: 'image/gif',
+            webp: 'image/webp',
+            svg: 'image/svg+xml',
+
+            // Documents
+            pdf: 'application/pdf',
+            doc: 'application/msword',
+            docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            xls: 'application/vnd.ms-excel',
+            xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            ppt: 'application/vnd.ms-powerpoint',
+            pptx: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+
+            // Text
+            txt: 'text/plain',
+            csv: 'text/csv',
+            json: 'application/json',
+            xml: 'application/xml',
+            html: 'text/html',
+
+            // Archives
+            zip: 'application/zip',
+            rar: 'application/x-rar-compressed',
+            '7z': 'application/x-7z-compressed',
+
+            // Audio
+            mp3: 'audio/mpeg',
+            wav: 'audio/wav',
+            ogg: 'audio/ogg',
+
+            // Video
+            mp4: 'video/mp4',
+            avi: 'video/x-msvideo',
+            mov: 'video/quicktime',
+            webm: 'video/webm',
+        };
+
+        return mimeTypes[extension] || 'application/octet-stream';
+    };
+
     return {
         handleFileProcessing,
         handleFilesSelected,
         handleBrowseDrive,
         handleDeleteAttachment,
+        handleFilesFromNative,
         fileUploadMode,
     };
 };
