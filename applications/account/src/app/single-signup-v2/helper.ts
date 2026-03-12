@@ -48,6 +48,7 @@ import {
     switchPlan,
 } from '@proton/payments';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
 import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { partnerWhitelist } from '@proton/shared/lib/api/partner';
@@ -131,24 +132,29 @@ export const getSubscriptionData = async (
         });
     })();
 
-    const { checkResult, planIDs } = await checkResultPromise
+    const { checkResult, planIDs, vatReverseChargeNotSupported } = await checkResultPromise
         .then((checkResult) => {
             return {
                 checkResult,
                 planIDs: options.planIDs,
+                vatReverseChargeNotSupported: false,
             };
         })
-        .catch(() => {
+        .catch((error) => {
             if (!options?.info) {
+                const checkResult = getFreeCheckResult(
+                    options.currency,
+                    // "Reset" the cycle because the custom cycles are only valid with a coupon
+                    getNormalCycleFromCustomCycle(options.cycle)
+                );
+
                 return {
-                    checkResult: getFreeCheckResult(
-                        options.currency,
-                        // "Reset" the cycle because the custom cycles are only valid with a coupon
-                        getNormalCycleFromCustomCycle(options.cycle)
-                    ),
+                    checkResult,
                     planIDs: undefined,
+                    vatReverseChargeNotSupported: error instanceof VatReverseChargeNotSupportedError,
                 };
             }
+
             // If this is only an "informational" call, like what we would display in a plan/cycle card at signup, we can calculate the price optimistically
             return {
                 checkResult: {
@@ -157,6 +163,9 @@ export const getSubscriptionData = async (
                     PeriodEnd: 0,
                 },
                 planIDs: options.planIDs,
+                // for informational calls, we don't want to trigger VAT reverse charge modal. Let the info calls have
+                // the optimistic fallback in case of error.
+                vatReverseChargeNotSupported: false,
             };
         });
 
@@ -167,6 +176,7 @@ export const getSubscriptionData = async (
         planIDs: planIDs || {},
         skipUpsell: options.skipUpsell ?? false,
         billingAddress: options.billingAddress,
+        vatReverseChargeNotSupported,
     };
 };
 
@@ -615,6 +625,7 @@ export const getUserInfo = async ({
                 admin: false,
                 access: false,
                 unavailable: false,
+                vatReverseChargeNotSupported: false,
             },
             upsell: getUpsell({ audience, plansMap, upsellPlanCard, options, planParameters, toApp, user }),
         };
@@ -626,6 +637,7 @@ export const getUserInfo = async ({
         subscribed: Boolean(user.Subscribed),
         access: false,
         unavailable: false,
+        vatReverseChargeNotSupported: false,
     };
 
     const [paymentMethods, rawSubscription, organization] = await Promise.all([
@@ -740,6 +752,10 @@ export const getUserInfo = async ({
         return getSubscriptionData(paymentsApi, optionsWithSubscriptionDefaults);
     })();
 
+    if (subscriptionData.vatReverseChargeNotSupported) {
+        state.vatReverseChargeNotSupported = true;
+    }
+
     return {
         paymentMethods,
         defaultPaymentMethod: undefined,
@@ -768,6 +784,7 @@ export const getSessionDataFromSignup = (cache: SignupCacheResult): SessionData 
             subscribed: false,
             access: false,
             unavailable: false,
+            vatReverseChargeNotSupported: false,
         },
     };
 };
