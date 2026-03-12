@@ -1270,6 +1270,24 @@
       ],
       "Zoom out": [
         "Зменшити"
+      ],
+      "Activate reserved address": [
+        "Активувати зарезервовану адресу"
+      ],
+      "Activate this address": [
+        "Активувати цю адресу"
+      ],
+      "Donate": [
+        "Зробити внесок"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Отримати власну адресу ${ MAIL_APP_NAME }"
+      ],
+      "Send verification code": [
+        "Надіслати код підтвердження"
+      ],
+      "Try payment again": [
+        "Спробувати оплатити ще раз"
       ]
     },
     "action": {
@@ -4412,6 +4430,12 @@
       ],
       "Zero keys reactivated": [
         "Нуль ключів повторно активовано"
+      ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Помилка активації. Дані можуть бути неправильними, або електронна пошта вже активна. Перевірте ввід або увійдіть."
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Не вдалося активувати вашу адресу. Спробуйте ще раз."
       ]
     },
     "Error importing calendar": {
@@ -8549,6 +8573,45 @@
       ],
       "Zoom meeting": [
         "зустріч у Zoom"
+      ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Введіть адресу електронної пошти, використану для резервування ${ reservedEmail }."
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Введіть зарезервовану адресу електронної пошти та адресу електронної пошти, використану під час резервування."
+      ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Допоможіть іншим сім’ям забезпечити своїм дітям безпечний старт онлайн. Поділіться цією подією та розкажіть про це іншим."
+      ],
+      "How it works": [
+        "Як це працює"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Якщо введена вами електронна пошта була використана для резервування адреси електронної пошти дитини, ми надішлемо ваучер активації повторно."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Зберігайте ваучер у безпечному місці доти, доки він не знадобиться, наприклад, у ${ DRIVE_APP_NAME }."
+      ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Отримайте ваучер на резервування електронною поштою. Ви або дитина можете використати його для активації адреси протягом наступних 15 років. ${ learnMoreLink }"
+      ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Щось пішло не так. Спробуйте ще раз або зверніться до клієнтської підтримки."
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Крок ${ step }/${ totalSteps }"
+      ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Щоб запобігти зловживанням або шахрайству, ми просимо зробити мінімальний внесок ${ minimumDonation }. Це підтримує роботу ${ protonFoundationLink } із захисту цифрової приватності в усьому світі та допомагає захистити наступне покоління."
+      ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Нам не вдалося завершити транзакцію. Спробуйте ще раз."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Коли ви будете готові активувати адресу, відскануйте QR-код або скористайтеся посиланням у ваучері."
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Ваш ваучер для зарезервованої адреси електронної пошти ${ BRAND_NAME }: ${ reservedEmail }"
       ]
     },
     "info": {
@@ -9883,6 +9946,42 @@
       ],
       "ZIP code": [
         "Поштовий індекс"
+      ],
+      "Activation code": [
+        "Код активації"
+      ],
+      "Choose an address to reserve for your child": [
+        "Виберіть адресу, яку потрібно зарезервувати для вашої дитини"
+      ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Зробити внесок у розмірі $1 або більше до Фонду ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Сума внеску"
+      ],
+      "Enter your email address": [
+        "Введіть вашу адресу електронної пошти"
+      ],
+      "Reserved address": [
+        "Зарезервована адреса"
+      ],
+      "Reserved email address": [
+        "Зарезервована адреса електронної пошти"
+      ],
+      "Set password": [
+        "Встановити пароль"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Щоб активувати, відскануйте QR-код або перейдіть на:"
+      ],
+      "Your activation code:": [
+        "Ваш код активації:"
+      ],
+      "Your email address": [
+        "Ваша адреса електронної пошти"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Ваш ваучер для зарезервованої адреси електронної пошти ${ BRAND_NAME }:"
       ]
     },
     "label": {
@@ -10144,6 +10243,12 @@
       ],
       "What’s this?": [
         "Що це?"
+      ],
+      "${ BRAND_NAME } Foundation's": [
+        "Фонду ${ BRAND_NAME }"
+      ],
+      "Can't find your code?": [
+        "Не можете знайти свій код?"
       ]
     },
     "Link label (optional)": {
@@ -12492,6 +12597,9 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Ваша організація має доступ до ${ free }. Якщо ви хочете отримати доступ до преміальних функцій ${ appName }, попросіть адміністратора вашої організації передплатити тарифний план."
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
+        "Продовжуючи, ви погоджуєтеся з нашими ${ termsAndConditionsLink } та ${ privacyPolicyLink }."
       ]
     },
     "pass_signup_2023: Title": {
@@ -12960,6 +13068,9 @@
       ],
       "ZIP code": [
         "Поштовий індекс"
+      ],
+      "Amount": [
+        "Сума"
       ]
     },
     "placeholder": {
@@ -15645,6 +15756,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Ви отримаєте своє ім'я користувача через SMS протягом хвилини, якщо ви ввели правильний номер телефону для відновлення."
+      ],
+      "Verification code sent to ${ parentEmail }": [
+        "Код підтвердження надіслано на ${ parentEmail }"
+      ],
+      "Your address has been activated": [
+        "Вашу адресу активовано"
       ]
     },
     "Success message": {
@@ -17108,6 +17225,12 @@
       ],
       "Your subscriptions": [
         "Ваші передплати"
+      ],
+      "Problem processing your payment": [
+        "Проблема з обробкою платежу"
+      ],
+      "Problem processing your request": [
+        "Проблема з обробкою вашого запиту"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -18281,6 +18404,61 @@
       ],
       "Yearly, ${ untilString }": [
         "Щороку, ${ untilString }"
+      ]
+    },
+    "Form heading": {
+      "Enter your email address": [
+        "Введіть вашу адресу електронної пошти"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Ваучер буде надіслано сюди."
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Простий крок сьогодні, щоб гарантувати цифрову безпеку вашої дитини завтра"
+      ],
+      "Activate your reserved email address": [
+        "Активуйте вашу зарезервовану адресу електронної пошти"
+      ],
+      "Address reservation voucher": [
+        "Ваучер резервування адреси"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Зробити внесок до Фонду ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Введіть код підтвердження"
+      ],
+      "Recover activation voucher": [
+        "Відновити ваучер активації"
+      ],
+      "Reserve child's email address": [
+        "Зарезервувати адресу електронної пошти дитини"
+      ],
+      "We emailed you the voucher": [
+        "Ми надіслали вам ваучер електронною поштою"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Введіть код підтвердження, надісланий на ${ parentEmail }."
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Електронна пошта"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     }
   }

@@ -1688,6 +1688,24 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Activate reserved address": [
+        "予約したアドレスを有効化する"
+      ],
+      "Activate this address": [
+        "このアドレスを有効化する"
+      ],
+      "Donate": [
+        "寄付"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "お客様専用の ${ MAIL_APP_NAME } アドレスを取得する"
+      ],
+      "Send verification code": [
+        "検証コードを送信"
+      ],
+      "Try payment again": [
+        "もう一度支払いを試す"
       ]
     },
     "action": {
@@ -6807,6 +6825,12 @@
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
+      ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "有効化に失敗しました。詳細が間違っているか、メールがすでに有効になっている可能性があります。入力内容を確認するか、サインインしてください。"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "お客様のアドレスの有効化に失敗しました。もう一度お試しください。"
       ]
     },
     "error": {
@@ -11817,6 +11841,45 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "${ reservedEmail } の予約に使用したメールアドレスを入力してください。"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "予約したメールアドレスと、予約時に使用したメールアドレスを入力してください。"
+      ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "他のご家族がお子様に安全なオンラインのスタートを切れるよう支援しましょう。このマイルストーンを共有し、広めてください。"
+      ],
+      "How it works": [
+        "仕組み"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "入力したメールがお子様のメールアドレスの予約に使用された場合、有効化バウチャーを再送信します。"
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "必要になるまで、バウチャーを ${ DRIVE_APP_NAME } などに安全に保管してください。"
+      ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "メールで予約バウチャーを受け取ります。お客様またはお子様は、今後15年以内にこれを使用してアドレスを有効化できます。${ learnMoreLink }"
+      ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "問題が発生しました。もう一度お試しいただくか、カスタマーサポートにお問い合わせください。"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "ステップ ${ step }/${ totalSteps }"
+      ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "乱用や詐欺を防ぐため、最低 ${ minimumDonation } の寄付をお願いしております。これにより、世界中でデジタルプライバシーを保護する ${ protonFoundationLink } の活動をサポートし、次世代を守ることに繋がります。"
+      ],
+      "We couldn't complete the transaction. Please try again.": [
+        "取引を完了できませんでした。もう一度お試しください。"
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "アドレスを有効にする準備ができたら、QRコードをスキャンするか、バウチャーのリンクを使用してください。"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "お客様が予約された ${ BRAND_NAME } メールアドレスのバウチャー: ${ reservedEmail }"
       ]
     },
     "info": {
@@ -13784,6 +13847,42 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Activation code": [
+        "有効化コード"
+      ],
+      "Choose an address to reserve for your child": [
+        "お子様のために予約するアドレスを選択してください"
+      ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "${ BRAND_NAME } Foundationに1ドル以上寄付する"
+      ],
+      "Donation amount": [
+        "寄付額"
+      ],
+      "Enter your email address": [
+        "メールアドレスを入力してください"
+      ],
+      "Reserved address": [
+        "予約済みアドレス"
+      ],
+      "Reserved email address": [
+        "予約済みメールアドレス"
+      ],
+      "Set password": [
+        "パスワードを設定"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "有効化するには、QRコードをスキャンするか、以下にアクセスしてください："
+      ],
+      "Your activation code:": [
+        "お客様の有効化コード："
+      ],
+      "Your email address": [
+        "お客様のメールアドレス"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "お客様が予約された ${ BRAND_NAME } メールアドレスのバウチャー："
       ]
     },
     "label": {
@@ -14167,6 +14266,12 @@
       ],
       "What’s this?": [
         "これは何ですか?"
+      ],
+      "${ BRAND_NAME } Foundation's": [
+        "${ BRAND_NAME } Foundationの"
+      ],
+      "Can't find your code?": [
+        "コードが見つかりませんか？"
       ]
     },
     "Link (Scribe)": {
@@ -17797,6 +17902,9 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Amount": [
+        "金額"
       ]
     },
     "placeholder": {
@@ -21402,6 +21510,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "有効なリカバリーメールアドレスを入力した場合、数分以内にSMSでユーザーネームを受信します。"
+      ],
+      "Verification code sent to ${ parentEmail }": [
+        "${ parentEmail } に検証コードを送信しました"
+      ],
+      "Your address has been activated": [
+        "お客様のアドレスが有効化されました"
       ]
     },
     "Success message": {
@@ -23282,6 +23396,12 @@
       ],
       "Your subscriptions": [
         "あなたのサブスクリプション"
+      ],
+      "Problem processing your payment": [
+        "支払いの処理に問題があります。"
+      ],
+      "Problem processing your request": [
+        "リクエストの処理に問題があります"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24672,6 +24792,61 @@
       ],
       "Yearly, ${ untilString }": [
         "毎年、${ untilString }"
+      ]
+    },
+    "Form heading": {
+      "Enter your email address": [
+        "メールアドレスを入力してください"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "バウチャーはこちらに送信されます。"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "お子様の将来のデジタル環境の安全を確保するための、今日の簡単なステップ"
+      ],
+      "Activate your reserved email address": [
+        "予約したお客様のメールアドレスを有効にする"
+      ],
+      "Address reservation voucher": [
+        "アドレス予約バウチャー"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "${ BRAND_NAME } Foundationへ寄付する"
+      ],
+      "Enter verification code": [
+        "検証コードを入力"
+      ],
+      "Recover activation voucher": [
+        "有効化バウチャーを回復する"
+      ],
+      "Reserve child's email address": [
+        "お子様のメールアドレスを予約する"
+      ],
+      "We emailed you the voucher": [
+        "バウチャーをメールで送信しました"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "${ parentEmail } に送信された検証コードを入力してください。"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "メール"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     }
   }

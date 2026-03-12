@@ -1393,6 +1393,24 @@
       ],
       "Zoom out": [
         "Уменьшить масштаб"
+      ],
+      "Activate reserved address": [
+        "Активировать зарезервированный адрес"
+      ],
+      "Activate this address": [
+        "Активировать этот адрес"
+      ],
+      "Donate": [
+        "Пожертвовать"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Получить свой адрес ${ MAIL_APP_NAME }"
+      ],
+      "Send verification code": [
+        "Отправить код подтверждения"
+      ],
+      "Try payment again": [
+        "Повторить попытку оплаты"
       ]
     },
     "action": {
@@ -4950,6 +4968,12 @@
       ],
       "ZIP code is required": [
         "Необходимо указать почтовый индекс"
+      ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Сбой активации. Информация может быть неверной, или электронное письмо уже активно. Проверьте введенные данные или войдите."
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Не удалось активировать ваш адрес. Пожалуйста, попробуйте еще раз."
       ]
     },
     "Error importing calendar": {
@@ -9381,6 +9405,45 @@
       ],
       "Zoom meeting": [
         "Конференция в Zoom "
+      ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Введите адрес электронной почты, использованный для резервирования ${ reservedEmail }."
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Введите зарезервированный адрес электронной почты и адрес электронной почты, использованный при резервировании."
+      ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Помогите другим семьям обеспечить их детям безопасный старт онлайн. Поделитесь этим событием и расскажите о нем."
+      ],
+      "How it works": [
+        "Как это работает"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Если введенный вами адрес электронной почты использовался для резервирования адреса электронной почты ребенка, мы повторно отправим ваучер активации."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Храните ваучер в надежном месте, пока он не понадобится, например в ${ DRIVE_APP_NAME }."
+      ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Получите ваучер на резервирование в электронном письме. Вы или ребенок можете использовать его для активации адреса в течение следующих 15 лет. ${ learnMoreLink }"
+      ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Что-то пошло не так. Пожалуйста, попробуйте еще раз или обратитесь в поддержку клиентов."
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Шаг ${ step }/${ totalSteps }"
+      ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Чтобы предотвратить злоупотребления или мошенничество, мы просим сделать минимальное пожертвование в размере ${ minimumDonation }. Это поддерживает работу ${ protonFoundationLink } по защите цифровой конфиденциальности в мире и помогает защитить следующее поколение."
+      ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Нам не удалось завершить транзакцию. Пожалуйста, попробуйте еще раз."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Когда вы будете готовы активировать адрес, отсканируйте QR-код или используйте ссылку в ваучере."
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Ваш ваучер на зарезервированный адрес электронной почты ${ BRAND_NAME }: ${ reservedEmail }"
       ]
     },
     "info": {
@@ -10803,6 +10866,42 @@
       ],
       "ZIP code": [
         "Почтовый индекс"
+      ],
+      "Activation code": [
+        "Код активации"
+      ],
+      "Choose an address to reserve for your child": [
+        "Выберите адрес, чтобы зарезервировать его для своего ребенка"
+      ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Пожертвовать от 1 $ в фонд ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Сумма пожертвования"
+      ],
+      "Enter your email address": [
+        "Введите адрес вашей электронной почты"
+      ],
+      "Reserved address": [
+        "Зарезервированный адрес"
+      ],
+      "Reserved email address": [
+        "Зарезервированный адрес электронной почты"
+      ],
+      "Set password": [
+        "Установить пароль"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Для активации отсканируйте QR-код или перейдите по адресу:"
+      ],
+      "Your activation code:": [
+        "Ваш код активации:"
+      ],
+      "Your email address": [
+        "Ваш адрес электронной почты"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Ваш ваучер на зарезервированный адрес электронной почты ${ BRAND_NAME }:"
       ]
     },
     "label": {
@@ -11112,6 +11211,12 @@
       ],
       "What’s this?": [
         "Что это такое?"
+      ],
+      "${ BRAND_NAME } Foundation's": [
+        "фонда ${ BRAND_NAME }"
+      ],
+      "Can't find your code?": [
+        "Не можете найти свой код?"
       ]
     },
     "Link label (optional)": {
@@ -14043,6 +14148,9 @@
       ],
       "ZIP code": [
         "Почтовый индекс"
+      ],
+      "Amount": [
+        "Сумма"
       ]
     },
     "placeholder": {
@@ -16954,6 +17062,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Вы получите имя пользователя через SMS в течение минуты, если вы ввели верный номер телефона для восстановления."
+      ],
+      "Verification code sent to ${ parentEmail }": [
+        "Код подтверждения отправлен на ${ parentEmail }"
+      ],
+      "Your address has been activated": [
+        "Ваш адрес активирован"
       ]
     },
     "Success message": {
@@ -18543,6 +18657,12 @@
       ],
       "Your subscriptions": [
         "Ваши подписки"
+      ],
+      "Problem processing your payment": [
+        "Проблема при обработке вашего платежа"
+      ],
+      "Problem processing your request": [
+        "Проблема при обработке вашего запроса"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -19791,6 +19911,61 @@
       ],
       "Yearly, ${ untilString }": [
         "Ежегодно ${ untilString }"
+      ]
+    },
+    "Form heading": {
+      "Enter your email address": [
+        "Введите адрес вашей электронной почты"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Ваучер будет отправлен сюда."
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Простой шаг сегодня для обеспечения цифровой безопасности вашего ребенка завтра"
+      ],
+      "Activate your reserved email address": [
+        "Активировать ваш зарезервированный адрес электронной почты"
+      ],
+      "Address reservation voucher": [
+        "Ваучер на резервирование адреса"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Пожертвовать в фонд ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Введите код подтверждения"
+      ],
+      "Recover activation voucher": [
+        "Восстановить ваучер активации"
+      ],
+      "Reserve child's email address": [
+        "Зарезервировать адрес электронной почты ребенка"
+      ],
+      "We emailed you the voucher": [
+        "Мы отправили вам ваучер в электронном письме"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Введите код подтверждения, который был отправлен на ${ parentEmail }."
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Электронное письмо"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     }
   }

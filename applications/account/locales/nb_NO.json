@@ -1706,6 +1706,24 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Activate reserved address": [
+        "Aktiver reservert adresse"
+      ],
+      "Activate this address": [
+        "Aktiver denne adressen"
+      ],
+      "Donate": [
+        "Doner"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Skaff deg din egen ${ MAIL_APP_NAME }-adresse"
+      ],
+      "Send verification code": [
+        "Send verifiseringskode"
+      ],
+      "Try payment again": [
+        "Prøv betaling på nytt"
       ]
     },
     "action": {
@@ -7028,6 +7046,12 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
+      ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Aktivering mislyktes. Detaljene kan være feil, eller e-posten er allerede aktiv. Kontroller inndataene dine eller logg på."
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Kunne ikke aktivere adressen din. Prøv igjen."
       ]
     },
     "error": {
@@ -12269,6 +12293,45 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Angi e-postadressen som ble brukt til å reservere ${ reservedEmail }."
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Angi den reserverte e-postadressen og e-postadressen som ble brukt under reservasjonen."
+      ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Hjelp andre familier med å gi barna en trygg pålogget start. Del denne milepælen og spre ordet."
+      ],
+      "How it works": [
+        "Slik fungerer det"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Hvis e-posten du anga ble brukt til å reservere en e-postadresse for et barn, sender vi aktiveringskupongen på nytt."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Oppbevar verdikupongen sikkert til du trenger den, for eksempel i ${ DRIVE_APP_NAME }."
+      ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Motta reservasjonskupongen på e-post. Du eller barnet kan bruke den til å aktivere adressen i løpet av de neste 15 årene. ${ learnMoreLink }"
+      ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Noe gikk galt. Prøv igjen eller kontakt kundestøtte."
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Trinn ${ step }/${ totalSteps }"
+      ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "For å forhindre misbruk eller svindel, ber vi om en donasjon på minst ${ minimumDonation }. Dette støtter arbeidet til ${ protonFoundationLink } med å forsvare digitalt personvern globalt og bidrar til å beskytte neste generasjon."
+      ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Vi kunne ikke fullføre transaksjonen. Prøv igjen."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Når du er klar til å aktivere adressen, skann QR-koden eller bruk lenken i verdikupongen."
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Verdikupongen for din reserverte ${ BRAND_NAME }-e-postadresse: ${ reservedEmail }"
       ]
     },
     "info": {
@@ -14262,6 +14325,42 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Activation code": [
+        "Aktiveringskode"
+      ],
+      "Choose an address to reserve for your child": [
+        "Velg en adresse du vil reservere for barnet ditt"
+      ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Doner 1 $ eller mer til ${ BRAND_NAME } Foundation"
+      ],
+      "Donation amount": [
+        "Donasjonsbeløp"
+      ],
+      "Enter your email address": [
+        "Angi din e-postadresse"
+      ],
+      "Reserved address": [
+        "Reservert adresse"
+      ],
+      "Reserved email address": [
+        "Reservert e-postadresse"
+      ],
+      "Set password": [
+        "Angi passord"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "For å aktivere, skann QR-koden eller gå til:"
+      ],
+      "Your activation code:": [
+        "Din aktiveringskode:"
+      ],
+      "Your email address": [
+        "Din e-postadresse"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Verdikupongen for din reserverte ${ BRAND_NAME }-e-postadresse:"
       ]
     },
     "label": {
@@ -14649,6 +14748,12 @@
       ],
       "What’s this?": [
         "Hva er det der?"
+      ],
+      "${ BRAND_NAME } Foundation's": [
+        "${ BRAND_NAME } Foundations"
+      ],
+      "Can't find your code?": [
+        "Finner du ikke koden din?"
       ]
     },
     "Link (Scribe)": {
@@ -18361,6 +18466,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Amount": [
+        "Beløp"
       ]
     },
     "placeholder": {
@@ -22080,6 +22188,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Du vil motta brukernavnet ditt via SMS innen et minutt hvis du har oppgitt et gyldig telefonnummer for gjenoppretting."
+      ],
+      "Verification code sent to ${ parentEmail }": [
+        "Verifiseringskode sendt til ${ parentEmail }"
+      ],
+      "Your address has been activated": [
+        "Adressen din har blitt aktivert"
       ]
     },
     "Success message": {
@@ -23999,6 +24113,12 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Problem processing your payment": [
+        "Problem ved behandling av betaling"
+      ],
+      "Problem processing your request": [
+        "Problem ved behandling av forespørselen din"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25443,6 +25563,61 @@
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
+      ]
+    },
+    "Form heading": {
+      "Enter your email address": [
+        "Angi din e-postadresse"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Verdikupongen vil bli sendt hit."
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Et enkelt skritt i dag for å sikre barnets digitale sikkerhet i morgen"
+      ],
+      "Activate your reserved email address": [
+        "Aktiver din reserverte e-postadresse"
+      ],
+      "Address reservation voucher": [
+        "Verdikupong for adressereservasjon"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Doner til ${ BRAND_NAME } Foundation"
+      ],
+      "Enter verification code": [
+        "Angi verifiseringskode"
+      ],
+      "Recover activation voucher": [
+        "Gjenopprett aktiveringskupong"
+      ],
+      "Reserve child's email address": [
+        "Reserver barnets e-postadresse"
+      ],
+      "We emailed you the voucher": [
+        "Vi sendte deg verdikupongen på e-post"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Angi verifiseringskoden som ble sendt til ${ parentEmail }."
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "E-post"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     }
   }
