@@ -1,4 +1,5 @@
 import { WebContents, WindowOpenHandlerResponse, shell } from "electron";
+import { basename } from "node:path";
 import {
     getLocalID,
     isAccount,
@@ -32,9 +33,11 @@ import {
     updateViewURL,
 } from "./viewManagement";
 import { resetBadge } from "../../ipc/notification";
-import { mainLogger, viewLogger } from "../log";
+import { mainLogger, rendererLogger, viewLogger } from "../log";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { PRINT_DATA_URL_PREFIX } from "../printing/print";
+
+const RENDERER_LOG_MAX_MESSAGE_LENGTH = 500;
 
 export function handleWebContents(contents: WebContents) {
     const logger = () => {
@@ -249,5 +252,24 @@ export function handleWebContents(contents: WebContents) {
         }
 
         return denyAndOpenExternal(`unknown link open in browser ${url}`);
+    });
+
+    contents.on("console-message", (_event, level, message, line, sourceFile) => {
+        const source = sourceFile ? `${basename(sourceFile)}:${line}` : "";
+        const text =
+            message.length > RENDERER_LOG_MAX_MESSAGE_LENGTH
+                ? message.slice(0, RENDERER_LOG_MAX_MESSAGE_LENGTH) + "…"
+                : message;
+        const entry = source ? `[${source}] ${text}` : text;
+        const log = rendererLogger(getWebContentsViewName(contents));
+
+        switch (level) {
+            case 3:
+                log.error(entry);
+                break;
+            case 2:
+                log.warn(entry);
+                break;
+        }
     });
 }
