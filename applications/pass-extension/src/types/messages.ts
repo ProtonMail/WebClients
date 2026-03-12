@@ -377,7 +377,11 @@ export type MaybeMessage<T> = MessageSuccess<T> | MessageFailure;
 type WorkerMessageResponseMap = {
     [WorkerMessageType.ACCOUNT_FORK]: { payload: ExtensionForkResultPayload };
     [WorkerMessageType.ALIAS_CREATE]: Result;
-    [WorkerMessageType.ALIAS_OPTIONS]: Result<{ options: AliasOptions; needsUpgrade: boolean }>;
+    [WorkerMessageType.ALIAS_OPTIONS]: Result<{
+        options: AliasOptions;
+        needsUpgrade: boolean;
+        aliasCreationDisabled: boolean;
+    }>;
     [WorkerMessageType.AUTH_CHECK]: Result<{ locked: boolean }, {}>;
     [WorkerMessageType.AUTH_CONFIRM_PASSWORD]: Result;
     [WorkerMessageType.AUTH_INIT]: AppState;

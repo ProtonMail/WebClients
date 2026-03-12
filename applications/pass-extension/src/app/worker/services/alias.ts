@@ -7,7 +7,9 @@ import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers'
 import { requestAliasOptions } from '@proton/pass/store/actions/creators/alias';
 import { itemCreate } from '@proton/pass/store/actions/creators/item';
 import { selectAliasLimits } from '@proton/pass/store/selectors/limits';
+import { selectOrganizationSettings } from '@proton/pass/store/selectors/organization';
 import { selectMostRecentVaultShareID } from '@proton/pass/store/selectors/vaults';
+import { OrganizationAliasCreateMode } from '@proton/pass/types';
 import type { ItemCreateIntent } from '@proton/pass/types/data/items.dto';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -25,11 +27,13 @@ export const createAliasService = () => {
             if (!shareId) throw new Error("Could not resolve user's default vault.");
 
             const { needsUpgrade } = selectAliasLimits(state);
+            const orgSettings = selectOrganizationSettings(state);
+            const aliasCreationDisabled = orgSettings?.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
 
             return ctx.service.store.dispatchAsyncRequest(requestAliasOptions, shareId).then((res) => {
                 switch (res.type) {
                     case 'success':
-                        return { ok: true, needsUpgrade, options: res.data };
+                        return { ok: true, needsUpgrade, aliasCreationDisabled, options: res.data };
                     case 'failure':
                         return { ok: false, error: res.error.message ?? null };
                 }
