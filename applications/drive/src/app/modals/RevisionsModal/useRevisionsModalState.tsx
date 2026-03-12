@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
 import type { ModalStateProps } from '@proton/components';
+import { Portal } from '@proton/components/components/portal';
 import type { NodeEntity, ProtonDriveClient, Revision } from '@proton/drive';
 import { getDrive } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
@@ -20,6 +21,8 @@ import { useDetailsModal } from '../DetailsModal';
 import { Preview } from '../preview';
 import type { CategorizedRevisions } from './revisions/getCategorizedRevisions';
 import { getCategorizedRevisions } from './revisions/getCategorizedRevisions';
+
+import './revisions/RevisionPreview.scss';
 
 export interface RevisionsProviderState {
     hasPreviewAvailable: boolean;
@@ -201,7 +204,16 @@ export const useRevisionsModalState = ({
     };
 
     const portalPreview = selectedRevision ? (
-        <Preview nodeUid={nodeUid} revisionUid={selectedRevision.uid} onClose={() => setSelectedRevision(null)} />
+        <Portal>
+            <div className="revision-preview">
+                <Preview
+                    nodeUid={nodeUid}
+                    revisionUid={selectedRevision.uid}
+                    date={selectedRevision.creationTime}
+                    onClose={() => setSelectedRevision(null)}
+                />
+            </div>
+        </Portal>
     ) : null;
 
     return {
