@@ -25,6 +25,7 @@ import config from '../config';
 import locales from '../locales';
 import { extendStore, setupStore } from '../store/public-store';
 import { PublicAppInitial } from './PublicAppInitial';
+import { LocationThemeSync } from './theme/LocationThemeSync';
 import { PublicAppThemeProvider } from './theme/PublicAppThemeProvider';
 
 const bootstrapApp = () => {
@@ -61,6 +62,7 @@ const PublicApp = () => {
         <ProtonApp config={config} ThemeProvider={PublicAppThemeProvider}>
             <AuthenticationProvider store={authentication}>
                 <BrowserRouter>
+                    <LocationThemeSync />
                     <ProtonStoreProvider store={store}>
                         <ApiProvider api={api}>
                             <ErrorBoundary big component={<StandardErrorPage big />}>
