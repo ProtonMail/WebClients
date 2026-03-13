@@ -1980,11 +1980,6 @@
         "Se requiere iniciar sesión"
       ]
     },
-    "collider_2025:Prompt": {
-      "How does the world celebrate Lunar New Year?": [
-        "¿Cómo se celebra el Año Nuevo Lunar en el mundo?"
-      ]
-    },
     "collider_2025:Reasoning": {
       "Thinking...": [
         "Pensando..."
@@ -3158,6 +3153,9 @@
       ],
       "Enter 6 digits": [
         "Introduce 6 dígitos."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduce tu nombre de usuario sin el dominio (@ejemplo.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Se ha producido un error al conectar a la API de Bitcoin."
@@ -5859,6 +5857,9 @@
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Los descuentos se basan en el precio mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
       ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "¡Extiende tu suscripción y guarda un ${ discountPercent }%!"
+      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Acceso completo a ${ VPN_APP_NAME }"
       ],
@@ -5879,6 +5880,9 @@
       ],
       "Stronger protection against cyber threats": [
         "Mayor protección contra las ciberamenazas"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "¡Cámbiate a nuestro plan anual y guarda ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Chats diarios ilimitados"
