@@ -136,6 +136,9 @@
       "Edit": [
         "Рэдагаваць"
       ],
+      "Edit billing address": [
+        "Рэдагаваць адрас аплаты"
+      ],
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
       ],
@@ -2407,6 +2410,9 @@
       "Request timed out": [
         "Перавышаны тэрмін чакання запыту"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Схема адваротнага налічэння падатку не падтрымліваецца для гэтага тарыфнага плана"
+      ],
       "Signature verification failed": [
         "Не ўдалося праверыць подпіс"
       ],
@@ -2415,9 +2421,6 @@
       ],
       "Tab closed": [
         "Укладка закрыта"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Вызваленне ад падаткаў не падтрымліваецца для гэтага тарыфнага плана"
       ],
       "The amount due has changed. Please try again.": [
         "Сума для аплаты змянілася. Паспрабуйце яшчэ раз."
@@ -3201,6 +3204,9 @@
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ваша падпіска ${ plan } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Рэшта балансу вашай падпіскі будзе дададзена на ваш уліковы запіс. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. За пажыццёвы доступ да ${ PASS_SHORT_APP_NAME } уносіцца аднаразовая плата."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб ужываць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
       ],
       "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
         "Ваша аплата адкрылася ў новай укладцы. Завяршыце там аплату, а потым вярніцеся на гэтую старонку."
@@ -5728,6 +5734,9 @@
       ],
       "Request new code": [
         "Запытаць новы код"
+      ],
+      "Reverse charge not supported": [
+        "Адваротнае налічэнне падатку не падтрымліваецца"
       ],
       "Select a plan": [
         "Выбар тарыфнага плана"

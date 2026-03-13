@@ -136,6 +136,9 @@
       "Edit": [
         "Bearbeiten"
       ],
+      "Edit billing address": [
+        "Rechnungsadresse bearbeiten"
+      ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
       ],
@@ -2383,6 +2386,9 @@
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Rückerstattung der Umsatzsteuer ist für dieses Abonnement nicht unterstützt"
+      ],
       "Signature verification failed": [
         "Signaturprüfung fehlgeschlagen"
       ],
@@ -2391,9 +2397,6 @@
       ],
       "Tab closed": [
         "Tab geschlossen"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Steuerbefreiung wird für diesen Plan nicht unterstützt"
       ],
       "The amount due has changed. Please try again.": [
         "Der fällige Betrag hat sich geändert. Bitte versuche es erneut."
@@ -3151,6 +3154,9 @@
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Dein ${ plan }-Abonnement wird durch ${ PASS_SHORT_APP_NAME } Lifetime ersetzt. Der verbleibende Restbetrag deines Abonnements wird deinem Konto gutgeschrieben. Der ${ PASS_SHORT_APP_NAME } Lifetime Deal hat keine Verlängerungskosten, es handelt sich um eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Dein Konto ist derzeit so konfiguriert, dass die Rückerstattung der Umsatzsteuer nicht angewendet wird. Dies wird für das ausgewählte Abonnement nicht unterstützt. Um fortzufahren, entferne entweder die Umsatzsteuer-Identifikationsnummer aus der Rechnungsadresse oder wähle anderes Abonnement."
       ],
       "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
         "Dein Checkout wurde in einem neuen Tab geöffnet. Bitte schließe deine Zahlung dort ab und kehre danach zu dieser Seite zurück."
@@ -5576,6 +5582,9 @@
       ],
       "Request new code": [
         "Neuen Code anfordern"
+      ],
+      "Reverse charge not supported": [
+        "Rückerstattungen der Umsatzsteuer nicht unterstützt"
       ],
       "Select a plan": [
         "Abonnement auswählen"

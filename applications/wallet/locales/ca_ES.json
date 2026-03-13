@@ -136,6 +136,9 @@
       "Edit": [
         "Edita"
       ],
+      "Edit billing address": [
+        "Edita l'adreça de la factura"
+      ],
       "Edit email address": [
         "Edita l'adreça de correu"
       ],
@@ -2383,6 +2386,9 @@
       "Request timed out": [
         "La sol·licitud ha caducat"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El règim d'inversió del subjecte passiu no és compatible amb aquest pla"
+      ],
       "Signature verification failed": [
         "No s'ha pogut verificar la signatura."
       ],
@@ -2391,9 +2397,6 @@
       ],
       "Tab closed": [
         "Pestanya tancada"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Aquest pla no admet l'exempció d'impostos"
       ],
       "The amount due has changed. Please try again.": [
         "L'import que cal pagar ha canviat. Torneu-ho a provar."
@@ -3151,6 +3154,9 @@
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "La vostra subscripció ${ plan } se substituirà per ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restant s'afegirà al vostre compte. L'oferta de ${ PASS_SHORT_APP_NAME } no té cost de renovació, és un pagament únic per a accedir a ${ PASS_SHORT_APP_NAME } de per vida."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "El vostre compte està configurat actualment per aplicar el règim de facturació inversa. Això no és compatible amb el pla seleccionat. Per continuar, o bé elimineu el número d'IVA de l'adreça de facturació o bé seleccioneu un pla diferent."
       ],
       "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
         "El procés de pagament s'ha obert en una pestanya nova. Completeu el pagament allà i torneu a aquesta pàgina quan hàgiu acabat."
@@ -5576,6 +5582,9 @@
       ],
       "Request new code": [
         "Demana un codi nou"
+      ],
+      "Reverse charge not supported": [
+        "No s'admet la inversió del subjecte passiu"
       ],
       "Select a plan": [
         "Seleccioneu un pla"

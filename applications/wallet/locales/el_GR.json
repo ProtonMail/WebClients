@@ -136,6 +136,9 @@
       "Edit": [
         "Επεξεργασία"
       ],
+      "Edit billing address": [
+        "Επεξεργασία διεύθυνσης χρέωσης"
+      ],
       "Edit email address": [
         "Επεξεργασία διεύθυνσης ηλ. ταχυδρομείου"
       ],
@@ -2383,6 +2386,9 @@
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Το σύστημα αντιστροφής χρέωσης δεν υποστηρίζεται για αυτό το πλάνο"
+      ],
       "Signature verification failed": [
         "Η επαλήθευση υπογραφής απέτυχε"
       ],
@@ -2391,9 +2397,6 @@
       ],
       "Tab closed": [
         "Κλειστή καρτέλα"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Η φοροαπαλλαγή δεν υποστηρίζεται για αυτό το πλάνο."
       ],
       "The amount due has changed. Please try again.": [
         "Το οφειλόμενο ποσό έχει αλλάξει. Παρακαλούμε προσπαθήστε ξανά."
@@ -3151,6 +3154,9 @@
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Η συνδρομή σας ${ plan } θα αντικατασταθεί με ${ PASS_SHORT_APP_NAME } διάρκειας ζωής. Το υπόλοιπο της συνδρομής σας θα προστεθεί στον λογαριασμό σας. Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ο λογαριασμός σας είναι αυτή τη στιγμή ρυθμισμένος να εφαρμόζει το καθεστώς αντίστροφης χρέωσης. Αυτό δεν υποστηρίζεται για το επιλεγμένο πλάνο. Για να συνεχίσετε, είτε αφαιρέστε τον αριθμό ΦΠΑ από τη διεύθυνση χρέωσης είτε επιλέξτε ένα άλλο πλάνο."
       ],
       "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
         "Η διαδικασία πληρωμής σας έχει ανοίξει σε νέα καρτέλα. Παρακαλούμε ολοκληρώστε την πληρωμή σας εκεί και επιστρέψτε σε αυτή τη σελίδα όταν τελειώσετε."
@@ -5576,6 +5582,9 @@
       ],
       "Request new code": [
         "Αίτηση νέου κωδικού"
+      ],
+      "Reverse charge not supported": [
+        "Αντιστροφή χρέωσης δεν υποστηρίζεται"
       ],
       "Select a plan": [
         "Επιλέξτε ένα πλάνο"
