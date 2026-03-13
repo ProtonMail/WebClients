@@ -666,6 +666,9 @@
       "Save changes": [
         "Shrani spremembe"
       ],
+      "Save preferences": [
+        "Shrani nastavitve"
+      ],
       "Search": [
         "Iskanje"
       ],
@@ -770,6 +773,9 @@
       ],
       "Toggle debug mode": [
         "Preklopi način odpravljanja programskih napak"
+      ],
+      "Trashing...": [
+        "Odstranjujem ..."
       ],
       "Trust": [
         "Zaupaj"
@@ -2757,6 +2763,9 @@
       "Enter 6 digits": [
         "Vnesite 6 števk"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Vnesite svoje uporabniško ime brez domene (@example.com)"
+      ],
       "Error decrypting a computer": [
         "Napaka pri dešifriranju računalnika"
       ],
@@ -3050,6 +3059,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Poskusite uporabiti samo črke, števke in _.-"
+      ],
+      "Unable to import file": [
+        "Datoteke ni mogoče uvoziti"
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Ni mogoče naložiti nadzorne plošče VPN. Preverite svojo povezavo in poskusite znova."
@@ -4475,6 +4487,9 @@
       "Geoblocking": [
         "Geoblokiranje"
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Prejemajte e-poštna obvestila o komentarjih in predlogih, dodanih v vaše dokumente."
+      ],
       "Get Notified About Comments": [
         "Prejemajte obvestila o komentarjih"
       ],
@@ -4654,6 +4669,9 @@
       ],
       "No contacts added yet": [
         "Ni stikov"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "V danem URL ni dokumenta. Vrnite se v ${ DRIVE_APP_NAME } in izberite dokument."
       ],
       "No email address": [
         "Ni e-poštnih naslovov"
@@ -4934,6 +4952,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Lastnik tega naslova je onemogočil šifriranje od konca do konca. Šifrirana sporočila boste na ta naslov lahko pošiljali, če bo lastnik znova omogočil šifriranje od konca do konca."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Vnešeni URL je skrajšan in nepravilno kopiran iz Slacka. Za kopiranje dolgih povezav iz Slacka klikni z desnim gumbom miške na povezavo in izberi možnost \"Kopiraj povezavo\"."
+      ],
       "There are no documents in the trash.": [
         "V smeteh ni nobenih dokumentov."
       ],
@@ -4942,6 +4963,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ta naslov je onemogočen. Za pošiljanje na ta naslov ga mora lastnik najprej omogočiti."
+      ],
+      "This document has grown too large to edit. You can remove older revisions to continue editing.": [
+        "Dokument je postal prevelik za urejanje. Za nadaljevanje urejanja odstranite starejše revizije."
       ],
       "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
         "Ta dokument je postal prevelik in zadnjih sprememb ni bilo mogoče shraniti. Prenesite kopijo, da obdržite svoje delo."
@@ -9610,6 +9634,9 @@
       "Your document cannot be loaded": [
         "Vašega dokumenta ni mogoče naložiti."
       ],
+      "Your download includes a ${ DOCS_APP_NAME } file": [
+        "Vaš prenos vključuje datoteko ${ DOCS_APP_NAME }"
+      ],
       "Your exposed information": [
         "Vaša razkrita informacija"
       ]
@@ -9889,6 +9916,9 @@
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Uvoz morda presega količino prostora za shranjevanje, ki ga ima vaš račun ${ BRAND_NAME } trenutno na voljo. Razmislite o prilagoditvi uvoza."
+      ],
+      "This will replace all the data in the spreadsheet": [
+        "To bo zamenjalo vse podatke v preglednici"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Na žalost trenutno nismo na spletu. Izpolnite spodnji obrazec, da opišete svojo težavo, preučili jo bomo in se oglasili, ko bomo spet povezani."
