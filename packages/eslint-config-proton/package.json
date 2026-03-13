@@ -23,10 +23,10 @@
         "./react": "./react.js"
     },
     "dependencies": {
-        "@eslint/eslintrc": "^3.3.3",
-        "@eslint/js": "^9.39.2",
+        "@eslint/eslintrc": "^3.3.5",
+        "@eslint/js": "^9.39.4",
         "@protontech/eslint-plugin-enforce-uint8array-arraybuffer": "^2.0.0",
-        "eslint": "^9.39.2",
+        "eslint": "^9.39.4",
         "eslint-config-prettier": "^10.1.8",
         "eslint-import-resolver-alias": "^1.1.2",
         "eslint-import-resolver-typescript": "4.4.4",
@@ -38,8 +38,8 @@
         "eslint-plugin-no-only-tests": "^3.3.0",
         "eslint-plugin-react": "^7.37.5",
         "eslint-plugin-react-hooks": "^7.0.1",
-        "eslint-plugin-testing-library": "^7.15.4",
-        "typescript-eslint": "^8.55.0"
+        "eslint-plugin-testing-library": "^7.16.0",
+        "typescript-eslint": "^8.57.0"
     },
     "peerDependencies": {
         "prettier": "3.8.1",

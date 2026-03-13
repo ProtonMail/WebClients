@@ -17,8 +17,8 @@
     "test:watch": "jest --watch --coverage=false"
   },
   "dependencies": {
-    "@ariakit/react": "^0.4.21",
-    "@ariakit/react-core": "^0.4.21",
+    "@ariakit/react": "^0.4.22",
+    "@ariakit/react-core": "^0.4.22",
     "@dnd-kit/abstract": "^0.3.2",
     "@dnd-kit/collision": "^0.3.2",
     "@dnd-kit/dom": "^0.3.2",
@@ -61,7 +61,7 @@
     "lexical": "0.30.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-hook-form": "^7.71.1"
+    "react-hook-form": "^7.71.2"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.28.5",
@@ -74,15 +74,15 @@
     "@types/react-dom": "^18.3.7",
     "@types/react-router-dom": "^5.3.3",
     "@types/uuid": "^9.0.8",
-    "autoprefixer": "^10.4.24",
+    "autoprefixer": "^10.4.27",
     "babel-jest": "^30.2.0",
     "babel-plugin-transform-require-context": "^0.1.1",
     "core-js": "^3.48.0",
     "cross-env": "^10.1.0",
-    "eslint": "^9.39.2",
-    "jest": "^30.2.0",
+    "eslint": "^9.39.4",
+    "jest": "^30.3.0",
     "jest-junit": "^16.0.0",
-    "postcss": "^8.5.6",
+    "postcss": "^8.5.8",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "sass": "^1.80.3",
