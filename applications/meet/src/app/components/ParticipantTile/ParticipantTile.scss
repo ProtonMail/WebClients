@@ -39,3 +39,37 @@
 .animate-spin {
 	animation: spin 1s linear infinite;
 }
+
+.participant-tile-emoji {
+	font-size: 3rem;
+	line-height: 1;
+	animation: emoji-pop 0.2s ease-out;
+
+	&--exit {
+		animation: emoji-pop-out 0.2s ease-in forwards;
+	}
+}
+
+@keyframes emoji-pop {
+	from {
+		transform: scale(0.5);
+		opacity: 0;
+	}
+
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes emoji-pop-out {
+	from {
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	to {
+		transform: scale(0.5);
+		opacity: 0;
+	}
+}

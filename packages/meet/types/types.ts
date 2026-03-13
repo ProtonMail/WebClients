@@ -30,6 +30,7 @@ export interface MeetChatMessage extends Pick<ChatMessage, 'id' | 'message' | 't
     identity: string;
     seen?: boolean;
     type?: 'message';
+    reactions?: Record<string, string[]>;
 }
 
 export enum ParticipantEvent {

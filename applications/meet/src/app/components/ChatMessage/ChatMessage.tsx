@@ -1,13 +1,18 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
+import data from '@emoji-mart/data';
+import { Picker } from 'emoji-mart';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import Popper from '@proton/components/components/popper/Popper';
+import usePopper from '@proton/components/components/popper/usePopper';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import useLoading from '@proton/hooks/useLoading';
+import { IcEmoji } from '@proton/icons/icons/IcEmoji';
 import { IcMeetSend } from '@proton/icons/icons/IcMeetSend';
 import clsx from '@proton/utils/clsx';
 
@@ -15,16 +20,39 @@ import { trimMessage } from '../../utils/trim-message';
 
 import './ChatMessage.scss';
 
+const EmojiPicker = (props: any) => {
+    const ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        new Picker({ ...props, data, ref });
+    }, []);
+
+    return <div ref={ref} />;
+};
+
 interface ChatMessageProps {
     onMessageSend: (message: string) => Promise<boolean>;
 }
 
 export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
     const [message, setMessage] = useState('');
+    const [emojiPickerOpen, setEmojiPickerOpen] = useState(false);
 
     const [chatMessageLoading, withChatMessageLoading] = useLoading();
 
     const textareaRef = useRef<HTMLTextAreaElement>(null);
+    const emojiAnchorRef = useRef<HTMLButtonElement>(null);
+
+    const { floating, position } = usePopper({
+        reference: {
+            mode: 'element',
+            value: emojiAnchorRef.current,
+        },
+        isOpen: emojiPickerOpen,
+        originalPlacement: 'top-end',
+        availablePlacements: ['top-end', 'top'],
+        offset: 8,
+    });
 
     const textareaHeight = useMemo(() => {
         if (textareaRef.current) {
@@ -48,6 +76,23 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
         }
 
         return result;
+    };
+
+    const handleEmojiSelect = (emoji: { native: string }) => {
+        const textarea = textareaRef.current;
+        if (textarea) {
+            const start = textarea.selectionStart ?? message.length;
+            const end = textarea.selectionEnd ?? message.length;
+            const newMessage = message.slice(0, start) + emoji.native + message.slice(end);
+            setMessage(newMessage);
+            setTimeout(() => {
+                textarea.setSelectionRange(start + emoji.native.length, start + emoji.native.length);
+                textarea.focus();
+            }, 0);
+        } else {
+            setMessage((prev) => prev + emoji.native);
+        }
+        setEmojiPickerOpen(false);
     };
 
     useHotkeys(
@@ -104,6 +149,19 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                     autoFocus={true}
                 />
                 <Button
+                    ref={emojiAnchorRef}
+                    className="rounded-full border-none w-custom h-custom p-0 flex items-center justify-center color-norm shrink-0"
+                    onClick={() => setEmojiPickerOpen((open) => !open)}
+                    style={{
+                        '--w-custom': '2.25rem',
+                        '--h-custom': '2.25rem',
+                    }}
+                    aria-label={c('Action').t`Insert emoji`}
+                    aria-pressed={emojiPickerOpen}
+                >
+                    <IcEmoji size={5} className="block ml-px" />
+                </Button>
+                <Button
                     className={clsx(
                         'rounded-full border-none w-custom h-custom p-0 flex items-center justify-center color-norm shrink-0',
                         'send-message-button'
@@ -119,6 +177,21 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                     {chatMessageLoading ? <CircleLoader /> : <IcMeetSend size={5} className="color-invert ml-0.5" />}
                 </Button>
             </div>
+            <Popper
+                className="fixed w-fit-content h-fit-content z-up"
+                divRef={floating}
+                isOpen={emojiPickerOpen}
+                style={position}
+            >
+                <EmojiPicker
+                    autoFocus="true"
+                    onEmojiSelect={handleEmojiSelect}
+                    set="native"
+                    skinTonePosition="none"
+                    previewPosition="none"
+                    perLine={8}
+                />
+            </Popper>
         </div>
     );
 };

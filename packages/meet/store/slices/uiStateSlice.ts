@@ -28,6 +28,7 @@ export enum PermissionPromptStatus {
 
 export interface UIState {
     meetingReadyPopupOpen: boolean;
+    emojiReactionPopupOpen: boolean;
     showDuration: boolean;
     sideBarState: {
         [MeetingSideBars.Participants]: boolean;
@@ -43,6 +44,7 @@ export interface UIState {
 
 const initialState: UIState = {
     meetingReadyPopupOpen: false,
+    emojiReactionPopupOpen: false,
     showDuration: false,
     sideBarState: {
         [MeetingSideBars.Participants]: false,
@@ -72,6 +74,9 @@ const slice = createSlice({
         },
         setMeetingReadyPopupOpen: (state, action: PayloadAction<boolean>) => {
             state.meetingReadyPopupOpen = action.payload;
+        },
+        setEmojiReactionPopupOpen: (state, action: PayloadAction<boolean>) => {
+            state.emojiReactionPopupOpen = action.payload;
         },
         toggleSideBarState: (state, action: PayloadAction<MeetingSideBars>) => {
             const sidebar = action.payload;
@@ -118,6 +123,7 @@ const slice = createSlice({
         },
         resetUiState: (state) => {
             state.meetingReadyPopupOpen = initialState.meetingReadyPopupOpen;
+            state.emojiReactionPopupOpen = initialState.emojiReactionPopupOpen;
             state.showDuration = initialState.showDuration;
             state.sideBarState = initialState.sideBarState;
             state.popupState = initialState.popupState;
@@ -129,6 +135,7 @@ const slice = createSlice({
 
 export const {
     setMeetingReadyPopupOpen,
+    setEmojiReactionPopupOpen,
     toggleShowDuration,
     toggleSideBarState,
     closeSideBar,
@@ -143,6 +150,7 @@ export const {
 
 // Selectors
 export const selectMeetingReadyPopupOpen = (state: MeetState) => state.uiState.meetingReadyPopupOpen;
+export const selectEmojiReactionPopupOpen = (state: MeetState) => state.uiState.emojiReactionPopupOpen;
 export const selectSideBarState = (state: MeetState) => state.uiState.sideBarState;
 export const selectPopupState = (state: MeetState) => state.uiState.popupState;
 export const selectPermissionPromptStatus = (state: MeetState) => state.uiState.permissionPromptStatus;

@@ -44,6 +44,8 @@ const createMockStore = () => {
                 pageSize: 12,
                 chatMessages: mockChatMessages,
                 events: mockParticipantEvents,
+                raisedHands: [],
+                activeReactions: {},
             },
             meetingInfo: {
                 ...initialMeetingInfoState,
