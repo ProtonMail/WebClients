@@ -2,7 +2,8 @@ import * as Comlink from 'comlink';
 
 import { Logger } from './Logger';
 import type { MainThreadBridge } from './MainThreadBridge';
-import type { ClientId, UserId } from './types';
+import type { ClientId, SearchQuery, WorkerSearchResultEvent, SearchResultItem, UserId } from './types';
+import { createAsyncQueue } from '../../../utils/asyncQueue';
 import type { SharedWorkerAPI } from './worker/SharedWorkerAPI';
 
 const HEARTBEAT_INTERVAL = 3000;
@@ -52,7 +53,24 @@ export class WorkerClient {
         window.addEventListener('beforeunload', this.onBeforeUnload);
     }
 
-    // TODO: Add methods to search or read the current state of indexing.
+    async *search(query: SearchQuery): AsyncGenerator<SearchResultItem> {
+        const queue = createAsyncQueue<SearchResultItem>();
+
+        // The worker streams results as WorkerSearchResultEvent through a single
+        // Comlink-proxied callback (one MessagePort) to guarantee delivery order.
+        void this.api.search(
+            query,
+            Comlink.proxy((event: WorkerSearchResultEvent) => {
+                if (event.type === 'done') {
+                    queue.close();
+                } else {
+                    queue.push(event);
+                }
+            })
+        );
+
+        yield* queue.iterator();
+    }
 
     dispose(): void {
         this.disconnect();
