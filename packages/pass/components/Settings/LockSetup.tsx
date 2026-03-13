@@ -6,7 +6,6 @@ import RadioGroup from '@proton/components/components/input/RadioGroup';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
 import { usePasswordTypeSwitch } from '@proton/pass/components/Lock/PasswordUnlockProvider';
-import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { useLockSetup } from '@proton/pass/hooks/auth/useLockSetup';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
@@ -20,7 +19,7 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
     const online = useOnline();
     const { setLockMode, setLockTTL, lock, biometrics, password } = useLockSetup();
     const passwordTypeSwitch = usePasswordTypeSwitch();
-    const prfFeatureFlag = useFeatureFlag(PassFeature.PassWebPrfUnlock);
+    const desktopUnlockFeatureFlag = useFeatureFlag(PassFeature.PassDesktopUnlock);
 
     /**
      * Available on desktop,
@@ -28,13 +27,15 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
      * or if lockMode is already biometrics (eg. when rolling back the flag)
      */
     const showBiometricsOption =
-        password.enabled &&
-        BUILD_TARGET !== 'linux' &&
-        (DESKTOP_BUILD || (!EXTENSION_BUILD && prfFeatureFlag) || lock.mode === LockMode.BIOMETRICS);
+        password.enabled && BUILD_TARGET !== 'linux' && (DESKTOP_BUILD || lock.mode === LockMode.BIOMETRICS);
+
+    const showDesktopOption = EXTENSION_BUILD && (desktopUnlockFeatureFlag || lock.mode === LockMode.DESKTOP);
+
+    const biometricsText = c('Info').t`Access to ${PASS_APP_NAME} will require your fingerprint or device PIN.`;
 
     const biometricsHint = (() => {
         if (biometrics.enabled) {
-            return c('Info').t`Access to ${PASS_APP_NAME} will require your fingerprint or device PIN.`;
+            return biometricsText;
         }
 
         if (DESKTOP_BUILD) {
@@ -111,11 +112,28 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
                                               {c('Label').t`Biometrics`}
                                               <span className="block color-weak text-sm">{biometricsHint}</span>
                                           </span>
-                                          {biometrics.needsUpgrade && <PassPlusPromotionButton />}
                                       </span>
                                   ),
                                   disabled: !biometrics.enabled,
                                   value: LockMode.BIOMETRICS,
+                              },
+                          ]
+                        : []),
+
+                    ...(showDesktopOption
+                        ? [
+                              {
+                                  label: (
+                                      <span className="flex w-full justify-space-between items-center">
+                                          <span className="block">
+                                              {c('Label').t`Biometrics`}
+                                              <span className="block color-weak text-sm">{biometricsText}</span>
+                                              <span className="block color-weak text-sm">{c('Info')
+                                                  .t`This feature requires the ${PASS_APP_NAME} desktop app to be installed and running during setup.`}</span>
+                                          </span>
+                                      </span>
+                                  ),
+                                  value: LockMode.DESKTOP,
                               },
                           ]
                         : []),

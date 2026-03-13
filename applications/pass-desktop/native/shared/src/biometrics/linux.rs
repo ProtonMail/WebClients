@@ -11,6 +11,10 @@ impl super::BiometricsTrait for Biometrics {
         bail!("Not implemented")
     }
 
+    fn new_check_presence(_reason: String) -> Result<()> {
+        bail!("Not implemented")
+    }
+
     fn get_secret(_key: String) -> Result<Vec<u8>> {
         bail!("Not implemented")
     }

@@ -38,6 +38,8 @@ export const lockCreateIntent = createAction('auth::lock::create::intent', (lock
                         return c('Info').t`Enabling password auto-lock`;
                     case LockMode.BIOMETRICS:
                         return c('Info').t`Enabling biometrics auto-lock`;
+                    case LockMode.DESKTOP:
+                        return c('Info').t`Enabling desktop auto-lock`;
                 }
             })()} (${c('Info').t`Please do not close this window`})`,
             type: 'info',
@@ -61,6 +63,8 @@ export const lockCreateFailure = createAction(
                     case LockMode.PASSWORD:
                         return c('Info').t`Enabling password lock failed`;
                     case LockMode.BIOMETRICS:
+                        return c('Info').t`Enabling biometrics lock failed`;
+                    case LockMode.DESKTOP:
                         return c('Info').t`Enabling biometrics lock failed`;
                 }
             })(),
@@ -87,6 +91,8 @@ export const lockCreateSuccess = createAction(
                         case LockMode.PASSWORD:
                             return c('Info').t`Password lock successfully registered. Use it to unlock ${PASS_APP_NAME}`;
                         case LockMode.BIOMETRICS:
+                            return c('Info').t`Biometrics lock successfully registered. Use it to unlock ${PASS_APP_NAME}`;
+                        case LockMode.DESKTOP:
                             return c('Info').t`Biometrics lock successfully registered. Use it to unlock ${PASS_APP_NAME}`;
                     }
                 })(),
