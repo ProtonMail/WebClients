@@ -136,6 +136,9 @@
       "Edit": [
         "Düzenle"
       ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
+      ],
       "Edit email address": [
         "E-posta adresini düzenle"
       ],
@@ -2383,6 +2386,9 @@
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Bu tarife için sorumlu sıfatıyla KDV usulü desteklenmemektedir"
+      ],
       "Signature verification failed": [
         "İmza doğrulanamadı"
       ],
@@ -2391,9 +2397,6 @@
       ],
       "Tab closed": [
         "Sekme kapatıldı"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Bu tarifede vergi hariç seçeneği bulunmuyor"
       ],
       "The amount due has changed. Please try again.": [
         "Ödenecek tutar değişti. Lütfen yeniden deneyin."
@@ -3151,6 +3154,9 @@
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ plan } aboneliğiniz ${ PASS_SHORT_APP_NAME } Lifetime aboneliğiyle değiştirilecek. Aboneliğinizin kalan tutarı hesabınıza eklenecek. ${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme fiyatı yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Hesabınız şu anda sorumlu sıfatıyla KDV usulünü uygulayacak şekilde yapılandırılmış. Bu durum seçilen tarife için desteklenmemektedir. Devam etmek için ya fatura adresinden KDV numarasını kaldırın ya da farklı bir tarife seçin."
       ],
       "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
         "Ödemeniz yeni bir sekmede açıldı. Lütfen o sekmeden ödemenizi yaptıktan sonra bu sayfaya geri dönün."
@@ -5576,6 +5582,9 @@
       ],
       "Request new code": [
         "Yeni kod iste"
+      ],
+      "Reverse charge not supported": [
+        "Sorumlu sıfatıyla KDV desteklenmiyor"
       ],
       "Select a plan": [
         "Bir tarife seçin"
