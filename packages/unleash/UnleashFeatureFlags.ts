@@ -291,7 +291,6 @@ enum MeetFeatureFlag {
     MeetSinglePeerConnection = 'MeetSinglePeerConnection',
     MeetQualityTelemetry = 'MeetQualityTelemetry',
     MeetAllowLiveKitDebugReporting = 'MeetAllowLiveKitDebugReporting',
-    MeetAudioContextKeepalive = 'MeetAudioContextKeepalive',
     MeetDashboardV2 = 'MeetDashboardV2',
     MeetDownloadDesktopAppEnabled = 'MeetDownloadDesktopAppEnabled',
     MeetDesktopAppBannerEnabled = 'MeetDesktopAppBannerEnabled',
@@ -302,6 +301,8 @@ enum MeetFeatureFlag {
     MeetShowReloadTrackButton = 'MeetShowReloadTrackButton',
     MeetH264 = 'MeetH264',
     MeetNewCTAModal = 'MeetNewCTAModal',
+    MeetEnableAudioMixing = 'MeetEnableAudioMixing',
+    MeetEnableSpatialAudio = 'MeetEnableSpatialAudio',
 }
 
 enum LumoFeatureFlag {
