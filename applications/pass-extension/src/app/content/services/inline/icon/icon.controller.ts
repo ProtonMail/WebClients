@@ -77,6 +77,13 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
     const listeners = createListenerStore();
     const { icon, control } = createIcon({ zIndex, tag });
 
+    /** Some websites use `Element.nextSibling` to traverse between form inputs (eg:
+     * OTP entry groups). If we inject our control element directly after the input,
+     * it becomes the `nextSibling` and the site may attempt to call input methods on
+     * it, causing errors. Detect this case to avoid injecting after the input. */
+    const nextSibling = input.nextElementSibling;
+    const siblingInput = isInputElement(nextSibling) && nextSibling.type !== 'hidden';
+
     const noAnchor = anchor.element === input || anchor.element === input.parentElement;
     const container = noAnchor ? input.parentElement! : anchor.element;
     const checkParentFrame = !mainFrame && formHandle.fields.size === 1;
@@ -87,7 +94,8 @@ export const createIconController = (options: IconControllerOptions): MaybeNull<
         container.style.position = 'relative';
     }
 
-    if (noAnchor) resolveInjectionAnchor(input).after(control);
+    const injectAfter = noAnchor && !siblingInput;
+    if (injectAfter) resolveInjectionAnchor(input).after(control);
     else container.appendChild(control);
 
     const state: IconState = {
