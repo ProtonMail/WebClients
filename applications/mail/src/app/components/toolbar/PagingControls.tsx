@@ -18,7 +18,7 @@ import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { TelemetryMailPagingControlsEvents } from '@proton/shared/lib/api/telemetry';
 
 import { isPageConsecutive } from 'proton-mail/helpers/paging';
-import useTelemetryPagingControls from 'proton-mail/hooks/useTelemetryPagingControls';
+import { PaginationSources, useTelemetryPagingControls } from 'proton-mail/hooks/useTelemetryPagingControls';
 import { contextPages, pageSize as selectPageSize } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
@@ -58,7 +58,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
     const { dbExists, esEnabled, isSearchPartial, getCacheStatus, isSearching } = esStatus;
     const searchParameters = extractSearchParameters(location);
     const isSearch = testIsSearch(searchParameters);
-    const sendPagingTelemetryReport = useTelemetryPagingControls();
+    const { sendPaginationTelemetry } = useTelemetryPagingControls();
 
     const { isCacheLimited } = getCacheStatus();
 
@@ -73,7 +73,10 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
         }
 
         onPrevious();
-        void sendPagingTelemetryReport({ event: TelemetryMailPagingControlsEvents.move_to_previous_page });
+        void sendPaginationTelemetry({
+            event: TelemetryMailPagingControlsEvents.move_to_previous_page,
+            dimensions: { source: PaginationSources.toolbar },
+        });
     };
 
     const handleClickNext = () => {
@@ -82,7 +85,10 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
         }
 
         onNext();
-        void sendPagingTelemetryReport({ event: TelemetryMailPagingControlsEvents.move_to_next_page });
+        void sendPaginationTelemetry({
+            event: TelemetryMailPagingControlsEvents.move_to_next_page,
+            dimensions: { source: PaginationSources.toolbar },
+        });
     };
 
     const handleClickCustomPage = (page: number) => {
@@ -95,15 +101,21 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
          * => Here we want to track how often users are creating this gap.
          * note: in the state pages start with index 0, so we need to decrease the destination page to compare them
          */
-        void sendPagingTelemetryReport({
+        void sendPaginationTelemetry({
             event: TelemetryMailPagingControlsEvents.move_to_custom_page,
-            dimensions: { isPageConsecutive: isPageConsecutive(pagesState, page - 1) ? 'true' : 'false' },
+            dimensions: {
+                isPageConsecutive: isPageConsecutive(pagesState, page - 1) ? 'true' : 'false',
+                source: PaginationSources.toolbar,
+            },
         });
     };
 
     const handleClickLoadMore = () => {
         onPage(total);
-        void sendPagingTelemetryReport({ event: TelemetryMailPagingControlsEvents.clicked_load_more_search_results });
+        void sendPaginationTelemetry({
+            event: TelemetryMailPagingControlsEvents.clicked_load_more_search_results,
+            dimensions: { source: PaginationSources.toolbar },
+        });
     };
 
     // total is 0 when no items
