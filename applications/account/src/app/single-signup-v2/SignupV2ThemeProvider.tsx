@@ -47,7 +47,6 @@ export const getSignupV2Theme = (
         getHas2025OfferCoupon(signupParameters.coupon) || (searchParams && searchParams.get('theme') === 'dark');
     if (darkTheme) {
         return {
-            type: ThemeTypes.Storefront,
             background: 'bf',
             intent: toApp,
             dark: true,
@@ -63,14 +62,12 @@ export const getSignupV2Theme = (
     if (toApp === APPS.PROTONWALLET) {
         return {
             ...defaultValue,
-            type: ThemeTypes.StorefrontWallet,
             intent: toApp,
         };
     }
 
     if (audience === Audience.B2B) {
         return {
-            type: ThemeTypes.Storefront,
             background: 'b2b',
             intent: toApp,
             dark: true,

@@ -1,6 +1,7 @@
 import { Router } from 'react-router-dom';
 
 import { createBrowserHistory as createHistory } from 'history';
+import { LocationThemeSync } from 'proton-account/src/app/content/theme/LocationThemeSync';
 import { PublicAppThemeProvider } from 'proton-account/src/app/content/theme/PublicAppThemeProvider';
 
 import * as bootstrap from '@proton/account/bootstrap';
@@ -70,20 +71,23 @@ const App = () => {
                                 {privateApp ? (
                                     <PrivateApp store={store} locales={locales} />
                                 ) : (
-                                    <PublicApp
-                                        api={extraThunkArguments.api}
-                                        onLogin={(args) => {
-                                            extraThunkArguments.authentication.login(args.data);
-                                            replaceUrl(
-                                                getLoginPath(
-                                                    extraThunkArguments.authentication.basename,
-                                                    window.location.href,
-                                                    args.path
-                                                )
-                                            );
-                                        }}
-                                        locales={locales}
-                                    />
+                                    <>
+                                        <LocationThemeSync />
+                                        <PublicApp
+                                            api={extraThunkArguments.api}
+                                            onLogin={(args) => {
+                                                extraThunkArguments.authentication.login(args.data);
+                                                replaceUrl(
+                                                    getLoginPath(
+                                                        extraThunkArguments.authentication.basename,
+                                                        window.location.href,
+                                                        args.path
+                                                    )
+                                                );
+                                            }}
+                                            locales={locales}
+                                        />
+                                    </>
                                 )}
                             </ApiProvider>
                         </ProtonStoreProvider>

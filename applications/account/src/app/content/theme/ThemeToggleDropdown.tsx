@@ -4,7 +4,7 @@ import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, useTheme } 
 import { ThemeModeSetting } from '@proton/shared/lib/themes/constants';
 import clsx from '@proton/utils/clsx';
 
-import { getPublicAppThemeSetting } from './getPublicAppThemeSetting';
+import { getPublicAppThemeSettingForMode } from './getPublicAppThemeSetting';
 import { publicThemeModeConfig } from './publicThemeModeConfig';
 import { setThemeModeToStorage } from './publicThemeStorage';
 import { sendThemeToggleDropdownOpen, sendThemeToggleThemeSelect } from './themeToggleTelemetry';
@@ -53,7 +53,7 @@ export const ThemeToggleDropdown = () => {
                                     onClick={() => {
                                         setThemeModeToStorage(themeMode);
                                         sendThemeToggleThemeSelect({ themeMode });
-                                        theme.setThemeSetting(getPublicAppThemeSetting({ themeMode }));
+                                        theme.setThemeSetting(getPublicAppThemeSettingForMode({ themeMode }));
                                         close();
                                     }}
                                     aria-pressed={isSelected}
