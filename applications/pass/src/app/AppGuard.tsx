@@ -1,5 +1,5 @@
 import { type FC, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { c } from 'ttag';
@@ -10,8 +10,12 @@ import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { BottomBar } from '@proton/pass/components/Layout/Bar/BottomBar';
+import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
+import { type LockCreateDTO, LockMode } from '@proton/pass/lib/auth/lock/types';
 import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
+import { lockCreateRequest } from '@proton/pass/store/actions/requests';
+import { selectRequestInFlightData } from '@proton/pass/store/request/selectors';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useServiceWorkerState } from './ServiceWorker/client/ServiceWorkerProvider';
@@ -27,6 +31,10 @@ export const AppGuard: FC = () => {
     const online = useOnline();
     const updateAvailable = useServiceWorkerState()?.updateAvailable ?? false;
 
+    const lockInFlightRef = useStatefulRef(
+        useSelector(selectRequestInFlightData<{ lock: LockCreateDTO }>(lockCreateRequest()))
+    );
+
     useEffect(() => {
         const localID = authStore?.getLocalID();
         const { status } = AppStateManager.getState();
@@ -39,7 +47,13 @@ export const AppGuard: FC = () => {
         () =>
             window.ctxBridge?.onWindowHide(async () => {
                 const mode = authStore?.getLockMode();
-                if (mode) await auth.lock(mode, { soft: true });
+                if (!mode) return;
+                const currentlyNoLock = mode === LockMode.NONE;
+                const inFlightNoLock = lockInFlightRef.current?.lock.mode === LockMode.NONE;
+                // Trigger lock now except if there's no lock or if the lock is being removed
+                if (!currentlyNoLock && !inFlightNoLock) {
+                    await auth.lock(mode, { soft: true });
+                }
             }),
         []
     );
