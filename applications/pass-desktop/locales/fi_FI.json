@@ -980,6 +980,9 @@
       "Encrypted JSON not supported": [
         "Salattua JSON-tiedostoa ei tueta"
       ],
+      "Encryption communication for desktop unlock failed.": [
+        "Salattu yhteys työpöydän lukituksen avaamiseksi epäonnistui."
+      ],
       "Error reporting problem": [
         "Virheraportoinnin ongelma"
       ],
@@ -1189,6 +1192,15 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Jotain meni pieleen. Kirjaudu sisään uudelleen."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME } -työpöytäsovellus on lukittu; se on avattava."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "${ PASS_APP_NAME } -työpöytäsovellusta ei ole asennettu."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME } -työpöytäsovellus ei vastaa, onko se käynnissä?"
       ],
       "The session has expired. Please sign in again.": [
         "Istunto on erääntynyt. Kirjaudu sisään uudelleen."
@@ -1706,6 +1718,9 @@
       "Enabling biometrics lock failed": [
         "Automaattisen biometrisen avauksen käyttöönotto epäonnistui"
       ],
+      "Enabling desktop auto-lock": [
+        "Otetaan käyttöön työpöydän automaattilukitus"
+      ],
       "Enabling offline mode...": [
         "Yhteydetöntä tilaa otetaan käyttöön..."
       ],
@@ -1919,6 +1934,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -2278,6 +2297,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Tämä ominaisuus on tällä hetkellä kokeiluvaiheessa Linuxissa. Varmista, että järjestelmäsi on ajan tasalla."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Tämä ominaisuus edellyttää, että ${ PASS_APP_NAME } -työpöytäsovellus on asennettu ja käynnissä asennuksen aikana."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Tätä kohdetta ei ole tällä hetkellä jaettu kenellekään. Jaa se muille lähettämällä kutsuja."
