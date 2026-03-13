@@ -17,7 +17,7 @@ export const isAllContentUpToDate = async (esDB: IDBPDatabase<EncryptedSearchDB>
     return cursor === null;
 };
 
-export async function readNextOudatedBatch(
+export async function readNextOutdatedBatch(
     esDB: IDBPDatabase<EncryptedSearchDB>,
     batchSize = READ_BATCH_SIZE
 ): Promise<ESItemCursorResult[]> {

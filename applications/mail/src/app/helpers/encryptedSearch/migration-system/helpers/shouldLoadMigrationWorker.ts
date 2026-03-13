@@ -16,17 +16,19 @@ export const shouldLoadMigrationWorker = async (user: UserModel) => {
     }
 
     const isAllMigrated = await isAllContentUpToDate(esDB);
+    esDB.close();
+
     return !isAllMigrated;
 };
 
 export const canLoadRunner = () => {
     if (typeof Worker === 'undefined') {
-        traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, 'Worker is not available');
+        traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, new Error('Worker is not available'));
         return false;
     }
 
     if (typeof indexedDB === 'undefined') {
-        traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, 'IndexedDB is not available');
+        traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, new Error('IndexedDB is not available'));
         return false;
     }
 

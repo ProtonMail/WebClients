@@ -8,7 +8,7 @@ import type { ESMessageContent } from 'proton-mail/models/encryptedSearch';
 
 import type { CleanTextFn, MigrationMethod, PreparedMessageContent } from '../interface';
 import { getMigrationArray } from './contentMigrations';
-import { readNextOudatedBatch } from './contentVersionHelpers';
+import { readNextOutdatedBatch } from './contentVersionHelpers';
 import { encryptAndWriteESItems } from './encryptAndWriteESItems';
 
 interface UpgradeContentProps {
@@ -43,7 +43,7 @@ interface MigrateContentProps {
 export const migrateContent = async ({ esDB, indexKey, cleanText }: MigrateContentProps) => {
     const migrationArray = getMigrationArray(cleanText);
     let array = [];
-    while ((array = await readNextOudatedBatch(esDB)).length !== 0) {
+    while ((array = await readNextOutdatedBatch(esDB)).length !== 0) {
         const items: PreparedMessageContent[] = (
             await Promise.all(
                 array.map(async (data) => {
