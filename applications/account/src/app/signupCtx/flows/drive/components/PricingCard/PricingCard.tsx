@@ -223,7 +223,13 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
             },
             renewalNotice: (item) => {
                 if (step === 'payment' && hasFullCheckoutDetails) {
-                    return <div className="w-full text-center text-sm color-weak mt-8">{item.content}</div>;
+                    return <div className="text-sm color-weak">{item.content}</div>;
+                }
+            },
+
+            vatReverseCharge: (item) => {
+                if (step === 'payment' && hasFullCheckoutDetails) {
+                    return <div className="text-sm color-weak mt-2">{item.text}</div>;
                 }
             },
 
@@ -262,7 +268,12 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
                 <PricingFeatures />
                 <PricingFooter checkoutView={checkoutView} />
             </div>
-            {checkoutView.render('renewalNotice')}
+            {(checkoutView.getItem('renewalNotice').visible || checkoutView.getItem('vatReverseCharge').visible) && (
+                <div className="w-full text-center mt-8">
+                    {checkoutView.render('renewalNotice')}
+                    {checkoutView.render('vatReverseCharge')}
+                </div>
+            )}
         </section>
     );
 };
