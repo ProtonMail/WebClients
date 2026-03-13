@@ -1,6 +1,5 @@
 import type { MutableRefObject, ReactNode, RefObject } from 'react';
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
-import { flushSync } from 'react-dom';
 
 import isDeepEqual from 'lodash/isEqual';
 import merge from 'lodash/merge';
@@ -18,6 +17,7 @@ import {
     usernameCharacterValidator,
     usernameEndCharacterValidator,
     usernameLengthValidator,
+    usernameNoEmailValidator,
     usernameStartCharacterValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import isTruthy from '@proton/utils/isTruthy';
@@ -89,14 +89,6 @@ interface Context {
     defaultEmail?: Props['defaultEmail'];
 }
 
-const resetValueForChallenge = (setValue: (value: string) => void, value: string) => {
-    // If sanitisation happens, force re-render the input with a new value so that the values get removed in the iframe
-    flushSync(() => {
-        setValue(value + ' ');
-    });
-    setValue(value);
-};
-
 const joinUsernameDomain = (username: string, domain: string) => {
     return [username, '@', domain].join('');
 };
@@ -117,6 +109,7 @@ const getUsernameError = ({
             : '',
         requiredValidator(trimmedUsername),
         usernameLengthValidator(trimmedUsername),
+        usernameNoEmailValidator(trimmedUsername),
         usernameStartCharacterValidator(trimmedUsername),
         usernameEndCharacterValidator(trimmedUsername),
         usernameCharacterValidator(trimmedUsername),
@@ -539,20 +532,13 @@ export const AccountFormDataContextProvider = ({ children, availableSignupTypes,
     }, []);
 
     const onUsernameValue = useCallback((value: string, domain: string) => {
-        const sanitizedValue = value.replaceAll('@', '');
-
         inputValuesRef.current.username = true;
         setStateDiff({
-            values: { username: sanitizedValue, domain },
+            values: { username: value, domain },
             inputStates: { username: { interactive: true } },
         });
 
-        // If sanitisation happens, force re-render the input with a new value so that the values get removed in the iframe
-        if (sanitizedValue !== value) {
-            resetValueForChallenge((username) => setAccountDataStateDiff({ username }), sanitizedValue);
-        }
-
-        handleUsernameError(sanitizedValue.trim(), domain, setUsernameAsyncValidationState);
+        handleUsernameError(value.trim(), domain, setUsernameAsyncValidationState);
     }, []);
 
     const handleDefaultEmail = useCallback(

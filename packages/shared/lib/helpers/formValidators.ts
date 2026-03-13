@@ -10,6 +10,9 @@ export const requiredValidator = (value: any) =>
 export const usernameCharacterValidator = (value: string) =>
     !REGEX_USERNAME.test(value) ? c('Error').t`Try using only letters, numerals, and _.-` : '';
 
+export const usernameNoEmailValidator = (value: string) =>
+    value.includes('@') ? c('Error').t`Enter your username without the domain (@example.com)` : '';
+
 export const usernameStartCharacterValidator = (value: string) =>
     !REGEX_USERNAME_START.test(value) ? c('Error').t`Username must begin with a letter or digit` : '';
 
