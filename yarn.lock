@@ -12764,13 +12764,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tpe/minimum-test-set@npm:0.1.1":
-  version: 0.1.1
-  resolution: "@tpe/minimum-test-set@npm:0.1.1::__archiveUrl=https%3A%2F%2Fgitlab.protontech.ch%2Fapi%2Fv4%2Fprojects%2F4357%2Fpackages%2Fnpm%2F%40tpe%2Fminimum-test-set%2F-%2F%40tpe%2Fminimum-test-set-0.1.1.tgz"
+"@tpe/minimum-test-set@npm:0.1.2":
+  version: 0.1.2
+  resolution: "@tpe/minimum-test-set@npm:0.1.2::__archiveUrl=https%3A%2F%2Fgitlab.protontech.ch%2Fapi%2Fv4%2Fprojects%2F4357%2Fpackages%2Fnpm%2F%40tpe%2Fminimum-test-set%2F-%2F%40tpe%2Fminimum-test-set-0.1.2.tgz"
   dependencies:
-    simple-git: "npm:^3.28.0"
+    simple-git: "npm:^3.33.0"
     ts-morph: "npm:^26.0.0"
-  checksum: 10/68569717ea4b87c87b6703fec09b395354ad992fb1e4581f6fcddeb59095515d3ffa515865665ab1854c50a55b33812699d6f8bd8d2def0b865c5a5dca679423
+  checksum: 10/03d0c85e1c6c8f27561c6cc3d2a46a4e0055918183f5be24d914c50cb8a7e95ca8d4a5cfba59b7526ab170d6df73c06532b71de2023aff38f97d26279036abf1
   languageName: node
   linkType: hard
 
@@ -37267,7 +37267,7 @@ __metadata:
     "@proton/utils": "workspace:^"
     "@tpe/loki-client": "npm:0.2.1"
     "@tpe/measurement-sdk": "npm:0.2.2"
-    "@tpe/minimum-test-set": "npm:0.1.1"
+    "@tpe/minimum-test-set": "npm:0.1.2"
     "@tpe/mock-proxy-web-client": "npm:1.1.1"
     "@tpe/quark-client": "npm:1.13.0"
     "@types/chance": "npm:^1.1.7"
@@ -41798,14 +41798,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"simple-git@npm:^3.28.0":
-  version: 3.28.0
-  resolution: "simple-git@npm:3.28.0"
+"simple-git@npm:^3.33.0":
+  version: 3.33.0
+  resolution: "simple-git@npm:3.33.0"
   dependencies:
     "@kwsites/file-exists": "npm:^1.1.1"
     "@kwsites/promise-deferred": "npm:^1.1.1"
     debug: "npm:^4.4.0"
-  checksum: 10/2582e6c1c50db8aa0b7d07ed0f0f86eb4ea647e6b33d1596cf44e509c7b658372da9db1dcbea626e7d71e30e8d826a84410bbc73c5d1066f2526724a31836f81
+  checksum: 10/5175133df68053f52db3c160e060939ec6584409378e89cc5e57f60a00739a507a99a7dbcec0401925fdfdca9c9c60ec6ef84d9669e815d0806f4c18bf7aa820
   languageName: node
   linkType: hard
 
