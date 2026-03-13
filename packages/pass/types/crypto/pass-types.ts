@@ -8,6 +8,7 @@ export enum PassEncryptionTag {
     VaultContent = 'vaultcontent',
     LinkKey = 'linkkey',
     BiometricOfflineKD = 'biometricofflinekd',
+    DesktopUnlockVerifier = 'desktopunlockverifier',
     FileData = 'filedata',
     FileKey = 'filekey',
     FileDataV2 = 'v2;{chunkIndex};{totalChunks};filedata.item.pass.proton',
@@ -18,6 +19,8 @@ export enum PassEncryptionTag {
 export enum PassSignatureContext {
     VaultInviteExistingUser = 'pass.invite.vault.existing-user',
     VaultInviteNewUser = 'pass.invite.vault.new-user',
+    NativeMessagingExtensionEncryption = 'pass.native-messaging.extension.encryption',
+    NativeMessagingDesktopEncryption = 'pass.native-messaging.desktop.encryption',
 }
 
 export enum ContentFormatVersion {

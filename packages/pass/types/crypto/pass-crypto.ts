@@ -20,6 +20,7 @@ import type {
 } from '@proton/pass/types/api';
 import type { FileID, FileIdentifier } from '@proton/pass/types/data';
 import type { ShareRole, ShareType } from '@proton/pass/types/data/shares';
+import type { NativeMessageData } from '@proton/pass/types/desktop';
 import type { MaybeNull } from '@proton/pass/types/utils';
 import type {
     Address,
@@ -70,6 +71,14 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
     clear: () => void;
     setGroupKeys: (group: Group) => void;
     getShareManager: (shareId: ShareId) => ShareManager;
+    encryptForNativeMessaging: <T extends NativeMessageData>(
+        payload: T,
+        sender: 'extension' | 'desktop'
+    ) => Promise<string>;
+    decryptFromNativeMessaging: <T extends NativeMessageData>(
+        payload: string,
+        sender: 'extension' | 'desktop'
+    ) => Promise<T>;
     createVault: (content: Uint8Array<ArrayBuffer>) => Promise<VaultCreateRequest>;
     updateVault: (data: { shareId: ShareId; content: Uint8Array<ArrayBuffer> }) => Promise<VaultUpdateRequest>;
     canOpenShare: (shareId: ShareId) => boolean;

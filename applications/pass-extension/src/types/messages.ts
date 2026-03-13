@@ -113,6 +113,7 @@ export enum WorkerMessageType {
     CLIPBOARD_OFFSCREEN_READ = 'CLIPBOARD_OFFSCREEN_READ',
     CLIPBOARD_OFFSCREEN_WRITE = 'CLIPBOARD_OFFSCREEN_WRITE',
     DEBUG = 'DEBUG',
+    DESKTOP_UNLOCK_SECRET = 'DESKTOP_UNLOCK_SECRET',
     ENDPOINT_INIT = 'ENDPOINT_INIT',
     FEATURE_FLAGS_UPDATE = 'FEATURE_FLAGS_UPDATE',
     FETCH_ABORT = 'FETCH_ABORT',
@@ -213,6 +214,7 @@ export type ClipboardReadMessage = { type: WorkerMessageType.CLIPBOARD_OFFSCREEN
 export type ClipboardWriteMessage = WithPayload<WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE, ClipboardWriteDTO>;
 export type ClipboardAutoClearMessage = WithPayload<WorkerMessageType.CLIPBOARD_AUTOCLEAR, ClipboardAutoClearDTO>;
 export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
+export type DesktopUnlockSecretMessage = { type: WorkerMessageType.DESKTOP_UNLOCK_SECRET };
 export type EndpointInitMessage = WithPayload<WorkerMessageType.ENDPOINT_INIT, { popup?: boolean }>;
 export type FeatureFlagsUpdateMessage = WithPayload<WorkerMessageType.FEATURE_FLAGS_UPDATE, FeatureFlagState>;
 export type FetchAbortMessage = WithPayload<WorkerMessageType.FETCH_ABORT, { requestId: string }>;
@@ -308,6 +310,7 @@ export type WorkerMessage =
     | ClipboardReadMessage
     | ClipboardWriteMessage
     | DebugMessage
+    | DesktopUnlockSecretMessage
     | EndpointInitMessage
     | FeatureFlagsUpdateMessage
     | FetchAbortMessage
@@ -393,6 +396,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOSUGGEST_PASSWORD]: PasswordAutosuggestOptions;
     [WorkerMessageType.CLIENT_INIT]: { state: AppState; settings: ProxiedSettings; features: FeatureFlagState };
     [WorkerMessageType.CLIPBOARD_OFFSCREEN_READ]: { content: string };
+    [WorkerMessageType.DESKTOP_UNLOCK_SECRET]: { secret: string };
     [WorkerMessageType.ENDPOINT_INIT]: EndpointContext;
     [WorkerMessageType.FETCH_DOMAINIMAGE]: { result: Maybe<string> };
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { submission: MaybeNull<AutosaveFormEntry> };

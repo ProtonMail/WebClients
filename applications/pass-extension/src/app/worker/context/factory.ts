@@ -15,6 +15,7 @@ import { createContentScriptService } from 'proton-pass-extension/app/worker/ser
 import { createInlineService } from 'proton-pass-extension/app/worker/services/inline';
 import { createLoggerService } from 'proton-pass-extension/app/worker/services/logger';
 import { createMonitorService } from 'proton-pass-extension/app/worker/services/monitor';
+import { createNativeMessagingService } from 'proton-pass-extension/app/worker/services/native-messaging';
 import { createOTPService } from 'proton-pass-extension/app/worker/services/otp';
 import { createPasskeyService } from 'proton-pass-extension/app/worker/services/passkey';
 import { createSentryService } from 'proton-pass-extension/app/worker/services/sentry';
@@ -32,6 +33,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
 import { exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
+import { desktopLockAdapterFactory } from '@proton/pass/lib/auth/lock/desktop/adapter';
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
@@ -57,8 +59,10 @@ export const createWorkerContext = (config: ProtonConfig) => {
     const core = createPassCoreProxyService();
     const auth = createAuthService(api, authStore);
     const store = createStoreService();
+    const nativeMessaging = createNativeMessagingService(authStore);
 
     auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
+    auth.registerLockAdapter(LockMode.DESKTOP, desktopLockAdapterFactory(auth, nativeMessaging));
     exposePassCrypto(createPassCrypto(core, store));
 
     const onStateUpdate = (state: AppState) => {

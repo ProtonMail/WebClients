@@ -54,6 +54,7 @@ import sentry from '@proton/shared/lib/helpers/sentry';
 import { clipboard } from '../lib/clipboard';
 import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
 import { useDesktopContextMenu } from '../lib/hooks/useDesktopContextMenu';
+import { ExtensionUnlock } from './ExtensionUnlock';
 import { WelcomeScreen } from './Views/WelcomeScreen/WelcomeScreen';
 import { isFirstLaunch } from './firstLaunch';
 import locales from './locales';
@@ -152,15 +153,17 @@ export const App = () => {
                                                 <AuthServiceProvider>
                                                     <StoreProvider>
                                                         <ContextMenuProvider>
-                                                            <Localized>
-                                                                <ClipboardProvider>
-                                                                    {showWelcome ? <WelcomeScreen /> : <AppGuard />}
-                                                                </ClipboardProvider>
-                                                            </Localized>
-                                                            <Portal>
-                                                                <ModalsChildren />
-                                                                <NotificationsChildren />
-                                                            </Portal>
+                                                            <ExtensionUnlock>
+                                                                <Localized>
+                                                                    <ClipboardProvider>
+                                                                        {showWelcome ? <WelcomeScreen /> : <AppGuard />}
+                                                                    </ClipboardProvider>
+                                                                </Localized>
+                                                                <Portal>
+                                                                    <ModalsChildren />
+                                                                    <NotificationsChildren />
+                                                                </Portal>
+                                                            </ExtensionUnlock>
                                                         </ContextMenuProvider>
                                                     </StoreProvider>
                                                 </AuthServiceProvider>

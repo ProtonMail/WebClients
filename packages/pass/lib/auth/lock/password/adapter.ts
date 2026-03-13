@@ -150,7 +150,7 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
                 }
 
                 await setRetryCount(retryCount).catch(noop);
-                await auth.lock(adapter.type, { broadcast: true, soft: true, userInitiated: true });
+                await auth.lock(adapter.type, { broadcast: true, soft: true });
 
                 throw new Error(getInvalidPasswordString(authStore));
             }

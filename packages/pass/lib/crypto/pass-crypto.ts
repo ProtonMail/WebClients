@@ -236,6 +236,16 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
 
         getDecryptedAddressKeys,
 
+        async encryptForNativeMessaging(payload, sender) {
+            assertHydrated(context);
+            return processes.encryptForNativeMessaging(payload, sender, context.primaryUserKey.privateKey);
+        },
+
+        async decryptFromNativeMessaging(payload, sender) {
+            assertHydrated(context);
+            return processes.decryptFromNativeMessaging(payload, sender, context.userKeys);
+        },
+
         /* Creating a vault does not register a share manager :
          * call PassCrypto::openShare to register it */
         async createVault(content) {

@@ -53,7 +53,7 @@
         "webRequest",
         "webRequestBlocking"
     ],
-    "optional_permissions": ["privacy", "webRequestAuthProvider", "clipboardRead", "clipboardWrite"],
+    "optional_permissions": ["privacy", "webRequestAuthProvider", "clipboardRead", "clipboardWrite", "nativeMessaging"],
     "host_permissions": ["https://*/*", "http://*/*"],
     "action": {
         "default_popup": "popup.html",

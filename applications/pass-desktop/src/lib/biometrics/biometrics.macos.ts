@@ -16,7 +16,7 @@ const factory: BiometricsFactory = () => {
         getSecret: async (_, key, version) => {
             await checkPresence();
 
-            const secretBytes = await macBiometrics.getSecret(key);
+            const secretBytes = (await macBiometrics.getSecret(key)) as Uint8Array<ArrayBuffer>;
             if (!secretBytes) return null;
 
             /** Version 1 (Legacy): Secrets were stored as UTF-8 encoded strings.

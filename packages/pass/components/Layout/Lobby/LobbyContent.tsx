@@ -10,6 +10,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
 import { BiometricsUnlock } from '@proton/pass/components/Lock/BiometricsUnlock';
+import { DesktopUnlock } from '@proton/pass/components/Lock/DesktopUnlock';
 import { PasswordConfirm } from '@proton/pass/components/Lock/PasswordConfirm';
 import { PasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlock';
 import { useAuthStorePasswordTypeSwitch } from '@proton/pass/components/Lock/PasswordUnlockProvider';
@@ -18,6 +19,7 @@ import { PasswordVerification } from '@proton/pass/lib/auth/password';
 import type { AuthOptions } from '@proton/pass/lib/auth/service';
 import {
     clientBusy,
+    clientDesktopLocked,
     clientErrored,
     clientMissingScope,
     clientPasswordLocked,
@@ -75,7 +77,7 @@ export const LobbyContent: FC<Props> = ({
     const passwordTypeSwitch = useAuthStorePasswordTypeSwitch();
 
     const stale = clientStale(status);
-    const locked = clientSessionLocked(status);
+    const locked = clientSessionLocked(status) || clientDesktopLocked(status);
     const errored = clientErrored(status);
     const passwordLocked = clientPasswordLocked(status);
     const missingScope = clientMissingScope(status);
@@ -154,6 +156,8 @@ export const LobbyContent: FC<Props> = ({
                                 });
                             case AppStatus.BIOMETRICS_LOCKED:
                                 return c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with biometrics`;
+                            case AppStatus.DESKTOP_LOCKED:
+                                return c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with biometrics`;
                             case AppStatus.MISSING_SCOPE:
                                 return c('Info').t`Enter your extra password`;
                             case AppStatus.ERROR:
@@ -207,6 +211,9 @@ export const LobbyContent: FC<Props> = ({
 
                         case AppStatus.BIOMETRICS_LOCKED:
                             return <BiometricsUnlock offlineEnabled={offlineEnabled} />;
+
+                        case AppStatus.DESKTOP_LOCKED:
+                            return <DesktopUnlock />;
 
                         default:
                             return (

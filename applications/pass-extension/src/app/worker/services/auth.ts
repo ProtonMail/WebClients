@@ -215,7 +215,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         onUnlocked: withContext(async (ctx, mode, _, localID) => {
             if (clientBooted(ctx.getState().status)) return;
 
-            if (mode === LockMode.SESSION) {
+            if (mode === LockMode.SESSION || mode === LockMode.DESKTOP) {
                 /** If the unlock request was triggered before the authentication
                  * store session was fully hydrated, trigger a session resume. */
                 const validSession = authStore.validSession(authStore.getSession());

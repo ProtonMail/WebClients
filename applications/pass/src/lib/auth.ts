@@ -488,10 +488,8 @@ export const createAuthService = ({
             throw error;
         },
 
-        onLocked: async (mode, localID, broadcast, userInitiatedLock) => {
+        onLocked: async (mode, localID, broadcast) => {
             if (broadcast) sw?.send({ type: 'locked', localID, mode, broadcast });
-
-            if (userInitiatedLock) history.replace({ ...history.location, state: { userInitiatedLock } });
 
             flushSync(() => {
                 app.setBooted(false);
@@ -593,7 +591,9 @@ export const createAuthService = ({
 
     auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
     auth.registerLockAdapter(LockMode.PASSWORD, passwordLockAdapterFactory(auth));
-    if (!EXTENSION_BUILD) auth.registerLockAdapter(LockMode.BIOMETRICS, biometricsLockAdapterFactory(auth, core));
+    if (!EXTENSION_BUILD) {
+        auth.registerLockAdapter(LockMode.BIOMETRICS, biometricsLockAdapterFactory(auth, core));
+    }
 
     return auth;
 };

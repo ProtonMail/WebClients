@@ -13,6 +13,7 @@ export default [
             loader: '@vercel/webpack-asset-relocator-loader',
             options: {
                 outputAssetBase: 'native_modules',
+                // debugLog: true,
             },
         },
     },

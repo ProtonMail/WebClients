@@ -1,36 +1,34 @@
 {
-    "name": "native",
+    "name": "@proton-pass-desktop/native",
     "version": "0.0.0",
     "license": "MIT",
     "main": "index.js",
     "types": "index.d.ts",
     "scripts": {
         "artifacts": "napi artifacts",
-        "build": "napi build --release --platform --js false",
-        "build:debug": "napi build --platform --js false",
-        "build:multi": "node build.js",
+        "build": "node build.js",
+        "build:debug": "cargo build --package host && napi build --manifest-path ./napi/Cargo.toml --output-dir . --platform --no-js",
+        "build:host": "cargo build --package host --release",
+        "build:napi": "napi build --manifest-path ./napi/Cargo.toml --output-dir . --release --platform --no-js",
         "prepublishOnly": "napi prepublish -t npm",
         "test": "cargo test",
-        "universal": "napi universal",
+        "universalize": "napi universalize",
         "version": "napi version"
     },
     "devDependencies": {
-        "@napi-rs/cli": "^2.18.0"
+        "@napi-rs/cli": "^3.4.0"
     },
     "engines": {
         "node": ">= 10"
     },
     "napi": {
-        "name": "native",
-        "triples": {
-            "defaults": false,
-            "additional": [
-                "aarch64-apple-darwin",
-                "universal-apple-darwin",
-                "aarch64-pc-windows-msvc",
-                "x86_64-pc-windows-msvc",
-                "x86_64-apple-darwin"
-            ]
-        }
+        "binaryName": "native",
+        "targets": [
+            "aarch64-pc-windows-msvc",
+            "x86_64-pc-windows-msvc",
+            "aarch64-apple-darwin",
+            "x86_64-apple-darwin",
+            "universal-apple-darwin"
+        ]
     }
 }

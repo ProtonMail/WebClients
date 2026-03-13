@@ -99,6 +99,8 @@ export type PassCoreContextValue = {
     isFirstLaunch?: () => boolean;
     /** Only relevant for extension */
     popup?: PopupController;
+    /** Request desktop unlock secret, only relevant for extension */
+    getDesktopUnlockSecret?: () => Promise<string>;
 };
 
 export type PassCoreProviderProps = PassCoreContextValue & { wasm?: boolean };

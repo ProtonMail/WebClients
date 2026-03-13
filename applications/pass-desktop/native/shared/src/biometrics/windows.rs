@@ -1,5 +1,7 @@
+mod check;
+
 use anyhow::{bail, ensure, Result};
-use rand::RngCore;
+use check::generic_check_presence;
 use widestring::U16CString;
 use windows::{
     core::{factory, HSTRING, PCWSTR, PWSTR},
@@ -15,12 +17,6 @@ use windows::{
 };
 
 pub struct Biometrics {}
-
-fn random_challenge() -> [u8; 16] {
-    let mut challenge = [0u8; 16];
-    rand::thread_rng().fill_bytes(&mut challenge);
-    challenge
-}
 
 impl super::BiometricsTrait for Biometrics {
     fn can_check_presence() -> Result<bool> {
@@ -51,6 +47,10 @@ impl super::BiometricsTrait for Biometrics {
             UserConsentVerificationResult::RetriesExhausted => bail!("There have been too many failed attempts."),
             _ => bail!("Biometric authentication failed."),
         }
+    }
+
+    fn new_check_presence(reason: String) -> Result<()> {
+        generic_check_presence(reason)
     }
 
     fn get_secret(key: String) -> Result<Vec<u8>> {
