@@ -10,6 +10,7 @@ import {
     usernameCharacterValidator,
     usernameEndCharacterValidator,
     usernameLengthValidator,
+    usernameNoEmailValidator,
     usernameStartCharacterValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
@@ -48,6 +49,7 @@ const GenerateAddressform = ({ defaultUsername = '', onSubmit, availableDomains 
                 error={validator([
                     requiredValidator(trimmedUsername),
                     usernameLengthValidator(trimmedUsername),
+                    usernameNoEmailValidator(trimmedUsername),
                     usernameStartCharacterValidator(trimmedUsername),
                     usernameEndCharacterValidator(trimmedUsername),
                     usernameCharacterValidator(trimmedUsername),

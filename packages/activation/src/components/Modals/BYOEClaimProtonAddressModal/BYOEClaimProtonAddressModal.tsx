@@ -21,6 +21,7 @@ import {
     useFormErrors,
     useNotifications,
 } from '@proton/components';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks/index';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { TelemetryBringYourOwnEmailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -31,6 +32,7 @@ import {
     usernameCharacterValidator,
     usernameEndCharacterValidator,
     usernameLengthValidator,
+    usernameNoEmailValidator,
     usernameStartCharacterValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -38,7 +40,6 @@ import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/in
 import claimProtonAddressImg from '@proton/styles/assets/img/illustrations/claim-proton-address.svg';
 
 import type { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '../../../constants';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 
 interface Props extends ModalProps {
     toApp: APP_NAMES;
@@ -63,7 +64,7 @@ const BYOEClaimProtonAddressModal = ({
 }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
-    const silentApi = useSilentApi()
+    const silentApi = useSilentApi();
     const { call } = useEventManager();
     const errorHandler = useErrorHandler();
     const authentication = useAuthentication();
@@ -177,6 +178,7 @@ const BYOEClaimProtonAddressModal = ({
                         error={validator([
                             requiredValidator(trimmedUsername),
                             usernameLengthValidator(trimmedUsername),
+                            usernameNoEmailValidator(trimmedUsername),
                             usernameStartCharacterValidator(trimmedUsername),
                             usernameEndCharacterValidator(trimmedUsername),
                             usernameCharacterValidator(trimmedUsername),
