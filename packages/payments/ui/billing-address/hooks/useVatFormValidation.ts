@@ -7,6 +7,8 @@ import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { countriesWithVatNumberOnSignup } from './countriesWithVatId';
+
 export interface VatFormFields {
     CountryCode: string;
     State?: string | null;
@@ -45,13 +47,24 @@ function emptyErrors(): VatFormErrors {
     };
 }
 
-function checkVatNumber(vatNumber: string, countryCode: string): boolean {
+export function checkVatNumber(vatNumber: string, countryCode: string): boolean {
+    // Skip validation for countries we don't support VAT IDs for (e.g. Thailand, Turkey)
+    if (!countriesWithVatNumberOnSignup.has(countryCode)) {
+        return true;
+    }
+
     // In dev env, we let these VAT numbers to bypass the frontend validation
     if (!isProduction(window.location.host) && (vatNumber === 'IT01231231234' || vatNumber === 'BE0123123123')) {
         return true;
     }
 
-    const countries = vatValidationCountries.filter((country) => country.codes.includes(countryCode)) ?? [];
+    const countries = vatValidationCountries.filter((country) => country.codes.includes(countryCode));
+
+    // If the vat-validation library doesn't cover this country, skip validation rather than
+    // rejecting all VAT numbers (e.g. Liechtenstein, Iceland are not in the library yet)
+    if (countries.length === 0) {
+        return true;
+    }
 
     return checkVAT(vatNumber, countries).isValid;
 }
