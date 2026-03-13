@@ -1375,6 +1375,14 @@
         "Izberite vašo ponudbo za črni petek"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Ta ponudba žal ni na voljo v vašem paketu. Lahko pa pridobite popusta v višini ${ discountPercentage } za ${ plan.Title }, če se naročite za ${ cycle } mesec.",
+        "Ta ponudba žal ni na voljo v vašem paketu. Lahko pa pridobite popusta v višini ${ discountPercentage } za ${ plan.Title }, če se naročite za ${ cycle } meseca.",
+        "Ta ponudba žal ni na voljo v vašem paketu. Lahko pa pridobite popusta v višini ${ discountPercentage } za ${ plan.Title }, če se naročite za ${ cycle } mesece.",
+        "Ta ponudba žal ni na voljo v vašem paketu. Lahko pa pridobite popusta v višini ${ discountPercentage } za ${ plan.Title }, če se naročite za ${ cycle } mesecev."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30-dnevno jamstvo z vračilom denarja"
@@ -3861,6 +3869,9 @@
       "Request timed out": [
         "Zahteva se je iztekla"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Shema obrnjene davčne obveznosti ni podprta za ta načrt"
+      ],
       "Signature verification failed": [
         "Preverjanje podpisa ni uspelo"
       ],
@@ -3893,9 +3904,6 @@
       ],
       "Tab closed": [
         "Zavihek je zaprt"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Oprostitev davka ni podprta za ta načrt"
       ],
       "The amount due has changed. Please try again.": [
         "Znesek, ki ga je treba plačati, se je spremenil. Poskusite znova."
@@ -4619,6 +4627,9 @@
       ]
     },
     "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "Pri registraciji vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
       ]
@@ -4639,6 +4650,9 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Ste prepričani, da želite izbrisati varnostni ključ ${ name }?"
       ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vstavite varnostni ključ, povezan z vašim ${ BRAND_NAME } računom."
+      ],
       "Insert your security key into your device's USB port.": [
         "Vstavite vaš varnostni ključ v USB vrata vaše naprave."
       ],
@@ -4656,6 +4670,12 @@
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Potrdite vašo identiteto s fizičnim varnostnim ključem U2F ali FIDO2"
+      ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Dosegli ste največjo dolžino ${ maxSecurityKeyLength } varnostnega ključa.",
+        "Dosegli ste največjo dolžino ${ maxSecurityKeyLength } varnostnega ključev.",
+        "Dosegli ste največjo dolžino ${ maxSecurityKeyLength } varnostnega ključev.",
+        "Dosegli ste največjo dolžino ${ maxSecurityKeyLength } varnostnega ključev."
       ],
       "Your two-factor authentication key is ready to use.": [
         "Vaš ključ za dvojno preverjanje pristnosti je pripravljen za uporabo."
@@ -5993,6 +6013,9 @@
       "Drop to import": [
         "Spusti za uvoz."
       ],
+      "Each code can only be used once": [
+        "Vsaka koda se lahko uporabi samo enkrat"
+      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Vsaka domena ima lahko le en zapis SPF (TXT). Če želite obdržati obstoječi zapis SPF (TXT), lahko trenutnemu zapisu dodate ${ spf } (postavite ga za ${ spfValue })."
       ],
@@ -6475,6 +6498,18 @@
       ],
       "or ${ selectFileButton }": [
         "ali ${ selectFileButton }"
+      ],
+      "or assign to any country in ${ availableAgainAfterDays } day": [
+        "ali dodelite katerikoli državi v ${ availableAgainAfterDays } dnevu",
+        "ali dodelite katerikoli državi v ${ availableAgainAfterDays } dneh",
+        "ali dodelite katerikoli državi v ${ availableAgainAfterDays } dneh",
+        "ali dodelite katerikoli državi v ${ availableAgainAfterDays } dneh"
+      ],
+      "or assign to any country in ${ availableAgainAfterHours } hour": [
+        "ali dodelite katerikoli državi v ${ availableAgainAfterHours } uri",
+        "ali dodelite katerikoli državi v ${ availableAgainAfterHours } urah",
+        "ali dodelite katerikoli državi v ${ availableAgainAfterHours } urah",
+        "ali dodelite katerikoli državi v ${ availableAgainAfterHours } urah"
       ],
       "or discover other features:": [
         "ali odkrijte druge funkcije:"
@@ -7238,6 +7273,9 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Ko odstranite strežnik iz prehoda, ta vstopi v 10-dnevno obdobje deaktivacije. Ta strežnik je mogoče dodati novemu prehodu, vendar njegove države ni mogoče spremeniti."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
+      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Ko se vaša naročnina obnovi, bomo uporabili vso razpoložljivo dobroimetje, preden bomo zaračunali zgornji način plačila."
       ],
@@ -7282,6 +7320,18 @@
         "Trenutno uporabljate ${ ipCount } od vaših ${ ipAddresses } razpoložljivih namenskih strežnikov.",
         "Trenutno uporabljate ${ ipCount } od vaših ${ ipAddresses } razpoložljivih namenskih strežnikov.",
         "Trenutno uporabljate ${ ipCount } od vaših ${ ipAddresses } razpoložljivih namenskih strežnikov."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Trenutno uporabljate ${ usedMembers } od vaših ${ maxMembers } razpoložljivih uporabniških licenc in ${ usedAI } od vaših ${ maxAI } razpoložljivih licenc za pomočnika pri pisanju.",
+        "Trenutno uporabljate ${ usedMembers } od vaših ${ maxMembers } razpoložljivih uporabniških licenc in ${ usedAI } od vaših ${ maxAI } razpoložljivih licenc za pomočnika pri pisanju.",
+        "Trenutno uporabljate ${ usedMembers } od vaših ${ maxMembers } razpoložljivih uporabniških licenc in ${ usedAI } od vaših ${ maxAI } razpoložljivih licenc za pomočnika pri pisanju.",
+        "Trenutno uporabljate ${ usedMembers } od vaših ${ maxMembers } razpoložljivih uporabniških licenc in ${ usedAI } od vaših ${ maxAI } razpoložljivih licenc za pomočnika pri pisanju."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Trenutno uporabljate ${ usedMembers } od vaših ${ maxMembers } razpoložljivih uporabniških licenc in nobene od vaših ${ maxAI } razpoložljivih licenc za pomočnika pri pisanju.",
+        "Trenutno uporabljate ${ usedMembers } od vaših ${ maxMembers } razpoložljivih uporabniških licenc in nobene od vaših ${ maxAI } razpoložljivih licenc za pomočnika pri pisanju.",
+        "Trenutno uporabljate ${ usedMembers } od vaših ${ maxMembers } razpoložljivih uporabniških licenc in nobene od vaših ${ maxAI } razpoložljivih licenc za pomočnika pri pisanju.",
+        "Trenutno uporabljate ${ usedMembers } od vaših ${ maxMembers } razpoložljivih uporabniških licenc in nobene od vaših ${ maxAI } razpoložljivih licenc za pomočnika pri pisanju."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Trenutno uporabljate ${ usedMembers } od razpoložljive uporabniške licence ${ maxMembers }.",
@@ -7361,6 +7411,12 @@
         "Na voljo imate ${ availableCount } novih strežnikov.",
         "Na voljo imate ${ availableCount } novih strežnikov."
       ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "Na voljo imate ${ unassignedAvailableCount } nedavno uporabljen strežnik. Preden ta strežnik dodelite drugi državi morate počakati, da se postopek deaktivacije zaključi.",
+        "Na voljo imate ${ unassignedAvailableCount } nedavno uporabljena strežnika. Preden ta strežnika dodelite drugi državi morate počakati, da se postopek deaktivacije zaključi.",
+        "Na voljo imate ${ unassignedAvailableCount } nedavno uporabljene strežnike. Preden te strežnike dodelite drugi državi morate počakati, da se postopek deaktivacije zaključi.",
+        "Na voljo imate ${ unassignedAvailableCount } nedavno uporabljenih strežnikov. Preden te strežnike dodelite drugi državi morate počakati, da se postopek deaktivacije zaključi."
+      ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Imate preizkusno naročnino ${ planTitle }. Če želite nadaljevati naročnino po preizkusnem obdobju, dodajte način plačila."
       ],
@@ -7426,6 +7482,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Imate vsaj en neplačan račun. Vaš dostop bo kmalu omejen. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Vaš račun je trenutno nastavljen za uporabo sheme povratnega DDV. To ni podprto za izbrani paket. Če želite nadaljevati, bodisi odstranite številko DDV s plačilnega naslova ali izberite drug paket."
       ],
       "Your account was successfully updated with this promotion": [
         "Vaš račun je bil uspešno posodobljen s to promocijo"
@@ -9153,6 +9212,12 @@
         "${ n } VPN povezavi",
         "${ n } VPN povezave",
         "${ n } VPN povezav"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin za doživljenjsko uporabo"
@@ -12139,6 +12204,42 @@
       ]
     },
     "sso": {
+      "${ n } member requested your help to sign in.": [
+        "${ n } uporabnik zahteva vašo pomoč pri prijavi",
+        "${ n } uporabnika zahtevata vašo pomoč pri prijavi",
+        "${ n } uporabniki zahtevajo vašo pomoč pri prijavi",
+        "${ n } uporabnikov zahteva vašo pomoč pri prijavi"
+      ],
+      "${ n } user converted to SSO": [
+        "${ n } uporabnik pretvorjen v SSO",
+        "${ n } uporabnika pretvorjena v SSO",
+        "${ n } uporabniki pretvorjeni v SSO",
+        "${ n } uporabnikov pretvorjenih v SSO"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } uporabnik je bil odstranjen iz SSO",
+        "${ n } uporabnika sta bila odstranjena iz SSO",
+        "${ n } uporabniki so bili odstranjeni iz SSO",
+        "${ n } uporabnikov je bilo odstranjenih iz SSO"
+      ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } uporabnik se je pridružil vaši organizaciji preko vašega ponudnika identitete. Preglejte račun zdaj:",
+        "${ n } uporabnika sta je pridružila vaši organizaciji preko vašega ponudnika identitete. Preglejte računa zdaj:",
+        "${ n } uporabniki so se pridružili vaši organizaciji preko vašega ponudnika identitete. Preglejte račune zdaj:",
+        "${ n } uporabnikov se je pridružilo vaši organizaciji preko vašega ponudnika identitete. Preglejte račune zdaj:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } uporabnik je neaktiven. Tega uporabnika lahko varno odstranite iz svoje organizacije.",
+        "${ n } uporabnika sta neaktivna. Ta uporabnika lahko varno odstranite iz svoje organizacije.",
+        "${ n } uporabniki so neaktivni. Te uporabnike lahko varno odstranite iz svoje organizacije.",
+        "${ n } uporabnikov je neaktivnih. Te uporabnike lahko varno odstranite iz svoje organizacije."
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } uporabnik zahteva vašo pomoč pri prijavi v svoj ${ BRAND_NAME } račun z enotno prijavo (SSO).",
+        "${ n } uporabnika zahtevata vašo pomoč pri prijavi v svoj ${ BRAND_NAME } račun z enotno prijavo (SSO).",
+        "${ n } uporabniki zahtevajo vašo pomoč pri prijavi v svoj ${ BRAND_NAME } račun z enotno prijavo (SSO).",
+        "${ n } uporabnikov zahteva vašo pomoč pri prijavi v svoj ${ BRAND_NAME } račun z enotno prijavo (SSO)."
+      ],
       "Access denied": [
         "Dostop zavrnjen"
       ],
@@ -12441,6 +12542,12 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe pomočnik pri pisanju za ${ maxAi } uporabnika",
+        "${ BRAND_NAME } Scribe pomočnik pri pisanju za ${ maxAi } uporabnika",
+        "${ BRAND_NAME } Scribe pomočnik pri pisanju za ${ maxAi } uporabnike",
+        "${ BRAND_NAME } Scribe pomočnik pri pisanju za ${ maxAi } uporabnikov"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } namenski strežnik",
         "${ ipAddresses } namenska strežnika",
@@ -13316,6 +13423,9 @@
       "Account suspended": [
         "Račun je suspendiran"
       ],
+      "Account temporarily locked": [
+        "Račun je začasno zaklenjen"
+      ],
       "Action": [
         "Dejanje"
       ],
@@ -13994,6 +14104,9 @@
       "Restore administrator privileges": [
         "Obnovite skrbniške pravice"
       ],
+      "Reverse charge not supported": [
+        "Shema obrnjene davčne obveznosti"
+      ],
       "Roles and permissions": [
         "Vloge in dovoljenja"
       ],
@@ -14502,6 +14615,12 @@
       ],
       "Confirm all": [
         "Potrdi vse"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Samodejna omogočitev skrbniškega dostopa za ${ n } uporabnika ni bila mogoča, ker so bili medtem posodobljeni njegovi šifrirni ključi:",
+        "Samodejna omogočitev skrbniškega dostopa za ${ n } uporabnika ni bila mogoča, ker so bili medtem posodobljeni njuni šifrirni ključi:",
+        "Samodejna omogočitev skrbniškega dostopa za ${ n } uporabnike ni bila mogoča, ker so bili medtem posodobljeni njihovi šifrirni ključi:",
+        "Samodejna omogočitev skrbniškega dostopa za ${ n } uporabnikov ni bila mogoča, ker so bili medtem posodobljeni njihovi šifrirni ključi:"
       ],
       "Enable manually": [
         "Omogoči ročno"
