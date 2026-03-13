@@ -106,6 +106,7 @@ export enum WorkerMessageType {
     AUTOFILL_SYNC = 'AUTOFILL_SYNC',
 
     AUTOSAVE_REQUEST = 'AUTOSAVE_REQUEST',
+    AUTOSUGGEST_ALIAS = 'AUTOSUGGEST_ALIAS',
     AUTOSUGGEST_PASSWORD = 'AUTOSUGGEST_PASSWORD',
     B2B_EVENT = 'B2B_EVENT',
     CLIENT_INIT = 'CLIENT_INIT',
@@ -206,6 +207,7 @@ export type AutofillSequenceMessage = WithPayload<WorkerMessageType.AUTOFILL_SEQ
 export type AutofillSyncMessage = { type: WorkerMessageType.AUTOFILL_SYNC };
 
 export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosaveRequest>;
+export type AutosuggestAliasMessage = { type: WorkerMessageType.AUTOSUGGEST_ALIAS };
 export type B2BEventMessage = WithPayload<WorkerMessageType.B2B_EVENT, { event: B2BEvent }>;
 
 export type ClientInitMessage = WithPayload<WorkerMessageType.CLIENT_INIT, { tabId: TabId }>;
@@ -302,6 +304,7 @@ export type WorkerMessage =
     | AutofillSequenceMessage
     | AutofillSyncMessage
     | AutoSaveRequestMessage
+    | AutosuggestAliasMessage
     | B2BEventMessage
     | ClientInitMessage
     | ClipboardAutoClearMessage
@@ -394,6 +397,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOFILL_LOGIN]: FormCredentials;
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & LoginItemPreview);
     [WorkerMessageType.AUTOFILL_SEQUENCE]: AutofillResult;
+    [WorkerMessageType.AUTOSUGGEST_ALIAS]: { aliasCreationDisabled: boolean };
     [WorkerMessageType.AUTOSUGGEST_PASSWORD]: PasswordAutosuggestOptions;
     [WorkerMessageType.CLIENT_INIT]: { state: AppState; settings: ProxiedSettings; features: FeatureFlagState };
     [WorkerMessageType.CLIPBOARD_OFFSCREEN_READ]: { content: string };

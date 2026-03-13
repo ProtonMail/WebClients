@@ -1,5 +1,5 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { onContextReady } from 'proton-pass-extension/app/worker/context/inject';
+import { onContextReady, withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
@@ -16,6 +16,16 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 export const createAliasService = () => {
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.AUTOSUGGEST_ALIAS,
+        withContext((ctx) => {
+            const state = ctx.service.store.getState();
+            const orgSettings = selectOrganizationSettings(state);
+            const aliasCreationDisabled = orgSettings?.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
+            return { aliasCreationDisabled };
+        })
+    );
+
     /* when resolving alias options for this message type, set the
      * the `needsUpgrade` accordingly for content-scripts to display
      * the upselling UI when alias limits have been reached */
