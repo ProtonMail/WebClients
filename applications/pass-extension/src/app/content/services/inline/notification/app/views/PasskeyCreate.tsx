@@ -79,6 +79,7 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
     if (!items) return null;
 
     const handleUpdate = async ({ itemId, shareId, name }: Pick<LoginItemPreview, 'itemId' | 'shareId' | 'name'>) => {
+        if (loading) return; // Disabled button should prevent that but to be sure
         await form.setValues({ selectedItem: { itemId, shareId }, step: 'select', name });
         form.handleSubmit();
     };
@@ -99,6 +100,7 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
                                 subTitle={userIdentifier}
                                 icon={{ type: 'icon', url, icon: 'pass-passkey' }}
                                 onClick={() => handleUpdate({ itemId, shareId, name })}
+                                disabled={loading}
                                 action={
                                     items.length > 1 && (
                                         <ButtonLike
