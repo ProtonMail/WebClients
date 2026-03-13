@@ -1752,6 +1752,9 @@
       "Enabling biometrics lock failed": [
         "Збой уключэння аўтаблакіроўкі біяметрыяй"
       ],
+      "Enabling desktop auto-lock": [
+        "Уключэнне аўтаблакіроўкі праграмы для камп'ютара"
+      ],
       "Enabling offline mode...": [
         "Уключэнне рэжыму па-за сеткай..."
       ],
@@ -2363,6 +2366,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Гэтая функцыя пакуль з'яўляецца эксперыментальнай у Linux. Пераканайцеся, што ваша сістэма знаходзіцца ў актуальным стане."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Гэтая функцыя патрабуе, каб праграма для камп'ютара ${ PASS_APP_NAME } была ўсталявана і запушчана падчас наладкі."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Элемент у цяперашні час ні з кім не абагулены. Запрасіце ўдзельнікаў, каб абагуліць яго з іншымі."
