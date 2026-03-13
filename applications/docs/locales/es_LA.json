@@ -2941,7 +2941,7 @@
         "Nombre de usuario incorrecto"
       ],
       "Invalid coupon": [
-        "Cupón invalido"
+        "Cupón inválido"
       ],
       "Invalid email address": [
         "Dirección de correo inválida"
@@ -3044,6 +3044,9 @@
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El esquema de inversión del sujeto pasivo no es compatible con este plan"
+      ],
       "Search failed": [
         "Error en la búsqueda"
       ],
@@ -3079,9 +3082,6 @@
       ],
       "status page": [
         "página de estado"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "La exoneración de impuestos no es compatible con este plan"
       ],
       "The address might be misspelled": [
         "La dirección podría estar mal escrita"
@@ -3144,7 +3144,7 @@
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
       "This field is invalid": [
-        "Este campo no es válido"
+        "Este campo es válido"
       ],
       "This field is required": [
         "Este campo es obligatorio"
@@ -8193,6 +8193,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Aproveche la oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTA DE PRIMAVERA 2026"
       ]
     },
     "q1campaign: Info": {
@@ -8978,16 +8981,6 @@
       ],
       "To edit this document, create a copy that you can modify.": [
         "Para editar este documento, cree una copia que pueda modificar."
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "OFERTA DE PRIMAVERA 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "OFERTA DE PRIMAVERA"
       ]
     },
     "sso": {
