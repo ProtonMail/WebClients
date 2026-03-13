@@ -2,13 +2,21 @@ import { act } from 'react';
 
 import { renderHook } from '@testing-library/react';
 
+import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { type VatFormFields, getVatFormErrors, useVatFormValidation } from './useVatFormValidation';
+import { type VatFormFields, checkVatNumber, getVatFormErrors, useVatFormValidation } from './useVatFormValidation';
+
+jest.mock('@proton/shared/lib/helpers/sentry', () => ({
+    ...jest.requireActual('@proton/shared/lib/helpers/sentry'),
+    isProduction: jest.fn().mockReturnValue(true),
+}));
 
 jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: jest.fn().mockReturnValue(true),
 }));
+
+const mockIsProduction = isProduction as jest.MockedFunction<typeof isProduction>;
 
 const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
 
@@ -434,6 +442,87 @@ describe('useVatFormValidation', () => {
             const { result } = renderHook(() => useVatFormValidation(withVat({ Company: 'Acme' })));
 
             expect(result.current.isValid).toBe(true);
+        });
+    });
+});
+
+describe('checkVatNumber', () => {
+    beforeEach(() => {
+        mockIsProduction.mockReturnValue(true);
+    });
+
+    describe('valid VAT numbers', () => {
+        it.each([
+            ['DE', 'DE111111125'],
+            ['DE', 'DE813495425'],
+            ['FR', 'FR00300076965'],
+            ['FR', 'FR82494628696'],
+            ['ES', 'ESA0011012B'],
+            ['ES', 'ESB61979175'],
+            ['GB', 'GB000472631'],
+            ['GB', 'GB834549605'],
+            ['CH', 'CHE100416306MWST'],
+            ['CH', 'CHE432825998TVA'],
+            ['AU', 'AU51824753556'],
+            ['AU', 'AU53004085616'],
+            ['SG', 'SG200512345G'],
+            ['SG', 'SGT12SS3456L'],
+        ])('should accept valid VAT number for %s: %s', (countryCode, vatNumber) => {
+            expect(checkVatNumber(vatNumber, countryCode)).toBe(true);
+        });
+    });
+
+    describe('invalid VAT numbers', () => {
+        it.each([
+            ['DE', 'DE111111126'],
+            ['DE', 'DE000000020'],
+            ['FR', 'FR00300076967'],
+            ['FR', 'FR90000000027'],
+            ['ES', 'ESA0011012A'],
+            ['ES', 'ES00000001A'],
+            ['GB', 'GB999000103'],
+            ['GB', 'GB010123456'],
+            ['CH', 'CHE-432.825.99-MWST'],
+            ['AU', 'AU51824753557'],
+            ['AU', 'AU1234567890'],
+            ['SG', 'SG12345678'],
+            ['SG', 'SGX12SS3456L'],
+        ])('should reject invalid VAT number for %s: %s', (countryCode, vatNumber) => {
+            expect(checkVatNumber(vatNumber, countryCode)).toBe(false);
+        });
+    });
+
+    describe('countries not in countriesWithVatId', () => {
+        it.each(['TH', 'TR', 'JP', 'US', 'CN', 'BR', 'RU'])(
+            'should return true for any VAT number when country is %s',
+            (countryCode) => {
+                expect(checkVatNumber('ANYTHING123', countryCode)).toBe(true);
+                expect(checkVatNumber('12345', countryCode)).toBe(true);
+            }
+        );
+    });
+
+    describe('countries in countriesWithVatId but not covered by vat-validation library', () => {
+        it.each(['LI', 'IS'])(
+            'should return true for any VAT number when country is %s (not in vat-validation)',
+            (countryCode) => {
+                expect(checkVatNumber('ANYTHING123', countryCode)).toBe(true);
+                expect(checkVatNumber('12345', countryCode)).toBe(true);
+            }
+        );
+    });
+
+    describe('dev bypass', () => {
+        beforeEach(() => {
+            mockIsProduction.mockReturnValue(false);
+        });
+
+        it('should accept IT01231231234 in non-production', () => {
+            expect(checkVatNumber('IT01231231234', 'IT')).toBe(true);
+        });
+
+        it('should accept BE0123123123 in non-production', () => {
+            expect(checkVatNumber('BE0123123123', 'BE')).toBe(true);
         });
     });
 });

@@ -1,0 +1,41 @@
+export const countriesWithVatNumberOnSignup = new Set([
+    // EU member states (27)
+    'AT',
+    'BE',
+    'BG',
+    'HR',
+    'CY',
+    'CZ',
+    'DK',
+    'EE',
+    'FI',
+    'FR',
+    'DE',
+    'GR',
+    'HU',
+    'IE',
+    'IT',
+    'LV',
+    'LT',
+    'LU',
+    'MT',
+    'NL',
+    'PL',
+    'PT',
+    'RO',
+    'SK',
+    'SI',
+    'ES',
+    'SE',
+
+    // Additional EFTA / European countries
+    'CH',
+    'GB',
+    'NO',
+    'LI',
+    'IS',
+
+    // Countries for Batch 1 tax exclusive
+    'AU',
+    'SG',
+]);
