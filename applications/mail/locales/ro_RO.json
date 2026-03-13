@@ -492,6 +492,9 @@
       "Edit address": [
         "Editare adresă"
       ],
+      "Edit billing address": [
+        "Editare adresă de facturare"
+      ],
       "Edit draft": [
         "Editare ciornă"
       ],
@@ -4938,6 +4941,9 @@
       "Request timed out": [
         "Solicitarea a expirat"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Schema de taxare inversă nu este acceptată pentru acest plan."
+      ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Trimiterea atașamentelor este restricționată până când atingeți limitele planului sau schimbați tipul de abonament."
       ],
@@ -4985,9 +4991,6 @@
       ],
       "Tab closed": [
         "Filă închisă."
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Exonerarea fiscală nu este acceptată pentru acest plan."
       ],
       "Text is too long to refine": [
         "Textul este prea lung pentru a fi cizelat."
@@ -7683,7 +7686,7 @@
         "Prioritate scăzută"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail."
+        "Setare ${ MAIL_APP_NAME } ca aplicație implicită de e-mail."
       ],
       "Manage your folders": [
         "Gestionare foldere"
@@ -8959,6 +8962,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Contul este configurat în prezent pentru a aplica schema de taxare inversă. Aceasta nu este acceptată pentru planul selectat. Pentru a continua, fie eliminați numărul de TVA din adresa de facturare, fie selectați un alt plan."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Navigatorul web actual nu acceptă asistentul de scriere. Încercați să îl rulați pe servere."
@@ -13021,6 +13027,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Valorificați oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTĂ DE PRIMĂVERII 2026"
       ]
     },
     "q1campaign: Info": {
@@ -13102,7 +13111,7 @@
         "pentru 12 luni"
       ],
       "SPRING SALE": [
-        "REDUCERI DE PRIMĂVARĂ"
+        "OFERTĂ DE PRIMĂVERII"
       ]
     },
     "Received email icon": {
@@ -13985,16 +13994,6 @@
       ],
       "Your pm.me email is active": [
         "Adresa pm.me este activată"
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "REDUCERE DE PRIMĂVARĂ 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "REDUCERE DE PRIMĂVARĂ"
       ]
     },
     "sso": {
@@ -15883,6 +15882,9 @@
       ],
       "Request new code": [
         "Solicitare cod nou"
+      ],
+      "Reverse charge not supported": [
+        "Taxa inversă nu este suportată"
       ],
       "Same inbox, shorter email address": [
         "Același cont, adresă de e-mail mai scurtă"
