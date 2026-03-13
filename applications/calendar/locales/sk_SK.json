@@ -1033,6 +1033,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Edit billing address": [
+        "Upraviť fakturačnú adresu"
       ]
     },
     "action": {
@@ -4139,6 +4142,9 @@
       ],
       "ZIP code is required": [
         "PSČ je povinné"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Systém prenesenia daňovej povinnosti nie je pre tento plán podporovaný."
       ]
     },
     "error": {
@@ -6727,6 +6733,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosiahli ste limit rezervačných slotov (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Váš účet je momentálne nastavený tak, aby sa uplatňoval režim prenesenia daňovej povinnosti. Tento režim nie je podporovaný pre vybraný plán. Ak chcete pokračovať, odstráňte DIČ z fakturačnej adresy alebo vyberte iný plán."
       ]
     },
     "info": {
@@ -12687,6 +12696,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Reverse charge not supported": [
+        "Obrátené zdanenie nie je podporované"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

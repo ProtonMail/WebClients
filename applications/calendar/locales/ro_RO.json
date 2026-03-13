@@ -1029,6 +1029,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Edit billing address": [
+        "Editare adresă de facturare"
       ]
     },
     "action": {
@@ -4100,6 +4103,9 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Schema de taxare inversă nu este acceptată pentru acest plan."
       ]
     },
     "error": {
@@ -6637,6 +6643,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ați atins limita locurilor de rezervare (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Contul este configurat în prezent pentru a aplica schema de taxare inversă. Aceasta nu este acceptată pentru planul selectat. Pentru a continua, fie eliminați numărul de TVA din adresa de facturare, fie selectați un alt plan."
       ]
     },
     "info": {
@@ -10088,6 +10097,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Valorificați oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTĂ DE PRIMĂVERII 2026"
       ]
     },
     "q1campaign: Info": {
@@ -10169,7 +10181,7 @@
         "pentru 12 luni"
       ],
       "SPRING SALE": [
-        "REDUCERI DE PRIMĂVARĂ"
+        "OFERTĂ DE PRIMĂVERII"
       ]
     },
     "Referral": {
@@ -12552,6 +12564,9 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Reverse charge not supported": [
+        "Taxa inversă nu este suportată"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
