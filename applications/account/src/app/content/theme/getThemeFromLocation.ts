@@ -16,9 +16,15 @@ export const getThemeFromLocation = (
     const hasVisionary = searchParams.get('plan')?.toLowerCase() === PLANS.VISIONARY;
     const hasDarkTheme = searchParams.get('theme') === 'dark';
 
+    if (location.pathname === SSO_PATHS.PASS_SIGNUP && searchParams.get('mode') === 'ctx') {
+        return {
+            DarkTheme: ThemeTypes.Carbon,
+            Mode: ThemeModeSetting.Dark,
+        };
+    }
+
     if (
         (location.pathname.includes('signup') && (hasBFCoupon || hasVisionary || hasDarkTheme)) ||
-        (location.pathname === SSO_PATHS.PASS_SIGNUP && searchParams.get('mode') === 'ctx') ||
         location.pathname === SSO_PATHS.PASS_SIGNUP_B2B ||
         location.pathname === SSO_PATHS.MAIL_SIGNUP_B2B ||
         location.pathname === SSO_PATHS.DRIVE_SIGNUP_B2B ||
@@ -26,7 +32,7 @@ export const getThemeFromLocation = (
         location.pathname === SSO_PATHS.BUSINESS_SIGNUP
     ) {
         return {
-            DarkTheme: ThemeTypes.Carbon,
+            DarkTheme: ThemeTypes.Storefront,
             Mode: ThemeModeSetting.Dark,
         };
     }
