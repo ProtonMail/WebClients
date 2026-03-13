@@ -90,6 +90,12 @@
       "Activate recovery": [
         "เปิดใช้งานการกู้คืน"
       ],
+      "Activate reserved address": [
+        "เปิดใช้งานที่อยู่ที่จองไว้"
+      ],
+      "Activate this address": [
+        "เปิดใช้งานที่อยู่นี้"
+      ],
       "Add": [
         "เพิ่ม"
       ],
@@ -540,6 +546,9 @@
       "Don't show again": [
         "ไม่ต้องแสดงให้เห็นอีก"
       ],
+      "Donate": [
+        "บริจาค"
+      ],
       "Done": [
         "เสร็จสมบูรณ์"
       ],
@@ -809,6 +818,9 @@
       ],
       "Get verification code": [
         "ใช้รหัสยืนยันตัวตน"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "รับที่อยู่ ${ MAIL_APP_NAME }"
       ],
       "Go back": [
         "ย้อนกลับ"
@@ -1338,6 +1350,9 @@
       "Send reminder": [
         "ส่งการแจ้งเตือน"
       ],
+      "Send verification code": [
+        "ส่งรหัสยืนยัน"
+      ],
       "Set as album cover": [
         "ตั้งเป็นหน้าปกอัลบั้ม"
       ],
@@ -1505,6 +1520,9 @@
       ],
       "Try for free": [
         "ทดลองใช้ฟรี"
+      ],
+      "Try payment again": [
+        "ลองชำระเงินอีกครั้ง"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "ลองบันทึกอีกครั้ง การบันทึกล้มเหลวเนื่องจาก: ${ saveError }"
@@ -5919,6 +5937,9 @@
       "Account does not exist": [
         "ไม่มีบัญชีนี้"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "การเปิดใช้งานล้มเหลว รายละเอียดอาจไม่ถูกต้อง หรืออีเมลเปิดใช้งานอยู่แล้ว โปรดตรวจสอบข้อมูลที่ป้อนหรือเข้าสู่ระบบ"
+      ],
       "Add at least one action": [
         "เพิ่มการดำเนินการอย่างน้อยหนึ่งรายการ"
       ],
@@ -6035,6 +6056,9 @@
       ],
       "Expired": [
         "หมดอายุแล้ว"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "เปิดใช้งานที่อยู่ไม่สำเร็จ โปรดลองอีกครั้ง"
       ],
       "Failed to add group member": [
         "ไม่สามารถเพิ่มสมาชิกกลุ่ม"
@@ -7574,6 +7598,16 @@
         "ฉันเข้าใจว่าฉันจะไม่สามารถเข้าสู่ระบบแอปมือถือ ${ BRAND_NAME } เวอร์ชันเก่าได้อีกต่อไป"
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "ป้อนที่อยู่อีเมล"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "บัตรกำนัลจะถูกส่งมาที่นี่"
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "แอปเว็บ"
@@ -7873,6 +7907,32 @@
       ],
       "Subscribed": [
         "สมัครรับข้อมูลแล้ว"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "ก้าวเล็กๆ ในวันนี้ เพื่อความปลอดภัยทางดิจิทัลของเด็กในวันหน้า"
+      ],
+      "Activate your reserved email address": [
+        "เปิดใช้งานที่อยู่อีเมลที่จองไว้"
+      ],
+      "Address reservation voucher": [
+        "บัตรกำนัลการจองที่อยู่"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "บริจาคให้มูลนิธิ ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "ป้อนรหัสยืนยัน"
+      ],
+      "Recover activation voucher": [
+        "กู้คืนบัตรกำนัลการเปิดใช้งาน"
+      ],
+      "Reserve child's email address": [
+        "จองที่อยู่อีเมลของเด็ก"
+      ],
+      "We emailed you the voucher": [
+        "ส่งบัตรกำนัลทางอีเมลแล้ว"
       ]
     },
     "Headline": {
@@ -9336,11 +9396,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "โปรดใส่ชื่อผู้ใช้และรหัสผ่านของบัญชีที่คุณต้องการนำข้อมูลเข้า"
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "ป้อนที่อยู่อีเมลที่ใช้จอง ${ reservedEmail }"
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "ป้อน Entity ID ขององค์กร **eduGAIN** สำหรับ **${ domain.DomainName }**"
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "โปรดใส่รหัสผ่านขององค์กรเพื่อตั้งค่าการให้สิทธิ์พิเศษแก่ผู้ดูแลระบบแบบเดิม ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "ป้อนที่อยู่อีเมลที่จองไว้และที่อยู่อีเมลที่ใช้ระหว่างการจอง"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "โปรดป้อนโค๊ดยืนยันตัวตนที่ได้ส่งไปให้คุณที่ ${ destinationText }"
@@ -9492,6 +9558,9 @@
       "Groups": [
         "กลุ่ม"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "ช่วยเหลือครอบครัวอื่นๆ ในการให้เด็กๆ เริ่มต้นใช้งานออนไลน์อย่างปลอดภัย แชร์ความสำเร็จนี้และบอกต่อให้ผู้อื่นทราบ"
+      ],
       "here": [
         "ที่นี่"
       ],
@@ -9500,6 +9569,9 @@
       ],
       "High Priority": [
         "ความสำคัญสูง"
+      ],
+      "How it works": [
+        "วิธีการทำงาน"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "คีย์สาธารณะของผู้ให้บริการข้อมูลระบุตัวตนเพื่อลงนามคำยืนยันตัวตน น่าจะมีที่ให้ดาวน์โหลดหรือคัดลอกแฮชใบรับรองจากผู้ให้บริการข้อมูลระบุตัวตน เพียงวางแฮชใบรับรองลงในช่องข้อมูลพื้นที่ข้อความ"
@@ -9518,6 +9590,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "หากเปิดใช้งานแป้นพิมพ์ลัด สามารถใช้คีย์ต่อไปนี้เพื่อดำเนินการด่วนหรือข้ามไปยังมุมมองต่างๆ ${ metaKey } + K เปิดใช้งานอยู่เสมอ"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "หากอีเมลที่ป้อนถูกใช้เพื่อจองที่อยู่อีเมลของเด็ก จะมีการส่งบัตรกำนัลการเปิดใช้งานให้อีกครั้ง"
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "หากโซนเวลาของระบบไม่ตรงกับการตั้งค่าโซนเวลาปัจจุบัน ระบบจะขอให้คุณอัปเดต (สูงสุดวันละครั้ง)"
@@ -9746,6 +9821,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "เพียงยืนยันการเลือก แล้วเราจะจัดการส่วนที่เหลือให้"
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "เก็บรักษาบัตรกำนัลให้ปลอดภัยจนกว่าจะจำเป็นต้องใช้ ตัวอย่างเช่น ใน ${ DRIVE_APP_NAME }"
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "รักษาข้อมูลให้ปลอดภัยและเป็นส่วนตัวยิ่งขึ้นด้วยคู่มือและเคล็ดลับเหล่านี้"
@@ -10233,6 +10311,9 @@
       "Receive notifications for ${ categoryLabel }": [
         "รับการแจ้งเตือนสำหรับ ${ categoryLabel }"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "รับบัตรกำนัลการจองทางอีเมล สามารถใช้เพื่อเปิดใช้งานที่อยู่ได้ภายใน 15 ปีข้างหน้า ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "เซิร์ฟเวอร์ที่ใช้ล่าสุด:"
       ],
@@ -10461,6 +10542,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "เซิร์ฟเวอร์บางแห่งอาจไม่ปรากฏในรายการด้านบน ค้นหาด้วยชื่อเซิร์ฟเวอร์ (เช่น AT#62) เพื่อหาเซิร์ฟเวอร์"
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "เกิดข้อผิดพลาดบางอย่าง โปรดลองอีกครั้งหรือติดต่อฝ่ายสนับสนุนลูกค้า"
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "ระบุโดเมนที่ได้รับอนุญาตให้ยืนยันตัวตนด้วย SAML SSO"
       ],
@@ -10478,6 +10562,9 @@
       ],
       "Step ${ step }": [
         "ขั้นตอนที่ ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "ขั้นตอนที่ ${ step }/${ totalSteps }"
       ],
       "Storage allocated to other users in this organisation": [
         "พื้นที่จัดเก็บที่จัดสรรให้กับผู้ใช้อื่นในองค์กรนี้"
@@ -10803,6 +10890,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "เพื่อติดตามการพัฒนาล่าสุดของผลิตภัณฑ์ ${ BRAND_NAME } คุณสามารถสมัครรับอีเมลต่างๆ ของเราและ ${ blogLink } ได้เป็นครั้งคราว"
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "เพื่อป้องกันการละเมิดหรือฉ้อโกง ขอความกรุณาบริจาคขั้นต่ำ ${ minimumDonation } การดำเนินการนี้จะช่วยสนับสนุนการทำงานของ ${ protonFoundationLink } ในการปกป้องความเป็นส่วนตัวทางดิจิทัลทั่วโลก และช่วยปกป้องคนรุ่นต่อไป"
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "หากต้องการดำเนินการต่อ ให้เลือกวิธีการกู้คืนบัญชีเพื่อให้เราสามารถยืนยันคำขอได้"
       ],
@@ -11016,6 +11106,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "ขอแนะนำให้ใช้แอปพลิเคชัน ${ VPN_APP_NAME } อย่างเป็นทางการเมื่อทำได้"
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "ไม่สามารถทำธุรกรรมให้เสร็จสมบูรณ์ได้ โปรดลองอีกครั้ง"
+      ],
       "We couldn’t process your payment.": [
         "ไม่สามารถดำเนินการชำระเงินได้"
       ],
@@ -11120,6 +11213,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "เมื่อลบเซิร์ฟเวอร์ออกจากเกตเวย์ เซิร์ฟเวอร์จะเข้าสู่ช่วงปิดใช้งาน 10 วัน เซิร์ฟเวอร์นี้สามารถเพิ่มไปยังเกตเวย์ใหม่ได้ แต่ไม่สามารถเปลี่ยนประเทศได้"
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "เมื่อพร้อมที่จะเปิดใช้งานที่อยู่ ให้สแกนคิวอาร์โค้ดหรือใช้ลิงก์ในบัตรกำนัล"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "เมื่อมีการสมัครต่อบัญชี เราจะชำระค่าบริการจากเครดิตของคุณที่ยังมีอยู่ก่อนผ่านการชำระเงินด้านบน"
@@ -11469,6 +11565,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "การทดลองใช้ของคุณจะสิ้นสุดใน ${ timeRemaining }"
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "บัตรกำนัลสำหรับที่อยู่อีเมล ${ BRAND_NAME } ที่จองไว้: ${ reservedEmail }"
+      ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "คุณจะเสียสิทธิ์การเข้าถึงคุณสมบัติของ ${ boldPlanTitle } ด้วย:"
       ],
@@ -11508,6 +11607,11 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "ช่วยเขียน ตอบกลับ และพิสูจน์อักษรอีเมล หากปิดใช้งาน จะมีเพียงผู้ดูแลระบบเท่านั้นที่เข้าถึงได้ จัดการสำหรับผู้ใช้แต่ละรายใน ${ userAndAddresses } หรือ ${ addMoreSeats }"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "ป้อนรหัสยืนยันที่ถูกส่งไปยัง ${ parentEmail }"
       ]
     },
     "Info - folder colouring feature": {
@@ -12119,6 +12223,9 @@
       "Actions": [
         "การดำเนินการ"
       ],
+      "Activation code": [
+        "รหัสการเปิดใช้งาน"
+      ],
       "Activity": [
         "กิจกรรม"
       ],
@@ -12350,6 +12457,9 @@
       "Choose a name for the generated certificate file": [
         "เลือกชื่อสำหรับไฟล์ใบรับรองที่สร้างขึ้น"
       ],
+      "Choose an address to reserve for your child": [
+        "เลือกที่อยู่ที่จะจองสำหรับเด็ก"
+      ],
       "City": [
         "เมือง"
       ],
@@ -12548,6 +12658,12 @@
       "Don't show this again": [
         "ไม่ต้องแสดงสิ่งนี้อีก"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "บริจาค $1 หรือมากกว่าให้มูลนิธิ ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "จำนวนเงินบริจาค"
+      ],
       "Duration": [
         "ระยะเวลา"
       ],
@@ -12604,6 +12720,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "ป้อนรหัสสำหรับลายนิ้วมือที่เป็นคีย์: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "ป้อนที่อยู่อีเมล"
       ],
       "Enter your password": [
         "ป้อนรหัสผ่าน"
@@ -13109,6 +13228,12 @@
       "Require 2FA for everyone": [
         "กำหนดให้ใช้ 2FA สำหรับทุกคน"
       ],
+      "Reserved address": [
+        "ที่อยู่ที่จองไว้"
+      ],
+      "Reserved email address": [
+        "ที่อยู่อีเมลที่จองไว้"
+      ],
       "Reveal password": [
         "เปิดเผยรหัสผ่าน"
       ],
@@ -13150,6 +13275,9 @@
       ],
       "Server name": [
         "ชื่อเซิร์ฟเวอร์"
+      ],
+      "Set password": [
+        "ตั้งค่ารหัสผ่าน"
       ],
       "Share your referral link": [
         "แชร์ลิงก์แนะนำของคุณ"
@@ -13280,6 +13408,9 @@
       "Tips and insights": [
         "เคล็ดลับและข้อมูลเชิงลึก"
       ],
+      "To activate, scan the QR-code or go to:": [
+        "ในการเปิดใช้งาน ให้สแกน QR-code หรือไปที่:"
+      ],
       "To help us improve, please explain why you are leaving.": [
         "เพื่อช่วยเราปรับปรุง โปรดอธิบายเหตุผลที่คุณกำลังจะไป"
       ],
@@ -13403,14 +13534,23 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "ใช่ ฉันต้องการลบบัญชีนี้และข้อมูลที่เกี่ยวข้องทั้งหมดแบบถาวร"
       ],
+      "Your activation code:": [
+        "รหัสการเปิดใช้งาน:"
+      ],
       "Your calendar URL": [
         "URL ปฏิทิน"
+      ],
+      "Your email address": [
+        "ที่อยู่อีเมล"
       ],
       "Your password (admin)": [
         "รหัสผ่านของคุณ (สำหรับผู้บริหารบัญชี หรือ admin)"
       ],
       "Your password (trusted contact)": [
         "รหัสผ่านของคุณ (ผู้ติดต่อที่เชื่อถือได้)"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "บัตรกำนัลสำหรับที่อยู่อีเมล ${ BRAND_NAME } ที่จองไว้:"
       ],
       "ZIP code": [
         "รหัสไปรษณีย์"
@@ -13582,6 +13722,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "มูลนิธิ ${ BRAND_NAME }"
+      ],
       "Activity log": [
         "บันทึกกิจกรรม"
       ],
@@ -13599,6 +13742,9 @@
       ],
       "Calendars": [
         "ปฏิทิน"
+      ],
+      "Can't find your code?": [
+        "ไม่พบรหัสใช่ไหม?"
       ],
       "clearing your browser cache": [
         "กำลังล้างแคชในเบราว์เซอร์ของคุณ"
@@ -13796,6 +13942,20 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "ผู้ใช้และที่อยู่"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "อีเมล"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -17177,6 +17337,9 @@
       "Address": [
         "ที่อยู่"
       ],
+      "Amount": [
+        "จำนวนเงิน"
+      ],
       "Anderson": [
         "Anderson"
       ],
@@ -18083,14 +18246,8 @@
       "Disable recovery by email": [
         "ปิดใช้งานการกู้คืนทางอีเมล"
       ],
-      "Disable recovery by email ": [
-        "ปิดใช้งานการกู้คืนทางอีเมล "
-      ],
       "Disable recovery by phone": [
         "ปิดใช้งานการกู้คืนทางโทรศัพท์"
-      ],
-      "Disable recovery by phone ": [
-        "ปิดใช้งานการกู้คืนทางโทรศัพท์ "
       ],
       "Download ${ size }": [
         "ดาวน์โหลด ${ size }"
@@ -20755,6 +20912,9 @@
       "Verification code copied to clipboard": [
         "คัดลอกรหัสยืนยันไปยังคลิปบอร์ดแล้ว"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "ส่งรหัสยืนยันไปยัง ${ parentEmail } แล้ว"
+      ],
       "Verification successful": [
         "ยืนยันสำเร็จ"
       ],
@@ -20778,6 +20938,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "คุณจะได้รับชื่อผู้ใช้ทาง SMS ภายในหนึ่งนาที หากป้อนหมายเลขโทรศัพท์กู้คืนที่ถูกต้อง"
+      ],
+      "Your address has been activated": [
+        "เปิดใช้งานที่อยู่แล้ว"
       ]
     },
     "Success message": {
@@ -22124,6 +22287,12 @@
       ],
       "Privacy and data collection": [
         "ความเป็นส่วนตัวและการเก็บรวบรวมข้อมูล"
+      ],
+      "Problem processing your payment": [
+        "มีปัญหาในการประมวลผลการชำระเงิน"
+      ],
+      "Problem processing your request": [
+        "มีปัญหาในการประมวลผลคำขอ"
       ],
       "Processing...": [
         "กำลังประมวลผล..."

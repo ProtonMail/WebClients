@@ -3768,7 +3768,7 @@
         "Факс"
       ],
       "Main": [
-        "Галоўная"
+        "Галоўны"
       ],
       "Mobile": [
         "Мабільны"
@@ -6957,6 +6957,9 @@
       "Request timed out": [
         "Перавышаны тэрмін чакання запыту"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Схема адваротнага налічэння падатку не падтрымліваецца для гэтага тарыфнага плана"
+      ],
       "Server not found": [
         "Сервер не знойдзены"
       ],
@@ -6998,9 +7001,6 @@
       ],
       "Tab closed": [
         "Укладка закрыта"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Вызваленне ад падаткаў не падтрымліваецца для гэтага тарыфнага плана"
       ],
       "The address might be misspelled": [
         "Магчыма, што адрас няправільны"
@@ -12576,6 +12576,9 @@
       "Your account has been successfully updated.": [
         "Ваш уліковы запіс паспяхова абноўлены."
       ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб ужываць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
+      ],
       "Your account was successfully updated with this promotion": [
         "Ваш уліковы запіс паспяхова абноўлены з дапамогай гэтай рэкламнай акцыі"
       ],
@@ -14016,6 +14019,9 @@
       ],
       "Import interval": [
         "Інтэрвал імпартавання"
+      ],
+      "Import recent mails": [
+        "Імпартаваць нядаўнія лісты"
       ],
       "Import to email address": [
         "Імпартаваць у адрас электроннай пошты"
@@ -19784,14 +19790,8 @@
       "Disable recovery by email": [
         "Адключыць аднаўленне па электроннай пошце"
       ],
-      "Disable recovery by email ": [
-        "Адключыце аднаўленне па электроннай пошце "
-      ],
       "Disable recovery by phone": [
         "Адключыць аднаўленне па нумары тэлефона"
-      ],
-      "Disable recovery by phone ": [
-        "Адключыць аднаўленне па нумары тэлефона "
       ],
       "Download ${ size }": [
         "Спампаваць ${ size }"
@@ -21499,16 +21499,6 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Атрымлівайце крэдыты, калі запрошаная асоба падпішацца на тарыфны план ${ BRAND_NAME }."
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "ВЯСЕННІ РАСПРОДАЖ 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "ВЯСЕННІ РАСПРОДАЖ"
       ]
     },
     "sso": {
@@ -24322,6 +24312,9 @@
       ],
       "Reused passwords": [
         "Паўторна выкарыстаныя паролі"
+      ],
+      "Reverse charge not supported": [
+        "Адваротнае налічэнне падатку не падтрымліваецца"
       ],
       "Revoke certificate?": [
         "Адклікаць сертыфікат?"
