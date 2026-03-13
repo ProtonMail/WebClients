@@ -1,4 +1,6 @@
 .chat-item {
+	overflow: visible;
+
 	.room-name {
 		color: var(--interaction-norm) !important;
 	}
@@ -10,5 +12,29 @@
 		display: -webkit-box;
 		/* stylelint-disable-next-line */
 		-webkit-box-orient: vertical;
+	}
+
+	&.chat-item-message-hover {
+		border-radius: var(--border-radius-md);
+		background: var(--interaction-default-hover);
+	}
+
+	.chat-item-quick-reactions {
+		inset-block-end: 100%;
+		inset-inline-end: 0;
+		z-index: 1;
+	}
+
+	.chat-item-quick-reaction-btn {
+		inline-size: 2.25rem;
+		block-size: 2.25rem;
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		border-radius: 999px;
+
+		&:hover {
+			background: rgb(255 255 255 / 0.2);
+		}
 	}
 }

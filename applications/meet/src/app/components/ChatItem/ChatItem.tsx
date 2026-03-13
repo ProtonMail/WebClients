@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
@@ -10,10 +12,14 @@ import {
     type ParticipantEventRecord,
 } from '@proton/meet/types/types';
 
+import { useChatMessageReaction } from '../../hooks/bridges/useChatMessageReaction';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
 import { ChatMessageContent } from '../ChatMessageContent';
+import { ChatMessageReactions } from './ChatMessageReactions';
 
 import './ChatItem.scss';
+
+const QUICK_REACTIONS = ['👍', '❤️', '😂', '😮', '😢', '👎'];
 
 interface ChatItemProps {
     roomName?: string;
@@ -46,8 +52,13 @@ export const ChatItem = ({
     const { type, identity, timestamp } = item;
 
     const participantNameMap = useMeetSelector(selectParticipantNameMap);
+    const sendReaction = useChatMessageReaction();
+
+    const [isHovered, setIsHovered] = useState(false);
 
     const participantName = participantNameMap[identity];
+
+    const showReactionControls = isMeetChatMessage(item) && !ellipsisOverflow;
 
     const roomNameLabel = (
         <span key="room-name" className="ml-1 room-name">
@@ -57,12 +68,15 @@ export const ChatItem = ({
 
     return (
         <div
-            key={`${type}-${name}-${timestamp}`}
+            key={`${type}-${identity}-${timestamp}`}
             className={clsx(
-                'chat-item flex gap-2 height-custom flex-nowrap shrink-0 mr-2',
-                (shouldGrow || ellipsisOverflow) && 'flex-1'
+                'chat-item flex gap-2 height-custom flex-nowrap shrink-0 mr-2 py-2 px-1',
+                (shouldGrow || ellipsisOverflow) && 'flex-1',
+                isHovered && 'chat-item-message-hover'
             )}
             style={{ '--height-custom': 'fit-content' }}
+            onMouseEnter={() => showReactionControls && setIsHovered(true)}
+            onMouseLeave={() => showReactionControls && setIsHovered(false)}
         >
             <div className="flex flex-nowrap items-start shrink-0">
                 <div
@@ -77,7 +91,7 @@ export const ChatItem = ({
                 </div>
             </div>
 
-            <div className="flex flex-column flex-nowrap justify-start">
+            <div className="flex flex-column flex-nowrap justify-start flex-1 min-w-0">
                 <div className="flex items-start text-semibold flex-nowrap">
                     <span className="text-ellipsis" title={participantName}>
                         {participantName}
@@ -93,13 +107,41 @@ export const ChatItem = ({
                     )}
                 </div>
                 {isMeetChatMessage(item) && (
-                    <div
-                        className={clsx(
-                            'color-norm text-semibold chat-message text-break',
-                            ellipsisOverflow && 'text-ellipsis-four-lines'
+                    <div className="relative">
+                        {showReactionControls && isHovered && (
+                            <div className="chat-item-quick-reactions flex gap-1 p-1 rounded-lg border border-weak bg-norm shadow-norm absolute">
+                                {QUICK_REACTIONS.map((emoji) => (
+                                    <button
+                                        key={emoji}
+                                        type="button"
+                                        className="chat-item-quick-reaction-btn text-xl rounded-full flex items-center justify-center"
+                                        aria-label={c('Action').t`React with ${emoji}`}
+                                        onClick={() => {
+                                            void sendReaction(item.id, emoji);
+                                            setIsHovered(false);
+                                        }}
+                                    >
+                                        {emoji}
+                                    </button>
+                                ))}
+                            </div>
                         )}
-                    >
-                        <ChatMessageContent message={item.message} />
+                        <div
+                            className={clsx(
+                                'color-norm text-semibold chat-message text-break',
+                                ellipsisOverflow && 'text-ellipsis-four-lines'
+                            )}
+                        >
+                            <ChatMessageContent message={item.message} />
+                        </div>
+                        {showReactionControls && (
+                            <ChatMessageReactions
+                                messageId={item.id}
+                                onReact={(emoji) => {
+                                    void sendReaction(item.id, emoji);
+                                }}
+                            />
+                        )}
                     </div>
                 )}
                 {isParticipantEventRecord(item) && (
