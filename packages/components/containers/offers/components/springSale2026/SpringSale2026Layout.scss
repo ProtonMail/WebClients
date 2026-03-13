@@ -11,6 +11,21 @@ im.$media-expressions: $media-expressions;
 	letter-spacing: -3%;
 }
 
+html:is(
+		[lang^='de'],
+		[lang^='it'],
+		[lang^='cs'],
+		[lang^='nl'],
+		[lang^='ja'],
+		[lang^='ko'],
+		[lang^='pl'],
+		[lang^='ru'],
+		[lang^='tr']
+	)
+	.springSaleHeader {
+	font-size: 3rem;
+}
+
 .springSaleButterfly {
 	block-size: 6rem;
 	transform: scaleX(-1);
