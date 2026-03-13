@@ -33,7 +33,7 @@ const isValidAliasOptions = (options: AliasState['aliasOptions']): options is Al
 
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
-export const AutosuggestEmail: FC<Props> = ({ origin, prefix }) => {
+export const AutosuggestEmail: FC<Props> = ({ origin, prefix, aliasCreationDisabled }) => {
     const controller = useIFrameAppController();
     const { onTelemetry } = usePassCore();
 
@@ -42,7 +42,6 @@ export const AutosuggestEmail: FC<Props> = ({ origin, prefix }) => {
     const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
     const [aliasOptions, setAliasOptions] = useMountedState<MaybeNull<AliasState['aliasOptions']>>(null);
     const [needsUpgrade, setNeedsUpgrade] = useMountedState<boolean>(false);
-    const [aliasCreationDisabled, setAliasCreationDisabled] = useMountedState<boolean | null>(null);
     const [loadingText, setLoadingText] = useMountedState<MaybeNull<string>>(getInitialLoadingText());
     const [error, setError] = useMountedState<MaybeNull<string>>(null);
 
@@ -56,7 +55,6 @@ export const AutosuggestEmail: FC<Props> = ({ origin, prefix }) => {
                 if (response.type === 'success' && response.ok) {
                     setAliasOptions(response.options);
                     setNeedsUpgrade(response.needsUpgrade);
-                    setAliasCreationDisabled(response.aliasCreationDisabled);
                 } else setError(response.error ?? c('Error').t`Alias options could not be resolved`);
             });
         } catch {

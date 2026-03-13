@@ -112,6 +112,7 @@ export const DropdownDebug: FC = () => {
                             frameId: 0,
                             frameOrigin: '',
                             prefix: 'secret',
+                            aliasCreationDisabled: false,
                             fieldId: '',
                             formId: '',
                         }}
