@@ -4,7 +4,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useDrive } from '@proton/drive';
 
 import { useFlagsDriveFoundationSearch } from '../../flags/useFlagsDriveFoundationSearch';
-import type { SearchQuery, SearchResult } from '../../modules/search';
+import type { SearchQuery, SearchResultItem } from '../../modules/search';
 import {
     SearchLatestEventIdProvider,
     SearchModule,
@@ -18,12 +18,13 @@ export type UseSearchModuleReturn =
           isAvailable: true;
           isInitialIndexing: boolean;
           isSearchable: boolean;
+
           // Whether the user has opted in to the search experience.
           isUserOptIn: boolean;
           // Opt the user in to the search experience.
           optIn: () => Promise<void>;
           // Execute a search query against the indices.
-          search: (query: SearchQuery) => Promise<SearchResult>;
+          search: (query: SearchQuery) => AsyncGenerator<SearchResultItem>;
           // Clear all search-related data (DBs, caches, indexes).
           reset: () => Promise<void>;
       };
@@ -80,22 +81,18 @@ export const useSearchModule = (): UseSearchModuleReturn => {
             isSearchable: searchModuleState.isSearchable,
 
             // TODO: Implement
-            search: async (_query: SearchQuery): Promise<SearchResult> => {
-                return Promise.resolve({
-                    nodeUids: [],
-                });
-            },
-
-            // TODO: Implement
             isUserOptIn: true,
             // TODO: Implement
             optIn: async () => {
                 window.alert('TBD: Optin');
             },
-
             // TODO: Implement
             reset: async () => {
                 window.alert('TBD: Reset search DBs');
+            },
+
+            search: (query: SearchQuery) => {
+                return searchModule.search(query);
             },
         };
     }, [searchModule, searchModuleState]);
