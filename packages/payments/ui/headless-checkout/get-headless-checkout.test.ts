@@ -110,6 +110,7 @@ describe('getHeadlessCheckout', () => {
                 'amountDue',
                 'renewalNotice',
                 'taxInclusive',
+                'vatReverseCharge',
             ]);
         });
     });
