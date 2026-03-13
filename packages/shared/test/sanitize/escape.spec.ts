@@ -72,6 +72,14 @@ describe('Escape', () => {
 
             expect(escapeURLinStyle(style)).toEqual(style);
         });
+
+        it('should escape a malicious URL inside an @import statement', () => {
+            const style = `@import 'https://malicious-tracker.example.com/spy.css';`;
+
+            expect(escapeURLinStyle(style)).toEqual(
+                `@import proton-url('https://malicious-tracker.example.com/spy.css');`
+            );
+        });
     });
 
     describe('unescape', () => {
