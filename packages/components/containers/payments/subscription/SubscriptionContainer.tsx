@@ -975,7 +975,7 @@ const SubscriptionContainerInner = ({
         const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(subscription, {
             planIDs: copyNewModel.planIDs,
             cycle: copyNewModel.cycle,
-            coupon: copyNewModel.gift,
+            coupon: getCodes(copyNewModel).at(0),
         });
         if (paymentForbiddenReason.forbidden) {
             setCheckResult({
