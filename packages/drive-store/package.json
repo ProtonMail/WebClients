@@ -42,7 +42,7 @@
         "@xmldom/xmldom": "^0.9.8",
         "client-zip": "^2.5.0",
         "comlink": "^4.4.2",
-        "exifreader": "^4.36.1",
+        "exifreader": "^4.36.2",
         "heic-to": "^1.4.2",
         "mime-types": "^2.1.35",
         "react": "^18.3.1",
@@ -73,15 +73,15 @@
         "cross-env": "^10.1.0",
         "cross-var": "^1.1.0",
         "ejs-webpack-loader": "^2.2.2",
-        "eslint": "^9.39.2",
-        "jest": "^30.2.0",
+        "eslint": "^9.39.4",
+        "jest": "^30.3.0",
         "jest-junit": "^16.0.0",
         "jest-when": "3.7.0",
         "path-browserify": "^1.0.1",
         "prettier": "^3.8.1",
-        "pretty-format": "^30.2.0",
+        "pretty-format": "^30.3.0",
         "typescript": "^5.9.3",
-        "webpack": "^5.105.2"
+        "webpack": "^5.105.4"
     },
     "peerDependencies": {
         "@openpgp/web-stream-tools": "^0.1.0"
