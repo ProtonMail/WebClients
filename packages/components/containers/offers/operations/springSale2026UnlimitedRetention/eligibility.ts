@@ -51,6 +51,7 @@ export function getIsEligible({
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
     const isValidApp =
         isInApp(protonConfig, APPS.PROTONMAIL, parentApp) ||
+        isInApp(protonConfig, APPS.PROTONCALENDAR, parentApp) ||
         isInApp(protonConfig, APPS.PROTONDRIVE, parentApp) ||
         isInApp(protonConfig, APPS.PROTONPASS, parentApp) ||
         isInApp(protonConfig, APPS.PROTONVPN_SETTINGS, parentApp);
