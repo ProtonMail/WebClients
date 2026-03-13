@@ -1708,6 +1708,9 @@
       "Enabling biometrics lock failed": [
         "Η ενεργοποίηση του κλειδώματος με βιομετρικά απέτυχε"
       ],
+      "Enabling desktop auto-lock": [
+        "Ενεργοποίηση αυτόματου κλειδώματος επιφάνειας εργασίας"
+      ],
       "Enabling offline mode...": [
         "Ενεργοποίηση λειτουργίας εκτός σύνδεσης..."
       ],
@@ -2307,6 +2310,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Αυτή η λειτουργία είναι προς το παρόν πειραματική στο Linux. Παρακαλούμε βεβαιωθείτε ότι το σύστημά σας είναι ενημερωμένο."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Αυτή η λειτουργία απαιτεί να είναι εγκατεστημένη και να εκτελείται η εφαρμογή επιφάνειας ${ PASS_APP_NAME } κατά τη διάρκεια της ρύθμισης."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Αυτό το στοιχείο δεν είναι προς το παρόν κοινόχρηστο με κανέναν. Προσκαλέστε άτομα να το μοιράστε με άλλους."

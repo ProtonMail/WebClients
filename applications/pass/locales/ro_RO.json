@@ -1730,6 +1730,9 @@
       "Enabling biometrics lock failed": [
         "Activarea autoblocării cu date biometrice a eșuat."
       ],
+      "Enabling desktop auto-lock": [
+        "Activare blocare automată a desktopului"
+      ],
       "Enabling offline mode...": [
         "Se activează modul fără conexiune..."
       ],
@@ -2335,6 +2338,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Această funcție este în prezent experimentală pe Linux. Asigurați-vă că sistemul este actualizat."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Această funcție necesită ca aplicația desktop ${ PASS_APP_NAME } să fie instalată și rulată în timpul configurării."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Acest articol nu este în prezent partajat cu nimeni. Invitați persoane pentru a-l partaja."
