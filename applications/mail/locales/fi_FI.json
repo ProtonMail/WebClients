@@ -1483,6 +1483,10 @@
       "Trust": [
         "Luota"
       ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
+      ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
       ],
@@ -4509,6 +4513,9 @@
       "Enter a password": [
         "Syötä salasana"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Syötä käyttäjätunnuksesi ilman verkkotunnusta (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Virhe yhdistettäessä Bitcoin API:in."
       ],
@@ -7318,8 +7325,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -12558,6 +12564,9 @@
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Alennukset perustuvat normaaliin kuukausihintaan. Tilauksesi uusiutuu laskutusjakson päättyessä normaalilla vuosihinnalla."
       ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Pidennä tilaustasi ja tallenna ${ discountPercent } %!"
+      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Täysi ${ VPN_APP_NAME } -käyttöoikeus"
       ],
@@ -12578,6 +12587,9 @@
       ],
       "Stronger protection against cyber threats": [
         "Vahvempi suoja kyberuhkia vastaan"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Vaihda vuositilaukseemme ja tallenna ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Rajattomasti päivittäisiä keskusteluja"

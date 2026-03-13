@@ -1487,7 +1487,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -4625,6 +4626,9 @@
       "Enter a password": [
         "Ingrese una contraseña"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduzca su nombre de usuario sin el dominio (@ejemplo.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Error al conectar a la API de Bitcoin."
       ],
@@ -7469,8 +7473,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -12374,6 +12377,9 @@
       "VAT number": [
         "Número de IVA"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "El mecanismo de inversión del sujeto pasivo se aplica."
+      ],
       "You already have a subscription to this plan.": [
         "Ya tiene una suscripción a este plan."
       ],
@@ -12871,6 +12877,9 @@
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
       ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "¡Extienda su suscripción y guarde ${ discountPercent }%!"
+      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Acceso completo a ${ VPN_APP_NAME }"
       ],
@@ -12891,6 +12900,9 @@
       ],
       "Stronger protection against cyber threats": [
         "Mayor protección contra ciberamenazas"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "¡Cambie a nuestro plan anual y guarde ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Chats diarios ilimitados"

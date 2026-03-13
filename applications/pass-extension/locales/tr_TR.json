@@ -1013,6 +1013,9 @@
       "Encrypted JSON not supported": [
         "Şifrelenmiş JSON desteklenmiyor"
       ],
+      "Encryption communication for desktop unlock failed.": [
+        "Masaüstü kilidini açmak için gereken şifreli iletişim başarısız oldu."
+      ],
       "Error reporting problem": [
         "Sorun bildirilirken sorun çıktı"
       ],
@@ -1249,6 +1252,15 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Bir sorun çıktı. Lütfen ${ PASS_APP_NAME } eklentisini yeniden yükleyin. Bu sorun günlüğe kaydedildi"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME } masaüstü uygulaması kilitli. Kilidin açılması gerekiyor."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "${ PASS_APP_NAME } masaüstü uygulaması yüklü değil."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME } masaüstü uygulaması yanıt vermiyor. Çalışıyor mu?"
       ],
       "The URL is in the list": [
         "Adres listede var"
@@ -1808,6 +1820,9 @@
       "Enabling biometrics lock failed": [
         "Otomatik biyometri kilidi kullanıma alınamadı"
       ],
+      "Enabling desktop auto-lock": [
+        "Masaüstü otomatik kilitlemeyi etkinleştirme"
+      ],
       "Enabling offline mode...": [
         "Çevrim dışı kip açılıyor..."
       ],
@@ -2026,7 +2041,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2428,6 +2444,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Bu özellik şu anda Linux üzerinde deneyseldir. Lütfen sisteminizin güncel olduğundan emin olun."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Bu özelliğin kullanılabilmesi için kurulum sırasında ${ PASS_APP_NAME } masaüstü uygulamasının yüklü ve çalışır durumda olması gerekir."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Bu öge şu anda kimseyle paylaşılmıyor. Paylaşmak istediğiniz kişileri davet edin."

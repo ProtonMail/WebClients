@@ -5554,6 +5554,9 @@
       "Declined": [
         "Rechazado"
       ],
+      "Outdated": [
+        "Desactualizado"
+      ],
       "Paused": [
         "En pausa"
       ],
@@ -6157,6 +6160,9 @@
       ],
       "Enter 6 digits": [
         "Introduce 6 dígitos."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduce tu nombre de usuario sin el dominio (@ejemplo.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Se ha producido un error al conectar a la API de Bitcoin."
@@ -7019,6 +7025,9 @@
       ],
       "Loading events": [
         "Cargando eventos"
+      ],
+      "None of the events could be exported.": [
+        "No se ha podido exportar ninguno de los eventos."
       ],
       "Password reset - multiple events cannot be decrypted": [
         "Contraseña restablecida - no se pueden descifrar eventos múltiples"
@@ -9060,6 +9069,9 @@
       "Authenticator app 2FA enabled": [
         "Aplicación autenticadora 2FA activada"
       ],
+      "Auto-reply is active each week between the selected start and end time.": [
+        "La respuesta automática se activa cada semana entre las horas de inicio y fin seleccionadas."
+      ],
       "Automatically add Meet links to your calendar invitations when there is at least one invitee.": [
         "Añade automáticamente enlaces de Meet a tus invitaciones de calendario cuando haya al menos un invitado."
       ],
@@ -9742,6 +9754,9 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Si otro administrador ha cambiado esta contraseña, necesitarás pedir la nueva contraseña de la organización."
+      ],
+      "If disabled, organization members will only be able to share vaults or items within the organization.": [
+        "Si se desactiva, los miembros de la organización solo podrán compartir cajas fuertes o elementos dentro de la propia organización."
       ],
       "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
         "Si está desactivado, los miembros de la organización no podrán crear alias nuevos. Los alias existentes permanecerán activos."
@@ -10749,6 +10764,9 @@
       ],
       "Storage used by this user": [
         "Almacenamiento utilizado por este usuario"
+      ],
+      "Store this password and file in a safe place. You’ll need them again to import your key.": [
+        "Guarda esta contraseña y el archivo en un lugar seguro. Los necesitarás de nuevo para importar tu clave."
       ],
       "Submit": [
         "Enviar"
@@ -12647,6 +12665,9 @@
       "Composer": [
         "Editor"
       ],
+      "Composer default font/size": [
+        "Fuente y tamaño predeterminados del editor"
+      ],
       "Composer mode": [
         "Modo de redacción"
       ],
@@ -13079,6 +13100,9 @@
       "Mark as": [
         "Marcar como"
       ],
+      "Maximum number of characters": [
+        "Número de caracteres máximo"
+      ],
       "Maximum number of characters is ${ MAX_CHARS }": [
         "El máximo número de caracteres es ${ MAX_CHARS }"
       ],
@@ -13434,6 +13458,9 @@
       "Single sign-on URL": [
         "URL de inicio de sesión único"
       ],
+      "SMTP port": [
+        "Puerto SMTP"
+      ],
       "SMTP server": [
         "Servidor SMTP"
       ],
@@ -13749,7 +13776,15 @@
         "Beta"
       ]
     },
+    "Label to change composer mode": {
+      "Maximized": [
+        "Maximizado"
+      ]
+    },
     "Label to change view layout": {
+      "Column": [
+        "Columna"
+      ],
       "Row": [
         "Fila"
       ]
@@ -16299,6 +16334,9 @@
       "30th of the month": [
         "30º del mes"
       ],
+      "6th of the month": [
+        "Día 6 del mes"
+      ],
       "7th of the month": [
         "7º del mes"
       ],
@@ -17898,6 +17936,9 @@
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Los descuentos se basan en el precio mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
       ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "¡Extiende tu suscripción y guarda un ${ discountPercent }%!"
+      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Acceso completo a ${ VPN_APP_NAME }"
       ],
@@ -17918,6 +17959,9 @@
       ],
       "Stronger protection against cyber threats": [
         "Mayor protección contra las ciberamenazas"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "¡Cámbiate a nuestro plan anual y guarda ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Chats diarios ilimitados"
@@ -22143,6 +22187,9 @@
       "Edit servers": [
         "Editar servidores"
       ],
+      "Edit Sieve filter": [
+        "Editar filtro Sieve"
+      ],
       "Edit the list of servers of the gateway": [
         "Editar la lista de servidores de la puerta de enlace"
       ],
@@ -22390,6 +22437,9 @@
       ],
       "Import groups": [
         "Importar grupos"
+      ],
+      "Import key": [
+        "Importar clave"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importar con ${ PRODUCT_NAMES.EASY_SWITCH }"
