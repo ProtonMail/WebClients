@@ -495,6 +495,9 @@
       "Edit address": [
         "Upraviť adresu"
       ],
+      "Edit billing address": [
+        "Upraviť fakturačnú adresu"
+      ],
       "Edit draft": [
         "Upraviť koncept"
       ],
@@ -4976,6 +4979,9 @@
       "Request timed out": [
         "Požiadavka časovo omeškaná"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Systém prenesenia daňovej povinnosti nie je pre tento plán podporovaný."
+      ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Odosielanie príloh je obmedzené, kým nedosiahnete limity svojho plánu alebo neprejdete na vyššiu verziu."
       ],
@@ -5023,9 +5029,6 @@
       ],
       "Tab closed": [
         "Karta zatvorená"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Pre tento plán daňová výnimka nie je podporovaná"
       ],
       "Text is too long to refine": [
         "Text na spresnenie je príliš dlhý"
@@ -9107,6 +9110,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má aspoň jednu faktúru po splatnosti. Váš prístup bude čoskoro obmedzený. ${ payInvoiceLink }"
       ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Váš účet je momentálne nastavený tak, aby sa uplatňoval režim prenesenia daňovej povinnosti. Tento režim nie je podporovaný pre vybraný plán. Ak chcete pokračovať, odstráňte DIČ z fakturačnej adresy alebo vyberte iný plán."
+      ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Váš prehliadač nepodporuje asistenta písania. Skúste ho spustiť na serveroch."
       ],
@@ -9893,6 +9899,9 @@
       ],
       "Import interval": [
         "Interval pre import"
+      ],
+      "Import recent mails": [
+        "Importovať nedávne emaily"
       ],
       "Import to email address": [
         "Importovať na emailovú adresu"
@@ -14129,16 +14138,6 @@
         "Váš email pm.me je aktívny"
       ]
     },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "JARNÝ VÝPREDAJ 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "JARNÝ VÝPREDAJ"
-      ]
-    },
     "sso": {
       "Sign in": [
         "Prihlásiť sa"
@@ -16087,6 +16086,9 @@
       ],
       "Request new code": [
         "Vyžiadať nový kód"
+      ],
+      "Reverse charge not supported": [
+        "Obrátené zdanenie nie je podporované"
       ],
       "Same inbox, shorter email address": [
         "Rovnaká schránka, kratšia emailová adresa"

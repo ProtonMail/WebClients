@@ -486,6 +486,9 @@
       "Edit address": [
         "アドレスを編集"
       ],
+      "Edit billing address": [
+        "請求先住所を編集"
+      ],
       "Edit draft": [
         "下書きを編集"
       ],
@@ -4904,9 +4907,6 @@
       "Tab closed": [
         "タブが閉じられました"
       ],
-      "Tax exemption is not supported for this plan": [
-        "このプランでは税金の免除はサポートされていません"
-      ],
       "Text is too long to refine": [
         "テキストが長すぎて修正できません"
       ],
@@ -7305,6 +7305,9 @@
       "Initializing…": [
         "初期化中…"
       ],
+      "Insert image": [
+        "画像を挿入"
+      ],
       "Insert link": [
         "リンクを挿入"
       ],
@@ -7397,9 +7400,6 @@
       ],
       "Low Priority": [
         "優先度：低"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }をデフォルトのメールアプリに設定。"
       ],
       "Manage your folders": [
         "フォルダを管理"
@@ -11861,12 +11861,6 @@
       ],
       "No parent folder": [
         "親フォルダーなし"
-      ],
-      "Remind me later": [
-        "後ほど再通知"
-      ],
-      "Yes, don't show again": [
-        "次回から表示しない"
       ]
     },
     "Option group": {
@@ -12557,6 +12551,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "特典を利用する"
+      ],
+      "SPRING SALE 2026": [
+        "スプリングセール 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12638,7 +12635,7 @@
         "12か月プラン"
       ],
       "SPRING SALE": [
-        "スプリングセール"
+        "スプリング セール"
       ]
     },
     "Received email icon": {
@@ -13471,11 +13468,6 @@
       ],
       "Your pm.me email is active": [
         "pm.me メールが有効です"
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "2026年新春セール"
       ]
     },
     "sso": {
@@ -14964,9 +14956,6 @@
       ],
       "Invalid verification code": [
         "無効な検証コードです"
-      ],
-      "Keep this banner hidden?": [
-        "バナーを非表示にしておきますか？"
       ],
       "Label as": [
         "ラベル付け"

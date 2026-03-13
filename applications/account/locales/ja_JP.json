@@ -90,6 +90,12 @@
       "Activate recovery": [
         "回復を有効にする"
       ],
+      "Activate reserved address": [
+        "予約したアドレスを有効化する"
+      ],
+      "Activate this address": [
+        "このアドレスを有効化する"
+      ],
       "Add": [
         "追加"
       ],
@@ -549,6 +555,9 @@
       "Don't show again": [
         "次回から表示しない"
       ],
+      "Donate": [
+        "寄付"
+      ],
       "Done": [
         "完了"
       ],
@@ -818,6 +827,9 @@
       ],
       "Get verification code": [
         "認証コードを取得"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "お客様専用の ${ MAIL_APP_NAME } アドレスを取得する"
       ],
       "Go back": [
         "もどる"
@@ -1353,6 +1365,9 @@
       "Send reminder": [
         "リマインダーを送信"
       ],
+      "Send verification code": [
+        "検証コードを送信"
+      ],
       "Set as album cover": [
         "アルバムカバーに設定"
       ],
@@ -1520,6 +1535,9 @@
       ],
       "Try for free": [
         "無料で試す"
+      ],
+      "Try payment again": [
+        "もう一度支払いを試す"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "もう一度保存してみてください。保存に失敗しました: ${ saveError }"
@@ -6175,6 +6193,9 @@
       "Account does not exist": [
         "アカウントが存在しません"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "有効化に失敗しました。詳細が間違っているか、メールがすでに有効になっている可能性があります。入力内容を確認するか、サインインしてください。"
+      ],
       "Add at least one action": [
         "少なくとも1つのアクションを追加してください"
       ],
@@ -6294,6 +6315,9 @@
       ],
       "Failed loading group members": [
         "グループメンバーの読み込みに失敗しました"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "お客様のアドレスの有効化に失敗しました。もう一度お試しください。"
       ],
       "Failed to add group member": [
         "グループメンバーの追加に失敗しました"
@@ -6636,9 +6660,6 @@
       ],
       "Tab closed": [
         "タブが閉じられました"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "このプランでは税金の免除はサポートされていません"
       ],
       "The address might be misspelled": [
         "アドレスの綴りが違う可能性があります"
@@ -7848,6 +7869,16 @@
         "旧バージョンの${ BRAND_NAME }モバイルアプリからはサインインできなくなることを理解しました。"
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "メールアドレスを入力してください"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "バウチャーはこちらに送信されます。"
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "ウェブアプリ"
@@ -8147,6 +8178,32 @@
       ],
       "Subscribed": [
         "購読済み"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "お子様の将来のデジタル環境の安全を確保するための、今日の簡単なステップ"
+      ],
+      "Activate your reserved email address": [
+        "予約したお客様のメールアドレスを有効にする"
+      ],
+      "Address reservation voucher": [
+        "アドレス予約バウチャー"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "${ BRAND_NAME } Foundationへ寄付する"
+      ],
+      "Enter verification code": [
+        "検証コードを入力"
+      ],
+      "Recover activation voucher": [
+        "有効化バウチャーを回復する"
+      ],
+      "Reserve child's email address": [
+        "お子様のメールアドレスを予約する"
+      ],
+      "We emailed you the voucher": [
+        "バウチャーをメールで送信しました"
       ]
     },
     "Headline": {
@@ -9622,11 +9679,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "インポートするメールアカウントの認証情報を入力します。"
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "${ reservedEmail } の予約に使用したメールアドレスを入力してください。"
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "**${ domain.DomainName }**の**eduGAIN**組織のエンティティ ID を入力してください。"
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "組織のパスワードを入力して管理者権限を取り戻します。${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "予約したメールアドレスと、予約時に使用したメールアドレスを入力してください。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
@@ -9781,6 +9844,9 @@
       "Groups": [
         "グループ"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "他のご家族がお子様に安全なオンラインのスタートを切れるよう支援しましょう。このマイルストーンを共有し、広めてください。"
+      ],
       "here": [
         "こちら"
       ],
@@ -9789,6 +9855,9 @@
       ],
       "High Priority": [
         "優先度：高"
+      ],
+      "How it works": [
+        "仕組み"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -9810,6 +9879,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "キーボードショートカットが有効になっている場合は、次のキーを使用してクイックアクションを実行したり、別のビューにジャンプすることができます。 ${ metaKey } + K は常に有効です。"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "入力したメールがお子様のメールアドレスの予約に使用された場合、有効化バウチャーを再送信します。"
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "システムのタイムゾーンが現在のタイムゾーン設定と一致しない場合は、更新するように求められます (最大で 1 日に 1 回)。"
@@ -10038,6 +10110,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "あとは、選択を確認するだけです。"
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "必要になるまで、バウチャーを ${ DRIVE_APP_NAME } などに安全に保管してください。"
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "これらのガイドとヒントを活用して、情報をより安全かつプライベートに保ちましょう。"
@@ -10531,6 +10606,9 @@
       "Receive notifications for ${ categoryLabel }": [
         "${ categoryLabel }の通知を受け取る"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "メールで予約バウチャーを受け取ります。お客様またはお子様は、今後15年以内にこれを使用してアドレスを有効化できます。${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "最近使用したサーバー:"
       ],
@@ -10759,6 +10837,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "上記リストに表示されないサーバーがある場合があります。サーバー名 (例: AT#62) で検索して見つけてください。"
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "問題が発生しました。もう一度お試しいただくか、カスタマーサポートにお問い合わせください。"
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML SSO認証を許可するドメインを指定します。"
       ],
@@ -10776,6 +10857,9 @@
       ],
       "Step ${ step }": [
         "ステップ ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "ステップ ${ step }/${ totalSteps }"
       ],
       "Storage allocated to other users in this organisation": [
         "この組織の他のユーザーに割り当てられたストレージ"
@@ -11107,6 +11191,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "${ BRAND_NAME } 製品の最新の開発状況を把握するために、さまざまなメールや ${ blogLink } を随時購読していただけます。"
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "乱用や詐欺を防ぐため、最低 ${ minimumDonation } の寄付をお願いしております。これにより、世界中でデジタルプライバシーを保護する ${ protonFoundationLink } の活動をサポートし、次世代を守ることに繋がります。"
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "アカウント復旧方法を選択し、リクエストを確認してください。"
       ],
@@ -11329,6 +11416,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "公式の ${ VPN_APP_NAME } アプリケーションの使用をおすすめします。"
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "取引を完了できませんでした。もう一度お試しください。"
+      ],
       "We couldn’t process your payment.": [
         "お支払いを処理できませんでした。"
       ],
@@ -11436,6 +11526,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "ゲートウェイからサーバーを削除した時、10 日間の非アクティベーション期間に入ります。このサーバーは新しいゲートウェイに追加することができますが、国を変更することはできません。"
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "アドレスを有効にする準備ができたら、QRコードをスキャンするか、バウチャーのリンクを使用してください。"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "サブスクリプション更新時には、支払い方法よりも使用可能なクレジットが優先して使用されます。"
@@ -11797,6 +11890,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "トライアルは${ timeRemaining }に終了します。"
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "お客様が予約された ${ BRAND_NAME } メールアドレスのバウチャー: ${ reservedEmail }"
+      ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "また、${ boldPlanTitle }の機能もご利用いただけなくなります。"
       ],
@@ -11836,6 +11932,11 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "メールの作成、返信、校正を支援します。無効にすると、管理者(${ userAndAddresses })のみがアクセスできます。 または ${ addMoreSeats } の個々のユーザーを管理します。"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "${ parentEmail } に送信された検証コードを入力してください。"
       ]
     },
     "Info - folder colouring feature": {
@@ -12453,6 +12554,9 @@
       "Actions": [
         "アクション"
       ],
+      "Activation code": [
+        "有効化コード"
+      ],
       "Activity": [
         "アクティビティ"
       ],
@@ -12693,6 +12797,9 @@
       "Choose a name for the generated certificate file": [
         "生成する設定ファイルの名前を選択"
       ],
+      "Choose an address to reserve for your child": [
+        "お子様のために予約するアドレスを選択してください"
+      ],
       "Choose your billing": [
         "請求サイクルを選択"
       ],
@@ -12894,6 +13001,12 @@
       "Don't show this again": [
         "次回から表示しない"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "${ BRAND_NAME } Foundationに1ドル以上寄付する"
+      ],
+      "Donation amount": [
+        "寄付額"
+      ],
       "Duration": [
         "期間"
       ],
@@ -12953,6 +13066,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "フィンガープリント ${ fingerprintCode } を持つキーのパスワードを入力してください"
+      ],
+      "Enter your email address": [
+        "メールアドレスを入力してください"
       ],
       "Enter your password": [
         "パスワードを入力してください"
@@ -13467,6 +13583,12 @@
       "Require 2FA for everyone": [
         "全ユーザーの 2 要素認証を必須にする"
       ],
+      "Reserved address": [
+        "予約済みアドレス"
+      ],
+      "Reserved email address": [
+        "予約済みメールアドレス"
+      ],
       "Reveal password": [
         "パスワードを表示する"
       ],
@@ -13508,6 +13630,9 @@
       ],
       "Server name": [
         "サーバー名"
+      ],
+      "Set password": [
+        "パスワードを設定"
       ],
       "Share your referral link": [
         "紹介リンクを共有"
@@ -13637,6 +13762,9 @@
       ],
       "Tips and insights": [
         "ヒントとインサイト"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "有効化するには、QRコードをスキャンするか、以下にアクセスしてください："
       ],
       "To help us improve, please explain why you are leaving.": [
         "今後の改善のために、なぜあなたが去ろうとしているのかを教えてください。"
@@ -13770,17 +13898,26 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "このアカウントとすべてのデータを完全に削除することに同意します。"
       ],
+      "Your activation code:": [
+        "お客様の有効化コード："
+      ],
       "Your calendar URL": [
         "カレンダーのURL"
       ],
       "Your credit balance": [
         "クレジット残高"
       ],
+      "Your email address": [
+        "お客様のメールアドレス"
+      ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
       ],
       "Your password (trusted contact)": [
         "パスワード (信頼済みの連絡先)"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "お客様が予約された ${ BRAND_NAME } メールアドレスのバウチャー："
       ],
       "ZIP code": [
         "郵便番号"
@@ -13952,6 +14089,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "${ BRAND_NAME } Foundationの"
+      ],
       "Activity log": [
         "アクティビティログ"
       ],
@@ -13972,6 +14112,9 @@
       ],
       "Calendars": [
         "カレンダー"
+      ],
+      "Can't find your code?": [
+        "コードが見つかりませんか？"
       ],
       "clearing your browser cache": [
         "ブラウザのキャッシュを消去"
@@ -14172,6 +14315,20 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "ユーザー名とアドレス"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "メール"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -17645,6 +17802,9 @@
       "Address": [
         "アドレス"
       ],
+      "Amount": [
+        "金額"
+      ],
       "Anderson": [
         "アンダーソン"
       ],
@@ -18031,6 +18191,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "特典を利用する"
+      ],
+      "SPRING SALE 2026": [
+        "スプリングセール 2026"
       ]
     },
     "q1campaign: Info": {
@@ -18112,7 +18275,7 @@
         "12か月プラン"
       ],
       "SPRING SALE": [
-        "スプリングセール"
+        "スプリング セール"
       ]
     },
     "Recovery Email": {
@@ -18641,14 +18804,8 @@
       "Disable recovery by email": [
         "メールアドレスでの回復を無効にする"
       ],
-      "Disable recovery by email ": [
-        "メールアドレスでの回復を無効にする "
-      ],
       "Disable recovery by phone": [
         "電話番号での回復を無効化"
-      ],
-      "Disable recovery by phone ": [
-        "電話番号での回復を無効化 "
       ],
       "Download ${ size }": [
         "${ size } をダウンロード"
@@ -20241,11 +20398,6 @@
         "招待したお客様が${ BRAND_NAME }のプランに登録すると、クレジットを獲得できます。"
       ]
     },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "2026年新春セール"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress }は${ BRAND_NAME }アカウントにシングルサインオンでサインインするためにあなたの支援を要請しています。"
@@ -21379,6 +21531,9 @@
       "Verification code copied to clipboard": [
         "認証コードがクリップボードにコピーされました"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "${ parentEmail } に検証コードを送信しました"
+      ],
       "Verification successful": [
         "検証に成功しました"
       ],
@@ -21402,6 +21557,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "有効なリカバリーメールアドレスを入力した場合、数分以内にSMSでユーザーネームを受信します。"
+      ],
+      "Your address has been activated": [
+        "お客様のアドレスが有効化されました"
       ]
     },
     "Success message": {
@@ -22778,6 +22936,12 @@
       ],
       "Privacy and data collection": [
         "プライバシーとデータ収集"
+      ],
+      "Problem processing your payment": [
+        "支払いの処理に問題があります。"
+      ],
+      "Problem processing your request": [
+        "リクエストの処理に問題があります"
       ],
       "Processing...": [
         "処理中..."

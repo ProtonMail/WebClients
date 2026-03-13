@@ -45,6 +45,12 @@
       "Activate recovery": [
         "Sermed tiririt"
       ],
+      "Activate reserved address": [
+        "Sermed tansa yettwaḥerzen"
+      ],
+      "Activate this address": [
+        "Sermed tansa-yagi"
+      ],
       "Add": [
         "Rnu"
       ],
@@ -327,6 +333,9 @@
       "Don't show again": [
         "Ur skanay ara tikkelt-nniḍen"
       ],
+      "Donate": [
+        "Efk tikci"
+      ],
       "Done": [
         "Immed"
       ],
@@ -464,6 +473,9 @@
       ],
       "Get verification code": [
         "Awi tangalt n usentem"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Awi tansa-inek·inem ${ MAIL_APP_NAME }"
       ],
       "Go back": [
         "Uɣal"
@@ -801,6 +813,9 @@
       "Send reminder": [
         "Azen asmekti"
       ],
+      "Send verification code": [
+        "Azen tangalt n usenqed"
+      ],
       "Set as default": [
         "Sbadu-t d amezwer"
       ],
@@ -911,6 +926,9 @@
       ],
       "Try for free": [
         "Ɛreḍ win n baṭel"
+      ],
+      "Try payment again": [
+        "Eɛreḍ ad txelṣeḍ tikkelt-nniḍen"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Ɛreḍ ad teskelseḍ tikkelt niḍen. Asekles yecceḍ ssebba n: ${ saveError }"
@@ -2884,6 +2902,9 @@
       "Account does not exist": [
         "Ulac amiḍan"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Asermed ur yeddi ara. Isalen zemren ad ilin d ucciḍen, neɣ imayl yersmed yakan. Ttxil-k·m senqed ayen teskecmeḍ neɣ kcem."
+      ],
       "Address primary private key not found": [
         "Tasarut tamaẓlayt tagejdant n tansa ulac-itt"
       ],
@@ -2955,6 +2976,9 @@
       ],
       "Expired": [
         "Yemmut"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Tuccḍa deg usermed n tansa-k·m. Ttxil-k·m eɛreḍ tikkelt-nniḍen."
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Awway n tɣimit turmidt ur yeddi ara. Ttxil-k·m ${ refresh } neɣ εreḍ tikkelt-nniḍen ticki."
@@ -3848,6 +3872,16 @@
         "${ BRAND_NAME } lbaḍna tamezwert."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Sekcem tansa-inek·inem n yimayl"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Abun ad yettwazen ɣer dagi."
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Yettuwelleh s wudem awurman"
@@ -3999,6 +4033,32 @@
       ],
       "Value / Data / Points to": [
         "Azal / Isefka / Ad iwehhi ar"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Asurif fessusen ass-a i uḍman n tɣellist tamuṭṭunt n weqcic-ik·im azekka"
+      ],
+      "Activate your reserved email address": [
+        "Sermed tansa-k·m n yimayl yettwaḥerzen"
+      ],
+      "Address reservation voucher": [
+        "Abun n uḥraz n tansa"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Efk tikci i Tesbeddit n ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Sekcem tangalt n usenqed"
+      ],
+      "Recover activation voucher": [
+        "Ssuɣal-d abun n usermed"
+      ],
+      "Reserve child's email address": [
+        "Ḥrez tansa n yimayl n weqcic"
+      ],
+      "We emailed you the voucher": [
+        "Nuzen-ak·am-d abun s yimayl"
       ]
     },
     "Headline": {
@@ -4734,8 +4794,14 @@
       "Enter the credentials of the email account you want to import from.": [
         "Sekcem inekcam n umiḍan n yimayl iseg tebɣiḍ ad d-tketreḍ."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Sekcem tansa n yimayl i yettwaseqdacen i uḥraz n ${ reservedEmail }."
+      ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Sekcem awal uffir n tuddsa i tiririt n tseglutin n unedbal. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Sekcem tansa n yimayl yettwaḥerzen akked tansa n yimayl yettwaseqdacen deg wakud n uḥraz."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Sekcem tangalt n usenged i yettwaznen ɣer ${ destinationText }."
@@ -4788,11 +4854,20 @@
       "Groups": [
         "Igrawen"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Fk tallalt i twaculin nniḍen ad fkent i warrac-nsent asekcem aɣelsan s tuqqna. Bḍu tagnit-a yerna ssiweḍ awal."
+      ],
       "here": [
         "da"
       ],
+      "How it works": [
+        "Amek i iteddu"
+      ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Ma yella ibeddel unedbal-nniḍen awal-agi uffir, ilaq-ak ad as-tessutreḍ awal uffir amaynut n tuddsa."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Ma yella imayl i teskecmeḍ yettwaseqdec i uḥraz n tansa n yimayl n weqcic, ad d-nules azen n wubun n usermed."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ma tufiḍ ugur deg usnulfu n umiḍan-inek/m, ttxil-k/m suter tinnubga ad d-nerr deg yiwen n wass uxeddim."
@@ -4891,6 +4966,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Sentem kan tafrayt-inek•inem nekni ad neg ayen iqqimen."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Ḥrez abun deg wemkan aɣelsan alamma teḥwajeḍ-t, amedya deg ${ DRIVE_APP_NAME }."
       ],
       "Label all imported messages as": [
         "Creḍ ɣef meṛṛa iznan yettwaketren d"
@@ -5092,6 +5170,9 @@
       "purchase additional storage": [
         "aɣ-d aklas n zzyada"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Rmes-d abun n uḥraz s yimayl. Kečč neɣ aqcic-nni tzemrem ad t-tesqedcem i usermed n tansa di 15 iseggasen i d-iteddun. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Iqeddacen yettusqedcen melmi kan:"
       ],
@@ -5188,9 +5269,15 @@
       "Some keys successfully reactivated": [
         "Kra n tsura ulsent asermed akken iwata"
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Yella wayen ur nteddu ara akken iwata. Ttxil-k·m ɛreḍ tikkelt nniḍen neɣ nermes tallalt n yimsaɣen."
+      ],
       "Step ${ step }": [
         "Takkayt ${ step }",
         "Takkayin ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Asurif ${ step }/${ totalSteps }"
       ],
       "Storage for users": [
         "Asekles i yiseqdacen"
@@ -5294,6 +5381,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "I wakken ad tḍefreḍ isnerniyen ineggura n yifarisen ${ BRAND_NAME } Proton, tzemreḍ ad tmuletɣeḍ ɣer yimaylen-nneɣ yemgaraden daɣen ${ blogLink } sya ɣer da."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "I uḥuddu mgal aseqdec n diri neɣ arkad, nsuter-d tikci n wadday n ${ minimumDonation }. Wagi ad yefk tallalt i umahil n ${ protonFoundationLink } i uḥuddu n tbaḍnit tamuṭṭunt deg umaḍal yerna ad iɛiwen i useḥbiber ɣef tsuta i d-iteddun."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Akken ad terreḍ tuqqna-inek•m ɣer internet d taɣelsant, sader yerna sbedd asnas ${ VPN_APP_NAME } i yibenk-ik sakin qqen ɣer uqeddac."
       ],
@@ -5384,6 +5474,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Ad k•m-nsemter akken ad tesqedceḍ isnasen unṣiben n ${ VPN_APP_NAME } melmi tzemreḍ."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Ur nezmir ara ad nekfu tamhelt. Ttxil-k·m eɛreḍ tikkelt-nniḍen."
+      ],
       "We use 3-D Secure to protect your payments": [
         "Nesseqdac 3-D Secure akken ad nesseḥbiber ɣef lexlaṣ-nwen"
       ],
@@ -5413,6 +5506,9 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Mi ara tsiteḍ ɣef useɣwen, tamahilt-a n mgal takerḍa ad ak·am-d-tsuter ad tesnetmeḍ URL n usebter web."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Mi tewjdeḍ i usermed n tansa, sfeḍ tangalt QR neɣ seqdec aseɣwen yellan deg wubun."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Mi ara talseḍ tikkelt-nniḍen i umulteɣ-inek·inem, ad nseqdec qbel ayen akk yellan n yisemdan send ad nebdu tarrayin n lexlaṣ ddaw."
@@ -5520,6 +5616,9 @@
       ],
       "Your recovery phrase": [
         "Tafyirt-ik·im n tririt"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Abun-inek·inem i tansa n yimayl ${ BRAND_NAME } yettwaḥerzen: ${ reservedEmail }"
       ]
     },
     "info": {
@@ -5528,6 +5627,11 @@
       ],
       "Optional": [
         "Afrayan"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Sekcem tangalt n usenqed i yettwaznen ɣer ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -5895,6 +5999,9 @@
       "Actions": [
         "Tigawin"
       ],
+      "Activation code": [
+        "Tangalt n usermed"
+      ],
       "Activity": [
         "Armud"
       ],
@@ -6036,6 +6143,9 @@
       "Choose a name for the generated certificate file": [
         "Fren isem i ufaylu n uselkin yettusirwen"
       ],
+      "Choose an address to reserve for your child": [
+        "Fren tansa ara teḥrzeḍ i weqcic-ik·im"
+      ],
       "City": [
         "Aɣrem"
       ],
@@ -6165,6 +6275,12 @@
       "Don't show this again": [
         "Ur skanay ara tikkelt-nniḍen"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Efk tikci n 1$ neɣ ugar i Tesbeddit n ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Azal n tikci"
+      ],
       "Email": [
         "Imayl"
       ],
@@ -6200,6 +6316,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Sekcem awal uffir i tsarut s udlis umḍin: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Sekcem tansa-inek·inem n yimayl"
       ],
       "Enter your password": [
         "Sekcem awal-ik uffir"
@@ -6486,6 +6605,12 @@
       "Require 2FA for everyone": [
         "2FA yettwasra i yal yiwen"
       ],
+      "Reserved address": [
+        "Tansa yettwaḥerzen"
+      ],
+      "Reserved email address": [
+        "Tansa n yimayl yettwaḥerzen"
+      ],
       "Reveal password": [
         "Sken awal uffir"
       ],
@@ -6497,6 +6622,9 @@
       ],
       "Send crash reports": [
         "Azen ineqqisen yerrẓen"
+      ],
+      "Set password": [
+        "Sbadu awal uffir"
       ],
       "Show sender images": [
         "Sken tugniwin n umazan"
@@ -6548,6 +6676,9 @@
       ],
       "Time zone": [
         "Izḍi usrig"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "I usermed, sfeḍ tangalt QR neɣ ddu ɣer:"
       ],
       "To: ${ toEmail }": [
         "I: ${ toEmail }"
@@ -6615,11 +6746,20 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ih, bɣiɣ ad kkseɣ amiḍan-a i lebda akked meṛṛa isefka-ines."
       ],
+      "Your activation code:": [
+        "Tangalt-inek·inem n usermed:"
+      ],
       "Your calendar URL": [
         "Tansiwin URL n uwitay-ik·im"
       ],
+      "Your email address": [
+        "Tansa-k·m n yimayl"
+      ],
       "Your password (admin)": [
         "Awal-ik uffir (anedbal)"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Abun-inek·inem i tansa n yimayl ${ BRAND_NAME } yettwaḥerzen:"
       ],
       "ZIP code": [
         "Tangalt Zip"
@@ -6717,6 +6857,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "Tesbeddit n ${ BRAND_NAME }"
+      ],
       "Add a gift code": [
         "Rnu tangalt n usefk"
       ],
@@ -6728,6 +6871,9 @@
       ],
       "Calendars": [
         "Iwitayen"
+      ],
+      "Can't find your code?": [
+        "Ur tufiḍ ara tangalt-ik·im?"
       ],
       "clearing your browser cache": [
         "asfaḍ n tuffirt n iminig"
@@ -6833,6 +6979,20 @@
       ],
       "What’s this?": [
         "D acu-t wa?"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Imayl"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -7962,6 +8122,9 @@
       "+ ${ relativePrice } per month": [
         "Ugar n ${ relativePrice } i wayyur"
       ],
+      "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
+        "S ukemmel, ad tqebleɣ ${ termsAndConditionsLink } akked ${ privacyPolicyLink } nneɣ."
+      ],
       "Creating your account": [
         "Timerna n umiḍan-ik·im"
       ],
@@ -8117,6 +8280,9 @@
       ],
       "Address": [
         "Tansa"
+      ],
+      "Amount": [
+        "Azal"
       ],
       "Anderson": [
         "Anderson"
@@ -9284,11 +9450,17 @@
       "Verification code copied to clipboard": [
         "Tangalt n usenqed tettwaneɣlen ɣer tecfawit"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Tangalt n usenqed tettwazen ɣer ${ parentEmail }"
+      ],
       "Verification successful": [
         "Asenqed yedda akken iwata"
       ],
       "You have successfully unsubscribed": [
         "Teffɣeḍ seg ujerred akken iwata"
+      ],
+      "Your address has been activated": [
+        "Tansa-k·m tersmed"
       ]
     },
     "Success message": {
@@ -10088,6 +10260,12 @@
       ],
       "Privacy and data collection": [
         "Tabaḍnit d ulqaḍ n yisefka"
+      ],
+      "Problem processing your payment": [
+        "Ugur deg usesfer n lexlaṣ-ik"
+      ],
+      "Problem processing your request": [
+        "Ugur deg usesfer n tsutert-ik·im"
       ],
       "Processing...": [
         "Asesfer n %s..."

@@ -435,6 +435,9 @@
       "Edit": [
         "Рэдагаваць"
       ],
+      "Edit billing address": [
+        "Рэдагаваць адрас аплаты"
+      ],
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
       ],
@@ -2076,7 +2079,7 @@
         "Факс"
       ],
       "Main": [
-        "Галоўная"
+        "Галоўны"
       ],
       "Mobile": [
         "Мабільны"
@@ -3764,6 +3767,9 @@
       "Request timed out": [
         "Перавышаны тэрмін чакання запыту"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Схема адваротнага налічэння падатку не падтрымліваецца для гэтага тарыфнага плана"
+      ],
       "Search failed": [
         "Не ўдалося знайсці"
       ],
@@ -3811,9 +3817,6 @@
       ],
       "Tab closed": [
         "Укладка закрыта"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Вызваленне ад падаткаў не падтрымліваецца для гэтага тарыфнага плана"
       ],
       "The address might be misspelled": [
         "Магчыма, што адрас няправільны"
@@ -5462,6 +5465,9 @@
       "Choose a plan that works best for you.": [
         "Выберыце тарыфны план, які найлепш вам пасуе."
       ],
+      "Clear all search data": [
+        "Ачысціць усе даныя пошуку"
+      ],
       "Clear data": [
         "Ачысціць даныя"
       ],
@@ -5473,6 +5479,9 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "Ачышчае даныя браўзера, якія звязаны з зашыфраваным пошукам."
+      ],
+      "Clears browser data related to the search.": [
+        "Ачышчае даныя браўзера, якія звязаны з пошукам."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы код спраўджання на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
@@ -6350,6 +6359,9 @@
       "Search Enabled": [
         "Пошук уключаны"
       ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Пошук уключаны. Цяпер вы можаце закрыць гэта акно і шукаць у файлах і папках."
+      ],
       "Select a destination folder": [
         "Выберыце папку прызначэння"
       ],
@@ -7051,6 +7063,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб ужываць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "У вашага браўзера адсутнічае функцыя спампоўкі вялікіх файлаў або некалькіх файлаў. Спампуйце настольную праграму для бесперашкоднай запампоўкі і спампоўкі."
@@ -11604,16 +11619,6 @@
         "Зараз вы можаце лёгка шукаць файлы ў Drive, захоўваючы бяспеку даных."
       ]
     },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "ВЯСЕННІ РАСПРОДАЖ 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "ВЯСЕННІ РАСПРОДАЖ"
-      ]
-    },
     "sso": {
       "Sign in": [
         "Уваход"
@@ -13226,6 +13231,9 @@
       ],
       "Restore your files": [
         "Аднавіць вашы файлы"
+      ],
+      "Reverse charge not supported": [
+        "Адваротнае налічэнне падатку не падтрымліваецца"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Захаванне для пазнейшага разгляду ў ${ DRIVE_APP_NAME }"

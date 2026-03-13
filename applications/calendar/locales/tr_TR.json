@@ -362,6 +362,9 @@
       "Edit": [
         "Düzenle"
       ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
+      ],
       "Edit booking page": [
         "Rezervasyon sayfasını düzenle"
       ],
@@ -3896,6 +3899,9 @@
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Bu tarife için sorumlu sıfatıyla KDV usulü desteklenmemektedir"
+      ],
       "Self invitation not allowed": [
         "Kendinizi davet edemezsiniz"
       ],
@@ -3937,9 +3943,6 @@
       ],
       "Tab closed": [
         "Sekme kapatıldı"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Bu tarifede vergi hariç seçeneği bulunmuyor"
       ],
       "The address might be misspelled": [
         "Adres yanlış yazılmış olabilir"
@@ -6456,6 +6459,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Hesabınız şu anda sorumlu sıfatıyla KDV usulünü uygulayacak şekilde yapılandırılmış. Bu durum seçilen tarife için desteklenmemektedir. Devam etmek için ya fatura adresinden KDV numarasını kaldırın ya da farklı bir tarife seçin."
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Adresiniz kullanımdan kaldırılmış. Etkinlik katılımcılarına bir iptal bildirimi e-postası gönderilemeyecek. Yine de bu dizideki tüm etkinlikleri silmek ister misiniz?"
@@ -9917,6 +9923,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Tekliften yararlanın"
+      ],
+      "SPRING SALE 2026": [
+        "BAHAR İNDİRİMİ 2026"
       ]
     },
     "q1campaign: Info": {
@@ -10682,16 +10691,6 @@
       ],
       "Video conferencing is here!": [
         "Görüntülü görüşme geldi!"
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "2026 BAHAR İNDİRİMİ"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "BAHAR İNDİRİMİ"
       ]
     },
     "sso": {
@@ -12090,6 +12089,9 @@
       ],
       "Reshare your calendars": [
         "Takvimlerinizi yeniden paylaşın"
+      ],
+      "Reverse charge not supported": [
+        "Sorumlu sıfatıyla KDV desteklenmiyor"
       ],
       "Save": [
         "Kaydet"

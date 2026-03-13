@@ -495,6 +495,9 @@
       "Edit address": [
         "Upravit adresu"
       ],
+      "Edit billing address": [
+        "Upravit fakturační adresu"
+      ],
       "Edit draft": [
         "Upravit koncept"
       ],
@@ -5015,9 +5018,6 @@
       "Tab closed": [
         "Záložka zavřena"
       ],
-      "Tax exemption is not supported for this plan": [
-        "U tohoto tarifu není podporováno osvobození od daně"
-      ],
       "Text is too long to refine": [
         "Text je příliš dlouhý na to, aby byl zpřesněn"
       ],
@@ -7792,9 +7792,6 @@
       ],
       "Low Priority": [
         "Nízká priorita"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Nastavte ${ MAIL_APP_NAME } jako výchozí e-mailovou aplikaci."
       ],
       "Manage your folders": [
         "Spravovat složky"
@@ -13192,6 +13189,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Využít nabídku"
+      ],
+      "SPRING SALE 2026": [
+        "JARNÍ VÝPRODEJ 2026"
       ]
     },
     "q1campaign: Info": {
@@ -14181,16 +14181,6 @@
       ],
       "Your pm.me email is active": [
         "Váš e-mail pm.me je aktivní"
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "JARNÍ VÝPRODEJ 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "JARNÍ VÝPRODEJ"
       ]
     },
     "sso": {

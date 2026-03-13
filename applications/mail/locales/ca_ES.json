@@ -489,6 +489,9 @@
       "Edit address": [
         "Edita l'adreça"
       ],
+      "Edit billing address": [
+        "Edita l'adreça de la factura"
+      ],
       "Edit draft": [
         "Edita l'esborrany"
       ],
@@ -4906,6 +4909,9 @@
       "Request timed out": [
         "La sol·licitud ha caducat"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El règim d'inversió del subjecte passiu no és compatible amb aquest pla"
+      ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "L'enviament d'adjunts està restringit fins que compliu els límits del vostre pla o el milloreu."
       ],
@@ -4953,9 +4959,6 @@
       ],
       "Tab closed": [
         "Pestanya tancada"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Aquest pla no admet l'exempció d'impostos"
       ],
       "Text is too long to refine": [
         "El text és massa llarg per ser optimitzat"
@@ -7563,7 +7566,7 @@
         "Prioritat baixa"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Establiu ${ MAIL_APP_NAME } com aplicació de correu electrònic per defecte."
+        "Feu de ${ MAIL_APP_NAME } la vostra aplicació de correu predeterminada."
       ],
       "Manage your folders": [
         "Gestioneu les vostres carpetes"
@@ -8818,6 +8821,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "El vostre compte està configurat actualment per aplicar el règim de facturació inversa. Això no és compatible amb el pla seleccionat. Per continuar, o bé elimineu el número d'IVA de l'adreça de facturació o bé seleccioneu un pla diferent."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "El vostre navegador no permet l'assistent d'escriptura. Proveu d'executar-lo als servidors."
@@ -12112,7 +12118,7 @@
         "Recordeu-m'ho més tard"
       ],
       "Yes, don't show again": [
-        "Sí, no m'ho tornis a mostrar"
+        "Sí, no m'ho torneu a mostrar"
       ]
     },
     "Option group": {
@@ -13674,16 +13680,6 @@
         "El vostre correu electrònic de pm.me està actiu."
       ]
     },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "REBAIXES DE PRIMAVERA 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "REBAIXES DE PRIMAVERA"
-      ]
-    },
     "sso": {
       "Sign in": [
         "Inicia la sessió"
@@ -15234,7 +15230,7 @@
         "El codi de verificació no és vàlid."
       ],
       "Keep this banner hidden?": [
-        "Voleu mantenir aquest bàner amagat?"
+        "Voleu mantenir aquest ban ocult?"
       ],
       "Label as": [
         "Etiqueta com a"
@@ -15508,6 +15504,9 @@
       ],
       "Request new code": [
         "Demana un codi nou"
+      ],
+      "Reverse charge not supported": [
+        "No s'admet la inversió del subjecte passiu"
       ],
       "Same inbox, shorter email address": [
         "La mateixa safata d'entrada amb una adreça de correu electrònic més curta"

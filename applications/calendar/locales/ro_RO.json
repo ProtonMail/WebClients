@@ -365,6 +365,9 @@
       "Edit": [
         "Editare"
       ],
+      "Edit billing address": [
+        "Editare adresă de facturare"
+      ],
       "Edit booking page": [
         "Editare pagină de rezervări"
       ],
@@ -3934,6 +3937,9 @@
       "Request timed out": [
         "Solicitarea a expirat"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Schema de taxare inversă nu este acceptată pentru acest plan."
+      ],
       "Self invitation not allowed": [
         "Autoinvitarea nu este permisă."
       ],
@@ -3975,9 +3981,6 @@
       ],
       "Tab closed": [
         "Filă închisă."
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Exonerarea fiscală nu este acceptată pentru acest plan."
       ],
       "The address might be misspelled": [
         "Adresa ar putea fi scrisă greșit"
@@ -6545,6 +6548,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Contul este configurat în prezent pentru a aplica schema de taxare inversă. Aceasta nu este acceptată pentru planul selectat. Pentru a continua, fie eliminați numărul de TVA din adresa de facturare, fie selectați un alt plan."
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Adresa vă este dezactivată. Un e-mail de anulare nu poate fi trimis participanților la eveniment. Doriți totuși să ștergeți toate evenimentele din această serie?"
@@ -10088,6 +10094,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Valorificați oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTĂ DE PRIMĂVERII 2026"
       ]
     },
     "q1campaign: Info": {
@@ -10169,7 +10178,7 @@
         "pentru 12 luni"
       ],
       "SPRING SALE": [
-        "REDUCERI DE PRIMĂVARĂ"
+        "OFERTĂ DE PRIMĂVERII"
       ]
     },
     "Referral": {
@@ -10873,16 +10882,6 @@
       ],
       "Video conferencing is here!": [
         "Au sosit conferințele video!"
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "REDUCERE DE PRIMĂVARĂ 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "REDUCERE DE PRIMĂVARĂ"
       ]
     },
     "sso": {
@@ -12312,6 +12311,9 @@
       ],
       "Reshare your calendars": [
         "Repartajați calendarele"
+      ],
+      "Reverse charge not supported": [
+        "Taxa inversă nu este suportată"
       ],
       "Save": [
         "Salvare"
