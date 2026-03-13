@@ -1,4 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
+import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 export const setupCryptoProxy = async () => {
     try {
@@ -10,6 +11,7 @@ export const setupCryptoProxy = async () => {
         CryptoApi.init({});
         CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
     } catch (e: any) {
+        traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, new Error(e));
         return;
     }
 };
