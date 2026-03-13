@@ -80,10 +80,12 @@ export function SpringSale2026Layout({ offer, currency, onSelectDeal, onCloseMod
             </div>
 
             {isToYearly && (
-                <p className="springSaleText text-bold">{`Switch to our yearly plan and save ${toYearlyDiscountAmount}!`}</p>
+                <p className="springSaleText text-bold">{c('q1campaign: Info')
+                    .t`Switch to our yearly plan and save ${toYearlyDiscountAmount}!`}</p>
             )}
             {isRetention && (
-                <p className="springSaleText text-bold">{`Extend your subscription and save ${discountPercent}%!`}</p>
+                <p className="springSaleText text-bold">{c('q1campaign: Info')
+                    .t`Extend your subscription and save ${discountPercent}%!`}</p>
             )}
 
             {/* CTA */}
