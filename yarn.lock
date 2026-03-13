@@ -8324,7 +8324,7 @@ __metadata:
     cross-fetch: "npm:^4.1.0"
     date-fns: "npm:^2.30.0"
     docx-preview: "npm:^0.3.7"
-    dompurify: "npm:^3.3.1"
+    dompurify: "npm:^3.3.3"
     emoji-mart: "npm:^5.1.0"
     eslint: "npm:^9.39.2"
     formik: "npm:^2.4.9"
@@ -9200,7 +9200,7 @@ __metadata:
     "@types/webpack-env": "npm:^1.18.8"
     "@webgpu/types": "npm:^0.1.69"
     date-fns: "npm:^2.30.0"
-    dompurify: "npm:^3.3.1"
+    dompurify: "npm:^3.3.3"
     eslint: "npm:^9.39.2"
     eslint-plugin-jasmine: "npm:^4.2.2"
     file-saver: "npm:^2.0.5"
@@ -22191,15 +22191,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:^3.3.1":
-  version: 3.3.1
-  resolution: "dompurify@npm:3.3.1"
+"dompurify@npm:^3.3.3":
+  version: 3.3.3
+  resolution: "dompurify@npm:3.3.3"
   dependencies:
     "@types/trusted-types": "npm:^2.0.7"
   dependenciesMeta:
     "@types/trusted-types":
       optional: true
-  checksum: 10/f71cca489e628591165d16e8cf4fa4f0d3e2ee48db4d73e9d2c5bedc6f915c92f9e9f101f8c4ba790bec0cdffe7f4e1747f5e31c69dc53ce7ae20a81ff6b0022
+  checksum: 10/4cc9c539ed7136d46c6577613b8e20871c2b6165db01dfbd2a3c11c75f9e339c496ac6519a1c3190115def8cadae3720bef0417fc43fa28802c7407bab174da9
   languageName: node
   linkType: hard
 
@@ -36992,7 +36992,7 @@ __metadata:
     core-js: "npm:^3.48.0"
     cross-env: "npm:^10.1.0"
     date-fns: "npm:^2.30.0"
-    dompurify: "npm:^3.3.1"
+    dompurify: "npm:^3.3.3"
     eslint: "npm:^9.39.2"
     html-webpack-plugin: "npm:^5.6.6"
     jest: "npm:^30.2.0"
@@ -37531,7 +37531,7 @@ __metadata:
     core-js: "npm:^3.48.0"
     cross-env: "npm:^10.1.0"
     date-fns: "npm:^2.30.0"
-    dompurify: "npm:^3.3.1"
+    dompurify: "npm:^3.3.3"
     eslint: "npm:^9.39.2"
     eslint-config-prettier: "npm:^10.1.8"
     history: "npm:^4.10.1"
