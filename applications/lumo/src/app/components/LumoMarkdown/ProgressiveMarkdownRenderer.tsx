@@ -1,25 +1,25 @@
-import React, {useMemo, useRef} from 'react';
+import React, { useMemo, useRef } from 'react';
 import Markdown from 'react-markdown';
-import {oneDark, oneLight} from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { oneDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import rehypeKatex from 'rehype-katex';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
-import {visit} from 'unist-util-visit';
+import { visit } from 'unist-util-visit';
 
-import {ButtonLike} from '@proton/atoms/Button/ButtonLike';
-import {isIos, isIpad, isSafari} from '@proton/shared/lib/helpers/browser';
-import {ThemeTypes} from '@proton/shared/lib/themes/constants';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { isIos, isIpad, isSafari } from '@proton/shared/lib/helpers/browser';
+import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
-import {useCopyNotification} from '../../hooks/useCopyNotification';
-import type {SearchItem} from '../../lib/toolCall/types';
-import {useLumoTheme} from '../../providers';
-import {parseInteger} from '../../util/number';
-import {convertRefTokensToSpans, normalizeBrTags, processForLatexMarkdown} from '../../util/tokens';
+import { useCopyNotification } from '../../hooks/useCopyNotification';
+import type { SearchItem } from '../../lib/toolCall/types';
+import { useLumoTheme } from '../../providers';
+import { parseInteger } from '../../util/number';
+import { convertRefTokensToSpans, normalizeBrTags, processForLatexMarkdown } from '../../util/tokens';
 import LumoCopyButton from '../Conversation/messageChain/message/actionToolbar/LumoCopyButton';
-import {getDomain} from '../Conversation/messageChain/message/toolCall/helpers';
-import {InlineImageComponent} from './InlineImageComponent';
-import {SyntaxHighlighter} from './syntaxHighlighterConfig';
+import { getDomain } from '../Conversation/messageChain/message/toolCall/helpers';
+import { InlineImageComponent } from './InlineImageComponent';
+import { SyntaxHighlighter } from './syntaxHighlighterConfig';
 
 import './LumoMarkdown.scss';
 
@@ -175,15 +175,15 @@ const MarkdownBlock: React.FC<{
     sourcesContainerRef?: React.RefObject<HTMLDivElement>;
     message: any;
 }> = React.memo(
-    ({ content, theme, handleLinkClick, toolCallResults, sourcesContainerRef, message }) => {
+    ({ content, theme, handleLinkClick, toolCallResults, sourcesContainerRef }) => {
         // RefLink component for source references
         const RefLink = useMemo(
             () =>
-                React.memo(({ id, children }: { id: string; children: React.ReactNode }) => {
+                React.memo(function RefLink({ id }: { id: string; children: React.ReactNode }) {
                     if (!toolCallResults) return null;
 
                     const idInt = parseInteger(id);
-                    if (!idInt) return null;
+                    if (idInt === null) return null;
 
                     const toolCallInfo = toolCallResults?.[idInt];
                     if (!toolCallInfo) return null;
@@ -381,6 +381,9 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
 
         // Process REF tokens and convert to markdown links
         const processedContent = useMemo(() => {
+            if (!isStreaming) {
+                console.log('[LUMO:RENDER:RAW]', JSON.stringify(content || ''));
+            }
             const processedContent = convertRefTokensToSpans(content || '');
             const processedContentWithMath = processForLatexMarkdown(processedContent);
             return normalizeBrTags(processedContentWithMath);
