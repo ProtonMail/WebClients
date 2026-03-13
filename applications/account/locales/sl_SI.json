@@ -6234,6 +6234,9 @@
     "fido2: Error": {
       "Something went wrong registering your security key. Please try again.": [
         "Pri registraciji vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
+      ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
       ]
     },
     "fido2: Info": {
@@ -6278,6 +6281,9 @@
         "Dosegli ste največjo dolžino ${ maxSecurityKeyLength } varnostnega ključev.",
         "Dosegli ste največjo dolžino ${ maxSecurityKeyLength } varnostnega ključev.",
         "Dosegli ste največjo dolžino ${ maxSecurityKeyLength } varnostnega ključev."
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vstavite varnostni ključ, povezan z vašim ${ BRAND_NAME } računom."
       ]
     },
     "fido2: Label": {
@@ -9997,6 +10003,12 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Vaš račun je trenutno nastavljen za uporabo sheme povratnega DDV. To ni podprto za izbrani paket. Če želite nadaljevati, bodisi odstranite številko DDV s plačilnega naslova ali izberite drug paket."
+      ],
+      "Each code can only be used once": [
+        "Vsaka koda se lahko uporabi samo enkrat"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
       ]
     },
     "info": {
@@ -13079,6 +13091,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Pregledujemo temni splet in preverjamo, ali so bili razkriti naslovi ali vzdevki ${ BRAND_NAME }. V primeru uhajanja podatkov vas bomo o tem obvestili."
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke"
       ]
     },
     "new_plans: feature highlight": {
@@ -19490,6 +19508,9 @@
       ],
       "Reverse charge not supported": [
         "Shema obrnjene davčne obveznosti"
+      ],
+      "Account temporarily locked": [
+        "Račun je začasno zaklenjen"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

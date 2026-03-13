@@ -7088,6 +7088,9 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Rückerstattung der Umsatzsteuer ist für dieses Abonnement nicht unterstützt"
       ]
     },
     "error": {
@@ -8150,7 +8153,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacy by default."
+        "${ BRAND_NAME }. Privatsphäre als Standard."
       ]
     },
     "Force upgrade safety review": {
@@ -8487,7 +8490,7 @@
         "Bestätigungscode eingeben"
       ],
       "Recover activation voucher": [
-        "Aktivierungs-Gutschein wiederherstellen"
+        "Aktivierungsgutschein wiederherstellen"
       ],
       "Reserve child's email address": [
         "E-Mail-Adresse des Kindes reservieren"
@@ -10059,7 +10062,7 @@
         "Gib das Organisationspasswort ein, um die Administratorrechte wiederherzustellen. ${ learnMore }"
       ],
       "Enter the reserved email address and the email address used during reservation.": [
-        "Die reservierte E-Mail-Adresse und die bei der Reservierung verwendete E-Mail-Adresse eingeben."
+        "Gib die reservierte E-Mail-Adresse und die bei der Reservierung verwendete E-Mail-Adresse ein."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
@@ -10239,7 +10242,7 @@
         "Gruppen"
       ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
-        "Anderen Familien helfen, ihren Kindern einen sicheren Start ins Netz zu ermöglichen. Diesen Meilenstein teilen und die Nachricht verbreiten."
+        "Hilf anderen Familien, ihren Kindern einen sicheren Start ins Netz zu ermöglichen. Teile diesen Meilenstein und lass andere davon wissen."
       ],
       "here": [
         "hier"
@@ -10251,7 +10254,7 @@
         "Hohe Priorität"
       ],
       "How it works": [
-        "Wie es funktioniert"
+        "So funktioniert's"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -10520,7 +10523,7 @@
         "Bestätige einfach deine Auswahl und wir übernehmen den Rest."
       ],
       "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
-        "Den Gutschein sicher aufbewahren, bis du ihn brauchst, zum Beispiel in ${ DRIVE_APP_NAME }."
+        "Bewahre den Gutschein sicher auf, bis du ihn brauchst, zum Beispiel in ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Mit diesen Anleitungen und Tipps kannst du deine Daten schützen."
@@ -11040,7 +11043,7 @@
         "Benachrichtigungen für ${ categoryLabel } erhalten"
       ],
       "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "Den Reservierungsgutschein per E-Mail erhalten. Du oder das Kind könnt ihn innerhalb der nächsten 15 Jahre verwenden, um die E-Mail-Adresse zu aktivieren. ${ learnMoreLink }"
+        "Du erhältst den Reservierungsgutschein per E-Mail. Du oder das Kind könnt ihn innerhalb der nächsten 15 Jahre verwenden, um die E-Mail-Adresse zu aktivieren. ${ learnMoreLink }"
       ],
       "Recently used servers:": [
         "Zuletzt genutzte Server:"
@@ -12422,6 +12425,9 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Dein Konto ist derzeit so konfiguriert, dass die Rückerstattung der Umsatzsteuer nicht angewendet wird. Dies wird für das ausgewählte Abonnement nicht unterstützt. Um fortzufahren, entferne entweder die Umsatzsteuer-Identifikationsnummer aus der Rechnungsadresse oder wähle anderes Abonnement."
       ]
     },
     "info": {
@@ -13533,7 +13539,7 @@
         "Nicht erneut anzeigen"
       ],
       "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
-        "Spende $ 1 oder mehr an die ${ BRAND_NAME } Foundation"
+        "Spende 1 $ oder mehr an die ${ BRAND_NAME } Foundation"
       ],
       "Donation amount": [
         "Spendenbetrag"
@@ -17724,7 +17730,7 @@
         "Aber du kannst auf **${ upsellPlanTitle }** upgraden."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
-        "Wenn du fortfährst, erklärst du dich mit unseren ${ termsAndConditionsLink } und ${ privacyPolicyLink } einverstanden."
+        "Wenn du fortfährst, erklärst du dich mit unseren ${ termsAndConditionsLink } und unserer ${ privacyPolicyLink } einverstanden."
       ],
       "By continuing, you agree to our ${ termsAndConditionsLink }, our ${ privacyPolicyLink } and the ${ referralPolicyLink }.": [
         "Wenn du fortfährst, erklärst du dich mit unseren ${ termsAndConditionsLink }, unserer ${ privacyPolicyLink } und der ${ referralPolicyLink } einverstanden."
@@ -18838,6 +18844,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Deal sichern"
+      ],
+      "SPRING SALE 2026": [
+        "SPRING SALE 2026"
       ]
     },
     "q1campaign: Info": {
@@ -18919,7 +18928,7 @@
         "für 12 Monate"
       ],
       "SPRING SALE": [
-        "FRÜHLINGS-SALE"
+        "SPRING SALE"
       ]
     },
     "Recovery Email": {
@@ -24249,6 +24258,9 @@
       ],
       "Your subscriptions": [
         "Deine Abonnements"
+      ],
+      "Reverse charge not supported": [
+        "Rückerstattungen der Umsatzsteuer nicht unterstützt"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
