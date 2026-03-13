@@ -4803,6 +4803,9 @@
       "120 minutes": [
         "120 دقيقة"
       ],
+      "120m": [
+        "120 متر"
+      ],
       "30 minutes": [
         "30 دقيقة"
       ],
@@ -4816,6 +4819,9 @@
         "60 دقيقة"
       ],
       "90 minutes": [
+        "90 دقيقة"
+      ],
+      "90m": [
         "90 دقيقة"
       ]
     },
@@ -5797,6 +5803,9 @@
       "Invalid code": [
         "رمز غير صالح"
       ],
+      "Invalid coupon": [
+        "قسيمة غير صالحة"
+      ],
       "Invalid domain": [
         "نطاق غير صالح"
       ],
@@ -6037,6 +6046,9 @@
       "Request timed out": [
         "انتهت مهلة الطلب"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "مخطط الرسوم العكسية غير مدعوم لهذه الخطة"
+      ],
       "Server not found": [
         "لم يتم العثور على الخادم"
       ],
@@ -6114,6 +6126,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "الحد الأدنى للرصيد الذي يمكن إضافته هو ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "الحد الأدنى لمبلغ التبرع هو ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "يجب أن يتراوح اسم السياسة بين 3 و 40 حرفًا."
@@ -11215,6 +11230,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "حسابك لديه على الأقل فاتورة متأخرة واحدة. سيتم تقييد الوصول الخاص بك. ${ payInvoiceLink }"
       ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "تم إعداد حسابك حاليًا لتطبيق آلية الاحتساب العكسي للضريبة (Reverse Charge). هذا غير مدعوم للخطة المحددة. للمتابعة، يُرجى إما إزالة رقم ضريبة القيمة المضافة (VAT) من عنوان الفوترة أو اختيار خطة مختلفة."
+      ],
       "Your account was successfully updated with this promotion": [
         "تم تحديث حسابك بنجاح بهذا العرض الترويجي"
       ],
@@ -12405,6 +12423,9 @@
       ],
       "Import interval": [
         "فترة الاستيراد"
+      ],
+      "Import recent mails": [
+        "استيراد رسائل البريد الإلكتروني الأخيرة"
       ],
       "Import to email address": [
         "الاستيراد إلى عنوان البريد الإلكتروني"
@@ -16549,6 +16570,9 @@
       ],
       "VAT number": [
         "الرقم الضريبي:"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "تطبق آلية الشحن العكسي لضريبة القيمة المضافة."
       ],
       "You already have a subscription to this plan.": [
         "لديك بالفعل اشتراك في هذه الخطة."
@@ -21920,6 +21944,9 @@
       ],
       "Reused passwords": [
         "كلمات المرور المُعاد استخدامها"
+      ],
+      "Reverse charge not supported": [
+        "الشحن العكسي غير مدعوم"
       ],
       "Revoke certificate?": [
         "إبطال الشهادة؟"

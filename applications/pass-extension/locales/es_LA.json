@@ -1013,6 +1013,9 @@
       "Encrypted JSON not supported": [
         "JSON cifrado no soportado"
       ],
+      "Encryption communication for desktop unlock failed.": [
+        "Fallo en la comunicación de cifrado para desbloquear la app de escritorio."
+      ],
       "Error reporting problem": [
         "Error al reportar el problema"
       ],
@@ -1249,6 +1252,15 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Ocurrió un error. Recargue la extensión ${ PASS_APP_NAME }. Este problema ha sido registrado."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "La aplicación de escritorio de ${ PASS_APP_NAME } está bloqueada; debe desbloquearla."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "La aplicación de escritorio ${ PASS_APP_NAME } no está instalada."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "La aplicación de escritorio ${ PASS_APP_NAME } no responde, ¿se está ejecutando?"
       ],
       "The URL is in the list": [
         "La URL está en la lista."
@@ -1808,6 +1820,9 @@
       "Enabling biometrics lock failed": [
         "Error al activar el bloqueo automático biométrico"
       ],
+      "Enabling desktop auto-lock": [
+        "Activando el bloqueo automático de la app de escritorio"
+      ],
       "Enabling offline mode...": [
         "Activando el modo sin conexión..."
       ],
@@ -2026,7 +2041,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -2428,6 +2444,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Esta función se encuentra en fase experimental en Linux. Asegúrese de que su sistema esté actualizado."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Esta función requiere que la aplicación de escritorio de ${ PASS_APP_NAME } esté instalada y en ejecución durante la configuración."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Este elemento no está compartido con nadie en este momento. Invite a otras personas a compartirlo con otros."
