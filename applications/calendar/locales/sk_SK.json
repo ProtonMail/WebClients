@@ -368,6 +368,9 @@
       "Edit": [
         "Upraviť"
       ],
+      "Edit billing address": [
+        "Upraviť fakturačnú adresu"
+      ],
       "Edit booking page": [
         "Upraviť stránku rezervácií"
       ],
@@ -3972,6 +3975,9 @@
       "Request timed out": [
         "Požiadavka časovo omeškaná"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Systém prenesenia daňovej povinnosti nie je pre tento plán podporovaný."
+      ],
       "Self invitation not allowed": [
         "Nie je možné pozvať sám seba"
       ],
@@ -4013,9 +4019,6 @@
       ],
       "Tab closed": [
         "Karta zatvorená"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Pre tento plán daňová výnimka nie je podporovaná"
       ],
       "The address might be misspelled": [
         "Adresa môže obsahovať preklep"
@@ -6634,6 +6637,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má aspoň jednu faktúru po splatnosti. Váš prístup bude čoskoro obmedzený. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Váš účet je momentálne nastavený tak, aby sa uplatňoval režim prenesenia daňovej povinnosti. Tento režim nie je podporovaný pre vybraný plán. Ak chcete pokračovať, odstráňte DIČ z fakturačnej adresy alebo vyberte iný plán."
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Vaša adresa je zablokovaná. Účastníkom udalosti nie je možné zaslať email o zrušení. Chcete všetky udalosti v tejto sérii napriek tomu zmazať?"
@@ -10979,16 +10985,6 @@
         "Videokonferencie sú tu!"
       ]
     },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "JARNÝ VÝPREDAJ 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "JARNÝ VÝPREDAJ"
-      ]
-    },
     "sso": {
       "Sign in": [
         "Prihlásiť sa"
@@ -12447,6 +12443,9 @@
       ],
       "Reshare your calendars": [
         "Opätovne zdieľať svoje kalendáre"
+      ],
+      "Reverse charge not supported": [
+        "Obrátené zdanenie nie je podporované"
       ],
       "Save": [
         "Uložiť"

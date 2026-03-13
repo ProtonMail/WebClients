@@ -362,6 +362,9 @@
       "Edit": [
         "Redigér"
       ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
+      ],
       "Edit booking page": [
         "Rediger reservationsside"
       ],
@@ -3878,6 +3881,9 @@
       "Request timed out": [
         "Forespørgsel fik timeout"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omvendt betalingsordning understøttes ikke for dette abonnement"
+      ],
       "Self invitation not allowed": [
         "Selvinvitation er ikke tilladt"
       ],
@@ -3919,9 +3925,6 @@
       ],
       "Tab closed": [
         "Fane lukket"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Skattefritagelse understøttes ikke for dette abonnement"
       ],
       "The address might be misspelled": [
         "Adressen kan være stavet forkert"
@@ -6409,6 +6412,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Din konto er i øjeblikket konfigureret til at anvende omvendt betalingspligt, som ikke er understøttet i det valgte abonnement. For at fortsætte skal du enten fjerne momsnummeret fra faktureringsadressen eller vælge et andet abonnement."
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Din adresse er deaktiveret. En aflysningsmail kan ikke blive sendt til begivenhedens deltagere. Vil du alligevel slette alle begivenheder i denne serie?"
@@ -9840,6 +9846,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Tag imod tilbuddet"
+      ],
+      "SPRING SALE 2026": [
+        "FORÅRSALG 2026"
       ]
     },
     "q1campaign: Info": {
@@ -9921,7 +9930,7 @@
         "i 12 måneder"
       ],
       "SPRING SALE": [
-        "FORÅRSUDSALG"
+        "FORÅR SALG"
       ]
     },
     "Referral": {
@@ -11991,6 +12000,9 @@
       ],
       "Reshare your calendars": [
         "Gendel dine kalendere"
+      ],
+      "Reverse charge not supported": [
+        "Fakturering med omvendt betaling understøttes ikke"
       ],
       "Save": [
         "Gem"

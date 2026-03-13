@@ -362,6 +362,9 @@
       "Edit": [
         "Επεξεργασία"
       ],
+      "Edit billing address": [
+        "Επεξεργασία διεύθυνσης χρέωσης"
+      ],
       "Edit booking page": [
         "Επεξεργασία σελίδας κρατήσεων"
       ],
@@ -3896,6 +3899,9 @@
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Το σύστημα αντιστροφής χρέωσης δεν υποστηρίζεται για αυτό το πλάνο"
+      ],
       "Self invitation not allowed": [
         "Δεν επιτρέπεται η αυτοπρόσκληση"
       ],
@@ -3937,9 +3943,6 @@
       ],
       "Tab closed": [
         "Κλειστή καρτέλα"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Η φοροαπαλλαγή δεν υποστηρίζεται για αυτό το πλάνο."
       ],
       "The address might be misspelled": [
         "Η διεύθυνση μπορεί να έχει ορθογραφικά λάθη"
@@ -6456,6 +6459,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ο λογαριασμός σας είναι αυτή τη στιγμή ρυθμισμένος να εφαρμόζει το καθεστώς αντίστροφης χρέωσης. Αυτό δεν υποστηρίζεται για το επιλεγμένο πλάνο. Για να συνεχίσετε, είτε αφαιρέστε τον αριθμό ΦΠΑ από τη διεύθυνση χρέωσης είτε επιλέξτε ένα άλλο πλάνο."
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Η διεύθυνσή σας είναι απενεργοποιημένη. Δεν μπορείτε να στείλετε email ακύρωσης στους συμμετέχοντες της εκδήλωσης. Θα θέλατε να διαγράψετε όλες τις εκδηλώσεις σε αυτήν τη σειρά ούτως ή άλλως;"
@@ -10597,16 +10603,6 @@
         "Η τηλεδιάσκεψη είναι εδώ!"
       ]
     },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "ΑΝΟΙΞΙΑΤΙΚΕΣ ΕΚΠΤΩΣΕΙΣ 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "ΑΝΟΙΞΙΑΤΙΚΕΣ ΕΚΠΤΩΣΕΙΣ"
-      ]
-    },
     "sso": {
       "Sign in": [
         "Σύνδεση"
@@ -12003,6 +11999,9 @@
       ],
       "Reshare your calendars": [
         "Αναδημοσίευση των ημερολογίων σας"
+      ],
+      "Reverse charge not supported": [
+        "Αντιστροφή χρέωσης δεν υποστηρίζεται"
       ],
       "Save": [
         "Αποθήκευση"
