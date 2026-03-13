@@ -309,6 +309,12 @@ const SubscriptionCheckout = ({
                 </div>
             ),
 
+            vatReverseCharge: (item) => (
+                <div className="text-sm color-weak text-center mt-1">
+                    <span>{item.text}</span>
+                </div>
+            ),
+
             nextBilling: (item) => <StartDateCheckoutRow nextSubscriptionStart={item.scheduledSubscriptionStartDate} />,
 
             amountDue: (item) => (
@@ -333,7 +339,7 @@ const SubscriptionCheckout = ({
     );
 
     const bodyItems = checkoutView.getVisibleItems({
-        exclude: ['amountDue', 'discount', 'renewalNotice', 'taxInclusive', 'billingCycle'],
+        exclude: ['amountDue', 'discount', 'renewalNotice', 'taxInclusive', 'billingCycle', 'vatReverseCharge'],
     });
     const planAmountValue = checkoutView.checkoutData.getItem('planAmount').amount;
 
@@ -395,6 +401,7 @@ const SubscriptionCheckout = ({
             <div className="my-4">
                 {submit}
                 {checkoutView.render('taxInclusive')}
+                {checkoutView.render('vatReverseCharge')}
             </div>
 
             {/* Gift code input */}

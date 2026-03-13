@@ -108,6 +108,7 @@ const PricingFooter = ({ checkoutView }: { checkoutView: CheckoutView }) => {
         <footer className="border-top border-weak">
             <div className="flex flex-column px-8 pt-5 gap-2">
                 {checkoutView.render('taxInclusive')}
+                {checkoutView.render('vatReverseCharge')}
                 {checkoutView.render('billingCycle')}
                 {checkoutView.render('discount')}
                 {divider}
@@ -183,6 +184,7 @@ export const PricingCard = () => {
                     <span>{item.taxAmountElement}</span>
                 </div>
             ),
+            vatReverseCharge: (item) => <div className="text-sm color-weak">{item.text}</div>,
             nextBilling: () => null,
             unusedCredit: () => null,
             members: () => null,
