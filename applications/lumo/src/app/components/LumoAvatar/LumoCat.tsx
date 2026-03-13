@@ -72,9 +72,7 @@ const LumoCat = ({ isSmallScreen, isGhostChatMode }: LumoCatProps) => {
                 alt="Lumo assistant avatar"
                 getAnimationData={getAnimationData}
                 loop={true}
-                className={clsx('absolute inset-0', {
-                    'chinese-new-year': isLumoSpecialThemeEnabled,
-                })}
+                className="absolute inset-0"
                 style={{
                     width: isSmallScreen ? 200 : 170,
                     height: isSmallScreen ? 200 : 170,
