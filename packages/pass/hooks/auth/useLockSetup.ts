@@ -12,6 +12,7 @@ import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { DEFAULT_LOCK_TTL, UpsellRef } from '@proton/pass/constants';
+import { useDesktopUnlock } from '@proton/pass/hooks/auth/useDesktopUnlock';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
@@ -61,6 +62,7 @@ export const useLockSetup = (): LockSetup => {
 
     const confirmPin = usePinUnlock();
     const confirmPassword = usePasswordUnlock();
+    const confirmDesktop = useDesktopUnlock();
     const passwordTypeSwitch = usePasswordTypeSwitch();
     const upsell = useUpselling();
     const authStore = useAuthStore();
@@ -99,6 +101,7 @@ export const useLockSetup = (): LockSetup => {
         }
 
         const ttl = orgLockTTL || (lockTTL ?? DEFAULT_LOCK_TTL);
+
         /** If the current lock mode is a session lock - always
          * ask for the current PIN in order to delete the lock */
         const current = await new Promise<Maybe<{ secret: string }>>(async (resolve) => {
@@ -158,6 +161,11 @@ export const useLockSetup = (): LockSetup => {
                             await unlock({ mode: currentLockMode, secret, offline: false });
                             resolve({ secret });
                         },
+                    });
+
+                case LockMode.DESKTOP:
+                    return confirmDesktop({
+                        onSuccess: async () => resolve({ secret: '' }),
                     });
 
                 default:
@@ -228,6 +236,9 @@ export const useLockSetup = (): LockSetup => {
                 });
             }
 
+            case LockMode.DESKTOP:
+                return createLock.dispatch({ mode, secret: '', ttl, current });
+
             case LockMode.NONE:
                 return createLock.dispatch({ mode, secret: '', ttl, current });
         }
@@ -253,6 +264,11 @@ export const useLockSetup = (): LockSetup => {
                         twoPwd: c('Info').t`Please confirm your second password in order to update the auto-lock time.`,
                         default: c('Info').t`Please confirm your password in order to update the auto-lock time.`,
                     }),
+                });
+
+            case LockMode.DESKTOP:
+                return confirmDesktop({
+                    onSuccess: async () => createLock.dispatch({ mode: currentLockMode, secret: '', ttl }),
                 });
         }
     };

@@ -41,6 +41,7 @@ export type AuthSession = {
     RefreshTime?: number;
     RefreshToken: string;
     sessionLockToken?: string;
+    desktopLockVerifier?: string;
     twoPasswordMode?: boolean;
     UID: string;
     unlockRetryCount?: number;
@@ -70,6 +71,7 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
     'persistent',
     'RefreshToken',
     'sessionLockToken',
+    'desktopLockVerifier',
     'twoPasswordMode',
     'UID',
     'UserID',

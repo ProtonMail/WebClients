@@ -18,9 +18,9 @@ const handler = <T extends keyof IPCChannels, P extends IPCChannels[T]['args']>(
     method: T,
     callback: (...args: P) => void
 ): (() => void) => {
-    const handler = (_: IpcRendererEvent, ...args: P) => callback(...args);
-    ipcRenderer.on(method, handler);
-    return () => ipcRenderer.off(method, handler);
+    const internalHandler = (_: IpcRendererEvent, ...args: P) => callback(...args);
+    ipcRenderer.on(method, internalHandler);
+    return () => ipcRenderer.off(method, internalHandler);
 };
 
 const contextBridgeApi: ContextBridgeApi = {
@@ -60,6 +60,10 @@ const contextBridgeApi: ContextBridgeApi = {
     getBetaOptIn: () => invoke('update:getBetaOptIn'),
     setBetaOptIn: (value) => invoke('update:setBetaOptIn', value),
     checkForUpdates: () => invoke('update:checkNow'),
+
+    /* native messaging */
+    onNmRequest: (callback) => handler('nm:request', callback),
+    nmResponse: (props) => invoke('nm:response', props),
 };
 
 contextBridge.exposeInMainWorld('ctxBridge', contextBridgeApi);

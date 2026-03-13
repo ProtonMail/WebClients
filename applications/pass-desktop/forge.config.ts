@@ -25,7 +25,7 @@ const config: ForgeConfig = {
         // required for debian, else MakerDeb will incorrectly use name from package.json
         name: 'Proton Pass',
         appCategoryType: 'public.app-category.productivity',
-        osxSign: {},
+        osxSign: process.env.CI ? {} : undefined,
         osxNotarize:
             (process.env.CI || process.env.PASS_DESKTOP_NOTARIZE) && !process.env.SKIP_NOTARIZE
                 ? {
@@ -34,6 +34,7 @@ const config: ForgeConfig = {
                       teamId: process.env.PASS_DESKTOP_APPLE_TEAM_ID!,
                   }
                 : undefined,
+        osxUniversal: { x64ArchFiles: 'Contents/Resources/assets/proton_pass_nm_host' },
     },
     rebuildConfig: {},
     makers: [

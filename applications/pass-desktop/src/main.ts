@@ -209,45 +209,6 @@ const onActivate = (secureSession: Session) => () => {
 
 if (!app.requestSingleInstanceLock()) app.quit();
 
-await startup(ctx);
-
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
-app.addListener('ready', async () => {
-    // Always use system DNS settings
-    app.configureHostResolver({
-        enableAdditionalDnsQueryTypes: false,
-        enableBuiltInResolver: true,
-        secureDnsMode: 'off',
-        secureDnsServers: [],
-    });
-
-    ctx.session = createSession();
-    const handleActivate = onActivate(ctx.session);
-
-    // Match title bar with the saved (or default) theme
-    nativeTheme.themeSource = getTheme();
-
-    // Create tray icon
-    createTrayIcon(ctx.session);
-
-    // On OS X it's common to re-create a window in the app when the
-    // dock icon is clicked and there are no other windows open.
-    app.addListener('activate', handleActivate);
-
-    // On Windows, launching Pass while it's already running shold focus
-    // or create the main window of the existing process
-    app.addListener('second-instance', handleActivate);
-
-    // Prevent hiding windows when explicitly quitting
-    app.addListener('before-quit', () => (ctx.quitting = true));
-
-    await createWindow(ctx.session);
-
-    updateElectronApp(ctx.session);
-});
-
 app.addListener('web-contents-created', (_, contents) => {
     contents.addListener('will-attach-webview', (evt) => evt.preventDefault());
 
@@ -315,8 +276,54 @@ app.addListener('web-contents-created', (_, contents) => {
     });
 });
 
+// Startup all Pass handlers
+const cleanup = await startup(app, ctx);
+
+// Wait for Electron to be initialized
+await app.whenReady();
+
+// Always use system DNS settings
+app.configureHostResolver({
+    enableAdditionalDnsQueryTypes: false,
+    enableBuiltInResolver: true,
+    secureDnsMode: 'off',
+    secureDnsServers: [],
+});
+
+ctx.session = createSession();
+
+// Match title bar with the saved (or default) theme
+nativeTheme.themeSource = getTheme();
+
+const handleActivate = onActivate(ctx.session);
+
+// Create tray icon
+createTrayIcon(ctx.session);
+
+// On OS X it's common to re-create a window in the app when the
+// dock icon is clicked and there are no other windows open.
+app.addListener('activate', handleActivate);
+
+// On Windows, launching Pass while it's already running shold focus
+// or create the main window of the existing process
+app.addListener('second-instance', handleActivate);
+
+// Prevent hiding windows when explicitly quitting
+app.addListener('before-quit', () => (ctx.quitting = true));
+
+await createWindow(ctx.session);
+
+updateElectronApp(ctx.session);
+
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
 app.addListener('window-all-closed', () => !isMac && app.quit());
 app.addListener('will-finish-launching', () => isWindows && app.setAppUserModelId(WINDOWS_APP_ID));
+
+// Call cleanup functions when quitting
+app.addListener('will-quit', async (event) => {
+    event.preventDefault();
+    await cleanup();
+    app.exit(0);
+});
