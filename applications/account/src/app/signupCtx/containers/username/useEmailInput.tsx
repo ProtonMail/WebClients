@@ -220,6 +220,7 @@ const useEmailInput = ({
                                                 onChange={({ value }) => {
                                                     onValue.onUsernameValue(state.username, value);
                                                 }}
+                                                className="color-norm"
                                             >
                                                 {domainOptions.map((option) => (
                                                     <Option key={option.value} value={option.value} title={option.text}>
