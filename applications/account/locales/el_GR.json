@@ -6867,6 +6867,9 @@
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Το σύστημα αντιστροφής χρέωσης δεν υποστηρίζεται για αυτό το πλάνο"
+      ],
       "Server not found": [
         "Δε βρέθηκε ο διακομιστής"
       ],
@@ -6908,9 +6911,6 @@
       ],
       "Tab closed": [
         "Κλειστή καρτέλα"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Η φοροαπαλλαγή δεν υποστηρίζεται για αυτό το πλάνο."
       ],
       "The address might be misspelled": [
         "Η διεύθυνση μπορεί να έχει ορθογραφικά λάθη"
@@ -12309,6 +12309,9 @@
       ],
       "Your account has been successfully updated.": [
         "Ο λογαριασμός σας ενημερώθηκε με επιτυχία."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ο λογαριασμός σας είναι αυτή τη στιγμή ρυθμισμένος να εφαρμόζει το καθεστώς αντίστροφης χρέωσης. Αυτό δεν υποστηρίζεται για το επιλεγμένο πλάνο. Για να συνεχίσετε, είτε αφαιρέστε τον αριθμό ΦΠΑ από τη διεύθυνση χρέωσης είτε επιλέξτε ένα άλλο πλάνο."
       ],
       "Your account was successfully updated with this promotion": [
         "Ο λογαριασμός σας ενημερώθηκε με επιτυχία με αυτήν την προσφορά"
@@ -19367,14 +19370,8 @@
       "Disable recovery by email": [
         "Απενεργοποίηση ανάκτησης μέσω ηλεκτρονικού ταχυδρομείου"
       ],
-      "Disable recovery by email ": [
-        "Απενεργοποίηση ανάκτησης μέσω ηλεκτρονικού ταχυδρομείου "
-      ],
       "Disable recovery by phone": [
         "Απενεργοποίηση ανάκτησης μέσω τηλεφώνου"
-      ],
-      "Disable recovery by phone ": [
-        "Απενεργοποίηση ανάκτησης μέσω τηλεφώνου "
       ],
       "Download ${ size }": [
         "Κατεβάστε ${ size }"
@@ -21014,16 +21011,6 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Κερδίστε πόντους όταν το άτομο που προσκαλέσατε εγγραφεί σε ένα πλάνο ${ BRAND_NAME }."
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "ΑΝΟΙΞΙΑΤΙΚΕΣ ΕΚΠΤΩΣΕΙΣ 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "ΑΝΟΙΞΙΑΤΙΚΕΣ ΕΚΠΤΩΣΕΙΣ"
       ]
     },
     "sso": {
@@ -23741,6 +23728,9 @@
       ],
       "Reused passwords": [
         "Επαναχρησιμοποιημένοι κωδικοί πρόσβασης"
+      ],
+      "Reverse charge not supported": [
+        "Αντιστροφή χρέωσης δεν υποστηρίζεται"
       ],
       "Revoke certificate?": [
         "Ανάκληση πιστοποιητικού;"

@@ -353,6 +353,9 @@
       "Edit": [
         "Muokkaa"
       ],
+      "Edit billing address": [
+        "Muokkaa laskutusosoitetta"
+      ],
       "Edit email address": [
         "Muokkaa sähköpostiosoitetta"
       ],
@@ -3750,6 +3753,9 @@
       "Request timed out": [
         "Pyyntö aikakatkaistiin"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Tämä tilaus ei tue käännettyä verovelvollisuutta."
+      ],
       "Self invitation not allowed": [
         "Et voi kutsua itseäsi"
       ],
@@ -3791,9 +3797,6 @@
       ],
       "Tab closed": [
         "Välilehti suljettiin"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Verovapautusta ei tueta tälle tilaukselle"
       ],
       "The address might be misspelled": [
         "Osoite on ehkä kirjoitettu väärin"
@@ -6204,6 +6207,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tililläsi on ainakin yksi erääntynyt lasku. Pääsyäsi rajoitetaan pian. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Tilisi asetuksissa on käytössä käännetty verovelvollisuus, jota valittu tilaus ei tue. Jatkaaksesi joko poista ALV-numero laskutustiedoista tai valitse toinen tilaus."
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Osoitteesi on poistettu käytöstä, eikä osallistujille sen vuoksi voida lähettää perumisilmoitusta sähköpostitse. Haluatko silti poistaa ketjun kaikki tapahtumat?"
@@ -9503,6 +9509,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Hyödynnä tarjous"
+      ],
+      "SPRING SALE 2026": [
+        "KEVÄTALE 2026"
       ]
     },
     "q1campaign: Info": {
@@ -11603,6 +11612,9 @@
       ],
       "Reshare your calendars": [
         "Jaa kalenterisi uudelleen"
+      ],
+      "Reverse charge not supported": [
+        "Käännettyä verovelvollisuutta ei tueta."
       ],
       "Save": [
         "Tallenna"

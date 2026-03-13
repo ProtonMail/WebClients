@@ -4443,6 +4443,9 @@
       "Request timed out": [
         "Požiadavka časovo omeškaná"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Systém prenesenia daňovej povinnosti nie je pre tento plán podporovaný."
+      ],
       "Server not found": [
         "Server nebol nájdený"
       ],
@@ -4478,9 +4481,6 @@
       ],
       "Tab closed": [
         "Karta zatvorená"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Pre tento plán daňová výnimka nie je podporovaná"
       ],
       "The amount due has changed. Please try again.": [
         "Čiastka na zaplatenie sa zmenila. Skúste to znova, prosím."
@@ -8684,6 +8684,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má aspoň jednu faktúru po splatnosti. Váš prístup bude čoskoro obmedzený. ${ payInvoiceLink }"
       ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Váš účet je momentálne nastavený tak, aby sa uplatňoval režim prenesenia daňovej povinnosti. Tento režim nie je podporovaný pre vybraný plán. Ak chcete pokračovať, odstráňte DIČ z fakturačnej adresy alebo vyberte iný plán."
+      ],
       "Your account was successfully updated with this promotion": [
         "Váš účet bol úspešne aktualizovaný touto akciovou ponukou"
       ],
@@ -9355,6 +9358,9 @@
       ],
       "Import interval": [
         "Interval pre import"
+      ],
+      "Import recent mails": [
+        "Importovať nedávne emaily"
       ],
       "Import to email address": [
         "Importovať na emailovú adresu"
@@ -14234,16 +14240,6 @@
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
       ]
     },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "JARNÝ VÝPREDAJ 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "JARNÝ VÝPREDAJ"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } vás žiada o pomoc s prihlásením do svojho účtu ${ BRAND_NAME }. Účet s jednotným prihlásením."
@@ -16413,6 +16409,9 @@
       ],
       "Restore administrator privileges": [
         "Obnoviť oprávnenia správcu"
+      ],
+      "Reverse charge not supported": [
+        "Obrátené zdanenie nie je podporované"
       ],
       "Revoke certificate?": [
         "Zrušiť certifikát?"

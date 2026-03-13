@@ -6867,6 +6867,9 @@
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Bu tarife için sorumlu sıfatıyla KDV usulü desteklenmemektedir"
+      ],
       "Server not found": [
         "Sunucu bulunamadı"
       ],
@@ -6908,9 +6911,6 @@
       ],
       "Tab closed": [
         "Sekme kapatıldı"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Bu tarifede vergi hariç seçeneği bulunmuyor"
       ],
       "The address might be misspelled": [
         "Adres yanlış yazılmış olabilir"
@@ -12309,6 +12309,9 @@
       ],
       "Your account has been successfully updated.": [
         "Hesabınız güncellendi."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Hesabınız şu anda sorumlu sıfatıyla KDV usulünü uygulayacak şekilde yapılandırılmış. Bu durum seçilen tarife için desteklenmemektedir. Devam etmek için ya fatura adresinden KDV numarasını kaldırın ya da farklı bir tarife seçin."
       ],
       "Your account was successfully updated with this promotion": [
         "Hesabınız bu fırsata göre güncellendi"
@@ -18838,6 +18841,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Tekliften yararlanın"
+      ],
+      "SPRING SALE 2026": [
+        "BAHAR İNDİRİMİ 2026"
       ]
     },
     "q1campaign: Info": {
@@ -19454,14 +19460,8 @@
       "Disable recovery by email": [
         "E-posta ile kurtarmayı kapat"
       ],
-      "Disable recovery by email ": [
-        "E-posta ile kurtarmayı kapat "
-      ],
       "Disable recovery by phone": [
         "Telefon ile hesap kurtarmayı kapatın"
-      ],
-      "Disable recovery by phone ": [
-        "Telefon ile hesap kurtarmayı kapat "
       ],
       "Download ${ size }": [
         "${ size } indir"
@@ -21101,16 +21101,6 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Davet ettiğiniz kişi bir ${ BRAND_NAME } tarifesine abone olduğunda kredi kazanın."
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "2026 BAHAR İNDİRİMİ"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "BAHAR İNDİRİMİ"
       ]
     },
     "sso": {
@@ -23828,6 +23818,9 @@
       ],
       "Reused passwords": [
         "Yeniden kullanılmış parolalar"
+      ],
+      "Reverse charge not supported": [
+        "Sorumlu sıfatıyla KDV desteklenmiyor"
       ],
       "Revoke certificate?": [
         "Sertifika geçersiz kılınsın mı?"

@@ -378,6 +378,9 @@
       "Edit": [
         "Uredi"
       ],
+      "Edit billing address": [
+        "Uredi naslov za izstavitev računa"
+      ],
       "Edit email address": [
         "Uredi e-poštni naslov"
       ],
@@ -3409,6 +3412,9 @@
       "Request timed out": [
         "Zahteva se je iztekla"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Shema obrnjene davčne obveznosti ni podprta za ta načrt"
+      ],
       "Search failed": [
         "Iskanje je spodletelo"
       ],
@@ -3453,9 +3459,6 @@
       ],
       "Tab closed": [
         "Zavihek je zaprt"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Oprostitev davka ni podprta za ta načrt"
       ],
       "The address might be misspelled": [
         "V naslovu je morda tipkarska napaka"
@@ -3995,7 +3998,15 @@
         "Bliskovite hitrosti"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vstavite varnostni ključ, povezan z vašim ${ BRAND_NAME } računom."
+      ],
       "Security key": [
         "Varnostni ključ"
       ]
@@ -4958,6 +4969,9 @@
       "Choose a plan that works best for you.": [
         "Izberite paket, ki vam najbolj ustreza"
       ],
+      "Clear all search data": [
+        "Počisti vse iskalne podatke"
+      ],
       "Clear data": [
         "Počisti podatke"
       ],
@@ -4969,6 +4983,9 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "Počisti podatke brskalnika, povezane s šifriranim iskanjem."
+      ],
+      "Clears browser data related to the search.": [
+        "Počisti podatke brskalnika, povezane z iskanjem."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite »Zahtevaj novo kodo« za pošiljanje nove kode za preverjanje na ${ strong }. Če je ta telefonska številka napačna, kliknite »Uredi« in jo popravite."
@@ -5116,6 +5133,9 @@
       ],
       "Duplicate key updated": [
         "Podvojeni ključ je posodobljen"
+      ],
+      "Each code can only be used once": [
+        "Vsaka koda se lahko uporabi samo enkrat"
       ],
       "Edit email address": [
         "Uredi e-poštni naslov"
@@ -5738,6 +5758,9 @@
       "Search Enabled": [
         "Iskanje v"
       ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Iskanje omogočeno. Zdaj lahko zaprete to pogovorno okno in poiščete datoteke in mape."
+      ],
       "Select a folder to move to.": [
         "Izberite mapo, v katero se želite premakniti."
       ],
@@ -5981,6 +6004,9 @@
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Da omogočimo resnično zasebno iskanje, je potrebno datoteke indeksirati lokalno. Še vedno lahko uporabljate ${ DRIVE_APP_NAME } kot običajno in obvestili vas bomo, ko bo indeksiranje končano."
       ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Da omogočimo popolnoma zasebno iskanje, moramo vaše datoteke indeksirati lokalno. Še vedno lahko normalno uporabljate ${ DRIVE_APP_NAME } - obvestili vas bomo, ko bo indeksiranje končano."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Zaradi boja proti neželeni vsebini in zlorabam najprej potrdite, da ste človek."
       ],
@@ -6176,6 +6202,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Ko se povežete z VPN, ta uporablja tehnologijo šifriranja, da skrije vaš IP naslov (edinstvena koda, dodeljena vaši napravi)."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
+      ],
       "Who has access": [
         "Kdo ima dostop"
       ],
@@ -6328,6 +6357,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Imate vsaj en neplačan račun. Vaš dostop bo kmalu omejen. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Vaš račun je trenutno nastavljen za uporabo sheme povratnega DDV. To ni podprto za izbrani paket. Če želite nadaljevati, bodisi odstranite številko DDV s plačilnega naslova ali izberite drug paket."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaši podatki so pripravljeni na uvoz iz računa ${ importedEmailAddressStrong } v račun ${ BRAND_NAME }."
@@ -7809,6 +7841,12 @@
         "${ n } VPN povezavi",
         "${ n } VPN povezave",
         "${ n } VPN povezav"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin za doživljenjsko uporabo"
@@ -11090,6 +11128,9 @@
       "Account security": [
         "Varnost računa"
       ],
+      "Account temporarily locked": [
+        "Račun je začasno zaklenjen"
+      ],
       "Active": [
         "Aktivno"
       ],
@@ -11692,6 +11733,9 @@
       ],
       "Restore your files": [
         "Obnovi vaše datoteke"
+      ],
+      "Reverse charge not supported": [
+        "Shema obrnjene davčne obveznosti"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Shrani za kasneje v ${ DRIVE_APP_NAME }"

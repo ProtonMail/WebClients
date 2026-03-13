@@ -4413,6 +4413,9 @@
       "Request timed out": [
         "Solicitarea a expirat"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Schema de taxare inversă nu este acceptată pentru acest plan."
+      ],
       "Server not found": [
         "Server negăsit"
       ],
@@ -4448,9 +4451,6 @@
       ],
       "Tab closed": [
         "Filă închisă."
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Exonerarea fiscală nu este acceptată pentru acest plan."
       ],
       "The amount due has changed. Please try again.": [
         "Suma datorată s-a schimbat. Mai încercați."
@@ -8567,6 +8567,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Contul este configurat în prezent pentru a aplica schema de taxare inversă. Aceasta nu este acceptată pentru planul selectat. Pentru a continua, fie eliminați numărul de TVA din adresa de facturare, fie selectați un alt plan."
       ],
       "Your account was successfully updated with this promotion": [
         "Contul a fost modificat cu planul din această promoție."
@@ -12810,6 +12813,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Valorificați oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTĂ DE PRIMĂVERII 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12891,7 +12897,7 @@
         "pentru 12 luni"
       ],
       "SPRING SALE": [
-        "REDUCERI DE PRIMĂVARĂ"
+        "OFERTĂ DE PRIMĂVERII"
       ]
     },
     "Recovery Email": {
@@ -14124,16 +14130,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "REDUCERE DE PRIMĂVARĂ 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "REDUCERE DE PRIMĂVARĂ"
       ]
     },
     "sso": {
@@ -16263,6 +16259,9 @@
       ],
       "Restore administrator privileges": [
         "Restaurare privilegii administrator"
+      ],
+      "Reverse charge not supported": [
+        "Taxa inversă nu este suportată"
       ],
       "Revoke certificate?": [
         "Anulați certificatul?"

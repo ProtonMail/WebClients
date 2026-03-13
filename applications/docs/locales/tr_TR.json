@@ -3041,6 +3041,9 @@
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Bu tarife için sorumlu sıfatıyla KDV usulü desteklenmemektedir"
+      ],
       "Search failed": [
         "Arama yapılamadı"
       ],
@@ -3076,9 +3079,6 @@
       ],
       "status page": [
         "durum sayfası"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Bu tarifede vergi hariç seçeneği bulunmuyor"
       ],
       "The address might be misspelled": [
         "Adres yanlış yazılmış olabilir"
@@ -8133,6 +8133,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Tekliften yararlanın"
+      ],
+      "SPRING SALE 2026": [
+        "BAHAR İNDİRİMİ 2026"
       ]
     },
     "q1campaign: Info": {
@@ -8918,16 +8921,6 @@
       ],
       "To edit this document, create a copy that you can modify.": [
         "Bu belgeyi düzenlemek için, üzerinde değişiklik yapabileceğiniz bir kopya oluşturun."
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "2026 BAHAR İNDİRİMİ"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "BAHAR İNDİRİMİ"
       ]
     },
     "sso": {

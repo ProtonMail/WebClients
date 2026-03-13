@@ -71,6 +71,12 @@
       "Activate recovery": [
         "Aktywuj odzyskiwanie"
       ],
+      "Activate reserved address": [
+        "Aktywuj zarezerwowany adres"
+      ],
+      "Activate this address": [
+        "Aktywuj ten adres"
+      ],
       "Add": [
         "Dodaj"
       ],
@@ -467,6 +473,9 @@
       "Don't show again": [
         "Nie pokazuj ponownie"
       ],
+      "Donate": [
+        "Wspomóż nas"
+      ],
       "Done": [
         "Gotowe"
       ],
@@ -667,6 +676,9 @@
       ],
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Uzyskaj własny adres ${ MAIL_APP_NAME }"
       ],
       "Go back": [
         "Wróć"
@@ -1130,6 +1142,9 @@
       "Send reminder": [
         "Wyślij przypomnienie"
       ],
+      "Send verification code": [
+        "Wyślij kod weryfikacyjny"
+      ],
       "Set as album cover": [
         "Ustaw jako okładkę albumu"
       ],
@@ -1282,6 +1297,9 @@
       ],
       "Try for free": [
         "Wypróbuj za darmo"
+      ],
+      "Try payment again": [
+        "Spróbuj ponownie dokonać płatności"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Spróbuj zapisać ponownie. Zapisanie nie powiodło się: ${ saveError }"
@@ -4739,6 +4757,9 @@
       "Account does not exist": [
         "Konto nie istnieje"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Aktywacja nie powiodła się. Szczegóły mogą być nieprawidłowe lub adres e-mail jest już aktywny. Sprawdź swoje dane wejściowe lub zaloguj się."
+      ],
       "Add at least one action": [
         "Dodaj co najmniej jedną akcję"
       ],
@@ -4849,6 +4870,9 @@
       ],
       "Expired": [
         "Wygasł"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Nie udało się aktywować Twojego adresu. Spróbuj ponownie."
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Nie udało się uzyskać aktywnych sesji. ${ refresh } lub spróbuj ponownie później."
@@ -6308,6 +6332,16 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Wpisz adres e-mail"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Kupon wyślemy tutaj."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "aplikacji internetowej"
@@ -6553,6 +6587,32 @@
       ],
       "Value / Data / Points to": [
         "Wartość / Dane / Pozostałe"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Prosty krok dzisiaj, aby zapewnić cyfrowe bezpieczeństwo Twojego dziecka jutro"
+      ],
+      "Activate your reserved email address": [
+        "Aktywuj swój zarezerwowany adres e-mail"
+      ],
+      "Address reservation voucher": [
+        "Kupon rezerwacji adresu"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Wspomóż nas, wspierając Fundację ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Wpisz kod weryfikacyjny"
+      ],
+      "Recover activation voucher": [
+        "Odzyskaj kupon aktywacyjny"
+      ],
+      "Reserve child's email address": [
+        "Zarezerwuj adres e-mail dziecka"
+      ],
+      "We emailed you the voucher": [
+        "Wysłaliśmy Ci kupon jako wiadomość e-mail"
       ]
     },
     "Headline": {
@@ -7988,11 +8048,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "Wpisz dane logowania do konta e-mail, z którego chcesz zaimportować dane."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Wpisz adres e-mail użyty do zarezerwowania ${ reservedEmail }."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Wpisz identyfikator jednostki organizacji **eduGAIN** dla domeny **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Wpisz hasło organizacji, aby przywrócić uprawnienia administratora. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Wpisz zarezerwowany adres e-mail oraz adres e-mail użyty podczas rezerwacji."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
@@ -8120,11 +8186,17 @@
       "Groups": [
         "Grupy"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Pomóż innym rodzinom zapewnić ich dzieciom bezpieczny start online. Udostępnij ten kamień milowy i podziel się tą informacją."
+      ],
       "here": [
         "tutaj"
       ],
       "High Priority": [
         "Wysoki priorytet"
+      ],
+      "How it works": [
+        "Jak to działa"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Klucz publiczny dostawcy tożsamości do podpisywania potwierdzeń uwierzytelniania. Pobierz lub skopiuj kryptograficzny skrót certyfikatu od dostawcy tożsamości. Wklej skrót certyfikatu do pola tekstowego."
@@ -8134,6 +8206,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Jeśli skróty klawiszowe są włączone, możesz używać następujących klawiszy do wykonywania szybkich akcji lub przechodzenia między widokami. Skrót ${ metaKey } + K jest zawsze włączony."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Jeśli wpisany adres e-mail został użyty do zarezerwowania adresu e-mail dziecka, ponownie wyślemy kupon aktywacyjny."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Jeśli jest to spowodowane starym resetowaniem hasła, możesz zatrzymać ponowne pokazywanie tej wiadomości"
@@ -8359,6 +8434,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Potwierdź swój wybór, a my zajmiemy się resztą."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Przechowuj kupon w bezpiecznym miejscu do momentu, gdy będzie potrzebny, na przykład w ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Zachowaj bezpieczeństwo i prywatność swoich danych dzięki tym przewodnikom i wskazówkom."
@@ -8795,6 +8873,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Skontaktuj się z nami, aby uzyskać pomoc ${ BRAND_NAME }."
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Odbierz kupon rezerwacyjny jako wiadomość e-mail. Ty lub dziecko możecie go użyć, aby aktywować adres w ciągu najbliższych 15 lat. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Ostatnio używane serwery:"
       ],
@@ -8996,6 +9077,9 @@
       "Some keys successfully reactivated": [
         "Niektóre klucze zostały reaktywowane"
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Coś poszło nie tak. Spróbuj ponownie lub skontaktuj się ze wsparciem klienta."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Wybierz dozwoloną domenę dla logowania SSO (SAML)."
       ],
@@ -9016,6 +9100,9 @@
         "Krok ${ step }",
         "Krok ${ step }",
         "Krok ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Krok ${ step }/${ totalSteps }"
       ],
       "Storage allocated to other users in this organisation": [
         "Przestrzeń dyskowa przydzielona do innych użytkowników organizacji"
@@ -9329,6 +9416,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Aby na bieżąco śledzić rozwój usług ${ BRAND_NAME }, możesz zapisać się do naszych list mailingowych, a także okazjonalnie ${ blogLink }."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Aby zapobiec nadużyciom i oszustwom, prosimy o minimalną darowiznę w wysokości ${ minimumDonation }. Stanowi to wsparcie dla działań ${ protonFoundationLink } na rzecz obrony cyfrowej prywatności na całym świecie i pomaga chronić następne pokolenie."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Aby kontynuować, wybierz metodę odzyskiwania konta, abyśmy mogli zweryfikować żądanie."
       ],
@@ -9515,6 +9605,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Zalecamy używanie oficjalnych aplikacji ${ VPN_APP_NAME }."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Nie udało nam się zrealizować transakcji. Spróbuj ponownie."
+      ],
       "We couldn’t process your payment.": [
         "Nie mogliśmy przetworzyć płatności."
       ],
@@ -9610,6 +9703,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Usunięcie serwera z bramy spowoduje rozpoczęcie 10-dniowego okresu dezaktywacji. Serwer można dodać do nowej bramy, ale nie można zmienić jego kraju."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Gdy będziesz w gotowości, aby aktywować adres, zeskanuj kod QR lub użyj linku w kuponie."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Podczas odnawiania subskrypcji, dostępne środki na koncie zostaną użyte w pierwszej kolejności."
@@ -9950,6 +10046,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Wersja próbna zakończy się za ${ timeRemaining }."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Twój kupon na zarezerwowany adres e-mail ${ BRAND_NAME }: ${ reservedEmail }"
+      ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Stracisz również dostęp do funkcji planu ${ boldPlanTitle }:"
       ],
@@ -9981,6 +10080,11 @@
       ],
       "Selected color:": [
         "Wybrany kolor:"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Wpisz kod weryfikacyjny, który został wysłany na adres ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -10436,6 +10540,9 @@
       "Actions": [
         "Działania"
       ],
+      "Activation code": [
+        "Kod aktywacyjny"
+      ],
       "Activity": [
         "Aktywność"
       ],
@@ -10610,6 +10717,9 @@
       "Choose a name for the generated certificate file": [
         "Wybierz nazwę pliku dla wygenerowanego certyfikatu"
       ],
+      "Choose an address to reserve for your child": [
+        "Wybierz adres do zarezerwowania dla swojego dziecka"
+      ],
       "City": [
         "Miasto"
       ],
@@ -10772,6 +10882,12 @@
       "Don't show this again": [
         "Nie pokazuj ponownie"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Wspomóż nas kwotą 1 $ lub wyższą na rzecz Fundacji ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Kwota darowizny"
+      ],
       "e.g. example.com": [
         "np. przyklad.pl"
       ],
@@ -10810,6 +10926,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Wpisz hasło dla klucza z odciskiem: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Wpisz adres e-mail"
       ],
       "Enter your password": [
         "Wpisz hasło"
@@ -11213,6 +11332,12 @@
       "Require 2FA for everyone": [
         "Wymagaj uwierzytelniania dwustopniowego od wszystkich użytkowników"
       ],
+      "Reserved address": [
+        "Zarezerwowany adres"
+      ],
+      "Reserved email address": [
+        "Zarezerwowany adres e-mail"
+      ],
       "Reveal password": [
         "Pokaż hasło"
       ],
@@ -11239,6 +11364,9 @@
       ],
       "Sequences": [
         "Sekwencje"
+      ],
+      "Set password": [
+        "Ustaw hasło"
       ],
       "Share your referral link": [
         "Udostępnij link polecający"
@@ -11329,6 +11457,9 @@
       ],
       "Time zone": [
         "Strefa czasowa"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Aby aktywować, zeskanuj kod QR lub przejdź do:"
       ],
       "To help us improve, please explain why you are leaving.": [
         "Wyjaśnij, dlaczego odchodzisz."
@@ -11432,14 +11563,23 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Tak, chcę trwale usunąć konto i wszystkie dane z nim powiązane."
       ],
+      "Your activation code:": [
+        "Twój kod aktywacyjny:"
+      ],
       "Your calendar URL": [
         "Twój adres URL kalendarza"
+      ],
+      "Your email address": [
+        "Twój adres e-mail"
       ],
       "Your password (admin)": [
         "Twoje hasło (administratora)"
       ],
       "Your password (trusted contact)": [
         "Twoje hasło (zaufany kontakt)"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Twój kupon na zarezerwowany adres e-mail ${ BRAND_NAME }:"
       ],
       "ZIP code": [
         "Kod pocztowy"
@@ -11561,6 +11701,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "Fundacji ${ BRAND_NAME }"
+      ],
       "Activity log": [
         "Logi"
       ],
@@ -11578,6 +11721,9 @@
       ],
       "Calendars": [
         "Kalendarze"
+      ],
+      "Can't find your code?": [
+        "Nie możesz znaleźć swojego kodu?"
       ],
       "clearing your browser cache": [
         "wyczyszczenie pamięci podręcznej przeglądarki"
@@ -11758,6 +11904,20 @@
       ],
       "What’s this?": [
         "Co to jest?"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Wiadomość e-mail"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -14732,6 +14892,9 @@
       "Address": [
         "Adres"
       ],
+      "Amount": [
+        "Kwota"
+      ],
       "Anderson": [
         "Nowak"
       ],
@@ -15025,6 +15188,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Skorzystaj z oferty"
+      ],
+      "SPRING SALE 2026": [
+        "WIOSENNA PROMOCJA 2026"
       ]
     },
     "q1campaign: Info": {
@@ -15106,7 +15272,7 @@
         "na 12 miesięcy"
       ],
       "SPRING SALE": [
-        "WIOSENNA WYPRZEDAŻ"
+        "WIOSENNA PROMOCJA"
       ]
     },
     "Recovery Email": {
@@ -18122,6 +18288,9 @@
       "Verification code copied to clipboard": [
         "Kod weryfikacyjny został skopiowany do schowka"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Kod weryfikacyjny wysłany na adres ${ parentEmail }"
+      ],
       "Verification successful": [
         "Weryfikacja powiodła się"
       ],
@@ -18145,6 +18314,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Jeśli numer odzyskiwania jest prawidłowy, otrzymasz SMS ze swoją nazwą użytkownika."
+      ],
+      "Your address has been activated": [
+        "Twój adres został aktywowany"
       ]
     },
     "Success message": {
@@ -19353,6 +19525,12 @@
       ],
       "Privacy and data collection": [
         "Prywatność i zbieranie danych"
+      ],
+      "Problem processing your payment": [
+        "Problem z przetwarzaniem Twojej płatności"
+      ],
+      "Problem processing your request": [
+        "Problem z przetwarzaniem Twojego żądania"
       ],
       "Processing...": [
         "Przetwarzanie..."

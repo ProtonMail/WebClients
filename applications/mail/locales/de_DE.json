@@ -489,6 +489,9 @@
       "Edit address": [
         "E-Mail-Adresse bearbeiten"
       ],
+      "Edit billing address": [
+        "Rechnungsadresse bearbeiten"
+      ],
       "Edit draft": [
         "Entwurf bearbeiten"
       ],
@@ -4903,6 +4906,9 @@
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Rückerstattung der Umsatzsteuer ist für dieses Abonnement nicht unterstützt"
+      ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Der Versand von Anhängen ist eingeschränkt, bis du die Grenzen deines Abonnements erfüllst oder ein Upgrade durchführst."
       ],
@@ -4950,9 +4956,6 @@
       ],
       "Tab closed": [
         "Tab geschlossen"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Steuerbefreiung wird für diesen Plan nicht unterstützt"
       ],
       "Text is too long to refine": [
         "Der Text ist zu lang, um ihn zu verbessern"
@@ -5775,7 +5778,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacy by default."
+        "${ BRAND_NAME }. Privatsphäre als Standard."
       ]
     },
     "forwardmessage": {
@@ -7560,7 +7563,7 @@
         "Niedrige Priorität"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } als Standard-E-Mail-Anwendung festlegen."
+        "${ MAIL_APP_NAME } zu deiner Standard-E-Mail-Anwendung machen."
       ],
       "Manage your folders": [
         "Ordner verwalten"
@@ -8815,6 +8818,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Dein Konto ist derzeit so konfiguriert, dass die Rückerstattung der Umsatzsteuer nicht angewendet wird. Dies wird für das ausgewählte Abonnement nicht unterstützt. Um fortzufahren, entferne entweder die Umsatzsteuer-Identifikationsnummer aus der Rechnungsadresse oder wähle anderes Abonnement."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Dein Browser unterstützt den Schreibassistenten nicht. Versuche ihn auf Servern auszuführen."
@@ -12817,6 +12823,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Deal sichern"
+      ],
+      "SPRING SALE 2026": [
+        "SPRING SALE 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12898,7 +12907,7 @@
         "für 12 Monate"
       ],
       "SPRING SALE": [
-        "FRÜHLINGS-SALE"
+        "SPRING SALE"
       ]
     },
     "Received email icon": {
@@ -13756,16 +13765,6 @@
       ],
       "Your pm.me email is active": [
         "Deine pm.me-E-Mail-Adresse ist aktiv"
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "Frühjahrsangebote 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "Frühjahrsangebote"
       ]
     },
     "sso": {
@@ -15318,7 +15317,7 @@
         "Ungültiger Verifizierungscode"
       ],
       "Keep this banner hidden?": [
-        "Dieses Banner ausblenden?"
+        "Dieses Banner ausgeblendet lassen?"
       ],
       "Label as": [
         "Folgender Kategorie zuordnen"
@@ -15592,6 +15591,9 @@
       ],
       "Request new code": [
         "Neuen Code anfordern"
+      ],
+      "Reverse charge not supported": [
+        "Rückerstattungen der Umsatzsteuer nicht unterstützt"
       ],
       "Same inbox, shorter email address": [
         "Gleicher Posteingang, kürzere E-Mail-Adresse"

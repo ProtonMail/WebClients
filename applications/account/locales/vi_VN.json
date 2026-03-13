@@ -90,6 +90,12 @@
       "Activate recovery": [
         "Kích hoạt khôi phục"
       ],
+      "Activate reserved address": [
+        "Kích hoạt địa chỉ đã đặt trước"
+      ],
+      "Activate this address": [
+        "Kích hoạt địa chỉ này"
+      ],
       "Add": [
         "Thêm"
       ],
@@ -540,6 +546,9 @@
       "Don't show again": [
         "Đừng hiện nữa"
       ],
+      "Donate": [
+        "Quyên góp"
+      ],
       "Done": [
         "Xong"
       ],
@@ -809,6 +818,9 @@
       ],
       "Get verification code": [
         "Lấy mã xác thực"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Nhận địa chỉ ${ MAIL_APP_NAME } riêng"
       ],
       "Go back": [
         "Quay lại"
@@ -1341,6 +1353,9 @@
       "Send reminder": [
         "Gửi nhắc nhở"
       ],
+      "Send verification code": [
+        "Gửi mã xác minh"
+      ],
       "Set as album cover": [
         "Đặt làm ảnh bìa album"
       ],
@@ -1508,6 +1523,9 @@
       ],
       "Try for free": [
         "Dùng thử miễn phí"
+      ],
+      "Try payment again": [
+        "Thử thanh toán lại"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Thử lưu lại. Lưu thất bại do: ${ saveError }"
@@ -6091,6 +6109,9 @@
       "Account does not exist": [
         "Tài khoản không tồn tại"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Kích hoạt thất bại. Các chi tiết có thể không chính xác hoặc email đã được kích hoạt. Vui lòng kiểm tra đầu vào hoặc đăng nhập."
+      ],
       "Add at least one action": [
         "Thêm ít nhất một thao tác"
       ],
@@ -6207,6 +6228,9 @@
       ],
       "Expired": [
         "Đã hết hạn"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Kích hoạt địa chỉ thất bại. Vui lòng thử lại."
       ],
       "Failed to add group member": [
         "Không thêm được thành viên nhóm"
@@ -7749,6 +7773,16 @@
         "Tôi hiểu rằng tôi sẽ không còn có thể đăng nhập vào các phiên bản cũ hơn của ứng dụng di động ${ BRAND_NAME }."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Nhập địa chỉ email"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Voucher sẽ được gửi đến đây."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "ứng dụng web"
@@ -8048,6 +8082,32 @@
       ],
       "Subscribed": [
         "Đã đăng ký"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Một bước đơn giản hôm nay để đảm bảo an toàn kỹ thuật số cho con trẻ vào ngày mai"
+      ],
+      "Activate your reserved email address": [
+        "Kích hoạt địa chỉ email đã đặt trước"
+      ],
+      "Address reservation voucher": [
+        "Voucher đặt trước địa chỉ"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Quyên góp cho ${ BRAND_NAME } Foundation"
+      ],
+      "Enter verification code": [
+        "Nhập mã xác minh"
+      ],
+      "Recover activation voucher": [
+        "Khôi phục voucher kích hoạt"
+      ],
+      "Reserve child's email address": [
+        "Đặt trước địa chỉ email cho trẻ"
+      ],
+      "We emailed you the voucher": [
+        "Voucher đã được gửi qua email"
       ]
     },
     "Headline": {
@@ -9517,11 +9577,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "Nhập thông tin đăng nhập của tài khoản email muốn nhập thư."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Nhập địa chỉ email đã dùng để đặt trước ${ reservedEmail }."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Nhập ID pháp nhân của một tổ chức **eduGAIN** cho **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Nhập Mật khẩu tổ chức để khôi phục các đặc quyền của quản trị viên. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Nhập địa chỉ email đã đặt trước và địa chỉ email đã sử dụng trong quá trình đặt trước."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Hãy nhập mã xác thực đã được gửi tới ${ destinationText }."
@@ -9676,6 +9742,9 @@
       "Groups": [
         "Nhóm"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Giúp các gia đình khác mang lại cho con cái họ một khởi đầu an toàn trực tuyến. Hãy chia sẻ cột mốc này và lan tỏa thông điệp."
+      ],
       "here": [
         "ở đây"
       ],
@@ -9684,6 +9753,9 @@
       ],
       "High Priority": [
         "Ưu tiên cao"
+      ],
+      "How it works": [
+        "Cách thức hoạt động"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -9705,6 +9777,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Nếu phím vô hiệu hóa được kích hoạt, có thể sử dụng các phím sau cho các thao tác nhanh hoặc chuyển đến các chế độ xem khác. ${ metaKey } + K luôn được kích hoạt."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Nếu email đã nhập được sử dụng để đặt trước địa chỉ email của trẻ, voucher kích hoạt sẽ được gửi lại."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Nếu múi giờ hệ thống không khớp với tùy chọn múi giờ hiện tại, sẽ được yêu cầu cập nhật (tối đa một lần mỗi ngày)."
@@ -9936,6 +10011,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Chỉ cần xác nhận lựa chọn và chúng tôi sẽ thực hiện phần còn lại."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Giữ voucher an toàn cho đến khi cần, ví dụ như trong ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Giữ thông tin an toàn và riêng tư hơn với các hướng dẫn và mẹo này."
@@ -10429,6 +10507,9 @@
       "Receive notifications for ${ categoryLabel }": [
         "Nhận thông báo cho ${ categoryLabel }"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Nhận voucher đặt trước qua email. Có thể sử dụng voucher để kích hoạt địa chỉ trong vòng 15 năm tới. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Máy chủ đã sử dụng gần đây:"
       ],
@@ -10657,6 +10738,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Một số máy chủ có thể không xuất hiện trong danh sách trên. Tìm kiếm theo tên máy chủ (ví dụ: AT#62) để tìm chúng."
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Đã xảy ra sự cố. Vui lòng thử lại hoặc liên hệ với bộ phận hỗ trợ khách hàng."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Chỉ định miền được phép xác thực với SAML SSO."
       ],
@@ -10674,6 +10758,9 @@
       ],
       "Step ${ step }": [
         "Bước ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Bước ${ step }/${ totalSteps }"
       ],
       "Storage allocated to other users in this organisation": [
         "Dung lượng lưu trữ được phân bố cho các người dùng trong tổ chức này"
@@ -10999,6 +11086,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Để cập nhật những phát triển mới nhất tại các sản phẩm ${ BRAND_NAME }, có thể đăng ký nhận các email khác nhau của chúng tôi và ${ blogLink } theo thời gian."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Để ngăn chặn lạm dụng hoặc gian lận, cần có khoản quyên góp tối thiểu là ${ minimumDonation }. Khoản này hỗ trợ công việc của ${ protonFoundationLink } trong việc bảo vệ quyền riêng tư kỹ thuật số trên toàn cầu và giúp bảo vệ thế hệ tương lai."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Để tiếp tục, hãy chọn phương thức khôi phục tài khoản để chúng tôi có thể xác minh yêu cầu."
       ],
@@ -11218,6 +11308,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Chúng tôi khuyên bạn nên sử dụng các ứng dụng ${ VPN_APP_NAME } chính thức khi có thể."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Không thể hoàn tất giao dịch. Vui lòng thử lại."
+      ],
       "We couldn’t process your payment.": [
         "Không thể xử lý thanh toán."
       ],
@@ -11325,6 +11418,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Khi xóa máy chủ khỏi cổng, máy chủ sẽ chuyển sang giai đoạn hủy kích hoạt trong 10 ngày. Máy chủ này có thể được thêm vào cổng mới, nhưng không thể thay đổi quốc gia."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Khi đã sẵn sàng kích hoạt địa chỉ, hãy quét mã QR hoặc sử dụng liên kết trong voucher."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Khi đăng ký làm mới, chúng tôi sẽ áp dụng mọi tín dụng hiện có trước khi chúng tôi tính phí phương pháp thanh toán ở trên."
@@ -11680,6 +11776,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Bản dùng thử sẽ kết thúc sau ${ timeRemaining }."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Voucher cho địa chỉ email ${ BRAND_NAME } đã đặt trước: ${ reservedEmail }"
+      ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Bạn cũng sẽ mất quyền truy cập vào các tính năng của ${ boldPlanTitle }:"
       ],
@@ -11719,6 +11818,11 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "Giúp viết, trả lời và soát lỗi email. Nếu bị vô hiệu hóa, chỉ quản trị viên mới có quyền truy cập. Quản lý cho từng người dùng trong ${ userAndAddresses } hoặc ${ addMoreSeats }"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Nhập mã xác minh đã được gửi đến ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -12336,6 +12440,9 @@
       "Actions": [
         "Các thao tác"
       ],
+      "Activation code": [
+        "Mã kích hoạt"
+      ],
       "Activity": [
         "Hoạt động"
       ],
@@ -12573,6 +12680,9 @@
       "Choose a name for the generated certificate file": [
         "Chọn tên cho tệp chứng chỉ được tạo"
       ],
+      "Choose an address to reserve for your child": [
+        "Chọn một địa chỉ để đặt trước cho trẻ"
+      ],
       "Choose your billing": [
         "Chọn chu kỳ thanh toán"
       ],
@@ -12774,6 +12884,12 @@
       "Don't show this again": [
         "Không hiển thị lại mục này"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Quyên góp $1 trở lên cho ${ BRAND_NAME } Foundation"
+      ],
+      "Donation amount": [
+        "Số tiền quyên góp"
+      ],
       "Duration": [
         "Thời lượng"
       ],
@@ -12830,6 +12946,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Nhập mật khẩu cho khóa có dấu vân tay: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Nhập địa chỉ email"
       ],
       "Enter your password": [
         "Nhập mật khẩu"
@@ -13338,6 +13457,12 @@
       "Require 2FA for everyone": [
         "Yêu cầu 2FA đối với mọi người"
       ],
+      "Reserved address": [
+        "Địa chỉ đã đặt trước"
+      ],
+      "Reserved email address": [
+        "Địa chỉ email đã đặt trước"
+      ],
       "Reveal password": [
         "Hiện mật khẩu"
       ],
@@ -13379,6 +13504,9 @@
       ],
       "Server name": [
         "Tên máy chủ"
+      ],
+      "Set password": [
+        "Đặt mật khẩu"
       ],
       "Share your referral link": [
         "Chia sẻ liên kết giới thiệu"
@@ -13508,6 +13636,9 @@
       ],
       "Tips and insights": [
         "Mẹo và thông tin chi tiết"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Để kích hoạt, hãy quét mã QR hoặc truy cập:"
       ],
       "To help us improve, please explain why you are leaving.": [
         "Để giúp chúng tôi cải thiện, vui lòng giải thích lý do bạn rời đi."
@@ -13641,17 +13772,26 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Có, tôi muốn xóa vĩnh viễn tài khoản này và tất cả dữ liệu của nó."
       ],
+      "Your activation code:": [
+        "Mã kích hoạt:"
+      ],
       "Your calendar URL": [
         "URL lịch của bạn"
       ],
       "Your credit balance": [
         "Số dư tín dụng của bạn"
       ],
+      "Your email address": [
+        "Địa chỉ email"
+      ],
       "Your password (admin)": [
         "Mật khẩu (quản trị viên)"
       ],
       "Your password (trusted contact)": [
         "Mật khẩu (liên hệ tin cậy)"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Voucher cho địa chỉ email ${ BRAND_NAME } đã đặt trước:"
       ],
       "ZIP code": [
         "Mã bưu chính"
@@ -13823,6 +13963,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "của ${ BRAND_NAME } Foundation"
+      ],
       "Activity log": [
         "Nhật ký hoạt động"
       ],
@@ -13843,6 +13986,9 @@
       ],
       "Calendars": [
         "Lịch"
+      ],
+      "Can't find your code?": [
+        "Không thể tìm thấy mã?"
       ],
       "clearing your browser cache": [
         "xóa bộ nhớ đệm trình duyệt"
@@ -14043,6 +14189,20 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Người dùng và địa chỉ"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Email"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -17430,6 +17590,9 @@
       "Address": [
         "Địa chỉ"
       ],
+      "Amount": [
+        "Số tiền"
+      ],
       "Anderson": [
         "Anderson"
       ],
@@ -18336,14 +18499,8 @@
       "Disable recovery by email": [
         "Vô hiệu hóa khôi phục bằng email"
       ],
-      "Disable recovery by email ": [
-        "Vô hiệu hóa khôi phục bằng email "
-      ],
       "Disable recovery by phone": [
         "Vô hiệu hóa khôi phục bằng số điện thoại"
-      ],
-      "Disable recovery by phone ": [
-        "Vô hiệu hóa khôi phục bằng điện thoại "
       ],
       "Download ${ size }": [
         "Tải xuống ${ size }"
@@ -21022,6 +21179,9 @@
       "Verification code copied to clipboard": [
         "Đã sao chép mã xác minh vào bảng tạm"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Đã gửi mã xác minh đến ${ parentEmail }"
+      ],
       "Verification successful": [
         "Xác thực thành công"
       ],
@@ -21045,6 +21205,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Sẽ nhận được tên người dùng qua SMS trong vòng một phút nếu đã nhập số điện thoại khôi phục hợp lệ."
+      ],
+      "Your address has been activated": [
+        "Địa chỉ đã được kích hoạt"
       ]
     },
     "Success message": {
@@ -22418,6 +22581,12 @@
       ],
       "Privacy and data collection": [
         "Quyền riêng tư và thu thập dữ liệu"
+      ],
+      "Problem processing your payment": [
+        "Sự cố xử lý thanh toán"
+      ],
+      "Problem processing your request": [
+        "Sự cố khi xử lý yêu cầu"
       ],
       "Processing...": [
         "Đang xử lý..."

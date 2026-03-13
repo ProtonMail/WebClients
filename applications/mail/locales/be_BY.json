@@ -495,6 +495,9 @@
       "Edit address": [
         "Рэдагаваць адрас"
       ],
+      "Edit billing address": [
+        "Рэдагаваць адрас аплаты"
+      ],
       "Edit draft": [
         "Рэдагаваць чарнавік"
       ],
@@ -3096,7 +3099,7 @@
         "Факс"
       ],
       "Main": [
-        "Галоўная"
+        "Галоўны"
       ],
       "Mobile": [
         "Мабільны"
@@ -4976,6 +4979,9 @@
       "Request timed out": [
         "Перавышаны тэрмін чакання запыту"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Схема адваротнага налічэння падатку не падтрымліваецца для гэтага тарыфнага плана"
+      ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Магчымасць адпраўкі далучэнняў абмежавана да таго моманту, пакуль ваш тарыфны план не пачне адпавядаць абмежаванням або ваша падпіска не будзе палепшана."
       ],
@@ -5023,9 +5029,6 @@
       ],
       "Tab closed": [
         "Укладка закрыта"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Вызваленне ад падаткаў не падтрымліваецца для гэтага тарыфнага плана"
       ],
       "Text is too long to refine": [
         "Занадта доўгі тэкст для ўдасканалення"
@@ -9107,6 +9110,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
       ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб ужываць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
+      ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Ваш браўзер не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы."
       ],
@@ -9893,6 +9899,9 @@
       ],
       "Import interval": [
         "Інтэрвал імпартавання"
+      ],
+      "Import recent mails": [
+        "Імпартаваць нядаўнія лісты"
       ],
       "Import to email address": [
         "Імпартаваць у адрас электроннай пошты"
@@ -14129,16 +14138,6 @@
         "Ваш адрас pm.me актыўны"
       ]
     },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "ВЯСЕННІ РАСПРОДАЖ 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "ВЯСЕННІ РАСПРОДАЖ"
-      ]
-    },
     "sso": {
       "Sign in": [
         "Уваход"
@@ -16087,6 +16086,9 @@
       ],
       "Request new code": [
         "Запытаць новы код"
+      ],
+      "Reverse charge not supported": [
+        "Адваротнае налічэнне падатку не падтрымліваецца"
       ],
       "Same inbox, shorter email address": [
         "Тая ж паштовая скрыня, карацейшы адрас электроннай пошты"
