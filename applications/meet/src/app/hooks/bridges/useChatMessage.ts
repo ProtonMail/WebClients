@@ -19,7 +19,7 @@ export const useChatMessage = () => {
 
     const dispatch = useMeetDispatch();
 
-    const reportMeetError = useMeetErrorReporting();
+    const { reportMeetError } = useMeetErrorReporting();
 
     const notifications = useNotifications();
 

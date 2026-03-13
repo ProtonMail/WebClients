@@ -18,7 +18,7 @@ import { createMeetAudioContext } from '../../utils/meet-audio-context';
 import { ProtonMeetContainer, ProtonMeetContainerWithUser } from './ProtonMeetContainer';
 
 export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean }) => {
-    const reportMeetError = useMeetErrorReporting();
+    const { reportMeetError } = useMeetErrorReporting();
 
     const isMeetVp9Allowed = useFlag('MeetVp9');
     const isMeetHigherBitrate = useFlag('MeetHigherBitrate');

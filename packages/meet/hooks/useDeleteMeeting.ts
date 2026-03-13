@@ -6,7 +6,7 @@ import { useMeetErrorReporting } from './useMeetErrorReporting';
 export const useDeleteMeeting = () => {
     const api = useApi();
 
-    const reportMeetError = useMeetErrorReporting();
+    const { reportMeetError } = useMeetErrorReporting();
 
     const deleteMeeting = async (meetingId: string) => {
         try {

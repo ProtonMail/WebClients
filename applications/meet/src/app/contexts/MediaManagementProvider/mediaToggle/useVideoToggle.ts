@@ -32,7 +32,7 @@ export const useVideoToggle = (
     systemDefaultCamera: MediaDeviceInfo,
     cameras: MediaDeviceInfo[]
 ) => {
-    const reportError = useMeetErrorReporting();
+    const { reportMeetError: reportError } = useMeetErrorReporting();
     const room = useRoomContext();
     const { isCameraEnabled, localParticipant } = useLocalParticipant();
 

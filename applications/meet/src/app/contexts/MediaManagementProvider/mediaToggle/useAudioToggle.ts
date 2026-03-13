@@ -24,7 +24,7 @@ export const useAudioToggle = (
     systemDefaultMicrophone: MediaDeviceInfo,
     microphones: MediaDeviceInfo[]
 ) => {
-    const reportError = useMeetErrorReporting();
+    const { reportMeetError: reportError } = useMeetErrorReporting();
     const [noiseFilter, setNoiseFilter] = useState(isAdvancedNoiseFilterSupported);
     const { isMicrophoneEnabled, localParticipant } = useLocalParticipant();
 
