@@ -35,6 +35,7 @@ import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { AudioPlaybackPrompt } from '../AudioPlaybackPrompt/AudioPlaybackPrompt';
 import { AudioSettings } from '../AudioSettings/AudioSettings';
 import { ChatButton } from '../ChatButton';
+import { EmojiReactionButton } from '../EmojiReactionButton/EmojiReactionButton';
 import { InfoButton } from '../InfoButton/InfoButton';
 import { LeaveMeetingPopup } from '../LeaveMeetingPopup/LeaveMeetingPopup';
 import { MeetingName } from '../MeetingName/MeetingName';
@@ -295,6 +296,7 @@ export const ParticipantControls = () => {
                             <WrappedParticipantsButton hasAdminPermission={hasAdminPermission} />
                         )}
                         <ChatButton />
+                        <EmojiReactionButton />
                         <CircleButton
                             IconComponent={IcMeetSettings}
                             variant={sideBarState[MeetingSideBars.Settings] ? 'active' : 'default'}
@@ -308,11 +310,17 @@ export const ParticipantControls = () => {
                     </div>
                     <div className="flex lg:hidden gap-2 flex-nowrap">
                         {isMobile() ? (
-                            <ChatButton />
+                            <>
+                                <ChatButton />
+                                <EmojiReactionButton />
+                            </>
                         ) : (
-                            <div className="hidden sm:block">
-                                <ScreenShareButton />
-                            </div>
+                            <>
+                                <div className="hidden md:block">
+                                    <ScreenShareButton />
+                                </div>
+                                <EmojiReactionButton />
+                            </>
                         )}
                         {!isMobile() && (
                             <div className="hidden md:block">

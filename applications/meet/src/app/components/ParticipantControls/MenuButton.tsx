@@ -73,7 +73,7 @@ export const MenuButton = () => {
             label: c('Alt').t`Meeting details`,
             onClick: () => handleClick(MeetingSideBars.MeetingDetails),
         },
-        ...(viewportWidth.xsmall
+        ...(viewportWidth.small
             ? [
                   {
                       icon: IcMeetScreenShare,

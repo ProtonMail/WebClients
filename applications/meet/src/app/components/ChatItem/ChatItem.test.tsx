@@ -2,13 +2,23 @@ import { Provider } from 'react-redux';
 
 import { configureStore } from '@reduxjs/toolkit';
 import { cleanup, render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices';
+import { meetingStateReducer } from '@proton/meet/store/slices/meetingState';
 import type { MeetChatMessage, ParticipantEventRecord } from '@proton/meet/types/types';
 import { ParticipantEvent } from '@proton/meet/types/types';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
 import { ChatItem } from './ChatItem';
+
+vi.mock('@livekit/components-react', () => ({
+    useLocalParticipant: () => ({ localParticipant: { identity: 'local-user' } }),
+}));
+
+vi.mock('../../hooks/bridges/useChatMessageReaction', () => ({
+    useChatMessageReaction: () => vi.fn(),
+}));
 
 const timestamp = 1718534400;
 
@@ -41,6 +51,7 @@ const createMockStore = () => {
     return configureStore({
         reducer: {
             ...meetingInfoReducer,
+            ...meetingStateReducer,
         },
         preloadedState: {
             meetingInfo: {
