@@ -4383,6 +4383,9 @@
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Το σύστημα αντιστροφής χρέωσης δεν υποστηρίζεται για αυτό το πλάνο"
+      ],
       "Server not found": [
         "Δε βρέθηκε ο διακομιστής"
       ],
@@ -4418,9 +4421,6 @@
       ],
       "Tab closed": [
         "Κλειστή καρτέλα"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Η φοροαπαλλαγή δεν υποστηρίζεται για αυτό το πλάνο."
       ],
       "The amount due has changed. Please try again.": [
         "Το οφειλόμενο ποσό έχει αλλάξει. Παρακαλούμε προσπαθήστε ξανά."
@@ -8451,6 +8451,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ο λογαριασμός σας είναι αυτή τη στιγμή ρυθμισμένος να εφαρμόζει το καθεστώς αντίστροφης χρέωσης. Αυτό δεν υποστηρίζεται για το επιλεγμένο πλάνο. Για να συνεχίσετε, είτε αφαιρέστε τον αριθμό ΦΠΑ από τη διεύθυνση χρέωσης είτε επιλέξτε ένα άλλο πλάνο."
       ],
       "Your account was successfully updated with this promotion": [
         "Ο λογαριασμός σας ενημερώθηκε με επιτυχία με αυτήν την προσφορά"
@@ -13841,16 +13844,6 @@
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ]
     },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "ΑΝΟΙΞΙΑΤΙΚΕΣ ΕΚΠΤΩΣΕΙΣ 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "ΑΝΟΙΞΙΑΤΙΚΕΣ ΕΚΠΤΩΣΕΙΣ"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "Ο ${ boldedMemberAddress } ζητά τη βοήθειά σας για να συνδεθεί στον Λογαριασμό του ${ BRAND_NAME } με καθολική σύνδεση."
@@ -15936,6 +15929,9 @@
       ],
       "Restore administrator privileges": [
         "Επαναφορά δικαιωμάτων διαχειριστή"
+      ],
+      "Reverse charge not supported": [
+        "Αντιστροφή χρέωσης δεν υποστηρίζεται"
       ],
       "Revoke certificate?": [
         "Ανάκληση πιστοποιητικού;"

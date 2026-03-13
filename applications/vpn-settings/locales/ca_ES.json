@@ -4383,6 +4383,9 @@
       "Request timed out": [
         "La sol·licitud ha caducat"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El règim d'inversió del subjecte passiu no és compatible amb aquest pla"
+      ],
       "Server not found": [
         "No s'ha trobat el servidor"
       ],
@@ -4418,9 +4421,6 @@
       ],
       "Tab closed": [
         "Pestanya tancada"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Aquest pla no admet l'exempció d'impostos"
       ],
       "The amount due has changed. Please try again.": [
         "L'import que cal pagar ha canviat. Torneu-ho a provar."
@@ -8451,6 +8451,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "El vostre compte està configurat actualment per aplicar el règim de facturació inversa. Això no és compatible amb el pla seleccionat. Per continuar, o bé elimineu el número d'IVA de l'adreça de facturació o bé seleccioneu un pla diferent."
       ],
       "Your account was successfully updated with this promotion": [
         "S'ha actualitzat el vostre compte amb aquesta promoció"
@@ -13844,16 +13847,6 @@
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
       ]
     },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "REBAIXES DE PRIMAVERA 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "REBAIXES DE PRIMAVERA"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } demana la vostra ajuda per iniciar la sessió al seu compte ${ BRAND_NAME } amb un inici de sessió únic."
@@ -15939,6 +15932,9 @@
       ],
       "Restore administrator privileges": [
         "Restaurar els privilegis d'administrador"
+      ],
+      "Reverse charge not supported": [
+        "No s'admet la inversió del subjecte passiu"
       ],
       "Revoke certificate?": [
         "Voleu revocar el certificat?"

@@ -4326,6 +4326,9 @@
       "Request timed out": [
         "Forespørgsel fik timeout"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omvendt betalingsordning understøttes ikke for dette abonnement"
+      ],
       "Server not found": [
         "Server ikke fundet"
       ],
@@ -4361,9 +4364,6 @@
       ],
       "Tab closed": [
         "Fane lukket"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Skattefritagelse understøttes ikke for dette abonnement"
       ],
       "The amount due has changed. Please try again.": [
         "Det skyldige beløb er ændret. Prøv venligst igen."
@@ -8274,6 +8274,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Din konto er i øjeblikket konfigureret til at anvende omvendt betalingspligt, som ikke er understøttet i det valgte abonnement. For at fortsætte skal du enten fjerne momsnummeret fra faktureringsadressen eller vælge et andet abonnement."
       ],
       "Your account was successfully updated with this promotion": [
         "Din konto er blevet opdateret med denne kampagne"
@@ -12385,6 +12388,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Tag imod tilbuddet"
+      ],
+      "SPRING SALE 2026": [
+        "FORÅRSALG 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12466,7 +12472,7 @@
         "i 12 måneder"
       ],
       "SPRING SALE": [
-        "FORÅRSUDSALG"
+        "FORÅR SALG"
       ]
     },
     "Recovery Email": {
@@ -15721,6 +15727,9 @@
       ],
       "Restore administrator privileges": [
         "Gendan administratorprivilegier"
+      ],
+      "Reverse charge not supported": [
+        "Fakturering med omvendt betaling understøttes ikke"
       ],
       "Revoke certificate?": [
         "Tilbagekald certifikat?"
