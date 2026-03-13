@@ -6912,6 +6912,9 @@
       "Request timed out": [
         "Solicitarea a expirat"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Schema de taxare inversă nu este acceptată pentru acest plan."
+      ],
       "Server not found": [
         "Server negăsit"
       ],
@@ -6953,9 +6956,6 @@
       ],
       "Tab closed": [
         "Filă închisă."
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Exonerarea fiscală nu este acceptată pentru acest plan."
       ],
       "The address might be misspelled": [
         "Adresa ar putea fi scrisă greșit"
@@ -12442,6 +12442,9 @@
       ],
       "Your account has been successfully updated.": [
         "Contul a fost actualizat."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Contul este configurat în prezent pentru a aplica schema de taxare inversă. Aceasta nu este acceptată pentru planul selectat. Pentru a continua, fie eliminați numărul de TVA din adresa de facturare, fie selectați un alt plan."
       ],
       "Your account was successfully updated with this promotion": [
         "Contul a fost modificat cu planul din această promoție."
@@ -19042,6 +19045,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Valorificați oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTĂ DE PRIMĂVERII 2026"
       ]
     },
     "q1campaign: Info": {
@@ -19123,7 +19129,7 @@
         "pentru 12 luni"
       ],
       "SPRING SALE": [
-        "REDUCERI DE PRIMĂVARĂ"
+        "OFERTĂ DE PRIMĂVERII"
       ]
     },
     "Recovery Email": {
@@ -19664,14 +19670,8 @@
       "Disable recovery by email": [
         "Dezactivare recuperare prin e-mail"
       ],
-      "Disable recovery by email ": [
-        "Dezactivați recuperarea prin e-mail "
-      ],
       "Disable recovery by phone": [
         "Dezactivare recuperare cu număr de telefon"
-      ],
-      "Disable recovery by phone ": [
-        "Dezactivați recuperarea cu numărul de telefon "
       ],
       "Download ${ size }": [
         "Descărcare ${ size }"
@@ -21345,16 +21345,6 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Obțineți credite când persoana pe care o invitați se abonează la un plan ${ BRAND_NAME }."
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "REDUCERE DE PRIMĂVARĂ 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "REDUCERE DE PRIMĂVARĂ"
       ]
     },
     "sso": {
@@ -24120,6 +24110,9 @@
       ],
       "Reused passwords": [
         "Parole refolosite"
+      ],
+      "Reverse charge not supported": [
+        "Taxa inversă nu este suportată"
       ],
       "Revoke certificate?": [
         "Anulați certificatul?"

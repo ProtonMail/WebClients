@@ -6834,6 +6834,9 @@
       "Request timed out": [
         "Forespørgsel fik timeout"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omvendt betalingsordning understøttes ikke for dette abonnement"
+      ],
       "Server not found": [
         "Server ikke fundet"
       ],
@@ -6875,9 +6878,6 @@
       ],
       "Tab closed": [
         "Fane lukket"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Skattefritagelse understøttes ikke for dette abonnement"
       ],
       "The address might be misspelled": [
         "Adressen kan være stavet forkert"
@@ -12150,6 +12150,9 @@
       ],
       "Your account has been successfully updated.": [
         "Din konto er blevet opdateret."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Din konto er i øjeblikket konfigureret til at anvende omvendt betalingspligt, som ikke er understøttet i det valgte abonnement. For at fortsætte skal du enten fjerne momsnummeret fra faktureringsadressen eller vælge et andet abonnement."
       ],
       "Your account was successfully updated with this promotion": [
         "Din konto er blevet opdateret med denne kampagne"
@@ -18604,6 +18607,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Tag imod tilbuddet"
+      ],
+      "SPRING SALE 2026": [
+        "FORÅRSALG 2026"
       ]
     },
     "q1campaign: Info": {
@@ -18685,7 +18691,7 @@
         "i 12 måneder"
       ],
       "SPRING SALE": [
-        "FORÅRSUDSALG"
+        "FORÅR SALG"
       ]
     },
     "Recovery Email": {
@@ -19220,14 +19226,8 @@
       "Disable recovery by email": [
         "Deaktivér gendannelse via e-mail"
       ],
-      "Disable recovery by email ": [
-        "Deaktivér gendannelse via e-mail "
-      ],
       "Disable recovery by phone": [
         "Deaktivér gendannelse via telefon"
-      ],
-      "Disable recovery by phone ": [
-        "Deaktivér gendannelse via telefon "
       ],
       "Download ${ size }": [
         "Hent ${ size }"
@@ -23566,6 +23566,9 @@
       ],
       "Reused passwords": [
         "Genbrugte adgangskoder"
+      ],
+      "Reverse charge not supported": [
+        "Fakturering med omvendt betaling understøttes ikke"
       ],
       "Revoke certificate?": [
         "Tilbagekald certifikat?"
