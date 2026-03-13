@@ -41,7 +41,8 @@ export function SpringSale2026Layout({ offer, currency, onSelectDeal, onCloseMod
 
     return (
         <div>
-            <h1 className="springSaleHeader text-break text-bold mt-2 pr-4">{c('q1campaign: Title').t`SPRING SALE`}</h1>
+            <h1 className="springSaleHeader text-break text-bold mt-2 mb-1 pr-4">{c('q1campaign: Title')
+                .t`SPRING SALE`}</h1>
 
             {/* Offer type */}
             <div className="springSaleText flex gap-2 mb-4">
