@@ -8869,7 +8869,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     eslint: "npm:^9.39.2"
     happy-dom: "npm:^20.6.1"
-    livekit-client: "npm:2.17.1"
+    livekit-client: "npm:2.17.3"
     prettier: "npm:^3.8.1"
     react: "npm:^18.3.1"
     ttag: "npm:^1.8.12"
@@ -30990,9 +30990,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"livekit-client@npm:2.17.1":
-  version: 2.17.1
-  resolution: "livekit-client@npm:2.17.1"
+"livekit-client@npm:2.17.3":
+  version: 2.17.3
+  resolution: "livekit-client@npm:2.17.3"
   dependencies:
     "@livekit/mutex": "npm:1.1.1"
     "@livekit/protocol": "npm:1.44.0"
@@ -31000,33 +31000,12 @@ __metadata:
     jose: "npm:^6.1.0"
     loglevel: "npm:^1.9.2"
     sdp-transform: "npm:^2.15.0"
-    ts-debounce: "npm:^4.0.0"
     tslib: "npm:2.8.1"
     typed-emitter: "npm:^2.1.0"
     webrtc-adapter: "npm:^9.0.1"
   peerDependencies:
     "@types/dom-mediacapture-record": ^1
-  checksum: 10/1c8429e47fd954b792e657e2b9751ed82063e6976efbe68c9622098a15643bac516cb7a79c04dcdd3fa83cbe0cb74e2eab7f98d9c6aad101b94a73aa5ddd1600
-  languageName: node
-  linkType: hard
-
-"livekit-client@npm:2.17.2":
-  version: 2.17.2
-  resolution: "livekit-client@npm:2.17.2"
-  dependencies:
-    "@livekit/mutex": "npm:1.1.1"
-    "@livekit/protocol": "npm:1.44.0"
-    events: "npm:^3.3.0"
-    jose: "npm:^6.1.0"
-    loglevel: "npm:^1.9.2"
-    sdp-transform: "npm:^2.15.0"
-    ts-debounce: "npm:^4.0.0"
-    tslib: "npm:2.8.1"
-    typed-emitter: "npm:^2.1.0"
-    webrtc-adapter: "npm:^9.0.1"
-  peerDependencies:
-    "@types/dom-mediacapture-record": ^1
-  checksum: 10/0cb87da067930da2d74074db10a1adf16abb2a5a245c081efd50ad18098ea7d65040b5a9fbc119e952d0b1728dc7e9bcc1843f9e1787d4a4c2d88d6e7b8bcd8c
+  checksum: 10/a99025597a3d9b04b721b02c91a3310fb5721ae1061c85ef71184a2c899e952643bd7145b5ce7b528091499ede0bc9b4dbc0311c4897b298e367d7e5077fd6b5
   languageName: node
   linkType: hard
 
@@ -37669,7 +37648,7 @@ __metadata:
     date-fns-tz: "npm:^2.0.1"
     eslint: "npm:^9.39.2"
     happy-dom: "npm:^20.6.1"
-    livekit-client: "npm:2.17.2"
+    livekit-client: "npm:2.17.3"
     prettier: "npm:^3.8.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -44300,13 +44279,6 @@ __metadata:
   version: 3.3.1
   resolution: "ts-custom-error@npm:3.3.1"
   checksum: 10/92e3a2c426bf6049579aeb889b6f9787e0cfb6bb715a1457e2571708be7fe739662ca9eb2a8c61b72a2d32189645f4fbcf1a370087e030d922e9e2a7b7c1c994
-  languageName: node
-  linkType: hard
-
-"ts-debounce@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "ts-debounce@npm:4.0.0"
-  checksum: 10/346a5f753fd2d855befe351c29782ee998c0ecd309f7650082c438ef5833cc4e2c70d8eea5d8a277d5b42fa997a6e9ba9eab5b88edd8d1e8d292367dcd09ef8b
   languageName: node
   linkType: hard
 
