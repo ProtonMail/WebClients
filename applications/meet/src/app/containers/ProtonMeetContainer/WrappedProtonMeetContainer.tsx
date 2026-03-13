@@ -4,7 +4,6 @@ import { RoomContext } from '@livekit/components-react';
 import { LogLevel, Room, setLogExtension, setLogLevel } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
-import { isSafari } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider/MediaManagementProvider';
@@ -25,13 +24,16 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
     const isMeetSinglePeerConnectionEnabled = useFlag('MeetSinglePeerConnection');
     const isLiveKitDebugReportingAllowed = useFlag('MeetAllowLiveKitDebugReporting');
     const isMeetH264 = useFlag('MeetH264');
-    const isMeetAudioContextEnabled = useFlag('MeetAudioContextKeepalive') && isSafari();
+
+    const isMeetEnableAudioMixing = useFlag('MeetEnableAudioMixing');
+    const isMeetEnableSpatialAudio = useFlag('MeetEnableSpatialAudio');
+    const isAudioMixingEnabled = isMeetEnableAudioMixing && !isMeetEnableSpatialAudio;
 
     const primaryCodec = isMeetH264 ? 'h264' : 'vp8';
 
     const [keyProvider] = useState(() => new ProtonMeetKeyProvider());
     const [worker] = useState(() => new Worker(new URL('livekit-client/e2ee-worker', import.meta.url)));
-    const [meetAudioContext] = useState(() => (isMeetAudioContextEnabled ? createMeetAudioContext() : null));
+    const [meetAudioContext] = useState(() => createMeetAudioContext());
     const [room] = useState(
         () =>
             new Room({
@@ -39,7 +41,7 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
                     keyProvider,
                     worker,
                 },
-                webAudioMix: meetAudioContext ? { audioContext: meetAudioContext.audioContext } : false,
+                webAudioMix: isAudioMixingEnabled ? { audioContext: meetAudioContext.audioContext } : false,
                 videoCaptureDefaults: {
                     resolution: isMeetHigherBitrate
                         ? qualityConstants[QualityScenarios.PortraitView].resolution

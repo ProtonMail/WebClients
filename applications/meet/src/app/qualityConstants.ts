@@ -26,4 +26,4 @@ export const qualityConstants = {
 
 export const screenShareQuality = h1080screenshare;
 
-export const audioQuality = 48_000;
+export const audioQuality = 96_000; // Increased from 48kbps to 96kbps for higher quality audio
