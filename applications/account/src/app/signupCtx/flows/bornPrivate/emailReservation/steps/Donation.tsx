@@ -95,7 +95,7 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
     const [apiStatuses, setApiStatuses] = useState<DonationApiStatuses>(INITIAL_STATUSES);
     const activationKeyRef = useRef<string | null>(null);
 
-    const runStep = async<T,>(key: keyof DonationApiStatuses, request: () => Promise<T>): Promise<T> => {
+    const runStep = async <T,>(key: keyof DonationApiStatuses, request: () => Promise<T>): Promise<T> => {
         setApiStatuses((prev) => ({ ...prev, [key]: 'pending' }));
         try {
             const result = await request();

@@ -11,8 +11,6 @@ import {
 import getIframeHtml from '@proton/mail-renderer/helpers/getIframeHtml';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
-import { transformBodyClasses } from '../helpers/transforms/transformBodyClasses';
-
 interface Props {
     messageID: string | undefined;
     content: string;
@@ -54,15 +52,6 @@ const useInitIframeContent = ({
 
             if (!isPlainText) {
                 emailContent += `<div id='${MESSAGE_IFRAME_TOGGLE_ID}'></div><div id='${MESSAGE_IFRAME_BLOCKQUOTE_ID}'></div>`;
-            }
-
-            // This regex looks for class="..." in the body tag only
-            const bodyClassMatch = emailContent.match(/<body[^>]*\sclass="([^"]*)"/i);
-            const bodyClasses = bodyClassMatch && bodyClassMatch[1];
-
-            if (typeof bodyClasses === 'string') {
-                const transformedBodyClasses = transformBodyClasses(bodyClasses);
-                emailContent = emailContent.replace(bodyClasses, transformedBodyClasses || '');
             }
 
             const doc = iframeRef.current?.contentDocument;

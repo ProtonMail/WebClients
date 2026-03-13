@@ -7,8 +7,6 @@ import {
 import { locateHead } from '@proton/mail/helpers/locateHead';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
-import { transformBodyClasses } from './transforms/transformBodyClasses';
-
 type Options = {
     emailContent: string;
     messageDocument: Required<MessageState>['messageDocument']['document'];
@@ -31,8 +29,7 @@ const getIframeHtml = ({
     const messageHead = locateHead(messageDocument) || '';
     const bodyStyles = messageDocument?.querySelector('body')?.getAttribute('style');
 
-    const bodyClassesRaw = messageDocument?.querySelector('body')?.getAttribute('class');
-    const transformedBodyClasses = bodyClassesRaw ? transformBodyClasses(bodyClassesRaw) : null;
+    const bodyClasses = messageDocument?.querySelector('body')?.getAttribute('class');
 
     /**
      * About this line:
@@ -55,8 +52,8 @@ const getIframeHtml = ({
 
     let htmlContent = emailContent;
 
-    if (transformedBodyClasses || bodyStyles) {
-        const classAttr = transformedBodyClasses ? `class="${transformedBodyClasses.trim()}"` : '';
+    if (bodyClasses || bodyStyles) {
+        const classAttr = bodyClasses ? `class="${bodyClasses.trim()}"` : '';
         const styleAttr = bodyStyles ? `style="${bodyStyles}"` : '';
         const attrs = [classAttr, styleAttr].filter(Boolean).join(' ');
         htmlContent = `<div ${attrs}>${emailContent}</div>`;
