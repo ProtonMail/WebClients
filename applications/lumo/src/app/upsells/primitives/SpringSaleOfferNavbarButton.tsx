@@ -24,7 +24,7 @@ export const SpringSaleOfferNavbarButton = ({ onUpgrade, className }: { onUpgrad
             iconName="percent"
             fullGradient={!isMediumScreen}
             onClick={onUpgrade}
-            className={clsx('button-promotion--pink', className)}
+            className={clsx('button-promotion--pink text-uppercase', className)}
             pill={false}
             data-testid="cta:special-offer"
         >
