@@ -1705,6 +1705,9 @@
       "Enabling biometrics lock failed": [
         "L'activation du verrouillage avec la biométrie n'a pas abouti."
       ],
+      "Enabling desktop auto-lock": [
+        "Activation du verrouillage automatique"
+      ],
       "Enabling offline mode...": [
         "Activation du mode hors-ligne..."
       ],
@@ -2304,6 +2307,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Cette fonctionnalité est actuellement expérimentale sous Linux. Veuillez vous assurer que votre système est à jour."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Cette fonctionnalité nécessite que l'application de bureau ${ PASS_APP_NAME } soit installée et en cours d'exécution pendant la configuration."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Cet élément n'est partagé avec personne pour le moment. Pour le partager avec d'autres personnes, invitez-les."
