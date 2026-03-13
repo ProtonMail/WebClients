@@ -18,6 +18,7 @@ export interface SettingsStore {
     mailtoBannerDismissedPermanently?: boolean;
     profilingEnabled?: boolean;
     profilingMode?: "warm" | "cold";
+    chromiumLoggingEnabled?: boolean;
 }
 
 const defaultSettings = {
