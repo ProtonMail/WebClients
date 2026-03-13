@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 
 import { VideoTrack, useLocalParticipant, useParticipantTracks } from '@livekit/components-react';
 import type { Participant, RemoteTrackPublication } from 'livekit-client';
@@ -13,6 +13,7 @@ import {
     selectIsScreenShare,
     selectParticipantNameMap,
 } from '@proton/meet/store/slices/meetingInfo';
+import { selectActiveReaction, selectRaisedHands } from '@proton/meet/store/slices/meetingState';
 import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -21,6 +22,7 @@ import clsx from '@proton/utils/clsx';
 
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
+import { RAISE_HAND_EMOJI } from '../../constants';
 import { useCameraTrackSubscriptionManager } from '../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
@@ -73,6 +75,30 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
     const { disableVideos } = useMeetSelector(selectMeetSettings);
 
     const isSpeaking = useDebouncedSpeakingStatus(participant);
+    const activeEmoji = useMeetSelector((state) => selectActiveReaction(state, participant.identity));
+    const raisedHands = useMeetSelector(selectRaisedHands);
+    const isHandRaised = raisedHands.includes(participant.identity);
+    const displayEmoji = activeEmoji || (isHandRaised ? RAISE_HAND_EMOJI : undefined);
+
+    // Track the last visible emoji synchronously during render so the exit class
+    // is applied in the very same render where displayEmoji becomes undefined.
+    const lastEmojiRef = useRef<string | undefined>(displayEmoji);
+    if (displayEmoji) {
+        lastEmojiRef.current = displayEmoji;
+    }
+    const [, setExitTick] = useState(0);
+    const isExiting = !displayEmoji && !!lastEmojiRef.current;
+    const emojiToRender = displayEmoji ?? (isExiting ? lastEmojiRef.current : undefined);
+
+    useEffect(() => {
+        if (!displayEmoji && lastEmojiRef.current) {
+            const timer = setTimeout(() => {
+                lastEmojiRef.current = undefined;
+                setExitTick((n) => n + 1);
+            }, 200);
+            return () => clearTimeout(timer);
+        }
+    }, [displayEmoji]);
 
     // Use useParticipantTracks to get camera tracks for this specific participant
     // This properly subscribes to track state changes
@@ -285,6 +311,20 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                     backgroundColor={backgroundColor}
                     profileColor={profileColor}
                 />
+            )}
+            {emojiToRender && (
+                <div
+                    className={clsx(
+                        'absolute z-up participant-tile-emoji pointer-events-none',
+                        isExiting && 'participant-tile-emoji--exit'
+                    )}
+                    style={{
+                        top: `${positionBySize[viewSize]}rem`,
+                        left: `${positionBySize[viewSize]}rem`,
+                    }}
+                >
+                    {emojiToRender}
+                </div>
             )}
             <div
                 className={clsx(
