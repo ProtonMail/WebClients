@@ -1490,6 +1490,11 @@
       "Trust": [
         "Aprobare"
       ],
+      "Trust key": [
+        "Cheie de încredere",
+        "Cheie de încredere",
+        "Chei de încredere"
+      ],
       "Trust public key": [
         "Aprobare cheie publică"
       ],
@@ -4652,6 +4657,9 @@
       "Enter a password": [
         "Introduceți o parolă"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduceți numele de utilizator fără domeniu (@exemplu.com)."
+      ],
       "Error connecting to the Bitcoin API.": [
         "Eroare de conectare la Bitcoin API."
       ],
@@ -7588,9 +7596,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -13072,6 +13078,9 @@
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Reducerile se bazează pe prețurile lunare standard. Abonamentul dvs. se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
       ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Extindeți-vă abonamentul și salvați ${ discountPercent }%!"
+      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Acces complet la ${ VPN_APP_NAME }"
       ],
@@ -13092,6 +13101,9 @@
       ],
       "Stronger protection against cyber threats": [
         "Protecție mai puternică împotriva amenințărilor cibernetice"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Treceți la planul nostru anual și salvați ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Conversații zilnice nelimitate"
