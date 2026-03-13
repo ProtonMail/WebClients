@@ -8,9 +8,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
-import { SetTheme } from '../../../content/theme/SetTheme';
 import { SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';
 import getAvailablePlansWithCycles from '../../helpers/getAvailablePlansWithCycles';
@@ -128,7 +126,6 @@ const PassSignupPage = (props: BaseSignupContextProps) => {
 
     return (
         <>
-            <SetTheme theme={ThemeTypes.Carbon} />
             <SignupContextProvider
                 {...props}
                 app={APPS.PROTONPASS}
