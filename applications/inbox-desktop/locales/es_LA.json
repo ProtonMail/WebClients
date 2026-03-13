@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "«Reiniciar y crear un perfil ahora» reiniciará la aplicación inmediatamente y capturará un perfil de inicio.\n\n«Perfil en el próximo inicio» generará un perfil la próxima vez que abra la aplicación. Úselo para medir la velocidad de inicio después de reiniciar."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "Acerca de ${ MAIL_APP_NAME }"
       ],
@@ -53,6 +56,12 @@
       "Paste and Match Style": [
         "Pegar en el mismo estilo"
       ],
+      "Profile app startup": [
+        "Inicio de la aplicación de perfil"
+      ],
+      "Profile on next launch": [
+        "Perfil en el próximo inicio"
+      ],
       "Quit": [
         "Salir"
       ],
@@ -64,6 +73,9 @@
       ],
       "Reload": [
         "Recargar"
+      ],
+      "Restart and profile now": [
+        "Reiniciar y crear un perfil ahora"
       ],
       "Select All": [
         "Seleccionar todo"
