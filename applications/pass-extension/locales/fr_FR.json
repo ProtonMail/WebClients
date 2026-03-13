@@ -1010,6 +1010,9 @@
       "Encrypted JSON not supported": [
         "Le JSON chiffré n'est pas pris en charge."
       ],
+      "Encryption communication for desktop unlock failed.": [
+        "Le chiffrement de la communication pour le déverrouillage du bureau a échoué."
+      ],
       "Error reporting problem": [
         "Une erreur s'est produite pendant le signalement du bug."
       ],
@@ -1246,6 +1249,15 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Une erreur s'est produite. Rechargez l'extension ${ PASS_APP_NAME }. Ce bug a été signalé."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "L'application de bureau ${ PASS_APP_NAME } est verrouillée, elle doit être déverrouillée."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "L'application de bureau ${ PASS_APP_NAME } n'est pas installée."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "L'application de bureau ${ PASS_APP_NAME } ne répond pas, est-elle en cours d'exécution ?"
       ],
       "The URL is in the list": [
         "L'URL est dans la liste."
@@ -1805,6 +1817,9 @@
       "Enabling biometrics lock failed": [
         "L'activation du verrouillage avec la biométrie n'a pas abouti."
       ],
+      "Enabling desktop auto-lock": [
+        "Activation du verrouillage automatique"
+      ],
       "Enabling offline mode...": [
         "Activation du mode hors-ligne..."
       ],
@@ -2020,7 +2035,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2422,6 +2438,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Cette fonctionnalité est actuellement expérimentale sous Linux. Veuillez vous assurer que votre système est à jour."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Cette fonctionnalité nécessite que l'application de bureau ${ PASS_APP_NAME } soit installée et en cours d'exécution pendant la configuration."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Cet élément n'est partagé avec personne pour le moment. Pour le partager avec d'autres personnes, invitez-les."
