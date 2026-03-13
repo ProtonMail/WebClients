@@ -43,8 +43,14 @@ export function convertRefTokensToSpans(content: string) {
     // Remove any incomplete bold square brackets at the end
     content = content.replaceAll(/【[^】]*$/g, '');
 
-    // Ensure ref links are separated from preceding non-whitespace characters (e.g. bare URLs).
-    // `https://example.com[3](#ref-3)` would be parsed as one invalid autolink URL.
+    // When a model outputs a bare URL immediately followed by a ref, the URL already provides
+    // the link — rendering the ref badge alongside it would be redundant (double-rendering the
+    // same source).  Drop the ref and keep only the URL.
+    // Note: any leading/trailing whitespace captured between them is also discarded.
+    content = content.replace(/(https?:\/\/\S+?)(\s*)(\[\d+\]\(#ref-\d+\))/g, '$1');
+
+    // Ensure ref links are separated from any other preceding non-whitespace character
+    // (e.g. consecutive refs `[3](#ref-3)[4](#ref-4)` → `[3](#ref-3) [4](#ref-4)`).
     content = content.replace(/(\S)(\[\d+\]\(#ref-\d+\))/g, '$1 $2');
 
     return content;
