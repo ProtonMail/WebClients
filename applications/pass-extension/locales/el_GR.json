@@ -1013,6 +1013,9 @@
       "Encrypted JSON not supported": [
         "Το κρυπτογραφημένο JSON δεν υποστηρίζεται"
       ],
+      "Encryption communication for desktop unlock failed.": [
+        "Η κρυπτογραφημένη επικοινωνία για το ξεκλείδωμα της επιφάνειας εργασίας απέτυχε."
+      ],
       "Error reporting problem": [
         "Πρόβλημα αναφοράς σφαλμάτων"
       ],
@@ -1249,6 +1252,15 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Κάτι πήγε στραβά. Φορτώστε ξανά την προέκταση ${ PASS_APP_NAME }. Αυτό το ζήτημα έχει καταγραφεί"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } είναι κλειδωμένη, και πρέπει να ξεκλειδωθεί."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } δεν είναι εγκατεστημένη."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } δεν ανταποκρίνεται, εκτελείται;"
       ],
       "The URL is in the list": [
         "Η διεύθυνση URL βρίσκεται στη λίστα"
@@ -1808,6 +1820,9 @@
       "Enabling biometrics lock failed": [
         "Η ενεργοποίηση του κλειδώματος με βιομετρικά απέτυχε"
       ],
+      "Enabling desktop auto-lock": [
+        "Ενεργοποίηση αυτόματου κλειδώματος επιφάνειας εργασίας"
+      ],
       "Enabling offline mode...": [
         "Ενεργοποίηση λειτουργίας εκτός σύνδεσης..."
       ],
@@ -2024,6 +2039,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -2425,6 +2444,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Αυτή η λειτουργία είναι προς το παρόν πειραματική στο Linux. Παρακαλούμε βεβαιωθείτε ότι το σύστημά σας είναι ενημερωμένο."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Αυτή η λειτουργία απαιτεί να είναι εγκατεστημένη και να εκτελείται η εφαρμογή επιφάνειας ${ PASS_APP_NAME } κατά τη διάρκεια της ρύθμισης."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Αυτό το στοιχείο δεν είναι προς το παρόν κοινόχρηστο με κανέναν. Προσκαλέστε άτομα να το μοιράστε με άλλους."
