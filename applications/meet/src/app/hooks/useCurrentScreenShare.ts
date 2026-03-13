@@ -64,13 +64,14 @@ export function useCurrentScreenShare({
                     audio: !(isElectronApp && isWindows()),
                     systemAudio: isElectronApp && isWindows() ? undefined : 'include',
                     selfBrowserSurface: 'exclude',
+                    contentHint: 'detail',
                     resolution: {
                         width: screenShareQuality.resolution.width,
                         height: screenShareQuality.resolution.height,
                         frameRate: screenShareQuality.encoding.maxFramerate,
                     },
                 },
-                { simulcast: false }
+                { simulcast: false, degradationPreference: 'maintain-resolution' }
             );
 
             if (!isSafari()) {
