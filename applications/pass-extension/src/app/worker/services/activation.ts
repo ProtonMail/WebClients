@@ -139,6 +139,11 @@ export const createActivationService = () => {
         if (details.reason === 'install') {
             const hasSession = (await ctx.service.storage.local.getItem('ps')) !== null;
 
+            /** Run updateScripts() before opening the onboarding tab to prevent a harmless console error
+             * due to race condition. On fresh extension install, chrome.runtime.id may be undefined,
+             * so injecting client.js in the onboarding tab would cause webextension-polyfill to throw. */
+            await ctx.service.injection.updateScripts();
+
             if (!hasSession) {
                 const fork = (forkType: ForkType) =>
                     requestFork({
@@ -163,8 +168,6 @@ export const createActivationService = () => {
                 void ctx.service.settings.onInstall();
                 void ctx.service.spotlight.onInstall();
             }
-
-            void ctx.service.injection.updateScripts();
         }
     });
 
