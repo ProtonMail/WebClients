@@ -24,7 +24,7 @@ export const useConnectionHealthCheck = ({
     const isConnectionCheckInProgressRef = useRef(false);
     const isEpochHealthCheckInProgressRef = useRef(false);
 
-    const reportMeetError = useMeetErrorReporting();
+    const { reportMeetError } = useMeetErrorReporting();
 
     const allowHealthCheck = () => {
         healthCheckAllowedRef.current = true;
