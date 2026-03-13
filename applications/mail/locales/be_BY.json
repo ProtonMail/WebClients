@@ -1685,6 +1685,9 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Edit billing address": [
+        "Рэдагаваць адрас аплаты"
       ]
     },
     "action": {
@@ -3096,7 +3099,7 @@
         "Факс"
       ],
       "Main": [
-        "Галоўная"
+        "Галоўны"
       ],
       "Mobile": [
         "Мабільны"
@@ -5203,6 +5206,9 @@
       ],
       "ZIP code is required": [
         "Патрабуецца ўвесці паштовы індэкс"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Схема адваротнага налічэння падатку не падтрымліваецца для гэтага тарыфнага плана"
       ]
     },
     "error": {
@@ -9208,6 +9214,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб ужываць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
       ]
     },
     "info": {
@@ -10307,6 +10316,9 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Import recent mails": [
+        "Імпартаваць нядаўнія лісты"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16372,6 +16384,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Неўзабаве чакайце катэгорыі!"
+      ],
+      "Reverse charge not supported": [
+        "Адваротнае налічэнне падатку не падтрымліваецца"
       ]
     },
     "Today icon tooltip in mini calendar": {

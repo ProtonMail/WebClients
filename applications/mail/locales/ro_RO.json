@@ -1677,6 +1677,9 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Edit billing address": [
+        "Editare adresă de facturare"
       ]
     },
     "action": {
@@ -5162,6 +5165,9 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Schema de taxare inversă nu este acceptată pentru acest plan."
       ]
     },
     "error": {
@@ -7683,7 +7689,7 @@
         "Prioritate scăzută"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail."
+        "Setare ${ MAIL_APP_NAME } ca aplicație implicită de e-mail."
       ],
       "Manage your folders": [
         "Gestionare foldere"
@@ -9059,6 +9065,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Contul este configurat în prezent pentru a aplica schema de taxare inversă. Aceasta nu este acceptată pentru planul selectat. Pentru a continua, fie eliminați numărul de TVA din adresa de facturare, fie selectați un alt plan."
       ]
     },
     "info": {
@@ -13021,6 +13030,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Valorificați oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTĂ DE PRIMĂVERII 2026"
       ]
     },
     "q1campaign: Info": {
@@ -13102,7 +13114,7 @@
         "pentru 12 luni"
       ],
       "SPRING SALE": [
-        "REDUCERI DE PRIMĂVARĂ"
+        "OFERTĂ DE PRIMĂVERII"
       ]
     },
     "Received email icon": {
@@ -16166,6 +16178,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Sosesc categoriile!"
+      ],
+      "Reverse charge not supported": [
+        "Taxa inversă nu este suportată"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1685,6 +1685,9 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Edit billing address": [
+        "Upraviť fakturačnú adresu"
       ]
     },
     "action": {
@@ -5203,6 +5206,9 @@
       ],
       "ZIP code is required": [
         "PSČ je povinné"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Systém prenesenia daňovej povinnosti nie je pre tento plán podporovaný."
       ]
     },
     "error": {
@@ -9208,6 +9214,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Váš účet je momentálne nastavený tak, aby sa uplatňoval režim prenesenia daňovej povinnosti. Tento režim nie je podporovaný pre vybraný plán. Ak chcete pokračovať, odstráňte DIČ z fakturačnej adresy alebo vyberte iný plán."
       ]
     },
     "info": {
@@ -10307,6 +10316,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Import recent mails": [
+        "Importovať nedávne emaily"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16372,6 +16384,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Prichádzajú kategórie!"
+      ],
+      "Reverse charge not supported": [
+        "Obrátené zdanenie nie je podporované"
       ]
     },
     "Today icon tooltip in mini calendar": {

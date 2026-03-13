@@ -1675,6 +1675,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
       ]
     },
     "action": {
@@ -5127,6 +5130,9 @@
       ],
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Bu tarife için sorumlu sıfatıyla KDV usulü desteklenmemektedir"
       ]
     },
     "error": {
@@ -7563,7 +7569,7 @@
         "Düşük Öncelik"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız olsun."
+        "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız yapın."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -8916,6 +8922,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Hesabınız şu anda sorumlu sıfatıyla KDV usulünü uygulayacak şekilde yapılandırılmış. Bu durum seçilen tarife için desteklenmemektedir. Devam etmek için ya fatura adresinden KDV numarasını kaldırın ya da farklı bir tarife seçin."
       ]
     },
     "info": {
@@ -12112,7 +12121,7 @@
         "Daha sonra hatırlat"
       ],
       "Yes, don't show again": [
-        "Evet, bir daha görüntülenmesin"
+        "Evet, bir daha gösterme"
       ]
     },
     "Option group": {
@@ -12820,6 +12829,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Tekliften yararlanın"
+      ],
+      "SPRING SALE 2026": [
+        "BAHAR İNDİRİMİ 2026"
       ]
     },
     "q1campaign: Info": {
@@ -15321,7 +15333,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Keep this banner hidden?": [
-        "Bu uyarı gizli tutulsun mu?"
+        "Bu banner gizli tutulsun mu?"
       ],
       "Label as": [
         "Etiketle"
@@ -15876,6 +15888,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategoriler özelliği geliyor!"
+      ],
+      "Reverse charge not supported": [
+        "Sorumlu sıfatıyla KDV desteklenmiyor"
       ]
     },
     "Today icon tooltip in mini calendar": {

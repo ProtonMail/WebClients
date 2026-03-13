@@ -1675,6 +1675,9 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Edit billing address": [
+        "Επεξεργασία διεύθυνσης χρέωσης"
       ]
     },
     "action": {
@@ -5127,6 +5130,9 @@
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Το σύστημα αντιστροφής χρέωσης δεν υποστηρίζεται για αυτό το πλάνο"
       ]
     },
     "error": {
@@ -8916,6 +8922,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ο λογαριασμός σας είναι αυτή τη στιγμή ρυθμισμένος να εφαρμόζει το καθεστώς αντίστροφης χρέωσης. Αυτό δεν υποστηρίζεται για το επιλεγμένο πλάνο. Για να συνεχίσετε, είτε αφαιρέστε τον αριθμό ΦΠΑ από τη διεύθυνση χρέωσης είτε επιλέξτε ένα άλλο πλάνο."
       ]
     },
     "info": {
@@ -15234,7 +15243,7 @@
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
       "Keep this banner hidden?": [
-        "Απόκρυψη αυτού του πανό;"
+        "Να κρατηθεί αυτό το πανό κρυφό;"
       ],
       "Label as": [
         "Απόδοση ετικετών"
@@ -15789,6 +15798,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Οι κατηγορίες έρχονται!"
+      ],
+      "Reverse charge not supported": [
+        "Αντιστροφή χρέωσης δεν υποστηρίζεται"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1675,6 +1675,9 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Edit billing address": [
+        "Editar la dirección de la factura"
       ]
     },
     "action": {
@@ -4683,7 +4686,7 @@
         "Código inválido"
       ],
       "Invalid coupon": [
-        "Cupón invalido"
+        "Cupón inválido"
       ],
       "Invalid email address": [
         "Dirección de correo inválida"
@@ -5025,7 +5028,7 @@
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
       "This field is invalid": [
-        "Este campo no es válido"
+        "Este campo es válido"
       ],
       "This field is required": [
         "Este campo es obligatorio"
@@ -5124,6 +5127,12 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El esquema de inversión del sujeto pasivo no es compatible con este plan"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "El importe mínimo de la donación es de ${ price }"
       ]
     },
     "error": {
@@ -7560,7 +7569,7 @@
         "Prioridad baja"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Establezca ${ MAIL_APP_NAME } como su aplicación de correo electrónico por defecto."
+        "Establezca ${ MAIL_APP_NAME } como aplicación de correo por defecto."
       ],
       "Manage your folders": [
         "Administre las carpetas"
@@ -8913,6 +8922,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Su cuenta está configurada actualmente para aplicar el esquema de inversión del sujeto pasivo. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
       ]
     },
     "info": {
@@ -12817,6 +12829,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Aproveche la oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTA DE PRIMAVERA 2026"
       ]
     },
     "q1campaign: Info": {
@@ -15873,6 +15888,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ ¡Llegan las categorías!"
+      ],
+      "Reverse charge not supported": [
+        "Inversión del sujeto pasivo no soportada"
       ]
     },
     "Today icon tooltip in mini calendar": {

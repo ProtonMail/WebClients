@@ -1672,6 +1672,9 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Edit billing address": [
+        "Rechnungsadresse bearbeiten"
       ]
     },
     "action": {
@@ -5124,6 +5127,9 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Rückerstattung der Umsatzsteuer ist für dieses Abonnement nicht unterstützt"
       ]
     },
     "error": {
@@ -5775,7 +5781,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacy by default."
+        "${ BRAND_NAME }. Privatsphäre als Standard."
       ]
     },
     "forwardmessage": {
@@ -7560,7 +7566,7 @@
         "Niedrige Priorität"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } als Standard-E-Mail-Anwendung festlegen."
+        "${ MAIL_APP_NAME } zu deiner Standard-E-Mail-Anwendung machen."
       ],
       "Manage your folders": [
         "Ordner verwalten"
@@ -8913,6 +8919,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Dein Konto ist derzeit so konfiguriert, dass die Rückerstattung der Umsatzsteuer nicht angewendet wird. Dies wird für das ausgewählte Abonnement nicht unterstützt. Um fortzufahren, entferne entweder die Umsatzsteuer-Identifikationsnummer aus der Rechnungsadresse oder wähle anderes Abonnement."
       ]
     },
     "info": {
@@ -12817,6 +12826,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Deal sichern"
+      ],
+      "SPRING SALE 2026": [
+        "SPRING SALE 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12898,7 +12910,7 @@
         "für 12 Monate"
       ],
       "SPRING SALE": [
-        "FRÜHLINGS-SALE"
+        "SPRING SALE"
       ]
     },
     "Received email icon": {
@@ -15318,7 +15330,7 @@
         "Ungültiger Verifizierungscode"
       ],
       "Keep this banner hidden?": [
-        "Dieses Banner ausblenden?"
+        "Dieses Banner ausgeblendet lassen?"
       ],
       "Label as": [
         "Folgender Kategorie zuordnen"
@@ -15873,6 +15885,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorien kommen."
+      ],
+      "Reverse charge not supported": [
+        "Rückerstattungen der Umsatzsteuer nicht unterstützt"
       ]
     },
     "Today icon tooltip in mini calendar": {
