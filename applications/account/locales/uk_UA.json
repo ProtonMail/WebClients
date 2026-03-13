@@ -71,6 +71,12 @@
       "Activate recovery": [
         "Активувати відновлення"
       ],
+      "Activate reserved address": [
+        "Активувати зарезервовану адресу"
+      ],
+      "Activate this address": [
+        "Активувати цю адресу"
+      ],
       "Add": [
         "Додати"
       ],
@@ -416,6 +422,9 @@
       "Don't show again": [
         "Не показувати знову"
       ],
+      "Donate": [
+        "Зробити внесок"
+      ],
       "Done": [
         "Готово"
       ],
@@ -583,6 +592,9 @@
       ],
       "Get verification code": [
         "Отримати код підтвердження"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Отримати власну адресу ${ MAIL_APP_NAME }"
       ],
       "Go back": [
         "Назад"
@@ -989,6 +1001,9 @@
       "Send reminder": [
         "Надіслати нагадування"
       ],
+      "Send verification code": [
+        "Надіслати код підтвердження"
+      ],
       "Set as default": [
         "Встановити типовим"
       ],
@@ -1120,6 +1135,9 @@
       ],
       "Try for free": [
         "Спробуйте безплатно"
+      ],
+      "Try payment again": [
+        "Спробувати оплатити ще раз"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Спробуйте зберегти ще раз. Не вдалося зберегти через: ${ saveError }"
@@ -3846,6 +3864,9 @@
       "Account does not exist": [
         "Облікового запису не існує"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Помилка активації. Дані можуть бути неправильними, або електронна пошта вже активна. Перевірте ввід або увійдіть."
+      ],
       "Add at least one action": [
         "Додайте хоча б одну дію"
       ],
@@ -3947,6 +3968,9 @@
       ],
       "Expired": [
         "Протерміновано"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Не вдалося активувати вашу адресу. Спробуйте ще раз."
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Не вдалося отримати активні сеанси. ${ refresh } або повторіть спробу пізніше."
@@ -5349,6 +5373,16 @@
         "${ BRAND_NAME }. Приватність – це стандарт."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Введіть вашу адресу електронної пошти"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Ваучер буде надіслано сюди."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "вебверсія"
@@ -5582,6 +5616,32 @@
       ],
       "Value / Data / Points to": [
         "Значення / Дані / Спрямування"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Простий крок сьогодні, щоб гарантувати цифрову безпеку вашої дитини завтра"
+      ],
+      "Activate your reserved email address": [
+        "Активуйте вашу зарезервовану адресу електронної пошти"
+      ],
+      "Address reservation voucher": [
+        "Ваучер резервування адреси"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Зробити внесок до Фонду ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Введіть код підтвердження"
+      ],
+      "Recover activation voucher": [
+        "Відновити ваучер активації"
+      ],
+      "Reserve child's email address": [
+        "Зарезервувати адресу електронної пошти дитини"
+      ],
+      "We emailed you the voucher": [
+        "Ми надіслали вам ваучер електронною поштою"
       ]
     },
     "Headline": {
@@ -6840,11 +6900,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "Введіть дані облікового запису електронної пошти, з якої ви хочете імпортувати."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Введіть адресу електронної пошти, використану для резервування ${ reservedEmail }."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Введіть Entity ID організації **eduGAIN** для **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Введіть пароль організації, щоб відновити права адміністратора. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Введіть зарезервовану адресу електронної пошти та адресу електронної пошти, використану під час резервування."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
@@ -6945,17 +7011,26 @@
       "Groups": [
         "Групи"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Допоможіть іншим сім’ям забезпечити своїм дітям безпечний старт онлайн. Поділіться цією подією та розкажіть про це іншим."
+      ],
       "here": [
         "тут"
       ],
       "High Priority": [
         "Високий пріоритет"
       ],
+      "How it works": [
+        "Як це працює"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Відкритий ключ провайдера ідентифікації для підпису твердження автентифікації. У провайдера ідентифікації має бути місце для завантаження копії хешу сертифіката. Просто вставте хеш сертифіката в текстове поле."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Якщо інший адміністратор змінив цей пароль, вам необхідно запитати в нього новий пароль організації."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Якщо введена вами електронна пошта була використана для резервування адреси електронної пошти дитини, ми надішлемо ваучер активації повторно."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Якщо це пов'язано зі скиданням старого пароля, ви можете запобігти повторному показу повідомлення"
@@ -7166,6 +7241,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто підтвердьте свій вибір, а ми зробимо решту."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Зберігайте ваучер у безпечному місці доти, доки він не знадобиться, наприклад, у ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Скористайтеся цими настановами й порадами, щоб зберігати свою інформацію в безпеці та приватності."
@@ -7533,6 +7611,9 @@
       "purchase additional storage": [
         "придбати додатковий простір"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Отримайте ваучер на резервування електронною поштою. Ви або дитина можете використати його для активації адреси протягом наступних 15 років. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Недавно використані сервери:"
       ],
@@ -7719,6 +7800,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Деякі сервери можуть не відображатися у списку вище. Шукайте за назвою сервера (наприклад, AT#62), щоб їх знайти."
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Щось пішло не так. Спробуйте ще раз або зверніться до клієнтської підтримки."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Вкажіть домен, якому дозволено автентифікацію з SAML SSO."
       ],
@@ -7736,6 +7820,9 @@
         "Крок ${ step }",
         "Крок ${ step }",
         "Крок ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Крок ${ step }/${ totalSteps }"
       ],
       "Storage allocated to other users in this organisation": [
         "Обсяг сховища, розподілений між іншими користувачами в цій організації"
@@ -7995,6 +8082,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Щоб бути в курсі найновіших розробок продуктів ${ BRAND_NAME }, підпишіться на наші розсилки електронною поштою та час від часу відвідуйте ${ blogLink }."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Щоб запобігти зловживанням або шахрайству, ми просимо зробити мінімальний внесок ${ minimumDonation }. Це підтримує роботу ${ protonFoundationLink } із захисту цифрової приватності в усьому світі та допомагає захистити наступне покоління."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Для продовження виберіть спосіб відновлення облікового запису, щоб ми могли засвідчити запит."
       ],
@@ -8166,6 +8256,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Ми рекомендуємо вам використовувати офіційні програми ${ VPN_APP_NAME }, якщо це можливо."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Нам не вдалося завершити транзакцію. Спробуйте ще раз."
+      ],
       "We couldn’t process your payment.": [
         "Не вдається обробити ваш платіж."
       ],
@@ -8255,6 +8348,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Коли ви вилучаєте сервер зі шлюзу, він вступає в 10-денний період деактивації. Цей сервер можна додати до нового шлюзу, але його країну не можна змінити."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Коли ви будете готові активувати адресу, відскануйте QR-код або скористайтеся посиланням у ваучері."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Під час продовження вашої передплати ми застосуємо наявні кредити в першу чергу перед використанням зазначеного вище способу оплати."
@@ -8544,6 +8640,9 @@
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Ваш запит на підтримку закрито. Дякуємо, що звернулися до служби підтримки ${ BRAND_NAME }."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Ваш ваучер для зарезервованої адреси електронної пошти ${ BRAND_NAME }: ${ reservedEmail }"
+      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Ви зможете негайно додати ці сервери до іншого шлюзу."
       ],
@@ -8563,6 +8662,11 @@
       ],
       "Selected color:": [
         "Вибраний колір:"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Введіть код підтвердження, надісланий на ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -8984,6 +9088,9 @@
       "Actions": [
         "Дії"
       ],
+      "Activation code": [
+        "Код активації"
+      ],
       "Activity": [
         "Діяльність"
       ],
@@ -9149,6 +9256,9 @@
       "Choose a name for the generated certificate file": [
         "Оберіть назву для згенерованого файлу сертифіката"
       ],
+      "Choose an address to reserve for your child": [
+        "Виберіть адресу, яку потрібно зарезервувати для вашої дитини"
+      ],
       "City": [
         "Місто"
       ],
@@ -9299,6 +9409,12 @@
       "Don't show this again": [
         "Більше не показувати"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Зробити внесок у розмірі $1 або більше до Фонду ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Сума внеску"
+      ],
       "e.g. example.com": [
         "наприклад, example.com"
       ],
@@ -9337,6 +9453,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Введіть пароль для ключа з відбитком: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Введіть вашу адресу електронної пошти"
       ],
       "Enter your password": [
         "Введіть ваш пароль"
@@ -9692,6 +9811,12 @@
       "Require 2FA for everyone": [
         "Вимагати 2FA для всіх"
       ],
+      "Reserved address": [
+        "Зарезервована адреса"
+      ],
+      "Reserved email address": [
+        "Зарезервована адреса електронної пошти"
+      ],
       "Reveal password": [
         "Показати пароль"
       ],
@@ -9712,6 +9837,9 @@
       ],
       "Server name": [
         "Ім'я сервера"
+      ],
+      "Set password": [
+        "Встановити пароль"
       ],
       "Show ${ n } administrator": [
         "Показати ${ n } адміністратора",
@@ -9787,6 +9915,9 @@
       ],
       "Time zone": [
         "Часовий пояс"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Щоб активувати, відскануйте QR-код або перейдіть на:"
       ],
       "To: ${ toEmail }": [
         "Кому: ${ toEmail }"
@@ -9875,11 +10006,20 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Так, я хочу остаточно видалити цей обліковий запис та всі пов'язані дані."
       ],
+      "Your activation code:": [
+        "Ваш код активації:"
+      ],
       "Your calendar URL": [
         "URL-адреса вашого календаря"
       ],
+      "Your email address": [
+        "Ваша адреса електронної пошти"
+      ],
       "Your password (admin)": [
         "Новий пароль (адмін)"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Ваш ваучер для зарезервованої адреси електронної пошти ${ BRAND_NAME }:"
       ],
       "ZIP code": [
         "Поштовий індекс"
@@ -10001,6 +10141,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "Фонду ${ BRAND_NAME }"
+      ],
       "Activity log": [
         "Журнал активності"
       ],
@@ -10018,6 +10161,9 @@
       ],
       "Calendars": [
         "Календарі"
+      ],
+      "Can't find your code?": [
+        "Не можете знайти свій код?"
       ],
       "clearing your browser cache": [
         "очищення кешу браузера"
@@ -10144,6 +10290,20 @@
       ],
       "What’s this?": [
         "Що це?"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Електронна пошта"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -12340,6 +12500,9 @@
       "Based in Switzerland, GDPR compliant": [
         "Знаходиться у Швейцарії та відповідає вимогам GDPR"
       ],
+      "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
+        "Продовжуючи, ви погоджуєтеся з нашими ${ termsAndConditionsLink } та ${ privacyPolicyLink }."
+      ],
       "Creating your account": [
         "Створення облікового запису"
       ],
@@ -12828,6 +12991,9 @@
       ],
       "Address": [
         "Адреса"
+      ],
+      "Amount": [
+        "Сума"
       ],
       "Anderson": [
         "Андерсон"
@@ -15622,6 +15788,9 @@
       "Verification code copied to clipboard": [
         "Код перевірки скопійовано в буфер обміну"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Код підтвердження надіслано на ${ parentEmail }"
+      ],
       "Verification successful": [
         "Перевірка пройшла успішно"
       ],
@@ -15645,6 +15814,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Ви отримаєте своє ім'я користувача через SMS протягом хвилини, якщо ви ввели правильний номер телефону для відновлення."
+      ],
+      "Your address has been activated": [
+        "Вашу адресу активовано"
       ]
     },
     "Success message": {
@@ -16721,6 +16893,12 @@
       ],
       "Privacy and data collection": [
         "Приватність і збір даних"
+      ],
+      "Problem processing your payment": [
+        "Проблема з обробкою платежу"
+      ],
+      "Problem processing your request": [
+        "Проблема з обробкою вашого запиту"
       ],
       "Processing...": [
         "Триває обробка..."

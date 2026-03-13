@@ -2941,6 +2941,9 @@
       ]
     },
     "Calendar share permission label": {
+      "Edit event details": [
+        "Editar detalles del evento"
+      ],
       "See all event details": [
         "Ver todos los detalles del evento"
       ]
@@ -2956,6 +2959,11 @@
     "Calendar sharing error": {
       "Failed to retrieve contact information for ${ address }": [
         "Error en recuperar la información del contacto para ${ address }"
+      ]
+    },
+    "Calendar sharing permission change notification": {
+      "Permissions changed for ${ email }": [
+        "Se han cambiado los permisos para ${ email }."
       ]
     },
     "Calendar status": {
@@ -4547,6 +4555,11 @@
         "Has alcanzado el límite de eliminación de dirección para este usuario."
       ]
     },
+    "Delete calendar section description": {
+      "All events in this calendar will be deleted.": [
+        "Todos los eventos de este calendario se eliminarán."
+      ]
+    },
     "Delete domain prompt": {
       "Are you sure you want to delete this domain?": [
         "¿Estás seguro de que quieres eliminar este dominio?"
@@ -5425,6 +5438,9 @@
       ]
     },
     "email_forwarding_2023: Action": {
+      "Add condition": [
+        "Añadir condición"
+      ],
       "Add forwarding rule": [
         "Añadir regla de reenvío"
       ],
@@ -5448,6 +5464,9 @@
       ],
       "Save": [
         "Guardar"
+      ],
+      "Send confirmation email": [
+        "Enviar correo electrónico de confirmación"
       ]
     },
     "email_forwarding_2023: Error": {
@@ -6469,6 +6488,9 @@
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El régimen de inversión del sujeto pasivo no es compatible con este plan"
+      ],
       "Server not found": [
         "Servidor no encontrado"
       ],
@@ -6510,9 +6532,6 @@
       ],
       "Tab closed": [
         "Pestaña cerrada"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "La exención de impuestos no es compatible con este plan"
       ],
       "The address might be misspelled": [
         "La dirección podría estar mal escrita."
@@ -6994,6 +7013,9 @@
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
         "Debido a un restablecimiento de contraseña, no se han podido descifrar y exportar algunos de tus eventos."
+      ],
+      "Learn how to restore encrypted events with old password": [
+        "Descubre cómo restaurar eventos cifrados con la contraseña anterior"
       ],
       "Loading events": [
         "Cargando eventos"
@@ -7752,6 +7774,11 @@
       ],
       "Your desktop app free trial has ended": [
         "Tu prueba gratuita de la aplicación de escritorio ha finalizado."
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } en App Store"
       ]
     },
     "Gmail forwarding": {
@@ -8964,6 +8991,9 @@
       "Are you sure you want to cancel editing the group?": [
         "¿Estás seguro de que quieres cancelar la edición del grupo?"
       ],
+      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
+        "¿Seguro que quieres eliminar este calendario? Todas las direcciones con las que lo hayas compartido perderán el acceso."
+      ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
         "¿Estás seguro de que quieres eliminar este calendario? Todos los eventos que contenga serán eliminados."
       ],
@@ -9665,6 +9695,9 @@
       "Get visibility into account access": [
         "Supervisa el acceso a la cuenta"
       ],
+      "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
+        "¡Da tu clave pública a tus amigos o publícala en internet para que todo el mundo pueda enviarte correos con cifrado de extremo a extremo!"
+      ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Ve a tu proveedor de identidad, obtén los metadatos de SAML para ${ appName } e impórtalos aquí."
       ],
@@ -10195,6 +10228,9 @@
       "On": [
         "Activado"
       ],
+      "On Ubuntu?": [
+        "¿En Ubuntu?"
+      ],
       "Once you reset your password:": [
         "Después de restablecer tu contraseña:"
       ],
@@ -10493,6 +10529,9 @@
       "Remove metadata from images to protect your privacy.": [
         "Elimina los metadatos de las imágenes para proteger tu privacidad."
       ],
+      "Remove one of your calendars to join this one": [
+        "Elimina uno de tus calendarios para unirte a este"
+      ],
       "Report link expired": [
         "Notificar el enlace expirado"
       ],
@@ -10652,6 +10691,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como eres un usuario leal, tu cuenta tiene activadas funciones adicionales."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
+        "El envío por SMTP permite que servicios o dispositivos de terceros envíen correos electrónicos a través de ${ MAIL_APP_NAME } usando las direcciones de tu dominio personalizado. Para usar esta función, empieza por generar un nuevo token."
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "Pausa los mensajes para más tarde, para que estén al principio de tu bandeja de entrada cuando los necesites."
@@ -11644,6 +11686,9 @@
       "Your account has been successfully updated.": [
         "Tu cuenta se ha actualizado correctamente."
       ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Tu cuenta está configurada actualmente para aplicar el régimen de inversión del sujeto pasivo, pero este no es compatible con el plan seleccionado. Para continuar, elimina el número de IVA de la dirección de facturación o selecciona un plan diferente."
+      ],
       "Your account was successfully updated with this promotion": [
         "Se ha actualizado tu cuenta con esta promoción."
       ],
@@ -11963,6 +12008,9 @@
       ],
       "New key generated": [
         "Clave nueva generada"
+      ],
+      "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
+        "Esto generará una nueva clave que se usará para cifrar futuros detalles de contactos, claves de cifrado de correo electrónico y otros datos."
       ],
       "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
         "Ya tienes este tipo de clave. A menos que esa clave se haya comprometido, generar **una nueva clave podría ralentizar tu cuenta**."
@@ -13040,6 +13088,9 @@
       "Message": [
         "Mensaje"
       ],
+      "Message (auto-reply)": [
+        "Mensaje (respuesta automática)"
+      ],
       "Metadata file for ${ appName }": [
         "Archivo de metadatos para ${ appName }"
       ],
@@ -13253,8 +13304,14 @@
       "Promotions": [
         "Promociones"
       ],
+      "Prompt to trust keys": [
+        "Solicitud para confiar en las claves"
+      ],
       "Proration": [
         "Prorrateo"
+      ],
+      "Protection mode": [
+        "Modo de protección"
       ],
       "Public certificate (X.509)": [
         "Certificado público (X.509)"
@@ -13455,6 +13512,9 @@
       "Time zone": [
         "Zona horaria"
       ],
+      "Tips and insights": [
+        "Consejos y claves"
+      ],
       "To activate, scan the QR-code or go to:": [
         "Para activar, escanea el código QR o ve a:"
       ],
@@ -13535,6 +13595,9 @@
       ],
       "Verification code": [
         "Código de verificación"
+      ],
+      "VPN Accelerator": [
+        "Acelerador VPN"
       ],
       "Vulnerable": [
         "Vulnerable"
@@ -15888,6 +15951,9 @@
       "Key copied to the clipboard": [
         "Se ha copiado la clave al portapapeles."
       ],
+      "Key with fingerprint ${ fp } is now primary.": [
+        "La clave con huella digital ${ fp } es ahora la clave principal."
+      ],
       "Link copied to clipboard": [
         "Se ha copiado el enlace al portapapeles."
       ],
@@ -17787,6 +17853,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Aprovecha la oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTA DE PRIMAVERA 2026"
       ]
     },
     "q1campaign: Info": {
@@ -18388,14 +18457,8 @@
       "Disable recovery by email": [
         "Desactivar recuperación por correo electrónico"
       ],
-      "Disable recovery by email ": [
-        "Desactivar recuperación por correo electrónico "
-      ],
       "Disable recovery by phone": [
         "Desactivar la recuperación por teléfono"
-      ],
-      "Disable recovery by phone ": [
-        "Desactivar la recuperación por teléfono "
       ],
       "Download ${ size }": [
         "Descargar ${ size }"
@@ -22642,6 +22705,9 @@
       ],
       "Reused passwords": [
         "Contraseñas reusadas"
+      ],
+      "Reverse charge not supported": [
+        "Inversión del sujeto pasivo no admitida"
       ],
       "Revoke certificate?": [
         "¿Revocar certificado?"

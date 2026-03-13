@@ -90,6 +90,12 @@
       "Activate recovery": [
         "복구 활성화"
       ],
+      "Activate reserved address": [
+        "예약된 주소 활성화"
+      ],
+      "Activate this address": [
+        "이 주소 활성화"
+      ],
       "Add": [
         "추가"
       ],
@@ -561,6 +567,9 @@
       "Don't show again": [
         "다시 표시하지 않음"
       ],
+      "Donate": [
+        "기부"
+      ],
       "Done": [
         "완료"
       ],
@@ -830,6 +839,9 @@
       ],
       "Get verification code": [
         "인증코드 전송"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "나만의 ${ MAIL_APP_NAME } 주소 받기"
       ],
       "Go back": [
         "뒤로 가기"
@@ -1371,6 +1383,9 @@
       "Send reminder": [
         "전송 알리미"
       ],
+      "Send verification code": [
+        "인증 코드 보내기"
+      ],
       "Set as album cover": [
         "앨범 커버로 사용하기"
       ],
@@ -1538,6 +1553,9 @@
       ],
       "Try for free": [
         "무료 체험하기"
+      ],
+      "Try payment again": [
+        "결제 다시 시도"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "다시 저장해보세요. 이 이유로 저장을 실패했습니다: ${ saveError }"
@@ -6307,6 +6325,9 @@
       "Account does not exist": [
         "계정이 존재하지 않음"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "활성화에 실패했습니다. 세부사항이 올바르지 않거나 이메일이 이미 활성 상태일 수 있습니다. 입력을 확인하거나 로그인해 주세요."
+      ],
       "Add at least one action": [
         "하나 이상의 옵션을 추가하세요"
       ],
@@ -6432,6 +6453,9 @@
       ],
       "Failed loading group members": [
         "그룹 구성원을 로드하는 데 실패했습니다"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "주소를 활성화하지 못했습니다. 다시 시도해 주세요."
       ],
       "Failed to add group member": [
         "그룹 구성원 추가 실패"
@@ -6783,9 +6807,6 @@
       ],
       "Tab closed": [
         "탭 닫힘"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "이 플랜에서는 면세가 제공되지 않습니다."
       ],
       "The address might be misspelled": [
         "주소가 철자가 틀렸을 수 있습니다"
@@ -8013,6 +8034,16 @@
         "${ BRAND_NAME } 모바일 앱의 구식 버전에서는 더 이상 로그인할 수 없음을 확인했습니다."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "이메일 주소를 입력해주세요"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "바우처가 여기로 전송됩니다."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "웹 앱"
@@ -8312,6 +8343,32 @@
       ],
       "Subscribed": [
         "구독 중"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "내일 자녀의 디지털 안전을 보장하기 위한 오늘의 간단한 단계"
+      ],
+      "Activate your reserved email address": [
+        "예약된 이메일 주소 활성화"
+      ],
+      "Address reservation voucher": [
+        "주소 예약 바우처"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "${ BRAND_NAME } 재단에 기부하기"
+      ],
+      "Enter verification code": [
+        "인증 코드 입력"
+      ],
+      "Recover activation voucher": [
+        "활성화 바우처 복구"
+      ],
+      "Reserve child's email address": [
+        "자녀 이메일 주소 예약"
+      ],
+      "We emailed you the voucher": [
+        "이메일로 바우처를 보내드렸습니다"
       ]
     },
     "Headline": {
@@ -9817,11 +9874,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "가져오기를 원하는 이메일 계정의 계정 정보를 입력하세요."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "${ reservedEmail } 예약에 사용한 이메일 주소를 입력해 주세요."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "**${ domain.DomainName }**을 위한 **eduGAIN**의 Entity ID를 입력하세요."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "조직 비밀번호를 입력해 관리자의 특권을 복구하세요. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "예약된 이메일 주소와 예약 시 사용한 이메일 주소를 입력해 주세요."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText }(으)로 인증 코드가 전송되었습니다."
@@ -9994,6 +10057,9 @@
       "Groups": [
         "그룹"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "다른 가족들도 자녀에게 안전한 온라인 시작을 제공할 수 있도록 도와주세요. 이 마일스톤을 공유하고 널리 알려주세요."
+      ],
       "here": [
         "여기"
       ],
@@ -10002,6 +10068,9 @@
       ],
       "High Priority": [
         "중요도 높음"
+      ],
+      "How it works": [
+        "작동 방식"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -10026,6 +10095,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "키보드 단축키가 활성화되면, 다음 키를 사용하여 빠른 작업을 수행하거나 다른 보기로 이동할 수 있습니다. ${ metaKey } + K는 항상 활성화되어 있습니다."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "입력한 이메일이 자녀의 이메일 주소를 예약하는 데 사용된 경우 활성화 바우처를 다시 보내드립니다."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "시스템 표준 시간대가 현재 표준 시간대 기본 설정과 일치하지 않는 경우 업데이트가 필요하다는 내용의 메시지가 표시됩니다 (최대 하루에 한 번 표시됩니다.)."
@@ -10260,6 +10332,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "선택만 확인하시면 나머지는 저희가 하겠습니다."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "필요할 때까지 바우처를 안전하게 보관하세요(예: ${ DRIVE_APP_NAME } 사용)."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "이 가이드와 팁을 통해 내 정보가 더욱 안전하고 사적이도록 하세요."
@@ -10768,6 +10843,9 @@
       "Receive notifications for ${ categoryLabel }": [
         "${ categoryLabel }에 대한 알림 받기"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "이메일로 예약 바우처를 받으세요. 귀하나 자녀가 향후 15년 내에 주소를 활성화하는 데 사용할 수 있습니다. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "최근 사용된 서버:"
       ],
@@ -10999,6 +11077,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "일부 서버는 목록에 나타나지 않을 수 있습니다. 서버 이름(예: AT#62)으로 검색하여 찾으십시오."
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "문제가 발생했습니다. 다시 시도하거나 고객 지원에 문의해 주세요."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML SSO로 인증할 수 있는 도메인을 지정하십시오."
       ],
@@ -11016,6 +11097,9 @@
       ],
       "Step ${ step }": [
         "${ step } 단계"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "${ step }/${ totalSteps }단계"
       ],
       "Storage allocated to other users in this organisation": [
         "스토리지가 이 조직의 다른 사용자들에게 할당됨"
@@ -11359,6 +11443,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "${ BRAND_NAME } 제품의 최신 개발 소식을 알고 싶으시다면 다양한 이메일을 구독해보거나 가끔씩 ${ blogLink } 해보세요."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "남용이나 사기를 방지하기 위해 최소 ${ minimumDonation }의 기부를 부탁드립니다. 이는 전 세계적으로 디지털 개인정보를 보호하는 ${ protonFoundationLink }의 작업을 지원하고 다음 세대를 보호하는 데 도움이 됩니다."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "진행하려면, 요청을 확인할 수 있도록 계정 복구 방법을 선택하세요."
       ],
@@ -11584,6 +11671,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "가능하면 ${ VPN_APP_NAME } 공식 애플리케이션 사용을 권장합니다."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "거래를 완료하지 못했습니다. 다시 시도해 주세요."
+      ],
       "We couldn’t process your payment.": [
         "결제를 처리할 수 없습니다."
       ],
@@ -11694,6 +11784,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2단계 인증을 설정하면, 인증 앱에 접근할 수 없을때 로그인시 사용할 수 있는 복구 코드를 제공해 드립니다."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "주소를 활성화할 준비가 되면 QR 코드를 스캔하거나 바우처에 있는 링크를 사용하세요."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "구독이 갱신될 경우, 비용 청구 전에 가능한 크레딧이 적용됩니다."
@@ -12067,6 +12160,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "무료 체험이 ${ timeRemaining }에 종료됩니다."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "예약된 ${ BRAND_NAME } 이메일 주소 바우처: ${ reservedEmail }"
+      ],
       "YouTube": [
         "YouTube"
       ],
@@ -12109,6 +12205,11 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "이메일 작성, 답장 및 교정을 지원합니다. 비활성화된 경우 관리자만 접근할 수 있습니다. 개별 사용자를 ${ userAndAddresses }에서 또는 ${ addMoreSeats }하여 관리합니다."
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "${ parentEmail }(으)로 전송된 인증 코드를 입력해 주세요."
       ]
     },
     "Info - folder colouring feature": {
@@ -12729,6 +12830,9 @@
       "Actions": [
         "작업"
       ],
+      "Activation code": [
+        "활성화 코드"
+      ],
       "Activity": [
         "활동"
       ],
@@ -12972,6 +13076,9 @@
       "Choose a name for the generated certificate file": [
         "인증서 파일을 생성하려면 이름을 선택하세요"
       ],
+      "Choose an address to reserve for your child": [
+        "자녀를 위해 예약할 주소를 선택하세요"
+      ],
       "Choose your billing": [
         "결제 수단 선택"
       ],
@@ -13176,6 +13283,12 @@
       "Don't show this again": [
         "다시 보지 않기"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "${ BRAND_NAME } 재단에 $1 이상 기부하기"
+      ],
+      "Donation amount": [
+        "기부 금액"
+      ],
       "Duration": [
         "기간"
       ],
@@ -13235,6 +13348,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "키의 지문 인식을 위해 비밀번호를 입력하세요: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "이메일 주소를 입력해주세요"
       ],
       "Enter your password": [
         "비밀번호를 입력해주세요"
@@ -13752,6 +13868,12 @@
       "Require 2FA for everyone": [
         "전체 구성원에 2단계 인증 요구"
       ],
+      "Reserved address": [
+        "예약된 주소"
+      ],
+      "Reserved email address": [
+        "예약된 이메일 주소"
+      ],
       "Reveal password": [
         "비밀번호 표시"
       ],
@@ -13793,6 +13915,9 @@
       ],
       "Server name": [
         "서버 이름"
+      ],
+      "Set password": [
+        "비밀번호 설정"
       ],
       "Share your referral link": [
         "추천인 링크 공유하기"
@@ -13922,6 +14047,9 @@
       ],
       "Tips and insights": [
         "팁 및 인사이트"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "활성화하려면 QR 코드를 스캔하거나 다음으로 이동하세요:"
       ],
       "To help us improve, please explain why you are leaving.": [
         "저희가 한 층 발전할 수 있도록 왜 떠나시는지 알려주세요."
@@ -14055,11 +14183,17 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "네, 저는 완전히 이 계정과 모든 데이터를 지우고 싶습니다."
       ],
+      "Your activation code:": [
+        "귀하의 활성화 코드:"
+      ],
       "Your calendar URL": [
         "내 캘린더 URL"
       ],
       "Your credit balance": [
         "크레딧 잔액"
+      ],
+      "Your email address": [
+        "귀하의 이메일 주소"
       ],
       "Your password (admin)": [
         "사용자의 비밀번호 (관리자)"
@@ -14069,6 +14203,9 @@
       ],
       "Your plan": [
         "나의 플랜"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "예약된 ${ BRAND_NAME } 이메일 주소 바우처:"
       ],
       "ZIP code": [
         "우편번호"
@@ -14240,6 +14377,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "${ BRAND_NAME } 재단의"
+      ],
       "Activity log": [
         "활동 로그"
       ],
@@ -14260,6 +14400,9 @@
       ],
       "Calendars": [
         "캘린더"
+      ],
+      "Can't find your code?": [
+        "코드를 찾을 수 없나요?"
       ],
       "clearing your browser cache": [
         "브라우저 캐시를 삭제하면"
@@ -14463,6 +14606,20 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "사용자 및 주소"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "이메일"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -17951,6 +18108,9 @@
       "Address": [
         "주소"
       ],
+      "Amount": [
+        "금액"
+      ],
       "Anderson": [
         "길동"
       ],
@@ -18349,6 +18509,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "할인 받기"
+      ],
+      "SPRING SALE 2026": [
+        "봄 세일 2026"
       ]
     },
     "q1campaign: Info": {
@@ -18430,7 +18593,7 @@
         "12개월 동안"
       ],
       "SPRING SALE": [
-        "봄맞이 세일"
+        "봄 세일"
       ]
     },
     "Recovery Email": {
@@ -18959,14 +19122,8 @@
       "Disable recovery by email": [
         "이메일을 통한 복구 비활성화"
       ],
-      "Disable recovery by email ": [
-        "이메일을 통한 복구를 비활성화 "
-      ],
       "Disable recovery by phone": [
         "휴대전화를 통한 복구 비활성화"
-      ],
-      "Disable recovery by phone ": [
-        "휴대전화를 통한 복구를 비활성화 "
       ],
       "Download ${ size }": [
         "${ size } 다운로드"
@@ -20565,16 +20722,6 @@
         "초대한 사용자가 ${ BRAND_NAME } 플랜을 구독할 때 크레딧을 수령하세요."
       ]
     },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "2026년 봄맞이 할인"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "봄맞이 할인"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress }명의 사용자가 ${ BRAND_NAME } 계정에 SSO를 통해 로그인하는데 도움을 요청하고 있습니다."
@@ -21720,6 +21867,9 @@
       "Verification code copied to clipboard": [
         "인증 코드 복사됨"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "인증 코드가 ${ parentEmail }(으)로 전송되었습니다"
+      ],
       "Verification successful": [
         "인증 성공"
       ],
@@ -21743,6 +21893,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "정상적인 확인 전화번호를 입력했다면 수 분내로 아이디가 적혀있는 문자 메시지를 받으실 수 있습니다."
+      ],
+      "Your address has been activated": [
+        "주소가 활성화되었습니다"
       ]
     },
     "Success message": {
@@ -23134,6 +23287,12 @@
       ],
       "Privacy and data collection": [
         "개인정보 보호 및 데이터 수집"
+      ],
+      "Problem processing your payment": [
+        "결제를 처리하는 중 문제가 발생했습니다"
+      ],
+      "Problem processing your request": [
+        "요청을 처리하는 중 문제가 발생했습니다"
       ],
       "Processing...": [
         "처리 중..."

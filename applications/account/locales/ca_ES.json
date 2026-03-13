@@ -6867,6 +6867,9 @@
       "Request timed out": [
         "La sol·licitud ha caducat"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El règim d'inversió del subjecte passiu no és compatible amb aquest pla"
+      ],
       "Server not found": [
         "No s'ha trobat el servidor"
       ],
@@ -6908,9 +6911,6 @@
       ],
       "Tab closed": [
         "Pestanya tancada"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Aquest pla no admet l'exempció d'impostos"
       ],
       "The address might be misspelled": [
         "És possible que l'adreça estigui mal escrita."
@@ -12309,6 +12309,9 @@
       ],
       "Your account has been successfully updated.": [
         "El vostre compte s'ha actualitzat correctament."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "El vostre compte està configurat actualment per aplicar el règim de facturació inversa. Això no és compatible amb el pla seleccionat. Per continuar, o bé elimineu el número d'IVA de l'adreça de facturació o bé seleccioneu un pla diferent."
       ],
       "Your account was successfully updated with this promotion": [
         "S'ha actualitzat el vostre compte amb aquesta promoció"
@@ -19367,14 +19370,8 @@
       "Disable recovery by email": [
         "Desactiva la recuperació per correu"
       ],
-      "Disable recovery by email ": [
-        "Desactiveu la recuperació per correu "
-      ],
       "Disable recovery by phone": [
         "Desactiva la recuperació per telèfon"
-      ],
-      "Disable recovery by phone ": [
-        "Desactiveu la recuperació per telèfon "
       ],
       "Download ${ size }": [
         "Descarrega ${ size }"
@@ -21017,16 +21014,6 @@
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Obtingueu crèdits quan la persona que convideu se subscrigui a un pla de ${ BRAND_NAME }."
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "REBAIXES DE PRIMAVERA 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "REBAIXES DE PRIMAVERA"
       ]
     },
     "sso": {
@@ -23744,6 +23731,9 @@
       ],
       "Reused passwords": [
         "Contrasenyes reutilitzades"
+      ],
+      "Reverse charge not supported": [
+        "No s'admet la inversió del subjecte passiu"
       ],
       "Revoke certificate?": [
         "Voleu revocar el certificat?"
