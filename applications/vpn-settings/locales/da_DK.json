@@ -4502,6 +4502,9 @@
       ],
       "ZIP code is required": [
         "Postnummer er påkrævet"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omvendt betalingsordning understøttes ikke for dette abonnement"
       ]
     },
     "error": {
@@ -8356,6 +8359,9 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Din konto er i øjeblikket konfigureret til at anvende omvendt betalingspligt, som ikke er understøttet i det valgte abonnement. For at fortsætte skal du enten fjerne momsnummeret fra faktureringsadressen eller vælge et andet abonnement."
       ]
     },
     "info": {
@@ -12385,6 +12391,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Tag imod tilbuddet"
+      ],
+      "SPRING SALE 2026": [
+        "FORÅRSALG 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12466,7 +12475,7 @@
         "i 12 måneder"
       ],
       "SPRING SALE": [
-        "FORÅRSUDSALG"
+        "FORÅR SALG"
       ]
     },
     "Recovery Email": {
@@ -16019,6 +16028,9 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Reverse charge not supported": [
+        "Fakturering med omvendt betaling understøttes ikke"
       ]
     },
     "Title for payment methods table": {

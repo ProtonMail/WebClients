@@ -4568,6 +4568,9 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Rückerstattung der Umsatzsteuer ist für dieses Abonnement nicht unterstützt"
       ]
     },
     "error": {
@@ -5385,7 +5388,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacy by default."
+        "${ BRAND_NAME }. Privatsphäre als Standard."
       ]
     },
     "Gmail forwarding": {
@@ -8536,6 +8539,9 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Dein Konto ist derzeit so konfiguriert, dass die Rückerstattung der Umsatzsteuer nicht angewendet wird. Dies wird für das ausgewählte Abonnement nicht unterstützt. Um fortzufahren, entferne entweder die Umsatzsteuer-Identifikationsnummer aus der Rechnungsadresse oder wähle anderes Abonnement."
       ]
     },
     "info": {
@@ -12636,6 +12642,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Deal sichern"
+      ],
+      "SPRING SALE 2026": [
+        "SPRING SALE 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12717,7 +12726,7 @@
         "für 12 Monate"
       ],
       "SPRING SALE": [
-        "FRÜHLINGS-SALE"
+        "SPRING SALE"
       ]
     },
     "Recovery Email": {
@@ -16327,6 +16336,9 @@
       ],
       "Your subscriptions": [
         "Deine Abonnements"
+      ],
+      "Reverse charge not supported": [
+        "Rückerstattungen der Umsatzsteuer nicht unterstützt"
       ]
     },
     "Title for payment methods table": {
