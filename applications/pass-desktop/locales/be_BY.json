@@ -1262,6 +1262,15 @@
       "Something went wrong. Please sign in again.": [
         "Нешта пайшло не так. Увайдзіце яшчэ раз."
       ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Праграма для камп'ютара для ${ PASS_APP_NAME } заблакіравана. Яе неабходна разблакіраваць."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Праграма для камп'ютара ${ PASS_APP_NAME } не ўсталявана."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Праграма для камп'ютара ${ PASS_APP_NAME } не адказвае. Пераканайцеся, што яна запушчана."
+      ],
       "The session has expired. Please sign in again.": [
         "Час сеансу пратэрмінаваны. Увайдзіце яшчэ раз."
       ],
@@ -1827,6 +1836,9 @@
       "Enabling biometrics lock failed": [
         "Збой уключэння аўтаблакіроўкі біяметрыяй"
       ],
+      "Enabling desktop auto-lock": [
+        "Уключэнне аўтаблакіроўкі праграмы для камп'ютара"
+      ],
       "Enabling offline mode...": [
         "Уключэнне рэжыму па-за сеткай..."
       ],
@@ -2057,6 +2069,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -2450,6 +2468,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Гэтая функцыя пакуль з'яўляецца эксперыментальнай у Linux. Пераканайцеся, што ваша сістэма знаходзіцца ў актуальным стане."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Гэтая функцыя патрабуе, каб праграма для камп'ютара ${ PASS_APP_NAME } была ўсталявана і запушчана падчас наладкі."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Элемент у цяперашні час ні з кім не абагулены. Запрасіце ўдзельнікаў, каб абагуліць яго з іншымі."
