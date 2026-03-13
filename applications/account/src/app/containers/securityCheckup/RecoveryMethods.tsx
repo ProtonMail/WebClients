@@ -57,7 +57,7 @@ const Email = () => {
             <Link key="enable-device-recovery" to={SECURITY_CHECKUP_PATHS.DISABLE_EMAIL} className="color-weak">
                 {
                     // translator: full sentence "Disable recovery by email to increase your account security."
-                    c('Safety review').t`Disable recovery by email `
+                    c('Safety review').t`Disable recovery by email`
                 }
             </Link>
         );
@@ -123,7 +123,7 @@ const Phone = () => {
             <Link key="enable-device-recovery" to={SECURITY_CHECKUP_PATHS.DISABLE_PHONE} className="color-weak">
                 {
                     // translator: full sentence "Disable recovery by phone to increase your account security."
-                    c('Safety review').t`Disable recovery by phone `
+                    c('Safety review').t`Disable recovery by phone`
                 }
             </Link>
         );
