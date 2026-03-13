@@ -1,8 +1,10 @@
+import type { MaybeNull } from '@proton/pass/types';
+
 export const isHTMLElement = (node: Node | EventTarget): node is HTMLElement =>
     'nodeType' in node && node.nodeType === Node.ELEMENT_NODE && 'tagName' in node;
 
-export const isInputElement = (node: Node | EventTarget): node is HTMLInputElement =>
-    isHTMLElement(node) && node.tagName === 'INPUT';
+export const isInputElement = (node: MaybeNull<Node | EventTarget>): node is HTMLInputElement =>
+    Boolean(node && isHTMLElement(node) && node.tagName === 'INPUT');
 
 export const isSelectElement = (node: Node | EventTarget): node is HTMLSelectElement =>
     isHTMLElement(node) && node.tagName === 'SELECT';
