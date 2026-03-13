@@ -353,6 +353,11 @@ $profile-colors:
 	color: white;
 }
 
+.dashboard-meeting-list-container {
+	position: relative;
+	isolation: isolate;
+}
+
 .meet-glow-effect {
 	@include im.media('>small') {
 		&::before,
