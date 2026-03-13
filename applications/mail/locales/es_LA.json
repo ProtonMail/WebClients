@@ -489,6 +489,9 @@
       "Edit address": [
         "Editar dirección"
       ],
+      "Edit billing address": [
+        "Editar la dirección de la factura"
+      ],
       "Edit draft": [
         "Editar el borrador"
       ],
@@ -4683,7 +4686,7 @@
         "Código inválido"
       ],
       "Invalid coupon": [
-        "Cupón invalido"
+        "Cupón inválido"
       ],
       "Invalid email address": [
         "Dirección de correo inválida"
@@ -4906,6 +4909,9 @@
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El esquema de inversión del sujeto pasivo no es compatible con este plan"
+      ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "El envío de archivos adjuntos está limitado hasta que cumpla con los límites del plan o lo mejore."
       ],
@@ -4954,9 +4960,6 @@
       "Tab closed": [
         "Pestaña cerrada"
       ],
-      "Tax exemption is not supported for this plan": [
-        "La exoneración de impuestos no es compatible con este plan"
-      ],
       "Text is too long to refine": [
         "El texto es muy largo para refinarlo"
       ],
@@ -4997,6 +5000,9 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que se puede agregar es de ${ price }"
       ],
+      "The minimum donation amount is ${ price }": [
+        "El importe mínimo de la donación es de ${ price }"
+      ],
       "The sending key is not valid": [
         "La clave para enviar no es válida"
       ],
@@ -5025,7 +5031,7 @@
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
       "This field is invalid": [
-        "Este campo no es válido"
+        "Este campo es válido"
       ],
       "This field is required": [
         "Este campo es obligatorio"
@@ -7560,7 +7566,7 @@
         "Prioridad baja"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Establezca ${ MAIL_APP_NAME } como su aplicación de correo electrónico por defecto."
+        "Establezca ${ MAIL_APP_NAME } como aplicación de correo por defecto."
       ],
       "Manage your folders": [
         "Administre las carpetas"
@@ -8815,6 +8821,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "La cuenta tiene al menos una factura atrasada. Su acceso pronto será restringido. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Su cuenta está configurada actualmente para aplicar el esquema de inversión del sujeto pasivo. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "El navegador no admite el asistente de escritura. Intente ejecutarlo en los servidores."
@@ -12817,6 +12826,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Aproveche la oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTA DE PRIMAVERA 2026"
       ]
     },
     "q1campaign: Info": {
@@ -13756,16 +13768,6 @@
       ],
       "Your pm.me email is active": [
         "Su correo electrónico pm.me está activo."
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "OFERTA DE PRIMAVERA 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "OFERTA DE PRIMAVERA"
       ]
     },
     "sso": {
@@ -15592,6 +15594,9 @@
       ],
       "Request new code": [
         "Solicitar un código nuevo"
+      ],
+      "Reverse charge not supported": [
+        "Inversión del sujeto pasivo no soportada"
       ],
       "Same inbox, shorter email address": [
         "El mismo buzón con una dirección de correo más corta"

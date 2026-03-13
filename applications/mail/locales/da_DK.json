@@ -489,6 +489,9 @@
       "Edit address": [
         "Redigér adresse"
       ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
+      ],
       "Edit draft": [
         "Redigér udkast"
       ],
@@ -4888,6 +4891,9 @@
       "Request timed out": [
         "Forespørgsel fik timeout"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omvendt betalingsordning understøttes ikke for dette abonnement"
+      ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Afsendelse af vedhæftede filer er begrænset, indtil du overholder dine abonnementsgrænser eller opgraderer."
       ],
@@ -4935,9 +4941,6 @@
       ],
       "Tab closed": [
         "Fane lukket"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Skattefritagelse understøttes ikke for dette abonnement"
       ],
       "Text is too long to refine": [
         "Teksten er for lang til at finpudse"
@@ -8772,6 +8775,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
       ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Din konto er i øjeblikket konfigureret til at anvende omvendt betalingspligt, som ikke er understøttet i det valgte abonnement. For at fortsætte skal du enten fjerne momsnummeret fra faktureringsadressen eller vælge et andet abonnement."
+      ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Din browser understøtter ikke skriveassistenten. Prøv at køre den på servere."
       ],
@@ -12047,6 +12053,12 @@
       ],
       "No parent folder": [
         "Ingen overordnet mappe"
+      ],
+      "Remind me later": [
+        "Mind mig om det senere"
+      ],
+      "Yes, don't show again": [
+        "Vis det ikke igen"
       ]
     },
     "Option group": {
@@ -12734,6 +12746,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Tag imod tilbuddet"
+      ],
+      "SPRING SALE 2026": [
+        "FORÅRSALG 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12815,7 +12830,7 @@
         "i 12 måneder"
       ],
       "SPRING SALE": [
-        "FORÅRSUDSALG"
+        "FORÅR SALG"
       ]
     },
     "Received email icon": {
@@ -15212,6 +15227,9 @@
       "Invalid verification code": [
         "Ugyldig bekræftelseskode"
       ],
+      "Keep this banner hidden?": [
+        "Vil du beholde denne fane skjult?"
+      ],
       "Label as": [
         "Mærk som"
       ],
@@ -15484,6 +15502,9 @@
       ],
       "Request new code": [
         "Anmod om ny kode"
+      ],
+      "Reverse charge not supported": [
+        "Fakturering med omvendt betaling understøttes ikke"
       ],
       "Same inbox, shorter email address": [
         "Samme indbakke, kortere e-mailadresse"

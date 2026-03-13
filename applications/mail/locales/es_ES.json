@@ -489,6 +489,9 @@
       "Edit address": [
         "Editar la dirección"
       ],
+      "Edit billing address": [
+        "Editar la dirección de la factura"
+      ],
       "Edit draft": [
         "Editar borrador"
       ],
@@ -4900,6 +4903,9 @@
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El régimen de inversión del sujeto pasivo no es compatible con este plan"
+      ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "El envío de archivos adjuntos está restringido hasta que respetes los límites de tu plan o lo mejores."
       ],
@@ -4947,9 +4953,6 @@
       ],
       "Tab closed": [
         "Pestaña cerrada"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "La exención de impuestos no es compatible con este plan"
       ],
       "Text is too long to refine": [
         "El texto es demasiado largo para refinarlo."
@@ -8795,6 +8798,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tu cuenta tiene al menos una factura atrasada. Tu acceso pronto será restringido. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Tu cuenta está configurada actualmente para aplicar el régimen de inversión del sujeto pasivo, pero este no es compatible con el plan seleccionado. Para continuar, elimina el número de IVA de la dirección de facturación o selecciona un plan diferente."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "El navegador no soporta el asistente de escritura. Prueba a ejecutarlo en los servidores."
@@ -12793,6 +12799,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Aprovecha la oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTA DE PRIMAVERA 2026"
       ]
     },
     "q1campaign: Info": {
@@ -15558,6 +15567,9 @@
       ],
       "Request new code": [
         "Solicitar un nuevo código"
+      ],
+      "Reverse charge not supported": [
+        "Inversión del sujeto pasivo no admitida"
       ],
       "Same inbox, shorter email address": [
         "La misma bandeja de entrada con una dirección de correo electrónico más corta"

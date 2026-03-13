@@ -489,6 +489,9 @@
       "Edit address": [
         "მისამართის ჩასწორება"
       ],
+      "Edit billing address": [
+        "გადახდის მისამართის ჩასწორება"
+      ],
       "Edit draft": [
         "მონახაზის ჩასწორება"
       ],
@@ -7399,9 +7402,6 @@
       "Low Priority": [
         "დაბალი პრიორიტეტი"
       ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "დააყენეთ ${ MAIL_APP_NAME } თქვენს ნაგულისხმევ ელფოსტის აპლიკაციად."
-      ],
       "Manage your folders": [
         "თქვენი საქაღალდეების მართვა"
       ],
@@ -11849,12 +11849,6 @@
       ],
       "No parent folder": [
         "მშობელი საქაღალდის გარეშე"
-      ],
-      "Remind me later": [
-        "შემახსენე მოგვიანებით"
-      ],
-      "Yes, don't show again": [
-        "დიახ, აღარ მაჩვენო"
       ]
     },
     "Option group": {
@@ -13311,16 +13305,6 @@
       ],
       "Your pm.me email is active": [
         "თქვენი pm.me ელფოსტა აქტიურია"
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "საგაზაფხულო აქცია 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "საგაზაფხულო ფასდაკლება"
       ]
     },
     "sso": {
@@ -14865,9 +14849,6 @@
       ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
-      ],
-      "Keep this banner hidden?": [
-        "იყოს ეს ბანერი დამალული?"
       ],
       "Label as": [
         "დანიშვნა, როგორც"
