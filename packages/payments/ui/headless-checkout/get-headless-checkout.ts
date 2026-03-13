@@ -39,6 +39,8 @@ import {
 import { TAX_EXCLUSIVE_LINE_ITEM_TYPE, type TaxExclusiveLineItem, createTaxExclusiveItem } from './items/tax-exclusive';
 import { TAX_INCLUSIVE_LINE_ITEM_TYPE, type TaxInclusiveLineItem, createTaxInclusiveItem } from './items/tax-inclusive';
 import { UNUSED_CREDIT_LINE_ITEM_TYPE, type UnusedCreditLineItem, createUnusedCreditItem } from './items/unused-credit';
+import type { VatReverseChargeLineItem } from './items/vat-reverse-charge';
+import { VAT_REVERSE_CHARGE_LINE_ITEM_TYPE, createVatReverseChargeItem } from './items/vat-reverse-charge';
 import { formatTax } from './tax-helpers';
 
 export type CheckoutLineItem =
@@ -57,7 +59,8 @@ export type CheckoutLineItem =
     | NextBillingLineItem
     | AmountDueLineItem
     | RenewalNoticeLineItem
-    | TaxInclusiveLineItem;
+    | TaxInclusiveLineItem
+    | VatReverseChargeLineItem;
 
 /**
  * A record that maps each CheckoutLineItem type discriminant to its
@@ -184,6 +187,7 @@ export function getHeadlessCheckout(params: GetHeadlessCheckoutParams) {
         [AMOUNT_DUE_LINE_ITEM_TYPE]: createAmountDueItem(ctx),
         [RENEWAL_NOTICE_LINE_ITEM_TYPE]: createRenewalNoticeItem(ctx),
         [TAX_INCLUSIVE_LINE_ITEM_TYPE]: createTaxInclusiveItem(ctx),
+        [VAT_REVERSE_CHARGE_LINE_ITEM_TYPE]: createVatReverseChargeItem(ctx),
     };
 
     const isB2B = getIsB2BAudienceFromPlan(ctx.checkoutUi.planName);
