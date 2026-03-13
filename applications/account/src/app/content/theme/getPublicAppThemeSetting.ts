@@ -42,7 +42,11 @@ const getThemeFromCookie = (defaultThemeSetting: ThemeSetting) => {
 };
 
 // This function is called on initial load and when changing themes
-export const getPublicAppThemeSetting = ({ themeMode }: { themeMode: ThemeModeSetting | undefined }): ThemeSetting => {
+export const getPublicAppThemeSettingForMode = ({
+    themeMode,
+}: {
+    themeMode: ThemeModeSetting | undefined;
+}): ThemeSetting => {
     const defaultThemeSetting = getDefaultThemeSetting(PROTON_DEFAULT_THEME);
 
     if (themeMode !== undefined) {
@@ -68,14 +72,14 @@ export const getPublicAppThemeSetting = ({ themeMode }: { themeMode: ThemeModeSe
     return { ...defaultThemeSetting, ...getThemeSettingFromMode(ThemeModeSetting.Light) };
 };
 
-// This function is called once on initial load
+// This function is called on initial load and on location changes.
 // Priority order:
-// 1. URL param (?theme=light/dark/auto)
-// 2. Location based
+// 1. Location based
+// 2. URL param (?theme=light/dark/auto)
 // 3. PublicTheme local storage (in case it's set to light or dark)
 // 4. Theme cookie from user's account settings
 // 5. System preference
-export const getInitialPublicAppThemeSetting = (): ThemeSetting => {
+export const getPublicAppThemeSetting = (): ThemeSetting => {
     const defaultThemeSetting = getDefaultThemeSetting(PROTON_DEFAULT_THEME);
     const searchParams = new URLSearchParams(window.location.search);
 
@@ -97,7 +101,7 @@ export const getInitialPublicAppThemeSetting = (): ThemeSetting => {
 
     // 3. PublicTheme local storage (in case it's set to light or dark)
     const storedThemeMode = getThemeModeFromStorage();
-    return getPublicAppThemeSetting({ themeMode: storedThemeMode });
+    return getPublicAppThemeSettingForMode({ themeMode: storedThemeMode });
 };
 
 // Persist the theme to cookie in case there's no other theme present, this slightly improves the experience for users

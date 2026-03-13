@@ -71,7 +71,6 @@ import mailReferPage from '../../pages/refer-a-friend';
 import generateDeferredMnemonicData from '../containers/recoveryPhrase/generateDeferredMnemonicData';
 import { usePrefetchGenerateRecoveryKit } from '../containers/recoveryPhrase/useRecoveryKitDownload';
 import type { Paths } from '../content/helper';
-import { SetTheme } from '../content/theme/SetTheme';
 import { cachedPlans, cachedPlansMap } from '../defaultPlans';
 import { getOptimisticDomains, isPorkbunSignup, isReferralSignup } from '../signup/helper';
 import type {
@@ -1405,7 +1404,6 @@ const SingleSignupContainerV2 = ({
                 />
             )}
             <UnAuthenticated>
-                <SetTheme theme={theme.type} />
                 {model.step === Steps.Account && (
                     <Step1
                         initialSessionsLength={initialSessionsLength}
