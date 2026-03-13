@@ -11,7 +11,7 @@ import { useMeetErrorReporting } from './useMeetErrorReporting';
 export const useUpdateMeetingName = () => {
     const api = useApi();
 
-    const reportMeetError = useMeetErrorReporting();
+    const { reportMeetError } = useMeetErrorReporting();
 
     const updateMeetingName = async (meetingId: string, meetingName: string, sessionKey: SessionKey) => {
         try {

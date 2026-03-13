@@ -123,7 +123,7 @@ export const ProtonMeetContainer = ({
     const authentication = useAuthentication();
     const { createNotification } = useNotifications();
 
-    const reportMeetError = useMeetErrorReporting();
+    const { reportMeetError, clearSentryReportErrorCounts } = useMeetErrorReporting();
 
     const history = useHistory();
     const createInstantMeeting = useCreateInstantMeeting();
@@ -961,7 +961,7 @@ export const ProtonMeetContainer = ({
         setJoinedRoom(false);
 
         keyProvider.cleanCurrent();
-
+        clearSentryReportErrorCounts();
         prepareUpsell();
     };
 

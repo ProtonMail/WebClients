@@ -25,7 +25,7 @@ export const useChat = () => {
 
     const isChatOpen = sideBarState[MeetingSideBars.Chat];
 
-    const reportMeetError = useMeetErrorReporting();
+    const { reportMeetError } = useMeetErrorReporting();
 
     const handleDataReceive = useCallback(
         // This is the actual typing LiveKit uses for the payload
