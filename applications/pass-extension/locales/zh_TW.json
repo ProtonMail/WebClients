@@ -899,6 +899,12 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "未知的錯誤發生。請重新載入${ PASS_APP_NAME }擴充功能。此錯誤已被紀錄。"
       ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "已鎖定 ${ PASS_APP_NAME } 桌面應用程式，必須將其解鎖。"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "尚未安裝${ PASS_APP_NAME } 桌面應用程式。"
+      ],
       "The URL is in the list": [
         "此網址於清單中"
       ],
@@ -1219,6 +1225,9 @@
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "透過連接${ BRAND_NAME }您的帳號啟用${ PASS_APP_NAME }"
+      ],
+      "Enabling desktop auto-lock": [
+        "啟用桌面自動鎖定"
       ],
       "Enabling offline mode...": [
         "啟用離線模式..."
