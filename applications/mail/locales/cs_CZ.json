@@ -1495,7 +1495,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -7695,10 +7698,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -13234,6 +13234,9 @@
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Slevy vycházejí ze standardních měsíčních cen. Vaše předplatné se na konci fakturačního cyklu obnoví za standardní roční sazbu."
       ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Prodlužte si předplatné a uložte ${ discountPercent } %!"
+      ],
       "Full access to ${ VPN_APP_NAME }": [
         "Plný přístup k ${ VPN_APP_NAME }"
       ],
@@ -13254,6 +13257,9 @@
       ],
       "Stronger protection against cyber threats": [
         "Silnější ochrana proti kybernetickým hrozbám"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Přejděte na náš roční plán a uložte ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Neomezený denní limit konverzací"
