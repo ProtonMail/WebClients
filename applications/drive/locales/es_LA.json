@@ -425,6 +425,9 @@
       "Edit": [
         "Editar"
       ],
+      "Edit billing address": [
+        "Editar la dirección de la factura"
+      ],
       "Edit email address": [
         "Editar dirección de correo"
       ],
@@ -3542,7 +3545,7 @@
         "Código inválido"
       ],
       "Invalid coupon": [
-        "Cupón invalido"
+        "Cupón inválido"
       ],
       "Invalid email address": [
         "Dirección de correo inválida"
@@ -3708,6 +3711,9 @@
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El esquema de inversión del sujeto pasivo no es compatible con este plan"
+      ],
       "Search failed": [
         "Error en la búsqueda"
       ],
@@ -3756,9 +3762,6 @@
       "Tab closed": [
         "Pestaña cerrada"
       ],
-      "Tax exemption is not supported for this plan": [
-        "La exoneración de impuestos no es compatible con este plan"
-      ],
       "The address might be misspelled": [
         "La dirección podría estar mal escrita"
       ],
@@ -3792,6 +3795,9 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que se puede agregar es de ${ price }"
       ],
+      "The minimum donation amount is ${ price }": [
+        "El importe mínimo de la donación es de ${ price }"
+      ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "La revisión nueva del archivo original aún no se ha cargado, intente de nuevo más tarde"
       ],
@@ -3820,7 +3826,7 @@
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
       "This field is invalid": [
-        "Este campo no es válido"
+        "Este campo es válido"
       ],
       "This field is required": [
         "Este campo es obligatorio"
@@ -5293,6 +5299,9 @@
       "Choose a plan that works best for you.": [
         "Elija un plan que funcione mejor para usted."
       ],
+      "Clear all search data": [
+        "Borrar todos los datos de búsqueda"
+      ],
       "Clear data": [
         "Limpiar datos"
       ],
@@ -5304,6 +5313,9 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "Borra los datos de navegación relacionados con la búsqueda cifrada."
+      ],
+      "Clears browser data related to the search.": [
+        "Borra los datos de navegación relacionados con la búsqueda."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haga clic en \"Solicitar código nuevo\" para que se envíe un código de verificación nuevo a ${ strong }. Si este número telefónico es incorrecto, haga clic en \"Editar\" para corregirlo."
@@ -6167,6 +6179,9 @@
       "Search Enabled": [
         "Búsqueda activada"
       ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Búsqueda activada. Puede cerrar esta ventana y buscar archivos y carpetas."
+      ],
       "Select a destination folder": [
         "Seleccione una carpeta de destino"
       ],
@@ -6468,6 +6483,9 @@
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Para activar una búsqueda verdaderamente privada $ necesitamos indexar los archivos localmente. Puede seguir usando ${ DRIVE_APP_NAME } normalmente y le avisaremos cuando la indexación finalice."
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Para activar una búsqueda verdadera, necesitamos indexar los archivos localmente. Puede seguir usando ${ DRIVE_APP_NAME } normalmente y le avisaremos cuando la indexación finalice."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
@@ -6852,6 +6870,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "La cuenta tiene al menos una factura atrasada. Su acceso pronto será restringido. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Su cuenta está configurada actualmente para aplicar el esquema de inversión del sujeto pasivo. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Su navegador actual no soporta la descarga de archivos grandes/múltiples. Descargue la aplicación de escritorio para cargas y descargas sin interrupciones."
@@ -10603,6 +10624,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Aproveche la oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTA DE PRIMAVERA 2026"
       ]
     },
     "q1campaign: Info": {
@@ -11297,16 +11321,6 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Ahora puede buscar fácilmente archivos de Drive mientras mantiene los datos seguros."
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "OFERTA DE PRIMAVERA 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "OFERTA DE PRIMAVERA"
       ]
     },
     "sso": {
@@ -12855,6 +12869,9 @@
       ],
       "Restore your files": [
         "Restaure los archivos"
+      ],
+      "Reverse charge not supported": [
+        "Inversión del sujeto pasivo no soportada"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Guardarlo para después en ${ DRIVE_APP_NAME }"

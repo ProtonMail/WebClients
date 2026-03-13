@@ -425,6 +425,9 @@
       "Edit": [
         "Redigér"
       ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
+      ],
       "Edit email address": [
         "Rediger e-mailadresse"
       ],
@@ -3684,6 +3687,9 @@
       "Request timed out": [
         "Forespørgsel fik timeout"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omvendt betalingsordning understøttes ikke for dette abonnement"
+      ],
       "Search failed": [
         "Søgning mislykkedes"
       ],
@@ -3731,9 +3737,6 @@
       ],
       "Tab closed": [
         "Fane lukket"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Skattefritagelse understøttes ikke for dette abonnement"
       ],
       "The address might be misspelled": [
         "Adressen kan være stavet forkert"
@@ -6796,6 +6799,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Din konto er i øjeblikket konfigureret til at anvende omvendt betalingspligt, som ikke er understøttet i det valgte abonnement. For at fortsætte skal du enten fjerne momsnummeret fra faktureringsadressen eller vælge et andet abonnement."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Din nuværende browser understøtter ikke download af store filer/flere filer. Download skrivebordsappen for problemfri upload og download."
@@ -10457,6 +10463,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Tag imod tilbuddet"
+      ],
+      "SPRING SALE 2026": [
+        "FORÅRSALG 2026"
       ]
     },
     "q1campaign: Info": {
@@ -10538,7 +10547,7 @@
         "i 12 måneder"
       ],
       "SPRING SALE": [
-        "FORÅRSUDSALG"
+        "FORÅR SALG"
       ]
     },
     "Referral": {
@@ -12687,6 +12696,9 @@
       ],
       "Restore your files": [
         "Gendan dine filer"
+      ],
+      "Reverse charge not supported": [
+        "Fakturering med omvendt betaling understøttes ikke"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Gem den til senere i ${ DRIVE_APP_NAME }."
