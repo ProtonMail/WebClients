@@ -99,6 +99,10 @@ const TEST_CONTENT_SAMPLES = {
         name: 'Whitespace Only',
         content: '   \n\n   \n   ',
     },
+    link_with_annotation: {
+        name: 'Link with Annotation',
+        content: 'This is a link with Annotation: https://www.morgen.so/morgen-for-linux[3](#ref-3)',
+    },
 };
 
 interface RouteParams {
