@@ -489,6 +489,9 @@
       "Edit address": [
         "Adresi düzenle"
       ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
+      ],
       "Edit draft": [
         "Taslağı düzenle"
       ],
@@ -4906,6 +4909,9 @@
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Bu tarife için sorumlu sıfatıyla KDV usulü desteklenmemektedir"
+      ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Tarifenizin sınırlarına düşene ya da tarifenizi yükseltene kadar ek dosyalar gönderemeyeceksiniz."
       ],
@@ -4953,9 +4959,6 @@
       ],
       "Tab closed": [
         "Sekme kapatıldı"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Bu tarifede vergi hariç seçeneği bulunmuyor"
       ],
       "Text is too long to refine": [
         "Yazı, özetlenemeyecek kadar uzun"
@@ -7563,7 +7566,7 @@
         "Düşük Öncelik"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız olsun."
+        "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız yapın."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -8818,6 +8821,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Hesabınız şu anda sorumlu sıfatıyla KDV usulünü uygulayacak şekilde yapılandırılmış. Bu durum seçilen tarife için desteklenmemektedir. Devam etmek için ya fatura adresinden KDV numarasını kaldırın ya da farklı bir tarife seçin."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Tarayıcınız yazma yardımcısını desteklemiyor. Sunucular üzerinden çalıştırmayı deneyin."
@@ -12112,7 +12118,7 @@
         "Daha sonra hatırlat"
       ],
       "Yes, don't show again": [
-        "Evet, bir daha görüntülenmesin"
+        "Evet, bir daha gösterme"
       ]
     },
     "Option group": {
@@ -12820,6 +12826,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Tekliften yararlanın"
+      ],
+      "SPRING SALE 2026": [
+        "BAHAR İNDİRİMİ 2026"
       ]
     },
     "q1campaign: Info": {
@@ -13759,16 +13768,6 @@
       ],
       "Your pm.me email is active": [
         "pm.me e-posta adresiniz kullanımda"
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "2026 BAHAR İNDİRİMİ"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "BAHAR İNDİRİMİ"
       ]
     },
     "sso": {
@@ -15321,7 +15320,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Keep this banner hidden?": [
-        "Bu uyarı gizli tutulsun mu?"
+        "Bu banner gizli tutulsun mu?"
       ],
       "Label as": [
         "Etiketle"
@@ -15595,6 +15594,9 @@
       ],
       "Request new code": [
         "Yeni kod iste"
+      ],
+      "Reverse charge not supported": [
+        "Sorumlu sıfatıyla KDV desteklenmiyor"
       ],
       "Same inbox, shorter email address": [
         "Aynı gelen kutusu, daha kısa e-posta adresi"

@@ -3041,6 +3041,9 @@
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Rückerstattung der Umsatzsteuer ist für dieses Abonnement nicht unterstützt"
+      ],
       "Search failed": [
         "Suche fehlgeschlagen"
       ],
@@ -3076,9 +3079,6 @@
       ],
       "status page": [
         "Statusseite"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Steuerbefreiung wird für diesen Plan nicht unterstützt"
       ],
       "The address might be misspelled": [
         "Die E-Mail-Adresse könnte falsch geschrieben sein."
@@ -8190,6 +8190,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Deal sichern"
+      ],
+      "SPRING SALE 2026": [
+        "SPRING SALE 2026"
       ]
     },
     "q1campaign: Info": {
@@ -8271,7 +8274,7 @@
         "für 12 Monate"
       ],
       "SPRING SALE": [
-        "FRÜHLINGS-SALE"
+        "SPRING SALE"
       ]
     },
     "Recent documents table header": {
@@ -8975,16 +8978,6 @@
       ],
       "To edit this document, create a copy that you can modify.": [
         "Um dieses Dokument zu bearbeiten, erstelle eine Kopie, die du ändern kannst."
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "Frühjahrsangebote 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "Frühjahrsangebote"
       ]
     },
     "sso": {

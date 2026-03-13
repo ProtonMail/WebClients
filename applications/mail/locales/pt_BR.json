@@ -489,6 +489,9 @@
       "Edit address": [
         "Editar endereço"
       ],
+      "Edit billing address": [
+        "Editar endereço de cobrança"
+      ],
       "Edit draft": [
         "Editar rascunho"
       ],
@@ -4951,9 +4954,6 @@
       "Tab closed": [
         "Guia fechada"
       ],
-      "Tax exemption is not supported for this plan": [
-        "A isenção de impostos não é suportada para este plano"
-      ],
       "Text is too long to refine": [
         "O texto é muito longo para ser refinado"
       ],
@@ -7557,7 +7557,7 @@
         "Baixa prioridade"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Defina ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão."
+        "Tornar ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão."
       ],
       "Manage your folders": [
         "Gerenciar suas pastas"
@@ -9576,6 +9576,9 @@
       ],
       "Import interval": [
         "Intervalo de importação"
+      ],
+      "Import recent mails": [
+        "Importar e-mails recentes"
       ],
       "Import to email address": [
         "Importar para o endereço de e-mail"
@@ -12814,6 +12817,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Aproveitar a oferta"
+      ],
+      "SPRING SALE 2026": [
+        "PROMO DE PRIMAVERA 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12895,7 +12901,7 @@
         "por 12 meses"
       ],
       "SPRING SALE": [
-        "PROMOÇÃO DE PRIMAVERA"
+        "PROMO DE PRIMAVERA"
       ]
     },
     "Received email icon": {
@@ -13753,16 +13759,6 @@
       ],
       "Your pm.me email is active": [
         "Seu e-mail pm.me está ativo"
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "PROMOÇÃO DE PRIMAVERA 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "PROMOÇÃO DE PRIMAVERA"
       ]
     },
     "sso": {

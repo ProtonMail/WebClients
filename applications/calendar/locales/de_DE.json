@@ -362,6 +362,9 @@
       "Edit": [
         "Bearbeiten"
       ],
+      "Edit billing address": [
+        "Rechnungsadresse bearbeiten"
+      ],
       "Edit booking page": [
         "Buchungsseite bearbeiten"
       ],
@@ -3896,6 +3899,9 @@
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Rückerstattung der Umsatzsteuer ist für dieses Abonnement nicht unterstützt"
+      ],
       "Self invitation not allowed": [
         "Selbsteinladung nicht zulässig"
       ],
@@ -3937,9 +3943,6 @@
       ],
       "Tab closed": [
         "Tab geschlossen"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Steuerbefreiung wird für diesen Plan nicht unterstützt"
       ],
       "The address might be misspelled": [
         "Die E-Mail-Adresse könnte falsch geschrieben sein."
@@ -6456,6 +6459,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Dein Konto ist derzeit so konfiguriert, dass die Rückerstattung der Umsatzsteuer nicht angewendet wird. Dies wird für das ausgewählte Abonnement nicht unterstützt. Um fortzufahren, entferne entweder die Umsatzsteuer-Identifikationsnummer aus der Rechnungsadresse oder wähle anderes Abonnement."
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Deine E-Mail-Adresse ist deaktiviert. Eine Absage-E-Mail kann nicht an die Teilnehmer des Termins gesendet werden. Möchtest du trotzdem alle Termine dieser Serie löschen?"
@@ -9917,6 +9923,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Deal sichern"
+      ],
+      "SPRING SALE 2026": [
+        "SPRING SALE 2026"
       ]
     },
     "q1campaign: Info": {
@@ -9998,7 +10007,7 @@
         "für 12 Monate"
       ],
       "SPRING SALE": [
-        "FRÜHLINGS-SALE"
+        "SPRING SALE"
       ]
     },
     "Referral": {
@@ -10682,16 +10691,6 @@
       ],
       "Video conferencing is here!": [
         "Videokonferenzen sind da!"
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "Frühjahrsangebote 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "Frühjahrsangebote"
       ]
     },
     "sso": {
@@ -12090,6 +12089,9 @@
       ],
       "Reshare your calendars": [
         "Kalender erneut teilen"
+      ],
+      "Reverse charge not supported": [
+        "Rückerstattungen der Umsatzsteuer nicht unterstützt"
       ],
       "Save": [
         "Speichern"

@@ -90,6 +90,12 @@
       "Activate recovery": [
         "Aktiver gjennoppretting"
       ],
+      "Activate reserved address": [
+        "Aktiver reservert adresse"
+      ],
+      "Activate this address": [
+        "Aktiver denne adressen"
+      ],
       "Add": [
         "Legg til"
       ],
@@ -561,6 +567,9 @@
       "Don't show again": [
         "Ikke vis igjen"
       ],
+      "Donate": [
+        "Doner"
+      ],
       "Done": [
         "Utført"
       ],
@@ -830,6 +839,9 @@
       ],
       "Get verification code": [
         "Få verifiseringskode"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Skaff deg din egen ${ MAIL_APP_NAME }-adresse"
       ],
       "Go back": [
         "Gå tilbake"
@@ -1371,6 +1383,9 @@
       "Send reminder": [
         "Send påminnelse"
       ],
+      "Send verification code": [
+        "Send verifiseringskode"
+      ],
       "Set as album cover": [
         "Angi som albumomslag"
       ],
@@ -1538,6 +1553,9 @@
       ],
       "Try for free": [
         "Prøv gratis"
+      ],
+      "Try payment again": [
+        "Prøv betaling på nytt"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Prøv å lagre igjen. Lagring mislyktes på grunn av: ${ saveError }"
@@ -6367,6 +6385,9 @@
       "Account does not exist": [
         "Kontoen finnes ikke"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Aktivering mislyktes. Detaljene kan være feil, eller e-posten er allerede aktiv. Kontroller inndataene dine eller logg på."
+      ],
       "Add at least one action": [
         "Legg til minst én handling"
       ],
@@ -6494,6 +6515,9 @@
       ],
       "Failed loading group members": [
         "Kunne ikke laste inn gruppemedlemmer"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Kunne ikke aktivere adressen din. Prøv igjen."
       ],
       "Failed to add group member": [
         "Kunne ikke legge til gruppemedlem"
@@ -6851,9 +6875,6 @@
       ],
       "Tab closed": [
         "Fane lukket"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Skattefritak støttes ikke for denne planen"
       ],
       "The address might be misspelled": [
         "Adressen kan være feilstavet."
@@ -8098,6 +8119,16 @@
         "Jeg forstår at jeg ikke lenger vil kunne logge på fra eldre versjoner av mobilappene til ${ BRAND_NAME }."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Angi din e-postadresse"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Verdikupongen vil bli sendt hit."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "nettapp"
@@ -8398,6 +8429,32 @@
       ],
       "Subscribed": [
         "Abonnerer"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Et enkelt skritt i dag for å sikre barnets digitale sikkerhet i morgen"
+      ],
+      "Activate your reserved email address": [
+        "Aktiver din reserverte e-postadresse"
+      ],
+      "Address reservation voucher": [
+        "Verdikupong for adressereservasjon"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Doner til ${ BRAND_NAME } Foundation"
+      ],
+      "Enter verification code": [
+        "Angi verifiseringskode"
+      ],
+      "Recover activation voucher": [
+        "Gjenopprett aktiveringskupong"
+      ],
+      "Reserve child's email address": [
+        "Reserver barnets e-postadresse"
+      ],
+      "We emailed you the voucher": [
+        "Vi sendte deg verdikupongen på e-post"
       ]
     },
     "Headline": {
@@ -9950,11 +10007,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "Angi påloggingsinformasjonen til e-postkontoen du ønskere å importere fra."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Angi e-postadressen som ble brukt til å reservere ${ reservedEmail }."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Angi enhets-ID-en for en **eduGAIN**-organisasjon for **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Skriv inn organisasjonspassord for å gjenopprette administratorprivilegier. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Angi den reserverte e-postadressen og e-postadressen som ble brukt under reservasjonen."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Skriv inn verifiseringskoden som ble sendt til ${ destinationText }."
@@ -10133,6 +10196,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Hjelp andre familier med å gi barna en trygg pålogget start. Del denne milepælen og spre ordet."
+      ],
       "here": [
         "her"
       ],
@@ -10141,6 +10207,9 @@
       ],
       "High Priority": [
         "Høy prioritet"
+      ],
+      "How it works": [
+        "Slik fungerer det"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -10165,6 +10234,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Hvis tastatursnarveier er aktivert, kan du bruke følgende taster for hurtighandlinger eller for å hoppe til forskjellige visninger. ${ metaKey } + K er alltid aktivert."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Hvis e-posten du anga ble brukt til å reservere en e-postadresse for et barn, sender vi aktiveringskupongen på nytt."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Hvis systemets tidssone ikke samsvarer med gjeldende tidssoneinnstilling, blir du bedt om å oppdatere den (på det meste én gang per dag)."
@@ -10401,6 +10473,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bare bekreft valget ditt og vi vil gjøre resten."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Oppbevar verdikupongen sikkert til du trenger den, for eksempel i ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Hold informasjonen din sikrere og mer privat med disse veiledningene og tipsene."
@@ -10916,6 +10991,9 @@
       "Receive notifications for ${ categoryLabel }": [
         "Motta varsler for ${ categoryLabel }"
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Motta reservasjonskupongen på e-post. Du eller barnet kan bruke den til å aktivere adressen i løpet av de neste 15 årene. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Nylig brukte tjenere:"
       ],
@@ -11148,6 +11226,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Enkelte tjenere vises kanskje ikke i listen ovenfor. Søk etter tjenernavn (f.eks. AT#62) for å finne dem."
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Noe gikk galt. Prøv igjen eller kontakt kundestøtte."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Spesifiser domenet som har tillatelse til å autentisere med SAML SSO."
       ],
@@ -11166,6 +11247,9 @@
       "Step ${ step }": [
         "Trinn ${ step }",
         "Trinn ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Trinn ${ step }/${ totalSteps }"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagringsplass allokert til andre brukere i denne organisasjonen"
@@ -11516,6 +11600,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "For å holde tritt med den siste utviklingen på ${ BRAND_NAME }s produkter, kan du abonnere på våre forskjellige e-poster og ${ blogLink } i ny og ne."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "For å forhindre misbruk eller svindel, ber vi om en donasjon på minst ${ minimumDonation }. Dette støtter arbeidet til ${ protonFoundationLink } med å forsvare digitalt personvern globalt og bidrar til å beskytte neste generasjon."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "For å fortsette, velg en kontogjenopprettingsmetode slik at vi kan verifisere forespørselen."
       ],
@@ -11741,6 +11828,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Vi råder deg til å bruke offisielle ${ VPN_APP_NAME }-applikasjoner når mulig."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Vi kunne ikke fullføre transaksjonen. Prøv igjen."
+      ],
       "We couldn’t process your payment.": [
         "Vi kunne ikke behandle betalingen din."
       ],
@@ -11851,6 +11941,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Når du er klar til å aktivere adressen, skann QR-koden eller bruk lenken i verdikupongen."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Når abonnementet ditt fornyes, vil vi legge til alle tilgjengelige kreditter før vi belaster betalingsmåten ovenfor."
@@ -12246,6 +12339,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Prøveperioden avsluttes om ${ timeRemaining }."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Verdikupongen for din reserverte ${ BRAND_NAME }-e-postadresse: ${ reservedEmail }"
+      ],
       "YouTube": [
         "YouTube"
       ],
@@ -12288,6 +12384,11 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "Hjelper med å skrive, svare på og korrekturlese e-poster. Hvis deaktivert, vil kun administratorer ha tilgang. Administrer for individuelle brukere i ${ userAndAddresses } eller ${ addMoreSeats }"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Angi verifiseringskoden som ble sendt til ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -12918,6 +13019,9 @@
       "Actions": [
         "Handlinger"
       ],
+      "Activation code": [
+        "Aktiveringskode"
+      ],
       "Activity": [
         "Aktivitet"
       ],
@@ -13161,6 +13265,9 @@
       "Choose a name for the generated certificate file": [
         "Velg et navn for den genererte sertifikatfilen"
       ],
+      "Choose an address to reserve for your child": [
+        "Velg en adresse du vil reservere for barnet ditt"
+      ],
       "Choose your billing": [
         "Velg fakturering"
       ],
@@ -13365,6 +13472,12 @@
       "Don't show this again": [
         "Ikke vis dette igjen"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Doner 1 $ eller mer til ${ BRAND_NAME } Foundation"
+      ],
+      "Donation amount": [
+        "Donasjonsbeløp"
+      ],
       "Duration": [
         "Varighet"
       ],
@@ -13424,6 +13537,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Angi passordet for nøkkel med fingeravtrykk: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Angi din e-postadresse"
       ],
       "Enter your password": [
         "Skriv inn passordet"
@@ -13941,6 +14057,12 @@
       "Require 2FA for everyone": [
         "Krev 2FA for alle"
       ],
+      "Reserved address": [
+        "Reservert adresse"
+      ],
+      "Reserved email address": [
+        "Reservert e-postadresse"
+      ],
       "Reveal password": [
         "Avslør passord"
       ],
@@ -13982,6 +14104,9 @@
       ],
       "Server name": [
         "Tjenernavn"
+      ],
+      "Set password": [
+        "Angi passord"
       ],
       "Share your referral link": [
         "Del vervekoblingen din"
@@ -14112,6 +14237,9 @@
       ],
       "Tips and insights": [
         "Tips og innsikt"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "For å aktivere, skann QR-koden eller gå til:"
       ],
       "To help us improve, please explain why you are leaving.": [
         "For å hjelpe oss med å forbedre oss, vennligst forklar hvorfor du slutter."
@@ -14245,11 +14373,17 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jeg ønsker å slette denne kontoen og all dataen dens permanent."
       ],
+      "Your activation code:": [
+        "Din aktiveringskode:"
+      ],
       "Your calendar URL": [
         "Nettadressen til kalenderen"
       ],
       "Your credit balance": [
         "Din kredittsaldo"
+      ],
+      "Your email address": [
+        "Din e-postadresse"
       ],
       "Your password (admin)": [
         "Ditt passord (admin)"
@@ -14259,6 +14393,9 @@
       ],
       "Your plan": [
         "Planen din"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Verdikupongen for din reserverte ${ BRAND_NAME }-e-postadresse:"
       ],
       "ZIP code": [
         "Postnummer"
@@ -14431,6 +14568,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "${ BRAND_NAME } Foundations"
+      ],
       "Activity log": [
         "Aktivitetslogg"
       ],
@@ -14451,6 +14591,9 @@
       ],
       "Calendars": [
         "Kalendere"
+      ],
+      "Can't find your code?": [
+        "Finner du ikke koden din?"
       ],
       "clearing your browser cache": [
         "tømmer hurtigbufferen til nettleseren"
@@ -14654,6 +14797,20 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Brukere og adresser"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "E-post"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -18203,6 +18360,9 @@
       "Address": [
         "Adresse"
       ],
+      "Amount": [
+        "Beløp"
+      ],
       "Anderson": [
         "Andersen"
       ],
@@ -18603,6 +18763,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Benytt deg av tilbudet"
+      ],
+      "SPRING SALE 2026": [
+        "VÅRSALG 2026"
       ]
     },
     "q1campaign: Info": {
@@ -19219,14 +19382,8 @@
       "Disable recovery by email": [
         "Deaktiver gjenoppretting via e-post"
       ],
-      "Disable recovery by email ": [
-        "Deaktiver gjenoppretting via e-post "
-      ],
       "Disable recovery by phone": [
         "Deaktiver gjenoppretting via telefon"
-      ],
-      "Disable recovery by phone ": [
-        "Deaktiver gjenoppretting via telefon "
       ],
       "Download ${ size }": [
         "Last ned ${ size }"
@@ -20868,16 +21025,6 @@
         "Få kreditter når personen du inviterer abonnerer på en ${ BRAND_NAME }-plan."
       ]
     },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "VÅRSALG 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "VÅRSALG"
-      ]
-    },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } ber om din hjelp til å logge på ${ BRAND_NAME }-kontoen sin med enkel pålogging."
@@ -22057,6 +22204,9 @@
       "Verification code copied to clipboard": [
         "Verifiseringskode kopiert til utklippstavlen"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Verifiseringskode sendt til ${ parentEmail }"
+      ],
       "Verification successful": [
         "Vellykket verifisering"
       ],
@@ -22080,6 +22230,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Du vil motta brukernavnet ditt via SMS innen et minutt hvis du har oppgitt et gyldig telefonnummer for gjenoppretting."
+      ],
+      "Your address has been activated": [
+        "Adressen din har blitt aktivert"
       ]
     },
     "Success message": {
@@ -23488,6 +23641,12 @@
       ],
       "Privacy and data collection": [
         "Personvern og datainnsamling"
+      ],
+      "Problem processing your payment": [
+        "Problem ved behandling av betaling"
+      ],
+      "Problem processing your request": [
+        "Problem ved behandling av forespørselen din"
       ],
       "Processing...": [
         "Behandler..."

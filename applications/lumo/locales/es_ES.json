@@ -116,6 +116,9 @@
       "Download logs": [
         "Descargar los registros"
       ],
+      "Edit billing address": [
+        "Editar la dirección de la factura"
+      ],
       "Edit email address": [
         "Editar dirección de correo electrónico"
       ],
@@ -571,11 +574,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "El espacio de almacenamiento se distribuye entre todos los servicios de ${ BRAND_NAME }."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday": [
-        "Black Friday"
       ]
     },
     "BF2025: Deal details": {
@@ -3251,6 +3249,9 @@
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El régimen de inversión del sujeto pasivo no es compatible con este plan"
+      ],
       "Signature verification failed": [
         "Error al verificar la firma"
       ],
@@ -3259,9 +3260,6 @@
       ],
       "Tab closed": [
         "Pestaña cerrada"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "La exención de impuestos no es compatible con este plan"
       ],
       "The amount due has changed. Please try again.": [
         "El importe a pagar ha cambiado. Inténtalo de nuevo."
@@ -3966,6 +3964,9 @@
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Tu suscripción ${ plan } será reemplazada por ${ PASS_SHORT_APP_NAME } de por vida. El saldo restante de tu suscripción se añadirá a tu cuenta. La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceder de por vida a ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Tu cuenta está configurada actualmente para aplicar el régimen de inversión del sujeto pasivo, pero este no es compatible con el plan seleccionado. Para continuar, elimina el número de IVA de la dirección de facturación o selecciona un plan diferente."
       ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico se utilizará solo para esta verificación única."
@@ -5810,6 +5811,12 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Aprovecha la oferta"
+      ],
+      "Spring Sale": [
+        "Oferta de primavera"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTA DE PRIMAVERA 2026"
       ]
     },
     "q1campaign: Info": {
@@ -6556,6 +6563,9 @@
       ],
       "Request new code": [
         "Solicitar un nuevo código"
+      ],
+      "Reverse charge not supported": [
+        "Inversión del sujeto pasivo no admitida"
       ],
       "Select a plan": [
         "Selecciona un plan"

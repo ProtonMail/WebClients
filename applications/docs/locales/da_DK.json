@@ -3035,6 +3035,9 @@
       "Request timed out": [
         "Forespørgsel fik timeout"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omvendt betalingsordning understøttes ikke for dette abonnement"
+      ],
       "Search failed": [
         "Søgning mislykkedes"
       ],
@@ -3070,9 +3073,6 @@
       ],
       "status page": [
         "statusside"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Skattefritagelse understøttes ikke for dette abonnement"
       ],
       "The address might be misspelled": [
         "Adressen kan være stavet forkert"
@@ -8091,6 +8091,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Tag imod tilbuddet"
+      ],
+      "SPRING SALE 2026": [
+        "FORÅRSALG 2026"
       ]
     },
     "q1campaign: Info": {
@@ -8172,7 +8175,7 @@
         "i 12 måneder"
       ],
       "SPRING SALE": [
-        "FORÅRSUDSALG"
+        "FORÅR SALG"
       ]
     },
     "Recent documents table header": {

@@ -71,6 +71,12 @@
       "Activate recovery": [
         "Активировать восстановление"
       ],
+      "Activate reserved address": [
+        "Активировать зарезервированный адрес"
+      ],
+      "Activate this address": [
+        "Активировать этот адрес"
+      ],
       "Add": [
         "Добавить"
       ],
@@ -446,6 +452,9 @@
       "Don't show again": [
         "Больше не показывать"
       ],
+      "Donate": [
+        "Пожертвовать"
+      ],
       "Done": [
         "Готово"
       ],
@@ -637,6 +646,9 @@
       ],
       "Get verification code": [
         "Получить проверочный код"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Получить свой адрес ${ MAIL_APP_NAME }"
       ],
       "Go back": [
         "Назад"
@@ -1088,6 +1100,9 @@
       "Send reminder": [
         "Отправить напоминание"
       ],
+      "Send verification code": [
+        "Отправить код подтверждения"
+      ],
       "Set as album cover": [
         "Сделать обложкой альбома"
       ],
@@ -1234,6 +1249,9 @@
       ],
       "Try for free": [
         "Попробовать бесплатно"
+      ],
+      "Try payment again": [
+        "Повторить попытку оплаты"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Попробуйте сохранить еще раз. Не удалось сохранить из-за: ${ saveError }"
@@ -4387,6 +4405,9 @@
       "Account does not exist": [
         "Аккаунт не существует"
       ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Сбой активации. Информация может быть неверной, или электронное письмо уже активно. Проверьте введенные данные или войдите."
+      ],
       "Add at least one action": [
         "Добавьте хотя бы одно действие"
       ],
@@ -4494,6 +4515,9 @@
       ],
       "Expired": [
         "Срок действия истёк"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Не удалось активировать ваш адрес. Пожалуйста, попробуйте еще раз."
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Не удалось получить активные сеансы. Пожалуйста, ${ refresh } или повторите попытку позже."
@@ -5908,6 +5932,16 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Form heading": {
+      "Enter your email address": [
+        "Введите адрес вашей электронной почты"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Ваучер будет отправлен сюда."
+      ]
+    },
     "Free trial dekstop": {
       "web app": [
         "веб-приложение"
@@ -6141,6 +6175,32 @@
       ],
       "Value / Data / Points to": [
         "Значение / Данные / Указывает на"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Простой шаг сегодня для обеспечения цифровой безопасности вашего ребенка завтра"
+      ],
+      "Activate your reserved email address": [
+        "Активировать ваш зарезервированный адрес электронной почты"
+      ],
+      "Address reservation voucher": [
+        "Ваучер на резервирование адреса"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Пожертвовать в фонд ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Введите код подтверждения"
+      ],
+      "Recover activation voucher": [
+        "Восстановить ваучер активации"
+      ],
+      "Reserve child's email address": [
+        "Зарезервировать адрес электронной почты ребенка"
+      ],
+      "We emailed you the voucher": [
+        "Мы отправили вам ваучер в электронном письме"
       ]
     },
     "Headline": {
@@ -7498,11 +7558,17 @@
       "Enter the credentials of the email account you want to import from.": [
         "Введите учетные данные аккаунта электронной почты, из которого вы хотите импортировать данные."
       ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Введите адрес электронной почты, использованный для резервирования ${ reservedEmail }."
+      ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "Введите идентификатор организации для организации **eduGAIN** для **${ domain.DomainName }**."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Введите пароль организации для восстановления полномочий администратора. ${ learnMore }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Введите зарезервированный адрес электронной почты и адрес электронной почты, использованный при резервировании."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
@@ -7621,11 +7687,17 @@
       "Groups": [
         "Группы"
       ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Помогите другим семьям обеспечить их детям безопасный старт онлайн. Поделитесь этим событием и расскажите о нем."
+      ],
       "here": [
         "здесь"
       ],
       "High Priority": [
         "Высокий приоритет"
+      ],
+      "How it works": [
+        "Как это работает"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Открытый ключ поставщика идентификационных данных для подписи подтверждения подлинности. Здесь должно быть место для загрузки или копирования хэша сертификата поставщика идентификационных данных. Просто вставьте хэш сертификата в поле текстовой области."
@@ -7635,6 +7707,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Если включены сочетания клавиш, вы можете использовать следующие кнопки для быстрых действий или перехода к различным видам. ${ metaKey } + K включена всегда."
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Если введенный вами адрес электронной почты использовался для резервирования адреса электронной почты ребенка, мы повторно отправим ваучер активации."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Если это произошло из-за сброса старого пароля, вы можете отключить повторное отображение сообщения"
@@ -7854,6 +7929,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто подтвердите свой выбор, а остальное мы сделаем сами."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Храните ваучер в надежном месте, пока он не понадобится, например в ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Обеспечьте защиту и конфиденциальность своей информации с помощью этих руководств и советов."
@@ -8263,6 +8341,9 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Обращайтесь к нам за помощью по любому вопросу, связанному с ${ BRAND_NAME }."
       ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Получите ваучер на резервирование в электронном письме. Вы или ребенок можете использовать его для активации адреса в течение следующих 15 лет. ${ learnMoreLink }"
+      ],
       "Recently used servers:": [
         "Недавно использованные серверы:"
       ],
@@ -8464,6 +8545,9 @@
       "Some keys successfully reactivated": [
         "Некоторые ключи успешно реактивированы"
       ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Что-то пошло не так. Пожалуйста, попробуйте еще раз или обратитесь в поддержку клиентов."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Укажите домен, которому разрешена аутентификация с помощью SAML SSO."
       ],
@@ -8481,6 +8565,9 @@
         "Шага ${ step }",
         "Шагов ${ step }",
         "Шагов ${ step }"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Шаг ${ step }/${ totalSteps }"
       ],
       "Storage allocated to other users in this organisation": [
         "Хранилище, выделенное другим пользователям в этой организации"
@@ -8779,6 +8866,9 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Для того чтобы быть в курсе последних событий в продуктах ${ BRAND_NAME }, вы можете подписаться на наши различные электронные письма и время от времени посещать ${ blogLink }."
       ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Чтобы предотвратить злоупотребления или мошенничество, мы просим сделать минимальное пожертвование в размере ${ minimumDonation }. Это поддерживает работу ${ protonFoundationLink } по защите цифровой конфиденциальности в мире и помогает защитить следующее поколение."
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Чтобы продолжить, выберите метод восстановления аккаунта, чтобы мы могли проверить запрос."
       ],
@@ -8965,6 +9055,9 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Мы советуем вам по возможности использовать официальные приложения ${ VPN_APP_NAME }."
       ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Нам не удалось завершить транзакцию. Пожалуйста, попробуйте еще раз."
+      ],
       "We couldn’t process your payment.": [
         "Нам не удалось обработать ваш платёж."
       ],
@@ -9057,6 +9150,9 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Когда вы удаляете сервер из шлюза, он входит в 10-дневный период деактивации. Этот сервер может быть добавлен в новый шлюз, но его страна не может быть изменена."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Когда вы будете готовы активировать адрес, отсканируйте QR-код или используйте ссылку в ваучере."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "При продлении вашей подписки мы сначала используем любой доступный баланс и только после этого списываем недостающую сумму через вышеуказанный способ оплаты."
@@ -9373,6 +9469,9 @@
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Ваша заявка в службу поддержки была закрыта. Благодарим вас за обращение в службу поддержки ${ BRAND_NAME }."
       ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Ваш ваучер на зарезервированный адрес электронной почты ${ BRAND_NAME }: ${ reservedEmail }"
+      ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Вы сможете сразу добавить эти серверы на другой шлюз."
       ],
@@ -9395,6 +9494,11 @@
       ],
       "Selected color:": [
         "Выбранный цвет"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Введите код подтверждения, который был отправлен на ${ parentEmail }."
       ]
     },
     "Info - folder colouring feature": {
@@ -9847,6 +9951,9 @@
       "Actions": [
         "Действия"
       ],
+      "Activation code": [
+        "Код активации"
+      ],
       "Activity": [
         "Активность"
       ],
@@ -10018,6 +10125,9 @@
       "Choose a name for the generated certificate file": [
         "Выберите имя для сгенерированного файла сертификата"
       ],
+      "Choose an address to reserve for your child": [
+        "Выберите адрес, чтобы зарезервировать его для своего ребенка"
+      ],
       "City": [
         "Город"
       ],
@@ -10171,6 +10281,12 @@
       "Don't show this again": [
         "Больше не показывать"
       ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Пожертвовать от 1 $ в фонд ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Сумма пожертвования"
+      ],
       "e.g. example.com": [
         "например, primer.com"
       ],
@@ -10209,6 +10325,9 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Введите пароль для ключа с цифровым отпечатком: ${ fingerprintCode }"
+      ],
+      "Enter your email address": [
+        "Введите адрес вашей электронной почты"
       ],
       "Enter your password": [
         "Введите пароль"
@@ -10594,6 +10713,12 @@
       "Require 2FA for everyone": [
         "Требовать 2ФА для всех"
       ],
+      "Reserved address": [
+        "Зарезервированный адрес"
+      ],
+      "Reserved email address": [
+        "Зарезервированный адрес электронной почты"
+      ],
       "Reveal password": [
         "Показать пароль"
       ],
@@ -10617,6 +10742,9 @@
       ],
       "Sequences": [
         "Последовательности"
+      ],
+      "Set password": [
+        "Установить пароль"
       ],
       "Show ${ n } administrator": [
         "Показать ${ n } администратора",
@@ -10698,6 +10826,9 @@
       ],
       "Time zone": [
         "Часовой пояс"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Для активации отсканируйте QR-код или перейдите по адресу:"
       ],
       "To help us improve, please explain why you are leaving.": [
         "Чтобы помочь нам улучшить качество, пожалуйста, объясните, почему вы уходите."
@@ -10795,11 +10926,20 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Да, я хочу навсегда удалить этот аккаунт и все его данные."
       ],
+      "Your activation code:": [
+        "Ваш код активации:"
+      ],
       "Your calendar URL": [
         "URL вашего календаря"
       ],
+      "Your email address": [
+        "Ваш адрес электронной почты"
+      ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Ваш ваучер на зарезервированный адрес электронной почты ${ BRAND_NAME }:"
       ],
       "ZIP code": [
         "Почтовый индекс"
@@ -10921,6 +11061,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME } Foundation's": [
+        "фонда ${ BRAND_NAME }"
+      ],
       "Activity log": [
         "Журнал действий"
       ],
@@ -10938,6 +11081,9 @@
       ],
       "Calendars": [
         "Календари"
+      ],
+      "Can't find your code?": [
+        "Не можете найти свой код?"
       ],
       "clearing your browser cache": [
         "очистка кеша браузера"
@@ -11112,6 +11258,20 @@
       ],
       "What’s this?": [
         "Что это такое?"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Электронное письмо"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -13906,6 +14066,9 @@
       "Address": [
         "Адрес"
       ],
+      "Amount": [
+        "Сумма"
+      ],
       "Anderson": [
         "Андерсон"
       ],
@@ -14172,6 +14335,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Получить со скидкой"
+      ],
+      "SPRING SALE 2026": [
+        "ВЕСЕННИЕ СКИДКИ 2026"
       ]
     },
     "q1campaign: Info": {
@@ -14253,7 +14419,7 @@
         "на 12 месяцев"
       ],
       "SPRING SALE": [
-        "ВЕСЕННЯЯ РАСПРОДАЖА"
+        "ВЕСЕННИЕ СКИДКИ"
       ]
     },
     "Recovery Email": {
@@ -16931,6 +17097,9 @@
       "Verification code copied to clipboard": [
         "Код подтверждения скопирован в буфер обмена"
       ],
+      "Verification code sent to ${ parentEmail }": [
+        "Код подтверждения отправлен на ${ parentEmail }"
+      ],
       "Verification successful": [
         "Проверка прошла успешно"
       ],
@@ -16954,6 +17123,9 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Вы получите имя пользователя через SMS в течение минуты, если вы ввели верный номер телефона для восстановления."
+      ],
+      "Your address has been activated": [
+        "Ваш адрес активирован"
       ]
     },
     "Success message": {
@@ -18129,6 +18301,12 @@
       ],
       "Privacy and data collection": [
         "Конфиденциальность и сбор данных"
+      ],
+      "Problem processing your payment": [
+        "Проблема при обработке вашего платежа"
+      ],
+      "Problem processing your request": [
+        "Проблема при обработке вашего запроса"
       ],
       "Processing...": [
         "Обработка…"

@@ -2925,6 +2925,9 @@
       "Request timed out": [
         "Pyyntö aikakatkaistiin"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Tämä tilaus ei tue käännettyä verovelvollisuutta."
+      ],
       "Search failed": [
         "Haku epäonnistui"
       ],
@@ -2960,9 +2963,6 @@
       ],
       "status page": [
         "tilasivumme"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Verovapautusta ei tueta tälle tilaukselle"
       ],
       "The address might be misspelled": [
         "Osoite on ehkä kirjoitettu väärin"
@@ -7853,6 +7853,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Hyödynnä tarjous"
+      ],
+      "SPRING SALE 2026": [
+        "KEVÄTALE 2026"
       ]
     },
     "q1campaign: Info": {

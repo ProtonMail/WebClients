@@ -675,6 +675,9 @@
       "Search recent documents": [
         "Išči nedavne dokumente"
       ],
+      "Search recent spreadsheets": [
+        "Išči nedavne preglednice"
+      ],
       "Search recents": [
         "Išči nedavne"
       ],
@@ -839,6 +842,12 @@
       ],
       "View": [
         "Pogled"
+      ],
+      "View ${ pendingCount } invitation": [
+        "Poglej ${ pendingCount } povabilo",
+        "Poglej ${ pendingCount } povabili",
+        "Poglej ${ pendingCount } povabila",
+        "Poglej ${ pendingCount } povabil"
       ],
       "View all reports": [
         "Prikaži vsa poročila"
@@ -2922,6 +2931,9 @@
       "Request timed out": [
         "Zahteva se je iztekla"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Shema obrnjene davčne obveznosti ni podprta za ta načrt"
+      ],
       "Search failed": [
         "Iskanje je spodletelo"
       ],
@@ -2957,9 +2969,6 @@
       ],
       "status page": [
         "tej strani"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Oprostitev davka ni podprta za ta načrt"
       ],
       "The address might be misspelled": [
         "V naslovu je morda tipkarska napaka"
@@ -3473,7 +3482,15 @@
         "Bliskovite hitrosti"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vstavite varnostni ključ, povezan z vašim ${ BRAND_NAME } računom."
+      ],
       "Security key": [
         "Varnostni ključ"
       ]
@@ -4290,6 +4307,9 @@
       "Create an end-to-end encrypted document.": [
         "Ustvarite celovito šifriran dokument."
       ],
+      "Create end-to-end encrypted documents and spreadsheets.": [
+        "Ustvarite dokumente in preglednice, šifrirane od konca do konca."
+      ],
       "Create in": [
         "Ustvari v"
       ],
@@ -4304,6 +4324,9 @@
       ],
       "Creating link to folder": [
         "Ustvarjanje povezave do mape"
+      ],
+      "Creating new document...": [
+        "Ustvarjanje novega dokumenta ..."
       ],
       "Current plan": [
         "Trenutni paket"
@@ -4352,6 +4375,9 @@
       ],
       "Duplicate key updated": [
         "Podvojeni ključ je posodobljen"
+      ],
+      "Each code can only be used once": [
+        "Vsaka koda se lahko uporabi samo enkrat"
       ],
       "Edit email address": [
         "Uredi e-poštni naslov"
@@ -4448,6 +4474,9 @@
       ],
       "Geoblocking": [
         "Geoblokiranje"
+      ],
+      "Get Notified About Comments": [
+        "Prejemajte obvestila o komentarjih"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlade in ponudniki internetnih storitev lahko spremljajo vašo spletno dejavnost. S skrivanjem vašega resničnega IP-ja in šifriranjem vaše dejavnosti postane vaše brskanje zasebno."
@@ -5076,6 +5105,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Ko se povežete z VPN, ta uporablja tehnologijo šifriranja, da skrije vaš IP naslov (edinstvena koda, dodeljena vaši napravi)."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
+      ],
       "words": [
         "besed"
       ],
@@ -5345,6 +5377,9 @@
       "Add to group": [
         "Dodaj v skupino"
       ],
+      "Anyone on the Internet with the link can edit": [
+        "Vsakdo na spletu s povezavo lahko ureja"
+      ],
       "Anyone on the Internet with the link can view": [
         "Vsakdo na spletu in s povezavo si lahko ogleda"
       ],
@@ -5521,6 +5556,9 @@
       ],
       "Import to:": [
         "Uvozi v:"
+      ],
+      "Include document name in notification": [
+        "Ime dokumenta vključi v obvestilo"
       ],
       "Include message and file name in invite email": [
         "Vključi sporočilo in ime datoteke v vabilo"
@@ -6370,6 +6408,12 @@
         "${ n } VPN povezavi",
         "${ n } VPN povezave",
         "${ n } VPN povezav"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin za doživljenjsko uporabo"
@@ -9025,6 +9069,9 @@
       ],
       "Account security": [
         "Varnost računa"
+      ],
+      "Account temporarily locked": [
+        "Račun je začasno zaklenjen"
       ],
       "Add contact group name": [
         "Dodaj ime skupine stikov"

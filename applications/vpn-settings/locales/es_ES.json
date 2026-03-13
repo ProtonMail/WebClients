@@ -4344,6 +4344,9 @@
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El régimen de inversión del sujeto pasivo no es compatible con este plan"
+      ],
       "Server not found": [
         "Servidor no encontrado"
       ],
@@ -4379,9 +4382,6 @@
       ],
       "Tab closed": [
         "Pestaña cerrada"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "La exención de impuestos no es compatible con este plan"
       ],
       "The amount due has changed. Please try again.": [
         "El importe a pagar ha cambiado. Inténtalo de nuevo."
@@ -8377,6 +8377,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tu cuenta tiene al menos una factura atrasada. Tu acceso pronto será restringido. ${ payInvoiceLink }"
       ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Tu cuenta está configurada actualmente para aplicar el régimen de inversión del sujeto pasivo, pero este no es compatible con el plan seleccionado. Para continuar, elimina el número de IVA de la dirección de facturación o selecciona un plan diferente."
+      ],
       "Your account was successfully updated with this promotion": [
         "Se ha actualizado tu cuenta con esta promoción."
       ],
@@ -9407,6 +9410,9 @@
       ],
       "Verification code": [
         "Código de verificación"
+      ],
+      "VPN Accelerator": [
+        "Acelerador VPN"
       ],
       "Vulnerable": [
         "Vulnerable"
@@ -12513,6 +12519,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Aprovecha la oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTA DE PRIMAVERA 2026"
       ]
     },
     "q1campaign: Info": {
@@ -15861,6 +15870,9 @@
       ],
       "Restore administrator privileges": [
         "Restaurar privilegios de administrador"
+      ],
+      "Reverse charge not supported": [
+        "Inversión del sujeto pasivo no admitida"
       ],
       "Revoke certificate?": [
         "¿Revocar certificado?"

@@ -486,6 +486,9 @@
       "Edit address": [
         "주소 편집"
       ],
+      "Edit billing address": [
+        "청구 주소 수정"
+      ],
       "Edit draft": [
         "초안 편집"
       ],
@@ -4913,9 +4916,6 @@
       "Tab closed": [
         "탭 닫힘"
       ],
-      "Tax exemption is not supported for this plan": [
-        "이 플랜에서는 면세가 제공되지 않습니다."
-      ],
       "Text is too long to refine": [
         "텍스트가 너무 길어서 다듬을 수 없습니다."
       ],
@@ -7331,6 +7331,9 @@
       "Initializing…": [
         "초기화 중…"
       ],
+      "Insert image": [
+        "이미지 삽입"
+      ],
       "Insert link": [
         "링크 삽입"
       ],
@@ -7423,9 +7426,6 @@
       ],
       "Low Priority": [
         "중요도 낮음"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }을 기본 이메일 어플리케이션으로 설정하세요."
       ],
       "Manage your folders": [
         "폴더 관리"
@@ -11896,12 +11896,6 @@
       ],
       "No parent folder": [
         "상위 폴더 없음"
-      ],
-      "Remind me later": [
-        "나중에 다시 알림"
-      ],
-      "Yes, don't show again": [
-        "네, 다시 보지 않을게요"
       ]
     },
     "Option group": {
@@ -12598,6 +12592,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "할인 받기"
+      ],
+      "SPRING SALE 2026": [
+        "봄 세일 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12679,7 +12676,7 @@
         "12개월 동안"
       ],
       "SPRING SALE": [
-        "봄맞이 세일"
+        "봄 세일"
       ]
     },
     "Received email icon": {
@@ -13512,16 +13509,6 @@
       ],
       "Your pm.me email is active": [
         "pm.me 이메일이 활성 상태입니다"
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "2026년 봄맞이 할인"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "봄맞이 할인"
       ]
     },
     "sso": {
@@ -15010,9 +14997,6 @@
       ],
       "Invalid verification code": [
         "잘못된 검증 코드"
-      ],
-      "Keep this banner hidden?": [
-        "이 배너를 숨기시겠어요?"
       ],
       "Label as": [
         "라벨 추가"
