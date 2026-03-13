@@ -62,6 +62,7 @@ const SubscriptionCheckoutPlanMoreInformation = ({ checkoutView }: { checkoutVie
                     </div>
                 )}
                 {checkoutView.render('renewalNotice')}
+                {checkoutView.render('vatReverseCharge')}
                 <div className="flex gap-1 items-center">
                     <Button onClick={() => openPlanFeatureModal()} shape="underline" size="tiny" color="norm">
                         {c('Link').t`What's included in your plan`}

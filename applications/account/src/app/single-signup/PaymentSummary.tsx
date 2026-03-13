@@ -191,6 +191,7 @@ const PaymentSummary = ({ model, options, loadingPaymentDetails, giftCode, planI
             ),
             renewalNotice: () => null,
             coupon: () => null,
+            vatReverseCharge: (item) => <div className="text-sm color-weak">{item.text}</div>,
         })
     );
 
@@ -296,6 +297,7 @@ const PaymentSummary = ({ model, options, loadingPaymentDetails, giftCode, planI
             <div className="mx-3 flex flex-column gap-2">
                 {checkoutView.render('amountDue')}
                 {checkoutView.render('taxInclusive')}
+                {checkoutView.render('vatReverseCharge')}
             </div>
             {isTrial && <TrialSummary loading={loading} options={options} />}
         </div>
