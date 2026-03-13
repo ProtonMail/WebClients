@@ -815,6 +815,9 @@
       "Encrypted JSON not supported": [
         "Šifrirani JSON ni podprt"
       ],
+      "Encryption communication for desktop unlock failed.": [
+        "Komunikacija za šifriranje za odklepanje namizne aplikacije je spodletela."
+      ],
       "Error reporting problem": [
         "Napaka pri prijavi težave"
       ],
@@ -970,6 +973,15 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Nekaj ​​je šlo narobe. Znova naložite razširitev ${ PASS_APP_NAME }. Ta težava je bila zabeležena"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Namizna aplikacija ${ PASS_APP_NAME } je zaklenjena, zato jo je treba odkleniti."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Namizna aplikacija ${ PASS_APP_NAME } ni nameščena."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Namizna aplikacija ${ PASS_APP_NAME } se ne odziva, ali je zagnana?"
       ],
       "The URL is in the list": [
         "URL je na seznamu"
@@ -1355,6 +1367,9 @@
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Omogočite ${ PASS_APP_NAME } tako, da povežete svoj račun ${ BRAND_NAME }"
       ],
+      "Enabling desktop auto-lock": [
+        "Omogočanje samodejnega zaklepanja namizja"
+      ],
       "Enter the address you want to email.": [
         "Vnesite naslov, na katerega želite poslati e-pošto."
       ],
@@ -1369,6 +1384,9 @@
       ],
       "Expires in ${ remainingTime }": [
         "Poteče ${ remainingTime }"
+      ],
+      "Extra password successfully removed": [
+        "Dodatno geslo je bilo uspešno odstranjeno"
       ],
       "Fill in the CSV with your data": [
         "Izpolnite CSV s svojimi podatki"
@@ -1438,6 +1456,9 @@
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
         "Predmet »${ payload.item.data.metadata.name }« je posodobljen"
+      ],
+      "Item history permanently deleted": [
+        "Zgodovina predmeta je trajno izbrisana"
       ],
       "Item moved to trash": [
         "Predmet premaknjen v smetnjak"
@@ -1718,6 +1739,12 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Za uporabo ${ PASS_APP_NAME } bo potrebno dodatno geslo. Deluje kot dodatno geslo poleg vašega gesla ${ BRAND_NAME }."
       ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "${ totalIgnored } predmeta ni bilo mogoče uvoziti:",
+        "${ totalIgnored } predmetov ni bilo mogoče uvoziti:",
+        "${ totalIgnored } predmetov ni bilo mogoče uvoziti:",
+        "${ totalIgnored } predmetov ni bilo mogoče uvoziti:"
+      ],
       "The group is invited to a vault.": [
         "Skupina je povabljena v trezor."
       ],
@@ -1729,6 +1756,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Ta izvoz bo nešifriran in vsak, ki ima dostop do vaše izvožene datoteke, bo lahko videl vaša gesla. Zaradi varnosti ga izbrišite, ko ga nehate uporabljati."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Ta funkcija zahteva, da je namizna aplikacija ${ PASS_APP_NAME } nameščena in deluje med nastavitvijo."
       ],
       "This setting is disabled on the organization level": [
         "Ta nastavitev je onemogočena na ravni organizacije"
@@ -1846,6 +1876,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Dosegli ste največjo dovoljeno dolžino ${ maxLength } znakov."
+      ],
+      "You may close this tab.": [
+        "Lahko zaprete ta zavihek."
       ],
       "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
         "Morda boste morali odobriti dovoljenje za dostopnost za ${ PASS_APP_NAME }."
@@ -2530,6 +2563,9 @@
       "Recent": [
         "Nedavno"
       ],
+      "Record Number": [
+        "Številka zapisa"
+      ],
       "Reddit handle": [
         "Ime za Reddit"
       ],
@@ -2885,6 +2921,9 @@
       "Restore": [
         "Obnovi"
       ],
+      "The exported file attachments will not be encrypted.": [
+        "Izvožene datoteke ne bodo šifrirane."
+      ],
       "The file you are trying to import is empty": [
         "Datoteka, ki jo poskušate uvoziti, je prazna"
       ],
@@ -2904,6 +2943,12 @@
       ],
       "Add password": [
         "Dodaj geslo"
+      ],
+      "Add public key": [
+        "Dodaj javni ključ"
+      ],
+      "Add SSID": [
+        "Dodaj SSID"
       ],
       "Add text": [
         "Dodaj tekst"
@@ -3343,6 +3388,9 @@
       "Remove secure link?": [
         "Odstrani varno povezavo?"
       ],
+      "Reset history for this item?": [
+        "Ponastavim zgodovino predmeta?"
+      ],
       "Resolved breaches": [
         "Odpravljene kršitve"
       ],
@@ -3439,6 +3487,9 @@
       "Vault shared with you": [
         "Trezor v skupni rabi z vami"
       ],
+      "Visible vaults": [
+        "Vidni trezorji"
+      ],
       "Want to learn more?": [
         "Želite izvedeti več?"
       ],
@@ -3503,6 +3554,14 @@
         "Naslov URL ni veljaven."
       ]
     },
+    "Vault Select": {
+      "Move item to": [
+        "Premakni predmet na",
+        "Premakni predmeta na",
+        "Premakni predmete na",
+        "Premakni predmete na"
+      ]
+    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Zahtevano je geslo za ${ BRAND_NAME }"
@@ -3557,6 +3616,9 @@
       ],
       "Extra password cannot be empty": [
         "Dodatno geslo ne more biti prazno"
+      ],
+      "Extra password is required": [
+        "Potrebno je dodatno geslo"
       ],
       "Extra password should have at least 8 characters": [
         "Dodatno geslo mora imeti vsaj 8 znakov"
