@@ -536,6 +536,18 @@ export function getAcceptAttributeString(): string {
     return [...mimeTypes, ...extensions].join(',');
 }
 
+// FIXME: Remove after releasing Lumo 2.0.0 — iOS native app will handle file picker natively without camera option
+export function getAcceptAttributeStringWithoutImages(): string {
+    const configs = Object.values(FILE_TYPE_CONFIGS).filter((config) => config.category !== 'image');
+    const mimeTypes = new Set<string>();
+    const extensions = new Set<string>();
+    configs.forEach((config) => {
+        config.mimeTypes.forEach((mime) => mimeTypes.add(mime));
+        config.extensions.forEach((ext) => extensions.add(ext));
+    });
+    return [...mimeTypes, ...Array.from(extensions).map((ext) => `.${ext}`)].join(',');
+}
+
 export function getFileTypeDescription(fileName: string, mimeType?: string): string {
     // Try file extension first for better accuracy
     // This is especially important for ambiguous MIME types like 'text/plain'
