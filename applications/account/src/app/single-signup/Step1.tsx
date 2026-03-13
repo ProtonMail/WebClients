@@ -36,11 +36,11 @@ import type {
     TokenPayment,
 } from '@proton/payments';
 import {
+    COUPON_CODES,
     CYCLE,
     type Currency,
     type Cycle,
     type CycleMapping,
-    DEFAULT_CYCLE,
     PAYMENT_METHOD_TYPES,
     PLANS,
     type Plan,
@@ -787,20 +787,6 @@ const Step1 = ({
             return CYCLE.THIRTY;
         }
     })();
-
-    const handleCloseUpsellModal = () => {
-        handleUpdate('plan');
-        if (![PLANS.VPN_PASS_BUNDLE, PLANS.VPN2024].some((plan) => options.planIDs[plan])) {
-            const newPlanIDs = { [PLANS.VPN2024]: 1 };
-            withLoadingPaymentDetails(
-                handleOptimistic({
-                    planIDs: newPlanIDs,
-                    cycle: cycleData.cycles[0] || DEFAULT_CYCLE,
-                })
-            ).catch(noop);
-        }
-        upsellModalProps.onClose();
-    };
 
     const upsellToVPNPassBundle = mode === 'vpn-pass-promotion';
 
@@ -1596,7 +1582,16 @@ const Step1 = ({
                     img={upsellImg}
                     currency={options.currency}
                     measure={measure}
-                    onGetDeal={handleCloseUpsellModal}
+                    onGetDeal={() => {
+                        const params = new URLSearchParams({
+                            plan: PLANS.VPN2024,
+                            cycle: `${CYCLE.MONTHLY}`,
+                            currency: options.currency,
+                            coupon: COUPON_CODES.VPN_PLUS_FREE_2024,
+                        });
+                        const signupBasePath = APP_NAME === APPS.PROTONVPN_SETTINGS ? '/signup' : '/vpn/signup';
+                        window.location.href = `${signupBasePath}?${params.toString()}`;
+                    }}
                     onContinueFree={() => {
                         upsellModalProps.onClose();
                         void handleChangePlanIds({}, PLANS.FREE);
