@@ -313,6 +313,7 @@ const AccountStepDetails = ({
                                                     onChange={({ value }) => {
                                                         onValue.onUsernameValue(state.username, value);
                                                     }}
+                                                    className="color-norm"
                                                 >
                                                     {domainOptions.map((option) => (
                                                         <Option
