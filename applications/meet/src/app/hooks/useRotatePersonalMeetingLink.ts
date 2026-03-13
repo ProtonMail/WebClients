@@ -16,7 +16,7 @@ import { CustomPasswordState, MeetingType, ProtonCalendarState } from '@proton/s
 export const useRotatePersonalMeetingLink = () => {
     const api = useApi();
 
-    const reportMeetError = useMeetErrorReporting();
+    const { reportMeetError } = useMeetErrorReporting();
 
     const getMeetingDependencies = useGetMeetingDependencies();
 

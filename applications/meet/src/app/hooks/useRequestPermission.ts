@@ -8,7 +8,7 @@ import { isAudioSessionAvailable, setAudioSessionType } from '../utils/ios-audio
 export const useRequestPermission = () => {
     const notifications = useNotifications();
 
-    const reportError = useMeetErrorReporting();
+    const { reportMeetError: reportError } = useMeetErrorReporting();
 
     const requestDevicePermission = async (deviceType: 'camera' | 'microphone', deviceId?: string) => {
         let deviceState = 'prompt';

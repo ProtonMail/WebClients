@@ -28,7 +28,7 @@ export const useMeetSrp = () => {
     const api = useApi();
     const auth = useAuthentication();
 
-    const reportMeetError = useMeetErrorReporting();
+    const { reportMeetError } = useMeetErrorReporting();
 
     const initHandshake = useCallback(
         async (token: string) => {
