@@ -26,4 +26,8 @@ export default {
         },
         extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json'],
     },
+    // infrastructureLogging: {
+    //     appendOnly: true,
+    //     level: 'verbose',
+    // },
 };

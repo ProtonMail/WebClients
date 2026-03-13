@@ -17,7 +17,7 @@ const factory: BiometricsFactory = (getWindow) => {
         getSecret: async (_, key, version) => {
             await checkPresence();
 
-            const secretBytes = await winBiometrics.getSecret(key);
+            const secretBytes = (await winBiometrics.getSecret(key)) as Uint8Array<ArrayBuffer>;
             if (!secretBytes) return null;
 
             /** Version 1 (Legacy): Secrets were stored as UTF-16 encoded strings in a Vec<u8>,

@@ -7,6 +7,8 @@ export enum LockMode {
     PASSWORD = 'PASSWORD',
     /** OS-provided biometrics key */
     BIOMETRICS = 'BIOMETRICS',
+    /** Pass desktop app */
+    DESKTOP = 'DESKTOP',
     /** No locking mechanisms */
     NONE = 'NONE',
 }
@@ -15,6 +17,7 @@ export const AppStatusFromLockMode = {
     [LockMode.SESSION]: AppStatus.SESSION_LOCKED,
     [LockMode.PASSWORD]: AppStatus.PASSWORD_LOCKED,
     [LockMode.BIOMETRICS]: AppStatus.BIOMETRICS_LOCKED,
+    [LockMode.DESKTOP]: AppStatus.DESKTOP_LOCKED,
     [LockMode.NONE]: AppStatus.IDLE,
 };
 

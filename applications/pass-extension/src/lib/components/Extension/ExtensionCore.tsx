@@ -216,6 +216,12 @@ const getPassCoreProviderProps = (
         },
 
         popup: endpoint === 'popup' ? createPopupController() : undefined,
+
+        getDesktopUnlockSecret: async () =>
+            sendMessage(messageFactory({ type: WorkerMessageType.DESKTOP_UNLOCK_SECRET })).then((res) => {
+                if (res.type === 'error') throw new Error(res.error);
+                return res.secret;
+            }),
     };
 };
 

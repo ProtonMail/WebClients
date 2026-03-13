@@ -1,3 +1,4 @@
+export * from './auth/native-messaging';
 export * from './file/create-file-chunk';
 export * from './file/create-file-descriptor';
 export * from './file/open-file-chunk';

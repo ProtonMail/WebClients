@@ -15,6 +15,7 @@ export const clientOffline = eq(AppStatus.OFFLINE);
 export const clientPasswordLocked = oneOf(AppStatus.PASSWORD_LOCKED, AppStatus.BIOMETRICS_LOCKED);
 export const clientReady = eq(AppStatus.READY);
 export const clientSessionLocked = eq(AppStatus.SESSION_LOCKED);
+export const clientDesktopLocked = eq(AppStatus.DESKTOP_LOCKED);
 export const clientStale = eq(AppStatus.IDLE);
 export const clientUnauthorized = eq(AppStatus.UNAUTHORIZED);
 export const clientMissingScope = eq(AppStatus.MISSING_SCOPE);
@@ -23,10 +24,10 @@ export const clientBusy = oneOf(AppStatus.IDLE, AppStatus.AUTHORIZED, AppStatus.
 export const clientBooted = oneOf(AppStatus.READY, AppStatus.OFFLINE);
 
 export const clientCanBoot = or(clientAuthorized, clientUnauthorized, clientErrored);
-export const clientHasSession = or(clientBooted, clientSessionLocked, clientPasswordLocked);
+export const clientHasSession = or(clientBooted, clientSessionLocked, clientPasswordLocked, clientDesktopLocked);
 export const clientNeedsSession = or(clientErrored, clientUnauthorized, clientMissingScope);
 export const clientStatusResolved = or(clientHasSession, clientNeedsSession);
 export const clientDisabled = or(clientUnauthorized, clientErrored, clientStale);
-export const clientLocked = or(clientSessionLocked, clientPasswordLocked, clientMissingScope);
+export const clientLocked = or(clientSessionLocked, clientPasswordLocked, clientDesktopLocked, clientMissingScope);
 
 export const isTaggedBuild = (config: PassConfig) => ENV === 'production' && config.BRANCH.startsWith('proton-pass@');
