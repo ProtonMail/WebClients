@@ -7,11 +7,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcMicrophone } from '@proton/icons/icons/IcMicrophone';
 import { IcPaperClip } from '@proton/icons/icons/IcPaperClip';
+import { isIos } from '@proton/shared/lib/helpers/browser';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useWebSearch } from '../../providers/WebSearchProvider';
 import LumoComposerToggleUpsell from '../../upsells/composed/LumoComposerToggleUpsell';
-import { getAcceptAttributeString } from '../../util/filetypes';
+import { getAcceptAttributeString, getAcceptAttributeStringWithoutImages } from '../../util/filetypes';
 import { sendFileUploadEvent, sendVoiceEntryClickEvent } from '../../util/telemetry';
 import PressEnterToReturn from './PressEnterToReturn';
 import { UploadMenuDropdown } from './UploadMenuDropdown';
@@ -65,7 +66,8 @@ export const ComposerToolbar = ({
                     type="file"
                     ref={fileInputRef}
                     id="emptyFileCardInput"
-                    accept={getAcceptAttributeString()}
+                    // FIXME: Remove after releasing Lumo 2.0.0 — use getAcceptAttributeString() once iOS native app handles file picker without camera
+                    accept={isIos() ? getAcceptAttributeStringWithoutImages() : getAcceptAttributeString()}
                     className="hidden"
                     multiple
                     onChange={handleFileInputChange}
