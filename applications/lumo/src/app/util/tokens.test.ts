@@ -302,21 +302,69 @@ describe('convertRefTokensToSpans', () => {
         expect(convertRefTokensToSpans(input)).toBe(expected);
     });
 
-    it('should insert a space between a bare URL and a following ref link', () => {
+    it('should drop the ref badge when a bare URL is immediately followed by a ref (keep URL only)', () => {
         const input = 'Visit https://www.example.com/page[REF]3[/REF] for more info';
-        const expected = 'Visit https://www.example.com/page [3](#ref-3) for more info';
+        const expected = 'Visit https://www.example.com/page for more info';
         expect(convertRefTokensToSpans(input)).toBe(expected);
     });
 
-    it('should not add an extra space when ref link already has a preceding space', () => {
+    it('should drop the ref badge when a URL is followed by a ref separated by a space', () => {
         const input = 'Visit https://www.example.com/page [REF]3[/REF] for more info';
-        const expected = 'Visit https://www.example.com/page [3](#ref-3) for more info';
+        const expected = 'Visit https://www.example.com/page for more info';
         expect(convertRefTokensToSpans(input)).toBe(expected);
     });
 
-    it('should insert a space between a bare URL and a following dagger ref link', () => {
+    it('should drop the ref badge when a URL is immediately followed by a dagger ref', () => {
         const input = 'See https://www.proton.me/blog/drive-for-linux[3†ref] for details';
-        const expected = 'See https://www.proton.me/blog/drive-for-linux [3](#ref-3) for details';
+        const expected = 'See https://www.proton.me/blog/drive-for-linux for details';
+        expect(convertRefTokensToSpans(input)).toBe(expected);
+    });
+
+    // --- URL / GFM-autolink boundary tests ---
+    // When a model outputs a URL directly in text followed by a citation ref, we keep only
+    // the URL and drop the ref badge to avoid double-rendering the same source.
+
+    it('should drop the ref badge when a URL is immediately followed by a ref (keep URL only)', () => {
+        const input =
+            'The comparison can be found at https://www.datastudios.org/post/chatgpt-4o-vs-claude-4[REF]1[/REF]';
+        const expected = 'The comparison can be found at https://www.datastudios.org/post/chatgpt-4o-vs-claude-4';
+        expect(convertRefTokensToSpans(input)).toBe(expected);
+    });
+
+    it('should drop the ref badge when a URL precedes a ref (morgen.so scenario)', () => {
+        const input = 'https://www.morgen.so/blog/proton-drive-for-linux[REF]3[/REF]';
+        const expected = 'https://www.morgen.so/blog/proton-drive-for-linux';
+        expect(convertRefTokensToSpans(input)).toBe(expected);
+    });
+
+    it('should drop the ref badge for http:// URLs (not just https://)', () => {
+        const input = 'See http://example.com/page[REF]5[/REF]';
+        const expected = 'See http://example.com/page';
+        expect(convertRefTokensToSpans(input)).toBe(expected);
+    });
+
+    it('should drop the ref badge when a URL with query parameters is followed by a ref', () => {
+        const input = 'Visit https://example.com/search?q=linux[REF]2[/REF] for results';
+        const expected = 'Visit https://example.com/search?q=linux for results';
+        expect(convertRefTokensToSpans(input)).toBe(expected);
+    });
+
+    it('should drop only the first ref when a URL is followed by consecutive refs, keeping subsequent refs', () => {
+        // The URL-specific regex drops the immediately-following ref; the remaining ref is kept.
+        const input = 'See https://example.com/page[REF]3[/REF][REF]4[/REF] for info';
+        const expected = 'See https://example.com/page [4](#ref-4) for info';
+        expect(convertRefTokensToSpans(input)).toBe(expected);
+    });
+
+    it('should drop ref badges for multiple URLs each immediately followed by a ref', () => {
+        const input = 'First https://a.com[REF]1[/REF] and second https://b.com/path[REF]2[/REF]';
+        const expected = 'First https://a.com and second https://b.com/path';
+        expect(convertRefTokensToSpans(input)).toBe(expected);
+    });
+
+    it('should drop the ref badge when extra whitespace separates the URL and ref', () => {
+        const input = 'See https://example.com/page  [REF]3[/REF] info';
+        const expected = 'See https://example.com/page info';
         expect(convertRefTokensToSpans(input)).toBe(expected);
     });
 });

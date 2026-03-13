@@ -1,11 +1,10 @@
-import type { ToolCallData } from '../../../../../../lib/toolCall/types';
+import type { SearchItem, ToolCallData } from '../../../../../../lib/toolCall/types';
 import type { ContentBlock, Message, ToolCallBlock } from '../../../../../../types';
 import { isToolCallBlock, isToolResultBlock } from '../../../../../../types';
 import StreamingMarkdownRenderer from '../../../../../LumoMarkdown/StreamingMarkdownRenderer';
 import { parseToolCallBlock } from '../../toolCall/toolCallUtils';
 import { ThinkingPath, type ThinkingStep } from './ThinkingPath';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const TurndownServiceModule = require('turndown');
 // Handle both CommonJS and ES module exports
 const TurndownService = TurndownServiceModule.default || TurndownServiceModule;
@@ -18,6 +17,7 @@ interface RenderBlocksProps {
     handleLinkClick: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
     sourcesContainerRef: React.MutableRefObject<HTMLDivElement | null>;
     reasoning?: string;
+    toolCallResults?: SearchItem[] | null;
 }
 
 /**
@@ -75,12 +75,12 @@ function toTimelineItem(
     if (!toolCall) return null;
 
     const isInProgress = isToolCallInProgress(block, groupBlocks, isGenerating, isLastMessage);
-    
+
     // Find the corresponding tool result
     const blockIndex = groupBlocks.indexOf(block);
     const resultBlock = groupBlocks.find((b, idx) => idx > blockIndex && isToolResultBlock(b));
     const result = resultBlock?.type === 'tool_result' ? resultBlock.content : undefined;
-    
+
     return { toolCall, result, isInProgress };
 }
 
@@ -135,6 +135,7 @@ export const RenderBlocks = ({
     handleLinkClick,
     sourcesContainerRef,
     reasoning,
+    toolCallResults,
 }: RenderBlocksProps) => {
     const groups = groupBlocks(blocks);
 
@@ -146,10 +147,10 @@ export const RenderBlocks = ({
     // Build thinking path steps based on the thinking timeline if available
     const thinkingSteps: ThinkingStep[] = [];
     const timeline = message.thinkingTimeline;
-    
+
     if (timeline && timeline.length > 0) {
         const toolCalls = blocks.filter(isToolCallBlock);
-        
+
         console.log('[THINKING PATH DEBUG]', {
             timelineLength: timeline.length,
             timeline: timeline.map((e, idx) => ({
@@ -159,17 +160,17 @@ export const RenderBlocks = ({
             })),
             totalToolCallBlocks: toolCalls.length,
         });
-        
+
         for (let i = 0; i < timeline.length; i++) {
             const event = timeline[i];
-            
+
             if (event.type === 'reasoning') {
-                const isLastReasoningSegment = i === timeline.length - 1 || 
-                    !timeline.slice(i + 1).some(e => e.type === 'reasoning');
-                const toolCallsInProgress = toolCalls.some((block) => 
-                    toTimelineItem(block, blocks, isGenerating, isLastMessage)?.isInProgress
+                const isLastReasoningSegment =
+                    i === timeline.length - 1 || !timeline.slice(i + 1).some((e) => e.type === 'reasoning');
+                const toolCallsInProgress = toolCalls.some(
+                    (block) => toTimelineItem(block, blocks, isGenerating, isLastMessage)?.isInProgress
                 );
-                
+
                 thinkingSteps.push({
                     type: 'reasoning',
                     content: event.content,
@@ -192,10 +193,10 @@ export const RenderBlocks = ({
         }
     } else if (hasReasoning || hasToolCalls) {
         if (hasReasoning) {
-            const toolCallsInProgress = blocks.filter(isToolCallBlock).some((block) => 
-                toTimelineItem(block, blocks, isGenerating, isLastMessage)?.isInProgress
-            );
-            
+            const toolCallsInProgress = blocks
+                .filter(isToolCallBlock)
+                .some((block) => toTimelineItem(block, blocks, isGenerating, isLastMessage)?.isInProgress);
+
             thinkingSteps.push({
                 type: 'reasoning',
                 content: reasoning,
@@ -236,7 +237,7 @@ export const RenderBlocks = ({
                             content={preprocessContent(group.block.content)}
                             isStreaming={isGenerating && isLastMessage && isLastGroup}
                             handleLinkClick={handleLinkClick}
-                            toolCallResults={null}
+                            toolCallResults={toolCallResults}
                             sourcesContainerRef={sourcesContainerRef}
                         />
                     );
