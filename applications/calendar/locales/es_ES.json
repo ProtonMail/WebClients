@@ -362,6 +362,9 @@
       "Edit": [
         "Editar"
       ],
+      "Edit billing address": [
+        "Editar la dirección de la factura"
+      ],
       "Edit booking page": [
         "Editar página de reservas"
       ],
@@ -3893,6 +3896,9 @@
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El régimen de inversión del sujeto pasivo no es compatible con este plan"
+      ],
       "Self invitation not allowed": [
         "No puedes invitarte a ti mismo."
       ],
@@ -3934,9 +3940,6 @@
       ],
       "Tab closed": [
         "Pestaña cerrada"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "La exención de impuestos no es compatible con este plan"
       ],
       "The address might be misspelled": [
         "La dirección podría estar mal escrita."
@@ -6436,6 +6439,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tu cuenta tiene al menos una factura atrasada. Tu acceso pronto será restringido. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Tu cuenta está configurada actualmente para aplicar el régimen de inversión del sujeto pasivo, pero este no es compatible con el plan seleccionado. Para continuar, elimina el número de IVA de la dirección de facturación o selecciona un plan diferente."
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Tu dirección está desactivada. No se puede enviar un correo electrónico de cancelación a los participantes del evento. ¿Quieres eliminar todos los eventos de esta serie de todos modos?"
@@ -9893,6 +9899,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Aprovecha la oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTA DE PRIMAVERA 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12056,6 +12065,9 @@
       ],
       "Reshare your calendars": [
         "Volver a compartir tus calendarios"
+      ],
+      "Reverse charge not supported": [
+        "Inversión del sujeto pasivo no admitida"
       ],
       "Save": [
         "Guardar"

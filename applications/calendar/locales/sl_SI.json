@@ -317,6 +317,9 @@
       "Edit": [
         "Uredi"
       ],
+      "Edit billing address": [
+        "Uredi naslov za izstavitev računa"
+      ],
       "Edit email address": [
         "Uredi e-poštni naslov"
       ],
@@ -3641,6 +3644,9 @@
       "Request timed out": [
         "Zahteva se je iztekla"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Shema obrnjene davčne obveznosti ni podprta za ta načrt"
+      ],
       "Self invitation not allowed": [
         "Povabilo samega sebe ni dovoljeno"
       ],
@@ -3682,9 +3688,6 @@
       ],
       "Tab closed": [
         "Zavihek je zaprt"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Oprostitev davka ni podprta za ta načrt"
       ],
       "The address might be misspelled": [
         "V naslovu je morda tipkarska napaka"
@@ -4260,7 +4263,15 @@
         "Bliskovite hitrosti"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vstavite varnostni ključ, povezan z vašim ${ BRAND_NAME } računom."
+      ],
       "Security key": [
         "Varnostni ključ"
       ]
@@ -5229,6 +5240,9 @@
       "Duplicate key updated": [
         "Podvojeni ključ je posodobljen"
       ],
+      "Each code can only be used once": [
+        "Vsaka koda se lahko uporabi samo enkrat"
+      ],
       "Edit email address": [
         "Uredi e-poštni naslov"
       ],
@@ -5901,6 +5915,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Ko se povežete z VPN, ta uporablja tehnologijo šifriranja, da skrije vaš IP naslov (edinstvena koda, dodeljena vaši napravi)."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
+      ],
       "Which calendars should block bookings?": [
         "Kateri koledarji naj blokirajo rezervacije?"
       ],
@@ -6062,6 +6079,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Imate vsaj en neplačan račun. Vaš dostop bo kmalu omejen. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Vaš račun je trenutno nastavljen za uporabo sheme povratnega DDV. To ni podprto za izbrani paket. Če želite nadaljevati, bodisi odstranite številko DDV s plačilnega naslova ali izberite drug paket."
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Vaš naslov je onemogočen. Udeležencem dogodka ni mogoče poslati e-poštnega sporočila o preklicu. Ali želite vseeno izbrisati vse dogodke v tej seriji?"
@@ -7507,6 +7527,12 @@
         "${ n } VPN povezavi",
         "${ n } VPN povezave",
         "${ n } VPN povezav"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin za doživljenjsko uporabo"
@@ -10864,6 +10890,9 @@
       "Account security": [
         "Varnost računa"
       ],
+      "Account temporarily locked": [
+        "Račun je začasno zaklenjen"
+      ],
       "Add a custom logo": [
         "Dodaj logotip po meri"
       ],
@@ -11325,6 +11354,9 @@
       ],
       "Reshare your calendars": [
         "Ponovno deljenje vaših koledarjev"
+      ],
+      "Reverse charge not supported": [
+        "Shema obrnjene davčne obveznosti"
       ],
       "Save": [
         "Shrani"
