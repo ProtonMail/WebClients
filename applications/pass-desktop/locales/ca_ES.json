@@ -1036,6 +1036,9 @@
       "Encrypted JSON not supported": [
         "El JSON xifrat no és compatible"
       ],
+      "Encryption communication for desktop unlock failed.": [
+        "Ha fallat la comunicació de xifratge per al desbloqueig de l'escriptori."
+      ],
       "Error reporting problem": [
         "S'ha produït un error en informar del problema"
       ],
@@ -1251,6 +1254,15 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Alguna cosa ha anat malament. Torneu a iniciar la sessió."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "L'aplicació d'escriptori de ${ PASS_APP_NAME } està bloquejada, s'ha de desbloquejar."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } no està instal·lada."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } no respon, s'està executant?"
       ],
       "The session has expired. Please sign in again.": [
         "La sessió ha caducat. Torneu a accedir."
@@ -1783,6 +1795,9 @@
       "Enabling biometrics lock failed": [
         "No s'ha pogut activar el bloqueig amb biometria."
       ],
+      "Enabling desktop auto-lock": [
+        "Habilitant el bloqueig automàtic de l'escriptori"
+      ],
       "Enabling offline mode...": [
         "S'està activant el mode fora de línia..."
       ],
@@ -2007,7 +2022,8 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2397,6 +2413,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Aquesta funció és experimental a Linux per ara. Assegureu-vos que el vostre sistema estigui actualitzat."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Aquesta característica requereix que l'aplicació d'escriptori ${ PASS_APP_NAME } estigui instal·lada i en funcionament durant la configuració."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Aquest element no està compartit actualment amb ningú. Inviteu persones a compartir-la amb altres."
