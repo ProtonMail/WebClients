@@ -918,7 +918,15 @@
         "Te strani ni bilo mogoče naložiti. Osvežite stran ali preverite svojo povezavo z internetom."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vstavite varnostni ključ, povezan z vašim ${ BRAND_NAME } računom."
+      ],
       "Security key": [
         "Varnostni ključ"
       ]
@@ -1038,6 +1046,9 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Ustvarjanje več brezplačnih računov ni dovoljeno v skladu z našimi ${ termsLink }."
       ],
+      "Each code can only be used once": [
+        "Vsaka koda se lahko uporabi samo enkrat"
+      ],
       "Edit email address": [
         "Uredi e-poštni naslov"
       ],
@@ -1091,6 +1102,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Poslali vam bomo novo kodo za preverjanje na ${ strong }."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ali želite prejeti novo kodo za preverjanje ali uporabiti drugačen način preverjanja?"
@@ -1215,6 +1229,12 @@
         "${ n } sporočili na dan",
         "${ n } sporočila na dan",
         "${ n } sporočil na dan"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke"
       ],
       "${ size } attachment size": [
         "${ size } velikost priponke"
@@ -1536,6 +1556,9 @@
     "Title": {
       "Account restricted": [
         "Račun je omejen"
+      ],
+      "Account temporarily locked": [
+        "Račun je začasno zaklenjen"
       ],
       "Enter your password": [
         "Vnesite svoje geslo"
