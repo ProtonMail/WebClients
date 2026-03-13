@@ -21,6 +21,7 @@ import type { ADDON_NAMES, PLANS } from '../../../core/constants';
 import { hasWrongBillingAddressError } from '../../../core/errors';
 import type { PaymentsApi } from '../../../core/interface';
 import { getIsB2BAudienceFromPlan } from '../../../core/plan/helpers';
+import { countriesWithVatNumberOnSignup } from './countriesWithVatId';
 import type { TaxCountryHook } from './useTaxCountry';
 import { getVatFormErrors } from './useVatFormValidation';
 
@@ -40,48 +41,6 @@ interface VatNumberHookProps {
 }
 
 export type VatNumberHook = ReturnType<typeof useVatNumber>;
-
-const countriesWithVatId = new Set([
-    // EU member states (27)
-    'AT',
-    'BE',
-    'BG',
-    'HR',
-    'CY',
-    'CZ',
-    'DK',
-    'EE',
-    'FI',
-    'FR',
-    'DE',
-    'GR',
-    'HU',
-    'IE',
-    'IT',
-    'LV',
-    'LT',
-    'LU',
-    'MT',
-    'NL',
-    'PL',
-    'PT',
-    'RO',
-    'SK',
-    'SI',
-    'ES',
-    'SE',
-
-    // Additional EFTA / European countries
-    'CH',
-    'GB',
-    'NO',
-    'LI',
-    'IS',
-
-    // Countries for Batch 1 tax exclusive
-    'AU',
-    'SG',
-]);
 
 const INITIAL_BILLING_ADDRESS_EXTRA: BillingAddressExtraProperties = {
     Company: undefined,
@@ -198,7 +157,7 @@ export const useVatNumber = ({
     useEffect(() => {
         // we don't want to set the VAT number in POST subscription if the country doesn't support VAT IDs or if the
         // plan is not B2B. However if the vatNumber is already empty, we don't need to trigger an update.
-        if (!!vatNumber && (!countriesWithVatId.has(taxCountry.selectedCountryCode) || !isB2BPlan)) {
+        if (!!vatNumber && (!countriesWithVatNumberOnSignup.has(taxCountry.selectedCountryCode) || !isB2BPlan)) {
             handleVatNumberChange('');
         }
     }, [taxCountry.selectedCountryCode, isB2BPlan]);
@@ -211,7 +170,7 @@ export const useVatNumber = ({
         }
     };
 
-    const renderVatNumberInput = isB2BPlan && countriesWithVatId.has(taxCountry.selectedCountryCode);
+    const renderVatNumberInput = isB2BPlan && countriesWithVatNumberOnSignup.has(taxCountry.selectedCountryCode);
 
     const vatFormErrors = getVatFormErrors(
         {
