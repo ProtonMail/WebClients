@@ -1,0 +1,25 @@
+.chat-message-reactions {
+	.chat-message-reaction-pill {
+		padding-block: 0.125rem;
+		padding-inline: 0.375rem;
+		border-radius: 999px;
+		border: 1px solid var(--border-weak);
+		background: transparent;
+		cursor: pointer;
+		transition: background 0.1s ease;
+		line-height: 1.4;
+
+		&:hover {
+			background: var(--interaction-default-hover);
+		}
+
+		&--active {
+			border-color: var(--interaction-norm);
+			background: var(--interaction-norm-minor-2);
+
+			&:hover {
+				background: var(--interaction-norm-minor-1);
+			}
+		}
+	}
+}

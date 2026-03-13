@@ -44,4 +44,7 @@ export enum RecordingStatus {
 export enum PublishableDataTypes {
     RecordingStatus = 'recordingStatus',
     Message = 'message',
+    EmojiReaction = 'emojiReaction',
+    RaiseHand = 'raiseHand',
+    ChatMessageReaction = 'chatMessageReaction',
 }

@@ -52,7 +52,7 @@ export const useChatMessage = () => {
         const sanitizedEscapedContent = sanitizeMessage(escapedContent);
         const sanitizedContent = unescape(sanitizedEscapedContent);
 
-        if (!room || !sanitizedContent) {
+        if (!room || !mls || !sanitizedContent) {
             return false;
         }
 
