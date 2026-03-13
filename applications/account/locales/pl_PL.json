@@ -1444,6 +1444,24 @@
       ],
       "Zoom out": [
         "Pomniejsz"
+      ],
+      "Activate reserved address": [
+        "Aktywuj zarezerwowany adres"
+      ],
+      "Activate this address": [
+        "Aktywuj ten adres"
+      ],
+      "Donate": [
+        "Wspomóż nas"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Uzyskaj własny adres ${ MAIL_APP_NAME }"
+      ],
+      "Send verification code": [
+        "Wyślij kod weryfikacyjny"
+      ],
+      "Try payment again": [
+        "Spróbuj ponownie dokonać płatności"
       ]
     },
     "action": {
@@ -5329,6 +5347,12 @@
       ],
       "ZIP code is required": [
         "Kod pocztowy jest wymagany"
+      ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Aktywacja nie powiodła się. Szczegóły mogą być nieprawidłowe lub adres e-mail jest już aktywny. Sprawdź swoje dane wejściowe lub zaloguj się."
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Nie udało się aktywować Twojego adresu. Spróbuj ponownie."
       ]
     },
     "Error importing calendar": {
@@ -9967,6 +9991,45 @@
       ],
       "Zoom meeting": [
         "spotkanie na Zoom"
+      ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Wpisz adres e-mail użyty do zarezerwowania ${ reservedEmail }."
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Wpisz zarezerwowany adres e-mail oraz adres e-mail użyty podczas rezerwacji."
+      ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Pomóż innym rodzinom zapewnić ich dzieciom bezpieczny start online. Udostępnij ten kamień milowy i podziel się tą informacją."
+      ],
+      "How it works": [
+        "Jak to działa"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Jeśli wpisany adres e-mail został użyty do zarezerwowania adresu e-mail dziecka, ponownie wyślemy kupon aktywacyjny."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Przechowuj kupon w bezpiecznym miejscu do momentu, gdy będzie potrzebny, na przykład w ${ DRIVE_APP_NAME }."
+      ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Odbierz kupon rezerwacyjny jako wiadomość e-mail. Ty lub dziecko możecie go użyć, aby aktywować adres w ciągu najbliższych 15 lat. ${ learnMoreLink }"
+      ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Coś poszło nie tak. Spróbuj ponownie lub skontaktuj się ze wsparciem klienta."
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Krok ${ step }/${ totalSteps }"
+      ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Aby zapobiec nadużyciom i oszustwom, prosimy o minimalną darowiznę w wysokości ${ minimumDonation }. Stanowi to wsparcie dla działań ${ protonFoundationLink } na rzecz obrony cyfrowej prywatności na całym świecie i pomaga chronić następne pokolenie."
+      ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Nie udało nam się zrealizować transakcji. Spróbuj ponownie."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Gdy będziesz w gotowości, aby aktywować adres, zeskanuj kod QR lub użyj linku w kuponie."
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Twój kupon na zarezerwowany adres e-mail ${ BRAND_NAME }: ${ reservedEmail }"
       ]
     },
     "info": {
@@ -11443,6 +11506,42 @@
       ],
       "ZIP code": [
         "Kod pocztowy"
+      ],
+      "Activation code": [
+        "Kod aktywacyjny"
+      ],
+      "Choose an address to reserve for your child": [
+        "Wybierz adres do zarezerwowania dla swojego dziecka"
+      ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Wspomóż nas kwotą 1 $ lub wyższą na rzecz Fundacji ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Kwota darowizny"
+      ],
+      "Enter your email address": [
+        "Wpisz adres e-mail"
+      ],
+      "Reserved address": [
+        "Zarezerwowany adres"
+      ],
+      "Reserved email address": [
+        "Zarezerwowany adres e-mail"
+      ],
+      "Set password": [
+        "Ustaw hasło"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Aby aktywować, zeskanuj kod QR lub przejdź do:"
+      ],
+      "Your activation code:": [
+        "Twój kod aktywacyjny:"
+      ],
+      "Your email address": [
+        "Twój adres e-mail"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Twój kupon na zarezerwowany adres e-mail ${ BRAND_NAME }:"
       ]
     },
     "label": {
@@ -11758,6 +11857,12 @@
       ],
       "What’s this?": [
         "Co to jest?"
+      ],
+      "${ BRAND_NAME } Foundation's": [
+        "Fundacji ${ BRAND_NAME }"
+      ],
+      "Can't find your code?": [
+        "Nie możesz znaleźć swojego kodu?"
       ]
     },
     "Link label (optional)": {
@@ -14872,6 +14977,9 @@
       ],
       "ZIP code": [
         "Kod pocztowy"
+      ],
+      "Amount": [
+        "Kwota"
       ]
     },
     "placeholder": {
@@ -18145,6 +18253,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Jeśli numer odzyskiwania jest prawidłowy, otrzymasz SMS ze swoją nazwą użytkownika."
+      ],
+      "Verification code sent to ${ parentEmail }": [
+        "Kod weryfikacyjny wysłany na adres ${ parentEmail }"
+      ],
+      "Your address has been activated": [
+        "Twój adres został aktywowany"
       ]
     },
     "Success message": {
@@ -19794,6 +19908,12 @@
       ],
       "Your subscriptions": [
         "Twoja subskrypcja"
+      ],
+      "Problem processing your payment": [
+        "Problem z przetwarzaniem Twojej płatności"
+      ],
+      "Problem processing your request": [
+        "Problem z przetwarzaniem Twojego żądania"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -21082,6 +21202,61 @@
       ],
       "Yearly, ${ untilString }": [
         "Co rok, ${ untilString }"
+      ]
+    },
+    "Form heading": {
+      "Enter your email address": [
+        "Wpisz adres e-mail"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Kupon wyślemy tutaj."
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Prosty krok dzisiaj, aby zapewnić cyfrowe bezpieczeństwo Twojego dziecka jutro"
+      ],
+      "Activate your reserved email address": [
+        "Aktywuj swój zarezerwowany adres e-mail"
+      ],
+      "Address reservation voucher": [
+        "Kupon rezerwacji adresu"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Wspomóż nas, wspierając Fundację ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Wpisz kod weryfikacyjny"
+      ],
+      "Recover activation voucher": [
+        "Odzyskaj kupon aktywacyjny"
+      ],
+      "Reserve child's email address": [
+        "Zarezerwuj adres e-mail dziecka"
+      ],
+      "We emailed you the voucher": [
+        "Wysłaliśmy Ci kupon jako wiadomość e-mail"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Wpisz kod weryfikacyjny, który został wysłany na adres ${ parentEmail }."
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Wiadomość e-mail"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     }
   }

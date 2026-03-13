@@ -2943,6 +2943,9 @@
     "Calendar share permission label": {
       "See all event details": [
         "Ver todos los detalles del evento"
+      ],
+      "Edit event details": [
+        "Editar detalles del evento"
       ]
     },
     "Calendar sharing access option label": {
@@ -5448,6 +5451,12 @@
       ],
       "Save": [
         "Guardar"
+      ],
+      "Add condition": [
+        "Añadir condición"
+      ],
+      "Send confirmation email": [
+        "Enviar correo electrónico de confirmación"
       ]
     },
     "email_forwarding_2023: Error": {
@@ -6690,6 +6699,9 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El régimen de inversión del sujeto pasivo no es compatible con este plan"
       ]
     },
     "error": {
@@ -7009,6 +7021,9 @@
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
         "La conexión a internet fue interrumpida, lo que provocó un fallo en el proceso de exportación. Inténtalo de nuevo."
+      ],
+      "Learn how to restore encrypted events with old password": [
+        "Descubre cómo restaurar eventos cifrados con la contraseña anterior"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -11756,6 +11771,21 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
+        "¿Seguro que quieres eliminar este calendario? Todas las direcciones con las que lo hayas compartido perderán el acceso."
+      ],
+      "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
+        "¡Da tu clave pública a tus amigos o publícala en internet para que todo el mundo pueda enviarte correos con cifrado de extremo a extremo!"
+      ],
+      "On Ubuntu?": [
+        "¿En Ubuntu?"
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
+        "El envío por SMTP permite que servicios o dispositivos de terceros envíen correos electrónicos a través de ${ MAIL_APP_NAME } usando las direcciones de tu dominio personalizado. Para usar esta función, empieza por generar un nuevo token."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Tu cuenta está configurada actualmente para aplicar el régimen de inversión del sujeto pasivo, pero este no es compatible con el plan seleccionado. Para continuar, elimina el número de IVA de la dirección de facturación o selecciona un plan diferente."
       ]
     },
     "info": {
@@ -11966,6 +11996,9 @@
       ],
       "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
         "Ya tienes este tipo de clave. A menos que esa clave se haya comprometido, generar **una nueva clave podría ralentizar tu cuenta**."
+      ],
+      "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
+        "Esto generará una nueva clave que se usará para cifrar futuros detalles de contactos, claves de cifrado de correo electrónico y otros datos."
       ]
     },
     "Key state badge": {
@@ -13604,6 +13637,21 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Message (auto-reply)": [
+        "Mensaje (respuesta automática)"
+      ],
+      "Prompt to trust keys": [
+        "Solicitud para confiar en las claves"
+      ],
+      "Protection mode": [
+        "Modo de protección"
+      ],
+      "Tips and insights": [
+        "Consejos y claves"
+      ],
+      "VPN Accelerator": [
+        "Acelerador VPN"
       ]
     },
     "label": {
@@ -15926,6 +15974,9 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Se han actualizado los ajustes de videoconferencia de Zoom."
+      ],
+      "Key with fingerprint ${ fp } is now primary.": [
+        "La clave con huella digital ${ fp } es ahora la clave principal."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -23051,6 +23102,9 @@
       ],
       "Your subscriptions": [
         "Tus suscripciones"
+      ],
+      "Reverse charge not supported": [
+        "Inversión del sujeto pasivo no admitida"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24392,6 +24446,26 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Calendar sharing permission change notification": {
+      "Permissions changed for ${ email }": [
+        "Se han cambiado los permisos para ${ email }."
+      ]
+    },
+    "Delete calendar section description": {
+      "All events in this calendar will be deleted.": [
+        "Todos los eventos de este calendario se eliminarán."
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } en App Store"
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "OFERTAS DE PRIMAVERA 2026"
       ]
     }
   }

@@ -1676,6 +1676,24 @@
       ],
       "Zoom out": [
         "Thu nhỏ"
+      ],
+      "Activate reserved address": [
+        "Kích hoạt địa chỉ đã đặt trước"
+      ],
+      "Activate this address": [
+        "Kích hoạt địa chỉ này"
+      ],
+      "Donate": [
+        "Quyên góp"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Nhận địa chỉ ${ MAIL_APP_NAME } riêng"
+      ],
+      "Send verification code": [
+        "Gửi mã xác minh"
+      ],
+      "Try payment again": [
+        "Thử thanh toán lại"
       ]
     },
     "action": {
@@ -6711,6 +6729,12 @@
       ],
       "ZIP code is required": [
         "Mã bưu chính là bắt buộc"
+      ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Kích hoạt thất bại. Các chi tiết có thể không chính xác hoặc email đã được kích hoạt. Vui lòng kiểm tra đầu vào hoặc đăng nhập."
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Kích hoạt địa chỉ thất bại. Vui lòng thử lại."
       ]
     },
     "error": {
@@ -11700,6 +11724,45 @@
       ],
       "Zoom meeting": [
         "Cuộc họp Zoom"
+      ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Nhập địa chỉ email đã dùng để đặt trước ${ reservedEmail }."
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Nhập địa chỉ email đã đặt trước và địa chỉ email đã sử dụng trong quá trình đặt trước."
+      ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Giúp các gia đình khác mang lại cho con cái họ một khởi đầu an toàn trực tuyến. Hãy chia sẻ cột mốc này và lan tỏa thông điệp."
+      ],
+      "How it works": [
+        "Cách thức hoạt động"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Nếu email đã nhập được sử dụng để đặt trước địa chỉ email của trẻ, voucher kích hoạt sẽ được gửi lại."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Giữ voucher an toàn cho đến khi cần, ví dụ như trong ${ DRIVE_APP_NAME }."
+      ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Nhận voucher đặt trước qua email. Có thể sử dụng voucher để kích hoạt địa chỉ trong vòng 15 năm tới. ${ learnMoreLink }"
+      ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Đã xảy ra sự cố. Vui lòng thử lại hoặc liên hệ với bộ phận hỗ trợ khách hàng."
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Bước ${ step }/${ totalSteps }"
+      ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "Để ngăn chặn lạm dụng hoặc gian lận, cần có khoản quyên góp tối thiểu là ${ minimumDonation }. Khoản này hỗ trợ công việc của ${ protonFoundationLink } trong việc bảo vệ quyền riêng tư kỹ thuật số trên toàn cầu và giúp bảo vệ thế hệ tương lai."
+      ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Không thể hoàn tất giao dịch. Vui lòng thử lại."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Khi đã sẵn sàng kích hoạt địa chỉ, hãy quét mã QR hoặc sử dụng liên kết trong voucher."
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Voucher cho địa chỉ email ${ BRAND_NAME } đã đặt trước: ${ reservedEmail }"
       ]
     },
     "info": {
@@ -13655,6 +13718,42 @@
       ],
       "ZIP code": [
         "Mã bưu chính"
+      ],
+      "Activation code": [
+        "Mã kích hoạt"
+      ],
+      "Choose an address to reserve for your child": [
+        "Chọn một địa chỉ để đặt trước cho trẻ"
+      ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Quyên góp $1 trở lên cho ${ BRAND_NAME } Foundation"
+      ],
+      "Donation amount": [
+        "Số tiền quyên góp"
+      ],
+      "Enter your email address": [
+        "Nhập địa chỉ email"
+      ],
+      "Reserved address": [
+        "Địa chỉ đã đặt trước"
+      ],
+      "Reserved email address": [
+        "Địa chỉ email đã đặt trước"
+      ],
+      "Set password": [
+        "Đặt mật khẩu"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "Để kích hoạt, hãy quét mã QR hoặc truy cập:"
+      ],
+      "Your activation code:": [
+        "Mã kích hoạt:"
+      ],
+      "Your email address": [
+        "Địa chỉ email"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Voucher cho địa chỉ email ${ BRAND_NAME } đã đặt trước:"
       ]
     },
     "label": {
@@ -14038,6 +14137,12 @@
       ],
       "What’s this?": [
         "Đây là gì?"
+      ],
+      "${ BRAND_NAME } Foundation's": [
+        "của ${ BRAND_NAME } Foundation"
+      ],
+      "Can't find your code?": [
+        "Không thể tìm thấy mã?"
       ]
     },
     "Link (Scribe)": {
@@ -17582,6 +17687,9 @@
       ],
       "ZIP code": [
         "Mã bưu chính"
+      ],
+      "Amount": [
+        "Số tiền"
       ]
     },
     "placeholder": {
@@ -21045,6 +21153,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Sẽ nhận được tên người dùng qua SMS trong vòng một phút nếu đã nhập số điện thoại khôi phục hợp lệ."
+      ],
+      "Verification code sent to ${ parentEmail }": [
+        "Đã gửi mã xác minh đến ${ parentEmail }"
+      ],
+      "Your address has been activated": [
+        "Địa chỉ đã được kích hoạt"
       ]
     },
     "Success message": {
@@ -22919,6 +23033,12 @@
       ],
       "Your subscriptions": [
         "Gói đăng ký của bạn"
+      ],
+      "Problem processing your payment": [
+        "Sự cố xử lý thanh toán"
+      ],
+      "Problem processing your request": [
+        "Sự cố khi xử lý yêu cầu"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24300,6 +24420,61 @@
       ],
       "Yearly, ${ untilString }": [
         "Hàng năm, ${ untilString }"
+      ]
+    },
+    "Form heading": {
+      "Enter your email address": [
+        "Nhập địa chỉ email"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Voucher sẽ được gửi đến đây."
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Một bước đơn giản hôm nay để đảm bảo an toàn kỹ thuật số cho con trẻ vào ngày mai"
+      ],
+      "Activate your reserved email address": [
+        "Kích hoạt địa chỉ email đã đặt trước"
+      ],
+      "Address reservation voucher": [
+        "Voucher đặt trước địa chỉ"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Quyên góp cho ${ BRAND_NAME } Foundation"
+      ],
+      "Enter verification code": [
+        "Nhập mã xác minh"
+      ],
+      "Recover activation voucher": [
+        "Khôi phục voucher kích hoạt"
+      ],
+      "Reserve child's email address": [
+        "Đặt trước địa chỉ email cho trẻ"
+      ],
+      "We emailed you the voucher": [
+        "Voucher đã được gửi qua email"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Nhập mã xác minh đã được gửi đến ${ parentEmail }."
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Email"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     }
   }

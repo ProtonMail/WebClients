@@ -1673,6 +1673,24 @@
       ],
       "Zoom out": [
         "ขยายออก"
+      ],
+      "Activate reserved address": [
+        "เปิดใช้งานที่อยู่ที่จองไว้"
+      ],
+      "Activate this address": [
+        "เปิดใช้งานที่อยู่นี้"
+      ],
+      "Donate": [
+        "บริจาค"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "รับที่อยู่ ${ MAIL_APP_NAME }"
+      ],
+      "Send verification code": [
+        "ส่งรหัสยืนยัน"
+      ],
+      "Try payment again": [
+        "ลองชำระเงินอีกครั้ง"
       ]
     },
     "action": {
@@ -6536,6 +6554,12 @@
       ],
       "ZIP code is required": [
         "จำเป็นต้องระบุรหัสไปรษณีย์"
+      ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "การเปิดใช้งานล้มเหลว รายละเอียดอาจไม่ถูกต้อง หรืออีเมลเปิดใช้งานอยู่แล้ว โปรดตรวจสอบข้อมูลที่ป้อนหรือเข้าสู่ระบบ"
+      ],
+      "Failed to activate your address. Please try again.": [
+        "เปิดใช้งานที่อยู่ไม่สำเร็จ โปรดลองอีกครั้ง"
       ]
     },
     "error": {
@@ -11489,6 +11513,45 @@
       ],
       "Zoom meeting": [
         "การประชุมผ่าน Zoom"
+      ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "ป้อนที่อยู่อีเมลที่ใช้จอง ${ reservedEmail }"
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "ป้อนที่อยู่อีเมลที่จองไว้และที่อยู่อีเมลที่ใช้ระหว่างการจอง"
+      ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "ช่วยเหลือครอบครัวอื่นๆ ในการให้เด็กๆ เริ่มต้นใช้งานออนไลน์อย่างปลอดภัย แชร์ความสำเร็จนี้และบอกต่อให้ผู้อื่นทราบ"
+      ],
+      "How it works": [
+        "วิธีการทำงาน"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "หากอีเมลที่ป้อนถูกใช้เพื่อจองที่อยู่อีเมลของเด็ก จะมีการส่งบัตรกำนัลการเปิดใช้งานให้อีกครั้ง"
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "เก็บรักษาบัตรกำนัลให้ปลอดภัยจนกว่าจะจำเป็นต้องใช้ ตัวอย่างเช่น ใน ${ DRIVE_APP_NAME }"
+      ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "รับบัตรกำนัลการจองทางอีเมล สามารถใช้เพื่อเปิดใช้งานที่อยู่ได้ภายใน 15 ปีข้างหน้า ${ learnMoreLink }"
+      ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "เกิดข้อผิดพลาดบางอย่าง โปรดลองอีกครั้งหรือติดต่อฝ่ายสนับสนุนลูกค้า"
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "ขั้นตอนที่ ${ step }/${ totalSteps }"
+      ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "เพื่อป้องกันการละเมิดหรือฉ้อโกง ขอความกรุณาบริจาคขั้นต่ำ ${ minimumDonation } การดำเนินการนี้จะช่วยสนับสนุนการทำงานของ ${ protonFoundationLink } ในการปกป้องความเป็นส่วนตัวทางดิจิทัลทั่วโลก และช่วยปกป้องคนรุ่นต่อไป"
+      ],
+      "We couldn't complete the transaction. Please try again.": [
+        "ไม่สามารถทำธุรกรรมให้เสร็จสมบูรณ์ได้ โปรดลองอีกครั้ง"
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "เมื่อพร้อมที่จะเปิดใช้งานที่อยู่ ให้สแกนคิวอาร์โค้ดหรือใช้ลิงก์ในบัตรกำนัล"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "บัตรกำนัลสำหรับที่อยู่อีเมล ${ BRAND_NAME } ที่จองไว้: ${ reservedEmail }"
       ]
     },
     "info": {
@@ -13414,6 +13477,42 @@
       ],
       "ZIP code": [
         "รหัสไปรษณีย์"
+      ],
+      "Activation code": [
+        "รหัสการเปิดใช้งาน"
+      ],
+      "Choose an address to reserve for your child": [
+        "เลือกที่อยู่ที่จะจองสำหรับเด็ก"
+      ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "บริจาค $1 หรือมากกว่าให้มูลนิธิ ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "จำนวนเงินบริจาค"
+      ],
+      "Enter your email address": [
+        "ป้อนที่อยู่อีเมล"
+      ],
+      "Reserved address": [
+        "ที่อยู่ที่จองไว้"
+      ],
+      "Reserved email address": [
+        "ที่อยู่อีเมลที่จองไว้"
+      ],
+      "Set password": [
+        "ตั้งค่ารหัสผ่าน"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "ในการเปิดใช้งาน ให้สแกน QR-code หรือไปที่:"
+      ],
+      "Your activation code:": [
+        "รหัสการเปิดใช้งาน:"
+      ],
+      "Your email address": [
+        "ที่อยู่อีเมล"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "บัตรกำนัลสำหรับที่อยู่อีเมล ${ BRAND_NAME } ที่จองไว้:"
       ]
     },
     "label": {
@@ -13791,6 +13890,12 @@
       ],
       "What’s this?": [
         "นี่คืออะไร?"
+      ],
+      "${ BRAND_NAME } Foundation's": [
+        "มูลนิธิ ${ BRAND_NAME }"
+      ],
+      "Can't find your code?": [
+        "ไม่พบรหัสใช่ไหม?"
       ]
     },
     "Link (Scribe)": {
@@ -17329,6 +17434,9 @@
       ],
       "ZIP code": [
         "รหัสไปรษณีย์"
+      ],
+      "Amount": [
+        "จำนวนเงิน"
       ]
     },
     "placeholder": {
@@ -20778,6 +20886,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "คุณจะได้รับชื่อผู้ใช้ทาง SMS ภายในหนึ่งนาที หากป้อนหมายเลขโทรศัพท์กู้คืนที่ถูกต้อง"
+      ],
+      "Verification code sent to ${ parentEmail }": [
+        "ส่งรหัสยืนยันไปยัง ${ parentEmail } แล้ว"
+      ],
+      "Your address has been activated": [
+        "เปิดใช้งานที่อยู่แล้ว"
       ]
     },
     "Success message": {
@@ -22625,6 +22739,12 @@
       ],
       "Your subscriptions": [
         "การสมัครสมาชิกของคุณ"
+      ],
+      "Problem processing your payment": [
+        "มีปัญหาในการประมวลผลการชำระเงิน"
+      ],
+      "Problem processing your request": [
+        "มีปัญหาในการประมวลผลคำขอ"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24000,6 +24120,61 @@
       ],
       "Yearly, ${ untilString }": [
         "ทุกๆ ปี ${ untilString }"
+      ]
+    },
+    "Form heading": {
+      "Enter your email address": [
+        "ป้อนที่อยู่อีเมล"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "บัตรกำนัลจะถูกส่งมาที่นี่"
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "ก้าวเล็กๆ ในวันนี้ เพื่อความปลอดภัยทางดิจิทัลของเด็กในวันหน้า"
+      ],
+      "Activate your reserved email address": [
+        "เปิดใช้งานที่อยู่อีเมลที่จองไว้"
+      ],
+      "Address reservation voucher": [
+        "บัตรกำนัลการจองที่อยู่"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "บริจาคให้มูลนิธิ ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "ป้อนรหัสยืนยัน"
+      ],
+      "Recover activation voucher": [
+        "กู้คืนบัตรกำนัลการเปิดใช้งาน"
+      ],
+      "Reserve child's email address": [
+        "จองที่อยู่อีเมลของเด็ก"
+      ],
+      "We emailed you the voucher": [
+        "ส่งบัตรกำนัลทางอีเมลแล้ว"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "ป้อนรหัสยืนยันที่ถูกส่งไปยัง ${ parentEmail }"
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "อีเมล"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     }
   }

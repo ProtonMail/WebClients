@@ -3768,7 +3768,7 @@
         "Факс"
       ],
       "Main": [
-        "Галоўная"
+        "Галоўны"
       ],
       "Mobile": [
         "Мабільны"
@@ -7178,6 +7178,9 @@
       ],
       "ZIP code is required": [
         "Патрабуецца ўвесці паштовы індэкс"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Схема зваротнага налічэння не падтрымліваецца для гэтага тарыфнага плана"
       ]
     },
     "error": {
@@ -12692,6 +12695,9 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб ужываць схему зваротнага налічэння. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
       ]
     },
     "info": {
@@ -14745,6 +14751,9 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Import recent mails": [
+        "Імпартаваць нядаўнія лісты"
       ]
     },
     "label": {
@@ -24745,6 +24754,9 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "Reverse charge not supported": [
+        "Зваротнае налічэнне не падтрымліваецца"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

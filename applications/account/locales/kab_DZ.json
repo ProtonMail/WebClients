@@ -1034,6 +1034,24 @@
       ],
       "Zoom out": [
         "Semẓi"
+      ],
+      "Activate reserved address": [
+        "Sermed tansa yettwaḥerzen"
+      ],
+      "Activate this address": [
+        "Sermed tansa-yagi"
+      ],
+      "Donate": [
+        "Efk tikci"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "Awi tansa-inek·inem ${ MAIL_APP_NAME }"
+      ],
+      "Send verification code": [
+        "Azen tangalt n usenqed"
+      ],
+      "Try payment again": [
+        "Eɛreḍ ad txelṣeḍ tikkelt-nniḍen"
       ]
     },
     "action": {
@@ -3256,6 +3274,12 @@
       ],
       "Zero keys reactivated": [
         "Ilem n tsura remdent"
+      ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "Asermed ur yeddi ara. Isalen zemren ad ilin d ucciḍen, neɣ imayl yersmed yakan. Ttxil-k·m senqed ayen teskecmeḍ neɣ kcem."
+      ],
+      "Failed to activate your address. Please try again.": [
+        "Tuccḍa deg usermed n tansa-k·m. Ttxil-k·m eɛreḍ tikkelt-nniḍen."
       ]
     },
     "Error importing calendar": {
@@ -5520,6 +5544,45 @@
       ],
       "Your recovery phrase": [
         "Tafyirt-ik·im n tririt"
+      ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "Sekcem tansa n yimayl i yettwaseqdacen i uḥraz n ${ reservedEmail }."
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "Sekcem tansa n yimayl yettwaḥerzen akked tansa n yimayl yettwaseqdacen deg wakud n uḥraz."
+      ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "Fk tallalt i twaculin nniḍen ad fkent i warrac-nsent asekcem aɣelsan s tuqqna. Bḍu tagnit-a yerna ssiweḍ awal."
+      ],
+      "How it works": [
+        "Amek i iteddu"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "Ma yella imayl i teskecmeḍ yettwaseqdec i uḥraz n tansa n yimayl n weqcic, ad d-nules azen n wubun n usermed."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "Ḥrez abun deg wemkan aɣelsan alamma teḥwajeḍ-t, amedya deg ${ DRIVE_APP_NAME }."
+      ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "Rmes-d abun n uḥraz s yimayl. Kečč neɣ aqcic-nni tzemrem ad t-tesqedcem i usermed n tansa di 15 iseggasen i d-iteddun. ${ learnMoreLink }"
+      ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "Yella wayen ur nteddu ara akken iwata. Ttxil-k·m ɛreḍ tikkelt nniḍen neɣ nermes tallalt n yimsaɣen."
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "Asurif ${ step }/${ totalSteps }"
+      ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "I uḥuddu mgal aseqdec n diri neɣ arkad, nsuter-d tikci n wadday n ${ minimumDonation }. Wagi ad yefk tallalt i umahil n ${ protonFoundationLink } i uḥuddu n tbaḍnit tamuṭṭunt deg umaḍal yerna ad iɛiwen i useḥbiber ɣef tsuta i d-iteddun."
+      ],
+      "We couldn't complete the transaction. Please try again.": [
+        "Ur nezmir ara ad nekfu tamhelt. Ttxil-k·m eɛreḍ tikkelt-nniḍen."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "Mi tewjdeḍ i usermed n tansa, sfeḍ tangalt QR neɣ seqdec aseɣwen yellan deg wubun."
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "Abun-inek·inem i tansa n yimayl ${ BRAND_NAME } yettwaḥerzen: ${ reservedEmail }"
       ]
     },
     "info": {
@@ -6623,6 +6686,42 @@
       ],
       "ZIP code": [
         "Tangalt Zip"
+      ],
+      "Activation code": [
+        "Tangalt n usermed"
+      ],
+      "Choose an address to reserve for your child": [
+        "Fren tansa ara teḥrzeḍ i weqcic-ik·im"
+      ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "Efk tikci n 1$ neɣ ugar i Tesbeddit n ${ BRAND_NAME }"
+      ],
+      "Donation amount": [
+        "Azal n tikci"
+      ],
+      "Enter your email address": [
+        "Sekcem tansa-inek·inem n yimayl"
+      ],
+      "Reserved address": [
+        "Tansa yettwaḥerzen"
+      ],
+      "Reserved email address": [
+        "Tansa n yimayl yettwaḥerzen"
+      ],
+      "Set password": [
+        "Sbadu awal uffir"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "I usermed, sfeḍ tangalt QR neɣ ddu ɣer:"
+      ],
+      "Your activation code:": [
+        "Tangalt-inek·inem n usermed:"
+      ],
+      "Your email address": [
+        "Tansa-k·m n yimayl"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "Abun-inek·inem i tansa n yimayl ${ BRAND_NAME } yettwaḥerzen:"
       ]
     },
     "label": {
@@ -6833,6 +6932,12 @@
       ],
       "What’s this?": [
         "D acu-t wa?"
+      ],
+      "${ BRAND_NAME } Foundation's": [
+        "Tesbeddit n ${ BRAND_NAME }"
+      ],
+      "Can't find your code?": [
+        "Ur tufiḍ ara tangalt-ik·im?"
       ]
     },
     "Link label (optional)": {
@@ -8027,6 +8132,9 @@
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Tettwanecdeḍ ad ternuḍ i${ PASS_APP_NAME }"
+      ],
+      "By continuing, you agree to our ${ termsAndConditionsLink } and ${ privacyPolicyLink }.": [
+        "S ukemmel, ad tqebleɣ ${ termsAndConditionsLink } akked ${ privacyPolicyLink } nneɣ."
       ]
     },
     "pass_signup_2023: Title": {
@@ -8225,6 +8333,9 @@
       ],
       "ZIP code": [
         "Tangalt Zip"
+      ],
+      "Amount": [
+        "Azal"
       ]
     },
     "placeholder": {
@@ -9289,6 +9400,12 @@
       ],
       "You have successfully unsubscribed": [
         "Teffɣeḍ seg ujerred akken iwata"
+      ],
+      "Verification code sent to ${ parentEmail }": [
+        "Tangalt n usenqed tettwazen ɣer ${ parentEmail }"
+      ],
+      "Your address has been activated": [
+        "Tansa-k·m tersmed"
       ]
     },
     "Success message": {
@@ -10334,6 +10451,12 @@
       ],
       "Your subscriptions": [
         "Imultaɣen-ik"
+      ],
+      "Problem processing your payment": [
+        "Ugur deg usesfer n lexlaṣ-ik"
+      ],
+      "Problem processing your request": [
+        "Ugur deg usesfer n tsutert-ik·im"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11047,6 +11170,61 @@
       ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
+      ]
+    },
+    "Form heading": {
+      "Enter your email address": [
+        "Sekcem tansa-inek·inem n yimayl"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "Abun ad yettwazen ɣer dagi."
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "Asurif fessusen ass-a i uḍman n tɣellist tamuṭṭunt n weqcic-ik·im azekka"
+      ],
+      "Activate your reserved email address": [
+        "Sermed tansa-k·m n yimayl yettwaḥerzen"
+      ],
+      "Address reservation voucher": [
+        "Abun n uḥraz n tansa"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "Efk tikci i Tesbeddit n ${ BRAND_NAME }"
+      ],
+      "Enter verification code": [
+        "Sekcem tangalt n usenqed"
+      ],
+      "Recover activation voucher": [
+        "Ssuɣal-d abun n usermed"
+      ],
+      "Reserve child's email address": [
+        "Ḥrez tansa n yimayl n weqcic"
+      ],
+      "We emailed you the voucher": [
+        "Nuzen-ak·am-d abun s yimayl"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "Sekcem tangalt n usenqed i yettwaznen ɣer ${ parentEmail }."
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "Imayl"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     }
   }

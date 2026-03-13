@@ -1706,6 +1706,24 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Activate reserved address": [
+        "예약된 주소 활성화"
+      ],
+      "Activate this address": [
+        "이 주소 활성화"
+      ],
+      "Donate": [
+        "기부"
+      ],
+      "Get your own ${ MAIL_APP_NAME } address": [
+        "나만의 ${ MAIL_APP_NAME } 주소 받기"
+      ],
+      "Send verification code": [
+        "인증 코드 보내기"
+      ],
+      "Try payment again": [
+        "결제 다시 시도"
       ]
     },
     "action": {
@@ -6960,6 +6978,12 @@
       ],
       "ZIP code is required": [
         "우편번호가 필요합니다"
+      ],
+      "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
+        "활성화에 실패했습니다. 세부사항이 올바르지 않거나 이메일이 이미 활성 상태일 수 있습니다. 입력을 확인하거나 로그인해 주세요."
+      ],
+      "Failed to activate your address. Please try again.": [
+        "주소를 활성화하지 못했습니다. 다시 시도해 주세요."
       ]
     },
     "error": {
@@ -12090,6 +12114,45 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ],
+      "Enter the email address used to reserve ${ reservedEmail }.": [
+        "${ reservedEmail } 예약에 사용한 이메일 주소를 입력해 주세요."
+      ],
+      "Enter the reserved email address and the email address used during reservation.": [
+        "예약된 이메일 주소와 예약 시 사용한 이메일 주소를 입력해 주세요."
+      ],
+      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
+        "다른 가족들도 자녀에게 안전한 온라인 시작을 제공할 수 있도록 도와주세요. 이 마일스톤을 공유하고 널리 알려주세요."
+      ],
+      "How it works": [
+        "작동 방식"
+      ],
+      "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
+        "입력한 이메일이 자녀의 이메일 주소를 예약하는 데 사용된 경우 활성화 바우처를 다시 보내드립니다."
+      ],
+      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
+        "필요할 때까지 바우처를 안전하게 보관하세요(예: ${ DRIVE_APP_NAME } 사용)."
+      ],
+      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
+        "이메일로 예약 바우처를 받으세요. 귀하나 자녀가 향후 15년 내에 주소를 활성화하는 데 사용할 수 있습니다. ${ learnMoreLink }"
+      ],
+      "Something went wrong. Please try again or contact customer support.": [
+        "문제가 발생했습니다. 다시 시도하거나 고객 지원에 문의해 주세요."
+      ],
+      "Step ${ step }/${ totalSteps }": [
+        "${ step }/${ totalSteps }단계"
+      ],
+      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
+        "남용이나 사기를 방지하기 위해 최소 ${ minimumDonation }의 기부를 부탁드립니다. 이는 전 세계적으로 디지털 개인정보를 보호하는 ${ protonFoundationLink }의 작업을 지원하고 다음 세대를 보호하는 데 도움이 됩니다."
+      ],
+      "We couldn't complete the transaction. Please try again.": [
+        "거래를 완료하지 못했습니다. 다시 시도해 주세요."
+      ],
+      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
+        "주소를 활성화할 준비가 되면 QR 코드를 스캔하거나 바우처에 있는 링크를 사용하세요."
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
+        "예약된 ${ BRAND_NAME } 이메일 주소 바우처: ${ reservedEmail }"
       ]
     },
     "info": {
@@ -14072,6 +14135,42 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Activation code": [
+        "활성화 코드"
+      ],
+      "Choose an address to reserve for your child": [
+        "자녀를 위해 예약할 주소를 선택하세요"
+      ],
+      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
+        "${ BRAND_NAME } 재단에 $1 이상 기부하기"
+      ],
+      "Donation amount": [
+        "기부 금액"
+      ],
+      "Enter your email address": [
+        "이메일 주소를 입력해주세요"
+      ],
+      "Reserved address": [
+        "예약된 주소"
+      ],
+      "Reserved email address": [
+        "예약된 이메일 주소"
+      ],
+      "Set password": [
+        "비밀번호 설정"
+      ],
+      "To activate, scan the QR-code or go to:": [
+        "활성화하려면 QR 코드를 스캔하거나 다음으로 이동하세요:"
+      ],
+      "Your activation code:": [
+        "귀하의 활성화 코드:"
+      ],
+      "Your email address": [
+        "귀하의 이메일 주소"
+      ],
+      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
+        "예약된 ${ BRAND_NAME } 이메일 주소 바우처:"
       ]
     },
     "label": {
@@ -14458,6 +14557,12 @@
       ],
       "What’s this?": [
         "복구 관련 정보란?"
+      ],
+      "${ BRAND_NAME } Foundation's": [
+        "${ BRAND_NAME } 재단의"
+      ],
+      "Can't find your code?": [
+        "코드를 찾을 수 없나요?"
       ]
     },
     "Link (Scribe)": {
@@ -18109,6 +18214,9 @@
       ],
       "ZIP code": [
         "우편 번호"
+      ],
+      "Amount": [
+        "금액"
       ]
     },
     "placeholder": {
@@ -21743,6 +21851,12 @@
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "정상적인 확인 전화번호를 입력했다면 수 분내로 아이디가 적혀있는 문자 메시지를 받으실 수 있습니다."
+      ],
+      "Verification code sent to ${ parentEmail }": [
+        "인증 코드가 ${ parentEmail }(으)로 전송되었습니다"
+      ],
+      "Your address has been activated": [
+        "주소가 활성화되었습니다"
       ]
     },
     "Success message": {
@@ -23644,6 +23758,12 @@
       ],
       "Your subscriptions": [
         "구독"
+      ],
+      "Problem processing your payment": [
+        "결제를 처리하는 중 문제가 발생했습니다"
+      ],
+      "Problem processing your request": [
+        "요청을 처리하는 중 문제가 발생했습니다"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25043,6 +25163,61 @@
       ],
       "Yearly, ${ untilString }": [
         "연간, ${ untilString }"
+      ]
+    },
+    "Form heading": {
+      "Enter your email address": [
+        "이메일 주소를 입력해주세요"
+      ]
+    },
+    "Form paragraph": {
+      "The voucher will be sent here.": [
+        "바우처가 여기로 전송됩니다."
+      ]
+    },
+    "Heading": {
+      "A simple step today to ensure your child's digital safety tomorrow": [
+        "내일 자녀의 디지털 안전을 보장하기 위한 오늘의 간단한 단계"
+      ],
+      "Activate your reserved email address": [
+        "예약된 이메일 주소 활성화"
+      ],
+      "Address reservation voucher": [
+        "주소 예약 바우처"
+      ],
+      "Donate to the ${ BRAND_NAME } Foundation": [
+        "${ BRAND_NAME } 재단에 기부하기"
+      ],
+      "Enter verification code": [
+        "인증 코드 입력"
+      ],
+      "Recover activation voucher": [
+        "활성화 바우처 복구"
+      ],
+      "Reserve child's email address": [
+        "자녀 이메일 주소 예약"
+      ],
+      "We emailed you the voucher": [
+        "이메일로 바우처를 보내드렸습니다"
+      ]
+    },
+    "Info (sub-heading)": {
+      "Enter the verification code that was sent to ${ parentEmail }.": [
+        "${ parentEmail }(으)로 전송된 인증 코드를 입력해 주세요."
+      ]
+    },
+    "Link label": {
+      "Email": [
+        "이메일"
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "LinkedIn": [
+        "LinkedIn"
+      ],
+      "Twitter (X)": [
+        "Twitter (X)"
       ]
     }
   }

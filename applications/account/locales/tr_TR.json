@@ -7088,6 +7088,9 @@
       ],
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Bu tarife için sorumlu sıfatıyla KDV usulü desteklenmemektedir"
       ]
     },
     "error": {
@@ -12422,6 +12425,9 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Hesabınız şu anda sorumlu sıfatıyla KDV usulünü uygulayacak şekilde yapılandırılmış. Bu durum seçilen tarife için desteklenmemektedir. Devam etmek için ya fatura adresinden KDV numarasını kaldırın ya da farklı bir tarife seçin."
       ]
     },
     "info": {
@@ -24249,6 +24255,9 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "Reverse charge not supported": [
+        "Sorumlu sıfatıyla KDV desteklenmiyor"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -6059,6 +6059,9 @@
       ],
       "ZIP code is required": [
         "Postinumero vaaditaan"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Tämä tilaus ei tue käännettyä verovelvollisuutta."
       ]
     },
     "error": {
@@ -10825,6 +10828,9 @@
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Tilisi asetuksissa on käytössä käännetty verovelvollisuus, jota valittu tilaus ei tue. Jatkaaksesi joko poista ALV-numero laskutustiedoista tai valitse toinen tilaus."
       ]
     },
     "info": {
@@ -21485,6 +21491,9 @@
       ],
       "Your subscriptions": [
         "Tilauksesi"
+      ],
+      "Reverse charge not supported": [
+        "Käännettyä verovelvollisuutta ei tueta."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
