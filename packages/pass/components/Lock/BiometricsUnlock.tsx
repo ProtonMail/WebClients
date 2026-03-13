@@ -10,16 +10,15 @@ import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useOffline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { AuthRouteState } from '@proton/pass/components/Navigation/routing';
+import { useAutoUnlock } from '@proton/pass/hooks/auth/useAutoUnlock';
 import { useUnlockGuard } from '@proton/pass/hooks/auth/useUnlockGuard';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { useRerender } from '@proton/pass/hooks/useRerender';
-import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { unlock } from '@proton/pass/store/actions';
 import type { MaybeNull } from '@proton/pass/types';
 import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
 import { isMac } from '@proton/shared/lib/helpers/browser';
-import noop from '@proton/utils/noop';
 
 type Props = { offlineEnabled?: boolean };
 
@@ -51,22 +50,7 @@ export const BiometricsUnlock: FC<Props> = ({ offlineEnabled }) => {
 
     useUnlockGuard({ offlineEnabled, onOffline: rerender });
 
-    useVisibleEffect(
-        (visible) => {
-            /** if user has triggered the lock - don't auto-prompt.  */
-            const { userInitiatedLock = false } = history.location.state ?? {};
-
-            /** If page is hidden away - remove the `userInitiatedLock` flag
-             * to force biometrics prompt when re-opening the app */
-            if (!visible && userInitiatedLock) history.replace({ ...history.location, state: null });
-
-            /* Trigger unlock automatically on first render if the app is
-             * focused and the current lock was not user initiated */
-            if (!visible || biometricsUnlock.loading || !document.hasFocus()) return;
-            if (!userInitiatedLock && DESKTOP_BUILD) onUnlock().catch(noop);
-        },
-        [biometricsUnlock.loading]
-    );
+    useAutoUnlock({ loading: biometricsUnlock.loading, onUnlock });
 
     return (
         <Button

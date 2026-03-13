@@ -115,6 +115,8 @@ export const AVERAGE_BYTES_PER_LOG_LINE = 100;
 export const SAFARI_MESSAGE_KEY = 'application.id';
 export const SAFARI_URL_SCHEME = 'proton-pass:';
 export const BIOMETRICS_KEY = 'offlineKey_biometrics';
+export const PASS_DESKTOP_NATIVE_MESSAGE_KEY = 'me.proton.pass.nm';
+export const PASS_DESKTOP_NATIVE_MESSAGE_TIMEOUT = 10_000;
 
 /** Default feature flag states : These values are used as a
  * fallback if the feature flag endpoint is unavailable.
@@ -132,7 +134,6 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassProtonAnniversaryPromo2025]: false,
     [PassFeature.PassRenameAdminToManager]: false,
     [PassFeature.PassWebInternalAlpha]: false,
-    [PassFeature.PassWebPrfUnlock]: false,
 };
 
 /** NOTE: Timeout mostly used to avoid Safari extension

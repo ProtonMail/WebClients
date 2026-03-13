@@ -40,7 +40,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
             authStore.setUnlockRetryCount(0);
             authStore.setEncryptedOfflineKD(undefined);
             authStore.setLockMode(LockMode.PASSWORD);
-            await auth.lock(LockMode.PASSWORD, { broadcast: true, soft: true, userInitiated: true });
+            await auth.lock(LockMode.PASSWORD, { broadcast: true, soft: true });
             throw new Error(c('Warning').t`Too many attempts`);
         }
 
@@ -188,12 +188,12 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
                     authStore.setUnlockRetryCount(0);
                     authStore.setEncryptedOfflineKD(undefined);
                     authStore.setLockMode(LockMode.PASSWORD);
-                    await auth.lock(LockMode.PASSWORD, { broadcast: true, soft: true, userInitiated: true });
+                    await auth.lock(LockMode.PASSWORD, { broadcast: true, soft: true });
                     throw err;
                 }
 
                 await setRetryCount(retryCount);
-                await auth.lock(adapter.type, { broadcast: true, soft: true, userInitiated: true });
+                await auth.lock(adapter.type, { broadcast: true, soft: true });
                 throw err;
             }
         },

@@ -21,6 +21,7 @@ import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { OrganizationPolicyTooltip } from '@proton/pass/components/Organization/OrganizationPolicyTooltip';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { AccountPath } from '@proton/pass/constants';
+import { useUserInitiatedLock } from '@proton/pass/hooks/auth/useUserInitiatedLock';
 import { useVaultCreationPolicy } from '@proton/pass/hooks/organization/useVaultCreationPolicy';
 import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
@@ -78,6 +79,8 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
         []
     );
 
+    const handleLock = useUserInitiatedLock(onLock);
+
     const handleMonitor = async () => {
         if (EXTENSION_BUILD && popup?.expanded !== true) return popup?.expand?.('monitor');
         return navigate(getLocalPath('monitor'));
@@ -129,7 +132,7 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
 
                     {canLock && (
                         <DropdownMenuButton
-                            onClick={withAppMenuClose(onLock)}
+                            onClick={withAppMenuClose(handleLock)}
                             disabled={!interactive}
                             label={
                                 EXTENSION_BUILD ? c('Action').t`Lock extension` : c('Action').t`Lock ${PASS_APP_NAME}`
