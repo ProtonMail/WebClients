@@ -15,6 +15,8 @@ import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
 import { PassEncryptionTag } from '@proton/pass/types';
 import { SilentError } from '@proton/pass/utils/errors/errors';
 import { logger } from '@proton/pass/utils/logger';
+import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
+import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import noop from '@proton/utils/noop';
@@ -30,7 +32,10 @@ export const generateBiometricsKey = async (core: PassCoreContextValue, offlineK
  * we can only password lock if we have a valid offline config in
  * order to be able to verify the user password locally without an
  * SRP flow. Booting offline should rely on this lock adapter */
-export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreContextValue): LockAdapter => {
+export const biometricsLockAdapterFactory = (
+    auth: AuthService,
+    core: PassCoreContextValue
+): LockAdapter<XorObfuscation, string> => {
     const { authStore, api, getPersistedSession, onSessionPersist } = auth.config;
 
     /** Persist the `unlockRetryCount` without re-encrypting
@@ -54,7 +59,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
         }
     };
 
-    const adapter: LockAdapter = {
+    const adapter: LockAdapter<XorObfuscation, string> = {
         type: LockMode.BIOMETRICS,
 
         check: async () => {
@@ -69,14 +74,15 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
          * with SRP. Only then should we compute the offline components.
          * Repersists the session with the `offlineKD` encrypted in the session
          * blob. As such creating a biometrics lock is online-only. */
-        create: async ({ secret, ttl }, onBeforeCreate) => {
+        create: async (passwordBuff, ttl, onBeforeCreate) => {
             logger.info(`[BiometricLock] creating biometrics lock`);
+            const password = deobfuscate(passwordBuff, { zeroize: true });
 
-            const verified = await auth.confirmPassword(secret);
+            const verified = await auth.confirmPassword(password);
             if (!verified) throw new Error(getInvalidPasswordString(authStore));
 
             if (!authStore.hasOfflinePassword()) {
-                const components = await generateOfflineComponents(secret);
+                const components = await generateOfflineComponents(password);
                 authStore.setOfflineComponents(components);
             }
 
@@ -176,6 +182,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
 
                 await setRetryCount(0);
 
+                await adapter.check();
                 return hash;
             } catch (err) {
                 if (err instanceof PassCryptoError) {

@@ -23,7 +23,7 @@ import boot from './client/boot.saga';
 import cache from './client/cache.saga';
 import notification from './client/notification.saga';
 import offlineResume from './client/offline-resume.saga';
-import offlineToggle from './client/offline-setup.saga';
+import offlineSetup from './client/offline-setup.saga';
 import reportProblem from './client/report-problem.saga';
 import settings from './client/settings.saga';
 import sync from './client/sync.saga';
@@ -155,7 +155,7 @@ const COMMON_SAGAS = [
     newUserInviteRemove,
     notification,
     offlineResume,
-    offlineToggle,
+    offlineSetup,
     passwordConfirm,
     passwordExtra,
     reportProblem,

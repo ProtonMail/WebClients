@@ -9,6 +9,8 @@ import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
 import { PassEncryptionTag } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
+import { type XorObfuscation, deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+import { zeroize } from '@proton/pass/utils/object/zero';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import noop from '@proton/utils/noop';
@@ -17,7 +19,7 @@ import noop from '@proton/utils/noop';
  * we can only password lock if we have a valid offline config in
  * order to be able to verify the user password locally without an
  * SRP flow. Booting offline should rely on this lock adapter */
-export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
+export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter<XorObfuscation> => {
     const { authStore, api, getPersistedSession, onSessionPersist } = auth.config;
 
     /** Persists `unlockRetryCount` on the session blob without
@@ -36,7 +38,7 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
         }
     };
 
-    const adapter: LockAdapter = {
+    const adapter: LockAdapter<XorObfuscation> = {
         type: LockMode.PASSWORD,
 
         check: async () => {
@@ -51,16 +53,16 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
          * with SRP. Only then should we compute the offline components.
          * Repersists the session with the `offlineKD` encrypted in the session
          * blob. As such creating a password lock is online-only. */
-        create: async ({ secret, ttl }, onBeforeCreate) => {
+        create: async (passwordBuff, ttl, onBeforeCreate) => {
             logger.info(`[PasswordLock] creating password lock`);
+            const password = deobfuscate(passwordBuff, { zeroize: true });
+            const verified = await auth.confirmPassword(password);
 
-            const verified = await auth.confirmPassword(secret);
             if (!verified) throw new Error(getInvalidPasswordString(authStore));
-
             await onBeforeCreate?.();
 
             if (!authStore.hasOfflinePassword()) {
-                const components = await generateOfflineComponents(secret);
+                const components = await generateOfflineComponents(password);
                 authStore.setOfflineComponents(components);
             }
 
@@ -108,7 +110,7 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
          * such, we cannot rely on it for comparison when booting offline.
          * Load the crypto workers early in case password unlocking
          * happens before we boot the application state (hydrate.saga) */
-        unlock: async (secret) => {
+        unlock: async (password) => {
             const retryCount = authStore.getUnlockRetryCount() + 1;
 
             /** API may have been flagged as sessionLocked before
@@ -125,6 +127,9 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
                 if (!(offlineConfig && offlineVerifier)) throw new PassCryptoError('Invalid password lock');
 
                 const { salt, params } = offlineConfig;
+
+                const secret = deobfuscate(password);
+                zeroize(password);
                 const offlineKD = await getOfflineKeyDerivation(secret, stringToUint8Array(salt), params);
                 const offlineKey = await importSymmetricKey(offlineKD);
 
@@ -140,6 +145,7 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
                  * this is what allows `onResumeStart` to detect a valid offline session
                  * after a SW reload and boot without requiring the user password. */
                 await syncSession({ retryCount: 0 }).catch(noop);
+                await adapter.check();
 
                 return hash;
             } catch (err) {

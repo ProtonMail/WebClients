@@ -18,6 +18,7 @@ import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { withCallCount } from '@proton/pass/utils/fp/with-call-count';
 import { logger } from '@proton/pass/utils/logger';
 import { partialMerge } from '@proton/pass/utils/object/merge';
+import { deleteKey } from '@proton/pass/utils/object/zero';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { revoke, setLocalKey } from '@proton/shared/lib/api/auth';
 import {
@@ -43,8 +44,9 @@ import {
     requestFork,
 } from './fork';
 import { checkSessionLock } from './lock/session/lock.requests';
-import type { Lock, LockAdapter, LockCreateDTO } from './lock/types';
+import type { Lock, LockAdapter, LockAdapterMap, LockCreateDTO, UnlockDTO } from './lock/types';
 import { LockMode } from './lock/types';
+import type { UnsafePasswordCredentials } from './password';
 import {
     PasswordVerification,
     getPasswordVerification,
@@ -184,10 +186,10 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
     const adapters = new Map<LockMode, LockAdapter>();
 
-    const getLockAdapter = (mode: LockMode): LockAdapter => {
+    const getLockAdapter = <T extends LockMode>(mode: T): LockAdapterMap[T] => {
         const adapter = adapters.get(mode);
         if (!adapter) throw new Error(`Lock adapter not found for "${mode}"`);
-        return adapter;
+        return adapter as LockAdapterMap[T];
     };
 
     const authService = {
@@ -205,7 +207,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
          * certain handlers outside of the auth service flow. */
         config,
 
-        registerLockAdapter: (mode: LockMode, adapter: LockAdapter) => adapters.set(mode, adapter),
+        registerLockAdapter: (adapter: LockAdapter<any, any>) => adapters.set(adapter.type, adapter),
 
         login: async (session: AuthSession, options: AuthOptions) => {
             /** see: `AuthService::consumeFork` for overrides */
@@ -390,10 +392,9 @@ export const createAuthService = (config: AuthServiceConfig) => {
             return result;
         },
 
-        createLock: async (payload: LockCreateDTO) => {
-            if (payload.mode === LockMode.NONE) return;
+        createLock: async (dto: LockCreateDTO) => {
+            if (dto.mode === LockMode.NONE) return;
 
-            const adapter = getLockAdapter(payload.mode);
             const localID = authStore.getLocalID();
             const sessionLockRegistered = authStore.getLockMode() === LockMode.SESSION;
 
@@ -401,23 +402,46 @@ export const createAuthService = (config: AuthServiceConfig) => {
              * active API session lock - delete it first */
             const onBeforeCreate = sessionLockRegistered
                 ? async () => {
-                      if (!payload.current) throw new Error('Invalid lock creation');
-                      const lock = await getLockAdapter(LockMode.SESSION).delete(payload.current.secret);
+                      const { current } = dto;
+                      if (!(current && current.mode === LockMode.SESSION)) throw new Error('Invalid lock creation');
+                      const lock = await getLockAdapter(LockMode.SESSION).delete(current.pin);
                       void config.onLockUpdate?.(lock, localID, false);
                   }
                 : undefined;
 
-            const lock = await adapter.create(payload, onBeforeCreate);
+            const lock = await (() => {
+                switch (dto.mode) {
+                    case LockMode.BIOMETRICS:
+                        return getLockAdapter(dto.mode).create(dto.password, dto.ttl, onBeforeCreate);
+                    case LockMode.PASSWORD:
+                        return getLockAdapter(dto.mode).create(dto.password, dto.ttl, onBeforeCreate);
+                    case LockMode.SESSION:
+                        return getLockAdapter(dto.mode).create(dto.pin, dto.ttl, onBeforeCreate);
+                    case LockMode.DESKTOP:
+                        return getLockAdapter(dto.mode).create(dto.secret, dto.ttl, onBeforeCreate);
+                }
+            })();
+
             void config.onLockUpdate?.(lock, localID, true);
         },
 
-        deleteLock: async (mode: LockMode, secret: string) => {
-            if (mode === LockMode.NONE) return;
+        deleteLock: async (dto: UnlockDTO) => {
+            if (dto.mode === LockMode.NONE) return;
 
-            const adapter = getLockAdapter(mode);
-            const lock = await adapter.delete(secret);
+            const lock = await (() => {
+                switch (dto.mode) {
+                    case LockMode.BIOMETRICS:
+                        return getLockAdapter(dto.mode).delete(dto.key);
+                    case LockMode.PASSWORD:
+                        return getLockAdapter(dto.mode).delete(dto.password);
+                    case LockMode.SESSION:
+                        return getLockAdapter(dto.mode).delete(dto.pin);
+                    case LockMode.DESKTOP:
+                        return getLockAdapter(dto.mode).delete(dto.key);
+                }
+            })();
+
             const localID = authStore.getLocalID();
-
             void config.onLockUpdate?.(lock, localID, true);
         },
 
@@ -432,19 +456,28 @@ export const createAuthService = (config: AuthServiceConfig) => {
             return lock;
         },
 
-        unlock: async (mode: LockMode, secret: string, offline: boolean): Promise<void> => {
-            if (mode === LockMode.NONE) return;
+        unlock: async (dto: UnlockDTO): Promise<void> => {
+            if (dto.mode === LockMode.NONE) return;
 
             try {
-                const adapter = getLockAdapter(mode);
-                const token = await adapter.unlock(secret);
-                const localID = authStore.getLocalID();
-                await adapter.check();
+                const token = await (() => {
+                    switch (dto.mode) {
+                        case LockMode.BIOMETRICS:
+                            return getLockAdapter(dto.mode).unlock(dto.key);
+                        case LockMode.PASSWORD:
+                            return getLockAdapter(dto.mode).unlock(dto.password);
+                        case LockMode.SESSION:
+                            return getLockAdapter(dto.mode).unlock(dto.pin);
+                        case LockMode.DESKTOP:
+                            return getLockAdapter(dto.mode).unlock(dto.key);
+                    }
+                })();
 
-                await config.onUnlocked?.(mode, token, localID, offline);
+                const localID = authStore.getLocalID();
+                await config.onUnlocked?.(dto.mode, token, localID, dto.offline ?? false);
             } catch (error) {
                 /** error is thrown for clients to consume */
-                logger.warn(`[AuthService] Unlock failure [mode=${mode}]`, error);
+                logger.warn(`[AuthService] Unlock failure [mode=${dto.mode}]`, error);
                 throw error;
             }
         },
@@ -609,6 +642,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
          * (two-password mode not supported yet). If the user has an offline
          * config, we compare the `offlineKD` with the derived argon2 hash */
         confirmPassword: async (password: string, mode?: PasswordVerification): Promise<boolean> => {
+            const credentials: UnsafePasswordCredentials = { password };
+
             try {
                 await loadCoreCryptoWorker();
 
@@ -620,7 +655,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                     }
 
                     case PasswordVerification.EXTRA_PASSWORD: {
-                        await verifyExtraPassword({ password });
+                        await verifyExtraPassword(credentials);
 
                         const components = await generateOfflineComponents(password);
                         authStore.setOfflineComponents(components);
@@ -642,7 +677,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                     }
 
                     case PasswordVerification.SRP: {
-                        return await verifyPassword({ password });
+                        return await verifyPassword(credentials);
                     }
                 }
             } catch (error) {
@@ -654,48 +689,65 @@ export const createAuthService = (config: AuthServiceConfig) => {
                 if (getIsConnectionIssue(error)) throw error;
 
                 return false;
+            } finally {
+                credentials.password = '';
+                deleteKey(credentials, 'password');
             }
         },
 
         registerExtraPassword: async (password: string): Promise<boolean> => {
-            /** Compute the offline components in order to update the auth store on successful
-             * extra password registration : this will affect any password locks or offline mode
-             * setting. Users will now have to unlock the client with the extra password */
-            const components = await generateOfflineComponents(password);
-            await registerExtraPassword({ password });
+            const credentials: UnsafePasswordCredentials = { password };
+            try {
+                /** Compute the offline components in order to update the auth store on successful
+                 * extra password registration : this will affect any password locks or offline mode
+                 * setting. Users will now have to unlock the client with the extra password */
+                const components = await generateOfflineComponents(password);
+                await registerExtraPassword(credentials);
 
-            /* Clear biometrics */
-            if (authStore.getLockMode() === LockMode.BIOMETRICS) {
-                authStore.setEncryptedOfflineKD(undefined);
-                authStore.setLockMode(LockMode.PASSWORD);
-                await authService.config.onLockUpdate?.(
-                    { mode: LockMode.PASSWORD, locked: false, ttl: authStore.getLockTTL() },
-                    authStore.getLocalID(),
-                    true
-                );
+                /* Clear biometrics */
+                if (authStore.getLockMode() === LockMode.BIOMETRICS) {
+                    authStore.setEncryptedOfflineKD(undefined);
+                    authStore.setLockMode(LockMode.PASSWORD);
+                    await authService.config.onLockUpdate?.(
+                        { mode: LockMode.PASSWORD, locked: false, ttl: authStore.getLockTTL() },
+                        authStore.getLocalID(),
+                        true
+                    );
+                }
+
+                authStore.setExtraPassword(true);
+                authStore.setOfflineComponents(components);
+
+                await authService.persistSession();
+                return true;
+            } finally {
+                credentials.password = '';
+                deleteKey(credentials, 'password');
             }
-
-            authStore.setExtraPassword(true);
-            authStore.setOfflineComponents(components);
-
-            await authService.persistSession();
-            return true;
         },
 
         removeExtraPassword: async (password: string) => {
-            // Clear biometrics
-            if (authStore.getLockMode() === LockMode.BIOMETRICS) {
-                authStore.setEncryptedOfflineKD(undefined);
-                await authService.config.onLockUpdate?.(
-                    { mode: LockMode.PASSWORD, locked: false },
-                    authStore.getLocalID(),
-                    true
-                );
-            }
+            const credentials: UnsafePasswordCredentials = { password };
 
-            await verifyExtraPassword({ password });
-            await removeExtraPassword();
-            await authService.logout({ soft: true, broadcast: true });
+            try {
+                /** Clear biometrics: removing extra password would
+                 * invalidate the `encryptedOfflineKD` */
+                if (authStore.getLockMode() === LockMode.BIOMETRICS) {
+                    authStore.setEncryptedOfflineKD(undefined);
+                    await authService.config.onLockUpdate?.(
+                        { mode: LockMode.PASSWORD, locked: false },
+                        authStore.getLocalID(),
+                        true
+                    );
+                }
+
+                await verifyExtraPassword(credentials);
+                await removeExtraPassword();
+                await authService.logout({ soft: true, broadcast: true });
+            } finally {
+                credentials.password = '';
+                deleteKey(credentials, 'password');
+            }
         },
     };
 

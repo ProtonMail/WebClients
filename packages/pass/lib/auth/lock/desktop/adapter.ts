@@ -35,7 +35,7 @@ export const desktopLockAdapterFactory = (auth: AuthService, nativeMessaging: Na
             return { mode: adapter.type, locked: false, ttl: authStore.getLockTTL() };
         },
 
-        create: async ({ ttl }, onBeforeCreate) => {
+        create: async (_, ttl, onBeforeCreate) => {
             logger.info(`[DesktopLock] creating desktop lock`);
 
             /** Create lock secret and send it to desktop app */

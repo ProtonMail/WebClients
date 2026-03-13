@@ -1,7 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { type Lock, type LockCreateDTO, LockMode, type UnlockDTO } from '@proton/pass/lib/auth/lock/types';
+import type { Lock, LockCreateDTO, UnlockDTO } from '@proton/pass/lib/auth/lock/types';
+import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { ExtraPasswordDTO, PasswordConfirmDTO } from '@proton/pass/lib/auth/password';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';

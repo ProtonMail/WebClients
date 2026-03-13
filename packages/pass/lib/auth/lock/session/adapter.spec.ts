@@ -61,6 +61,11 @@ describe('SessionLock adapter', () => {
             authStore.setClientKey(clientKeyBytes.toBase64());
             authStore.setLockMode(LockMode.SESSION);
 
+            jest.spyOn(adapter, 'check').mockImplementationOnce(async () => ({
+                mode: LockMode.SESSION,
+                locked: false,
+            }));
+
             const token = await adapter.unlock('123456');
             expect(token).toEqual(sessionLockToken);
         });

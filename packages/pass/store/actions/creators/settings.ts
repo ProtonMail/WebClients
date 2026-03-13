@@ -1,6 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import type { PasswordCredentials } from '@proton/pass/lib/auth/password';
 import type { PasswordTypeConfig } from '@proton/pass/lib/auth/utils';
 import { passwordTypeSwitch } from '@proton/pass/lib/auth/utils';
 import type { CriteriaMasks } from '@proton/pass/lib/settings/pause-list';
@@ -12,7 +13,6 @@ import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { ClientEndpoint, RecursivePartial } from '@proton/pass/types';
-import type { OfflineModeDTO } from '@proton/pass/types/worker/settings';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import identity from '@proton/utils/identity';
@@ -52,7 +52,7 @@ export const updatePauseListItem = createAction('settings::pause-list::update', 
     pipe(withSettings, withCache)({ payload })
 );
 
-export const offlineSetup = requestActionsFactory<OfflineModeDTO, PasswordTypeConfig, void>('offline::toggle')({
+export const offlineSetup = requestActionsFactory<PasswordCredentials, PasswordTypeConfig, void>('offline::toggle')({
     intent: {
         prepare: (payload) =>
             withNotification({
