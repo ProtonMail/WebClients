@@ -122,6 +122,9 @@
       "Download logs": [
         "Günlüğü indir"
       ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
+      ],
       "Edit email address": [
         "E-posta adresini düzenle"
       ],
@@ -598,11 +601,6 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Depolama alanı tüm ${ BRAND_NAME } hizmetleri arasında paylaşılır."
-      ]
-    },
-    "BF2025: Action (top button in header)": {
-      "Black Friday": [
-        "Muhteşem Cuma"
       ]
     },
     "BF2025: Deal details": {
@@ -4050,6 +4048,9 @@
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Bu tarife için sorumlu sıfatıyla KDV usulü desteklenmemektedir"
+      ],
       "Signature verification failed": [
         "İmza doğrulanamadı"
       ],
@@ -4058,9 +4059,6 @@
       ],
       "Tab closed": [
         "Sekme kapatıldı"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Bu tarifede vergi hariç seçeneği bulunmuyor"
       ],
       "The amount due has changed. Please try again.": [
         "Ödenecek tutar değişti. Lütfen yeniden deneyin."
@@ -4857,6 +4855,9 @@
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ plan } aboneliğiniz ${ PASS_SHORT_APP_NAME } Lifetime aboneliğiyle değiştirilecek. Aboneliğinizin kalan tutarı hesabınıza eklenecek. ${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme fiyatı yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Hesabınız şu anda sorumlu sıfatıyla KDV usulünü uygulayacak şekilde yapılandırılmış. Bu durum seçilen tarife için desteklenmemektedir. Devam etmek için ya fatura adresinden KDV numarasını kaldırın ya da farklı bir tarife seçin."
       ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
@@ -6792,6 +6793,12 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Tekliften yararlanın"
+      ],
+      "Spring Sale": [
+        "Bahar indirimi"
+      ],
+      "SPRING SALE 2026": [
+        "BAHAR İNDİRİMİ 2026"
       ]
     },
     "q1campaign: Info": {
@@ -7114,16 +7121,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "2026 BAHAR İNDİRİMİ"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "BAHAR İNDİRİMİ"
       ]
     },
     "sso": {
@@ -7583,6 +7580,9 @@
       ],
       "Request new code": [
         "Yeni kod iste"
+      ],
+      "Reverse charge not supported": [
+        "Sorumlu sıfatıyla KDV desteklenmiyor"
       ],
       "Search Index Debug": [
         "Arama dizini hata ayıklaması"
