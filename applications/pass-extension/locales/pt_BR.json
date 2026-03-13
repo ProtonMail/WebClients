@@ -1250,6 +1250,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Ocorreu um erro. Recarregue a extensão do ${ PASS_APP_NAME }. Esse problema foi registrado"
       ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "O aplicativo para computador do ${ PASS_APP_NAME } não está instalado."
+      ],
       "The URL is in the list": [
         "A URL está na lista"
       ],
@@ -2026,7 +2029,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"

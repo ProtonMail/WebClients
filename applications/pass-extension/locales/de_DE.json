@@ -1013,6 +1013,9 @@
       "Encrypted JSON not supported": [
         "Verschlüsseltes JSON wird nicht unterstützt."
       ],
+      "Encryption communication for desktop unlock failed.": [
+        "Die Verschlüsselung der Kommunikation für die Desktop-Entsperrung ist fehlgeschlagen."
+      ],
       "Error reporting problem": [
         "Fehler beim Melden des Problems."
       ],
@@ -1249,6 +1252,15 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Etwas ist schief gelaufen. Bitte lade die Erweiterung ${ PASS_APP_NAME } neu. Dieses Problem wurde protokolliert."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App ist gesperrt, sie muss entsperrt werden."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App ist nicht installiert."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Die ${ PASS_APP_NAME }-Desktop-App reagiert nicht. Läuft sie?"
       ],
       "The URL is in the list": [
         "Die URL ist in der Liste."
@@ -1808,6 +1820,9 @@
       "Enabling biometrics lock failed": [
         "Aktivierung der biometrischen Sperre fehlgeschlagen"
       ],
+      "Enabling desktop auto-lock": [
+        "Desktop-Autosperre aktivieren"
+      ],
       "Enabling offline mode...": [
         "Offline-Modus wird aktiviert..."
       ],
@@ -2024,6 +2039,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -2425,6 +2444,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Diese Funktion ist unter Linux noch experimentell. Bitte stelle sicher, dass dein System auf dem neuesten Stand ist."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Diese Funktion erfordert, dass die Desktop-App ${ PASS_APP_NAME } während der Einrichtung installiert und ausgeführt wird."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Dieser Eintrag ist bisher für niemanden freigegeben. Lade Personen ein, ihn mit anderen zu teilen."
