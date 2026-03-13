@@ -7,7 +7,7 @@ import { useDownloadManagerStore } from '../../zustand/download/downloadManager.
 import type { DownloadController } from './DownloadManager';
 import type { ArchiveItem, ArchiveTracker, DownloadQueueTask, DownloadScheduler } from './downloadTypes';
 import type { MalwareDetection } from './malwareDetection/malwareDetection';
-import { createAsyncQueue } from './utils/asyncQueue';
+import { createAsyncQueue } from '../../utils/asyncQueue';
 import { createFileDownloadStream } from './utils/createFileDownloadStream';
 import { downloadLogDebug } from './utils/downloadLogger';
 import { validateDownloadSignatures } from './utils/handleDownloadCompletion';

@@ -9,7 +9,7 @@ import { Logger } from './Logger';
 import { MainThreadBridge } from './MainThreadBridge';
 import type { SearchModuleStateUpdateChannel } from './searchModuleStateUpdateChannel';
 import { createSearchModuleStateUpdateChannel } from './searchModuleStateUpdateChannel';
-import type { ClientId, SearchModuleState, UserId } from './types';
+import type { ClientId, SearchModuleState, SearchQuery, SearchResultItem, UserId } from './types';
 import { WorkerClient } from './workerClient';
 
 let instance: SearchModule | null = null;
@@ -34,6 +34,7 @@ export class SearchModule {
     // Receives state updates from the SharedWorker (EngineOrchestrator) via BroadcastChannel.
     // Never closed: lives for the page lifetime.
     private updateChannel: SearchModuleStateUpdateChannel;
+    private workerClient: WorkerClient;
 
     private constructor(context: SearchModuleContext) {
         if (!SearchModule.isEnvironmentCompatible()) {
@@ -49,7 +50,7 @@ export class SearchModule {
         const clientId = uuidv4() as ClientId;
 
         const bridge = new MainThreadBridge(context.driveClient);
-        new WorkerClient(context.userId, clientId, bridge);
+        this.workerClient = new WorkerClient(context.userId, clientId, bridge);
 
         this.updateChannel = createSearchModuleStateUpdateChannel(context.userId);
         this.updateChannel.onmessage = ({ data: newState }) => {
@@ -93,7 +94,9 @@ export class SearchModule {
         this.stateUpdateListeners.forEach((cb) => cb(state));
     }
 
-    // TODO: search(query: SearchQuery): Promise<SearchResult[]> — delegate to WorkerClient.
+    async *search(query: SearchQuery): AsyncGenerator<SearchResultItem> {
+        yield* this.workerClient.search(query);
+    }
 
     static isEnvironmentCompatible(): boolean {
         if (isSafari()) {

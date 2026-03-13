@@ -6,13 +6,29 @@ export function isQuotaExceededError(e: unknown): boolean {
     return e instanceof DOMException && e.name === 'QuotaExceededError';
 }
 
-/**
- * Thrown when the indexer is found in an invalid state.
- */
 export class InvalidIndexerState extends Error {
     constructor(message: string) {
         super(message);
         this.name = 'InvalidIndexerState';
+    }
+}
+export class InvalidSearcherState extends Error {
+    constructor(message: string) {
+        super(message);
+        this.name = 'InvalidSearcherState';
+    }
+}
+export class InvalidSearcherConfig extends Error {
+    constructor(message: string) {
+        super(message);
+        this.name = 'InvalidSearcherConfig';
+    }
+}
+
+export class InvalidOrchestratorState extends Error {
+    constructor(message: string) {
+        super(message);
+        this.name = 'InvalidOrchestratorState';
     }
 }
 

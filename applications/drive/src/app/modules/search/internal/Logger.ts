@@ -7,11 +7,8 @@ import { logging } from '../../logging';
  * console output is not visible in the browser, so logs are forwarded to the main
  * thread over a BroadcastChannel. On the main thread, logs go directly to console.
  *
- * - `log(msg)`:   Console-only (forwarded to main thread when called from worker).
- * - `write(msg)`: Console + future persistent IndexedDB storage.
- *
- * Logging is gated behind the `proton-drive-debug` localStorage flag.
- * Call `Logger.listenForWorkerLogs()` once on the main thread to subscribe.
+ * Call `Logger.listenForWorkerLogs()` once on the main thread to subscribe to
+ * worker logs so they appear in the browser console.
  */
 
 const LOG_CHANNEL = 'search-module-logs';

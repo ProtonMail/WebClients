@@ -6,7 +6,6 @@ import { useNotifications } from '@proton/components';
 
 import { useSearchModule } from '../../../../hooks/search/useSearchModule';
 import { useUrlSearchParams } from '../../../../hooks/search/useUrlSearchParam';
-import type { SearchResult } from '../../../../modules/search';
 import { sendErrorReport } from '../../../../utils/errorHandling';
 import type { SearchViewModelAdapter } from '../type';
 
@@ -18,7 +17,7 @@ export const useFoundationSearchAdapter = (): SearchViewModelAdapter => {
     const [searchParams] = useUrlSearchParams();
 
     const [refreshMarker, setRefreshMarker] = useState(0);
-    const [currentResultUids, setCurrentResultUids] = useState<SearchResult>({ nodeUids: [] });
+    const [currentResultUids, setCurrentResultUids] = useState<string[]>([]);
 
     const [isSearching, setIsSearching] = useState(false);
     const abortControllerRef = useRef<AbortController | null>(null);
@@ -30,6 +29,7 @@ export const useFoundationSearchAdapter = (): SearchViewModelAdapter => {
 
         try {
             setIsSearching(true);
+            setCurrentResultUids([]);
 
             if (!searchModule.isAvailable || !searchModule.isSearchable) {
                 sendErrorReport(new Error('Doing search query on non-ready search module'));
@@ -37,15 +37,20 @@ export const useFoundationSearchAdapter = (): SearchViewModelAdapter => {
             }
 
             try {
-                const results = await searchModule.search({
-                    filename: searchParams,
-                });
-
-                if (abortController.signal.aborted) {
-                    return;
+                // Collect all results before updating state: the downstream useEffect
+                // that calls loadNodes() depends on resultUids and aborts on every change,
+                // so updating state per item would cause repeated abort/restart cycles.
+                // TODO: Enable progressive rendering once loadNodes supports incremental loading.
+                const uids: string[] = [];
+                for await (const { nodeUid } of searchModule.search({ filename: searchParams })) {
+                    if (abortController.signal.aborted) {
+                        break;
+                    }
+                    uids.push(nodeUid);
                 }
-
-                setCurrentResultUids(results);
+                if (!abortController.signal.aborted) {
+                    setCurrentResultUids(uids);
+                }
             } catch (e) {
                 if (e instanceof DOMException && e.name === 'AbortError') {
                     return;
@@ -97,7 +102,7 @@ export const useFoundationSearchAdapter = (): SearchViewModelAdapter => {
         isComputingSearchIndex: searchModule.isAvailable ? searchModule.isInitialIndexing : false,
         startIndexing,
         isSearching,
-        resultUids: currentResultUids.nodeUids,
+        resultUids: currentResultUids,
         refreshResults: refresh,
     };
 };
