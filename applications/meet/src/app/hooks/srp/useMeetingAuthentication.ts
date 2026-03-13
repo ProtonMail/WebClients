@@ -9,7 +9,7 @@ import { useMeetSrp } from './useMeetSrp';
 export const useMeetingAuthentication = () => {
     const { initHandshake, getSessionToken, getMeetingInfo, getAccessToken } = useMeetSrp();
 
-    const reportMeetError = useMeetErrorReporting();
+    const { reportMeetError } = useMeetErrorReporting();
     const getMeetingDetails = useCallback(
         async ({
             customPassword,

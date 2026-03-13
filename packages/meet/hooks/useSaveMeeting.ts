@@ -18,7 +18,7 @@ export interface SaveMeetingParams {
 export const useSaveMeeting = () => {
     const api = useApi();
 
-    const reportMeetError = useMeetErrorReporting();
+    const { reportMeetError } = useMeetErrorReporting();
 
     const saveMeeting = async ({
         params: { customPassword, protonCalendar, meetingName, startTime, endTime, recurrence, timeZone, type },

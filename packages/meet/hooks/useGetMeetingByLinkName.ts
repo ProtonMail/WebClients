@@ -7,7 +7,7 @@ import { useMeetErrorReporting } from './useMeetErrorReporting';
 export const useGetMeetingByLinkName = () => {
     const api = useApi();
 
-    const reportMeetError = useMeetErrorReporting();
+    const { reportMeetError } = useMeetErrorReporting();
 
     const getMeetingByLinkName = async (meetingId: string) => {
         try {

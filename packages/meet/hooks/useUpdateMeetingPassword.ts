@@ -15,7 +15,7 @@ export const useUpdateMeetingPassword = () => {
 
     const getMeetingDependencies = useGetMeetingDependencies();
 
-    const reportMeetError = useMeetErrorReporting();
+    const { reportMeetError } = useMeetErrorReporting();
 
     const updateMeetingPassword = async ({
         meetingId,

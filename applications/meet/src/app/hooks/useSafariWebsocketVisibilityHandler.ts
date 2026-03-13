@@ -26,7 +26,7 @@ export const useSafariWebsocketVisibilityHandler = ({
     wasmApp,
     joinedRoom,
 }: UseSafariWebsocketVisibilityHandlerParams) => {
-    const reportMeetError = useMeetErrorReporting();
+    const { reportMeetError } = useMeetErrorReporting();
     const { unsubscribeAllVideos, resubscribeAllVideos } = useCameraTrackSubscriptionManager();
     const debounceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 

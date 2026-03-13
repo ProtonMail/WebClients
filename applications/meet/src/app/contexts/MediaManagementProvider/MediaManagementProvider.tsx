@@ -33,7 +33,7 @@ const getSelectedDeviceId = (deviceState: DeviceState, activeDeviceId: string) =
 export const MediaManagementProvider = ({ children }: { children: React.ReactNode }) => {
     const room = useRoomContext();
     const { createNotification } = useNotifications();
-    const reportMeetError = useMeetErrorReporting();
+    const { reportMeetError } = useMeetErrorReporting();
 
     const [initialCameraState, setInitialCameraState] = useState<boolean>(false);
     const [initialAudioState, setInitialAudioState] = useState<boolean>(false);
