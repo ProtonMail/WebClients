@@ -3,10 +3,13 @@
  * - background:&#117;r&#108;(
  * - background:&#117;r&#108;(
  * - background:url&lpar;
+ * - @import 'https://...'
+ * - @import "https://..."
  * - etc.
  */
 const CSS_URL = '((url|image-set)\\s*(\\(|&(#40|#x00028|lpar);))';
-const REGEXP_URL_ATTR = new RegExp(CSS_URL, 'gi');
+const CSS_IMPORT_STRING = '((@import)\\s*([\'"])([^\'"]*)\\7)';
+const REGEXP_URL_ATTR = new RegExp(`${CSS_URL}|${CSS_IMPORT_STRING}`, 'gi');
 
 const REGEXP_HEIGHT_PERCENTAGE = /((?:min-|max-|line-)?height)\s*:\s*([\d.,]+%)/gi;
 const REGEXP_POSITION_ABSOLUTE = /position\s*:\s*absolute/gi;
@@ -113,7 +116,27 @@ export const escapeURLinStyle = (style: string) => {
 
     const escapeFlag = unescapedEncoding !== style;
 
-    const escapedStyle = unescapedEncoding.replace(/\\r/g, 'r').replace(REGEXP_URL_ATTR, 'proton-$2(');
+    const escapedStyle = unescapedEncoding
+        .replace(/\\r/g, 'r')
+        .replace(
+            REGEXP_URL_ATTR,
+            (
+                _match,
+                _fullUrl,
+                urlKeyword,
+                _paren,
+                _entity,
+                _importFull,
+                _importKeyword,
+                importQuote,
+                importUrlContent
+            ) => {
+                if (urlKeyword) {
+                    return `proton-${urlKeyword}(`;
+                }
+                return `@import proton-url(${importQuote}${importUrlContent}${importQuote})`;
+            }
+        );
 
     if (escapedStyle === unescapedEncoding) {
         // nothing escaped: just return input
