@@ -27,6 +27,7 @@ function* lockCreateWorker(
                 case LockMode.SESSION:
                 case LockMode.PASSWORD:
                 case LockMode.BIOMETRICS:
+                case LockMode.DESKTOP:
                     yield auth.createLock(payload.lock);
                     return { mode, locked: false, ttl };
                 case LockMode.NONE:

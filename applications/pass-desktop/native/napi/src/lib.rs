@@ -1,19 +1,17 @@
-mod autotypes;
-mod biometrics;
-mod clipboards;
-
 #[macro_use]
 extern crate napi_derive;
 
-use napi::tokio;
+mod autotypes;
+mod clipboards;
 
-use crate::autotypes::Autotype as AutotypeCore;
+use autotypes::Autotype as AutotypeCore;
+use napi::tokio;
 
 #[napi]
 pub mod biometric {
     use napi::bindgen_prelude::{Buffer, Uint8Array};
 
-    use super::biometrics::*;
+    use shared::biometrics::*;
 
     #[napi]
     pub async fn can_check_presence() -> napi::Result<bool> {
@@ -44,7 +42,7 @@ pub mod biometric {
 
 #[napi]
 pub mod clipboard {
-    use super::clipboards::*;
+    use crate::clipboards::*;
 
     #[napi]
     pub async fn write_text(text: String, sensitive: bool) -> napi::Result<()> {
@@ -54,6 +52,16 @@ pub mod clipboard {
     #[napi]
     pub async fn read() -> napi::Result<String> {
         Clipboard::read().map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
+}
+
+#[napi]
+pub mod napi_native_messaging {
+    use shared::nm_install;
+
+    #[napi]
+    pub async fn install(binary_path: String) -> napi::Result<()> {
+        nm_install::nm_install(&binary_path).map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 }
 

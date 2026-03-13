@@ -1,10 +1,13 @@
-import { type IpcMainInvokeEvent, ipcMain } from 'electron';
+import { type BrowserWindow, type IpcMainInvokeEvent, ipcMain } from 'electron';
 
-import type { MaybePromise, Result } from '@proton/pass/types';
+import type { MaybeNull, MaybePromise, Result } from '@proton/pass/types';
 
 export type IPCChannel<P extends any[], R extends any> = { args: P; result: R };
 export type IPCChannelResult<T> = Result<{ result: T }>;
-export interface IPCChannels {}
+
+export interface IPCChannels {
+    'window:show': IPCChannel<[void], void>;
+}
 
 /** Wraps `ipcMain.handle` to avoid handler errors from bubbling up
  * to the handle() call, which will in turn serialize them into a string
@@ -31,3 +34,10 @@ export const setupIpcHandler = <
             return { ok: false, error };
         }
     });
+
+export const setupIpcHandlers = (getWindow: () => MaybeNull<BrowserWindow>) => {
+    setupIpcHandler('window:show', async (_) => {
+        console.warn('window:show');
+        getWindow()?.show();
+    });
+};

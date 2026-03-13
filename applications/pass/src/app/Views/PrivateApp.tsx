@@ -86,15 +86,7 @@ const Main: FC = () => {
         ) : undefined,
     }));
 
-    const handleLock = useCallback(
-        () =>
-            authService.lock(lockMode, {
-                broadcast: true,
-                soft: false,
-                userInitiated: true,
-            }),
-        [lockMode]
-    );
+    const handleLock = useCallback(() => authService.lock(lockMode, { broadcast: true, soft: false }), [lockMode]);
 
     return (
         <div className="content-container flex flex-1 shrink-0 flex-column">

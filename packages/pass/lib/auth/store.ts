@@ -28,6 +28,7 @@ const PASS_MAILBOX_PWD_KEY = 'pass:mailbox_pwd';
 const PASS_OFFLINE_CONFIG_KEY = 'pass:offline_config';
 const PASS_OFFLINE_KD_KEY = 'pass:offline_kd';
 const PASS_OFFLINE_VERIFIER_KEY = 'pass:offline_verifier';
+const PASS_DESKTOP_LOCK_VERIFIER_KEY = 'pass:desktop_lock_verifier';
 const PASS_PERSISTENT_SESSION_KEY = 'pass:persistent';
 const PASS_REFRESH_TIME_KEY = 'pass:refresh_time';
 const PASS_REFRESH_TOKEN_KEY = 'pass:refresh_token';
@@ -90,6 +91,7 @@ export const createAuthStore = (store: Store) => {
             RefreshTime: authStore.getRefreshTime(),
             RefreshToken: authStore.getRefreshToken() ?? '',
             sessionLockToken: authStore.getLockToken(),
+            desktopLockVerifier: authStore.getDesktopLockVerifier(),
             twoPasswordMode: authStore.getTwoPasswordMode(),
             UID: authStore.getUID() ?? '',
             unlockRetryCount: authStore.getUnlockRetryCount(),
@@ -139,6 +141,7 @@ export const createAuthStore = (store: Store) => {
             if (session.RefreshTime) authStore.setRefreshTime(session.RefreshTime);
             if (session.RefreshToken) authStore.setRefreshToken(session.RefreshToken);
             if (session.sessionLockToken) authStore.setLockToken(session.sessionLockToken);
+            if (session.desktopLockVerifier) authStore.setDesktopLockVerifier(session.desktopLockVerifier);
             if (session.twoPasswordMode) authStore.setTwoPasswordMode(session.twoPasswordMode);
             if (session.UID) authStore.setUID(session.UID);
             if (session.unlockRetryCount !== undefined) authStore.setUnlockRetryCount(session.unlockRetryCount);
@@ -197,6 +200,9 @@ export const createAuthStore = (store: Store) => {
         getLockTTL: (): Maybe<number> => store.get(PASS_LOCK_TTL_KEY),
         setLockLastExtendTime: (extendTime: Maybe<number>): void => store.set(PASS_LOCK_EXTEND_TIME_KEY, extendTime),
         getLockLastExtendTime: (): Maybe<number> => store.get(PASS_LOCK_EXTEND_TIME_KEY),
+
+        setDesktopLockVerifier: (v: Maybe<string>) => store.set(PASS_DESKTOP_LOCK_VERIFIER_KEY, v),
+        getDesktopLockVerifier: (): Maybe<string> => store.get(PASS_DESKTOP_LOCK_VERIFIER_KEY),
 
         setLastUsedAt: (lastUsedAt: number): void => store.set(PASS_LAST_USED_AT, lastUsedAt),
         getLastUsedAt: (): number => store.get(PASS_LAST_USED_AT) ?? 0,

@@ -1,0 +1,35 @@
+[package]
+edition = "2021"
+name = "shared"
+version = "0.0.0"
+
+[lib]
+crate-type = ["lib"]
+
+[dependencies]
+anyhow = "1.0.80"
+base64 = "=0.21.5"
+log = "0.4"
+native_messaging = "0.2"
+rand = "0.8"
+
+[target.'cfg(windows)'.dependencies]
+widestring = "=1.0.2"
+windows = { version = "=0.54.0", features = [
+  "Foundation",
+  "Security_Credentials_UI",
+  "Security_Cryptography",
+  "Storage_Streams",
+  "Win32_Foundation",
+  "Win32_Security_Credentials",
+  "Win32_System_WinRT",
+] }
+robius-authentication = "0.1"
+native_messaging = { version = "0.2", features = ["windows-registry"] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+core-foundation = "=0.9.4"
+security-framework = "=2.9.2"
+security-framework-sys = "=2.9.1"
+objc2-local-authentication = { version = "0.3", features = ["block2"] }
+robius-authentication = "0.1"
