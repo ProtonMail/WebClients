@@ -4184,7 +4184,7 @@
         "Código inválido"
       ],
       "Invalid coupon": [
-        "Cupón invalido"
+        "Cupón inválido"
       ],
       "Invalid domain": [
         "Dominio inválido"
@@ -4465,7 +4465,7 @@
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
       "This field is invalid": [
-        "Este campo no es válido"
+        "Este campo es válido"
       ],
       "This field is required": [
         "Este campo es obligatorio"
@@ -4565,6 +4565,12 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El esquema de inversión del sujeto pasivo no es compatible con este plan"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "El importe mínimo de la donación es de ${ price }"
       ]
     },
     "error": {
@@ -8533,6 +8539,9 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Su cuenta está configurada actualmente para aplicar el esquema de inversión del sujeto pasivo. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
       ]
     },
     "info": {
@@ -16324,6 +16333,9 @@
       ],
       "Your subscriptions": [
         "Sus suscripciones"
+      ],
+      "Reverse charge not supported": [
+        "Inversión del sujeto pasivo no soportada"
       ]
     },
     "Title for payment methods table": {

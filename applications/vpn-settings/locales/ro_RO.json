@@ -4598,6 +4598,9 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Schema de taxare inversă nu este acceptată pentru acest plan."
       ]
     },
     "error": {
@@ -8653,6 +8656,9 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Contul este configurat în prezent pentru a aplica schema de taxare inversă. Aceasta nu este acceptată pentru planul selectat. Pentru a continua, fie eliminați numărul de TVA din adresa de facturare, fie selectați un alt plan."
       ]
     },
     "info": {
@@ -16568,6 +16574,9 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "Reverse charge not supported": [
+        "Taxa inversă nu este suportată"
       ]
     },
     "Title for payment methods table": {

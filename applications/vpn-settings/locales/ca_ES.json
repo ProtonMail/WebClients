@@ -4568,6 +4568,9 @@
       ],
       "ZIP code is required": [
         "Es requereix el codi postal."
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El règim d'inversió del subjecte passiu no és compatible amb aquest pla"
       ]
     },
     "error": {
@@ -8536,6 +8539,9 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "El vostre compte està configurat actualment per aplicar el règim de facturació inversa. Això no és compatible amb el pla seleccionat. Per continuar, o bé elimineu el número d'IVA de l'adreça de facturació o bé seleccioneu un pla diferent."
       ]
     },
     "info": {
@@ -16243,6 +16249,9 @@
       ],
       "Your subscriptions": [
         "Les vostres subscripcions"
+      ],
+      "Reverse charge not supported": [
+        "No s'admet la inversió del subjecte passiu"
       ]
     },
     "Title for payment methods table": {

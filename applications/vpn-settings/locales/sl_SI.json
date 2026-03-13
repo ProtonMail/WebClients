@@ -4028,6 +4028,9 @@
       ],
       "Zero keys reactivated": [
         "Nič ključev ponovno aktiviranih"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Shema obrnjene davčne obveznosti ni podprta za ta načrt"
       ]
     },
     "error": {
@@ -4659,6 +4662,12 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Vaš ključ za dvojno preverjanje pristnosti je pripravljen za uporabo."
+      ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Dosegli ste največjo dolžino ${ maxSecurityKeyLength } varnostnega ključa.",
+        "Dosegli ste največjo dolžino ${ maxSecurityKeyLength } varnostnega ključev.",
+        "Dosegli ste največjo dolžino ${ maxSecurityKeyLength } varnostnega ključev.",
+        "Dosegli ste največjo dolžino ${ maxSecurityKeyLength } varnostnega ključev."
       ]
     },
     "fido2: Label": {
@@ -7489,6 +7498,39 @@
       ],
       "Zoom meeting": [
         "sestanek prek Zooma"
+      ],
+      "or assign to any country in ${ availableAgainAfterDays } day": [
+        "ali dodelite katerikoli državi v ${ availableAgainAfterDays } dnevu",
+        "ali dodelite katerikoli državi v ${ availableAgainAfterDays } dneh",
+        "ali dodelite katerikoli državi v ${ availableAgainAfterDays } dneh",
+        "ali dodelite katerikoli državi v ${ availableAgainAfterDays } dneh"
+      ],
+      "or assign to any country in ${ availableAgainAfterHours } hour": [
+        "ali dodelite katerikoli državi v ${ availableAgainAfterHours } uri",
+        "ali dodelite katerikoli državi v ${ availableAgainAfterHours } urah",
+        "ali dodelite katerikoli državi v ${ availableAgainAfterHours } urah",
+        "ali dodelite katerikoli državi v ${ availableAgainAfterHours } urah"
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Trenutno uporabljate ${ usedMembers } od vaših ${ maxMembers } razpoložljivih uporabniških licenc in ${ usedAI } od vaših ${ maxAI } razpoložljivih licenc za pomočnika pri pisanju.",
+        "Trenutno uporabljate ${ usedMembers } od vaših ${ maxMembers } razpoložljivih uporabniških licenc in ${ usedAI } od vaših ${ maxAI } razpoložljivih licenc za pomočnika pri pisanju.",
+        "Trenutno uporabljate ${ usedMembers } od vaših ${ maxMembers } razpoložljivih uporabniških licenc in ${ usedAI } od vaših ${ maxAI } razpoložljivih licenc za pomočnika pri pisanju.",
+        "Trenutno uporabljate ${ usedMembers } od vaših ${ maxMembers } razpoložljivih uporabniških licenc in ${ usedAI } od vaših ${ maxAI } razpoložljivih licenc za pomočnika pri pisanju."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Trenutno uporabljate ${ usedMembers } od vaših ${ maxMembers } razpoložljivih uporabniških licenc in nobene od vaših ${ maxAI } razpoložljivih licenc za pomočnika pri pisanju.",
+        "Trenutno uporabljate ${ usedMembers } od vaših ${ maxMembers } razpoložljivih uporabniških licenc in nobene od vaših ${ maxAI } razpoložljivih licenc za pomočnika pri pisanju.",
+        "Trenutno uporabljate ${ usedMembers } od vaših ${ maxMembers } razpoložljivih uporabniških licenc in nobene od vaših ${ maxAI } razpoložljivih licenc za pomočnika pri pisanju.",
+        "Trenutno uporabljate ${ usedMembers } od vaših ${ maxMembers } razpoložljivih uporabniških licenc in nobene od vaših ${ maxAI } razpoložljivih licenc za pomočnika pri pisanju."
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "Na voljo imate ${ unassignedAvailableCount } nedavno uporabljen strežnik. Preden ta strežnik dodelite drugi državi morate počakati, da se postopek deaktivacije zaključi.",
+        "Na voljo imate ${ unassignedAvailableCount } nedavno uporabljena strežnika. Preden ta strežnika dodelite drugi državi morate počakati, da se postopek deaktivacije zaključi.",
+        "Na voljo imate ${ unassignedAvailableCount } nedavno uporabljene strežnike. Preden te strežnike dodelite drugi državi morate počakati, da se postopek deaktivacije zaključi.",
+        "Na voljo imate ${ unassignedAvailableCount } nedavno uporabljenih strežnikov. Preden te strežnike dodelite drugi državi morate počakati, da se postopek deaktivacije zaključi."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Vaš račun je trenutno nastavljen za uporabo sheme povratnega DDV. To ni podprto za izbrani paket. Če želite nadaljevati, bodisi odstranite številko DDV s plačilnega naslova ali izberite drug paket."
       ]
     },
     "info": {
@@ -12312,6 +12354,42 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Preusmerjeni boste k ponudniku SSO tretje osebe."
+      ],
+      "${ n } member requested your help to sign in.": [
+        "${ n } uporabnik zahteva vašo pomoč pri prijavi",
+        "${ n } uporabnika zahtevata vašo pomoč pri prijavi",
+        "${ n } uporabniki zahtevajo vašo pomoč pri prijavi",
+        "${ n } uporabnikov zahteva vašo pomoč pri prijavi"
+      ],
+      "${ n } user converted to SSO": [
+        "${ n } uporabnik pretvorjen v SSO",
+        "${ n } uporabnika pretvorjena v SSO",
+        "${ n } uporabniki pretvorjeni v SSO",
+        "${ n } uporabnikov pretvorjenih v SSO"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } uporabnik je bil odstranjen iz SSO",
+        "${ n } uporabnika sta bila odstranjena iz SSO",
+        "${ n } uporabniki so bili odstranjeni iz SSO",
+        "${ n } uporabnikov je bilo odstranjenih iz SSO"
+      ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } uporabnik se je pridružil vaši organizaciji preko vašega ponudnika identitete. Preglejte račun zdaj:",
+        "${ n } uporabnika sta je pridružila vaši organizaciji preko vašega ponudnika identitete. Preglejte računa zdaj:",
+        "${ n } uporabniki so se pridružili vaši organizaciji preko vašega ponudnika identitete. Preglejte račune zdaj:",
+        "${ n } uporabnikov se je pridružilo vaši organizaciji preko vašega ponudnika identitete. Preglejte račune zdaj:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } uporabnik je neaktiven. Tega uporabnika lahko varno odstranite iz svoje organizacije.",
+        "${ n } uporabnika sta neaktivna. Ta uporabnika lahko varno odstranite iz svoje organizacije.",
+        "${ n } uporabniki so neaktivni. Te uporabnike lahko varno odstranite iz svoje organizacije.",
+        "${ n } uporabnikov je neaktivnih. Te uporabnike lahko varno odstranite iz svoje organizacije."
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } uporabnik zahteva vašo pomoč pri prijavi v svoj ${ BRAND_NAME } račun z enotno prijavo (SSO).",
+        "${ n } uporabnika zahtevata vašo pomoč pri prijavi v svoj ${ BRAND_NAME } račun z enotno prijavo (SSO).",
+        "${ n } uporabniki zahtevajo vašo pomoč pri prijavi v svoj ${ BRAND_NAME } račun z enotno prijavo (SSO).",
+        "${ n } uporabnikov zahteva vašo pomoč pri prijavi v svoj ${ BRAND_NAME } račun z enotno prijavo (SSO)."
       ]
     },
     "sso: auth device state": {
@@ -12533,6 +12611,12 @@
         "Hitri VPN v ${ maxVpn } napravah",
         "Hitri VPN v ${ maxVpn } napravah",
         "Hitri VPN v ${ maxVpn } napravah"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe pomočnik pri pisanju za ${ maxAi } uporabnika",
+        "${ BRAND_NAME } Scribe pomočnik pri pisanju za ${ maxAi } uporabnika",
+        "${ BRAND_NAME } Scribe pomočnik pri pisanju za ${ maxAi } uporabnike",
+        "${ BRAND_NAME } Scribe pomočnik pri pisanju za ${ maxAi } uporabnikov"
       ]
     },
     "Subscription change warning": {
@@ -14245,6 +14329,9 @@
       ],
       "Your subscriptions": [
         "Vaše naročnine"
+      ],
+      "Reverse charge not supported": [
+        "Shema obrnjene davčne obveznosti"
       ]
     },
     "Title for payment methods table": {
@@ -14517,6 +14604,12 @@
       ],
       "Send request": [
         "Pošlji zahtevo"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Samodejna omogočitev skrbniškega dostopa za ${ n } uporabnika ni bila mogoča, ker so bili medtem posodobljeni njegovi šifrirni ključi:",
+        "Samodejna omogočitev skrbniškega dostopa za ${ n } uporabnika ni bila mogoča, ker so bili medtem posodobljeni njuni šifrirni ključi:",
+        "Samodejna omogočitev skrbniškega dostopa za ${ n } uporabnike ni bila mogoča, ker so bili medtem posodobljeni njihovi šifrirni ključi:",
+        "Samodejna omogočitev skrbniškega dostopa za ${ n } uporabnikov ni bila mogoča, ker so bili medtem posodobljeni njihovi šifrirni ključi:"
       ]
     },
     "Upsell": {
@@ -14877,6 +14970,14 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Po uspešni preveritvi ne odstranjujte tega zapisa TXT, saj je potreben za potrditev, da ste še vedno lastnik domene."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Ta ponudba žal ni na voljo v vašem paketu. Lahko pa pridobite popusta v višini ${ discountPercentage } za ${ plan.Title }, če se naročite za ${ cycle } mesec.",
+        "Ta ponudba žal ni na voljo v vašem paketu. Lahko pa pridobite popusta v višini ${ discountPercentage } za ${ plan.Title }, če se naročite za ${ cycle } meseca.",
+        "Ta ponudba žal ni na voljo v vašem paketu. Lahko pa pridobite popusta v višini ${ discountPercentage } za ${ plan.Title }, če se naročite za ${ cycle } mesece.",
+        "Ta ponudba žal ni na voljo v vašem paketu. Lahko pa pridobite popusta v višini ${ discountPercentage } za ${ plan.Title }, če se naročite za ${ cycle } mesecev."
       ]
     }
   }

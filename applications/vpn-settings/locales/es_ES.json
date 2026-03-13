@@ -4529,6 +4529,9 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El régimen de inversión del sujeto pasivo no es compatible con este plan"
       ]
     },
     "error": {
@@ -8461,6 +8464,9 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Tu cuenta está configurada actualmente para aplicar el régimen de inversión del sujeto pasivo, pero este no es compatible con el plan seleccionado. Para continuar, elimina el número de IVA de la dirección de facturación o selecciona un plan diferente."
       ]
     },
     "info": {
@@ -9446,6 +9452,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "VPN Accelerator": [
+        "Acelerador VPN"
       ]
     },
     "label": {
@@ -16159,6 +16168,9 @@
       ],
       "Your subscriptions": [
         "Tus suscripciones"
+      ],
+      "Reverse charge not supported": [
+        "Inversión del sujeto pasivo no admitida"
       ]
     },
     "Title for payment methods table": {
@@ -17002,6 +17014,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Después de la verificación, no elimines este registro TXT porque se necesita para confirmar que continúas siendo el propietario del dominio."
+      ]
+    },
+    "springSale2026: Action": {
+      "SPRING SALE 2026": [
+        "OFERTAS DE PRIMAVERA 2026"
       ]
     }
   }
