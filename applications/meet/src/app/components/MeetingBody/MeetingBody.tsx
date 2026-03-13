@@ -22,6 +22,7 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementProvide
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
+import { SpatialAudioRoomAudioRenderer } from '../../utils/spatialAudio/SpatialAudioRoomAudioRenderer';
 import { AssignHostSidebar } from '../AssignHostSidebar/AssignHostSidebar';
 import { Chat } from '../Chat/Chat';
 import { MeetingDetails, WrappedMeetingDetails } from '../MeetingDetails/MeetingDetails';
@@ -90,6 +91,10 @@ export const MeetingBody = ({
     const isSideBarOpen = Object.values(sideBarState).some((value) => value);
 
     const screenShareVideoRef = useRef<HTMLVideoElement>(null);
+
+    const isMeetEnableAudioMixing = useFlag('MeetEnableAudioMixing');
+    const isMeetEnableSpatialAudio = useFlag('MeetEnableSpatialAudio');
+    const isSpatialAudioEnabled = isMeetEnableAudioMixing && isMeetEnableSpatialAudio;
 
     useEffect(() => {
         if (isScreenShare && screenShareTrack?.publication?.track && screenShareVideoRef.current) {
@@ -239,7 +244,7 @@ export const MeetingBody = ({
                 )}
             </div>
             <ParticipantControls />
-            <RoomAudioRenderer />
+            {isSpatialAudioEnabled ? <SpatialAudioRoomAudioRenderer /> : <RoomAudioRenderer />}
             <NoDeviceDetectedInfo />
             <NoDeviceDetectedModal />
             <NoPermissionInfo />
