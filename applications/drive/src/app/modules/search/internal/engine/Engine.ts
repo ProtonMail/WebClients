@@ -2,9 +2,13 @@ import type { InitOutput } from '@proton/proton-foundation-search';
 import init, { Engine as SearchLibraryWasmEngine } from '@proton/proton-foundation-search';
 
 import type { ActiveMainThreadBridgeService } from '../ActiveMainThreadBridgeService';
-import type { EngineConfigKey } from './configs';
+import { InvalidSearcherConfig, InvalidSearcherState } from '../errors';
+import type { SearchQuery } from '../types';
+import type { EngineConfig, EngineConfigKey } from './configs';
+import { getEngineConfigFromString } from './configs';
 import { IndexWriter } from './core/indexer/IndexWriter';
 import { IndexerState, IndexerStateMachine } from './core/indexer/IndexerStateMachine';
+import type { EngineSearchItem } from './core/searcher/BaseSearcher';
 import type { EngineDB } from './storage/EngineDB';
 
 // The search foundation WASM library needs to be initialized once per
@@ -35,6 +39,7 @@ export class Engine {
 
     private constructor(
         private readonly indexerStateMachine: IndexerStateMachine,
+        private readonly searchFoundationEngine: SearchLibraryWasmEngine,
         private readonly db: EngineDB,
         isSearchable: boolean
     ) {
@@ -70,6 +75,8 @@ export class Engine {
 
         const isSearchable = await Engine.isSearchable(params.db);
 
+        // TODO: Configure ProcessorConfig with min_length=1 once the WASM library exposes a public constructor.
+        // Current default min_length is 3 — queries shorter than 3 characters return no results.
         const searchFoundationEngine = SearchLibraryWasmEngine.builder().build();
         const indexWriter = new IndexWriter(params.db, params.configKey, searchFoundationEngine);
         const indexerStateMachine = new IndexerStateMachine({
@@ -79,7 +86,7 @@ export class Engine {
             indexWriter,
         });
 
-        return new Engine(indexerStateMachine, params.db, isSearchable);
+        return new Engine(indexerStateMachine, searchFoundationEngine, params.db, isSearchable);
     }
 
     getState(): EngineState {
@@ -101,5 +108,34 @@ export class Engine {
         this.indexerStateMachine.stop();
     }
 
-    // TODO: search(query: SearchQuery): Promise<SearchResult[]> — wire up WASM searcher once Searcher is added to EngineConfig.
+    async *search(query: SearchQuery): AsyncGenerator<EngineSearchItem> {
+        const activeEngineConfig = await this.getRequiredActiveConfigKeyForSearch();
+        // The active engine config can be updated at anytime by the engine indexer.
+        // Make sure we always get the latest config and create a fresh Searcher instance
+        // in case of an update.
+        const searcher = new activeEngineConfig.Searcher({
+            engine: this.searchFoundationEngine,
+            db: this.db,
+        });
+
+        yield* searcher.performSearch(query, activeEngineConfig.configKey);
+    }
+
+    private async getRequiredActiveConfigKeyForSearch(): Promise<EngineConfig> {
+        const engineState = await this.db.getEngineState();
+        if (engineState.activeConfigKey === null) {
+            // No active config yet: Was the search action performed before
+            // the index is ready and the active config updated?
+            throw new InvalidSearcherState('No active engine config while searching');
+        }
+        const engineConfig = getEngineConfigFromString(engineState.activeConfigKey);
+        if (engineConfig === null) {
+            // The found active version in DB was not found in the list of active configs.
+            // Probably an old config not supported, the fix is probably to clear all
+            // search states and start over.
+            throw new InvalidSearcherConfig('Active config not found in config repository');
+        }
+
+        return engineConfig;
+    }
 }

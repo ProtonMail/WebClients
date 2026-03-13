@@ -2,7 +2,9 @@ import { ActiveMainThreadBridgeService } from '../ActiveMainThreadBridgeService'
 import { Logger } from '../Logger';
 import type { MainThreadBridge } from '../MainThreadBridge';
 import { EngineOrchestrator } from '../engineOrchestrator';
-import type { ClientId, UserId } from '../types';
+import { InvalidOrchestratorState } from '../errors';
+import { EngineType, SdkType } from '../types';
+import type { ClientId, SearchQuery, WorkerSearchResultEvent, UserId } from '../types';
 import type { ClientContext } from './ClientCoordinator';
 import { ClientCoordinator } from './ClientCoordinator';
 
@@ -42,7 +44,11 @@ export class SharedWorkerAPI {
             this.orchestrator = new EngineOrchestrator(clientContext.userId, this.bridgeService);
             // NOTE: Orchestrator configuration could be extracted when we have more than
             // one engine configured.
-            await this.orchestrator.addEngine('DEFAULT', REQUIRED_CONFIG_KEY_FOR_DEFAULT_ENGINE);
+            await this.orchestrator.addEngine({
+                engineType: EngineType.MY_FILES,
+                configKey: REQUIRED_CONFIG_KEY_FOR_DEFAULT_ENGINE,
+                sdkType: SdkType.DRIVE,
+            });
             this.orchestrator.start();
         } catch (error) {
             Logger.error('SharedWorkerAPI: failed to start the engine orchestrator', error);
@@ -65,7 +71,27 @@ export class SharedWorkerAPI {
         this.clientsCoordinator.disconnect(clientId);
     }
 
-    // TODO: search(query: SearchQuery): Promise<SearchResult[]> — delegate to orchestrator.
+    /**
+     * Stream search results to the main thread via a Comlink-proxied callback.
+     *
+     * Events and completion are sent through a single callback (one MessagePort)
+     * to guarantee delivery order. We cannot rely on the Promise return for
+     * signalling completion because it resolves on a different Comlink port,
+     * which can race ahead of pending event messages.
+     */
+    async search(query: SearchQuery, onEvent?: (event: WorkerSearchResultEvent) => void): Promise<void> {
+        if (!this.orchestrator) {
+            const error = new InvalidOrchestratorState(`Search query done without ready orchestrator`);
+            Logger.error(`SharedWorkerAPI: Search query done without ready orchestrator`, error);
+            throw error;
+        }
+
+        for await (const item of this.orchestrator.search(query)) {
+            onEvent?.({ type: 'item', ...item });
+        }
+
+        onEvent?.({ type: 'done' });
+    }
 
     dispose() {
         this.orchestrator?.stop();
