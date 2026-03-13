@@ -3064,6 +3064,9 @@
       "Request timed out": [
         "Solicitarea a expirat"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Schema de taxare inversă nu este acceptată pentru acest plan."
+      ],
       "Search failed": [
         "Căutarea a eșuat."
       ],
@@ -3099,9 +3102,6 @@
       ],
       "status page": [
         "pagina de stare"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Exonerarea fiscală nu este acceptată pentru acest plan."
       ],
       "The address might be misspelled": [
         "Adresa ar putea fi scrisă greșit"
@@ -8268,6 +8268,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Valorificați oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTĂ DE PRIMĂVERII 2026"
       ]
     },
     "q1campaign: Info": {
@@ -8349,7 +8352,7 @@
         "pentru 12 luni"
       ],
       "SPRING SALE": [
-        "REDUCERI DE PRIMĂVARĂ"
+        "OFERTĂ DE PRIMĂVERII"
       ]
     },
     "Recent documents table header": {
@@ -9072,16 +9075,6 @@
       ],
       "To edit this document, create a copy that you can modify.": [
         "Pentru a edita acest document, creați o copie pe care o puteți modifica."
-      ]
-    },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "REDUCERE DE PRIMĂVARĂ 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "REDUCERE DE PRIMĂVARĂ"
       ]
     },
     "sso": {
