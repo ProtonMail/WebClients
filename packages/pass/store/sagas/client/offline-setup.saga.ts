@@ -2,13 +2,15 @@ import { getInvalidPasswordString } from '@proton/pass/lib/auth/utils';
 import { generateOfflineComponents } from '@proton/pass/lib/cache/crypto';
 import { offlineSetup } from '@proton/pass/store/actions';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
+import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 export default createRequestSaga({
     actions: offlineSetup,
-    call: async ({ password }, { getAuthService, getAuthStore }) => {
+    call: async (payload, { getAuthService, getAuthStore }) => {
         const auth = getAuthService();
         const authStore = getAuthStore();
 
+        const password = deobfuscate(payload.password, { zeroize: true });
         const verified: boolean = await auth.confirmPassword(password);
         if (!verified) throw new Error(getInvalidPasswordString(authStore));
 

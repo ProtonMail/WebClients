@@ -6,17 +6,13 @@ import { lockCreateFailure, lockCreateIntent, lockCreateSuccess, stateDestroy } 
 import { type WithSenderAction, isActionWithSender } from '@proton/pass/store/actions/enhancers/endpoint';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 
-function* lockCreateWorker(
-    { getAuthService, getAuthStore }: RootSagaOptions,
-    { meta, payload }: WithSenderAction<ReturnType<typeof lockCreateIntent>>
-) {
+function* lockCreateWorker({ getAuthService }: RootSagaOptions, { meta, payload }: WithSenderAction<ReturnType<typeof lockCreateIntent>>) {
     const { id: requestId } = meta.request;
     const { mode, ttl, current } = payload.lock;
     const endpoint = meta.sender?.endpoint;
 
     try {
         const auth = getAuthService();
-        const authStore = getAuthStore();
 
         /** check the currently registered lock in case it was mutated by another client.
          * This can happen if the web-app and extension are logged in to the same session. */
@@ -31,7 +27,8 @@ function* lockCreateWorker(
                     yield auth.createLock(payload.lock);
                     return { mode, locked: false, ttl };
                 case LockMode.NONE:
-                    yield auth.deleteLock(authStore.getLockMode(), current?.secret ?? '');
+                    if (!current) throw new Error('Missing active lock payload');
+                    yield auth.deleteLock(current);
                     return { mode: LockMode.NONE, locked: false };
             }
         });

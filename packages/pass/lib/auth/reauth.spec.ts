@@ -25,7 +25,7 @@ describe('reauth helpers', () => {
         test('should return true for `BIOMETRICS_SETUP`', () => {
             const payload: ReauthActionPayload = {
                 type: ReauthAction.BIOMETRICS_SETUP,
-                data: { current: undefined, ttl: 3600 },
+                data: { pin: undefined, ttl: 3600 },
             };
             expect(isLockChangeReauth(payload)).toBe(true);
         });
@@ -33,7 +33,7 @@ describe('reauth helpers', () => {
         test('should return true for `PW_LOCK_SETUP`', () => {
             const payload: ReauthActionPayload = {
                 type: ReauthAction.PW_LOCK_SETUP,
-                data: { current: undefined, ttl: 3600 },
+                data: { pin: undefined, ttl: 3600 },
             };
             expect(isLockChangeReauth(payload)).toBe(true);
         });
@@ -56,7 +56,7 @@ describe('reauth helpers', () => {
         test('should return true for `BIOMETRICS_SETUP`', () => {
             const payload: ReauthActionPayload = {
                 type: ReauthAction.BIOMETRICS_SETUP,
-                data: { current: undefined, ttl: 3600 },
+                data: { pin: undefined, ttl: 3600 },
             };
             expect(isOfflinePasswordReauth(payload)).toBe(true);
         });
@@ -69,7 +69,7 @@ describe('reauth helpers', () => {
         test('should return true for `PW_LOCK_SETUP`', () => {
             const payload: ReauthActionPayload = {
                 type: ReauthAction.PW_LOCK_SETUP,
-                data: { current: undefined, ttl: 3600 },
+                data: { pin: undefined, ttl: 3600 },
             };
             expect(isOfflinePasswordReauth(payload)).toBe(true);
         });
@@ -104,7 +104,7 @@ describe('reauth helpers', () => {
 
     describe('encryptReauthLock', () => {
         test('should return payload unchanged when `current` is not defined', async () => {
-            const payload = { current: undefined, ttl: 3600 };
+            const payload = { pin: undefined, ttl: 3600 };
             const result = await encryptReauthLock(payload, authStore);
             expect(result).toEqual(payload);
         });
@@ -112,15 +112,15 @@ describe('reauth helpers', () => {
         test('should encrypt payload when `current` is defined', async () => {
             const sessionLockToken = uniqueId(32);
             const getLockToken = jest.spyOn(authStore, 'getLockToken').mockReturnValue(sessionLockToken);
-            const payload = { current: 'sensitive-data', ttl: 3600 };
+            const payload = { pin: 'sensitive-data', ttl: 3600 };
             const result = await encryptReauthLock(payload, authStore);
 
             expect(getLockToken).toHaveBeenCalled();
             expect(result.ttl).toBe(3600);
-            expect(result.current).not.toBe('sensitive-data');
-            expect(result.current).toBeTruthy();
+            expect(result.pin).not.toBe('sensitive-data');
+            expect(result.pin).toBeTruthy();
 
-            const parsedData = JSON.parse(result.current!);
+            const parsedData = JSON.parse(result.pin!);
             expect(typeof parsedData.encrypted).toBe('string');
             expect(typeof parsedData.salt).toBe('string');
         });
@@ -128,19 +128,19 @@ describe('reauth helpers', () => {
         test('should encrypt and decrypt payload successfully', async () => {
             const sessionLockToken = uniqueId(32);
             const getLockToken = jest.spyOn(authStore, 'getLockToken').mockReturnValue(sessionLockToken);
-            const payload = { current: 'sensitive-data', ttl: 3600 };
+            const payload = { pin: 'sensitive-data', ttl: 3600 };
             const encrypted = await encryptReauthLock(payload, authStore);
             const decrypted = await decryptReauthLock(encrypted, authStore);
 
             expect(getLockToken).toHaveBeenCalledTimes(2);
-            expect(decrypted.current).toEqual(payload.current);
+            expect(decrypted.pin).toEqual(payload.pin);
             expect(decrypted.ttl).toEqual(payload.ttl);
         });
     });
 
     describe('decryptReauthLock', () => {
         test('should return payload unchanged when current is not defined', async () => {
-            const payload = { current: undefined, ttl: 3600 };
+            const payload = { pin: undefined, ttl: 3600 };
             const result = await decryptReauthLock(payload, authStore);
             expect(result).toEqual(payload);
         });
@@ -150,13 +150,13 @@ describe('reauth helpers', () => {
             const getLockToken = jest.spyOn(authStore, 'getLockToken').mockReturnValue(sessionLockToken);
 
             const originalData = 'confidential-information';
-            const originalPayload = { current: originalData, ttl: 3600 };
+            const originalPayload = { pin: originalData, ttl: 3600 };
 
             const encrypted = await encryptReauthLock(originalPayload, authStore);
             const decrypted = await decryptReauthLock(encrypted, authStore);
 
             expect(getLockToken).toHaveBeenCalledTimes(2);
-            expect(decrypted.current).toBe(originalData);
+            expect(decrypted.pin).toBe(originalData);
             expect(decrypted.ttl).toBe(3600);
         });
 
@@ -164,7 +164,7 @@ describe('reauth helpers', () => {
             const sessionLockToken = uniqueId(32);
             jest.spyOn(authStore, 'getLockToken').mockReturnValue(sessionLockToken);
 
-            const originalPayload = { current: 'secret-data', ttl: 3600 };
+            const originalPayload = { pin: 'secret-data', ttl: 3600 };
             const encrypted = await encryptReauthLock(originalPayload, authStore);
             jest.spyOn(authStore, 'getLockToken').mockReturnValue(undefined);
 
@@ -173,7 +173,7 @@ describe('reauth helpers', () => {
 
         test('should fail to decrypt with wrong session lock token', async () => {
             jest.spyOn(authStore, 'getLockToken').mockReturnValue(uniqueId(32));
-            const originalPayload = { current: 'secret-data', ttl: 3600 };
+            const originalPayload = { pin: 'secret-data', ttl: 3600 };
             const encrypted = await encryptReauthLock(originalPayload, authStore);
 
             jest.spyOn(authStore, 'getLockToken').mockReturnValue(uniqueId(32));

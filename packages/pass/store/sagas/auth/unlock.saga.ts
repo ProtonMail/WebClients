@@ -5,7 +5,7 @@ import type { RootSagaOptions } from '@proton/pass/store/types';
 
 function* unlockWorker({ getAuthService }: RootSagaOptions, { payload, meta: { request } }: ReturnType<typeof unlock.intent>) {
     try {
-        yield getAuthService().unlock(payload.mode, payload.secret, payload.offline);
+        yield getAuthService().unlock(payload);
         yield put(unlock.success(request.id, payload.mode));
     } catch (err: any) {
         yield put(unlock.failure(request.id, err, payload.mode));

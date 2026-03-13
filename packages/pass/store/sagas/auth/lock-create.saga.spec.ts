@@ -1,9 +1,11 @@
 import { runSaga } from 'redux-saga';
 
+import type { LockCreateDTO } from '@proton/pass/lib/auth/lock/types';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { lockCreateFailure, lockCreateIntent, lockCreateSuccess, stateDestroy } from '@proton/pass/store/actions';
 import { sagaSetup } from '@proton/pass/store/sagas/testing';
 import { last } from '@proton/pass/utils/fp/lens';
+import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import watcher from './lock-create.saga';
 
@@ -22,7 +24,7 @@ describe('lock-create saga', () => {
     });
 
     test('should fail when state is destroyed during lock creation', async () => {
-        const lock = { mode: LockMode.PASSWORD, secret: 'test-secret', ttl: 300 };
+        const lock: LockCreateDTO = { mode: LockMode.PASSWORD, password: obfuscate('test-secret'), ttl: 300 };
         const intent = lockCreateIntent(lock);
         const success = lockCreateSuccess(intent.meta.request.id, { mode: lock.mode, locked: false, ttl: lock.ttl });
         const failure = lockCreateFailure(intent.meta.request.id, LockMode.PASSWORD, new Error(), undefined);
@@ -42,7 +44,7 @@ describe('lock-create saga', () => {
     });
 
     test('should fail when auth service throws an error', async () => {
-        const lock = { mode: LockMode.PASSWORD, secret: 'test-secret', ttl: 300 };
+        const lock: LockCreateDTO = { mode: LockMode.PASSWORD, password: obfuscate('test-secret'), ttl: 300 };
         const intent = lockCreateIntent(lock);
         const failure = lockCreateFailure(intent.meta.request.id, LockMode.PASSWORD, new Error(), undefined);
 
@@ -62,11 +64,11 @@ describe('lock-create saga', () => {
         let resolveCreateLock: () => void;
         authService.createLock.mockReturnValueOnce(new Promise<void>((resolve) => (resolveCreateLock = resolve)));
 
-        const lock1 = { mode: LockMode.PASSWORD, secret: 'secret-1', ttl: 300 };
+        const lock1: LockCreateDTO = { mode: LockMode.PASSWORD, password: obfuscate('secret-1'), ttl: 300 };
         const intent1 = lockCreateIntent(lock1);
         const success1 = lockCreateSuccess(intent1.meta.request.id, { mode: lock1.mode, locked: false, ttl: lock1.ttl });
 
-        const lock2 = { mode: LockMode.PASSWORD, secret: 'secret-2', ttl: 600 };
+        const lock2: LockCreateDTO = { mode: LockMode.PASSWORD, password: obfuscate('secret-2'), ttl: 600 };
         const intent2 = lockCreateIntent(lock2);
         const success2 = lockCreateSuccess(intent2.meta.request.id, { mode: lock2.mode, locked: false, ttl: lock2.ttl });
 
