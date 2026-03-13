@@ -1250,6 +1250,9 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Edit billing address": [
+        "Рэдагаваць адрас аплаты"
       ]
     },
     "Action: Docs": {
@@ -2076,7 +2079,7 @@
         "Факс"
       ],
       "Main": [
-        "Галоўная"
+        "Галоўны"
       ],
       "Mobile": [
         "Мабільны"
@@ -4009,6 +4012,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Назва не паддаецца расшыфроўцы"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Схема адваротнага налічэння падатку не падтрымліваецца для гэтага тарыфнага плана"
       ]
     },
     "error": {
@@ -7147,6 +7153,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "Clear all search data": [
+        "Ачысціць усе даныя пошуку"
+      ],
+      "Clears browser data related to the search.": [
+        "Ачышчае даныя браўзера, якія звязаны з пошукам."
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Пошук уключаны. Цяпер вы можаце закрыць гэта акно і шукаць у файлах і папках."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб ужываць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
       ]
     },
     "info": {
@@ -13535,6 +13553,9 @@
       ],
       "You’ve got 5 GB of storage": [
         "Вы атрымалі 5 ГБ сховішча"
+      ],
+      "Reverse charge not supported": [
+        "Адваротнае налічэнне падатку не падтрымліваецца"
       ]
     },
     "Today icon tooltip in mini calendar": {
