@@ -53,6 +53,15 @@ const getIframeHtml = ({
         return `<html>${emailHead}${emailBody}</html>`;
     }
 
+    let htmlContent = emailContent;
+
+    if (transformedBodyClasses || bodyStyles) {
+        const classAttr = transformedBodyClasses ? `class="${transformedBodyClasses.trim()}"` : '';
+        const styleAttr = bodyStyles ? `style="${bodyStyles}"` : '';
+        const attrs = [classAttr, styleAttr].filter(Boolean).join(' ');
+        htmlContent = `<div ${attrs}>${emailContent}</div>`;
+    }
+
     /**
      * Some infos about those `!important` values:
      * In order to compute correctly the height and avoid any kind of override
@@ -78,9 +87,7 @@ const getIframeHtml = ({
               isPrint ? 'class="proton-print-content reset4print"' : ''
           } style="display: block !important; width: 100% !important;">
           <div style="width: 100% !important;padding-bottom:10px;!important">
-            ${bodyStyles || transformedBodyClasses ? `<div class="${transformedBodyClasses}" style="${bodyStyles}">` : ''}
-            ${emailContent}
-            ${bodyStyles || transformedBodyClasses ? '</div>' : ''}
+          ${htmlContent}
           </div>
           </div>
           ${isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_FOOTER_ID}"></div>` : ''}

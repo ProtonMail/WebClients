@@ -30,6 +30,10 @@ describe('transformLinks service', () => {
         return { document: doc, querySelector, querySelectorAll };
     };
 
+    beforeAll(() => {
+        jest.spyOn(console, 'log').mockImplementation(() => {});
+    });
+
     describe('Improve privacy', () => {
         const TOTAL = ADD_REF.split('\n')
             .map((s) => s.trim())
