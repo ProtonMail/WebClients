@@ -3,7 +3,7 @@ import DOMPurify from 'dompurify';
 
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 
-import { escapeForbiddenStyle, escapeURLinStyle } from './escape';
+import { escapeForbiddenStyle, escapeURLinStyle, unescape } from './escape';
 
 const toMap = (list: string[]) =>
     list.reduce<{ [key: string]: true | undefined }>((acc, key) => {
@@ -33,7 +33,7 @@ export enum PurifyConfig {
 const CONFIG: { [key in PurifyConfig]: any } = {
     default: {
         ALLOWED_URI_REGEXP:
-            /^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|blob|xmpp|data):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i, // eslint-disable-line no-useless-escape
+            /^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|blob|xmpp|data):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i,
         ADD_TAGS: ['proton-src', 'base'],
         ADD_ATTR: ['target', 'proton-src'],
         FORBID_TAGS: ['style', 'input', 'form', 'textarea'],
@@ -46,7 +46,7 @@ const CONFIG: { [key in PurifyConfig]: any } = {
     html: { WHOLE_DOCUMENT: false, RETURN_DOM: true },
     protonizer: {
         FORBID_TAGS: ['form', 'video', 'audio'], // Override defaults to allow style (will be processed by juice afterward)
-        FORBID_ATTR: {},
+        FORBID_ATTR: [],
         ADD_ATTR: ['target', ...LIST_PROTON_ATTR.map((attr) => `proton-${attr}`)],
         WHOLE_DOCUMENT: true,
         RETURN_DOM: true,
@@ -68,6 +68,46 @@ const CONFIG: { [key in PurifyConfig]: any } = {
 
 const getConfig = (type: PurifyConfig): Config => ({ ...CONFIG.default, ...(CONFIG[type] || {}) });
 
+const sanitizeHtmlClass = (element: HTMLElement) => {
+    const attributeValue = element?.getAttribute('class');
+    if (!attributeValue) {
+        return;
+    }
+
+    const sanitized = unescape(attributeValue)
+        .replace(/<[^>]*>?/g, ' ')
+        .replace(/(--!?|])>/g, ' ')
+        .replace(/["'>]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+    if (sanitized) {
+        element.setAttribute('class', sanitized);
+    } else {
+        element.removeAttribute('class');
+    }
+};
+
+const sanitizeHtmlStyle = (element: HTMLElement) => {
+    const attributeValue = element?.getAttribute('style');
+    if (!attributeValue) {
+        return;
+    }
+
+    const sanitized = unescape(attributeValue)
+        .replace(/<[^>]*>?/g, ' ')
+        .replace(/(--!?|])>/g, ' ')
+        .replace(/>/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+    if (sanitized) {
+        element.setAttribute('style', sanitized);
+    } else {
+        element.removeAttribute('style');
+    }
+};
+
 /**
  * Rename some attributes adding the "proton-" prefix configured in LIST_PROTON_ATTR
  * Also escape urls in style attributes
@@ -80,10 +120,14 @@ const beforeSanitizeElements = (node: Node) => {
 
     const element = node as HTMLElement;
 
-    // Manage styles element
-    if (element.tagName === 'STYLE') {
+    if (element.tagName.toUpperCase() === 'STYLE') {
         const escaped = escapeForbiddenStyle(escapeURLinStyle(element.innerHTML || ''));
         element.innerHTML = escaped;
+    }
+
+    if (element.tagName.toUpperCase() === 'BODY') {
+        sanitizeHtmlClass(element);
+        sanitizeHtmlStyle(element);
     }
 
     Array.from(element.attributes).forEach((type) => {
