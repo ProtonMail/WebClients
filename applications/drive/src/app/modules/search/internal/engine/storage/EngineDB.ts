@@ -3,16 +3,16 @@ import { openDB } from 'idb';
 
 const engineDbVersion = 1;
 
-// Generate a db name following this format: "search-db:<engineLabel>:<userId>".
-const engineDbName = (userID: string, engineLabel: string) => {
+// Generate a db name following this format: "search-db:<engineType>:<userId>".
+const engineDbName = (userID: string, engineType: string) => {
     const SEPARATOR = ':';
-    if (engineLabel.indexOf(SEPARATOR) !== -1) {
-        throw new Error(`Invalid engine label <${engineLabel}>: Contains character ${SEPARATOR}`);
+    if (engineType.indexOf(SEPARATOR) !== -1) {
+        throw new Error(`Invalid engine type <${engineType}>: Contains character ${SEPARATOR}`);
     }
     if (userID.indexOf(SEPARATOR) !== -1) {
         throw new Error(`Invalid userId: Contains character ${SEPARATOR}`);
     }
-    return ['search-db', engineLabel, userID].join(SEPARATOR);
+    return ['search-db', engineType, userID].join(SEPARATOR);
 };
 
 export interface EngineState {
@@ -43,14 +43,14 @@ const defaultState: EngineState = {
 
 /**
  * Encapsulates all IndexedDB operations for a single engine's search database.
- * Each instance is bound to one IndexedDB database named "search-db:<engineLabel>:<userId>",
- * providing isolation by both user and engine label at the storage level.
+ * Each instance is bound to one IndexedDB database named "search-db:<engineType>:<userId>",
+ * providing isolation by both user and engine type at the storage level.
  */
 export class EngineDB {
     private constructor(private readonly db: RawEngineDB) {}
 
-    static async open(userID: string, engineLabel: string): Promise<EngineDB> {
-        const db = await openDB<EngineDBSchema>(engineDbName(userID, engineLabel), engineDbVersion, {
+    static async open(userID: string, engineType: string): Promise<EngineDB> {
+        const db = await openDB<EngineDBSchema>(engineDbName(userID, engineType), engineDbVersion, {
             upgrade(database, oldVersion) {
                 if (oldVersion < 1) {
                     database.createObjectStore('state');

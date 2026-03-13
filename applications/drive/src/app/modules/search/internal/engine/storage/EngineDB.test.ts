@@ -13,8 +13,8 @@ describe('EngineDB.open', () => {
         expect(db).toBeInstanceOf(EngineDB);
     });
 
-    it('throws when engineLabel contains ":"', async () => {
-        await expect(EngineDB.open('user1', 'engine:label')).rejects.toThrow('Invalid engine label');
+    it('throws when engineType contains ":"', async () => {
+        await expect(EngineDB.open('user1', 'engine:type')).rejects.toThrow('Invalid engine type');
     });
 
     it('throws when userID contains ":"', async () => {
@@ -31,7 +31,7 @@ describe('EngineDB.open', () => {
         expect((await db2.getEngineState()).activeConfigKey).toBeNull();
     });
 
-    it('isolates databases by engineLabel', async () => {
+    it('isolates databases by engineType', async () => {
         const db1 = await EngineDB.open('user1', 'engine1');
         const db2 = await EngineDB.open('user1', 'engine2');
 
