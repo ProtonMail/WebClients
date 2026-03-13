@@ -489,6 +489,9 @@
       "Edit address": [
         "Επεξεργασία διεύθυνσης"
       ],
+      "Edit billing address": [
+        "Επεξεργασία διεύθυνσης χρέωσης"
+      ],
       "Edit draft": [
         "Τροποποίηση πρόχειρου"
       ],
@@ -4906,6 +4909,9 @@
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Το σύστημα αντιστροφής χρέωσης δεν υποστηρίζεται για αυτό το πλάνο"
+      ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Η αποστολή συνημμένων περιορίζεται μέχρι να συμπληρώσετε τα όρια του πλάνου σας ή να κάνετε αναβάθμιση."
       ],
@@ -4953,9 +4959,6 @@
       ],
       "Tab closed": [
         "Κλειστή καρτέλα"
-      ],
-      "Tax exemption is not supported for this plan": [
-        "Η φοροαπαλλαγή δεν υποστηρίζεται για αυτό το πλάνο."
       ],
       "Text is too long to refine": [
         "Το κείμενο είναι πολύ μεγάλο για να βελτιωθεί"
@@ -8818,6 +8821,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ο λογαριασμός σας είναι αυτή τη στιγμή ρυθμισμένος να εφαρμόζει το καθεστώς αντίστροφης χρέωσης. Αυτό δεν υποστηρίζεται για το επιλεγμένο πλάνο. Για να συνεχίσετε, είτε αφαιρέστε τον αριθμό ΦΠΑ από τη διεύθυνση χρέωσης είτε επιλέξτε ένα άλλο πλάνο."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Το πρόγραμμα περιήγησής σας δεν υποστηρίζει τον βοηθό γραφής. Δοκιμάστε να το εκτελέσετε σε διακομιστές."
@@ -13674,16 +13680,6 @@
         "Το email pm.me σας είναι ενεργό"
       ]
     },
-    "springSale2026: Action": {
-      "SPRING SALE 2026": [
-        "ΑΝΟΙΞΙΑΤΙΚΕΣ ΕΚΠΤΩΣΕΙΣ 2026"
-      ]
-    },
-    "springSale2026: Title": {
-      "SPRING SALE": [
-        "ΑΝΟΙΞΙΑΤΙΚΕΣ ΕΚΠΤΩΣΕΙΣ"
-      ]
-    },
     "sso": {
       "Sign in": [
         "Σύνδεση"
@@ -15234,7 +15230,7 @@
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
       "Keep this banner hidden?": [
-        "Απόκρυψη αυτού του πανό;"
+        "Να κρατηθεί αυτό το πανό κρυφό;"
       ],
       "Label as": [
         "Απόδοση ετικετών"
@@ -15508,6 +15504,9 @@
       ],
       "Request new code": [
         "Αίτηση νέου κωδικού"
+      ],
+      "Reverse charge not supported": [
+        "Αντιστροφή χρέωσης δεν υποστηρίζεται"
       ],
       "Same inbox, shorter email address": [
         "Ίδια εισερχόμενα, μικρότερη διεύθυνση ηλεκτρονικού ταχυδρομείου"
