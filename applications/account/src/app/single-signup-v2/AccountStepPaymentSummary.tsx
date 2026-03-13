@@ -18,6 +18,10 @@ import {
 import { getCheckoutUi, getOptimisticCheckout } from '@proton/payments/core/checkout';
 import { InclusiveVatText } from '@proton/payments/ui';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
+import {
+    getVatReverseChargeText,
+    isVatReverseChargeApplicable,
+} from '@proton/payments/ui/headless-checkout/items/vat-reverse-charge';
 import { formatTax } from '@proton/payments/ui/headless-checkout/tax-helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -246,6 +250,10 @@ const AccountStepPaymentSummary = ({
                     id: 'vat',
                     left: taxInclusiveText,
                 },
+            isVatReverseChargeApplicable(options.checkResult) && {
+                id: 'vat-reverse-charge',
+                left: <span className="text-sm color-weak">{getVatReverseChargeText()}</span>,
+            },
             tax?.inclusive === TaxInclusive.EXCLUSIVE &&
                 tax?.amount > 0 && {
                     id: 'vat-exclusive',

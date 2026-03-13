@@ -114,6 +114,7 @@ const SubscriptionCheckoutPlanSection = ({
                     {item.content}
                 </p>
             ),
+            vatReverseCharge: (item) => <div className="text-sm color-weak mt-2">{item.text}</div>,
 
             planAmount: (item) => (
                 <div className="flex justify-space-between">
