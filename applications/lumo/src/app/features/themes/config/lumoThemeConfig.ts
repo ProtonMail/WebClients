@@ -21,20 +21,20 @@ export interface LumoThemeConfig {
  */
 export const LUMO_SPECIAL_THEMES: LumoThemeConfig[] = [
     {
-        name: 'chinese-new-year',
-        startDate: new Date('2026-02-16'),
-        endDate: new Date('2026-02-20'),
+        name: 'saint-patricks-day',
+        startDate: new Date('2026-03-13'),
+        endDate: new Date('2026-03-18'),
         getAnimationDark: () =>
             import(
-                /* webpackChunkName: "lumo-chinese-new-year-dark-animation" */
-                '../assets/chineseNewYear/dark.json'
+                /* webpackChunkName: "lumo-saint-patricks-day-dark-animation" */
+                '../assets/saintPatricksDay/dark.json'
             ),
         getAnimationLight: () =>
             import(
-                /* webpackChunkName: "lumo-chinese-new-year-light-animation" */
-                '../assets/chineseNewYear/light.json'
+                /* webpackChunkName: "lumo-saint-patricks-day-light-animation" */
+                '../assets/saintPatricksDay/light.json'
             ),
-        getPromptText: () => c('collider_2025:Prompt').t`How does the world celebrate Lunar New Year?`,
-        icon: '🏮',
+        getPromptText: () => c('collider_2025:Prompt').t`How does the world celebrate Saint Patrick's Day?`,
+        icon: '🍀',
     },
 ];
