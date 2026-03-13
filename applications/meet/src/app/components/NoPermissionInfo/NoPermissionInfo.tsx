@@ -71,7 +71,7 @@ export const NoPermissionInfo = () => {
 
     return (
         <div
-            className="absolute top-custom left-custom px-4 py-2 bg-norm border-none rounded-full flex items-center"
+            className="absolute top-custom left-custom px-4 py-2 bg-norm border-none rounded-full flex items-center z-up"
             style={{ '--top-custom': '3rem', '--left-custom': '50%', transform: 'translateX(-50%)' }}
         >
             {
