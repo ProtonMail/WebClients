@@ -1018,6 +1018,9 @@
       "Encrypted JSON not supported": [
         "Fișierele JSON criptate nu sunt suportate."
       ],
+      "Encryption communication for desktop unlock failed.": [
+        "Eroare la criptarea comunicării pentru deblocarea desktop."
+      ],
       "Error reporting problem": [
         "Problemă de raportare a erorii."
       ],
@@ -1254,6 +1257,15 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Ceva nu a funcționat bine. Reîncărcați extensia ${ PASS_APP_NAME }. Această problemă a fost înregistrată."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Aplicația desktop ${ PASS_APP_NAME } este blocată, trebuie deblocată."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Aplicația desktop ${ PASS_APP_NAME } nu este instalată."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Aplicația desktop ${ PASS_APP_NAME } nu răspunde, rulează?"
       ],
       "The URL is in the list": [
         "Adresa URL este deja în listă."
@@ -1831,6 +1843,9 @@
       "Enabling biometrics lock failed": [
         "Activarea autoblocării cu date biometrice a eșuat."
       ],
+      "Enabling desktop auto-lock": [
+        "Activare blocare automată a desktopului"
+      ],
       "Enabling offline mode...": [
         "Se activează modul fără conexiune..."
       ],
@@ -2051,6 +2066,11 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -2454,6 +2474,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Această funcție este în prezent experimentală pe Linux. Asigurați-vă că sistemul este actualizat."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Această funcție necesită ca aplicația desktop ${ PASS_APP_NAME } să fie instalată și rulată în timpul configurării."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Acest articol nu este în prezent partajat cu nimeni. Invitați persoane pentru a-l partaja."
