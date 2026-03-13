@@ -4,6 +4,7 @@ import { uninstallProton } from "../../macos/uninstall";
 import { clearStorage, isMac } from "../helpers";
 import { getMainWindow, getSpellCheckStatus, resetZoom, toggleSpellCheck, updateZoom } from "../view/viewManagement";
 import { isProdEnv } from "../isProdEnv";
+import { updateSettings } from "../../store/settingsStore";
 import { MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { profiler } from "../profiler/profiler";
 
@@ -31,6 +32,30 @@ export const setApplicationMenu = () => {
                     click: () => shell.openPath(app.getPath("logs")),
                 },
                 { type: "separator" },
+                {
+                    label: c("App menu").t`Enable diagnostic logs`,
+                    type: "normal",
+                    click: () => {
+                        dialog
+                            .showMessageBox({
+                                type: "info",
+                                buttons: [c("App menu").t`Restart with logging`, c("App menu").t`Cancel`],
+                                defaultId: 0,
+                                cancelId: 1,
+                                title: c("App menu").t`Enable diagnostic logs`,
+                                message: c("App menu").t`Enable diagnostic logs from the Chromium engine.`,
+                                detail: c("App menu")
+                                    .t`These logs help us diagnose issues. The app will restart to apply the change.`,
+                            })
+                            .then(({ response }) => {
+                                if (response === 0) {
+                                    updateSettings({ chromiumLoggingEnabled: true });
+                                    app.relaunch();
+                                    app.exit(0);
+                                }
+                            });
+                    },
+                },
                 {
                     label: c("App menu").t`Collect startup performance data`,
                     type: "normal",
