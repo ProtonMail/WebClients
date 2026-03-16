@@ -5,7 +5,8 @@ import {
     getIsOutgoingDelegatedAccessAvailable,
 } from '@proton/account/delegatedAccess/available';
 import type { ThemeColor } from '@proton/colors';
-import type { SectionConfig } from '@proton/components';
+import type { SectionConfig, SubrouteGroup } from '@proton/components';
+import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import {
     getHasExternalMemberCapableB2BPlan,
     getHasVpnB2BPlan,
@@ -201,6 +202,7 @@ export const getAccountAppRoutes = ({
     showMeetDashboard,
     hasPendingInvitations,
     isOLESEnabled,
+    isRecoverySettingsRedesignEnabled,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -236,6 +238,7 @@ export const getAccountAppRoutes = ({
     showMeetDashboardVariant: MeetDashboardVariant | 'disabled' | undefined;
     hasPendingInvitations: boolean;
     isOLESEnabled: boolean;
+    isRecoverySettingsRedesignEnabled: boolean;
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Type, hasPaidMail } = user;
     const credits = referralInfo.maxRewardAmount;
@@ -304,6 +307,91 @@ export const getAccountAppRoutes = ({
 
     // Show B2B onboarding to admins of B2B orgs when OLES is available
     const showBusinessActivation = isOLESEnabled && isOrganizationB2B(organization) && isAdmin;
+
+    const recoverySubrouteGroups: SubrouteGroup[] = [
+        {
+            id: 'password-reset-options',
+            title: c('Title').t`Password reset options`,
+            description: c('Description')
+                .t`How you reset your ${BRAND_NAME} password. This will not recover your encrypted data.`,
+            subroutes: {
+                email: {
+                    id: 'email',
+                    text: c('Title').t`Email verification`,
+                    to: '/email',
+                    variant: SettingsLayoutVariant.Card,
+                },
+                phone: {
+                    id: 'phone',
+                    text: c('Title').t`SMS verification`,
+                    to: '/phone',
+                    variant: SettingsLayoutVariant.Card,
+                },
+            },
+        },
+        {
+            id: 'data-recovery-options',
+            title: c('Title').t`Data recovery options`,
+            description: c('Description').t`How you unlock your encrypted data if you lose your password.`,
+            subroutes: {
+                deviceRecovery: {
+                    id: 'device-backup',
+                    text: c('Title').t`Device data backup`,
+                    to: '/device-backup',
+                    available: isDataRecoveryAvailable,
+                    variant: SettingsLayoutVariant.Card,
+                },
+                backupFile: {
+                    id: 'backup-file',
+                    text: c('Title').t`Recovery file`,
+                    to: '/backup-file',
+                    available: isDataRecoveryAvailable,
+                    variant: SettingsLayoutVariant.Card,
+                },
+                recoveryContacts: {
+                    id: 'recovery-contacts',
+                    text: c('emergency_access').t`Contact-assisted recovery`,
+                    to: '/recovery-contacts',
+                    available: isRecoveryContactsAvailable,
+                    variant: SettingsLayoutVariant.Card,
+                },
+            },
+        },
+        {
+            id: 'advanced-recovery-options',
+            title: c('Title').t`Advanced recovery options`,
+            description: c('Description').t`Methods that include both password reset and data recovery.`,
+            subroutes: {
+                phrase: {
+                    id: 'phrase',
+                    text: c('Title').t`Recovery phrase`,
+                    to: '/phrase',
+                    available: isDataRecoveryAvailable,
+                    variant: SettingsLayoutVariant.Card,
+                },
+                signedInReset: {
+                    id: 'signed-in-reset',
+                    text: c('Title').t`Signed-in reset`,
+                    to: '/signed-in-reset',
+                    available: isSessionRecoveryAvailable,
+                    variant: SettingsLayoutVariant.Card,
+                },
+                qrCode: {
+                    id: 'qr-code',
+                    text: c('Title').t`QR code sign-in`,
+                    to: '/qr-code',
+                    variant: SettingsLayoutVariant.Card,
+                },
+                emergencyContacts: {
+                    id: 'emergency-contacts',
+                    text: c('emergency_access').t`Emergency access`,
+                    to: '/emergency-contacts',
+                    available: isEmergencyAccessAvailable,
+                    variant: SettingsLayoutVariant.Card,
+                },
+            },
+        },
+    ];
 
     return <const>{
         available: true,
@@ -386,43 +474,43 @@ export const getAccountAppRoutes = ({
                     {
                         id: 'assistant-toggle',
                         available: !assistantKillSwitch,
-                        variant: 'card',
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Your subscriptions`,
                         id: 'your-subscriptions',
                         available: isPaid && canPay,
-                        variant: 'card',
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Payment methods`,
                         id: 'payment-methods',
                         available: canPay,
-                        variant: 'card',
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Credits`,
                         id: 'credits',
                         available: canPay,
-                        variant: 'card',
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Gift code`,
                         id: 'gift-code',
                         available: canPay,
-                        variant: 'card',
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Invoices`,
                         id: 'invoices',
                         available: canPay && !isB2BTrial,
-                        variant: 'card',
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Notifications`,
                         id: 'email-subscription',
                         available: !isMember,
-                        variant: 'card',
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Cancel subscription`,
@@ -433,13 +521,13 @@ export const getAccountAppRoutes = ({
                             cancellablePlan &&
                             isSubscriptionRenewEnabled(subscription) &&
                             !cancellableOnlyViaSupport,
-                        variant: 'card',
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Cancel subscription`,
                         id: 'cancel-via-support',
                         available: isPaid && canPay && cancellableOnlyViaSupport,
-                        variant: 'card',
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Cancel subscription`,
@@ -450,7 +538,7 @@ export const getAccountAppRoutes = ({
                             !cancellablePlan &&
                             !hasExternalMemberCapableB2BPlan &&
                             !cancellableOnlyViaSupport,
-                        variant: 'card',
+                        variant: SettingsLayoutVariant.Card,
                     },
                 ],
             },
@@ -470,40 +558,56 @@ export const getAccountAppRoutes = ({
             recovery: {
                 id: 'recovery',
                 text: c('Title').t`Recovery`,
+                description: isRecoverySettingsRedesignEnabled
+                    ? c('Description')
+                          .t`${BRAND_NAME}'s end-to-end encryption means only you can unlock your data. Set up recovery options now to ensure you never lose access.`
+                    : undefined,
                 to: '/recovery',
                 icon: 'key',
                 available: isAccountRecoveryAvailable,
                 notification: recoveryNotification,
-                subsections: [
-                    {
-                        text: '',
-                        id: 'checklist',
-                    },
-                    {
-                        text: c('Title').t`Account recovery`,
-                        id: recoveryIds.account,
-                    },
-                    {
-                        text: c('Title').t`Data recovery`,
-                        id: recoveryIds.data,
-                        available: isDataRecoveryAvailable,
-                    },
-                    {
-                        text: c('emergency_access').t`Emergency access`,
-                        id: recoveryIds.emergencyAccess,
-                        available: isEmergencyAccessAvailable,
-                    },
-                    {
-                        text: c('emergency_access').t`Recovery contacts`,
-                        id: recoveryIds.recoveryContacts,
-                        available: isRecoveryContactsAvailable,
-                    },
-                    {
-                        text: c('Title').t`Password reset settings`,
-                        id: 'password-reset',
-                        available: isSessionRecoveryAvailable,
-                    },
-                ],
+                ...(isRecoverySettingsRedesignEnabled
+                    ? {
+                          subsections: [
+                              {
+                                  text: '',
+                                  id: 'checklist',
+                              },
+                          ],
+                          subrouteGroups: recoverySubrouteGroups,
+                      }
+                    : {
+                          subsections: [
+                              {
+                                  text: '',
+                                  id: 'checklist',
+                              },
+                              {
+                                  text: c('Title').t`Account recovery`,
+                                  id: recoveryIds.account,
+                              },
+                              {
+                                  text: c('Title').t`Data recovery`,
+                                  id: recoveryIds.data,
+                                  available: isDataRecoveryAvailable,
+                              },
+                              {
+                                  text: c('emergency_access').t`Emergency access`,
+                                  id: recoveryIds.emergencyAccess,
+                                  available: isEmergencyAccessAvailable,
+                              },
+                              {
+                                  text: c('emergency_access').t`Contact-assisted recovery`,
+                                  id: recoveryIds.recoveryContacts,
+                                  available: isRecoveryContactsAvailable,
+                              },
+                              {
+                                  text: c('Title').t`Password reset settings`,
+                                  id: 'password-reset',
+                                  available: isSessionRecoveryAvailable,
+                              },
+                          ],
+                      }),
             },
             password: {
                 id: 'password',
@@ -539,7 +643,7 @@ export const getAccountAppRoutes = ({
                         available: isNonPrivateEmergencyAccessAvailable,
                     },
                     {
-                        text: c('emergency_access').t`Recovery contacts`,
+                        text: c('emergency_access').t`Contact-assisted recovery`,
                         id: recoveryIds.recoveryContacts,
                         available: isNonPrivateRecoveryContactsAvailable,
                     },

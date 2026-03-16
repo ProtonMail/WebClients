@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import type { ThemeColor } from '@proton/colors/types';
 import type { SectionConfig } from '@proton/components';
+import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import {
     getHasVpnB2BPlan,
     hasCancellablePlan,
@@ -124,27 +125,27 @@ export const getRoutes = ({
                     text: c('Title').t`Your subscriptions`,
                     id: 'your-subscriptions',
                     available: user.isPaid,
-                    variant: 'card',
+                    variant: SettingsLayoutVariant.Card,
                 },
                 {
                     text: c('Title').t`Payment methods`,
                     id: 'payment-methods',
-                    variant: 'card',
+                    variant: SettingsLayoutVariant.Card,
                 },
                 {
                     text: c('Title').t`Credits`,
                     id: 'credits',
-                    variant: 'card',
+                    variant: SettingsLayoutVariant.Card,
                 },
                 {
                     text: c('Title').t`Gift code`,
                     id: 'gift-code',
-                    variant: 'card',
+                    variant: SettingsLayoutVariant.Card,
                 },
                 {
                     text: c('Title').t`Invoices`,
                     id: 'invoices',
-                    variant: 'card',
+                    variant: SettingsLayoutVariant.Card,
                     available: !isB2BTrial,
                 },
                 {
@@ -155,7 +156,7 @@ export const getRoutes = ({
                         cancellablePlan &&
                         isSubscriptionRenewEnabled(subscription) &&
                         !cancellableOnlyViaSupport,
-                    variant: 'card',
+                    variant: SettingsLayoutVariant.Card,
                 },
                 {
                     text: c('Title').t`Downgrade account`,
@@ -170,14 +171,14 @@ export const getRoutes = ({
                         !cancellablePlan &&
                         !hasVpnB2BPlan &&
                         !cancellableOnlyViaSupport,
-                    variant: 'card',
+                    variant: SettingsLayoutVariant.Card,
                 },
                 {
                     text: c('Title').t`Cancel subscription`,
                     id: 'cancel-via-support',
                     // B2B cancellation has a different flow, so we don't consider it a classic cancellable plan
                     available: user.isPaid && cancellableOnlyViaSupport,
-                    variant: 'card',
+                    variant: SettingsLayoutVariant.Card,
                 },
             ],
         },
