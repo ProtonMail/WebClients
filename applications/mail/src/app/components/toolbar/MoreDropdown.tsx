@@ -30,6 +30,7 @@ import SnoozeToolbarDropdownStepWrapper, {
     SnoozeToolbarDropdownStepWrapperProps,
 } from '../list/snooze/containers/SnoozeToolbarDropdownStepWrapper';
 import type { DropdownRender } from '../message/extrasHeader/HeaderDropdown';
+import ToolbarDropdown from './ToolbarDropdown';
 import {
     ArchiveAction,
     DeleteAction,
@@ -40,8 +41,7 @@ import {
     NoSpamAction,
     SpamAction,
     TrashAction,
-} from './MoreDropdown/MoreDropdownActions';
-import ToolbarDropdown from './ToolbarDropdown';
+} from './more-dropdown/MoreDropdownActions';
 
 const canEmpty = (labelID: string, elementIDs: string[], selectedIDs: string[], isSearch: boolean) => {
     return (
