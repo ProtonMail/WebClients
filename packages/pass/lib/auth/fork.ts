@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { ARGON2_PARAMS } from '@proton/crypto/lib';
 import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
+import { encodeUserData } from '@proton/pass/lib/auth/store.utils';
 import type { OfflineComponents } from '@proton/pass/lib/cache/crypto';
 import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import { QA_SERVICE } from '@proton/pass/lib/qa/service';
@@ -36,7 +37,6 @@ import getRandomString from '@proton/utils/getRandomString';
 import { AUTH_MODE } from './flags';
 import { LockMode } from './lock/types';
 import { type AuthSession, type AuthSessionVersion, SESSION_VERSION } from './session';
-import { encodeUserData } from './store';
 
 export type RequestForkOptions = {
     app: APP_NAMES;
