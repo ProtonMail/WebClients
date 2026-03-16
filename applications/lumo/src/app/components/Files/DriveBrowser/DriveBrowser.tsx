@@ -663,14 +663,6 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
 
         // Check for errors from both SDK and local initialization
         const displayError = error || localError;
-        console.log(
-            'DriveBrowser render - SDK error:',
-            error,
-            'localError:',
-            localError,
-            'displayError:',
-            displayError
-        );
 
         return (
             <div className={'drive-browser-container flex flex-column flex-nowrap h-full relative p-4'}>
