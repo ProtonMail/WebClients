@@ -1,16 +1,10 @@
-import type { ImportType } from '@proton/activation/src/interface';
 import { selectDraftModal } from '@proton/activation/src/logic/draft/draft.selector';
-import {
-    readImapInstructions,
-    resetImapDraft,
-    selectImapProduct,
-} from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
+import { readImapInstructions, resetImapDraft } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import ContactImportModal from '@proton/components/containers/contacts/import/ContactImportModal';
 
 import CalendarModal from './Imap/CalendarModal/CalendarModal';
 import ImapMailModal from './Imap/ImapMailModal/ImapMailModal';
-import ImapProductsModal from './Imap/ImapProductsModal/ImapProductsModal';
 import InstructionsModal from './Imap/InstructionsModal/InstructionsModal';
 import OAuthModal from './OAuth/OAuthModal';
 
@@ -19,17 +13,6 @@ import './MainModal.scss';
 const MainModal = () => {
     const dispatch = useEasySwitchDispatch();
     const modal = useEasySwitchSelector(selectDraftModal);
-
-    if (modal === 'select-product') {
-        return (
-            <ImapProductsModal
-                onClick={(selectedProduct: ImportType) => {
-                    dispatch(selectImapProduct({ product: selectedProduct }));
-                }}
-                onClose={() => dispatch(resetImapDraft())}
-            />
-        );
-    }
 
     if (modal === 'read-instructions') {
         return (
