@@ -3840,6 +3840,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrabile"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Inserisci il tuo nome utente senza il dominio (@example.com)"
+      ],
+      "Invalid coupon": [
+        "Coupon non valido"
+      ],
+      "Please complete the billing details": [
+        "Completa i dettagli di fatturazione"
+      ],
+      "This field is invalid": [
+        "Questo campo non è valido"
       ]
     },
     "error": {
@@ -4713,6 +4725,9 @@
       ],
       "Import from Yahoo": [
         "Importa da Yahoo"
+      ],
+      "Advanced import": [
+        "Importazione avanzata"
       ]
     },
     "Import warning": {
@@ -6785,6 +6800,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Potrai ancora visualizzare i dati del tuo account, ma tutti gli account utente verranno rimossi dalla tua organizzazione."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Riceverai il premio in crediti 1 mese dopo che il tuo amico si sarà abbonato a un piano annuale e 2 mesi dopo che si sarà abbonato a un piano mensile."
       ]
     },
     "info": {
@@ -7521,6 +7539,9 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Last 6 months only": [
+        "Solo ultimi 6 mesi"
       ]
     },
     "Label for contact group color": {
@@ -9994,6 +10015,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Il tuo abbonamento ha attualmente uno sconto esistente. Passare a questa nuova promozione significa che lo sconto esistente non sarà più applicato."
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inclusa l'imposta del ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Incluse imposte del ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Taxes ${ rate }%": [
+        "Imposte ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -12875,6 +12905,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "Hai 5 GB di spazio archiviazione"
+      ],
+      "Choose a provider": [
+        "Scegli un fornitore"
+      ],
+      "Custom": [
+        "Personalizza"
+      ],
+      "Reverse charge not supported": [
+        "Inversione contabile non supportata"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13182,6 +13221,30 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La tua prova finirà il ${ textDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ textDate }. ${ action }"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB di spazio di archiviazione"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blocca annunci, tracker e malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticazione 2FA integrata"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Il prezzo del rinnovo dipende dalla regione di fatturazione e dall'ABN."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Il prezzo del rinnovo dipende dalla regione di fatturazione e dall'EIN."
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Apri in ${ appName }"
       ]
     }
   }
