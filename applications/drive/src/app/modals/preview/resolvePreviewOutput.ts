@@ -75,7 +75,7 @@ export function resolvePreviewOutput(state: PreviewRawState): PreviewResolvedOut
 
     const thumbnailUrl =
         effectivePreviewMethod === ContentPreviewMethod.Buffer && !state.nodeData
-            ? undefined
+            ? state.smallThumbnailUrl
             : state.largeThumbnail?.url || state.smallThumbnailUrl;
 
     const data = effectivePreviewMethod === ContentPreviewMethod.Buffer ? state.nodeData?.contents : undefined;
