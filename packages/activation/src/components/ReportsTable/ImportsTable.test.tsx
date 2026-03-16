@@ -5,7 +5,7 @@ import { setupServer } from 'msw/node';
 import { headers } from '@proton/activation/msw.header';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
 
-import ReportsTable from './ReportsTable';
+import ImportsTable from './ImportsTable';
 
 const server = setupServer();
 
@@ -28,17 +28,16 @@ afterAll(() => {
     server.close();
 });
 
-describe('Reports table testing', () => {
-    it('Should display placeholder text when no imports available', async () => {
+describe('Imports table testing', () => {
+    it('Should not display the import history when no imports available', async () => {
         server.use(
             http.get('importer/v1/reports', () => HttpResponse.json([], { headers })),
-            http.get('importer/v1/importers', () => HttpResponse.json([], { headers })),
-            http.get('importer/v1/sync', () => HttpResponse.json([], { headers }))
+            http.get('importer/v1/importers', () => HttpResponse.json([], { headers }))
         );
 
-        easySwitchRender(<ReportsTable />);
+        easySwitchRender(<ImportsTable />);
 
-        screen.getByTestId('reportsTable:noImports');
+        expect(screen.queryByText('Import history')).not.toBeInTheDocument();
     });
 
     it('Should display the list of finished importer', async () => {
@@ -81,7 +80,7 @@ describe('Reports table testing', () => {
 
         server.use(http.get('importer/v1/reports', () => HttpResponse.json(finishedReport, { headers })));
 
-        easySwitchRender(<ReportsTable />);
+        easySwitchRender(<ImportsTable />);
 
         const reportRows = await waitFor(() => screen.findAllByTestId('reportsTable:reportRow'));
         expect(reportRows).toHaveLength(3);
@@ -154,7 +153,7 @@ describe('Reports table testing', () => {
             })
         );
 
-        easySwitchRender(<ReportsTable />);
+        easySwitchRender(<ImportsTable />);
 
         await waitFor(() => screen.getByTestId('ReportsTable:reconnectImporter'));
 
@@ -177,43 +176,5 @@ describe('Reports table testing', () => {
 
         fireEvent.change(passwordInput, { target: { value: 'app password' } });
         await waitFor(() => expect(submitButton).toBeEnabled());
-    });
-
-    it('Should display the list of ongoing forwarding', async () => {
-        const ongoingForward = {
-            Code: 1000,
-            Syncs: [
-                {
-                    ID: 'forward-1',
-                    ImporterID: 'forwardImporter-1',
-                    Account: 'easyflavien@gmail.com',
-                    Product: 'Mail',
-                    State: 1,
-                    CreateTime: 1677771164,
-                    LastRenewTime: 1677771164,
-                    LastImportTime: 0,
-                },
-            ],
-        };
-
-        const importersSpy = jest.fn();
-
-        server.use(
-            http.get('importer/v1/sync', () => {
-                importersSpy();
-                return HttpResponse.json(ongoingForward, { headers });
-            })
-        );
-
-        easySwitchRender(<ReportsTable />);
-
-        await waitFor(() => expect(importersSpy).toHaveBeenCalledTimes(1));
-        const reportRows = screen.getAllByTestId('reportsTable:syncRow');
-        expect(reportRows).toHaveLength(1);
-
-        const deleteReport = screen.getAllByTestId('ReportsTable:deleteForward');
-        fireEvent.click(deleteReport[0]);
-
-        await waitFor(() => screen.getByTestId('ReportsTable:deleteModal'));
     });
 });

@@ -5,8 +5,9 @@ import { deleteReportSummary, rollbackReportSummary } from '@proton/activation/s
 import type { ReportSummaryID } from '@proton/activation/src/logic/reports/reports.interface';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms/Button/Button';
-import { Alert, DropdownActions, Prompt, useModalState } from '@proton/components';
+import { Prompt, useModalState } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 interface Props {
     reportSummaryID: ReportSummaryID;
@@ -21,29 +22,25 @@ const ReportRowActions = ({ reportSummaryID, rollbackState }: Props) => {
     const [loadingDeleteRecord, withLoadingDeleteRecord] = useLoading();
     const [loadingUndoRecord, withLoadingUndoRecord] = useLoading();
 
-    const list =
-        loadingUndoRecord || rollbackState === ApiReportRollbackState.ROLLING_BACK
-            ? []
-            : [
-                  {
-                      text: c('Action').t`Delete record`,
-                      onClick: () => showDeleteModal(true),
-                      loading: loadingDeleteRecord,
-                      'data-testid': 'ReportsTable:deleteReport',
-                  },
-                  ...(rollbackState === ApiReportRollbackState.CAN_ROLLBACK && !loadingDeleteRecord
-                      ? [
-                            {
-                                text: c('Action').t`Undo import`,
-                                onClick: () => showRollbackModal(true),
-                            },
-                        ]
-                      : []),
-              ];
+    if (loadingUndoRecord || rollbackState === ApiReportRollbackState.ROLLING_BACK) {
+        return null;
+    }
 
     return (
-        <>
-            <DropdownActions size="small" list={list} />
+        <div className="inline-flex gap-1">
+            {rollbackState === ApiReportRollbackState.CAN_ROLLBACK && !loadingDeleteRecord && (
+                <Button onClick={() => showRollbackModal(true)}>{c('Action').t`Undo import`}</Button>
+            )}
+
+            <Button
+                onClick={() => showDeleteModal(true)}
+                loading={loadingDeleteRecord}
+                data-testid="ReportsTable:deleteReport"
+                shape="ghost"
+                icon
+            >
+                <IcTrash alt={c('Action').t`Delete record`} />
+            </Button>
 
             {renderDeleteModal && (
                 <Prompt
@@ -61,9 +58,7 @@ const ReportRowActions = ({ reportSummaryID, rollbackState }: Props) => {
                     ]}
                     data-testid="ReportsTable:deleteModal"
                 >
-                    <Alert className="mb-4" type="error">
-                        {c('Warning').t`You will not see this import record in the list any more.`}
-                    </Alert>
+                    {c('Warning').t`You will not see this import record in the list anymore.`}
                 </Prompt>
             )}
 
@@ -82,12 +77,10 @@ const ReportRowActions = ({ reportSummaryID, rollbackState }: Props) => {
                         <Button color="weak" onClick={() => showRollbackModal(false)}>{c('Action').t`Cancel`}</Button>,
                     ]}
                 >
-                    <Alert className="mb-4" type="error">
-                        {c('Warning').t`This will remove all messages, folders, and labels created during the import.`}
-                    </Alert>
+                    {c('Warning').t`This will remove all messages, folders, and labels created during the import.`}
                 </Prompt>
             )}
-        </>
+        </div>
     );
 };
 
