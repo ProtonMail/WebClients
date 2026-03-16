@@ -1156,6 +1156,12 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Close search": [
+        "검색 닫기"
+      ],
+      "Search groups": [
+        "그룹 검색"
       ]
     },
     "action": {
@@ -1925,6 +1931,27 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "회원님의 데이터를 복사하기 위해 ${ BRAND_NAME }에 대한 접근 권한을 부여해야 합니다. 권한 수락 후 다시 돌아와 계속 진행해 주세요."
+      ],
+      "Completed": [
+        "완료"
+      ],
+      "Has errors": [
+        "오류 있음"
+      ],
+      "In progress": [
+        "진행 중"
+      ],
+      "Not started": [
+        "시작 전"
+      ],
+      "Settings": [
+        "설정"
+      ],
+      "Status": [
+        "상태"
+      ],
+      "Users migrated": [
+        "사용자가 이전되었습니다."
       ]
     },
     "Browser": {
@@ -3495,6 +3522,9 @@
       ],
       "Special offer: Save 90% off our premium plan": [
         "특별 할인: 프리미엄 플랜 90% 절약된 가격으로 구매"
+      ],
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "첫 달 ${ offerPrice }. 이후 월 ${ regularPrice }로 갱신되며, 언제든지 취소할 수 있습니다."
       ]
     },
     "dollar_offer: Action": {
@@ -4490,6 +4520,15 @@
       ],
       "ZIP code is required": [
         "우편번호가 필요합니다"
+      ],
+      "Invalid coupon": [
+        "유효하지 않은 쿠폰"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "이 플랜에서는 매입자 납부제도(Reverse charge)가 지원되지 않습니다."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "최소 기부 금액은 ${ price }입니다."
       ]
     },
     "error": {
@@ -8353,6 +8392,18 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "그룹을 생성하려면 사용자 지정 도메인이 필요합니다. 사용자 지정 도메인이 설정되어 있지 않다면 ${ linkToDomainPage }에서 설정하세요."
+      ],
+      "Other": [
+        "기타"
+      ],
+      "To continue to ${ product }": [
+        "${ product }(으)로 계속하기"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "귀하의 계정은 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 선택하신 요금제에서 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 요금제를 선택하십시오."
       ]
     },
     "info": {
@@ -9331,6 +9382,9 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Import recent mails": [
+        "최근 메일 가져오기"
       ]
     },
     "label": {
@@ -9964,6 +10018,9 @@
       ],
       "Sign in to access your ${ appName } account": [
         "${ appName } 계정에 접근하려면 로그인"
+      ],
+      "${ appName }: Sign-in": [
+        "${ appName }: 로그인"
       ]
     },
     "Modal title": {
@@ -11974,6 +12031,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "구독에 현재 기존 할인이 적용되어 있습니다. 새로운 프로모션으로 변경하면 기존 할인이 더 이상 적용되지 않습니다."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "매입자 납부제도(Reverse charge)가 적용됩니다."
       ]
     },
     "Payments.Error": {
@@ -16013,6 +16073,9 @@
       ],
       "Your subscriptions": [
         "구독"
+      ],
+      "Reverse charge not supported": [
+        "매입자 납부제도(Reverse charge)가 지원되지 않습니다."
       ]
     },
     "Title for payment methods table": {

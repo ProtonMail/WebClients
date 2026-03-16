@@ -1156,6 +1156,12 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Close search": [
+        "Lukk søk"
+      ],
+      "Search groups": [
+        "Søk i grupper"
       ]
     },
     "action": {
@@ -1945,6 +1951,27 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Du må gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter at du har godtatt tillatelsene, kan du komme tilbake hit for å fortsette."
+      ],
+      "Completed": [
+        "Fullført"
+      ],
+      "Has errors": [
+        "Inneholder feil"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Not started": [
+        "Ikke startet"
+      ],
+      "Settings": [
+        "Innstillinger"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Users migrated": [
+        "Brukere migrert"
       ]
     },
     "Browser": {
@@ -4532,6 +4559,18 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Skriv inn brukernavnet ditt uten domenet (@eksempel.com)"
+      ],
+      "Invalid coupon": [
+        "Ugyldig kupong"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omvendt avgiftsplikt støttes ikke for denne planen"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimumbeløpet for donasjon er ${ price }"
       ]
     },
     "error": {
@@ -8497,6 +8536,12 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Et egendefinert domene er nødvendig for å opprette grupper. Hvis du ikke har satt opp et egendefinert domene, gjør du det først under ${ linkToDomainPage }."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Kontoen din er for øyeblikket konfigurert til å bruke ordningen for omvendt avgiftsplikt. Dette støttes ikke for den valgte planen. For å fortsette, fjern enten MVA-nummeret fra faktureringsadressen eller velg en annen plan."
       ]
     },
     "info": {
@@ -9482,6 +9527,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Import recent mails": [
+        "Importer nylige e-poster"
       ]
     },
     "label": {
@@ -12176,6 +12224,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Omvendt avgiftsplikt gjelder."
       ]
     },
     "Payments.Error": {
@@ -16284,6 +16335,9 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Reverse charge not supported": [
+        "Omvendt avgiftsplikt støttes ikke"
       ]
     },
     "Title for payment methods table": {

@@ -1156,6 +1156,12 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Close search": [
+        "关闭搜索"
+      ],
+      "Search groups": [
+        "搜索群组"
       ]
     },
     "action": {
@@ -1928,6 +1934,27 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "您需要授予 ${ BRAND_NAME } 复制数据的权限。接受权限后，请返回此处继续。"
+      ],
+      "Completed": [
+        "已完成"
+      ],
+      "Has errors": [
+        "出错啦"
+      ],
+      "In progress": [
+        "进行中"
+      ],
+      "Not started": [
+        "未开始"
+      ],
+      "Settings": [
+        "设置"
+      ],
+      "Status": [
+        "状态"
+      ],
+      "Users migrated": [
+        "已迁移的用户"
       ]
     },
     "Browser": {
@@ -4502,6 +4529,18 @@
       ],
       "ZIP code is required": [
         "必须填写邮政编码"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "请输入您的用户名（不含 @example.com 域名）"
+      ],
+      "Invalid coupon": [
+        "优惠券无效"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "此套餐不支持反向收费机制"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "最低捐赠金额为 ${ price }"
       ]
     },
     "error": {
@@ -8380,6 +8419,12 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "创建群组需要自定义域名！如果您尚未设置自定义域名，请先在 ${ linkToDomainPage } 中进行设置。"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "您的账户当前已配置为应用反向收费机制，但所选套餐不支持此机制。若要继续，请从账单地址中移除增值税号，或选择其他套餐。"
       ]
     },
     "info": {
@@ -9358,6 +9403,9 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Import recent mails": [
+        "导入最近的邮件"
       ]
     },
     "label": {
@@ -12004,6 +12052,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您当前的订阅已享有一个现有折扣，转用此新促销意味着现有折扣将不再适用。"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "适用增值税反向收费机制"
       ]
     },
     "Payments.Error": {
@@ -15947,6 +15998,9 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "Reverse charge not supported": [
+        "不支持反向收费"
       ]
     },
     "Title for payment methods table": {

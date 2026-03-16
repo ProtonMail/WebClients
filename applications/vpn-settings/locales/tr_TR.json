@@ -843,7 +843,7 @@
         "Ülke ara"
       ],
       "Search groups": [
-        "Gruplarda ara"
+        "Grupları ara"
       ],
       "See DNS TXT record": [
         "DNS TXT kaydını görüntüle"
@@ -1871,10 +1871,10 @@
         "Verileri ${ BRAND_NAME } üzerine kopyalamak için Google Marketplace uygulaması"
       ],
       "Has errors": [
-        "Hatalı"
+        "Sorunlar çıktı"
       ],
       "In progress": [
-        "Devam ediyor"
+        "İşleniyor"
       ],
       "Install app": [
         "Uygulamayı kur"
@@ -1908,7 +1908,7 @@
         "Aktarım durumu"
       ],
       "Not started": [
-        "Başlatılmadı"
+        "Başlatılmamış"
       ],
       "Organization does not have enough seats available": [
         "Kuruluşun yeterli koltuk sayısı yok"
@@ -1953,7 +1953,7 @@
         "Kullanıcı"
       ],
       "Users migrated": [
-        "Kullanıcılar taşındı"
+        "Kullanıcılar aktarıldı"
       ],
       "Verify installation": [
         "Kurulumu doğrula"
@@ -4109,7 +4109,7 @@
         "6 rakam yazın"
       ],
       "Enter your username without the domain (@example.com)": [
-        "Kullanıcı adınızı etki alanı (@example.com) olmadan girin"
+        "Kullanıcı adınızı etki alanı (@example.com) olmadan yazın"
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
@@ -4187,7 +4187,7 @@
         "Kod geçersiz"
       ],
       "Invalid coupon": [
-        "Geçersiz kupon"
+        "Kupon geçersiz"
       ],
       "Invalid domain": [
         "Etki alanı geçersiz"
@@ -4387,7 +4387,7 @@
         "İstek zaman aşımına uğradı"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "Bu tarife için sorumlu sıfatıyla KDV usulü desteklenmemektedir"
+        "Bu tarifede tersine KDV uygulaması desteklenmiyor"
       ],
       "Server not found": [
         "Sunucu bulunamadı"
@@ -4459,7 +4459,7 @@
         "Eklenebilecek en az kredi tutarı: ${ price }"
       ],
       "The minimum donation amount is ${ price }": [
-        "Minimum bağış tutarı ${ price }"
+        "En az bağış tutarı ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "İlke adının uzunluğu 3 ile 40 karakter arasında olmalıdır."
@@ -6193,7 +6193,7 @@
         "${ BRAND_NAME } tarafından sunulan bir ${ protonSubdomain }, hızlıca bir alt etki alanı kurmanızı sağlar. ${ learnMoreLink }"
       ],
       "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Grup oluşturmak için özel etki alanı gereklidir. Eğer ayarlanmış bir özel etki alanınız yoksa önce ${ linkToDomainPage } kısmından bunu yapın."
+        "Grup oluşturmak için bir özel etki alanı gereklidir. Bir özel etki alanı kurulumunuz yoksa, önce ${ linkToDomainPage } bölümünden bunu yapın."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Daha sonra sertifikayı kolayca geçersiz kılmaya ya da uzatmaya yardımcı olacak bir ad."
@@ -8456,7 +8456,7 @@
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Hesabınız şu anda sorumlu sıfatıyla KDV usulünü uygulayacak şekilde yapılandırılmış. Bu durum seçilen tarife için desteklenmemektedir. Devam etmek için ya fatura adresinden KDV numarasını kaldırın ya da farklı bir tarife seçin."
+        "Hesabınızda şu anda tersine KDV uygulaması yapılandırılmış. Seçilmiş tarifede bu uygulama desteklenmiyor. İlerlemek için fatura adresinden KDV numarasını kaldırabilir ya da farklı bir tarife seçebilirsiniz."
       ],
       "Your account was successfully updated with this promotion": [
         "Hesabınız bu fırsata göre güncellendi"
@@ -12202,7 +12202,7 @@
         "KDV numarası"
       ],
       "VAT reverse charge mechanism applies.": [
-        "Sorumlu sıfatıyla KDV uygulaması geçerlidir."
+        "Tersine KDV uygulaması kullanılıyor."
       ],
       "You already have a subscription to this plan.": [
         "Bu tarife için zaten bir aboneliğiniz var."
@@ -16033,7 +16033,7 @@
         "Yönetici yetkilerini geri yükle"
       ],
       "Reverse charge not supported": [
-        "Sorumlu sıfatıyla KDV desteklenmiyor"
+        "Tersine KDV uygulaması desteklenmiyor"
       ],
       "Revoke certificate?": [
         "Sertifika geçersiz kılınsın mı?"
