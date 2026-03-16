@@ -5,7 +5,8 @@ import {
     fromBiometricsEncryptedOfflineKD,
     intoBiometricsEncryptedOfflineKD,
 } from '@proton/pass/lib/auth/lock/biometrics/utils';
-import { type LockAdapter, LockMode } from '@proton/pass/lib/auth/lock/types';
+import type { LockAdapterBiometrics } from '@proton/pass/lib/auth/lock/types';
+import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { getInvalidPasswordString } from '@proton/pass/lib/auth/utils';
 import { generateOfflineComponents } from '@proton/pass/lib/cache/crypto';
@@ -15,7 +16,6 @@ import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
 import { PassEncryptionTag } from '@proton/pass/types';
 import { SilentError } from '@proton/pass/utils/errors/errors';
 import { logger } from '@proton/pass/utils/logger';
-import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
@@ -32,10 +32,7 @@ export const generateBiometricsKey = async (core: PassCoreContextValue, offlineK
  * we can only password lock if we have a valid offline config in
  * order to be able to verify the user password locally without an
  * SRP flow. Booting offline should rely on this lock adapter */
-export const biometricsLockAdapterFactory = (
-    auth: AuthService,
-    core: PassCoreContextValue
-): LockAdapter<XorObfuscation, string> => {
+export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreContextValue): LockAdapterBiometrics => {
     const { authStore, api, getPersistedSession, onSessionPersist } = auth.config;
 
     /** Persist the `unlockRetryCount` without re-encrypting
@@ -59,7 +56,7 @@ export const biometricsLockAdapterFactory = (
         }
     };
 
-    const adapter: LockAdapter<XorObfuscation, string> = {
+    const adapter: LockAdapterBiometrics = {
         type: LockMode.BIOMETRICS,
 
         check: async () => {

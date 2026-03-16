@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { type LockAdapter, LockMode } from '@proton/pass/lib/auth/lock/types';
+import type { LockAdapterPassword } from '@proton/pass/lib/auth/lock/types';
+import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { getInvalidPasswordString } from '@proton/pass/lib/auth/utils';
 import { generateOfflineComponents, getOfflineKeyDerivation } from '@proton/pass/lib/cache/crypto';
@@ -9,7 +10,7 @@ import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
 import { PassEncryptionTag } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { type XorObfuscation, deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { zeroize } from '@proton/pass/utils/object/zero';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
@@ -19,7 +20,7 @@ import noop from '@proton/utils/noop';
  * we can only password lock if we have a valid offline config in
  * order to be able to verify the user password locally without an
  * SRP flow. Booting offline should rely on this lock adapter */
-export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter<XorObfuscation> => {
+export const passwordLockAdapterFactory = (auth: AuthService): LockAdapterPassword => {
     const { authStore, api, getPersistedSession, onSessionPersist } = auth.config;
 
     /** Persists `unlockRetryCount` on the session blob without
@@ -38,7 +39,7 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter<XorOb
         }
     };
 
-    const adapter: LockAdapter<XorObfuscation> = {
+    const adapter: LockAdapterPassword = {
         type: LockMode.PASSWORD,
 
         check: async () => {

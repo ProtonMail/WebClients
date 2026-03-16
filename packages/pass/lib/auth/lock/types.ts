@@ -1,11 +1,6 @@
 import { AppStatus, type Maybe } from '@proton/pass/types';
 import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 
-import type { biometricsLockAdapterFactory } from './biometrics/adapter';
-import type { desktopLockAdapterFactory } from './desktop/adapter';
-import type { passwordLockAdapterFactory } from './password/adapter';
-import type { sessionLockAdapterFactory } from './session/adapter';
-
 export enum LockMode {
     /** Session API Lock with PIN code */
     SESSION = 'SESSION',
@@ -56,10 +51,15 @@ export interface LockAdapter<TCreate = string, TUnlock = TCreate> {
     unlock: (secret: TUnlock) => Promise<Maybe<string>>;
 }
 
+export type LockAdapterBiometrics = LockAdapter<XorObfuscation, string>;
+export type LockAdapterPassword = LockAdapter<XorObfuscation, XorObfuscation>;
+export type LockAdapterSession = LockAdapter<string, string>;
+export type LockAdapterDesktop = LockAdapter<string, string>;
+
 export type LockAdapterMap = {
-    [LockMode.BIOMETRICS]: ReturnType<typeof biometricsLockAdapterFactory>;
-    [LockMode.PASSWORD]: ReturnType<typeof passwordLockAdapterFactory>;
-    [LockMode.SESSION]: ReturnType<typeof sessionLockAdapterFactory>;
-    [LockMode.DESKTOP]: ReturnType<typeof desktopLockAdapterFactory>;
+    [LockMode.BIOMETRICS]: LockAdapterBiometrics;
+    [LockMode.PASSWORD]: LockAdapterPassword;
+    [LockMode.SESSION]: LockAdapterSession;
+    [LockMode.DESKTOP]: LockAdapterDesktop;
     [LockMode.NONE]: never;
 };

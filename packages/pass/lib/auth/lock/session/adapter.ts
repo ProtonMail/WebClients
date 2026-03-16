@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
-import { type LockAdapter, LockMode } from '@proton/pass/lib/auth/lock/types';
+import type { LockAdapterSession } from '@proton/pass/lib/auth/lock/types';
+import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { SESSION_VERSION, decryptSessionBlob, getPersistedSessionKey } from '@proton/pass/lib/auth/session';
 import type { Maybe } from '@proton/pass/types';
@@ -20,7 +21,7 @@ import {
     unlockSession,
 } from './lock.requests';
 
-export const sessionLockAdapterFactory = (auth: AuthService): LockAdapter => {
+export const sessionLockAdapterFactory = (auth: AuthService): LockAdapterSession => {
     const { authStore, api, onNotification } = auth.config;
 
     const getPersistedToken = async (localID: Maybe<number>): Promise<Maybe<string>> => {
@@ -33,7 +34,7 @@ export const sessionLockAdapterFactory = (auth: AuthService): LockAdapter => {
         return decryptedSession.sessionLockToken;
     };
 
-    const adapter: LockAdapter = {
+    const adapter: LockAdapterSession = {
         type: LockMode.SESSION,
 
         /** Calling this function when a lock is registered and active
