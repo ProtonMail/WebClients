@@ -3986,6 +3986,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Schema de taxare inversă nu este acceptată pentru acest plan."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduceți numele de utilizator fără domeniu (@exemplu.com)."
       ]
     },
     "error": {
@@ -10371,6 +10374,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Se aplică mecanismul de taxare inversă a TVA."
       ]
     },
     "Payments.Error": {
@@ -10824,6 +10830,12 @@
       ],
       "Use your own email domain": [
         "Utilizați propriul domeniu de e-mail"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Extindeți-vă abonamentul și salvați ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Treceți la planul nostru anual și salvați ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
