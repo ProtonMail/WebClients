@@ -1025,6 +1025,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსიის დასრულების დროა ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Edit billing address": [
+        "გადახდის მისამართის ჩასწორება"
       ]
     },
     "action": {
@@ -3978,6 +3981,12 @@
       ],
       "ZIP code is required": [
         "საფოსტო კოდი აუცილებელია"
+      ],
+      "Invalid coupon": [
+        "არასწორი კუპონი"
+      ],
+      "Invalid VAT number": [
+        "არასწორი დღგს ნომერი"
       ]
     },
     "error": {
@@ -9538,6 +9547,12 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "სან-ფრანცისკო"
       ]
     },
     "Placeholder for contact group name": {
@@ -11924,6 +11939,9 @@
       ],
       "Your shorter address is now ready": [
         "თქვენი მოკლე მისამართი ახლა მზადაა"
+      ],
+      "Spring Sale": [
+        "საგაზაფხულო ფასდაკლება"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

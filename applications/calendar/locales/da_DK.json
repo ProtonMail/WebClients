@@ -1022,6 +1022,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
+      ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
       ]
     },
     "action": {
@@ -4037,6 +4040,12 @@
       ],
       "ZIP code is required": [
         "Postnummer er påkrævet"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Indtast dit brugernavn uden domænet (@example.com)"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omvendt betalingsordning understøttes ikke for dette abonnement"
       ]
     },
     "error": {
@@ -6503,6 +6512,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nået grænsen for reservationspladser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Din konto er i øjeblikket konfigureret til at anvende omvendt betalingspligt, som ikke er understøttet i det valgte abonnement. For at fortsætte skal du enten fjerne momsnummeret fra faktureringsadressen eller vælge et andet abonnement."
       ]
     },
     "info": {
@@ -12150,6 +12162,9 @@
       ],
       "Spring Sale": [
         "Forårsudsalg"
+      ],
+      "Reverse charge not supported": [
+        "Fakturering med omvendt betaling understøttes ikke"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12731,6 +12746,9 @@
       ],
       "Get the deal": [
         "Tag imod tilbuddet"
+      ],
+      "SPRING SALE 2026": [
+        "FORÅRSALG 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12805,6 +12823,12 @@
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Forlæng Deres abonnement og gem ${ discountPercent } %!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Skift til vores årlige abonnement og gem ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Label": {
@@ -12817,7 +12841,7 @@
         "i 12 måneder"
       ],
       "SPRING SALE": [
-        "FORÅRSUDSALG"
+        "FORÅR SALG"
       ]
     }
   }

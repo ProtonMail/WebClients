@@ -988,6 +988,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Edit billing address": [
+        "編輯帳單地址"
       ]
     },
     "action": {
@@ -1058,6 +1061,18 @@
       ],
       "Users": [
         "使用者"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI 授權"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } 個席次"
+      ],
+      "Dedicated VPN servers": [
+        "專用 VPN 伺服器"
+      ],
+      "Servers": [
+        "伺服器"
       ]
     },
     "Alarm notification": {
@@ -1298,6 +1313,15 @@
       ],
       "Built-in 2FA authenticator": [
         "內建雙重驗證機制"
+      ],
+      "Access advanced AI models": [
+        "存取進階 AI 模型"
+      ],
+      "Connect 10 devices at once": [
+        "同時連線 10 臺裝置"
+      ],
+      "Unlimited daily chats": [
+        "無限每日聊天"
       ]
     },
     "Billing cycle option": {
@@ -3823,6 +3847,12 @@
       ],
       "ZIP code is required": [
         "郵遞區號為必要項目"
+      ],
+      "Invalid coupon": [
+        "無效優待券"
+      ],
+      "Invalid VAT number": [
+        "錯誤的統一編號"
       ]
     },
     "error": {
@@ -4410,6 +4440,9 @@
       ],
       "Username": [
         "使用者名稱"
+      ],
+      "Drawer": [
+        "抽屜"
       ]
     },
     "Hint": {
@@ -6819,6 +6852,15 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "透過終端機安全地存取 ${ PASS_APP_NAME }，適合程式、自動化、和開發流程。"
+      ],
+      "Emails (last 6 months)": [
+        "電子郵件（最近六個月）"
+      ],
+      "Last 6 months only": [
+        "僅過去 6 個月"
       ]
     },
     "label": {
@@ -8173,6 +8215,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "您可有多於一位管理員。所有管理員可新增並管理使用者，惟僅限主要管理員可控制繳款單管理。"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "${ BRAND_NAME } 客戶服務團隊於歐洲辦公時間內，為 ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } 位或以上使用者的客戶提供電話支援"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -8589,6 +8634,9 @@
       ],
       "Your free trial has started": [
         "您的免費試用已開始"
+      ],
+      "Cancel anytime before then.": [
+        "於之前隨時取消。"
       ]
     },
     "Option": {
@@ -8891,6 +8939,12 @@
       ],
       "I'm purchasing as a business": [
         "我以公司名義購買"
+      ],
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% 稅金：${ taxAmountElement }"
+      ],
+      "Including ${ rate }% tax": [
+        "包含 ${ rate }% 稅金"
       ]
     },
     "Payments.Error": {
@@ -9803,6 +9857,9 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "使用兩年的 ${ planName } 升級並節省更多"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "取得存取在110 多個國家提供極速 VPN 伺服器"
       ]
     },
     "specialoffer: Tooltip": {
@@ -10518,6 +10575,9 @@
       ],
       "You have successfully unsubscribed": [
         "您已成功取消訂購"
+      ],
+      "Billing information updated": [
+        "繳費資訊已更新"
       ]
     },
     "Suffix": {
@@ -11390,6 +11450,12 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Org setup": [
+        "組織設定"
+      ],
+      "Spring Sale": [
+        "春季促銷"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11916,6 +11982,9 @@
       ],
       "Get the deal": [
         "取得優惠"
+      ],
+      "SPRING SALE 2026": [
+        "春季特賣 2026"
       ]
     },
     "q1campaign: Info": {
@@ -11990,6 +12059,12 @@
       ],
       "Use your own email domain": [
         "使用您自己的電子郵件網域"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "延長您的訂閱並儲存 ${ discountPercent }%！"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "切換至我們的年度方案並儲存 ${ toYearlyDiscountAmount }！"
       ]
     },
     "q1campaign: Label": {

@@ -1021,6 +1021,9 @@
       ],
       "Hide": [
         "숨기기"
+      ],
+      "Edit billing address": [
+        "청구 주소 수정"
       ]
     },
     "action": {
@@ -4013,6 +4016,15 @@
       ],
       "Wrong billing address": [
         "청구 주소가 잘못되었습니다"
+      ],
+      "Invalid coupon": [
+        "유효하지 않은 쿠폰"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "이 플랜에서는 매입자 납부제도(Reverse charge)가 지원되지 않습니다."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "최소 기부 금액은 ${ price }입니다."
       ]
     },
     "error": {
@@ -6437,6 +6449,12 @@
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "친구가 연간 플랜을 구독하고 1개월 후, 월간 요금제에 구독하고 2개월 후에 크레딧 보상을 받게 됩니다."
+      ],
+      "Failed to update meeting schedule": [
+        "회의 일정 업데이트 실패"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "귀하의 계정은 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 선택하신 요금제에서 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 요금제를 선택하십시오."
       ]
     },
     "info": {
@@ -9332,6 +9350,9 @@
       ],
       "I'm purchasing as a business": [
         "사업체 용도로 구매합니다"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "매입자 납부제도(Reverse charge)가 적용됩니다."
       ]
     },
     "Payments.Error": {
@@ -11994,6 +12015,9 @@
       ],
       "Spring Sale": [
         "봄맞이 할인"
+      ],
+      "Reverse charge not supported": [
+        "매입자 납부제도(Reverse charge)가 지원되지 않습니다."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12531,6 +12555,9 @@
       ],
       "Get the deal": [
         "할인 받기"
+      ],
+      "SPRING SALE 2026": [
+        "봄 세일 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12605,6 +12632,12 @@
       ],
       "Use your own email domain": [
         "나만의 이메일 도메인 사용"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "귀하의 구독을 연장하고 ${ discountPercent }%를 저장하세요!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 저장하세요!"
       ]
     },
     "q1campaign: Label": {
@@ -12617,7 +12650,7 @@
         "12개월 동안"
       ],
       "SPRING SALE": [
-        "봄맞이 세일"
+        "봄 세일"
       ]
     },
     "fido2: Error": {

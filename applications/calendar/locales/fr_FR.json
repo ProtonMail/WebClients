@@ -1022,6 +1022,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Edit billing address": [
+        "Modifier l'adresse de facturation"
+      ],
+      "Hide": [
+        "Masquer"
       ]
     },
     "action": {
@@ -4052,6 +4058,9 @@
       ],
       "Wrong billing address": [
         "L'adresse de facturation n'est pas correct."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Saisissez votre nom d'utilisateur sans le domaine (@example.com)"
       ]
     },
     "error": {
@@ -9489,6 +9498,9 @@
       ],
       "I'm purchasing as a business": [
         "J'achète en tant qu'entreprise."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Le mécanisme d’autoliquidation de la TVA s’applique."
       ]
     },
     "Payments.Error": {
@@ -12775,6 +12787,9 @@
       ],
       "Get the deal": [
         "Profitez de l'offre"
+      ],
+      "SPRING SALE 2026": [
+        "OFFRE DE PRINTEMPS 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12849,6 +12864,12 @@
       ],
       "Use your own email domain": [
         "Utilisez votre propre domaine de messagerie"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Prolongez votre abonnement et enregistrez ${ discountPercent } % !"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Passez à notre abonnement annuel et enregistrez ${ toYearlyDiscountAmount } !"
       ]
     },
     "q1campaign: Label": {

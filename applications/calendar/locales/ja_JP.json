@@ -1021,6 +1021,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Edit billing address": [
+        "請求先住所を編集"
       ]
     },
     "action": {
@@ -12503,6 +12506,9 @@
       ],
       "Get the deal": [
         "特典を利用する"
+      ],
+      "SPRING SALE 2026": [
+        "スプリングセール 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12577,6 +12583,12 @@
       ],
       "Use your own email domain": [
         "独自のメールドメインを使用"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "サブスクリプションを延長して、${ discountPercent }%保存しましょう！"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "年間プランに切り替えて、${ toYearlyDiscountAmount }を保存しましょう！"
       ]
     },
     "q1campaign: Label": {
@@ -12589,7 +12601,7 @@
         "12か月プラン"
       ],
       "SPRING SALE": [
-        "スプリングセール"
+        "スプリング セール"
       ]
     }
   }

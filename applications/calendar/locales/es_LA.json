@@ -1025,6 +1025,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Edit billing address": [
+        "Editar la dirección de la factura"
       ]
     },
     "action": {
@@ -4048,7 +4051,7 @@
         "Se requiere el nombre de la empresa o el nombre personal"
       ],
       "Invalid coupon": [
-        "Cupón invalido"
+        "Cupón inválido"
       ],
       "Invalid VAT number": [
         "Número de IVA incorrecto"
@@ -4057,10 +4060,19 @@
         "Complete los detalles de facturación"
       ],
       "This field is invalid": [
-        "Este campo no es válido"
+        "Este campo es válido"
       ],
       "Wrong billing address": [
         "Dirección de facturación incorrecta"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Ingrese su nombre de usuario sin el dominio (@ejemplo.com)"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El esquema de cobro inverso no es compatible con este plan"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "El importe mínimo de la donación es de ${ price }"
       ]
     },
     "error": {
@@ -6547,6 +6559,9 @@
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Recibirá la recompensa en créditos 1 mes después de que su amistad se suscriba a un plan anual, y 2 meses después de que se suscriba a un plan mensual."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Su cuenta está actualmente configurada para aplicar el esquema de cargo inverso. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
       ]
     },
     "info": {
@@ -9519,6 +9534,9 @@
       ],
       "I'm purchasing as a business": [
         "Estoy comprando como empresa"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Se aplica el mecanismo de cargo inverso del IVA."
       ]
     },
     "Payments.Error": {
@@ -12246,6 +12264,9 @@
       ],
       "Spring Sale": [
         "Oferta de primavera"
+      ],
+      "Reverse charge not supported": [
+        "Cargo inverso no soportado"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12827,6 +12848,9 @@
       ],
       "Get the deal": [
         "Aproveche la oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTA DE PRIMAVERA 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12901,6 +12925,12 @@
       ],
       "Use your own email domain": [
         "Use su propio dominio de correo electrónico"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "¡Extienda su suscripción y guarde ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "¡Cambie a nuestro plan anual y guarde ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Label": {
