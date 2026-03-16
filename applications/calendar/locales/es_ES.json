@@ -1025,6 +1025,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Tu prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Edit billing address": [
+        "Editar la dirección de la factura"
       ]
     },
     "action": {
@@ -4064,6 +4067,12 @@
       ],
       "The minimum donation amount is ${ price }": [
         "El importe mínimo de la donación es de ${ price }"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduce tu nombre de usuario sin el dominio (@ejemplo.com)"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El régimen de inversión del sujeto pasivo no es compatible con este plan"
       ]
     },
     "error": {
@@ -6550,6 +6559,9 @@
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Recibirás la recompensa en créditos 1 mes después de que tu amigo se suscriba a un plan anual, y 2 meses después de que se suscriba a un plan mensual."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Tu cuenta está configurada actualmente para aplicar el régimen de inversión del sujeto pasivo, pero este no es compatible con el plan seleccionado. Para continuar, elimina el número de IVA de la dirección de facturación o selecciona un plan diferente."
       ]
     },
     "info": {
@@ -9518,6 +9530,9 @@
       ],
       "I'm purchasing as a business": [
         "Estoy comprando como empresa"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Se aplica el mecanismo de inversión del sujeto pasivo del IVA."
       ]
     },
     "Payments.Error": {
@@ -12235,6 +12250,9 @@
       ],
       "Spring Sale": [
         "Oferta de primavera"
+      ],
+      "Reverse charge not supported": [
+        "Inversión del sujeto pasivo no admitida"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12816,6 +12834,9 @@
       ],
       "Get the deal": [
         "Aprovecha la oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTA DE PRIMAVERA 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12890,6 +12911,12 @@
       ],
       "Use your own email domain": [
         "Usa tu propio dominio de correo electrónico"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "¡Extiende tu suscripción y guarda un ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "¡Cámbiate a nuestro plan anual y guarda ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Label": {

@@ -1021,6 +1021,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
+      ],
+      "Edit billing address": [
+        "编辑账单地址"
       ]
     },
     "action": {
@@ -4019,6 +4022,18 @@
       ],
       "Wrong billing address": [
         "错误的账单地址"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "请输入您的用户名（不含 @example.com 域名）"
+      ],
+      "Invalid coupon": [
+        "优惠券无效"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "此套餐不支持反向收费机制"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "最低捐赠金额为 ${ price }"
       ]
     },
     "error": {
@@ -6454,6 +6469,9 @@
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "您将在好友订阅年度套餐 1 个月后获得推荐奖励，若好友订阅月度套餐则在 2 个月后获得。"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "您的账户当前已配置为应用反向收费机制，但所选套餐不支持此机制。若要继续，请从账单地址中移除增值税号，或选择其他套餐。"
       ]
     },
     "info": {
@@ -9349,6 +9367,9 @@
       ],
       "I'm purchasing as a business": [
         "以企业身份购买"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "适用增值税反向收费机制"
       ]
     },
     "Payments.Error": {
@@ -12011,6 +12032,9 @@
       ],
       "Spring Sale": [
         "春季特惠"
+      ],
+      "Reverse charge not supported": [
+        "不支持反向收费"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

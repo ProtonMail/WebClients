@@ -904,6 +904,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Бесплатная пробная версия вашего приложения заканчивается на ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Edit billing address": [
+        "Изменить адрес для выставления счетов"
       ]
     },
     "action": {
@@ -11711,6 +11714,9 @@
       ],
       "Get the deal": [
         "Получить со скидкой"
+      ],
+      "SPRING SALE 2026": [
+        "ВЕСЕННИЕ СКИДКИ 2026"
       ]
     },
     "q1campaign: Info": {
@@ -11785,6 +11791,12 @@
       ],
       "Use your own email domain": [
         "Используйте собственный домен адреса электронной почты"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Продлите подписку и сохраните ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Перейдите на наш годовой тариф и сохраните ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Label": {
@@ -11797,7 +11809,7 @@
         "на 12 месяцев"
       ],
       "SPRING SALE": [
-        "ВЕСЕННЯЯ РАСПРОДАЖА"
+        "ВЕСЕННИЕ СКИДКИ"
       ]
     }
   }

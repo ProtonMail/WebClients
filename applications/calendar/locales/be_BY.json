@@ -1033,6 +1033,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ваш бясплатны пробны перыяд праграмы для камп'ютара завершыцца ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Edit billing address": [
+        "Рэдагаваць адрас аплаты"
       ]
     },
     "action": {
@@ -2129,7 +2132,7 @@
         "Факс"
       ],
       "Main": [
-        "Галоўная"
+        "Галоўны"
       ],
       "Mobile": [
         "Мабільны"
@@ -4142,6 +4145,9 @@
       ],
       "The minimum donation amount is ${ price }": [
         "Мінімальная сума ахвяравання складае ${ price }"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Схема адваротнага налічэння падатку не падтрымліваецца для гэтага тарыфнага плана"
       ]
     },
     "error": {
@@ -6730,6 +6736,9 @@
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Вы атрымаеце ўзнагароду ў крэдытах праз 1 месяц пасля таго, як ваш сябар падпішацца на гадавы тарыфны план. Праз 2 месяцы можна разлічваць на ўзнагароду, калі ваш сябар падпішацца на месячны тарыфны план."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб ужываць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
       ]
     },
     "info": {
@@ -12683,6 +12692,9 @@
       ],
       "Spring Sale": [
         "Вясенні распродаж"
+      ],
+      "Reverse charge not supported": [
+        "Адваротнае налічэнне падатку не падтрымліваецца"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -928,6 +928,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Brezplačno preskušanje namizne aplikacije poteče dne ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Edit billing address": [
+        "Uredi naslov za izstavitev računa"
       ]
     },
     "action": {
@@ -1691,6 +1694,12 @@
       ],
       "Large file upload support": [
         "Podpora za nalaganje velikih datotek"
+      ],
+      "Basic chat history": [
+        "Osnovna zgodovina klepeta"
+      ],
+      "Unlimited daily chats": [
+        "Neomejeni dnevni klepeti"
       ]
     },
     "collider_2025: Info": {
@@ -3085,6 +3094,9 @@
     "Duo offer: Link": {
       "Get 4x more storage": [
         "Pridobite 4x več prostora za shranjevanje"
+      ],
+      "Share your plan": [
+        "Svoj paket daj v skupno rabo"
       ]
     },
     "Duo offer: Title": {
@@ -3759,6 +3771,12 @@
       ],
       "The minimum donation amount is ${ price }": [
         "Najmanjši znesek donacije je ${ price }"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Vnesite svoje uporabniško ime brez domene (@example.com)"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Shema obrnjene davčne obveznosti ni podprta za ta načrt"
       ]
     },
     "error": {
@@ -4227,7 +4245,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vstavite varnostni ključ, povezan z vašim računom ${ BRAND_NAME }."
+        "Vstavite varnostni ključ, povezan z vašim ${ BRAND_NAME } računom."
       ],
       "Security key": [
         "Varnostni ključ"
@@ -6111,6 +6129,9 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Vaš naslednji datum obračuna je ${ renewalTime }. Kadar koli lahko prekličete naročnino. Če potrebujete takojšnjo spremembo paketa, se obrnite na podporo."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Vaš račun je trenutno nastavljen za uporabo sheme povratnega DDV. To ni podprto za izbrani paket. Če želite nadaljevati, bodisi odstranite številko DDV s plačilnega naslova ali izberite drug paket."
       ]
     },
     "info": {
@@ -7111,6 +7132,12 @@
         "Do ${ n } udeleženca",
         "Do ${ n } udeleženci",
         "Do ${ n } udeležencev"
+      ],
+      "${ n } participant": [
+        "${ n } udeleženec",
+        "${ n } udeleženca",
+        "${ n } udeleženci",
+        "${ n } udeleženci"
       ]
     },
     "Message": {
@@ -7856,6 +7883,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Pregledujemo temni splet in preverjamo, ali so bili razkriti naslovi ali vzdevki ${ BRAND_NAME }. V primeru uhajanja podatkov vas bomo o tem obvestili."
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke"
       ]
     },
     "new_plans: feature highlight": {
@@ -8984,6 +9017,9 @@
       ],
       "Taxes ${ rate }%": [
         "Davki ${ rate } %"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Mehanizem DDV povratnega plačila velja."
       ]
     },
     "Payments.Error": {
@@ -9327,6 +9363,18 @@
       ],
       "your subscription": [
         "vaša naročnina"
+      ],
+      "Friend joined": [
+        "Prijatelj se je pridružil",
+        "Prijatelja sta se pridružila",
+        "Prijatelji so se pridružili",
+        "Prijatelji so se pridružili"
+      ],
+      "Friend subscribed": [
+        "Prijatelj se je naročil",
+        "Prijatelja sta se naročila",
+        "Prijatelji so se naročili",
+        "Prijatelji so se naročili"
       ]
     },
     "Reload event button tooltip": {
@@ -11501,6 +11549,12 @@
       ],
       "Spring Sale": [
         "Pomladanska akcija"
+      ],
+      "Account temporarily locked": [
+        "Račun je začasno zaklenjen"
+      ],
+      "Reverse charge not supported": [
+        "Shema obrnjene davčne obveznosti"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

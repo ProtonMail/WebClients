@@ -1025,6 +1025,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Edit billing address": [
+        "Επεξεργασία διεύθυνσης χρέωσης"
       ]
     },
     "action": {
@@ -4064,6 +4067,12 @@
       ],
       "The minimum donation amount is ${ price }": [
         "Το ελάχιστο ποσό δωρεάς είναι ${ price }"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Εισάγετε το όνομα χρήστη σας χωρίς τον τομέα (@example.com)"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Το σύστημα αντιστροφής χρέωσης δεν υποστηρίζεται για αυτό το πλάνο"
       ]
     },
     "error": {
@@ -6550,6 +6559,9 @@
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Θα λάβετε την ανταμοιβή πίστωσης 1 μήνα αφότου ο φίλος σας εγγραφεί σε ετήσιο πλάνο και 2 μήνες αφότου εγγραφεί σε μηνιαίο πλάνο."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ο λογαριασμός σας είναι αυτή τη στιγμή ρυθμισμένος να εφαρμόζει το καθεστώς αντίστροφης χρέωσης. Αυτό δεν υποστηρίζεται για το επιλεγμένο πλάνο. Για να συνεχίσετε, είτε αφαιρέστε τον αριθμό ΦΠΑ από τη διεύθυνση χρέωσης είτε επιλέξτε ένα άλλο πλάνο."
       ]
     },
     "info": {
@@ -9522,6 +9534,9 @@
       ],
       "I'm purchasing as a business": [
         "Αγοράζω ως επιχείρηση"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Εφαρμόζεται ο μηχανισμός αντίστροφης χρέωσης ΦΠΑ."
       ]
     },
     "Payments.Error": {
@@ -12239,6 +12254,9 @@
       ],
       "Spring Sale": [
         "Ανοιξιάτικες Εκπτώσεις"
+      ],
+      "Reverse charge not supported": [
+        "Αντιστροφή χρέωσης δεν υποστηρίζεται"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

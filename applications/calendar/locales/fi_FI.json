@@ -1001,6 +1001,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Edit billing address": [
+        "Muokkaa laskutusosoitetta"
       ]
     },
     "action": {
@@ -3915,6 +3918,12 @@
       ],
       "Invalid coupon": [
         "Virheellinen kuponki"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Syötä käyttäjätunnuksesi ilman verkkotunnusta (@example.com)"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Tämä tilaus ei tue käännettyä verovelvollisuutta."
       ]
     },
     "error": {
@@ -6306,6 +6315,9 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }. Voit peruuttaa tilauksen milloin tahansa.",
         "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }. Voit peruuttaa milloin tahansa."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Tilisi asetuksissa on käytössä käännetty verovelvollisuus, jota valittu tilaus ei tue. Jatkaaksesi joko poista ALV-numero laskutustiedoista tai valitse toinen tilaus."
       ]
     },
     "info": {
@@ -9157,6 +9169,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tilauksessasi on jo olemassa oleva alennus. Siirtyminen tähän uuteen kampanjaan tarkoittaa, että aiempaa alennusta ei enää käytetä."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Sovelletaan arvonlisäveron käänteistä verovelvollisuutta."
       ]
     },
     "Payments.Error": {
@@ -11770,6 +11785,9 @@
       ],
       "Spring Sale": [
         "Kevätale"
+      ],
+      "Reverse charge not supported": [
+        "Käännettyä verovelvollisuutta ei tueta."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12345,6 +12363,9 @@
       ],
       "Get the deal": [
         "Hyödynnä tarjous"
+      ],
+      "SPRING SALE 2026": [
+        "KEVÄTALE 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12419,6 +12440,12 @@
       ],
       "Use your own email domain": [
         "Käytä omaa sähköpostin verkkotunnusta"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Pidennä tilaustasi ja tallenna ${ discountPercent } %!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Vaihda vuositilaukseemme ja tallenna ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Label": {
