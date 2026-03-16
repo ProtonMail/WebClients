@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import {
     NodeType,
     NodeWithSameNameExistsValidationError,
@@ -113,6 +114,25 @@ describe('ConflictManager', () => {
     };
 
     describe('handleConflict', () => {
+        const flush = async () => {
+            for (let i = 0; i < 10; i++) {
+                await Promise.resolve();
+            }
+        };
+
+        const makeItem = (uploadId: string, name: string): FileUploadItem => ({
+            uploadId,
+            type: NodeType.File,
+            name,
+            status: UploadStatus.Waiting,
+            parentUid: 'parent123',
+            batchId: 'batch1',
+            file: new File([''], name),
+            clearTextExpectedSize: 100,
+            lastStatusUpdateTime: new Date(),
+            uploadedBytes: 0,
+        });
+
         it('should set conflict status when conflict is detected', async () => {
             const error = createConflictError('node123');
             const fileItem = createFileItem('test.txt', UploadStatus.InProgress);
@@ -154,6 +174,103 @@ describe('ConflictManager', () => {
             await conflictManager.handleConflict('task1', error);
 
             expect(mockUpdateQueueItems).not.toHaveBeenCalled();
+        });
+
+        it('should handle two concurrent conflicts sequentially - second waits for first resolver', async () => {
+            const errorA = createConflictError('node-a');
+            const errorB = createConflictError('node-b');
+
+            const state = new Map<string, FileUploadItem>([
+                ['task-a', makeItem('task-a', 'a.txt')],
+                ['task-b', makeItem('task-b', 'b.txt')],
+            ]);
+            mockGetItem.mockImplementation((id: string) => state.get(id));
+            mockUpdateQueueItems.mockImplementation((id: string, update: any) => {
+                const current = state.get(id);
+                if (current) {
+                    state.set(id, { ...current, ...update });
+                }
+            });
+
+            const resolvers = new Map<
+                string,
+                (result: { strategy: UploadConflictStrategy; applyToAll: boolean }) => void
+            >();
+            const callOrder: string[] = [];
+            conflictManager.setConflictResolver((name) => {
+                callOrder.push(name);
+                return new Promise((resolve) => resolvers.set(name, resolve));
+            });
+
+            const promiseA = conflictManager.handleConflict('task-a', errorA);
+            const promiseB = conflictManager.handleConflict('task-b', errorB);
+
+            expect(callOrder).toEqual(['a.txt']);
+
+            resolvers.get('a.txt')!({ strategy: UploadConflictStrategy.Rename, applyToAll: false });
+            await flush();
+
+            expect(callOrder).toEqual(['a.txt', 'b.txt']);
+
+            resolvers.get('b.txt')!({ strategy: UploadConflictStrategy.Rename, applyToAll: false });
+            await Promise.allSettled([promiseA, promiseB]);
+
+            expect(state.get('task-a')?.status).toBe(UploadStatus.Pending);
+            expect(state.get('task-b')?.status).toBe(UploadStatus.Pending);
+        });
+
+        it('should handle three concurrent conflicts sequentially - C waits for B after both wake up from A', async () => {
+            const errorA = createConflictError('node-a');
+            const errorB = createConflictError('node-b');
+            const errorC = createConflictError('node-c');
+
+            const state = new Map<string, FileUploadItem>([
+                ['task-a', makeItem('task-a', 'a.txt')],
+                ['task-b', makeItem('task-b', 'b.txt')],
+                ['task-c', makeItem('task-c', 'c.txt')],
+            ]);
+            mockGetItem.mockImplementation((id: string) => state.get(id));
+            mockUpdateQueueItems.mockImplementation((id: string, update: any) => {
+                const current = state.get(id);
+                if (current) {
+                    state.set(id, { ...current, ...update });
+                }
+            });
+
+            const resolvers = new Map<
+                string,
+                (result: { strategy: UploadConflictStrategy; applyToAll: boolean }) => void
+            >();
+            const callOrder: string[] = [];
+            conflictManager.setConflictResolver((name) => {
+                callOrder.push(name);
+                return new Promise((resolve) => resolvers.set(name, resolve));
+            });
+
+            const promiseA = conflictManager.handleConflict('task-a', errorA);
+            const promiseB = conflictManager.handleConflict('task-b', errorB);
+            const promiseC = conflictManager.handleConflict('task-c', errorC);
+
+            expect(callOrder).toEqual(['a.txt']);
+
+            // Resolve A — both B and C wake up, but only B should call the resolver next
+            resolvers.get('a.txt')!({ strategy: UploadConflictStrategy.Rename, applyToAll: false });
+            await flush();
+
+            expect(callOrder).toEqual(['a.txt', 'b.txt']);
+
+            // Resolve B — C should now call the resolver
+            resolvers.get('b.txt')!({ strategy: UploadConflictStrategy.Rename, applyToAll: false });
+            await flush();
+
+            expect(callOrder).toEqual(['a.txt', 'b.txt', 'c.txt']);
+
+            resolvers.get('c.txt')!({ strategy: UploadConflictStrategy.Rename, applyToAll: false });
+            await Promise.allSettled([promiseA, promiseB, promiseC]);
+
+            expect(state.get('task-a')?.status).toBe(UploadStatus.Pending);
+            expect(state.get('task-b')?.status).toBe(UploadStatus.Pending);
+            expect(state.get('task-c')?.status).toBe(UploadStatus.Pending);
         });
     });
 
