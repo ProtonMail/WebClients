@@ -7,6 +7,7 @@ import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 
 jest.mock('@proton/shared/lib/desktop/ipcHelpers', () => ({
     invokeInboxDesktopIPC: jest.fn(),
+    hasInboxDesktopFeature: jest.fn(),
 }));
 jest.mock('@proton/shared/lib/helpers/uid', () => ({
     generateProtonWebUID: jest.fn(() => 'mock-uid'),

@@ -13,6 +13,7 @@ import {
     isHome,
     isHostAllowed,
     isMail,
+    isMicrosoftAuthURL,
     isUpgradeURL,
     isUpsellURL,
     isZoomAuthURL,
@@ -36,6 +37,7 @@ import { resetBadge } from "../../ipc/notification";
 import { mainLogger, rendererLogger, viewLogger } from "../log";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { PRINT_DATA_URL_PREFIX } from "../printing/print";
+import { isDynamicOAuthURL } from "../oauthProcess";
 
 const RENDERER_LOG_MAX_MESSAGE_LENGTH = 500;
 
@@ -219,7 +221,13 @@ export function handleWebContents(contents: WebContents) {
             return { action: "allow" };
         };
 
-        if (isGoogleOAuthAuthorizationURL(url) || isZoomAuthURL(url)) {
+        // Specific whitelisted URLs should be removed in the future - INDA-661
+        if (
+            isGoogleOAuthAuthorizationURL(url) ||
+            isZoomAuthURL(url) ||
+            isMicrosoftAuthURL(url) ||
+            isDynamicOAuthURL(url)
+        ) {
             if (!global.oauthProcess) return denyAndOpenExternal(`oauth disabled, link in view ${url}`);
             return allow(`oauth process enabled, opening in new electron window ${url}`);
         }
