@@ -1,85 +1,107 @@
-import { createContext, useContext, useMemo } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo } from 'react';
 
-import { useRoomContext } from '@livekit/components-react';
+import { useParticipants, useRoomContext } from '@livekit/components-react';
 import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
+import { RoomEvent } from 'livekit-client';
 
-import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectPage, selectPageSize } from '@proton/meet/store/slices/meetingState';
+import { useHandler } from '@proton/components/hooks/useHandler';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    removeParticipant,
+    resetSortedParticipants,
+    selectPagedIdentities,
+    selectSortedParticipantIdentities,
+    updateSortedParticipants,
+} from '@proton/meet/store/slices/sortedParticipantsSlice';
 
-import { useSortedParticipants } from './useSortedParticipants';
+const updateOnlyOn = [
+    RoomEvent.ParticipantConnected,
+    RoomEvent.ParticipantDisconnected,
+    RoomEvent.Connected,
+    RoomEvent.Disconnected,
+    RoomEvent.Reconnected,
+];
 
-interface SortedParticipantsContextValues {
-    sortedParticipants: (LocalParticipant | RemoteParticipant)[];
-    sortedParticipantsDisplayColorsMap: Map<
-        string,
-        { profileTextColor: string; profileColor: string; backgroundColor: string; borderColor: string }
-    >;
-    pagedParticipants: (LocalParticipant | RemoteParticipant)[];
-    pagedParticipantsWithoutSelfView: (LocalParticipant | RemoteParticipant)[];
-    pageCount: number;
-    pageCountWithoutSelfView: number;
-}
-
-export const SortedParticipantsContext = createContext<SortedParticipantsContextValues>({
-    sortedParticipants: [],
-    sortedParticipantsDisplayColorsMap: new Map(),
-    pagedParticipants: [],
-    pagedParticipantsWithoutSelfView: [],
-    pageCount: 0,
-    pageCountWithoutSelfView: 0,
-});
+const ParticipantsMapContext = createContext<Map<string, LocalParticipant | RemoteParticipant>>(new Map());
 
 export const SortedParticipantsProvider = ({ children }: { children: React.ReactNode }) => {
+    const dispatch = useMeetDispatch();
     const room = useRoomContext();
-
-    const { sortedParticipants, sortedParticipantsDisplayColorsMap } = useSortedParticipants();
-
-    const page = useMeetSelector(selectPage);
-    const pageSize = useMeetSelector(selectPageSize);
-
-    // Calculate pagination
-    const start = page * pageSize;
-    const pagedParticipants = useMemo(
-        () => sortedParticipants.slice(start, start + pageSize),
-        [sortedParticipants, start, pageSize]
-    );
-
-    const pagedParticipantsWithoutSelfView = useMemo(
+    const participants = useParticipants({
+        updateOnlyOn,
+    });
+    const participantsMap = useMemo(
         () =>
-            sortedParticipants.length === 1
-                ? sortedParticipants
-                : sortedParticipants
-                      .filter((p) => p.identity !== room.localParticipant.identity)
-                      .slice(start, start + pageSize),
-        [sortedParticipants, start, pageSize]
+            new Map(
+                participants.filter((p) => p.identity !== '').map((participant) => [participant.identity, participant])
+            ),
+        [participants]
     );
 
-    const pageCount = Math.ceil(sortedParticipants.length / pageSize);
+    const handleUpdateSortedParticipants = useCallback(() => {
+        dispatch(updateSortedParticipants(participants));
+    }, [participants, dispatch]);
 
-    const pageCountWithoutSelfView = Math.max(1, Math.ceil((sortedParticipants.length - 1) / pageSize));
+    // We avoid spamming participants sorting updates,
+    // specially because is triggered by ActiveSpeakersChanged event
+    const throttledUpdateSortedParticipants = useHandler(handleUpdateSortedParticipants, { throttle: 200 });
 
-    const value = useMemo(
-        () => ({
-            sortedParticipants,
-            sortedParticipantsDisplayColorsMap,
-            pagedParticipants,
-            pagedParticipantsWithoutSelfView,
-            pageCount,
-            pageCountWithoutSelfView,
-        }),
-        [
-            sortedParticipants,
-            sortedParticipantsDisplayColorsMap,
-            pagedParticipants,
-            pagedParticipantsWithoutSelfView,
-            pageCount,
-            pageCountWithoutSelfView,
-        ]
+    const handleParticipantDisconnected = useCallback(
+        (participant: LocalParticipant | RemoteParticipant) => {
+            dispatch(removeParticipant(participant.identity));
+        },
+        [dispatch]
     );
 
-    return <SortedParticipantsContext.Provider value={value}>{children}</SortedParticipantsContext.Provider>;
+    const handleDisconnected = useCallback(() => {
+        dispatch(resetSortedParticipants());
+    }, [dispatch]);
+
+    useEffect(() => {
+        throttledUpdateSortedParticipants();
+    }, [participants, throttledUpdateSortedParticipants]);
+
+    useEffect(() => {
+        room.on(RoomEvent.ActiveSpeakersChanged, throttledUpdateSortedParticipants);
+        room.on(RoomEvent.ParticipantDisconnected, handleParticipantDisconnected);
+        room.on(RoomEvent.Disconnected, handleDisconnected);
+
+        return () => {
+            room.off(RoomEvent.ActiveSpeakersChanged, throttledUpdateSortedParticipants);
+            room.off(RoomEvent.ParticipantDisconnected, handleParticipantDisconnected);
+            room.off(RoomEvent.Disconnected, handleDisconnected);
+        };
+    }, [throttledUpdateSortedParticipants, handleDisconnected, handleParticipantDisconnected, room]);
+
+    return <ParticipantsMapContext.Provider value={participantsMap}>{children}</ParticipantsMapContext.Provider>;
 };
 
-export const useSortedParticipantsContext = () => {
-    return useContext(SortedParticipantsContext);
+export const useParticipantsMapContext = () => {
+    return useContext(ParticipantsMapContext);
+};
+
+export const useSortedParticipants = () => {
+    const sortedParticipantIdentities = useMeetSelector(selectSortedParticipantIdentities);
+    const participantsMap = useParticipantsMapContext();
+
+    return useMemo(
+        () =>
+            sortedParticipantIdentities
+                .map((identity) => participantsMap.get(identity) as LocalParticipant | RemoteParticipant)
+                .filter(Boolean),
+        [sortedParticipantIdentities, participantsMap]
+    );
+};
+
+export const useSortedPagedParticipants = () => {
+    const sortedPagedParticipantIdentities = useMeetSelector(selectPagedIdentities);
+    const participantsMap = useParticipantsMapContext();
+
+    return useMemo(
+        () =>
+            sortedPagedParticipantIdentities
+                .map((identity) => participantsMap.get(identity) as LocalParticipant | RemoteParticipant)
+                .filter(Boolean),
+        [sortedPagedParticipantIdentities, participantsMap]
+    );
 };

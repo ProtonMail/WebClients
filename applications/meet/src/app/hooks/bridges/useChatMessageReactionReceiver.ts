@@ -4,7 +4,7 @@ import { useRoomContext } from '@livekit/components-react';
 import type { RemoteParticipant } from 'livekit-client';
 
 import { useMeetDispatch } from '@proton/meet/store/hooks';
-import { addChatMessageReaction } from '@proton/meet/store/slices/meetingState';
+import { addChatMessageReaction } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { useMLSContext } from '../../contexts/MLSContext';

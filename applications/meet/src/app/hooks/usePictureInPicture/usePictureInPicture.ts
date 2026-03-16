@@ -5,13 +5,13 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectChatMessages } from '@proton/meet/store/slices/meetingState';
+import { selectChatMessages } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { selectMeetSettings } from '@proton/meet/store/slices/settings';
 import { isChromiumBased, isFirefox, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { useCameraTrackSubscriptionManager } from '../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
+import { useSortedParticipants } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useLatest } from '../useLatest';
 import { useStableCallback } from '../useStableCallback';
 import { PiPSessionManager } from './PiPSessionManager';
@@ -52,7 +52,7 @@ export function usePictureInPicture({
 
     const chatMessages = useMeetSelector(selectChatMessages);
 
-    const { sortedParticipants } = useSortedParticipantsContext();
+    const sortedParticipants = useSortedParticipants();
 
     const { toggleVideo, toggleAudio, isVideoEnabled, isAudioEnabled, selectedMicrophoneId, selectedCameraId } =
         useMediaManagementContext();

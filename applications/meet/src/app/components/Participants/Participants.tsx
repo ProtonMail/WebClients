@@ -20,6 +20,7 @@ import {
     enableParticipantVideo,
     selectParticipantsWithDisabledVideos,
 } from '@proton/meet/store/slices/settings';
+import { selectSortedParticipantIdentities } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -27,7 +28,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useDebouncedActiveSpeakers } from '../../hooks/useDebouncedActiveSpeakers';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
@@ -62,7 +62,7 @@ export const Participants = () => {
 
     const [isScrolled, setIsScrolled] = useState(false);
 
-    const { sortedParticipants } = useSortedParticipantsContext();
+    const sortedParticipantIdentities = useMeetSelector(selectSortedParticipantIdentities);
 
     const activeSpeakers = useDebouncedActiveSpeakers();
 
@@ -72,8 +72,8 @@ export const Participants = () => {
 
     const participantsMap = new Map(participants.map((participant) => [participant.identity, participant]));
 
-    const updatedParticipantsWithSorting = sortedParticipants
-        .map((participant) => participantsMap.get(participant.identity))
+    const updatedParticipantsWithSorting = sortedParticipantIdentities
+        .map((identity) => participantsMap.get(identity))
         .filter(isTruthy);
 
     const participantNameMap = useMeetSelector(selectParticipantNameMap);
