@@ -6,9 +6,9 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { addChatMessages } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import { escape, unescape } from '@proton/sanitize/escape';
+import { sanitizeMessage } from '@proton/sanitize/purify';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
-import { escape, unescape } from '@proton/shared/lib/sanitize/escape';
-import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
 
 import { useMLSContext } from '../../contexts/MLSContext';
 import { PublishableDataTypes } from '../../types';

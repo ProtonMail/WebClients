@@ -1,9 +1,9 @@
+import { unescapeFromString } from '@proton/sanitize/escape';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { validateEmailAddress } from '../helpers/email';
 import type { Recipient } from '../interfaces';
 import type { ContactEmail } from '../interfaces/contacts';
-import { unescapeFromString } from '../sanitize/escape';
 
 export const REGEX_RECIPIENT = /(.*?)\s*<([^>]*)>/;
 
