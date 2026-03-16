@@ -1,6 +1,6 @@
 import { isValidMeetingLink } from '@proton/meet/utils/parseMeetingLink';
+import { sanitizeMessage } from '@proton/sanitize/purify';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
-import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
 import truncate from '@proton/utils/truncate';
 
 import { calendarUrlQueryParams, calendarUrlQueryParamsActions } from './constants';
