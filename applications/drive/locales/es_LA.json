@@ -3428,7 +3428,7 @@
         "Ingrese 6 dígitos"
       ],
       "Enter your username without the domain (@example.com)": [
-        "Introduzca su nombre de usuario sin el dominio (@ejemplo.com)"
+        "Ingrese su nombre de usuario sin el dominio (@ejemplo.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al conectar a la API de Bitcoin."
@@ -3715,7 +3715,7 @@
         "Tiempo de espera agotado"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "El esquema de inversión del sujeto pasivo no es compatible con este plan"
+        "El esquema de cobro inverso no es compatible con este plan"
       ],
       "Search failed": [
         "Error en la búsqueda"
@@ -6875,7 +6875,7 @@
         "La cuenta tiene al menos una factura atrasada. Su acceso pronto será restringido. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Su cuenta está configurada actualmente para aplicar el esquema de inversión del sujeto pasivo. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
+        "Su cuenta está actualmente configurada para aplicar el esquema de cargo inverso. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Su navegador actual no soporta la descarga de archivos grandes/múltiples. Descargue la aplicación de escritorio para cargas y descargas sin interrupciones."
@@ -10236,7 +10236,7 @@
         "Número de IVA"
       ],
       "VAT reverse charge mechanism applies.": [
-        "El mecanismo de inversión del sujeto pasivo se aplica."
+        "Se aplica el mecanismo de cargo inverso del IVA."
       ],
       "You already have a subscription to this plan.": [
         "Ya tiene una suscripción a este plan."
@@ -12883,7 +12883,7 @@
         "Restaure los archivos"
       ],
       "Reverse charge not supported": [
-        "Inversión del sujeto pasivo no soportada"
+        "Cargo inverso no soportado"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Guardarlo para después en ${ DRIVE_APP_NAME }"
