@@ -13,7 +13,7 @@ import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeet
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { setPreviousMeetingLink, setUpsellModalType } from '@proton/meet/store/slices';
 import { addKeyRotationLog, setMlsGroupState } from '@proton/meet/store/slices/meetingInfo';
-import { resetMeetingState } from '@proton/meet/store/slices/meetingState';
+import { resetChatAndReactions } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { toggleMeetingLockThunk } from '@proton/meet/store/slices/settings';
 import {
     PopUpControls,
@@ -767,7 +767,7 @@ export const ProtonMeetContainer = ({
                 // Cleanup WASM polling interval to prevent MLS errors after leaving
                 cleanupWasmDependencies();
 
-                dispatch(resetMeetingState());
+                dispatch(resetChatAndReactions());
                 if (newCTAModal) {
                     dispatch(resetUiState());
                 }

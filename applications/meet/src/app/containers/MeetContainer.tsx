@@ -2,8 +2,9 @@ import { createContext, useContext, useEffect, useLayoutEffect, useMemo } from '
 
 import type { ConnectionState } from 'livekit-client';
 
-import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { resetMeetingInfo, setMeetingInfo } from '@proton/meet/store/slices/meetingInfo';
+import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import type { ParticipantEntity } from '@proton/meet/types/types';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
@@ -12,7 +13,7 @@ import { DebugOverlay, useDebugOverlay } from '../components/DebugOverlay/DebugO
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
 import { MeetContext } from '../contexts/MeetContext';
 import { MeetingRecorderContext } from '../contexts/MeetingRecorderContext';
-import { useSortedParticipantsContext } from '../contexts/ParticipantsProvider/SortedParticipantsProvider';
+import { useSortedPagedParticipants } from '../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useCurrentScreenShare } from '../hooks/useCurrentScreenShare';
 import { useMeetingRecorder } from '../hooks/useMeetingRecorder/useMeetingRecorder';
 import { useStableCallback } from '../hooks/useStableCallback';
@@ -155,7 +156,8 @@ export const MeetContainer = ({
         };
     }, [dispatch]);
 
-    const { sortedParticipants, pagedParticipants } = useSortedParticipantsContext();
+    const pagedParticipants = useSortedPagedParticipants();
+    const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
 
     const { recordingState, startRecording, stopRecording, downloadRecording } = useMeetingRecorder(
         participantNameMap,
@@ -236,7 +238,7 @@ export const MeetContainer = ({
                             isDisconnected={isDisconnected}
                         />
                     </MeetContext.Provider>
-                    <AutoCloseMeetingModal participantCount={sortedParticipants.length} onLeave={handleLeave} />
+                    <AutoCloseMeetingModal participantCount={totalParticipantCount} onLeave={handleLeave} />
                 </MeetingRecorderContext.Provider>
             </div>
         </DebugOverlayContext.Provider>

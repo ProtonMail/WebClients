@@ -102,5 +102,6 @@ export const {
 export const selectMeetSettings = (state: MeetState) => state.meetSettings;
 export const selectParticipantsWithDisabledVideos = (state: MeetState) =>
     state.meetSettings.participantsWithDisabledVideos;
+export const selectSelfView = (state: MeetState) => state.meetSettings.selfView;
 
 export const settingsReducer = { meetSettings: slice.reducer };

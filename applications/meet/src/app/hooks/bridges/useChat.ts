@@ -5,7 +5,7 @@ import type { RemoteParticipant } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { addChatMessages } from '@proton/meet/store/slices/meetingState';
+import { addChatMessages } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { MeetingSideBars, selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';

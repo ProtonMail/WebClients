@@ -4,10 +4,10 @@ import { useUser } from '@proton/account/user/hooks';
 import { IcMeetParticipants } from '@proton/icons/icons/IcMeetParticipants';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectGuestMode, selectInstantMeeting, selectMaxParticipants } from '@proton/meet/store/slices/meetingInfo';
+import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
-import { useSortedParticipantsContext } from '../contexts/ParticipantsProvider/SortedParticipantsProvider';
 
 export const ParticipantsButton = ({
     hasAdminPermission,
@@ -20,8 +20,7 @@ export const ParticipantsButton = ({
     const instantMeeting = useMeetSelector(selectInstantMeeting);
     const maxParticipants = useMeetSelector(selectMaxParticipants);
     const guestMode = useMeetSelector(selectGuestMode);
-    const { sortedParticipants } = useSortedParticipantsContext();
-    const participantCount = sortedParticipants.length;
+    const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
 
     const sideBarState = useMeetSelector(selectSideBarState);
 
@@ -30,12 +29,12 @@ export const ParticipantsButton = ({
             if (maxParticipants && maxParticipants < 10) {
                 return (
                     <div>
-                        <span>{participantCount}</span>
+                        <span>{totalParticipantCount}</span>
                         <span className="color-weak">/{maxParticipants}</span>
                     </div>
                 );
             } else {
-                return participantCount.toString();
+                return totalParticipantCount.toString();
             }
         }
         return undefined;
@@ -46,11 +45,11 @@ export const ParticipantsButton = ({
             return 'default';
         }
 
-        if (0.9 * maxParticipants <= participantCount && participantCount < maxParticipants) {
+        if (0.9 * maxParticipants <= totalParticipantCount && totalParticipantCount < maxParticipants) {
             return 'warning';
         }
 
-        if (participantCount >= maxParticipants) {
+        if (totalParticipantCount >= maxParticipants) {
             return 'danger';
         }
 
@@ -60,21 +59,21 @@ export const ParticipantsButton = ({
     const getParticipantButtonTooltipTitle = () => {
         if (maxParticipants === 0) {
             return c('Info').ngettext(
-                msgid`${participantCount} participant`,
-                `${participantCount} participants`,
-                participantCount
+                msgid`${totalParticipantCount} participant`,
+                `${totalParticipantCount} participants`,
+                totalParticipantCount
             );
         }
 
         if (isPaid) {
-            return participantCount >= maxParticipants
+            return totalParticipantCount >= maxParticipants
                 ? c('Info').t`Meeting full (${maxParticipants} participants)`
-                : c('Info').t`${participantCount} of ${maxParticipants} participants`;
+                : c('Info').t`${totalParticipantCount} of ${maxParticipants} participants`;
         }
 
-        return participantCount >= maxParticipants
+        return totalParticipantCount >= maxParticipants
             ? c('Info').t`${maxParticipants} participant limit reached`
-            : c('Info').t`${participantCount} of ${maxParticipants} participants`;
+            : c('Info').t`${totalParticipantCount} of ${maxParticipants} participants`;
     };
 
     return (

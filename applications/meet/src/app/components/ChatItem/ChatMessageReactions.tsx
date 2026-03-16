@@ -1,7 +1,7 @@
 import { useLocalParticipant } from '@livekit/components-react';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectChatMessageReactions } from '@proton/meet/store/slices/meetingState';
+import { selectChatMessageReactions } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import clsx from '@proton/utils/clsx';
 
 import './ChatMessageReactions.scss';

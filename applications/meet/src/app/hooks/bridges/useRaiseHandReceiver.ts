@@ -4,7 +4,7 @@ import { useRoomContext } from '@livekit/components-react';
 import type { Participant, RemoteParticipant } from 'livekit-client';
 
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { lowerHand, raiseHand, selectRaisedHands } from '@proton/meet/store/slices/meetingState';
+import { lowerHand, raiseHand, selectRaisedHands } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { RAISE_HAND_EMOJI } from '../../constants';

@@ -13,7 +13,7 @@ import {
     selectIsScreenShare,
     selectParticipantNameMap,
 } from '@proton/meet/store/slices/meetingInfo';
-import { selectActiveReaction, selectRaisedHands } from '@proton/meet/store/slices/meetingState';
+import { selectActiveReaction, selectRaisedHands } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -25,9 +25,8 @@ import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
 import { RAISE_HAND_EMOJI } from '../../constants';
 import { useCameraTrackSubscriptionManager } from '../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStatus';
-import { getParticipantDisplayColors } from '../../utils/getParticipantDisplayColors';
+import { getParticipantDisplayColorsByIdentity } from '../../utils/getParticipantDisplayColorsByIdentity';
 import { NetworkQualityIndicator } from '../NetworkQualityIndicator/NetworkQualityIndicator';
 import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
 
@@ -70,7 +69,6 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
 
     const { localParticipant } = useLocalParticipant();
 
-    const { sortedParticipantsDisplayColorsMap } = useSortedParticipantsContext();
     const { facingMode } = useMediaManagementContext();
     const { disableVideos } = useMeetSelector(selectMeetSettings);
 
@@ -114,9 +112,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
 
     const cameraIsOn = cameraVideoPublication?.track && !cameraVideoPublication?.track?.isMuted;
 
-    const { borderColor, backgroundColor, profileColor } = sortedParticipantsDisplayColorsMap.get(
-        participant.identity
-    ) ?? { borderColor: 'tile-border-1', backgroundColor: 'meet-background-1', profileColor: 'profile-color-1' };
+    const { borderColor, backgroundColor, profileColor } = getParticipantDisplayColorsByIdentity(participant.identity);
 
     const shouldShowVideo =
         cameraIsOn &&
@@ -124,8 +120,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
             participant.identity === localParticipant.identity);
 
     const speakingIndicatorClassName =
-        (shouldShowVideo ? getParticipantDisplayColors({}).borderColor : borderColor) +
-        (viewSize === 'large' ? '' : '-small');
+        (shouldShowVideo ? 'tile-border-1' : borderColor) + (viewSize === 'large' ? '' : '-small');
 
     const isLocalParticipant = participant.identity === localParticipant.identity;
 
