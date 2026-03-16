@@ -1,7 +1,7 @@
 import { uniqID } from '@proton/mail/helpers/string';
 import type { Base64Cache } from '@proton/mail/hooks/useBase64Cache';
+import { protonizer as purifyHTML } from '@proton/sanitize/purify';
 import { removeHTMLComments } from '@proton/shared/lib/helpers/string';
-import { protonizer as purifyHTML } from '@proton/shared/lib/sanitize';
 
 export const IMG_SRC_BASE_64_PREFIX = 'data-proton-replace-base';
 

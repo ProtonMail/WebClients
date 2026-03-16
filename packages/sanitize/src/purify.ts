@@ -1,8 +1,6 @@
 import type { Config } from 'dompurify';
 import DOMPurify from 'dompurify';
 
-import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
-
 import { escapeForbiddenStyle, escapeURLinStyle, unescape } from './escape';
 
 const toMap = (list: string[]) =>
@@ -189,7 +187,7 @@ const clean = (mode: PurifyConfig | 'str') => {
 /**
  * Custom config only for messages
  */
-export const message = clean('str') as (input: string) => string;
+export const sanitizeMessage = clean('str') as (input: string) => string;
 
 /**
  * Sanitize input with a config similar than Squire + ours
@@ -220,7 +218,7 @@ export const contentWithoutImage = clean(PurifyConfig.CONTENT_WITHOUT_IMG) as (i
 /**
  * Default config we don't want any custom behaviour
  */
-export const input = (str: string) => {
+export const sanitizeString = (str: string) => {
     const result = DOMPurify.sanitize(str, {});
     return `${result}`;
 };
@@ -231,13 +229,14 @@ export const input = (str: string) => {
  * and squire is not able to detect them. That's why we are removing them here.
  */
 export const removeImagesFromContent = (message: string) => {
-    const div = parseStringToDOM(message).body;
+    const parser = new DOMParser();
+    const parsedDocument = parser.parseFromString(message, 'text/html');
 
     // Remove all images from the message
-    const allImages = div.querySelectorAll('img');
+    const allImages = parsedDocument.body.querySelectorAll('img');
     allImages.forEach((img) => img.remove());
 
-    return { message: div.innerHTML, containsImages: allImages.length > 0 };
+    return { message: parsedDocument.body.innerHTML, containsImages: allImages.length > 0 };
 };
 
 export const sanitizeSignature = (input: string) => {

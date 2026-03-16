@@ -9057,6 +9057,7 @@ __metadata:
     "@proton/react-redux-store": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
     "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/sanitize": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/sieve": "workspace:^"
     "@proton/styles": "workspace:^"
@@ -9571,6 +9572,7 @@ __metadata:
     "@proton/components": "workspace:^"
     "@proton/hooks": "workspace:^"
     "@proton/mail": "workspace:^"
+    "@proton/sanitize": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/types": "workspace:^"
     "@proton/utils": "workspace:^"
@@ -9933,6 +9935,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/sanitize@workspace:^, @proton/sanitize@workspace:packages/sanitize":
+  version: 0.0.0-use.local
+  resolution: "@proton/sanitize@workspace:packages/sanitize"
+  dependencies:
+    dompurify: "npm:^3.3.3"
+    eslint: "npm:^9.39.2"
+    jest: "npm:^30.2.0"
+    jest-environment-jsdom: "npm:^30.2.0"
+    ts-jest: "npm:^29.4.6"
+    typescript: "npm:^5.9.3"
+  languageName: unknown
+  linkType: soft
+
 "@proton/shared@workspace:^, @proton/shared@workspace:packages/shared":
   version: 0.0.0-use.local
   resolution: "@proton/shared@workspace:packages/shared"
@@ -9943,6 +9958,7 @@ __metadata:
     "@proton/crypto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
+    "@proton/sanitize": "workspace:^"
     "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/types": "workspace:^"
@@ -24647,7 +24663,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.39.4":
+"eslint@npm:^9.39.2, eslint@npm:^9.39.4":
   version: 9.39.4
   resolution: "eslint@npm:9.39.4"
   dependencies:
@@ -30186,7 +30202,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-environment-jsdom@npm:^30.3.0":
+"jest-environment-jsdom@npm:^30.2.0, jest-environment-jsdom@npm:^30.3.0":
   version: 30.3.0
   resolution: "jest-environment-jsdom@npm:30.3.0"
   dependencies:
@@ -30569,7 +30585,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest@npm:^30.3.0":
+"jest@npm:^30.2.0, jest@npm:^30.3.0":
   version: 30.3.0
   resolution: "jest@npm:30.3.0"
   dependencies:
@@ -37807,7 +37823,6 @@ __metadata:
     core-js: "npm:^3.48.0"
     cross-env: "npm:^10.1.0"
     date-fns: "npm:^2.30.0"
-    dompurify: "npm:^3.3.3"
     eslint: "npm:^9.39.4"
     html-webpack-plugin: "npm:^5.6.6"
     jest: "npm:^30.3.0"
@@ -38216,6 +38231,7 @@ __metadata:
     clsx: "npm:^2.1.1"
     core-js: "npm:^3.48.0"
     cross-env: "npm:^10.1.0"
+    dompurify: "npm:^3.3.3"
     eslint: "npm:^9.39.4"
     eslint-config-prettier: "npm:^10.1.8"
     exceljs: "npm:^4.4.0"
@@ -38317,6 +38333,7 @@ __metadata:
     "@proton/redux-shared-store": "workspace:^"
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
+    "@proton/sanitize": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
@@ -38346,7 +38363,6 @@ __metadata:
     core-js: "npm:^3.48.0"
     cross-env: "npm:^10.1.0"
     date-fns: "npm:^2.30.0"
-    dompurify: "npm:^3.3.3"
     eslint: "npm:^9.39.4"
     eslint-config-prettier: "npm:^10.1.8"
     history: "npm:^4.10.1"
@@ -38448,6 +38464,7 @@ __metadata:
     "@proton/pack": "workspace:packages/pack"
     "@proton/polyfill": "workspace:packages/polyfill"
     "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/sanitize": "workspace:packages/sanitize"
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
     "@proton/testing": "workspace:packages/testing"

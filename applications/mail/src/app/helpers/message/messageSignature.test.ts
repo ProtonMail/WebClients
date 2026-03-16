@@ -1,8 +1,8 @@
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { sanitizeMessage } from '@proton/sanitize/purify';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE as PM_SIGNATURE_ENUM } from '@proton/shared/lib/mail/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
-import { message } from '@proton/shared/lib/sanitize';
 
 import {
     CLASSNAME_SIGNATURE_CONTAINER,
@@ -156,7 +156,7 @@ describe('signature', () => {
                     userSettings,
                     undefined
                 );
-                const sanitizedPmSignature = message(PM_SIGNATURE);
+                const sanitizedPmSignature = sanitizeMessage(PM_SIGNATURE);
                 expect(result).toContain(sanitizedPmSignature);
                 const messagePosition = result.indexOf(content);
                 const signaturePosition = result.indexOf(sanitizedPmSignature);

@@ -2,13 +2,13 @@ import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { isHTMLEmpty } from '@proton/mail/helpers/dom';
 import { containsHTMLTag, replaceLineBreaks } from '@proton/mail/helpers/string';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { sanitizeMessage } from '@proton/sanitize/purify';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
-import { message } from '@proton/shared/lib/sanitize';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { dedentTpl } from '../dedent';
@@ -142,10 +142,10 @@ export const templateBuilder = (
     `;
 
     if (!noSpace) {
-        return `${space.start}${message(template)}${space.end}`;
+        return `${space.start}${sanitizeMessage(template)}${space.end}`;
     }
 
-    return message(template);
+    return sanitizeMessage(template);
 };
 
 /**
@@ -161,13 +161,7 @@ export const insertSignature = (
     userSettings: Partial<UserSettings>,
     fontStyle: string | undefined
 ) => {
-    const template = templateBuilder(
-        signature,
-        mailSettings,
-        userSettings,
-        fontStyle,
-        action !== MESSAGE_ACTIONS.NEW
-    );
+    const template = templateBuilder(signature, mailSettings, userSettings, fontStyle, action !== MESSAGE_ACTIONS.NEW);
 
     // Parse the current message and append before it the signature
     const element = parseStringToDOM(content);

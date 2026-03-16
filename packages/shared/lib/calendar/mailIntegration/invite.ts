@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { unescape } from '@proton/sanitize/escape';
 import { getIsAddressExternal, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
-import { unescape } from '@proton/shared/lib/sanitize/escape';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 
