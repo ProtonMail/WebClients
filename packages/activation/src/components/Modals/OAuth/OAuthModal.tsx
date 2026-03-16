@@ -1,9 +1,6 @@
-import { useEffect } from 'react';
-
 import { ImportProvider } from '@proton/activation/src/interface';
 import {
     displayConfirmLeaveModal,
-    initOauthMailImport,
     resetOauthDraft,
 } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import {
@@ -18,7 +15,6 @@ import StepInstructionsGoogle from './StepInstructions/StepInstructionsGoogle';
 import StepLoadingImporter from './StepLoading/StepLoadingImporter';
 import StepLoadingImporting from './StepLoading/StepLoadingImporting';
 import StepPrepare from './StepPrepareOAuth/StepPrepareOAuth';
-import StepProducts from './StepProducts/StepProducts';
 import StepSuccess from './StepSuccess/StepSuccess';
 import useOAuthModal from './useOAuthModal';
 
@@ -31,12 +27,6 @@ const OAuthModal = () => {
 
     const { triggerOAuth, initialLoading } = useOAuthModal();
 
-    useEffect(() => {
-        if (step === undefined) {
-            dispatch(initOauthMailImport());
-        }
-    }, []);
-
     const handleClose = () => {
         dispatch(resetOauthDraft());
     };
@@ -48,7 +38,6 @@ const OAuthModal = () => {
     return (
         <>
             {step === 'products' && initialLoading && <StepLoadingImporter />}
-            {step === 'products' && !initialLoading && <StepProducts triggerOAuth={triggerOAuth} />}
             {step === 'instructions' && provider === ImportProvider.GOOGLE && (
                 <StepInstructionsGoogle triggerOAuth={triggerOAuth} />
             )}

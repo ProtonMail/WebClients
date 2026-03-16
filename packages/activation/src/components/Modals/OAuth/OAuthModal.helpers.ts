@@ -20,8 +20,7 @@ const getOutlookScopes = (products?: ImportType[]) => {
         scopes.push(...O_OAUTH_SCOPE_CONTACTS);
     }
 
-    scopes.filter(isTruthy).flat(1);
-    return scopes;
+    return scopes.filter(isTruthy).flat(1);
 };
 
 export const getScopeFromProvider = (provider: ImportProvider, products: ImportType[]) => {

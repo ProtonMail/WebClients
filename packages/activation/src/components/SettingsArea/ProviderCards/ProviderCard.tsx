@@ -1,19 +1,15 @@
+import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import type { Location } from 'history';
 import { c } from 'ttag';
 
+import { ProductSelectionModal } from '@proton/activation/src/components/Modals/ProductSelectionModal/ProductSelectionModal';
 import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/ConnectGmailButton';
-import {
-    EASY_SWITCH_SEARCH_SOURCES,
-    EASY_SWITCH_SOURCES,
-    ImportProvider,
-    ImportType,
-} from '@proton/activation/src/interface';
-import { startImapDraft } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
-import { startOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
-import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
+import { EASY_SWITCH_SEARCH_SOURCES, EASY_SWITCH_SOURCES, ImportProvider } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 
 import ProviderButton from './ProviderButton';
@@ -38,10 +34,19 @@ interface Props {
 }
 
 const ProviderCard = ({ app }: Props) => {
+    const [, loadingCalendars] = useCalendars();
+
+    const [selectedProvider, setSelectedProvider] = useState<ImportProvider>(ImportProvider.GOOGLE);
     const location = useLocation();
-    const dispatch = useEasySwitchDispatch();
 
     const source = getEasySwitchSource(app, location);
+
+    const [importModalProps, setImportModalOpen, renderImportModal] = useModalState();
+
+    const handleOpenSelectionModal = (provider: ImportProvider) => {
+        setSelectedProvider(provider);
+        setImportModalOpen(true);
+    };
 
     return (
         <div className="rounded-xl border pt-10 pb-8 flex flex-column flex-1 flex-nowrap w-full items-center bg-lowered border-weak">
@@ -56,36 +61,35 @@ const ProviderCard = ({ app }: Props) => {
 
                 <ProviderButton
                     provider={ImportProvider.YAHOO}
-                    onClick={() => dispatch(startImapDraft({ provider: ImportProvider.YAHOO }))}
+                    onClick={() => handleOpenSelectionModal(ImportProvider.YAHOO)}
                     className="mb-2 inline-flex items-center justify-center rounded-lg"
                     data-testid="ProviderButton:yahooCard"
+                    disabled={loadingCalendars}
                 />
 
                 <ProviderButton
                     provider={ImportProvider.OUTLOOK}
-                    onClick={() =>
-                        dispatch(
-                            startOauthDraft({
-                                provider: ImportProvider.OUTLOOK,
-                                products: [ImportType.CONTACTS, ImportType.CALENDAR, ImportType.MAIL],
-                                source: source,
-                            })
-                        )
-                    }
+                    onClick={() => handleOpenSelectionModal(ImportProvider.OUTLOOK)}
                     className="mb-2 inline-flex items-center justify-center rounded-lg"
                     data-testid="ProviderButton:outlookCard"
+                    disabled={loadingCalendars}
                 />
             </div>
             <div>
                 <Button
                     shape="underline"
                     color="norm"
-                    onClick={() => dispatch(startImapDraft({ provider: ImportProvider.DEFAULT }))}
-                    data-testid="ProviderButton:imapCard"
+                    onClick={() => handleOpenSelectionModal(ImportProvider.GOOGLE)}
+                    data-testid="ProviderButton:advancedImport"
+                    disabled={loadingCalendars}
                 >
                     {c('Import provider').t`Advanced import`}
                 </Button>
             </div>
+
+            {renderImportModal && (
+                <ProductSelectionModal source={source} provider={selectedProvider} {...importModalProps} />
+            )}
         </div>
     );
 };

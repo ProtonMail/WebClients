@@ -23,7 +23,7 @@ import { Prompt, useApi, useEventManager, useModalState, useNotifications } from
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import { getScopeFromProvider } from '../../Modals/OAuth/StepProducts/useStepProducts.helpers';
+import { getScopeFromProvider } from '../../Modals/OAuth/OAuthModal.helpers';
 
 interface Props {
     activeImporterID: ActiveImportID;
