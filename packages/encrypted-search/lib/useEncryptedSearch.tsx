@@ -522,6 +522,10 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
                 });
             }
             await esDelete();
+            traceInitiativeError(
+                SentryCommonInitiatives.ENCRYPTED_SEARCH,
+                new Error(`enableEncryptedSearch - handleError - esSupported: ${esSupported}`)
+            );
             return false;
         };
 
@@ -1288,6 +1292,8 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         const contentProgress = await contentIndexingProgress.read(userID);
         const wasContentIndexed = contentProgress && contentProgress.status !== INDEXING_STATUS.INACTIVE;
         await esDelete();
+        traceInitiativeError(SentryCommonInitiatives.ENCRYPTED_SEARCH, new Error(`restartIndexing - esDelete failed`));
+
         return enableEncryptedSearch({ isRefreshed: true }).then(() => {
             if (wasContentIndexed) {
                 return enableContentSearch({ isRefreshed: true });
