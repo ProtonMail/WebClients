@@ -40,6 +40,7 @@ import { getLogs } from "../utils/log/getLogsIPC";
 import { showPrintDialog } from "../utils/printing/print";
 import { handleLogoutIPC } from "../utils/logout/logout";
 import { profiler } from "../utils/profiler/profiler";
+import { startOAuthSession, clearOAuthSession } from "../utils/oauthProcess";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCInboxClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -143,6 +144,16 @@ export const handleIPCCalls = () => {
                 const enabled = payload === "oauthPopupStarted";
                 global.oauthProcess = enabled;
                 ipcLogger.debug("oauthProcess", enabled ? "enabled" : "disabled");
+                break;
+            }
+            case "oauthPopupOpenedV2": {
+                if (payload.action === "oauthPopupStarted") {
+                    startOAuthSession(payload.sessionId, payload.authorizationUrl);
+                    ipcLogger.debug("oauthProcess enabled", payload.sessionId, payload.authorizationUrl);
+                } else {
+                    clearOAuthSession(payload.sessionId);
+                    ipcLogger.debug("oauthProcess disabled", payload.sessionId);
+                }
                 break;
             }
             case "subscriptionModalOpened": {

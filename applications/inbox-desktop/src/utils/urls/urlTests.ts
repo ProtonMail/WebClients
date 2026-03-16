@@ -93,6 +93,7 @@ export const isAccount = (urlString: string) => {
     }
 };
 
+// Should be removed eventually - INDA-661
 export const isGoogleOAuthAuthorizationURL = (urlString: string) => {
     try {
         const url = new URL(urlString);
@@ -105,11 +106,25 @@ export const isGoogleOAuthAuthorizationURL = (urlString: string) => {
     }
 };
 
+// Should be removed eventually - INDA-661
 export const isZoomAuthURL = (urlString: string) => {
     try {
         const url = new URL(urlString);
 
         if (!url.hostname.includes("zoom") || !url.pathname.startsWith("/oauth/")) return false;
+
+        return true;
+    } catch (error) {
+        return false;
+    }
+};
+
+// Should be removed eventually - INDA-661
+export const isMicrosoftAuthURL = (urlString: string) => {
+    try {
+        const url = new URL(urlString);
+
+        if (!url.hostname.includes("login.microsoftonline.com")) return false;
 
         return true;
     } catch (error) {
