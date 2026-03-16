@@ -1,3 +1,4 @@
+import type { ReactElement } from 'react';
 import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
@@ -14,15 +15,16 @@ import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdo
 import LabelName from './LabelName';
 import LabelsAndFolders from './LabelsAndFolders';
 import MoreActions from './MoreActions';
-import MoreDropdown from './MoreDropdown';
 import MoveButtons from './MoveButtons';
 import PagingControls from './PagingControls';
 import ReadUnreadButtons from './ReadUnreadButtons';
 import type { Props as ToolbarProps } from './Toolbar';
 import { ListSettings } from './list-settings/ListSettings';
+import { MoreDropdown } from './more-dropdown/MoreDropdown';
 
 interface Props extends Omit<ToolbarProps, 'columnMode' | 'onBack' | 'onElement' | 'onCheck' | 'breakpoints'> {
     classname: string;
+    selectAll: ReactElement;
 }
 
 const BREAKPOINTS = {
