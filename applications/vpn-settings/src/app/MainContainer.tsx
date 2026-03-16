@@ -308,7 +308,7 @@ const MainContainer: FunctionComponent = () => {
                                     <PrivateMainSettingsArea
                                         config={vpnRoutes.dashboardV2}
                                         mainAreaClass="bg-lowered settings-cards"
-                                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
+                                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mr-auto"
                                         style={{ '--max-w-custom': '1500px' }}
                                     >
                                         <YourPlanSectionV2 app={app} />
@@ -325,7 +325,7 @@ const MainContainer: FunctionComponent = () => {
                                     <PrivateMainSettingsArea
                                         config={vpnRoutes.subscription}
                                         mainAreaClass="bg-lowered settings-cards"
-                                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
+                                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mr-auto"
                                         style={{ '--max-w-custom': '1500px' }}
                                     >
                                         <YourPlanSectionV2

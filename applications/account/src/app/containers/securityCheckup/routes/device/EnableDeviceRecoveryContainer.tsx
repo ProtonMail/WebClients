@@ -3,19 +3,15 @@ import { Link, useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { useGetUser } from '@proton/account/user/hooks';
-import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { useApi, useAuthentication, useSecurityCheckup } from '@proton/components';
+import { useApi, useSecurityCheckup } from '@proton/components';
+import { useSyncDeviceRecovery } from '@proton/components/hooks/useSyncDeviceRecovery';
 import useLoading from '@proton/hooks/useLoading';
 import { CacheType } from '@proton/redux-utilities';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
 import { BRAND_NAME, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
-import { syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
 import SecurityCheckupMain from '../../components/SecurityCheckupMain';
 import SecurityCheckupMainIcon from '../../components/SecurityCheckupMainIcon';
@@ -36,11 +32,8 @@ const EnableDeviceRecoveryContainer = () => {
     const [step, setStep] = useState(STEPS.ENABLE);
 
     const api = useApi();
-    const authentication = useAuthentication();
 
-    const getUser = useGetUser();
-    const getUserKeys = useGetUserKeys();
-    const getAddresses = useGetAddresses();
+    const syncDeviceRecoveryHelper = useSyncDeviceRecovery();
     const getUserSettings = useGetUserSettings();
 
     const [loading, withLoading] = useLoading();
@@ -51,23 +44,6 @@ const EnableDeviceRecoveryContainer = () => {
             return;
         }
     }, []);
-
-    const syncDeviceRecoveryHelper = async (partialUserSettings: Partial<UserSettings>) => {
-        const [user, userKeys, addresses, userSettings] = await Promise.all([
-            getUser(),
-            getUserKeys(),
-            getAddresses(),
-            getUserSettings(),
-        ]);
-        return syncDeviceRecovery({
-            api,
-            user,
-            addresses,
-            userSettings: { ...userSettings, ...partialUserSettings },
-            userKeys,
-            authentication,
-        });
-    };
 
     if (step === STEPS.SUCCESS) {
         return (

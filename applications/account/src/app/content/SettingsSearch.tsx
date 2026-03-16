@@ -4,9 +4,13 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms/Input/Input';
-import type { SubSectionConfig } from '@proton/components';
+import type { SubSectionConfig, SubrouteConfig, SubrouteGroup } from '@proton/components';
 import { AutocompleteList, Icon, Marks, Option, useAutocomplete, useAutocompleteFilter } from '@proton/components';
-import { getIsSectionAvailable, getIsSubsectionAvailable } from '@proton/components/containers/layout/helper';
+import {
+    getIsSectionAvailable,
+    getIsSubrouteAvailable,
+    getIsSubsectionAvailable,
+} from '@proton/components/containers/layout/helper';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import type { IconName } from '@proton/icons/types';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
@@ -94,7 +98,20 @@ const getSearchableItems = (routes: Routes, path: string, app: APP_NAMES): Searc
                 })
                 .filter(isTruthy);
 
-            return [parentItem, ...subsectionItems];
+            const allSubrouteConfigs = [
+                ...Object.values<SubrouteConfig>(sectionRoute.subroutes ?? {}),
+                ...(sectionRoute.subrouteGroups?.flatMap((g: SubrouteGroup) => Object.values(g.subroutes)) ?? []),
+            ];
+            const subrouteItems: SearchOption[] = allSubrouteConfigs.filter(getIsSubrouteAvailable).map(
+                (subroute): SearchOption => ({
+                    value: subroute.text,
+                    in: [parentRoute.header, sectionRoute.text],
+                    to: `${prefix}${sectionRoute.to}${subroute.to}`,
+                    icon: subroute.icon ?? sectionRoute.icon,
+                })
+            );
+
+            return [parentItem, ...subsectionItems, ...subrouteItems];
         });
     });
 };

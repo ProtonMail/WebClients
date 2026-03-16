@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
@@ -15,6 +16,7 @@ import TableRow from '@proton/components/components/table/TableRow';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { SECOND } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ContactCell } from '../../shared/ContactCell';
@@ -171,14 +173,21 @@ const IncomingTable = ({ controller }: { controller: IncomingDelegatedAccessProv
             title: c('emergency_access').t`Wait time`,
             info: c('emergency_access').t`Time required before automatically giving you access`,
         },
-        { title: c('Title').t`Status`, className: 'w-1/3' },
+        { title: '' },
         { title: '' },
     ];
 
     const headerLabels = headerCells.map((cell) => cell.title);
 
     return (
-        <Table hasActions responsive="cards" data-testid="incoming-emergency-access-table">
+        <Table
+            hasActions
+            responsive="stacked"
+            lastRowNoBorder
+            noInlinePadding
+            className="mb-0"
+            data-testid="incoming-emergency-access-table"
+        >
             <TableHeader>
                 <TableRow>
                     {headerCells.map(({ title, info, className }) => (
@@ -214,7 +223,28 @@ const IncomingTable = ({ controller }: { controller: IncomingDelegatedAccessProv
 };
 
 export const IncomingEmergencyContactSettings = () => {
+    const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const controller = useIncomingController();
+
+    if (isRecoverySettingsRedesignEnabled) {
+        if (controller.loading || !controller.items.emergencyContacts.length) {
+            return null;
+        }
+
+        return (
+            <DashboardCard>
+                <DashboardCardContent>
+                    <h3 className="text-semibold text-rg mb-3">{c('emergency_access').t`People who trust me`}</h3>
+                    <p className="mt-0 mb-4 color-weak">
+                        {c('emergency_access')
+                            .t`They added you as trusted contact. You can access their account in case of an emergency.`}
+                    </p>
+                    <IncomingTable controller={controller} />
+                </DashboardCardContent>
+            </DashboardCard>
+        );
+    }
+
     return (
         <>
             <div className="text-semibold text-xl mb-3">{c('emergency_access').t`People who trust me`}</div>

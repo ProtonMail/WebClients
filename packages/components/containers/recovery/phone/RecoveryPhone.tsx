@@ -1,5 +1,5 @@
 import type { FormEvent, ReactNode } from 'react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -28,12 +28,15 @@ interface RenderFormProps {
     className?: string;
     inputWidth?: string;
     onSubmit: (e: FormEvent<HTMLFormElement>) => void;
+    onReset: () => void;
     input: ReactNode;
     submitButtonProps: {
         type: 'submit';
         disabled: boolean;
         loading: boolean;
     };
+    onVerify: () => void;
+    onRemove: () => void;
 }
 
 const defaultRenderForm = ({ className, inputWidth, onSubmit, input, submitButtonProps }: RenderFormProps) => {
@@ -63,10 +66,11 @@ interface Props {
     onSuccess?: (updatedUserSettings: UserSettings) => void;
     autoFocus?: boolean;
     renderForm?: (props: RenderFormProps) => ReactNode;
-    inputProps?: Partial<Pick<InputFieldProps<typeof PhoneInput>, 'label'>>;
+    inputProps?: Partial<Pick<InputFieldProps<typeof PhoneInput>, 'label' | 'readOnly'>>;
     disableVerifyCta?: boolean;
     persistPasswordScope?: boolean;
     canSubmit?: (input: string) => boolean;
+    autoStartVerificationFlowAfterSet?: boolean;
 }
 
 const RecoveryPhone = ({
@@ -82,6 +86,7 @@ const RecoveryPhone = ({
     disableVerifyCta,
     persistPasswordScope = false,
     canSubmit,
+    autoStartVerificationFlowAfterSet = false,
 }: Props) => {
     const api = useApi();
     const dispatch = useDispatch();
@@ -90,28 +95,59 @@ const RecoveryPhone = ({
     const { onFormSubmit } = useFormErrors();
     const [verifyRecoveryPhoneModal, setVerifyRecoveryPhoneModalOpen, renderVerifyRecoveryPhoneModal] = useModalState();
     const [confirmModal, setConfirmModal, renderConfirmModal] = useModalState();
+    const isSubmittingRef = useRef(false);
 
     const [updatingPhone, withUpdatingPhone] = useLoading();
 
-    const confirmStep = !input && hasReset;
     const loading = renderVerifyRecoveryPhoneModal || renderConfirmModal || updatingPhone;
 
-    const handleUpdatePhone = async () => {
+    const handleUpdatePhone = async (nextPhone = input) => {
         const { UserSettings } = await api<{ UserSettings: UserSettings }>(
             updatePhone({
-                Phone: input,
+                Phone: nextPhone,
                 PersistPasswordScope: persistPasswordScope,
             })
         );
         dispatch(userSettingsActions.set({ UserSettings }));
         createNotification({ text: c('Success').t`Phone number updated` });
+        setInput(nextPhone);
+
+        if (
+            autoStartVerificationFlowAfterSet &&
+            nextPhone &&
+            nextPhone !== phone.Value &&
+            UserSettings.Phone.Status !== SETTINGS_STATUS.VERIFIED
+        ) {
+            setVerifyRecoveryPhoneModalOpen(true);
+        }
+
         onSuccess?.(UserSettings);
+    };
+
+    const submitPhoneUpdate = (nextPhone = input) => {
+        if (isSubmittingRef.current) {
+            return;
+        }
+        if (canSubmit && !canSubmit(nextPhone)) {
+            return;
+        }
+        if (!nextPhone && hasReset) {
+            setConfirmModal(true);
+            return;
+        }
+        isSubmittingRef.current = true;
+        void withUpdatingPhone(() => handleUpdatePhone(nextPhone)).finally(() => {
+            isSubmittingRef.current = false;
+        });
     };
 
     return (
         <>
             {renderConfirmModal && (
-                <ConfirmRemovePhoneModal {...confirmModal} onConfirm={() => withUpdatingPhone(handleUpdatePhone)} />
+                <ConfirmRemovePhoneModal
+                    {...confirmModal}
+                    onConfirm={() => withUpdatingPhone(() => handleUpdatePhone(''))}
+                />
             )}
             {renderVerifyRecoveryPhoneModal && <VerifyRecoveryPhoneModal phone={phone} {...verifyRecoveryPhoneModal} />}
             {renderForm({
@@ -122,15 +158,11 @@ const RecoveryPhone = ({
                     if (!onFormSubmit()) {
                         return;
                     }
-                    if (canSubmit && !canSubmit(input)) {
-                        return;
-                    }
-                    if (confirmStep) {
-                        setConfirmModal(true);
-                    } else {
-                        void withUpdatingPhone(handleUpdatePhone);
-                    }
+                    submitPhoneUpdate(input);
                 },
+                onReset: () => setInput(phone.Value || ''),
+                onVerify: () => setVerifyRecoveryPhoneModalOpen(true),
+                onRemove: () => submitPhoneUpdate(''),
                 input: (
                     <InputFieldTwo
                         as={PhoneInput}

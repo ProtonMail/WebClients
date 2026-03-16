@@ -1,7 +1,11 @@
-import type { SectionConfig, SubSectionConfig } from './interface';
+import type { SectionConfig, SubSectionConfig, SubrouteConfig } from './interface';
 
 export const getIsSubsectionAvailable = (section: SubSectionConfig) => {
     return section.available !== false;
+};
+
+export const getIsSubrouteAvailable = (subroute: SubrouteConfig) => {
+    return subroute.available !== false;
 };
 
 export const getIsSectionAvailable = (section: SectionConfig) => {
@@ -20,6 +24,10 @@ export const getIsSectionAvailable = (section: SectionConfig) => {
 
 export const getSectionPath = (path: string, section: SectionConfig) => {
     return `${path}${section.to}`;
+};
+
+export const getSubroutePath = (sectionPath: string, subroute: SubrouteConfig) => {
+    return `${sectionPath}${subroute.to}`;
 };
 
 export const getRoutePaths = (prefix: string, sectionConfigs: SectionConfig[]) => {

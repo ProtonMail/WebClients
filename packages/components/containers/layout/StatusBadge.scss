@@ -1,0 +1,65 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.status-badge {
+	color: var(--status-badge-color);
+	background-color: var(--status-badge-background);
+
+	[data-theme-mode='dark'] & {
+		box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.08);
+	}
+
+	&-icon {
+		color: var(--status-badge-icon-color);
+	}
+
+	&--on,
+	&--off,
+	&--warning,
+	&--success {
+		--status-badge-background: color-mix(in srgb, var(--background-norm) 80%, var(--status-badge-accent-color));
+		--status-badge-color: color-mix(in srgb, var(--text-norm) 60%, var(--status-badge-accent-color));
+		--status-badge-icon-color: color-mix(in srgb, var(--status-badge-accent-color) 85%, var(--text-norm));
+	}
+
+	&--on {
+		--status-badge-accent-color: var(--signal-info);
+	}
+
+	&--off {
+		--status-badge-accent-color: #525252;
+	}
+
+	&--warning {
+		--status-badge-accent-color: var(--signal-warning);
+	}
+
+	&--success {
+		--status-badge-accent-color: var(--signal-success);
+	}
+
+	&--upsell {
+		--upgrade-color-stop-1: var(--optional-upgrade-color-1, #fd4baf);
+		--upgrade-color-stop-2: var(--optional-upgrade-color-2, #22d8ff);
+		--upgrade-background-color-stop-1: #fff1f9;
+		--upgrade-background-color-stop-2: #edfcff;
+
+		[data-theme-mode='dark'] & {
+			--upgrade-background-color-stop-1: #411c3f;
+			--upgrade-background-color-stop-2: #1c143e;
+		}
+
+		border: 1px solid transparent;
+		background:
+			linear-gradient(
+					103.94deg,
+					var(--upgrade-background-color-stop-1) 4.37%,
+					var(--upgrade-background-color-stop-2) 101.25%
+				)
+				padding-box,
+			linear-gradient(to right, var(--upgrade-color-stop-1), var(--upgrade-color-stop-2)) border-box;
+
+		.status-badge-icon {
+			--status-badge-icon-color: var(--upgrade-color-stop-1);
+		}
+	}
+}

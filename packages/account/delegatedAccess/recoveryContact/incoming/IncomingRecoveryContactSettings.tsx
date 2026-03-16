@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Table from '@proton/components/components/table/Table';
@@ -10,6 +11,7 @@ import TableHeaderCell from '@proton/components/components/table/TableHeaderCell
 import TableRow from '@proton/components/components/table/TableRow';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { DelegatedAccessStateEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ContactCell } from '../../shared/ContactCell';
@@ -82,20 +84,27 @@ const StatusCell = ({
 const IncomingItem = ({
     value,
     value: {
-        parsedIncomingDelegatedAccess: { contact, createdAtDate },
+        parsedIncomingDelegatedAccess: { contact, createdAtDate, isDisabled },
     },
     meta,
     labels,
     notify,
 }: IncomingItemProps) => {
+    const hasStatusCell =
+        (value.incomingDelegatedAccess.State === DelegatedAccessStateEnum.Recoverable &&
+            !value.incomingDelegatedAccess.RecoveryToken) ||
+        isDisabled;
+
     return (
         <TableRow labels={labels}>
-            <TableCell>
+            <TableCell colSpan={hasStatusCell ? undefined : 2}>
                 <ContactCell {...contact} createdAtDate={createdAtDate} />
             </TableCell>
-            <TableCell>
-                <StatusCell value={value} meta={meta} />
-            </TableCell>
+            {hasStatusCell && (
+                <TableCell>
+                    <StatusCell value={value} meta={meta} />
+                </TableCell>
+            )}
             <TableCell>
                 <IncomingDelegatedAccessActions value={value} meta={meta} notify={notify} />
             </TableCell>
@@ -114,8 +123,15 @@ const IncomingTable = ({ controller }: { controller: IncomingDelegatedAccessProv
     const now = Date.now();
 
     return (
-        <Table hasActions responsive="cards" data-testid="incoming-recovery-contact-table">
-            <TableHeader>
+        <Table
+            hasActions
+            responsive="stacked"
+            lastRowNoBorder
+            noInlinePadding
+            className="mb-0"
+            data-testid="incoming-recovery-contact-table"
+        >
+            <TableHeader className="sr-only">
                 <TableRow>
                     {headerCells.map(({ title, className }) => (
                         <TableHeaderCell key={title} className={className}>
@@ -143,7 +159,26 @@ const IncomingTable = ({ controller }: { controller: IncomingDelegatedAccessProv
 };
 
 export const IncomingRecoveryContactSettings = () => {
+    const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const controller = useIncomingController();
+
+    if (isRecoverySettingsRedesignEnabled) {
+        if (controller.loading || !controller.items.recoveryContacts.length) {
+            return null;
+        }
+
+        return (
+            <DashboardCard>
+                <DashboardCardContent>
+                    <h3 className="text-semibold text-rg mb-3">
+                        {c('emergency_access').t`People who have you as a recovery contact`}
+                    </h3>
+                    <IncomingTable controller={controller} />
+                </DashboardCardContent>
+            </DashboardCard>
+        );
+    }
+
     return (
         <>
             <div className="text-semibold text-xl mb-3">

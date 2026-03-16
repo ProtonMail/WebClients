@@ -1,0 +1,48 @@
+.recovery-score-shield {
+	--recovery-score-shield-gradient-highlight: var(--background-norm);
+	--recovery-score-shield-paint0-start: color-mix(
+		in srgb,
+		var(--recovery-score-accent-color) 38%,
+		var(--background-norm)
+	);
+	--recovery-score-shield-paint0-end: var(--recovery-score-accent-color);
+	--recovery-score-shield-paint1-start: color-mix(
+		in srgb,
+		var(--recovery-score-accent-color) 6%,
+		var(--background-norm)
+	);
+	--recovery-score-shield-paint1-end: color-mix(
+		in srgb,
+		var(--recovery-score-accent-color) 38%,
+		var(--background-norm)
+	);
+	--recovery-score-shield-paint3-start: color-mix(
+		in srgb,
+		var(--recovery-score-accent-color) 10%,
+		var(--background-norm)
+	);
+	--recovery-score-shield-paint3-end: color-mix(
+		in srgb,
+		var(--recovery-score-accent-color) 28%,
+		var(--background-norm)
+	);
+	--recovery-score-shield-badge-text: color-mix(in srgb, var(--recovery-score-accent-color) 72%, var(--text-norm));
+	--recovery-score-shield-score-text: color-mix(in srgb, var(--recovery-score-accent-color) 55%, var(--text-norm));
+	--recovery-score-shield-score-outline: var(--text-invert);
+
+	&--color-success {
+		--recovery-score-accent-color: var(--signal-success);
+	}
+
+	&--color-warning {
+		--recovery-score-accent-color: var(--signal-warning);
+	}
+
+	&--color-info {
+		--recovery-score-accent-color: var(--signal-info);
+	}
+
+	&--color-danger {
+		--recovery-score-accent-color: var(--signal-danger);
+	}
+}
