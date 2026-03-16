@@ -1,3 +1,4 @@
+import type { ReactElement } from 'react';
 import { useRef } from 'react';
 
 import { c } from 'ttag';
@@ -6,12 +7,13 @@ import { useElementBreakpoints } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { isLabelIDNewsletterSubscription } from '../../helpers/labels';
-import type { Props as ListSettingsProps } from '../list/ListSettings';
-import ListSettings from '../list/ListSettings';
+import type { ListSettingsProps } from './list-settings/ListSettings';
+import { ListSettings } from './list-settings/ListSettings';
 
 interface Props extends ListSettingsProps {
     classname: string;
     labelID: string;
+    selectAll: ReactElement;
 }
 
 const BREAKPOINTS = {

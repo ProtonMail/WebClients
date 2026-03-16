@@ -2,16 +2,16 @@ import { fireEvent, screen } from '@testing-library/react';
 
 import { mailTestRender } from 'proton-mail/helpers/test/render';
 
-import useSnooze from '../../hooks/actions/useSnooze';
-import { useLabelActions } from '../../hooks/useLabelActions';
-import MoreDropdown from './MoreDropdown';
+import useSnooze from '../../../hooks/actions/useSnooze';
+import { useLabelActions } from '../../../hooks/useLabelActions';
+import { MoreDropdown } from './MoreDropdown';
 
-jest.mock('../../hooks/useLabelActions');
-jest.mock('../../hooks/actions/useSnooze');
-jest.mock('../../hooks/actions/useEmptyLabel', () => ({
+jest.mock('../../../hooks/useLabelActions');
+jest.mock('../../../hooks/actions/useSnooze');
+jest.mock('../../../hooks/actions/useEmptyLabel', () => ({
     useEmptyLabel: () => ({ emptyLabel: '', modal: null }),
 }));
-jest.mock('../../hooks/actions/move/useMoveAllToFolder', () => ({
+jest.mock('../../../hooks/actions/move/useMoveAllToFolder', () => ({
     useMoveAllToFolder: () => ({ moveAllToFolder: '', selectAllMoveModal: null, moveAllModal: null }),
 }));
 
