@@ -1724,6 +1724,15 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Close search": [
+        "关闭搜索"
+      ],
+      "Reload page": [
+        "重新加载页面"
+      ],
+      "Search groups": [
+        "搜索群组"
       ]
     },
     "action": {
@@ -2839,6 +2848,27 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "您需要授予 ${ BRAND_NAME } 复制数据的权限。接受权限后，请返回此处继续。"
+      ],
+      "Completed": [
+        "已完成"
+      ],
+      "Has errors": [
+        "出错啦"
+      ],
+      "In progress": [
+        "进行中"
+      ],
+      "Not started": [
+        "未开始"
+      ],
+      "Settings": [
+        "设置"
+      ],
+      "Status": [
+        "状态"
+      ],
+      "Users migrated": [
+        "已迁移的用户"
       ]
     },
     "breadcrumb": {
@@ -7004,6 +7034,18 @@
       ],
       "ZIP code is required": [
         "必须填写邮政编码"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "请输入您的用户名（不含 @example.com 域名）"
+      ],
+      "Invalid coupon": [
+        "优惠券无效"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "此套餐不支持反向收费机制"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "最低捐赠金额为 ${ price }"
       ]
     },
     "error": {
@@ -8059,7 +8101,7 @@
     },
     "Form heading": {
       "Enter your email address": [
-        "输入您的电子邮件地址"
+        "请输入您的邮箱地址"
       ]
     },
     "Form paragraph": {
@@ -8373,7 +8415,7 @@
         "今天采取简单的一步，确保您的孩子明天的数字安全"
       ],
       "Activate your reserved email address": [
-        "激活您保留的电子邮件地址"
+        "激活您预留的邮箱地址"
       ],
       "Address reservation voucher": [
         "地址保留凭证"
@@ -8388,7 +8430,7 @@
         "恢复激活凭证"
       ],
       "Reserve child's email address": [
-        "保留孩子的电子邮件地址"
+        "预留儿童邮箱地址"
       ],
       "We emailed you the voucher": [
         "我们已通过电子邮件向您发送了凭证"
@@ -9898,7 +9940,7 @@
         "输入您要导入的邮箱账号和密码。"
       ],
       "Enter the email address used to reserve ${ reservedEmail }.": [
-        "输入用于保留 ${ reservedEmail } 的电子邮件地址。"
+        "请输入用于预留邮箱 ${ reservedEmail } 的邮箱地址"
       ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "输入**${ domain.DomainName }**的**eduGAIN**组织的实体 ID。"
@@ -9907,7 +9949,7 @@
         "输入机构密码方可恢复管理员权限。${ learnMore }"
       ],
       "Enter the reserved email address and the email address used during reservation.": [
-        "输入保留的电子邮件地址以及在保留期间使用的电子邮件地址。"
+        "请输入预留的邮箱地址以及预留时使用的邮箱地址"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
@@ -10126,7 +10168,7 @@
         "如果启用了键盘快捷键，可以使用以下按键进行快速操作或跳转到不同视图。${ metaKey } + K 始终处于启用状态。"
       ],
       "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
-        "如果您输入的电子邮件曾用于保留孩子的电子邮件地址，我们将重新发送激活凭证。"
+        "如果您输入的邮箱曾用于预留儿童邮箱地址，我们将重新发送激活凭证。"
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "如果系统时区与当前时区偏好设置不匹配，系统将提示您更新（每天最多一次）。"
@@ -12205,7 +12247,7 @@
         "您的试用将于 ${ timeRemaining } 结束。"
       ],
       "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
-        "您保留的 ${ BRAND_NAME } 电子邮件地址的凭证：${ reservedEmail }"
+        "您预留的 ${ BRAND_NAME } 邮箱地址 ${ reservedEmail } 的兑换凭证"
       ],
       "YouTube": [
         "YouTube"
@@ -12230,6 +12272,27 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "创建群组需要自定义域名！如果您尚未设置自定义域名，请先在 ${ linkToDomainPage } 中进行设置。"
+      ],
+      "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
+        "如果禁用，组织成员将无法创建新的别名，现有别名将仍然有效。"
+      ],
+      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
+        "请打开您的浏览器扩展程序设置，允许 ${ PASS_APP_NAME } 扩展程序访问网站数据。然后，重新加载此页面。"
+      ],
+      "Step 1 of 2": [
+        "第 1 步（共 2 步）"
+      ],
+      "Step 2 of 2": [
+        "第 2 步（共 2 步）"
+      ],
+      "Verifying ${ PASS_APP_NAME } browser extension...": [
+        "正在验证 ${ PASS_APP_NAME } 浏览器扩展程序..."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "您的账户当前已配置为应用反向收费机制，但所选套餐不支持此机制。若要继续，请从账单地址中移除增值税号，或选择其他套餐。"
       ]
     },
     "info": {
@@ -13397,7 +13460,7 @@
         "输入以下密钥的密码：${ fingerprintCode }"
       ],
       "Enter your email address": [
-        "输入您的电子邮件地址"
+        "请输入您的邮箱地址"
       ],
       "Enter your password": [
         "请输入您的密码"
@@ -13919,7 +13982,7 @@
         "保留地址"
       ],
       "Reserved email address": [
-        "保留的电子邮件地址"
+        "预留的邮箱地址"
       ],
       "Reveal password": [
         "显示密码"
@@ -14240,7 +14303,7 @@
         "您的信用余额"
       ],
       "Your email address": [
-        "您的电子邮件地址"
+        "您的邮箱地址"
       ],
       "Your password (admin)": [
         "您的密码（管理员）"
@@ -14252,10 +14315,16 @@
         "您的套餐"
       ],
       "Your voucher for your reserved ${ BRAND_NAME } email address:": [
-        "您保留的 ${ BRAND_NAME } 电子邮件地址的凭证："
+        "您预留的 ${ BRAND_NAME } 邮箱地址的兑换凭证："
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Allow alias creation": [
+        "允许创建别名"
+      ],
+      "Import recent mails": [
+        "导入最近的邮件"
       ]
     },
     "label": {
@@ -15155,6 +15224,18 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "登录您的 ${ BRAND_NAME } 账户，以访问所有加密的 ${ BRAND_NAME } 服务，例如 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等。还没有账户？免费创建一个。"
+      ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "激活为您孩子预留的私人 ${ BRAND_NAME } 邮箱地址并设置其账户。"
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "激活您孩子的 ${ BRAND_NAME } 账户 | ${ BRAND_NAME }"
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "恢复访问为您孩子预留的私人 ${ BRAND_NAME } 邮箱地址。"
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "恢复您孩子的 ${ BRAND_NAME } 账户 | ${ BRAND_NAME }"
       ]
     },
     "Modal title": {
@@ -17986,6 +18067,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您当前的订阅已享有一个现有折扣，转用此新促销意味着现有折扣将不再适用。"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "适用增值税反向收费机制"
       ]
     },
     "Payments.Error": {
@@ -23775,6 +23859,12 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "${ PASS_APP_NAME } is missing permissions": [
+        "${ PASS_APP_NAME } 缺少权限"
+      ],
+      "Reverse charge not supported": [
+        "不支持反向收费"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24946,6 +25036,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的试用将于 ${ textDate } 结束。如果您在 ${ textDate } 之前取消，将不会被收费。${ action }"
+      ],
+      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
+        "登录失败！请打开 ${ PASS_APP_NAME } 浏览器扩展程序，并在其中登录。"
+      ],
+      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
+        "注册失败！请打开 ${ PASS_APP_NAME } 浏览器扩展程序，并在其中完成注册。"
       ]
     },
     "Warning for domain modal": {

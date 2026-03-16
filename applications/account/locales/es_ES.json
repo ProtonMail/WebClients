@@ -1632,6 +1632,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Apply filter “${ Name }” to existing messages": [
+        "Aplicar el filtro «${ Name }» a los mensajes existentes"
+      ],
+      "Copy SMTP server": [
+        "Copiar servidor SMTP"
       ]
     },
     "action": {
@@ -5525,6 +5531,12 @@
       ],
       "You won't receive emails forwarded automatically from ${ boldForwarderEmail }.": [
         "No recibirás correos reenviados automáticamente desde ${ boldForwarderEmail }."
+      ],
+      "End-to-end encryption has been disabled for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "Se ha desactivado el cifrado de extremo a extremo para tu dirección ${ boldForwarderEmail }, pero el cifrado de acceso cero sigue activado. ${ learnMoreLink }"
+      ],
+      "Forwarding to ${ boldForwardeeEmail } will become active once the recipient accepts the request.": [
+        "El reenvío a ${ boldForwardeeEmail } se activará en cuanto el destinatario acepte la solicitud."
       ]
     },
     "email_forwarding_2023: Label": {
@@ -11819,6 +11831,12 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
+        "Para evitar la pérdida de datos, elimínalo solo si sabes lo que estás haciendo o has exportado una copia."
+      ],
+      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
+        "Para funcionar correctamente, cada filtro debe contener al menos un nombre y un script de Sieve válido. Puedes ${ link }."
       ]
     },
     "info": {
@@ -16055,6 +16073,9 @@
       ],
       "Member deleted": [
         "Miembro eliminado"
+      ],
+      "Invitation deleted": [
+        "Invitación eliminada"
       ]
     },
     "Notification in shared calendar modal": {
@@ -17333,6 +17354,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tu suscripción tiene un descuento existente. Al cambiarte a esta nueva promoción, el descuento existente ya no se aplicará."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Se aplica el mecanismo de inversión del sujeto pasivo del IVA."
       ]
     },
     "Payments.Error": {
@@ -17808,6 +17832,9 @@
       ],
       "Post-quantum protection is enabled": [
         "La protección postcuántica está activada"
+      ],
+      "Enable post-quantum protection?": [
+        "¿Activar protección postcuántica?"
       ]
     },
     "pqc-optin: Action": {
@@ -18183,6 +18210,9 @@
     "Remove calendar section text": {
       "If you leave this calendar, you'll have to ask the owner to join again.": [
         "Si abandonas este calendario, deberás solicitar permiso al propietario para unirte de nuevo."
+      ],
+      "This calendar will be removed from your account.": [
+        "Este calendario se eliminará de tu cuenta."
       ]
     },
     "Remove calendar section title": {
@@ -24253,6 +24283,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Tu prueba terminará el ${ textDate }. No se te cobrará si cancelas antes del ${ textDate }. ${ action }"
+      ],
+      "Must be lower than or equal to ${ maximumNumber }": [
+        "Debe ser menor o igual a ${ maximumNumber }"
       ]
     },
     "Warning for domain modal": {

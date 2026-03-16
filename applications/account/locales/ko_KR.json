@@ -1724,6 +1724,15 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Close search": [
+        "검색 닫기"
+      ],
+      "Reload page": [
+        "페이지 새로 고침"
+      ],
+      "Search groups": [
+        "그룹 검색"
       ]
     },
     "action": {
@@ -2836,6 +2845,27 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "회원님의 데이터를 복사하기 위해 ${ BRAND_NAME }에 대한 접근 권한을 부여해야 합니다. 권한 수락 후 다시 돌아와 계속 진행해 주세요."
+      ],
+      "Completed": [
+        "완료"
+      ],
+      "Has errors": [
+        "오류 있음"
+      ],
+      "In progress": [
+        "진행 중"
+      ],
+      "Not started": [
+        "시작 전"
+      ],
+      "Settings": [
+        "설정"
+      ],
+      "Status": [
+        "상태"
+      ],
+      "Users migrated": [
+        "사용자가 이전되었습니다."
       ]
     },
     "breadcrumb": {
@@ -4937,6 +4967,9 @@
       ],
       "Special offer: Save 90% off our premium plan": [
         "특별 할인: 프리미엄 플랜 90% 절약된 가격으로 구매"
+      ],
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "첫 달 ${ offerPrice }. 이후 월 ${ regularPrice }로 갱신되며, 언제든지 취소할 수 있습니다."
       ]
     },
     "dollar_offer: Action": {
@@ -6302,6 +6335,9 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "복구 연락처는 사용자가 신뢰하고 쉽게 연락할 수 있는 지인이여야 합니다."
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
+        "신뢰하는 사람을 복구 연락처에 추가함으로써, 비밀번호 재설정 이후 데이터를 복구할 때 그들에게 이메일을 보내 도움을 요청할 수 있습니다. 당신이 다른 사람의 복구 연락처가 되어 줄 수도 있습니다."
       ]
     },
     "Empty group name": {
@@ -6981,6 +7017,15 @@
       ],
       "ZIP code is required": [
         "우편번호가 필요합니다"
+      ],
+      "Invalid coupon": [
+        "유효하지 않은 쿠폰"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "이 플랜에서는 매입자 납부제도(Reverse charge)가 지원되지 않습니다."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "최소 기부 금액은 ${ price }입니다."
       ]
     },
     "error": {
@@ -12186,6 +12231,36 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "그룹을 생성하려면 사용자 지정 도메인이 필요합니다. 사용자 지정 도메인이 설정되어 있지 않다면 ${ linkToDomainPage }에서 설정하세요."
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "10년 버전 기록은 영업팀에 문의하세요."
+      ],
+      "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
+        "비활성화시, 조직 일원들이 새로운 별칭을 생성할 수 없습니다. 이미 만들어진 별칭은 계속 사용 가능합니다."
+      ],
+      "Other": [
+        "기타"
+      ],
+      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
+        "브라우저 확장 설정을 열어 ${ PASS_APP_NAME } 확장기능이 웹사이트 데이터에 접근하도록 허용해주세요. 그리고 이 페이지를 새로고침 하십시오."
+      ],
+      "Step 1 of 2": [
+        "1/2 단계"
+      ],
+      "Step 2 of 2": [
+        "2/2 단계"
+      ],
+      "To continue to ${ product }": [
+        "${ product }(으)로 계속하기"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "귀하의 계정은 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 선택하신 요금제에서 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 요금제를 선택하십시오."
+      ],
+      "Your payment details are encrypted and secure": [
+        "사용자의 결제 정보는 암호화되어 안전하게 보관됩니다."
       ]
     },
     "info": {
@@ -14209,6 +14284,12 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Allow alias creation": [
+        "별칭 생성 허용"
+      ],
+      "Import recent mails": [
+        "최근 메일 가져오기"
       ]
     },
     "label": {
@@ -15105,6 +15186,21 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "${ BRAND_NAME } 계정에 로그인하여 ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } 등의 모든 암호화 된 ${ BRAND_NAME } 서비스를 사용해보세요. 계정이 없으신가요? 무료로 계정을 만들 수 있어요."
+      ],
+      "${ appName }: Sign-in": [
+        "${ appName }: 로그인"
+      ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "자녀에게 지정된 ${ BRAND_NAME } 이메일 주소를 활성화하고 자녀 계정을 설정하세요."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "자녀의 ${ BRAND_NAME } 계정 활성화 | ${ BRAND_NAME }"
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "자녀에게 지정된 ${ BRAND_NAME } 이메일 주소에 대한 접근 권한을 복구합니다."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "자녀의 ${ BRAND_NAME } 계정 복구 | ${ BRAND_NAME }"
       ]
     },
     "Modal title": {
@@ -17936,6 +18032,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "구독에 현재 기존 할인이 적용되어 있습니다. 새로운 프로모션으로 변경하면 기존 할인이 더 이상 적용되지 않습니다."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "매입자 납부제도(Reverse charge)가 적용됩니다."
       ]
     },
     "Payments.Error": {
@@ -20349,6 +20448,9 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "${ BRAND_NAME }의 암호화된 생태계를 통해 데이터를 제어하기로 선택한 1억 명 이상의 사람들과 함께하세요."
+      ],
+      "${ referrerName } is inviting you to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "${ BRAND_NAME }의 암호화 생태계를 통해 개인정보에 대한 주도권을 유지하려는 1 억명이 넘는 사람들과 함께하도록 ${ referrerName } 이 당신을 초대합니다."
       ]
     },
     "Signup label": {
@@ -21182,6 +21284,9 @@
       ],
       "Total due today": [
         "오늘 결제할 금액"
+      ],
+      "Total due on ${ formattedPeriodEnd }": [
+        "${ formattedPeriodEnd }까지 총액"
       ]
     },
     "Subscription attribute": {
@@ -23809,6 +23914,12 @@
       ],
       "Your subscriptions": [
         "구독"
+      ],
+      "${ PASS_APP_NAME } is missing permissions": [
+        "${ PASS_APP_NAME } 에게 권한이 없습니다."
+      ],
+      "Reverse charge not supported": [
+        "매입자 납부제도(Reverse charge)가 지원되지 않습니다."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24983,6 +25094,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate }에 종료됩니다. ${ textDate } 이전에 취소시 요금이 청구되지 않습니다. ${ action }"
+      ],
+      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
+        "로그인할 수 없습니다. ${ PASS_APP_NAME } 브라우저 확장 프로그램을 열고 거기서 로그인해 주세요."
+      ],
+      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
+        "가입할 수 없습니다. ${ PASS_APP_NAME } 브라우저 확장 프로그램을 열고 거기서 가입해 주세요."
       ]
     },
     "Warning for domain modal": {
@@ -25208,6 +25325,11 @@
       ],
       "Yearly, ${ untilString }": [
         "연간, ${ untilString }"
+      ]
+    },
+    "email_forwarding_2023: Incoming forwarding tab name": {
+      "From me": [
+        "내가 보낸 항목"
       ]
     }
   }

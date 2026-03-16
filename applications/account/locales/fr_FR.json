@@ -1727,6 +1727,12 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Back to sign in": [
+        "Retour à la connexion"
+      ],
+      "Hide": [
+        "Masquer"
       ]
     },
     "action": {
@@ -12392,6 +12398,9 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "To continue to ${ product }": [
+        "Pour continuer vers ${ product }"
       ]
     },
     "info": {
@@ -14822,6 +14831,9 @@
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
+      ],
+      "Don't have access to your 2FA?": [
+        "Vous n'avez pas accès à votre A2F ?"
       ]
     },
     "Link (Scribe)": {
@@ -15331,6 +15343,27 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Connectez-vous à votre compte ${ BRAND_NAME } pour accéder à tous les services chiffrés de ${ BRAND_NAME } comme ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et d'autres encore. Vous n'avez pas de compte ? Créez un compte GRATUITEMENT."
+      ],
+      "${ appName }: Sign-in": [
+        "${ appName } : connexion"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName } : inscription"
+      ],
+      "Create a new ${ appName } account": [
+        "Créer un nouveau compte ${ appName }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Vous avez oublié le mot de passe de votre compte ${ BRAND_NAME } ? Réinitialisez-le ici à l'aide d'un code de récupération, d'une adresse e-mail ou d'un SMS et accédez à nouveau à vos comptes ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et d'autres services."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Vous avez oublié le nom d'utilisateur de votre compte ${ BRAND_NAME } ? Retrouvez-le à l'aide de votre adresse e-mail ou numéro de téléphone de récupération et retrouvez l'accès à ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et d'autres services."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Réinitialisez le mot de passe de votre compte ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Connectez-vous pour accéder à votre compte ${ appName }"
       ]
     },
     "Modal title": {

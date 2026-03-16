@@ -2847,6 +2847,9 @@
       ],
       "What are you migrating?": [
         "Vad migrerar du?"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "Du måste bevilja behörighet för ${ BRAND_NAME } att kopiera dina data. När du har accepterat behörigheterna, kom tillbaka hit för att fortsätta."
       ]
     },
     "breadcrumb": {
@@ -12302,6 +12305,12 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "AI chatbot": [
+        "AI-chattbot"
+      ],
+      "Verifying ${ PASS_APP_NAME } browser extension...": [
+        "Verifierar webbläsartillägget ${ PASS_APP_NAME } …"
       ]
     },
     "info": {
@@ -25246,6 +25255,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
+      ],
+      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
+        "Kunde inte logga in. Öppna webbläsartillägget ${ PASS_APP_NAME } och logga in därifrån."
+      ],
+      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
+        "Kunde inte registrera. Öppna webbläsartillägget ${ PASS_APP_NAME } och registrera dig därifrån."
       ]
     },
     "Warning for domain modal": {

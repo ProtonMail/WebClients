@@ -1724,6 +1724,15 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Close search": [
+        "Lukk søk"
+      ],
+      "Reload page": [
+        "Last inn siden på nytt"
+      ],
+      "Search groups": [
+        "Søk i grupper"
       ]
     },
     "action": {
@@ -2856,6 +2865,27 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Du må gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter at du har godtatt tillatelsene, kan du komme tilbake hit for å fortsette."
+      ],
+      "Completed": [
+        "Fullført"
+      ],
+      "Has errors": [
+        "Inneholder feil"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Not started": [
+        "Ikke startet"
+      ],
+      "Settings": [
+        "Innstillinger"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Users migrated": [
+        "Brukere migrert"
       ]
     },
     "breadcrumb": {
@@ -7049,6 +7079,18 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Skriv inn brukernavnet ditt uten domenet (@eksempel.com)"
+      ],
+      "Invalid coupon": [
+        "Ugyldig kupong"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omvendt avgiftsplikt støttes ikke for denne planen"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimumbeløpet for donasjon er ${ price }"
       ]
     },
     "error": {
@@ -12365,6 +12407,27 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Et egendefinert domene er nødvendig for å opprette grupper. Hvis du ikke har satt opp et egendefinert domene, gjør du det først under ${ linkToDomainPage }."
+      ],
+      "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
+        "Hvis dette er deaktivert, vil ikke organisasjonsmedlemmer kunne opprette nye aliaser. Eksisterende aliaser vil forbli aktive."
+      ],
+      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
+        "Åpne innstillingene for nettleserutvidelsen din og gi ${ PASS_APP_NAME }-utvidelsen tilgang til nettstedsdata. Last deretter inn denne siden på nytt."
+      ],
+      "Step 1 of 2": [
+        "Trinn 1 av 2"
+      ],
+      "Step 2 of 2": [
+        "Trinn 2 av 2"
+      ],
+      "Verifying ${ PASS_APP_NAME } browser extension...": [
+        "Verifiserer nettleserutvidelsen ${ PASS_APP_NAME } ..."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Kontoen din er for øyeblikket konfigurert til å bruke ordningen for omvendt avgiftsplikt. Dette støttes ikke for den valgte planen. For å fortsette, fjern enten MVA-nummeret fra faktureringsadressen eller velg en annen plan."
       ]
     },
     "info": {
@@ -14399,6 +14462,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Allow alias creation": [
+        "Tillat opprettelse av alias"
+      ],
+      "Import recent mails": [
+        "Importer nylige e-poster"
       ]
     },
     "label": {
@@ -15310,6 +15379,18 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Logg på din ${ BRAND_NAME }-konto for å få tilgang til alle krypterte ${ BRAND_NAME }-tjenester slik som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mer. Har du ikke en konto? Opprett en GRATIS."
+      ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Aktiver den private ${ BRAND_NAME }-e-postadressen som er reservert for barnet ditt, og opprett kontoen deres."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Aktiver barnets ${ BRAND_NAME }-konto | ${ BRAND_NAME }"
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "Gjenopprett tilgangen til den private e-postadressen ${ BRAND_NAME } som er reservert for barnet ditt."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Gjenopprett barnets ${ BRAND_NAME }-konto | ${ BRAND_NAME }"
       ]
     },
     "Modal title": {
@@ -18188,6 +18269,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Omvendt avgiftsplikt gjelder."
       ]
     },
     "Payments.Error": {
@@ -24164,6 +24248,12 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "${ PASS_APP_NAME } is missing permissions": [
+        "${ PASS_APP_NAME } mangler tillatelser"
+      ],
+      "Reverse charge not supported": [
+        "Omvendt avgiftsplikt støttes ikke"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25353,6 +25443,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. Du blir ikke belastet hvis du avbryter før ${ textDate }. ${ action }"
+      ],
+      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
+        "Kunne ikke logge på. Åpne nettleserutvidelsen for ${ PASS_APP_NAME } og logg på derfra."
+      ],
+      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
+        "Kunne ikke registrere deg. Åpne nettleserutvidelsen ${ PASS_APP_NAME } og registrer deg derfra."
       ]
     },
     "Warning for domain modal": {
