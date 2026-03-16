@@ -19,17 +19,18 @@ import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { selectLabelID } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { canMoveAll } from '../../helpers/labels';
-import useSnooze from '../../hooks/actions/useSnooze';
-import { useLabelActions } from '../../hooks/useLabelActions';
-import LabelDropdown, { labelDropdownContentProps } from '../dropdown/LabelDropdown';
-import MoveDropdown, { moveDropdownContentProps } from '../dropdown/MoveDropdown';
-import type { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
-import SnoozeUpsellModal from '../list/snooze/components/SnoozeUpsellModal';
+import { canMoveAll } from '../../../helpers/labels';
+import useSnooze from '../../../hooks/actions/useSnooze';
+import { useLabelActions } from '../../../hooks/useLabelActions';
+import LabelDropdown, { labelDropdownContentProps } from '../../dropdown/LabelDropdown';
+import MoveDropdown, { moveDropdownContentProps } from '../../dropdown/MoveDropdown';
+import type { SOURCE_ACTION } from '../../list/list-telemetry/useListTelemetry';
+import SnoozeUpsellModal from '../../list/snooze/components/SnoozeUpsellModal';
 import SnoozeToolbarDropdownStepWrapper, {
     SnoozeToolbarDropdownStepWrapperProps,
-} from '../list/snooze/containers/SnoozeToolbarDropdownStepWrapper';
-import type { DropdownRender } from '../message/extrasHeader/HeaderDropdown';
+} from '../../list/snooze/containers/SnoozeToolbarDropdownStepWrapper';
+import type { DropdownRender } from '../../message/extrasHeader/HeaderDropdown';
+import ToolbarDropdown from '../ToolbarDropdown';
 import {
     ArchiveAction,
     DeleteAction,
@@ -40,8 +41,7 @@ import {
     NoSpamAction,
     SpamAction,
     TrashAction,
-} from './MoreDropdown/MoreDropdownActions';
-import ToolbarDropdown from './ToolbarDropdown';
+} from './MoreDropdownActions';
 
 const canEmpty = (labelID: string, elementIDs: string[], selectedIDs: string[], isSearch: boolean) => {
     return (
@@ -76,7 +76,7 @@ interface Props {
     onCheckAll?: (check: boolean) => void;
 }
 
-const MoreDropdown = ({
+export const MoreDropdown = ({
     elementIDs,
     selectedIDs,
     isSearch,
@@ -230,5 +230,3 @@ const MoreDropdown = ({
         </>
     );
 };
-
-export default MoreDropdown;

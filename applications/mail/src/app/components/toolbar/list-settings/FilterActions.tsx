@@ -1,13 +1,15 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '@proton/components';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { MESSAGE_BUTTONS } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter } from '@proton/shared/lib/mail/search';
 import clsx from '@proton/utils/clsx';
 
-import { useListSettingsTelemetry } from '../list/useListSettingsTelemetry';
+import { useListSettingsTelemetry } from './useListSettingsTelemetry';
 
 interface Props {
     filter: Filter;
@@ -16,7 +18,7 @@ interface Props {
     dropdown?: boolean;
 }
 
-const FilterActions = ({ filter = {}, mailSettings, onFilter, dropdown }: Props) => {
+export const FilterActions = ({ filter = {}, mailSettings, onFilter, dropdown }: Props) => {
     const noFilterApply = !Object.values(filter).length;
 
     const { sendAllReport, sendFileReport, sendReadReport, sendUnreadReport } = useListSettingsTelemetry();
@@ -140,5 +142,3 @@ const FilterActions = ({ filter = {}, mailSettings, onFilter, dropdown }: Props)
         </div>
     );
 };
-
-export default FilterActions;
