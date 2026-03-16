@@ -1430,8 +1430,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
+        "Confiar na chave"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1613,6 +1612,9 @@
       ],
       "Zoom out": [
         "Reduzir"
+      ],
+      "Edit billing address": [
+        "Editar o endereço da fatura"
       ]
     },
     "action": {
@@ -15121,6 +15123,9 @@
       ],
       "Get the deal": [
         "Aproveite a oferta"
+      ],
+      "SPRING SALE 2026": [
+        "PROMO DE PRIMAVERA 2026"
       ]
     },
     "q1campaign: Info": {
@@ -15195,6 +15200,12 @@
       ],
       "Use your own email domain": [
         "Utilize o seu próprio domínio de e-mail"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Prolongue a sua subscrição e guarde ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Mude para o nosso plano anual e guarde ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Label": {
@@ -15207,7 +15218,7 @@
         "por 12 meses"
       ],
       "SPRING SALE": [
-        "PROMOÇÃO DE PRIMAVERA"
+        "PROMO DE PRIMAVERA"
       ]
     }
   }

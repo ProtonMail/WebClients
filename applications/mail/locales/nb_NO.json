@@ -1676,6 +1676,9 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
       ]
     },
     "action": {
@@ -5125,6 +5128,18 @@
       ],
       "Wrong billing address": [
         "Feil faktureringsadresse"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Skriv inn brukernavnet ditt uten domenet (@eksempel.com)"
+      ],
+      "Invalid coupon": [
+        "Ugyldig kupong"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omvendt avgiftsplikt støttes ikke for denne planen"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimumbeløpet for donasjon er ${ price }"
       ]
     },
     "error": {
@@ -8913,6 +8928,9 @@
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du mottar kredittbelønningen én måned etter at vennen din abonnerer på en årsplan, og to måneder etter at de abonnerer på en månedlig plan."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Kontoen din er for øyeblikket konfigurert til å bruke ordningen for omvendt avgiftsplikt. Dette støttes ikke for den valgte planen. For å fortsette, fjern enten MVA-nummeret fra faktureringsadressen eller velg en annen plan."
       ]
     },
     "info": {
@@ -9996,6 +10014,9 @@
       ],
       "Last 6 months only": [
         "Kun siste 6 måneder"
+      ],
+      "Import recent mails": [
+        "Importer nylige e-poster"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12385,6 +12406,9 @@
       ],
       "I'm purchasing as a business": [
         "Jeg kjøper som en bedrift."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Omvendt avgiftsplikt gjelder."
       ]
     },
     "Payments.Error": {
@@ -15776,6 +15800,9 @@
       ],
       "Spring Sale": [
         "Vårsalg"
+      ],
+      "Reverse charge not supported": [
+        "Omvendt avgiftsplikt støttes ikke"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16371,6 +16398,9 @@
       ],
       "Get the deal": [
         "Benytt deg av tilbudet"
+      ],
+      "SPRING SALE 2026": [
+        "VÅRSALG 2026"
       ]
     },
     "q1campaign: Info": {
@@ -16445,6 +16475,12 @@
       ],
       "Use your own email domain": [
         "Bruk ditt eget e-postdomene"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Forleng abonnementet ditt og lagre ${ discountPercent } %!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Bytt til vårt årlige abonnement og lagre ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Label": {

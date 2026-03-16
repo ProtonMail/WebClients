@@ -1682,6 +1682,9 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Edit billing address": [
+        "Editare adresă de facturare"
       ]
     },
     "action": {
@@ -5170,6 +5173,12 @@
       ],
       "The minimum donation amount is ${ price }": [
         "Suma minimă de donație este de ${ price }."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduceți numele de utilizator fără domeniu (@exemplu.com)."
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Schema de taxare inversă nu este acceptată pentru acest plan."
       ]
     },
     "error": {
@@ -7689,7 +7698,7 @@
         "Prioritate scăzută"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail."
+        "Setare ${ MAIL_APP_NAME } ca aplicație implicită de e-mail."
       ],
       "Manage your folders": [
         "Gestionare foldere"
@@ -9065,6 +9074,9 @@
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Vei primi recompensa în credite la o lună după ce persoana se abonează la un plan anual și la două luni după ce se abonează la un plan lunar."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Contul este configurat în prezent pentru a aplica schema de taxare inversă. Aceasta nu este acceptată pentru planul selectat. Pentru a continua, fie eliminați numărul de TVA din adresa de facturare, fie selectați un alt plan."
       ]
     },
     "info": {
@@ -12594,6 +12606,9 @@
       ],
       "I'm purchasing as a business": [
         "Achiziționez în calitate de companie"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Se aplică mecanismul de taxare inversă a TVA."
       ]
     },
     "Payments.Error": {
@@ -16078,6 +16093,9 @@
       ],
       "Spring Sale": [
         "Reducere de primăvară"
+      ],
+      "Reverse charge not supported": [
+        "Taxa inversă nu este suportată"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16718,6 +16736,9 @@
       ],
       "Get the deal": [
         "Valorificați oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTĂ DE PRIMĂVERII 2026"
       ]
     },
     "q1campaign: Info": {
@@ -16792,6 +16813,12 @@
       ],
       "Use your own email domain": [
         "Utilizați propriul domeniu de e-mail"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Extindeți-vă abonamentul și salvați ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Treceți la planul nostru anual și salvați ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Label": {
@@ -16804,7 +16831,7 @@
         "pentru 12 luni"
       ],
       "SPRING SALE": [
-        "REDUCERI DE PRIMĂVARĂ"
+        "OFERTĂ DE PRIMĂVERII"
       ]
     }
   }

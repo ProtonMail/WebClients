@@ -1484,8 +1484,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1676,6 +1675,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
       ]
     },
     "action": {
@@ -5115,7 +5117,7 @@
         "Kuruluş adının veya kişi adının yazılması zorunludur"
       ],
       "Invalid coupon": [
-        "Geçersiz kupon"
+        "Kupon geçersiz"
       ],
       "Invalid VAT number": [
         "KDV numarası geçersiz"
@@ -5124,13 +5126,19 @@
         "Lütfen fatura bilgilerini tamamlayın"
       ],
       "The minimum donation amount is ${ price }": [
-        "Minimum bağış tutarı ${ price }"
+        "En az bağış tutarı ${ price }"
       ],
       "This field is invalid": [
         "Bu alan geçersiz"
       ],
       "Wrong billing address": [
         "Fatura adresi yanlış"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Kullanıcı adınızı etki alanı (@example.com) olmadan yazın"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Bu tarifede tersine KDV uygulaması desteklenmiyor"
       ]
     },
     "error": {
@@ -7566,7 +7574,7 @@
         "Düşük Öncelik"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız olsun."
+        "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız yapın."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -8919,6 +8927,9 @@
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Arkadaşınızın yıllık bir tarifeye abone olmasından 1 ay sonra, aylık bir tarifeye abone oldmasından 2 ay sonra kredi ödülünü alacaksınız."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Hesabınızda şu anda tersine KDV uygulaması yapılandırılmış. Seçilmiş tarifede bu uygulama desteklenmiyor. İlerlemek için fatura adresinden KDV numarasını kaldırabilir ya da farklı bir tarife seçebilirsiniz."
       ]
     },
     "info": {
@@ -12394,6 +12405,9 @@
       ],
       "I'm purchasing as a business": [
         "Kurumsal olarak satın alıyorum"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Tersine KDV uygulaması kullanılıyor."
       ]
     },
     "Payments.Error": {
@@ -15781,10 +15795,13 @@
         "✨ Kategoriler özelliği geliyor!"
       ],
       "Keep this banner hidden?": [
-        "Bu uyarı gizli tutulsun mu?"
+        "Bu uyarı gizlensin mi?"
       ],
       "Spring Sale": [
         "Bahar indirimi"
+      ],
+      "Reverse charge not supported": [
+        "Tersine KDV uygulaması desteklenmiyor"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16380,6 +16397,9 @@
       ],
       "Get the deal": [
         "Tekliften yararlanın"
+      ],
+      "SPRING SALE 2026": [
+        "BAHAR İNDİRİMİ 2026"
       ]
     },
     "q1campaign: Info": {
@@ -16454,6 +16474,12 @@
       ],
       "Use your own email domain": [
         "Kendi e-posta etki alanınızı kullanın"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Aboneliğinizi uzatın ve yüzde ${ discountPercent } kaydedin!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Yıllık tarifemize geçin ve ${ toYearlyDiscountAmount } kaydedin!"
       ]
     },
     "q1campaign: Label": {

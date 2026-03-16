@@ -1492,10 +1492,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -1688,6 +1685,9 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Edit billing address": [
+        "Рэдагаваць адрас аплаты"
       ]
     },
     "action": {
@@ -3099,7 +3099,7 @@
         "Факс"
       ],
       "Main": [
-        "Галоўная"
+        "Галоўны"
       ],
       "Mobile": [
         "Мабільны"
@@ -5209,6 +5209,9 @@
       ],
       "Wrong billing address": [
         "Няправільны плацежны адрас"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Схема адваротнага налічэння падатку не падтрымліваецца для гэтага тарыфнага плана"
       ]
     },
     "error": {
@@ -9211,6 +9214,9 @@
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Вы атрымаеце ўзнагароду ў крэдытах праз 1 месяц пасля таго, як ваш сябар падпішацца на гадавы тарыфны план. Праз 2 месяцы можна разлічваць на ўзнагароду, калі ваш сябар падпішацца на месячны тарыфны план."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб ужываць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
       ]
     },
     "info": {
@@ -10310,6 +10316,9 @@
       ],
       "Last 6 months only": [
         "Толькі за апошнія 6 месяцаў"
+      ],
+      "Import recent mails": [
+        "Імпартаваць нядаўнія лісты"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16368,6 +16377,9 @@
       ],
       "Spring Sale": [
         "Вясенні распродаж"
+      ],
+      "Reverse charge not supported": [
+        "Адваротнае налічэнне падатку не падтрымліваецца"
       ]
     },
     "Today icon tooltip in mini calendar": {
