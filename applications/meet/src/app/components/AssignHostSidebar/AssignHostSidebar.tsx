@@ -15,7 +15,7 @@ import clsx from '@proton/utils/clsx';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useMeetContext } from '../../contexts/MeetContext';
-import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
+import { useSortedParticipants } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
 import { SideBarSearch } from '../SideBarSearch/SideBarSearch';
 
@@ -31,7 +31,7 @@ export const AssignHostSidebar = () => {
     const { assignHost } = useMeetContext();
     const participantsMap = useMeetSelector(selectParticipantsMap);
     const participantNameMap = useMeetSelector(selectParticipantNameMap);
-    const { sortedParticipants } = useSortedParticipantsContext();
+    const sortedParticipants = useSortedParticipants();
 
     const [isScrolled, setIsScrolled] = useState(false);
 

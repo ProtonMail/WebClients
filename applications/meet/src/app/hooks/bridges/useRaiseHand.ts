@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { useRoomContext } from '@livekit/components-react';
 
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { lowerHand, raiseHand, selectRaisedHands } from '@proton/meet/store/slices/meetingState';
+import { lowerHand, raiseHand, selectRaisedHands } from '@proton/meet/store/slices/chatAndReactionsSlice';
 
 import { RAISE_HAND_EMOJI } from '../../constants';
 import { dispatchTimedReaction } from '../../utils/dispatchTimedReaction';

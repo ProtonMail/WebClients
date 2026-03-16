@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
-import { addChatMessages } from '@proton/meet/store/slices/meetingState';
+import { addChatMessages } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { escape, unescape } from '@proton/shared/lib/sanitize/escape';
 import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';

@@ -1,22 +1,17 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-import { PAGE_SIZE } from '../../constants';
 import type { MeetChatMessage, ParticipantEventRecord } from '../../types/types';
 import type { MeetState } from '../rootReducer';
 
-export interface MeetingState {
-    page: number;
-    pageSize: number;
+export interface MeetingChatAndReactionsState {
     chatMessages: MeetChatMessage[];
     events: ParticipantEventRecord[];
     raisedHands: string[];
     activeReactions: Record<string, { emoji: string; timestamp: number }>;
 }
 
-const initialState: MeetingState = {
-    page: 0,
-    pageSize: PAGE_SIZE,
+const initialState: MeetingChatAndReactionsState = {
     chatMessages: [],
     events: [],
     raisedHands: [],
@@ -24,15 +19,9 @@ const initialState: MeetingState = {
 };
 
 const slice = createSlice({
-    name: 'meetingState',
+    name: 'meetingChatAndReactions',
     initialState,
     reducers: {
-        setPage: (state, action: PayloadAction<number>) => {
-            state.page = action.payload;
-        },
-        setPageSize: (state, action: PayloadAction<number>) => {
-            state.pageSize = action.payload;
-        },
         addChatMessages: (state, action: PayloadAction<MeetChatMessage[]>) => {
             state.chatMessages = [...state.chatMessages, ...action.payload];
         },
@@ -83,9 +72,7 @@ const slice = createSlice({
                 delete state.activeReactions[action.payload.identity];
             }
         },
-        resetMeetingState: (state) => {
-            state.page = initialState.page;
-            state.pageSize = initialState.pageSize;
+        resetChatAndReactions: (state) => {
             state.chatMessages = initialState.chatMessages;
             state.events = initialState.events;
             state.raisedHands = initialState.raisedHands;
@@ -95,12 +82,10 @@ const slice = createSlice({
 });
 
 export const {
-    setPage,
-    setPageSize,
     addChatMessages,
     addChatMessageReaction,
     addEvent,
-    resetMeetingState,
+    resetChatAndReactions,
     markChatMessagesAsSeen,
     raiseHand,
     lowerHand,
@@ -108,32 +93,24 @@ export const {
     clearActiveReaction,
 } = slice.actions;
 
-export const selectPage = (state: MeetState) => {
-    return state.meetingState.page;
-};
-
-export const selectPageSize = (state: MeetState) => {
-    return state.meetingState.pageSize;
-};
-
 export const selectChatMessages = (state: MeetState) => {
-    return state.meetingState.chatMessages;
+    return state.meetingChatAndReactions.chatMessages;
 };
 
 export const selectEvents = (state: MeetState) => {
-    return state.meetingState.events;
+    return state.meetingChatAndReactions.events;
 };
 
 export const selectRaisedHands = (state: MeetState) => {
-    return state.meetingState.raisedHands;
+    return state.meetingChatAndReactions.raisedHands;
 };
 
 export const selectActiveReaction = (state: MeetState, identity: string) => {
-    return state.meetingState.activeReactions[identity]?.emoji;
+    return state.meetingChatAndReactions.activeReactions[identity]?.emoji;
 };
 
 export const selectChatMessageReactions = (state: MeetState, messageId: string) => {
-    return state.meetingState.chatMessages.find((m) => m.id === messageId)?.reactions ?? {};
+    return state.meetingChatAndReactions.chatMessages.find((m) => m.id === messageId)?.reactions ?? {};
 };
 
-export const meetingStateReducer = { meetingState: slice.reducer };
+export const chatAndReactionsReducer = { meetingChatAndReactions: slice.reducer };
