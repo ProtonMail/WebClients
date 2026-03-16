@@ -4,7 +4,7 @@ import { useRoomContext } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 
 import { useMeetDispatch } from '@proton/meet/store/hooks';
-import { addEvent } from '@proton/meet/store/slices/meetingState';
+import { addEvent } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { ParticipantEvent } from '@proton/meet/types/types';
 import { useFlag } from '@proton/unleash/useFlag';
 

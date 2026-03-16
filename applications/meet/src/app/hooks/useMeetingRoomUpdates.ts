@@ -1,6 +1,6 @@
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectParticipantNameMap } from '@proton/meet/store/slices/meetingInfo';
-import { selectChatMessages, selectEvents } from '@proton/meet/store/slices/meetingState';
+import { selectChatMessages, selectEvents } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import type { MeetChatMessage, ParticipantEventRecord } from '@proton/meet/types/types';
 
 export const useMeetingRoomUpdates = (): (MeetChatMessage | ParticipantEventRecord)[] => {

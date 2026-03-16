@@ -10,7 +10,7 @@ import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectGuestMode, selectIsScreenShare } from '@proton/meet/store/slices/meetingInfo';
-import { selectPage, setPage } from '@proton/meet/store/slices/meetingState';
+import { selectPage, selectPageCount, setPage } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import {
     MeetingSideBars,
     PermissionPromptStatus,
@@ -28,7 +28,6 @@ import clsx from '@proton/utils/clsx';
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { Pagination } from '../../atoms/Pagination/Pagination';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
@@ -65,7 +64,7 @@ export const ParticipantControls = () => {
 
     const hasAdminPermission = isLocalParticipantAdmin || isLocalParticipantHost;
 
-    const { pageCount } = useSortedParticipantsContext();
+    const pageCount = useMeetSelector(selectPageCount);
 
     const prevDevicePermissionsRef = useRef<{ camera?: PermissionState; microphone?: PermissionState }>({
         camera: 'prompt',

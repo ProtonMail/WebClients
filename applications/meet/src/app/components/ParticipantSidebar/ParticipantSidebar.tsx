@@ -5,12 +5,15 @@ import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcMeetParticipants } from '@proton/icons/icons/IcMeetParticipants';
 import { SCREEN_SHARE_PAGE_SIZE } from '@proton/meet/constants';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectPage, setPage as setPageAction } from '@proton/meet/store/slices/meetingState';
-import { selectMeetSettings } from '@proton/meet/store/slices/settings';
+import {
+    selectPage,
+    selectPageCount,
+    setPage as setPageAction,
+} from '@proton/meet/store/slices/sortedParticipantsSlice';
 import clsx from '@proton/utils/clsx';
 
 import { Pagination } from '../../atoms/Pagination/Pagination';
-import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
+import { useSortedPagedParticipants } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { ParticipantTile } from '../ParticipantTile/ParticipantTile';
 
 import './ParticipantSidebar.scss';
@@ -22,17 +25,12 @@ export const ParticipantSidebar = ({
     participantSideBarOpen: boolean;
     setParticipantSideBarOpen: (open: boolean) => void;
 }) => {
-    const { pagedParticipants, pagedParticipantsWithoutSelfView, pageCount, pageCountWithoutSelfView } =
-        useSortedParticipantsContext();
-    const page = useMeetSelector(selectPage);
     const dispatch = useMeetDispatch();
+    const page = useMeetSelector(selectPage);
     const setPage = (page: number) => dispatch(setPageAction(page));
+    const participants = useSortedPagedParticipants();
 
-    const { selfView } = useMeetSelector(selectMeetSettings);
-
-    const currentPageCount = selfView ? pageCount : pageCountWithoutSelfView;
-
-    const participants = selfView ? pagedParticipants : pagedParticipantsWithoutSelfView;
+    const pageCount = useMeetSelector(selectPageCount);
 
     const ButtonIcon = participantSideBarOpen ? IcChevronRight : IcMeetParticipants;
 
@@ -46,14 +44,14 @@ export const ParticipantSidebar = ({
                 <ButtonIcon size={6} />
             </Button>
             <div className={clsx('participant-sidebar__list hide-scrollbar', !participantSideBarOpen && 'inactive')}>
-                {currentPageCount > 1 && (
+                {pageCount > 1 && (
                     <div
                         className={clsx(
                             'participant-sidebar__pagination-container absolute flex justify-center items-center w-full z-up',
                             !participantSideBarOpen && 'inactive'
                         )}
                     >
-                        <Pagination totalPages={currentPageCount} currentPage={page} onPageChange={setPage} />
+                        <Pagination totalPages={pageCount} currentPage={page} onPageChange={setPage} />
                     </div>
                 )}
                 {participantSideBarOpen &&
