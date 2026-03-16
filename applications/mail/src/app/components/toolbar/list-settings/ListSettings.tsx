@@ -1,12 +1,10 @@
-import { memo } from 'react';
-
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
-import FilterActions from '../toolbar/FilterActions';
-import SortDropdown from '../toolbar/SortDropdown';
+import { FilterActions } from './FilterActions';
+import { SortDropdown } from './SortDropdown';
 
-export interface Props {
+export interface ListSettingsProps {
     sort: Sort;
     onSort: (sort: Sort) => void;
     filter: Filter;
@@ -17,7 +15,7 @@ export interface Props {
     filterAsDropdown?: boolean;
 }
 
-const ListSettings = ({
+export const ListSettings = ({
     sort,
     onSort,
     onFilter,
@@ -26,7 +24,7 @@ const ListSettings = ({
     mailSettings,
     labelID,
     filterAsDropdown,
-}: Props) => {
+}: ListSettingsProps) => {
     return (
         <div className="flex flex-nowrap justify-space-between items-center gap-2 m-auto">
             <FilterActions
@@ -45,5 +43,3 @@ const ListSettings = ({
         </div>
     );
 };
-
-export default memo(ListSettings);

@@ -10,7 +10,6 @@ import clsx from '@proton/utils/clsx';
 import { isInDeletedFolder } from '../../helpers/elements';
 import { isLabelIDNewsletterSubscription } from '../../helpers/labels';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
-import type { Props as ListSettingsProps } from '../list/ListSettings';
 import type { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import ClaimProtonAddressToolbarButton from './ClaimProtonAddressToolbarButton';
 import SelectAll from './SelectAll';
@@ -20,6 +19,7 @@ import ToolbarHeaderMessageWide from './ToolbarHeaderMessageWide';
 import ToolbarHeaderNarrow from './ToolbarHeaderNarrow';
 import ToolbarNarrow from './ToolbarNarrow';
 import ToolbarRowWide from './ToolbarRowWide';
+import type { ListSettingsProps } from './list-settings/ListSettings';
 
 const defaultSelectedIDs: string[] = [];
 const BASE_TOOLBAR_CLASSNAME = 'toolbar toolbar--heavy flex flex-nowrap shrink-0 items-center gap-2 no-print flex-auto';

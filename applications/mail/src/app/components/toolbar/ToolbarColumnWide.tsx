@@ -10,7 +10,6 @@ import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import { getLabelNameForToolbar, isLabelIDNewsletterSubscription } from '../../helpers/labels';
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
-import ListSettings from '../list/ListSettings';
 import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
 import LabelName from './LabelName';
 import LabelsAndFolders from './LabelsAndFolders';
@@ -20,6 +19,7 @@ import MoveButtons from './MoveButtons';
 import PagingControls from './PagingControls';
 import ReadUnreadButtons from './ReadUnreadButtons';
 import type { Props as ToolbarProps } from './Toolbar';
+import { ListSettings } from './list-settings/ListSettings';
 
 interface Props extends Omit<ToolbarProps, 'columnMode' | 'onBack' | 'onElement' | 'onCheck' | 'breakpoints'> {
     classname: string;
