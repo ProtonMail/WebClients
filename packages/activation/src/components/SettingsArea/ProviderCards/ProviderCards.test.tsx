@@ -2,11 +2,15 @@ import { fireEvent, screen, waitFor } from '@testing-library/dom';
 import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { headers } from '@proton/activation/msw.header';
 import useBYOEAddressesCounts from '@proton/activation/src/hooks/useBYOEAddressesCounts';
+import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
+import { ImportProvider, ImportType } from '@proton/activation/src/interface';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
-import { APPS } from '@proton/shared/lib/constants';
+import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
+import { ADDRESS_FLAGS, APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import ProviderCard from './ProviderCard';
 
@@ -27,6 +31,48 @@ const defaultUseUser = [
     false,
 ];
 
+const calendars = [
+    {
+        ID: 'calendarId',
+        Name: 'testing@proton.ch',
+        Description: '',
+        Type: 0,
+        Owner: {
+            Email: 'testing@proton.ch',
+        },
+        Flags: 1,
+        Members: [
+            {
+                ID: 'memberId',
+                Permissions: 127,
+                Email: 'testing@proton.ch',
+                AddressID: 'addressID',
+                CalendarID: 'calendarId',
+                Name: 'testing@proton.ch',
+                Description: '',
+                Color: '#273EB2',
+                Display: 1,
+                Flags: 1,
+            },
+        ],
+        Color: '#273EB2',
+        Display: 1,
+        Email: 'testing@proton.ch',
+        Permissions: 127,
+    },
+];
+
+jest.mock('@proton/mail/store/importerConfig/hooks', () => ({
+    useApiEnvironmentConfig: () => [
+        {
+            'oauth.google.client_id': 'string',
+            'oauth.outlook.client_id': 'string',
+            'oauth.zoom.client_id': 'string',
+        },
+        false,
+    ],
+}));
+
 jest.mock('@proton/activation/src/hooks/useBYOEAddressesCounts');
 const mockUseBYOEAddressesCounts = useBYOEAddressesCounts as jest.MockedFunction<typeof useBYOEAddressesCounts>;
 
@@ -44,39 +90,8 @@ jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEven
     })),
 }));
 jest.mock('@proton/calendar/calendars/hooks', () => ({
-    useCalendars: jest.fn().mockReturnValue([
-        [
-            {
-                ID: 'calendarId',
-                Name: 'testing@proton.ch',
-                Description: '',
-                Type: 0,
-                Owner: {
-                    Email: 'testing@proton.ch',
-                },
-                Flags: 1,
-                Members: [
-                    {
-                        ID: 'memberId',
-                        Permissions: 127,
-                        Email: 'testing@proton.ch',
-                        AddressID: 'addressID',
-                        CalendarID: 'calendarId',
-                        Name: 'testing@proton.ch',
-                        Description: '',
-                        Color: '#273EB2',
-                        Display: 1,
-                        Flags: 1,
-                    },
-                ],
-                Color: '#273EB2',
-                Display: 1,
-                Email: 'testing@proton.ch',
-                Permissions: 127,
-            },
-        ],
-        false,
-    ]),
+    useCalendars: jest.fn().mockReturnValue([calendars, false]),
+    useWriteableCalendars: jest.fn().mockReturnValue([calendars, false]),
     useGetCalendars: jest.fn(),
 }));
 
@@ -94,6 +109,17 @@ const server = setupServer(
         return HttpResponse.json({}, { headers });
     })
 );
+
+jest.mock('@proton/account/addresses/hooks');
+const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
+
+jest.mock('@proton/activation/src/hooks/useBYOEFeatureStatus');
+const mockUseBYOEFeatureStatus = useBYOEFeatureStatus as jest.MockedFunction<typeof useBYOEFeatureStatus>;
+
+beforeEach(() => {
+    mockUseBYOEFeatureStatus.mockReturnValue(false);
+    mockUseAddresses.mockReturnValue([[], false]);
+});
 
 beforeAll(() => {
     server.listen();
@@ -125,39 +151,135 @@ describe('Provider cards process testing', () => {
         const google = screen.getByTestId('ProviderButton:googleCardForward');
         const yahoo = screen.getByTestId('ProviderButton:yahooCard');
         const outlook = screen.getByTestId('ProviderButton:outlookCard');
-        const imap = screen.getByTestId('ProviderButton:imapCard');
+        const advancedImport = screen.getByTestId('ProviderButton:advancedImport');
 
         expect(google).toBeEnabled();
         expect(yahoo).toBeEnabled();
         expect(outlook).toBeEnabled();
-        expect(imap).toBeEnabled();
+        expect(advancedImport).toBeEnabled();
+    });
 
-        // Open imap modal
-        fireEvent.click(imap);
-        await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
-        let productButtons = screen.getAllByTestId('MailModal:ProductButton');
-        expect(productButtons).toHaveLength(3);
+    it('Should open the advanced import modal', async () => {
+        mockUseUser.mockReturnValue(defaultUseUser);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
 
-        // Close imap modal
-        let closeButton = screen.getByTestId('modal:close');
-        fireEvent.click(closeButton);
-        await waitFor(() => screen.queryAllByTestId('MailModal:ProductModal'));
-        productButtons = screen.queryAllByTestId('MailModal:ProductButton');
-        expect(productButtons).toStrictEqual([]);
+        const advancedImport = screen.getByTestId('ProviderButton:advancedImport');
+        expect(advancedImport).toBeEnabled();
 
-        // Open yahoo modal
-        fireEvent.click(yahoo);
-        await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
-        productButtons = screen.getAllByTestId('MailModal:ProductButton');
-        expect(productButtons).toHaveLength(3);
-        closeButton = screen.getByTestId('modal:close');
+        // Open advanced import modal
+        fireEvent.click(advancedImport);
+        await waitFor(() => screen.getByText(`Import your data to ${BRAND_NAME}`));
 
-        // Close yahoo modal
-        closeButton = screen.getByTestId('modal:close');
-        fireEvent.click(closeButton);
-        await waitFor(() => screen.queryAllByTestId('MailModal:ProductModal'));
-        productButtons = screen.queryAllByTestId('MailModal:ProductButton');
-        expect(productButtons).toStrictEqual([]);
+        // Select Provider is google by default
+        screen.getAllByTestId(`productSelectionModal:${ImportProvider.GOOGLE}`);
+
+        // 3 checkboxes are displayed, and all options are checked
+        expect(screen.getByTestId(`productCheckbox:${ImportType.MAIL}`)).toBeChecked();
+        expect(screen.getByTestId(`productCheckbox:${ImportType.CALENDAR}`)).toBeChecked();
+        expect(screen.getByTestId(`productCheckbox:${ImportType.CONTACTS}`)).toBeChecked();
+    });
+
+    it('Should open the Outlook modal', async () => {
+        mockUseUser.mockReturnValue(defaultUseUser);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+
+        const outlookImport = screen.getByTestId('ProviderButton:outlookCard');
+        expect(outlookImport).toBeEnabled();
+
+        // Open Outlook import modal
+        fireEvent.click(outlookImport);
+        await waitFor(() => screen.getByText(`Import your data to ${BRAND_NAME}`));
+
+        // Select Provider is Outlook
+        screen.getAllByTestId(`productSelectionModal:${ImportProvider.OUTLOOK}`);
+
+        // 3 checkboxes are displayed, and all options are checked
+        expect(screen.getByTestId(`productCheckbox:${ImportType.MAIL}`)).toBeChecked();
+        expect(screen.getByTestId(`productCheckbox:${ImportType.CALENDAR}`)).toBeChecked();
+        expect(screen.getByTestId(`productCheckbox:${ImportType.CONTACTS}`)).toBeChecked();
+    });
+
+    it('Should open the Yahoo modal', async () => {
+        mockUseUser.mockReturnValue(defaultUseUser);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+
+        const yahooImport = screen.getByTestId('ProviderButton:yahooCard');
+        expect(yahooImport).toBeEnabled();
+
+        // Open Yahoo import modal
+        fireEvent.click(yahooImport);
+        await waitFor(() => screen.getByText(`Import your data to ${BRAND_NAME}`));
+
+        // Select Provider is Yahoo
+        screen.getAllByTestId(`productSelectionModal:${ImportProvider.YAHOO}`);
+
+        // 3 radio buttons are displayed, and mail is selected by default
+        expect(screen.getByTestId(`productRadio:${ImportType.MAIL}`)).toBeChecked();
+        expect(screen.getByTestId(`productRadio:${ImportType.CALENDAR}`)).not.toBeChecked();
+        expect(screen.getByTestId(`productRadio:${ImportType.CONTACTS}`)).not.toBeChecked();
+    });
+
+    it('Should switch to imap import', async () => {
+        mockUseUser.mockReturnValue(defaultUseUser);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+
+        const advancedImport = screen.getByTestId('ProviderButton:advancedImport');
+        expect(advancedImport).toBeEnabled();
+
+        // Open advanced import modal
+        fireEvent.click(advancedImport);
+        await waitFor(() => screen.getByText(`Import your data to ${BRAND_NAME}`));
+
+        // Change provider
+        fireEvent.click(screen.getByTestId('productSelectionModal:selectProvider'));
+        await waitFor(() => screen.getByTestId(`productSelectionModal:${ImportProvider.DEFAULT}`));
+        fireEvent.click(screen.getByTestId(`productSelectionModal:${ImportProvider.DEFAULT}`));
+
+        // 3 radio buttons are displayed, and mail is selected by default
+        expect(screen.getByTestId(`productRadio:${ImportType.MAIL}`)).toBeChecked();
+        expect(screen.getByTestId(`productRadio:${ImportType.CALENDAR}`)).not.toBeChecked();
+        expect(screen.getByTestId(`productRadio:${ImportType.CONTACTS}`)).not.toBeChecked();
+    });
+
+    it('Should show BYOE modal when clicking Google with BYOE feature enabled', async () => {
+        mockUseBYOEFeatureStatus.mockReturnValue(true);
+        mockUseUser.mockReturnValue(defaultUseUser);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+
+        fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
+
+        await waitFor(() => screen.getByText(`Connect to Gmail, stay in ${BRAND_NAME}`));
+    });
+
+    it('Should show forwarding modal when clicking Google with BYOE feature disabled', async () => {
+        mockUseUser.mockReturnValue(defaultUseUser);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+
+        fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
+
+        await waitFor(() => screen.getByText('Automatically forward'));
+    });
+
+    it('Should disable calendar checkbox in advanced import when user has no calendar', async () => {
+        (useWriteableCalendars as jest.Mock).mockReturnValueOnce([[], false]);
+        mockUseUser.mockReturnValue(defaultUseUser);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+
+        fireEvent.click(screen.getByTestId('ProviderButton:advancedImport'));
+        await waitFor(() => screen.getByText(`Import your data to ${BRAND_NAME}`));
+
+        expect(screen.getByTestId(`productCheckbox:${ImportType.CALENDAR}`)).toBeDisabled();
+    });
+
+    it('Should disable calendar checkbox in advanced import for BYOE-only account', async () => {
+        mockUseAddresses.mockReturnValue([[{ Flags: ADDRESS_FLAGS.BYOE }], false]);
+        mockUseUser.mockReturnValue(defaultUseUser);
+        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+
+        fireEvent.click(screen.getByTestId('ProviderButton:advancedImport'));
+        await waitFor(() => screen.getByText(`Import your data to ${BRAND_NAME}`));
+
+        expect(screen.getByTestId(`productCheckbox:${ImportType.CALENDAR}`)).toBeDisabled();
     });
 
     it('Should trigger yahoo auth error', async () => {
@@ -196,15 +318,15 @@ describe('Provider cards process testing', () => {
         easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
 
         const yahoo = screen.getByTestId('ProviderButton:yahooCard');
+        expect(yahoo).toBeEnabled();
 
-        // Open imap product modal and click calendar
+        // Open yahoo modal
         fireEvent.click(yahoo);
-        await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
-        const productButtons = screen.getAllByTestId('MailModal:ProductButton');
-        expect(productButtons).toHaveLength(3);
-        fireEvent.click(productButtons[0]);
+        await waitFor(() => screen.getByText(`Import your data to ${BRAND_NAME}`));
 
-        // SKip instructions and expect to see calendar modal
+        fireEvent.click(screen.getByText('Continue'));
+
+        // Skip instructions and expect to see calendar modal
         fireEvent.click(screen.getByTestId('Instruction:continue'));
 
         const emailInput = screen.getByTestId('StepForm:emailInput');
@@ -224,89 +346,24 @@ describe('Provider cards process testing', () => {
         mockUseUser.mockReturnValue(defaultUseUser);
         easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
 
-        const imap = screen.getByTestId('ProviderButton:imapCard');
+        const advancedImport = screen.getByTestId('ProviderButton:advancedImport');
+        expect(advancedImport).toBeEnabled();
 
-        // Open imap product modal and click calendar
-        fireEvent.click(imap);
-        await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
-        const productButtons = screen.getAllByTestId('MailModal:ProductButton');
-        expect(productButtons).toHaveLength(3);
-        fireEvent.click(productButtons[2]);
+        // Open advanced import modal
+        fireEvent.click(advancedImport);
+        await waitFor(() => screen.getByText(`Import your data to ${BRAND_NAME}`));
 
-        await waitFor(() => screen.getByTestId('Instruction:defaultCalendarInstructions'));
-    });
+        // Change provider to Imap
+        fireEvent.click(screen.getByTestId('productSelectionModal:selectProvider'));
+        await waitFor(() => screen.getByTestId(`productSelectionModal:${ImportProvider.DEFAULT}`));
+        fireEvent.click(screen.getByTestId(`productSelectionModal:${ImportProvider.DEFAULT}`));
 
-    it('Should click on every product in the imap modal', async () => {
-        mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
+        // Select calendar checkbox
+        fireEvent.click(screen.getByTestId(`productRadio:${ImportType.CALENDAR}`));
 
-        const imap = screen.getByTestId('ProviderButton:imapCard');
-
-        // Open imap modal and click on email
-        fireEvent.click(imap);
-        await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
-        let productButtons = screen.getAllByTestId('MailModal:ProductButton');
-        expect(productButtons).toHaveLength(3);
-        fireEvent.click(productButtons[0]);
-
-        await waitFor(() => screen.getByTestId('Instruction:defaultMailInstructions'));
-        fireEvent.click(screen.getByTestId('Instruction:close'));
-
-        // Open imap modal and click on contact
-        fireEvent.click(imap);
-        await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
-        productButtons = screen.getAllByTestId('MailModal:ProductButton');
-        expect(productButtons).toHaveLength(3);
-        fireEvent.click(productButtons[2]);
+        // Go to next step
+        fireEvent.click(screen.getByText('Continue'));
 
         await waitFor(() => screen.getByTestId('Instruction:defaultCalendarInstructions'));
-        fireEvent.click(screen.getByTestId('Instruction:close'));
-
-        // Open imap modal and click on contact
-        fireEvent.click(imap);
-        await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
-        productButtons = screen.getAllByTestId('MailModal:ProductButton');
-        expect(productButtons).toHaveLength(3);
-        fireEvent.click(productButtons[1]);
-
-        await waitFor(() => screen.getByTestId('Instruction:defaultContactInstructions'));
-        fireEvent.click(screen.getByTestId('Instruction:close'));
-    });
-
-    it('Should click on every product in the yahoo modal', async () => {
-        mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
-
-        const yahoo = screen.getByTestId('ProviderButton:yahooCard');
-
-        // Open yahoo modal and click on email
-        fireEvent.click(yahoo);
-        await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
-        let productButtons = screen.getAllByTestId('MailModal:ProductButton');
-        expect(productButtons).toHaveLength(3);
-        fireEvent.click(productButtons[0]);
-
-        await waitFor(() => screen.getByTestId('Instruction:yahooMailInstructions'));
-        fireEvent.click(screen.getByTestId('Instruction:close'));
-
-        // Open yahoo modal and click on contact
-        fireEvent.click(yahoo);
-        await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
-        productButtons = screen.getAllByTestId('MailModal:ProductButton');
-        expect(productButtons).toHaveLength(3);
-        fireEvent.click(productButtons[2]);
-
-        await waitFor(() => screen.getByTestId('Instruction:yahooCalendarInstructions'));
-        fireEvent.click(screen.getByTestId('Instruction:close'));
-
-        // Open yahoo modal and click on contact
-        fireEvent.click(yahoo);
-        await waitFor(() => screen.getByTestId('MailModal:ProductModal'));
-        productButtons = screen.getAllByTestId('MailModal:ProductButton');
-        expect(productButtons).toHaveLength(3);
-        fireEvent.click(productButtons[1]);
-
-        await waitFor(() => screen.getByTestId('Instruction:yahooContactInstructions'));
-        fireEvent.click(screen.getByTestId('Instruction:close'));
     });
 });

@@ -1,7 +1,7 @@
 import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
 import { GOOGLE_OAUTH_PATH } from '@proton/shared/lib/api/activation';
 
-import { getScopeFromProvider } from '../components/Modals/OAuth/StepProducts/useStepProducts.helpers';
+import { getScopeFromProvider } from '../components/Modals/OAuth/OAuthModal.helpers';
 import { EASY_SWITCH_FEATURES, ImportProvider, ImportType, OAUTH_PROVIDER } from '../interface';
 import {
     generateGoogleOAuthUrl,
