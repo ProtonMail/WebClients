@@ -16,12 +16,12 @@ import { useDispatch } from '@proton/components/containers/filters/useDispatch';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { addFilter, updateFilter } from '@proton/mail/store/filters/actions';
 import { useFilters } from '@proton/mail/store/filters/hooks';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
+import { removeImagesFromContent } from '@proton/sanitize/purify';
 import { applyFilters } from '@proton/shared/lib/api/filters';
 import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/constants';
-import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 import generateUID from '@proton/utils/generateUID';
 
 import { getDefaultFolders, noFolderValue } from '../constants';
@@ -318,7 +318,7 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
                 as={Form}
                 className="mail-filter-modal"
                 onSubmit={(event: React.FormEvent<HTMLFormElement>) => {
-                    withLoading(handleSubmit(event));
+                    void withLoading(handleSubmit(event));
                 }}
                 {...rest}
                 onClose={handleClose}

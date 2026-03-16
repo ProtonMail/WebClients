@@ -7,7 +7,7 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { message as sanitizeMessage } from '@proton/shared/lib/sanitize';
+import { sanitizeMessage } from '@proton/sanitize/purify';
 
 enum Code {
     ForcePasswordChange = 'ChangePassword',
