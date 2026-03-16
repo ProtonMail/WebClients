@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { ApiImporterState, ApiReportRollbackState } from '@proton/activation/src/api/api.interface';
-import { Badge } from '@proton/components';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 
 interface Props {
     status: ApiImporterState;
@@ -12,21 +13,36 @@ const ReportRowStatus = ({ status, rollbackState }: Props) => {
     if (rollbackState === ApiReportRollbackState.ROLLED_BACK || rollbackState === ApiReportRollbackState.ROLLING_BACK) {
         switch (rollbackState) {
             case ApiReportRollbackState.ROLLED_BACK:
-                return <Badge type="success" className="m-0">{c('Import rollback status').t`Undo finished`}</Badge>;
+                return (
+                    <div className="inline-flex gap-2 color-success items-center">
+                        <IcCheckmarkCircleFilled />
+                        <span>{c('Import status').t`Undo finished`}</span>
+                    </div>
+                );
             case ApiReportRollbackState.ROLLING_BACK:
-                return <Badge type="warning" className="m-0">{c('Import rollback status').t`Undo in progress`}</Badge>;
+                return <span className="color-weak">{c('Import status').t`Undo in progress`}</span>;
         }
     }
 
     switch (status) {
         case ApiImporterState.PAUSED:
-            return <Badge type="warning" className="m-0">{c('Import status').t`Paused`}</Badge>;
+            return <span className="color-weak">{c('Import status').t`Paused`}</span>;
         case ApiImporterState.CANCELED:
-            return <Badge type="error" className="m-0">{c('Import status').t`Canceled`}</Badge>;
+            return <span className="color-weak">{c('Import status').t`Canceled`}</span>;
         case ApiImporterState.DONE:
-            return <Badge type="success" className="m-0">{c('Import status').t`Completed`}</Badge>;
+            return (
+                <div className="inline-flex gap-2 color-success items-center">
+                    <IcCheckmarkCircleFilled />
+                    <span>{c('Import status').t`Imported`}</span>
+                </div>
+            );
         case ApiImporterState.FAILED:
-            return <Badge type="error" className="m-0">{c('Import status').t`Failed`}</Badge>;
+            return (
+                <div className="inline-flex gap-2 color-danger items-center">
+                    <IcExclamationCircleFilled />
+                    <span>{c('Import status').t`Failed`}</span>
+                </div>
+            );
     }
 
     return null;

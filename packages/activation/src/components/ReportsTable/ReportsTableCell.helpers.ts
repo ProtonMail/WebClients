@@ -1,24 +1,24 @@
 import { c } from 'ttag';
 
+import type { ApiImportProvider } from '@proton/activation/src/api/api.interface';
+import { getImportProviderFromApiProvider } from '@proton/activation/src/helpers/getImportProviderFromApiProvider';
 import { ImportType } from '@proton/activation/src/interface';
 import type { IconName } from '@proton/icons/types';
+import capitalize from '@proton/utils/capitalize';
 
-export const getImportProductName = (type: ImportType) => {
-    switch (type) {
-        case ImportType.MAIL:
-            return c('Import type').t`Mail`;
-        case ImportType.CALENDAR:
-            return c('Import type').t`Calendar`;
-        case ImportType.CONTACTS:
-            return c('Import type').t`Contacts`;
-    }
+export const getImportProductName = (apiProvider: ApiImportProvider, type: ImportType) => {
+    const provider = getImportProviderFromApiProvider(apiProvider);
+
+    const importTypeLabels: Record<ImportType, string> = {
+        [ImportType.MAIL]: c('Import type').t`Mail`,
+        [ImportType.CALENDAR]: c('Import type').t`Calendar`,
+        [ImportType.CONTACTS]: c('Import type').t`Contacts`,
+    };
+
+    return `${capitalize(provider)} ${importTypeLabels[type]}`;
 };
 
-export const getImportIconNameByProduct = (type: ImportType, isSync?: boolean): IconName => {
-    if (isSync) {
-        return 'arrows-rotate';
-    }
-
+export const getImportIconNameByProduct = (type: ImportType): IconName => {
     switch (type) {
         case ImportType.MAIL:
             return 'envelope';

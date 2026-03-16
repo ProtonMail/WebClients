@@ -1,9 +1,7 @@
-import { format } from 'date-fns';
-
+import { ApiImportProvider } from '@proton/activation/src/api/api.interface';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { selectSyncById } from '@proton/activation/src/logic/sync/sync.selectors';
 import { TableCell, TableRow } from '@proton/components';
-import { dateLocale } from '@proton/shared/lib/i18n';
 
 import ReportsTableCell from '../ReportsTableCell';
 import SyncRowActions from './SyncRowActions';
@@ -16,21 +14,16 @@ interface Props {
 const SyncRow = ({ syncId }: Props) => {
     const syncItem = useEasySwitchSelector((state) => selectSyncById(state, syncId));
 
-    const { product, account, state, startDate } = syncItem;
+    const { product, account, state } = syncItem;
 
     return (
         <TableRow data-testid="reportsTable:syncRow">
-            <ReportsTableCell product={product} title={account} isSync />
-            <TableCell>
-                <div className="text-center md:text-left">
-                    <SyncRowStatus state={state} />
-                </div>
+            <ReportsTableCell provider={ApiImportProvider.GOOGLE} product={product} title={account} />
+            <TableCell className="easy-switch-table-size">-</TableCell>
+            <TableCell className="easy-switch-table-status">
+                <SyncRowStatus state={state} />
             </TableCell>
-            <TableCell>
-                <time>{format(startDate * 1000, 'PPp', { locale: dateLocale })}</time>
-            </TableCell>
-            <TableCell>-</TableCell>
-            <TableCell>
+            <TableCell className="easy-switch-table-actions">
                 <SyncRowActions syncId={syncId} />
             </TableCell>
         </TableRow>

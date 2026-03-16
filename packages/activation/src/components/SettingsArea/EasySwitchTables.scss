@@ -1,0 +1,98 @@
+// for particular case of easy-switch tables, we need to trigger cards on larger size than usual
+$easy-switch-table-container-bp: 40rem;
+
+.easy-switch-table {
+	&.simple-table {
+		&--responsive {
+			@container (max-width: $easy-switch-table-container-bp) {
+				td {
+					display: block;
+					margin: 0;
+					padding: 0;
+					border: none;
+				}
+
+				tr {
+					display: block;
+				}
+			}
+		}
+
+		&--responsive-cards {
+			@container (max-width: $easy-switch-table-container-bp) {
+				tr {
+					padding: var(--space-3);
+					border: 1px solid var(--table-border-color);
+					border-radius: var(--border-radius-lg);
+
+					&:not(:last-child) {
+						margin-block-end: var(--space-3);
+					}
+				}
+
+				td {
+					&:not(:last-child) {
+						padding-block-end: var(--space-2);
+					}
+				}
+			}
+		}
+
+		&--responsive .simple-table__th-small {
+			@container (max-width: $easy-switch-table-container-bp) {
+				display: flex !important;
+				align-content: center;
+				font-weight: var(--font-weight-medium);
+				color: var(--text-weak);
+				font-size: 0.86em;
+				margin: 0;
+			}
+		}
+
+		&--border-lines-rounded {
+			&.simple-table--responsive-cards {
+				@container (max-width: $easy-switch-table-container-bp) {
+					tr td {
+						border: 0;
+						padding-block: 0 var(--space-2);
+						padding-inline: 0;
+					}
+
+					tr:last-child td {
+						padding-block: 0;
+					}
+				}
+			}
+		}
+
+		@container (max-width: $easy-switch-table-container-bp) {
+			&--responsive#{&}--has-actions {
+				td,
+				th {
+					&:last-child {
+						text-align: start;
+					}
+				}
+			}
+		}
+	}
+
+	&-size {
+		inline-size: 6rem;
+	}
+
+	&-status {
+		inline-size: 10rem;
+	}
+
+	&-actions {
+		inline-size: 16rem;
+	}
+	@container (max-width: 40rem) {
+		&-size,
+		&-status,
+		&-actions {
+			inline-size: auto;
+		}
+	}
+}

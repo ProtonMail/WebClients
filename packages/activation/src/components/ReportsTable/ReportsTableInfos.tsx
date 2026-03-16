@@ -2,9 +2,10 @@ import { c, msgid } from 'ttag';
 
 import { selectActiveImportersErrors } from '@proton/activation/src/logic/importers/importers.selectors';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
+import { Banner } from '@proton/atoms/Banner/Banner';
 import { Href } from '@proton/atoms/Href/Href';
-import { Alert, SettingsParagraph } from '@proton/components';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { SettingsParagraph } from '@proton/components';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 const ReportsTableInfos = () => {
@@ -23,40 +24,42 @@ const ReportsTableInfos = () => {
         </Href>
     );
 
-    // translator: the variable here is a HTML tag, here is the complete sentence: "Proton will try to resume the import as soon as your email provider resets your account’s bandwidth limit. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over."
-    const bandwidthMessage = c('Info')
-        .jt`${BRAND_NAME} will try to resume the import as soon as your email provider resets your account’s ${bandwidthLimitLink}. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.`;
-
     return (
         <>
             {!importErrors.includes('authConnection') && (
                 <SettingsParagraph>{c('Info').t`Check the status of imports and forwarding.`}</SettingsParagraph>
             )}
             {importErrors.includes('storageLimit') && (
-                <Alert className="mb-4" type="warning">
-                    {c('Info').t`${BRAND_NAME} paused an import because your account is running low on space. You can:`}
-                    <ul className="m-0">
-                        <li>{c('Info').t`free up space by deleting older messages or other data`}</li>
-                        <li>{c('Info').t`purchase additional storage`}</li>
-                    </ul>
-                </Alert>
+                <Banner className="mb-4" variant="warning" icon={<IcInfoCircle />}>
+                    <div className="color-norm">
+                        {c('Info').t`An import is paused because your storage is almost full.`}
+                        <br />
+                        {c('Info').t`Free up space or upgrade your storage to continue.`}
+                    </div>
+                </Banner>
             )}
             {importErrors.includes('authConnection') && (
-                <Alert className="mb-4" type="warning">
-                    {c('Info')
-                        .t`${BRAND_NAME} paused an import because it lost the connection with your other email provider. Please reconnect.`}
-                </Alert>
+                <Banner className="mb-4" variant="warning" icon={<IcInfoCircle />}>
+                    <div className="color-norm">
+                        {c('Info').t`An import is paused because the connection to your email provider was lost.`}
+                        <br />
+                        {c('Info').t`Please reconnect to continue.`}
+                    </div>
+                </Banner>
             )}
             {importErrors.includes('delayedImport') && (
-                <Alert className="mb-4" type="warning">
-                    {c('Info').ngettext(
-                        msgid`Your import from ${accounts} is temporarily delayed.`,
-                        `Your imports from ${accounts} are temporarily delayed.`,
-                        delayedImportsCount
-                    )}
-                    <br />
-                    {bandwidthMessage}
-                </Alert>
+                <Banner className="mb-4" variant="warning" icon={<IcInfoCircle />}>
+                    <div className="color-norm">
+                        {c('Info').ngettext(
+                            msgid`Import from ${accounts} is temporarily delayed due to a bandwidth limit.`,
+                            `Imports from ${accounts} are temporarily delayed due to a bandwidth limit.`,
+                            delayedImportsCount
+                        )}
+                        <br />
+                        {c('Info')
+                            .jt`The ${bandwidthLimitLink} was reached. We'll automatically resume it once it resets.`}
+                    </div>
+                </Banner>
             )}
         </>
     );
