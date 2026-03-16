@@ -8,7 +8,6 @@ import { MeetingSideBars, selectSideBarState } from '@proton/meet/store/slices/u
 import { CloseButton } from '../atoms/CloseButton/CloseButton';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useMeetingRoomUpdates } from '../hooks/useMeetingRoomUpdates';
-import { getParticipantDisplayColorsByIdentity } from '../utils/getParticipantDisplayColorsByIdentity';
 import { ChatItem } from './ChatItem/ChatItem';
 
 const CHAT_MESSAGE_TIMEOUT = 8000;
@@ -44,8 +43,6 @@ export const ChatPreview = () => {
 
     const shouldNotDisplayLastMessage = !isOpen || sideBarState[MeetingSideBars.Chat] || !latestMeetingRoomUpdate;
 
-    const colors = getParticipantDisplayColorsByIdentity(latestMeetingRoomUpdate?.identity);
-
     // We always show the latest meeting room update (message or participant event), had to make it disappear after a timeout
     useEffect(() => {
         if (latestMeetingRoomUpdate && !sideBarState[MeetingSideBars.Chat]) {
@@ -79,7 +76,6 @@ export const ChatPreview = () => {
         >
             <ChatItem
                 item={latestMeetingRoomUpdate}
-                colors={colors}
                 displayDate={false}
                 shouldGrow={false}
                 roomName={roomName}
