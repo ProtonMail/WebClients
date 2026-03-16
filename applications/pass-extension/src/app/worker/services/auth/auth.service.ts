@@ -50,6 +50,9 @@ import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
+import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
+import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+import { deserialize } from '@proton/pass/utils/object/serialize';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
@@ -426,7 +429,9 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
     );
 
     const handlePasswordConfirm: MessageHandlerCallback<WorkerMessageType.AUTH_CONFIRM_PASSWORD> = async (message) => {
-        const confirmed = await authService.confirmPassword(message.payload.password);
+        const passwordBuff = deserialize<XorObfuscation>(message.payload.password);
+        const password = deobfuscate(passwordBuff, { zeroize: true });
+        const confirmed = await authService.confirmPassword(password);
         return { ok: confirmed };
     };
 
