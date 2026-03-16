@@ -13,7 +13,7 @@ import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { reloadHref } from '@proton/pass/components/Navigation/routing';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { api } from '@proton/pass/lib/api/api';
-import { decodeUserData, encodeUserData } from '@proton/pass/lib/auth/store';
+import { decodeUserData, encodeUserData } from '@proton/pass/lib/auth/store.utils';
 import { type AuthSwitchService, type SwitchableSession, createAuthSwitchService } from '@proton/pass/lib/auth/switch';
 import { AppStatus, type MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';

@@ -1,7 +1,8 @@
 import { clearUserLocalData } from 'proton-pass-web/lib/storage';
 
 import type { EncryptedAuthSession } from '@proton/pass/lib/auth/session';
-import { authStore, decodeUserData } from '@proton/pass/lib/auth/store';
+import { authStore } from '@proton/pass/lib/auth/store';
+import { decodeUserData } from '@proton/pass/lib/auth/store.utils';
 import type { SwitchableSession } from '@proton/pass/lib/auth/switch';
 import type { Maybe } from '@proton/pass/types/utils';
 import { first } from '@proton/pass/utils/array/first';
