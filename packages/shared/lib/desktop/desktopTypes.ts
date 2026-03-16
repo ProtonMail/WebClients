@@ -42,7 +42,8 @@ export type IPCInboxDesktopFeature =
     | 'BugReportLogAttachments'
     | 'PrintDialog'
     | 'UserLogoutV2'
-    | 'MailtoBannerPermanentDismiss';
+    | 'MailtoBannerPermanentDismiss'
+    | 'OAuthPopupV2';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }
@@ -60,7 +61,13 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'userLogin'; payload?: undefined }
     | { type: 'userLogout'; payload?: undefined } // Deprecated by `userLogoutV2`; older desktop clients still rely on the message.
     | { type: 'clearAppData'; payload?: undefined }
-    | { type: 'oauthPopupOpened'; payload: 'oauthPopupStarted' | 'oauthPopupFinished' }
+    | { type: 'oauthPopupOpened'; payload: 'oauthPopupStarted' | 'oauthPopupFinished' } // Deprecated by `oauthPopupOpenedV2`; older desktop clients still rely on the message.
+    | {
+          type: 'oauthPopupOpenedV2';
+          payload:
+              | { action: 'oauthPopupStarted'; authorizationUrl: string; sessionId: string }
+              | { action: 'oauthPopupFinished'; sessionId: string };
+      }
     | { type: 'subscriptionModalOpened'; payload: 'subscriptionModalStarted' | 'subscriptionModalFinished' }
     | { type: 'openExternal'; payload: string }
     | { type: 'changeView'; payload: CHANGE_VIEW_TARGET }
