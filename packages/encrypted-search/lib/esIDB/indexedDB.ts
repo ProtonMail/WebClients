@@ -3,7 +3,7 @@ import { deleteDB, openDB } from 'idb';
 
 import type { ESCiphertext } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
 import { detectStorageCapabilities } from '@proton/shared/lib/helpers/browser';
-import noop from '@proton/utils/noop';
+import { SentryCommonInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import { INDEXEDDB_VERSION, STORING_OUTCOME } from '../constants';
 import { ciphertextSize, esSentryReport, isTimepointSmaller } from '../esHelpers';
@@ -20,7 +20,8 @@ const getDBName = (userID: string) => `ES:${userID}:DB`;
 /**
  * Delete the given user's IDB
  */
-export const deleteESDB = async (userID: string) => deleteDB(getDBName(userID)).catch(noop);
+export const deleteESDB = async (userID: string) =>
+    deleteDB(getDBName(userID)).catch((e) => traceInitiativeError(SentryCommonInitiatives.ENCRYPTED_SEARCH, e));
 
 async function cleanupESDB(esDB: IDBPDatabase<EncryptedSearchDB>, userID: string) {
     esDB.close();
