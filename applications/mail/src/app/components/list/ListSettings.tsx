@@ -1,4 +1,3 @@
-import type { ReactElement } from 'react';
 import { memo } from 'react';
 
 import type { MailSettings } from '@proton/shared/lib/interfaces';
@@ -15,7 +14,6 @@ export interface Props {
     conversationMode: boolean;
     mailSettings: MailSettings;
     labelID?: string;
-    selectAll?: ReactElement;
     filterAsDropdown?: boolean;
 }
 
@@ -27,12 +25,10 @@ const ListSettings = ({
     conversationMode,
     mailSettings,
     labelID,
-    selectAll,
     filterAsDropdown,
 }: Props) => {
     return (
         <div className="flex flex-nowrap justify-space-between items-center gap-2 m-auto">
-            {selectAll && <div className="mr-auto">{selectAll}</div>}
             <FilterActions
                 filter={filter}
                 onFilter={onFilter}
