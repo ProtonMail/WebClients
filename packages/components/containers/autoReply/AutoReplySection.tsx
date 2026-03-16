@@ -21,6 +21,7 @@ import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
+import { removeImagesFromContent } from '@proton/sanitize/purify';
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
 import {
     APP_UPSELL_REF_PATH,
@@ -31,7 +32,6 @@ import {
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 
 import { useHotkeys } from '../../hooks/useHotkeys';
 import UpgradeBanner from '../account/UpgradeBanner';

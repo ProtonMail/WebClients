@@ -1,4 +1,4 @@
-import { protonizer, sanitizeComposerReply } from '@proton/shared/lib/sanitize/purify';
+import { protonizer, sanitizeComposerReply } from './purify';
 
 describe('protonizer', () => {
     const getBodyClass = (doc: Element) => doc.querySelector('body')?.getAttribute('class');

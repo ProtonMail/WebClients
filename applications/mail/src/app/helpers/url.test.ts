@@ -1,4 +1,4 @@
-import { protonizer } from '@proton/shared/lib/sanitize';
+import { protonizer } from '@proton/sanitize/purify';
 
 import { removeLineBreaks } from './test/message';
 import { mailtoParser, toAddresses } from './url';

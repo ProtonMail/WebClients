@@ -1,10 +1,4 @@
-import {
-    escape,
-    escapeForbiddenStyle,
-    escapeURLinStyle,
-    recurringUnescapeCSSEncoding,
-    unescape,
-} from '../../lib/sanitize/escape';
+import { escape, escapeForbiddenStyle, escapeURLinStyle, recurringUnescapeCSSEncoding, unescape } from './escape';
 
 describe('Escape', () => {
     describe('escapeForbiddenStyles', () => {
