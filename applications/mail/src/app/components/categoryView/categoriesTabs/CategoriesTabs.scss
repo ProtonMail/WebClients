@@ -88,10 +88,10 @@
 				display: none;
 			}
 
-			// Show label only for active tab
-			&[aria-selected='true'] {
-				.tag-label,
-				.tag-count {
+			// Show label for active tab or when dragging over it
+			&[aria-selected='true'],
+			&.hovered {
+				.tag-label {
 					display: block;
 				}
 			}
@@ -106,10 +106,10 @@
 				display: none;
 			}
 
-			// Show label only for active tab
-			&[aria-selected='true'] {
-				.tag-label,
-				.tag-count {
+			// Show label for active tab or when dragging over it
+			&[aria-selected='true'],
+			&.hovered {
+				.tag-label {
 					display: block;
 				}
 			}
