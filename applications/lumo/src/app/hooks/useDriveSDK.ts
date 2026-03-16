@@ -84,8 +84,21 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
         lastRefreshTime: Date.now(),
     });
 
+    // "A volume is already active" means the SDK tried to create a volume but one exists already.
+    // Retrying resolves this since the SDK's internal state is correct after the failed attempt.
+    const isVolumeAlreadyActiveError = (error: unknown): boolean => {
+        if (!error || typeof error !== 'object') {
+            return false;
+        }
+        const message = (error as Error).message || '';
+        return message.includes('A volume is already active');
+    };
+
     const getRootFolder = useCallback(async (): Promise<DriveNode> => {
-        try {
+        if (!drive) {
+            throw new Error('DRIVE_NOT_INITIALIZED');
+        }
+        const fetchRootFolder = async () => {
             const rootFolderResponse = await drive.getMyFilesRootFolder();
             const { node: rootFolderNode } = getNodeEntity(rootFolderResponse);
             return {
@@ -94,7 +107,15 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
                 type: NodeType.Folder,
                 parentUid: undefined,
             };
+        };
+        try {
+            return await fetchRootFolder();
         } catch (error) {
+            if (isVolumeAlreadyActiveError(error)) {
+                // Volume already exists on the server — retry once now that SDK state is updated
+                return fetchRootFolder();
+            }
+
             console.error('Failed to get root folder:', error);
 
             // Check if this is the "Unprocessable Content" error that occurs when Drive hasn't been initialized
@@ -123,6 +144,10 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
                 throw new Error('Drive is not available for guest users');
             }
 
+            if (!drive) {
+                throw new Error('DRIVE_NOT_INITIALIZED');
+            }
+
             try {
                 setState((prev) => ({ ...prev, isLoading: true, error: null }));
 
@@ -132,7 +157,16 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
                     await clearCache();
                 }
 
-                const maybeRootFolderNode = await drive.getMyFilesRootFolder();
+                let maybeRootFolderNode;
+                try {
+                    maybeRootFolderNode = await drive.getMyFilesRootFolder();
+                } catch (rootError) {
+                    if (isVolumeAlreadyActiveError(rootError)) {
+                        maybeRootFolderNode = await drive.getMyFilesRootFolder();
+                    } else {
+                        throw rootError;
+                    }
+                }
                 const { node: rootFolderNode } = getNodeEntity(maybeRootFolderNode);
 
                 const children: DriveNode[] = [];
@@ -212,6 +246,10 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
             // Prevent Drive API calls for guest users
             if (isGuest) {
                 throw new Error('Drive is not available for guest users');
+            }
+
+            if (!drive) {
+                throw new Error('DRIVE_NOT_INITIALIZED');
             }
 
             try {
@@ -297,6 +335,10 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
             // Prevent Drive API calls for guest users
             if (isGuest) {
                 throw new Error('Drive is not available for guest users');
+            }
+
+            if (!drive) {
+                throw new Error('DRIVE_NOT_INITIALIZED');
             }
 
             try {
@@ -400,6 +442,10 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
             // Prevent Drive API calls for guest users
             if (isGuest) {
                 throw new Error('Drive is not available for guest users');
+            }
+
+            if (!drive) {
+                throw new Error('DRIVE_NOT_INITIALIZED');
             }
 
             try {
