@@ -14,6 +14,7 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { SentryCommonInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import {
     ES_EXTRA_RESULTS_LIMIT,
@@ -204,12 +205,19 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
      * Notify the user the DB is deleted. Typically, this is needed if the key is no
      * longer usable to decrypt it
      */
-    const dbCorruptError = async () => {
+    const dbCorruptError = async (errorMessage: string) => {
+        const userHasESDB = await hasESDB(userID);
+        if (!userHasESDB) {
+            return;
+        }
+
         await esDelete();
         createNotification({
             text: c('Error').t`Please activate your search again`,
             type: 'error',
         });
+
+        traceInitiativeError(SentryCommonInitiatives.ENCRYPTED_SEARCH, new Error(errorMessage));
     };
 
     /**
@@ -270,7 +278,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         const userKeys = await getUserKeys();
         const indexKey = cachedIndexKey || (await getIndexKey(userKeys, userID));
         if (!indexKey) {
-            await dbCorruptError();
+            await dbCorruptError('cacheIndexedDB - No index key');
             return;
         }
 
@@ -288,7 +296,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         const userKeys = await getUserKeys();
         const indexKey = cachedIndexKey || (await getIndexKey(userKeys, userID));
         if (!indexKey) {
-            await dbCorruptError();
+            await dbCorruptError('correctDecryptionErrors - No index key');
             return 0;
         }
 
@@ -511,6 +519,10 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
                 });
             }
             await esDelete();
+            traceInitiativeError(
+                SentryCommonInitiatives.ENCRYPTED_SEARCH,
+                new Error(`enableEncryptedSearch - handleError - esSupported: ${esSupported}`)
+            );
             return false;
         };
 
@@ -782,7 +794,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         const userKeys = await getUserKeys();
         const indexKey = await getIndexKey(userKeys, userID);
         if (!indexKey) {
-            return dbCorruptError();
+            return dbCorruptError('enableContentSearch - No index key');
         }
 
         sendStartESIndexingReport('content');
@@ -865,7 +877,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
                     return;
                 }
                 esSentryReport('buildContentDB', { error });
-                return dbCorruptError();
+                return dbCorruptError('buildContentDB - No index key');
             }
 
             // Kill switch in case user logs out or pauses
@@ -897,11 +909,11 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         try {
             ({ newEvents, shouldRefresh, eventsToStore } = await esCallbacks.getEventFromIDB());
         } catch (error: any) {
-            return dbCorruptError();
+            return dbCorruptError('enableContentSearch - getEventFromIDB');
         }
 
         if (shouldRefresh) {
-            return dbCorruptError();
+            return dbCorruptError('enableContentSearch - shouldRefresh');
         }
 
         void sendIndexingEndReport(userID);
@@ -1026,7 +1038,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             // server-side search, otherwise we want to show a generic error and still
             // fall back to server-side search
             if (error.message === 'Key not found') {
-                return dbCorruptError().then(() => false);
+                return dbCorruptError('hybridSearch - No index key').then(() => false);
             }
             throw error;
         }
@@ -1086,7 +1098,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         const userKeys = await getUserKeys();
         const indexKey = cachedIndexKey || (await getIndexKey(userKeys, userID));
         if (!indexKey) {
-            await dbCorruptError();
+            await dbCorruptError('incrementSearch - No index key');
             return false;
         }
 
@@ -1277,6 +1289,8 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         const contentProgress = await contentIndexingProgress.read(userID);
         const wasContentIndexed = contentProgress && contentProgress.status !== INDEXING_STATUS.INACTIVE;
         await esDelete();
+        traceInitiativeError(SentryCommonInitiatives.ENCRYPTED_SEARCH, new Error(`restartIndexing - esDelete failed`));
+
         return enableEncryptedSearch({ isRefreshed: true }).then(() => {
             if (wasContentIndexed) {
                 return enableContentSearch({ isRefreshed: true });
@@ -1306,7 +1320,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         const userKeys = await getUserKeys();
         const indexKey = cachedIndexKey || (await getIndexKey(userKeys, userID));
         if (!indexKey) {
-            return dbCorruptError();
+            return dbCorruptError('handleEvent - No index key');
         }
 
         // Every time a new event happens, we simply catch up everything since the last
@@ -1335,7 +1349,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         const userKeys = await getUserKeys();
         const indexKey = await getIndexKey(userKeys, userID);
         if (!indexKey) {
-            return dbCorruptError();
+            return dbCorruptError('initializeES - No index key');
         }
 
         // If metadata indexing was ongoing, continue it.
@@ -1343,7 +1357,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         // something is wrong
         const metadataProgress = await metadataIndexingProgress.read(userID);
         if (!metadataProgress) {
-            return dbCorruptError();
+            return dbCorruptError('initializeES - No metadata progress');
         }
 
         if (metadataProgress.status === INDEXING_STATUS.PAUSED) {
@@ -1358,7 +1372,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         const esEnabled = await readEnabled(userID);
         const isDBLimited = await readLimited(userID);
         if (typeof esEnabled === 'undefined' || typeof isDBLimited === 'undefined') {
-            return dbCorruptError();
+            return dbCorruptError('initializeES - No enabled or limited status');
         }
 
         setESStatus((esStatus) => ({
@@ -1395,7 +1409,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         try {
             ({ newEvents, shouldRefresh, eventsToStore } = await esCallbacks.getEventFromIDB());
         } catch (error: any) {
-            return dbCorruptError();
+            return dbCorruptError('initializeES - getEventFromIDB error');
         }
 
         if (shouldRefresh) {
