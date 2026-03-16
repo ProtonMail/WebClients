@@ -11,3 +11,8 @@ export const zeroize = (obj: unknown): void => {
         for (let i = 0; i < keys.length; i++) zeroize((obj as Record<string, unknown>)[keys[i]]);
     }
 };
+
+export const deleteKey = <T extends {}>(obj: T, key: keyof T) => {
+    const o = obj as Partial<T>;
+    delete o[key];
+};
