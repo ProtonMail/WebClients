@@ -63,7 +63,7 @@ const SignupCtxRouter = (props: BaseSignupContextProps) => {
                 <Route path={SSO_PATHS.GREENLAND_SIGNUP}>
                     <GreenlandSignup {...props} />
                 </Route>
-                <Route path={[SSO_PATHS.BORN_PRIVATE, SSO_PATHS.MAIL_BORN_PRIVATE]}>
+                <Route path={SSO_PATHS.BORN_PRIVATE}>
                     <EmailReservationSignup />
                 </Route>
                 <Route>

@@ -433,7 +433,6 @@ const PublicAppInteractive = ({
                                                 SSO_PATHS.PORKBUN_SIGN_IN,
                                                 SSO_PATHS.GREENLAND_SIGNUP,
                                                 SSO_PATHS.BORN_PRIVATE,
-                                                SSO_PATHS.MAIL_BORN_PRIVATE,
                                             ]}
                                         >
                                             <SingleSignupSwitchContainer
