@@ -27,9 +27,9 @@ export const useDesktopUnlock = () => {
 
     const unlock = useCallback(async (options: Options) => {
         optionsRef.current = options;
-        const secret = await getDesktopUnlockSecret?.();
-        if (!secret) throw new Error();
-        desktopUnlock.dispatch({ mode: LockMode.DESKTOP, secret, offline });
+        const key = await getDesktopUnlockSecret?.();
+        if (!key) throw new Error();
+        desktopUnlock.dispatch({ mode: LockMode.DESKTOP, key, offline });
     }, []);
 
     return unlock;

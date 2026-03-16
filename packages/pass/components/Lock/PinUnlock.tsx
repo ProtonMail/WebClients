@@ -32,7 +32,7 @@ export const PinUnlock: FC<Props> = ({ offlineEnabled, onLoading, onOffline }) =
         },
     });
 
-    const onSubmit = (secret: string) => sessionUnlock.dispatch({ mode: LockMode.SESSION, secret, offline: false });
+    const onSubmit = (pin: string) => sessionUnlock.dispatch({ mode: LockMode.SESSION, pin, offline: false });
 
     useUnlockGuard({ offlineEnabled, onOffline: () => setValue('') });
     useLockAutoSubmit(value, { onSubmit });
