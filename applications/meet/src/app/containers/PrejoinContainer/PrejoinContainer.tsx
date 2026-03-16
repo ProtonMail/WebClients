@@ -116,7 +116,7 @@ export const PrejoinContainer = ({
     };
 
     return (
-        <>
+        <div className="h-full overflow-y-auto relative">
             {roomId && !guestMode && <OpenDesktopAppBanner meetingLink={shareLink} />}
             {isLoading && <div className="w-full h-full absolute top-0 left-0 z-up" />}
             <div className="absolute w-full meet-container-padding-x">
@@ -177,6 +177,6 @@ export const PrejoinContainer = ({
                     )}
                 </div>
             </div>
-        </>
+        </div>
     );
 };

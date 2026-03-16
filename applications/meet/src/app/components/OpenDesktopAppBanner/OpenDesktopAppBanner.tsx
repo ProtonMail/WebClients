@@ -3,14 +3,13 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { DAY, MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { canShowBanner } from '../../utils/canShowBanner';
-import { getDesktopAppPreference, saveDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
+import { getDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
 
 import './OpenDesktopAppBanner.scss';
 
@@ -26,8 +25,6 @@ export const OpenDesktopAppBanner = ({ meetingLink }: OpenDesktopAppBannerProps)
     const [visible, setVisible] = useState(
         () => !isElectronApp && canShowBanner(STORAGE_KEY) && !getDesktopAppPreference() && meetDesktopAppBannerEnabled
     );
-
-    const notifications = useNotifications();
 
     const downloadDesktopAppEnabled = useFlag('MeetDownloadDesktopAppEnabled');
 
@@ -73,13 +70,6 @@ export const OpenDesktopAppBanner = ({ meetingLink }: OpenDesktopAppBannerProps)
                     className="open-desktop-app-banner-button action-button-new rounded-full bg-transparent"
                     onClick={() => {
                         tryOpenInDesktopApp(meetingLink);
-                        saveDesktopAppPreference(true);
-                        dismiss();
-
-                        notifications.createNotification({
-                            text: c('Info').t`Now your meetings will be opened in the ${MEET_APP_NAME} desktop app`,
-                            showCloseButton: true,
-                        });
                     }}
                 >{c('Action').t`Open app`}</Button>
             </div>
