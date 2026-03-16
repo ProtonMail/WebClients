@@ -6,6 +6,7 @@ import { vi } from 'vitest';
 
 import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices';
 import { chatAndReactionsReducer } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import { sortedParticipantsReducer } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import type { MeetChatMessage, ParticipantEventRecord } from '@proton/meet/types/types';
 import { ParticipantEvent } from '@proton/meet/types/types';
 import { ProtonStoreContext } from '@proton/react-redux-store';
@@ -50,6 +51,7 @@ const date = new Date(timestamp).toLocaleTimeString([], {
 const createMockStore = () => {
     return configureStore({
         reducer: {
+            ...sortedParticipantsReducer,
             ...meetingInfoReducer,
             ...chatAndReactionsReducer,
         },
@@ -80,11 +82,7 @@ describe('ChatItem', () => {
     it('should render a chat message', () => {
         render(
             <Wrapper>
-                <ChatItem
-                    item={mockChatMessage}
-                    colors={{ backgroundColor: 'text-primary', profileTextColor: 'text-primary' }}
-                    displayDate={true}
-                />
+                <ChatItem item={mockChatMessage} displayDate={true} />
             </Wrapper>
         );
 
@@ -96,12 +94,7 @@ describe('ChatItem', () => {
     it('should render a participant event record', () => {
         render(
             <Wrapper>
-                <ChatItem
-                    item={mockParticipantEventRecord}
-                    colors={{ backgroundColor: 'text-primary', profileTextColor: 'text-primary' }}
-                    displayDate={false}
-                    roomName={roomName}
-                />
+                <ChatItem item={mockParticipantEventRecord} displayDate={false} roomName={roomName} />
             </Wrapper>
         );
 
@@ -114,11 +107,7 @@ describe('ChatItem', () => {
     it('should render the participant initials', () => {
         render(
             <Wrapper>
-                <ChatItem
-                    item={mockChatMessage}
-                    colors={{ backgroundColor: 'text-primary', profileTextColor: 'text-primary' }}
-                    displayDate={true}
-                />
+                <ChatItem item={mockChatMessage} displayDate={true} />
             </Wrapper>
         );
 

@@ -13,6 +13,7 @@ import {
 } from '@proton/meet/types/types';
 
 import { useChatMessageReaction } from '../../hooks/bridges/useChatMessageReaction';
+import { useParticipantDisplayColors } from '../../hooks/useParticipantDisplayColors';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
 import { ChatMessageContent } from '../ChatMessageContent';
 import { ChatMessageReactions } from './ChatMessageReactions';
@@ -24,10 +25,6 @@ const QUICK_REACTIONS = ['👍', '❤️', '😂', '😮', '😢', '👎'];
 interface ChatItemProps {
     roomName?: string;
     item: MeetingRoomUpdate;
-    colors: {
-        backgroundColor: string;
-        profileTextColor: string;
-    };
     displayDate?: boolean;
     shouldGrow?: boolean;
     ellipsisOverflow?: boolean;
@@ -44,7 +41,6 @@ const isParticipantEventRecord = (item: MeetingRoomUpdate): item is ParticipantE
 export const ChatItem = ({
     roomName,
     item,
-    colors,
     displayDate = true,
     shouldGrow = false,
     ellipsisOverflow = false,
@@ -55,6 +51,7 @@ export const ChatItem = ({
     const sendReaction = useChatMessageReaction();
 
     const [isHovered, setIsHovered] = useState(false);
+    const { participantColors } = useParticipantDisplayColors(identity);
 
     const participantName = participantNameMap[identity];
 
@@ -81,8 +78,8 @@ export const ChatItem = ({
             <div className="flex flex-nowrap items-start shrink-0">
                 <div
                     className={clsx(
-                        colors.backgroundColor,
-                        colors.profileTextColor,
+                        participantColors.backgroundColor,
+                        participantColors.profileTextColor,
                         'color-invert rounded-full flex items-center justify-center w-custom h-custom'
                     )}
                     style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' }}

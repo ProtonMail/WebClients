@@ -1,5 +1,7 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
+import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { setLocalParticipantColorIndex } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import clsx from '@proton/utils/clsx';
 
@@ -53,6 +55,8 @@ export const PrejoinContainer = ({
     joiningLoaderHeader,
     joiningLoaderSubtitle,
 }: PrejoinContainerProps) => {
+    const dispatch = useMeetDispatch();
+
     // check if a custom display name is already stored for the user
     const hasStoredDisplayName = getItem(getDisplayNameStorageKey(guestMode, userId)) != null;
 
@@ -73,7 +77,11 @@ export const PrejoinContainer = ({
         switchActiveDevice,
     } = useMediaManagementContext();
 
-    const participantColorIndex = useRef(Math.ceil(6 * Math.random()));
+    const participantColorIndex = useRef(Math.floor(6 * Math.random()));
+
+    useEffect(() => {
+        dispatch(setLocalParticipantColorIndex(participantColorIndex.current));
+    }, []);
 
     const currentSelectedCamera = activeCameraDeviceId ?? defaultCamera?.deviceId;
     const currentSelectedMicrophone = activeMicrophoneDeviceId ?? defaultMicrophone?.deviceId;
