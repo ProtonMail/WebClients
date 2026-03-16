@@ -12,6 +12,7 @@ export const normalizeReport: NormalizeReport = (apiReport) => {
         endDate: apiReport.EndTime,
         size: apiReport.TotalSize,
         state: apiReport.State,
+        provider: apiReport.Provider,
     };
     const reportSummaries: ReportSummary[] = [];
 

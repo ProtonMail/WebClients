@@ -4,6 +4,7 @@ import { setupServer } from 'msw/node';
 
 import { useUser } from '@proton/account/user/hooks';
 import { headers } from '@proton/activation/msw.header';
+import useBYOEAddressesCounts from '@proton/activation/src/hooks/useBYOEAddressesCounts';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -25,6 +26,9 @@ const defaultUseUser = [
     },
     false,
 ];
+
+jest.mock('@proton/activation/src/hooks/useBYOEAddressesCounts');
+const mockUseBYOEAddressesCounts = useBYOEAddressesCounts as jest.MockedFunction<typeof useBYOEAddressesCounts>;
 
 jest.mock('@proton/account/user/hooks');
 const mockUseUser = useUser as jest.MockedFunction<any>;
@@ -102,11 +106,23 @@ afterAll(() => {
 });
 
 describe('Provider cards process testing', () => {
+    beforeEach(() => {
+        mockUseBYOEAddressesCounts.mockReturnValue({
+            isLoadingAddressesCount: false,
+            byoeAddresses: [],
+            activeBYOEAddresses: [],
+            addressesOrSyncs: [],
+            forwardingList: [],
+            byoeAddressesAvailableCount: 3,
+            maxBYOEAddresses: 3,
+        });
+    });
+
     it('Should display the four cards on the page without user data', async () => {
         mockUseUser.mockReturnValue(defaultUseUser);
         easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} />);
 
-        const google = screen.getByTestId('ProviderButton:googleCard');
+        const google = screen.getByTestId('ProviderButton:googleCardForward');
         const yahoo = screen.getByTestId('ProviderButton:yahooCard');
         const outlook = screen.getByTestId('ProviderButton:outlookCard');
         const imap = screen.getByTestId('ProviderButton:imapCard');

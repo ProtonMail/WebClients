@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { useAddresses } from '@proton/account/addresses/hooks';
 import { ApiSyncState } from '@proton/activation/src/api/api.interface';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
 import type { ImportToken, OAuthProps } from '@proton/activation/src/interface';
@@ -9,12 +8,16 @@ import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation
 import { SyncTokenStrategy, deleteSyncItem, resumeSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectSyncById } from '@proton/activation/src/logic/sync/sync.selectors';
 import { Button } from '@proton/atoms/Button/Button';
-import { Alert, DropdownActions, Prompt, useApi, useModalState } from '@proton/components';
+import { Prompt, useApi, useModalState } from '@proton/components';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { useLoading } from '@proton/hooks';
-import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import { getTokensByFeature } from '../../../api';
-import DisconnectBYOEModal from '../../Modals/DisconnectBYOEModal/DisconnectBYOEModal';
 
 interface Props {
     syncId: string;
@@ -22,16 +25,12 @@ interface Props {
 
 const SyncRowActions = ({ syncId }: Props) => {
     const api = useApi();
-    const [addresses = [], loadingAddresses] = useAddresses();
     const dispatch = useEasySwitchDispatch();
+    const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
 
     const syncItem = useEasySwitchSelector((state) => selectSyncById(state, syncId));
 
     const [deleteModalProps, showDeleteModal, renderDeleteModal] = useModalState();
-    const [disconnectBYOEProps, setDisconnectBYOEOpen, renderDisconnectBYOEModal] = useModalState();
-
-    const emailAddress = addresses.find((address) => address.Email === syncItem.account);
-    const isBYOE = emailAddress ? getIsBYOEAddress(emailAddress) : false;
 
     const [loadingApiChange, withLoadingApiChange] = useLoading();
 
@@ -40,7 +39,7 @@ const SyncRowActions = ({ syncId }: Props) => {
     });
 
     const handleReconnectClick = async () => {
-        const features = [isBYOE ? EASY_SWITCH_FEATURES.BYOE : EASY_SWITCH_FEATURES.IMPORT_MAIL];
+        const features = [EASY_SWITCH_FEATURES.IMPORT_MAIL];
 
         const { Tokens } = await api<{ Tokens: ImportToken[] }>(
             getTokensByFeature({
@@ -87,37 +86,8 @@ const SyncRowActions = ({ syncId }: Props) => {
     };
 
     const handleClickDelete = () => {
-        if (isBYOE) {
-            setDisconnectBYOEOpen(true);
-        } else {
-            showDeleteModal(true);
-        }
+        showDeleteModal(true);
     };
-
-    const getStoppedAction = () => {
-        const deleteSyncButton = {
-            text: c('account').t`Delete forward`,
-            onClick: () => handleClickDelete(),
-        };
-
-        return [
-            {
-                text: c('account').t`Reconnect`,
-                onClick: handleReconnectClick,
-                disabled: loadingConfig,
-            },
-            deleteSyncButton,
-        ];
-    };
-
-    const activeAction = [
-        {
-            text: c('account').t`Delete forward`,
-            onClick: () => handleClickDelete(),
-            'data-testid': 'ReportsTable:deleteForward',
-            loading: loadingApiChange,
-        },
-    ];
 
     const handleDeleteSync = () => {
         void withLoadingApiChange(dispatch(deleteSyncItem({ syncId })));
@@ -126,15 +96,38 @@ const SyncRowActions = ({ syncId }: Props) => {
 
     return (
         <>
-            <DropdownActions
-                loading={loadingApiChange || loadingAddresses}
-                size="small"
-                list={syncItem.state === ApiSyncState.ACTIVE ? activeAction : getStoppedAction()}
-            />
+            {syncItem.state === ApiSyncState.ACTIVE ? (
+                <Button
+                    onClick={handleClickDelete}
+                    loading={loadingApiChange}
+                    data-testid="ReportsTable:deleteForward"
+                    shape="ghost"
+                    icon
+                >
+                    <IcTrash alt={c('Action').t`Delete forward`} />
+                </Button>
+            ) : (
+                <>
+                    <Button onClick={toggle} ref={anchorRef} loading={loadingConfig} icon shape="ghost">
+                        <IcThreeDotsVertical alt={c('Action').t`More options`} />
+                    </Button>
+
+                    <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close} originalPlacement="top-start">
+                        <DropdownMenu>
+                            <DropdownMenuButton onClick={handleReconnectClick}>
+                                {c('Action').t`Reconnect`}
+                            </DropdownMenuButton>
+                            <DropdownMenuButton onClick={handleClickDelete}>
+                                {c('Action').t`Delete forward`}
+                            </DropdownMenuButton>
+                        </DropdownMenu>
+                    </Dropdown>
+                </>
+            )}
 
             {renderDeleteModal && (
                 <Prompt
-                    title={c('account').t`Remove forward`}
+                    title={c('Action').t`Remove forward`}
                     data-testid="ReportsTable:deleteModal"
                     buttons={[
                         <Button color="danger" onClick={handleDeleteSync}>
@@ -146,14 +139,8 @@ const SyncRowActions = ({ syncId }: Props) => {
                     ]}
                     {...deleteModalProps}
                 >
-                    <Alert className="mb-4" type="error">
-                        {c('account').t`You will stop the mail forwarding.`}
-                    </Alert>
+                    {c('account').t`You will stop the mail forwarding.`}
                 </Prompt>
-            )}
-
-            {renderDisconnectBYOEModal && emailAddress && (
-                <DisconnectBYOEModal address={emailAddress} {...disconnectBYOEProps} />
             )}
         </>
     );

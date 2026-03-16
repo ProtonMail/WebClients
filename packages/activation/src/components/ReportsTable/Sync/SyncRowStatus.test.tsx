@@ -12,10 +12,10 @@ describe('SyncRowStatus', () => {
     });
     it('Should display paused when status is EXPIRED', () => {
         easySwitchRender(<SyncRowStatus state={ApiSyncState.EXPIRED} />);
-        screen.getByText('Paused');
+        screen.getByText('Disabled');
     });
     it('Should display paused when status is OFFLINE', () => {
         easySwitchRender(<SyncRowStatus state={ApiSyncState.OFFLINE} />);
-        screen.getByText('Paused');
+        screen.getByText('Disabled');
     });
 });
