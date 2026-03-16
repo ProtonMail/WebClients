@@ -12,17 +12,21 @@ export async function registerMailtoApp() {
         return;
     }
 
-    spawnRegImport(regFile);
+    try {
+        await spawnRegImport(regFile);
+    } catch (err) {
+        protocolLogger.error("Failed to import registry file:", err);
+    }
 }
 
 export async function unregisterMailtoApp() {
     const regFile = resolve(process.resourcesPath, "protonmail-mailto-delete.reg");
-    if (!regFile) {
-        protocolLogger.error("Failed to resolve de-register file");
-        return;
-    }
 
-    spawnRegImport(regFile);
+    try {
+        await spawnRegImport(regFile);
+    } catch (err) {
+        protocolLogger.error("Failed to import de-register file:", err);
+    }
 }
 
 function createRegFile(): string {
@@ -53,14 +57,13 @@ function createRegFile(): string {
     }
 }
 
-export const getRegExe = () =>
-    process.env.SystemRoot ? resolve(process.env.SystemRoot, "System32", "reg.exe") : "reg.exe";
+export const getRegExe = () => (process.env.SystemRoot ? `${process.env.SystemRoot}\\System32\\reg.exe` : "reg.exe");
 
-async function spawnRegImport(regFile: string) {
+function spawnRegImport(regFile: string): Promise<void> {
     const regExe = getRegExe();
 
     const args = ["import", regFile];
-    protocolLogger.log(`Spawing reg process: ${regExe} ${args.join(" ")}`);
+    protocolLogger.log(`Spawning reg process: ${regExe} ${args.join(" ")}`);
     const regProcess = spawn(regExe, args, {
         cwd: app.getPath("temp"),
         windowsHide: true,
@@ -72,9 +75,17 @@ async function spawnRegImport(regFile: string) {
     regProcess.stderr.on("data", (data) => {
         protocolLogger.error("reg.exe:", data);
     });
-    regProcess.on("close", (code, signal) => {
-        protocolLogger.info(`Reg process exited with code ${code}, signal ${signal}`);
-        quitTracker.setReason("register-mailto-exited");
-        app.quit();
+
+    return new Promise((resolve, reject) => {
+        regProcess.on("close", (code, signal) => {
+            protocolLogger.info(`Reg process exited with code ${code}, signal ${signal}`);
+            quitTracker.setReason("register-mailto-exited");
+            app.quit();
+            if (code === 0) {
+                resolve();
+            } else {
+                reject(new Error(`reg.exe exited with code ${code}`));
+            }
+        });
     });
 }
