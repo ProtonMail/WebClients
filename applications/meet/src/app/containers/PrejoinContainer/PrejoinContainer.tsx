@@ -30,6 +30,8 @@ interface PrejoinContainerProps {
     userId?: string;
     isPersonalRoom?: boolean;
     isLoadingMeetings?: boolean;
+    joiningLoaderHeader?: string;
+    joiningLoaderSubtitle?: string;
 }
 
 export const PrejoinContainer = ({
@@ -48,6 +50,8 @@ export const PrejoinContainer = ({
     userId,
     isPersonalRoom = false,
     isLoadingMeetings = false,
+    joiningLoaderHeader,
+    joiningLoaderSubtitle,
 }: PrejoinContainerProps) => {
     // check if a custom display name is already stored for the user
     const hasStoredDisplayName = getItem(getDisplayNameStorageKey(guestMode, userId)) != null;
@@ -150,7 +154,11 @@ export const PrejoinContainer = ({
                     {isLoading ? (
                         <>
                             {loadingState === LoadingState.JoiningInProgress && (
-                                <JoiningRoomLoader participantCount={participantsCount} />
+                                <JoiningRoomLoader
+                                    participantCount={participantsCount}
+                                    header={joiningLoaderHeader}
+                                    subtitle={joiningLoaderSubtitle}
+                                />
                             )}
                         </>
                     ) : (
