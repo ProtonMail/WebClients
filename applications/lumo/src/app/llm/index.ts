@@ -90,7 +90,6 @@ export function prepareTurns(
     linearChain: Message[],
     personalization: PersonalizationSettings,
     projectInstructions?: string,
-    documentContext?: string,
     c?: ConversationContext
 ): Turn[] {
     // Step 1: Transform messages to turns by iterating over blocks
@@ -147,21 +146,10 @@ export function prepareTurns(
     // Step 2: Insert the final empty assistant turn
     turns.push(EMPTY_ASSISTANT_TURN);
 
-    // Step 3: Add RAG document context to the FIRST user message's context field (like an attachment)
-    // This ensures documents are included once and won't be duplicated across turns
-    if (documentContext && turns.length > 0) {
-        const firstUserIndex = turns.findIndex((turn) => turn.role === Role.User);
-        if (firstUserIndex !== -1) {
-            const userTurn = turns[firstUserIndex]!;
-            // Prepend document context to existing context (which may have file attachments)
-            const existingContext = userTurn.context || '';
-            turns[firstUserIndex] = {
-                ...userTurn,
-                context: existingContext ? `${documentContext}\n\n${existingContext}` : documentContext,
-            };
-            console.log('Added RAG document context to first user message context field');
-        }
-    }
+    // Step 3: (removed) The documentContext string used to be written to turns[i].context, but
+    // WireTurn has no `context` field and the backend ignores it. RAG file content is now delivered
+    // via proper attachment turns created in Step 1 above (expandAttachmentsIntoTurns), which emit
+    // user-role turns with the file content in the `content` field that the API does read.
 
     // Step 4: Add personalization and project instructions to the last user message
     // These are per-request instructions that should apply to the current question
