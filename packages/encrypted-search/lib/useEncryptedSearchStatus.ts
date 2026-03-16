@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { SentryCommonInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { INDEXING_STATUS, defaultESStatus } from './constants';
@@ -48,7 +49,7 @@ export const useEncryptedSearchStatus = <ESItemMetadata extends Object, ESSearch
                     }));
                 }
             } catch (error) {
-                console.warn('an error occurred on init es status', error);
+                traceInitiativeError(SentryCommonInitiatives.ENCRYPTED_SEARCH, error);
             }
 
             /**
