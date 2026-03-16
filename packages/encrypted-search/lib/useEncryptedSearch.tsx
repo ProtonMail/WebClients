@@ -206,6 +206,11 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
      * longer usable to decrypt it
      */
     const dbCorruptError = async (errorMessage: string) => {
+        const userHasESDB = await hasESDB(userID);
+        if (!userHasESDB) {
+            return;
+        }
+
         await esDelete();
         createNotification({
             text: c('Error').t`Please activate your search again`,
