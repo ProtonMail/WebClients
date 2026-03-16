@@ -19,6 +19,7 @@ describe('getContentSignatureIssueLabel', () => {
         totalStorageSize: 100,
         folder: undefined,
         treeEventScopeId: 'test-scope',
+        ownedBy: {},
     };
 
     const baseRevision = {
