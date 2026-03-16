@@ -58,6 +58,7 @@ const SingleSignupSwitchContainer = ({
         searchParams.get('mode') === 'ctx' ||
         location.pathname === SSO_PATHS.START ||
         location.pathname === SSO_PATHS.BORN_PRIVATE ||
+        location.pathname === SSO_PATHS.MAIL_BORN_PRIVATE ||
         location.pathname === SSO_PATHS.MEET_SIGNUP ||
         location.pathname === SSO_PATHS.GREENLAND_SIGNUP ||
         isReferral;

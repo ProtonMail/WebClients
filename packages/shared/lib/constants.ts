@@ -425,6 +425,7 @@ export const SSO_PATHS = {
     BORN_PRIVATE: '/born-private',
     BORN_PRIVATE_ACTIVATE: '/born-private/activate',
     BORN_PRIVATE_RECOVERY: '/born-private/recovery',
+    MAIL_BORN_PRIVATE: '/mail/born-private',
 } as const;
 export const SETUP_ADDRESS_PATH = '/setup-address';
 
