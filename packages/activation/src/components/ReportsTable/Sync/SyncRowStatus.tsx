@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ApiSyncState } from '@proton/activation/src/api/api.interface';
-import { Badge } from '@proton/components';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 
 interface Props {
     state: ApiSyncState;
@@ -10,10 +10,15 @@ interface Props {
 const SyncRowStatus = ({ state }: Props) => {
     switch (state) {
         case ApiSyncState.ACTIVE:
-            return <Badge type="primary">{c('Import status').t`Active`}</Badge>;
+            return (
+                <div className="inline-flex  gap-2 color-success items-center">
+                    <IcCheckmarkCircleFilled />
+                    <span>{c('Import status').t`Active`}</span>
+                </div>
+            );
         case ApiSyncState.OFFLINE:
         case ApiSyncState.EXPIRED:
-            return <Badge type="warning">{c('Import status').t`Paused`}</Badge>;
+            return <span className="color-weak">{c('Import status').t`Disabled`}</span>;
     }
 
     return null;

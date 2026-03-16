@@ -2,8 +2,7 @@ import { c } from 'ttag';
 
 import { ApiImporterError, ApiImporterState } from '@proton/activation/src/api/api.interface';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Badge } from '@proton/components';
-import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 interface Props {
@@ -15,15 +14,16 @@ const ImporterRowStatus = ({ state, errorCode }: Props) => {
     switch (state) {
         case ApiImporterState.PAUSED:
             return (
-                <>
-                    <Badge type="warning">{c('Import status').t`Paused`}</Badge>
-
+                <div className="inline-flex gap-2 color-weak items-center">
+                    <span>{c('Import status').t`Paused`}</span>
                     {errorCode === ApiImporterError.ERROR_CODE_IMAP_CONNECTION && (
                         <Tooltip
                             title={c('Tooltip').t`Account is disconnected`}
                             data-testid="ImporterRowStatus:IMAP_Error"
                         >
-                            <IcExclamationCircleFilled />
+                            <span className="inline-flex ">
+                                <IcInfoCircle />
+                            </span>
                         </Tooltip>
                     )}
                     {errorCode === ApiImporterError.ERROR_CODE_QUOTA_LIMIT && (
@@ -31,32 +31,35 @@ const ImporterRowStatus = ({ state, errorCode }: Props) => {
                             title={c('Tooltip').t`Your ${MAIL_APP_NAME} inbox is almost full`}
                             data-testid="ImporterRowStatus:quota_Error"
                         >
-                            <IcExclamationCircleFilled />
+                            <span className="inline-flex ">
+                                <IcInfoCircle />
+                            </span>
                         </Tooltip>
                     )}
-                </>
+                </div>
             );
-        case ApiImporterState.QUEUED:
-            return <Badge type="primary">{c('Import status').t`Started`}</Badge>;
         case ApiImporterState.CANCELED:
-            return <Badge type="error">{c('Import status').t`Canceling`}</Badge>;
+            return <span className="color-weak">{c('Import status').t`Canceling...`}</span>;
         case ApiImporterState.DELAYED:
             return (
-                <>
-                    <Badge type="warning">{c('Import status').t`Delayed`}</Badge>
+                <div className="inline-flex gap-2 color-weak items-center">
+                    <span>{c('Import status').t`Delayed`}</span>
                     <Tooltip
                         title={c('Tooltip')
                             .t`Your external account may have reached its 24-hour bandwidth limit. ${BRAND_NAME} will try to resume the import as soon as possible.`}
                     >
-                        <IcExclamationCircleFilled />
+                        <span className="inline-flex">
+                            <IcInfoCircle />
+                        </span>
                     </Tooltip>
-                </>
+                </div>
             );
+
         /*
          * Default case is "in progress"
          */
         default:
-            return <Badge type="primary">{c('Import status').t`In progress`}</Badge>;
+            return <span className="color-weak">{c('Import status').t`In progress...`}</span>;
     }
 };
 

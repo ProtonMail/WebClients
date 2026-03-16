@@ -1,5 +1,4 @@
 import { createSelector } from '@reduxjs/toolkit';
-import orderBy from 'lodash/orderBy';
 
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 
@@ -12,18 +11,10 @@ export const selectSync = (state: EasySwitchState): SyncMap => state.sync.syncs;
 export const selectCreateSyncState = createSelector(selectSyncStore, (state) => state.creatingLoading);
 export const selectSyncListLoadingState = createSelector(selectSyncStore, (state) => state.listLoading);
 
-export const selectSyncIds = createSelector(selectSync, (sync) => {
-    return Object.keys(sync);
-});
-
 export const selectSyncById = createSelector(
     selectSync,
     (_: EasySwitchState, ID: string) => ID,
     (selectMap, ID) => selectMap[ID]
-);
-
-export const selectSyncIdsByDate = createSelector(selectSync, (sync) =>
-    orderBy(sync, 'startDate', 'desc').map((sync) => sync.id)
 );
 
 export const getAllSync = createSelector(selectSync, (syncs: SyncMap) => {

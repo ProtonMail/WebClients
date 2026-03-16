@@ -16,7 +16,7 @@ describe('ReportRowStatus', () => {
     });
     it('Should display Completed status', () => {
         easySwitchRender(<ReportRowStatus status={ApiImporterState.DONE} rollbackState={undefined} />);
-        screen.getByText('Completed');
+        screen.getByText('Imported');
     });
     it('Should display FAILED status', () => {
         easySwitchRender(<ReportRowStatus status={ApiImporterState.FAILED} rollbackState={undefined} />);
