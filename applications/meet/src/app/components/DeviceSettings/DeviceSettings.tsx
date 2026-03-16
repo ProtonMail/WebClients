@@ -17,6 +17,7 @@ import { useDeviceLoading } from '../../hooks/useDeviceLoading';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { supportsSetSinkId } from '../../utils/browser';
 import { filterDevices, isDefaultDevice, resolveDevice } from '../../utils/device-utils';
+import { getParticipantDisplayColorsByIndex } from '../../utils/participantDisplayColors/getParticipantDisplayColorsByIndex';
 import { AudioSettingsDropdown } from '../AudioSettings/AudioSettingsDropdown';
 import { DeviceSelect } from '../DeviceSelect/DeviceSelect';
 import { MicrophoneWithVolumeWithMicrophoneStateDirect } from '../MicrophoneWithVolume';
@@ -168,6 +169,8 @@ export const DeviceSettings = ({
         }
     };
 
+    const { backgroundColor, profileColor } = getParticipantDisplayColorsByIndex(colorIndex);
+
     return (
         <div
             className={clsx(
@@ -210,8 +213,8 @@ export const DeviceSettings = ({
                 ) : (
                     <ParticipantPlaceholder
                         participantName={displayName}
-                        backgroundColor={`meet-background-${colorIndex}`}
-                        profileColor={`profile-background-${colorIndex}`}
+                        backgroundColor={backgroundColor}
+                        profileColor={profileColor}
                         viewSize={getInitalsCircleSize()}
                     />
                 )}
