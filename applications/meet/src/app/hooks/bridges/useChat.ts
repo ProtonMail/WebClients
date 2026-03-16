@@ -8,9 +8,9 @@ import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { addChatMessages } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { MeetingSideBars, selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
+import { sanitizeMessage } from '@proton/sanitize/purify';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
 
 import { useMLSContext } from '../../contexts/MLSContext';
 import { isValidMessageString } from '../../utils/isValidMessageString';

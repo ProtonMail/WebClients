@@ -24,6 +24,7 @@ import {
 import { UpsellModalTypes } from '@proton/meet/types/types';
 import type { KeyRotationLog, MLSGroupState } from '@proton/meet/types/types';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
+import { sanitizeMessage } from '@proton/sanitize/purify';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -32,7 +33,6 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 import { CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
-import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { ConnectionFailedModal } from '../../components/ConnectionFailedModal/ConnectionFailedModal';

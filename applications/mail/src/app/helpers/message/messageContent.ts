@@ -3,11 +3,11 @@ import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { MESSAGE_IFRAME_ROOT_ID } from '@proton/mail-renderer/constants';
 import { toText } from '@proton/mail/helpers/parserHtml';
 import type { MessageState, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
+import { unescape } from '@proton/sanitize/escape';
 import { checkContrast, parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isPlainText, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
-import { unescape } from '@proton/shared/lib/sanitize/escape';
 
 import { parseModelResult } from '../assistant/result';
 import { findSender } from '../message/messageRecipients';

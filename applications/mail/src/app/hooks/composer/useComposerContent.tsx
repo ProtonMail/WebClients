@@ -15,11 +15,11 @@ import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { sanitizeComposerReply } from '@proton/sanitize/purify';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { DIRECTION, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 import { getRecipients, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
-import { sanitizeComposerReply } from '@proton/shared/lib/sanitize/purify';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
@@ -402,13 +402,7 @@ export const useComposerContent = (args: EditorArgs) => {
             undefined
         );
         return exportPlainTextSignature(content);
-    }, [
-        modelMessage.data?.Sender?.Address,
-        modelMessage.draftFlags?.action,
-        mailSettings,
-        userSettings,
-        addresses,
-    ]);
+    }, [modelMessage.data?.Sender?.Address, modelMessage.draftFlags?.action, mailSettings, userSettings, addresses]);
 
     /**
      * Returns plain text content before the blockquote and signature in the editor
