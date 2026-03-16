@@ -1,4 +1,4 @@
-import { Notification, Event, app } from "electron";
+import { Notification, app } from "electron";
 import { saveAppID } from "./store/idStore";
 import { getSettings } from "./store/settingsStore";
 import { initializeUpdateChecks, updateDownloaded } from "./update";
@@ -23,6 +23,7 @@ import { captureTopLevelRejection, captureUncaughtErrors } from "./utils/log/cap
 import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
 import {
     checkDeepLinks,
+    flushPendingDeepLink,
     handleDeepLink,
     handleSecondInstanceDeepLink,
     handleStartupDeepLink,
@@ -36,11 +37,14 @@ import {
 
     // Handle squirrel events at the very top of the application
     // WARN: We need to wait for this promise because we do not want any code to be executed
-    // during the uninstall process (or any other procees that implies application restart).
+    // during the uninstallation process (or any other process that implies application restart).
     await handleSquirrelEvents();
 
     // Check for startup deep link URL
     const startupUrl = handleStartupDeepLink();
+
+    // Register open-url handler early so macOS cold-start deep links are not missed
+    handleDeepLink();
 
     // Security addition
     app.enableSandbox();
@@ -114,9 +118,8 @@ import {
     // After this point we should be able to use all electron APIs safely.
     await app.whenReady();
 
-    // Register protocol handler
+    // Register app as default protocol client
     checkDeepLinks();
-    handleDeepLink();
 
     connectNetLogger(getWebContentsViewName);
     initializeUpdateChecks();
@@ -125,7 +128,10 @@ import {
     // After this point the main window and views have been created
     viewCreationAppStartup();
 
-    // Navigate to startup URL if provided via protocol
+    // Flush any deep link URL that arrived before the window was ready (macOS cold start)
+    flushPendingDeepLink();
+
+    // Navigate to startup URL if provided via protocol (Windows/Linux argv)
     if (startupUrl) {
         loadURL("meet", startupUrl);
     }
@@ -148,10 +154,6 @@ import {
         if (!getMainWindow()) {
             viewCreationAppStartup();
         }
-    });
-
-    app.on("open-url", (_e: Event) => {
-        bringWindowToFront();
     });
 
     setRequestPermission();
