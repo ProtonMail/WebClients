@@ -3954,6 +3954,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "El régimen de inversión del sujeto pasivo no es compatible con este plan"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduce tu nombre de usuario sin el dominio (@ejemplo.com)"
       ]
     },
     "error": {
@@ -10231,6 +10234,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tu suscripción tiene un descuento existente. Al cambiarte a esta nueva promoción, el descuento existente ya no se aplicará."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Se aplica el mecanismo de inversión del sujeto pasivo del IVA."
       ]
     },
     "Payments.Error": {
@@ -10680,6 +10686,12 @@
       ],
       "Use your own email domain": [
         "Usa tu propio dominio de correo electrónico"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "¡Extiende tu suscripción y guarda un ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "¡Cámbiate a nuestro plan anual y guarda ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
