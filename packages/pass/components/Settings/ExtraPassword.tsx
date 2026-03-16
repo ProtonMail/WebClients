@@ -14,6 +14,7 @@ import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { validateNewExtraPassword } from '@proton/pass/lib/validation/auth';
 import { extraPasswordToggle } from '@proton/pass/store/actions';
 import { selectExtraPasswordEnabled, selectIsSSO, selectLockMode } from '@proton/pass/store/selectors';
+import { type XorObfuscation, deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -43,7 +44,7 @@ export const ExtraPassword: FC = () => {
             .t`Caution: You won’t be able to access your ${PASS_APP_NAME} account if you lose this password.`,
     });
 
-    const modal = useAsyncModalHandles<string, PasswordModalState>({ getInitialModalState });
+    const modal = useAsyncModalHandles<XorObfuscation, PasswordModalState>({ getInitialModalState });
 
     const handleExtraPasswordToggle = async () => {
         if (enabled) {
@@ -67,7 +68,7 @@ export const ExtraPassword: FC = () => {
                     ...getInitialModalState(),
                     title: c('Title').t`Confirm extra password`,
                     submitLabel: c('Action').t`Set extra password`,
-                    onValidate: (current) => validateNewExtraPassword(current, value),
+                    onValidate: (current) => validateNewExtraPassword(current, deobfuscate(value)),
                     onSubmit: (password) => toggle.dispatch({ password, enabled: true }),
                 }),
         });

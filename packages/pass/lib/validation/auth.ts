@@ -1,14 +1,12 @@
-import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import type { PasswordCredentials } from '@proton/pass/lib/auth/password';
 import type { Maybe } from '@proton/pass/types';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 const validatePassword =
     (errorMessage: string) =>
-    (values: PasswordCredentials): FormikErrors<PasswordCredentials> =>
-        values.password.length > 0 ? {} : { password: errorMessage };
+    (password: string): Maybe<string> =>
+        password.length > 0 ? undefined : errorMessage;
 
 export const validateCurrentPassword = validatePassword(c('Warning').t`${BRAND_NAME} password is required`);
 export const validateExtraPassword = validatePassword(c('Warning').t`Extra password is required`);
