@@ -1,4 +1,5 @@
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import { zeroize } from '@proton/pass/utils/object/zero';
 
 const OBFS_SCHEME_VERSION = 2;
 const OBFS_MIN_MASK_SIZE = 128;
@@ -70,13 +71,18 @@ export const obfuscate = (str: string): XorObfuscation => {
 };
 
 /** Deobfuscates an XorObfuscation back to the original string. */
-export const deobfuscate = (obfuscation: XorObfuscation): string => {
+export const deobfuscate = (obfuscation: XorObfuscation, options?: { zeroize: boolean }): string => {
     const { v, m } = adapt(obfuscation);
     const data = new Uint8Array(v);
 
     for (let i = 0; i < data.length; i++) data[i] ^= m[i % m.length];
 
-    return uint8ArrayToUtf8String(data);
+    const result = uint8ArrayToUtf8String(data);
+
+    zeroize(data);
+    if (options?.zeroize) zeroize(obfuscation);
+
+    return result;
 };
 
 /** Deobfuscates a credit card number, revealing only first and last 4 digits.
@@ -92,7 +98,10 @@ export const deobfuscatePartialCCField = (obfuscation: XorObfuscation): string =
         else data[i] = 0x2a; /* asterisk */
     }
 
-    return uint8ArrayToUtf8String(data);
+    const result = uint8ArrayToUtf8String(data);
+    zeroize(data);
+
+    return result;
 };
 
 /** Deobfuscates a credit card field, optionally masking middle digits. */
