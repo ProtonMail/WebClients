@@ -159,7 +159,7 @@ describe('resolvePreviewOutput — isContentLoading (Streaming and unresolved me
 });
 
 describe('resolvePreviewOutput — thumbnail suppression', () => {
-    it('suppresses thumbnailUrl for Buffer when nodeData is not loaded', () => {
+    it('should load thumbnailUrl for Buffer when nodeData is not loaded', () => {
         const result = resolvePreviewOutput({
             ...defaults,
             previewMethod: ContentPreviewMethod.Buffer,
@@ -167,7 +167,7 @@ describe('resolvePreviewOutput — thumbnail suppression', () => {
             largeThumbnail,
             smallThumbnailUrl,
         });
-        expect(result.thumbnailUrl).toBeUndefined();
+        expect(result.thumbnailUrl).toBe('small-thumb-url');
     });
 
     it('restores thumbnailUrl for Buffer once nodeData is loaded', () => {
