@@ -1,7 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { MeetChatMessage, ParticipantEventRecord } from '../../types/types';
+import type { ChatMessageReactions, MeetChatMessage, ParticipantEventRecord } from '../../types/types';
 import type { MeetState } from '../rootReducer';
 
 export interface MeetingChatAndReactionsState {
@@ -109,8 +109,9 @@ export const selectActiveReaction = (state: MeetState, identity: string) => {
     return state.meetingChatAndReactions.activeReactions[identity]?.emoji;
 };
 
+const EMPTY_REACTIONS: ChatMessageReactions = {};
 export const selectChatMessageReactions = (state: MeetState, messageId: string) => {
-    return state.meetingChatAndReactions.chatMessages.find((m) => m.id === messageId)?.reactions ?? {};
+    return state.meetingChatAndReactions.chatMessages.find((m) => m.id === messageId)?.reactions ?? EMPTY_REACTIONS;
 };
 
 export const chatAndReactionsReducer = { meetingChatAndReactions: slice.reducer };

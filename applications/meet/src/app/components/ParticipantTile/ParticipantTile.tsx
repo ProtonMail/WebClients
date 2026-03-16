@@ -8,12 +8,12 @@ import { c } from 'ttag';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectActiveReaction, selectRaisedHands } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import {
     selectDisplayName,
     selectIsScreenShare,
     selectParticipantNameMap,
 } from '@proton/meet/store/slices/meetingInfo';
-import { selectActiveReaction, selectRaisedHands } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -26,7 +26,7 @@ import { RAISE_HAND_EMOJI } from '../../constants';
 import { useCameraTrackSubscriptionManager } from '../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStatus';
-import { getParticipantDisplayColorsByIdentity } from '../../utils/getParticipantDisplayColorsByIdentity';
+import { useParticipantDisplayColors } from '../../hooks/useParticipantDisplayColors';
 import { NetworkQualityIndicator } from '../NetworkQualityIndicator/NetworkQualityIndicator';
 import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
 
@@ -112,7 +112,9 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
 
     const cameraIsOn = cameraVideoPublication?.track && !cameraVideoPublication?.track?.isMuted;
 
-    const { borderColor, backgroundColor, profileColor } = getParticipantDisplayColorsByIdentity(participant.identity);
+    const {
+        participantColors: { borderColor, backgroundColor, profileColor },
+    } = useParticipantDisplayColors(participant.identity);
 
     const shouldShowVideo =
         cameraIsOn &&
