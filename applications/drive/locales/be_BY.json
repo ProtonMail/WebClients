@@ -1253,6 +1253,9 @@
       ],
       "Edit billing address": [
         "Рэдагаваць адрас аплаты"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "Action: Docs": {
@@ -4015,6 +4018,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Схема адваротнага налічэння падатку не падтрымліваецца для гэтага тарыфнага плана"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Увядзіце сваё імя карыстальніка без дамена (@example.com)"
       ]
     },
     "error": {
@@ -4932,6 +4938,9 @@
       ],
       "Import from Yahoo": [
         "Імпартаваць з Yahoo"
+      ],
+      "Advanced import": [
+        "Пашыраны імпарт"
       ]
     },
     "Import warning": {
@@ -7165,6 +7174,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб ужываць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
+      ],
+      "Choose your service to connect with": [
+        "Выберыце сэрвіс для падключэння"
       ]
     },
     "info": {
@@ -10595,6 +10607,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Ужыты механізм адваротнага налічэння падатку ПДВ"
       ]
     },
     "Payments.Error": {
@@ -13556,6 +13571,18 @@
       ],
       "Reverse charge not supported": [
         "Адваротнае налічэнне падатку не падтрымліваецца"
+      ],
+      "Choose a provider": [
+        "Выберыце пастаўшчыка"
+      ],
+      "Custom": [
+        "Карыстальніцкае"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Імпартуйце свае даныя ў ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Выберыце даныя для імпарту"
       ]
     },
     "Today icon tooltip in mini calendar": {
