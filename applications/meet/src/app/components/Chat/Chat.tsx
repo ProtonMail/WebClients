@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectRoomName } from '@proton/meet/store/slices/meetingInfo';
 import { markChatMessagesAsSeen } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import { selectRoomName } from '@proton/meet/store/slices/meetingInfo';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
 import placeholder from '@proton/styles/assets/img/meet/chat-empty-state.png';
@@ -16,7 +16,6 @@ import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { useChatMessage } from '../../hooks/bridges/useChatMessage';
 import { useMeetingRoomUpdates } from '../../hooks/useMeetingRoomUpdates';
-import { getParticipantDisplayColorsByIdentity } from '../../utils/getParticipantDisplayColorsByIdentity';
 import { ChatItem } from '../ChatItem/ChatItem';
 import { ChatMessage } from '../ChatMessage/ChatMessage';
 import { SideBarSearch } from '../SideBarSearch/SideBarSearch';
@@ -165,12 +164,7 @@ export const Chat = () => {
                     </div>
                 )}
                 {filteredMeetingRoomUpdates.map((item) => (
-                    <ChatItem
-                        key={`${item.identity}-${item.timestamp}`}
-                        item={item}
-                        roomName={roomName}
-                        colors={getParticipantDisplayColorsByIdentity(item.identity)}
-                    />
+                    <ChatItem key={`${item.identity}-${item.timestamp}`} item={item} roomName={roomName} />
                 ))}
             </div>
             <ChatMessage onMessageSend={sendMessage} />

@@ -15,12 +15,14 @@ export interface SortedParticipantsState {
     sortedParticipantIdentities: string[];
     page: number;
     pageSize: number;
+    localParticipantColorIndex: number;
 }
 
-const initialState: SortedParticipantsState = {
+export const initialState: SortedParticipantsState = {
     sortedParticipantIdentities: [],
     page: 0,
     pageSize: PAGE_SIZE,
+    localParticipantColorIndex: 0,
 };
 
 const calculateTotalPageCount = ({
@@ -65,6 +67,9 @@ const slice = createSlice({
         },
         setPageSize: (state, action: PayloadAction<number>) => {
             state.pageSize = action.payload;
+        },
+        setLocalParticipantColorIndex: (state, action: PayloadAction<number>) => {
+            state.localParticipantColorIndex = action.payload;
         },
         // Used in combination of removeParticipant thunk
         _removeParticipant: (state, action: PayloadAction<{ participantIdentity: string; lastPage: number }>) => {
@@ -165,6 +170,20 @@ export const selectPageCount = createSelector(
     (identities, pageSize, selfView) => calculateTotalPageCount({ identities, pageSize, selfView })
 );
 
-export const { setSortedParticipantIdentities, resetSortedParticipants, setPage, setPageSize } = slice.actions;
+export const selectLocalParticipantColorIndex = (state: MeetState) => {
+    return state.sortedParticipants.localParticipantColorIndex;
+};
+
+export const selectLocalParticipantIdentity = createSelector([selectSortedParticipantIdentities], (identities) => {
+    return identities[0];
+});
+
+export const {
+    setSortedParticipantIdentities,
+    resetSortedParticipants,
+    setPage,
+    setPageSize,
+    setLocalParticipantColorIndex,
+} = slice.actions;
 
 export const sortedParticipantsReducer = { sortedParticipants: slice.reducer };

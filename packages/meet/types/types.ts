@@ -26,11 +26,13 @@ export enum UpsellModalTypes {
     RemovedFromMeeting = 'removedFromMeeting',
 }
 
+export type ChatMessageReactions = Record<string, string[]>;
+
 export interface MeetChatMessage extends Pick<ChatMessage, 'id' | 'message' | 'timestamp'> {
     identity: string;
     seen?: boolean;
     type?: 'message';
-    reactions?: Record<string, string[]>;
+    reactions?: ChatMessageReactions;
 }
 
 export enum ParticipantEvent {

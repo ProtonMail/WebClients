@@ -5,7 +5,10 @@ import { renderHook } from '@testing-library/react';
 
 import { chatAndReactionsReducer } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices/meetingInfo';
-import { sortedParticipantsReducer } from '@proton/meet/store/slices/sortedParticipantsSlice';
+import {
+    initialState as initialSortedParticipantsState,
+    sortedParticipantsReducer,
+} from '@proton/meet/store/slices/sortedParticipantsSlice';
 import type { MeetChatMessage, ParticipantEventRecord } from '@proton/meet/types/types';
 import { ParticipantEvent } from '@proton/meet/types/types';
 import { ProtonStoreContext } from '@proton/react-redux-store';
@@ -42,8 +45,7 @@ const createMockStore = () => {
         },
         preloadedState: {
             sortedParticipants: {
-                sortedParticipantIdentities: [],
-                page: 0,
+                ...initialSortedParticipantsState,
                 pageSize: 12,
             },
             meetingChatAndReactions: {
