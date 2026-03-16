@@ -1244,6 +1244,9 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Edit billing address": [
+        "Editare adresă de facturare"
       ]
     },
     "Action: Docs": {
@@ -3980,6 +3983,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nume nedecriptabil."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduceți numele de utilizator fără domeniu (@exemplu.com)."
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Schema de taxare inversă nu este acceptată pentru acest plan."
       ]
     },
     "error": {
@@ -7048,6 +7057,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "Clear all search data": [
+        "Golire date de căutare"
+      ],
+      "Clears browser data related to the search.": [
+        "Șterge datele legate de căutare din navigatorul web."
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Căutarea este activată. Puteți închide acest dialog și căuta fișiere și foldere."
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Pentru a activa căutarea cu adevărat privată, trebuie indexate local fișierele. Puteți utiliza în continuare ${ DRIVE_APP_NAME } în mod normal – vă vom anunța când se termină indexarea."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Contul este configurat în prezent pentru a aplica schema de taxare inversă. Aceasta nu este acceptată pentru planul selectat. Pentru a continua, fie eliminați numărul de TVA din adresa de facturare, fie selectați un alt plan."
       ]
     },
     "info": {
@@ -10350,6 +10374,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Se aplică mecanismul de taxare inversă a TVA."
       ]
     },
     "Payments.Error": {
@@ -10726,6 +10753,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Valorificați oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTĂ DE PRIMĂVERII 2026"
       ]
     },
     "q1campaign: Info": {
@@ -10800,6 +10830,12 @@
       ],
       "Use your own email domain": [
         "Utilizați propriul domeniu de e-mail"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Extindeți-vă abonamentul și salvați ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Treceți la planul nostru anual și salvați ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -10807,7 +10843,7 @@
         "pentru 12 luni"
       ],
       "SPRING SALE": [
-        "REDUCERI DE PRIMĂVARĂ"
+        "OFERTĂ DE PRIMĂVERII"
       ]
     },
     "Referral": {
@@ -13339,6 +13375,9 @@
       ],
       "You’ve got 5 GB of storage": [
         "Ați primit 5 GiB spațiu de stocare"
+      ],
+      "Reverse charge not supported": [
+        "Taxa inversă nu este suportată"
       ]
     },
     "Today icon tooltip in mini calendar": {

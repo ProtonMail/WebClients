@@ -1238,6 +1238,9 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Edit billing address": [
+        "Επεξεργασία διεύθυνσης χρέωσης"
       ]
     },
     "Action: Docs": {
@@ -3951,6 +3954,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Μη αποκρυπτογραφήσιμο όνομα"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Εισάγετε το όνομα χρήστη σας χωρίς τον τομέα (@example.com)"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Το σύστημα αντιστροφής χρέωσης δεν υποστηρίζεται για αυτό το πλάνο"
       ]
     },
     "error": {
@@ -6949,6 +6958,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
+      ],
+      "Clear all search data": [
+        "Εκκαθάριση όλων των δεδομένων αναζήτησης"
+      ],
+      "Clears browser data related to the search.": [
+        "Εκκαθάριση δεδομένων περιηγητή σχετικών με την αναζήτηση."
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Η αναζήτηση ενεργοποιήθηκε. Τώρα μπορείτε να κλείσετε αυτόν τον διάλογο και να αναζητήσετε αρχεία και φακέλους."
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Για την ενεργοποίηση πραγματικής αναζήτησης, χρειάζεται να ευρετηριοποιήσουμε τα αρχεία σας τοπικά. Μπορείτε να συνεχίσετε τη χρήση του ${ DRIVE_APP_NAME } κανονικά - θα σας ενημερώσουμε όταν η ευρετηριοποίηση ολοκληρωθεί."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Ο λογαριασμός σας είναι αυτή τη στιγμή ρυθμισμένος να εφαρμόζει το καθεστώς αντίστροφης χρέωσης. Αυτό δεν υποστηρίζεται για το επιλεγμένο πλάνο. Για να συνεχίσετε, είτε αφαιρέστε τον αριθμό ΦΠΑ από τη διεύθυνση χρέωσης είτε επιλέξτε ένα άλλο πλάνο."
       ]
     },
     "info": {
@@ -10174,6 +10198,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Η συνδρομή σας έχει ήδη μια υπάρχουσα έκπτωση. Η μετάβαση σε αυτή τη νέα προσφορά σημαίνει ότι η υπάρχουσα έκπτωση δε θα ισχύει πλέον."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Εφαρμόζεται ο μηχανισμός αντίστροφης χρέωσης ΦΠΑ."
       ]
     },
     "Payments.Error": {
@@ -13020,6 +13047,9 @@
       ],
       "You’ve got 5 GB of storage": [
         "Έχετε 5 GB αποθηκευτικού χώρου"
+      ],
+      "Reverse charge not supported": [
+        "Αντιστροφή χρέωσης δεν υποστηρίζεται"
       ]
     },
     "Today icon tooltip in mini calendar": {

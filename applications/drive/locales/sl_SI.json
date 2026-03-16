@@ -1133,6 +1133,9 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Edit billing address": [
+        "Uredi naslov za izstavitev računa"
       ]
     },
     "Actions": {
@@ -1693,6 +1696,12 @@
       ],
       "Large file upload support": [
         "Podpora za nalaganje velikih datotek"
+      ],
+      "Basic chat history": [
+        "Osnovna zgodovina klepeta"
+      ],
+      "Unlimited daily chats": [
+        "Neomejeni dnevni klepeti"
       ]
     },
     "collider_2025: Info": {
@@ -2951,6 +2960,9 @@
     "Duo offer: Link": {
       "Get 4x more storage": [
         "Pridobite 4x več prostora za shranjevanje"
+      ],
+      "Share your plan": [
+        "Svoj paket daj v skupno rabo"
       ]
     },
     "Duo offer: Title": {
@@ -3594,6 +3606,12 @@
       ],
       "Your import will not be processed.": [
         "Vaš uvoz ne bo obdelan."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Vnesite svoje uporabniško ime brez domene (@example.com)"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Shema obrnjene davčne obveznosti ni podprta za ta načrt"
       ]
     },
     "error": {
@@ -3998,6 +4016,9 @@
     "fido2: Info": {
       "Security key": [
         "Varnostni ključ"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vstavite varnostni ključ, povezan z vašim ${ BRAND_NAME } računom."
       ]
     },
     "fido2: Label": {
@@ -6403,6 +6424,27 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše preizkusno obdobje se bo končalo čez ${ timeRemaining }."
+      ],
+      "Clear all search data": [
+        "Počisti vse iskalne podatke"
+      ],
+      "Clears browser data related to the search.": [
+        "Počisti podatke brskalnika, povezane z iskanjem."
+      ],
+      "Each code can only be used once": [
+        "Vsaka koda se lahko uporabi samo enkrat"
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Iskanje omogočeno. Zdaj lahko zaprete to pogovorno okno in poiščete datoteke in mape."
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Da omogočimo popolnoma zasebno iskanje, moramo vaše datoteke indeksirati lokalno. Še vedno lahko normalno uporabljate ${ DRIVE_APP_NAME } - obvestili vas bomo, ko bo indeksiranje končano."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Vaš račun je trenutno nastavljen za uporabo sheme povratnega DDV. To ni podprto za izbrani paket. Če želite nadaljevati, bodisi odstranite številko DDV s plačilnega naslova ali izberite drug paket."
       ]
     },
     "info": {
@@ -7441,6 +7483,12 @@
         "Do ${ n } udeleženca",
         "Do ${ n } udeleženci",
         "Do ${ n } udeležencev"
+      ],
+      "${ n } participant": [
+        "${ n } udeleženec",
+        "${ n } udeleženca",
+        "${ n } udeleženci",
+        "${ n } udeleženci"
       ]
     },
     "Message": {
@@ -8181,6 +8229,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Pregledujemo temni splet in preverjamo, ali so bili razkriti naslovi ali vzdevki ${ BRAND_NAME }. V primeru uhajanja podatkov vas bomo o tem obvestili."
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke"
       ]
     },
     "new_plans: feature highlight": {
@@ -9383,6 +9437,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaša naročnina trenutno vsebuje obstoječi popust. Premik na to novo promocijo pomeni, da obstoječi popust ne bo več veljal."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Mehanizem DDV povratnega plačila velja."
       ]
     },
     "Payments.Error": {
@@ -9726,6 +9783,18 @@
       ],
       "your subscription": [
         "vaša naročnina"
+      ],
+      "Friend joined": [
+        "Prijatelj se je pridružil",
+        "Prijatelja sta se pridružila",
+        "Prijatelji so se pridružili",
+        "Prijatelji so se pridružili"
+      ],
+      "Friend subscribed": [
+        "Prijatelj se je naročil",
+        "Prijatelja sta se naročila",
+        "Prijatelji so se naročili",
+        "Prijatelji so se naročili"
       ]
     },
     "Safety review": {
@@ -11932,6 +12001,12 @@
       ],
       "You’ve got 5 GB of storage": [
         "Pridobili ste pet GB prostora za shranjevanje."
+      ],
+      "Account temporarily locked": [
+        "Račun je začasno zaklenjen"
+      ],
+      "Reverse charge not supported": [
+        "Shema obrnjene davčne obveznosti"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12241,6 +12316,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaša preskusna različica se izteče ${ textDate }. Če do ${ textDate } prekličete, vam ne bo zaračunano. ${ action }"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
       ]
     }
   }

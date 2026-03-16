@@ -1238,6 +1238,9 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Edit billing address": [
+        "Editar la dirección de la factura"
       ]
     },
     "Action: Docs": {
@@ -3542,7 +3545,7 @@
         "Código inválido"
       ],
       "Invalid coupon": [
-        "Cupón invalido"
+        "Cupón inválido"
       ],
       "Invalid email address": [
         "Dirección de correo inválida"
@@ -3820,7 +3823,7 @@
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
       "This field is invalid": [
-        "Este campo no es válido"
+        "Este campo es válido"
       ],
       "This field is required": [
         "Este campo es obligatorio"
@@ -3948,6 +3951,15 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Ingrese su nombre de usuario sin el dominio (@ejemplo.com)"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "El esquema de cobro inverso no es compatible con este plan"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "El importe mínimo de la donación es de ${ price }"
       ]
     },
     "error": {
@@ -6946,6 +6958,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrá seguir viendo los datos de su propia cuenta, pero todas las cuentas de usuario serán eliminadas de su organización."
+      ],
+      "Clear all search data": [
+        "Borrar todos los datos de búsqueda"
+      ],
+      "Clears browser data related to the search.": [
+        "Borra los datos de navegación relacionados con la búsqueda."
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Búsqueda activada. Puede cerrar esta ventana y buscar archivos y carpetas."
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Para activar una búsqueda verdadera, necesitamos indexar los archivos localmente. Puede seguir usando ${ DRIVE_APP_NAME } normalmente y le avisaremos cuando la indexación finalice."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Su cuenta está actualmente configurada para aplicar el esquema de cargo inverso. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
       ]
     },
     "info": {
@@ -10231,6 +10258,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Se aplica el mecanismo de cargo inverso del IVA."
       ]
     },
     "Payments.Error": {
@@ -10603,6 +10633,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Aproveche la oferta"
+      ],
+      "SPRING SALE 2026": [
+        "OFERTA DE PRIMAVERA 2026"
       ]
     },
     "q1campaign: Info": {
@@ -10677,6 +10710,12 @@
       ],
       "Use your own email domain": [
         "Use su propio dominio de correo electrónico"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "¡Extienda su suscripción y guarde ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "¡Cambie a nuestro plan anual y guarde ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -13164,6 +13203,9 @@
       ],
       "You’ve got 5 GB of storage": [
         "Ha obtenido 5 GB de almacenamiento"
+      ],
+      "Reverse charge not supported": [
+        "Cargo inverso no soportado"
       ]
     },
     "Today icon tooltip in mini calendar": {

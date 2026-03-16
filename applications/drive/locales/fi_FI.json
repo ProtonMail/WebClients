@@ -1229,6 +1229,9 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Edit billing address": [
+        "Muokkaa laskutusosoitetta"
       ]
     },
     "Action: Docs": {
@@ -3775,6 +3778,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nimen salausta ei pysty purkamaan"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Syötä käyttäjätunnuksesi ilman verkkotunnusta (@example.com)"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Tämä tilaus ei tue käännettyä verovelvollisuutta."
       ]
     },
     "error": {
@@ -6666,6 +6675,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
+      ],
+      "Clear all search data": [
+        "Tyhjennä kaikki hakutiedot"
+      ],
+      "Clears browser data related to the search.": [
+        "Tyhjentää selaimen hakuun liittyvät tiedot."
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Haku otettu käyttöön. Voit nyt sulkea tämän ikkunan ja etsiä tiedostoja ja kansioita."
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "Aidosti yksityistä hakua varten tiedostoistasi täytyy luoda paikallinen hakemisto. Voit edelleen käyttää ${ DRIVE_APP_NAME }a normaalisti – saat ilmoituksen kun indeksointi on valmis."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Tilisi asetuksissa on käytössä käännetty verovelvollisuus, jota valittu tilaus ei tue. Jatkaaksesi joko poista ALV-numero laskutustiedoista tai valitse toinen tilaus."
       ]
     },
     "info": {
@@ -9742,6 +9766,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tilauksessasi on jo olemassa oleva alennus. Siirtyminen tähän uuteen kampanjaan tarkoittaa, että aiempaa alennusta ei enää käytetä."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Sovelletaan arvonlisäveron käänteistä verovelvollisuutta."
       ]
     },
     "Payments.Error": {
@@ -10091,6 +10118,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Hyödynnä tarjous"
+      ],
+      "SPRING SALE 2026": [
+        "KEVÄTALE 2026"
       ]
     },
     "q1campaign: Info": {
@@ -10165,6 +10195,12 @@
       ],
       "Use your own email domain": [
         "Käytä omaa sähköpostin verkkotunnusta"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Pidennä tilaustasi ja tallenna ${ discountPercent } %!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Vaihda vuositilaukseemme ja tallenna ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -12534,6 +12570,9 @@
       ],
       "You’ve got 5 GB of storage": [
         "Sinulla on 5 Gt tallennustilaa"
+      ],
+      "Reverse charge not supported": [
+        "Käännettyä verovelvollisuutta ei tueta."
       ]
     },
     "Today icon tooltip in mini calendar": {

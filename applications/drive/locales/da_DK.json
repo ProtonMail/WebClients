@@ -1235,6 +1235,9 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
       ]
     },
     "Action: Docs": {
@@ -3915,6 +3918,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn, der ikke kan dekrypteres"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Indtast dit brugernavn uden domænet (@example.com)"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omvendt betalingsordning understøttes ikke for dette abonnement"
       ]
     },
     "error": {
@@ -6890,6 +6899,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Din konto er i øjeblikket konfigureret til at anvende omvendt betalingspligt, som ikke er understøttet i det valgte abonnement. For at fortsætte skal du enten fjerne momsnummeret fra faktureringsadressen eller vælge et andet abonnement."
       ]
     },
     "info": {
@@ -10457,6 +10469,9 @@
     "q1campaign: Action": {
       "Get the deal": [
         "Tag imod tilbuddet"
+      ],
+      "SPRING SALE 2026": [
+        "FORÅRSALG 2026"
       ]
     },
     "q1campaign: Info": {
@@ -10531,6 +10546,12 @@
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Forlæng Deres abonnement og gem ${ discountPercent } %!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Skift til vores årlige abonnement og gem ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -10538,7 +10559,7 @@
         "i 12 måneder"
       ],
       "SPRING SALE": [
-        "FORÅRSUDSALG"
+        "FORÅR SALG"
       ]
     },
     "Referral": {
@@ -12996,6 +13017,9 @@
       ],
       "You’ve got 5 GB of storage": [
         "Du har 5 GB lagerplads"
+      ],
+      "Reverse charge not supported": [
+        "Fakturering med omvendt betaling understøttes ikke"
       ]
     },
     "Today icon tooltip in mini calendar": {
