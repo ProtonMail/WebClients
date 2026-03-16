@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,9 +11,9 @@ import { IcFolder } from '@proton/icons/icons/IcFolder';
 import { DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { DriveBrowser } from '../../../components/Files';
+import type { BreadcrumbItem } from '../../../components/Files/DriveBrowser/DriveBreadcrumbs';
 import { MAX_INDEXABLE_FILES, useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
 import { useDriveSDK } from '../../../hooks/useDriveSDK';
-import type { DriveNode } from '../../../hooks/useDriveSDK';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectAttachmentsBySpaceId, selectSpaceById } from '../../../redux/selectors';
 import { deleteAttachment } from '../../../redux/slices/core/attachments';
@@ -36,41 +36,26 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
         (attachment) => !attachment.error && !attachment.autoRetrieved && attachment.filename
     );
     const hasExistingFiles = files.length > 0;
-    const { isInitialized, getRootFolder } = useDriveSDK();
+    const { isInitialized } = useDriveSDK();
     const { indexFolder, removeIndexedFolder } = useDriveFolderIndexing();
-    const [currentBrowsedFolder, setCurrentBrowsedFolder] = useState<DriveNode | null>(null);
-    const [rootFolderId, setRootFolderId] = useState<string | null>(null);
-    const [folderPath, setFolderPath] = useState<string[]>([]);
+    const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbItem[]>([]);
 
     // Project variables
     const { linkedDriveFolder } = getProjectInfo(space);
     const isLinkedToDrive = linkedDriveFolder !== undefined;
 
-    // Initialize root folder ID when Drive is ready
-    useEffect(() => {
-        if (isInitialized && !rootFolderId) {
-            void (async () => {
-                try {
-                    const root = await getRootFolder();
-                    setRootFolderId(root.nodeUid);
-                    setCurrentBrowsedFolder(root);
-                    setFolderPath([root.name]);
-                } catch (error) {
-                    console.error('Failed to get root folder:', error);
-                }
-            })();
-        }
-    }, [isInitialized, rootFolderId, getRootFolder]);
+    // Derive current folder state from breadcrumbs — updates on both forward and back navigation
+    const currentFolder = breadcrumbs[breadcrumbs.length - 1]?.node ?? null;
+    const rootFolder = breadcrumbs[0]?.node ?? null;
+    const isAtRoot = !currentFolder || (rootFolder !== null && currentFolder.nodeUid === rootFolder.nodeUid);
+    const folderPath = breadcrumbs.map((b) => b.node.name).join(' / ');
 
-    const handleFolderNavigate = useCallback((folder: DriveNode) => {
-        setCurrentBrowsedFolder(folder);
-        setFolderPath((prev) => [...prev, folder.name]);
+    const handleBreadcrumbsChange = useCallback((newBreadcrumbs: BreadcrumbItem[]) => {
+        setBreadcrumbs(newBreadcrumbs);
     }, []);
 
-    const isAtRoot = !currentBrowsedFolder || currentBrowsedFolder.nodeUid === rootFolderId;
-
     const handleLinkFolder = useCallback(async () => {
-        if (!currentBrowsedFolder || !space || isAtRoot) {
+        if (!currentFolder || !space || isAtRoot) {
             return;
         }
 
@@ -79,9 +64,9 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
             const updatedSpace = {
                 ...space,
                 linkedDriveFolder: {
-                    folderId: currentBrowsedFolder.nodeUid,
-                    folderName: currentBrowsedFolder.name,
-                    folderPath: folderPath.join(' / '),
+                    folderId: currentFolder.nodeUid,
+                    folderName: currentFolder.name,
+                    folderPath,
                 },
             };
 
@@ -89,7 +74,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
             dispatch(pushSpaceRequest({ id: projectId }));
 
             // Kick off indexing for this folder, associated to the project space
-            void indexFolder(currentBrowsedFolder.nodeUid, currentBrowsedFolder.name, folderPath.join(' / '), {
+            void indexFolder(currentFolder.nodeUid, currentFolder.name, folderPath, {
                 spaceId: projectId,
             })
                 .then((result) => {
@@ -125,7 +110,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
             });
         }
     }, [
-        currentBrowsedFolder,
+        currentFolder,
         space,
         folderPath,
         dispatch,
@@ -230,28 +215,24 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                             </div>
                         ) : (
                             <>
-                                <p className="text-sm color-weak mb-4">
+                                <p className="text-sm color-weak mb-3">
                                     {c('collider_2025:Info')
                                         .jt`Browse to the ${DRIVE_SHORT_APP_NAME} folder you want to link to this project, then click "Link this folder".`}
                                 </p>
-                                <DriveBrowser
-                                    onFileSelect={() => {
-                                        // Ignore file selection in folder browsing mode
-                                    }}
-                                    onFolderSelect={handleFolderNavigate}
-                                    folderSelectionMode={true}
-                                    initialShowDriveBrowser={true}
-                                    hideHeader={true}
-                                />
-                                {currentBrowsedFolder && !isAtRoot && (
-                                    <div className="mt-4 p-4 bg-weak rounded border border-weak">
-                                        <div className="flex items-center gap-2">
-                                            <IcFolder className="color-norm" />
-                                            <span className="text-sm">
-                                                {c('collider_2025:Label').t`Current folder:`}{' '}
-                                                <span className="text-bold">{currentBrowsedFolder.name}</span>
-                                            </span>
-                                        </div>
+                                <div className="border border-weak rounded overflow-hidden" style={{ height: '22rem' }}>
+                                    <DriveBrowser
+                                        onFileSelect={() => {}}
+                                        folderSelectionMode={true}
+                                        initialShowDriveBrowser={true}
+                                        hideHeader={true}
+                                        onBreadcrumbsChange={handleBreadcrumbsChange}
+                                    />
+                                </div>
+                                {!isAtRoot && currentFolder && (
+                                    <div className="mt-3 flex items-center gap-2 text-sm">
+                                        <IcFolder className="color-norm shrink-0" />
+                                        <span className="color-weak">{c('collider_2025:Label').t`Selected:`}</span>
+                                        <span className="text-bold">{currentFolder.name}</span>
                                     </div>
                                 )}
                             </>
