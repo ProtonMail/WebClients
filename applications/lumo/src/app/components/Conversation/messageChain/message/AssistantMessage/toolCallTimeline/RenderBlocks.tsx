@@ -1,9 +1,8 @@
-import type { SearchItem, ThinkingTimelineEvent, ToolCallBlock } from '../../../../../../types';
-import type { ContentBlock, Message } from '../../../../../../types';
+import type { ContentBlock, Message, ThinkingTimelineEvent, ToolCallBlock } from '../../../../../../types';
 import { isToolCallBlock, isToolResultBlock } from '../../../../../../types';
 import StreamingMarkdownRenderer from '../../../../../LumoMarkdown/StreamingMarkdownRenderer';
 import { parseToolCallBlock } from '../../toolCall/toolCallUtils';
-import { FinanceComparisonResult, type FinanceComparisonItem } from './FinanceComparisonResult';
+import { type FinanceComparisonItem, FinanceComparisonResult } from './FinanceComparisonResult';
 import { FinanceToolResult, parseFinanceResult } from './FinanceToolResult';
 import { ThinkingPath, type ThinkingStep } from './ThinkingPath';
 import { WeatherToolResult, parseWeatherResult } from './WeatherToolResult';
@@ -20,7 +19,7 @@ interface RenderBlocksProps {
     handleLinkClick: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
     sourcesContainerRef: React.MutableRefObject<HTMLDivElement | null>;
     reasoning?: string;
-    toolCallResults?: SearchItem[] | null;
+    // toolCallResults?: SearchItem[] | null;
 }
 
 /**
@@ -86,9 +85,7 @@ function toToolCallStep(
     return { type: 'tool_call', toolCall, result, isActive: isInProgress };
 }
 
-type InterleavedItem =
-    | { type: 'steps'; steps: ThinkingStep[] }
-    | { type: 'text'; block: ContentBlock };
+type InterleavedItem = { type: 'steps'; steps: ThinkingStep[] } | { type: 'text'; block: ContentBlock };
 
 /**
  * Build an interleaved sequence of [steps, text, steps, text, ...] items.
@@ -243,8 +240,8 @@ function buildInterleavedItems(
         // Fallback: no timeline — put reasoning first, then interleave tool calls with text
         const pendingSteps: ThinkingStep[] = [];
         const toolCalls = blocks.filter(isToolCallBlock);
-        const anyToolCallInProgress = toolCalls.some((b) =>
-            toToolCallStep(b, blocks, isGenerating, isLastMessage)?.isActive
+        const anyToolCallInProgress = toolCalls.some(
+            (b) => toToolCallStep(b, blocks, isGenerating, isLastMessage)?.isActive
         );
 
         if (reasoning && reasoning.trim()) {
@@ -295,7 +292,6 @@ function getRichCardSteps(steps: ThinkingStep[]): RichCardStep[] {
     );
 }
 
-
 export const RenderBlocks = ({
     blocks,
     message,
@@ -318,7 +314,9 @@ export const RenderBlocks = ({
 
     // Gather all rich-card-eligible steps globally so finance comparison always works
     // regardless of whether the tool calls ended up in the same or different step groups.
-    const allStepItems = interleavedItems.filter((i): i is Extract<InterleavedItem, { type: 'steps' }> => i.type === 'steps');
+    const allStepItems = interleavedItems.filter(
+        (i): i is Extract<InterleavedItem, { type: 'steps' }> => i.type === 'steps'
+    );
     const allRichCardSteps = allStepItems.flatMap((item) => getRichCardSteps(item.steps));
 
     const seenSymbols = new Set<string>();
@@ -372,9 +370,7 @@ export const RenderBlocks = ({
         <>
             {interleavedItems.map((item, idx) => {
                 if (item.type === 'steps') {
-                    const hasActiveReasoning = item.steps.some(
-                        (s) => s.type === 'reasoning' && s.isActive
-                    );
+                    const hasActiveReasoning = item.steps.some((s) => s.type === 'reasoning' && s.isActive);
                     if (hasActiveReasoning) pastActiveReasoning = true;
 
                     const isLastFinanceGroup = idx === lastFinanceGroupIdx;
@@ -402,22 +398,17 @@ export const RenderBlocks = ({
 
                     return (
                         <div key={idx}>
-                            <ThinkingPath
-                                steps={preCardSteps}
-                                message={message}
-                                handleLinkClick={handleLinkClick}
-                            />
+                            <ThinkingPath steps={preCardSteps} message={message} handleLinkClick={handleLinkClick} />
                             {hasCards && (
                                 <>
-                                    {hasFinanceCards && (
-                                        globalFinanceItems.length >= 2 ? (
+                                    {hasFinanceCards &&
+                                        (globalFinanceItems.length >= 2 ? (
                                             <FinanceComparisonResult items={globalFinanceItems} />
                                         ) : (
                                             globalFinanceItems.map((finance, i) => (
                                                 <FinanceToolResult key={i} data={finance.data} />
                                             ))
-                                        )
-                                    )}
+                                        ))}
                                     {weatherCards.map((data, i) => (
                                         <WeatherToolResult key={i} data={data!} />
                                     ))}
