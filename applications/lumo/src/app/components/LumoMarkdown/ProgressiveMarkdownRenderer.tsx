@@ -7,23 +7,23 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import { visit } from 'unist-util-visit';
 
-import {Button} from '@proton/atoms/Button/Button';
+import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import {IcEye} from '@proton/icons/icons/IcEye';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { IcEye } from '@proton/icons/icons/IcEye';
 import { isIos, isIpad, isSafari } from '@proton/shared/lib/helpers/browser';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
-import {Tooltip} from '@proton/atoms/Tooltip/Tooltip';
 
+import { useHtmlPreview } from '../../contexts/HtmlPreviewContext';
 import { useCopyNotification } from '../../hooks/useCopyNotification';
 import type { SearchItem } from '../../lib/toolCall/types';
 import { useLumoTheme } from '../../providers';
 import { parseInteger } from '../../util/number';
 import { convertRefTokensToSpans, normalizeBrTags, processForLatexMarkdown } from '../../util/tokens';
 import LumoCopyButton from '../Conversation/messageChain/message/actionToolbar/LumoCopyButton';
-import {getDomain} from '../Conversation/messageChain/message/toolCall/helpers';
-import {InlineImageComponent} from './InlineImageComponent';
-import {SyntaxHighlighter} from './syntaxHighlighterConfig';
-import {useHtmlPreview} from '../../contexts/HtmlPreviewContext';
+import { getDomain } from '../Conversation/messageChain/message/toolCall/helpers';
+import { InlineImageComponent } from './InlineImageComponent';
+import { SyntaxHighlighter } from './syntaxHighlighterConfig';
 
 import './LumoMarkdown.scss';
 
@@ -372,16 +372,13 @@ const CodeBlockWrapper: React.FC<{
                     </SyntaxHighlighter>
                 </div>
             </div>
-            <div className="lumo-no-copy absolute top-0 right-0 z-10 flex gap-1" style={{ transform: 'translate(4px, -4px)' }}>
+            <div
+                className="lumo-no-copy absolute top-0 right-0 z-10 flex gap-1"
+                style={{ transform: 'translate(4px, -4px)' }}
+            >
                 {isHtml && (
                     <Tooltip title="Preview HTML">
-                        <Button
-                            icon
-                            color="weak"
-                            shape="ghost"
-                            size="small"
-                            onClick={() => onPreviewHtml(value)}
-                        >
+                        <Button icon color="weak" shape="ghost" size="small" onClick={() => onPreviewHtml(value)}>
                             <IcEye />
                         </Button>
                     </Tooltip>
