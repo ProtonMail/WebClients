@@ -1,4 +1,4 @@
-import { deobfuscate, deobfuscatePartialCCField, obfuscate } from './xor';
+import { cloneObfuscation, deobfuscate, deobfuscatePartialCCField, obfuscate } from './xor';
 
 describe('XOR obfuscation / deobfuscation', () => {
     test('should work on empty strings', () => {
@@ -12,6 +12,41 @@ describe('XOR obfuscation / deobfuscation', () => {
         const str = Array.from({ length: 65_536 * 2 }, () => '.').join('');
         const obfuscated = obfuscate(str);
         expect(deobfuscate(obfuscated)).toEqual(str);
+    });
+
+    describe('cloneObfuscation', () => {
+        test('clone deobfuscates to the same value as the original', () => {
+            const original = obfuscate('correct horse battery staple');
+            const clone = cloneObfuscation(original);
+            expect(deobfuscate(clone)).toEqual(deobfuscate(original));
+        });
+
+        test('clone has distinct Uint8Array instances for v and m', () => {
+            const original = obfuscate('correct horse battery staple');
+            const clone = cloneObfuscation(original);
+            expect(clone.v).not.toBe(original.v);
+            expect(clone.m).not.toBe(original.m);
+            expect(clone.v.buffer).not.toBe(original.v.buffer);
+            expect(clone.m.buffer).not.toBe(original.m.buffer);
+        });
+
+        test('zeroizing the clone does not corrupt the original', () => {
+            const input = 'correct horse battery staple';
+            const original = obfuscate(input);
+            const clone = cloneObfuscation(original);
+            clone.v.fill(0);
+            clone.m.fill(0);
+            expect(deobfuscate(original)).toEqual(input);
+        });
+
+        test('zeroizing the original does not corrupt the clone', () => {
+            const input = 'correct horse battery staple';
+            const original = obfuscate(input);
+            const clone = cloneObfuscation(original);
+            original.v.fill(0);
+            original.m.fill(0);
+            expect(deobfuscate(clone)).toEqual(input);
+        });
     });
 
     test.each([
