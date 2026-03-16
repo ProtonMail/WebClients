@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectRoomName } from '@proton/meet/store/slices/meetingInfo';
+import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 
 import { CloseButton } from '../atoms/CloseButton/CloseButton';
-import { useSortedParticipantsContext } from '../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useMeetingRoomUpdates } from '../hooks/useMeetingRoomUpdates';
+import { getParticipantDisplayColorsByIdentity } from '../utils/getParticipantDisplayColorsByIdentity';
 import { ChatItem } from './ChatItem/ChatItem';
 
 const CHAT_MESSAGE_TIMEOUT = 8000;
@@ -19,13 +20,13 @@ export const ChatPreview = () => {
 
     const roomName = useMeetSelector(selectRoomName);
 
-    const { sortedParticipants, sortedParticipantsDisplayColorsMap } = useSortedParticipantsContext();
+    const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
 
     const meetingRoomUpdates = useMeetingRoomUpdates();
 
     const sideBarState = useMeetSelector(selectSideBarState);
 
-    const participantCountBiggerThanThreshold = sortedParticipants.length > PARTICIPANT_COUNT_THRESHOLD;
+    const participantCountBiggerThanThreshold = totalParticipantCount > PARTICIPANT_COUNT_THRESHOLD;
 
     const now = Date.now();
 
@@ -43,10 +44,7 @@ export const ChatPreview = () => {
 
     const shouldNotDisplayLastMessage = !isOpen || sideBarState[MeetingSideBars.Chat] || !latestMeetingRoomUpdate;
 
-    const colors = sortedParticipantsDisplayColorsMap.get(latestMeetingRoomUpdate?.identity) ?? {
-        backgroundColor: 'meet-background-1',
-        profileTextColor: 'profile-color-1',
-    };
+    const colors = getParticipantDisplayColorsByIdentity(latestMeetingRoomUpdate?.identity);
 
     // We always show the latest meeting room update (message or participant event), had to make it disappear after a timeout
     useEffect(() => {

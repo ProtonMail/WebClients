@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { IcMeetChat } from '@proton/icons/icons/IcMeetChat';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectChatMessages } from '@proton/meet/store/slices/meetingState';
+import { selectChatMessages } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';

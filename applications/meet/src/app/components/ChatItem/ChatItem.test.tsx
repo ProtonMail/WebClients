@@ -5,7 +5,7 @@ import { cleanup, render, screen } from '@testing-library/react';
 import { vi } from 'vitest';
 
 import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices';
-import { meetingStateReducer } from '@proton/meet/store/slices/meetingState';
+import { chatAndReactionsReducer } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import type { MeetChatMessage, ParticipantEventRecord } from '@proton/meet/types/types';
 import { ParticipantEvent } from '@proton/meet/types/types';
 import { ProtonStoreContext } from '@proton/react-redux-store';
@@ -51,7 +51,7 @@ const createMockStore = () => {
     return configureStore({
         reducer: {
             ...meetingInfoReducer,
-            ...meetingStateReducer,
+            ...chatAndReactionsReducer,
         },
         preloadedState: {
             meetingInfo: {

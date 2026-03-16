@@ -7,6 +7,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { IcMeetPhone } from '@proton/icons/icons/IcMeetPhone';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsLocalScreenShare } from '@proton/meet/store/slices/meetingInfo';
+import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import {
     MeetingSideBars,
     PopUpControls,
@@ -20,7 +21,6 @@ import clsx from '@proton/utils/clsx';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 import { useMeetContext } from '../../contexts/MeetContext';
-import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
 import { EndMeetingWarningModal } from '../EndMeetingWarningModal/EndMeetingWarningModal';
@@ -36,7 +36,8 @@ export const LeaveMeetingPopup = () => {
     const { anchorRef } = usePopperAnchor<HTMLButtonElement>();
     const { handleEndMeeting, handleLeave } = useMeetContext();
     const isLocalScreenShare = useMeetSelector(selectIsLocalScreenShare);
-    const { sortedParticipants } = useSortedParticipantsContext();
+    const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
+
     const popupState = useMeetSelector(selectPopupState);
     const [loadingEndMeeting, withLoadingEndMeeting] = useLoading();
 
@@ -50,7 +51,7 @@ export const LeaveMeetingPopup = () => {
             case isLocalScreenShare:
                 return dispatch(setPopupStateValue({ popup: PopUpControls.ScreenShareLeaveWarning, value: true }));
             // If there is only one participant, regardless of the role, show the leave meeting participant modal
-            case sortedParticipants.length === 1:
+            case totalParticipantCount === 1:
                 return dispatch(togglePopupState(PopUpControls.LeaveMeetingParticipant));
 
             // If the local participant is host and there is no other admin,
@@ -119,7 +120,7 @@ export const LeaveMeetingPopup = () => {
                     >
                         {c('Action').t`Leave meeting`}
                     </Button>
-                    {allowNewHostAssignment && sortedParticipants.length > 1 && (
+                    {allowNewHostAssignment && totalParticipantCount > 1 && (
                         <Button
                             className="assign-new-host-button border-none rounded-full w-full py-4"
                             onClick={() => {

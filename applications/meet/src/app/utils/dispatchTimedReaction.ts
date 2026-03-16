@@ -1,6 +1,6 @@
 import type { AppDispatch } from 'proton-authenticator/store';
 
-import { clearActiveReaction, setActiveReaction } from '@proton/meet/store/slices/meetingState';
+import { clearActiveReaction, setActiveReaction } from '@proton/meet/store/slices/chatAndReactionsSlice';
 
 import { REACTION_DISPLAY_DURATION_MS } from '../constants';
 

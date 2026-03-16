@@ -2,27 +2,26 @@ import { useMemo } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components/index';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectMeetSettings } from '@proton/meet/store/slices/settings';
+import { selectPagedIdentities } from '@proton/meet/store/slices/sortedParticipantsSlice';
 
-import { useSortedParticipantsContext } from '../contexts/ParticipantsProvider/SortedParticipantsProvider';
+import { useSortedPagedParticipants } from '../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../hooks/useIsNarrowHeight';
 import { calculateGridLayout } from '../utils/calculateGridLayout';
 import { ParticipantTile } from './ParticipantTile/ParticipantTile';
 
 export const ParticipantGrid = () => {
-    const { pagedParticipants, pagedParticipantsWithoutSelfView } = useSortedParticipantsContext();
+    const pagedParticipantIdentities = useMeetSelector(selectPagedIdentities);
 
-    const { selfView } = useMeetSelector(selectMeetSettings);
+    const pagedParticipants = useSortedPagedParticipants();
 
     const isLargerThanMd = useIsLargerThanMd();
 
     const isNarrowHeight = useIsNarrowHeight();
 
-    const actualPagedParticipantCount = selfView ? pagedParticipants.length : pagedParticipantsWithoutSelfView.length;
     const { cols, rows } = useMemo(
-        () => calculateGridLayout(actualPagedParticipantCount, !isLargerThanMd || isNarrowHeight),
-        [actualPagedParticipantCount, isLargerThanMd, isNarrowHeight]
+        () => calculateGridLayout(pagedParticipantIdentities.length, !isLargerThanMd || isNarrowHeight),
+        [pagedParticipantIdentities.length, isLargerThanMd, isNarrowHeight]
     );
 
     const gridTemplateColumns = `repeat(${cols}, 1fr)`;
@@ -55,7 +54,7 @@ export const ParticipantGrid = () => {
                     gap: '0.6875rem',
                 }}
             >
-                {(selfView ? pagedParticipants : pagedParticipantsWithoutSelfView).map((participant) => {
+                {pagedParticipants.map((participant) => {
                     return (
                         <ParticipantTile
                             key={participant.identity}
