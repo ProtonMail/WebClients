@@ -3,8 +3,9 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { renderHook } from '@testing-library/react';
 
+import { chatAndReactionsReducer } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices/meetingInfo';
-import { meetingStateReducer } from '@proton/meet/store/slices/meetingState';
+import { sortedParticipantsReducer } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import type { MeetChatMessage, ParticipantEventRecord } from '@proton/meet/types/types';
 import { ParticipantEvent } from '@proton/meet/types/types';
 import { ProtonStoreContext } from '@proton/react-redux-store';
@@ -35,13 +36,17 @@ const mockParticipantNameMap = {
 const createMockStore = () => {
     return configureStore({
         reducer: {
-            ...meetingStateReducer,
+            ...sortedParticipantsReducer,
+            ...chatAndReactionsReducer,
             ...meetingInfoReducer,
         },
         preloadedState: {
-            meetingState: {
+            sortedParticipants: {
+                sortedParticipantIdentities: [],
                 page: 0,
                 pageSize: 12,
+            },
+            meetingChatAndReactions: {
                 chatMessages: mockChatMessages,
                 events: mockParticipantEvents,
                 raisedHands: [],

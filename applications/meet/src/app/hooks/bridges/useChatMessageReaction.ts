@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
-import { addChatMessageReaction } from '@proton/meet/store/slices/meetingState';
+import { addChatMessageReaction } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import { useMLSContext } from '../../contexts/MLSContext';

@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectRoomName } from '@proton/meet/store/slices/meetingInfo';
-import { markChatMessagesAsSeen } from '@proton/meet/store/slices/meetingState';
+import { markChatMessagesAsSeen } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
 import placeholder from '@proton/styles/assets/img/meet/chat-empty-state.png';
@@ -14,9 +14,9 @@ import placeholderSearch from '@proton/styles/assets/img/meet/search-empty-state
 
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { SideBar } from '../../atoms/SideBar/SideBar';
-import { useSortedParticipantsContext } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useChatMessage } from '../../hooks/bridges/useChatMessage';
 import { useMeetingRoomUpdates } from '../../hooks/useMeetingRoomUpdates';
+import { getParticipantDisplayColorsByIdentity } from '../../utils/getParticipantDisplayColorsByIdentity';
 import { ChatItem } from '../ChatItem/ChatItem';
 import { ChatMessage } from '../ChatMessage/ChatMessage';
 import { SideBarSearch } from '../SideBarSearch/SideBarSearch';
@@ -35,8 +35,6 @@ export const Chat = () => {
     const sideBarState = useMeetSelector(selectSideBarState);
 
     const meetingRoomUpdates = useMeetingRoomUpdates();
-
-    const { sortedParticipantsDisplayColorsMap } = useSortedParticipantsContext();
 
     const sendMessage = useChatMessage();
 
@@ -171,12 +169,7 @@ export const Chat = () => {
                         key={`${item.identity}-${item.timestamp}`}
                         item={item}
                         roomName={roomName}
-                        colors={
-                            sortedParticipantsDisplayColorsMap.get(item.identity) ?? {
-                                backgroundColor: 'meet-background-1',
-                                profileTextColor: 'profile-color-1',
-                            }
-                        }
+                        colors={getParticipantDisplayColorsByIdentity(item.identity)}
                     />
                 ))}
             </div>
