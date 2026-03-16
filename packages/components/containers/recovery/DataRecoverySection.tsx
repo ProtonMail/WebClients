@@ -1,11 +1,9 @@
 import { c } from 'ttag';
 
-import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { userThunk } from '@proton/account/user';
-import { useGetUser, useUser } from '@proton/account/user/hooks';
-import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { userSettingsThunk } from '@proton/account/userSettings';
-import { useGetUserSettings, useUserSettings } from '@proton/account/userSettings/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import Info from '@proton/components/components/link/Info';
@@ -14,10 +12,10 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsDivider from '@proton/components/containers/account/SettingsDivider';
 import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
 import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useHasOutdatedRecoveryFile from '@proton/components/hooks/useHasOutdatedRecoveryFile';
 import useIsMnemonicAvailable from '@proton/components/hooks/useIsMnemonicAvailable';
 import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
+import { useSyncDeviceRecovery } from '@proton/components/hooks/useSyncDeviceRecovery';
 import { useLoading } from '@proton/hooks';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -25,9 +23,7 @@ import { CacheType } from '@proton/redux-utilities';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
-import { syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
 import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
 import SettingsLayout from '../account/SettingsLayout';
@@ -47,12 +43,8 @@ export const DataRecoverySection = () => {
     const [userSettings] = useUserSettings();
     const dispatch = useDispatch();
     const api = useApi();
-    const authentication = useAuthentication();
 
-    const getUser = useGetUser();
-    const getUserKeys = useGetUserKeys();
-    const getAddresses = useGetAddresses();
-    const getUserSettings = useGetUserSettings();
+    const syncDeviceRecoveryHelper = useSyncDeviceRecovery();
     const [isRecoveryFileAvailable] = useIsRecoveryFileAvailable();
     const [isMnemonicAvailable, loadingIsMnemonicAvailable] = useIsMnemonicAvailable();
 
@@ -92,23 +84,6 @@ export const DataRecoverySection = () => {
         },
         [loadingIsMnemonicAvailable]
     );
-
-    const syncDeviceRecoveryHelper = async (partialUserSettings: Partial<UserSettings>) => {
-        const [user, userKeys, addresses, userSettings] = await Promise.all([
-            getUser(),
-            getUserKeys(),
-            getAddresses(),
-            getUserSettings(),
-        ]);
-        return syncDeviceRecovery({
-            api,
-            user,
-            addresses,
-            userSettings: { ...userSettings, ...partialUserSettings },
-            userKeys,
-            authentication,
-        });
-    };
 
     const handleChangeDeviceRecoveryToggle = async (checked: boolean) => {
         const DeviceRecovery = Number(checked) as 0 | 1;

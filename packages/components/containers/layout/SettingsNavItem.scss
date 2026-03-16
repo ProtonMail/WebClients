@@ -1,0 +1,32 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.settings-nav-item {
+	border-block-end: 1px solid var(--border-weak);
+
+	.interactive-pseudo-inset {
+		color: var(--text-norm);
+
+		&::after {
+			border-radius: calc((var(--border-radius-lg) - var(--interactive-inset) / 2) - 1px);
+		}
+	}
+
+	&:last-child {
+		border-block-end: none;
+	}
+
+	&:hover,
+	&:focus-visible {
+		background-color: var(--background-weak);
+		color: var(--text-norm);
+	}
+
+	&-grid {
+		grid-template-columns: rem(20) 1fr rem(20);
+	}
+}

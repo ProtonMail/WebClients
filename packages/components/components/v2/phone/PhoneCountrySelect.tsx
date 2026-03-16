@@ -19,6 +19,7 @@ interface Props {
     options: CountryOptionData[];
     value?: CountryOptionData;
     embedded?: boolean;
+    disabled?: boolean;
     onChange: (newValue: CountryOptionData) => void;
     onClosed?: (isFromSelection: boolean) => void;
 }
@@ -29,7 +30,7 @@ const cache = new CellMeasurerCache({
     keyMapper: () => 0,
 });
 
-const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) => {
+const CountrySelect = ({ value, options, onChange, embedded, disabled, onClosed }: Props) => {
     const anchorRef = useRef<HTMLButtonElement>(null);
     const [isOpen, setIsOpen] = useState(false);
     const [search, setSearch] = useState('');
@@ -69,6 +70,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                 aria-atomic="true"
                 aria-label={value?.countryName}
                 aria-describedby={uid}
+                disabled={disabled}
             >
                 <span className="flex mr-2">
                     {!value ? (

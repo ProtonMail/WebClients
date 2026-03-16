@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -32,12 +32,15 @@ interface RenderFormProps {
     className?: string;
     inputWidth?: string;
     onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+    onReset: () => void;
     input: ReactNode;
     submitButtonProps: {
         type: 'submit';
         disabled: boolean;
         loading: boolean;
     };
+    onVerify: () => void;
+    onRemove: () => void;
 }
 
 const defaultRenderForm = ({ className, inputWidth, onSubmit, input, submitButtonProps }: RenderFormProps) => {
@@ -67,10 +70,11 @@ interface Props {
     onSuccess?: (updatedUserSettings: UserSettings) => void;
     autoFocus?: boolean;
     renderForm?: (props: RenderFormProps) => ReactNode;
-    inputProps?: Partial<Pick<InputFieldProps<typeof Input>, 'label'>>;
+    inputProps?: Partial<Pick<InputFieldProps<typeof Input>, 'label' | 'readOnly' | 'placeholder'>>;
     disableVerifyCta?: boolean;
     persistPasswordScope?: boolean;
     canSubmit?: (input: string) => boolean;
+    autoStartVerificationFlowAfterSet?: boolean;
 }
 
 const RecoveryEmail = ({
@@ -86,6 +90,7 @@ const RecoveryEmail = ({
     disableVerifyCta,
     persistPasswordScope = false,
     canSubmit,
+    autoStartVerificationFlowAfterSet = false,
 }: Props) => {
     const api = useApi();
     const dispatch = useDispatch();
@@ -95,14 +100,13 @@ const RecoveryEmail = ({
     const [verifyRecoveryEmailModal, setVerifyRecoveryEmailModalOpen, renderVerifyRecoveryEmailModal] = useModalState();
     const [confirmModal, setConfirmModal, renderConfirmModal] = useModalState();
     const [updatingEmail, withUpdatingEmail] = useLoading();
+    const isSubmittingRef = useRef(false);
 
     const loading = renderVerifyRecoveryEmailModal || renderConfirmModal || updatingEmail;
-    const confirmStep = !input && (hasReset || hasNotify);
-
-    const handleUpdateEmail = async () => {
+    const handleUpdateEmail = async (nextEmail = input) => {
         const { UserSettings } = await api<{ UserSettings: UserSettings }>(
             updateEmail({
-                Email: input,
+                Email: nextEmail,
                 PersistPasswordScope: persistPasswordScope,
             })
         );
@@ -115,8 +119,36 @@ const RecoveryEmail = ({
             await dispatch(userSettingsThunk({ cache: CacheType.None }));
         }
 
+        setInput(nextEmail);
         createNotification({ text: c('Success').t`Email updated` });
+
+        if (
+            autoStartVerificationFlowAfterSet &&
+            nextEmail &&
+            nextEmail !== email.Value &&
+            UserSettings.Email.Status !== SETTINGS_STATUS.VERIFIED
+        ) {
+            setVerifyRecoveryEmailModalOpen(true);
+        }
+
         onSuccess?.(UserSettings);
+    };
+
+    const submitEmailUpdate = (nextEmail = input) => {
+        if (isSubmittingRef.current) {
+            return;
+        }
+        if (canSubmit && !canSubmit(nextEmail)) {
+            return;
+        }
+        if (!nextEmail && (hasReset || hasNotify)) {
+            setConfirmModal(true);
+            return;
+        }
+        isSubmittingRef.current = true;
+        void withUpdatingEmail(() => handleUpdateEmail(nextEmail)).finally(() => {
+            isSubmittingRef.current = false;
+        });
     };
 
     return (
@@ -126,27 +158,25 @@ const RecoveryEmail = ({
                     hasReset={hasReset}
                     hasNotify={hasNotify}
                     {...confirmModal}
-                    onConfirm={() => withUpdatingEmail(handleUpdateEmail)}
+                    onConfirm={() => withUpdatingEmail(() => handleUpdateEmail(''))}
                 />
             )}
-            {renderVerifyRecoveryEmailModal && <VerifyRecoveryEmailModal email={email} {...verifyRecoveryEmailModal} />}
+            {renderVerifyRecoveryEmailModal && (
+                <VerifyRecoveryEmailModal email={{ ...email, Value: input }} {...verifyRecoveryEmailModal} />
+            )}
 
             {renderForm({
                 className,
                 inputWidth,
+                onVerify: () => setVerifyRecoveryEmailModalOpen(true),
+                onRemove: () => submitEmailUpdate(''),
+                onReset: () => setInput(email.Value || ''),
                 onSubmit: (e) => {
                     e.preventDefault();
                     if (!onFormSubmit()) {
                         return;
                     }
-                    if (canSubmit && !canSubmit(input)) {
-                        return;
-                    }
-                    if (confirmStep) {
-                        setConfirmModal(true);
-                    } else {
-                        void withUpdatingEmail(handleUpdateEmail);
-                    }
+                    submitEmailUpdate(input);
                 },
                 input: (
                     <InputFieldTwo

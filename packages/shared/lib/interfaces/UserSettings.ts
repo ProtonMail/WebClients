@@ -204,6 +204,9 @@ export interface UserSettings {
         Mode: SETTINGS_PASSWORD_MODE;
         ExpirationTime: number; // If set, after this time force password change
     };
+    Mnemonic: {
+        UpdateTime: number | null;
+    };
     HighSecurity: {
         /**
          * 1 => user can enable High Security, 0 => can't enable

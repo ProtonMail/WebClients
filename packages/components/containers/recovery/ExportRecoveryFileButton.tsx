@@ -30,7 +30,12 @@ const ExportRecoveryFileButton = ({ children = c('Action').t`Download recovery f
     };
 
     return (
-        <Button onClick={() => withLoading(handleClick())} loading={loading} {...rest}>
+        <Button
+            onClick={() => withLoading(handleClick())}
+            loading={loading}
+            {...rest}
+            className="inline-flex gap-2 items-center"
+        >
             {children}
         </Button>
     );

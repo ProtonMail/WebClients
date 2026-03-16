@@ -193,6 +193,7 @@ const MainContainer = () => {
     const isCategoryViewEnabled = useFlag('CategoryView');
     const isRecoveryContactsEnabled = useFlag('SocialRecovery');
     const isRolesAndPermissionsEnabled = useFlag('AdminRoleMVP');
+    const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
 
     const [referralInfo] = useReferralInfo();
 
@@ -296,6 +297,7 @@ const MainContainer = () => {
         isOLESEnabled,
         isCategoryViewEnabled,
         isRolesAndPermissionsEnabled,
+        isRecoverySettingsRedesignEnabled,
     });
 
     useEffect(() => {
