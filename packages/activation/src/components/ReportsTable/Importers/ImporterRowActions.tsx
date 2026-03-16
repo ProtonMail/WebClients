@@ -4,16 +4,22 @@ import { createToken, getTokensByFeature, resumeImport, updateImport } from '@pr
 import { ApiImporterError, ApiImporterState } from '@proton/activation/src/api/api.interface';
 import { getImportProviderFromApiProvider } from '@proton/activation/src/helpers/getImportProviderFromApiProvider';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import { getEasySwitchFeaturesFromProducts, getProviderNumber } from '@proton/activation/src/hooks/useOAuthPopup.helpers';
+import {
+    getEasySwitchFeaturesFromProducts,
+    getProviderNumber,
+} from '@proton/activation/src/hooks/useOAuthPopup.helpers';
 import type { ImportToken, OAuthProps } from '@proton/activation/src/interface';
 import { AuthenticationMethod, EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { reconnectImapImport } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
 import { cancelImporter } from '@proton/activation/src/logic/importers/importers.actions';
 import type { ActiveImportID } from '@proton/activation/src/logic/importers/importers.interface';
-import { selectActiveImporterById, selectImporterById } from '@proton/activation/src/logic/importers/importers.selectors';
+import {
+    selectActiveImporterById,
+    selectImporterById,
+} from '@proton/activation/src/logic/importers/importers.selectors';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms/Button/Button';
-import { Alert, DropdownActions, Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
+import { Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
@@ -53,7 +59,7 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
         );
         await call();
         createNotification({ text: c('Success').t`Resuming import` });
-    }
+    };
 
     const handleReconnectOAuth = async (ImporterID: string) => {
         const scopes = getScopeFromProvider(importProvider, products);
@@ -66,7 +72,7 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
             getTokensByFeature({ Account: account, Features: features, Provider: providerNumber })
         );
 
-        if(Tokens.length > 0) {
+        if (Tokens.length > 0) {
             await handleResumeImport(Tokens[0], ImporterID);
         } else {
             await triggerOAuthPopup({
@@ -111,38 +117,35 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
 
     const isAuthError = errorCode === ApiImporterError.ERROR_CODE_IMAP_CONNECTION;
 
-    const list = [
-        ...(importState === ApiImporterState.PAUSED
-            ? [
-                  {
-                      text: isAuthError ? c('Action').t`Reconnect` : c('Action').t`Resume`,
-                      onClick: () => {
-                          if (isAuthError) {
-                              return withLoadingSecondaryAction(
-                                  !sasl || sasl === AuthenticationMethod.OAUTH
-                                      ? handleReconnectOAuth(ID)
-                                      : handleReconnect(ID)
-                              );
-                          }
-
-                          return withLoadingSecondaryAction(handleResume(ID));
-                      },
-                      loading: loadingConfig || loadingSecondaryAction,
-                      'data-testid': 'ReportsTable:reconnectImporter',
-                  },
-              ]
-            : []),
-        {
-            text: c('Action').t`Cancel`,
-            onClick: () => showCancelModal(true),
-            loading: loadingPrimaryAction,
-            disabled: importState === ApiImporterState.CANCELED,
-        },
-    ];
-
     return (
-        <>
-            <DropdownActions size="small" list={list} />
+        <div className="inline-flex gap-1">
+            {importState === ApiImporterState.PAUSED && (
+                <Button
+                    onClick={() => {
+                        if (isAuthError) {
+                            return withLoadingSecondaryAction(
+                                !sasl || sasl === AuthenticationMethod.OAUTH
+                                    ? handleReconnectOAuth(ID)
+                                    : handleReconnect(ID)
+                            );
+                        }
+
+                        return withLoadingSecondaryAction(handleResume(ID));
+                    }}
+                    loading={loadingConfig || loadingSecondaryAction}
+                    data-testid="ReportsTable:reconnectImporter"
+                >
+                    {isAuthError ? c('Action').t`Reconnect` : c('Action').t`Resume`}
+                </Button>
+            )}
+
+            <Button
+                onClick={() => showCancelModal(true)}
+                loading={loadingPrimaryAction}
+                disabled={importState === ApiImporterState.CANCELED}
+            >
+                {c('Action').t`Cancel`}
+            </Button>
 
             {renderCancelModal && (
                 <Prompt
@@ -164,13 +167,11 @@ const ImporterRowActions = ({ activeImporterID }: Props) => {
                         >{c('Action').t`Continue`}</Button>,
                     ]}
                 >
-                    <Alert className="mb-4" type="error">
-                        {c('Warning')
-                            .t`If you cancel this import, you won't be able to resume it. ${BRAND_NAME} saved all progress in your account. Cancel anyway?`}
-                    </Alert>
+                    {c('Warning')
+                        .t`If you cancel this import, you won't be able to resume it. ${BRAND_NAME} saved all progress in your account. Cancel anyway?`}
                 </Prompt>
             )}
-        </>
+        </div>
     );
 };
 

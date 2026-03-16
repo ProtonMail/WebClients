@@ -1,6 +1,5 @@
 import { memo } from 'react';
 
-import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import type { ReportSummaryID } from '@proton/activation/src/logic/reports/reports.interface';
@@ -8,7 +7,6 @@ import { selectReportById, selectReportSummaryById } from '@proton/activation/sr
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { TableCell, TableRow } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { dateLocale } from '@proton/shared/lib/i18n';
 
 import ReportsTableCell from '../ReportsTableCell';
 import ReportRowActions from './ReportRowActions';
@@ -23,21 +21,20 @@ const ReportRow = ({ reportSummaryId }: Props) => {
     const report = useEasySwitchSelector((state) => selectReportById(state, reportSummary.reportID));
 
     const { product, rollbackState, state, size } = reportSummary;
-    const { account, endDate } = report;
+    const { account, endDate, provider } = report;
 
     return (
         <TableRow data-testid="reportsTable:reportRow">
-            <ReportsTableCell product={product} title={account} />
-            <TableCell>
+            <ReportsTableCell provider={provider} product={product} title={account} importerDate={endDate} />
+            <TableCell className="easy-switch-table-size" label={c('Title header').t`Size`}>
+                {humanSize({ bytes: size })}
+            </TableCell>
+            <TableCell className="easy-switch-table-status">
                 <div>
                     <ReportRowStatus status={state} rollbackState={rollbackState} />
                 </div>
             </TableCell>
-            <TableCell>
-                <time>{format(endDate * 1000, 'PPp', { locale: dateLocale })}</time>
-            </TableCell>
-            <TableCell label={c('Title header').t`Size`}>{humanSize({ bytes: size })}</TableCell>
-            <TableCell>
+            <TableCell className="easy-switch-table-actions">
                 <ReportRowActions key="button" reportSummaryID={reportSummaryId} rollbackState={rollbackState} />
             </TableCell>
         </TableRow>

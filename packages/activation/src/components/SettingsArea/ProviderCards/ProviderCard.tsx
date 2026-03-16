@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import type { Location } from 'history';
 import { c } from 'ttag';
 
+import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/ConnectGmailButton';
 import {
     EASY_SWITCH_SEARCH_SOURCES,
     EASY_SWITCH_SOURCES,
@@ -12,7 +13,8 @@ import {
 import { startImapDraft } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
 import { startOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
-import { APPS, type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import { Button } from '@proton/atoms/Button/Button';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 
 import ProviderButton from './ProviderButton';
 
@@ -31,39 +33,31 @@ const getEasySwitchSource = (app: APP_NAMES, location: Location) => {
     return CALENDAR_WEB_SETTINGS;
 };
 
-const ProviderCard = ({ app }: { app: APP_NAMES }) => {
+interface Props {
+    app: APP_NAMES;
+}
+
+const ProviderCard = ({ app }: Props) => {
     const location = useLocation();
     const dispatch = useEasySwitchDispatch();
 
     const source = getEasySwitchSource(app, location);
 
-    const handleGoogleClick = () => {
-        dispatch(
-            startOauthDraft({
-                source,
-                provider: ImportProvider.GOOGLE,
-                products: [ImportType.CONTACTS, ImportType.CALENDAR, ImportType.MAIL],
-            })
-        );
-    };
-
     return (
-        <div className="rounded border max-w-custom px-6 py-5 flex flex-column flex-1 flex-nowrap w-full">
-            <div className="h3 m-0 pt-0 mb-4 text-bold">{c('Info').t`One time import`}</div>
-            <div className="mb-4 color-weak">{c('Info')
-                .t`Bring your messages, contacts and calendars to ${BRAND_NAME}.`}</div>
-            <div className="mt-2 flex flex-column flex-nowrap">
-                <ProviderButton
-                    provider={ImportProvider.GOOGLE}
-                    onClick={handleGoogleClick}
-                    className="mb-2 inline-flex items-center justify-center"
+        <div className="rounded-xl border pt-10 pb-8 flex flex-column flex-1 flex-nowrap w-full items-center bg-lowered border-weak">
+            <div className="mb-4">{c('Info').t`Choose your service to connect with`}</div>
+            <div className="flex flex-nowrap gap-2">
+                <ConnectGmailButton
+                    className="mb-2 inline-flex items-center justify-center gap-2 rounded-lg"
+                    showIcon
+                    buttonText={c('Action').t`Google`}
                     data-testid="ProviderButton:googleCard"
                 />
 
                 <ProviderButton
                     provider={ImportProvider.YAHOO}
                     onClick={() => dispatch(startImapDraft({ provider: ImportProvider.YAHOO }))}
-                    className="mb-2 inline-flex items-center justify-center"
+                    className="mb-2 inline-flex items-center justify-center rounded-lg"
                     data-testid="ProviderButton:yahooCard"
                 />
 
@@ -78,16 +72,19 @@ const ProviderCard = ({ app }: { app: APP_NAMES }) => {
                             })
                         )
                     }
-                    className="mb-2 inline-flex items-center justify-center"
+                    className="mb-2 inline-flex items-center justify-center rounded-lg"
                     data-testid="ProviderButton:outlookCard"
                 />
-
-                <ProviderButton
-                    provider={ImportProvider.DEFAULT}
+            </div>
+            <div>
+                <Button
+                    shape="underline"
+                    color="norm"
                     onClick={() => dispatch(startImapDraft({ provider: ImportProvider.DEFAULT }))}
-                    className="mb-4 inline-flex items-center justify-center"
                     data-testid="ProviderButton:imapCard"
-                />
+                >
+                    {c('Import provider').t`Advanced import`}
+                </Button>
             </div>
         </div>
     );
