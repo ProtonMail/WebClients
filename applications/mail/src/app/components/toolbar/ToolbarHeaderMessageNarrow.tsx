@@ -12,11 +12,11 @@ import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarRespo
 import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
 import LabelsAndFolders from './LabelsAndFolders';
 import MoreActions from './MoreActions';
-import MoreDropdown from './MoreDropdown';
 import MoveButtons from './MoveButtons';
 import NavigationControls from './NavigationControls';
 import ReadUnreadButtons from './ReadUnreadButtons';
 import type { Props as ToolbarProps } from './Toolbar';
+import { MoreDropdown } from './more-dropdown/MoreDropdown';
 
 interface Props extends Omit<
     ToolbarProps,

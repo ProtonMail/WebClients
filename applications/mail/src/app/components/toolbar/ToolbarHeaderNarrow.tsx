@@ -16,10 +16,10 @@ import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdo
 import LabelName from './LabelName';
 import LabelsAndFolders from './LabelsAndFolders';
 import MoreActions from './MoreActions';
-import MoreDropdown from './MoreDropdown';
 import MoveButtons from './MoveButtons';
 import ReadUnreadButtons from './ReadUnreadButtons';
 import type { Props as ToolbarProps } from './Toolbar';
+import { MoreDropdown } from './more-dropdown/MoreDropdown';
 
 interface Props extends ToolbarProps {
     classname: string;
