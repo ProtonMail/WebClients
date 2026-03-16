@@ -129,14 +129,17 @@ export function usePreviewState({
         return () => {
             ac.abort();
         };
-    }, [loadContents, node]);
+    }, [loadContents]);
 
     const directRole = node?.ok ? node.value.directRole : node?.error.directRole;
     const canShare = directRole === MemberRole.Admin;
 
-    const navigation = getNavigation(nodeUid, previewableNodeUids, (nodeUid) => {
-        setNodeUid(nodeUid);
-        onNodeChange?.(nodeUid);
+    const navigation = getNavigation(nodeUid, previewableNodeUids, (newNodeUid) => {
+        setNodeUid(newNodeUid);
+        setNode(undefined);
+        setNodeData(undefined);
+        setErrorMessage(undefined);
+        onNodeChange?.(newNodeUid);
     });
 
     const actions = usePreviewActions({ drive, nodeUid, node, nodeData: nodeData?.contents, role });
