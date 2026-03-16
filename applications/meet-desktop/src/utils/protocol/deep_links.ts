@@ -1,7 +1,7 @@
 import { Event, app } from "electron";
 import { isMac } from "../helpers";
 import { protocolLogger } from "../log";
-import { showView, bringWindowToFront } from "../view/viewManagement";
+import { showView, bringWindowToFront, getMainWindow } from "../view/viewManagement";
 import { isMeet, isNavigationAllowed } from "../urls/urlTests";
 
 export const DEEPLINK_PROTOCOL = "proton-meet";
@@ -46,6 +46,22 @@ const convertProtocolUrlToWebUrl = (protocolUrl: string): string | null => {
     }
 };
 
+let pendingDeepLinkUrl: string | null = null;
+
+export const flushPendingDeepLink = () => {
+    if (!pendingDeepLinkUrl) {
+        return;
+    }
+    if (!getMainWindow()) {
+        // Window not ready yet — keep the URL queued so the post-window flush picks it up
+        return;
+    }
+    const url = pendingDeepLinkUrl;
+    pendingDeepLinkUrl = null;
+    showView("meet", url);
+    bringWindowToFront();
+};
+
 export const handleDeepLink = () => {
     if (isMac) {
         app.on("open-url", (_ev: Event, url: string) => {
@@ -54,8 +70,8 @@ export const handleDeepLink = () => {
             if (url.startsWith(`${DEEPLINK_PROTOCOL}://`)) {
                 const webUrl = convertProtocolUrlToWebUrl(url);
                 if (webUrl) {
-                    showView("meet", webUrl);
-                    bringWindowToFront();
+                    pendingDeepLinkUrl = webUrl;
+                    flushPendingDeepLink();
                 }
             }
         });
