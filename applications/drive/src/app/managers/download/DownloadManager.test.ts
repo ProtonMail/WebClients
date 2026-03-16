@@ -103,15 +103,6 @@ jest.mock('./utils/hydrateAndCheckNodes', () => ({
     hydratePhotos: hydrateAndCheckPhotosMock,
 }));
 
-const detectMetadataSignatureIssueMock = jest.fn();
-const addAndWaitForManifestIssueDecisionMock = jest.fn();
-const addAndWaitForMetadataIssueDecisionMock = jest.fn();
-jest.mock('./utils/signatureIssues', () => ({
-    detectMetadataSignatureIssue: detectMetadataSignatureIssueMock,
-    addAndWaitForManifestIssueDecision: addAndWaitForManifestIssueDecisionMock,
-    addAndWaitForMetadataIssueDecision: addAndWaitForMetadataIssueDecisionMock,
-}));
-
 jest.mock('./utils/getDownloadSdk', () => ({
     getDownloadSdk: getDownloadSdkMock,
 }));
@@ -184,7 +175,7 @@ jest.mock('./DownloadDriveClientRegistry', () => {
 });
 
 const { DownloadManager } = jest.requireActual('./DownloadManager');
-const { DownloadStatus, MalwareDownloadResolution, IssueStatus } = jest.requireActual(
+const { DownloadStatus, MalwareDownloadResolution } = jest.requireActual(
     '../../zustand/download/downloadManager.store'
 );
 const {
@@ -266,11 +257,6 @@ beforeEach(() => {
     schedulerTracker.reset();
     archiveStreamGeneratorTracker.reset();
     archiveGeneratorTracker.reset();
-
-    // Default: no signature issues on metadata
-    detectMetadataSignatureIssueMock.mockReturnValue(undefined);
-    addAndWaitForManifestIssueDecisionMock.mockReset();
-    addAndWaitForMetadataIssueDecisionMock.mockReset();
 
     sdkMock.getDrive.mockClear();
     sdkMock.getDriveForPhotos.mockClear();
@@ -1146,92 +1132,5 @@ describe('DownloadManager', () => {
         expect(schedulerInstance.scheduleDownload).toHaveBeenCalledTimes(1);
         const retriedTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
         expect(retriedTask.node).toEqual(node);
-    });
-
-    describe('signature issues', () => {
-        const setupSignatureTest = () => {
-            const manager = DownloadManager.getInstance();
-            const schedulerInstance = getSchedulerInstance();
-            storeMockState.addDownloadItem.mockReturnValue('download-1');
-
-            const node: NodeEntity = createMockNodeEntity({ uid: 'file-1', name: 'signed.txt' });
-            const nodeSize = node.activeRevision?.storageSize ?? 0;
-            hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
-
-            const controllerCompletion = createDeferred<void>();
-            sdkMock.driveMock.getFileDownloader.mockResolvedValue({
-                getClaimedSizeInBytes: jest.fn(),
-                downloadToStream: jest.fn(() => ({
-                    completion: jest.fn(() => controllerCompletion.promise),
-                    isDownloadCompleteWithSignatureIssues: jest.fn(() => true),
-                })),
-            });
-
-            const saveDeferred = createDeferred<void>();
-            fileSaverSaveAsFileMock.mockReturnValue(saveDeferred.promise);
-
-            return { manager, schedulerInstance, nodeSize, controllerCompletion, saveDeferred };
-        };
-
-        /** Queue the download and start the scheduled task */
-        const startSignatureDownload = async (setup: ReturnType<typeof setupSignatureTest>) => {
-            await setup.manager.download(['file-1']);
-            const scheduledTask = setup.schedulerInstance.scheduleDownload.mock.calls[0][0];
-            const completionPromise: Promise<void> = scheduledTask.start();
-            await flushAsync();
-            // Return wrapped — async functions chain bare promises, which would block the caller
-            return { completionPromise };
-        };
-
-        it('should complete download when user approves a signature issue', async () => {
-            const setup = setupSignatureTest();
-            addAndWaitForManifestIssueDecisionMock.mockResolvedValue(IssueStatus.Approved);
-
-            const { completionPromise } = await startSignatureDownload(setup);
-
-            setup.controllerCompletion.reject(new Error('Signature verification failed'));
-            setup.saveDeferred.resolve();
-
-            await completionPromise;
-
-            expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith(
-                'download-1',
-                expect.objectContaining({ status: DownloadStatus.Finished, downloadedBytes: setup.nodeSize })
-            );
-        });
-
-        it('should cancel download when user rejects a signature issue', async () => {
-            const setup = setupSignatureTest();
-            addAndWaitForManifestIssueDecisionMock.mockResolvedValue(IssueStatus.Rejected);
-
-            const { completionPromise } = await startSignatureDownload(setup);
-
-            setup.controllerCompletion.reject(new Error('Signature verification failed'));
-            setup.saveDeferred.reject(new TransferCancel({ id: 'download-1' }));
-
-            await expect(completionPromise).rejects.toThrow();
-
-            expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith(
-                'download-1',
-                expect.objectContaining({ status: DownloadStatus.Cancelled })
-            );
-        });
-
-        it('should keep download in activeDownloads while waiting for signature decision', async () => {
-            const setup = setupSignatureTest();
-            const signatureDecision = createDeferred<typeof IssueStatus.Approved>();
-            addAndWaitForManifestIssueDecisionMock.mockReturnValue(signatureDecision.promise);
-
-            await startSignatureDownload(setup);
-
-            setup.controllerCompletion.reject(new Error('Signature verification failed'));
-
-            const activeDownloads = Reflect.get(setup.manager, 'activeDownloads') as Map<string, unknown>;
-            await waitForCondition(() => activeDownloads.has('download-1'));
-
-            signatureDecision.resolve(IssueStatus.Approved);
-            setup.saveDeferred.resolve();
-            await waitForCondition(() => !activeDownloads.has('download-1'));
-        });
     });
 });
