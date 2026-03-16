@@ -2,6 +2,10 @@ import { c } from 'ttag';
 
 import type { CreateNotificationOptions } from '@proton/components';
 import { EMAIL_PLACEHOLDER, USERNAME_PLACEHOLDER } from '@proton/shared/lib/constants';
+import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
+import imapLogo from '@proton/styles/assets/img/import/providers/imap.svg';
+import outlookLogo from '@proton/styles/assets/img/import/providers/outlook.svg';
+import yahooLogo from '@proton/styles/assets/img/import/providers/yahoo_short.svg';
 
 import { ImportProvider, MailImportGmailCategories, OAUTH_PROVIDER, TIME_PERIOD } from './interface';
 
@@ -78,3 +82,30 @@ export const enum BYOE_CLAIM_PROTON_ADDRESS_SOURCE {
     ADD_ADDRESS_FREE = 'ADD_ADDRESS_FREE',
     SHARED_PLAN_PENDING_INVITATION = 'SHARED_PLAN_PENDING_INVITATION',
 }
+
+export const providerMap = {
+    [ImportProvider.GOOGLE]: {
+        getName: () => 'Google',
+        logo: googleLogo,
+        width: 16,
+        height: 16,
+    },
+    [ImportProvider.OUTLOOK]: {
+        getName: () => 'Outlook',
+        logo: outlookLogo,
+        width: 16,
+        height: 16,
+    },
+    [ImportProvider.YAHOO]: {
+        getName: () => 'Yahoo',
+        logo: yahooLogo,
+        width: 16,
+        height: 16,
+    },
+    [ImportProvider.DEFAULT]: {
+        getName: () => c('Title').t`Custom`,
+        logo: imapLogo,
+        width: 16,
+        height: 16,
+    },
+};
