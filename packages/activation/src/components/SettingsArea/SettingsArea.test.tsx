@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/dom';
+import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { APPS } from '@proton/shared/lib/constants';
@@ -18,8 +19,14 @@ const subsections = [
         id: 'easy-switch',
     },
     {
-        text: 'History',
+        text: c('Title').t`Import history`,
         id: 'import-list',
+        invisibleTitle: true,
+    },
+    {
+        text: c('Title').t`Forwarding history`,
+        id: 'forwarding-list',
+        invisibleTitle: true,
     },
 ];
 
@@ -32,11 +39,9 @@ describe('SettingsArea', () => {
 
         easySwitchRender(<SettingsArea config={{ ...settingsAreaConfig, subsections }} app={APPS.PROTONMAIL} />);
 
-        const googleInScreen = screen.getAllByText('Import from Google');
         const gmailInScreen = screen.getByTestId('ProviderButton:googleCardForward');
 
         screen.getByTestId('SettingsArea:forwardSection');
-        expect(googleInScreen).toHaveLength(1);
         expect(gmailInScreen).toBeVisible();
     });
 });

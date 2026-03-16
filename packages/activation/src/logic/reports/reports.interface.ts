@@ -8,6 +8,7 @@ export type Report = {
     startDate: ApiReport['CreateTime'];
     endDate: ApiReport['EndTime'];
     size: ApiReport['TotalSize'];
+    provider: ApiReport['Provider'];
 };
 
 export type ReportSummaryID = `${Report['ID']}-${ImportType}`;

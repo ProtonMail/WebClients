@@ -1,16 +1,26 @@
+import { ApiImportProvider } from '@proton/activation/src/api/api.interface';
+import { getImportProviderFromApiProvider } from '@proton/activation/src/helpers/getImportProviderFromApiProvider';
 import { ImportType } from '@proton/activation/src/interface';
+import capitalize from '@proton/utils/capitalize';
 
 import { getImportIconNameByProduct, getImportProductName } from './ReportsTableCell.helpers';
 
 describe('ReportsTableCell.helpers', () => {
     it('getImportProductName - test all types', () => {
-        const mail = getImportProductName(ImportType.MAIL);
-        const calendar = getImportProductName(ImportType.CALENDAR);
-        const contact = getImportProductName(ImportType.CONTACTS);
+        const providers = [ApiImportProvider.IMAP, ApiImportProvider.GOOGLE, ApiImportProvider.OUTLOOK];
 
-        expect(mail).toStrictEqual('Mail');
-        expect(calendar).toStrictEqual('Calendar');
-        expect(contact).toStrictEqual('Contacts');
+        providers.forEach((provider) => {
+            const mail = getImportProductName(provider, ImportType.MAIL);
+            const calendar = getImportProductName(provider, ImportType.CALENDAR);
+            const contact = getImportProductName(provider, ImportType.CONTACTS);
+
+            const providerName = getImportProviderFromApiProvider(provider);
+            const capitalizedProvider = capitalize(providerName);
+
+            expect(mail).toStrictEqual(`${capitalizedProvider} Mail`);
+            expect(calendar).toStrictEqual(`${capitalizedProvider} Calendar`);
+            expect(contact).toStrictEqual(`${capitalizedProvider} Contacts`);
+        });
     });
 
     it('getImportIconNameByProduct - test all types', () => {

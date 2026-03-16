@@ -32,12 +32,12 @@ describe('ReportRowStatus', () => {
 
     it('Should display QUEUED status', () => {
         easySwitchRender(<ImporterRowStatus state={ApiImporterState.QUEUED} errorCode={undefined} />);
-        screen.getByText('Started');
+        screen.getByText('In progress...');
     });
 
     it('Should display CANCELED status', () => {
         easySwitchRender(<ImporterRowStatus state={ApiImporterState.CANCELED} errorCode={undefined} />);
-        screen.getByText('Canceling');
+        screen.getByText('Canceling...');
     });
 
     it('Should display DELAYED status', () => {
