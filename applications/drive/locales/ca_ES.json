@@ -1241,6 +1241,9 @@
       ],
       "Edit billing address": [
         "Edita l'adreça de la factura"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "Action: Docs": {
@@ -3957,6 +3960,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "El règim d'inversió del subjecte passiu no és compatible amb aquest pla"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduïu el vostre nom d'usuari sense el domini (@example.cat)"
       ]
     },
     "error": {
@@ -4838,6 +4844,9 @@
       ],
       "Import from Yahoo": [
         "Importa des del Yahoo"
+      ],
+      "Advanced import": [
+        "Importació avançada"
       ]
     },
     "Import warning": {
@@ -6970,6 +6979,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "El vostre compte està configurat actualment per aplicar el règim de facturació inversa. Això no és compatible amb el pla seleccionat. Per continuar, o bé elimineu el número d'IVA de l'adreça de facturació o bé seleccioneu un pla diferent."
+      ],
+      "Choose your service to connect with": [
+        "Trieu el servei amb què us voleu connectar"
       ]
     },
     "info": {
@@ -10255,6 +10267,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "La vostra subscripció ja té un descompte aplicat. Canviar a aquesta nova promoció implica que el descompte actual ja no s'aplicarà."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "S'aplica la inversió del subjecte passiu (IVA)."
       ]
     },
     "Payments.Error": {
@@ -13104,6 +13119,18 @@
       ],
       "Reverse charge not supported": [
         "No s'admet la inversió del subjecte passiu"
+      ],
+      "Choose a provider": [
+        "Escolliu un proveïdor"
+      ],
+      "Custom": [
+        "Personalitzat"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importa les dades a ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Seleccioneu les dades que voleu importar"
       ]
     },
     "Today icon tooltip in mini calendar": {

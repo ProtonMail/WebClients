@@ -1238,6 +1238,12 @@
       ],
       "Edit billing address": [
         "Modifier l'adresse de facturation"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Hide": [
+        "Masquer"
       ]
     },
     "Action: Docs": {
@@ -3942,6 +3948,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nom indéchiffrable"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Saisissez votre nom d'utilisateur sans le domaine (@example.com)"
       ]
     },
     "error": {
@@ -4815,6 +4824,9 @@
       ],
       "Import from Yahoo": [
         "Importer depuis Yahoo"
+      ],
+      "Advanced import": [
+        "Importation avancée"
       ]
     },
     "Import warning": {
@@ -6935,6 +6947,9 @@
       ],
       "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Pour permettre une recherche complète, nous devons indexer vos fichiers localement. Vous pouvez toujours utiliser ${ DRIVE_APP_NAME } normalement - nous vous informerons lorsque l'indexation sera terminée."
+      ],
+      "Choose your service to connect with": [
+        "Choisissez votre service pour vous connecter"
       ]
     },
     "info": {
@@ -10216,6 +10231,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Le mécanisme d’autoliquidation de la TVA s’applique."
       ]
     },
     "Payments.Error": {
@@ -10665,6 +10683,12 @@
       ],
       "Use your own email domain": [
         "Utilisez votre propre domaine de messagerie"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Prolongez votre abonnement et enregistrez ${ discountPercent } % !"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Passez à notre abonnement annuel et enregistrez ${ toYearlyDiscountAmount } !"
       ]
     },
     "q1campaign: Title": {
@@ -13130,6 +13154,18 @@
       ],
       "You’ve got 5 GB of storage": [
         "Vous avez 5 Go d'espace de stockage."
+      ],
+      "Choose a provider": [
+        "Choisissez un fournisseur"
+      ],
+      "Custom": [
+        "Personnalisé"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importer vos données vers ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Sélectionner les données à importer"
       ]
     },
     "Today icon tooltip in mini calendar": {
