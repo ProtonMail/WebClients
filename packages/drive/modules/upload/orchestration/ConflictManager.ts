@@ -95,7 +95,7 @@ export class ConflictManager {
             resolvedStrategy: undefined,
         });
 
-        if (this.resolutionInProgress) {
+        while (this.resolutionInProgress) {
             await this.resolutionInProgress;
 
             const updatedItem = queueStore.getItem(uploadId);
@@ -121,8 +121,11 @@ export class ConflictManager {
 
         if (this.conflictResolver) {
             this.resolutionInProgress = (async () => {
+                if (!this.conflictResolver) {
+                    return;
+                }
                 try {
-                    const { strategy, applyToAll } = await this.conflictResolver!(item.name, item.type, conflictType);
+                    const { strategy, applyToAll } = await this.conflictResolver(item.name, item.type, conflictType);
 
                     await this.chooseConflictStrategy(uploadId, strategy);
 
@@ -226,10 +229,12 @@ export class ConflictManager {
      * Future conflicts of the same type in this batch will automatically use this strategy
      */
     setBatchStrategy(batchId: string, nodeType: NodeType, strategy: UploadConflictStrategy): void {
-        if (!this.batchConflictStrategies.has(batchId)) {
-            this.batchConflictStrategies.set(batchId, new Map());
+        let batchStrategies = this.batchConflictStrategies.get(batchId);
+        if (!batchStrategies) {
+            batchStrategies = new Map();
+            this.batchConflictStrategies.set(batchId, batchStrategies);
         }
-        this.batchConflictStrategies.get(batchId)!.set(nodeType, strategy);
+        batchStrategies.set(nodeType, strategy);
     }
 
     /**
