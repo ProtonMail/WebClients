@@ -35,6 +35,7 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { ConnectionFailedModal } from '../../components/ConnectionFailedModal/ConnectionFailedModal';
 import { ConnectionLostModal } from '../../components/ConnectionLostModal/ConnectionLostModal';
 import { MeetingLockedModal } from '../../components/MeetingLockedModal/MeetingLockedModal';
 import { MeetingOpenedInDesktopApp } from '../../components/MeetingOpenedInDesktopApp/MeetingOpenedInDesktopApp';
@@ -90,6 +91,11 @@ const isConnectionError = (error: any): boolean => {
     return msg.includes('could not establish signal connection');
 };
 
+const isConnectionTimeoutError = (error: any): boolean => {
+    const msg = error?.message || '';
+    return msg.includes('Connection timeout after');
+};
+
 export const ProtonMeetContainer = ({
     guestMode = false,
     room,
@@ -117,6 +123,8 @@ export const ProtonMeetContainer = ({
     const [isInstantJoin, setIsInstantJoin] = useState(instantJoinParam === 'true');
 
     const [isUsingTurnRelay, setIsUsingTurnRelay] = useState(false);
+    const [joiningLoaderHeader, setJoiningLoaderHeader] = useState<string | undefined>(undefined);
+    const [joiningLoaderSubtitle, setJoiningLoaderSubtitle] = useState<string | undefined>(undefined);
 
     const { initializeDevices } = useMediaManagementContext();
 
@@ -124,6 +132,122 @@ export const ProtonMeetContainer = ({
     const { createNotification } = useNotifications();
 
     const { reportMeetError, clearSentryReportErrorCounts } = useMeetErrorReporting();
+
+    /**
+     * Connect to LiveKit room with timeout handling.
+     * Shows a warning notification when connection time exceeds timeout/2.
+     * Throws an error if connection is not established within the specified timeout.
+     */
+    const connectWithTimeout = async (
+        room: Room,
+        url: string,
+        token: string,
+        timeout: number,
+        options: Parameters<Room['connect']>[2],
+        warningHeader?: string,
+        warningSubtitle?: string
+    ): Promise<void> => {
+        const connectPromise = room.connect(url, token, options);
+
+        let warningShown = false;
+        const warningTime = Math.floor(timeout / 2);
+
+        const warningTimer = setTimeout(() => {
+            if (!warningShown) {
+                warningShown = true;
+                if (warningHeader) {
+                    setJoiningLoaderHeader(warningHeader);
+                }
+                if (warningSubtitle) {
+                    setJoiningLoaderSubtitle(warningSubtitle);
+                }
+                reportMeetError(`Livekit room connection time abnormal (${warningTime}ms)`, {
+                    timeout: `${warningTime}ms`,
+                    stage: 'warning',
+                });
+            }
+        }, warningTime);
+
+        let timeoutTimer: NodeJS.Timeout | undefined;
+        const timeoutPromise = new Promise<never>((_, reject) => {
+            timeoutTimer = setTimeout(async () => {
+                reportMeetError(`Livekit room connection timeout (${timeout}ms)`, {
+                    timeout: `${timeout}ms`,
+                    stage: 'failed',
+                });
+                reject(new Error(`Connection timeout after ${timeout}ms`));
+            }, timeout);
+        });
+
+        try {
+            await Promise.race([connectPromise, timeoutPromise]);
+        } catch (error) {
+            throw error;
+        } finally {
+            clearTimeout(warningTimer);
+            if (timeoutTimer) {
+                clearTimeout(timeoutTimer);
+            }
+        }
+    };
+
+    const connectViaTurnRelay = async (room: Room, url: string, token: string, timeout: number): Promise<void> => {
+        try {
+            await connectWithTimeout(room, url, token, timeout, {
+                autoSubscribe: false,
+                rtcConfig: { iceTransportPolicy: 'relay' },
+                peerConnectionTimeout: timeout / 2,
+            });
+        } catch (error) {
+            if (isConnectionTimeoutError(error)) {
+                await room.disconnect();
+            }
+            throw error;
+        }
+    };
+
+    const connectWithStunFallbackToTurnRelay = async (
+        room: Room,
+        url: string,
+        token: string,
+        timeout: number
+    ): Promise<void> => {
+        try {
+            await connectWithTimeout(
+                room,
+                url,
+                token,
+                timeout,
+                { autoSubscribe: false, peerConnectionTimeout: timeout / 2 },
+                c('Warning').t`Connection is taking longer than expected`,
+                c('Warning').t`Trying another route…`
+            );
+            setIsUsingTurnRelay(await checkIfUsingTurnRelay(room));
+        } catch (roomConnectionError: any) {
+            if (!isConnectionError(roomConnectionError) && !isConnectionTimeoutError(roomConnectionError)) {
+                throw roomConnectionError;
+            }
+
+            const isTimeout = isConnectionTimeoutError(roomConnectionError);
+            reportMeetError(
+                `STUN UDP connection ${isTimeout ? 'timeout' : 'failed'}, trying with TURN relay`,
+                roomConnectionError
+            );
+            setJoiningLoaderHeader(c('Warning').t`Connection is taking longer than expected`);
+            setJoiningLoaderSubtitle(
+                isTimeout
+                    ? c('Warning').t`STUN UDP connection timeout, trying with TURN relay`
+                    : c('Warning').t`STUN UDP connection failed, trying with TURN relay…`
+            );
+
+            if (isTimeout) {
+                await room.disconnect();
+            }
+
+            await connectViaTurnRelay(room, url, token, timeout);
+            setIsUsingTurnRelay(true);
+        }
+    };
 
     const history = useHistory();
     const createInstantMeeting = useCreateInstantMeeting();
@@ -139,6 +263,7 @@ export const ProtonMeetContainer = ({
     const [isMeetingLockedModalOpen, setIsMeetingLockedModalOpen] = useState(false);
     const [isWebRtcUnsupportedModalOpen, setIsWebRtcUnsupportedModalOpen] = useState(false);
     const [openedInDesktopApp, setOpenedInDesktopApp] = useState(false);
+    const [isConnectionFailedModalOpen, setIsConnectionFailedModalOpen] = useState(false);
 
     const { getMeetingDetails, initHandshake, token, urlPassword, getAccessDetails, getMeetingInfo } =
         useMeetingSetup();
@@ -558,32 +683,10 @@ export const ProtonMeetContainer = ({
             } else {
                 await keyProvider.setKeyWithEpoch(groupKey, epoch);
             }
-            // Turning auto subscribe off so we have better control over the quality of the tracks
+            const timeoutMs = 20_000;
             try {
                 await room.setE2EEEnabled(true);
-
-                try {
-                    // Wrap room.connect with its own try/catch to allow fallback to TURN TLS to work
-                    await room.connect(websocketUrl, accessToken, {
-                        autoSubscribe: false,
-                    });
-                } catch (roomConnectionError: any) {
-                    if (isConnectionError(roomConnectionError)) {
-                        reportMeetError('STUN UDP connection failed, trying with TURN relay', roomConnectionError);
-                        // Second attempt - configure room to force TURN relay
-                        await room.connect(websocketUrl, accessToken, {
-                            autoSubscribe: false,
-                            rtcConfig: {
-                                iceTransportPolicy: 'relay',
-                            },
-                        });
-                        setIsUsingTurnRelay(true);
-                    } else {
-                        // Not a connection error, just throw
-                        throw roomConnectionError;
-                    }
-                }
-                setIsUsingTurnRelay(await checkIfUsingTurnRelay(room));
+                await connectWithStunFallbackToTurnRelay(room, websocketUrl, accessToken, timeoutMs);
             } catch (livekitError: any) {
                 // If LiveKit connection fails after MLS join, clean up MLS group to prevent inconsistent state
                 try {
@@ -733,6 +836,9 @@ export const ProtonMeetContainer = ({
             if (code === MEETING_LOCKED_ERROR_CODE) {
                 await handleMeetingIsLockedError();
                 return;
+            }
+            if (isConnectionTimeoutError(error)) {
+                setIsConnectionFailedModalOpen(true);
             }
         }
     };
@@ -960,6 +1066,10 @@ export const ProtonMeetContainer = ({
 
         setJoinedRoom(false);
 
+        // Clear loader states on leave
+        setJoiningLoaderHeader(undefined);
+        setJoiningLoaderSubtitle(undefined);
+
         keyProvider.cleanCurrent();
         clearSentryReportErrorCounts();
         prepareUpsell();
@@ -1182,6 +1292,8 @@ export const ProtonMeetContainer = ({
                         isInstantJoin={isInstantJoin}
                         isPersonalRoom={isPersonalRoom}
                         isLoadingMeetings={isLoadingMeetings}
+                        joiningLoaderHeader={joiningLoaderHeader}
+                        joiningLoaderSubtitle={joiningLoaderSubtitle}
                     />
                 )}
                 {isWebRtcUnsupportedModalOpen && (
@@ -1199,6 +1311,18 @@ export const ProtonMeetContainer = ({
                             handleUngracefulLeave();
                             setConnectionLost(false);
                         }}
+                    />
+                )}
+                {isConnectionFailedModalOpen && (
+                    <ConnectionFailedModal
+                        onTryAgain={() => {
+                            setIsConnectionFailedModalOpen(false);
+                        }}
+                        onLeave={() => {
+                            setIsConnectionFailedModalOpen(false);
+                            history.push('/dashboard');
+                        }}
+                        showLeaveButton={!guestMode}
                     />
                 )}
                 {joinedRoom && !!canvas && isPipActive && isFirefox() ? (
