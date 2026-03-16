@@ -46,6 +46,7 @@ describe('getContentPreviewMethod', () => {
         name: 'test-name',
         keyAuthor: { ok: true as const, value: 'test@proton.me' },
         nameAuthor: { ok: true as const, value: 'test@proton.me' },
+        ownedBy: {},
     };
 
     it('should return Streaming for video', () => {

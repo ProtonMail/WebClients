@@ -69,6 +69,7 @@ describe('mapNodeToLegacyItem', () => {
         activeRevision: mockRevision,
         folder: undefined,
         treeEventScopeId: 'treeEventScopeId',
+        ownedBy: {},
     };
 
     const mockShare: ShareWithKey = {
@@ -504,6 +505,7 @@ describe('mapNodeToLegacyItem', () => {
                 claimedModificationTime: new Date(shareCreateTime),
             },
             treeEventScopeId: '',
+            ownedBy: {},
         };
 
         const maybeNode: MaybeNode = {
