@@ -70,6 +70,16 @@ export const obfuscate = (str: string): XorObfuscation => {
     return { s: OBFS_SCHEME_VERSION, v: data, m: mask };
 };
 
+/** Creates a deep clone of an XorObfuscation with fresh underlying ArrayBuffers.
+ * Use before passing to operations that may zeroize the buffers in-place. */
+export const cloneObfuscation = ({ s, v, m }: XorObfuscation): XorObfuscation => {
+    const vc = new Uint8Array(v.length);
+    const mc = new Uint8Array(m.length);
+    vc.set(v);
+    mc.set(m);
+    return { s, v: vc, m: mc };
+};
+
 /** Deobfuscates an XorObfuscation back to the original string. */
 export const deobfuscate = (obfuscation: XorObfuscation, options?: { zeroize: boolean }): string => {
     const { v, m } = adapt(obfuscation);
