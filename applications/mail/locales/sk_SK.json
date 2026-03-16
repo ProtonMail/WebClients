@@ -1492,10 +1492,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1688,6 +1685,9 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Edit billing address": [
+        "Upraviť fakturačnú adresu"
       ]
     },
     "action": {
@@ -5209,6 +5209,9 @@
       ],
       "Wrong billing address": [
         "Nesprávna fakturačná adresa"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Systém prenesenia daňovej povinnosti nie je pre tento plán podporovaný."
       ]
     },
     "error": {
@@ -9211,6 +9214,9 @@
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Kreditné odmeny získate 1 mesiac po tom, ako si váš priateľ predplatí ročný plán, a 2 mesiace po tom, ako si predplatí mesačný plán."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Váš účet je momentálne nastavený tak, aby sa uplatňoval režim prenesenia daňovej povinnosti. Tento režim nie je podporovaný pre vybraný plán. Ak chcete pokračovať, odstráňte DIČ z fakturačnej adresy alebo vyberte iný plán."
       ]
     },
     "info": {
@@ -16381,6 +16387,9 @@
       ],
       "Spring Sale": [
         "Jarná akcia"
+      ],
+      "Reverse charge not supported": [
+        "Obrátené zdanenie nie je podporované"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1484,8 +1484,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1676,6 +1675,9 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
       ]
     },
     "action": {
@@ -16363,6 +16365,9 @@
       ],
       "Get the deal": [
         "Pak de aanbieding"
+      ],
+      "SPRING SALE 2026": [
+        "LENTE SALE 2026"
       ]
     },
     "q1campaign: Info": {
@@ -16437,6 +16442,12 @@
       ],
       "Use your own email domain": [
         "Gebruik uw eigen e-maildomein"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Verleng uw abonnement en sla ${ discountPercent }% op!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Stap over op ons jaarabonnement en sla ${ toYearlyDiscountAmount } op!"
       ]
     },
     "q1campaign: Label": {
@@ -16449,7 +16460,7 @@
         "gedurende 12 maanden"
       ],
       "SPRING SALE": [
-        "LENTEACTIE"
+        "LENTE SALE"
       ]
     }
   }

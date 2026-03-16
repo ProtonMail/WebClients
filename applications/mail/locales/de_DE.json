@@ -1676,6 +1676,9 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Edit billing address": [
+        "Rechnungsadresse bearbeiten"
       ]
     },
     "action": {
@@ -5131,6 +5134,12 @@
       ],
       "Wrong billing address": [
         "Ungültige Rechnungsadresse"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Deinen Benutzernamen ohne die Domain (@example.com) eingeben"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Rückerstattung der Umsatzsteuer ist für dieses Abonnement nicht unterstützt"
       ]
     },
     "error": {
@@ -5782,7 +5791,7 @@
     },
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
-        "${ BRAND_NAME }. Privacy by default."
+        "${ BRAND_NAME }. Privatsphäre als Standard."
       ]
     },
     "forwardmessage": {
@@ -7566,7 +7575,7 @@
         "Niedrige Priorität"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } als Standard-E-Mail-Anwendung festlegen."
+        "${ MAIL_APP_NAME } zu deiner Standard-E-Mail-Anwendung machen."
       ],
       "Manage your folders": [
         "Ordner verwalten"
@@ -8919,6 +8928,9 @@
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du erhältst eine Gutschrift von einem Monat, nachdem die von dir geworbene Person ein Jahresabo abgeschlossen hat, und von zwei Monaten, nachdem sie ein Monatsabo abgeschlossen hat."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Dein Konto ist derzeit so konfiguriert, dass die Rückerstattung der Umsatzsteuer nicht angewendet wird. Dies wird für das ausgewählte Abonnement nicht unterstützt. Um fortzufahren, entferne entweder die Umsatzsteuer-Identifikationsnummer aus der Rechnungsadresse oder wähle anderes Abonnement."
       ]
     },
     "info": {
@@ -12394,6 +12406,9 @@
       ],
       "I'm purchasing as a business": [
         "Ich kaufe als Unternehmen"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Die Rückerstattung der Umsatzsteuer gilt."
       ]
     },
     "Payments.Error": {
@@ -15240,7 +15255,7 @@
         "Ungültiger Verifizierungscode"
       ],
       "Keep this banner hidden?": [
-        "Dieses Banner ausblenden?"
+        "Dieses Banner ausgeblendet lassen?"
       ],
       "Label as": [
         "Folgender Kategorie zuordnen"
@@ -15795,6 +15810,9 @@
       ],
       "Spring Sale": [
         "Frühlingsangebot"
+      ],
+      "Reverse charge not supported": [
+        "Rückerstattungen der Umsatzsteuer nicht unterstützt"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16380,6 +16398,9 @@
       ],
       "Get the deal": [
         "Deal sichern"
+      ],
+      "SPRING SALE 2026": [
+        "SPRING SALE 2026"
       ]
     },
     "q1campaign: Info": {
@@ -16454,6 +16475,12 @@
       ],
       "Use your own email domain": [
         "Nutze deine eigene E-Mail-Domain"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Verlängere dein Abonnement und speichere ${ discountPercent } %!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Wechsle zu unserem jährlichen Abonnement und speichere ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Label": {
@@ -16466,7 +16493,7 @@
         "für 12 Monate"
       ],
       "SPRING SALE": [
-        "FRÜHLINGS-SALE"
+        "SPRING SALE"
       ]
     }
   }

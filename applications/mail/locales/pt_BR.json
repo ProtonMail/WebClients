@@ -1484,8 +1484,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1676,6 +1675,9 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Edit billing address": [
+        "Editar endereço de cobrança"
       ]
     },
     "action": {
@@ -7560,7 +7562,7 @@
         "Baixa prioridade"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Defina ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão."
+        "Tornar ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão."
       ],
       "Manage your folders": [
         "Gerenciar suas pastas"
@@ -9993,6 +9995,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Import recent mails": [
+        "Importar e-mails recentes"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16374,6 +16379,9 @@
       ],
       "Get the deal": [
         "Aproveitar a oferta"
+      ],
+      "SPRING SALE 2026": [
+        "PROMO DE PRIMAVERA 2026"
       ]
     },
     "q1campaign: Info": {
@@ -16448,6 +16456,12 @@
       ],
       "Use your own email domain": [
         "Use seu próprio domínio de e-mail"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Estenda sua assinatura e salve ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Mude para o nosso plano anual e salve ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Label": {
@@ -16460,7 +16474,7 @@
         "por 12 meses"
       ],
       "SPRING SALE": [
-        "PROMOÇÃO DE PRIMAVERA"
+        "PROMO DE PRIMAVERA"
       ]
     }
   }

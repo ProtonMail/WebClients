@@ -1484,8 +1484,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1676,6 +1675,9 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Edit billing address": [
+        "Redigera faktureringsadress"
       ]
     },
     "action": {
@@ -5116,6 +5118,9 @@
       ],
       "Wrong billing address": [
         "Fel faktureringsadress"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Ange ditt användarnamn utan domänen (@example.com)"
       ]
     },
     "error": {
@@ -9962,6 +9967,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Import recent mails": [
+        "Importera senaste e-postmeddelanden"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16331,6 +16339,9 @@
       ],
       "Get the deal": [
         "Ta del av erbjudandet"
+      ],
+      "SPRING SALE 2026": [
+        "VÅRREA 2026"
       ]
     },
     "q1campaign: Info": {
@@ -16405,6 +16416,12 @@
       ],
       "Use your own email domain": [
         "Använd din egen e-postdomän"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Förläng din prenumeration och spara ${ discountPercent } %!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Byt till vårt årspaket och spara ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Label": {
