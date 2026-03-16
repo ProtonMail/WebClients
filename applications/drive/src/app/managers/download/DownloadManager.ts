@@ -319,12 +319,6 @@ export class DownloadManager {
                     downloadLogDebug('Completed download', { downloadId, currentDownloadedBytes, storageSize });
                 },
                 onError: async (error) => {
-                    if (controller.isDownloadCompleteWithSignatureIssues()) {
-                        // Signature/integrity error — don't abort. Hold savePromise open so
-                        // validateDownloadSignatures can prompt the user and call onApproved or onRejected.
-                        await savePromise.catch(() => {});
-                        return;
-                    }
                     await abortSaving(error);
                     handleDownloadError(downloadId, [node], error);
                 },
@@ -334,32 +328,8 @@ export class DownloadManager {
                 downloadId,
                 node,
                 controller,
-                onApproved: async () => {
-                    closeWriter();
-                    if (controller.isDownloadCompleteWithSignatureIssues()) {
-                        // On signature errors, completion() rejects, so attachActiveDownload's
-                        // onCompleted callback never runs. We finalize the download here instead:
-                        // await the file save, then mark as Finished.
-                        try {
-                            await savePromise;
-                        } catch (error) {
-                            await abortSaving(error);
-                            handleDownloadError(downloadId, [node], error);
-                            return;
-                        }
-                        updateDownloadItem(downloadId, {
-                            status: DownloadStatus.Finished,
-                            downloadedBytes: storageSize,
-                        });
-                        downloadLogDebug('Completed download with signature issues', {
-                            downloadId,
-                            currentDownloadedBytes,
-                            storageSize,
-                        });
-                    }
-                },
-                onRejected: async () => {
-                    await abortSaving(new TransferCancel({ id: downloadId }));
+                onApproved: closeWriter,
+                onRejected: () => {
                     throw new TransferCancel({ id: downloadId });
                 },
                 onError: abortSaving,
