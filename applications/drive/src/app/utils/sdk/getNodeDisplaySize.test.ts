@@ -39,6 +39,7 @@ describe('getNodeDisplaySize', () => {
         activeRevision: mockRevision,
         folder: undefined,
         treeEventScopeId: 'tree-event-scope-id',
+        ownedBy: {},
     };
 
     it('should return claimedSize when available', () => {

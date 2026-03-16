@@ -42,6 +42,7 @@ function createOkNode(
             creationTime: new Date(),
             modificationTime: new Date(),
             treeEventScopeId: 'tree-event-scope-id',
+            ownedBy: {},
         },
     };
 }
@@ -87,6 +88,7 @@ function createDegradedNode(
             creationTime: new Date(),
             modificationTime: new Date(),
             treeEventScopeId: 'tree-event-scope-id',
+            ownedBy: {},
         },
     };
 }

@@ -33,6 +33,7 @@ describe('legacyTime utilities', () => {
         activeRevision: undefined,
         folder: undefined,
         treeEventScopeId: 'tree-event-scope-id',
+        ownedBy: {},
         ...overrides,
     });
 
