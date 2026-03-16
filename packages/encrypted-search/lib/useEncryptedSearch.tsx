@@ -207,6 +207,11 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
      */
     const dbCorruptError = async (errorMessage: string) => {
         const userHasESDB = await hasESDB(userID);
+        traceInitiativeError(
+            SentryCommonInitiatives.ENCRYPTED_SEARCH,
+            new Error(`${errorMessage} / userHasESDB: ${userHasESDB}`)
+        );
+
         if (!userHasESDB) {
             return;
         }
@@ -216,8 +221,6 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             text: c('Error').t`Please activate your search again`,
             type: 'error',
         });
-
-        traceInitiativeError(SentryCommonInitiatives.ENCRYPTED_SEARCH, new Error(errorMessage));
     };
 
     /**
