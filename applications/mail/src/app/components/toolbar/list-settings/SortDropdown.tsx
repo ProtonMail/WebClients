@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '@proton/components';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import { IcListArrowDown } from '@proton/icons/icons/IcListArrowDown';
 import { IcListArrowUp } from '@proton/icons/icons/IcListArrowUp';
 import { IcSizeArrowDown } from '@proton/icons/icons/IcSizeArrowDown';
@@ -10,7 +12,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Sort } from '@proton/shared/lib/mail/search';
 import clsx from '@proton/utils/clsx';
 
-import { useListSettingsTelemetry } from '../list/useListSettingsTelemetry';
+import { useListSettingsTelemetry } from './useListSettingsTelemetry';
 
 const TIME = 'Time';
 const SIZE = 'Size';
@@ -24,7 +26,14 @@ interface Props {
     hasCaret?: boolean;
 }
 
-const SortDropdown = ({ labelID, conversationMode, hasCaret, sort: { sort, desc }, onSort, className }: Props) => {
+export const SortDropdown = ({
+    labelID,
+    conversationMode,
+    hasCaret,
+    sort: { sort, desc },
+    onSort,
+    className,
+}: Props) => {
     const isScheduledLabel = labelID === MAILBOX_LABEL_IDS.SCHEDULED;
 
     const { sendNewestFirstReport, sendOldestFirstReport, sendLargestFirstReport, sendSmallestFirstReport } =
@@ -127,5 +136,3 @@ const SortDropdown = ({ labelID, conversationMode, hasCaret, sort: { sort, desc 
         </SimpleDropdown>
     );
 };
-
-export default SortDropdown;
