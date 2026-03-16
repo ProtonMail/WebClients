@@ -130,7 +130,7 @@ export const useLockSetup = (): LockSetup => {
                         .catch(() => resolve({ ok: false }));
                 }
 
-                case LockMode.PASSWORD:
+                case LockMode.PASSWORD: {
                     return confirmPassword({
                         message: (() => {
                             switch (mode) {
@@ -172,9 +172,13 @@ export const useLockSetup = (): LockSetup => {
                             resolve({ ok: true, ...dto, password });
                         },
                     });
+                }
 
                 case LockMode.DESKTOP:
-                    return confirmDesktop({ onSuccess: () => resolve({ ok: true, mode: LockMode.DESKTOP, key: '' }) });
+                    return confirmDesktop()
+                        .then((dto) => resolve({ ok: true, ...dto }))
+                        .catch(() => resolve({ ok: false }));
+
                 case LockMode.NONE:
                     return resolve({ ok: true, mode: currentLockMode });
             }
@@ -246,6 +250,8 @@ export const useLockSetup = (): LockSetup => {
             }
 
             case LockMode.DESKTOP:
+                /** FIXME: for offline support using `LockMode.DESKTOP` we should
+                 * go through the same password confirm flow as `LockMode.BIOMETRICS` */
                 return createLock.dispatch({ mode, secret: '', ttl, current });
 
             case LockMode.NONE:
@@ -284,9 +290,9 @@ export const useLockSetup = (): LockSetup => {
                 });
 
             case LockMode.DESKTOP:
-                return confirmDesktop({
-                    onSuccess: async () => createLock.dispatch({ mode: currentLockMode, secret: '', ttl }),
-                });
+                await confirmDesktop()
+                    .then(() => createLock.dispatch({ mode: currentLockMode, secret: '', ttl }))
+                    .catch(noop);
         }
     };
 

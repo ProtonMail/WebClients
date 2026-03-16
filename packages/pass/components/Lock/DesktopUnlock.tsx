@@ -9,29 +9,21 @@ import { useAutoUnlock } from '@proton/pass/hooks/auth/useAutoUnlock';
 import { useDesktopUnlock } from '@proton/pass/hooks/auth/useDesktopUnlock';
 import { isMac } from '@proton/shared/lib/helpers/browser';
 
-type Props = {
-    onSuccess?: () => void;
-    onFailure?: () => void;
-};
-
-export const DesktopUnlock: FC<Props> = ({ onSuccess, onFailure }) => {
-    const [waiting, setWaiting] = useState(false);
+export const DesktopUnlock: FC = () => {
+    const [loading, setLoading] = useState(false);
     const desktopUnlock = useDesktopUnlock();
 
-    const onUnlock = () =>
-        desktopUnlock({
-            onStart: () => setWaiting(true),
-            onSuccess: () => {
-                setWaiting(false);
-                onSuccess?.();
-            },
-            onFailure: () => {
-                setWaiting(false);
-                onFailure?.();
-            },
-        });
+    const onUnlock = async () => {
+        try {
+            setLoading(true);
+            await desktopUnlock();
+        } catch {
+        } finally {
+            setLoading(false);
+        }
+    };
 
-    useAutoUnlock({ loading: waiting, onUnlock });
+    useAutoUnlock({ loading, onUnlock });
 
     return (
         <Button
@@ -39,8 +31,8 @@ export const DesktopUnlock: FC<Props> = ({ onSuccess, onFailure }) => {
             shape="solid"
             color="norm"
             className="w-full"
-            loading={waiting}
-            disabled={waiting}
+            loading={loading}
+            disabled={loading}
             onClick={onUnlock}
         >
             <Icon name={isMac() ? 'fingerprint' : 'pass-lockmode-biometrics'} className="mr-1" />
