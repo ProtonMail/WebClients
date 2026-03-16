@@ -9,9 +9,9 @@ import { useUnlockGuard } from '@proton/pass/hooks/auth/useUnlockGuard';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { useRerender } from '@proton/pass/hooks/useRerender';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import type { PasswordCredentials } from '@proton/pass/lib/auth/password';
 import { validateCurrentPassword, validateExtraPassword } from '@proton/pass/lib/validation/auth';
 import { unlock } from '@proton/pass/store/actions';
+import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
 
 import { PasswordForm } from './PasswordForm';
@@ -27,13 +27,13 @@ export const PasswordUnlock: FC<Props> = ({ extraPassword, offlineEnabled }) => 
     const [key, rerender] = useRerender();
 
     const onSubmit = useCallback(
-        ({ password }: PasswordCredentials) => {
+        (password: XorObfuscation) => {
             /** As booting offline will not trigger the AuthService::login
              * sequence we need to re-apply the redirection logic implemented
              * in the service's `onLoginComplete` callback */
             const localID = authStore?.getLocalID();
             history.replace(getBasename(localID) ?? '/');
-            passwordUnlock.dispatch({ mode: LockMode.PASSWORD, secret: password, offline });
+            passwordUnlock.dispatch({ mode: LockMode.PASSWORD, password, offline });
         },
         [offline]
     );

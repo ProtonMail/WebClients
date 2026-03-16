@@ -1,11 +1,12 @@
 import type { FC } from 'react';
 
-import { Form, type FormikErrors, FormikProvider, useFormik } from 'formik';
-
 import { Button } from '@proton/atoms/Button/Button';
-import { Field } from '@proton/pass/components/Form/Field/Field';
-import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
-import type { PasswordCredentials } from '@proton/pass/lib/auth/password';
+import Form from '@proton/components/components/form/Form';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
+import { usePasswordForm } from '@proton/pass/hooks/auth/usePasswordForm';
+import type { Maybe, MaybePromise } from '@proton/pass/types';
+import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 
 type Props = {
     autosavable?: boolean;
@@ -13,8 +14,8 @@ type Props = {
     id: string;
     loading?: boolean;
     submitLabel?: string;
-    onSubmit: (values: PasswordCredentials) => void;
-    onValidate?: (values: PasswordCredentials) => FormikErrors<PasswordCredentials>;
+    onSubmit: (password: XorObfuscation) => MaybePromise<void>;
+    onValidate?: (password: string) => Maybe<string>;
 };
 
 export const PasswordForm: FC<Props> = ({
@@ -26,45 +27,38 @@ export const PasswordForm: FC<Props> = ({
     onSubmit,
     onValidate,
 }) => {
-    const form = useFormik({
-        initialValues: { password: '' },
-        validateOnMount: true,
-        validateOnBlur: true,
-        validate: onValidate,
-        onSubmit,
-    });
+    const { state, onValue, onFormSubmit } = usePasswordForm({ onSubmit, onValidate });
+    const isDisabled = Boolean(!state.touched || state.error || disabled || loading);
 
     return (
-        <FormikProvider value={form}>
-            <Form id={id} {...(autosavable ? {} : { 'data-protonpass-autosave-ignore': true })}>
-                <div className="flex flex-nowrap items-end w-full" style={{ '--border-radius-xl': '2em' }}>
-                    <Field
-                        autoComplete="current-password"
-                        autofillable
-                        autoFocus={!disabled}
-                        className="flex-1 rounded-xl overflow-hidden"
-                        component={PasswordField}
-                        dense
-                        disabled={disabled || loading}
-                        inputClassName="text-rg rounded-none"
-                        name="password"
-                        required
-                        rootClassName="flex-1"
-                        {...(disabled ? { error: undefined } : {})}
-                    />
-                </div>
-                <Button
-                    pill
-                    shape="solid"
-                    color="norm"
-                    className="w-full"
-                    type="submit"
-                    loading={loading}
-                    disabled={!form.isValid || disabled}
-                >
-                    {submitLabel}
-                </Button>
-            </Form>
-        </FormikProvider>
+        <Form id={id} onSubmit={onFormSubmit} {...(autosavable ? {} : { 'data-protonpass-autosave-ignore': true })}>
+            <div className="flex flex-nowrap items-end w-full" style={{ '--border-radius-xl': '2em' }}>
+                <InputFieldTwo
+                    as={PasswordInputTwo}
+                    autoComplete="current-password"
+                    autoFocus={!disabled}
+                    className="flex-1 rounded-xl overflow-hidden"
+                    dense
+                    disabled={disabled || loading}
+                    error={state.touched ? state.error : undefined}
+                    inputClassName="text-rg rounded-none"
+                    name="password"
+                    required
+                    rootClassName="flex-1"
+                    onValue={onValue}
+                />
+            </div>
+            <Button
+                pill
+                shape="solid"
+                color="norm"
+                className="w-full"
+                type="submit"
+                loading={loading}
+                disabled={isDisabled}
+            >
+                {submitLabel}
+            </Button>
+        </Form>
     );
 };

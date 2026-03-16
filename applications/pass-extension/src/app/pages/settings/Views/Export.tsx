@@ -7,6 +7,8 @@ import { c } from 'ttag';
 import { Exporter } from '@proton/pass/components/Export/Exporter';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { throwError } from '@proton/pass/utils/fp/throw';
+import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
+import { serialize } from '@proton/pass/utils/object/serialize';
 
 const checkLock = async () => {
     const result = await sendMessage(
@@ -19,11 +21,11 @@ const checkLock = async () => {
     return result.type === 'success' && result.ok && !result.locked;
 };
 
-const confirmPassword = async (password: string) => {
+const confirmPassword = async (password: XorObfuscation) => {
     const result = await sendMessage(
         pageMessage({
             type: WorkerMessageType.AUTH_CONFIRM_PASSWORD,
-            payload: { password },
+            payload: { password: serialize(password) },
         })
     );
 
