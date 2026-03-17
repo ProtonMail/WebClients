@@ -2,6 +2,7 @@ import { put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
+import { dedupeShares } from '@proton/pass/lib/shares/share.dedupe';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
 import { isActiveVault, isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
@@ -9,8 +10,9 @@ import { createVault } from '@proton/pass/lib/vaults/vault.requests';
 import { asIfNotOptimistic } from '@proton/pass/store//optimistic/selectors/select-is-optimistic';
 import { notification } from '@proton/pass/store/actions';
 import { type ItemsByShareId, type SharesState, reducerMap } from '@proton/pass/store/reducers';
+import type { ShareDedupeState } from '@proton/pass/store/reducers/shares-dedupe';
 import { selectAllShares, selectItems, selectOrganizationVaultCreationPolicy } from '@proton/pass/store/selectors';
-import type { State } from '@proton/pass/store/types';
+import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import { type Maybe, OrganizationVaultCreateMode, type Share, type ShareGetResponse, type ShareType } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { partition } from '@proton/pass/utils/array/partition';
@@ -24,14 +26,14 @@ import { objectFilter } from '@proton/pass/utils/object/filter';
 import { fullMerge, merge } from '@proton/pass/utils/object/merge';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
-export type SynchronizationResult = { shares: SharesState; items: ItemsByShareId };
+export type SynchronizationResult = { shares: SharesState; items: ItemsByShareId; dedupe: ShareDedupeState };
 
 export enum SyncType {
     FULL = 'full' /* fetches all items */,
     PARTIAL = 'partial' /* fetches only diff */,
 }
 
-export function* synchronize(type: SyncType) {
+export function* synchronize(type: SyncType, { getCore }: RootSagaOptions) {
     const state: State = asIfNotOptimistic((yield select()) as State, reducerMap);
     const cachedShares = selectAllShares(state);
     const remote = ((yield requestShares()) as ShareGetResponse[]).sort(sortOn('CreateTime', 'ASC'));
@@ -147,6 +149,7 @@ export function* synchronize(type: SyncType) {
     const result: SynchronizationResult = {
         shares: toMap(shares, 'shareId'),
         items: fullMerge(itemState, syncedItems.reduce(diadic(merge), {})),
+        dedupe: yield dedupeShares(shares, getCore()),
     };
 
     return result;

@@ -16,7 +16,7 @@ export const shareEventDelete = createAction('share::event::delete', (share: Sha
     pipe(withCache, withShareDedupe)({ payload: { shareId: share.shareId } })
 );
 
-export const sharesEventNew = createAction('shares::event::new', (payload: SynchronizationResult) =>
+export const sharesEventNew = createAction('shares::event::new', (payload: Omit<SynchronizationResult, 'dedupe'>) =>
     pipe(withCache, withShareDedupe)({ payload })
 );
 
