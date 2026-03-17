@@ -1,6 +1,6 @@
 import type { RadioGroupProps } from '@proton/components/components/input/RadioGroup';
 
-export type ChannelCategory = 'social_media' | 'search_content' | 'other';
+export type ChannelCategory = 'social_media' | 'search_content' | 'friends_family' | 'other';
 
 export interface RawFeedbackSurveyOptions {
     value: string;
