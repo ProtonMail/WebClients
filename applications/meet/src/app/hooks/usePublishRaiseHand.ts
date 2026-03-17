@@ -24,6 +24,7 @@ export const usePublishRaiseHand = () => {
                 message: uint8ArrayToString(encryptedMessage),
                 timestamp: Date.now(),
                 type: PublishableDataTypes.RaiseHand,
+                version: 1,
             };
 
             await room.localParticipant.publishData(new TextEncoder().encode(JSON.stringify(envelope)), {
