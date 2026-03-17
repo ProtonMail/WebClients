@@ -3986,6 +3986,18 @@
       ],
       "ZIP code is required": [
         "Il codice postale è obbligatorio"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Inserisci il tuo nome utente senza il dominio (@esempio.it)"
+      ],
+      "Invalid coupon": [
+        "Coupon non valido"
+      ],
+      "Please complete the billing details": [
+        "Completa i dettagli di fatturazione"
+      ],
+      "This field is invalid": [
+        "Questo campo non è valido"
       ]
     },
     "error": {
@@ -4931,6 +4943,9 @@
       ],
       "Import from Yahoo": [
         "Importa da Yahoo"
+      ],
+      "Advanced import": [
+        "Importazione avanzata"
       ]
     },
     "Import warning": {
@@ -6469,6 +6484,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Hai raggiunto il limite di slot di prenotazione (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Riceverai il premio in crediti 1 mese dopo che il tuo amico si sarà abbonato a un piano annuale e 2 mesi dopo che si sarà abbonato a un piano mensile."
       ]
     },
     "info": {
@@ -7199,6 +7217,9 @@
       ],
       "Zoom meeting": [
         "Riunione Zoom"
+      ],
+      "Last 6 months only": [
+        "Solo ultimi 6 mesi"
       ]
     },
     "label": {
@@ -9407,6 +9428,15 @@
       ],
       "I'm purchasing as a business": [
         "Sto acquistando come azienda"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inclusa l'imposta del ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Incluse imposte del ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Taxes ${ rate }%": [
+        "Imposte ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -12083,6 +12113,15 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "Choose a provider": [
+        "Scegli un fornitore"
+      ],
+      "Custom": [
+        "Personalizza"
+      ],
+      "Reverse charge not supported": [
+        "Inversione contabile non supportata"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12765,6 +12804,25 @@
     "springSale2026: Action": {
       "SPRING SALE 2026": [
         "SALDI PRIMAVERA 2026"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB di spazio di archiviazione"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blocca annunci, tracker e malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticazione 2FA integrata"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Il prezzo del rinnovo dipende dalla regione di fatturazione e dall'ABN."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Il prezzo del rinnovo dipende dalla regione di fatturazione e dall'EIN."
       ]
     }
   }

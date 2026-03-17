@@ -1292,6 +1292,9 @@
       ],
       "Website access problem": [
         "Проблема с доступом к сайту"
+      ],
+      "Sheets problem": [
+        "Проблема с таблицами"
       ]
     },
     "Button": {
@@ -3601,6 +3604,9 @@
       ],
       "ZIP code is required": [
         "Необходимо указать почтовый индекс"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Введите ваше имя пользователя без домена (@example.com)"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5876,6 +5882,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Похоже, что ваш часовой пояс изменился на ${ timezone }. Вы хотите обновить настройки часового пояса?"
+      ],
+      "Failed to update meeting schedule": [
+        "Не удалось обновить расписание встречи"
       ]
     },
     "info": {

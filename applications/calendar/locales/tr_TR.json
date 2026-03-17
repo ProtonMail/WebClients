@@ -1028,6 +1028,9 @@
       ],
       "Edit billing address": [
         "Fatura adresini düzenle"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -5018,6 +5021,9 @@
       ],
       "Import from Yahoo": [
         "Yahoo üzerinden içe aktar"
+      ],
+      "Advanced import": [
+        "Gelişmiş içe aktarma"
       ]
     },
     "Import warning": {
@@ -6562,6 +6568,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Hesabınızda şu anda tersine KDV uygulaması yapılandırılmış. Seçilmiş tarifede bu uygulama desteklenmiyor. İlerlemek için fatura adresinden KDV numarasını kaldırabilir ya da farklı bir tarife seçebilirsiniz."
+      ],
+      "Choose your service to connect with": [
+        "Bağlanmak istediğiniz hizmeti seçin"
       ]
     },
     "info": {
@@ -12257,6 +12266,18 @@
       ],
       "Reverse charge not supported": [
         "Tersine KDV uygulaması desteklenmiyor"
+      ],
+      "Choose a provider": [
+        "Sağlayıcı seçin"
+      ],
+      "Custom": [
+        "Özel"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Verilerinizi ${ BRAND_NAME } aktarın"
+      ],
+      "Select data to import": [
+        "İçe aktarılacak verileri seçin"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
