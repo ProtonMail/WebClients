@@ -1,1 +1,0 @@
-export { DevicesSidebar } from './DevicesSidebar';
