@@ -1235,6 +1235,9 @@
       ],
       "Edit billing address": [
         "编辑账单地址"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "Action: Docs": {
@@ -4794,6 +4797,9 @@
       ],
       "Import from Yahoo": [
         "从 Yahoo 导入"
+      ],
+      "Advanced import": [
+        "高级导入"
       ]
     },
     "Import warning": {
@@ -6874,6 +6880,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "您的账户当前已配置为应用反向收费机制，但所选套餐不支持此机制。若要继续，请从账单地址中移除增值税号，或选择其他套餐。"
+      ],
+      "Choose your service to connect with": [
+        "请选择要连接的服务"
       ]
     },
     "info": {
@@ -12818,6 +12827,18 @@
       ],
       "Reverse charge not supported": [
         "不支持反向收费"
+      ],
+      "Choose a provider": [
+        "请选择提供商"
+      ],
+      "Custom": [
+        "自定义"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "将您的数据导入到 ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "请选择要导入的数据"
       ]
     },
     "Today icon tooltip in mini calendar": {
