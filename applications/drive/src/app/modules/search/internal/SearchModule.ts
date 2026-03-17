@@ -5,6 +5,7 @@ import type { LatestEventIdProvider } from '@proton/drive/internal/latestEventId
 import { getBrowser, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { Version } from '@proton/shared/lib/helpers/version';
 
+import { AppVersionGuard } from './AppVersionGuard';
 import { Logger } from './Logger';
 import { MainThreadBridge } from './MainThreadBridge';
 import type { SearchModuleStateUpdateChannel } from './searchModuleStateUpdateChannel';
@@ -16,6 +17,7 @@ let instance: SearchModule | null = null;
 
 // All required dependencies to initialize and run the search module.
 export type SearchModuleContext = {
+    appVersion: string;
     userId: UserId;
     driveClient: ProtonDriveClient;
     driveClientForSearchEvents: ProtonDriveClient;
@@ -26,6 +28,7 @@ export class SearchModule {
     private state: SearchModuleState = {
         isInitialIndexing: false,
         isSearchable: false,
+        isRunningOutdatedVersion: false,
     };
 
     // Callbacks notified whenever the search module state changes (e.g. React hooks).
@@ -38,10 +41,12 @@ export class SearchModule {
 
     private constructor(context: SearchModuleContext) {
         if (!SearchModule.isEnvironmentCompatible()) {
+            // TODO: Type error explicitly, catch and react with UI feedback.
             throw new Error(`Incompatible environment for SearchModule`);
         }
 
         if (instance) {
+            // TODO: Type error explicitly, catch and react with UI feedback.
             throw new Error(`SearchModule singleton already exists`);
         }
 
@@ -50,18 +55,18 @@ export class SearchModule {
         const clientId = uuidv4() as ClientId;
 
         const bridge = new MainThreadBridge(context.driveClient);
-        this.workerClient = new WorkerClient(context.userId, clientId, bridge);
+        this.workerClient = new WorkerClient(context.userId, context.appVersion, clientId, bridge);
 
         this.updateChannel = createSearchModuleStateUpdateChannel(context.userId);
-        this.updateChannel.onmessage = ({ data: newState }) => {
-            let key: keyof SearchModuleState;
-            for (key in newState) {
-                // If any field changed in the state, update the whole state.
-                if (newState[key] !== this.state[key]) {
-                    this.setState(newState);
-                    break;
-                }
+        this.updateChannel.onmessage = ({ data: patch }) => {
+            const changedKeys = Object.keys(patch) as (keyof SearchModuleState)[];
+            const hasChanged = changedKeys.some((k) => patch[k] !== this.state[k]);
+
+            if (!hasChanged) {
+                return;
             }
+
+            this.setState({ ...this.state, ...patch });
         };
 
         Logger.listenForWorkerLogs();
@@ -74,6 +79,8 @@ export class SearchModule {
 
         Logger.info('Creating search module singleton');
         instance = new SearchModule(context);
+
+        new AppVersionGuard(context.userId, context.appVersion, () => instance?.deactivate());
 
         return instance;
     }
@@ -92,6 +99,12 @@ export class SearchModule {
     private setState(state: SearchModuleState): void {
         this.state = state;
         this.stateUpdateListeners.forEach((cb) => cb(state));
+    }
+
+    private deactivate(): void {
+        this.workerClient.dispose();
+        this.updateChannel.close();
+        this.setState({ isRunningOutdatedVersion: true, isInitialIndexing: false, isSearchable: false });
     }
 
     async *search(query: SearchQuery): AsyncGenerator<SearchResultItem> {
