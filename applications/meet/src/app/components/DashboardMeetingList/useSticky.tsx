@@ -1,14 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-export const useSticky = ({
-    stickyRef,
-    previousElementRef,
-    shouldUseSticky,
-}: {
-    stickyRef: React.RefObject<HTMLDivElement>;
-    previousElementRef: React.RefObject<HTMLDivElement>;
-    shouldUseSticky: boolean;
-}) => {
+export const useSticky = ({ shouldUseSticky }: { shouldUseSticky: boolean }) => {
+    const stickyRef = useRef<HTMLDivElement>(null);
+    const previousElementRef = useRef<HTMLDivElement>(null);
+
     const [isStuck, setIsStuck] = useState(false);
     const stickyObserver = useRef<IntersectionObserver | null>(null);
     const referenceObserver = useRef<IntersectionObserver | null>(null);
@@ -60,7 +55,7 @@ export const useSticky = ({
             { threshold: [0.1], rootMargin: '0px 0px 0px 0px' }
         );
         referenceObserver.current.observe(reference);
-    }, [previousElementRef, stickyRef]);
+    }, [cleanupSticky]);
 
     useEffect(() => {
         if (shouldUseSticky) {
@@ -68,7 +63,7 @@ export const useSticky = ({
         } else {
             cleanupSticky();
         }
-    }, [shouldUseSticky]);
+    }, [cleanupSticky, initSticky, shouldUseSticky]);
 
-    return { isStuck };
+    return { isStuck, stickyRef, previousElementRef };
 };

@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -89,17 +89,15 @@ export const DashboardMeetingList = ({
     const shouldShowSearchBar =
         // Show search bar when we are in my meetings tab and there are meetings
         (activeTab === DashboardMeetingListTab.TimeBased &&
-            meetingsObject[DashboardMeetingListTab.TimeBased].length !== 0) ||
-        // OR when we are in my rooms tab and there are more than 1 room (we don't count the Personal meeting)
+            meetingsObject[DashboardMeetingListTab.TimeBased].length > 2) ||
+        // OR when we are in my rooms tab and there are more than 1 room (counting the Personal meeting room)
         (activeTab === DashboardMeetingListTab.MeetingRooms &&
             meetingsObject[DashboardMeetingListTab.MeetingRooms].length > 1) ||
         // OR when is a search in progress because it could return no results but we still want to show the search bar
         isSearchActive;
 
-    // Sticky positioning
-    const stickyRef = useRef<HTMLDivElement>(null);
-    const previousElementRef = useRef<HTMLDivElement>(null);
-    const { isStuck } = useSticky({ stickyRef, previousElementRef, shouldUseSticky: shouldShowSearchBar });
+    // Sticky header positioning
+    const { isStuck, stickyRef, previousElementRef } = useSticky({ shouldUseSticky: shouldShowSearchBar });
 
     const meetingsByDay = groupMeetingsByDay(timeBasedMeetings, selectedSortOption?.groupBy ?? 'adjustedStartTime');
 
