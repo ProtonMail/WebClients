@@ -654,6 +654,9 @@
       "Go to settings": [
         "Ayarlara git"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Anladım"
       ],
@@ -711,14 +714,8 @@
       "import": [
         "içe aktar"
       ],
-      "Import calendars": [
-        "Takvimleri içe aktar"
-      ],
       "Import contacts": [
         "Kişileri içe aktar"
-      ],
-      "Import emails": [
-        "E-postaları içe aktar"
       ],
       "Import emails, calendars, contacts": [
         "E-postaları, takvimleri, kişileri içe aktarın"
@@ -4627,7 +4624,7 @@
         "Bir parola yazın"
       ],
       "Enter your username without the domain (@example.com)": [
-        "Kullanıcı adınızı etki alanı (@example.com) olmadan girin"
+        "Kullanıcı adınızı etki alanı (@example.com) olmadan yazın"
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
@@ -4690,7 +4687,7 @@
         "Kod geçersiz"
       ],
       "Invalid coupon": [
-        "Geçersiz kupon"
+        "Kupon geçersiz"
       ],
       "Invalid email address": [
         "E-posta adresi geçersiz"
@@ -4914,7 +4911,7 @@
         "İstek zaman aşımına uğradı"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "Bu tarife için sorumlu sıfatıyla KDV usulü desteklenmemektedir"
+        "Bu tarifede tersine KDV uygulaması desteklenmiyor"
       ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Tarifenizin sınırlarına düşene ya da tarifenizi yükseltene kadar ek dosyalar gönderemeyeceksiniz."
@@ -5005,7 +5002,7 @@
         "Eklenebilecek en az kredi tutarı: ${ price }"
       ],
       "The minimum donation amount is ${ price }": [
-        "Minimum bağış tutarı ${ price }"
+        "En az bağış tutarı ${ price }"
       ],
       "The sending key is not valid": [
         "Gönderim anahtarı geçersiz"
@@ -6377,20 +6374,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "${ provider } üzerinden içe aktar"
-      ],
-      "Import from Google": [
-        "Google üzerinden içe aktar"
-      ],
-      "Import from other": [
-        "Diğerleri üzerinden içe aktar"
-      ],
-      "Import from Outlook": [
-        "Outlook üzerinden içe aktar"
-      ],
-      "Import from Yahoo": [
-        "Yahoo üzerinden içe aktar"
+      "Advanced import": [
+        "Gelişmiş içe aktarma"
       ]
     },
     "Import warning": {
@@ -6930,9 +6915,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha tutarlı bir çevrim içi deneyim sunun."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "İletilerinizi, kişilerinizi ve takvimlerinizi ${ BRAND_NAME } üzerine alın."
-      ],
       "Browse privately and access blocked content.": [
         "Gizliğinizi koruyarak gezinin ve engellenen içeriklere erişin."
       ],
@@ -6971,6 +6953,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Size en uygun tarifeyi seçin."
+      ],
+      "Choose your service to connect with": [
+        "Bağlanmak istediğiniz hizmeti seçin"
       ],
       "Clear browser data": [
         "Tarayıcı verilerini temizle"
@@ -7745,9 +7730,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilen anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
       ],
-      "One time import": [
-        "Tek seferlik içe aktarma"
-      ],
       "Open shortcut cheat sheet": [
         "Kısayol rehberini aç"
       ],
@@ -8001,9 +7983,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, bir e-posta gönderilirken varsayılan olarak kullanılmasını istediğiniz e-posta biçimini seçin."
-      ],
-      "Select what you want to import.": [
-        "İçe aktarmak istediklerinizi seçin."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Hangi takvimlerin içe aktarılacağını seçin. İçe aktarılan her takvim için tarifenizde bulunan takvim sayısına göre yeni bir takvim oluşturulur."
@@ -8690,9 +8669,6 @@
       "You can either update your search query or clear it": [
         "Arama sorgunuzu güncelleyebilir ya da temizleyebilirsiniz"
       ],
-      "You can import one data type at a time.": [
-        "Bir seferde bir veri türünü içe aktarabilirsiniz."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
         "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın."
@@ -8826,7 +8802,7 @@
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Hesabınız şu anda sorumlu sıfatıyla KDV usulünü uygulayacak şekilde yapılandırılmış. Bu durum seçilen tarife için desteklenmemektedir. Devam etmek için ya fatura adresinden KDV numarasını kaldırın ya da farklı bir tarife seçin."
+        "Hesabınızda şu anda tersine KDV uygulaması yapılandırılmış. Seçilmiş tarifede bu uygulama desteklenmiyor. İlerlemek için fatura adresinden KDV numarasını kaldırabilir ya da farklı bir tarife seçebilirsiniz."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Tarayıcınız yazma yardımcısını desteklemiyor. Sunucular üzerinden çalıştırmayı deneyin."
@@ -9337,9 +9313,6 @@
       "Calendar": [
         "Takvim"
       ],
-      "Calendars": [
-        "Takvimler"
-      ],
       "Carbon Copy": [
         "Kopya"
       ],
@@ -9471,9 +9444,6 @@
       ],
       "Email format": [
         "E-posta biçimi"
-      ],
-      "Emails": [
-        "E-postalar"
       ],
       "Emails (all messages)": [
         "E-postalar (tüm iletiler)"
@@ -12121,7 +12091,7 @@
         "Daha sonra hatırlat"
       ],
       "Yes, don't show again": [
-        "Evet, bir daha gösterme"
+        "Evet, bir daha görüntülenmesin"
       ]
     },
     "Option group": {
@@ -12378,7 +12348,7 @@
         "KDV numarası"
       ],
       "VAT reverse charge mechanism applies.": [
-        "Sorumlu sıfatıyla KDV uygulaması geçerlidir."
+        "Tersine KDV uygulaması kullanılıyor."
       ],
       "You already have a subscription to this plan.": [
         "Bu tarife için zaten bir aboneliğiniz var."
@@ -15016,6 +14986,9 @@
       "Change password": [
         "Parolayı değiştir"
       ],
+      "Choose a provider": [
+        "Sağlayıcı seçin"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } adresinizi alın"
       ],
@@ -15078,6 +15051,9 @@
       ],
       "Currency": [
         "Para birimi"
+      ],
+      "Custom": [
+        "Özel"
       ],
       "Custom domains:": [
         "Özel etki alanları:"
@@ -15313,6 +15289,9 @@
       "Import groups": [
         "Grupları içe aktar"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Verilerinizi ${ BRAND_NAME } aktarın"
+      ],
       "Increase security with ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } ile güvenliği artırın"
       ],
@@ -15332,7 +15311,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Keep this banner hidden?": [
-        "Bu banner gizli tutulsun mu?"
+        "Bu uyarı gizlensin mi?"
       ],
       "Label as": [
         "Etiketle"
@@ -15608,7 +15587,7 @@
         "Yeni kod iste"
       ],
       "Reverse charge not supported": [
-        "Sorumlu sıfatıyla KDV desteklenmiyor"
+        "Tersine KDV uygulaması desteklenmiyor"
       ],
       "Same inbox, shorter email address": [
         "Aynı gelen kutusu, daha kısa e-posta adresi"
@@ -15636,6 +15615,9 @@
       ],
       "Select contact group": [
         "Kişi grubunu seç"
+      ],
+      "Select data to import": [
+        "İçe aktarılacak verileri seçin"
       ],
       "Self-destruct message": [
         "Kendini yok eden ileti"
@@ -15851,9 +15833,6 @@
       ],
       "What is a VPN?": [
         "Bir VPN nedir?"
-      ],
-      "What would you like to import?": [
-        "Neyi içe aktarmak istersiniz?"
       ],
       "When is it most important to use a VPN?": [
         "VPN kullanmak en çok ne zaman önemlidir?"
