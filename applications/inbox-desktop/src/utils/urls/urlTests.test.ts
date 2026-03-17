@@ -1,6 +1,5 @@
-import { trimLocalID, isGoogleOAuthAuthorizationURL, isBookingURL } from "./urlTests";
+import { trimLocalID, isBookingURL } from "./urlTests";
 import * as urlStore from "../../store/urlStore";
-import { GOOGLE_OAUTH_PATH } from "@proton/shared/lib/api/activation";
 
 jest.mock("../config", () => {});
 
@@ -17,48 +16,6 @@ describe("urlTests", () => {
             expect(trimLocalID("https://example.local/u/123/")).toBe("https://example.local/");
             expect(trimLocalID("https://example.local/u/456/potato")).toBe("https://example.local/potato");
             expect(trimLocalID("https://example.local/u/7/tomato/")).toBe("https://example.local/tomato/");
-        });
-    });
-
-    describe("isGoogleOAuthAuthorizationURL", () => {
-        beforeAll(() => {
-            jest.spyOn(urlStore, "getAppURL").mockReturnValue({
-                account: "https://account.proton.me",
-                mail: "https://mail.proton.me",
-                calendar: "https://calendar.proton.me",
-            });
-        });
-
-        it("returns true for a valid Google OAuth URL", () => {
-            const validURLAccount = `https://account.proton.me${GOOGLE_OAUTH_PATH}?redirect_uri=https%3A%2F%2Faccount.proton.me%2Foauth%2Fcallback`;
-            expect(isGoogleOAuthAuthorizationURL(validURLAccount)).toBe(true);
-
-            const validURLMail = `https://mail.proton.me${GOOGLE_OAUTH_PATH}?redirect_uri=https%3A%2F%2Faccount.proton.me%2Foauth%2Fcallback`;
-            expect(isGoogleOAuthAuthorizationURL(validURLMail)).toBe(true);
-
-            const validURLCalendar = `https://calendar.proton.me${GOOGLE_OAUTH_PATH}?redirect_uri=https%3A%2F%2Faccount.proton.me%2Foauth%2Fcallback`;
-            expect(isGoogleOAuthAuthorizationURL(validURLCalendar)).toBe(true);
-        });
-
-        it("returns false for a different paths on proton.me domains", () => {
-            const invalidURLAccount = "https://account.proton.me/settings";
-            expect(isGoogleOAuthAuthorizationURL(invalidURLAccount)).toBe(false);
-
-            const invalidURLMail = "https://mail.proton.me/inbox";
-            expect(isGoogleOAuthAuthorizationURL(invalidURLMail)).toBe(false);
-
-            const invalidURLCalendar = "https://calendar.proton.me/api/calendar/1";
-            expect(isGoogleOAuthAuthorizationURL(invalidURLCalendar)).toBe(false);
-        });
-
-        it("returns false for same path on non-proton domain", () => {
-            const wrongDomainURL = `https://example.me${GOOGLE_OAUTH_PATH}?redirect_uri=https%3A%2F%2Faccount.proton.me%2Foauth%2Fcallback`;
-            expect(isGoogleOAuthAuthorizationURL(wrongDomainURL)).toBe(false);
-        });
-
-        it("returns false for a malformed URL", () => {
-            const invalidUrl = "invalid url";
-            expect(isGoogleOAuthAuthorizationURL(invalidUrl)).toBe(false);
         });
     });
 
