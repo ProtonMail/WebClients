@@ -34,10 +34,14 @@ async function cleanupESDB(esDB: IDBPDatabase<EncryptedSearchDB>, userID: string
  * @returns true if the IDB exists, false otherwise
  */
 export const hasESDB = async (userID: string) => {
-    const dbName = getDBName(userID);
-    const databases = await indexedDB.databases();
-
-    return databases.some(({ name }) => name === dbName);
+    try {
+        const dbName = getDBName(userID);
+        // indexedDB.databases() is unsupported on Firefox < 126
+        const databases = await indexedDB.databases();
+        return databases.some(({ name }) => name === dbName);
+    } catch {
+        return false;
+    }
 };
 
 /**
