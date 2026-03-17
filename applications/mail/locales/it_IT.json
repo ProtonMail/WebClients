@@ -708,14 +708,8 @@
       "import": [
         "importa"
       ],
-      "Import calendars": [
-        "Importa calendari"
-      ],
       "Import contacts": [
         "Importa contatti"
-      ],
-      "Import emails": [
-        "Importa le email"
       ],
       "Import emails, calendars, contacts": [
         "Importa email, calendari, contatti"
@@ -2047,6 +2041,17 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lo spazio di archiviazione è condiviso tra tutti i servizi ${ BRAND_NAME }."
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB di spazio di archiviazione"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blocca annunci, tracker e malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticazione 2FA integrata"
       ]
     },
     "Billing cycle option": {
@@ -4560,6 +4565,9 @@
       "Enter a password": [
         "Inserisci la password"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Inserisci il tuo nome utente senza il dominio (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
       ],
@@ -4619,6 +4627,9 @@
       ],
       "Invalid code": [
         "Codice non valido"
+      ],
+      "Invalid coupon": [
+        "Coupon non valido"
       ],
       "Invalid email address": [
         "Indirizzo email non valido"
@@ -4745,6 +4756,9 @@
       ],
       "Please activate your search again": [
         "Attiva nuovamente la tua ricerca"
+      ],
+      "Please complete the billing details": [
+        "Completa i dettagli di fatturazione"
       ],
       "Please enter a valid postal code": [
         "Si prega di inserire un codice postale valido"
@@ -4946,6 +4960,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
+      ],
+      "This field is invalid": [
+        "Questo campo non è valido"
       ],
       "This field is required": [
         "Campo necessario"
@@ -6276,20 +6293,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importa da ${ provider }"
-      ],
-      "Import from Google": [
-        "Importa da Google"
-      ],
-      "Import from other": [
-        "Importa da altro"
-      ],
-      "Import from Outlook": [
-        "Importa da Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importa da Yahoo"
+      "Advanced import": [
+        "Importazione avanzata"
       ]
     },
     "Import warning": {
@@ -6828,9 +6833,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Rafforza l'identità della tua organizzazione e crea un'esperienza online più coerente per i tuoi utenti."
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Importa i tuoi messaggi, contatti e calendari in ${ BRAND_NAME }."
       ],
       "Browse privately and access blocked content.": [
         "Naviga in privato e accedi ai contenuti bloccati."
@@ -7632,9 +7634,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o più chiavi attendibili sono state contrassegnate come \"compromesse\" dal loro proprietario. Ti consigliamo di \"non considerare attendibili\" queste chiavi."
       ],
-      "One time import": [
-        "Importazione una tantum"
-      ],
       "Open shortcut cheat sheet": [
         "Apri le istruzioni per le scorciatoie"
       ],
@@ -7888,9 +7887,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleziona il formato email che desideri usare per impostazione predefinita quando invii un'email a questo indirizzo email."
-      ],
-      "Select what you want to import.": [
-        "Seleziona cosa vuoi importare."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleziona i calendari da importare. Verrà creato un nuovo calendario per ogni calendario importato in base al numero di calendari disponibili nel tuo piano."
@@ -8571,9 +8567,6 @@
       "You can either update your search query or clear it": [
         "Puoi aggiornare la query di ricerca o cancellarla"
       ],
-      "You can import one data type at a time.": [
-        "Puoi importare un tipo di dati alla volta."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendario. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }.",
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendari. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }."
@@ -8683,6 +8676,9 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Hai scritto “${ attachmentsFoundKeyword }”, ma nessun allegato è stato aggiunto. Vuoi comunque inviare il tuo messaggio?"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Riceverai il premio in crediti 1 mese dopo che il tuo amico si sarà abbonato a un piano annuale e 2 mesi dopo che si sarà abbonato a un piano mensile."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese. Puoi annullare in qualsiasi momento.",
@@ -9212,9 +9208,6 @@
       "Calendar": [
         "Calendario"
       ],
-      "Calendars": [
-        "Calendari"
-      ],
       "Carbon Copy": [
         "Copia conoscenza"
       ],
@@ -9346,9 +9339,6 @@
       ],
       "Email format": [
         "Formato email"
-      ],
-      "Emails": [
-        "Email"
       ],
       "Emails (all messages)": [
         "Email (tutti i messaggi)"
@@ -9499,6 +9489,9 @@
       ],
       "Last 3 months only": [
         "Solo ultimi 3 mesi"
+      ],
+      "Last 6 months only": [
+        "Solo ultimi 6 mesi"
       ],
       "Last month only": [
         "Solo il mese scorso"
@@ -12143,6 +12136,12 @@
       "I'm purchasing as a business": [
         "Sto acquistando come azienda"
       ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inclusa l'imposta del ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Incluse imposte del ${ rate }%: ${ taxAmountElement }"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -12160,6 +12159,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Rinnova a ${ renewPriceStr }, annulla in qualsiasi momento."
+      ],
+      "Taxes ${ rate }%": [
+        "Imposte ${ rate }%"
       ],
       "terms and conditions": [
         "Termini e Condizioni"
@@ -12284,6 +12286,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Il prezzo del rinnovo dipende dalla regione di fatturazione e dall'ABN."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Il prezzo del rinnovo dipende dalla regione di fatturazione e dall'EIN."
       ]
     },
     "Payments.Saved payment method details": {
@@ -13242,6 +13252,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Condiviso da ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Apri in ${ appName }"
       ]
     },
     "Signature verification warning": {
@@ -14799,6 +14814,9 @@
       "Change password": [
         "Modifica la password"
       ],
+      "Choose a provider": [
+        "Scegli un fornitore"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Richiedi il tuo indirizzo ${ MAIL_APP_NAME }"
       ],
@@ -14861,6 +14879,9 @@
       ],
       "Currency": [
         "Valuta"
+      ],
+      "Custom": [
+        "Personalizza"
       ],
       "Custom domains:": [
         "Domini personalizzati:"
@@ -15113,6 +15134,9 @@
       ],
       "Invalid verification code": [
         "Codice di verifica non valido"
+      ],
+      "Keep this banner hidden?": [
+        "Tenere nascosto questo banner?"
       ],
       "Label as": [
         "Etichetta come..."
@@ -15387,6 +15411,9 @@
       "Request new code": [
         "Richiedi nuovo codice"
       ],
+      "Reverse charge not supported": [
+        "Inversione contabile non supportata"
+      ],
       "Same inbox, shorter email address": [
         "Stessa casella di posta, indirizzo email più corto"
       ],
@@ -15625,9 +15652,6 @@
       ],
       "What is a VPN?": [
         "Che cos'è una VPN?"
-      ],
-      "What would you like to import?": [
-        "Cosa vorresti importare?"
       ],
       "When is it most important to use a VPN?": [
         "Quando è più importante utilizzare una VPN?"

@@ -587,14 +587,8 @@
       "import": [
         "importer"
       ],
-      "Import calendars": [
-        "Importer kalendere"
-      ],
       "Import contacts": [
         "Importer kontakter"
-      ],
-      "Import emails": [
-        "Importer e-poster"
       ],
       "Import emails, calendars, contacts": [
         "Importer e-poster, kalendere, kontakter"
@@ -3427,6 +3421,9 @@
       "Enter 6 digits": [
         "Skriv inn 6 sifre"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Skriv inn brukernavnet ditt uten domenet (@eksempel.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Feil ved tilkobling til Bitcoin API."
       ],
@@ -3543,6 +3540,9 @@
       ],
       "Invalid code": [
         "Ugyldig kode"
+      ],
+      "Invalid coupon": [
+        "Ugyldig kupong"
       ],
       "Invalid email address": [
         "Ugyldig e-postadresse"
@@ -3708,6 +3708,9 @@
       "Request timed out": [
         "Forespørselen ble tidsavbrutt"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omvendt avgiftsplikt støttes ikke for denne planen"
+      ],
       "Search failed": [
         "Søket mislyktes"
       ],
@@ -3788,6 +3791,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimumsbeløpet av kreditt som kan legges til er ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimumbeløpet for donasjon er ${ price }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Den nye revisjonen av opprinnelige fil er ikke lastet opp enda, forsøk på nytt senere."
@@ -4811,23 +4817,6 @@
         "Velg ${ boldExport } for å eksportere kalenderen som en ICS-fil."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Importer fra ${ provider }"
-      ],
-      "Import from Google": [
-        "Importer fra Google"
-      ],
-      "Import from other": [
-        "Importer fra andre"
-      ],
-      "Import from Outlook": [
-        "Importer fra Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importer fra Yahoo"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ut av ${ totalContacts } blir ikke importert. Klikk for detaljer."
@@ -5233,9 +5222,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Styrk organisasjonens merkeidentitet og skap en mer konsekvent nettopplevelse for brukerne."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Ta med dine meldinger, kontakter og kalendere til ${ BRAND_NAME }."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
       ],
@@ -5290,6 +5276,9 @@
       "Choose a plan that works best for you.": [
         "Velg en plan som fungerer best for deg."
       ],
+      "Clear all search data": [
+        "Tøm alle søkedata"
+      ],
       "Clear data": [
         "Tøm data"
       ],
@@ -5301,6 +5290,9 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "Tømmer nettleserdata relatert til det krypterte søket."
+      ],
+      "Clears browser data related to the search.": [
+        "Tømmer nettleserdata relatert til søket."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikk \"be om ny kode\" for å få en ny verifiseringskode sendt til ${ strong }. Hvis dette telefonnummeret er feil, klikker du \"rediger\" for å rette det opp."
@@ -5935,9 +5927,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere av de betrodde nøklene dine ble merket \"kompromittert\" av eieren. Vi anbefaler at du \"ikke stoler på\" disse nøklene."
       ],
-      "One time import": [
-        "Engangsimport"
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Åpne veiledningen for anbefalte handlinger og nyttige koblinger."
       ],
@@ -6164,6 +6153,9 @@
       "Search Enabled": [
         "Søk aktivert"
       ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Søk aktivert. Du kan nå lukke denne dialogen og søke etter filer og mapper."
+      ],
       "Select a destination folder": [
         "Velg en målmappe"
       ],
@@ -6184,9 +6176,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Velg det e-postformatet du vil bruke som standard når du sender en e-post til denne adressen."
-      ],
-      "Select what you want to import.": [
-        "Velg hva du ønsker å importere."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Velg hvilke kalendere du vil importere. En ny kalender opprettes for hver importerte kalender i henhold til antall kalendere som er tilgjengelige i planen din."
@@ -6465,6 +6454,9 @@
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "For å muliggjøre virkelig privat søk, må vi indeksere filene dine lokalt. Du kan fremdeles bruke ${ DRIVE_APP_NAME } som normalt - vi gir deg beskjed når indekseringen er ferdig."
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "For å aktivere virkelig privat søk, må vi indeksere filene dine lokalt. Du kan fortsatt bruke ${ DRIVE_APP_NAME } normalt – vi gir deg beskjed når indekseringen er ferdig."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
@@ -6758,9 +6750,6 @@
       "You can close the tab or browser in the meantime.": [
         "Du kan lukke fanen eller nettleseren i mellomtiden."
       ],
-      "You can import one data type at a time.": [
-        "Du kan importere én datatype om gangen."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet.",
         "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet."
@@ -6849,6 +6838,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Kontoen din har minst en forfalt faktura. Din tilgang vil snart bli begrenset. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Kontoen din er for øyeblikket konfigurert til å bruke ordningen for omvendt avgiftsplikt. Dette støttes ikke for den valgte planen. For å fortsette, fjern enten MVA-nummeret fra faktureringsadressen eller velg en annen plan."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Din nåværende nettleser støtter ikke nedlasting av store filer/flere filer. Last ned desktopappen for sømløse opplastinger og nedlastinger."
@@ -7145,9 +7137,6 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendars": [
-        "Kalendere"
-      ],
       "can edit": [
         "kan redigere"
       ],
@@ -7283,9 +7272,6 @@
       ],
       "Email format": [
         "E-postformat"
-      ],
-      "Emails": [
-        "E-poster"
       ],
       "Emails (all messages)": [
         "E-poster (alle meldinger)"
@@ -10205,6 +10191,9 @@
       "VAT number": [
         "MVA-nummer"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Omvendt avgiftsplikt gjelder."
+      ],
       "You already have a subscription to this plan.": [
         "Du har allerede et abonnement på denne planen."
       ],
@@ -12849,6 +12838,9 @@
       "Restore your files": [
         "Gjenopprett filene dine"
       ],
+      "Reverse charge not supported": [
+        "Omvendt avgiftsplikt støttes ikke"
+      ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Lagre den til senere i ${ DRIVE_APP_NAME }"
       ],
@@ -13109,9 +13101,6 @@
       ],
       "What is a VPN?": [
         "Hva er et VPN?"
-      ],
-      "What would you like to import?": [
-        "Hva ønsker du å importere?"
       ],
       "When is it most important to use a VPN?": [
         "Når er det viktigst å bruke et VPN?"

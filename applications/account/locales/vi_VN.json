@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Ngừng chuyển tiếp"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Quá trình chuyển tiếp sẽ sớm bắt đầu. Email mới sẽ xuất hiện trong hộp thư đến."
       ],
       "Mail forward stopped": [
         "Đã dừng chuyển tiếp thư"
-      ],
-      "Reconnect": [
-        "Kết nối lại"
-      ],
-      "Remove forward": [
-        "Xóa chuyển tiếp"
       ],
       "You will stop the mail forwarding.": [
         "Sẽ dừng chuyển tiếp thư."
@@ -857,15 +848,6 @@
       ],
       "Import": [
         "Nhập"
-      ],
-      "Import calendars": [
-        "Nhập lịch"
-      ],
-      "Import contacts": [
-        "Chuyển nhập sổ liên lạc"
-      ],
-      "Import emails": [
-        "Nhập email"
       ],
       "Import emails, calendars, contacts": [
         "Nhập email, lịch, liên hệ"
@@ -8454,31 +8436,6 @@
         "Chắc chắn muốn nhập khóa riêng tư không? Việc nhập một khóa riêng tư được tạo không an toàn hoặc bị rò rỉ có thể gây hại cho bảo mật email.\n\nVui lòng lưu ý rằng khóa công khai tương ứng với khóa riêng tư này sẽ được công khai trên máy chủ khóa của chúng tôi. Nếu khóa chứa các chi tiết cá nhân (như tên đầy đủ) mà bạn không muốn công bố, vui lòng chỉnh sửa khóa trước khi nhập."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Nhập từ ${ provider }"
-      ],
-      "Import from Google": [
-        "Nhập từ Google"
-      ],
-      "Import from other": [
-        "Nhập từ nguồn khác"
-      ],
-      "Import from Outlook": [
-        "Nhập từ Outlook"
-      ],
-      "Import from Yahoo": [
-        "Nhập từ Yahoo"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Đã hoàn tác xong"
-      ],
-      "Undo in progress": [
-        "Đang hoàn tác"
-      ]
-    },
     "Import status": {
       "Active": [
         "Đang hoạt động"
@@ -8486,26 +8443,14 @@
       "Canceled": [
         "Đã hủy"
       ],
-      "Canceling": [
-        "Đang huỷ"
-      ],
-      "Completed": [
-        "Đã hoàn tất"
-      ],
       "Delayed": [
         "Bị hoãn"
       ],
       "Failed": [
         "Thất bại"
       ],
-      "In progress": [
-        "Đang tiến hành"
-      ],
       "Paused": [
         "Đã tạm dừng"
-      ],
-      "Started": [
-        "Đã bắt đầu"
       ]
     },
     "Import type": {
@@ -8563,17 +8508,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } không bao giờ chia sẻ thông tin với bên thứ ba. Dữ liệu đến từ các phân tích của riêng ${ BRAND_NAME } và Constella Intelligence."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } đã tạm dừng nhập do mất kết nối với nhà cung cấp email khác. Vui lòng kết nối lại."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } đã tạm dừng nhập do tài khoản sắp hết dung lượng. Có thể:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Trợ lý soạn thảo ${ BRAND_NAME } Scribe"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } sẽ cố gắng tiếp tục nhập ngay khi nhà cung cấp email đặt lại ${ bandwidthLimitLink } của tài khoản. Bạn không cần làm gì cả. Nếu hủy quá trình nhập, sẽ không thể tiếp tục và sẽ cần bắt đầu lại."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Công nghệ mã hóa của ${ BRAND_NAME } nghĩa là không ai có thể truy cập mật khẩu - kể cả chúng tôi."
@@ -9154,9 +9090,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Tăng cường nhận diện thương hiệu của tổ chức và tạo trải nghiệm trực tuyến nhất quán hơn cho người dùng."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Chuyển thư, liên hệ và lịch lên ${ BRAND_NAME }."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Nếu tạo tài khoản ${ PASS_APP_NAME } với email SimpleLogin, có thể quản lý các biệt danh trực tiếp từ ${ PASS_APP_NAME }."
       ],
@@ -9676,17 +9609,11 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Đối với người dùng chuyển sang ${ MAIL_APP_NAME } từ dịch vụ email khác, hãy chọn tab ${ boldAddresses } và thêm tất cả các địa chỉ email đang hoạt động trước khi thay đổi bản ghi MX để đảm bảo quá trình chuyển đổi suôn sẻ."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Chuyển tiếp thư đến từ tài khoản khác vào hộp thư đến ${ MAIL_APP_NAME } bảo mật."
-      ],
       "Free forever": [
         "Miễn phí vĩnh viễn"
       ],
       "Free trial": [
         "Dùng thử miễn phí"
-      ],
-      "free up space by deleting older messages or other data": [
-        "giải phóng dung lượng bằng cách xóa thư cũ hoặc dữ liệu khác"
       ],
       "Gateway monitor": [
         "Giám sát cổng"
@@ -10219,9 +10146,6 @@
       "No Gateways yet": [
         "Chưa có cổng"
       ],
-      "No imports or forwarding history.": [
-        "Không có lịch sử nhập hoặc chuyển tiếp."
-      ],
       "No label selected": [
         "Chưa chọn nhãn nào"
       ],
@@ -10269,9 +10193,6 @@
       ],
       "Once you reset your password:": [
         "Sau khi đặt lại mật khẩu:"
-      ],
-      "One time import": [
-        "Nhập một lần"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Chỉ thay đổi các cài đặt này nếu đang dùng PGP với người nhận không thuộc ${ BRAND_NAME }."
@@ -10498,9 +10419,6 @@
       "Public sharing of documents is not yet supported.": [
         "Tính năng chia sẻ tài liệu công khai hiện chưa được hỗ trợ."
       ],
-      "purchase additional storage": [
-        "mua thêm dung lượng lưu trữ"
-      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Liên hệ với chúng tôi để được trợ giúp về bất cứ điều gì liên quan đến ${ BRAND_NAME }"
       ],
@@ -10621,9 +10539,6 @@
       "Select users to view their activity": [
         "Chọn người dùng để xem hoạt động của họ"
       ],
-      "Select what you want to import.": [
-        "Chọn dữ liệu muốn nhập."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Chọn lịch để nhập. Một lịch mới sẽ được tạo cho mỗi lịch được nhập tùy theo số lượng lịch có sẵn trong gói."
       ],
@@ -10659,9 +10574,6 @@
       ],
       "Set password": [
         "Đặt mật khẩu"
-      ],
-      "Set up forwarding": [
-        "Thiết lập chuyển tiếp"
       ],
       "Set up your organization": [
         "Thiết lập tổ chức của bạn"
@@ -11533,9 +11445,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Nhận các dịch vụ quyền riêng tư cao cấp trong một gói—chỉ **${ priceString }/tháng**."
       ],
-      "You can import one data type at a time.": [
-        "Chỉ có thể nhập một loại dữ liệu mỗi lần."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Có thể giữ tối đa ${ MAX_CALENDARS_FREE } lịch. Vui lòng xóa các liên kết lịch được chia sẻ và bất kỳ người dùng ${ BRAND_NAME } nào đã chia sẻ lịch trước khi hủy đăng ký ${ MAIL_SHORT_APP_NAME }."
       ],
@@ -11721,9 +11630,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Dùng thử miễn phí đã chuyển thành công sang đăng ký hàng tháng. Ngày gia hạn là ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Nội dung được nhập từ ${ accounts } tạm thời bị gián đoạn."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Chúng tôi bảo mật thông tin của bạn. Chúng tôi sẽ chỉ liên hệ với bạn khi cần thiết để cung cấp dịch vụ."
@@ -12653,9 +12559,6 @@
       "Calendar": [
         "Lịch"
       ],
-      "Calendars": [
-        "Lịch"
-      ],
       "Capitalize words": [
         "Viết hoa các từ"
       ],
@@ -12904,9 +12807,6 @@
       ],
       "Email or username": [
         "Email hoặc tên người dùng"
-      ],
-      "Emails": [
-        "Email"
       ],
       "Emails (all messages)": [
         "Email (tất cả thư)"
@@ -22300,9 +22200,6 @@
       "Help center": [
         "Trung tâm trợ giúp"
       ],
-      "History": [
-        "Lịch sử"
-      ],
       "Home": [
         "Trang chủ"
       ],
@@ -23038,9 +22935,6 @@
       "What is the dark web?": [
         "Dark web là gì?"
       ],
-      "What would you like to import?": [
-        "Bạn muốn nhập gì?"
-      ],
       "Wipe all logs?": [
         "Xóa sạch tất cả nhật ký?"
       ],
@@ -23115,20 +23009,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Các thao tác"
-      ],
-      "Date": [
-        "Ngày"
-      ],
-      "Import": [
-        "Nhập"
-      ],
       "Size": [
         "Kích thước"
-      ],
-      "Status": [
-        "Trạng thái"
       ]
     },
     "Title header for addresses domain table": {
@@ -24229,9 +24111,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Sẽ mất mọi tùy chỉnh đã thực hiện cho đến nay."
-      ],
-      "You will not see this import record in the list any more.": [
-        "Sẽ không còn thấy bản ghi nhập này trong danh sách nữa."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Dùng thử miễn phí kết thúc vào ${ textDate }. ${ action }"

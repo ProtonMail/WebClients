@@ -429,17 +429,11 @@
       "import": [
         "impor"
       ],
-      "Import calendars": [
-        "Impor kalender"
-      ],
       "Import contacts": [
         "Impor kontak"
       ],
       "Import data": [
         "Impor data"
-      ],
-      "Import emails": [
-        "Impor email"
       ],
       "Import emails, calendars, contacts": [
         "Impor email, kalender, kontak"
@@ -3873,23 +3867,6 @@
         "Pilih ${ boldExport } untuk mengekspor kalender sebagai file ICS."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Impor dari ${ provider }"
-      ],
-      "Import from Google": [
-        "Impor dari Google"
-      ],
-      "Import from other": [
-        "Impor dari layanan lain"
-      ],
-      "Import from Outlook": [
-        "Impor dari Outlook"
-      ],
-      "Import from Yahoo": [
-        "Impor dari Yahoo"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } dari ${ totalContacts } kontak tidak akan diimpor. Klik untuk melihat rincian"
@@ -4111,9 +4088,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Bawa pesan, kontak, dan kalender Anda ke ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan paket ke Gratis, Anda akan kehilangan manfaat ini secara permanen, meskipun Anda meningkatkan paket lagi di masa mendatang."
@@ -4559,9 +4533,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Satu atau lebih kunci terpercaya Anda telah ditandai sebagai \"bocor\" oleh pemiliknya. Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci tersebut."
       ],
-      "One time import": [
-        "Impor sekali jadi"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Hanya yang memiliki tautan dan kata sandi yang dapat mengakses file ini."
       ],
@@ -4696,9 +4667,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Pilih format email yang akan digunakan setiap kali Anda mengirim email ke alamat ini."
-      ],
-      "Select what you want to import.": [
-        "Pilih hal-hal apa saja yang ingin Anda impor."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Pilih kalender mana saja yang akan diimpor. Untuk setiap kalender yang diimpor, sistem kami akan membuat kalender baru hingga batas jumlah kalender maksimum yang diperkenankan oleh paket Anda."
@@ -5033,9 +5001,6 @@
       "You can close the tab or browser in the meantime.": [
         "Anda dapat menutup tab atau peramban untuk saat ini."
       ],
-      "You can import one data type at a time.": [
-        "Anda dapat mengimpor satu jenis data dalam satu waktu."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Mohon hapus tautan kalender bersama yang ada dan seluruh pengguna ${ BRAND_NAME } yang berbagi kalender dengan Anda sebelum membatalkan langganan ${ MAIL_SHORT_APP_NAME } Anda."
       ],
@@ -5311,9 +5276,6 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendars": [
-        "Kalender"
-      ],
       "Cancel download": [
         "Batalkan unduhan"
       ],
@@ -5388,9 +5350,6 @@
       ],
       "Email format": [
         "Format email"
-      ],
-      "Emails": [
-        "Email"
       ],
       "Emails (all messages)": [
         "Email (seluruh pesan)"
@@ -9410,9 +9369,6 @@
       ],
       "What is a VPN?": [
         "Apa itu VPN?"
-      ],
-      "What would you like to import?": [
-        "Apa yang ingin Anda impor?"
       ],
       "When is it most important to use a VPN?": [
         "Kapan waktu yang paling tepat untuk menggunakan VPN?"

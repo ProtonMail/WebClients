@@ -693,14 +693,8 @@
       "import": [
         "uvoz"
       ],
-      "Import calendars": [
-        "Uvoz koledarjev"
-      ],
       "Import contacts": [
         "Uvozite stike"
-      ],
-      "Import emails": [
-        "Uvoz e-poštnih sporočil"
       ],
       "Import emails, calendars, contacts": [
         "Uvozi e-pošto, koledarje, stike"
@@ -2573,6 +2567,9 @@
       "Access to advanced AI models": [
         "Dostop do naprednih modelov UI"
       ],
+      "Basic chat history": [
+        "Osnovna zgodovina klepeta"
+      ],
       "Built and based in Europe": [
         "Zgrajeno in s sedežem v Evropi"
       ],
@@ -2584,6 +2581,9 @@
       ],
       "Large file upload support": [
         "Podpora za nalaganje velikih datotek"
+      ],
+      "Unlimited daily chats": [
+        "Neomejeni dnevni klepeti"
       ]
     },
     "collider_2025: Info": {
@@ -4192,6 +4192,9 @@
     "Duo offer: Link": {
       "Get 4x more storage": [
         "Pridobite 4x več prostora za shranjevanje"
+      ],
+      "Share your plan": [
+        "Svoj paket daj v skupno rabo"
       ]
     },
     "Duo offer: Title": {
@@ -4754,6 +4757,9 @@
       ],
       "re-activate the previous key": [
         "ponovno aktivirajte prejšnji ključ"
+      ],
+      "re-importing": [
+        "ponovni uvoz"
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "Odstranjen podvojen prejemnik: ${ recipents }",
@@ -6247,23 +6253,6 @@
         "Izberite ${ boldExport } za izvoz koledarja kot datoteko ICS."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Uvoz iz ${ provider }"
-      ],
-      "Import from Google": [
-        "Uvoz iz Googlovega računa"
-      ],
-      "Import from other": [
-        "Uvoz iz drugega"
-      ],
-      "Import from Outlook": [
-        "Uvoz iz Outlooka"
-      ],
-      "Import from Yahoo": [
-        "Uvoz iz Yahoo"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } stikov ne bo uvoženih. Kliknite za podrobnosti"
@@ -6878,9 +6867,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Okrepite prepoznavnost blagovne znamke vaše organizacije in ustvarite doslednejšo spletno izkušnjo za svoje uporabnike."
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Prenesite svoja sporočila, stike in koledarje v storitev ${ BRAND_NAME }"
       ],
       "Browse privately and access blocked content.": [
         "Brskajte zasebno in dostopajte do blokirane vsebine."
@@ -7665,9 +7651,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Enega ali več vaših zaupanja vrednih ključev je njihov lastnik označil kot \"ogroženo\". Priporočamo, da tem ključem \"ne zaupate\"."
       ],
-      "One time import": [
-        "Enkraten uvoz"
-      ],
       "Open shortcut cheat sheet": [
         "Odpri seznam bližnjic"
       ],
@@ -7916,9 +7899,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Izberite obliko sporočil, ki jo želite uporabiti kot privzeto ob pošiljanju na ta e-poštni naslov."
-      ],
-      "Select what you want to import.": [
-        "Izberite, kaj želite uvoziti."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Izberite, katere koledarje želite uvoziti. Za vsak uvoženi koledar bo ustvarjen nov koledar, odvisno od števila koledarjev, na voljo v vašem naročniškem paketu."
@@ -8586,9 +8566,6 @@
       "You can either update your search query or clear it": [
         "Lahko spremenite iskalno poizvedbo ali jo izbrišete"
       ],
-      "You can import one data type at a time.": [
-        "Uvažate lahko eno vrsto podatkov naenkrat."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Lahko obdržite do ${ MAX_CALENDARS_FREE } koledar. Preden prekličete naročnino na ${ MAIL_SHORT_APP_NAME }, prosimo odstranite deljene povezave do koledarjev in uporabnike storitve ${ BRAND_NAME }, s katerimi ste delili svoje koledarje.",
         "Lahko obdržite do ${ MAX_CALENDARS_FREE } koledarja. Preden prekličete naročnino na ${ MAIL_SHORT_APP_NAME }, prosimo odstranite deljene povezave do koledarjev in uporabnike storitve ${ BRAND_NAME }, s katerimi ste delili svoje koledarje.",
@@ -9238,9 +9215,6 @@
       "Calendar": [
         "Koledar"
       ],
-      "Calendars": [
-        "Koledarje"
-      ],
       "Carbon Copy": [
         "Kopija"
       ],
@@ -9364,9 +9338,6 @@
       "Email format": [
         "Oblika e-pošte"
       ],
-      "Emails": [
-        "E-pošto"
-      ],
       "Emails (all messages)": [
         "E-pošto (vsa sporočila)"
       ],
@@ -9438,6 +9409,9 @@
       ],
       "Go to Forums": [
         "Obišči forume"
+      ],
+      "Go to Promotions": [
+        "Pojdite na Promocije"
       ],
       "Has attachments": [
         "S priponkami"
@@ -9576,6 +9550,9 @@
       ],
       "No label found": [
         "Ni najdenih oznak"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Nič več manjkajočih pomembnih sporočil! Ti so zdaj prikazani pod ${ primaryCopy }. Vse ostalo je razvrščeno po kategorijah, tako da jih je enostavno najti in ne zapolnijo vaše mape »Prejeto«."
       ],
       "Not factually correct": [
         "Ni dejansko pravilno"
@@ -9930,6 +9907,9 @@
     "Labels": {
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
         "Novičniki ali poštni seznami, od katerih ste se odjavili, se bodo prikazali tukaj."
+      ],
+      "You don't have any active newsletters or mailing list subscriptions.": [
+        "Niste naročeni na aktivne novice ali na poštne sezname."
       ],
       "You don't have any newsletters or mailing list subscriptions.": [
         "Nimate nobenih glasil ali naročnin na poštne sezname."
@@ -10319,6 +10299,12 @@
         "${ n } sestanka hkrati",
         "${ n } sestanki hkrati",
         "${ n } sestankov hkrati"
+      ],
+      "${ n } participant": [
+        "${ n } udeleženec",
+        "${ n } udeleženca",
+        "${ n } udeleženci",
+        "${ n } udeleženci"
       ],
       "24 hours per meeting": [
         "24 ur na sestanek"
@@ -12143,6 +12129,9 @@
       "VAT number": [
         "DDV številka"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Mehanizem DDV povratnega plačila velja."
+      ],
       "You already have a subscription to this plan.": [
         "Na ta paket ste že naročeni."
       ],
@@ -12571,6 +12560,18 @@
     "Referral": {
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Če naročilo oddate pred tem datumom,** prejmete **${ referrerRewardAmount }** dobropisa."
+      ],
+      "Friend joined": [
+        "Prijatelj se je pridružil",
+        "Prijatelja sta se pridružila",
+        "Prijatelji so se pridružili",
+        "Prijatelji so se pridružili"
+      ],
+      "Friend subscribed": [
+        "Prijatelj se je naročil",
+        "Prijatelja sta se naročila",
+        "Prijatelji so se naročili",
+        "Prijatelji so se naročili"
       ],
       "Invite friends. Get credits.": [
         "Povabite prijatelje. Prejmite dobroimetje."
@@ -13364,6 +13365,9 @@
       ]
     },
     "Step": {
+      "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
+        "Vnesite svoj naslov ${ MAIL_APP_NAME } kot novi naslov in shranite, potrdite ali preverite spremembo."
+      ],
       "In the account settings, look for the option to edit or change your email address ": [
         "V nastavitvah računa poiščite možnost urejanja ali spremembe e-poštnega naslova "
       ],
@@ -15455,9 +15459,6 @@
       ],
       "What is a VPN?": [
         "Kaj je VPN?"
-      ],
-      "What would you like to import?": [
-        "Kaj želite uvoziti?"
       ],
       "When is it most important to use a VPN?": [
         "Kdaj je uporaba VPN najbolj pomembna?"

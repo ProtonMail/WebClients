@@ -278,15 +278,6 @@
       "Import": [
         "درون‌برد"
       ],
-      "Import calendars": [
-        "واردات تقویم"
-      ],
-      "Import contacts": [
-        "درون‌برد مخاطبین"
-      ],
-      "Import emails": [
-        "واردات ایمیل"
-      ],
       "Increase": [
         "افزایش"
       ],
@@ -3065,11 +3056,6 @@
         "${ boldExport } را برای خارج سازی بعنوان یک فایل ICS انتخاب کنید."
       ]
     },
-    "Import provider": {
-      "Import from Google": [
-        "وارد سازی از Google"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } از ${ totalContacts } مخاطب درون‌برد نشد. برای جزئیات کلیک کنید"
@@ -3683,9 +3669,6 @@
       "Securing your account": [
         "درحال امن کردن حساب شما"
       ],
-      "Select what you want to import.": [
-        "آنچه را که می خواهید وارد کنید انتخاب کنید."
-      ],
       "Server is currently down": [
         "سرور در حال حاضر خاموش است"
       ],
@@ -3936,9 +3919,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "می‌توانید پیشرفت را در ${ importProgressLink } مشاهده نمایید."
-      ],
-      "You can import one data type at a time.": [
-        "شما تنها می‌توانید یک نوع داده را در یک زمان وارد کنید."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "شما می‌توانید برای دریافت هشدار هنگام ورود پیام‌های رایانامه جدید به این پوشه، اعلان‌ها را فعال کنید."
@@ -4193,9 +4173,6 @@
       "Calendar": [
         "تقویم"
       ],
-      "Calendars": [
-        "تقویم‌ها"
-      ],
       "Card details": [
         "جزئیات کارت"
       ],
@@ -4315,9 +4292,6 @@
       ],
       "Email or username": [
         "رایانامه یا نام‌کاربری"
-      ],
-      "Emails": [
-        "ایمیل‌ها"
       ],
       "Enabled": [
         "فعال"
@@ -7095,9 +7069,6 @@
       ],
       "Warning": [
         "هشدار"
-      ],
-      "What would you like to import?": [
-        "چه چیزی را میخواهید واردسازی کنید؟"
       ],
       "WireGuard configuration": [
         "تنظیمات WireGuard"

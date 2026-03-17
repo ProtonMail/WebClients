@@ -370,6 +370,9 @@
       "Get Started": [
         "Commencer"
       ],
+      "Hide": [
+        "Masquer"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Comment exporter mes données depuis ${ PROVIDER_INFO_MAP[form.values.provider].title } ?"
       ],
@@ -1011,7 +1014,7 @@
         "Le JSON chiffré n'est pas pris en charge."
       ],
       "Encryption communication for desktop unlock failed.": [
-        "Le chiffrement de la communication pour le déverrouillage du bureau a échoué."
+        "Le chiffrement de la communication pour le déverrouillage de l'application de bureau n'a pas abouti."
       ],
       "Error reporting problem": [
         "Une erreur s'est produite pendant le signalement du bug."
@@ -1818,7 +1821,7 @@
         "L'activation du verrouillage avec la biométrie n'a pas abouti."
       ],
       "Enabling desktop auto-lock": [
-        "Activation du verrouillage automatique"
+        "Activation du verrouillage automatique de l'application de bureau"
       ],
       "Enabling offline mode...": [
         "Activation du mode hors-ligne..."

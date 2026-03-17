@@ -533,6 +533,9 @@
       "Go to panel ${ index }": [
         "Перайсці ў панэль ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Зразумела"
       ],
@@ -556,15 +559,6 @@
       ],
       "Import": [
         "Імпартаваць"
-      ],
-      "Import calendars": [
-        "Імпартаваць календары"
-      ],
-      "Import contacts": [
-        "Імпартаваць кантакты"
-      ],
-      "Import emails": [
-        "Імпартаваць лісты"
       ],
       "Import emails, calendars, contacts": [
         "Імпартаваць лісты, календары, кантакты"
@@ -3612,7 +3606,7 @@
     },
     "Domain label": {
       "Verified": [
-        "Праверана"
+        "Спраўджана"
       ]
     },
     "Domain modal": {
@@ -4164,6 +4158,9 @@
       "Enter 6 digits": [
         "Увядзіце 6 лічбаў"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Увядзіце сваё імя карыстальніка без дамена (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Памылка падключэння да Bitcoin API."
       ],
@@ -4585,7 +4582,7 @@
         "Імя карыстальніка павінна заканчвацца літарай або лічбай"
       ],
       "Verification did not succeed, please try again in an hour.": [
-        "Не атрымалася праверыць. Паспрабуйце яшчэ раз праз гадзіну."
+        "Не ўдалося праверыць. Паспрабуйце яшчэ раз праз гадзіну."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Мы прыпынілі падпісанне DKIM з прычыны праблем з канфігурацыяй вашага DNS. Прытрымлівайцеся інструкцый ніжэй, каб узнавіць падпісанне."
@@ -5998,20 +5995,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Імпартаваць з ${ provider }"
-      ],
-      "Import from Google": [
-        "Імпартаваць з Google"
-      ],
-      "Import from other": [
-        "Імпартаваць з іншых пастаўшчыкоў"
-      ],
-      "Import from Outlook": [
-        "Імпартаваць з Outlook"
-      ],
-      "Import from Yahoo": [
-        "Імпартаваць з Yahoo"
+      "Advanced import": [
+        "Пашыраны імпарт"
       ]
     },
     "Import warning": {
@@ -6590,9 +6575,6 @@
       "Billing cycle: ${ text }": [
         "Перыяд аплаты: ${ text }"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Перанясіце свае паведамленні, кантакты і календары ў ${ BRAND_NAME }."
-      ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Адключыўшы назіранне за ўліковым запісам, вы таксама ачысціце ўсю гісторыю. Вы сапраўды хочаце адключыць гэту функцыю?"
       ],
@@ -6619,6 +6601,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Выберыце Entity ID для працягу."
+      ],
+      "Choose your service to connect with": [
+        "Выберыце сэрвіс для падключэння"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы код спраўджання на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
@@ -7472,9 +7457,6 @@
       "Once you reset your password:": [
         "Пасля скідання вашага пароля:"
       ],
-      "One time import": [
-        "Аднаразовае імпартаванне"
-      ],
       "Open source": [
         "Адкрыты зыходны код"
       ],
@@ -7777,9 +7759,6 @@
       ],
       "Select users to view their activity": [
         "Выбраць карыстальнікаў, каб паглядзець іх актыўнасць"
-      ],
-      "Select what you want to import.": [
-        "Выберыце, што вы хочаце імпартаваць."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
@@ -8217,7 +8196,7 @@
         "Файл не падтрымліваецца"
       ],
       "Unverified": [
-        "Неправераны"
+        "Неправерана"
       ],
       "Unverified email address.": [
         "Неправераны адрас электроннай пошты"
@@ -8524,9 +8503,6 @@
       ],
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Вы можаце атрымаць нашы прэміяльныя сэрвісы прыватнасці ўсяго за **${ priceString }/месяц** адным камплектам."
-      ],
-      "You can import one data type at a time.": [
-        "Вы можаце імпартаваць адзін тып даных за раз."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
@@ -9104,9 +9080,6 @@
       "Calendar": [
         "Каляндар"
       ],
-      "Calendars": [
-        "Календары"
-      ],
       "Card details": [
         "Падрабязнасці карткі"
       ],
@@ -9256,9 +9229,6 @@
       ],
       "Email or username": [
         "Электронная пошта або імя карыстальніка"
-      ],
-      "Emails": [
-        "Лісты"
       ],
       "Emails (all messages)": [
         "Лісты (усе паведамленні)"
@@ -12542,6 +12512,9 @@
       "VAT number": [
         "Нумар ПДВ"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Ужыты механізм адваротнага налічэння падатку ПДВ"
+      ],
       "You already have a subscription to this plan.": [
         "У вас ужо ёсць падпіска на гэты тарыфны план."
       ],
@@ -12851,7 +12824,7 @@
         "Ваша назва арганізацыі"
       ],
       "yourdomain.com": [
-        "yourdomain.com"
+        "vashdamen.eu"
       ],
       "ZIP code": [
         "Паштовы індэкс"
@@ -15804,6 +15777,9 @@
       "Change second password": [
         "Змяніць другі пароль"
       ],
+      "Choose a provider": [
+        "Выберыце пастаўшчыка"
+      ],
       "Choose user affiliations": [
         "Выберыце прыналежнасці карыстальнікаў"
       ],
@@ -15908,6 +15884,9 @@
       ],
       "Currency": [
         "Валюта"
+      ],
+      "Custom": [
+        "Карыстальніцкае"
       ],
       "Custom selection of users": [
         "Персаналізаваны выбар карыстальнікаў"
@@ -16209,6 +16188,9 @@
       "Import groups": [
         "Імпарт груп"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Імпартуйце свае даныя ў ${ BRAND_NAME }"
+      ],
       "Information exposed in breach": [
         "Звесткі, якія былі скампраметаваныя ў выніку парушэння"
       ],
@@ -16443,6 +16425,9 @@
       "Select contact group": [
         "Выбар групы кантактаў"
       ],
+      "Select data to import": [
+        "Выберыце даныя для імпарту"
+      ],
       "Send email reminders?": [
         "Адправіць напаміны поштай?"
       ],
@@ -16676,9 +16661,6 @@
       ],
       "What is the dark web?": [
         "Што такое цёмная сетка?"
-      ],
-      "What would you like to import?": [
-        "Што вы хочаце імпартаваць?"
       ],
       "Wipe all logs?": [
         "Выцерці ўсе журналы?"
@@ -17021,7 +17003,7 @@
         "Падарункавая картка"
       ],
       "Migration": [
-        "Міграцыя"
+        "Перанос"
       ],
       "Payment": [
         "Плацеж"

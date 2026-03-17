@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Slet videresendelse"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Videresendelse vil starte snart. Nye e-mails vil snart vises i din indbakke."
       ],
       "Mail forward stopped": [
         "Videresendelse stoppet"
-      ],
-      "Reconnect": [
-        "Tilslut igen"
-      ],
-      "Remove forward": [
-        "Fjern videresendelse"
       ],
       "You will stop the mail forwarding.": [
         "Du stopper videresendelsen af mail."
@@ -875,15 +866,6 @@
       ],
       "Import": [
         "Importér"
-      ],
-      "Import calendars": [
-        "Importer kalendere"
-      ],
-      "Import contacts": [
-        "Importér kontakter"
-      ],
-      "Import emails": [
-        "Importer e-mails"
       ],
       "Import emails, calendars, contacts": [
         "Importer e-mails, kalendere, kontakter"
@@ -6507,6 +6489,9 @@
       "Enter 6 digits": [
         "Indtast 6 cifre"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Indtast dit brugernavn uden domænet (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Fejl under oprettelse af forbindelse til Bitcoin-API."
       ],
@@ -8800,28 +8785,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importér fra ${ provider }"
-      ],
-      "Import from Google": [
-        "Importér fra Google"
-      ],
-      "Import from other": [
-        "Import fra andre udbydere"
-      ],
-      "Import from Outlook": [
-        "Importér fra Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importér fra Yahoo"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Annullering afsluttet"
-      ],
-      "Undo in progress": [
-        "Annullering i gang"
+      "Import from ${ providerName }": [
+        "Importér fra ${ providerName }"
       ]
     },
     "Import status": {
@@ -8831,26 +8796,14 @@
       "Canceled": [
         "Annulleret"
       ],
-      "Canceling": [
-        "Annullerer"
-      ],
-      "Completed": [
-        "Fuldført"
-      ],
       "Delayed": [
         "Forsinket"
       ],
       "Failed": [
         "Mislykkedes"
       ],
-      "In progress": [
-        "Er i gang"
-      ],
       "Paused": [
         "Sat på pause"
-      ],
-      "Started": [
-        "Startet"
       ]
     },
     "Import type": {
@@ -8910,17 +8863,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } deler aldrig dine oplysninger med tredjeparter. Data kommer fra ${ BRAND_NAME }'s egne analyser og Constella Intelligence."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } satte en import på pause, da vi mistede forbindelsen med din anden e-mail-udbyder. Genopret venligst forbindelsen."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } satte en import på pause, da din konto er ved at løbe tør for plads. Du kan:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-skriveassistent"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } vil forsøge at genoptage importen, så snart din e-mail-udbyder nulstiller din kontos ${ bandwidthLimitLink }. Du behøver ikke selv at gøre noget. Hvis du annullerer din import, vil du ikke kunne genoptage den, og du bliver nødt til at starte forfra."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
@@ -9546,9 +9490,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Styrk din organisations varemærkeidentitet, og skab en mere ensartet onlineoplevelse for dine brugere."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Overfør dine meddelelser, kontakter og kalendere til ${ BRAND_NAME }"
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Ved at oprette en ${ PASS_APP_NAME }-konto med din SimpleLogin e-mail, kan du administrere dine aliasser direkte fra ${ PASS_APP_NAME }."
       ],
@@ -10082,17 +10023,11 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "For brugere, som skifter til ${ MAIL_APP_NAME } fra en anden e-mailtjeneste, skal du vælge fanen ${ boldAddresses } og tilføje alle aktive e-mailadresser, før du ændrer MX-posten for at sikre en problemfri overgang."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Videresend indgående e-mails fra en anden konto til din sikre ${ MAIL_APP_NAME }-indbakke."
-      ],
       "Free forever": [
         "Gratis for evigt"
       ],
       "Free trial": [
         "Gratis prøveperiode"
-      ],
-      "free up space by deleting older messages or other data": [
-        "frigør plads ved at slette ældre beskeder eller andre data"
       ],
       "Gateway monitor": [
         "Gateway Monitor"
@@ -10630,9 +10565,6 @@
       "No Gateways yet": [
         "Ingen gateways endnu"
       ],
-      "No imports or forwarding history.": [
-        "Ingen importer eller videresendelseshistorik."
-      ],
       "No label selected": [
         "Ingen etiket valgt"
       ],
@@ -10680,9 +10612,6 @@
       ],
       "Once you reset your password:": [
         "Når du nulstiller din adgangskode:"
-      ],
-      "One time import": [
-        "Engangsimport"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ændr kun disse indstillinger, hvis du bruger PGP med modtagere der ikke bruger ${ BRAND_NAME }."
@@ -10913,9 +10842,6 @@
       "Public sharing of documents is not yet supported.": [
         "Offentlig deling af dokumenter understøttes ikke endnu."
       ],
-      "purchase additional storage": [
-        "tilkøbe mere lagerplads"
-      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Kontakt os for at få hjælp til hvad som helst ${ BRAND_NAME }."
       ],
@@ -11036,9 +10962,6 @@
       "Select users to view their activity": [
         "Vælg brugere for at se deres aktivitet"
       ],
-      "Select what you want to import.": [
-        "Vælg, hvad du ønsker at importere."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vælg hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender, op til det tilgængelige antal i dit abonnement."
       ],
@@ -11074,9 +10997,6 @@
       ],
       "Set password": [
         "Indstil adgangskode"
-      ],
-      "Set up forwarding": [
-        "Indstil videresendelse"
       ],
       "Set up your organization": [
         "Konfigurer din organisation"
@@ -11970,9 +11890,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Du kan få vores premium privatlivstjenester i én pakke – og til kun **${ priceString }/måned**."
       ],
-      "You can import one data type at a time.": [
-        "Du kan importere én datatype ad gangen."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalender. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit ${ MAIL_SHORT_APP_NAME }-abonnement.",
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalendere. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit ${ MAIL_SHORT_APP_NAME }-abonnement."
@@ -12174,10 +12091,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis prøveperiode blev konverteret til et månedligt abonnement. Din fornyelsesdato er ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Din import fra ${ accounts } er midlertidigt forsinket.",
-        "Dine importer fra ${ accounts } er midlertidigt forsinket."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din information er sikker hos os. Vi kontakter dig kun når det er nødvendigt for at levere vores tjenester."
@@ -13136,9 +13049,6 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendars": [
-        "Kalendere"
-      ],
       "Capitalize words": [
         "Skriv ord med store begyndelsesbogstaver"
       ],
@@ -13390,9 +13300,6 @@
       ],
       "Email or username": [
         "E-mail eller brugernavn"
-      ],
-      "Emails": [
-        "E-mails"
       ],
       "Emails (all messages)": [
         "E-mails (alle beskeder)"
@@ -22645,6 +22552,9 @@
       "Check your default mail application": [
         "Tjek din standard-e-mailapplikation"
       ],
+      "Choose a provider": [
+        "Vælg en udbyder"
+      ],
       "Choose an account": [
         "Vælg en konto"
       ],
@@ -22771,6 +22681,9 @@
       ],
       "Currency": [
         "Valuta"
+      ],
+      "Custom": [
+        "Brugerdefineret"
       ],
       "Custom domains:": [
         "Brugerdomæner:"
@@ -23194,9 +23107,6 @@
       "Help center": [
         "Hjælp-center"
       ],
-      "History": [
-        "Historik"
-      ],
       "Home": [
         "Hjem"
       ],
@@ -23242,6 +23152,9 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importer via ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importér dine data til ${ BRAND_NAME }"
       ],
       "Inactive 2FA": [
         "Inaktiv 2FA"
@@ -23618,6 +23531,9 @@
       "Select contact group": [
         "Vælg kontaktgruppe"
       ],
+      "Select data to import": [
+        "Vælg data til import"
+      ],
       "Select the time to send this notification": [
         "Vælg tid for afsendelse af denne notifikation"
       ],
@@ -23943,9 +23859,6 @@
       "What is the dark web?": [
         "Hvad er det mørke net?"
       ],
-      "What would you like to import?": [
-        "Hvad ønsker du at importere?"
-      ],
       "Wipe all logs?": [
         "Slet alle logge?"
       ],
@@ -24023,20 +23936,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Handlinger"
-      ],
-      "Date": [
-        "Dato"
-      ],
-      "Import": [
-        "Importér"
-      ],
       "Size": [
         "Størrelse"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Title header for addresses domain table": {
@@ -25167,9 +25068,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning, du har foretaget indtil videre."
-      ],
-      "You will not see this import record in the list any more.": [
-        "Du vil ikke længere se denne importpost på listen."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis prøveperiode udløber den ${ textDate }. ${ action }"

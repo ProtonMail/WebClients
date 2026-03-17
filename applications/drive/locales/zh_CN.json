@@ -546,6 +546,9 @@
       "Go to settings": [
         "前往设置"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "知道了"
       ],
@@ -582,14 +585,8 @@
       "import": [
         "导入"
       ],
-      "Import calendars": [
-        "导入日历"
-      ],
       "Import contacts": [
         "导入联系人"
-      ],
-      "Import emails": [
-        "导入电子邮件"
       ],
       "Import emails, calendars, contacts": [
         "导入电子邮件、日历、联系人"
@@ -3404,6 +3401,9 @@
       "Enter 6 digits": [
         "请输入 6 位验证码"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "请输入您的用户名（不含 @example.com 域名）"
+      ],
       "Error connecting to the Bitcoin API.": [
         "连接比特币 API 失败。"
       ],
@@ -3520,6 +3520,9 @@
       ],
       "Invalid code": [
         "无效代码"
+      ],
+      "Invalid coupon": [
+        "优惠券无效"
       ],
       "Invalid email address": [
         "邮箱地址无效"
@@ -3680,6 +3683,9 @@
       "Request timed out": [
         "请求超时"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "此套餐不支持反向收费机制"
+      ],
       "Search failed": [
         "搜索失败"
       ],
@@ -3760,6 +3766,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "充值金额不能低于 ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "最低捐赠金额为 ${ price }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "原始文件的新修订版本尚未上传，请稍后再试。"
@@ -4765,20 +4774,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "从 ${ provider } 导入"
-      ],
-      "Import from Google": [
-        "从 Google 导入"
-      ],
-      "Import from other": [
-        "从其他服务商导入"
-      ],
-      "Import from Outlook": [
-        "从 Outlook 导入"
-      ],
-      "Import from Yahoo": [
-        "从 Yahoo 导入"
+      "Advanced import": [
+        "高级导入"
       ]
     },
     "Import warning": {
@@ -5150,9 +5147,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "提升组织品牌形象，为用户创造更加一致的在线体验。"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "将您的信息、联系人和日历同步至 ${ BRAND_NAME }。"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降级为免费用户，无论今后是否再次付费升级，您都将永远失去这些特权。"
       ],
@@ -5207,6 +5201,12 @@
       "Choose a plan that works best for you.": [
         "选择一个最适合您的套餐。"
       ],
+      "Choose your service to connect with": [
+        "请选择要连接的服务"
+      ],
+      "Clear all search data": [
+        "清除所有搜索数据"
+      ],
       "Clear data": [
         "清除数据"
       ],
@@ -5218,6 +5218,9 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "清除与加密搜索相关的浏览器数据。"
+      ],
+      "Clears browser data related to the search.": [
+        "清除与搜索相关的浏览器数据。"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "点击“请求新验证码”将发送到 ${ strong }。如果此电话号码不正确，请点击“编辑”。"
@@ -5846,9 +5849,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您信任的某些密钥已被其所有者标为「已泄露」，建议您不再信任这些密钥。"
       ],
-      "One time import": [
-        "一次性导入"
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "打开指南并查看推荐操作和实用链接。"
       ],
@@ -6074,6 +6074,9 @@
       "Search Enabled": [
         "搜索已启用"
       ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "搜索已启用，您现在可以关闭此对话框，开始搜索文件和文件夹。"
+      ],
       "Select a destination folder": [
         "选择目标文件夹"
       ],
@@ -6094,9 +6097,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "选择向该地址发送邮件的首选格式。"
-      ],
-      "Select what you want to import.": [
-        "选择需要导入的内容。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "请选择要导入的日历。每份日历导入后将在您的账户中对应生成一份新日历，具体日历数量受您账户等级的限制。"
@@ -6373,6 +6373,9 @@
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "为了保证搜索过程的安全性，文件索引需要在此设备上完成。您可以继续正常使用 ${ DRIVE_APP_NAME }，索引完成后我们将通知您。"
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "若要启用隐私搜索，我们需要在本地为您的文件建立索引。您可以继续使用 ${ DRIVE_APP_NAME } - 索引完成后我们会通知您。"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
@@ -6665,9 +6668,6 @@
       "You can close the tab or browser in the meantime.": [
         "同时，您也可以关闭当前标签页或浏览器。"
       ],
-      "You can import one data type at a time.": [
-        "您一次可以导入一种数据类型。"
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "您最多可保留 ${ MAX_CALENDARS_FREE } 份日历。退订 ${ MAIL_SHORT_APP_NAME } 前请删除所有共享日历链接，并移除所有使用您共享的日历的 ${ BRAND_NAME } 用户。"
       ],
@@ -6751,6 +6751,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "您的账户当前已配置为应用反向收费机制，但所选套餐不支持此机制。若要继续，请从账单地址中移除增值税号，或选择其他套餐。"
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "您当前的浏览器不支持下载大型文件/多个文件，请下载桌面应用程序以获得流畅的上传和下载体验。"
@@ -7041,9 +7044,6 @@
       "Calendar": [
         "日历"
       ],
-      "Calendars": [
-        "日历"
-      ],
       "can edit": [
         "可以编辑"
       ],
@@ -7178,9 +7178,6 @@
       ],
       "Email format": [
         "电子邮件格式"
-      ],
-      "Emails": [
-        "电子邮件"
       ],
       "Emails (all messages)": [
         "所有邮件"
@@ -9972,6 +9969,9 @@
       "VAT number": [
         "增值税号"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "适用增值税反向收费机制"
+      ],
       "You already have a subscription to this plan.": [
         "您已订阅此套餐"
       ],
@@ -11888,6 +11888,9 @@
       "Check for malicious files": [
         "检查恶意文件"
       ],
+      "Choose a provider": [
+        "请选择提供商"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "认领您的 ${ MAIL_APP_NAME } 地址"
       ],
@@ -11953,6 +11956,9 @@
       ],
       "Currency": [
         "货币"
+      ],
+      "Custom": [
+        "自定义"
       ],
       "Customize and confirm": [
         "自定义并确认"
@@ -12212,6 +12218,9 @@
       "Import groups": [
         "导入群组"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "将您的数据导入到 ${ BRAND_NAME }"
+      ],
       "Information exposed in breach": [
         "数据外泄事件中泄露的信息"
       ],
@@ -12464,6 +12473,9 @@
       "Restore your files": [
         "恢复您的文件"
       ],
+      "Reverse charge not supported": [
+        "不支持反向收费"
+      ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "稍后保存在 ${ DRIVE_APP_NAME }"
       ],
@@ -12484,6 +12496,9 @@
       ],
       "Select contact group": [
         "选择联系人群组"
+      ],
+      "Select data to import": [
+        "请选择要导入的数据"
       ],
       "Select link expiration date": [
         "选择链接失效日期"
@@ -12724,9 +12739,6 @@
       ],
       "What is a VPN?": [
         "什么是 VPN？"
-      ],
-      "What would you like to import?": [
-        "您需要导入哪些信息？"
       ],
       "When is it most important to use a VPN?": [
         "什么时候最需要使用 VPN 呢？"

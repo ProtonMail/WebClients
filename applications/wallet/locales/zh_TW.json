@@ -396,6 +396,12 @@
       "${ domains } additional custom domain": [
         "${ domains }額外自訂網域"
       ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI 授權"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } 個席次"
+      ],
       "${ price } per dedicated server": [
         "每專用伺服器${ price }"
       ],
@@ -417,8 +423,14 @@
       "${ users } user": [
         "${ users } 位使用者"
       ],
+      "Dedicated VPN servers": [
+        "專用 VPN 伺服器"
+      ],
       "Domains": [
         "網域"
+      ],
+      "Servers": [
+        "伺服器"
       ],
       "Users": [
         "使用者"
@@ -1984,6 +1996,9 @@
       "Invalid code": [
         "代碼無效"
       ],
+      "Invalid coupon": [
+        "無效優待券"
+      ],
       "Invalid expiration date": [
         "到期日無效"
       ],
@@ -1992,6 +2007,9 @@
       ],
       "Invalid postal code": [
         "郵遞區號無效"
+      ],
+      "Invalid VAT number": [
+        "錯誤的統一編號"
       ],
       "Invalid verification code": [
         "驗證碼無效"
@@ -2777,6 +2795,9 @@
       ],
       "${ n } month": [
         "${ n } 月"
+      ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "透過終端機安全地存取 ${ PASS_APP_NAME }，適合程式、自動化、和開發流程。"
       ],
       "Account holder": [
         "帳戶持有人"
@@ -3810,6 +3831,9 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "以標誌、影像、社交媒體圖示、您的聯絡詳情連結等等，個人化您的電子郵件簽名檔"
       ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "${ BRAND_NAME } 客戶服務團隊於歐洲辦公時間內，為 ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } 位或以上使用者的客戶提供電話支援"
+      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "防止郵件被 ${ BRAND_NAME } 或第三方存取。能夠讀取郵件的人，就只有寄件者和意指的收件者。"
       ],
@@ -4078,6 +4102,9 @@
       ]
     },
     "Payments": {
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% 稅金：${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "試用期結束後，於 ${ formattedDate } 付費"
       ],
@@ -4101,6 +4128,9 @@
       ],
       "I'm purchasing as a business": [
         "我以公司名義購買"
+      ],
+      "Including ${ rate }% tax": [
+        "包含 ${ rate }% 稅金"
       ],
       "Including ${ rate }% tax: ${ taxAmountElement }": [
         "包含 ${ rate }% 稅金${ taxAmountElement }"
@@ -4671,6 +4701,9 @@
       "Billing details updated": [
         "帳單詳情已更新"
       ],
+      "Billing information updated": [
+        "繳費資訊已更新"
+      ],
       "Code sent to ${ methodTo }": [
         "驗證碼已發送至 ${ methodTo }"
       ],
@@ -4899,6 +4932,9 @@
       ],
       "Simplify password management": [
         "簡化的密碼管理器"
+      ],
+      "Spring Sale": [
+        "春季促銷"
       ],
       "Summary": [
         "總結"

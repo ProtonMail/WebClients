@@ -711,14 +711,8 @@
       "import": [
         "importar"
       ],
-      "Import calendars": [
-        "Importar calendarios"
-      ],
       "Import contacts": [
         "Importar contactos"
-      ],
-      "Import emails": [
-        "Importar correos"
       ],
       "Import emails, calendars, contacts": [
         "Importar correos electrónicos, calendarios, contactos"
@@ -4627,7 +4621,7 @@
         "Ingrese una contraseña"
       ],
       "Enter your username without the domain (@example.com)": [
-        "Introduzca su nombre de usuario sin el dominio (@ejemplo.com)"
+        "Ingrese su nombre de usuario sin el dominio (@ejemplo.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al conectar a la API de Bitcoin."
@@ -4914,7 +4908,7 @@
         "Tiempo de espera agotado"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "El esquema de inversión del sujeto pasivo no es compatible con este plan"
+        "El esquema de cobro inverso no es compatible con este plan"
       ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "El envío de archivos adjuntos está limitado hasta que cumpla con los límites del plan o lo mejore."
@@ -6376,23 +6370,6 @@
         "Seleccione ${ boldExport } para exportar el calendario como un archivo ICS."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Importar desde ${ provider }"
-      ],
-      "Import from Google": [
-        "Importar desde Google"
-      ],
-      "Import from other": [
-        "Importar desde otro proveedor"
-      ],
-      "Import from Outlook": [
-        "Importar desde Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importar desde Yahoo"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos no se importarán. Haga clic para más detalles"
@@ -6929,9 +6906,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Impulse la identidad de marca de su organización y cree una experiencia en línea más consistente para sus usuarios."
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Traiga sus mensajes, contactos y calendarios a ${ BRAND_NAME }."
       ],
       "Browse privately and access blocked content.": [
         "Navegue de forma privada y accedea a contenidos bloqueados."
@@ -7745,9 +7719,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de las claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Le recomendamos que \"desconfíe\" de estas claves."
       ],
-      "One time import": [
-        "Importación única"
-      ],
       "Open shortcut cheat sheet": [
         "Abrir lista de trucos de atajos"
       ],
@@ -8001,9 +7972,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccione el formato de correo que quiere usar por defecto al enviar un correo a esta dirección."
-      ],
-      "Select what you want to import.": [
-        "Seleccione lo que quiere importar."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleccione los calendarios que quiere importar. Se creará un calendario nuevo para cada calendario importado de acuerdo con el número de calendarios disponibles en el plan."
@@ -8690,9 +8658,6 @@
       "You can either update your search query or clear it": [
         "Puede actualizar la consulta de búsqueda o borrarla"
       ],
-      "You can import one data type at a time.": [
-        "Puede importar un tipo de datos a la vez."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimine enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }.",
         "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimine enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }."
@@ -8826,7 +8791,7 @@
         "La cuenta tiene al menos una factura atrasada. Su acceso pronto será restringido. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Su cuenta está configurada actualmente para aplicar el esquema de inversión del sujeto pasivo. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
+        "Su cuenta está actualmente configurada para aplicar el esquema de cargo inverso. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "El navegador no admite el asistente de escritura. Intente ejecutarlo en los servidores."
@@ -9337,9 +9302,6 @@
       "Calendar": [
         "Calendario"
       ],
-      "Calendars": [
-        "Calendarios"
-      ],
       "Carbon Copy": [
         "Con copia"
       ],
@@ -9471,9 +9433,6 @@
       ],
       "Email format": [
         "Formato de correo electrónico"
-      ],
-      "Emails": [
-        "Correos"
       ],
       "Emails (all messages)": [
         "Correos (todos los mensajes)"
@@ -12378,7 +12337,7 @@
         "Número de IVA"
       ],
       "VAT reverse charge mechanism applies.": [
-        "El mecanismo de inversión del sujeto pasivo se aplica."
+        "Se aplica el mecanismo de cargo inverso del IVA."
       ],
       "You already have a subscription to this plan.": [
         "Ya tiene una suscripción a este plan."
@@ -15608,7 +15567,7 @@
         "Solicitar un código nuevo"
       ],
       "Reverse charge not supported": [
-        "Inversión del sujeto pasivo no soportada"
+        "Cargo inverso no soportado"
       ],
       "Same inbox, shorter email address": [
         "El mismo buzón con una dirección de correo más corta"
@@ -15851,9 +15810,6 @@
       ],
       "What is a VPN?": [
         "¿Qué es una VPN?"
-      ],
-      "What would you like to import?": [
-        "¿Qué quiere importar?"
       ],
       "When is it most important to use a VPN?": [
         "¿Cuándo es más importante utilizar una VPN?"

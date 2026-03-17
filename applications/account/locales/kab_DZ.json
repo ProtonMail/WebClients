@@ -10,17 +10,8 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Kkes awelleh"
-      ],
       "Mail forward stopped": [
         "Awelleh n yimayl yeḥbes"
-      ],
-      "Reconnect": [
-        "Ales tuqqna"
-      ],
-      "Remove forward": [
-        "Kkes awelleh"
       ],
       "You will stop the mail forwarding.": [
         "Ad tesḥebseḍ awelleh n yimayl."
@@ -500,15 +491,6 @@
       ],
       "Import": [
         "Kter"
-      ],
-      "Import calendars": [
-        "Kter iwitayen"
-      ],
-      "Import contacts": [
-        "Sgaǧ-d tansiwin"
-      ],
-      "Import emails": [
-        "Kter imaylen"
       ],
       "Import from Google": [
         "Kter seg Google"
@@ -4327,22 +4309,6 @@
         "Fren ${ boldExport } i usifeḍ n uwitay am ufaylu ICS."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Kter seg ${ provider }"
-      ],
-      "Import from Google": [
-        "Kter seg Google"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Asefrek yekfa"
-      ],
-      "Undo in progress": [
-        "Asefsex iteddu"
-      ]
-    },
     "Import status": {
       "Active": [
         "Urmid"
@@ -4350,26 +4316,14 @@
       "Canceled": [
         "Yettwasefsex"
       ],
-      "Canceling": [
-        "Asefsex"
-      ],
-      "Completed": [
-        "Immed"
-      ],
       "Delayed": [
         "Ittwalukkez"
       ],
       "Failed": [
         "Yecceḍ"
       ],
-      "In progress": [
-        "Iteddu"
-      ],
       "Paused": [
         "Tarist"
-      ],
-      "Started": [
-        "Yebda"
       ]
     },
     "Import type": {
@@ -4404,15 +4358,6 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } t•yesra tasiregt-ik•im ɣer ${ enableDesktopNotifications }."
-      ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } iseḥbes akatar i kra n wakud acku truḥ-as tuqqna d usaǧǧaw-nniḍen n yimayl-ik·im. Ttxil-k·m ales tuqqna."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } yesseḥbes akatar i kra n wakud acku amiḍan-ik·im txuṣṣ deg-s tallunt. Tzemreḍ:"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } ad yeεreḍ ad ikemmel aktar akken kan ara iwennez usaǧǧaw n yimayl-ik·im ${ bandwidthLimitLink } amiḍan-ik·im. Ur teḥwaǧeḍ ad tgeḍ kra. Ma yella tesfesxeḍ aktar-inek·inem, ur tezmireḍ ara ad t-tkemmleḍ, ilaq ad as-d-tεawdeḍ seg tazwara."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } n uwitay amaynut",
@@ -4836,9 +4781,6 @@
       "Free forever": [
         "Baṭel i lebda"
       ],
-      "free up space by deleting older messages or other data": [
-        "slelli tallunt s tukksa n yiznan iqburen neɣ isefka-nniḍen"
-      ],
       "Gateways": [
         "Tinezgarin"
       ],
@@ -5060,9 +5002,6 @@
       "No Gateways yet": [
         "Ulac tiqenṭyar akka tura"
       ],
-      "No imports or forwarding history.": [
-        "Ulac aktaren neɣ awelleh n uzray"
-      ],
       "No label selected": [
         "Ulac tabzimt yettwafernen"
       ],
@@ -5167,9 +5106,6 @@
       "Public link invite": [
         "Aseɣwen n usnubget azayaz"
       ],
-      "purchase additional storage": [
-        "aɣ-d aklas n zzyada"
-      ],
       "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
         "Rmes-d abun n uḥraz s yimayl. Kečč neɣ aqcic-nni tzemrem ad t-tesqedcem i usermed n tansa di 15 iseggasen i d-iteddun. ${ learnMoreLink }"
       ],
@@ -5224,9 +5160,6 @@
       "Securing your account": [
         "Aseɣles n umiḍan-ik·im"
       ],
-      "Select what you want to import.": [
-        "Fren acu i tebɣiḍ ad t-tketreḍ."
-      ],
       "Server is currently down": [
         "Aqeddac akka tura yerreẓ"
       ],
@@ -5238,9 +5171,6 @@
       ],
       "Set password": [
         "Sbadu awal uffir"
-      ],
-      "Set up forwarding": [
-        "Sbadu awelleh"
       ],
       "Set up your organization": [
         "Sbadu tuddsa-ik•im"
@@ -5540,9 +5470,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Tzemreḍ ad tesneqdeḍ asesfer n ${ importProgressLink }."
       ],
-      "You can import one data type at a time.": [
-        "Tzemreḍ ad tketreḍ yiwen wanaw n yiqefka ɣef tikkelt."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Tzemreḍ ad tremdeḍ ilɣuyen i wakken ad teṭṭfeḍ alɣu mi ara d-awwḍen yiznan imaynuten deg ukaram-a."
       ],
@@ -5594,10 +5521,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Ifuyla-k.m ad ttwawgelhen syin ad ttwaskelsen"
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Akatar-ik seg ${ accounts } iɛeṭṭel i kra n wakud.",
-        "Ikataren-ik seg ${ accounts } ɛeṭṭlen i kra n wakud."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Talɣut-ik·im n unekcum ur tettwaseklas ara alamma yemmed uktar."
@@ -6122,9 +6045,6 @@
       "Calendar": [
         "Awitay"
       ],
-      "Calendars": [
-        "Iwitayen"
-      ],
       "Card details": [
         "Talqayt n usmad"
       ],
@@ -6289,9 +6209,6 @@
       ],
       "Email or username": [
         "Imayl neɣ isem n useqdac"
-      ],
-      "Emails": [
-        "Imaylen"
       ],
       "Emails (all messages)": [
         "Imaylen (akk iznan)"
@@ -10092,9 +10009,6 @@
       "Help center": [
         "Tallalt"
       ],
-      "History": [
-        "Amazray"
-      ],
       "Home": [
         "Asebter agejdan"
       ],
@@ -10495,9 +10409,6 @@
       "Warning: suspected fake website": [
         "Ɣur-k•m: yettban d yir asmel web"
       ],
-      "What would you like to import?": [
-        "Acu tebɣiḍ ad tketreḍ?"
-      ],
       "WireGuard configuration": [
         "Tawila n WireGuard"
       ],
@@ -10536,20 +10447,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Tigawin"
-      ],
-      "Date": [
-        "Azemz"
-      ],
-      "Import": [
-        "Kter"
-      ],
       "Size": [
         "Tiddi"
-      ],
-      "Status": [
-        "Addad"
       ]
     },
     "Title header for addresses domain table": {
@@ -10969,9 +10868,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Ad tesruḥeḍ kra n waggan i tgiḍ ar tura."
-      ],
-      "You will not see this import record in the list any more.": [
-        "Dayen ur tettwaliḍ ara asekles-a n tektert deg tebdart."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Aneɛruḍ-ik n baṭel ad ifakk deg ${ textDate }. ${ action }"

@@ -539,15 +539,6 @@
       "Import": [
         "นําเข้า"
       ],
-      "Import calendars": [
-        "นำเข้าปฏิทิน"
-      ],
-      "Import contacts": [
-        "นำเข้ารายชื่อติดต่อ"
-      ],
-      "Import emails": [
-        "นำเข้าอีเมล"
-      ],
       "Import emails, calendars, contacts": [
         "นำเข้าอีเมล, ปฏิทิน, ผู้ติดต่อ"
       ],
@@ -5514,23 +5505,6 @@
         "เลือก ${ boldExport } เพื่อส่งออกปฏิทินเป็นไฟล์ ICS"
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "นำเข้าจาก ${ provider }"
-      ],
-      "Import from Google": [
-        "นำเข้าจาก Google"
-      ],
-      "Import from other": [
-        "นำเข้าจากอื่นๆ"
-      ],
-      "Import from Outlook": [
-        "นำเข้าจาก Outlook"
-      ],
-      "Import from Yahoo": [
-        "นำเข้าจาก Yahoo"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "มีรายชื่อติดต่อ ${ totalContactsDiscarded } จากทั้งหมด ${ totalContacts } รายชื่อติดต่อที่ได้นำเข้ามา คลิกเพื่อดูรายละเอียด"
@@ -5971,9 +5945,6 @@
       ],
       "Billing cycle: ${ text }": [
         "รอบการชำระเงิน: ${ text }"
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "ย้ายข้อความ รายชื่อติดต่อ และปฏิทินของคุณมาที่ ${ BRAND_NAME }"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "หากดำเนินการดาวน์เกรดบัญชีไปแบบบัญชีฟรี คุณจะไม่สามารถเข้าถึงสิทธิพิเศษอื่นๆ แม้ว่าคุณจะกลับมาอัปเกรดบัญชีอีกในอนาคต"
@@ -6791,9 +6762,6 @@
       "Once you reset your password:": [
         "เมื่อรีเซ็ตรหัสผ่าน:"
       ],
-      "One time import": [
-        "นำเข้าครั้งเดียว"
-      ],
       "Open source": [
         "โอเพนซอร์ส"
       ],
@@ -7069,9 +7037,6 @@
       ],
       "Select users to view their activity": [
         "เลือกผู้ใช้เพื่อดูกิจกรรมของพวกเขา"
-      ],
-      "Select what you want to import.": [
-        "เลือกสิ่งที่ต้องการนำเข้า"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "เลือกปฏิทินที่จะนำเข้า จะมีการสร้างปฏิทินใหม่สำหรับแต่ละปฏิทินที่นำเข้าตามจำนวนปฏิทินที่มีในแผนของคุณ"
@@ -7757,9 +7722,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "คุณสามารถรับบริการความเป็นส่วนตัวพรีเมียมของเราได้ในชุดรวมเดียว — และเพียง **${ priceString }/เดือน**"
       ],
-      "You can import one data type at a time.": [
-        "สามารถนำเข้าประเภทข้อมูลได้ทีละหนึ่งรายการ"
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "สามารถเก็บปฏิทินไว้ได้สูงสุด ${ MAX_CALENDARS_FREE } ปฏิทิน โปรดลบลิงก์ปฏิทินที่แชร์และผู้ใช้ ${ BRAND_NAME } ที่มีการแชร์ปฏิทินด้วยก่อนที่จะยกเลิกการสมัครสมาชิก ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -8261,9 +8223,6 @@
       "Calendar": [
         "ปฏิทิน"
       ],
-      "Calendars": [
-        "ปฏิทิน"
-      ],
       "Card details": [
         "รายละเอียดบัตร"
       ],
@@ -8413,9 +8372,6 @@
       ],
       "Email or username": [
         "อีเมลหรือชื่อผู้ใช้"
-      ],
-      "Emails": [
-        "อีเมล"
       ],
       "Emails (all messages)": [
         "อีเมล (ข้อความทั้งหมด)"
@@ -15261,9 +15217,6 @@
       ],
       "What is the dark web?": [
         "ดาร์กเว็บคืออะไร?"
-      ],
-      "What would you like to import?": [
-        "ต้องการนำเข้าอะไร?"
       ],
       "Wipe all logs?": [
         "ล้างบันทึกทั้งหมดหรือไม่?"

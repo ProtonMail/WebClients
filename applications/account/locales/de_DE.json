@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Weiterleitung löschen"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Weiterleiten beginnt bald. Neue E-Mails werden in deinem Posteingang erscheinen."
       ],
       "Mail forward stopped": [
         "E-Mail-Weiterleitung angehalten"
-      ],
-      "Reconnect": [
-        "Erneut verbinden"
-      ],
-      "Remove forward": [
-        "Weiterleitung entfernen"
       ],
       "You will stop the mail forwarding.": [
         "Die E-Mail-Weiterleitung wird angehalten."
@@ -471,6 +462,9 @@
       "Delete filter “${ Name }”": [
         "Filter “${ Name }” löschen"
       ],
+      "Delete forward": [
+        "Weiterleitung löschen"
+      ],
       "Delete Gateway": [
         "Gateway löschen"
       ],
@@ -861,6 +855,9 @@
       "Go to settings": [
         "Einstellungen öffnen"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Verstanden"
       ],
@@ -887,15 +884,6 @@
       ],
       "Import": [
         "Importieren"
-      ],
-      "Import calendars": [
-        "Kalender importieren"
-      ],
-      "Import contacts": [
-        "Kontakte importieren"
-      ],
-      "Import emails": [
-        "E-Mails importieren"
       ],
       "Import emails, calendars, contacts": [
         "E-Mails, Kalender und Kontakte importieren"
@@ -1202,6 +1190,9 @@
       ],
       "Remove domain": [
         "Domain entfernen"
+      ],
+      "Remove forward": [
+        "Weiterleitung entfernen"
       ],
       "Remove from favorites": [
         "Von Favoriten entfernen"
@@ -4819,6 +4810,9 @@
       ],
       "Available with ${ title }": [
         "Verfügbar mit ${ title }"
+      ],
+      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
+        "Wähle den Dienst, den du in ${ MAIL_APP_NAME } einbinden möchtest, und wir leiten dich durch das Verbinden einer E-Mail-Adresse oder das Importieren deiner E-Mails, Kalender oder Kontakte."
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Konfiguriere dies zuerst, um deine Organisation zu aktivieren und deine E-Mail-Adresse anzupassen."
@@ -8851,28 +8845,11 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Import von ${ provider }"
+      "Advanced import": [
+        "Erweiterter Import"
       ],
-      "Import from Google": [
-        "Von Google importieren"
-      ],
-      "Import from other": [
-        "Von anderen importieren"
-      ],
-      "Import from Outlook": [
-        "Von Outlook importieren"
-      ],
-      "Import from Yahoo": [
-        "Von Yahoo importieren"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Widerrufen abgeschlossen"
-      ],
-      "Undo in progress": [
-        "Widerrufen wird ausgeführt"
+      "Import from ${ providerName }": [
+        "Import von ${ providerName }"
       ]
     },
     "Import status": {
@@ -8882,26 +8859,32 @@
       "Canceled": [
         "Abgebrochen"
       ],
-      "Canceling": [
-        "Wird abgebrochen"
-      ],
-      "Completed": [
-        "Abgeschlossen"
+      "Canceling...": [
+        "Wird abgebrochen..."
       ],
       "Delayed": [
         "Verzögert"
       ],
+      "Disabled": [
+        "Deaktiviert"
+      ],
       "Failed": [
         "Fehlgeschlagen"
       ],
-      "In progress": [
-        "In Bearbeitung"
+      "Imported": [
+        "Importiert"
+      ],
+      "In progress...": [
+        "In Bearbeitung..."
       ],
       "Paused": [
         "Angehalten"
       ],
-      "Started": [
-        "Gestartet"
+      "Undo finished": [
+        "Rückgängig machen abgeschlossen"
+      ],
+      "Undo in progress": [
+        "Rückgängigmachen wird ausgeführt"
       ]
     },
     "Import type": {
@@ -8961,17 +8944,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } gibt deine Daten niemals an Dritte weiter. Die Daten stammen aus den eigenen Analysen von ${ BRAND_NAME } und Constella Intelligence."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } hat einen Import angehalten, weil es die Verbindung mit deinem anderen E-Mail-Anbieter verloren hat. Bitte verbinde dich erneut."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } hat einen Import angehalten, weil der Speicherplatz auf deinem Konto knapp wird. Du kannst:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } wird versuchen, den Import fortzusetzen, sobald dein E-Mail-Anbieter die ${ bandwidthLimitLink } deines Kontos zurücksetzt. Du brauchst nichts weiter zu unternehmen. Wenn du den Import abbrichst, kannst du ihn nicht mehr fortsetzen und er muss erneut begonnen werden."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s Verschlüsselungstechnologie bedeutet, dass keiner Zugriff auf dein Passwort hat - nicht einmal wir."
@@ -9447,6 +9421,12 @@
       "An error occurred while communicating with the extension": [
         "Bei der Kommunikation mit der Erweiterung ist ein Fehler aufgetreten."
       ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "Ein Import wurde pausiert, da die Verbindung zu deinem E-Mail-Anbieter unterbrochen wurde."
+      ],
+      "An import is paused because your storage is almost full.": [
+        "Ein Import ist pausiert, da dein Speicherplatz fast voll ist."
+      ],
       "and": [
         "und"
       ],
@@ -9615,9 +9595,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Stärke die Markenidentität deines Unternehmens und schaffe ein konsistentes Online-Erlebnis für deine Benutzer."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Bringe deine Nachrichten, Kontakte und Kalender zu ${ BRAND_NAME }."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Wenn du ein ${ PASS_APP_NAME }-Konto mit deiner SimpleLogin-E-Mail-Adresse erstellst, kannst du deine Aliasse direkt von ${ PASS_APP_NAME } aus verwalten."
       ],
@@ -9659,6 +9636,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Wähle eine Entitäts-ID, um fortzufahren."
+      ],
+      "Choose your service to connect with": [
+        "Deinen Dienst zum Verbinden auswählen"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
@@ -10163,8 +10143,8 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Für Benutzer, die von einem anderen E-Mail-Anbieter zu ${ MAIL_APP_NAME } wechseln, wähle den Tab ${ boldAddresses } aus und füge alle aktiven E-Mail-Adressen hinzu, bevor du den MX-Eintrag änderst, damit ein reibungsloser Übergang gewährleistet ist."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Leite ankommende E-Mails eines anderen Kontos in deinen sicheren ${ MAIL_APP_NAME } Posteingang weiter."
+      "Forwarding automatically sends new incoming emails to your Inbox.": [
+        "Die automatische Weiterleitung sendet neu eingehende E-Mails automatisch an deinen Posteingang."
       ],
       "Free forever": [
         "Für immer kostenlos"
@@ -10172,8 +10152,8 @@
       "Free trial": [
         "Kostenlose Testversion"
       ],
-      "free up space by deleting older messages or other data": [
-        "durch Löschen älterer Nachrichten oder anderer Daten Speicherplatz freigeben"
+      "Free up space or upgrade your storage to continue.": [
+        "Gib Speicherplatz frei oder erweitere deinen Speicher, um fortzufahren."
       ],
       "Friends and family": [
         "Freunde und Familie"
@@ -10359,11 +10339,18 @@
       "Import from": [
         "Importieren aus"
       ],
+      "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
+        "Import von ${ accounts } ist aufgrund einer Bandbreitenbeschränkung vorübergehend verzögert.",
+        "Importe von ${ accounts } sind aufgrund einer Bandbreitenbeschränkung vorübergehend verzögert."
+      ],
       "Import in progress": [
         "Datenimport läuft gerade"
       ],
       "Import mailbox": [
         "Postfach importieren"
+      ],
+      "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
+        "Importiere E-Mails, Kalender oder Kontakte einmalig in dein ${ BRAND_NAME }-Konto und zeige sie an."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "WICHTIG: Falls deine DNS-Konsole nicht zulässt CNAME-Einträge mit einem Punkt abzuschließen, kannst du den letzten Punkt in den CNAME-Einträgen entfernen."
@@ -10735,9 +10722,6 @@
       "No Gateways yet": [
         "Noch keine Gateways"
       ],
-      "No imports or forwarding history.": [
-        "Kein Import- oder Weiterleitungsverlauf."
-      ],
       "No label selected": [
         "Keine Kategorie ausgewählt"
       ],
@@ -10785,9 +10769,6 @@
       ],
       "Once you reset your password:": [
         "Sobald du dein Passwort zurücksetzt:"
-      ],
-      "One time import": [
-        "Einmaliger Import"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ändere diese Einstellungen nur, wenn du PGP mit Nicht-${ BRAND_NAME }-Empfängern verwendest."
@@ -10958,6 +10939,9 @@
       "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
         "Bitte öffne die Einstellungen deiner Browser-Erweiterung und erlaube der ${ PASS_APP_NAME }-Erweiterung, auf Website-Daten zuzugreifen. Lade dann diese Seite neu."
       ],
+      "Please reconnect to continue.": [
+        "Bitte verbinde dich erneut, um fortzufahren."
+      ],
       "Please select the folders you would like to import:": [
         "Bitte die zu importierenden Ordner auswählen:"
       ],
@@ -11032,9 +11016,6 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Die öffentliche Freigabe von Dokumenten wird noch nicht unterstützt."
-      ],
-      "purchase additional storage": [
-        "zusätzlichen Speicher kaufen"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Wende dich an uns, wenn du Hilfe zu ${ BRAND_NAME } benötigst."
@@ -11159,9 +11140,6 @@
       "Select users to view their activity": [
         "Benutzer auswählen, um deren Aktivitäten anzuzeigen"
       ],
-      "Select what you want to import.": [
-        "Wähle aus, was du importieren möchtest."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis das Maximum deines Abonnements erreicht ist."
       ],
@@ -11197,9 +11175,6 @@
       ],
       "Set password": [
         "Passwort festlegen"
-      ],
-      "Set up forwarding": [
-        "Weiterleitung einrichten"
       ],
       "Set up your organization": [
         "Organisation einrichten"
@@ -11398,6 +11373,9 @@
       ],
       "Thanks for the feedback!": [
         "Vielen Dank für dein Feedback!"
+      ],
+      "The ${ bandwidthLimitLink } was reached. We'll automatically resume it once it resets.": [
+        "Die ${ bandwidthLimitLink } wurde erreicht. Wir setzen sie automatisch fort, sobald sie zurückgesetzt wird."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Die Meldung ${ boldDataLocked } wird nicht mehr angezeigt, aber du kannst deine Daten weiterhin unter ${ encryptionAndKeysLink } entsperren."
@@ -12123,9 +12101,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Du kannst unsere Premium-Privatsphäre-Dienste in einem Paket bekommen – und es kostet nur **${ priceString } pro Monat**."
       ],
-      "You can import one data type at a time.": [
-        "Du kannst jeweils nur einen Datentyp importieren."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne geteilte Kalenderverknüpfungen und alle ${ BRAND_NAME } Nutzer, mit denen du deine Kalender geteilt hast, bevor du dein ${ MAIL_SHORT_APP_NAME } Abonnement kündigst.",
         "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne geteilte Kalenderverknüpfungen und alle ${ BRAND_NAME } Benutzer, mit denen du deine Kalender geteilt hast, bevor du dein ${ MAIL_SHORT_APP_NAME } Abonnement kündigst."
@@ -12336,10 +12311,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Deine kostenlose Testversion wurde erfolgreich in ein monatliches Abonnement umgewandelt. Dein Verlängerungsdatum ist der ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Dein Import von ${ accounts } verzögert sich vorübergehend.",
-        "Deine Importe von ${ accounts } verzögern sich vorübergehend."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Deine Informationen sind bei uns sicher. Wir kontaktieren dich nur, wenn es für die Erbringung unserer Dienstleistungen erforderlich ist."
@@ -13304,9 +13275,6 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendars": [
-        "Kalender"
-      ],
       "Capitalize words": [
         "Wörter großschreiben"
       ],
@@ -13558,9 +13526,6 @@
       ],
       "Email or username": [
         "E‐Mail‐Adresse oder Benutzername"
-      ],
-      "Emails": [
-        "E-Mails"
       ],
       "Emails (all messages)": [
         "E-Mails (alle Nachrichten)"
@@ -22900,6 +22865,9 @@
       "Check your default mail application": [
         "Überprüfe deine Standard-E-Mail-Anwendung"
       ],
+      "Choose a provider": [
+        "Anbieter wählen"
+      ],
       "Choose an account": [
         "Konto auswählen"
       ],
@@ -23026,6 +22994,9 @@
       ],
       "Currency": [
         "Währung"
+      ],
+      "Custom": [
+        "Benutzerdefiniert"
       ],
       "Custom domains:": [
         "Eigene Domains:"
@@ -23362,6 +23333,9 @@
       "Forward emails": [
         "E-Mails weiterleiten"
       ],
+      "Forwardings": [
+        "Weiterleitungen"
+      ],
       "Free": [
         "Kostenlos"
       ],
@@ -23449,9 +23423,6 @@
       "Help center": [
         "Hilfezentrum"
       ],
-      "History": [
-        "Verlauf"
-      ],
       "Home": [
         "Startseite"
       ],
@@ -23500,6 +23471,12 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importieren mit ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Deine Daten nach ${ BRAND_NAME } importieren"
+      ],
+      "Imports": [
+        "Importe"
       ],
       "Inactive 2FA": [
         "Inaktive 2FA"
@@ -23876,6 +23853,9 @@
       "Select contact group": [
         "Kontaktgruppe auswählen"
       ],
+      "Select data to import": [
+        "Daten zum Import auswählen"
+      ],
       "Select the time to send this notification": [
         "Auswählen, zu welchem Zeitpunkt diese Benachrichtigung gesendet werden soll"
       ],
@@ -24201,9 +24181,6 @@
       "What is the dark web?": [
         "Was ist das Dark Web?"
       ],
-      "What would you like to import?": [
-        "Was möchtest du importieren?"
-      ],
       "Wipe all logs?": [
         "Alle Protokolle löschen?"
       ],
@@ -24281,20 +24258,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Aktionen"
-      ],
-      "Date": [
-        "Datum"
-      ],
-      "Import": [
-        "Importieren"
-      ],
       "Size": [
         "Größe"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Title header for addresses domain table": {
@@ -25435,7 +25400,7 @@
       "You will lose any customization you made so far.": [
         "Dabei gehen alle bisher vorgenommenen Anpassungen verloren."
       ],
-      "You will not see this import record in the list any more.": [
+      "You will not see this import record in the list anymore.": [
         "Du wirst diesen Import-Eintrag in der Liste nicht mehr sehen."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [

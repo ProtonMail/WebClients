@@ -551,6 +551,9 @@
       "Go to settings": [
         "Ayarlara git"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Anladım"
       ],
@@ -587,14 +590,8 @@
       "import": [
         "içe aktar"
       ],
-      "Import calendars": [
-        "Takvimleri içe aktar"
-      ],
       "Import contacts": [
         "Kişileri içe aktar"
-      ],
-      "Import emails": [
-        "E-postaları içe aktar"
       ],
       "Import emails, calendars, contacts": [
         "E-postaları, takvimleri, kişileri içe aktarın"
@@ -3428,7 +3425,7 @@
         "6 rakam yazın"
       ],
       "Enter your username without the domain (@example.com)": [
-        "Kullanıcı adınızı etki alanı (@example.com) olmadan girin"
+        "Kullanıcı adınızı etki alanı (@example.com) olmadan yazın"
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
@@ -3548,7 +3545,7 @@
         "Kod geçersiz"
       ],
       "Invalid coupon": [
-        "Geçersiz kupon"
+        "Kupon geçersiz"
       ],
       "Invalid email address": [
         "E-posta adresi geçersiz"
@@ -3715,7 +3712,7 @@
         "İstek zaman aşımına uğradı"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "Bu tarife için sorumlu sıfatıyla KDV usulü desteklenmemektedir"
+        "Bu tarifede tersine KDV uygulaması desteklenmiyor"
       ],
       "Search failed": [
         "Arama yapılamadı"
@@ -3799,7 +3796,7 @@
         "Eklenebilecek en az kredi tutarı: ${ price }"
       ],
       "The minimum donation amount is ${ price }": [
-        "Minimum bağış tutarı ${ price }"
+        "En az bağış tutarı ${ price }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Özgün dosyanın yeni düzeltmesi henüz yüklenmemiş. Lütfen bir süre sonra yeniden deneyin"
@@ -4824,20 +4821,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "${ provider } üzerinden içe aktar"
-      ],
-      "Import from Google": [
-        "Google üzerinden içe aktar"
-      ],
-      "Import from other": [
-        "Diğerleri üzerinden içe aktar"
-      ],
-      "Import from Outlook": [
-        "Outlook üzerinden içe aktar"
-      ],
-      "Import from Yahoo": [
-        "Yahoo üzerinden içe aktar"
+      "Advanced import": [
+        "Gelişmiş içe aktarma"
       ]
     },
     "Import warning": {
@@ -5245,9 +5230,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha tutarlı bir çevrim içi deneyim sunun."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "İletilerinizi, kişilerinizi ve takvimlerinizi ${ BRAND_NAME } üzerine alın."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
       ],
@@ -5301,6 +5283,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Size en uygun tarifeyi seçin."
+      ],
+      "Choose your service to connect with": [
+        "Bağlanmak istediğiniz hizmeti seçin"
       ],
       "Clear all search data": [
         "Tüm arama verilerini temizle"
@@ -5953,9 +5938,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilen anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
       ],
-      "One time import": [
-        "Tek seferlik içe aktarma"
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Önerilen işlemler ve yararlı bağlantılar için rehberi açın."
       ],
@@ -6183,7 +6165,7 @@
         "Arama özelliği açıldı"
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
-        "Arama etkinleştirildi. Artık bu iletişim kutusunu kapatabilir, dosya ve klasörleri arayabilirsiniz."
+        "Arama özelliği açıldı. Bu pencereyi kapatarak dosyaları ve klasörleri arayabilirsiniz."
       ],
       "Select a destination folder": [
         "Hedef klasörü seçin"
@@ -6205,9 +6187,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, bir e-posta gönderilirken varsayılan olarak kullanılmasını istediğiniz e-posta biçimini seçin."
-      ],
-      "Select what you want to import.": [
-        "İçe aktarmak istediklerinizi seçin."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Hangi takvimlerin içe aktarılacağını seçin. İçe aktarılan her takvim için tarifenizde bulunan takvim sayısına göre yeni bir takvim oluşturulur."
@@ -6488,7 +6467,7 @@
         "Gerçek gizliliği koruyan arama özelliğini açmak için yerel dizini hazırlamamız gerekiyor. ${ DRIVE_APP_NAME } kullanmayı normal şekilde sürdürebilirsiniz. Dizin hazırlama işlemi tamamlandığında sizi bilgilendireceğiz."
       ],
       "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Gerçek arama özelliğini etkinleştirmek için dosyalarınızı yerel olarak dizine eklememiz gerekiyor. ${ DRIVE_APP_NAME } öğesini normal şekilde kullanmaya devam edebilirsiniz. Dizine ekleme işlemi tamamlandığında size bilgi vereceğiz."
+        "Gerçek arama özelliğini açmak için yerel dizini hazırlamamız gerekiyor. ${ DRIVE_APP_NAME } kullanmayı normal şekilde sürdürebilirsiniz. Dizin hazırlama işlemi tamamlandığında sizi bilgilendireceğiz."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
@@ -6782,9 +6761,6 @@
       "You can close the tab or browser in the meantime.": [
         "Bu sırada sekmeyi veya tarayıcıyı kapatabilirsiniz."
       ],
-      "You can import one data type at a time.": [
-        "Bir seferde bir veri türünü içe aktarabilirsiniz."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
         "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın."
@@ -6875,7 +6851,7 @@
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Hesabınız şu anda sorumlu sıfatıyla KDV usulünü uygulayacak şekilde yapılandırılmış. Bu durum seçilen tarife için desteklenmemektedir. Devam etmek için ya fatura adresinden KDV numarasını kaldırın ya da farklı bir tarife seçin."
+        "Hesabınızda şu anda tersine KDV uygulaması yapılandırılmış. Seçilmiş tarifede bu uygulama desteklenmiyor. İlerlemek için fatura adresinden KDV numarasını kaldırabilir ya da farklı bir tarife seçebilirsiniz."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Geçerli tarayıcınız büyük dosyaların/birden fazla dosyanın indirilmesini desteklemiyor. Yükleme ve indirme işlemlerinde kesinti olmaması için bilgisayar uygulamasını indirin."
@@ -7172,9 +7148,6 @@
       "Calendar": [
         "Takvim"
       ],
-      "Calendars": [
-        "Takvimler"
-      ],
       "can edit": [
         "düzenleyebilir"
       ],
@@ -7310,9 +7283,6 @@
       ],
       "Email format": [
         "E-posta biçimi"
-      ],
-      "Emails": [
-        "E-postalar"
       ],
       "Emails (all messages)": [
         "E-postalar (tüm iletiler)"
@@ -10176,7 +10146,7 @@
         "KDV numarası"
       ],
       "VAT reverse charge mechanism applies.": [
-        "Sorumlu sıfatıyla KDV uygulaması geçerlidir."
+        "Tersine KDV uygulaması kullanılıyor."
       ],
       "You already have a subscription to this plan.": [
         "Bu tarife için zaten bir aboneliğiniz var."
@@ -12240,6 +12210,9 @@
       "Check for malicious files": [
         "Kötü amaçlı dosyalar denetlensin"
       ],
+      "Choose a provider": [
+        "Sağlayıcı seçin"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } adresinizi alın"
       ],
@@ -12305,6 +12278,9 @@
       ],
       "Currency": [
         "Para birimi"
+      ],
+      "Custom": [
+        "Özel"
       ],
       "Customize and confirm": [
         "Özelleştir ve onayla"
@@ -12569,6 +12545,9 @@
       "Import groups": [
         "Grupları içe aktar"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Verilerinizi ${ BRAND_NAME } aktarın"
+      ],
       "Information exposed in breach": [
         "Veri sızıntısında açığa çıkan bilgiler"
       ],
@@ -12823,7 +12802,7 @@
         "Dosyalarınızı geri yükleyin"
       ],
       "Reverse charge not supported": [
-        "Sorumlu sıfatıyla KDV desteklenmiyor"
+        "Tersine KDV uygulaması desteklenmiyor"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Daha sonra kullanmak için ${ DRIVE_APP_NAME } üzerine kaydet"
@@ -12845,6 +12824,9 @@
       ],
       "Select contact group": [
         "Kişi grubunu seç"
+      ],
+      "Select data to import": [
+        "İçe aktarılacak verileri seçin"
       ],
       "Select link expiration date": [
         "Bağlantının geçerlilik sonu tarihini seçin"
@@ -13085,9 +13067,6 @@
       ],
       "What is a VPN?": [
         "Bir VPN nedir?"
-      ],
-      "What would you like to import?": [
-        "Neyi içe aktarmak istersiniz?"
       ],
       "When is it most important to use a VPN?": [
         "VPN kullanmak en çok ne zaman önemlidir?"

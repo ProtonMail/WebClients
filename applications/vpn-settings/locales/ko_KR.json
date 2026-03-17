@@ -176,6 +176,9 @@
       "Close navigation": [
         "탐색 종료"
       ],
+      "Close search": [
+        "검색 닫기"
+      ],
       "Close this banner": [
         "이 배너 닫기"
       ],
@@ -530,6 +533,9 @@
       "Go to panel ${ index }": [
         "패널로 가기 ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "확인"
       ],
@@ -553,15 +559,6 @@
       ],
       "Import": [
         "불러오기"
-      ],
-      "Import calendars": [
-        "캘린더 불러오기"
-      ],
-      "Import contacts": [
-        "연락처 가져오기"
-      ],
-      "Import emails": [
-        "이메일 가져오기"
       ],
       "Import emails, calendars, contacts": [
         "이메일, 캘린더 및 연락처 불러오기"
@@ -838,6 +835,9 @@
       ],
       "Search countries": [
         "국가 검색"
+      ],
+      "Search groups": [
+        "그룹 검색"
       ],
       "See DNS TXT record": [
         "DNS TXT 레코드 보기"
@@ -1821,6 +1821,9 @@
       "Authenticate your Google Workspace account": [
         "Google Workspace 계정 인증"
       ],
+      "Completed": [
+        "완료"
+      ],
       "Configure migration": [
         "이전 작업 구성"
       ],
@@ -1841,6 +1844,12 @@
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace 앱에서 ${ BRAND_NAME }으로 데이터를 복사"
+      ],
+      "Has errors": [
+        "오류 있음"
+      ],
+      "In progress": [
+        "진행 중"
       ],
       "Install app": [
         "앱 설치"
@@ -1872,6 +1881,9 @@
       "Migration status": [
         "마이그레이션 상태"
       ],
+      "Not started": [
+        "시작 전"
+      ],
       "Organization does not have enough seats available": [
         "조직의 사용 권한이 충분하지 않습니다."
       ],
@@ -1896,8 +1908,14 @@
       "Set up": [
         "설정"
       ],
+      "Settings": [
+        "설정"
+      ],
       "Sign in to Google Workspace": [
         "Google Workspace에 로그인"
+      ],
+      "Status": [
+        "상태"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "조직의 데이터를 이전하려면 Google Workspace Marketplace에서 ${ BRAND_NAME } 이전 도우미 앱을 설치해야 합니다. 이 앱을 통해 ${ BRAND_NAME }에서 데이터를 복사할 수 있는 권한이 부여됩니다. 설치 후 계속 진행하려면 이곳으로 돌아오세요."
@@ -1907,6 +1925,9 @@
       ],
       "User": [
         "사용자"
+      ],
+      "Users migrated": [
+        "사용자가 이전되었습니다."
       ],
       "Verify installation": [
         "설치 검증"
@@ -3487,6 +3508,9 @@
       ]
     },
     "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "첫 달 ${ offerPrice }. 이후 월 ${ regularPrice }로 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
       "Get VPN Plus for only ${ offerPrice }": [
         "VPN Plus를 단 ${ offerPrice }에"
       ],
@@ -4119,6 +4143,9 @@
       "Invalid code": [
         "잘못된 코드입니다."
       ],
+      "Invalid coupon": [
+        "유효하지 않은 쿠폰"
+      ],
       "Invalid domain": [
         "유효하지 않은 도메인"
       ],
@@ -4314,6 +4341,9 @@
       "Request timed out": [
         "요청 시간이 초과되었습니다."
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "이 플랜에서는 매입자 납부제도(Reverse charge)가 지원되지 않습니다."
+      ],
       "Server not found": [
         "서버를 찾을 수 없습니다"
       ],
@@ -4379,6 +4409,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "추가할 수 있는 최소 금액은 ${ price } 입니다."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "최소 기부 금액은 ${ price }입니다."
       ],
       "The policy name must be between 3 and 40 characters.": [
         "정책 이름은 3자에서 40자 사이여야 합니다."
@@ -5788,20 +5821,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "${ provider } 으로부터 불러오기"
-      ],
-      "Import from Google": [
-        "Google에서 가져오기"
-      ],
-      "Import from other": [
-        "다른 곳에서 가져오기"
-      ],
-      "Import from Outlook": [
-        "Outlook에서 가져오기"
-      ],
-      "Import from Yahoo": [
-        "Yahoo에서 가져오기"
+      "Advanced import": [
+        "고급 가져오기"
       ]
     },
     "Import warning": {
@@ -6059,6 +6080,9 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain }은(는) ${ BRAND_NAME }에서 호스팅됩니다. 빠른 하위 도매인 설정을 도와드립니다. ${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "그룹을 생성하려면 사용자 지정 도메인이 필요합니다. 사용자 지정 도메인이 설정되어 있지 않다면 ${ linkToDomainPage }에서 설정하세요."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "나중에 쉽게 취소하거나 확장할 수 있도록 사용 위치를 식별하는 데 도움이 되는 이름이에요."
       ],
@@ -6272,9 +6296,6 @@
       "Billing cycle: ${ text }": [
         "청구 주기: ${ text }"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "${ BRAND_NAME }으로 메시지, 연락처 및 캘린더를 가져오세요."
-      ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "계정 모니터를 비활성화하면 전체 기록이 함께 삭제됩니다. 정말 비활성화하시겠습니까?"
       ],
@@ -6301,6 +6322,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "계속하려면 Entity ID를 선택하세요."
+      ],
+      "Choose your service to connect with": [
+        "연결하고자 하는 서비스 선택"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
@@ -7130,9 +7154,6 @@
       "Once you reset your password:": [
         "지금 비밀번호를 재설정하면 다음 사항이 적용됩니다:"
       ],
-      "One time import": [
-        "한 번만 가져오기"
-      ],
       "Open source": [
         "오픈 소스"
       ],
@@ -7162,6 +7183,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "전용 서버를 게이트웨이로 구성하고 어떤 구성원이 접근할 수 있는지 결정하세요."
+      ],
+      "Other": [
+        "기타"
       ],
       "Other accounts": [
         "다른 계정"
@@ -7420,9 +7444,6 @@
       ],
       "Select users to view their activity": [
         "활동을 확인할 사용자를 선택하세요"
-      ],
-      "Select what you want to import.": [
-        "처리할 파일을 선택하세요."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "불러올 캘린더를 선택하세요. 새 캘린더가 사용자 플랜의 가능한 한도 내에서 각각 생성됩니다."
@@ -7756,6 +7777,9 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "계속하려면, 데이터 삭제를 원하는 사용자의 이름을 입력하십시오."
+      ],
+      "To continue to ${ product }": [
+        "${ product }(으)로 계속하기"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "서비스의 지속적인 개선과 애플리케이션의 적절한 기능을 모니터링하기 위해 당사에서 동의하에 데이터를 수집할 수 있습니다. 해당 정보는 제3자 서비스와 공유되지 않습니다."
@@ -8138,9 +8162,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "불과 매달 **${ priceString }**의 가격에 하나의 번들로 모든 프리미엄 개인 정보 보호 서비스를 얻을 수 있어요."
       ],
-      "You can import one data type at a time.": [
-        "한 번에 하나의 데이터 유형을 가져올 수 있어요."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "최대 ${ MAX_CALENDARS_FREE }개 캘린더를 보관할 수 있습니다. ${ MAIL_SHORT_APP_NAME } 구독을 취소하기 전에 공유 캘린더 링크와 캘린더를 공유한 ${ BRAND_NAME } 사용자를 제거하십시오."
       ],
@@ -8272,6 +8293,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "계정에 기한이 지난 청구서가 하나 이상 있습니다. 회원님의 계정 접근이 곧 제한됩니다. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "귀하의 계정은 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 선택하신 요금제에서 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 요금제를 선택하십시오."
       ],
       "Your account was successfully updated with this promotion": [
         "사용자의 계정이 해당 프로모션으로 성공적으로 업데이트되었습니다"
@@ -8666,9 +8690,6 @@
       "Calendar": [
         "캘린더"
       ],
-      "Calendars": [
-        "캘린더"
-      ],
       "Card details": [
         "카드 상세정보"
       ],
@@ -8819,9 +8840,6 @@
       "Email or username": [
         "이메일 또는 사용자 이름"
       ],
-      "Emails": [
-        "이메일"
-      ],
       "Emails (all messages)": [
         "이메일 (모든 메시지)"
       ],
@@ -8920,6 +8938,9 @@
       ],
       "Import interval": [
         "가져오기 간격"
+      ],
+      "Import recent mails": [
+        "최근 메일 가져오기"
       ],
       "Import to email address": [
         "이메일 주소로 가져오기"
@@ -9944,6 +9965,9 @@
       ]
     },
     "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: 로그인"
+      ],
       "${ appName }: Sign-up": [
         "${ appName }: 회원 가입"
       ],
@@ -11950,6 +11974,9 @@
       ],
       "VAT number": [
         "부가가치세 번호"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "매입자 납부제도(Reverse charge)가 적용됩니다."
       ],
       "You already have a subscription to this plan.": [
         "이미 이 플랜을 구독 중입니다."
@@ -15117,6 +15144,9 @@
       "Change second password": [
         "2차 비밀번호 변경"
       ],
+      "Choose a provider": [
+        "제공업체 선택"
+      ],
       "Choose user affiliations": [
         "사용자 소속 선택"
       ],
@@ -15218,6 +15248,9 @@
       ],
       "Currency": [
         "통화"
+      ],
+      "Custom": [
+        "사용자화"
       ],
       "Custom selection of users": [
         "사용자 지정 선택"
@@ -15510,6 +15543,9 @@
       "Import groups": [
         "그룹 가져오기"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "${ BRAND_NAME }로 데이터 불러오기"
+      ],
       "Information exposed in breach": [
         "유출 시 노출된 정보"
       ],
@@ -15711,6 +15747,9 @@
       "Restore administrator privileges": [
         "관리자 권한 복구"
       ],
+      "Reverse charge not supported": [
+        "매입자 납부제도(Reverse charge)가 지원되지 않습니다."
+      ],
       "Revoke certificate?": [
         "인증서를 취소합니까?"
       ],
@@ -15740,6 +15779,9 @@
       ],
       "Select contact group": [
         "연락처 그룹"
+      ],
+      "Select data to import": [
+        "불러올 데이터 선택"
       ],
       "Send email reminders?": [
         "이메일 알리미를 전송할까요?"
@@ -15971,9 +16013,6 @@
       ],
       "What is the dark web?": [
         "다크 웹이란?"
-      ],
-      "What would you like to import?": [
-        "무엇을 가져오시겠어요?"
       ],
       "Wipe all logs?": [
         "모든 로그를 삭제하시겠습니까?"

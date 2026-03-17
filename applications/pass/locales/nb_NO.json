@@ -1708,6 +1708,9 @@
       "Enabling biometrics lock failed": [
         "Aktivering av biometrisk lås mislyktes"
       ],
+      "Enabling desktop auto-lock": [
+        "Aktiverer automatisk låsing av skrivebordsapp"
+      ],
       "Enabling offline mode...": [
         "Aktiverer frakoblet modus..."
       ],
@@ -2307,6 +2310,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Denne funksjonen er for øyeblikket eksperimentell på Linux. Forsikre deg om at systemet ditt er oppdatert."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Denne funksjonen krever at ${ PASS_APP_NAME }-skrivebordsappen er installert og kjører under oppsettet."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Dette elementet er for øyeblikket ikke delt med noen. Inviter folk til å dele det med andre."

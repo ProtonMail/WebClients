@@ -2273,6 +2273,9 @@
       "Enter 6 digits": [
         "Inserisci il codice a 6 cifre"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Inserisci il tuo nome utente senza il dominio (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
       ],
@@ -2290,6 +2293,9 @@
       ],
       "Invalid code": [
         "Codice non valido"
+      ],
+      "Invalid coupon": [
+        "Coupon non valido"
       ],
       "Invalid expiration date": [
         "Data di scadenza non valida"
@@ -2323,6 +2329,9 @@
       ],
       "Payment process not supported": [
         "Processo di pagamento non supportato"
+      ],
+      "Please complete the billing details": [
+        "Completa i dettagli di fatturazione"
       ],
       "Please enter a valid postal code": [
         "Si prega di inserire un codice postale valido"
@@ -2380,6 +2389,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
+      ],
+      "This field is invalid": [
+        "Questo campo non è valido"
       ],
       "This field is required": [
         "Campo necessario"
@@ -4570,6 +4582,12 @@
       "I'm purchasing as a business": [
         "Sto acquistando come azienda"
       ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inclusa l'imposta del ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Incluse imposte del ${ rate }%: ${ taxAmountElement }"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -4587,6 +4605,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Rinnova a ${ renewPriceStr }, annulla in qualsiasi momento."
+      ],
+      "Taxes ${ rate }%": [
+        "Imposte ${ rate }%"
       ],
       "terms and conditions": [
         "Termini e Condizioni"
@@ -4711,6 +4732,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Il prezzo del rinnovo dipende dalla regione di fatturazione e dall'ABN."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Il prezzo del rinnovo dipende dalla regione di fatturazione e dall'EIN."
       ]
     },
     "Payments.Saved payment method details": {
@@ -5470,6 +5499,9 @@
       ],
       "Request new code": [
         "Richiedi nuovo codice"
+      ],
+      "Reverse charge not supported": [
+        "Inversione contabile non supportata"
       ],
       "Select a plan": [
         "Seleziona un piano"
