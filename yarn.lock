@@ -7897,6 +7897,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@proton-pass-desktop/native@workspace:applications/pass-desktop/native":
+  version: 0.0.0-use.local
+  resolution: "@proton-pass-desktop/native@workspace:applications/pass-desktop/native"
+  dependencies:
+    "@napi-rs/cli": "npm:^2.18.0"
+  languageName: unknown
+  linkType: soft
+
 "@proton/account@workspace:^, @proton/account@workspace:packages/account":
   version: 0.0.0-use.local
   resolution: "@proton/account@workspace:packages/account"
@@ -33329,14 +33337,6 @@ __metadata:
   checksum: 10/fbc99d8dc2863658260a519557b0634c45583d9412de85fd706fa4fa9b11bfe4660bdac53f29171c4b2ad01a4b201c658a56f82431d19a5c155cc092c5127170
   languageName: node
   linkType: hard
-
-"native@workspace:applications/pass-desktop/native":
-  version: 0.0.0-use.local
-  resolution: "native@workspace:applications/pass-desktop/native"
-  dependencies:
-    "@napi-rs/cli": "npm:^2.18.0"
-  languageName: unknown
-  linkType: soft
 
 "natural-compare@npm:^1.4.0":
   version: 1.4.0

@@ -1,5 +1,5 @@
 {
-    "name": "native",
+    "name": "@proton-pass-desktop/native",
     "version": "0.0.0",
     "license": "MIT",
     "main": "index.js",
@@ -10,6 +10,7 @@
         "build:debug": "napi build --platform --js false",
         "build:multi": "node build.js",
         "prepublishOnly": "napi prepublish -t npm",
+        "sign": "node sign.js",
         "test": "cargo test",
         "universal": "napi universal",
         "version": "napi version"
