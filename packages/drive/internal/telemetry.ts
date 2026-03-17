@@ -1,20 +1,26 @@
-import type {
-    MetricAPIRetrySucceededEvent,
-    MetricBlockVerificationErrorEvent,
-    MetricDecryptionErrorEvent,
-    MetricDownloadEvent,
-    MetricEvent,
-    MetricUploadEvent,
-    MetricVerificationErrorEvent,
-    MetricVolumeEventsSubscriptionsChangedEvent,
-} from '@protontech/drive-sdk';
+import type { MetricAPIRetrySucceededEvent, MetricBlockVerificationErrorEvent, MetricDecryptionErrorEvent, MetricDownloadEvent, MetricEvent, MetricUploadEvent, MetricVerificationErrorEvent, MetricVolumeEventsSubscriptionsChangedEvent } from '@protontech/drive-sdk';
 import type { MetricPerformanceEvent } from '@protontech/drive-sdk/dist/interface/telemetry';
 import type { LogHandler, MetricRecord, MetricHandler as SDKMetricHandler } from '@protontech/drive-sdk/dist/telemetry';
 import { LogFilter, LogLevel, Telemetry } from '@protontech/drive-sdk/dist/telemetry';
 
+
+
 import metrics from '@proton/metrics';
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export type UserPlan = 'free' | 'paid' | 'anonymous' | 'unknown';
 
@@ -112,6 +118,7 @@ export class MetricHandler {
             extra: {
                 url: metric.url,
                 failedAttempts: metric.failedAttempts,
+                previousError: metric.previousError,
             },
         });
     }
