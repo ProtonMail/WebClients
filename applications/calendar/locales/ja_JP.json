@@ -497,14 +497,8 @@
       "import": [
         "インポート"
       ],
-      "Import calendars": [
-        "カレンダーをインポート"
-      ],
       "Import contacts": [
         "連絡先をインポート"
-      ],
-      "Import emails": [
-        "メールをインポート"
       ],
       "Import emails, calendars, contacts": [
         "メール、カレンダー、連絡先をインポート"
@@ -4906,23 +4900,6 @@
         "${ boldExport } を選択して ICS ファイルとしてカレンダーをエクスポートします。"
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "${ provider } からインポート"
-      ],
-      "Import from Google": [
-        "Googleからインポート"
-      ],
-      "Import from other": [
-        "その他からインポート"
-      ],
-      "Import from Outlook": [
-        "Outlook からインポート"
-      ],
-      "Import from Yahoo": [
-        "Yahooからインポート"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。詳細はクリックしてください"
@@ -5213,9 +5190,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "御社のイメージ力を強め、ユーザーにより一貫したオンラインサービスを提供しましょう。"
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "メッセージ、連絡先、カレンダーを ${ BRAND_NAME }に移行。"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "無料プランへダウングレードすると、現在の特典は利用できなくなります。今後アップグレードしても現在の特典は復活しません。"
@@ -5721,9 +5695,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "相手から「漏洩」と判断された鍵があります。対象の鍵の信頼を解除することを推奨します。"
       ],
-      "One time import": [
-        "1 回限りのインポート"
-      ],
       "Open shortcut cheat sheet": [
         "ショートカットのチートシートを開く"
       ],
@@ -5870,9 +5841,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
-      ],
-      "Select what you want to import.": [
-        "インポートしたいものを選択してください。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "インポートするカレンダーを選択します。プランで利用可能なカレンダーの数に応じて、インポートしたカレンダーごとに新しいカレンダーが作成されます。"
@@ -6233,9 +6201,6 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "このタブやブラウザを閉じても構いません。"
-      ],
-      "You can import one data type at a time.": [
-        "1 回にインポートできるのは 1 種類のみです。"
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "カレンダーを最大 ${ MAX_CALENDARS_FREE } 個まで保持することができます。あなたの ${ MAIL_SHORT_APP_NAME } サブスクリプションをキャンセルする前に、共有カレンダーリンクと共有したカレンダーの ${ BRAND_NAME } ユーザーを削除してください。"
@@ -6658,9 +6623,6 @@
       "Calendar": [
         "カレンダー"
       ],
-      "Calendars": [
-        "カレンダー"
-      ],
       "Card details": [
         "カード詳細"
       ],
@@ -6765,9 +6727,6 @@
       ],
       "Email format": [
         "メールの形式"
-      ],
-      "Emails": [
-        "メール"
       ],
       "Emails (all messages)": [
         "メール (すべてのメッセージ)"
@@ -12009,9 +11968,6 @@
       ],
       "What is a VPN?": [
         "VPNとは？"
-      ],
-      "What would you like to import?": [
-        "何をインポートしたいですか?"
       ],
       "When is it most important to use a VPN?": [
         "最もVPNの利用が重要になるのはいつでしょうか？"
