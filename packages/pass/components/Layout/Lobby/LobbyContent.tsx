@@ -42,11 +42,14 @@ type Props = {
     onFork: () => void;
     onLogin: (options: AuthOptions) => void;
     onLogout: (options: { soft: boolean }) => void;
-    onOffline: () => void;
+    /** Called when the user explicitly requests to switch to offline
+     * password unlock. Only relevant when the app is locked, the device
+     * is offline, and the active lock type does not support offline boot */
+    onOfflineFallback: () => void;
     onRegister: () => void;
+    renderAccountSwitcher?: () => ReactNode;
     renderError: (error: string) => ReactNode;
     renderFooter?: () => ReactNode;
-    renderAccountSwitcher?: () => ReactNode;
 };
 
 export const LobbyContent: FC<Props> = ({
@@ -56,11 +59,11 @@ export const LobbyContent: FC<Props> = ({
     onFork,
     onLogin,
     onLogout,
-    onOffline,
+    onOfflineFallback,
     onRegister,
+    renderAccountSwitcher,
     renderError,
     renderFooter,
-    renderAccountSwitcher,
 }) => {
     const { settings } = usePassCore();
     const online = useOnline();
@@ -201,7 +204,7 @@ export const LobbyContent: FC<Props> = ({
                             return (
                                 <PinUnlock
                                     onLoading={setUnlocking}
-                                    onOffline={onOffline}
+                                    onOffline={onOfflineFallback}
                                     offlineEnabled={offlineEnabled}
                                 />
                             );

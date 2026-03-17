@@ -46,8 +46,6 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
     const core = usePassCore();
     const config = usePassConfig();
     const { url, port, senderTabId } = useExtensionContext();
-    const { endpoint, theme, connectivity } = core;
-    const { setExtensionClientState, onTelemetry } = core;
 
     const activityProbe = useExtensionActivityProbe();
     const dispatch = useDispatch();
@@ -55,12 +53,12 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
     const ready = useExtensionClientInit(
         useMemo(
             () => ({
-                onConnectivity: connectivity.setStatus,
+                onConnectivity: core.connectivity.setStatus,
                 onStateChange: (state) => {
                     if (state.criticalRuntimeError) reloadManager.runtimeReload().catch(noop);
 
                     if (clientErrored(state.status) || state.criticalRuntimeError) {
-                        onTelemetry(
+                        core.onTelemetry(
                             TelemetryEventName.ErrorResumingSession,
                             {},
                             {
@@ -72,7 +70,7 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
 
                     setSentryUID(state.UID);
                 },
-                onSettingsChange: (settings) => theme.setState(settings.theme ?? PASS_DEFAULT_THEME),
+                onSettingsChange: (settings) => core.theme.setState(settings.theme ?? PASS_DEFAULT_THEME),
             }),
             []
         )
@@ -85,13 +83,13 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
             sentryConfig: {
                 host: new URL(config.API_URL).host,
                 release: config.APP_VERSION,
-                environment: `browser-pass::${endpoint}`,
+                environment: `browser-pass::${core.endpoint}`,
             },
             beforeSendIgnore: isRuntimeStale,
             setupIgnore: () => false,
         });
 
-        setExtensionClientState?.({ url, tabId: senderTabId, port: port.name });
+        core.setExtensionClientState?.({ url, tabId: senderTabId, port: port.name });
 
         if (onWorkerMessage) {
             const listener = (message: unknown) => isExtensionMessage(message) && onWorkerMessage(message);
