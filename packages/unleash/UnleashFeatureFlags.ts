@@ -303,6 +303,7 @@ enum MeetFeatureFlag {
     MeetNewCTAModal = 'MeetNewCTAModal',
     MeetEnableAudioMixing = 'MeetEnableAudioMixing',
     MeetEnableSpatialAudio = 'MeetEnableSpatialAudio',
+    MeetPreSharedKey = 'MeetPreSharedKey',
 }
 
 enum LumoFeatureFlag {
