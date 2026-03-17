@@ -1,4 +1,4 @@
-import { NodeType, splitNodeUid } from '@proton/drive';
+import { NodeType } from '@proton/drive';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { ItemContextMenu } from '../../../components/sections/ContextMenu/ItemContextMenu';
@@ -22,7 +22,7 @@ interface Props {
     onDelete: (items: TrashItem[]) => void;
     onPreview: (props: { deprecatedContextShareId: string; nodeUid: string; canOpenInDocs: boolean }) => void;
     showDetailsModal: (props: { nodeUid: string }) => void;
-    showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;
+    showFilesDetailsModal: (props: { nodeUids: string[] }) => void;
 }
 
 export function TrashItemContextMenu({
@@ -56,12 +56,7 @@ export function TrashItemContextMenu({
         if (selectedItems.length === 1) {
             showDetailsModal({ nodeUid: selectedItem.uid });
         } else {
-            showFilesDetailsModal({
-                selectedItems: selectedItems.map((item) => ({
-                    rootShareId: item.rootShareId ?? '',
-                    linkId: splitNodeUid(item.uid).nodeId,
-                })),
-            });
+            showFilesDetailsModal({ nodeUids: selectedItems.map((item) => item.uid) });
         }
     };
 

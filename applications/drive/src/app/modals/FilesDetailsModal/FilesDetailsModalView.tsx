@@ -11,23 +11,28 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     Row,
-    useModalTwoStatic,
 } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import { useLinksDetailsView } from '../../store';
-import ModalContentLoader from './ModalContentLoader';
+import ModalContentLoader from '../../components/modals/ModalContentLoader';
 
-interface Props {
-    selectedItems: { rootShareId: string; linkId: string }[];
-    onClose?: () => void;
-}
+export type FilesDetailsModalViewProps = ModalStateProps & {
+    isLoading: boolean;
+    hasError: boolean;
+    count: number;
+    size: number;
+};
 
-const FilesDetailsModal = ({ selectedItems, onClose, ...modalProps }: Props & ModalStateProps) => {
-    const { isLoading, hasError, count, size } = useLinksDetailsView(selectedItems);
-
+export function FilesDetailsModalView({
+    onClose,
+    open,
+    onExit,
+    isLoading,
+    hasError,
+    count,
+    size,
+}: FilesDetailsModalViewProps) {
     const title = c('Title').t`Item details`;
-    const labelCount = c('Title').t`Number of items`;
 
     const renderModalState = () => {
         if (isLoading) {
@@ -45,7 +50,7 @@ const FilesDetailsModal = ({ selectedItems, onClose, ...modalProps }: Props & Mo
         return (
             <ModalTwoContent>
                 <Row>
-                    <Label style={{ cursor: 'default' }}>{labelCount}</Label>
+                    <Label style={{ cursor: 'default' }}>{c('Title').t`Number of items`}</Label>
                     <Field className="pt-2">
                         <b data-testid="number-of-items">{count}</b>
                     </Field>
@@ -61,7 +66,7 @@ const FilesDetailsModal = ({ selectedItems, onClose, ...modalProps }: Props & Mo
     };
 
     return (
-        <ModalTwo onClose={onClose} size="large" {...modalProps}>
+        <ModalTwo onClose={onClose} size="large" open={open} onExit={onExit}>
             <ModalTwoHeader title={title} />
             {renderModalState()}
             <ModalTwoFooter>
@@ -69,9 +74,4 @@ const FilesDetailsModal = ({ selectedItems, onClose, ...modalProps }: Props & Mo
             </ModalTwoFooter>
         </ModalTwo>
     );
-};
-
-export default FilesDetailsModal;
-export const useFilesDetailsModal = () => {
-    return useModalTwoStatic(FilesDetailsModal);
-};
+}

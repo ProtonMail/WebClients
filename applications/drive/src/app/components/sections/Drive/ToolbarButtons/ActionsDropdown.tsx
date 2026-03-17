@@ -13,10 +13,10 @@ import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import { useDetailsModal } from '../../../../modals/DetailsModal';
+import { useFilesDetailsModal } from '../../../../modals/FilesDetailsModal';
 import { useMoveItemsModal } from '../../../../modals/MoveItemsModal';
 import { useSharingModal } from '../../../../modals/SharingModal/SharingModal';
 import type { DecryptedLink, useActions } from '../../../../store';
-import { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
 import { useRenameModalDeprecated } from '../../../modals/RenameModal';
 
 interface Props {
@@ -33,7 +33,7 @@ export const toNodeUidsHelper = <T extends { volumeId: string; linkId: string }>
 const ActionsDropdown = ({ volumeId, selectedLinks, permissions, trashLinks, renameLink }: Props) => {
     const [uid] = useState(generateUID('actions-dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
+    const { filesDetailsModal, showFilesDetailsModal } = useFilesDetailsModal();
     const { detailsModal, showDetailsModal } = useDetailsModal();
     const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal();
     const [renameModal, showRenameModal] = useRenameModalDeprecated();
@@ -99,7 +99,7 @@ const ActionsDropdown = ({ volumeId, selectedLinks, permissions, trashLinks, ren
             name: c('Action').t`Details`,
             icon: 'info-circle',
             testId: 'actions-dropdown-details',
-            action: () => showFilesDetailsModal({ selectedItems: selectedLinks }),
+            action: () => showFilesDetailsModal({ nodeUids: toNodeUidsHelper(selectedLinks) }),
         },
         {
             hidden: !isEditor,

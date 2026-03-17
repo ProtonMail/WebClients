@@ -9,8 +9,8 @@ import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
 import { useDetailsModal } from '../../../modals/DetailsModal';
+import { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
 import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
@@ -37,7 +37,7 @@ interface Props {
 export const ActionsDropdown = ({ volumeId, selectedItems, role }: Props) => {
     const [uid] = useState(generateUID('actions-dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
+    const { filesDetailsModal, showFilesDetailsModal } = useFilesDetailsModal();
     const { detailsModal, showDetailsModal } = useDetailsModal();
     const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal();
     const { renameModal, showRenameModal } = useRenameModal();
@@ -96,7 +96,7 @@ export const ActionsDropdown = ({ volumeId, selectedItems, role }: Props) => {
             name: c('Action').t`Details`,
             icon: 'info-circle',
             testId: 'actions-dropdown-details',
-            action: () => showFilesDetailsModal({ selectedItems: selectedItems }),
+            action: () => showFilesDetailsModal({ nodeUids: toNodeUidsHelper(selectedItems) }),
         },
         {
             hidden: !isEditor,
