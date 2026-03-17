@@ -1,3 +1,4 @@
+import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { PIP_PREVIEW_ITEM_HEIGHT, PIP_PREVIEW_ITEM_WIDTH } from '../../constants';
@@ -6,6 +7,11 @@ import type { TrackInfo } from './types';
 export class PiPSessionManager {
     private canvas?: HTMLCanvasElement;
     private pipVideo?: HTMLVideoElement;
+    private reportMeetError: ReportMeetError;
+
+    constructor(reportMeetError: ReportMeetError) {
+        this.reportMeetError = reportMeetError;
+    }
 
     /**
      * Lightweight warmup to pass strict Safari PiP requirements
@@ -189,6 +195,7 @@ export class PiPSessionManager {
                 if (error instanceof Error && error.name !== 'InvalidStateError') {
                     // eslint-disable-next-line no-console
                     console.error('Failed to exit Picture-in-Picture:', error);
+                    this.reportMeetError('PiPSessionManager: Failed to exit Picture-in-Picture', error);
                 }
             }
         }
@@ -209,6 +216,7 @@ export class PiPSessionManager {
                 if (error instanceof Error && error.name !== 'InvalidStateError') {
                     // eslint-disable-next-line no-console
                     console.error('Failed to exit Picture-in-Picture:', error);
+                    this.reportMeetError('PiPSessionManager: Failed to exit Picture-in-Picture', error);
                 }
             }
         }

@@ -13,12 +13,14 @@ interface ReportMeetErrorOptions {
     fingerprint?: string[];
 }
 
+export type ReportMeetError = (label: string, options?: ReportMeetErrorOptions | unknown) => void;
+
 export const useMeetErrorReporting = () => {
     const shouldReportError = useFlag('MeetErrorReporting');
     const errorCountMapRef = useRef<Map<string, number>>(new Map());
 
-    const reportMeetError = useCallback(
-        (label: string, options?: ReportMeetErrorOptions | unknown) => {
+    const reportMeetError = useCallback<ReportMeetError>(
+        (label, options) => {
             if (shouldReportError) {
                 const currentCount = errorCountMapRef.current.get(label) ?? 0;
 
