@@ -19,7 +19,6 @@ const interFont = new FontFace('Inter', 'local(Inter), local(Inter UI)');
 interFont
     .load()
     .then((font) => {
-        // @ts-expect-error - fonts is available in Worker context
         self.fonts.add(font);
     })
     .catch(() => {
