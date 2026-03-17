@@ -1361,11 +1361,12 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         const metadataProgress = await metadataIndexingProgress.read(userID);
         if (!metadataProgress) {
             // Silently remove the database if there is no metadata progress
+            await esDelete();
+
             traceInitiativeError(
                 SentryCommonInitiatives.ENCRYPTED_SEARCH,
                 new Error('initializeES - zombie DB deleted (no metadata progress)')
             );
-            await esDelete();
             return;
         }
 
