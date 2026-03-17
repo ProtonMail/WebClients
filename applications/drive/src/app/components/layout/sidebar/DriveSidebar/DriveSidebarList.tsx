@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { SidebarList } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { DevicesSidebar as DevicesSidebarSDK } from '../../../../sections/devices/DevicesSidebar';
+import { DevicesSidebar } from '../../../../sections/devices/connectedComponents/DevicesSidebar';
 import { DriveSidebarSharedWithMe } from '../../../../sections/sidebar/DriveSidebarSharedWithMe/DriveSidebarSharedWithMe';
 import { type ShareWithKey, useDriveSharingFlags, useUserSettings } from '../../../../store';
 import DriveSidebarFolders from './DriveSidebarFolders/DriveSidebarFolders';
@@ -41,7 +41,7 @@ const DriveSidebarList = ({ shareId, userShares, collapsed }: DriveSidebarListPr
                     collapsed={collapsed}
                 />
             ))}
-            <DevicesSidebarSDK collapsed={collapsed} />
+            <DevicesSidebar collapsed={collapsed} />
             {photosEnabled && (
                 <DriveSidebarListItem to="/photos" icon="image" collapsed={collapsed}>
                     <span className={clsx('text-ellipsis', collapsed && 'sr-only')} title={c('Link').t`Photos`}>
