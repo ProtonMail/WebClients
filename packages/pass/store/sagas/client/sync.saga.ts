@@ -19,10 +19,10 @@ import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { synchronize } from '@proton/pass/store/sagas/client/sync';
 import { selectUser } from '@proton/pass/store/selectors';
-import type { State } from '@proton/pass/store/types';
+import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-function* syncWorker({ payload }: ReturnType<typeof syncIntent>) {
+function* syncWorker({ payload }: ReturnType<typeof syncIntent>, options: RootSagaOptions) {
     yield put(stopEventPolling());
 
     const state = (yield select()) as State;
@@ -46,7 +46,7 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>) {
             yield put(withRevalidate(resolvePrivateDomains.intent()));
         }
 
-        yield put(syncSuccess(yield call(synchronize, payload.type)));
+        yield put(syncSuccess(yield call(synchronize, payload.type, options)));
     } catch (e: unknown) {
         yield put(syncFailure(e));
     } finally {
@@ -56,12 +56,12 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>) {
 
 /* The `syncWorker` function can take a long time to complete. In order to avoid conflicts
  * with any state resetting actions, we race the `sync` against such actions. */
-export default function* watcher(): Generator {
+export default function* watcher(options: RootSagaOptions): Generator {
     while (true) {
         yield call(function* () {
             const action: ReturnType<typeof syncIntent> = yield take(syncIntent.match);
             yield race({
-                sync: syncWorker(action),
+                sync: syncWorker(action, options),
                 cancel: take(stateDestroy.match),
             });
         });
