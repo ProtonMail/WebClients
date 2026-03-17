@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "I-delete ang forward"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Magsisimula na sa lalong madaling panahon ang pag-forward. Lalabas ang mga bagong email sa inbox."
       ],
       "Mail forward stopped": [
         "Huminto ang pag-forward ng mail"
-      ],
-      "Reconnect": [
-        "I-reconnect"
-      ],
-      "Remove forward": [
-        "Alisin ang forward"
       ],
       "You will stop the mail forwarding.": [
         "Ititigil mo ang pag-forward ng mail."
@@ -857,15 +848,6 @@
       ],
       "Import": [
         "I-import"
-      ],
-      "Import calendars": [
-        "I-import ang mga kalendaryo"
-      ],
-      "Import contacts": [
-        "Mag-import ng mga contact"
-      ],
-      "Import emails": [
-        "I-import ang mga email"
       ],
       "Import emails, calendars, contacts": [
         "I-import ang mga email, kalendaryo, contact"
@@ -8329,31 +8311,6 @@
         "Sigurado ka bang nais mong mag-import ng pribadong key? Maaaring makapinsala sa seguridad ng mga email ang pag-import ng pribadong key na hindi ligtas ang pagkaka-generate o na-leak.\n\nPakitandaan din na magiging publicly available mula sa aming key server ang pampublikong key na katumbas ng pribadong key na ito. Kung naglalaman ang key ng mga personal na detalye (tulad ng buong pangalan) na ayaw mong i-publish, paki-edit ang key bago ito i-import."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "I-import mula sa ${ provider }"
-      ],
-      "Import from Google": [
-        "I-import mula sa Google"
-      ],
-      "Import from other": [
-        "I-import mula sa iba"
-      ],
-      "Import from Outlook": [
-        "I-import mula sa Outlook"
-      ],
-      "Import from Yahoo": [
-        "I-import mula sa Yahoo"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Tapos na ang pag-undo"
-      ],
-      "Undo in progress": [
-        "Isinasagawa ang pag-undo"
-      ]
-    },
     "Import status": {
       "Active": [
         "Aktibo"
@@ -8361,26 +8318,14 @@
       "Canceled": [
         "Kinansela"
       ],
-      "Canceling": [
-        "Kinakansela"
-      ],
-      "Completed": [
-        "Nakumpleto"
-      ],
       "Delayed": [
         "Naantala"
       ],
       "Failed": [
         "Nabigo"
       ],
-      "In progress": [
-        "Isinasagawa"
-      ],
       "Paused": [
         "Naka-pause"
-      ],
-      "Started": [
-        "Nagsimula"
       ]
     },
     "Import type": {
@@ -8440,17 +8385,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "Hindi kailanman isine-share ng ${ BRAND_NAME } ang impormasyon mo sa mga third party. Ang data ay nagmumula sa sariling pagsusuri ng ${ BRAND_NAME } at Constella Intelligence."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "Pansamantalang itinigil ng ${ BRAND_NAME } ang pag-import dahil nawalan ito ng koneksyon sa iyong provider ng email. Paki-reconnect."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "Pansamantalang itinigil ng ${ BRAND_NAME } ang pag-import dahil nauubusan na ng espasyo ang iyong account. Maaari kang:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe writing assistant"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "Susubukan ng ${ BRAND_NAME } na ipagpatuloy ang pag-import sa sandaling i-reset ng provider ng email ang ${ bandwidthLimitLink } ng iyong account. Hindi mo na kailangang gumawa ng kahit ano. Kung kakanselahin mo ang pag-import, hindi mo na ito maipagpapatuloy at kailangan mong magsimulang muli."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Ang teknolohiya ng encryption ng ${ BRAND_NAME } ay nangangahulugang walang makaka-access sa password mo - kahit na kami."
@@ -9052,9 +8988,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Palakasin ang brand identity ng iyong organisasyon at gumawa ng mas consistent na online na karanasan para sa iyong mga user."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Dalhin ang mga mensahe, contact, at kalendaryo sa ${ BRAND_NAME }."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Sa paggawa ng ${ PASS_APP_NAME } account gamit ang iyong SimpleLogin email, maaari mong pamahalaan ang mga alias nang direkta mula sa ${ PASS_APP_NAME }."
       ],
@@ -9579,17 +9512,11 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Para sa mga user na lumilipat sa ${ MAIL_APP_NAME } mula sa ibang serbisyo ng email, piliin ang ${ boldAddresses } tab at idagdag ang lahat ng aktibong email address bago baguhin ang MX record upang matiyak ang maayos na paglipat."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "I-forward ang papasok na mail mula sa ibang account patungo sa iyong secure na ${ MAIL_APP_NAME } inbox."
-      ],
       "Free forever": [
         "Libre habambuhay"
       ],
       "Free trial": [
         "Libreng pagsubok"
-      ],
-      "free up space by deleting older messages or other data": [
-        "magpaluwag ng espasyo sa pamamagitan ng pag-delete ng mga lumang mensahe o iba pang data"
       ],
       "Gateway monitor": [
         "Monitor ng gateway"
@@ -10112,9 +10039,6 @@
       "No Gateways yet": [
         "Wala pang mga Gateway"
       ],
-      "No imports or forwarding history.": [
-        "Walang kasaysayan ng import o pag-forward."
-      ],
       "No label selected": [
         "Walang napiling label"
       ],
@@ -10162,9 +10086,6 @@
       ],
       "Once you reset your password:": [
         "Kapag na-reset mo na ang iyong password:"
-      ],
-      "One time import": [
-        "Isang beses na pag-import"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Baguhin lamang ang mga setting na ito kung gumagamit ka ng PGP kasama ang mga tatanggap na hindi gumagamit ng ${ BRAND_NAME }."
@@ -10392,9 +10313,6 @@
       "Public sharing of documents is not yet supported.": [
         "Hindi pa sinusuportahan ang pampublikong pag-share ng mga dokumento."
       ],
-      "purchase additional storage": [
-        "bumili ng karagdagang storage"
-      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Makipag-ugnayan sa amin para sa tulong sa anumang bagay sa ${ BRAND_NAME }."
       ],
@@ -10515,9 +10433,6 @@
       "Select users to view their activity": [
         "Piliin ang mga user para makita ang kanilang aktibidad"
       ],
-      "Select what you want to import.": [
-        "Piliin kung ano ang gustong i-import."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Piliin kung aling mga kalendaryo ang i-i-import. Gagawa ng bagong kalendaryo para sa bawat na-import na kalendaryo ayon sa bilang ng mga kalendaryong available sa iyong plano."
       ],
@@ -10553,9 +10468,6 @@
       ],
       "Set password": [
         "I-set ang password"
-      ],
-      "Set up forwarding": [
-        "I-set up ang pag-forward"
       ],
       "Set up your organization": [
         "I-set up ang organisasyon"
@@ -11421,9 +11333,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Makukuha mo ang aming mga premium na serbisyo sa privacy sa isang bundle—at ito ay **${ priceString }/buwan** lang."
       ],
-      "You can import one data type at a time.": [
-        "Maaaring mag-import ng isang uri ng data sa bawat pagkakataon."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Maaari kang magpanatili ng hanggang ${ MAX_CALENDARS_FREE } kalendaryo. Mangyaring alisin ang mga shared calendar link at sinumang user ng ${ BRAND_NAME } na pinag-share-an mo ng iyong mga kalendaryo bago mo kanselahin ang iyong subscription sa ${ MAIL_SHORT_APP_NAME }.",
         "Maaari kang magpanatili ng hanggang ${ MAX_CALENDARS_FREE } na kalendaryo. Mangyaring alisin ang mga shared calendar link at sinumang user ng ${ BRAND_NAME } na pinag-share-an mo ng iyong mga kalendaryo bago mo kanselahin ang iyong subscription sa ${ MAIL_SHORT_APP_NAME }."
@@ -11615,10 +11524,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Matagumpay na na-convert ang libreng pagsubok sa buwanang subscription. Ang petsa ng pag-renew ay ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Ang iyong import mula sa ${ accounts } ay pansamantalang naantala.",
-        "Ang iyong mga import mula sa ${ accounts } ay pansamantalang naantala."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Ligtas sa amin ang iyong impormasyon. Kokontakin ka lang namin kapag kinakailangan upang ibigay ang aming mga serbisyo."
@@ -12541,9 +12446,6 @@
       "Calendar": [
         "Kalendaryo"
       ],
-      "Calendars": [
-        "Mga kalendaryo"
-      ],
       "Capitalize words": [
         "Gawing malaki ang titik ng mga salita"
       ],
@@ -12789,9 +12691,6 @@
       ],
       "Email or username": [
         "Email o username"
-      ],
-      "Emails": [
-        "Mga email"
       ],
       "Emails (all messages)": [
         "Mga email (lahat ng mensahe)"
@@ -22190,9 +22089,6 @@
       "Help center": [
         "Sentro ng tulong"
       ],
-      "History": [
-        "Kasaysayan"
-      ],
       "Home": [
         "Home"
       ],
@@ -22924,9 +22820,6 @@
       "What is the dark web?": [
         "Ano ang dark web?"
       ],
-      "What would you like to import?": [
-        "Ano ang nais mong i-import?"
-      ],
       "Wipe all logs?": [
         "Burahin ang lahat ng log?"
       ],
@@ -23001,20 +22894,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Mga Aksyon"
-      ],
-      "Date": [
-        "Petsa"
-      ],
-      "Import": [
-        "Import"
-      ],
       "Size": [
         "Laki"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Title header for addresses domain table": {
@@ -24116,9 +23997,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Mawawala ang anumang customization na ginawa mo sa ngayon."
-      ],
-      "You will not see this import record in the list any more.": [
-        "Hindi mo na makikita ang record ng pag-import na ito sa listahan."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Magtatapos ang iyong libreng pagsubok sa ${ textDate }. ${ action }"

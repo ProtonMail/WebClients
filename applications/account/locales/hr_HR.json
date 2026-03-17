@@ -4,14 +4,6 @@
     "language": "hr_HR"
   },
   "contexts": {
-    "account": {
-      "Reconnect": [
-        "Ponovno povezivanje"
-      ],
-      "Remove forward": [
-        "Ukloni prosljeđivanje"
-      ]
-    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
@@ -528,15 +520,6 @@
       ],
       "Import": [
         "Uvoz"
-      ],
-      "Import calendars": [
-        "Uvoz kalendara"
-      ],
-      "Import contacts": [
-        "Uvezi kontakte"
-      ],
-      "Import emails": [
-        "Uvoz e-pošte"
       ],
       "Import from Google": [
         "Uvoz iz Googlea"
@@ -4883,32 +4866,12 @@
         "Yahoo"
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Uvoz iz ${ provider }a"
-      ],
-      "Import from Google": [
-        "Uvoz iz Googlea"
-      ],
-      "Import from Outlook": [
-        "Uvoz iz Outlooka"
-      ],
-      "Import from Yahoo": [
-        "Uvoz iz Yahooa"
-      ]
-    },
     "Import status": {
       "Active": [
         "Aktivno"
       ],
       "Canceled": [
         "Poništeno"
-      ],
-      "Canceling": [
-        "Otkazivanje"
-      ],
-      "Completed": [
-        "Dovršeno"
       ],
       "Delayed": [
         "Odgođeno"
@@ -4918,9 +4881,6 @@
       ],
       "Paused": [
         "Pauzirano"
-      ],
-      "Started": [
-        "Započeto"
       ]
     },
     "Import type": {
@@ -4948,9 +4908,6 @@
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Izgubit ćete pristup svim trenutnim šifriranim podacima na svom korisničkom računu ako nastavite."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } je pauzirao uvoz jer na Vašem korisničkom računu ponestaje prostora. Možete:"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe pomoćnik za pisanje"
@@ -5455,9 +5412,6 @@
       "Free forever": [
         "Besplatno zauvijek"
       ],
-      "free up space by deleting older messages or other data": [
-        "oslobodite prostor za pohranu brisanjem starijih poruka ili drugih podataka"
-      ],
       "Gateway monitor": [
         "Nadzor pristupnika"
       ],
@@ -5745,9 +5699,6 @@
       "No folder selected": [
         "Nije odabrana nijedna mapa"
       ],
-      "No imports or forwarding history.": [
-        "Nema uvoza ili povijesti prosljeđivanja."
-      ],
       "No label selected": [
         "Nije odabrana nijedna oznaka"
       ],
@@ -5868,9 +5819,6 @@
       "Public link invite": [
         "Javna poveznica za poziv"
       ],
-      "purchase additional storage": [
-        "kupite dodatni prostor za pohranu"
-      ],
       "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
         "Primite vaučer za rezervaciju putem e-pošte. Vi ili dijete možete ga upotrijebiti za aktivaciju adrese u sljedećih 15 godina. ${ learnMoreLink }"
       ],
@@ -5945,9 +5893,6 @@
       ],
       "Set password": [
         "Postavi lozinku"
-      ],
-      "Set up forwarding": [
-        "Postavi prosljeđivanje"
       ],
       "Set up your organization": [
         "Postavite vašu organizaciju"
@@ -6420,11 +6365,6 @@
       ],
       "Your free trial includes 1 dedicated server.": [
         "Vaš besplatni probni period uključuje 1 namjenski poslužitelj."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Vaš uvoz s ${ accounts } privremeno kasni.",
-        "Vaši uvozi s ${ accounts } privremeno kasne.",
-        "Vaši uvozi s ${ accounts } privremeno kasne."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Vaši podaci za prijavi neće biti spremljeni nakon što se uvoz završi."
@@ -7009,9 +6949,6 @@
       "Calendar": [
         "Kalendar"
       ],
-      "Calendars": [
-        "Kalendari"
-      ],
       "Card details": [
         "Detalji kartice"
       ],
@@ -7182,9 +7119,6 @@
       ],
       "Email or username": [
         "Adresa e-pošte ili korisničko ime"
-      ],
-      "Emails": [
-        "E-pošta"
       ],
       "Enabled": [
         "Omogućeno"
@@ -12264,9 +12198,6 @@
       "Help center": [
         "Centar za pomoć"
       ],
-      "History": [
-        "Povijest"
-      ],
       "Home": [
         "Početna"
       ],
@@ -12781,20 +12712,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Radnje"
-      ],
-      "Date": [
-        "Datum"
-      ],
-      "Import": [
-        "Uvoz"
-      ],
       "Size": [
         "Veličina"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Title header for addresses domain table": {
@@ -13366,9 +13285,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Izgubiti će te sve prilagodbe koje ste do sada napravili."
-      ],
-      "You will not see this import record in the list any more.": [
-        "Ovaj zapis o uvozu više nećete vidjeti na popisu"
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše probno razdoblje završava ${ textDate }. Nećemo Vam ništa naplatiti, ako otkažete prije ${ textDate }. ${ action }"

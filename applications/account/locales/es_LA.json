@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Eliminar reenvío"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "El reenvío iniciará pronto. Los correos nuevos aparecerán en el buzón."
       ],
       "Mail forward stopped": [
         "Reenvío del correo detenido"
-      ],
-      "Reconnect": [
-        "Reconectar"
-      ],
-      "Remove forward": [
-        "Eliminar el reenvío"
       ],
       "You will stop the mail forwarding.": [
         "Detendrá el reenvío de correos."
@@ -887,15 +878,6 @@
       ],
       "Import": [
         "Importar"
-      ],
-      "Import calendars": [
-        "Importar calendarios"
-      ],
-      "Import contacts": [
-        "Importar contactos"
-      ],
-      "Import emails": [
-        "Importar correos"
       ],
       "Import emails, calendars, contacts": [
         "Importar correos electrónicos, calendarios, contactos"
@@ -6532,7 +6514,7 @@
         "Ingrese 6 dígitos"
       ],
       "Enter your username without the domain (@example.com)": [
-        "Introduzca su nombre de usuario sin el dominio (@ejemplo.com)"
+        "Ingrese su nombre de usuario sin el dominio (@ejemplo.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al conectar a la API de Bitcoin."
@@ -6871,7 +6853,7 @@
         "Tiempo de espera agotado"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "El esquema de inversión del sujeto pasivo no es compatible con este plan"
+        "El esquema de cobro inverso no es compatible con este plan"
       ],
       "Server not found": [
         "Servidor no encontrado"
@@ -8853,31 +8835,6 @@
         "¿En verdad desea importar una clave privada? Importar una clave privada generada de manera insegura o filtrada puede dañar la seguridad de sus correos.\n\nTenga en cuenta también que la clave pública correspondiente a esta clave privada estará disponible públicamente en nuestro servidor de claves. Si la clave contiene datos personales (como su nombre completo) que no desea publicar, edite la clave antes de importarla."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Importar desde ${ provider }"
-      ],
-      "Import from Google": [
-        "Importar desde Google"
-      ],
-      "Import from other": [
-        "Importar desde otro proveedor"
-      ],
-      "Import from Outlook": [
-        "Importar desde Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importar desde Yahoo"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Se finalizó la cancelación."
-      ],
-      "Undo in progress": [
-        "Deshacer en curso"
-      ]
-    },
     "Import status": {
       "Active": [
         "Activa"
@@ -8885,26 +8842,14 @@
       "Canceled": [
         "Cancelada"
       ],
-      "Canceling": [
-        "Cancelando"
-      ],
-      "Completed": [
-        "Completada"
-      ],
       "Delayed": [
         "Retrasada"
       ],
       "Failed": [
         "Error"
       ],
-      "In progress": [
-        "En progreso"
-      ],
       "Paused": [
         "Pausada"
-      ],
-      "Started": [
-        "Iniciada"
       ]
     },
     "Import type": {
@@ -8964,17 +8909,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } nunca comparte su información con terceros. Los datos provienen de los propios análisis de ${ BRAND_NAME } y Constella Intelligence."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } pausó una importación porque perdió conexión con su otro proveedor de correo electrónico. Vuelva a conectar."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } pausó una importación porque queda poco espacio en la cuenta. Puede:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } intentará reanudar la importación tan pronto como el proveedor de correo restablezca el ${ bandwidthLimitLink } de la cuenta. No necesita hacer nada. Si cancela la importación, no podrá reanudarla y tendrá que empezar de nuevo."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnología de cifrado de ${ BRAND_NAME } significa que nadie tiene acceso a la contraseña, ni siquiera nosotros."
@@ -9618,9 +9554,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Impulse la identidad de marca de su organización y cree una experiencia en línea más consistente para sus usuarios."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Traiga sus mensajes, contactos y calendarios a ${ BRAND_NAME }."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Al crear una cuenta ${ PASS_APP_NAME } con su correo electrónico de SimpleLogin, puede administrar sus alias directamente desde ${ PASS_APP_NAME }."
       ],
@@ -10166,17 +10099,11 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Para los usuarios que cambian a ${ MAIL_APP_NAME } desde otro servicio de correo electrónico, seleccione la pestaña ${ boldAddresses } y agregue todas las direcciones de correo activas antes de cambiar el registro MX para garantizar una transición sin problemas."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Redirija correos entrantes desde otra cuenta a el buzón seguro de ${ MAIL_APP_NAME }."
-      ],
       "Free forever": [
         "Gratis para siempre"
       ],
       "Free trial": [
         "Prueba gratuita"
-      ],
-      "free up space by deleting older messages or other data": [
-        "liberar espacio eliminando mensajes antiguos u otros datos"
       ],
       "Friends and family": [
         "Familiares y amigos"
@@ -10738,9 +10665,6 @@
       "No Gateways yet": [
         "Aún no hay puertas de enlace"
       ],
-      "No imports or forwarding history.": [
-        "Sin historial de importaciones o reenvíos."
-      ],
       "No label selected": [
         "Ninguna etiqueta seleccionada"
       ],
@@ -10788,9 +10712,6 @@
       ],
       "Once you reset your password:": [
         "Luego de restablecer la contraseña:"
-      ],
-      "One time import": [
-        "Importación única"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Solo cambie estos ajustes si está usando PGP con destinatarios que no son de ${ BRAND_NAME }."
@@ -11036,9 +10957,6 @@
       "Public sharing of documents is not yet supported.": [
         "El intercambio público de documentos aún no está admitido."
       ],
-      "purchase additional storage": [
-        "comprar almacenamiento adicional"
-      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contáctenos para obtener ayuda con cualquier cosa de ${ BRAND_NAME }."
       ],
@@ -11162,9 +11080,6 @@
       "Select users to view their activity": [
         "Seleccione usuarios para ver sus actividades"
       ],
-      "Select what you want to import.": [
-        "Seleccione lo que quiere importar."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleccione los calendarios que quiere importar. Se creará un calendario nuevo para cada calendario importado de acuerdo con el número de calendarios disponibles en el plan."
       ],
@@ -11200,9 +11115,6 @@
       ],
       "Set password": [
         "Definir una contraseña"
-      ],
-      "Set up forwarding": [
-        "Configurar el reenvío"
       ],
       "Set up your organization": [
         "Configure la organización"
@@ -12126,9 +12038,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Puede obtener nuestros servicios premium de privacidad en un paquete único por solo **${ priceString }/mes**."
       ],
-      "You can import one data type at a time.": [
-        "Puede importar un tipo de datos a la vez."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimine enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }.",
         "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimine enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }."
@@ -12317,7 +12226,7 @@
         "Su cuenta se ha actualizado correctamente."
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Su cuenta está configurada actualmente para aplicar el esquema de inversión del sujeto pasivo. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
+        "Su cuenta está actualmente configurada para aplicar el esquema de cargo inverso. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
       ],
       "Your account was successfully updated with this promotion": [
         "Se ha actualizado la cuenta con esta promoción"
@@ -12339,10 +12248,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Su prueba gratuita se convirtió en una suscripción mensual. Su fecha de renovación es ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "La importación desde ${ accounts } está retrasada temporalmente.",
-        "Las importaciones desde ${ accounts } están retrasadas temporalmente."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Sus datos están a salvo con nosotros. Solo le contactaremos cuando sea necesario para prestar nuestros servicios."
@@ -13307,9 +13212,6 @@
       "Calendar": [
         "Calendario"
       ],
-      "Calendars": [
-        "Calendarios"
-      ],
       "Capitalize words": [
         "Palabras en mayúsculas"
       ],
@@ -13561,9 +13463,6 @@
       ],
       "Email or username": [
         "Correo o nombre de usuario"
-      ],
-      "Emails": [
-        "Correos"
       ],
       "Emails (all messages)": [
         "Correos (todos los mensajes)"
@@ -18250,7 +18149,7 @@
         "Número de IVA"
       ],
       "VAT reverse charge mechanism applies.": [
-        "El mecanismo de inversión del sujeto pasivo se aplica."
+        "Se aplica el mecanismo de cargo inverso del IVA."
       ],
       "You already have a subscription to this plan.": [
         "Ya tiene una suscripción a este plan."
@@ -23452,9 +23351,6 @@
       "Help center": [
         "Centro de ayuda"
       ],
-      "History": [
-        "Historial"
-      ],
       "Home": [
         "Inicio"
       ],
@@ -23835,7 +23731,7 @@
         "Contraseñas reusadas"
       ],
       "Reverse charge not supported": [
-        "Inversión del sujeto pasivo no soportada"
+        "Cargo inverso no soportado"
       ],
       "Revoke certificate?": [
         "¿Revocar certificado?"
@@ -24204,9 +24100,6 @@
       "What is the dark web?": [
         "¿Qué es la dark web?"
       ],
-      "What would you like to import?": [
-        "¿Qué quiere importar?"
-      ],
       "Wipe all logs?": [
         "¿Borrar todos los registros?"
       ],
@@ -24284,20 +24177,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Acciones"
-      ],
-      "Date": [
-        "Fecha"
-      ],
-      "Import": [
-        "Importar"
-      ],
       "Size": [
         "Tamaño"
-      ],
-      "Status": [
-        "Estado"
       ]
     },
     "Title header for addresses domain table": {
@@ -25437,9 +25318,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Perderá cualquier personalización que haya hecho hasta ahora."
-      ],
-      "You will not see this import record in the list any more.": [
-        "Ya no verá este registro de importación en la lista."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "La prueba gratuita termina en ${ textDate }. ${ action }"
