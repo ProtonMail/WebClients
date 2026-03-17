@@ -2281,6 +2281,9 @@
       "Enter 6 digits": [
         "请输入 6 位验证码"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "请输入您的用户名（不含 @example.com 域名）"
+      ],
       "Error connecting to the Bitcoin API.": [
         "连接比特币 API 失败。"
       ],
@@ -2298,6 +2301,9 @@
       ],
       "Invalid code": [
         "无效代码"
+      ],
+      "Invalid coupon": [
+        "优惠券无效"
       ],
       "Invalid expiration date": [
         "有效期不正确"
@@ -2371,6 +2377,9 @@
       "Request timed out": [
         "请求超时"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "此套餐不支持反向收费机制"
+      ],
       "Signature verification failed": [
         "签名验证失败"
       ],
@@ -2388,6 +2397,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "充值金额不能低于 ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "最低捐赠金额为 ${ price }"
       ],
       "The passphrases do not match": [
         "密码不匹配"
@@ -3120,6 +3132,9 @@
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "您的 ${ plan } 订阅将被替换为 ${ PASS_SHORT_APP_NAME } Lifetime。订阅的差价将计入您的账户。${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "您的账户当前已配置为应用反向收费机制，但所选套餐不支持此机制。若要继续，请从账单地址中移除增值税号，或选择其他套餐。"
       ],
       "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
         "您的结账页面已在新标签页中打开。请在其中完成付款，完成后返回此页面。"
@@ -4648,6 +4663,9 @@
       "VAT number": [
         "增值税号"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "适用增值税反向收费机制"
+      ],
       "You already have a subscription to this plan.": [
         "您已订阅此套餐"
       ],
@@ -5494,6 +5512,9 @@
       ],
       "Request new code": [
         "请求新验证码"
+      ],
+      "Reverse charge not supported": [
+        "不支持反向收费"
       ],
       "Select a plan": [
         "选择账户等级"

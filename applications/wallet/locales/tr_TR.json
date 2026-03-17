@@ -2294,7 +2294,7 @@
         "6 rakam yazın"
       ],
       "Enter your username without the domain (@example.com)": [
-        "Kullanıcı adınızı etki alanı (@example.com) olmadan girin"
+        "Kullanıcı adınızı etki alanı (@example.com) olmadan yazın"
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
@@ -2315,7 +2315,7 @@
         "Kod geçersiz"
       ],
       "Invalid coupon": [
-        "Geçersiz kupon"
+        "Kupon geçersiz"
       ],
       "Invalid expiration date": [
         "Son kullanma tarihi geçersiz"
@@ -2390,7 +2390,7 @@
         "İstek zaman aşımına uğradı"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "Bu tarife için sorumlu sıfatıyla KDV usulü desteklenmemektedir"
+        "Bu tarifede tersine KDV uygulaması desteklenmiyor"
       ],
       "Signature verification failed": [
         "İmza doğrulanamadı"
@@ -2411,7 +2411,7 @@
         "Eklenebilecek en az kredi tutarı: ${ price }"
       ],
       "The minimum donation amount is ${ price }": [
-        "Minimum bağış tutarı ${ price }"
+        "En az bağış tutarı ${ price }"
       ],
       "The passphrases do not match": [
         "Parola ifadeleri eşleşmiyor"
@@ -3159,7 +3159,7 @@
         "${ plan } aboneliğiniz ${ PASS_SHORT_APP_NAME } Lifetime aboneliğiyle değiştirilecek. Aboneliğinizin kalan tutarı hesabınıza eklenecek. ${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme fiyatı yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır."
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Hesabınız şu anda sorumlu sıfatıyla KDV usulünü uygulayacak şekilde yapılandırılmış. Bu durum seçilen tarife için desteklenmemektedir. Devam etmek için ya fatura adresinden KDV numarasını kaldırın ya da farklı bir tarife seçin."
+        "Hesabınızda şu anda tersine KDV uygulaması yapılandırılmış. Seçilmiş tarifede bu uygulama desteklenmiyor. İlerlemek için fatura adresinden KDV numarasını kaldırabilir ya da farklı bir tarife seçebilirsiniz."
       ],
       "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
         "Ödemeniz yeni bir sekmede açıldı. Lütfen o sekmeden ödemenizi yaptıktan sonra bu sayfaya geri dönün."
@@ -4729,7 +4729,7 @@
         "KDV numarası"
       ],
       "VAT reverse charge mechanism applies.": [
-        "Sorumlu sıfatıyla KDV uygulaması geçerlidir."
+        "Tersine KDV uygulaması kullanılıyor."
       ],
       "You already have a subscription to this plan.": [
         "Bu tarife için zaten bir aboneliğiniz var."
@@ -5590,7 +5590,7 @@
         "Yeni kod iste"
       ],
       "Reverse charge not supported": [
-        "Sorumlu sıfatıyla KDV desteklenmiyor"
+        "Tersine KDV uygulaması desteklenmiyor"
       ],
       "Select a plan": [
         "Bir tarife seçin"
