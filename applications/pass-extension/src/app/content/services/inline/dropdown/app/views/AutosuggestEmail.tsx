@@ -33,7 +33,7 @@ const isValidAliasOptions = (options: AliasState['aliasOptions']): options is Al
 
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
-export const AutosuggestEmail: FC<Props> = ({ origin, prefix }) => {
+export const AutosuggestEmail: FC<Props> = ({ origin, prefix, aliasCreationDisabled }) => {
     const controller = useIFrameAppController();
     const { onTelemetry } = usePassCore();
 
@@ -155,60 +155,62 @@ export const AutosuggestEmail: FC<Props> = ({ origin, prefix }) => {
                     }}
                 />
             )}
-            <ListItem
-                title={
-                    needsUpgrade
-                        ? c('Info').t`Upgrade ${PASS_APP_NAME}`
-                        : // translator: action of hiding my email, in contrast with the previous label "Use my email"
-                          c('Title').t`Hide my email`
-                }
-                autogrow
-                subTitle={(() => {
-                    if (loadingText) {
-                        return (
-                            <span className="block flex items-center flex-nowrap">
-                                <CircleLoader className="mr-1" />
-                                <span className="block text-ellipsis">{loadingText}</span>
-                            </span>
-                        );
+            {!aliasCreationDisabled && (
+                <ListItem
+                    title={
+                        needsUpgrade
+                            ? c('Info').t`Upgrade ${PASS_APP_NAME}`
+                            : // translator: action of hiding my email, in contrast with the previous label "Use my email"
+                              c('Title').t`Hide my email`
                     }
+                    autogrow
+                    subTitle={(() => {
+                        if (loadingText) {
+                            return (
+                                <span className="block flex items-center flex-nowrap">
+                                    <CircleLoader className="mr-1" />
+                                    <span className="block text-ellipsis">{loadingText}</span>
+                                </span>
+                            );
+                        }
 
-                    if (needsUpgrade) {
-                        return (
-                            <span className="text-sm block">{c('Warning')
-                                .t`Your plan does not allow you to create more aliases`}</span>
-                        );
-                    }
+                        if (needsUpgrade) {
+                            return (
+                                <span className="text-sm block">{c('Warning')
+                                    .t`Your plan does not allow you to create more aliases`}</span>
+                            );
+                        }
 
-                    if (error) {
-                        return (
-                            <span className="color-danger text-sm block">
-                                {c('Error').t`Cannot create alias (${error}).`}{' '}
-                                <span className="text-semibold text-underline">{c('Action').t`Try again`}</span>
-                            </span>
-                        );
-                    }
+                        if (error) {
+                            return (
+                                <span className="color-danger text-sm block">
+                                    {c('Error').t`Cannot create alias (${error}).`}{' '}
+                                    <span className="text-semibold text-underline">{c('Action').t`Try again`}</span>
+                                </span>
+                            );
+                        }
 
-                    if (validAliasOptions) {
-                        return (
-                            <AliasPreview
-                                prefix={prefix}
-                                suffix={aliasOptions.suffixes[0].suffix}
-                                standalone
-                                key="alias-preview"
-                            />
-                        );
-                    }
-                })()}
-                icon={{ type: 'icon', icon: needsUpgrade ? 'arrow-within-square' : 'alias' }}
-                subTheme={SubTheme.TEAL}
-                disabled={loadingText !== null}
-                onClick={(() => {
-                    if (needsUpgrade) return navigateToUpgrade;
-                    if (error) return requestAliasOptions;
-                    if (validAliasOptions) return () => createAlias(aliasOptions);
-                })()}
-            />
+                        if (validAliasOptions) {
+                            return (
+                                <AliasPreview
+                                    prefix={prefix}
+                                    suffix={aliasOptions.suffixes[0].suffix}
+                                    standalone
+                                    key="alias-preview"
+                                />
+                            );
+                        }
+                    })()}
+                    icon={{ type: 'icon', icon: needsUpgrade ? 'arrow-within-square' : 'alias' }}
+                    subTheme={SubTheme.TEAL}
+                    disabled={loadingText !== null}
+                    onClick={(() => {
+                        if (needsUpgrade) return navigateToUpgrade;
+                        if (error) return requestAliasOptions;
+                        if (validAliasOptions) return () => createAlias(aliasOptions);
+                    })()}
+                />
+            )}
         </>
     );
 };
