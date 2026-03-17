@@ -5,14 +5,16 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
+import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { useOfflineSetup } from '@proton/pass/hooks/auth/useOfflineSetup';
 import { selectOfflineEnabled } from '@proton/pass/store/selectors';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { SettingsPanel } from './SettingsPanel';
 
-export const Offline: FC = () => {
+export const Offline: FC = WithFeatureFlag(() => {
     const [setup, loading] = useOfflineSetup();
 
     const enabled = useSelector(selectOfflineEnabled);
@@ -56,4 +58,4 @@ export const Offline: FC = () => {
             </SettingsPanel>
         </>
     );
-};
+}, PassFeature.PassExtensionOfflineV1);
