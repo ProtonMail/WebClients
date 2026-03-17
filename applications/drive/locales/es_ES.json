@@ -551,6 +551,9 @@
       "Go to settings": [
         "Ir a los ajustes"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -584,14 +587,8 @@
       "import": [
         "importar"
       ],
-      "Import calendars": [
-        "Importar calendarios"
-      ],
       "Import contacts": [
         "Importar contactos"
-      ],
-      "Import emails": [
-        "Importar correos electrónicos"
       ],
       "Import emails, calendars, contacts": [
         "Importar correos electrónicos, calendarios y contactos"
@@ -4813,20 +4810,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importar desde ${ provider }"
-      ],
-      "Import from Google": [
-        "Importar desde Google"
-      ],
-      "Import from other": [
-        "Importar desde otro proveedor"
-      ],
-      "Import from Outlook": [
-        "Importar desde Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importar desde Yahoo"
+      "Advanced import": [
+        "Importación avanzada"
       ]
     },
     "Import warning": {
@@ -5234,9 +5219,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Impulsa la identidad de marca de tu organización y crea una experiencia online más consistente para tus usuarios."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Trae tus mensajes, contactos y calendarios a ${ BRAND_NAME }."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al pasar a un plan gratuito, perderás permanentemente estos beneficios, incluso si mejoras de nuevo tu plan en el futuro."
       ],
@@ -5290,6 +5272,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Elige el plan que mejor se adapte a ti."
+      ],
+      "Choose your service to connect with": [
+        "Elige tu servicio para conectar"
       ],
       "Clear all search data": [
         "Borrar todos los datos de búsqueda"
@@ -5936,9 +5921,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de tus claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Te recomendamos que las consideres \"no fiables\"."
       ],
-      "One time import": [
-        "Importación única"
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Abre la guía para ver las acciones recomendadas y los enlaces útiles."
       ],
@@ -6188,9 +6170,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecciona el formato de correo electrónico que quieres utilizar por defecto al enviar un correo electrónico a esta dirección."
-      ],
-      "Select what you want to import.": [
-        "Selecciona lo que quieres importar."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecciona los calendarios que quieres importar. Se creará un calendario para cada calendario importado de acuerdo con el número de calendarios disponibles en tu plan."
@@ -6762,9 +6741,6 @@
       "You can close the tab or browser in the meantime.": [
         "Mientras tanto, puedes cerrar esta pestaña o navegador."
       ],
-      "You can import one data type at a time.": [
-        "Puedes importar un tipo de datos a la vez."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Eliminar enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido el calendario antes de cancelar la suscripción a ${ MAIL_SHORT_APP_NAME }.",
         "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Eliminar enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido los calendarios antes de cancelar la suscripción a ${ MAIL_SHORT_APP_NAME }."
@@ -7155,9 +7131,6 @@
       "Calendar": [
         "Calendario"
       ],
-      "Calendars": [
-        "Calendarios"
-      ],
       "can edit": [
         "se puede editar"
       ],
@@ -7293,9 +7266,6 @@
       ],
       "Email format": [
         "Formato de correo electrónico"
-      ],
-      "Emails": [
-        "Correos electrónicos"
       ],
       "Emails (all messages)": [
         "Correos electrónicos (todos los mensajes)"
@@ -10211,6 +10181,9 @@
       "VAT number": [
         "Número de IVA"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Se aplica el mecanismo de inversión del sujeto pasivo del IVA."
+      ],
       "You already have a subscription to this plan.": [
         "Ya tienes una suscripción a este plan."
       ],
@@ -12273,6 +12246,9 @@
       "Check for malicious files": [
         "Buscar archivos maliciosos"
       ],
+      "Choose a provider": [
+        "Elegir un proveedor"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Obtén tu dirección de ${ MAIL_APP_NAME }"
       ],
@@ -12338,6 +12314,9 @@
       ],
       "Currency": [
         "Moneda"
+      ],
+      "Custom": [
+        "Personalizado"
       ],
       "Customize and confirm": [
         "Personalizar y confirmar"
@@ -12601,6 +12580,9 @@
       ],
       "Import groups": [
         "Importar grupos"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importa tus datos a ${ BRAND_NAME }"
       ],
       "Information exposed in breach": [
         "Información expuesta en la vulneración"
@@ -12879,6 +12861,9 @@
       "Select contact group": [
         "Seleccionar grupo de contactos"
       ],
+      "Select data to import": [
+        "Seleccionar datos para importar"
+      ],
       "Select link expiration date": [
         "Selecciona la fecha de expiración del enlace."
       ],
@@ -13118,9 +13103,6 @@
       ],
       "What is a VPN?": [
         "¿Qué es una VPN?"
-      ],
-      "What would you like to import?": [
-        "¿Qué te gustaría importar?"
       ],
       "When is it most important to use a VPN?": [
         "¿Cuándo es más importante usar una VPN?"

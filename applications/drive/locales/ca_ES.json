@@ -551,6 +551,9 @@
       "Go to settings": [
         "Ves a les preferències"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "D'acord"
       ],
@@ -587,14 +590,8 @@
       "import": [
         "importa"
       ],
-      "Import calendars": [
-        "Importa calendaris"
-      ],
       "Import contacts": [
         "Importar contactes"
-      ],
-      "Import emails": [
-        "Importa correus"
       ],
       "Import emails, calendars, contacts": [
         "Importa correus, calendaris i contactes"
@@ -4824,20 +4821,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importa des de ${ provider }"
-      ],
-      "Import from Google": [
-        "Importa des del Google"
-      ],
-      "Import from other": [
-        "Importa des d'un altre"
-      ],
-      "Import from Outlook": [
-        "Importa des de l'Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importa des del Yahoo"
+      "Advanced import": [
+        "Importació avançada"
       ]
     },
     "Import warning": {
@@ -5245,9 +5230,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Potencieu la identitat de marca de la vostra organització i creeu una experiència en línia més coherent per als usuaris."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Porteu els vostres missatges, contactes i calendaris al ${ BRAND_NAME }."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
       ],
@@ -5301,6 +5283,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Trieu el pla que se us adapti millor."
+      ],
+      "Choose your service to connect with": [
+        "Trieu el servei amb què us voleu connectar"
       ],
       "Clear all search data": [
         "Netejar totes les dades de cerca"
@@ -5953,9 +5938,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les vostres claus de confiança han estat marcades com a \"compromeses\" pel seu propietari. Us recomanem que marqueu aquestes claus com a \"no confiables\"."
       ],
-      "One time import": [
-        "Importació única"
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Obriu la guia per obtenir accions recomanades i enllaços útils."
       ],
@@ -6205,9 +6187,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccioni el format de correu electronic que vols fer us per defecte quan enviis un correu electronic a aquesta direcció."
-      ],
-      "Select what you want to import.": [
-        "Seleccioneu què voleu importar."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleccioneu quins calendaris importar. Es crearà un calendari per cada calendari importat segons el nombre de calendaris disponibles al vostre pla."
@@ -6782,9 +6761,6 @@
       "You can close the tab or browser in the meantime.": [
         "Mentrestant, podeu tancar la pestanya o el navegador."
       ],
-      "You can import one data type at a time.": [
-        "Podeu importar un tipus de dades alhora."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }.",
         "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }."
@@ -7175,9 +7151,6 @@
       "Calendar": [
         "Calendari"
       ],
-      "Calendars": [
-        "Calendaris"
-      ],
       "can edit": [
         "es pot editar"
       ],
@@ -7313,9 +7286,6 @@
       ],
       "Email format": [
         "Format de correu electrònic"
-      ],
-      "Emails": [
-        "Correus electrònics"
       ],
       "Emails (all messages)": [
         "Correus electrònics (tots els missatges)"
@@ -12204,6 +12174,9 @@
       "Check for malicious files": [
         "Comprova si hi ha fitxers maliciosos"
       ],
+      "Choose a provider": [
+        "Escolliu un proveïdor"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Aconseguiu la vostra adreça de ${ MAIL_APP_NAME }"
       ],
@@ -12269,6 +12242,9 @@
       ],
       "Currency": [
         "Moneda"
+      ],
+      "Custom": [
+        "Personalitzar"
       ],
       "Customize and confirm": [
         "Personalitzeu i confirmeu"
@@ -12532,6 +12508,9 @@
       ],
       "Import groups": [
         "Importa grups"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importeu les dades a ${ BRAND_NAME }"
       ],
       "Information exposed in breach": [
         "Informació exposada en la filtració"
@@ -12810,6 +12789,9 @@
       "Select contact group": [
         "Seleccionar grup de contactes"
       ],
+      "Select data to import": [
+        "Seleccioneu les dades que voleu importar"
+      ],
       "Select link expiration date": [
         "Selecciona la data de caducitat de l'enllaç"
       ],
@@ -13049,9 +13031,6 @@
       ],
       "What is a VPN?": [
         "Què és una VPN?"
-      ],
-      "What would you like to import?": [
-        "Què li agradaria importar?"
       ],
       "When is it most important to use a VPN?": [
         "Quan és més important utilitzar una VPN?"

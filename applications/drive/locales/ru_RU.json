@@ -513,14 +513,8 @@
       "import": [
         "импорт"
       ],
-      "Import calendars": [
-        "Импортировать календари"
-      ],
       "Import contacts": [
         "Импортировать контакты"
-      ],
-      "Import emails": [
-        "Импортировать электронную почту"
       ],
       "Import emails, calendars, contacts": [
         "Импорт электронных писем, календарей и контактов"
@@ -1414,6 +1408,9 @@
       ],
       "Payments problem": [
         "Проблема с платежами"
+      ],
+      "Sheets problem": [
+        "Проблема с таблицами"
       ],
       "Sign in problem": [
         "Проблема со входом"
@@ -3014,6 +3011,9 @@
       "Enter 6 digits": [
         "Введите 6 цифр"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Введите ваше имя пользователя без домена (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к API Биткоин."
       ],
@@ -4253,23 +4253,6 @@
         "Выберите ${ boldExport } для экспорта календаря в формате файла ICS."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Импортировать из ${ provider }"
-      ],
-      "Import from Google": [
-        "Импортировать из Google"
-      ],
-      "Import from other": [
-        "Импортировать из другого"
-      ],
-      "Import from Outlook": [
-        "Импортировать из Outlook"
-      ],
-      "Import from Yahoo": [
-        "Импортировать из Yahoo"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } из ${ totalContacts } контактов не будут импортированы. Нажмите, чтобы узнать подробности."
@@ -4695,9 +4678,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Расширьте идентификацию бренда вашей организации и создайте более последовательный опыт работы в Интернете для ваших пользователей."
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Перенесите ваши сообщения, контакты и календари в ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
@@ -5314,9 +5294,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
       ],
-      "One time import": [
-        "Одноразовый импорт"
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Откройте руководство, чтобы узнать о рекомендуемых действиях и полезных ссылках."
       ],
@@ -5544,9 +5521,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат писем, который вы хотите использовать по умолчанию для отправки сообщений на этот адрес."
-      ],
-      "Select what you want to import.": [
-        "Выберите то, что вы хотите импортировать."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберите, какие календари импортировать. Новый календарь будет создан для каждого импортированного календаря с учётом числа календарей, доступных в вашем тарифе."
@@ -6049,9 +6023,6 @@
       "You can close the tab or browser in the meantime.": [
         "Тем временем можно закрыть вкладку или браузер."
       ],
-      "You can import one data type at a time.": [
-        "Вы можете импортировать один тип данных за один раз."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календаря. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку.",
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку.",
@@ -6389,9 +6360,6 @@
       "Calendar": [
         "Календарь"
       ],
-      "Calendars": [
-        "Календари"
-      ],
       "Cancel download": [
         "Отменить скачивание"
       ],
@@ -6514,9 +6482,6 @@
       ],
       "Email format": [
         "Формат сообщения"
-      ],
-      "Emails": [
-        "Электронные письма"
       ],
       "Emails (all messages)": [
         "Письма (все)"
@@ -11611,9 +11576,6 @@
       ],
       "What is a VPN?": [
         "Что такое VPN?"
-      ],
-      "What would you like to import?": [
-        "Что бы вы хотели импортировать?"
       ],
       "When is it most important to use a VPN?": [
         "Когда важнее всего использовать VPN?"
