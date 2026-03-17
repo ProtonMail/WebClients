@@ -45,6 +45,7 @@ export enum CommonFeatureFlag {
     InboxBringYourOwnEmailClient = 'InboxBringYourOwnEmailClient',
     InboxBringYourOwnEmailSignup = 'InboxBringYourOwnEmailSignup',
     ReferralExpansionDiscover = 'ReferralExpansionDiscover',
+    ReferralFreeUsersDiscover = 'ReferralFreeUsersDiscover',
     AlwaysOnUpsell = 'AlwaysOnUpsell',
     LumoEarlyAccess = 'LumoEarlyAccess',
     LumoTooling = 'LumoTooling',
