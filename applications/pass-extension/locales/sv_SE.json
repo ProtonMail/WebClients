@@ -1247,6 +1247,15 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Något gick fel. Ladda om tillägget ${ PASS_APP_NAME }. Detta problem har loggats"
       ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME }-appen för stationär dator är låst, den måste vara upplåst."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "${ PASS_APP_NAME }-appen för stationär dator är inte installerad."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME }-appen för stationär dator svarar inte, körs den?"
+      ],
       "The URL is in the list": [
         "URL:en finns i listan"
       ],
@@ -1799,6 +1808,9 @@
       "Enabling biometrics lock failed": [
         "Aktivering av biometrisk lås misslyckades"
       ],
+      "Enabling desktop auto-lock": [
+        "Aktiverar automatisk låsning för stationär dator"
+      ],
       "Enabling offline mode...": [
         "Aktiverar offlineläge …"
       ],
@@ -2282,6 +2294,12 @@
       "Restoring trashed items...": [
         "Återställer kastade objekt …"
       ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "Högerklicka på tilläggsikonen och välj “Hantera tillägg“. Navigera till “Behörigheter och data“ och aktivera webbplatsbehörigheter."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "Högerklicka på tilläggsikonen och välj “Hantera tillägg“. Navigera till “Webbplatsåtkomst“ och aktivera webbplatsbehörigheter."
+      ],
       "Save login": [
         "Spara inloggning"
       ],
@@ -2408,6 +2426,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Denna funktion är för närvarande experimentell på Linux. Se till att ditt system är uppdaterat."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Denna funktion kräver att ${ PASS_APP_NAME }-appen för stationär dator är installerad och körs under inställning."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Detta objekt delas för närvarande inte med någon. Bjud in människor att dela det med andra."
