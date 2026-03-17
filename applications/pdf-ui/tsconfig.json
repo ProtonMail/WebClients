@@ -3,7 +3,7 @@
         "target": "esnext",
         "useDefineForClassFields": false,
         "module": "ESNext",
-        "lib": ["ES2020", "DOM", "DOM.Iterable"],
+        "lib": ["ES2020", "DOM", "DOM.Iterable", "WebWorker"],
         "skipLibCheck": true,
         /* Bundler mode */
         "moduleResolution": "node",
