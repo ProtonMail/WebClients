@@ -7,7 +7,7 @@ import type { EngineSearchItem } from '../engine/core/searcher/BaseSearcher';
 import { EngineDB } from '../engine/storage/EngineDB';
 import type { SearchModuleStateUpdateChannel } from '../searchModuleStateUpdateChannel';
 import { createSearchModuleStateUpdateChannel } from '../searchModuleStateUpdateChannel';
-import type { EngineType, SdkType, SearchModuleState, SearchQuery, UserId } from '../types';
+import type { EngineType, SdkType, SearchQuery, UserId } from '../types';
 
 /**
  * Manages a set of Engine instances, each engine has its own separate index and
@@ -65,7 +65,7 @@ export class EngineOrchestrator {
         const engineStates = [...this.engines.values()].map((e) => e.engine.getState());
 
         // Aggregate engine states to create search module state.
-        const newSearchModuleState: SearchModuleState = {
+        const newSearchModuleState = {
             isInitialIndexing: engineStates.some((s) => s.isInitialIndexing),
             isSearchable: engineStates.some((s) => s.isSearchable),
         };

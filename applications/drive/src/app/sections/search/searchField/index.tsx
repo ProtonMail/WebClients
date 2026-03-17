@@ -47,6 +47,10 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
         }
         indexingDropdownControl.open();
 
+        if (searchModule.isRunningOutdatedVersion) {
+            return;
+        }
+
         // Focusing the search field is considered an opt-in to bootstrap search.
         void searchModule.optIn();
     };
@@ -57,6 +61,7 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
     };
 
     const placeholderText = c('Action').t`Search drive`;
+    const isReadonly = !(searchModule.isSearchable && !searchModule.isRunningOutdatedVersion);
     return (
         <div ref={indexingDropdownAnchorRef} className="searchfield-container searchbox">
             <>
@@ -74,10 +79,11 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
                             e.currentTarget.blur();
                         }
                     }}
+                    readOnly={isReadonly}
                     prefix={
                         <Button
                             icon
-                            disabled={!searchParams}
+                            disabled={!searchParams && !isReadonly}
                             shape="ghost"
                             color="weak"
                             size="small"
@@ -116,6 +122,7 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
                     onClosed={handleClosedDropdown}
                     isSearchable={searchModule.isSearchable}
                     isInitialIndexing={searchModule.isInitialIndexing}
+                    isRunningOutdatedAppVersion={searchModule.isRunningOutdatedVersion}
                 />
             </>
         </div>
