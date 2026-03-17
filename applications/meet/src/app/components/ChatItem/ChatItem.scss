@@ -23,6 +23,7 @@
 		inset-block-end: 100%;
 		inset-inline-end: 0;
 		z-index: 1;
+		background: color-mix(in srgb, var(--interaction-weak-minor-3) 60%, transparent);
 	}
 
 	.chat-item-quick-reaction-btn {

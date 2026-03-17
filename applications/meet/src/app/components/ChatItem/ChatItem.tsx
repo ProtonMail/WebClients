@@ -106,7 +106,7 @@ export const ChatItem = ({
                 {isMeetChatMessage(item) && (
                     <div className="relative">
                         {showReactionControls && isHovered && (
-                            <div className="chat-item-quick-reactions flex gap-1 p-1 rounded-lg border border-weak bg-norm shadow-norm absolute">
+                            <div className="chat-item-quick-reactions flex gap-1 p-1 rounded-lg border border-weak bg-norm absolute">
                                 {QUICK_REACTIONS.map((emoji) => (
                                     <button
                                         key={emoji}
