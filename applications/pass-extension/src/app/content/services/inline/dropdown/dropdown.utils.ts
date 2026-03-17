@@ -139,9 +139,18 @@ export const intoDropdownAction = withContext<(request: DropdownRequest) => Prom
                 return { action, ...base };
             case DropdownAction.AUTOFILL_LOGIN:
                 return { action, ...base, startsWith: '' };
-            case DropdownAction.AUTOSUGGEST_ALIAS:
+            case DropdownAction.AUTOSUGGEST_ALIAS: {
                 if (!url.displayName) return;
-                return { action, prefix: deriveAliasPrefix(url.displayName), ...base };
+                return sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOSUGGEST_ALIAS }), (res) => {
+                    if (res.type === 'error') return;
+                    return {
+                        action,
+                        prefix: deriveAliasPrefix(url.displayName!),
+                        aliasCreationDisabled: res.aliasCreationDisabled,
+                        ...base,
+                    };
+                });
+            }
             case DropdownAction.AUTOSUGGEST_PASSWORD: {
                 return sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOSUGGEST_PASSWORD }), (res) => {
                     if (res.type === 'error') return;
