@@ -267,7 +267,7 @@ const AssistantMessage = ({
                                             sourcesContainerRef={sourcesContainerRef}
                                             messageContentContainerRef={markdownContainerRef}
                                             reasoning={message.reasoning}
-                                            toolCallResults={searchResults}
+                                            // toolCallResults={searchResults}
                                         />
                                     ) : (
                                         <EmptyMessage />
@@ -288,7 +288,10 @@ const AssistantMessage = ({
                                         retryButtonRef={retryButtonRef}
                                     />
 
-                                    {isLastMessage && isFinishedGenerating && !generationFailed && message.suggestedQuestions?.length ? (
+                                    {isLastMessage &&
+                                    isFinishedGenerating &&
+                                    !generationFailed &&
+                                    message.suggestedQuestions?.length ? (
                                         <SuggestedQuestions questions={message.suggestedQuestions} />
                                     ) : null}
                                 </div>
