@@ -9,6 +9,7 @@ import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { MemoryStorage } from '@proton/pass/lib/file-storage/fs';
+import type { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { AppState } from '@proton/pass/types/worker/state';
 import { AppStatus } from '@proton/pass/types/worker/state';
@@ -19,8 +20,9 @@ import noop from '@proton/utils/noop';
 import { useEndpointMessage } from './useEndpointMessage';
 
 export const useExtensionClientInit = (options: {
-    onStateChange: (state: AppState) => void;
+    onConnectivity: (connectivity: ConnectivityStatus) => void;
     onSettingsChange?: (settings: ProxiedSettings) => void;
+    onStateChange: (state: AppState) => void;
 }) => {
     const { endpoint } = usePassCore();
     const { port, tabId } = useExtensionContext();
@@ -32,16 +34,17 @@ export const useExtensionClientInit = (options: {
 
     const onChange = useCallback((state: AppState) => {
         AppStateManager.setState(state);
-        authStore?.setLocalID(state.localID);
-        authStore?.setUID(state.UID);
         options.onStateChange(state);
     }, []);
 
     useEffect(() => {
         const onMessage = (message: unknown) => {
+            if (matchExtensionMessage(message, { type: WorkerMessageType.CONNECTIVITY })) {
+                return options.onConnectivity(message.payload.status);
+            }
+
             if (matchExtensionMessage(message, { type: WorkerMessageType.WORKER_STATE_CHANGE })) {
-                ready.current.then(() => onChange(message.payload.state)).catch(noop);
-                return;
+                return ready.current.then(() => onChange(message.payload.state)).catch(noop);
             }
 
             if (matchExtensionMessage(message, { type: WorkerMessageType.SETTINGS_UPDATE })) {
@@ -60,6 +63,11 @@ export const useExtensionClientInit = (options: {
                 const { fileRef } = message.payload;
                 void MemoryStorage.deleteFile(fileRef);
                 return;
+            }
+
+            if (matchExtensionMessage(message, { type: WorkerMessageType.AUTH_CHANGED })) {
+                authStore?.clear();
+                return authStore?.setSession(message.payload);
             }
         };
 
@@ -81,7 +89,11 @@ export const useExtensionClientInit = (options: {
             );
 
         wakeup()
-            .then(({ state }) => onChange(state))
+            .then(({ state, connectivity, session }) => {
+                onChange(state);
+                authStore?.setSession(session);
+                options.onConnectivity(connectivity);
+            })
             .catch((err) =>
                 onChange({
                     authorized: false,

@@ -8,7 +8,7 @@ import {
 import { type LockAdapter, LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { getInvalidPasswordString } from '@proton/pass/lib/auth/utils';
-import { getOfflineComponents } from '@proton/pass/lib/cache/crypto';
+import { generateOfflineComponents } from '@proton/pass/lib/cache/crypto';
 import { decryptData, encryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
@@ -58,11 +58,8 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
         type: LockMode.BIOMETRICS,
 
         check: async () => {
-            logger.info(`[BiometricLock] checking password lock`);
-
-            const offlineConfig = authStore.getOfflineConfig();
-            const offlineVerifier = authStore.getOfflineVerifier();
-            if (!(offlineConfig && offlineVerifier)) return { mode: LockMode.NONE, locked: false };
+            logger.info(`[BiometricLock] checking lock`);
+            if (!authStore.hasOfflineComponents()) return { mode: LockMode.NONE, locked: false };
 
             authStore.setLockLastExtendTime(getEpoch());
             return { mode: adapter.type, locked: false, ttl: authStore.getLockTTL() };
@@ -79,10 +76,8 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
             if (!verified) throw new Error(getInvalidPasswordString(authStore));
 
             if (!authStore.hasOfflinePassword()) {
-                const { offlineConfig, offlineKD, offlineVerifier } = await getOfflineComponents(secret);
-                authStore.setOfflineConfig(offlineConfig);
-                authStore.setOfflineKD(offlineKD);
-                authStore.setOfflineVerifier(offlineVerifier);
+                const components = await generateOfflineComponents(secret);
+                authStore.setOfflineComponents(components);
             }
 
             const offlineKD = authStore.getOfflineKD();

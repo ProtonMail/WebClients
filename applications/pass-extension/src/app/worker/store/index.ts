@@ -26,6 +26,7 @@ import { EXTENSION_SAGAS } from '@proton/pass/store/sagas/extension';
 import { selectLocale } from '@proton/pass/store/selectors/settings';
 import { selectFeatureFlag, selectUserSettings } from '@proton/pass/store/selectors/user';
 import type { RootSagaOptions } from '@proton/pass/store/types';
+import type { LocalStoreData } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { first } from '@proton/pass/utils/array/first';
 import { eq, not } from '@proton/pass/utils/fp/predicates';
@@ -70,8 +71,8 @@ export const options: RootSagaOptions = {
     getAuthStore: withContext((ctx) => ctx.authStore),
     getAuthService: withContext((ctx) => ctx.service.auth),
     getCache: withContext(async (ctx) => {
-        const cache = await ctx.service.storage.local.getItems(['state', 'snapshot', 'salt', 'version']);
-
+        const cacheKeys: (keyof LocalStoreData)[] = ['state', 'snapshot', 'salt', 'version', 'encryptedCacheKey'];
+        const cache = await ctx.service.storage.local.getItems(cacheKeys);
         if (isChromeExtensionRollback() && cache.version === EXTENSION_BUILD_VERSION) return {};
         return cacheGuard(cache, EXTENSION_MANIFEST_VERSION);
     }),
@@ -121,9 +122,10 @@ export const options: RootSagaOptions = {
 
     /* Sets the worker status according to the boot
      * sequence's result. On boot failure, clear. */
-    onBoot: withContext(async (ctx, res) => {
+    onBoot: withContext((ctx, res) => {
         if (res.ok) {
             const state = store.getState();
+            ctx.setBooted(true);
 
             ctx.service.telemetry?.start().catch(noop);
             ctx.service.b2bEvents?.start().catch(noop);
@@ -132,6 +134,7 @@ export const options: RootSagaOptions = {
 
             const lockMode = authStore.getLockMode();
             const lockTtl = authStore.getLockTTL();
+
             /* If the boot is initiated following a session unlock, execute the
              * `onSessionLockUpdate` effect after the sequence successfully completes.
              * This step ensures the proper setup of the `SESSION_LOCK_ALARM` based on
@@ -143,7 +146,10 @@ export const options: RootSagaOptions = {
                     false
                 );
             }
-        } else if (res.clearCache) await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
+        } else {
+            ctx.setBooted(false);
+            if (res.clearCache) void ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
+        }
     }),
 
     onFeatureFlags: withContext((ctx, features) => ctx.service.featureFlags.sync(features)),

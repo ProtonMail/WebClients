@@ -4,11 +4,13 @@ import { Behaviors } from 'proton-pass-extension/lib/components/Settings/Behavio
 
 import { ApplicationLogs } from '@proton/pass/components/Settings/ApplicationLogs';
 import { Locale } from '@proton/pass/components/Settings/Locale';
+import { Offline } from '@proton/pass/components/Settings/Offline';
 import { Theme } from '@proton/pass/components/Settings/Theme';
 
 export const General: FC = () => [
     <Locale key="locale" />,
     <Theme key="theme" />,
     <Behaviors key="behaviors" />,
+    <Offline key="offline" />,
     <ApplicationLogs key="logs" style={{ '--h-custom': '18.75rem' }} />,
 ];

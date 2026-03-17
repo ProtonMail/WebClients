@@ -5,7 +5,7 @@ import { isPagePort, isPopupPort, tabIDFromPortName } from 'proton-pass-extensio
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { clientReady } from '@proton/pass/lib/client';
+import { clientBooted } from '@proton/pass/lib/client';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
 import browser from '@proton/pass/lib/globals/browser';
 import { cacheRequest } from '@proton/pass/store/actions/creators/client';
@@ -65,7 +65,7 @@ const WorkerMessageBroker = createMessageBroker({
             const remaining = WorkerMessageBroker.ports.query(or(isPopupPort, isPagePort));
             if (remaining.length === 0) void fileStorage.clearAll();
 
-            if (clientReady(ctx.getState().status)) {
+            if (clientBooted(ctx.getState().status)) {
                 const tabId = tabIDFromPortName(portName);
                 const state = ctx.service.store.getState();
 

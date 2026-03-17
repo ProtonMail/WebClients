@@ -19,7 +19,13 @@ import { c } from 'ttag';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
-import { clientBusy, clientErrored, clientMissingScope, clientSessionLocked } from '@proton/pass/lib/client';
+import {
+    clientBusy,
+    clientErrored,
+    clientMissingScope,
+    clientPasswordLocked,
+    clientSessionLocked,
+} from '@proton/pass/lib/client';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
@@ -100,6 +106,18 @@ export const Dropdown: FC<Props> = ({ initial = null }) => {
                                     subTitle={c('Info')
                                         .t`Please enter your extra password to start using ${PASS_SHORT_APP_NAME}.`}
                                     icon={{ type: 'status', icon: PassIconStatus.LOCKED }}
+                                    autogrow
+                                />
+                            );
+                        }
+
+                        if (clientPasswordLocked(status)) {
+                            return (
+                                <ListItem
+                                    onClick={() => controller.close({ userAction: true })}
+                                    subTitle={c('Info')
+                                        .t`${PASS_SHORT_APP_NAME} is currently offline. Open the extension to unlock.`}
+                                    icon={{ type: 'status', icon: PassIconStatus.LOCKED_DROPDOWN }}
                                     autogrow
                                 />
                             );

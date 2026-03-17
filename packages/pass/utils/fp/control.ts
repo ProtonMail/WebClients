@@ -58,3 +58,18 @@ export const skipFirst = <T extends Callback<any[], void>>(fn: T): SkipFirstFn<T
 
     return callback;
 };
+
+/** Creates a function that coalesces multiple synchronous calls
+ * into a single invocation deferred to the next microtask. */
+export const coalesce = (fn: () => void): (() => void) => {
+    let pending = false;
+
+    return () => {
+        if (pending) return;
+        pending = true;
+        queueMicrotask(() => {
+            pending = false;
+            fn();
+        });
+    };
+};

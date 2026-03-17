@@ -14,6 +14,8 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { AuthDeviceTopBanner } from '@proton/pass/components/Auth/AuthDeviceTopBanner';
 import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { ContextMenuProvider } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
+import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
+import { useAppConnectivityBar } from '@proton/pass/components/Core/ConnectivityProvider';
 import { Header } from '@proton/pass/components/Header/Header';
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
@@ -40,6 +42,9 @@ const MainSwitch: FC = () => {
     const { url } = useExtensionContext();
     const { lock, logout } = useExtensionClient();
     const { viewportWidth } = useActiveBreakpoint();
+    const { status } = useAppState();
+    const connectivityBar = useAppConnectivityBar(status);
+
     useSpotlightListener();
 
     // Doing this responsive adaptation programatically so the sidebar can be lazyly loaded
@@ -73,6 +78,7 @@ const MainSwitch: FC = () => {
                                 </WithSpotlight>
                             )}
                         </div>
+                        {connectivityBar}
                     </main>
                 </div>
             )}

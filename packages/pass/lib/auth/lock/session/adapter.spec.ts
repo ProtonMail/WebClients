@@ -3,7 +3,7 @@ import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/ad
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { encryptPersistedSessionWithKey } from '@proton/pass/lib/auth/session';
 import { createAuthStore } from '@proton/pass/lib/auth/store';
-import createStore from '@proton/shared/lib/helpers/store';
+import { createMemoryStore } from '@proton/pass/utils/store';
 
 import * as lockRequests from './lock.requests';
 
@@ -13,7 +13,7 @@ const unlock = lockRequests.unlockSession as jest.Mock;
 
 const setupAdapter = () => {
     const api = { reset: jest.fn() };
-    const authStore = createAuthStore(createStore());
+    const authStore = createAuthStore(createMemoryStore());
     const onNotification = jest.fn();
     const getPersistedSession = jest.fn();
     const persistSession = jest.fn();

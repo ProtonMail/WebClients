@@ -20,6 +20,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 import './Welcome.scss';
 
@@ -29,6 +30,7 @@ export const Welcome: FC = () => {
     useExtensionClientInit(
         useMemo(
             () => ({
+                onConnectivity: noop,
                 onStateChange: ({ status }) => {
                     if (clientReady(status)) {
                         void sendMessage.onSuccess(

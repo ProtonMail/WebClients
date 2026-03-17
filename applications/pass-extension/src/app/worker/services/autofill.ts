@@ -12,7 +12,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import type { CCFieldType } from '@proton/pass/fathom/labels';
 import { FormType } from '@proton/pass/fathom/labels';
-import { clientReady } from '@proton/pass/lib/client';
+import { clientBooted } from '@proton/pass/lib/client';
 import { compileRules, matchRules, parseRules } from '@proton/pass/lib/extension/rules/rules';
 import type { CompiledRules } from '@proton/pass/lib/extension/rules/types';
 import browser from '@proton/pass/lib/globals/browser';
@@ -140,7 +140,7 @@ export const createAutoFillService = () => {
     });
 
     const sync = withContext(({ status }) => {
-        if (!clientReady(status)) return;
+        if (!clientBooted(status)) return;
 
         browser.tabs
             .query({ active: true })

@@ -1,5 +1,5 @@
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@proton/crypto/lib/utils';
-import type { OfflineConfig } from '@proton/pass/lib/cache/crypto';
+import type { OfflineComponents, OfflineConfig } from '@proton/pass/lib/cache/crypto';
 import { AuthMode, type Maybe, type Store } from '@proton/pass/types';
 import { deobfuscate, obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isObject } from '@proton/pass/utils/object/is-object';
@@ -62,6 +62,8 @@ export const decodeUserData = (userData: string): { PrimaryEmail?: string; Displ
 
 export const createAuthStore = (store: Store) => {
     const authStore = {
+        subscribe: store.subscribe,
+
         clear: () => {
             store.reset();
             store.flush?.();
@@ -70,8 +72,18 @@ export const createAuthStore = (store: Store) => {
         hasSession: (localID?: number) =>
             Boolean(authStore.getUID() && (localID === undefined || authStore.getLocalID() === localID)),
 
-        hasOfflinePassword: () =>
-            Boolean(authStore.getOfflineConfig() && authStore.getOfflineKD() && authStore.getOfflineVerifier()),
+        /** Checks if the session has both the offline components and the derived offlineKD.
+         * This should only be `true` after a successful local password verification */
+        hasOfflinePassword: () => Boolean(authStore.hasOfflineComponents() && authStore.getOfflineKD()),
+
+        /** Checks wether the session can verify a password locally */
+        hasOfflineComponents: () => Boolean(authStore.getOfflineConfig() && authStore.getOfflineVerifier()),
+
+        setOfflineComponents: (data: OfflineComponents) => {
+            authStore.setOfflineKD(data.offlineKD);
+            authStore.setOfflineConfig(data.offlineConfig);
+            authStore.setOfflineVerifier(data.offlineVerifier);
+        },
 
         getSession: (): AuthSession => ({
             AccessToken: authStore.getAccessToken() ?? '',
@@ -111,6 +123,11 @@ export const createAuthStore = (store: Store) => {
                 (data.cookies || (data.AccessToken && data.RefreshToken))
             ),
 
+        /** Checks wether an in-memory session is sufficient for offline
+         * booting. `offlineKD` should only be hydrated after unlocking. */
+        validOfflineSession: (data: Partial<AuthSession>): boolean =>
+            Boolean(data?.UID && data?.UserID && data?.offlineKD),
+
         /** Checks wether a parsed persisted session object is
          * a valid `EncryptedAuthSession` in order to resume */
         validPersistedSession: (data: any): data is EncryptedAuthSession =>
@@ -125,6 +142,7 @@ export const createAuthStore = (store: Store) => {
         setSession: (session: Partial<AuthSession>) => {
             if (session.AccessToken) authStore.setAccessToken(session.AccessToken);
             if (session.cookies) authStore.setCookieAuth(session.cookies);
+            if (session.desktopLockVerifier) authStore.setDesktopLockVerifier(session.desktopLockVerifier);
             if (session.encryptedOfflineKD) authStore.setEncryptedOfflineKD(session.encryptedOfflineKD);
             if (session.extraPassword) authStore.setExtraPassword(true);
             if (session.keyPassword) authStore.setPassword(session.keyPassword);
@@ -137,16 +155,15 @@ export const createAuthStore = (store: Store) => {
             if (session.offlineVerifier) authStore.setOfflineVerifier(session.offlineVerifier);
             if (session.payloadVersion !== undefined) authStore.setSessionVersion(session.payloadVersion);
             if (session.persistent) authStore.setPersistent(session.persistent);
-            if (session.userData !== undefined) authStore.setUserData(session.userData);
             if (session.RefreshTime) authStore.setRefreshTime(session.RefreshTime);
             if (session.RefreshToken) authStore.setRefreshToken(session.RefreshToken);
             if (session.sessionLockToken) authStore.setLockToken(session.sessionLockToken);
-            if (session.desktopLockVerifier) authStore.setDesktopLockVerifier(session.desktopLockVerifier);
+            if (session.sso) authStore.setSSO(session.sso);
             if (session.twoPasswordMode) authStore.setTwoPasswordMode(session.twoPasswordMode);
             if (session.UID) authStore.setUID(session.UID);
             if (session.unlockRetryCount !== undefined) authStore.setUnlockRetryCount(session.unlockRetryCount);
+            if (session.userData !== undefined) authStore.setUserData(session.userData);
             if (session.UserID) authStore.setUserID(session.UserID);
-            if (session.sso) authStore.setSSO(session.sso);
         },
 
         setAccessToken: (accessToken: Maybe<string>): void => store.set(PASS_ACCESS_TOKEN_KEY, accessToken),
