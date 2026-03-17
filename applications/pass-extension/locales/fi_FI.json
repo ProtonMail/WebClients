@@ -1265,6 +1265,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koodisi poistettiin toiselta ${ PASS_APP_NAME } -päätteeltä"
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Salattu yhteys työpöydän lukituksen avaamiseksi epäonnistui."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME } -työpöytäsovellus on lukittu; se on avattava."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "${ PASS_APP_NAME } -työpöytäsovellusta ei ole asennettu."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME } -työpöytäsovellus ei vastaa, onko se käynnissä?"
       ]
     },
     "Error message": {
@@ -2544,6 +2556,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisaatiosi vaatii, että suojaat pääsysi ${ PASS_APP_NAME }:iin"
+      ],
+      "Enabling desktop auto-lock": [
+        "Otetaan käyttöön työpöydän automaattilukitus"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Tämä ominaisuus edellyttää, että ${ PASS_APP_NAME } -työpöytäsovellus on asennettu ja käynnissä asennuksen aikana."
       ]
     },
     "Keyboard key": {

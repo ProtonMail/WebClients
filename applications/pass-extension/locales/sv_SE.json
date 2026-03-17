@@ -1336,6 +1336,15 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din PIN-kod togs bort av en annan ${ PASS_APP_NAME }-klient"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME }-appen för stationär dator är låst, den måste vara upplåst."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "${ PASS_APP_NAME }-appen för stationär dator är inte installerad."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME }-appen för stationär dator svarar inte, körs den?"
       ]
     },
     "Error message": {
@@ -2669,6 +2678,18 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
+      ],
+      "Enabling desktop auto-lock": [
+        "Aktiverar automatisk låsning för stationär dator"
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "Högerklicka på tilläggsikonen och välj “Hantera tillägg“. Navigera till “Behörigheter och data“ och aktivera webbplatsbehörigheter."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "Högerklicka på tilläggsikonen och välj “Hantera tillägg“. Navigera till “Webbplatsåtkomst“ och aktivera webbplatsbehörigheter."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Denna funktion kräver att ${ PASS_APP_NAME }-appen för stationär dator är installerad och körs under inställning."
       ]
     },
     "Keyboard key": {

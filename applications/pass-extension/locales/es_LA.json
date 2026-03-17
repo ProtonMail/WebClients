@@ -1339,6 +1339,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Se eliminó el código PIN desde otro cliente de ${ PASS_APP_NAME }."
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Fallo en la comunicación de cifrado para desbloquear la app de escritorio."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "La aplicación de escritorio de ${ PASS_APP_NAME } está bloqueada; debe desbloquearla."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "La aplicación de escritorio ${ PASS_APP_NAME } no está instalada."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "La aplicación de escritorio ${ PASS_APP_NAME } no responde, ¿se está ejecutando?"
       ]
     },
     "Error message": {
@@ -2696,6 +2708,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Su organización requiere que asegure su acceso a ${ PASS_APP_NAME }"
+      ],
+      "Enabling desktop auto-lock": [
+        "Activando el bloqueo automático de la app de escritorio"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Esta función requiere que la aplicación de escritorio de ${ PASS_APP_NAME } esté instalada y en ejecución durante la configuración."
       ]
     },
     "Keyboard key": {

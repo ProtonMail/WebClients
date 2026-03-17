@@ -1339,6 +1339,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ο κωδικός PIN σας καταργήθηκε από μία άλλη ${ PASS_APP_NAME } εφαρμογή"
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Η κρυπτογραφημένη επικοινωνία για το ξεκλείδωμα της επιφάνειας εργασίας απέτυχε."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } είναι κλειδωμένη, και πρέπει να ξεκλειδωθεί."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } δεν είναι εγκατεστημένη."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } δεν ανταποκρίνεται, εκτελείται;"
       ]
     },
     "Error message": {
@@ -2693,6 +2705,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
+      ],
+      "Enabling desktop auto-lock": [
+        "Ενεργοποίηση αυτόματου κλειδώματος επιφάνειας εργασίας"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Αυτή η λειτουργία απαιτεί να είναι εγκατεστημένη και να εκτελείται η εφαρμογή επιφάνειας ${ PASS_APP_NAME } κατά τη διάρκεια της ρύθμισης."
       ]
     },
     "Keyboard key": {

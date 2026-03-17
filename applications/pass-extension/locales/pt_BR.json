@@ -1339,6 +1339,15 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Seu código PIN foi removido por outro cliente ${ PASS_APP_NAME }"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "O aplicativo para área de trabalho do ${ PASS_APP_NAME } está bloqueado, precisa ser desbloqueado."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "O aplicativo para computador do ${ PASS_APP_NAME } não está instalado."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "O aplicativo para área de trabalho do ${ PASS_APP_NAME } não está respondendo, está em execução?"
       ]
     },
     "Error message": {
@@ -2696,6 +2705,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Sua organização exige que você proteja seu acesso ao ${ PASS_APP_NAME }"
+      ],
+      "Enabling desktop auto-lock": [
+        "Ativando bloqueio automático da área de trabalho"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Este recurso requer que o aplicativo para área de trabalho do ${ PASS_APP_NAME } esteja instalado e em execução durante a configuração."
       ]
     },
     "Keyboard key": {

@@ -1339,6 +1339,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN kodunuz başka bir ${ PASS_APP_NAME } istemcisi tarafından kaldırıldı"
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Bilgisayar kilidini açmak için gereken şifrelenmiş iletişim kurulamadı."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME } bilgisayar uygulaması kilitli. Kilidin açılması gerekiyor."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "${ PASS_APP_NAME } bilgisayar uygulaması kurulmamış."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME } bilgisayar uygulaması yanıt vermiyor. Çalışıyor mu?"
       ]
     },
     "Error message": {
@@ -2696,6 +2708,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
+      ],
+      "Enabling desktop auto-lock": [
+        "Otomatik bilgisayar kilitlemenin açılması"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Bu özelliğin kullanılabilmesi için kurulum sırasında ${ PASS_APP_NAME } bilgisayar uygulamasının kurulmuş ve çalışıyor olması gerekir."
       ]
     },
     "Keyboard key": {

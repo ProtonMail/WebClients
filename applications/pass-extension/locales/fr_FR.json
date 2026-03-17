@@ -764,6 +764,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
+      ],
+      "Hide": [
+        "Masquer"
       ]
     },
     "Browser": {
@@ -1336,6 +1339,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Votre code PIN a été retiré par un autre client de ${ PASS_APP_NAME }."
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Le chiffrement de la communication pour le déverrouillage de l'application de bureau n'a pas abouti."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "L'application de bureau ${ PASS_APP_NAME } est verrouillée, elle doit être déverrouillée."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "L'application de bureau ${ PASS_APP_NAME } n'est pas installée."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "L'application de bureau ${ PASS_APP_NAME } ne répond pas, est-elle en cours d'exécution ?"
       ]
     },
     "Error message": {
@@ -2690,6 +2705,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Votre organisation vous demande de sécuriser votre accès à ${ PASS_APP_NAME }."
+      ],
+      "Enabling desktop auto-lock": [
+        "Activation du verrouillage automatique de l'application de bureau"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Cette fonctionnalité nécessite que l'application de bureau ${ PASS_APP_NAME } soit installée et en cours d'exécution pendant la configuration."
       ]
     },
     "Keyboard key": {

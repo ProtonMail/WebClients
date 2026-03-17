@@ -967,6 +967,12 @@
       ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "您的瀏覽器在啟用 ${ PASS_APP_NAME } 時發生問題"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "已鎖定 ${ PASS_APP_NAME } 桌面應用程式，必須將其解鎖。"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "尚未安裝${ PASS_APP_NAME } 桌面應用程式。"
       ]
     },
     "Error message": {
@@ -1681,6 +1687,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "您的資料在 ${ displayedDate } 被發現。"
+      ],
+      "Enabling desktop auto-lock": [
+        "啟用桌面自動鎖定"
       ]
     },
     "Keyboard key": {

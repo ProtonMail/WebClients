@@ -1339,6 +1339,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Dein PIN-Code wurde von einem anderen ${ PASS_APP_NAME }-Client entfernt"
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Die Verschlüsselung der Kommunikation für die Desktop-Entsperrung ist fehlgeschlagen."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App ist gesperrt, sie muss entsperrt werden."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App ist nicht installiert."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Die ${ PASS_APP_NAME }-Desktop-App reagiert nicht. Läuft sie?"
       ]
     },
     "Error message": {
@@ -2693,6 +2705,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Deine Organisation verlangt, dass du deinen Zugang zu ${ PASS_APP_NAME } absicherst."
+      ],
+      "Enabling desktop auto-lock": [
+        "Desktop-Autosperre aktivieren"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Diese Funktion erfordert, dass die Desktop-App ${ PASS_APP_NAME } während der Einrichtung installiert und ausgeführt wird."
       ]
     },
     "Keyboard key": {

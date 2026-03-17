@@ -1339,6 +1339,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Un altre client de ${ PASS_APP_NAME } ha eliminat el codi PIN"
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Ha fallat la comunicació de xifratge per al desbloqueig de l'escriptori."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "L'aplicació d'escriptori de ${ PASS_APP_NAME } està bloquejada, s'ha de desbloquejar."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } no està instal·lada."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } no respon, s'està executant?"
       ]
     },
     "Error message": {
@@ -2696,6 +2708,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
+      ],
+      "Enabling desktop auto-lock": [
+        "S'està habilitant el bloqueig automàtic de l'escriptori"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Aquesta funció requereix que l'aplicació d'escriptori ${ PASS_APP_NAME } estigui instal·lada i en execució durant la configuració."
       ]
     },
     "Keyboard key": {

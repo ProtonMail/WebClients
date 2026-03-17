@@ -1344,6 +1344,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Codul dvs. PIN a fost eliminat de către alt utilizator al ${ PASS_APP_NAME }."
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Eroare la criptarea comunicării pentru deblocarea desktop."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Aplicația desktop ${ PASS_APP_NAME } este blocată, trebuie deblocată."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Aplicația desktop ${ PASS_APP_NAME } nu este instalată."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Aplicația desktop ${ PASS_APP_NAME } nu răspunde, rulează?"
       ]
     },
     "Error message": {
@@ -2726,6 +2738,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizația vă solicită să vă securizați accesul la ${ PASS_APP_NAME }"
+      ],
+      "Enabling desktop auto-lock": [
+        "Activare blocare automată a desktopului"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Această funcție necesită ca aplicația desktop ${ PASS_APP_NAME } să fie instalată și rulată în timpul configurării."
       ]
     },
     "Keyboard key": {

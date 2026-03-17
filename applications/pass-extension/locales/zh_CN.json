@@ -1334,6 +1334,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "您的 PIN 码已被另一 ${ PASS_APP_NAME } 客户端删除"
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "桌面应用解锁的加密通信失败。"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME } 桌面应用已锁定，必须解锁！"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "未安装 ${ PASS_APP_NAME } 桌面应用！"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME } 桌面应用无响应，是否仍在运行？"
       ]
     },
     "Error message": {
@@ -2663,6 +2675,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
+      ],
+      "Enabling desktop auto-lock": [
+        "正在启用桌面自动锁定"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "此功能要求在设置过程中安装并运行 ${ PASS_APP_NAME } 桌面应用。"
       ]
     },
     "Keyboard key": {

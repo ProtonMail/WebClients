@@ -1349,6 +1349,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš PIN kód bol odstránený iným klientom ${ PASS_APP_NAME }"
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "''Odblokovanie pracovnej plochy pomocou šifrovanej komunikácie sa nepodarilo."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Aplikácia ${ PASS_APP_NAME } pre počítače je uzamknutá, musí byť odomknutá."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Desktopová aplikácia ${ PASS_APP_NAME } nie je nainštalovaná."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Desktopová aplikácia ${ PASS_APP_NAME } neodpovedá, je spustená?"
       ]
     },
     "Error message": {
@@ -2759,6 +2771,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaša organizácia vyžaduje, aby ste zabezpečili svoj prístup k ${ PASS_APP_NAME }"
+      ],
+      "Enabling desktop auto-lock": [
+        "Povoliť automatické uzamykanie plochy"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Táto funkcia vyžaduje, aby bola počas inštalácie nainštalovaná a spustená desktopová aplikácia ${ PASS_APP_NAME }."
       ]
     },
     "Keyboard key": {

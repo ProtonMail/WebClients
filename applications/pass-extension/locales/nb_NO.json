@@ -1339,6 +1339,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koden ble fjernet av en annen ${ PASS_APP_NAME }-klient"
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Krypteringskommunikasjon for opplåsing av skrivebordsapp mislyktes."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } er låst, den må låses opp."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } er ikke installert."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Skrivebordsappen ${ PASS_APP_NAME } svarer ikke. Kjører den?"
       ]
     },
     "Error message": {
@@ -2693,6 +2705,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
+      ],
+      "Enabling desktop auto-lock": [
+        "Aktiverer automatisk låsing av skrivebordsapp"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Denne funksjonen krever at ${ PASS_APP_NAME }-skrivebordsappen er installert og kjører under oppsettet."
       ]
     },
     "Keyboard key": {

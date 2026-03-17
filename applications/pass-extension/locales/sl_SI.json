@@ -1033,6 +1033,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Vašo kodo PIN je odstranil drug odjemalec ${ PASS_APP_NAME }."
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Komunikacija za šifriranje za odklepanje namizne aplikacije je spodletela."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Namizna aplikacija ${ PASS_APP_NAME } je zaklenjena, zato jo je treba odkleniti."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Namizna aplikacija ${ PASS_APP_NAME } ni nameščena."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Namizna aplikacija ${ PASS_APP_NAME } se ne odziva, ali je zagnana?"
       ]
     },
     "Error message": {
@@ -1894,6 +1906,27 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Vaše informacije so bile najdene ${ displayedDate }"
+      ],
+      "Enabling desktop auto-lock": [
+        "Omogočanje samodejnega zaklepanja namizja"
+      ],
+      "Extra password successfully removed": [
+        "Dodatno geslo je bilo uspešno odstranjeno"
+      ],
+      "Item history permanently deleted": [
+        "Zgodovina predmeta je trajno izbrisana"
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "${ totalIgnored } predmeta ni bilo mogoče uvoziti:",
+        "${ totalIgnored } predmetov ni bilo mogoče uvoziti:",
+        "${ totalIgnored } predmetov ni bilo mogoče uvoziti:",
+        "${ totalIgnored } predmetov ni bilo mogoče uvoziti:"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Ta funkcija zahteva, da je namizna aplikacija ${ PASS_APP_NAME } nameščena in deluje med nastavitvijo."
+      ],
+      "You may close this tab.": [
+        "Lahko zaprete ta zavihek."
       ]
     },
     "Label": {
@@ -2766,6 +2799,9 @@
       ],
       "ZIP or Postal code": [
         "Poštna številka"
+      ],
+      "Record Number": [
+        "Številka zapisa"
       ]
     },
     "Link": {
@@ -2890,6 +2926,9 @@
       ],
       "Total files: ": [
         "Skupaj datotek: "
+      ],
+      "The exported file attachments will not be encrypted.": [
+        "Izvožene datoteke ne bodo šifrirane."
       ]
     },
     "Placeholder": {
@@ -2982,6 +3021,12 @@
       ],
       "Used on ${ url }": [
         "Uporabljeno na ${ url }"
+      ],
+      "Add public key": [
+        "Dodaj javni ključ"
+      ],
+      "Add SSID": [
+        "Dodaj SSID"
       ]
     },
     "Security Center - Info": {
@@ -3465,6 +3510,12 @@
       ],
       "Your welcome gift": [
         "Vaš darilo za dobrodošlico"
+      ],
+      "Reset history for this item?": [
+        "Ponastavim zgodovino predmeta?"
+      ],
+      "Visible vaults": [
+        "Vidni trezorji"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -3704,6 +3755,17 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaša naročnina vam ne dovoljuje ustvarjanja več trezorjev. Vsi predmeti bodo uvoženi v vaš prvi trezor. Za uvoz v več trezorjev nadgradite svojo naročnino."
+      ],
+      "Extra password is required": [
+        "Potrebno je dodatno geslo"
+      ]
+    },
+    "Vault Select": {
+      "Move item to": [
+        "Premakni predmet na",
+        "Premakni predmeta na",
+        "Premakni predmete na",
+        "Premakni predmete na"
       ]
     }
   }
