@@ -1678,6 +1678,9 @@
       ],
       "Edit billing address": [
         "Editar la dirección de la factura"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -6396,6 +6399,9 @@
       ],
       "Import from Yahoo": [
         "Importar desde Yahoo"
+      ],
+      "Advanced import": [
+        "Importación avanzada"
       ]
     },
     "Import warning": {
@@ -8930,6 +8936,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Su cuenta está actualmente configurada para aplicar el esquema de cargo inverso. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
+      ],
+      "Choose your service to connect with": [
+        "Elige tu servicio para conectarlo"
       ]
     },
     "info": {
@@ -15802,6 +15811,18 @@
       ],
       "Reverse charge not supported": [
         "Cargo inverso no soportado"
+      ],
+      "Choose a provider": [
+        "Elegir un proveedor"
+      ],
+      "Custom": [
+        "Personalizado"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importe sus datos a ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Seleccionar datos para importar"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1673,6 +1673,9 @@
       ],
       "Edit billing address": [
         "청구 주소 수정"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -6333,6 +6336,9 @@
       ],
       "Import from Yahoo": [
         "Yahoo에서 가져오기"
+      ],
+      "Advanced import": [
+        "고급 가져오기"
       ]
     },
     "Import warning": {
@@ -8778,7 +8784,10 @@
         "친구가 연간 플랜을 구독하고 1개월 후, 월간 요금제에 구독하고 2개월 후에 크레딧 보상을 받게 됩니다."
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "귀하의 계정은 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 선택하신 요금제에서 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 요금제를 선택하십시오."
+        "사용자의 계정에 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 현재 선택한 플랜에서는 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 플랜을 선택하십시오."
+      ],
+      "Choose your service to connect with": [
+        "연결하고자 하는 서비스 선택"
       ]
     },
     "info": {
@@ -15504,6 +15513,18 @@
       ],
       "Reverse charge not supported": [
         "매입자 납부제도(Reverse charge)가 지원되지 않습니다."
+      ],
+      "Choose a provider": [
+        "제공업체 선택"
+      ],
+      "Custom": [
+        "사용자화"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "${ BRAND_NAME }로 데이터 불러오기"
+      ],
+      "Select data to import": [
+        "불러올 데이터 선택"
       ]
     },
     "Today icon tooltip in mini calendar": {

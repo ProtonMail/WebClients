@@ -1679,6 +1679,9 @@
       ],
       "Edit billing address": [
         "Rechnungsadresse bearbeiten"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -6397,6 +6400,9 @@
       ],
       "Import from Yahoo": [
         "Von Yahoo importieren"
+      ],
+      "Advanced import": [
+        "Erweiterter Import"
       ]
     },
     "Import warning": {
@@ -8931,6 +8937,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Dein Konto ist derzeit so konfiguriert, dass die Rückerstattung der Umsatzsteuer nicht angewendet wird. Dies wird für das ausgewählte Abonnement nicht unterstützt. Um fortzufahren, entferne entweder die Umsatzsteuer-Identifikationsnummer aus der Rechnungsadresse oder wähle anderes Abonnement."
+      ],
+      "Choose your service to connect with": [
+        "Deinen Dienst zum Verbinden auswählen"
       ]
     },
     "info": {
@@ -15803,6 +15812,18 @@
       ],
       "Reverse charge not supported": [
         "Rückerstattungen der Umsatzsteuer nicht unterstützt"
+      ],
+      "Choose a provider": [
+        "Anbieter wählen"
+      ],
+      "Custom": [
+        "Benutzerdefiniert"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Deine Daten nach ${ BRAND_NAME } importieren"
+      ],
+      "Select data to import": [
+        "Daten zum Import auswählen"
       ]
     },
     "Today icon tooltip in mini calendar": {
