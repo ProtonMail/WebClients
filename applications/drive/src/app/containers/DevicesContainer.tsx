@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom-v5-compat';
 
-import { DevicesView } from '../sections/devices/DevicesView/DevicesView';
+import { DevicesView } from '../sections/devices/DevicesView';
 
 const DevicesContainer = () => {
     return (

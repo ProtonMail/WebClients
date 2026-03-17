@@ -10,17 +10,18 @@ import DriveExpandButton from '../../../components/layout/sidebar/DriveSidebar/D
 import DriveSidebarListItem from '../../../components/layout/sidebar/DriveSidebar/DriveSidebarListItem';
 import { getDevicesSectionName } from '../../../components/sections/Devices/constants';
 import { useSidebarFolders } from '../../sidebar/hooks/useSidebarFolders';
-import { type StoreDevice, useDeviceStore } from '../devices.store';
+import { type StoreDevice, useDevicesStore } from '../useDevices.store';
 import { DevicesSidebarItem } from './DevicesSidebarItem';
 
 export const DevicesSidebar = ({ collapsed }: { collapsed: boolean }) => {
     const [isListExpanded, setListExpanded] = useState(false);
-    const { deviceList, isLoading } = useDeviceStore(
+    const { items, isLoading } = useDevicesStore(
         useShallow((state) => ({
-            deviceList: state.deviceList,
+            items: state.items,
             isLoading: state.isLoading,
         }))
     );
+    const deviceList = Array.from(items.values());
     const { loadDevicesRoot } = useSidebarFolders();
 
     const toggleList = () => {
