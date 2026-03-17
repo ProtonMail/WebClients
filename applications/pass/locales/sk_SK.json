@@ -1752,6 +1752,9 @@
       "Enabling biometrics lock failed": [
         "Aktivácia biometrického zamykania zlyhala"
       ],
+      "Enabling desktop auto-lock": [
+        "Povoliť automatické uzamykanie plochy"
+      ],
       "Enabling offline mode...": [
         "Zapínanie offline režimu..."
       ],
@@ -2363,6 +2366,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Táto funkcia je momentálne experimentálna na platforme Linux. Uistite sa, prosím, že váš systém je aktuálny."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Táto funkcia vyžaduje, aby bola počas inštalácie nainštalovaná a spustená desktopová aplikácia ${ PASS_APP_NAME }."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Táto položka zatiaľ nie je s nikým zdieľaná. Pozvite ľudí, s ktorými ju chcete zdieľať."

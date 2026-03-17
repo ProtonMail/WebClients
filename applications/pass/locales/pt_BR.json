@@ -1708,6 +1708,9 @@
       "Enabling biometrics lock failed": [
         "Erro ao ativar o bloqueio por biometria"
       ],
+      "Enabling desktop auto-lock": [
+        "Ativando bloqueio automático da área de trabalho"
+      ],
       "Enabling offline mode...": [
         "Ativando modo off-line..."
       ],
@@ -2310,6 +2313,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Este recurso é experimental no Linux por enquanto. Certifique-se de que seu sistema esteja atualizado."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Este recurso requer que o aplicativo para área de trabalho do ${ PASS_APP_NAME } esteja instalado e em execução durante a configuração."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Este item não está atualmente compartilhado com ninguém. Convide as pessoas a compartilhá-lo com outras pessoas."

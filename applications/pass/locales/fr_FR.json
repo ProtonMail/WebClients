@@ -361,6 +361,9 @@
       "Get Started": [
         "Commencer"
       ],
+      "Hide": [
+        "Masquer"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Comment exporter mes données depuis ${ PROVIDER_INFO_MAP[form.values.provider].title } ?"
       ],
@@ -1706,7 +1709,7 @@
         "L'activation du verrouillage avec la biométrie n'a pas abouti."
       ],
       "Enabling desktop auto-lock": [
-        "Activation du verrouillage automatique"
+        "Activation du verrouillage automatique de l'application de bureau"
       ],
       "Enabling offline mode...": [
         "Activation du mode hors-ligne..."
