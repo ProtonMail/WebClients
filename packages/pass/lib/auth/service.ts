@@ -6,7 +6,7 @@ import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import type { RefreshSessionData } from '@proton/pass/lib/api/refresh';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
-import { getOfflineComponents, getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
+import { generateOfflineComponents } from '@proton/pass/lib/cache/crypto';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
 import type { Api, Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
@@ -30,7 +30,6 @@ import { generateClientKey } from '@proton/shared/lib/authentication/clientKey';
 import type { ForkEncryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import type { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import noop from '@proton/utils/noop';
 
 import type { PullForkCall, RequestForkData } from './fork';
@@ -142,7 +141,7 @@ export interface AuthServiceConfig {
     onForkRequest?: (result: RequestForkResult, data?: RequestForkData) => void;
     /** Optional hook when session resuming starts. Returning `false` from this
      * function will halt the session resume sequence. */
-    onResumeStart?: (data: { hasSession: boolean }) => MaybePromise<boolean>;
+    onResumeStart?: (data: { hasSession: boolean; memorySession: Partial<AuthSession> }) => MaybePromise<boolean>;
     /** Called when an invalid persistent session error is thrown during a
      * session resuming sequence. It will get called with the invalid session
      * and the localID being resumed for retry mechanisms */
@@ -307,11 +306,21 @@ export const createAuthService = (config: AuthServiceConfig) => {
                     const { UserID, Payload } = await pullFork({ api, apiUrl, payload, pullFork: config.pullFork });
                     if (UserID !== encryptedSession.UserID) throw new Error('Reauth session mismatch');
 
-                    const decryptedBlob = await (async () => {
-                        if (payload.mode === 'web') {
-                            const { payloadVersion, key } = payload;
-                            const clientKey = await importKey(key!);
-                            return getForkDecryptedBlob(clientKey, Payload, payloadVersion);
+                    const decryptedBlob: Maybe<ForkEncryptedBlob> = await (async () => {
+                        switch (payload.mode) {
+                            case 'web':
+                                const { payloadVersion, key } = payload;
+                                const clientKey = await importKey(key!);
+                                return getForkDecryptedBlob(clientKey, Payload, payloadVersion);
+                            case 'extension':
+                                if (payload.offlineKey) {
+                                    return {
+                                        type: 'offline',
+                                        keyPassword: payload.keyPassword!,
+                                        offlineKeyPassword: payload.offlineKey.password,
+                                        offlineKeySalt: payload.offlineKey.salt,
+                                    };
+                                }
                         }
                     })();
 
@@ -534,12 +543,12 @@ export const createAuthService = (config: AuthServiceConfig) => {
             pipe(
                 async (localID: Maybe<number>, options: AuthOptions): Promise<boolean> => {
                     try {
-                        const memorySession = await config.getMemorySession?.(localID);
+                        const memorySession = (await config.getMemorySession?.(localID)) ?? {};
                         const persistedSession = await config.getPersistedSession(localID);
                         const validMemorySession = memorySession && authStore.validSession(memorySession);
                         const hasSession = Boolean(validMemorySession || persistedSession);
 
-                        const proceed = (await config.onResumeStart?.({ hasSession })) ?? true;
+                        const proceed = (await config.onResumeStart?.({ hasSession, memorySession })) ?? true;
                         if (!proceed) return false;
 
                         if (validMemorySession) {
@@ -613,11 +622,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
                     case PasswordVerification.EXTRA_PASSWORD: {
                         await verifyExtraPassword({ password });
 
-                        const { offlineConfig, offlineKD } = await getOfflineComponents(password);
-
-                        authStore.setOfflineConfig(offlineConfig);
-                        authStore.setOfflineKD(offlineKD);
-                        authStore.setOfflineVerifier(await getOfflineVerifier(stringToUint8Array(offlineKD)));
+                        const components = await generateOfflineComponents(password);
+                        authStore.setOfflineComponents(components);
 
                         /** Online extra password verification will happen on
                          * first login after a successful fork. At this point
@@ -655,7 +661,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             /** Compute the offline components in order to update the auth store on successful
              * extra password registration : this will affect any password locks or offline mode
              * setting. Users will now have to unlock the client with the extra password */
-            const { offlineConfig, offlineKD } = await getOfflineComponents(password);
+            const components = await generateOfflineComponents(password);
             await registerExtraPassword({ password });
 
             /* Clear biometrics */
@@ -670,9 +676,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             }
 
             authStore.setExtraPassword(true);
-            authStore.setOfflineConfig(offlineConfig);
-            authStore.setOfflineKD(offlineKD);
-            authStore.setOfflineVerifier(await getOfflineVerifier(stringToUint8Array(offlineKD)));
+            authStore.setOfflineComponents(components);
 
             await authService.persistSession();
             return true;

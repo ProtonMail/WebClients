@@ -321,7 +321,7 @@ export const createAuthService = ({
         onForkConsumeStart: () => auth.config.onLoginStart?.(),
 
         onForkConsumeComplete: async (session, { state }) => {
-            const { offlineConfig, offlineKD, UserID, LocalID } = session;
+            const { offlineConfig, offlineKD, offlineVerifier, UserID, LocalID } = session;
             history.replace({ hash: '' }); /** removes selector from hash */
 
             try {
@@ -351,9 +351,7 @@ export const createAuthService = ({
             /** Automatically create the password lock if we have the necessary
              * offline components when consuming the fork. Disabled for SSO users
              * as this would require using the backup password (bad UX) */
-            if (offlineConfig && offlineKD) {
-                session.offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
-
+            if (offlineConfig && offlineKD && offlineVerifier) {
                 if (!session.sso) {
                     logger.info('[AuthServiceProvider] Automatically creating password lock');
                     session.lockMode = LockMode.PASSWORD;
@@ -375,12 +373,10 @@ export const createAuthService = ({
 
                     try {
                         if (blob?.type === 'offline') {
-                            const { offlineKD, offlineConfig } = extractOfflineComponents(blob);
+                            const { offlineKeyPassword: password, offlineKeySalt: salt } = blob;
+                            const { offlineKD, offlineConfig } = extractOfflineComponents(password, salt);
                             const offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
-
-                            authStore.setOfflineKD(offlineKD);
-                            authStore.setOfflineConfig(offlineConfig);
-                            authStore.setOfflineVerifier(offlineVerifier);
+                            authStore.setOfflineComponents({ offlineKD, offlineConfig, offlineVerifier });
 
                             switch (fork.reauth.type) {
                                 case ReauthAction.PW_LOCK_SETUP: {
@@ -591,9 +587,7 @@ export const createAuthService = ({
 
     auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
     auth.registerLockAdapter(LockMode.PASSWORD, passwordLockAdapterFactory(auth));
-    if (!EXTENSION_BUILD) {
-        auth.registerLockAdapter(LockMode.BIOMETRICS, biometricsLockAdapterFactory(auth, core));
-    }
+    auth.registerLockAdapter(LockMode.BIOMETRICS, biometricsLockAdapterFactory(auth, core));
 
     return auth;
 };

@@ -68,7 +68,10 @@ export const getOfflineKeyDerivation = async (
 ): Promise<Uint8Array<ArrayBuffer>> => CryptoProxy.computeArgon2({ params, password: loginPassword, salt });
 
 /** Encrypts the raw cache key with the offline key */
-export const encryptOfflineCacheKey = async (cacheKey: AesGcmCryptoKey, offlineKD: Uint8Array<ArrayBuffer>): Promise<Uint8Array<ArrayBuffer>> => {
+export const encryptOfflineCacheKey = async (
+    cacheKey: AesGcmCryptoKey,
+    offlineKD: Uint8Array<ArrayBuffer>
+): Promise<Uint8Array<ArrayBuffer>> => {
     const rawCacheKey = await exportKey(cacheKey);
     const offlineKey = await importSymmetricKey(offlineKD);
 
@@ -83,7 +86,7 @@ export const getOfflineVerifier = async (offlineKD: Uint8Array<ArrayBuffer>): Pr
     return uint8ArrayToString(offlineVerifier);
 };
 
-export const getOfflineComponents = async (loginPassword: string): Promise<OfflineComponents> => {
+export const generateOfflineComponents = async (loginPassword: string): Promise<OfflineComponents> => {
     const offlineSalt = crypto.getRandomValues(new Uint8Array(CACHE_SALT_LENGTH));
 
     const offlineKD = await getOfflineKeyDerivation(loginPassword, offlineSalt).catch((error) => {

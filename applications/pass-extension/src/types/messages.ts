@@ -21,9 +21,11 @@ import type { Action } from 'redux';
 
 import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import type { AuthOptions } from '@proton/pass/lib/auth/service';
+import type { AuthSession } from '@proton/pass/lib/auth/session';
 import type { ClipboardAutoClearDTO, ClipboardWriteDTO } from '@proton/pass/lib/clipboard/types';
 import type { PassCoreMethod, PassCoreRPC, PassCoreResult } from '@proton/pass/lib/core/core.types';
 import type { DetectionRulesMatch } from '@proton/pass/lib/extension/rules/types';
+import type { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import type {
     PasskeyCreatePayload,
     PasskeyCreateResponse,
@@ -37,7 +39,6 @@ import type { PauseListEntry } from '@proton/pass/lib/settings/pause-list';
 import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
 import type { FeatureFlagState, VaultShareItem } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { ForkPayload } from '@proton/pass/types/api/fork';
 import type { ShareId } from '@proton/pass/types/crypto/pass-types';
 import type { AliasOptions } from '@proton/pass/types/data/alias';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
@@ -61,10 +62,13 @@ import type {
     FormSubmitPayload,
 } from '@proton/pass/types/worker/form';
 import type { OtpCode, OtpRequest } from '@proton/pass/types/worker/otp';
-import type { ClientEndpoint, EndpointContext, TabId } from '@proton/pass/types/worker/runtime';
+import type { ClientEndpoint, ClientInitResult, EndpointContext, TabId } from '@proton/pass/types/worker/runtime';
 import type { SpotlightMessage } from '@proton/pass/types/worker/spotlight';
 import type { AppState, PopupInitialState } from '@proton/pass/types/worker/state';
-import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/fork/extension';
+import type {
+    ExtensionForkPayload,
+    ExtensionForkResultPayload,
+} from '@proton/shared/lib/authentication/fork/extension';
 import type { PullForkResponse } from '@proton/shared/lib/authentication/interface';
 import type { User } from '@proton/shared/lib/interfaces';
 
@@ -89,9 +93,12 @@ export enum WorkerMessageType {
     ACCOUNT_PROBE = 'pass-installed',
     ALIAS_CREATE = 'ALIAS_CREATE',
     ALIAS_OPTIONS = 'ALIAS_OPTIONS',
+
+    AUTH_CHANGED = 'AUTH_CHANGED',
     AUTH_CHECK = 'AUTH_CHECK',
     AUTH_CONFIRM_PASSWORD = 'AUTH_CONFIRM_PASSWORD',
     AUTH_INIT = 'AUTH_INIT',
+    AUTH_OFFLINE_SWITCH = 'AUTH_OFFLINE_SWITCH',
     AUTH_PULL_FORK = 'AUTH_PULL_FORK',
     AUTH_UNLOCK = 'AUTH_UNLOCK',
 
@@ -112,6 +119,9 @@ export enum WorkerMessageType {
     CLIPBOARD_AUTOCLEAR = 'CLIPBOARD_AUTOCLEAR',
     CLIPBOARD_OFFSCREEN_READ = 'CLIPBOARD_OFFSCREEN_READ',
     CLIPBOARD_OFFSCREEN_WRITE = 'CLIPBOARD_OFFSCREEN_WRITE',
+
+    CONNECTIVITY = 'CONNECTIVITY',
+
     DEBUG = 'DEBUG',
     DESKTOP_UNLOCK_SECRET = 'DESKTOP_UNLOCK_SECRET',
     ENDPOINT_INIT = 'ENDPOINT_INIT',
@@ -182,16 +192,18 @@ export enum WorkerMessageType {
 
 /* messages for communication with account */
 export type AccountAuthExtMessage = { type: WorkerMessageType.ACCOUNT_EXTENSION };
-export type AccountForkMessage = WithPayload<WorkerMessageType.ACCOUNT_FORK, ForkPayload>;
+export type AccountForkMessage = WithPayload<WorkerMessageType.ACCOUNT_FORK, ExtensionForkPayload>;
 export type AccountPassOnboardingMessage = { type: WorkerMessageType.ACCOUNT_ONBOARDING };
 export type AccountProbeMessage = { type: WorkerMessageType.ACCOUNT_PROBE };
 
 export type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, AliasCreateRequest>;
 export type AliasOptionsMessage = { type: WorkerMessageType.ALIAS_OPTIONS };
 
+export type AuthChangedMessage = WithPayload<WorkerMessageType.AUTH_CHANGED, AuthSession>;
 export type AuthCheckMessage = WithPayload<WorkerMessageType.AUTH_CHECK, { immediate?: boolean }>;
 export type AuthConfirmPasswordMessage = WithPayload<WorkerMessageType.AUTH_CONFIRM_PASSWORD, { password: string }>;
 export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthOptions };
+export type AuthOfflineSwitchMessage = { type: WorkerMessageType.AUTH_OFFLINE_SWITCH };
 export type AuthPullForkMessage = WithPayload<WorkerMessageType.AUTH_PULL_FORK, { selector: string }>;
 export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, UnlockDTO>;
 export type AutofillCCMessage = WithPayload<WorkerMessageType.AUTOFILL_CC, AutofillActionDTO>;
@@ -213,6 +225,8 @@ export type ClientInitMessage = WithPayload<WorkerMessageType.CLIENT_INIT, { tab
 export type ClipboardReadMessage = { type: WorkerMessageType.CLIPBOARD_OFFSCREEN_READ };
 export type ClipboardWriteMessage = WithPayload<WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE, ClipboardWriteDTO>;
 export type ClipboardAutoClearMessage = WithPayload<WorkerMessageType.CLIPBOARD_AUTOCLEAR, ClipboardAutoClearDTO>;
+export type ConnectivityStatusMessage = WithPayload<WorkerMessageType.CONNECTIVITY, { status: ConnectivityStatus }>;
+
 export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
 export type DesktopUnlockSecretMessage = { type: WorkerMessageType.DESKTOP_UNLOCK_SECRET };
 export type EndpointInitMessage = WithPayload<WorkerMessageType.ENDPOINT_INIT, { popup?: boolean }>;
@@ -288,9 +302,11 @@ export type WorkerMessage =
     | AccountProbeMessage
     | AliasCreateMessage
     | AliasOptionsMessage
+    | AuthChangedMessage
     | AuthCheckMessage
     | AuthConfirmPasswordMessage
     | AuthInitMessage
+    | AuthOfflineSwitchMessage
     | AuthPullForkMessage
     | AuthUnlockMessage
     | AutofillCCMessage
@@ -309,6 +325,7 @@ export type WorkerMessage =
     | ClipboardAutoClearMessage
     | ClipboardReadMessage
     | ClipboardWriteMessage
+    | ConnectivityStatusMessage
     | DebugMessage
     | DesktopUnlockSecretMessage
     | EndpointInitMessage
@@ -394,7 +411,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & LoginItemPreview);
     [WorkerMessageType.AUTOFILL_SEQUENCE]: AutofillResult;
     [WorkerMessageType.AUTOSUGGEST_PASSWORD]: PasswordAutosuggestOptions;
-    [WorkerMessageType.CLIENT_INIT]: { state: AppState; settings: ProxiedSettings; features: FeatureFlagState };
+    [WorkerMessageType.CLIENT_INIT]: ClientInitResult;
     [WorkerMessageType.CLIPBOARD_OFFSCREEN_READ]: { content: string };
     [WorkerMessageType.DESKTOP_UNLOCK_SECRET]: { secret: string };
     [WorkerMessageType.ENDPOINT_INIT]: EndpointContext;
@@ -403,10 +420,10 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_STAGE]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FRAME_FIELD_LOCK]: { wasFocused: boolean };
+    [WorkerMessageType.FRAME_FORM_CLUSTER]: ClusterFrame;
     [WorkerMessageType.FRAME_FORMS_QUERY]: FrameFormsResult;
     [WorkerMessageType.FRAME_QUERY]: FrameQueryResult;
     [WorkerMessageType.FRAME_VISIBILITY]: FrameCheckResult;
-    [WorkerMessageType.FRAME_FORM_CLUSTER]: ClusterFrame;
     [WorkerMessageType.INLINE_DROPDOWN_STATE]: DropdownStateDTO;
     [WorkerMessageType.INLINE_ICON_SHIFT]: IconShiftResult;
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };

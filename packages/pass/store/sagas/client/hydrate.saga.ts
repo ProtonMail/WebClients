@@ -111,10 +111,8 @@ export function* hydrate(
 
         /** Activate offline mode by default if user
          * has an offline password available */
-        if (BUILD_TARGET === 'web' || DESKTOP_BUILD) {
-            const hasOfflinePassword = authStore.hasOfflinePassword();
-            settings.offlineEnabled = hasOfflinePassword;
-        }
+        const hasOfflinePassword = authStore.hasOfflinePassword();
+        settings.offlineEnabled = hasOfflinePassword;
 
         const incoming = { user: userState, settings, organization };
         const currentState: State = yield select();

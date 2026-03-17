@@ -13,7 +13,7 @@ import { useNavigationFilters } from '@proton/pass/components/Navigation/Navigat
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { MODEL_VERSION } from '@proton/pass/constants';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import { clientReady } from '@proton/pass/lib/client';
+import { clientBooted } from '@proton/pass/lib/client';
 import { isEditItemDraft, isNewItemDraft } from '@proton/pass/lib/items/item.predicates';
 import { syncRequest } from '@proton/pass/store/actions/requests';
 import { selectRequestInFlight } from '@proton/pass/store/selectors/../request/selectors';
@@ -39,15 +39,15 @@ export const usePopupContext = createUseContext(PopupContext);
 export const PopupProvider: FC<PropsWithChildren<Props>> = ({ children, ready }) => {
     const { onTelemetry } = usePassCore();
     const store = useStore<State>();
-    const { status } = useAppState();
+    const { status, booted } = useAppState();
     const { tabId } = useExtensionContext();
     const { navigate, selectItem } = useNavigationActions();
     const { setFilters } = useNavigationFilters();
 
     const [initialized, setInitialized] = useState<boolean>(false);
     const sync = useSelector(selectRequestInFlight(syncRequest()));
-    const syncing = sync || status === AppStatus.BOOTING;
-    const interactive = clientReady(status) && ready && !syncing;
+    const syncing = sync || (status === AppStatus.BOOTING && !booted);
+    const interactive = clientBooted(status) && ready && !syncing;
 
     const handleInit = useCallback((data: PopupInitialState) => {
         setInitialized(true);
@@ -73,7 +73,7 @@ export const PopupProvider: FC<PropsWithChildren<Props>> = ({ children, ready })
     }, []);
 
     useEffect(() => {
-        if (clientReady(status)) {
+        if (clientBooted(status)) {
             void sendMessage.onSuccess(
                 popupMessage({ type: WorkerMessageType.POPUP_INIT, payload: { tabId } }),
                 handleInit
