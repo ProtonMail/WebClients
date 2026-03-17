@@ -42,6 +42,7 @@ export function getIsEligible({
     const notBundle = !offerSubscription.hasBundle();
     const notDuo = !offerSubscription.hasDuo();
     const notFamily = !offerSubscription.hasFamily();
+    const notVisionary = !offerSubscription.hasVisionary();
     const notUsedCurrentPromo = !offerSubscription.usedSpringSale2026();
 
     if (offerSubscription.isManagedExternally()) {
@@ -64,6 +65,7 @@ export function getIsEligible({
         notBundle &&
         notDuo &&
         notFamily &&
+        notVisionary &&
         notUsedCurrentPromo
     ) {
         return true;

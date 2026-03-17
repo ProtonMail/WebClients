@@ -34,6 +34,7 @@ export function getIsEligible({
     if (subscription) {
         const offerSubscription = new OfferSubscription(subscription);
         if (
+            offerSubscription.hasVisionary() ||
             offerSubscription.usedSpringSale2026() ||
             !isSubscriptionCheckAllowed(subscription, offerConfig) ||
             offerSubscription.isManagedExternally()
