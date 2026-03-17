@@ -294,6 +294,11 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
     };
 
     const correctDecryptionErrors = async () => {
+        const userHasESDB = await hasESDB(userID);
+        if (!userHasESDB) {
+            return 0;
+        }
+
         const { cachedIndexKey } = esStatus;
 
         const userKeys = await getUserKeys();
@@ -1347,23 +1352,28 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
     const initializeES = async () => {
         // Check whether the ES IDB exists for the current user. Nothing else is
         // needed in case it doesn't
-        if (!(await hasESDB(userID))) {
+        const userHasESDB = await hasESDB(userID);
+        if (!userHasESDB) {
             return;
         }
 
-        // At this point the indexKey must exist
+        // Check metadata progress first — if missing, DB was never initialized (zombie)
+        const metadataProgress = await metadataIndexingProgress.read(userID);
+        if (!metadataProgress) {
+            // Silently remove the database if there is no metadata progress
+            traceInitiativeError(
+                SentryCommonInitiatives.ENCRYPTED_SEARCH,
+                new Error('initializeES - zombie DB deleted (no metadata progress)')
+            );
+            await esDelete();
+            return;
+        }
+
+        // The database should be initialized at this point
         const userKeys = await getUserKeys();
         const indexKey = await getIndexKey(userKeys, userID);
         if (!indexKey) {
             return dbCorruptError('initializeES - No index key');
-        }
-
-        // If metadata indexing was ongoing, continue it.
-        // Note that if IDB exists and metadata progress doesn't,
-        // something is wrong
-        const metadataProgress = await metadataIndexingProgress.read(userID);
-        if (!metadataProgress) {
-            return dbCorruptError('initializeES - No metadata progress');
         }
 
         if (metadataProgress.status === INDEXING_STATUS.PAUSED) {
