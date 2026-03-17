@@ -6,6 +6,7 @@ import { Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { isMobile, isSafari, isWindows } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
@@ -21,6 +22,7 @@ export function useCurrentScreenShare({
     startPiP: () => void;
     preparePictureInPicture: () => void;
 }) {
+    const { reportMeetError } = useMeetErrorReporting();
     const { localParticipant } = useLocalParticipant();
 
     const notifications = useNotifications();
@@ -104,6 +106,8 @@ export function useCurrentScreenShare({
                     text: c('Error').t`Failed to start screen share`,
                 });
             }
+
+            reportMeetError(`useCurrentScreenShare.startScreenShare: ${err.message}`, err);
         }
     });
 
