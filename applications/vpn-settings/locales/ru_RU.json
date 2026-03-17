@@ -492,15 +492,6 @@
       "Import": [
         "Импортировать"
       ],
-      "Import calendars": [
-        "Импортировать календари"
-      ],
-      "Import contacts": [
-        "Импортировать контакты"
-      ],
-      "Import emails": [
-        "Импортировать электронную почту"
-      ],
       "Import emails, calendars, contacts": [
         "Импорт электронных писем, календарей и контактов"
       ],
@@ -1572,6 +1563,9 @@
       ],
       "Payments problem": [
         "Проблема с платежами"
+      ],
+      "Sheets problem": [
+        "Проблема с таблицами"
       ],
       "Sign in problem": [
         "Проблема со входом"
@@ -3410,6 +3404,9 @@
       "Enter 6 digits": [
         "Введите 6 цифр"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Введите ваше имя пользователя без домена (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к API Биткоин."
       ],
@@ -5070,23 +5067,6 @@
         "Выберите ${ boldExport } для экспорта календаря в формате файла ICS."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Импортировать из ${ provider }"
-      ],
-      "Import from Google": [
-        "Импортировать из Google"
-      ],
-      "Import from other": [
-        "Импортировать из другого"
-      ],
-      "Import from Outlook": [
-        "Импортировать из Outlook"
-      ],
-      "Import from Yahoo": [
-        "Импортировать из Yahoo"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } из ${ totalContacts } контактов не будут импортированы. Нажмите, чтобы узнать подробности."
@@ -5558,9 +5538,6 @@
       "Billing cycle: ${ text }": [
         "Платежный цикл: ${ text }"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Перенесите ваши сообщения, контакты и календари в ${ BRAND_NAME }."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
       ],
@@ -5590,6 +5567,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Награда «Выбор редакции CNET» с оценкой 8,4 из 10"
+      ],
+      "Coming soon": [
+        "Скоро"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Настройте аутентификацию SAML для своей организации через провайдера идентификации (IdP). Это позволит включить SAML для всей организации."
@@ -6317,9 +6297,6 @@
       "Once you reset your password:": [
         "После изменения пароля:"
       ],
-      "One time import": [
-        "Одноразовый импорт"
-      ],
       "Open source": [
         "Открытый исходный код"
       ],
@@ -6583,9 +6560,6 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Выберите пользовательские принадлежности из ${ getFormattedOrganization }, которые вы хотите разрешить в своей организации ${ BRAND_NAME }:"
-      ],
-      "Select what you want to import.": [
-        "Выберите то, что вы хотите импортировать."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберите, какие календари импортировать. Новый календарь будет создан для каждого импортированного календаря с учётом числа календарей, доступных в вашем тарифе."
@@ -7241,9 +7215,6 @@
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Вы можете установить правила для паролей, которые члены вашей организации будут использовать при создании или восстановлении пароля к своему аккаунту ${ BRAND_NAME }."
       ],
-      "You can import one data type at a time.": [
-        "Вы можете импортировать один тип данных за один раз."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календаря. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку.",
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку.",
@@ -7724,9 +7695,6 @@
       "Calendar": [
         "Календарь"
       ],
-      "Calendars": [
-        "Календари"
-      ],
       "Card details": [
         "Данные карты"
       ],
@@ -7870,9 +7838,6 @@
       ],
       "Email or username": [
         "Эл. почта или имя пользователя"
-      ],
-      "Emails": [
-        "Электронные письма"
       ],
       "Emails (all messages)": [
         "Письма (все)"
@@ -14218,9 +14183,6 @@
       ],
       "What is the dark web?": [
         "Что такое Dark Web?"
-      ],
-      "What would you like to import?": [
-        "Что бы вы хотели импортировать?"
       ],
       "WireGuard configuration": [
         "Конфигурация WireGuard"

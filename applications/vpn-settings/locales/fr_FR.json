@@ -533,6 +533,9 @@
       "Go to panel ${ index }": [
         "Aller au panneau ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -545,6 +548,9 @@
       "Help and resources": [
         "Aide et ressources"
       ],
+      "Hide": [
+        "Masquer"
+      ],
       "Hide more benefits": [
         "Masquer plus d'avantages"
       ],
@@ -553,15 +559,6 @@
       ],
       "Import": [
         "Importer"
-      ],
-      "Import calendars": [
-        "Importer des calendriers"
-      ],
-      "Import contacts": [
-        "Importer des contacts"
-      ],
-      "Import emails": [
-        "Importer des messages"
       ],
       "Import emails, calendars, contacts": [
         "Importer des messages, calendriers et contacts"
@@ -1671,8 +1668,14 @@
       "3 TB data storage": [
         "3 To d'espace de stockage"
       ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
+      ],
       "Access advanced AI models": [
         "Accéder aux modèles d'IA avancés"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toutes les fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Bloquer les pubs, les traqueurs et les logiciels malveillants"
@@ -5872,20 +5875,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importer depuis ${ provider }"
-      ],
-      "Import from Google": [
-        "Importer depuis Google"
-      ],
-      "Import from other": [
-        "Importer depuis un autre fournisseur"
-      ],
-      "Import from Outlook": [
-        "Importer depuis Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importer depuis Yahoo"
+      "Advanced import": [
+        "Importation avancée"
       ]
     },
     "Import warning": {
@@ -6394,9 +6385,6 @@
       "Billing cycle: ${ text }": [
         "Cycle de facturation : ${ text }"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Importez vos messages, vos contacts et vos calendriers dans ${ BRAND_NAME } !"
-      ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "En désactivant la surveillance de compte, vous effacerez aussi l'ensemble de votre historique. Voulez-vous vraiment la désactiver ?"
       ],
@@ -6423,6 +6411,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Choisissez l'identifiant de l'entité pour continuer."
+      ],
+      "Choose your service to connect with": [
+        "Choisissez votre service pour vous connecter"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
@@ -7256,9 +7247,6 @@
       "Once you reset your password:": [
         "Une fois votre mot de passe réinitialisé :"
       ],
-      "One time import": [
-        "Importation unique"
-      ],
       "Open source": [
         "Open source"
       ],
@@ -7553,9 +7541,6 @@
       ],
       "Select users to view their activity": [
         "Sélectionnez les utilisateurs pour afficher leurs activités."
-      ],
-      "Select what you want to import.": [
-        "Sélectionnez ce que vous voulez importer."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé, en fonction du nombre de calendriers disponibles dans votre abonnement."
@@ -8280,9 +8265,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Vous pouvez bénéficier de tous nos services de confidentialité premium dans une seule offre groupée — et ce, pour seulement **${ priceString }/mois**."
       ],
-      "You can import one data type at a time.": [
-        "Vous pouvez importer un type de données à la fois."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
         "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }."
@@ -8828,9 +8810,6 @@
       "Calendar": [
         "Calendrier"
       ],
-      "Calendars": [
-        "Calendriers"
-      ],
       "Card details": [
         "Informations de carte"
       ],
@@ -8980,9 +8959,6 @@
       ],
       "Email or username": [
         "E-mail ou nom d'utilisateur"
-      ],
-      "Emails": [
-        "Messages"
       ],
       "Emails (all messages)": [
         "Messages (tous les messages)"
@@ -15388,6 +15364,9 @@
       "Change second password": [
         "Changer le second mot de passe"
       ],
+      "Choose a provider": [
+        "Choisissez un fournisseur"
+      ],
       "Choose user affiliations": [
         "Choisir les affiliations de l'utilisateur"
       ],
@@ -15490,6 +15469,9 @@
       ],
       "Currency": [
         "Devise"
+      ],
+      "Custom": [
+        "Personnalisé"
       ],
       "Custom selection of users": [
         "Sélection personnalisée des utilisateurs"
@@ -15785,6 +15767,9 @@
       "Import groups": [
         "Importer des groupes"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importer vos données vers ${ BRAND_NAME }"
+      ],
       "Information exposed in breach": [
         "Informations divulguées lors de la fuite de données"
       ],
@@ -16015,6 +16000,9 @@
       ],
       "Select contact group": [
         "Sélectionner le groupe de contacts"
+      ],
+      "Select data to import": [
+        "Sélectionner les données à importer"
       ],
       "Send email reminders?": [
         "Envoyer un rappel par e-mail ?"
@@ -16247,9 +16235,6 @@
       ],
       "What is the dark web?": [
         "Qu'est-ce que le dark web ?"
-      ],
-      "What would you like to import?": [
-        "Que voulez-vous importer ?"
       ],
       "Wipe all logs?": [
         "Effacer tous les journaux ?"

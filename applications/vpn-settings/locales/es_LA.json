@@ -557,15 +557,6 @@
       "Import": [
         "Importar"
       ],
-      "Import calendars": [
-        "Importar calendarios"
-      ],
-      "Import contacts": [
-        "Importar contactos"
-      ],
-      "Import emails": [
-        "Importar correos"
-      ],
       "Import emails, calendars, contacts": [
         "Importar correos electrónicos, calendarios, contactos"
       ],
@@ -4109,7 +4100,7 @@
         "Ingrese 6 dígitos"
       ],
       "Enter your username without the domain (@example.com)": [
-        "Introduzca su nombre de usuario sin el dominio (@ejemplo.com)"
+        "Ingrese su nombre de usuario sin el dominio (@ejemplo.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Error al conectar a la API de Bitcoin."
@@ -4387,7 +4378,7 @@
         "Tiempo de espera agotado"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "El esquema de inversión del sujeto pasivo no es compatible con este plan"
+        "El esquema de cobro inverso no es compatible con este plan"
       ],
       "Server not found": [
         "Servidor no encontrado"
@@ -5892,23 +5883,6 @@
         "Seleccione ${ boldExport } para exportar el calendario como un archivo ICS."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Importar desde ${ provider }"
-      ],
-      "Import from Google": [
-        "Importar desde Google"
-      ],
-      "Import from other": [
-        "Importar desde otro proveedor"
-      ],
-      "Import from Outlook": [
-        "Importar desde Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importar desde Yahoo"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos no se importarán. Haga clic para más detalles"
@@ -6414,9 +6388,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Traiga sus mensajes, contactos y calendarios a ${ BRAND_NAME }."
       ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Si desactivas el monitor de cuenta, también se borrará todo su historial. ¿Realmente quiere desactivarlo?"
@@ -7283,9 +7254,6 @@
       "Once you reset your password:": [
         "Luego de restablecer la contraseña:"
       ],
-      "One time import": [
-        "Importación única"
-      ],
       "Open source": [
         "Código abierto"
       ],
@@ -7580,9 +7548,6 @@
       ],
       "Select users to view their activity": [
         "Seleccione usuarios para ver sus actividades"
-      ],
-      "Select what you want to import.": [
-        "Seleccione lo que quiere importar."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleccione los calendarios que quiere importar. Se creará un calendario nuevo para cada calendario importado de acuerdo con el número de calendarios disponibles en el plan."
@@ -8310,9 +8275,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Puede obtener nuestros servicios premium de privacidad en un paquete único por solo **${ priceString }/mes**."
       ],
-      "You can import one data type at a time.": [
-        "Puede importar un tipo de datos a la vez."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimine enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }.",
         "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimine enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }."
@@ -8456,7 +8418,7 @@
         "La cuenta tiene al menos una factura atrasada. Su acceso pronto será restringido. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Su cuenta está configurada actualmente para aplicar el esquema de inversión del sujeto pasivo. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
+        "Su cuenta está actualmente configurada para aplicar el esquema de cargo inverso. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
       ],
       "Your account was successfully updated with this promotion": [
         "Se ha actualizado la cuenta con esta promoción"
@@ -8861,9 +8823,6 @@
       "Calendar": [
         "Calendario"
       ],
-      "Calendars": [
-        "Calendarios"
-      ],
       "Card details": [
         "Detalles de la tarjeta"
       ],
@@ -9013,9 +8972,6 @@
       ],
       "Email or username": [
         "Correo o nombre de usuario"
-      ],
-      "Emails": [
-        "Correos"
       ],
       "Emails (all messages)": [
         "Correos (todos los mensajes)"
@@ -12202,7 +12158,7 @@
         "Número de IVA"
       ],
       "VAT reverse charge mechanism applies.": [
-        "El mecanismo de inversión del sujeto pasivo se aplica."
+        "Se aplica el mecanismo de cargo inverso del IVA."
       ],
       "You already have a subscription to this plan.": [
         "Ya tiene una suscripción a este plan."
@@ -16033,7 +15989,7 @@
         "Restaurar privilegios de administrador"
       ],
       "Reverse charge not supported": [
-        "Inversión del sujeto pasivo no soportada"
+        "Cargo inverso no soportado"
       ],
       "Revoke certificate?": [
         "¿Revocar certificado?"
@@ -16296,9 +16252,6 @@
       ],
       "What is the dark web?": [
         "¿Qué es la dark web?"
-      ],
-      "What would you like to import?": [
-        "¿Qué quiere importar?"
       ],
       "Wipe all logs?": [
         "¿Borrar todos los registros?"

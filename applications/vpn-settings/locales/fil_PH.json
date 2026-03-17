@@ -539,15 +539,6 @@
       "Import": [
         "I-import"
       ],
-      "Import calendars": [
-        "I-import ang mga kalendaryo"
-      ],
-      "Import contacts": [
-        "Mag-import ng mga contact"
-      ],
-      "Import emails": [
-        "I-import ang mga email"
-      ],
       "Import emails, calendars, contacts": [
         "I-import ang mga email, kalendaryo, contact"
       ],
@@ -5559,23 +5550,6 @@
         "Piliin ang ${ boldExport } upang i-export ang kalendaryo bilang ICS file."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "I-import mula sa ${ provider }"
-      ],
-      "Import from Google": [
-        "I-import mula sa Google"
-      ],
-      "Import from other": [
-        "I-import mula sa iba"
-      ],
-      "Import from Outlook": [
-        "I-import mula sa Outlook"
-      ],
-      "Import from Yahoo": [
-        "I-import mula sa Yahoo"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } sa ${ totalContacts } na contact ang hindi mai-import. I-click para sa mga detalye"
@@ -6045,9 +6019,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Siklo ng pagsingil: ${ text }"
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Dalhin ang mga mensahe, contact, at kalendaryo sa ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Sa pag-downgrade sa Free plan, permanenteng mawawala ang mga benepisyong ito, kahit mag-upgrade ka ulit sa hinaharap."
@@ -6872,9 +6843,6 @@
       "Once you reset your password:": [
         "Kapag na-reset mo na ang iyong password:"
       ],
-      "One time import": [
-        "Isang beses na pag-import"
-      ],
       "Open source": [
         "Open source"
       ],
@@ -7154,9 +7122,6 @@
       ],
       "Select users to view their activity": [
         "Piliin ang mga user para makita ang kanilang aktibidad"
-      ],
-      "Select what you want to import.": [
-        "Piliin kung ano ang gustong i-import."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Piliin kung aling mga kalendaryo ang i-i-import. Gagawa ng bagong kalendaryo para sa bawat na-import na kalendaryo ayon sa bilang ng mga kalendaryong available sa iyong plano."
@@ -7851,9 +7816,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Makukuha mo ang aming mga premium na serbisyo sa privacy sa isang bundle—at ito ay **${ priceString }/buwan** lang."
       ],
-      "You can import one data type at a time.": [
-        "Maaaring mag-import ng isang uri ng data sa bawat pagkakataon."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Maaari kang magpanatili ng hanggang ${ MAX_CALENDARS_FREE } kalendaryo. Mangyaring alisin ang mga shared calendar link at sinumang user ng ${ BRAND_NAME } na pinag-share-an mo ng iyong mga kalendaryo bago mo kanselahin ang iyong subscription sa ${ MAIL_SHORT_APP_NAME }.",
         "Maaari kang magpanatili ng hanggang ${ MAX_CALENDARS_FREE } na kalendaryo. Mangyaring alisin ang mga shared calendar link at sinumang user ng ${ BRAND_NAME } na pinag-share-an mo ng iyong mga kalendaryo bago mo kanselahin ang iyong subscription sa ${ MAIL_SHORT_APP_NAME }."
@@ -8368,9 +8330,6 @@
       "Calendar": [
         "Kalendaryo"
       ],
-      "Calendars": [
-        "Mga kalendaryo"
-      ],
       "Card details": [
         "Mga detalye ng card"
       ],
@@ -8520,9 +8479,6 @@
       ],
       "Email or username": [
         "Email o username"
-      ],
-      "Emails": [
-        "Mga email"
       ],
       "Emails (all messages)": [
         "Mga email (lahat ng mensahe)"
@@ -15418,9 +15374,6 @@
       ],
       "What is the dark web?": [
         "Ano ang dark web?"
-      ],
-      "What would you like to import?": [
-        "Ano ang nais mong i-import?"
       ],
       "Wipe all logs?": [
         "Burahin ang lahat ng log?"

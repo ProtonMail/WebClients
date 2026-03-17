@@ -539,15 +539,6 @@
       "Import": [
         "Importa"
       ],
-      "Import calendars": [
-        "Importa calendari"
-      ],
-      "Import contacts": [
-        "Importa contatti"
-      ],
-      "Import emails": [
-        "Importa le email"
-      ],
       "Import emails, calendars, contacts": [
         "Importa email, calendari, contatti"
       ],
@@ -1631,6 +1622,17 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lo spazio di archiviazione è condiviso tra tutti i servizi ${ BRAND_NAME }."
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB di spazio di archiviazione"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blocca annunci, tracker e malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticazione 2FA integrata"
       ]
     },
     "Billing cycle": {
@@ -3883,6 +3885,9 @@
       "Enter 6 digits": [
         "Inserisci il codice a 6 cifre"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Inserisci il tuo nome utente senza il dominio (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
       ],
@@ -3954,6 +3959,9 @@
       ],
       "Invalid code": [
         "Codice non valido"
+      ],
+      "Invalid coupon": [
+        "Coupon non valido"
       ],
       "Invalid domain": [
         "Dominio non valido"
@@ -4051,6 +4059,9 @@
       ],
       "Please add a payment method before reactivating your subscription": [
         "Aggiungi un metodo di pagamento prima di riattivare il tuo abbonamento"
+      ],
+      "Please complete the billing details": [
+        "Completa i dettagli di fatturazione"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configura un dominio personalizzato prima di aggiungere indirizzi."
@@ -4217,6 +4228,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
+      ],
+      "This field is invalid": [
+        "Questo campo non è valido"
       ],
       "This field is required": [
         "Campo necessario"
@@ -5626,20 +5640,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importa da ${ provider }"
-      ],
-      "Import from Google": [
-        "Importa da Google"
-      ],
-      "Import from other": [
-        "Importa da altro"
-      ],
-      "Import from Outlook": [
-        "Importa da Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importa da Yahoo"
+      "Advanced import": [
+        "Importazione avanzata"
       ]
     },
     "Import warning": {
@@ -6123,9 +6125,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Ciclo di fatturazione: ${ text }"
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Importa i tuoi messaggi, contatti e calendari in ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
@@ -6953,9 +6952,6 @@
       "Once you reset your password:": [
         "Una volta che reimposti la tua password:"
       ],
-      "One time import": [
-        "Importazione una tantum"
-      ],
       "Open source": [
         "Open source"
       ],
@@ -7235,9 +7231,6 @@
       ],
       "Select users to view their activity": [
         "Seleziona gli utenti per visualizzare la loro attività"
-      ],
-      "Select what you want to import.": [
-        "Seleziona cosa vuoi importare."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleziona i calendari da importare. Verrà creato un nuovo calendario per ogni calendario importato in base al numero di calendari disponibili nel tuo piano."
@@ -7938,9 +7931,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Puoi ottenere i nostri servizi premium per la privacy in un unico pacchetto, al costo di soli **${ priceString }/mese**."
       ],
-      "You can import one data type at a time.": [
-        "Puoi importare un tipo di dati alla volta."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendario. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }.",
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendari. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }."
@@ -8041,6 +8031,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Non sarai in grado di recuperare i dati bloccati utilizzando i file di ripristino scaricati. Questa azione disabiliterà anche il ripristino basato sul dispositivo."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Riceverai il premio in crediti 1 mese dopo che il tuo amico si sarà abbonato a un piano annuale e 2 mesi dopo che si sarà abbonato a un piano mensile."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese. Puoi annullare in qualsiasi momento.",
@@ -8471,9 +8464,6 @@
       "Calendar": [
         "Calendario"
       ],
-      "Calendars": [
-        "Calendari"
-      ],
       "Card details": [
         "Dettagli della carta"
       ],
@@ -8624,9 +8614,6 @@
       "Email or username": [
         "Email o nome utente"
       ],
-      "Emails": [
-        "Email"
-      ],
       "Emails (all messages)": [
         "Email (tutti i messaggi)"
       ],
@@ -8758,6 +8745,9 @@
       ],
       "Last 3 months only": [
         "Solo ultimi 3 mesi"
+      ],
+      "Last 6 months only": [
+        "Solo ultimi 6 mesi"
       ],
       "Last month only": [
         "Solo il mese scorso"
@@ -11655,6 +11645,12 @@
       "I'm purchasing as a business": [
         "Sto acquistando come azienda"
       ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inclusa l'imposta del ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Incluse imposte del ${ rate }%: ${ taxAmountElement }"
+      ],
       "MM/YY": [
         "MM/AA"
       ],
@@ -11678,6 +11674,9 @@
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Scusa, questa offerta non è disponibile con il tuo piano attuale."
+      ],
+      "Taxes ${ rate }%": [
+        "Imposte ${ rate }%"
       ],
       "terms and conditions": [
         "Termini e Condizioni"
@@ -11821,6 +11820,14 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Il prezzo del rinnovo dipende dalla regione di fatturazione e dall'ABN."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Il prezzo del rinnovo dipende dalla regione di fatturazione e dall'EIN."
       ]
     },
     "Payments.Saved payment method details": {
@@ -13172,6 +13179,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Condiviso da ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Apri in ${ appName }"
       ]
     },
     "Signup": {
@@ -14900,6 +14912,9 @@
       "Change second password": [
         "Cambia la seconda password"
       ],
+      "Choose a provider": [
+        "Scegli un fornitore"
+      ],
       "Choose user affiliations": [
         "Scegli le affiliazioni dell'utente"
       ],
@@ -15002,6 +15017,9 @@
       ],
       "Currency": [
         "Valuta"
+      ],
+      "Custom": [
+        "Personalizza"
       ],
       "Custom selection of users": [
         "Selezione personalizzata degli utenti"
@@ -15477,6 +15495,9 @@
       "Restore administrator privileges": [
         "Ripristina i privilegi di amministratore"
       ],
+      "Reverse charge not supported": [
+        "Inversione contabile non supportata"
+      ],
       "Revoke certificate?": [
         "Revoca il certificato?"
       ],
@@ -15729,9 +15750,6 @@
       ],
       "What is the dark web?": [
         "Cos'è il dark web?"
-      ],
-      "What would you like to import?": [
-        "Cosa vorresti importare?"
       ],
       "Wipe all logs?": [
         "Cancella tutti i log?"
