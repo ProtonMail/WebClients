@@ -1,6 +1,5 @@
 import { getAppURL } from "../../store/urlStore";
 import { mainLogger } from "../log";
-import { GOOGLE_OAUTH_PATH } from "@proton/shared/lib/api/activation";
 import { PRINT_DATA_URL_PREFIX, validPrintContent } from "../printing/print";
 
 const sessionRegex = /(?!:\/u\/)(\d+)(?!:\/)/g;
@@ -88,45 +87,6 @@ export const isAccount = (urlString: string) => {
     try {
         const url = new URL(urlString);
         return getAppURL().account === url.origin;
-    } catch (error) {
-        return false;
-    }
-};
-
-// Should be removed eventually - INDA-661
-export const isGoogleOAuthAuthorizationURL = (urlString: string) => {
-    try {
-        const url = new URL(urlString);
-
-        const isAuthPath = url.pathname.startsWith(GOOGLE_OAUTH_PATH);
-
-        return isHostAllowed(urlString) && isAuthPath;
-    } catch (error) {
-        return false;
-    }
-};
-
-// Should be removed eventually - INDA-661
-export const isZoomAuthURL = (urlString: string) => {
-    try {
-        const url = new URL(urlString);
-
-        if (!url.hostname.includes("zoom") || !url.pathname.startsWith("/oauth/")) return false;
-
-        return true;
-    } catch (error) {
-        return false;
-    }
-};
-
-// Should be removed eventually - INDA-661
-export const isMicrosoftAuthURL = (urlString: string) => {
-    try {
-        const url = new URL(urlString);
-
-        if (!url.hostname.includes("login.microsoftonline.com")) return false;
-
-        return true;
     } catch (error) {
         return false;
     }

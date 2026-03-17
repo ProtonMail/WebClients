@@ -9,14 +9,11 @@ import {
     isAccoutLite,
     isBookingURL,
     isCalendar,
-    isGoogleOAuthAuthorizationURL,
     isHome,
     isHostAllowed,
     isMail,
-    isMicrosoftAuthURL,
     isUpgradeURL,
     isUpsellURL,
-    isZoomAuthURL,
 } from "../urls/urlTests";
 import {
     getAccountView,
@@ -222,12 +219,7 @@ export function handleWebContents(contents: WebContents) {
         };
 
         // Specific whitelisted URLs should be removed in the future - INDA-661
-        if (
-            isGoogleOAuthAuthorizationURL(url) ||
-            isZoomAuthURL(url) ||
-            isMicrosoftAuthURL(url) ||
-            isDynamicOAuthURL(url)
-        ) {
+        if (isDynamicOAuthURL(url)) {
             if (!global.oauthProcess) return denyAndOpenExternal(`oauth disabled, link in view ${url}`);
             return allow(`oauth process enabled, opening in new electron window ${url}`);
         }
