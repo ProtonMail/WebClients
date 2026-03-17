@@ -1629,6 +1629,9 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Download ICS": [
+        "Descargar el archivo ICS"
       ]
     },
     "action": {
@@ -5467,6 +5470,9 @@
       ],
       "Send confirmation email": [
         "Enviar correo electrónico de confirmación"
+      ],
+      "Back": [
+        "Atrás"
       ]
     },
     "email_forwarding_2023: Error": {
@@ -7054,6 +7060,9 @@
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
         "La conexión a internet fue interrumpida, lo que provocó un fallo en el proceso de exportación. Inténtalo de nuevo."
+      ],
+      "You can save an ICS file of the events that were successfully exported.": [
+        "Puedes guardar un archivo ICS de los eventos que han sido exportados con éxito."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -11816,6 +11825,12 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
+        "Usa la dirección de correo electrónico seleccionada como nombre de usuario SMTP en el servicio externo y el token generado como la contraseña SMTP."
+      ],
+      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "Puedes usar ${ MAIL_APP_NAME } con cualquier cliente de correo electrónico de escritorio que admita IMAP/SMTP, incluidos Outlook, Apple Mail y Thunderbird."
       ]
     },
     "info": {
@@ -13685,6 +13700,12 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Allow all users to create vaults": [
+        "Permitir a todos los usuarios crear cajas fuertes"
+      ],
+      "Copy fingerprint": [
+        "Copiar huella digital"
       ]
     },
     "label": {
@@ -15375,6 +15396,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la red oscura para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
+      ],
+      "Activity logs and policy": [
+        "Registros de actividad y política"
       ]
     },
     "new_plans: feature highlight": {
@@ -16471,6 +16495,9 @@
       ],
       "Windows": [
         "Windows"
+      ],
+      "28th of the month": [
+        "28º del mes"
       ]
     },
     "option": {
@@ -16611,6 +16638,9 @@
     "OS compatibility": {
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (para Fedora/openSUSE)"
+      ],
+      ".dmg (12.0 or later)": [
+        ".dmg (12.0 o superior)"
       ]
     },
     "Participant name": {
@@ -21312,6 +21342,9 @@
       ],
       "Your address has been activated": [
         "Tu dirección se ha activado"
+      ],
+      "Calendar removed": [
+        "Calendario eliminado"
       ]
     },
     "Success message": {
@@ -24514,6 +24547,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Settings/filters": {
+      "Filters": [
+        "Filtros"
       ]
     }
   }
