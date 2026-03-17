@@ -17,8 +17,9 @@
         "i18n:validate": "proton-i18n validate lint-functions",
         "lint": "eslint --quiet",
         "pretty": "prettier --write $(find lib test -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "test": "NODE_ENV=test karma start test/karma.conf.js",
-        "test:ci": "yarn test"
+        "test": "jest",
+        "test:ci": "yarn run test --ci --forceExit --runInBand",
+        "test:watch": "jest --watch"
     },
     "dependencies": {
         "@proton/components": "workspace:^",
@@ -32,17 +33,15 @@
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
+        "@proton/jest-env": "workspace:^",
+        "@swc/jest": "^0.2.39",
+        "@testing-library/react-hooks": "^8.0.1",
         "@types/jasmine": "^5.1.15",
         "eslint": "^9.39.4",
         "eslint-plugin-jasmine": "^4.2.2",
-        "jasmine": "^5.13.0",
-        "jasmine-core": "^5.13.0",
-        "karma": "^6.4.4",
-        "karma-chrome-launcher": "^3.2.0",
-        "karma-jasmine": "^5.1.0",
-        "karma-spec-reporter": "^0.0.36",
-        "karma-webpack": "^5.0.1",
+        "jest": "^30.3.0",
         "playwright": "^1.58.2",
+        "ts-jest": "^29.4.6",
         "ts-loader": "^9.5.4",
         "typescript": "^5.9.3",
         "webpack": "^5.105.4"
