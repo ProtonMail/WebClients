@@ -1688,6 +1688,9 @@
       ],
       "Edit billing address": [
         "Upraviť fakturačnú adresu"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -5212,6 +5215,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Systém prenesenia daňovej povinnosti nie je pre tento plán podporovaný."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Zadajte používateľské meno bez domény (@príklad.com)"
       ]
     },
     "error": {
@@ -6507,6 +6513,9 @@
       ],
       "Import from Yahoo": [
         "Importovať z Yahoo"
+      ],
+      "Advanced import": [
+        "Pokročilý import"
       ]
     },
     "Import warning": {
@@ -9217,6 +9226,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Váš účet je momentálne nastavený tak, aby sa uplatňoval režim prenesenia daňovej povinnosti. Tento režim nie je podporovaný pre vybraný plán. Ak chcete pokračovať, odstráňte DIČ z fakturačnej adresy alebo vyberte iný plán."
+      ],
+      "Choose your service to connect with": [
+        "Vyberte si službu na pripojenie"
       ]
     },
     "info": {
@@ -12800,6 +12812,9 @@
       ],
       "I'm purchasing as a business": [
         "Nakupujem ako firma"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Uplatňuje sa mechanizmus prenesenia daňovej povinnosti."
       ]
     },
     "Payments.Error": {
@@ -16390,6 +16405,18 @@
       ],
       "Reverse charge not supported": [
         "Obrátené zdanenie nie je podporované"
+      ],
+      "Choose a provider": [
+        "Vyberte poskytovateľa"
+      ],
+      "Custom": [
+        "Vlastné"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importujte svoje dáta do ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Vyberte dáta na import"
       ]
     },
     "Today icon tooltip in mini calendar": {

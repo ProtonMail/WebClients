@@ -1673,6 +1673,9 @@
       ],
       "Edit billing address": [
         "Muokkaa laskutusosoitetta"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -6261,6 +6264,9 @@
       ],
       "Import from Yahoo": [
         "Tuo Yahoosta"
+      ],
+      "Advanced import": [
+        "Edistynyt tuonti"
       ]
     },
     "Import warning": {
@@ -8747,6 +8753,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Tilisi asetuksissa on käytössä käännetty verovelvollisuus, jota valittu tilaus ei tue. Jatkaaksesi joko poista ALV-numero laskutustiedoista tai valitse toinen tilaus."
+      ],
+      "Choose your service to connect with": [
+        "Valitse palvelu, johon haluat yhdistää"
       ]
     },
     "info": {
@@ -15425,6 +15434,18 @@
       ],
       "Reverse charge not supported": [
         "Käännettyä verovelvollisuutta ei tueta."
+      ],
+      "Choose a provider": [
+        "Valitse tarjoaja"
+      ],
+      "Custom": [
+        "Mukautettu"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Tuo tietosi ${ BRAND_NAME }iin"
+      ],
+      "Select data to import": [
+        "Valitse tuotavat tiedot"
       ]
     },
     "Today icon tooltip in mini calendar": {

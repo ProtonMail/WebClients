@@ -5044,6 +5044,18 @@
       ],
       "ZIP code is required": [
         "Il codice postale è obbligatorio"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Inserisci il tuo nome utente senza il dominio (@esempio.it)"
+      ],
+      "Invalid coupon": [
+        "Coupon non valido"
+      ],
+      "Please complete the billing details": [
+        "Completa i dettagli di fatturazione"
+      ],
+      "This field is invalid": [
+        "Questo campo non è valido"
       ]
     },
     "error": {
@@ -6293,6 +6305,9 @@
       ],
       "Import from Yahoo": [
         "Importa da Yahoo"
+      ],
+      "Advanced import": [
+        "Importazione avanzata"
       ]
     },
     "Import warning": {
@@ -8803,6 +8818,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Riceverai il premio in crediti 1 mese dopo che il tuo amico si sarà abbonato a un piano annuale e 2 mesi dopo che si sarà abbonato a un piano mensile."
       ]
     },
     "info": {
@@ -9880,6 +9898,9 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Last 6 months only": [
+        "Solo ultimi 6 mesi"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12235,6 +12256,15 @@
       ],
       "I'm purchasing as a business": [
         "Sto acquistando come azienda"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inclusa l'imposta del ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Incluse imposte del ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Taxes ${ rate }%": [
+        "Imposte ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -15574,6 +15604,18 @@
       ],
       "✨ Categories are coming!": [
         "✨ Le categorie stanno arrivando!"
+      ],
+      "Choose a provider": [
+        "Scegli un fornitore"
+      ],
+      "Custom": [
+        "Personalizza"
+      ],
+      "Keep this banner hidden?": [
+        "Tenere nascosto questo banner?"
+      ],
+      "Reverse charge not supported": [
+        "Inversione contabile non supportata"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16260,6 +16302,30 @@
     "springSale2026: Action": {
       "SPRING SALE 2026": [
         "SALDI PRIMAVERA 2026"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB di spazio di archiviazione"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blocca annunci, tracker e malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticazione 2FA integrata"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Il prezzo del rinnovo dipende dalla regione di fatturazione e dall'ABN."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Il prezzo del rinnovo dipende dalla regione di fatturazione e dall'EIN."
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Apri in ${ appName }"
       ]
     }
   }
