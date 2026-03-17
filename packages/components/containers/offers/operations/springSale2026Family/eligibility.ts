@@ -31,12 +31,14 @@ export function getIsEligible({
         return false;
     }
     const isDuo = offerSubscription.hasDuo();
+    const notVisionary = !offerSubscription.hasVisionary();
     const notUsedCurrentPromo = !offerSubscription.usedSpringSale2026();
     const hasMonthlyFamilyPlan = offerSubscription.hasFamily() && offerSubscription.hasMonthlyCycle();
 
     if (
         user.isPaid &&
         (isDuo || hasMonthlyFamilyPlan) &&
+        notVisionary &&
         notUsedCurrentPromo &&
         !offerSubscription.isManagedExternally()
     ) {
