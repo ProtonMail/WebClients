@@ -1013,6 +1013,9 @@
       "Encrypted JSON not supported": [
         "Kryptert JSON ikke støttet"
       ],
+      "Encryption communication for desktop unlock failed.": [
+        "Krypteringskommunikasjon for opplåsing av skrivebordsapp mislyktes."
+      ],
       "Error reporting problem": [
         "Problem med feilrapportering"
       ],
@@ -1249,6 +1252,15 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Noe gikk galt. Last inn ${ PASS_APP_NAME }-utvidelsen på nytt. Problemet er loggført."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } er låst, den må låses opp."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } er ikke installert."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Skrivebordsappen ${ PASS_APP_NAME } svarer ikke. Kjører den?"
       ],
       "The URL is in the list": [
         "Nettadressen er i listen"
@@ -1807,6 +1819,9 @@
       ],
       "Enabling biometrics lock failed": [
         "Aktivering av biometrisk lås mislyktes"
+      ],
+      "Enabling desktop auto-lock": [
+        "Aktiverer automatisk låsing av skrivebordsapp"
       ],
       "Enabling offline mode...": [
         "Aktiverer frakoblet modus..."
@@ -2429,6 +2444,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Denne funksjonen er for øyeblikket eksperimentell på Linux. Forsikre deg om at systemet ditt er oppdatert."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Denne funksjonen krever at ${ PASS_APP_NAME }-skrivebordsappen er installert og kjører under oppsettet."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Dette elementet er for øyeblikket ikke delt med noen. Inviter folk til å dele det med andre."
