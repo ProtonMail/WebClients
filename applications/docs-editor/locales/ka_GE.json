@@ -957,6 +957,10 @@
       ]
     },
     "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } სვეტი",
+        "${ numberOfColumns } სვეტი"
+      ],
       "${ numberOfRows } row": [
         "${ numberOfRows } მწკრივი",
         "${ numberOfRows } მწკრივი"
@@ -986,6 +990,14 @@
       ],
       "Delete sheet": [
         "ფურცლის წაშლა"
+      ]
+    },
+    "sheets_2025:Spreadsheet editing disabled dialog": {
+      "Mobile Editing Coming Soon": [
+        "მობილურზე ჩასწორება მალე იქნება ხელმისაწვდომი"
+      ],
+      "Screen too small for editing": [
+        "ჩასასწორებლად ეკრანი ძალიან პატარაა"
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -1131,6 +1143,9 @@
       "Settings": [
         "მორგება"
       ],
+      "Tab Separated Values (.tsv)": [
+        "ტაბით გამოყოფილი მნიშვნელობები (.tsv)"
+      ],
       "Toggle debug mode": [
         "გამართვის რეჟიმის გადართვა"
       ],
@@ -1241,6 +1256,12 @@
       "Image": [
         "გამოსახულება"
       ],
+      "Insert cells and shift down": [
+        "უჯრედების ჩასმა და ქვემოთ ჩაწევა"
+      ],
+      "Insert cells and shift right": [
+        "უჯრედების ჩასმა და მარჯვნივ გაწევა"
+      ],
       "Link": [
         "ბმული"
       ],
@@ -1255,6 +1276,10 @@
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } სვეტი",
+        "${ numberOfColumns } სვეტი"
+      ],
       "${ numberOfRows } row": [
         "${ numberOfRows } მწკრივი",
         "${ numberOfRows } მწკრივი"
@@ -1561,6 +1586,9 @@
       ],
       "Insert 1 table column left": [
         "1 ცხრილის სვეტის ჩასმა მარცხნივ"
+      ],
+      "Insert 1 table column right": [
+        "1 ცხრილის სვეტის ჩასმა მარჯვნივ"
       ],
       "Paste": [
         "ჩასმა"
@@ -1895,6 +1923,9 @@
       ],
       "Data validation": [
         "მონაცემების გადამოწმება"
+      ],
+      "Delete data validation rule": [
+        "მონაცემების გადამოწმების წესის წაშლა"
       ],
       "Enter a formula": [
         "შეიყვანეთ ფორმულა"
