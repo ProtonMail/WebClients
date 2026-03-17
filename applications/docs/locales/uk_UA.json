@@ -360,17 +360,11 @@
       "import": [
         "імпортувати"
       ],
-      "Import calendars": [
-        "Імпортувати календарі"
-      ],
       "Import contacts": [
         "Імпортувати контакти"
       ],
       "Import data": [
         "Імпортувати дані"
-      ],
-      "Import emails": [
-        "Імпортувати електронну пошту"
       ],
       "Import from .csv or vCard": [
         "Імпортувати з .csv або vCard"
@@ -3481,17 +3475,6 @@
         "Виберіть ${ boldExport }, щоб експортувати календар як файл ICS."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Імпорт з ${ provider }"
-      ],
-      "Import from Google": [
-        "Імпортувати з Google"
-      ],
-      "Import from Outlook": [
-        "Імпортувати з Outlook"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } із ${ totalContacts } контактів не будуть імпортовані. Натисніть для подробиць"
@@ -4233,9 +4216,6 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
       ],
-      "Select what you want to import.": [
-        "Виберіть, що ви хочете імпортувати."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар згідно з кількістю календарів, доступною у вашому тарифному плані."
       ],
@@ -4479,9 +4459,6 @@
       "You can close the tab or browser in the meantime.": [
         "Ви можете закрити вкладку або браузер."
       ],
-      "You can import one data type at a time.": [
-        "Ви можете імпортувати один тип даних за один раз."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
         "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
@@ -4706,9 +4683,6 @@
       "Calendar": [
         "Календар"
       ],
-      "Calendars": [
-        "Календарі"
-      ],
       "Cancel download": [
         "Скасувати завантаження"
       ],
@@ -4780,9 +4754,6 @@
       ],
       "Email format": [
         "Формат повідомлень"
-      ],
-      "Emails": [
-        "Листи"
       ],
       "Emails (all messages)": [
         "Е-пошта (усі повідомлення)"
@@ -8397,9 +8368,6 @@
       ],
       "Warning: suspected fake website": [
         "Попередження: імовірно підроблений вебсайт"
-      ],
-      "What would you like to import?": [
-        "Що ви бажаєте імпортувати?"
       ],
       "You have no folders yet": [
         "У вас поки немає тек"
