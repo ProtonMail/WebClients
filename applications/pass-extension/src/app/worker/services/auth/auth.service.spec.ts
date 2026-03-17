@@ -1,0 +1,369 @@
+import WorkerMessageBroker from 'proton-pass-extension/__mocks__/app/worker/channel';
+import { clearBrowserMocks } from 'proton-pass-extension/__mocks__/webextension-polyfill';
+import { WorkerContext } from 'proton-pass-extension/app/worker/context/inject';
+import type { WorkerContextInterface } from 'proton-pass-extension/app/worker/context/types';
+import * as permissionUtils from 'proton-pass-extension/lib/utils/permissions';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
+
+import { LockMode } from '@proton/pass/lib/auth/lock/types';
+import type { AuthService } from '@proton/pass/lib/auth/service';
+import type { AuthStore } from '@proton/pass/lib/auth/store';
+import { createAuthStore } from '@proton/pass/lib/auth/store';
+import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
+import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
+import { bootIntent, offlineResume } from '@proton/pass/store/actions';
+import type { Api } from '@proton/pass/types';
+import { NotificationKey } from '@proton/pass/types/worker/notification';
+import { AppStatus } from '@proton/pass/types/worker/state';
+import { createMemoryStore } from '@proton/pass/utils/store';
+
+import type { ExtensionAuthService } from './auth.service';
+import { createAuthService } from './auth.service';
+
+jest.mock('proton-pass-extension/lib/utils/permissions');
+const permissions = permissionUtils as jest.MockedObject<typeof permissionUtils>;
+
+const getMessageBrokerHandler = (type: WorkerMessageType) =>
+    WorkerMessageBroker.registerMessage.mock.calls.find((call) => call[0] === type)?.[1];
+
+describe('Extension AuthService', () => {
+    let api: Api;
+    let authStore: AuthStore;
+    let connectivity: ConnectivityService;
+    let ctx: WorkerContextInterface;
+
+    beforeEach(() => {
+        jest.clearAllMocks();
+        clearBrowserMocks();
+
+        api = jest.fn() as unknown as Api;
+        api.subscribe = jest.fn();
+        authStore = createAuthStore(createMemoryStore());
+        connectivity = {
+            check: jest.fn().mockResolvedValue(undefined),
+            getStatus: jest.fn().mockReturnValue(ConnectivityStatus.ONLINE),
+            subscribe: jest.fn(),
+            online: true,
+        } as any;
+
+        ctx = {
+            booted: false,
+            setBooted: jest.fn((value: boolean) => {
+                ctx.booted = value;
+            }),
+            status: AppStatus.IDLE,
+            setStatus: jest.fn((value: AppStatus) => {
+                ctx.status = value;
+            }),
+            getState: jest.fn(() => ({ status: ctx.status })),
+            service: {
+                connectivity,
+                store: {
+                    dispatch: jest.fn(),
+                },
+            },
+        } as any;
+
+        WorkerContext.set(ctx);
+    });
+
+    afterEach(() => {
+        WorkerContext.clear();
+    });
+
+    describe('Lifecycle hooks', () => {
+        let auth: AuthService;
+
+        beforeEach(() => {
+            auth = createAuthService(api, authStore);
+        });
+
+        describe('`onResumeStart`', () => {
+            beforeEach(() => {
+                auth.config.onSessionEmpty = jest.fn();
+                auth.config.onSessionFailure = jest.fn();
+                auth.config.onNotification = jest.fn();
+            });
+
+            test('should proceed when permissions are available', async () => {
+                permissions.hasHostPermissions.mockResolvedValueOnce(true);
+                const result = await auth.config.onResumeStart?.({ hasSession: true, memorySession: {} });
+
+                expect(result).toBe(true);
+                expect(auth.config.onSessionEmpty).not.toHaveBeenCalled();
+                expect(auth.config.onSessionFailure).not.toHaveBeenCalled();
+            });
+
+            test('should handle missing permissions with no session', async () => {
+                permissions.hasHostPermissions.mockResolvedValueOnce(false);
+                const result = await auth.config.onResumeStart?.({ hasSession: false, memorySession: {} });
+
+                expect(result).toBe(false);
+                expect(auth.config.onSessionEmpty).toHaveBeenCalled();
+                expect(auth.config.onNotification).toHaveBeenCalledWith({
+                    type: 'error',
+                    key: NotificationKey.EXT_PERMISSIONS,
+                    text: '',
+                });
+            });
+
+            test('should handle missing permissions with existing session', async () => {
+                permissions.hasHostPermissions.mockResolvedValueOnce(false);
+                const result = await auth.config.onResumeStart?.({ hasSession: true, memorySession: {} });
+
+                expect(result).toBe(false);
+                expect(auth.config.onSessionFailure).toHaveBeenCalledWith({ retryable: false });
+                expect(auth.config.onNotification).toHaveBeenCalledWith({
+                    type: 'error',
+                    key: NotificationKey.EXT_PERMISSIONS,
+                    text: '',
+                });
+            });
+
+            test('should restore offline session and boot when offline with valid offline session and not booted', async () => {
+                permissions.hasHostPermissions.mockResolvedValueOnce(true);
+                connectivity.online = false;
+                ctx.booted = false;
+
+                const memorySession = { UID: 'test-uid', UserID: 'test-user-id', offlineKD: 'test-offline-kd' };
+                const result = await auth.config.onResumeStart?.({ hasSession: true, memorySession });
+
+                expect(result).toBe(false);
+                expect(ctx.service.store.dispatch).toHaveBeenCalledWith(bootIntent({ offline: true }));
+            });
+
+            test('should proceed normally when online even with valid offline session', async () => {
+                permissions.hasHostPermissions.mockResolvedValueOnce(true);
+                connectivity.online = true;
+                ctx.booted = false;
+
+                const memorySession = { UID: 'test-uid', UserID: 'test-user-id', offlineKD: 'test-offline-kd' };
+                const result = await auth.config.onResumeStart?.({ hasSession: true, memorySession });
+
+                expect(result).toBe(true);
+                expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
+            });
+
+            test('should proceed normally when already booted', async () => {
+                permissions.hasHostPermissions.mockResolvedValueOnce(true);
+                connectivity.online = false;
+                ctx.booted = true;
+
+                const memorySession = { UID: 'test-uid', UserID: 'test-user-id', offlineKD: 'test-offline-kd' };
+                const result = await auth.config.onResumeStart?.({ hasSession: true, memorySession });
+
+                expect(result).toBe(true);
+                expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
+            });
+
+            test('should proceed normally when no valid offline session', async () => {
+                permissions.hasHostPermissions.mockResolvedValueOnce(true);
+                connectivity.online = false;
+                ctx.booted = false;
+
+                const memorySession = { UID: 'test-uid' };
+                const result = await auth.config.onResumeStart?.({ hasSession: true, memorySession });
+
+                expect(result).toBe(true);
+                expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
+            });
+        });
+
+        describe('`onUnlocked`', () => {
+            beforeEach(() => {
+                auth.resumeSession = jest.fn() as any;
+                auth.login = jest.fn();
+            });
+
+            test('should handle SESSION lock mode with valid session', async () => {
+                ctx.status = AppStatus.SESSION_LOCKED;
+                authStore.setSession({
+                    UID: 'test-uid',
+                    UserID: 'test-user-id',
+                    keyPassword: 'test-password',
+                    AccessToken: 'test-token',
+                    RefreshToken: 'test-refresh',
+                });
+
+                await auth.config.onUnlocked?.(LockMode.SESSION, undefined, undefined, false);
+                expect(auth.login).toHaveBeenCalledWith(authStore.getSession(), { unlocked: true });
+                expect(auth.resumeSession).not.toHaveBeenCalled();
+            });
+
+            test('should handle SESSION lock mode with invalid session', async () => {
+                ctx.status = AppStatus.SESSION_LOCKED;
+                authStore.clear();
+
+                await auth.config.onUnlocked?.(LockMode.SESSION, undefined, 123, false);
+                expect(auth.resumeSession).toHaveBeenCalledWith(123, { retryable: false, unlocked: true });
+                expect(auth.login).not.toHaveBeenCalled();
+            });
+
+            test('should handle PASSWORD lock mode', async () => {
+                ctx.status = AppStatus.PASSWORD_LOCKED;
+
+                await auth.config.onUnlocked?.(LockMode.PASSWORD, undefined, undefined, true);
+                expect(ctx.service.store.dispatch).toHaveBeenCalledWith(bootIntent({ offline: true }));
+                expect(auth.resumeSession).not.toHaveBeenCalled();
+            });
+
+            test('should not do anything when already booted', async () => {
+                ctx.status = AppStatus.READY;
+
+                await auth.config.onUnlocked?.(LockMode.SESSION, undefined, undefined, false);
+                expect(auth.login).not.toHaveBeenCalled();
+                expect(auth.resumeSession).not.toHaveBeenCalled();
+                expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
+            });
+        });
+
+        describe('`onSessionFailure`', () => {
+            test('should set PASSWORD_LOCKED when offline and has offline components', async () => {
+                ctx.status = AppStatus.IDLE;
+                connectivity.online = false;
+                authStore.setOfflineConfig({} as any);
+                authStore.setOfflineVerifier('test-verifier');
+
+                await auth.config.onSessionFailure?.({ retryable: false });
+                expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.PASSWORD_LOCKED);
+                expect(ctx.setBooted).toHaveBeenCalledWith(false);
+            });
+
+            test('should set ERROR when offline but no offline components', async () => {
+                ctx.status = AppStatus.IDLE;
+                connectivity.online = false;
+
+                await auth.config.onSessionFailure?.({ retryable: false });
+                expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.ERROR);
+                expect(ctx.setBooted).toHaveBeenCalledWith(false);
+            });
+
+            test('should set ERROR when online', async () => {
+                ctx.status = AppStatus.IDLE;
+                connectivity.online = true;
+
+                await auth.config.onSessionFailure?.({ retryable: false });
+                expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.ERROR);
+                expect(ctx.setBooted).toHaveBeenCalledWith(false);
+            });
+
+            test('should not change status when already offline booted', async () => {
+                ctx.status = AppStatus.OFFLINE;
+                connectivity.online = false;
+
+                await auth.config.onSessionFailure?.({ retryable: false });
+                expect(ctx.setStatus).not.toHaveBeenCalled();
+                expect(ctx.setBooted).not.toHaveBeenCalled();
+            });
+        });
+    });
+
+    describe('Listeners', () => {
+        let auth: ExtensionAuthService;
+
+        beforeEach(() => {
+            auth = createAuthService(api, authStore);
+            auth.listen();
+        });
+
+        describe('`listen()`', () => {
+            test('should setups listeners', () => {
+                expect(auth).toBeDefined();
+                expect(api.subscribe).toHaveBeenCalled();
+            });
+
+            test.each([
+                WorkerMessageType.ACCOUNT_PROBE,
+                WorkerMessageType.ACCOUNT_FORK,
+                WorkerMessageType.AUTH_CHECK,
+                WorkerMessageType.AUTH_CONFIRM_PASSWORD,
+                WorkerMessageType.AUTH_INIT,
+                WorkerMessageType.AUTH_OFFLINE_SWITCH,
+                WorkerMessageType.AUTH_UNLOCK,
+            ])('should register `%s` handler', (message) => {
+                expect(WorkerMessageBroker.registerMessage).toHaveBeenCalledWith(message, expect.any(Function));
+            });
+        });
+
+        describe('`AUTH_OFFLINE_SWITCH`', () => {
+            test('should set PASSWORD_LOCKED when offline', async () => {
+                connectivity.online = false;
+                ctx.status = AppStatus.READY;
+                ctx.booted = true;
+
+                const handler = getMessageBrokerHandler(WorkerMessageType.AUTH_OFFLINE_SWITCH);
+                const result = await handler?.({}, {});
+
+                expect(result).toBe(true);
+                expect(ctx.setBooted).toHaveBeenCalledWith(false);
+                expect(ctx.setStatus).toHaveBeenCalledWith(AppStatus.PASSWORD_LOCKED);
+            });
+
+            test('should not change status when online', async () => {
+                connectivity.online = true;
+                ctx.status = AppStatus.READY;
+                ctx.booted = true;
+
+                const handler = getMessageBrokerHandler(WorkerMessageType.AUTH_OFFLINE_SWITCH);
+                const result = await handler?.({}, {});
+
+                expect(result).toBe(true);
+                expect(ctx.setBooted).not.toHaveBeenCalled();
+                expect(ctx.setStatus).not.toHaveBeenCalled();
+            });
+        });
+
+        describe('Connectivity events', () => {
+            let subscriber: (status: ConnectivityStatus) => void;
+
+            beforeEach(() => {
+                auth.init = jest.fn().mockResolvedValue(true);
+                authStore.setLocalID(123);
+                subscriber = (connectivity.subscribe as jest.Mock).mock.calls[0][0];
+            });
+
+            test('should dispatch `offlineResume` when coming online from offline status', () => {
+                ctx.status = AppStatus.OFFLINE;
+                ctx.booted = true;
+
+                subscriber(ConnectivityStatus.ONLINE);
+                expect(ctx.service.store.dispatch).toHaveBeenCalledWith(offlineResume.intent({ localID: 123 }));
+            });
+
+            test('should call `auth.init` when coming online from password-locked status', () => {
+                ctx.status = AppStatus.PASSWORD_LOCKED;
+                ctx.booted = false;
+
+                subscriber(ConnectivityStatus.ONLINE);
+                expect(auth.init).toHaveBeenCalledWith({ forceLock: true });
+            });
+
+            test('should noop when network is offline', () => {
+                ctx.status = AppStatus.OFFLINE;
+                ctx.booted = true;
+
+                subscriber(ConnectivityStatus.OFFLINE);
+                expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
+                expect(auth.init).not.toHaveBeenCalled();
+            });
+
+            test('should noop when online but app has booted online', () => {
+                ctx.status = AppStatus.READY;
+                ctx.booted = true;
+
+                subscriber(ConnectivityStatus.ONLINE);
+                expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
+                expect(auth.init).not.toHaveBeenCalled();
+            });
+
+            test('should noop when online but status is idle', () => {
+                ctx.status = AppStatus.IDLE;
+                ctx.booted = false;
+
+                subscriber(ConnectivityStatus.ONLINE);
+                expect(ctx.service.store.dispatch).not.toHaveBeenCalled();
+                expect(auth.init).not.toHaveBeenCalled();
+            });
+        });
+    });
+});

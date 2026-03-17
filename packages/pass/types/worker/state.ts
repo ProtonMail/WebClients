@@ -1,4 +1,5 @@
 import type { AuthSession } from '@proton/pass/lib/auth/session';
+import type { QA_STATE_KEY } from '@proton/pass/lib/qa/service';
 
 import type { ItemFilters, SelectedItem } from '../data';
 import type { Maybe, MaybeNull } from '../utils';
@@ -54,22 +55,23 @@ export type SessionStoreKeys = keyof SessionStoreData;
 
 export type LocalStoreData = {
     b2bEvents: string;
-    /** flag indicating if we should force lock on next resume */
-    forceLock: boolean;
+    encryptedCacheKey?: string;
+    features: string;
+    featureVariants: string;
+    forceLock: boolean; /** flag indicating if we should force lock on next resume */
     lastReload: number;
     logs: string;
     onboarding: string;
     privateDomains: string;
     ps: string;
     salt: string;
-    features: string;
-    featureVariants: string;
     settings: string;
     snapshot: string;
     state: string;
     telemetry: string;
     version: string;
     websiteRules: string;
+    [QA_STATE_KEY]: string;
 };
 
 export type LocalStoreKeys = keyof LocalStoreData;

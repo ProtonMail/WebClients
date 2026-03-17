@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useCurrentPort, useCurrentTabID } from '@proton/pass/components/Core/PassCoreProvider';
+import { useStablePasswordTypeSwitch } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
@@ -27,6 +28,7 @@ export const useReauthActionHandler = (store: Store<State>) => {
     const { createNotification } = useNotifications();
     const enhance = useNotificationEnhancer();
     const dispatch = asyncRequestDispatcherFactory(store.dispatch);
+    const passwordTypeSwitch = useStablePasswordTypeSwitch(store);
 
     return useCallback(async (reauth: ReauthActionPayload) => {
         switch (reauth.type) {
@@ -80,8 +82,16 @@ export const useReauthActionHandler = (store: Store<State>) => {
                 if (authStore?.hasOfflinePassword()) {
                     return createNotification({
                         type: 'info',
-                        text: c('Info')
-                            .t`You can now use your ${BRAND_NAME} password to access ${PASS_SHORT_APP_NAME} offline`,
+                        text: passwordTypeSwitch({
+                            extra: c('Info')
+                                .t`You can now use your extra password to access ${PASS_SHORT_APP_NAME} offline`,
+                            twoPwd: c('Info')
+                                .t`You can now use your second password to access ${PASS_SHORT_APP_NAME} offline`,
+                            sso: c('Info')
+                                .t`You can now use your backup password to access ${PASS_SHORT_APP_NAME} offline`,
+                            default: c('Info')
+                                .t`You can now use your ${BRAND_NAME} password to access ${PASS_SHORT_APP_NAME} offline`,
+                        }),
                     });
                 }
         }

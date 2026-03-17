@@ -13,9 +13,10 @@ import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import { preloadPassUI } from '@proton/pass/lib/core/ui.proxy';
 import type { I18nService } from '@proton/pass/lib/i18n/service';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
+import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import type { SettingsService } from '@proton/pass/lib/settings/service';
 import type { SpotlightProxy } from '@proton/pass/lib/spotlight/service';
-import type { ApiState, ClientEndpoint, Maybe, MaybeNull, MaybePromise, TabId } from '@proton/pass/types';
+import type { ClientEndpoint, Maybe, MaybeNull, TabId } from '@proton/pass/types';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { OnTelemetryEvent } from '@proton/pass/types/data/telemetry';
 import type { EventDispatcher } from '@proton/pass/utils/event/dispatcher';
@@ -44,6 +45,8 @@ export type PassCoreContextValue = {
     endpoint: ClientEndpoint;
     /** client configuration */
     config: PassConfig;
+    /** connectivity service/proxy */
+    connectivity: ConnectivityService;
     /** Core proxy instance */
     core: PassCoreProxy;
     /** i18n service instance */
@@ -59,8 +62,6 @@ export type PassCoreContextValue = {
     /** In the extension: leverage worker communication to generate
      * a token. In the web-app: use the OTP utils in-place */
     generateOTP: UsePeriodOtpCodeOptions['generate'];
-    /** Resolves the api status */
-    getApiState?: () => MaybePromise<ApiState>;
     /** Resolves the current tab's parsed url - only relevant for extension */
     getExtensionClientState?: () => MaybeNull<ExtensionClientState>;
     /** Resolves a domain image as a data URL. Uses an abort signal to

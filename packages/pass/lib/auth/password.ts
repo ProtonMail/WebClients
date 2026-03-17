@@ -21,13 +21,8 @@ export type PasswordConfirmDTO = PasswordCredentials & { mode?: PasswordVerifica
 export type ExtraPasswordDTO = PasswordCredentials & { enabled: boolean };
 
 export const getPasswordVerification = (authStore: AuthStore) => {
-    const offlineConfig = authStore.getOfflineConfig();
-    const offlineVerifier = authStore.getOfflineVerifier();
-    const extraPassword = authStore.getExtraPassword();
-    const localVerification = offlineConfig && offlineVerifier;
-
-    if (localVerification) return PasswordVerification.LOCAL;
-    if (extraPassword) return PasswordVerification.EXTRA_PASSWORD;
+    if (authStore.hasOfflineComponents()) return PasswordVerification.LOCAL;
+    if (authStore.getExtraPassword()) return PasswordVerification.EXTRA_PASSWORD;
     return PasswordVerification.SRP;
 };
 

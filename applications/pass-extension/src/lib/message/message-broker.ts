@@ -9,6 +9,7 @@ import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types/utils/index';
+import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { notIn } from '@proton/pass/utils/fp/predicates';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
@@ -102,7 +103,7 @@ export const createMessageBroker = (options: MessageBrokerOptions) => {
             return successMessage(res);
         } catch (error: any) {
             void browser.runtime.lastError;
-            logger.debug(`[MessageBroker::Message] Error "${message.type}"`, error);
+            logger.debug(`[MessageBroker::Message] Error "${message.type}"`, getErrorMessage(error));
             options.onError(error);
             return error instanceof Error ? errorMessage(error?.message) : { ...error, type: 'error' };
         }

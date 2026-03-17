@@ -13,17 +13,15 @@ import Icon from '@proton/components/components/icon/Icon';
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
-import { useConnectivityBar } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useLobbyConnectivityBar } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import type { AuthRouteState } from '@proton/pass/components/Navigation/routing';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-import { ConnectivityStatus } from '@proton/pass/lib/api/connectivity';
-import { clientBusy, clientErrored } from '@proton/pass/lib/client';
+import { clientErrored } from '@proton/pass/lib/client';
 import { AppStatus, type MaybeNull } from '@proton/pass/types';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import clsx from '@proton/utils/clsx';
 
 export const Lobby: FC = () => {
     const { SSO_URL: host } = usePassConfig();
@@ -33,15 +31,7 @@ export const Lobby: FC = () => {
     const sessions = useAvailableSessions();
 
     const history = useHistory<MaybeNull<AuthRouteState>>();
-
-    const connectivityBar = useConnectivityBar((connectivity) => ({
-        className: clsx('bg-danger fixed bottom-0 left-0'),
-        text:
-            connectivity === ConnectivityStatus.DOWNTIME
-                ? c('Info').t`Servers are unreachable`
-                : c('Info').t`No network connection`,
-        hidden: connectivity === ConnectivityStatus.ONLINE || clientBusy(status),
-    }));
+    const connectivityBar = useLobbyConnectivityBar();
 
     const warning = useMemo(() => {
         const err = history.location.state?.error;
@@ -67,7 +57,7 @@ export const Lobby: FC = () => {
                 }}
                 onLogout={() => authService.logout({ soft: false })}
                 onFork={() => authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SWITCH })}
-                onOffline={() => AppStateManager.setStatus(AppStatus.PASSWORD_LOCKED)}
+                onOfflineFallback={() => AppStateManager.setStatus(AppStatus.PASSWORD_LOCKED)}
                 onRegister={() => authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SIGNUP })}
                 renderError={() => <></>}
                 renderAccountSwitcher={() => {

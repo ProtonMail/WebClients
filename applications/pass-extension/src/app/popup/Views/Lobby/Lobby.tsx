@@ -9,6 +9,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
+import { useLobbyConnectivityBar } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import { clientErrored } from '@proton/pass/lib/client';
@@ -38,6 +39,7 @@ export const Lobby: FC = () => {
     const errored = clientErrored(state.status);
 
     const requestFork = useRequestForkWithPermissions({ autoClose: true });
+    const connectivityBar = useLobbyConnectivityBar();
 
     const criticalError = state.criticalRuntimeError ? getCriticalRuntimeErrorMessage() : undefined;
     const autoReload = BUILD_TARGET === 'safari' && state.criticalRuntimeError;
@@ -56,7 +58,7 @@ export const Lobby: FC = () => {
                 onFork={requestFork}
                 onLogin={(options) => sendMessage(popupMessage({ type: WorkerMessageType.AUTH_INIT, options }))}
                 onLogout={logout}
-                onOffline={noop}
+                onOfflineFallback={() => sendMessage(popupMessage({ type: WorkerMessageType.AUTH_OFFLINE_SWITCH }))}
                 onRegister={() => requestFork(ForkType.SIGNUP)}
                 renderError={(message) => <PromptForReload message={message} autoReload={autoReload} browserError />}
                 renderFooter={() =>
@@ -75,6 +77,7 @@ export const Lobby: FC = () => {
                     ) : null
                 }
             />
+            {connectivityBar}
         </LobbyLayout>
     );
 };

@@ -6,6 +6,7 @@ import { sendTelemetryEvent } from 'proton-pass-extension/app/content/utils/tele
 import locales from 'proton-pass-extension/app/locales';
 import { API_PROXY_URL } from 'proton-pass-extension/app/worker/constants.runtime';
 import { resolveMessageFactory, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { createConnectivityProxy } from 'proton-pass-extension/lib/services/connectivity.proxy';
 import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core.bridge';
 import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.bridge';
 import { CLIPBOARD_PERMISSIONS, requestPermissions } from 'proton-pass-extension/lib/utils/permissions';
@@ -16,6 +17,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import useInstance from '@proton/hooks/useInstance';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
+import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
 import type { ExtensionClientState, PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/ThemeService';
@@ -38,7 +40,7 @@ import type { MaybeNull } from '@proton/pass/types/utils/index';
 import type { ClientEndpoint } from '@proton/pass/types/worker/runtime';
 import type { LocalStoreData } from '@proton/pass/types/worker/state';
 import { prop } from '@proton/pass/utils/fp/lens';
-import createStore from '@proton/shared/lib/helpers/store';
+import { createMemoryStore } from '@proton/pass/utils/store';
 import noop from '@proton/utils/noop';
 
 export type ExtensionCoreProps = {
@@ -69,6 +71,7 @@ const getPassCoreProviderProps = (
 
     return {
         config,
+        connectivity: createConnectivityProxy(),
         core: createPassCoreProxy(createCoreServiceBridge(messageFactory)),
         endpoint,
         i18n: createI18nService({
@@ -228,7 +231,7 @@ const getPassCoreProviderProps = (
 export const ExtensionCore: FC<PropsWithChildren<ExtensionCoreProps>> = ({ children, endpoint, theme, wasm }) => {
     const extensionClientState = useRef<MaybeNull<ExtensionClientState>>(null);
     const coreProps = useInstance(() => getPassCoreProviderProps(endpoint, config, theme));
-    const authStore = useInstance(() => exposeAuthStore(createAuthStore(createStore())));
+    const authStore = useInstance(() => exposeAuthStore(createAuthStore(createMemoryStore())));
     const message = resolveMessageFactory(endpoint);
 
     const unlock = useCallback(
@@ -247,9 +250,11 @@ export const ExtensionCore: FC<PropsWithChildren<ExtensionCoreProps>> = ({ child
             setExtensionClientState={(value) => (extensionClientState.current = value)}
             wasm={wasm}
         >
-            <AuthStoreProvider store={authStore}>
-                <UnlockProvider unlock={unlock}>{children}</UnlockProvider>
-            </AuthStoreProvider>
+            <ConnectivityProvider service={coreProps.connectivity}>
+                <AuthStoreProvider store={authStore}>
+                    <UnlockProvider unlock={unlock}>{children}</UnlockProvider>
+                </AuthStoreProvider>
+            </ConnectivityProvider>
         </PassCoreProvider>
     );
 };

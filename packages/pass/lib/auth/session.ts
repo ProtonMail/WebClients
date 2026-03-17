@@ -59,8 +59,11 @@ export type DecryptedAuthSessionBlob = Pick<AuthSession, EncryptedSessionKeys> &
 export const SESSION_KEYS: (keyof AuthSession)[] = [
     'AccessToken',
     'cookies',
+    'desktopLockVerifier',
+    'encryptedOfflineKD',
     'extraPassword',
     'keyPassword',
+    'lastUsedAt',
     'LocalID',
     'lockMode',
     'lockTTL',
@@ -69,13 +72,15 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
     'offlineVerifier',
     'payloadVersion',
     'persistent',
+    'RefreshTime',
     'RefreshToken',
     'sessionLockToken',
-    'desktopLockVerifier',
+    'sso',
     'twoPasswordMode',
     'UID',
+    'unlockRetryCount',
+    'userData',
     'UserID',
-    'sso',
 ];
 
 export const getSessionEncryptionTag = (version?: AuthSessionVersion): Maybe<Uint8Array<ArrayBuffer>> =>

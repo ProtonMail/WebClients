@@ -27,7 +27,7 @@ const browser = {
         },
     },
     alarms: {
-        create: jest.fn(),
+        create: jest.fn().mockResolvedValue({}),
         clear: jest.fn().mockResolvedValue(undefined),
         get: jest.fn(),
         onAlarm: { addListener: jest.fn() },

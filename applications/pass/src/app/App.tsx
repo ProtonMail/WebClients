@@ -38,7 +38,7 @@ import { NavigationProvider } from '@proton/pass/components/Navigation/Navigatio
 import { PublicRoutes, getLocalPath, history } from '@proton/pass/components/Navigation/routing';
 import { ClipboardProvider } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
-import { api, exposeApi } from '@proton/pass/lib/api/api';
+import { exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
 import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
@@ -52,12 +52,12 @@ import {
     getSerializedCredential,
     isPRFSupported,
 } from '@proton/pass/lib/crypto/utils/prf';
+import { createConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { QA_SERVICE } from '@proton/pass/lib/qa/service';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
 import type { Maybe } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import sentry from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
@@ -73,17 +73,22 @@ import locales from './locales';
 
 if (ENV === 'development') QA_SERVICE?.init(localStorage);
 
+const api = createApi({ config, threshold: API_CONCURRENCY_TRESHOLD });
 const authStore = exposeAuthStore(createAuthStore(createSecureSessionStorage()));
+const connectivity = createConnectivityService({ api });
 
-exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
 exposePassCrypto(createPassCrypto(core, store));
+exposeApi(api);
+
 sentry({ config: PASS_CONFIG });
+connectivity.init();
 
 export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProviderProps => {
     const cache = new Map<string, Maybe<string>>();
 
     return {
         config: PASS_CONFIG,
+        connectivity,
         core,
         endpoint: 'web',
         i18n: i18n(locales),
@@ -100,8 +105,6 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
         }),
 
         generateOTP: (payload) => (payload.type === 'uri' ? generateTOTPCode(payload.totpUri) : null),
-
-        getApiState: api.getState,
 
         /** If service worker support is unavailable, use a fallback caching strategy for
          * domain images. When service worker is enabled, utilize abort message passing to
@@ -181,10 +184,7 @@ export const App = () => (
                             <NotificationsProvider>
                                 <ModalsProvider>
                                     <PassExtensionLink>
-                                        <ConnectivityProvider
-                                            subscribe={api.subscribe}
-                                            onPing={() => api({ ...ping(), unauthenticated: true })}
-                                        >
+                                        <ConnectivityProvider service={connectivity}>
                                             <Router history={history}>
                                                 <NavigationProvider>
                                                     <AuthStoreProvider store={authStore}>

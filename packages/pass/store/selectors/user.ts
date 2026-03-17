@@ -1,9 +1,11 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { getPassPlan } from '@proton/pass/lib/user/user.plan';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
+import { selectExtraPasswordEnabled } from '@proton/pass/store/selectors/settings';
 import { selectShareState } from '@proton/pass/store/selectors/shares';
 import { createUncachedSelector } from '@proton/pass/store/selectors/utils';
 import { selectDefaultVault } from '@proton/pass/store/selectors/vaults';
@@ -115,3 +117,13 @@ export const selectIsPassEssentials = createSelector(
 );
 
 export const selectHasTwoPasswordMode = ({ user }: State) => user.userSettings?.Password.Mode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
+
+export const selectPasswordTypeConfig = (authStore: MaybeNull<AuthStore>) =>
+    createSelector([selectExtraPasswordEnabled, selectIsSSO, selectHasTwoPasswordMode], (extra, sso, twoPwd) => {
+        const hasOfflinePassword = Boolean(authStore?.hasOfflinePassword());
+        return {
+            extra,
+            sso: sso && hasOfflinePassword,
+            twoPwd: twoPwd && hasOfflinePassword,
+        };
+    });

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { type LockAdapter, LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { getInvalidPasswordString } from '@proton/pass/lib/auth/utils';
-import { getOfflineComponents, getOfflineKeyDerivation } from '@proton/pass/lib/cache/crypto';
+import { generateOfflineComponents, getOfflineKeyDerivation } from '@proton/pass/lib/cache/crypto';
 import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { loadCoreCryptoWorker } from '@proton/pass/lib/crypto/utils/worker';
@@ -20,16 +20,18 @@ import noop from '@proton/utils/noop';
 export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
     const { authStore, api, getPersistedSession, onSessionPersist } = auth.config;
 
-    /** Persist the `unlockRetryCount` without re-encrypting
-     * the authentication session blob */
-    const setRetryCount = async (retryCount: number) => {
-        authStore.setUnlockRetryCount(retryCount);
+    /** Persists `unlockRetryCount` on the session blob without
+     * re-encrypting it. Triggers `onSessionPersist` as a side-effect,
+     * which consumers use to sync additional session state (eg: the
+     * extension writes to session storage for SW lifecycle). */
+    const syncSession = async (options: { retryCount: number }) => {
+        authStore.setUnlockRetryCount(options.retryCount);
 
         const localID = authStore.getLocalID();
         const encryptedSession = await getPersistedSession(localID);
 
         if (encryptedSession) {
-            encryptedSession.unlockRetryCount = retryCount;
+            encryptedSession.unlockRetryCount = options.retryCount;
             await onSessionPersist?.(JSON.stringify(encryptedSession));
         }
     };
@@ -39,10 +41,7 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
 
         check: async () => {
             logger.info(`[PasswordLock] checking password lock`);
-
-            const offlineConfig = authStore.getOfflineConfig();
-            const offlineVerifier = authStore.getOfflineVerifier();
-            if (!(offlineConfig && offlineVerifier)) return { mode: LockMode.NONE, locked: false };
+            if (!authStore.hasOfflineComponents()) return { mode: LockMode.NONE, locked: false };
 
             authStore.setLockLastExtendTime(getEpoch());
             return { mode: adapter.type, locked: false, ttl: authStore.getLockTTL() };
@@ -61,10 +60,8 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
             await onBeforeCreate?.();
 
             if (!authStore.hasOfflinePassword()) {
-                const { offlineConfig, offlineKD, offlineVerifier } = await getOfflineComponents(secret);
-                authStore.setOfflineConfig(offlineConfig);
-                authStore.setOfflineKD(offlineKD);
-                authStore.setOfflineVerifier(offlineVerifier);
+                const components = await generateOfflineComponents(secret);
+                authStore.setOfflineComponents(components);
             }
 
             authStore.setLockMode(adapter.type);
@@ -138,7 +135,11 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
                 authStore.setOfflineKD(hash);
                 authStore.setLocked(false);
 
-                await setRetryCount(0).catch(noop);
+                /** NOTE: Besides resetting the retry count, the `onSessionPersist`
+                 * side-effect propagates the unlocked session state. In the extension,
+                 * this is what allows `onResumeStart` to detect a valid offline session
+                 * after a SW reload and boot without requiring the user password. */
+                await syncSession({ retryCount: 0 }).catch(noop);
 
                 return hash;
             } catch (err) {
@@ -149,7 +150,7 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
                     throw new Error(c('Warning').t`Too many attempts`);
                 }
 
-                await setRetryCount(retryCount).catch(noop);
+                await syncSession({ retryCount }).catch(noop);
                 await auth.lock(adapter.type, { broadcast: true, soft: true });
 
                 throw new Error(getInvalidPasswordString(authStore));

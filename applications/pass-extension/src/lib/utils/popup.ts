@@ -3,16 +3,21 @@ import { isVivaldiBrowser } from 'proton-pass-extension/lib/utils/vivaldi';
 import type { Tabs } from 'webextension-polyfill';
 
 import type { PopupController } from '@proton/pass/components/Core/PassCoreProvider';
+import { clientDisabled, clientLocked, clientOffline } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
+import type { AppStatus } from '@proton/pass/types';
 import type { Maybe } from '@proton/pass/types/utils/index';
 import { pixelParser } from '@proton/pass/utils/dom/computed-styles';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import noop from '@proton/utils/noop';
 
-export const setPopupIcon = safeCall((options: { disabled: boolean; locked: boolean }): void => {
-    let suffix = '';
-    if (options.disabled) suffix = '-disabled';
-    if (options.locked) suffix = '-locked';
+export const setPopupIcon = safeCall((status: AppStatus): void => {
+    const suffix = (() => {
+        if (clientOffline(status)) return '-offline';
+        if (clientDisabled(status)) return '-disabled';
+        if (clientLocked(status)) return '-locked';
+        return '';
+    })();
 
     browser.action
         .setIcon({

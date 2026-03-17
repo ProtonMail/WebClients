@@ -1,8 +1,8 @@
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { createAuthStore } from '@proton/pass/lib/auth/store';
 import { ExportFormat } from '@proton/pass/lib/export/types';
+import { createMemoryStore } from '@proton/pass/utils/store';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import createStore from '@proton/shared/lib/helpers/store';
 
 import type { ReauthActionPayload } from './reauth';
 import {
@@ -18,7 +18,7 @@ describe('reauth helpers', () => {
     let authStore: AuthStore;
 
     beforeEach(() => {
-        authStore = createAuthStore(createStore());
+        authStore = createAuthStore(createMemoryStore());
     });
 
     describe('isLockChangeReauth', () => {

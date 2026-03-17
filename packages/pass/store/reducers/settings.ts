@@ -12,7 +12,7 @@ import {
     itemCreate,
     lockCreateSuccess,
     lockSync,
-    offlineToggle,
+    offlineSetup,
     settingsEditSuccess,
     updatePauseListItem,
     userEvent,
@@ -104,8 +104,8 @@ const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
         });
     }
 
-    if (offlineToggle.success.match(action)) {
-        return partialMerge<SettingsState>(state, { offlineEnabled: action.payload });
+    if (offlineSetup.success.match(action)) {
+        return partialMerge<SettingsState>(state, { offlineEnabled: true });
     }
 
     if (extraPasswordToggle.success.match(action)) {

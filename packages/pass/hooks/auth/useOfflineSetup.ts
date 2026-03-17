@@ -3,13 +3,13 @@ import { c } from 'ttag';
 import { usePasswordTypeSwitch, usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
-import { offlineToggle } from '@proton/pass/store/actions';
+import { offlineSetup } from '@proton/pass/store/actions';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 export const useOfflineSetup = () => {
     const confirmPassword = usePasswordUnlock();
     const passwordTypeSwitch = usePasswordTypeSwitch();
-    const toggle = useRequest(offlineToggle, { initial: true });
+    const setup = useRequest(offlineSetup, { initial: true });
 
     return [
         async () =>
@@ -18,7 +18,7 @@ export const useOfflineSetup = () => {
                     type: ReauthAction.OFFLINE_SETUP,
                     fork: { promptBypass: 'none', promptType: 'offline' },
                 },
-                onSubmit: (loginPassword) => toggle.dispatch({ loginPassword, enabled: true }),
+                onSubmit: (password) => setup.dispatch({ password }),
                 message: passwordTypeSwitch({
                     extra: c('Info').t`Please confirm your extra password in order to enable offline mode`,
                     sso: c('Info').t`Please confirm your backup password in order to enable offline mode`,
@@ -26,6 +26,6 @@ export const useOfflineSetup = () => {
                     default: c('Info').t`Please confirm your ${BRAND_NAME} password in order to enable offline mode`,
                 }),
             }),
-        toggle.loading,
+        setup.loading,
     ] as const;
 };

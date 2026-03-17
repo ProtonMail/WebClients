@@ -5,6 +5,7 @@ import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types
 import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
+import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import type { SettingsService } from '@proton/pass/lib/settings/service';
 import type { SpotlightProxy } from '@proton/pass/lib/spotlight/service';
 import { createObservableState } from '@proton/pass/utils/pubsub/state';
@@ -17,6 +18,7 @@ export const TestCoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
     return (
         <PassCoreProvider
+            connectivity={{} as ConnectivityService}
             config={config}
             endpoint="web"
             i18n={{} as any}
