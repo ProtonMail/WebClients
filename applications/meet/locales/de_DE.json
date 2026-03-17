@@ -350,6 +350,9 @@
       "Tap to unblock audio playback": [
         "Tippe, um die Audiowiedergabe zu entsperren"
       ],
+      "Try again": [
+        "Erneut versuchen"
+      ],
       "Try another method": [
         "Eine andere Methode ausprobieren"
       ],
@@ -1716,18 +1719,18 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } benötigt WebRTC, um zu funktionieren. Bitte aktualisiere deinen Browser oder dein Gerät auf eine Version, die WebRTC unterstützt, versuche es mit einem anderen Browser oder deaktiviere alle Erweiterungen, die es möglicherweise blockieren."
       ],
-      "${ participantCount } of ${ maxParticipants } participants": [
-        "${ participantCount } von ${ maxParticipants } Teilnehmern"
-      ],
-      "${ participantCount } participant": [
-        "${ participantCount } Teilnehmer",
-        "${ participantCount } Teilnehmer"
-      ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (du) präsentiert"
       ],
       "${ presenterName } is presenting": [
         "${ presenterName } präsentiert"
+      ],
+      "${ totalParticipantCount } of ${ maxParticipants } participants": [
+        "${ totalParticipantCount } von ${ maxParticipants } Teilnehmern"
+      ],
+      "${ totalParticipantCount } participant": [
+        "${ totalParticipantCount } Teilnehmer",
+        "${ totalParticipantCount } Teilnehmer"
       ],
       "(You)": [
         "(Du)"
@@ -1770,6 +1773,9 @@
       ],
       "Coming soon": [
         "Demnächst verfügbar"
+      ],
+      "Connection failed": [
+        "Verbindung fehlgeschlagen"
       ],
       "Connection interrupted. Reconnecting...": [
         "Verbindung unterbrochen. Erneuter Verbindungsaufbau..."
@@ -2008,9 +2014,6 @@
       "No speaker detected": [
         "Kein Lautsprecher erkannt"
       ],
-      "Now your meetings will be opened in the ${ MEET_APP_NAME } desktop app": [
-        "Ab sofort werden deine Meetings in der Desktop-App ${ MEET_APP_NAME } geöffnet"
-      ],
       "Only meetings you created appear here": [
         "Nur Besprechungen, die du erstellt hast, werden hier angezeigt"
       ],
@@ -2040,6 +2043,9 @@
       ],
       "Please enter the passphrase to decrypt and view this meeting": [
         "Bitte gib die Passphrase ein, um dieses Meeting zu entschlüsseln und anzuzeigen."
+      ],
+      "Please try again or try another browser": [
+        "Bitte versuche es erneut oder probiere einen anderen Browser"
       ],
       "Poor connection": [
         "Schlechte Verbindung"
@@ -2920,6 +2926,9 @@
       ]
     },
     "Warning": {
+      "Connection is taking longer than expected": [
+        "Verbindung dauert länger als erwartet"
+      ],
       "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
         "Auf die Kamera oder das Mikrofon konnte nicht zugegriffen werden. Du kannst versuchen, sie über die Meeting-Steuerung wieder zu aktivieren."
       ],
@@ -2932,8 +2941,17 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."
       ],
+      "STUN UDP connection failed, trying with TURN relay…": [
+        "STUN UDP-Verbindung fehlgeschlagen, Versuch mit TURN-Relay…"
+      ],
+      "STUN UDP connection timeout, trying with TURN relay": [
+        "Zeitüberschreitung bei STUN UDP-Verbindung, Versuch mit TURN-Relay"
+      ],
       "The host has removed you from the meeting": [
         "Der Gastgeber hat dich aus dem Meeting entfernt"
+      ],
+      "Trying another route…": [
+        "Versuch auf einem anderen Weg…"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder verfügbar sind."

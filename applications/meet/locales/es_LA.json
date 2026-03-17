@@ -350,6 +350,9 @@
       "Tap to unblock audio playback": [
         "Pulsar para reproducir audio"
       ],
+      "Try again": [
+        "Volver a intentar"
+      ],
       "Try another method": [
         "Intente otro método"
       ],
@@ -1448,7 +1451,7 @@
         "Ingrese 6 dígitos"
       ],
       "Enter your username without the domain (@example.com)": [
-        "Introduzca su nombre de usuario sin el dominio (@ejemplo.com)"
+        "Ingrese su nombre de usuario sin el dominio (@ejemplo.com)"
       ],
       "Event deleted": [
         "Evento eliminado"
@@ -1716,13 +1719,6 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } necesita WebRTC para funcionar. Actualice su navegador o dispositivo a una versión que sea compatible con WebRTC, pruebe un navegador diferente o desactive cualquier extensión que pueda estar bloqueándolo."
       ],
-      "${ participantCount } of ${ maxParticipants } participants": [
-        "${ participantCount } de ${ maxParticipants } participantes"
-      ],
-      "${ participantCount } participant": [
-        "${ participantCount } participante",
-        "${ participantCount } participantes"
-      ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (usted) está presentando"
       ],
@@ -1770,6 +1766,9 @@
       ],
       "Coming soon": [
         "Próximamente"
+      ],
+      "Connection failed": [
+        "Error de conexión"
       ],
       "Connection interrupted. Reconnecting...": [
         "Conexión interrumpida. Reconectando..."
@@ -2008,9 +2007,6 @@
       "No speaker detected": [
         "Ningún altavoz detectado"
       ],
-      "Now your meetings will be opened in the ${ MEET_APP_NAME } desktop app": [
-        "Ahora sus reuniones se abrirán en la aplicación de escritorio de ${ MEET_APP_NAME }"
-      ],
       "Only meetings you created appear here": [
         "Aquí solo aparecen las reuniones que ha creado usted"
       ],
@@ -2040,6 +2036,9 @@
       ],
       "Please enter the passphrase to decrypt and view this meeting": [
         "Ingrese la frase contraseña para descifrar y visualizar esta reunión"
+      ],
+      "Please try again or try another browser": [
+        "Inténtelo de nuevo o pruebe con otro navegador"
       ],
       "Poor connection": [
         "Conexión débil"
@@ -2920,6 +2919,9 @@
       ]
     },
     "Warning": {
+      "Connection is taking longer than expected": [
+        "La conexión está tardando más de lo esperado"
+      ],
       "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
         "No se pudo acceder a la cámara o micrófono. Puede intentar activarlas de nuevo desde los controles de la reunión."
       ],
@@ -2932,8 +2934,17 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo, no envíe ninguna información confidencial."
       ],
+      "STUN UDP connection failed, trying with TURN relay…": [
+        "Error en la conexión UDP por STUN; intentando con retransmisión TURN…"
+      ],
+      "STUN UDP connection timeout, trying with TURN relay": [
+        "Se agotó el tiempo de espera en la conexión UDP por STUN; intentando con retransmisión TURN"
+      ],
       "The host has removed you from the meeting": [
         "El anfitrión le ha expulsado de la reunión"
+      ],
+      "Trying another route…": [
+        "Probando otra ruta…"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Lamentablemente no estamos en línea en este momento. Complete el formulario a continuación para describir el problema, lo investigaremos y nos pondremos en contacto cuando volvamos a estar en línea."
