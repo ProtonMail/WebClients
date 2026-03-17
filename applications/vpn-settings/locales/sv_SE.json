@@ -533,6 +533,9 @@
       "Go to panel ${ index }": [
         "Gå till panel ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Förstått"
       ],
@@ -556,15 +559,6 @@
       ],
       "Import": [
         "Importera"
-      ],
-      "Import calendars": [
-        "Importera kalendrar"
-      ],
-      "Import contacts": [
-        "Importera kontakter"
-      ],
-      "Import emails": [
-        "Importera e-post"
       ],
       "Import emails, calendars, contacts": [
         "Importera e-post, kalendrar, kontakter"
@@ -1960,6 +1954,9 @@
       ],
       "What are you migrating?": [
         "Vad migrerar du?"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "Du måste bevilja behörighet för ${ BRAND_NAME } att kopiera dina data. När du har accepterat behörigheterna, kom tillbaka hit för att fortsätta."
       ]
     },
     "Browser": {
@@ -5857,20 +5854,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importera från ${ provider }"
-      ],
-      "Import from Google": [
-        "Importera från Google"
-      ],
-      "Import from other": [
-        "Importera från andra"
-      ],
-      "Import from Outlook": [
-        "Importera från Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importera från Yahoo"
+      "Advanced import": [
+        "Avancerad import"
       ]
     },
     "Import warning": {
@@ -6232,6 +6217,9 @@
         "Berörd användare är på rad",
         "Berörda användare är på raderna"
       ],
+      "AI chatbot": [
+        "AI-chattbot"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
       ],
@@ -6376,9 +6364,6 @@
       "Billing cycle: ${ text }": [
         "Faktureringsperiod: ${ text }"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Ta med dina meddelanden, kontakter och kalendrar till ${ BRAND_NAME }."
-      ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Genom att inaktivera kontoövervakning kommer du också rensa hela din historik. Är du säker på att du vill inaktivera detta?"
       ],
@@ -6405,6 +6390,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Välj ett entitets-ID för att fortsätta."
+      ],
+      "Choose your service to connect with": [
+        "Välj din tjänst att ansluta med"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
@@ -7241,9 +7229,6 @@
       "Once you reset your password:": [
         "När du har återställt ditt lösenord:"
       ],
-      "One time import": [
-        "Engångsimport"
-      ],
       "Open source": [
         "Öppen källkod"
       ],
@@ -7538,9 +7523,6 @@
       ],
       "Select users to view their activity": [
         "Välj användare för att visa deras aktivitet"
-      ],
-      "Select what you want to import.": [
-        "Välj vad du vill importera."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Välj vilka kalendrar som ska importeras. En ny kalender skapas för varje importerad kalender enligt antalet tillgängliga kalendrar i ditt paket."
@@ -8256,9 +8238,6 @@
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Du kan tillämpa lösenordsreglerna som medlemmar i din organisation använder när de skapar eller återställer lösenordet till sitt ${ BRAND_NAME }-konto."
       ],
-      "You can import one data type at a time.": [
-        "Du kan importera en datatyp åt gången."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalender. Ta bort delade kalenderlänkar och alla ${ BRAND_NAME }-användare som du delade dina kalendrar med innan du avslutar din ${ MAIL_SHORT_APP_NAME }-prenumeration.",
         "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalendrar. Ta bort delade kalenderlänkar och alla ${ BRAND_NAME }-användare som du delade dina kalendrar med innan du avslutar din ${ MAIL_SHORT_APP_NAME }-prenumeration."
@@ -8790,9 +8769,6 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendars": [
-        "Kalendrar"
-      ],
       "Card details": [
         "Kortdetaljer"
       ],
@@ -8942,9 +8918,6 @@
       ],
       "Email or username": [
         "E-post eller användarnamn"
-      ],
-      "Emails": [
-        "E-postmeddelanden"
       ],
       "Emails (all messages)": [
         "E-post (alla meddelanden)"
@@ -15340,6 +15313,9 @@
       "Change second password": [
         "Ändra andra lösenord"
       ],
+      "Choose a provider": [
+        "Välj en leverantör"
+      ],
       "Choose user affiliations": [
         "Välj användartillhörighet"
       ],
@@ -15442,6 +15418,9 @@
       ],
       "Currency": [
         "Valuta"
+      ],
+      "Custom": [
+        "Anpassad"
       ],
       "Custom selection of users": [
         "Anpassat val av användare"
@@ -15734,6 +15713,9 @@
       "Import groups": [
         "Importera grupper"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importera din data till ${ BRAND_NAME }"
+      ],
       "Information exposed in breach": [
         "Information exponerad vid intrång"
       ],
@@ -15964,6 +15946,9 @@
       ],
       "Select contact group": [
         "Välj kontaktgrupp"
+      ],
+      "Select data to import": [
+        "Välj data att importera"
       ],
       "Send email reminders?": [
         "Skicka e-postpåminnelser?"
@@ -16196,9 +16181,6 @@
       ],
       "What is the dark web?": [
         "Vad är mörka webben?"
-      ],
-      "What would you like to import?": [
-        "Vad vill du importera?"
       ],
       "Wipe all logs?": [
         "Rensa alla loggar?"

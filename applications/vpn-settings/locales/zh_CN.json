@@ -176,6 +176,9 @@
       "Close navigation": [
         "关闭导航栏"
       ],
+      "Close search": [
+        "关闭搜索"
+      ],
       "Close this banner": [
         "关闭此横幅"
       ],
@@ -530,6 +533,9 @@
       "Go to panel ${ index }": [
         "转到面板 ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "知道了"
       ],
@@ -553,15 +559,6 @@
       ],
       "Import": [
         "导入"
-      ],
-      "Import calendars": [
-        "导入日历"
-      ],
-      "Import contacts": [
-        "导入联系人"
-      ],
-      "Import emails": [
-        "导入电子邮件"
       ],
       "Import emails, calendars, contacts": [
         "导入电子邮件、日历、联系人"
@@ -838,6 +835,9 @@
       ],
       "Search countries": [
         "搜索国家"
+      ],
+      "Search groups": [
+        "搜索群组"
       ],
       "See DNS TXT record": [
         "查看 DNS 的 TXT 记录"
@@ -1824,6 +1824,9 @@
       "Calendar": [
         "日历"
       ],
+      "Completed": [
+        "已完成"
+      ],
       "Configure migration": [
         "配置迁移"
       ],
@@ -1844,6 +1847,12 @@
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "用于将数据复制到 ${ BRAND_NAME } 的 Google Marketplace 应用"
+      ],
+      "Has errors": [
+        "出错啦"
+      ],
+      "In progress": [
+        "进行中"
       ],
       "Install app": [
         "安装应用"
@@ -1875,6 +1884,9 @@
       "Migration status": [
         "迁移状态"
       ],
+      "Not started": [
+        "未开始"
+      ],
       "Organization does not have enough seats available": [
         "组织可用席位不足"
       ],
@@ -1899,8 +1911,14 @@
       "Set up": [
         "设置"
       ],
+      "Settings": [
+        "设置"
+      ],
       "Sign in to Google Workspace": [
         "登录 Google Workspace"
+      ],
+      "Status": [
+        "状态"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "若要迁移您组织的数据，您需要从 Google Workspace Marketplace 安装 ${ BRAND_NAME } 迁移助手应用。这将授予 ${ BRAND_NAME } 复制您数据的权限。安装完成后，请返回此处继续。"
@@ -1910,6 +1928,9 @@
       ],
       "User": [
         "用户"
+      ],
+      "Users migrated": [
+        "已迁移的用户"
       ],
       "Verify installation": [
         "验证安装"
@@ -4053,6 +4074,9 @@
       "Enter 6 digits": [
         "请输入 6 位验证码"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "请输入您的用户名（不含 @example.com 域名）"
+      ],
       "Error connecting to the Bitcoin API.": [
         "连接比特币 API 失败。"
       ],
@@ -4127,6 +4151,9 @@
       ],
       "Invalid code": [
         "无效代码"
+      ],
+      "Invalid coupon": [
+        "优惠券无效"
       ],
       "Invalid domain": [
         "域名无效"
@@ -4323,6 +4350,9 @@
       "Request timed out": [
         "请求超时"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "此套餐不支持反向收费机制"
+      ],
       "Server not found": [
         "未找到服务器"
       ],
@@ -4391,6 +4421,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "充值金额不能低于 ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "最低捐赠金额为 ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "策略名称必须在 3 至 40 个字符之间。"
@@ -5800,20 +5833,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "从 ${ provider } 导入"
-      ],
-      "Import from Google": [
-        "从 Google 导入"
-      ],
-      "Import from other": [
-        "从其他服务商导入"
-      ],
-      "Import from Outlook": [
-        "从 Outlook 导入"
-      ],
-      "Import from Yahoo": [
-        "从 Yahoo 导入"
+      "Advanced import": [
+        "高级导入"
       ]
     },
     "Import warning": {
@@ -6071,6 +6092,9 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } 由 ${ BRAND_NAME } 托管，可让您快速建立子域。${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "创建群组需要自定义域名！如果您尚未设置自定义域名，请先在 ${ linkToDomainPage } 中进行设置。"
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "名称中可注明证书用途，便于今后续期或吊销。"
       ],
@@ -6284,9 +6308,6 @@
       "Billing cycle: ${ text }": [
         "计费周期：${ text }"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "将您的信息、联系人和日历同步至 ${ BRAND_NAME }。"
-      ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "禁用账户监测后，您的所有历史记录也将被清除。您确定要禁用它吗？"
       ],
@@ -6313,6 +6334,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "选择一个实体 ID 以继续。"
+      ],
+      "Choose your service to connect with": [
+        "请选择要连接的服务"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "点击“请求新验证码”将发送到 ${ strong }。如果此电话号码不正确，请点击“编辑”。"
@@ -7145,9 +7169,6 @@
       "Once you reset your password:": [
         "当你重置密码后："
       ],
-      "One time import": [
-        "一次性导入"
-      ],
       "Open source": [
         "开放源代码"
       ],
@@ -7438,9 +7459,6 @@
       ],
       "Select users to view their activity": [
         "选择用户以查看其活动"
-      ],
-      "Select what you want to import.": [
-        "选择需要导入的内容。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "请选择要导入的日历。每份日历导入后将在您的账户中对应生成一份新日历，具体日历数量受您账户等级的限制。"
@@ -8159,9 +8177,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "您可以以一个套餐价格获取我们的高级隐私服务——仅需 **${ priceString } / 月**。"
       ],
-      "You can import one data type at a time.": [
-        "您一次可以导入一种数据类型。"
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "您最多可保留 ${ MAX_CALENDARS_FREE } 份日历。退订 ${ MAIL_SHORT_APP_NAME } 前请删除所有共享日历链接，并移除所有使用您共享的日历的 ${ BRAND_NAME } 用户。"
       ],
@@ -8296,6 +8311,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "您的账户当前已配置为应用反向收费机制，但所选套餐不支持此机制。若要继续，请从账单地址中移除增值税号，或选择其他套餐。"
       ],
       "Your account was successfully updated with this promotion": [
         "您的账户已成功应用此促销优惠"
@@ -8693,9 +8711,6 @@
       "Calendar": [
         "日历"
       ],
-      "Calendars": [
-        "日历"
-      ],
       "Card details": [
         "支付卡详情"
       ],
@@ -8846,9 +8861,6 @@
       "Email or username": [
         "邮箱或账户名"
       ],
-      "Emails": [
-        "电子邮件"
-      ],
       "Emails (all messages)": [
         "所有邮件"
       ],
@@ -8947,6 +8959,9 @@
       ],
       "Import interval": [
         "导入间隔"
+      ],
+      "Import recent mails": [
+        "导入最近的邮件"
       ],
       "Import to email address": [
         "导入到邮箱地址"
@@ -11980,6 +11995,9 @@
       ],
       "VAT number": [
         "增值税号"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "适用增值税反向收费机制"
       ],
       "You already have a subscription to this plan.": [
         "您已订阅此套餐"
@@ -15051,6 +15069,9 @@
       "Change second password": [
         "修改二级密码"
       ],
+      "Choose a provider": [
+        "请选择提供商"
+      ],
       "Choose user affiliations": [
         "选择用户从属关系"
       ],
@@ -15152,6 +15173,9 @@
       ],
       "Currency": [
         "货币"
+      ],
+      "Custom": [
+        "自定义"
       ],
       "Custom selection of users": [
         "自定义用户选择"
@@ -15444,6 +15468,9 @@
       "Import groups": [
         "导入群组"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "将您的数据导入到 ${ BRAND_NAME }"
+      ],
       "Information exposed in breach": [
         "数据外泄事件中泄露的信息"
       ],
@@ -15645,6 +15672,9 @@
       "Restore administrator privileges": [
         "恢复管理员权限"
       ],
+      "Reverse charge not supported": [
+        "不支持反向收费"
+      ],
       "Revoke certificate?": [
         "撤销证书?"
       ],
@@ -15674,6 +15704,9 @@
       ],
       "Select contact group": [
         "选择联系人群组"
+      ],
+      "Select data to import": [
+        "请选择要导入的数据"
       ],
       "Send email reminders?": [
         "发送电子邮件提醒？"
@@ -15905,9 +15938,6 @@
       ],
       "What is the dark web?": [
         "什么是暗网？"
-      ],
-      "What would you like to import?": [
-        "您需要导入哪些信息？"
       ],
       "Wipe all logs?": [
         "清除所有日志？"

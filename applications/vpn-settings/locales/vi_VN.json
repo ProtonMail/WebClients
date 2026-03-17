@@ -539,15 +539,6 @@
       "Import": [
         "Nhập"
       ],
-      "Import calendars": [
-        "Nhập lịch"
-      ],
-      "Import contacts": [
-        "Chuyển nhập sổ liên lạc"
-      ],
-      "Import emails": [
-        "Nhập email"
-      ],
       "Import emails, calendars, contacts": [
         "Nhập email, lịch, liên hệ"
       ],
@@ -5560,23 +5551,6 @@
         "Chọn ${ boldExport } để xuất lịch dưới dạng tệp ICS."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Nhập từ ${ provider }"
-      ],
-      "Import from Google": [
-        "Nhập từ Google"
-      ],
-      "Import from other": [
-        "Nhập từ nguồn khác"
-      ],
-      "Import from Outlook": [
-        "Nhập từ Outlook"
-      ],
-      "Import from Yahoo": [
-        "Nhập từ Yahoo"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } trên ${ totalContacts } liên hệ sẽ không được nhập. Nhấp để xem chi tiết"
@@ -6020,9 +5994,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Chu kỳ thanh toán: ${ text }"
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Chuyển thư, liên hệ và lịch lên ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Nếu hạ cấp xuống miễn phí plan, bạn sẽ mất vĩnh viễn những lợi ích này, cho dù sau này có nâng cấp lại."
@@ -6846,9 +6817,6 @@
       "Once you reset your password:": [
         "Sau khi đặt lại mật khẩu:"
       ],
-      "One time import": [
-        "Nhập một lần"
-      ],
       "Open source": [
         "Mã nguồn mở"
       ],
@@ -7124,9 +7092,6 @@
       ],
       "Select users to view their activity": [
         "Chọn người dùng để xem hoạt động của họ"
-      ],
-      "Select what you want to import.": [
-        "Chọn dữ liệu muốn nhập."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Chọn lịch để nhập. Một lịch mới sẽ được tạo cho mỗi lịch được nhập tùy theo số lượng lịch có sẵn trong gói."
@@ -7821,9 +7786,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Nhận các dịch vụ quyền riêng tư cao cấp trong một gói—chỉ **${ priceString }/tháng**."
       ],
-      "You can import one data type at a time.": [
-        "Chỉ có thể nhập một loại dữ liệu mỗi lần."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Có thể giữ tối đa ${ MAX_CALENDARS_FREE } lịch. Vui lòng xóa các liên kết lịch được chia sẻ và bất kỳ người dùng ${ BRAND_NAME } nào đã chia sẻ lịch trước khi hủy đăng ký ${ MAIL_SHORT_APP_NAME }."
       ],
@@ -8331,9 +8293,6 @@
       "Calendar": [
         "Lịch"
       ],
-      "Calendars": [
-        "Lịch"
-      ],
       "Card details": [
         "Chi tiết thẻ"
       ],
@@ -8483,9 +8442,6 @@
       ],
       "Email or username": [
         "Email hoặc tên người dùng"
-      ],
-      "Emails": [
-        "Email"
       ],
       "Emails (all messages)": [
         "Email (tất cả thư)"
@@ -15349,9 +15305,6 @@
       ],
       "What is the dark web?": [
         "Dark web là gì?"
-      ],
-      "What would you like to import?": [
-        "Bạn muốn nhập gì?"
       ],
       "Wipe all logs?": [
         "Xóa sạch tất cả nhật ký?"

@@ -533,6 +533,9 @@
       "Go to panel ${ index }": [
         "Seitenleiste ${ index } öffnen"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Verstanden"
       ],
@@ -556,15 +559,6 @@
       ],
       "Import": [
         "Importieren"
-      ],
-      "Import calendars": [
-        "Kalender importieren"
-      ],
-      "Import contacts": [
-        "Kontakte importieren"
-      ],
-      "Import emails": [
-        "E-Mails importieren"
       ],
       "Import emails, calendars, contacts": [
         "E-Mails, Kalender und Kontakte importieren"
@@ -5893,20 +5887,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Import von ${ provider }"
-      ],
-      "Import from Google": [
-        "Von Google importieren"
-      ],
-      "Import from other": [
-        "Von anderen importieren"
-      ],
-      "Import from Outlook": [
-        "Von Outlook importieren"
-      ],
-      "Import from Yahoo": [
-        "Von Yahoo importieren"
+      "Advanced import": [
+        "Erweiterter Import"
       ]
     },
     "Import warning": {
@@ -6415,9 +6397,6 @@
       "Billing cycle: ${ text }": [
         "Abrechnungszeitraum: ${ text }"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Bringe deine Nachrichten, Kontakte und Kalender zu ${ BRAND_NAME }."
-      ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Wenn du die Kontenüberwachung deaktivierst, löschst du auch deinen gesamten Verlauf. Möchtest du sie wirklich deaktivieren?"
       ],
@@ -6444,6 +6423,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Wähle eine Entitäts-ID, um fortzufahren."
+      ],
+      "Choose your service to connect with": [
+        "Deinen Dienst zum Verbinden auswählen"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
@@ -7283,9 +7265,6 @@
       "Once you reset your password:": [
         "Sobald du dein Passwort zurücksetzt:"
       ],
-      "One time import": [
-        "Einmaliger Import"
-      ],
       "Open source": [
         "Quelloffen"
       ],
@@ -7580,9 +7559,6 @@
       ],
       "Select users to view their activity": [
         "Benutzer auswählen, um deren Aktivitäten anzuzeigen"
-      ],
-      "Select what you want to import.": [
-        "Wähle aus, was du importieren möchtest."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis das Maximum deines Abonnements erreicht ist."
@@ -8310,9 +8286,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Du kannst unsere Premium-Privatsphäre-Dienste in einem Paket bekommen – und es kostet nur **${ priceString } pro Monat**."
       ],
-      "You can import one data type at a time.": [
-        "Du kannst jeweils nur einen Datentyp importieren."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne geteilte Kalenderverknüpfungen und alle ${ BRAND_NAME } Nutzer, mit denen du deine Kalender geteilt hast, bevor du dein ${ MAIL_SHORT_APP_NAME } Abonnement kündigst.",
         "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne geteilte Kalenderverknüpfungen und alle ${ BRAND_NAME } Benutzer, mit denen du deine Kalender geteilt hast, bevor du dein ${ MAIL_SHORT_APP_NAME } Abonnement kündigst."
@@ -8861,9 +8834,6 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendars": [
-        "Kalender"
-      ],
       "Card details": [
         "Kartendaten"
       ],
@@ -9013,9 +8983,6 @@
       ],
       "Email or username": [
         "E‐Mail‐Adresse oder Benutzername"
-      ],
-      "Emails": [
-        "E-Mails"
       ],
       "Emails (all messages)": [
         "E-Mails (alle Nachrichten)"
@@ -15434,6 +15401,9 @@
       "Change second password": [
         "Zusätzliches Passwort ändern"
       ],
+      "Choose a provider": [
+        "Anbieter wählen"
+      ],
       "Choose user affiliations": [
         "Benutzerzugehörigkeit wählen"
       ],
@@ -15536,6 +15506,9 @@
       ],
       "Currency": [
         "Währung"
+      ],
+      "Custom": [
+        "Benutzerdefiniert"
       ],
       "Custom selection of users": [
         "Individuelle Auswahl von Nutzern"
@@ -15831,6 +15804,9 @@
       "Import groups": [
         "Gruppen importieren"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Deine Daten nach ${ BRAND_NAME } importieren"
+      ],
       "Information exposed in breach": [
         "Informationen, die beim Datenleck offengelegt wurden"
       ],
@@ -16065,6 +16041,9 @@
       "Select contact group": [
         "Kontaktgruppe auswählen"
       ],
+      "Select data to import": [
+        "Daten zum Import auswählen"
+      ],
       "Send email reminders?": [
         "Erinnerungs-E-Mails senden?"
       ],
@@ -16296,9 +16275,6 @@
       ],
       "What is the dark web?": [
         "Was ist das Dark Web?"
-      ],
-      "What would you like to import?": [
-        "Was möchtest du importieren?"
       ],
       "Wipe all logs?": [
         "Alle Protokolle löschen?"
