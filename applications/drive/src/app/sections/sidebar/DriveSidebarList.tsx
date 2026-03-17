@@ -7,7 +7,7 @@ import { Loader, SidebarList } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { type ShareWithKey, useDriveSharingFlags, useUserSettings } from '../../store';
-import { DevicesSidebar } from '../devices/DevicesSidebar';
+import { DevicesSidebar } from '../devices/connectedComponents/DevicesSidebar';
 import { DriveSidebarFolders } from './DriveSidebarFolders/DriveSidebarFolders';
 import { DriveSidebarListItem } from './DriveSidebarListItem';
 import { DriveSidebarSharedWithMe } from './DriveSidebarSharedWithMe/DriveSidebarSharedWithMe';

@@ -12,7 +12,7 @@ import { useDriveDragMoveTarget } from '../../hooks/drive/useDriveDragMove';
 import { useAlbumOnboardingModal } from '../../modals/AlbumOnboardingModal';
 import { useUserSettings } from '../../store';
 import { useControlledSorting } from '../../store/_views/utils';
-import { useDeviceStore } from '../devices/devices.store';
+import { useDevicesStore } from '../devices/useDevices.store';
 import { FolderBrowser } from './FolderBrowser/FolderBrowser';
 import { FolderToolbar } from './FolderBrowser/FolderToolbar';
 import { FolderViewBreadcrumbs } from './FolderViewBreadcrumbs';
@@ -43,7 +43,7 @@ export function FolderView({ shareId, nodeUid }: FolderViewProps) {
     );
 
     useAppTitle(!isRootFolder ? folderName : undefined);
-    const { isLoadingDevices } = useDeviceStore(
+    const { isLoadingDevices } = useDevicesStore(
         useShallow((state) => ({
             isLoadingDevices: state.isLoading,
         }))

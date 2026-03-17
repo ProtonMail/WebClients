@@ -1,22 +1,22 @@
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
-import { useDeviceStore } from './devices.store';
+import { useDevicesStore } from './useDevices.store';
 
 export const subscribeToDevicesEvents = () => {
     void getBusDriver().subscribeSdkEventsMyUpdates('devices');
 
     const unsubscribeFromEvents = getBusDriver().subscribe(BusDriverEventName.ALL, async (event) => {
-        const store = useDeviceStore.getState();
+        const store = useDevicesStore.getState();
 
         switch (event.type) {
             case BusDriverEventName.RENAMED_DEVICES:
                 for (const item of event.items) {
-                    store.updateDevice(item.deviceUid, { name: item.newName });
+                    store.updateItem(item.deviceUid, { name: item.newName });
                 }
                 break;
             case BusDriverEventName.REMOVED_DEVICES:
                 for (const uid of event.deviceUids) {
-                    store.removeDevice(uid);
+                    store.removeItem(uid);
                 }
                 break;
         }
