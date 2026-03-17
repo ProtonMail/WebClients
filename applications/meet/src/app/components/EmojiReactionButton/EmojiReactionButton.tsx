@@ -33,7 +33,7 @@ export const EmojiReactionButton = () => {
                 anchorRef={anchorRef}
                 IconComponent={IcEmoji}
                 onClick={() => dispatch(setEmojiReactionPopupOpen(!emojiReactionPopupOpen))}
-                variant={emojiReactionPopupOpen ? 'highlight' : 'default'}
+                variant={emojiReactionPopupOpen ? 'active' : 'default'}
                 ariaLabel={c('Alt').t`Toggle emoji reactions`}
             />
             <Popper
