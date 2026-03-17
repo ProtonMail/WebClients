@@ -350,6 +350,9 @@
       "Tap to unblock audio playback": [
         "Toque para desbloquear a reprodução de áudio"
       ],
+      "Try again": [
+        "Tentar novamente"
+      ],
       "Try another method": [
         "Tentar outro método"
       ],
@@ -1447,6 +1450,9 @@
       "Enter 6 digits": [
         "Insira 6 dígitos"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Insira seu nome de usuário sem o domínio (@example.com)"
+      ],
       "Event deleted": [
         "Evento excluído"
       ],
@@ -1713,18 +1719,18 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } precisa de WebRTC para funcionar. Por favor, atualize seu navegador ou dispositivo para uma versão que suporte WebRTC, tente outro navegador ou desative quaisquer extensões que possam estar bloqueando-o."
       ],
-      "${ participantCount } of ${ maxParticipants } participants": [
-        "${ participantCount } de ${ maxParticipants } participantes"
-      ],
-      "${ participantCount } participant": [
-        "${ participantCount } participante",
-        "${ participantCount } participantes"
-      ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (você) está apresentando"
       ],
       "${ presenterName } is presenting": [
         "${ presenterName } está apresentando"
+      ],
+      "${ totalParticipantCount } of ${ maxParticipants } participants": [
+        "${ totalParticipantCount } de ${ maxParticipants } participantes"
+      ],
+      "${ totalParticipantCount } participant": [
+        "${ totalParticipantCount } participante",
+        "${ totalParticipantCount } participantes"
       ],
       "(You)": [
         "(Você)"
@@ -1767,6 +1773,9 @@
       ],
       "Coming soon": [
         "Em breve"
+      ],
+      "Connection failed": [
+        "Falha na conexão"
       ],
       "Connection interrupted. Reconnecting...": [
         "Conexão interrompida. Reconectando..."
@@ -2005,9 +2014,6 @@
       "No speaker detected": [
         "Nenhum alto-falante detectado"
       ],
-      "Now your meetings will be opened in the ${ MEET_APP_NAME } desktop app": [
-        "Agora suas reuniões serão abertas no aplicativo da ${ MEET_APP_NAME } para computador"
-      ],
       "Only meetings you created appear here": [
         "Somente reuniões que você criou aparecem aqui"
       ],
@@ -2037,6 +2043,9 @@
       ],
       "Please enter the passphrase to decrypt and view this meeting": [
         "Insira a frase secreta para descriptografar e visualizar esta reunião."
+      ],
+      "Please try again or try another browser": [
+        "Tente novamente ou use outro navegador"
       ],
       "Poor connection": [
         "Conexão ruim"
@@ -2917,6 +2926,9 @@
       ]
     },
     "Warning": {
+      "Connection is taking longer than expected": [
+        "A conexão está demorando mais do que o esperado"
+      ],
       "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
         "Não foi possível acessar a câmera ou o microfone. Você pode tentar ativá-los novamente pelos controles da reunião."
       ],
@@ -2929,8 +2941,17 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
       ],
+      "STUN UDP connection failed, trying with TURN relay…": [
+        "Falha na conexão UDP STUN, tentando com relay TURN…"
+      ],
+      "STUN UDP connection timeout, trying with TURN relay": [
+        "Tempo limite de conexão UDP STUN esgotado, tentando com relay TURN"
+      ],
       "The host has removed you from the meeting": [
         "O anfitrião removeu você da reunião"
+      ],
+      "Trying another route…": [
+        "Tentando outra rota…"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Infelizmente, não estamos on-line no momento. Preencha o formulário abaixo para descrever seu problema. Nós investigaremos e entraremos em contato quando estivermos de volta."
