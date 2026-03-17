@@ -1235,6 +1235,9 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "Action: Docs": {
@@ -6935,6 +6938,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrá seguir viendo los datos de su propia cuenta, pero todas las cuentas de usuario serán eliminadas de su organización."
+      ],
+      "Choose your service to connect with": [
+        "Elige tu servicio para conectarlo"
       ]
     },
     "info": {
@@ -13149,6 +13155,18 @@
       ],
       "You’ve got 5 GB of storage": [
         "Ha obtenido 5 GB de almacenamiento"
+      ],
+      "Choose a provider": [
+        "Elegir un proveedor"
+      ],
+      "Custom": [
+        "Personalizado"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importe sus datos a ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Seleccionar datos para importar"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13456,6 +13474,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Su prueba finalizará el ${ textDate }. No se le cobrará si cancela antes del ${ textDate }. ${ action }"
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "Importación avanzada"
       ]
     }
   }
