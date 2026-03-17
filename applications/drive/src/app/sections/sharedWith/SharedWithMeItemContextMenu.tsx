@@ -1,10 +1,10 @@
 import { useConfirmActionModal } from '@proton/components';
 
 import type { ContextMenuProps } from '../../components/FileBrowser';
-import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
 import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemContextMenu';
 import { useCopyItemsModal } from '../../modals/CopyItemsModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
+import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { useDrivePreviewModal } from '../../modals/preview';
 import { SharedWithMeActions } from './actions/SharedWithMeActions';
 import { useResharingModal } from './useResharingModal';
@@ -22,7 +22,7 @@ export function SharedWithMeContextMenu({
 }) {
     const { detailsModal, showDetailsModal } = useDetailsModal();
     const { previewModal, showPreviewModal } = useDrivePreviewModal();
-    const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
+    const { filesDetailsModal, showFilesDetailsModal } = useFilesDetailsModal();
     const { copyModal, showCopyItemsModal } = useCopyItemsModal();
     const { sharingModal, showSharingModal } = useResharingModal(selectedBrowserItems);
     const [confirmModal, showConfirmModal] = useConfirmActionModal();

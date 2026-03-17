@@ -5,8 +5,8 @@ import { generateNodeUid, getDriveForPhotos } from '@proton/drive';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import clsx from '@proton/utils/clsx';
 
-import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
 import { useDetailsModal } from '../../../modals/DetailsModal';
+import { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
 import type { PhotoLink } from '../../../store';
 
 interface Props {
@@ -16,7 +16,7 @@ interface Props {
 }
 
 const PhotosDetailsButton = ({ selectedLinks, showIconOnly, dropDownMenuButton = false }: Props) => {
-    const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
+    const { filesDetailsModal, showFilesDetailsModal } = useFilesDetailsModal();
     const { detailsModal, showDetailsModal } = useDetailsModal();
 
     const link = selectedLinks[0];
@@ -38,7 +38,9 @@ const PhotosDetailsButton = ({ selectedLinks, showIconOnly, dropDownMenuButton =
                             nodeUid: generateNodeUid(selectedLinks[0].volumeId, selectedLinks[0].linkId),
                         });
                     } else {
-                        void showFilesDetailsModal({ selectedItems: selectedLinks });
+                        void showFilesDetailsModal({
+                            nodeUids: selectedLinks.map((item) => generateNodeUid(item.volumeId, item.linkId)),
+                        });
                     }
                 }}
                 data-testid="toolbar-details"
