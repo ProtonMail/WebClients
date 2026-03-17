@@ -24,17 +24,23 @@ export const useRaiseHand = () => {
         const next = !isHandRaised;
         const identity = room.localParticipant.identity;
 
+        // Optimistic update
+        if (next) {
+            dispatch(raiseHand(identity));
+            dispatchTimedReaction(dispatch, identity, RAISE_HAND_EMOJI);
+        } else {
+            dispatch(lowerHand(identity));
+        }
+
         try {
             await publish(next);
-
-            if (next) {
-                dispatch(raiseHand(identity));
-                dispatchTimedReaction(dispatch, identity, RAISE_HAND_EMOJI);
-            } else {
-                dispatch(lowerHand(identity));
-            }
         } catch {
-            // publish failed, do not update store
+            // Roll back the optimistic update
+            if (next) {
+                dispatch(lowerHand(identity));
+            } else {
+                dispatch(raiseHand(identity));
+            }
         }
     }, [isHandRaised, publish, room, dispatch]);
 

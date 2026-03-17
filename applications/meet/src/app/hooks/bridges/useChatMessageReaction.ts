@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
-import { addChatMessageReaction } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import { toggleChatMessageReaction } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import { useMLSContext } from '../../contexts/MLSContext';
@@ -34,21 +34,29 @@ export const useChatMessageReaction = () => {
             return false;
         }
 
+        const identity = room.localParticipant.identity;
+
+        // Optimistic update: reflect the reaction immediately in the UI
+        dispatch(toggleChatMessageReaction({ messageId, emoji, identity }));
+
         const payload = JSON.stringify({ messageId, emoji });
 
         let encryptedMessage: Uint8Array<ArrayBuffer> | undefined;
         try {
             encryptedMessage = (await mls.encryptMessage(payload)) as Uint8Array<ArrayBuffer>;
         } catch {
+            // Roll back the optimistic update (toggle removes it)
+            dispatch(toggleChatMessageReaction({ messageId, emoji, identity }));
             handleError('Failed to encrypt chat message reaction');
             return false;
         }
 
         const envelope = {
-            id: `${room.localParticipant.identity}-${Date.now()}`,
+            id: `${identity}-${Date.now()}`,
             message: uint8ArrayToString(encryptedMessage as Uint8Array<ArrayBuffer>),
             timestamp: Date.now(),
             type: PublishableDataTypes.ChatMessageReaction,
+            version: 1,
         };
 
         try {
@@ -57,17 +65,11 @@ export const useChatMessageReaction = () => {
                 reliable: true,
             });
         } catch {
+            // Roll back the optimistic update (toggle removes it)
+            dispatch(toggleChatMessageReaction({ messageId, emoji, identity }));
             handleError('Failed to send chat message reaction');
             return false;
         }
-
-        dispatch(
-            addChatMessageReaction({
-                messageId,
-                emoji,
-                identity: room.localParticipant.identity,
-            })
-        );
 
         return true;
     };
