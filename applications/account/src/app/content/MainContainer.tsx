@@ -1,5 +1,5 @@
 import { Suspense, lazy, useEffect } from 'react';
-import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
+import { Redirect, Route, Switch, matchPath, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -59,7 +59,7 @@ import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-import { APPS, SETUP_ADDRESS_PATH, VPN_TV_PATHS } from '@proton/shared/lib/constants';
+import { APPS, SETUP_ADDRESS_PATH, VPN_TV_PATHS, VPN_TV_PATH_WITH_CODE } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces';
@@ -73,6 +73,7 @@ import OrganizationSettingsRouter from '../containers/organization/OrganizationS
 import AccountSidebar from './AccountSidebar';
 import AccountStartupModals from './AccountStartupModals';
 import SettingsSearch from './SettingsSearch';
+import { TvContainerSignedIn } from './TvContainerSignedIn/TvContainerSignedIn';
 import { getRoutes } from './routes';
 
 const MailSettingsRouter = lazy(
@@ -432,6 +433,14 @@ const MainContainer = () => {
     ) {
         const toPath = `/${stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(location.pathname))}`;
         return <Redirect to={`${SETUP_ADDRESS_PATH}?to=${app}&to-type=settings&to-path=${toPath}`} />;
+    }
+
+    if (app === APPS.PROTONVPN_SETTINGS && matchPath(location.pathname, VPN_TV_PATH_WITH_CODE)) {
+        return (
+            <Route path={VPN_TV_PATH_WITH_CODE}>
+                <TvContainerSignedIn />
+            </Route>
+        );
     }
 
     // Special case to render outside of the main container

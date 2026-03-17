@@ -13,10 +13,10 @@ import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
-import { pushForkSession } from '@proton/shared/lib/api/auth';
-import { VPN_TV_CLIENT_IDS, VPN_TV_PATHS_MAP } from '@proton/shared/lib/constants';
-import type { Api } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
+
+import { forkSession } from './forkSession';
+import { getChildClientId } from './getChildClientId';
 
 enum STEP {
     ENTER_CODE,
@@ -24,19 +24,11 @@ enum STEP {
     DEVICE_CONNECTION_ERROR,
 }
 
-async function forkSession(api: Api, childClientId: string, code: string) {
-    await api(
-        pushForkSession({
-            ChildClientID: childClientId,
-            Independent: 1,
-            UserCode: code,
-        })
-    );
-}
-
 interface Props {
     background?: boolean;
 }
+
+const childClientId = getChildClientId();
 
 const TVContainer = ({ background = true }: Props) => {
     const [code, setCode] = useState('');
@@ -48,12 +40,6 @@ const TVContainer = ({ background = true }: Props) => {
     const tvAuthCode = searchParams.get('code');
 
     const [error, setError] = useState('');
-    const childClientId = (() => {
-        if (VPN_TV_PATHS_MAP.apple.includes(location.pathname)) {
-            return VPN_TV_CLIENT_IDS.APPLE;
-        }
-        return VPN_TV_CLIENT_IDS.ANDROID;
-    })();
 
     useEffect(() => {
         if (tvAuthCode) {
