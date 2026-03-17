@@ -189,7 +189,7 @@ export const ProductSelectionModal = ({ onClose, provider, source, ...rest }: Pr
                     </div>
                 </ModalContent>
                 <ModalFooter>
-                    <Button onClick={onClose}>{c('Action').t`Close`}</Button>
+                    <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
                     <Button
                         onClick={() => {
                             handleSubmit(selectedProvider, selectedProducts, source);
