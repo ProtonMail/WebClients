@@ -13,6 +13,7 @@ const ReportsTableInfos = () => {
     const delayedImportsCount = delayedImportAccounts.length;
     const accounts = delayedImportAccounts.join(', ');
 
+    // translator: This is a link used in the following string "The ${bandwidthLimitLink} was reached. We'll automatically resume it once it resets."
     const bandwidthLimitLink = (
         <Href
             key="bandwidthLimitLink"
@@ -56,6 +57,7 @@ const ReportsTableInfos = () => {
                             delayedImportsCount
                         )}
                         <br />
+                        {/* translator: Full string is "The bandwidth limit was reached. We'll automatically resume it once it resets."*/}
                         {c('Info')
                             .jt`The ${bandwidthLimitLink} was reached. We'll automatically resume it once it resets.`}
                     </div>
