@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Ta bort vidarebefordring"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Vidarebefordran kommer snart starta. Nya e-postmeddelanden kommer visas i din inkorg."
       ],
       "Mail forward stopped": [
         "Vidarebefordran av e-post stoppad"
-      ],
-      "Reconnect": [
-        "Anslut igen"
-      ],
-      "Remove forward": [
-        "Ta bort vidarebefordring"
       ],
       "You will stop the mail forwarding.": [
         "Du kommer att stoppa vidarebefordran av e-post."
@@ -471,6 +462,9 @@
       "Delete filter “${ Name }”": [
         "Ta bort filter “${ Name }“"
       ],
+      "Delete forward": [
+        "Ta bort vidarebefordran"
+      ],
       "Delete Gateway": [
         "Ta bort gateway"
       ],
@@ -861,6 +855,9 @@
       "Go to settings": [
         "Gå till inställningar"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Förstått"
       ],
@@ -887,15 +884,6 @@
       ],
       "Import": [
         "Importera"
-      ],
-      "Import calendars": [
-        "Importera kalendrar"
-      ],
-      "Import contacts": [
-        "Importera kontakter"
-      ],
-      "Import emails": [
-        "Importera e-post"
       ],
       "Import emails, calendars, contacts": [
         "Importera e-post, kalendrar, kontakter"
@@ -1202,6 +1190,9 @@
       ],
       "Remove domain": [
         "Ta bort domän"
+      ],
+      "Remove forward": [
+        "Ta bort vidarebefordran"
       ],
       "Remove from favorites": [
         "Ta bort från favoriter"
@@ -2847,6 +2838,9 @@
       ],
       "What are you migrating?": [
         "Vad migrerar du?"
+      ],
+      "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
+        "Du måste bevilja behörighet för ${ BRAND_NAME } att kopiera dina data. När du har accepterat behörigheterna, kom tillbaka hit för att fortsätta."
       ]
     },
     "breadcrumb": {
@@ -4771,6 +4765,9 @@
       ],
       "Available with ${ title }": [
         "Tillgänglig med ${ title }"
+      ],
+      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
+        "Välj den tjänst du vill ta in i ${ MAIL_APP_NAME } och vi guidar dig genom att ansluta en adress eller importera din e-post, kalendrar eller kontakter."
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Konfigurera detta först för att aktivera din organisation och anpassa din e-postadress."
@@ -8775,28 +8772,11 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importera från ${ provider }"
+      "Advanced import": [
+        "Avancerad import"
       ],
-      "Import from Google": [
-        "Importera från Google"
-      ],
-      "Import from other": [
-        "Importera från andra"
-      ],
-      "Import from Outlook": [
-        "Importera från Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importera från Yahoo"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Ångra klar"
-      ],
-      "Undo in progress": [
-        "Ångra pågår"
+      "Import from ${ providerName }": [
+        "Importera från ${ providerName }"
       ]
     },
     "Import status": {
@@ -8806,26 +8786,32 @@
       "Canceled": [
         "Avbruten"
       ],
-      "Canceling": [
-        "Avbryter"
-      ],
-      "Completed": [
-        "Slutförd"
+      "Canceling...": [
+        "Avbryter …"
       ],
       "Delayed": [
         "Försenat"
       ],
+      "Disabled": [
+        "Inaktiverad"
+      ],
       "Failed": [
         "Misslyckades"
       ],
-      "In progress": [
-        "Pågår"
+      "Imported": [
+        "Importerad"
+      ],
+      "In progress...": [
+        "Pågår …"
       ],
       "Paused": [
         "Pausad"
       ],
-      "Started": [
-        "Startad"
+      "Undo finished": [
+        "Ångra klar"
+      ],
+      "Undo in progress": [
+        "Ångra pågår"
       ]
     },
     "Import type": {
@@ -8885,17 +8871,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } delar aldrig din information med tredje part. Data kommer från ${ BRAND_NAME }s egna analyser och Constella Intelligence."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } pausade en import eftersom den förlorade anslutningen till din andra e-postleverantör. Återanslut."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } pausade en import eftersom ditt konto har ont om lagringsutrymme. Du kan:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } kommer att försöka återuppta importen så snart din e-postleverantör återställer ditt kontos ${ bandwidthLimitLink }. Du behöver inte göra någonting. Om du avbryter din import kommer du inte att kunna återuppta den och du måste börja om."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
@@ -9293,6 +9270,9 @@
         "Berörd användare är på rad",
         "Berörda användare är på raderna"
       ],
+      "AI chatbot": [
+        "AI-chattbot"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-driven assistent som hjälper dig att skapa bättre e-post, snabbt och enkelt."
       ],
@@ -9367,6 +9347,12 @@
       ],
       "An error occurred while communicating with the extension": [
         "Ett fel uppstod under kommunikationen med tillägget"
+      ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "En import har pausats eftersom anslutningen till din e-postleverantör förlorades."
+      ],
+      "An import is paused because your storage is almost full.": [
+        "En import har pausats eftersom ditt lagringsutrymme nästan är fullt."
       ],
       "and": [
         "och"
@@ -9536,9 +9522,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Förstärk din organisations varumärkesidentitet och skapa en mer konsekvent upplevelse online för dina användare."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Ta med dina meddelanden, kontakter och kalendrar till ${ BRAND_NAME }."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Genom att skapa ett ${ PASS_APP_NAME }-konto med din e-post för SimpleLogin kan du hantera dina alias direkt från ${ PASS_APP_NAME }."
       ],
@@ -9580,6 +9563,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Välj ett entitets-ID för att fortsätta."
+      ],
+      "Choose your service to connect with": [
+        "Välj din tjänst att ansluta med"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
@@ -10081,8 +10067,8 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "För användare som byter till ${ MAIL_APP_NAME } från en annan e-posttjänst, välj fliken ${ boldAddresses } och lägg till alla aktiva e-postadresser innan du ändrar MX-posten för att säkerställa en smidig övergång."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Vidarebefordra inkommande e-post från annat konto till din säkra inkorg för ${ MAIL_APP_NAME }."
+      "Forwarding automatically sends new incoming emails to your Inbox.": [
+        "Vidarebefordran skickar automatiskt nya inkommande e-postmeddelanden till din inkorg."
       ],
       "Free forever": [
         "Gratis för alltid"
@@ -10090,8 +10076,8 @@
       "Free trial": [
         "Gratis provperiod"
       ],
-      "free up space by deleting older messages or other data": [
-        "frigör utrymme genom att radera äldre meddelanden eller annan data"
+      "Free up space or upgrade your storage to continue.": [
+        "Frigör utrymme eller uppgradera ditt lagringsutrymme för att fortsätta."
       ],
       "Friends and family": [
         "Vänner och familj"
@@ -10647,9 +10633,6 @@
       "No Gateways yet": [
         "Inga gateways ännu"
       ],
-      "No imports or forwarding history.": [
-        "Ingen import- eller vidarebefordringshistorik."
-      ],
       "No label selected": [
         "Ingen etikett vald"
       ],
@@ -10697,9 +10680,6 @@
       ],
       "Once you reset your password:": [
         "När du har återställt ditt lösenord:"
-      ],
-      "One time import": [
-        "Engångsimport"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ändra bara dessa inställningar om du använder PGP med mottagare som inte använder ${ BRAND_NAME }."
@@ -10867,6 +10847,9 @@
       "Please open the document to view it.": [
         "Öppna dokumentet för att visa det."
       ],
+      "Please reconnect to continue.": [
+        "Anslut igen för att fortsätta."
+      ],
       "Please select the folders you would like to import:": [
         "Välj mapparna du vill importera:"
       ],
@@ -10938,9 +10921,6 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Offentlig delning av dokument stöds ännu inte."
-      ],
-      "purchase additional storage": [
-        "köp ytterligare lagring"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Kontakta oss för att få hjälp med allt om ${ BRAND_NAME }."
@@ -11065,9 +11045,6 @@
       "Select users to view their activity": [
         "Välj användare för att visa deras aktivitet"
       ],
-      "Select what you want to import.": [
-        "Välj vad du vill importera."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Välj vilka kalendrar som ska importeras. En ny kalender skapas för varje importerad kalender enligt antalet tillgängliga kalendrar i ditt paket."
       ],
@@ -11103,9 +11080,6 @@
       ],
       "Set password": [
         "Ställ in lösenord"
-      ],
-      "Set up forwarding": [
-        "Ställ in vidarebefordran"
       ],
       "Set up your organization": [
         "Ställ in din organisation"
@@ -11746,6 +11720,9 @@
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Bekräfta din identitet med ett tidsbaserat engångslösenord från en autentiseringsapp"
       ],
+      "Verifying ${ PASS_APP_NAME } browser extension...": [
+        "Verifierar webbläsartillägget ${ PASS_APP_NAME } …"
+      ],
       "Verifying your payment": [
         "Verifierar din betalning"
       ],
@@ -12014,9 +11991,6 @@
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Du kan tillämpa lösenordsreglerna som medlemmar i din organisation använder när de skapar eller återställer lösenordet till sitt ${ BRAND_NAME }-konto."
       ],
-      "You can import one data type at a time.": [
-        "Du kan importera en datatyp åt gången."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalender. Ta bort delade kalenderlänkar och alla ${ BRAND_NAME }-användare som du delade dina kalendrar med innan du avslutar din ${ MAIL_SHORT_APP_NAME }-prenumeration.",
         "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalendrar. Ta bort delade kalenderlänkar och alla ${ BRAND_NAME }-användare som du delade dina kalendrar med innan du avslutar din ${ MAIL_SHORT_APP_NAME }-prenumeration."
@@ -12210,10 +12184,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis provperiod har konverterats till en månadsprenumeration. Ditt förnyelsedatum är ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Din import från ${ accounts } är tillfälligt fördröjd.",
-        "Din import från ${ accounts } är tillfälligt fördröjd."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din information är säker hos oss. Vi kommer endast kontakta dig när det krävs för att tillhandahålla våra tjänster."
@@ -13172,9 +13142,6 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendars": [
-        "Kalendrar"
-      ],
       "Capitalize words": [
         "Versalisera ord"
       ],
@@ -13423,9 +13390,6 @@
       ],
       "Email or username": [
         "E-post eller användarnamn"
-      ],
-      "Emails": [
-        "E-postmeddelanden"
       ],
       "Emails (all messages)": [
         "E-post (alla meddelanden)"
@@ -22715,6 +22679,9 @@
       "Check your default mail application": [
         "Kontrollera din standardapplikation för e-post"
       ],
+      "Choose a provider": [
+        "Välj en leverantör"
+      ],
       "Choose an account": [
         "Välj ett konto"
       ],
@@ -22841,6 +22808,9 @@
       ],
       "Currency": [
         "Valuta"
+      ],
+      "Custom": [
+        "Anpassad"
       ],
       "Custom domains:": [
         "Anpassade domäner:"
@@ -23177,6 +23147,9 @@
       "Forward emails": [
         "Vidarebefordra e-post"
       ],
+      "Forwardings": [
+        "Vidarebefordringar"
+      ],
       "Free": [
         "Gratis"
       ],
@@ -23264,9 +23237,6 @@
       "Help center": [
         "Hjälpcenter"
       ],
-      "History": [
-        "Historik"
-      ],
       "Home": [
         "Hem"
       ],
@@ -23318,6 +23288,12 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importera via ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importera din data till ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Importer"
       ],
       "Inactive 2FA": [
         "Inaktiv 2FA"
@@ -23691,6 +23667,9 @@
       "Select contact group": [
         "Välj kontaktgrupp"
       ],
+      "Select data to import": [
+        "Välj data att importera"
+      ],
       "Select the time to send this notification": [
         "Välj tiden att skicka denna avisering"
       ],
@@ -24016,9 +23995,6 @@
       "What is the dark web?": [
         "Vad är mörka webben?"
       ],
-      "What would you like to import?": [
-        "Vad vill du importera?"
-      ],
       "Wipe all logs?": [
         "Rensa alla loggar?"
       ],
@@ -24099,20 +24075,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Åtgärder"
-      ],
-      "Date": [
-        "Datum"
-      ],
-      "Import": [
-        "Importera"
-      ],
       "Size": [
         "Storlek"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Title header for addresses domain table": {
@@ -25172,6 +25136,12 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Genom att ta bort detta telefonnummer kommer du inte längre att kunna återställa ditt konto."
       ],
+      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
+        "Kunde inte logga in. Öppna webbläsartillägget ${ PASS_APP_NAME } och logga in därifrån."
+      ],
+      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
+        "Kunde inte registrera. Öppna webbläsartillägget ${ PASS_APP_NAME } och registrera dig därifrån."
+      ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Om du avbryter denna import kommer du inte att kunna återuppta den. ${ BRAND_NAME } sparade alla framsteg på ditt konto. Avbryt ändå?"
       ],
@@ -25231,9 +25201,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Du kommer förlora alla anpassningar du gjort hittills."
-      ],
-      "You will not see this import record in the list any more.": [
-        "Du kommer inte att se denna importpost i listan längre."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis provperiod slutar den ${ textDate }. ${ action }"

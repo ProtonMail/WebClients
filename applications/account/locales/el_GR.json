@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Διαγραφή προώθησης"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Η προώθηση θα ξεκινήσει σύντομα. Νέα μηνύματα ηλεκτρονικού ταχυδρομείου θα εμφανιστούν στα εισερχόμενά σας."
       ],
       "Mail forward stopped": [
         "Η προώθηση αλληλογραφίας σταμάτησε"
-      ],
-      "Reconnect": [
-        "Επανασύνδεση"
-      ],
-      "Remove forward": [
-        "Αφαίρεση προώθησης"
       ],
       "You will stop the mail forwarding.": [
         "Θα σταματήσετε την προώθηση αλληλογραφίας."
@@ -471,6 +462,9 @@
       "Delete filter “${ Name }”": [
         "Διαγραφή φίλτρου “${ Name }”"
       ],
+      "Delete forward": [
+        "Διαγραφή προώθησης"
+      ],
       "Delete Gateway": [
         "Διαγραφή Πύλης"
       ],
@@ -861,6 +855,9 @@
       "Go to settings": [
         "Μετάβαση στις ρυθμίσεις"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Το κατάλαβα"
       ],
@@ -887,15 +884,6 @@
       ],
       "Import": [
         "Εισαγωγή"
-      ],
-      "Import calendars": [
-        "Εισαγωγή ημερολογίων"
-      ],
-      "Import contacts": [
-        "Εισαγωγή επαφών"
-      ],
-      "Import emails": [
-        "Εισαγωγή email"
       ],
       "Import emails, calendars, contacts": [
         "Εισαγωγή ηλεκτρονικών διευθύνσεων, ημερολογίων, επαφών"
@@ -1202,6 +1190,9 @@
       ],
       "Remove domain": [
         "Αφαίρεση τομέα"
+      ],
+      "Remove forward": [
+        "Αφαίρεση προώθησης"
       ],
       "Remove from favorites": [
         "Κατάργηση από τα αγαπημένα"
@@ -4819,6 +4810,9 @@
       ],
       "Available with ${ title }": [
         "Διατίθεται με το ${ title }"
+      ],
+      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
+        "Επιλέξτε την υπηρεσία που θέλετε να φέρετε στο ${ MAIL_APP_NAME }, και θα σας καθοδηγήσουμε στη σύνδεση μιας διεύθυνσης ή στην εισαγωγή των μηνυμάτων, των ημερολογίων ή των επαφών σας."
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Ρυθμίστε πρώτα αυτό για να ενεργοποιήσετε τον οργανισμό σας και να προσαρμόσετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
@@ -8851,28 +8845,11 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Εισαγωγή από ${ provider }"
+      "Advanced import": [
+        "Προηγμένη εισαγωγή"
       ],
-      "Import from Google": [
-        "Εισαγωγή από Google"
-      ],
-      "Import from other": [
-        "Εισαγωγή από άλλο"
-      ],
-      "Import from Outlook": [
-        "Εισαγωγή από Outlook"
-      ],
-      "Import from Yahoo": [
-        "Εισαγωγή από το Yahoo"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Η αναίρεση ολοκληρώθηκε"
-      ],
-      "Undo in progress": [
-        "Αναίρεση σε εξέλιξη"
+      "Import from ${ providerName }": [
+        "Εισαγωγή από ${ providerName }"
       ]
     },
     "Import status": {
@@ -8882,26 +8859,32 @@
       "Canceled": [
         "Ακυρωμένες"
       ],
-      "Canceling": [
-        "Γίνεται Ακύρωση"
-      ],
-      "Completed": [
-        "Ολοκληρωμένο"
+      "Canceling...": [
+        "Ακύρωση..."
       ],
       "Delayed": [
         "Καθυστερήσει"
       ],
+      "Disabled": [
+        "Απενεργοποιημένο"
+      ],
       "Failed": [
         "Απέτυχε"
       ],
-      "In progress": [
-        "Σε εξέλιξη"
+      "Imported": [
+        "Εισήχθη"
+      ],
+      "In progress...": [
+        "Σε εξέλιξη..."
       ],
       "Paused": [
         "Σε παύση"
       ],
-      "Started": [
-        "Ξεκίνησε"
+      "Undo finished": [
+        "Η αναίρεση ολοκληρώθηκε"
+      ],
+      "Undo in progress": [
+        "Αναίρεση σε εξέλιξη"
       ]
     },
     "Import type": {
@@ -8961,17 +8944,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "Το ${ BRAND_NAME } δε μοιράζεται ποτέ τις πληροφορίες σας με τρίτους. Τα δεδομένα προέρχονται από τις αναλύσεις του ίδιου του ${ BRAND_NAME } και της Constella Intelligence."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "Η ${ BRAND_NAME } διέκοψε μια εισαγωγή επειδή έχασε τη σύνδεση με την άλλη υπηρεσία παροχής ηλεκτρονικού ταχυδρομείου. Παρακαλώ επανασύνδεσε."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "Το ${ BRAND_NAME } διέκοψε μια εισαγωγή, επειδή ο χώρος του λογαριασμού σας εξαντλείται. Μπορείτε να:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe βοηθός γραφής"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "Τον ${ BRAND_NAME } θα προσπαθήσει να συνεχίσει την εισαγωγή μόλις ο πάροχος email σας επαναφέρει τον λογαριασμό σας ${ bandwidthLimitLink }. Δε χρειάζεται να κάνετε τίποτα. Αν ακυρώσετε την εισαγωγή σας, δε θα είστε σε θέση να τη συνεχίσετε και θα πρέπει να ξεκινήσετε από την αρχή."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Η τεχνολογία κρυπτογράφησης του ${ BRAND_NAME } σημαίνει ότι κανείς δεν μπορεί να έχει πρόσβαση στον κωδικό πρόσβασής σας - ούτε καν εμείς."
@@ -9447,6 +9421,12 @@
       "An error occurred while communicating with the extension": [
         "Παρουσιάστηκε σφάλμα κατά την επικοινωνία με την επέκταση"
       ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "Μια εισαγωγή έχει διακοπεί επειδή η σύνδεση με τον πάροχο του email σας χάθηκε."
+      ],
+      "An import is paused because your storage is almost full.": [
+        "Μια εισαγωγή έχει σταματήσει προσωρινά επειδή ο αποθηκευτικός χώρος σας είναι σχεδόν γεμάτος."
+      ],
       "and": [
         "και"
       ],
@@ -9615,9 +9595,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Ενισχύστε την εταιρική ταυτότητα του οργανισμού σας και δημιουργήστε μια πιο συνεπή εμπειρία στο διαδίκτυο για τους χρήστες σας."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Μεταφέρετε τα μηνύματα, τις επαφές και τα ημερολόγιά σας στο ${ BRAND_NAME }."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Δημιουργώντας έναν λογαριασμό ${ PASS_APP_NAME } με το SimpleLogin email σας, μπορείτε να διαχειρίζεστε τα ψευδώνυμά σας απευθείας μέσα από το ${ PASS_APP_NAME }."
       ],
@@ -9659,6 +9636,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Επιλέξτε ένα Entity ID για να συνεχίσετε."
+      ],
+      "Choose your service to connect with": [
+        "Επιλέξτε την υπηρεσία σας για να συνδεθείτε"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
@@ -10163,8 +10143,8 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Για χρήστες που μεταβαίνουν σε ${ MAIL_APP_NAME } από άλλη υπηρεσία ηλεκτρονικού ταχυδρομείου, επιλέξτε την καρτέλα ${ boldAddresses } και προσθέστε όλες τις ενεργές διευθύνσεις ηλεκτρονικού ταχυδρομείου πριν αλλάξετε την εγγραφή MX για να διασφαλίσετε την ομαλή μετάβαση."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Προωθήστε την εισερχόμενη αλληλογραφία από άλλο λογαριασμό στα ασφαλή εισερχόμενά σας ${ MAIL_APP_NAME }."
+      "Forwarding automatically sends new incoming emails to your Inbox.": [
+        "Η προώθηση στέλνει αυτόματα τα νέα εισερχόμενα μηνύματα στο φάκελο Εισερχόμενα."
       ],
       "Free forever": [
         "Δωρεάν για πάντα"
@@ -10172,8 +10152,8 @@
       "Free trial": [
         "Δωρεάν δοκιμή"
       ],
-      "free up space by deleting older messages or other data": [
-        "ελευθερώστε χώρο διαγράφοντας παλαιότερα μηνύματα ή άλλα δεδομένα"
+      "Free up space or upgrade your storage to continue.": [
+        "Απελευθερώστε χώρο ή αναβαθμίστε την αποθήκευσή σας για να συνεχίσετε."
       ],
       "Friends and family": [
         "Φίλοι και οικογένεια"
@@ -10359,11 +10339,18 @@
       "Import from": [
         "Εισαγωγή από"
       ],
+      "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
+        "Η εισαγωγή από ${ accounts } είναι προσωρινά καθυστερημένη λόγω ενός ορίου εύρους ζώνης.",
+        "Οι εισαγωγές από ${ accounts } είναι προσωρινά καθυστερημένες λόγω ενός ορίου εύρους ζώνης."
+      ],
       "Import in progress": [
         "Εισαγωγή σε εξέλιξη"
       ],
       "Import mailbox": [
         "Εισαγωγή γραμματοκιβωτίου"
+      ],
+      "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
+        "Εισαγάγετε μεταφορές μίας φοράς των email, ημερολογίων ή επαφών στον λογαριασμό σας στο ${ BRAND_NAME }."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "ΣΗΜΑΝΤΙΚΟ: Εάν η κονσόλα DNS δεν επιτρέπει στις τιμές CNAME να τελειώνουν με τελεία, μπορείτε να καταργήσετε την τελευταία κουκκίδα στις τιμές CNAME."
@@ -10735,9 +10722,6 @@
       "No Gateways yet": [
         "Δεν υπάρχουν ακόμη πύλες"
       ],
-      "No imports or forwarding history.": [
-        "Δεν υπάρχουν εισαγωγές ή ιστορικό προώθησης."
-      ],
       "No label selected": [
         "Δεν επιλέχθηκε ετικέτα"
       ],
@@ -10785,9 +10769,6 @@
       ],
       "Once you reset your password:": [
         "Μετά την αλλαγή του κωδικού σας:"
-      ],
-      "One time import": [
-        "Εφάπαξ εισαγωγή"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες εκτός ${ BRAND_NAME }."
@@ -10958,6 +10939,9 @@
       "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
         "Παρακαλούμε ανοίξτε τις ρυθμίσεις της επέκτασης του προγράμματος περιήγησής σας και επιτρέψτε στην προέκταση ${ PASS_APP_NAME } να έχει πρόσβαση σε δεδομένα ιστοτόπων. Στη συνέχεια, ανανεώστε αυτήν τη σελίδα."
       ],
+      "Please reconnect to continue.": [
+        "Παρακαλούμε επανασυνδεθείτε για να συνεχίσετε."
+      ],
       "Please select the folders you would like to import:": [
         "Παρακαλούμε επιλέξτε τους φακέλους που θα θέλετε να εισάγετε:"
       ],
@@ -11032,9 +11016,6 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Η δημόσια κοινή χρήση εγγράφων δεν υποστηρίζεται ακόμη."
-      ],
-      "purchase additional storage": [
-        "αγοράσετε πρόσθετο χώρου αποθήκευσης"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Επικοινωνήστε μαζί μας για βοήθεια σε οτιδήποτε ${ BRAND_NAME }."
@@ -11159,9 +11140,6 @@
       "Select users to view their activity": [
         "Επιλέξτε χρήστες για να δείτε τη δραστηριότητά τους"
       ],
-      "Select what you want to import.": [
-        "Επιλέξτε τι θέλετε να εισάγετε."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Επιλέξτε ποια ημερολόγια θέλετε να εισαγάγετε. Θα δημιουργηθεί ένα νέο ημερολόγιο για κάθε εισαγόμενο ημερολόγιο σύμφωνα με τον αριθμό των ημερολογίων που είναι διαθέσιμα στο πλάνο σας."
       ],
@@ -11197,9 +11175,6 @@
       ],
       "Set password": [
         "Ορισμός κωδικού"
-      ],
-      "Set up forwarding": [
-        "Ρύθμιση προώθησης"
       ],
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
@@ -11398,6 +11373,9 @@
       ],
       "Thanks for the feedback!": [
         "Ευχαριστούμε για τα σχόλιά σας!"
+      ],
+      "The ${ bandwidthLimitLink } was reached. We'll automatically resume it once it resets.": [
+        "Έχει επιτευχθεί το ${ bandwidthLimitLink }. Θα το επαναφέρουμε αυτόματα μόλις επαναρυθμιστεί."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Το μήνυμα ${ boldDataLocked } δεν θα εμφανίζεται πλέον, ωστόσο μπορείτε να ξεκλειδώσετε τα δεδομένα σας στο ${ encryptionAndKeysLink }."
@@ -12123,9 +12101,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Μπορείτε να αποκτήσετε τις premium υπηρεσίες ιδιωτικότητας σε ένα πακέτο—και είναι μόνο **${ priceString }/μήνα**."
       ],
-      "You can import one data type at a time.": [
-        "Μπορεί να εισαχθεί ένας τύπος δεδομένων τη φορά."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγιο. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε χρήστη ${ BRAND_NAME } με τον οποίο μοιραστήκατε τα ημερολόγιά σας προτού ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας.",
         "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγια. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε χρήστη ${ BRAND_NAME } με τον οποίο μοιραστήκατε τα ημερολόγιά σας προτού ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας."
@@ -12336,10 +12311,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Η δωρεάν δοκιμή σας μετατράπηκε επιτυχώς σε μηνιαία συνδρομή. Η ημερομηνία ανανέωσής σας είναι ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Η εισαγωγή σας από ${ accounts } καθυστερεί προσωρινά.",
-        "Οι εισαγωγές σας από ${ accounts } καθυστερούν προσωρινά."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Οι πληροφορίες σας είναι ασφαλείς μαζί μας. Θα επικοινωνήσουμε μαζί σας μόνο όταν απαιτείται για την παροχή των υπηρεσιών μας."
@@ -13304,9 +13275,6 @@
       "Calendar": [
         "Ημερολόγιο"
       ],
-      "Calendars": [
-        "Ημερολόγια"
-      ],
       "Capitalize words": [
         "Κεφαλαιοποίηση λέξεων"
       ],
@@ -13558,9 +13526,6 @@
       ],
       "Email or username": [
         "Διεύθυνση ή όνομα χρήστη"
-      ],
-      "Emails": [
-        "Μηνύματα"
       ],
       "Emails (all messages)": [
         "Μηνύματα (όλα τα μηνύματα)"
@@ -22804,6 +22769,9 @@
       "Check your default mail application": [
         "Ελέγξτε την προεπιλεγμένη εφαρμογή αλληλογραφίας σας."
       ],
+      "Choose a provider": [
+        "Επιλέξτε έναν πάροχο"
+      ],
       "Choose an account": [
         "Επιλέξτε ένα λογαριασμό"
       ],
@@ -22930,6 +22898,9 @@
       ],
       "Currency": [
         "Νόμισμα"
+      ],
+      "Custom": [
+        "Προσαρμογή"
       ],
       "Custom domains:": [
         "Προσαρμοσμένοι τομείς:"
@@ -23266,6 +23237,9 @@
       "Forward emails": [
         "Προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ],
+      "Forwardings": [
+        "Προωθήσεις"
+      ],
       "Free": [
         "Δωρεάν"
       ],
@@ -23353,9 +23327,6 @@
       "Help center": [
         "Κέντρο βοήθειας"
       ],
-      "History": [
-        "Ιστορικό"
-      ],
       "Home": [
         "Αρχική"
       ],
@@ -23404,6 +23375,12 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Εισαγωγή μέσω ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Εισάγετε τα δεδομένα σας στο ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Εισαγωγές"
       ],
       "Inactive 2FA": [
         "Απενεργοποιημένο 2FA"
@@ -23780,6 +23757,9 @@
       "Select contact group": [
         "Επιλογή ομάδας επαφών"
       ],
+      "Select data to import": [
+        "Επιλέξτε δεδομένα για εισαγωγή"
+      ],
       "Select the time to send this notification": [
         "Επιλέξτε τι ώρα θα σταλεί αυτή η ειδοποίηση"
       ],
@@ -24105,9 +24085,6 @@
       "What is the dark web?": [
         "Τι είναι ο σκοτεινός ιστός;"
       ],
-      "What would you like to import?": [
-        "Τι θα θέλατε να εισάγετε;"
-      ],
       "Wipe all logs?": [
         "Καταργήστε όλα τα αρχεία καταγραφής;"
       ],
@@ -24185,20 +24162,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Ενέργειες"
-      ],
-      "Date": [
-        "Ημερομηνία"
-      ],
-      "Import": [
-        "Εισαγωγή"
-      ],
       "Size": [
         "Μέγεθος"
-      ],
-      "Status": [
-        "Κατάσταση"
       ]
     },
     "Title header for addresses domain table": {
@@ -25339,8 +25304,8 @@
       "You will lose any customization you made so far.": [
         "Θα χάσετε οποιαδήποτε προσαρμογές που κάνατε μέχρι στιγμής."
       ],
-      "You will not see this import record in the list any more.": [
-        "Δε θα βλέπετε πλέον αυτό το αρχείο εισαγωγής στη λίστα."
+      "You will not see this import record in the list anymore.": [
+        "Δεν θα βλέπετε πλέον αυτήν την καρτέλα εισαγωγής στη λίστα."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Η δωρεάν δοκιμή σας λήγει στις ${ textDate }. ${ action }"

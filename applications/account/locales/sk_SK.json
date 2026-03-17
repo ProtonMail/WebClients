@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Vymazať preposielanie"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Preposielanie začne čoskoro. Nové emaily sa zobrazia vo vašej doručenej pošte."
       ],
       "Mail forward stopped": [
         "Preposielanie pošty zastavené"
-      ],
-      "Reconnect": [
-        "Znovu pripojiť"
-      ],
-      "Remove forward": [
-        "Odstrániť preposielanie"
       ],
       "You will stop the mail forwarding.": [
         "Zastavíte preposielanie emailov."
@@ -471,6 +462,9 @@
       "Delete filter “${ Name }”": [
         "Vymazať filter „${ Name }”"
       ],
+      "Delete forward": [
+        "Vymazať preposielanie"
+      ],
       "Delete Gateway": [
         "Odstrániť bránu"
       ],
@@ -861,6 +855,9 @@
       "Go to settings": [
         "Prejsť do nastavení"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Rozumiem"
       ],
@@ -887,15 +884,6 @@
       ],
       "Import": [
         "Importovať"
-      ],
-      "Import calendars": [
-        "Importovať kalendáre"
-      ],
-      "Import contacts": [
-        "Importovať kontakty"
-      ],
-      "Import emails": [
-        "Importovať emaily"
       ],
       "Import emails, calendars, contacts": [
         "Importovať emaily, kalendáre a kontakty"
@@ -1202,6 +1190,9 @@
       ],
       "Remove domain": [
         "Odstrániť doménu"
+      ],
+      "Remove forward": [
+        "Odstrániť preposielanie"
       ],
       "Remove from favorites": [
         "Odobrať z obľúbených"
@@ -4880,6 +4871,9 @@
       "Available with ${ title }": [
         "K dispozícii s ${ title }"
       ],
+      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
+        "Vyberte službu, ktorú chcete priniesť do ${ MAIL_APP_NAME }, a prevedieme vás pripojením adresy alebo importovaním vašej pošty, kalendárov alebo kontaktov."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Najprv nakonfigurujte túto možnosť, aby ste aktivovali svoju organizáciu a prispôsobili svoju emailovú adresu."
       ],
@@ -6614,6 +6608,9 @@
       ],
       "Enter 6 digits": [
         "Zadajte 6 číslic"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Zadajte používateľské meno bez domény (@príklad.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Chyba pri pripojovaní k Bitcoin API."
@@ -8988,28 +8985,11 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importovať z ${ provider }"
+      "Advanced import": [
+        "Pokročilý import"
       ],
-      "Import from Google": [
-        "Importovať z Google"
-      ],
-      "Import from other": [
-        "Importovať z inej služby"
-      ],
-      "Import from Outlook": [
-        "Importovať z Outlooku"
-      ],
-      "Import from Yahoo": [
-        "Importovať z Yahoo"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Vrátenie dokončené"
-      ],
-      "Undo in progress": [
-        "Vrátenie prebieha"
+      "Import from ${ providerName }": [
+        "Importovať z ${ providerName }"
       ]
     },
     "Import status": {
@@ -9019,26 +8999,32 @@
       "Canceled": [
         "Zrušené"
       ],
-      "Canceling": [
-        "Ruší sa"
-      ],
-      "Completed": [
-        "Dokončené"
+      "Canceling...": [
+        "Ruší sa..."
       ],
       "Delayed": [
         "Oneskorené"
       ],
+      "Disabled": [
+        "Deaktivované"
+      ],
       "Failed": [
         "Zlyhalo"
       ],
-      "In progress": [
-        "Prebieha"
+      "Imported": [
+        "Importované"
+      ],
+      "In progress...": [
+        "Pracujem..."
       ],
       "Paused": [
         "Pozastavené"
       ],
-      "Started": [
-        "Zahájené"
+      "Undo finished": [
+        "Vrátenie dokončené"
+      ],
+      "Undo in progress": [
+        "Vrátenie prebieha"
       ]
     },
     "Import type": {
@@ -9102,17 +9088,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } nikdy nezdieľa vaše informácie s tretími stranami. Údaje pochádzajú z vlastných analýz spoločnosti ${ BRAND_NAME } a spoločnosti Constella Intelligence."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } pozastavil import, pretože stratil spojenie s vaším druhým poskytovateľom emailu. Pripojte sa znova."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } pozastavil import, pretože je na vašom účte málo voľného miesta. Môžete:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe, asistent písania"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } sa pokúsi pokračovať v importe hneď ako váš poskytovateľ emailu obnoví ${ bandwidthLimitLink } vášho účtu. Nemusíte robiť nič. Ak zrušíte import, nebude v ňom môcť pokračovať a budete musieť začať od začiatku."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Šifrovacia technológia ${ BRAND_NAME } znamená, že nikto nemá prístup k vášmu heslu – dokonca ani my."
@@ -9654,6 +9631,12 @@
       "An error occurred while communicating with the extension": [
         "Vyskytla sa chyba pri komunikácii s rozšírením"
       ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "Import je pozastavený, pretože došlo k prerušeniu spojenia s vaším poskytovateľom emailových služieb."
+      ],
+      "An import is paused because your storage is almost full.": [
+        "Import je pozastavený, pretože vaše úložisko je takmer plné."
+      ],
       "and": [
         "a"
       ],
@@ -9822,9 +9805,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Posilnite identitu značky vašej organizácie a vytvorte konzistentnejší online zážitok pre vašich používateľov."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Preneste svoje správy, kontakty a kalendáre do ${ BRAND_NAME }."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Vytvorením ${ PASS_APP_NAME } účtu so svojím SimpleLogin emailom môžete spravovať svoje aliasy priamo z ${ PASS_APP_NAME }."
       ],
@@ -9866,6 +9846,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Pre pokračovanie vyberte ID subjektu."
+      ],
+      "Choose your service to connect with": [
+        "Vyberte si službu na pripojenie"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
@@ -10380,8 +10363,8 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pre používateľov, ktorí prechádzajú na ${ MAIL_APP_NAME } z inej emailovej služby, vyberte kartu ${ boldAddresses } a pred zmenou MX záznamu pridajte všetky aktívne emailové adresy, aby bol zaistený plynulý prechod."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Preposielajte prichádzajúcu poštu z iného účtu do vašej zabezpečenej schránky ${ MAIL_APP_NAME }."
+      "Forwarding automatically sends new incoming emails to your Inbox.": [
+        "Preposielanie automaticky odošle nové prichádzajúce emaily do vašej doručenej pošty."
       ],
       "Free forever": [
         "Navždy zadarmo"
@@ -10389,8 +10372,8 @@
       "Free trial": [
         "Bezplatné skúšobné obdobie"
       ],
-      "free up space by deleting older messages or other data": [
-        "uvolniť miesto zmazaním starších správ alebo iných dát"
+      "Free up space or upgrade your storage to continue.": [
+        "Uvoľnite miesto alebo rozšírte úložisko, aby ste mohli pokračovať."
       ],
       "Friends and family": [
         "Priatelia a rodina"
@@ -10578,11 +10561,20 @@
       "Import from": [
         "Importovať z"
       ],
+      "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
+        "Import z ${ accounts } je dočasne pozastavený kvôli obmedzeniu šírky pásma.",
+        "Importy z ${ accounts } sú dočasne pozastavené kvôli obmedzeniu šírky pásma.",
+        "Importy z ${ accounts } sú dočasne pozastavené kvôli obmedzeniu šírky pásma.",
+        "Importy z ${ accounts } sú dočasne pozastavené kvôli obmedzeniu šírky pásma."
+      ],
       "Import in progress": [
         "Import prebieha"
       ],
       "Import mailbox": [
         "Importovať poštovú schránku"
+      ],
+      "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
+        "Importujte jednorazové prenesenie emailov, kalendárov alebo kontaktov do vášho účtu ${ BRAND_NAME }."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "DÔLEŽITÉ: Ak vaša DNS konzola neumožňuje, aby hodnoty CNAME končili bodkou, môžete poslednú bodku v hodnotách CNAME odstrániť."
@@ -10956,9 +10948,6 @@
       "No Gateways yet": [
         "Zatiaľ žiadne brány"
       ],
-      "No imports or forwarding history.": [
-        "Bez histórie importov alebo preposielania."
-      ],
       "No label selected": [
         "Nie je vybratý žiadny štítok"
       ],
@@ -11006,9 +10995,6 @@
       ],
       "Once you reset your password:": [
         "Po resete vašeho hesla:"
-      ],
-      "One time import": [
-        "Jednorazový import"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Tieto nastavenia zmeňte len vtedy, ak používate PGP s príjemcami, ktorí nepoužívajú ${ BRAND_NAME }."
@@ -11187,6 +11173,9 @@
       "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
         "Otvorte nastavenia rozšírenia prehliadača a povoľte rozšíreniu ${ PASS_APP_NAME } prístup k údajom webovej stránky. Potom znovu načítajte túto stránku."
       ],
+      "Please reconnect to continue.": [
+        "Pre pokračovanie sa znovu pripojte, prosím."
+      ],
       "Please select the folders you would like to import:": [
         "Vyberte priečinky, ktoré chcete importovať:"
       ],
@@ -11261,9 +11250,6 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Verejné zdieľanie dokumentov zatiaľ nie je podporované."
-      ],
-      "purchase additional storage": [
-        "zakúpiť rozšírenie úložiska"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Obráťte sa na nás, ak potrebujete pomoc s čímkoľvek od ${ BRAND_NAME }."
@@ -11388,9 +11374,6 @@
       "Select users to view their activity": [
         "Vyberte používateľov na zobrazenie ich aktivity"
       ],
-      "Select what you want to import.": [
-        "Vyberte čo chcete importovať."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vyberte, ktoré kalendáre chcete importovať. Pre každý importovaný kalendár sa vytvorí nový kalendár podľa počtu kalendárov dostupných vo vašom pláne."
       ],
@@ -11426,9 +11409,6 @@
       ],
       "Set password": [
         "Nastaviť heslo"
-      ],
-      "Set up forwarding": [
-        "Nastaviť preposielanie"
       ],
       "Set up your organization": [
         "Nastavte svoju organizáciu"
@@ -11633,6 +11613,9 @@
       ],
       "Thanks for the feedback!": [
         "Ďakujeme za spätnú väzbu!"
+      ],
+      "The ${ bandwidthLimitLink } was reached. We'll automatically resume it once it resets.": [
+        "Bol dosiahnutý limit šírky pásma ${ bandwidthLimitLink }. Po jeho vynulovaní službu automaticky obnovíme."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Správa ${ boldDataLocked } sa už nebude zobrazovať, no svoje údaje môžete stále odomknúť pomocou ${ encryptionAndKeysLink }."
@@ -12372,9 +12355,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Môžete získať naše prémiové služby ochrany súkromia v jednom balíčku — a to len za **${ priceString }/mesačne**."
       ],
-      "You can import one data type at a time.": [
-        "Importovať môžete vždy jeden typ údajov."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Môžete mať až ${ MAX_CALENDARS_FREE } kalendár. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
         "Môžete mať až ${ MAX_CALENDARS_FREE } kalendáre. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
@@ -12599,12 +12579,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Vaša bezplatná skúšobná verzia bola úspešne konvertovaná na mesačné predplatné. Váš dátum obnovenia je ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Váš import z ${ accounts } je dočasne oneskorený.",
-        "Váš import z ${ accounts } je dočasne oneskorený.",
-        "Váš import z ${ accounts } je dočasne oneskorený.",
-        "Váš import z ${ accounts } je dočasne oneskorený."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vaše informácie sú u nás v bezpečí. Budeme vás kontaktovať len vtedy, keď to bude potrebné na poskytovanie našich služieb."
@@ -13585,9 +13559,6 @@
       "Calendar": [
         "Kalendár"
       ],
-      "Calendars": [
-        "Kalendáre"
-      ],
       "Capitalize words": [
         "Slová veľkými písmenami"
       ],
@@ -13839,9 +13810,6 @@
       ],
       "Email or username": [
         "Email alebo používateľské meno"
-      ],
-      "Emails": [
-        "Emaily"
       ],
       "Emails (all messages)": [
         "Emaily (všetky správy)"
@@ -18647,6 +18615,9 @@
       "VAT number": [
         "DIČ"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Uplatňuje sa mechanizmus prenesenia daňovej povinnosti."
+      ],
       "You already have a subscription to this plan.": [
         "Tento plán už máte predplatený."
       ],
@@ -23374,6 +23345,9 @@
       "Check your default mail application": [
         "Skontrolovať predvolenú poštovú aplikáciu"
       ],
+      "Choose a provider": [
+        "Vyberte poskytovateľa"
+      ],
       "Choose an account": [
         "Vybrať účet"
       ],
@@ -23502,6 +23476,9 @@
       ],
       "Currency": [
         "Mena"
+      ],
+      "Custom": [
+        "Vlastné"
       ],
       "Custom domains:": [
         "Vlastné domény:"
@@ -23842,6 +23819,9 @@
       "Forward emails": [
         "Preposielať emaily"
       ],
+      "Forwardings": [
+        "Preposielania"
+      ],
       "Free": [
         "Free"
       ],
@@ -23929,9 +23909,6 @@
       "Help center": [
         "Centrum pomoci"
       ],
-      "History": [
-        "História"
-      ],
       "Home": [
         "Domov"
       ],
@@ -23982,6 +23959,12 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Import cez ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importujte svoje dáta do ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Importy"
       ],
       "Inactive 2FA": [
         "Neaktívne 2FA"
@@ -24358,6 +24341,9 @@
       "Select contact group": [
         "Vybrať skupinu kontaktov"
       ],
+      "Select data to import": [
+        "Vyberte dáta na import"
+      ],
       "Select the time to send this notification": [
         "Vyberte čas na odoslanie tejto notifikácie"
       ],
@@ -24685,9 +24671,6 @@
       "What is the dark web?": [
         "Čo je dark web?"
       ],
-      "What would you like to import?": [
-        "Čo by ste chceli importovať?"
-      ],
       "Wipe all logs?": [
         "Vymazať všetky záznamy?"
       ],
@@ -24765,20 +24748,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Akcia"
-      ],
-      "Date": [
-        "Dátum"
-      ],
-      "Import": [
-        "Importovať"
-      ],
       "Size": [
         "Veľkosť"
-      ],
-      "Status": [
-        "Stav"
       ]
     },
     "Title header for addresses domain table": {
@@ -25949,7 +25920,7 @@
       "You will lose any customization you made so far.": [
         "Prídete o zmeny, ktoré ste doteraz vykonali."
       ],
-      "You will not see this import record in the list any more.": [
+      "You will not see this import record in the list anymore.": [
         "Tento záznam o importe už v zozname neuvidíte."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [

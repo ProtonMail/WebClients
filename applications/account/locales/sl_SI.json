@@ -13,20 +13,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Izbriši posredovano"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Posredovanje se bo kmalu začelo. V e-poštnem predalu se vam bodo pojavila nova sporočila."
       ],
       "Mail forward stopped": [
         "Posredovanje pošte ustavljeno"
-      ],
-      "Reconnect": [
-        "Ponovno vzpostavi povezavo"
-      ],
-      "Remove forward": [
-        "Odstrani posredovano"
       ],
       "You will stop the mail forwarding.": [
         "Prenehali boste s posredovanjem pošte."
@@ -754,15 +745,6 @@
       ],
       "Import": [
         "Uvoz"
-      ],
-      "Import calendars": [
-        "Uvoz koledarjev"
-      ],
-      "Import contacts": [
-        "Uvozite stike"
-      ],
-      "Import emails": [
-        "Uvoz e-poštnih sporočil"
       ],
       "Import emails, calendars, contacts": [
         "Uvozi e-pošto, koledarje, stike"
@@ -2557,6 +2539,9 @@
       "Access to advanced AI models": [
         "Dostop do naprednih modelov UI"
       ],
+      "Basic chat history": [
+        "Osnovna zgodovina klepeta"
+      ],
       "Built and based in Europe": [
         "Zgrajeno in s sedežem v Evropi"
       ],
@@ -2568,6 +2553,9 @@
       ],
       "Large file upload support": [
         "Podpora za nalaganje velikih datotek"
+      ],
+      "Unlimited daily chats": [
+        "Neomejeni dnevni klepeti"
       ]
     },
     "collider_2025: Info": {
@@ -4369,6 +4357,9 @@
     "Duo offer: Link": {
       "Get 4x more storage": [
         "Pridobite 4x več prostora za shranjevanje"
+      ],
+      "Share your plan": [
+        "Svoj paket daj v skupno rabo"
       ]
     },
     "Duo offer: Title": {
@@ -7169,31 +7160,6 @@
         "Izberite ${ boldExport } za izvoz koledarja kot datoteko ICS."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Uvoz iz ${ provider }"
-      ],
-      "Import from Google": [
-        "Uvoz iz Googlovega računa"
-      ],
-      "Import from other": [
-        "Uvoz iz drugega"
-      ],
-      "Import from Outlook": [
-        "Uvoz iz Outlooka"
-      ],
-      "Import from Yahoo": [
-        "Uvoz iz Yahoo"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Razveljavitev končana."
-      ],
-      "Undo in progress": [
-        "Razveljavitev poteka"
-      ]
-    },
     "Import status": {
       "Active": [
         "Aktivno"
@@ -7201,26 +7167,14 @@
       "Canceled": [
         "Preklicano"
       ],
-      "Canceling": [
-        "Preklicujem"
-      ],
-      "Completed": [
-        "Zaključeno"
-      ],
       "Delayed": [
         "Odloženo"
       ],
       "Failed": [
         "Neuspešno"
       ],
-      "In progress": [
-        "V teku"
-      ],
       "Paused": [
         "Začasno zaustavljeno"
-      ],
-      "Started": [
-        "Začeto"
       ]
     },
     "Import type": {
@@ -7267,17 +7221,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } vaših podatkov nikoli ne deli s tretjimi osebami. Podatki izvirajo iz lastnih analiz družbe ${ BRAND_NAME } in družbe Constella Intelligence."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } je začasno ustavil uvoz, ker je izgubil povezavo z vašim drugim ponudnikom e-pošte. Prosimo, znova vzpostavite povezavo."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } je ustavil uvoz, ker v vašem računu zmanjkuje prostora. Lahko:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Pomočnik pri pisanju ${ BRAND_NAME } Scribe"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } bo poskusil nadaljevati z uvozom, takoj ko vaš ponudnik e-pošte ponastavi ${ bandwidthLimitLink } v vašem računu. Ni vam treba ničesar storiti. Če prekličete uvoz, ga ne boste mogli nadaljevati in boste morali začeti znova."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ova tehnologija šifriranja pomeni, da nihče nima dostopa do vašega gesla – niti mi ne."
@@ -7777,9 +7722,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Okrepite prepoznavnost blagovne znamke vaše organizacije in ustvarite doslednejšo spletno izkušnjo za svoje uporabnike."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Prenesite svoja sporočila, stike in koledarje v storitev ${ BRAND_NAME }"
-      ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Z onemogočanjem nadzora nad računom boste izbrisali tudi celotno zgodovino. Ali ste prepričani, da želite to onemogočiti?"
       ],
@@ -8224,14 +8166,8 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Za uporabnike, ki prehajajo na ${ MAIL_APP_NAME } iz druge e-poštne storitve, izberite zavihek ${ boldAddresses } in dodajte vse aktivne e-poštne naslove, preden spremenite zapis MX, da zagotovite nemoten prenos."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Posredujte dohodno pošto iz drugega računa v vaš varni ${ MAIL_APP_NAME } nabiralnik."
-      ],
       "Free forever": [
         "Brezplačno za vedno."
-      ],
-      "free up space by deleting older messages or other data": [
-        "sprostite prostor tako, da izbrišete starejša sporočila ali druge podatke"
       ],
       "Friends and family": [
         "Prijatelji in družina"
@@ -8656,9 +8592,6 @@
       "No Gateways yet": [
         "Še ni prehodov"
       ],
-      "No imports or forwarding history.": [
-        "Ni uvoza ali zgodovine posredovanja."
-      ],
       "No label selected": [
         "Izbrana ni nobena oznaka"
       ],
@@ -8694,9 +8627,6 @@
       ],
       "Once you reset your password:": [
         "Ko ponovno nastavite geslo:"
-      ],
-      "One time import": [
-        "Enkraten uvoz"
       ],
       "Open source": [
         "Odprtokoden"
@@ -8899,9 +8829,6 @@
       "Public link invite": [
         "Javno povabilo prek povezave."
       ],
-      "purchase additional storage": [
-        "kupite dodatni prostor za shranjevanje"
-      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Za pomoč pri vsem, kar je povezano z ${ BRAND_NAME }, se obrnite na nas."
       ],
@@ -9001,9 +8928,6 @@
       "Securing your account": [
         "Zavarovanje vašega računa"
       ],
-      "Select what you want to import.": [
-        "Izberite, kaj želite uvoziti."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Izberite, katere koledarje želite uvoziti. Za vsak uvoženi koledar bo ustvarjen nov koledar, odvisno od števila koledarjev, na voljo v vašem naročniškem paketu."
       ],
@@ -9039,9 +8963,6 @@
       ],
       "Set password": [
         "Nastavi geslo"
-      ],
-      "Set up forwarding": [
-        "Nastavi posredovanje pošte"
       ],
       "Set up your organization": [
         "Nastavite svojo organizacijo"
@@ -9781,9 +9702,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "To lahko uredite takrat, ko zagotovite pravilen e-poštni naslov za preverjanje."
       ],
-      "You can import one data type at a time.": [
-        "Uvažate lahko eno vrsto podatkov naenkrat."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Lahko obdržite do ${ MAX_CALENDARS_FREE } koledar. Preden prekličete naročnino na ${ MAIL_SHORT_APP_NAME }, prosimo odstranite deljene povezave do koledarjev in uporabnike storitve ${ BRAND_NAME }, s katerimi ste delili svoje koledarje.",
         "Lahko obdržite do ${ MAX_CALENDARS_FREE } koledarja. Preden prekličete naročnino na ${ MAIL_SHORT_APP_NAME }, prosimo odstranite deljene povezave do koledarjev in uporabnike storitve ${ BRAND_NAME }, s katerimi ste delili svoje koledarje.",
@@ -9945,12 +9863,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Vaš brezplačen poskus je bil uspešno pretvorjen v mesečno naročnino. Datum podaljšanja je ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Vaš uvoz iz ${ accounts } je začasno prestavljen.",
-        "Vaš uvoz iz ${ accounts } je začasno prestavljen.",
-        "Vaš uvoz iz ${ accounts } je začasno prestavljen.",
-        "Vaš uvoz iz ${ accounts } je začasno prestavljen."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vaši podatki so varni pri nas. Na vas se bomo obrnili le, ko bo to potrebno za izvajanje naših storitev."
@@ -10691,9 +10603,6 @@
       "Calendar": [
         "Koledar"
       ],
-      "Calendars": [
-        "Koledarje"
-      ],
       "Card details": [
         "Podatki o kartici"
       ],
@@ -10907,9 +10816,6 @@
       "Email or username": [
         "E-pošta ali uporabniško ime"
       ],
-      "Emails": [
-        "E-pošto"
-      ],
       "Emails (all messages)": [
         "E-pošto (vsa sporočila)"
       ],
@@ -10999,6 +10905,9 @@
       ],
       "Go to Forums": [
         "Obišči forume"
+      ],
+      "Go to Promotions": [
+        "Pojdite na Promocije"
       ],
       "Group address": [
         "Naslov skupine"
@@ -12192,6 +12101,12 @@
         "${ n } sestanka hkrati",
         "${ n } sestanki hkrati",
         "${ n } sestankov hkrati"
+      ],
+      "${ n } participant": [
+        "${ n } udeleženec",
+        "${ n } udeleženca",
+        "${ n } udeleženci",
+        "${ n } udeleženci"
       ],
       "24 hours per meeting": [
         "24 ur na sestanek"
@@ -14912,6 +14827,9 @@
       ],
       "VAT number": [
         "DDV številka"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Mehanizem DDV povratnega plačila velja."
       ],
       "You already have a subscription to this plan.": [
         "Na ta paket ste že naročeni."
@@ -18833,9 +18751,6 @@
       "Help center": [
         "Središče za pomoč"
       ],
-      "History": [
-        "Zgodovina"
-      ],
       "Home": [
         "Začetek"
       ],
@@ -19469,9 +19384,6 @@
       "What is the dark web?": [
         "Kaj je temni splet (Dark Web)?"
       ],
-      "What would you like to import?": [
-        "Kaj želite uvoziti?"
-      ],
       "WireGuard configuration": [
         "WireGuard nastavitev"
       ],
@@ -19540,20 +19452,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Dejanja"
-      ],
-      "Date": [
-        "Datum"
-      ],
-      "Import": [
-        "Uvoz"
-      ],
       "Size": [
         "Velikost"
-      ],
-      "Status": [
-        "Stanje"
       ]
     },
     "Title header for addresses domain table": {
@@ -20329,9 +20229,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Izgubili boste vse prilagoditve, ki ste jih doslej naredili."
-      ],
-      "You will not see this import record in the list any more.": [
-        "Tega zapisa uvoza na seznamu ne boste več videli."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Vaše brezplačno preizkusno obdobje se konča dne ${ textDate }. ${ action }"

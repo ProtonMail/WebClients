@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Smazat přeposílání"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Přeposílání bude brzy zahájeno. Nové e-maily se zobrazí ve vaší schránce."
       ],
       "Mail forward stopped": [
         "Přeposílání e-mailů bylo zastaveno"
-      ],
-      "Reconnect": [
-        "Znovu připojit"
-      ],
-      "Remove forward": [
-        "Odebrat přeposílání"
       ],
       "You will stop the mail forwarding.": [
         "Zastavíte přeposílání e-mailů."
@@ -869,15 +860,6 @@
       ],
       "Import": [
         "Importovat"
-      ],
-      "Import calendars": [
-        "Importovat kalendáře"
-      ],
-      "Import contacts": [
-        "Importovat kontakty"
-      ],
-      "Import emails": [
-        "Importovat e-maily"
       ],
       "Import emails, calendars, contacts": [
         "Importovat e-maily, kalendáře a kontakty"
@@ -6540,6 +6522,9 @@
       "Enter 6 digits": [
         "Zadejte 6 číslic"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Zadejte své uživatelské jméno bez domény (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování k Bitcoin API."
       ],
@@ -8894,31 +8879,6 @@
         "Opravdu chcete importovat soukromý klíč? Import nezabezpečeně vygenerovaného nebo uniklého soukromého klíče může poškodit zabezpečení vašich e-mailů.\n\nUpozorňujeme také, že veřejný klíč, odpovídající tomuto soukromému klíči, bude veřejně dostupný na našem serveru klíčů. Pokud klíč obsahuje osobní údaje (jako je vaše celé jméno), které nechcete zveřejnit, před importem klíč upravte."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Importovat z ${ provider }"
-      ],
-      "Import from Google": [
-        "Importovat z Google"
-      ],
-      "Import from other": [
-        "Importovat z jiných"
-      ],
-      "Import from Outlook": [
-        "Importovat z Outlooku"
-      ],
-      "Import from Yahoo": [
-        "Importovat z Yahoo!"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Vzetí zpět dokončeno"
-      ],
-      "Undo in progress": [
-        "Vzetí zpět probíhá"
-      ]
-    },
     "Import status": {
       "Active": [
         "Aktivní"
@@ -8926,26 +8886,14 @@
       "Canceled": [
         "Zrušeno"
       ],
-      "Canceling": [
-        "Ruší se"
-      ],
-      "Completed": [
-        "Dokončeno"
-      ],
       "Delayed": [
         "Zpožděno"
       ],
       "Failed": [
         "Selhalo"
       ],
-      "In progress": [
-        "Probíhá"
-      ],
       "Paused": [
         "Pozastaveno"
-      ],
-      "Started": [
-        "Zahájeno"
       ]
     },
     "Import type": {
@@ -9009,17 +8957,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } nikdy nesdílí vaše informace s třetími stranami. Data pocházejí z vlastních analýz ${ BRAND_NAME } a Constella Intelligence."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } pozastavil import, protože ztratil spojení se vzdáleným e-mailovým serverem. Prosím znovu se připojte."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } pozastavil import, protože na vašem účtu je málo volného místa. Můžete:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent psaní ${ BRAND_NAME } Scribe"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } se pokusí pokračovat v importu, jakmile váš poskytovatel e-mailu obnoví ${ bandwidthLimitLink }. Nemusíte nic dělat. Pokud zrušíte import, nebudete jej moci obnovit a budete muset začít znovu."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Díky šifrovací technologii ${ BRAND_NAME } se k vašemu heslu nikdo nedostane - ani my ne."
@@ -9708,9 +9647,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Zlepšete identitu značky své organizace a vytvořte konzistentnější online prostředí pro své uživatele."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Přeneste své zprávy, kontakty a kalendáře do ${ BRAND_NAME }."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Vytvořením účtu ${ PASS_APP_NAME } s vaším e-mailem SimpleLogin můžete spravovat své aliasy přímo z ${ PASS_APP_NAME }."
       ],
@@ -10257,17 +10193,11 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pro uživatele, kteří přecházejí na ${ MAIL_APP_NAME } z jiné e-mailové služby, vyberte kartu ${ boldAddresses } a před změnou záznamu MX přidejte všechny aktivní e-mailové adresy, aby byl zajištěn plynulý přechod."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Přepošlete příchozí mail z jiného účtu do vaší bezpečné ${ MAIL_APP_NAME } schránky."
-      ],
       "Free forever": [
         "Navždy zdarma"
       ],
       "Free trial": [
         "Bezplatná zkušební verze"
-      ],
-      "free up space by deleting older messages or other data": [
-        "uvolněte úložiště smazáním starých zpráv nebo jiných dat"
       ],
       "Gateway monitor": [
         "Monitorování brány"
@@ -10809,9 +10739,6 @@
       "No Gateways yet": [
         "Zatím žádné brány"
       ],
-      "No imports or forwarding history.": [
-        "Žádná historie importů ani přeposílání."
-      ],
       "No label selected": [
         "Není vybrán žádný štítek"
       ],
@@ -10859,9 +10786,6 @@
       ],
       "Once you reset your password:": [
         "Po resetu vašeho hesla:"
-      ],
-      "One time import": [
-        "Jednorázový import"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ${ BRAND_NAME }."
@@ -11100,9 +11024,6 @@
       "Public sharing of documents is not yet supported.": [
         "Veřejné sdílení dokumentů ještě není podporováno."
       ],
-      "purchase additional storage": [
-        "nákup dalšího úložiště"
-      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Obraťte se na nás pro pomoc s čímkoli od ${ BRAND_NAME }"
       ],
@@ -11223,9 +11144,6 @@
       "Select users to view their activity": [
         "Vyberte uživatele k zobrazení jejich aktivity"
       ],
-      "Select what you want to import.": [
-        "Vyberte co chcete importovat."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář podle počtu kalendářů dostupných v tarifu."
       ],
@@ -11261,9 +11179,6 @@
       ],
       "Set password": [
         "Nastavte heslo"
-      ],
-      "Set up forwarding": [
-        "Nastavit přeposílání"
       ],
       "Set up your organization": [
         "Nastavte svou organizaci"
@@ -12177,9 +12092,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Naše prémiové služby ochrany soukromí můžete získat v jednom balíčku—a to za pouhých **${ priceString }/měsíc**."
       ],
-      "You can import one data type at a time.": [
-        "Importovat můžete vždy jeden typ dat."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendář. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli.",
         "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendáře. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli.",
@@ -12392,12 +12304,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Vaše bezplatná zkušební verze byla úspěšně převedena na měsíční předplatné. Datum obnovení je ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Váš import z ${ accounts } je dočasně opožděn.",
-        "Vaše importy z ${ accounts } jsou dočasně opožděny.",
-        "Vaše importy z ${ accounts } jsou dočasně opožděny.",
-        "Vaše importy z ${ accounts } jsou dočasně opožděny."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vaše informace jsou u nás v bezpečí. Budeme vás kontaktovat pouze v případě, že to bude nutné pro poskytování našich služeb."
@@ -13372,9 +13278,6 @@
       "Calendar": [
         "Kalendář"
       ],
-      "Calendars": [
-        "Kalendáře"
-      ],
       "Capitalize words": [
         "Slova s velkými prvními písmeny"
       ],
@@ -13623,9 +13526,6 @@
       ],
       "Email or username": [
         "E-mail nebo uživatelské jméno"
-      ],
-      "Emails": [
-        "E-maily"
       ],
       "Emails (all messages)": [
         "E-maily (všechny zprávy)"
@@ -23767,9 +23667,6 @@
       "Help center": [
         "Centrum podpory"
       ],
-      "History": [
-        "Historie"
-      ],
       "Home": [
         "Domovská stránka"
       ],
@@ -24514,9 +24411,6 @@
       "What is the dark web?": [
         "Co je dark web?"
       ],
-      "What would you like to import?": [
-        "Co byste chtěli importovat?"
-      ],
       "Wipe all logs?": [
         "Smazat všechny logy?"
       ],
@@ -24594,20 +24488,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Akce"
-      ],
-      "Date": [
-        "Datum"
-      ],
-      "Import": [
-        "Importovat"
-      ],
       "Size": [
         "Velikost"
-      ],
-      "Status": [
-        "Stav"
       ]
     },
     "Title header for addresses domain table": {
@@ -25768,9 +25650,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Přijdete o změny, které jste doposud provedli."
-      ],
-      "You will not see this import record in the list any more.": [
-        "Tento záznam o importu již v seznamu neuvidíte."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Bezplatná zkušební verze končí ${ textDate }. ${ action }"

@@ -13,20 +13,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Видалити пересилання"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Незабаром розпочнеться пересилання. Нові листи з'являться у вашій поштовій скриньці."
       ],
       "Mail forward stopped": [
         "Пересилання пошти зупинено"
-      ],
-      "Reconnect": [
-        "Перез'єднати"
-      ],
-      "Remove forward": [
-        "Вилучити пересилання"
       ],
       "You will stop the mail forwarding.": [
         "Ви зупините пересилання пошти."
@@ -619,15 +610,6 @@
       ],
       "Import": [
         "Імпортувати"
-      ],
-      "Import calendars": [
-        "Імпортувати календарі"
-      ],
-      "Import contacts": [
-        "Імпортувати контакти"
-      ],
-      "Import emails": [
-        "Імпортувати електронну пошту"
       ],
       "Import from Google": [
         "Імпортувати з Google"
@@ -5983,25 +5965,6 @@
         "Виберіть ${ boldExport }, щоб експортувати календар як файл ICS."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Імпорт з ${ provider }"
-      ],
-      "Import from Google": [
-        "Імпортувати з Google"
-      ],
-      "Import from Outlook": [
-        "Імпортувати з Outlook"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Скасування завершено"
-      ],
-      "Undo in progress": [
-        "Скасовується"
-      ]
-    },
     "Import status": {
       "Active": [
         "Активно"
@@ -6009,26 +5972,14 @@
       "Canceled": [
         "Скасовано"
       ],
-      "Canceling": [
-        "Скасування"
-      ],
-      "Completed": [
-        "Завершено"
-      ],
       "Delayed": [
         "Затримано"
       ],
       "Failed": [
         "Не вдалося"
       ],
-      "In progress": [
-        "Виконується"
-      ],
       "Paused": [
         "Зупинено"
-      ],
-      "Started": [
-        "Розпочато"
       ]
     },
     "Import type": {
@@ -6081,17 +6032,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } ніколи не передає вашу інформацію третім сторонам. Дані отримуються від ${ BRAND_NAME } та Constella Intelligence."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } призупинив імпортування через втрату з'єднання з вашим іншим провайдером електронної пошти. Будь ласка, повторіть з'єднання."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } призупинив імпортування, тому що у вашому обліковому записі вичерпується вільний простір. Ви можете:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Помічник у написанні ${ BRAND_NAME } Scribe"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } спробує відновити імпорт одразу, як ваш провайдер електронної пошти скине ${ bandwidthLimitLink } вашого облікового запису. Вам не потрібно нічого робити. Якщо ви скасуєте імпорт, то більше не зможете його продовжити й доведеться почати спочатку."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технологія шифрування ${ BRAND_NAME } гарантує неможливість доступу до вашого пароля, навіть для нас."
@@ -6966,14 +6908,8 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Користувачам, які переходять на ${ MAIL_APP_NAME } з інших сервісів електронної пошти, необхідно вибрати вкладку ${ boldAddresses } і додати всі активні адреси електронної пошти, перш ніж змінювати MX запис. Зробивши це, ви забезпечите безперебійний перехід."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Пересилайте вхідні повідомлення з іншого облікового запису до своєї захищеної поштової скриньки ${ MAIL_APP_NAME }."
-      ],
       "Free forever": [
         "Безплатно назавжди"
-      ],
-      "free up space by deleting older messages or other data": [
-        "звільнити простір, видаливши давніші повідомлення чи інші дані"
       ],
       "Gateways": [
         "Мережеві шлюзи"
@@ -7398,9 +7334,6 @@
       "No Gateways yet": [
         "Ще немає мережевих шлюзів"
       ],
-      "No imports or forwarding history.": [
-        "Немає історії імпортування чи пересилання."
-      ],
       "No label selected": [
         "Жодної мітки не вибрано"
       ],
@@ -7608,9 +7541,6 @@
       "Public sharing of documents is not yet supported.": [
         "Загальнодоступний обмін документами наразі не підтримується."
       ],
-      "purchase additional storage": [
-        "придбати додатковий простір"
-      ],
       "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
         "Отримайте ваучер на резервування електронною поштою. Ви або дитина можете використати його для активації адреси протягом наступних 15 років. ${ learnMoreLink }"
       ],
@@ -7713,9 +7643,6 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Виберіть приналежності користувачів з ${ getFormattedOrganization }, яким ви хочете дозволити доступ до вашої організації ${ BRAND_NAME }:"
       ],
-      "Select what you want to import.": [
-        "Виберіть, що ви хочете імпортувати."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар згідно з кількістю календарів, доступною у вашому тарифному плані."
       ],
@@ -7745,9 +7672,6 @@
       ],
       "Set password": [
         "Встановити пароль"
-      ],
-      "Set up forwarding": [
-        "Налаштувати пересилання"
       ],
       "Set up your organization": [
         "Налаштуйте свою організацію"
@@ -8445,9 +8369,6 @@
       "You can enable the Photos section from the interface using the toggle below.": [
         "Ви можете увімкнути розділ Фотографії з інтерфейсу за допомогою перемикача нижче."
       ],
-      "You can import one data type at a time.": [
-        "Ви можете імпортувати один тип даних за один раз."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
         "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
@@ -8597,12 +8518,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Ваші файли буде зашифровано, а потім збережено"
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Ваше імпортування з ${ accounts } тимчасово затримано.",
-        "Ваші імпортування з ${ accounts } тимчасово затримано.",
-        "Ваші імпортування з ${ accounts } тимчасово затримано.",
-        "Ваші імпортування з ${ accounts } тимчасово затримано."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Ваша інформація в безпеці з нами. Ми зв'яжемося з вами лише тоді, коли це буде необхідно для надання наших послуг."
@@ -9235,9 +9150,6 @@
       "Calendar": [
         "Календар"
       ],
-      "Calendars": [
-        "Календарі"
-      ],
       "Card details": [
         "Подробиці картки"
       ],
@@ -9426,9 +9338,6 @@
       ],
       "Email or username": [
         "Е-пошта чи ім'я користувача"
-      ],
-      "Emails": [
-        "Листи"
       ],
       "Emails (all messages)": [
         "Е-пошта (усі повідомлення)"
@@ -16681,9 +16590,6 @@
       "Help center": [
         "Довідковий центр"
       ],
-      "History": [
-        "Історія"
-      ],
       "Home": [
         "Дім"
       ],
@@ -17251,9 +17157,6 @@
       "What is the dark web?": [
         "Що таке dark web?"
       ],
-      "What would you like to import?": [
-        "Що ви бажаєте імпортувати?"
-      ],
       "WireGuard configuration": [
         "Конфігурація WireGuard"
       ],
@@ -17313,20 +17216,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Дії"
-      ],
-      "Date": [
-        "Дата"
-      ],
-      "Import": [
-        "Імпорт"
-      ],
       "Size": [
         "Розмір"
-      ],
-      "Status": [
-        "Стан"
       ]
     },
     "Title header for addresses domain table": {
@@ -18137,9 +18028,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Ви втратите будь-які попередні налаштування."
-      ],
-      "You will not see this import record in the list any more.": [
-        "Ви більше не побачите цей запис імпорту в списку."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Час безплатної пробної версії завершиться ${ textDate }. ${ action }"

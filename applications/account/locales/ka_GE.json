@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "წინ წაშლა"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "გადაგზავნა მალე დაიწყება. თქვენს საფოსტო ყუთში ახალი ელფოსტები გამოჩნდება."
       ],
       "Mail forward stopped": [
         "ფოსტის გაგზავნა შეჩერდა"
-      ],
-      "Reconnect": [
-        "თავიდან დაკავშირება"
-      ],
-      "Remove forward": [
-        "წინ წაშლა"
       ],
       "You will stop the mail forwarding.": [
         "გააჩერებთ ელფოსტის გადაგზავნას."
@@ -285,6 +276,9 @@
       "Close navigation": [
         "ნავიგაციის დახურვა"
       ],
+      "Close search": [
+        "ძებნის დახურვა"
+      ],
       "Close tab": [
         "ჩანართის დახურვა"
       ],
@@ -467,6 +461,9 @@
       ],
       "Delete filter “${ Name }”": [
         "ფილტრის \"${ Name }\" წაშლა"
+      ],
+      "Delete forward": [
+        "გადაგზავნის წაშლა"
       ],
       "Delete Gateway": [
         "რაუტერის წაშლა"
@@ -855,6 +852,9 @@
       "Go to settings": [
         "მორგებაზე გადასვლა"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "გავიგე"
       ],
@@ -881,15 +881,6 @@
       ],
       "Import": [
         "შემოტანა"
-      ],
-      "Import calendars": [
-        "კალენდრების შემოტანა"
-      ],
-      "Import contacts": [
-        "კონტაქტების შემოტანა"
-      ],
-      "Import emails": [
-        "ელფოსტის შემოტანა"
       ],
       "Import emails, calendars, contacts": [
         "ელფოსტების, კალენდრების, კონტაქტების შემოტანა"
@@ -1173,6 +1164,9 @@
       "Reload": [
         "თავიდან ჩატვირთვა"
       ],
+      "Reload page": [
+        "გვერდის განახლება"
+      ],
       "Remove": [
         "წაშლა"
       ],
@@ -1193,6 +1187,9 @@
       ],
       "Remove domain": [
         "დომენის წაშლა"
+      ],
+      "Remove forward": [
+        "გადაგზავნის წაშლა"
       ],
       "Remove from favorites": [
         "წაშლა რჩეულებიდან"
@@ -1307,6 +1304,9 @@
       ],
       "Search countries": [
         "ქვეყნების ძებნა"
+      ],
+      "Search groups": [
+        "ჯგუფების ძებნა"
       ],
       "Search settings": [
         "ძებნის მორგება"
@@ -2633,6 +2633,9 @@
       "Change": [
         "შეცვლა"
       ],
+      "Completed": [
+        "დასრულებულია"
+      ],
       "Configure": [
         "მორგება"
       ],
@@ -2653,6 +2656,12 @@
       ],
       "Failed to load OAuth": [
         "OAuth-ის ჩატვირთვა ჩავარდა"
+      ],
+      "Has errors": [
+        "აქვს შეცდომები"
+      ],
+      "In progress": [
+        "მიმდინარეობს"
       ],
       "Install app": [
         "აპის დაყენება"
@@ -2685,6 +2694,9 @@
       "Migration status": [
         "მიგრაციის სტატუსი"
       ],
+      "Not started": [
+        "დაწყებული არაა"
+      ],
       "Organization does not have enough seats available": [
         "ორგანიზაციას საკმარისი თავისუფალი ადგილი არ აქვს"
       ],
@@ -2712,17 +2724,26 @@
       "Set up two-factor authentication": [
         "2FA-ის მორგება"
       ],
+      "Settings": [
+        "მორგება"
+      ],
       "Sign in to Google Workspace": [
         "შესვლა Google Workspace-ში"
       ],
       "Start migration": [
         "მიგრაციის დაწყება"
       ],
+      "Status": [
+        "სტატუსი"
+      ],
       "Transfer errors": [
         "გადაცემის შეცდომები"
       ],
       "User": [
         "მომხმარებელი"
+      ],
+      "Users migrated": [
+        "მომხმარებლები მიგრირებულია"
       ],
       "Verify installation": [
         "დაყენების გადამოწმება"
@@ -6316,6 +6337,9 @@
       "Invalid code": [
         "არასწორი კოდი"
       ],
+      "Invalid coupon": [
+        "არასწორი კუპონი"
+      ],
       "Invalid domain": [
         "არასწორი დომენი"
       ],
@@ -6345,6 +6369,9 @@
       ],
       "Invalid URL": [
         "არასწორი URL"
+      ],
+      "Invalid VAT number": [
+        "არასწორი დღგს ნომერი"
       ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
@@ -6637,6 +6664,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "ველი ${ maximumLength } დაშვებულ სიმბოლოს აჭარბებს."
       ],
+      "This field is invalid": [
+        "ეს ველი არასწორია"
+      ],
       "This field is required": [
         "ეს ველი აუცილებელია"
       ],
@@ -6708,6 +6738,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "DKIM ხელმოწერა შეწყვეტილია თქვენი DNS-ის კონფიგურაციის პრობლემების გამო. ხელმოწერის გასაგრძელებლად ქვემოთ მოყვანილ ინსტრუქციებს მიჰყევით."
+      ],
+      "Wrong billing address": [
+        "არასწორი გადახდის მისამართი"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "სცადეთ ხელახლა ან გამოიყენეთ აღდგენის სხვა მეთოდი."
@@ -8495,28 +8528,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "${ provider }-დან შემოტანა"
-      ],
-      "Import from Google": [
-        "Google-დან შემოტანა"
-      ],
-      "Import from other": [
-        "სხვა ადგილიდან შემოტანა"
-      ],
-      "Import from Outlook": [
-        "Outlook-დან შემოტანა"
-      ],
-      "Import from Yahoo": [
-        "yahoo-დან შემოტანა"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "დასრულებულის გაუქმება"
-      ],
-      "Undo in progress": [
-        "მიმდინარეობს გაუქმება"
+      "Advanced import": [
+        "გაფართოებული შემოტანა"
       ]
     },
     "Import status": {
@@ -8526,26 +8539,32 @@
       "Canceled": [
         "გაუქმებულია"
       ],
-      "Canceling": [
-        "გაუქმება"
-      ],
-      "Completed": [
-        "დასრულებულია"
+      "Canceling...": [
+        "გაუქმება..."
       ],
       "Delayed": [
         "დაყოვნებულია"
       ],
+      "Disabled": [
+        "გათიშული"
+      ],
       "Failed": [
         "წარუმატებელი"
       ],
-      "In progress": [
-        "მიმდინარეობს"
+      "Imported": [
+        "შემოტანილი"
+      ],
+      "In progress...": [
+        "მიმდინარეობს..."
       ],
       "Paused": [
         "შეჩერებული"
       ],
-      "Started": [
-        "გაშვებულია"
+      "Undo finished": [
+        "დასრულებულის გაუქმება"
+      ],
+      "Undo in progress": [
+        "მიმდინარეობს გაუქმება"
       ]
     },
     "Import type": {
@@ -8605,17 +8624,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } არასდროს უზიარებს ინფორმაციას თქვენს შესახებ მესამე პირებს. მონაცემების ${ BRAND_NAME }-ის საკუთარი ანალიზიდან და Constella Intelligence-დან."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME }-მა შეწყვიტა შემოტანა ელფოსტის თქვენს მომწოდებელთან კავშირის დაკარგვის გამო. თავიდან სცადეთ."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "თქვენს ანგარიშზე დარჩენილი ცოტა ადგილის გამო ${ BRAND_NAME }-მა შემოტანა შეწყვიტა. თქვენ შეგიძლიათ:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe წერის დამხმარე"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } სცდის, გააგრძელოს შემოტანა მაშინვე, როგორც კი თქვენი ელფოსტის სერვისის მომწოდებლის ${ bandwidthLimitLink } განულდება. თქვენ არაფრის გაკეთება არ გჭირდებათ. თუ შემოტანას გააუქმებთ, მას ვეღარ გააგრძელებთ და მოგიწევთ, ის თავიდან გაუშვათ."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ის დაშიფვრის ტექნოლოგია ნიშნავს, რომ თქვენს პაროლთან წვდომა არავის აქვს, ჩვენც კი."
@@ -8811,11 +8821,20 @@
       "(default)": [
         "(ნაგულისხმევი)"
       ],
+      "(eg. New York Times, BBC)": [
+        "(მაგ. New York Times, BBC)"
+      ],
+      "(eg. PCMag, TechRadar)": [
+        "(მაგ. PCMag, TechRadar)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(ფილტრაცია, თუ ყველა შემდეგი პირობა სრულდება)"
       ],
       "(Filter if ANY of the following conditions are met)": [
         "(ფილტრაცია, თუ შემდეგი პირობებიდან ერთი მაინც სრულდება)"
+      ],
+      "(formerly Twitter)": [
+        "(ყოფილი Twitter)"
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** მხარდაჭერილი არაა თქვენს ორგანიზაციაში **${ organizationName }**."
@@ -8960,6 +8979,9 @@
       "Affected user is on row": [
         "შეცვლადი მომხმარებელი არის ხაზზე",
         "შეცვლადი მომხმარებლები არიან ხაზზე"
+      ],
+      "AI chatbot": [
+        "AI ჩატბოტი"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
@@ -9192,9 +9214,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "გააძლიერეთ თქვენი ორგანიზაციის ბრენდინგი და შეექმენით უფრო ერთგვაროვანი გამოცდილება თქვენი მომხმარებლებისთვის."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "გადმოიტანეთ თქვენი შეტყობინებები, კონტაქტები და კალენდრები ${ BRAND_NAME }-ზე."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME }-ის ანგარიშის შექმნით თქვენს SimpleLogin-ის ელფოსტასთან ერთად, თქვენი ფსევდონიმების მართვა პირდაპირ ${ PASS_APP_NAME }-დან შეგიძლიათ."
       ],
@@ -9206,6 +9225,9 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "ამ კალენდრის მოვლენის სრული დეტალების გაზიარებით თქვენ ეთანხმებით იმას, რომ ${ BRAND_NAME }-ს მის დაშიფრულ შიგთავსთან წვდომა ეძლევა."
+      ],
+      "Cancel": [
+        "გაუქმება"
       ],
       "Cancel anytime": [
         "გააუქმეთ ნებისმიერ დროს"
@@ -9671,6 +9693,9 @@
       "Expires on ${ ExpMonth }/${ ExpYear }": [
         "ვადა იწურება ${ ExpMonth }/${ ExpYear }"
       ],
+      "Facebook": [
+        "Facebook"
+      ],
       "Failed to fetch logs.": [
         "ჟურნალის მოთხოვნის შეცდომა."
       ],
@@ -9716,17 +9741,14 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "მომხმარებლებისთვს, რომლებიც ${ MAIL_APP_NAME }-ზე სხვა ელფოსტის სერვისიდან გადმოდიან, აირჩიეთ ${ boldAddresses } ჩანართი და დაამატეთ ყველა აქტიური ელფოსტის მისამართი, სანამ MX ჩანაწერს შეცვლით, რათა შუაში ელფოსტა არ დაკარგოთ."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "შემომავალი ფოსტის გადამისამართება სხვა ანგარიშიდან თქვენს უსაფრთხო ${ MAIL_APP_NAME } შემოსულებში."
-      ],
       "Free forever": [
         "სამუდამოდ უფასო"
       ],
       "Free trial": [
         "უფასო საცდელი პერიოდი"
       ],
-      "free up space by deleting older messages or other data": [
-        "გაათავისუფლეთ ადგილი ძველი შეტყობინებებისა და სხვა მონაცემების წაშლით"
+      "Friends and family": [
+        "მეგობრები და ოჯახი"
       ],
       "Gateway deleted": [
         "რაუტერი წაიშალა"
@@ -9917,6 +9939,9 @@
       ],
       "Insert link": [
         "ბმულის ჩასმა"
+      ],
+      "Instagram": [
+        "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "მითითებულ ქვეყანაში შემთხვევით სერვერთან დასაკავშირებლად საჭიროა ქვეყნისთვის სპეციფიკური კონფიგურაციის ფაილის დაყენება."
@@ -10213,6 +10238,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "ახალი VPN მიერთების მონაცემების შეგროვებას და ჩვენებას შევწყვეტთ."
       ],
+      "News or media article": [
+        "ახალი ამბების ან მედიის სტატია"
+      ],
       "Next billing date": [
         "შემდეგი გადახდის თარიღი"
       ],
@@ -10239,9 +10267,6 @@
       ],
       "No Gateways yet": [
         "რაუტერების გარეშე"
-      ],
-      "No imports or forwarding history.": [
-        "შემოტანის ან გადაგზავნის ისტორიის გარეშე."
       ],
       "No label selected": [
         "ჭდე მონიშნული არაა"
@@ -10291,9 +10316,6 @@
       "Once you reset your password:": [
         "როცა პაროლს შეცვლით:"
       ],
-      "One time import": [
-        "ერთჯერადი შემოტანა"
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "პარამეტრებები, მხოლოდ, მაშინ შეცვალეთ, თუ თქვენ იყენებთ PGP-ს არა${ BRAND_NAME }-ის მიმღებებით."
       ],
@@ -10337,6 +10359,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "დაალაგეთ თქვენი გამოყოფილი სერვერები რაუტერებში და გადაწყვიტეთ, რომელ წევრს აქვს მასთან წვდომა."
+      ],
+      "Other": [
+        "სხვა"
       ],
       "Other accounts": [
         "სხვა ანგარიშები"
@@ -10457,6 +10482,9 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "აირჩიეთ ჩასასმელი ბმულის ტიპი და შეავსეთ ყველა ველი."
       ],
+      "Please specify...": [
+        "მიუთითეთ..."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "ან თავიდან სცადეთ, ან გადახდის სხვა საშუალება გამოიყენეთ, ან დაუკავშირდით თქვენს ბანკს."
       ],
@@ -10474,6 +10502,9 @@
       ],
       "Plus or Visionary subscription required": [
         "საჭიროა Plus ან Visionary გამოწერა"
+      ],
+      "Podcast": [
+        "პოდკასტი"
       ],
       "Preference saved": [
         "პარამეტრები შენახულია"
@@ -10517,9 +10548,6 @@
       "Public sharing of documents is not yet supported.": [
         "დოკუმენტების საჯაროდ გაზიარება ჯერ მხარდაჭერილი არაა."
       ],
-      "purchase additional storage": [
-        "დამატებითი საცავის შეძენა"
-      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "გამოაღწიეთ ჩვენამდე, თუ ${ BRAND_NAME }-ის შესახებ ნებისმიერი კითხვა გაგიჩნდათ."
       ],
@@ -10558,6 +10586,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "აღდგენის ფრაზა არცერთ ვადაგასულ გასაღებზე არაა მიბმული."
+      ],
+      "Reddit": [
+        "Reddit"
       ],
       "Referral link copied to your clipboard": [
         "ბმის ბმული დაკოპირდა ბაფერში"
@@ -10640,9 +10671,6 @@
       "Select users to view their activity": [
         "აირჩიეთ მომხმარებლები მატი აქტივობების სანახავად"
       ],
-      "Select what you want to import.": [
-        "მონიშნეთ, რისი შემოტანაც გნებავთ."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "აირჩიეთ რომელი კალენდრები შემოტანა. ყოველი შემოტანილი კალენდრისთვის შეიქმნება ახალი კალენდარი თქვენს გეგმაში არსებული კალენდრების რაოდენობის მიხედვით."
       ],
@@ -10678,9 +10706,6 @@
       ],
       "Set password": [
         "პაროლის დაყენება"
-      ],
-      "Set up forwarding": [
-        "გადაგზავნის მორგება"
       ],
       "Set up your organization": [
         "მოირგეთ თქვენი ორგანიზაცია"
@@ -10774,6 +10799,12 @@
       "Step ${ step }/${ totalSteps }": [
         "ნაბიჯი ${ step } / ${ totalSteps }-დან"
       ],
+      "Step 1 of 2": [
+        "ნაბიჯი 1 2-დან"
+      ],
+      "Step 2 of 2": [
+        "ნაბიჯი 2 2-დან"
+      ],
       "Storage allocated to other users in this organisation": [
         "ამ ორგანიზაციის სხვა მომხმარებლებისთვის გამოყოფილი საცავი"
       ],
@@ -10788,6 +10819,9 @@
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "პაროლი და ფაილი საიმედო ადგილას შეინახეთ. ისინი გასაღების შემოტანისას დაგჭირდებათ."
+      ],
+      "Submit": [
+        "გადაცემა"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "გადმორიცხეთ დეპოზიტი შემდეგ მისამართზე ან დაასკანერეთ QR კოდი. თქვენი დეპოზიტი ანგარიშში დადასტურების შემდეგ აისახება."
@@ -10849,6 +10883,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "მადლობა, რომ მხარი დაგვიჭირეთ ჩვენს მისიაში, ავაგოთ უკეთესი ინტერნეტ, სადაც კონფიდენციალობა და თავისუფლება რიგში პირველია."
+      ],
+      "Thanks for the feedback!": [
+        "მადლობა გამოხმაურებისთვის!"
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "შეტყობინება ${ boldDataLocked } აღარ იქნება ნაჩვენები. შეგიძლიათ, ჩვენება ისევ ჩართოთ ${ encryptionAndKeysLink }-ის ქვეშ."
@@ -11048,6 +11085,9 @@
       "This will wipe all logs for your organization members.": [
         "ეს წაშლის ყველა ჟურნალს თქვენი ორგანიზაციის წევრებისთვის."
       ],
+      "TikTok": [
+        "TikTok"
+      ],
       "to ${ product } Business": [
         "${ product } Business"
       ],
@@ -11065,6 +11105,9 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "დასადასტურებლად შეიყვანეთ წასაშლელი მომხმარებლის სახელი."
+      ],
+      "To continue to ${ product }": [
+        "${ product }-ზე გასაგრძელებლად"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "ჩვენი სერვისების მუდმივად გასაუმჯობესებლად ჩვენ ხანდახან ვაგროვებთ მონაცემებს ჩვენი აპლიკაციების ნორმალურად ფუნქციონირების შესახებ. ეს ინფორმაცია მესამე პირებთან არასოდეს ზიარდება."
@@ -11432,6 +11475,9 @@
       "Writing assistant": [
         "წერაში დამხმარე"
       ],
+      "X": [
+        "X"
+      ],
       "Yearly": [
         "წლიურად"
       ],
@@ -11501,9 +11547,6 @@
       ],
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "შეგიძლიათ, ჩვენი ფასიანი ფუნქცია ერთ პაკეტში მიიღოთ - და ის მხოლოდ **${ priceString } ღირს თვეში**."
-      ],
-      "You can import one data type at a time.": [
-        "ერთ ცდაზე მონაცემების, მხოლოდ, ერთი ტიპის შემოტანა შეგიძლიათ."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "შეგიძლიათ გქონდეთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. წაშალეთ გაზიარებული კალენდრის ბმულები და ყველა ${ BRAND_NAME }-ის მომხმარებელი, ვისაც კალენდარი გაუზიარეთ, სანამ თქვენს ${ MAIL_SHORT_APP_NAME }-ის გამოწერას გააუქმებდით.",
@@ -11681,10 +11724,6 @@
       "Your free trial includes 1 dedicated server.": [
         "თქვენი უფასო საცდელი პერიოდი მოიცავს 1 გამოყოფილ სერვერს."
       ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "${ accounts }-დან შემოტანა შეყოვნდება.",
-        "${ accounts }-დან შემოტანა შეყოვნდება."
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "ჩვენთან თქვენი ინფორმაცია დაცულია. ჩვენ, მხოლოდ, დაგიკავშირდებით, როცა ეს ჩვენი სერვისების მოსაწოდებლადაა საჭირო."
       ],
@@ -11739,6 +11778,9 @@
       ],
       "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
         "თქვენი დაჯავშნილი ${ BRAND_NAME }-ის ელფოსტის მისამართის ვაუჩერი: ${ reservedEmail }"
+      ],
+      "YouTube": [
+        "YouTube"
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "თქვენ დაკარგავთ წვდომას ${ boldPlanTitle }-ის ფუნქციებთან:"
@@ -12422,6 +12464,9 @@
       "Allow": [
         "ავტორიზებული მისამართები"
       ],
+      "Allow alias creation": [
+        "ფსევდონიმის შექმნის დაშვება"
+      ],
       "Allow all users to create vaults": [
         "ყველა მომხმარებლისთვის საფულის შექმნის უფლების მინიჭება"
       ],
@@ -12601,9 +12646,6 @@
       ],
       "Calendar": [
         "კალენდარი"
-      ],
-      "Calendars": [
-        "კალენდრები"
       ],
       "Capitalize words": [
         "დიდი ასოებით წერა"
@@ -12857,9 +12899,6 @@
       "Email or username": [
         "ელფოსტა ან მომხმარებლის სახელი"
       ],
-      "Emails": [
-        "ელფოსტები"
-      ],
       "Emails (all messages)": [
         "ელფოსტა (ყველა შეტყობინება)"
       ],
@@ -13033,6 +13072,9 @@
       ],
       "Import interval": [
         "შემოტანის დაყოვნება"
+      ],
+      "Import recent mails": [
+        "უახლესი ელფოსტების შემოტანა"
       ],
       "Import to email address": [
         "ელფოსტის მისამართზე შემოტანა"
@@ -17619,6 +17661,9 @@
       "Confirm": [
         "დასტური"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "domain.com": [
         "domain.com"
       ],
@@ -17696,6 +17741,9 @@
       ],
       "Printer": [
         "პრინტერი"
+      ],
+      "San Francisco": [
+        "სან-ფრანცისკო"
       ],
       "Search": [
         "ძებნა"
@@ -21801,6 +21849,9 @@
       "Check your default mail application": [
         "შეამოწმეთ თქვენი ნაგულისხმევი ელფოსტის აპლიკაცია"
       ],
+      "Choose a provider": [
+        "აირჩიეთ პროვაიდერი"
+      ],
       "Choose an account": [
         "აირჩიეთ ანგარიში"
       ],
@@ -21927,6 +21978,9 @@
       ],
       "Currency": [
         "ვალუტა"
+      ],
+      "Custom": [
+        "მომხმარებლის"
       ],
       "Custom domains:": [
         "მორგებული დომენები:"
@@ -22263,6 +22317,9 @@
       "Forward emails": [
         "ელფოსტების გადამისამართება"
       ],
+      "Forwardings": [
+        "გადამისამართებები"
+      ],
       "Free": [
         "Free"
       ],
@@ -22347,9 +22404,6 @@
       "Help center": [
         "დახმარების ცენტრი"
       ],
-      "History": [
-        "ისტორია"
-      ],
       "Home": [
         "მთავარი"
       ],
@@ -22395,6 +22449,9 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH }-ის გავლით შემოტანა"
+      ],
+      "Imports": [
+        "შემოტანები"
       ],
       "Inactive 2FA": [
         "არააქტიური 2FA"
@@ -22768,6 +22825,9 @@
       "Select contact group": [
         "მონიშნეთ კონტაქტების ჯგუფი"
       ],
+      "Select data to import": [
+        "აირჩიეთ შემოსატანი მონაცემები"
+      ],
       "Select the time to send this notification": [
         "აირჩიეთ ამ შეტყობინების დაგზავნის დრო"
       ],
@@ -22884,6 +22944,9 @@
       ],
       "Special Offer": [
         "სპეციალური შეთავაზება"
+      ],
+      "Spring Sale": [
+        "საგაზაფხულო ფასდაკლება"
       ],
       "Start a new import": [
         "ახალი შემოტანის დაწყება"
@@ -23090,9 +23153,6 @@
       "What is the dark web?": [
         "რა არს ბნელი ვები?"
       ],
-      "What would you like to import?": [
-        "რისი შემოტანა გნებავთ?"
-      ],
       "Wipe all logs?": [
         "წავშალო ჟურნალიდან ყველაფერი?"
       ],
@@ -23170,20 +23230,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "ქმედებები"
-      ],
-      "Date": [
-        "თარიღი"
-      ],
-      "Import": [
-        "შემოტანა"
-      ],
       "Size": [
         "ზომა"
-      ],
-      "Status": [
-        "სტატუსი"
       ]
     },
     "Title header for addresses domain table": {
@@ -24240,9 +24288,6 @@
       ],
       "You will lose any customization you made so far.": [
         "დაკარგავთ ყველაფერს, რაც თქვენზე მოირგეთ."
-      ],
-      "You will not see this import record in the list any more.": [
-        "სიაში შემოტანის ჩანაწერს აღარ დაინახავთ."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ textDate }. ${ action }"
