@@ -446,14 +446,8 @@
       "import": [
         "importuj"
       ],
-      "Import calendars": [
-        "Importuj kalendarze"
-      ],
       "Import contacts": [
         "Importuj kontakty"
-      ],
-      "Import emails": [
-        "Importuj wiadomości"
       ],
       "Import emails, calendars, contacts": [
         "Importuj wiadomości, kalendarze i kontakty"
@@ -3299,6 +3293,9 @@
       "Enter 6 digits": [
         "Wpisz 6 cyfr"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Wpisz swoją nazwę użytkownika bez domeny (@example.com)"
+      ],
       "Error": [
         "Błąd"
       ],
@@ -4627,23 +4624,6 @@
         "Kliknij ${ boldExport }, aby wyeksportować plik ICS."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Importuj z ${ provider }"
-      ],
-      "Import from Google": [
-        "Importuj z konta Google"
-      ],
-      "Import from other": [
-        "Importuj z innego konta"
-      ],
-      "Import from Outlook": [
-        "Importuj z konta Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importuj z konta Yahoo"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "Niektóre kontakty (${ totalContactsDiscarded }/${ totalContacts }) nie mogą zostać zaimportowane. Kliknij po szczegóły"
@@ -4968,9 +4948,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Zwiększ rozpoznawalność marki."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Przenieś wiadomości, kontakty i kalendarze do ${ BRAND_NAME }."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Obniżając plan do wersji Free, utracisz te bonusy na zawsze, nawet jeśli w przyszłości ponownie ulepszysz swoje konto."
       ],
@@ -5202,6 +5179,9 @@
       "Expired": [
         "Wygasła"
       ],
+      "Failed to update meeting schedule": [
+        "Nie udało się zaktualizować harmonogramu spotkania"
+      ],
       "finance": [
         "finanse"
       ],
@@ -5427,9 +5407,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Co najmniej jeden z zaufanych kluczy został oznaczony przez właściciela jako zagrożony. Zalecamy przestać ufać tym kluczom."
       ],
-      "One time import": [
-        "Jednorazowy import"
-      ],
       "Open shortcut cheat sheet": [
         "Otwórz listę skrótów"
       ],
@@ -5552,9 +5529,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wybierz domyślny format wiadomości, który ma zostać użyty podczas wysyłania wiadomości na ten adres e-mail."
-      ],
-      "Select what you want to import.": [
-        "Wybierz, co chcesz zaimportować."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu kalendarzy dostępnych w Twoim planie."
@@ -5876,9 +5850,6 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Możesz zamknąć kartę lub przeglądarkę."
-      ],
-      "You can import one data type at a time.": [
-        "Możesz importować jeden typ danych jednocześnie."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarza. Zanim anulujesz subskrypcję ${ MAIL_SHORT_APP_NAME }, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze.",
@@ -6298,9 +6269,6 @@
       "Calendar": [
         "Kalendarz"
       ],
-      "Calendars": [
-        "Kalendarze"
-      ],
       "Card details": [
         "Szczegóły karty"
       ],
@@ -6393,9 +6361,6 @@
       ],
       "Email format": [
         "Format wiadomości"
-      ],
-      "Emails": [
-        "Wiadomości"
       ],
       "Emails (all messages)": [
         "Wiadomości (wszystkie)"
@@ -11527,9 +11492,6 @@
       ],
       "What is a VPN?": [
         "Co to jest VPN?"
-      ],
-      "What would you like to import?": [
-        "Jakie dane chcesz zaimportować?"
       ],
       "When is it most important to use a VPN?": [
         "Kiedy korzystanie z VPN jest najważniejsze?"

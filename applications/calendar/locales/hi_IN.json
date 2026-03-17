@@ -361,14 +361,8 @@
       "import": [
         "आयात करें"
       ],
-      "Import calendars": [
-        "कैलेंडर आयात करें"
-      ],
       "Import contacts": [
         "संपर्क आयात करें"
-      ],
-      "Import emails": [
-        "ईमेल आयात करें"
       ],
       "Import events": [
         "इवेंट को आयात करें"
@@ -3740,17 +3734,6 @@
         "कैलेंडर एक ICS फाइल की तरह निर्यात करने के लिए ${ boldExport } चुनें।"
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "${ provider } से आयात करें"
-      ],
-      "Import from Google": [
-        "Google से आयात करे"
-      ],
-      "Import from Outlook": [
-        "Outlook से आयात करे"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } में से ${ totalContacts } संपर्क आयात नहीं किए जाएंगे। विवरण के लिए क्लिक करें"
@@ -4426,9 +4409,6 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "इस ईमेल पते पर ईमेल भेजते समय आप जिस ईमेल प्रारूप का उपयोग करना चाहते हैं उसे डिफ़ॉल्ट रूप से चुनें।"
       ],
-      "Select what you want to import.": [
-        "आयात चयन करें"
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "जिन कैलेंडर को आयात करना है उन्हे चुने। हर आयात किये गए कैलेंडर के लिए एक नया कैलेंडर बनेगा इस हिसाब से की आपके प्लान में कितने कैलेंडर मौजूद है।"
       ],
@@ -4683,9 +4663,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "आप प्रगति की जांच कर सकते हैं ${ importProgressLink }।"
-      ],
-      "You can import one data type at a time.": [
-        "आप एक बार में एक डेटा प्रकार आयात कर सकते हैं।"
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
@@ -5014,9 +4991,6 @@
       "Calendar": [
         "कैलेंडर"
       ],
-      "Calendars": [
-        "कैलेंडर"
-      ],
       "Card details": [
         "कार्ड विवरण"
       ],
@@ -5103,9 +5077,6 @@
       ],
       "Email format": [
         "ईमेल प्रारूप"
-      ],
-      "Emails": [
-        "ईमेल"
       ],
       "Emails (all messages)": [
         "ईमेल (सारे संदेश)"
@@ -8672,9 +8643,6 @@
       ],
       "We've locked your calendars to protect your data": [
         "आपका डाटा सुरक्षित रखने के लिए हमने आपका कैलेंडर लॉक कर दिया"
-      ],
-      "What would you like to import?": [
-        "आप क्या आयात करना चाहेंगे?"
       ],
       "You can now create unlimited folders and labels": [
         "अब आप असीमित फोल्डर और लेबल बना सकते हैं"
