@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { clearActiveReaction } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import { useMLSContext } from '../../contexts/MLSContext';
@@ -39,20 +40,27 @@ export const useEmojiReaction = () => {
             return false;
         }
 
+        const identity = room.localParticipant.identity;
+
+        // Optimistic update: show the reaction immediately
+        const timestamp = dispatchTimedReaction(dispatch, identity, emoji);
+
         let encryptedMessage: Uint8Array<ArrayBuffer> | undefined;
 
         try {
             encryptedMessage = (await mls.encryptMessage(emoji)) as Uint8Array<ArrayBuffer>;
         } catch (error) {
+            dispatch(clearActiveReaction({ identity, timestamp }));
             handleError('Failed to encrypt emoji reaction');
             return false;
         }
 
         const message = {
-            id: `${room.localParticipant.identity}-${Date.now()}`,
+            id: `${identity}-${Date.now()}`,
             message: uint8ArrayToString(encryptedMessage as Uint8Array<ArrayBuffer>),
             timestamp: Date.now(),
             type: PublishableDataTypes.EmojiReaction,
+            version: 1,
         };
 
         const encodedMessage = new TextEncoder().encode(JSON.stringify(message));
@@ -63,11 +71,10 @@ export const useEmojiReaction = () => {
                 reliable: false,
             });
         } catch (error) {
+            dispatch(clearActiveReaction({ identity, timestamp }));
             handleError('Failed to send emoji reaction');
             return false;
         }
-
-        dispatchTimedReaction(dispatch, room.localParticipant.identity, emoji);
 
         return true;
     };
