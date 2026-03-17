@@ -533,6 +533,9 @@
       "Go to panel ${ index }": [
         "Prejsť na panel ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Rozumiem"
       ],
@@ -556,15 +559,6 @@
       ],
       "Import": [
         "Importovať"
-      ],
-      "Import calendars": [
-        "Importovať kalendáre"
-      ],
-      "Import contacts": [
-        "Importovať kontakty"
-      ],
-      "Import emails": [
-        "Importovať emaily"
       ],
       "Import emails, calendars, contacts": [
         "Importovať emaily, kalendáre a kontakty"
@@ -4164,6 +4158,9 @@
       "Enter 6 digits": [
         "Zadajte 6 číslic"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Zadajte používateľské meno bez domény (@príklad.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Chyba pri pripojovaní k Bitcoin API."
       ],
@@ -5998,20 +5995,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importovať z ${ provider }"
-      ],
-      "Import from Google": [
-        "Importovať z Google"
-      ],
-      "Import from other": [
-        "Importovať z inej služby"
-      ],
-      "Import from Outlook": [
-        "Importovať z Outlooku"
-      ],
-      "Import from Yahoo": [
-        "Importovať z Yahoo"
+      "Advanced import": [
+        "Pokročilý import"
       ]
     },
     "Import warning": {
@@ -6590,9 +6575,6 @@
       "Billing cycle: ${ text }": [
         "Fakturačné obdobie: ${ text }"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Preneste svoje správy, kontakty a kalendáre do ${ BRAND_NAME }."
-      ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Vypnutím monitorovania účtu vymažete aj celú históriu. Naozaj ho chcete deaktivovať?"
       ],
@@ -6619,6 +6601,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Pre pokračovanie vyberte ID subjektu."
+      ],
+      "Choose your service to connect with": [
+        "Vyberte si službu na pripojenie"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
@@ -7472,9 +7457,6 @@
       "Once you reset your password:": [
         "Po resete vašeho hesla:"
       ],
-      "One time import": [
-        "Jednorazový import"
-      ],
       "Open source": [
         "Open source"
       ],
@@ -7777,9 +7759,6 @@
       ],
       "Select users to view their activity": [
         "Vyberte používateľov na zobrazenie ich aktivity"
-      ],
-      "Select what you want to import.": [
-        "Vyberte čo chcete importovať."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vyberte, ktoré kalendáre chcete importovať. Pre každý importovaný kalendár sa vytvorí nový kalendár podľa počtu kalendárov dostupných vo vašom pláne."
@@ -8525,9 +8504,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Môžete získať naše prémiové služby ochrany súkromia v jednom balíčku — a to len za **${ priceString }/mesačne**."
       ],
-      "You can import one data type at a time.": [
-        "Importovať môžete vždy jeden typ údajov."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Môžete mať až ${ MAX_CALENDARS_FREE } kalendár. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
         "Môžete mať až ${ MAX_CALENDARS_FREE } kalendáre. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
@@ -9104,9 +9080,6 @@
       "Calendar": [
         "Kalendár"
       ],
-      "Calendars": [
-        "Kalendáre"
-      ],
       "Card details": [
         "Detaily karty"
       ],
@@ -9256,9 +9229,6 @@
       ],
       "Email or username": [
         "Email alebo používateľské meno"
-      ],
-      "Emails": [
-        "Emaily"
       ],
       "Emails (all messages)": [
         "Emaily (všetky správy)"
@@ -12542,6 +12512,9 @@
       "VAT number": [
         "DIČ"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Uplatňuje sa mechanizmus prenesenia daňovej povinnosti."
+      ],
       "You already have a subscription to this plan.": [
         "Tento plán už máte predplatený."
       ],
@@ -15804,6 +15777,9 @@
       "Change second password": [
         "Zmeniť druhé heslo"
       ],
+      "Choose a provider": [
+        "Vyberte poskytovateľa"
+      ],
       "Choose user affiliations": [
         "Vyberte príslušnosť používateľa"
       ],
@@ -15908,6 +15884,9 @@
       ],
       "Currency": [
         "Mena"
+      ],
+      "Custom": [
+        "Vlastné"
       ],
       "Custom selection of users": [
         "Vlastný výber používateľov"
@@ -16209,6 +16188,9 @@
       "Import groups": [
         "Importovať skupiny"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importujte svoje dáta do ${ BRAND_NAME }"
+      ],
       "Information exposed in breach": [
         "Informácie odhalené pri úniku"
       ],
@@ -16443,6 +16425,9 @@
       "Select contact group": [
         "Vybrať skupinu kontaktov"
       ],
+      "Select data to import": [
+        "Vyberte dáta na import"
+      ],
       "Send email reminders?": [
         "Poslať pripomenutia emailom?"
       ],
@@ -16676,9 +16661,6 @@
       ],
       "What is the dark web?": [
         "Čo je dark web?"
-      ],
-      "What would you like to import?": [
-        "Čo by ste chceli importovať?"
       ],
       "Wipe all logs?": [
         "Vymazať všetky záznamy?"

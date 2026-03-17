@@ -456,15 +456,6 @@
       "Import": [
         "आयात करें"
       ],
-      "Import calendars": [
-        "कैलेंडर आयात करें"
-      ],
-      "Import contacts": [
-        "संपर्क आयात करें"
-      ],
-      "Import emails": [
-        "ईमेल आयात करें"
-      ],
       "Import new SAML metadata": [
         "नया SAML मेटाडाटा आयात करें"
       ],
@@ -4337,17 +4328,6 @@
         "कैलेंडर एक ICS फाइल की तरह निर्यात करने के लिए ${ boldExport } चुनें।"
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "${ provider } से आयात करें"
-      ],
-      "Import from Google": [
-        "Google से आयात करे"
-      ],
-      "Import from Outlook": [
-        "Outlook से आयात करे"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } में से ${ totalContacts } संपर्क आयात नहीं किए जाएंगे। विवरण के लिए क्लिक करें"
@@ -5650,9 +5630,6 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "अपने ${ BRAND_NAME } संगठन में शामिल करने के लिए ${ getFormattedOrganization } से उपयोगकर्ता संबद्धताएँ चुनें:"
       ],
-      "Select what you want to import.": [
-        "आयात चयन करें"
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "जिन कैलेंडर को आयात करना है उन्हे चुने। हर आयात किये गए कैलेंडर के लिए एक नया कैलेंडर बनेगा इस हिसाब से की आपके प्लान में कितने कैलेंडर मौजूद है।"
       ],
@@ -6237,9 +6214,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "सत्यापन के लिए सही ईमेल पता सुनिश्चित करने के लिए आप इसे एक बार संपादित कर सकते हैं।"
       ],
-      "You can import one data type at a time.": [
-        "आप एक बार में एक डेटा प्रकार आयात कर सकते हैं।"
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
         "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किये है को हटाए।"
@@ -6656,9 +6630,6 @@
       "Calendar": [
         "कैलेंडर"
       ],
-      "Calendars": [
-        "कैलेंडर"
-      ],
       "Card details": [
         "कार्ड विवरण"
       ],
@@ -6796,9 +6767,6 @@
       ],
       "Email or username": [
         "ईमेल या उपयोगकर्ता का नाम"
-      ],
-      "Emails": [
-        "ईमेल"
       ],
       "Emails (all messages)": [
         "ईमेल (सारे संदेश)"
@@ -11902,9 +11870,6 @@
       ],
       "What is the dark web?": [
         "डार्क वेब क्या है?"
-      ],
-      "What would you like to import?": [
-        "आप क्या आयात करना चाहेंगे?"
       ],
       "WireGuard configuration": [
         "WireGuard संरचना"

@@ -548,15 +548,6 @@
       "Import": [
         "インポート"
       ],
-      "Import calendars": [
-        "カレンダーをインポート"
-      ],
-      "Import contacts": [
-        "連絡先をインポート"
-      ],
-      "Import emails": [
-        "メールをインポート"
-      ],
       "Import emails, calendars, contacts": [
         "メール、カレンダー、連絡先をインポート"
       ],
@@ -5680,23 +5671,6 @@
         "${ boldExport } を選択して ICS ファイルとしてカレンダーをエクスポートします。"
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "${ provider } からインポート"
-      ],
-      "Import from Google": [
-        "Googleからインポート"
-      ],
-      "Import from other": [
-        "その他からインポート"
-      ],
-      "Import from Outlook": [
-        "Outlook からインポート"
-      ],
-      "Import from Yahoo": [
-        "Yahooからインポート"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。詳細はクリックしてください"
@@ -6143,9 +6117,6 @@
       ],
       "Billing cycle: ${ text }": [
         "支払いサイクル: ${ text }"
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "メッセージ、連絡先、カレンダーを ${ BRAND_NAME }に移行。"
       ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "アカウントモニターを無効にすると、すべての履歴が消去されます。無効にしてよろしいですか？"
@@ -6972,9 +6943,6 @@
       "Once you reset your password:": [
         "パスワードをリセットしたら:"
       ],
-      "One time import": [
-        "1 回限りのインポート"
-      ],
       "Open source": [
         "オープンソース"
       ],
@@ -7250,9 +7218,6 @@
       ],
       "Select users to view their activity": [
         "アクティビティを表示するユーザーを選択"
-      ],
-      "Select what you want to import.": [
-        "インポートしたいものを選択してください。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "インポートするカレンダーを選択します。プランで利用可能なカレンダーの数に応じて、インポートしたカレンダーごとに新しいカレンダーが作成されます。"
@@ -7950,9 +7915,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "弊社のプレミアムプライバシーサービスを1つのバンドルで入手できます。しかもたった **${ priceString }/月**です。"
       ],
-      "You can import one data type at a time.": [
-        "1 回にインポートできるのは 1 種類のみです。"
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "カレンダーを最大 ${ MAX_CALENDARS_FREE } 個まで保持することができます。あなたの ${ MAIL_SHORT_APP_NAME } サブスクリプションをキャンセルする前に、共有カレンダーリンクと共有したカレンダーの ${ BRAND_NAME } ユーザーを削除してください。"
       ],
@@ -8466,9 +8428,6 @@
       "Calendar": [
         "カレンダー"
       ],
-      "Calendars": [
-        "カレンダー"
-      ],
       "Card details": [
         "カード詳細"
       ],
@@ -8618,9 +8577,6 @@
       ],
       "Email or username": [
         "メールアドレスまたはユーザー名"
-      ],
-      "Emails": [
-        "メール"
       ],
       "Emails (all messages)": [
         "メール (すべてのメッセージ)"
@@ -15689,9 +15645,6 @@
       ],
       "What is the dark web?": [
         "ダークウェブとは？"
-      ],
-      "What would you like to import?": [
-        "何をインポートしたいですか?"
       ],
       "Wipe all logs?": [
         "全てのログを削除しますか？"

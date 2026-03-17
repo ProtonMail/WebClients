@@ -510,15 +510,6 @@
       "Import": [
         "Importálás"
       ],
-      "Import calendars": [
-        "Naptárak importálása"
-      ],
-      "Import contacts": [
-        "Névjegyek importálása"
-      ],
-      "Import emails": [
-        "E-mailek importálása"
-      ],
       "Import emails, calendars, contacts": [
         "E-mailek, naptárak és névjegyek importálása"
       ],
@@ -5138,23 +5129,6 @@
         "Válassza az ${ boldExport } elemet a naptár ICS fájlként való exportálásához."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Importálás innen: ${ provider }"
-      ],
-      "Import from Google": [
-        "Importálás a Google-ból"
-      ],
-      "Import from other": [
-        "Importálás más szolgáltatótól"
-      ],
-      "Import from Outlook": [
-        "Importálás az Outlookból"
-      ],
-      "Import from Yahoo": [
-        "Importálás a Yahooból"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } a ${ totalContacts } névjegyből nem kerül importálásra. Kattintson a részletekért"
@@ -5586,9 +5560,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Számlázási ciklus: ${ text }"
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Hozza át üzeneteit, névjegyeit és naptárait ide: ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Az ingyenes verzióra való váltás során véglegesen elveszti a következő előnyeit, még akkor is, ha később ismét előfizetéses szolgáltatásra vált."
@@ -6350,9 +6321,6 @@
       "Once you reset your password:": [
         "Ha visszaállítja a jelszavát:"
       ],
-      "One time import": [
-        "Egyszeri import"
-      ],
       "Open source": [
         "Nyílt forráskódú"
       ],
@@ -6608,9 +6576,6 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Válassza ki azokat a ${ getFormattedOrganization } felhasználói kapcsolatokat, amelyeket engedélyezni kíván a ${ BRAND_NAME } szervezetbe:"
-      ],
-      "Select what you want to import.": [
-        "Válassza ki, mit szeretne importálni."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Válassza ki az importálandó naptárakat. Minden importált naptárhoz egy új naptár kerül létrehozásra, a csomagjában foglalt korlátig."
@@ -7266,9 +7231,6 @@
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Érvényesítheti a jelszószabályokat, amelyeket a szervezetének tagjai alkalmazni fognak, amikor létrehozzák vagy visszaállítják a ${ BRAND_NAME } fiókjuk jelszavát."
       ],
-      "You can import one data type at a time.": [
-        "Egyszerre egyféle adat importálható."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait.",
         "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait."
@@ -7743,9 +7705,6 @@
       "Calendar": [
         "Naptár"
       ],
-      "Calendars": [
-        "Naptárak"
-      ],
       "Card details": [
         "Kártya adatai"
       ],
@@ -7892,9 +7851,6 @@
       ],
       "Email or username": [
         "Email cím, vagy felhasználónév"
-      ],
-      "Emails": [
-        "E-mailek"
       ],
       "Emails (all messages)": [
         "E-mailek (összes üzenet)"
@@ -14239,9 +14195,6 @@
       ],
       "What is the dark web?": [
         "Mi az a dark web?"
-      ],
-      "What would you like to import?": [
-        "Mit szeretne importálni?"
       ],
       "Wipe all logs?": [
         "Minden napló törlése?"
