@@ -551,6 +551,9 @@
       "Go to settings": [
         "Accéder aux paramètres"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -562,6 +565,9 @@
       ],
       "Help and resources": [
         "Aide et ressources"
+      ],
+      "Hide": [
+        "Masquer"
       ],
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
@@ -584,14 +590,8 @@
       "import": [
         "importer"
       ],
-      "Import calendars": [
-        "Importer des calendriers"
-      ],
       "Import contacts": [
         "Importer des contacts"
-      ],
-      "Import emails": [
-        "Importer des messages"
       ],
       "Import emails, calendars, contacts": [
         "Importer des messages, calendriers et contacts"
@@ -1530,8 +1530,14 @@
       "3 TB data storage": [
         "3 To d'espace de stockage"
       ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
+      ],
       "Access advanced AI models": [
         "Accéder aux modèles d'IA avancés"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toutes les fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Block ads, trackers, and malware": [
         "Bloquer les pubs, les traqueurs et les logiciels malveillants"
@@ -4801,20 +4807,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importer depuis ${ provider }"
-      ],
-      "Import from Google": [
-        "Importer depuis Google"
-      ],
-      "Import from other": [
-        "Importer depuis un autre fournisseur"
-      ],
-      "Import from Outlook": [
-        "Importer depuis Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importer depuis Yahoo"
+      "Advanced import": [
+        "Importation avancée"
       ]
     },
     "Import warning": {
@@ -5222,9 +5216,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Mettez en avant l'image de marque de votre organisation et créez une expérience en ligne plus cohérente pour vos utilisateurs."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Importez vos messages, vos contacts et vos calendriers dans ${ BRAND_NAME } !"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
       ],
@@ -5278,6 +5269,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Choisissez l'abonnement qui vous convient le mieux."
+      ],
+      "Choose your service to connect with": [
+        "Choisissez votre service pour vous connecter"
       ],
       "Clear all search data": [
         "Effacer toutes les données de recherche"
@@ -5924,9 +5918,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Une ou plusieurs de vos clés de confiance ont été marquées comme « compromises » par leur propriétaire. Nous vous recommandons de ne plus faire confiance à ces clés."
       ],
-      "One time import": [
-        "Importation unique"
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Ouvrez le guide pour les actions recommandées et les liens utiles."
       ],
@@ -6176,9 +6167,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous voulez utiliser par défaut pour l'envoi d'un message à cette adresse e-mail."
-      ],
-      "Select what you want to import.": [
-        "Sélectionnez ce que vous voulez importer."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé, en fonction du nombre de calendriers disponibles dans votre abonnement."
@@ -6750,9 +6738,6 @@
       "You can close the tab or browser in the meantime.": [
         "En attendant, vous pouvez fermer l'onglet ou le navigateur."
       ],
-      "You can import one data type at a time.": [
-        "Vous pouvez importer un type de données à la fois."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
         "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }."
@@ -7140,9 +7125,6 @@
       "Calendar": [
         "Calendrier"
       ],
-      "Calendars": [
-        "Calendriers"
-      ],
       "can edit": [
         "peut modifier"
       ],
@@ -7278,9 +7260,6 @@
       ],
       "Email format": [
         "Format du message"
-      ],
-      "Emails": [
-        "Messages"
       ],
       "Emails (all messages)": [
         "Messages (tous les messages)"
@@ -12249,6 +12228,9 @@
       "Check for malicious files": [
         "Rechercher des fichiers malveillants"
       ],
+      "Choose a provider": [
+        "Choisissez un fournisseur"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Revendiquez votre adresse ${ MAIL_APP_NAME }"
       ],
@@ -12314,6 +12296,9 @@
       ],
       "Currency": [
         "Devise"
+      ],
+      "Custom": [
+        "Personnalisé"
       ],
       "Customize and confirm": [
         "Personnaliser et confirmer"
@@ -12577,6 +12562,9 @@
       ],
       "Import groups": [
         "Importer des groupes"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importer vos données vers ${ BRAND_NAME }"
       ],
       "Information exposed in breach": [
         "Informations divulguées lors de la fuite de données"
@@ -12852,6 +12840,9 @@
       "Select contact group": [
         "Sélectionner le groupe de contacts"
       ],
+      "Select data to import": [
+        "Sélectionner les données à importer"
+      ],
       "Select link expiration date": [
         "Sélectionner la date d'expiration du lien"
       ],
@@ -13091,9 +13082,6 @@
       ],
       "What is a VPN?": [
         "Qu'est-ce qu'un VPN ?"
-      ],
-      "What would you like to import?": [
-        "Que voulez-vous importer ?"
       ],
       "When is it most important to use a VPN?": [
         "Quand est-il le plus important d’utiliser un VPN ?"

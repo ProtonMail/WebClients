@@ -13,20 +13,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "刪除轉寄"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "轉發將很快開始。新電子郵件將會出現在您的收件匣中。"
       ],
       "Mail forward stopped": [
         "已停止郵件轉寄"
-      ],
-      "Reconnect": [
-        "重新連接"
-      ],
-      "Remove forward": [
-        "移除轉寄"
       ],
       "You will stop the mail forwarding.": [
         "您將停止郵件轉寄。"
@@ -699,15 +690,6 @@
       ],
       "Import": [
         "匯入"
-      ],
-      "Import calendars": [
-        "匯入行事曆"
-      ],
-      "Import contacts": [
-        "匯入聯絡人"
-      ],
-      "Import emails": [
-        "匯入郵件"
       ],
       "Import emails, calendars, contacts": [
         "匯入電子郵件、行事曆、聯絡人"
@@ -1462,6 +1444,12 @@
       "${ domains } additional custom domain": [
         "${ domains }額外自訂網域"
       ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI 授權"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } 個席次"
+      ],
       "${ price } per dedicated server": [
         "每專用伺服器${ price }"
       ],
@@ -1483,8 +1471,14 @@
       "${ users } user": [
         "${ users } 位使用者"
       ],
+      "Dedicated VPN servers": [
+        "專用 VPN 伺服器"
+      ],
       "Domains": [
         "網域"
+      ],
+      "Servers": [
+        "伺服器"
       ],
       "Users": [
         "使用者"
@@ -1851,11 +1845,20 @@
       "2 TB data storage": [
         "2 TB 的總儲存空間"
       ],
+      "Access advanced AI models": [
+        "存取進階 AI 模型"
+      ],
       "Block ads, trackers, and malware": [
         "攔截廣告、追蹤程式和惡意軟體"
       ],
       "Built-in 2FA authenticator": [
         "內建雙重驗證機制"
+      ],
+      "Connect 10 devices at once": [
+        "同時連線 10 臺裝置"
+      ],
+      "Unlimited daily chats": [
+        "無限每日聊天"
       ]
     },
     "Billing cycle": {
@@ -4488,6 +4491,9 @@
       "Invalid code": [
         "代碼無效"
       ],
+      "Invalid coupon": [
+        "無效優待券"
+      ],
       "Invalid domain": [
         "網域無效"
       ],
@@ -4511,6 +4517,9 @@
       ],
       "Invalid URL": [
         "URL 無效"
+      ],
+      "Invalid VAT number": [
+        "錯誤的統一編號"
       ],
       "Invalid verification code": [
         "驗證碼無效"
@@ -6350,31 +6359,6 @@
         "選取 ${ boldExport } 以將行事曆匯出為 ICS 檔案。"
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "從 ${ provider } 匯入"
-      ],
-      "Import from Google": [
-        "從 Google 匯入"
-      ],
-      "Import from other": [
-        "從其他匯入"
-      ],
-      "Import from Outlook": [
-        "從 Outlook 匯入"
-      ],
-      "Import from Yahoo": [
-        "從 Yahoo 匯入"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "復原已完成"
-      ],
-      "Undo in progress": [
-        "復原進行中"
-      ]
-    },
     "Import status": {
       "Active": [
         "使用中"
@@ -6382,26 +6366,14 @@
       "Canceled": [
         "已取消"
       ],
-      "Canceling": [
-        "正在取消"
-      ],
-      "Completed": [
-        "已完成"
-      ],
       "Delayed": [
         "延遲"
       ],
       "Failed": [
         "已失敗"
       ],
-      "In progress": [
-        "執行中"
-      ],
       "Paused": [
         "已暫停"
-      ],
-      "Started": [
-        "已開始"
       ]
     },
     "Import type": {
@@ -6448,17 +6420,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME }永遠不會與第三方分享資料。資料來自於${ BRAND_NAME }持有的分析及 Constella Intelligence."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "因為與您另一個電郵提供者的連線中斷，${ BRAND_NAME } 已暫停了一項匯入。請重新連線。"
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } 暫停了一項匯入，因為您的帳號空間快要用完了。您可以："
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME }訂閱撰寫扳手"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "一俟您的電子郵件提供者重設對您的帳號的${ bandwidthLimitLink }，${ BRAND_NAME } 就會嘗試復原匯入。您不需採取任何動作。假如您取消匯入，將無法復原，需重新開始。"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的加密技術代表無人可以存取您的密碼，包括我們。"
@@ -6889,9 +6852,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "提升您組織機構的品牌形象，為您的使用者創造更一致的線上體驗。"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "將訊息、聯絡人和行事曆匯入 ${ BRAND_NAME }。"
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "透過您的SimpleLogin電子郵件創建${ PASS_APP_NAME }帳號，您可直接從${ PASS_APP_NAME }管理您的別名。"
       ],
@@ -7297,14 +7257,8 @@
       "For easy access to your passwords and more.": [
         "容易存取密碼及更多。"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "將收到的郵件從另一個帳號轉發至您的安全 ${ MAIL_APP_NAME } 收件匣。"
-      ],
       "Free forever": [
         "永遠免費"
-      ],
-      "free up space by deleting older messages or other data": [
-        "刪除較舊的郵件或其它資料，以釋出空間"
       ],
       "Gateway monitor": [
         "閘道監控"
@@ -7756,9 +7710,6 @@
       "No Gateways yet": [
         "尚未有閘道器"
       ],
-      "No imports or forwarding history.": [
-        "未有匯入或轉寄歷程記錄。"
-      ],
       "No label selected": [
         "未選取任何標籤"
       ],
@@ -7794,9 +7745,6 @@
       ],
       "Once you reset your password:": [
         "一旦您重設您的密碼："
-      ],
-      "One time import": [
-        "一次性匯入"
       ],
       "Open source": [
         "開放原始碼"
@@ -7984,9 +7932,6 @@
       "Public sharing of documents is not yet supported.": [
         "公開分享尚未支援。"
       ],
-      "purchase additional storage": [
-        "購買額外的儲存空間"
-      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "聯繫我們以取得任何關於${ BRAND_NAME }的協助。"
       ],
@@ -8089,9 +8034,6 @@
       "Select recently used servers": [
         "選取最近使用的伺服器"
       ],
-      "Select what you want to import.": [
-        "選擇您要匯入的檔案。"
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "請選取要匯入的行事曆。將根據您的方案中可用的行事曆數量為每個匯入的行事曆創建一個新的行事曆。"
       ],
@@ -8124,9 +8066,6 @@
       ],
       "Set password": [
         "設定密碼"
-      ],
-      "Set up forwarding": [
-        "設定郵件轉寄"
       ],
       "Set up your organization": [
         "設定您的組織"
@@ -8839,9 +8778,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "您可以編輯這個一次以確保用於驗證的電子郵件位址正確。"
       ],
-      "You can import one data type at a time.": [
-        "您可以一次匯入一種資料類型。"
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "您可保留最多 ${ MAX_CALENDARS_FREE } 個行事曆。請先移除已分享的行事曆連結以及任何與其分享行事曆的 ${ BRAND_NAME } 使用者，然後才取消您的 ${ MAIL_SHORT_APP_NAME } 訂閱。"
       ],
@@ -8997,9 +8933,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "您的免費試用已成功轉換為每月訂購授權。您的續訂日期為 ${ nextBillingDate }。"
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "您從匯入 ${ accounts } 的操作被暫時推遲。"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "您可以放心提供資訊，我們只在某些服務要求與您驗證時才會連絡您。"
@@ -9505,6 +9438,9 @@
       "500 GB Storage": [
         "500 GB 儲存空間"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "透過終端機安全地存取 ${ PASS_APP_NAME }，適合程式、自動化、和開發流程。"
+      ],
       "Account holder": [
         "帳戶持有人"
       ],
@@ -9665,9 +9601,6 @@
         "比特幣金額"
       ],
       "Calendar": [
-        "行事曆"
-      ],
-      "Calendars": [
         "行事曆"
       ],
       "Card details": [
@@ -9868,9 +9801,6 @@
       "Email or username": [
         "電郵位址或使用者名稱"
       ],
-      "Emails": [
-        "電郵"
-      ],
       "Emails (all messages)": [
         "電子郵件（全部訊息）"
       ],
@@ -9879,6 +9809,9 @@
       ],
       "Emails (last 3 months)": [
         "電子郵件（最近三個月）"
+      ],
+      "Emails (last 6 months)": [
+        "電子郵件（最近六個月）"
       ],
       "Emails (last month)": [
         "電子郵件（上個月）"
@@ -10012,6 +9945,9 @@
       "Import interval": [
         "匯入頻率"
       ],
+      "Import recent mails": [
+        "匯入近期郵件"
+      ],
       "Import to email address": [
         "匯入至電郵位址"
       ],
@@ -10065,6 +10001,9 @@
       ],
       "Last 3 months only": [
         "僅過去 3 個月"
+      ],
+      "Last 6 months only": [
+        "僅過去 6 個月"
       ],
       "Last month only": [
         "僅過去 1 個月"
@@ -12226,6 +12165,9 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "以標誌、影像、社交媒體圖示、您的聯絡詳情連結等等，個人化您的電子郵件簽名檔"
       ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "${ BRAND_NAME } 客戶服務團隊於歐洲辦公時間內，為 ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } 位或以上使用者的客戶提供電話支援"
+      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "防止郵件被 ${ BRAND_NAME } 或第三方存取。能夠讀取郵件的人，就只有寄件者和意指的收件者。"
       ],
@@ -12718,6 +12660,9 @@
       ],
       "Cancel anytime before ${ cancelDate }.": [
         "於 ${ cancelDate } 前隨時取消。"
+      ],
+      "Cancel anytime before then.": [
+        "於之前隨時取消。"
       ],
       "contact our support team": [
         "聯絡我們的客戶支援團隊"
@@ -13395,6 +13340,9 @@
       ]
     },
     "Payments": {
+      "${ rate }% taxes: ${ taxAmountElement }": [
+        "${ rate }% 稅金：${ taxAmountElement }"
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "試用期結束後，於 ${ formattedDate } 付費"
       ],
@@ -13418,6 +13366,9 @@
       ],
       "I'm purchasing as a business": [
         "我以公司名義購買"
+      ],
+      "Including ${ rate }% tax": [
+        "包含 ${ rate }% 稅金"
       ],
       "Including ${ rate }% tax: ${ taxAmountElement }": [
         "包含 ${ rate }% 稅金${ taxAmountElement }"
@@ -14807,6 +14758,9 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "於 ${ appName } 開啟"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "於 ${ appName } (測驗)"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -15230,6 +15184,9 @@
     "specialoffer: Title": {
       "Access content on streaming services worldwide": [
         "存取全球影音串流服務內容"
+      ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "取得存取在110 多個國家提供極速 VPN 伺服器"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "取得包含全部的單一方案，取得 ${ BRAND_NAME } Unlimited"
@@ -16116,6 +16073,9 @@
       ],
       "Billing details updated": [
         "帳單詳情已更新"
+      ],
+      "Billing information updated": [
+        "繳費資訊已更新"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "行事曆已加入。同步或需時幾分鐘。"
@@ -17190,9 +17150,6 @@
       "Help center": [
         "說明中心"
       ],
-      "History": [
-        "歷程記錄"
-      ],
       "Home": [
         "首頁"
       ],
@@ -17348,6 +17305,9 @@
       ],
       "OpenVPN configuration files": [
         "OpenVPN 組態設定檔"
+      ],
+      "Org setup": [
+        "組織設定"
       ],
       "Organization filters": [
         "機構過濾系統"
@@ -17652,6 +17612,9 @@
       "Special Offer": [
         "特別優惠"
       ],
+      "Spring Sale": [
+        "春季促銷"
+      ],
       "Start a new import": [
         "開始新匯入"
       ],
@@ -17814,9 +17777,6 @@
       "What is the dark web?": [
         "甚麼是暗網?"
       ],
-      "What would you like to import?": [
-        "您打算要匯入什麼資料呢？"
-      ],
       "WireGuard configuration": [
         "WireGuard 組態"
       ],
@@ -17882,20 +17842,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "動作"
-      ],
-      "Date": [
-        "日期"
-      ],
-      "Import": [
-        "匯入"
-      ],
       "Size": [
         "大小"
-      ],
-      "Status": [
-        "狀態"
       ]
     },
     "Title header for addresses domain table": {
@@ -18570,9 +18518,6 @@
       ],
       "You will lose any customization you made so far.": [
         "您到目前為止所自訂的所有設定將會遺失。"
-      ],
-      "You will not see this import record in the list any more.": [
-        "您在清單中將不再看見此匯入記錄。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "您的免費滿意體驗將於 ${ textDate } 結束。${ action }"

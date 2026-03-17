@@ -660,6 +660,9 @@
       "Go to settings": [
         "Перайсці ў налады"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Зразумела"
       ],
@@ -717,14 +720,8 @@
       "import": [
         "імпартаванне"
       ],
-      "Import calendars": [
-        "Імпартаваць календары"
-      ],
       "Import contacts": [
         "Імпартаваць кантакты"
-      ],
-      "Import emails": [
-        "Імпартаваць лісты"
       ],
       "Import emails, calendars, contacts": [
         "Імпартаваць лісты, календары, кантакты"
@@ -4688,6 +4685,9 @@
       "Enter a password": [
         "Увядзіце пароль"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Увядзіце сваё імя карыстальніка без дамена (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Памылка падключэння да Bitcoin API."
       ],
@@ -6490,20 +6490,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Імпартаваць з ${ provider }"
-      ],
-      "Import from Google": [
-        "Імпартаваць з Google"
-      ],
-      "Import from other": [
-        "Імпартаваць з іншых пастаўшчыкоў"
-      ],
-      "Import from Outlook": [
-        "Імпартаваць з Outlook"
-      ],
-      "Import from Yahoo": [
-        "Імпартаваць з Yahoo"
+      "Advanced import": [
+        "Пашыраны імпарт"
       ]
     },
     "Import warning": {
@@ -7151,9 +7139,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Павысце ідэнтычнасць сваёй арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Перанясіце свае паведамленні, кантакты і календары ў ${ BRAND_NAME }."
-      ],
       "Browse privately and access blocked content.": [
         "Прыватны агляд і доступ да заблакіраванага змесціва."
       ],
@@ -7192,6 +7177,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Выберыце тарыфны план, які найлепш вам пасуе."
+      ],
+      "Choose your service to connect with": [
+        "Выберыце сэрвіс для падключэння"
       ],
       "Clear browser data": [
         "Ачысціць даныя браўзера"
@@ -7988,9 +7976,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як скампраметаваныя. Мы рэкамендуем вам не давяраць гэтым ключам."
       ],
-      "One time import": [
-        "Аднаразовае імпартаванне"
-      ],
       "Open shortcut cheat sheet": [
         "Адкрыць спіс спалучэнняў клавіш"
       ],
@@ -8248,9 +8233,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць як прадвызначаны, пры адпраўцы паведамленняў гэтым адрасатам."
-      ],
-      "Select what you want to import.": [
-        "Выберыце, што вы хочаце імпартаваць."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
@@ -8944,9 +8926,6 @@
       ],
       "You can either update your search query or clear it": [
         "Вы можаце абнавіць свой пошукавы запыт або ачысціць яго"
-      ],
-      "You can import one data type at a time.": [
-        "Вы можаце імпартаваць адзін тып даных за раз."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
@@ -9642,9 +9621,6 @@
       "Calendar": [
         "Каляндар"
       ],
-      "Calendars": [
-        "Календары"
-      ],
       "Carbon Copy": [
         "Копія"
       ],
@@ -9776,9 +9752,6 @@
       ],
       "Email format": [
         "Фармат ліста"
-      ],
-      "Emails": [
-        "Лісты"
       ],
       "Emails (all messages)": [
         "Лісты (усе паведамленні)"
@@ -12774,6 +12747,9 @@
       "VAT number": [
         "Нумар ПДВ"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Ужыты механізм адваротнага налічэння падатку ПДВ"
+      ],
       "You already have a subscription to this plan.": [
         "У вас ужо ёсць падпіска на гэты тарыфны план."
       ],
@@ -15484,6 +15460,9 @@
       "Change password": [
         "Змяніць пароль"
       ],
+      "Choose a provider": [
+        "Выберыце пастаўшчыка"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Атрымайце адрас ${ MAIL_APP_NAME }"
       ],
@@ -15546,6 +15525,9 @@
       ],
       "Currency": [
         "Валюта"
+      ],
+      "Custom": [
+        "Карыстальніцкае"
       ],
       "Custom domains:": [
         "Карыстальніцкія дамены:"
@@ -15792,6 +15774,9 @@
       ],
       "Import groups": [
         "Імпарт груп"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Імпартуйце свае даныя ў ${ BRAND_NAME }"
       ],
       "Increase security with ${ VPN_APP_NAME }": [
         "Павялічце бяспеку з ${ VPN_APP_NAME }"
@@ -16117,6 +16102,9 @@
       "Select contact group": [
         "Выбар групы кантактаў"
       ],
+      "Select data to import": [
+        "Выберыце даныя для імпарту"
+      ],
       "Self-destruct message": [
         "Самазнішчальнае паведамленне"
       ],
@@ -16335,9 +16323,6 @@
       ],
       "What is a VPN?": [
         "Што такое VPN?"
-      ],
-      "What would you like to import?": [
-        "Што вы хочаце імпартаваць?"
       ],
       "When is it most important to use a VPN?": [
         "У якіх выпадках варта выкарыстоўваць VPN?"

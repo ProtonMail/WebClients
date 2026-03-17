@@ -13,20 +13,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Usuń przekierowanie"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Przekierowanie rozpocznie się wkrótce. Nowe wiadomości pojawią się w skrzynce odbiorczej."
       ],
       "Mail forward stopped": [
         "Przekierowanie poczty zostało zatrzymane"
-      ],
-      "Reconnect": [
-        "Połącz ponownie"
-      ],
-      "Remove forward": [
-        "Usuń przekierowanie"
       ],
       "You will stop the mail forwarding.": [
         "Zatrzymasz przekierowanie poczty."
@@ -712,15 +703,6 @@
       ],
       "Import": [
         "Importuj"
-      ],
-      "Import calendars": [
-        "Importuj kalendarze"
-      ],
-      "Import contacts": [
-        "Importuj kontakty"
-      ],
-      "Import emails": [
-        "Importuj wiadomości"
       ],
       "Import emails, calendars, contacts": [
         "Importuj wiadomości, kalendarze i kontakty"
@@ -4859,6 +4841,9 @@
       "Enter 6 digits": [
         "Wpisz 6 cyfr"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Wpisz swoją nazwę użytkownika bez domeny (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Wystąpił błąd podczas łączenia z interfejsem API Bitcoina."
       ],
@@ -6969,31 +6954,6 @@
         "Kliknij ${ boldExport }, aby wyeksportować plik ICS."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Importuj z ${ provider }"
-      ],
-      "Import from Google": [
-        "Importuj z konta Google"
-      ],
-      "Import from other": [
-        "Importuj z innego konta"
-      ],
-      "Import from Outlook": [
-        "Importuj z konta Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importuj z konta Yahoo"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Cofnięto"
-      ],
-      "Undo in progress": [
-        "Cofnięcie jest w toku"
-      ]
-    },
     "Import status": {
       "Active": [
         "Aktywny"
@@ -7001,26 +6961,14 @@
       "Canceled": [
         "Anulowano"
       ],
-      "Canceling": [
-        "Anulowanie"
-      ],
-      "Completed": [
-        "Zakończono"
-      ],
       "Delayed": [
         "Opóźniono"
       ],
       "Failed": [
         "Niepowodzenie"
       ],
-      "In progress": [
-        "W toku"
-      ],
       "Paused": [
         "Wstrzymano"
-      ],
-      "Started": [
-        "Rozpoczęto"
       ]
     },
     "Import type": {
@@ -7073,17 +7021,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } nigdy nie udostępnia informacji o użytkownikach stronom trzecim. Dane pochodzą z własnych źródeł ${ BRAND_NAME } i firmy Constella Intelligence."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } wstrzymał proces importowania, ponieważ utracił połączenie z drugim dostawcą poczty e-mail. Połącz się ponownie."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } wstrzymał proces importowania, ponieważ na Twoim koncie brakuje miejsca. Możesz:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asystent pisania ${ BRAND_NAME } Scribe"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } spróbuje wznowić proces importowania, jak tylko dostawca poczty e-mail zresetuje ${ bandwidthLimitLink } konta. Nie musisz nic robić. Jeśli anulujesz proces importowania, nie będziesz mógł wznowić tego procesu i będziesz musiał rozpocząć go od nowa."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Technologia szyfrowania ${ BRAND_NAME } oznacza, że nikt nie ma dostępu do Twojego hasła — nawet my."
@@ -7646,9 +7585,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Zwiększ rozpoznawalność marki."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Przenieś wiadomości, kontakty i kalendarze do ${ BRAND_NAME }."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Tworząc konto ${ PASS_APP_NAME } z adresem SimpleLogin, możesz zarządzać aliasami bezpośrednio w ${ PASS_APP_NAME }."
       ],
@@ -7696,6 +7632,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Nagroda redaktorów CNET z oceną 8,4 na 10"
+      ],
+      "Coming soon": [
+        "Wkrótce"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Skonfiguruj uwierzytelnianie SAML dla swojej organizacji przy pomocy dostawcy tożsamości (IdP). Spowoduje to włączenie SAML dla całej organizacji."
@@ -8138,14 +8077,8 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Jeśli przechodzisz od innego dostawcy poczty e-mail do ${ MAIL_APP_NAME }, przejdź do karty ${ boldAddresses } i dodaj wszystkie aktywne adresy przed zmianą rekordu MX."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Przekieruj wiadomości przychodzące z innego konta do bezpiecznej skrzynki odbiorczej ${ MAIL_APP_NAME }."
-      ],
       "Free forever": [
         "Darmowy na zawsze"
-      ],
-      "free up space by deleting older messages or other data": [
-        "usunąć starsze wiadomości lub inne dane, aby zwolnić przestrzeń dyskową"
       ],
       "Gateways": [
         "bramy"
@@ -8615,9 +8548,6 @@
       "No Gateways yet": [
         "Brak bram"
       ],
-      "No imports or forwarding history.": [
-        "Brak importów lub historii przekierowania."
-      ],
       "No label selected": [
         "Nie wybrano etykiety"
       ],
@@ -8656,9 +8586,6 @@
       ],
       "Once you reset your password:": [
         "Po zresetowaniu hasła:"
-      ],
-      "One time import": [
-        "Jednorazowy import"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Zmień te ustawienia tylko, gdy używasz PGP z odbiorcami spoza ${ BRAND_NAME }."
@@ -8867,9 +8794,6 @@
       "Public sharing of documents is not yet supported.": [
         "Publiczne udostępnianie dokumentów nie jest obsługiwane."
       ],
-      "purchase additional storage": [
-        "kupić dodatkową przestrzeń dyskową"
-      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Skontaktuj się z nami, aby uzyskać pomoc ${ BRAND_NAME }."
       ],
@@ -8975,9 +8899,6 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Wybierz powiązanych użytkowników ${ getFormattedOrganization }, których chcesz dopuścić do organizacji ${ BRAND_NAME }:"
       ],
-      "Select what you want to import.": [
-        "Wybierz, co chcesz zaimportować."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu kalendarzy dostępnych w Twoim planie."
       ],
@@ -9013,9 +8934,6 @@
       ],
       "Set password": [
         "Ustaw hasło"
-      ],
-      "Set up forwarding": [
-        "Ustaw przekierowanie"
       ],
       "Set up your organization": [
         "Skonfiguruj organizację"
@@ -9812,9 +9730,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Możesz uzyskać dostęp do naszych usług prywatności w wersji premium w jednym pakiecie za jedynie **${ priceString } miesięcznie**."
       ],
-      "You can import one data type at a time.": [
-        "Możesz importować jeden typ danych jednocześnie."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarza. Zanim anulujesz subskrypcję ${ MAIL_SHORT_APP_NAME }, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze.",
         "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Zanim anulujesz subskrypcję ${ MAIL_SHORT_APP_NAME }, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze.",
@@ -9991,12 +9906,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Darmowa wersja próbna została pomyślnie przekonwertowana na miesięczną subskrypcję. Data odnowienia to ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Proces importowania z konta ${ accounts } jest tymczasowo opóźniony.",
-        "Proces importowania z kont ${ accounts } jest tymczasowo opóźniony.",
-        "Proces importowania z kont ${ accounts } jest tymczasowo opóźniony.",
-        "Proces importowania z kont ${ accounts } jest tymczasowo opóźniony."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Twoje dane są u nas bezpieczne. Skontaktujemy się z Tobą tylko wtedy, gdy będzie to konieczne."
@@ -10696,9 +10605,6 @@
       "Calendar": [
         "Kalendarz"
       ],
-      "Calendars": [
-        "Kalendarze"
-      ],
       "Card details": [
         "Szczegóły karty"
       ],
@@ -10899,9 +10805,6 @@
       ],
       "Email or username": [
         "Adres e-mail lub nazwa użytkownika"
-      ],
-      "Emails": [
-        "Wiadomości"
       ],
       "Emails (all messages)": [
         "Wiadomości (wszystkie)"
@@ -19289,9 +19192,6 @@
       "Help center": [
         "Centrum pomocy"
       ],
-      "History": [
-        "Historia"
-      ],
       "Home": [
         "Strona główna"
       ],
@@ -19934,9 +19834,6 @@
       "What is the dark web?": [
         "Co to jest dark web?"
       ],
-      "What would you like to import?": [
-        "Jakie dane chcesz zaimportować?"
-      ],
       "Wipe all logs?": [
         "Usunąć logi?"
       ],
@@ -20005,20 +19902,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Akcje"
-      ],
-      "Date": [
-        "Data"
-      ],
-      "Import": [
-        "Importuj"
-      ],
       "Size": [
         "Rozmiar"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Title header for addresses domain table": {
@@ -20944,9 +20829,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Dotychczasowa personalizacja importu zostanie utracona."
-      ],
-      "You will not see this import record in the list any more.": [
-        "Ten import nie będzie już widoczny na liście."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Darmowa wersja próbna zakończy się ${ textDate }. ${ action }"

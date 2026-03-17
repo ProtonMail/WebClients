@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Hapus penerusan email"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Penerusan akan segera dimulai. Email baru akan muncul di kotak masuk Anda."
       ],
       "Mail forward stopped": [
         "Penerusan email dihentikan"
-      ],
-      "Reconnect": [
-        "Hubungkan Ulang"
-      ],
-      "Remove forward": [
-        "Hapus penerusan email"
       ],
       "You will stop the mail forwarding.": [
         "Anda akan menghentikan proses penerusan email."
@@ -857,15 +848,6 @@
       ],
       "Import": [
         "Impor"
-      ],
-      "Import calendars": [
-        "Impor kalender"
-      ],
-      "Import contacts": [
-        "Impor kontak"
-      ],
-      "Import emails": [
-        "Impor email"
       ],
       "Import emails, calendars, contacts": [
         "Impor email, kalender, kontak"
@@ -8279,31 +8261,6 @@
         "Apakah Anda yakin ingin mengimpor kunci pribadi? Mengimpor kunci pribadi yang dibuat secara tidak aman atau telah bocor dapat membahayakan keamanan email Anda.\n\nPerlu diketahui juga bahwa kunci publik yang terkait dengan kunci pribadi ini akan tersedia secara publik melalui server kunci kami. Jika kunci tersebut berisi rincian pribadi (seperti nama lengkap Anda) yang tidak ingin Anda publikasikan, silakan edit kunci tersebut sebelum mengimpornya."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Impor dari ${ provider }"
-      ],
-      "Import from Google": [
-        "Impor dari Google"
-      ],
-      "Import from other": [
-        "Impor dari layanan lain"
-      ],
-      "Import from Outlook": [
-        "Impor dari Outlook"
-      ],
-      "Import from Yahoo": [
-        "Impor dari Yahoo"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Pengurungan selesai"
-      ],
-      "Undo in progress": [
-        "Pengurungan sedang berlangsung"
-      ]
-    },
     "Import status": {
       "Active": [
         "Aktif"
@@ -8311,26 +8268,14 @@
       "Canceled": [
         "Dibatalkan"
       ],
-      "Canceling": [
-        "Membatalkan"
-      ],
-      "Completed": [
-        "Selesai"
-      ],
       "Delayed": [
         "Ditunda"
       ],
       "Failed": [
         "Gagal"
       ],
-      "In progress": [
-        "Sedang berlangsung"
-      ],
       "Paused": [
         "Dijeda"
-      ],
-      "Started": [
-        "Dimulai"
       ]
     },
     "Import type": {
@@ -8388,17 +8333,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } tidak pernah membagikan informasi Anda dengan pihak ketiga. Data yang tersedia bersumber dari analisis mandiri ${ BRAND_NAME } dan Constella Intelligence."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } menghentikan sementara proses impor karena sambungan dengan layanan email Anda terputus. Mohon sambungkan ulang."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } menghentikan sementara proses impor karena ruang penyimpanan Anda hampir habis. Anda dapat:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asisten penulisan ${ BRAND_NAME } Scribe"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } akan mencoba melanjutkan impor segera setelah penyedia email Anda mereset ${ bandwidthLimitLink } akun Anda. Anda tidak perlu melakukan apa pun. Jika Anda membatalkan impor, Anda tidak akan dapat melanjutkannya kembali dan harus memulai dari awal."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
@@ -8973,9 +8909,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Angkat identitas merek organisasi Anda dan ciptakan pengalaman daring yang lebih konsisten bagi para pengguna Anda."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Bawa pesan, kontak, dan kalender Anda ke ${ BRAND_NAME }."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Dengan membuat akun ${ PASS_APP_NAME } melalui email SimpleLogin Anda, Anda dapat mengelola alias milik Anda secara langsung dari ${ PASS_APP_NAME }."
       ],
@@ -9495,17 +9428,11 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Untuk pengguna yang beralih ke ${ MAIL_APP_NAME } dari layanan email lain, pilih tab ${ boldAddresses } dan tambahkan semua alamat email aktif sebelum mengubah record MX agar proses perpindahan berjalan lancar."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
-      ],
       "Free forever": [
         "Gratis selamanya"
       ],
       "Free trial": [
         "Uji coba gratis"
-      ],
-      "free up space by deleting older messages or other data": [
-        "kosongkan ruang dengan menghapus pesan lama atau data lainnya"
       ],
       "Gateway monitor": [
         "Monitor gateway"
@@ -10026,9 +9953,6 @@
       "No Gateways yet": [
         "Belum ada Gateway"
       ],
-      "No imports or forwarding history.": [
-        "Tidak ada riwayat impor atau penerusan yang tercatat."
-      ],
       "No label selected": [
         "Tidak ada label yang dipilih"
       ],
@@ -10076,9 +10000,6 @@
       ],
       "Once you reset your password:": [
         "Setelah Anda mengatur ulang kata sandi Anda:"
-      ],
-      "One time import": [
-        "Impor sekali jadi"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Mohon untuk hanya mengubah pengaturan ini hanya apabila Anda menggunakan PGP untuk saling bertukar pesan dengan pengguna non-${ BRAND_NAME }."
@@ -10302,9 +10223,6 @@
       "Public sharing of documents is not yet supported.": [
         "Pembagian dokumen secara publik belum didukung."
       ],
-      "purchase additional storage": [
-        "membeli ruang penyimpanan tambahan"
-      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Hubungi kami untuk bantuan seputar segala sesuatunya yang berhubungan dengan ${ BRAND_NAME }."
       ],
@@ -10425,9 +10343,6 @@
       "Select users to view their activity": [
         "Pilih pengguna yang aktivitasnya ingin ditampilkan"
       ],
-      "Select what you want to import.": [
-        "Pilih hal-hal apa saja yang ingin Anda impor."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Pilih kalender mana saja yang akan diimpor. Untuk setiap kalender yang diimpor, sistem kami akan membuat kalender baru hingga batas jumlah kalender maksimum yang diperkenankan oleh paket Anda."
       ],
@@ -10463,9 +10378,6 @@
       ],
       "Set password": [
         "Atur kata sandi"
-      ],
-      "Set up forwarding": [
-        "Siapkan penerusan"
       ],
       "Set up your organization": [
         "Siapkan organisasi Anda"
@@ -11325,9 +11237,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Anda dapat memperoleh seluruh layanan privasi premium kami dalam satu bundel — hanya dengan seharga **${ priceString }/bulan**."
       ],
-      "You can import one data type at a time.": [
-        "Anda dapat mengimpor satu jenis data dalam satu waktu."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Mohon hapus tautan kalender bersama yang ada dan seluruh pengguna ${ BRAND_NAME } yang berbagi kalender dengan Anda sebelum membatalkan langganan ${ MAIL_SHORT_APP_NAME } Anda."
       ],
@@ -11513,9 +11422,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Masa uji coba gratis Anda berhasil diubah menjadi langganan bulanan. Tanggal pembaruan Anda adalah ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Impor Anda dari ${ accounts } ditunda sementara."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informasi Anda aman bersama kami. Kami hanya akan menghubungi Anda jika diperlukan untuk menyediakan layanan kami."
@@ -12430,9 +12336,6 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendars": [
-        "Kalender"
-      ],
       "Capitalize words": [
         "Kapitalkan kata"
       ],
@@ -12678,9 +12581,6 @@
       ],
       "Email or username": [
         "Email atau nama pengguna"
-      ],
-      "Emails": [
-        "Email"
       ],
       "Emails (all messages)": [
         "Email (seluruh pesan)"
@@ -22012,9 +21912,6 @@
       "Help center": [
         "Pusat bantuan"
       ],
-      "History": [
-        "Riwayat"
-      ],
       "Home": [
         "Beranda"
       ],
@@ -22744,9 +22641,6 @@
       "What is the dark web?": [
         "Apa itu dark web?"
       ],
-      "What would you like to import?": [
-        "Apa yang ingin Anda impor?"
-      ],
       "Wipe all logs?": [
         "Hapus seluruh log?"
       ],
@@ -22821,20 +22715,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Tindakan"
-      ],
-      "Date": [
-        "Tanggal"
-      ],
-      "Import": [
-        "Impor"
-      ],
       "Size": [
         "Ukuran"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Title header for addresses domain table": {
@@ -23932,9 +23814,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Anda akan kehilangan segala penyesuaian yang telah Anda buat sejauh ini."
-      ],
-      "You will not see this import record in the list any more.": [
-        "Anda tidak akan lagi melihat catatan impor ini dalam daftar."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Masa uji coba gratis Anda akan berakhir pada ${ textDate }. ${ action }"

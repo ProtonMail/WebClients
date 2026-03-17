@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "전달 삭제"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "포워딩이 곧 시작됩니다. 새 이메일이 받은 편지함에 나타날 것입니다."
       ],
       "Mail forward stopped": [
         "메일 전달 중단됨"
-      ],
-      "Reconnect": [
-        "다시 연결"
-      ],
-      "Remove forward": [
-        "전달 삭제"
       ],
       "You will stop the mail forwarding.": [
         "메일 가져오기가 중단됩니다."
@@ -285,6 +276,9 @@
       "Close navigation": [
         "탐색 종료"
       ],
+      "Close search": [
+        "검색 닫기"
+      ],
       "Close tab": [
         "탭 닫기"
       ],
@@ -467,6 +461,9 @@
       ],
       "Delete filter “${ Name }”": [
         "필터 \"${ Name }\" 삭제"
+      ],
+      "Delete forward": [
+        "전달 중지"
       ],
       "Delete Gateway": [
         "게이트웨이 삭제"
@@ -858,6 +855,9 @@
       "Go to settings": [
         "설정으로 이동하기"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "확인"
       ],
@@ -884,15 +884,6 @@
       ],
       "Import": [
         "불러오기"
-      ],
-      "Import calendars": [
-        "캘린더 불러오기"
-      ],
-      "Import contacts": [
-        "연락처 가져오기"
-      ],
-      "Import emails": [
-        "이메일 가져오기"
       ],
       "Import emails, calendars, contacts": [
         "이메일, 캘린더 및 연락처 불러오기"
@@ -1176,6 +1167,9 @@
       "Reload": [
         "새로고침"
       ],
+      "Reload page": [
+        "페이지 새로 고침"
+      ],
       "Remove": [
         "삭제"
       ],
@@ -1310,6 +1304,9 @@
       ],
       "Search countries": [
         "국가 검색"
+      ],
+      "Search groups": [
+        "그룹 검색"
       ],
       "Search settings": [
         "검색 설정"
@@ -2714,6 +2711,9 @@
       "Change": [
         "변경"
       ],
+      "Completed": [
+        "완료"
+      ],
       "Configure": [
         "구성"
       ],
@@ -2740,6 +2740,12 @@
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace 앱에서 ${ BRAND_NAME }으로 데이터를 복사"
+      ],
+      "Has errors": [
+        "오류 있음"
+      ],
+      "In progress": [
+        "진행 중"
       ],
       "Install app": [
         "앱 설치"
@@ -2771,6 +2777,9 @@
       "Migration status": [
         "마이그레이션 상태"
       ],
+      "Not started": [
+        "시작 전"
+      ],
       "Organization does not have enough seats available": [
         "조직의 사용 권한이 충분하지 않습니다."
       ],
@@ -2801,11 +2810,17 @@
       "Set up two-factor authentication": [
         "2단계 인증 설정"
       ],
+      "Settings": [
+        "설정"
+      ],
       "Sign in to Google Workspace": [
         "Google Workspace에 로그인"
       ],
       "Start migration": [
         "이전 시작"
+      ],
+      "Status": [
+        "상태"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "조직의 데이터를 이전하려면 Google Workspace Marketplace에서 ${ BRAND_NAME } 이전 도우미 앱을 설치해야 합니다. 이 앱을 통해 ${ BRAND_NAME }에서 데이터를 복사할 수 있는 권한이 부여됩니다. 설치 후 계속 진행하려면 이곳으로 돌아오세요."
@@ -2815,6 +2830,9 @@
       ],
       "User": [
         "사용자"
+      ],
+      "Users migrated": [
+        "사용자가 이전되었습니다."
       ],
       "Verify installation": [
         "설치 검증"
@@ -4754,6 +4772,9 @@
       "Available with ${ title }": [
         "${ title }(에)서 사용 가능"
       ],
+      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
+        "${ MAIL_APP_NAME }에 가져올 서비스를 선택하세요. 주소 연결, 메일, 캘린더 및 연락처 가져오기 과정을 안내해 드립니다."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "먼저 구성하여 조직을 활성화한 뒤 이메일 주소를 사용자화하세요."
       ],
@@ -4929,6 +4950,9 @@
       ]
     },
     "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "첫 달 ${ offerPrice }. 이후 월 ${ regularPrice }로 갱신되며, 언제든지 취소할 수 있습니다."
+      ],
       "Get VPN Plus for only ${ offerPrice }": [
         "VPN Plus를 단 ${ offerPrice }에"
       ],
@@ -5680,6 +5704,11 @@
         "수신"
       ]
     },
+    "email_forwarding_2023: Incoming forwarding tab name": {
+      "From me": [
+        "내가 보낸 항목"
+      ]
+    },
     "email_forwarding_2023: Info": {
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "확인 이메일이 ${ boldForwardeeEmail }(으)로 전송됩니다."
@@ -5960,6 +5989,9 @@
       ],
       "Asking for help": [
         "도움 요청"
+      ],
+      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
+        "신뢰하는 사람을 복구 연락처에 추가함으로써, 비밀번호 재설정 이후 데이터를 복구할 때 그들에게 이메일을 보내 도움을 요청할 수 있습니다. 당신이 다른 사람의 복구 연락처가 되어 줄 수도 있습니다."
       ],
       "Cancel request": [
         "요청 취소"
@@ -6535,6 +6567,9 @@
       "Invalid code": [
         "잘못된 코드입니다."
       ],
+      "Invalid coupon": [
+        "유효하지 않은 쿠폰"
+      ],
       "Invalid domain": [
         "유효하지 않은 도메인"
       ],
@@ -6769,6 +6804,9 @@
       "Request timed out": [
         "요청 시간이 초과되었습니다."
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "이 플랜에서는 매입자 납부제도(Reverse charge)가 지원되지 않습니다."
+      ],
       "Server not found": [
         "서버를 찾을 수 없습니다"
       ],
@@ -6843,6 +6881,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "추가할 수 있는 최소 금액은 ${ price } 입니다."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "최소 기부 금액은 ${ price }입니다."
       ],
       "The policy name must be between 3 and 40 characters.": [
         "정책 이름은 3자에서 40자 사이여야 합니다."
@@ -8716,28 +8757,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "${ provider } 으로부터 불러오기"
-      ],
-      "Import from Google": [
-        "Google에서 가져오기"
-      ],
-      "Import from other": [
-        "다른 곳에서 가져오기"
-      ],
-      "Import from Outlook": [
-        "Outlook에서 가져오기"
-      ],
-      "Import from Yahoo": [
-        "Yahoo에서 가져오기"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "실행취소 완료됨"
-      ],
-      "Undo in progress": [
-        "실행 취소 진행 중"
+      "Advanced import": [
+        "고급 가져오기"
       ]
     },
     "Import status": {
@@ -8747,26 +8768,20 @@
       "Canceled": [
         "취소됨"
       ],
-      "Canceling": [
-        "취소 중"
-      ],
-      "Completed": [
-        "완료됨"
-      ],
       "Delayed": [
         "지연됨"
       ],
       "Failed": [
         "실패함"
       ],
-      "In progress": [
-        "진행 중"
+      "In progress...": [
+        "처리 중..."
       ],
       "Paused": [
         "일시 정지됨"
       ],
-      "Started": [
-        "시작됨"
+      "Undo in progress": [
+        "실행 취소 진행 중"
       ]
     },
     "Import type": {
@@ -8824,17 +8839,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME }은 제3자와 절대 사용자의 정보를 공유하지 않습니다. ${ BRAND_NAME }의 자체 분석 및 Constella Intelligence사로 부터 데이터가 수집됩니다."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } 다른 이메일 공급자와의 접속이 끊겨 가져오기 작업이 잠시 중지되었습니다. 다시 연결해 주세요."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME }이 사용자의 계정이 적은 공간으로 계속되고 있어 불러오기를 중단했습니다. 이를 수행할 수 있습니다:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME }이(가) 이메일 공급자가 계정의 ${ bandwidthLimitLink }를 재설정하자마자 가져오기를 재개하려고 시도합니다. 수행할 작업이 없습니다. 불러오기를 취소하면, 재개할 수 없으며 다시 시작해야 합니다."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }의 암호화 기술은 당사를 포함한 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다."
@@ -9112,6 +9118,9 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain }은(는) ${ BRAND_NAME }에서 호스팅됩니다. 빠른 하위 도매인 설정을 도와드립니다. ${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "그룹을 생성하려면 사용자 지정 도메인이 필요합니다. 사용자 지정 도메인이 설정되어 있지 않다면 ${ linkToDomainPage }에서 설정하세요."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "나중에 쉽게 취소하거나 확장할 수 있도록 사용 위치를 식별하는 데 도움이 되는 이름이에요."
       ],
@@ -9273,6 +9282,9 @@
       ],
       "An error occurred while communicating with the extension": [
         "확장과 통신하는데 문제가 발생했습니다"
+      ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "사용자의 이메일 제공 업체와의 연결이 끊어져 가져오기가 일시 중지되었습니다."
       ],
       "and": [
         "그리고"
@@ -9442,9 +9454,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "조직의 브랜드 아이덴티티를 증진하고 사용자를 위한 더욱 일관된 온라인 경험을 창출하십시오."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "${ BRAND_NAME }으로 메시지, 연락처 및 캘린더를 가져오세요."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "SimpleLogin 이메일로 ${ PASS_APP_NAME } 계정을 생성하면, ${ PASS_APP_NAME }에서 별칭을 즉시 관리할 수 있습니다."
       ],
@@ -9486,6 +9495,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "계속하려면 Entity ID를 선택하세요."
+      ],
+      "Choose your service to connect with": [
+        "연결하고자 하는 서비스 선택"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
@@ -9967,6 +9979,9 @@
       "finance": [
         "금융정보"
       ],
+      "For a 10-year version history, please contact our sales team.": [
+        "10년 버전 기록은 영업팀에 문의하세요."
+      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "언제든지 이메일에 접근하고 최적화된 모바일 경험을 위해, ${ androidAppLink } 또는 ${ iosAppLink } 을(를)다운로드하세요."
       ],
@@ -9979,17 +9994,14 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "${ MAIL_APP_NAME }에서 타 이메일 서비스로 전환하는 사용자라면, 매끄러운 전환을 위해 ${ boldAddresses } 탭을 선택한 뒤 활성화된 모든 이메일 주소를 추가하세요."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "다른 계정에서 전송되는 메일을 안전한 ${ MAIL_APP_NAME } 받은 편지함으로 전달하세요."
+      "Forwarding automatically sends new incoming emails to your Inbox.": [
+        "자동 전달이 새로 들어오는 이메일을 받은 편지함으로 보내줍니다."
       ],
       "Free forever": [
         "영구적으로 무료"
       ],
       "Free trial": [
         "무료 체험"
-      ],
-      "free up space by deleting older messages or other data": [
-        "오래된 메시지 및 타 데이터를 삭제하여 공간을 비우세요"
       ],
       "Friends and family": [
         "친구 및 가족"
@@ -10087,6 +10099,9 @@
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "비활성화시 조직의 구성원이 조직 내에서만 금고나 항목을 공유할 수 있습니다."
       ],
+      "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
+        "비활성화시, 조직 일원들이 새로운 별칭을 생성할 수 없습니다. 이미 만들어진 별칭은 계속 사용 가능합니다."
+      ],
       "If disabled, organization members won't be able to create secure links. Previously active secure links remain valid until their expiration.": [
         "비활성화시 조직 구성원이 안전한 링크를 생성할 수 없게 됩니다. 이전에 활성화된 안전한 링크는 만료 기간까지 유효합니다."
       ],
@@ -10170,6 +10185,9 @@
       ],
       "Import from": [
         "다음에서 가져오기"
+      ],
+      "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
+        "대역폭 제한으로 인해 ${ accounts }(에)서 가져오기가 일시적으로 중단되었습니다."
       ],
       "Import in progress": [
         "처리가 진행 중입니다"
@@ -10546,9 +10564,6 @@
       "No Gateways yet": [
         "아직 게이트웨이가 없습니다."
       ],
-      "No imports or forwarding history.": [
-        "불러오기 및 포워딩 기록 없음"
-      ],
       "No label selected": [
         "선택한 라벨 없음"
       ],
@@ -10597,9 +10612,6 @@
       "Once you reset your password:": [
         "지금 비밀번호를 재설정하면 다음 사항이 적용됩니다:"
       ],
-      "One time import": [
-        "한 번만 가져오기"
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "비 ${ BRAND_NAME } 수신자와 PGP를 사용하는 경우에만 이 설정을 변경해 주세요."
       ],
@@ -10644,6 +10656,9 @@
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "전용 서버를 게이트웨이로 구성하고 어떤 구성원이 접근할 수 있는지 결정하세요."
+      ],
+      "Other": [
+        "기타"
       ],
       "Other accounts": [
         "다른 계정"
@@ -10759,6 +10774,9 @@
       "Please open the document to view it.": [
         "문서를 확인하려면 열어주세요."
       ],
+      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
+        "브라우저 확장 설정을 열어 ${ PASS_APP_NAME } 확장기능이 웹사이트 데이터에 접근하도록 허용해주세요. 그리고 이 페이지를 새로고침 하십시오."
+      ],
       "Please select the folders you would like to import:": [
         "가져올 폴더 선택:"
       ],
@@ -10833,9 +10851,6 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "문서의 공개 공유가 아직 지원되지 않습니다."
-      ],
-      "purchase additional storage": [
-        "추가 용량 구매"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "${ BRAND_NAME }에 대한 도움이 필요하면 저희에게 연락하세요."
@@ -10960,9 +10975,6 @@
       "Select users to view their activity": [
         "활동을 확인할 사용자를 선택하세요"
       ],
-      "Select what you want to import.": [
-        "처리할 파일을 선택하세요."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "불러올 캘린더를 선택하세요. 새 캘린더가 사용자 플랜의 가능한 한도 내에서 각각 생성됩니다."
       ],
@@ -10998,9 +11010,6 @@
       ],
       "Set password": [
         "비밀번호 설정"
-      ],
-      "Set up forwarding": [
-        "자동으로 가져오기 설정"
       ],
       "Set up your organization": [
         "내 조직 설정하기"
@@ -11101,6 +11110,12 @@
       "Step ${ step }/${ totalSteps }": [
         "${ step }/${ totalSteps }단계"
       ],
+      "Step 1 of 2": [
+        "1/2 단계"
+      ],
+      "Step 2 of 2": [
+        "2/2 단계"
+      ],
       "Storage allocated to other users in this organisation": [
         "스토리지가 이 조직의 다른 사용자들에게 할당됨"
       ],
@@ -11190,6 +11205,9 @@
       ],
       "Thanks for the feedback!": [
         "피드백 감사합니다!"
+      ],
+      "The ${ bandwidthLimitLink } was reached. We'll automatically resume it once it resets.": [
+        "${ bandwidthLimitLink } 한도에 도달했습니다. 재설정시 자동으로 다시 시작됩니다."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked } 메시지는 더 이상 표시되지 않지만 ${ encryptionAndKeysLink } 에서 데이터 잠금을 해제할 수 있습니다."
@@ -11421,6 +11439,9 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "계속하려면, 데이터 삭제를 원하는 사용자의 이름을 입력하십시오."
+      ],
+      "To continue to ${ product }": [
+        "${ product }(으)로 계속하기"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "서비스의 지속적인 개선과 애플리케이션의 적절한 기능을 모니터링하기 위해 당사에서 동의하에 데이터를 수집할 수 있습니다. 해당 정보는 제3자 서비스와 공유되지 않습니다."
@@ -11902,9 +11923,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "불과 매달 **${ priceString }**의 가격에 하나의 번들로 모든 프리미엄 개인 정보 보호 서비스를 얻을 수 있어요."
       ],
-      "You can import one data type at a time.": [
-        "한 번에 하나의 데이터 유형을 가져올 수 있어요."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "최대 ${ MAX_CALENDARS_FREE }개 캘린더를 보관할 수 있습니다. ${ MAIL_SHORT_APP_NAME } 구독을 취소하기 전에 공유 캘린더 링크와 캘린더를 공유한 ${ BRAND_NAME } 사용자를 제거하십시오."
       ],
@@ -12082,6 +12100,9 @@
       "Your account has been successfully updated.": [
         "계정이 성공적으로 업데이트되었습니다."
       ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "귀하의 계정은 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 선택하신 요금제에서 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 요금제를 선택하십시오."
+      ],
       "Your account was successfully updated with this promotion": [
         "사용자의 계정이 해당 프로모션으로 성공적으로 업데이트되었습니다"
       ],
@@ -12103,9 +12124,6 @@
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "무료 체험이 월간 구독으로 성공적으로 전환되었습니다. 회원님의 구독 갱신일은 ${ nextBillingDate }입니다."
       ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "${ accounts } 의 가져오기 작업이 일시적으로 지연되었습니다."
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "회원님의 정보는 Proton에서 안전하게 보호되고 있습니다. 서비스 제공에 필요한 상황에만 연락해 드립니다."
       ],
@@ -12126,6 +12144,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "조직의 이메일은 조직 키를 사용한 종단 간 암호화로 보호됩니다. 이 지문은 계정의 모든 관리자가 같은 키를 가지고 있는지 확인할 수 있습니다."
+      ],
+      "Your payment details are encrypted and secure": [
+        "사용자의 결제 정보는 암호화되어 안전하게 보관됩니다."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "결제 정보는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
@@ -12869,6 +12890,9 @@
       "Allow": [
         "허용"
       ],
+      "Allow alias creation": [
+        "별칭 생성 허용"
+      ],
       "Allow all users to create vaults": [
         "전채 구성원의 금고 생성 허용"
       ],
@@ -13047,9 +13071,6 @@
         "내장형 2단계 인증기"
       ],
       "Calendar": [
-        "캘린더"
-      ],
-      "Calendars": [
         "캘린더"
       ],
       "Capitalize words": [
@@ -13304,9 +13325,6 @@
       "Email or username": [
         "이메일 또는 사용자 이름"
       ],
-      "Emails": [
-        "이메일"
-      ],
       "Emails (all messages)": [
         "이메일 (모든 메시지)"
       ],
@@ -13483,6 +13501,9 @@
       ],
       "Import interval": [
         "가져오기 간격"
+      ],
+      "Import recent mails": [
+        "최근 메일 가져오기"
       ],
       "Import to email address": [
         "이메일 주소로 가져오기"
@@ -15067,11 +15088,20 @@
       ]
     },
     "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: 로그인"
+      ],
       "${ appName }: Sign-up": [
         "${ appName }: 회원 가입"
       ],
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정"
+      ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "자녀에게 지정된 ${ BRAND_NAME } 이메일 주소를 활성화하고 자녀 계정을 설정하세요."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "자녀의 ${ BRAND_NAME } 계정 활성화 | ${ BRAND_NAME }"
       ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "${ BRAND_NAME } 계정을 만들어서 단 한 번의 로그인으로 ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } 등의 모든 암호화 된 ${ BRAND_NAME } 서비스를 사용해보세요. 계정이 없으신가요? 무료로 ${ BRAND_NAME } 계정을 만들 수 있어요."
@@ -15096,6 +15126,12 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "${ BRAND_NAME } 사용자 이름을 잊어버리셨나요? 복구 이메일 및 전화 번호를 사용하여 찾아보신 뒤 ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } 등에 접근해 보세요."
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "자녀에게 지정된 ${ BRAND_NAME } 이메일 주소에 대한 접근 권한을 복구합니다."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "자녀의 ${ BRAND_NAME } 계정 복구 | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "${ BRAND_NAME } 계정 비밀번호 재설정"
@@ -17913,6 +17949,9 @@
       "VAT number": [
         "부가가치세 번호"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "매입자 납부제도(Reverse charge)가 적용됩니다."
+      ],
       "You already have a subscription to this plan.": [
         "이미 이 플랜을 구독 중입니다."
       ],
@@ -20050,6 +20089,9 @@
       "${ PASS_PLUS_VAULTS } vault for your passwords": [
         "나의 비밀번호를 위한 ${ PASS_PLUS_VAULTS }개 금고"
       ],
+      "${ referrerName } is inviting you to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "${ BRAND_NAME }의 암호화 생태계를 통해 개인정보에 대한 주도권을 유지하려는 1 억명이 넘는 사람들과 함께하도록 ${ referrerName } 이 당신을 초대합니다."
+      ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "파일 및 사진을 위한 ${ totalDriveStorageSize } 클라우드 스토리지"
       ],
@@ -21180,6 +21222,9 @@
       "Total due": [
         "총 합계"
       ],
+      "Total due on ${ formattedPeriodEnd }": [
+        "${ formattedPeriodEnd }까지 총액"
+      ],
       "Total due today": [
         "오늘 결제할 금액"
       ]
@@ -22193,6 +22238,9 @@
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
+      "${ PASS_APP_NAME } is missing permissions": [
+        "${ PASS_APP_NAME } 에게 권한이 없습니다."
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor 리포트"
       ],
@@ -22463,6 +22511,9 @@
       "Check your default mail application": [
         "기본 메일 애플리케이션을 확인해 주세요"
       ],
+      "Choose a provider": [
+        "제공업체 선택"
+      ],
       "Choose an account": [
         "계정 선택"
       ],
@@ -22588,6 +22639,9 @@
       ],
       "Currency": [
         "통화"
+      ],
+      "Custom": [
+        "사용자화"
       ],
       "Custom domains:": [
         "커스텀 도메인:"
@@ -23009,9 +23063,6 @@
       "Help center": [
         "지원 센터"
       ],
-      "History": [
-        "기록"
-      ],
       "Home": [
         "홈"
       ],
@@ -23059,6 +23110,9 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH }로 불러오기"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "${ BRAND_NAME }로 데이터 불러오기"
       ],
       "Inactive 2FA": [
         "2단계 인증 꺼짐"
@@ -23390,6 +23444,9 @@
       "Reused passwords": [
         "재사용한 비밀번호"
       ],
+      "Reverse charge not supported": [
+        "매입자 납부제도(Reverse charge)가 지원되지 않습니다."
+      ],
       "Revoke certificate?": [
         "인증서를 취소합니까?"
       ],
@@ -23431,6 +23488,9 @@
       ],
       "Select contact group": [
         "연락처 그룹"
+      ],
+      "Select data to import": [
+        "불러올 데이터 선택"
       ],
       "Select the time to send this notification": [
         "이 알림이 전송될 시간 선택"
@@ -23756,9 +23816,6 @@
       "What is the dark web?": [
         "다크 웹이란?"
       ],
-      "What would you like to import?": [
-        "무엇을 가져오시겠어요?"
-      ],
       "Wipe all logs?": [
         "모든 로그를 삭제하시겠습니까?"
       ],
@@ -23836,20 +23893,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "동작"
-      ],
-      "Date": [
-        "날짜"
-      ],
-      "Import": [
-        "가져오기"
-      ],
       "Size": [
         "크기"
-      ],
-      "Status": [
-        "상태"
       ]
     },
     "Title header for addresses domain table": {
@@ -24909,6 +24954,12 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "이 전화번호를 삭제하면 더 이상 계정을 복구할 수 없습니다."
       ],
+      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
+        "로그인할 수 없습니다. ${ PASS_APP_NAME } 브라우저 확장 프로그램을 열고 거기서 로그인해 주세요."
+      ],
+      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
+        "가입할 수 없습니다. ${ PASS_APP_NAME } 브라우저 확장 프로그램을 열고 거기서 가입해 주세요."
+      ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "이 가져오기 작업을 취소하면 재개할 수 없습니다. 모든 진행 사항은 ${ BRAND_NAME } 계정에 저장되었습니다. 정말 취소하시겠습니까?"
       ],
@@ -24969,8 +25020,8 @@
       "You will lose any customization you made so far.": [
         "지금까지 만든 커스터마이징을 모두 잃게 됩니다."
       ],
-      "You will not see this import record in the list any more.": [
-        "더 이상 리스트의 불러오기 기록을 볼 수 없습니다."
+      "You will not see this import record in the list anymore.": [
+        "이 가져오기 기록은 더 이상 목록에 표시되지 않습니다."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate } 에 종료됩니다. ${ action }"

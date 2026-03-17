@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Ștergere transferare"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Transferarea va începe în curând. Noile mesaje vor apărea în folderul «Primite»."
       ],
       "Mail forward stopped": [
         "Transferare mesaje oprită"
-      ],
-      "Reconnect": [
-        "Reconectare"
-      ],
-      "Remove forward": [
-        "Eliminare transferare"
       ],
       "You will stop the mail forwarding.": [
         "Veți opri transferarea mesajelor."
@@ -471,6 +462,9 @@
       "Delete filter “${ Name }”": [
         "Ștergere filtru „${ Name }”"
       ],
+      "Delete forward": [
+        "Ștergere transferare"
+      ],
       "Delete Gateway": [
         "Ștergere poartă de acces"
       ],
@@ -861,6 +855,9 @@
       "Go to settings": [
         "Accesare setări"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Am înțeles"
       ],
@@ -887,15 +884,6 @@
       ],
       "Import": [
         "Importare"
-      ],
-      "Import calendars": [
-        "Importare calendare"
-      ],
-      "Import contacts": [
-        "Importare contacte"
-      ],
-      "Import emails": [
-        "Importare mesaje"
       ],
       "Import emails, calendars, contacts": [
         "Importați e-mailuri, calendare, contacte"
@@ -1202,6 +1190,9 @@
       ],
       "Remove domain": [
         "Ștergere domeniu"
+      ],
+      "Remove forward": [
+        "Eliminare transferare"
       ],
       "Remove from favorites": [
         "Eliminare din favorite"
@@ -4849,6 +4840,9 @@
       ],
       "Available with ${ title }": [
         "Disponibil cu ${ title }"
+      ],
+      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
+        "Alegeți serviciul pe care doriți să îl aduceți în ${ MAIL_APP_NAME }, iar noi vă vom ghida prin conectarea unei adrese sau importarea mesajelor, calendarului sau contactelor."
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configurați mai întâi aceasta pentru a vă activa organizația și a vă personaliza adresa de e-mail."
@@ -8921,28 +8915,11 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importare din ${ provider }"
+      "Advanced import": [
+        "Importare avansată"
       ],
-      "Import from Google": [
-        "Importare din Google"
-      ],
-      "Import from other": [
-        "Importare din altă sursă"
-      ],
-      "Import from Outlook": [
-        "Importare din Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importare din Yahoo"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Anulare finalizată"
-      ],
-      "Undo in progress": [
-        "Anulare în desfășurare"
+      "Import from ${ providerName }": [
+        "Importare din ${ providerName }"
       ]
     },
     "Import status": {
@@ -8952,26 +8929,32 @@
       "Canceled": [
         "Anulat"
       ],
-      "Canceling": [
-        "Se anulează"
-      ],
-      "Completed": [
-        "Finalizată"
+      "Canceling...": [
+        "Se anulează..."
       ],
       "Delayed": [
         "Întârziat"
       ],
+      "Disabled": [
+        "Dezactivat"
+      ],
       "Failed": [
         "Eșuată"
       ],
-      "In progress": [
-        "În desfășurare"
+      "Imported": [
+        "Importat"
+      ],
+      "In progress...": [
+        "În desfășurare..."
       ],
       "Paused": [
         "Suspendat"
       ],
-      "Started": [
-        "Început"
+      "Undo finished": [
+        "Anulare finalizată"
+      ],
+      "Undo in progress": [
+        "Anulare în desfășurare"
       ]
     },
     "Import type": {
@@ -9033,17 +9016,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } nu vă partajează niciodată informațiile cu terțe părți. Datele provin din propriile analize ale ${ BRAND_NAME } și din Constella Intelligence."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } a întrerupt importarea deoarece a pierdut conexiunea cu celălalt furnizor de e-mail. Reconectați-vă."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } a oprit importarea deoarece contul nu mai are spațiu suficient. Puteți să:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent de scriere ${ BRAND_NAME } Scribe"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } va încerca să reia importarea imediat ce furnizorul de e-mail vă resetează ${ bandwidthLimitLink } a contului. Nu trebuie să faceți nimic. Dacă anulați importarea, nu veți mai putea să o reluați și va trebui să o reîncepeți."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Tehnologia de criptare ${ BRAND_NAME } semnifică faptul că nimeni nu vă poate accesa parola - nici măcar noi."
@@ -9552,6 +9526,12 @@
       "An error occurred while communicating with the extension": [
         "A apărut o eroare în timpul comunicării cu extensia."
       ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "O importare este suspendată deoarece conexiunea la furnizorul de e-mail a fost pierdută."
+      ],
+      "An import is paused because your storage is almost full.": [
+        "O importare este suspendată deoarece spațiul de stocare este aproape plin."
+      ],
       "and": [
         "și"
       ],
@@ -9720,9 +9700,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Îmbunătățiți-vă identitatea de brand a organizației proprii și creați o experiență online mai consistentă pentru utilizatorii acesteia."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Aduceți-vă mesajele, contactele și calendarele în ${ BRAND_NAME }."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Prin crearea unui cont ${ PASS_APP_NAME } cu adresa de e-mail SimpleLogin, vă puteți gestiona aliasurile direct din ${ PASS_APP_NAME }."
       ],
@@ -9764,6 +9741,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Alegeți un ID de entitate pentru a continua."
+      ],
+      "Choose your service to connect with": [
+        "Alegeți serviciul cu care doriți să vă conectați"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
@@ -10273,8 +10253,8 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pentru utilizatorii care trec la ${ MAIL_APP_NAME } de la un alt serviciu de e-mail, selectați fila ${ boldAddresses } și adăugați toate adresele de e-mail active înainte de a schimba înregistrarea MX pentru a asigura o tranziție ușoară."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Transferați mesajele primite pe e-mail de la un alt cont în contul securizat al ${ MAIL_APP_NAME }."
+      "Forwarding automatically sends new incoming emails to your Inbox.": [
+        "Transferarea vă trimite automat mesajele noi primite în contul personal."
       ],
       "Free forever": [
         "Gratuit pentru totdeauna"
@@ -10282,8 +10262,8 @@
       "Free trial": [
         "Probare gratuită"
       ],
-      "free up space by deleting older messages or other data": [
-        "eliberați spațiu prin ștergerea mesajelor mai vechi sau a altor date"
+      "Free up space or upgrade your storage to continue.": [
+        "Eliberați spațiu sau modificați planul de stocare pentru a continua."
       ],
       "Friends and family": [
         "Prieteni și familie"
@@ -10470,11 +10450,19 @@
       "Import from": [
         "Importare din"
       ],
+      "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
+        "Importarea din ${ accounts } este temporar amânată din cauza unei limite de lățime de bandă.",
+        "Importarea din ${ accounts } este amânată temporar din cauza unei limite de lățime de bandă.",
+        "Importurile din ${ accounts } sunt temporar întârziate din cauza unei limite de lățime de bandă."
+      ],
       "Import in progress": [
         "Importare în derulare"
       ],
       "Import mailbox": [
         "Importare mesaje"
+      ],
+      "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
+        "Importarea afișează transferurile unice de mesaje, calendare sau contacte în contul ${ BRAND_NAME } personal."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "IMPORTANT: dacă în consola DNS nu se permite câmpurilor CNAME să se termine cu un punct, puteți elimina ultimul punct din valorile CNAME."
@@ -10847,9 +10835,6 @@
       "No Gateways yet": [
         "Încă nu există porți de acces"
       ],
-      "No imports or forwarding history.": [
-        "Nu există istoric de importări și mesaje transferate."
-      ],
       "No label selected": [
         "Nicio etichetă selectată"
       ],
@@ -10897,9 +10882,6 @@
       ],
       "Once you reset your password:": [
         "După ce veți reseta parola:"
-      ],
-      "One time import": [
-        "Importare unică"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Modificați aceste setări numai dacă utilizați PGP cu destinatari care nu sunt utilizatori ai ${ BRAND_NAME }."
@@ -11074,6 +11056,9 @@
       "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
         "Deschideți setările extensiei navigatorului web și permiteți extensiei ${ PASS_APP_NAME } să acceseze datele site-ului web. Apoi, reîncărcați această pagină."
       ],
+      "Please reconnect to continue.": [
+        "Reconectați-vă pentru a continua."
+      ],
       "Please select the folders you would like to import:": [
         "Selectați folderele pe care doriți să le importați:"
       ],
@@ -11148,9 +11133,6 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Partajarea publică a documentelor nu este încă implementată."
-      ],
-      "purchase additional storage": [
-        "cumpărați spațiu suplimentar"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contactați-ne pentru ajutor despre orice din ${ BRAND_NAME }."
@@ -11275,9 +11257,6 @@
       "Select users to view their activity": [
         "Selectare utilizatori pentru a le vedea activitatea."
       ],
-      "Select what you want to import.": [
-        "Selectați ce doriți să importați."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selectați calendarul de importat. Va fi creat un calendar pentru fiecare calendar importat în limita calendarelor disponibile în plan."
       ],
@@ -11313,9 +11292,6 @@
       ],
       "Set password": [
         "Setare parolă"
-      ],
-      "Set up forwarding": [
-        "Setare transferare"
       ],
       "Set up your organization": [
         "Setați organizația"
@@ -11517,6 +11493,9 @@
       ],
       "Thanks for the feedback!": [
         "Mulțumim pentru feedback!"
+      ],
+      "The ${ bandwidthLimitLink } was reached. We'll automatically resume it once it resets.": [
+        "S-a atins limita de ${ bandwidthLimitLink }. Se va relua automat după ce se resetează."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Mesajul ${ boldDataLocked } nu va mai fi afișat, dar încă puteți să vă deblocați datele din ${ encryptionAndKeysLink }."
@@ -12249,9 +12228,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Puteți obține serviciile noastre de confidențialitate speciale într-un singur pachet – și costă doar **${ priceString }/lună**."
       ],
-      "You can import one data type at a time.": [
-        "Puteți importa un singur tip de date la un moment dat."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
@@ -12469,11 +12445,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Probarea gratuită a fost convertită cu un abonament lunar. Data lui de reînnoire este ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Importarea din ${ accounts } este temporar întârziată.",
-        "Importarea din ${ accounts } este temporar întârziată.",
-        "Importarea din ${ accounts } este temporar întârziată."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informațiile vă sunt în siguranță la noi. Vă vom contacta doar atunci când este necesar să vă furnizăm serviciile."
@@ -13446,9 +13417,6 @@
       "Calendar": [
         "Calendar"
       ],
-      "Calendars": [
-        "Calendare"
-      ],
       "Capitalize words": [
         "Cuvinte cu majuscule"
       ],
@@ -13700,9 +13668,6 @@
       ],
       "Email or username": [
         "E-mail sau utilizator"
-      ],
-      "Emails": [
-        "Mesaje"
       ],
       "Emails (all messages)": [
         "Mesaje (toate mesajele)"
@@ -18448,6 +18413,9 @@
       "VAT number": [
         "Valoare TVA"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Se aplică mecanismul de taxare inversă a TVA."
+      ],
       "You already have a subscription to this plan.": [
         "Deja aveți un abonament la acest plan."
       ],
@@ -19050,7 +19018,7 @@
         "Valorificați oferta"
       ],
       "SPRING SALE 2026": [
-        "OFERTĂ DE PRIMĂVERII 2026"
+        "OFERTĂ PRIMĂVERII 2026"
       ]
     },
     "q1campaign: Info": {
@@ -19138,7 +19106,7 @@
         "pentru 12 luni"
       ],
       "SPRING SALE": [
-        "OFERTĂ DE PRIMĂVERII"
+        "OFERTĂ PRIMĂVERII"
       ]
     },
     "Recovery Email": {
@@ -23185,6 +23153,9 @@
       "Check your default mail application": [
         "Verificați aplicația implicită de e-mail"
       ],
+      "Choose a provider": [
+        "Alegeți un furnizor"
+      ],
       "Choose an account": [
         "Alegeţi un cont"
       ],
@@ -23312,6 +23283,9 @@
       ],
       "Currency": [
         "Monedă"
+      ],
+      "Custom": [
+        "Personalizat"
       ],
       "Custom domains:": [
         "Domenii personale:"
@@ -23650,6 +23624,9 @@
       "Forward emails": [
         "Transferare mesaje"
       ],
+      "Forwardings": [
+        "Transferări"
+      ],
       "Free": [
         "Gratuit"
       ],
@@ -23737,9 +23714,6 @@
       "Help center": [
         "Centru de ajutor"
       ],
-      "History": [
-        "Istoric"
-      ],
       "Home": [
         "Început"
       ],
@@ -23789,6 +23763,12 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Import cu ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importați-vă datele în ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Importări"
       ],
       "Inactive 2FA": [
         "A2F inactive"
@@ -24165,6 +24145,9 @@
       "Select contact group": [
         "Selectare grup contacte"
       ],
+      "Select data to import": [
+        "Selectați datele de importat"
+      ],
       "Select the time to send this notification": [
         "Selectați timpul când să fie trimisă această notificare"
       ],
@@ -24283,7 +24266,7 @@
         "Ofertă specială"
       ],
       "Spring Sale": [
-        "Reducere de primăvară"
+        "Ofertă de primăvară"
       ],
       "Start a new import": [
         "Începere importare nouă"
@@ -24491,9 +24474,6 @@
       "What is the dark web?": [
         "Ce este internetul ascuns?"
       ],
-      "What would you like to import?": [
-        "Ce ați dori să importați?"
-      ],
       "Wipe all logs?": [
         "Goliți jurnalul?"
       ],
@@ -24571,20 +24551,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Acțiuni"
-      ],
-      "Date": [
-        "Data"
-      ],
-      "Import": [
-        "Importare"
-      ],
       "Size": [
         "Mărime"
-      ],
-      "Status": [
-        "Stare"
       ]
     },
     "Title header for addresses domain table": {
@@ -25740,7 +25708,7 @@
       "You will lose any customization you made so far.": [
         "Veți pierde orice modificare făcută până acum."
       ],
-      "You will not see this import record in the list any more.": [
+      "You will not see this import record in the list anymore.": [
         "Nu veți mai vedea această înregistrare importată în listă."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [

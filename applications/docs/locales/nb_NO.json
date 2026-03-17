@@ -438,17 +438,11 @@
       "import": [
         "importer"
       ],
-      "Import calendars": [
-        "Importer kalendere"
-      ],
       "Import contacts": [
         "Importer kontakter"
       ],
       "Import data": [
         "Importer data"
-      ],
-      "Import emails": [
-        "Importer e-poster"
       ],
       "Import emails, calendars, contacts": [
         "Importer e-poster, kalendere, kontakter"
@@ -2874,6 +2868,9 @@
       "Enter 6 digits": [
         "Skriv inn 6 sifre"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Skriv inn brukernavnet ditt uten domenet (@eksempel.com)"
+      ],
       "Error decrypting a computer": [
         "Feil ved dekryptering av datamaskin"
       ],
@@ -2936,6 +2933,9 @@
       ],
       "Incorrect username": [
         "Uriktig brukernavn"
+      ],
+      "Invalid coupon": [
+        "Ugyldig kupong"
       ],
       "Invalid email address": [
         "Ugyldig e-postadresse"
@@ -3037,6 +3037,9 @@
       ],
       "Request timed out": [
         "Forespørselen ble tidsavbrutt"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omvendt avgiftsplikt støttes ikke for denne planen"
       ],
       "Search failed": [
         "Søket mislyktes"
@@ -4020,23 +4023,6 @@
         "Velg ${ boldExport } for å eksportere kalenderen som en ICS-fil."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Importer fra ${ provider }"
-      ],
-      "Import from Google": [
-        "Importer fra Google"
-      ],
-      "Import from other": [
-        "Importer fra andre"
-      ],
-      "Import from Outlook": [
-        "Importer fra Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importer fra Yahoo"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ut av ${ totalContacts } blir ikke importert. Klikk for detaljer."
@@ -4284,9 +4270,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du ber om en ny verifiseringskode, sjekk søppelpostmappen din og sjekk at ${ strong } er riktig adresse."
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Ta med dine meldinger, kontakter og kalendere til ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
@@ -4765,9 +4748,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere av de betrodde nøklene dine ble merket \"kompromittert\" av eieren. Vi anbefaler at du \"ikke stoler på\" disse nøklene."
       ],
-      "One time import": [
-        "Engangsimport"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Kun personer med koblingen og passordet har tilgang til denne filen."
       ],
@@ -4906,9 +4886,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Velg det e-postformatet du vil bruke som standard når du sender en e-post til denne adressen."
-      ],
-      "Select what you want to import.": [
-        "Velg hva du ønsker å importere."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Velg hvilke kalendere du vil importere. En ny kalender opprettes for hver importerte kalender i henhold til antall kalendere som er tilgjengelige i planen din."
@@ -5253,9 +5230,6 @@
       "You can close the tab or browser in the meantime.": [
         "Du kan lukke fanen eller nettleseren i mellomtiden."
       ],
-      "You can import one data type at a time.": [
-        "Du kan importere én datatype om gangen."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet.",
         "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet."
@@ -5549,9 +5523,6 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendars": [
-        "Kalendere"
-      ],
       "Cancel download": [
         "Avbryt nedlasting"
       ],
@@ -5626,9 +5597,6 @@
       ],
       "Email format": [
         "E-postformat"
-      ],
-      "Emails": [
-        "E-poster"
       ],
       "Emails (all messages)": [
         "E-poster (alle meldinger)"
@@ -9968,9 +9936,6 @@
       ],
       "What is a VPN?": [
         "Hva er et VPN?"
-      ],
-      "What would you like to import?": [
-        "Hva ønsker du å importere?"
       ],
       "When is it most important to use a VPN?": [
         "Når er det viktigst å bruke et VPN?"

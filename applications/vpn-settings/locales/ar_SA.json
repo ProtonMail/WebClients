@@ -527,6 +527,9 @@
       "Go to panel ${ index }": [
         "انتقل إلى لوحة ${ index }"
       ],
+      "Google": [
+        "جوجل"
+      ],
       "Got it": [
         "حصلت عليها"
       ],
@@ -544,15 +547,6 @@
       ],
       "Import": [
         "استيراد"
-      ],
-      "Import calendars": [
-        "أورد الرزنامة"
-      ],
-      "Import contacts": [
-        "إستيراد جهات الإتصال"
-      ],
-      "Import emails": [
-        "استيراد رسائل البريد الإلكتروني الخاصة بك"
       ],
       "Import emails, calendars, contacts": [
         "استيراد رسائل البريد الإلكتروني والتقويمات وجهات الاتصال"
@@ -5829,20 +5823,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "استيراد من ${ provider }"
-      ],
-      "Import from Google": [
-        "استيراد من Google"
-      ],
-      "Import from other": [
-        "استيراد من جهة أخرى"
-      ],
-      "Import from Outlook": [
-        "استيراد من Outlook"
-      ],
-      "Import from Yahoo": [
-        "استيراد من Yahoo"
+      "Advanced import": [
+        "استيراد متقدم"
       ]
     },
     "Import warning": {
@@ -6456,9 +6438,6 @@
       "Billing cycle: ${ text }": [
         "دورة الفوترة: ${ text }"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "انقل رسائلك وجهات اتصالك وتقويماتك إلى ${ BRAND_NAME }."
-      ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "من خلال تعطيل مراقب الحساب، ستقوم أيضا بمسح سجلك بالكامل. هل أنت متأكد من أنك تريد تعطيل هذا؟"
       ],
@@ -6482,6 +6461,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "اختر معرّف المؤسسة للمتابعة."
+      ],
+      "Choose your service to connect with": [
+        "اختر الخدمة التي تريد الاتصال بها"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "انقر فوق \"طلب رمز جديد\" للحصول على رمز تحقق جديد أرسل إلى ${ strong }. إذا كان رقم الهاتف هذا غير صحيح، انقر فوق \"تعديل\" لتصحيحه."
@@ -7325,9 +7307,6 @@
       "Once you reset your password:": [
         "بمجرد إعادة تعيين كلمة المرور:"
       ],
-      "One time import": [
-        "استيراد لمرة واحدة"
-      ],
       "Open source": [
         "مفتوح المصدر"
       ],
@@ -7620,9 +7599,6 @@
       ],
       "Select users to view their activity": [
         "حدد المستخدمين لعرض نشاطهم"
-      ],
-      "Select what you want to import.": [
-        "حدد ما تريد استيراده."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "حدد التقويمات التي ترغب في استيرادها. سيُنشأ تقويم جديد لكل تقويم مستورد وفقًا لعدد التقويمات المتاحة في خطتك."
@@ -8356,9 +8332,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "يمكنك الحصول على خدمات الخصوصية المميزة لدينا في حزمة واحدة - وهي فقط **${ priceString }/شهريًا**."
       ],
-      "You can import one data type at a time.": [
-        "يمكنك استيراد نوع بيانات واحد في كل مرة."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "يمكنك الاحتفاظ بما يصل إلى ${ MAX_CALENDARS_FREE } من التقويمات. يرجى إزالة روابط التقويم المشتركة وأي مستخدم ${ BRAND_NAME } شاركت معه تقويماتك قبل إلغاء اشتراك ${ MAIL_SHORT_APP_NAME }.",
         "يمكنك الاحتفاظ بما يصل إلى ${ MAX_CALENDARS_FREE } تقويم. يرجى إزالة روابط التقويم المشتركة وأي مستخدم ${ BRAND_NAME } شاركت معه تقويماتك قبل إلغاء اشتراك ${ MAIL_SHORT_APP_NAME }.",
@@ -8947,9 +8920,6 @@
       "Calendar": [
         "التقويم"
       ],
-      "Calendars": [
-        "التقويمات"
-      ],
       "Card details": [
         "بيانات البطاقة"
       ],
@@ -9099,9 +9069,6 @@
       ],
       "Email or username": [
         "البريد الإلكتروني أو إسم المستخدم"
-      ],
-      "Emails": [
-        "الرسائل"
       ],
       "Emails (all messages)": [
         "رسائل البريد الإلكتروني (جميع الرسائل)"
@@ -16609,9 +16576,6 @@
       ],
       "What is the dark web?": [
         "ما هو الويب المظلم؟"
-      ],
-      "What would you like to import?": [
-        "ما الذي تريد استيراده؟"
       ],
       "Wipe all logs?": [
         "مسح كل السجلات؟"

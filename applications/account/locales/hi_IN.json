@@ -13,20 +13,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "फॉरवर्ड मिटाएं"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "फॉरवर्ड करना जल्द शुरू होगा। नए ईमेल आपके इनबॉक्स में आएंगे।"
       ],
       "Mail forward stopped": [
         "मेल फॉरवर्ड रुक गया"
-      ],
-      "Reconnect": [
-        "वापिस जुड़े"
-      ],
-      "Remove forward": [
-        "फॉरवर्ड हटाएं"
       ],
       "You will stop the mail forwarding.": [
         "आप मेल फॉरवर्ड रोक देंगे।"
@@ -619,15 +610,6 @@
       ],
       "Import": [
         "आयात करें"
-      ],
-      "Import calendars": [
-        "कैलेंडर आयात करें"
-      ],
-      "Import contacts": [
-        "संपर्क आयात करें"
-      ],
-      "Import emails": [
-        "ईमेल आयात करें"
       ],
       "Import from Google": [
         "Google से आयात करे"
@@ -5603,25 +5585,6 @@
         "कैलेंडर एक ICS फाइल की तरह निर्यात करने के लिए ${ boldExport } चुनें।"
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "${ provider } से आयात करें"
-      ],
-      "Import from Google": [
-        "Google से आयात करे"
-      ],
-      "Import from Outlook": [
-        "Outlook से आयात करे"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "अन्डू खत्म"
-      ],
-      "Undo in progress": [
-        "अनडू चल रहा"
-      ]
-    },
     "Import status": {
       "Active": [
         "सक्रिय"
@@ -5629,26 +5592,14 @@
       "Canceled": [
         "रद्द"
       ],
-      "Canceling": [
-        "रद्द कर रहें"
-      ],
-      "Completed": [
-        "पूरा हो"
-      ],
       "Delayed": [
         "विलंबित"
       ],
       "Failed": [
         "असफल"
       ],
-      "In progress": [
-        "प्रगति पर"
-      ],
       "Paused": [
         "रुका हुआ"
-      ],
-      "Started": [
-        "शुरू कर दिया है"
       ]
     },
     "Import type": {
@@ -5693,17 +5644,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } कभी भी आपकी जानकारी तीसरे पक्ष के साथ साझा नहीं करता है। डेटा ${ BRAND_NAME } के स्वयं के विश्लेषण और Constella Intelligence से आता है।"
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "दूसरे ईमेल प्रदाता से कनेक्शन खोने की वजह से ${ BRAND_NAME } ने एक आयात रोक दिया। कृपया वापिस जुड़े।"
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } ने एक आयात रोक दिया क्योंकि आपके खाते में जगह कम है। आप ऐसा कर सकते हैं:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe लेखन सहायक"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } आपका आयात चालू करने की कोशिश करेगा जैसे ही आपके ईमेल प्रदाता आपके खाते का ${ bandwidthLimitLink } रीसेट करते है। आप को कुछ भी करने की ज़रूरत नहीं। अगर आप आयात रद्द करते है, तो आप इसे वापिस चालू नहीं कर पाएगे और आपको वापिस शुरू से आयात करना पड़ेगा।"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } की एन्क्रिप्शन टेकनोलॉजी का मतलब है की कोई भी आपका पासवर्ड एक्सेस नहीं कर सकता - यहां तक की हम भी नहीं।"
@@ -6502,14 +6444,8 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "उन उपयोगकर्ताओं के लिए जो किसी अन्य ईमेल सेवा से ${ MAIL_APP_NAME } पर स्विच कर रहे हैं, ${ boldAddresses } टैब का चयन करें और MX रिकॉर्ड को बदलने से पहले सभी सक्रिय ईमेल पते जोड़ें ताकि एक सहज परिवर्तन सुनिश्चित हो।"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "दूसरे खाते से आने वाले ईमेल आपके सुरक्षित ${ MAIL_APP_NAME } इनबॉक्स पे फॉरवर्ड करें।"
-      ],
       "Free forever": [
         "हमेशा मुफ्त"
-      ],
-      "free up space by deleting older messages or other data": [
-        "पुराने संदेशों या अन्य डेटा को हटाकर स्थान खाली करें"
       ],
       "Gateways": [
         "गेटवे"
@@ -6927,9 +6863,6 @@
       "No Gateways yet": [
         "अभी तक कोई गेटवे नहीं"
       ],
-      "No imports or forwarding history.": [
-        "कोई आयात या फॉरवर्ड इतिहास नहीं।"
-      ],
       "No label selected": [
         "कोई लेबल चयनित नहीं है"
       ],
@@ -7117,9 +7050,6 @@
       "Public link invite": [
         "सार्वजनिक लिंक आमंत्रण"
       ],
-      "purchase additional storage": [
-        "अतिरिक्त भंडारण खरीद"
-      ],
       "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
         "रिज़र्वेशन वाउचर ईमेल द्वारा प्राप्त करें। आप या बच्चा अगले 15 वर्षों के भीतर पते को सक्रिय करने के लिए इसका उपयोग कर सकते हैं। ${ learnMoreLink }"
       ],
@@ -7219,9 +7149,6 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "अपने ${ BRAND_NAME } संगठन में शामिल करने के लिए ${ getFormattedOrganization } से उपयोगकर्ता संबद्धताएँ चुनें:"
       ],
-      "Select what you want to import.": [
-        "आयात चयन करें"
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "जिन कैलेंडर को आयात करना है उन्हे चुने। हर आयात किये गए कैलेंडर के लिए एक नया कैलेंडर बनेगा इस हिसाब से की आपके प्लान में कितने कैलेंडर मौजूद है।"
       ],
@@ -7245,9 +7172,6 @@
       ],
       "Set password": [
         "पासवर्ड सेट करें"
-      ],
-      "Set up forwarding": [
-        "फॉरवर्ड सेट करें"
       ],
       "Set up your organization": [
         "अपना संगठन स्थापित करें"
@@ -7933,9 +7857,6 @@
       "You can enable the Photos section from the interface using the toggle below.": [
         "आप इंटरफ़ेस में नीचे दिए गए टॉगल का उपयोग करके Photos सेक्शन सक्षम कर सकते हैं।"
       ],
-      "You can import one data type at a time.": [
-        "आप एक बार में एक डेटा प्रकार आयात कर सकते हैं।"
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
         "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किये है को हटाए।"
@@ -8069,10 +7990,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "आपके ईमेल का उपयोग केवल इस एक बार के सत्यापन के लिए किया जाएगा।"
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "आपका ${ accounts } से आयात अस्थायी रूप से विलम्बित है।",
-        "आपके ${ accounts } से आयात अस्थायी रूप से विलम्बित हैं।"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "आपकी जानकारी हमारे साथ सुरक्षित है। हम आपसे केवल तब संपर्क करेंगे जब हमारी सेवाएं प्रदान करने के लिए आवश्यक हो।"
@@ -8707,9 +8624,6 @@
       "Calendar": [
         "कैलेंडर"
       ],
-      "Calendars": [
-        "कैलेंडर"
-      ],
       "Card details": [
         "कार्ड विवरण"
       ],
@@ -8895,9 +8809,6 @@
       ],
       "Email or username": [
         "ईमेल या उपयोगकर्ता का नाम"
-      ],
-      "Emails": [
-        "ईमेल"
       ],
       "Emails (all messages)": [
         "ईमेल (सारे संदेश)"
@@ -15255,9 +15166,6 @@
       "Groups": [
         "ग्रुप"
       ],
-      "History": [
-        "इतिहास"
-      ],
       "Home": [
         "होम"
       ],
@@ -15791,9 +15699,6 @@
       "What is the dark web?": [
         "डार्क वेब क्या है?"
       ],
-      "What would you like to import?": [
-        "आप क्या आयात करना चाहेंगे?"
-      ],
       "WireGuard configuration": [
         "WireGuard संरचना"
       ],
@@ -15856,20 +15761,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "कार्रवाई"
-      ],
-      "Date": [
-        "तारीख"
-      ],
-      "Import": [
-        "आयात"
-      ],
       "Size": [
         "साइज़"
-      ],
-      "Status": [
-        "स्थिति"
       ]
     },
     "Title header for addresses domain table": {
@@ -16666,9 +16559,6 @@
       ],
       "You will lose any customization you made so far.": [
         "आप अब तक किए गए किसी भी अनुकूलन को खो देंगे।"
-      ],
-      "You will not see this import record in the list any more.": [
-        "आप इस आयात रिकॉर्ड को लिस्ट में अब नहीं देखेंगे।"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "आपका निःशुल्क परीक्षण ${ textDate } को समाप्त होगा। ${ action }"

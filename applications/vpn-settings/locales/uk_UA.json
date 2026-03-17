@@ -447,15 +447,6 @@
       "Import": [
         "Імпортувати"
       ],
-      "Import calendars": [
-        "Імпортувати календарі"
-      ],
-      "Import contacts": [
-        "Імпортувати контакти"
-      ],
-      "Import emails": [
-        "Імпортувати електронну пошту"
-      ],
       "Import new SAML metadata": [
         "Імпортувати нові метадані SAML"
       ],
@@ -4657,17 +4648,6 @@
         "Виберіть ${ boldExport }, щоб експортувати календар як файл ICS."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Імпорт з ${ provider }"
-      ],
-      "Import from Google": [
-        "Імпортувати з Google"
-      ],
-      "Import from Outlook": [
-        "Імпортувати з Outlook"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } із ${ totalContacts } контактів не будуть імпортовані. Натисніть для подробиць"
@@ -6057,9 +6037,6 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Виберіть приналежності користувачів з ${ getFormattedOrganization }, яким ви хочете дозволити доступ до вашої організації ${ BRAND_NAME }:"
       ],
-      "Select what you want to import.": [
-        "Виберіть, що ви хочете імпортувати."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар згідно з кількістю календарів, доступною у вашому тарифному плані."
       ],
@@ -6651,9 +6628,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Ви можете змінити це один раз щоб переконатися у правильності адреси електронної пошти для підтвердження."
       ],
-      "You can import one data type at a time.": [
-        "Ви можете імпортувати один тип даних за один раз."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
         "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
@@ -7094,9 +7068,6 @@
       "Calendar": [
         "Календар"
       ],
-      "Calendars": [
-        "Календарі"
-      ],
       "Card details": [
         "Подробиці картки"
       ],
@@ -7237,9 +7208,6 @@
       ],
       "Email or username": [
         "Е-пошта чи ім'я користувача"
-      ],
-      "Emails": [
-        "Листи"
       ],
       "Emails (all messages)": [
         "Е-пошта (усі повідомлення)"
@@ -13147,9 +13115,6 @@
       ],
       "What is the dark web?": [
         "Що таке dark web?"
-      ],
-      "What would you like to import?": [
-        "Що ви бажаєте імпортувати?"
       ],
       "WireGuard configuration": [
         "Конфігурація WireGuard"
