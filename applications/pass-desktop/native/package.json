@@ -11,6 +11,7 @@
         "build:host": "cargo build --package host --release",
         "build:napi": "napi build --manifest-path ./napi/Cargo.toml --output-dir . --release --platform --no-js",
         "prepublishOnly": "napi prepublish -t npm",
+        "sign": "node sign.js",
         "test": "cargo test",
         "universalize": "napi universalize",
         "version": "napi version"
