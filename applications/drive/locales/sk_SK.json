@@ -561,6 +561,9 @@
       "Go to settings": [
         "Prejsť do nastavení"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Rozumiem"
       ],
@@ -597,14 +600,8 @@
       "import": [
         "importovať"
       ],
-      "Import calendars": [
-        "Importovať kalendáre"
-      ],
       "Import contacts": [
         "Importovať kontakty"
-      ],
-      "Import emails": [
-        "Importovať emaily"
       ],
       "Import emails, calendars, contacts": [
         "Importovať emaily, kalendáre a kontakty"
@@ -3473,6 +3470,9 @@
       "Enter 6 digits": [
         "Zadajte 6 číslic"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Zadajte používateľské meno bez domény (@príklad.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Chyba pri pripojovaní k Bitcoin API."
       ],
@@ -4915,20 +4915,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importovať z ${ provider }"
-      ],
-      "Import from Google": [
-        "Importovať z Google"
-      ],
-      "Import from other": [
-        "Importovať z inej služby"
-      ],
-      "Import from Outlook": [
-        "Importovať z Outlooku"
-      ],
-      "Import from Yahoo": [
-        "Importovať z Yahoo"
+      "Advanced import": [
+        "Pokročilý import"
       ]
     },
     "Import warning": {
@@ -5408,9 +5396,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Posilnite identitu značky vašej organizácie a vytvorte konzistentnejší online zážitok pre vašich používateľov."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Preneste svoje správy, kontakty a kalendáre do ${ BRAND_NAME }."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ak prejdete na bezplatnú verziu, natrvalo stratíte súčasné výhody a to i v budúcnosti, ak opäť upgradujte svoj účet na platenú verziu."
       ],
@@ -5464,6 +5449,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Vyberte si plán, ktorý vám najviac vyhovuje."
+      ],
+      "Choose your service to connect with": [
+        "Vyberte si službu na pripojenie"
       ],
       "Clear all search data": [
         "Vymazať všetky údaje vyhľadávania"
@@ -6128,9 +6116,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden alebo viac dôveryhodných kľúčov bol vlastníkom označený ako \"kompromitovaný\". Odporúčame, aby ste u takýchto kľúčov vybrali voľbu \"Nedôverovať\"."
       ],
-      "One time import": [
-        "Jednorazový import"
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Otvorte príručku s odporúčanými akciami a užitočnými odkazmi."
       ],
@@ -6382,9 +6367,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát emailu, ktorý chcete aby bol použitý ako predvolený pre zasielanie emailu na túto emailovú adresu."
-      ],
-      "Select what you want to import.": [
-        "Vyberte čo chcete importovať."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vyberte, ktoré kalendáre chcete importovať. Pre každý importovaný kalendár sa vytvorí nový kalendár podľa počtu kalendárov dostupných vo vašom pláne."
@@ -6965,9 +6947,6 @@
       "You can close the tab or browser in the meantime.": [
         "Medzitým môžete túto záložku alebo prehliadač zatvoriť."
       ],
-      "You can import one data type at a time.": [
-        "Importovať môžete vždy jeden typ údajov."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Môžete mať až ${ MAX_CALENDARS_FREE } kalendár. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
         "Môžete mať až ${ MAX_CALENDARS_FREE } kalendáre. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
@@ -7377,9 +7356,6 @@
       "Calendar": [
         "Kalendár"
       ],
-      "Calendars": [
-        "Kalendáre"
-      ],
       "can edit": [
         "môže upravovať"
       ],
@@ -7517,9 +7493,6 @@
       ],
       "Email format": [
         "Formát emailu"
-      ],
-      "Emails": [
-        "Emaily"
       ],
       "Emails (all messages)": [
         "Emaily (všetky správy)"
@@ -10524,6 +10497,9 @@
       "VAT number": [
         "DIČ"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Uplatňuje sa mechanizmus prenesenia daňovej povinnosti."
+      ],
       "You already have a subscription to this plan.": [
         "Tento plán už máte predplatený."
       ],
@@ -12590,6 +12566,9 @@
       "Check for malicious files": [
         "Skontrolovať na prítomnosť škodlivých súborov"
       ],
+      "Choose a provider": [
+        "Vyberte poskytovateľa"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Získajte vašu ${ MAIL_APP_NAME } adresu"
       ],
@@ -12655,6 +12634,9 @@
       ],
       "Currency": [
         "Mena"
+      ],
+      "Custom": [
+        "Vlastné"
       ],
       "Customize and confirm": [
         "Prispôsobiť a potvrdiť"
@@ -12928,6 +12910,9 @@
       ],
       "Import groups": [
         "Importovať skupiny"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importujte svoje dáta do ${ BRAND_NAME }"
       ],
       "Information exposed in breach": [
         "Informácie odhalené pri úniku"
@@ -13208,6 +13193,9 @@
       "Select contact group": [
         "Vybrať skupinu kontaktov"
       ],
+      "Select data to import": [
+        "Vyberte dáta na import"
+      ],
       "Select link expiration date": [
         "Vyberte koniec platnosti odkazu"
       ],
@@ -13447,9 +13435,6 @@
       ],
       "What is a VPN?": [
         "Čo to je VPN?"
-      ],
-      "What would you like to import?": [
-        "Čo by ste chceli importovať?"
       ],
       "When is it most important to use a VPN?": [
         "Kedy je najdôležitejšie používať VPN?"

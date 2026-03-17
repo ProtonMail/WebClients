@@ -551,6 +551,9 @@
       "Go to settings": [
         "მორგებაზე გადასვლა"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "გავიგე"
       ],
@@ -587,14 +590,8 @@
       "import": [
         "შემოტანა"
       ],
-      "Import calendars": [
-        "კალენდრების შემოტანა"
-      ],
       "Import contacts": [
         "კონტაქტების შემოტანა"
-      ],
-      "Import emails": [
-        "ელფოსტის შემოტანა"
       ],
       "Import emails, calendars, contacts": [
         "ელფოსტების, კალენდრების, კონტაქტების შემოტანა"
@@ -3476,6 +3473,9 @@
       "Invalid code": [
         "არასწორი კოდი"
       ],
+      "Invalid coupon": [
+        "არასწორი კუპონი"
+      ],
       "Invalid email address": [
         "არასწორი ელფოსტის მისამართი"
       ],
@@ -3496,6 +3496,9 @@
       ],
       "Invalid public key file": [
         "არასწორი საჯარო გასაღების ფაილი"
+      ],
+      "Invalid VAT number": [
+        "არასწორი დღგს ნომერი"
       ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
@@ -3742,6 +3745,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "ველი ${ maximumLength } დაშვებულ სიმბოლოს აჭარბებს."
       ],
+      "This field is invalid": [
+        "ეს ველი არასწორია"
+      ],
       "This field is required": [
         "ეს ველი აუცილებელია"
       ],
@@ -3834,6 +3840,9 @@
       ],
       "We're sorry, but free upload is not available right now.": [
         "ბოდიშს ვიხდით, მაგრამ უფასო ატვირთვა ამჟამად ხელმისაწვდომი არაა."
+      ],
+      "Wrong billing address": [
+        "არასწორი გადახდის მისამართი"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით",
@@ -4715,20 +4724,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "${ provider }-დან შემოტანა"
-      ],
-      "Import from Google": [
-        "Google-დან შემოტანა"
-      ],
-      "Import from other": [
-        "სხვა ადგილიდან შემოტანა"
-      ],
-      "Import from Outlook": [
-        "Outlook-დან შემოტანა"
-      ],
-      "Import from Yahoo": [
-        "yahoo-დან შემოტანა"
+      "Advanced import": [
+        "გაფართოებული შემოტანა"
       ]
     },
     "Import warning": {
@@ -5106,9 +5103,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "გააძლიერეთ თქვენი ორგანიზაციის ბრენდინგი და შეექმენით უფრო ერთგვაროვანი გამოცდილება თქვენი მომხმარებლებისთვის."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "გადმოიტანეთ თქვენი შეტყობინებები, კონტაქტები და კალენდრები ${ BRAND_NAME }-ზე."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "უფასო გეგმაზე ჩამოწევით ამ ბენეფიტებს სამუდამოდ დაკარგავთ. მაშინაც კი, თუ მომავალში ფასიან ტარიფზე ისევ განახლდებით."
       ],
@@ -5162,6 +5156,9 @@
       ],
       "Choose a plan that works best for you.": [
         "აირჩიეთ სატარიფო გეგმა, რომელიც საუკეთესოდ შეგესაბამებათ."
+      ],
+      "Clear all search data": [
+        "ყველა ძებნის მონაცემების გასუფთავება"
       ],
       "Clear data": [
         "მონაცემების გასუფთავება"
@@ -5793,9 +5790,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "ერთი ან მეტი თქვენს მიერ სანდოდ მიჩნეული გასაღები მონიშნულ იქნა, როგორც \"გატეხილი\", მათი მფლობელების მიერ. გირჩევთ, ეს გასაღებები \"არასანდოდ\" მონიშნოთ."
       ],
-      "One time import": [
-        "ერთჯერადი შემოტანა"
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "გახსენით დამხმარე რეკომენდებული ქმედებებისა და სასარგებლო ბმულებისთვის."
       ],
@@ -6042,9 +6036,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "აირჩიეთ მითითებულ მისამართზე ელფოსტის გაგზავნისას გამოყენებული ფორმატი."
-      ],
-      "Select what you want to import.": [
-        "მონიშნეთ, რისი შემოტანაც გნებავთ."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "აირჩიეთ რომელი კალენდრები შემოტანა. ყოველი შემოტანილი კალენდრისთვის შეიქმნება ახალი კალენდარი თქვენს გეგმაში არსებული კალენდრების რაოდენობის მიხედვით."
@@ -6564,9 +6555,6 @@
       "You can close the tab or browser in the meantime.": [
         "ამასობაში შეგიძლიათ, ბრაუზერის ჩანართი დახუროთ."
       ],
-      "You can import one data type at a time.": [
-        "ერთ ცდაზე მონაცემების, მხოლოდ, ერთი ტიპის შემოტანა შეგიძლიათ."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "შეგიძლიათ გქონდეთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. წაშალეთ გაზიარებული კალენდრის ბმულები და ყველა ${ BRAND_NAME }-ის მომხმარებელი, ვისაც კალენდარი გაუზიარეთ, სანამ თქვენს ${ MAIL_SHORT_APP_NAME }-ის გამოწერას გააუქმებდით.",
         "შეგიძლიათ გქონდეთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. წაშალეთ გაზიარებული კალენდრის ბმულები და ყველა ${ BRAND_NAME }-ის მომხმარებელი, ვისაც კალენდარი გაუზიარეთ, სანამ თქვენს ${ MAIL_SHORT_APP_NAME }-ის გამოწერას გააუქმებდით."
@@ -6908,9 +6896,6 @@
       "Calendar": [
         "კალენდარი"
       ],
-      "Calendars": [
-        "კალენდრები"
-      ],
       "can edit": [
         "შეუძლია, ჩაასწოროს"
       ],
@@ -7046,9 +7031,6 @@
       ],
       "Email format": [
         "ელფოსტის ფორმატი"
-      ],
-      "Emails": [
-        "ელფოსტები"
       ],
       "Emails (all messages)": [
         "ელფოსტა (ყველა შეტყობინება)"
@@ -10012,6 +9994,9 @@
       "Company name": [
         "კომპანიის სახელი"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "მაგ. "
       ],
@@ -10074,6 +10059,9 @@
       ],
       "Postal code": [
         "საფოსტო კოდი"
+      ],
+      "San Francisco": [
+        "სან-ფრანცისკო"
       ],
       "Search for group name": [
         "ჯგუფის სახელის მოძებნა"
@@ -11742,6 +11730,9 @@
       "Check for malicious files": [
         "შემოწმება საეჭვო ფაილებზე"
       ],
+      "Choose a provider": [
+        "აირჩიეთ პროვაიდერი"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME }-ის მისამართის გამოთხოვა"
       ],
@@ -11807,6 +11798,9 @@
       ],
       "Currency": [
         "ვალუტა"
+      ],
+      "Custom": [
+        "მომხმარებლის"
       ],
       "Customize and confirm": [
         "მოირგეთ და დაეთანხმეთ"
@@ -12333,6 +12327,9 @@
       "Select contact group": [
         "მონიშნეთ კონტაქტების ჯგუფი"
       ],
+      "Select data to import": [
+        "აირჩიეთ შემოსატანი მონაცემები"
+      ],
       "Select link expiration date": [
         "აირჩიეთ ბმულის ვადის თარიღი"
       ],
@@ -12395,6 +12392,9 @@
       ],
       "Sort files/folders": [
         "ფაილების/საქაღალდეების დალაგება"
+      ],
+      "Spring Sale": [
+        "საგაზაფხულო ფასდაკლება"
       ],
       "Start a new import": [
         "ახალი შემოტანის დაწყება"
@@ -12560,9 +12560,6 @@
       ],
       "What is a VPN?": [
         "რა არის VPN?"
-      ],
-      "What would you like to import?": [
-        "რისი შემოტანა გნებავთ?"
       ],
       "When is it most important to use a VPN?": [
         "როდისაა VPN-ის გამოყენება ყველაზე მნიშვნელოვანი?"
