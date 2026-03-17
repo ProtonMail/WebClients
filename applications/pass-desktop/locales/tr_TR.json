@@ -1037,7 +1037,7 @@
         "Şifrelenmiş JSON desteklenmiyor"
       ],
       "Encryption communication for desktop unlock failed.": [
-        "Masaüstü kilidini açmak için gereken şifreli iletişim başarısız oldu."
+        "Bilgisayar kilidini açmak için gereken şifrelenmiş iletişim kurulamadı."
       ],
       "Error reporting problem": [
         "Sorun bildirilirken sorun çıktı"
@@ -1256,13 +1256,13 @@
         "Bir sorun çıktı. Lütfen yeniden oturum açın."
       ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
-        "${ PASS_APP_NAME } masaüstü uygulaması kilitli. Kilidin açılması gerekiyor."
+        "${ PASS_APP_NAME } bilgisayar uygulaması kilitli. Kilidin açılması gerekiyor."
       ],
       "The ${ PASS_APP_NAME } desktop app is not installed.": [
-        "${ PASS_APP_NAME } masaüstü uygulaması yüklü değil."
+        "${ PASS_APP_NAME } bilgisayar uygulaması kurulmamış."
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
-        "${ PASS_APP_NAME } masaüstü uygulaması yanıt vermiyor. Çalışıyor mu?"
+        "${ PASS_APP_NAME } bilgisayar uygulaması yanıt vermiyor. Çalışıyor mu?"
       ],
       "The session has expired. Please sign in again.": [
         "Oturumun geçerlilik süresi dolmuş. Lütfen yeniden oturum açın."
@@ -1796,7 +1796,7 @@
         "Otomatik biyometri kilidi kullanıma alınamadı"
       ],
       "Enabling desktop auto-lock": [
-        "Masaüstü otomatik kilitlemeyi etkinleştirme"
+        "Otomatik bilgisayar kilitlemenin açılması"
       ],
       "Enabling offline mode...": [
         "Çevrim dışı kip açılıyor..."
@@ -2022,8 +2022,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2415,7 +2414,7 @@
         "Bu özellik şu anda Linux üzerinde deneyseldir. Lütfen sisteminizin güncel olduğundan emin olun."
       ],
       "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
-        "Bu özelliğin kullanılabilmesi için kurulum sırasında ${ PASS_APP_NAME } masaüstü uygulamasının yüklü ve çalışır durumda olması gerekir."
+        "Bu özelliğin kullanılabilmesi için kurulum sırasında ${ PASS_APP_NAME } bilgisayar uygulamasının kurulmuş ve çalışıyor olması gerekir."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Bu öge şu anda kimseyle paylaşılmıyor. Paylaşmak istediğiniz kişileri davet edin."
