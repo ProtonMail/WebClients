@@ -29,7 +29,7 @@ import { useTrashStore } from '../useTrash.store';
 interface Props {
     onPreview: (props: { deprecatedContextShareId: string; nodeUid: string; canOpenInDocs: boolean }) => void;
     handleShowDetails: (props: { nodeUid: string }) => void;
-    handleShowFilesDetails: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;
+    handleShowFilesDetails: (props: { nodeUids: string[] }) => void;
     onRestore: (items: TrashItem[]) => void;
     onDelete: (items: TrashItem[]) => void;
 }

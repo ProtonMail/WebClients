@@ -1,6 +1,7 @@
 import type { useConfirmActionModal } from '@proton/components';
 
 import type { useDetailsModal } from '../../../modals/DetailsModal';
+import type { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
 import type { useDrivePreviewModal } from '../../../modals/preview';
 import type { DirectShareItem, SharedWithMeItem } from '../useSharedWithMe.store';
 import { BookmarkActions } from './BookmarkActions';
@@ -14,7 +15,7 @@ interface BaseSharedWithMeActionsProps {
     showPreviewModal: ReturnType<typeof useDrivePreviewModal>['showPreviewModal'];
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
     showDetailsModal: ReturnType<typeof useDetailsModal>['showDetailsModal'];
-    showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;
+    showFilesDetailsModal: ReturnType<typeof useFilesDetailsModal>['showFilesDetailsModal'];
     showCopyModal: (items: DirectShareItem[]) => void;
     showSharingModal?: () => void;
 }

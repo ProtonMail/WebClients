@@ -4,10 +4,10 @@ import { Vr } from '@proton/atoms/Vr/Vr';
 import { Toolbar, useConfirmActionModal } from '@proton/components';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
 import { LayoutButton } from '../../components/sections/ToolbarButtons';
 import { useCopyItemsModal } from '../../modals/CopyItemsModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
+import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { useDrivePreviewModal } from '../../modals/preview';
 import { useSelectionStore } from '../../modules/selection';
 import { SharedWithMeActions } from './actions/SharedWithMeActions';
@@ -39,7 +39,7 @@ const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const { detailsModal, showDetailsModal } = useDetailsModal();
     const { sharingModal, showSharingModal } = useResharingModal(selectedItems);
-    const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
+    const { filesDetailsModal, showFilesDetailsModal } = useFilesDetailsModal();
 
     const { copyModal, showCopyItemsModal } = useCopyItemsModal();
     function convertDataShowModal(items: DirectShareItem[]) {

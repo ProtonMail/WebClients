@@ -17,6 +17,7 @@ import {
     PreviewButton as ToolbarPreviewButton,
 } from '../../../components/sections/ToolbarButtons';
 import type { useDetailsModal } from '../../../modals/DetailsModal';
+import type { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
 import type { useDrivePreviewModal } from '../../../modals/preview';
 import { useOpenInDocs } from '../../../store/_documents';
 import { CopyButton } from '../../folders/buttons/CopyButton';
@@ -30,7 +31,7 @@ interface BaseDirectShareActionsProps {
     showPreviewModal: ReturnType<typeof useDrivePreviewModal>['showPreviewModal'];
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
     showDetailsModal: ReturnType<typeof useDetailsModal>['showDetailsModal'];
-    showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;
+    showFilesDetailsModal: ReturnType<typeof useFilesDetailsModal>['showFilesDetailsModal'];
     showCopyModal: (items: DirectShareItem[]) => void;
     showSharingModal?: () => void;
 }
