@@ -546,6 +546,9 @@
       "Go to settings": [
         "설정으로 이동하기"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "확인"
       ],
@@ -582,14 +585,8 @@
       "import": [
         "가져오기"
       ],
-      "Import calendars": [
-        "캘린더 불러오기"
-      ],
       "Import contacts": [
         "연락처 가져오기"
-      ],
-      "Import emails": [
-        "이메일 가져오기"
       ],
       "Import emails, calendars, contacts": [
         "이메일, 캘린더 및 연락처 불러오기"
@@ -3518,6 +3515,9 @@
       "Invalid code": [
         "잘못된 코드입니다."
       ],
+      "Invalid coupon": [
+        "유효하지 않은 쿠폰"
+      ],
       "Invalid email address": [
         "유효하지 않은 이메일 주소"
       ],
@@ -3677,6 +3677,9 @@
       "Request timed out": [
         "요청 시간이 초과되었습니다."
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "이 플랜에서는 매입자 납부제도(Reverse charge)가 지원되지 않습니다."
+      ],
       "Search failed": [
         "검색 실패"
       ],
@@ -3757,6 +3760,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "추가할 수 있는 최소 금액은 ${ price } 입니다."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "최소 기부 금액은 ${ price }입니다."
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "원본 파일의 새로운 리비전이 아직 업로드되지 않았습니다, 나중에 다시 시도해 주세요"
@@ -4762,20 +4768,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "${ provider } 으로부터 불러오기"
-      ],
-      "Import from Google": [
-        "Google에서 가져오기"
-      ],
-      "Import from other": [
-        "다른 곳에서 가져오기"
-      ],
-      "Import from Outlook": [
-        "Outlook에서 가져오기"
-      ],
-      "Import from Yahoo": [
-        "Yahoo에서 가져오기"
+      "Advanced import": [
+        "고급 가져오기"
       ]
     },
     "Import warning": {
@@ -5147,9 +5141,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "조직의 브랜드 아이덴티티를 증진하고 사용자를 위한 더욱 일관된 온라인 경험을 창출하십시오."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "${ BRAND_NAME }으로 메시지, 연락처 및 캘린더를 가져오세요."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "무료 플랜으로 다운그레이드하면, 만약에 나중에 다시 업그레이드 한다 해도 다음 혜택을 영구적으로 잃을 것입니다."
       ],
@@ -5204,6 +5195,12 @@
       "Choose a plan that works best for you.": [
         "당신에게 가장 적합한 플랜을 선택하세요."
       ],
+      "Choose your service to connect with": [
+        "연결하고자 하는 서비스 선택"
+      ],
+      "Clear all search data": [
+        "모든 검색 데이터 지우기"
+      ],
       "Clear data": [
         "데이터 지우기"
       ],
@@ -5215,6 +5212,9 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "암호화된 검색과 관련한 브라우저 데이터를 삭제합니다."
+      ],
+      "Clears browser data related to the search.": [
+        "검색과 관련된 브라우저 데이터를 삭제합니다."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
@@ -5840,9 +5840,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "신뢰할 수 있는 키 중 하나 이상이 소유자에 의해 \"유출되었음\"으로 표시되었습니다. 이 열쇠들을 \"신뢰하지 않는\" 것을 추천합니다."
       ],
-      "One time import": [
-        "한 번만 가져오기"
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "권장 조치 및 유용한 링크들이 포함된 가이드를 열어보세요."
       ],
@@ -6068,6 +6065,9 @@
       "Search Enabled": [
         "검색 활성화됨"
       ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "검색이 활성화되었습니다. 이제 이 대화 상자를 닫고 파일과 폴더를 검색할 수 있습니다."
+      ],
       "Select a destination folder": [
         "대상 폴더 선택"
       ],
@@ -6088,9 +6088,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "이 이메일 주소로 이메일을 보낼 때 기본적으로 사용할 이메일 형식을 선택하세요."
-      ],
-      "Select what you want to import.": [
-        "처리할 파일을 선택하세요."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "불러올 캘린더를 선택하세요. 새 캘린더가 사용자 플랜의 가능한 한도 내에서 각각 생성됩니다."
@@ -6367,6 +6364,9 @@
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "비공개 검색을 진정으로 활성화하려면, 로컬에서 사용자의 파일을 인덱싱해야 합니다. 계속 ${ DRIVE_APP_NAME }를 사용할 수 있습니다 - 인덱싱이 완료되면 알려 드리겠습니다."
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "진정한 비공개 검색을 활성화하려면, 로컬에서 사용자의 파일을 인덱싱해야 합니다. ${ DRIVE_APP_NAME }는 계속 정상적으로 사용할 수 있습니다. 인덱싱이 완료되면 알려드리겠습니다."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
@@ -6659,9 +6659,6 @@
       "You can close the tab or browser in the meantime.": [
         "도중에 탭이나 브라우저를 닫으셔도 됩니다."
       ],
-      "You can import one data type at a time.": [
-        "한 번에 하나의 데이터 유형을 가져올 수 있어요."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "최대 ${ MAX_CALENDARS_FREE }개 캘린더를 보관할 수 있습니다. ${ MAIL_SHORT_APP_NAME } 구독을 취소하기 전에 공유 캘린더 링크와 캘린더를 공유한 ${ BRAND_NAME } 사용자를 제거하십시오."
       ],
@@ -6745,6 +6742,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "계정에 기한이 지난 청구서가 하나 이상 있습니다. 회원님의 계정 접근이 곧 제한됩니다. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "귀하의 계정은 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 선택하신 요금제에서 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 요금제를 선택하십시오."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "현재 사용중인 브라우저는 대용량 파일/복수의 파일 다운로드를 지원하지 않습니다. 매끄러운 업로드 및 다운로드를 위해 데스크톱 앱을 내려받으세요."
@@ -7035,9 +7035,6 @@
       "Calendar": [
         "캘린더"
       ],
-      "Calendars": [
-        "캘린더"
-      ],
       "can edit": [
         "편집 가능"
       ],
@@ -7172,9 +7169,6 @@
       ],
       "Email format": [
         "이메일 형식"
-      ],
-      "Emails": [
-        "이메일"
       ],
       "Emails (all messages)": [
         "이메일 (모든 메시지)"
@@ -9966,6 +9960,9 @@
       "VAT number": [
         "부가가치세 번호"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "매입자 납부제도(Reverse charge)가 적용됩니다."
+      ],
       "You already have a subscription to this plan.": [
         "이미 이 플랜을 구독 중입니다."
       ],
@@ -11978,6 +11975,9 @@
       "Check for malicious files": [
         "악성 파일 확인"
       ],
+      "Choose a provider": [
+        "제공업체 선택"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } 주소를 받으세요"
       ],
@@ -12043,6 +12043,9 @@
       ],
       "Currency": [
         "통화"
+      ],
+      "Custom": [
+        "사용자화"
       ],
       "Customize and confirm": [
         "사용자 정의 및 확인"
@@ -12302,6 +12305,9 @@
       "Import groups": [
         "그룹 가져오기"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "${ BRAND_NAME }로 데이터 불러오기"
+      ],
       "Information exposed in breach": [
         "유출 시 노출된 정보"
       ],
@@ -12554,6 +12560,9 @@
       "Restore your files": [
         "내 파일 복구"
       ],
+      "Reverse charge not supported": [
+        "매입자 납부제도(Reverse charge)가 지원되지 않습니다."
+      ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "나중에 ${ DRIVE_APP_NAME }에 저장하기"
       ],
@@ -12574,6 +12583,9 @@
       ],
       "Select contact group": [
         "연락처 그룹"
+      ],
+      "Select data to import": [
+        "불러올 데이터 선택"
       ],
       "Select link expiration date": [
         "링크 만료 날짜 선택"
@@ -12814,9 +12826,6 @@
       ],
       "What is a VPN?": [
         "VPN이란 무엇인가요?"
-      ],
-      "What would you like to import?": [
-        "무엇을 가져오시겠어요?"
       ],
       "When is it most important to use a VPN?": [
         "VPN을 사용해야 하는 가장 중요한 순간은 언제인가요?"

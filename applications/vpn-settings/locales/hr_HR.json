@@ -383,15 +383,6 @@
       "Import": [
         "Uvoz"
       ],
-      "Import calendars": [
-        "Uvoz kalendara"
-      ],
-      "Import contacts": [
-        "Uvezi kontakte"
-      ],
-      "Import emails": [
-        "Uvoz e-pošte"
-      ],
       "Increase": [
         "Povećaj"
       ],
@@ -3755,20 +3746,6 @@
         "Yahoo"
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Uvoz iz ${ provider }a"
-      ],
-      "Import from Google": [
-        "Uvoz iz Googlea"
-      ],
-      "Import from Outlook": [
-        "Uvoz iz Outlooka"
-      ],
-      "Import from Yahoo": [
-        "Uvoz iz Yahooa"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } kontakata neće biti uvezeno. Pritisnite za detalje"
@@ -5175,9 +5152,6 @@
       "Calendar": [
         "Kalendar"
       ],
-      "Calendars": [
-        "Kalendari"
-      ],
       "Card details": [
         "Detalji kartice"
       ],
@@ -5300,9 +5274,6 @@
       ],
       "Email or username": [
         "Adresa e-pošte ili korisničko ime"
-      ],
-      "Emails": [
-        "E-pošta"
       ],
       "Enabled": [
         "Omogućeno"

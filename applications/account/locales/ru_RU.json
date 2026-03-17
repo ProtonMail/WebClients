@@ -13,20 +13,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Удалить пересылку"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Пересылка скоро начнется. Новые письма будут появляться в вашем почтовом ящике."
       ],
       "Mail forward stopped": [
         "Пересылка почты остановлена"
-      ],
-      "Reconnect": [
-        "Возобновить соединение"
-      ],
-      "Remove forward": [
-        "Удалить пересылку"
       ],
       "You will stop the mail forwarding.": [
         "Вы остановите пересылку почты."
@@ -679,15 +670,6 @@
       ],
       "Import": [
         "Импортировать"
-      ],
-      "Import calendars": [
-        "Импортировать календари"
-      ],
-      "Import contacts": [
-        "Импортировать контакты"
-      ],
-      "Import emails": [
-        "Импортировать электронную почту"
       ],
       "Import emails, calendars, contacts": [
         "Импорт электронных писем, календарей и контактов"
@@ -2046,6 +2028,9 @@
       ],
       "Payments problem": [
         "Проблема с платежами"
+      ],
+      "Sheets problem": [
+        "Проблема с таблицами"
       ],
       "Sign in problem": [
         "Проблема со входом"
@@ -4504,6 +4489,9 @@
       "Enter 6 digits": [
         "Введите 6 цифр"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Введите ваше имя пользователя без домена (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к API Биткоин."
       ],
@@ -6551,31 +6539,6 @@
         "Выберите ${ boldExport } для экспорта календаря в формате файла ICS."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Импортировать из ${ provider }"
-      ],
-      "Import from Google": [
-        "Импортировать из Google"
-      ],
-      "Import from other": [
-        "Импортировать из другого"
-      ],
-      "Import from Outlook": [
-        "Импортировать из Outlook"
-      ],
-      "Import from Yahoo": [
-        "Импортировать из Yahoo"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Отмена завершена"
-      ],
-      "Undo in progress": [
-        "Выполняется отмена"
-      ]
-    },
     "Import status": {
       "Active": [
         "Активно"
@@ -6583,26 +6546,14 @@
       "Canceled": [
         "Отменено"
       ],
-      "Canceling": [
-        "Отмена"
-      ],
-      "Completed": [
-        "Завершено"
-      ],
       "Delayed": [
         "Отложено"
       ],
       "Failed": [
         "Сбой"
       ],
-      "In progress": [
-        "Выполняется"
-      ],
       "Paused": [
         "Приостановлено"
-      ],
-      "Started": [
-        "Начато"
       ]
     },
     "Import type": {
@@ -6655,17 +6606,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } никогда не передает вашу информацию третьим лицам. Данные получены в результате собственного анализа ${ BRAND_NAME } и разведки Constella Intelligence."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } приостановил импорт из-за потери соединения с вашим другим почтовым провайдером. Пожалуйста, восстановите соединение."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } приостановил импорт из-за нехватки места на вашем аккаунте. Вы можете:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Помощник по написанию ${ BRAND_NAME } Scribe"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } попытается возобновить импорт, как только провайдер электронной почты сбросит ${ bandwidthLimitLink } вашего аккаунта. Вам не нужно ничего делать. Если вы отмените импорт, вы не сможете возобновить его, и вам придется начинать все сначала."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технология шифрования ${ BRAND_NAME } означает, что никто не сможет получить доступ к вашему паролю, даже мы."
@@ -7174,9 +7116,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Расширьте идентификацию бренда вашей организации и создайте более последовательный опыт работы в Интернете для ваших пользователей."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Перенесите ваши сообщения, контакты и календари в ${ BRAND_NAME }."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Создавая учетную запись ${ PASS_APP_NAME } с адресом электронной почтой SimpleLogin, вы сможете управлять своими псевдонимами непосредственно из ${ PASS_APP_NAME }."
       ],
@@ -7224,6 +7163,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Награда «Выбор редакции CNET» с оценкой 8,4 из 10"
+      ],
+      "Coming soon": [
+        "Скоро"
       ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Настройте аутентификацию SAML для своей организации через провайдера идентификации (IdP). Это позволит включить SAML для всей организации."
@@ -7645,14 +7587,8 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Для пользователей, которые переходят на ${ MAIL_APP_NAME } с другой почтовой службы, выберите вкладку ${ boldAddresses } и добавьте все активные адреса электронной почты перед изменением записи MX, чтобы обеспечить плавный переход."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Пересылка входящей почты в ваш безопасный почтовый ящик ${ MAIL_APP_NAME } из другого аккаунта."
-      ],
       "Free forever": [
         "Бесплатно навсегда"
-      ],
-      "free up space by deleting older messages or other data": [
-        "освободить место путем удаления старых сообщений или других данных"
       ],
       "Gateways": [
         "Шлюзы"
@@ -8098,9 +8034,6 @@
       "No Gateways yet": [
         "Шлюзов пока нет"
       ],
-      "No imports or forwarding history.": [
-        "Нет истории импорта или пересылки."
-      ],
       "No label selected": [
         "Ярлык не выбран"
       ],
@@ -8136,9 +8069,6 @@
       ],
       "Once you reset your password:": [
         "После изменения пароля:"
-      ],
-      "One time import": [
-        "Одноразовый импорт"
       ],
       "Open source": [
         "Открытый исходный код"
@@ -8335,9 +8265,6 @@
       "Public sharing of documents is not yet supported.": [
         "Публичный обмен документами пока не поддерживается."
       ],
-      "purchase additional storage": [
-        "приобрести дополнительное место"
-      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Обращайтесь к нам за помощью по любому вопросу, связанному с ${ BRAND_NAME }."
       ],
@@ -8443,9 +8370,6 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Выберите пользовательские принадлежности из ${ getFormattedOrganization }, которые вы хотите разрешить в своей организации ${ BRAND_NAME }:"
       ],
-      "Select what you want to import.": [
-        "Выберите то, что вы хотите импортировать."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберите, какие календари импортировать. Новый календарь будет создан для каждого импортированного календаря с учётом числа календарей, доступных в вашем тарифе."
       ],
@@ -8481,9 +8405,6 @@
       ],
       "Set password": [
         "Установить пароль"
-      ],
-      "Set up forwarding": [
-        "Настроить пересылку"
       ],
       "Set up your organization": [
         "Настройка организации"
@@ -9253,9 +9174,6 @@
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Вы можете установить правила для паролей, которые члены вашей организации будут использовать при создании или восстановлении пароля к своему аккаунту ${ BRAND_NAME }."
       ],
-      "You can import one data type at a time.": [
-        "Вы можете импортировать один тип данных за один раз."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календаря. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку.",
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку.",
@@ -9417,12 +9335,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Ваши файлы будут зашифрованы и затем сохранены"
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Ваш импорт из ${ accounts } временно отложен.",
-        "Ваши импорты из ${ accounts } временно отложены.",
-        "Ваши импорты из ${ accounts } временно отложены.",
-        "Ваши импорты из ${ accounts } временно отложены."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "С нами ваши данные находятся в безопасности. Мы свяжемся с вами только в случае предоставления наших сервисов."
@@ -10104,9 +10016,6 @@
       "Calendar": [
         "Календарь"
       ],
-      "Calendars": [
-        "Календари"
-      ],
       "Card details": [
         "Данные карты"
       ],
@@ -10298,9 +10207,6 @@
       ],
       "Email or username": [
         "Эл. почта или имя пользователя"
-      ],
-      "Emails": [
-        "Электронные письма"
       ],
       "Emails (all messages)": [
         "Письма (все)"
@@ -18080,9 +17986,6 @@
       "Help center": [
         "Справочный центр"
       ],
-      "History": [
-        "История"
-      ],
       "Home": [
         "Главная"
       ],
@@ -18689,9 +18592,6 @@
       "What is the dark web?": [
         "Что такое Dark Web?"
       ],
-      "What would you like to import?": [
-        "Что бы вы хотели импортировать?"
-      ],
       "WireGuard configuration": [
         "Конфигурация WireGuard"
       ],
@@ -18754,20 +18654,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Действия"
-      ],
-      "Date": [
-        "Дата"
-      ],
-      "Import": [
-        "Импорт"
-      ],
       "Size": [
         "Размер"
-      ],
-      "Status": [
-        "Состояние"
       ]
     },
     "Title header for addresses domain table": {
@@ -19653,9 +19541,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Вы потеряете все сделанные вами до этого настройки."
-      ],
-      "You will not see this import record in the list any more.": [
-        "Вы больше не увидите эту историю импорта в списке."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ваш бесплатный пробный период заканчивается ${ textDate }. ${ action }"

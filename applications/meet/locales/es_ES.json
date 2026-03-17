@@ -132,7 +132,7 @@
         "Habilitar la cámara"
       ],
       "Enable video": [
-        "Habilitar video"
+        "Habilitar vídeo"
       ],
       "End meeting": [
         "Finalizar reunión"
@@ -219,7 +219,7 @@
         "Abrir enlace"
       ],
       "Picture-in-picture mode": [
-        "Modo imagen en imagen"
+        "Modo de pantalla en pantalla"
       ],
       "Previous month": [
         "Mes anterior"
@@ -350,11 +350,14 @@
       "Tap to unblock audio playback": [
         "Toca para permitir la reproducción de audio"
       ],
+      "Try again": [
+        "Inténtalo de nuevo"
+      ],
       "Try another method": [
         "Intenta con otro método"
       ],
       "Turn off incoming video": [
-        "Desactivar video entrante"
+        "Desactivar vídeo entrante"
       ],
       "Upgrade": [
         "Cambiar de plan"
@@ -437,7 +440,7 @@
         "Rotar enlace de reunión personal"
       ],
       "Screen share": [
-        "Compartir pantalla"
+        "Comparte pantalla"
       ],
       "Settings": [
         "Ajustes"
@@ -1426,10 +1429,10 @@
     },
     "Description": {
       "Rotating group encryption key for best security": [
-        "Rotando la clave de cifrado de grupo para una seguridad óptima"
+        "Renovando la clave de cifrado de grupo para una seguridad óptima"
       ],
       "Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)": [
-        "Configurando el cifrado de extremo a extremo de grupo con Seguridad de Capa de Mensajería (MLS) avanzada"
+        "Configurando el cifrado de extremo a extremo de grupo con Seguridad de capa de mensajería (MLS) avanzada"
       ]
     },
     "emergency_access": {
@@ -1460,7 +1463,7 @@
         "Error al crear la reunión"
       ],
       "Failed to create personal meeting, please refresh the page": [
-        "No se pudo crear tu reunión personal, por favor, actualiza la página."
+        "No se pudo crear tu reunión personal, actualiza la página."
       ],
       "Failed to decrypt session key": [
         "Error al descifrar la clave de sesión"
@@ -1475,7 +1478,7 @@
         "Error al editar el nombre de la sala"
       ],
       "Failed to join meeting. Please try again later.": [
-        "Error al unirse a la reunión. Por favor, inténtalo de nuevo más tarde."
+        "Error al unirse a la reunión. Inténtalo de nuevo más tarde."
       ],
       "Failed to lock meeting": [
         "Error al bloquear la reunión"
@@ -1700,26 +1703,26 @@
     },
     "Info": {
       " and ": [
-        "y"
+        " y "
       ],
       "${ maxParticipants } participant limit reached": [
         "Se ha alcanzado el límite de ${ maxParticipants } participantes"
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
-        "${ MEET_APP_NAME } necesita WebRTC para funcionar. Por favor, actualiza tu navegador o dispositivo a una versión que sea compatible con WebRTC, prueba con otro navegador o desactiva cualquier extensión que pueda estar bloqueándolo."
-      ],
-      "${ participantCount } of ${ maxParticipants } participants": [
-        "${ participantCount } de ${ maxParticipants } participantes"
-      ],
-      "${ participantCount } participant": [
-        "${ participantCount } participante",
-        "${ participantCount } participantes"
+        "${ MEET_APP_NAME } necesita WebRTC para funcionar. Actualiza tu navegador o dispositivo a una versión que sea compatible con WebRTC, prueba con otro navegador o desactiva cualquier extensión que pueda estar bloqueándolo."
       ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (tú) está presentando"
       ],
       "${ presenterName } is presenting": [
         "${ presenterName } está presentando"
+      ],
+      "${ totalParticipantCount } of ${ maxParticipants } participants": [
+        "${ totalParticipantCount } de ${ maxParticipants } participantes"
+      ],
+      "${ totalParticipantCount } participant": [
+        "${ totalParticipantCount } participante",
+        "${ totalParticipantCount } participantes"
       ],
       "(You)": [
         "(Tú)"
@@ -1763,6 +1766,9 @@
       "Coming soon": [
         "Próximamente"
       ],
+      "Connection failed": [
+        "Error de conexión"
+      ],
       "Connection interrupted. Reconnecting...": [
         "Conexión interrumpida. Reconectando..."
       ],
@@ -1770,7 +1776,7 @@
         "Conexión perdida"
       ],
       "Connection lost, please join meeting again": [
-        "Conexión perdida, por favor, únete a la reunión de nuevo"
+        "Conexión perdida, únete a la reunión de nuevo"
       ],
       "Copied to clipboard": [
         "Copiada al portapapeles"
@@ -1797,7 +1803,7 @@
         "Por defecto"
       ],
       "Default - ${ systemDefault.label }": [
-        "Por defecto - ${ systemDefault.label }"
+        "Por defecto: ${ systemDefault.label }"
       ],
       "Delete event": [
         "Eliminar evento"
@@ -1861,6 +1867,9 @@
       ],
       "Get the best experience with the ${ protonMeet } desktop app": [
         "Disfruta de la mejor experiencia con la aplicación de escritorio de ${ protonMeet }"
+      ],
+      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
+        "Ve a about:config, busca media.peerconnection.enabled y establécelo en true."
       ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Organiza tus propias reuniones seguras. Inicia una llamada en ${ MEET_APP_NAME } y comparte el enlace para invitar a quien quieras. Fácil, seguro y gratuito."
@@ -1946,6 +1955,9 @@
       "microphone": [
         "micrófono"
       ],
+      "Microphone effects": [
+        "Efectos de micrófono"
+      ],
       "My meetings": [
         "Mis reuniones"
       ],
@@ -1988,9 +2000,6 @@
       "No speaker detected": [
         "No se detectan altavoces"
       ],
-      "Now your meetings will be opened in the ${ MEET_APP_NAME } desktop app": [
-        "Ahora tus reuniones se abrirán en la aplicación de escritorio ${ MEET_APP_NAME }"
-      ],
       "Only meetings you created appear here": [
         "Aquí solo aparecen las reuniones que has creado tú"
       ],
@@ -2016,10 +2025,13 @@
         "Faltan los permisos."
       ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
-        "Por favor, activa el acceso a tu ${ microphoneLinkButton }${ andString }${ cameraLinkButton } para la mejor experiencia."
+        "Activa el acceso a tu ${ microphoneLinkButton }${ andString }${ cameraLinkButton } para la mejor experiencia."
       ],
       "Please enter the passphrase to decrypt and view this meeting": [
         "Introduce la contraseña para descifrar y visualizar el contenido."
+      ],
+      "Please try again or try another browser": [
+        "Inténtalo de nuevo o prueba con otro navegador"
       ],
       "Poor connection": [
         "Conexión débil"
@@ -2115,7 +2127,7 @@
         "Esta reunión está protegida con contraseña"
       ],
       "This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).": [
-        "Esta reunión está protegida por cifrado de extremo a extremo con Seguridad de Capa de Mensajería (MLS)."
+        "Esta reunión está protegida por cifrado de extremo a extremo con Seguridad de capa de mensajería (MLS)."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Esta reunión se ha abierto en la aplicación de escritorio de ${ MEET_APP_NAME }."
@@ -2158,6 +2170,9 @@
       ],
       "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
         "Mejora tu plan para eliminar el límite de 1 hora y omitir la cuenta atrás. Disfruta de reuniones de hasta 24 horas."
+      ],
+      "Video effects": [
+        "Efectos de vídeo"
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un nuevo código de verificación a ${ strong }."
@@ -2445,7 +2460,7 @@
     },
     "Meet": {
       "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
-        "Tu navegador o el software de tu dispositivo no es compatible con ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requiere WebAssembly (Wasm) para funcionar. Por favor, actualiza tu navegador o dispositivo a una versión que soporte Wasm, o intenta usar un navegador diferente."
+        "Tu navegador o el software de tu dispositivo no es compatible con ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requiere WebAssembly (Wasm) para funcionar. Actualiza tu navegador o dispositivo a una versión que soporte Wasm, o intenta usar un navegador diferente."
       ]
     },
     "meet_2025": {
@@ -2463,7 +2478,7 @@
     },
     "meet_2025 Error": {
       "Failed to start Picture-in-Picture": [
-        "Error al iniciar Imagen en imagen"
+        "Error al iniciar Pantalla en pantalla"
       ]
     },
     "Notification": {
@@ -2483,7 +2498,7 @@
         "Nombre de la sala actualizado"
       ],
       "Successfully rotated your personal meeting": [
-        "Has rotado con éxito tu reunión personal"
+        "Has renovado con éxito tu reunión personal"
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "No puedes enviar comentarios de una reunión a la que no has asistido"
@@ -2520,7 +2535,7 @@
         "La presentación estaba borrosa"
       ],
       "Video was blurry": [
-        "El video estaba borroso"
+        "El vídeo estaba borroso"
       ],
       "Video was breaking up": [
         "No pude presentar"
@@ -2534,7 +2549,7 @@
         "P. ej., "
       ],
       "e.g., Design Team, Weekly Standup": [
-        "ej. Equipo de Diseño, Reunión semanal"
+        "ej. Equipo de diseño, reunión semanal"
       ],
       "Enter meeting title": [
         "Añadir título de la reunión"
@@ -2726,7 +2741,7 @@
         "Introduce tu contraseña"
       ],
       "Epoch": [
-        "Pausa"
+        "Epoch"
       ],
       "Epoch ${ prevLog.epoch } → ${ log.epoch }": [
         "Epoch ${ prevLog.epoch } → ${ log.epoch }"
@@ -2781,7 +2796,7 @@
         "Configuración de la reunión"
       ],
       "Messaging Layer Security": [
-        "Messaging Layer Security (MLS)"
+        "Seguridad de capa de mensajería (MLS)"
       ],
       "Minicalendar": [
         "Minicalendario"
@@ -2894,6 +2909,9 @@
       ]
     },
     "Warning": {
+      "Connection is taking longer than expected": [
+        "La conexión está tardando más de lo esperado"
+      ],
       "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
         "No se pudo acceder a la cámara o al micrófono. Puedes intentar activarlos de nuevo desde los controles de la reunión."
       ],
@@ -2906,8 +2924,17 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo. No envíes ninguna información confidencial."
       ],
+      "STUN UDP connection failed, trying with TURN relay…": [
+        "Error en la conexión UDP por STUN; intentándolo mediante el servidor de retransmisión TURN…"
+      ],
+      "STUN UDP connection timeout, trying with TURN relay": [
+        "Se agotó el tiempo de espera en la conexión UDP por STUN; se intentará con el retransmisor TURN"
+      ],
       "The host has removed you from the meeting": [
         "El anfitrión te ha expulsado de la reunión"
+      ],
+      "Trying another route…": [
+        "Probando otra ruta…"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Desafortunadamente, no estamos conectados en este momento. Completa el siguiente formulario para describir tu problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar online."

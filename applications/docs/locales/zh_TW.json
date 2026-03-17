@@ -393,17 +393,11 @@
       "import": [
         "匯入"
       ],
-      "Import calendars": [
-        "匯入行事曆"
-      ],
       "Import contacts": [
         "匯入聯絡人"
       ],
       "Import data": [
         "匯入資料"
-      ],
-      "Import emails": [
-        "匯入郵件"
       ],
       "Import emails, calendars, contacts": [
         "匯入電子郵件、行事曆、聯絡人"
@@ -835,6 +829,12 @@
       "${ domains } additional custom domain": [
         "${ domains }額外自訂網域"
       ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI 授權"
+      ],
+      "${ LUMO_APP_NAME } seats": [
+        "${ LUMO_APP_NAME } 個席次"
+      ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
       ],
@@ -844,8 +844,14 @@
       "${ users } user": [
         "${ users } 位使用者"
       ],
+      "Dedicated VPN servers": [
+        "專用 VPN 伺服器"
+      ],
       "Domains": [
         "網域"
+      ],
+      "Servers": [
+        "伺服器"
       ],
       "Users": [
         "使用者"
@@ -1007,11 +1013,20 @@
       "2 TB data storage": [
         "2 TB 的總儲存空間"
       ],
+      "Access advanced AI models": [
+        "存取進階 AI 模型"
+      ],
       "Block ads, trackers, and malware": [
         "攔截廣告、追蹤程式和惡意軟體"
       ],
       "Built-in 2FA authenticator": [
         "內建雙重驗證機制"
+      ],
+      "Connect 10 devices at once": [
+        "同時連線 10 臺裝置"
+      ],
+      "Unlimited daily chats": [
+        "無限每日聊天"
       ]
     },
     "Browser": {
@@ -2725,6 +2740,9 @@
       "Incorrect username": [
         "錯誤的使用者名稱"
       ],
+      "Invalid coupon": [
+        "無效優待券"
+      ],
       "Invalid email address": [
         "電郵位址無效"
       ],
@@ -3438,6 +3456,9 @@
       "Domain": [
         "網域"
       ],
+      "Drawer": [
+        "抽屜"
+      ],
       "Password ends with": [
         "密碼結尾是"
       ],
@@ -3750,23 +3771,6 @@
         "選取 ${ boldExport } 以將行事曆匯出為 ICS 檔案。"
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "從 ${ provider } 匯入"
-      ],
-      "Import from Google": [
-        "從 Google 匯入"
-      ],
-      "Import from other": [
-        "從其他匯入"
-      ],
-      "Import from Outlook": [
-        "從 Outlook 匯入"
-      ],
-      "Import from Yahoo": [
-        "從 Yahoo 匯入"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 聯絡人將不會被匯入。點擊以查看詳細資料"
@@ -3964,9 +3968,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "在申請一組新的驗證碼之前，請檢查您的垃圾郵件資料夾以及 ${ strong } 的位址正確無誤。"
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "將訊息、聯絡人和行事曆匯入 ${ BRAND_NAME }。"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降級至免費方案，您將永久失去這些優惠，即便您日後再次升級也是如此。"
@@ -4382,9 +4383,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您允許的一或多組可信任金鑰，已被其所有人標記為損壞。我們建議您撤銷這些金鑰。"
       ],
-      "One time import": [
-        "一次性匯入"
-      ],
       "Only the people with the link and the password can access this file.": [
         "僅同時擁有連結與密碼的人才能存取此檔案。"
       ],
@@ -4504,9 +4502,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "請選擇用於傳送至該電郵位址時使用的預設電郵格式。"
-      ],
-      "Select what you want to import.": [
-        "選擇您要匯入的檔案。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "請選取要匯入的行事曆。將根據您的方案中可用的行事曆數量為每個匯入的行事曆創建一個新的行事曆。"
@@ -4787,9 +4782,6 @@
       "You can close the tab or browser in the meantime.": [
         "等待期間，您可以關閉這個標籤頁或瀏覽器。"
       ],
-      "You can import one data type at a time.": [
-        "您可以一次匯入一種資料類型。"
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "您可保留最多 ${ MAX_CALENDARS_FREE } 個行事曆。請先移除已分享的行事曆連結以及任何與其分享行事曆的 ${ BRAND_NAME } 使用者，然後才取消您的 ${ MAIL_SHORT_APP_NAME } 訂閱。"
       ],
@@ -4987,6 +4979,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
       ],
+      "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
+        "透過終端機安全地存取 ${ PASS_APP_NAME }，適合程式、自動化、和開發流程。"
+      ],
       "Add email address": [
         "加入電郵位址"
       ],
@@ -5036,9 +5031,6 @@
         "瀏覽器版本"
       ],
       "Calendar": [
-        "行事曆"
-      ],
-      "Calendars": [
         "行事曆"
       ],
       "Cancel download": [
@@ -5113,9 +5105,6 @@
       "Email format": [
         "電郵格式"
       ],
-      "Emails": [
-        "電郵"
-      ],
       "Emails (all messages)": [
         "電子郵件（全部訊息）"
       ],
@@ -5124,6 +5113,9 @@
       ],
       "Emails (last 3 months)": [
         "電子郵件（最近三個月）"
+      ],
+      "Emails (last 6 months)": [
+        "電子郵件（最近六個月）"
       ],
       "Emails (last month)": [
         "電子郵件（上個月）"
@@ -5199,6 +5191,9 @@
       ],
       "Last 3 months only": [
         "僅過去 3 個月"
+      ],
+      "Last 6 months only": [
+        "僅過去 6 個月"
       ],
       "Last month only": [
         "僅過去 1 個月"
@@ -6600,6 +6595,9 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "以標誌、影像、社交媒體圖示、您的聯絡詳情連結等等，個人化您的電子郵件簽名檔"
       ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } or more users": [
+        "${ BRAND_NAME } 客戶服務團隊於歐洲辦公時間內，為 ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } 位或以上使用者的客戶提供電話支援"
+      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "防止郵件被 ${ BRAND_NAME } 或第三方存取。能夠讀取郵件的人，就只有寄件者和意指的收件者。"
       ],
@@ -7099,6 +7097,9 @@
       ],
       "Cancel anytime before ${ cancelDate }.": [
         "於 ${ cancelDate } 前隨時取消。"
+      ],
+      "Cancel anytime before then.": [
+        "於之前隨時取消。"
       ],
       "contact our support team": [
         "聯絡我們的客戶支援團隊"
@@ -8067,6 +8068,9 @@
       "Access content on streaming services worldwide": [
         "存取全球影音串流服務內容"
       ],
+      "Get access to ultrafast VPN servers in 110+ countries": [
+        "取得存取在110 多個國家提供極速 VPN 伺服器"
+      ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "取得包含全部的單一方案，取得 ${ BRAND_NAME } Unlimited"
       ],
@@ -8860,6 +8864,9 @@
       "Open pagination": [
         "開啟分頁"
       ],
+      "Org setup": [
+        "組織設定"
+      ],
       "Organization setup": [
         "組織機構設定"
       ],
@@ -9021,9 +9028,6 @@
       ],
       "What is a VPN?": [
         "甚麼是 VPN?"
-      ],
-      "What would you like to import?": [
-        "您打算要匯入什麼資料呢？"
       ],
       "When is it most important to use a VPN?": [
         "何時最適合使用 VPN？"

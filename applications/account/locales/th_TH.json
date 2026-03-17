@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "ลบการส่งต่อ"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "การส่งต่อจะเริ่มเร็วๆ นี้ อีเมลใหม่จะปรากฏในกล่องขาเข้าของคุณ"
       ],
       "Mail forward stopped": [
         "หยุดการส่งต่อเมลแล้ว"
-      ],
-      "Reconnect": [
-        "เชื่อมต่อใหม่"
-      ],
-      "Remove forward": [
-        "ลบการส่งต่อออก"
       ],
       "You will stop the mail forwarding.": [
         "การส่งต่อเมลจะหยุดลง"
@@ -857,15 +848,6 @@
       ],
       "Import": [
         "นําเข้า"
-      ],
-      "Import calendars": [
-        "นำเข้าปฏิทิน"
-      ],
-      "Import contacts": [
-        "นำเข้ารายชื่อติดต่อ"
-      ],
-      "Import emails": [
-        "นำเข้าอีเมล"
       ],
       "Import emails, calendars, contacts": [
         "นำเข้าอีเมล, ปฏิทิน, ผู้ติดต่อ"
@@ -8279,31 +8261,6 @@
         "แน่ใจหรือไม่ว่าต้องการนำเข้าคีย์ส่วนตัว? การนำเข้าคีย์ส่วนตัวที่สร้างขึ้นอย่างไม่ปลอดภัยหรือรั่วไหลอาจส่งผลเสียต่อความปลอดภัยของอีเมล\n\nโปรดทราบว่าคีย์สาธารณะที่ตรงกับคีย์ส่วนตัวนี้จะเปิดเผยต่อสาธารณะจากเซิร์ฟเวอร์คีย์ของเรา หากคีย์มีรายละเอียดส่วนบุคคล (เช่น ชื่อเต็ม) ซึ่งไม่ต้องการเผยแพร่ โปรดแก้ไขคีย์ก่อนนำเข้า"
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "นำเข้าจาก ${ provider }"
-      ],
-      "Import from Google": [
-        "นำเข้าจาก Google"
-      ],
-      "Import from other": [
-        "นำเข้าจากอื่นๆ"
-      ],
-      "Import from Outlook": [
-        "นำเข้าจาก Outlook"
-      ],
-      "Import from Yahoo": [
-        "นำเข้าจาก Yahoo"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "เลิกทำเสร็จสิ้น"
-      ],
-      "Undo in progress": [
-        "กำลังเลิกทำ"
-      ]
-    },
     "Import status": {
       "Active": [
         "กำลังเปิดใช้งานอยู่"
@@ -8311,26 +8268,14 @@
       "Canceled": [
         "ยกเลิก"
       ],
-      "Canceling": [
-        "กำลังยกเลิก"
-      ],
-      "Completed": [
-        "เสร็จสมบูรณ์"
-      ],
       "Delayed": [
         "ล่าช้า"
       ],
       "Failed": [
         "ไม่สำเร็จ"
       ],
-      "In progress": [
-        "กำลังดำเนินการ"
-      ],
       "Paused": [
         "หยุดชั่วคราว"
-      ],
-      "Started": [
-        "เริ่มต้นแล้ว"
       ]
     },
     "Import type": {
@@ -8388,17 +8333,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } ไม่เคยแชร์ข้อมูลกับบุคคลที่สาม ข้อมูลมาจากการวิเคราะห์ของ ${ BRAND_NAME } เองและ Constella Intelligence"
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } หยุดการนำเข้าชั่วคราวเนื่องจากขาดการเชื่อมต่อกับผู้ให้บริการอีเมลรายอื่นของคุณ โปรดเชื่อมต่อใหม่"
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } หยุดการนำเข้าชั่วคราวเนื่องจากบัญชีของคุณมีพื้นที่เหลือต่ำ คุณสามารถ:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "ผู้ช่วยการเขียน ${ BRAND_NAME } Scribe"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } จะพยายามดำเนินการนำเข้าต่อทันทีที่ผู้ให้บริการอีเมลของคุณรีเซ็ต ${ bandwidthLimitLink } ของบัญชีของคุณ คุณไม่จำเป็นต้องทำอะไร หากคุณยกเลิกการนำเข้า คุณจะไม่สามารถดำเนินการต่อได้และจะต้องเริ่มต้นใหม่"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "เทคโนโลยีการเข้ารหัสลับของ ${ BRAND_NAME } หมายความว่าไม่มีใครสามารถเข้าถึงรหัสผ่านของคุณได้ แม้แต่เรา"
@@ -8973,9 +8909,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "ส่งเสริมข้อมูลระบุตัวตนของแบรนด์ขององค์กรของคุณและสร้างประสบการณ์ออนไลน์ที่สอดคล้องกันมากขึ้นสำหรับผู้ใช้ของคุณ"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "ย้ายข้อความ รายชื่อติดต่อ และปฏิทินของคุณมาที่ ${ BRAND_NAME }"
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "การสร้างบัญชี ${ PASS_APP_NAME } ด้วยอีเมล SimpleLogin จะช่วยให้สามารถจัดการนามแฝงได้โดยตรงจาก ${ PASS_APP_NAME }"
       ],
@@ -9495,17 +9428,11 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "สำหรับผู้ใช้ที่กำลังเปลี่ยนมาใช้ ${ MAIL_APP_NAME } จากบริการอีเมลอื่น เลือกแท็บ ${ boldAddresses } และเพิ่มที่อยู่อีเมลที่ใช้งานอยู่ทั้งหมดก่อนเปลี่ยนระเบียน MX เพื่อให้แน่ใจว่าการเปลี่ยนแปลงจะเป็นไปอย่างราบรื่น"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "ส่งต่อเมลขาเข้าจากบัญชีอื่นไปยังกล่องขาเข้า ${ MAIL_APP_NAME } ที่ปลอดภัย"
-      ],
       "Free forever": [
         "ฟรีตลอดไป"
       ],
       "Free trial": [
         "ทดลองใช้ฟรี"
-      ],
-      "free up space by deleting older messages or other data": [
-        "การลบข้อความเก่าๆ หรือข้อมูลอื่นๆ ช่วยให้มีพื้นที่จัดเก็บไฟล์มากขึ้น"
       ],
       "Gateway monitor": [
         "การตรวจสอบเกตเวย์"
@@ -10026,9 +9953,6 @@
       "No Gateways yet": [
         "ยังไม่มีเกตเวย์"
       ],
-      "No imports or forwarding history.": [
-        "ไม่มีประวัติการนำเข้าหรือการส่งต่อ"
-      ],
       "No label selected": [
         "ไม่มีป้ายกำกับที่เลือก"
       ],
@@ -10076,9 +10000,6 @@
       ],
       "Once you reset your password:": [
         "เมื่อรีเซ็ตรหัสผ่าน:"
-      ],
-      "One time import": [
-        "นำเข้าครั้งเดียว"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "เปลี่ยนการตั้งค่าเหล่านี้เฉพาะในกรณีที่คุณใช้ PGP กับผู้รับที่ไม่ใช่ ${ BRAND_NAME } เท่านั้น"
@@ -10302,9 +10223,6 @@
       "Public sharing of documents is not yet supported.": [
         "ยังไม่รองรับการแชร์เอกสารแบบสาธารณะ"
       ],
-      "purchase additional storage": [
-        "ซื้อพื้นที่จัดเก็บไฟล์เพิ่มขึ้น"
-      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "ติดต่อเราเพื่อขอความช่วยเหลือเกี่ยวกับทุกเรื่องของ ${ BRAND_NAME }"
       ],
@@ -10425,9 +10343,6 @@
       "Select users to view their activity": [
         "เลือกผู้ใช้เพื่อดูกิจกรรมของพวกเขา"
       ],
-      "Select what you want to import.": [
-        "เลือกสิ่งที่ต้องการนำเข้า"
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "เลือกปฏิทินที่จะนำเข้า จะมีการสร้างปฏิทินใหม่สำหรับแต่ละปฏิทินที่นำเข้าตามจำนวนปฏิทินที่มีในแผนของคุณ"
       ],
@@ -10463,9 +10378,6 @@
       ],
       "Set password": [
         "ตั้งค่ารหัสผ่าน"
-      ],
-      "Set up forwarding": [
-        "ตั้งค่าการส่งต่อ"
       ],
       "Set up your organization": [
         "ตั้งค่าองค์กรของคุณ"
@@ -11325,9 +11237,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "คุณสามารถรับบริการความเป็นส่วนตัวพรีเมียมของเราได้ในชุดรวมเดียว — และเพียง **${ priceString }/เดือน**"
       ],
-      "You can import one data type at a time.": [
-        "สามารถนำเข้าประเภทข้อมูลได้ทีละหนึ่งรายการ"
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "สามารถเก็บปฏิทินไว้ได้สูงสุด ${ MAX_CALENDARS_FREE } ปฏิทิน โปรดลบลิงก์ปฏิทินที่แชร์และผู้ใช้ ${ BRAND_NAME } ที่มีการแชร์ปฏิทินด้วยก่อนที่จะยกเลิกการสมัครสมาชิก ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -11513,9 +11422,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "การทดลองใช้ฟรีของคุณเปลี่ยนเป็นการสมัครสมาชิกรายเดือนเรียบร้อยแล้ว วันที่ต่ออายุของคุณคือ ${ nextBillingDate }"
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "การนำเข้าจาก${ accounts }มีการดีเลย์ชั่วคราว"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "ข้อมูลของคุณปลอดภัยเมื่ออยู่กับเรา เราจะติดต่อคุณเมื่อจำเป็นเพื่อให้บริการของเราเท่านั้น"
@@ -12430,9 +12336,6 @@
       "Calendar": [
         "ปฏิทิน"
       ],
-      "Calendars": [
-        "ปฏิทิน"
-      ],
       "Capitalize words": [
         "ขึ้นต้นด้วยตัวพิมพ์ใหญ่"
       ],
@@ -12678,9 +12581,6 @@
       ],
       "Email or username": [
         "อีเมลหรือชื่อผู้ใช้"
-      ],
-      "Emails": [
-        "อีเมล"
       ],
       "Emails (all messages)": [
         "อีเมล (ข้อความทั้งหมด)"
@@ -22012,9 +21912,6 @@
       "Help center": [
         "ศูนย์ช่วยเหลือ"
       ],
-      "History": [
-        "ประวัติ"
-      ],
       "Home": [
         "หน้าหลัก"
       ],
@@ -22744,9 +22641,6 @@
       "What is the dark web?": [
         "ดาร์กเว็บคืออะไร?"
       ],
-      "What would you like to import?": [
-        "ต้องการนำเข้าอะไร?"
-      ],
       "Wipe all logs?": [
         "ล้างบันทึกทั้งหมดหรือไม่?"
       ],
@@ -22821,20 +22715,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "การดำเนินการ"
-      ],
-      "Date": [
-        "วันที่"
-      ],
-      "Import": [
-        "นําเข้า"
-      ],
       "Size": [
         "ขนาด"
-      ],
-      "Status": [
-        "สถานะ"
       ]
     },
     "Title header for addresses domain table": {
@@ -23929,9 +23811,6 @@
       ],
       "You will lose any customization you made so far.": [
         "คุณจะสูญเสียการปรับแต่งใดๆ ที่ทำไว้จนถึงตอนนี้"
-      ],
-      "You will not see this import record in the list any more.": [
-        "คุณจะไม่เห็นบันทึกการนำเข้านี้ในรายการอีกต่อไป"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "การทดลองใช้ฟรีของคุณจะสิ้นสุดในวันที่ ${ textDate } ${ action }"

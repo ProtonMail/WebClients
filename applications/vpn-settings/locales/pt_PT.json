@@ -504,15 +504,6 @@
       "Import": [
         "Importar"
       ],
-      "Import calendars": [
-        "Importar calendários"
-      ],
-      "Import contacts": [
-        "Importar contactos"
-      ],
-      "Import emails": [
-        "Importar e-mails"
-      ],
       "Import emails, calendars, contacts": [
         "Importar e-mails, calendários, contactos"
       ],
@@ -5013,23 +5004,6 @@
         "Selecione ${ boldExport } para exportar o calendário no formato de ficheiro ICS."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Importar de ${ provider }"
-      ],
-      "Import from Google": [
-        "Importar do Google"
-      ],
-      "Import from other": [
-        "Importar de outro provedor"
-      ],
-      "Import from Outlook": [
-        "Importar do Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importar do Yahoo"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos não serão importados. Clique para detalhes"
@@ -5449,9 +5423,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de faturação: ${ text }"
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Traga as suas mensagens, contactos e calendários para a ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a atualizar de novo no futuro."
@@ -6213,9 +6184,6 @@
       "Once you reset your password:": [
         "Uma vez a sua palavra-passe redefinida:"
       ],
-      "One time import": [
-        "Importação única"
-      ],
       "Open source": [
         "Código aberto"
       ],
@@ -6480,9 +6448,6 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Selecione as afiliações de utilizadores do ${ getFormattedOrganization } que deseja permitir na sua organização ${ BRAND_NAME }:"
-      ],
-      "Select what you want to import.": [
-        "Selecione o que deseja importar."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecione os calendários a importar. Um novo calendário será criado por cada calendário importado, de acordo com o número de calendários disponível no seu plano."
@@ -7126,9 +7091,6 @@
       "You can enforce the password rules members of your organization will use when they create or reset the password to their ${ BRAND_NAME } Account.": [
         "Pode aplicar as regras da palavra-passe que os membros da sua organização utilizarão quando criarem ou repuserem a palavra-passe da respetiva conta da ${ BRAND_NAME }."
       ],
-      "You can import one data type at a time.": [
-        "Pode importar um tipo de dado por vez."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova ligações de calendários partilhados e qualquer utilizador do ${ BRAND_NAME } com quem partilhou os seus calendários antes de cancelar a sua assinatura do${ MAIL_SHORT_APP_NAME }.",
         "Pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova ligações de calendários partilhados e qualquer utilizador do ${ BRAND_NAME } com quem partilhou os seus calendários antes de cancelar a sua assinatura do${ MAIL_SHORT_APP_NAME }."
@@ -7609,9 +7571,6 @@
       "Calendar": [
         "Calendário"
       ],
-      "Calendars": [
-        "Calendários"
-      ],
       "Card details": [
         "Detalhes do cartão"
       ],
@@ -7758,9 +7717,6 @@
       ],
       "Email or username": [
         "Email ou utilizador"
-      ],
-      "Emails": [
-        "E-mails"
       ],
       "Emails (all messages)": [
         "Emails (todas as mensagens)"
@@ -14194,9 +14150,6 @@
       ],
       "What is the dark web?": [
         "O que é a dark web?"
-      ],
-      "What would you like to import?": [
-        "O que gostaria de importar?"
       ],
       "Wipe all logs?": [
         "Limpar todos os registos?"

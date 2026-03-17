@@ -405,6 +405,9 @@
       "Go to label": [
         "Siirry tunnisteeseen"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Selvä"
       ],
@@ -435,17 +438,11 @@
       "import": [
         "tuo"
       ],
-      "Import calendars": [
-        "Tuo kalenterit"
-      ],
       "Import contacts": [
         "Tuo yhteystiedot"
       ],
       "Import data": [
         "Tuo tietoja"
-      ],
-      "Import emails": [
-        "Tuo viestit"
       ],
       "Import emails, calendars, contacts": [
         "Tuo sähköposteja, kalentereita ja yhteystietoja"
@@ -3903,20 +3900,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Tuo palvelusta ${ provider }"
-      ],
-      "Import from Google": [
-        "Tuo Googlesta"
-      ],
-      "Import from other": [
-        "Tuo muualta"
-      ],
-      "Import from Outlook": [
-        "Tuo Outlookista"
-      ],
-      "Import from Yahoo": [
-        "Tuo Yahoosta"
+      "Advanced import": [
+        "Edistynyt tuonti"
       ]
     },
     "Import warning": {
@@ -4164,9 +4149,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Ennen kuin pyydät uuden vahvistuskoodin, tarkista roskapostikansiosi ja varmista, että osoite ${ strong } on oikea."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Tuo viestisi, yhteystietosi ja kalenterisi ${ BRAND_NAME }iin."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Alentamalla ilmaiseen palveluun, menetät nämä edut pysyvästi, vaikka päivittäisit tilauksesi tulevaisuudessa uudelleen."
       ],
@@ -4193,6 +4175,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Valitse tilaus, joka sopii sinulle parhaiten."
+      ],
+      "Choose your service to connect with": [
+        "Valitse palvelu, johon haluat yhdistää"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
@@ -4635,9 +4620,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ainakin yksi luotetuista avaimistasi on merkitty niiden omistajien toimesta \"vaarantuneeksi\". Suosittelemme että muutat avaimet \"epäluotettaviksi\"."
       ],
-      "One time import": [
-        "Kertaluontoinen tuonti"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Tiedostoa voivat käyttää vain ne, joilla on sen linkki ja salasana."
       ],
@@ -4770,9 +4752,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Valitse tähän osoitteeseen lähetettäville viesteille oletusarvoisesti käytettävä muoto."
-      ],
-      "Select what you want to import.": [
-        "Valitse mitä haluat tuoda."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Valitse tuotavat kalenterit. Jokaista tuotua kalenteria kohden luodaan uusi kalenteri tilaukseesi sisältyvän kalentereimäärän puitteissa."
@@ -5102,9 +5081,6 @@
       "You can close the tab or browser in the meantime.": [
         "Voit sillä välin sulkea välilehden tai selaimen."
       ],
-      "You can import one data type at a time.": [
-        "Voit tuoda vain yhden tietotyypin kerrallaan."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, jolle olet jakanut kalentereitasi.",
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenteria. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi."
@@ -5383,9 +5359,6 @@
       "Calendar": [
         "Kalenterin"
       ],
-      "Calendars": [
-        "Kalenterit"
-      ],
       "Cancel download": [
         "Peru lataus"
       ],
@@ -5460,9 +5433,6 @@
       ],
       "Email format": [
         "Viestien muoto"
-      ],
-      "Emails": [
-        "Viestit"
       ],
       "Emails (all messages)": [
         "Sähköpostit (kaikki viestit)"
@@ -9066,6 +9036,9 @@
       "Change password": [
         "Vaihda salasana"
       ],
+      "Choose a provider": [
+        "Valitse tarjoaja"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Lunasta ${ MAIL_APP_NAME } osoitteesi"
       ],
@@ -9113,6 +9086,9 @@
       ],
       "Currency": [
         "Valuutta"
+      ],
+      "Custom": [
+        "Mukautettu"
       ],
       "Customize and confirm": [
         "Mukauta ja vahvista"
@@ -9297,6 +9273,9 @@
       "Import groups": [
         "Tuo ryhmiä"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Tuo tietosi ${ BRAND_NAME }iin"
+      ],
       "Information exposed in breach": [
         "Tietomurrossa paljastuneet tiedot"
       ],
@@ -9423,6 +9402,9 @@
       "Select contact group": [
         "Valitse yhteystietoryhmä"
       ],
+      "Select data to import": [
+        "Valitse tuotavat tiedot"
+      ],
       "Select link expiration date": [
         "Valitse linkin erääntymisaika"
       ],
@@ -9536,9 +9518,6 @@
       ],
       "What is a VPN?": [
         "Mikä on VPN?"
-      ],
-      "What would you like to import?": [
-        "Mitä haluat tuoda?"
       ],
       "When is it most important to use a VPN?": [
         "Milloin VPN:n käyttäminen on tärkeintä?"

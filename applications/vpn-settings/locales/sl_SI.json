@@ -510,15 +510,6 @@
       "Import": [
         "Uvoz"
       ],
-      "Import calendars": [
-        "Uvoz koledarjev"
-      ],
-      "Import contacts": [
-        "Uvozite stike"
-      ],
-      "Import emails": [
-        "Uvoz e-poštnih sporočil"
-      ],
       "Import emails, calendars, contacts": [
         "Uvozi e-pošto, koledarje, stike"
       ],
@@ -1884,6 +1875,9 @@
       "Access to advanced AI models": [
         "Dostop do naprednih modelov UI"
       ],
+      "Basic chat history": [
+        "Osnovna zgodovina klepeta"
+      ],
       "Built and based in Europe": [
         "Zgrajeno in s sedežem v Evropi"
       ],
@@ -1895,6 +1889,9 @@
       ],
       "Large file upload support": [
         "Podpora za nalaganje velikih datotek"
+      ],
+      "Unlimited daily chats": [
+        "Neomejeni dnevni klepeti"
       ]
     },
     "collider_2025: Info": {
@@ -3370,6 +3367,9 @@
     "Duo offer: Link": {
       "Get 4x more storage": [
         "Pridobite 4x več prostora za shranjevanje"
+      ],
+      "Share your plan": [
+        "Svoj paket daj v skupno rabo"
       ]
     },
     "Duo offer: Title": {
@@ -5336,23 +5336,6 @@
         "Izberite ${ boldExport } za izvoz koledarja kot datoteko ICS."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Uvoz iz ${ provider }"
-      ],
-      "Import from Google": [
-        "Uvoz iz Googlovega računa"
-      ],
-      "Import from other": [
-        "Uvoz iz drugega"
-      ],
-      "Import from Outlook": [
-        "Uvoz iz Outlooka"
-      ],
-      "Import from Yahoo": [
-        "Uvoz iz Yahoo"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } stikov ne bo uvoženih. Kliknite za podrobnosti"
@@ -5802,9 +5785,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Obračunski cikel: ${ text }."
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Prenesite svoja sporočila, stike in koledarje v storitev ${ BRAND_NAME }"
       ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Z onemogočanjem nadzora nad računom boste izbrisali tudi celotno zgodovino. Ali ste prepričani, da želite to onemogočiti?"
@@ -6490,9 +6470,6 @@
       "Once you reset your password:": [
         "Ko ponovno nastavite geslo:"
       ],
-      "One time import": [
-        "Enkraten uvoz"
-      ],
       "Open source": [
         "Odprtokoden"
       ],
@@ -6753,9 +6730,6 @@
       ],
       "Securing your account": [
         "Zavarovanje vašega računa"
-      ],
-      "Select what you want to import.": [
-        "Izberite, kaj želite uvoziti."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Izberite, katere koledarje želite uvoziti. Za vsak uvoženi koledar bo ustvarjen nov koledar, odvisno od števila koledarjev, na voljo v vašem naročniškem paketu."
@@ -7363,9 +7337,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "To lahko uredite takrat, ko zagotovite pravilen e-poštni naslov za preverjanje."
       ],
-      "You can import one data type at a time.": [
-        "Uvažate lahko eno vrsto podatkov naenkrat."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Lahko obdržite do ${ MAX_CALENDARS_FREE } koledar. Preden prekličete naročnino na ${ MAIL_SHORT_APP_NAME }, prosimo odstranite deljene povezave do koledarjev in uporabnike storitve ${ BRAND_NAME }, s katerimi ste delili svoje koledarje.",
         "Lahko obdržite do ${ MAX_CALENDARS_FREE } koledarja. Preden prekličete naročnino na ${ MAIL_SHORT_APP_NAME }, prosimo odstranite deljene povezave do koledarjev in uporabnike storitve ${ BRAND_NAME }, s katerimi ste delili svoje koledarje.",
@@ -7841,9 +7812,6 @@
       "Calendar": [
         "Koledar"
       ],
-      "Calendars": [
-        "Koledarje"
-      ],
       "Card details": [
         "Podatki o kartici"
       ],
@@ -7987,9 +7955,6 @@
       ],
       "Email or username": [
         "E-pošta ali uporabniško ime"
-      ],
-      "Emails": [
-        "E-pošto"
       ],
       "Emails (all messages)": [
         "E-pošto (vsa sporočila)"
@@ -8927,6 +8892,12 @@
         "${ n } sestanka hkrati",
         "${ n } sestanki hkrati",
         "${ n } sestankov hkrati"
+      ],
+      "${ n } participant": [
+        "${ n } udeleženec",
+        "${ n } udeleženca",
+        "${ n } udeleženci",
+        "${ n } udeleženci"
       ],
       "24 hours per meeting": [
         "24 ur na sestanek"
@@ -10907,6 +10878,9 @@
       ],
       "VAT number": [
         "DDV številka"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Mehanizem DDV povratnega plačila velja."
       ],
       "You already have a subscription to this plan.": [
         "Na ta paket ste že naročeni."
@@ -14322,9 +14296,6 @@
       ],
       "What is the dark web?": [
         "Kaj je temni splet (Dark Web)?"
-      ],
-      "What would you like to import?": [
-        "Kaj želite uvoziti?"
       ],
       "WireGuard configuration": [
         "WireGuard nastavitev"

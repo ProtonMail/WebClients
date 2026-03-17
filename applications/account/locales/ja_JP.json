@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "転送削除"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "転送がすぐに始まります。新しいメールが受信トレイに出現します。"
       ],
       "Mail forward stopped": [
         "メールの転送を停止しました"
-      ],
-      "Reconnect": [
-        "再接続"
-      ],
-      "Remove forward": [
-        "転送削除"
       ],
       "You will stop the mail forwarding.": [
         "メールの転送を停止します。"
@@ -869,15 +860,6 @@
       ],
       "Import": [
         "インポート"
-      ],
-      "Import calendars": [
-        "カレンダーをインポート"
-      ],
-      "Import contacts": [
-        "連絡先をインポート"
-      ],
-      "Import emails": [
-        "メールをインポート"
       ],
       "Import emails, calendars, contacts": [
         "メール、カレンダー、連絡先をインポート"
@@ -8550,31 +8532,6 @@
         "秘密鍵をインポートしてよろしいですか？ 安全でない環境で生成された鍵や流出した鍵をインポートすると、メールのセキュリティに悪影響を及ぼす可能性があります。\n\nまた、秘密鍵に関連付けられた公開鍵は公開されたキーサーバーで利用できるようになります。鍵に個人情報(本名など)が含まれていて公開したくない場合は、鍵をインポートする前に編集してください。"
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "${ provider } からインポート"
-      ],
-      "Import from Google": [
-        "Googleからインポート"
-      ],
-      "Import from other": [
-        "その他からインポート"
-      ],
-      "Import from Outlook": [
-        "Outlook からインポート"
-      ],
-      "Import from Yahoo": [
-        "Yahooからインポート"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "取り消し完了"
-      ],
-      "Undo in progress": [
-        "取り消し中"
-      ]
-    },
     "Import status": {
       "Active": [
         "アクティブ"
@@ -8582,26 +8539,14 @@
       "Canceled": [
         "キャンセル"
       ],
-      "Canceling": [
-        "キャンセル中"
-      ],
-      "Completed": [
-        "完了"
-      ],
       "Delayed": [
         "遅延"
       ],
       "Failed": [
         "失敗"
       ],
-      "In progress": [
-        "進行中"
-      ],
       "Paused": [
         "一時停止"
-      ],
-      "Started": [
-        "開始済み"
       ]
     },
     "Import type": {
@@ -8659,17 +8604,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } はあなたの情報を第三者と共有しません。データは、${ BRAND_NAME } 独自の分析と Constella Intelligence によるものです。"
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } は他のメールプロバイダーとの接続が失われたためインポートを一時停止しました。再接続してください。"
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "アカウントの空き容量が少なくなっているため、 ${ BRAND_NAME } はインポートを一時停止しました。以下のことが可能です:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタント"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } は、メール プロバイダーがアカウントの ${ bandwidthLimitLink } をリセットするとすぐにインポートを再開しようとします。 何もする必要はありません。 インポートをキャンセルすると再開できなくなり、最初からやり直す必要があります。"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } の暗号化技術は私たちでさえもパスワードにアクセスできないことを意味しています。"
@@ -9253,9 +9189,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "御社のイメージ力を強め、ユーザーにより一貫したオンラインサービスを提供しましょう。"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "メッセージ、連絡先、カレンダーを ${ BRAND_NAME }に移行。"
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "SimpleLoginのメールで${ PASS_APP_NAME }のアカウントを作ることによって、${ PASS_APP_NAME }からエイリアスを直接管理することができます。"
       ],
@@ -9778,17 +9711,11 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "別のメール サービスから ${ MAIL_APP_NAME } に切り替えるユーザーの場合、スムーズに移行できるように、MX レコードを変更する前に、${ boldAddresses } タブを選択し、アクティブなメール アドレスをすべて追加してください。"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "他のアカウントで受信したメールを、安全な ${ MAIL_APP_NAME } 受信トレイへ転送します。"
-      ],
       "Free forever": [
         "永久に無料"
       ],
       "Free trial": [
         "無料トライアル"
-      ],
-      "free up space by deleting older messages or other data": [
-        "古いメッセージやその他のデータを削除して空き容量を増やすことができます"
       ],
       "Gateway monitor": [
         "ゲートウェイモニター"
@@ -10318,9 +10245,6 @@
       "No Gateways yet": [
         "ゲートウェイはまだありません"
       ],
-      "No imports or forwarding history.": [
-        "インポートや転送の履歴はありません。"
-      ],
       "No label selected": [
         "ラベルが選択されていません"
       ],
@@ -10368,9 +10292,6 @@
       ],
       "Once you reset your password:": [
         "パスワードをリセットしたら:"
-      ],
-      "One time import": [
-        "1 回限りのインポート"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "${ BRAND_NAME } 以外の宛先に PGP を使用しない限り、これらの設定には触らないでください。"
@@ -10597,9 +10518,6 @@
       "Public sharing of documents is not yet supported.": [
         "ドキュメントの公開共有はまだサポートされていません。"
       ],
-      "purchase additional storage": [
-        "追加ストレージを購入する"
-      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "何かお困りの際は、${ BRAND_NAME }までお問い合わせください。"
       ],
@@ -10720,9 +10638,6 @@
       "Select users to view their activity": [
         "アクティビティを表示するユーザーを選択"
       ],
-      "Select what you want to import.": [
-        "インポートしたいものを選択してください。"
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "インポートするカレンダーを選択します。プランで利用可能なカレンダーの数に応じて、インポートしたカレンダーごとに新しいカレンダーが作成されます。"
       ],
@@ -10758,9 +10673,6 @@
       ],
       "Set password": [
         "パスワードを設定"
-      ],
-      "Set up forwarding": [
-        "転送の設定"
       ],
       "Set up your organization": [
         "組織を設定"
@@ -11641,9 +11553,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "弊社のプレミアムプライバシーサービスを1つのバンドルで入手できます。しかもたった **${ priceString }/月**です。"
       ],
-      "You can import one data type at a time.": [
-        "1 回にインポートできるのは 1 種類のみです。"
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "カレンダーを最大 ${ MAX_CALENDARS_FREE } 個まで保持することができます。あなたの ${ MAIL_SHORT_APP_NAME } サブスクリプションをキャンセルする前に、共有カレンダーリンクと共有したカレンダーの ${ BRAND_NAME } ユーザーを削除してください。"
       ],
@@ -11832,9 +11741,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "お客様の無料トライアルは月額サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "${ accounts } からのインポートが一時的に遅延しています。"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "あなたの情報は安全です。 サービスの提供に必要な場合にのみ、お客様に連絡します。"
@@ -12770,9 +12676,6 @@
       "Calendar": [
         "カレンダー"
       ],
-      "Calendars": [
-        "カレンダー"
-      ],
       "Capitalize words": [
         "単語を大文字化"
       ],
@@ -13021,9 +12924,6 @@
       ],
       "Email or username": [
         "メールアドレスまたはユーザー名"
-      ],
-      "Emails": [
-        "メール"
       ],
       "Emails (all messages)": [
         "メール (すべてのメッセージ)"
@@ -22661,9 +22561,6 @@
       "Help center": [
         "ヘルプ センター"
       ],
-      "History": [
-        "履歴"
-      ],
       "Home": [
         "ホーム"
       ],
@@ -23399,9 +23296,6 @@
       "What is the dark web?": [
         "ダークウェブとは？"
       ],
-      "What would you like to import?": [
-        "何をインポートしたいですか?"
-      ],
       "Wipe all logs?": [
         "全てのログを削除しますか？"
       ],
@@ -23479,20 +23373,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "操作"
-      ],
-      "Date": [
-        "日付"
-      ],
-      "Import": [
-        "インポート"
-      ],
       "Size": [
         "サイズ"
-      ],
-      "Status": [
-        "状態"
       ]
     },
     "Title header for addresses domain table": {
@@ -24602,9 +24484,6 @@
       ],
       "You will lose any customization you made so far.": [
         "今までに行ったカスタマイズはすべて失われます。"
-      ],
-      "You will not see this import record in the list any more.": [
-        "このインポートの記録は一覧に表示されなくなります。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "無料トライアルは ${ textDate } に終了します。${ action }"

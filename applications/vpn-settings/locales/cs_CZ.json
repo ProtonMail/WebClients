@@ -545,15 +545,6 @@
       "Import": [
         "Importovat"
       ],
-      "Import calendars": [
-        "Importovat kalendáře"
-      ],
-      "Import contacts": [
-        "Importovat kontakty"
-      ],
-      "Import emails": [
-        "Importovat e-maily"
-      ],
       "Import emails, calendars, contacts": [
         "Importovat e-maily, kalendáře a kontakty"
       ],
@@ -4098,6 +4089,9 @@
       "Enter 6 digits": [
         "Zadejte 6 číslic"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Zadejte své uživatelské jméno bez domény (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování k Bitcoin API."
       ],
@@ -5913,23 +5907,6 @@
         "Chcete-li kalendář exportovat jako ICS soubor, vyberte ${ boldExport }."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Importovat z ${ provider }"
-      ],
-      "Import from Google": [
-        "Importovat z Google"
-      ],
-      "Import from other": [
-        "Importovat z jiných"
-      ],
-      "Import from Outlook": [
-        "Importovat z Outlooku"
-      ],
-      "Import from Yahoo": [
-        "Importovat z Yahoo!"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } z ${ totalContacts } kontaktů nebude importováno. Klikněte pro detaily"
@@ -6487,9 +6464,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Fakturační cyklus: ${ text }"
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Přeneste své zprávy, kontakty a kalendáře do ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Pokud svůj aktuální tarif snížíte na bezplatnou verzi, navždy ztratíte současné výhody, i když v budoucnu svůj účet znovu povýšíte."
@@ -7346,9 +7320,6 @@
       "Once you reset your password:": [
         "Po resetu vašeho hesla:"
       ],
-      "One time import": [
-        "Jednorázový import"
-      ],
       "Open source": [
         "Otevřený zdrojový kód"
       ],
@@ -7636,9 +7607,6 @@
       ],
       "Select users to view their activity": [
         "Vyberte uživatele k zobrazení jejich aktivity"
-      ],
-      "Select what you want to import.": [
-        "Vyberte co chcete importovat."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář podle počtu kalendářů dostupných v tarifu."
@@ -8372,9 +8340,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Naše prémiové služby ochrany soukromí můžete získat v jednom balíčku—a to za pouhých **${ priceString }/měsíc**."
       ],
-      "You can import one data type at a time.": [
-        "Importovat můžete vždy jeden typ dat."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendář. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli.",
         "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendáře. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli.",
@@ -8939,9 +8904,6 @@
       "Calendar": [
         "Kalendář"
       ],
-      "Calendars": [
-        "Kalendáře"
-      ],
       "Card details": [
         "Podrobnosti karty"
       ],
@@ -9091,9 +9053,6 @@
       ],
       "Email or username": [
         "E-mail nebo uživatelské jméno"
-      ],
-      "Emails": [
-        "E-maily"
       ],
       "Emails (all messages)": [
         "E-maily (všechny zprávy)"
@@ -16577,9 +16536,6 @@
       ],
       "What is the dark web?": [
         "Co je dark web?"
-      ],
-      "What would you like to import?": [
-        "Co byste chtěli importovat?"
       ],
       "Wipe all logs?": [
         "Smazat všechny logy?"

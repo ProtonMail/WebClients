@@ -165,7 +165,7 @@
         "Masquer les fuseaux horaires"
       ],
       "Insert emoji": [
-        "Insérer un emoji"
+        "Insérer un émoji"
       ],
       "Join": [
         "Rejoindre"
@@ -348,7 +348,10 @@
         "Basculer vers ou ajouter un compte"
       ],
       "Tap to unblock audio playback": [
-        "Appuyez pour activer la lecture audio"
+        "Appuyez pour débloquer la lecture audio"
+      ],
+      "Try again": [
+        "Réessayer"
       ],
       "Try another method": [
         "Essayer une autre méthode"
@@ -404,7 +407,7 @@
         "Copier le lien de la réunion"
       ],
       "Debug overlay": [
-        "Overlay de débogage"
+        "Superposition de débogage"
       ],
       "Go to dashboard": [
         "Aller au tableau de bord"
@@ -452,7 +455,7 @@
         "Afficher/Masquer le chat"
       ],
       "Toggle emoji reactions": [
-        "Activer/désactiver les réactions emoji"
+        "Activer/désactiver les réactions émojis"
       ],
       "Toggle meeting details": [
         "Afficher/masquer les détails de la réunion"
@@ -1493,7 +1496,7 @@
         "Une erreur est survenue lors de l'envoi du message. Essayez à nouveau."
       ],
       "Failed to send emoji reaction. Please try again.": [
-        "Impossible d'envoyer la réaction emoji. Veuillez réessayer."
+        "Impossible d'envoyer la réaction émoji. Veuillez réessayer."
       ],
       "Failed to send reaction. Please try again.": [
         "Impossible d'envoyer la réaction. Veuillez réessayer."
@@ -1703,20 +1706,20 @@
         "La limite de ${ maxParticipants } participants a été atteinte."
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
-        "${ MEET_APP_NAME } requiert WebRTC pour fonctionner. Veuillez mettre à jour votre navigateur ou appareil vers une version prenant en charge WebRTC, essayez un autre navigateur, ou désactiver toute extension susceptible de le bloquer."
-      ],
-      "${ participantCount } of ${ maxParticipants } participants": [
-        "${ participantCount } sur ${ maxParticipants } participants"
-      ],
-      "${ participantCount } participant": [
-        "${ participantCount } participant",
-        "${ participantCount } participants"
+        "${ MEET_APP_NAME } requiert WebRTC pour fonctionner. Veuillez mettre à jour votre navigateur ou appareil vers une version prenant en charge WebRTC, essayer un autre navigateur, ou désactiver toute extension susceptible de le bloquer."
       ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (vous) est en train de présenter"
       ],
       "${ presenterName } is presenting": [
         "${ presenterName } est en train de présenter"
+      ],
+      "${ totalParticipantCount } of ${ maxParticipants } participants": [
+        "${ totalParticipantCount } sur ${ maxParticipants } participants"
+      ],
+      "${ totalParticipantCount } participant": [
+        "${ totalParticipantCount } participant",
+        "${ totalParticipantCount } participants"
       ],
       "(You)": [
         "(Vous)"
@@ -1740,7 +1743,7 @@
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
       ],
       "By continuing in the meeting, you acknowledge and consent to being recorded.": [
-        "En poursuivant dans la réunion, vous reconnaissez et consentez à être enregistré."
+        "En poursuivant dans la réunion, vous reconnaissez et consentez à être enregistré(e)."
       ],
       "camera": [
         "Caméra"
@@ -1759,6 +1762,9 @@
       ],
       "Coming soon": [
         "Bientôt disponible"
+      ],
+      "Connection failed": [
+        "Échec de la connexion"
       ],
       "Connection interrupted. Reconnecting...": [
         "Connexion interrompue. Reconnexion en cours..."
@@ -1779,7 +1785,7 @@
         "Créer un compte"
       ],
       "Create an account to host meetings with up to 50 participants.": [
-        "Créez un compte pour organiser des réunions avec jusqu'à 50 participants."
+        "Créez un compte pour organiser des réunions pouvant contenir jusqu'à 50 participants."
       ],
       "Created on ${ formattedDate }": [
         "Créé le ${ formattedDate }"
@@ -1991,9 +1997,6 @@
       "No speaker detected": [
         "Aucun haut-parleur détecté"
       ],
-      "Now your meetings will be opened in the ${ MEET_APP_NAME } desktop app": [
-        "Désormais, vos réunions seront ouvertes dans l'application de bureau ${ MEET_APP_NAME }"
-      ],
       "Only meetings you created appear here": [
         "Seules les réunions que vous avez créées apparaissent ici"
       ],
@@ -2004,7 +2007,7 @@
         "Autres comptes"
       ],
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
-        "Nos réunions chiffrées de bout-en-bout protègent le respect de la vie privée et favorisent une expression véritablement libre."
+        "Nos réunions chiffrées de bout-en-bout protègent la confidentialité des données et favorisent une expression véritablement libre."
       ],
       "participant": [
         "participant"
@@ -2023,6 +2026,9 @@
       ],
       "Please enter the passphrase to decrypt and view this meeting": [
         "Veuillez saisir la phrase secrète pour déchiffrer et afficher cette réunion"
+      ],
+      "Please try again or try another browser": [
+        "Veuillez réessayer ou essayez un autre navigateur"
       ],
       "Poor connection": [
         "Connexion médiocre"
@@ -2508,13 +2514,13 @@
         "L'audio était haché"
       ],
       "I couldn't hear others": [
-        "Je n'ai pas pu entendre les autres"
+        "Je n'entendais pas les autres"
       ],
       "I couldn't present ": [
         "Je n'ai pas pu présenter "
       ],
       "I couldn't see others' video": [
-        "Je n'ai pas pu voir la vidéo des autres"
+        "Je ne pouvais pas voir la vidéo des autres"
       ],
       "I couldn't see the presentation": [
         "Je n'ai pas pu voir la présentation"
@@ -2726,7 +2732,7 @@
         "Date"
       ],
       "Debug Overlay": [
-        "Overlay de débogage"
+        "Superposition de débogage"
       ],
       "Enter your password": [
         "Saisissez votre mot de passe"
@@ -2900,6 +2906,9 @@
       ]
     },
     "Warning": {
+      "Connection is taking longer than expected": [
+        "La connexion prend plus de temps que prévu"
+      ],
       "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
         "Impossible d'accéder à la caméra ou au microphone. Vous pouvez essayer de les activer à nouveau depuis les paramètres de la réunion."
       ],
@@ -2912,8 +2921,17 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Les rapports ne sont pas chiffrés de bout en bout, nous vous invitons à ne pas envoyer d'informations sensibles."
       ],
+      "STUN UDP connection failed, trying with TURN relay…": [
+        "Échec de la connexion UDP STUN, tentative avec le relais TURN…"
+      ],
+      "STUN UDP connection timeout, trying with TURN relay": [
+        "Délai d'attente de la connexion UDP STUN dépassé, tentative avec le relais TURN"
+      ],
       "The host has removed you from the meeting": [
         "L'hôte vous a retiré de la réunion."
+      ],
+      "Trying another route…": [
+        "Tentative avec une autre route…"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Nous ne sommes malheureusement pas en ligne pour le moment. Nous vous invitons à remplir le formulaire ci-dessous pour décrire votre problème. Nous l'examinerons et vous contacterons dès que nous serons de nouveau en ligne."

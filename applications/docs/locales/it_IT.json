@@ -435,17 +435,11 @@
       "import": [
         "importa"
       ],
-      "Import calendars": [
-        "Importa calendari"
-      ],
       "Import contacts": [
         "Importa contatti"
       ],
       "Import data": [
         "Importa dati"
-      ],
-      "Import emails": [
-        "Importa le email"
       ],
       "Import emails, calendars, contacts": [
         "Importa email, calendari, contatti"
@@ -1109,6 +1103,17 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lo spazio di archiviazione è condiviso tra tutti i servizi ${ BRAND_NAME }."
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB di spazio di archiviazione"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blocca annunci, tracker e malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticazione 2FA integrata"
       ]
     },
     "Browser": {
@@ -2814,6 +2819,9 @@
       "Enter 6 digits": [
         "Inserisci il codice a 6 cifre"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Inserisci il tuo nome utente senza il dominio (@example.com)"
+      ],
       "Error decrypting a computer": [
         "Errore durante la decriptografia di un computer"
       ],
@@ -2876,6 +2884,9 @@
       ],
       "Incorrect username": [
         "Username non corretto"
+      ],
+      "Invalid coupon": [
+        "Coupon non valido"
       ],
       "Invalid email address": [
         "Indirizzo email non valido"
@@ -3073,6 +3084,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
+      ],
+      "This field is invalid": [
+        "Questo campo non è valido"
       ],
       "This field is required": [
         "Campo necessario"
@@ -3947,20 +3961,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importa da ${ provider }"
-      ],
-      "Import from Google": [
-        "Importa da Google"
-      ],
-      "Import from other": [
-        "Importa da altro"
-      ],
-      "Import from Outlook": [
-        "Importa da Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importa da Yahoo"
+      "Advanced import": [
+        "Importazione avanzata"
       ]
     },
     "Import warning": {
@@ -4210,9 +4212,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Importa i tuoi messaggi, contatti e calendari in ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Declassando ad un piano gratuito, perderai definitivamente questi benefici, anche se in futuro effettuerai un nuovo upgrade."
@@ -4685,9 +4684,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o più chiavi attendibili sono state contrassegnate come \"compromesse\" dal loro proprietario. Ti consigliamo di \"non considerare attendibili\" queste chiavi."
       ],
-      "One time import": [
-        "Importazione una tantum"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Solo le persone con il link e la password possono accedere a questo file."
       ],
@@ -4823,9 +4819,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleziona il formato email che desideri usare per impostazione predefinita quando invii un'email a questo indirizzo email."
-      ],
-      "Select what you want to import.": [
-        "Seleziona cosa vuoi importare."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleziona i calendari da importare. Verrà creato un nuovo calendario per ogni calendario importato in base al numero di calendari disponibili nel tuo piano."
@@ -5164,9 +5157,6 @@
       "You can close the tab or browser in the meantime.": [
         "Nel frattempo puoi chiudere la scheda o il browser."
       ],
-      "You can import one data type at a time.": [
-        "Puoi importare un tipo di dati alla volta."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendario. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }.",
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendari. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }."
@@ -5201,6 +5191,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Non ti verrà addebitato nulla se annulli prima del ${ trialEndsOnFormatted }."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Riceverai il premio in crediti 1 mese dopo che il tuo amico si sarà abbonato a un piano annuale e 2 mesi dopo che si sarà abbonato a un piano mensile."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Ti verrà addebitato ${ renewAmountStr } ogni ${ renewCycle } mese. Puoi annullare in qualsiasi momento.",
@@ -5457,9 +5450,6 @@
       "Calendar": [
         "Calendario"
       ],
-      "Calendars": [
-        "Calendari"
-      ],
       "Cancel download": [
         "Annulla il download"
       ],
@@ -5534,9 +5524,6 @@
       ],
       "Email format": [
         "Formato email"
-      ],
-      "Emails": [
-        "Email"
       ],
       "Emails (all messages)": [
         "Email (tutti i messaggi)"
@@ -5627,6 +5614,9 @@
       ],
       "Last 3 months only": [
         "Solo ultimi 3 mesi"
+      ],
+      "Last 6 months only": [
+        "Solo ultimi 6 mesi"
       ],
       "Last month only": [
         "Solo il mese scorso"
@@ -9298,6 +9288,9 @@
       "Change password": [
         "Modifica la password"
       ],
+      "Choose a provider": [
+        "Scegli un fornitore"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Richiedi il tuo indirizzo ${ MAIL_APP_NAME }"
       ],
@@ -9345,6 +9338,9 @@
       ],
       "Currency": [
         "Valuta"
+      ],
+      "Custom": [
+        "Personalizza"
       ],
       "Customize and confirm": [
         "Personalizza e conferma"
@@ -9780,9 +9776,6 @@
       ],
       "What is a VPN?": [
         "Che cos'è una VPN?"
-      ],
-      "What would you like to import?": [
-        "Cosa vorresti importare?"
       ],
       "When is it most important to use a VPN?": [
         "Quando è più importante utilizzare una VPN?"

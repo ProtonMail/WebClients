@@ -2293,6 +2293,9 @@
       "Enter 6 digits": [
         "Skriv inn 6 sifre"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Skriv inn brukernavnet ditt uten domenet (@eksempel.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Feil ved tilkobling til Bitcoin API."
       ],
@@ -2310,6 +2313,9 @@
       ],
       "Invalid code": [
         "Ugyldig kode"
+      ],
+      "Invalid coupon": [
+        "Ugyldig kupong"
       ],
       "Invalid expiration date": [
         "Ugyldig utløpsdato"
@@ -2383,6 +2389,9 @@
       "Request timed out": [
         "Forespørselen ble tidsavbrutt"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omvendt avgiftsplikt støttes ikke for denne planen"
+      ],
       "Signature verification failed": [
         "Signaturbekreftelse mislyktes"
       ],
@@ -2400,6 +2409,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimumsbeløpet av kreditt som kan legges til er ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimumbeløpet for donasjon er ${ price }"
       ],
       "The passphrases do not match": [
         "Passordfrasene samsvarer ikke"
@@ -3145,6 +3157,9 @@
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Ditt ${ plan }-abonnement vil bli erstattet med ${ PASS_SHORT_APP_NAME } Lifetime. Den gjenværende saldoen på abonnementet ditt vil bli lagt til kontoen din. ${ PASS_SHORT_APP_NAME } Lifetime har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Kontoen din er for øyeblikket konfigurert til å bruke ordningen for omvendt avgiftsplikt. Dette støttes ikke for den valgte planen. For å fortsette, fjern enten MVA-nummeret fra faktureringsadressen eller velg en annen plan."
       ],
       "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
         "Handlekurven din har åpnet i en ny fane. Fullfør betalingen der og kom tilbake til denne siden når du er ferdig."
@@ -4713,6 +4728,9 @@
       "VAT number": [
         "MVA-nummer"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Omvendt avgiftsplikt gjelder."
+      ],
       "You already have a subscription to this plan.": [
         "Du har allerede et abonnement på denne planen."
       ],
@@ -5570,6 +5588,9 @@
       ],
       "Request new code": [
         "Be om en ny kode"
+      ],
+      "Reverse charge not supported": [
+        "Omvendt avgiftsplikt støttes ikke"
       ],
       "Select a plan": [
         "Velg en plan"

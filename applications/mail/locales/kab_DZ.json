@@ -522,14 +522,8 @@
       "import": [
         "kter"
       ],
-      "Import calendars": [
-        "Kter iwitayen"
-      ],
       "Import contacts": [
         "Sgaǧ-d tansiwin"
-      ],
-      "Import emails": [
-        "Kter imaylen"
       ],
       "Import from .csv or vCard": [
         "Kter si .csv neɣ vCard"
@@ -4362,14 +4356,6 @@
         "Fren ${ boldExport } i usifeḍ n uwitay am ufaylu ICS."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Kter seg ${ provider }"
-      ],
-      "Import from Google": [
-        "Kter seg Google"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "Inermisen ${ totalContactsDiscarded } ɣef ${ totalContacts } ur d-ttwaktaren ara. Sit ad teẓreḍ telqayt"
@@ -5229,9 +5215,6 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Fren amasal n yimayl i tebɣiḍ ad yettwaseqdec d amezwer mi ara tazneḍ imayl ɣer tansa-a imayl."
       ],
-      "Select what you want to import.": [
-        "Fren acu i tebɣiḍ ad t-tketreḍ."
-      ],
       "Sender has been blocked.": [
         "Amazan yettusewḥel."
       ],
@@ -5555,9 +5538,6 @@
       ],
       "You can either update your search query or clear it": [
         "Tzemreḍ ad tleqqmeḍ tuttra-k.m n unadi neɣ sfeḍ-itt"
-      ],
-      "You can import one data type at a time.": [
-        "Tzemreḍ ad tketreḍ yiwen wanaw n yiqefka ɣef tikkelt."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Tzemreḍ ad tremdeḍ ilɣuyen i wakken ad teṭṭfeḍ alɣu mi ara d-awwḍen yiznan imaynuten deg ukaram-a."
@@ -6010,9 +5990,6 @@
       "Calendar": [
         "Awitay"
       ],
-      "Calendars": [
-        "Iwitayen"
-      ],
       "Carbon Copy": [
         "Anɣal n Carbon"
       ],
@@ -6114,9 +6091,6 @@
       ],
       "Email format": [
         "Amasal n yimayl"
-      ],
-      "Emails": [
-        "Imaylen"
       ],
       "Emails (all messages)": [
         "Imaylen (akk iznan)"
@@ -9373,9 +9347,6 @@
       ],
       "Welcome ${ userName }": [
         "Ansuf ${ userName }"
-      ],
-      "What would you like to import?": [
-        "Acu tebɣiḍ ad tketreḍ?"
       ],
       "Your changes are not synced yet": [
         "Isenfal-ik mazal ur mtawan ara"

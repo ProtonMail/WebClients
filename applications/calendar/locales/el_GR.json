@@ -461,6 +461,9 @@
       "Go to the next available appointment": [
         "Μετάβαση στο επόμενο διαθέσιμο ραντεβού"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Το κατάλαβα"
       ],
@@ -500,14 +503,8 @@
       "import": [
         "εισαγωγή"
       ],
-      "Import calendars": [
-        "Εισαγωγή ημερολογίων"
-      ],
       "Import contacts": [
         "Εισαγωγή επαφών"
-      ],
-      "Import emails": [
-        "Εισαγωγή email"
       ],
       "Import emails, calendars, contacts": [
         "Εισαγωγή ηλεκτρονικών διευθύνσεων, ημερολογίων, επαφών"
@@ -4998,20 +4995,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Εισαγωγή από ${ provider }"
-      ],
-      "Import from Google": [
-        "Εισαγωγή από Google"
-      ],
-      "Import from other": [
-        "Εισαγωγή από άλλο"
-      ],
-      "Import from Outlook": [
-        "Εισαγωγή από Outlook"
-      ],
-      "Import from Yahoo": [
-        "Εισαγωγή από το Yahoo"
+      "Advanced import": [
+        "Προηγμένη εισαγωγή"
       ]
     },
     "Import warning": {
@@ -5327,9 +5312,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Ενισχύστε την εταιρική ταυτότητα του οργανισμού σας και δημιουργήστε μια πιο συνεπή εμπειρία στο διαδίκτυο για τους χρήστες σας."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Μεταφέρετε τα μηνύματα, τις επαφές και τα ημερολόγιά σας στο ${ BRAND_NAME }."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
       ],
@@ -5362,6 +5344,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Επιλέξτε το πλάνο που σας ταιριάζει καλύτερα."
+      ],
+      "Choose your service to connect with": [
+        "Επιλέξτε την υπηρεσία σας για να συνδεθείτε"
       ],
       "Clear data": [
         "Εκκαθάριση δεδομένων"
@@ -5848,9 +5833,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ένα η περισσότερα από τα αξιόπιστα κλειδιά σας έχουν επισημανθεί ως \"παραβιασμένα\" από τον κάτοχό τους. Σας συνιστούμε να τα επισημάνετε ως \"μη αξιόπιστα\"."
       ],
-      "One time import": [
-        "Εφάπαξ εισαγωγή"
-      ],
       "Open shortcut cheat sheet": [
         "Άνοιγμα λίστας συντομεύσεων"
       ],
@@ -5999,9 +5981,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
-      ],
-      "Select what you want to import.": [
-        "Επιλέξτε τι θέλετε να εισάγετε."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Επιλέξτε ποια ημερολόγια θέλετε να εισαγάγετε. Θα δημιουργηθεί ένα νέο ημερολόγιο για κάθε εισαγόμενο ημερολόγιο σύμφωνα με τον αριθμό των ημερολογίων που είναι διαθέσιμα στο πλάνο σας."
@@ -6366,9 +6345,6 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Στο μεταξύ, μπορείτε να κλείσετε την καρτέλα ή το πρόγραμμα περιήγησης."
-      ],
-      "You can import one data type at a time.": [
-        "Μπορεί να εισαχθεί ένας τύπος δεδομένων τη φορά."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγιο. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε χρήστη ${ BRAND_NAME } με τον οποίο μοιραστήκατε τα ημερολόγιά σας προτού ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας.",
@@ -6806,9 +6782,6 @@
       "Calendar": [
         "Ημερολόγιο"
       ],
-      "Calendars": [
-        "Ημερολόγια"
-      ],
       "Card details": [
         "Στοιχεία κάρτας"
       ],
@@ -6913,9 +6886,6 @@
       ],
       "Email format": [
         "Μορφή μηνύματος"
-      ],
-      "Emails": [
-        "Μηνύματα"
       ],
       "Emails (all messages)": [
         "Μηνύματα (όλα τα μηνύματα)"
@@ -11613,6 +11583,9 @@
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
       ],
+      "Choose a provider": [
+        "Επιλέξτε έναν πάροχο"
+      ],
       "Choose a time": [
         "Επιλογή ώρας"
       ],
@@ -11672,6 +11645,9 @@
       ],
       "Currency": [
         "Νόμισμα"
+      ],
+      "Custom": [
+        "Προσαρμογή"
       ],
       "Customize and confirm": [
         "Προσαρμογή και επιβεβαίωση"
@@ -11868,6 +11844,9 @@
       "Import groups": [
         "Εισαγωγή ομάδων"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Εισάγετε τα δεδομένα σας στο ${ BRAND_NAME }"
+      ],
       "Information exposed in breach": [
         "Πληροφορίες που εκτέθηκαν κατά την παραβίαση"
       ],
@@ -12029,6 +12008,9 @@
       ],
       "Select contact group": [
         "Επιλογή ομάδας επαφών"
+      ],
+      "Select data to import": [
+        "Επιλέξτε δεδομένα για εισαγωγή"
       ],
       "Select event end date": [
         "Επιλέξτε την ημερομηνία λήξης της εκδήλωσης"
@@ -12206,9 +12188,6 @@
       ],
       "What is a VPN?": [
         "Τι είναι το VPN;"
-      ],
-      "What would you like to import?": [
-        "Τι θα θέλατε να εισάγετε;"
       ],
       "When is it most important to use a VPN?": [
         "Πότε είναι πιο σημαντικό να χρησιμοποιήσετε ένα VPN;"

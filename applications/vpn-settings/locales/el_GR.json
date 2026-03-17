@@ -533,6 +533,9 @@
       "Go to panel ${ index }": [
         "Μετάβαση στο πλαίσιο ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Το κατάλαβα"
       ],
@@ -556,15 +559,6 @@
       ],
       "Import": [
         "Εισαγωγή"
-      ],
-      "Import calendars": [
-        "Εισαγωγή ημερολογίων"
-      ],
-      "Import contacts": [
-        "Εισαγωγή επαφών"
-      ],
-      "Import emails": [
-        "Εισαγωγή email"
       ],
       "Import emails, calendars, contacts": [
         "Εισαγωγή ηλεκτρονικών διευθύνσεων, ημερολογίων, επαφών"
@@ -5893,20 +5887,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Εισαγωγή από ${ provider }"
-      ],
-      "Import from Google": [
-        "Εισαγωγή από Google"
-      ],
-      "Import from other": [
-        "Εισαγωγή από άλλο"
-      ],
-      "Import from Outlook": [
-        "Εισαγωγή από Outlook"
-      ],
-      "Import from Yahoo": [
-        "Εισαγωγή από το Yahoo"
+      "Advanced import": [
+        "Προηγμένη εισαγωγή"
       ]
     },
     "Import warning": {
@@ -6415,9 +6397,6 @@
       "Billing cycle: ${ text }": [
         "Κύκλος χρέωσης: ${ text }"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Μεταφέρετε τα μηνύματα, τις επαφές και τα ημερολόγιά σας στο ${ BRAND_NAME }."
-      ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Απενεργοποιώντας την παρακολούθηση λογαριασμού, θα διαγράψετε επίσης ολόκληρο το ιστορικό σας. Είστε σίγουροι ότι θέλετε να την απενεργοποιήσετε;"
       ],
@@ -6444,6 +6423,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Επιλέξτε ένα Entity ID για να συνεχίσετε."
+      ],
+      "Choose your service to connect with": [
+        "Επιλέξτε την υπηρεσία σας για να συνδεθείτε"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
@@ -7283,9 +7265,6 @@
       "Once you reset your password:": [
         "Μετά την αλλαγή του κωδικού σας:"
       ],
-      "One time import": [
-        "Εφάπαξ εισαγωγή"
-      ],
       "Open source": [
         "Ανοιχτού κώδικα"
       ],
@@ -7580,9 +7559,6 @@
       ],
       "Select users to view their activity": [
         "Επιλέξτε χρήστες για να δείτε τη δραστηριότητά τους"
-      ],
-      "Select what you want to import.": [
-        "Επιλέξτε τι θέλετε να εισάγετε."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Επιλέξτε ποια ημερολόγια θέλετε να εισαγάγετε. Θα δημιουργηθεί ένα νέο ημερολόγιο για κάθε εισαγόμενο ημερολόγιο σύμφωνα με τον αριθμό των ημερολογίων που είναι διαθέσιμα στο πλάνο σας."
@@ -8310,9 +8286,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Μπορείτε να αποκτήσετε τις premium υπηρεσίες ιδιωτικότητας σε ένα πακέτο—και είναι μόνο **${ priceString }/μήνα**."
       ],
-      "You can import one data type at a time.": [
-        "Μπορεί να εισαχθεί ένας τύπος δεδομένων τη φορά."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγιο. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε χρήστη ${ BRAND_NAME } με τον οποίο μοιραστήκατε τα ημερολόγιά σας προτού ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας.",
         "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγια. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε χρήστη ${ BRAND_NAME } με τον οποίο μοιραστήκατε τα ημερολόγιά σας προτού ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας."
@@ -8861,9 +8834,6 @@
       "Calendar": [
         "Ημερολόγιο"
       ],
-      "Calendars": [
-        "Ημερολόγια"
-      ],
       "Card details": [
         "Στοιχεία κάρτας"
       ],
@@ -9013,9 +8983,6 @@
       ],
       "Email or username": [
         "Διεύθυνση ή όνομα χρήστη"
-      ],
-      "Emails": [
-        "Μηνύματα"
       ],
       "Emails (all messages)": [
         "Μηνύματα (όλα τα μηνύματα)"
@@ -15338,6 +15305,9 @@
       "Change second password": [
         "Αλλαγή δεύτερου κωδικού πρόσβασης"
       ],
+      "Choose a provider": [
+        "Επιλέξτε έναν πάροχο"
+      ],
       "Choose user affiliations": [
         "Επιλέξτε συνεργασίες χρηστών"
       ],
@@ -15440,6 +15410,9 @@
       ],
       "Currency": [
         "Νόμισμα"
+      ],
+      "Custom": [
+        "Προσαρμογή"
       ],
       "Custom selection of users": [
         "Προσαρμοσμένη επιλογή χρηστών"
@@ -15735,6 +15708,9 @@
       "Import groups": [
         "Εισαγωγή ομάδων"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Εισάγετε τα δεδομένα σας στο ${ BRAND_NAME }"
+      ],
       "Information exposed in breach": [
         "Πληροφορίες που εκτέθηκαν κατά την παραβίαση"
       ],
@@ -15969,6 +15945,9 @@
       "Select contact group": [
         "Επιλογή ομάδας επαφών"
       ],
+      "Select data to import": [
+        "Επιλέξτε δεδομένα για εισαγωγή"
+      ],
       "Send email reminders?": [
         "Αποστολή υπενθυμίσεων μέσω email;"
       ],
@@ -16200,9 +16179,6 @@
       ],
       "What is the dark web?": [
         "Τι είναι ο σκοτεινός ιστός;"
-      ],
-      "What would you like to import?": [
-        "Τι θα θέλατε να εισάγετε;"
       ],
       "Wipe all logs?": [
         "Καταργήστε όλα τα αρχεία καταγραφής;"

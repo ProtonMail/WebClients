@@ -16,20 +16,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Poista välitys"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Ohjaus alkaa pian ja uudet viestit saapuvat postilaatikkoosi."
       ],
       "Mail forward stopped": [
         "Sähköpostin ohjaus pysäytettiin"
-      ],
-      "Reconnect": [
-        "Yhdistä uudelleen"
-      ],
-      "Remove forward": [
-        "Poista välitys"
       ],
       "You will stop the mail forwarding.": [
         "Pysäytät sähköpostien välityksen."
@@ -448,6 +439,9 @@
       "Delete filter “${ Name }”": [
         "Poista suodatin \"${ Name }\""
       ],
+      "Delete forward": [
+        "Poista edelleenlähetys"
+      ],
       "Delete Gateway": [
         "Oletusyhdyskäytävä"
       ],
@@ -814,6 +808,9 @@
       "Go to settings": [
         "Avaa asetukset"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Selvä"
       ],
@@ -834,15 +831,6 @@
       ],
       "Import": [
         "Tuo"
-      ],
-      "Import calendars": [
-        "Tuo kalenterit"
-      ],
-      "Import contacts": [
-        "Tuo yhteystiedot"
-      ],
-      "Import emails": [
-        "Tuo viestit"
       ],
       "Import emails, calendars, contacts": [
         "Tuo sähköposteja, kalentereita ja yhteystietoja"
@@ -1137,6 +1125,9 @@
       ],
       "Remove domain": [
         "Poista verkkotunnus"
+      ],
+      "Remove forward": [
+        "Poista edelleenlähetys"
       ],
       "Remove from favorites": [
         "Poista suosikeista"
@@ -4279,6 +4270,9 @@
       ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Lajittele saapuvat viestisi automaattisesti, ennen kuin ne saapuvat postilaatikkoosi."
+      ],
+      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
+        "Valitse palvelu, jonka haluat tuoda ${ MAIL_APP_NAME }-sovellukseen, niin opastamme sinua osoitteen yhdistämisessä tai sähköpostien, kalentereiden tai yhteystietojen tuonnissa."
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Määritä tämä ensin aktivoidaksesi organisaatiosi ja mukauttaaksesi sähköpostiosoitettasi."
@@ -7727,28 +7721,11 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Tuo palvelusta ${ provider }"
+      "Advanced import": [
+        "Edistynyt tuonti"
       ],
-      "Import from Google": [
-        "Tuo Googlesta"
-      ],
-      "Import from other": [
-        "Tuo muualta"
-      ],
-      "Import from Outlook": [
-        "Tuo Outlookista"
-      ],
-      "Import from Yahoo": [
-        "Tuo Yahoosta"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Kumottu"
-      ],
-      "Undo in progress": [
-        "Kumotaan"
+      "Import from ${ providerName }": [
+        "Tuo palvelusta ${ providerName }"
       ]
     },
     "Import status": {
@@ -7758,26 +7735,32 @@
       "Canceled": [
         "Peruttu"
       ],
-      "Canceling": [
-        "Perutaan"
-      ],
-      "Completed": [
-        "Valmis"
+      "Canceling...": [
+        "Perutaan..."
       ],
       "Delayed": [
         "Viivästetty"
       ],
+      "Disabled": [
+        "Pois päältä"
+      ],
       "Failed": [
         "Epäonnistui"
       ],
-      "In progress": [
-        "Käynnissä"
+      "Imported": [
+        "Tuotu"
+      ],
+      "In progress...": [
+        "Käynnissä..."
       ],
       "Paused": [
         "Keskeytetty"
       ],
-      "Started": [
-        "Aloitettu"
+      "Undo finished": [
+        "Kumottu"
+      ],
+      "Undo in progress": [
+        "Kumoaminen käynnissä"
       ]
     },
     "Import type": {
@@ -7829,17 +7812,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } ei koskaan jaa tietojasi ulkopuolisille tahoille. Tiedot ovat peräisin ${ BRAND_NAME }in omista analyyseistä ja Constella Intelligenceltä."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } pysäytti tuonnin, koska yhteys toiseen sähköpostipalveluun katkesi. Muodosta yhteys uudelleen."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } pysäytti tuonnin, koska tilisi tallennustila on täyttymässä. Voit:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe kirjoitusavustaja"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } pyrkii jatkamaan tuontia heti sähköpostipalvelusi nollattua tilisi ${ bandwidthLimitLink }. Sinun ei tarvitse tehdä mitään. Jos perut tuonnin, et voi jatkaa sitä ja joudut aloittamaan alusta."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
@@ -8261,6 +8235,12 @@
       "An error occurred while communicating with the extension": [
         "Virhe viestittäessä laajennuksen kanssa"
       ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "Tuonti on keskeytetty, koska yhteys sähköpostipalveluntarjoajaasi katkesi."
+      ],
+      "An import is paused because your storage is almost full.": [
+        "Tuonti on keskeytetty, koska tallennustila on lähes täynnä."
+      ],
       "and": [
         "ja"
       ],
@@ -8375,9 +8355,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Tehosta organisaatiosi brändi-identiteettiä ja tee käyttäjiesi verkkokokemuksesta yhtenäisempi."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Tuo viestisi, yhteystietosi ja kalenterisi ${ BRAND_NAME }iin."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Luomalla ${ PASS_APP_NAME }-tilin SimpleLogin-sähköpostiosoitteellasi voit hallita aliaksiasi suoraan ${ PASS_APP_NAME }ista."
       ],
@@ -8416,6 +8393,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Valitse entiteetti-ID jatkaaksesi."
+      ],
+      "Choose your service to connect with": [
+        "Valitse palvelu, johon haluat yhdistää"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
@@ -8869,14 +8849,14 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Niiden käyttäjien, jotka siirtyvät käyttämään ${ MAIL_APP_NAME } jostain toisesta sähköpostipalvelusta, tulee valita ${ boldAddresses }-välilehti ja lisätä kaikki aktiiviset sähköpostiosoitteet ennen kuin MX-tietuetta voi muuttaa, jotta siirtymä olisi jouheva."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Ohjaa muiden tilien saapuvat viestit suojattuun ${ MAIL_APP_NAME } -postilaatikkoosi."
+      "Forwarding automatically sends new incoming emails to your Inbox.": [
+        "Uudet saapuvat sähköpostit ohjataan automaattisesti Saapuneet-kansioon."
       ],
       "Free forever": [
         "Pysyvästi ilmainen"
       ],
-      "free up space by deleting older messages or other data": [
-        "vapauttaa tilaa poistamalla vanhoja viestejä tai muita tietoja"
+      "Free up space or upgrade your storage to continue.": [
+        "Vapauta tilaa tai päivitä tallennustilasi jatkaaksesi."
       ],
       "Gateway couldn't be deleted. Please try again": [
         "Yhdyskäytävää ei voitu poistaa. Yritä uudelleen"
@@ -9029,11 +9009,18 @@
       "Import from": [
         "Tuo lähteestä"
       ],
+      "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
+        "Tuonti kohtesta ${ accounts } viivästyy tilapäisesti kaistanleveysrajoituksen vuoksi.",
+        "Tuonnit kohtesta ${ accounts } viivästyy tilapäisesti kaistanleveysrajoituksen vuoksi."
+      ],
       "Import in progress": [
         "Tuonti on käynnissä"
       ],
       "Import mailbox": [
         "Tuo postilaatikko"
+      ],
+      "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
+        "Tuo sähköpostit, kalenterit tai yhteystiedot kertaluonteisesti ${ BRAND_NAME } -tiliisi."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "TÄRKEÄÄ: Mikäli DNS-hallintasi ei hyväksy pisteeseen päättyviä CNAME-tietueita, voit poistaa viimeiset pisteet."
@@ -9372,9 +9359,6 @@
       "No Gateways yet": [
         "Yhdyskäytäviä ei vielä ole"
       ],
-      "No imports or forwarding history.": [
-        "Ei tuonti- tai ohjaushistoriaa."
-      ],
       "No label selected": [
         "Tunnistetta ei valittu"
       ],
@@ -9413,9 +9397,6 @@
       ],
       "Once you reset your password:": [
         "Kun nollaat salasanasi:"
-      ],
-      "One time import": [
-        "Kertaluontoinen tuonti"
       ],
       "Open source": [
         "Avoin lähdekoodi"
@@ -9559,6 +9540,9 @@
       "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
         "Avaa selaimesi laajennusasetukset ja salli ${ PASS_APP_NAME } -laajennuksen käyttää verkkosivustojen tietoja. Lataa sitten sivu uudelleen."
       ],
+      "Please reconnect to continue.": [
+        "Yhdistä uudelleen jatkaaksesi."
+      ],
       "Please select the folders you would like to import:": [
         "Valitse tuotavat kansiot:"
       ],
@@ -9624,9 +9608,6 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Dokumenttien julkista jakamista ei vielä tueta."
-      ],
-      "purchase additional storage": [
-        "osta lisää tallennustilaa"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Ota meihin yhteyttä saadaksesi apua mihin tahansa ${ BRAND_NAME }."
@@ -9739,9 +9720,6 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Valitse ${ getFormattedOrganization }-käyttäjäyhteydet, jotka haluat sallia ${ BRAND_NAME }-organisaatioosi."
       ],
-      "Select what you want to import.": [
-        "Valitse mitä haluat tuoda."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Valitse tuotavat kalenterit. Jokaista tuotua kalenteria kohden luodaan uusi kalenteri tilaukseesi sisältyvän kalentereimäärän puitteissa."
       ],
@@ -9777,9 +9755,6 @@
       ],
       "Set password": [
         "Aseta salasana"
-      ],
-      "Set up forwarding": [
-        "Määritä välitys"
       ],
       "Set up your organization": [
         "Määritä organisaatiosi"
@@ -9951,6 +9926,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Kiitos, että tuet tehtäviämme rakentaa parempaa Internetiä, jossa yksityisyys ja vapaus ovat etusijalla."
+      ],
+      "The ${ bandwidthLimitLink } was reached. We'll automatically resume it once it resets.": [
+        "${ bandwidthLimitLink } -raja on saavutettu. Jatkamme palvelua automaattisesti, kun raja on nollautunut."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked } viestiä ei enää näytetä, mutta voit silti poistaa lukituksen tiedoista kohdassa ${ encryptionAndKeysLink }."
@@ -10580,9 +10558,6 @@
       "You can enable the Photos section from the interface using the toggle below.": [
         "Voit ottaa Kuvat-osion käyttöön käyttöliittymän alla olevalla painikkeella."
       ],
-      "You can import one data type at a time.": [
-        "Voit tuoda vain yhden tietotyypin kerrallaan."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, jolle olet jakanut kalentereitasi.",
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenteria. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi."
@@ -10757,10 +10732,6 @@
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Ilmainen kokeilujaksosi muunnettiin onnistuneesti ${ cycle } kuukauden tilaukseksi. Uusimispäivämääräsi on ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Tuonti tililtä ${ accounts } on tilapäisesti viivästynyt.",
-        "Tuonnit tileiltä ${ accounts } ovat tilapäisesti viivästyneet."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Tietosi ovat turvassa meillä. Otamme sinuun yhteyttä vain, kun se on tarpeen palveluidemme tarjoamiseksi."
@@ -11596,9 +11567,6 @@
       "Calendar": [
         "Kalenterin"
       ],
-      "Calendars": [
-        "Kalenterit"
-      ],
       "Card details": [
         "Kortin tiedot"
       ],
@@ -11832,9 +11800,6 @@
       ],
       "Email or username": [
         "Sähköpostiosoite tai käyttäjätunnus"
-      ],
-      "Emails": [
-        "Viestit"
       ],
       "Emails (all messages)": [
         "Sähköpostit (kaikki viestit)"
@@ -16159,6 +16124,9 @@
       "VAT number": [
         "ALV-numero"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Sovelletaan arvonlisäveron käänteistä verovelvollisuutta."
+      ],
       "You already have a subscription to this plan.": [
         "Sinulla on jo tämä tilaus."
       ],
@@ -20275,6 +20243,9 @@
       "Change second password": [
         "Vaihda toinen salasana"
       ],
+      "Choose a provider": [
+        "Valitse tarjoaja"
+      ],
       "Choose an account": [
         "Valitse tili"
       ],
@@ -20398,6 +20369,9 @@
       ],
       "Currency": [
         "Valuutta"
+      ],
+      "Custom": [
+        "Mukautettu"
       ],
       "Custom domains:": [
         "Omat verkkotunnukset:"
@@ -20698,6 +20672,9 @@
       "Forward emails": [
         "Ohjaa viestit"
       ],
+      "Forwardings": [
+        "Edelleenlähetykset"
+      ],
       "Free": [
         "Free"
       ],
@@ -20764,9 +20741,6 @@
       "Help center": [
         "Tukikeskus"
       ],
-      "History": [
-        "Historia"
-      ],
       "Home": [
         "Koti"
       ],
@@ -20812,6 +20786,12 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH } -tuonti"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Tuo tietosi ${ BRAND_NAME }iin"
+      ],
+      "Imports": [
+        "Tuonnit"
       ],
       "Inactive 2FA": [
         "2FA ei ole käytössä"
@@ -21158,6 +21138,9 @@
       "Select contact group": [
         "Valitse yhteystietoryhmä"
       ],
+      "Select data to import": [
+        "Valitse tuotavat tiedot"
+      ],
       "Select the time to send this notification": [
         "Valitse ilmoituksen lähetysaika"
       ],
@@ -21450,9 +21433,6 @@
       "What is the dark web?": [
         "Mikä on pimeä verkko?"
       ],
-      "What would you like to import?": [
-        "Mitä haluat tuoda?"
-      ],
       "Wipe all logs?": [
         "Pyyhitäänkö kaikki lokitiedot?"
       ],
@@ -21527,20 +21507,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Toiminnot"
-      ],
-      "Date": [
-        "Päiväys"
-      ],
-      "Import": [
-        "Tuonti"
-      ],
       "Size": [
         "Koko"
-      ],
-      "Status": [
-        "Tila"
       ]
     },
     "Title header for addresses domain table": {
@@ -22512,7 +22480,7 @@
       "You will lose any customization you made so far.": [
         "Menetät kaikki aiemmin tekemäsi mukautukset."
       ],
-      "You will not see this import record in the list any more.": [
+      "You will not see this import record in the list anymore.": [
         "Et enää näe tätä tuontitapahtumaa listalla."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [

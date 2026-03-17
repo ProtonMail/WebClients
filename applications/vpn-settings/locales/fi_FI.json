@@ -530,6 +530,9 @@
       "Go to panel ${ index }": [
         "Siirry paneeliin ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Selvä"
       ],
@@ -550,15 +553,6 @@
       ],
       "Import": [
         "Tuo"
-      ],
-      "Import calendars": [
-        "Tuo kalenterit"
-      ],
-      "Import contacts": [
-        "Tuo yhteystiedot"
-      ],
-      "Import emails": [
-        "Tuo viestit"
       ],
       "Import emails, calendars, contacts": [
         "Tuo sähköposteja, kalentereita ja yhteystietoja"
@@ -5568,20 +5562,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Tuo palvelusta ${ provider }"
-      ],
-      "Import from Google": [
-        "Tuo Googlesta"
-      ],
-      "Import from other": [
-        "Tuo muualta"
-      ],
-      "Import from Outlook": [
-        "Tuo Outlookista"
-      ],
-      "Import from Yahoo": [
-        "Tuo Yahoosta"
+      "Advanced import": [
+        "Edistynyt tuonti"
       ]
     },
     "Import warning": {
@@ -6039,9 +6021,6 @@
       "Billing cycle: ${ text }": [
         "Laskutusjakso: ${ text }"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Tuo viestisi, yhteystietosi ja kalenterisi ${ BRAND_NAME }iin."
-      ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Tilinvalvonnan käytöstä poistaminen tyhjentää myös koko historiasi. Haluatko varmasti poistaa tämän käytöstä?"
       ],
@@ -6065,6 +6044,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Valitse entiteetti-ID jatkaaksesi."
+      ],
+      "Choose your service to connect with": [
+        "Valitse palvelu, johon haluat yhdistää"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
@@ -6841,9 +6823,6 @@
       "Once you reset your password:": [
         "Kun nollaat salasanasi:"
       ],
-      "One time import": [
-        "Kertaluontoinen tuonti"
-      ],
       "Open source": [
         "Avoin lähdekoodi"
       ],
@@ -7111,9 +7090,6 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Valitse ${ getFormattedOrganization }-käyttäjäyhteydet, jotka haluat sallia ${ BRAND_NAME }-organisaatioosi."
-      ],
-      "Select what you want to import.": [
-        "Valitse mitä haluat tuoda."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Valitse tuotavat kalenterit. Jokaista tuotua kalenteria kohden luodaan uusi kalenteri tilaukseesi sisältyvän kalentereimäärän puitteissa."
@@ -7784,9 +7760,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Voit muokata tätä kerran varmistaaksesi sähköpostiosoitteen olevan vahvistusta varten oikea."
       ],
-      "You can import one data type at a time.": [
-        "Voit tuoda vain yhden tietotyypin kerrallaan."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, jolle olet jakanut kalentereitasi.",
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenteria. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi."
@@ -8286,9 +8259,6 @@
       "Calendar": [
         "Kalenterin"
       ],
-      "Calendars": [
-        "Kalenterit"
-      ],
       "Card details": [
         "Kortin tiedot"
       ],
@@ -8438,9 +8408,6 @@
       ],
       "Email or username": [
         "Sähköpostiosoite tai käyttäjätunnus"
-      ],
-      "Emails": [
-        "Viestit"
       ],
       "Emails (all messages)": [
         "Sähköpostit (kaikki viestit)"
@@ -11431,6 +11398,9 @@
       ],
       "VAT number": [
         "ALV-numero"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Sovelletaan arvonlisäveron käänteistä verovelvollisuutta."
       ],
       "You already have a subscription to this plan.": [
         "Sinulla on jo tämä tilaus."
@@ -14445,6 +14415,9 @@
       "Change second password": [
         "Vaihda toinen salasana"
       ],
+      "Choose a provider": [
+        "Valitse tarjoaja"
+      ],
       "Choose user affiliations": [
         "Valitse käyttäjäyhteydet"
       ],
@@ -14544,6 +14517,9 @@
       ],
       "Currency": [
         "Valuutta"
+      ],
+      "Custom": [
+        "Mukautettu"
       ],
       "Custom selection of users": [
         "Mukautettu käyttäjävalinta"
@@ -14818,6 +14794,9 @@
       "Import groups": [
         "Tuo ryhmiä"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Tuo tietosi ${ BRAND_NAME }iin"
+      ],
       "Information exposed in breach": [
         "Tietomurrossa paljastuneet tiedot"
       ],
@@ -15040,6 +15019,9 @@
       "Select contact group": [
         "Valitse yhteystietoryhmä"
       ],
+      "Select data to import": [
+        "Valitse tuotavat tiedot"
+      ],
       "Send email reminders?": [
         "Lähetetäänkö muistutuksia sähköpostitse?"
       ],
@@ -15247,9 +15229,6 @@
       ],
       "What is the dark web?": [
         "Mikä on pimeä verkko?"
-      ],
-      "What would you like to import?": [
-        "Mitä haluat tuoda?"
       ],
       "Wipe all logs?": [
         "Pyyhitäänkö kaikki lokitiedot?"

@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "删除此转发"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "转发将很快开始。 新邮件将出现在您的收件箱中。"
       ],
       "Mail forward stopped": [
         "邮件转发已停止"
-      ],
-      "Reconnect": [
-        "重新连接"
-      ],
-      "Remove forward": [
-        "删除此转发"
       ],
       "You will stop the mail forwarding.": [
         "您将停止邮件转发操作。"
@@ -285,6 +276,9 @@
       "Close navigation": [
         "关闭导航栏"
       ],
+      "Close search": [
+        "关闭搜索"
+      ],
       "Close tab": [
         "关闭标签页"
       ],
@@ -467,6 +461,9 @@
       ],
       "Delete filter “${ Name }”": [
         "删除筛选器 “${ Name }”"
+      ],
+      "Delete forward": [
+        "删除转发"
       ],
       "Delete Gateway": [
         "删除网关"
@@ -858,6 +855,9 @@
       "Go to settings": [
         "前往设置"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "知道了"
       ],
@@ -884,15 +884,6 @@
       ],
       "Import": [
         "导入"
-      ],
-      "Import calendars": [
-        "导入日历"
-      ],
-      "Import contacts": [
-        "导入联系人"
-      ],
-      "Import emails": [
-        "导入电子邮件"
       ],
       "Import emails, calendars, contacts": [
         "导入电子邮件、日历、联系人"
@@ -1176,6 +1167,9 @@
       "Reload": [
         "刷新"
       ],
+      "Reload page": [
+        "重新加载页面"
+      ],
       "Remove": [
         "移除"
       ],
@@ -1196,6 +1190,9 @@
       ],
       "Remove domain": [
         "移除域名"
+      ],
+      "Remove forward": [
+        "移除转发"
       ],
       "Remove from favorites": [
         "从收藏夹中删除"
@@ -1310,6 +1307,9 @@
       ],
       "Search countries": [
         "搜索国家"
+      ],
+      "Search groups": [
+        "搜索群组"
       ],
       "Search settings": [
         "搜索设置"
@@ -2717,6 +2717,9 @@
       "Change": [
         "更改"
       ],
+      "Completed": [
+        "已完成"
+      ],
       "Configure": [
         "配置"
       ],
@@ -2743,6 +2746,12 @@
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "用于将数据复制到 ${ BRAND_NAME } 的 Google Marketplace 应用"
+      ],
+      "Has errors": [
+        "出错啦"
+      ],
+      "In progress": [
+        "进行中"
       ],
       "Install app": [
         "安装应用"
@@ -2774,6 +2783,9 @@
       "Migration status": [
         "迁移状态"
       ],
+      "Not started": [
+        "未开始"
+      ],
       "Organization does not have enough seats available": [
         "组织可用席位不足"
       ],
@@ -2804,11 +2816,17 @@
       "Set up two-factor authentication": [
         "设置 2FA"
       ],
+      "Settings": [
+        "设置"
+      ],
       "Sign in to Google Workspace": [
         "登录 Google Workspace"
       ],
       "Start migration": [
         "开始迁移"
+      ],
+      "Status": [
+        "状态"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "若要迁移您组织的数据，您需要从 Google Workspace Marketplace 安装 ${ BRAND_NAME } 迁移助手应用。这将授予 ${ BRAND_NAME } 复制您数据的权限。安装完成后，请返回此处继续。"
@@ -2818,6 +2836,9 @@
       ],
       "User": [
         "用户"
+      ],
+      "Users migrated": [
+        "已迁移的用户"
       ],
       "Verify installation": [
         "验证安装"
@@ -4760,6 +4781,9 @@
       "Available with ${ title }": [
         "随 ${ title } 可用"
       ],
+      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
+        "请选择要导入到 ${ MAIL_APP_NAME } 的服务，我们将指导您连接账户或导入您的邮件、日历或联系人。"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "首先进行配置，以激活您的组织并自定义您的邮箱地址。"
       ],
@@ -6459,6 +6483,9 @@
       "Enter 6 digits": [
         "请输入 6 位验证码"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "请输入您的用户名（不含 @example.com 域名）"
+      ],
       "Error connecting to the Bitcoin API.": [
         "连接比特币 API 失败。"
       ],
@@ -6554,6 +6581,9 @@
       ],
       "Invalid code": [
         "无效代码"
+      ],
+      "Invalid coupon": [
+        "优惠券无效"
       ],
       "Invalid domain": [
         "域名无效"
@@ -6789,6 +6819,9 @@
       "Request timed out": [
         "请求超时"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "此套餐不支持反向收费机制"
+      ],
       "Server not found": [
         "未找到服务器"
       ],
@@ -6866,6 +6899,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "充值金额不能低于 ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "最低捐赠金额为 ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "策略名称必须在 3 至 40 个字符之间。"
@@ -8059,7 +8095,7 @@
     },
     "Form heading": {
       "Enter your email address": [
-        "输入您的电子邮件地址"
+        "请输入您的邮箱地址"
       ]
     },
     "Form paragraph": {
@@ -8373,7 +8409,7 @@
         "今天采取简单的一步，确保您的孩子明天的数字安全"
       ],
       "Activate your reserved email address": [
-        "激活您保留的电子邮件地址"
+        "激活您预留的邮箱地址"
       ],
       "Address reservation voucher": [
         "地址保留凭证"
@@ -8388,7 +8424,7 @@
         "恢复激活凭证"
       ],
       "Reserve child's email address": [
-        "保留孩子的电子邮件地址"
+        "预留儿童邮箱地址"
       ],
       "We emailed you the voucher": [
         "我们已通过电子邮件向您发送了凭证"
@@ -8739,28 +8775,11 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "从 ${ provider } 导入"
+      "Advanced import": [
+        "高级导入"
       ],
-      "Import from Google": [
-        "从 Google 导入"
-      ],
-      "Import from other": [
-        "从其他服务商导入"
-      ],
-      "Import from Outlook": [
-        "从 Outlook 导入"
-      ],
-      "Import from Yahoo": [
-        "从 Yahoo 导入"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "撤销完成"
-      ],
-      "Undo in progress": [
-        "正在撤销"
+      "Import from ${ providerName }": [
+        "从 ${ providerName } 导入"
       ]
     },
     "Import status": {
@@ -8770,26 +8789,32 @@
       "Canceled": [
         "已取消"
       ],
-      "Canceling": [
-        "正在取消"
-      ],
-      "Completed": [
-        "完成"
+      "Canceling...": [
+        "正在取消..."
       ],
       "Delayed": [
         "已延迟"
       ],
+      "Disabled": [
+        "已禁用"
+      ],
       "Failed": [
         "失败"
       ],
-      "In progress": [
-        "进行中"
+      "Imported": [
+        "已导入"
+      ],
+      "In progress...": [
+        "正在处理..."
       ],
       "Paused": [
         "已暂停"
       ],
-      "Started": [
-        "已开始"
+      "Undo finished": [
+        "撤销完成"
+      ],
+      "Undo in progress": [
+        "正在撤销"
       ]
     },
     "Import type": {
@@ -8847,17 +8872,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } 绝不向第三方透露您的信息。数据均来源于 ${ BRAND_NAME } 的独立分析以及 Constella Intelligence。"
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "与邮件服务商的连接中断，${ BRAND_NAME } 已暂停导入。请重新连接。"
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "您的账户存储空间不足，${ BRAND_NAME } 已暂停导入。您可以："
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "写作助理 ${ BRAND_NAME } Scribe"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "一旦您的电子邮件提供商重置您账户的${ bandwidthLimitLink }，${ BRAND_NAME } 就会尝试恢复导入。你不需要做任何事情。如果您取消导入，您将无法恢复导入，并且需要重新开始。"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的前沿加密技术意味着没有人能够窃取您的密码，包括我们自己。"
@@ -9135,6 +9151,9 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } 由 ${ BRAND_NAME } 托管，可让您快速建立子域。${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "创建群组需要自定义域名！如果您尚未设置自定义域名，请先在 ${ linkToDomainPage } 中进行设置。"
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "名称中可注明证书用途，便于今后续期或吊销。"
       ],
@@ -9296,6 +9315,12 @@
       ],
       "An error occurred while communicating with the extension": [
         "与扩展程序传输数据失败"
+      ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "由于与您的邮箱提供商的连接中断，导入已暂停。"
+      ],
+      "An import is paused because your storage is almost full.": [
+        "由于存储空间几乎已满，导入已暂停。"
       ],
       "and": [
         "并"
@@ -9465,9 +9490,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "提升组织品牌形象，为用户创造更加一致的在线体验。"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "将您的信息、联系人和日历同步至 ${ BRAND_NAME }。"
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "通过使用 SimpleLogin 电子邮件创建 ${ PASS_APP_NAME } 账户，您可以直接从 ${ PASS_APP_NAME } 管理别名。"
       ],
@@ -9509,6 +9531,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "选择一个实体 ID 以继续。"
+      ],
+      "Choose your service to connect with": [
+        "请选择要连接的服务"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "点击“请求新验证码”将发送到 ${ strong }。如果此电话号码不正确，请点击“编辑”。"
@@ -9898,7 +9923,7 @@
         "输入您要导入的邮箱账号和密码。"
       ],
       "Enter the email address used to reserve ${ reservedEmail }.": [
-        "输入用于保留 ${ reservedEmail } 的电子邮件地址。"
+        "请输入用于预留邮箱 ${ reservedEmail } 的邮箱地址"
       ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "输入**${ domain.DomainName }**的**eduGAIN**组织的实体 ID。"
@@ -9907,7 +9932,7 @@
         "输入机构密码方可恢复管理员权限。${ learnMore }"
       ],
       "Enter the reserved email address and the email address used during reservation.": [
-        "输入保留的电子邮件地址以及在保留期间使用的电子邮件地址。"
+        "请输入预留的邮箱地址以及预留时使用的邮箱地址"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
@@ -10008,8 +10033,8 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "如果您正在将另一款邮箱服务更换为 ${ MAIL_APP_NAME }，更改 MX 记录前请先在${ boldAddresses }设置中添加所有已在使用的邮箱地址，确保邮件投递路径能够无缝切换。"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "将其他邮箱收到的邮件自动转发至您安全的 ${ MAIL_APP_NAME } 邮箱。"
+      "Forwarding automatically sends new incoming emails to your Inbox.": [
+        "自动转发功能会将新收到的邮件自动发送到您的收件箱。"
       ],
       "Free forever": [
         "永久免费"
@@ -10017,8 +10042,8 @@
       "Free trial": [
         "免费试用"
       ],
-      "free up space by deleting older messages or other data": [
-        "删除旧邮件和其他数据释放空间"
+      "Free up space or upgrade your storage to continue.": [
+        "请释放空间或升级您的存储以继续。"
       ],
       "Friends and family": [
         "亲友推荐"
@@ -10116,6 +10141,9 @@
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "如果禁用，组织成员将只能在组织内共享保管库或项目。"
       ],
+      "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
+        "如果禁用，组织成员将无法创建新的别名，现有别名将仍然有效。"
+      ],
       "If disabled, organization members won't be able to create secure links. Previously active secure links remain valid until their expiration.": [
         "如果禁用，组织成员将无法创建安全链接。之前已启用的安全链接在过期前仍然有效。"
       ],
@@ -10126,7 +10154,7 @@
         "如果启用了键盘快捷键，可以使用以下按键进行快速操作或跳转到不同视图。${ metaKey } + K 始终处于启用状态。"
       ],
       "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
-        "如果您输入的电子邮件曾用于保留孩子的电子邮件地址，我们将重新发送激活凭证。"
+        "如果您输入的邮箱曾用于预留儿童邮箱地址，我们将重新发送激活凭证。"
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "如果系统时区与当前时区偏好设置不匹配，系统将提示您更新（每天最多一次）。"
@@ -10200,11 +10228,17 @@
       "Import from": [
         "导入自"
       ],
+      "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
+        "由于带宽限制，来自 ${ accounts } 的导入暂时延迟。"
+      ],
       "Import in progress": [
         "导入中"
       ],
       "Import mailbox": [
         "导入收件箱"
+      ],
+      "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
+        "导入是指将邮件、日历或联系人一次性转移到您的 ${ BRAND_NAME } 账户。"
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "重要提示：如果您的 DNS 不允许CNAME值以「.」（英文句点）结尾，您可以移除这个句点。"
@@ -10575,9 +10609,6 @@
       "No Gateways yet": [
         "尚无网关"
       ],
-      "No imports or forwarding history.": [
-        "暂无邮件导入与自动转发记录。"
-      ],
       "No label selected": [
         "未选择标签"
       ],
@@ -10625,9 +10656,6 @@
       ],
       "Once you reset your password:": [
         "当你重置密码后："
-      ],
-      "One time import": [
-        "一次性导入"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "只有在与非 ${ BRAND_NAME } 用户使用 PGP 通讯时才需要更改下列选项。"
@@ -10791,6 +10819,12 @@
       "Please open the document to view it.": [
         "请打开文档查看。"
       ],
+      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
+        "请打开您的浏览器扩展程序设置，允许 ${ PASS_APP_NAME } 扩展程序访问网站数据。然后，重新加载此页面。"
+      ],
+      "Please reconnect to continue.": [
+        "请重新连接以继续。"
+      ],
       "Please select the folders you would like to import:": [
         "请选择要导入的文件夹："
       ],
@@ -10865,9 +10899,6 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "暂不支持公开分享。"
-      ],
-      "purchase additional storage": [
-        "付费扩容"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "如需任何帮助，请联系我们 ${ BRAND_NAME }"
@@ -10992,9 +11023,6 @@
       "Select users to view their activity": [
         "选择用户以查看其活动"
       ],
-      "Select what you want to import.": [
-        "选择需要导入的内容。"
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "请选择要导入的日历。每份日历导入后将在您的账户中对应生成一份新日历，具体日历数量受您账户等级的限制。"
       ],
@@ -11030,9 +11058,6 @@
       ],
       "Set password": [
         "设置密码"
-      ],
-      "Set up forwarding": [
-        "设置转发"
       ],
       "Set up your organization": [
         "设置您的组织"
@@ -11133,6 +11158,12 @@
       "Step ${ step }/${ totalSteps }": [
         "第 ${ step }/${ totalSteps } 步"
       ],
+      "Step 1 of 2": [
+        "第 1 步（共 2 步）"
+      ],
+      "Step 2 of 2": [
+        "第 2 步（共 2 步）"
+      ],
       "Storage allocated to other users in this organisation": [
         "此组织其他成员的存储空间分配量"
       ],
@@ -11222,6 +11253,9 @@
       ],
       "Thanks for the feedback!": [
         "感谢您的反馈！"
+      ],
+      "The ${ bandwidthLimitLink } was reached. We'll automatically resume it once it resets.": [
+        "已达到 ${ bandwidthLimitLink }，我们将在重置后自动恢复。"
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked }的提示将不会再出现，但您仍然可以在${ encryptionAndKeysLink }设置中解密数据。"
@@ -11667,6 +11701,9 @@
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "通过应用程序根据时间生成的一次性验证码确认身份"
       ],
+      "Verifying ${ PASS_APP_NAME } browser extension...": [
+        "正在验证 ${ PASS_APP_NAME } 浏览器扩展程序..."
+      ],
       "Verifying your payment": [
         "确认支付"
       ],
@@ -11937,9 +11974,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "您可以以一个套餐价格获取我们的高级隐私服务——仅需 **${ priceString } / 月**。"
       ],
-      "You can import one data type at a time.": [
-        "您一次可以导入一种数据类型。"
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "您最多可保留 ${ MAX_CALENDARS_FREE } 份日历。退订 ${ MAIL_SHORT_APP_NAME } 前请删除所有共享日历链接，并移除所有使用您共享的日历的 ${ BRAND_NAME } 用户。"
       ],
@@ -12120,6 +12154,9 @@
       "Your account has been successfully updated.": [
         "您的账户已成功更新"
       ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "您的账户当前已配置为应用反向收费机制，但所选套餐不支持此机制。若要继续，请从账单地址中移除增值税号，或选择其他套餐。"
+      ],
       "Your account was successfully updated with this promotion": [
         "您的账户已成功应用此促销优惠"
       ],
@@ -12140,9 +12177,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "您的免费试用已成功转换为月度订阅。您的续订日期是 ${ nextBillingDate }。"
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "您从 ${ accounts } 的导入被暂时推迟。"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "您的个人信息交由我们处理是安全的，我们只会在提供服务所必需的情况下联系您。"
@@ -12205,7 +12239,7 @@
         "您的试用将于 ${ timeRemaining } 结束。"
       ],
       "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
-        "您保留的 ${ BRAND_NAME } 电子邮件地址的凭证：${ reservedEmail }"
+        "您预留的 ${ BRAND_NAME } 邮箱地址 ${ reservedEmail } 的兑换凭证"
       ],
       "YouTube": [
         "YouTube"
@@ -12916,6 +12950,9 @@
       "Allow": [
         "白名单"
       ],
+      "Allow alias creation": [
+        "允许创建别名"
+      ],
       "Allow all users to create vaults": [
         "允许所有用户创建保管库"
       ],
@@ -13094,9 +13131,6 @@
         "内置 2FA 验证器"
       ],
       "Calendar": [
-        "日历"
-      ],
-      "Calendars": [
         "日历"
       ],
       "Capitalize words": [
@@ -13351,9 +13385,6 @@
       "Email or username": [
         "邮箱或账户名"
       ],
-      "Emails": [
-        "电子邮件"
-      ],
       "Emails (all messages)": [
         "所有邮件"
       ],
@@ -13397,7 +13428,7 @@
         "输入以下密钥的密码：${ fingerprintCode }"
       ],
       "Enter your email address": [
-        "输入您的电子邮件地址"
+        "请输入您的邮箱地址"
       ],
       "Enter your password": [
         "请输入您的密码"
@@ -13530,6 +13561,9 @@
       ],
       "Import interval": [
         "导入间隔"
+      ],
+      "Import recent mails": [
+        "导入最近的邮件"
       ],
       "Import to email address": [
         "导入到邮箱地址"
@@ -13919,7 +13953,7 @@
         "保留地址"
       ],
       "Reserved email address": [
-        "保留的电子邮件地址"
+        "预留的邮箱地址"
       ],
       "Reveal password": [
         "显示密码"
@@ -14240,7 +14274,7 @@
         "您的信用余额"
       ],
       "Your email address": [
-        "您的电子邮件地址"
+        "您的邮箱地址"
       ],
       "Your password (admin)": [
         "您的密码（管理员）"
@@ -14252,7 +14286,7 @@
         "您的套餐"
       ],
       "Your voucher for your reserved ${ BRAND_NAME } email address:": [
-        "您保留的 ${ BRAND_NAME } 电子邮件地址的凭证："
+        "您预留的 ${ BRAND_NAME } 邮箱地址的兑换凭证："
       ],
       "ZIP code": [
         "邮政编码"
@@ -15123,6 +15157,12 @@
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 账户"
       ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "激活为您孩子预留的私人 ${ BRAND_NAME } 邮箱地址并设置其账户。"
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "激活您孩子的 ${ BRAND_NAME } 账户 | ${ BRAND_NAME }"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "创建一个 ${ BRAND_NAME } 账户，仅需一次登录即可使用所有加密的 ${ BRAND_NAME } 服务，例如 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等。立即获取免费的 ${ BRAND_NAME } 账户。"
       ],
@@ -15146,6 +15186,12 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "忘记了您的 ${ BRAND_NAME } 账户用户名？通过您的密保邮箱或密保手机找回，并重新获得对您的 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等的访问权限。"
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "恢复访问为您孩子预留的私人 ${ BRAND_NAME } 邮箱地址。"
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "恢复您孩子的 ${ BRAND_NAME } 账户 | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "重置您的 ${ BRAND_NAME } 账户密码"
@@ -17962,6 +18008,9 @@
       ],
       "VAT number": [
         "增值税号"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "适用增值税反向收费机制"
       ],
       "You already have a subscription to this plan.": [
         "您已订阅此套餐"
@@ -22159,6 +22208,9 @@
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
+      "${ PASS_APP_NAME } is missing permissions": [
+        "${ PASS_APP_NAME } 缺少权限"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } 监测报告"
       ],
@@ -22429,6 +22481,9 @@
       "Check your default mail application": [
         "检查您的默认邮件应用"
       ],
+      "Choose a provider": [
+        "请选择提供商"
+      ],
       "Choose an account": [
         "选择账户"
       ],
@@ -22554,6 +22609,9 @@
       ],
       "Currency": [
         "货币"
+      ],
+      "Custom": [
+        "自定义"
       ],
       "Custom domains:": [
         "自定义域名："
@@ -22888,6 +22946,9 @@
       "Forward emails": [
         "转发电子邮件"
       ],
+      "Forwardings": [
+        "转发"
+      ],
       "Free": [
         "免费"
       ],
@@ -22975,9 +23036,6 @@
       "Help center": [
         "帮助中心"
       ],
-      "History": [
-        "历史记录"
-      ],
       "Home": [
         "首页"
       ],
@@ -23025,6 +23083,12 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "通过 ${ PRODUCT_NAMES.EASY_SWITCH } 导入"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "将您的数据导入到 ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "导入"
       ],
       "Inactive 2FA": [
         "未启用 2FA"
@@ -23356,6 +23420,9 @@
       "Reused passwords": [
         "重复使用的密码"
       ],
+      "Reverse charge not supported": [
+        "不支持反向收费"
+      ],
       "Revoke certificate?": [
         "撤销证书?"
       ],
@@ -23397,6 +23464,9 @@
       ],
       "Select contact group": [
         "选择联系人群组"
+      ],
+      "Select data to import": [
+        "请选择要导入的数据"
       ],
       "Select the time to send this notification": [
         "选择发送该通知的时间"
@@ -23722,9 +23792,6 @@
       "What is the dark web?": [
         "什么是暗网？"
       ],
-      "What would you like to import?": [
-        "您需要导入哪些信息？"
-      ],
       "Wipe all logs?": [
         "清除所有日志？"
       ],
@@ -23802,20 +23869,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "操作"
-      ],
-      "Date": [
-        "日期"
-      ],
-      "Import": [
-        "导入"
-      ],
       "Size": [
         "大小"
-      ],
-      "Status": [
-        "状态"
       ]
     },
     "Title header for addresses domain table": {
@@ -24872,6 +24927,12 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "删除此号码后，您将无法再重置账户密码。"
       ],
+      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
+        "登录失败！请打开 ${ PASS_APP_NAME } 浏览器扩展程序，并在其中登录。"
+      ],
+      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
+        "注册失败！请打开 ${ PASS_APP_NAME } 浏览器扩展程序，并在其中完成注册。"
+      ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "取消导入后您将无法恢复当前进度，但已导入的内容 ${ BRAND_NAME } 会正常保存。确定要取消吗？"
       ],
@@ -24932,8 +24993,8 @@
       "You will lose any customization you made so far.": [
         "当前的导入设置将无法恢复。"
       ],
-      "You will not see this import record in the list any more.": [
-        "此处将不会再出现这条导入记录。"
+      "You will not see this import record in the list anymore.": [
+        "您将不会在列表中再次看到此导入记录。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "您的免费体验期将于 ${ textDate } 结束。${ action }"

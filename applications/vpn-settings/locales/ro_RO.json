@@ -533,6 +533,9 @@
       "Go to panel ${ index }": [
         "Salt la panoul ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Am înțeles"
       ],
@@ -556,15 +559,6 @@
       ],
       "Import": [
         "Importare"
-      ],
-      "Import calendars": [
-        "Importare calendare"
-      ],
-      "Import contacts": [
-        "Importare contacte"
-      ],
-      "Import emails": [
-        "Importare mesaje"
       ],
       "Import emails, calendars, contacts": [
         "Importați e-mailuri, calendare, contacte"
@@ -5947,20 +5941,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importare din ${ provider }"
-      ],
-      "Import from Google": [
-        "Importare din Google"
-      ],
-      "Import from other": [
-        "Importare din altă sursă"
-      ],
-      "Import from Outlook": [
-        "Importare din Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importare din Yahoo"
+      "Advanced import": [
+        "Importare avansată"
       ]
     },
     "Import warning": {
@@ -6504,9 +6486,6 @@
       "Billing cycle: ${ text }": [
         "Ciclu facturare: ${ text }"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Aduceți-vă mesajele, contactele și calendarele în ${ BRAND_NAME }."
-      ],
       "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
         "Prin dezactivarea monitorizării contului, veți șterge și întregul istoric. Sigur doriți să dezactivați acest lucru?"
       ],
@@ -6533,6 +6512,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Alegeți un ID de entitate pentru a continua."
+      ],
+      "Choose your service to connect with": [
+        "Alegeți serviciul cu care doriți să vă conectați"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
@@ -7379,9 +7361,6 @@
       "Once you reset your password:": [
         "După ce veți reseta parola:"
       ],
-      "One time import": [
-        "Importare unică"
-      ],
       "Open source": [
         "Cod sursă public"
       ],
@@ -7680,9 +7659,6 @@
       ],
       "Select users to view their activity": [
         "Selectare utilizatori pentru a le vedea activitatea."
-      ],
-      "Select what you want to import.": [
-        "Selectați ce doriți să importați."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selectați calendarul de importat. Va fi creat un calendar pentru fiecare calendar importat în limita calendarelor disponibile în plan."
@@ -8419,9 +8395,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Puteți obține serviciile noastre de confidențialitate speciale într-un singur pachet – și costă doar **${ priceString }/lună**."
       ],
-      "You can import one data type at a time.": [
-        "Puteți importa un singur tip de date la un moment dat."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
@@ -8984,9 +8957,6 @@
       "Calendar": [
         "Calendar"
       ],
-      "Calendars": [
-        "Calendare"
-      ],
       "Card details": [
         "Detalii card"
       ],
@@ -9136,9 +9106,6 @@
       ],
       "Email or username": [
         "E-mail sau utilizator"
-      ],
-      "Emails": [
-        "Mesaje"
       ],
       "Emails (all messages)": [
         "Mesaje (toate mesajele)"
@@ -12373,6 +12340,9 @@
       "VAT number": [
         "Valoare TVA"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Se aplică mecanismul de taxare inversă a TVA."
+      ],
       "You already have a subscription to this plan.": [
         "Deja aveți un abonament la acest plan."
       ],
@@ -12818,7 +12788,7 @@
         "Valorificați oferta"
       ],
       "SPRING SALE 2026": [
-        "OFERTĂ DE PRIMĂVERII 2026"
+        "OFERTĂ PRIMĂVERII 2026"
       ]
     },
     "q1campaign: Info": {
@@ -12906,7 +12876,7 @@
         "pentru 12 luni"
       ],
       "SPRING SALE": [
-        "OFERTĂ DE PRIMĂVERII"
+        "OFERTĂ PRIMĂVERII"
       ]
     },
     "Recovery Email": {
@@ -15667,6 +15637,9 @@
       "Change second password": [
         "Modificare parolă secundară"
       ],
+      "Choose a provider": [
+        "Alegeți un furnizor"
+      ],
       "Choose user affiliations": [
         "Alegeți afilierea utilizatorilor"
       ],
@@ -15770,6 +15743,9 @@
       ],
       "Currency": [
         "Monedă"
+      ],
+      "Custom": [
+        "Personalizat"
       ],
       "Custom selection of users": [
         "Selectare utilizatori preferați"
@@ -16068,6 +16044,9 @@
       "Import groups": [
         "Importare grupuri"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importați-vă datele în ${ BRAND_NAME }"
+      ],
       "Information exposed in breach": [
         "Informații expuse în divulgare"
       ],
@@ -16302,6 +16281,9 @@
       "Select contact group": [
         "Selectare grup contacte"
       ],
+      "Select data to import": [
+        "Selectați datele de importat"
+      ],
       "Send email reminders?": [
         "Trimiteți notificări pe e-mail?"
       ],
@@ -16375,7 +16357,7 @@
         "Listă adrese blocate și permise"
       ],
       "Spring Sale": [
-        "Reducere de primăvară"
+        "Ofertă de primăvară"
       ],
       "Start a new import": [
         "Începere importare nouă"
@@ -16534,9 +16516,6 @@
       ],
       "What is the dark web?": [
         "Ce este internetul ascuns?"
-      ],
-      "What would you like to import?": [
-        "Ce ați dori să importați?"
       ],
       "Wipe all logs?": [
         "Goliți jurnalul?"

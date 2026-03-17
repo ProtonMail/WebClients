@@ -533,6 +533,9 @@
       "Go to panel ${ index }": [
         "Ir para o painel ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Entendi"
       ],
@@ -556,15 +559,6 @@
       ],
       "Import": [
         "Importar"
-      ],
-      "Import calendars": [
-        "Importar calendários"
-      ],
-      "Import contacts": [
-        "Importar contatos"
-      ],
-      "Import emails": [
-        "Importar e-mails"
       ],
       "Import emails, calendars, contacts": [
         "Importar e-mails, calendários e contatos"
@@ -4093,6 +4087,9 @@
       "Enter 6 digits": [
         "Insira 6 dígitos"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Insira seu nome de usuário sem o domínio (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Erro ao conectar com a API do Bitcoin."
       ],
@@ -5866,20 +5863,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importar de ${ provider }"
-      ],
-      "Import from Google": [
-        "Importar do Google"
-      ],
-      "Import from other": [
-        "Importar de outro"
-      ],
-      "Import from Outlook": [
-        "Importar do Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importar do Yahoo"
+      "Advanced import": [
+        "Importação avançada"
       ]
     },
     "Import warning": {
@@ -6165,6 +6150,9 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Um ${ protonSubdomain } é hospedado pela ${ BRAND_NAME }, que permite que você configure rapidamente um subdomínio. ${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Um domínio personalizado é obrigatório para criar grupos. Se você não tem um domínio personalizado configurado, pode configurar em ${ linkToDomainPage }."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Um nome para ajudá-lo a identificar onde você o utiliza, para poder revogá-lo ou estendê-lo facilmente mais tarde."
       ],
@@ -6382,9 +6370,6 @@
       "Billing cycle: ${ text }": [
         "Ciclo de faturamento: ${ text }"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Traga suas mensagens, seus contatos e seus calendários para a ${ BRAND_NAME }"
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao fazer o downgrade para um plano gratuito, você perderá permanentemente esses benefícios, mesmo que você faça o upgrade novamente no futuro."
       ],
@@ -6408,6 +6393,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Escolha um ID de Entidade para continuar."
+      ],
+      "Choose your service to connect with": [
+        "Escolha seu serviço para conectar"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
@@ -7247,9 +7235,6 @@
       "Once you reset your password:": [
         "Depois de redefinir sua senha:"
       ],
-      "One time import": [
-        "Importação única"
-      ],
       "Open source": [
         "Código aberto"
       ],
@@ -7544,9 +7529,6 @@
       ],
       "Select users to view their activity": [
         "Selecione usuários para ver a atividade deles."
-      ],
-      "Select what you want to import.": [
-        "Selecione o que você deseja importar."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecione quais calendários importar. Um calendário novo será criado para cada calendário importado conforme o número de calendários disponíveis no seu plano."
@@ -8271,9 +8253,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Você pode obter nossos serviços de privacidade premium em um único pacote, por apenas **${ priceString }/mês**"
       ],
-      "You can import one data type at a time.": [
-        "Você pode importar uma categoria de dado por vez."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }.",
         "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }."
@@ -8810,9 +8789,6 @@
       "Calendar": [
         "Calendário"
       ],
-      "Calendars": [
-        "Calendários"
-      ],
       "Card details": [
         "Detalhes do cartão"
       ],
@@ -8962,9 +8938,6 @@
       ],
       "Email or username": [
         "E-mail ou nome de usuário"
-      ],
-      "Emails": [
-        "E-mails"
       ],
       "Emails (all messages)": [
         "E-mails (todas as mensagens)"
@@ -15386,6 +15359,9 @@
       "Change second password": [
         "Alterar segunda senha"
       ],
+      "Choose a provider": [
+        "Selecione um provedor"
+      ],
       "Choose user affiliations": [
         "Escolher as afiliações de usuário"
       ],
@@ -15488,6 +15464,9 @@
       ],
       "Currency": [
         "Moeda"
+      ],
+      "Custom": [
+        "Personalizado"
       ],
       "Custom selection of users": [
         "Seleção personalizada de usuários"
@@ -15783,6 +15762,9 @@
       "Import groups": [
         "Importar grupo"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importe seus dados para a ${ BRAND_NAME }"
+      ],
       "Information exposed in breach": [
         "Informação exposta na violação"
       ],
@@ -16013,6 +15995,9 @@
       ],
       "Select contact group": [
         "Selecionar grupo de contato"
+      ],
+      "Select data to import": [
+        "Selecionar dados para importar"
       ],
       "Send email reminders?": [
         "Enviar lembretes por e-mail?"
@@ -16245,9 +16230,6 @@
       ],
       "What is the dark web?": [
         "O que é a dark web?"
-      ],
-      "What would you like to import?": [
-        "O que você gostaria de importar?"
       ],
       "Wipe all logs?": [
         "Limpar todos os registros?"

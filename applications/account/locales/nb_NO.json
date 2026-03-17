@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Slett videresending"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Videresending starter snart. Nye e-poster vil vises i innboksen din."
       ],
       "Mail forward stopped": [
         "Videresending av e-post stoppet"
-      ],
-      "Reconnect": [
-        "Koble til på nytt"
-      ],
-      "Remove forward": [
-        "Fjern videresending"
       ],
       "You will stop the mail forwarding.": [
         "Du vil stoppe videresendingen av e-posten"
@@ -284,6 +275,9 @@
       ],
       "Close navigation": [
         "Lukk navigasjonsmeny"
+      ],
+      "Close search": [
+        "Lukk søk"
       ],
       "Close tab": [
         "Lukk fane"
@@ -885,15 +879,6 @@
       "Import": [
         "Importer"
       ],
-      "Import calendars": [
-        "Importer kalendere"
-      ],
-      "Import contacts": [
-        "Importer kontakter"
-      ],
-      "Import emails": [
-        "Importer e-poster"
-      ],
       "Import emails, calendars, contacts": [
         "Importer e-poster, kalendere, kontakter"
       ],
@@ -1176,6 +1161,9 @@
       "Reload": [
         "Last inn på nytt"
       ],
+      "Reload page": [
+        "Last inn siden på nytt"
+      ],
       "Remove": [
         "Fjern"
       ],
@@ -1310,6 +1298,9 @@
       ],
       "Search countries": [
         "Søk etter land"
+      ],
+      "Search groups": [
+        "Søk i grupper"
       ],
       "Search settings": [
         "Innstillinger for søk"
@@ -2733,6 +2724,9 @@
       "Change": [
         "Endre"
       ],
+      "Completed": [
+        "Fullført"
+      ],
       "Configure": [
         "Konfigurer"
       ],
@@ -2759,6 +2753,12 @@
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-app for å kopiere data til ${ BRAND_NAME }"
+      ],
+      "Has errors": [
+        "Inneholder feil"
+      ],
+      "In progress": [
+        "Pågår"
       ],
       "Install app": [
         "Installer app"
@@ -2791,6 +2791,9 @@
       "Migration status": [
         "Migreringsstatus"
       ],
+      "Not started": [
+        "Ikke startet"
+      ],
       "Organization does not have enough seats available": [
         "Organisasjonen har ikke nok ledige lisenser"
       ],
@@ -2821,11 +2824,17 @@
       "Set up two-factor authentication": [
         "Konfigurer tofaktorautentisering"
       ],
+      "Settings": [
+        "Innstillinger"
+      ],
       "Sign in to Google Workspace": [
         "Logg på Google Workspace"
       ],
       "Start migration": [
         "Start migrering"
+      ],
+      "Status": [
+        "Status"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "For å migrere organisasjonens data, må du installere ${ BRAND_NAME } Migration Assistant-appen fra Google Workspace Marketplace. Dette vil gi ${ BRAND_NAME } tillatelse til å kopiere dataene dine. Etter å ha installert den, kom tilbake hit for å fortsette."
@@ -2835,6 +2844,9 @@
       ],
       "User": [
         "Bruker"
+      ],
+      "Users migrated": [
+        "Brukere migrert"
       ],
       "Verify installation": [
         "Verifiser installasjon"
@@ -6501,6 +6513,9 @@
       "Enter 6 digits": [
         "Skriv inn 6 sifre"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Skriv inn brukernavnet ditt uten domenet (@eksempel.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Feil ved tilkobling til Bitcoin API."
       ],
@@ -6596,6 +6611,9 @@
       ],
       "Invalid code": [
         "Ugyldig kode"
+      ],
+      "Invalid coupon": [
+        "Ugyldig kupong"
       ],
       "Invalid domain": [
         "Ugyldig domene"
@@ -6834,6 +6852,9 @@
       "Request timed out": [
         "Forespørselen ble tidsavbrutt"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omvendt avgiftsplikt støttes ikke for denne planen"
+      ],
       "Server not found": [
         "Tjener ikke funnet"
       ],
@@ -6911,6 +6932,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimumsbeløpet av kreditt som kan legges til er ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimumbeløpet for donasjon er ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Retningslinjenavnet må bestå av mellom 3 og 40 tegn."
@@ -8808,31 +8832,6 @@
         "Er du sikker på at du ønsker å importere en privat nøkkel? Import av en usikkert generert eller lekket privat nøkkel kan skade sikkerheten til e-postene dine.\n\nVær også oppmerksom på at den offentlige nøkkelen som tilsvarer denne private nøkkelen vil være offentlig tilgjengelig fra vår nøkkelserver. Hvis nøkkelen inneholder personlige detaljer (slik som ditt fulle navn) som du ikke ønsker å publisere, rediger nøkkelen før import av den."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Importer fra ${ provider }"
-      ],
-      "Import from Google": [
-        "Importer fra Google"
-      ],
-      "Import from other": [
-        "Importer fra andre"
-      ],
-      "Import from Outlook": [
-        "Importer fra Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importer fra Yahoo"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Angre ferdig"
-      ],
-      "Undo in progress": [
-        "Angre pågår"
-      ]
-    },
     "Import status": {
       "Active": [
         "Aktiv"
@@ -8840,26 +8839,14 @@
       "Canceled": [
         "Avbrutt"
       ],
-      "Canceling": [
-        "Avbryter"
-      ],
-      "Completed": [
-        "Fullført"
-      ],
       "Delayed": [
         "Forsinket"
       ],
       "Failed": [
         "Mislyktes"
       ],
-      "In progress": [
-        "Pågår"
-      ],
       "Paused": [
         "Satt på pause"
-      ],
-      "Started": [
-        "Startet"
       ]
     },
     "Import type": {
@@ -8919,17 +8906,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } deler aldri informasjonen din med tredjeparter. Data kommer fra ${ BRAND_NAME }s egne analyser og Constella Etterretning."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } satte en import på pause fordi vi mistet forbindelsen med din e-posttilbyder. Koble opp på nytt."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } satte en import på pause fordi kontoen din begynner å få lite plass. Du kan:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } vil forsøke å gjenoppta importen så snart din e-posttilbyder nullstiller din kontos ${ bandwidthLimitLink }. Du trenger ikke å foreta deg noe. Hvis du avbryter importen, vil du ikke være i stand til å gjenoppta den og du må begynne på nytt."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi betyr at ingen kan få tilgang til ditt passord - ikke engang vi."
@@ -9232,6 +9210,9 @@
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Et ${ protonSubdomain } er vertet av ${ BRAND_NAME }, som lar deg raskt sette opp et underdomene. ${ learnMoreLink }."
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Et egendefinert domene er nødvendig for å opprette grupper. Hvis du ikke har satt opp et egendefinert domene, gjør du det først under ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Et navn for å hjelpe med å identifisere hvor du bruker den slik at du lett kan oppheve den eller utvide den senere."
@@ -9569,9 +9550,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Styrk organisasjonens merkeidentitet og skap en mer konsekvent nettopplevelse for brukerne."
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Ta med dine meldinger, kontakter og kalendere til ${ BRAND_NAME }."
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Ved å opprette en ${ PASS_APP_NAME }-konto med SimpleLogin-e-posten din, kan du administrere aliasene dine direkte fra ${ PASS_APP_NAME }."
@@ -10118,17 +10096,11 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "For brukere som bytter til ${ MAIL_APP_NAME } fra en annen e-posttjeneste, velger du ${ boldAddresses }-fanen og legger til alle aktive e-postadresser før du endrer MX-posten for å sikre en jevn overgang."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Videresend innkommende e-post fra en annen konto til din sikre ${ MAIL_APP_NAME }-innboks."
-      ],
       "Free forever": [
         "Gratis for alltid"
       ],
       "Free trial": [
         "Gratis prøveperiode"
-      ],
-      "free up space by deleting older messages or other data": [
-        "frigjøre plass ved å slette eldre meldinger eller annen data"
       ],
       "Friends and family": [
         "Venner og familie"
@@ -10225,6 +10197,9 @@
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Hvis deaktivert, kan organisasjonsmedlemmer bare dele hvelv eller elementer innen organisasjonen."
+      ],
+      "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
+        "Hvis dette er deaktivert, vil ikke organisasjonsmedlemmer kunne opprette nye aliaser. Eksisterende aliaser vil forbli aktive."
       ],
       "If disabled, organization members won't be able to create secure links. Previously active secure links remain valid until their expiration.": [
         "Hvis dette er deaktivert, vil ikke organisasjonsmedlemmer kunne opprette sikre koblinger. Tidligere aktive sikre koblinger forblir gyldige til de utløper."
@@ -10687,9 +10662,6 @@
       "No Gateways yet": [
         "Ingen porttjenere enda"
       ],
-      "No imports or forwarding history.": [
-        "Ingen importer eller videresendingshistorikk."
-      ],
       "No label selected": [
         "Ingen etikett valgt"
       ],
@@ -10737,9 +10709,6 @@
       ],
       "Once you reset your password:": [
         "Når du har tilbakestilt passordet:"
-      ],
-      "One time import": [
-        "Engangsimport"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Kun endre disse innstillingene hvis du bruker PGP med ikke-${ BRAND_NAME } mottakere."
@@ -10907,6 +10876,9 @@
       "Please open the document to view it.": [
         "Åpne dokumentet for å se det."
       ],
+      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
+        "Åpne innstillingene for nettleserutvidelsen din og gi ${ PASS_APP_NAME }-utvidelsen tilgang til nettstedsdata. Last deretter inn denne siden på nytt."
+      ],
       "Please select the folders you would like to import:": [
         "Velg mappene du vil importere:"
       ],
@@ -10981,9 +10953,6 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Offentlig deling av dokumenter støttes enda ikke."
-      ],
-      "purchase additional storage": [
-        "kjøpe ekstra lagringsplass"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Ta kontakt med oss for å få hjelp med hva som helst ${ BRAND_NAME }."
@@ -11108,9 +11077,6 @@
       "Select users to view their activity": [
         "Velg brukere for å se aktiviteten deres"
       ],
-      "Select what you want to import.": [
-        "Velg hva du ønsker å importere."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Velg hvilke kalendere du vil importere. En ny kalender opprettes for hver importerte kalender i henhold til antall kalendere som er tilgjengelige i planen din."
       ],
@@ -11146,9 +11112,6 @@
       ],
       "Set password": [
         "Angi passord"
-      ],
-      "Set up forwarding": [
-        "Konfigurer videresending"
       ],
       "Set up your organization": [
         "Konfigurer organisasjonen din"
@@ -11250,6 +11213,12 @@
       ],
       "Step ${ step }/${ totalSteps }": [
         "Trinn ${ step }/${ totalSteps }"
+      ],
+      "Step 1 of 2": [
+        "Trinn 1 av 2"
+      ],
+      "Step 2 of 2": [
+        "Trinn 2 av 2"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagringsplass allokert til andre brukere i denne organisasjonen"
@@ -11789,6 +11758,9 @@
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Bekreft identiteten din med et tidsbasert engangspassord fra en autentiseringsapp"
       ],
+      "Verifying ${ PASS_APP_NAME } browser extension...": [
+        "Verifiserer nettleserutvidelsen ${ PASS_APP_NAME } ..."
+      ],
       "Verifying your payment": [
         "Verifiserer betalingen din"
       ],
@@ -12063,9 +12035,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Du kan få våre premium personverntjenester i én pakke – og det er kun **${ priceString }/måned**."
       ],
-      "You can import one data type at a time.": [
-        "Du kan importere én datatype om gangen."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet.",
         "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet."
@@ -12253,6 +12222,9 @@
       "Your account has been successfully updated.": [
         "Kontoen din er oppdatert."
       ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Kontoen din er for øyeblikket konfigurert til å bruke ordningen for omvendt avgiftsplikt. Dette støttes ikke for den valgte planen. For å fortsette, fjern enten MVA-nummeret fra faktureringsadressen eller velg en annen plan."
+      ],
       "Your account was successfully updated with this promotion": [
         "Kontoen din ble oppdatert med denne kampanjen"
       ],
@@ -12273,10 +12245,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis prøveperiode ble vellykket konvertert til et månedlig abonnement. Fornyelsesdatoen din er ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Importen fra ${ accounts } er midlertidig forsinket.",
-        "Importene fra ${ accounts } er midlertidig forsinket."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din informasjon er trygg hos oss. Vi kontakter deg kun når det kreves for å tilby våre tjenester."
@@ -13058,6 +13026,9 @@
       "Allow": [
         "Tillat"
       ],
+      "Allow alias creation": [
+        "Tillat opprettelse av alias"
+      ],
       "Allow all users to create vaults": [
         "Tillat alle brukere å opprette hvelv"
       ],
@@ -13237,9 +13208,6 @@
       ],
       "Calendar": [
         "Kalender"
-      ],
-      "Calendars": [
-        "Kalendere"
       ],
       "Capitalize words": [
         "Storskriv ord"
@@ -13493,9 +13461,6 @@
       "Email or username": [
         "E-post eller brukernavn"
       ],
-      "Emails": [
-        "E-poster"
-      ],
       "Emails (all messages)": [
         "E-poster (alle meldinger)"
       ],
@@ -13672,6 +13637,9 @@
       ],
       "Import interval": [
         "Importintervall"
+      ],
+      "Import recent mails": [
+        "Importer nylige e-poster"
       ],
       "Import to email address": [
         "Importer til e-postadresse"
@@ -15278,6 +15246,12 @@
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-konto"
       ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Aktiver den private ${ BRAND_NAME }-e-postadressen som er reservert for barnet ditt, og opprett kontoen deres."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Aktiver barnets ${ BRAND_NAME }-konto | ${ BRAND_NAME }"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Opprett en ${ BRAND_NAME }-konto for å bruke alle krypterte ${ BRAND_NAME }-tjenester slik som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mer, med bare én innlogging. Få en gratis ${ BRAND_NAME }-konto."
       ],
@@ -15301,6 +15275,12 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Glemt brukernavnet for ${ BRAND_NAME }-kontoen? Finn det ved hjelp av e-postadressen eller telefonnummeret for gjenoppretting, og få tilgang til ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mer."
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "Gjenopprett tilgangen til den private e-postadressen ${ BRAND_NAME } som er reservert for barnet ditt."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Gjenopprett barnets ${ BRAND_NAME }-konto | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Tilbakestill passordet for ${ BRAND_NAME }-kontoen din"
@@ -18164,6 +18144,9 @@
       ],
       "VAT number": [
         "MVA-nummer"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Omvendt avgiftsplikt gjelder."
       ],
       "You already have a subscription to this plan.": [
         "Du har allerede et abonnement på denne planen."
@@ -22542,6 +22525,9 @@
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
+      "${ PASS_APP_NAME } is missing permissions": [
+        "${ PASS_APP_NAME } mangler tillatelser"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor-rapport"
       ],
@@ -23362,9 +23348,6 @@
       "Help center": [
         "Hjelpesenter"
       ],
-      "History": [
-        "Historikk"
-      ],
       "Home": [
         "Hjem"
       ],
@@ -23744,6 +23727,9 @@
       "Reused passwords": [
         "Gjenbrukte passord"
       ],
+      "Reverse charge not supported": [
+        "Omvendt avgiftsplikt støttes ikke"
+      ],
       "Revoke certificate?": [
         "Oppheve sertifikatet?"
       ],
@@ -24111,9 +24097,6 @@
       "What is the dark web?": [
         "Hva er det mørke nettet?"
       ],
-      "What would you like to import?": [
-        "Hva ønsker du å importere?"
-      ],
       "Wipe all logs?": [
         "Slette alle logger?"
       ],
@@ -24191,20 +24174,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Handlinger"
-      ],
-      "Date": [
-        "Dato"
-      ],
-      "Import": [
-        "Importer"
-      ],
       "Size": [
         "Størrelse"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Title header for addresses domain table": {
@@ -25279,6 +25250,12 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ved å slette dette telefonnummeret vil du ikke lenger kunne gjenopprette kontoen din."
       ],
+      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
+        "Kunne ikke logge på. Åpne nettleserutvidelsen for ${ PASS_APP_NAME } og logg på derfra."
+      ],
+      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
+        "Kunne ikke registrere deg. Åpne nettleserutvidelsen ${ PASS_APP_NAME } og registrer deg derfra."
+      ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Dersom du avbryter denne importen, vil du ikke kunne gjenoppta den. ${ BRAND_NAME } lagret all fremgangen på kontoen din. Avbryte likevel?"
       ],
@@ -25338,9 +25315,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning du har gjort så langt."
-      ],
-      "You will not see this import record in the list any more.": [
-        "Du vil ikke lenger se denne importposten i listen."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. ${ action }"

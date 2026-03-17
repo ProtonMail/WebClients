@@ -651,6 +651,9 @@
       "Go to settings": [
         "前往设置"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "知道了"
       ],
@@ -708,14 +711,8 @@
       "import": [
         "导入"
       ],
-      "Import calendars": [
-        "导入日历"
-      ],
       "Import contacts": [
         "导入联系人"
-      ],
-      "Import emails": [
-        "导入电子邮件"
       ],
       "Import emails, calendars, contacts": [
         "导入电子邮件、日历、联系人"
@@ -1481,6 +1478,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任密钥"
       ],
       "Trust public key": [
         "信任公钥"
@@ -4592,6 +4592,9 @@
       "Enter a password": [
         "输入密码"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "请输入您的用户名（不含 @example.com 域名）"
+      ],
       "Error connecting to the Bitcoin API.": [
         "连接比特币 API 失败。"
       ],
@@ -4651,6 +4654,9 @@
       ],
       "Invalid code": [
         "无效代码"
+      ],
+      "Invalid coupon": [
+        "优惠券无效"
       ],
       "Invalid email address": [
         "邮箱地址无效"
@@ -4868,6 +4874,9 @@
       "Request timed out": [
         "请求超时"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "此套餐不支持反向收费机制"
+      ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "您的附件超出了账户等级限制，需要予以删减或升级账户才能发送。"
       ],
@@ -4954,6 +4963,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "充值金额不能低于 ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "最低捐赠金额为 ${ price }"
       ],
       "The sending key is not valid": [
         "发送密钥无效"
@@ -6304,20 +6316,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "从 ${ provider } 导入"
-      ],
-      "Import from Google": [
-        "从 Google 导入"
-      ],
-      "Import from other": [
-        "从其他服务商导入"
-      ],
-      "Import from Outlook": [
-        "从 Outlook 导入"
-      ],
-      "Import from Yahoo": [
-        "从 Yahoo 导入"
+      "Advanced import": [
+        "高级导入"
       ]
     },
     "Import warning": {
@@ -6803,9 +6803,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "提升组织品牌形象，为用户创造更加一致的在线体验。"
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "将您的信息、联系人和日历同步至 ${ BRAND_NAME }。"
-      ],
       "Browse privately and access blocked content.": [
         "私密浏览，畅享无界访问。"
       ],
@@ -6844,6 +6841,9 @@
       ],
       "Choose a plan that works best for you.": [
         "选择一个最适合您的套餐。"
+      ],
+      "Choose your service to connect with": [
+        "请选择要连接的服务"
       ],
       "Clear browser data": [
         "清除浏览器数据"
@@ -7430,6 +7430,9 @@
       "Low Priority": [
         "较低优先顺序"
       ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "将 ${ MAIL_APP_NAME } 设为默认邮箱应用。"
+      ],
       "Manage your folders": [
         "管理文件夹"
       ],
@@ -7603,9 +7606,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您信任的某些密钥已被其所有者标为「已泄露」，建议您不再信任这些密钥。"
-      ],
-      "One time import": [
-        "一次性导入"
       ],
       "Open shortcut cheat sheet": [
         "打开快捷键列表"
@@ -7858,9 +7858,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "选择向该地址发送邮件的首选格式。"
-      ],
-      "Select what you want to import.": [
-        "选择需要导入的内容。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "请选择要导入的日历。每份日历导入后将在您的账户中对应生成一份新日历，具体日历数量受您账户等级的限制。"
@@ -8543,9 +8540,6 @@
       "You can either update your search query or clear it": [
         "您可以修改或清除搜索内容"
       ],
-      "You can import one data type at a time.": [
-        "您一次可以导入一种数据类型。"
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "您最多可保留 ${ MAX_CALENDARS_FREE } 份日历。退订 ${ MAIL_SHORT_APP_NAME } 前请删除所有共享日历链接，并移除所有使用您共享的日历的 ${ BRAND_NAME } 用户。"
       ],
@@ -8662,6 +8656,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "您的账户当前已配置为应用反向收费机制，但所选套餐不支持此机制。若要继续，请从账单地址中移除增值税号，或选择其他套餐。"
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "您的浏览器不支持写作助手。请尝试在服务器运行。"
@@ -9162,9 +9159,6 @@
       "Calendar": [
         "日历"
       ],
-      "Calendars": [
-        "日历"
-      ],
       "Carbon Copy": [
         "抄送"
       ],
@@ -9297,9 +9291,6 @@
       "Email format": [
         "电子邮件格式"
       ],
-      "Emails": [
-        "电子邮件"
-      ],
       "Emails (all messages)": [
         "所有邮件"
       ],
@@ -9419,6 +9410,9 @@
       ],
       "Import interval": [
         "导入间隔"
+      ],
+      "Import recent mails": [
+        "导入最近的邮件"
       ],
       "Import to email address": [
         "导入到邮箱地址"
@@ -11899,6 +11893,12 @@
       ],
       "No parent folder": [
         "无上层文件夹"
+      ],
+      "Remind me later": [
+        "稍后提醒我"
+      ],
+      "Yes, don't show again": [
+        "是的，不再显示"
       ]
     },
     "Option group": {
@@ -12146,6 +12146,9 @@
       ],
       "VAT number": [
         "增值税号"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "适用增值税反向收费机制"
       ],
       "You already have a subscription to this plan.": [
         "您已订阅此套餐"
@@ -14602,6 +14605,9 @@
       "Change password": [
         "更改密码"
       ],
+      "Choose a provider": [
+        "请选择提供商"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "认领您的 ${ MAIL_APP_NAME } 地址"
       ],
@@ -14664,6 +14670,9 @@
       ],
       "Currency": [
         "货币"
+      ],
+      "Custom": [
+        "自定义"
       ],
       "Custom domains:": [
         "自定义域名："
@@ -14893,6 +14902,9 @@
       "Import groups": [
         "导入群组"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "将您的数据导入到 ${ BRAND_NAME }"
+      ],
       "Increase security with ${ VPN_APP_NAME }": [
         "用 ${ VPN_APP_NAME } 加强安全防护"
       ],
@@ -14910,6 +14922,9 @@
       ],
       "Invalid verification code": [
         "验证码无效"
+      ],
+      "Keep this banner hidden?": [
+        "是否隐藏此横幅？"
       ],
       "Label as": [
         "加标签"
@@ -15184,6 +15199,9 @@
       "Request new code": [
         "请求新验证码"
       ],
+      "Reverse charge not supported": [
+        "不支持反向收费"
+      ],
       "Same inbox, shorter email address": [
         "同一个收件箱，但使用更短的邮箱地址"
       ],
@@ -15210,6 +15228,9 @@
       ],
       "Select contact group": [
         "选择联系人群组"
+      ],
+      "Select data to import": [
+        "请选择要导入的数据"
       ],
       "Self-destruct message": [
         "自动销毁邮件"
@@ -15423,9 +15444,6 @@
       ],
       "What is a VPN?": [
         "什么是 VPN？"
-      ],
-      "What would you like to import?": [
-        "您需要导入哪些信息？"
       ],
       "When is it most important to use a VPN?": [
         "什么时候最需要使用 VPN 呢？"
