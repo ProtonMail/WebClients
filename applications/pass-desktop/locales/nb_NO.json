@@ -1036,6 +1036,9 @@
       "Encrypted JSON not supported": [
         "Kryptert JSON ikke støttet"
       ],
+      "Encryption communication for desktop unlock failed.": [
+        "Krypteringskommunikasjon for opplåsing av skrivebordsapp mislyktes."
+      ],
       "Error reporting problem": [
         "Problem med feilrapportering"
       ],
@@ -1251,6 +1254,15 @@
       ],
       "Something went wrong. Please sign in again.": [
         "Noe gikk galt, logg inn på nytt."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } er låst, den må låses opp."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } er ikke installert."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Skrivebordsappen ${ PASS_APP_NAME } svarer ikke. Kjører den?"
       ],
       "The session has expired. Please sign in again.": [
         "Økten er utløpt. Logg på nytt."
@@ -1783,6 +1795,9 @@
       "Enabling biometrics lock failed": [
         "Aktivering av biometrisk lås mislyktes"
       ],
+      "Enabling desktop auto-lock": [
+        "Aktiverer automatisk låsing av skrivebordsapp"
+      ],
       "Enabling offline mode...": [
         "Aktiverer frakoblet modus..."
       ],
@@ -2005,10 +2020,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2398,6 +2409,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Denne funksjonen er for øyeblikket eksperimentell på Linux. Forsikre deg om at systemet ditt er oppdatert."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Denne funksjonen krever at ${ PASS_APP_NAME }-skrivebordsappen er installert og kjører under oppsettet."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Dette elementet er for øyeblikket ikke delt med noen. Inviter folk til å dele det med andre."
