@@ -12,10 +12,13 @@ import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import { useFlag } from '@proton/unleash/useFlag';
+import { useUser } from '@proton/account/user/hooks';
 
 export const useReferralDiscover = (location?: ReturnType<typeof useLocation>) => {
     const [userSettings] = useUserSettings();
     const [subscription] = useSubscription();
+    const [user] = useUser();
+    const { isFree } = user;
 
     const hasNotificationsEnabled = hasBit(userSettings.News, NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS);
 
@@ -24,10 +27,13 @@ export const useReferralDiscover = (location?: ReturnType<typeof useLocation>) =
     const drawerFeature = useFeature(FeatureCode.ReferralDrawerApp);
 
     const isFeatureActive = useFlag('ReferralExpansionDiscover');
+    const isFreeUsersDiscoverFeatureActive = useFlag('ReferralFreeUsersDiscover');
     const isUserEligible = !!userSettings?.Referral?.Eligible;
 
     const subscriptionStartedThirtyDaysAgo =
         !!subscription?.PeriodStart && new Date() > addDays(fromUnixTime(subscription.PeriodStart), 30);
+
+    const userIsFreeAndCreatedThirtyDaysAgo = isFree && !!user.CreateTime && new Date() > addDays(fromUnixTime(user.CreateTime), 30);
 
     const { update: updateReferralSpotlightSettings } = settingsSpotlightFeature;
     const { update: updateReferralTopBarButton } = topButtonFeature;
@@ -35,7 +41,7 @@ export const useReferralDiscover = (location?: ReturnType<typeof useLocation>) =
 
     const { show: shouldShowSettingsSpotlight, onClose: onCloseSettingsSpotlight } = useSpotlightOnFeature(
         FeatureCode.ReferralSpotlightSettings,
-        isFeatureActive && isUserEligible && hasNotificationsEnabled && subscriptionStartedThirtyDaysAgo
+        isFeatureActive && isUserEligible && hasNotificationsEnabled && (subscriptionStartedThirtyDaysAgo || (isFreeUsersDiscoverFeatureActive && userIsFreeAndCreatedThirtyDaysAgo))
     );
 
     const handleCloseSettingsSpotlight = useCallback(() => {
@@ -54,7 +60,7 @@ export const useReferralDiscover = (location?: ReturnType<typeof useLocation>) =
         isFeatureActive &&
         isUserEligible &&
         hasNotificationsEnabled &&
-        subscriptionStartedThirtyDaysAgo &&
+        (subscriptionStartedThirtyDaysAgo || (isFreeUsersDiscoverFeatureActive && userIsFreeAndCreatedThirtyDaysAgo)) &&
         !!topButtonFeature.feature?.Value;
 
     const canShowDrawerApp = isFeatureActive && isUserEligible && !!drawerFeature.feature?.Value;
