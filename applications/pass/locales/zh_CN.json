@@ -1686,6 +1686,9 @@
       "Enabling biometrics lock failed": [
         "启用生物识别锁失败"
       ],
+      "Enabling desktop auto-lock": [
+        "正在启用桌面自动锁定"
+      ],
       "Enabling offline mode...": [
         "正在启用离线模式..."
       ],
@@ -2279,6 +2282,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "此功能目前在 Linux 上处于实验阶段，请确保您的系统是最新的。"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "此功能要求在设置过程中安装并运行 ${ PASS_APP_NAME } 桌面应用。"
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "此项目目前未与任何人共享。请与他人共享。"
