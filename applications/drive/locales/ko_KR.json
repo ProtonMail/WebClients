@@ -1235,6 +1235,9 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "Action: Docs": {
@@ -3913,6 +3916,15 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 복호화할 수 없는 이름"
+      ],
+      "Invalid coupon": [
+        "유효하지 않은 쿠폰"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "이 플랜에서는 매입자 납부제도(Reverse charge)가 지원되지 않습니다."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "최소 기부 금액은 ${ price }입니다."
       ]
     },
     "error": {
@@ -4776,6 +4788,9 @@
       ],
       "Import from Yahoo": [
         "Yahoo에서 가져오기"
+      ],
+      "Advanced import": [
+        "고급 가져오기"
       ]
     },
     "Import warning": {
@@ -6838,6 +6853,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "Choose your service to connect with": [
+        "연결하고자 하는 서비스 선택"
+      ],
+      "Clear all search data": [
+        "모든 검색 데이터 지우기"
+      ],
+      "Clears browser data related to the search.": [
+        "검색과 관련된 브라우저 데이터를 삭제합니다."
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "검색이 활성화되었습니다. 이제 이 대화 상자를 닫고 파일과 폴더를 검색할 수 있습니다."
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+        "진정한 비공개 검색을 활성화하려면, 로컬에서 사용자의 파일을 인덱싱해야 합니다. ${ DRIVE_APP_NAME }는 계속 정상적으로 사용할 수 있습니다. 인덱싱이 완료되면 알려드리겠습니다."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "귀하의 계정은 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 선택하신 요금제에서 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 요금제를 선택하십시오."
       ]
     },
     "info": {
@@ -9986,6 +10019,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "구독에 현재 기존 할인이 적용되어 있습니다. 새로운 프로모션으로 변경하면 기존 할인이 더 이상 적용되지 않습니다."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "매입자 납부제도(Reverse charge)가 적용됩니다."
       ]
     },
     "Payments.Error": {
@@ -12862,6 +12898,21 @@
       ],
       "You’ve got 5 GB of storage": [
         "5GB의 저장공간을 얻으셨습니다"
+      ],
+      "Choose a provider": [
+        "제공업체 선택"
+      ],
+      "Custom": [
+        "사용자화"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "${ BRAND_NAME }로 데이터 불러오기"
+      ],
+      "Reverse charge not supported": [
+        "매입자 납부제도(Reverse charge)가 지원되지 않습니다."
+      ],
+      "Select data to import": [
+        "불러올 데이터 선택"
       ]
     },
     "Today icon tooltip in mini calendar": {
