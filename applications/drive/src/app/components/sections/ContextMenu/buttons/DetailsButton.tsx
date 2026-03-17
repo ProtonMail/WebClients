@@ -3,13 +3,13 @@ import { c } from 'ttag';
 import { generateNodeUid } from '@proton/drive/index';
 
 import type { useDetailsModal } from '../../../../modals/DetailsModal/';
-import type { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
+import type { useFilesDetailsModal } from '../../../../modals/FilesDetailsModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
     selectedBrowserItems: { volumeId: string; rootShareId: string; linkId: string }[];
     showDetailsModal: ReturnType<typeof useDetailsModal>['showDetailsModal'];
-    showFilesDetailsModal: ReturnType<typeof useFilesDetailsModal>[1];
+    showFilesDetailsModal: ReturnType<typeof useFilesDetailsModal>['showFilesDetailsModal'];
     close: () => void;
 }
 
@@ -25,7 +25,9 @@ const DetailsButton = ({ selectedBrowserItems, showDetailsModal, showFilesDetail
                         nodeUid: generateNodeUid(selectedBrowserItems[0].volumeId, selectedBrowserItems[0].linkId),
                     });
                 } else if (selectedBrowserItems.length > 1) {
-                    void showFilesDetailsModal({ selectedItems: selectedBrowserItems });
+                    void showFilesDetailsModal({
+                        nodeUids: selectedBrowserItems.map((item) => generateNodeUid(item.volumeId, item.linkId)),
+                    });
                 }
             }}
             close={close}

@@ -5,8 +5,8 @@ import { NodeType, getDrive, getDriveForPhotos, useDrive } from '@proton/drive/i
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
+import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { useDrivePreviewModal } from '../../modals/preview';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useTrashStore } from './useTrash.store';
@@ -34,7 +34,7 @@ export const useTrashActions = () => {
     } = useTrashNotifications();
 
     const { detailsModal, showDetailsModal } = useDetailsModal();
-    const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
+    const { filesDetailsModal, showFilesDetailsModal } = useFilesDetailsModal();
     const { previewModal, showPreviewModal } = useDrivePreviewModal();
 
     const undoFactory = ({

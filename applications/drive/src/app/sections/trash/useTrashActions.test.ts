@@ -39,8 +39,8 @@ jest.mock('../../modals/DetailsModal', () => ({
     useDetailsModal: () => ({ detailsModal: null, showDetailsModal: jest.fn() }),
 }));
 
-jest.mock('../../components/modals/FilesDetailsModal', () => ({
-    useFilesDetailsModal: () => [null, jest.fn()],
+jest.mock('../../modals/FilesDetailsModal', () => ({
+    useFilesDetailsModal: () => ({ filesDetailsModal: null, showFilesDetailsModal: jest.fn() }),
 }));
 
 jest.mock('../../modals/preview', () => ({

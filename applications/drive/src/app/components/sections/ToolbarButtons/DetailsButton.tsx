@@ -5,7 +5,8 @@ import { generateNodeUid } from '@proton/drive';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 
 import { useDetailsModal } from '../../../modals/DetailsModal';
-import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
+import { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
+import { toNodeUidsHelper } from '../Drive/ContextMenuButtons/MoveToFolderButton';
 import { noSelection } from './utils';
 
 interface Props {
@@ -19,7 +20,7 @@ interface Props {
 }
 
 const DetailsButton = ({ selectedBrowserItems }: Props) => {
-    const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
+    const { filesDetailsModal, showFilesDetailsModal } = useFilesDetailsModal();
     const { detailsModal, showDetailsModal } = useDetailsModal();
 
     if (noSelection(selectedBrowserItems)) {
@@ -37,7 +38,7 @@ const DetailsButton = ({ selectedBrowserItems }: Props) => {
                             nodeUid: generateNodeUid(selectedBrowserItems[0].volumeId, selectedBrowserItems[0].linkId),
                         });
                     } else if (selectedBrowserItems.length > 1) {
-                        void showFilesDetailsModal({ selectedItems: selectedBrowserItems });
+                        void showFilesDetailsModal({ nodeUids: toNodeUidsHelper(selectedBrowserItems) });
                     }
                 }}
                 data-testid="toolbar-details"
