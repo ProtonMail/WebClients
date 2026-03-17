@@ -25,6 +25,7 @@ export interface DashboardMeetingListProps {
     handleNewRoomClick: (room?: Meeting) => void;
     handleRotatePersonalMeeting?: () => void;
     loadingRotatePersonalMeeting?: boolean;
+    newlyCreatedMeetingId?: string;
 }
 
 export const DashboardMeetingList = ({
@@ -35,6 +36,7 @@ export const DashboardMeetingList = ({
     handleNewRoomClick,
     handleRotatePersonalMeeting,
     loadingRotatePersonalMeeting,
+    newlyCreatedMeetingId,
 }: DashboardMeetingListProps) => {
     const isPastMeetingsEnabled = useFlag('MeetPastMeetings');
 
@@ -42,7 +44,12 @@ export const DashboardMeetingList = ({
     const [activeTab, setActiveTab] = useState<DashboardMeetingListTab>(DashboardMeetingListTab.TimeBased);
     const [sortBy, setSortBy] = useState<SortOption>(SortOption.Upcoming);
 
-    const sortOptions = getSortOptions(isPastMeetingsEnabled);
+    const handleTabChange = (tab: DashboardMeetingListTab) => {
+        setActiveTab(tab);
+        setSortBy(tab === DashboardMeetingListTab.TimeBased ? SortOption.Upcoming : SortOption.NewlyCreated);
+    };
+
+    const sortOptions = getSortOptions(isPastMeetingsEnabled, activeTab);
     const selectedSortOption = sortOptions.find((opt) => opt.value === sortBy) as SortOptionObject;
 
     const filteredMeetings = meetings.filter((meeting) =>
@@ -97,6 +104,17 @@ export const DashboardMeetingList = ({
     const meetingsByDay = groupMeetingsByDay(timeBasedMeetings, selectedSortOption?.groupBy ?? 'adjustedStartTime');
 
     const sortedMeetingsByDayEntries = Object.entries(meetingsByDay).sort((a, b) => {
+        // Force newly-created meeting to be at the top of the list
+        if (sortBy === SortOption.Upcoming && newlyCreatedMeetingId) {
+            const aHasNew = a[1].some((m) => m.ID === newlyCreatedMeetingId);
+            const bHasNew = b[1].some((m) => m.ID === newlyCreatedMeetingId);
+            if (aHasNew) {
+                return -1;
+            }
+            if (bHasNew) {
+                return 1;
+            }
+        }
         return new Date(a[0]).getTime() - new Date(b[0]).getTime();
     });
 
@@ -110,7 +128,7 @@ export const DashboardMeetingList = ({
             >
                 <DashboardMeetingListTabs
                     activeTab={activeTab}
-                    setActiveTab={setActiveTab}
+                    setActiveTab={handleTabChange}
                     timeBasedMeetingsCount={meetingsObject[DashboardMeetingListTab.TimeBased].length}
                     meetingRoomsCount={roomNumber > 0 ? roomNumber : 1}
                     ref={previousElementRef}
