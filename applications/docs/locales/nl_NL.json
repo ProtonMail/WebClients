@@ -438,17 +438,11 @@
       "import": [
         "importeren"
       ],
-      "Import calendars": [
-        "Agenda's importeren"
-      ],
       "Import contacts": [
         "Contactpersonen importeren"
       ],
       "Import data": [
         "Importeer gegevens"
-      ],
-      "Import emails": [
-        "E-mails importeren"
       ],
       "Import emails, calendars, contacts": [
         "Importeer e-mails, agenda's, contacten"
@@ -2874,6 +2868,9 @@
       "Enter 6 digits": [
         "Voer 6 cijfers in"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Voer uw gebruikersnaam in zonder het domein (@example.com)"
+      ],
       "Error decrypting a computer": [
         "Fout bij het ontsleutelen van een computer"
       ],
@@ -4012,23 +4009,6 @@
         "Selecteer ${ boldExport } om de agenda te exporteren als een ICS-bestand."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Importeer uit ${ provider }"
-      ],
-      "Import from Google": [
-        "Importeer uit Google"
-      ],
-      "Import from other": [
-        "Importeer uit andere"
-      ],
-      "Import from Outlook": [
-        "Importeer uit Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importeer uit Yahoo"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
@@ -4276,9 +4256,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Breng uw berichten, contacten en agenda's naar ${ BRAND_NAME }."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
@@ -4757,9 +4734,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
       ],
-      "One time import": [
-        "Eenmalige import"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Alleen de mensen met de link en het wachtwoord hebben toegang tot dit bestand."
       ],
@@ -4898,9 +4872,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecteer het e-mailformaat dat u standaard wil gebruiken wanneer u een e-mail stuurt aan deze geadresseerde."
-      ],
-      "Select what you want to import.": [
-        "Selecteer wat u wilt importeren."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt afhankelijk van het aantal beschikbare agenda's binnen uw abonnement."
@@ -5245,9 +5216,6 @@
       "You can close the tab or browser in the meantime.": [
         "In de tussentijd kunt u de tab of browser sluiten."
       ],
-      "You can import one data type at a time.": [
-        "U kunt maar één type gegevens tegelijk importeren."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
         "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert."
@@ -5541,9 +5509,6 @@
       "Calendar": [
         "Agenda"
       ],
-      "Calendars": [
-        "Agenda's"
-      ],
       "Cancel download": [
         "Download annuleren"
       ],
@@ -5618,9 +5583,6 @@
       ],
       "Email format": [
         "E-mailformaat"
-      ],
-      "Emails": [
-        "E-mails"
       ],
       "Emails (all messages)": [
         "E-mails (alle berichten)"
@@ -9903,9 +9865,6 @@
       ],
       "What is a VPN?": [
         "Wat is een VPN?"
-      ],
-      "What would you like to import?": [
-        "Wat zou u willen importeren?"
       ],
       "When is it most important to use a VPN?": [
         "Wanneer is het erg belangrijk om een VPN te gebruiken?"

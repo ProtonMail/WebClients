@@ -405,6 +405,9 @@
       "Go to label": [
         "Zu Kategorie wechseln"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Verstanden"
       ],
@@ -438,17 +441,11 @@
       "import": [
         "Importieren"
       ],
-      "Import calendars": [
-        "Kalender importieren"
-      ],
       "Import contacts": [
         "Kontakte importieren"
       ],
       "Import data": [
         "Daten importieren"
-      ],
-      "Import emails": [
-        "E-Mails importieren"
       ],
       "Import emails, calendars, contacts": [
         "E-Mails, Kalender und Kontakte importieren"
@@ -4030,20 +4027,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Import von ${ provider }"
-      ],
-      "Import from Google": [
-        "Von Google importieren"
-      ],
-      "Import from other": [
-        "Von anderen importieren"
-      ],
-      "Import from Outlook": [
-        "Von Outlook importieren"
-      ],
-      "Import from Yahoo": [
-        "Von Yahoo importieren"
+      "Advanced import": [
+        "Erweiterter Import"
       ]
     },
     "Import warning": {
@@ -4294,9 +4279,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Bringe deine Nachrichten, Kontakte und Kalender zu ${ BRAND_NAME }."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Durch den Wechsel auf das kostenlose Abonnement verlierst du diese Leistungen dauerhaft, auch wenn du in Zukunft wieder auf ein kostenpflichtiges Abonnement umsteigst."
       ],
@@ -4323,6 +4305,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Wähle ein Abonnement, das am besten für dich funktioniert."
+      ],
+      "Choose your service to connect with": [
+        "Deinen Dienst zum Verbinden auswählen"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
@@ -4774,9 +4759,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Einer oder mehrere deiner vertrauenswürdigen Schlüssel wurden durch dessen Besitzer als „kompromittiert“ gemeldet. Wir empfehlen dir, die betroffenen Schlüssel als „nicht vertrauenswürdig“ zu markieren."
       ],
-      "One time import": [
-        "Einmaliger Import"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Nur die Personen mit dem Link und dem Passwort können auf diese Datei zugreifen."
       ],
@@ -4915,9 +4897,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wähle das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn eine Nachricht an diese E-Mail-Adresse gesendet wird."
-      ],
-      "Select what you want to import.": [
-        "Wähle aus, was du importieren möchtest."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis das Maximum deines Abonnements erreicht ist."
@@ -5262,9 +5241,6 @@
       "You can close the tab or browser in the meantime.": [
         "In der Zwischenzeit kannst du den Tab oder Browser schließen."
       ],
-      "You can import one data type at a time.": [
-        "Du kannst jeweils nur einen Datentyp importieren."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne geteilte Kalenderverknüpfungen und alle ${ BRAND_NAME } Nutzer, mit denen du deine Kalender geteilt hast, bevor du dein ${ MAIL_SHORT_APP_NAME } Abonnement kündigst.",
         "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne geteilte Kalenderverknüpfungen und alle ${ BRAND_NAME } Benutzer, mit denen du deine Kalender geteilt hast, bevor du dein ${ MAIL_SHORT_APP_NAME } Abonnement kündigst."
@@ -5558,9 +5534,6 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendars": [
-        "Kalender"
-      ],
       "Cancel download": [
         "Download abbrechen"
       ],
@@ -5635,9 +5608,6 @@
       ],
       "Email format": [
         "E-Mail-Format"
-      ],
-      "Emails": [
-        "E-Mails"
       ],
       "Emails (all messages)": [
         "E-Mails (alle Nachrichten)"
@@ -9492,6 +9462,9 @@
       "Change password": [
         "Passwort ändern"
       ],
+      "Choose a provider": [
+        "Anbieter wählen"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Deine ${ MAIL_APP_NAME }-Adresse beanspruchen"
       ],
@@ -9539,6 +9512,9 @@
       ],
       "Currency": [
         "Währung"
+      ],
+      "Custom": [
+        "Benutzerdefiniert"
       ],
       "Customize and confirm": [
         "Anpassen und bestätigen"
@@ -9729,6 +9705,9 @@
       "Import groups": [
         "Gruppen importieren"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Deine Daten nach ${ BRAND_NAME } importieren"
+      ],
       "Information exposed in breach": [
         "Informationen, die beim Datenleck offengelegt wurden"
       ],
@@ -9858,6 +9837,9 @@
       "Select contact group": [
         "Kontaktgruppe auswählen"
       ],
+      "Select data to import": [
+        "Daten zum Import auswählen"
+      ],
       "Select link expiration date": [
         "Ablaufdatum des Links wählen"
       ],
@@ -9977,9 +9959,6 @@
       ],
       "What is a VPN?": [
         "Was ist ein VPN?"
-      ],
-      "What would you like to import?": [
-        "Was möchtest du importieren?"
       ],
       "When is it most important to use a VPN?": [
         "Wann ist es am wichtigsten, ein VPN zu verwenden?"
