@@ -405,6 +405,9 @@
       "Go to label": [
         "Μετάβαση στην ετικέτα"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Το κατάλαβα"
       ],
@@ -438,17 +441,11 @@
       "import": [
         "εισαγωγή"
       ],
-      "Import calendars": [
-        "Εισαγωγή ημερολογίων"
-      ],
       "Import contacts": [
         "Εισαγωγή επαφών"
       ],
       "Import data": [
         "Εισαγωγή δεδομένων"
-      ],
-      "Import emails": [
-        "Εισαγωγή email"
       ],
       "Import emails, calendars, contacts": [
         "Εισαγωγή ηλεκτρονικών διευθύνσεων, ημερολογίων, επαφών"
@@ -4030,20 +4027,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Εισαγωγή από ${ provider }"
-      ],
-      "Import from Google": [
-        "Εισαγωγή από Google"
-      ],
-      "Import from other": [
-        "Εισαγωγή από άλλο"
-      ],
-      "Import from Outlook": [
-        "Εισαγωγή από Outlook"
-      ],
-      "Import from Yahoo": [
-        "Εισαγωγή από το Yahoo"
+      "Advanced import": [
+        "Προηγμένη εισαγωγή"
       ]
     },
     "Import warning": {
@@ -4294,9 +4279,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Μεταφέρετε τα μηνύματα, τις επαφές και τα ημερολόγιά σας στο ${ BRAND_NAME }."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
       ],
@@ -4323,6 +4305,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Επιλέξτε το πλάνο που σας ταιριάζει καλύτερα."
+      ],
+      "Choose your service to connect with": [
+        "Επιλέξτε την υπηρεσία σας για να συνδεθείτε"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
@@ -4774,9 +4759,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ένα η περισσότερα από τα αξιόπιστα κλειδιά σας έχουν επισημανθεί ως \"παραβιασμένα\" από τον κάτοχό τους. Σας συνιστούμε να τα επισημάνετε ως \"μη αξιόπιστα\"."
       ],
-      "One time import": [
-        "Εφάπαξ εισαγωγή"
-      ],
       "Only the people with the link and the password can access this file.": [
         "Μόνο τα άτομα που έχουν τον σύνδεσμο και τον κωδικό πρόσβασης μπορούν να προσπελάσουν αυτό το αρχείο."
       ],
@@ -4915,9 +4897,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
-      ],
-      "Select what you want to import.": [
-        "Επιλέξτε τι θέλετε να εισάγετε."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Επιλέξτε ποια ημερολόγια θέλετε να εισαγάγετε. Θα δημιουργηθεί ένα νέο ημερολόγιο για κάθε εισαγόμενο ημερολόγιο σύμφωνα με τον αριθμό των ημερολογίων που είναι διαθέσιμα στο πλάνο σας."
@@ -5262,9 +5241,6 @@
       "You can close the tab or browser in the meantime.": [
         "Στο μεταξύ, μπορείτε να κλείσετε την καρτέλα ή το πρόγραμμα περιήγησης."
       ],
-      "You can import one data type at a time.": [
-        "Μπορεί να εισαχθεί ένας τύπος δεδομένων τη φορά."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγιο. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε χρήστη ${ BRAND_NAME } με τον οποίο μοιραστήκατε τα ημερολόγιά σας προτού ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας.",
         "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγια. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε χρήστη ${ BRAND_NAME } με τον οποίο μοιραστήκατε τα ημερολόγιά σας προτού ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας."
@@ -5558,9 +5534,6 @@
       "Calendar": [
         "Ημερολόγιο"
       ],
-      "Calendars": [
-        "Ημερολόγια"
-      ],
       "Cancel download": [
         "Ακύρωση λήψης"
       ],
@@ -5635,9 +5608,6 @@
       ],
       "Email format": [
         "Μορφή μηνύματος"
-      ],
-      "Emails": [
-        "Μηνύματα"
       ],
       "Emails (all messages)": [
         "Μηνύματα (όλα τα μηνύματα)"
@@ -9339,6 +9309,9 @@
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
       ],
+      "Choose a provider": [
+        "Επιλέξτε έναν πάροχο"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Δημιουργήστε τη ${ MAIL_APP_NAME } διεύθυνσή σας"
       ],
@@ -9386,6 +9359,9 @@
       ],
       "Currency": [
         "Νόμισμα"
+      ],
+      "Custom": [
+        "Προσαρμογή"
       ],
       "Customize and confirm": [
         "Προσαρμογή και επιβεβαίωση"
@@ -9576,6 +9552,9 @@
       "Import groups": [
         "Εισαγωγή ομάδων"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Εισάγετε τα δεδομένα σας στο ${ BRAND_NAME }"
+      ],
       "Information exposed in breach": [
         "Πληροφορίες που εκτέθηκαν κατά την παραβίαση"
       ],
@@ -9705,6 +9684,9 @@
       "Select contact group": [
         "Επιλογή ομάδας επαφών"
       ],
+      "Select data to import": [
+        "Επιλέξτε δεδομένα για εισαγωγή"
+      ],
       "Select link expiration date": [
         "Επιλέξτε ημερομηνία λήξης συνδέσμου"
       ],
@@ -9824,9 +9806,6 @@
       ],
       "What is a VPN?": [
         "Τι είναι το VPN;"
-      ],
-      "What would you like to import?": [
-        "Τι θα θέλατε να εισάγετε;"
       ],
       "When is it most important to use a VPN?": [
         "Πότε είναι πιο σημαντικό να χρησιμοποιήσετε ένα VPN;"
