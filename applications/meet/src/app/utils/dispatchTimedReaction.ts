@@ -10,4 +10,5 @@ export const dispatchTimedReaction = (dispatch: AppDispatch, identity: string, e
     setTimeout(() => {
         dispatch(clearActiveReaction({ identity, timestamp }));
     }, REACTION_DISPLAY_DURATION_MS);
+    return timestamp;
 };

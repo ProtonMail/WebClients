@@ -28,7 +28,7 @@ const slice = createSlice({
         markChatMessagesAsSeen: (state) => {
             state.chatMessages = state.chatMessages.map((message) => ({ ...message, seen: true }));
         },
-        addChatMessageReaction: (
+        toggleChatMessageReaction: (
             state,
             action: PayloadAction<{ messageId: string; emoji: string; identity: string }>
         ) => {
@@ -83,7 +83,7 @@ const slice = createSlice({
 
 export const {
     addChatMessages,
-    addChatMessageReaction,
+    toggleChatMessageReaction,
     addEvent,
     resetChatAndReactions,
     markChatMessagesAsSeen,
