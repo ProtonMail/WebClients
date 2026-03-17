@@ -31,9 +31,10 @@ export function getIsEligible({
         return false;
     }
     const isBundle = offerSubscription.hasBundle();
+    const notVisionary = !offerSubscription.hasVisionary();
     const notUsedCurrentPromo = !offerSubscription.usedSpringSale2026();
 
-    if (user.isPaid && isBundle && notUsedCurrentPromo && !offerSubscription.isManagedExternally()) {
+    if (user.isPaid && isBundle && notVisionary && notUsedCurrentPromo && !offerSubscription.isManagedExternally()) {
         return true;
     }
 
