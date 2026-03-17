@@ -57,7 +57,7 @@ export const Lobby: FC = () => {
                 }}
                 onLogout={() => authService.logout({ soft: false })}
                 onFork={() => authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SWITCH })}
-                onOffline={() => AppStateManager.setStatus(AppStatus.PASSWORD_LOCKED)}
+                onOfflineFallback={() => AppStateManager.setStatus(AppStatus.PASSWORD_LOCKED)}
                 onRegister={() => authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SIGNUP })}
                 renderError={() => <></>}
                 renderAccountSwitcher={() => {
