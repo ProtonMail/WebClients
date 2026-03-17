@@ -708,14 +708,8 @@
       "import": [
         "importér"
       ],
-      "Import calendars": [
-        "Importer kalendere"
-      ],
       "Import contacts": [
         "Importér kontakter"
-      ],
-      "Import emails": [
-        "Importer e-mails"
       ],
       "Import emails, calendars, contacts": [
         "Importer e-mails, kalendere, kontakter"
@@ -4617,6 +4611,9 @@
       "Enter a password": [
         "Angiv en adgangskode"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Indtast dit brugernavn uden domænet (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Fejl under oprettelse af forbindelse til Bitcoin-API."
       ],
@@ -6338,23 +6335,6 @@
         "Vælg ${ boldExport } for at eksportere kalenderen som en ICS-fil."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Importér fra ${ provider }"
-      ],
-      "Import from Google": [
-        "Importér fra Google"
-      ],
-      "Import from other": [
-        "Import fra andre udbydere"
-      ],
-      "Import from Outlook": [
-        "Importér fra Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importér fra Yahoo"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ud af ${ totalContacts } kontakter vil ikke blive importeret. Klik for detaljer"
@@ -6891,9 +6871,6 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Styrk din organisations varemærkeidentitet, og skab en mere ensartet onlineoplevelse for dine brugere."
-      ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Overfør dine meddelelser, kontakter og kalendere til ${ BRAND_NAME }"
       ],
       "Browse privately and access blocked content.": [
         "Surf privat med adgang til beskyttet indhold."
@@ -7701,9 +7678,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
       ],
-      "One time import": [
-        "Engangsimport"
-      ],
       "Open shortcut cheat sheet": [
         "Åbn snydeark med genveje"
       ],
@@ -7957,9 +7931,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
-      ],
-      "Select what you want to import.": [
-        "Vælg, hvad du ønsker at importere."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Vælg hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender, op til det tilgængelige antal i dit abonnement."
@@ -8643,9 +8614,6 @@
       "You can either update your search query or clear it": [
         "Du kan enten opdatere din søgeforespørgsel eller slette den"
       ],
-      "You can import one data type at a time.": [
-        "Du kan importere én datatype ad gangen."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalender. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit ${ MAIL_SHORT_APP_NAME }-abonnement.",
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalendere. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit ${ MAIL_SHORT_APP_NAME }-abonnement."
@@ -9287,9 +9255,6 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendars": [
-        "Kalendere"
-      ],
       "Carbon Copy": [
         "Karbonkopi"
       ],
@@ -9421,9 +9386,6 @@
       ],
       "Email format": [
         "E-mailformattering"
-      ],
-      "Emails": [
-        "E-mails"
       ],
       "Emails (all messages)": [
         "E-mails (alle beskeder)"
@@ -14918,6 +14880,9 @@
       "Change password": [
         "Skift adgangskode"
       ],
+      "Choose a provider": [
+        "Vælg en udbyder"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Gør krav på din gratis ${ MAIL_APP_NAME } addresse"
       ],
@@ -14980,6 +14945,9 @@
       ],
       "Currency": [
         "Valuta"
+      ],
+      "Custom": [
+        "Brugerdefineret"
       ],
       "Custom domains:": [
         "Brugerdomæner:"
@@ -15214,6 +15182,9 @@
       ],
       "Import groups": [
         "Importer grupper"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importér dine data til ${ BRAND_NAME }"
       ],
       "Increase security with ${ VPN_APP_NAME }": [
         "Styrk din sikkerhed med ${ VPN_APP_NAME }"
@@ -15539,6 +15510,9 @@
       "Select contact group": [
         "Vælg kontaktgruppe"
       ],
+      "Select data to import": [
+        "Vælg data til import"
+      ],
       "Self-destruct message": [
         "Selvdestruerende besked"
       ],
@@ -15753,9 +15727,6 @@
       ],
       "What is a VPN?": [
         "Hvad er en VPN?"
-      ],
-      "What would you like to import?": [
-        "Hvad ønsker du at importere?"
       ],
       "When is it most important to use a VPN?": [
         "Hvornår er det vigtigst at bruge en VPN?"

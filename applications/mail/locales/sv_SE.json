@@ -654,6 +654,9 @@
       "Go to settings": [
         "Gå till inställningar"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Förstått"
       ],
@@ -711,14 +714,8 @@
       "import": [
         "importera"
       ],
-      "Import calendars": [
-        "Importera kalendrar"
-      ],
       "Import contacts": [
         "Importera kontakter"
-      ],
-      "Import emails": [
-        "Importera e-post"
       ],
       "Import emails, calendars, contacts": [
         "Importera e-post, kalendrar, kontakter"
@@ -6359,20 +6356,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importera från ${ provider }"
-      ],
-      "Import from Google": [
-        "Importera från Google"
-      ],
-      "Import from other": [
-        "Importera från andra"
-      ],
-      "Import from Outlook": [
-        "Importera från Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importera från Yahoo"
+      "Advanced import": [
+        "Avancerad import"
       ]
     },
     "Import warning": {
@@ -6909,9 +6894,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Förstärk din organisations varumärkesidentitet och skapa en mer konsekvent upplevelse online för dina användare."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Ta med dina meddelanden, kontakter och kalendrar till ${ BRAND_NAME }."
-      ],
       "Browse privately and access blocked content.": [
         "Surfa privat och kom åt blockerat innehåll."
       ],
@@ -6950,6 +6932,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Välj ett paket som passar dig bäst."
+      ],
+      "Choose your service to connect with": [
+        "Välj din tjänst att ansluta med"
       ],
       "Clear browser data": [
         "Rensa webbläsardata"
@@ -7721,9 +7706,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flera av dina betrodda nycklar markerades som \"läckta\" av dess ägare. Vi rekommenderar att du återkallar \"lita\" på dessa nycklar."
       ],
-      "One time import": [
-        "Engångsimport"
-      ],
       "Open shortcut cheat sheet": [
         "Öppna fuskblad för genvägar"
       ],
@@ -7977,9 +7959,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Välj det e-postformat du vill använda som standard när du skickar ett e-postmeddelande till den här e-postadressen."
-      ],
-      "Select what you want to import.": [
-        "Välj vad du vill importera."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Välj vilka kalendrar som ska importeras. En ny kalender skapas för varje importerad kalender enligt antalet tillgängliga kalendrar i ditt paket."
@@ -8660,9 +8639,6 @@
       "You can either update your search query or clear it": [
         "Du kan antingen uppdatera din sökfråga eller rensa den"
       ],
-      "You can import one data type at a time.": [
-        "Du kan importera en datatyp åt gången."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalender. Ta bort delade kalenderlänkar och alla ${ BRAND_NAME }-användare som du delade dina kalendrar med innan du avslutar din ${ MAIL_SHORT_APP_NAME }-prenumeration.",
         "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalendrar. Ta bort delade kalenderlänkar och alla ${ BRAND_NAME }-användare som du delade dina kalendrar med innan du avslutar din ${ MAIL_SHORT_APP_NAME }-prenumeration."
@@ -9294,9 +9270,6 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendars": [
-        "Kalendrar"
-      ],
       "Carbon Copy": [
         "Kopia"
       ],
@@ -9425,9 +9398,6 @@
       ],
       "Email format": [
         "E-postformat"
-      ],
-      "Emails": [
-        "E-postmeddelanden"
       ],
       "Emails (all messages)": [
         "E-post (alla meddelanden)"
@@ -14964,6 +14934,9 @@
       "Change password": [
         "Ändra lösenord"
       ],
+      "Choose a provider": [
+        "Välj en leverantör"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Gör anspråk på din ${ MAIL_APP_NAME }-adress"
       ],
@@ -15026,6 +14999,9 @@
       ],
       "Currency": [
         "Valuta"
+      ],
+      "Custom": [
+        "Anpassad"
       ],
       "Custom domains:": [
         "Anpassade domäner:"
@@ -15260,6 +15236,9 @@
       ],
       "Import groups": [
         "Importera grupper"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importera din data till ${ BRAND_NAME }"
       ],
       "Increase security with ${ VPN_APP_NAME }": [
         "Öka säkerheten med ${ VPN_APP_NAME }"
@@ -15582,6 +15561,9 @@
       "Select contact group": [
         "Välj kontaktgrupp"
       ],
+      "Select data to import": [
+        "Välj data att importera"
+      ],
       "Self-destruct message": [
         "Självförstörande meddelande"
       ],
@@ -15796,9 +15778,6 @@
       ],
       "What is a VPN?": [
         "Vad är en VPN?"
-      ],
-      "What would you like to import?": [
-        "Vad vill du importera?"
       ],
       "When is it most important to use a VPN?": [
         "När är det viktigast att använda en VPN?"
