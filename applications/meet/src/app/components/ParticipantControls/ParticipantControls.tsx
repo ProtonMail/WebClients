@@ -307,7 +307,7 @@ export const ParticipantControls = () => {
                         <RecordingControls />
                         <InfoButton />
                     </div>
-                    <div className="flex lg:hidden gap-2 flex-nowrap">
+                    <div className="flex lg:hidden gap-1 sm:gap-2 flex-nowrap">
                         {isMobile() ? (
                             <>
                                 <ChatButton />
