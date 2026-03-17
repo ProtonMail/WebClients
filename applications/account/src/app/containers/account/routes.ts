@@ -22,7 +22,6 @@ import {
     type APP_NAMES,
     BRAND_NAME,
     DARK_WEB_MONITORING_NAME,
-    MAIL_APP_NAME,
     PRODUCT_NAMES,
     PROTON_SENTINEL_NAME,
 } from '@proton/shared/lib/constants';
@@ -670,7 +669,7 @@ export const getAccountAppRoutes = ({
                 id: 'easySwitch',
                 text: c('Title').t`Import via ${PRODUCT_NAMES.EASY_SWITCH}`,
                 description: c('Description')
-                    .t`Choose the service you want to bring into ${MAIL_APP_NAME}, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.`,
+                    .t`Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.`,
                 to: '/easy-switch',
                 icon: 'arrow-down-to-square',
                 available: showEasySwitchSection,
