@@ -8,7 +8,7 @@ import { generateSidebarItemStyle } from '../../../components/layout/sidebar/Dri
 import { DriveSidebarSubfolders } from '../../sidebar/DriveSidebarFolders/DriveSidebarSubfolders';
 import { useSidebarStore } from '../../sidebar/hooks/useSidebar.store';
 import { useSidebarFolders } from '../../sidebar/hooks/useSidebarFolders';
-import type { StoreDevice } from '../devices.store';
+import type { StoreDevice } from '../useDevices.store';
 
 export const DevicesSidebarItem = ({ device }: { device: StoreDevice }) => {
     const uid = device.rootFolderUid;
