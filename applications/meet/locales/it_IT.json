@@ -26,6 +26,9 @@
       "Authenticate": [
         "Autentica"
       ],
+      "Back to dashboard": [
+        "Torna al pannello di controllo"
+      ],
       "Background blur": [
         "Sfondo sfocato"
       ],
@@ -161,6 +164,9 @@
       "Hide timezones": [
         "Nascondi fusi orari"
       ],
+      "Insert emoji": [
+        "Inserisci emoji"
+      ],
       "Join": [
         "Partecipa"
       ],
@@ -184,6 +190,9 @@
       ],
       "Lock meeting": [
         "Blocca riunione"
+      ],
+      "Lower hand": [
+        "Abbassa la mano"
       ],
       "More info: ${ safeTitle }": [
         "Maggiori informazioni: ${ safeTitle }"
@@ -218,11 +227,20 @@
       "Previous page": [
         "Pagina precedente"
       ],
+      "Raise hand": [
+        "Alza la mano"
+      ],
+      "React with ${ emoji }": [
+        "Reagisci con ${ emoji }"
+      ],
       "Receive video": [
         "Ricevi video"
       ],
       "Refer a friend": [
         "Invita un amico"
+      ],
+      "Refresh audio and video tracks": [
+        "Aggiorna tracce audio e video"
       ],
       "Refresh link": [
         "Aggiorna link"
@@ -332,6 +350,9 @@
       "Tap to unblock audio playback": [
         "Tocca per sbloccare la riproduzione audio"
       ],
+      "Try again": [
+        "Riprova"
+      ],
       "Try another method": [
         "Prova un altro metodo"
       ],
@@ -432,6 +453,9 @@
       ],
       "Toggle chat": [
         "Attiva/disattiva chat."
+      ],
+      "Toggle emoji reactions": [
+        "Attiva/disattiva le reazioni con emoji"
       ],
       "Toggle meeting details": [
         "Attiva/disattiva i dettagli della riunione"
@@ -1423,6 +1447,9 @@
       "Enter 6 digits": [
         "Inserisci il codice a 6 cifre"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Inserisci il tuo nome utente senza il dominio (@example.com)"
+      ],
       "Event deleted": [
         "Evento eliminato"
       ],
@@ -1467,6 +1494,12 @@
       ],
       "Failed to send chat message. Please try again.": [
         "Impossibile inviare il messaggio della chat. Riprova."
+      ],
+      "Failed to send emoji reaction. Please try again.": [
+        "Impossibile inviare la reazione con emoji. Riprova."
+      ],
+      "Failed to send reaction. Please try again.": [
+        "Impossibile inviare la reazione. Riprova."
       ],
       "Failed to start recording": [
         "Impossibile avviare la registrazione"
@@ -1675,13 +1708,6 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } necessita di WebRTC per funzionare. Per favore, aggiorna il tuo browser o dispositivo a una versione che supporti WebRTC, prova un altro browser, o disattiva qualsiasi estensione che potrebbe bloccarlo."
       ],
-      "${ participantCount } of ${ maxParticipants } participants": [
-        "${ participantCount } di ${ maxParticipants } partecipanti"
-      ],
-      "${ participantCount } participant": [
-        "${ participantCount } partecipanti",
-        "${ participantCount } partecipanti"
-      ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (tu) sta presentando"
       ],
@@ -1690,6 +1716,9 @@
       ],
       "(You)": [
         "(Voi)"
+      ],
+      "-Removed dangerous URL-": [
+        "-URL pericoloso rimosso-"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ogni numero di telefono può essere utilizzato per verificare un unico account ${ BRAND_NAME }"
@@ -1726,6 +1755,12 @@
       ],
       "Coming soon": [
         "In arrivo"
+      ],
+      "Connection failed": [
+        "Connessione fallita"
+      ],
+      "Connection interrupted. Reconnecting...": [
+        "Connessione interrotta. Riconnessione..."
       ],
       "Connection lost": [
         "Connessione persa"
@@ -1883,6 +1918,9 @@
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
         "Organizza riunioni senza limiti. Effettua l'upgrade per rimuovere il limite di 1 ora e ospitare fino a 100 partecipanti."
       ],
+      "Meeting ended": [
+        "Riunione terminata"
+      ],
       "Meeting full (${ maxParticipants } participants)": [
         "Riunione piena (${ maxParticipants } partecipanti)"
       ],
@@ -1952,9 +1990,6 @@
       "No speaker detected": [
         "Nessun altoparlante rilevato"
       ],
-      "Now your meetings will be opened in the ${ MEET_APP_NAME } desktop app": [
-        "Ora le tue riunioni verranno aperte nell'app desktop ${ MEET_APP_NAME }"
-      ],
       "Only meetings you created appear here": [
         "Solo le riunioni che hai creato compaiono qui"
       ],
@@ -1985,17 +2020,29 @@
       "Please enter the passphrase to decrypt and view this meeting": [
         "Inserisci la frase d'accesso per decriptare e visualizzare questa riunione"
       ],
+      "Please try again or try another browser": [
+        "Per favore riprova o prova un altro browser"
+      ],
       "Poor connection": [
         "Connessione debole"
       ],
       "Premium meeting": [
         "Riunione premium"
       ],
+      "Reconnected successfully": [
+        "Riconnessione riuscita"
+      ],
+      "Reconnecting to meeting...": [
+        "Riconnessione alla riunione..."
+      ],
       "Recording saved": [
         "Registrazione salvata"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Le informazioni di recupero rimarranno su questo dispositivo a meno che tu non decida di eliminarle."
+      ],
+      "Refresh audio and video tracks": [
+        "Aggiorna tracce audio e video"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
@@ -2048,8 +2095,14 @@
       "Thank you for joining.": [
         "Grazie per aver partecipato."
       ],
+      "The host ended this meeting.": [
+        "L'organizzatore ha terminato questa riunione."
+      ],
       "The host has ended the meeting": [
         "L'organizzatore ha terminato la riunione"
+      ],
+      "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
+        "L'organizzatore ti ha rimosso da questa riunione. Se si è trattato di un errore, chiedi all'organizzatore di invitarti di nuovo."
       ],
       "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
         "Questa è una chat crittografata end-to-end con messaggi effimeri. Dopo che lasci la chiamata, non potrai accedere a questa chat."
@@ -2143,6 +2196,9 @@
       ],
       "You left your meeting": [
         "Hai lasciato il tuo meeting."
+      ],
+      "You were removed from the meeting": [
+        "Sei stato rimosso dalla riunione"
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "Sei stato invitato a partecipare a una riunione sicura. Conferma il tuo nome e clicca qui sotto per entrare."
@@ -2710,6 +2766,10 @@
       "Joined at epoch ${ log.epoch }": [
         "Collegato all'epoca ${ log.epoch }"
       ],
+      "Joining meeting with ${ participantCount } other participant…": [
+        "Ti stai unendo alla riunione con ${ participantCount } altro partecipante…",
+        "Ti stai unendo alla riunione con ${ participantCount } altri partecipanti…"
+      ],
       "Local Participant": [
         "Utente Locale"
       ],
@@ -2839,6 +2899,9 @@
       ]
     },
     "Warning": {
+      "Connection is taking longer than expected": [
+        "La connessione sta richiedendo più tempo del previsto"
+      ],
       "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
         "Non è stato possibile accedere alla fotocamera o al microfono. Puoi provare ad attivarli di nuovo dai controlli della riunione."
       ],
@@ -2851,8 +2914,17 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."
       ],
+      "STUN UDP connection failed, trying with TURN relay…": [
+        "Connessione UDP STUN fallita, tentativo tramite relay TURN…"
+      ],
+      "STUN UDP connection timeout, trying with TURN relay": [
+        "Timeout connessione UDP STUN, tentativo tramite relay TURN"
+      ],
       "The host has removed you from the meeting": [
         "L'organizzatore ti ha rimosso dalla riunione"
+      ],
+      "Trying another route…": [
+        "Tentativo con un altro percorso…"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sfortunatamente, al momento non sei online. Per favore completa il modulo sotto per descrivere il problema, lo esamineremo e ti contatteremo quando quando saremo di nuovo online."

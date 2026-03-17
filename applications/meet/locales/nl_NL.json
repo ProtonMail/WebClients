@@ -164,6 +164,9 @@
       "Hide timezones": [
         "Tijdzones verbergen"
       ],
+      "Insert emoji": [
+        "Emoji invoegen"
+      ],
       "Join": [
         "Deelnemen"
       ],
@@ -187,6 +190,9 @@
       ],
       "Lock meeting": [
         "Vergadering vergrendelen"
+      ],
+      "Lower hand": [
+        "Hand laten zakken"
       ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
@@ -220,6 +226,12 @@
       ],
       "Previous page": [
         "Vorige pagina"
+      ],
+      "Raise hand": [
+        "Hand opsteken"
+      ],
+      "React with ${ emoji }": [
+        "Reageren met ${ emoji }"
       ],
       "Receive video": [
         "Ontvang video"
@@ -338,6 +350,9 @@
       "Tap to unblock audio playback": [
         "Tik om audio te deblokkeren"
       ],
+      "Try again": [
+        "Opnieuw proberen"
+      ],
       "Try another method": [
         "Andere methode proberen"
       ],
@@ -438,6 +453,9 @@
       ],
       "Toggle chat": [
         "Chat aan/uit"
+      ],
+      "Toggle emoji reactions": [
+        "Emoji-reacties in- of uitschakelen"
       ],
       "Toggle meeting details": [
         "Vergaderingsgegevens in-/uitschakelen"
@@ -1432,6 +1450,9 @@
       "Enter 6 digits": [
         "Voer 6 cijfers in"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Voer uw gebruikersnaam in zonder het domein (@example.com)"
+      ],
       "Event deleted": [
         "Afspraak verwijderd"
       ],
@@ -1476,6 +1497,12 @@
       ],
       "Failed to send chat message. Please try again.": [
         "Het is niet gelukt om een chat bericht te sturen. Probeer het opnieuw."
+      ],
+      "Failed to send emoji reaction. Please try again.": [
+        "Het is niet gelukt om een emoji-reactie te verzenden. Probeer het opnieuw."
+      ],
+      "Failed to send reaction. Please try again.": [
+        "Het is niet gelukt om een reactie te verzenden. Probeer het opnieuw."
       ],
       "Failed to start recording": [
         "Kon opname niet starten"
@@ -1684,13 +1711,6 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } heeft WebRTC nodig om te functioneren. Update uw browser of apparaat naar een versie die WebRTC ondersteunt, probeer een andere browser, of schakel extensies uit die deze mogelijk blokkeren."
       ],
-      "${ participantCount } of ${ maxParticipants } participants": [
-        "${ participantCount } van ${ maxParticipants } deelnemers"
-      ],
-      "${ participantCount } participant": [
-        "${ participantCount } deelnemer",
-        "${ participantCount } deelnemers"
-      ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (u) is aan het presenteren"
       ],
@@ -1699,6 +1719,9 @@
       ],
       "(You)": [
         "(U)"
+      ],
+      "-Removed dangerous URL-": [
+        "-Gevaarlijke URL verwijderd-"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
@@ -1735,6 +1758,9 @@
       ],
       "Coming soon": [
         "Binnenkort beschikbaar"
+      ],
+      "Connection failed": [
+        "Verbinding mislukt"
       ],
       "Connection interrupted. Reconnecting...": [
         "Verbinding onderbroken. Opnieuw verbinding maken..."
@@ -1973,9 +1999,6 @@
       "No speaker detected": [
         "Geen luidspreker gedetecteerd"
       ],
-      "Now your meetings will be opened in the ${ MEET_APP_NAME } desktop app": [
-        "Nu worden uw vergaderingen geopend in de desktop app ${ MEET_APP_NAME }"
-      ],
       "Only meetings you created appear here": [
         "Alleen vergaderingen die u hebt aangemaakt, worden hier weergegeven"
       ],
@@ -2005,6 +2028,9 @@
       ],
       "Please enter the passphrase to decrypt and view this meeting": [
         "Voer het wachtwoord in om deze vergadering te ontsleutelen en te bekijken."
+      ],
+      "Please try again or try another browser": [
+        "Probeer het opnieuw of probeer een andere browser"
       ],
       "Poor connection": [
         "Slechte verbinding"
@@ -2752,6 +2778,10 @@
       "Joined at epoch ${ log.epoch }": [
         "Toegetreden op epoch ${ log.epoch }"
       ],
+      "Joining meeting with ${ participantCount } other participant…": [
+        "U neemt deel aan de vergadering met ${ participantCount } andere deelnemer…",
+        "U neemt deel aan de vergadering met ${ participantCount } andere deelnemers…"
+      ],
       "Local Participant": [
         "Lokale deelnemer"
       ],
@@ -2881,6 +2911,9 @@
       ]
     },
     "Warning": {
+      "Connection is taking longer than expected": [
+        "De verbinding duurt langer dan verwacht"
+      ],
       "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
         "Kon geen toegang krijgen tot de camera of microfoon. U kunt proberen deze opnieuw in te schakelen via de vergaderingsbediening."
       ],
@@ -2893,8 +2926,17 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],
+      "STUN UDP connection failed, trying with TURN relay…": [
+        "STUN UDP-verbinding mislukt, proberen met TURN-relay…"
+      ],
+      "STUN UDP connection timeout, trying with TURN relay": [
+        "Time-out van STUN UDP-verbinding, proberen met TURN-relay"
+      ],
       "The host has removed you from the meeting": [
         "De host heeft u uit de vergadering verwijderd"
+      ],
+      "Trying another route…": [
+        "Een andere route proberen…"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Helaas zijn wij op dit moment niet online. Beschrijf uw probleem in onderstaand formulier en we kijken ernaar en nemen contact met u op zodra we weer online zijn."

@@ -350,6 +350,9 @@
       "Tap to unblock audio playback": [
         "Ses oynatma engellemesini kaldırmak için dokunun"
       ],
+      "Try again": [
+        "Yeniden dene"
+      ],
       "Try another method": [
         "Başka bir yöntem deneyin"
       ],
@@ -1448,7 +1451,7 @@
         "6 rakam yazın"
       ],
       "Enter your username without the domain (@example.com)": [
-        "Kullanıcı adınızı etki alanı (@example.com) olmadan girin"
+        "Kullanıcı adınızı etki alanı (@example.com) olmadan yazın"
       ],
       "Event deleted": [
         "Etkinlik silindi"
@@ -1496,10 +1499,10 @@
         "Sohbet iletisi gönderilemedi. Lütfen yeniden deneyin."
       ],
       "Failed to send emoji reaction. Please try again.": [
-        "Emoji tepkisi gönderilemedi. Lütfen tekrar deneyin."
+        "Emoji tepkisi gönderilemedi. Lütfen yeniden deneyin."
       ],
       "Failed to send reaction. Please try again.": [
-        "Tepki gönderilemedi. Lütfen tekrar deneyin."
+        "Tepki gönderilemedi. Lütfen yeniden deneyin."
       ],
       "Failed to start recording": [
         "Görüşme kaydı başlatılamadı"
@@ -1716,24 +1719,24 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } uygulamasının çalışması için WebRTC gereklidir. Lütfen tarayıcınızı veya aygıtınızı WebRTC hizmetini destekleyen bir sürüme güncelleyin, farklı bir tarayıcı kullanmayı deneyin veya hizmeti engelleyebilecek tüm eklentileri kapatın."
       ],
-      "${ participantCount } of ${ maxParticipants } participants": [
-        "${ maxParticipants } / ${ participantCount } katılımcı"
-      ],
-      "${ participantCount } participant": [
-        "${ participantCount } katılımcı",
-        "${ participantCount } katılımcı"
-      ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (siz) sunum yapıyorsunuz"
       ],
       "${ presenterName } is presenting": [
         "${ presenterName } sunum yapıyor"
       ],
+      "${ totalParticipantCount } of ${ maxParticipants } participants": [
+        "${ totalParticipantCount } / ${ maxParticipants } katılımcı"
+      ],
+      "${ totalParticipantCount } participant": [
+        "${ totalParticipantCount } katılımcı",
+        "${ totalParticipantCount } katılımcı"
+      ],
       "(You)": [
         "(Siz)"
       ],
       "-Removed dangerous URL-": [
-        "-Tehlikeli URL kaldırıldı-"
+        "-Tehlikeli adres kaldırıldı-"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
@@ -1770,6 +1773,9 @@
       ],
       "Coming soon": [
         "Çok yakında"
+      ],
+      "Connection failed": [
+        "Bağlantı kurulamadı"
       ],
       "Connection interrupted. Reconnecting...": [
         "Bağlantı kesildi. Yeniden bağlanıyor..."
@@ -2008,9 +2014,6 @@
       "No speaker detected": [
         "Bir hoparlör bulunamadı"
       ],
-      "Now your meetings will be opened in the ${ MEET_APP_NAME } desktop app": [
-        "Artık görüşmeleriniz ${ MEET_APP_NAME } bilgisayar uygulamasında açılacak"
-      ],
       "Only meetings you created appear here": [
         "Burada yalnızca sizin oluşturduğunuz görüşmeler görüntülenir"
       ],
@@ -2040,6 +2043,9 @@
       ],
       "Please enter the passphrase to decrypt and view this meeting": [
         "Lütfen bu görüşmeyi görüntülemek ve şifresini çözmek için parolayı yazın"
+      ],
+      "Please try again or try another browser": [
+        "Lütfen tekrar deneyin veya başka bir tarayıcı kullanın"
       ],
       "Poor connection": [
         "Bağlantı kötü"
@@ -2788,8 +2794,8 @@
         "Epoch ${ log.epoch } zamanında katıldı"
       ],
       "Joining meeting with ${ participantCount } other participant…": [
-        "${ participantCount } diğer katılımcıyla toplantıya katılınıyor…",
-        "${ participantCount } diğer katılımcıyla toplantıya katılınıyor…"
+        "${ participantCount } diğer katılımcıyla görüşmeye katılınıyor…",
+        "${ participantCount } diğer katılımcıyla görüşmeye katılınıyor…"
       ],
       "Local Participant": [
         "Yerel katılımcı"
@@ -2920,6 +2926,9 @@
       ]
     },
     "Warning": {
+      "Connection is taking longer than expected": [
+        "Bağlantı beklenenden uzun sürüyor"
+      ],
       "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
         "Kameraya veya mikrofona erişilemedi. Görüşme denetimlerinden yeniden açmayı deneyebilirsiniz."
       ],
@@ -2932,8 +2941,17 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
       ],
+      "STUN UDP connection failed, trying with TURN relay…": [
+        "STUN UDP bağlantısı başarısız oldu, TURN aktarımıyla deneniyor…"
+      ],
+      "STUN UDP connection timeout, trying with TURN relay": [
+        "STUN UDP bağlantısı zaman aşımına uğradı. TURN aktarmıyla deneniyor"
+      ],
       "The host has removed you from the meeting": [
         "Görüşme sahibi sizi görüşmeden çıkardı"
+      ],
+      "Trying another route…": [
+        "Başka bir yöneltme deneniyor…"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Ne yazık ki, şu anca çevrim içi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrim içi olduğumuzda inceleyip size geri döneceğiz."
