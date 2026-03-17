@@ -6,7 +6,7 @@ export async function installProtocols() {
         return;
     }
 
-    registerMailtoApp();
+    await registerMailtoApp();
 }
 
 export async function updateProtocols() {
@@ -14,7 +14,7 @@ export async function updateProtocols() {
         return;
     }
 
-    registerMailtoApp();
+    await registerMailtoApp();
 }
 
 export async function uninstallProtocols() {
