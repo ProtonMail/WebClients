@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "İletmeyi sil"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "İletme işlemi birazdan başlayacak ve yeni e-postalar gelen kutunuzda görünecek."
       ],
       "Mail forward stopped": [
         "Posta iletimi durduruldu"
-      ],
-      "Reconnect": [
-        "Yeniden bağlan"
-      ],
-      "Remove forward": [
-        "İletmeyi kaldır"
       ],
       "You will stop the mail forwarding.": [
         "E-posta iletmeyi durduracaksınız."
@@ -91,7 +82,7 @@
         "Kurtarma özelliğini aç"
       ],
       "Activate reserved address": [
-        "Rezerve edilmiş adresi etkinleştir"
+        "Ayırtılmış adresi kullanıma al"
       ],
       "Activate this address": [
         "Bu adresi etkinleştir"
@@ -471,6 +462,9 @@
       "Delete filter “${ Name }”": [
         "“${ Name }” süzgecini sil"
       ],
+      "Delete forward": [
+        "Yönlendirmeyi sil"
+      ],
       "Delete Gateway": [
         "Ağ geçidini sil"
       ],
@@ -571,7 +565,7 @@
         "Bir daha görüntülenmesin"
       ],
       "Donate": [
-        "Bağış yap"
+        "Bağış yapın"
       ],
       "Done": [
         "Tamam"
@@ -861,6 +855,9 @@
       "Go to settings": [
         "Ayarlara git"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Anladım"
       ],
@@ -887,15 +884,6 @@
       ],
       "Import": [
         "İçe aktar"
-      ],
-      "Import calendars": [
-        "Takvimleri içe aktar"
-      ],
-      "Import contacts": [
-        "Kişileri içe aktar"
-      ],
-      "Import emails": [
-        "E-postaları içe aktar"
       ],
       "Import emails, calendars, contacts": [
         "E-postaları, takvimleri, kişileri içe aktarın"
@@ -1203,6 +1191,9 @@
       "Remove domain": [
         "Etki alanını kaldır"
       ],
+      "Remove forward": [
+        "Yönlendirmeyi kaldır"
+      ],
       "Remove from favorites": [
         "Beğenilenlerden kaldır"
       ],
@@ -1318,7 +1309,7 @@
         "Ülke ara"
       ],
       "Search groups": [
-        "Gruplarda ara"
+        "Grupları ara"
       ],
       "Search settings": [
         "Ayar arayın"
@@ -1564,7 +1555,7 @@
         "Ücretsiz deneyin"
       ],
       "Try payment again": [
-        "Ödemeyi tekrar dene"
+        "Yeniden ödemeyi dene"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yeniden kaydetmeyi deneyin. Şu sorun nedeniyle kaydedilemedi: ${ saveError }"
@@ -2773,10 +2764,10 @@
         "Verileri ${ BRAND_NAME } üzerine kopyalamak için Google Marketplace uygulaması"
       ],
       "Has errors": [
-        "Hatalı"
+        "Sorunlar çıktı"
       ],
       "In progress": [
-        "Devam ediyor"
+        "İşleniyor"
       ],
       "Install app": [
         "Uygulamayı kur"
@@ -2810,7 +2801,7 @@
         "Aktarım durumu"
       ],
       "Not started": [
-        "Başlatılmadı"
+        "Başlatılmamış"
       ],
       "Organization does not have enough seats available": [
         "Kuruluşun yeterli koltuk sayısı yok"
@@ -2864,7 +2855,7 @@
         "Kullanıcı"
       ],
       "Users migrated": [
-        "Kullanıcılar taşındı"
+        "Kullanıcılar aktarıldı"
       ],
       "Verify installation": [
         "Kurulumu doğrula"
@@ -4820,6 +4811,9 @@
       "Available with ${ title }": [
         "${ title } ile kullanılabilir"
       ],
+      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
+        "${ MAIL_APP_NAME }'e dahil etmek istediğiniz servisi seçin; bir adres bağlamanız veya e-postalarınızı, takvimlerinizi ya da kişilerinizi içe aktarmanız için size yol göstereceğiz."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Kuruluşunuzu açmak ve e-posta adresinizi özelleştirmek için önce bunu yapılandırın."
       ],
@@ -6416,7 +6410,7 @@
         "Hesap bulunamadı"
       ],
       "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
-        "Etkinleştirme başarısız oldu. Bilgiler yanlış olabilir veya e-posta adresi zaten etkinleştirilmiş olabilir. Lütfen girdilerinizi kontrol edin veya oturum açın."
+        "Etkinleştirilemedi. Bilgiler yanlış olabilir ya da e-posta adresi zaten etkinleştirilmiş olabilir. Lütfen bilgilerinizi denetleyin ya da oturum açın."
       ],
       "Add at least one action": [
         "En az bir işlem ekleyin"
@@ -6532,7 +6526,7 @@
         "6 rakam yazın"
       ],
       "Enter your username without the domain (@example.com)": [
-        "Kullanıcı adınızı etki alanı (@example.com) olmadan girin"
+        "Kullanıcı adınızı etki alanı (@example.com) olmadan yazın"
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
@@ -6550,7 +6544,7 @@
         "Grup üyeleri yüklenemedi"
       ],
       "Failed to activate your address. Please try again.": [
-        "Adresiniz etkinleştirilemedi. Lütfen tekrar deneyin."
+        "Adresiniz etkinleştirilemedi. Lütfen yeniden deneyin."
       ],
       "Failed to add group member": [
         "Grup üyesi eklenemedi"
@@ -6631,7 +6625,7 @@
         "Kod geçersiz"
       ],
       "Invalid coupon": [
-        "Geçersiz kupon"
+        "Kupon geçersiz"
       ],
       "Invalid domain": [
         "Etki alanı geçersiz"
@@ -6871,7 +6865,7 @@
         "İstek zaman aşımına uğradı"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "Bu tarife için sorumlu sıfatıyla KDV usulü desteklenmemektedir"
+        "Bu tarifede tersine KDV uygulaması desteklenmiyor"
       ],
       "Server not found": [
         "Sunucu bulunamadı"
@@ -6952,7 +6946,7 @@
         "Eklenebilecek en az kredi tutarı: ${ price }"
       ],
       "The minimum donation amount is ${ price }": [
-        "Minimum bağış tutarı ${ price }"
+        "En az bağış tutarı ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "İlke adının uzunluğu 3 ile 40 karakter arasında olmalıdır."
@@ -8475,25 +8469,25 @@
     },
     "Heading": {
       "A simple step today to ensure your child's digital safety tomorrow": [
-        "Çocuğunuzun yarınki dijital güvenliğini sağlamak için bugün atabileceğiniz basit bir adım"
+        "Yarın çocuğunuzun dijital güvenliğini sağlamak için bugün basit bir adım atabilirsiniz"
       ],
       "Activate your reserved email address": [
-        "Rezerve ettiğiniz e-posta adresini etkinleştirin"
+        "Ayırttığınız e-posta adresini etkinleştirin"
       ],
       "Address reservation voucher": [
-        "Adres rezervasyon kuponu"
+        "Adres ayırtma kuponu"
       ],
       "Donate to the ${ BRAND_NAME } Foundation": [
-        "${ BRAND_NAME } Vakfı'na bağış yapın"
+        "${ BRAND_NAME } Vakfı için bağış yapın"
       ],
       "Enter verification code": [
         "Doğrulama kodunu yazın"
       ],
       "Recover activation voucher": [
-        "Aktivasyon kuponunu kurtar"
+        "Etkinleştirme kuponunu geri yükle"
       ],
       "Reserve child's email address": [
-        "Çocuğun e-posta adresini rezerve et"
+        "Çocuğun e-posta adresini ayırtın"
       ],
       "We emailed you the voucher": [
         "Kuponunuzu e-posta ile gönderdik"
@@ -8851,28 +8845,11 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "${ provider } üzerinden içe aktar"
+      "Advanced import": [
+        "Gelişmiş içe aktarma"
       ],
-      "Import from Google": [
-        "Google üzerinden içe aktar"
-      ],
-      "Import from other": [
-        "Diğerleri üzerinden içe aktar"
-      ],
-      "Import from Outlook": [
-        "Outlook üzerinden içe aktar"
-      ],
-      "Import from Yahoo": [
-        "Yahoo üzerinden içe aktar"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Geri alındı"
-      ],
-      "Undo in progress": [
-        "Geri alınıyor"
+      "Import from ${ providerName }": [
+        "${ providerName } üzerinden içe aktar"
       ]
     },
     "Import status": {
@@ -8882,26 +8859,32 @@
       "Canceled": [
         "İptal edildi"
       ],
-      "Canceling": [
-        "İptal ediliyor"
-      ],
-      "Completed": [
-        "Tamamlandı"
+      "Canceling...": [
+        "İptal ediliyor..."
       ],
       "Delayed": [
         "Gecikti"
       ],
+      "Disabled": [
+        "Devre dışı"
+      ],
       "Failed": [
         "Tamamlanamadı"
       ],
-      "In progress": [
-        "İşleniyor"
+      "Imported": [
+        "İçe aktarıldı"
+      ],
+      "In progress...": [
+        "Devam ediyor..."
       ],
       "Paused": [
         "Duraklatıldı"
       ],
-      "Started": [
-        "Başlatıldı"
+      "Undo finished": [
+        "Geri alma tamamlandı"
+      ],
+      "Undo in progress": [
+        "Geri alma işlemi devam ediyor"
       ]
     },
     "Import type": {
@@ -8961,17 +8944,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } bilgilerinizi asla üçüncü taraflarla paylaşmaz. Veriler ${ BRAND_NAME } iç incelemeleri ve Constella Intelligence kuruluşundan gelmektedir."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME }, diğer e-posta hizmeti sağlayıcınızla bağlantıyı kaybettiğinden içe aktarma işlemini duraklattı. Lüften yeniden bağlanın."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME }, hesabınızda yeterli alan olmadığı için içe aktarma işlemini duraklattı. Şunları yapabilirsiniz:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "E-posta hizmeti sağlayıcınız hesabınızın ${ bandwidthLimitLink } değerini sıfırladığı anda ${ BRAND_NAME } içe aktarma işlemini sürdürmeye çalışacaktır. Herhangi bir şey yapmanıza gerek yok. İçe aktarma işlemini iptal ederseniz, daha sonra sürdüremezsiniz ve baştan başlamanız gerekir."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
@@ -9276,7 +9250,7 @@
         "${ BRAND_NAME } tarafından sunulan bir ${ protonSubdomain }, hızlıca bir alt etki alanı kurmanızı sağlar. ${ learnMoreLink }"
       ],
       "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Grup oluşturmak için özel etki alanı gereklidir. Eğer ayarlanmış bir özel etki alanınız yoksa önce ${ linkToDomainPage } kısmından bunu yapın."
+        "Grup oluşturmak için bir özel etki alanı gereklidir. Bir özel etki alanı kurulumunuz yoksa, önce ${ linkToDomainPage } bölümünden bunu yapın."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Daha sonra sertifikayı kolayca geçersiz kılmaya ya da uzatmaya yardımcı olacak bir ad."
@@ -9447,6 +9421,12 @@
       "An error occurred while communicating with the extension": [
         "Eklenti ile iletişim kurulurken bir sorun çıktı"
       ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "E-posta hizmeti sağlayıcınızla olan bağlantı kesildiği için içe aktarma işlemi duraklatıldı."
+      ],
+      "An import is paused because your storage is almost full.": [
+        "Depolama alanınız neredeyse dolduğu için aktarma duraklatıldı."
+      ],
       "and": [
         "ve"
       ],
@@ -9615,9 +9595,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Kuruluşunuzun marka kimliğini güçlendirerek kullanıcılarınız için daha tutarlı bir çevrim içi deneyim sunun."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "İletilerinizi, kişilerinizi ve takvimlerinizi ${ BRAND_NAME } üzerine alın."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "SimpleLogin e-posta adresinizle bir ${ PASS_APP_NAME } hesabı açarak takma adlarınızı doğrudan ${ PASS_APP_NAME } üzerinden yönetebilirsiniz."
       ],
@@ -9659,6 +9636,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "İlerlemek için bir varlık kimliği seçin"
+      ],
+      "Choose your service to connect with": [
+        "Bağlanmak istediğiniz hizmeti seçin"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
@@ -10053,7 +10033,7 @@
         "İçe aktarmak istediğiniz e-posta hesabının kimlik doğrulama bilgilerini yazın."
       ],
       "Enter the email address used to reserve ${ reservedEmail }.": [
-        "${ reservedEmail } adresini rezerve etmek için kullanılan e-posta adresini yazın."
+        "${ reservedEmail } adresini ayırtmak için kullanılan e-posta adresini yazın."
       ],
       "Enter the Entity ID of an **eduGAIN** organization for **${ domain.DomainName }**.": [
         "**${ domain.DomainName }** için bir **eduGAIN** kuruluşunun Entity ID değerini yazın."
@@ -10062,7 +10042,7 @@
         "Yönetici yetkilerini geri yüklemek için kuruluş parolasını yazın. ${ learnMore }"
       ],
       "Enter the reserved email address and the email address used during reservation.": [
-        "Rezervasyon sırasında kullanılan e-posta adresini ve rezerve edilen e-posta adresini yazın."
+        "Ayırtma sırasında kullanılan e-posta adresini ve ayırtılan e-posta adresini yazın."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
@@ -10163,8 +10143,8 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Başka bir e-posta hizmetinden ${ MAIL_APP_NAME } uygulamasına geçiş yapan kullanıcılar için, sorunsuz bir geçiş sağlamak üzere MX kaydını değiştirmeden önce ${ boldAddresses } sekmesini seçin ve tüm etkin e-posta adreslerini ekleyin."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Başka bir hesaptaki e-postalarınızı güvenli ${ MAIL_APP_NAME } gelen kutunuza iletin."
+      "Forwarding automatically sends new incoming emails to your Inbox.": [
+        "Yönlendirme özelliği gelen yeni e-postaları otomatik olarak Gelen Kutunuza gönderir."
       ],
       "Free forever": [
         "Sonsuza kadar ücretsiz"
@@ -10172,8 +10152,8 @@
       "Free trial": [
         "Ücretsiz deneme"
       ],
-      "free up space by deleting older messages or other data": [
-        "eski iletileri veya diğer verileri silerek boş yer açın"
+      "Free up space or upgrade your storage to continue.": [
+        "Devam etmek için depolama alanınızı boşaltın veya depolama kapasitenizi artırın."
       ],
       "Friends and family": [
         "Arkadaşlar ve aile"
@@ -10242,7 +10222,7 @@
         "Gruplar"
       ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
-        "Diğer ailelerin çocuklarına internette güvenli bir başlangıç yapmalarına yardımcı olun. Bu önemli gelişmeyi paylaşın ve herkese duyurun."
+        "Diğer ailelerin çocuklarının güvenli bir internet başlangıcı yapmalarına yardımcı olun. Bu önemli gelişmeyi paylaşın ve herkese duyurun."
       ],
       "here": [
         "buraya"
@@ -10272,7 +10252,7 @@
         "Bu seçenek kapalıysa, kuruluş üyeleri kasaları veya ögeleri yalnızca kuruluş içinde paylaşabilir."
       ],
       "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
-        "Devre dışı bırakılırsa kuruluş üyeleri yeni takma adlar oluşturamayacak. Mevcut takma adlar ise aktif kalmaya devam edecek."
+        "Kapatıldığında, kuruluş üyeleri yeni takma adlar oluşturamaz. Var olan takma adlar etkin olmayı sürdürür."
       ],
       "If disabled, organization members won't be able to create secure links. Previously active secure links remain valid until their expiration.": [
         "Kapatıldığında, kuruluş üyeleri güvenli bağlantılar oluşturamaz. Daha önce etkin olan güvenli bağlantılar, geçerlilik süresi dolana kadar geçerli kalır."
@@ -10284,7 +10264,7 @@
         "Klavye kısayolları etkinleştirilmişse, hızlı işlemler yapmak veya farklı görünümlere geçmek için aşağıdaki tuşları kullanabilirsiniz. ${ metaKey } + K her zaman kullanılabilir."
       ],
       "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
-        "Yazdığınız e-posta adresi bir çocuğun e-posta adresini rezerve etmek için kullanılmışsa aktivasyon kuponunu yeniden göndereceğiz."
+        "Yazdığınız e-posta adresi bir çocuğun e-posta adresini ayırtmak için kullanılmışsa etkinleştirme kuponunu yeniden göndereceğiz."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Sistem saat dilimi geçerli saat dilimi ayarıyla aynı değilse, güncellemeniz istenir (günde en fazla bir kez)."
@@ -10359,11 +10339,18 @@
       "Import from": [
         "Şuradan içe aktar"
       ],
+      "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
+        "Bant genişliği sınırlaması nedeniyle ${ accounts } dosyasından içe aktarma işlemi geçici olarak ertelenmiştir.",
+        "Bant genişliği sınırlaması nedeniyle ${ accounts } dosyasından içe aktarma işlemi geçici olarak ertelenmiştir."
+      ],
       "Import in progress": [
         "İçe aktarılıyor"
       ],
       "Import mailbox": [
         "E-posta kutusunu içe aktar"
+      ],
+      "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
+        "E-postaları, takvimleri veya kişileri ${ BRAND_NAME } hesabınıza tek seferlik olarak içe aktarın."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "ÖNEMLİ: DNS panonuz CNAME değerlerinin noktayla bitmesine izin vermiyorsa CNAME değerlerindeki son noktayı kaldırabilirsiniz."
@@ -10523,7 +10510,7 @@
         "Yalnızca seçiminizi onaylayın, gerisini biz halledeceğiz."
       ],
       "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
-        "Kuponu ihtiyaç duyulana kadar, örneğin ${ DRIVE_APP_NAME } içinde güvenli bir şekilde saklayın."
+        "Kuponu gerek duyacağınız zamana kadar, örneğin ${ DRIVE_APP_NAME } içinde güvende tutun."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Bu rehberler ve ipuçları ile bilgilerinizi daha güvenli ve gizli tutun."
@@ -10735,9 +10722,6 @@
       "No Gateways yet": [
         "Henüz bir ağ geçidi yok"
       ],
-      "No imports or forwarding history.": [
-        "İçe aktarma veya iletme geçmişi yok."
-      ],
       "No label selected": [
         "Herhangi bir etiket seçilmemiş"
       ],
@@ -10785,9 +10769,6 @@
       ],
       "Once you reset your password:": [
         "Parolanızı sıfırladığınızda:"
-      ],
-      "One time import": [
-        "Tek seferlik içe aktarma"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Bu ayarları yalnızca ${ BRAND_NAME } dışındaki alıcılar ile PGP kullanıyorsanız değiştirin."
@@ -10956,7 +10937,10 @@
         "Görüntülemek için lütfen belgeyi açın."
       ],
       "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
-        "Lütfen tarayıcı eklenti ayarlarınızı açın ve ${ PASS_APP_NAME } eklentisinin web sitesi verilerine erişmesine izin verin. Ardından bu sayfayı yenileyin."
+        "Lütfen tarayıcı eklentisi ayarlarını açın ve ${ PASS_APP_NAME } eklentisine site verilerine erişme izni verin. Ardından bu sayfayı yenileyin."
+      ],
+      "Please reconnect to continue.": [
+        "Devam etmek için lütfen yeniden bağlanın."
       ],
       "Please select the folders you would like to import:": [
         "Lütfen içe aktarmak istediğiniz klasörleri seçin:"
@@ -11033,9 +11017,6 @@
       "Public sharing of documents is not yet supported.": [
         "Henüz belgeleri herkese açık olarak paylaşma özelliği yok."
       ],
-      "purchase additional storage": [
-        "ek depolama alanı satın alın"
-      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "${ BRAND_NAME } ile ilgili her konuda yardım almak için bizimle görüşün."
       ],
@@ -11043,7 +11024,7 @@
         "${ categoryLabel } bildirimlerini al"
       ],
       "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "Rezervasyon kuponunu e-posta ile alın. Siz veya çocuğunuz bu kuponu kullanarak 15 yıl içinde adresi etkinleştirebilirsiniz. ${ learnMoreLink }"
+        "Ayırtma kuponunu e-posta ile alın. Siz veya çocuğunuz bu kupon ile adresi 15 yıl içinde etkinleştirebilirsiniz. ${ learnMoreLink }"
       ],
       "Recently used servers:": [
         "Son kullanılan sunucular:"
@@ -11159,9 +11140,6 @@
       "Select users to view their activity": [
         "Etkinliklerini görüntülemek istediğiniz kullanıcıları seçin"
       ],
-      "Select what you want to import.": [
-        "İçe aktarmak istediklerinizi seçin."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Hangi takvimlerin içe aktarılacağını seçin. İçe aktarılan her takvim için tarifenizde bulunan takvim sayısına göre yeni bir takvim oluşturulur."
       ],
@@ -11197,9 +11175,6 @@
       ],
       "Set password": [
         "Parola ayarla"
-      ],
-      "Set up forwarding": [
-        "İletici kur"
       ],
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
@@ -11278,7 +11253,7 @@
         "Bazı sunucular yukarıdaki listede görünmeyebilir. Bu sunucuları bulmak için sunucu adına göre (AT#62 gibi) arama yapın."
       ],
       "Something went wrong. Please try again or contact customer support.": [
-        "Bir şeyler ters gitti. Lütfen tekrar deneyin veya müşteri desteği ile iletişime geçin."
+        "Bir sorun çıktı. Lütfen yeniden deneyin ya da müşteri destek ekibi ile görüşün."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML tek oturum açma ile kimlik doğrulamasına izin verilecek alanı belirtin."
@@ -11300,13 +11275,13 @@
         "${ step }. adım"
       ],
       "Step ${ step }/${ totalSteps }": [
-        "Adım ${ step }/${ totalSteps }"
+        "${ step }/${ totalSteps }. adım"
       ],
       "Step 1 of 2": [
-        "Adım 1 / 2"
+        "1/2. adım"
       ],
       "Step 2 of 2": [
-        "Adım 2 / 2"
+        "2/2. adım"
       ],
       "Storage allocated to other users in this organisation": [
         "Bu kuruluştaki diğer kullanıcılara ayrılmış depolama alanı"
@@ -11398,6 +11373,9 @@
       ],
       "Thanks for the feedback!": [
         "Geri bildiriminiz için teşekkürler!"
+      ],
+      "The ${ bandwidthLimitLink } was reached. We'll automatically resume it once it resets.": [
+        "${ bandwidthLimitLink } sınırına ulaşıldı. Sınır sıfırlandığında hizmet otomatik olarak yeniden başlayacak."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked } iletisi artık görüntülenmeyecek. Ancak yine de ${ encryptionAndKeysLink } altında verilerinizin şifresini çözebilirsiniz."
@@ -11658,7 +11636,7 @@
         "${ BRAND_NAME } ürünlerindeki son gelişmeleri izlemek için çeşitli e-posta gruplarımıza abone olabilir ve zaman zaman ${ blogLink } sayfamıza bakabilirsiniz."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
-        "Kötüye kullanımı veya dolandırıcılığı önlemek için en az ${ minimumDonation } tutarında bir bağış rica ediyoruz. Bu bağış dünya çapında dijital gizliliği savunan ${ protonFoundationLink } çalışmalarını desteklemekte ve gelecek neslin korunmasına yardımcı olmaktadır."
+        "Kötüye kullanımı veya dolandırıcılığı önlemek için en az ${ minimumDonation } tutarında bağış yapmanızı rica ediyoruz. Bu bağış dünya çapında dijital gizliliği savunan ${ protonFoundationLink } çalışmalarını destekliyor ve gelecek neslin korunmasına yardımcı oluyor."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "İlerlemek için, isteği doğrulayabileceğimiz bir hesap kurtarma yöntemi seçin."
@@ -11889,7 +11867,7 @@
         "Olabildiğince resmi ${ VPN_APP_NAME } uygulamalarını kullanmanızı öneririz."
       ],
       "We couldn't complete the transaction. Please try again.": [
-        "İşlemi tamamlayamadık. Lütfen tekrar deneyin."
+        "İşlemi tamamlanamadı. Lütfen yeniden deneyin."
       ],
       "We couldn’t process your payment.": [
         "Ödemenizi işleyemedik."
@@ -12003,7 +11981,7 @@
         "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları veriyoruz."
       ],
       "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
-        "Adresi etkinleştirmeye hazır olduğunuzda karekodu tarayın veya kupondaki bağlantıyı kullanın."
+        "Adresi etkinleştirmeye hazır olduğunuzda kare kodu tarayın ya da kupondaki bağlantıyı kullanın."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm krediyi kullanacağız."
@@ -12122,9 +12100,6 @@
       ],
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Ücretli gizlilik hizmetlerimizi bir arada yalnızca **${ priceString }/ay** ile alabilirsiniz."
-      ],
-      "You can import one data type at a time.": [
-        "Bir seferde bir veri türünü içe aktarabilirsiniz."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
@@ -12314,7 +12289,7 @@
         "Hesabınız güncellendi."
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Hesabınız şu anda sorumlu sıfatıyla KDV usulünü uygulayacak şekilde yapılandırılmış. Bu durum seçilen tarife için desteklenmemektedir. Devam etmek için ya fatura adresinden KDV numarasını kaldırın ya da farklı bir tarife seçin."
+        "Hesabınızda şu anda tersine KDV uygulaması yapılandırılmış. Seçilmiş tarifede bu uygulama desteklenmiyor. İlerlemek için fatura adresinden KDV numarasını kaldırabilir ya da farklı bir tarife seçebilirsiniz."
       ],
       "Your account was successfully updated with this promotion": [
         "Hesabınız bu fırsata göre güncellendi"
@@ -12336,10 +12311,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Ücretsiz deneme süreniz aylık aboneliğe dönüştürüldü. Yenilenme tarihi ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "${ accounts } hizmetinden içe aktarma işleminiz geçici olarak duraklatıldı.",
-        "${ accounts } hizmetinden içe aktarma işlemleriniz geçici olarak duraklatıldı."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Bilgileriniz bizimle güvende olur. Sizinle yalnızca hizmetlerimizi sağlamak için gerekli olduğunda iletişim kuracağız."
@@ -12403,7 +12374,7 @@
         "Deneme süreniz ${ timeRemaining } sonra sona erecek."
       ],
       "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
-        "Rezerve ettiğiniz ${ BRAND_NAME } e-posta adresiniz için kuponunuz: ${ reservedEmail }"
+        "Ayırttığınız ${ BRAND_NAME } e-posta adresi için kuponunuz: ${ reservedEmail }"
       ],
       "YouTube": [
         "YouTube"
@@ -12451,7 +12422,7 @@
     },
     "Info (sub-heading)": {
       "Enter the verification code that was sent to ${ parentEmail }.": [
-        "${ parentEmail } adresine gönderilen doğrulama kodunu girin."
+        "${ parentEmail } adresine gönderilen doğrulama kodunu yazın."
       ]
     },
     "Info - folder colouring feature": {
@@ -13083,7 +13054,7 @@
         "İşlemler"
       ],
       "Activation code": [
-        "Aktivasyon kodu"
+        "Etkinleştirme kodu"
       ],
       "Activity": [
         "Etkinlik"
@@ -13122,7 +13093,7 @@
         "İzin verilen"
       ],
       "Allow alias creation": [
-        "Takma ad oluşturmaya izin ver"
+        "Takma ad oluşturulabilsin"
       ],
       "Allow all users to create vaults": [
         "Tüm kullanıcılar kasalar oluşturabilsin"
@@ -13304,9 +13275,6 @@
       "Calendar": [
         "Takvim"
       ],
-      "Calendars": [
-        "Takvimler"
-      ],
       "Capitalize words": [
         "Sözcükler büyük harfe dönüştürülsün"
       ],
@@ -13332,7 +13300,7 @@
         "Oluşturulan sertifika dosyasının adını yazın"
       ],
       "Choose an address to reserve for your child": [
-        "Çocuğunuz için rezerve etmek istediğiniz adresi seçin"
+        "Çocuğunuz için ayırtmak istediğiniz adresi seçin"
       ],
       "Choose your billing": [
         "Faturanızı seçin"
@@ -13539,7 +13507,7 @@
         "Bu bir daha görüntülenmesin"
       ],
       "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
-        "${ BRAND_NAME } Vakfı'na 1$ veya daha fazla bağış yapın"
+        "${ BRAND_NAME } Vakfı için 1 USD veya daha fazla bağış yapın"
       ],
       "Donation amount": [
         "Bağış tutarı"
@@ -13558,9 +13526,6 @@
       ],
       "Email or username": [
         "E-posta adresi ya da kullanıcı adı"
-      ],
-      "Emails": [
-        "E-postalar"
       ],
       "Emails (all messages)": [
         "E-postalar (tüm iletiler)"
@@ -13605,7 +13570,7 @@
         "Şu parmak izli anahtar için parolayı yazın: ${ fingerprintCode }"
       ],
       "Enter your email address": [
-        "E-posta adresinizi girin"
+        "E-posta adresinizi yazın"
       ],
       "Enter your password": [
         "Parolanızı yazın"
@@ -14127,10 +14092,10 @@
         "İki adımlı doğrulama herkes için zorunlu olsun"
       ],
       "Reserved address": [
-        "Rezerve edilmiş adres"
+        "Ayırtılmış adres"
       ],
       "Reserved email address": [
-        "Rezerve edilmiş e-posta adresi"
+        "Ayırtılmış e-posta adresi"
       ],
       "Reveal password": [
         "Parolayı görüntüle"
@@ -14175,7 +14140,7 @@
         "Sunucu adı"
       ],
       "Set password": [
-        "Parola belirle"
+        "Parolayı ayarlayın"
       ],
       "Share your referral link": [
         "Öneri bağlantınızı paylaşın"
@@ -14308,7 +14273,7 @@
         "İpuçları ve öngörüler"
       ],
       "To activate, scan the QR-code or go to:": [
-        "Etkinleştirmek için karekodu tarayın veya şuraya gidin:"
+        "Etkinleştirmek için kare kodu tarayın ya da şuraya gidin:"
       ],
       "To help us improve, please explain why you are leaving.": [
         "Gelişmemize yardımcı olmak için, lütfen neden ayrıldığınızı açıklayın."
@@ -14443,7 +14408,7 @@
         "Evet, bu hesabı ve tüm verilerini kalıcı olarak silmek istiyorum."
       ],
       "Your activation code:": [
-        "Aktivasyon kodunuz:"
+        "Etkinleştirme kodunuz:"
       ],
       "Your calendar URL": [
         "Takvim adresiniz"
@@ -14464,7 +14429,7 @@
         "Tarifeniz"
       ],
       "Your voucher for your reserved ${ BRAND_NAME } email address:": [
-        "Rezerve ettiğiniz ${ BRAND_NAME } e-posta adresiniz için kuponunuz:"
+        "Ayırttığınız ${ BRAND_NAME } e-posta adresinizin kuponu:"
       ],
       "ZIP code": [
         "Posta kodu"
@@ -14638,7 +14603,7 @@
     },
     "Link": {
       "${ BRAND_NAME } Foundation's": [
-        "${ BRAND_NAME } Vakfı'nın"
+        "${ BRAND_NAME } Vakfı tarafından"
       ],
       "Activity log": [
         "Etkinlik günlüğü"
@@ -14870,7 +14835,7 @@
     },
     "Link label": {
       "Email": [
-        "E-Posta"
+        "E-posta"
       ],
       "Facebook": [
         "Facebook"
@@ -15348,7 +15313,7 @@
         "${ BRAND_NAME } hesabı"
       ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
-        "Çocuğunuz için rezerve edilmiş özel ${ BRAND_NAME } e-posta adresini etkinleştirin ve hesabını oluşturun."
+        "Çocuğunuz için ayırtılmış gizliliği koruyan ${ BRAND_NAME } e-posta adresini etkinleştirin ve hesabını kurun."
       ],
       "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "Çocuğunuzun ${ BRAND_NAME } hesabını etkinleştirin | ${ BRAND_NAME }"
@@ -15378,10 +15343,10 @@
         "${ BRAND_NAME } hesabınızın kullanıcı adını mı unuttunuz? Kurtarma e-posta adresinizi ya da telefon numaranızı kullanarak ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi hizmetlere yeniden erişin."
       ],
       "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
-        "Çocuğunuz için ayrılmış özel ${ BRAND_NAME } e-posta adresine erişimi kurtarın."
+        "Çocuğunuz için ayırtılmış gizliliği koruyan ${ BRAND_NAME } e-posta adresine erişim kazanın."
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
-        "Çocuğunuzun ${ BRAND_NAME } hesabını kurtarın | ${ BRAND_NAME }"
+        "Çocuğunuzun ${ BRAND_NAME } hesabına erişin | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "${ BRAND_NAME } hesabınızın parolasını sıfırlayın"
@@ -18247,7 +18212,7 @@
         "KDV numarası"
       ],
       "VAT reverse charge mechanism applies.": [
-        "Sorumlu sıfatıyla KDV uygulaması geçerlidir."
+        "Tersine KDV uygulaması kullanılıyor."
       ],
       "You already have a subscription to this plan.": [
         "Bu tarife için zaten bir aboneliğiniz var."
@@ -22900,6 +22865,9 @@
       "Check your default mail application": [
         "Varsayılan e-posta uygulamanızı kontrol edin"
       ],
+      "Choose a provider": [
+        "Sağlayıcı seçin"
+      ],
       "Choose an account": [
         "Bir hesap seçin"
       ],
@@ -23026,6 +22994,9 @@
       ],
       "Currency": [
         "Para birimi"
+      ],
+      "Custom": [
+        "Özel"
       ],
       "Custom domains:": [
         "Özel etki alanları:"
@@ -23362,6 +23333,9 @@
       "Forward emails": [
         "E-postaları iletme"
       ],
+      "Forwardings": [
+        "Yönlendirmeler"
+      ],
       "Free": [
         "Free"
       ],
@@ -23449,9 +23423,6 @@
       "Help center": [
         "Yardım merkezi"
       ],
-      "History": [
-        "Geçmiş"
-      ],
       "Home": [
         "Giriş"
       ],
@@ -23500,6 +23471,12 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH } ile içe aktarma"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Verilerinizi ${ BRAND_NAME } aktarın"
+      ],
+      "Imports": [
+        "İçe aktarmalar"
       ],
       "Inactive 2FA": [
         "İki adımlı doğrulama etkin olmayan"
@@ -23739,7 +23716,7 @@
         "Ödemeniz işlenirken sorun çıktı"
       ],
       "Problem processing your request": [
-        "İsteğiniz işlenirken bir sorun çıktı"
+        "İsteğiniz işlenirken sorun çıktı"
       ],
       "Processing...": [
         "İşleniyor..."
@@ -23832,7 +23809,7 @@
         "Yeniden kullanılmış parolalar"
       ],
       "Reverse charge not supported": [
-        "Sorumlu sıfatıyla KDV desteklenmiyor"
+        "Tersine KDV uygulaması desteklenmiyor"
       ],
       "Revoke certificate?": [
         "Sertifika geçersiz kılınsın mı?"
@@ -23875,6 +23852,9 @@
       ],
       "Select contact group": [
         "Kişi grubunu seç"
+      ],
+      "Select data to import": [
+        "İçe aktarılacak verileri seçin"
       ],
       "Select the time to send this notification": [
         "Bu bildirimin gönderileceği zamanı seçin"
@@ -24201,9 +24181,6 @@
       "What is the dark web?": [
         "Karanlık ağ nedir?"
       ],
-      "What would you like to import?": [
-        "Neyi içe aktarmak istersiniz?"
-      ],
       "Wipe all logs?": [
         "Tüm günlükler silinsin mi?"
       ],
@@ -24281,20 +24258,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "İşlemler"
-      ],
-      "Date": [
-        "Tarih"
-      ],
-      "Import": [
-        "İçe aktar"
-      ],
       "Size": [
         "Boyut"
-      ],
-      "Status": [
-        "Durum"
       ]
     },
     "Title header for addresses domain table": {
@@ -25370,10 +25335,10 @@
         "Bu telefon numarasını silerseniz, hesabınızı kurtaramazsınız."
       ],
       "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
-        "Oturum açılamadı. Lütfen ${ PASS_APP_NAME } tarayıcı eklentisini açın ve oradan oturun açın."
+        "Oturum açılamadı. Lütfen ${ PASS_APP_NAME } tarayıcı eklentisini açın ve oradan oturum açın."
       ],
       "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
-        "Kayıt olunamadı. Lütfen ${ PASS_APP_NAME } tarayıcı eklentisini açın ve kaydı oradan gerçekleştirin."
+        "Hesap açılamadı. Lütfen ${ PASS_APP_NAME } tarayıcı eklentisini açın ve oradan hesap açın."
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Bu içe aktarma işlemini iptal ederseniz, daha sonra sürdüremezsiniz. ${ BRAND_NAME }, tüm ilerlemeyi hesabınıza kaydetti. Yine de işlemi iptal etmek istiyor musunuz?"
@@ -25435,8 +25400,8 @@
       "You will lose any customization you made so far.": [
         "Şu ana kadar yaptığınız tüm özelleştirmeler silinecek."
       ],
-      "You will not see this import record in the list any more.": [
-        "Bu içe aktarma kaydını artık listede görmeyeceksiniz."
+      "You will not see this import record in the list anymore.": [
+        "Bu içe aktarma kaydını artık listede göremeyeceksiniz."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ücretsiz denemeniz ${ textDate } tarihinde sona erecek. ${ action }"

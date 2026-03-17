@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Doorsturen verwijderen"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Doorsturen start binnenkort. Nieuwe e-mails verschijnen in uw inbox."
       ],
       "Mail forward stopped": [
         "E-mail doorsturen gestopt"
-      ],
-      "Reconnect": [
-        "Opnieuw verbinden"
-      ],
-      "Remove forward": [
-        "Doorsturen verwijderen"
       ],
       "You will stop the mail forwarding.": [
         "U zult het doorsturen van e-mails stopzetten."
@@ -884,15 +875,6 @@
       ],
       "Import": [
         "Importeren"
-      ],
-      "Import calendars": [
-        "Agenda's importeren"
-      ],
-      "Import contacts": [
-        "Contactpersonen importeren"
-      ],
-      "Import emails": [
-        "E-mails importeren"
       ],
       "Import emails, calendars, contacts": [
         "Importeer e-mails, agenda's, contacten"
@@ -6501,6 +6483,9 @@
       "Enter 6 digits": [
         "Voer 6 cijfers in"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "Voer uw gebruikersnaam in zonder het domein (@example.com)"
+      ],
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin API."
       ],
@@ -8802,31 +8787,6 @@
         "Weet u zeker dat u een privé-sleutel wilt importeren? Het importeren van een onveilige gegenereerde of uitgelekte privé-sleutel kan de veiligheid van uw e-mails schaden."
       ]
     },
-    "Import provider": {
-      "Import from ${ provider }": [
-        "Importeer uit ${ provider }"
-      ],
-      "Import from Google": [
-        "Importeer uit Google"
-      ],
-      "Import from other": [
-        "Importeer uit andere"
-      ],
-      "Import from Outlook": [
-        "Importeer uit Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importeer uit Yahoo"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Ongedaan maken voltooid"
-      ],
-      "Undo in progress": [
-        "Bezig met ongedaan maken"
-      ]
-    },
     "Import status": {
       "Active": [
         "Actief"
@@ -8834,26 +8794,14 @@
       "Canceled": [
         "Geannuleerd"
       ],
-      "Canceling": [
-        "Annuleren"
-      ],
-      "Completed": [
-        "Voltooid"
-      ],
       "Delayed": [
         "Vertraagd"
       ],
       "Failed": [
         "Mislukt"
       ],
-      "In progress": [
-        "Bezig"
-      ],
       "Paused": [
         "Gepauzeerd"
-      ],
-      "Started": [
-        "Gestart"
       ]
     },
     "Import type": {
@@ -8913,17 +8861,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } deelt nooit uw informatie met derden. Gegevens zijn afkomstig van ${ BRAND_NAME } eigen analyses en Constella Intelligentie."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } heeft een import onderbroken omdat de verbinding met uw andere e-mailprovider verbroken is. Gelieve opnieuw verbinding te maken."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } heeft een import gepauzeerd omdat uw account weinig ruimte heeft. U kunt:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } zal proberen de import te hervatten zodra uw e-mailprovider de ${ bandwidthLimitLink } van uw account opnieuw instelt. U hoeft niets te doen. Als u het importeren annuleert, kunt u het niet meer hervatten en moet u opnieuw beginnen."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s versleutelingstechnologie betekent dat niemand toegang heeft tot uw wachten - zelfs wij niet."
@@ -9564,9 +9503,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Boost de merkidentiteit van uw organisatie en creëer een consistentere online ervaring voor uw gebruikers."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Breng uw berichten, contacten en agenda's naar ${ BRAND_NAME }."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Door een ${ PASS_APP_NAME }-account te maken met uw SimpleLogin e-mailadres, kunt u uw aliassen direct vanuit ${ PASS_APP_NAME } beheren."
       ],
@@ -10112,17 +10048,11 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Voor gebruikers die overschakelen naar ${ MAIL_APP_NAME } vanuit een andere e-maildienst, selecteer het tabblad ${ boldAddresses } en voeg alle actieve e-mailadressen toe voordat u het MX-record wijzigt om te zorgen voor een soepele overgang."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Binnenkomende mail doorsturen van een ander account naar uw veilige ${ MAIL_APP_NAME }-inbox."
-      ],
       "Free forever": [
         "Altijd gratis"
       ],
       "Free trial": [
         "Gratis proefversie"
-      ],
-      "free up space by deleting older messages or other data": [
-        "ruimte vrijmaken door oudere berichten of andere gegevens te verwijderen"
       ],
       "Friends and family": [
         "Vrienden en familie"
@@ -10681,9 +10611,6 @@
       "No Gateways yet": [
         "Nog geen gateways"
       ],
-      "No imports or forwarding history.": [
-        "Geen importeer- of doorstuurgeschiedenis."
-      ],
       "No label selected": [
         "Geen label geselecteerd"
       ],
@@ -10731,9 +10658,6 @@
       ],
       "Once you reset your password:": [
         "Zodra u uw wachtwoord herstelt:"
-      ],
-      "One time import": [
-        "Eenmalige import"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Wijzig deze instellingen alleen als u PGP met niet-${ BRAND_NAME } ontvangers gebruikt."
@@ -10976,9 +10900,6 @@
       "Public sharing of documents is not yet supported.": [
         "Publiek delen van documenten is nog niet ondersteund."
       ],
-      "purchase additional storage": [
-        "extra opslagruimte aanschaffen"
-      ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contacteer ons voor hulp met ${ BRAND_NAME }."
       ],
@@ -11102,9 +11023,6 @@
       "Select users to view their activity": [
         "Selecteer gebruikers om hun activiteit te bekijken."
       ],
-      "Select what you want to import.": [
-        "Selecteer wat u wilt importeren."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt afhankelijk van het aantal beschikbare agenda's binnen uw abonnement."
       ],
@@ -11140,9 +11058,6 @@
       ],
       "Set password": [
         "Wachtwoord instellen"
-      ],
-      "Set up forwarding": [
-        "Doorsturen instellen"
       ],
       "Set up your organization": [
         "Stel uw organisatie in"
@@ -12057,9 +11972,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "U kunt onze premium privacy-diensten in één bundel krijgen—en het is maar **${ priceString }/maand**."
       ],
-      "You can import one data type at a time.": [
-        "U kunt maar één type gegevens tegelijk importeren."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
         "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert."
@@ -12267,10 +12179,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Uw gratis proefversie werd succesvol omgezet naar een maandelijks abonnement. Uw verlengingsdatum is ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Uw import van ${ accounts } is tijdelijk vertraagd.",
-        "Uw imports van ${ accounts } zijn tijdelijk vertraagd."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Uw gegevens zijn veilig bij ons. We nemen alleen contact met u op wanneer dit nodig is om onze diensten te leveren."
@@ -13232,9 +13140,6 @@
       "Calendar": [
         "Agenda"
       ],
-      "Calendars": [
-        "Agenda's"
-      ],
       "Capitalize words": [
         "Zet woorden om maar hoofdletters"
       ],
@@ -13486,9 +13391,6 @@
       ],
       "Email or username": [
         "E-mailadres of gebruikersnaam"
-      ],
-      "Emails": [
-        "E-mails"
       ],
       "Emails (all messages)": [
         "E-mails (alle berichten)"
@@ -23356,9 +23258,6 @@
       "Help center": [
         "Helpcentrum"
       ],
-      "History": [
-        "Geschiedenis"
-      ],
       "Home": [
         "Home"
       ],
@@ -24105,9 +24004,6 @@
       "What is the dark web?": [
         "Wat is het dark web?"
       ],
-      "What would you like to import?": [
-        "Wat zou u willen importeren?"
-      ],
       "Wipe all logs?": [
         "Alle logboeken wissen?"
       ],
@@ -24185,20 +24081,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Acties"
-      ],
-      "Date": [
-        "Datum"
-      ],
-      "Import": [
-        "Importeren"
-      ],
       "Size": [
         "Grootte"
-      ],
-      "Status": [
-        "Status"
       ]
     },
     "Title header for addresses domain table": {
@@ -25332,9 +25216,6 @@
       ],
       "You will lose any customization you made so far.": [
         "U verliest elke aanpassing die u tot nu toe hebt gemaakt."
-      ],
-      "You will not see this import record in the list any more.": [
-        "U ziet dit importrecord niet meer in de lijst."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Uw gratis proefversie eindigt op ${ textDate }. ${ action }"

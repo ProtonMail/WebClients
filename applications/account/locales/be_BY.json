@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Выдаліць перасылку"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Неўзабаве пачнецца перасылка. Новыя лісты будуць з'яўляцца ў вашай паштовай скрыні."
       ],
       "Mail forward stopped": [
         "Перасылка пошты спынена"
-      ],
-      "Reconnect": [
-        "Перападключыцца"
-      ],
-      "Remove forward": [
-        "Выдаліць перасылку"
       ],
       "You will stop the mail forwarding.": [
         "Вы спыніце перасылку пошты."
@@ -471,6 +462,9 @@
       "Delete filter “${ Name }”": [
         "Выдаліць фільтр “${ Name }”"
       ],
+      "Delete forward": [
+        "Выдаліць перасылку"
+      ],
       "Delete Gateway": [
         "Выдаліць шлюз"
       ],
@@ -861,6 +855,9 @@
       "Go to settings": [
         "Перайсці ў налады"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Зразумела"
       ],
@@ -887,15 +884,6 @@
       ],
       "Import": [
         "Імпартаваць"
-      ],
-      "Import calendars": [
-        "Імпартаваць календары"
-      ],
-      "Import contacts": [
-        "Імпартаваць кантакты"
-      ],
-      "Import emails": [
-        "Імпартаваць лісты"
       ],
       "Import emails, calendars, contacts": [
         "Імпартаваць лісты, календары, кантакты"
@@ -1202,6 +1190,9 @@
       ],
       "Remove domain": [
         "Выдаліць дамен"
+      ],
+      "Remove forward": [
+        "Выдаліць перасылку"
       ],
       "Remove from favorites": [
         "Выдаліць з абранага"
@@ -4880,6 +4871,9 @@
       "Available with ${ title }": [
         "Даступна з ${ title }"
       ],
+      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
+        "Выберыце сэрвіс, які вы хочаце дадаць у ${ MAIL_APP_NAME }, і майстар дапаможа вам падключыць адрас або імпартаваць вашу пошту, календары або кантакты."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Спачатку сканфігурыруйце гэтыя функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
       ],
@@ -5078,7 +5072,7 @@
     },
     "Domain label": {
       "Verified": [
-        "Праверана"
+        "Спраўджана"
       ]
     },
     "Domain modal": {
@@ -6538,7 +6532,7 @@
         "Аўтаматычныя адказы з'яўляюцца платнай функцыяй. Перайдзіце на платны ўліковы запіс, каб карыстацца імі."
       ],
       "Calendar cannot be found": [
-        "Не атрымалася знайсці каляндар"
+        "Не ўдалося знайсці каляндар"
       ],
       "Calendar limit reached": [
         "Дасягнута абмежаванне па календары"
@@ -6614,6 +6608,9 @@
       ],
       "Enter 6 digits": [
         "Увядзіце 6 лічбаў"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Увядзіце сваё імя карыстальніка без дамена (@example.com)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Памылка падключэння да Bitcoin API."
@@ -7123,7 +7120,7 @@
         "Памылка праверкі"
       ],
       "Verification did not succeed, please try again in an hour.": [
-        "Не атрымалася праверыць. Паспрабуйце яшчэ раз праз гадзіну."
+        "Не ўдалося праверыць. Паспрабуйце яшчэ раз праз гадзіну."
       ],
       "We couldn't sign you in": [
         "Не ўдалося ўвайсці ў сістэму"
@@ -7496,7 +7493,7 @@
         "Расшыфроўка падзей з вашага календара: ${ totalProcessed }/${ totalToProcess }"
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        "З прычыны скідання пароля не атрымалася расшыфраваць і экспартаваць вашы падзеі."
+        "З прычыны скідання пароля не ўдалося расшыфраваць і экспартаваць вашы падзеі."
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
         "З прычыны скідання пароля не ўдалося расшыфраваць і экспартаваць некаторыя вашы падзеі."
@@ -8392,7 +8389,7 @@
         "Групавое запрашэнне адхілена"
       ],
       "Left group": [
-        "Пакінуў(ла) групу"
+        "Пакінуў(-ла) групу"
       ]
     },
     "group_invite_2024": {
@@ -8988,28 +8985,11 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Імпартаваць з ${ provider }"
+      "Advanced import": [
+        "Пашыраны імпарт"
       ],
-      "Import from Google": [
-        "Імпартаваць з Google"
-      ],
-      "Import from other": [
-        "Імпартаваць з іншых пастаўшчыкоў"
-      ],
-      "Import from Outlook": [
-        "Імпартаваць з Outlook"
-      ],
-      "Import from Yahoo": [
-        "Імпартаваць з Yahoo"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Адрабленне завершана"
-      ],
-      "Undo in progress": [
-        "Выконваецца адрабленне"
+      "Import from ${ providerName }": [
+        "Імпартаваць з ${ providerName }"
       ]
     },
     "Import status": {
@@ -9019,26 +8999,32 @@
       "Canceled": [
         "Скасавана"
       ],
-      "Canceling": [
-        "Скасаванне"
-      ],
-      "Completed": [
-        "Завершана"
+      "Canceling...": [
+        "Скасаванне..."
       ],
       "Delayed": [
         "Адкладзена"
       ],
+      "Disabled": [
+        "Адключана"
+      ],
       "Failed": [
         "Збой"
       ],
-      "In progress": [
-        "Выконваецца"
+      "Imported": [
+        "Імпартавана"
+      ],
+      "In progress...": [
+        "Выконваецца..."
       ],
       "Paused": [
         "Прыпынена"
       ],
-      "Started": [
-        "Пачата"
+      "Undo finished": [
+        "Адрабленне завершана"
+      ],
+      "Undo in progress": [
+        "Выконваецца адрабленне"
       ]
     },
     "Import type": {
@@ -9102,17 +9088,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } ніколі не абагульвае вашы звесткі са староннімі асобамі. Даныя атрымліваюцца на падставе ўласнага аналізу ${ BRAND_NAME } і Constella Intelligence."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } прыпыніў імпартаванне, бо страціў падключэнне з вашым іншым пастаўшчыком паслуг электроннай пошты. Аднавіце падключэнне."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } прыпыніў імпартаванне, бо ў вашага ўліковага запісу амаль скончылася вольная прастора на дыску. Вы можаце:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe памочнік у напісанні"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } паспрабуе ўзнавіць імпартаванне, як толькі ваш пастаўшчык паслуг электроннай пошты скіне ${ bandwidthLimitLink } вашага ўліковага запісу. Вам не трэба нічога рабіць. Калі вы скасуеце імпартаванне, то ў вас не будзе магчымасці ўзнавіць яго і вам давядзецца пачынаць усё спачатку."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Тэхналогія шыфравання ${ BRAND_NAME } азначае, што ніхто не зможа атрымаць доступ да вашага пароля - нават мы."
@@ -9654,6 +9631,12 @@
       "An error occurred while communicating with the extension": [
         "Адбылася памылка пры сувязі з пашырэннем"
       ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "Імпартаванне прыпынена, бо падключэнне да вашага паўстаўшчыка электроннай пошты страчана."
+      ],
+      "An import is paused because your storage is almost full.": [
+        "Імпарт прыпынены, бо ваша сховішча амаль запоўнена."
+      ],
       "and": [
         "і"
       ],
@@ -9822,9 +9805,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Павысце ідэнтычнасць сваёй арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Перанясіце свае паведамленні, кантакты і календары ў ${ BRAND_NAME }."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Ствараючы ўліковы запіс ${ PASS_APP_NAME } з дапамогай вашай электроннай пошты SimpleLogin, вы можаце кіраваць сваімі псеўданімамі наўпрост з ${ PASS_APP_NAME }."
       ],
@@ -9866,6 +9846,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Выберыце Entity ID для працягу."
+      ],
+      "Choose your service to connect with": [
+        "Выберыце сэрвіс для падключэння"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы код спраўджання на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
@@ -10380,8 +10363,8 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Для забеспячэння плаўнага пераходу карыстальнікаў, якія пераходзяць на ${ MAIL_APP_NAME } з іншых служб электроннай пошты, выберыце ўкладку ${ boldAddresses } і дадайце ўсе актыўныя адрасы электроннай пошты перад змяненнем запісу MX."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Перасылка ўваходных лістоў з іншага ўліковага запісу ў вашу бяспечную паштовую скрыню ${ MAIL_APP_NAME }."
+      "Forwarding automatically sends new incoming emails to your Inbox.": [
+        "Перасылка аўтаматычна адпраўляе новыя ўваходныя лісты ў вашу паштовую скрыню."
       ],
       "Free forever": [
         "Бясплатна назаўсёды"
@@ -10389,8 +10372,8 @@
       "Free trial": [
         "Бясплатны пробны перыяд"
       ],
-      "free up space by deleting older messages or other data": [
-        "вызваліць месца шляхам выдалення старых паведамленняў або іншых даных"
+      "Free up space or upgrade your storage to continue.": [
+        "Вызваліце месца або палепшыце сховішча, каб працягнуць."
       ],
       "Friends and family": [
         "Сябры і сям’я"
@@ -10578,11 +10561,20 @@
       "Import from": [
         "Імпартаваць з"
       ],
+      "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
+        "Імпартаванне з уліковага запісу ${ accounts } часова затрыманы з-за абмежаванай паласы прапускання.",
+        "Імпартаванні з уліковага запісу ${ accounts } часова затрыманы з-за абмежаванай паласы прапускання.",
+        "Імпартаванні з уліковага запісу ${ accounts } часова затрыманы з-за абмежаванай паласы прапускання.",
+        "Імпартаванні з уліковага запісу ${ accounts } часова затрыманы з-за абмежаванай паласы прапускання."
+      ],
       "Import in progress": [
         "Выконваецца імпартаванне"
       ],
       "Import mailbox": [
         "Імпартаванне паштовай скрыні"
+      ],
+      "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
+        "Імпартуйце аднаразовыя перадачы электроннай пошты, календароў або кантактаў у ваш уліковы запіс ${ BRAND_NAME }."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "ВАЖНА: калі ваша кансоль DNS не дазваляе значэнням CNAME ставіць кропку апошнім сімвалам, вы можаце выдаліць апошні сімвал кропкі ў значэннях CNAME."
@@ -10956,9 +10948,6 @@
       "No Gateways yet": [
         "Шлюзы пакуль адсутнічаюць"
       ],
-      "No imports or forwarding history.": [
-        "Гісторыя імпартавання або перасылкі адсутнічае."
-      ],
       "No label selected": [
         "Метка не выбрана"
       ],
@@ -11006,9 +10995,6 @@
       ],
       "Once you reset your password:": [
         "Пасля скідання вашага пароля:"
-      ],
-      "One time import": [
-        "Аднаразовае імпартаванне"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Змяняйце гэтыя налады толькі ў тым выпадку, калі ўжываеце PGP для перапіскі з атрымальнікамі, якія не карыстаюцца ${ BRAND_NAME }."
@@ -11187,6 +11173,9 @@
       "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
         "Адкрыйце налады пашырэння свайго браўзера і дазвольце пашырэнню ${ PASS_APP_NAME } доступ да даных вэб-сайта. Перазагрузіце старонку пасля выканання гэтых дзеянняў."
       ],
+      "Please reconnect to continue.": [
+        "Перападключыцеся, каб працягнуць."
+      ],
       "Please select the folders you would like to import:": [
         "Выберыце папкі для імпартавання:"
       ],
@@ -11261,9 +11250,6 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "Публічнае абагульванне дакументаў пакуль не падтрымліваецца."
-      ],
-      "purchase additional storage": [
-        "набыць дадатковае сховішча"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Звяртайцеся да нас з любымі пытаннямі, якія датычацца ${ BRAND_NAME }"
@@ -11388,9 +11374,6 @@
       "Select users to view their activity": [
         "Выбраць карыстальнікаў, каб паглядзець іх актыўнасць"
       ],
-      "Select what you want to import.": [
-        "Выберыце, што вы хочаце імпартаваць."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Выберыце, якія календары імпартаваць. Новыя календары будуць створаны для кожнага імпартаванага календара з улікам колькасці календароў, якія даступны на вашым тарыфным плане."
       ],
@@ -11426,9 +11409,6 @@
       ],
       "Set password": [
         "Задаць пароль"
-      ],
-      "Set up forwarding": [
-        "Наладзіць перасылку"
       ],
       "Set up your organization": [
         "Наладзьце сваю арганізацыю"
@@ -11980,7 +11960,7 @@
         "Файл не падтрымліваецца"
       ],
       "Unverified": [
-        "Неправераны"
+        "Неправерана"
       ],
       "Unverified email address.": [
         "Неправераны адрас электроннай пошты"
@@ -12372,9 +12352,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Вы можаце атрымаць нашы прэміяльныя сэрвісы прыватнасці ўсяго за **${ priceString }/месяц** адным камплектам."
       ],
-      "You can import one data type at a time.": [
-        "Вы можаце імпартаваць адзін тып даных за раз."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
@@ -12599,12 +12576,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Яе падаўжэнне адбудзецца: ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Ваша імпартаванне з ${ accounts } часова адкладзена.",
-        "Вашы імпартаванні з ${ accounts } часова адкладзены.",
-        "Вашы імпартаванні з ${ accounts } часова адкладзены.",
-        "Вашы імпартаванні з ${ accounts } часова адкладзены."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "З намі ваша інфармацыя ў бяспецы. Мы будзем звязвацца з вамі, толькі па меры неабходнасці, каб забяспечыць нашымі сэрвісамі."
@@ -13585,9 +13556,6 @@
       "Calendar": [
         "Каляндар"
       ],
-      "Calendars": [
-        "Календары"
-      ],
       "Capitalize words": [
         "Словы з вялікай літары"
       ],
@@ -13839,9 +13807,6 @@
       ],
       "Email or username": [
         "Электронная пошта або імя карыстальніка"
-      ],
-      "Emails": [
-        "Лісты"
       ],
       "Emails (all messages)": [
         "Лісты (усе паведамленні)"
@@ -18647,6 +18612,9 @@
       "VAT number": [
         "Нумар ПДВ"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Ужыты механізм адваротнага налічэння падатку ПДВ"
+      ],
       "You already have a subscription to this plan.": [
         "У вас ужо ёсць падпіска на гэты тарыфны план."
       ],
@@ -18999,7 +18967,7 @@
         "Ваша назва арганізацыі"
       ],
       "yourdomain.com": [
-        "yourdomain.com"
+        "vashdamen.eu"
       ],
       "ZIP code": [
         "Паштовы індэкс"
@@ -23374,6 +23342,9 @@
       "Check your default mail application": [
         "Праверце сваю прадвызначаную паштовую праграму"
       ],
+      "Choose a provider": [
+        "Выберыце пастаўшчыка"
+      ],
       "Choose an account": [
         "Выберыце ўліковы запіс"
       ],
@@ -23502,6 +23473,9 @@
       ],
       "Currency": [
         "Валюта"
+      ],
+      "Custom": [
+        "Карыстальніцкае"
       ],
       "Custom domains:": [
         "Карыстальніцкія дамены:"
@@ -23842,6 +23816,9 @@
       "Forward emails": [
         "Перасылка лістоў"
       ],
+      "Forwardings": [
+        "Перасылка"
+      ],
       "Free": [
         "Бясплатна"
       ],
@@ -23929,9 +23906,6 @@
       "Help center": [
         "Даведачны цэнтр"
       ],
-      "History": [
-        "Гісторыя"
-      ],
       "Home": [
         "Галоўная"
       ],
@@ -23982,6 +23956,12 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Імпартаванне праз ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Імпартуйце свае даныя ў ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Імпартаванні"
       ],
       "Inactive 2FA": [
         "Неактыўныя 2ФА"
@@ -24358,6 +24338,9 @@
       "Select contact group": [
         "Выбар групы кантактаў"
       ],
+      "Select data to import": [
+        "Выберыце даныя для імпарту"
+      ],
       "Select the time to send this notification": [
         "Выберыце час адпраўкі гэтага апавяшчэння"
       ],
@@ -24685,9 +24668,6 @@
       "What is the dark web?": [
         "Што такое цёмная сетка?"
       ],
-      "What would you like to import?": [
-        "Што вы хочаце імпартаваць?"
-      ],
       "Wipe all logs?": [
         "Выцерці ўсе журналы?"
       ],
@@ -24765,20 +24745,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Дзеянні"
-      ],
-      "Date": [
-        "Дата"
-      ],
-      "Import": [
-        "Імпартаванне"
-      ],
       "Size": [
         "Памер"
-      ],
-      "Status": [
-        "Статус"
       ]
     },
     "Title header for addresses domain table": {
@@ -25234,7 +25202,7 @@
         "Падарункавая картка"
       ],
       "Migration": [
-        "Міграцыя"
+        "Перанос"
       ],
       "Payment": [
         "Плацеж"
@@ -25946,7 +25914,7 @@
       "You will lose any customization you made so far.": [
         "Вы страціце любыя наладжванні, якія былі зроблены да гэтага."
       ],
-      "You will not see this import record in the list any more.": [
+      "You will not see this import record in the list anymore.": [
         "Вы больш не ўбачыце ў спісе гэты запіс імпартавання."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [

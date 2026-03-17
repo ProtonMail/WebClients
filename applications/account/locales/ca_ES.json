@@ -24,20 +24,11 @@
       ]
     },
     "account": {
-      "Delete forward": [
-        "Elimina el reenviament"
-      ],
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "El reenviament començarà aviat. Els correus electrònics nous apareixeran a la vostra safata d'entrada."
       ],
       "Mail forward stopped": [
         "El reenviament de correu s'ha aturat."
-      ],
-      "Reconnect": [
-        "Reconnecta"
-      ],
-      "Remove forward": [
-        "Esborra el reenviament"
       ],
       "You will stop the mail forwarding.": [
         "Aturareu el reenviament del correu."
@@ -471,6 +462,9 @@
       "Delete filter “${ Name }”": [
         "Voleu eliminar el filtre \"${ Name }\""
       ],
+      "Delete forward": [
+        "Eliminar el reenviament"
+      ],
       "Delete Gateway": [
         "Elimina la passarel·la"
       ],
@@ -861,6 +855,9 @@
       "Go to settings": [
         "Ves a les preferències"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "D'acord"
       ],
@@ -887,15 +884,6 @@
       ],
       "Import": [
         "Importa"
-      ],
-      "Import calendars": [
-        "Importa calendaris"
-      ],
-      "Import contacts": [
-        "Importar contactes"
-      ],
-      "Import emails": [
-        "Importa correus"
       ],
       "Import emails, calendars, contacts": [
         "Importa correus, calendaris i contactes"
@@ -1202,6 +1190,9 @@
       ],
       "Remove domain": [
         "Esborra el domini"
+      ],
+      "Remove forward": [
+        "Esborrar el reenviament"
       ],
       "Remove from favorites": [
         "Suprimeix dels favorits"
@@ -4819,6 +4810,9 @@
       ],
       "Available with ${ title }": [
         "Està disponible amb ${ title }"
+      ],
+      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
+        "Trieu el servei que voleu portar a ${ MAIL_APP_NAME } i us guiarem en el procés de connectar una adreça o d'importar els vostres correus, calendaris o contactes."
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configureu això primer per activar la vostra organització i personalitzar la vostra adreça de correu."
@@ -8851,28 +8845,11 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importa des de ${ provider }"
+      "Advanced import": [
+        "Importació avançada"
       ],
-      "Import from Google": [
-        "Importa des del Google"
-      ],
-      "Import from other": [
-        "Importa des d'un altre"
-      ],
-      "Import from Outlook": [
-        "Importa des de l'Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importa des del Yahoo"
-      ]
-    },
-    "Import rollback status": {
-      "Undo finished": [
-        "Ha finalitzat la cancel·lació"
-      ],
-      "Undo in progress": [
-        "S'està desfent"
+      "Import from ${ providerName }": [
+        "Importeu des de ${ providerName }"
       ]
     },
     "Import status": {
@@ -8882,26 +8859,32 @@
       "Canceled": [
         "Cancel·lat"
       ],
-      "Canceling": [
-        "S'està cancel·lant"
-      ],
-      "Completed": [
-        "Completat"
+      "Canceling...": [
+        "S'està cancel·lant..."
       ],
       "Delayed": [
         "Retardat"
       ],
+      "Disabled": [
+        "Desactivat"
+      ],
       "Failed": [
         "Error"
       ],
-      "In progress": [
-        "En curs"
+      "Imported": [
+        "S'ha importat"
+      ],
+      "In progress...": [
+        "En curs..."
       ],
       "Paused": [
         "Pausat"
       ],
-      "Started": [
-        "Iniciat"
+      "Undo finished": [
+        "S'ha acabat de desfer"
+      ],
+      "Undo in progress": [
+        "S'està desfent"
       ]
     },
     "Import type": {
@@ -8961,17 +8944,8 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } mai comparteix la vostra informació amb tercers. Les dades provenen de les anàlisis pròpies de ${ BRAND_NAME } i de Constella Intelligence."
       ],
-      "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } ha posat en pausa una importació perquè ha perdut la connexió amb el vostre altre proveïdor de correu electrònic. Torneu a connectar-vos."
-      ],
-      "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "${ BRAND_NAME } ha posat en pausa una importació perquè queda poc d'espai al vostre compte. Podeu:"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistent d'escriptura ${ BRAND_NAME } Scribe"
-      ],
-      "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "${ BRAND_NAME } intentarà reprendre la importació tan aviat com el vostre proveïdor de correu electrònic restableixi el ${ bandwidthLimitLink } del vostre compte. No cal que feu res. Si cancel·leu la importació, no la podreu reprendre i haureu de tornar a començar."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnologia d'encriptació de ${ BRAND_NAME } significa que ningú pot accedir a la vostra contrasenya, ni tan sols nosaltres."
@@ -9447,6 +9421,12 @@
       "An error occurred while communicating with the extension": [
         "S'ha produït un error en comunicar amb l'extensió"
       ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "S'ha pausat una importació perquè s'ha perdut la connexió amb el vostre proveïdor de correu."
+      ],
+      "An import is paused because your storage is almost full.": [
+        "S'ha pausat una importació perquè el vostre emmagatzematge està gairebé ple."
+      ],
       "and": [
         "i"
       ],
@@ -9615,9 +9595,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Potencieu la identitat de marca de la vostra organització i creeu una experiència en línia més coherent per als usuaris."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Porteu els vostres missatges, contactes i calendaris al ${ BRAND_NAME }."
-      ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "En crear un compte ${ PASS_APP_NAME } amb el vostre correu electrònic de SimpleLogin, podeu gestionar els vostres àlies directament des de ${ PASS_APP_NAME }."
       ],
@@ -9659,6 +9636,9 @@
       ],
       "Choose an Entity ID to continue.": [
         "Trieu un ID d'entitat per continuar."
+      ],
+      "Choose your service to connect with": [
+        "Trieu el servei amb què us voleu connectar"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
@@ -10163,8 +10143,8 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Per als usuaris que canviïn a ${ MAIL_APP_NAME } des d'un altre servei de correu electrònic, seleccioneu la pestanya ${ boldAddresses } i afegiu totes les adreces de correu electrònic actives abans de canviar el registre MX per assegurar una transició sense problemes."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Reenvieu els missatges entrants d'un altre compte a la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
+      "Forwarding automatically sends new incoming emails to your Inbox.": [
+        "El reenviament envia automàticament els nous correus electrònics entrants a la vostra bústia d'entrada."
       ],
       "Free forever": [
         "Gratuït per sempre"
@@ -10172,8 +10152,8 @@
       "Free trial": [
         "Prova gratuïta"
       ],
-      "free up space by deleting older messages or other data": [
-        "allibereu espai suprimint missatges antics o altres dades"
+      "Free up space or upgrade your storage to continue.": [
+        "Allibereu espai o amplieu l'emmagatzematge per continuar."
       ],
       "Friends and family": [
         "Amistats i família"
@@ -10359,11 +10339,18 @@
       "Import from": [
         "Importar des de"
       ],
+      "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
+        "La importació des de ${ accounts } s'ha endarrerit temporalment a causa d'un límit d'amplada de banda.",
+        "Les importacions des de ${ accounts } s'han endarrerit temporalment a causa d'un límit d'amplada de banda."
+      ],
       "Import in progress": [
         "Importació en curs"
       ],
       "Import mailbox": [
         "Importar bústia de correu"
+      ],
+      "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
+        "Importa i mostra transferències puntuals de correu electrònic, calendaris o contactes al teu compte de ${ BRAND_NAME }."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "IMPORTANT: Si la vostra consola DNS no permet que els valors de CNAME acabin amb un punt, podeu esborrar el darrer punt dels valors de CNAME."
@@ -10735,9 +10722,6 @@
       "No Gateways yet": [
         "Encara no hi ha passarel·les."
       ],
-      "No imports or forwarding history.": [
-        "No hi ha historial d'importacions o reenviaments."
-      ],
       "No label selected": [
         "No s'ha seleccionat cap etiqueta"
       ],
@@ -10785,9 +10769,6 @@
       ],
       "Once you reset your password:": [
         "Un cop restabliu la contrasenya:"
-      ],
-      "One time import": [
-        "Importació única"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Canvieu aquesta configuració només si utilitzeu PGP amb destinataris que no siguin de ${ BRAND_NAME }."
@@ -10958,6 +10939,9 @@
       "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
         "Obriu la configuració d'extensions del navegador i permeteu que l'extensió ${ PASS_APP_NAME } accedeixi a les dades del lloc web. Després, torneu a carregar aquesta pàgina."
       ],
+      "Please reconnect to continue.": [
+        "Torneu-vos a connectar per continuar."
+      ],
       "Please select the folders you would like to import:": [
         "Seleccioneu les carpetes que voleu importar:"
       ],
@@ -11032,9 +11016,6 @@
       ],
       "Public sharing of documents is not yet supported.": [
         "L'intercanvi públic de documents encara no està suportat."
-      ],
-      "purchase additional storage": [
-        "comprar emmagatzematge addicional"
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Poseu-vos en contacte amb nosaltres per a qualsevol ajuda relacionada amb ${ BRAND_NAME }."
@@ -11159,9 +11140,6 @@
       "Select users to view their activity": [
         "Seleccioneu usuaris per veure'n l'activitat"
       ],
-      "Select what you want to import.": [
-        "Seleccioneu què voleu importar."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Seleccioneu quins calendaris importar. Es crearà un calendari per cada calendari importat segons el nombre de calendaris disponibles al vostre pla."
       ],
@@ -11197,9 +11175,6 @@
       ],
       "Set password": [
         "Estableix la contrasenya"
-      ],
-      "Set up forwarding": [
-        "Configura el reenviament"
       ],
       "Set up your organization": [
         "Configuració de la vostra organització"
@@ -11398,6 +11373,9 @@
       ],
       "Thanks for the feedback!": [
         "Gràcies pels vostres comentaris!"
+      ],
+      "The ${ bandwidthLimitLink } was reached. We'll automatically resume it once it resets.": [
+        "S'ha assolit el límit de ${ bandwidthLimitLink }. Es reprendrà automàticament quan es reinicialitzi."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "El missatge ${ boldDataLocked } ja no es mostrarà, però encara podeu desbloquejar les vostres dades en ${ encryptionAndKeysLink }."
@@ -12123,9 +12101,6 @@
       "You can get our premium privacy services in one bundle—and it’s just **${ priceString }/month**.": [
         "Podeu obtenir els nostres serveis de privadesa prèmium en un sol paquet, i només per **${ priceString }/mes**."
       ],
-      "You can import one data type at a time.": [
-        "Podeu importar un tipus de dades alhora."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }.",
         "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }."
@@ -12336,10 +12311,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "La prova gratuïta s'ha convertit correctament en una subscripció mensual. La data de renovació és ${ nextBillingDate }."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "La vostra importació de ${ accounts } s'ha retardat temporalment.",
-        "Les vostres importacions de ${ accounts } s'han retardat temporalment."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "La vostra informació està segura amb nosaltres. Només ens posarem en contacte quan sigui necessari per oferir els nostres serveis."
@@ -13304,9 +13275,6 @@
       "Calendar": [
         "Calendari"
       ],
-      "Calendars": [
-        "Calendaris"
-      ],
       "Capitalize words": [
         "Poseu les paraules en majúscules"
       ],
@@ -13558,9 +13526,6 @@
       ],
       "Email or username": [
         "Correu electrònic o nom d'usuari"
-      ],
-      "Emails": [
-        "Correus electrònics"
       ],
       "Emails (all messages)": [
         "Correus electrònics (tots els missatges)"
@@ -22807,6 +22772,9 @@
       "Check your default mail application": [
         "Comproveu la vostra aplicació de correu predeterminada"
       ],
+      "Choose a provider": [
+        "Escolliu un proveïdor"
+      ],
       "Choose an account": [
         "Tria un compte"
       ],
@@ -22933,6 +22901,9 @@
       ],
       "Currency": [
         "Moneda"
+      ],
+      "Custom": [
+        "Personalitzar"
       ],
       "Custom domains:": [
         "Dominis personalitzats:"
@@ -23269,6 +23240,9 @@
       "Forward emails": [
         "Reenviament de correus electrònics"
       ],
+      "Forwardings": [
+        "Reenviaments"
+      ],
       "Free": [
         "Gratuït"
       ],
@@ -23356,9 +23330,6 @@
       "Help center": [
         "Centre d'ajuda"
       ],
-      "History": [
-        "Historial"
-      ],
       "Home": [
         "Inici"
       ],
@@ -23407,6 +23378,12 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importa via ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importeu les dades a ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Importacions"
       ],
       "Inactive 2FA": [
         "2FA inactiva"
@@ -23783,6 +23760,9 @@
       "Select contact group": [
         "Seleccionar grup de contactes"
       ],
+      "Select data to import": [
+        "Seleccioneu les dades que voleu importar"
+      ],
       "Select the time to send this notification": [
         "Seleccioneu l'hora per enviar aquesta notificació."
       ],
@@ -24108,9 +24088,6 @@
       "What is the dark web?": [
         "Què és el web fosc?"
       ],
-      "What would you like to import?": [
-        "Què li agradaria importar?"
-      ],
       "Wipe all logs?": [
         "Voleu esborrar tots els registres?"
       ],
@@ -24188,20 +24165,8 @@
       ]
     },
     "Title header": {
-      "Actions": [
-        "Accions"
-      ],
-      "Date": [
-        "Data"
-      ],
-      "Import": [
-        "Importació"
-      ],
       "Size": [
         "Mida"
-      ],
-      "Status": [
-        "Estat"
       ]
     },
     "Title header for addresses domain table": {
@@ -25342,8 +25307,8 @@
       "You will lose any customization you made so far.": [
         "Perdràs qualsevol personalització que hagis fet fins ara."
       ],
-      "You will not see this import record in the list any more.": [
-        "Ja no veureu aquest registre d'importació a la llista."
+      "You will not see this import record in the list anymore.": [
+        "Ja no veureu més a la llista aquest registre d'importació."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "La prova gratuïta acaba el ${ textDate }. ${ action }"
