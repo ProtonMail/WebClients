@@ -15,6 +15,7 @@ import {
     hasSpringSale2026Coupon,
     hasVPN2024,
     hasVPNPassBundle,
+    hasVisionary,
     isManagedExternally,
 } from '@proton/payments';
 
@@ -171,6 +172,14 @@ class OfferSubscription {
         }
 
         return hasBundle(this.subscription);
+    }
+
+    hasVisionary() {
+        if (this.upcomingSubscription) {
+            return hasVisionary(this.upcomingSubscription);
+        }
+
+        return hasVisionary(this.subscription);
     }
 
     usedSpringSale2026() {
