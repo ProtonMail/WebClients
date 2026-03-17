@@ -1,7 +1,7 @@
 import {
     handleNegativeMarginRemoval,
     handleTopLeftRightPropertiesRemoval,
-    startsByANegativeSign,
+    startsWithANegativeSign,
     transformStyleAttributes,
 } from './transformStyleAttributes';
 
@@ -112,6 +112,32 @@ describe('transformStyleAttributes', () => {
         });
     });
 
+    describe('replaceNegativeTextIndentWithUnset', () => {
+        it('Should replace negative text-indent with unset', () => {
+            const document = setup();
+            document.body.innerHTML = `
+                <div id="a" style="text-indent: -12px;">
+                </div>
+            `;
+            transformStyleAttributes(document.body as unknown as Element);
+
+            const a = document.getElementById('a');
+            expect(a?.style.textIndent).toBe('unset');
+        });
+
+        it('Should not replace positive text-indent with unset', () => {
+            const document = setup();
+            document.body.innerHTML = `
+                <div id="b" style="text-indent: 12px;">
+                </div>
+            `;
+            transformStyleAttributes(document.body as unknown as Element);
+
+            const b = document.getElementById('b');
+            expect(b?.style.textIndent).toBe('12px');
+        });
+    });
+
     // had to extract the method, because of a crazy issue
     // expect(a?.style.left).toBe('unset'); don't work because JSDOM does not support unset: https://github.com/jsdom/jsdom/issues/3833
     describe('handleNegativeMarginRemoval', () => {
@@ -214,26 +240,26 @@ describe('transformStyleAttributes', () => {
     });
 });
 
-describe('startsByANegativeSign', () => {
+describe('startsWithANegativeSign', () => {
     it('should return true in these cases', () => {
-        const test1 = startsByANegativeSign('-42px');
+        const test1 = startsWithANegativeSign('-42px');
         expect(test1).toBe(true);
 
-        const test2 = startsByANegativeSign(' -666ex'); // spaces accepted
+        const test2 = startsWithANegativeSign(' -666ex'); // spaces accepted
         expect(test2).toBe(true);
 
-        const test3 = startsByANegativeSign('-0.5pt'); // decimal accepted
+        const test3 = startsWithANegativeSign('-0.5pt'); // decimal accepted
         expect(test3).toBe(true);
     });
 
     it('should return false in these cases', () => {
-        const test1 = startsByANegativeSign('100px'); // no negative
+        const test1 = startsWithANegativeSign('100px'); // no negative
         expect(test1).toBe(false);
 
-        const test2 = startsByANegativeSign('--var-name'); // no number
+        const test2 = startsWithANegativeSign('--var-name'); // no number
         expect(test2).toBe(false);
 
-        const test3 = startsByANegativeSign('plop -12px'); // -12 not at the beginning
+        const test3 = startsWithANegativeSign('plop -12px'); // -12 not at the beginning
         expect(test3).toBe(false);
     });
 });

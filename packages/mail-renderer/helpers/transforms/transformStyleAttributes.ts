@@ -95,7 +95,7 @@ const replaceLeftRightTopProperties = (element: HTMLElement) => {
 };
 
 // starts by (optionnal spaces), a negative sign, some numbers, decimal part not mandatory (only to test CSS stuff, don't use it)
-export const startsByANegativeSign = (string: string) => {
+export const startsWithANegativeSign = (string: string) => {
     return /^\s*-\d+(\.\d+)?/.test(string);
 };
 
@@ -121,31 +121,39 @@ export const handleNegativeMarginRemoval = ({
     string
 >): Map<string, string> => {
     const result = new Map();
-    if (marginLeft && startsByANegativeSign(marginLeft)) {
+    if (marginLeft && startsWithANegativeSign(marginLeft)) {
         result.set('marginLeft', 'unset');
     }
-    if (marginRight && startsByANegativeSign(marginRight)) {
+    if (marginRight && startsWithANegativeSign(marginRight)) {
         result.set('marginRight', 'unset');
     }
-    if (marginTop && startsByANegativeSign(marginTop)) {
+    if (marginTop && startsWithANegativeSign(marginTop)) {
         result.set('marginTop', 'unset');
     }
-    if (marginBottom && startsByANegativeSign(marginBottom)) {
+    if (marginBottom && startsWithANegativeSign(marginBottom)) {
         result.set('marginBottom', 'unset');
     }
-    if (marginInlineStart && startsByANegativeSign(marginInlineStart)) {
+    if (marginInlineStart && startsWithANegativeSign(marginInlineStart)) {
         result.set('marginInlineStart', 'unset');
     }
-    if (marginInlineEnd && startsByANegativeSign(marginInlineEnd)) {
+    if (marginInlineEnd && startsWithANegativeSign(marginInlineEnd)) {
         result.set('marginInlineEnd', 'unset');
     }
-    if (marginBlockStart && startsByANegativeSign(marginBlockStart)) {
+    if (marginBlockStart && startsWithANegativeSign(marginBlockStart)) {
         result.set('marginBlockStart', 'unset');
     }
-    if (marginBlockEnd && startsByANegativeSign(marginBlockEnd)) {
+    if (marginBlockEnd && startsWithANegativeSign(marginBlockEnd)) {
         result.set('marginBlockEnd', 'unset');
     }
     return result;
+};
+
+// some emails (365) are using negative text-indent values, we replace it with unset to avoid issues (partially visible content)
+const replaceNegativeTextIndentWithUnset = (element: HTMLElement) => {
+    const textIndent = element.style.textIndent;
+    if (textIndent && startsWithANegativeSign(textIndent)) {
+        element.style.textIndent = 'unset';
+    }
 };
 
 // some emails are using left and top to hide content, so we remove these properties only if using negative values
@@ -222,5 +230,7 @@ export const transformStyleAttributes = (document: Element) => {
         replaceFixedPositionWithInherit(element);
 
         replaceMinHeightWith100vh(element);
+
+        replaceNegativeTextIndentWithUnset(element);
     }
 };
