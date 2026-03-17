@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useConfig } from '@proton/components';
 import { useDrive } from '@proton/drive';
 
 import { useFlagsDriveFoundationSearch } from '../../flags/useFlagsDriveFoundationSearch';
@@ -18,6 +19,7 @@ export type UseSearchModuleReturn =
           isAvailable: true;
           isInitialIndexing: boolean;
           isSearchable: boolean;
+          isRunningOutdatedVersion: boolean;
 
           // Whether the user has opted in to the search experience.
           isUserOptIn: boolean;
@@ -30,6 +32,7 @@ export type UseSearchModuleReturn =
       };
 
 export const useSearchModule = (): UseSearchModuleReturn => {
+    const { APP_VERSION } = useConfig();
     const isFeatureFlagEnabled = useFlagsDriveFoundationSearch();
     const {
         drive,
@@ -52,6 +55,7 @@ export const useSearchModule = (): UseSearchModuleReturn => {
         });
 
         return SearchModule.getOrCreate({
+            appVersion: APP_VERSION,
             userId: user.ID as SearchUserID,
             driveClient: drive,
             driveClientForSearchEvents,
@@ -79,6 +83,7 @@ export const useSearchModule = (): UseSearchModuleReturn => {
             isAvailable: true,
             isInitialIndexing: searchModuleState.isInitialIndexing,
             isSearchable: searchModuleState.isSearchable,
+            isRunningOutdatedVersion: searchModuleState.isRunningOutdatedVersion,
 
             // TODO: Implement
             isUserOptIn: true,
