@@ -300,6 +300,7 @@ enum MeetFeatureFlag {
     MeetShowReloadTrackButton = 'MeetShowReloadTrackButton',
     MeetH264 = 'MeetH264',
     MeetNewCTAModal = 'MeetNewCTAModal',
+    MeetPreSharedKey = 'MeetPreSharedKey',
 }
 
 enum LumoFeatureFlag {

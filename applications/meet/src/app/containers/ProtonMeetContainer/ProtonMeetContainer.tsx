@@ -107,6 +107,7 @@ export const ProtonMeetContainer = ({
     const meetUpsellEnabled = useFlag('MeetUpsell');
     const meetOpenLinksInDesktopApp = useFlag('MeetOpenLinksInDesktopApp');
     const newCTAModal = useFlag('MeetNewCTAModal');
+    const usePreSharedKey = useFlag('MeetPreSharedKey');
 
     useWakeLock();
 
@@ -364,6 +365,7 @@ export const ProtonMeetContainer = ({
     const handleMlsSetup = async (
         meetingLinkName: string,
         accessToken: string,
+        meetingPassword: string,
         participantsCountValue?: number | null
     ) => {
         if (!mlsSetupDone.current) {
@@ -387,13 +389,31 @@ export const ProtonMeetContainer = ({
                 // eslint-disable-next-line no-console
                 console.log('Joining room with proposal');
                 try {
-                    await wasmApp.joinRoomWithProposal(accessToken, meetingLinkName, sessionId);
+                    await wasmApp.joinRoomWithProposal(
+                        accessToken,
+                        meetingLinkName,
+                        meetingPassword,
+                        usePreSharedKey,
+                        sessionId
+                    );
                 } catch (error) {
                     // fallback to join with external commit
-                    await wasmApp.joinMeetingWithAccessToken(accessToken, meetingLinkName, sessionId);
+                    await wasmApp.joinMeetingWithAccessToken(
+                        accessToken,
+                        meetingLinkName,
+                        meetingPassword,
+                        usePreSharedKey,
+                        sessionId
+                    );
                 }
             } else {
-                await wasmApp.joinMeetingWithAccessToken(accessToken, meetingLinkName, sessionId);
+                await wasmApp.joinMeetingWithAccessToken(
+                    accessToken,
+                    meetingLinkName,
+                    meetingPassword,
+                    usePreSharedKey,
+                    sessionId
+                );
             }
 
             await wasmApp.setMlsGroupUpdateHandler();
@@ -518,7 +538,7 @@ export const ProtonMeetContainer = ({
         }
     };
 
-    const handleJoin = async (displayName: string, meetingToken: string = token) => {
+    const handleJoin = async (displayName: string, meetingToken: string = token, meetingPassword: string) => {
         setDisplayName(displayName);
 
         try {
@@ -538,7 +558,7 @@ export const ProtonMeetContainer = ({
             accessTokenRef.current = accessToken;
 
             const { key: groupKey, epoch } =
-                (await handleMlsSetup(meetingToken, accessToken, participantsCountValue)) || {};
+                (await handleMlsSetup(meetingToken, accessToken, meetingPassword, participantsCountValue)) || {};
 
             reportMLSRelatedError(groupKey, epoch);
 
@@ -788,7 +808,7 @@ export const ProtonMeetContainer = ({
 
             dispatch(setMeetingReadyPopupOpen(true));
 
-            await handleJoin(displayName, id);
+            await handleJoin(displayName, id, passwordBase);
 
             meetingLinkRef.current = getMeetingLink(id, passwordBase);
 
@@ -873,7 +893,7 @@ export const ProtonMeetContainer = ({
                 maxParticipants: details.maxParticipants,
             }));
 
-            await handleJoin(displayName, meetingToken);
+            await handleJoin(displayName, meetingToken, urlPassword);
 
             meetingLinkRef.current = getMeetingLink(token, urlPassword);
             const meetingInfo = await getMeetingInfo(meetingToken);
