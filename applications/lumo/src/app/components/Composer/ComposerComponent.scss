@@ -20,11 +20,11 @@ im.$media-expressions: $media-expressions;
 		margin-block-end: 10px;
 
 		// Mobile background override
-		background-color: var(--background-composer-mobile), var(--background-norm);
+		background-color: var(--background-composer-mobile, var(--background-norm));
 
 		.lumo-input {
 			border: none !important;
-			background-color: var(--background-composer-mobile), var(--background-norm);
+			background-color: var(--background-composer-mobile, var(--background-norm));
 		}
 	}
 
