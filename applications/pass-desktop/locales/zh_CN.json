@@ -1031,6 +1031,9 @@
       "Encrypted JSON not supported": [
         "不支持加密的 JSON"
       ],
+      "Encryption communication for desktop unlock failed.": [
+        "桌面应用解锁的加密通信失败。"
+      ],
       "Error reporting problem": [
         "错误报告"
       ],
@@ -1246,6 +1249,15 @@
       ],
       "Something went wrong. Please sign in again.": [
         "出错了。请重新登录。"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME } 桌面应用已锁定，必须解锁！"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "未安装 ${ PASS_APP_NAME } 桌面应用！"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME } 桌面应用无响应，是否仍在运行？"
       ],
       "The session has expired. Please sign in again.": [
         "登录状态已过期，请重新登录。"
@@ -1761,6 +1773,9 @@
       "Enabling biometrics lock failed": [
         "启用生物识别锁失败"
       ],
+      "Enabling desktop auto-lock": [
+        "正在启用桌面自动锁定"
+      ],
       "Enabling offline mode...": [
         "正在启用离线模式..."
       ],
@@ -1979,9 +1994,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2369,6 +2381,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "此功能目前在 Linux 上处于实验阶段，请确保您的系统是最新的。"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "此功能要求在设置过程中安装并运行 ${ PASS_APP_NAME } 桌面应用。"
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "此项目目前未与任何人共享。请与他人共享。"
