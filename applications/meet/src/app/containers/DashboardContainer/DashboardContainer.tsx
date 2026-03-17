@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -39,9 +39,18 @@ export const DashboardContainer = () => {
 
     const [editedRoom, setEditedRoom] = useState<Meeting | null>(null);
     const [selectedMeetingId, setSelectedMeetingId] = useState<string | undefined>();
+    const [newlyCreatedMeetingId, setNewlyCreatedMeetingId] = useState<string | undefined>();
 
     const { meetings, personalMeeting, setupNewPersonalMeeting, loadingRotatePersonalMeeting, meetingsListStatus } =
         useDependencySetup(false);
+
+    useEffect(() => {
+        if (!newlyCreatedMeetingId) {
+            return;
+        }
+        const timeoutId = setTimeout(() => setNewlyCreatedMeetingId(undefined), 5000);
+        return () => clearTimeout(timeoutId);
+    }, [newlyCreatedMeetingId]);
 
     const goToApp = useAppLink();
 
@@ -122,6 +131,7 @@ export const DashboardContainer = () => {
                 handleRotatePersonalMeeting={setupNewPersonalMeeting}
                 loadingRotatePersonalMeeting={loadingRotatePersonalMeeting}
                 meetingsListStatus={meetingsListStatus}
+                newlyCreatedMeetingId={newlyCreatedMeetingId}
             />
             {upsellModalType && (
                 <CTAModal
@@ -169,7 +179,10 @@ export const DashboardContainer = () => {
                 open={isScheduleMeetingModalOpen}
                 onClose={handleScheduleMeetingModalClose}
                 meeting={selectedMeeting}
-                onMeetingCreated={setSelectedMeetingId}
+                onMeetingCreated={(id) => {
+                    setSelectedMeetingId(id);
+                    setNewlyCreatedMeetingId(id);
+                }}
             />
         </>
     );

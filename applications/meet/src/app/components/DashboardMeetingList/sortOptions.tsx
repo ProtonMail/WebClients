@@ -8,7 +8,7 @@ import type { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 
 import type { SortOptionObject } from './types';
-import { SortOption } from './types';
+import { DashboardMeetingListTab, SortOption } from './types';
 import { formatMeetingDate } from './utils';
 
 const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -21,7 +21,10 @@ const getCreatedOnSubtitle = (meeting: Meeting, dateFormat: SETTINGS_DATE_FORMAT
     return c('Info').t`Created on ${formattedDate}`;
 };
 
-export const getSortOptions = (isPastMeetingsEnabled: boolean): SortOptionObject[] => [
+export const getSortOptions = (
+    isPastMeetingsEnabled: boolean,
+    activeTab: DashboardMeetingListTab
+): SortOptionObject[] => [
     {
         value: SortOption.NewlyCreated,
         label: c('Sort option').t`Newly created`,
@@ -29,14 +32,18 @@ export const getSortOptions = (isPastMeetingsEnabled: boolean): SortOptionObject
         groupBy: 'CreateTime',
         getSubtitle: getCreatedOnSubtitle,
     },
-    {
-        value: SortOption.Upcoming,
-        label: c('Sort option').t`Upcoming`,
-        icon: <IcCalendarToday className="shrink-0 mr-2" />,
-        groupBy: 'adjustedStartTime',
-        getSubtitle: getCreatedOnSubtitle,
-    },
-    ...(isPastMeetingsEnabled
+    ...(activeTab === DashboardMeetingListTab.TimeBased
+        ? [
+              {
+                  value: SortOption.Upcoming,
+                  label: c('Sort option').t`Upcoming`,
+                  icon: <IcCalendarToday className="shrink-0 mr-2" />,
+                  groupBy: 'adjustedStartTime',
+                  getSubtitle: getCreatedOnSubtitle,
+              } as SortOptionObject,
+          ]
+        : []),
+    ...(isPastMeetingsEnabled && activeTab === DashboardMeetingListTab.TimeBased
         ? [
               {
                   value: SortOption.Past,

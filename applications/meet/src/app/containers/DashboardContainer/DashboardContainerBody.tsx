@@ -26,6 +26,7 @@ interface DashboardContainerBodyProps {
     handleRotatePersonalMeeting?: () => void;
     loadingRotatePersonalMeeting?: boolean;
     meetingsListStatus: MeetingListStatus;
+    newlyCreatedMeetingId?: string;
 }
 
 export const DashboardContainerBody = ({
@@ -40,6 +41,7 @@ export const DashboardContainerBody = ({
     handleRotatePersonalMeeting,
     loadingRotatePersonalMeeting,
     meetingsListStatus,
+    newlyCreatedMeetingId,
 }: DashboardContainerBodyProps) => {
     const getHeadline = () => {
         // translator: this word is part of the full sentence "Your conversations matter" but we need to emphasize matter with a purple color
@@ -91,6 +93,7 @@ export const DashboardContainerBody = ({
                     handleNewRoomClick={handleNewRoomClick}
                     handleRotatePersonalMeeting={handleRotatePersonalMeeting}
                     loadingRotatePersonalMeeting={loadingRotatePersonalMeeting}
+                    newlyCreatedMeetingId={newlyCreatedMeetingId}
                 />
             </div>
         </div>
