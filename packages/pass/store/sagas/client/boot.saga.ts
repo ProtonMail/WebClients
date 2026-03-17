@@ -67,7 +67,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
          * that crypto operations can be performed with the current session state. */
         if (online && !PassCrypto.ready) throw new PassCryptoError();
 
-        const result = (fromCache ? undefined : yield synchronize(SyncType.FULL)) as Maybe<SynchronizationResult>;
+        const result = (fromCache ? undefined : yield synchronize(SyncType.FULL, options)) as Maybe<SynchronizationResult>;
 
         /** Sync settings after successful hydration and synchronization.
          * This prevents offline mode from being enabled if the boot
@@ -115,9 +115,10 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
     }
 }
 
-/** If during the boot sequence we detect a state destruction
- * or a caching request : cancel the booting task. This can happen
- * when stressing the app on multiple tabs */
+/** If during the boot sequence we detect a state destruction or a caching
+ * request, cancel the booting task. The `bootWorker` may have already
+ * dispatched `bootSuccess` before being cancelled, so we must explicitly set
+ * the app status to ERROR to avoid leaving the app stuck in a BOOTING state. */
 export default function* watcher(options: RootSagaOptions) {
     yield takeLeading(bootIntent.match, function* (action) {
         const { caching, destroyed } = (yield race({
@@ -129,6 +130,7 @@ export default function* watcher(options: RootSagaOptions) {
         if (caching || destroyed) {
             logger.warn(`[Saga::Boot] boot cancelled [caching=${Boolean(caching)}, destroyed=${Boolean(destroyed)}]`);
             yield put(bootFailure(new Error(c('Action').t`Please retry`)));
+            options.setAppStatus(AppStatus.ERROR);
             options.onBoot?.({ ok: false, clearCache: false, offline: action.payload?.offline ?? false });
         } else yield put(cacheRequest({ throttle: true }));
     });
