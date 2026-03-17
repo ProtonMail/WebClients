@@ -3,8 +3,10 @@ import { useSelector } from 'react-redux';
 
 import type { FormikContextType } from 'formik';
 
+import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { selectAliasByAliasEmail } from '@proton/pass/store/selectors';
 import type { ItemRevision, LoginItemFormValues, Maybe } from '@proton/pass/types';
+import { OrganizationAliasCreateMode } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
@@ -26,6 +28,9 @@ export const useAliasForLogin = <T extends LoginItemFormValues>(form: FormikCont
 
     const { values } = form;
     const { withAlias, itemEmail, aliasPrefix } = values;
+
+    const org = useOrganization();
+    const orgAliasCreationDisabled = org?.settings.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
 
     const aliasOptions = useAliasOptions({ shareId: form.values.shareId, lazy: true });
     const relatedAlias = useSelector(selectAliasByAliasEmail(itemEmail));
@@ -52,12 +57,12 @@ export const useAliasForLogin = <T extends LoginItemFormValues>(form: FormikCont
         () => ({
             setOpen: setAliasModalOpen,
             aliasOptions,
-            canCreate: !relatedAlias && !withAlias,
+            canCreate: !relatedAlias && !withAlias && !orgAliasCreationDisabled,
             open: aliasModalOpen,
             relatedAlias,
             usernameIsAlias: Boolean(relatedAlias || willCreateAlias),
             willCreate: willCreateAlias,
         }),
-        [aliasOptions, withAlias, aliasModalOpen, relatedAlias, willCreateAlias]
+        [aliasOptions, withAlias, aliasModalOpen, relatedAlias, willCreateAlias, orgAliasCreationDisabled]
     );
 };

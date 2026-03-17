@@ -32,7 +32,7 @@ export type DropdownActions = WithAutofillOrigin<
     | { action: DropdownAction.AUTOFILL_CC }
     | { action: DropdownAction.AUTOFILL_IDENTITY }
     | { action: DropdownAction.AUTOFILL_LOGIN; startsWith: string }
-    | { action: DropdownAction.AUTOSUGGEST_ALIAS; prefix: string }
+    | { action: DropdownAction.AUTOSUGGEST_ALIAS; prefix: string; aliasCreationDisabled: boolean }
     | ({ action: DropdownAction.AUTOSUGGEST_PASSWORD } & PasswordAutosuggestOptions)
 >;
 
