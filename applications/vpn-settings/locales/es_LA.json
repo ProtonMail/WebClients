@@ -1153,6 +1153,9 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -8504,6 +8507,9 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "Choose your service to connect with": [
+        "Elige tu servicio para conectarlo"
       ]
     },
     "info": {
@@ -16291,6 +16297,18 @@
       ],
       "Your subscriptions": [
         "Sus suscripciones"
+      ],
+      "Choose a provider": [
+        "Elegir un proveedor"
+      ],
+      "Custom": [
+        "Personalizado"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importe sus datos a ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Seleccionar datos para importar"
       ]
     },
     "Title for payment methods table": {
@@ -17149,6 +17167,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Después de la verificación, no elimine este registro TXT ya que se necesita para confirmar que continúa siendo el propietario del dominio."
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "Importación avanzada"
       ]
     }
   }
