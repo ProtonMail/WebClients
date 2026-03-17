@@ -84,7 +84,7 @@ const stringFeedbackSurveyOptions: RawFeedbackSurveyOptions[] = [
         value: 'Friends and family',
         content: { label: () => c('Info').t`Friends and family` },
         disabled: false,
-        category: 'other',
+        category: 'friends_family',
     },
 ];
 
