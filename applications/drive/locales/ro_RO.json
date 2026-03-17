@@ -556,6 +556,9 @@
       "Go to settings": [
         "Accesare setări"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Am înțeles"
       ],
@@ -592,14 +595,8 @@
       "import": [
         "importare"
       ],
-      "Import calendars": [
-        "Importare calendare"
-      ],
       "Import contacts": [
         "Importare contacte"
-      ],
-      "Import emails": [
-        "Importare mesaje"
       ],
       "Import emails, calendars, contacts": [
         "Importați e-mailuri, calendare, contacte"
@@ -4871,20 +4868,8 @@
       ]
     },
     "Import provider": {
-      "Import from ${ provider }": [
-        "Importare din ${ provider }"
-      ],
-      "Import from Google": [
-        "Importare din Google"
-      ],
-      "Import from other": [
-        "Importare din altă sursă"
-      ],
-      "Import from Outlook": [
-        "Importare din Outlook"
-      ],
-      "Import from Yahoo": [
-        "Importare din Yahoo"
+      "Advanced import": [
+        "Importare avansată"
       ]
     },
     "Import warning": {
@@ -5328,9 +5313,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Îmbunătățiți-vă identitatea de brand a organizației proprii și creați o experiență online mai consistentă pentru utilizatorii acesteia."
       ],
-      "Bring your messages, contacts and calendars to ${ BRAND_NAME }.": [
-        "Aduceți-vă mesajele, contactele și calendarele în ${ BRAND_NAME }."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
       ],
@@ -5384,6 +5366,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Alegeți un plan care vi se potrivește cel mai bine."
+      ],
+      "Choose your service to connect with": [
+        "Alegeți serviciul cu care doriți să vă conectați"
       ],
       "Clear all search data": [
         "Golire date de căutare"
@@ -6042,9 +6027,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una sau mai multe chei de încredere au fost marcate ca fiind „compromise” de către proprietar. Vă recomandăm să „nu aprobați” aceste chei."
       ],
-      "One time import": [
-        "Importare unică"
-      ],
       "Open the guide for recommended actions and helpful links.": [
         "Deschideți ghidul pentru acțiuni recomandate și legături web utile."
       ],
@@ -6295,9 +6277,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selectați formatul de e-mail care doriți să fie folosit implicit când trimiteți mesaje la această adresă."
-      ],
-      "Select what you want to import.": [
-        "Selectați ce doriți să importați."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selectați calendarul de importat. Va fi creat un calendar pentru fiecare calendar importat în limita calendarelor disponibile în plan."
@@ -6875,9 +6854,6 @@
       "You can close the tab or browser in the meantime.": [
         "Puteți închide fila sau navigatorul web între timp."
       ],
-      "You can import one data type at a time.": [
-        "Puteți importa un singur tip de date la un moment dat."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
@@ -7276,9 +7252,6 @@
       "Calendar": [
         "Calendar"
       ],
-      "Calendars": [
-        "Calendare"
-      ],
       "can edit": [
         "poate edita"
       ],
@@ -7415,9 +7388,6 @@
       ],
       "Email format": [
         "Format e-mail"
-      ],
-      "Emails": [
-        "Mesaje"
       ],
       "Emails (all messages)": [
         "Mesaje (toate mesajele)"
@@ -10351,6 +10321,9 @@
       "VAT number": [
         "Valoare TVA"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Se aplică mecanismul de taxare inversă a TVA."
+      ],
       "You already have a subscription to this plan.": [
         "Deja aveți un abonament la acest plan."
       ],
@@ -10749,7 +10722,7 @@
         "Valorificați oferta"
       ],
       "SPRING SALE 2026": [
-        "OFERTĂ DE PRIMĂVERII 2026"
+        "OFERTĂ PRIMĂVERII 2026"
       ]
     },
     "q1campaign: Info": {
@@ -10837,7 +10810,7 @@
         "pentru 12 luni"
       ],
       "SPRING SALE": [
-        "OFERTĂ DE PRIMĂVERII"
+        "OFERTĂ PRIMĂVERII"
       ]
     },
     "Referral": {
@@ -12463,6 +12436,9 @@
       "Check for malicious files": [
         "Verificare fișiere malițioase"
       ],
+      "Choose a provider": [
+        "Alegeți un furnizor"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Revendicați-vă adresa ${ MAIL_APP_NAME }"
       ],
@@ -12528,6 +12504,9 @@
       ],
       "Currency": [
         "Monedă"
+      ],
+      "Custom": [
+        "Personalizat"
       ],
       "Customize and confirm": [
         "Personalizare și confirmare"
@@ -12796,6 +12775,9 @@
       ],
       "Import groups": [
         "Importare grupuri"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importați-vă datele în ${ BRAND_NAME }"
       ],
       "Information exposed in breach": [
         "Informații expuse în divulgare"
@@ -13075,6 +13057,9 @@
       "Select contact group": [
         "Selectare grup contacte"
       ],
+      "Select data to import": [
+        "Selectați datele de importat"
+      ],
       "Select link expiration date": [
         "Selectați data expirării legăturii web"
       ],
@@ -13139,7 +13124,7 @@
         "Sortare fișiere/foldere"
       ],
       "Spring Sale": [
-        "Reducere de primăvară"
+        "Ofertă de primăvară"
       ],
       "Start a new import": [
         "Începere importare nouă"
@@ -13314,9 +13299,6 @@
       ],
       "What is a VPN?": [
         "Ce este un VPN?"
-      ],
-      "What would you like to import?": [
-        "Ce ați dori să importați?"
       ],
       "When is it most important to use a VPN?": [
         "Când este cel mai important să folosiți un VPN?"
