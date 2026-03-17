@@ -6,6 +6,8 @@ export type SearchModuleState = {
     isInitialIndexing: boolean;
     // Whether the search module is ready to receive any search queries.
     isSearchable: boolean;
+    // Whether this tab is running an outdated app version compared to another tab.
+    isRunningOutdatedVersion: boolean;
 };
 
 export type SearchQuery = {
