@@ -1,4 +1,4 @@
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -13,10 +13,8 @@ import SupportDropdown from '../../public/SupportDropdown';
 import tvLogo from './tv.svg';
 
 export const TvContainerNotSignedIn = () => {
-    const { code } = useParams<{ code: string }>();
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
-    searchParams.append('code', code);
 
     return (
         <Layout toApp="proton-vpn-settings" hasDecoration hasAppLogos={false} hasFooter={false}>
@@ -27,7 +25,7 @@ export const TvContainerNotSignedIn = () => {
                     {c('Info').t`Complete the sign-in on this device to start using ${VPN_APP_NAME} on your TV.`}
                 </span>
                 <div className="flex flex-column gap-4 items-center">
-                    <Link className="w-full" to={`/signup?${searchParams.toString()}`}>
+                    <Link className="w-full" to={`/vpn/signup?${searchParams.toString()}`}>
                         <Button fullWidth color="norm" shape="solid">{c('Info').t`Create an account`}</Button>
                     </Link>
                     <Link className="w-full" to={`/login?${searchParams.toString()}`}>
