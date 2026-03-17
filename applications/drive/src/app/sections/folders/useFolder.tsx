@@ -12,7 +12,7 @@ import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
-import { useDeviceStore } from '../devices/devices.store';
+import { useDevicesStore } from '../devices/useDevices.store';
 import { type FolderViewItem, useFolderStore } from './useFolder.store';
 
 export function useFolder() {
@@ -46,7 +46,7 @@ export function useFolder() {
         // and immediately added to the store in order to listen for events right away
         async (folderNodeUid: string, folderShareId: string, ac: AbortController) => {
             const { setIsLoading, reset, setItems, setFolder, setRole, setPermissions } = useFolderStore.getState();
-            const { getByRootFolderUid } = useDeviceStore.getState();
+            const { getByRootFolderUid } = useDevicesStore.getState();
             reset();
             setIsLoading(true);
 

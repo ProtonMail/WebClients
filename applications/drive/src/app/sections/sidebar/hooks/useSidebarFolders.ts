@@ -7,7 +7,7 @@ import { NodeType, useDrive } from '@proton/drive/index';
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getDeviceName } from '../../../utils/sdk/getNodeName';
-import { useDeviceStore } from '../../devices/devices.store';
+import { useDevicesStore } from '../../devices/useDevices.store';
 import type { SidebarItem } from './useSidebar.store';
 import { useSidebarStore } from './useSidebar.store';
 
@@ -49,8 +49,8 @@ export const useSidebarFolders = () => {
 
     const loadDevicesRoot = useCallback(async () => {
         const { setItem } = useSidebarStore.getState();
-        const { setDevice, setLoading: setDeviceLoading } = useDeviceStore.getState();
-        setDeviceLoading(true);
+        const { setItem: setDevice, setLoading } = useDevicesStore.getState();
+        setLoading(true);
         try {
             for await (const device of drive.iterateDevices()) {
                 setDevice(device);
@@ -70,7 +70,7 @@ export const useSidebarFolders = () => {
             const errorNotiticationText = c('Notification').t`Error while listing devices`;
             handleSdkError(e, { fallbackMessage: errorNotiticationText });
         }
-        setDeviceLoading(false);
+        setLoading(false);
     }, [drive]);
 
     const loadFoldersRoot = useCallback(async () => {
