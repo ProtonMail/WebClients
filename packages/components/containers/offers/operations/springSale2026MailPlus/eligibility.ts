@@ -33,7 +33,11 @@ export function getIsEligible({
 
     if (subscription) {
         const offerSubscription = new OfferSubscription(subscription);
-        if (offerSubscription.usedSpringSale2026() || !isSubscriptionCheckAllowed(subscription, offerConfig)) {
+        if (
+            offerSubscription.hasVisionary() ||
+            offerSubscription.usedSpringSale2026() ||
+            !isSubscriptionCheckAllowed(subscription, offerConfig)
+        ) {
             return false;
         }
     }
