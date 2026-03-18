@@ -51,7 +51,7 @@ export function usePreviewState({
 
     const previewMethod = node ? getContentPreviewMethod(node) : undefined;
     const mimeType = node ? getNodeMimeType(node) : undefined;
-    const videoStreaming = useVideoStreaming({ nodeUid, mimeType });
+    const videoStreaming = useVideoStreaming({ drive, nodeUid, mimeType });
     const effectivePreviewMethod = getEffectivePreviewMethod(previewMethod, node, videoStreaming);
 
     const shouldIgnoreError = (nodeUid: string, error: unknown) => {
