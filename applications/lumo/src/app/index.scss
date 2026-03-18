@@ -15,16 +15,6 @@ im.$media-expressions: $media-expressions;
 :root {
 	--optional-font-family: 'OpenRunde', system-ui, sans-serif;
 }
-//
-//body::before {
-//	position: fixed;
-//	display: flex;
-//	inset-block-start: 0;
-//	background-color: red;
-//	color: white;
-//	inset-inline-start: 0;
-//	z-index: 12000;
-//}
 
 .main-text-container {
 	container-type: inline-size;
@@ -357,4 +347,9 @@ im.$media-expressions: $media-expressions;
 
 .no-border {
 	border: none !important;
+}
+
+.apps-dropdown-button {
+	stroke-width: 0.3px;
+	stroke: currentcolor;
 }
