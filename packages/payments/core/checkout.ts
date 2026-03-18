@@ -7,6 +7,7 @@ import { pick } from '@proton/shared/lib/helpers/object';
 
 import type { CheckSubscriptionData } from './api/api';
 import { ADDON_NAMES, ADDON_PREFIXES, CYCLE, DEFAULT_CYCLE, PLANS, PLAN_NAMES, PLAN_TYPES } from './constants';
+import { InvalidCouponError } from './errors';
 import type { Currency, FeatureLimitKey, PlanIDs, Pricing } from './interface';
 import {
     getAddonType,
@@ -390,6 +391,32 @@ export const getOptimisticCheckResult = ({
         },
     };
 };
+/**
+ * Only compare the subscription-defining properties, intentionally ignoring billing address fields (BillingAddress,
+ * VatId, etc.) since those are the fields most likely to cause the error and their change shouldn't invalidate the
+ * pricing fallback. The listed properties can influence amountDue.
+ */
+const SUBSCRIPTION_PROPS_TO_PICK: (keyof CheckSubscriptionData)[] = [
+    'Plans',
+    'Currency',
+    'Cycle',
+    'CouponCode',
+    'Codes',
+    'IsTrial',
+];
+
+/**
+ * When the error is caused by an invalid coupon, the coupon itself is the source of the error — not a fundamental
+ * plan change. Exclude coupon fields from the comparison so the previous good estimation's pricing is preserved
+ * instead of falling through to the raw optimistic estimation (which doesn't account for proration/credits).
+ */
+const getSubscriptionProps = (subscriptionEstimationWithError: SubscriptionEstimation) => {
+    const isInvalidCouponError = subscriptionEstimationWithError.error instanceof InvalidCouponError;
+
+    return isInvalidCouponError
+        ? SUBSCRIPTION_PROPS_TO_PICK.filter((p) => p !== 'CouponCode' && p !== 'Codes')
+        : SUBSCRIPTION_PROPS_TO_PICK;
+};
 
 /**
  * Creates an "informed" optimistic subscription estimation by merging pricing data from the last
@@ -413,19 +440,10 @@ export const getInformedOptimisticSubscriptionEstimation = (
     subscriptionEstimationWithError: SubscriptionEstimation,
     subscriptionEstimationWithoutError: SubscriptionEstimation
 ): SubscriptionEstimation => {
-    // Only compare the subscription-defining properties, intentionally ignoring billing address fields (BillingAddress,
-    // VatId, etc.) since those are the fields most likely to cause the error and their change shouldn't invalidate the
-    // pricing fallback. The listed properties can influence amountDue.
-    const propsToPick: (keyof CheckSubscriptionData)[] = [
-        'Plans',
-        'Currency',
-        'Cycle',
-        'CouponCode',
-        'Codes',
-        'IsTrial',
-    ];
-    const baseRequestDataWithErrorResponse = pick(subscriptionEstimationWithError.requestData, propsToPick);
-    const baseRequestDataWithoutErrorResponse = pick(subscriptionEstimationWithoutError.requestData, propsToPick);
+    const propertiesToPick = getSubscriptionProps(subscriptionEstimationWithError);
+
+    const baseRequestDataWithErrorResponse = pick(subscriptionEstimationWithError.requestData, propertiesToPick);
+    const baseRequestDataWithoutErrorResponse = pick(subscriptionEstimationWithoutError.requestData, propertiesToPick);
 
     // If core subscription parameters match, the pricing from the last good estimation is still
     // relevant, so we create a hybrid: good pricing data + current error + current request data.
