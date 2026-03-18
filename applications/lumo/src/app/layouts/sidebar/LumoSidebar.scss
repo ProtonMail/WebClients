@@ -321,53 +321,6 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-.sidebar-section-header {
-	display: flex;
-	align-items: center;
-	block-size: 32px;
-	padding-block: 4px;
-	padding-inline: 8px;
-	margin-block: 8px 4px;
-
-	svg,
-	.icon {
-		inline-size: 16px;
-		block-size: 16px;
-		margin-inline-end: 8px;
-		flex-shrink: 0;
-		opacity: 0.7;
-	}
-
-	span {
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-}
-
-.sidebar-section-header-collapsed {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	block-size: 40px;
-	padding: 8px;
-	margin-block: 4px;
-	cursor: pointer;
-	border-radius: 8px;
-	transition: background-color 0.15s ease;
-
-	&:hover {
-		background-color: var(--background-weak);
-	}
-
-	svg,
-	.icon {
-		inline-size: 20px;
-		block-size: 20px;
-		opacity: 0.7;
-	}
-}
-
 // Desktop sidebar z-index to ensure it's above disclaimers and other content
 .sidebar {
 	z-index: 10; // Higher than disclaimer (z-1) but lower than mobile overlay (z-100)
