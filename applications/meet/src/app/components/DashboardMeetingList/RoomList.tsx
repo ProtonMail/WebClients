@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 
-import { MeetingRow } from './MeetingRow';
+import { MeetingRow } from './MeetingRow/MeetingRow';
 import { NoResultsPlaceholder } from './NoResultsPlaceholder';
 import { PersonalMeetingRowUpsell } from './PersonalMeetingRowUpsell';
 import { PlaceholderPlusSign } from './PlaceholderPlusSign';

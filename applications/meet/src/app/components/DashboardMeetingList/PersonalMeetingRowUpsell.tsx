@@ -8,7 +8,7 @@ import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { setUpsellModalType } from '@proton/meet/store/slices';
 import { UpsellModalTypes } from '@proton/meet/types/types';
 
-import './MeetingRow.scss';
+import './MeetingRow/MeetingRow.scss';
 
 export const PersonalMeetingRowUpsell = () => {
     const dispatch = useMeetDispatch();
