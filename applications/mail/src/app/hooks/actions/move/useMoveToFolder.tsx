@@ -33,6 +33,11 @@ export interface MoveParams {
     percentUnread?: number;
 }
 
+/**
+ * @deprecated
+ * Please do not use this hook anymore unless you need to call the select all.
+ * You should use useApplyLocation instead
+ */
 export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
     const { moveSelectionToFolder, moveToSpamModal, moveSnoozedModal, moveScheduledModal } =
         useMoveSelectionToFolder(setContainFocus);
