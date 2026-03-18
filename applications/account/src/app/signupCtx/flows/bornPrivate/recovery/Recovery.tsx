@@ -7,6 +7,7 @@ import { useFlagsStatus } from '@proton/unleash/proxy';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { type MetaTags, useMetaTags } from '../../../../useMetaTags';
+import type { ActivationFormState } from '../activation/ActivationForm';
 import RecoveryConfirmation from './steps/RecoveryConfirmation';
 import RecoveryEmail from './steps/RecoveryEmail';
 import RecoveryVerificationCode from './steps/RecoveryVerificationCode';
@@ -19,6 +20,7 @@ export enum Steps {
 
 interface RecoveryLocationState {
     reservedEmail?: string;
+    activationFormState?: ActivationFormState;
 }
 
 interface RecoveryState {
@@ -37,6 +39,7 @@ const Recovery = ({ metaTags }: RecoveryProps) => {
     const { flagsReady } = useFlagsStatus();
     const isBornPrivateActivationRecoveryEnabled = useFlag('BornPrivateActivationRecovery');
     const initialReservedEmail = location.state?.reservedEmail || '';
+    const activationFormState = location.state?.activationFormState;
 
     const [step, setStep] = useState<Steps>(Steps.RecoveryEmail);
     const [recoveryState, setRecoveryState] = useState<RecoveryState>({
@@ -72,7 +75,10 @@ const Recovery = ({ metaTags }: RecoveryProps) => {
     };
 
     const handleBackToActivation = () => {
-        history.push(SSO_PATHS.BORN_PRIVATE_ACTIVATE);
+        history.push({
+            pathname: SSO_PATHS.BORN_PRIVATE_ACTIVATE,
+            state: { formState: activationFormState },
+        });
     };
 
     return (

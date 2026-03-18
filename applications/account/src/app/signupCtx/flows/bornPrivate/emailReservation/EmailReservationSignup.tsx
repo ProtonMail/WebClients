@@ -8,7 +8,9 @@ import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { useFlagsStatus } from '@proton/unleash/proxy';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import bornPrivatePage from '../../../../../pages/born-private';
 import { SignupType } from '../../../../signup/interfaces';
+import { useMetaTags } from '../../../../useMetaTags';
 import { SignupContextProvider, useSignup } from '../../../context/SignupContext';
 import Confirmation from './steps/Confirmation';
 import Donation from './steps/Donation';
@@ -103,6 +105,7 @@ const EmailReservationFlow = () => {
 };
 
 const EmailReservationSignup = () => {
+    useMetaTags(bornPrivatePage());
     const location = useLocation();
     const { flagsReady } = useFlagsStatus();
     const isBornPrivateReservationEnabled = useFlag('BornPrivateReservation');
