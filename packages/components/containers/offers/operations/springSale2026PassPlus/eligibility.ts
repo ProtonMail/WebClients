@@ -35,6 +35,7 @@ export function getIsEligible({
     if (subscription) {
         const offerSubscription = new OfferSubscription(subscription);
         if (
+            offerSubscription.isTrial() ||
             offerSubscription.hasVisionary() ||
             offerSubscription.usedSpringSale2026() ||
             !isSubscriptionCheckAllowed(subscription, offerConfig)
