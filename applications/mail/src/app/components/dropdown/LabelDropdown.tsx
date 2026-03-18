@@ -34,7 +34,6 @@ import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApp
 
 import { getLabelIDs } from '../../helpers/elements';
 import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
-import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { useScrollToItem } from '../../hooks/useScrollToItem';
@@ -130,9 +129,10 @@ interface Props {
     onClose: () => void;
     onLock: (lock: boolean) => void;
     selectAll?: boolean;
+    onCheckAll?: (check: boolean) => void;
 }
 
-const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll }: Props) => {
+const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onCheckAll }: Props) => {
     const [uid] = useState(generateUID('label-dropdown'));
     const [labels = []] = useLabels();
     const [user] = useUser();
@@ -143,8 +143,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll }: Pro
     const [alsoArchive, updateAlsoArchive] = useState(false);
     const [always, setAlways] = useState(false);
     const getElementsFromIDs = useGetElementsFromIDs();
-    const { applyLabelsToAllModal } = useApplyLabels(setContainFocus);
-    const { moveScheduledModal, moveSnoozedModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
+    const { applyLabels, applyLabelsToAllModal } = useApplyLabels(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
     const { applyMultipleLocations, applyLocation } = useApplyLocation();
 
@@ -248,18 +247,30 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll }: Pro
         const promises = [];
 
         try {
-            if (Object.keys(changes).length > 0 && elements.length > 0) {
-                promises.push(applyMultipleLocations({ elements, changes, createFilters: always }));
-            }
+            if(selectAll) {
+                promises.push(applyLabels({
+                    elements,
+                    changes,
+                    createFilters: always,
+                    selectedLabelIDs: checkedIDs,
+                    labelID,
+                    selectAll,
+                    onCheckAll,
+                }));
+            } else {
+                if (Object.keys(changes).length > 0 && elements.length > 0) {
+                    promises.push(applyMultipleLocations({ elements, changes, createFilters: always }));
+                }
 
-            if (alsoArchive) {
-                promises.push(
-                    applyLocation({
-                        elements,
-                        destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        type: APPLY_LOCATION_TYPES.MOVE,
-                    })
-                );
+                if (alsoArchive) {
+                    promises.push(
+                        applyLocation({
+                            elements,
+                            destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                            type: APPLY_LOCATION_TYPES.MOVE,
+                        })
+                    );
+                }
             }
         } catch (error) {
             traceInitiativeError('move-actions', {
@@ -270,10 +281,6 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll }: Pro
 
         await Promise.all(promises);
         onClose();
-    };
-
-    const handleApply = async () => {
-        await actualApplyLabels(changes);
     };
 
     const applyCheck = (labelIDs: string[], selected: boolean) => {
@@ -347,7 +354,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll }: Pro
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        await withLoading(handleApply());
+        await withLoading(actualApplyLabels(changes));
     };
 
     const handleApplyDirectly = async (labelID: string) => {
@@ -478,9 +485,6 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll }: Pro
                     {c('Action').t`Apply`}
                 </Button>
             </div>
-            {moveScheduledModal}
-            {moveSnoozedModal}
-            {moveToSpamModal}
             {applyLabelsToAllModal}
             {renderLabelModal && (
                 <EditLabelModal
