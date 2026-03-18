@@ -3,6 +3,8 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import clsx from '@proton/utils/clsx';
+
 import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { SidebarItem } from './SidebarItem';
 
@@ -40,12 +42,12 @@ export const NewGhostChatButton = ({ showText }: NewGhostChatButtonProps) => {
             // showShortcutOnHover={true}
             iconSVG={
                 <svg
-                    width="24"
-                    height="24"
+                    width="16"
+                    height="16"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className={isGhostChatMode ? 'color-primary' : 'color-weak'}
+                    className={clsx('icon-size-5', isGhostChatMode && 'color-primary')}
                 >
                     <path
                         d="M14.7497 9.25362L15.4433 9.50118L18.0931 7.79902L18.313 9.96065H19.8204L19.5492 7.29146C19.4272 6.34374 18.3599 5.84537 17.5555 6.36201L15.2528 7.84077L15.2206 7.82979C14.3388 7.51745 13.3988 7.32506 12.4213 7.28193L12.0002 7.27314C10.9317 7.27314 9.90317 7.4516 8.9416 7.77339L8.85957 7.80122L6.61764 6.36201C5.81327 5.84537 4.74594 6.34374 4.624 7.29146L4.28125 9.96065H5.79302L5.81454 9.79305L6.07126 7.7939L8.66035 9.4565L9.34809 9.21993C9.37116 9.21198 9.39451 9.20351 9.41767 9.19576C10.2322 8.92318 11.1002 8.77315 12.0002 8.77315C12.9508 8.77318 13.8655 8.94087 14.7196 9.24336L14.7497 9.25362Z"
