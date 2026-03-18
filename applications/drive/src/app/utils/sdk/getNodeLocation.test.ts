@@ -153,25 +153,6 @@ describe('getNodeLocation', () => {
         expect(result.value).toBe(NodeLocation.SHARED_WITH_ME);
     });
 
-    it('should not return SHARED_WITH_ME when node is owned by user even if root has membership', async () => {
-        const rootNode = createMockNode('uid1', NO_PARENT_UID, MemberRole.Admin, true);
-        const childNode1 = createMockNode('uid2', 'uid1', MemberRole.Admin, true);
-        const lastNode = createMockNode('uid3', 'uid2', MemberRole.Admin, true);
-
-        const drive = createDriveStub(true /* isPrivateDefaultClient */, rootNode);
-        drive.getNode
-            .mockResolvedValueOnce({ ok: true, value: lastNode })
-            .mockResolvedValueOnce({ ok: true, value: childNode1 })
-            .mockResolvedValueOnce({ ok: true, value: rootNode });
-
-        const result = await getNodeLocation(drive, { ok: true, value: lastNode });
-
-        expect(result.ok).toBe(true);
-        assertOk(result); // Narrow TS type for rest of the test.
-
-        expect(result.value).toBe(NodeLocation.MY_FILES);
-    });
-
     it('should return PHOTOS for an album', async () => {
         const rootNode = createMockNode('uid1', NO_PARENT_UID);
         rootNode.type = NodeType.Album;
@@ -228,6 +209,25 @@ describe('getNodeLocation', () => {
         const rootNode = createMockNode('uid1', NO_PARENT_UID);
         const childNode1 = createMockNode('uid2', 'uid1');
         const lastNode = createMockNode('uid3', 'uid2');
+
+        const drive = createDriveStub(false /* isPrivateDefaultClient */, rootNode);
+        drive.getNode
+            .mockResolvedValueOnce({ ok: true, value: lastNode })
+            .mockResolvedValueOnce({ ok: true, value: childNode1 })
+            .mockResolvedValueOnce({ ok: true, value: rootNode });
+
+        const result = await getNodeLocation(drive, { ok: true, value: lastNode });
+
+        expect(result.ok).toBe(true);
+        assertOk(result); // Narrow TS type for rest of the test.
+
+        expect(result.value).toBe(NodeLocation.PUBLIC_PAGE);
+    });
+
+    it('should return PUBLIC_PAGE even when root node has membership on a public client', async () => {
+        const rootNode = createMockNode('uid1', NO_PARENT_UID, MemberRole.Viewer, true);
+        const childNode1 = createMockNode('uid2', 'uid1', MemberRole.Viewer, true);
+        const lastNode = createMockNode('uid3', 'uid2', MemberRole.Viewer, true);
 
         const drive = createDriveStub(false /* isPrivateDefaultClient */, rootNode);
         drive.getNode
