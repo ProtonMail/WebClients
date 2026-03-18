@@ -8371,18 +8371,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pdfme/common@npm:*, @pdfme/common@npm:^5.4.2":
-  version: 5.4.2
-  resolution: "@pdfme/common@npm:5.4.2"
+"@pdfme/common@npm:*, @pdfme/common@npm:^5.5.9":
+  version: 5.5.9
+  resolution: "@pdfme/common@npm:5.5.9"
   dependencies:
     "@pdfme/pdf-lib": "npm:*"
-    acorn: "npm:^8.15.0"
+    acorn: "npm:^8.16.0"
     buffer: "npm:^6.0.3"
-    zod: "npm:^3.25.67"
+    zod: "npm:^4.3.6"
   peerDependencies:
     antd: ^5.11.2
     form-render: ^2.2.20
-  checksum: 10/ef6357d9efefbc95228e5bdc16d93bc00a0039fa78e38be9726248cb9296098d40420cecfd58a51d2f62d74e91be479786d387d29708bca7749b0df50d753947
+  checksum: 10/644241b5ea81ff8c0778f7016a3782d916bfdc897506bf7009d52f9e170a1794aa7a776088ba5a464cd2c18d04b9d2a6875d718f36fe035db9cdb74ab408b545
   languageName: node
   linkType: hard
 
@@ -8400,16 +8400,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pdfme/generator@npm:^5.4.2":
-  version: 5.4.2
-  resolution: "@pdfme/generator@npm:5.4.2"
+"@pdfme/generator@npm:^5.5.9":
+  version: 5.5.9
+  resolution: "@pdfme/generator@npm:5.5.9"
   dependencies:
     "@pdfme/pdf-lib": "npm:*"
     fontkit: "npm:^2.0.2"
   peerDependencies:
     "@pdfme/common": "*"
     "@pdfme/schemas": "*"
-  checksum: 10/4beee58201529a398d61bd70b4d5b089525f57cb23b0fa7d8db63b44c54b1802763efae4669cae6cc8604daff6fe7896b3b2de074e859f80982cdd9ca846d66f
+  checksum: 10/baaa201c483852808897c0b04758d90d6422c31c63c38382e720529035d91f5e1e9ec0f19e077808d44e5df5d704d9f75e0481c75917f8ae4febf2214d64b609
   languageName: node
   linkType: hard
 
@@ -8426,44 +8426,46 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pdfme/schemas@npm:^5.4.2":
-  version: 5.4.2
-  resolution: "@pdfme/schemas@npm:5.4.2"
+"@pdfme/schemas@npm:^5.5.9":
+  version: 5.5.9
+  resolution: "@pdfme/schemas@npm:5.5.9"
   dependencies:
     "@pdfme/pdf-lib": "npm:*"
     air-datepicker: "npm:^3.6.0"
-    bwip-js: "npm:^4.6.0"
+    bwip-js: "npm:^4.8.0"
     date-fns: "npm:^4.1.0"
+    dompurify: "npm:^3.3.1"
     fontkit: "npm:^2.0.2"
-    lucide: "npm:^0.525.0"
+    lucide: "npm:^0.575.0"
   peerDependencies:
     "@pdfme/common": "*"
-  checksum: 10/bedb53512aa2278b8882bfa153616aced42ba84d66e2c8d84e83bd9114fb1efc9e085a481749ed4b4feefddedcd78340e362240ff6b355d4d7d330436fba0d5c
+  checksum: 10/e7a7cb4914877231dc28e42c15a1a398def2850529d57da4cc8fdbef55b00145b374b0a1d498ee90d6c520b4160a891933517d2131d67f44b3e5429fd4eb13f6
   languageName: node
   linkType: hard
 
-"@pdfme/ui@npm:^5.4.2":
-  version: 5.4.2
-  resolution: "@pdfme/ui@npm:5.4.2"
+"@pdfme/ui@npm:^5.5.9":
+  version: 5.5.9
+  resolution: "@pdfme/ui@npm:5.5.9"
   dependencies:
     "@dnd-kit/core": "npm:^6.0.8"
     "@dnd-kit/sortable": "npm:^10.0.0"
     "@pdfme/converter": "npm:*"
     "@scena/react-guides": "npm:^0.28.2"
-    antd: "npm:^5.26.3"
-    form-render: "npm:^2.5.3"
+    antd: "npm:^5.27.4"
+    dompurify: "npm:^3.3.1"
+    form-render: "npm:^2.5.5"
     globrex: "npm:^0.1.2"
-    hotkeys-js: "npm:^3.13.14"
-    lucide-react: "npm:^0.525.0"
+    hotkeys-js: "npm:^4.0.2"
+    lucide-react: "npm:^0.575.0"
     react: "npm:^16.14.0"
     react-dom: "npm:^16.14.0"
     react-moveable: "npm:^0.56.0"
-    react-refresh: "npm:^0.17.0"
+    react-refresh: "npm:^0.18.0"
     react-selecto: "npm:^1.12.0"
   peerDependencies:
     "@pdfme/common": "*"
     "@pdfme/schemas": "*"
-  checksum: 10/2b0308a192c186b7c636fa26caf0a7b1fd575fd221da32e4d518882d1994507c64738ee9ee0a997487efe799c9e961317b6b475bd2bd1e55b4285c695172aae5
+  checksum: 10/c663233f5ee211591219443fbe3b6902a036bef86ed2ac6c07d8608d076996622221c623ffe6b54158d0cdc3126cfe5c769811a0c887bc85ff4bf4972c242c9a
   languageName: node
   linkType: hard
 
@@ -10030,9 +10032,9 @@ __metadata:
   resolution: "@proton/recovery-kit@workspace:packages/recovery-kit"
   dependencies:
     "@pdf-lib/standard-fonts": "npm:^1.0.0"
-    "@pdfme/common": "npm:^5.4.2"
-    "@pdfme/generator": "npm:^5.4.2"
-    "@pdfme/schemas": "npm:^5.4.2"
+    "@pdfme/common": "npm:^5.5.9"
+    "@pdfme/generator": "npm:^5.5.9"
+    "@pdfme/schemas": "npm:^5.5.9"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/utils": "workspace:^"
     eslint: "npm:^9.39.4"
@@ -11365,17 +11367,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rc-component/qrcode@npm:~1.0.0":
-  version: 1.0.0
-  resolution: "@rc-component/qrcode@npm:1.0.0"
+"@rc-component/qrcode@npm:~1.1.0":
+  version: 1.1.1
+  resolution: "@rc-component/qrcode@npm:1.1.1"
   dependencies:
     "@babel/runtime": "npm:^7.24.7"
-    classnames: "npm:^2.3.2"
-    rc-util: "npm:^5.38.0"
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 10/946393e8c5522b5a1431ac433919f0d2c5654dd213d0e5aee1ffc2f9ab3508bd99be152261ccee2d8d6253d3ec25b19094ada54ab46e7373466aa9a20523cade
+  checksum: 10/935471da0c6ac7b674894d4211a5590058713387f31b03e3c193443ea51b4e1685791b3ac41eae2746a5805dadb10cfb022577361ae1d0ebac21418c8815250b
   languageName: node
   linkType: hard
 
@@ -16932,9 +16932,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"antd@npm:^5.26.3":
-  version: 5.27.1
-  resolution: "antd@npm:5.27.1"
+"antd@npm:^5.27.4":
+  version: 5.29.3
+  resolution: "antd@npm:5.29.3"
   dependencies:
     "@ant-design/colors": "npm:^7.2.1"
     "@ant-design/cssinjs": "npm:^1.23.0"
@@ -16945,7 +16945,7 @@ __metadata:
     "@babel/runtime": "npm:^7.26.0"
     "@rc-component/color-picker": "npm:~2.0.1"
     "@rc-component/mutate-observer": "npm:^1.1.0"
-    "@rc-component/qrcode": "npm:~1.0.0"
+    "@rc-component/qrcode": "npm:~1.1.0"
     "@rc-component/tour": "npm:~1.15.1"
     "@rc-component/trigger": "npm:^2.3.0"
     classnames: "npm:^2.5.1"
@@ -16957,7 +16957,7 @@ __metadata:
     rc-dialog: "npm:~9.6.0"
     rc-drawer: "npm:~7.3.0"
     rc-dropdown: "npm:~4.2.1"
-    rc-field-form: "npm:~2.7.0"
+    rc-field-form: "npm:~2.7.1"
     rc-image: "npm:~7.12.0"
     rc-input: "npm:~1.8.0"
     rc-input-number: "npm:~9.5.0"
@@ -16972,23 +16972,23 @@ __metadata:
     rc-resize-observer: "npm:^1.4.3"
     rc-segmented: "npm:~2.7.0"
     rc-select: "npm:~14.16.8"
-    rc-slider: "npm:~11.1.8"
+    rc-slider: "npm:~11.1.9"
     rc-steps: "npm:~6.0.1"
     rc-switch: "npm:~4.1.0"
-    rc-table: "npm:~7.51.1"
+    rc-table: "npm:~7.54.0"
     rc-tabs: "npm:~15.7.0"
     rc-textarea: "npm:~1.10.2"
     rc-tooltip: "npm:~6.4.0"
     rc-tree: "npm:~5.13.1"
     rc-tree-select: "npm:~5.27.0"
-    rc-upload: "npm:~4.9.2"
+    rc-upload: "npm:~4.11.0"
     rc-util: "npm:^5.44.4"
     scroll-into-view-if-needed: "npm:^3.1.0"
     throttle-debounce: "npm:^5.0.2"
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 10/0d68ee184fd953e5b36284a7d2d73b4c875dec3c55822581cb81f1585bbfe01b6bce05f72edda9beff595149ff1429821684baf42cd4cf18462f44a685e5e549
+  checksum: 10/264f0ab806b1267e9a14331e3c7b771a9d68c705d7dfef6df11ee306f39d0b54e60000aa0d49f1978b37031004f99f1a5d16d7abacc6ebe6c5e4536373ab1386
   languageName: node
   linkType: hard
 
@@ -19596,12 +19596,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bwip-js@npm:^4.6.0":
-  version: 4.7.0
-  resolution: "bwip-js@npm:4.7.0"
+"bwip-js@npm:^4.8.0":
+  version: 4.8.0
+  resolution: "bwip-js@npm:4.8.0"
   bin:
     bwip-js: bin/bwip-js.js
-  checksum: 10/ef088090c20cd9c88a46c409a49f69d3c26500e9381f287b36fa5e48d7b0d4b7d20c774abcb25375d0be0e6c6202eccde4f171e424fb9afed982796be3a01987
+  checksum: 10/d6b1480093687cc066f209feed06310921a52137c7b4902eaf1dc8e7517d2e663da96f2a8934664167c0bbeca89cc75590b6fe44bcf6e3a15707c444cb55fb47
   languageName: node
   linkType: hard
 
@@ -23277,7 +23277,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:^3.3.3":
+"dompurify@npm:^3.3.1, dompurify@npm:^3.3.3":
   version: 3.3.3
   resolution: "dompurify@npm:3.3.3"
   dependencies:
@@ -26507,9 +26507,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"form-render@npm:^2.5.3":
-  version: 2.5.5
-  resolution: "form-render@npm:2.5.5"
+"form-render@npm:^2.5.5":
+  version: 2.5.6
+  resolution: "form-render@npm:2.5.6"
   dependencies:
     "@ant-design/icons": "npm:^4.0.2"
     ahooks: "npm:^3.7.5"
@@ -26525,7 +26525,7 @@ __metadata:
     antd: 4.x || 5.x
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 10/43fc2e7fc8846fb5e42fa3371787324dd32ad804cda7a23bc57438a4a0e33bd9050cca76e7b537738658f610f8f755ff3807bd2c15d4430a14d7809a00da52c9
+  checksum: 10/aeb2d3c5bf8152db22c7a45f9065103bbf80b351f71a9e76874bba32b539610500894e528f4adbb4b0dd06f295e7166cfdf0bc286a37ff8beea01927adf837b4
   languageName: node
   linkType: hard
 
@@ -28476,10 +28476,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hotkeys-js@npm:^3.13.14":
-  version: 3.13.15
-  resolution: "hotkeys-js@npm:3.13.15"
-  checksum: 10/f10314bd171c5b265d923e8eae3b0c4d96899a46f956caa6468e8c5c4d1755a08f3986d7ece9f331d783ae1876d535e9471330176d27a5e06568b3e7f7cb7c4a
+"hotkeys-js@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "hotkeys-js@npm:4.0.2"
+  checksum: 10/76fdcff36899d3bf7abc5d9431fa5d404daccd81159eb8efd112480f403ca328ec471c636893150072228d60683b893450784454624af6fb77b1f0da7b4f377b
   languageName: node
   linkType: hard
 
@@ -32846,19 +32846,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^0.525.0":
-  version: 0.525.0
-  resolution: "lucide-react@npm:0.525.0"
+"lucide-react@npm:^0.575.0":
+  version: 0.575.0
+  resolution: "lucide-react@npm:0.575.0"
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
-  checksum: 10/367bdf5f117ebddc8f7a8d57a749b802a82b0c1ff36d54fa06e6115d0900f21133e5e2aeabdcf763c506c12cf46b33ac8e5ad93b236c404ee728256600e987fa
+  checksum: 10/2d0d11451ad099ced530de327c3954dee85e1a68186a56ec2b2294fe651853d6eb9463e2646434d137a7ee8d97b7050da5e8cbfc9a32ee3a3992f6dbce23430c
   languageName: node
   linkType: hard
 
-"lucide@npm:^0.525.0":
-  version: 0.525.0
-  resolution: "lucide@npm:0.525.0"
-  checksum: 10/7db502835cda241a2bfb1c05054ffeb8f6b416b7da05cf2ac0879b48636301e956d8b6453ac87205a9afe0f4295a0e265da08853d7a7699860f5889c8a378f2e
+"lucide@npm:^0.575.0":
+  version: 0.575.0
+  resolution: "lucide@npm:0.575.0"
+  checksum: 10/1afe3804a83f404c2911574e3699cc2f0fc38985d6a5a4fda60e7f474b259219b49151883331173620fdd1b578a40c9f799b7f2916830d78683e57c7d8d831d4
   languageName: node
   linkType: hard
 
@@ -36670,9 +36670,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "pdf-ui@workspace:applications/pdf-ui"
   dependencies:
-    "@pdfme/common": "npm:^5.4.2"
-    "@pdfme/schemas": "npm:^5.4.2"
-    "@pdfme/ui": "npm:^5.4.2"
+    "@pdfme/common": "npm:^5.5.9"
+    "@pdfme/schemas": "npm:^5.5.9"
+    "@pdfme/ui": "npm:^5.5.9"
     "@types/toastify-js": "npm:^1.12.4"
     eslint: "npm:^9.39.4"
     toastify-js: "npm:^1.12.0"
@@ -39620,9 +39620,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rc-field-form@npm:~2.7.0":
-  version: 2.7.0
-  resolution: "rc-field-form@npm:2.7.0"
+"rc-field-form@npm:~2.7.1":
+  version: 2.7.1
+  resolution: "rc-field-form@npm:2.7.1"
   dependencies:
     "@babel/runtime": "npm:^7.18.0"
     "@rc-component/async-validator": "npm:^5.0.3"
@@ -39630,7 +39630,7 @@ __metadata:
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 10/4ddbc4b3df80ed87472676e5444d28ddcc1f9125e8ba0c2caab4a01cdd3fb14906da51432f4aae2fcbe8116a3aac1aa0c1c198fb5298aca7dc491b5d2f88f9d9
+  checksum: 10/d5ef26a857ce7f176df1ce62ea55b8d7d191e7e2ee09f9e976d684e3a6377a98a1874adf4a5380a907b8f30ccd7e0d05b7d3e9fab97faa99abfff55cd2f75b53
   languageName: node
   linkType: hard
 
@@ -39880,9 +39880,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rc-slider@npm:~11.1.8":
-  version: 11.1.8
-  resolution: "rc-slider@npm:11.1.8"
+"rc-slider@npm:~11.1.9":
+  version: 11.1.9
+  resolution: "rc-slider@npm:11.1.9"
   dependencies:
     "@babel/runtime": "npm:^7.10.1"
     classnames: "npm:^2.2.5"
@@ -39890,7 +39890,7 @@ __metadata:
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 10/3efaefebd1699f9fcdb7008f03f9ecc73eb0c9db69b8a4009fbec1107950ec84b241275503505fa7e77d85fcef62d93934b8a94efb2be44d70d3e889db1070b4
+  checksum: 10/b9b1c5b9e690db565a09fde0d6cc9b8562cbb15dd8a0d1eb0a7039c4fcb6c4307ba1cb58047322b8be518a6eb226af9db5c7d974d6ff197fe07f0db84d56cc5e
   languageName: node
   linkType: hard
 
@@ -39922,9 +39922,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rc-table@npm:~7.51.1":
-  version: 7.51.1
-  resolution: "rc-table@npm:7.51.1"
+"rc-table@npm:~7.54.0":
+  version: 7.54.0
+  resolution: "rc-table@npm:7.54.0"
   dependencies:
     "@babel/runtime": "npm:^7.10.1"
     "@rc-component/context": "npm:^1.4.0"
@@ -39935,7 +39935,7 @@ __metadata:
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 10/03c530db5422543c00dfce40ddb643f9055f4d2186b04d8c03fc0b05c11a64c8002f1fb1b4c0c38fbdb2bb2d1030a92f00f8758910d8e170e098c173e2099bd7
+  checksum: 10/3b85e673664120af8b33d984fa04d5f3b437f94df43dbad41a084034ad2c37fd6f152303d549610ba64c8b09a5b3163ccba5b1374004d818dc506daf71ea7409
   languageName: node
   linkType: hard
 
@@ -40034,9 +40034,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rc-upload@npm:~4.9.2":
-  version: 4.9.2
-  resolution: "rc-upload@npm:4.9.2"
+"rc-upload@npm:~4.11.0":
+  version: 4.11.0
+  resolution: "rc-upload@npm:4.11.0"
   dependencies:
     "@babel/runtime": "npm:^7.18.3"
     classnames: "npm:^2.2.5"
@@ -40044,7 +40044,7 @@ __metadata:
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 10/2dd7b10bb02fb3fe00cd4c2eb40241a05e6cef8ac1ca6578db9685c337aa39b654d0004fc6f37acd5b0827fd645b21db125e24cb24d888cbd1adfbf1b6ad98bf
+  checksum: 10/80a3a685b6b885e451fd88fd22214aeee38856a8e591211ce2e4311e1afa72a595d9c5fb177380e4c651dbd6a9514311a6629a8454e47dd62940da9c42f31432
   languageName: node
   linkType: hard
 
@@ -49048,17 +49048,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.23.8, zod@npm:^3.25.67, zod@npm:^3.25.76":
+"zod@npm:^3.23.8, zod@npm:^3.25.76":
   version: 3.25.76
   resolution: "zod@npm:3.25.76"
   checksum: 10/f0c963ec40cd96858451d1690404d603d36507c1fc9682f2dae59ab38b578687d542708a7fdbf645f77926f78c9ed558f57c3d3aa226c285f798df0c4da16995
   languageName: node
   linkType: hard
 
-"zod@npm:^3.25.0 || ^4.0.0":
-  version: 4.1.12
-  resolution: "zod@npm:4.1.12"
-  checksum: 10/c5f04e6ac306515c4db6ef73cf7705f521c7a2107c8c8912416a0658d689f361db9bee829b0bf01ef4a22492f1065c5cbcdb523ce532606ac6792fd714f3c326
+"zod@npm:^3.25.0 || ^4.0.0, zod@npm:^4.3.6":
+  version: 4.3.6
+  resolution: "zod@npm:4.3.6"
+  checksum: 10/25fc0f62e01b557b4644bf0b393bbaf47542ab30877c37837ea8caf314a8713d220c7d7fe51f68ffa72f0e1018ddfa34d96f1973d23033f5a2a5a9b6b9d9da01
   languageName: node
   linkType: hard
 
