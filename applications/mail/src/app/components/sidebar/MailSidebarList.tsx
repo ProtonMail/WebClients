@@ -28,7 +28,6 @@ import { useMailboxCounter } from 'proton-mail/hooks/useMailboxCounter';
 import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
 
 import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
-import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { LabelActionsContextProvider } from './EditLabelContext';
 import { MailSidebarCollapsedButton } from './MailSidebarCollapsedButton';
 import { MailSidebarCustomView } from './MailSidebarCustomView';
@@ -36,6 +35,7 @@ import MailSidebarListActions from './MailSidebarListActions';
 import MailSidebarSystemFolders from './MailSidebarSystemFolders';
 import SidebarFolders from './SidebarFolders';
 import SidebarLabels from './SidebarLabels';
+import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 
 interface Props {
     postItems: ReactNode;
@@ -58,9 +58,7 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
     const foldersTreeview = useMemo(() => buildTreeview(foldersUI), [foldersUI]);
     const { applyLabels, applyLabelsToAllModal } = useApplyLabels();
     const { applyLocation } = useApplyLocation();
-    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
-        useMoveToFolder();
-
+    const {moveAllToFolder, selectAllMoveModal} = useMoveAllToFolder();
     const [counterMap] = useMailboxCounter();
 
     const numFolders = folders?.length || 0;
@@ -269,7 +267,10 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
                         }
                         moveToFolder={(params) =>
                             params.selectAll
-                                ? moveToFolder(params)
+                                ? moveAllToFolder({
+                                    type: MoveAllType.selectAll,
+                                    ...params
+                                })
                                 : applyLocation({
                                       type: APPLY_LOCATION_TYPES.MOVE,
                                       elements: params.elements,
@@ -320,7 +321,10 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
                                     }
                                     moveToFolder={(params) =>
                                         params.selectAll
-                                            ? moveToFolder(params)
+                                            ? moveAllToFolder({
+                                                type: MoveAllType.selectAll,
+                                                ...params
+                                            })
                                             : applyLocation({
                                                   type: APPLY_LOCATION_TYPES.MOVE,
                                                   elements: params.elements,
@@ -369,7 +373,10 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
                                     }
                                     moveToFolder={(params) =>
                                         params.selectAll
-                                            ? moveToFolder(params)
+                                            ? moveAllToFolder({
+                                                type: MoveAllType.selectAll,
+                                                ...params
+                                            })
                                             : applyLocation({
                                                   type: APPLY_LOCATION_TYPES.MOVE,
                                                   elements: params.elements,
@@ -385,9 +392,6 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
                     {postItems}
                 </SidebarList>
             </div>
-            {moveScheduledModal}
-            {moveSnoozedModal}
-            {moveToSpamModal}
             {selectAllMoveModal}
             {applyLabelsToAllModal}
         </LabelActionsContextProvider>
