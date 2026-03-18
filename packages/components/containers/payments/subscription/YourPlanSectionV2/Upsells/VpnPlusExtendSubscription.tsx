@@ -125,7 +125,7 @@ const VpnPlusExtendSubscription = ({ app, subscription, user, handleExplorePlans
                 cta={
                     <Button color="norm" shape="ghost" onClick={handleExplorePlans}>
                         {c('Action').t`Compare all plans`}
-                        <IcChevronRight className="shrink-0 ml-1" />
+                        <IcChevronRight className="shrink-0 ml-1 rtl:mirror" />
                     </Button>
                 }
             />

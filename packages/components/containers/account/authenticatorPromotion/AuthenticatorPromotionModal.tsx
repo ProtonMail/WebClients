@@ -88,7 +88,7 @@ const AuthenticatorPromotionModal = ({ open, onClose, onExit, flowId }: Authenti
                                 onClick={handleModalCtaClick}
                             >
                                 {getPlanOrAppNameText(AUTHENTICATOR_APP_NAME)}
-                                <IcArrowOutSquare className="shrink-0" />
+                                <IcArrowOutSquare className="shrink-0 rtl:mirror" />
                             </ButtonLike>
                             <Button color="norm" shape="ghost" onClick={onClose} fullWidth>
                                 {c('Info').t`Maybe later`}
