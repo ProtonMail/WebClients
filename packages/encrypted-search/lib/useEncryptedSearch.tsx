@@ -223,6 +223,10 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         });
     };
 
+    const getContentVersion = () => {
+        return esCallbacks.getContentVersion();
+    };
+
     /**
      * Reset to default only the parameters of ESStatus that are related to a search
      */
@@ -366,6 +370,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             indexKey,
             esSearchParams,
             esCallbacks,
+            version: getContentVersion(),
         });
 
         // Do not update results list when ES is disabled
@@ -400,7 +405,12 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
             const contentProgress = await contentIndexingProgress.read(userID);
             if (!!contentProgress && contentProgress.status === INDEXING_STATUS.ACTIVE) {
                 abortIndexingRef.current = new AbortController();
-                await retryContentIndexing({ userID, indexKey, esCallbacks, abortIndexingRef });
+                await retryContentIndexing({
+                    userID,
+                    indexKey,
+                    esCallbacks,
+                    abortIndexingRef,
+                });
             }
             await refreshESCache<ESItemMetadata, ESItemContent>({
                 indexKey,
@@ -409,10 +419,10 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
                 getItemInfo: esCallbacks.getItemInfo,
             });
 
-            await retryAPICalls<ESItemContent>({
+            await retryAPICalls<ESItemMetadata, ESSearchParameters, ESItemContent>({
                 userID,
                 indexKey,
-                fetchESItemContent: esCallbacks.fetchESItemContent,
+                esCallbacks,
             });
 
             // Check if DB became limited or not after the update
@@ -636,17 +646,16 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         let success = false;
         let isInitialIndexing = true;
         while (!success) {
-            success = await buildMetadataDB<ESItemMetadata>({
+            success = await buildMetadataDB<ESItemMetadata, ESSearchParameters, ESItemContent>({
                 userID,
                 esSupported,
                 indexKey,
                 esCacheRef,
-                queryItemsMetadata: esCallbacks.queryItemsMetadata,
-                getItemInfo: esCallbacks.getItemInfo,
                 abortIndexingRef,
                 recordProgress: recordMetadataProgress,
                 isInitialIndexing,
                 isBackgroundIndexing,
+                esCallbacks,
             });
 
             // Kill switch in case user logs out or deletes data
@@ -882,6 +891,7 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
                     inputrecoveryPoint: recoveryPoint,
                     isInitialIndexing: true,
                     isBackgroundIndexing,
+                    version: getContentVersion(),
                 });
             } catch (error: any) {
                 if (abortIndexingRef.current.signal.aborted) {
