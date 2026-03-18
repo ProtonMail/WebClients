@@ -1492,6 +1492,15 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Delete forward": [
+        "Izbriši posredovano"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Remove forward": [
+        "Odstrani posredovano"
       ]
     },
     "action": {
@@ -1931,6 +1940,12 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Prostor za shranjevanje si delijo vse aplikacije ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštni naslov, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštna naslova, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštnih naslovov, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo."
       ]
     },
     "BF2025: Deal details": {
@@ -4013,6 +4028,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Dogodke lahko uvozite v formatu iCal (datoteka ICS). Datoteka ima lahko največjo velikost ${ MAX_IMPORT_FILE_SIZE_STRING } in vsebuje največ ${ MAX_IMPORT_EVENTS_STRING } dogodkov. Če je datoteka večja, jo razdelite na manjše datoteke."
+      ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "Preprosto prenesite e-pošto, koledarske dogodke in stike od svojega prejšnjega ponudnika. Izberite enkratni uvoz ali samodejno stalno sinhronizacijo."
       ]
     },
     "description": {
@@ -7175,6 +7193,24 @@
       ],
       "Paused": [
         "Začasno zaustavljeno"
+      ],
+      "Canceling...": [
+        "Preklicujem..."
+      ],
+      "Disabled": [
+        "Onemogočeno"
+      ],
+      "Imported": [
+        "Uvoženo"
+      ],
+      "In progress...": [
+        "V obdelavi..."
+      ],
+      "Undo finished": [
+        "Razveljavitev končana."
+      ],
+      "Undo in progress": [
+        "Razveljavitev poteka"
       ]
     },
     "Import type": {
@@ -9929,6 +9965,48 @@
       ],
       "Zoom meeting": [
         "sestanek prek Zooma"
+      ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "Uvoz je zaustavljen, ker je bila prekinjena povezava z vašim ponudnikom e-pošte."
+      ],
+      "An import is paused because your storage is almost full.": [
+        "Uvoz je zaustavljen, ker je vaša shramba skoraj polna."
+      ],
+      "Choose your service to connect with": [
+        "Izberite storitev, s katero se želite povezati"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Ustvari varen oblak za ${ value } člana",
+        "Ustvari varen oblak za ${ value } člana",
+        "Ustvari varen oblak za ${ value } člane",
+        "Ustvari varen oblak za ${ value } članov"
+      ],
+      "Forwarding automatically sends new incoming emails to your Inbox.": [
+        "Posredovanje samodejno pošlje nova prejeta e-poštna sporočila v vaš nabiralnik."
+      ],
+      "Free up space or upgrade your storage to continue.": [
+        "Sprosti prostor ali nadgradi svojo shrambo za nadaljevanje."
+      ],
+      "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
+        "Uvozi prikaz enkratnih prenosov e-pošte, koledarjev ali stikov v vaš račun ${ BRAND_NAME }."
+      ],
+      "Please reconnect to continue.": [
+        "Za nadaljevanje se ponovno povežite."
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Naročnina se samodejno obnovi na ${ cycle } mesec.",
+        "Naročnina se samodejno obnovi na ${ cycle } meseca.",
+        "Naročnina se samodejno obnovi na ${ cycle } mesece.",
+        "Naročnina se samodejno obnovi na ${ cycle } mesecev."
+      ],
+      "The ${ bandwidthLimitLink } was reached. We'll automatically resume it once it resets.": [
+        "Dosegli ste ${ bandwidthLimitLink }. Samodejno bomo nadaljevali, ko se bo ponastavil."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Vaš načrtovani paket se začne ${ renewalTime } in se bo samodejno obnavljal vsak ${ cycle } mesec.",
+        "Vaš načrtovani paket se začne ${ renewalTime } in se bo samodejno obnavljal vsaka ${ cycle } meseca.",
+        "Vaš načrtovani paket se začne ${ renewalTime } in se bo samodejno obnavljal vsake ${ cycle } mesece.",
+        "Vaš načrtovani paket se začne ${ renewalTime } in se bo samodejno obnavljal vsakih ${ cycle } mesecev."
       ]
     },
     "info": {
@@ -13020,6 +13098,24 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Pregledujemo temni splet in preverjamo, ali so bili razkriti naslovi ali vzdevki ${ BRAND_NAME }. V primeru uhajanja podatkov vas bomo o tem obvestili."
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } deljen ${ PASS_SHORT_APP_NAME } trezor na uporabnika",
+        "${ n } deljena ${ PASS_SHORT_APP_NAME } trezorja na uporabnika",
+        "${ n } deljeni ${ PASS_SHORT_APP_NAME } trezorji na uporabnika",
+        "${ n } deljenih ${ PASS_SHORT_APP_NAME } trezorjev na uporabnika"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "${ n } uporabnik (${ adminsText }, ${ usersText })",
+        "Do ${ n } uporabnika (${ adminsText }, ${ usersText })",
+        "Do ${ n } uporabnike (${ adminsText }, ${ usersText })",
+        "Do ${ n } uporabnikov (${ adminsText }, ${ usersText })"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Uporabite na ${ n } napravi hkrati",
+        "Uporabite na do ${ n } napravah hkrati",
+        "Uporabite na do ${ n } napravah hkrati",
+        "Uporabite na do ${ n } napravah hkrati"
       ]
     },
     "new_plans: feature highlight": {
@@ -14845,6 +14941,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaša naročnina trenutno vsebuje obstoječi popust. Premik na to novo promocijo pomeni, da obstoječi popust ne bo več veljal."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Posebna znižana cena v višini ${ priceWithDiscount } velja za ${ subscriptionLength } mesec.",
+        "Posebna znižana cena v višini ${ priceWithDiscount } velja za prva ${ subscriptionLength } meseca.",
+        "Posebna znižana cena v višini ${ priceWithDiscount } velja za prve ${ subscriptionLength } mesece.",
+        "Posebna znižana cena v višini ${ priceWithDiscount } velja za prvih ${ subscriptionLength } mesecev."
       ]
     },
     "Payments.Error": {
@@ -17520,6 +17622,9 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš kratek e-poštni vzdevek @pm.me"
+      ],
+      "Catch-all email address": [
+        "Zoom srečanje"
       ]
     },
     "subscription reminder": {
@@ -19428,6 +19533,24 @@
       ],
       "Your subscriptions": [
         "Vaše naročnine"
+      ],
+      "Choose a provider": [
+        "Izberite ponudnika"
+      ],
+      "Custom": [
+        "Po meri"
+      ],
+      "Forwardings": [
+        "Posredovanja"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Uvozite svoje podatke v ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Uvozi"
+      ],
+      "Select data to import": [
+        "Izberite podatke za uvoz"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -20009,6 +20132,12 @@
         "Strežniki v več kot ${ numberOfCountries } državah",
         "Strežniki v več kot ${ numberOfCountries } državah",
         "Strežniki v več kot ${ numberOfCountries } državah"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Samodejno izbrano iz ${ numberOfCountries } države",
+        "Samodejno izbrano iz ${ numberOfCountries } držav",
+        "Samodejno izbrano iz ${ numberOfCountries } držav",
+        "Samodejno izbrano iz ${ numberOfCountries } držav"
       ]
     },
     "vpn_2step: discount": {
@@ -20135,6 +20264,12 @@
       ],
       "You're Invited.": [
         "Povabljeni ste."
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-poštni naslov",
+        "${ n } ${ BRAND_NAME } e-poštna naslova",
+        "${ n } ${ BRAND_NAME } e-poštni naslovi",
+        "${ n } ${ BRAND_NAME } e-poštnih naslovov"
       ]
     },
     "wallet_signup_2024:app-switcher": {
@@ -20235,6 +20370,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaša preskusna različica se izteče ${ textDate }. Če do ${ textDate } prekličete, vam ne bo zaračunano. ${ action }"
+      ],
+      "You will not see this import record in the list anymore.": [
+        "Tega zapisa uvoza na seznamu ne boste več videli."
       ]
     },
     "Warning for domain modal": {
@@ -20550,6 +20688,22 @@
       ],
       "Yearly, ${ untilString }": [
         "Letno, ${ untilString }"
+      ]
+    },
+    "Duration": {
+      "30 minutes": [
+        "30 minut"
+      ],
+      "60 minutes": [
+        "60 minut"
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "Napredni uvoz"
+      ],
+      "Import from ${ providerName }": [
+        "Uvoz iz ${ providerName }"
       ]
     }
   }

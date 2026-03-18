@@ -1715,6 +1715,15 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Delete forward": [
+        "Eliminar reenvío"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Remove forward": [
+        "Borrar el reenvío"
       ]
     },
     "action": {
@@ -4921,6 +4930,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puede importar eventos en formato iCal (archivos ICS). El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos.\nSi el archivo es más grande, debe dividirlo en archivos más pequeños."
+      ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "Transfiera fácilmente correos, eventos de calendario y contactos desde su proveedor anterior. Elija entre una sola importación o una sincronización automática continua."
       ]
     },
     "description": {
@@ -8850,6 +8862,24 @@
       ],
       "Paused": [
         "Pausada"
+      ],
+      "Canceling...": [
+        "Cancelando..."
+      ],
+      "Disabled": [
+        "Desactivado"
+      ],
+      "Imported": [
+        "Importado"
+      ],
+      "In progress...": [
+        "En progreso..."
+      ],
+      "Undo finished": [
+        "Acción revertida"
+      ],
+      "Undo in progress": [
+        "Revirtiendo..."
       ]
     },
     "Import type": {
@@ -12336,6 +12366,34 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "Se ha pausado una importación porque se perdió la conexión con su proveedor de correo electrónico."
+      ],
+      "An import is paused because your storage is almost full.": [
+        "Se ha pausado una importación porque su almacenamiento está casi lleno."
+      ],
+      "Choose your service to connect with": [
+        "Elija su servicio para conectar"
+      ],
+      "Forwarding automatically sends new incoming emails to your Inbox.": [
+        "El reenvío envía automáticamente los nuevos correos entrantes a su bandeja de entrada."
+      ],
+      "Free up space or upgrade your storage to continue.": [
+        "Libere espacio o amplíe su almacenamiento para continuar."
+      ],
+      "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
+        "La importación de ${ accounts } se ha retrasado temporalmente debido a un límite de ancho de banda.",
+        "Las importaciones de ${ accounts } se han retrasado temporalmente debido a un límite de ancho de banda."
+      ],
+      "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
+        "Las importaciones muestran transferencias únicas de correos, calendarios o contactos a su cuenta de ${ BRAND_NAME }."
+      ],
+      "Please reconnect to continue.": [
+        "Vuelva a conectarse para continuar."
+      ],
+      "The ${ bandwidthLimitLink } was reached. We'll automatically resume it once it resets.": [
+        "Se alcanzó el ${ bandwidthLimitLink }. La reanudaremos automáticamente cuando se restablezca."
       ]
     },
     "info": {
@@ -18795,7 +18853,7 @@
         "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "¡Extienda su suscripción y guarde ${ discountPercent }%!"
+        "¡Extienda su suscripción y ahorre ${ discountPercent }%!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Acceso completo a ${ VPN_APP_NAME }"
@@ -18819,7 +18877,7 @@
         "Mayor protección contra ciberamenazas"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "¡Cambie a nuestro plan anual y guarde ${ toYearlyDiscountAmount }!"
+        "¡Cambie a nuestro plan anual y ahorre ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Chats diarios ilimitados"
@@ -24150,6 +24208,24 @@
       ],
       "Your subscriptions": [
         "Sus suscripciones"
+      ],
+      "Choose a provider": [
+        "Elegir un proveedor"
+      ],
+      "Custom": [
+        "Personalizado"
+      ],
+      "Forwardings": [
+        "Reenvíos"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importe sus datos a ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Importaciones"
+      ],
+      "Select data to import": [
+        "Seleccionar datos para importar"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25330,6 +25406,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Su prueba finalizará el ${ textDate }. No se le cobrará si cancela antes del ${ textDate }. ${ action }"
+      ],
+      "You will not see this import record in the list anymore.": [
+        "Ya no verá este registro de importación en la lista."
       ]
     },
     "Warning for domain modal": {
@@ -25585,6 +25664,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "Importación avanzada"
+      ],
+      "Import from ${ providerName }": [
+        "Importar desde ${ providerName }"
       ]
     }
   }

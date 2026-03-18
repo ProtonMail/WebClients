@@ -4933,6 +4933,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kannst Termine im iCal-Format (ICS-Datei) importieren. Die Datei darf die max. Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und bis zu ${ MAX_IMPORT_EVENTS_STRING } Termine enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
+      ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "Übertrage E-Mails, Kalendertermine und Kontakte einfach von deinem vorherigen Anbieter. Wähle einen einmaligen Import oder eine automatische, fortlaufende Synchronisierung."
       ]
     },
     "description": {
@@ -18858,7 +18861,7 @@
         "Die Rabatte basieren auf den monatlichen Standardpreisen. Dein Abonnement wird am Ende des Abrechnungszeitraums zum jährlichen Standardtarif verlängert."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Verlängere dein Abonnement und speichere ${ discountPercent } %!"
+        "Verlängere dein Abonnement und spare ${ discountPercent } %!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Voller Zugriff auf ${ VPN_APP_NAME }"
@@ -18882,7 +18885,7 @@
         "Stärkerer Schutz vor Cyber-Bedrohungen"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Wechsle zu unserem jährlichen Abonnement und speichere ${ toYearlyDiscountAmount }!"
+        "Wechsle zu unserem jährlichen Abonnement und spare ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Unbegrenzte tägliche Chats"

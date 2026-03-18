@@ -1629,6 +1629,9 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Download ICS": [
+        "Descargar el archivo ICS"
       ]
     },
     "action": {
@@ -2969,6 +2972,9 @@
       ],
       "Syncing": [
         "Sincronizando"
+      ],
+      "Active": [
+        "Activo"
       ]
     },
     "Calendar subscription not synced error": {
@@ -4725,6 +4731,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puedes importar eventos en formato iCal (archivos ICS). El archivo puede tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos. Si tu archivo es más grande, debes dividirlo en archivos más pequeños."
+      ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "Transfiere fácilmente correos, eventos de calendario y contactos desde tu proveedor anterior. Elige entre una importación puntual o una sincronización automática continua."
       ]
     },
     "description": {
@@ -5467,6 +5476,12 @@
       ],
       "Send confirmation email": [
         "Enviar correo electrónico de confirmación"
+      ],
+      "Back": [
+        "Atrás"
+      ],
+      "Delete this condition": [
+        "Eliminar esta condición"
       ]
     },
     "email_forwarding_2023: Error": {
@@ -7054,6 +7069,9 @@
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
         "La conexión a internet fue interrumpida, lo que provocó un fallo en el proceso de exportación. Inténtalo de nuevo."
+      ],
+      "You can save an ICS file of the events that were successfully exported.": [
+        "Puedes guardar un archivo ICS de los eventos que han sido exportados con éxito."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -11816,6 +11834,15 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "Support for post-quantum keys is enabled for your account.": [
+        "Soporte para claves post-cuánticas está activado para tu cuenta."
+      ],
+      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
+        "Usa la dirección de correo electrónico seleccionada como nombre de usuario SMTP en el servicio externo y el token generado como la contraseña SMTP."
+      ],
+      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "Puedes usar ${ MAIL_APP_NAME } con cualquier cliente de correo electrónico de escritorio que admita IMAP/SMTP, incluidos Outlook, Apple Mail y Thunderbird."
       ]
     },
     "info": {
@@ -12040,6 +12067,9 @@
       ],
       "Primary": [
         "Principal"
+      ],
+      "Invalid": [
+        "Inválido"
       ]
     },
     "Key type hint": {
@@ -13685,6 +13715,12 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Allow all users to create vaults": [
+        "Permitir a todos los usuarios crear cajas fuertes"
+      ],
+      "Copy fingerprint": [
+        "Copiar huella digital"
       ]
     },
     "label": {
@@ -15375,6 +15411,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la red oscura para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
+      ],
+      "Activity logs and policy": [
+        "Registros de actividad y política"
       ]
     },
     "new_plans: feature highlight": {
@@ -16471,6 +16510,9 @@
       ],
       "Windows": [
         "Windows"
+      ],
+      "28th of the month": [
+        "28º del mes"
       ]
     },
     "option": {
@@ -16611,6 +16653,9 @@
     "OS compatibility": {
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (para Fedora/openSUSE)"
+      ],
+      ".dmg (12.0 or later)": [
+        ".dmg (12.0 o superior)"
       ]
     },
     "Participant name": {
@@ -17937,7 +17982,7 @@
         "Los descuentos se basan en el precio mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "¡Extiende tu suscripción y guarda un ${ discountPercent }%!"
+        "¡Extiende tu suscripción y ahorra un ${ discountPercent }%!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Acceso completo a ${ VPN_APP_NAME }"
@@ -17961,7 +18006,7 @@
         "Mayor protección contra las ciberamenazas"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "¡Cámbiate a nuestro plan anual y guarda ${ toYearlyDiscountAmount }!"
+        "¡Cámbiate a nuestro plan anual y ahorra ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Chats diarios ilimitados"
@@ -21312,6 +21357,9 @@
       ],
       "Your address has been activated": [
         "Tu dirección se ha activado"
+      ],
+      "Calendar removed": [
+        "Calendario eliminado"
       ]
     },
     "Success message": {
@@ -23233,6 +23281,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Actions": [
+        "Acciones"
       ]
     },
     "Title header for members table": {
@@ -23479,6 +23530,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Es posible que tu cuenta externa haya alcanzado el límite de ancho de banda de 24 horas. ${ BRAND_NAME } intentará reanudar la importación tan pronto como sea posible."
+      ],
+      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
+        "Cuando añadas una etiqueta a un mensaje en una conversación, se aplicará automáticamente a todos los mensajes futuros que envíes o recibas en esa conversación."
       ]
     },
     "tooltip": {
@@ -24514,6 +24568,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Settings/filters": {
+      "Filters": [
+        "Filtros"
       ]
     }
   }

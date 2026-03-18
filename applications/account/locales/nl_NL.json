@@ -1706,6 +1706,24 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Close search": [
+        "Zoekfunctie sluiten"
+      ],
+      "Delete forward": [
+        "Doorsturen verwijderen"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Reload page": [
+        "Pagina vernieuwen"
+      ],
+      "Remove forward": [
+        "Doorsturen verwijderen"
+      ],
+      "Search groups": [
+        "Groepen zoeken"
       ]
     },
     "action": {
@@ -2838,6 +2856,27 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "U dient de toestemming te verlenen aan ${ BRAND_NAME } om uw gegevens te kopiëren. Keer hier terug om verder te gaan nadat u de toestemmingen hebt geaccepteerd."
+      ],
+      "Completed": [
+        "Voltooid"
+      ],
+      "Has errors": [
+        "Bevat fouten"
+      ],
+      "In progress": [
+        "Bezig"
+      ],
+      "Not started": [
+        "Niet begonnen"
+      ],
+      "Settings": [
+        "Instellingen"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Users migrated": [
+        "Gebruikers gemigreerd"
       ]
     },
     "breadcrumb": {
@@ -4891,6 +4930,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
+      ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "Eenvoudig e-mails, agenda-afspraken en contactpersonen overzetten van uw vorige provider. Kies voor een eenmalige import of automatisch doorlopende synchronisatie."
       ]
     },
     "description": {
@@ -7034,6 +7076,15 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
+      ],
+      "Invalid coupon": [
+        "Ongeldige kortingscode"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omgekeerde btw-regeling wordt niet ondersteund voor dit abonnement"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Het minimale donatiebedrag is ${ price }"
       ]
     },
     "error": {
@@ -8802,6 +8853,24 @@
       ],
       "Paused": [
         "Gepauzeerd"
+      ],
+      "Canceling...": [
+        "Annuleren..."
+      ],
+      "Disabled": [
+        "Uitgeschakeld"
+      ],
+      "Imported": [
+        "Geïmporteerd"
+      ],
+      "In progress...": [
+        "Bezig..."
+      ],
+      "Undo finished": [
+        "Ongedaan maken voltooid"
+      ],
+      "Undo in progress": [
+        "Bezig met ongedaan maken"
       ]
     },
     "Import type": {
@@ -12267,6 +12336,55 @@
       ],
       "Zoom meeting": [
         "Zoom meeting"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Een aangepast domein is vereist om groepen te maken. Als u geen aangepast domein hebt ingesteld, stel dit dan eerst in via ${ linkToDomainPage }."
+      ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "Een import is onderbroken omdat de verbinding met uw e-mailprovider is verbroken."
+      ],
+      "An import is paused because your storage is almost full.": [
+        "Een import is onderbroken omdat uw opslag bijna vol is."
+      ],
+      "Choose your service to connect with": [
+        "Kies uw service om verbinding te maken"
+      ],
+      "Forwarding automatically sends new incoming emails to your Inbox.": [
+        "Doorsturen stuurt nieuwe inkomende e-mails automatisch naar uw inbox."
+      ],
+      "Free up space or upgrade your storage to continue.": [
+        "Maak ruimte vrij of upgrade uw opslag om door te gaan."
+      ],
+      "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
+        "Als dit is uitgeschakeld, kunnen leden van de organisatie geen nieuw aliassen aanmaken. Bestaande aliassen blijven actief."
+      ],
+      "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
+        "Importeren van ${ accounts } is tijdelijk vertraagd vanwege een bandbreedtelimiet.",
+        "Importeren van ${ accounts } is tijdelijk vertraagd vanwege een bandbreedtelimiet."
+      ],
+      "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
+        "Importeer eenmalige overdrachten van e-mails, agenda’s of contactpersonen naar uw ${ BRAND_NAME } account."
+      ],
+      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
+        "Open de instellingen van uw browser-extensie en sta de ${ PASS_APP_NAME }-extensie toe om websitegegevens te openen. Laad deze pagina vervolgens opnieuw."
+      ],
+      "Please reconnect to continue.": [
+        "Maak opnieuw verbinding om door te gaan."
+      ],
+      "Step 1 of 2": [
+        "Stap 1 van 2"
+      ],
+      "Step 2 of 2": [
+        "Stap 2 van 2"
+      ],
+      "The ${ bandwidthLimitLink } was reached. We'll automatically resume it once it resets.": [
+        "Het ${ bandwidthLimitLink } is bereikt. We zullen deze automatisch hervatten zodra deze is gereset."
+      ],
+      "Verifying ${ PASS_APP_NAME } browser extension...": [
+        "De ${ PASS_APP_NAME } browser-extensie verifiëren..."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Uw account is momenteel geconfigureerd om het omgekeerde btw-tarief toe te passen. Dit wordt niet ondersteund voor het geselecteerde abonnement. Om door te gaan, verwijdt u het btw-nummer van het factuuradres of selecteert u een ander abonnement."
       ]
     },
     "info": {
@@ -14295,6 +14413,12 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Allow alias creation": [
+        "Sta alias aanmaak toe"
+      ],
+      "Import recent mails": [
+        "Importeer recente e-mails"
       ]
     },
     "label": {
@@ -15206,6 +15330,18 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Log in in uw ${ BRAND_NAME }-account om toegang te krijgen tot al uw geëncrypteerde ${ BRAND_NAME } diensten zoals ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer. Geen account? Maak er GRATIS een."
+      ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Activeer het privé ${ BRAND_NAME } e-mailadres dat voor uw kind is gereserveerd en stel hun account in."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Activeer het ${ BRAND_NAME } account van uw kind | ${ BRAND_NAME }"
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "Herstel de toegang tot het privé ${ BRAND_NAME } e-mailadres dat voor uw kind is gereserveerd."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Herstel het ${ BRAND_NAME } account van uw kind | ${ BRAND_NAME }"
       ]
     },
     "Modal title": {
@@ -18084,6 +18220,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Uw abonnement heeft momenteel een bestaande korting. Overstappen naar deze nieuwe promotie betekent dat de bestaande korting niet langer wordt toegepast."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Omgekeerde btw mechanisme is van toepassing"
       ]
     },
     "Payments.Error": {
@@ -18705,7 +18844,7 @@
         "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Verleng uw abonnement en sla ${ discountPercent }% op!"
+        "Verleng uw abonnement en bespaar ${ discountPercent }%!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Volledige toegang tot ${ VPN_APP_NAME }"
@@ -18729,7 +18868,7 @@
         "Krachtigere bescherming tegen cyberdreigingen"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Stap over op ons jaarabonnement en sla ${ toYearlyDiscountAmount } op!"
+        "Stap over op ons jaarabonnement en bespaar ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Onbeperkt aantal dagelijkse gesprekken"
@@ -24054,6 +24193,30 @@
       ],
       "Your subscriptions": [
         "Uw abonnementen"
+      ],
+      "${ PASS_APP_NAME } is missing permissions": [
+        "${ PASS_APP_NAME } mist permissies"
+      ],
+      "Choose a provider": [
+        "Kies een provider"
+      ],
+      "Custom": [
+        "Aangepast"
+      ],
+      "Forwardings": [
+        "Doorsturen"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importeer uw gegevens naar ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Importeren"
+      ],
+      "Reverse charge not supported": [
+        "Omgekeerde btw niet ondersteund"
+      ],
+      "Select data to import": [
+        "Selecteer gegevens om te importeren"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25228,6 +25391,15 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uw proefversie eindigt op ${ textDate }. U wordt niet in rekening gebracht als u annuleert vóór ${ textDate }. ${ action }"
+      ],
+      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
+        "Kan niet inloggen. Open de ${ PASS_APP_NAME } browser-extensie en log daar in."
+      ],
+      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
+        "Kan niet registreren. Open de ${ PASS_APP_NAME } browser-extensie en registreer u van daaruit."
+      ],
+      "You will not see this import record in the list anymore.": [
+        "Dit importrecord ziet u niet meer in de lijst."
       ]
     },
     "Warning for domain modal": {
@@ -25483,6 +25655,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Jaarlijks ${ untilString }"
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "Geavanceerde import"
+      ],
+      "Import from ${ providerName }": [
+        "Importeer uit ${ providerName }"
       ]
     }
   }

@@ -1721,6 +1721,9 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Remove forward": [
+        "전달 중단"
       ]
     },
     "action": {
@@ -2854,6 +2857,9 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "회원님의 데이터를 복사하기 위해 ${ BRAND_NAME }에 대한 접근 권한을 부여해야 합니다. 권한 수락 후 다시 돌아와 계속 진행해 주세요."
+      ],
+      "Calendar": [
+        "캘린더"
       ]
     },
     "breadcrumb": {
@@ -2955,6 +2961,9 @@
       ],
       "Website access problem": [
         "웹사이트 접근 문제"
+      ],
+      "Sheets problem": [
+        "Sheets 문제"
       ]
     },
     "Button": {
@@ -4894,6 +4903,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal 포맷(ICS 파일)으로 이벤트를 불러올 수 있습니다. 파일 크기가 최대 ${ MAX_IMPORT_FILE_SIZE_STRING } 및 최대 ${ MAX_IMPORT_EVENTS_STRING }개의 이벤트를 포함하고 있어야 합니다. 만약 파일이 너무 크다면, 작은 파일들로 분할해 주세요."
+      ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "이전 제공업체의 이메일, 캘린더 이벤트, 연락처를 간편하게 이전하세요. 일회성 불러오기 또는 자동 진행 동기화를 선택하세요."
       ]
     },
     "description": {
@@ -5702,6 +5714,9 @@
       ],
       "To": [
         "수신"
+      ],
+      "From": [
+        "출처:"
       ]
     },
     "email_forwarding_2023: Incoming forwarding tab name": {
@@ -7022,6 +7037,12 @@
       ],
       "ZIP code is required": [
         "우편번호가 필요합니다"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "도메인 없이 (@example.co.kr) 사용자 이름을 입력해 주세요."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "TV와 연결하는 데 문제가 발생했습니다. TV 화면의 QR코드를 다시 스캔해 주세요."
       ]
     },
     "error": {
@@ -8759,6 +8780,9 @@
     "Import provider": {
       "Advanced import": [
         "고급 가져오기"
+      ],
+      "Import from ${ providerName }": [
+        "${ providerName }(에)서 불러오기"
       ]
     },
     "Import status": {
@@ -8782,6 +8806,18 @@
       ],
       "Undo in progress": [
         "실행 취소 진행 중"
+      ],
+      "Canceling...": [
+        "취소하는 중..."
+      ],
+      "Disabled": [
+        "비활성화됨"
+      ],
+      "Imported": [
+        "불러온 항목"
+      ],
+      "Undo finished": [
+        "실행 취소 완료됨"
       ]
     },
     "Import type": {
@@ -10859,7 +10895,7 @@
         "${ categoryLabel }에 대한 알림 받기"
       ],
       "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "이메일로 예약 바우처를 받으세요. 귀하나 자녀가 향후 15년 내에 주소를 활성화하는 데 사용할 수 있습니다. ${ learnMoreLink }"
+        "이메일로 예약 바우처를 받아보세요. 회원님 또는 자녀가 향후 15년 내에 주소를 활성화하는 데 사용할 수 있습니다. ${ learnMoreLink }"
       ],
       "Recently used servers:": [
         "최근 사용된 서버:"
@@ -12101,7 +12137,7 @@
         "계정이 성공적으로 업데이트되었습니다."
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "귀하의 계정은 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 선택하신 요금제에서 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 요금제를 선택하십시오."
+        "사용자의 계정에 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 현재 선택한 플랜에서는 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 플랜을 선택하십시오."
       ],
       "Your account was successfully updated with this promotion": [
         "사용자의 계정이 해당 프로모션으로 성공적으로 업데이트되었습니다"
@@ -12207,6 +12243,30 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
+      ],
+      "An import is paused because your storage is almost full.": [
+        "저장공간이 거의 가득 차서 가져오기가 일시 중단되었습니다."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "인증 코드를 입력하세요. ${ digit }자입니다."
+      ],
+      "Free up space or upgrade your storage to continue.": [
+        "계속하려면 잔여 스토리지를 더 확보하거나 스토리지를 업그레이드하세요."
+      ],
+      "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
+        "이메일, 캘린더 또는 연락처의 일회성 전송을 ${ BRAND_NAME } 계정으로 불러옵니다."
+      ],
+      "Please reconnect to continue.": [
+        "계속하려면 다시 연결하세요."
+      ],
+      "Verifying ${ PASS_APP_NAME } browser extension...": [
+        "${ PASS_APP_NAME } 브라우저 확장 프로그램을 확인하는 중..."
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "친구의 무료 체험이 끝난 1개월 뒤에 크레딧 보상을 받게 됩니다."
+      ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "최근 변경 사항이 게시되었습니다. 몇 시간 내로 다른 사용자에게 반영되어 표시됩니다."
       ]
     },
     "info": {
@@ -12404,6 +12464,9 @@
       ],
       "Decryption, verification": [
         "복호화, 인증"
+      ],
+      "Encryption, decryption, signing, verification": [
+        "암호화, 복호화, 서명, 인증"
       ]
     },
     "Key generation": {
@@ -14205,7 +14268,7 @@
         "네, 저는 완전히 이 계정과 모든 데이터를 지우고 싶습니다."
       ],
       "Your activation code:": [
-        "귀하의 활성화 코드:"
+        "나의 활성화 코드:"
       ],
       "Your calendar URL": [
         "내 캘린더 URL"
@@ -14214,7 +14277,7 @@
         "크레딧 잔액"
       ],
       "Your email address": [
-        "귀하의 이메일 주소"
+        "나의 이메일 주소"
       ],
       "Your password (admin)": [
         "사용자의 비밀번호 (관리자)"
@@ -18594,7 +18657,7 @@
         "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "귀하의 구독을 연장하고 ${ discountPercent }%를 저장하세요!"
+        "귀하의 구독을 연장하고 ${ discountPercent }%를 절약하세요!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME }에 대한 완전한 접근"
@@ -18618,7 +18681,7 @@
         "사이버 위협에 대한 더욱 강력한 보호"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 저장하세요!"
+        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 절약하세요!"
       ],
       "Unlimited daily chats": [
         "무제한 일일 채팅"
@@ -23866,6 +23929,12 @@
       ],
       "Your subscriptions": [
         "구독"
+      ],
+      "Forwardings": [
+        "전달"
+      ],
+      "Imports": [
+        "불러오기"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
