@@ -55,15 +55,61 @@ const useAutoScroll = (
         return distanceFromBottom <= 100;
     }, [messageChainRef]);
 
-    const scrollToBottom = useCallback(() => {
-        if (!messageChainRef.current) return;
+    // Incremented on each button click to cancel any in-progress poll loop.
+    const scrollPollGenerationRef = useRef(0);
 
-        const container = messageChainRef.current;
-        container.scrollTo({
-            top: container.scrollHeight,
-            behavior: 'smooth',
-        });
-    }, [messageChainRef]);
+    const scrollToBottom = useCallback(
+        (instant = false) => {
+            const container = messageChainRef.current;
+            if (!container) return;
+
+            container.scrollTo({
+                top: container.scrollHeight,
+                behavior: instant ? 'instant' : 'smooth',
+            });
+
+            if (!instant) return;
+
+            // Each button click gets a unique generation ID. The poll loop checks this on
+            // every frame and exits immediately if a newer click has superseded it.
+            const generation = ++scrollPollGenerationRef.current;
+            let stableFrames = 0;
+            let frameCount = 0;
+            let lastScrollHeight = container.scrollHeight;
+
+            // 10 consecutive frames with the same scrollHeight (~166ms at 60fps) means
+            // all async content (tables, images, PrismAsync, lazy bundles) has settled.
+            const STABLE_FRAMES_NEEDED = 10;
+            // Hard cap: stop after 2 seconds regardless (120 frames @ 60fps).
+            const MAX_FRAMES = 120;
+
+            // ResizeObserver watches the element's rendered box size, which does NOT
+            // change for overflow-y:auto containers when content inside grows. rAF
+            // polling reads scrollHeight directly on every frame, catching every source
+            // of height change without needing DOM events.
+            const poll = () => {
+                if (scrollPollGenerationRef.current !== generation) return;
+
+                frameCount++;
+                const currentScrollHeight = container.scrollHeight;
+                container.scrollTo({ top: currentScrollHeight, behavior: 'instant' });
+
+                if (currentScrollHeight !== lastScrollHeight) {
+                    stableFrames = 0;
+                    lastScrollHeight = currentScrollHeight;
+                } else {
+                    stableFrames++;
+                }
+
+                if (stableFrames >= STABLE_FRAMES_NEEDED || frameCount >= MAX_FRAMES) return;
+
+                requestAnimationFrame(poll);
+            };
+
+            requestAnimationFrame(poll);
+        },
+        [messageChainRef]
+    );
 
     // Handle scroll - track position for floating scroll indicator (immediate response)
     const handleScroll = useCallback(() => {
@@ -81,7 +127,7 @@ const useAutoScroll = (
 
     // Scroll to position the latest question at the top when a new question is asked
     const scrollQuestionToTopRef = useRef<(() => void) | null>(null);
-    
+
     scrollQuestionToTopRef.current = () => {
         if (!messageChainRef.current || messageChain.length === 0) return;
 
@@ -134,11 +180,21 @@ const useAutoScroll = (
 
     const hasScrolledInitially = useRef(false);
     useEffect(() => {
-        if (messageChain.length === 1 && messageChainRef.current && !hasScrolledInitially.current) {
+        if (messageChain.length > 0 && messageChainRef.current && !hasScrolledInitially.current) {
             hasScrolledInitially.current = true;
-            setTimeout(() => scrollToBottom(), 50);
+            // Show the first message at the top on open. The container's default scroll
+            // position is already 0, so this just ensures it's explicitly reset in case
+            // the container was previously scrolled (e.g. conversation switch).
+            messageChainRef.current.scrollTo({ top: 0, behavior: 'instant' });
         }
-    }, [messageChain.length, messageChainRef, scrollToBottom]);
+    }, [messageChain.length, messageChainRef]);
+
+    useEffect(() => {
+        return () => {
+            // Cancel any in-progress poll loop on unmount.
+            scrollPollGenerationRef.current++;
+        };
+    }, []);
 
     return {
         userHasScrolledUp: scrollState.userHasScrolledUp,
@@ -234,7 +290,7 @@ export const MessageChainComponent = ({
             </div>
 
             <ScrollToBottomButton
-                onClick={scrollToBottom}
+                onClick={() => scrollToBottom(true)}
                 show={showScrollIndicator}
                 composerContainerRef={composerContainerRef}
             />
