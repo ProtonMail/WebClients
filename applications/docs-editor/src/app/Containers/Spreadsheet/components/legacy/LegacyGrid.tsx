@@ -78,6 +78,7 @@ export function LegacyGrid() {
   const onRequestEditChart = useUI((ui) => ui.legacy.chartsState.onRequestEditChart)
   const onRequestCalculate = useUI((ui) => ui.legacy.onRequestCalculate)
   const onRequestAddRows = useUI((ui) => ui.legacy.onRequestAddRows)
+  const locale = useUI((ui) => ui.locale.resolved)
 
   return (
     <CanvasGrid
@@ -87,6 +88,7 @@ export function LegacyGrid() {
       // also need to override the hover color for buttons
       className="relative grow after:absolute after:top-0 after:z-10 after:h-[.0625rem] after:w-full after:bg-[#f8f9fa] [&_.rdp_button:hover]:!bg-[hsl(var(--rnc-accent))] [&_:is(th,td)]:!my-0 [&_table]:!table-auto"
       autoFocus={true}
+      locale={locale}
       showGridLines={useUI((ui) => ui.view.gridLines.enabled)}
       borderStyles={useUI((ui) => ui.legacy.searchState.borderStyles)}
       scale={useUI((ui) => ui.legacy.scale)}
