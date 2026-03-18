@@ -9,6 +9,7 @@ import { CreateMeetingDropdown } from '../../components/CreateMeetingDropdown/Cr
 import { DashboardMeetingListLoading } from '../../components/DashboardMeetingList/DashboardMeetingListLoading';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { UpsellBannerWithUser } from '../../components/UpsellBanner/UpsellBanner';
+import { useGuestContext } from '../../contexts/GuestProvider/GuestContext';
 import type { MeetingListStatus } from '../../hooks/useMeetingList';
 
 import './DashboardContainerBody.scss';
@@ -20,7 +21,6 @@ interface DashboardContainerBodyProps {
     onStartMeetingClick: () => void;
     onCreateRoomClick: () => void;
     meetings: Meeting[];
-    isGuest: boolean;
     handleScheduleInCalendar: () => void;
     handleNewRoomClick: (room?: Meeting) => void;
     handleRotatePersonalMeeting?: () => void;
@@ -35,7 +35,6 @@ export const DashboardContainerBody = ({
     onStartMeetingClick,
     onCreateRoomClick,
     meetings,
-    isGuest,
     handleScheduleInCalendar,
     handleNewRoomClick,
     handleRotatePersonalMeeting,
@@ -43,6 +42,8 @@ export const DashboardContainerBody = ({
     meetingsListStatus,
     newlyCreatedMeetingId,
 }: DashboardContainerBodyProps) => {
+    const isGuest = useGuestContext();
+
     const getHeadline = () => {
         // translator: this word is part of the full sentence "Your conversations matter" but we need to emphasize matter with a purple color
         const matterWord = (
@@ -58,7 +59,7 @@ export const DashboardContainerBody = ({
         <div className="overflow-y-auto h-full flex flex-column flex-nowrap">
             {!isGuest && <UpsellBannerWithUser />}
             <div className="flex-1 min-h-0 w-full meet-container-padding-x flex flex-column flex-nowrap meet-container relative">
-                <PageHeader guestMode={isGuest} showAppSwitcher={!isElectronApp} />
+                <PageHeader showAppSwitcher={!isElectronApp} />
                 <div className="flex flex-column items-center flex-nowrap w-full shrink-0 meet-dashboard-header-wrapper">
                     <h1 className="meet-dashboard-headline text-center">{getHeadline()}</h1>
                     <span className="meet-dashboard-subtitle mt-5 mb-5 text-center text-wrap-balance">{c('Header')
@@ -87,7 +88,6 @@ export const DashboardContainerBody = ({
                 <DashboardMeetingListLoading
                     meetingsListStatus={meetingsListStatus}
                     meetings={meetings}
-                    isGuest={isGuest}
                     handleScheduleInCalendar={handleScheduleInCalendar}
                     handleScheduleClick={onScheduleClick}
                     handleNewRoomClick={handleNewRoomClick}

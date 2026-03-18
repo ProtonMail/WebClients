@@ -12,8 +12,8 @@ import { useMeetErrorReporting } from '@proton/meet';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { setPreviousMeetingLink, setUpsellModalType } from '@proton/meet/store/slices';
-import { addKeyRotationLog, setMlsGroupState } from '@proton/meet/store/slices/meetingInfo';
 import { resetChatAndReactions } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import { addKeyRotationLog, setMlsGroupState } from '@proton/meet/store/slices/meetingInfo';
 import { toggleMeetingLockThunk } from '@proton/meet/store/slices/settings';
 import {
     PopUpControls,
@@ -43,6 +43,7 @@ import { PasswordPrompt } from '../../components/PasswordPrompt/PasswordPrompt';
 import { PiPPreviewVideo } from '../../components/PiPPreviewVideo/PiPPreviewVideo';
 import { WebRtcUnsupportedModal } from '../../components/WebRtcUnsupportedModal/WebRtcUnsupportedModal';
 import { MEETING_LOCKED_ERROR_CODE } from '../../constants';
+import { useGuestContext } from '../../contexts/GuestProvider/GuestContext';
 import { MLSContext } from '../../contexts/MLSContext';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useWasmApp } from '../../contexts/WasmContext';
@@ -78,7 +79,6 @@ enum MeetingDecryptionReadinessStatus {
 }
 
 interface ProtonMeetContainerProps {
-    guestMode?: boolean;
     room: Room;
     keyProvider: ProtonMeetKeyProvider;
     user?: UserModel | null;
@@ -97,7 +97,6 @@ const isConnectionTimeoutError = (error: any): boolean => {
 };
 
 export const ProtonMeetContainer = ({
-    guestMode = false,
     room,
     keyProvider,
     user = null,
@@ -105,6 +104,7 @@ export const ProtonMeetContainer = ({
     isSubUser = false,
 }: ProtonMeetContainerProps) => {
     const dispatch = useMeetDispatch();
+    const isGuest = useGuestContext();
 
     const promptOnTabClose = useFlag('MeetPromptOnTabClose');
     const showUpsellModalAfterMeeting = useFlag('MeetShowUpsellModalAfterMeeting');
@@ -115,7 +115,7 @@ export const ProtonMeetContainer = ({
 
     useWakeLock();
 
-    const { personalMeeting, meetingsListStatus } = useDependencySetup(guestMode);
+    const { personalMeeting, meetingsListStatus } = useDependencySetup();
 
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
@@ -271,10 +271,10 @@ export const ProtonMeetContainer = ({
 
     const instantMeetingRef = useRef(!token);
 
-    const useDefaultDisplayName = guestMode
+    const useDefaultDisplayName = isGuest
         ? defaultDisplayNameHooks.unauthenticated
         : defaultDisplayNameHooks.authenticated;
-    const storedDisplayName = getItem(getDisplayNameStorageKey(guestMode, user?.ID));
+    const storedDisplayName = getItem(getDisplayNameStorageKey(isGuest, user?.ID));
 
     const defaultDisplayName = useDefaultDisplayName();
 
@@ -373,11 +373,11 @@ export const ProtonMeetContainer = ({
     )}`;
 
     // Check if joining own personal meeting room
-    const isPersonalRoom = !guestMode && personalMeeting?.MeetingLinkName === token;
+    const isPersonalRoom = !isGuest && personalMeeting?.MeetingLinkName === token;
 
     // Check if still loading meetings (to avoid showing wrong title initially)
     const isLoadingMeetings =
-        !guestMode &&
+        !isGuest &&
         (meetingsListStatus === MeetingListStatus.InitialLoading ||
             meetingsListStatus === MeetingListStatus.InitialDecrypting);
 
@@ -640,7 +640,7 @@ export const ProtonMeetContainer = ({
                 expiration: 20000,
             });
 
-            if (!guestMode) {
+            if (!isGuest) {
                 history.push('/dashboard');
             }
 
@@ -878,7 +878,7 @@ export const ProtonMeetContainer = ({
         try {
             const { id, passwordBase } = await createInstantMeeting({
                 params: {},
-                isGuest: guestMode,
+                isGuest: isGuest,
                 isPaidUser: paidUser,
             });
 
@@ -920,7 +920,7 @@ export const ProtonMeetContainer = ({
                 expirationTime: 1000 * (meetingInfo.MeetingInfo.ExpirationTime ?? 0),
             }));
 
-            isGuestAdminRef.current = guestMode;
+            isGuestAdminRef.current = isGuest;
 
             history.push(meetingLinkRef.current);
         } catch (error: any) {
@@ -1034,7 +1034,7 @@ export const ProtonMeetContainer = ({
 
     const prepareUpsell = () => {
         if (!showUpsellModalAfterMeeting || !meetUpsellEnabled) {
-            if (guestMode) {
+            if (isGuest) {
                 history.push(meetingLinkRef.current as string);
             } else {
                 history.push('/dashboard');
@@ -1044,7 +1044,7 @@ export const ProtonMeetContainer = ({
 
         dispatch(setPreviousMeetingLink(meetingLinkRef.current));
 
-        if (guestMode) {
+        if (isGuest) {
             dispatch(setUpsellModalType(UpsellModalTypes.GuestAccount));
         }
 
@@ -1272,7 +1272,6 @@ export const ProtonMeetContainer = ({
                         participantNameMap={participantNameMap}
                         participantsMap={participantsMap}
                         passphrase={password}
-                        guestMode={guestMode}
                         handleMeetingLockToggle={handleMeetingLockToggle}
                         isDisconnected={connectionLost}
                         startPiP={startPiP}
@@ -1301,7 +1300,6 @@ export const ProtonMeetContainer = ({
                         handleJoin={instantMeetingRef.current ? joinInstantMeeting : joinMeeting}
                         loadingState={LoadingState.JoiningInProgress}
                         isLoading={joiningInProgress}
-                        guestMode={guestMode}
                         shareLink={shareLink}
                         roomName={displayRoomName as string}
                         roomId={token}
@@ -1342,7 +1340,7 @@ export const ProtonMeetContainer = ({
                             setIsConnectionFailedModalOpen(false);
                             history.push('/dashboard');
                         }}
-                        showLeaveButton={!guestMode}
+                        showLeaveButton={!isGuest}
                     />
                 )}
                 {joinedRoom && !!canvas && isPipActive && isFirefox() ? (
