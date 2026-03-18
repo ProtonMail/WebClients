@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -23,10 +23,10 @@ import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { getRotatePersonalMeetingDisabledUntil } from '../../utils/disableRotatePersonalMeeting';
-import { getNextOccurrence } from '../../utils/getNextOccurrence';
-import { DeleteMeetingModal } from '../DeleteMeetingModal/DeleteMeetingModal';
-import { getRoomVariantFromId } from '../RoomForm/getRoomVariantFromId';
+import { getNextOccurrence } from '../../../utils/getNextOccurrence';
+import { DeleteMeetingModal } from '../../DeleteMeetingModal/DeleteMeetingModal';
+import { getRoomVariantFromId } from '../../RoomForm/getRoomVariantFromId';
+import { PersonalMeetingRotationButton } from './PersonalMeetingRotationButton';
 
 import './MeetingRow.scss';
 
@@ -54,22 +54,6 @@ export const MeetingRow = ({
     loadingRotatePersonalMeeting = false,
 }: MeetingRowProps) => {
     const isPersonalMeetingRotationEnabled = useFlag('PersonalMeetingRotation');
-
-    const isRotationDisabled = () => {
-        const disabledUntil = getRotatePersonalMeetingDisabledUntil();
-        return !!disabledUntil && disabledUntil > Date.now();
-    };
-
-    const [isRotateButtonDisabled, setIsRotateButtonDisabled] = useState(isRotationDisabled);
-
-    const checkDisableStatus = () => {
-        setIsRotateButtonDisabled(isRotationDisabled());
-    };
-
-    useEffect(() => {
-        const interval = setInterval(checkDisableStatus, 30_000);
-        return () => clearInterval(interval);
-    }, []);
 
     const history = useHistory();
     const [isDeleteMeetingModalOpen, setIsDeleteMeetingModalOpen] = useState(false);
@@ -159,14 +143,6 @@ export const MeetingRow = ({
             handleEditScheduleMeeting(meeting);
             return;
         }
-    };
-
-    const handleRotate = () => {
-        if (!handleRotatePersonalMeeting) {
-            return;
-        }
-        setIsRotateButtonDisabled(true);
-        handleRotatePersonalMeeting();
     };
 
     const roomLabel =
@@ -271,19 +247,10 @@ export const MeetingRow = ({
                         {meeting.Type === MeetingType.PERSONAL &&
                             isPersonalMeetingRotationEnabled &&
                             !!handleRotatePersonalMeeting && (
-                                <Button
-                                    className={clsx(
-                                        'action-button-new meeting-row-action color-norm rounded-full flex-1 md:flex-none flex justify-center items-center',
-                                        loadingRotatePersonalMeeting && 'icon-rotating'
-                                    )}
-                                    size="medium"
-                                    shape="ghost"
-                                    icon
-                                    onClick={handleRotate}
-                                    disabled={loadingRotatePersonalMeeting || isRotateButtonDisabled}
-                                >
-                                    <IcArrowsRotate alt={c('Action').t`Rotate personal meeting link`} />
-                                </Button>
+                                <PersonalMeetingRotationButton
+                                    loadingRotatePersonalMeeting={loadingRotatePersonalMeeting}
+                                    handleRotatePersonalMeeting={handleRotatePersonalMeeting}
+                                />
                             )}
                     </div>
                     <Button
