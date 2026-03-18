@@ -5,6 +5,10 @@ im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
 .lumo-settings-modal {
+	.is-active {
+		font-weight: bold;
+	}
+
 	// Mobile adjustments
 	@include im.media('<=small') {
 		block-size: auto;
@@ -45,11 +49,9 @@ im.$media-expressions: $media-expressions;
 	}
 
 	.toggle-container {
-
 		&::before {
 			border-color: #4b5563 !important;
-			background-color: #aaaaaa;
-
+			background-color: #aaa;
 		}
 
 		&.toggle-container--checked::before {
@@ -62,7 +64,6 @@ im.$media-expressions: $media-expressions;
 
 		:not(.toggle-container--disabled):hover::before {
 			background-color: #4b5563;
-
 		}
 	}
 
@@ -409,10 +410,6 @@ im.$media-expressions: $media-expressions;
 		border: 1px solid var(--border-weak) !important;
 		color: var(--text-norm) !important;
 	}
-}
-
-.is-active {
-	font-weight: bold;
 }
 
 .settings-section-icon {
