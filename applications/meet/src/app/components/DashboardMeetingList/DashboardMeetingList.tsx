@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { useGuestContext } from '../../contexts/GuestProvider/GuestContext';
 import { getNextOccurrence } from '../../utils/getNextOccurrence';
 import { DashboardMeetingListTabs } from './DashboardMeetingListTabs';
 import { GuestUserPrompt } from './GuestUserPrompt';
@@ -19,7 +20,6 @@ import { groupMeetingsByDay } from './utils';
 
 export interface DashboardMeetingListProps {
     meetings: Meeting[];
-    isGuest: boolean;
     handleScheduleInCalendar: () => void;
     handleScheduleClick: () => void;
     handleNewRoomClick: (room?: Meeting) => void;
@@ -30,7 +30,6 @@ export interface DashboardMeetingListProps {
 
 export const DashboardMeetingList = ({
     meetings,
-    isGuest,
     handleScheduleInCalendar,
     handleScheduleClick,
     handleNewRoomClick,
@@ -38,6 +37,7 @@ export const DashboardMeetingList = ({
     loadingRotatePersonalMeeting,
     newlyCreatedMeetingId,
 }: DashboardMeetingListProps) => {
+    const isGuest = useGuestContext();
     const isPastMeetingsEnabled = useFlag('MeetPastMeetings');
 
     const [search, setSearch] = useState('');
