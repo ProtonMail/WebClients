@@ -70,7 +70,6 @@ import { isConversationMode } from '../../../helpers/mailSettings';
 import type { MessageViewIcons } from '../../../helpers/message/icon';
 import { exportBlob } from '../../../helpers/message/messageExport';
 import { useMarkAs } from '../../../hooks/actions/markAs/useMarkAs';
-import { useMoveToFolder } from '../../../hooks/actions/move/useMoveToFolder';
 import { useGetAttachment } from '../../../hooks/attachments/useAttachment';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import type { Element } from '../../../models/element';
@@ -135,7 +134,6 @@ const HeaderMoreDropdown = ({
     const [user] = useUser();
     const { feature } = useFeature(FeatureCode.SetExpiration);
     const closeDropdown = useRef<() => void>();
-    const { moveScheduledModal, moveSnoozedModal, moveToSpamModal } = useMoveToFolder();
     const [folders = []] = useFolders();
     const { markAs } = useMarkAs();
     const getMessageKeys = useGetMessageKeys();
@@ -722,9 +720,6 @@ const HeaderMoreDropdown = ({
                     {...messagePermanentDeleteModalProps}
                 />
             )}
-            {moveScheduledModal}
-            {moveSnoozedModal}
-            {moveToSpamModal}
             {renderCustomExpirationModal && (
                 <CustomExpirationModal
                     onSubmit={handleCustomExpiration}

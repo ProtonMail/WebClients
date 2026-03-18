@@ -37,3 +37,13 @@ export interface ApplyLocationLabelProps extends ApplyLocationParams {
 export interface ApplyLocationStarProps extends ApplyLocationParams {
     type: APPLY_LOCATION_TYPES.STAR;
 }
+
+
+export interface MoveParams {
+    elements: Element[];
+    destinationLabelID: string;
+    sourceLabelID: string;
+    createFilters?: boolean;
+    selectAll?: boolean;
+    onCheckAll?: (check: boolean) => void;
+}

@@ -26,7 +26,6 @@ import {
 } from '../../helpers/elements';
 import { usePermanentDelete } from '../../hooks/actions/delete/usePermanentDelete';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
-import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import type { Element } from '../../models/element';
 import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
 import { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
@@ -52,7 +51,6 @@ const ItemHoverButtons = ({
     size = 'medium',
 }: Props) => {
     const { markAs } = useMarkAs();
-    const { moveScheduledModal, moveSnoozedModal } = useMoveToFolder();
     const { applyLocation } = useApplyLocation();
     const { handleDelete: permanentDelete, deleteSelectionModal } = usePermanentDelete(labelID);
     const snoozedElement = useMailSelector(selectSnoozeElement);
@@ -223,8 +221,6 @@ const ItemHoverButtons = ({
                     </Tooltip>
                 )}
             </div>
-            {moveScheduledModal}
-            {moveSnoozedModal}
         </>
     );
 };

@@ -348,9 +348,6 @@ const MessageView = (
         labelDropdownToggleRef,
         moveDropdownToggleRef,
         filterDropdownToggleRef,
-        moveScheduledModal,
-        moveSnoozedModal,
-        moveToSpamModal,
     } = useMessageHotkeys(
         elementRef,
         {
@@ -476,9 +473,6 @@ const MessageView = (
                     conversationIndex={conversationIndex}
                 />
             )}
-            {moveScheduledModal}
-            {moveSnoozedModal}
-            {moveToSpamModal}
         </article>
     );
 };
