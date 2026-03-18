@@ -6,7 +6,6 @@ import { handleSdkError } from '../errorHandling/handleSdkError';
 import { getNodeAncestry } from './getNodeAncestry';
 import { getNodeEntity } from './getNodeEntity';
 import { getNodeName } from './getNodeName';
-import { isOwnFile } from './isOwnFile';
 
 export enum NodeLocation {
     MY_FILES = 'MY_FILES',
@@ -44,9 +43,9 @@ export async function getNodeLocation(
     }
     const nodes = nodesResult.value;
     const rootNodeEntity = getNodeEntity(nodes[0]).node;
-
-    // In case there is no membership it is a public shared node
-    if (!isOwnFile(node) && !!rootNodeEntity.membership) {
+    // If node have a membership it means it is a direct share
+    // We also check the getMyFilesRootFolder precense to exclude public page
+    if (Boolean(rootNodeEntity.membership && drive.getMyFilesRootFolder)) {
         return {
             ok: true,
             value: NodeLocation.SHARED_WITH_ME,

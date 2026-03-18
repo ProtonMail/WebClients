@@ -11,7 +11,6 @@ import { getMimeTypeDescription } from '../../components/sections/helpers';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getFormattedNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { getNodeName } from '../../utils/sdk/getNodeName';
-import { isOwnFile } from '../../utils/sdk/isOwnFile';
 import { getAuthorshipStatus } from './authorship';
 
 /**
@@ -123,7 +122,7 @@ export function useFileDetailsModalState({
                         : undefined,
                     uploadedTime: nodeEntity.creationTime,
                     claimedModifiedTime: activeRevision?.claimedModificationTime,
-                    isShared: isOwnFile(node) ? nodeEntity.isShared : undefined,
+                    isShared: nodeEntity.directRole === MemberRole.Admin ? nodeEntity.isShared : undefined,
                     numberOfDownloads,
                     file:
                         fileType === NodeType.File
@@ -142,7 +141,7 @@ export function useFileDetailsModalState({
             }
         };
         void withLoading(fetchFileDetails());
-    }, [nodeUid, drive, withLoading, verifySignatures]);
+    }, [nodeUid, drive, withLoading, verifySignatures, showLocation]);
 
     return {
         open,
