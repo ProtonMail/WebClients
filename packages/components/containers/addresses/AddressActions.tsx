@@ -18,6 +18,7 @@ import { useLoading } from '@proton/hooks';
 import type { WithLoading } from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
 import { MEMBER_PRIVATE } from '@proton/shared/lib/constants';
+import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import type { Address, Member, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -132,6 +133,10 @@ const AddressActions = ({
     const hasAccessToBYOE = useBYOEFeatureStatus();
     const { sync, handleGrantPermission, handleReconnect, loadingConfig } = useReconnectSync(address);
 
+    // We need to show the grant permission button when the sync is not active OR when the sync does not exists anymore
+    const showBYOEGrantPermission =
+        (sync && sync.state !== ApiSyncState.ACTIVE) || (getIsBYOEAddress(address) && !sync);
+
     const [missingKeysProps, setMissingKeysAddressModalOpen, renderMissingKeysModal] = useModalState();
     const [deleteAddressPromptProps, setDeleteAddressPromptOpen, renderDeleteAddressPrompt] = useModalState();
     const [deleteAddressModalProps, setDeleteAddressModalOpen, renderDeleteAddressModal] = useModalState();
@@ -223,11 +228,10 @@ const AddressActions = ({
                 disabled: !allowAddressDeletion,
             } as const),
         permissions.canGrantBYOEPermissions &&
-            sync &&
-            sync.state !== ApiSyncState.ACTIVE && {
+            showBYOEGrantPermission && {
                 text: c('Address action').t`Grant permission`,
                 key: 'address-action-grant-byoe-permission',
-                onClick: () => handleGrantPermission(withLoading),
+                onClick: () => handleGrantPermission(withLoading, address),
                 disabled: loadingConfig,
                 'aria-label': c('Address action').t`Grant permission to “${emailAddress}”`,
             },
