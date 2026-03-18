@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import type { CellXfs, SheetData, UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
 import { Align, type CellInterface } from '@rowsncolumns/grid'
@@ -256,6 +256,9 @@ function useYjsState({ localState, spreadsheetState, docState }: YjsStateDepende
 
     userId: userName,
     title: userName,
+
+    skipInitialSync: true,
+    supportLegacySharedStringsArray: true,
   })
 
   const usersWithCorrectColor = useMemo(() => {
@@ -293,7 +296,7 @@ function useYjsState({ localState, spreadsheetState, docState }: YjsStateDepende
 // proton sheets state
 // -------------------
 
-type OmitDepsKey = 'localState' | 'spreadsheetState' | 'onChangeHistory'
+type OmitDepsKey = 'localState' | 'spreadsheetState' | 'onChangeHistory' | 'locale'
 type ProtonSheetsStateDependencies = Omit<SpreadsheetStateDependencies, OmitDepsKey> &
   Omit<ChartsStateDependencies, OmitDepsKey> &
   Omit<SearchStateDependencies, OmitDepsKey> &
@@ -333,6 +336,12 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   const depsWithLocalState = { localState, onChangeHistory, onRequestFonts, ...deps }
   const spreadsheetState = useSpreadsheetState({ ...depsWithLocalState, locale: localeResolved })
   const canvasGridMethods = useSpreadsheet()
+
+  const [previousLocaleResolved, setPreviousLocaleResolved] = useState(localeResolved)
+  if (previousLocaleResolved !== localeResolved) {
+    setPreviousLocaleResolved(localeResolved)
+    spreadsheetState.onChangeLocale(localeResolved)
+  }
 
   const { scrollToCell, getCellOffsetFromCoords: _getCellOffsetFromCoords, getGridRef } = canvasGridMethods
 
