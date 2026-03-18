@@ -1028,6 +1028,9 @@
       ],
       "Edit billing address": [
         "Factuuradres bewerken"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -4064,6 +4067,15 @@
       ],
       "Enter your username without the domain (@example.com)": [
         "Voer uw gebruikersnaam in zonder het domein (@example.com)"
+      ],
+      "Invalid coupon": [
+        "Ongeldige kortingscode"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omgekeerde btw-regeling wordt niet ondersteund voor dit abonnement"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Het minimale donatiebedrag is ${ price }"
       ]
     },
     "error": {
@@ -5001,6 +5013,9 @@
       ],
       "Import from Yahoo": [
         "Importeer uit Yahoo"
+      ],
+      "Advanced import": [
+        "Geavanceerde import"
       ]
     },
     "Import warning": {
@@ -6542,6 +6557,12 @@
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "U ontvangt het tegoed 1 maand nadat uw vriend(in) zich abonneert op een jaarlijks abonnement, en 2 maanden nadat zij zich abonneren op een maandelijks abonnement."
+      ],
+      "Choose your service to connect with": [
+        "Kies uw service om verbinding te maken"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Uw account is momenteel geconfigureerd om het omgekeerde btw-tarief toe te passen. Dit wordt niet ondersteund voor het geselecteerde abonnement. Om door te gaan, verwijdt u het btw-nummer van het factuuradres of selecteert u een ander abonnement."
       ]
     },
     "info": {
@@ -9514,6 +9535,9 @@
       ],
       "I'm purchasing as a business": [
         "Ik koop dit voor mijn bedrijf."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Omgekeerde btw mechanisme is van toepassing"
       ]
     },
     "Payments.Error": {
@@ -12241,6 +12265,21 @@
       ],
       "Spring Sale": [
         "Lenteverkoop"
+      ],
+      "Choose a provider": [
+        "Kies een provider"
+      ],
+      "Custom": [
+        "Aangepast"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importeer uw gegevens naar ${ BRAND_NAME }"
+      ],
+      "Reverse charge not supported": [
+        "Omgekeerde btw niet ondersteund"
+      ],
+      "Select data to import": [
+        "Selecteer gegevens om te importeren"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

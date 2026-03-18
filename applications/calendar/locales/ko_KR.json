@@ -1528,6 +1528,9 @@
       ],
       "Website access problem": [
         "웹사이트 접근 문제"
+      ],
+      "Sheets problem": [
+        "Sheets 문제"
       ]
     },
     "Button": {
@@ -4028,6 +4031,12 @@
       ],
       "The minimum donation amount is ${ price }": [
         "최소 기부 금액은 ${ price }입니다."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "도메인 없이 (@example.co.kr) 사용자 이름을 입력해 주세요."
+      ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "${ MEET_APP_NAME } 화상 회의 추가 실패"
       ]
     },
     "error": {
@@ -6464,6 +6473,9 @@
       ],
       "Choose your service to connect with": [
         "연결하고자 하는 서비스 선택"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "인증 코드를 입력하세요. ${ digit }자입니다."
       ]
     },
     "info": {
