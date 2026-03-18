@@ -66,7 +66,11 @@ export const DashboardMoreInfoSections = ({ sections }: { sections: DashboardMor
                                     <p className="m-0 text-ellipsis-two-lines color-weak">{section.description()}</p>
                                 </div>
                                 {isClickableSection(section) && (
-                                    <IcChevronRight key={`icon-${key}`} className="shrink-0 color-hint" size={6} />
+                                    <IcChevronRight
+                                        key={`icon-${key}`}
+                                        className="shrink-0 color-hint rtl:mirror"
+                                        size={6}
+                                    />
                                 )}
                             </Element>
                         );

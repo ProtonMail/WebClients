@@ -274,7 +274,7 @@ const UserDropdownContent = () => {
                         >
                             <Icon className="shrink-0" name="pass-shield-ok" size={6} />
                             <div>{c('Safety review').t`Review account safety`}</div>
-                            <Icon className="shrink-0" name="chevron-right" size={4} />
+                            <Icon className="shrink-0 rtl:mirror" name="chevron-right" size={4} />
                         </AppLink>
                     );
                 }}
