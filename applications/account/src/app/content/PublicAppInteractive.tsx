@@ -16,7 +16,7 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getIsPassApp, getIsVPNApp, getToAppName } from '@proton/shared/lib/authentication/apps';
 import { produceOAuthFork } from '@proton/shared/lib/authentication/fork';
 import type { ActiveSession, GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { APPS, type APP_NAMES, CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES, CLIENT_TYPES, SSO_PATHS, VPN_TV_PATH_WITH_CODE } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { FlagProvider } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
@@ -65,6 +65,7 @@ import { type ProduceForkData, SSOType } from './actions/forkInterface';
 import { getSanitizedLocationDescriptorObject } from './actions/getSanitizedLocationDescriptorObject';
 import type { LoginLocationState, LoginResult } from './actions/interface';
 import { type Paths, UNAUTHENTICATED_ROUTES } from './helper';
+import { TvContainerNotSignedIn } from './tvWithCode/TvContainerNotSignedIn';
 
 let cryptoWorkerPromise: Promise<void> | undefined;
 
@@ -343,6 +344,11 @@ const PublicAppInteractive = ({
                                 >
                                     <UnleashFlagStarter location={location} />
                                     <Switch location={location}>
+                                        <Route path={'/vpn' + VPN_TV_PATH_WITH_CODE}>
+                                            <UnAuthenticated>
+                                                <TvContainerNotSignedIn />
+                                            </UnAuthenticated>
+                                        </Route>
                                         <Route path={SSO_PATHS.JOIN_MAGIC_LINK}>
                                             <UnAuthenticated>
                                                 <JoinMagicLinkContainer
