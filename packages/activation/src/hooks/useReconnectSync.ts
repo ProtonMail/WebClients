@@ -40,19 +40,58 @@ const useReconnectSync = (address: Address) => {
     });
 
     // Used to reconnect after losing a sync. We need to resume the sync.
-    const handleGrantPermission = async (withLoading: WithLoading) => {
-        if (!sync) {
-            return;
-        }
-
+    const handleGrantPermission = async (withLoading: WithLoading, address: Address) => {
         const features = [getIsBYOEAccount(user) ? EASY_SWITCH_FEATURES.BYOE : EASY_SWITCH_FEATURES.IMPORT_MAIL];
         const { Tokens } = await api<{ Tokens: ImportToken[] }>(
             getTokensByFeature({
-                Account: sync.account,
+                Account: sync?.account || address.Email,
                 Features: features,
                 Provider: OAUTH_PROVIDER.GOOGLE,
             })
         );
+
+        // It's possible that the sync has been lost, and deleted backend side (after some time they are deleted)
+        // In that case the user has to re-create a sync.
+        if (!sync) {
+            if (Tokens.length > 0) {
+                await withLoading(async () => {
+                    await easySwitchDispatch(
+                        createSyncItem({
+                            type: SyncTokenStrategy.useExisting,
+                            token: Tokens[0],
+                            Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_GRANT_PERMISSION_BYOE,
+                            expectedEmailAddress: { address: address.Email, type: 'reconnect' },
+                            successNotification: { text: c('action').t`Resuming forward` },
+                        })
+                    );
+                });
+
+                return;
+            }
+
+            void triggerOAuthPopup({
+                provider: OAUTH_PROVIDER.GOOGLE,
+                features,
+                callback: async (oAuthProps: OAuthProps) => {
+                    const { Code, Provider, RedirectUri } = oAuthProps;
+                    await withLoading(async () => {
+                        await easySwitchDispatch(
+                            createSyncItem({
+                                type: SyncTokenStrategy.create,
+                                Code,
+                                Provider,
+                                RedirectUri,
+                                Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_GRANT_PERMISSION_BYOE,
+                                expectedEmailAddress: { address: address.Email, type: 'reconnect' },
+                                successNotification: { text: c('action').t`Resuming forward` },
+                            })
+                        );
+                    });
+                },
+            });
+
+            return;
+        }
 
         if (Tokens.length > 0) {
             void withLoading(
@@ -69,7 +108,6 @@ const useReconnectSync = (address: Address) => {
         } else {
             void triggerOAuthPopup({
                 provider: OAUTH_PROVIDER.GOOGLE,
-                // We don't know if the sync is a forwarding or a BYOE, so we want to reconnect the user using the full scope for now
                 features,
                 callback: async (oAuthProps: OAuthProps) => {
                     const { Code, Provider, RedirectUri } = oAuthProps;
@@ -141,7 +179,7 @@ const useReconnectSync = (address: Address) => {
 
                 await dispatch(updateBYOEAddressConnection({ address, type: 'reconnect' }));
 
-                createNotification({text: c('Notification').t`Address reconnected.`});
+                createNotification({ text: c('Notification').t`Address reconnected.` });
             });
         } else {
             void triggerOAuthPopup({
@@ -168,7 +206,7 @@ const useReconnectSync = (address: Address) => {
 
                         await dispatch(updateBYOEAddressConnection({ address, type: 'reconnect' }));
 
-                        createNotification({text: c('Notification').t`Address reconnected.`})
+                        createNotification({ text: c('Notification').t`Address reconnected.` });
                     });
                 },
             });
