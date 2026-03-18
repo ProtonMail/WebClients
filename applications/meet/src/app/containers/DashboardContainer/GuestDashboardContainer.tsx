@@ -46,9 +46,6 @@ export const GuestDashboardContainer = () => {
                 onScheduleClick={() => {
                     dispatch(setUpsellModalType(UpsellModalTypes.Schedule));
                 }}
-                onPersonalMeetingClick={() => {
-                    dispatch(setUpsellModalType(UpsellModalTypes.PersonalMeeting));
-                }}
                 onJoinWithLinkClick={() => openJoinWithLinkModal(true)}
                 handleNewRoomClick={() => {
                     dispatch(setUpsellModalType(UpsellModalTypes.Room));
