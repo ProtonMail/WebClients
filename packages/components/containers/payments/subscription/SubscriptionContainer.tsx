@@ -1065,6 +1065,9 @@ const SubscriptionContainerInner = ({
                 if (wantToApplyNewGiftCode && copyNewModel.gift?.toLowerCase() !== Code.toLowerCase() && !Gift) {
                     createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
                     giftCodeRef.current?.focus();
+
+                    // Don't update state with the errored check result. This is especially important for the "already-subscribed" case
+                    return checkResult;
                 }
 
                 if (Code) {
