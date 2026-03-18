@@ -251,6 +251,7 @@ function SheetTab({ sheet, index, isActive }: SheetTabProps) {
                     setTitle(sheet.name)
                   }
                 }}
+                maxLength={50}
               />
             )}
             <div
