@@ -34,8 +34,7 @@ export const SidebarNavList = ({ items, onItemClick }: SidebarNavListProps) => (
                     to={to}
                     className={clsx(
                         'absolute inset-0 flex items-center gap-2 pl-2 hover:text-primary',
-                        trailingContent ? 'pr-8' : 'pr-2',
-                        isSelected && 'text-semibold'
+                        trailingContent ? 'pr-8' : 'pr-2'
                     )}
                     onClick={onItemClick}
                 >
