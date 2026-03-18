@@ -16,7 +16,6 @@ import './DashboardContainerBody.scss';
 
 interface DashboardContainerBodyProps {
     onScheduleClick: (meeting?: Meeting) => void;
-    onPersonalMeetingClick: () => void;
     onJoinWithLinkClick: () => void;
     onStartMeetingClick: () => void;
     onCreateRoomClick: () => void;
