@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -33,18 +33,51 @@ import {
     getInitialUsernameFromParams,
 } from './helpers/activationHelpers';
 
+export interface ActivationFormState {
+    username: string;
+    activationCode: string;
+}
+
+interface ActivationLocationState {
+    formState?: ActivationFormState;
+}
+
 interface ActivationFormProps {
     prefilledParams: ActivationParams | null;
     onLogin: OnLoginCallback;
 }
 
+const ACTIVATION_CODE_LENGTH = 19;
+
 const ActivationForm = ({ prefilledParams, onLogin }: ActivationFormProps) => {
     const isPrefilled = prefilledParams !== null;
+    const location = useLocation<ActivationLocationState>();
+    const history = useHistory();
+    const savedState = location.state?.formState;
 
-    const [username, setUsername] = useState(() => getInitialUsernameFromParams(prefilledParams));
+    useEffect(() => {
+        if (savedState) {
+            history.replace({ ...location, state: undefined });
+        }
+    }, []);
+
+    const [formState, setFormState] = useState<ActivationFormState>(() => ({
+        username: savedState?.username || getInitialUsernameFromParams(prefilledParams),
+        activationCode: savedState?.activationCode || prefilledParams?.activationCode || '',
+    }));
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [activationCode, setActivationCode] = useState(prefilledParams?.activationCode ?? '');
+
+    const { username, activationCode } = formState;
+
+    const handleActivationCodeChange = (value: string) => {
+        const stripped = value.replace(/-/g, '');
+        const formatted = stripped.match(/.{1,4}/g)?.join('-') ?? stripped;
+        const limitToMaxLength = formatted.slice(0, ACTIVATION_CODE_LENGTH);
+        setFormState((prev) => ({ ...prev, activationCode: limitToMaxLength }));
+    };
+
+
     const [passwordBlurred, setPasswordBlurred] = useState(false);
     const [confirmPasswordBlurred, setConfirmPasswordBlurred] = useState(false);
 
@@ -90,7 +123,7 @@ const ActivationForm = ({ prefilledParams, onLogin }: ActivationFormProps) => {
                 const errorMessage =
                     error?.data?.Code === PASSWORD_WRONG_ERROR
                         ? c('Error')
-                              .t`Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.`
+                            .t`Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.`
                         : error?.data?.Error || c('Error').t`Failed to activate your address. Please try again.`;
                 createNotification({ type: 'error', text: errorMessage });
                 throw error;
@@ -133,7 +166,7 @@ const ActivationForm = ({ prefilledParams, onLogin }: ActivationFormProps) => {
                             id="username"
                             label={c('Label').t`Reserved email address`}
                             value={username}
-                            onValue={setUsername}
+                            onValue={(value: string) => setFormState((prev) => ({ ...prev, username: value }))}
                             suffix={domainSuffix}
                             readOnly={isPrefilled}
                             rootClassName={clsx(isPrefilled && 'pointer-events-none')}
@@ -180,7 +213,7 @@ const ActivationForm = ({ prefilledParams, onLogin }: ActivationFormProps) => {
                                 ]) ||
                                 (confirmPasswordBlurred
                                     ? requiredValidator(confirmPassword) ||
-                                      confirmPasswordValidator(newPassword, confirmPassword)
+                                    confirmPasswordValidator(newPassword, confirmPassword)
                                     : '')
                             }
                             disabled={submitting}
@@ -193,8 +226,9 @@ const ActivationForm = ({ prefilledParams, onLogin }: ActivationFormProps) => {
                             <InputFieldTwo
                                 id="activation-code"
                                 label={c('Label').t`Activation code`}
+                                maxLength={ACTIVATION_CODE_LENGTH}
                                 value={activationCode}
-                                onValue={setActivationCode}
+                                onValue={handleActivationCodeChange}
                                 error={validator([requiredValidator(activationCode)])}
                                 disabled={submitting}
                                 bigger
@@ -202,7 +236,10 @@ const ActivationForm = ({ prefilledParams, onLogin }: ActivationFormProps) => {
                                     <Link
                                         to={{
                                             pathname: SSO_PATHS.BORN_PRIVATE_RECOVERY,
-                                            state: { reservedEmail: `${username}@${domain}` },
+                                            state: {
+                                                reservedEmail: `${username}@${domain}`,
+                                                activationFormState: formState,
+                                            },
                                         }}
                                         className="color-weak text-underline mt-1"
                                     >
