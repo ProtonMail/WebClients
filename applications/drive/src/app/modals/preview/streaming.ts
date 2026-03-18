@@ -2,7 +2,7 @@ import { type SyntheticEvent, useCallback, useEffect, useMemo, useRef, useState 
 
 import { v4 as uuidv4 } from 'uuid';
 
-import { type SeekableReadableStream, useDrive } from '@proton/drive';
+import type { ProtonDriveClient, SeekableReadableStream } from '@proton/drive';
 import metrics from '@proton/metrics/index';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 
@@ -14,6 +14,7 @@ import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 const logger = logging.getLogger('preview-streaming');
 
 type UseVideoStreamingProps = {
+    drive: Pick<ProtonDriveClient, 'getFileDownloader'>;
     nodeUid: string;
     mimeType?: string;
 };
@@ -22,9 +23,7 @@ const SW_READY_TIMEOUT = 15 * 1000; // 15 seconds for SW to register
 
 class ServiceWorkerTimeoutError extends Error {}
 
-export function useVideoStreaming({ nodeUid, mimeType }: UseVideoStreamingProps) {
-    const { drive } = useDrive();
-
+export function useVideoStreaming({ drive, nodeUid, mimeType }: UseVideoStreamingProps) {
     const [streamId] = useState<string>(() => uuidv4());
     const swTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const [isBrokenVideo, setIsBrokenVideo] = useState(false);
