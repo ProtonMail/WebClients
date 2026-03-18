@@ -889,6 +889,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto."
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "Actions message": {
@@ -5386,6 +5389,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrá seguir viendo los datos de su propia cuenta, pero todas las cuentas de usuario serán eliminadas de su organización."
+      ],
+      "Choose your service to connect with": [
+        "Elija su servicio para conectar"
       ]
     },
     "info": {
@@ -8201,7 +8207,7 @@
         "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "¡Extienda su suscripción y guarde ${ discountPercent }%!"
+        "¡Extienda su suscripción y ahorre ${ discountPercent }%!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Acceso completo a ${ VPN_APP_NAME }"
@@ -8225,7 +8231,7 @@
         "Mayor protección contra ciberamenazas"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "¡Cambie a nuestro plan anual y guarde ${ toYearlyDiscountAmount }!"
+        "¡Cambie a nuestro plan anual y ahorre ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Chats diarios ilimitados"
@@ -9960,6 +9966,18 @@
       ],
       "Your exposed information": [
         "Sus datos expuestos"
+      ],
+      "Choose a provider": [
+        "Elegir un proveedor"
+      ],
+      "Custom": [
+        "Personalizado"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importe sus datos a ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Seleccionar datos para importar"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10245,6 +10263,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Su prueba finalizará el ${ textDate }. No se le cobrará si cancela antes del ${ textDate }. ${ action }"
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "Importación avanzada"
       ]
     }
   }
