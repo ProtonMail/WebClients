@@ -36,17 +36,19 @@ export const importIndexKey = (jwkKey: JsonWebKey) => {
 export interface ESCiphertext {
     iv: Uint8Array<ArrayBuffer>;
     ciphertext: ArrayBuffer;
+    version: number;
 }
 
 export const encryptItem = async (
     indexKey: IndexKey,
-    serializedItem: Uint8Array<ArrayBuffer>
+    serializedItem: Uint8Array<ArrayBuffer>,
+    version: number
 ): Promise<ESCiphertext> => {
     const iv = crypto.getRandomValues(new Uint8Array(IV_LENGTH_BYTES));
 
     const ciphertext = await crypto.subtle.encrypt({ iv, name: ENCRYPTION_ALGORITHM }, indexKey, serializedItem);
 
-    return { iv, ciphertext };
+    return { iv, ciphertext, version };
 };
 
 export const decryptItem = async (

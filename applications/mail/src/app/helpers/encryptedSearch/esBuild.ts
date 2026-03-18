@@ -20,7 +20,7 @@ enum CONTENT_VERSION {
     BLOCKQUOTE_FIX = 3,
 }
 
-const getContentVersion = (): CONTENT_VERSION => {
+export const getContentVersion = (): CONTENT_VERSION => {
     return CONTENT_VERSION.BLOCKQUOTE_FIX;
 };
 

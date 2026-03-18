@@ -133,6 +133,7 @@ export interface EncryptedSearchDB extends DBSchema {
     content: {
         value: ESCiphertext;
         key: string;
+        indexes: { byVersion: 'version' };
     };
 }
 

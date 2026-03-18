@@ -60,6 +60,7 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
     indexKey,
     esSearchParams,
     esCallbacks,
+    version,
 }: {
     Items: ESItemEvent<ESItemMetadata>[];
     userID: string;
@@ -68,6 +69,7 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
     indexKey: IndexKey | undefined;
     esSearchParams: ESSearchParameters | undefined;
     esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>;
+    version: number;
 }) => {
     const { getItemInfo, fetchESItemContent, onContentDeletion, getKeywords } = esCallbacks;
 
@@ -190,14 +192,14 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                     metadataToAdd.push({
                         ID,
                         timepoint: getItemInfo(ItemMetadata).timepoint,
-                        aesGcmCiphertext: await serializeAndEncryptItem(indexKey, itemToCache.metadata),
+                        aesGcmCiphertext: await serializeAndEncryptItem(indexKey, itemToCache.metadata, version),
                     });
 
                     if (itemToCache.content && !isObjectEmpty(itemToCache.content)) {
                         contentToAdd.push({
                             ID,
                             timepoint: getItemInfo(ItemMetadata).timepoint,
-                            aesGcmCiphertext: await serializeAndEncryptItem(indexKey, itemToCache.content),
+                            aesGcmCiphertext: await serializeAndEncryptItem(indexKey, itemToCache.content, version),
                         });
                     }
                 }
@@ -248,7 +250,7 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                     metadataToAdd.push({
                         ID,
                         timepoint: getItemInfo(ItemMetadata).timepoint,
-                        aesGcmCiphertext: await serializeAndEncryptItem(indexKey, itemToCache.metadata),
+                        aesGcmCiphertext: await serializeAndEncryptItem(indexKey, itemToCache.metadata, version),
                         keepSize: Action === ES_SYNC_ACTIONS.UPDATE_METADATA,
                     });
 
@@ -256,7 +258,7 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                         contentToAdd.push({
                             ID,
                             timepoint: getItemInfo(ItemMetadata).timepoint,
-                            aesGcmCiphertext: await serializeAndEncryptItem(indexKey, itemToCache.content),
+                            aesGcmCiphertext: await serializeAndEncryptItem(indexKey, itemToCache.content, version),
                         });
                     }
                 }

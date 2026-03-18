@@ -4,10 +4,12 @@ import type { EncryptedSearchDB } from '../models';
 
 type UpgradeCallback = NonNullable<OpenDBCallbacks<EncryptedSearchDB>['upgrade']>;
 
-export const upgrade: UpgradeCallback = (database, oldVersion: number) => {
+export const upgrade: UpgradeCallback = async (database, oldVersion: number, newVersion: number, transaction) => {
+    const shouldRunMigration = (versionNumber: number) => oldVersion < versionNumber && newVersion >= versionNumber;
+
     // Database created before version 3 wasn't consistently opened with an upgrade callback.
     // Resulting in potentially non-complete schema.
-    if (oldVersion < 3) {
+    if (shouldRunMigration(3)) {
         if (!database.objectStoreNames.contains('content')) {
             database.createObjectStore('content');
         }
@@ -27,6 +29,23 @@ export const upgrade: UpgradeCallback = (database, oldVersion: number) => {
 
         if (!database.objectStoreNames.contains('indexingProgress')) {
             database.createObjectStore('indexingProgress');
+        }
+    }
+
+    if (shouldRunMigration(4)) {
+        // We know the content store exists, it was created in version 3
+        const contentStore = transaction.objectStore('content');
+        contentStore.createIndex('byVersion', 'version');
+
+        // Set default version -1 for all existing content without version, this is helping index queries
+        let cursor = await contentStore.openCursor();
+        while (cursor) {
+            const value = cursor.value;
+            if (value.version === undefined) {
+                value.version = -1;
+                void cursor.update(value);
+            }
+            cursor = await cursor.continue();
         }
     }
 };
