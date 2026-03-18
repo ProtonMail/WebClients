@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import type { ThemeColor } from '@proton/colors/types';
 import type { SectionConfig } from '@proton/components';
 import {
-    Renew,
     type Subscription,
     getHasVpnB2BPlan,
     hasCancellablePlan,
@@ -15,6 +14,7 @@ import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PROTON_SENTINEL_NAME, VPN_APP_NAM
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 import { getIsExternalAccount, getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
+import { isSubscriptionRenewEnabled } from '@proton/shared/lib/subscription/helpers';
 import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 
 interface Arguments {
@@ -153,7 +153,7 @@ export const getRoutes = ({
                     available:
                         user.isPaid &&
                         cancellablePlan &&
-                        subscription?.Renew === Renew.Enabled &&
+                        isSubscriptionRenewEnabled(subscription) &&
                         !cancellableOnlyViaSupport,
                     variant: 'card',
                 },
@@ -230,7 +230,7 @@ export const getRoutes = ({
                     available:
                         user.isPaid &&
                         cancellablePlan &&
-                        subscription?.Renew === Renew.Enabled &&
+                        isSubscriptionRenewEnabled(subscription) &&
                         !cancellableOnlyViaSupport,
                 },
                 {
