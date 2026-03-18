@@ -873,6 +873,7 @@ describe('DownloadManager', () => {
             downloadId: 'buffer-download',
             filename: node.name,
             mimeType,
+            size: nodeSize,
         });
 
         expect(storeMockState.addDownloadItem).toHaveBeenCalledWith({
