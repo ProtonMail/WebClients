@@ -20,7 +20,6 @@ import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useSta
 import { downloadLogsAsJSON } from '../../../../../docs/src/app/utils/downloadLogs'
 import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
 import { useApplication } from '../ApplicationProvider'
-import { LOCALE } from './constants'
 import { type ProtonSheetsState, useLocalState, useProtonSheetsState } from './state'
 
 import '@rowsncolumns/spreadsheet/dist/spreadsheet.min.css'
@@ -85,7 +84,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const isViewOnlyMode = !application.getRole().canEdit() || viewportWidth['<=small']
   const isReadonly = editingLocked || isRevisionMode || isViewOnlyMode
 
-  const state = useProtonSheetsState({ docState, locale: LOCALE, functions, isReadonly })
+  const state = useProtonSheetsState({ docState, functions, isReadonly })
   const { getLocalStateWithoutActions, replaceLocalSpreadsheetState } = useLocalState(state, updateLocalStateToLog)
   const focusSheet = useFocusSheet()
 
@@ -154,7 +153,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       docState.endSheetsExcelImport()
       await docState.waitForImportSuccess()
       setImportType(undefined)
-      calculateNow({
+      await calculateNow({
         disableEvaluation: requiresRecalc,
         shouldResetCellDependencyGraph: true,
       })
@@ -215,7 +214,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
           .then(() => {
             calculateNow({
               shouldResetCellDependencyGraph: true,
-            })
+            }).catch(console.error)
           })
           .catch(console.error)
       }, SheetImportEvent),
