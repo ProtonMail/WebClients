@@ -3,11 +3,14 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { InputFieldTwo, useApi } from '@proton/components';
+import { InputFieldTwo, useApi, useNotifications } from '@proton/components';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useLoading } from '@proton/hooks';
+import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { resetKeysRoute } from '@proton/shared/lib/api/keys';
 import { requestLoginResetToken, validateResetToken } from '@proton/shared/lib/api/reset';
+import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { srpVerify } from '@proton/shared/lib/srp';
@@ -41,28 +44,42 @@ const RecoveryVerificationCode = ({
     const [token, setToken] = useState('');
     const { validator, onFormSubmit } = useFormErrors();
     const [username, domain] = reservedEmail.split('@');
+    const { createNotification } = useNotifications();
 
     const handleSubmit = async () => {
         if (!onFormSubmit()) {
             return;
         }
-
         await api(validateResetToken(reservedEmail, token));
 
         const activationCode = generateReadableActivationCode();
 
         const { salt } = await generateKeySaltAndPassphrase(activationCode);
 
-        // Born private account has no keys but this resets the password using the token
-        await srpVerify({
-            api,
-            credentials: { password: activationCode },
-            config: resetKeysRoute({
-                Username: reservedEmail,
-                Token: token,
-                KeySalt: salt,
-            }),
-        });
+        try {
+            // Born private account has no keys but this resets the password using the token
+            await srpVerify({
+                api,
+                credentials: { password: activationCode },
+                config: {
+                    ...resetKeysRoute({
+                        Username: reservedEmail,
+                        Token: token,
+                        KeySalt: salt,
+                    }),
+                    silence: [API_CUSTOM_ERROR_CODES.INVALID_REQUIREMENT],
+                },
+            });
+        } catch (error) {
+            const { code, status } = getApiError(error);
+            const apiErrorMessage = getApiErrorMessage(error);
+            const errorMessage =
+                code === API_CUSTOM_ERROR_CODES.INVALID_REQUIREMENT && status === HTTP_STATUS_CODE.BAD_REQUEST
+                    ? c('Error').t`The address is already activated`
+                    : apiErrorMessage || c('Error').t`Unknown error`;
+            createNotification({ type: 'error', text: errorMessage });
+            throw error;
+        }
 
         const auth = await authenticateDonationUser({
             username,
