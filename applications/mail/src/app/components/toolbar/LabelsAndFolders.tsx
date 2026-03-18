@@ -109,6 +109,7 @@ const LabelsAndFolders = ({
                             onClose={onClose}
                             onLock={onLock}
                             selectAll={selectAll}
+                            onCheckAll={onCheckAll}
                         />
                     ),
                 }}
