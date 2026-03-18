@@ -17,7 +17,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { CTAModal } from '../../components/AnonymousModal/CTAModal';
 import { CreateRoomModal } from '../../components/CreateRoomModal/CreateRoomModal';
 import { JoinWithLinkModal } from '../../components/JoinWithLinkModal/JoinWithLinkModal';
-import { PersonalMeetingModal } from '../../components/PersonalMeetingModal/PersonalMeetingModal';
 import { ScheduleMeetingModal } from '../../components/ScheduleMeetingModal/ScheduleMeetingModal';
 import { useDependencySetup } from '../../hooks/useDependencySetup';
 import { DashboardContainerBody } from './DashboardContainerBody';
@@ -27,8 +26,6 @@ export const DashboardContainer = () => {
     const previousMeetingLink = useMeetSelector(selectPreviousMeetingLink);
     const dispatch = useMeetDispatch();
 
-    const [{ open: isPersonalMeetingModalOpen, onClose: handlePersonalMeetingModalClose }, openPersonalMeetingModal] =
-        useModalState();
     const [{ open: isJoinWithLinkModalOpen, onClose: handleJoinWithLinkModalClose }, openJoinWithLinkModal] =
         useModalState();
     const [{ open: isCreateRoomModalOpen, onClose: handleCreateRoomModalClose }, openCreateRoomModal] = useModalState();
@@ -41,7 +38,7 @@ export const DashboardContainer = () => {
     const [selectedMeetingId, setSelectedMeetingId] = useState<string | undefined>();
     const [newlyCreatedMeetingId, setNewlyCreatedMeetingId] = useState<string | undefined>();
 
-    const { meetings, personalMeeting, setupNewPersonalMeeting, loadingRotatePersonalMeeting, meetingsListStatus } =
+    const { meetings, setupNewPersonalMeeting, loadingRotatePersonalMeeting, meetingsListStatus } =
         useDependencySetup();
 
     useEffect(() => {
@@ -91,13 +88,6 @@ export const DashboardContainer = () => {
         history.push('/join');
     };
 
-    const personalMeetingLinkPath = getMeetingLink(
-        personalMeeting?.MeetingLinkName as string,
-        personalMeeting?.Password as string
-    );
-
-    const personalMeetingLink = personalMeeting ? `${window.location.origin}${personalMeetingLinkPath}` : null;
-
     const handleRejoin = () => {
         if (previousMeetingLink) {
             history.push(previousMeetingLink);
@@ -114,7 +104,6 @@ export const DashboardContainer = () => {
         <>
             <DashboardContainerBody
                 onScheduleClick={handleScheduleMeeting}
-                onPersonalMeetingClick={() => openPersonalMeetingModal(true)}
                 onJoinWithLinkClick={() => openJoinWithLinkModal(true)}
                 onStartMeetingClick={handleStartMeeting}
                 onCreateRoomClick={() => openCreateRoomModal(true)}
@@ -139,26 +128,6 @@ export const DashboardContainer = () => {
                     onClose={() => dispatch(setUpsellModalType(null))}
                     rejoin={previousMeetingLink ? handleRejoin : undefined}
                     action={() => {}}
-                />
-            )}
-            {isPersonalMeetingModalOpen && personalMeetingLink && (
-                <PersonalMeetingModal
-                    onClose={handlePersonalMeetingModalClose}
-                    onCopyLink={() => {
-                        void navigator.clipboard.writeText(personalMeetingLink);
-                        notifications.createNotification({
-                            key: 'personal-meeting-link-copied',
-                            text: c('Notification').t`Your personal meeting link has been copied to the clipboard`,
-                            type: 'info',
-                        });
-                        handlePersonalMeetingModalClose();
-                    }}
-                    onJoin={() => {
-                        history.push(personalMeetingLinkPath);
-                    }}
-                    onRotate={setupNewPersonalMeeting}
-                    link={personalMeetingLink}
-                    loadingRotatePersonalMeeting={loadingRotatePersonalMeeting}
                 />
             )}
             <JoinWithLinkModal
