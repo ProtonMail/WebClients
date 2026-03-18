@@ -3,7 +3,7 @@ import { PLANS_MAP } from '@proton/testing/data';
 
 import { getCheckoutUi, getInformedOptimisticSubscriptionEstimation, getUsersAndAddons } from './checkout';
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from './constants';
-import { WrongBillingAddressError } from './errors';
+import { InvalidCouponError, WrongBillingAddressError } from './errors';
 import type { Plan } from './plan/interface';
 import { SubscriptionMode } from './subscription/constants';
 import type { SubscriptionEstimation } from './subscription/interface';
@@ -1300,6 +1300,35 @@ describe('getInformedOptimisticSubscriptionEstimation', () => {
         const result = getInformedOptimisticSubscriptionEstimation(erroredNoCoupon, goodWithCoupon);
 
         expect(result).toBe(erroredNoCoupon);
+    });
+
+    it('should preserve good pricing when errored estimation adds an invalid coupon to an already-subscribed plan', () => {
+        const goodEstimationNoCoupon: SubscriptionEstimation = {
+            ...goodEstimation,
+            AmountDue: 0, // already-subscribed, nothing to pay
+            requestData: {
+                ...baseRequestData,
+                // No CouponCode, no Codes — this is the "forbidden" check result
+            },
+        };
+
+        const erroredWithCoupon: SubscriptionEstimation = {
+            ...erroredEstimation,
+            AmountDue: 7188, // optimistic fallback computed full plan price (wrong)
+            error: new InvalidCouponError(),
+            requestData: {
+                ...baseRequestData,
+                CouponCode: 'INVALID_COUPON',
+                Codes: ['INVALID_COUPON'],
+            },
+        };
+
+        const result = getInformedOptimisticSubscriptionEstimation(erroredWithCoupon, goodEstimationNoCoupon);
+
+        // Should preserve the good estimation's pricing (AmountDue: 0), not the optimistic full price
+        expect(result.AmountDue).toBe(0);
+        expect(result.optimistic).toBe(true);
+        expect(result.error).toBeDefined();
     });
 
     it('should clear Taxes from the good estimation in the merged result', () => {
