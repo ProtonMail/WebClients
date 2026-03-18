@@ -1147,6 +1147,15 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Close search": [
+        "Zoekfunctie sluiten"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Search groups": [
+        "Groepen zoeken"
       ]
     },
     "action": {
@@ -1936,6 +1945,27 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "U dient de toestemming te verlenen aan ${ BRAND_NAME } om uw gegevens te kopiëren. Keer hier terug om verder te gaan nadat u de toestemmingen hebt geaccepteerd."
+      ],
+      "Completed": [
+        "Voltooid"
+      ],
+      "Has errors": [
+        "Bevat fouten"
+      ],
+      "In progress": [
+        "Bezig"
+      ],
+      "Not started": [
+        "Niet begonnen"
+      ],
+      "Settings": [
+        "Instellingen"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Users migrated": [
+        "Gebruikers gemigreerd"
       ]
     },
     "Browser": {
@@ -4526,6 +4556,15 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
+      ],
+      "Invalid coupon": [
+        "Ongeldige kortingscode"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omgekeerde btw-regeling wordt niet ondersteund voor dit abonnement"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Het minimale donatiebedrag is ${ price }"
       ]
     },
     "error": {
@@ -8456,6 +8495,15 @@
       ],
       "Zoom meeting": [
         "Zoom meeting"
+      ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Een aangepast domein is vereist om groepen te maken. Als u geen aangepast domein hebt ingesteld, stel dit dan eerst in via ${ linkToDomainPage }."
+      ],
+      "Choose your service to connect with": [
+        "Kies uw service om verbinding te maken"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Uw account is momenteel geconfigureerd om het omgekeerde btw-tarief toe te passen. Dit wordt niet ondersteund voor het geselecteerde abonnement. Om door te gaan, verwijdt u het btw-nummer van het factuuradres of selecteert u een ander abonnement."
       ]
     },
     "info": {
@@ -9435,6 +9483,9 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Import recent mails": [
+        "Importeer recente e-mails"
       ]
     },
     "label": {
@@ -12129,6 +12180,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Uw abonnement heeft momenteel een bestaande korting. Overstappen naar deze nieuwe promotie betekent dat de bestaande korting niet langer wordt toegepast."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Omgekeerde btw mechanisme is van toepassing"
       ]
     },
     "Payments.Error": {
@@ -12593,7 +12647,7 @@
         "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Verleng uw abonnement en sla ${ discountPercent }% op!"
+        "Verleng uw abonnement en bespaar ${ discountPercent }%!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Volledige toegang tot ${ VPN_APP_NAME }"
@@ -12617,7 +12671,7 @@
         "Krachtigere bescherming tegen cyberdreigingen"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Stap over op ons jaarabonnement en sla ${ toYearlyDiscountAmount } op!"
+        "Stap over op ons jaarabonnement en bespaar ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Onbeperkt aantal dagelijkse gesprekken"
@@ -16234,6 +16288,21 @@
       ],
       "Your subscriptions": [
         "Uw abonnementen"
+      ],
+      "Choose a provider": [
+        "Kies een provider"
+      ],
+      "Custom": [
+        "Aangepast"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importeer uw gegevens naar ${ BRAND_NAME }"
+      ],
+      "Reverse charge not supported": [
+        "Omgekeerde btw niet ondersteund"
+      ],
+      "Select data to import": [
+        "Selecteer gegevens om te importeren"
       ]
     },
     "Title for payment methods table": {
@@ -17092,6 +17161,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Na een succesvolle verificatie mag u dit TXT-record niet verwijderen, omdat het nodig is om te bevestigen dat u de eigenaar van het domein blijft."
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "Geavanceerde import"
       ]
     }
   }
