@@ -13,8 +13,8 @@ import {
     testKeywords,
 } from '@proton/encrypted-search/esHelpers';
 import {
-    hasESDB,
     executeContentOperations,
+    hasESDB,
     metadataIndexingProgress,
     readLastEvent,
     readMetadataItem,
@@ -48,7 +48,7 @@ import type { Event } from '../../models/event';
 import { decryptMessage } from '../message/messageDecrypt';
 import ESdeletedConversationIdsCache from './ESDeletedConversationsCache';
 import { queryConversation, queryEvents, queryMessage } from './esAPI';
-import { cleanText, externalIDExists, fetchMessage, getBaseMessage, getExternalID } from './esBuild';
+import { cleanText, externalIDExists, fetchMessage, getBaseMessage, getContentVersion, getExternalID } from './esBuild';
 import { shouldOnlySortResults, testMetadata, transformRecipients } from './esSearch';
 import { convertEventType, findRecoveryPoint, getTotal } from './esSync';
 import { parseSearchParams as parseSearchParamsMail, resetSort } from './esUtils';
@@ -363,10 +363,14 @@ export const getESCallbacks = ({
                                         : decryptedBody
                                     : undefined;
 
-                            const aesGcmCiphertext = await serializeAndEncryptItem(indexKey, {
-                                decryptedBody: cleanDecryptedBody,
-                                decryptedSubject,
-                            });
+                            const aesGcmCiphertext = await serializeAndEncryptItem(
+                                indexKey,
+                                {
+                                    decryptedBody: cleanDecryptedBody,
+                                    decryptedSubject,
+                                },
+                                getContentVersion()
+                            );
                             const timepoint: ESTimepoint = [Time, Order];
                             return { ID: messageID, timepoint, aesGcmCiphertext };
                         }
@@ -411,6 +415,7 @@ export const getESCallbacks = ({
             fetchESItemContent,
             inputrecoveryPoint: timepoint,
             isInitialIndexing: false,
+            version: getContentVersion(),
         });
 
         const count = (await readNumContent(userID)) || 0;
@@ -434,5 +439,6 @@ export const getESCallbacks = ({
         getSearchInterval,
         onContentDeletion,
         correctDecryptionErrors,
+        getContentVersion: getContentVersion,
     };
 };

@@ -112,15 +112,17 @@ export const getRetries = async (userID: string) => {
 /**
  * Retry previously failed API calls
  */
-export const retryAPICalls = async <ESItemContent>({
+export const retryAPICalls = async <ESItemMetadata, ESSearchParameters, ESItemContent>({
     userID,
     indexKey,
-    fetchESItemContent,
+    esCallbacks,
 }: {
     userID: string;
     indexKey: IndexKey;
-    fetchESItemContent?: InternalESCallbacks<unknown, unknown, ESItemContent>['fetchESItemContent'];
+    esCallbacks: InternalESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>;
 }) => {
+    const { getContentVersion, fetchESItemContent } = esCallbacks;
+
     const retryMap = await getRetries(userID);
     if (!retryMap.size || !fetchESItemContent) {
         return;
@@ -181,7 +183,7 @@ export const retryAPICalls = async <ESItemContent>({
                 }
 
                 try {
-                    const aesGcmCiphertext = await serializeAndEncryptItem(indexKey, content);
+                    const aesGcmCiphertext = await serializeAndEncryptItem(indexKey, content, getContentVersion());
                     contentToAdd.push({
                         ID,
                         timepoint,

@@ -28,6 +28,7 @@ const mockedESCallback = {
     applyFilters: jest.fn(),
     onContentDeletion: jest.fn(),
     correctDecryptionErrors: jest.fn(),
+    getContentVersion: () => 1,
 };
 
 jest.mock('@proton/account/userKeys/hooks', () => ({
