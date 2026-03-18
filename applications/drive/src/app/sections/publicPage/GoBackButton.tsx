@@ -20,7 +20,7 @@ export function GoBackButton() {
             onClick={handleGoBack}
             data-testid="public-preview:button:close"
         >
-            <Icon className="mr-2" name="arrow-left" />
+            <Icon className="mr-2 rtl:mirror" name="arrow-left" />
             {c('Action').t`Go back`}
         </Button>
     );

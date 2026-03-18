@@ -60,7 +60,7 @@ const AlsoInYourPlanSectionCard = ({ config, shouldDisplayAllFeatures, app }: Pr
                             className="flex items-center justify-center gap-2"
                         >
                             {config.buttonCopy()}
-                            <IcArrowRight className="shrink-0" />
+                            <IcArrowRight className="shrink-0 rtl:mirror" />
                         </ButtonLike>
                     </footer>
                 </DashboardCardContent>

@@ -45,7 +45,8 @@ export const TimeBasedMeetingsPlaceholder = ({
                                 }}
                                 shape="ghost"
                             >
-                                {c('Action').t`Schedule in ${CALENDAR_APP_NAME}`} <IcArrowOutSquare />
+                                {c('Action').t`Schedule in ${CALENDAR_APP_NAME}`}{' '}
+                                <IcArrowOutSquare className="rtl:mirror" />
                             </ButtonLike>
                         )}
                     </div>

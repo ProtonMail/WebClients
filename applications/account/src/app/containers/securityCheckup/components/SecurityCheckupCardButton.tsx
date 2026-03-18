@@ -20,7 +20,15 @@ export const SecurityCheckupCardButtonInner = ({
 }: SecurityCheckupCardButtonInnerProps) => {
     return (
         <SecurityCheckupCardInner
-            suffix={<div className="p-2">{loading ? <CircleLoader /> : <Icon name={icon} size={4} />}</div>}
+            suffix={
+                <div className="p-2">
+                    {loading ? (
+                        <CircleLoader />
+                    ) : (
+                        <Icon name={icon} size={4} className={clsx(icon === 'arrow-right' && 'rtl:mirror')} />
+                    )}
+                </div>
+            }
             {...rest}
         />
     );
