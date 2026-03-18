@@ -14,7 +14,7 @@ import type { ResumedSessionResult } from '../persistedSessionHelper';
 import { getForkEncryptedBlob } from './blob';
 import type { ForkPayloadVersion, ForkType } from './constants';
 import { ForkSearchParameters } from './constants';
-import { getValidatedProtonProtocol } from './getValidatedProtonProtocol';
+import { getValidatedRedirectUrl } from './getValidatedRedirectUrl';
 import {
     getEmailSessionForkSearchParameter,
     getLocalIDForkSearchParameter,
@@ -146,9 +146,9 @@ export const getProduceForkUrl = (
 
     const redirectUrl = produceForkParameters.redirectUrl;
     if (redirectUrl) {
-        const protocol = getValidatedProtonProtocol(produceForkParameters.app, redirectUrl);
-        if (protocol) {
-            return new URL(`${protocol}//${url.pathname.slice(1)}${url.search}${url.hash}`);
+        const validatedRedirectUrl = getValidatedRedirectUrl({ url, redirectUrl, app: produceForkParameters.app });
+        if (validatedRedirectUrl) {
+            return validatedRedirectUrl;
         }
     }
 
