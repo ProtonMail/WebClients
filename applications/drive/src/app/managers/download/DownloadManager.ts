@@ -181,6 +181,7 @@ export class DownloadManager {
             downloadId,
             filename: node.name,
             mimeType: mimeType ?? DEFAULT_MIME_TYPE,
+            size: storageSize,
         });
     }
 
