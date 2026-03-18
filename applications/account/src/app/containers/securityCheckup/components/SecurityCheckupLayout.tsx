@@ -46,7 +46,7 @@ const SecurityCheckupLayout = ({ children }: Props) => {
                     color="norm"
                     className="inline-flex items-center"
                 >
-                    <IcArrowLeft className="shrink-0 mr-1 mb-0.5" />
+                    <IcArrowLeft className="shrink-0 mr-1 mb-0.5 rtl:mirror" />
                     {c('Safety review').t`Account safety review`}
                 </ButtonLike>
             );
@@ -61,7 +61,7 @@ const SecurityCheckupLayout = ({ children }: Props) => {
                     color="norm"
                     className="inline-flex items-center"
                 >
-                    <IcArrowLeft className="shrink-0 mr-1 mb-0.5" />
+                    <IcArrowLeft className="shrink-0 mr-1 mb-0.5 rtl:mirror" />
                     {c('Action').t`Settings`}
                 </ButtonLike>
             );
@@ -100,7 +100,7 @@ const SecurityCheckupLayout = ({ children }: Props) => {
                 color="norm"
                 className="inline-flex items-center"
             >
-                <IcArrowLeft className="shrink-0 mr-1 mb-0.5" />
+                <IcArrowLeft className="shrink-0 mr-1 mb-0.5 rtl:mirror" />
                 {label}
             </ButtonLike>
         );

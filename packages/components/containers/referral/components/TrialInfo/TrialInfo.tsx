@@ -265,7 +265,7 @@ const TrialInfoFooter = ({ modalProps }: TrialInfoFooterProps) => {
                 data-testid="trial-info-learn-more"
                 className="inline-flex gap-2 items-center justify-center w-full"
             >
-                {c('Action').t`Learn more`} <IcArrowOutSquare className="shrink-0" />
+                {c('Action').t`Learn more`} <IcArrowOutSquare className="shrink-0 rtl:mirror" />
             </ButtonLike>
         </>
     );

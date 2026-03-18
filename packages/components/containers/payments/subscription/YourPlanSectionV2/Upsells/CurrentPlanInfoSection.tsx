@@ -75,6 +75,7 @@ const SaveLabel = ({ plan, cycle, currency }: SaveLabelProps) => {
                 backgroundColor: '#A2DDA1',
                 color: '#144913',
             }}
+            dir="ltr"
         >
             {'-'}
             {discountPercent}
@@ -472,7 +473,7 @@ const CurrentPlanInfoWithUpsellSection = ({
                     cta={
                         <Button color="norm" shape="ghost" onClick={handleExplorePlans}>
                             {c('Action').t`Compare all plans`}
-                            <IcChevronRight className="shrink-0 ml-1" />
+                            <IcChevronRight className="shrink-0 ml-1 rtl:mirror" />
                         </Button>
                     }
                     titleClassName="items-center"

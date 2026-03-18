@@ -139,7 +139,7 @@ const PaymentSummary = ({ model, options, loadingPaymentDetails, giftCode, planI
                 );
             },
             discount: (item) => (
-                <SaveLabel2 className="text-sm inline-block" highlightPrice>
+                <SaveLabel2 className="text-sm inline-block" highlightPrice dir="ltr">
                     {`− ${item.discountPercent}%`}
                 </SaveLabel2>
             ),

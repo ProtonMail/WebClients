@@ -41,7 +41,7 @@ const VPNPassUpsellToggle = ({ currency, cycle, view, ...rest }: VPNPassUpsellTo
                             text: (
                                 <>
                                     {c('vpn_2step: info').t`Just ${price}`}{' '}
-                                    <SaveLabel2 className="text-sm inline-block" highlightPrice>
+                                    <SaveLabel2 className="text-sm inline-block" highlightPrice dir="ltr">
                                         {`− 60%`}
                                     </SaveLabel2>
                                 </>
