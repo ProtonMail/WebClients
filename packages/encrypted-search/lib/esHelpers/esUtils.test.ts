@@ -1,6 +1,6 @@
-import { roundMilliseconds } from '../lib/esHelpers/esUtils';
+import { roundMilliseconds } from './esUtils';
 
-describe('placeholder', () => {
+describe('roundMilliseconds', () => {
     it('should round milliseconds', async () => {
         expect(roundMilliseconds(1644340785178)).toEqual(1644340785);
     });
