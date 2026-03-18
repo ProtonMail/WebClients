@@ -45,8 +45,8 @@ export function getIsEligible({
     const notVisionary = !offerSubscription.hasVisionary();
     const notUsedCurrentPromo = !offerSubscription.usedSpringSale2026();
 
-    if (offerSubscription.isManagedExternally()) {
-        // Exclude mobile
+    if (offerSubscription.isManagedExternally() || offerSubscription.isTrial()) {
+        // Exclude mobile and trials
         return false;
     }
 
