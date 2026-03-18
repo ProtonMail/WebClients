@@ -90,7 +90,7 @@ const BundleUpsellBanner = ({ app }: { app: APP_NAMES }) => {
                         onClick={handleGetPlan}
                     >
                         {getExploreText(PLAN_NAMES[plan])}
-                        <IcArrowRight className="shrink-0" />
+                        <IcArrowRight className="shrink-0 rtl:mirror" />
                     </Button>
                 }
             />

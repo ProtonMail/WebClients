@@ -11,7 +11,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Badge from '@proton/components/components/badge/Badge';
+import { Badge } from '@proton/components/components/badge/Badge';
 import Icon from '@proton/components/components/icon/Icon';
 import AppLink from '@proton/components/components/link/AppLink';
 import Info from '@proton/components/components/link/Info';
@@ -22,6 +22,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSessionRecoveryState } from '@proton/components/hooks/useSessionRecoveryState';
 import useLoading from '@proton/hooks/useLoading';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -164,7 +165,7 @@ const UsernameSection = ({ app }: Props) => {
                                 )}
                                 cta={
                                     <div className="mr-4">
-                                        <Icon name="chevron-right" size={4} />
+                                        <IcChevronRight size={4} className="rtl:mirror" />
                                     </div>
                                 }
                             />
@@ -190,7 +191,7 @@ const UsernameSection = ({ app }: Props) => {
                                         color="norm"
                                         loading={loading}
                                         onClick={() => {
-                                            withLoading(handleSendVerificationEmail(primaryAddress.Email));
+                                            void withLoading(handleSendVerificationEmail(primaryAddress.Email));
                                         }}
                                     >
                                         {c('Info').t`Resend verification email`}

@@ -144,7 +144,7 @@ const CategoryTabs = ({ category }: { category: Category }) => {
                                             )}
 
                                             {downloadButton.style === 'external' && (
-                                                <IcArrowOutSquare className="ml-1 shrink-0" />
+                                                <IcArrowOutSquare className="ml-1 shrink-0 rtl:mirror" />
                                             )}
                                         </ButtonLike>
                                     ) : undefined}
@@ -163,7 +163,7 @@ const CategoryTabs = ({ category }: { category: Category }) => {
                                 rel="noopener noreferrer"
                             >
                                 {tab.content.footnote.title()}
-                                <IcArrowOutSquare className="ml-1 shrink-0" />
+                                <IcArrowOutSquare className="ml-1 shrink-0 rtl:mirror" />
                             </ButtonLike>
                         </footer>
                     ) : undefined}
