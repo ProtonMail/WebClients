@@ -27,7 +27,7 @@ interface MailboxListProviderProps {
     customActions?: {
         onMarkAs?: (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION) => void;
         onDelete?: (sourceAction: SOURCE_ACTION) => void;
-        onMove?: (destinationLabelID: string, sourceAction: SOURCE_ACTION) => void;
+        onMove?: (destinationLabelID: string) => void;
     };
 }
 
@@ -52,7 +52,7 @@ interface MailboxListContextValue {
     blockSenderModal: ReactNode;
     onMarkAs: (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION) => void;
     onDelete: (sourceAction: SOURCE_ACTION) => void;
-    onMove: (labelID: string, sourceAction: SOURCE_ACTION) => void;
+    onMove: (labelID: string) => void;
 
     // Pagination
     total: number;

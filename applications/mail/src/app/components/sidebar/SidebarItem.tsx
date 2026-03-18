@@ -12,7 +12,6 @@ import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { useLoading } from '@proton/hooks';
 import type { IconName, IconSize } from '@proton/icons/types';
-import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -28,11 +27,9 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { shouldDisplayTotal } from '../../helpers/labels';
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
-import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
+import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
-import { folderLocation } from '../list/list-telemetry/listTelemetryHelper';
-import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import LocationAside from './LocationAside';
 
 import './SidebarItem.scss';
@@ -107,8 +104,6 @@ const SidebarItem = ({
     const getElementsFromIDs = useGetElementsFromIDs();
     const { selectAll } = useSelectAll({ labelID });
     const { checkAllRef } = useCheckAllRef();
-    const [labels] = useLabels();
-    const [folders] = useFolders();
 
     const mailParams = useMailSelector(params);
 
@@ -165,11 +160,8 @@ const SidebarItem = ({
                         elements,
                         sourceLabelID: mailParams.labelID,
                         destinationLabelID: labelID,
-                        folderName: text,
                         selectAll,
                         onCheckAll: checkAllRef?.current ? checkAllRef.current : undefined,
-                        sourceAction: SOURCE_ACTION.DRAG_AND_DROP_MENU,
-                        currentFolder: folderLocation(mailParams.labelID, labels, folders),
                     });
                 } else {
                     void applyLabels({

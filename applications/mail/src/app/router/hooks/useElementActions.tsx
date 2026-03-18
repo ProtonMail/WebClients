@@ -16,7 +16,6 @@ import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/in
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import { usePermanentDelete } from 'proton-mail/hooks/actions/delete/usePermanentDelete';
 import { useMarkAs } from 'proton-mail/hooks/actions/markAs/useMarkAs';
-import { useMoveToFolder } from 'proton-mail/hooks/actions/move/useMoveToFolder';
 import { ComposeTypes } from 'proton-mail/hooks/composer/useCompose';
 import { type ElementsStructure, useGetElementsFromIDs } from 'proton-mail/hooks/mailbox/useElements';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
@@ -24,9 +23,10 @@ import { useMailECRTMetric } from 'proton-mail/metrics/useMailECRTMetric';
 import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { convertCustomViewLabelsToAlmostAllMail, getFolderName } from '../../helpers/labels';
+import { convertCustomViewLabelsToAlmostAllMail } from '../../helpers/labels';
 import { useMailboxLayoutProvider } from '../components/MailboxLayoutContext';
 import type { RouterNavigation } from '../interface';
+import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 
 interface Params {
     params: ElementsStateParams;
@@ -54,8 +54,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
     const { markAs, selectAllMarkModal } = useMarkAs();
     const getElementsFromIDs = useGetElementsFromIDs();
     const { applyLocation } = useApplyLocation();
-    const { moveToFolder, moveToSpamModal, moveSnoozedModal, moveScheduledModal, selectAllMoveModal } =
-        useMoveToFolder();
+    const {moveAllToFolder, selectAllMoveModal} = useMoveAllToFolder();
     const onCompose = useOnCompose();
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
@@ -163,15 +162,13 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
     );
 
     const handleMove = useCallback(
-        async (newLabelID: string, sourceAction: SOURCE_ACTION): Promise<void> => {
+        async (newLabelID: string): Promise<void> => {
             if (selectAll) {
-                await moveToFolder({
+                await moveAllToFolder({
+                    type: MoveAllType.selectAll,
                     elements: getElementsFromIDs(selectedIDs),
                     sourceLabelID: labelID,
                     destinationLabelID: newLabelID,
-                    folderName: getFolderName(newLabelID, folders),
-                    selectAll,
-                    sourceAction: sourceAction,
                 });
 
                 if (selectedIDs.includes(elementID || '')) {
@@ -215,9 +212,6 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
         deleteSelectionModal,
         deleteAllModal,
         selectAllMarkModal,
-        moveToSpamModal,
-        moveSnoozedModal,
-        moveScheduledModal,
         selectAllMoveModal,
     };
 };

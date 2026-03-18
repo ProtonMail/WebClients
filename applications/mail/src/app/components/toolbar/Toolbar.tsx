@@ -42,7 +42,7 @@ export interface Props extends ListSettingsProps {
     onBack: () => void;
     onElement: (elementID: string | undefined) => void;
     onMarkAs: (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION) => Promise<void>;
-    onMove: (labelID: string, sourceAction: SOURCE_ACTION) => Promise<void>;
+    onMove: (labelID: string) => Promise<void>;
     onDelete: (sourceAction: SOURCE_ACTION) => Promise<void>;
     labelDropdownToggleRef: Ref<() => void>;
     moveDropdownToggleRef: Ref<() => void>;
