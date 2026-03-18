@@ -1,5 +1,6 @@
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
+@use '~@proton/styles/scss/lib/rem' as *;
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
@@ -35,6 +36,7 @@ im.$media-expressions: $media-expressions;
 
 	// Remove list styling from Lumo Plus button
 	li {
+		font-size: rem(13);
 		list-style: none !important;
 		margin-inline-start: 0 !important;
 		padding-inline-start: 0 !important;
