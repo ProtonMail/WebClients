@@ -6,6 +6,7 @@ import { LogLevel, Room, setLogExtension, setLogLevel } from 'livekit-client';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { useGuestContext } from '../../contexts/GuestProvider/GuestContext';
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider/MediaManagementProvider';
 import { SortedParticipantsProvider } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { SubscriptionManagementProvider } from '../../contexts/SubscriptionManagementProvider';
@@ -16,8 +17,9 @@ import { isLiveKitLogAllowedToSendToSentry } from '../../utils/isLiveKitLogAllow
 import { createMeetAudioContext } from '../../utils/meet-audio-context';
 import { ProtonMeetContainer, ProtonMeetContainerWithUser } from './ProtonMeetContainer';
 
-export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean }) => {
+export const WrappedProtonMeetContainer = () => {
     const { reportMeetError } = useMeetErrorReporting();
+    const isGuest = useGuestContext();
 
     const isMeetVp9Allowed = useFlag('MeetVp9');
     const isMeetHigherBitrate = useFlag('MeetHigherBitrate');
@@ -110,16 +112,15 @@ export const WrappedProtonMeetContainer = ({ guestMode }: { guestMode?: boolean 
             <SubscriptionManagementProvider>
                 <MediaManagementProvider>
                     <SortedParticipantsProvider>
-                        {guestMode ? (
+                        {isGuest ? (
                             <ProtonMeetContainer
-                                guestMode={true}
                                 room={room}
                                 keyProvider={keyProvider}
                                 paidUser={false}
                                 isSubUser={false}
                             />
                         ) : (
-                            <ProtonMeetContainerWithUser guestMode={false} room={room} keyProvider={keyProvider} />
+                            <ProtonMeetContainerWithUser room={room} keyProvider={keyProvider} />
                         )}
                     </SortedParticipantsProvider>
                 </MediaManagementProvider>

@@ -9,7 +9,7 @@ import { IcMeetMicrophone } from '@proton/icons/icons/IcMeetMicrophone';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectGuestMode, selectIsScreenShare } from '@proton/meet/store/slices/meetingInfo';
+import { selectIsScreenShare } from '@proton/meet/store/slices/meetingInfo';
 import { selectPage, selectPageCount, setPage } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import {
     MeetingSideBars,
@@ -27,6 +27,7 @@ import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { Pagination } from '../../atoms/Pagination/Pagination';
+import { useGuestContext } from '../../contexts/GuestProvider/GuestContext';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsLocalParticipantAdmin } from '../../hooks/useIsLocalParticipantAdmin';
@@ -50,9 +51,9 @@ import './ParticipantControls.scss';
 
 export const ParticipantControls = () => {
     const dispatch = useMeetDispatch();
+    const isGuest = useGuestContext();
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
     const isScreenShare = useMeetSelector(selectIsScreenShare);
-    const guestMode = useMeetSelector(selectGuestMode);
     const page = useMeetSelector(selectPage);
     const isLargerThanMd = useIsLargerThanMd();
     const isNarrowHeight = useIsNarrowHeight();
@@ -289,7 +290,7 @@ export const ParticipantControls = () => {
 
                     <div className="flex-nowrap gap-2 hidden lg:flex">
                         <ScreenShareButton />
-                        {guestMode ? (
+                        {isGuest ? (
                             <ParticipantsButton hasAdminPermission={hasAdminPermission} isPaid={false} />
                         ) : (
                             <WrappedParticipantsButton hasAdminPermission={hasAdminPermission} />
