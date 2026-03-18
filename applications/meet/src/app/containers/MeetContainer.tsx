@@ -44,7 +44,6 @@ interface MeetContainerProps {
     participantsMap: Record<string, ParticipantEntity>;
     participantNameMap: Record<string, string>;
     passphrase: string;
-    guestMode: boolean;
     handleMeetingLockToggle: () => Promise<void>;
     isDisconnected: boolean;
     startPiP: () => void;
@@ -78,7 +77,6 @@ export const MeetContainer = ({
     participantsMap,
     participantNameMap,
     passphrase,
-    guestMode,
     handleMeetingLockToggle,
     isDisconnected,
     startPiP,
@@ -114,7 +112,6 @@ export const MeetContainer = ({
             setMeetingInfo({
                 roomName,
                 meetingLink: shareLink,
-                guestMode,
                 paidUser,
                 maxDuration,
                 maxParticipants,
@@ -134,7 +131,6 @@ export const MeetContainer = ({
         dispatch,
         roomName,
         shareLink,
-        guestMode,
         paidUser,
         maxDuration,
         maxParticipants,

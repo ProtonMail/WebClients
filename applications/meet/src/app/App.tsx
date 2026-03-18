@@ -16,6 +16,7 @@ import { GuestDashboardContainer } from './containers/DashboardContainer/GuestDa
 import { GuestContainer } from './containers/GuestContainer';
 import { WrappedProtonMeetContainer } from './containers/ProtonMeetContainer/WrappedProtonMeetContainer';
 import { ProviderContainer } from './containers/ProviderContainer';
+import { useGuestContext } from './contexts/GuestProvider/GuestContext';
 import { getPublicToken } from './hooks/srp/usePublicToken';
 
 // @ts-ignore
@@ -45,7 +46,7 @@ const ComingSoonWrapper = ({ children }: { children: React.ReactNode }) => {
 };
 
 const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
-    const isGuest = window.location.pathname.includes('guest');
+    const isGuest = useGuestContext();
     const hasInitialized = useRef(false);
 
     const history = useHistory();
@@ -90,9 +91,9 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
     return children;
 };
 
-const isGuest = window.location.pathname.includes('guest');
-
 export const App = () => {
+    const isGuest = useGuestContext();
+
     if (!isWasmSupported()) {
         return <WasmUnsupportedError />;
     }
@@ -111,7 +112,7 @@ export const App = () => {
                     <GuestContainer>
                         <RedirectWrapper>
                             <ComingSoonWrapper>
-                                <Route path="/join" render={() => <WrappedProtonMeetContainer guestMode={true} />} />
+                                <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
                                 <Route path="/dashboard" component={GuestDashboardContainer} />
                             </ComingSoonWrapper>
                         </RedirectWrapper>

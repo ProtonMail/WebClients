@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useGetMeetUserSettings } from '@proton/meet/store/hooks/useMeetUserSettings';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { useGuestContext } from '../contexts/GuestProvider/GuestContext';
 import { MeetingListStatus, useMeetingList } from './useMeetingList';
 
 const useAuthenticatedDependencySetup = () => {
@@ -29,8 +30,9 @@ const useUnauthenticatedDependencySetup = () => {
     };
 };
 
-export const useDependencySetup = (isGuest: boolean) => {
+export const useDependencySetup = () => {
     const isEarlyAccess = useFlag('MeetEarlyAccess');
+    const isGuest = useGuestContext();
     const useSetup = isGuest || !isEarlyAccess ? useUnauthenticatedDependencySetup : useAuthenticatedDependencySetup;
 
     return useSetup();

@@ -43,7 +43,6 @@ export const GuestDashboardContainer = () => {
     return (
         <>
             <DashboardContainerBody
-                isGuest={true}
                 onScheduleClick={() => {
                     dispatch(setUpsellModalType(UpsellModalTypes.Schedule));
                 }}
