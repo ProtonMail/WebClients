@@ -278,7 +278,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
                                         className="flex items-center justify-center gap-2"
                                     >
                                         {card.buttonCopy()}
-                                        <IcArrowRight className="shrink-0" />
+                                        <IcArrowRight className="shrink-0 rtl:mirror" />
                                     </ButtonLike>
                                 </footer>
                             </DashboardCardContent>
@@ -317,7 +317,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
                                     onClick={handleGetPlan}
                                 >
                                     {getExploreText(PLAN_NAMES[plan])}
-                                    <IcArrowRight className="shrink-0" />
+                                    <IcArrowRight className="shrink-0 rtl:mirror" />
                                 </Button>
                             }
                         />
