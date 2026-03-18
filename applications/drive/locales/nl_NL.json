@@ -1241,6 +1241,12 @@
       ],
       "Edit billing address": [
         "Factuuradres bewerken"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Reload": [
+        "Opnieuw laden"
       ]
     },
     "Action: Docs": {
@@ -3951,6 +3957,15 @@
       ],
       "Enter your username without the domain (@example.com)": [
         "Voer uw gebruikersnaam in zonder het domein (@example.com)"
+      ],
+      "Invalid coupon": [
+        "Ongeldige kortingscode"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omgekeerde btw-regeling wordt niet ondersteund voor dit abonnement"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Het minimale donatiebedrag is ${ price }"
       ]
     },
     "error": {
@@ -4824,6 +4839,9 @@
       ],
       "Import from Yahoo": [
         "Importeer uit Yahoo"
+      ],
+      "Advanced import": [
+        "Geavanceerde import"
       ]
     },
     "Import warning": {
@@ -6941,6 +6959,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "U kunt nog steeds uw eigen accountgegevens bekijken, maar alle gebruikersaccounts worden verwijderd uit uw organisatie."
+      ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "Een nieuwe versie van ${ DRIVE_APP_NAME } is beschikbaar. Herlaad de pagina om de zoekfunctie te blijven gebruiken."
+      ],
+      "Choose your service to connect with": [
+        "Kies uw service om verbinding te maken"
+      ],
+      "Clear all search data": [
+        "Wis alle zoekgegevens"
+      ],
+      "Clears browser data related to the search.": [
+        "Wist browsergegevens met betrekking tot het zoeken."
+      ],
+      "Indexing in progress": [
+        "Bezig met indexeren"
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Zoeken ingeschakeld. U kunt dit dialoog nu sluiten en zoeken naar bestanden en mappen."
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
+        "Om echt privé zoeken in te schakelen, moeten we uw bestanden lokaal indexeren. U kan ${ DRIVE_APP_NAME } normaal blijven gebruiken - we laten u weten wanneer het indexeren klaar is."
+      ],
+      "Update required": [
+        "Update vereist"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Uw account is momenteel geconfigureerd om het omgekeerde btw-tarief toe te passen. Dit wordt niet ondersteund voor het geselecteerde abonnement. Om door te gaan, verwijdt u het btw-nummer van het factuuradres of selecteert u een ander abonnement."
       ]
     },
     "info": {
@@ -10166,6 +10211,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Uw abonnement heeft momenteel een bestaande korting. Overstappen naar deze nieuwe promotie betekent dat de bestaande korting niet langer wordt toegepast."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Omgekeerde btw mechanisme is van toepassing"
       ]
     },
     "Payments.Error": {
@@ -10617,10 +10665,10 @@
         "Gebruik uw eigen e-maildomein"
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Verleng uw abonnement en sla ${ discountPercent }% op!"
+        "Verleng uw abonnement en bespaar ${ discountPercent }%!"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Stap over op ons jaarabonnement en sla ${ toYearlyDiscountAmount } op!"
+        "Stap over op ons jaarabonnement en bespaar ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -13108,6 +13156,21 @@
       ],
       "You’ve got 5 GB of storage": [
         "U heeft 5 GB aan opslag"
+      ],
+      "Choose a provider": [
+        "Kies een provider"
+      ],
+      "Custom": [
+        "Aangepast"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importeer uw gegevens naar ${ BRAND_NAME }"
+      ],
+      "Reverse charge not supported": [
+        "Omgekeerde btw niet ondersteund"
+      ],
+      "Select data to import": [
+        "Selecteer gegevens om te importeren"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1244,6 +1244,9 @@
       ],
       "Google": [
         "Google"
+      ],
+      "Reload": [
+        "Recarregar"
       ]
     },
     "Action: Docs": {
@@ -3948,6 +3951,9 @@
       ],
       "Enter your username without the domain (@example.com)": [
         "Insira seu nome de usuário sem o domínio (@example.com)"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "O valor mínimo da doação é de ${ price }"
       ]
     },
     "error": {
@@ -6955,6 +6961,15 @@
       ],
       "Choose your service to connect with": [
         "Escolha seu serviço para conectar"
+      ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "Uma nova versão do ${ DRIVE_APP_NAME } está disponível. Recarregue para continuar usando a pesquisa."
+      ],
+      "Indexing in progress": [
+        "Indexação em progresso"
+      ],
+      "Update required": [
+        "Atualização necessária"
       ]
     },
     "info": {
@@ -10685,10 +10700,10 @@
         "Use seu próprio domínio de e-mail"
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Estenda sua assinatura e salve ${ discountPercent }%!"
+        "Estenda sua assinatura e economize ${ discountPercent }%!"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Mude para o nosso plano anual e salve ${ toYearlyDiscountAmount }!"
+        "Mude para o nosso plano anual e economize ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
