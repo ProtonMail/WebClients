@@ -7,7 +7,6 @@ import {
 import type { ThemeColor } from '@proton/colors';
 import type { SectionConfig } from '@proton/components';
 import {
-    Renew,
     type Subscription,
     getHasExternalMemberCapableB2BPlan,
     getHasVpnB2BPlan,
@@ -39,6 +38,7 @@ import {
     isOrganizationB2B,
     isOrganizationVisionary,
 } from '@proton/shared/lib/organization/helper';
+import { isSubscriptionRenewEnabled } from '@proton/shared/lib/subscription/helpers';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
 import type {
     DriveDashboardVariant,
@@ -158,7 +158,7 @@ function getV1DashboardSections(
                 isPaid &&
                 canPay &&
                 cancellablePlan &&
-                subscription?.Renew === Renew.Enabled &&
+                isSubscriptionRenewEnabled(subscription) &&
                 !cancellableOnlyViaSupport,
         },
         {
@@ -431,7 +431,7 @@ export const getAccountAppRoutes = ({
                             isPaid &&
                             canPay &&
                             cancellablePlan &&
-                            subscription?.Renew === Renew.Enabled &&
+                            isSubscriptionRenewEnabled(subscription) &&
                             !cancellableOnlyViaSupport,
                         variant: 'card',
                     },
