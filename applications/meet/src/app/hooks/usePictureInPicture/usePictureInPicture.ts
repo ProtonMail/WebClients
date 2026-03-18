@@ -4,6 +4,7 @@ import { useRoomContext } from '@livekit/components-react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
+import { type ReportMeetError, useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectChatMessages } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { selectMeetSettings } from '@proton/meet/store/slices/settings';
@@ -21,7 +22,7 @@ import { usePiPMessages } from './usePiPMessages';
 import { usePiPRenderer } from './usePiPRenderer';
 import { usePiPTracks } from './usePiPTracks';
 
-const enableMediaSessionControls = async () => {
+const enableMediaSessionControls = async (reportMeetError: ReportMeetError) => {
     try {
         const silentStream = await navigator.mediaDevices.getUserMedia({
             audio: {
@@ -36,7 +37,9 @@ const enableMediaSessionControls = async () => {
         });
 
         return silentStream;
-    } catch (error) {
+    } catch (error: any) {
+        reportMeetError(`enableMediaSessionControls: ${error.message}`, error);
+
         return null;
     }
 };
@@ -48,6 +51,7 @@ export function usePictureInPicture({
     isDisconnected: boolean;
     participantNameMap: Record<string, string>;
 }) {
+    const { reportMeetError } = useMeetErrorReporting();
     const room = useRoomContext();
 
     const chatMessages = useMeetSelector(selectChatMessages);
@@ -76,7 +80,7 @@ export function usePictureInPicture({
     const { register, removeForcePin } = useCameraTrackSubscriptionManager();
 
     // PiP session manager for resource management
-    const [sessionManager] = useState(() => new PiPSessionManager());
+    const [sessionManager] = useState(() => new PiPSessionManager(reportMeetError));
 
     const preventBlur = useRef(false);
 
@@ -172,6 +176,8 @@ export function usePictureInPicture({
             return;
         } catch (error: any) {
             if (!error.message.includes('user gesture')) {
+                reportMeetError(`usePictureInPicture.startPiP: ${error.message}`, error);
+
                 notifications.createNotification({
                     type: 'error',
                     text: c('meet_2025 Error').t`Failed to start Picture-in-Picture`,
@@ -284,9 +290,10 @@ export function usePictureInPicture({
                     navigator.mediaSession.setActionHandler('enterpictureinpicture', null);
                 };
             }
-        } catch (error) {
+        } catch (error: any) {
             // eslint-disable-next-line no-console
             console.error(error);
+            reportMeetError(`usePictureInPicture.setActionHandler: ${error.message}`, error);
         }
     }, [startPiP, pipEnabled]);
 
@@ -302,7 +309,7 @@ export function usePictureInPicture({
         let silentStream: MediaStream | null = null;
 
         const handleCreateSilentStream = async () => {
-            silentStream = await enableMediaSessionControls();
+            silentStream = await enableMediaSessionControls(reportMeetError);
         };
 
         const handleDestroySilentStream = () => {
@@ -333,7 +340,7 @@ export function usePictureInPicture({
                 silentStream.getTracks().forEach((track) => track.stop());
             }
         };
-    }, [room, isVideoEnabled, isAudioEnabled, pipEnabled]);
+    }, [room, isVideoEnabled, isAudioEnabled, pipEnabled, reportMeetError]);
 
     return {
         startPiP,
