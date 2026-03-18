@@ -26,8 +26,8 @@ export function getIsEligible({
     }
 
     const offerSubscription = new OfferSubscription(subscription);
-    if (offerSubscription.isManagedExternally()) {
-        // Exclude mobile
+    if (offerSubscription.isManagedExternally() || offerSubscription.isTrial()) {
+        // Exclude mobile and trials
         return false;
     }
     const isBundle = offerSubscription.hasBundle();
