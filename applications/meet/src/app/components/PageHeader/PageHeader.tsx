@@ -13,19 +13,20 @@ import logo from '@proton/styles/assets/img/meet/brand-dual-colors.svg';
 import clsx from '@proton/utils/clsx';
 
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
+import { useGuestContext } from '../../contexts/GuestProvider/GuestContext';
 import { MeetSignIn } from '../SignIn/SignIn';
 
 import './PageHeader.scss';
 
 interface PageHeaderProps {
-    guestMode: boolean;
     showAppSwitcher?: boolean;
     isInstantJoin?: boolean;
 }
 
-export const PageHeader = ({ guestMode, showAppSwitcher = true, isInstantJoin = false }: PageHeaderProps) => {
+export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: PageHeaderProps) => {
     const location = useLocation();
     const history = useHistory();
+    const isGuest = useGuestContext();
 
     const handleSignUpClick = () => {
         const returnUrl = getAppHref(SSO_PATHS.MEET_SIGNUP, APPS.PROTONACCOUNT);
@@ -45,7 +46,7 @@ export const PageHeader = ({ guestMode, showAppSwitcher = true, isInstantJoin = 
         <div className="flex flex-nowrap gap-2 items-center w-custom" style={{ '--w-custom': 'fit-content' }}>
             {showAppSwitcher && !isInstantJoin && (
                 <>
-                    {guestMode ? (
+                    {isGuest ? (
                         <UnAuthenticatedAppsDropdown app={APPS.PROTONMEET} />
                     ) : (
                         <AppsDropdown app={APPS.PROTONMEET} />
@@ -86,7 +87,7 @@ export const PageHeader = ({ guestMode, showAppSwitcher = true, isInstantJoin = 
                     </div>
                     <div>
                         <div className="flex items-center sign-in-header-button-container">
-                            {guestMode ? (
+                            {isGuest ? (
                                 <>
                                     <MeetSignIn className="sign-in-header-button rounded-full py-2">
                                         {c('Action').t`Sign in`}

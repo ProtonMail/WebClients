@@ -42,7 +42,7 @@ export const DashboardContainer = () => {
     const [newlyCreatedMeetingId, setNewlyCreatedMeetingId] = useState<string | undefined>();
 
     const { meetings, personalMeeting, setupNewPersonalMeeting, loadingRotatePersonalMeeting, meetingsListStatus } =
-        useDependencySetup(false);
+        useDependencySetup();
 
     useEffect(() => {
         if (!newlyCreatedMeetingId) {
@@ -119,7 +119,6 @@ export const DashboardContainer = () => {
                 onStartMeetingClick={handleStartMeeting}
                 onCreateRoomClick={() => openCreateRoomModal(true)}
                 meetings={meetings ?? []}
-                isGuest={false}
                 handleScheduleInCalendar={handleScheduleInCalendar}
                 handleNewRoomClick={(room?: Meeting) => {
                     if (room) {

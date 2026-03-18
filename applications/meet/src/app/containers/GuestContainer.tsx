@@ -19,6 +19,7 @@ import { FlagProvider } from '@proton/unleash/proxy';
 
 import { bootstrapGuestApp } from '../bootstrap';
 import config from '../config';
+import { GuestProvider } from '../contexts/GuestProvider/GuestProvider';
 import { WasmContext } from '../contexts/WasmContext';
 
 type ExtraThunkArguments = Omit<ProtonThunkArguments, 'config' | 'api' | 'eventManager'> & {
@@ -79,21 +80,23 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
         extraThunkArgumentsRef.current as ExtraThunkArguments;
 
     return (
-        <ProtonStoreProvider store={storeRef.current as MeetStore}>
-            <AuthenticationProvider store={authentication}>
-                <Router history={history}>
-                    <FlagProvider unleashClient={unleashClient} startClient={false}>
-                        <ApiContext.Provider value={unauthenticatedApi.apiCallback}>
-                            <WasmContext.Provider value={{ wasmApp: wasmAppRef.current }}>
-                                <ErrorBoundary big component={<StandardErrorPage big />}>
-                                    <NotificationsChildren />
-                                    {children}
-                                </ErrorBoundary>
-                            </WasmContext.Provider>
-                        </ApiContext.Provider>
-                    </FlagProvider>
-                </Router>
-            </AuthenticationProvider>
-        </ProtonStoreProvider>
+        <GuestProvider isGuest={true}>
+            <ProtonStoreProvider store={storeRef.current as MeetStore}>
+                <AuthenticationProvider store={authentication}>
+                    <Router history={history}>
+                        <FlagProvider unleashClient={unleashClient} startClient={false}>
+                            <ApiContext.Provider value={unauthenticatedApi.apiCallback}>
+                                <WasmContext.Provider value={{ wasmApp: wasmAppRef.current }}>
+                                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                                        <NotificationsChildren />
+                                        {children}
+                                    </ErrorBoundary>
+                                </WasmContext.Provider>
+                            </ApiContext.Provider>
+                        </FlagProvider>
+                    </Router>
+                </AuthenticationProvider>
+            </ProtonStoreProvider>
+        </GuestProvider>
     );
 };

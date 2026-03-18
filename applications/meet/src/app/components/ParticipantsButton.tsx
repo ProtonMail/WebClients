@@ -3,11 +3,12 @@ import { c, msgid } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { IcMeetParticipants } from '@proton/icons/icons/IcMeetParticipants';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectGuestMode, selectInstantMeeting, selectMaxParticipants } from '@proton/meet/store/slices/meetingInfo';
+import { selectInstantMeeting, selectMaxParticipants } from '@proton/meet/store/slices/meetingInfo';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
+import { useGuestContext } from '../contexts/GuestProvider/GuestContext';
 
 export const ParticipantsButton = ({
     hasAdminPermission,
@@ -17,15 +18,15 @@ export const ParticipantsButton = ({
     isPaid: boolean;
 }) => {
     const dispatch = useMeetDispatch();
+    const isGuest = useGuestContext();
     const instantMeeting = useMeetSelector(selectInstantMeeting);
     const maxParticipants = useMeetSelector(selectMaxParticipants);
-    const guestMode = useMeetSelector(selectGuestMode);
     const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
 
     const sideBarState = useMeetSelector(selectSideBarState);
 
     const getParticipantsCount = () => {
-        if (hasAdminPermission || (guestMode && instantMeeting)) {
+        if (hasAdminPermission || (isGuest && instantMeeting)) {
             if (maxParticipants && maxParticipants < 10) {
                 return (
                     <div>
@@ -41,7 +42,7 @@ export const ParticipantsButton = ({
     };
 
     const getParticipantCountIndicatorVariant = () => {
-        if (!hasAdminPermission && !(guestMode && instantMeeting)) {
+        if (!hasAdminPermission && !(isGuest && instantMeeting)) {
             return 'default';
         }
 
