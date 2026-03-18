@@ -886,6 +886,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden",
         "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "Actions message": {
@@ -3206,6 +3209,12 @@
       ],
       "Your import will not be processed.": [
         "Uw import zal niet worden verwerkt."
+      ],
+      "Invalid coupon": [
+        "Ongeldige kortingscode"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omgekeerde btw-regeling wordt niet ondersteund voor dit abonnement"
       ]
     },
     "error": {
@@ -5369,6 +5378,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "U kunt nog steeds uw eigen accountgegevens bekijken, maar alle gebruikersaccounts worden verwijderd uit uw organisatie."
+      ],
+      "Choose your service to connect with": [
+        "Kies uw service om verbinding te maken"
       ]
     },
     "info": {
@@ -9886,6 +9898,18 @@
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
+      ],
+      "Choose a provider": [
+        "Kies een provider"
+      ],
+      "Custom": [
+        "Aangepast"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importeer uw gegevens naar ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Selecteer gegevens om te importeren"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -10171,6 +10195,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uw proefversie eindigt op ${ textDate }. U wordt niet in rekening gebracht als u annuleert vóór ${ textDate }. ${ action }"
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "Geavanceerde import"
       ]
     }
   }
