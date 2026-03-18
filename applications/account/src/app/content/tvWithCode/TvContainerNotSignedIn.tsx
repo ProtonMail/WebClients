@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -7,14 +7,16 @@ import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
-import Layout from './Layout';
-import Main from './Main';
-import SupportDropdown from './SupportDropdown';
+import Layout from '../../public/Layout';
+import Main from '../../public/Main';
+import SupportDropdown from '../../public/SupportDropdown';
 import tvLogo from './tv.svg';
 
 export const TvContainerNotSignedIn = () => {
+    const { code } = useParams<{ code: string }>();
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
+    searchParams.append('code', code);
 
     return (
         <Layout toApp="proton-vpn-settings" hasDecoration hasAppLogos={false} hasFooter={false}>
