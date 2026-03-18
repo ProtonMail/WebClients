@@ -272,7 +272,7 @@ const AddressActions = ({
                 <CreateMissingKeysAddressModal {...missingKeysProps} member={member} addressesToGenerate={[address]} />
             )}
             {renderEditInternalAddressModal && (
-                <EditInternalAddressModal address={address} {...editInternalAddressProps} />
+                <EditInternalAddressModal address={address} member={member} {...editInternalAddressProps} />
             )}
             {renderEditExternalAddressModal && (
                 <EditExternalAddressModal address={address} {...editExternalAddressProps} />

@@ -18,13 +18,14 @@ import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CANONICALIZE_SCHEME, canonicalizeEmail, getEmailParts } from '@proton/shared/lib/helpers/email';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address, Member } from '@proton/shared/lib/interfaces';
 
 interface Props extends ModalProps<'form'> {
     address: Address;
+    member?: Member;
 }
 
-const EditInternalAddressModal = ({ address, ...rest }: Props) => {
+const EditInternalAddressModal = ({ address, member, ...rest }: Props) => {
     const [initialEmail] = useState(address.Email);
     const [[initialLocalEmail, domain]] = useState(getEmailParts(initialEmail));
     const [initialDisplayName] = useState(address.DisplayName);
@@ -41,6 +42,7 @@ const EditInternalAddressModal = ({ address, ...rest }: Props) => {
     const handleSubmit = async () => {
         await dispatch(
             renameInternalAddressThunk({
+                member,
                 address,
                 newEmail,
                 localEmail: localEmail !== initialLocalEmail ? localEmail : undefined,

@@ -113,7 +113,7 @@ export const getPermissions = ({
         }
     }
 
-    const canEditInternalAddress = Type !== ADDRESS_TYPE.TYPE_EXTERNAL && isSelf;
+    const canEditInternalAddress = Type !== ADDRESS_TYPE.TYPE_EXTERNAL;
     const canEditExternalAddress =
         Type === ADDRESS_TYPE.TYPE_EXTERNAL &&
         ConfirmationState !== AddressConfirmationState.CONFIRMATION_CONFIRMED &&
