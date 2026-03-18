@@ -4,7 +4,7 @@ im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
 .projects-list {
-	margin-inline-start: 23px;
+	margin-inline-start: 16px;
 }
 
 .projects-text-div {
@@ -39,28 +39,6 @@ im.$media-expressions: $media-expressions;
 }
 
 @include im.media('<=small') {
-	.projects-header-container {
-		position: relative;
-		border-radius: 8px;
-
-		&:hover {
-			background-color: var(--background-weak);
-			transition: 0.3s all;
-		}
-	}
-
-	.projects-header-button {
-		position: relative;
-		flex: 1;
-	}
-
-	.projects-icon-button {
-		border-radius: 6px;
-		flex-shrink: 0;
-		min-inline-size: 24px;
-		block-size: 24px;
-	}
-
 	.project-sidebar-item-see-all {
 		padding-block: 4px;
 		padding-inline: 12px;
