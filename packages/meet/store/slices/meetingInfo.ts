@@ -7,7 +7,6 @@ import type { MeetState } from '../rootReducer';
 export interface MeetingInfoState {
     roomName: string;
     meetingLink: string;
-    guestMode: boolean;
     paidUser: boolean;
     maxDuration: number;
     maxParticipants: number;
@@ -28,7 +27,6 @@ export interface MeetingInfoState {
 export const initialState: MeetingInfoState = {
     roomName: '',
     meetingLink: '',
-    guestMode: false,
     paidUser: false,
     maxDuration: 0,
     maxParticipants: 0,
@@ -93,7 +91,6 @@ export const {
 export const selectMeetingInfo = (state: MeetState) => state.meetingInfo;
 export const selectRoomName = (state: MeetState) => state.meetingInfo.roomName;
 export const selectMeetingLink = (state: MeetState) => state.meetingInfo.meetingLink;
-export const selectGuestMode = (state: MeetState) => state.meetingInfo.guestMode;
 export const selectPaidUser = (state: MeetState) => state.meetingInfo.paidUser;
 export const selectMaxDuration = (state: MeetState) => state.meetingInfo.maxDuration;
 export const selectMaxParticipants = (state: MeetState) => state.meetingInfo.maxParticipants;

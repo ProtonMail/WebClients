@@ -9,7 +9,7 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { TopBanner } from '@proton/components/index';
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectGuestMode, selectMeetingLink, selectParticipantNameMap } from '@proton/meet/store/slices/meetingInfo';
+import { selectMeetingLink, selectParticipantNameMap } from '@proton/meet/store/slices/meetingInfo';
 import { selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -18,6 +18,7 @@ import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
+import { useGuestContext } from '../../contexts/GuestProvider/GuestContext';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
@@ -67,6 +68,9 @@ export const MeetingBody = ({
     isDisconnected,
 }: MeetingBodyProps) => {
     useMeetingInitialisation();
+
+    const isGuest = useGuestContext();
+
     const isLargerThanMd = useIsLargerThanMd();
 
     const isNarrowHeight = useIsNarrowHeight();
@@ -77,7 +81,6 @@ export const MeetingBody = ({
     const [participantSideBarOpen, setParticipantSideBarOpen] = useState(true);
 
     const participantNameMap = useMeetSelector(selectParticipantNameMap);
-    const guestMode = useMeetSelector(selectGuestMode);
     const meetingLink = useMeetSelector(selectMeetingLink);
 
     const { handleRotateCamera, isVideoEnabled } = useMediaManagementContext();
@@ -239,7 +242,7 @@ export const MeetingBody = ({
                         <Settings />
                         <Chat />
                         <AssignHostSidebar />
-                        {guestMode || !isEarlyAccess ? <MeetingDetails /> : <WrappedMeetingDetails />}
+                        {isGuest || !isEarlyAccess ? <MeetingDetails /> : <WrappedMeetingDetails />}
                     </div>
                 )}
             </div>

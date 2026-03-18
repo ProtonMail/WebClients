@@ -10,6 +10,7 @@ import { JoiningRoomLoader } from '../../components/JoiningRoomLoader';
 import { OpenDesktopAppBanner } from '../../components/OpenDesktopAppBanner/OpenDesktopAppBanner';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { PreJoinDetails } from '../../components/PreJoinDetails/PreJoinDetails';
+import { useGuestContext } from '../../contexts/GuestProvider/GuestContext';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { LoadingState } from '../../types';
 import { getDisplayNameStorageKey } from '../../utils/storage';
@@ -20,7 +21,6 @@ interface PrejoinContainerProps {
     handleJoin: (displayName: string) => void;
     loadingState: LoadingState | null;
     isLoading: boolean;
-    guestMode?: boolean;
     shareLink: string;
     roomName: string;
     roomId: string;
@@ -40,7 +40,6 @@ export const PrejoinContainer = ({
     handleJoin,
     loadingState,
     isLoading,
-    guestMode = false,
     shareLink,
     roomName,
     roomId,
@@ -56,9 +55,10 @@ export const PrejoinContainer = ({
     joiningLoaderSubtitle,
 }: PrejoinContainerProps) => {
     const dispatch = useMeetDispatch();
+    const isGuest = useGuestContext();
 
     // check if a custom display name is already stored for the user
-    const hasStoredDisplayName = getItem(getDisplayNameStorageKey(guestMode, userId)) != null;
+    const hasStoredDisplayName = getItem(getDisplayNameStorageKey(isGuest, userId)) != null;
 
     const {
         cameras,
@@ -88,7 +88,7 @@ export const PrejoinContainer = ({
     const currentSelectedAudioOutputDevice = activeAudioOutputDeviceId ?? defaultSpeaker?.deviceId;
 
     const handleJoinMeeting = (displayName: string, keepOnDevice: boolean) => {
-        const storageKey = getDisplayNameStorageKey(guestMode, userId);
+        const storageKey = getDisplayNameStorageKey(isGuest, userId);
 
         if (keepOnDevice && displayName.trim()) {
             setItem(storageKey, displayName);
@@ -125,10 +125,10 @@ export const PrejoinContainer = ({
 
     return (
         <div className="h-full overflow-y-auto relative">
-            {roomId && !guestMode && <OpenDesktopAppBanner meetingLink={shareLink} />}
+            {roomId && !isGuest && <OpenDesktopAppBanner meetingLink={shareLink} />}
             {isLoading && <div className="w-full h-full absolute top-0 left-0 z-up" />}
             <div className="absolute w-full meet-container-padding-x">
-                <PageHeader guestMode={guestMode} showAppSwitcher={false} isInstantJoin={isInstantJoin} />
+                <PageHeader showAppSwitcher={false} isInstantJoin={isInstantJoin} />
             </div>
             <div className="prejoin-container flex flex-column md:flex-row flex-nowrap w-full md:items-center md:justify-center meet-container-padding-x">
                 <div
