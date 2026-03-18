@@ -188,6 +188,14 @@ class OfferSubscription {
         }
         return hasSpringSale2026Coupon(this.subscription);
     }
+
+    isTrial() {
+        if (this.upcomingSubscription) {
+            return this.upcomingSubscription.IsTrial;
+        }
+
+        return this.subscription.IsTrial;
+    }
 }
 
 export default OfferSubscription;
