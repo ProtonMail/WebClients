@@ -366,6 +366,9 @@ export const VPN_TV_PATHS_MAP = {
     apple: '/appletv',
     android: '/tv',
 };
+
+export const VPN_TV_PATH_WITH_CODE = '/tv/code/:code';
+
 export const VPN_TV_PATHS = Object.values(VPN_TV_PATHS_MAP);
 
 export const SSO_PATHS = {
