@@ -8,6 +8,7 @@ import {
 } from '@proton/components/hooks/helpers/test';
 import {
     type CheckSubscriptionData,
+    CYCLE,
     type Currency,
     FREE_PLAN,
     PAYMENT_METHOD_TYPES,
@@ -29,7 +30,7 @@ import {
     withPaymentContext,
     withReduxStore,
 } from '@proton/testing';
-import { buildUser } from '@proton/testing/builders';
+import { buildSubscription, buildUser } from '@proton/testing/builders';
 import { getLongTestPlans } from '@proton/testing/data';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 
@@ -233,5 +234,53 @@ describe('SubscriptionContainer', () => {
         await waitUntilChecked();
 
         expect(screen.getByTestId('currency-selector')).toHaveTextContent('EUR');
+    });
+
+    it('should keep "Close" button when applying an invalid coupon on an already-subscribed plan', async () => {
+        const planIDs = { [PLANS.MAIL]: 1 };
+        props.step = SUBSCRIPTION_STEPS.CHECKOUT;
+        props.planIDs = planIDs;
+        props.cycle = CYCLE.YEARLY;
+        // Subscription matches the selected plan+cycle, so the check should be forbidden
+        props.subscription = buildSubscription({
+            planName: PLANS.MAIL,
+            cycle: CYCLE.YEARLY,
+            currency: 'CHF',
+        });
+
+        // Mock the API to throw an invalid coupon error when called.
+        // The initial check() is forbidden (same plan+cycle, no coupon) and won't call the API.
+        // Only when a coupon is applied will the API be called.
+        addApiMock(
+            'payments/v5/subscription/check',
+            () => {
+                throw { data: { Code: 800_003, Error: 'Invalid coupon' } };
+            },
+            'post'
+        );
+        enableSepaFeatureFlag();
+        mockUserVPNServersCountApi();
+
+        renderWithProviders(<ContextSubscriptionContainer {...props} />);
+
+        // Wait for the initial render — button should show "Close" because plan is already subscribed
+        await waitFor(() => {
+            expect(screen.getByText('Close')).toBeInTheDocument();
+        });
+
+        // Expand gift code section and apply an invalid coupon
+        fireEvent.click(screen.getByTestId('add-gift-code'));
+        const giftInput = screen.getByTestId('gift-code-input');
+        fireEvent.change(giftInput, { target: { value: 'INVALIDCOUPON' } });
+        fireEvent.click(screen.getByTestId('apply-gift-code'));
+
+        // Wait for the check to complete, then verify the button still shows "Close"
+        await waitFor(() => {
+            expect(screen.getByText('Close')).toBeInTheDocument();
+        });
+
+        // Should NOT have changed to "Confirm" or "Pay"
+        expect(screen.queryByText('Confirm')).not.toBeInTheDocument();
+        expect(screen.queryByText(/Pay .* now/)).not.toBeInTheDocument();
     });
 });
