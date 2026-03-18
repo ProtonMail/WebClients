@@ -517,7 +517,7 @@ export const ScheduleMeetingForm = ({
                             className="tertiary rounded-full text-semibold w-full"
                             onClick={() => (meeting ? withLoadingDelete(handleDeleteMeeting(meeting)) : onClose())}
                             size="large"
-                            disabled={loading || loadingDelete}
+                            disabled={loading || loadingDelete || !!result}
                             loading={loadingDelete}
                         >
                             {meeting ? c('Action').t`Delete` : c('Action').t`Cancel`}
@@ -526,7 +526,7 @@ export const ScheduleMeetingForm = ({
                             className="primary rounded-full text-semibold w-full"
                             onClick={() => withLoading(handleSubmit)}
                             size="large"
-                            disabled={isDisabled || loading || loadingDelete}
+                            disabled={isDisabled || loading || loadingDelete || !!result}
                             loading={loading}
                         >{c('Action').t`Save`}</Button>
                     </div>

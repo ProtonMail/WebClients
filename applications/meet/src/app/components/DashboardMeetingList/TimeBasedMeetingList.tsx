@@ -51,7 +51,7 @@ export const TimeBasedMeetingList = ({
                             )}
                         >
                             <h2 className="text-sm shrink-0">
-                                {getGroupWithPrefix(formatMeetingDate(date, dateFormat))}
+                                {getGroupWithPrefix(formatMeetingDate(date, dateFormat, true))}
                             </h2>
                             <div className="meeting-list-day-header-line flex-1" aria-hidden="true" />
                         </div>
