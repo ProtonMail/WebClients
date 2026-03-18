@@ -1,0 +1,32 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.collapsible-section-header {
+	border-radius: 8px;
+	transition: background-color 0.15s ease;
+
+	&:hover {
+		background-color: var(--background-weak);
+	}
+
+	@include im.media('<=small') {
+		position: relative;
+
+		&:hover {
+			background-color: var(--background-weak);
+			transition: 0.3s all;
+		}
+	}
+}
+
+.collapsible-section-icon-button {
+	border-radius: 6px;
+	flex-shrink: 0;
+
+	@include im.media('<=small') {
+		min-inline-size: 24px;
+		block-size: 24px;
+	}
+}
