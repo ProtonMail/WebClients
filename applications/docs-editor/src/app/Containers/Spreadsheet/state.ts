@@ -450,40 +450,6 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     onSelectRange({ ...range, sheetId })
   })
 
-  // Wrap onCreateNewSheet to ensure proper naming with space and length limit
-  const onCreateNewSheet = useEvent((sheetSpec?: any) => {
-    const newSheet = baseState.onCreateNewSheet(sheetSpec)
-
-    if (newSheet) {
-      let updatedTitle = newSheet.title
-
-      // Fix the naming to include space if it's the default naming pattern
-      if (updatedTitle.match(/^Sheet\d+$/)) {
-        const sheetNumber = updatedTitle.replace('Sheet', '')
-        updatedTitle = `Sheet ${sheetNumber}`
-      }
-
-      // Ensure title doesn't exceed 50 characters
-      if (updatedTitle.length > 50) {
-        updatedTitle = updatedTitle.substring(0, 50)
-      }
-
-      // Only update if the title changed
-      if (updatedTitle !== newSheet.title) {
-        const updatedSheet = { ...newSheet, title: updatedTitle }
-
-        // Update the sheet in the sheets array
-        localState.onChangeSheets((sheets) =>
-          sheets.map((sheet) => (sheet.sheetId === newSheet.sheetId ? updatedSheet : sheet)),
-        )
-
-        return updatedSheet
-      }
-    }
-
-    return newSheet
-  })
-
   const { createNotification } = useNotifications()
   const onDeleteRow = useEvent((sheetId: number, rowIndexes: number[]) => {
     if (baseState.rowCount === rowIndexes.length) {
@@ -525,7 +491,6 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     onSelectRange,
     onSelectNamedRange,
     onSelectTable,
-    onCreateNewSheet,
     onDeleteRow,
     onDeleteColumn,
     getCellOffsetFromCoords,
