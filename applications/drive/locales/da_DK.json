@@ -806,6 +806,9 @@
       "Refresh the page": [
         "Opdater siden"
       ],
+      "Reload": [
+        "Genindlæs"
+      ],
       "Remove": [
         "Fjern"
       ],
@@ -5025,6 +5028,9 @@
       "30-day money-back guarantee.": [
         "30 dages tilbagebetalingsgaranti."
       ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "En ny version af ${ DRIVE_APP_NAME } er tilgængelig. Genindlæs den for fortsat søgning."
+      ],
       "A number will be added to the filename": [
         "Et nummer vil blive tilføjet filnavnet"
       ],
@@ -5617,6 +5623,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I det næste trin kan du foretage en indbetaling ved hjælp af en Bitcoin-adresse."
+      ],
+      "Indexing in progress": [
+        "Indeksering i gang"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indekserer ${ esProgress } elementer ud of ${ totalProgressToShow }"
@@ -6393,6 +6402,9 @@
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "For at muliggøre en ægte privat søgning er vi nødt til at indeksere dine filer lokalt. Du kan stadig bruge ${ DRIVE_APP_NAME } normalt - vi giver dig besked, når indekseringen er færdig."
       ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
+        "For at aktivere ægte privat søgning, er vi nødt til at indeksere dine filer lokalt. Du kan stadig bruge ${ DRIVE_APP_NAME } normalt - vi giver dig besked, når indekseringen er færdig."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
       ],
@@ -6482,6 +6494,9 @@
       ],
       "Untitled": [
         "Uden titel"
+      ],
+      "Update required": [
+        "Opdatering kræves"
       ],
       "Updating drive search...": [
         "Opdaterer drevsøgning..."
@@ -10471,7 +10486,7 @@
         "Rabatter er baseret på standardpriser pr. måned. Dit abonnement fornyes til standardprisen pr. år, når faktureringscyklussen slutter."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Forlæng Deres abonnement og gem ${ discountPercent } %!"
+        "Forlæng dit abonnement og spar ${ discountPercent } %!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Fuld adgang til ${ VPN_APP_NAME }"
@@ -10495,7 +10510,7 @@
         "Stærkere beskyttelse mod cybertrusler"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Skift til vores årlige abonnement og gem ${ toYearlyDiscountAmount }!"
+        "Skift til vores årlige abonnement og spar ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Ubegrænset antal daglige chats"
