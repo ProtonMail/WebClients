@@ -407,7 +407,7 @@ $profile-colors:
 	color: black;
 }
 
-// Meet button styles. primary | secondary | tertiary | ghost
+// Meet button styles. primary | secondary | tertiary | ghost | danger | danger-secondary
 // https://www.figma.com/design/enM75uGIsAX3EyyVwVtd7Z/Proton-Meet----Design-Decisions?node-id=9935-46039&m=dev
 button {
 	&.primary {
@@ -463,6 +463,34 @@ button {
 			background-color: var(--background-card);
 			color: var(--text-norm);
 			border: 1px solid var(--border-weak);
+		}
+	}
+
+	&.danger {
+		background-color: var(--signal-danger);
+		color: var(--text-invert);
+		border: 1px solid var(--signal-danger);
+
+		&:hover,
+		&:active,
+		&:focus-visible {
+			background-color: var(--signal-danger-major-1);
+			color: var(--text-invert);
+			border: 1px solid var(--signal-danger-major-1);
+		}
+	}
+
+	&.danger-secondary {
+		background-color: transparent;
+		color: var(--signal-danger-major-1);
+		border: 1px solid var(--border-norm);
+
+		&:hover,
+		&:active,
+		&:focus-visible {
+			background-color: var(--signal-danger-major-2);
+			color: var(--signal-danger-major-1);
+			border: 1px solid var(--signal-danger-major-2);
 		}
 	}
 }
