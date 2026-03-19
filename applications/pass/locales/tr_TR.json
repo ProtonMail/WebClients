@@ -1651,9 +1651,6 @@
       "Disabling auto-lock failed": [
         "Otomatik kilitleme kapatılamadı"
       ],
-      "Disabling offline mode...": [
-        "Çevrim dışı kip kapatılıyor..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "DNS değişikliklerinin güncellenmesi 24 saat kadar sürebilir."
       ],
@@ -1967,14 +1964,8 @@
       "Offline mode": [
         "Çevrim dışı kip"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Çevrim dışı kip şu anda kapatılamaz"
-      ],
       "Offline mode could not be enabled at the moment": [
         "Çevrim dışı kip şu anda kullanıma alınamadı"
-      ],
-      "Offline support successfully disabled": [
-        "Çevrim dışı desteği kullanımdan kaldırıldı"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Çevrim içi olarak ${ PASS_APP_NAME } kullanmak için PIN kodu yazmanız gerekir. 3 başarısız denemeden sonra oturumunuz kapatılır."
@@ -2480,6 +2471,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Artık ${ PASS_SHORT_APP_NAME } çevrim dışı erişimi için ${ BRAND_NAME } parolanızı kullanabilirsiniz"
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Artık yedek parolanızı kullanarak ${ PASS_SHORT_APP_NAME } uygulamasına çevrimdışı olarak erişebilirsiniz"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Artık ek parolanızı kullanarak ${ PASS_SHORT_APP_NAME } uygulamasına çevrimdışı olarak erişebilirsiniz"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Artık ikinci parolanızı kullanarak ${ PASS_SHORT_APP_NAME } uygulamasına çevrimdışı olarak erişebilirsiniz"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Bu takma adın e-posta kutularını değiştiremezsiniz."
