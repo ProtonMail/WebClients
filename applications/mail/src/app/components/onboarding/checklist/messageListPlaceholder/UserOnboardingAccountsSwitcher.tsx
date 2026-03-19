@@ -1,3 +1,7 @@
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import useMyCountry from '@proton/components/hooks/useMyCountry';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { memo, useState } from 'react';
 
 import { c } from 'ttag';
@@ -7,7 +11,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useActiveBreakpoint, useModalStateObject, useMyCountry, useNotifications } from '@proton/components';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';

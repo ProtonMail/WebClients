@@ -1,10 +1,12 @@
+import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import { useHotkeys } from '@proton/components/hooks/useHotkeys';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { RefObject } from 'react';
 import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import type { HotkeyTuple } from '@proton/components';
-import { useEventManager, useHotkeys, useNotifications } from '@proton/components';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

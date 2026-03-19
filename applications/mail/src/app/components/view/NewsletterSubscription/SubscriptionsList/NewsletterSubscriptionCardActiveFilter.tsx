@@ -1,10 +1,14 @@
+import FiltersUpsellModal from '@proton/components/components/upsell/modals/FiltersUpsellModal';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PropsWithChildren } from 'react';
 
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { FiltersUpsellModal, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useFilters } from '@proton/mail/store/filters/hooks';

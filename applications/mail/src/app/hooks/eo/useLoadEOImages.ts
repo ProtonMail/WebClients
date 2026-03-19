@@ -1,6 +1,6 @@
+import useApi from '@proton/components/hooks/useApi';
 import { useCallback } from 'react';
 
-import { useApi } from '@proton/components';
 import type { MessageRemoteImage, MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';

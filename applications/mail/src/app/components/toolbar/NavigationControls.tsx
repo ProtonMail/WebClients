@@ -1,9 +1,9 @@
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
-import { ToolbarButton } from '@proton/components';
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
 import { IcArrowUp } from '@proton/icons/icons/IcArrowUp';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

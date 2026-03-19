@@ -1,10 +1,11 @@
+import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
+import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import type { ReactNode } from 'react';
 import { useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useFocusTrap, useHotkeys } from '@proton/components';
 
 import InnerModalContent from './InnerModal/InnerModalContent';
 import InnerModalFooter from './InnerModal/InnerModalFooter';

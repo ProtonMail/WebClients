@@ -1,10 +1,10 @@
+import Loader from '@proton/components/components/loader/Loader';
 import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Loader } from '@proton/components';
 import { IcArrowUpAndLeftBig } from '@proton/icons/icons/IcArrowUpAndLeftBig';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';

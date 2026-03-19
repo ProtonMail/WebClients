@@ -8,17 +8,15 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { ContactEditProps } from '@proton/components';
-import {
-    ButtonGroup,
-    DropdownMenu,
-    DropdownMenuButton,
-    DropdownSizeUnit,
-    useActiveBreakpoint,
-    useApi,
-    useModalState,
-    useNotifications,
-} from '@proton/components';
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
@@ -43,8 +41,8 @@ import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcWindowImage } from '@proton/icons/icons/IcWindowImage';
 import { IcWindowTerminal } from '@proton/icons/icons/IcWindowTerminal';
-import { useFolders } from '@proton/mail/store/labels/hooks';
 import { getCurrentFolderID } from '@proton/mail/helpers/location';
+import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type {
     MessageState,

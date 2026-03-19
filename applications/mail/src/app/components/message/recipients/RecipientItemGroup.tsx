@@ -1,17 +1,15 @@
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import useModals from '@proton/components/hooks/useModals';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { MouseEvent } from 'react';
 import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    Dropdown,
-    DropdownMenu,
-    DropdownMenuButton,
-    DropdownSizeUnit,
-    useModals,
-    useNotifications,
-    usePopperAnchor,
-} from '@proton/components';
 import RecipientDropdownItem from '@proton/components/containers/contacts/view/RecipientDropdownItem';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { IcSquares } from '@proton/icons/icons/IcSquares';

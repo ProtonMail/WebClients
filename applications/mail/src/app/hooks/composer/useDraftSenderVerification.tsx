@@ -1,10 +1,11 @@
+import Prompt from '@proton/components/components/prompt/Prompt';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { Prompt, useModalState } from '@proton/components';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces';

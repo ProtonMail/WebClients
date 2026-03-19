@@ -1,3 +1,8 @@
+import ApiContext from '@proton/components/containers/api/apiContext';
+import { CacheProvider } from '@proton/components/containers/cache/Provider';
+import ConfigProvider from '@proton/components/containers/config/Provider';
+import ModalsChildren from '@proton/components/containers/modals/Children';
+import ModalsProvider from '@proton/components/containers/modals/Provider';
 import type { PropsWithChildren, ReactElement, ReactNode } from 'react';
 import * as React from 'react';
 import { Router } from 'react-router';
@@ -9,7 +14,6 @@ import { render as originalRender } from '@testing-library/react';
 import type { MemoryHistory } from 'history';
 import { createMemoryHistory } from 'history';
 
-import { ApiContext, CacheProvider, ConfigProvider, ModalsChildren, ModalsProvider } from '@proton/components';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';

@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useDynamicFavicon } from '@proton/components';
+import useDynamicFavicon from '@proton/components/hooks/useDynamicFavicon';
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

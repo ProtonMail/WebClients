@@ -1,18 +1,16 @@
+import ContactKeyWarningIcon from '@proton/components/components/icon/ContactKeyWarningIcon';
+import Loader from '@proton/components/components/loader/Loader';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
+import TableRow from '@proton/components/components/table/TableRow';
 import { useEffect, useState } from 'react';
 
 import { format, isValid } from 'date-fns';
 import { c } from 'ttag';
 
-import {
-    ContactKeyWarningIcon,
-    Loader,
-    Table,
-    TableBody,
-    TableCell,
-    TableHeader,
-    TableHeaderCell,
-    TableRow,
-} from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';

@@ -1,6 +1,6 @@
+import FileNameDisplay from '@proton/components/components/fileNameDisplay/FileNameDisplay';
 import { c, msgid } from 'ttag';
 
-import { FileNameDisplay } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import humanSize from '@proton/shared/lib/helpers/humanSize';

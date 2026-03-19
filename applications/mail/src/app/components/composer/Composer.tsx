@@ -6,7 +6,8 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { useHandler, useLocalState, useSubscribeEventManager } from '@proton/components';
+import { useHandler, useSubscribeEventManager } from '@proton/components/hooks/useHandler';
+import useLocalState from '@proton/components/hooks/useLocalState';
 import { getHasAssistantStatus, getIsAssistantOpened } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';

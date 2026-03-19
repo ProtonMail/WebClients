@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useOpenDrawerOnLoad } from '@proton/components';
+import useOpenDrawerOnLoad from '@proton/components/hooks/drawer/useOpenDrawerOnLoad';
 
 import { useContactsListener } from 'proton-mail/hooks/contact/useContactsListener';
 import { useConversationsEvent } from 'proton-mail/hooks/events/useConversationsEvents';

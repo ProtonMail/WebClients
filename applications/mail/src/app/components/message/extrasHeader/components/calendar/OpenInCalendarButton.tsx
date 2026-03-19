@@ -1,5 +1,9 @@
+import AppLink from '@proton/components/components/link/AppLink';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useConfig from '@proton/components/hooks/useConfig';
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import { Button } from '@proton/atoms/Button/Button';
-import { AppLink, useActiveBreakpoint, useAuthentication, useConfig, useDrawer } from '@proton/components';
 import { getLinkToCalendarEvent } from '@proton/shared/lib/calendar/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { openCalendarEventInDrawer } from '@proton/shared/lib/drawer/calendar';

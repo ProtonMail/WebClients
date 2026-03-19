@@ -1,8 +1,8 @@
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import type { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { useActiveBreakpoint } from '@proton/components';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

@@ -1,6 +1,6 @@
+import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import { c } from 'ttag';
 
-import type { ContactEditProps } from '@proton/components';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
 import type { MapStatusIcons } from '../../../models/crypto';

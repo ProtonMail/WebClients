@@ -1,6 +1,9 @@
+import DrawerAppSection from '@proton/components/components/drawer/views/shared/DrawerAppSection';
+import Info from '@proton/components/components/link/Info';
+import QuickSettingsSectionRow from '@proton/components/components/drawer/views/quickSettings/QuickSettingsSectionRow';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { c } from 'ttag';
 
-import { DrawerAppSection, Info, QuickSettingsSectionRow, Toggle } from '@proton/components';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import { DISABLED_BADGE } from './categoryViewConstants';

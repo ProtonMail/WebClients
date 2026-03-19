@@ -1,7 +1,7 @@
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import { SettingsLink } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { manageAddressKeysSettingsURL, reActivateKeySettingsURL, restoringEncryptedMessagesURL } from '../../constants';

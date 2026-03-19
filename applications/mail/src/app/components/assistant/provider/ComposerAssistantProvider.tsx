@@ -1,12 +1,10 @@
+import AssistantIncompatibleBrowserModal from '@proton/components/containers/payments/subscription/assistant/AssistantIncompatibleBrowserModal';
+import AssistantIncompatibleHardwareModal from '@proton/components/containers/payments/subscription/assistant/AssistantIncompatibleHardwareModal';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import type { ReactNode, RefObject } from 'react';
 import { createContext, useContext, useMemo } from 'react';
 
-import {
-    AssistantIncompatibleBrowserModal,
-    AssistantIncompatibleHardwareModal,
-    useModalStateObject,
-    useModalTwoPromise,
-} from '@proton/components';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { INCOMPATIBILITY_TYPE } from '@proton/shared/lib/assistant';
 

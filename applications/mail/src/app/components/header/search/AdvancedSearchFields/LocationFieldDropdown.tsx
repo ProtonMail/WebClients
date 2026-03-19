@@ -1,16 +1,14 @@
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import Mark from '@proton/components/components/text/Mark';
+import SearchInput from '@proton/components/components/input/SearchInput';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    Dropdown,
-    DropdownButton,
-    DropdownMenu,
-    DropdownMenuButton,
-    Mark,
-    SearchInput,
-    usePopperAnchor,
-} from '@proton/components';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 

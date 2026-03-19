@@ -1,3 +1,11 @@
+import Checkbox from '@proton/components/components/input/Checkbox';
+import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
+import Icon from '@proton/components/components/icon/Icon';
+import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
+import Mark from '@proton/components/components/text/Mark';
+import SearchInput from '@proton/components/components/input/SearchInput';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import type { ChangeEvent } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -7,16 +15,6 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import {
-    Checkbox,
-    EditLabelModal,
-    Icon,
-    LabelsUpsellModal,
-    Mark,
-    SearchInput,
-    useActiveBreakpoint,
-    useModalState,
-} from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { useLabels } from '@proton/mail/store/labels/hooks';
 import { isCustomLabel } from '@proton/mail/helpers/location';

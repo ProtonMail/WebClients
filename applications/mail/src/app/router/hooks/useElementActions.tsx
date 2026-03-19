@@ -1,7 +1,7 @@
+import useItemsSelection from '@proton/components/containers/items/useItemsSelection';
 import { useCallback, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { useItemsSelection } from '@proton/components';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';

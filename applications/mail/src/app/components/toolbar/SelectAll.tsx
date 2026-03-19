@@ -1,7 +1,9 @@
+import Checkbox from '@proton/components/components/input/Checkbox';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Checkbox, DropdownMenu, DropdownMenuButton } from '@proton/components';
 import { IcCheckmarkTriple } from '@proton/icons/icons/IcCheckmarkTriple';
 import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';
 import { IcEnvelopeOpen } from '@proton/icons/icons/IcEnvelopeOpen';

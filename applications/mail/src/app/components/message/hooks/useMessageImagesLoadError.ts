@@ -1,4 +1,4 @@
-import { useApi } from '@proton/components';
+import useApi from '@proton/components/hooks/useApi';
 
 import type { OnMessageImageLoadError } from 'proton-mail/components/message/interface';
 import { useMailDispatch } from 'proton-mail/store/hooks';

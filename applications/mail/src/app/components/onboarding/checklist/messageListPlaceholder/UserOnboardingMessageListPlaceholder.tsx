@@ -1,4 +1,4 @@
-import { useActiveBreakpoint } from '@proton/components';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import { isColumnMode } from 'proton-mail/helpers/mailSettings';

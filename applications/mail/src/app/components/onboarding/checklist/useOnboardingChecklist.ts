@@ -1,7 +1,7 @@
+import useLocalState from '@proton/components/hooks/useLocalState';
 import { useEffect } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
-import { useLocalState } from '@proton/components';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';

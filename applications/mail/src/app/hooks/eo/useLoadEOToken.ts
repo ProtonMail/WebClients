@@ -1,8 +1,9 @@
+import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
 
-import { useApi, useNotifications } from '@proton/components';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 

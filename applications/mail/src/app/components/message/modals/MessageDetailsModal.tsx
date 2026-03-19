@@ -1,9 +1,14 @@
+import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Icon from '@proton/components/components/icon/Icon';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ContactEditProps, ModalProps } from '@proton/components';
-import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { FeatureCode, useFeatures } from '@proton/features';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';

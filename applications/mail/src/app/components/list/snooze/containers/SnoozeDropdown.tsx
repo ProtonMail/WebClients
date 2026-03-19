@@ -1,3 +1,8 @@
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import useApi from '@proton/components/hooks/useApi';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { MouseEvent } from 'react';
 import { useEffect } from 'react';
 
@@ -5,7 +10,6 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Dropdown, DropdownButton, useApi, useModalState, usePopperAnchor } from '@proton/components';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
