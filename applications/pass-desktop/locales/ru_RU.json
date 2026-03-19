@@ -1646,9 +1646,6 @@
       "Disabling auto-lock failed": [
         "Не удалось отключить автоматическую блокировку"
       ],
-      "Disabling offline mode...": [
-        "Отключение режима офлайн ..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "Обновление DNS может занять до 24 часов."
       ],
@@ -1916,6 +1913,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
+      ],
       "Moving items": [
         "Перемещение элементов"
       ],
@@ -1952,14 +1955,8 @@
       "Offline mode": [
         "Офлайновый режим"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Режим офлайн не может быть отключен в данный момент"
-      ],
       "Offline mode could not be enabled at the moment": [
         "Включение офлайнового режима в данный момент невозможно"
-      ],
-      "Offline support successfully disabled": [
-        "Поддержка офлайновой поддержки успешно отключена"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Для онлайн-доступа к ${ PASS_APP_NAME } потребуется PIN-код. Вы выйдете из системы после 3 неудачных попыток."

@@ -1683,9 +1683,6 @@
       "Disabling auto-lock failed": [
         "Không vô hiệu hóa được tự động khóa"
       ],
-      "Disabling offline mode...": [
-        "Đang vô hiệu hóa chế độ ngoại tuyến..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "Thay đổi DNS có thể mất đến 24 giờ để cập nhật."
       ],
@@ -1951,7 +1948,7 @@
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Việc chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
+        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
       ],
       "Moving items": [
         "Đang chuyển mục"
@@ -1989,14 +1986,8 @@
       "Offline mode": [
         "Chế độ ngoại tuyến"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Không thể vô hiệu hóa chế độ ngoại tuyến lúc này"
-      ],
       "Offline mode could not be enabled at the moment": [
         "Không thể kích hoạt chế độ ngoại tuyến lúc này"
-      ],
-      "Offline support successfully disabled": [
-        "Đã vô hiệu hóa truy cập ngoại tuyến"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Truy cập trực tuyến vào ${ PASS_APP_NAME } sẽ cần mã PIN. Sẽ bị đăng xuất sau 3 lần thử thất bại."
