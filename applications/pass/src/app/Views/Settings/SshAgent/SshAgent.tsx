@@ -8,7 +8,7 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { ClickToCopy } from '@proton/pass/components/Form/Field/Control/ClickToCopy';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { selectSshKeyItems } from '@proton/pass/store/selectors/items';
+import { selectVisibleNonTrashedSshKeyItems } from '@proton/pass/store/selectors/items';
 import type { Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -17,13 +17,14 @@ import noop from '@proton/utils/noop';
 export const SshAgent: FC = DESKTOP_BUILD
     ? () => {
           const { createNotification } = useNotifications();
-          const sshKeys = useSelector(selectSshKeyItems);
+          const sshKeys = useSelector(selectVisibleNonTrashedSshKeyItems);
 
           const [socketPath, setSocketPath] = useState<Maybe<string>>(undefined);
 
           const enabled = Boolean(socketPath);
 
-          const { getSshAgentStatus, sendSshKeyItems, stopSshAgent, startSshAgent } = window.ctxBridge!;
+          const { getSshAgentStatus, setSshKeyItems, stopSshAgent, startSshAgent, setSshAgentSettingEnabled } =
+              window.ctxBridge!;
 
           const updateStatus = useCallback(async () => {
               try {
@@ -41,7 +42,7 @@ export const SshAgent: FC = DESKTOP_BUILD
                   logger.info('[SSH agent] Started');
 
                   if (sshKeys.length > 0) {
-                      await sendSshKeyItems(sshKeys);
+                      await setSshKeyItems(sshKeys);
                       logger.info('[SSH agent] Keys sent');
                   }
 
@@ -76,7 +77,7 @@ export const SshAgent: FC = DESKTOP_BUILD
               } else {
                   await handleStartAgent();
               }
-              //   dispatch(settingsEditIntent('ssh-agent', { sshAgentEnabled: !enabled }));
+              await setSshAgentSettingEnabled(!enabled);
           };
 
           useEffect(() => {
@@ -88,6 +89,7 @@ export const SshAgent: FC = DESKTOP_BUILD
           return (
               <SettingsPanel title={c('Title').t`SSH Agent`}>
                   <div className="flex flex-column gap-2">
+                      {/* TODO: add warning if user has multiple accounts that this setting is global for the app and not per account */}
                       <Checkbox checked={enabled} onChange={handleSshAgentToggle}>
                           <span>
                               {c('Label').t`Use ${PASS_APP_NAME} as SSH agent`}
