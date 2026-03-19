@@ -33,6 +33,7 @@ export interface SharingModalViewProps extends ModalStateProps {
 
     nodeUid: string;
     name: string;
+    canChangePermissions: boolean;
     mediaType?: string;
     ownerEmail?: string;
     ownerDisplayName?: string;
@@ -77,6 +78,7 @@ export const SharingModalView = ({
     isLoading,
     nodeUid,
     name,
+    canChangePermissions,
     mediaType,
     ownerEmail,
     ownerDisplayName,
@@ -196,6 +198,7 @@ export const SharingModalView = ({
                                                 await actions.stopSharing();
                                                 onClose();
                                             },
+                                            canChangePermissions,
                                         })
                                     }
                                     data-testid="share-modal-settings"

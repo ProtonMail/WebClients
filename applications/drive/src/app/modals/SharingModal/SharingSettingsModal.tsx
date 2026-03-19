@@ -14,11 +14,13 @@ import { useEditorsManageAccessContext } from './useEditorsManageAccess';
 export interface SharingSettingsModalProps {
     sharedFileName: string;
     stopSharing: () => Promise<void>;
+    canChangePermissions: boolean;
 }
 
 const SharingSettingsModal = ({
     sharedFileName,
     stopSharing,
+    canChangePermissions,
     onClose,
     onExit,
     open,
@@ -28,6 +30,7 @@ const SharingSettingsModal = ({
     const adminRoleEnabled = useFlagsDriveSharingAdminPermissions();
     const [isLoading, setIsLoading] = useState(false);
     const { editorsManageAccess, changeManageAccess } = useEditorsManageAccessContext();
+    const showPermissionsCheckbox = adminRoleEnabled && canChangePermissions;
     const toggleCheckbox = async (event: ChangeEvent<HTMLInputElement>) => {
         setIsLoading(true);
         try {
@@ -64,7 +67,7 @@ const SharingSettingsModal = ({
                 </div>
 
                 <ModalTwoContent className="mb-7">
-                    {adminRoleEnabled && (
+                    {showPermissionsCheckbox && (
                         <>
                             <div
                                 className="flex flex-nowrap justify-space-between items-center"
