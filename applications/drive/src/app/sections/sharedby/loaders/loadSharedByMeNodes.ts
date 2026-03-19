@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { type ProtonDriveClient, getDrive, getDriveForPhotos } from '@proton/drive';
 
+import { driveMetrics } from '../../../modules/metrics';
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getFormattedNodeLocation } from '../../../utils/sdk/getNodeLocation';
@@ -12,6 +13,7 @@ import { getOldestShareCreationTime } from '../utils/getOldestShareCreationTime'
 type Drive = Pick<ProtonDriveClient, 'iterateSharedNodes' | 'getSharingInfo' | 'getNode' | 'iterateNodes'>;
 
 const fetchSharedByMeNodes = async (abortSignal: AbortSignal, drive: Drive) => {
+    const { onItemsLoadedToState, onFinished } = driveMetrics.drivePerformance.startDataLoad('sharedByMe');
     for await (const sharedByMeMaybeNode of drive.iterateSharedNodes(abortSignal)) {
         try {
             const { node } = getNodeEntity(sharedByMeMaybeNode);
@@ -27,6 +29,7 @@ const fetchSharedByMeNodes = async (abortSignal: AbortSignal, drive: Drive) => {
                 parentUid: node.parentUid,
                 haveSignatureIssues: !signatureResult.ok,
             });
+            onItemsLoadedToState(1);
 
             void getFormattedNodeLocation(drive, sharedByMeMaybeNode).then((location) => {
                 useSharedByMeStore.getState().updateSharedByMeItem(node.uid, {
@@ -61,6 +64,7 @@ const fetchSharedByMeNodes = async (abortSignal: AbortSignal, drive: Drive) => {
             handleSdkError(e);
         }
     }
+    onFinished();
 };
 
 export const loadSharedByMeNodes = async (abortSignal: AbortSignal) => {

@@ -32,7 +32,6 @@ import { extraThunkArguments } from './redux-store/thunk';
 import { UserSettingsProvider } from './store';
 import { sendErrorReport } from './utils/errorHandling';
 import { getWebpackChunkFailedToLoadError } from './utils/errorHandling/WebpackChunkFailedToLoadError';
-import { logPerformanceMarker } from './utils/performance';
 import { Features, measureFeaturePerformance } from './utils/telemetry';
 
 const MainContainerLazy = lazy(() =>
@@ -83,7 +82,7 @@ const App = () => {
                     store,
                 });
 
-                logPerformanceMarker('drive_performance_clicktobootstrapped_histogram');
+                driveMetrics.drivePerformance.markPageLoad({ isPublic: false });
             } catch (error: any) {
                 setState({
                     error: {
