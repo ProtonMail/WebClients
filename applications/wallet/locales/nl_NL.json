@@ -2314,6 +2314,9 @@
       "Invalid code": [
         "Ongeldige code"
       ],
+      "Invalid coupon": [
+        "Ongeldige kortingscode"
+      ],
       "Invalid expiration date": [
         "Ongeldige vervaldatum"
       ],
@@ -2386,6 +2389,9 @@
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omgekeerde btw-regeling wordt niet ondersteund voor dit abonnement"
+      ],
       "Signature verification failed": [
         "Controle van handtekening mislukt"
       ],
@@ -2403,6 +2409,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Het minimale donatiebedrag is ${ price }"
       ],
       "The passphrases do not match": [
         "De wachtwoordzinnen komen niet overeen"
@@ -3140,6 +3149,9 @@
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Uw ${ plan }-abonnement zal worden vervangen door ${ PASS_SHORT_APP_NAME } Lifetime. Het resterende saldo van uw abonnement zal aan uw account worden toegevoegd. ${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Uw account is momenteel geconfigureerd om het omgekeerde btw-tarief toe te passen. Dit wordt niet ondersteund voor het geselecteerde abonnement. Om door te gaan, verwijdt u het btw-nummer van het factuuradres of selecteert u een ander abonnement."
       ],
       "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
         "Uw afrekening is geopend in een nieuw tabblad. Voltooi daar uw betaling en keer terug naar deze pagina wanneer u klaar bent."
@@ -4708,6 +4720,9 @@
       "VAT number": [
         "BTW-nummer"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Omgekeerde btw mechanisme is van toepassing"
+      ],
       "You already have a subscription to this plan.": [
         "U bent reeds geabonneerd op dit abonnement."
       ],
@@ -5565,6 +5580,9 @@
       ],
       "Request new code": [
         "Nieuwe code aanvragen"
+      ],
+      "Reverse charge not supported": [
+        "Omgekeerde btw niet ondersteund"
       ],
       "Select a plan": [
         "Selecteer een abonnement"
