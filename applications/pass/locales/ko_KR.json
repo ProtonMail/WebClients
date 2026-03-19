@@ -172,17 +172,38 @@
       "Copy and close": [
         "복사 및 닫기"
       ],
+      "Copy card number": [
+        "카드 번호 복사"
+      ],
+      "Copy email": [
+        "이메일 복사"
+      ],
+      "Copy expiration date": [
+        "유효기간 복사"
+      ],
       "Copy forwarding address": [
         "포워딩 주소 복사"
       ],
       "Copy link": [
         "링크 복사"
       ],
+      "Copy name on card": [
+        "카드상의 이름 복사"
+      ],
+      "Copy note content": [
+        "메모 콘텐츠 복사"
+      ],
       "Copy password": [
         "비밀번호 복사"
       ],
+      "Copy security code": [
+        "보안 코드 복사"
+      ],
       "Copy to clipboard": [
         "클립보드로 복사"
+      ],
+      "Copy username": [
+        "시용자 이름 복사"
       ],
       "Create": [
         "생성"
@@ -1350,6 +1371,12 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount }건 전달됨"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail }님이 사용자가 관리하는 그룹과 항목을 공유하려고 합니다."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail }님이 그룹 ${ name }와(과) 항목을 공유하고 싶어합니다."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail }님이 나와 항목을 공유하고자 합니다."
       ],
@@ -1403,6 +1430,9 @@
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "${ aliasEmail }(으)로 이메일을 보내거나 받는 모든 이메일 주소에 대해 연락처가 생성됩니다."
+      ],
+      "A new version is being downloaded. Once the download completes, it will be available on next restart.": [
+        "새로운 버전이 다운로드 중입니다. 다운로드가 완료되면 다음 재시작 시 사용할 수 있습니다."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "새로운 버전의 ${ PASS_APP_NAME }가 사용 가능합니다. 새로운 기능과 버그 수정을 누리기 위해 업데이트 하세요."
@@ -1479,6 +1509,9 @@
       "All trashed items successfully restored": [
         "모든 휴지통 내의 항목이 성공적으로 복구되었습니다."
       ],
+      "An item previously shared with you was removed.": [
+        "이전에 나와 공유한 항목이 삭제되었습니다."
+      ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "메일함에서 ${ emailJSX }을(를) 정말 삭제하시겠어요?"
       ],
@@ -1505,6 +1538,9 @@
       ],
       "Breaches detected": [
         "침해 사례 감지됨"
+      ],
+      "Bring your existing passwords into ${ PASS_APP_NAME }.": [
+        "기존의 비밀번호를 ${ PASS_APP_NAME }로 가져오세요."
       ],
       "Bring your own domain and you don't have to buy yet another email hosting solution.": [
         "도메인을 가져오면 다른 이메일 호스팅 솔루션을 구매할 필요가 없습니다."
@@ -1593,9 +1629,6 @@
       "Disabling auto-lock failed": [
         "자동 잠금 비활성화 실패"
       ],
-      "Disabling offline mode...": [
-        "오프라인 모드 비활성화 중..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "DNS 변경 사항의 업데이트에 최대 24시간이 소요될 수 있습니다."
       ],
@@ -1641,11 +1674,17 @@
       "Enable auto-locking to secure your data": [
         "데이터를 보호하려면 자동 잠금을 활성화 하세요."
       ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "인터넷 연결이 끊기거나 ${ BRAND_NAME } 서버에 접속할 수 없을 때 ${ PASS_SHORT_APP_NAME } 데이터에 접근할 수 있도록 오프라인 모드를 활성화하세요."
+      ],
       "Enabling biometrics auto-lock": [
         "생체인증 자동 잠금해제 활성화 중"
       ],
       "Enabling biometrics lock failed": [
         "생체인증 잠금 활성화 실패"
+      ],
+      "Enabling desktop auto-lock": [
+        "데스크톱 자동 잠금 활성화"
       ],
       "Enabling offline mode...": [
         "오프라인 모드 활성화 중..."
@@ -1661,6 +1700,9 @@
       ],
       "Enter the address you want to email.": [
         "받을 사람의 이메일 주소를 입력하세요."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "인증 코드를 입력하세요. ${ digit }자입니다."
       ],
       "Enter your extra password": [
         "추가 비밀번호 입력"
@@ -1713,6 +1755,9 @@
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "생성된 비밀번호가 ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS }주의 기간 동안 저장됩니다."
       ],
+      "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
+        "각 팀이나 프로젝트를 위한 금고를 생성하여 ${ PASS_APP_NAME }을 최대한 활용하세요."
+      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Pass Plus를 구독하여 제한 없이 별칭을 사용하고, 특전 기능을 이용하면서 저희를 지원해 주세요."
       ],
@@ -1757,6 +1802,9 @@
       ],
       "Invite successfully resent": [
         "초대장을 성공적으로 보냄"
+      ],
+      "invites the group ${ name } to access items in": [
+        "님이 그룹 ${ name }에 초대하여 다음 금고의 항목에 접근하도록 합니다:"
       ],
       "invites you to access items in": [
         "님이 항목 공유를 초대합니다:"
@@ -1878,6 +1926,9 @@
       "No network connection": [
         "네트워크가 연결되어 있지 않습니다."
       ],
+      "No new versions are available at the moment.": [
+        "현재 사용 가능한 새로운 버전이 없습니다."
+      ],
       "None": [
         "없음"
       ],
@@ -1887,14 +1938,8 @@
       "Offline mode": [
         "오프라인 모드"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "오프라인 모드를 현재 비활성화 할 수 없습니다."
-      ],
       "Offline mode could not be enabled at the moment": [
         "지금은 오프라인 모드를 활성화할 수 없습니다."
-      ],
-      "Offline support successfully disabled": [
-        "오프라인 지원이 비활성화되었습니다"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME }이 온라인에 접근하려면 PIN 코드가 필요합니다. 3번의 시도가 실패하면 로그아웃됩니다."
@@ -2214,6 +2259,9 @@
       "The following ${ totalIgnored } item could not be imported:": [
         "다음 ${ totalIgnored }개 항목은 불러올 수 없습니다:"
       ],
+      "The group is invited to a vault.": [
+        "그룹이 금고에 초대되었습니다."
+      ],
       "The secure link has been removed": [
         "안전한 링크가 삭제되었습니다."
       ],
@@ -2228,6 +2276,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "이 기능은 현재 Linux에서 실험 중입니다. 시스템이 최신 상태인지 확인해 주세요."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "이 기능은 설정 중에 ${ PASS_APP_NAME } 데스크톱 앱이 설치되어 실행 중이어야 합니다."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "이 항목은 모두에게 공유되지 않습니다. 다른 사람과 공유하려면 사람을 초대하세요."
@@ -2261,6 +2312,9 @@
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "이 작업은 **${ date }**에 사용자의 ${ BRAND_NAME } 계정에 로그인 시도한 기기 **${ name }**을(를) 거부합니다."
+      ],
+      "This will reload the application.": [
+        "애플리케이션이 다시 로드됩니다."
       ],
       "This will trigger a check for new beta releases.": [
         "새 베타 릴리스를 확인합니다."
@@ -2343,6 +2397,9 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "금고 \"${ payload.share.content.name }\" 이(가) 성공적으로 업데이트되었습니다."
       ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "금고 \"${ share.content.name }\"이(가) 삭제되었습니다."
+      ],
       "Vault organization successfully updated": [
         "보관함 조직이 성공적으로 업데이트되었습니다."
       ],
@@ -2370,6 +2427,9 @@
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "${ PASS_APP_NAME }에서 로그인을 생성/편집할 때 '사용자 이름' 입력이 항상 표시됩니다."
       ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "활성화하면 인터넷 연결이 끊기거나 ${ BRAND_NAME } 서버에 접속할 수 없을 때도 ${ PASS_SHORT_APP_NAME } 데이터에 접근할 수 있습니다."
+      ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "이 별칭에서 이메일을 전송하면, 이메일 전송자가 ${ emailSender }(으)로 표시됩니다."
       ],
@@ -2381,6 +2441,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "이제 ${ BRAND_NAME } 비밀번호로 ${ PASS_SHORT_APP_NAME }의 오프라인 이용이 가능합니다"
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "이제 추가 비밀번호를 사용하여 ${ PASS_SHORT_APP_NAME }를 오프라인으로 이용해 보세요"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "이제 추가 비밀번호를 사용하여 ${ PASS_SHORT_APP_NAME }를 오프라인으로 이용해 보세요"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "이제 추가 비밀번호를 사용하여 ${ PASS_SHORT_APP_NAME }를 오프라인으로 이용해 보세요"
       ],
       "You cannot change the mailboxes for this alias.": [
         "이 별명의 메일함을 변경할 수 없습니다."
@@ -2412,8 +2481,20 @@
       "You may close this tab.": [
         "이 탭을 닫아도 됩니다."
       ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME }로 접근성 권한을 부여해야 할 수 있습니다."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "항목을 불러오기 전에 금고에 대한 편집 권한이 필요합니다."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "그룹 ${ groupName }의 접근 권한이 제거되었기 때문에 일부 금고 또는 항목에 더 이상 접근할 수 없습니다."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "사용자의그룹 ${ groupName }에 접근 권한이 부여되었으므로 \"${ itemName }\" 항목에 접근할 수 있습니다."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "사용자의 그룹 ${ groupName }에 접근 권한이 부여되었기 때문에 \"${ vaultName }\" 금고에 접근할 수 있습니다."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "도메인을 확인한 후 도메인 설정(catch-all 이메일 별칭, 별칭의 기본 표시 이름 등)을 사용자 지정할 수 있습니다."
@@ -4516,6 +4597,9 @@
       ],
       "Vault": [
         "금고"
+      ],
+      "Vault shared with a group you administer": [
+        "사용자가 관리하는 그룹과 공유된 금고"
       ],
       "Vault shared with you": [
         "나와 공유된 금고"

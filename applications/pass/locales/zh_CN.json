@@ -1629,9 +1629,6 @@
       "Disabling auto-lock failed": [
         "禁用自动锁定失败"
       ],
-      "Disabling offline mode...": [
-        "正在关闭离线模式..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "DNS更改可能需要长达24小时才能更新。"
       ],
@@ -1938,14 +1935,8 @@
       "Offline mode": [
         "脱机模式"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "暂时无法禁用脱机模式"
-      ],
       "Offline mode could not be enabled at the moment": [
         "暂时无法启用脱机模式"
-      ],
-      "Offline support successfully disabled": [
-        "成功禁用脱机支持"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "在线访问 ${ PASS_APP_NAME } 将需要 PIN 码。您将在 3 次尝试失败后注销。"
@@ -2447,6 +2438,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "您现在可以使用您的 ${ BRAND_NAME } 密码离线访问 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "您现在可以使用您的备用密码来离线访问 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "您现在可以使用您的额外密码来离线访问 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "您现在可以使用您的二级密码来离线访问 ${ PASS_SHORT_APP_NAME }"
       ],
       "You cannot change the mailboxes for this alias.": [
         "您不能更改此别名的邮箱。"
