@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import Checkbox from '@proton/components/components/input/Checkbox';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { ClickToCopy } from '@proton/pass/components/Form/Field/Control/ClickToCopy';
+import { InfoButton } from '@proton/pass/components/Layout/Button/InfoButton';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { selectVisibleNonTrashedSshKeyItems } from '@proton/pass/store/selectors/items';
 import type { Maybe } from '@proton/pass/types';
@@ -14,12 +14,18 @@ import { logger } from '@proton/pass/utils/logger';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
+import { SSHAgentInstructionsModal } from './SSHAgentInstructionsModal';
+
 export const SshAgent: FC = DESKTOP_BUILD
     ? () => {
           const { createNotification } = useNotifications();
           const sshKeys = useSelector(selectVisibleNonTrashedSshKeyItems);
 
           const [socketPath, setSocketPath] = useState<Maybe<string>>(undefined);
+          const [modal, setModal] = useState<{ show: boolean; hideFooter: boolean }>({
+              show: false,
+              hideFooter: false,
+          });
 
           const enabled = Boolean(socketPath);
 
@@ -74,57 +80,58 @@ export const SshAgent: FC = DESKTOP_BUILD
           const handleSshAgentToggle = async () => {
               if (enabled) {
                   await handleStopAgent();
+                  await setSshAgentSettingEnabled(false);
               } else {
                   await handleStartAgent();
+                  await setSshAgentSettingEnabled(true);
+                  setModal({ show: true, hideFooter: false });
               }
-              await setSshAgentSettingEnabled(!enabled);
           };
+
+          const handleModalCancel = async () => {
+              setModal({ show: false, hideFooter: false });
+              await handleStopAgent();
+              await setSshAgentSettingEnabled(false);
+          };
+
+          const handleModalClose = () => setModal({ show: false, hideFooter: false });
+
+          const handleInfoClick = () => setModal({ show: true, hideFooter: true });
 
           useEffect(() => {
               void updateStatus();
           }, [updateStatus]);
 
-          const commandToCopy = socketPath ? `export SSH_AUTH_SOCK=${socketPath}` : null;
-
           return (
               <SettingsPanel title={c('Title').t`SSH Agent`}>
                   <div className="flex flex-column gap-2">
-                      {/* TODO: add warning if user has multiple accounts that this setting is global for the app and not per account */}
-                      <Checkbox checked={enabled} onChange={handleSshAgentToggle}>
-                          <span>
-                              {c('Label').t`Use ${PASS_APP_NAME} as SSH agent`}
+                      <div className="flex items-start items-center gap-2">
+                          <Checkbox id="ssh-agent-checkbox" checked={enabled} onChange={handleSshAgentToggle} />
+                          <div className="flex-1">
+                              <div className="flex items-center gap-1">
+                                  <label htmlFor="ssh-agent-checkbox" className="cursor-pointer">
+                                      {c('Label').t`Use ${PASS_APP_NAME} as SSH agent`}
+                                  </label>
+                                  <InfoButton onClick={handleInfoClick} />
+                              </div>
                               <span className="block color-weak text-sm">
                                   {c('Info').t`${PASS_APP_NAME} will use the SSH keys saved in your vaults.`}
                               </span>
-                          </span>
-                      </Checkbox>
+                          </div>
+                      </div>
                       {sshKeys.length === 0 && (
                           <div className="text-sm color-weak">
                               {c('Info')
                                   .t`No SSH keys found in ${PASS_SHORT_APP_NAME}. Create SSH key items to use with the agent.`}
                           </div>
                       )}
-                      {BUILD_TARGET !== 'windows' && commandToCopy && (
-                          <div className="color-weak mt-4 flex flex-column gap-1">
-                              <div>{c('Info')
-                                  .t`Paste the following command in your terminal (or .bashrc / .zshrc file) to use ${PASS_APP_NAME} SSH agent:`}</div>
-                              <ClickToCopy value={commandToCopy}>
-                                  <code className="text-small bg-weak">{commandToCopy}</code>
-                              </ClickToCopy>
-                          </div>
-                      )}
-                      {BUILD_TARGET === 'windows' && enabled && (
-                          <div className="color-weak mt-4 flex-col gap-1">
-                              <div>{`To use ${PASS_APP_NAME} SSH agent on Windows, the OpenSSH service must be disabled.`}</div>
-                              <ol className="mt-2 mb-0">
-                                  <li>
-                                      {c('Info')
-                                          .t`Open "Services" (you can use the Windows search bar or press Win+R and enter services.msc).`}
-                                  </li>
-                                  <li>{c('Info').t`Find "OpenSSH Authentication Agent", right-click Properties.`}</li>
-                                  <li>{c('Info').t`Set "Startup type" to Disabled, click OK.`}</li>
-                              </ol>
-                          </div>
+                      {modal.show && (
+                          <SSHAgentInstructionsModal
+                              socketPath={socketPath}
+                              onClose={handleModalClose}
+                              onCancel={handleModalCancel}
+                              hideFooter={modal.hideFooter}
+                          />
                       )}
                   </div>
               </SettingsPanel>
