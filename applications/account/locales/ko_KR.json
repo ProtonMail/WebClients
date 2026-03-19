@@ -1191,6 +1191,9 @@
       "Remove domain": [
         "도메인 제거"
       ],
+      "Remove forward": [
+        "전달 중단"
+      ],
       "Remove from favorites": [
         "즐겨찾기에서 삭제"
       ],
@@ -2708,6 +2711,9 @@
       "Authenticate your Google Workspace account": [
         "Google Workspace 계정 인증"
       ],
+      "Calendar": [
+        "캘린더"
+      ],
       "Change": [
         "변경"
       ],
@@ -2928,6 +2934,9 @@
       ],
       "Payments problem": [
         "결제 문제"
+      ],
+      "Sheets problem": [
+        "Sheets 문제"
       ],
       "Sign in problem": [
         "로그인 문제"
@@ -4772,9 +4781,6 @@
       "Available with ${ title }": [
         "${ title }(에)서 사용 가능"
       ],
-      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
-        "${ MAIL_APP_NAME }에 가져올 서비스를 선택하세요. 주소 연결, 메일, 캘린더 및 연락처 가져오기 과정을 안내해 드립니다."
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "먼저 구성하여 조직을 활성화한 뒤 이메일 주소를 사용자화하세요."
       ],
@@ -4798,6 +4804,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "데스크톱에서 클라우드에 파일을 쉽게 동기화하고 휴대 기기에서 접근할 수 있습니다."
+      ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "이전 제공업체의 이메일, 캘린더 이벤트, 연락처를 간편하게 이전하세요. 일회성 불러오기 또는 자동 진행 동기화를 선택하세요."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "이 기능에 접근하려면 ${ PROTON_SENTINEL_NAME }을 활성화해 주세요."
@@ -5697,6 +5706,9 @@
       "Forward to": [
         "다음으로 전달:"
       ],
+      "From": [
+        "출처:"
+      ],
       "Status": [
         "상태"
       ],
@@ -6471,6 +6483,9 @@
       "Enter 6 digits": [
         "6자리 숫자를 입력해 주세요"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "도메인 없이 (@example.co.kr) 사용자 이름을 입력해 주세요."
+      ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API와 통신하던 중 오류가 발생했습니다."
       ],
@@ -6833,6 +6848,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "${ MAIL_APP_NAME }의 최대 글자 수 제한을 초과하는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "TV와 연결하는 데 문제가 발생했습니다. TV 화면의 QR코드를 다시 스캔해 주세요."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "문제가 발생했습니다. 진행하려면 ${ refresh } 해주세요. 그래도 이 오류가 지속될 경우 ${ supportTeam } 으로 문의해 주세요."
@@ -8759,6 +8777,9 @@
     "Import provider": {
       "Advanced import": [
         "고급 가져오기"
+      ],
+      "Import from ${ providerName }": [
+        "${ providerName }(에)서 불러오기"
       ]
     },
     "Import status": {
@@ -8768,17 +8789,29 @@
       "Canceled": [
         "취소됨"
       ],
+      "Canceling...": [
+        "취소하는 중..."
+      ],
       "Delayed": [
         "지연됨"
       ],
+      "Disabled": [
+        "비활성화됨"
+      ],
       "Failed": [
         "실패함"
+      ],
+      "Imported": [
+        "불러온 항목"
       ],
       "In progress...": [
         "처리 중..."
       ],
       "Paused": [
         "일시 정지됨"
+      ],
+      "Undo finished": [
+        "실행 취소 완료됨"
       ],
       "Undo in progress": [
         "실행 취소 진행 중"
@@ -9286,6 +9319,9 @@
       "An import is paused because the connection to your email provider was lost.": [
         "사용자의 이메일 제공 업체와의 연결이 끊어져 가져오기가 일시 중지되었습니다."
       ],
+      "An import is paused because your storage is almost full.": [
+        "저장공간이 거의 가득 차서 가져오기가 일시 중단되었습니다."
+      ],
       "and": [
         "그리고"
       ],
@@ -9579,6 +9615,9 @@
       ],
       "Create a secure cloud for ${ value } member": [
         "${ value }명의 구성원을 위한 보안 클라우드 만들기"
+      ],
+      "Create an account": [
+        "계정 생성"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "하위 계정을 생성 및 관리하고 커스텀 도메인에 이메일 주소를 할당하세요."
@@ -9901,6 +9940,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText }(으)로 인증 코드가 전송되었습니다."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "인증 코드를 입력하세요. ${ digit }자입니다."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "${ BRAND_NAME } 계정 상세 정보를 입력하세요."
       ],
@@ -10002,6 +10044,9 @@
       ],
       "Free trial": [
         "무료 체험"
+      ],
+      "Free up space or upgrade your storage to continue.": [
+        "계속하려면 잔여 스토리지를 더 확보하거나 스토리지를 업그레이드하세요."
       ],
       "Friends and family": [
         "친구 및 가족"
@@ -10194,6 +10239,9 @@
       ],
       "Import mailbox": [
         "메일함 불러오기"
+      ],
+      "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
+        "이메일, 캘린더 또는 연락처의 일회성 전송을 ${ BRAND_NAME } 계정으로 불러옵니다."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "중요 사항: 만일 사용자의 DNS 콘솔이 온 점으로 끝나는 것을 허용하지 않을시, 뒷 편의 CNAME 값에서 온 점 (.) 제거가 가능합니다."
@@ -10777,6 +10825,9 @@
       "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
         "브라우저 확장 설정을 열어 ${ PASS_APP_NAME } 확장기능이 웹사이트 데이터에 접근하도록 허용해주세요. 그리고 이 페이지를 새로고침 하십시오."
       ],
+      "Please reconnect to continue.": [
+        "계속하려면 다시 연결하세요."
+      ],
       "Please select the folders you would like to import:": [
         "가져올 폴더 선택:"
       ],
@@ -10859,7 +10910,7 @@
         "${ categoryLabel }에 대한 알림 받기"
       ],
       "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "이메일로 예약 바우처를 받으세요. 귀하나 자녀가 향후 15년 내에 주소를 활성화하는 데 사용할 수 있습니다. ${ learnMoreLink }"
+        "이메일로 예약 바우처를 받아보세요. 회원님 또는 자녀가 향후 15년 내에 주소를 활성화하는 데 사용할 수 있습니다. ${ learnMoreLink }"
       ],
       "Recently used servers:": [
         "최근 사용된 서버:"
@@ -11052,6 +11103,9 @@
       ],
       "Show original message": [
         "처음 메시지 보기"
+      ],
+      "Sign in": [
+        "로그인"
       ],
       "Sign in only": [
         "로그인 전용"
@@ -11653,6 +11707,9 @@
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "인증 앱에서 실시간 일회용 비밀번호로 신원을 확인하세요"
       ],
+      "Verifying ${ PASS_APP_NAME } browser extension...": [
+        "${ PASS_APP_NAME } 브라우저 확장 프로그램을 확인하는 중..."
+      ],
       "Verifying your payment": [
         "결제 수단을 인증하는 중"
       ],
@@ -12064,6 +12121,9 @@
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "친구가 연간 플랜을 구독하고 1개월 후, 월간 요금제에 구독하고 2개월 후에 크레딧 보상을 받게 됩니다."
       ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "친구의 무료 체험이 끝난 1개월 뒤에 크레딧 보상을 받게 됩니다."
+      ],
       "You'll receive the credit reward 2 months after your friend's trial ended.": [
         "친구의 무료 체험이 종료된 후 2개월 뒤 크레딧 보상을 받게 됩니다."
       ],
@@ -12101,7 +12161,7 @@
         "계정이 성공적으로 업데이트되었습니다."
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "귀하의 계정은 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 선택하신 요금제에서 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 요금제를 선택하십시오."
+        "사용자의 계정에 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 현재 선택한 플랜에서는 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 플랜을 선택하십시오."
       ],
       "Your account was successfully updated with this promotion": [
         "사용자의 계정이 해당 프로모션으로 성공적으로 업데이트되었습니다"
@@ -12156,6 +12216,9 @@
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "사용자의 요금제가 최대 7일의 10개 버전 제한이 있습니다"
+      ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "최근 변경 사항이 게시되었습니다. 몇 시간 내로 다른 사용자에게 반영되어 표시됩니다."
       ],
       "Your recovery phrase": [
         "내 복구 키"
@@ -12404,6 +12467,9 @@
       ],
       "Decryption, verification": [
         "복호화, 인증"
+      ],
+      "Encryption, decryption, signing, verification": [
+        "암호화, 복호화, 서명, 인증"
       ]
     },
     "Key generation": {
@@ -14205,7 +14271,7 @@
         "네, 저는 완전히 이 계정과 모든 데이터를 지우고 싶습니다."
       ],
       "Your activation code:": [
-        "귀하의 활성화 코드:"
+        "나의 활성화 코드:"
       ],
       "Your calendar URL": [
         "내 캘린더 URL"
@@ -14214,7 +14280,7 @@
         "크레딧 잔액"
       ],
       "Your email address": [
-        "귀하의 이메일 주소"
+        "나의 이메일 주소"
       ],
       "Your password (admin)": [
         "사용자의 비밀번호 (관리자)"
@@ -18594,7 +18660,7 @@
         "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "귀하의 구독을 연장하고 ${ discountPercent }%를 저장하세요!"
+        "귀하의 구독을 연장하고 ${ discountPercent }%를 절약하세요!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME }에 대한 완전한 접근"
@@ -18618,7 +18684,7 @@
         "사이버 위협에 대한 더욱 강력한 보호"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 저장하세요!"
+        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 절약하세요!"
       ],
       "Unlimited daily chats": [
         "무제한 일일 채팅"
@@ -22976,6 +23042,9 @@
       "Forward emails": [
         "이메일 전달"
       ],
+      "Forwardings": [
+        "전달"
+      ],
       "Free": [
         "무료"
       ],
@@ -23113,6 +23182,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "${ BRAND_NAME }로 데이터 불러오기"
+      ],
+      "Imports": [
+        "불러오기"
       ],
       "Inactive 2FA": [
         "2단계 인증 꺼짐"

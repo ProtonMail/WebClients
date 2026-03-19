@@ -1651,9 +1651,6 @@
       "Disabling auto-lock failed": [
         "La désactivation du verrouillage automatique n'a pas abouti."
       ],
-      "Disabling offline mode...": [
-        "Désactivation du mode hors-ligne..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "Les modifications de DNS peuvent prendre jusqu'à 24 heures pour se mettre à jour."
       ],
@@ -1964,14 +1961,8 @@
       "Offline mode": [
         "Mode hors ligne"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Le mode hors ligne n'a pas pu être désactivé pour le moment."
-      ],
       "Offline mode could not be enabled at the moment": [
         "Le mode hors ligne n'a pas pu être activé pour le moment."
-      ],
-      "Offline support successfully disabled": [
-        "L'accès hors ligne est désactivé."
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "L'accès en ligne à ${ PASS_APP_NAME } nécessitera un code PIN. Vous serez déconnecté après 3 tentatives n'ayant pas abouti."
@@ -2477,6 +2468,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Vous pouvez maintenant utiliser votre mot de passe ${ BRAND_NAME } pour accéder en mode hors ligne à ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Vous pouvez maintenant utiliser votre mot de passe de secours pour accéder à ${ PASS_SHORT_APP_NAME } hors ligne"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Vous pouvez maintenant utiliser votre mot de passe supplémentaire pour accéder à ${ PASS_SHORT_APP_NAME } hors ligne"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Vous pouvez maintenant utiliser votre second mot de passe pour accéder à ${ PASS_SHORT_APP_NAME } hors ligne"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Vous ne pouvez pas modifier la véritable adresse e-mail associée à cet alias."

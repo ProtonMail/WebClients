@@ -806,6 +806,9 @@
       "Refresh the page": [
         "Päivitä sivu"
       ],
+      "Reload": [
+        "Päivitä"
+      ],
       "Remove": [
         "Poista"
       ],
@@ -4887,6 +4890,9 @@
       "30-day money-back guarantee.": [
         "30 päivän rahat takaisin -takuu."
       ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "${ DRIVE_APP_NAME }:n uusi versio on saatavilla. Päivitä sivu jatkaaksesi hakua."
+      ],
       "A number will be added to the filename": [
         "Lisää tiedoston nimeen numeron"
       ],
@@ -5473,6 +5479,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Seuraavassa vaiheessa voit tehdä talletuksen Bitcoin-osoitteella."
+      ],
+      "Indexing in progress": [
+        "Indeksointi käynnissä"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indeksoidaan kohdetta ${ esProgress }/${ totalProgressToShow }"
@@ -6210,7 +6219,7 @@
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Aidosti yksityistä hakua varten tiedostoistasi täytyy luoda paikallinen hakemisto. Voit edelleen käyttää ${ DRIVE_APP_NAME }a normaalisti – saat ilmoituksen kun indeksointi on valmis."
       ],
-      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
         "Aidosti yksityistä hakua varten tiedostoistasi täytyy luoda paikallinen hakemisto. Voit edelleen käyttää ${ DRIVE_APP_NAME }a normaalisti – saat ilmoituksen kun indeksointi on valmis."
       ],
       "To fight spam and abuse, please verify you are human.": [
@@ -6302,6 +6311,9 @@
       ],
       "Untitled": [
         "Nimetön"
+      ],
+      "Update required": [
+        "Päivitys vaaditaan"
       ],
       "Updating drive search...": [
         "Päivitetään levyhakua..."
@@ -10131,7 +10143,7 @@
         "Alennukset perustuvat normaaliin kuukausihintaan. Tilauksesi uusiutuu laskutusjakson päättyessä normaalilla vuosihinnalla."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Pidennä tilaustasi ja tallenna ${ discountPercent } %!"
+        "Pidennä tilaustasi ja säästä ${ discountPercent } %!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Täysi ${ VPN_APP_NAME } -käyttöoikeus"
@@ -10155,7 +10167,7 @@
         "Vahvempi suoja kyberuhkia vastaan"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Vaihda vuositilaukseemme ja tallenna ${ toYearlyDiscountAmount }!"
+        "Vaihda vuositilaukseemme ja säästä ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Rajattomasti päivittäisiä keskusteluja"

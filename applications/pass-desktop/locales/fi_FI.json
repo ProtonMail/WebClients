@@ -1661,9 +1661,6 @@
       "Disabling auto-lock failed": [
         "Automaattilukituksen käytöstäpoisto epäonnistui"
       ],
-      "Disabling offline mode...": [
-        "Yhteydetöntä tilaa poistetaan käytöstä..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "DNS-muutoksissa voi kestää jopa 24 tuntia."
       ],
@@ -1935,6 +1932,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+      ],
       "Moving items": [
         "Siirretään kohteita"
       ],
@@ -1974,14 +1975,8 @@
       "Offline mode": [
         "Yhteydetön tila"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Yhteydetöntä tilaa ei voitu nyt poistaa käytöstä"
-      ],
       "Offline mode could not be enabled at the moment": [
         "Yhteydetöntä tilaa ei voitu nyt ottaa käyttöön"
-      ],
-      "Offline support successfully disabled": [
-        "Yhteydetön tila poistettiin käytöstä"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME }in käyttäminen yhdistettynä vaatii PIN-koodin. Kolmen epäonnistuneen yrityksen jälkeen sinut kirjataan ulos."
@@ -2448,6 +2443,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Voit nyt käyttää ${ PASS_SHORT_APP_NAME }ia ${ BRAND_NAME }-salasanallasi myös ilman verkkoyhteyttä."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Voit nyt käyttää varasalasanaasi päästäksesi ${ PASS_SHORT_APP_NAME } -sovellukseen offline-tilassa"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Voit nyt käyttää lisäsalasanaasi päästäksesi ${ PASS_SHORT_APP_NAME } -sovellukseen offline-tilassa"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Voit nyt käyttää toista salasanaasi päästäksesi ${ PASS_SHORT_APP_NAME } -sovellukseen offline-tilassa"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Et voi muuttaa aliakseen liitettyjä postilaatikoita."

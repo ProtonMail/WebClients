@@ -1547,9 +1547,6 @@
       "Offline mode could not be enabled at the moment": [
         "Načina brez povezave trenutno ni mogoče vključiti."
       ],
-      "Offline support successfully disabled": [
-        "Način brez povezave je bil onemogočen."
-      ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Naša opozorila dajejo prednost varnosti. Če ne prepoznate nobenih informacij o vdorih, lahko to poročilo varno prezrete."
       ],
@@ -1822,6 +1819,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Sedaj lahko uporabljate ${ BRAND_NAME } geslo za dostop do ${ PASS_SHORT_APP_NAME } v načinu brez povezave"
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Zdaj lahko uporabite svoje drugo geslo za dostop do ${ PASS_SHORT_APP_NAME } brez povezave"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Zdaj lahko uporabite svoje dodatno geslo za dostop do ${ PASS_SHORT_APP_NAME } brez povezave"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Zdaj lahko uporabite svoje drugo geslo za dostop do ${ PASS_SHORT_APP_NAME } brez povezave"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nabiralnikov za ta vzdevek ne morete spremeniti."

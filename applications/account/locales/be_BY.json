@@ -4871,9 +4871,6 @@
       "Available with ${ title }": [
         "Даступна з ${ title }"
       ],
-      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
-        "Выберыце сэрвіс, які вы хочаце дадаць у ${ MAIL_APP_NAME }, і майстар дапаможа вам падключыць адрас або імпартаваць вашу пошту, календары або кантакты."
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Спачатку сканфігурыруйце гэтыя функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
       ],
@@ -4897,6 +4894,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Лёгка сінхранізуйце файлы ў воблака са свайго камп’ютара і атрымлівайце доступ да іх на сваёй мабільнай прыладзе."
+      ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "Без намаганняў пераносьце лісты, падзеі календара і кантакты ад вашага папярэдняга пастаўшчыка. Выберыце аднаразовы імпарт або аўтаматычную бесперапынную сінхранізацыю."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Уключыце ${ PROTON_SENTINEL_NAME }, каб атрымаць доступ да гэтых функцый"
@@ -6998,6 +6998,9 @@
       ],
       "Tab closed": [
         "Укладка закрыта"
+      ],
+      "The address is already activated": [
+        "Адрас ужо актываваны"
       ],
       "The address might be misspelled": [
         "Магчыма, што адрас няправільны"
@@ -9868,6 +9871,9 @@
       "Coming soon": [
         "Неўзабаве з'явіцца"
       ],
+      "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
+        "Завяршыце ўваход на гэтай прыладзе, каб пачаць выкарыстоўваць ${ VPN_APP_NAME } на вашым тэлевізары."
+      ],
       "Compromised": [
         "Скампраметаваны"
       ],
@@ -9936,6 +9942,9 @@
         "Стварыць бяспечнае воблака для ${ value } удзельнікаў",
         "Стварыць бяспечнае воблака для ${ value } удзельнікаў",
         "Стварыць бяспечнае воблака для ${ value } удзельнікаў"
+      ],
+      "Create an account": [
+        "Стварыце ўліковы запіс"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Стварайце і кіруйце падпарадкаванымі ўліковымі запісамі, а таксама прызначайце іх паштовым адрасам у вашым карыстальніцкім дамене."
@@ -11454,6 +11463,9 @@
       ],
       "Show original message": [
         "Паказаць арыгінальнае паведамленне"
+      ],
+      "Sign in": [
+        "ўвайдзіце"
       ],
       "Sign in only": [
         "Толькі ўваход"
@@ -15619,6 +15631,9 @@
       "${ BRAND_NAME } Account": [
         "Уліковы запіс ${ BRAND_NAME }"
       ],
+      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
+        "Простыя крокі сёння, каб забяспечыць лічбавую бяспеку вашага дзіцяці ў будучыні. Зарэзервуйце прыватны адрас электроннай пошты ${ BRAND_NAME } для свайго дзіцяці."
+      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "Актывацыя прыватнага адраса электроннай пошты ${ BRAND_NAME }, які зарэзерваваны для вашага дзіцяці і яго наладжванне."
       ],
@@ -15654,6 +15669,9 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "Аднаўленне дзіцячага ўліковага запісу ${ BRAND_NAME } | ${ BRAND_NAME }"
+      ],
+      "Reserve your child's private email | ${ BRAND_NAME }": [
+        "Зарэзервуйце прыватную электронную пошту для свайго дзіцяці | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Скінуць пароль свайго ўліковага запісу ${ BRAND_NAME }"
@@ -24415,6 +24433,9 @@
       ],
       "Sign in and grant access": [
         "Увайсці і даць доступ"
+      ],
+      "Sign in on TV": [
+        "Увайсці на тэлевізары"
       ],
       "Sign in to join the Beta program": [
         "Увайдзіце, каб далучыцца да бэта-праграмы"

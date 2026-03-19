@@ -4841,9 +4841,6 @@
       "Available with ${ title }": [
         "Disponibil cu ${ title }"
       ],
-      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
-        "Alegeți serviciul pe care doriți să îl aduceți în ${ MAIL_APP_NAME }, iar noi vă vom ghida prin conectarea unei adrese sau importarea mesajelor, calendarului sau contactelor."
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configurați mai întâi aceasta pentru a vă activa organizația și a vă personaliza adresa de e-mail."
       ],
@@ -4867,6 +4864,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronizați ușor fișierele în cloud de pe desktop și accesați-le de pe dispozitivul mobil."
+      ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "Transferați cu ușurință e-mailuri, evenimente din calendar și contacte de la furnizorul anterior. Alegeți o importare unică sau o sincronizare automată continuă."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activați ${ PROTON_SENTINEL_NAME } pentru a accesa aceste funcții."
@@ -9830,6 +9830,9 @@
         "Creați un cont cloud securizat pentru ${ value } membri",
         "Creați un cont cloud securizat pentru ${ value } de membri"
       ],
+      "Create an account": [
+        "Creați un cont"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Creați și gestionați conturi subordonate și atribuiți-le adrese de e-mail cu domeniului personal."
       ],
@@ -11336,6 +11339,9 @@
       ],
       "Show original message": [
         "Afișare mesaj original"
+      ],
+      "Sign in": [
+        "înregistrați-vă"
       ],
       "Sign in only": [
         "Doar conectare"
@@ -19062,7 +19068,7 @@
         "Reducerile se bazează pe prețurile lunare standard. Abonamentul dvs. se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Extindeți-vă abonamentul și salvați ${ discountPercent }%!"
+        "Extindeți-vă abonamentul și economisiți ${ discountPercent }%!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Acces complet la ${ VPN_APP_NAME }"
@@ -19086,7 +19092,7 @@
         "Protecție mai puternică împotriva amenințărilor cibernetice"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Treceți la planul nostru anual și salvați ${ toYearlyDiscountAmount }!"
+        "Treceți la planul nostru anual și economisiți ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Conversații zilnice nelimitate"

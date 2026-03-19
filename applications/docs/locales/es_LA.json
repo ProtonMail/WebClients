@@ -405,6 +405,9 @@
       "Go to label": [
         "Ir a la etiqueta"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -4026,6 +4029,11 @@
         "Seleccione ${ boldExport } para exportar el calendario como un archivo ICS."
       ]
     },
+    "Import provider": {
+      "Advanced import": [
+        "Importación avanzada"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos no se importarán. Haga clic para más detalles"
@@ -4300,6 +4308,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Elija un plan que funcione mejor para usted."
+      ],
+      "Choose your service to connect with": [
+        "Elija su servicio para conectar"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haga clic en \"Solicitar código nuevo\" para que se envíe un código de verificación nuevo a ${ strong }. Si este número telefónico es incorrecto, haga clic en \"Editar\" para corregirlo."
@@ -8201,7 +8212,7 @@
         "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "¡Extienda su suscripción y guarde ${ discountPercent }%!"
+        "¡Extienda su suscripción y ahorre ${ discountPercent }%!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Acceso completo a ${ VPN_APP_NAME }"
@@ -8225,7 +8236,7 @@
         "Mayor protección contra ciberamenazas"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "¡Cambie a nuestro plan anual y guarde ${ toYearlyDiscountAmount }!"
+        "¡Cambie a nuestro plan anual y ahorre ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Chats diarios ilimitados"
@@ -9454,6 +9465,9 @@
       "Change password": [
         "Cambiar contraseña"
       ],
+      "Choose a provider": [
+        "Elegir un proveedor"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Reclame su dirección de ${ MAIL_APP_NAME }"
       ],
@@ -9501,6 +9515,9 @@
       ],
       "Currency": [
         "Moneda"
+      ],
+      "Custom": [
+        "Personalizado"
       ],
       "Customize and confirm": [
         "Personalizar y confirmar"
@@ -9691,6 +9708,9 @@
       "Import groups": [
         "Importar grupos"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importe sus datos a ${ BRAND_NAME }"
+      ],
       "Information exposed in breach": [
         "Información expuesta en la vulneración"
       ],
@@ -9819,6 +9839,9 @@
       ],
       "Select contact group": [
         "Seleccionar grupo de contactos"
+      ],
+      "Select data to import": [
+        "Seleccionar datos para importar"
       ],
       "Select link expiration date": [
         "Seleccione la fecha de expiración del enlace"

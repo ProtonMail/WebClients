@@ -1583,9 +1583,6 @@
       "Disabling auto-lock failed": [
         "Не вдалося вимкнути автоблокування"
       ],
-      "Disabling offline mode...": [
-        "Вимкнення автономного режиму..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "Оновлення змін DNS може зайняти до 24 годин."
       ],
@@ -1862,14 +1859,11 @@
       "Not recommended": [
         "Не рекомендовано"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Наразі неможливо вимкнути автономний режим"
+      "Offline mode": [
+        "Автономний режим"
       ],
       "Offline mode could not be enabled at the moment": [
         "Наразі неможливо увімкнути автономний режим"
-      ],
-      "Offline support successfully disabled": [
-        "Підтримка автономного доступу успішно відключена"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Онлайн доступ до ${ PASS_APP_NAME } вимагатиме PIN-код. Ви вийдете з системи після 3 невдалих спроб."
@@ -1921,6 +1915,9 @@
       ],
       "Please check your spam folder or try resending the code.": [
         "Будь ласка, перевірте теку спаму або спробуйте повторно надіслати код."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Будь ласка, підтвердьте ваш пароль ${ BRAND_NAME } для того, щоб увімкнути автономний режим"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Будь ласка, підтвердьте свій пароль ${ BRAND_NAME }, щоб експортувати дані ${ PASS_APP_NAME }."
@@ -2002,6 +1999,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Швидке автоматичне заповнення збережених облікових даних."
+      ],
+      "Reconnect": [
+        "Перез'єднати"
+      ],
+      "Reconnecting": [
+        "Повторне з'єднання"
       ],
       "Record: CNAME": [
         "Запис: CNAME"
@@ -2734,6 +2737,9 @@
       "Empty trash": [
         "Очистити смітник"
       ],
+      "Enable offline access": [
+        "Увімкнути автономний доступ"
+      ],
       "Enter email or username": [
         "Введіть адресу електронної пошти або ім'я користувача"
       ],
@@ -3012,6 +3018,9 @@
       ],
       "Notes": [
         "Нотатки"
+      ],
+      "Offline mode": [
+        "Автономний режим"
       ],
       "Old-New": [
         "Від найдавніших"
@@ -4424,6 +4433,9 @@
       ],
       "Title is required": [
         "Необхідна назва"
+      ],
+      "Too many attempts": [
+        "Забагато спроб"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Передати право власності на сховище ${ email }?"

@@ -1648,9 +1648,6 @@
       "Disabling auto-lock failed": [
         "Inaktivering av automatiskt lås misslyckades"
       ],
-      "Disabling offline mode...": [
-        "Inaktiverar offlineläge …"
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "DNS-ändringar kan ta upp till 24 timmar att uppdateras."
       ],
@@ -1961,14 +1958,8 @@
       "Offline mode": [
         "Offlineläge"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Offlineläge kunde inte inaktiveras just nu"
-      ],
       "Offline mode could not be enabled at the moment": [
         "Offlineläge kunde inte aktiveras just nu"
-      ],
-      "Offline support successfully disabled": [
-        "Offlinestöd har inaktiverats"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Onlineåtkomst till ${ PASS_APP_NAME } kommer kräva en PIN-kod. Du kommer att loggas ut efter 3 misslyckade försök."
@@ -2471,6 +2462,12 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Du kan nu använda ditt ${ BRAND_NAME }-lösenord för att komma åt ${ PASS_SHORT_APP_NAME } offline"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nu använda ditt extra lösenord för att komma åt ${ PASS_SHORT_APP_NAME } offline"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nu använda ditt andra lösenord för att komma åt ${ PASS_SHORT_APP_NAME } offline"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Du kan inte ändra brevlådorna för detta alias."

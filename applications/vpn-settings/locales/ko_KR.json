@@ -1821,6 +1821,9 @@
       "Authenticate your Google Workspace account": [
         "Google Workspace 계정 인증"
       ],
+      "Calendar": [
+        "캘린더"
+      ],
       "Completed": [
         "완료"
       ],
@@ -2010,6 +2013,9 @@
       ],
       "Payments problem": [
         "결제 문제"
+      ],
+      "Sheets problem": [
+        "Sheets 문제"
       ],
       "Sign in problem": [
         "로그인 문제"
@@ -4068,6 +4074,9 @@
       "Enter 6 digits": [
         "6자리 숫자를 입력해 주세요"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "도메인 없이 (@example.co.kr) 사용자 이름을 입력해 주세요."
+      ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API와 통신하던 중 오류가 발생했습니다."
       ],
@@ -4364,6 +4373,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "${ MAIL_APP_NAME }의 최대 글자 수 제한을 초과하는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
+      ],
+      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
+        "TV와 연결하는 데 문제가 발생했습니다. TV 화면의 QR코드를 다시 스캔해 주세요."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "문제가 발생했습니다. 진행하려면 ${ refresh } 해주세요. 그래도 이 오류가 지속될 경우 ${ supportTeam } 으로 문의해 주세요."
@@ -6647,6 +6659,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText }(으)로 인증 코드가 전송되었습니다."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "인증 코드를 입력하세요. ${ digit }자입니다."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "${ BRAND_NAME } 계정 상세 정보를 입력하세요."
       ],
@@ -8264,6 +8279,9 @@
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "친구가 연간 플랜을 구독하고 1개월 후, 월간 요금제에 구독하고 2개월 후에 크레딧 보상을 받게 됩니다."
       ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "친구의 무료 체험이 끝난 1개월 뒤에 크레딧 보상을 받게 됩니다."
+      ],
       "You'll receive the credit reward 2 months after your friend's trial ended.": [
         "친구의 무료 체험이 종료된 후 2개월 뒤 크레딧 보상을 받게 됩니다."
       ],
@@ -8295,7 +8313,7 @@
         "계정에 기한이 지난 청구서가 하나 이상 있습니다. 회원님의 계정 접근이 곧 제한됩니다. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "귀하의 계정은 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 선택하신 요금제에서 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 요금제를 선택하십시오."
+        "사용자의 계정에 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 현재 선택한 플랜에서는 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 플랜을 선택하십시오."
       ],
       "Your account was successfully updated with this promotion": [
         "사용자의 계정이 해당 프로모션으로 성공적으로 업데이트되었습니다"
@@ -8338,6 +8356,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "회원님의 전화번호는 이번 인증에만 사용됩니다."
+      ],
+      "Your recent changes have been published. They will be visible to users in the next few hours.": [
+        "최근 변경 사항이 게시되었습니다. 몇 시간 내로 다른 사용자에게 반영되어 표시됩니다."
       ],
       "Your recovery phrase": [
         "내 복구 키"
@@ -12463,7 +12484,7 @@
         "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "귀하의 구독을 연장하고 ${ discountPercent }%를 저장하세요!"
+        "귀하의 구독을 연장하고 ${ discountPercent }%를 절약하세요!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME }에 대한 완전한 접근"
@@ -12487,7 +12508,7 @@
         "사이버 위협에 대한 더욱 강력한 보호"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 저장하세요!"
+        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 절약하세요!"
       ],
       "Unlimited daily chats": [
         "무제한 일일 채팅"

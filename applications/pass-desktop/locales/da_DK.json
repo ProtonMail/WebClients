@@ -1720,9 +1720,6 @@
       "Disabling auto-lock failed": [
         "Deaktivering af autolås mislykkedes"
       ],
-      "Disabling offline mode...": [
-        "Deaktiverer offline-tilstand..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "DNS-ændringer kan tage op til 24 timer at opdatere."
       ],
@@ -1994,6 +1991,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2033,14 +2034,8 @@
       "Offline mode": [
         "Offline-tilstand"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Offline-tilstand kunne ikke deaktiveres i øjeblikket"
-      ],
       "Offline mode could not be enabled at the moment": [
         "Offline-tilstand kunne ikke aktiveres i øjeblikket"
-      ],
-      "Offline support successfully disabled": [
-        "Offline-tilstand blev deaktiveret"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online adgang til ${ PASS_APP_NAME } kræver en pinkode. Du bliver logget ud efter 3 mislykkede forsøg."
@@ -2546,6 +2541,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Du kan nu bruge din ${ BRAND_NAME }-adgangskode til at tilgå ${ PASS_SHORT_APP_NAME } offline"
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nu bruge din backupadgangskode til at få offline-adgang til ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nu bruge din ekstra adgangskode til at få offline-adgang til ${ PASS_SHORT_APP_NAME }"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nu bruge din anden adgangskode til at få offline-adgang til ${ PASS_SHORT_APP_NAME }"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Du kan ikke ændre postkasserne for dette alias"

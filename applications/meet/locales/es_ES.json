@@ -242,9 +242,6 @@
       "Refresh audio and video tracks": [
         "Actualizar pistas de audio y vídeo"
       ],
-      "Refresh link": [
-        "Actualizar enlace"
-      ],
       "Refresh the page": [
         "Actualizar la página"
       ],
@@ -1717,6 +1714,12 @@
       "${ presenterName } is presenting": [
         "${ presenterName } está presentando"
       ],
+      "${ reactorNames } and others reacted with ${ emoji }": [
+        "${ reactorNames } y otras personas han reaccionado con ${ emoji }"
+      ],
+      "${ reactorNames } reacted with ${ emoji }": [
+        "${ reactorNames } ha reaccionado con ${ emoji }"
+      ],
       "${ totalParticipantCount } of ${ maxParticipants } participants": [
         "${ totalParticipantCount } de ${ maxParticipants } participantes"
       ],
@@ -2219,9 +2222,6 @@
       "Your always available meeting room": [
         "Tu sala de reuniones siempre disponible"
       ],
-      "Your always available meeting room, share it only with people you trust.": [
-        "Tu sala de reuniones siempre disponible, compártela solo con personas de confianza."
-      ],
       "Your browser or device isn’t supported": [
         "Tu navegador o dispositivo no es compatible"
       ],
@@ -2230,9 +2230,6 @@
       ],
       "Your meeting is ready": [
         "Tu reunión está lista"
-      ],
-      "Your personal link": [
-        "Tu enlace personal"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Tu número de teléfono se utilizará solo para esta verificación única."
@@ -2502,9 +2499,6 @@
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "No puedes enviar comentarios de una reunión a la que no has asistido"
-      ],
-      "Your personal meeting link has been copied to the clipboard": [
-        "Tu enlace personal de reunión se ha copiado al portapapeles"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -2809,9 +2803,6 @@
       ],
       "Passphrase": [
         "Contraseña"
-      ],
-      "Personal meeting": [
-        "Reunión personal"
       ],
       "Personal meeting room": [
         "Sala de reuniones personal"

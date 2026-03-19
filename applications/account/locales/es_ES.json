@@ -550,6 +550,9 @@
       "Download for Windows": [
         "Descargar para Windows"
       ],
+      "Download ICS": [
+        "Descargar el archivo ICS"
+      ],
       "Download logs": [
         "Descargar los registros"
       ],
@@ -2964,6 +2967,9 @@
       ]
     },
     "Calendar status": {
+      "Active": [
+        "Activo"
+      ],
       "Not synced": [
         "No sincronizado"
       ],
@@ -4609,9 +4615,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Ordena automáticamente tus mensajes entrantes antes de que lleguen a tu bandeja de entrada."
       ],
-      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
-        "Elige el servicio que quieras traer a ${ MAIL_APP_NAME } y te guiaremos para conectar una dirección o importar tus correos, calendarios o contactos."
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configura esto primero para activar tu organización y personalizar tu dirección de correo electrónico."
       ],
@@ -4635,6 +4638,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincroniza fácilmente archivos a la nube desde tu escritorio y accede a ellos desde tu dispositivo móvil."
+      ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "Transfiere fácilmente correos, eventos de calendario y contactos desde tu proveedor anterior. Elige entre una importación puntual o una sincronización automática continua."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activa ${ PROTON_SENTINEL_NAME } para acceder a estas funciones."
@@ -5444,8 +5450,14 @@
       "Add forwarding rule": [
         "Añadir regla de reenvío"
       ],
+      "Back": [
+        "Atrás"
+      ],
       "Delete": [
         "Eliminar"
+      ],
+      "Delete this condition": [
+        "Eliminar esta condición"
       ],
       "Edit conditions": [
         "Editar condiciones"
@@ -7054,6 +7066,9 @@
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
         "La conexión a internet fue interrumpida, lo que provocó un fallo en el proceso de exportación. Inténtalo de nuevo."
+      ],
+      "You can save an ICS file of the events that were successfully exported.": [
+        "Puedes guardar un archivo ICS de los eventos que han sido exportados con éxito."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -9257,6 +9272,9 @@
         "Crear una nube segura para ${ value } miembro",
         "Crear una nube segura para ${ value } miembros"
       ],
+      "Create an account": [
+        "Crear una cuenta"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crea y administra subcuentas y asígnales direcciones de correo electrónico en tu dominio personalizado."
       ],
@@ -10687,6 +10705,9 @@
       "Show original message": [
         "Mostrar el mensaje original"
       ],
+      "Sign in": [
+        "Iniciar sesión"
+      ],
       "Sign in only": [
         "Solo iniciar sesión"
       ],
@@ -10790,6 +10811,9 @@
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "El soporte del monitoreo para dominios personalizados y direcciones de correo externas a ${ BRAND_NAME } estará disponible próximamente."
+      ],
+      "Support for post-quantum keys is enabled for your account.": [
+        "Soporte para claves post-cuánticas está activado para tu cuenta."
       ],
       "support team": [
         "equipo de soporte"
@@ -11229,6 +11253,9 @@
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utiliza las siguientes credenciales cuando te conectes a servidores ${ VPN_APP_NAME } sin aplicación como con Tunnelblick en macOSu OpenVPN en GNU/Linux."
       ],
+      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
+        "Usa la dirección de correo electrónico seleccionada como nombre de usuario SMTP en el servicio externo y el token generado como la contraseña SMTP."
+      ],
       "User activated": [
         "Se ha activado el usuario."
       ],
@@ -11561,6 +11588,9 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puedes activar las notificaciones para recibir alertas cuando lleguen mensajes de correo electrónico nuevos a esta carpeta."
+      ],
+      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "Puedes usar ${ MAIL_APP_NAME } con cualquier cliente de correo electrónico de escritorio que admita IMAP/SMTP, incluidos Outlook, Apple Mail y Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Puedes utilizar las siguientes credenciales para conectarte a un servidor ${ VPN_APP_NAME } usando una aplicación VPN de código abierto de terceros, como Tunnelblick para macOS u OpenVPN para GNU/Linux."
@@ -12038,6 +12068,9 @@
       "Inactive": [
         "Inactivo"
       ],
+      "Invalid": [
+        "Inválido"
+      ],
       "Primary": [
         "Principal"
       ]
@@ -12443,6 +12476,9 @@
       "Allow alias creation": [
         "Permitir la creación de alias"
       ],
+      "Allow all users to create vaults": [
+        "Permitir a todos los usuarios crear cajas fuertes"
+      ],
       "Allow data export for all users": [
         "Permitir la exportación de datos para todos los usuarios"
       ],
@@ -12703,6 +12739,9 @@
       ],
       "Copy": [
         "Copiar"
+      ],
+      "Copy fingerprint": [
+        "Copiar huella digital"
       ],
       "Copy IP address to clipboard": [
         "Copiar dirección IP al portapapeles"
@@ -15009,6 +15048,9 @@
       "99.95% SLA": [
         "SLA del 99,95 %"
       ],
+      "Activity logs and policy": [
+        "Registros de actividad y política"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anuncios y protección contra malware"
       ],
@@ -16322,6 +16364,9 @@
       "26th of the month": [
         "26º del mes"
       ],
+      "28th of the month": [
+        "28º del mes"
+      ],
       "2nd of the month": [
         "2º del mes"
       ],
@@ -16609,6 +16654,9 @@
       ]
     },
     "OS compatibility": {
+      ".dmg (12.0 or later)": [
+        ".dmg (12.0 o superior)"
+      ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (para Fedora/openSUSE)"
       ]
@@ -17937,7 +17985,7 @@
         "Los descuentos se basan en el precio mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "¡Extiende tu suscripción y guarda un ${ discountPercent }%!"
+        "¡Extiende tu suscripción y ahorra un ${ discountPercent }%!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Acceso completo a ${ VPN_APP_NAME }"
@@ -17961,7 +18009,7 @@
         "Mayor protección contra las ciberamenazas"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "¡Cámbiate a nuestro plan anual y guarda ${ toYearlyDiscountAmount }!"
+        "¡Cámbiate a nuestro plan anual y ahorra ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Chats diarios ilimitados"
@@ -19317,6 +19365,11 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "Error al actualizar la configuración"
+      ]
+    },
+    "Settings/filters": {
+      "Filters": [
+        "Filtros"
       ]
     },
     "Settings/filters - table": {
@@ -21129,6 +21182,9 @@
       ],
       "Calendar information updated": [
         "Información del calendario actualizada"
+      ],
+      "Calendar removed": [
+        "Calendario eliminado"
       ],
       "Calendar updated": [
         "Calendario actualizado"
@@ -23225,6 +23281,9 @@
       ]
     },
     "Title header for keys table": {
+      "Actions": [
+        "Acciones"
+      ],
       "Creation date": [
         "Fecha de creación"
       ],
@@ -23470,6 +23529,9 @@
       ],
       "When enabled, animations and transitions will not show": [
         "Las animaciones y transiciones no se mostrarán."
+      ],
+      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
+        "Cuando añadas una etiqueta a un mensaje en una conversación, se aplicará automáticamente a todos los mensajes futuros que envíes o recibas en esa conversación."
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Tu bandeja de entrada de ${ MAIL_APP_NAME } está casi llena"

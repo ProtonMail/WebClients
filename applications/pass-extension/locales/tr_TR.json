@@ -1500,6 +1500,12 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } geçiş anahtarlarını kaydetmeyi önerecek."
       ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME } şu anda çevrimdışı. Kilidi açmak için eklentiyi açın."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } çevrim dışı kipi açıldı."
+      ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } davet gönderildi",
         "${ payload.count } davet gönderildi"
@@ -1760,9 +1766,6 @@
       "Disabling auto-lock failed": [
         "Otomatik kilitleme kapatılamadı"
       ],
-      "Disabling offline mode...": [
-        "Çevrim dışı kip kapatılıyor..."
-      ],
       "Discover ${ PASS_APP_NAME } video": [
         "${ PASS_APP_NAME } videosunu izleyin"
       ],
@@ -1813,6 +1816,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Verilerinizi korumak için otomatik kilitlemeyi açın"
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "İnternet bağlantınızı kaybederseniz veya ${ BRAND_NAME } sunucularına ulaşılamazsa ${ PASS_SHORT_APP_NAME } verilerinize erişmek için çevrim dışı kipi açın."
       ],
       "Enabling biometrics auto-lock": [
         "Otomatik biyometri kilidi kullanıma alınıyor"
@@ -2086,14 +2092,11 @@
       "Not recommended": [
         "Önerilmez"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Çevrim dışı kip şu anda kapatılamaz"
+      "Offline mode": [
+        "Çevrim dışı kip"
       ],
       "Offline mode could not be enabled at the moment": [
         "Çevrim dışı kip şu anda kullanıma alınamadı"
-      ],
-      "Offline support successfully disabled": [
-        "Çevrim dışı desteği kullanımdan kaldırıldı"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Çevrim içi olarak ${ PASS_APP_NAME } kullanmak için PIN kodu yazmanız gerekir. 3 başarısız denemeden sonra oturumunuz kapatılır."
@@ -2147,6 +2150,9 @@
       "Please check your spam folder or try resending the code.": [
         "Lütfen istenmeyen klasörünüzü denetleyin ya da kodu yeniden göndermeyi deneyin."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Çevrim dışı kipini açmak için lütfen ${ BRAND_NAME } parolanızı yazın"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ${ BRAND_NAME } parolanızı yazın"
       ],
@@ -2158,6 +2164,9 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Parolanızla otomatik kilitleme yapabilmek için lütfen yedek parolanızı yazın."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Çevrim dışı kipini açmak için lütfen yedek parolanızı yazın"
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen yedek parolanızı yazın"
@@ -2176,6 +2185,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Ek parolanızla otomatik kilitleme için lütfen ek parolanızı yazın."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Çevrim dışı kipini açmak için lütfen ek parolanızı yazın"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ek parolanızı yazın"
@@ -2215,6 +2227,9 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Parolanızla otomatik kilitleme yapabilmek için lütfen ikinci parolanızı onaylayın."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Çevrim dışı kipini kullanıma almak için lütfen ikinci parolanızı onaylayın"
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ikinci parolanızı yazın"
@@ -2278,6 +2293,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Kaydedilmiş kimlik doğrulama bilgilerinizi otomatik olarak doldurun."
+      ],
+      "Reconnect": [
+        "Yeniden bağlan"
+      ],
+      "Reconnecting": [
+        "Yeniden bağlantı kuruluyor"
       ],
       "Record: CNAME": [
         "Kayıt türü: CNAME"
@@ -2606,6 +2627,9 @@
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "${ PASS_APP_NAME } üzerinde bir kayıt oluştururken ya da düzenlerken 'kullanıcı adı' alanı her zaman görüntülenir."
       ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Bu seçeneği açarsanız, internet bağlantınız kesilirse veya ${ BRAND_NAME } sunucularına ulaşılamazsa ${ PASS_SHORT_APP_NAME } verilerinize erişebilirsiniz."
+      ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Bu takma addan gönderilecek e-postaların göndericisi olarak ${ emailSender } görüntülenecek."
       ],
@@ -2617,6 +2641,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Artık ${ PASS_SHORT_APP_NAME } çevrim dışı erişimi için ${ BRAND_NAME } parolanızı kullanabilirsiniz"
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Artık yedek parolanızı kullanarak ${ PASS_SHORT_APP_NAME } uygulamasına çevrimdışı olarak erişebilirsiniz"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Artık ek parolanızı kullanarak ${ PASS_SHORT_APP_NAME } uygulamasına çevrimdışı olarak erişebilirsiniz"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Artık ikinci parolanızı kullanarak ${ PASS_SHORT_APP_NAME } uygulamasına çevrimdışı olarak erişebilirsiniz"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Bu takma adın e-posta kutularını değiştiremezsiniz."
@@ -3103,6 +3136,9 @@
       "Empty trash": [
         "Çöp kutusunu boşalt"
       ],
+      "Enable offline access": [
+        "Çevrim dışı erişimi kullanıma al"
+      ],
       "Enter email or username": [
         "E-posta adresi ya da kullanıcı adı yazın"
       ],
@@ -3420,6 +3456,9 @@
       ],
       "Notes": [
         "Notlar"
+      ],
+      "Offline mode": [
+        "Çevrim dışı kip"
       ],
       "Old-New": [
         "Eskiden yeniye"
@@ -4884,6 +4923,9 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } parolası gereklidir"
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } çevrim dışı kipi kapatıldı."
+      ],
       "2 consecutive dots are not allowed": [
         "Arka arka 2 nokta yazılamaz"
       ],
@@ -5087,6 +5129,9 @@
       ],
       "Title is required": [
         "Başlığın yazılması zorunludur"
+      ],
+      "Too many attempts": [
+        "Çok fazla deneme yapıldı"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Bu kasanın sahipliğini ${ email } kişisine aktarmak istediğinize emin misiniz?"
