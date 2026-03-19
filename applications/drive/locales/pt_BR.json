@@ -812,6 +812,9 @@
       "Refresh the page": [
         "Atualizar a página"
       ],
+      "Reload": [
+        "Recarregar"
+      ],
       "Remove": [
         "Remover"
       ],
@@ -3783,6 +3786,9 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "O valor mínimo de crédito que pode ser adicionado é ${ price }."
       ],
+      "The minimum donation amount is ${ price }": [
+        "O valor mínimo da doação é de ${ price }"
+      ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "A nova revisão do arquivo original ainda não foi carregada. Tente novamente mais tarde."
       ],
@@ -5062,6 +5068,9 @@
       "30-day money-back guarantee.": [
         "Garantia de devolução do seu dinheiro por até 30 dias."
       ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "Uma nova versão do ${ DRIVE_APP_NAME } está disponível. Recarregue para continuar usando a pesquisa."
+      ],
       "A number will be added to the filename": [
         "Um número será adicionado ao nome do arquivo"
       ],
@@ -5672,6 +5681,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Na próxima etapa, poderá enviar um depósito usando um endereço Bitcoin."
+      ],
+      "Indexing in progress": [
+        "Indexação em progresso"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexando itens ${ esProgress } de ${ totalProgressToShow }"
@@ -6537,6 +6549,9 @@
       ],
       "Untitled": [
         "Sem título"
+      ],
+      "Update required": [
+        "Atualização necessária"
       ],
       "Updating drive search...": [
         "Atualizando pesquisa de drive..."
@@ -10610,7 +10625,7 @@
         "Os descontos são baseados nos preços mensais padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Estenda sua assinatura e salve ${ discountPercent }%!"
+        "Estenda sua assinatura e economize ${ discountPercent }%!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Acesso total ao ${ VPN_APP_NAME }"
@@ -10634,7 +10649,7 @@
         "Proteção mais forte contra ameaças cibernéticas"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Mude para o nosso plano anual e salve ${ toYearlyDiscountAmount }!"
+        "Mude para o nosso plano anual e economize ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Bate-papos diários ilimitados"

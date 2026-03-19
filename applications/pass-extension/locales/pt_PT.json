@@ -1645,9 +1645,6 @@
       "Disabling auto-lock failed": [
         "Erro ao desativar o bloqueio automático"
       ],
-      "Disabling offline mode...": [
-        "A desativar o modo offline..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "As alterações de DNS podem demorar até 24 horas para serem atualizadas."
       ],
@@ -1950,14 +1947,11 @@
       "Not recommended": [
         "Não recomendado"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "O modo offline não pode ser desativado no momento."
+      "Offline mode": [
+        "Modo sem conexão"
       ],
       "Offline mode could not be enabled at the moment": [
         "O modo offline não pode ser ativado no momento."
-      ],
-      "Offline support successfully disabled": [
-        "O modo off-line está desativado."
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "O acesso online ao ${ PASS_APP_NAME } exigirá um código PIN. Será desconectado após 3 tentativas falhadas."
@@ -2008,6 +2002,9 @@
       "Please check your spam folder or try resending the code.": [
         "Verifique a sua pasta de spam ou tente reenviar o código."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Confirme a sua palavra-passe da ${ BRAND_NAME } para ativar o modo offline."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme a sua palavra-passe da ${ BRAND_NAME } para exportar os seus dados do ${ PASS_APP_NAME }."
       ],
@@ -2019,6 +2016,9 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Confirme a sua palavra-passe de backup para o bloqueio automático com a sua palavra-passe."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Confirme a sua palavra-passe de backup para ativar o modo offline."
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme a sua palavra-passe de backup para exportar os seus dados do ${ PASS_APP_NAME }."
@@ -2037,6 +2037,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Confirme a sua palavra-passe adicional para o bloqueio automático com a sua palavra-passe adicional."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Confirme a sua palavra-passe adicional para ativar o modo offline."
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme a sua palavra-passe adicional para exportar os seus dados do ${ PASS_APP_NAME }."
@@ -2076,6 +2079,9 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Confirme a sua segunda palavra-passe para o bloqueio automático com a sua palavra-passe."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Confirme a sua segunda palavra-passe para ativar o modo offline."
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme a sua segunda palavra-passe para exportar os seus dados do ${ PASS_APP_NAME }."
@@ -2130,6 +2136,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Preencha rapidamente as suas credenciais guardadas."
+      ],
+      "Reconnect": [
+        "Voltar a ligar"
+      ],
+      "Reconnecting": [
+        "A religar"
       ],
       "Record: CNAME": [
         "Registo: CNAME"
@@ -2899,6 +2911,9 @@
       "Empty trash": [
         "Esvaziar o lixo"
       ],
+      "Enable offline access": [
+        "Ativar o acesso offline"
+      ],
       "Enter email or username": [
         "Introduza o e-mail ou nome de utilizador"
       ],
@@ -3213,6 +3228,9 @@
       ],
       "Notes": [
         "Notas"
+      ],
+      "Offline mode": [
+        "Modo sem conexão"
       ],
       "Old-New": [
         "Do mais antigo ao mais recente"
@@ -4854,6 +4872,9 @@
       ],
       "Title is required": [
         "O título é obrigatório."
+      ],
+      "Too many attempts": [
+        "Ocorreu muitas tentativas."
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Transferir a propriedade deste cofre para ${ email }?"

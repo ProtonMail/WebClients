@@ -809,6 +809,9 @@
       "Refresh the page": [
         "Oppdater siden"
       ],
+      "Reload": [
+        "Last inn på nytt"
+      ],
       "Remove": [
         "Fjern"
       ],
@@ -6455,9 +6458,6 @@
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "For å muliggjøre virkelig privat søk, må vi indeksere filene dine lokalt. Du kan fremdeles bruke ${ DRIVE_APP_NAME } som normalt - vi gir deg beskjed når indekseringen er ferdig."
       ],
-      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "For å aktivere virkelig privat søk, må vi indeksere filene dine lokalt. Du kan fortsatt bruke ${ DRIVE_APP_NAME } normalt – vi gir deg beskjed når indekseringen er ferdig."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
       ],
@@ -10632,7 +10632,7 @@
         "Rabatter er basert på standard månedspris. Abonnementet ditt fornyes til standard årspris når faktureringssyklusen utløper."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Forleng abonnementet ditt og lagre ${ discountPercent } %!"
+        "Forleng abonnementet ditt og spar ${ discountPercent } %!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Full tilgang til ${ VPN_APP_NAME }"
@@ -10656,7 +10656,7 @@
         "Sterkere beskyttelse mot cybertrusler"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Bytt til vårt årlige abonnement og lagre ${ toYearlyDiscountAmount }!"
+        "Bytt til vårt årlige abonnement og spar ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Ubegrenset antall daglige chatter"

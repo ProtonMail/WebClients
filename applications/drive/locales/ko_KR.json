@@ -807,6 +807,9 @@
       "Refresh the page": [
         "페이지 새로 고침"
       ],
+      "Reload": [
+        "새로고침"
+      ],
       "Remove": [
         "삭제"
       ],
@@ -1651,6 +1654,9 @@
       ],
       "Payments problem": [
         "결제 문제"
+      ],
+      "Sheets problem": [
+        "Sheets 문제"
       ],
       "Sign in problem": [
         "로그인 문제"
@@ -3398,6 +3404,9 @@
       "Enter 6 digits": [
         "6자리 숫자를 입력해 주세요"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "도메인 없이 (@example.co.kr) 사용자 이름을 입력해 주세요."
+      ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API와 통신하던 중 오류가 발생했습니다."
       ],
@@ -4991,6 +5000,9 @@
       "30-day money-back guarantee.": [
         "30일 환불 보장"
       ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "${ DRIVE_APP_NAME }의 새로운 버전을 사용할 수 있습니다. 계속 검색하려면 새로고침하세요."
+      ],
       "A number will be added to the filename": [
         "숫자가 파일 이름에 추가됩니다"
       ],
@@ -5432,6 +5444,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText }(으)로 인증 코드가 전송되었습니다."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "인증 코드를 입력하세요. ${ digit }자입니다."
+      ],
       "Enter your own password (as organization admin).": [
         "사용자의 비밀번호 입력 (조직 관리자와 같음)"
       ],
@@ -5590,6 +5605,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "다음 단계에서, Bitcoin 주소를 사용하여 보증금을 제출할 수 있습니다."
+      ],
+      "Indexing in progress": [
+        "색인 진행 중"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "항목 인덱싱 ${ totalProgressToShow }개 중 ${ esProgress }개"
@@ -6365,7 +6383,7 @@
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "비공개 검색을 진정으로 활성화하려면, 로컬에서 사용자의 파일을 인덱싱해야 합니다. 계속 ${ DRIVE_APP_NAME }를 사용할 수 있습니다 - 인덱싱이 완료되면 알려 드리겠습니다."
       ],
-      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
         "진정한 비공개 검색을 활성화하려면, 로컬에서 사용자의 파일을 인덱싱해야 합니다. ${ DRIVE_APP_NAME }는 계속 정상적으로 사용할 수 있습니다. 인덱싱이 완료되면 알려드리겠습니다."
       ],
       "To fight spam and abuse, please verify you are human.": [
@@ -6457,6 +6475,9 @@
       ],
       "Untitled": [
         "무제"
+      ],
+      "Update required": [
+        "업데이트 필요"
       ],
       "Updating drive search...": [
         "드라이브 검색을 업데이트하는 중..."
@@ -6744,7 +6765,7 @@
         "계정에 기한이 지난 청구서가 하나 이상 있습니다. 회원님의 계정 접근이 곧 제한됩니다. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "귀하의 계정은 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 선택하신 요금제에서 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 요금제를 선택하십시오."
+        "사용자의 계정에 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 현재 선택한 플랜에서는 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 플랜을 선택하십시오."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "현재 사용중인 브라우저는 대용량 파일/복수의 파일 다운로드를 지원하지 않습니다. 매끄러운 업로드 및 다운로드를 위해 데스크톱 앱을 내려받으세요."
@@ -10397,7 +10418,7 @@
         "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "귀하의 구독을 연장하고 ${ discountPercent }%를 저장하세요!"
+        "귀하의 구독을 연장하고 ${ discountPercent }%를 절약하세요!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME }에 대한 완전한 접근"
@@ -10421,7 +10442,7 @@
         "사이버 위협에 대한 더욱 강력한 보호"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 저장하세요!"
+        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 절약하세요!"
       ],
       "Unlimited daily chats": [
         "무제한 일일 채팅"

@@ -276,6 +276,9 @@
       "Close navigation": [
         "Navigatie sluiten"
       ],
+      "Close search": [
+        "Zoekfunctie sluiten"
+      ],
       "Close tab": [
         "Tabblad sluiten"
       ],
@@ -458,6 +461,9 @@
       ],
       "Delete filter “${ Name }”": [
         "Verwijder filter \"${ Name }\""
+      ],
+      "Delete forward": [
+        "Doorsturen verwijderen"
       ],
       "Delete Gateway": [
         "Gateway verwijderen"
@@ -849,6 +855,9 @@
       "Go to settings": [
         "Ga naar instellingen"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Begrepen"
       ],
@@ -1158,6 +1167,9 @@
       "Reload": [
         "Opnieuw laden"
       ],
+      "Reload page": [
+        "Pagina vernieuwen"
+      ],
       "Remove": [
         "Verwijderen"
       ],
@@ -1178,6 +1190,9 @@
       ],
       "Remove domain": [
         "Verwijder bestand"
+      ],
+      "Remove forward": [
+        "Doorsturen verwijderen"
       ],
       "Remove from favorites": [
         "Verwijder uit favorieten"
@@ -1292,6 +1307,9 @@
       ],
       "Search countries": [
         "Zoek landen"
+      ],
+      "Search groups": [
+        "Groepen zoeken"
       ],
       "Search settings": [
         "Zoekinstellingen"
@@ -2715,6 +2733,9 @@
       "Change": [
         "Wijzigen"
       ],
+      "Completed": [
+        "Voltooid"
+      ],
       "Configure": [
         "Configureren"
       ],
@@ -2741,6 +2762,12 @@
       ],
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Google Marketplace-app om gegevens naar ${ BRAND_NAME } te kopiëren"
+      ],
+      "Has errors": [
+        "Bevat fouten"
+      ],
+      "In progress": [
+        "Bezig"
       ],
       "Install app": [
         "Installeer app"
@@ -2773,6 +2800,9 @@
       "Migration status": [
         "Migratiestatus"
       ],
+      "Not started": [
+        "Niet begonnen"
+      ],
       "Organization does not have enough seats available": [
         "Organisatie heeft onvoldoende licenties beschikbaar"
       ],
@@ -2803,11 +2833,17 @@
       "Set up two-factor authentication": [
         "Tweestapsverificatie instellen"
       ],
+      "Settings": [
+        "Instellingen"
+      ],
       "Sign in to Google Workspace": [
         "Inloggen bij Google Workspace"
       ],
       "Start migration": [
         "Migratie starten"
+      ],
+      "Status": [
+        "Status"
       ],
       "To migrate your organization’s data, you need to install the ${ BRAND_NAME } Migration Assistant app from the Google Workspace Marketplace. This will grant permission to ${ BRAND_NAME } to copy your data. After installing it, come back here to continue.": [
         "Om de gegevens van uw organisatie te migreren, moet u de ${ BRAND_NAME } Migration Assistant-app installeren vanuit de Google Workspace Marketplace. Hiermee wordt toestemming verleend aan ${ BRAND_NAME } om uw gegevens te kopiëren. Nadat u de app hebt geïnstalleerd, keert u hier terug om verder te gaan."
@@ -2817,6 +2853,9 @@
       ],
       "User": [
         "Gebruiker"
+      ],
+      "Users migrated": [
+        "Gebruikers gemigreerd"
       ],
       "Verify installation": [
         "Installatie verifiëren"
@@ -4796,6 +4835,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synchroniseer eenvoudig bestanden naar de cloud vanaf uw computer en open ze vanaf uw mobiele apparaat."
       ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "Eenvoudig e-mails, agenda-afspraken en contactpersonen overzetten van uw vorige provider. Kies voor een eenmalige import of automatisch doorlopende synchronisatie."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Schakel ${ PROTON_SENTINEL_NAME } in om toegang te krijgen tot deze functies"
       ],
@@ -6582,6 +6624,9 @@
       "Invalid code": [
         "Ongeldige code"
       ],
+      "Invalid coupon": [
+        "Ongeldige kortingscode"
+      ],
       "Invalid domain": [
         "Ongeldige domeinnaam"
       ],
@@ -6819,6 +6864,9 @@
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omgekeerde btw-regeling wordt niet ondersteund voor dit abonnement"
+      ],
       "Server not found": [
         "Server niet gevonden"
       ],
@@ -6861,6 +6909,9 @@
       "Tab closed": [
         "Tab gesloten"
       ],
+      "The address is already activated": [
+        "Het adres is al geactiveerd"
+      ],
       "The address might be misspelled": [
         "Het adres is mogelijk verkeerd gespeld"
       ],
@@ -6896,6 +6947,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Het minimale donatiebedrag is ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "De naam van de policy moet tussen 3 en 40 tekens lang zijn."
@@ -8787,6 +8841,14 @@
         "Weet u zeker dat u een privé-sleutel wilt importeren? Het importeren van een onveilige gegenereerde of uitgelekte privé-sleutel kan de veiligheid van uw e-mails schaden."
       ]
     },
+    "Import provider": {
+      "Advanced import": [
+        "Geavanceerde import"
+      ],
+      "Import from ${ providerName }": [
+        "Importeer uit ${ providerName }"
+      ]
+    },
     "Import status": {
       "Active": [
         "Actief"
@@ -8794,14 +8856,32 @@
       "Canceled": [
         "Geannuleerd"
       ],
+      "Canceling...": [
+        "Annuleren..."
+      ],
       "Delayed": [
         "Vertraagd"
+      ],
+      "Disabled": [
+        "Uitgeschakeld"
       ],
       "Failed": [
         "Mislukt"
       ],
+      "Imported": [
+        "Geïmporteerd"
+      ],
+      "In progress...": [
+        "Bezig..."
+      ],
       "Paused": [
         "Gepauzeerd"
+      ],
+      "Undo finished": [
+        "Ongedaan maken voltooid"
+      ],
+      "Undo in progress": [
+        "Bezig met ongedaan maken"
       ]
     },
     "Import type": {
@@ -9166,6 +9246,9 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Een ${ protonSubdomain } wordt gehost door ${ BRAND_NAME }, waardoor u snel een subdomein kunt instellen. ${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don't have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Een aangepast domein is vereist om groepen te maken. Als u geen aangepast domein hebt ingesteld, stel dit dan eerst in via ${ linkToDomainPage }."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Een naam om u te helpen identificeren waar u het gebruikt zodat u het later eenvoudig kan intrekken of verlengen."
       ],
@@ -9334,6 +9417,12 @@
       ],
       "An error occurred while communicating with the extension": [
         "Er is een fout opgetreden tijdens de communicatie met de extensie"
+      ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "Een import is onderbroken omdat de verbinding met uw e-mailprovider is verbroken."
+      ],
+      "An import is paused because your storage is almost full.": [
+        "Een import is onderbroken omdat uw opslag bijna vol is."
       ],
       "and": [
         "en"
@@ -9545,6 +9634,9 @@
       "Choose an Entity ID to continue.": [
         "Kies een entiteits-ID om door te gaan."
       ],
+      "Choose your service to connect with": [
+        "Kies uw service om verbinding te maken"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
@@ -9562,6 +9654,9 @@
       ],
       "Coming soon": [
         "Binnenkort beschikbaar"
+      ],
+      "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
+        "Voltooi het aanmelden op dit apparaat om ${ VPN_APP_NAME } op uw tv te gebruiken."
       ],
       "Compromised": [
         "Gecompromitteerd"
@@ -9627,6 +9722,9 @@
       "Create a secure cloud for ${ value } member": [
         "Maak een beveiligde cloud voor ${ value } lid",
         "Maak een beveiligde cloud voor ${ value } leden"
+      ],
+      "Create an account": [
+        "Maak een account aan"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Creëer en beheer sub-accounts en wijs aan deze sub-accounts e-mailadressen van uw eigen domein toe."
@@ -10048,11 +10146,17 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Voor gebruikers die overschakelen naar ${ MAIL_APP_NAME } vanuit een andere e-maildienst, selecteer het tabblad ${ boldAddresses } en voeg alle actieve e-mailadressen toe voordat u het MX-record wijzigt om te zorgen voor een soepele overgang."
       ],
+      "Forwarding automatically sends new incoming emails to your Inbox.": [
+        "Doorsturen stuurt nieuwe inkomende e-mails automatisch naar uw inbox."
+      ],
       "Free forever": [
         "Altijd gratis"
       ],
       "Free trial": [
         "Gratis proefversie"
+      ],
+      "Free up space or upgrade your storage to continue.": [
+        "Maak ruimte vrij of upgrade uw opslag om door te gaan."
       ],
       "Friends and family": [
         "Vrienden en familie"
@@ -10150,6 +10254,9 @@
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Indien uitgeschakeld, kunnen leden van de organisatie alleen kluizen of items binnen de organisatie delen."
       ],
+      "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
+        "Als dit is uitgeschakeld, kunnen leden van de organisatie geen nieuw aliassen aanmaken. Bestaande aliassen blijven actief."
+      ],
       "If disabled, organization members won't be able to create secure links. Previously active secure links remain valid until their expiration.": [
         "Indien uitgeschakeld, kunnen leden van de organisatie geen beveiligde koppelingen aanmaken. Eerder actieve beveiligde koppelingen blijven geldig tot hun verloopdatum."
       ],
@@ -10235,11 +10342,18 @@
       "Import from": [
         "Importeren van"
       ],
+      "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
+        "Importeren van ${ accounts } is tijdelijk vertraagd vanwege een bandbreedtelimiet.",
+        "Importeren van ${ accounts } is tijdelijk vertraagd vanwege een bandbreedtelimiet."
+      ],
       "Import in progress": [
         "Bezig met importeren"
       ],
       "Import mailbox": [
         "Mailbox importeren"
+      ],
+      "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
+        "Importeer eenmalige overdrachten van e-mails, agenda’s of contactpersonen naar uw ${ BRAND_NAME } account."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "BELANGRIJK: Als uw DNS-console CNAME waarden niet toestaat te eindigen met een punt, kunt u de laatste stip in de CNAME waarden verwijderen."
@@ -10825,6 +10939,12 @@
       "Please open the document to view it.": [
         "Open het document om het te bekijken."
       ],
+      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
+        "Open de instellingen van uw browser-extensie en sta de ${ PASS_APP_NAME }-extensie toe om websitegegevens te openen. Laad deze pagina vervolgens opnieuw."
+      ],
+      "Please reconnect to continue.": [
+        "Maak opnieuw verbinding om door te gaan."
+      ],
       "Please select the folders you would like to import:": [
         "Selecteer de mappen die u wilt importeren:"
       ],
@@ -11102,6 +11222,9 @@
       "Show original message": [
         "Toon origineel bericht"
       ],
+      "Sign in": [
+        "Inloggen"
+      ],
       "Sign in only": [
         "Alleen inloggen"
       ],
@@ -11159,6 +11282,12 @@
       ],
       "Step ${ step }/${ totalSteps }": [
         "Stap ${ step }/${ totalSteps }"
+      ],
+      "Step 1 of 2": [
+        "Stap 1 van 2"
+      ],
+      "Step 2 of 2": [
+        "Stap 2 van 2"
       ],
       "Storage allocated to other users in this organisation": [
         "Opslagruimte toegewezen aan andere gebruikers binnen deze organisatie"
@@ -11250,6 +11379,9 @@
       ],
       "Thanks for the feedback!": [
         "Bedankt voor de feedback!"
+      ],
+      "The ${ bandwidthLimitLink } was reached. We'll automatically resume it once it resets.": [
+        "Het ${ bandwidthLimitLink } is bereikt. We zullen deze automatisch hervatten zodra deze is gereset."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Het ${ boldDataLocked } bericht wordt niet meer weergegeven, maar u kan nog steeds uw gegevens ontgrendelen via ${ encryptionAndKeysLink }."
@@ -11697,6 +11829,9 @@
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Controleer uw identiteit met een tijdgebonden eenmalig wachtwoord van een authenticator app"
+      ],
+      "Verifying ${ PASS_APP_NAME } browser extension...": [
+        "De ${ PASS_APP_NAME } browser-extensie verifiëren..."
       ],
       "Verifying your payment": [
         "Verifiëren van uw betaling"
@@ -12158,6 +12293,9 @@
       ],
       "Your account has been successfully updated.": [
         "Uw account is succesvol bijgewerkt."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Uw account is momenteel geconfigureerd om het omgekeerde btw-tarief toe te passen. Dit wordt niet ondersteund voor het geselecteerde abonnement. Om door te gaan, verwijdt u het btw-nummer van het factuuradres of selecteert u een ander abonnement."
       ],
       "Your account was successfully updated with this promotion": [
         "Uw account werd succesvol bijgewerkt met deze promotie."
@@ -12960,6 +13098,9 @@
       "Allow": [
         "Geautoriseerde adressen"
       ],
+      "Allow alias creation": [
+        "Sta alias aanmaak toe"
+      ],
       "Allow all users to create vaults": [
         "Alle gebruikers toestaan kluizen te maken"
       ],
@@ -13568,6 +13709,9 @@
       ],
       "Import interval": [
         "Interval importeren"
+      ],
+      "Import recent mails": [
+        "Importeer recente e-mails"
       ],
       "Import to email address": [
         "Importeren naar e-mailadres"
@@ -15174,6 +15318,15 @@
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } Account"
       ],
+      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
+        "Een simpele stap vandaag om de digitale veiligheid van uw kind morgen te waarborgen. Reserveer een privé ${ BRAND_NAME } e-mailadres voor uw kind."
+      ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Activeer het privé ${ BRAND_NAME } e-mailadres dat voor uw kind is gereserveerd en stel hun account in."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Activeer het ${ BRAND_NAME } account van uw kind | ${ BRAND_NAME }"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Maak een ${ BRAND_NAME }-account om alle geëncrypteerde ${ BRAND_NAME } diensten te gebruiken zoals ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer, met een login. Krijg een Gratis ${ BRAND_NAME }-account."
       ],
@@ -15197,6 +15350,15 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Bent u uw ${ BRAND_NAME } account gebruikersnaam vergeten? Vind deze met uw herstel e-mailadres of telefoonnummer en krijg weer toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en meer."
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "Herstel de toegang tot het privé ${ BRAND_NAME } e-mailadres dat voor uw kind is gereserveerd."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Herstel het ${ BRAND_NAME } account van uw kind | ${ BRAND_NAME }"
+      ],
+      "Reserve your child's private email | ${ BRAND_NAME }": [
+        "Reserveer de privé-e-mail van uw kind | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Reset uw ${ BRAND_NAME } accountwachtwoord"
@@ -18061,6 +18223,9 @@
       "VAT number": [
         "BTW-nummer"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Omgekeerde btw mechanisme is van toepassing"
+      ],
       "You already have a subscription to this plan.": [
         "U bent reeds geabonneerd op dit abonnement."
       ],
@@ -18705,7 +18870,7 @@
         "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Verleng uw abonnement en sla ${ discountPercent }% op!"
+        "Verleng uw abonnement en bespaar ${ discountPercent }%!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Volledige toegang tot ${ VPN_APP_NAME }"
@@ -18729,7 +18894,7 @@
         "Krachtigere bescherming tegen cyberdreigingen"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Stap over op ons jaarabonnement en sla ${ toYearlyDiscountAmount } op!"
+        "Stap over op ons jaarabonnement en bespaar ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Onbeperkt aantal dagelijkse gesprekken"
@@ -22438,6 +22603,9 @@
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
+      "${ PASS_APP_NAME } is missing permissions": [
+        "${ PASS_APP_NAME } mist permissies"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor Rapport"
       ],
@@ -22709,6 +22877,9 @@
       "Check your default mail application": [
         "Controleer uw standaard e-mailapplicatie."
       ],
+      "Choose a provider": [
+        "Kies een provider"
+      ],
       "Choose an account": [
         "Een account selecteren"
       ],
@@ -22835,6 +23006,9 @@
       ],
       "Currency": [
         "Valuta"
+      ],
+      "Custom": [
+        "Aangepast"
       ],
       "Custom domains:": [
         "Aangepaste domeinen:"
@@ -23171,6 +23345,9 @@
       "Forward emails": [
         "Stuur e-mails door"
       ],
+      "Forwardings": [
+        "Doorsturen"
+      ],
       "Free": [
         "Gratis"
       ],
@@ -23306,6 +23483,12 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importeren via ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importeer uw gegevens naar ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Importeren"
       ],
       "Inactive 2FA": [
         "Inactieve 2FA"
@@ -23637,6 +23820,9 @@
       "Reused passwords": [
         "Hergebruikte wachtwoorden"
       ],
+      "Reverse charge not supported": [
+        "Omgekeerde btw niet ondersteund"
+      ],
       "Revoke certificate?": [
         "Certificaat intrekken?"
       ],
@@ -23678,6 +23864,9 @@
       ],
       "Select contact group": [
         "Contactgroep selecteren"
+      ],
+      "Select data to import": [
+        "Selecteer gegevens om te importeren"
       ],
       "Select the time to send this notification": [
         "Selecteer de tijd om deze melding te verzenden"
@@ -23753,6 +23942,9 @@
       ],
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"
+      ],
+      "Sign in on TV": [
+        "Inloggen op tv"
       ],
       "Sign in to join the Beta program": [
         "Log in om deel te nemen aan het Bèta programma"
@@ -25157,6 +25349,12 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Door dit telefoonnummer te verwijderen, kunt u uw account niet meer herstellen."
       ],
+      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
+        "Kan niet inloggen. Open de ${ PASS_APP_NAME } browser-extensie en log daar in."
+      ],
+      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
+        "Kan niet registreren. Open de ${ PASS_APP_NAME } browser-extensie en registreer u van daaruit."
+      ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Als u deze import annuleert, zult u niet in staat zijn om deze te hervatten. ${ BRAND_NAME } heeft alle voortgang in uw account opgeslagen. Toch annuleren?"
       ],
@@ -25216,6 +25414,9 @@
       ],
       "You will lose any customization you made so far.": [
         "U verliest elke aanpassing die u tot nu toe hebt gemaakt."
+      ],
+      "You will not see this import record in the list anymore.": [
+        "Dit importrecord ziet u niet meer in de lijst."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Uw gratis proefversie eindigt op ${ textDate }. ${ action }"

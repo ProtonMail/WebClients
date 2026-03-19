@@ -1656,9 +1656,6 @@
       "Disabling auto-lock failed": [
         "Az automatikus zárolás letiltása sikertelen"
       ],
-      "Disabling offline mode...": [
-        "Offline üzemmód letiltása..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "A DNS-változások frissítéséhez az átfutási idő akár 24 óra is lehet."
       ],
@@ -1961,14 +1958,11 @@
       "Not recommended": [
         "Nem ajánlott"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Az offline mód jelenleg nem kapcsolható ki"
+      "Offline mode": [
+        "Kapcsolat nélküli mód"
       ],
       "Offline mode could not be enabled at the moment": [
         "Az offline mód jelenleg nem kapcsolható be"
-      ],
-      "Offline support successfully disabled": [
-        "Offline támogatás kikapcsolva"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "A ${ PASS_APP_NAME } alkalmazáshoz való online hozzáféréshez PIN kód szükséges. 3 sikertelen próbálkozás után ki lesz jelentkeztetve."
@@ -2019,6 +2013,9 @@
       "Please check your spam folder or try resending the code.": [
         "Kérjük, ellenőrizze a levélszemét mappát, vagy próbálja meg újra elküldeni a kódot."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Erősítse meg a(z) ${ BRAND_NAME } jelszavát az offline mód engedélyezéséhez"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Kérjük, erősítse meg a ${ BRAND_NAME } jelszavát, hogy exportálni tudja a ${ PASS_APP_NAME } adatokat."
       ],
@@ -2030,6 +2027,9 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Kérjük, erősítse meg a biztonsági mentés jelszavát a jelszóval történő automatikus lezáráshoz."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "A biztonsági mentési jelszava megadásával engedélyezheti az offline módot"
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
         "A biztonsági mentési jelszava megadásával exportálhatja a(z) ${ PASS_APP_NAME } adatait"
@@ -2048,6 +2048,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Kérjük, erősítse meg az extra jelszavát az extra jelszavával történő automatikus lezáráshoz."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Erősítse meg az extra jelszót az offline mód engedélyezéséhez"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Az extra jelszava megadásával exportálhatja az Ön ${ PASS_APP_NAME } adatait"
@@ -2087,6 +2090,9 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Kérjük, erősítse meg a második jelszavát a jelszóval történő automatikus lezáráshoz."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "A második jelszava megadásával engedélyezheti az offline módot"
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "A második jelszava megadásával exportálhatja az Ön ${ PASS_APP_NAME } adatait"
@@ -2141,6 +2147,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Személyes adatok gyors kitöltése."
+      ],
+      "Reconnect": [
+        "Újrakapcsolódás"
+      ],
+      "Reconnecting": [
+        "Újracsatlakozás"
       ],
       "Record: CNAME": [
         "Rekord: CNAME"
@@ -2913,6 +2925,9 @@
       "Empty trash": [
         "Lomtár kiürítése"
       ],
+      "Enable offline access": [
+        "Offline hozzáférés engedélyezése"
+      ],
       "Enter email or username": [
         "E-mail cím vagy felhasználónév"
       ],
@@ -3227,6 +3242,9 @@
       ],
       "Notes": [
         "Jegyzetek"
+      ],
+      "Offline mode": [
+        "Kapcsolat nélküli mód"
       ],
       "Old-New": [
         "Régiek elől"
@@ -4863,6 +4881,9 @@
       ],
       "Title is required": [
         "A cím megadása kötelező"
+      ],
+      "Too many attempts": [
+        "Túl sok próbálkozás"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Átadja a tároló tulajdonjogát a következőnek: ${ email }?"

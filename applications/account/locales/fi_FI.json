@@ -4271,9 +4271,6 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Lajittele saapuvat viestisi automaattisesti, ennen kuin ne saapuvat postilaatikkoosi."
       ],
-      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
-        "Valitse palvelu, jonka haluat tuoda ${ MAIL_APP_NAME }-sovellukseen, niin opastamme sinua osoitteen yhdistämisessä tai sähköpostien, kalentereiden tai yhteystietojen tuonnissa."
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Määritä tämä ensin aktivoidaksesi organisaatiosi ja mukauttaaksesi sähköpostiosoitettasi."
       ],
@@ -4294,6 +4291,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkronoi tiedostot helposti pilveen työpöydältäsi ja käytä niitä mobiililaitteellasi."
+      ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "Siirrä sähköpostit, kalenterimerkinnät ja yhteystiedot helposti edelliseltä palveluntarjoajalta. Valitse kertaluonteinen tuonti tai automaattinen jatkuva synkronointi."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Käytä näitä ominaisuuksia ottamalla ${ PROTON_SENTINEL_NAME } käyttöön"
@@ -5885,6 +5885,9 @@
       ],
       "Tab closed": [
         "Välilehti suljettiin"
+      ],
+      "The address is already activated": [
+        "Osoite on jo aktivoitu"
       ],
       "The address might be misspelled": [
         "Osoite on ehkä kirjoitettu väärin"
@@ -8412,6 +8415,9 @@
       "Coming soon": [
         "Tulossa pian"
       ],
+      "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
+        "Kirjaudu sisään tällä laitteella, jotta voit alkaa käyttää ${ VPN_APP_NAME } -sovellusta televisiossasi."
+      ],
       "Compromised": [
         "Vaarantunut"
       ],
@@ -8476,6 +8482,9 @@
       "Create a secure cloud for ${ value } member": [
         "Luo suojattu pilvi ${ value } jäsenelle",
         "Luo suojattu pilvi ${ value } jäsenelle"
+      ],
+      "Create an account": [
+        "Luo tili"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Luo ja hallinnoi alitilejä ja määritä niille omaa verkkotunnustasi käyttävät sähköpostiosoitteet."
@@ -9798,6 +9807,9 @@
       ],
       "Show original message": [
         "Näytä alkuperäinen viesti"
+      ],
+      "Sign in": [
+        "Kirjaudu"
       ],
       "Sign in only": [
         "Vain sisäänkirjautuminen"
@@ -13413,6 +13425,9 @@
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-tili"
       ],
+      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
+        "Yksi helppo askel tänään varmistaa lapsesi digitaalisen turvallisuuden huomenna. Varaa lapsellesi oma ${ BRAND_NAME } -sähköpostiosoite."
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Luo ${ BRAND_NAME } -tili käyttääksesi kaikkia salattuja ${ BRAND_NAME }-palveluja, kuten ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ja muita, vain yhdellä kirjautumisella. Hanki ilmainen ${ BRAND_NAME } -tili."
       ],
@@ -13427,6 +13442,9 @@
       ],
       "Find your ${ BRAND_NAME } Account username": [
         "Löydä ${ BRAND_NAME }-tilisi käyttäjätunnus"
+      ],
+      "Reserve your child's private email | ${ BRAND_NAME }": [
+        "Varaa lapsesi yksityinen sähköposti | ${ BRAND_NAME }"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Kirjaudu sisään ${ BRAND_NAME } -tilillesi käyttääksesi kaikkia salattuja ${ BRAND_NAME }-palveluita, kuten mm. ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }. Eikö sinulla ole tiliä? Luo sellainen ILMAISEKSI."
@@ -16687,7 +16705,7 @@
         "Alennukset perustuvat normaaliin kuukausihintaan. Tilauksesi uusiutuu laskutusjakson päättyessä normaalilla vuosihinnalla."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Pidennä tilaustasi ja tallenna ${ discountPercent } %!"
+        "Pidennä tilaustasi ja säästä ${ discountPercent } %!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Täysi ${ VPN_APP_NAME } -käyttöoikeus"
@@ -16711,7 +16729,7 @@
         "Vahvempi suoja kyberuhkia vastaan"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Vaihda vuositilaukseemme ja tallenna ${ toYearlyDiscountAmount }!"
+        "Vaihda vuositilaukseemme ja säästä ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Rajattomasti päivittäisiä keskusteluja"
@@ -21215,6 +21233,9 @@
       ],
       "Sign in and grant access": [
         "Kirjaudu ja myönnä käyttöoikeus"
+      ],
+      "Sign in on TV": [
+        "Kirjaudu sisään TV:ssä"
       ],
       "Sign in to join the Beta program": [
         "Liity beetaohjelmaan kirjautumalla"

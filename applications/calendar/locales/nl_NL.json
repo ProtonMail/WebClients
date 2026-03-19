@@ -461,6 +461,9 @@
       "Go to the next available appointment": [
         "Ga naar de volgende beschikbare afspraak"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Begrepen"
       ],
@@ -3699,6 +3702,9 @@
       "Invalid code": [
         "Ongeldige code"
       ],
+      "Invalid coupon": [
+        "Ongeldige kortingscode"
+      ],
       "Invalid email address": [
         "Ongeldig e-mailadres"
       ],
@@ -3893,6 +3899,9 @@
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omgekeerde btw-regeling wordt niet ondersteund voor dit abonnement"
+      ],
       "Self invitation not allowed": [
         "Zelf uitnodiging niet toegestaan"
       ],
@@ -3958,6 +3967,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Het minimale donatiebedrag is ${ price }"
       ],
       "The sending key is not valid": [
         "De verzend-sleutel is ongeldig"
@@ -4974,6 +4986,11 @@
         "Selecteer ${ boldExport } om de agenda te exporteren als een ICS-bestand."
       ]
     },
+    "Import provider": {
+      "Advanced import": [
+        "Geavanceerde import"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
@@ -5319,6 +5336,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Kies een abonnement dat het beste bij u past."
+      ],
+      "Choose your service to connect with": [
+        "Kies uw service om verbinding te maken"
       ],
       "Clear data": [
         "Gegevens wissen"
@@ -6410,6 +6430,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Uw account is momenteel geconfigureerd om het omgekeerde btw-tarief toe te passen. Dit wordt niet ondersteund voor het geselecteerde abonnement. Om door te gaan, verwijdt u het btw-nummer van het factuuradres of selecteert u een ander abonnement."
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Uw adres is uitgeschakeld. Een annuleringsmail kan niet worden verzonden naar de deelnemers aan de afspraak. Wilt u alle afspraken in deze serie toch verwijderen?"
@@ -9444,6 +9467,9 @@
       "VAT number": [
         "BTW-nummer"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Omgekeerde btw mechanisme is van toepassing"
+      ],
       "You already have a subscription to this plan.": [
         "U bent reeds geabonneerd op dit abonnement."
       ],
@@ -9911,7 +9937,7 @@
         "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Verleng uw abonnement en sla ${ discountPercent }% op!"
+        "Verleng uw abonnement en bespaar ${ discountPercent }%!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Volledige toegang tot ${ VPN_APP_NAME }"
@@ -9935,7 +9961,7 @@
         "Krachtigere bescherming tegen cyberdreigingen"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Stap over op ons jaarabonnement en sla ${ toYearlyDiscountAmount } op!"
+        "Stap over op ons jaarabonnement en bespaar ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Onbeperkt aantal dagelijkse gesprekken"
@@ -11645,6 +11671,9 @@
       "Change password": [
         "Wachtwoord wijzigen"
       ],
+      "Choose a provider": [
+        "Kies een provider"
+      ],
       "Choose a time": [
         "Kies een tijd"
       ],
@@ -11704,6 +11733,9 @@
       ],
       "Currency": [
         "Valuta"
+      ],
+      "Custom": [
+        "Aangepast"
       ],
       "Customize and confirm": [
         "Aanpassen en bevestigen"
@@ -11900,6 +11932,9 @@
       "Import groups": [
         "Importeer groepen"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importeer uw gegevens naar ${ BRAND_NAME }"
+      ],
       "Information exposed in breach": [
         "Informatie die is blootgesteld bij datalek"
       ],
@@ -12038,6 +12073,9 @@
       "Reshare your calendars": [
         "Uw agenda's opnieuw delen"
       ],
+      "Reverse charge not supported": [
+        "Omgekeerde btw niet ondersteund"
+      ],
       "Save": [
         "Opslaan"
       ],
@@ -12058,6 +12096,9 @@
       ],
       "Select contact group": [
         "Contactgroep selecteren"
+      ],
+      "Select data to import": [
+        "Selecteer gegevens om te importeren"
       ],
       "Select event end date": [
         "Selecteer einddatum afspraak"

@@ -1651,9 +1651,6 @@
       "Disabling auto-lock failed": [
         "No s'ha pogut desactivar el bloqueig automàtic"
       ],
-      "Disabling offline mode...": [
-        "S'està desactivant el mode fora de línia..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "Els canvis de DNS poden trigar fins a 24 hores a actualitzar-se."
       ],
@@ -1967,14 +1964,8 @@
       "Offline mode": [
         "Mode fora de línia"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "El mode fora de línia no s'ha pogut desactivar en aquest moment"
-      ],
       "Offline mode could not be enabled at the moment": [
         "El mode fora de línia no s'ha pogut activar en aquest moment."
-      ],
-      "Offline support successfully disabled": [
-        "S'ha desactivat el mode fora de línia"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "L'accés en línia a ${ PASS_APP_NAME } requerirà un codi PIN. Se us tancarà la sessió després de 3 intents que no han funcionat."
@@ -2480,6 +2471,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Ara podeu usar la contrasenya de ${ BRAND_NAME } per a accedir a ${ PASS_SHORT_APP_NAME } fora de línia"
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Ara podeu utilitzar la vostra contrasenya de recuperació per accedir a ${ PASS_SHORT_APP_NAME } fora de línia"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Ara podeu utilitzar la vostra contrasenya addicional per accedir a ${ PASS_SHORT_APP_NAME } fora de línia"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Ara podeu utilitzar la vostra segona contrasenya per accedir a ${ PASS_SHORT_APP_NAME } fora de línia"
       ],
       "You cannot change the mailboxes for this alias.": [
         "No podeu canviar les bústies de correu per a aquest àlies."

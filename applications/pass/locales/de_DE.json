@@ -1651,9 +1651,6 @@
       "Disabling auto-lock failed": [
         "Deaktivieren der automatischen Sperre fehlgeschlagen"
       ],
-      "Disabling offline mode...": [
-        "Offline-Modus wird deaktiviert..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "Bei DNS-Änderungen kann die Aktualisierung bis zu 24 Stunden dauern."
       ],
@@ -1964,14 +1961,8 @@
       "Offline mode": [
         "Offline-Modus"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Fehler beim Deaktivieren des Offline-Modus."
-      ],
       "Offline mode could not be enabled at the moment": [
         "Fehler beim Aktivieren des Offline-Modus."
-      ],
-      "Offline support successfully disabled": [
-        "Offline-Unterstützung erfolgreich deaktiviert."
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online-Zugang zu ${ PASS_APP_NAME } wird einen PIN-Code benötigen. Du wirst nach 3 falschen Versuchen abgemeldet werden."
@@ -2477,6 +2468,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Du kannst dein ${ BRAND_NAME }-Passwort nun verwenden, um auf ${ PASS_SHORT_APP_NAME } offline zuzugreifen."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kannst jetzt dein Backup-Passwort verwenden, um offline auf ${ PASS_SHORT_APP_NAME } zuzugreifen"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kannst jetzt dein zusätzliches Passwort verwenden, um offline auf ${ PASS_SHORT_APP_NAME } zuzugreifen"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kannst jetzt dein zweites Passwort verwenden, um offline auf ${ PASS_SHORT_APP_NAME } zuzugreifen"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Du kannst die Postfächer für diesen Alias nicht ändern."
