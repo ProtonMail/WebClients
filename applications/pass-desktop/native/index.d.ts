@@ -39,12 +39,12 @@ export declare namespace napi_native_messaging {
 export declare namespace ssh_agent_napi {
     export function getStatus(): Promise<SshAgentStatus>;
     export function removeAllKeys(): Promise<void>;
-    export function setKeys(keys: Array<SshKeyData>): Promise<string>;
+    export function setKeys(keys: Array<SshKeyData>): Promise<void>;
     export interface SshAgentStatus {
         socketPath?: string;
     }
     export function startAgent(
         isUnlockedCallback: (err: Error | null, arg: string | undefined | null) => Promise<boolean>
-    ): Promise<string>;
-    export function stopAgent(): Promise<string>;
+    ): Promise<void>;
+    export function stopAgent(): Promise<void>;
 }
