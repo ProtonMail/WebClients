@@ -1476,9 +1476,6 @@
       "Trust": [
         "信頼する"
       ],
-      "Trust key": [
-        "鍵を信頼する"
-      ],
       "Trust public key": [
         "公開鍵を信頼"
       ],
@@ -7283,7 +7280,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -7377,6 +7374,9 @@
       ],
       "Low Priority": [
         "優先度：低"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME }をデフォルトのメールアプリに設定。"
       ],
       "Manage your folders": [
         "フォルダを管理"
@@ -11823,6 +11823,12 @@
       ],
       "No parent folder": [
         "親フォルダーなし"
+      ],
+      "Remind me later": [
+        "後で通知する"
+      ],
+      "Yes, don't show again": [
+        "次回から表示しない"
       ]
     },
     "Option group": {
@@ -12559,7 +12565,7 @@
         "割引は通常の月額料金を基準に適用されています。サブスクリプションは、請求期間終了後に通常の年額料金で更新されます。"
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "サブスクリプションを延長して、${ discountPercent }%保存しましょう！"
+        "サブスクリプションを延長して、${ discountPercent }%お得に！"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME }へのフルアクセス"
@@ -12583,7 +12589,7 @@
         "サイバー脅威に対するより強力な保護"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "年間プランに切り替えて、${ toYearlyDiscountAmount }を保存しましょう！"
+        "年間プランに切り替えて、${ toYearlyDiscountAmount }お得に！"
       ],
       "Unlimited daily chats": [
         "無制限の毎日のチャット"
@@ -14924,6 +14930,9 @@
       ],
       "Invalid verification code": [
         "無効な検証コードです"
+      ],
+      "Keep this banner hidden?": [
+        "このバナーを非表示にしますか？"
       ],
       "Label as": [
         "ラベル付け"

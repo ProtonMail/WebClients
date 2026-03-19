@@ -1484,8 +1484,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -7458,7 +7457,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7554,7 +7554,7 @@
         "Düşük Öncelik"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız yapın."
+        "${ MAIL_APP_NAME }'i varsayılan e-posta uygulamanız olarak ayarlayın."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -12091,7 +12091,7 @@
         "Daha sonra hatırlat"
       ],
       "Yes, don't show again": [
-        "Evet, bir daha görüntülenmesin"
+        "Evet, bir daha gösterme"
       ]
     },
     "Option group": {
@@ -12848,7 +12848,7 @@
         "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Aboneliğinizi uzatın ve yüzde ${ discountPercent } kaydedin!"
+        "Aboneliğinizi uzatın ve %${ discountPercent } tasarruf edin!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } uygulamasına tam erişim"
@@ -12872,7 +12872,7 @@
         "Siber tehditlere karşı daha güçlü koruma"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Yıllık tarifemize geçin ve ${ toYearlyDiscountAmount } kaydedin!"
+        "Yıllık tarifemize geçin ve ${ toYearlyDiscountAmount } tasarruf edin!"
       ],
       "Unlimited daily chats": [
         "Sınırsız günlük sohbet"
@@ -15311,7 +15311,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Keep this banner hidden?": [
-        "Bu uyarı gizlensin mi?"
+        "Bu başlığı gizli tutmak ister misiniz?"
       ],
       "Label as": [
         "Etiketle"
