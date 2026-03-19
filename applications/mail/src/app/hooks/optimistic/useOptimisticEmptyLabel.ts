@@ -1,4 +1,4 @@
-import { useHandler } from '@proton/components';
+import { useHandler } from '@proton/components/hooks/useHandler';
 import { conversationCountsActions, selectConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { messageCountsActions, selectMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';

@@ -1,7 +1,9 @@
+import NotificationsContainer from '@proton/components/containers/notifications/Container';
+import NotificationsContext from '@proton/components/containers/notifications/notificationsContext';
+import createNotificationManager from '@proton/components/containers/notifications/manager';
+import type { Notification } from '@proton/components/containers/notifications/interfaces';
 import React, { useRef } from 'react';
 
-import { NotificationsContainer, NotificationsContext, createNotificationManager } from '@proton/components';
-import type { Notification } from '@proton/components';
 import noop from '@proton/utils/noop';
 
 import { useLongLivingState } from '../../hooks/useLongLivingState';

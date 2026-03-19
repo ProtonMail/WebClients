@@ -1,16 +1,16 @@
 import { useWelcomeFlags } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
 import { EasySwitchProvider } from '@proton/activation';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import StartupModals from '@proton/components/components/startupModals/StartupModals';
 import {
-    InboxDesktopFreeTrialOnboardingModal,
-    StartupModals,
     useCancellationReminderModal,
     useLightLabellingFeatureModal,
-    useModalState,
+    useNetPromoterScoreModal,
     useTrialEndedModal,
-} from '@proton/components';
-import type { StartupModal } from '@proton/components';
-import { useNetPromoterScoreModal } from '@proton/components/components/startupModals/startupModalHooks';
+} from '@proton/components/components/startupModals/startupModalHooks';
+import type { StartupModal } from '@proton/components/components/startupModals/types';
+import { InboxDesktopFreeTrialOnboardingModal } from '@proton/components/containers/desktop/freeTrial/InboxDesktopFreeTrialOnboardingModal';
 import useInboxFreeTrial from '@proton/components/containers/desktop/freeTrial/useInboxFreeTrial';
 import { NPSApplication } from '@proton/components/containers/netPromoterScore/interface';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';

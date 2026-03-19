@@ -1,11 +1,13 @@
+import type { CustomNotificationProps } from '@proton/components/containers/notifications/interfaces';
+import Icon from '@proton/components/components/icon/Icon';
+import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { CustomNotificationProps } from '@proton/components';
-import { Icon, NotificationButton, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { IcCross } from '@proton/icons/icons/IcCross';
 

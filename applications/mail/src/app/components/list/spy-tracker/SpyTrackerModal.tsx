@@ -1,17 +1,15 @@
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Collapsible from '@proton/components/components/collapsible/Collapsible';
+import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
+import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
+import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import type { ModalProps } from '@proton/components';
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-} from '@proton/components';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import trackersImg from '@proton/styles/assets/img/illustrations/trackers-found.svg';

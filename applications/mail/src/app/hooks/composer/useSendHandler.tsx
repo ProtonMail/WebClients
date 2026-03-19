@@ -1,9 +1,12 @@
+import type { Cancellable } from '@proton/components/hooks/useHandler';
+import { getOnlineStatus } from '@proton/components/hooks/useOnline';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import { useHandler } from '@proton/components/hooks/useHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
-import type { Cancellable } from '@proton/components';
-import { getOnlineStatus, useEventManager, useHandler, useNotifications } from '@proton/components';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { useFlag } from '@proton/unleash/useFlag';
 

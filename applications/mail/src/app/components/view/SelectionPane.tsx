@@ -1,3 +1,4 @@
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import type { PropsWithChildren } from 'react';
 import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -6,7 +7,6 @@ import type { Location } from 'history';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useTheme } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc';

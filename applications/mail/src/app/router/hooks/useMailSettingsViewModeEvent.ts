@@ -1,6 +1,6 @@
+import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { useLocation } from 'react-router-dom';
 
-import { useSubscribeEventManager } from '@proton/components';
 
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 import { params } from 'proton-mail/store/elements/elementsSelectors';

@@ -1,8 +1,10 @@
+import Icon from '@proton/components/components/icon/Icon';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useToggle from '@proton/components/hooks/useToggle';
 import type { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, useActiveBreakpoint, useToggle } from '@proton/components';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';

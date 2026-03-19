@@ -1,6 +1,6 @@
+import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { useRef } from 'react';
 
-import { useSpotlightOnFeature } from '@proton/components';
 import { FeatureCode } from '@proton/features';
 
 import useScheduleSendFeature from './useScheduleSendFeature';

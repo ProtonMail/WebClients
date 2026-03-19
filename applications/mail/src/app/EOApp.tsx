@@ -1,20 +1,18 @@
+import ApiProvider from '@proton/components/containers/api/ApiProvider';
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import { CacheProvider } from '@proton/components/containers/cache/Provider';
+import CompatibilityCheck from '@proton/components/containers/compatibilityCheck/CompatibilityCheck';
+import ConfigProvider from '@proton/components/containers/config/Provider';
+import LoaderPage from '@proton/components/containers/app/LoaderPage';
+import ModalsProvider from '@proton/components/containers/modals/Provider';
+import NotificationsProvider from '@proton/components/containers/notifications/Provider';
+import { PreventLeaveProvider } from '@proton/components/hooks/usePreventLeave';
+import { RightToLeftProvider } from '@proton/components/containers/rightToLeft/Provider';
+import StandardPublicApp from '@proton/components/containers/app/StandardPublicApp';
+import ThemeProvider from '@proton/components/containers/themes/ThemeProvider';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import * as bootstrap from '@proton/account/bootstrap';
-import {
-    ApiProvider,
-    AuthenticationProvider,
-    CacheProvider,
-    CompatibilityCheck,
-    ConfigProvider,
-    LoaderPage,
-    ModalsProvider,
-    NotificationsProvider,
-    PreventLeaveProvider,
-    RightToLeftProvider,
-    StandardPublicApp,
-    ThemeProvider,
-} from '@proton/components';
 import useInstance from '@proton/hooks/useInstance';
 import Icons from '@proton/icons/Icons';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';

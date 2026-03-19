@@ -1,9 +1,9 @@
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { DropdownMenuButton } from '@proton/components';
 import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 import type { Folder } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';

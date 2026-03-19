@@ -1,4 +1,4 @@
-import { useEventManager } from '@proton/components';
+import useEventManager from '@proton/components/hooks/useEventManager';
 
 import type { Event } from '../../models/event';
 

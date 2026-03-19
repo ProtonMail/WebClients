@@ -1,15 +1,13 @@
+import ApiModalsHVUpsell from '@proton/components/containers/api/ApiModalsHVUpsell';
+import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeInjector';
+import KeyTransparencyManager from '@proton/components/containers/keyTransparency/KeyTransparencyManager';
+import ModalsChildren from '@proton/components/containers/modals/Children';
+import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import useConfig from '@proton/components/hooks/useConfig';
 import type { FunctionComponent } from 'react';
 import { useEffect, useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import {
-    ApiModalsHVUpsell,
-    DrawerThemeInjector,
-    KeyTransparencyManager,
-    ModalsChildren,
-    SubscriptionModalProvider,
-    useConfig,
-} from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useInboxDesktopMetrics } from '@proton/components/hooks/useInboxDesktopMetrics';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';

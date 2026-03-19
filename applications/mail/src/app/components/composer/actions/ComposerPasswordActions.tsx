@@ -1,9 +1,9 @@
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { DropdownMenuButton } from '@proton/components';
 import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

@@ -1,6 +1,7 @@
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Label from '@proton/components/components/label/Label';
 import { c } from 'ttag';
 
-import { Checkbox, Label } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 interface Props {

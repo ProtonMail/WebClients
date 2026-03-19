@@ -1,3 +1,6 @@
+import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
@@ -6,7 +9,6 @@ import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import { useApi, useNotifications, useSpotlightOnFeature } from '@proton/components';
 import useAssistantSubscriptionStatus, {
     ASSISTANT_TRIAL_TIME_DAYS,
 } from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';

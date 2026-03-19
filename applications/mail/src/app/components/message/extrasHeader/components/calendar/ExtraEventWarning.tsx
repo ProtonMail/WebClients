@@ -1,6 +1,6 @@
+import Alert from '@proton/components/components/alert/Alert';
 import { c } from 'ttag';
 
-import { Alert } from '@proton/components';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';

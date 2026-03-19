@@ -1,9 +1,11 @@
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { type ModalProps, Prompt, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';

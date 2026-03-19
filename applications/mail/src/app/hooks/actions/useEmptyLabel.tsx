@@ -1,6 +1,8 @@
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { useCallback, useMemo, useState } from 'react';
 
-import { useApi, useEventManager, useModalTwo } from '@proton/components';
 import { isCustomLabel } from '@proton/mail/helpers/location';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { emptyLabel as emptyLabelRequest } from '@proton/shared/lib/api/messages';

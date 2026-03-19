@@ -1,16 +1,15 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { Input } from '@proton/atoms/Input/Input';
-import type { AddressesAutocompleteItem } from '@proton/components';
+import type { AddressesAutocompleteItem } from '@proton/components/components/addressesAutocomplete/helper';
 import {
-    AutocompleteList,
-    Marks,
-    Option,
     getContactsAutocompleteItems,
     getRecipientFromAutocompleteItem,
-    useAutocomplete,
-    useAutocompleteFilter,
-} from '@proton/components';
+} from '@proton/components/components/addressesAutocomplete/helper';
+import AutocompleteList from '@proton/components/components/autocomplete/AutocompleteList';
+import { useAutocomplete, useAutocompleteFilter } from '@proton/components/components/autocomplete/useAutocomplete';
+import Option from '@proton/components/components/option/Option';
+import Marks from '@proton/components/components/text/Marks';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 
 interface Props {

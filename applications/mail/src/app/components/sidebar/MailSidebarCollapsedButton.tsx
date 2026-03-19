@@ -1,9 +1,10 @@
+import Icon from '@proton/components/components/icon/Icon';
+import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
 import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon, SidebarListItem } from '@proton/components';
 import { isCustomFolder, isCustomLabel } from '@proton/mail/helpers/location';
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';

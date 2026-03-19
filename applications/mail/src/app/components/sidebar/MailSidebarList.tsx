@@ -1,11 +1,14 @@
+import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
+import SidebarList from '@proton/components/components/sidebar/SidebarList';
+import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
+import { useHotkeys } from '@proton/components/hooks/useHotkeys';
+import useLocalState from '@proton/components/hooks/useLocalState';
 import type { ReactNode } from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import type { HotkeyTuple } from '@proton/components';
-import { SidebarList, SimpleSidebarListItemHeader, useHotkeys, useLocalState } from '@proton/components';
 import { useFolders, useLabels, useSystemFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

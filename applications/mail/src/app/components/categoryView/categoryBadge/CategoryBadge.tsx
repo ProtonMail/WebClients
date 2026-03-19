@@ -5,19 +5,17 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import {
-    Badge,
-    Dropdown,
-    DropdownMenu,
-    DropdownMenuButton,
-    Icon,
-    Spotlight,
-    useApi,
-    useEventManager,
-    useNotifications,
-    usePopperAnchor,
-    useTheme,
-} from '@proton/components';
+import { Badge } from '@proton/components/components/badge/Badge';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import Icon from '@proton/components/components/icon/Icon';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import Spotlight from '@proton/components/components/spotlight/Spotlight';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';

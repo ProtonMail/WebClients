@@ -1,9 +1,11 @@
+import Checkbox from '@proton/components/components/input/Checkbox';
+import type { GroupWithContacts } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import Label from '@proton/components/components/label/Label';
 import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Checkbox, type GroupWithContacts, Label } from '@proton/components';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';

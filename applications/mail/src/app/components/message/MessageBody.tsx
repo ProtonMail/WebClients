@@ -1,7 +1,7 @@
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import type { RefObject } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-import { useTheme } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import MessageBodyIframe from '@proton/mail-renderer/components/MessageBodyIframe';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

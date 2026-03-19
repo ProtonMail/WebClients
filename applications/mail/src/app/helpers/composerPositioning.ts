@@ -1,4 +1,4 @@
-import { getCustomSizingClasses } from '@proton/components';
+import { getCustomSizingClasses } from '@proton/components/helpers/getCustomSizingClasses';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 export const MAX_ACTIVE_COMPOSER_LARGE_SCREEN = 3;

@@ -72,19 +72,27 @@ jest.mock('proton-mail/hooks/actions/useCreateFilters', () => ({
 
 const mockedCreateNotification = jest.fn();
 const mockedRemoveNotification = jest.fn();
-const mockedUseApi = jest.fn();
-const mockedCall = jest.fn();
 
-jest.mock('@proton/components', () => {
-    return {
-        useNotifications: jest.fn(() => ({
-            createNotification: mockedCreateNotification,
-            removeNotification: mockedRemoveNotification,
-        })),
-        useApi: jest.fn(() => mockedUseApi),
-        useEventManager: jest.fn(() => ({ call: mockedCall })),
-    };
-});
+jest.mock('@proton/components/hooks/useNotifications', () => ({
+    __esModule: true,
+    default: jest.fn(() => ({
+        createNotification: mockedCreateNotification,
+        removeNotification: mockedRemoveNotification,
+    })),
+}));
+
+jest.mock('@proton/components/hooks/useApi', () => ({
+    __esModule: true,
+    default: jest.fn(() => jest.fn()),
+}));
+
+jest.mock('@proton/components/hooks/useEventManager', () => ({
+    __esModule: true,
+    default: jest.fn(() => ({
+        call: jest.fn(),
+        subscribe: jest.fn(),
+    })),
+}));
 
 jest.mock('@proton/hooks/useLoading', () => {
     return jest.fn(() => [false, jest.fn()]);

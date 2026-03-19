@@ -1,3 +1,6 @@
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
@@ -6,7 +9,6 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Dropdown, DropdownMenuButton, usePopperAnchor } from '@proton/components';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';

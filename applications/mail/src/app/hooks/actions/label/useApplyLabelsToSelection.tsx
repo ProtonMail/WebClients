@@ -1,6 +1,8 @@
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { c } from 'ttag';
 
-import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useGetLabels } from '@proton/mail/store/labels/hooks';
 import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';

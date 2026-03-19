@@ -1,9 +1,12 @@
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import Spotlight from '@proton/components/components/spotlight/Spotlight';
+import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
+import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import type { ReactElement, RefObject } from 'react';
 
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { SettingsLink, Spotlight, useSpotlightOnFeature, useSpotlightShow } from '@proton/components';
 import { FeatureCode } from '@proton/features';
 import { APPS, MONTH } from '@proton/shared/lib/constants';
 import loadContentImg from '@proton/styles/assets/img/illustrations/spotlight-load-content.svg';
