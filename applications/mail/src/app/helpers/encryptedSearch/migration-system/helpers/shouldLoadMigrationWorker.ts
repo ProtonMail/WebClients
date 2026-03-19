@@ -15,8 +15,12 @@ export const shouldLoadMigrationWorker = async (user: UserModel) => {
         return false;
     }
 
-    const isAllMigrated = await isAllContentUpToDate(esDB);
-    esDB.close();
+    let isAllMigrated = false;
+    try {
+        isAllMigrated = await isAllContentUpToDate(esDB);
+    } finally {
+        esDB.close();
+    }
 
     return !isAllMigrated;
 };

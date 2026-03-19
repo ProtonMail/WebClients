@@ -1,7 +1,7 @@
 import type { IDBPDatabase } from 'idb';
 
 import { ciphertextSize, serializeAndEncryptItem } from '@proton/encrypted-search/esHelpers';
-import type { EncryptedSearchDB } from '@proton/encrypted-search/models';
+import type { ESCiphertext, EncryptedSearchDB } from '@proton/encrypted-search/models';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import type { PreparedMessageContent } from '../interface';
@@ -11,6 +11,27 @@ interface EncryptAndWriteProps {
     indexKey: CryptoKey;
     items: PreparedMessageContent[];
 }
+
+const isContentTheSame = (before: ESCiphertext | undefined, after: ESCiphertext | undefined): boolean => {
+    const sizeBefore = ciphertextSize(before);
+    const sizeAfter = ciphertextSize(after);
+
+    // Compare the size of the stored item with the original size to avoid overwriting updated data
+    if (sizeBefore !== sizeAfter || !after?.ciphertext) {
+        return false;
+    }
+
+    const cipherBefore = new Uint8Array(before?.ciphertext ?? []);
+    const cipherAfter = new Uint8Array(after.ciphertext);
+
+    for (let i = 0; i < cipherBefore.length; i++) {
+        if (cipherBefore[i] !== cipherAfter[i]) {
+            return false;
+        }
+    }
+
+    return true;
+};
 
 /**
  * Update an existing item content and metadata to the encrypted search database
@@ -41,20 +62,9 @@ export const encryptAndWriteESItems = async ({ esDB, indexKey, items }: EncryptA
     encryptedItems.forEach(async (data) => {
         const storeItem = await tx.objectStore('content').get(data.id);
 
-        const storeItemSize = ciphertextSize(storeItem);
-        const originalSize = ciphertextSize(data.original);
-        // Compare the size of the stored item with the original size to avoid overwriting updated data
-        if (storeItemSize !== originalSize || !storeItem?.ciphertext) {
+        const isSimilar = isContentTheSame(data.original, storeItem);
+        if (!isSimilar) {
             return;
-        }
-
-        const cipher1 = new Uint8Array(storeItem.ciphertext);
-        const cipher2 = new Uint8Array(data.original.ciphertext);
-
-        for (let i = 0; i < cipher1.byteLength; i++) {
-            if (cipher1[i] !== cipher2[i]) {
-                return;
-            }
         }
 
         void tx.objectStore('content').put(data.encryptedContent, data.id);
