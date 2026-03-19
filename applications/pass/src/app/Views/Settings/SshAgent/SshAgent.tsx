@@ -8,8 +8,9 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { InfoButton } from '@proton/pass/components/Layout/Button/InfoButton';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
+import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';
 import { selectVisibleNonTrashedSshKeyItems } from '@proton/pass/store/selectors/items';
-import type { Maybe } from '@proton/pass/types';
+import { type Maybe, SpotlightMessage } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -20,11 +21,11 @@ export const SshAgent: FC = DESKTOP_BUILD
     ? () => {
           const { createNotification } = useNotifications();
           const sshKeys = useSelector(selectVisibleNonTrashedSshKeyItems);
+          const instructionsSpotlight = useSpotlightFor(SpotlightMessage.SSH_AGENT_INSTRUCTIONS);
 
           const [socketPath, setSocketPath] = useState<Maybe<string>>(undefined);
-          const [modal, setModal] = useState<{ show: boolean; hideFooter: boolean }>({
+          const [modal, setModal] = useState<{ show: true; hideFooter: boolean } | { show: false }>({
               show: false,
-              hideFooter: false,
           });
 
           const enabled = Boolean(socketPath);
@@ -84,17 +85,24 @@ export const SshAgent: FC = DESKTOP_BUILD
               } else {
                   await handleStartAgent();
                   await setSshAgentSettingEnabled(true);
-                  setModal({ show: true, hideFooter: false });
+                  if (instructionsSpotlight.open) {
+                      setModal({ show: true, hideFooter: false });
+                  }
               }
           };
 
           const handleModalCancel = async () => {
-              setModal({ show: false, hideFooter: false });
+              setModal({ show: false });
               await handleStopAgent();
               await setSshAgentSettingEnabled(false);
           };
 
-          const handleModalClose = () => setModal({ show: false, hideFooter: false });
+          const handleModalClose = () => setModal({ show: false });
+
+          const handleModalDone = (dontShowAgain?: boolean) => {
+              handleModalClose();
+              if (dontShowAgain) instructionsSpotlight.close();
+          };
 
           const handleInfoClick = () => setModal({ show: true, hideFooter: true });
 
@@ -130,6 +138,7 @@ export const SshAgent: FC = DESKTOP_BUILD
                               socketPath={socketPath}
                               onClose={handleModalClose}
                               onCancel={handleModalCancel}
+                              onDone={handleModalDone}
                               hideFooter={modal.hideFooter}
                           />
                       )}
