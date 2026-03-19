@@ -11,7 +11,6 @@ import { SketchOverlay } from '../../features/drawingcanvas';
 import type { DriveSDKMethods } from '../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../hooks/useDriveSDK';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
-import { useTierErrors } from '../../hooks/useTierErrors';
 import useTipTapEditor from '../../hooks/useTipTapEditor';
 import { useDragArea } from '../../providers/DragAreaProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
@@ -96,7 +95,6 @@ const ComposerComponentInner = ({
 }: ComposerComponentInnerProps) => {
     const { isDragging: isDraggingOverScreen } = useDragArea();
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
-    const { hasTierErrors } = useTierErrors();
     const { isWebSearchButtonToggled } = useWebSearch();
     const hasAttachments = provisionalAttachments.length > 0;
     const composerContainerRef = useRef<HTMLElement | null>(null);
@@ -118,9 +116,25 @@ const ComposerComponentInner = ({
                 return;
             }
 
+            // if (!editor?.isEmpty) {
+            //     const markdown = editor?.storage.markdown.getMarkdown();
+            //     if (!markdown) return;
+            //     editor?.commands.clearContent();
+            //     await handleSendMessage(markdown, isWebSearchButtonToggled);
+            // }
+
             if (!editor?.isEmpty) {
-                const markdown = editor?.storage.markdown.getMarkdown();
-                if (!markdown) return;
+                // Get content as HTML, then convert to markdown
+                const html = editor?.getHTML();
+
+                if (!html) {
+                    return;
+                }
+
+                // Convert HTML to markdown
+                const { htmlToMarkdown } = await import('../../util/htmlToMarkdown');
+                const markdown = htmlToMarkdown(html);
+
                 editor?.commands.clearContent();
                 await handleSendMessage(markdown, isWebSearchButtonToggled);
             }
@@ -186,9 +200,9 @@ const ComposerComponentInner = ({
         }
     }, [handleFileProcessing]);
 
-    const { editor, handleSubmit } = useTipTapEditor({
+    const { editor, handleSubmit, pasteCodeModal } = useTipTapEditor({
         onSubmitCallback: sendGenerateMessage,
-        hasTierErrors,
+        // hasTierErrors,
         isGenerating,
         isProcessingAttachment,
         isAutocompleteActiveRef: isAutocompleteActiveRef,
@@ -278,6 +292,8 @@ const ComposerComponentInner = ({
             {fileToView && (
                 <FileContentModal attachment={fileToView} onClose={() => setFileToView(null)} open={!!fileToView} />
             )}
+
+            {pasteCodeModal}
 
             <SketchOverlay
                 isOpen={showDrawingModal}
