@@ -25,11 +25,33 @@ export class VideoHandler extends BaseHandler {
         originalMimeType: string,
         debug: boolean = false
     ): Promise<ThumbnailGenerationResult> {
+        if (await this.isHevcCodec(content)) {
+            throw new UnsupportedFormatError('HEVC codec not supported for thumbnail generation', {
+                context: {
+                    stage: 'codec detection',
+                    fileSize,
+                    mimeType: content.type,
+                },
+            });
+        }
+
         if (isIosDevice && fileSize > MAX_VIDEO_SIZE_FOR_THUMBNAIL_IOS) {
             throw new UnsupportedFormatError('large video on iOS Safari', {
                 context: {
                     stage: 'video size check',
-                    fileSize: fileSize,
+                    fileSize,
+                    mimeType: content.type,
+                },
+            });
+        }
+
+        const testVideo = document.createElement('video');
+        const canPlay = testVideo.canPlayType(originalMimeType);
+        if (canPlay === '') {
+            throw new UnsupportedFormatError('video format not supported by browser', {
+                context: {
+                    stage: 'canPlayType check',
+                    originalMimeType,
                     mimeType: content.type,
                 },
             });
@@ -77,6 +99,53 @@ export class VideoHandler extends BaseHandler {
         } finally {
             URL.revokeObjectURL(img.src);
         }
+    }
+
+    // HEVC/H.265 is the only common codec that causes browsers to hang during
+    // thumbnail generation. Browsers report canPlayType('video/mp4') as supported
+    // (based on the container), but silently fail or hang when decoding HEVC frames.
+    // We detect it by scanning the file header for codec identifiers rather than
+    // relying on canPlayType which cannot distinguish codecs within a container.
+    private async isHevcCodec(content: Blob): Promise<boolean> {
+        const HEADER_SIZE = 64 * 1024;
+        const slice = content.slice(0, Math.min(HEADER_SIZE, content.size));
+        const buffer = new Uint8Array(await new Response(slice).arrayBuffer());
+
+        // MP4/MOV: look for 'hev1' or 'hvc1' box type (HEVC codec identifiers)
+        const hev1 = [0x68, 0x65, 0x76, 0x31]; // 'hev1'
+        const hvc1 = [0x68, 0x76, 0x63, 0x31]; // 'hvc1'
+
+        for (let i = 0; i <= buffer.length - 4; i++) {
+            if (
+                (buffer[i] === hev1[0] &&
+                    buffer[i + 1] === hev1[1] &&
+                    buffer[i + 2] === hev1[2] &&
+                    buffer[i + 3] === hev1[3]) ||
+                (buffer[i] === hvc1[0] &&
+                    buffer[i + 1] === hvc1[1] &&
+                    buffer[i + 2] === hvc1[2] &&
+                    buffer[i + 3] === hvc1[3])
+            ) {
+                return true;
+            }
+        }
+
+        // MKV/WebM: look for codec ID string 'V_MPEGH/ISO/HEVC'
+        const hevcMkv = new TextEncoder().encode('V_MPEGH/ISO/HEVC');
+        for (let i = 0; i <= buffer.length - hevcMkv.length; i++) {
+            let match = true;
+            for (let j = 0; j < hevcMkv.length; j++) {
+                if (buffer[i + j] !== hevcMkv[j]) {
+                    match = false;
+                    break;
+                }
+            }
+            if (match) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private extractVideoFrame(content: Blob): Promise<{
@@ -158,6 +227,7 @@ export class VideoHandler extends BaseHandler {
                             // Draw video frame to canvas
                             context.drawImage(video, 0, 0, canvas.width, canvas.height);
                             const img = await getImageFromCanvas(canvas);
+                            cleanup(listeners);
                             resolve({
                                 img,
                                 videoDimensions: { width: video.videoWidth, height: video.videoHeight },

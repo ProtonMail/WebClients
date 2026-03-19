@@ -4,7 +4,7 @@ import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
 import { HandlerRegistry, ThumbnailProcessor } from './handlerRegistry';
 import type { GenericHandler } from './handlers/interfaces';
-import { NoHandlerError } from './thumbnailError';
+import { NoHandlerError, ThumbnailTimeoutError } from './thumbnailError';
 
 const createMockHandler = (canHandle: boolean, handlerName: string = 'MockHandler'): GenericHandler => {
     return {
@@ -129,6 +129,35 @@ describe('ThumbnailProcessor', () => {
 
         expect(result.performance).toBeDefined();
         expect(result.performance).toEqual({ generationTime: '10ms' });
+    });
+
+    it('should throw ThumbnailTimeoutError when handler exceeds global timeout', async () => {
+        jest.useFakeTimers();
+
+        const handler: GenericHandler = {
+            handlerName: 'SlowHandler',
+            canHandle: jest.fn().mockReturnValue(true),
+            generate: jest.fn().mockReturnValue(new Promise(() => {})),
+        };
+        const registry = createEmptyRegistry();
+        registry.registerHandler(handler);
+
+        const processor = new ThumbnailProcessor(registry);
+        const blob = new Blob(['test'], { type: 'image/jpeg' });
+
+        const promise = processor
+            .process(blob, 'test.jpg', blob.size, SupportedMimeTypes.webp, [ThumbnailType.Type1], false, 'image/jpeg')
+            .catch((error: unknown) => {
+                return error;
+            });
+
+        await jest.advanceTimersByTimeAsync(10_000);
+
+        const error = await promise;
+        expect(error).toBeInstanceOf(ThumbnailTimeoutError);
+        expect((error as ThumbnailTimeoutError).context.stage).toBe('global generation timeout');
+
+        jest.useRealTimers();
     });
 
     it('should not include performance data when debug disabled', async () => {
