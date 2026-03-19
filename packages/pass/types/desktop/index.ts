@@ -56,8 +56,11 @@ export type ContextBridgeApi = {
 
     startSshAgent: () => Promise<string>;
     stopSshAgent: () => Promise<string>;
-    sendSshKeyItems: (items: ItemRevision<'sshKey'>[]) => Promise<string>;
+    setSshKeyItems: (items: ItemRevision<'sshKey'>[]) => Promise<string>;
+    removeAllSshKeys: () => Promise<void>;
     getSshAgentStatus: () => Promise<{ socketPath?: string }>;
+    getSshAgentSettingEnabled: () => Promise<boolean>;
+    setSshAgentSettingEnabled: (enabled: boolean) => Promise<void>;
 };
 
 export type DesktopTheme = 'dark' | 'light' | 'system';

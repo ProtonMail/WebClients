@@ -155,12 +155,21 @@ pub mod ssh_agent_napi {
 
     #[napi]
     pub async fn stop_agent() -> napi::Result<String> {
-        SshAgentManager::stop_agent().await.map_err(|e| napi::Error::from_reason(e.to_string()))
+        SshAgentManager::stop_agent()
+            .await
+            .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
     #[napi]
-    pub async fn send_keys(keys: Vec<SshKeyData>) -> napi::Result<String> {
-        SshAgentManager::send_keys(keys)
+    pub async fn set_keys(keys: Vec<SshKeyData>) -> napi::Result<String> {
+        SshAgentManager::set_keys(keys)
+            .await
+            .map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
+
+    #[napi]
+    pub async fn remove_all_keys() -> napi::Result<()> {
+        SshAgentManager::remove_all_keys()
             .await
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }

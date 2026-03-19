@@ -8,14 +8,18 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 
 import type { SshKeyData } from '../../native';
 import { ssh_agent_napi } from '../../native';
+import { store } from '../store';
 import { setupIpcHandler } from './ipc';
 
 declare module 'proton-pass-desktop/lib/ipc' {
     interface IPCChannels {
         'sshAgent:start': IPCChannel<[], string>;
         'sshAgent:stop': IPCChannel<[], string>;
-        'sshAgent:sendSshKeyItems': IPCChannel<[ItemRevision<'sshKey'>[]], string>;
+        'sshAgent:setSshKeyItems': IPCChannel<[ItemRevision<'sshKey'>[]], string>;
+        'sshAgent:removeAllSshKeys': IPCChannel<[], void>;
         'sshAgent:getStatus': IPCChannel<[], ssh_agent_napi.SshAgentStatus>;
+        'sshAgent:getSettingEnabled': IPCChannel<[], boolean>;
+        'sshAgent:setSettingEnabled': IPCChannel<[enabled: boolean], void>;
     }
 }
 
@@ -97,9 +101,12 @@ export const setupIpcHandlers = () => {
         return ssh_agent_napi.startAgent((error, publicKey) => isUnlockedCallback({ window, error, publicKey }));
     });
     setupIpcHandler('sshAgent:stop', async () => ssh_agent_napi.stopAgent());
-    setupIpcHandler('sshAgent:sendSshKeyItems', async (_, items) => {
+    setupIpcHandler('sshAgent:setSshKeyItems', async (_, items) => {
         const keys = items.map(intoNativeSshKey);
-        return ssh_agent_napi.sendKeys(keys);
+        return ssh_agent_napi.setKeys(keys);
     });
+    setupIpcHandler('sshAgent:removeAllSshKeys', async () => ssh_agent_napi.removeAllKeys());
     setupIpcHandler('sshAgent:getStatus', async () => ssh_agent_napi.getStatus());
+    setupIpcHandler('sshAgent:getSettingEnabled', async () => store.get('sshAgentSettingEnabled') ?? false);
+    setupIpcHandler('sshAgent:setSettingEnabled', async (_, enabled) => store.set('sshAgentSettingEnabled', enabled));
 };
