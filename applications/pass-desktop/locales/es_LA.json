@@ -1738,9 +1738,6 @@
       "Disabling auto-lock failed": [
         "Error al desactivar el bloqueo automático"
       ],
-      "Disabling offline mode...": [
-        "Desactivando el modo sin conexión..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "Los cambios de DNS pueden tardar hasta 24 horas en actualizarse."
       ],
@@ -2021,6 +2018,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+      ],
       "Moving items": [
         "Moviendo los elementos"
       ],
@@ -2060,14 +2061,8 @@
       "Offline mode": [
         "Modo sin conexión"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "No se pudo desactivar el modo sin conexión por ahora"
-      ],
       "Offline mode could not be enabled at the moment": [
         "No se pudo activar el modo sin conexión por ahora."
-      ],
-      "Offline support successfully disabled": [
-        "El modo sin conexión está desactivado."
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "El acceso en línea a ${ PASS_APP_NAME } requerirá un código PIN. Se cerrará la sesión después de 3 intentos incorrectos."
@@ -2576,6 +2571,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Ahora puede usar la contraseña de ${ BRAND_NAME } para acceder sin conexión a ${ PASS_SHORT_APP_NAME }"
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Ahora puede usar la contraseña de respaldo para acceder sin conexión a ${ PASS_SHORT_APP_NAME }"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Ahora puede usar la contraseña adicional para acceder sin conexión a ${ PASS_SHORT_APP_NAME }"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Ahora puede usar la segunda contraseña para acceder sin conexión a ${ PASS_SHORT_APP_NAME }"
       ],
       "You cannot change the mailboxes for this alias.": [
         "No puede cambiar los buzones para este alias."

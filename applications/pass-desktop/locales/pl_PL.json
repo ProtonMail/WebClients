@@ -1669,9 +1669,6 @@
       "Disabling auto-lock failed": [
         "Wyłączenie automatycznej blokady nie powiodło się"
       ],
-      "Disabling offline mode...": [
-        "Wyłączenie trybu offline..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "Aktualizacja rekordów DNS może zająć do 24 godzin."
       ],
@@ -1940,7 +1937,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -1978,14 +1978,8 @@
       "Offline mode": [
         "Tryb offline"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Tryb offline nie może zostać wyłączony"
-      ],
       "Offline mode could not be enabled at the moment": [
         "Tryb offline nie może zostać włączony"
-      ],
-      "Offline support successfully disabled": [
-        "Tryb offline został wyłączony"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Dostęp online do ${ PASS_APP_NAME } będzie wymagał kodu PIN. Wylogowanie nastąpi po 3 nieudanych próbach."
