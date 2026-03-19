@@ -1,83 +1,68 @@
 import type { CSSProperties } from 'react';
 
-import Icon from '@proton/components/components/icon/Icon';
-import type { IconSize } from '@proton/icons/types';
+import { useLoading } from '@proton/hooks/index';
+import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import clsx from '@proton/utils/clsx';
 
 import './CheckListItem.scss';
 
 interface Props {
-    largeIcon: string;
-    smallIcon: string;
+    icon: string;
     text: string | string[];
-    onClick?: () => void;
-    smallVariant: boolean;
+    onClick?: () => void | Promise<void>;
     style?: CSSProperties;
     disabled?: boolean;
     done: boolean;
     'data-testid'?: string;
 }
 
-const CheckListItem = ({
-    largeIcon,
-    smallIcon,
-    text,
-    onClick,
-    smallVariant,
-    style,
-    done,
-    disabled,
-    'data-testid': dataTestId,
-}: Props) => {
-    const getIconSize = () => {
-        let iconSize: IconSize = 4;
-
-        if (done) {
-            iconSize = smallVariant ? 3 : 5;
-        }
-
-        return iconSize;
-    };
+const CheckListItem = ({ icon, text, onClick, style, done, disabled, 'data-testid': dataTestId }: Props) => {
+    const [loading, withLoading] = useLoading();
 
     return (
         <button
-            disabled={disabled}
-            onClick={() => onClick?.()}
+            disabled={disabled || loading}
+            onClick={async () => {
+                await withLoading(async () => {
+                    await onClick?.();
+                });
+            }}
             className={clsx(
                 'flex flex-nowrap w-full items-center text-left checkList-item border-none',
                 onClick !== undefined && !disabled ? 'cursor-pointer' : 'cursor-default',
-                smallVariant ? 'p-0 text-sm color-norm p-2 mb-0.5 w-full' : 'px-4 py-3 rounded-lg gap-3',
+                'p-0 text-sm color-norm p-2 mb-0.5 w-full',
                 disabled && 'opacity-50'
             )}
             type="button"
             style={{
                 ...style,
-                color: smallVariant ? 'var(--text-norm)' : 'var(--optional-promotion-text-color)',
+                color: 'var(--text-norm)',
             }}
             data-testid={dataTestId}
         >
             <img
                 className={clsx('w-custom h-custom shrink-0', done && 'opacity-50')}
-                src={smallVariant ? smallIcon : largeIcon}
+                src={icon}
                 style={{
-                    '--w-custom': smallVariant ? '1.75rem' : '5.5rem',
-                    '--h-custom': smallVariant ? '1.5rem' : '3rem',
+                    '--w-custom': '1.75rem',
+                    '--h-custom': '1.5rem',
                 }}
                 alt=""
-                data-testid={smallVariant ? 'checklist-item-icon-small' : 'checklist-item-icon-large'}
+                data-testid={'checklist-item-icon-small'}
             />
-            <span className={clsx('flex-1 px-2', done && 'opacity-50')}>{text}</span>
+            <span className={clsx('flex-1 px-2', done && 'opacity-50 text-strike')}>{text}</span>
             <div
                 className={clsx(
                     'w-custom h-custom flex self-center',
-                    done && 'bg-primary rounded-50 flex items-center justify-center shrink-0'
+                    done && 'flex items-center justify-center shrink-0'
                 )}
                 style={{
-                    '--h-custom': smallVariant || !done ? '1rem' : '1.5rem',
-                    '--w-custom': smallVariant || !done ? '1rem' : '1.5rem',
+                    '--h-custom': done ? '1.5rem' : '1rem',
+                    '--w-custom': done ? '1.5rem' : '1rem',
                 }}
             >
-                <Icon name={done ? 'checkmark' : 'chevron-right'} size={getIconSize()} />
+                {done ? <IcCheckmarkCircle className="color-success" size={4} /> : <IcChevronRight size={4} />}
             </div>
         </button>
     );
