@@ -1,6 +1,4 @@
 use anyhow::{Error, Result};
-#[cfg(windows)]
-use futures::stream::Stream;
 use napi::bindgen_prelude::Promise;
 use napi::threadsafe_function::ThreadsafeFunction;
 use russh_keys::agent::client::{AgentClient, AgentStream};
@@ -8,17 +6,13 @@ use russh_keys::agent::server::MessageType;
 use russh_keys::agent::Constraint;
 use russh_keys::{agent, ssh_key, PrivateKey, PublicKeyBase64};
 use std::path::PathBuf;
-#[cfg(windows)]
-use std::pin::Pin;
 use std::sync::{Arc, Mutex};
-#[cfg(windows)]
-use std::task::{Context, Poll};
-#[cfg(windows)]
-use tokio::net::windows::named_pipe::{NamedPipeServer, ServerOptions};
 #[cfg(unix)]
 use tokio::net::UnixListener;
 #[cfg(unix)]
 use tokio_stream;
+#[cfg(windows)]
+use tokio::net::windows::named_pipe::NamedPipeServer;
 #[cfg(windows)]
 use tokio_util::sync::CancellationToken;
 
@@ -31,6 +25,8 @@ struct NamedPipeListener {
 #[cfg(windows)]
 impl NamedPipeListener {
     fn new(path: String) -> std::io::Result<Self> {
+        use tokio::net::windows::named_pipe::ServerOptions;
+        
         let (tx, rx) = tokio::sync::mpsc::channel(10);
         let cancel_token = CancellationToken::new();
         let cancel_clone = cancel_token.clone();
@@ -72,10 +68,10 @@ impl NamedPipeListener {
 }
 
 #[cfg(windows)]
-impl Stream for NamedPipeListener {
+impl futures::stream::Stream for NamedPipeListener {
     type Item = std::io::Result<NamedPipeServer>;
 
-    fn poll_next(mut self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {
+    fn poll_next(mut self: std::pin::Pin<&mut Self>, cx: &mut std::task::Context<'_>) -> std::task::Poll<Option<Self::Item>> {
         self.rx.poll_recv(cx)
     }
 }
