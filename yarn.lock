@@ -9127,6 +9127,7 @@ __metadata:
     "@types/lodash": "npm:^4.17.24"
     "@vercel/ncc": "npm:^0.38.4"
     eslint: "npm:^9.39.4"
+    glob: "npm:^13.0.6"
     jest: "npm:^30.3.0"
     lodash: "npm:^4.17.23"
     prom-client: "npm:^15.1.3"
@@ -27406,7 +27407,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^13.0.3":
+"glob@npm:^13.0.3, glob@npm:^13.0.6":
   version: 13.0.6
   resolution: "glob@npm:13.0.6"
   dependencies:
