@@ -1,16 +1,69 @@
 use anyhow::{Error, Result};
+#[cfg(windows)]
+use futures::stream::Stream;
 use napi::bindgen_prelude::Promise;
 use napi::threadsafe_function::ThreadsafeFunction;
+use russh_keys::agent::client::{AgentClient, AgentStream};
 use russh_keys::agent::Constraint;
 use russh_keys::{agent, ssh_key, PrivateKey, PublicKeyBase64};
 use std::path::PathBuf;
+#[cfg(windows)]
+use std::pin::Pin;
 use std::sync::{Arc, Mutex};
+#[cfg(windows)]
+use std::task::{Context, Poll};
+#[cfg(windows)]
+use tokio::net::windows::named_pipe::{ClientOptions, NamedPipeServer, ServerOptions};
 #[cfg(unix)]
 use tokio::net::UnixListener;
-use tokio::time::timeout;
-use tokio::time::Duration;
 #[cfg(unix)]
 use tokio_stream;
+
+#[cfg(windows)]
+struct NamedPipeListener {
+    rx: tokio::sync::mpsc::UnboundedReceiver<NamedPipeServer>,
+}
+
+#[cfg(windows)]
+impl NamedPipeListener {
+    fn new(path: String) -> std::io::Result<Self> {
+        let (tx, rx) = tokio::sync::mpsc::unbounded_channel();
+
+        let mut listener = ServerOptions::new().first_pipe_instance(true).create(&path)?;
+
+        tokio::spawn(async move {
+            loop {
+                if let Err(e) = listener.connect().await {
+                    eprintln!("[SSH Agent] Failed to connect to named pipe: {}", e);
+                    break;
+                }
+
+                if tx.send(listener).is_err() {
+                    break;
+                }
+
+                listener = match ServerOptions::new().create(&path) {
+                    Ok(l) => l,
+                    Err(e) => {
+                        eprintln!("[SSH Agent] Failed to create named pipe: {}", e);
+                        break;
+                    }
+                };
+            }
+        });
+
+        Ok(Self { rx })
+    }
+}
+
+#[cfg(windows)]
+impl Stream for NamedPipeListener {
+    type Item = std::io::Result<NamedPipeServer>;
+
+    fn poll_next(mut self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {
+        self.rx.poll_recv(cx).map(|v| v.map(Ok))
+    }
+}
 
 #[napi_derive::napi(object)]
 pub struct SshKeyData {
@@ -144,8 +197,26 @@ impl SshAgentManager {
 
         #[cfg(windows)]
         {
-            // TODO: Windows implementation with named pipes
-            return Err(anyhow::anyhow!("Windows SSH agent not implemented yet"));
+            println!("Creating Windows named pipe server");
+
+            let pipe_path = socket_path.to_string_lossy().to_string();
+            let agent_handler = PassSshAgent { is_unlocked_callback };
+
+            println!("Creating NamedPipeListener stream");
+            let stream = NamedPipeListener::new(pipe_path)
+                .map_err(|e| anyhow::anyhow!("Failed to create named pipe listener: {}", e))?;
+
+            println!("Spawning SSH agent server task");
+            tokio::spawn(async move {
+                println!("SSH agent server task started");
+                match agent::server::serve(stream, agent_handler).await {
+                    Ok(_) => println!("SSH agent server completed successfully"),
+                    Err(e) => {
+                        eprintln!("SSH agent server error: {}", e);
+                    }
+                }
+                println!("SSH agent server task ended");
+            });
         }
 
         let instance = SshAgentInstance {
@@ -164,6 +235,7 @@ impl SshAgentManager {
 
         if let Some(instance) = instance_guard.take() {
             if let Err(e) = std::fs::remove_file(&instance.socket_path) {
+                // FIXME: error on Windows: Failed to remove SSH socket: The parameter is incorrect. (os error 87)
                 println!("Failed to remove SSH socket: {}", e);
             }
 
@@ -190,24 +262,27 @@ impl SshAgentManager {
     }
 
     async fn add_keys_to_agent(socket_path: &std::path::Path, keys: Vec<SshKeyData>) -> Result<String> {
-        if !socket_path.exists() {
-            return Err(anyhow::anyhow!("Socket file does not exist: {}", socket_path.display()));
-        }
-
         println!("Connecting to SSH agent at: {}", socket_path.display());
 
-        let mut client = match timeout(
-            Duration::from_secs(10),
-            agent::client::AgentClient::connect_uds(socket_path),
-        )
-        .await
-        {
-            Ok(Ok(client)) => {
-                println!("Successfully connected to SSH agent");
-                client
+        #[cfg(unix)]
+        let mut client = {
+            if !socket_path.exists() {
+                return Err(anyhow::anyhow!("Socket file does not exist: {}", socket_path.display()));
             }
-            Ok(Err(e)) => return Err(anyhow::anyhow!("Failed to connect to SSH agent: {}", e)),
-            Err(_) => return Err(anyhow::anyhow!("Timeout connecting to SSH agent")),
+
+            match AgentClient::connect_uds(socket_path).await {
+                Ok(client) => {
+                    println!("Successfully connected to SSH agent");
+                    client
+                }
+                Err(e) => return Err(anyhow::anyhow!("Failed to connect to SSH agent: {}", e)),
+            }
+        };
+
+        #[cfg(windows)]
+        let mut client = {
+            let pipe_path = socket_path.to_string_lossy().to_string();
+            AgentClient::connect_named_pipe(pipe_path).await.unwrap()
         };
 
         for key in keys {
@@ -224,10 +299,10 @@ impl SshAgentManager {
         Ok(format!("Added keys to SSH agent successfully"))
     }
 
-    async fn add_identity_to_agent(
-        client: &mut russh_keys::agent::client::AgentClient<tokio::net::UnixStream>,
-        key: &SshKeyData,
-    ) -> Result<(), Error> {
+    async fn add_identity_to_agent<S>(client: &mut AgentClient<S>, key: &SshKeyData) -> Result<(), Error>
+    where
+        S: AgentStream + Unpin,
+    {
         let private_key = Self::parse_private_key(&key.private_key)?;
         client.add_identity(&private_key, &[Constraint::Confirm]).await?;
         Ok(())
@@ -256,8 +331,7 @@ impl SshAgentManager {
 
         #[cfg(windows)]
         {
-            // TODO
-            Ok(PathBuf::from("\\\\.\\pipe\\pass-ssh-agent"))
+            Ok(PathBuf::from("\\\\.\\pipe\\openssh-ssh-agent"))
         }
     }
 }
