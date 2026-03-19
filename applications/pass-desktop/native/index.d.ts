@@ -38,13 +38,13 @@ export declare namespace napi_native_messaging {
 
 export declare namespace ssh_agent_napi {
     export function getStatus(): Promise<SshAgentStatus>;
-    export function sendKeys(keys: Array<SshKeyData>): Promise<string>;
+    export function removeAllKeys(): Promise<void>;
+    export function setKeys(keys: Array<SshKeyData>): Promise<string>;
     export interface SshAgentStatus {
         socketPath?: string;
     }
-    export function startAgent(isUnlockedCallback: (err: Error | null, arg: string | undefined | null) => any): string;
+    export function startAgent(
+        isUnlockedCallback: (err: Error | null, arg: string | undefined | null) => Promise<boolean>
+    ): Promise<string>;
     export function stopAgent(): Promise<string>;
-    export function setKeys(keys: Array<SshKeyData>): Promise<string>;
-    export function removeAllKeys(): Promise<void>;
-    export function getStatus(): Promise<SshAgentStatus>;
 }

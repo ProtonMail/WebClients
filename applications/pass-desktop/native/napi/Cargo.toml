@@ -14,6 +14,7 @@ napi = { version = "3.4", features = ["async"] }
 napi-derive = "3.3"
 shared = { path = "../shared" }
 tokio = { version = "1.47", features = ["full"] }
+tokio-util = "0.7.17"
 russh-keys = "0.49.2"
 futures = "0.3.31"
 async-trait = "0.1.89"

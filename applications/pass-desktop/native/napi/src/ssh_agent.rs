@@ -13,46 +13,61 @@ use std::sync::{Arc, Mutex};
 #[cfg(windows)]
 use std::task::{Context, Poll};
 #[cfg(windows)]
-use tokio::net::windows::named_pipe::{ClientOptions, NamedPipeServer, ServerOptions};
+use tokio::net::windows::named_pipe::{NamedPipeServer, ServerOptions};
 #[cfg(unix)]
 use tokio::net::UnixListener;
 #[cfg(unix)]
 use tokio_stream;
+#[cfg(windows)]
+use tokio_util::sync::CancellationToken;
 
 #[cfg(windows)]
 struct NamedPipeListener {
-    rx: tokio::sync::mpsc::UnboundedReceiver<NamedPipeServer>,
+    rx: tokio::sync::mpsc::Receiver<std::io::Result<NamedPipeServer>>,
+    cancel_token: CancellationToken,
 }
 
 #[cfg(windows)]
 impl NamedPipeListener {
     fn new(path: String) -> std::io::Result<Self> {
-        let (tx, rx) = tokio::sync::mpsc::unbounded_channel();
-
+        let (tx, rx) = tokio::sync::mpsc::channel(10);
+        let cancel_token = CancellationToken::new();
+        let cancel_clone = cancel_token.clone();
         let mut listener = ServerOptions::new().first_pipe_instance(true).create(&path)?;
 
         tokio::spawn(async move {
             loop {
-                if let Err(e) = listener.connect().await {
-                    eprintln!("[SSH Agent] Failed to connect to named pipe: {}", e);
-                    break;
-                }
-
-                if tx.send(listener).is_err() {
-                    break;
-                }
-
-                listener = match ServerOptions::new().create(&path) {
-                    Ok(l) => l,
-                    Err(e) => {
-                        eprintln!("[SSH Agent] Failed to create named pipe: {}", e);
+                tokio::select! {
+                    _ = cancel_clone.cancelled() => {
+                        eprintln!("[SSH Agent] Named pipe listener shutting down");
                         break;
                     }
-                };
+                    connect_result = listener.connect() => {
+                        match connect_result {
+                            Ok(_) => {
+                                if let Err(e) = tx.send(Ok(listener)).await {
+                                    eprintln!("[SSH Agent] Receiver connection failed: {}", e);
+                                    break;
+                                }
+                                listener = match ServerOptions::new().create(&path) {
+                                    Ok(l) => l,
+                                    Err(e) => {
+                                        eprintln!("[SSH Agent] Failed to create next named pipe: {}", e);
+                                        break;
+                                    }
+                                };
+                            }
+                            Err(e) => {
+                                eprintln!("[SSH Agent] Failed to connect to named pipe: {}", e);
+                                break;
+                            }
+                        }
+                    }
+                }
             }
         });
 
-        Ok(Self { rx })
+        Ok(Self { rx, cancel_token })
     }
 }
 
@@ -61,7 +76,7 @@ impl Stream for NamedPipeListener {
     type Item = std::io::Result<NamedPipeServer>;
 
     fn poll_next(mut self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {
-        self.rx.poll_recv(cx).map(|v| v.map(Ok))
+        self.rx.poll_recv(cx)
     }
 }
 
@@ -79,25 +94,27 @@ pub struct AgentStatus {
 
 static SSH_AGENT_INSTANCE: Mutex<Option<SshAgentInstance>> = Mutex::new(None);
 
-type IsUnlockedCallback = ThreadsafeFunction<Option<String>>;
+type IsUnlockedCallback = ThreadsafeFunction<Option<String>, Promise<bool>>;
 
 struct SshAgentInstance {
     socket_path: PathBuf,
     task_handle: tokio::task::JoinHandle<()>,
+    #[cfg(windows)]
+    named_pipe_cancel_token: CancellationToken,
 }
 
 pub struct SshAgentManager;
 
 #[derive(Clone)]
 struct PassSshAgent {
-    is_unlocked_callback: IsUnlockedCallback,
+    is_unlocked_callback: Arc<IsUnlockedCallback>,
 }
 
 impl PassSshAgent {
     async fn check_unlocked(&self, key: Option<String>) -> bool {
         println!("[Rust SSH Agent] Calling JavaScript lock check callback...");
 
-        match self.is_unlocked_callback.call_async::<Promise<bool>>(Ok(key)).await {
+        match self.is_unlocked_callback.call_async(Ok(key)).await {
             Ok(promise) => match promise.await {
                 Ok(is_unlocked) => {
                     println!("[Rust SSH Agent] Lock check result: {}", is_unlocked);
@@ -175,7 +192,7 @@ impl SshAgentManager {
             let listener = UnixListener::bind(&socket_path)
                 .map_err(|e| anyhow::anyhow!("Failed to bind to socket {}: {}", socket_path.display(), e))?;
 
-            let agent_handler = PassSshAgent { is_unlocked_callback };
+            let agent_handler = PassSshAgent { is_unlocked_callback: Arc::new(is_unlocked_callback) };
 
             println!("Creating UnixListenerStream");
             let stream = tokio_stream::wrappers::UnixListenerStream::new(listener);
@@ -195,18 +212,20 @@ impl SshAgentManager {
         };
 
         #[cfg(windows)]
-        let task_handle = {
+        let (task_handle, named_pipe_cancel_token) = {
             println!("Creating Windows named pipe server");
 
             let pipe_path = socket_path.to_string_lossy().to_string();
-            let agent_handler = PassSshAgent { is_unlocked_callback };
+            let agent_handler = PassSshAgent { is_unlocked_callback: Arc::new(is_unlocked_callback) };
 
             println!("Creating NamedPipeListener stream");
             let stream = NamedPipeListener::new(pipe_path)
                 .map_err(|e| anyhow::anyhow!("Failed to create named pipe listener: {}", e))?;
 
+            let cancel_token = stream.cancel_token.clone();
+
             println!("Spawning SSH agent server task");
-            tokio::spawn(async move {
+            let handle = tokio::spawn(async move {
                 println!("SSH agent server task started");
                 match agent::server::serve(stream, agent_handler).await {
                     Ok(_) => println!("SSH agent server completed successfully"),
@@ -215,12 +234,16 @@ impl SshAgentManager {
                     }
                 }
                 println!("SSH agent server task ended");
-            })
+            });
+
+            (handle, cancel_token)
         };
 
         let instance = SshAgentInstance {
             socket_path: socket_path.clone(),
             task_handle,
+            #[cfg(windows)]
+            named_pipe_cancel_token,
         };
         *instance_guard = Some(instance);
 
@@ -241,6 +264,11 @@ impl SshAgentManager {
         };
 
         if let Some(instance) = instance {
+            #[cfg(windows)]
+            {
+                instance.named_pipe_cancel_token.cancel();
+            }
+
             instance.task_handle.abort();
 
             #[cfg(unix)]
