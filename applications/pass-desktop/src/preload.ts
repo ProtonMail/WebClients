@@ -76,8 +76,11 @@ const contextBridgeApi: ContextBridgeApi = {
     /* ssh agent */
     startSshAgent: () => invoke('sshAgent:start'),
     stopSshAgent: () => invoke('sshAgent:stop'),
-    sendSshKeyItems: (items) => invoke('sshAgent:sendSshKeyItems', items),
+    setSshKeyItems: (items) => invoke('sshAgent:setSshKeyItems', items),
+    removeAllSshKeys: () => invoke('sshAgent:removeAllSshKeys'),
     getSshAgentStatus: () => invoke('sshAgent:getStatus'),
+    getSshAgentSettingEnabled: () => invoke('sshAgent:getSettingEnabled'),
+    setSshAgentSettingEnabled: (enabled) => invoke('sshAgent:setSettingEnabled', enabled),
 };
 
 contextBridge.exposeInMainWorld('ctxBridge', contextBridgeApi);

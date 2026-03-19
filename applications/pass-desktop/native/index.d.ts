@@ -44,4 +44,7 @@ export declare namespace ssh_agent_napi {
     }
     export function startAgent(isUnlockedCallback: (err: Error | null, arg: string | undefined | null) => any): string;
     export function stopAgent(): Promise<string>;
+    export function setKeys(keys: Array<SshKeyData>): Promise<string>;
+    export function removeAllKeys(): Promise<void>;
+    export function getStatus(): Promise<SshAgentStatus>;
 }

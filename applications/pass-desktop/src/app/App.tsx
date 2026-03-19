@@ -57,6 +57,7 @@ import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
 import { useDesktopContextMenu } from '../lib/hooks/useDesktopContextMenu';
 import { installStorageFlush } from '../lib/storage/storage.view';
 import { ExtensionUnlock } from './ExtensionUnlock';
+import { SshAgentProvider } from './Views/SshAgent/SshAgentProvider';
 import { WelcomeScreen } from './Views/WelcomeScreen/WelcomeScreen';
 import { isFirstLaunch } from './firstLaunch';
 import locales from './locales';
@@ -171,6 +172,7 @@ export const App = () => {
                                                                 </Portal>
                                                             </ExtensionUnlock>
                                                         </ContextMenuProvider>
+                                                        <SshAgentProvider />
                                                     </StoreProvider>
                                                 </AuthServiceProvider>
                                             </AuthSwitchProvider>
