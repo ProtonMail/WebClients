@@ -6,6 +6,7 @@ import { useNotifications } from '@proton/components';
 import { MemberRole, useDrive } from '@proton/drive';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { driveMetrics } from '../../modules/metrics';
 import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../store/_documents';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
@@ -45,6 +46,8 @@ export function useFolder() {
         // TODO: after FileBrowser migration, this params can be passed in the hook main function
         // and immediately added to the store in order to listen for events right away
         async (folderNodeUid: string, folderShareId: string, ac: AbortController) => {
+            const { onItemsLoadedToState, onFinished } = driveMetrics.drivePerformance.startDataLoad('folder');
+
             const { setIsLoading, reset, setItems, setFolder, setRole, setPermissions } = useFolderStore.getState();
             const { getByRootFolderUid } = useDevicesStore.getState();
             reset();
@@ -97,6 +100,7 @@ export function useFolder() {
                 const flushBatch = () => {
                     if (itemsBatch.length > 0) {
                         setItems([...itemsBatch]);
+                        onItemsLoadedToState(itemsBatch.length);
                         itemsBatch.length = 0;
                     }
                 };
@@ -129,6 +133,7 @@ export function useFolder() {
                         text: c('Error').t`We were not able to load some items`,
                     });
                 }
+                onFinished();
             } catch (e) {
                 const error =
                     e instanceof Error ? e : new Error(c('Error').t`Something went wrong during folder listing`);

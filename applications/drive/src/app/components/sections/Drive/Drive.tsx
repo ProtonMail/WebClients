@@ -8,7 +8,6 @@ import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/li
 import type { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
-import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import type { EncryptedLink, LinkShareUrl, SignatureIssues, useFolderView } from '../../../store';
 import { useThumbnailsDownload } from '../../../store';
@@ -97,7 +96,6 @@ function Drive({ activeFolder, folderView }: Props) {
     const { openDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const { sharingModal, showSharingModal } = useSharingModal();
-    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(folderView.layout, folderView.isLoading);
     const { permissions, layout, folderName, items, sortParams, setSorting, isLoading } = folderView;
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
 
@@ -143,13 +141,11 @@ function Drive({ activeFolder, folderView }: Props) {
 
     const handleItemRender = useCallback(
         (item: DriveItem) => {
-            incrementItemRenderedCounter();
-
             if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
                 thumbnails.addToDownloadQueue(shareId, item.linkId, item.activeRevision.id);
             }
         },
-        [thumbnails, shareId, incrementItemRenderedCounter]
+        [thumbnails, shareId]
     );
 
     const handleClick = useCallback(

@@ -10,7 +10,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
-import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import { useDrivePreviewModal } from '../../../modals/preview';
 import { useSelectionStore } from '../../../modules/selection';
 import type { SortConfig, SortField } from '../../../modules/sorting/types';
@@ -78,8 +77,6 @@ export const useSharedWithMeItems = () => {
         clearItemsWithInvitationPosition();
     }, [clearItemsWithInvitationPosition]);
 
-    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
-
     const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
     const { previewModal, showPreviewModal } = useDrivePreviewModal();
 
@@ -89,7 +86,6 @@ export const useSharedWithMeItems = () => {
 
     const handleRenderItem = useCallback(
         ({ id }: { id: string }) => {
-            incrementItemRenderedCounter();
             const renderedItem = getSharedWithMeStoreItem(id);
             if (renderedItem?.activeRevisionUid && renderedItem.itemType !== ItemType.BOOKMARK) {
                 loadThumbnail(renderedItem.type === NodeType.Photo ? getDriveForPhotos() : getDrive(), {
@@ -98,7 +94,7 @@ export const useSharedWithMeItems = () => {
                 });
             }
         },
-        [getSharedWithMeStoreItem, incrementItemRenderedCounter]
+        [getSharedWithMeStoreItem]
     );
 
     const handleSorting = useCallback(
