@@ -1614,9 +1614,6 @@
       "Disabling auto-lock failed": [
         "Erro ao desativar o bloqueio automático"
       ],
-      "Disabling offline mode...": [
-        "A desativar o modo offline..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "As alterações de DNS podem demorar até 24 horas para serem atualizadas."
       ],
@@ -1876,6 +1873,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover um item para outro cofre apagará as suas ligações seguras.",
+        "Mover itens para outro cofre apagará as suas ligações seguras."
+      ],
       "Moving items": [
         "A mover itens"
       ],
@@ -1912,14 +1913,8 @@
       "Offline mode": [
         "Modo sem conexão"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "O modo offline não pode ser desativado no momento."
-      ],
       "Offline mode could not be enabled at the moment": [
         "O modo offline não pode ser ativado no momento."
-      ],
-      "Offline support successfully disabled": [
-        "O modo off-line está desativado."
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "O acesso online ao ${ PASS_APP_NAME } exigirá um código PIN. Será desconectado após 3 tentativas falhadas."
