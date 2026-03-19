@@ -144,7 +144,7 @@
         "Esqueceu sua senha?"
       ],
       "Get Meet Professional": [
-        "Obter Meet Professional"
+        "Obter o Meet Professional"
       ],
       "Get verification code": [
         "Obter código de verificação"
@@ -168,10 +168,10 @@
         "Inserir emoji"
       ],
       "Join": [
-        "Juntar"
+        "Entrar"
       ],
       "Join meeting": [
-        "Participar da reunião"
+        "Entrar na reunião"
       ],
       "Join via link": [
         "Participar via link"
@@ -228,7 +228,7 @@
         "Página anterior"
       ],
       "Raise hand": [
-        "Levantar mão"
+        "Levantar a mão"
       ],
       "React with ${ emoji }": [
         "Reagir com ${ emoji }"
@@ -242,14 +242,11 @@
       "Refresh audio and video tracks": [
         "Atualizar faixas de áudio e vídeo"
       ],
-      "Refresh link": [
-        "Atualizar link"
-      ],
       "Refresh the page": [
         "Atualizar a página"
       ],
       "Rejoin meeting": [
-        "Retomar reunião"
+        "Entrar novamente na reunião"
       ],
       "Report a problem": [
         "Relatar um problema"
@@ -321,7 +318,7 @@
         "Iniciar gravação"
       ],
       "Start Recording Track Stats": [
-        "Iniciar gravação das estatísticas da pista"
+        "Iniciar estatísticas de gravação"
       ],
       "Start your own meeting": [
         "Iniciar sua própria reunião"
@@ -330,16 +327,16 @@
         "Ficar na reunião"
       ],
       "Stop opening meetings in the desktop app": [
-        "Parar de abrir reuniões no aplicativo para computador"
+        "Interromper abertura de reuniões no aplicativo para computador"
       ],
       "Stop receiving video": [
-        "Parar de receber vídeo"
+        "Interromper recebimento de vídeo"
       ],
       "Stop recording": [
         "Parar a gravação"
       ],
       "Stop Recording Track Stats": [
-        "Parar de gravar estatísticas da faixa"
+        "Interromper estatísticas de gravação"
       ],
       "Submit": [
         "Enviar"
@@ -452,7 +449,7 @@
         "Alternar câmera"
       ],
       "Toggle chat": [
-        "Mostrar/ocultar chat."
+        "Mostrar/ocultar bate-papo"
       ],
       "Toggle emoji reactions": [
         "Alternar para reações com emoji"
@@ -1432,7 +1429,7 @@
         "Rotação da chave de criptografia do grupo para a melhor segurança"
       ],
       "Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)": [
-        "Configurando criptografia de ponta a ponta de grupo com Segurança da Camada de Mensagens (MLS) avançada"
+        "Configurando criptografia de ponta a ponta de grupo com Messaging Layer Security (MLS) avançada"
       ]
     },
     "emergency_access": {
@@ -1457,13 +1454,13 @@
         "Evento excluído"
       ],
       "Failed to assign host": [
-        "Falha na atribuições de novo anfitrião"
+        "Falha ao atribuir anfitrião"
       ],
       "Failed to create meeting": [
         "Falha ao criar a reunião"
       ],
       "Failed to create personal meeting, please refresh the page": [
-        "Não foi possível criar sua reunião pessoal, por favor, atualize a página."
+        "Não foi possível criar a reunião pessoal. Atualize a página."
       ],
       "Failed to decrypt session key": [
         "Falha ao descriptografar a chave de sessão"
@@ -1496,7 +1493,7 @@
         "Erro ao salvar a gravação"
       ],
       "Failed to send chat message. Please try again.": [
-        "Falha ao enviar a mensagem do chat."
+        "Falha ao enviar a mensagem do bate-papo. Tente novamente."
       ],
       "Failed to send emoji reaction. Please try again.": [
         "Falha ao enviar uma reação com emoji. Tente novamente."
@@ -1532,7 +1529,7 @@
         "As senhas não correspondem"
       ],
       "Please allow screen sharing in your system permissions, then try again": [
-        "Permita o compartilhamento de tela nas permissões do seu sistema e tente novamente"
+        "Habilite o compartilhamento de tela nas permissões do sistema e tente novamente"
       ],
       "Request timed out": [
         "A solicitação expirou"
@@ -1541,7 +1538,7 @@
         "Sala excluída"
       ],
       "Screen share is not supported on mobile browsers": [
-        "Compartilhamento de tela não é suportado em navegadores mobile"
+        "O compartilhamento de tela não tem suporte em navegadores para dispositivos móveis"
       ],
       "Signature verification failed": [
         "Erro na verificação da assinatura"
@@ -1565,7 +1562,7 @@
         "Este campo exige um mínimo de ${ minimumLength } caracteres."
       ],
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
-        "Esta reunião está em uma versão mais antiga, o anfitrião precisa encerrá-la e atualizar o Meet para reiniciar com a versão mais recente."
+        "Esta reunião está em uma versão mais antiga. O anfitrião precisa encerrá-la e atualizar o Meet para reiniciar com a versão mais recente."
       ],
       "Try using only letters, numerals, and _.-": [
         "Tente usar apenas letras, números e _.-"
@@ -1714,16 +1711,22 @@
         " e "
       ],
       "${ maxParticipants } participant limit reached": [
-        "Limites de ${ maxParticipants } participantes alcançados"
+        "Limite de ${ maxParticipants } participantes atingido"
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
-        "${ MEET_APP_NAME } precisa de WebRTC para funcionar. Por favor, atualize seu navegador ou dispositivo para uma versão que suporte WebRTC, tente outro navegador ou desative quaisquer extensões que possam estar bloqueando-o."
+        "O ${ MEET_APP_NAME } precisa do WebRTC para funcionar. Atualize seu navegador ou dispositivo para uma versão que tenha suporte para WebRTC, tente usar outro navegador ou desative todas as extensões que possam estar bloqueando-o."
       ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (você) está apresentando"
       ],
       "${ presenterName } is presenting": [
         "${ presenterName } está apresentando"
+      ],
+      "${ reactorNames } and others reacted with ${ emoji }": [
+        "${ reactorNames } e outras pessoas reagiram com ${ emoji }"
+      ],
+      "${ reactorNames } reacted with ${ emoji }": [
+        "${ reactorNames } reagiu com ${ emoji }"
       ],
       "${ totalParticipantCount } of ${ maxParticipants } participants": [
         "${ totalParticipantCount } de ${ maxParticipants } participantes"
@@ -1745,7 +1748,7 @@
         "Anônimo ${ particle } ${ participantNumber }"
       ],
       "Are you sure you want to leave?": [
-        "Você tem certeza de que deseja sair?"
+        "Tem certeza de que deseja sair?"
       ],
       "Attention required": [
         "Atenção necessária"
@@ -1817,10 +1820,10 @@
         "Excluir evento"
       ],
       "Delete room": [
-        "Remover sala"
+        "Excluir sala"
       ],
       "Do you want people to ${ deviceContentType } you in the meeting?": [
-        "Você quer que as pessoas te ${ deviceContentType } na reunião?"
+        "Deseja que as pessoas ${ deviceContentType } você na reunião?"
       ],
       "Download current logs": [
         "Baixar os registros atuais"
@@ -1841,7 +1844,7 @@
         "A criptografia de ponta a ponta está ativa para o compartilhamento de tela"
       ],
       "End-to-end encryption is active for this chat.": [
-        "A criptografia de ponta a ponta está ativa para este chat."
+        "A criptografia de ponta a ponta está ativa para este bate-papo."
       ],
       "Enter the code from your authenticator app": [
         "Insira o código do seu aplicativo de autenticação."
@@ -1877,10 +1880,10 @@
         "Obtenha uma sala de reuniões pessoal. Crie uma conta para ter um link de reunião pessoal que você pode usar a qualquer momento."
       ],
       "Get a secure meeting link then add it to your calendar": [
-        "Obtenha um link de reunião segura e adicione-o ao seu calendário"
+        "Receba um link de reunião seguro e adicione-o ao seu calendário"
       ],
       "Get the best experience with the ${ protonMeet } desktop app": [
-        "Obtenha a melhor experiência com o aplicativo do ${ protonMeet } para computador."
+        "Aproveite a melhor experiência com o aplicativo do ${ protonMeet } para computador."
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Vá para about:config, pesquise por media.peerconnection.enabled, e defina-o como true."
@@ -1895,7 +1898,7 @@
         "Se você não encontrar o e-mail na caixa de entrada. Verifique a pasta de spam."
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
-        "Se você estiver usando o Firefox, certifique-se de que o PeerConnection está ativado."
+        "Se você estiver usando o Firefox, certifique-se de que o PeerConnection esteja ativado."
       ],
       "Internet connection lost": [
         "Perda de conexão com a internet"
@@ -1907,7 +1910,7 @@
         "Saiba mais"
       ],
       "Leaving will stop your screen sharing. Do you want to continue?": [
-        "Sair parará seu compartilhamento de tela. Você quer continuar?"
+        "Ao sair, seu compartilhamento de tela será interrompido. Deseja continuar?"
       ],
       "Left ${ roomNameLabel }": [
         "Saiu de ${ roomNameLabel }"
@@ -1937,13 +1940,13 @@
         "importante"
       ],
       "Meet without restrictions": [
-        "Reúna sem restrições"
+        "Faça reuniões sem restrições"
       ],
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
         "Reúna-se sem restrições. Faça upgrade para remover o limite de 1 hora e hospedar até 100 participantes."
       ],
       "Meeting ended": [
-        "Reunião terminada"
+        "Reunião encerrada"
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Reunião cheia (${ maxParticipants } participantes)"
@@ -1985,13 +1988,13 @@
         "Novo anfitrião"
       ],
       "No ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detected.": [
-        "Nenhum ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detectados."
+        "Nenhum ${ microphoneLinkButton }${ andString }${ cameraLinkButton } detectado."
       ],
       "No camera detected": [
-        "Nenhuma câmara detetada"
+        "Nenhuma câmera detectada"
       ],
       "No camera detected.": [
-        "Nenhuma câmara detetada."
+        "Nenhuma câmera detectada."
       ],
       "No microphone detected": [
         "Nenhum microfone detectado"
@@ -2030,7 +2033,7 @@
         "participante"
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
-        "Cole seu link do ${ MEET_APP_NAME } para participar de uma reunião segura"
+        "Cole seu link do ${ MEET_APP_NAME } para entrar em uma reunião segura"
       ],
       "Permission denied": [
         "Permissão negada"
@@ -2039,7 +2042,7 @@
         "Permissões não concedidas."
       ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
-        "Ative o acesso ao seu ${ microphoneLinkButton }${ andString }${ cameraLinkButton } para a melhor experiência."
+        "Ative o acesso ao seu ${ microphoneLinkButton }${ andString }${ cameraLinkButton } para ter a melhor experiência."
       ],
       "Please enter the passphrase to decrypt and view this meeting": [
         "Insira a frase secreta para descriptografar e visualizar esta reunião."
@@ -2078,7 +2081,7 @@
         "Selecionar uma câmera"
       ],
       "Select a microphone": [
-        "Selecionar um microfone"
+        "Selecione um microfone"
       ],
       "Select a participant to assign as the new host before you go: ": [
         "Selecione um participante para atribuir como o novo anfitrião antes de sair: "
@@ -2108,7 +2111,7 @@
         "Ordenar por"
       ],
       "Stop sharing your screen": [
-        "Parar de compartilhar sua tela"
+        "Interromper compartilhamento de tela"
       ],
       "Successfully deleted meeting": [
         "Reunião excluída com sucesso"
@@ -2117,7 +2120,7 @@
         "Obrigado por organizar uma reunião premium."
       ],
       "Thank you for joining.": [
-        "Obrigado por se juntar!"
+        "Obrigado por entrar."
       ],
       "The host ended this meeting.": [
         "O anfitrião encerrou esta reunião."
@@ -2141,7 +2144,7 @@
         "Esta reunião está protegida por senha"
       ],
       "This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).": [
-        "Esta reunião é protegida por criptografia de ponta a ponta com Segurança da Camada de Mensagens (MLS)."
+        "Esta reunião é protegida por criptografia de ponta a ponta com Messaging Layer Security (MLS)."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Esta reunião foi aberta no aplicativo do ${ MEET_APP_NAME } para computador."
@@ -2201,7 +2204,7 @@
         "Gostaria de excluir este evento?"
       ],
       "Would you like to delete this room?": [
-        "Gostaria de excluir essa salsa?"
+        "Deseja excluir esta sala?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Você gostaria de receber um novo código de verificação ou usar um método de verificação diferente?"
@@ -2213,7 +2216,7 @@
         "Você está quase lá"
       ],
       "You can close this tab.": [
-        "Você pode fechar esta aba."
+        "Você pode fechar esta guia."
       ],
       "You can now return to the application to continue": [
         "Agora você pode retornar ao aplicativo para continuar"
@@ -2222,22 +2225,19 @@
         "Você ainda pode desligar seu microfone e câmera a qualquer momento na reunião."
       ],
       "You left your meeting": [
-        "Você deixou a sua reunião"
+        "Você saiu da reunião"
       ],
       "You were removed from the meeting": [
         "Você foi removido da reunião"
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
-        "Você foi convidado(a) para entrar em uma reunião segura. Confirme seu nome e clique abaixo para inserir."
+        "Você foi convidado(a) para entrar em uma reunião segura. Confirme seu nome e clique abaixo para entrar."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Sua conta da ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento de Drive serão bloqueados e você não poderá enviar novos arquivos. Para retomar o serviço normal, pague quaisquer faturas vencidas."
       ],
       "Your always available meeting room": [
         "Sua sala de reunião sempre disponível"
-      ],
-      "Your always available meeting room, share it only with people you trust.": [
-        "Sua sala de reunião sempre disponível, compartilhe-a apenas com pessoas de sua confiança."
       ],
       "Your browser or device isn’t supported": [
         "Seu navegador ou dispositivo não é suportado"
@@ -2248,14 +2248,11 @@
       "Your meeting is ready": [
         "Sua reunião está pronta"
       ],
-      "Your personal link": [
-        "Seu link pessoal"
-      ],
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será usado nessa verificação única."
       ],
       "You’re about to open a link in a new tab. Make sure you trust the website before continuing.": [
-        "Você está prestes a abrir um link em uma nova guia. Certifique-se de que o site é de confiança antes de continuar."
+        "Você está prestes a abrir um link em uma nova guia. Certifique-se de que o site seja confiável antes de continuar."
       ]
     },
     "Label": {
@@ -2477,7 +2474,7 @@
     },
     "Meet": {
       "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
-        "Seu navegador ou o software do seu dispositivo não suporta ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requer WebAssembly (Wasm) para funcionar. Por favor, atualize seu navegador ou dispositivo para uma versão que suporte Wasm, ou tente usar um navegador diferente."
+        "O navegador ou o software do seu dispositivo não tem suporte para o ${ MEET_APP_NAME }. O ${ MEET_APP_NAME } requer o WebAssembly (Wasm) para funcionar. Atualize seu navegador ou dispositivo para uma versão que tenha suporte para Wasm, ou tente usar um navegador diferente."
       ]
     },
     "meet_2025": {
@@ -2519,9 +2516,6 @@
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "Você não pode enviar feedback sobre uma reunião da qual não participou"
-      ],
-      "Your personal meeting link has been copied to the clipboard": [
-        "Seu link de reunião pessoal foi copiado para a área de transferência"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -2740,7 +2734,7 @@
         "Microfones disponíveis"
       ],
       "Available Speakers": [
-        "Palestrantes disponíveis"
+        "Alto-falantes disponíveis"
       ],
       "Chat": [
         "Bate-papo"
@@ -2752,13 +2746,13 @@
         "Data"
       ],
       "Debug Overlay": [
-        "Depurar sobreposição"
+        "Sobreposição de depuração"
       ],
       "Enter your password": [
         "Digite sua senha"
       ],
       "Epoch": [
-        "Época"
+        "Epoch"
       ],
       "Epoch ${ prevLog.epoch } → ${ log.epoch }": [
         "Epoch ${ prevLog.epoch } → ${ log.epoch }"
@@ -2785,7 +2779,7 @@
         "Link de convite"
       ],
       "Join a meeting": [
-        "Participar de uma reunião"
+        "Entrar em uma reunião"
       ],
       "Join meeting": [
         "Participar da reunião"
@@ -2826,9 +2820,6 @@
       ],
       "Passphrase": [
         "Frase secreta"
-      ],
-      "Personal meeting": [
-        "Reunião pessoal"
       ],
       "Personal meeting room": [
         "Sala de reunião pessoal"
@@ -2904,7 +2895,7 @@
     },
     "Tooltip": {
       "Background blur is not supported on your browser": [
-        "O desfoque de fundo não é compatível com o seu navegador"
+        "O desfoque de fundo não é compatível com seu navegador"
       ],
       "Recurring meeting": [
         "Reunião recorrente"
@@ -2930,22 +2921,22 @@
         "A conexão está demorando mais do que o esperado"
       ],
       "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
-        "Não foi possível acessar a câmera ou o microfone. Você pode tentar ativá-los novamente pelos controles da reunião."
+        "Não foi possível acessar a câmera ou o microfone. Você pode tentar ativá-los novamente usando os controles da reunião."
       ],
       "Could not access camera. You can try enabling it again from the meeting controls.": [
-        "Não foi possível acessar a câmera. Você pode tentar ativá-la novamente pelos controles da reunião."
+        "Não foi possível acessar a câmera. Você pode tentar ativá-la novamente usando os controles da reunião."
       ],
       "Could not access microphone. You can try enabling it again from the meeting controls.": [
-        "Não foi possível acessar o microfone. Você pode tentar ativá-la novamente pelos controles da reunião."
+        "Não foi possível acessar o microfone. Você pode tentar ativá-lo novamente usando os controles da reunião."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
       ],
       "STUN UDP connection failed, trying with TURN relay…": [
-        "Falha na conexão UDP STUN, tentando com relay TURN…"
+        "Falha na conexão UDP STUN, tentando com retransmissão TURN…"
       ],
       "STUN UDP connection timeout, trying with TURN relay": [
-        "Tempo limite de conexão UDP STUN esgotado, tentando com relay TURN"
+        "Tempo limite de conexão UDP STUN esgotado, tentando com retransmissão TURN"
       ],
       "The host has removed you from the meeting": [
         "O anfitrião removeu você da reunião"

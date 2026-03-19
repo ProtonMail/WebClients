@@ -242,9 +242,6 @@
       "Refresh audio and video tracks": [
         "Actualiser les pistes audio et vidéo"
       ],
-      "Refresh link": [
-        "Actualiser le lien"
-      ],
       "Refresh the page": [
         "Actualiser la page"
       ],
@@ -1714,6 +1711,12 @@
       "${ presenterName } is presenting": [
         "${ presenterName } est en train de présenter"
       ],
+      "${ reactorNames } and others reacted with ${ emoji }": [
+        "${ reactorNames } et autres ont réagi avec ${ emoji }"
+      ],
+      "${ reactorNames } reacted with ${ emoji }": [
+        "${ reactorNames } a réagi avec ${ emoji }"
+      ],
       "${ totalParticipantCount } of ${ maxParticipants } participants": [
         "${ totalParticipantCount } sur ${ maxParticipants } participants"
       ],
@@ -2147,6 +2150,12 @@
       "To use your personal meeting room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
         "Pour utiliser votre salle de réunion personnelle, **créez un compte ${ BRAND_NAME } gratuit**. Vous retournerez sur ${ MEET_APP_NAME }."
       ],
+      "Today — ${ absoluteDate }": [
+        "Aujourd'hui — ${ absoluteDate }"
+      ],
+      "Tomorrow — ${ absoluteDate }": [
+        "Demain — ${ absoluteDate }"
+      ],
       "Turn off camera": [
         "Éteindre la caméra"
       ],
@@ -2189,6 +2198,9 @@
       "Would you like to receive a new verification code?": [
         "Voulez-vous recevoir un nouveau code de vérification ?"
       ],
+      "Yesterday — ${ absoluteDate }": [
+        "Hier — ${ absoluteDate }"
+      ],
       "You are almost there": [
         "Vous y êtes presque"
       ],
@@ -2216,9 +2228,6 @@
       "Your always available meeting room": [
         "Votre salle de réunion toujours disponible"
       ],
-      "Your always available meeting room, share it only with people you trust.": [
-        "Votre salle de réunion toujours disponible, partagez-la uniquement avec les personnes de confiance."
-      ],
       "Your browser or device isn’t supported": [
         "Votre navigateur ou appareil n'est pas pris en charge"
       ],
@@ -2227,9 +2236,6 @@
       ],
       "Your meeting is ready": [
         "Votre réunion est prête"
-      ],
-      "Your personal link": [
-        "Votre lien personnel"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Votre numéro de téléphone ne sera utilisé que pour cette vérification."
@@ -2499,9 +2505,6 @@
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "Vous ne pouvez pas envoyer de commentaire pour une réunion à laquelle vous n'avez pas assisté"
-      ],
-      "Your personal meeting link has been copied to the clipboard": [
-        "Le lien pour votre réunion personnelle a été copié dans le presse-papier"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -2807,9 +2810,6 @@
       "Passphrase": [
         "Phrase secrète"
       ],
-      "Personal meeting": [
-        "Réunion personnelle"
-      ],
       "Personal meeting room": [
         "Salle de réunion personnelle"
       ],
@@ -2886,8 +2886,14 @@
       "Background blur is not supported on your browser": [
         "Le flou d'arrière-plan n'est pas pris en charge sur votre navigateur"
       ],
+      "Generate a new meeting link. The current link will stop working.": [
+        "Générer un nouveau lien de réunion. Le lien actuel cessera de fonctionner."
+      ],
       "Recurring meeting": [
         "Réunion récurrente"
+      ],
+      "You can generate a new meeting link once per day.": [
+        "Vous pouvez générer un nouveau lien de réunion une fois par jour."
       ]
     },
     "Validation": {
