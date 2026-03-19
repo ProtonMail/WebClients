@@ -175,17 +175,38 @@
       "Copy and close": [
         "복사 및 닫기"
       ],
+      "Copy card number": [
+        "카드 번호 복사"
+      ],
+      "Copy email": [
+        "이메일 복사"
+      ],
+      "Copy expiration date": [
+        "유효기간 복사"
+      ],
       "Copy forwarding address": [
         "포워딩 주소 복사"
       ],
       "Copy link": [
         "링크 복사"
       ],
+      "Copy name on card": [
+        "카드상의 이름 복사"
+      ],
+      "Copy note content": [
+        "메모 콘텐츠 복사"
+      ],
       "Copy password": [
         "비밀번호 복사"
       ],
+      "Copy security code": [
+        "보안 코드 복사"
+      ],
       "Copy to clipboard": [
         "클립보드로 복사"
+      ],
+      "Copy username": [
+        "시용자 이름 복사"
       ],
       "Create": [
         "생성"
@@ -987,6 +1008,9 @@
       "Encrypted JSON not supported": [
         "암호화된 JSON이 지원되지 않습니다."
       ],
+      "Encryption communication for desktop unlock failed.": [
+        "데스크톱 잠금 해제를 위한 암호화 통신에 실패했습니다."
+      ],
       "Error reporting problem": [
         "문제 보고 실패"
       ],
@@ -1224,6 +1248,15 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "무언가가 잘못되었습니다. ${ PASS_APP_NAME } 확장을 다시 로드하세요. 문제가 기록되었습니다."
       ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME } 데스크톱 앱이 잠겨 있어 잠금을 해제해야 합니다."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "${ PASS_APP_NAME } 데스크톱 앱이 설치되지 않았습니다."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME } 데스크톱 앱이 응답하지 않습니다. 실행 중인가요?"
+      ],
       "The URL is in the list": [
         "URL이 리스트에 있습니다."
       ],
@@ -1401,6 +1434,12 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount }건 전달됨"
       ],
+      "${ inviterEmail } wants to share an item with a group you administer.": [
+        "${ inviterEmail }님이 사용자가 관리하는 그룹과 항목을 공유하려고 합니다."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail }님이 그룹 ${ name }와(과) 항목을 공유하고 싶어합니다."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail }님이 나와 항목을 공유하고자 합니다."
       ],
@@ -1442,6 +1481,12 @@
       ],
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME }에서 패스키 저장을 제안합니다."
+      ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME }가 현재 오프라인 상태입니다. 확장 프로그램을 열어 잠금 해제하세요."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } 오프라인 모드 활성화됨."
       ],
       "${ payload.count } invite successfully sent": [
         "초대 ${ payload.count }개를 성공적으로 보냈습니다."
@@ -1556,6 +1601,9 @@
       ],
       "All trashed items successfully restored": [
         "모든 휴지통 내의 항목이 성공적으로 복구되었습니다."
+      ],
+      "An item previously shared with you was removed.": [
+        "이전에 나와 공유한 항목이 삭제되었습니다."
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
         "메일함에서 ${ emailJSX }을(를) 정말 삭제하시겠어요?"
@@ -1695,9 +1743,6 @@
       "Disabling auto-lock failed": [
         "자동 잠금 비활성화 실패"
       ],
-      "Disabling offline mode...": [
-        "오프라인 모드 비활성화 중..."
-      ],
       "Discover ${ PASS_APP_NAME } video": [
         "${ PASS_APP_NAME } 비디오 살펴보기"
       ],
@@ -1749,11 +1794,17 @@
       "Enable auto-locking to secure your data": [
         "데이터를 보호하려면 자동 잠금을 활성화 하세요."
       ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "인터넷 연결이 끊기거나 ${ BRAND_NAME } 서버에 접속할 수 없을 때 ${ PASS_SHORT_APP_NAME } 데이터에 접근할 수 있도록 오프라인 모드를 활성화하세요."
+      ],
       "Enabling biometrics auto-lock": [
         "생체인증 자동 잠금해제 활성화 중"
       ],
       "Enabling biometrics lock failed": [
         "생체인증 잠금 활성화 실패"
+      ],
+      "Enabling desktop auto-lock": [
+        "데스크톱 자동 잠금 활성화"
       ],
       "Enabling offline mode...": [
         "오프라인 모드 활성화 중..."
@@ -1769,6 +1820,9 @@
       ],
       "Enter the address you want to email.": [
         "받을 사람의 이메일 주소를 입력하세요."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "인증 코드를 입력하세요. ${ digit }자입니다."
       ],
       "Enter your extra password": [
         "추가 비밀번호 입력"
@@ -1868,6 +1922,9 @@
       ],
       "Invite successfully resent": [
         "초대장을 성공적으로 보냄"
+      ],
+      "invites the group ${ name } to access items in": [
+        "님이 그룹 ${ name }에 초대하여 다음 금고의 항목에 접근하도록 합니다:"
       ],
       "invites you to access items in": [
         "님이 항목 공유를 초대합니다:"
@@ -2007,14 +2064,11 @@
       "Not recommended": [
         "추천하지 않음"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "오프라인 모드를 현재 비활성화 할 수 없습니다."
+      "Offline mode": [
+        "오프라인 모드"
       ],
       "Offline mode could not be enabled at the moment": [
         "지금은 오프라인 모드를 활성화할 수 없습니다."
-      ],
-      "Offline support successfully disabled": [
-        "오프라인 지원이 비활성화되었습니다"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME }이 온라인에 접근하려면 PIN 코드가 필요합니다. 3번의 시도가 실패하면 로그아웃됩니다."
@@ -2067,6 +2121,9 @@
       "Please check your spam folder or try resending the code.": [
         "스팸 폴더를 확인하거나 코드를 다시 전송해 보세요."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "오프라인 모드를 활성화하려면 ${ BRAND_NAME } 비밀번호로 인증해 주십시오."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 ${ BRAND_NAME } 비밀번호를 입력하세요."
       ],
@@ -2078,6 +2135,9 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "비밀번호로 자동 잠금을 사용하려면 백업 비밀번호로 인증해주세요."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "오프라인 모드를 활성화하려면 백업 비밀번호로 인증해 주십시오."
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 백업 비밀번호를 입력하세요."
@@ -2096,6 +2156,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "비밀번호를 사용하는 자동 잠금을 위해 추가 비밀번호를 확인해 주세요."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "오프라인 모드를 활성화하려면 추가 비밀번호로 인증해 주십시오."
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 추가 비밀번호를 입력하세요."
@@ -2135,6 +2198,9 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "비밀번호로 자동 잠금을 사용하려면 백업 비밀번호로 인증해주세요."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "오프라인 모드를 활성화하려면 백업 비밀번호로 인증해 주십시오."
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 백업 비밀번호를 입력하세요."
@@ -2198,6 +2264,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "저장된 자격 증명을 빠르게 자동 완성합니다."
+      ],
+      "Reconnect": [
+        "재연결"
+      ],
+      "Reconnecting": [
+        "재연결중"
       ],
       "Record: CNAME": [
         "레코드: CNAME"
@@ -2346,6 +2418,9 @@
       "The following ${ totalIgnored } item could not be imported:": [
         "다음 ${ totalIgnored }개 항목은 불러올 수 없습니다:"
       ],
+      "The group is invited to a vault.": [
+        "그룹이 금고에 초대되었습니다."
+      ],
       "The secure link has been removed": [
         "안전한 링크가 삭제되었습니다."
       ],
@@ -2360,6 +2435,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "이 기능은 현재 Linux에서 실험 중입니다. 시스템이 최신 상태인지 확인해 주세요."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "이 기능은 설정 중에 ${ PASS_APP_NAME } 데스크톱 앱이 설치되어 실행 중이어야 합니다."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "이 항목은 모두에게 공유되지 않습니다. 다른 사람과 공유하려면 사람을 초대하세요."
@@ -2484,6 +2562,9 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "금고 \"${ payload.share.content.name }\" 이(가) 성공적으로 업데이트되었습니다."
       ],
+      "Vault \"${ share.content.name }\" was removed.": [
+        "금고 \"${ share.content.name }\"이(가) 삭제되었습니다."
+      ],
       "Vault organization successfully updated": [
         "보관함 조직이 성공적으로 업데이트되었습니다."
       ],
@@ -2514,6 +2595,9 @@
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "${ PASS_APP_NAME }에서 로그인을 생성/편집할 때 '사용자 이름' 입력이 항상 표시됩니다."
       ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "활성화하면 인터넷 연결이 끊기거나 ${ BRAND_NAME } 서버에 접속할 수 없을 때도 ${ PASS_SHORT_APP_NAME } 데이터에 접근할 수 있습니다."
+      ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "이 별칭에서 이메일을 전송하면, 이메일 전송자가 ${ emailSender }(으)로 표시됩니다."
       ],
@@ -2525,6 +2609,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "이제 ${ BRAND_NAME } 비밀번호로 ${ PASS_SHORT_APP_NAME }의 오프라인 이용이 가능합니다"
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "이제 추가 비밀번호를 사용하여 ${ PASS_SHORT_APP_NAME }를 오프라인으로 이용해 보세요"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "이제 추가 비밀번호를 사용하여 ${ PASS_SHORT_APP_NAME }를 오프라인으로 이용해 보세요"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "이제 추가 비밀번호를 사용하여 ${ PASS_SHORT_APP_NAME }를 오프라인으로 이용해 보세요"
       ],
       "You cannot change the mailboxes for this alias.": [
         "이 별명의 메일함을 변경할 수 없습니다."
@@ -2556,8 +2649,20 @@
       "You may close this tab.": [
         "이 탭을 닫아도 됩니다."
       ],
+      "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME }로 접근성 권한을 부여해야 할 수 있습니다."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "항목을 불러오기 전에 금고에 대한 편집 권한이 필요합니다."
+      ],
+      "You no longer have access to some vaults or items because your group ${ groupName }'s access was removed.": [
+        "그룹 ${ groupName }의 접근 권한이 제거되었기 때문에 일부 금고 또는 항목에 더 이상 접근할 수 없습니다."
+      ],
+      "You now have access to \"Item ${ itemName }\" because your group ${ groupName } has been granted access.": [
+        "사용자의그룹 ${ groupName }에 접근 권한이 부여되었으므로 \"${ itemName }\" 항목에 접근할 수 있습니다."
+      ],
+      "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
+        "사용자의 그룹 ${ groupName }에 접근 권한이 부여되었기 때문에 \"${ vaultName }\" 금고에 접근할 수 있습니다."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "도메인을 확인한 후 도메인 설정(catch-all 이메일 별칭, 별칭의 기본 표시 이름 등)을 사용자 지정할 수 있습니다."
@@ -2983,6 +3088,9 @@
       "Empty trash": [
         "휴지통 비우기"
       ],
+      "Enable offline access": [
+        "오프라인 접근 허용"
+      ],
       "Enter email or username": [
         "이메일 및 사용자 이름 입력"
       ],
@@ -3300,6 +3408,9 @@
       ],
       "Notes": [
         "메모"
+      ],
+      "Offline mode": [
+        "오프라인 모드"
       ],
       "Old-New": [
         "오래됨 순"
@@ -4650,6 +4761,9 @@
       "Vault": [
         "금고"
       ],
+      "Vault shared with a group you administer": [
+        "사용자가 관리하는 그룹과 공유된 금고"
+      ],
       "Vault shared with you": [
         "나와 공유된 금고"
       ],
@@ -4748,6 +4862,9 @@
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } 비밀번호가 필요합니다"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } 오프라인 모드 비활성화됨."
       ],
       "2 consecutive dots are not allowed": [
         "마침표 2개가 연속해서 올 수 없습니다"
@@ -4949,6 +5066,9 @@
       ],
       "Title is required": [
         "필수 필드"
+      ],
+      "Too many attempts": [
+        "너무 많이 시도하였습니다"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "금고의 소유권을 ${ email }으로 이동하시겠어요?"

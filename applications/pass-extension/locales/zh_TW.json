@@ -547,6 +547,9 @@
       "Sort vault items": [
         "排序保管庫項目"
       ],
+      "Start from scratch": [
+        "從空白檔建立"
+      ],
       "Submit": [
         "送出"
       ],
@@ -1199,8 +1202,8 @@
       "Disabling auto-lock failed": [
         "停用自動鎖定失敗"
       ],
-      "Disabling offline mode...": [
-        "停用離線模式..."
+      "Discover ${ PASS_APP_NAME } video": [
+        "探索 ${ PASS_APP_NAME } 影片"
       ],
       "Drop file here to upload": [
         "拖曳檔案到此處來上傳"
@@ -1391,6 +1394,9 @@
       "No breaches detected": [
         "無偵測到外洩"
       ],
+      "No credit cards found": [
+        "找不到信用卡"
+      ],
       "No identity item found": [
         "身分無法查詢"
       ],
@@ -1400,8 +1406,8 @@
       "None": [
         "無"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "離線模式目前無法被停用"
+      "Offline mode": [
+        "離線模式"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "我們的警示偏向於謹慎。如果您不認識任何外洩的資訊，您可以放心地忽略此報告。"
@@ -1480,6 +1486,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "快速填入您儲存的認證"
+      ],
+      "Reconnect": [
+        "重新連線"
+      ],
+      "Reconnecting": [
+        "重新連線"
       ],
       "Record: CNAME": [
         "記錄：CNAME"
@@ -1953,6 +1965,9 @@
       "Created at": [
         "建立於"
       ],
+      "Credit-card autofill": [
+        "信用卡自動填寫"
+      ],
       "Crypto Wallet": [
         "加密錢包"
       ],
@@ -2018,6 +2033,9 @@
       ],
       "Empty trash": [
         "清空垃圾桶"
+      ],
+      "Enable offline access": [
+        "啟用離線存取"
       ],
       "Enter email or username": [
         "輸入您的電子信箱或使用者名稱"
@@ -2145,6 +2163,9 @@
       "IP Address": [
         "IP 位址"
       ],
+      "Issuing Country": [
+        "簽發國家"
+      ],
       "Item ID": [
         "項目 ID"
       ],
@@ -2165,6 +2186,9 @@
       ],
       "Language": [
         "語言"
+      ],
+      "Larger window": [
+        "較大的窗口"
       ],
       "Last 2 weeks": [
         "過去2週"
@@ -2289,6 +2313,9 @@
       "Notes": [
         "備註"
       ],
+      "Offline mode": [
+        "離線模式"
+      ],
       "Old-New": [
         "舊至新"
       ],
@@ -2357,6 +2384,9 @@
       ],
       "PIN code": [
         "PIN 碼"
+      ],
+      "Points Balance": [
+        "剩餘積分"
       ],
       "Port": [
         "連接埠"
@@ -2481,8 +2511,14 @@
       "Show website favicons": [
         "顯示網站圖示"
       ],
+      "Social Security": [
+        "社會保障"
+      ],
       "Social security number": [
         "社會安全碼(SSN)"
+      ],
+      "Software license": [
+        "軟體授權"
       ],
       "Special characters (!&*)": [
         "特殊字元 (!&*)"
@@ -2849,6 +2885,9 @@
       ],
       "Select a suffix": [
         "選取後綴"
+      ],
+      "Select option": [
+        "選擇選項"
       ],
       "Unknown origin": [
         "來源不明"

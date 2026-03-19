@@ -1497,6 +1497,9 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } irá sugerir salvar chaves de acesso."
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Modo off-line do ${ PASS_SHORT_APP_NAME } está ativado."
+      ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } convite enviado",
         "${ payload.count } convites enviados"
@@ -1757,9 +1760,6 @@
       "Disabling auto-lock failed": [
         "Erro ao desativar o bloqueio automático"
       ],
-      "Disabling offline mode...": [
-        "Desativando modo off-line..."
-      ],
       "Discover ${ PASS_APP_NAME } video": [
         "Descubra o vídeo do ${ PASS_APP_NAME }"
       ],
@@ -1810,6 +1810,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Ative o bloqueio automático para proteger seus dados."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Ative o modo off-line para acessar seus dados do ${ PASS_SHORT_APP_NAME } caso você perca a conexão com a internet ou se os servidores do ${ BRAND_NAME } estiverem inacessíveis."
       ],
       "Enabling biometrics auto-lock": [
         "Ativando o bloqueio automático"
@@ -2083,14 +2086,11 @@
       "Not recommended": [
         "Não recomendado"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "O modo off-line não pôde ser desativado no momento"
+      "Offline mode": [
+        "Modo off-line"
       ],
       "Offline mode could not be enabled at the moment": [
         "O modo off-line não pôde ser ativado no momento"
-      ],
-      "Offline support successfully disabled": [
-        "O modo off-line foi desativado."
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "O acesso on-line ao ${ PASS_APP_NAME } exigirá um código PIN. Você será desconectado após 3 tentativas fracassadas."
@@ -2144,6 +2144,9 @@
       "Please check your spam folder or try resending the code.": [
         "Verifique sua pasta de spam ou tente reenviar o código."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Confirme sua senha da ${ BRAND_NAME } para ativar o modo off-line"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme sua senha da ${ BRAND_NAME } para exportar seus dados do ${ PASS_APP_NAME }"
       ],
@@ -2155,6 +2158,9 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Confirme sua senha de backup para bloquear automaticamente com a sua senha."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Confirme sua senha de backup para ativar o modo off-line"
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme sua senha de backup para exportar os dados de ${ PASS_APP_NAME }"
@@ -2173,6 +2179,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Confirme sua senha adicional para bloquear automaticamente com a sua senha adicional."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Confirme sua senha adicional para ativar o modo off-line"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme sua senha extra para exportar os dados de ${ PASS_APP_NAME }"
@@ -2212,6 +2221,9 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Confirme sua segunda senha para bloquear automaticamente com a sua senha."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Confirme sua segunda senha para ativar o modo off-line"
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme sua segunda senha para exportar os dados de ${ PASS_APP_NAME }"
@@ -2275,6 +2287,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Preencha rapidamente suas credenciais salvas."
+      ],
+      "Reconnect": [
+        "Reconectar"
+      ],
+      "Reconnecting": [
+        "Reconectando"
       ],
       "Record: CNAME": [
         "Registro: CNAME"
@@ -2602,6 +2620,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Ao criar/editar um Início de Sessão no ${ PASS_APP_NAME }, a entrada “nome de usuário” estará sempre visível."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Quando ativado, você ainda consegue acessar seus dados do ${ PASS_SHORT_APP_NAME } se perder a conectividade com a internet ou se os servidores do ${ BRAND_NAME } estiverem inacessíveis."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Ao enviar um e-mail a partir desse alias, o e-mail exibirá ${ emailSender } como remetente."
@@ -3100,6 +3121,9 @@
       "Empty trash": [
         "Esvaziar lixeira"
       ],
+      "Enable offline access": [
+        "Ativar acesso off-line"
+      ],
       "Enter email or username": [
         "Digite o e-mail ou nome de usuário"
       ],
@@ -3417,6 +3441,9 @@
       ],
       "Notes": [
         "Notas"
+      ],
+      "Offline mode": [
+        "Modo off-line"
       ],
       "Old-New": [
         "Do mais antigo para o mais recente"
@@ -4881,6 +4908,9 @@
       "${ BRAND_NAME } password is required": [
         "A senha da ${ BRAND_NAME } é obrigatória"
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Modo off-line do ${ PASS_SHORT_APP_NAME } está desativado."
+      ],
       "2 consecutive dots are not allowed": [
         "Não é permitido o uso de 2 pontos consecutivos."
       ],
@@ -5084,6 +5114,9 @@
       ],
       "Title is required": [
         "O título é obrigatório"
+      ],
+      "Too many attempts": [
+        "Muitas tentativas"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Transferir propriedade deste cofre para ${ email }?"
