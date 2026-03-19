@@ -1,7 +1,6 @@
 import { Router } from 'react-router-dom';
 
 import { createHashHistory } from 'history';
-import { PASS_AUTH_STORE_KEY } from 'proton-pass-desktop/constants';
 import { AppGuard } from 'proton-pass-web/app/AppGuard';
 import { AuthServiceProvider } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { AuthSwitchProvider } from 'proton-pass-web/app/Auth/AuthSwitchProvider';
@@ -74,9 +73,6 @@ const connectivity = createConnectivityService({ api });
 const history = createHashHistory();
 const showWelcome = isFirstLaunch();
 const imageProxy = createImageProxyHandler(api);
-
-// Expose authStore globally for SSH agent lock checking
-(window as any)[PASS_AUTH_STORE_KEY] = authStore;
 
 exposeApi(api);
 exposePassCrypto(createPassCrypto(core, store));

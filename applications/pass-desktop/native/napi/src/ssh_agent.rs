@@ -4,6 +4,7 @@ use futures::stream::Stream;
 use napi::bindgen_prelude::Promise;
 use napi::threadsafe_function::ThreadsafeFunction;
 use russh_keys::agent::client::{AgentClient, AgentStream};
+use russh_keys::agent::server::MessageType;
 use russh_keys::agent::Constraint;
 use russh_keys::{agent, ssh_key, PrivateKey, PublicKeyBase64};
 use std::path::PathBuf;
@@ -92,7 +93,15 @@ pub struct AgentStatus {
     pub socket_path: Option<String>,
 }
 
+#[derive(Debug, Clone)]
+struct TrackedKey {
+    pub public_key: ssh_key::PublicKey,
+    // In the future more fields can be added here, e.g itemID
+    // if we want to display key usage confirmation UI in Electron
+}
+
 static SSH_AGENT_INSTANCE: Mutex<Option<SshAgentInstance>> = Mutex::new(None);
+static TRACKED_KEYS: Mutex<Vec<TrackedKey>> = Mutex::new(Vec::new());
 
 type IsUnlockedCallback = ThreadsafeFunction<Option<String>, Promise<bool>>;
 
@@ -152,15 +161,14 @@ impl agent::server::Agent for PassSshAgent {
         Box::new(Box::pin(fut))
     }
 
-    async fn confirm_request(&self, msg: agent::server::MessageType) -> bool {
+    async fn confirm_request(&self, msg: MessageType) -> bool {
         println!("SSH agent confirming request");
 
         match msg {
             // For sign operations, returns true to let the confirm() method above handle the unlock check
-            agent::server::MessageType::Sign => {
-                println!("Sign request will be handled by confirm()");
-                true
-            }
+            MessageType::Sign |
+            // For add/remove keys operations, no need to check for app lock
+            MessageType::AddKeys | MessageType::RemoveKeys | MessageType::RemoveAllKeys => true,
             _ => {
                 let is_unlocked = self.check_unlocked(None).await;
                 is_unlocked
@@ -317,20 +325,22 @@ impl SshAgentManager {
     pub async fn remove_all_keys() -> Result<()> {
         let mut client = Self::connect_agent_client().await?;
 
-        let identities = client
-            .request_identities()
-            .await
-            .map_err(|e| anyhow::anyhow!("Failed to request identities: {}", e))?;
+        let keys_to_remove = {
+            let mut tracked = TRACKED_KEYS.lock().unwrap();
+            let keys = tracked.clone();
+            tracked.clear();
+            keys
+        };
 
-        if identities.is_empty() {
+        if keys_to_remove.is_empty() {
             return Ok(());
         }
 
         // client.remove_all_identities() fails with "Agent failure" error
         // (with either russh-keys = "0.49.2" or russh = "0.54.6")
         // so we currently have to use client.remove_identity() instead
-        for identity in identities {
-            if let Err(e) = client.remove_identity(&identity).await {
+        for key in keys_to_remove {
+            if let Err(e) = client.remove_identity(&key.public_key).await {
                 eprintln!("Failed to remove a key: {}", e);
             }
         }
@@ -366,7 +376,12 @@ impl SshAgentManager {
         S: AgentStream + Unpin,
     {
         let private_key = Self::parse_private_key(&key.private_key)?;
+
         client.add_identity(&private_key, &[Constraint::Confirm]).await?;
+
+        let public_key = private_key.public_key().clone();
+        TRACKED_KEYS.lock().unwrap().push(TrackedKey { public_key });
+
         Ok(())
     }
 
