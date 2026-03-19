@@ -1689,9 +1689,6 @@
       "Disabling auto-lock failed": [
         "自動ロックを無効にできませんでした"
       ],
-      "Disabling offline mode...": [
-        "オフラインモードを無効にしています..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "DNSの変更が更新されるまでに最大 24 時間かかることがあります。"
       ],
@@ -1956,6 +1953,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
+      ],
       "Moving items": [
         "アイテムの移動"
       ],
@@ -1992,14 +1992,8 @@
       "Offline mode": [
         "オフラインモード"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "今はオフラインモードを無効化できません"
-      ],
       "Offline mode could not be enabled at the moment": [
         "現時点ではオフライン モードを有効にできませんでした"
-      ],
-      "Offline support successfully disabled": [
-        "オフライン サポートが正常に無効になりました"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME } へのオンラインアクセスにはPINコードが必要です。3回の試行に失敗するとログアウトされます。"

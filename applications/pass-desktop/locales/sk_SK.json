@@ -1782,9 +1782,6 @@
       "Disabling auto-lock failed": [
         "Vypnutie automatického uzamykania zlyhalo"
       ],
-      "Disabling offline mode...": [
-        "Vypínanie offline režimu..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "Aktualizácia zmien DNS môže trvať až 24 hodín."
       ],
@@ -2073,6 +2070,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+      ],
       "Moving items": [
         "Presúvanie položiek"
       ],
@@ -2112,14 +2115,8 @@
       "Offline mode": [
         "Offline režim"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Offline režim momentálne nie je možné vypnúť"
-      ],
       "Offline mode could not be enabled at the moment": [
         "Offline režim nie je možné momentálne povoliť"
-      ],
-      "Offline support successfully disabled": [
-        "Podpora offline bola úspešne vypnutá"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online prístup k ${ PASS_APP_NAME } bude vyžadovať PIN kód. Po troch neúspešných pokusoch dôjde k odhláseniu."

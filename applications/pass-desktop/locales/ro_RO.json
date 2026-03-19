@@ -1760,9 +1760,6 @@
       "Disabling auto-lock failed": [
         "Dezactivarea autoblocării a eșuat."
       ],
-      "Disabling offline mode...": [
-        "Se dezactivează modul fără conexiune..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "Actualizarea modificărilor efectuate la DNS ar putea dura până la 24 de ore."
       ],
@@ -2047,6 +2044,11 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -2086,14 +2088,8 @@
       "Offline mode": [
         "Mod deconectat"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Modul fără conexiune nu a putut fi dezactivat momentan."
-      ],
       "Offline mode could not be enabled at the moment": [
         "Modul deconectat nu a putut fi activat momentan."
-      ],
-      "Offline support successfully disabled": [
-        "Accesul deconectat a fost dezactivat."
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Accesul online la ${ PASS_APP_NAME } va necesita un cod PIN. După 3 încercări nereușite contul va fi deconectat."
@@ -2606,6 +2602,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Acum vă puteți folosi parola ${ BRAND_NAME } pentru a accesa ${ PASS_SHORT_APP_NAME } în mod deconectat."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Acum vă puteți folosi parola de rezervă pentru a accesa ${ PASS_SHORT_APP_NAME } în mod deconectat."
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Acum vă puteți folosi parola suplimentară pentru a accesa ${ PASS_SHORT_APP_NAME } în mod deconectat."
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Acum vă puteți folosi parola secundară pentru a accesa ${ PASS_SHORT_APP_NAME } în mod deconectat."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nu se poate modifica adresa reală pentru acest alias."
