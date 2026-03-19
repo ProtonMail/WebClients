@@ -1,15 +1,13 @@
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import { DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID } from '@proton/components/components/drawer/views/SecurityCenter/constants';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components';
-import {
-    DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useDrawer,
-} from '@proton/components';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import passIconSvg from '@proton/styles/assets/img/pass/protonpass-icon.svg';
 

@@ -1,6 +1,6 @@
+import Icon from '@proton/components/components/icon/Icon';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
 import type { IconName } from '@proton/icons/types';
 
 interface Props {

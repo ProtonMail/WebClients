@@ -1,9 +1,13 @@
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import useApi from '@proton/components/hooks/useApi';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { useEffect } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import { Dropdown, useApi, useModalState, usePopperAnchor, useSpotlightOnFeature } from '@proton/components';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
 import { FeatureCode } from '@proton/features';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';

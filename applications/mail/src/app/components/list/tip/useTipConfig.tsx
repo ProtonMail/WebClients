@@ -1,17 +1,15 @@
+import AutoDeleteUpsellModal from '@proton/components/components/upsell/modals/AutoDeleteUpsellModal';
+import DWMUpsellModal from '@proton/components/components/upsell/modals/DWMUpsellModal';
+import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
+import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
+import PmMeUpsellModal from '@proton/components/components/upsell/modals/PmMeUpsellModal';
+import useApi from '@proton/components/hooks/useApi';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainAddress';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import {
-    AutoDeleteUpsellModal,
-    DWMUpsellModal,
-    EditLabelModal,
-    LabelsUpsellModal,
-    PmMeUpsellModal,
-    useApi,
-    useModalStateObject,
-    useNotifications,
-    useShortDomainAddress,
-} from '@proton/components';
 import IncreasePrivacyUpsellModal from '@proton/components/components/upsell/modals/IncreasePrivacyUpsellModal';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';

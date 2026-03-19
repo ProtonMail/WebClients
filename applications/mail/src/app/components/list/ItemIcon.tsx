@@ -1,4 +1,5 @@
-import { Icon, useFolderColor } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import useFolderColor from '@proton/components/hooks/useFolderColor';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 import type { FolderInfo } from '../../helpers/labels';

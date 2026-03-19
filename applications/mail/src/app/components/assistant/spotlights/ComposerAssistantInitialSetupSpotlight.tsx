@@ -1,10 +1,12 @@
+import Spotlight from '@proton/components/components/spotlight/Spotlight';
+import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
+import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import type { ReactNode, RefObject } from 'react';
 import { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Spotlight, useSpotlightOnFeature, useSpotlightShow } from '@proton/components';
 import { FeatureCode } from '@proton/features';
 import { useAssistant } from '@proton/llm/lib';
 

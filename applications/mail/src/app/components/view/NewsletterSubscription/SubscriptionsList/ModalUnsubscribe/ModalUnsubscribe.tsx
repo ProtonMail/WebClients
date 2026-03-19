@@ -1,16 +1,14 @@
+import ContactImage from '@proton/components/containers/contacts/ContactImage';
+import LinkConfirmationModal from '@proton/components/components/notifications/LinkConfirmationModal/LinkConfirmationModal';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import {
-    ContactImage,
-    LinkConfirmationModal,
-    type ModalProps,
-    Prompt,
-    useModalStateObject,
-    useNotifications,
-} from '@proton/components';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';

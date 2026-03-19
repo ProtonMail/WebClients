@@ -1,8 +1,9 @@
+import Option from '@proton/components/components/option/Option';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Option, SettingsLink } from '@proton/components';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { APPS } from '@proton/shared/lib/constants';

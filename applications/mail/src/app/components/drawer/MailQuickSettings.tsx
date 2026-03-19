@@ -1,3 +1,25 @@
+import DefaultQuickSettings from '@proton/components/components/drawer/views/quickSettings/DefaultQuickSettings';
+import DrawerAllSettingsView from '@proton/components/components/drawer/views/quickSettings/DrawerAllSettingsView';
+import DrawerAppScrollContainer from '@proton/components/components/drawer/views/shared/DrawerAppScrollContainer';
+import DrawerAppSection from '@proton/components/components/drawer/views/shared/DrawerAppSection';
+import DrawerDownloadApps from '@proton/components/components/drawer/views/quickSettings/DrawerDownloadApps';
+import Icon from '@proton/components/components/icon/Icon';
+import Info from '@proton/components/components/link/Info';
+import MailShortcutsModal from '@proton/components/containers/mail/MailShortcutsModal';
+import Option from '@proton/components/components/option/Option';
+import QuickSettingsButton from '@proton/components/components/drawer/views/quickSettings/QuickSettingsButton';
+import QuickSettingsButtonSection from '@proton/components/components/drawer/views/quickSettings/QuickSettingsButtonSection';
+import { QuickSettingsRequestNotifications } from '@proton/components/components/drawer/views/quickSettings/QuickSettingsRequestNotifications';
+import QuickSettingsSectionRow from '@proton/components/components/drawer/views/quickSettings/QuickSettingsSectionRow';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
+import ToggleAssistant from '@proton/components/containers/general/ToggleAssistant/ToggleAssistant';
+import ToggleAssistantEnvironment from '@proton/components/containers/general/ToggleAssistant/ToggleAssistantEnvironment';
+import useApi from '@proton/components/hooks/useApi';
+import { useElectronDefaultApp } from '@proton/components/containers/desktop/defaultApp/useElectronDefaultApp';
+import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMemo } from 'react';
 
 import { c } from 'ttag';
@@ -5,30 +27,6 @@ import { c } from 'ttag';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import {
-    DefaultQuickSettings,
-    DrawerAllSettingsView,
-    DrawerAppScrollContainer,
-    DrawerAppSection,
-    DrawerDownloadApps,
-    Icon,
-    Info,
-    MailShortcutsModal,
-    Option,
-    QuickSettingsButton,
-    QuickSettingsButtonSection,
-    QuickSettingsRequestNotifications,
-    QuickSettingsSectionRow,
-    SelectTwo,
-    ShortcutsToggle,
-    ToggleAssistant,
-    ToggleAssistantEnvironment,
-    useApi,
-    useElectronDefaultApp,
-    useKeyTransparencyContext,
-    useModalState,
-    useNotifications,
-} from '@proton/components';
 import { DrawerReplayOnboarding } from '@proton/components/components/drawer/views/quickSettings/DrawerReplayOnboarding';
 import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';

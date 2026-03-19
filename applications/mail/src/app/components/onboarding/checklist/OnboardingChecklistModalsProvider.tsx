@@ -1,3 +1,4 @@
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { type ReactNode, createContext, useContext } from 'react';
 
 import { GmailSyncModal } from '@proton/activation';
@@ -5,7 +6,6 @@ import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modal
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
 import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
-import { useModalState } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
 import AccountsLoginModal from './modals/AccountsLoginModal';

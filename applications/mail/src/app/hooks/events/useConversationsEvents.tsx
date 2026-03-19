@@ -1,4 +1,4 @@
-import { useSubscribeEventManager } from '@proton/components';
+import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 

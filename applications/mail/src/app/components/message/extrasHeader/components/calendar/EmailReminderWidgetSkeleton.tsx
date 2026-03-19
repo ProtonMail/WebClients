@@ -1,4 +1,4 @@
-import { IconRow } from '@proton/components';
+import IconRow from '@proton/components/components/iconRow/IconRow';
 
 export const EmailReminderWidgetSkeleton = () => (
     <div data-testid="calendar-widget-widget-skeleton" className="mb-3">

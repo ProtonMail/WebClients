@@ -1,3 +1,14 @@
+import type { LabelModel } from '@proton/components/containers/labels/modals/EditLabelModal';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
+import FolderIcon from '@proton/components/containers/labels/FolderIcon';
+import Icon from '@proton/components/components/icon/Icon';
+import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
+import Mark from '@proton/components/components/text/Mark';
+import Radio from '@proton/components/components/input/Radio';
+import SearchInput from '@proton/components/components/input/SearchInput';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
@@ -5,19 +16,6 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { LabelModel } from '@proton/components';
-import {
-    Checkbox,
-    EditLabelModal,
-    FolderIcon,
-    Icon,
-    LabelsUpsellModal,
-    Mark,
-    Radio,
-    SearchInput,
-    useActiveBreakpoint,
-    useModalState,
-} from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';

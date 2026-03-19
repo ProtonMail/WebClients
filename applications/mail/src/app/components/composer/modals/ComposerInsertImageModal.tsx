@@ -1,9 +1,11 @@
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Info from '@proton/components/components/link/Info';
+import Label from '@proton/components/components/label/Label';
 import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Checkbox, Info, Label } from '@proton/components';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 

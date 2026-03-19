@@ -1,7 +1,9 @@
+import useApi from '@proton/components/hooks/useApi';
+import useConfig from '@proton/components/hooks/useConfig';
+import useRelocalizeText from '@proton/components/hooks/useRelocalizeText';
 import { useCallback } from 'react';
 
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { useApi, useConfig, useRelocalizeText } from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';

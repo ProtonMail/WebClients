@@ -1,6 +1,7 @@
+import ContactImage from '@proton/components/containers/contacts/ContactImage';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import { useEffect, useState } from 'react';
 
-import { ContactImage, useModalStateObject } from '@proton/components';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 import clsx from '@proton/utils/clsx';
 

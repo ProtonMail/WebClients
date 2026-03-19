@@ -1,3 +1,12 @@
+import type { PrivateAuthenticationStore } from '@proton/components/containers/app/interface';
+import ApiContext from '@proton/components/containers/api/apiContext';
+import { CacheProvider } from '@proton/components/containers/cache/Provider';
+import CalendarModelEventManagerProvider from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
+import ConfigProvider from '@proton/components/containers/config/Provider';
+import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
+import ModalsChildren from '@proton/components/containers/modals/Children';
+import ModalsProvider from '@proton/components/containers/modals/Provider';
+import SpotlightProvider from '@proton/components/components/spotlight/Provider';
 import type { PropsWithChildren, ReactElement, ReactNode } from 'react';
 import { useRef } from 'react';
 import { Route, Router } from 'react-router';
@@ -12,17 +21,6 @@ import { createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/test';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
-import type { PrivateAuthenticationStore } from '@proton/components';
-import {
-    ApiContext,
-    CacheProvider,
-    CalendarModelEventManagerProvider,
-    ConfigProvider,
-    DrawerProvider,
-    ModalsChildren,
-    ModalsProvider,
-    SpotlightProvider,
-} from '@proton/components';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';

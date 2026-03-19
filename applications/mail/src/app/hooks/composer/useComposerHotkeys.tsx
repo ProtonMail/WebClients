@@ -1,8 +1,8 @@
+import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
+import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import type { MutableRefObject, RefObject } from 'react';
 import { useRef } from 'react';
 
-import type { HotkeyTuple } from '@proton/components';
-import { useHotkeys } from '@proton/components';
 import { isSafari as checkIsSafari } from '@proton/shared/lib/helpers/browser';
 import { editorShortcuts } from '@proton/shared/lib/shortcuts/mail';
 import noop from '@proton/utils/noop';

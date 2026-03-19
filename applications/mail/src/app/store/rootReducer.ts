@@ -1,3 +1,5 @@
+import { breachesCountReducer } from '@proton/components/components/drawer/views/SecurityCenter/BreachAlerts/slice/breachNotificationsSlice';
+import { securityCenterReducer } from '@proton/components/components/drawer/views/SecurityCenter/AccountSecurity/slice/accountSecuritySlice';
 import { combineReducers } from '@reduxjs/toolkit';
 
 import { protonDomainsReducer, retentionPoliciesReducer } from '@proton/account';
@@ -5,7 +7,6 @@ import { calendarSettingsReducer } from '@proton/calendar/calendarUserSettings';
 import { calendarsBootstrapReducer } from '@proton/calendar/calendarBootstrap';
 import { calendarsReducer } from '@proton/calendar/calendars';
 import { holidaysDirectoryReducer } from '@proton/calendar/holidaysDirectory';
-import { breachesCountReducer, securityCenterReducer } from '@proton/components';
 import { conversationCountsReducer } from '@proton/mail/store/counts/conversationCountsSlice';
 import { filtersReducer } from '@proton/mail/store/filters';
 import { messageCountsReducer } from '@proton/mail/store/counts/messageCountsSlice';

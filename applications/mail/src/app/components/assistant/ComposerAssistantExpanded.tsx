@@ -1,3 +1,4 @@
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { RefObject } from 'react';
 import { useRef } from 'react';
 
@@ -7,7 +8,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useNotifications } from '@proton/components';
 import Copy from '@proton/components/components/button/Copy';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';

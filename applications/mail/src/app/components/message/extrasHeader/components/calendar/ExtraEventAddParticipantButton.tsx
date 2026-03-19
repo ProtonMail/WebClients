@@ -1,9 +1,11 @@
+import useAddAttendees from '@proton/components/containers/calendar/hooks/useAddAttendees';
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useAddAttendees, useDrawer, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { getAttendeeEmail, withPartstat } from '@proton/shared/lib/calendar/attendees';

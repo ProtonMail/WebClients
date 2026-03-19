@@ -1,3 +1,6 @@
+import Icon from '@proton/components/components/icon/Icon';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import type { KeyboardEvent, MutableRefObject } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
@@ -5,7 +8,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon, InputFieldTwo, useActiveBreakpoint } from '@proton/components';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import type { IconName } from '@proton/icons/types';
 import { ASSISTANT_PROMPT_SIZE_LIMIT } from '@proton/llm/lib';
