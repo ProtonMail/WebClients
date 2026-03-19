@@ -3,6 +3,7 @@ extern crate napi_derive;
 
 mod autotypes;
 mod clipboards;
+mod ssh_agent;
 
 #[cfg(windows)]
 mod updater;
@@ -134,5 +135,42 @@ pub mod msix_updater {
             let _ = on_progress; // Avoid unused variable warning
             Err(napi::Error::from_reason("MSIX updates are only supported on Windows"))
         }
+    }
+}
+
+pub mod ssh_agent_napi {
+    use super::ssh_agent::*;
+
+    #[napi(object)]
+    pub struct SshAgentStatus {
+        pub socket_path: Option<String>,
+    }
+
+    #[napi]
+    pub async fn start_agent() -> napi::Result<String> {
+        SshAgentManager::start_agent().map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
+
+    #[napi]
+    pub async fn stop_agent() -> napi::Result<String> {
+        SshAgentManager::stop_agent().map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
+
+    #[napi]
+    pub async fn send_keys(keys: Vec<SshKeyData>) -> napi::Result<String> {
+        SshAgentManager::send_keys(keys)
+            .await
+            .map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
+
+    #[napi]
+    pub async fn get_status() -> napi::Result<SshAgentStatus> {
+        let status = SshAgentManager::get_status()
+            .await
+            .map_err(|e| napi::Error::from_reason(e.to_string()))?;
+
+        Ok(SshAgentStatus {
+            socket_path: status.socket_path,
+        })
     }
 }

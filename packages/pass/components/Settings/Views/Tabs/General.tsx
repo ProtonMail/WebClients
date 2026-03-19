@@ -1,5 +1,7 @@
 import type { FC } from 'react';
 
+import { SshAgent } from 'proton-pass-web/app/Views/Settings/SshAgent/SshAgent';
+
 import { ApplicationLogs } from '@proton/pass/components/Settings/ApplicationLogs';
 import { Display } from '@proton/pass/components/Settings/Display';
 import { Locale } from '@proton/pass/components/Settings/Locale';
@@ -17,6 +19,7 @@ export const General: FC = () => {
         <Theme key="theme" />,
         <Display key="display" />,
         OFFLINE_SUPPORTED && <Offline key="offline" />,
+        <SshAgent key="ssh-agent" />,
         <ApplicationLogs style={{ '--h-custom': '18.75rem' }} key="logs" />,
     ].filter(isTruthy);
 };
