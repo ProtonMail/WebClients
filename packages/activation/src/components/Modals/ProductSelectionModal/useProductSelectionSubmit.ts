@@ -22,7 +22,7 @@ import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 
 export const useProductSelectionSubmit = () => {
     const [user] = useUser();
-    const { defaultAddress } = useAvailableAddresses();
+    const { availableAddresses } = useAvailableAddresses();
 
     const dispatch = useEasySwitchDispatch();
 
@@ -50,10 +50,10 @@ export const useProductSelectionSubmit = () => {
                     provider,
                     scope: scopes.join(' '),
                     callback: async (oAuthProps: OAuthProps) => {
-                        if (!defaultAddress) {
+                        if (!availableAddresses?.length) {
                             throw new Error('Missing address');
                         }
-                        await dispatch(createImporterThunk({ oAuthProps, source, user, defaultAddress }));
+                        await dispatch(createImporterThunk({ oAuthProps, source, user, availableAddresses }));
                     },
                 });
             }

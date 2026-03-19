@@ -21,7 +21,7 @@ import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 
 const useOAuthModal = () => {
     const [user] = useUser();
-    const { defaultAddress } = useAvailableAddresses();
+    const { availableAddresses } = useAvailableAddresses();
 
     const dispatch = useEasySwitchDispatch();
     const storeSource = useEasySwitchSelector(selectOauthDraftSource);
@@ -54,12 +54,12 @@ const useOAuthModal = () => {
             scope: finalScopes || '',
             features,
             callback: async (oAuthProps: OAuthProps) => {
-                if (!defaultAddress) {
+                if (!availableAddresses?.length) {
                     throw new Error('Missing address');
                 }
                 const source = storeSource ?? EASY_SWITCH_SOURCES.UNKNOWN;
                 dispatch(changeOAuthStep('loading-importer'));
-                await dispatch(createImporterThunk({ oAuthProps, source, user, defaultAddress }));
+                await dispatch(createImporterThunk({ oAuthProps, source, user, availableAddresses }));
             },
         });
     };
