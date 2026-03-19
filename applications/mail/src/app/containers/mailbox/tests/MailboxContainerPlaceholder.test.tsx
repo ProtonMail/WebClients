@@ -1,6 +1,7 @@
 import { screen } from '@testing-library/react';
 import { addDays } from 'date-fns';
 
+import { EasySwitchProvider } from '@proton/activation/index';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import type { OnboardingChecklistContext } from '../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
@@ -29,18 +30,21 @@ describe('MailboxContainerPlaceholder', () => {
             items: new Set(),
             expiresAt: addDays(new Date(), 10),
             canDisplayChecklist: true,
+            itemsToComplete: ['Import'],
         } as OnboardingChecklistContext);
 
         await mailTestRender(
-            <MailboxContainerPlaceholder
-                showPlaceholder={true}
-                welcomeFlag={false}
-                labelID="labelID"
-                checkedIDs={[]}
-                handleCheckAll={jest.fn()}
-            />
+            <EasySwitchProvider>
+                <MailboxContainerPlaceholder
+                    showPlaceholder={true}
+                    welcomeFlag={false}
+                    labelID="labelID"
+                    checkedIDs={[]}
+                    handleCheckAll={jest.fn()}
+                />
+            </EasySwitchProvider>
         );
-        screen.getByTestId('onboarding-accounts-switcher');
+        screen.getByTestId('onboarding-importers');
     });
 
     it('Should display section pane when checklist is reduced', async () => {

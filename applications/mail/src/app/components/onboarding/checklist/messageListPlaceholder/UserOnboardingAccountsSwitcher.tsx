@@ -1,123 +1,31 @@
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
-import useMyCountry from '@proton/components/hooks/useMyCountry';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { memo, useState } from 'react';
-
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
-import clsx from '@proton/utils/clsx';
+import checklistAccountsSwitcherImg from '@proton/styles/assets/img/illustrations/checklist-accounts-switcher.svg';
 
+import { ONLINE_SERVICES } from 'proton-mail/components/onboarding/checklist/constants';
 import { useMailOnboardingTelemetry } from 'proton-mail/components/onboarding/useMailOnboardingTelemetry';
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
-import { ONLINE_SERVICES } from '../constants';
 import UpdateMailAddressModal from './UpdateMailAddressModal';
-import { getFinanceServicesByCountry } from './onboardingAccountSwitcher.helpers';
 
-type Category = 'finance' | 'social-media' | 'shopping';
-
-interface TabProps {
-    categories: { id: Category; name: string }[];
-    onClick: (clickedCategory: Category) => void;
-    selectedID: string;
-    size: ButtonLikeSize;
-}
-
-const Pills = ({ categories, onClick, selectedID, size }: TabProps) => (
-    <div className="inline-flex gap-0.5 sm:gap-1 md:gap-4 flex-row">
-        {categories.map(({ name, id }) => (
-            <Button
-                className={selectedID === id ? '' : 'color-weak'}
-                color="weak"
-                shape={selectedID === id ? 'solid' : 'ghost'}
-                key={id}
-                pill
-                onClick={() => onClick(id)}
-                size={size}
-            >
-                {name}
-            </Button>
-        ))}
-    </div>
-);
-
-const TabContent = memo(({ selectedCategory }: { selectedCategory: Category }) => {
-    const { viewportWidth } = useActiveBreakpoint();
-    const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
-    const countryLocation = useMyCountry();
-    const servicesKeys = getFinanceServicesByCountry({ category: selectedCategory, countryLocation }) || [];
-
-    return (
-        <ul key={selectedCategory} className="unstyled mx-0 my-4 divide-y divide-weak">
-            {servicesKeys.map((key) => {
-                const service = ONLINE_SERVICES[key];
-                if (!service) {
-                    return null;
-                }
-
-                return (
-                    <li key={service.key} className="flex flex-row flex-nowrap items-center py-3">
-                        <img
-                            alt=""
-                            src={service.img}
-                            className="w-custom h-custom shrink-0 ml-1"
-                            style={{
-                                '--w-custom': '2rem',
-                                '--h-custom': '2rem',
-                            }}
-                        />
-                        <span className="flex-1 text-left px-2 color-weak text-ellipsis" title={service.name}>
-                            {service.name}
-                        </span>
-                        <ButtonLike
-                            as="a"
-                            href={service.url}
-                            rel="noopener noreferrer"
-                            size={viewportWidth.xsmall ? 'medium' : 'small'}
-                            target="_blank"
-                            onClick={() => {
-                                void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.change_login, {
-                                    service: key,
-                                });
-                            }}
-                            className="shrink-0"
-                            icon={viewportWidth.xsmall}
-                            pill={viewportWidth.xsmall}
-                        >
-                            {viewportWidth.xsmall ? (
-                                <IcArrowWithinSquare alt={c('Action').t`Change email`} />
-                            ) : (
-                                c('Action').t`Change email`
-                            )}
-                        </ButtonLike>
-                    </li>
-                );
-            })}
-        </ul>
-    );
-});
-TabContent.displayName = 'TabContent';
-
-const UserOnboardingAccountsSwitcher = ({ className }: { className?: string }) => {
+const UserOnboardingAccountsSwitcher = () => {
     const [addresses] = useAddresses();
-    const [selectedCategory, setSelectedCategory] = useState<Category>('finance');
     const sortedAddresses = sortAddresses(addresses || []);
     const updateMailAddressModal = useModalStateObject();
     const { createNotification } = useNotifications();
-    const { viewportWidth } = useActiveBreakpoint();
-    const { changeChecklistDisplay, canDisplayChecklist, markItemsAsDone } = useGetStartedChecklist();
+    const { changeChecklistDisplay, canDisplayChecklist } = useGetStartedChecklist();
     const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
 
     if (!canDisplayChecklist) {
@@ -126,25 +34,8 @@ const UserOnboardingAccountsSwitcher = ({ className }: { className?: string }) =
 
     const handleChangeChecklistDisplay = () => {
         changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.REDUCED);
-        markItemsAsDone('AccountLogin');
         void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.finish_change_login, {});
     };
-
-    const learnMoreLink = (
-        <Button
-            key="learn-more-link-change-addresses"
-            shape="underline"
-            color="norm"
-            className="p-0 inline-block"
-            onClick={() => updateMailAddressModal.openModal(true)}
-        >{c('Link').t`Learn more`}</Button>
-    );
-
-    const categories: { id: Category; name: string }[] = [
-        { id: 'finance', name: c('Onboarding List Placeholder').t`Finance` },
-        { id: 'social-media', name: c('Onboarding List Placeholder').t`Social media` },
-        { id: 'shopping', name: c('Onboarding List Placeholder').t`Shopping` },
-    ];
 
     const defaultEmailAddress: string | undefined = sortedAddresses?.[0]?.Email;
 
@@ -152,15 +43,16 @@ const UserOnboardingAccountsSwitcher = ({ className }: { className?: string }) =
         <>
             <div
                 data-testid="onboarding-accounts-switcher"
-                className={clsx('m-auto max-w-custom py-6', className)}
+                className="m-auto max-w-custom py-6"
                 style={{ '--max-w-custom': '28rem' }}
             >
                 <div className="text-center mb-4 mx-4">
-                    <h1 className="text-rg text-semibold color-weak mb-3">{c('Onboarding List Placeholder')
-                        .t`Privacy for all your online accounts`}</h1>
-                    <p className="color-weak text-sm m-0 mb-4">
+                    <img src={checklistAccountsSwitcherImg} alt="" className="mb-4" width={80} />
+                    <h1 className="text-lg text-semibold mb-3">{c('Onboarding List Placeholder')
+                        .t`Switch your accounts to ${BRAND_NAME}`}</h1>
+                    <p className="color-weak m-0 mb-4">
                         {c('Onboarding List Placeholder')
-                            .jt`Change your email address for popular services now to avoid being tracked and profiled. ${learnMoreLink}`}
+                            .t`Update your email on the services you use the most. Prevent tracking and protect your privacy.`}
                     </p>
                     {!!defaultEmailAddress && (
                         <Tooltip title={c('Action').t`Click to copy ${defaultEmailAddress} to clipboard`}>
@@ -182,24 +74,35 @@ const UserOnboardingAccountsSwitcher = ({ className }: { className?: string }) =
                         </Tooltip>
                     )}
                 </div>
-                <div
-                    className={clsx([
-                        'border-weak pt-4 px-3 sm:px-4 md:px-6 text-center',
-                        viewportWidth.xsmall ? 'border-top border-bottom' : 'border rounded-xl',
-                    ])}
-                >
-                    <Pills
-                        size={viewportWidth.xsmall ? 'small' : 'medium'}
-                        categories={categories}
-                        selectedID={selectedCategory}
-                        onClick={setSelectedCategory}
-                    />
-                    <TabContent selectedCategory={selectedCategory} />
+                <p className="text-sm color-weak text-center">{c('Onboarding List Placeholder').t`Popular services`}</p>
+                <div className="border-weak px-2 text-center flex gap-2 justify-center">
+                    {ONLINE_SERVICES.map((service) => {
+                        return (
+                            <ButtonLike
+                                key={service.name}
+                                as="a"
+                                href={service.url}
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                onClick={() => {
+                                    void sendMailOnboardingTelemetry(TelemetryMailOnboardingEvents.change_login, {
+                                        service: service.key,
+                                    });
+                                }}
+                                className="inline-flex items-center justify-center rounded-lg shrink-0 gap-2"
+                            >
+                                <img src={service.img} alt="" width={16} />
+                                <span>{service.name}</span>
+                            </ButtonLike>
+                        );
+                    })}
                 </div>
                 <div className="text-center mb-4">
-                    <Button shape="underline" className="mt-4 color-weak" onClick={handleChangeChecklistDisplay}>{c(
-                        'Onboarding List Placeholder'
-                    ).t`Maybe later`}</Button>
+                    <Button
+                        shape="underline"
+                        className="mt-4 color-weak text-sm"
+                        onClick={handleChangeChecklistDisplay}
+                    >{c('Onboarding List Placeholder').t`Skip for now`}</Button>
                 </div>
             </div>
             {updateMailAddressModal.render && <UpdateMailAddressModal {...updateMailAddressModal.modalProps} />}

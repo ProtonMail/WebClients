@@ -98,7 +98,7 @@ type Dimensions = {
     plan: `${PLANS}`;
     theme: `${ThemeTypes}`;
     is_default_theme: 'yes' | 'no';
-    service: AllowedServices;
+    service: OnlineServicesKey;
     service_checklist: OnlineServicesKey;
     service_checklist_button: 'done' | 'change_email';
     feature_short_domain: 'yes' | 'no';
@@ -109,32 +109,3 @@ type Dimensions = {
     checklist_step_update_login_completed: 'yes' | 'no';
     checklist_step_mobile_app_completed: 'yes' | 'no';
 };
-
-type AllowedServices = Extract<
-    OnlineServicesKey,
-    | 'amazon'
-    | 'ebay'
-    | 'aliexpress'
-    | 'facebook'
-    | 'instagram'
-    | 'tiktok'
-    | 'bank-of-america'
-    | 'american-express'
-    | 'capital-one'
-    | 'hsbc'
-    | 'barclays'
-    | 'lloyds'
-    | 'bnp-paribas'
-    | 'credit-agricole'
-    | 'banque-populaire'
-    | 'deutsche-bank'
-    | 'dz-bank'
-    | 'kfw'
-    | 'santander'
-    | 'bbva'
-    | 'caixa-bank'
-    | 'alpian'
-    | 'ubs'
-    | 'raiffeisen'
-    | 'zurcher-kantonalbank'
->;
