@@ -4811,9 +4811,6 @@
       "Available with ${ title }": [
         "Està disponible amb ${ title }"
       ],
-      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
-        "Trieu el servei que voleu portar a ${ MAIL_APP_NAME } i us guiarem en el procés de connectar una adreça o d'importar els vostres correus, calendaris o contactes."
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configureu això primer per activar la vostra organització i personalitzar la vostra adreça de correu."
       ],
@@ -4837,6 +4834,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronitzeu fàcilment els fitxers al núvol des de l'ordinador i accediu-hi des del dispositiu mòbil."
+      ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "Transferiu fàcilment els correus electrònics, els esdeveniments del calendari i els contactes del vostre proveïdor anterior. Trieu una importació única o una sincronització contínua automàtica."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activeu ${ PROTON_SENTINEL_NAME } per accedir a aquestes funcions"
@@ -6908,6 +6908,9 @@
       ],
       "Tab closed": [
         "Pestanya tancada"
+      ],
+      "The address is already activated": [
+        "L'adreça ja està activada"
       ],
       "The address might be misspelled": [
         "És possible que l'adreça estigui mal escrita."
@@ -9658,6 +9661,9 @@
       "Coming soon": [
         "Pròximament"
       ],
+      "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
+        "Completeu l'inici de sessió en aquest dispositiu per començar a utilitzar ${ VPN_APP_NAME } al vostre televisor."
+      ],
       "Compromised": [
         "En perill"
       ],
@@ -9722,6 +9728,9 @@
       "Create a secure cloud for ${ value } member": [
         "Crea un núvol segur per a ${ value } membre",
         "Crea un núvol segur per a ${ value } membres"
+      ],
+      "Create an account": [
+        "Creeu un compte"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crear i gestionar subcomptes i assignar-los adreces de correu en el vostre domini personalitzat."
@@ -11218,6 +11227,9 @@
       ],
       "Show original message": [
         "Mostra el missatge original"
+      ],
+      "Sign in": [
+        "Inicieu la sessió"
       ],
       "Sign in only": [
         "Només inicia la sessió"
@@ -15312,6 +15324,9 @@
       "${ BRAND_NAME } Account": [
         "Compte de ${ BRAND_NAME }"
       ],
+      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
+        "Un pas senzill avui per garantir la seguretat digital dels vostres infants demà. Reserveu-los una adreça de correu electrònic de ${ BRAND_NAME } privada."
+      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "Activeu l'adreça de correu electrònic privada de ${ BRAND_NAME } reservada per al vostre infant i configureu-ne el compte."
       ],
@@ -15347,6 +15362,9 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "Recupereu el compte de ${ BRAND_NAME } del vostre infant | ${ BRAND_NAME }"
+      ],
+      "Reserve your child's private email | ${ BRAND_NAME }": [
+        "Reserveu correus electrònics privats per als vostres infants | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Restabliu la contrasenya del vostre compte de ${ BRAND_NAME }"
@@ -23837,6 +23855,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sessió i concedir accés"
+      ],
+      "Sign in on TV": [
+        "Inicieu sessió al televisor"
       ],
       "Sign in to join the Beta program": [
         "Inicieu la sessió per unir-vos al programa Beta"

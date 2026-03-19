@@ -4808,9 +4808,6 @@
       "Available with ${ title }": [
         "Disponible avec ${ title }"
       ],
-      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
-        "Choisissez le service que vous souhaitez importer dans ${ MAIL_APP_NAME }, et nous vous guiderons pour connecter une adresse ou importer votre courrier, calendriers ou contacts."
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configurez d'abord cette option pour activer votre organisation et personnaliser votre adresse e-mail."
       ],
@@ -4834,6 +4831,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synchronisez facilement les fichiers sur le cloud depuis votre ordinateur et accédez-y depuis votre appareil mobile."
+      ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "Transférez facilement des e-mails, des événements de calendrier et des contacts de votre ancien fournisseur. Choisissez une importation unique ou une synchronisation continue automatique."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activez ${ PROTON_SENTINEL_NAME } pour accéder à ces fonctionnalités."
@@ -6902,6 +6902,9 @@
       ],
       "Tab closed": [
         "L'onglet est fermé."
+      ],
+      "The address is already activated": [
+        "L'adresse est déjà activée"
       ],
       "The address might be misspelled": [
         "L'adresse est peut-être mal orthographiée."
@@ -9649,6 +9652,9 @@
       "Coming soon": [
         "Bientôt disponible"
       ],
+      "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
+        "Terminez la connexion sur cet appareil pour commencer à utiliser ${ VPN_APP_NAME } sur votre TV."
+      ],
       "Compromised": [
         "Compromise"
       ],
@@ -9713,6 +9719,9 @@
       "Create a secure cloud for ${ value } member": [
         "Créer un cloud sécurisé pour ${ value } membre",
         "Créer un cloud sécurisé pour ${ value } membres"
+      ],
+      "Create an account": [
+        "Créer un compte"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Créez et gérez des comptes secondaires et attribuez-leur des adresses e-mail sur votre domaine personnalisé."
@@ -11203,6 +11212,9 @@
       ],
       "Show original message": [
         "Afficher le message d'origine"
+      ],
+      "Sign in": [
+        "Se connecter"
       ],
       "Sign in only": [
         "Connexion uniquement"
@@ -15291,6 +15303,9 @@
       "${ BRAND_NAME } Account": [
         "Compte ${ BRAND_NAME }"
       ],
+      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
+        "Une étape simple aujourd'hui pour assurer la sécurité numérique de votre enfant demain. Réservez une adresse e-mail ${ BRAND_NAME } privée pour votre enfant."
+      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "Activez l'adresse e-mail privée ${ BRAND_NAME } réservée à votre enfant et configurez son compte."
       ],
@@ -15326,6 +15341,9 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "Récupérez le compte ${ BRAND_NAME } de votre enfant | ${ BRAND_NAME }"
+      ],
+      "Reserve your child's private email | ${ BRAND_NAME }": [
+        "Réservez l'adresse e-mail privée de votre enfant | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Réinitialisez le mot de passe de votre compte ${ BRAND_NAME }"
@@ -18833,7 +18851,7 @@
         "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Prolongez votre abonnement et enregistrez ${ discountPercent } % !"
+        "Prolongez votre abonnement et économisez ${ discountPercent } % !"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Accès complet à ${ VPN_APP_NAME }"
@@ -18857,7 +18875,7 @@
         "Une protection renforcée contre les cybermenaces"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Passez à notre abonnement annuel et enregistrez ${ toYearlyDiscountAmount } !"
+        "Passez à notre abonnement annuel et économisez ${ toYearlyDiscountAmount } !"
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"
@@ -23893,6 +23911,9 @@
       ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
+      ],
+      "Sign in on TV": [
+        "Se connecter sur une TV"
       ],
       "Sign in to join the Beta program": [
         "Connectez-vous pour rejoindre le programme bêta"
