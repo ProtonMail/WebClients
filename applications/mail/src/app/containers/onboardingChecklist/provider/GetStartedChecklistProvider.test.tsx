@@ -2,14 +2,8 @@ import { describe } from '@jest/globals';
 
 import { getModelState } from '@proton/account/test';
 import useLoading from '@proton/hooks/useLoading';
-import type {
-    ChecklistId,
-    UserModel} from '@proton/shared/lib/interfaces';
-import {
-    CHECKLIST_DISPLAY_TYPE,
-    ChecklistKey,
-    ChecklistType
-} from '@proton/shared/lib/interfaces';
+import type { ChecklistId, UserModel } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE, ChecklistKey, ChecklistType } from '@proton/shared/lib/interfaces';
 
 import { renderHook } from 'proton-mail/helpers/test/render';
 
@@ -239,13 +233,11 @@ describe('GetStartedChecklistProvider', () => {
 
         it('should return the regular list of task for an internal user', () => {
             expect(getMailChecklistItemsToComplete(ChecklistType.MailFreeUser)).toEqual([
-                ChecklistKey.AccountLogin,
                 ChecklistKey.Import,
                 ChecklistKey.ProtectInbox,
                 ChecklistKey.MobileApp,
             ]);
             expect(getMailChecklistItemsToComplete(ChecklistType.MailPaidUser)).toEqual([
-                ChecklistKey.AccountLogin,
                 ChecklistKey.Import,
                 ChecklistKey.ProtectInbox,
                 ChecklistKey.MobileApp,

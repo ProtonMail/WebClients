@@ -25,12 +25,14 @@ interface Props {
     showIcon?: boolean;
     className?: string;
     buttonText?: string;
+    onComplete?: () => void;
 }
 
 const ConnectGmailButton = ({
     showIcon,
     className,
     buttonText = c('Action').t`Set up auto-forwarding from Gmail`,
+    onComplete,
 }: Props) => {
     const [user, loadingUser] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
@@ -114,6 +116,7 @@ const ConnectGmailButton = ({
                     hasAccessToBYOE={hasAccessToBYOE}
                     expectedEmailAddress={expectedEmailAddress}
                     onCloseCallback={() => setExpectedEmailAddress(undefined)}
+                    onComplete={onComplete}
                     {...syncModalProps}
                 />
             )}
