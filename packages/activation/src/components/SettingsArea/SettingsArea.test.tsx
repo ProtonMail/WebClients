@@ -8,7 +8,7 @@ import { easySwitchRender } from '../../tests/render';
 import SettingsArea from './SettingsArea';
 
 const settingsAreaConfig = {
-    text: 'Import via Easy Switch',
+    text: 'Easy Switch',
     to: '/easy-switch',
     icon: 'arrow-down-to-square',
     available: true,
@@ -19,12 +19,12 @@ const subsections = [
         id: 'easy-switch',
     },
     {
-        text: c('Title').t`Import history`,
+        text: c('Title').t`Imports`,
         id: 'import-list',
         invisibleTitle: true,
     },
     {
-        text: c('Title').t`Forwarding history`,
+        text: c('Title').t`Forwardings`,
         id: 'forwarding-list',
         invisibleTitle: true,
     },
