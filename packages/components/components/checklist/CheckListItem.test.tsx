@@ -5,8 +5,7 @@ import { renderWithProviders } from '@proton/components/containers/contacts/test
 import CheckListItem from './CheckListItem';
 
 const checklistItemProps = {
-    largeIcon: 'largeIcon',
-    smallIcon: 'smallIcon',
+    icon: 'icon',
     text: 'text',
     onClick: jest.fn(),
     smallVariant: false,
@@ -36,17 +35,5 @@ describe('ChecklistItem', () => {
         const item = getByRole('button');
         fireEvent.click(item);
         expect(onClick).toHaveBeenCalled();
-    });
-
-    it('Should use the largeIcon when smallVariant is false', async () => {
-        const { getByTestId } = renderWithProviders(<CheckListItem {...checklistItemProps} />);
-        const icon = getByTestId('checklist-item-icon-large');
-        expect(icon).toBeTruthy();
-    });
-
-    it('Should use the smallIcon when smallVariant is true', async () => {
-        const { getByTestId } = renderWithProviders(<CheckListItem {...checklistItemProps} smallVariant />);
-        const icon = getByTestId('checklist-item-icon-small');
-        expect(icon).toBeTruthy();
     });
 });

@@ -1,6 +1,7 @@
 import { screen } from '@testing-library/react';
 import { addDays } from 'date-fns';
 
+import { EasySwitchProvider } from '@proton/activation/index';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import type { OnboardingChecklistContext } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
@@ -26,10 +27,15 @@ describe('EmptyListPlaceholder', () => {
             items: new Set(),
             expiresAt: addDays(new Date(), 10),
             canDisplayChecklist: true,
+            itemsToComplete: ['Import'],
         } as OnboardingChecklistContext);
 
-        await mailTestRender(<EmptyListPlaceholder labelID="labelID" isSearch={false} isUnread={false} />);
-        screen.getByTestId('onboarding-accounts-switcher');
+        await mailTestRender(
+            <EasySwitchProvider>
+                <EmptyListPlaceholder labelID="labelID" isSearch={false} isUnread={false} />
+            </EasySwitchProvider>
+        );
+        screen.getByTestId('onboarding-importers');
     });
 
     it('Should display placeholder when checklist is not reduced', async () => {

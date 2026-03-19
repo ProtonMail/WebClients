@@ -1,12 +1,6 @@
 import React from 'react';
 
-import {
-    CheckListAccountLogin,
-    CheckListClaimProtonAddress,
-    CheckListGmailForward,
-    CheckListMobileStores,
-    CheckListProtectInbox,
-} from '@proton/components/components/checklist/CheckList';
+import { CheckListClaimProtonAddress, CheckListMobileStores, CheckListProtectInbox, CheckListReviewImports } from '@proton/components/components/checklist/CheckList';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -16,7 +10,7 @@ import { useOnboardingChecklistModalsContext } from '../../OnboardingChecklistMo
 
 const OnboardingChecklistSidebarList = () => {
     const { displayModal } = useOnboardingChecklistModalsContext();
-    const { items, itemsToComplete } = useGetStartedChecklist();
+    const { items, itemsToComplete, markItemsAsDone } = useGetStartedChecklist();
 
     if (itemsToComplete.length === 0) {
         return null;
@@ -27,7 +21,6 @@ const OnboardingChecklistSidebarList = () => {
             {itemsToComplete.includes(ChecklistKey.ProtectInbox) && (
                 <li>
                     <CheckListProtectInbox
-                        smallVariant
                         onClick={() => displayModal('protectLogin', true)}
                         style={{ borderRadius: '0.5rem 0.5rem 0 0' }}
                         done={items.has(ChecklistKey.ProtectInbox)}
@@ -36,9 +29,12 @@ const OnboardingChecklistSidebarList = () => {
             )}
             {itemsToComplete.includes(ChecklistKey.Import) && (
                 <li>
-                    <CheckListGmailForward
-                        smallVariant
-                        onClick={() => displayModal('gmailForward', true)}
+                    <CheckListReviewImports
+                        onClick={async () => {
+                            if (itemsToComplete.includes(ChecklistKey.Import)) {
+                                await markItemsAsDone(ChecklistKey.Import);
+                            }
+                        }}
                         done={items.has(ChecklistKey.Import)}
                     />
                 </li>
@@ -46,25 +42,14 @@ const OnboardingChecklistSidebarList = () => {
             {itemsToComplete.includes(ChecklistKey.ClaimAddress) && (
                 <li>
                     <CheckListClaimProtonAddress
-                        smallVariant
                         onClick={() => displayModal('claimProtonAddress', true)}
                         done={items.has(ChecklistKey.ClaimAddress)}
-                    />
-                </li>
-            )}
-            {itemsToComplete.includes(ChecklistKey.AccountLogin) && (
-                <li>
-                    <CheckListAccountLogin
-                        smallVariant
-                        onClick={() => displayModal('login', true)}
-                        done={items.has(ChecklistKey.AccountLogin)}
                     />
                 </li>
             )}
             {itemsToComplete.includes(ChecklistKey.MobileApp) && (
                 <li>
                     <CheckListMobileStores
-                        smallVariant
                         style={{ borderRadius: '0 0 0.5rem 0.5rem' }}
                         onClick={() => displayModal('mobileApps', true)}
                         done={items.has(ChecklistKey.MobileApp)}

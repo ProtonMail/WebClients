@@ -15,11 +15,7 @@ const useOnboardingChecklist = () => {
     const { changeChecklistDisplay, isChecklistFinished, userWasRewarded } = useGetStartedChecklist();
     const [rewardShowed, setRewardShowed] = useLocalState(false, `checklist-reward-showed-${user.ID}`);
 
-    const areAllModalsClosed =
-        !isModalOpened('gmailForward') &&
-        !isModalOpened('protectLogin') &&
-        !isModalOpened('login') &&
-        !isModalOpened('mobileApps');
+    const areAllModalsClosed = !isModalOpened('protectLogin') && !isModalOpened('mobileApps');
 
     const canOpenStorageReward =
         // Can see storage reward modal
