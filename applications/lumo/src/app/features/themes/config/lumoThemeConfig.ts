@@ -21,20 +21,20 @@ export interface LumoThemeConfig {
  */
 export const LUMO_SPECIAL_THEMES: LumoThemeConfig[] = [
     {
-        name: 'saint-patricks-day',
-        startDate: new Date('2026-03-13'),
-        endDate: new Date('2026-03-18'),
+        name: 'spring-solstice',
+        startDate: new Date('2026-03-19'),
+        endDate: new Date('2026-03-22'),
         getAnimationDark: () =>
             import(
-                /* webpackChunkName: "lumo-saint-patricks-day-dark-animation" */
-                '../assets/saintPatricksDay/dark.json'
+                /* webpackChunkName: "lumo-spring-solstice-dark-animation" */
+                '../assets/springSolstice/dark.json'
             ),
         getAnimationLight: () =>
             import(
-                /* webpackChunkName: "lumo-saint-patricks-day-light-animation" */
-                '../assets/saintPatricksDay/light.json'
+                /* webpackChunkName: "lumo-spring-solstice-light-animation" */
+                '../assets/springSolstice/light.json'
             ),
-        getPromptText: () => c('collider_2025:Prompt').t`How does the world celebrate Saint Patrick's Day?`,
-        icon: '🍀',
+        getPromptText: () => c('collider_2025:Prompt').t`How does the world celebrate the Spring Equinox?`,
+        icon: '🦋',
     },
 ];
