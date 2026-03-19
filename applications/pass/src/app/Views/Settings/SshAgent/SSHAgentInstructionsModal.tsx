@@ -1,10 +1,12 @@
 import type { FC } from 'react';
 
+import { Form, FormikProvider, useFormik } from 'formik';
 import { useSessions } from 'proton-pass-web/app/Auth/AuthSwitchProvider';
 import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
@@ -15,18 +17,27 @@ import type { Maybe } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+type SSHAgentInstructionsValues = { dontShowAgain: boolean };
+
 type Props = {
     socketPath: Maybe<string>;
     onClose: () => void;
     onCancel: () => void;
+    onDone: (dontShowAgain: boolean) => void;
     hideFooter?: boolean;
 };
+const FORM_ID = 'ssh-agent-instructions';
 
-export const SSHAgentInstructionsModal: FC<Props> = ({ socketPath, onClose, onCancel, hideFooter = false }) => {
+export const SSHAgentInstructionsModal: FC<Props> = ({ socketPath, onClose, onCancel, onDone, hideFooter = false }) => {
     const hasMultiSessions = useSessions().length > 1;
 
     const commandToCopy = `export SSH_AUTH_SOCK=${socketPath ?? '~/.ssh/proton-pass-ssh-agent.sock'}`;
     const isWindowsBuild = BUILD_TARGET === 'win32';
+
+    const form = useFormik<SSHAgentInstructionsValues>({
+        initialValues: { dontShowAgain: true },
+        onSubmit: ({ dontShowAgain }) => onDone(dontShowAgain),
+    });
 
     return (
         <PassModal
@@ -83,11 +94,27 @@ export const SSHAgentInstructionsModal: FC<Props> = ({ socketPath, onClose, onCa
                         </ul>
                     </div>
                 </Banner>
+
+                {!hideFooter && (
+                    <FormikProvider value={form}>
+                        <Form id={FORM_ID}>
+                            <Checkbox
+                                className="pass-checkbox--unset gap-0 my-2 color-weak"
+                                checked={form.values.dontShowAgain}
+                                onChange={({ target }) => form.setFieldValue('dontShowAgain', target.checked)}
+                            >
+                                {c('Action').t`Do not show this again`}
+                            </Checkbox>
+                        </Form>
+                    </FormikProvider>
+                )}
             </ModalContent>
             {!hideFooter && (
                 <ModalFooter>
                     <Button onClick={onCancel}>{c('Action').t`Cancel`}</Button>
-                    <Button color="norm" onClick={onClose}>{c('Action').t`Done`}</Button>
+                    <Button type="submit" color="norm" form={FORM_ID}>
+                        {c('Action').t`Done`}
+                    </Button>
                 </ModalFooter>
             )}
         </PassModal>
