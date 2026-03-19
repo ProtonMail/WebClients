@@ -165,11 +165,11 @@ impl agent::server::Agent for PassSshAgent {
 }
 
 impl SshAgentManager {
-    pub fn start_agent(is_unlocked_callback: IsUnlockedCallback) -> Result<String> {
+    pub fn start_agent(is_unlocked_callback: IsUnlockedCallback) -> Result<()> {
         let mut instance_guard = SSH_AGENT_INSTANCE.lock().unwrap();
 
         if instance_guard.is_some() {
-            return Ok("SSH agent is already running".to_string());
+            return Ok(());
         }
 
         let socket_path = Self::get_socket_path()?;
@@ -219,10 +219,10 @@ impl SshAgentManager {
         };
         *instance_guard = Some(instance);
 
-        Ok("SSH agent started successfully".to_string())
+        Ok(())
     }
 
-    pub async fn stop_agent() -> Result<String> {
+    pub async fn stop_agent() -> Result<()> {
         if let Err(e) = Self::remove_all_keys().await {
             eprintln!("Failed to clear SSH keys: {}", e);
         }
@@ -247,9 +247,9 @@ impl SshAgentManager {
                 }
             }
 
-            Ok("SSH agent stopped successfully".to_string())
+            Ok(())
         } else {
-            Ok("SSH agent was not running".to_string())
+            Ok(())
         }
     }
 
@@ -309,12 +309,12 @@ impl SshAgentManager {
         Ok(())
     }
 
-    pub async fn set_keys(keys: Vec<SshKeyData>) -> Result<String> {
+    pub async fn set_keys(keys: Vec<SshKeyData>) -> Result<()> {
         Self::remove_all_keys().await?;
         Self::add_keys_to_agent(keys).await
     }
 
-    async fn add_keys_to_agent(keys: Vec<SshKeyData>) -> Result<String> {
+    async fn add_keys_to_agent(keys: Vec<SshKeyData>) -> Result<()> {
         let mut client = Self::connect_agent_client().await?;
 
         for key in keys {
@@ -323,7 +323,7 @@ impl SshAgentManager {
             }
         }
 
-        Ok(format!("Added keys to SSH agent successfully"))
+        Ok(())
     }
 
     async fn add_identity_to_agent<S>(client: &mut AgentClient<S>, key: &SshKeyData) -> Result<(), Error>

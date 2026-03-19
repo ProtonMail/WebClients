@@ -15,9 +15,9 @@ let appIsReady = false;
 
 declare module 'proton-pass-desktop/lib/ipc' {
     interface IPCChannels {
-        'sshAgent:start': IPCChannel<[], string>;
-        'sshAgent:stop': IPCChannel<[], string>;
-        'sshAgent:setSshKeyItems': IPCChannel<[ItemRevision<'sshKey'>[]], string>;
+        'sshAgent:start': IPCChannel<[], void>;
+        'sshAgent:stop': IPCChannel<[], void>;
+        'sshAgent:setSshKeyItems': IPCChannel<[ItemRevision<'sshKey'>[]], void>;
         'sshAgent:removeAllSshKeys': IPCChannel<[], void>;
         'sshAgent:getStatus': IPCChannel<[], ssh_agent_napi.SshAgentStatus>;
         'sshAgent:getSettingEnabled': IPCChannel<[], boolean>;
