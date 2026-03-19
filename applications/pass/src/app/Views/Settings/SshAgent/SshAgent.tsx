@@ -9,8 +9,12 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { InfoButton } from '@proton/pass/components/Layout/Button/InfoButton';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';
+import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
+import { UpsellRef } from '@proton/pass/constants';
+import { selectPassPlan } from '@proton/pass/store/selectors';
 import { selectVisibleNonTrashedSshKeyItems } from '@proton/pass/store/selectors/items';
 import { type Maybe, SpotlightMessage } from '@proton/pass/types';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { logger } from '@proton/pass/utils/logger';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -27,6 +31,7 @@ export const SshAgent: FC = DESKTOP_BUILD
           const [modal, setModal] = useState<{ show: true; hideFooter: boolean } | { show: false }>({
               show: false,
           });
+          const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
 
           const enabled = Boolean(socketPath);
 
@@ -111,10 +116,34 @@ export const SshAgent: FC = DESKTOP_BUILD
           }, [updateStatus]);
 
           return (
-              <SettingsPanel title={c('Title').t`SSH Agent`}>
+              <SettingsPanel
+                  title={c('Title').t`SSH Agent`}
+                  {...(isFreePlan
+                      ? {
+                            contentClassname: 'opacity-50 py-4',
+                            actions: [
+                                <UpgradeButton
+                                    upsellRef={UpsellRef.SSH_AGENT}
+                                    inline
+                                    className="text-sm"
+                                    key="upgrade"
+                                />,
+                            ],
+                            subTitle: c('Warning')
+                                .t`SSH agent requires using SSH keys, which is not available in your plan.`,
+                        }
+                      : {})}
+              >
                   <div className="flex flex-column gap-2">
                       <div className="flex items-start items-center gap-2">
-                          <Checkbox id="ssh-agent-checkbox" checked={enabled} onChange={handleSshAgentToggle} />
+                          <Checkbox
+                              id="ssh-agent-checkbox"
+                              checked={enabled}
+                              onChange={handleSshAgentToggle}
+                              // Free plan should never have this enabled in the first place, but still
+                              // allow user to disable just in case SshAgentProvider.tsx failed to auto-disable it
+                              disabled={isFreePlan && !enabled}
+                          />
                           <div className="flex-1">
                               <div className="flex items-center gap-1">
                                   <label htmlFor="ssh-agent-checkbox" className="cursor-pointer">

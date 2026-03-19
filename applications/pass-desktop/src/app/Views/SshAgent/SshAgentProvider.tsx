@@ -3,18 +3,19 @@ import { useSelector } from 'react-redux';
 
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { clientReady } from '@proton/pass/lib/client';
-import { selectVisibleNonTrashedSshKeyItems } from '@proton/pass/store/selectors';
+import { selectPassPlan, selectVisibleNonTrashedSshKeyItems } from '@proton/pass/store/selectors';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 const KEYS_SYNC_DEBOUNCE_TIME = 200;
 
+type SshAgentSyncProps = { appIsReady: boolean };
+
 /** Sync SSH keys and app ready state with SSH agent.
  * Only rendered when SSH agent setting is enabled. */
-const SshAgentSync: FC = () => {
+const SshAgentSync: FC<SshAgentSyncProps> = ({ appIsReady }) => {
     const sshKeys = useSelector(selectVisibleNonTrashedSshKeyItems);
     const syncTimeoutRef = useRef<NodeJS.Timeout>();
     const syncPromiseRef = useRef<Promise<void>>(Promise.resolve());
-    const { status } = useAppState();
-    const appIsReady = clientReady(status);
 
     useEffect(() => {
         if (syncTimeoutRef.current) {
@@ -70,6 +71,11 @@ const SshAgentSync: FC = () => {
  * with the unlock screen in the foreground. */
 export const SshAgentProvider: FC = () => {
     const [isAgentEnabled, setIsAgentEnabled] = useState(false);
+    const { status } = useAppState();
+    const appIsReady = clientReady(status);
+    const plan = useSelector(selectPassPlan);
+    // When app state is not ready, plan will always return free
+    const isFreePlan = appIsReady && plan === UserPassPlan.FREE;
 
     useEffect(() => {
         const init = async () => {
@@ -91,5 +97,17 @@ export const SshAgentProvider: FC = () => {
         return unsubscribe;
     }, []);
 
-    return isAgentEnabled ? <SshAgentSync /> : null;
+    useEffect(() => {
+        /* Handle real time downgrading or multi-accounts: switching from paid to free user */
+        const handleDowngrade = async () => {
+            if (isAgentEnabled && isFreePlan) {
+                await window.ctxBridge?.setSshAgentSettingEnabled(false);
+                await window.ctxBridge?.stopSshAgent();
+            }
+        };
+
+        void handleDowngrade();
+    }, [isAgentEnabled, isFreePlan]);
+
+    return isAgentEnabled ? <SshAgentSync appIsReady={appIsReady} /> : null;
 };
