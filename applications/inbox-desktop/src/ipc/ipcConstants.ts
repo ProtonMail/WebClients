@@ -25,6 +25,7 @@ export const DESKTOP_FEATURES = {
     PrintDialog: true,
     UserLogoutV2: true,
     MailtoBannerPermanentDismiss: true,
+    OAuthPopupV2: true,
 } as const satisfies Record<IPCInboxDesktopFeature, boolean>;
 
 export type IPCHasFeatureMessage = {
