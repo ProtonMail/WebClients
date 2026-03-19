@@ -231,16 +231,16 @@ impl SshAgentManager {
     pub async fn stop_agent() -> Result<String> {
         println!("Stopping SSH agent server");
 
+        if let Err(e) = Self::remove_all_keys().await {
+            eprintln!("Failed to clear SSH keys: {}", e);
+        }
+
         let instance = {
             let mut instance_guard = SSH_AGENT_INSTANCE.lock().unwrap();
             instance_guard.take()
         };
 
         if let Some(instance) = instance {
-            if let Err(e) = Self::remove_all_keys(&instance.socket_path).await {
-                eprintln!("Failed to clear SSH keys: {}", e);
-            }
-
             instance.task_handle.abort();
 
             #[cfg(unix)]
@@ -256,10 +256,19 @@ impl SshAgentManager {
         }
     }
 
-    async fn connect_agent_client(socket_path: &std::path::Path) -> Result<AgentClient<impl AgentStream>> {
+    async fn connect_agent_client() -> Result<AgentClient<impl AgentStream>> {
+        let socket_path = {
+            let instance_guard = SSH_AGENT_INSTANCE.lock().unwrap();
+            if let Some(instance) = instance_guard.as_ref() {
+                instance.socket_path.clone()
+            } else {
+                return Err(anyhow::anyhow!("SSH agent is not running"));
+            }
+        };
+
         #[cfg(unix)]
         {
-            if !socket_path.exists() {
+            if let Ok(false) = socket_path.try_exists() {
                 return Err(anyhow::anyhow!("Socket file does not exist: {}", socket_path.display()));
             }
 
@@ -277,8 +286,8 @@ impl SshAgentManager {
         }
     }
 
-    async fn remove_all_keys(socket_path: &std::path::Path) -> Result<()> {
-        let mut client = Self::connect_agent_client(socket_path).await?;
+    async fn remove_all_keys() -> Result<()> {
+        let mut client = Self::connect_agent_client().await?;
 
         let identities = client
             .request_identities()
@@ -303,21 +312,11 @@ impl SshAgentManager {
     }
 
     pub async fn send_keys(keys: Vec<SshKeyData>) -> Result<String> {
-        let socket_path = {
-            let instance_guard = SSH_AGENT_INSTANCE.lock().unwrap();
-            if let Some(instance) = instance_guard.as_ref() {
-                instance.socket_path.clone()
-            } else {
-                return Err(anyhow::anyhow!("SSH agent is not running"));
-            }
-        };
-
-        println!("sending keys to: {}", socket_path.display());
-        Self::add_keys_to_agent(&socket_path, keys).await
+        Self::add_keys_to_agent(keys).await
     }
 
-    async fn add_keys_to_agent(socket_path: &std::path::Path, keys: Vec<SshKeyData>) -> Result<String> {
-        let mut client = Self::connect_agent_client(socket_path).await?;
+    async fn add_keys_to_agent(keys: Vec<SshKeyData>) -> Result<String> {
+        let mut client = Self::connect_agent_client().await?;
 
         for key in keys {
             match Self::add_identity_to_agent(&mut client, &key).await {
