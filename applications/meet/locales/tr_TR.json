@@ -242,9 +242,6 @@
       "Refresh audio and video tracks": [
         "Ses ve görüntü izlerini yenile"
       ],
-      "Refresh link": [
-        "Bağlantıyı yenile"
-      ],
       "Refresh the page": [
         "Sayfayı yenile"
       ],
@@ -1725,6 +1722,12 @@
       "${ presenterName } is presenting": [
         "${ presenterName } sunum yapıyor"
       ],
+      "${ reactorNames } and others reacted with ${ emoji }": [
+        "${ reactorNames } ve diğerleri ${ emoji } ile tepki verdi"
+      ],
+      "${ reactorNames } reacted with ${ emoji }": [
+        "${ reactorNames }, ${ emoji } ile tepki verdi"
+      ],
       "${ totalParticipantCount } of ${ maxParticipants } participants": [
         "${ totalParticipantCount } / ${ maxParticipants } katılımcı"
       ],
@@ -2164,6 +2167,12 @@
       "To use your personal meeting room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
         "Kişisel görüşme odanızı kullanmak için **ücretsiz bir ${ BRAND_NAME } hesabı açın**. Otomatik olarak ${ MEET_APP_NAME } uygulamasına döneceksiniz."
       ],
+      "Today — ${ absoluteDate }": [
+        "Bugün — ${ absoluteDate }"
+      ],
+      "Tomorrow — ${ absoluteDate }": [
+        "Yarın — ${ absoluteDate }"
+      ],
       "Turn off camera": [
         "Kamerayı kapat"
       ],
@@ -2209,6 +2218,9 @@
       "Would you like to receive a new verification code?": [
         "Yeni bir doğrulama kodu almak ister misiniz?"
       ],
+      "Yesterday — ${ absoluteDate }": [
+        "Dün — ${ absoluteDate }"
+      ],
       "You are almost there": [
         "Neredeyse tamam"
       ],
@@ -2236,9 +2248,6 @@
       "Your always available meeting room": [
         "Her zaman kullanabileceğiniz görüşme odası"
       ],
-      "Your always available meeting room, share it only with people you trust.": [
-        "Her zaman kullanabileceğiniz görüşme odanız, yalnızca güvendiğiniz kişilerle paylaşın."
-      ],
       "Your browser or device isn’t supported": [
         "Tarayıcınız veya aygıtınız desteklenmiyor"
       ],
@@ -2247,9 +2256,6 @@
       ],
       "Your meeting is ready": [
         "Görüşmeniz hazır"
-      ],
-      "Your personal link": [
-        "Kişisel bağlantınız"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
@@ -2519,9 +2525,6 @@
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "Katılmadığınız bir toplantı için geri bildirim gönderemezsiniz"
-      ],
-      "Your personal meeting link has been copied to the clipboard": [
-        "Kişisel görüşme bağlantınız panoya kopyalandı"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -2827,9 +2830,6 @@
       "Passphrase": [
         "Parola ifadesi"
       ],
-      "Personal meeting": [
-        "Kişisel görüşme"
-      ],
       "Personal meeting room": [
         "Kişisel görüşme odası"
       ],
@@ -2906,8 +2906,14 @@
       "Background blur is not supported on your browser": [
         "Tarayıcınız arka planın bulanıklaştırılmasını desteklemiyor"
       ],
+      "Generate a new meeting link. The current link will stop working.": [
+        "Yeni bir toplantı bağlantısı oluşturun. Mevcut bağlantı artık çalışmayacak."
+      ],
       "Recurring meeting": [
         "Yinelenen görüşme"
+      ],
+      "You can generate a new meeting link once per day.": [
+        "Günde bir kez yeni bir toplantı bağlantısı oluşturabilirsiniz."
       ]
     },
     "Validation": {

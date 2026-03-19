@@ -66,13 +66,13 @@
         "Koppeling kopiëren en sluiten"
       ],
       "Copy meeting link": [
-        "Kopieer vergadering link"
+        "Vergaderlink kopiëren"
       ],
       "Create a free account": [
         "Maak een gratis account aan"
       ],
       "Create a room": [
-        "Maak een ruimte"
+        "Maak een ruimte aan"
       ],
       "Create an account": [
         "Een account aanmaken"
@@ -242,9 +242,6 @@
       "Refresh audio and video tracks": [
         "Vernieuw audio- en videotracks"
       ],
-      "Refresh link": [
-        "Link vernieuwen"
-      ],
       "Refresh the page": [
         "Pagina vernieuwen"
       ],
@@ -270,7 +267,7 @@
         "Ruimte"
       ],
       "Rotate personal meeting link": [
-        "Roteer persoonlijke vergadering link"
+        "Roteer persoonlijke vergaderingslink"
       ],
       "Save": [
         "Opslaan"
@@ -330,7 +327,7 @@
         "Blijf in de vergadering"
       ],
       "Stop opening meetings in the desktop app": [
-        "Stop met het openen van vergaderingen in de desktop app"
+        "Stop met het openen van vergaderingen in de desktop-app"
       ],
       "Stop receiving video": [
         "Video-ontvangst stoppen"
@@ -455,7 +452,7 @@
         "Chat aan/uit"
       ],
       "Toggle emoji reactions": [
-        "Emoji-reacties in- of uitschakelen"
+        "Emoji's in- of uitschakelen"
       ],
       "Toggle meeting details": [
         "Vergaderingsgegevens in-/uitschakelen"
@@ -1472,7 +1469,7 @@
         "Afspraak verwijderen mislukt"
       ],
       "Failed to delete room": [
-        "Fout bij het verwijderen van de kamer"
+        "Fout bij het verwijderen van de ruimte"
       ],
       "Failed to edit room name": [
         "Naam van de ruimte bewerken mislukt"
@@ -1499,7 +1496,7 @@
         "Het is niet gelukt om een chat bericht te sturen. Probeer het opnieuw."
       ],
       "Failed to send emoji reaction. Please try again.": [
-        "Het is niet gelukt om een emoji-reactie te verzenden. Probeer het opnieuw."
+        "Het is niet gelukt om een emoji te verzenden. Probeer het opnieuw."
       ],
       "Failed to send reaction. Please try again.": [
         "Het is niet gelukt om een reactie te verzenden. Probeer het opnieuw."
@@ -1517,7 +1514,7 @@
         "Onjuiste gebruikersnaam"
       ],
       "Invalid meeting link": [
-        "Ongeldige vergaderingslink"
+        "Ongeldige vergaderlink"
       ],
       "Invalid passphrase": [
         "Ongeldig wachtwoord"
@@ -1670,7 +1667,7 @@
     },
     "Header": {
       "Speak freely again - every call is end-to-end encrypted": [
-        "Spreek weer vrijuit - elk gesprek is end-to-end versleuteld"
+        "Spreek weer vrijuit: elk gesprek is end-to-end versleuteld"
       ]
     },
     "Headline": {
@@ -1716,6 +1713,19 @@
       ],
       "${ presenterName } is presenting": [
         "${ presenterName } is aan het presenteren"
+      ],
+      "${ reactorNames } and others reacted with ${ emoji }": [
+        "${ reactorNames } en anderen reageerden met ${ emoji }"
+      ],
+      "${ reactorNames } reacted with ${ emoji }": [
+        "${ reactorNames } reageerde met ${ emoji }"
+      ],
+      "${ totalParticipantCount } of ${ maxParticipants } participants": [
+        "${ totalParticipantCount } van ${ maxParticipants } deelnemers"
+      ],
+      "${ totalParticipantCount } participant": [
+        "${ totalParticipantCount } deelnemer",
+        "${ totalParticipantCount } deelnemers"
       ],
       "(You)": [
         "(U)"
@@ -1859,13 +1869,13 @@
         "Gratis vergaderingen zijn beperkt tot 1 uur. Dit gesprek zal binnenkort worden verbroken."
       ],
       "Get a personal meeting room. Create an account to have a personal meeting link that you can use at any time.": [
-        "Krijg een persoonlijke vergaderruimte. Maak een account aan om een persoonlijke vergaderlink te krijgen die u op elk moment kunt gebruiken."
+        "Krijg een persoonlijke vergaderruimte. Maak een account aan om een persoonlijke vergaderingslink te krijgen die u op elk moment kunt gebruiken."
       ],
       "Get a secure meeting link then add it to your calendar": [
-        "Krijg een beveiligde vergadering link en voeg deze vervolgens toe aan uw agenda"
+        "Krijg een beveiligde vergaderingslink en voeg deze vervolgens toe aan uw agenda"
       ],
       "Get the best experience with the ${ protonMeet } desktop app": [
-        "Krijg de beste ervaring met de ${ protonMeet } desktop app"
+        "Krijg de beste ervaring met de ${ protonMeet } desktop-app"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Ga naar about:config, zoek naar media.peerconnection.enabled, en stel het in op true."
@@ -1919,7 +1929,7 @@
         "Laden..."
       ],
       "matter": [
-        "doen ertoe"
+        "doet ertoe"
       ],
       "Meet without restrictions": [
         "Meet zonder beperkingen"
@@ -2129,7 +2139,7 @@
         "Deze vergadering is beveiligd met end-to-end encryptie met Messaging Layer Security (MLS)."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
-        "Deze vergadering is geopend in de desktop app ${ MEET_APP_NAME }."
+        "Deze vergadering is geopend in de desktop-app ${ MEET_APP_NAME }."
       ],
       "This will end the meeting for all participants.": [
         "Dit beëindigt de vergadering voor alle deelnemers."
@@ -2138,16 +2148,22 @@
         "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
       ],
       "To create a room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
-        "Om een ruimte te maken, **maakt u een gratis ${ BRAND_NAME } account aan**. U keert automatisch terug naar ${ MEET_APP_NAME }."
+        "Om een ruimte te maken, **maakt u een gratis ${ BRAND_NAME }-account aan**. U keert automatisch terug naar ${ MEET_APP_NAME }."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
       "To schedule a meeting, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
-        "Om een vergadering te plannen, **maakt u een gratis ${ BRAND_NAME } account aan**. U keert automatisch terug naar ${ MEET_APP_NAME }."
+        "Om een vergadering te plannen, **maakt u een gratis ${ BRAND_NAME }-account aan**. U keert automatisch terug naar ${ MEET_APP_NAME }."
       ],
       "To use your personal meeting room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
-        "Om uw persoonlijke vergaderruimte te gebruiken, **maakt u een gratis ${ BRAND_NAME } account aan**. U keert automatisch terug naar ${ MEET_APP_NAME }."
+        "Om uw persoonlijke vergaderruimte te gebruiken, **maakt u een gratis ${ BRAND_NAME } -account aan**. U keert automatisch terug naar ${ MEET_APP_NAME }."
+      ],
+      "Today — ${ absoluteDate }": [
+        "Vandaag — ${ absoluteDate }"
+      ],
+      "Tomorrow — ${ absoluteDate }": [
+        "Morgen — ${ absoluteDate }"
       ],
       "Turn off camera": [
         "Camera uitschakelen"
@@ -2194,6 +2210,9 @@
       "Would you like to receive a new verification code?": [
         "Wil u graag een nieuwe verificatiecode ontvangen?"
       ],
+      "Yesterday — ${ absoluteDate }": [
+        "Gisteren — ${ absoluteDate }"
+      ],
       "You are almost there": [
         "U bent er bijna"
       ],
@@ -2219,10 +2238,7 @@
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
       ],
       "Your always available meeting room": [
-        "Uw altijd beschikbare vergaderruimte"
-      ],
-      "Your always available meeting room, share it only with people you trust.": [
-        "Uw altijd beschikbare vergaderruimte, deel deze alleen met mensen die u vertrouwt."
+        "Uw vaste vergaderruimte"
       ],
       "Your browser or device isn’t supported": [
         "Uw browser of apparaat wordt niet ondersteund"
@@ -2232,9 +2248,6 @@
       ],
       "Your meeting is ready": [
         "Uw vergadering is gereed"
-      ],
-      "Your personal link": [
-        "Uw persoonlijke link"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -2333,7 +2346,7 @@
         "Elk jaar"
       ],
       "Google Calendar": [
-        "Google Kalender"
+        "Google-agenda"
       ],
       "Hide password": [
         "Wachtwoord verbergen"
@@ -2448,16 +2461,16 @@
     },
     "meet": {
       "Create and copy link": [
-        "Maak en kopieer link"
+        "Link aanmaken en kopiëren"
       ],
       "Create new room": [
-        "Maak nieuwe kamer"
+        "Maak nieuwe ruimte aan"
       ],
       "Meeting rooms can be used at any time": [
         "Vergaderruimtes kunnen op elk moment worden gebruikt"
       ],
       "Save and copy link": [
-        "Opslaan en kopieer link"
+        "Link opslaan en kopiëren"
       ]
     },
     "Meet": {
@@ -2504,9 +2517,6 @@
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "U kunt geen feedback verzenden voor een vergadering waar u niet aan hebt deelgenomen"
-      ],
-      "Your personal meeting link has been copied to the clipboard": [
-        "Uw persoonlijke vergadering link is naar het klembord gekopieerd."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -2519,16 +2529,16 @@
         "Audio was aan het haperen"
       ],
       "I couldn't hear others": [
-        "Ik kon anderen niet horen"
+        "Ik kon de anderen niet horen"
       ],
       "I couldn't present ": [
-        "Ik kon niet presenteren "
+        "Ik kon geen presentatie geven "
       ],
       "I couldn't see others' video": [
-        "Ik kon de video van anderen niet zien"
+        "Ik kon de video van de anderen niet zien"
       ],
       "I couldn't see the presentation": [
-        "I kon de presentatie niet zien"
+        "Ik kon de presentatie niet zien"
       ],
       "Others couldn't hear me": [
         "Anderen konden mij niet horen"
@@ -2551,7 +2561,7 @@
         "Bijv., "
       ],
       "e.g., Design Team, Weekly Standup": [
-        "bijv. Ontwerpteam, Wekelijkse Stand-up"
+        "Bijvoorbeeld Ontwerpteam, Wekelijkse stand-up"
       ],
       "Enter meeting title": [
         "Voer vergadering titel in"
@@ -2649,7 +2659,7 @@
         "Nieuw aangemaakt"
       ],
       "Past meetings": [
-        "Eerdere vergaderingen"
+        "Vorige vergaderingen"
       ],
       "Upcoming": [
         "Aankomend"
@@ -2731,7 +2741,7 @@
         "Chat"
       ],
       "Create new room": [
-        "Maak nieuwe kamer"
+        "Maak nieuwe ruimte aan"
       ],
       "Date": [
         "Datum"
@@ -2812,9 +2822,6 @@
       "Passphrase": [
         "Wachtwoordzin"
       ],
-      "Personal meeting": [
-        "Persoonlijke vergadering"
-      ],
       "Personal meeting room": [
         "Persoonlijke vergaderruimte"
       ],
@@ -2891,8 +2898,14 @@
       "Background blur is not supported on your browser": [
         "Achtergrondvervaging wordt niet ondersteund door uw browser"
       ],
+      "Generate a new meeting link. The current link will stop working.": [
+        "Genereer een nieuwe vergaderlink. De huidige link zal niet meer werken."
+      ],
       "Recurring meeting": [
         "Terugkerende vergadering"
+      ],
+      "You can generate a new meeting link once per day.": [
+        "U kunt één keer per dag een nieuwe vergaderlink genereren."
       ]
     },
     "Validation": {
