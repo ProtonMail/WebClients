@@ -49,7 +49,6 @@ export default defineConfig(
         },
         rules: {
             '@typescript-eslint/array-type': ['error', { default: 'array' }],
-
             '@typescript-eslint/default-param-last': 'off',
             '@typescript-eslint/no-redeclare': ['error'],
             '@typescript-eslint/explicit-function-return-type': 'off',
@@ -156,6 +155,7 @@ export default defineConfig(
             'no-nested-ternary': 'warn',
             'no-param-reassign': 'off',
             'no-plusplus': 'off',
+            'import/no-cycle': 'error',
 
             'no-restricted-syntax': [
                 'error',
