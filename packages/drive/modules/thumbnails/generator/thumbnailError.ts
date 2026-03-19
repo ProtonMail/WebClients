@@ -142,6 +142,17 @@ export class MissingDataError extends ThumbnailError {
 }
 
 /**
+ * Error thrown when thumbnail generation exceeds the allowed time
+ */
+export class ThumbnailTimeoutError extends ThumbnailError {
+    constructor(message: string, options: ThumbnailErrorOptions = {}) {
+        super(`Thumbnail generation timed out: ${message}`, options);
+        this.name = 'ThumbnailTimeoutError';
+        Object.setPrototypeOf(this, ThumbnailTimeoutError.prototype);
+    }
+}
+
+/**
  * Wraps an unknown error with thumbnail context
  * Preserves the original error as cause for stack trace debugging
  */

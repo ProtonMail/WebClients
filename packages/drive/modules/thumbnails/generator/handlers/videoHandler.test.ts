@@ -35,6 +35,56 @@ describe('VideoHandler', () => {
     });
 
     describe('generate', () => {
+        test('Throws UnsupportedFormatError for HEVC video (hev1 in MP4)', async () => {
+            // Build a blob containing the 'hev1' codec identifier
+            const header = new Uint8Array([0x00, 0x00, 0x00, 0x20, 0x68, 0x65, 0x76, 0x31]); // ...hev1
+            const blob = new Blob([header], { type: 'video/mp4' });
+
+            await expect(
+                handler.generate(
+                    blob,
+                    'hevc.mp4',
+                    blob.size,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'video/mp4'
+                )
+            ).rejects.toThrow(UnsupportedFormatError);
+        });
+
+        test('Throws UnsupportedFormatError for HEVC video (hvc1 in MP4)', async () => {
+            const header = new Uint8Array([0x00, 0x00, 0x00, 0x20, 0x68, 0x76, 0x63, 0x31]); // ...hvc1
+            const blob = new Blob([header], { type: 'video/mp4' });
+
+            await expect(
+                handler.generate(
+                    blob,
+                    'hevc.mp4',
+                    blob.size,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'video/mp4'
+                )
+            ).rejects.toThrow(UnsupportedFormatError);
+        });
+
+        test('Throws UnsupportedFormatError for HEVC video in MKV container', async () => {
+            const codecId = new TextEncoder().encode('V_MPEGH/ISO/HEVC');
+            const padding = new Uint8Array(16);
+            const blob = new Blob([padding, codecId], { type: 'video/x-matroska' });
+
+            await expect(
+                handler.generate(
+                    blob,
+                    'hevc.mkv',
+                    blob.size,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'video/x-matroska'
+                )
+            ).rejects.toThrow(UnsupportedFormatError);
+        });
+
         test('Throws UnsupportedFormatError for large videos on iOS', async () => {
             Object.defineProperty(constants, 'isIosDevice', { value: true, writable: true });
 
@@ -55,6 +105,32 @@ describe('VideoHandler', () => {
             Object.defineProperty(constants, 'isIosDevice', { value: false, writable: true });
         });
 
+        test('Throws UnsupportedFormatError when browser cannot play the video format', async () => {
+            const originalCreateElement = document.createElement.bind(document);
+            jest.spyOn(document, 'createElement').mockImplementation((tagName: string) => {
+                const element = originalCreateElement(tagName);
+                if (tagName === 'video') {
+                    (element as HTMLVideoElement).canPlayType = jest.fn().mockReturnValue('');
+                }
+                return element;
+            });
+
+            const blob = new Blob(['video content'], { type: 'video/x-matroska' });
+
+            await expect(
+                handler.generate(
+                    blob,
+                    'test.mkv',
+                    blob.size,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'video/x-matroska'
+                )
+            ).rejects.toThrow(UnsupportedFormatError);
+
+            jest.restoreAllMocks();
+        });
+
         test('Throws UnsupportedFormatError when video extraction fails', async () => {
             const blob = new Blob(['video content'], { type: 'video/mp4' });
 
@@ -70,7 +146,7 @@ describe('VideoHandler', () => {
             ).rejects.toThrow(UnsupportedFormatError);
         });
 
-        test('UnsupportedFormatError includes proper context', async () => {
+        test('UnsupportedFormatError includes proper context for canPlayType rejection', async () => {
             const blob = new Blob(['video content'], { type: 'video/mp4' });
 
             try {
@@ -86,10 +162,9 @@ describe('VideoHandler', () => {
             } catch (error) {
                 expect(error).toBeInstanceOf(UnsupportedFormatError);
                 if (error instanceof UnsupportedFormatError) {
-                    expect(error.message).toContain('video codec');
-                    expect(error.context.stage).toBe('video frame extraction');
-                    expect(error.context.fileSize).toBe(blob.size);
-                    expect(error.context.mimeType).toBe('video/mp4');
+                    expect(error.message).toContain('video format not supported by browser');
+                    expect(error.context.stage).toBe('canPlayType check');
+                    expect(error.context.originalMimeType).toBe('video/mp4');
                 }
             }
         });

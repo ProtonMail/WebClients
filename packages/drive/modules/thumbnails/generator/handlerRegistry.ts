@@ -2,6 +2,7 @@ import type { ThumbnailType } from '@protontech/drive-sdk';
 
 import type { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
+import { THUMBNAIL_GENERATION_TIMEOUT_MS } from './constants';
 import { CbzHandler } from './handlers/cbzHandler';
 import { HeicHandler } from './handlers/heicHandler';
 import { ImageHandler } from './handlers/imageHandler';
@@ -10,7 +11,7 @@ import { RawImageHandler } from './handlers/rawImageHandler';
 import { SVGHandler } from './handlers/svgHandler';
 import { VideoHandler } from './handlers/videoHandler';
 import { mimeTypeFromFile } from './mimeTypeParser/mimeTypeParser';
-import { NoHandlerError, wrapError } from './thumbnailError';
+import { NoHandlerError, ThumbnailTimeoutError, wrapError } from './thumbnailError';
 import type { ThumbnailResult } from './utils';
 
 export class HandlerRegistry {
@@ -91,15 +92,32 @@ export class ThumbnailProcessor {
         }
 
         try {
-            const thumbnailResult = await handler.generate(
-                content,
-                fileName,
-                fileSize,
-                thumbnailMimeType,
-                thumbnailTypes,
-                detectedMimeType,
-                debug
-            );
+            const thumbnailResult = await Promise.race([
+                handler.generate(
+                    content,
+                    fileName,
+                    fileSize,
+                    thumbnailMimeType,
+                    thumbnailTypes,
+                    detectedMimeType,
+                    debug
+                ),
+                new Promise<never>((_, reject) => {
+                    setTimeout(() => {
+                        reject(
+                            new ThumbnailTimeoutError(handler.handlerName, {
+                                context: {
+                                    stage: 'global generation timeout',
+                                    timeoutMs: THUMBNAIL_GENERATION_TIMEOUT_MS,
+                                    handler: handler.handlerName,
+                                    fileSize,
+                                    mimeType: detectedMimeType,
+                                },
+                            })
+                        );
+                    }, THUMBNAIL_GENERATION_TIMEOUT_MS);
+                }),
+            ]);
 
             return {
                 thumbnails: thumbnailResult.thumbnails,
