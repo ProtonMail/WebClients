@@ -1464,6 +1464,9 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } はパスキーを保存することを提案します。"
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } のオフラインモードが有効になりました。"
+      ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count }通の招待の送信に成功しました"
       ],
@@ -1716,9 +1719,6 @@
       "Disabling auto-lock failed": [
         "自動ロックを無効にできませんでした"
       ],
-      "Disabling offline mode...": [
-        "オフラインモードを無効にしています..."
-      ],
       "Discover ${ PASS_APP_NAME } video": [
         "${ PASS_APP_NAME } のビデオを見る"
       ],
@@ -1769,6 +1769,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "自動ロックを有効にしてデータを保護します"
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "オフラインモードを有効にすると、インターネット接続が失われた場合や ${ BRAND_NAME } サーバーに接続できない場合に、${ PASS_SHORT_APP_NAME } データにアクセスできます。"
       ],
       "Enabling biometrics auto-lock": [
         "生体認証の自動ロックを有効にする"
@@ -2028,14 +2031,11 @@
       "Not recommended": [
         "推奨されていません"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "今はオフラインモードを無効化できません"
+      "Offline mode": [
+        "オフラインモード"
       ],
       "Offline mode could not be enabled at the moment": [
         "現時点ではオフライン モードを有効にできませんでした"
-      ],
-      "Offline support successfully disabled": [
-        "オフライン サポートが正常に無効になりました"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME } へのオンラインアクセスにはPINコードが必要です。3回の試行に失敗するとログアウトされます。"
@@ -2088,6 +2088,9 @@
       "Please check your spam folder or try resending the code.": [
         "スパムフォルダを確認するか、コードを再送信してください。"
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "オフライン モードを有効にするには、${ BRAND_NAME } のパスワードを確認してください"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } データをエクスポートするには、${ BRAND_NAME } のパスワードを確認してください"
       ],
@@ -2099,6 +2102,9 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "パスワードで自動ロックするには、バックアップパスワードを確認してください。"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "オフラインモードを有効にするには、 バックアップパスワードを確認してください"
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } のデータをエクスポートするには、バックアップパスワードを確認してください"
@@ -2117,6 +2123,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "追加パスワードで自動ロックするには、追加パスワードを確認してください。"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "オフラインモードを有効にするには、 追加のパスワードを確認してください"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } のデータをエクスポートするには、追加パスワードを確認してください。"
@@ -2156,6 +2165,9 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "パスワードで自動ロックするには、2つ目のパスワードを確認してください。"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "オフラインモードを有効にするには、2つ目のパスワードを確認してください。"
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } のデータをエクスポートするには、2つ目のパスワードを確認してください。"
@@ -2219,6 +2231,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "保存された認証情報をすばやく自動入力します。"
+      ],
+      "Reconnect": [
+        "再接続"
+      ],
+      "Reconnecting": [
+        "再接続中"
       ],
       "Record: CNAME": [
         "レコード: CNAME"
@@ -2534,6 +2552,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "${ PASS_APP_NAME } でログインを作成/編集するとき、'ユーザー名' 入力を常に表示します。"
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "有効にすると、インターネット接続が失われた場合や ${ BRAND_NAME } サーバーに接続できない場合でも、${ PASS_SHORT_APP_NAME } データにアクセスできます。"
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "このエイリアスからメールを送ると、送信者として${ emailSender }が表示されます。"
@@ -3004,6 +3025,9 @@
       "Empty trash": [
         "ごみ箱を空にする"
       ],
+      "Enable offline access": [
+        "オフラインアクセスを有効にする"
+      ],
       "Enter email or username": [
         "メールアドレスまたはユーザー名を入力"
       ],
@@ -3321,6 +3345,9 @@
       ],
       "Notes": [
         "メモ"
+      ],
+      "Offline mode": [
+        "オフラインモード"
       ],
       "Old-New": [
         "新旧"
@@ -4770,6 +4797,9 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }のパスワードが必要です"
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } のオフラインモードが無効になりました。"
+      ],
       "2 consecutive dots are not allowed": [
         "2 つの連続したドットは使用できません"
       ],
@@ -4970,6 +5000,9 @@
       ],
       "Title is required": [
         "タイトルは必須です"
+      ],
+      "Too many attempts": [
+        "パスワード入力の試行が規定回数を超過しました"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "このフォルダーの所有権を${ email }に移転しますか？"

@@ -1470,6 +1470,9 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } შემოგთავაზებთ წვდომის გასაღების შენახვას."
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME }-ის ხაზგარეშე რეჟიმი ჩართულია."
+      ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } მოსაწვევი წარმატებით გაიგზავნა",
         "${ payload.count } მოსაწვევი წარმატებით გაიგზავნა"
@@ -1726,9 +1729,6 @@
       ],
       "Disabling auto-lock failed": [
         "ავტოდაბლოკვის გათიშვა ჩავარდა"
-      ],
-      "Disabling offline mode...": [
-        "უქსელო რეჟიმის გათიშვა..."
       ],
       "Discover ${ PASS_APP_NAME } video": [
         "აღმოაჩინეთ ${ PASS_APP_NAME } ვიდეო"
@@ -2041,14 +2041,11 @@
       "Not recommended": [
         "არ არის რეკომენდებული"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "ქსელთან მიერთების გარეშე მუშაობის რეჟიმის გამორთვა ამჟამად შეუძლებელია"
+      "Offline mode": [
+        "კავშირგარეშე რეჟიმი"
       ],
       "Offline mode could not be enabled at the moment": [
         "ქსელთან მიერთების გარეშე მუშაობის რეჟიმის ჩართვა ამჟამად შეუძლებელია"
-      ],
-      "Offline support successfully disabled": [
-        "ქსელის გარეშე მუშაობა წარმატებით გაითიშა"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME }-სთან ინტერნეტით წვდომისთვის PIN-კოდის შეყვანა მოგიწევთ. სისტემიდან გამოვარდებით 3 ჩავარდნილი მცდელობის შემდეგ."
@@ -2102,6 +2099,9 @@
       "Please check your spam folder or try resending the code.": [
         "შეამოწმეთ თქვენი სპამის საქაღალდე, ან სცადეთ,, კოდი თავიდან გააგზავნოთ"
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ქსელის გარეშე მუშაობის რეჟიმის ჩასართავად"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
       ],
@@ -2113,6 +2113,9 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "დაადასტურეთ თქვენი მარქაფი პაროლი, რომ თქვენი პაროლით ავტოდაბლოკვა ჩართოთ."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "დაადასტურეთ თქვნი მარქაფი პაროლი, ქსელის გარეშე მუშაობის რეჟიმის ჩასართავად"
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
         "დაადასტურეთ თქვნი მარქაფი პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
@@ -2131,6 +2134,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "დაადასტურეთ თქვენი დამატებითიპაროლი, რომ თქვენი დამატებითი პაროლით ავტოდაბლოკვა ჩართოთ."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "დაადასტურეთ თქვნი დამატებითი პაროლი, ქსელის გარეშე მუშაობის რეჟიმის ჩასართავად"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "დაადასტურეთ თქვნი დამატებითი პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
@@ -2170,6 +2176,9 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "დაადასტურეთ თქვენი მეორე პაროლი, რომ თქვენი პაროლით ავტოდაბლოკვა ჩართოთ."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "დაადასტურეთ თქვნი მეორე პაროლი, ქსელის გარეშე მუშაობის რეჟიმის ჩასართავად"
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "დაადასტურეთ თქვნი მეორე პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
@@ -2230,6 +2239,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "სწრაფი შევსება თქვენი შენახული ავტორიზაციის დეტალებით."
+      ],
+      "Reconnect": [
+        "თავიდან დაკავშირება"
+      ],
+      "Reconnecting": [
+        "თავიდან დაკავშირება"
       ],
       "Record: CNAME": [
         "ჩანაწერი: CNAME"
@@ -3022,6 +3037,9 @@
       "Empty trash": [
         "ნაგვის ყუთის გასუფთავება"
       ],
+      "Enable offline access": [
+        "ქსელის გარეშე წვდომის დაშვება"
+      ],
       "Enter email or username": [
         "შეყვანეთ ელფოსტა ან მომხმარებლის სახელი"
       ],
@@ -3339,6 +3357,9 @@
       ],
       "Notes": [
         "შენიშვნები"
+      ],
+      "Offline mode": [
+        "კავშირგარეშე რეჟიმი"
       ],
       "Old-New": [
         "ძველი-ახალი"
@@ -4803,6 +4824,9 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-ის პაროლი აუცილებელია"
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME }-ის ხაზგარეშე რეჟიმი გამორთულია."
+      ],
       "2 consecutive dots are not allowed": [
         "2 წერტილი ზედიზედ დაშებული არაა"
       ],
@@ -5006,6 +5030,9 @@
       ],
       "Title is required": [
         "სათაური აუცილებელია"
+      ],
+      "Too many attempts": [
+        "ძალიან ბევრი მცდელობა"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "გადავცე ამ საცავს ფლობის უფლება ${ email }-ს?"

@@ -1458,6 +1458,9 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } akan menyarankan untuk menyimpan kunci sandi."
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Mode luring ${ PASS_SHORT_APP_NAME } diaktifkan."
+      ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } undangan berhasil dikirim"
       ],
@@ -1710,9 +1713,6 @@
       "Disabling auto-lock failed": [
         "Gagal menonaktifkan penguncian otomatis"
       ],
-      "Disabling offline mode...": [
-        "Menonaktifkan mode luring..."
-      ],
       "Discover ${ PASS_APP_NAME } video": [
         "Telusuri video ${ PASS_APP_NAME }"
       ],
@@ -1763,6 +1763,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Aktifkan penguncian otomatis untuk mengamankan data Anda"
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Aktifkan mode luring untuk mengakses data ${ PASS_SHORT_APP_NAME } Anda jika koneksi internet Anda terputus atau jika server ${ BRAND_NAME } tidak dapat dijangkau."
       ],
       "Enabling biometrics auto-lock": [
         "Mengaktifkan penguncian otomatis biometrik"
@@ -2022,14 +2025,11 @@
       "Not recommended": [
         "Tidak disarankan"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Mode luring tidak dapat dinonaktifkan untuk saat ini"
+      "Offline mode": [
+        "Mode luring"
       ],
       "Offline mode could not be enabled at the moment": [
         "Mode luring tidak dapat diaktifkan saat ini"
-      ],
-      "Offline support successfully disabled": [
-        "Dukungan luring berhasil dinonaktifkan"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Akses daring ke ${ PASS_APP_NAME } akan memerlukan kode PIN. Anda akan dikeluarkan setelah 3 upaya percobaan yang gagal."
@@ -2082,6 +2082,9 @@
       "Please check your spam folder or try resending the code.": [
         "Silakan periksa folder spam Anda atau coba kirim ulang kode."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengaktifkan mode luring"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Silakan konfirmasikan kata sandi ${ BRAND_NAME } Anda untuk mengekspor data ${ PASS_APP_NAME } milik Anda"
       ],
@@ -2093,6 +2096,9 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Silakan konfirmasi kata sandi cadangan Anda untuk mengunci secara otomatis dengan kata sandi Anda."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Silakan konfirmasi kata sandi cadangan Anda untuk mengaktifkan mode luring"
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
         "Silakan konfirmasi kata sandi cadangan Anda untuk mengekspor data ${ PASS_APP_NAME } Anda"
@@ -2111,6 +2117,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Silakan konfirmasi kata sandi tambahan Anda untuk mengunci aplikasi secara otomatis dengan kata sandi tambahan Anda."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Silakan konfirmasi kata sandi tambahan Anda untuk mengaktifkan mode luring"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Silakan konfirmasi kata sandi tambahan Anda untuk mengekspor data ${ PASS_APP_NAME } Anda"
@@ -2150,6 +2159,9 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Mohon konfirmasikan kata sandi kedua Anda untuk mengunci otomatis dengan kata sandi Anda."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Silakan konfirmasikan kata sandi kedua Anda untuk mengaktifkan mode luring"
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "Silakan konfirmasi kata sandi kedua Anda untuk mengekspor data ${ PASS_APP_NAME } milik Anda"
@@ -2213,6 +2225,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Isi otomatis kredensial Anda yang telah tersimpan dengan cepat."
+      ],
+      "Reconnect": [
+        "Hubungkan ulang"
+      ],
+      "Reconnecting": [
+        "Menghubungkan ulang"
       ],
       "Record: CNAME": [
         "Rekaman: CNAME"
@@ -2528,6 +2546,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Saat membuat/mengedit Login di ${ PASS_APP_NAME }, kolom input ‘username’ akan selalu terlihat."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Saat diaktifkan, Anda masih dapat mengakses data ${ PASS_SHORT_APP_NAME } Anda jika Anda kehilangan konektivitas internet atau jika server ${ BRAND_NAME } tidak dapat dijangkau."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Pada saat mengirim email dari alias ini, email yang bersangkutan akan menampilkan ${ emailSender } sebagai nama pengirimnya."
@@ -2998,6 +3019,9 @@
       "Empty trash": [
         "Kosongkan sampah"
       ],
+      "Enable offline access": [
+        "Aktifkan akses luring"
+      ],
       "Enter email or username": [
         "Masukkan email atau nama pengguna"
       ],
@@ -3315,6 +3339,9 @@
       ],
       "Notes": [
         "Catatan"
+      ],
+      "Offline mode": [
+        "Mode luring"
       ],
       "Old-New": [
         "Lama–Baru"
@@ -4764,6 +4791,9 @@
       "${ BRAND_NAME } password is required": [
         "Kata sandi ${ BRAND_NAME } wajib diisi"
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Mode luring ${ PASS_SHORT_APP_NAME } dinonaktifkan."
+      ],
       "2 consecutive dots are not allowed": [
         "Dua titik berturut-turut tidak diizinkan"
       ],
@@ -4964,6 +4994,9 @@
       ],
       "Title is required": [
         "Judul wajib diisi"
+      ],
+      "Too many attempts": [
+        "Terlalu banyak percobaan"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Transfer kepemilikan brankas ini ke ${ email }?"

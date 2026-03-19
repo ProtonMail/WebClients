@@ -1696,9 +1696,6 @@
       "Disabling auto-lock failed": [
         "Wyłączenie automatycznej blokady nie powiodło się"
       ],
-      "Disabling offline mode...": [
-        "Wyłączenie trybu offline..."
-      ],
       "Discover ${ PASS_APP_NAME } video": [
         "Obejrzyj film z ${ PASS_APP_NAME }"
       ],
@@ -2014,14 +2011,11 @@
       "Not recommended": [
         "Niezalecane"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Tryb offline nie może zostać wyłączony"
+      "Offline mode": [
+        "Tryb offline"
       ],
       "Offline mode could not be enabled at the moment": [
         "Tryb offline nie może zostać włączony"
-      ],
-      "Offline support successfully disabled": [
-        "Tryb offline został wyłączony"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Dostęp online do ${ PASS_APP_NAME } będzie wymagał kodu PIN. Wylogowanie nastąpi po 3 nieudanych próbach."
@@ -2074,6 +2068,9 @@
       "Please check your spam folder or try resending the code.": [
         "Sprawdź folder spam lub wyślij ponownie kod."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Potwierdź hasło ${ BRAND_NAME }, aby uzyskać dostęp do trybu offline"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane ${ PASS_APP_NAME }"
       ],
@@ -2085,6 +2082,9 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Potwierdź hasło zapasowe, aby włączyć blokadę za pomocą hasła."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Potwierdź hasło zapasowe, aby włączyć tryb offline"
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
         "Potwierdź hasło zapasowe, aby wyeksportować dane ${ PASS_APP_NAME }."
@@ -2103,6 +2103,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Potwierdź dodatkowe hasło, aby włączyć blokadę."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Potwierdź dodatkowe hasło, aby włączyć tryb offline"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Wpisz dodatkowe hasło, aby wyeksportować dane ${ PASS_APP_NAME }"
@@ -2142,6 +2145,9 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Potwierdź drugie hasło, aby włączyć blokadę."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Potwierdź drugie hasło, aby włączyć tryb offline"
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "Potwierdź drugie hasło, aby wyeksportować dane ${ PASS_APP_NAME }"
@@ -2196,6 +2202,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Szybkie autouzupełnianie danych logowania."
+      ],
+      "Reconnect": [
+        "Połącz ponownie"
+      ],
+      "Reconnecting": [
+        "Ponowne łączenie"
       ],
       "Record: CNAME": [
         "Rekord: CNAME"
@@ -3006,6 +3018,9 @@
       "Empty trash": [
         "Opróżnij kosz"
       ],
+      "Enable offline access": [
+        "Włącz dostęp offline"
+      ],
       "Enter email or username": [
         "Wpisz adres e-mail lub nazwę użytkownika"
       ],
@@ -3320,6 +3335,9 @@
       ],
       "Notes": [
         "Notatki"
+      ],
+      "Offline mode": [
+        "Tryb offline"
       ],
       "Old-New": [
         "Od najstarszych"
@@ -4986,6 +5004,9 @@
       ],
       "Title is required": [
         "Tytuł jest wymagany"
+      ],
+      "Too many attempts": [
+        "Zbyt wiele prób"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Zmienić właściciela sejfu na ${ email }?"

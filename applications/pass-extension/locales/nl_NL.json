@@ -1013,6 +1013,9 @@
       "Encrypted JSON not supported": [
         "Versleutelde JSON niet ondersteund"
       ],
+      "Encryption communication for desktop unlock failed.": [
+        "Versleutelingscommunicatie voor desktop ontgrendeling mislukt."
+      ],
       "Error reporting problem": [
         "Fout bij melden van het probleem"
       ],
@@ -1249,6 +1252,15 @@
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Er ging iets fout. Herlaad de ${ PASS_APP_NAME }-extensie. Dit probleem werd genoteerd."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "De desktop-app van ${ PASS_APP_NAME } is vergrendeld, deze moet ontgrendeld worden."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "De desktop-app van ${ PASS_APP_NAME } is niet geïnstalleerd."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "De desktop-app van ${ PASS_APP_NAME } reageert niet, draait deze wel?"
       ],
       "The URL is in the list": [
         "De URL is in de lijst"
@@ -1487,6 +1499,12 @@
       ],
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } zal voorstellen om wachtwoorden te bewaren."
+      ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME } is momenteel offline. Open de extensie om te ontgrendelen."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } offline modus ingeschakeld."
       ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } uitnodiging succesvol verzonden",
@@ -1748,9 +1766,6 @@
       "Disabling auto-lock failed": [
         "Uitschakelen automatische vergrendeling mislukt"
       ],
-      "Disabling offline mode...": [
-        "Offline modus uitschakelen..."
-      ],
       "Discover ${ PASS_APP_NAME } video": [
         "Ontdek ${ PASS_APP_NAME } video"
       ],
@@ -1802,11 +1817,17 @@
       "Enable auto-locking to secure your data": [
         "Schakel auto-vergrendeling in om uw gegevens te beveiligen"
       ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Schakel de offline modus in om toegang te krijgen tot uw ${ PASS_SHORT_APP_NAME }-gegevens als u de internetverbinding verliest of als de servers van ${ BRAND_NAME } onbereikbaar zijn."
+      ],
       "Enabling biometrics auto-lock": [
         "Biometrie automatisch vergrendelen inschakelen"
       ],
       "Enabling biometrics lock failed": [
         "Biometrie vergrendeling inschakelen mislukt"
+      ],
+      "Enabling desktop auto-lock": [
+        "Desktop automatisch vergrendelen inschakelen"
       ],
       "Enabling offline mode...": [
         "Offline modus inschakelen..."
@@ -2071,14 +2092,11 @@
       "Not recommended": [
         "Niet aanbevolen"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Offline modus kon momenteel niet worden uitgeschakeld"
+      "Offline mode": [
+        "Offline modus"
       ],
       "Offline mode could not be enabled at the moment": [
         "Offline modus kon momenteel niet worden ingeschakeld"
-      ],
-      "Offline support successfully disabled": [
-        "Offline ondersteuning succesvol uitgeschakeld"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online-toegang tot ${ PASS_APP_NAME } vereist een PIN-code. U wordt uitgelogd na 3 mislukte pogingen."
@@ -2132,6 +2150,9 @@
       "Please check your spam folder or try resending the code.": [
         "Controleer uw spam map of probeer de code opnieuw te versturen."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Bevestig uw ${ BRAND_NAME } wachtwoord om offline modus in te schakelen"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bevestig uw ${ BRAND_NAME }-wachtwoord om uw ${ PASS_APP_NAME }-gegevens te exporteren"
       ],
@@ -2143,6 +2164,9 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Bevestig uw back-upwachtwoord om automatisch te vergrendelen met uw wachtwoord."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Bevestig uw back-upwachtwoord om offline modus in te schakelen"
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
         "Bevestig uw back-upwachtwoord om uw ${ PASS_APP_NAME } gegevens te exporteren"
@@ -2161,6 +2185,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Bevestig uw extra wachtwoord om automatisch te vergrendelen met uw extra wachtwoord."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Bevestig uw extra wachtwoord om offline modus in te schakelen"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Bevestig uw extra wachtwoord om uw ${ PASS_APP_NAME } gegevens te exporteren"
@@ -2200,6 +2227,9 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Bevestig uw extra wachtwoord om automatisch te vergrendelen met uw wachtwoord."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Bevestig uw extra wachtwoord om offline modus in te schakelen"
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "Bevestig uw extra wachtwoord om uw ${ PASS_APP_NAME } gegevens te exporteren"
@@ -2263,6 +2293,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Vul snel automatisch uw opgeslagen inloggegevens in."
+      ],
+      "Reconnect": [
+        "Opnieuw verbinden"
+      ],
+      "Reconnecting": [
+        "Opnieuw verbinden"
       ],
       "Record: CNAME": [
         "Record: CNAME"
@@ -2430,6 +2466,9 @@
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Dit is momenteel een experimentele functie op Linux. Zorg ervoor dat uw systeem up-to-date is."
       ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Deze functie vereist dat de desktop-app ${ PASS_APP_NAME } is geïnstalleerd en actief is tijdens de installatie."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Dit item wordt momenteel niet met iemand gedeeld. Nodig mensen uit om het met anderen te delen."
       ],
@@ -2588,6 +2627,9 @@
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Bij het aanmaken/bewerken van een aanmelding in ${ PASS_APP_NAME } zal de 'gebruikersnaam' invoer altijd zichtbaar zijn."
       ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Wanneer ingeschakeld, heeft u nog steeds toegang tot uw ${ PASS_SHORT_APP_NAME }-gegevens als u de internetverbinding verliest of als de servers van ${ BRAND_NAME } onbereikbaar zijn."
+      ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Bij het verzenden van een e-mail van deze alias wordt ${ emailSender } weergegeven als afzender."
       ],
@@ -2599,6 +2641,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "U kunt nu uw ${ BRAND_NAME }-wachtwoord gebruiken om ${ PASS_SHORT_APP_NAME } offline te openen"
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "U kunt nu uw back-up wachtwoord gebruiken om ${ PASS_SHORT_APP_NAME } offline te openen"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "U kunt nu uw extra wachtwoord gebruiken om ${ PASS_SHORT_APP_NAME } offline te openen."
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "U kunt nu uw tweede wachtwoord gebruiken om ${ PASS_SHORT_APP_NAME } offline te openen"
       ],
       "You cannot change the mailboxes for this alias.": [
         "U kan het postvak IN voor deze alias niet veranderen."
@@ -3085,6 +3136,9 @@
       "Empty trash": [
         "Prullenbak leegmaken"
       ],
+      "Enable offline access": [
+        "Offline toegang inschakelen"
+      ],
       "Enter email or username": [
         "Voer e-mail of gebruikersnaam in"
       ],
@@ -3402,6 +3456,9 @@
       ],
       "Notes": [
         "Notities"
+      ],
+      "Offline mode": [
+        "Offline modus"
       ],
       "Old-New": [
         "Oud-Nieuw"
@@ -4866,6 +4923,9 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-wachtwoord is vereist"
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } offline modus uitgeschakeld."
+      ],
       "2 consecutive dots are not allowed": [
         "2 opeenvolgende punten zijn niet toegestaan"
       ],
@@ -5069,6 +5129,9 @@
       ],
       "Title is required": [
         "Titel is vereist"
+      ],
+      "Too many attempts": [
+        "Te veel mislukte pogingen"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Eigendom van deze kluis overdragen aan ${ email }?"
