@@ -11,7 +11,11 @@ import { PLAN_NAMES } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
-import { isOrganizationFamily, isOrganizationPassFamily } from '@proton/shared/lib/organization/helper';
+import {
+    getIsDomainActive,
+    isOrganizationFamily,
+    isOrganizationPassFamily,
+} from '@proton/shared/lib/organization/helper';
 
 import SubUserCreateModal from './SubUserCreateModal';
 
@@ -34,7 +38,9 @@ interface ButtonProps {
 const AddUserButton = ({ onClick }: ButtonProps) => {
     const [customDomains = []] = useCustomDomains();
 
-    if (customDomains.length === 0) {
+    const hasVerifiedCustomDomain = customDomains.some(getIsDomainActive);
+
+    if (!hasVerifiedCustomDomain) {
         return (
             <Tooltip
                 title={c('familyOffer_2023:Family plan')
