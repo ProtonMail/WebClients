@@ -40,7 +40,6 @@ impl NamedPipeListener {
             loop {
                 tokio::select! {
                     _ = cancel_clone.cancelled() => {
-                        eprintln!("[SSH Agent] Named pipe listener shutting down");
                         break;
                     }
                     connect_result = listener.connect() => {
@@ -121,14 +120,9 @@ struct PassSshAgent {
 
 impl PassSshAgent {
     async fn check_unlocked(&self, key: Option<String>) -> bool {
-        println!("[Rust SSH Agent] Calling JavaScript lock check callback...");
-
         match self.is_unlocked_callback.call_async(Ok(key)).await {
             Ok(promise) => match promise.await {
-                Ok(is_unlocked) => {
-                    println!("[Rust SSH Agent] Lock check result: {}", is_unlocked);
-                    is_unlocked
-                }
+                Ok(is_unlocked) => is_unlocked,
                 Err(e) => {
                     eprintln!("[Rust SSH Agent] Promise resolution failed: {:?}", e);
                     false
@@ -148,11 +142,6 @@ impl agent::server::Agent for PassSshAgent {
         self,
         key: Arc<ssh_key::PrivateKey>,
     ) -> Box<dyn futures::future::Future<Output = (Self, bool)> + Send + Unpin> {
-        println!(
-            "confirm() called. Key fingerprint: {:?}",
-            key.fingerprint(Default::default())
-        );
-
         let fut = async move {
             let is_unlocked = self.check_unlocked(Some(key.public_key_base64())).await;
             (self, is_unlocked)
@@ -162,8 +151,6 @@ impl agent::server::Agent for PassSshAgent {
     }
 
     async fn confirm_request(&self, msg: MessageType) -> bool {
-        println!("SSH agent confirming request");
-
         match msg {
             // For sign operations, returns true to let the confirm() method above handle the unlock check
             MessageType::Sign |
@@ -179,8 +166,6 @@ impl agent::server::Agent for PassSshAgent {
 
 impl SshAgentManager {
     pub fn start_agent(is_unlocked_callback: IsUnlockedCallback) -> Result<String> {
-        println!("Starting SSH agent server");
-
         let mut instance_guard = SSH_AGENT_INSTANCE.lock().unwrap();
 
         if instance_guard.is_some() {
@@ -196,52 +181,31 @@ impl SshAgentManager {
                 std::fs::remove_file(&socket_path)?;
             }
 
-            println!("Binding to Unix socket");
             let listener = UnixListener::bind(&socket_path)
                 .map_err(|e| anyhow::anyhow!("Failed to bind to socket {}: {}", socket_path.display(), e))?;
-
             let agent_handler = PassSshAgent { is_unlocked_callback: Arc::new(is_unlocked_callback) };
-
-            println!("Creating UnixListenerStream");
             let stream = tokio_stream::wrappers::UnixListenerStream::new(listener);
-            println!("UnixListenerStream created successfully");
 
-            println!("Spawning SSH agent server task");
             tokio::spawn(async move {
-                println!("SSH agent server task started");
-                match agent::server::serve(stream, agent_handler).await {
-                    Ok(_) => println!("SSH agent server completed successfully"),
-                    Err(e) => {
-                        eprintln!("SSH agent server error: {}", e);
-                    }
+                if let Err(e) = agent::server::serve(stream, agent_handler).await {
+                    eprintln!("SSH agent server error: {}", e);
                 }
-                println!("SSH agent server task ended");
             })
         };
 
         #[cfg(windows)]
         let (task_handle, named_pipe_cancel_token) = {
-            println!("Creating Windows named pipe server");
-
             let pipe_path = socket_path.to_string_lossy().to_string();
             let agent_handler = PassSshAgent { is_unlocked_callback: Arc::new(is_unlocked_callback) };
-
-            println!("Creating NamedPipeListener stream");
             let stream = NamedPipeListener::new(pipe_path)
                 .map_err(|e| anyhow::anyhow!("Failed to create named pipe listener: {}", e))?;
 
             let cancel_token = stream.cancel_token.clone();
 
-            println!("Spawning SSH agent server task");
             let handle = tokio::spawn(async move {
-                println!("SSH agent server task started");
-                match agent::server::serve(stream, agent_handler).await {
-                    Ok(_) => println!("SSH agent server completed successfully"),
-                    Err(e) => {
-                        eprintln!("SSH agent server error: {}", e);
-                    }
+                if let Err(e) = agent::server::serve(stream, agent_handler).await {
+                    eprintln!("SSH agent server error: {}", e);
                 }
-                println!("SSH agent server task ended");
             });
 
             (handle, cancel_token)
@@ -255,13 +219,10 @@ impl SshAgentManager {
         };
         *instance_guard = Some(instance);
 
-        println!("SSH agent server started");
         Ok("SSH agent started successfully".to_string())
     }
 
     pub async fn stop_agent() -> Result<String> {
-        println!("Stopping SSH agent server");
-
         if let Err(e) = Self::remove_all_keys().await {
             eprintln!("Failed to clear SSH keys: {}", e);
         }
@@ -345,7 +306,6 @@ impl SshAgentManager {
             }
         }
 
-        println!("Successfully removed SSH keys from agent");
         Ok(())
     }
 
@@ -358,13 +318,8 @@ impl SshAgentManager {
         let mut client = Self::connect_agent_client().await?;
 
         for key in keys {
-            match Self::add_identity_to_agent(&mut client, &key).await {
-                Ok(_) => {
-                    println!("Successfully added key to SSH agent: {}", key.name);
-                }
-                Err(e) => {
-                    eprintln!("Failed to add key {} to SSH agent: {}", key.name, e);
-                }
+            if let Err(e) = Self::add_identity_to_agent(&mut client, &key).await {
+                eprintln!("Failed to add a key: {}", e);
             }
         }
 
