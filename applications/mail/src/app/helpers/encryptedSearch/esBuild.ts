@@ -12,7 +12,7 @@ import { locateBlockquote } from '../message/messageBlockquote';
 import { decryptMessage } from '../message/messageDecrypt';
 import { queryMessage } from './esAPI';
 
-enum CONTENT_VERSION {
+export enum CONTENT_VERSION {
     V1 = 1,
     // Stop using turndown to clean the HTML before storing it in the database
     DOM_INDEXING = 2,
