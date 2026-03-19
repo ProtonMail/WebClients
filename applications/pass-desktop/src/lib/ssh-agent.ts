@@ -1,5 +1,4 @@
 import { BrowserWindow } from 'electron';
-import { PASS_AUTH_STORE_KEY } from 'proton-pass-desktop/constants';
 import logger from 'proton-pass-desktop/utils/logger';
 
 import type { ItemRevision, MaybeNull } from '@proton/pass/types';
@@ -11,6 +10,9 @@ import { ssh_agent_napi } from '../../native';
 import { store } from '../store';
 import { setupIpcHandler } from './ipc';
 
+/** Store app state received from renderer. True if app is unlocked and booted */
+let appIsReady = false;
+
 declare module 'proton-pass-desktop/lib/ipc' {
     interface IPCChannels {
         'sshAgent:start': IPCChannel<[], string>;
@@ -20,6 +22,7 @@ declare module 'proton-pass-desktop/lib/ipc' {
         'sshAgent:getStatus': IPCChannel<[], ssh_agent_napi.SshAgentStatus>;
         'sshAgent:getSettingEnabled': IPCChannel<[], boolean>;
         'sshAgent:setSettingEnabled': IPCChannel<[enabled: boolean], void>;
+        'sshAgent:setAppReady': IPCChannel<[isReady: boolean], void>;
     }
 }
 
@@ -52,42 +55,22 @@ const isUnlockedCallback = async ({
             return false;
         }
 
-        const checkLockFunction = `(async () => {
-                            const authStore = window["${PASS_AUTH_STORE_KEY}"];
-                            if (!authStore) {
-                                console.log('[SSH Agent] Renderer could not check lock status');
-                                return false;
-                            }
-                            const locked = authStore.getLocked() ?? false;
-                            return locked;
-                        })()`;
-
-        const isLocked = await window.webContents.executeJavaScript(checkLockFunction);
-        if (!isLocked) return true;
+        if (appIsReady) return true;
 
         window.show();
 
         const startTime = Date.now();
         const timeoutMs = 60000;
 
-        // Wait for unlock with timeout (60 seconds) and check every 500ms
+        // Wait for unlock with timeout (60 seconds) and check every 100ms
         while (Date.now() - startTime < timeoutMs) {
-            try {
-                const isLocked = await window.webContents.executeJavaScript(checkLockFunction);
-                if (!isLocked) {
-                    // Wait 2s so keys can finish syncing (see SshAgentProvider.tsx)
-                    // before the SSH agent returns the result
-                    // FIXME: wait for AppStatus.READY instead
-                    await wait(2_000);
-                    return true;
-                }
-            } catch (error) {
-                logger.error('[SSH Agent] Error polling lock state:', error);
-                return false;
+            if (appIsReady) {
+                return true;
             }
-            await wait(500);
+            await wait(100);
         }
 
+        logger.warn('[SSH Agent] Timeout waiting for app to be ready');
         return false;
     } catch (error) {
         logger.error('[SSH Agent] Lock check callback error:', error);
@@ -109,4 +92,7 @@ export const setupIpcHandlers = () => {
     setupIpcHandler('sshAgent:getStatus', async () => ssh_agent_napi.getStatus());
     setupIpcHandler('sshAgent:getSettingEnabled', async () => store.get('sshAgentSettingEnabled') ?? false);
     setupIpcHandler('sshAgent:setSettingEnabled', async (_, enabled) => store.set('sshAgentSettingEnabled', enabled));
+    setupIpcHandler('sshAgent:setAppReady', async (_, isReady) => {
+        appIsReady = isReady;
+    });
 };
