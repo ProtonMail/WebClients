@@ -1,7 +1,12 @@
 import { type FC, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
+import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
+import { clientReady } from '@proton/pass/lib/client';
 import { selectVisibleNonTrashedSshKeyItems } from '@proton/pass/store/selectors';
+import type { MaybeNull } from '@proton/pass/types';
+
+const KEYS_SYNC_DEBOUNCE_TIME = 200;
 
 /** Initialize SSH agent and sync keys if SSH agent setting is enabled.
  * That setting is stored in Electron store instead of app settings
@@ -9,10 +14,14 @@ import { selectVisibleNonTrashedSshKeyItems } from '@proton/pass/store/selectors
  * the app is still locked (in which case no key will be sent).
  * This allows for a better UX since after app boot,
  * executing a SSH command will put Pass window
- * with the unlock screen in the foreground. */
+ * with the unlock screen in the foreground.
+ * Additionally sync app ready state. */
 export const SshAgentProvider: FC = () => {
     const sshKeys = useSelector(selectVisibleNonTrashedSshKeyItems);
     const syncTimeoutRef = useRef<NodeJS.Timeout>();
+    const syncPromiseRef = useRef<Promise<void>>(Promise.resolve());
+    const { status } = useAppState();
+    const prevStatus = useRef<MaybeNull<boolean>>(null);
 
     useEffect(() => {
         const init = async () => {
@@ -33,21 +42,23 @@ export const SshAgentProvider: FC = () => {
             clearTimeout(syncTimeoutRef.current);
         }
 
-        syncTimeoutRef.current = setTimeout(() => {
-            const syncKeys = async () => {
-                const isRunning = Boolean((await window.ctxBridge?.getSshAgentStatus())?.socketPath);
+        syncPromiseRef.current = new Promise((resolve) => {
+            syncTimeoutRef.current = setTimeout(async () => {
+                try {
+                    const isRunning = Boolean((await window.ctxBridge?.getSshAgentStatus())?.socketPath);
 
-                if (!isRunning) return;
-
-                if (sshKeys.length === 0) {
-                    await window.ctxBridge?.removeAllSshKeys();
-                } else {
-                    await window.ctxBridge?.setSshKeyItems(sshKeys);
+                    if (isRunning) {
+                        if (sshKeys.length === 0) {
+                            await window.ctxBridge?.removeAllSshKeys();
+                        } else {
+                            await window.ctxBridge?.setSshKeyItems(sshKeys);
+                        }
+                    }
+                } finally {
+                    resolve();
                 }
-            };
-
-            void syncKeys();
-        }, 400);
+            }, KEYS_SYNC_DEBOUNCE_TIME);
+        });
 
         return () => {
             if (syncTimeoutRef.current) {
@@ -55,6 +66,23 @@ export const SshAgentProvider: FC = () => {
             }
         };
     }, [sshKeys]);
+
+    useEffect(() => {
+        const updateStatus = async () => {
+            const isReady = clientReady(status);
+
+            if (prevStatus.current !== isReady) {
+                prevStatus.current = isReady;
+                // Wait for SSH keys to finish sync with redux store
+                // before sending isReady to main process
+                if (isReady) {
+                    await syncPromiseRef.current;
+                }
+                void window.ctxBridge?.setSshAgentAppReady(isReady);
+            }
+        };
+        void updateStatus();
+    }, [status]);
 
     return null;
 };
