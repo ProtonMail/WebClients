@@ -1,5 +1,8 @@
 use anyhow::{Error, Result};
-use russh_keys::{agent, ssh_key, PrivateKey};
+use napi::bindgen_prelude::Promise;
+use napi::threadsafe_function::ThreadsafeFunction;
+use russh_keys::agent::Constraint;
+use russh_keys::{agent, ssh_key, PrivateKey, PublicKeyBase64};
 use std::path::PathBuf;
 use std::sync::{Arc, Mutex};
 #[cfg(unix)]
@@ -23,7 +26,8 @@ pub struct AgentStatus {
 
 static SSH_AGENT_INSTANCE: Mutex<Option<SshAgentInstance>> = Mutex::new(None);
 
-#[derive(Clone)]
+type IsUnlockedCallback = ThreadsafeFunction<Option<String>>;
+
 struct SshAgentInstance {
     socket_path: PathBuf,
 }
@@ -31,28 +35,71 @@ struct SshAgentInstance {
 pub struct SshAgentManager;
 
 #[derive(Clone)]
-struct PassSshAgent {}
+struct PassSshAgent {
+    is_unlocked_callback: IsUnlockedCallback,
+}
 
-impl PassSshAgent {}
+impl PassSshAgent {
+    async fn check_unlocked(&self, key: Option<String>) -> bool {
+        println!("[Rust SSH Agent] Calling JavaScript lock check callback...");
+
+        match self.is_unlocked_callback.call_async::<Promise<bool>>(Ok(key)).await {
+            Ok(promise) => match promise.await {
+                Ok(is_unlocked) => {
+                    println!("[Rust SSH Agent] Lock check result: {}", is_unlocked);
+                    is_unlocked
+                }
+                Err(e) => {
+                    eprintln!("[Rust SSH Agent] Promise resolution failed: {:?}", e);
+                    false
+                }
+            },
+            Err(e) => {
+                eprintln!("[Rust SSH Agent] Lock check callback call failed: {:?}", e);
+                false
+            }
+        }
+    }
+}
 
 #[async_trait::async_trait]
 impl agent::server::Agent for PassSshAgent {
     fn confirm(
         self,
-        _key: Arc<ssh_key::PrivateKey>,
+        key: Arc<ssh_key::PrivateKey>,
     ) -> Box<dyn futures::future::Future<Output = (Self, bool)> + Send + Unpin> {
-        println!("SSH agent confirming key usage");
-        Box::new(futures::future::ready((self, true)))
+        println!(
+            "confirm() called. Key fingerprint: {:?}",
+            key.fingerprint(Default::default())
+        );
+
+        let fut = async move {
+            let is_unlocked = self.check_unlocked(Some(key.public_key_base64())).await;
+            (self, is_unlocked)
+        };
+
+        Box::new(Box::pin(fut))
     }
 
-    async fn confirm_request(&self, _msg: agent::server::MessageType) -> bool {
+    async fn confirm_request(&self, msg: agent::server::MessageType) -> bool {
         println!("SSH agent confirming request");
-        true
+
+        match msg {
+            // For sign operations, returns true to let the confirm() method above handle the unlock check
+            agent::server::MessageType::Sign => {
+                println!("Sign request will be handled by confirm()");
+                true
+            }
+            _ => {
+                let is_unlocked = self.check_unlocked(None).await;
+                is_unlocked
+            }
+        }
     }
 }
 
 impl SshAgentManager {
-    pub fn start_agent() -> Result<String> {
+    pub fn start_agent(is_unlocked_callback: IsUnlockedCallback) -> Result<String> {
         println!("Starting SSH agent server");
 
         let mut instance_guard = SSH_AGENT_INSTANCE.lock().unwrap();
@@ -74,7 +121,7 @@ impl SshAgentManager {
             let listener = UnixListener::bind(&socket_path)
                 .map_err(|e| anyhow::anyhow!("Failed to bind to socket {}: {}", socket_path.display(), e))?;
 
-            let agent_handler = PassSshAgent {};
+            let agent_handler = PassSshAgent { is_unlocked_callback };
 
             println!("Creating UnixListenerStream");
             let stream = tokio_stream::wrappers::UnixListenerStream::new(listener);
@@ -182,7 +229,7 @@ impl SshAgentManager {
         key: &SshKeyData,
     ) -> Result<(), Error> {
         let private_key = Self::parse_private_key(&key.private_key)?;
-        client.add_identity(&private_key, &[]).await?;
+        client.add_identity(&private_key, &[Constraint::Confirm]).await?;
         Ok(())
     }
 

@@ -42,6 +42,6 @@ export declare namespace ssh_agent_napi {
     export interface SshAgentStatus {
         socketPath?: string;
     }
-    export function startAgent(): Promise<string>;
+    export function startAgent(isUnlockedCallback: (err: Error | null, arg: string | undefined | null) => any): string;
     export function stopAgent(): Promise<string>;
 }
