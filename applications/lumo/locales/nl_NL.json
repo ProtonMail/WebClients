@@ -2607,6 +2607,9 @@
       "Help me understand what this code does": [
         "Help me bij het begrijpen wat deze code doet"
       ],
+      "How does the world celebrate Saint Patrick's Day?": [
+        "Hoe viert de wereld Saint Patrick's Day?"
+      ],
       "Identify any unusual or potentially unfavorable terms": [
         "Identificeer ongebruikelijke of potentieel ongunstige termen"
       ],
@@ -3973,6 +3976,9 @@
       "Invalid code": [
         "Ongeldige code"
       ],
+      "Invalid coupon": [
+        "Ongeldige kortingscode"
+      ],
       "Invalid expiration date": [
         "Ongeldige vervaldatum"
       ],
@@ -4045,6 +4051,9 @@
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omgekeerde btw-regeling wordt niet ondersteund voor dit abonnement"
+      ],
       "Signature verification failed": [
         "Controle van handtekening mislukt"
       ],
@@ -4062,6 +4071,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Het minimale donatiebedrag is ${ price }"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
@@ -4838,6 +4850,9 @@
       ],
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Uw ${ plan }-abonnement zal worden vervangen door ${ PASS_SHORT_APP_NAME } Lifetime. Het resterende saldo van uw abonnement zal aan uw account worden toegevoegd. ${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Uw account is momenteel geconfigureerd om het omgekeerde btw-tarief toe te passen. Dit wordt niet ondersteund voor het geselecteerde abonnement. Om door te gaan, verwijdt u het btw-nummer van het factuuradres of selecteert u een ander abonnement."
       ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -6527,6 +6542,9 @@
       "VAT number": [
         "BTW-nummer"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Omgekeerde btw mechanisme is van toepassing"
+      ],
       "You already have a subscription to this plan.": [
         "U bent reeds geabonneerd op dit abonnement."
       ],
@@ -6822,7 +6840,7 @@
         "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Verleng uw abonnement en sla ${ discountPercent }% op!"
+        "Verleng uw abonnement en bespaar ${ discountPercent }%!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Volledige toegang tot ${ VPN_APP_NAME }"
@@ -6846,7 +6864,7 @@
         "Krachtigere bescherming tegen cyberdreigingen"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Stap over op ons jaarabonnement en sla ${ toYearlyDiscountAmount } op!"
+        "Stap over op ons jaarabonnement en bespaar ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Onbeperkt aantal dagelijkse gesprekken"
@@ -7566,6 +7584,9 @@
       ],
       "Request new code": [
         "Nieuwe code aanvragen"
+      ],
+      "Reverse charge not supported": [
+        "Omgekeerde btw niet ondersteund"
       ],
       "Search Index Debug": [
         "Zoekindex Foutopsporing"
