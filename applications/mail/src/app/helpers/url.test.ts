@@ -94,16 +94,79 @@ describe('mailtoParser', () => {
         const mailto = `mailto:${address1}?subject=${subject}&body=${messageBody}`;
         const { decryption } = mailtoParser(mailto);
 
-        const decodedBody = decodeURIComponent(protonizer(messageBody, true).innerHTML);
+        const expectedBody = protonizer(messageBody, true).innerHTML;
 
-        expect(removeLineBreaks(decryption?.decryptedBody || '')).toEqual(removeLineBreaks(decodedBody));
+        expect(removeLineBreaks(decryption?.decryptedBody || '')).toEqual(removeLineBreaks(expectedBody));
+    });
+
+    it('should preserve %0A (LF) newlines in body as line breaks', () => {
+        const mailto = `mailto:${address1}?subject=${subject}&body=Line%201%0ALine%202`;
+        const { decryption } = mailtoParser(mailto);
+
+        expect(decryption?.decryptedBody).toContain('Line 1');
+        expect(decryption?.decryptedBody).toContain('Line 2');
+        expect(decryption?.decryptedBody).toMatch(/Line 1.*<br\s*\/?>.*Line 2/s);
+    });
+
+    it('should preserve %0D%0A (CRLF) newlines in body as line breaks', () => {
+        const mailto = `mailto:${address1}?subject=${subject}&body=Line%201%0D%0ALine%202`;
+        const { decryption } = mailtoParser(mailto);
+
+        expect(decryption?.decryptedBody).toContain('Line 1');
+        expect(decryption?.decryptedBody).toContain('Line 2');
+        expect(decryption?.decryptedBody).toMatch(/Line 1.*<br\s*\/?>.*Line 2/s);
+    });
+
+    it('should not convert literal backslash-n to line breaks (non-compliant)', () => {
+        const mailto = `mailto:${address1}?subject=${subject}&body=Line%20one\\nLine%20two`;
+        const { decryption } = mailtoParser(mailto);
+
+        expect(decryption?.decryptedBody).toContain('Line one\\nLine two');
+    });
+
+    it('should preserve percent signs in subject', () => {
+        const mailto = `mailto:test@example.com?subject=50%25%20off`;
+        const { data } = mailtoParser(mailto);
+
+        expect(data?.Subject).toEqual('50% off');
+    });
+
+    it('should preserve percent signs in body', () => {
+        const mailto = `mailto:test@example.com?body=100%25%20done`;
+        const { decryption } = mailtoParser(mailto);
+
+        expect(decryption?.decryptedBody).toContain('100% done');
+    });
+
+    it('should preserve + signs in subject', () => {
+        const mailto = `mailto:test@example.com?subject=1+1=2`;
+        const { data } = mailtoParser(mailto);
+
+        expect(data?.Subject).toEqual('1+1=2');
+    });
+
+    it('should preserve + signs in body', () => {
+        const mailto = `mailto:test@example.com?body=1+1=2`;
+        const { decryption } = mailtoParser(mailto);
+
+        expect(decryption?.decryptedBody).toContain('1+1=2');
+    });
+
+    it('should ignore unknown mailto query parameters', () => {
+        const mailto = `mailto:${address1}?foo=bar&unknown=value`;
+        const { data, decryption } = mailtoParser(mailto);
+
+        expect(data?.Subject).toBeUndefined();
+        expect(data?.CCList).toBeUndefined();
+        expect(data?.BCCList).toBeUndefined();
+        expect(decryption?.decryptedBody).toBeUndefined();
     });
 
     it('should detect all fields in a mailto string', () => {
         const mailto = `mailto:${address1}?subject=${subject}&cc=${address2},${address3}&bcc=${address4}&body=${body}`;
 
         const { data, decryption } = mailtoParser(mailto);
-        const decodedBody = decodeURIComponent(protonizer(body, true).innerHTML);
+        const expectedBody = protonizer(body, true).innerHTML;
 
         expect(data?.ToList).toEqual([{ Name: address1, Address: address1 }]);
         expect(data?.Subject).toEqual(subject);
@@ -112,6 +175,6 @@ describe('mailtoParser', () => {
             { Name: address3, Address: address3 },
         ]);
         expect(data?.BCCList).toEqual([{ Name: address4, Address: address4 }]);
-        expect(removeLineBreaks(decryption?.decryptedBody || '')).toEqual(removeLineBreaks(decodedBody));
+        expect(removeLineBreaks(decryption?.decryptedBody || '')).toEqual(removeLineBreaks(expectedBody));
     });
 });
