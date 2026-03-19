@@ -24,7 +24,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { getNextOccurrence } from '../../../utils/getNextOccurrence';
-import { DeleteMeetingModal } from '../../DeleteMeetingModal/DeleteMeetingModal';
+import { DeleteMeetingModal } from '../DeleteMeetingModal';
 import { getRoomVariantFromId } from '../../RoomForm/getRoomVariantFromId';
 import { PersonalMeetingRotationButton } from './PersonalMeetingRotationButton';
 

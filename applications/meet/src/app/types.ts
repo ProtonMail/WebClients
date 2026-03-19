@@ -48,3 +48,5 @@ export enum PublishableDataTypes {
     RaiseHand = 'raiseHand',
     ChatMessageReaction = 'chatMessageReaction',
 }
+
+export type MeetButtonClass = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'danger' | 'danger-secondary';
