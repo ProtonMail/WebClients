@@ -83,6 +83,7 @@ type IsUnlockedCallback = ThreadsafeFunction<Option<String>>;
 
 struct SshAgentInstance {
     socket_path: PathBuf,
+    task_handle: tokio::task::JoinHandle<()>,
 }
 
 pub struct SshAgentManager;
@@ -164,7 +165,7 @@ impl SshAgentManager {
         let socket_path = Self::get_socket_path()?;
 
         #[cfg(unix)]
-        {
+        let task_handle = {
             if socket_path.exists() {
                 println!("Removing existing socket file");
                 std::fs::remove_file(&socket_path)?;
@@ -181,7 +182,7 @@ impl SshAgentManager {
             println!("UnixListenerStream created successfully");
 
             println!("Spawning SSH agent server task");
-            let task_handle = tokio::spawn(async move {
+            tokio::spawn(async move {
                 println!("SSH agent server task started");
                 match agent::server::serve(stream, agent_handler).await {
                     Ok(_) => println!("SSH agent server completed successfully"),
@@ -190,13 +191,11 @@ impl SshAgentManager {
                     }
                 }
                 println!("SSH agent server task ended");
-            });
-
-            println!("Task spawned, handle: {:?}", task_handle);
-        }
+            })
+        };
 
         #[cfg(windows)]
-        {
+        let task_handle = {
             println!("Creating Windows named pipe server");
 
             let pipe_path = socket_path.to_string_lossy().to_string();
@@ -216,11 +215,12 @@ impl SshAgentManager {
                     }
                 }
                 println!("SSH agent server task ended");
-            });
-        }
+            })
+        };
 
         let instance = SshAgentInstance {
             socket_path: socket_path.clone(),
+            task_handle,
         };
         *instance_guard = Some(instance);
 
@@ -228,23 +228,78 @@ impl SshAgentManager {
         Ok("SSH agent started successfully".to_string())
     }
 
-    pub fn stop_agent() -> Result<String> {
+    pub async fn stop_agent() -> Result<String> {
         println!("Stopping SSH agent server");
 
-        let mut instance_guard = SSH_AGENT_INSTANCE.lock().unwrap();
+        let instance = {
+            let mut instance_guard = SSH_AGENT_INSTANCE.lock().unwrap();
+            instance_guard.take()
+        };
 
-        if let Some(instance) = instance_guard.take() {
-            if let Err(e) = std::fs::remove_file(&instance.socket_path) {
-                // FIXME: error on Windows: Failed to remove SSH socket: The parameter is incorrect. (os error 87)
-                println!("Failed to remove SSH socket: {}", e);
+        if let Some(instance) = instance {
+            if let Err(e) = Self::remove_all_keys(&instance.socket_path).await {
+                eprintln!("Failed to clear SSH keys: {}", e);
             }
 
-            println!("SSH agent server stopped successfully");
+            instance.task_handle.abort();
+
+            #[cfg(unix)]
+            {
+                if let Err(e) = std::fs::remove_file(&instance.socket_path) {
+                    println!("Failed to remove SSH socket: {}", e);
+                }
+            }
+
             Ok("SSH agent stopped successfully".to_string())
         } else {
-            println!("SSH agent is not running");
             Ok("SSH agent was not running".to_string())
         }
+    }
+
+    async fn connect_agent_client(socket_path: &std::path::Path) -> Result<AgentClient<impl AgentStream>> {
+        #[cfg(unix)]
+        {
+            if !socket_path.exists() {
+                return Err(anyhow::anyhow!("Socket file does not exist: {}", socket_path.display()));
+            }
+
+            AgentClient::connect_uds(socket_path)
+                .await
+                .map_err(|e| anyhow::anyhow!("Failed to connect to SSH agent: {}", e))
+        }
+
+        #[cfg(windows)]
+        {
+            let pipe_path = socket_path.to_string_lossy().to_string();
+            AgentClient::connect_named_pipe(pipe_path)
+                .await
+                .map_err(|e| anyhow::anyhow!("Failed to connect to SSH agent: {}", e))
+        }
+    }
+
+    async fn remove_all_keys(socket_path: &std::path::Path) -> Result<()> {
+        let mut client = Self::connect_agent_client(socket_path).await?;
+
+        let identities = client
+            .request_identities()
+            .await
+            .map_err(|e| anyhow::anyhow!("Failed to request identities: {}", e))?;
+
+        if identities.is_empty() {
+            return Ok(());
+        }
+
+        // client.remove_all_identities() fails with "Agent failure" error
+        // (with either russh-keys = "0.49.2" or russh = "0.54.6")
+        // so we currently have to use client.remove_identity() instead
+        for identity in identities {
+            if let Err(e) = client.remove_identity(&identity).await {
+                eprintln!("Failed to remove a key: {}", e);
+            }
+        }
+
+        println!("Successfully removed SSH keys from agent");
+        Ok(())
     }
 
     pub async fn send_keys(keys: Vec<SshKeyData>) -> Result<String> {
@@ -262,28 +317,7 @@ impl SshAgentManager {
     }
 
     async fn add_keys_to_agent(socket_path: &std::path::Path, keys: Vec<SshKeyData>) -> Result<String> {
-        println!("Connecting to SSH agent at: {}", socket_path.display());
-
-        #[cfg(unix)]
-        let mut client = {
-            if !socket_path.exists() {
-                return Err(anyhow::anyhow!("Socket file does not exist: {}", socket_path.display()));
-            }
-
-            match AgentClient::connect_uds(socket_path).await {
-                Ok(client) => {
-                    println!("Successfully connected to SSH agent");
-                    client
-                }
-                Err(e) => return Err(anyhow::anyhow!("Failed to connect to SSH agent: {}", e)),
-            }
-        };
-
-        #[cfg(windows)]
-        let mut client = {
-            let pipe_path = socket_path.to_string_lossy().to_string();
-            AgentClient::connect_named_pipe(pipe_path).await.unwrap()
-        };
+        let mut client = Self::connect_agent_client(socket_path).await?;
 
         for key in keys {
             match Self::add_identity_to_agent(&mut client, &key).await {
