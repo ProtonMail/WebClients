@@ -7,9 +7,7 @@ import type { ModalStateProps } from '@proton/components';
 import { useNotifications } from '@proton/components';
 import type { ProtonDriveClient } from '@proton/drive';
 import {
-    type DegradedNode,
     MemberRole,
-    type NodeEntity,
     NodeType,
     type ShareNodeSettings,
     type ShareResult,
@@ -27,6 +25,7 @@ import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { useFlagsDriveDocsPublicSharing } from '../../flags/useFlagsDriveDocsPublicSharing';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
+import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
 import { getNodeName } from '../../utils/sdk/getNodeName';
 import { getContactNameAndEmail } from './DirectSharing/helpers/getContactNameAndEmail';
 import type { SharingModalViewProps } from './SharingModalView';
@@ -83,6 +82,8 @@ export const useSharingModalState = ({
     const [name, setName] = useState('');
 
     const [parentUid, setParentUid] = useState<string | undefined>(undefined);
+
+    const [canChangePermissions, setCanChangePermissions] = useState(false);
 
     const [mediaType, setMediaType] = useState<string | undefined>();
     const [isAlbum, setIsAlbum] = useState<boolean | undefined>();
@@ -275,11 +276,18 @@ export const useSharingModalState = ({
                 setMediaType(nodeInfo.type === NodeType.Folder ? 'Folder' : nodeInfo.mediaType);
                 setIsAlbum(nodeInfo.type === NodeType.Album);
 
-                const ownerEmail = getOwnerEmail(nodeInfo);
+                if (nodeInfo.parentUid) {
+                    const parent = await drive.getNode(nodeInfo.parentUid);
+                    const parentNodeInfo = parent.ok ? parent.value : parent.error;
+                    const effectiveRoleOnParent = await getNodeEffectiveRole(parentNodeInfo, drive);
+                    setCanChangePermissions(effectiveRoleOnParent === MemberRole.Admin);
+                }
+
+                const ownerEmail = nodeInfo.ownedBy.email;
                 if (ownerEmail) {
                     setOwnerEmail(ownerEmail);
                 }
-                // Use current user's name or find it in the contacts
+
                 if (ownerEmail === user.Email) {
                     setOwnerDisplayName(user.DisplayName);
                 } else if (ownerEmail) {
@@ -347,6 +355,7 @@ export const useSharingModalState = ({
         nodeUid,
         name,
         mediaType,
+        canChangePermissions,
         ownerDisplayName,
         ownerEmail,
         isLoading,
@@ -374,11 +383,3 @@ export const useSharingModalState = ({
         },
     };
 };
-
-function getOwnerEmail(nodeInfo: NodeEntity | DegradedNode) {
-    if (nodeInfo.keyAuthor.ok) {
-        return nodeInfo.keyAuthor.value;
-    } else if (!nodeInfo.keyAuthor.ok) {
-        return nodeInfo.keyAuthor.error.claimedAuthor;
-    }
-}
