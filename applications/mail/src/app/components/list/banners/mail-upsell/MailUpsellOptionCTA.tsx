@@ -1,15 +1,13 @@
+import PmMeUpsellModal from '@proton/components/components/upsell/modals/PmMeUpsellModal';
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
 import { type ReactElement, cloneElement } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import {
-    PmMeUpsellModal,
-    SUBSCRIPTION_STEPS,
-    SettingsLink,
-    useModalStateObject,
-    useUpsellConfig,
-} from '@proton/components';
 import {
     APP_UPSELL_REF_PATH,
     MAIL_UPSELL_BANNER_LINK_ID_REF_PATH,

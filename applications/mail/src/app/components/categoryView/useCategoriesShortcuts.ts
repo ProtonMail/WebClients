@@ -2,8 +2,8 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import type { CommanderItemInterface, HotkeyTuple } from '@proton/components';
-import type { Hotkey } from '@proton/components/hooks/useHotkeys';
+import type { CommanderItemInterface } from '@proton/components/components/commander/Commander';
+import type { Hotkey, HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 import { getCategoryCommanderKeyboardShortcut } from '@proton/mail/features/categoriesView/categoriesHelpers';
 import { getLabelFromCategoryIdInCommander } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

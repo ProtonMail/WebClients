@@ -1,7 +1,8 @@
+import useApi from '@proton/components/hooks/useApi';
+import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
 import { useCallback } from 'react';
 
 import { useGetUserSettings } from '@proton/account';
-import { useApi, useGetVerificationPreferences } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
 import { getMatchingSigningKey } from '@proton/crypto';
 import type { MessageErrors, MessageStateWithDataFull } from '@proton/mail/store/messages/messagesTypes';

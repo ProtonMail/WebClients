@@ -1,10 +1,14 @@
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
+import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { forwardRef, useMemo } from 'react';
 
 import { addDays, addSeconds, format, fromUnixTime, getUnixTime, isEqual, nextMonday, set } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { DropdownMenu, DropdownMenuButton, SimpleDropdown, UpsellModal, useModalState } from '@proton/components';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { YEAR_REGEX } from '@proton/shared/lib/date/date';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';

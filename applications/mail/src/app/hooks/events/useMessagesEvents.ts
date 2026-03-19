@@ -1,4 +1,4 @@
-import { useSubscribeEventManager } from '@proton/components';
+import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 

@@ -1,9 +1,10 @@
+import Prompt from '@proton/components/components/prompt/Prompt';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Prompt, useModalState } from '@proton/components';
 
 import { useMailGlobalModals } from './GlobalModalProvider';
 import { ModalType, type ScheduleModalPayload } from './inteface';

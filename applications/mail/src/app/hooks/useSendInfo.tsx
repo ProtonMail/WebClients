@@ -1,10 +1,11 @@
+import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
+import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
 import type { Dispatch, SetStateAction } from 'react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { useGetEncryptionPreferences, useKeyTransparencyContext } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import type { PublicKeyReference } from '@proton/crypto';
 import useIsMounted from '@proton/hooks/useIsMounted';

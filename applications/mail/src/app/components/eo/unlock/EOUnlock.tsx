@@ -1,10 +1,10 @@
+import Loader from '@proton/components/components/loader/Loader';
 import { useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router';
 
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import { Loader } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import type { EOUrlParams } from '../../../helpers/eo/eoUrl';

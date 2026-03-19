@@ -1,10 +1,12 @@
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Label from '@proton/components/components/label/Label';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components';
-import { Checkbox, Label, Prompt } from '@proton/components';
 import { setItem } from '@proton/shared/lib/helpers/storage';
 
 import { HIDE_SNOOZE_CONFIRMATION_LS_KEY } from '../constant';

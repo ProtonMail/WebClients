@@ -1,4 +1,6 @@
-import { useApi, useGetVerificationPreferences, useModalTwo } from '@proton/components';
+import useApi from '@proton/components/hooks/useApi';
+import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { bigIntToNumber } from '@proton/crypto/lib/bigInteger';
 import { getAttachment as getAttachmentRequest, getAttachmentsMetadata } from '@proton/shared/lib/api/attachments';
 import type { AttachmentFullMetadata, AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';

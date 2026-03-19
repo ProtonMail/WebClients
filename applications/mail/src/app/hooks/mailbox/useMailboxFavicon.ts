@@ -1,7 +1,7 @@
+import useDynamicFavicon from '@proton/components/hooks/useDynamicFavicon';
 import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { useDynamicFavicon } from '@proton/components';
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

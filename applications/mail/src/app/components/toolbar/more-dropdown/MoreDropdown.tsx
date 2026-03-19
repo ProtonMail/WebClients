@@ -1,8 +1,10 @@
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { DropdownMenu, DropdownMenuButton, useModalState } from '@proton/components';
 import { IcBell } from '@proton/icons/icons/IcBell';
 import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
 import { IcTag } from '@proton/icons/icons/IcTag';

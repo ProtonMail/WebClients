@@ -1,7 +1,9 @@
+import AutoDeleteUpsellModal from '@proton/components/components/upsell/modals/AutoDeleteUpsellModal';
+import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { AutoDeleteUpsellModal, PromotionBanner, useModalState } from '@proton/components';
 
 const AutoDeleteFreeBanner = () => {
     const [upsellModalProps, toggleUpsellModal, renderUpsellModal] = useModalState();

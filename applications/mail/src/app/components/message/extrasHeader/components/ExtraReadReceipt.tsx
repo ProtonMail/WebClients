@@ -1,8 +1,10 @@
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { IcBell } from '@proton/icons/icons/IcBell';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';

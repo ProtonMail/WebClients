@@ -1,5 +1,5 @@
+import Icon from '@proton/components/components/icon/Icon';
 import { Banner } from '@proton/atoms/Banner/Banner';
-import { Icon } from '@proton/components';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
 import useExpiration from '../../../../../hooks/useExpiration';

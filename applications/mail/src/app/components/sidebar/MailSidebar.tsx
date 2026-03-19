@@ -1,21 +1,19 @@
+import AppVersion from '@proton/components/components/version/AppVersion';
+import AppsDropdown from '@proton/components/containers/app/AppsDropdown';
+import Icon from '@proton/components/components/icon/Icon';
+import Sidebar from '@proton/components/components/sidebar/Sidebar';
+import SidebarDrawerItems from '@proton/components/components/drawer/SidebarDrawerItems';
+import SidebarLogo from '@proton/components/components/sidebar/SidebarLogo';
+import SidebarNav from '@proton/components/components/sidebar/SidebarNav';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useApi from '@proton/components/hooks/useApi';
+import useLocalState from '@proton/components/hooks/useLocalState';
 import { memo, useCallback, useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import {
-    AppVersion,
-    AppsDropdown,
-    Icon,
-    Sidebar,
-    SidebarDrawerItems,
-    SidebarLogo,
-    SidebarNav,
-    useActiveBreakpoint,
-    useApi,
-    useLocalState,
-} from '@proton/components';
 import SidebarStorageUpsell from '@proton/components/containers/payments/subscription/SidebarStorageUpsell';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';

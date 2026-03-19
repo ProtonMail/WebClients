@@ -1,5 +1,5 @@
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { useNotifications } from '@proton/components';
 import type { KeyID } from '@proton/crypto';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';

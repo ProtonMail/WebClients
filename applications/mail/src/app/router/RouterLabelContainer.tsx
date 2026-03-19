@@ -1,9 +1,10 @@
+import Commander from '@proton/components/components/commander/Commander';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useCallback, useRef } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Commander, useModalState } from '@proton/components';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import clsx from '@proton/utils/clsx';
 

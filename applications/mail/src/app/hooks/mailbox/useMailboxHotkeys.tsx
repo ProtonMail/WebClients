@@ -1,10 +1,10 @@
+import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
+import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import type { Location } from 'history';
 
-import type { HotkeyTuple } from '@proton/components';
-import { useHotkeys } from '@proton/components';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { labelIncludes } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
