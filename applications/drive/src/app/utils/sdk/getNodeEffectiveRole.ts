@@ -1,5 +1,5 @@
-import type { ProtonDriveClient } from '@proton/drive/index';
-import { MemberRole, type NodeEntity } from '@proton/drive/index';
+import type { DegradedNode, NodeEntity, ProtonDriveClient } from '@proton/drive';
+import { MemberRole } from '@proton/drive';
 
 import { sendErrorReport } from '../errorHandling';
 import { EnrichedError } from '../errorHandling/EnrichedError';
@@ -18,7 +18,7 @@ type Drive = Pick<ProtonDriveClient, 'getNode'>;
 export type EffectiveRole = Exclude<MemberRole, MemberRole.Inherited>;
 
 export const getNodeEffectiveRole = async (
-    node: NodeEntity,
+    node: NodeEntity | DegradedNode,
     drive: Drive,
     role: MemberRole = MemberRole.Inherited
 ): Promise<EffectiveRole> => {
