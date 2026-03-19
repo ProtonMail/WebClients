@@ -8,11 +8,9 @@ import { useShallow } from 'zustand/react/shallow';
 import { Loader, useAppTitle, useConfig } from '@proton/components';
 import { generateNodeUid, getDriveForPhotos } from '@proton/drive/index';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useNavigate from '../../hooks/drive/useNavigate';
-import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import { useThumbnailsDownload } from '../../store';
 import { usePhotoLayoutStore } from '../../zustand/photos/layout.store';
@@ -75,7 +73,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         photos,
     } = useOutletContext<PhotosLayoutOutletContext>();
 
-    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isAlbumsLoading);
     const { selectedItems, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection({
         photos,
         albumPhotos,
@@ -93,10 +90,9 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
             if (!albumShareId) {
                 return;
             }
-            incrementItemRenderedCounter();
             loadPhotoLink(albumShareId, itemLinkId, domRef);
         },
-        [incrementItemRenderedCounter, loadPhotoLink, albumShareId]
+        [loadPhotoLink, albumShareId]
     );
 
     const handleItemRenderLoadedLink = (itemLinkId: string, domRef?: React.MutableRefObject<unknown>) => {

@@ -6,9 +6,9 @@ import ReactDOM from 'react-dom';
 import '@proton/polyfill';
 
 import UrlsApp from './UrlsApp';
+import { initDriveWebVitalsReporting } from './modules/metrics/webVitals';
 import './style';
-import { initializePerformanceMetrics } from './utils/performance';
 
-initializePerformanceMetrics(true);
+initDriveWebVitalsReporting(true);
 
 ReactDOM.render(<UrlsApp />, document.querySelector('.app-root'));
