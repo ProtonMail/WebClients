@@ -1,14 +1,14 @@
+import { useState } from 'react';
+
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import StepDot from '@proton/components/components/stepDot/StepDot';
 import StepDots from '@proton/components/components/stepDots/StepDots';
-import { useState } from 'react';
-
-import { c } from 'ttag';
-
-import { Href } from '@proton/atoms/Href/Href';
-import { Button } from '@proton/atoms/Button/Button';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import blockEmails from '@proton/styles/assets/img/illustrations/checklist-block-emails.svg';
@@ -77,7 +77,7 @@ const ProtectInboxModal = (props: ModalStateProps) => {
     const handleNext = () => {
         if (isLastStep) {
             if (!items.has('ProtectInbox')) {
-                markItemsAsDone('ProtectInbox');
+                void markItemsAsDone('ProtectInbox');
             }
             props.onClose();
             return;
@@ -88,7 +88,7 @@ const ProtectInboxModal = (props: ModalStateProps) => {
 
     const handleClose = () => {
         if (isLastStep && !items.has('ProtectInbox')) {
-            markItemsAsDone('ProtectInbox');
+            void markItemsAsDone('ProtectInbox');
         }
 
         props.onClose();

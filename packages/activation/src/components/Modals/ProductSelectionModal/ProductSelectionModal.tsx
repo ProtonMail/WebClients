@@ -39,9 +39,10 @@ const getDefaultProducts = (provider: ImportProvider, hasCalendar: boolean) => {
 interface Props extends ModalProps {
     source: EASY_SWITCH_SOURCES;
     provider: ImportProvider;
+    onComplete?: () => void;
 }
 
-export const ProductSelectionModal = ({ onClose, provider, source, ...rest }: Props) => {
+export const ProductSelectionModal = ({ onClose, provider, source, onComplete, ...rest }: Props) => {
     const [addresses] = useAddresses();
     const isBYOEAccount = getIsBYOEOnlyAccount(addresses);
     const [writeableCalendars = []] = useWriteableCalendars();
@@ -194,6 +195,7 @@ export const ProductSelectionModal = ({ onClose, provider, source, ...rest }: Pr
                         onClick={() => {
                             handleSubmit(selectedProvider, selectedProducts, source);
                             onClose?.();
+                            onComplete?.();
                         }}
                         color="norm"
                         disabled={loadingConfig}

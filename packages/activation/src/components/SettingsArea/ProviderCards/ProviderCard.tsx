@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { type ReactNode, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import type { Location } from 'history';
@@ -11,6 +11,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import ProviderButton from './ProviderButton';
 
@@ -31,9 +32,13 @@ const getEasySwitchSource = (app: APP_NAMES, location: Location) => {
 
 interface Props {
     app: APP_NAMES;
+    hasBorders?: boolean;
+    header?: ReactNode;
+    showAdvancedImport?: boolean;
+    onComplete?: () => void;
 }
 
-const ProviderCard = ({ app }: Props) => {
+const ProviderCard = ({ app, header, hasBorders = true, showAdvancedImport = true, onComplete }: Props) => {
     const [, loadingCalendars] = useCalendars();
 
     const [selectedProvider, setSelectedProvider] = useState<ImportProvider>(ImportProvider.GOOGLE);
@@ -49,14 +54,20 @@ const ProviderCard = ({ app }: Props) => {
     };
 
     return (
-        <div className="rounded-xl border pt-10 pb-8 flex flex-column flex-1 flex-nowrap w-full items-center bg-lowered border-weak">
-            <div className="mb-4">{c('Info').t`Choose your service to connect with`}</div>
+        <div
+            className={clsx([
+                'flex flex-column flex-1 flex-nowrap w-full items-center',
+                hasBorders && 'rounded-xl border pt-10 pb-8 border-weak bg-lowered',
+            ])}
+        >
+            <div className="mb-4">{header ?? c('Info').t`Choose your service to connect with`}</div>
             <div className="flex flex-nowrap gap-2">
                 <ConnectGmailButton
                     className="mb-2 inline-flex items-center justify-center gap-2 rounded-lg"
                     showIcon
                     buttonText={c('Action').t`Google`}
                     data-testid="ProviderButton:googleCard"
+                    onComplete={onComplete}
                 />
 
                 <ProviderButton
@@ -75,7 +86,7 @@ const ProviderCard = ({ app }: Props) => {
                     disabled={loadingCalendars}
                 />
             </div>
-            <div>
+            {showAdvancedImport && (
                 <Button
                     shape="underline"
                     color="norm"
@@ -85,10 +96,15 @@ const ProviderCard = ({ app }: Props) => {
                 >
                     {c('Import provider').t`Advanced import`}
                 </Button>
-            </div>
+            )}
 
             {renderImportModal && (
-                <ProductSelectionModal source={source} provider={selectedProvider} {...importModalProps} />
+                <ProductSelectionModal
+                    source={source}
+                    provider={selectedProvider}
+                    onComplete={onComplete}
+                    {...importModalProps}
+                />
             )}
         </div>
     );
