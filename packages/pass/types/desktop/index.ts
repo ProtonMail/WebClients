@@ -1,4 +1,5 @@
 import type {
+    ItemRevision,
     Maybe,
     MaybeNull,
     NativeMessagePayload,
@@ -52,6 +53,11 @@ export type ContextBridgeApi = {
 
     onNmRequest: (callback: (request: NativeMessagePayload<NativeMessageRequest>) => void) => void;
     nmResponse: (response: NativeMessagePayload<NativeMessageResponse>) => Promise<void>;
+
+    startSshAgent: () => Promise<string>;
+    stopSshAgent: () => Promise<string>;
+    sendSshKeyItems: (items: ItemRevision<'sshKey'>[]) => Promise<string>;
+    getSshAgentStatus: () => Promise<{ socketPath?: string }>;
 };
 
 export type DesktopTheme = 'dark' | 'light' | 'system';

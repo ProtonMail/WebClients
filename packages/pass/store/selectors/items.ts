@@ -48,6 +48,7 @@ export const selectVisibleLoginItems = selectItemsFactory('login', true);
 
 export const selectAllAliasItems = selectItemsFactory('alias', false);
 export const selectVisibleAliasItems = selectItemsFactory('alias', true);
+export const selectSshKeyItems = selectItemsFactory('sshKey', true);
 
 export const itemsFromSelection =
     (selection: SelectedItem[]) =>

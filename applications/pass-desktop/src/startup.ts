@@ -5,6 +5,7 @@ import contextMenu from './lib/context-menu';
 import { setupIpcHandlers as info } from './lib/install-info';
 import { nativeMessaging } from './lib/native-messaging/startup';
 import { setupIpcHandlers as navigation } from './lib/navigation';
+import { setupIpcHandlers as sshAgent } from './lib/ssh-agent';
 import { setupIpcHandlers as sessionStorage } from './lib/storage/storage.ipc';
 import { system } from './lib/system';
 import { setupIpcHandlers as theming } from './lib/theming';
@@ -28,6 +29,7 @@ export const startup = async (app: Electron.App, ctx: PassElectronContext) => {
     theming();
     autotype(() => ctx.window);
     contextMenu(() => ctx.window);
+    sshAgent();
     update(
         () => ctx.window,
         () => ctx.session
