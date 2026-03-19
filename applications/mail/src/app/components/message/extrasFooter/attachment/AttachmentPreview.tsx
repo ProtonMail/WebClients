@@ -1,7 +1,8 @@
+import FilePreview from '@proton/components/containers/filePreview/FilePreview';
+import NavigationControl from '@proton/components/containers/filePreview/NavigationControl';
 import type { MutableRefObject, Ref } from 'react';
 import { forwardRef, useEffect, useRef, useState } from 'react';
 
-import { FilePreview, NavigationControl } from '@proton/components';
 import Portal from '@proton/components/components/portal/Portal';
 import type { MessageStateWithData, OutsideKey } from '@proton/mail/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';

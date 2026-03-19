@@ -1,8 +1,9 @@
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Vr } from '@proton/atoms/Vr/Vr';
-import { ToolbarButton, useActiveBreakpoint } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { IcBroom } from '@proton/icons/icons/IcBroom';
 import { useLabels } from '@proton/mail/store/labels/hooks';

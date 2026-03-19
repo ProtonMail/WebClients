@@ -1,3 +1,8 @@
+import Checkbox from '@proton/components/components/input/Checkbox';
+import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import TimeInput from '@proton/components/components/input/TimeInput';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useEffect, useState } from 'react';
 
 import {
@@ -19,7 +24,6 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms/Href/Href';
-import { Checkbox, DateInputTwo, InputFieldTwo, TimeInput, useNotifications } from '@proton/components';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { isValidDate } from '@proton/shared/lib/date/date';

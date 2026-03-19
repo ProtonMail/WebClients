@@ -1,6 +1,6 @@
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useCallback, useEffect, useState } from 'react';
 
-import { useEventManager } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';

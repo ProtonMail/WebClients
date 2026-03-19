@@ -1,10 +1,13 @@
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import AppLink from '@proton/components/components/link/AppLink';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Label from '@proton/components/components/label/Label';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components';
-import { AppLink, Checkbox, Label, Prompt } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import type { MailSettings, Recipient } from '@proton/shared/lib/interfaces';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';

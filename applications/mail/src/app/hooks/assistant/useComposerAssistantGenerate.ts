@@ -1,7 +1,7 @@
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useState } from 'react';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { useAuthentication } from '@proton/components';
 import useAssistantSubscriptionStatus from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { isPromptSizeValid, useAssistant } from '@proton/llm/lib';

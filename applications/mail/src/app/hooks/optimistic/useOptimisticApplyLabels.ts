@@ -1,4 +1,4 @@
-import { useHandler } from '@proton/components';
+import { useHandler } from '@proton/components/hooks/useHandler';
 import { isCustomLabel } from '@proton/mail/helpers/location';
 import { conversationCountsActions, selectConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { messageCountsActions, selectMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';

@@ -1,8 +1,9 @@
+import Loader from '@proton/components/components/loader/Loader';
+import useApi from '@proton/components/hooks/useApi';
 import type { ReactNode } from 'react';
 import { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 
-import { Loader, useApi } from '@proton/components';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';

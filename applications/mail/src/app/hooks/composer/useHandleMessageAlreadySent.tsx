@@ -1,6 +1,7 @@
+import { useHandler } from '@proton/components/hooks/useHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { c } from 'ttag';
 
-import { useHandler, useNotifications } from '@proton/components';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';

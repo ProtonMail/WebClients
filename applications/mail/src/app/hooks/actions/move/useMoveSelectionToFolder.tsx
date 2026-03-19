@@ -1,9 +1,12 @@
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { Dispatch, SetStateAction } from 'react';
 import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useApi, useEventManager, useModalTwo, useNotifications } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { isCustomLabel } from '@proton/mail/helpers/location';
 import { useGetFolders, useGetLabels } from '@proton/mail/store/labels/hooks';

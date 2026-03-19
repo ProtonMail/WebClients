@@ -1,11 +1,9 @@
-import {
-    CalendarDrawerAppButton,
-    ContactDrawerAppButton,
-    ReferralAppButton,
-    SecurityCenterDrawerAppButton,
-    VPNDrawerAppButton,
-    useDrawer,
-} from '@proton/components';
+import CalendarDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/CalendarDrawerAppButton';
+import ContactDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/ContactDrawerAppButton';
+import ReferralAppButton from '@proton/components/components/drawer/drawerAppButtons/ReferralAppButton';
+import SecurityCenterDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/SecurityCenterDrawerAppButton';
+import VPNDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/VPNDrawerAppButton';
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useDisplayFeatureTourDrawerButton from '@proton/components/components/featureTour/useDisplayFeatureTourDrawerButton';
 import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
 import { Product } from '@proton/shared/lib/ProductEnum';

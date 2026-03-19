@@ -1,3 +1,13 @@
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Form from '@proton/components/components/form/Form';
+import Loader from '@proton/components/components/loader/Loader';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useApi from '@proton/components/hooks/useApi';
+import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 
@@ -5,18 +15,6 @@ import { c } from 'ttag';
 
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components';
-import {
-    Form,
-    Loader,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useApi,
-    useGetEncryptionPreferences,
-    useNotifications,
-} from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { getContact, updateContact } from '@proton/shared/lib/api/contacts';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';

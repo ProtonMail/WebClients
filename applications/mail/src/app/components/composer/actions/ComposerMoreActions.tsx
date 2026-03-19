@@ -1,10 +1,11 @@
+import type { EditorMetadata } from '@proton/components/components/editor/interface';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import type { MutableRefObject } from 'react';
 import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import type { EditorMetadata } from '@proton/components';
-import { DropdownMenuButton, useActiveBreakpoint } from '@proton/components';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';

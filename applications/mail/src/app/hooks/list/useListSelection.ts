@@ -1,8 +1,8 @@
+import useItemsDraggable from '@proton/components/containers/items/useItemsDraggable';
 import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useItemsDraggable } from '@proton/components';
 
 import { getCanDisplaySelectAllBanner } from 'proton-mail/helpers/selectAll';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';

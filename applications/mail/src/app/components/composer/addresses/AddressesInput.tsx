@@ -1,3 +1,5 @@
+import AddressesAutocomplete from '@proton/components/components/addressesAutocomplete/AddressesAutocomplete';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { MouseEvent, MutableRefObject, RefObject } from 'react';
 import { Fragment, useEffect, useRef, useState } from 'react';
 
@@ -6,7 +8,6 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { AddressesAutocomplete, useNotifications } from '@proton/components';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';

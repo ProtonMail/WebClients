@@ -1,8 +1,11 @@
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components';
-import { Prompt, useApi, useEventManager, useNotifications } from '@proton/components';
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 

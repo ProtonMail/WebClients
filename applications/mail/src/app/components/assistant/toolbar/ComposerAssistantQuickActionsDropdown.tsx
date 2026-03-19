@@ -1,8 +1,12 @@
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Dropdown, DropdownButton, DropdownMenuButton, useActiveBreakpoint, usePopperAnchor } from '@proton/components';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import type { ActionType } from '@proton/llm/lib/types';
 

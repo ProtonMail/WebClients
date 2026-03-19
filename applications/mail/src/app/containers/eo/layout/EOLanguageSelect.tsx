@@ -1,6 +1,10 @@
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
+import useConfig from '@proton/components/hooks/useConfig';
+import useForceRefresh from '@proton/components/hooks/useForceRefresh';
 import { addDays } from 'date-fns';
 
-import { DropdownMenu, DropdownMenuButton, SimpleDropdown, useConfig, useForceRefresh } from '@proton/components';
 import { setCookie } from '@proton/shared/lib/helpers/cookies';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';

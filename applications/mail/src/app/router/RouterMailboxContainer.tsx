@@ -1,15 +1,13 @@
+import DrawerSidebar from '@proton/components/components/drawer/DrawerSidebar';
+import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
+import InboxQuickSettingsAppButton from '@proton/components/components/drawer/drawerAppButtons/InboxQuickSettingsAppButton';
+import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { type RefObject, useEffect, useMemo, useState } from 'react';
 import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 
 import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import {
-    DrawerSidebar,
-    DrawerVisibilityButton,
-    InboxQuickSettingsAppButton,
-    PrivateMainArea,
-    useActiveBreakpoint,
-} from '@proton/components';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';

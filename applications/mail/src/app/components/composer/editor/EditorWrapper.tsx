@@ -3,10 +3,11 @@ import { memo, useCallback, useEffect, useRef, useState } from 'react';
 import type { GetContentMode } from 'roosterjs-editor-types';
 import { ContentPosition } from 'roosterjs-editor-types';
 
-import type { EditorActions, EditorMetadata } from '@proton/components';
-import { Editor, useHandler } from '@proton/components';
+import Editor from '@proton/components/components/editor/Editor';
 import type { EditorProps } from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
+import type { EditorActions, EditorMetadata } from '@proton/components/components/editor/interface';
+import { useHandler } from '@proton/components/hooks/useHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
@@ -28,8 +29,10 @@ import {
 import { getEmbeddedImages } from '../../../helpers/message/messageImages';
 import type { MessageChange } from '../Composer';
 
-export interface ExternalEditorActions
-    extends Pick<EditorActions, 'getSelectionContent' | 'setSelectionContent' | 'getContent'> {
+export interface ExternalEditorActions extends Pick<
+    EditorActions,
+    'getSelectionContent' | 'setSelectionContent' | 'getContent'
+> {
     setContent: (message: MessageState) => void;
     focus: () => void;
     insertEmbedded: (attachment: Attachment, data: string | Uint8Array<ArrayBuffer>) => void;

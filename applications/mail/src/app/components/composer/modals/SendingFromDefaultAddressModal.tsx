@@ -1,8 +1,8 @@
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components';
-import { Prompt } from '@proton/components';
 
 interface Props extends ModalProps {
     email: string;

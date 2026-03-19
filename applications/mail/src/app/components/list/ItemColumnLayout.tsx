@@ -1,9 +1,9 @@
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import type { ReactNode } from 'react';
 import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useActiveBreakpoint } from '@proton/components';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
 import type { UserSettings } from '@proton/shared/lib/interfaces';

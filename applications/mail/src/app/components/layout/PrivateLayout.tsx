@@ -1,8 +1,12 @@
+import DrawerApp from '@proton/components/components/drawer/DrawerApp';
+import FeatureTour from '@proton/components/components/featureTour/FeatureTour';
+import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
+import SmartBanner from '@proton/components/components/smartBanner/SmartBanner';
+import TopBanners from '@proton/components/containers/topBanners/TopBanners';
 import type { ReactNode, Ref } from 'react';
 import { Suspense, forwardRef, lazy, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { DrawerApp, FeatureTour, PrivateAppContainer, SmartBanner, TopBanners } from '@proton/components';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';

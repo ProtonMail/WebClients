@@ -1,4 +1,4 @@
-import type { PrivateAuthenticationStore } from '@proton/components';
+import type { PrivateAuthenticationStore } from '@proton/components/containers/app/interface';
 import { MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD } from '@proton/mail/constants';
 import { getAnchor } from '@proton/mail/helpers/message/messageImages/getAnchor';
 import type {

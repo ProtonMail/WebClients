@@ -1,9 +1,9 @@
+import useCache from '@proton/components/hooks/useCache';
 import { useCallback, useEffect } from 'react';
 
 import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { useCache } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useGetMailSettings, useMailSettings } from '@proton/mail/store/mailSettings/hooks';

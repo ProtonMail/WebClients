@@ -1,3 +1,5 @@
+import Loader from '@proton/components/components/loader/Loader';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import type { ReactNode } from 'react';
 import * as React from 'react';
 
@@ -5,7 +7,6 @@ import type { Location } from 'history';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Loader, useTheme } from '@proton/components';
 import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
