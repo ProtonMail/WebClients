@@ -2,8 +2,10 @@ import { type FC, useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { clientReady } from '@proton/pass/lib/client';
 import { selectPassPlan, selectVisibleNonTrashedSshKeyItems } from '@proton/pass/store/selectors';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 const KEYS_SYNC_DEBOUNCE_TIME = 200;
@@ -70,12 +72,15 @@ const SshAgentSync: FC<SshAgentSyncProps> = ({ appIsReady }) => {
  * executing a SSH command will put Pass window
  * with the unlock screen in the foreground. */
 export const SshAgentProvider: FC = () => {
+    const featureFlagEnabled = useFeatureFlag(PassFeature.PassDesktopSSHAgent);
     const [isAgentEnabled, setIsAgentEnabled] = useState(false);
     const { status } = useAppState();
     const appIsReady = clientReady(status);
     const plan = useSelector(selectPassPlan);
     // When app state is not ready, plan will always return free
     const isFreePlan = appIsReady && plan === UserPassPlan.FREE;
+    // When app state is not ready, featureFlagEnabled will always return false
+    const sshAgentFlagDisabled = appIsReady && !featureFlagEnabled;
 
     useEffect(() => {
         const init = async () => {
@@ -100,14 +105,14 @@ export const SshAgentProvider: FC = () => {
     useEffect(() => {
         /* Handle real time downgrading or multi-accounts: switching from paid to free user */
         const handleDowngrade = async () => {
-            if (isAgentEnabled && isFreePlan) {
+            if (isAgentEnabled && (isFreePlan || sshAgentFlagDisabled)) {
                 await window.ctxBridge?.setSshAgentSettingEnabled(false);
                 await window.ctxBridge?.stopSshAgent();
             }
         };
 
         void handleDowngrade();
-    }, [isAgentEnabled, isFreePlan]);
+    }, [isAgentEnabled, isFreePlan, sshAgentFlagDisabled]);
 
     return isAgentEnabled ? <SshAgentSync appIsReady={appIsReady} /> : null;
 };
