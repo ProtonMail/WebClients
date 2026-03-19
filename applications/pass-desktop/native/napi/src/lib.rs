@@ -139,6 +139,8 @@ pub mod msix_updater {
 }
 
 pub mod ssh_agent_napi {
+    use napi::threadsafe_function::ThreadsafeFunction;
+
     use super::ssh_agent::*;
 
     #[napi(object)]
@@ -147,8 +149,8 @@ pub mod ssh_agent_napi {
     }
 
     #[napi]
-    pub async fn start_agent() -> napi::Result<String> {
-        SshAgentManager::start_agent().map_err(|e| napi::Error::from_reason(e.to_string()))
+    pub fn start_agent(is_unlocked_callback: ThreadsafeFunction<Option<String>>) -> napi::Result<String> {
+        SshAgentManager::start_agent(is_unlocked_callback).map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
     #[napi]
