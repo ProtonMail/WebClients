@@ -10439,7 +10439,7 @@ __metadata:
     comlink: "npm:^4.4.2"
     eslint: "npm:^9.39.4"
     playwright: "npm:^1.58.2"
-    pmcrypto: "npm:@protontech/pmcrypto@^8.8.1"
+    pmcrypto: "npm:@protontech/pmcrypto@^8.9.0"
     prettier: "npm:^3.8.1"
     typescript: "npm:^6.0.2"
     vitest: "npm:^4.1.1"
@@ -11617,7 +11617,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protontech/pmcrypto@npm:^8.9.0":
+"@protontech/pmcrypto@npm:^8.9.0, pmcrypto@npm:@protontech/pmcrypto@^8.9.0":
   version: 8.9.0
   resolution: "@protontech/pmcrypto@npm:8.9.0"
   dependencies:
@@ -38745,13 +38745,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"openpgp@npm:@protontech/openpgp@~6.2.2":
-  version: 6.2.2
-  resolution: "@protontech/openpgp@npm:6.2.2"
-  checksum: 10/7ebcd4316860d5b15a38473a8a4120771856e7416eb259edb523185c0258aa1a717729f62ea43e214bcbecd1df0420cd06c38e2272d660ffe5830f42c9c3660b
-  languageName: node
-  linkType: hard
-
 "openpgp@npm:@protontech/openpgp@~6.3.0":
   version: 6.3.0
   resolution: "@protontech/openpgp@npm:6.3.0"
@@ -40208,18 +40201,6 @@ __metadata:
   version: 0.5.5
   resolution: "plural-forms@npm:0.5.5"
   checksum: 10/73998fa85b619aafc5383d2e7d4ce70e3a6903fc444c1456d474d37db948208f1a8f762918e832637ce61f25554afee1ae74b7c83bd583d85ca3cb4074628302
-  languageName: node
-  linkType: hard
-
-"pmcrypto@npm:@protontech/pmcrypto@^8.8.1":
-  version: 8.8.1
-  resolution: "@protontech/pmcrypto@npm:8.8.1"
-  dependencies:
-    "@noble/hashes": "npm:^1.8.0"
-    "@openpgp/web-stream-tools": "npm:~0.1.3"
-    jsmimeparser: "npm:@protontech/jsmimeparser@^3.0.2"
-    openpgp: "npm:@protontech/openpgp@~6.2.2"
-  checksum: 10/1781e223b8bfb78f6f0a9be48c79d982f80f3d88bc53ecaeaf19b77cda403405a55ad54943edef68104505a27dce6936d10acdd151f88b794f69ef9303f2de6a
   languageName: node
   linkType: hard
 
