@@ -1,16 +1,17 @@
 import type { ESCiphertext } from '@proton/encrypted-search/models';
+import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import type { ESMessageContent } from 'proton-mail/models/encryptedSearch';
 
 import type { CONTENT_VERSION } from '../esBuild';
 
-export type MigrationToolParams = { user: UserModel; keyPassword: string };
+export type MigrationToolParams = { user: UserModel; keyPassword: string; metricsEnabled: boolean };
 
 export type CleanTextFn = (text: string, includeQuote: boolean) => Promise<string>;
 
 export type MigrationToolAPI = {
-    migration: (params: MigrationToolParams, cleanText: CleanTextFn) => Promise<void>;
+    migration: (params: MigrationToolParams, cleanText: CleanTextFn, api: ApiWithListener) => Promise<void>;
 };
 
 export type ESItemCursorResult = { key: string; value: ESCiphertext };

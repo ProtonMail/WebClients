@@ -181,7 +181,12 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             const canLoad = canLoadRunner();
 
             if (shouldLoad && canLoad) {
-                void migrationToolWorker({ user: userData.user, keyPassword: authentication.getPassword() });
+                void migrationToolWorker({
+                    user: userData.user,
+                    keyPassword: authentication.getPassword(),
+                    metricsEnabled: !!userData.userSettings.Telemetry,
+                    api,
+                });
             }
         }
 
