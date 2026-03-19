@@ -155,7 +155,7 @@ pub mod ssh_agent_napi {
 
     #[napi]
     pub async fn stop_agent() -> napi::Result<String> {
-        SshAgentManager::stop_agent().map_err(|e| napi::Error::from_reason(e.to_string()))
+        SshAgentManager::stop_agent().await.map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
     #[napi]
