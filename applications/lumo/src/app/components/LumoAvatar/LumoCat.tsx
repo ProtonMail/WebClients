@@ -30,24 +30,24 @@ const LumoCat = ({ isSmallScreen, isGhostChatMode }: LumoCatProps) => {
     const { isDarkLumoTheme } = useLumoTheme();
     const { specialTheme: isLumoSpecialThemeEnabled } = useLumoFlags();
 
-    const getAnimationData = (() => {
-        // Check if there's an active special theme
-        if (isLumoSpecialThemeEnabled) {
-            const activeTheme = getActiveSpecialTheme();
-            if (activeTheme) {
-                return isDarkLumoTheme ? activeTheme.getAnimationDark : activeTheme.getAnimationLight;
-            }
-        }
+    const activeTheme = isLumoSpecialThemeEnabled ? getActiveSpecialTheme() : null;
+    const isSpringSolsticeLumoTheme = activeTheme?.name === 'spring-solstice';
 
-        // Fall back to default cat animations
-        return isDarkLumoTheme ? getLumoCatDark : getLumoCatLight;
-    })();
+    //eslint-disable-next-line no-nested-ternary
+    const getAnimationData = activeTheme
+        ? isDarkLumoTheme
+            ? activeTheme.getAnimationDark
+            : activeTheme.getAnimationLight
+        : isDarkLumoTheme
+          ? getLumoCatDark
+          : getLumoCatLight;
 
     return (
         <div
             className={clsx('lumo-cat-container shrink-0 mt-auto text-center relative', {
                 'mx-auto': isSmallScreen,
                 'special-theme-variant': isLumoSpecialThemeEnabled,
+                'spring-solstice-variant': isSpringSolsticeLumoTheme,
             })}
             style={{ width: isSmallScreen ? 200 : 170, height: isSmallScreen ? 200 : 170 }}
         >
