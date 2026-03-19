@@ -69,7 +69,7 @@ export type {
     Thumbnail,
     UploadController,
 } from '@protontech/drive-sdk';
-export type { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
+export { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
 export type { ProtonDrivePublicLinkClient } from '@protontech/drive-sdk/dist/protonDrivePublicLinkClient';
 export type SDKMetricRecord = MetricRecord<MetricEvent>;
 
@@ -196,7 +196,7 @@ export function useDrive() {
             photosSingleton = proxyDriveClientWithEventTracking(photosClient, photosLatestEventIdProvider);
             photosEntitiesCacheSingleton = photosEntitiesCache;
         },
-        [setAppVersionHeaders, debug, httpClient, account, openPGPCryptoModule]
+        [setAppVersionHeaders, debug, httpClient, account, openPGPCryptoModule, srpModule]
     );
 
     return {
