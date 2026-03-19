@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 
 import { useTierErrors } from '../../../../../hooks/useTierErrors';
 import useTipTapEditor from '../../../../../hooks/useTipTapEditor';
+import { htmlToMarkdown } from '../../../../../util/htmlToMarkdown';
 
 interface MessageEditorProps {
     messageContent: string;
@@ -32,7 +33,10 @@ const MessageEditor = ({ messageContent, handleEditMessage, handleCancel }: Mess
     }, [handleCancel]);
 
     const sendEditSubmit = (editor: any) => {
-        const currentMarkdownContent = editor?.storage.markdown.getMarkdown();
+        // Get HTML content and convert to markdown
+        const html = editor?.getHTML();
+        const currentMarkdownContent = html ? htmlToMarkdown(html) : '';
+
         if (currentMarkdownContent !== messageContent) {
             if (!editor?.isEmpty) {
                 editor?.commands.clearContent();
@@ -44,7 +48,6 @@ const MessageEditor = ({ messageContent, handleEditMessage, handleCancel }: Mess
     const { editor, handleSubmit, editorContentMarkdown } = useTipTapEditor({
         content: messageContent,
         onSubmitCallback: sendEditSubmit,
-        hasTierErrors,
     });
 
     return (
