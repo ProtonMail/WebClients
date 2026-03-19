@@ -9,7 +9,6 @@ import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
-import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import { useContextMenuStore } from '../../../modules/contextMenu';
 import { useSelectionStore } from '../../../modules/selection';
 import type { SortConfig, SortField } from '../../../modules/sorting';
@@ -55,29 +54,23 @@ export function Trash({ onPreview, handleShowDetails, handleShowFilesDetails, on
         .map((id) => useTrashStore.getState().getItem(id))
         .filter((item) => item !== undefined);
 
-    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
-
     useEffect(() => {
         useSelectionStore.getState().setAllItemIds(sortedItemUids);
     }, [sortedItemUids]);
 
-    const handleRenderItem = useCallback(
-        (uid: string) => {
-            incrementItemRenderedCounter();
-            const item = useTrashStore.getState().getItem(uid);
-            if (!item) {
-                return;
-            }
+    const handleRenderItem = useCallback((uid: string) => {
+        const item = useTrashStore.getState().getItem(uid);
+        if (!item) {
+            return;
+        }
 
-            if (item.activeRevisionUid) {
-                loadThumbnail(getDrivePerNodeType(item.type), {
-                    nodeUid: item.uid,
-                    revisionUid: item.activeRevisionUid,
-                });
-            }
-        },
-        [incrementItemRenderedCounter]
-    );
+        if (item.activeRevisionUid) {
+            loadThumbnail(getDrivePerNodeType(item.type), {
+                nodeUid: item.uid,
+                revisionUid: item.activeRevisionUid,
+            });
+        }
+    }, []);
 
     const handleDriveExplorerSorting = useCallback(
         ({

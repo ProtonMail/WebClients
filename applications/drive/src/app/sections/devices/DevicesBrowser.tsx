@@ -7,7 +7,6 @@ import { splitNodeUid } from '@proton/drive/index';
 
 import EmptyDevices from '../../components/sections/Devices/EmptyDevices';
 import useDriveNavigation from '../../hooks/drive/useNavigate';
-import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { useContextMenuStore } from '../../modules/contextMenu';
 import { useSelectionStore } from '../../modules/selection';
 import { DriveExplorer } from '../../statelessComponents/DriveExplorer/DriveExplorer';
@@ -34,20 +33,13 @@ export function DevicesBrowser({ onRename, onRemove }: Props) {
         }))
     );
     const { layout } = useUserSettings();
-
     const selectedItemIds = useSelectionStore(useShallow((state) => state.selectedItemIds));
     const selectedItemsUid = Array.from(selectedItemIds);
-
     const { navigateToLink } = useDriveNavigation();
-    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
 
     useEffect(() => {
         useSelectionStore.getState().setAllItemIds(sortedItemUids);
     }, [sortedItemUids]);
-
-    const handleRenderItem = useCallback(() => {
-        incrementItemRenderedCounter();
-    }, [incrementItemRenderedCounter]);
 
     const handleClick = useCallback(
         (uid: string) => {
@@ -97,9 +89,7 @@ export function DevicesBrowser({ onRename, onRemove }: Props) {
         onItemContextMenu: (_uid, event) => {
             contextMenu.handleContextMenu(event);
         },
-        onItemRender: () => {
-            handleRenderItem();
-        },
+        onItemRender: () => {},
     };
 
     return (

@@ -1,6 +1,7 @@
 import type { User } from '@proton/shared/lib/interfaces';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
+import { DrivePerformanceMetrics } from './drivePerformanceMetrics';
 import { GlobalErrorsMetrics } from './globalErrorsMetrics';
 import { MetricUserPlan } from './types';
 
@@ -9,9 +10,11 @@ export class Metrics {
     private isPublicContext = false;
 
     globalErrors: GlobalErrorsMetrics;
+    drivePerformance: DrivePerformanceMetrics;
 
     constructor() {
         this.globalErrors = new GlobalErrorsMetrics(this);
+        this.drivePerformance = new DrivePerformanceMetrics();
     }
 
     /**
