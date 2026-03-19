@@ -62,6 +62,7 @@ export type ContextBridgeApi = {
     getSshAgentSettingEnabled: () => Promise<boolean>;
     setSshAgentSettingEnabled: (enabled: boolean) => Promise<void>;
     setSshAgentAppReady: (isReady: boolean) => Promise<void>;
+    onSshAgentSettingChanged: (callback: (enabled: boolean) => void) => () => void;
 };
 
 export type DesktopTheme = 'dark' | 'light' | 'system';
