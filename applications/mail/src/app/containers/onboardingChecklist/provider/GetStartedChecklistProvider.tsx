@@ -30,7 +30,7 @@ export const getMailChecklistItemsToComplete = (checklistType?: ChecklistType) =
         case ChecklistType.MailBYOEUser:
             return [ChecklistKey.ProtectInbox, ChecklistKey.MobileApp, ChecklistKey.ClaimAddress];
         default:
-            return [ChecklistKey.AccountLogin, ChecklistKey.Import, ChecklistKey.ProtectInbox, ChecklistKey.MobileApp];
+            return [ChecklistKey.Import, ChecklistKey.ProtectInbox, ChecklistKey.MobileApp];
     }
 };
 
@@ -48,7 +48,7 @@ export interface OnboardingChecklistContext {
     displayState: ChecklistApiResponse['Display'];
     userWasRewarded: GetStartedChecklistApiResponse['UserWasRewarded'];
     changeChecklistDisplay: (display: CHECKLIST_DISPLAY_TYPE) => void;
-    markItemsAsDone: (item: ChecklistKeyType) => void;
+    markItemsAsDone: (item: ChecklistKeyType) => Promise<void>;
     canDisplayChecklist: boolean;
     itemsToComplete: ChecklistKeyType[];
 }
@@ -111,6 +111,24 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
             await call();
         }
     };
+
+    /*
+     * To go faster with BYOE updates, we decided to update the old checklist frontend side only.
+     * AccountLogin step is no longer visible in the checklist, so to allow the checklist to be completed,
+     * we need to always check this item.
+     *
+     * If we update the checklist in the future, this code needs to be removed.
+     */
+    useEffect(() => {
+        if (
+            checklistType &&
+            checklistType !== ChecklistType.MailBYOEUser &&
+            !items?.includes(ChecklistKey.AccountLogin)
+        ) {
+            void markItemsAsDone('AccountLogin');
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [items, checklistType]);
 
     const changeChecklistDisplay = (newState: CHECKLIST_DISPLAY_TYPE) => {
         setDisplayState(newState);

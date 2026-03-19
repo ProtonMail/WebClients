@@ -108,7 +108,7 @@ const OnboardingWelcomeStep = ({ onNext }: OnboardingStepRenderCallback) => {
     const privacyFeature = getPrivacyFeatures(user);
 
     const handleNext = () => {
-        markItemsAsDone('ProtectInbox');
+        void markItemsAsDone('ProtectInbox');
         onNext();
     };
 

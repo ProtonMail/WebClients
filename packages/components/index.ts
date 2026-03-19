@@ -26,12 +26,7 @@ export { default as FloatingButton } from './components/button/FloatingButton';
 export { default as SidebarExpandButton } from './components/button/SidebarExpandButton';
 export { default as TwitterButton } from './components/button/TwitterButton';
 export { default as CalendarEventDateHeader } from './components/calendarEventDateHeader/CalendarEventDateHeader';
-export {
-    CheckListAccountLogin,
-    CheckListGmailForward,
-    CheckListMobileStores,
-    CheckListProtectInbox,
-} from './components/checklist/CheckList';
+export { CheckListReviewImports, CheckListMobileStores, CheckListProtectInbox } from './components/checklist/CheckList';
 export { default as ChecklistItem } from './components/checklist/CheckListItem';
 export { default as Collapsible } from './components/collapsible/Collapsible';
 export { default as CollapsibleContent } from './components/collapsible/CollapsibleContent';
