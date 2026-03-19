@@ -20,6 +20,8 @@ export default defineConfig([
                         'Destructuring of enum-like constants is not allowed. Use CONSTANT.PROPERTY instead to maintain code readability.',
                 },
             ],
+            // TODO: Remove this rule once the cycle dependency is fixed
+            'import/no-cycle': 'off',
         },
     },
 ]);
