@@ -4781,9 +4781,6 @@
       "Available with ${ title }": [
         "随 ${ title } 可用"
       ],
-      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
-        "请选择要导入到 ${ MAIL_APP_NAME } 的服务，我们将指导您连接账户或导入您的邮件、日历或联系人。"
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "首先进行配置，以激活您的组织并自定义您的邮箱地址。"
       ],
@@ -4807,6 +4804,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "轻松地将文件从桌面同步到云端，并从移动设备访问它们。"
+      ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "轻松转移来自您之前提供商的邮件、日历日程和联系人，您可选择一次性导入或自动同步。"
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "开启 ${ PROTON_SENTINEL_NAME } 即可使用这些功能"
@@ -9616,6 +9616,9 @@
       "Create a secure cloud for ${ value } member": [
         "为 ${ value } 成员创建一个安全云端"
       ],
+      "Create an account": [
+        "创建账户"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "使用您自己的域名创建并管理邮箱子账户。"
       ],
@@ -11100,6 +11103,9 @@
       ],
       "Show original message": [
         "显示原始邮件"
+      ],
+      "Sign in": [
+        "登录"
       ],
       "Sign in only": [
         "仅用于登录"

@@ -462,6 +462,9 @@
       "Delete filter “${ Name }”": [
         "Eliminar el filtro «${ Name }»"
       ],
+      "Delete forward": [
+        "Eliminar reenvío"
+      ],
       "Delete Gateway": [
         "Eliminar puerta de enlace"
       ],
@@ -852,6 +855,9 @@
       "Go to settings": [
         "Ir a los ajustes"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -1184,6 +1190,9 @@
       ],
       "Remove domain": [
         "Eliminar el dominio"
+      ],
+      "Remove forward": [
+        "Borrar el reenvío"
       ],
       "Remove from favorites": [
         "Eliminar de favoritos"
@@ -4826,6 +4835,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronice fácilmente los archivos a la nube desde su escritorio y acceda a ellos desde su dispositivo móvil."
       ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "Transfiera fácilmente correos, eventos de calendario y contactos desde su proveedor anterior. Elija entre una sola importación o una sincronización automática continua."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Active ${ PROTON_SENTINEL_NAME } para acceder a estas funciones"
       ],
@@ -6897,6 +6909,9 @@
       "Tab closed": [
         "Pestaña cerrada"
       ],
+      "The address is already activated": [
+        "La dirección ya está activada"
+      ],
       "The address might be misspelled": [
         "La dirección podría estar mal escrita"
       ],
@@ -8835,6 +8850,14 @@
         "¿En verdad desea importar una clave privada? Importar una clave privada generada de manera insegura o filtrada puede dañar la seguridad de sus correos.\n\nTenga en cuenta también que la clave pública correspondiente a esta clave privada estará disponible públicamente en nuestro servidor de claves. Si la clave contiene datos personales (como su nombre completo) que no desea publicar, edite la clave antes de importarla."
       ]
     },
+    "Import provider": {
+      "Advanced import": [
+        "Importación avanzada"
+      ],
+      "Import from ${ providerName }": [
+        "Importar desde ${ providerName }"
+      ]
+    },
     "Import status": {
       "Active": [
         "Activa"
@@ -8842,14 +8865,32 @@
       "Canceled": [
         "Cancelada"
       ],
+      "Canceling...": [
+        "Cancelando..."
+      ],
       "Delayed": [
         "Retrasada"
+      ],
+      "Disabled": [
+        "Desactivado"
       ],
       "Failed": [
         "Error"
       ],
+      "Imported": [
+        "Importado"
+      ],
+      "In progress...": [
+        "En progreso..."
+      ],
       "Paused": [
         "Pausada"
+      ],
+      "Undo finished": [
+        "Acción revertida"
+      ],
+      "Undo in progress": [
+        "Revirtiendo..."
       ]
     },
     "Import type": {
@@ -9386,6 +9427,12 @@
       "An error occurred while communicating with the extension": [
         "Ocurrió un error al comunicarse con la extensión"
       ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "Se ha pausado una importación porque se perdió la conexión con su proveedor de correo electrónico."
+      ],
+      "An import is paused because your storage is almost full.": [
+        "Se ha pausado una importación porque su almacenamiento está casi lleno."
+      ],
       "and": [
         "y"
       ],
@@ -9596,6 +9643,9 @@
       "Choose an Entity ID to continue.": [
         "Seleccione una ID de entidad para continuar."
       ],
+      "Choose your service to connect with": [
+        "Elija su servicio para conectar"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haga clic en \"Solicitar código nuevo\" para que se envíe un código de verificación nuevo a ${ strong }. Si este número telefónico es incorrecto, haga clic en \"Editar\" para corregirlo."
       ],
@@ -9613,6 +9663,9 @@
       ],
       "Coming soon": [
         "Próximamente"
+      ],
+      "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
+        "Complete el inicio de sesión en este dispositivo para comenzar a usar ${ VPN_APP_NAME } en su TV."
       ],
       "Compromised": [
         "Comprometida"
@@ -9678,6 +9731,9 @@
       "Create a secure cloud for ${ value } member": [
         "Crear una nube segura para ${ value } miembro",
         "Crear una nube segura para ${ value } miembros"
+      ],
+      "Create an account": [
+        "Cree una cuenta"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Cree y administre subcuentas y asígneles direcciones de correo en el dominio personalizado."
@@ -10099,11 +10155,17 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Para los usuarios que cambian a ${ MAIL_APP_NAME } desde otro servicio de correo electrónico, seleccione la pestaña ${ boldAddresses } y agregue todas las direcciones de correo activas antes de cambiar el registro MX para garantizar una transición sin problemas."
       ],
+      "Forwarding automatically sends new incoming emails to your Inbox.": [
+        "El reenvío envía automáticamente los nuevos correos entrantes a su bandeja de entrada."
+      ],
       "Free forever": [
         "Gratis para siempre"
       ],
       "Free trial": [
         "Prueba gratuita"
+      ],
+      "Free up space or upgrade your storage to continue.": [
+        "Libere espacio o amplíe su almacenamiento para continuar."
       ],
       "Friends and family": [
         "Familiares y amigos"
@@ -10289,11 +10351,18 @@
       "Import from": [
         "Importar desde"
       ],
+      "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
+        "La importación de ${ accounts } se ha retrasado temporalmente debido a un límite de ancho de banda.",
+        "Las importaciones de ${ accounts } se han retrasado temporalmente debido a un límite de ancho de banda."
+      ],
       "Import in progress": [
         "Importación en curso"
       ],
       "Import mailbox": [
         "Importar buzón"
+      ],
+      "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
+        "Las importaciones muestran transferencias únicas de correos, calendarios o contactos a su cuenta de ${ BRAND_NAME }."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "IMPORTANTE: Si su panel de DNS no permite que los valores CNAME terminen con un punto, puede eliminar el último punto de los valores CNAME."
@@ -10882,6 +10951,9 @@
       "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
         "Abra la configuración de la extensión de su navegador y permita que la extensión de ${ PASS_APP_NAME } acceda a los datos del sitio web. Luego, recargue esta página."
       ],
+      "Please reconnect to continue.": [
+        "Vuelva a conectarse para continuar."
+      ],
       "Please select the folders you would like to import:": [
         "Seleccione las carpetas que quiere importar:"
       ],
@@ -11159,6 +11231,9 @@
       "Show original message": [
         "Mostrar mensaje original"
       ],
+      "Sign in": [
+        "Inicie sesión"
+      ],
       "Sign in only": [
         "Solo iniciar sesión"
       ],
@@ -11313,6 +11388,9 @@
       ],
       "Thanks for the feedback!": [
         "¡Gracias por sus comentarios!"
+      ],
+      "The ${ bandwidthLimitLink } was reached. We'll automatically resume it once it resets.": [
+        "Se alcanzó el ${ bandwidthLimitLink }. La reanudaremos automáticamente cuando se restablezca."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "El mensaje de ${ boldDataLocked } ya no se mostrará, pero aún puede desbloquear los datos en ${ encryptionAndKeysLink }."
@@ -15249,6 +15327,9 @@
       "${ BRAND_NAME } Account": [
         "Cuenta de ${ BRAND_NAME }"
       ],
+      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
+        "Un paso sencillo hoy para asegurar la seguridad digital de su hijo mañana. Reserve una dirección de correo privada de ${ BRAND_NAME } para su hijo."
+      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "Active la dirección de correo privada de ${ BRAND_NAME } reservada para su hijo y configure la cuenta."
       ],
@@ -15284,6 +15365,9 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "Recuperar la cuenta de ${ BRAND_NAME } de su hijo | ${ BRAND_NAME }"
+      ],
+      "Reserve your child's private email | ${ BRAND_NAME }": [
+        "Reserve el correo electrónico privado de su hijo | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Restablezca la contraseña de su cuenta de ${ BRAND_NAME }"
@@ -18795,7 +18879,7 @@
         "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "¡Extienda su suscripción y guarde ${ discountPercent }%!"
+        "¡Extienda su suscripción y ahorre ${ discountPercent }%!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Acceso completo a ${ VPN_APP_NAME }"
@@ -18819,7 +18903,7 @@
         "Mayor protección contra ciberamenazas"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "¡Cambie a nuestro plan anual y guarde ${ toYearlyDiscountAmount }!"
+        "¡Cambie a nuestro plan anual y ahorre ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Chats diarios ilimitados"
@@ -22802,6 +22886,9 @@
       "Check your default mail application": [
         "Compruebe su aplicación de correo por defecto"
       ],
+      "Choose a provider": [
+        "Elegir un proveedor"
+      ],
       "Choose an account": [
         "Seleccionar una cuenta"
       ],
@@ -22928,6 +23015,9 @@
       ],
       "Currency": [
         "Moneda"
+      ],
+      "Custom": [
+        "Personalizado"
       ],
       "Custom domains:": [
         "Dominios personalizados:"
@@ -23264,6 +23354,9 @@
       "Forward emails": [
         "Reenvío de correos electrónicos"
       ],
+      "Forwardings": [
+        "Reenvíos"
+      ],
       "Free": [
         "Gratis"
       ],
@@ -23399,6 +23492,12 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importar con ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importe sus datos a ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Importaciones"
       ],
       "Inactive 2FA": [
         "2FA inactiva"
@@ -23775,6 +23874,9 @@
       "Select contact group": [
         "Seleccionar grupo de contactos"
       ],
+      "Select data to import": [
+        "Seleccionar datos para importar"
+      ],
       "Select the time to send this notification": [
         "Seleccione la hora de envío de esta notificación"
       ],
@@ -23849,6 +23951,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
+      ],
+      "Sign in on TV": [
+        "Iniciar sesión en TV"
       ],
       "Sign in to join the Beta program": [
         "Iniciar sesión para unirse al programa Beta"
@@ -25318,6 +25423,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Perderá cualquier personalización que haya hecho hasta ahora."
+      ],
+      "You will not see this import record in the list anymore.": [
+        "Ya no verá este registro de importación en la lista."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "La prueba gratuita termina en ${ textDate }. ${ action }"

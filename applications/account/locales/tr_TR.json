@@ -4811,9 +4811,6 @@
       "Available with ${ title }": [
         "${ title } ile kullanılabilir"
       ],
-      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
-        "${ MAIL_APP_NAME }'e dahil etmek istediğiniz servisi seçin; bir adres bağlamanız veya e-postalarınızı, takvimlerinizi ya da kişilerinizi içe aktarmanız için size yol göstereceğiz."
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Kuruluşunuzu açmak ve e-posta adresinizi özelleştirmek için önce bunu yapılandırın."
       ],
@@ -4837,6 +4834,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Bilgisayarınızdaki dosyaları bulutla kolayca eşitleyin ve mobil aygıtınızdan erişin."
+      ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "Eski sağlayıcınızdaki e-postaları, takvim etkinliklerini ve kişileri kolayca aktarın. Tek seferlik içe aktarma veya sürekli otomatik senkronizasyon arasında seçim yapın."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Bu özelliklere erişmek için ${ PROTON_SENTINEL_NAME } özelliğini açın"
@@ -6908,6 +6908,9 @@
       ],
       "Tab closed": [
         "Sekme kapatıldı"
+      ],
+      "The address is already activated": [
+        "Adres zaten etkinleştirilmiş"
       ],
       "The address might be misspelled": [
         "Adres yanlış yazılmış olabilir"
@@ -9658,6 +9661,9 @@
       "Coming soon": [
         "Çok yakında"
       ],
+      "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
+        "${ VPN_APP_NAME } uygulamasını TV'nizde kullanmaya başlamak için bu aygıtta oturum açma işlemini tamamlayın."
+      ],
       "Compromised": [
         "Ele geçirilmiş"
       ],
@@ -9722,6 +9728,9 @@
       "Create a secure cloud for ${ value } member": [
         "${ value } üye için güvenli bir bulut oluşturun",
         "${ value } üye için güvenli bir bulut oluşturun"
+      ],
+      "Create an account": [
+        "Hesap açın"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Alt hesaplar ekleyin ve yönetin. Özel etki alanınızda e-posta adresleri atayın."
@@ -11218,6 +11227,9 @@
       ],
       "Show original message": [
         "Özgün iletiyi görüntüle"
+      ],
+      "Sign in": [
+        "Oturum aç"
       ],
       "Sign in only": [
         "Yalnızca oturum açma"
@@ -15312,6 +15324,9 @@
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } hesabı"
       ],
+      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
+        "Çocuğunuzun yarınki dijital güvenliğini sağlamak için bugün atılacak basit bir adım. Çocuğunuz için özel bir ${ BRAND_NAME } e-posta adresi ayırtın."
+      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "Çocuğunuz için ayırtılmış gizliliği koruyan ${ BRAND_NAME } e-posta adresini etkinleştirin ve hesabını kurun."
       ],
@@ -15347,6 +15362,9 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "Çocuğunuzun ${ BRAND_NAME } hesabına erişin | ${ BRAND_NAME }"
+      ],
+      "Reserve your child's private email | ${ BRAND_NAME }": [
+        "Çocuğunuz için özel e-posta adresi rezerve edin | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "${ BRAND_NAME } hesabınızın parolasını sıfırlayın"
@@ -18858,7 +18876,7 @@
         "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Aboneliğinizi uzatın ve yüzde ${ discountPercent } kaydedin!"
+        "Aboneliğinizi uzatın ve %${ discountPercent } tasarruf edin!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } uygulamasına tam erişim"
@@ -18882,7 +18900,7 @@
         "Siber tehditlere karşı daha güçlü koruma"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Yıllık tarifemize geçin ve ${ toYearlyDiscountAmount } kaydedin!"
+        "Yıllık tarifemize geçin ve ${ toYearlyDiscountAmount } tasarruf edin!"
       ],
       "Unlimited daily chats": [
         "Sınırsız günlük sohbet"
@@ -23930,6 +23948,9 @@
       ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
+      ],
+      "Sign in on TV": [
+        "TV'de oturum aç"
       ],
       "Sign in to join the Beta program": [
         "Beta programına katılmak için oturum açın"
