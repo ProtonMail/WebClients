@@ -12,8 +12,9 @@ import { useMailPTTMetric } from 'proton-mail/metrics/useMailPTTMetric';
 
 import { useAppShellSideEffects } from './useAppShellSideEffects';
 
-jest.mock('@proton/components', () => ({
-    useOpenDrawerOnLoad: jest.fn(),
+jest.mock('@proton/components/hooks/drawer/useOpenDrawerOnLoad', () => ({
+    __esModule: true,
+    default: jest.fn(),
 }));
 jest.mock('proton-mail/hooks/contact/useContactsListener', () => ({
     useContactsListener: jest.fn(),
