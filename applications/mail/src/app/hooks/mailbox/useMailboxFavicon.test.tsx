@@ -12,8 +12,9 @@ import { DEFAULT_MAIL_SETTINGS, UNREAD_FAVICON, VIEW_MODE } from '@proton/shared
 
 import { useMailboxFavicon } from './useMailboxFavicon';
 
-jest.mock('@proton/components', () => ({
-    useDynamicFavicon: jest.fn(),
+jest.mock('@proton/components/hooks/useDynamicFavicon', () => ({
+    __esModule: true,
+    default: jest.fn(),
 }));
 
 jest.mock('@proton/mail/store/mailSettings/hooks');
