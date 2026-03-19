@@ -23,6 +23,7 @@ declare module 'proton-pass-desktop/lib/ipc' {
         'sshAgent:getSettingEnabled': IPCChannel<[], boolean>;
         'sshAgent:setSettingEnabled': IPCChannel<[enabled: boolean], void>;
         'sshAgent:setAppReady': IPCChannel<[isReady: boolean], void>;
+        'sshAgent:settingChanged': IPCChannel<[], boolean>;
     }
 }
 
@@ -91,7 +92,11 @@ export const setupIpcHandlers = () => {
     setupIpcHandler('sshAgent:removeAllSshKeys', async () => ssh_agent_napi.removeAllKeys());
     setupIpcHandler('sshAgent:getStatus', async () => ssh_agent_napi.getStatus());
     setupIpcHandler('sshAgent:getSettingEnabled', async () => store.get('sshAgentSettingEnabled') ?? false);
-    setupIpcHandler('sshAgent:setSettingEnabled', async (_, enabled) => store.set('sshAgentSettingEnabled', enabled));
+    setupIpcHandler('sshAgent:setSettingEnabled', async (event, enabled) => {
+        store.set('sshAgentSettingEnabled', enabled);
+        const window = BrowserWindow.fromWebContents(event.sender);
+        window?.webContents.send('sshAgent:settingChanged', enabled);
+    });
     setupIpcHandler('sshAgent:setAppReady', async (_, isReady) => {
         appIsReady = isReady;
     });

@@ -82,6 +82,11 @@ const contextBridgeApi: ContextBridgeApi = {
     getSshAgentSettingEnabled: () => invoke('sshAgent:getSettingEnabled'),
     setSshAgentSettingEnabled: (enabled) => invoke('sshAgent:setSettingEnabled', enabled),
     setSshAgentAppReady: (isReady: boolean) => invoke('sshAgent:setAppReady', isReady),
+    onSshAgentSettingChanged: (callback: (enabled: boolean) => void) => {
+        const listener = (_: IpcRendererEvent, enabled: boolean) => callback(enabled);
+        ipcRenderer.on('sshAgent:settingChanged', listener);
+        return () => ipcRenderer.removeListener('sshAgent:settingChanged', listener);
+    },
 };
 
 contextBridge.exposeInMainWorld('ctxBridge', contextBridgeApi);
