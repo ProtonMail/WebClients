@@ -446,7 +446,7 @@ export const PLAN_NAMES: Record<PLANS, string> = {
     [PLANS.BUNDLE]: 'Proton Unlimited',
     [PLANS.BUNDLE_PRO]: 'Proton Business Suite',
     [PLANS.BUNDLE_PRO_2024]: 'Proton Business Suite',
-    [PLANS.BUNDLE_BIZ_2025]: 'Proton Business Premium',
+    [PLANS.BUNDLE_BIZ_2025]: 'Workspace Premium',
     [PLANS.FAMILY]: 'Proton Family',
     [PLANS.DUO]: 'Proton Duo',
     [PLANS.VISIONARY]: 'Visionary',
