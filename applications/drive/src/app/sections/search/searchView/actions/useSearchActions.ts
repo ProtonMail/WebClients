@@ -1,3 +1,4 @@
+import { getDrivePerNodeType } from '@proton/drive/index';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useDriveNavigation from '../../../../hooks/drive/useNavigate';
@@ -82,9 +83,10 @@ export const useSearchActions = () => {
         const items = uids
             .map(getSearchResultItem)
             .filter(isTruthy)
-            .map((item) => ({ uid: item.nodeUid, parentUid: item.parentUid }));
+            .map((item) => ({ uid: item.nodeUid, parentUid: item.parentUid, type: item.type }));
 
-        await trashItems(items);
+        const itemsByDrive = Map.groupBy(items, (item) => getDrivePerNodeType(item.type));
+        await Promise.all([...itemsByDrive.entries()].map(([drive, items]) => trashItems(drive, items)));
     };
 
     const handleGoToParent = async (parentNodeUid: string) => {
