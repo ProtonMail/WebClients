@@ -4,7 +4,15 @@ import { when } from 'jest-when';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/components';
-import { MemberRole, generateNodeUid, splitInvitationUid, splitNodeUid } from '@proton/drive/index';
+import {
+    MemberRole,
+    type NodeEntity,
+    NodeType,
+    type Result,
+    generateNodeUid,
+    splitInvitationUid,
+    splitNodeUid,
+} from '@proton/drive';
 import { getBusDriver } from '@proton/drive/internal/BusDriver';
 import useLoading from '@proton/hooks/useLoading';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -74,14 +82,13 @@ const mockShareResult = {
     ],
 };
 
-const mockNodeInfo = {
+const mockNodeInfo: Result<Partial<NodeEntity>, any> = {
     ok: true,
     value: {
         name: 'Test File',
-        type: 1,
-        keyAuthor: {
-            ok: true,
-            value: 'owner@proton.me',
+        type: NodeType.File,
+        ownedBy: {
+            email: 'owner@proton.me',
         },
     },
 };
@@ -543,66 +550,6 @@ describe('useSharingModalState', () => {
         expect(mockBusEmit).toHaveBeenCalled();
     });
 
-    it('should determine owner display name correctly when user is admin', async () => {
-        const userAsOwner = {
-            Email: 'owner@proton.me',
-            DisplayName: 'Owner Display Name',
-        } as unknown as UserModel;
-
-        const nodeInfoWithAdminRole = {
-            ok: true,
-            value: {
-                name: 'Test File',
-                type: 1,
-                keyAuthor: {
-                    ok: true,
-                    value: 'owner@proton.me',
-                },
-                directRole: MemberRole.Admin,
-            },
-        };
-
-        mockedUseUser.mockReturnValue([userAsOwner, false]);
-        when(mockDrive.getNode).calledWith(mockNodeUid).mockResolvedValue(nodeInfoWithAdminRole);
-
-        const { result } = renderHook(() => useSharingModalState(mockProps));
-
-        await waitFor(() => {
-            expect(result.current.ownerDisplayName).toBe('Owner Display Name');
-            expect(result.current.ownerEmail).toBe('owner@proton.me');
-        });
-    });
-
-    it('should not set owner display name when user is not admin', async () => {
-        const userAsNonAdmin = {
-            Email: 'viewer@proton.me',
-            DisplayName: 'Viewer Display Name',
-        } as unknown as UserModel;
-
-        const nodeInfoWithViewerRole = {
-            ok: true,
-            value: {
-                name: 'Test File',
-                type: 1,
-                keyAuthor: {
-                    ok: true,
-                    value: 'owner@proton.me',
-                },
-                directRole: MemberRole.Viewer,
-            },
-        };
-
-        mockedUseUser.mockReturnValue([userAsNonAdmin, false]);
-        when(mockDrive.getNode).calledWith(mockNodeUid).mockResolvedValue(nodeInfoWithViewerRole);
-
-        const { result } = renderHook(() => useSharingModalState(mockProps));
-
-        await waitFor(() => {
-            expect(result.current.ownerDisplayName).toBeUndefined();
-            expect(result.current.ownerEmail).toBe('owner@proton.me');
-        });
-    });
-
     it('should handle case when node info is not ok', async () => {
         const failedNodeInfo = {
             ok: false,
@@ -629,9 +576,8 @@ describe('useSharingModalState', () => {
             value: {
                 name: 'Test File',
                 type: 1,
-                keyAuthor: {
-                    ok: true,
-                    value: 'owner@proton.me',
+                ownedBy: {
+                    email: 'owner@proton.me',
                 },
             },
         };
@@ -656,9 +602,8 @@ describe('useSharingModalState', () => {
             value: {
                 name: 'Test File',
                 type: 1,
-                keyAuthor: {
-                    ok: true,
-                    value: 'unknown@proton.me',
+                ownedBy: {
+                    email: 'owner@proton.me',
                 },
             },
         };
@@ -671,7 +616,7 @@ describe('useSharingModalState', () => {
 
         await waitFor(() => {
             expect(result.current.ownerDisplayName).toBeUndefined();
-            expect(result.current.ownerEmail).toBe('unknown@proton.me');
+            expect(result.current.ownerEmail).toBe('owner@proton.me');
         });
     });
 
@@ -681,9 +626,8 @@ describe('useSharingModalState', () => {
             value: {
                 name: 'Test File',
                 type: 1,
-                keyAuthor: {
-                    ok: true,
-                    value: 'unknown@proton.me',
+                ownedBy: {
+                    email: 'owner@proton.me',
                 },
             },
         };
@@ -696,7 +640,7 @@ describe('useSharingModalState', () => {
 
         await waitFor(() => {
             expect(result.current.ownerDisplayName).toBeUndefined();
-            expect(result.current.ownerEmail).toBe('unknown@proton.me');
+            expect(result.current.ownerEmail).toBe('owner@proton.me');
         });
     });
 
