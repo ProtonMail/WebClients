@@ -33,7 +33,6 @@ import type { DriveStore } from './redux-store/store';
 import { extendStore, setupStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';
 import { PublicPage } from './sections/publicPage/PublicPage';
-import { logPerformanceMarker } from './utils/performance';
 import { Features, measureFeaturePerformance } from './utils/telemetry';
 import { loadStreamsPolyfill } from './utils/webStreamsPolyfill';
 import { unleashVanillaStore } from './zustand/unleash/unleash.store';
@@ -83,7 +82,7 @@ const UrlsApp = () => {
                 // we have to pass the new api now it's extended by the bootstrap
                 feature.end(undefined, extraThunkArguments.api);
                 setState({ store });
-                logPerformanceMarker('drive_performance_clicktobootstrapped_histogram');
+                driveMetrics.drivePerformance.markPageLoad({ isPublic: true });
             } catch (error: any) {
                 setState({
                     error: getNonEmptyErrorMessage(error),

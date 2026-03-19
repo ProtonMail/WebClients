@@ -9,7 +9,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { useFlagsDriveSDKPreview } from '../../../../flags/useFlagsDriveSDKPreview';
 import useDriveNavigation from '../../../../hooks/drive/useNavigate';
-import { useOnItemRenderedMetrics } from '../../../../hooks/drive/useOnItemRenderedMetrics';
 import { useDrivePreviewModal } from '../../../../modals/preview';
 import { useSelectionStore } from '../../../../modules/selection';
 import type { SortConfig, SortField } from '../../../../modules/sorting/types';
@@ -45,7 +44,7 @@ export const useSearchResultItems = () => {
         }))
     );
 
-    const { sortedItemUids, loading, hasEverLoaded, sortField, direction } = useSearchViewStore(
+    const { sortedItemUids, loading, sortField, direction } = useSearchViewStore(
         useShallow((state) => ({
             sortedItemUids: state.sortedItemUids,
             loading: state.loading,
@@ -55,24 +54,18 @@ export const useSearchResultItems = () => {
         }))
     );
 
-    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
-
     const { previewModal, showPreviewModal } = useDrivePreviewModal();
 
-    const handleRenderItem = useCallback(
-        ({ id }: { id: string }) => {
-            incrementItemRenderedCounter();
-            const renderedItem = useSearchViewStore.getState().getSearchResultItem(id);
+    const handleRenderItem = useCallback(({ id }: { id: string }) => {
+        const renderedItem = useSearchViewStore.getState().getSearchResultItem(id);
 
-            if (renderedItem?.activeRevisionUid) {
-                loadThumbnail(getDrive(), {
-                    nodeUid: renderedItem.nodeUid,
-                    revisionUid: renderedItem.activeRevisionUid,
-                });
-            }
-        },
-        [incrementItemRenderedCounter]
-    );
+        if (renderedItem?.activeRevisionUid) {
+            loadThumbnail(getDrive(), {
+                nodeUid: renderedItem.nodeUid,
+                revisionUid: renderedItem.activeRevisionUid,
+            });
+        }
+    }, []);
 
     const handleSorting = ({
         sortField,

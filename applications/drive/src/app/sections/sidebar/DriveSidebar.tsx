@@ -19,7 +19,6 @@ import {
 } from '@proton/components';
 import AppsDropdown from '@proton/components/containers/app/AppsDropdown';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
-import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import {
     COLLAPSE_EVENTS,
@@ -39,7 +38,6 @@ import type { ShareWithKey } from '../../store';
 import { useCreateDevice } from '../../store/_shares/useCreateDevice';
 import { useCreatePhotos } from '../../store/_shares/useCreatePhotos';
 import { useDefaultShare } from '../../store/_shares/useDefaultShare';
-import { logPerformanceMarker } from '../../utils/performance';
 import { ActionMenuButton } from './ActionMenu/ActionMenuButton';
 import { DriveSidebarFooter } from './DriveSidebarFooter';
 import { DriveSidebarList } from './DriveSidebarList';
@@ -96,10 +94,6 @@ export const DriveSidebar = ({ isNewUploadDisabled, isHeaderExpanded, toggleHead
             unsubscribe();
         };
     }, [loadFoldersRoot]);
-
-    useEffectOnce(() => {
-        logPerformanceMarker('drive_performance_clicktonavrendered_histogram');
-    });
 
     useEffect(() => {
         void getDefaultShare().then((share) => {

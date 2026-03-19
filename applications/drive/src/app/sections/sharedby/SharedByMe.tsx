@@ -11,7 +11,6 @@ import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
 import { useFlagsDriveSDKPreview } from '../../flags/useFlagsDriveSDKPreview';
 import useDriveNavigation from '../../hooks/drive/useNavigate';
-import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { useDrivePreviewModal } from '../../modals/preview';
 import { useContextMenuStore } from '../../modules/contextMenu';
 import { useSelectionStore } from '../../modules/selection';
@@ -49,31 +48,25 @@ export const SharedByMe = () => {
         }))
     );
 
-    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
-
     const selectedItemIds = useSelectionStore(useShallow((state) => state.selectedItemIds));
 
     useEffect(() => {
         useSelectionStore.getState().setAllItemIds(sortedItemUids);
     }, [sortedItemUids]);
 
-    const handleRenderItem = useCallback(
-        (uid: string) => {
-            incrementItemRenderedCounter();
-            const storeItem = useSharedByMeStore.getState().getSharedByMeItem(uid);
-            if (!storeItem) {
-                return;
-            }
+    const handleRenderItem = useCallback((uid: string) => {
+        const storeItem = useSharedByMeStore.getState().getSharedByMeItem(uid);
+        if (!storeItem) {
+            return;
+        }
 
-            if (storeItem.activeRevisionUid) {
-                loadThumbnail(getDrivePerNodeType(storeItem.type), {
-                    nodeUid: storeItem.nodeUid,
-                    revisionUid: storeItem.activeRevisionUid,
-                });
-            }
-        },
-        [incrementItemRenderedCounter]
-    );
+        if (storeItem.activeRevisionUid) {
+            loadThumbnail(getDrivePerNodeType(storeItem.type), {
+                nodeUid: storeItem.nodeUid,
+                revisionUid: storeItem.activeRevisionUid,
+            });
+        }
+    }, []);
 
     const handleSorting = useCallback(
         ({
