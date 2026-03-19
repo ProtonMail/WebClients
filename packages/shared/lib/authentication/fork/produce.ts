@@ -108,9 +108,11 @@ export const produceForkConsumption = (
 ) => {
     const fragmentSearchParams = new URLSearchParams();
     fragmentSearchParams.append(ForkSearchParameters.Selector, selector);
-    fragmentSearchParams.append(ForkSearchParameters.State, state);
     fragmentSearchParams.append(ForkSearchParameters.Base64Key, key);
     fragmentSearchParams.append(ForkSearchParameters.Version, `${forkVersion}`);
+    if (state) {
+        fragmentSearchParams.append(ForkSearchParameters.State, state);
+    }
     if (persistent) {
         fragmentSearchParams.append(ForkSearchParameters.Persistent, '1');
     }
@@ -263,7 +265,7 @@ export const getProduceForkParameters = (
 export const getRequiredForkParameters = (
     forkParameters: ReturnType<typeof getProduceForkParameters>
 ): forkParameters is ProduceForkParametersFull => {
-    return Boolean(forkParameters.app && forkParameters.state);
+    return Boolean(forkParameters.app);
 };
 
 const getCanUserReAuth = (user: User) => {
