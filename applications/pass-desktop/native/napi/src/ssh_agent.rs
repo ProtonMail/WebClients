@@ -286,7 +286,7 @@ impl SshAgentManager {
         }
     }
 
-    async fn remove_all_keys() -> Result<()> {
+    pub async fn remove_all_keys() -> Result<()> {
         let mut client = Self::connect_agent_client().await?;
 
         let identities = client
@@ -311,7 +311,8 @@ impl SshAgentManager {
         Ok(())
     }
 
-    pub async fn send_keys(keys: Vec<SshKeyData>) -> Result<String> {
+    pub async fn set_keys(keys: Vec<SshKeyData>) -> Result<String> {
+        Self::remove_all_keys().await?;
         Self::add_keys_to_agent(keys).await
     }
 

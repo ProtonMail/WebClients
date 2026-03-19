@@ -12,6 +12,7 @@ type RootStore = {
     update?: UpdateStore;
     theme?: DesktopTheme;
     windowConfig?: WindowConfigStoreProperties;
+    sshAgentSettingEnabled?: boolean;
 };
 
 export const store = new Store<RootStore>({
