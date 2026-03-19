@@ -8,6 +8,7 @@ import { DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import type { IconName } from '@proton/icons/types';
 
+import { useIsTouchDevice } from '../hooks/useIsTouchDevice';
 import { useSidebar } from '../providers/SidebarProvider';
 
 import './DropdownMenu.scss';
@@ -27,13 +28,15 @@ interface Props {
 const DropdownMenu = ({ options, onToggle, isOpen }: Props) => {
     const ref = useRef<HTMLButtonElement>(null);
     const { isSmallScreen } = useSidebar();
+    const isTouchDevice = useIsTouchDevice();
+    const alwaysVisible = isSmallScreen || isTouchDevice;
 
     return (
         <div
             className={clsx(
                 'relative shrink-0 flex',
-                !isSmallScreen && 'group-hover:opacity-100',
-                !isSmallScreen && !isOpen && 'group-hover:opacity-100-no-width'
+                !alwaysVisible && 'group-hover:opacity-100',
+                !alwaysVisible && !isOpen && 'group-hover:opacity-100-no-width'
             )}
         >
             <SimpleDropdown
