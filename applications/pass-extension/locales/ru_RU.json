@@ -1676,9 +1676,6 @@
       "Disabling auto-lock failed": [
         "Не удалось отключить автоматическую блокировку"
       ],
-      "Disabling offline mode...": [
-        "Отключение режима офлайн ..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "Обновление DNS может занять до 24 часов."
       ],
@@ -1991,14 +1988,11 @@
       "Not recommended": [
         "Не рекомендуется"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Режим офлайн не может быть отключен в данный момент"
+      "Offline mode": [
+        "Офлайновый режим"
       ],
       "Offline mode could not be enabled at the moment": [
         "Включение офлайнового режима в данный момент невозможно"
-      ],
-      "Offline support successfully disabled": [
-        "Поддержка офлайновой поддержки успешно отключена"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Для онлайн-доступа к ${ PASS_APP_NAME } потребуется PIN-код. Вы выйдете из системы после 3 неудачных попыток."
@@ -2051,6 +2045,9 @@
       "Please check your spam folder or try resending the code.": [
         "Проверьте папку Спам или попробуйте повторно отправить код."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Подтвердите ваш пароль ${ BRAND_NAME } чтобы включить офлайновый режим"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Подтвердите ваш пароль ${ BRAND_NAME } для экспорта ваших данных ${ PASS_APP_NAME }"
       ],
@@ -2062,6 +2059,9 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Подтвердите ваш пароль резервной копии для автоматической блокировки вашим паролем."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Подтвердите пароль резервной копии, чтобы включить автономный режим"
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
         "Пожалуйста, подтвердите пароль резервной копии для экспорта данных ${ PASS_APP_NAME }"
@@ -2080,6 +2080,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Подтвердите свой дополнительный пароль, чтобы автоматическая блокировка осуществлялась с помощью вашего дополнительного пароля."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Подтвердите дополнительный пароль, чтобы включить автономный режим"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Подтвердите свой дополнительный пароль, чтобы экспортировать данные ${ PASS_APP_NAME }."
@@ -2119,6 +2122,9 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Для автоблокировки с помощью пароля подтвердите второй пароль."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Чтобы включить автономный режим, подтвердите второй пароль."
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "Пожалуйста, подтвердите ваш второй пароль для экспорта данных ${ PASS_APP_NAME }"
@@ -2173,6 +2179,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Быстрое автоматическое заполнение сохраненных учетных данных."
+      ],
+      "Reconnect": [
+        "Возобновить соединение"
+      ],
+      "Reconnecting": [
+        "Переподключение"
       ],
       "Record: CNAME": [
         "Запись: CNAME"
@@ -2974,6 +2986,9 @@
       "Empty trash": [
         "Очистить корзину"
       ],
+      "Enable offline access": [
+        "Включить офлайновый доступ"
+      ],
       "Enter email or username": [
         "Введите адрес электронной почты или имя пользователя"
       ],
@@ -3255,6 +3270,9 @@
       ],
       "Notes": [
         "Примечания"
+      ],
+      "Offline mode": [
+        "Офлайновый режим"
       ],
       "Old-New": [
         "Старый-Новый"
@@ -4879,6 +4897,9 @@
       ],
       "Title is required": [
         "Название обязательно"
+      ],
+      "Too many attempts": [
+        "Слишком много попыток"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Transfer ownership of this vault to ${ email }?"

@@ -1500,6 +1500,12 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } wird das Speichern von Passkeys vorschlagen."
       ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME } ist derzeit offline. Öffne die Erweiterung zum Entsperren."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } Offline-Modus aktiviert."
+      ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } Einladung erfolgreich gesendet",
         "${ payload.count } Einladungen erfolgreich gesendet"
@@ -1760,9 +1766,6 @@
       "Disabling auto-lock failed": [
         "Deaktivieren der automatischen Sperre fehlgeschlagen"
       ],
-      "Disabling offline mode...": [
-        "Offline-Modus wird deaktiviert..."
-      ],
       "Discover ${ PASS_APP_NAME } video": [
         "Entdecke das Video von ${ PASS_APP_NAME }"
       ],
@@ -1813,6 +1816,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Aktiviere die automatische Sperre, um deine Daten zu sichern"
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Aktiviere den Offline-Modus, um auf deine ${ PASS_SHORT_APP_NAME }-Daten zuzugreifen, falls deine Internetverbindung abbricht oder die ${ BRAND_NAME }-Server nicht erreichbar sind."
       ],
       "Enabling biometrics auto-lock": [
         "Automatische biometrische Sperre aktivieren"
@@ -2086,14 +2092,11 @@
       "Not recommended": [
         "Nicht empfohlen"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Fehler beim Deaktivieren des Offline-Modus."
+      "Offline mode": [
+        "Offline-Modus"
       ],
       "Offline mode could not be enabled at the moment": [
         "Fehler beim Aktivieren des Offline-Modus."
-      ],
-      "Offline support successfully disabled": [
-        "Offline-Unterstützung erfolgreich deaktiviert."
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online-Zugang zu ${ PASS_APP_NAME } wird einen PIN-Code benötigen. Du wirst nach 3 falschen Versuchen abgemeldet werden."
@@ -2147,6 +2150,9 @@
       "Please check your spam folder or try resending the code.": [
         "Bitte überprüfe deinen Spam-Ordner oder fordere den Code erneut an."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um den Offline-Modus zu aktivieren."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um deine ${ PASS_APP_NAME }-Daten zu exportieren."
       ],
@@ -2158,6 +2164,9 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Bitte bestätige dein Backup-Passwort, um die automatische Sperre mit deinem Passwort zu aktivieren."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Bitte bestätige dein Backup-Passwort, um den Offline-Modus zu aktivieren."
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
         "Bitte bestätige dein Backup-Passwort, um deine ${ PASS_APP_NAME }-Daten zu exportieren."
@@ -2176,6 +2185,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Bitte bestätige dein zusätzliches Passwort, damit die automatische Sperre mit deinem zusätzlichen Passwort aktiviert wird."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Bitte bestätige dein zusätzliches Passwort, um den Offline-Modus zu aktivieren."
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Bitte bestätige dein zusätzliches Passwort, um deine ${ PASS_APP_NAME }-Daten zu exportieren."
@@ -2215,6 +2227,9 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Bitte bestätige dein zweites Passwort, um die automatische Sperre mit deinem Passwort zu aktivieren."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Bitte bestätige dein zweites Passwort, um den Offline-Modus zu aktivieren"
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "Bitte bestätige dein zweites Passwort, um deine ${ PASS_APP_NAME }-Daten zu exportieren"
@@ -2278,6 +2293,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Schnelles automatisches Ausfüllen deiner gespeicherten Anmeldedaten."
+      ],
+      "Reconnect": [
+        "Erneut verbinden"
+      ],
+      "Reconnecting": [
+        "Verbindung wird wiederhergestellt"
       ],
       "Record: CNAME": [
         "Eintrag: CNAME"
@@ -2606,6 +2627,9 @@
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Beim Erstellen/Bearbeiten eines Logins auf ${ PASS_APP_NAME } wird die Eingabe 'Benutzername' immer sichtbar sein."
       ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Wenn aktiviert, kannst du immer noch auf deine ${ PASS_SHORT_APP_NAME }-Daten zugreifen, wenn du keine Internetverbindung hast oder die ${ BRAND_NAME }-Server nicht erreichbar sind."
+      ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Wenn du eine E-Mail von diesem Alias aus versendest, wird ${ emailSender } als Absender in der E-Mail erscheinen."
       ],
@@ -2617,6 +2641,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Du kannst dein ${ BRAND_NAME }-Passwort nun verwenden, um auf ${ PASS_SHORT_APP_NAME } offline zuzugreifen."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kannst jetzt dein Backup-Passwort verwenden, um offline auf ${ PASS_SHORT_APP_NAME } zuzugreifen"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kannst jetzt dein zusätzliches Passwort verwenden, um offline auf ${ PASS_SHORT_APP_NAME } zuzugreifen"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kannst jetzt dein zweites Passwort verwenden, um offline auf ${ PASS_SHORT_APP_NAME } zuzugreifen"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Du kannst die Postfächer für diesen Alias nicht ändern."
@@ -3103,6 +3136,9 @@
       "Empty trash": [
         "Papierkorb leeren"
       ],
+      "Enable offline access": [
+        "Offline-Zugriff aktivieren"
+      ],
       "Enter email or username": [
         "E-Mail-Adresse oder Benutzername eingeben"
       ],
@@ -3420,6 +3456,9 @@
       ],
       "Notes": [
         "Notizen"
+      ],
+      "Offline mode": [
+        "Offline-Modus"
       ],
       "Old-New": [
         "Alt-Neu"
@@ -4884,6 +4923,9 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-Passwort erforderlich"
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } Offline-Modus deaktiviert."
+      ],
       "2 consecutive dots are not allowed": [
         "2 aufeinanderfolgende Punkte sind nicht erlaubt"
       ],
@@ -5087,6 +5129,9 @@
       ],
       "Title is required": [
         "Titel ist erforderlich"
+      ],
+      "Too many attempts": [
+        "Zu viele Versuche"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Inhaberschaft dieses Tresors auf ${ email } übertragen?"

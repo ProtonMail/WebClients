@@ -1458,6 +1458,9 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } sẽ gợi ý lưu mã khóa."
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Đã kích hoạt chế độ ngoại tuyến ${ PASS_SHORT_APP_NAME }."
+      ],
       "${ payload.count } invite successfully sent": [
         "Đã gửi thành công ${ payload.count } lời mời"
       ],
@@ -1710,9 +1713,6 @@
       "Disabling auto-lock failed": [
         "Không vô hiệu hóa được tự động khóa"
       ],
-      "Disabling offline mode...": [
-        "Đang vô hiệu hóa chế độ ngoại tuyến..."
-      ],
       "Discover ${ PASS_APP_NAME } video": [
         "Khám phá video ${ PASS_APP_NAME }"
       ],
@@ -1763,6 +1763,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Bật tự động khóa để bảo vệ dữ liệu của bạn"
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Bật chế độ ngoại tuyến để truy cập dữ liệu ${ PASS_SHORT_APP_NAME } nếu mất kết nối internet hoặc nếu không thể truy cập máy chủ ${ BRAND_NAME }."
       ],
       "Enabling biometrics auto-lock": [
         "Đang kích hoạt tự động khóa bằng sinh trắc học"
@@ -2022,14 +2025,11 @@
       "Not recommended": [
         "Không được khuyến nghị"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Không thể vô hiệu hóa chế độ ngoại tuyến lúc này"
+      "Offline mode": [
+        "Chế độ ngoại tuyến"
       ],
       "Offline mode could not be enabled at the moment": [
         "Không thể kích hoạt chế độ ngoại tuyến lúc này"
-      ],
-      "Offline support successfully disabled": [
-        "Đã vô hiệu hóa truy cập ngoại tuyến"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Truy cập trực tuyến vào ${ PASS_APP_NAME } sẽ cần mã PIN. Sẽ bị đăng xuất sau 3 lần thử thất bại."
@@ -2082,6 +2082,9 @@
       "Please check your spam folder or try resending the code.": [
         "Vui lòng kiểm tra thư mục thư rác hoặc thử gửi lại mã."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } để kích hoạt chế độ ngoại tuyến"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } để xuất dữ liệu ${ PASS_APP_NAME }"
       ],
@@ -2093,6 +2096,9 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Vui lòng xác nhận mật khẩu sao lưu để tự động khóa bằng mật khẩu."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Vui lòng xác nhận mật khẩu sao lưu để kích hoạt chế độ ngoại tuyến"
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
         "Vui lòng xác nhận mật khẩu sao lưu để xuất dữ liệu ${ PASS_APP_NAME }"
@@ -2111,6 +2117,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Vui lòng xác nhận mật khẩu để tự động khóa bằng mật khẩu bổ sung."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Vui lòng xác nhận mật khẩu bổ sung để kích hoạt chế độ ngoại tuyến"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Vui lòng xác nhận mật khẩu bổ sung để xuất dữ liệu ${ PASS_APP_NAME }"
@@ -2150,6 +2159,9 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Vui lòng xác nhận mật khẩu thứ hai để tự động khóa bằng mật khẩu."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Vui lòng xác nhận mật khẩu thứ hai để kích hoạt chế độ ngoại tuyến"
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "Vui lòng xác nhận mật khẩu thứ hai để xuất dữ liệu ${ PASS_APP_NAME } của bạn"
@@ -2213,6 +2225,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Tự động điền nhanh thông tin đăng nhập đã lưu."
+      ],
+      "Reconnect": [
+        "Kết nối lại"
+      ],
+      "Reconnecting": [
+        "Đang kết nối lại"
       ],
       "Record: CNAME": [
         "Bản ghi: CNAME"
@@ -2528,6 +2546,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Khi bạn tạo hoặc chỉnh sửa tài khoản đăng nhập trên ${ PASS_APP_NAME }, trường \"tên người dùng\" sẽ luôn hiển thị."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Khi được kích hoạt, vẫn có thể truy cập dữ liệu ${ PASS_SHORT_APP_NAME } nếu mất kết nối internet hoặc nếu không thể truy cập máy chủ ${ BRAND_NAME }."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Khi gửi email từ biệt danh này, email sẽ hiển thị ${ emailSender } là người gửi."
@@ -2995,6 +3016,9 @@
       "Empty trash": [
         "Làm trống thùng rác"
       ],
+      "Enable offline access": [
+        "Kích hoạt truy cập ngoại tuyến"
+      ],
       "Enter email or username": [
         "Nhập email hoặc tên người dùng"
       ],
@@ -3312,6 +3336,9 @@
       ],
       "Notes": [
         "Ghi chú"
+      ],
+      "Offline mode": [
+        "Chế độ ngoại tuyến"
       ],
       "Old-New": [
         "Cũ-Mới"
@@ -4761,6 +4788,9 @@
       "${ BRAND_NAME } password is required": [
         "Đã yêu cầu mật khẩu ${ BRAND_NAME }"
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Đã vô hiệu hóa chế độ ngoại tuyến ${ PASS_SHORT_APP_NAME }."
+      ],
       "2 consecutive dots are not allowed": [
         "Không được phép dùng 2 dấu chấm liên tiếp"
       ],
@@ -4961,6 +4991,9 @@
       ],
       "Title is required": [
         "Yêu cầu có tiêu đề"
+      ],
+      "Too many attempts": [
+        "Quá nhiều lần thử"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Chuyển quyền sở hữu của kho này cho ${ email }?"
