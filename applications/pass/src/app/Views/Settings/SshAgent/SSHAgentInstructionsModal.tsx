@@ -50,11 +50,14 @@ export const SSHAgentInstructionsModal: FC<Props> = ({ socketPath, onClose, onCa
             <ModalContent>
                 {!isWindowsBuild && (
                     <div className="flex flex-column gap-4">
-                        <div className="">{c('Info')
-                            .t`Paste the following command in your terminal (or .bashrc / .zshrc file) to use ${PASS_APP_NAME} SSH agent:`}</div>
+                        <div>{c('Info').t`Paste the following command in your terminal:`}</div>
                         <ClickToCopy value={commandToCopy}>
                             <code className="text-small bg-weak color-weak">{commandToCopy}</code>
                         </ClickToCopy>
+                        <div className="color-weak ">
+                            {c('Info')
+                                .t`Tip: add it to your .bashrc or .zshrc file so it runs automatically when you open the terminal.`}
+                        </div>
                     </div>
                 )}
                 {isWindowsBuild && (
@@ -73,27 +76,21 @@ export const SSHAgentInstructionsModal: FC<Props> = ({ socketPath, onClose, onCa
                     </div>
                 )}
 
+                <Banner noIcon className="mt-4">
+                    <div className="text-sm color-weak">
+                        {c('Info')
+                            .t`Make sure to keep ${PASS_APP_NAME} running (can be minimized) for the SSH agent to stay active. SSH keys with passphrase are currently not supported.`}
+                    </div>
+                </Banner>
+
                 {hasMultiSessions && (
                     <Banner variant={BannerVariants.WARNING} noIcon className="mt-4">
                         <div className="text-sm color-weak">
                             {c('Info')
-                                .t`For a better user experience, the SSH agent setting is stored globally in ${PASS_APP_NAME} desktop app and not individually for each user account. You are currently logged in multiple accounts, if you do not want to use the SSH agent for a specific account, please disable this setting before switching to that account.`}
+                                .t`If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.`}
                         </div>
                     </Banner>
                 )}
-
-                <Banner noIcon className="mt-4">
-                    <div className="text-sm color-weak">
-                        <ul className="unstyled m-0">
-                            <li>
-                                {c('Info')
-                                    .t`Please keep ${PASS_APP_NAME} running (it can be closed and minimized to the background) for the SSH agent to keep running.`}
-                            </li>
-                            <li>{c('Info').t`SSH keys with passphrase are not supported at the moment.`}</li>
-                            <li>{c('Info').t`SSH keys in the trash will not be used.`}</li>
-                        </ul>
-                    </div>
-                </Banner>
 
                 {!hideFooter && (
                     <FormikProvider value={form}>
