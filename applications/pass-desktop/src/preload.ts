@@ -72,6 +72,12 @@ const contextBridgeApi: ContextBridgeApi = {
     /* native messaging */
     onNmRequest: (callback) => handler('nm:request', callback),
     nmResponse: (props) => invoke('nm:response', props),
+
+    /* ssh agent */
+    startSshAgent: () => invoke('sshAgent:start'),
+    stopSshAgent: () => invoke('sshAgent:stop'),
+    sendSshKeyItems: (items) => invoke('sshAgent:sendSshKeyItems', items),
+    getSshAgentStatus: () => invoke('sshAgent:getStatus'),
 };
 
 contextBridge.exposeInMainWorld('ctxBridge', contextBridgeApi);

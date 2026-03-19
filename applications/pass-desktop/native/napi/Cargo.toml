@@ -13,6 +13,13 @@ enigo = { version = "0.6.1", default-features = false, features = ["libei_tokio"
 napi = { version = "3.4", features = ["async"] }
 napi-derive = "3.3"
 shared = { path = "../shared" }
+tokio = { version = "1.47", features = ["full"] }
+russh-keys = "0.49.2"
+futures = "0.3.31"
+async-trait = "0.1.89"
+
+[target.'cfg(unix)'.dependencies]
+tokio-stream = "0.1"
 
 [target.'cfg(windows)'.dependencies]
 windows = { version = "=0.54.0", features = [
