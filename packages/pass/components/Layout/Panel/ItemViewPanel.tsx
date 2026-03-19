@@ -121,7 +121,11 @@ export const ItemViewPanel: FC<Props> = ({
             className={itemTypeToSubThemeClassName[type]}
             header={
                 <PanelHeader
-                    title={<h2 className="text-2xl text-bold text-ellipsis mb-0-5">{name}</h2>}
+                    title={
+                        <h2 className="text-2xl text-bold text-ellipsis mb-0-5" title={name}>
+                            {name}
+                        </h2>
+                    }
                     actions={(() => {
                         if (failed) {
                             return [
