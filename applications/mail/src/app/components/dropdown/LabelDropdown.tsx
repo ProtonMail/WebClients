@@ -31,13 +31,13 @@ import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/in
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 
 import { getLabelIDs } from '../../helpers/elements';
-import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
 import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { useScrollToItem } from '../../hooks/useScrollToItem';
 import type { Element } from '../../models/element';
 
 import './LabelDropdown.scss';
+import { useApplyLabelsToAll } from 'proton-mail/hooks/actions/label/useApplyLabelsToAll';
 
 export const labelDropdownContentProps = { className: 'flex flex-column flex-nowrap items-stretch' };
 
@@ -141,7 +141,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
     const [alsoArchive, updateAlsoArchive] = useState(false);
     const [always, setAlways] = useState(false);
     const getElementsFromIDs = useGetElementsFromIDs();
-    const { applyLabels, applyLabelsToAllModal } = useApplyLabels(setContainFocus);
+    const {applyLabelsToAll, applyLabelsToAllModal} = useApplyLabelsToAll(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
     const { applyMultipleLocations, applyLocation } = useApplyLocation();
 
@@ -245,18 +245,13 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
         const promises = [];
 
         try {
-            if (selectAll) {
-                promises.push(
-                    applyLabels({
-                        elements,
-                        changes,
-                        createFilters: always,
-                        selectedLabelIDs: checkedIDs,
-                        labelID,
-                        selectAll,
-                        onCheckAll,
-                    })
-                );
+            if(selectAll) {
+                promises.push(applyLabelsToAll({
+                    elements,
+                    changes,
+                    fromLabelID: labelID,
+                    onCheckAll,
+                }));
             } else {
                 if (Object.keys(changes).length > 0 && elements.length > 0) {
                     promises.push(applyMultipleLocations({ elements, changes, createFilters: always }));

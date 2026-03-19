@@ -13,11 +13,15 @@ import { getSelectAllNotificationText } from 'proton-mail/helpers/selectAll';
 import { backendActionStarted, labelAll } from 'proton-mail/store/elements/elementsActions';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
+import { hasLabel, isElementMessage } from 'proton-mail/helpers/elements';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/useFlag';
+import type { Element } from 'proton-mail/models/element';
 
 interface ApplyLabelsToAllParams {
+    elements: Element[];
     changes: { [labelID: string]: boolean };
     fromLabelID: string;
-    isMessage: boolean;
     onCheckAll?: (check: boolean) => void;
 }
 
@@ -29,10 +33,20 @@ export const useApplyLabelsToAll = (setContainFocus?: Dispatch<SetStateAction<bo
     const { createNotification } = useNotifications();
     const [folders = []] = useFolders();
     const dispatch = useMailDispatch();
+    const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
     const [applyLabelsToAllModal, handleShowApplyLabelsToAllModal] = useModalTwo(SelectAllLabelModal);
 
-    const applyLabelsToAll = async ({ changes, fromLabelID, isMessage, onCheckAll }: ApplyLabelsToAllParams) => {
+    const applyLabelsToAll = async ({ elements, changes, fromLabelID, onCheckAll }: ApplyLabelsToAllParams) => {
+        if (!elements.length) {
+            return;
+        }
+        if (isRetentionPoliciesEnabled && hasLabel(elements[0], MAILBOX_LABEL_IDS.SOFT_DELETED)) {
+            return;
+        }
+
+        const isMessage = isElementMessage(elements[0]);
+
         const sortedChanges = getSortedChanges(changes);
 
         setContainFocus?.(false);
