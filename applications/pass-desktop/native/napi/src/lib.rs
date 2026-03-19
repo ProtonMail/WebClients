@@ -150,19 +150,21 @@ pub mod ssh_agent_napi {
     }
 
     #[napi]
-    pub async fn start_agent(is_unlocked_callback: ThreadsafeFunction<Option<String>, Promise<bool>>) -> napi::Result<String> {
+    pub async fn start_agent(
+        is_unlocked_callback: ThreadsafeFunction<Option<String>, Promise<bool>>,
+    ) -> napi::Result<()> {
         SshAgentManager::start_agent(is_unlocked_callback).map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
     #[napi]
-    pub async fn stop_agent() -> napi::Result<String> {
+    pub async fn stop_agent() -> napi::Result<()> {
         SshAgentManager::stop_agent()
             .await
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
     #[napi]
-    pub async fn set_keys(keys: Vec<SshKeyData>) -> napi::Result<String> {
+    pub async fn set_keys(keys: Vec<SshKeyData>) -> napi::Result<()> {
         SshAgentManager::set_keys(keys)
             .await
             .map_err(|e| napi::Error::from_reason(e.to_string()))

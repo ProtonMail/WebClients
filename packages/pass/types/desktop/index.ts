@@ -54,9 +54,9 @@ export type ContextBridgeApi = {
     onNmRequest: (callback: (request: NativeMessagePayload<NativeMessageRequest>) => void) => void;
     nmResponse: (response: NativeMessagePayload<NativeMessageResponse>) => Promise<void>;
 
-    startSshAgent: () => Promise<string>;
-    stopSshAgent: () => Promise<string>;
-    setSshKeyItems: (items: ItemRevision<'sshKey'>[]) => Promise<string>;
+    startSshAgent: () => Promise<void>;
+    stopSshAgent: () => Promise<void>;
+    setSshKeyItems: (items: ItemRevision<'sshKey'>[]) => Promise<void>;
     removeAllSshKeys: () => Promise<void>;
     getSshAgentStatus: () => Promise<{ socketPath?: string }>;
     getSshAgentSettingEnabled: () => Promise<boolean>;
