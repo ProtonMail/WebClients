@@ -24,10 +24,11 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
+import { useApplyLabelsToAll } from 'proton-mail/hooks/actions/label/useApplyLabelsToAll';
+import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import { useMailboxCounter } from 'proton-mail/hooks/useMailboxCounter';
 import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
 
-import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
 import { LabelActionsContextProvider } from './EditLabelContext';
 import { MailSidebarCollapsedButton } from './MailSidebarCollapsedButton';
 import { MailSidebarCustomView } from './MailSidebarCustomView';
@@ -35,7 +36,6 @@ import MailSidebarListActions from './MailSidebarListActions';
 import MailSidebarSystemFolders from './MailSidebarSystemFolders';
 import SidebarFolders from './SidebarFolders';
 import SidebarLabels from './SidebarLabels';
-import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 
 interface Props {
     postItems: ReactNode;
@@ -56,9 +56,9 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
     const [focusedItem, setFocusedItem] = useState<string | null>(null);
     const [foldersUI, setFoldersUI] = useState<Folder[]>([]);
     const foldersTreeview = useMemo(() => buildTreeview(foldersUI), [foldersUI]);
-    const { applyLabels, applyLabelsToAllModal } = useApplyLabels();
+    const { applyLabelsToAll, applyLabelsToAllModal } = useApplyLabelsToAll();
     const { applyLocation } = useApplyLocation();
-    const {moveAllToFolder, selectAllMoveModal} = useMoveAllToFolder();
+    const { moveAllToFolder, selectAllMoveModal } = useMoveAllToFolder();
     const [counterMap] = useMailboxCounter();
 
     const numFolders = folders?.length || 0;
@@ -73,7 +73,7 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
                 folders.map((folder) => ({
                     ...folder,
                     Expanded: getItem(formatFolderID(folder.ID)) === 'false' ? 0 : 1,
-                }))
+                })),
             );
         }
     }, [folders]);
@@ -90,13 +90,13 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
                         };
                     }
                     return folderItem;
-                })
+                }),
             );
 
             // Save expanded state locally
             setItem(formatFolderID(folder.ID), `${expanded}`);
         },
-        [foldersUI]
+        [foldersUI],
     );
 
     const treeviewReducer = (acc: string[], folder: FolderWithSubFolders) => {
@@ -112,7 +112,7 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
     const reduceFolderTreeview = useMemo(
         () => foldersTreeview.reduce((acc: string[], folder: FolderWithSubFolders) => treeviewReducer(acc, folder), []),
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-1942A8
-        [foldersTreeview]
+        [foldersTreeview],
     );
 
     const updateFocusItem = useCallback((item: string) => {
@@ -232,7 +232,7 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
             () => {
                 const element =
                     (document.querySelector(
-                        '[data-shortcut-target="item-container"][data-shortcut-target-selected="true"]'
+                        '[data-shortcut-target="item-container"][data-shortcut-target-selected="true"]',
                     ) as HTMLElement) ||
                     (document.querySelector('[data-shortcut-target="item-container"]') as HTMLElement);
                 element?.focus();
@@ -256,21 +256,26 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
                         collapsed={collapsed}
                         applyLabels={(params) =>
                             params.selectAll
-                                ? applyLabels(params)
+                                ? applyLabelsToAll({
+                                      elements: params.elements,
+                                      changes: params.changes,
+                                      fromLabelID: params.labelID,
+                                      onCheckAll: params.onCheckAll,
+                                  })
                                 : applyLocation({
                                       type: APPLY_LOCATION_TYPES.APPLY_LABEL,
                                       changes: params.changes,
                                       elements: params.elements,
-                                      destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
+                                      destinationLabelID: params.destinationLabelID,
                                       createFilters: params.createFilters,
                                   })
                         }
                         moveToFolder={(params) =>
                             params.selectAll
                                 ? moveAllToFolder({
-                                    type: MoveAllType.selectAll,
-                                    ...params
-                                })
+                                      type: MoveAllType.selectAll,
+                                      ...params,
+                                  })
                                 : applyLocation({
                                       type: APPLY_LOCATION_TYPES.MOVE,
                                       elements: params.elements,
@@ -310,25 +315,30 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
                                     foldersTreeview={foldersTreeview}
                                     applyLabels={(params) =>
                                         params.selectAll
-                                            ? applyLabels(params)
+                                            ? applyLabelsToAll({
+                                                  elements: params.elements,
+                                                  changes: params.changes,
+                                                  fromLabelID: params.labelID,
+                                                  onCheckAll: params.onCheckAll,
+                                              })
                                             : applyLocation({
                                                   type: APPLY_LOCATION_TYPES.APPLY_LABEL,
                                                   changes: params.changes,
                                                   elements: params.elements,
-                                                  destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
+                                                  destinationLabelID: params.destinationLabelID,
                                                   createFilters: params.createFilters,
                                               })
                                     }
                                     moveToFolder={(params) =>
                                         params.selectAll
                                             ? moveAllToFolder({
-                                                type: MoveAllType.selectAll,
-                                                ...params
-                                            })
+                                                  type: MoveAllType.selectAll,
+                                                  ...params,
+                                              })
                                             : applyLocation({
                                                   type: APPLY_LOCATION_TYPES.MOVE,
                                                   elements: params.elements,
-                                                  destinationLabelID: params.destinationLabelID!, // TODO: Improve this when removing old apply labels function
+                                                  destinationLabelID: params.destinationLabelID,
                                                   createFilters: params.createFilters,
                                               })
                                     }
@@ -362,7 +372,12 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
                                     updateFocusItem={updateFocusItem}
                                     applyLabels={(params) =>
                                         params.selectAll
-                                            ? applyLabels(params)
+                                            ? applyLabelsToAll({
+                                                elements: params.elements,
+                                                changes: params.changes,
+                                                fromLabelID: params.labelID,
+                                                onCheckAll: params.onCheckAll,
+                                            })
                                             : applyLocation({
                                                   type: APPLY_LOCATION_TYPES.APPLY_LABEL,
                                                   changes: params.changes,
@@ -374,9 +389,9 @@ const MailSidebarList = ({ postItems, collapsed = false, onClickExpandNav }: Pro
                                     moveToFolder={(params) =>
                                         params.selectAll
                                             ? moveAllToFolder({
-                                                type: MoveAllType.selectAll,
-                                                ...params
-                                            })
+                                                  type: MoveAllType.selectAll,
+                                                  ...params,
+                                              })
                                             : applyLocation({
                                                   type: APPLY_LOCATION_TYPES.MOVE,
                                                   elements: params.elements,
