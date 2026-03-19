@@ -44,7 +44,7 @@ import {
 import { useSanitization } from '../store/_sanitization/useSanitization';
 import { useDriveSharingFlags, useShareActions } from '../store/_shares';
 import { useShareBackgroundActions } from '../store/_views/useShareBackgroundActions';
-import { VolumeTypeForEvents, useVolumesState } from '../store/_volumes';
+import { useVolumesState } from '../store/_volumes';
 import { setPublicRedirectSpotlightToPending } from '../utils/publicRedirectSpotlight';
 import { getNodeEntity } from '../utils/sdk/getNodeEntity';
 import { dateToLegacyTimestamp } from '../utils/sdk/legacyTime';
@@ -162,18 +162,6 @@ function InitContainer() {
             abortController.abort();
         };
     }, []);
-
-    useEffect(() => {
-        const { volumeId } = defaultShareRoot;
-        if (volumeId === undefined) {
-            return;
-        }
-
-        driveEventManager.volumes.startSubscription(volumeId, VolumeTypeForEvents.main).catch(console.warn);
-        return () => {
-            driveEventManager.volumes.unsubscribe(volumeId);
-        };
-    }, [defaultShareRoot.volumeId]);
 
     useEffect(() => {
         const callbackId = driveEventManager.eventHandlers.register((_volumeId, events, processedEventCounter) =>
