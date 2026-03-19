@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { clientReady } from '@proton/pass/lib/client';
 import { selectVisibleNonTrashedSshKeyItems } from '@proton/pass/store/selectors';
-import type { MaybeNull } from '@proton/pass/types';
 
 const KEYS_SYNC_DEBOUNCE_TIME = 200;
 
@@ -15,7 +14,7 @@ const SshAgentSync: FC = () => {
     const syncTimeoutRef = useRef<NodeJS.Timeout>();
     const syncPromiseRef = useRef<Promise<void>>(Promise.resolve());
     const { status } = useAppState();
-    const prevStatus = useRef<MaybeNull<boolean>>(null);
+    const appIsReady = clientReady(status);
 
     useEffect(() => {
         if (syncTimeoutRef.current) {
@@ -49,20 +48,15 @@ const SshAgentSync: FC = () => {
 
     useEffect(() => {
         const updateStatus = async () => {
-            const isReady = clientReady(status);
-
-            if (prevStatus.current !== isReady) {
-                prevStatus.current = isReady;
-                /* Wait for SSH keys to finish sync with redux store
-                 * before sending isReady to main process */
-                if (isReady) {
-                    await syncPromiseRef.current;
-                }
-                void window.ctxBridge?.setSshAgentAppReady(isReady);
+            /* Wait for SSH keys to finish sync with redux store
+             * before sending isReady to main process */
+            if (appIsReady) {
+                await syncPromiseRef.current;
             }
+            void window.ctxBridge?.setSshAgentAppReady(appIsReady);
         };
         void updateStatus();
-    }, [status]);
+    }, [appIsReady]);
 
     return null;
 };
