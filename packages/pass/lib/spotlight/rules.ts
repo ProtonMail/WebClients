@@ -230,3 +230,9 @@ export const createOfflineSetupRule = (store: Store) =>
             return !offlineEnabled;
         },
     });
+
+export const createSshAgentInstructionsRules = () =>
+    createSpotlightRule({
+        message: SpotlightMessage.SSH_AGENT_INSTRUCTIONS,
+        when: (previous) => !previous,
+    });
