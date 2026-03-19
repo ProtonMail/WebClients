@@ -1695,9 +1695,6 @@
       "Disabling auto-lock failed": [
         "Збой адключэння аўтаблакіроўкі"
       ],
-      "Disabling offline mode...": [
-        "Адключэнне рэжыму па-за сеткай..."
-      ],
       "DNS changes could take up to 24 hours to update.": [
         "Змена DNS можа заняць да 24 гадзін."
       ],
@@ -2016,14 +2013,8 @@
       "Offline mode": [
         "Рэжым па-за сеткай"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "У дадзены момант не ўдаецца адключыць рэжым па-за сеткай"
-      ],
       "Offline mode could not be enabled at the moment": [
         "У дадзены момант не ўдаецца ўключыць рэжым па-за сеткай"
-      ],
-      "Offline support successfully disabled": [
-        "Падтрымка па-за сеткай паспяхова адключана"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Для доступу праз інтэрнэт да ${ PASS_APP_NAME } вам спатрэбіцца PIN-код. Вы выйдзеце з сістэмы пасля 3 няўдалых спроб."
@@ -2537,6 +2528,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Цяпер вы можаце выкарыстоўваць свой пароль ${ BRAND_NAME } для доступу па-за сеткай ${ PASS_SHORT_APP_NAME }"
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Цяпер вы можаце выкарыстоўваць свой рэзервовы пароль для доступу да ${ PASS_SHORT_APP_NAME } па-за сеткай"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Цяпер вы можаце выкарыстоўваць свой дадатковы пароль для доступу да ${ PASS_SHORT_APP_NAME } па-за сеткай"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Цяпер вы можаце выкарыстоўваць свой другі пароль для доступу да ${ PASS_SHORT_APP_NAME } па-за сеткай"
       ],
       "You cannot change the mailboxes for this alias.": [
         "У вас няма магчымасці змяніць паштовыя скрыні для гэтага псеўданіма."
