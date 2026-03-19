@@ -98,6 +98,7 @@ export interface ConfigValues {
     retries?: string;
     migrated?: any;
 }
+
 export type ConfigKeys = keyof ConfigValues;
 
 /**

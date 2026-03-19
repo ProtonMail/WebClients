@@ -99,7 +99,7 @@ export const isProduction = (host: string) =>
     host.endsWith('.proton.me') || host.endsWith('.protonvpn.com') || host === VPN_HOSTNAME;
 
 const getDefaultSentryConfig = ({ APP_VERSION, COMMIT }: ProtonConfig): SentryConfig => {
-    const { host } = window.location;
+    const host = self.location.host;
     return {
         host,
         release: isProduction(host) ? APP_VERSION : COMMIT,
@@ -328,14 +328,14 @@ export const setSentryTags = (tags: Record<string, any>) => {
 };
 
 export const traceError = (...args: Parameters<typeof captureException>) => {
-    if (!isLocalhost(window.location.host)) {
+    if (!isLocalhost(self.location.host)) {
         captureException(...args);
         Availability.mark(AvailabilityTypes.SENTRY);
     }
 };
 
 export const captureMessage = (...args: Parameters<typeof sentryCaptureMessage>) => {
-    if (!isLocalhost(window.location.host)) {
+    if (!isLocalhost(self.location.host)) {
         sentryCaptureMessage(...args);
     }
 };
@@ -351,6 +351,7 @@ export enum SentryMailInitiatives {
     UPSELL_MODALS = 'upsell-modals',
     MOVE_ACTIONS = 'move-actions',
     MAIL_REDUX_ERRORS = 'mail-redux-errors',
+    MIGRATION_TOOL = 'migration-tool',
 }
 
 export enum SentryMailPerformanceInitiatives {
@@ -381,7 +382,7 @@ type CaptureExceptionArgs = Parameters<typeof captureException>;
  * @param error
  */
 export const traceInitiativeError = (initiative: SentryInitiative, error: CaptureExceptionArgs[0]) => {
-    if (!isLocalhost(window.location.host)) {
+    if (!isLocalhost(self.location.host)) {
         captureException(error, {
             tags: {
                 initiative,
