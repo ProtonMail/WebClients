@@ -1,17 +1,17 @@
-import { getDrive, useDrive } from '@proton/drive/index';
+import type { ProtonDriveClient } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import useListNotifications from '../../store/_actions/useListNotifications';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 
 type Item = { uid: string; parentUid: string | undefined };
+type Drive = Pick<ProtonDriveClient, 'restoreNodes' | 'trashNodes' | 'getNode'>;
 
 export const useTrashActions = () => {
-    const { drive } = useDrive();
     const { createTrashedItemsNotifications } = useListNotifications();
-    const restoreItems = async (items: Item[]) => {
+    const restoreItems = async (drive: Drive, items: Item[]) => {
         const restored = [];
-        await getBusDriver().emit({ type: BusDriverEventName.RESTORED_NODES, items }, getDrive());
+        await getBusDriver().emit({ type: BusDriverEventName.RESTORED_NODES, items }, drive);
 
         try {
             const uids = items.map((t) => t.uid);
@@ -25,12 +25,12 @@ export const useTrashActions = () => {
         }
     };
 
-    const trashItems = async (items: Item[]) => {
+    const trashItems = async (drive: Drive, items: Item[]) => {
         const itemsMap = items.map((d) => ({ ...d, linkId: d.uid }));
         const uids = items.map((d) => d.uid);
         const success = [];
         const failures = [];
-        await getBusDriver().emit({ type: BusDriverEventName.TRASHED_NODES, uids }, getDrive());
+        await getBusDriver().emit({ type: BusDriverEventName.TRASHED_NODES, uids }, drive);
 
         try {
             for await (const result of drive.trashNodes(uids)) {
@@ -43,7 +43,7 @@ export const useTrashActions = () => {
         } catch (e) {
             handleSdkError(e);
         }
-        createTrashedItemsNotifications(Object.values(itemsMap), success, failures, () => restoreItems(items));
+        createTrashedItemsNotifications(Object.values(itemsMap), success, failures, () => restoreItems(drive, items));
     };
 
     return {
