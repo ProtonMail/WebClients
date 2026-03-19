@@ -32,6 +32,7 @@ import { getApiError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/a
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import truncate from '@proton/utils/truncate';
 
@@ -43,7 +44,7 @@ import type { ImporterCalendar, ImporterData } from './oauthDraft.interface';
 type Props = {
     oAuthProps: OAuthProps;
     source: EASY_SWITCH_SOURCES;
-    defaultAddress: Address;
+    availableAddresses: Address[];
     user: UserModel;
 };
 
@@ -63,7 +64,7 @@ interface APICalendar {
 export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwitchThunkExtra>(
     `${OAUTH_ACTION_PREFIX}/createImporter`,
     async (props, thunkAPI) => {
-        const { oAuthProps, source, defaultAddress, user } = props;
+        const { oAuthProps, source, availableAddresses, user } = props;
         const state = thunkAPI.getState();
         const products = state.oauthDraft.mailImport?.products!;
         const provider = state.oauthDraft.provider;
@@ -218,10 +219,15 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
 
         const apiFolders = emailData?.Folders ?? [];
         const foldersMapping = new MailImportFoldersParser(apiFolders, provider === ImportProvider.GOOGLE).folders;
+
+        // If the user is doing an import on an address that is already added as BYOE address, preselect it as the import address
+        const byoeAddressMatch = availableAddresses?.find(
+            (address) => getIsBYOEAddress(address) && address.Email === Account
+        );
         const emailFields: MailImportFields = {
             mapping: foldersMapping,
             importLabel: getDefaultLabel(Account),
-            importAddress: defaultAddress,
+            importAddress: byoeAddressMatch ?? availableAddresses[0],
             importPeriod: getDefaultTimePeriod(user),
             importCategoriesDestination: getDefaultImportCategoriesDestination(foldersMapping),
         };
