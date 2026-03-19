@@ -59,16 +59,18 @@ export const encryptAndWriteESItems = async ({ esDB, indexKey, items }: EncryptA
     // IDB transactions are serialized by the browser, no locking checks needed
     const tx = esDB.transaction('content', 'readwrite');
 
-    encryptedItems.forEach(async (data) => {
-        const storeItem = await tx.objectStore('content').get(data.id);
+    await Promise.all(
+        encryptedItems.map(async (data) => {
+            const storeItem = await tx.objectStore('content').get(data.id);
 
-        const isSimilar = isContentTheSame(data.original, storeItem);
-        if (!isSimilar) {
-            return;
-        }
+            const isSimilar = isContentTheSame(data.original, storeItem);
+            if (!isSimilar) {
+                return;
+            }
 
-        void tx.objectStore('content').put(data.encryptedContent, data.id);
-    });
+            void tx.objectStore('content').put(data.encryptedContent, data.id);
+        })
+    );
 
     await tx.done;
 };
