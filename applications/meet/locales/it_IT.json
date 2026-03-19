@@ -242,9 +242,6 @@
       "Refresh audio and video tracks": [
         "Aggiorna tracce audio e video"
       ],
-      "Refresh link": [
-        "Aggiorna link"
-      ],
       "Refresh the page": [
         "Aggiorna la pagina"
       ],
@@ -1448,7 +1445,7 @@
         "Inserisci il codice a 6 cifre"
       ],
       "Enter your username without the domain (@example.com)": [
-        "Inserisci il tuo nome utente senza il dominio (@example.com)"
+        "Inserisci il tuo nome utente senza il dominio (@esempio.it)"
       ],
       "Event deleted": [
         "Evento eliminato"
@@ -1757,10 +1754,10 @@
         "In arrivo"
       ],
       "Connection failed": [
-        "Connessione fallita"
+        "Errore durante la connessione"
       ],
       "Connection interrupted. Reconnecting...": [
-        "Connessione interrotta. Riconnessione..."
+        "Connessione interrotta. Riconnessione in corso..."
       ],
       "Connection lost": [
         "Connessione persa"
@@ -2021,7 +2018,7 @@
         "Inserisci la frase d'accesso per decriptare e visualizzare questa riunione"
       ],
       "Please try again or try another browser": [
-        "Per favore riprova o prova un altro browser"
+        "Riprova o prova un altro browser"
       ],
       "Poor connection": [
         "Connessione debole"
@@ -2030,10 +2027,10 @@
         "Riunione premium"
       ],
       "Reconnected successfully": [
-        "Riconnessione riuscita"
+        "Riconnessione eseguita correttamente"
       ],
       "Reconnecting to meeting...": [
-        "Riconnessione alla riunione..."
+        "Riconnessione alla riunione in corso…"
       ],
       "Recording saved": [
         "Registrazione salvata"
@@ -2198,7 +2195,7 @@
         "Hai lasciato il tuo meeting."
       ],
       "You were removed from the meeting": [
-        "Sei stato rimosso dalla riunione"
+        "Ti hanno rimosso dalla riunione"
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "Sei stato invitato a partecipare a una riunione sicura. Conferma il tuo nome e clicca qui sotto per entrare."
@@ -2209,9 +2206,6 @@
       "Your always available meeting room": [
         "La tua sala riunioni sempre disponibile"
       ],
-      "Your always available meeting room, share it only with people you trust.": [
-        "La tua sala riunioni sempre disponibile, condividila solo con le persone di cui ti fidi."
-      ],
       "Your browser or device isn’t supported": [
         "Il tuo browser o dispositivo non è supportato"
       ],
@@ -2220,9 +2214,6 @@
       ],
       "Your meeting is ready": [
         "La tua riunione è pronta"
-      ],
-      "Your personal link": [
-        "Il tuo link personale"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Questo numero di telefono verrà utilizzato esclusivamente per questa unica verifica."
@@ -2492,9 +2483,6 @@
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "Non puoi inviare un feedback per una riunione a cui non hai partecipato"
-      ],
-      "Your personal meeting link has been copied to the clipboard": [
-        "Il tuo link personale per la riunione è stato copiato negli appunti"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -2800,9 +2788,6 @@
       "Passphrase": [
         "Frase d'accesso"
       ],
-      "Personal meeting": [
-        "Riunione personale"
-      ],
       "Personal meeting room": [
         "Riunione personale"
       ],
@@ -2915,16 +2900,16 @@
         "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."
       ],
       "STUN UDP connection failed, trying with TURN relay…": [
-        "Connessione UDP STUN fallita, tentativo tramite relay TURN…"
+        "Errore durante la connessione UDP STUN, tentativo tramite relè TURN in corso…"
       ],
       "STUN UDP connection timeout, trying with TURN relay": [
-        "Timeout connessione UDP STUN, tentativo tramite relay TURN"
+        "Timeout connessione UDP STUN, tentativo tramite relè TURN in corso"
       ],
       "The host has removed you from the meeting": [
         "L'organizzatore ti ha rimosso dalla riunione"
       ],
       "Trying another route…": [
-        "Tentativo con un altro percorso…"
+        "Tentativo con un altro percorso in corso…"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sfortunatamente, al momento non sei online. Per favore completa il modulo sotto per descrivere il problema, lo esamineremo e ti contatteremo quando quando saremo di nuovo online."

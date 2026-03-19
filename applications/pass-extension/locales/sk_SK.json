@@ -1536,6 +1536,9 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } navrhne uloženie prístupových kľúčov."
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Režim offline aplikácie ${ PASS_SHORT_APP_NAME } je povolený."
+      ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } pozvánka úspešne odoslaná",
         "${ payload.count } pozvánky úspešne odoslané",
@@ -1806,9 +1809,6 @@
       "Disabling auto-lock failed": [
         "Vypnutie automatického uzamykania zlyhalo"
       ],
-      "Disabling offline mode...": [
-        "Vypínanie offline režimu..."
-      ],
       "Discover ${ PASS_APP_NAME } video": [
         "Pozrite si video o ${ PASS_APP_NAME }"
       ],
@@ -1859,6 +1859,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Povoľte automatické uzamykanie na zabezpečenie údajov"
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Povoliť offline režim na prístup k vašim údajom ${ PASS_SHORT_APP_NAME }, ak stratíte internetové pripojenie alebo ak servery ${ BRAND_NAME } nie sú dostupné."
       ],
       "Enabling biometrics auto-lock": [
         "Aktivácia biometrického automatického zamykania"
@@ -2142,14 +2145,11 @@
       "Not recommended": [
         "Neodporúčané"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Offline režim momentálne nie je možné vypnúť"
+      "Offline mode": [
+        "Offline režim"
       ],
       "Offline mode could not be enabled at the moment": [
         "Offline režim nie je možné momentálne povoliť"
-      ],
-      "Offline support successfully disabled": [
-        "Podpora offline bola úspešne vypnutá"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online prístup k ${ PASS_APP_NAME } bude vyžadovať PIN kód. Po troch neúspešných pokusoch dôjde k odhláseniu."
@@ -2205,6 +2205,9 @@
       "Please check your spam folder or try resending the code.": [
         "Skontrolujte priečinok so spamom alebo skúste kód poslať znova."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Potvrďte svoje ${ BRAND_NAME } heslo na povolenie offline režimu"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Prosím, potvrďte svoje ${ BRAND_NAME } heslo, aby ste mohli exportovať vaše dáta z ${ PASS_APP_NAME }"
       ],
@@ -2216,6 +2219,9 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Potvrďte, prosím, vaše záložné heslo pre automatické uzamknutie pomocou vášho hesla."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Potvrďte svoje záložné heslo na povolenie offline režimu"
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
         "Potvrďte, prosím, vaše záložné heslo, aby ste mohli exportovať vaše údaje z ${ PASS_APP_NAME }"
@@ -2234,6 +2240,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Pre automatické uzamknutie pomocou dodatočného hesla potvrďte svoje dodatočné heslo, prosím."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Potvrďte svoje dodatočné heslo na povolenie offline režimu"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Potvrďte, prosím, vaše dodatočné heslo, aby ste mohli exportovať vaše údaje z ${ PASS_APP_NAME }"
@@ -2273,6 +2282,9 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Potvrďte, prosím, vaše druhé heslo pre automatické uzamknutie pomocou vášho hesla."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Potvrďte, prosím, svoje druhé heslo na povolenie offline režimu"
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "Potvrďte, prosím, vaše druhé heslo, aby ste mohli exportovať vaše údaje z ${ PASS_APP_NAME }"
@@ -2336,6 +2348,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Rýchle automatické vyplnenie vašich uložených prihlasovacích údajov."
+      ],
+      "Reconnect": [
+        "Znovu pripojiť"
+      ],
+      "Reconnecting": [
+        "Opätovné pripájanie"
       ],
       "Record: CNAME": [
         "Záznam: CNAME"
@@ -2669,6 +2687,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Pri vytváraní/úprave prihlásenia na ${ PASS_APP_NAME } bude vstupné pole 'používateľské meno' vždy viditeľné ."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Ak je táto funkcia povolená, môžete naďalej pristupovať k svojim údajom ${ PASS_SHORT_APP_NAME }, aj keď stratíte pripojenie k internetu alebo ak sú servery ${ BRAND_NAME } nedostupné."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Pri odosielaní emailu z tohto aliasu bude ako odosielateľ uvedený email ${ emailSender }."
@@ -3199,6 +3220,9 @@
       "Empty trash": [
         "Vyprázdniť kôš"
       ],
+      "Enable offline access": [
+        "Povoliť offline prístup"
+      ],
       "Enter email or username": [
         "Zadajte email alebo používateľské meno"
       ],
@@ -3516,6 +3540,9 @@
       ],
       "Notes": [
         "Poznámky"
+      ],
+      "Offline mode": [
+        "Offline režim"
       ],
       "Old-New": [
         "Staré-Nové"
@@ -5004,6 +5031,9 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } heslo je povinné"
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Režim offline aplikácie ${ PASS_SHORT_APP_NAME } je zakázaný."
+      ],
       "2 consecutive dots are not allowed": [
         "2 po sebe idúce bodky nie sú povolené"
       ],
@@ -5213,6 +5243,9 @@
       ],
       "Title is required": [
         "Názov je povinný"
+      ],
+      "Too many attempts": [
+        "Príliš veľa pokusov"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Preniesť vlastníctvo tohto trezora na ${ email }?"

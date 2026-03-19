@@ -867,6 +867,9 @@
       "Enter 6 digits": [
         "6자리 숫자를 입력해 주세요"
       ],
+      "Enter your username without the domain (@example.com)": [
+        "도메인 없이 (@example.co.kr) 사용자 이름을 입력해 주세요."
+      ],
       "Incorrect username": [
         "잘못된 사용자 이름"
       ],
@@ -1042,6 +1045,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText }(으)로 인증 코드가 전송되었습니다."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "인증 코드를 입력하세요. ${ digit }자입니다."
       ],
       "Enter your own password (as organization admin).": [
         "사용자의 비밀번호 입력 (조직 관리자와 같음)"

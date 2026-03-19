@@ -4811,9 +4811,6 @@
       "Available with ${ title }": [
         "Διατίθεται με το ${ title }"
       ],
-      "Choose the service you want to bring into ${ MAIL_APP_NAME }, and we'll guide you through connecting an address or importing your mail, calendars, or contacts.": [
-        "Επιλέξτε την υπηρεσία που θέλετε να φέρετε στο ${ MAIL_APP_NAME }, και θα σας καθοδηγήσουμε στη σύνδεση μιας διεύθυνσης ή στην εισαγωγή των μηνυμάτων, των ημερολογίων ή των επαφών σας."
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Ρυθμίστε πρώτα αυτό για να ενεργοποιήσετε τον οργανισμό σας και να προσαρμόσετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
       ],
@@ -4837,6 +4834,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Συγχρονίστε εύκολα τα αρχεία στο cloud από τον υπολογιστή σας και αποκτήστε πρόσβαση σε αυτά από την κινητή συσκευή σας."
+      ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "Μεταφέρετε εύκολα μηνύματα ηλεκτρονικού ταχυδρομείου, συμβάντα ημερολογίου και επαφές από τον προηγούμενο πάροχό σας. Επιλέξτε μια εφάπαξ εισαγωγή ή αυτόματο συνεχόμενο συγχρονισμό."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Ενεργοποιήστε το ${ PROTON_SENTINEL_NAME } για πρόσβαση σε αυτές τις δυνατότητες"
@@ -6908,6 +6908,9 @@
       ],
       "Tab closed": [
         "Κλειστή καρτέλα"
+      ],
+      "The address is already activated": [
+        "Η διεύθυνση έχει ήδη ενεργοποιηθεί"
       ],
       "The address might be misspelled": [
         "Η διεύθυνση μπορεί να έχει ορθογραφικά λάθη"
@@ -9658,6 +9661,9 @@
       "Coming soon": [
         "Έρχεται σύντομα"
       ],
+      "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
+        "Ολοκληρώστε την είσοδο σε αυτή τη συσκευή για να ξεκινήσετε να χρησιμοποιείτε το ${ VPN_APP_NAME } στην τηλεόρασή σας."
+      ],
       "Compromised": [
         "Εκτεθειμένο"
       ],
@@ -9722,6 +9728,9 @@
       "Create a secure cloud for ${ value } member": [
         "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλος",
         "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλη"
+      ],
+      "Create an account": [
+        "Δημιουργία λογαριασμού"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Δημιουργήστε και διαχειριστείτε τους δευτερεύοντες λογαριασμούς και αντιστοιχίστε τις διευθύνσεις ηλεκτρονικού ταχυδρομείου στον προσαρμοσμένο τομέα σας."
@@ -11218,6 +11227,9 @@
       ],
       "Show original message": [
         "Προβολή αρχικού μηνύματος"
+      ],
+      "Sign in": [
+        "Σύνδεση"
       ],
       "Sign in only": [
         "Σύνδεση μόνο"
@@ -15312,6 +15324,9 @@
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } Λογαριασμός"
       ],
+      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
+        "Ένα απλό βήμα σήμερα για να εξασφαλίσετε την ψηφιακή ασφάλεια του παιδιού σας αύριο. Κρατήστε μια ιδιωτική διεύθυνση ηλεκτρονικού ταχυδρομείου ${ BRAND_NAME } για το παιδί σας."
+      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "Ενεργοποιήστε την ιδιωτική διεύθυνση ηλεκτρονικού ταχυδρομείου ${ BRAND_NAME } που είναι δεσμευμένη για το παιδί σας και ρυθμίστε τον λογαριασμό του."
       ],
@@ -15347,6 +15362,9 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "Ανάκτηση του λογαριασμού ${ BRAND_NAME } του παιδιού σας | ${ BRAND_NAME }"
+      ],
+      "Reserve your child's private email | ${ BRAND_NAME }": [
+        "Κάντε κράτηση της ιδιωτικής διεύθυνσης ηλεκτρονικού ταχυδρομείου του παιδιού σας | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Επαναφορά κωδικού πρόσβασης του ${ BRAND_NAME } λογαριασμού σας"
@@ -23834,6 +23852,9 @@
       ],
       "Sign in and grant access": [
         "Εισέλθετε και παραχωρήστε πρόσβαση"
+      ],
+      "Sign in on TV": [
+        "Σύνδεση στην τηλεόραση"
       ],
       "Sign in to join the Beta program": [
         "Συνδεθείτε για να συμμετάσχετε στο πρόγραμμα Beta"

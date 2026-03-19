@@ -1482,6 +1482,9 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } ti suggerirà di salvare le passkey."
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Modalità offline di ${ PASS_SHORT_APP_NAME } abilitata."
+      ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } invito spedito",
         "${ payload.count } inviti spediti"
@@ -1742,9 +1745,6 @@
       "Disabling auto-lock failed": [
         "Impossibile disabilitare il blocco automatico"
       ],
-      "Disabling offline mode...": [
-        "Disabilitazione della modalità offline..."
-      ],
       "Discover ${ PASS_APP_NAME } video": [
         "Scopri il video di ${ PASS_APP_NAME }"
       ],
@@ -1795,6 +1795,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Abilita il blocco automatico per proteggere i tuoi dati"
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Attiva la modalità offline per accedere ai tuoi dati ${ PASS_SHORT_APP_NAME } se perdi la connessione Internet o se i server ${ BRAND_NAME } non sono raggiungibili."
       ],
       "Enabling biometrics auto-lock": [
         "Abilita il blocco automatico con biometria"
@@ -2059,14 +2062,11 @@
       "Not recommended": [
         "Sconsigliato"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Impossibile disabilitare la modalità offline al momento"
+      "Offline mode": [
+        "Modalità offline"
       ],
       "Offline mode could not be enabled at the moment": [
         "Impossibile abilitare la modalità offline al momento"
-      ],
-      "Offline support successfully disabled": [
-        "Accesso offline disabilitato"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "L'accesso online a ${ PASS_APP_NAME } richiederà un codice PIN per sbloccare la sessione. Verrai disconnesso dopo 3 tentativi falliti."
@@ -2120,6 +2120,9 @@
       "Please check your spam folder or try resending the code.": [
         "Controlla la cartella spam o prova a inviare nuovamente il codice."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Conferma la password dell'account ${ BRAND_NAME } per abilitare la modalità offline"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Conferma la password del tuo account ${ BRAND_NAME } per esportare i dati di ${ PASS_APP_NAME }"
       ],
@@ -2131,6 +2134,9 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Conferma la tua password di backup per abilitare il blocco automatico con password."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Conferma la password di backup dell'account per abilitare la modalità offline"
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
         "Conferma la tua password di backup per esportare i dati di ${ PASS_APP_NAME }"
@@ -2149,6 +2155,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Conferma la tua password aggiuntiva per abilitare il blocco automatico con la password aggiuntiva."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Conferma la password extra dell'account per abilitare la modalità offline"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Conferma la tua password aggiuntiva per esportare i dati di ${ PASS_APP_NAME }"
@@ -2188,6 +2197,9 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Conferma la tua password secondaria per abilitare il blocco automatico con la tua password."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Conferma la tua password secondaria per attivare la modalità offline"
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "Conferma la tua password secondaria per esportare i tuoi dati di ${ PASS_APP_NAME }"
@@ -2251,6 +2263,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Compila rapidamente e automaticamente le tue credenziali."
+      ],
+      "Reconnect": [
+        "Riconnetti"
+      ],
+      "Reconnecting": [
+        "Riconnessione"
       ],
       "Record: CNAME": [
         "Record: CNAME"
@@ -2575,6 +2593,9 @@
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Quando crei/modifichi un accesso su ${ PASS_APP_NAME } l'input 'nome utente' sarà sempre visibile."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Quando abilitata, puoi comunque accedere ai tuoi dati ${ PASS_SHORT_APP_NAME } se perdi la connessione Internet o se i server ${ BRAND_NAME } non sono raggiungibili."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Quando invii un email da questo alias, l'email mostrerà ${ emailSender } come mittente"
@@ -3070,6 +3091,9 @@
       "Empty trash": [
         "Svuota il cestino"
       ],
+      "Enable offline access": [
+        "Abilita l'accesso offline"
+      ],
       "Enter email or username": [
         "Inserisci email o nome utente"
       ],
@@ -3387,6 +3411,9 @@
       ],
       "Notes": [
         "Note"
+      ],
+      "Offline mode": [
+        "Modalità offline"
       ],
       "Old-New": [
         "Dal più vecchio al più recente"
@@ -4851,6 +4878,9 @@
       "${ BRAND_NAME } password is required": [
         "È richiesta la password di ${ BRAND_NAME }"
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Modalità offline di ${ PASS_SHORT_APP_NAME } disabilitata."
+      ],
       "2 consecutive dots are not allowed": [
         "Non sono ammessi 2 punti consecutivi"
       ],
@@ -5054,6 +5084,9 @@
       ],
       "Title is required": [
         "Il titolo è obbligatorio"
+      ],
+      "Too many attempts": [
+        "Troppi tentativi"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Trasferire la proprietà di questa cassaforte a ${ email }?"

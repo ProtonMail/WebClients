@@ -1494,6 +1494,12 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } kommer föreslå sparade passkeys."
       ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME } är för närvarande offline. Öppna tillägget för att låsa upp."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } offlineläge aktiverat."
+      ],
       "${ payload.count } invite successfully sent": [
         "${ payload.count } inbjudan skickad",
         "${ payload.count } inbjudningar skickat"
@@ -1748,9 +1754,6 @@
       "Disabling auto-lock failed": [
         "Inaktivering av automatiskt lås misslyckades"
       ],
-      "Disabling offline mode...": [
-        "Inaktiverar offlineläge …"
-      ],
       "Discover ${ PASS_APP_NAME } video": [
         "Upptäck ${ PASS_APP_NAME }-video"
       ],
@@ -1801,6 +1804,9 @@
       ],
       "Enable auto-locking to secure your data": [
         "Aktivera automatisk låsning för att säkra din data"
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Aktivera offlineläge för att komma åt din ${ PASS_SHORT_APP_NAME }-data om du förlorar internetanslutningen eller om ${ BRAND_NAME }-servrar är oåtkomliga."
       ],
       "Enabling biometrics auto-lock": [
         "Aktivera biometriskt autolås"
@@ -2071,14 +2077,11 @@
       "Not recommended": [
         "Rekommenderas inte"
       ],
-      "Offline mode could not be disabled at the moment": [
-        "Offlineläge kunde inte inaktiveras just nu"
+      "Offline mode": [
+        "Offlineläge"
       ],
       "Offline mode could not be enabled at the moment": [
         "Offlineläge kunde inte aktiveras just nu"
-      ],
-      "Offline support successfully disabled": [
-        "Offlinestöd har inaktiverats"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Onlineåtkomst till ${ PASS_APP_NAME } kommer kräva en PIN-kod. Du kommer att loggas ut efter 3 misslyckade försök."
@@ -2132,6 +2135,9 @@
       "Please check your spam folder or try resending the code.": [
         "Kontrollera din skräppostmapp eller försök att skicka koden igen."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Bekräfta ditt ${ BRAND_NAME }-lösenord för att aktivera offlineläge"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bekräfta ditt ${ BRAND_NAME }-lösenord för att exportera din ${ PASS_APP_NAME }-data"
       ],
@@ -2143,6 +2149,9 @@
       ],
       "Please confirm your backup password in order to auto-lock with your password.": [
         "Bekräfta ditt reservlösenord för att låsa automatiskt med ditt lösenord."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Bekräfta ditt reservlösenord för att aktivera offlineläge"
       ],
       "Please confirm your backup password in order to export your ${ PASS_APP_NAME } data": [
         "Bekräfta ditt reservlösenord för att exportera din ${ PASS_APP_NAME }-data"
@@ -2161,6 +2170,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Bekräfta ditt extra lösenord för att låsa automatiskt med ditt extra lösenord."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Bekräfta ditt extra lösenord för att aktivera offlineläge"
       ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Bekräfta ditt extralösenord för att exportera din ${ PASS_APP_NAME }-data"
@@ -2200,6 +2212,9 @@
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
         "Bekräfta ditt andra lösenord för att låsa automatiskt med ditt lösenord."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Bekräfta ditt andra lösenord för att aktivera offlineläge"
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "Bekräfta ditt andra lösenord för att exportera din ${ PASS_APP_NAME }-data"
@@ -2260,6 +2275,12 @@
       ],
       "Quickly autofill your saved credentials.": [
         "Fyll snabbt i dina sparade inloggningsuppgifter automatiskt."
+      ],
+      "Reconnect": [
+        "Anslut igen"
+      ],
+      "Reconnecting": [
+        "Återansluter"
       ],
       "Record: CNAME": [
         "Post: CNAME"
@@ -2588,6 +2609,9 @@
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "När du skapar/redigerar en inloggning på ${ PASS_APP_NAME } kommer inmatning 'användarnamn' alltid vara synligt."
       ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "När det är aktiverat kan du fortfarande komma åt din ${ PASS_SHORT_APP_NAME }-data om du förlorar internetanslutningen eller om ${ BRAND_NAME }-servrar är oåtkomliga."
+      ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "När du skickar ett e-postmeddelande från detta alias kommer e-postmeddelandet att visa ${ emailSender } som avsändare."
       ],
@@ -2599,6 +2623,12 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Du kan nu använda ditt ${ BRAND_NAME }-lösenord för att komma åt ${ PASS_SHORT_APP_NAME } offline"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nu använda ditt extra lösenord för att komma åt ${ PASS_SHORT_APP_NAME } offline"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nu använda ditt andra lösenord för att komma åt ${ PASS_SHORT_APP_NAME } offline"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Du kan inte ändra brevlådorna för detta alias."
@@ -3079,6 +3109,9 @@
       "Empty trash": [
         "Töm papperskorg"
       ],
+      "Enable offline access": [
+        "Aktivera offlineåtkomst"
+      ],
       "Enter email or username": [
         "Ange e-post eller användarnamn"
       ],
@@ -3396,6 +3429,9 @@
       ],
       "Notes": [
         "Anteckningar"
+      ],
+      "Offline mode": [
+        "Offlineläge"
       ],
       "Old-New": [
         "Gammalt-nytt"
@@ -4857,6 +4893,9 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-lösenord är obligatoriskt"
       ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } offlineläge inaktiverat."
+      ],
       "2 consecutive dots are not allowed": [
         "2 på varandra följande punkter är inte tillåtet"
       ],
@@ -5060,6 +5099,9 @@
       ],
       "Title is required": [
         "Rubrik är obligatoriskt"
+      ],
+      "Too many attempts": [
+        "För många försök"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Vill du överföra äganderätten till detta valv till ${ email }?"
