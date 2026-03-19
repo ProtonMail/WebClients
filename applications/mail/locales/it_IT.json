@@ -1477,10 +1477,6 @@
       "Trust": [
         "Considera attendibile"
       ],
-      "Trust key": [
-        "chiave attendibile",
-        "chiavi attendibili"
-      ],
       "Trust public key": [
         "Chiave pubblica attendibile"
       ],
@@ -4566,7 +4562,7 @@
         "Inserisci la password"
       ],
       "Enter your username without the domain (@example.com)": [
-        "Inserisci il tuo nome utente senza il dominio (@example.com)"
+        "Inserisci il tuo nome utente senza il dominio (@esempio.it)"
       ],
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
@@ -7368,7 +7364,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -12697,7 +12694,7 @@
         "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Estendi il tuo abbonamento e salva il ${ discountPercent }%!"
+        "Estendi il tuo abbonamento e risparmia ${ discountPercent }%!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Accesso completo a ${ VPN_APP_NAME }"
@@ -12721,7 +12718,7 @@
         "Protezione più efficace dalle minacce informatiche"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Passa al nostro piano annuale e salva ${ toYearlyDiscountAmount }!"
+        "Passa al nostro piano annuale e risparmia ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Numero illimitato di chat al giorno"
@@ -15134,9 +15131,6 @@
       ],
       "Invalid verification code": [
         "Codice di verifica non valido"
-      ],
-      "Keep this banner hidden?": [
-        "Tenere nascosto questo banner?"
       ],
       "Label as": [
         "Etichetta come..."

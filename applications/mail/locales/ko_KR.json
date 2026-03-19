@@ -2186,6 +2186,9 @@
       "Payments problem": [
         "결제 문제"
       ],
+      "Sheets problem": [
+        "Sheets 문제"
+      ],
       "Sign in problem": [
         "로그인 문제"
       ],
@@ -4588,6 +4591,9 @@
       ],
       "Enter a password": [
         "비밀번호를 입력하세요"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "도메인 없이 (@example.co.kr) 사용자 이름을 입력해 주세요."
       ],
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API와 통신하던 중 오류가 발생했습니다."
@@ -7118,6 +7124,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText }(으)로 인증 코드가 전송되었습니다."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "인증 코드를 입력하세요. ${ digit }자입니다."
+      ],
       "Enter your own password (as organization admin).": [
         "사용자의 비밀번호 입력 (조직 관리자와 같음)"
       ],
@@ -7420,9 +7429,6 @@
       ],
       "Low Priority": [
         "중요도 낮음"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }을 기본 이메일 어플리케이션으로 설정하세요."
       ],
       "Manage your folders": [
         "폴더 관리"
@@ -8649,7 +8655,7 @@
         "계정에 기한이 지난 청구서가 하나 이상 있습니다. 회원님의 계정 접근이 곧 제한됩니다. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "귀하의 계정은 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 선택하신 요금제에서 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 요금제를 선택하십시오."
+        "사용자의 계정에 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 현재 선택한 플랜에서는 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 플랜을 선택하십시오."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "브라우저가 글쓰기 도우미를 지원하지 않습니다. 서버에서 실행해 보세요."
@@ -11884,12 +11890,6 @@
       ],
       "No parent folder": [
         "상위 폴더 없음"
-      ],
-      "Remind me later": [
-        "나중에 다시 알림"
-      ],
-      "Yes, don't show again": [
-        "네, 다시 보지 않을게요"
       ]
     },
     "Option group": {
@@ -12635,7 +12635,7 @@
         "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "귀하의 구독을 연장하고 ${ discountPercent }%를 저장하세요!"
+        "귀하의 구독을 연장하고 ${ discountPercent }%를 절약하세요!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME }에 대한 완전한 접근"
@@ -12659,7 +12659,7 @@
         "사이버 위협에 대한 더욱 강력한 보호"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 저장하세요!"
+        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 절약하세요!"
       ],
       "Unlimited daily chats": [
         "무제한 일일 채팅"
@@ -15009,9 +15009,6 @@
       ],
       "Invalid verification code": [
         "잘못된 검증 코드"
-      ],
-      "Keep this banner hidden?": [
-        "이 배너를 숨기시겠어요?"
       ],
       "Label as": [
         "라벨 추가"
