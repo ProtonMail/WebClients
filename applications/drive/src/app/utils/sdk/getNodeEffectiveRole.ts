@@ -1,5 +1,11 @@
-import type { DegradedNode, NodeEntity, ProtonDriveClient } from '@proton/drive';
-import { MemberRole } from '@proton/drive';
+import {
+    MemberRole,
+    type NodeEntity,
+    type DegradedNode,
+    NodeType,
+    type ProtonDriveClient,
+    ProtonDrivePhotosClient,
+} from '@proton/drive';
 
 import { sendErrorReport } from '../errorHandling';
 import { EnrichedError } from '../errorHandling/EnrichedError';
@@ -17,21 +23,29 @@ type Drive = Pick<ProtonDriveClient, 'getNode'>;
 // An explicit role, never Inherited
 export type EffectiveRole = Exclude<MemberRole, MemberRole.Inherited>;
 
-export const getNodeEffectiveRole = async (
+export async function getNodeEffectiveRole(
     node: NodeEntity | DegradedNode,
     drive: Drive,
     role: MemberRole = MemberRole.Inherited
-): Promise<EffectiveRole> => {
-    if (role === MemberRole.Admin || node.directRole === MemberRole.Admin) {
+): Promise<EffectiveRole> {
+    role = getHigherRole(node.directRole, role);
+
+    if (role === MemberRole.Admin) {
         return MemberRole.Admin;
     }
 
     if (node.parentUid) {
         const parent = await drive.getNode(node.parentUid);
-        const { node: parentNode } = getNodeEntity(parent);
-        role = MemberHierarchy[node.directRole] > MemberHierarchy[role] ? node.directRole : role;
-        return getNodeEffectiveRole(parentNode, drive, role);
-    } else if (node.directRole === MemberRole.Inherited) {
+        const parentNode = getNodeEntity(parent).node;
+        role = await getNodeEffectiveRole(parentNode, drive, role);
+    }
+
+    if (node.type === NodeType.Photo && drive instanceof ProtonDrivePhotosClient) {
+        const highestAlbumRole = await getHighestAlbumRole(node, drive);
+        role = getHigherRole(highestAlbumRole, role);
+    }
+
+    if (role === MemberRole.Inherited) {
         sendErrorReport(
             new EnrichedError('Node has Inherited role and no parent', {
                 tags: { component: 'drive-sdk' },
@@ -41,5 +55,29 @@ export const getNodeEffectiveRole = async (
         return MemberRole.Viewer;
     }
 
-    return role !== MemberRole.Inherited ? role : node.directRole;
-};
+    return role;
+}
+
+async function getHighestAlbumRole(node: NodeEntity | DegradedNode, drive: ProtonDrivePhotosClient): Promise<MemberRole> {
+    let role = MemberRole.Inherited;
+
+    const maybeNode = await drive.getNode(node.uid);
+    const nodeEntity = maybeNode.ok ? maybeNode.value : maybeNode.error;
+    const albumsUids = (nodeEntity.photo?.albums || []).map((album) => album.nodeUid);
+
+    for (const albumUid of albumsUids) {
+        const album = await drive.getNode(albumUid);
+        const albumNodeEntity = getNodeEntity(album).node;
+        role = getHigherRole(albumNodeEntity.directRole, role);
+
+        if (role === MemberRole.Admin) {
+            return MemberRole.Admin;
+        }
+    }
+
+    return role;
+}
+
+export function getHigherRole(role1: MemberRole, role2: MemberRole): MemberRole {
+    return MemberHierarchy[role1] > MemberHierarchy[role2] ? role1 : role2;
+}
