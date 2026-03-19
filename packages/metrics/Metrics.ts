@@ -181,6 +181,8 @@ import type { HttpsProtonMeWebDrivePerformanceClicktolastitemrenderedHistogramV2
 import type { HttpsProtonMeWebDrivePerformanceClicktonavrenderedHistogramV1SchemaJson } from './types/web_drive_performance_clicktonavrendered_histogram_v1.schema';
 import type { HttpsProtonMeWebDrivePerformanceDomcontentloadedHistogramV1SchemaJson } from './types/web_drive_performance_domcontentloaded_histogram_v1.schema';
 import type { HttpsProtonMeWebDrivePerformanceLoadHistogramV1SchemaJson } from './types/web_drive_performance_load_histogram_v1.schema';
+import type { HttpsProtonMeWebDrivePerformanceV2DataloadHistogramV1SchemaJson } from './types/web_drive_performance_v2_dataload_histogram_v1.schema';
+import type { HttpsProtonMeWebDrivePerformanceV2PageloadHistogramV1SchemaJson } from './types/web_drive_performance_v2_pageload_histogram_v1.schema';
 import type { HttpsProtonMeWebDrivePublicShareLoadErrorTotalV1SchemaJson } from './types/web_drive_public_share_load_error_total_v1.schema';
 import type { HttpsProtonMeWebDrivePublicShareLoadSuccessTotalV1SchemaJson } from './types/web_drive_public_share_load_success_total_v1.schema';
 import type { HttpsProtonMeWebDriveSearchIndexBuildTimeHistogramV1SchemaJson } from './types/web_drive_search_index_build_time_histogram_v1.schema';
@@ -538,6 +540,10 @@ class Metrics extends MetricsBase {
     public drive_performance_domcontentloaded_histogram: Histogram<HttpsProtonMeWebDrivePerformanceDomcontentloadedHistogramV1SchemaJson>;
 
     public drive_performance_load_histogram: Histogram<HttpsProtonMeWebDrivePerformanceLoadHistogramV1SchemaJson>;
+
+    public drive_performance_v2_dataload_histogram: Histogram<HttpsProtonMeWebDrivePerformanceV2DataloadHistogramV1SchemaJson>;
+
+    public drive_performance_v2_pageload_histogram: Histogram<HttpsProtonMeWebDrivePerformanceV2PageloadHistogramV1SchemaJson>;
 
     public drive_public_share_load_error_total: Counter<HttpsProtonMeWebDrivePublicShareLoadErrorTotalV1SchemaJson>;
 
@@ -1485,6 +1491,18 @@ class Metrics extends MetricsBase {
         this.drive_performance_load_histogram =
             new Histogram<HttpsProtonMeWebDrivePerformanceLoadHistogramV1SchemaJson>(
                 { name: 'web_drive_performance_load_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_performance_v2_dataload_histogram =
+            new Histogram<HttpsProtonMeWebDrivePerformanceV2DataloadHistogramV1SchemaJson>(
+                { name: 'web_drive_performance_v2_dataload_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_performance_v2_pageload_histogram =
+            new Histogram<HttpsProtonMeWebDrivePerformanceV2PageloadHistogramV1SchemaJson>(
+                { name: 'web_drive_performance_v2_pageload_histogram', version: 1 },
                 this.requestService
             );
 

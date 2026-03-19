@@ -29,7 +29,6 @@ import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview'
 import type { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
-import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { useDrivePreviewModal } from '../../../modals/preview';
 import type { EncryptedLink, LinkShareUrl, SignatureIssues } from '../../../store';
@@ -141,7 +140,6 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
         }))
     );
 
-    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
     const isAdmin = role === MemberRole.Admin;
 
     const browserItems = sortedList.map((node) => ({
@@ -182,19 +180,14 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
         [/* unstable deps: setSorting */ sortParams.sortField, sortParams.sortOrder, isLoading, browserItems.length]
     );
 
-    const handleItemRender = useCallback(
-        async (item: ItemWithAdditionalProps) => {
-            incrementItemRenderedCounter();
-
-            if (item.activeRevisionUid) {
-                loadThumbnail(getDrive(), {
-                    nodeUid: item.uid,
-                    revisionUid: item.activeRevisionUid,
-                });
-            }
-        },
-        [incrementItemRenderedCounter]
-    );
+    const handleItemRender = useCallback(async (item: ItemWithAdditionalProps) => {
+        if (item.activeRevisionUid) {
+            loadThumbnail(getDrive(), {
+                nodeUid: item.uid,
+                revisionUid: item.activeRevisionUid,
+            });
+        }
+    }, []);
 
     const handleClick = useCallback(
         (uid: BrowserItemId) => {

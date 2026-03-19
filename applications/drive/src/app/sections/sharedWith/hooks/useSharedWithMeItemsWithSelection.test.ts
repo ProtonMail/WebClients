@@ -34,12 +34,6 @@ jest.mock('../../../hooks/drive/useNavigate', () => {
     }));
 });
 
-jest.mock('../../../hooks/drive/useOnItemRenderedMetrics', () => ({
-    useOnItemRenderedMetrics: () => ({
-        incrementItemRenderedCounter: jest.fn(),
-    }),
-}));
-
 jest.mock('../../../components/sections/SortDropdown', () => ({
     translateSortField: jest.fn().mockReturnValue('Name'),
 }));

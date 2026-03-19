@@ -8,10 +8,8 @@ import { useShallow } from 'zustand/react/shallow';
 import { Loader, useAppTitle, useModalStateObject, useNotifications } from '@proton/components';
 import { generateNodeUid, getDriveForPhotos } from '@proton/drive/index';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
 import useNavigate from '../../hooks/drive/useNavigate';
-import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { AlbumTag, useThumbnailsDownload } from '../../store';
 import { useLinksActions } from '../../store/_links';
 import { sendErrorReport } from '../../utils/errorHandling';
@@ -59,14 +57,12 @@ export const AlbumsView: FC = () => {
         shareId,
         linkId,
         albums,
-        isPhotosLoading,
         isAlbumsLoading,
         loadPhotoLink,
         deleteAlbum,
         refreshSharedWithMeAlbums,
     } = useOutletContext<PhotosLayoutOutletContext>();
 
-    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
     const { modals } = usePhotoLayoutStore(
         useShallow((state) => ({
             modals: state.modals,
@@ -87,7 +83,6 @@ export const AlbumsView: FC = () => {
             if (!shareId) {
                 return;
             }
-            incrementItemRenderedCounter();
             const album = albums.find((album) => album.linkId === itemLinkId);
             if (album && album.rootShareId) {
                 loadPhotoLink(album.rootShareId, itemLinkId, domRef);
@@ -95,7 +90,7 @@ export const AlbumsView: FC = () => {
                 loadPhotoLink(shareId, itemLinkId, domRef);
             }
         },
-        [incrementItemRenderedCounter, loadPhotoLink, albums, shareId]
+        [loadPhotoLink, albums, shareId]
     );
 
     const handleItemRenderLoadedLink = useCallback(

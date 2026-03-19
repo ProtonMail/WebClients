@@ -6,10 +6,8 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, useAppTitle } from '@proton/components';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
-import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import { useThumbnailsDownload, useUserSettings } from '../../store';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../zustand/photos/layout.store';
@@ -44,7 +42,6 @@ export const PhotosWithAlbumsView = () => {
 
     const favoritePhotoToggle = useFavoritePhotoToggle();
     const { photoTags } = useUserSettings();
-    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(LayoutSetting.Grid, isPhotosLoading);
     const isShiftPressed = useShiftKey();
     const { setPreviewLinkId, currentPageType } = usePhotoLayoutStore(
         useShallow((state) => ({
@@ -65,10 +62,9 @@ export const PhotosWithAlbumsView = () => {
             if (!shareId) {
                 return;
             }
-            incrementItemRenderedCounter();
             loadPhotoLink(shareId, itemLinkId, domRef);
         },
-        [shareId, incrementItemRenderedCounter, loadPhotoLink]
+        [shareId, loadPhotoLink]
     );
 
     const handleItemRenderLoadedLink = useCallback(

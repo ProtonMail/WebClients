@@ -6,6 +6,7 @@ import { useShallow } from 'zustand/react/shallow';
 import { useNotifications } from '@proton/components';
 import { splitNodeUid, useDrive } from '@proton/drive/index';
 
+import { driveMetrics } from '../../../modules/metrics';
 import useVolumesState from '../../../store/_volumes/useVolumesState';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
@@ -35,6 +36,7 @@ export const useSharedWithMeNodesLoader = () => {
                 return;
             }
             setLoadingNodes(true);
+            const { onItemsLoadedToState, onFinished } = driveMetrics.drivePerformance.startDataLoad('sharedWithMe');
             try {
                 let showErrorNotification = false;
                 const loadedUids = new Set<string>();
@@ -89,6 +91,7 @@ export const useSharedWithMeNodesLoader = () => {
                             haveSignatureIssues: !signatureResult.ok,
                             shareId: node.deprecatedShareId,
                         });
+                        onItemsLoadedToState(1);
                     } catch (e) {
                         handleSdkError(e, {
                             showNotification: false,
@@ -157,6 +160,7 @@ export const useSharedWithMeNodesLoader = () => {
                             haveSignatureIssues: !signatureResult.ok,
                             shareId: node.deprecatedShareId,
                         });
+                        onItemsLoadedToState(1);
                     } catch (e) {
                         handleSdkError(e, {
                             showNotification: false,
@@ -177,6 +181,7 @@ export const useSharedWithMeNodesLoader = () => {
                 }
 
                 cleanupStaleItems(ItemType.DIRECT_SHARE, loadedUids);
+                onFinished();
             } catch (e) {
                 handleSdkError(e, {
                     fallbackMessage: c('Error').t`We were not able to load some items shared with you`,

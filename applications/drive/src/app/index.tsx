@@ -6,9 +6,9 @@ import ReactDOM from 'react-dom';
 import '@proton/polyfill';
 
 import App from './App';
+import { initDriveWebVitalsReporting } from './modules/metrics/webVitals';
 import './style';
-import { initializePerformanceMetrics } from './utils/performance';
 
-initializePerformanceMetrics(false);
+initDriveWebVitalsReporting(false);
 
 ReactDOM.render(<App />, document.querySelector('.app-root'));
