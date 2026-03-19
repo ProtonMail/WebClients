@@ -1229,6 +1229,9 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Reload": [
+        "Päivitä"
       ]
     },
     "Action: Docs": {
@@ -6663,6 +6666,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
+      ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "${ DRIVE_APP_NAME }:n uusi versio on saatavilla. Päivitä sivu jatkaaksesi hakua."
+      ],
+      "Indexing in progress": [
+        "Indeksointi käynnissä"
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
+        "Aidosti yksityistä hakua varten tiedostoistasi täytyy luoda paikallinen hakemisto. Voit edelleen käyttää ${ DRIVE_APP_NAME }a normaalisti – saat ilmoituksen kun indeksointi on valmis."
+      ],
+      "Update required": [
+        "Päivitys vaaditaan"
       ]
     },
     "info": {
@@ -10131,7 +10146,7 @@
         "Alennukset perustuvat normaaliin kuukausihintaan. Tilauksesi uusiutuu laskutusjakson päättyessä normaalilla vuosihinnalla."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Pidennä tilaustasi ja tallenna ${ discountPercent } %!"
+        "Pidennä tilaustasi ja säästä ${ discountPercent } %!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Täysi ${ VPN_APP_NAME } -käyttöoikeus"
@@ -10155,7 +10170,7 @@
         "Vahvempi suoja kyberuhkia vastaan"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Vaihda vuositilaukseemme ja tallenna ${ toYearlyDiscountAmount }!"
+        "Vaihda vuositilaukseemme ja säästä ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Rajattomasti päivittäisiä keskusteluja"

@@ -1238,6 +1238,9 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Reload": [
+        "Recarregar"
       ]
     },
     "Action: Docs": {
@@ -3939,6 +3942,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrável"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "O valor mínimo da doação é de ${ price }"
       ]
     },
     "error": {
@@ -6919,6 +6925,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Você ainda poderá visualizar os dados da sua própria conta, mas todas as contas de usuário serão removidas da sua organização."
+      ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "Uma nova versão do ${ DRIVE_APP_NAME } está disponível. Recarregue para continuar usando a pesquisa."
+      ],
+      "Indexing in progress": [
+        "Indexação em progresso"
+      ],
+      "Update required": [
+        "Atualização necessária"
       ]
     },
     "info": {
@@ -10610,7 +10625,7 @@
         "Os descontos são baseados nos preços mensais padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Estenda sua assinatura e salve ${ discountPercent }%!"
+        "Estenda sua assinatura e economize ${ discountPercent }%!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Acesso total ao ${ VPN_APP_NAME }"
@@ -10634,7 +10649,7 @@
         "Proteção mais forte contra ameaças cibernéticas"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Mude para o nosso plano anual e salve ${ toYearlyDiscountAmount }!"
+        "Mude para o nosso plano anual e economize ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Bate-papos diários ilimitados"

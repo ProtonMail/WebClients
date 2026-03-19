@@ -1238,6 +1238,9 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Reload": [
+        "Recharger"
       ]
     },
     "Action: Docs": {
@@ -6920,6 +6923,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Vous pourrez toujours consulter les données de votre propre compte, mais tous les comptes utilisateur seront retirés de votre organisation."
+      ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "Une nouvelle version de ${ DRIVE_APP_NAME } est disponible. Veuillez actualiser pour continuer d'utiliser la recherche."
+      ],
+      "Indexing in progress": [
+        "Indexation en cours"
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
+        "Pour permettre une recherche complète, nous devons indexer vos fichiers localement. Vous pouvez toujours utiliser ${ DRIVE_APP_NAME } normalement. Nous vous informerons lorsque l'indexation sera terminée."
+      ],
+      "Update required": [
+        "Une mise à jour est nécessaire"
       ]
     },
     "info": {
@@ -10616,7 +10631,7 @@
         "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "Prolongez votre abonnement et enregistrez ${ discountPercent } % !"
+        "Prolongez votre abonnement et économisez ${ discountPercent } % !"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Accès complet à ${ VPN_APP_NAME }"
@@ -10640,7 +10655,7 @@
         "Une protection renforcée contre les cybermenaces"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "Passez à notre abonnement annuel et enregistrez ${ toYearlyDiscountAmount } !"
+        "Passez à notre abonnement annuel et économisez ${ toYearlyDiscountAmount } !"
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"

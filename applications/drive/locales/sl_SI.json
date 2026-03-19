@@ -1130,6 +1130,60 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Cancel transfers": [
+        "Prekliči prenose"
+      ],
+      "Cancel uploads": [
+        "Prekliči nalaganja"
+      ],
+      "Continue on web": [
+        "Nadaljuj na spletu"
+      ],
+      "Download (${ nbSelected })": [
+        "Prenesi (${ nbSelected })"
+      ],
+      "Download for MacOS": [
+        "Prenesi za macOS"
+      ],
+      "Download info": [
+        "Prenesi informacije"
+      ],
+      "Export system log": [
+        "Izvozi sistemski dnevnik"
+      ],
+      "Get Drive for Business": [
+        "Drive za podjetja"
+      ],
+      "Get secure storage for ${ simplePriceString }": [
+        "Pridobite varno shrambo za ${ simplePriceString }"
+      ],
+      "Go back to album “${ albumName }“": [
+        "Nazaj na album '${ albumName }'"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "New spreadsheet": [
+        "Nov preglednica"
+      ],
+      "No sensitive data": [
+        "Ni občutljivih podatkov"
+      ],
+      "Reload": [
+        "Osveži"
+      ],
+      "Run diagnostics": [
+        "Poženi diagnostiko"
+      ],
+      "Scan & Download (${ nbSelected })": [
+        "Optično preberi in prenesi (${ nbSelected })"
+      ],
+      "This album is empty": [
+        "Ta album je prazen"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
       ]
     },
     "Actions": {
@@ -1346,6 +1400,9 @@
       ],
       "Use your own email domain": [
         "Uporabite svojo e-poštno domeno"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Neomejeno število prijav, kreditnih kartic, hide-my-email vzdevkov in več"
       ]
     },
     "BF2024: Offers": {
@@ -1377,6 +1434,12 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Prostor za shranjevanje si delijo vse aplikacije ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštni naslov, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštna naslova, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštnih naslovov, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo."
       ]
     },
     "BF2025: Deal details": {
@@ -2830,6 +2893,15 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ustvarili ste že 10 vzdevkov. Zagotovite si neomejeno število vzdevkov in 500 GB shrambe s paketom ${ BRAND_NAME } Unlimited."
+      ],
+      "To start, give your organization a name.": [
+        "Za začetek imenujte svojo organizacijo."
+      ],
+      "Upgrade to ${ planName } to keep sharing files with edit access": [
+        "Nadgradite na ${ planName } $, da boste lahko še naprej delili datoteke z dostopom za urejanje"
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Uporabite ta priročnik, da bo vaša organizacija čim prej začela izkoriščati prednosti vodilnega ekosistema za šifriranje in varstvo zasebnosti podjetja ${ BRAND_NAME }."
       ]
     },
     "description": {
@@ -2848,6 +2920,9 @@
     "Docs Info": {
       "Suggestion mode is here": [
         "Način predlogov je tukaj"
+      ],
+      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
+        "Sodelovanje je postalo lažje. Zdaj lahko vsak predlaga spremembe, ne da bi spremenil dokument."
       ]
     },
     "Downgrade account reason": {
@@ -3603,6 +3678,87 @@
       ],
       "Your import will not be processed.": [
         "Vaš uvoz ne bo obdelan."
+      ],
+      "Can't find any secure link": [
+        "Ni mogoče najti varne povezave"
+      ],
+      "Could not add to favorites": [
+        "Ni mogoče dodati med priljubljene"
+      ],
+      "Diagnostics failed": [
+        "Diagnostika ni uspela"
+      ],
+      "Error reading file": [
+        "Napaka pri branju datoteke"
+      ],
+      "Expected structure attached": [
+        "Pričakovana struktura je priložena"
+      ],
+      "Failed to copy photo to album": [
+        "Ni mogoče kopirati fotografije v album"
+      ],
+      "Failed to create public share node": [
+        "Ni uspelo ustvariti vozlišča javne povezave"
+      ],
+      "Failed to expand folder": [
+        "Ni uspelo razširiti mape"
+      ],
+      "Failed to save some photos to your Drive": [
+        "Nekaj ​​fotografij ni bilo mogoče shraniti v vaš Drive"
+      ],
+      "Failed to update public share node": [
+        "Ni uspelo posodobiti vozlišča javne povezave"
+      ],
+      "Invalid JSON file": [
+        "Neveljavna datoteka JSON"
+      ],
+      "No file to upload": [
+        "Ni datoteke za nalaganje"
+      ],
+      "Please enter a valid postal code": [
+        "Prosimo vnesite veljavno poštno številko"
+      ],
+      "Something went wrong during folder listing": [
+        "Nekaj je šlo narobe med seznamom map"
+      ],
+      "Unable to set photo as cover": [
+        "Ne morem nastaviti fotografije kot naslovne"
+      ],
+      "Unknown location": [
+        "Neznana lokacija"
+      ],
+      "Unknown number of downloads": [
+        "Neznano število prenosov"
+      ],
+      "Upload failed": [
+        "Nalaganje ni uspelo"
+      ],
+      "We cannot retrieve this item": [
+        "Ne moremo pridobiti tega predmeta"
+      ],
+      "We were not able to load some items": [
+        "Nekatere predmete ni bilo mogoče naložiti"
+      ],
+      "We were not able to load some of your bookmarks": [
+        "Nekaterih vaših zaznamkov nismo mogli naložiti"
+      ],
+      "We were not able to load some of your invitation to shared items": [
+        "Nismo mogli naložiti nekaterih vaših povabil k souporabi predmetov"
+      ],
+      "We were not able to load some of your saved shared links": [
+        "Nekaj vaših povezav v souporabi ni bilo mogoče naložiti"
+      ],
+      "We were not able to load some of your shared items": [
+        "Nekaterih vaših predmetov v skupni rabi nismo mogli naložiti"
+      ],
+      "We were not able to load some search results": [
+        "Nekaterih rezultatov iskanja ni bilo mogoče naložiti"
+      ],
+      "We were not able to load the folder contents": [
+        "Nismo mogli naložiti vsebine mape"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Ne-dešifrirano ime"
       ]
     },
     "error": {
@@ -6412,6 +6568,177 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše preizkusno obdobje se bo končalo čez ${ timeRemaining }."
+      ],
+      "${ completedItems.length } of ${ items.length } transfers completed": [
+        "${ completedItems.length } od ${ items.length } prenosov je dokončanih"
+      ],
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Datoteke ${ DOCS_APP_NAME } in ${ SHEETS_APP_NAME } ni mogoče prenesti neposredno in ne bodo vključene v ta prenos. Druge datoteke lahko prenesete s klikom na 'Nadaljuj prenos'."
+      ],
+      "${ email } invited you to join ${ albumName }": [
+        "${ email } vas je povabil, da se pridružite ${ albumName }"
+      ],
+      "${ photoCount } item": [
+        "${ photoCount } predmet",
+        "${ photoCount } predmeta",
+        "${ photoCount } predmetov",
+        "${ photoCount } predmetov"
+      ],
+      "Already in this folder": [
+        "Že v tej mapi"
+      ],
+      "Apr": [
+        "Apr"
+      ],
+      "Better in the app": [
+        "Bolje v aplikaciji"
+      ],
+      "Choose your service to connect with": [
+        "Izberite storitev, s katero se želite povezati"
+      ],
+      "Cloud storage for businesses that take security seriously": [
+        "Shramba v oblaku za podjetja, ki varnost jemljejo resno"
+      ],
+      "Collaborate efficiently while protecting your client and business data from breaches, ransomware, and surveillance.": [
+        "Učinkovito sodelujte in ščitite podatke svojih strank in podjetja pred vdori, izsiljevalsko programsko opremo in nadzorom."
+      ],
+      "Computed hash does not match XAttr": [
+        "Zgoščeni niz se ne ujema s atributom XAttr"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Ustvari varen oblak za ${ value } člana",
+        "Ustvari varen oblak za ${ value } člana",
+        "Ustvari varen oblak za ${ value } člane",
+        "Ustvari varen oblak za ${ value } članov"
+      ],
+      "Download Failed": [
+        "Prenos ni uspel"
+      ],
+      "Drop files here to upload or click on the upload button": [
+        "Spustite datoteke sem za nalaganje ali kliknite gumb za nalaganje"
+      ],
+      "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
+        "Če te datoteke niso v celoti prenesene lokalno na ${ deviceName }, ne boste imeli dostopa do njih."
+      ],
+      "In progress": [
+        "V obdelavi"
+      ],
+      "Indexing in progress": [
+        "Indeksiranje je v teku"
+      ],
+      "Integrity issues found": [
+        "Najdene težave z integriteto"
+      ],
+      "iOS and Android Apps": [
+        "aplikacija za iOS, Android"
+      ],
+      "Issues found": [
+        "Najdene težave"
+      ],
+      "Jan": [
+        "Jan"
+      ],
+      "Jul": [
+        "Julij"
+      ],
+      "Malware detected": [
+        "Odkrito je zlonamerno programje"
+      ],
+      "No issue found": [
+        "Nobena težava ni bila najdena"
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "Fotografija je bila kopirana v pretok in tam označena kot najljubša."
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Javna souporaba dokumentov še ni podprta."
+      ],
+      "Select a destination folder": [
+        "Izberite ciljno mapo"
+      ],
+      "Some items failed": [
+        "Nekateri predmeti niso uspeli"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Naročnina se samodejno obnovi na ${ cycle } mesec.",
+        "Naročnina se samodejno obnovi na ${ cycle } meseca.",
+        "Naročnina se samodejno obnovi na ${ cycle } mesece.",
+        "Naročnina se samodejno obnovi na ${ cycle } mesecev."
+      ],
+      "that": [
+        "to"
+      ],
+      "The digital signature has been partially verified. This file was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digitalni podpis je bil delno preverjen. Datoteka je bila naložena z javno dostopno povezavo za skupno rabo s strani uporabnika brez računa ${ BRAND_NAME }, zato njegove identitete ni mogoče preveriti."
+      ],
+      "The digital signature has been partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digitalni podpis je bil delno preverjen. To mapo je uporabnik brez računa ${ BRAND_NAME } naložil z javno dostopno povezavo za skupno rabo, zato njegove identitete ni mogoče preveriti."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "To je ime ali vzdevek vaše organizacije, ki ga bodo videli vaši uporabniki. Spremenite ga lahko kadarkoli."
+      ],
+      "This will cancel any remaining downloads.": [
+        "To bo preklicalo vse preostale prenose."
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "S tem boste preklicali vse preostale nalaganja in prenose. Preklicani prenosi ne bodo shranjeni v ${ DRIVE_APP_NAME }."
+      ],
+      "This will permanently delete the file you uploaded.": [
+        "S tem boste trajno izbrisali datoteko, ki ste jo naložili."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "S tem boste trajno izbrisali mapo, ki ste jo naložili."
+      ],
+      "This will permanently delete the selected items you uploaded.": [
+        "To dejanje bo trajno izbrisalo izbrane predmete, ki ste jih naložili."
+      ],
+      "This will replace the existing folder or file with the file": [
+        "To bo zamenjalo obstoječo mapo ali datoteko z datoteko"
+      ],
+      "This will replace the existing folder or file with the folder": [
+        "To bo zamenjalo obstoječo mapo ali datoteko z mapo"
+      ],
+      "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
+        "Če želite prenesti te datoteke, jih odprite v programu ${ DOCS_APP_NAME } ali ${ SHEETS_APP_NAME } in jih izvozite."
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
+        "Da omogočimo popolnoma zasebno iskanje, moramo vaše datoteke indeksirati lokalno. Še vedno lahko normalno uporabljate ${ DRIVE_APP_NAME } - obvestili vas bomo, ko bo indeksiranje končano."
+      ],
+      "Upload Failed": [
+        "Nalaganje ni uspelo"
+      ],
+      "Waiting": [
+        "Čakam"
+      ],
+      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
+        "Trenutno imamo tehnične težave. Vsa dejanja, povezana z albumi, so začasno onemogočena."
+      ],
+      "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
+        "Nismo mogli preveriti, ali je ${ nameAuthor } naložil ${ node.name }. Naslednje je bilo morda spremenjeno: vrstni red podatkov v datoteki. Odprite samo, če ji zaupate."
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "Dobrodošli v ${ DRIVE_APP_NAME }, prvih 10 minut nobena datoteka, ki jo naložite, ne šteje k vaši kvoti za shrambo."
+      ],
+      "who": [
+        "kdo"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Zavrnili boste povabilo za pridružitev albumu ${ invitationName }. Če boste nadaljevali, do njega ne boste mogli dostopati, razen če vas lastnik ponovno povabi. Ste prepričani, da želite nadaljevati?"
+      ],
+      "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
+        "Pravkar boste zavrnili povabilo za pridružitev mapi ${ invitationName }. Če nadaljujete, do nje ne boste mogli dostopati, razen če vas lastnik ponovno povabi. Ali ste prepričani, da želite nadaljevati?"
+      ],
+      "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
+        "Vaš trenutni brskalnik ne podpira prenosa velikih datotek/več datotek. Prenesite namizno aplikacijo za nemoteno nalaganje in prenos."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Vaš načrtovani paket se začne ${ renewalTime } in se bo samodejno obnavljal vsak ${ cycle } mesec.",
+        "Vaš načrtovani paket se začne ${ renewalTime } in se bo samodejno obnavljal vsaka ${ cycle } meseca.",
+        "Vaš načrtovani paket se začne ${ renewalTime } in se bo samodejno obnavljal vsake ${ cycle } mesece.",
+        "Vaš načrtovani paket se začne ${ renewalTime } in se bo samodejno obnavljal vsakih ${ cycle } mesecev."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Prav tako izgubite dostop do ${ boldPlanTitle } možnosti:"
       ]
     },
     "info": {
@@ -7142,6 +7469,18 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Applications in a business setting": [
+        "Aplikacije v poslovnem okolju"
+      ],
+      "File transfer overview": [
+        "Pregled prenosa datotek"
+      ],
+      "Replace existing folder or file": [
+        "Zamenjaj obstoječo mapo ali datoteko"
+      ],
+      "Share a file, folder, or album": [
+        "Daj v skupno rabo datoteko, mapo ali album"
       ]
     },
     "Label for contact group color": {
@@ -7732,6 +8071,9 @@
       ],
       "Upgrade": [
         "Nadgradnja"
+      ],
+      "Plans starting from ${ priceDrivePlus }": [
+        "Paketi že od ${ priceDrivePlus }"
       ]
     },
     "new_plans: feature": {
@@ -8196,6 +8538,24 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Pregledujemo temni splet in preverjamo, ali so bili razkriti naslovi ali vzdevki ${ BRAND_NAME }. V primeru uhajanja podatkov vas bomo o tem obvestili."
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } deljen ${ PASS_SHORT_APP_NAME } trezor na uporabnika",
+        "${ n } deljena ${ PASS_SHORT_APP_NAME } trezorja na uporabnika",
+        "${ n } deljeni ${ PASS_SHORT_APP_NAME } trezorji na uporabnika",
+        "${ n } deljenih ${ PASS_SHORT_APP_NAME } trezorjev na uporabnika"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "${ n } uporabnik (${ adminsText }, ${ usersText })",
+        "Do ${ n } uporabnika (${ adminsText }, ${ usersText })",
+        "Do ${ n } uporabnike (${ adminsText }, ${ usersText })",
+        "Do ${ n } uporabnikov (${ adminsText }, ${ usersText })"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Uporabite na ${ n } napravi hkrati",
+        "Uporabite na do ${ n } napravah hkrati",
+        "Uporabite na do ${ n } napravah hkrati",
+        "Uporabite na do ${ n } napravah hkrati"
       ]
     },
     "new_plans: feature highlight": {
@@ -8907,6 +9267,30 @@
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavitve so bile uspešno spremenjene"
+      ],
+      "\"${ name }\" deleted permanently": [
+        "\"${ name }\" trajno izbrisan"
+      ],
+      "\"${ name }\" successfully copied": [
+        "\"${ name }\" je bil uspešno kopiran"
+      ],
+      "Copy of \"${ name }\" moved to trash": [
+        "Kopija \"${ name }\" je bila premaknjena v smetnjak"
+      ],
+      "Failed to load invitation details": [
+        "Podrobnosti o povabilu ni bilo mogoče naložiti"
+      ],
+      "Invitation's email was sent again": [
+        "E-poštno sporočilo s povabilom je bilo ponovno poslano"
+      ],
+      "Public link access updated": [
+        "Dostop do javne povezave posodobljen"
+      ],
+      "Selected photo(s) already in \"${ albumName }\"": [
+        "Izbrana fotografija(e) je(so) že v \"${ albumName }\""
+      ],
+      "The document failed to be created": [
+        "Dokumenta ni bilo mogoče ustvariti"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8992,6 +9376,9 @@
       ],
       "Your subscription renews soon": [
         "Vaša naročnina se bo kmalu obnovila"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Nadgradite svojo shrambo za samo ${ pricingTitle } s paketom ${ planName }"
       ]
     },
     "Offer fearue": {
@@ -9023,6 +9410,9 @@
       ],
       "Storage": [
         "Shramba"
+      ],
+      "File version history (over 1 week)": [
+        "Zgodovina različic datoteke (več kot en teden)"
       ]
     },
     "Onboarding": {
@@ -9119,6 +9509,30 @@
       ],
       "Work faster, smarter": [
         "Delajte hitreje, pametneje"
+      ],
+      "Access your files on the go": [
+        "Dostopajte do svojih datotek na poti"
+      ],
+      "Back up your photos and memories": [
+        "S varnostno kopirajte svoje fotografije in spomine"
+      ],
+      "Faster uploads for large or multiple files": [
+        "Hitrejše nalaganje velikih ali več datotek"
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "Datoteke, naložene v tem času, ne bodo prištete k vaši omejitvi prostora za shranjevanje."
+      ],
+      "Final approval in progress": [
+        "Končno potrjevanje v teku"
+      ],
+      "Invite team members": [
+        "Povabi člane ekipe"
+      ],
+      "Organize files right from your desktop": [
+        "Organizirajte datoteke neposredno s svoje namizne aplikacije"
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Odčitajte kodo QR, da namestite mobilno aplikacijo"
       ]
     },
     "Onboarding Trial": {
@@ -9180,6 +9594,15 @@
       ],
       "No parent folder": [
         "Ni nadrejene mape"
+      ],
+      "Only current location: ${ name }": [
+        "Samo trenutna lokacija: ${ name }"
+      ],
+      "Select JSON file": [
+        "Izberite JSON datoteko"
+      ],
+      "Verify thumbnails": [
+        "Preveri sličice"
       ]
     },
     "Option group label": {
@@ -9401,6 +9824,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaša naročnina trenutno vsebuje obstoječi popust. Premik na to novo promocijo pomeni, da obstoječi popust ne bo več veljal."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Posebna znižana cena v višini ${ priceWithDiscount } velja za ${ subscriptionLength } mesec.",
+        "Posebna znižana cena v višini ${ priceWithDiscount } velja za prva ${ subscriptionLength } meseca.",
+        "Posebna znižana cena v višini ${ priceWithDiscount } velja za prve ${ subscriptionLength } mesece.",
+        "Posebna znižana cena v višini ${ priceWithDiscount } velja za prvih ${ subscriptionLength } mesecev."
       ]
     },
     "Payments.Error": {
@@ -10282,6 +10711,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Zdaj lahko preprosto iščete po datotekah v storitvi Drive, hkrati pa ohranjate varnost svojih podatkov."
+      ],
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Povezava do tega predmeta je bila shranjena na vaš pogon. Do nje lahko dostopate pozneje v razdelku »Deli z mano«."
       ]
     },
     "sso": {
@@ -10728,6 +11160,18 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš kratek e-poštni vzdevek @pm.me"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } vam omogoča dostop do vseh naprednih funkcij storitev ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }. Zasebnost je vgrajena, zato lahko nadaljujete z delom, vedoč, da sta vaša identiteta in podatki varni."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } nudi ${ planMaxSpace } prostora za shranjevanje na uporabnika za e-pošto, priponke, dogodke in datoteke. Prav tako ste upravičeni do letnih bonusov za shrambo."
+      ],
+      "Catch-all email address": [
+        "Zoom srečanje"
+      ],
+      "Invited members will be removed from your organization": [
+        "Povabljeni člani bodo odstranjeni iz vaše organizacije"
       ]
     },
     "subscription reminder": {
@@ -10820,6 +11264,24 @@
       ],
       "Your videos will appear here": [
         "Vaši videoposnetki bodo prikazani tukaj"
+      ],
+      "Securely share your favorite moments with friends and family using Albums.": [
+        "Varno delite svoje najljubše trenutke s prijatelji in družino z uporabo albumov."
+      ],
+      "Shared by ${ sharedBy }": [
+        "V skupni rabi ${ sharedBy }"
+      ],
+      "Your favorited photos will appear here": [
+        "Vaše priljubljene fotografije bodo prikazane tukaj"
+      ],
+      "Your Live Photos will appear here": [
+        "Vaše fotografije v živo se bodo prikazale tukaj"
+      ],
+      "Your photo bursts will appear here": [
+        "Vaše fotografske serije bodo prikazane tukaj"
+      ],
+      "Your screenshots will appear here": [
+        "Vaše posnetki zaslona se bodo prikazali tukaj"
       ]
     },
     "Success": {
@@ -11965,6 +12427,120 @@
       ],
       "You’ve got 5 GB of storage": [
         "Pridobili ste pet GB prostora za shranjevanje."
+      ],
+      "Advanced details": [
+        "Napredne podrobnosti"
+      ],
+      "Cancel all downloads?": [
+        "Prekliči vse prenose?"
+      ],
+      "Cancel all transfers?": [
+        "Preklicati vse prenose?"
+      ],
+      "Cancel all uploads?": [
+        "Prekliči vse prenose?"
+      ],
+      "Choose a provider": [
+        "Izberite ponudnika"
+      ],
+      "Custom": [
+        "Po meri"
+      ],
+      "Delete ${ total } item?": [
+        "Izbrišem ${ total } predmet?",
+        "Izbrišem ${ total } predmeta?",
+        "Izbrišem ${ total } predmete?",
+        "Izbrišem ${ total } predmete?"
+      ],
+      "Diagnostics": [
+        "Diagnostika"
+      ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digitalni podpis je bil delno preverjen. Ta datoteka je bila ustvarjena z javno dostopno povezavo za skupno rabo s strani uporabnika brez računa ${ BRAND_NAME }, zato njegove identitete ni mogoče preveriti."
+      ],
+      "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Digitalni podpis je bil delno preverjen. Ta mapa je bila ustvarjena z javno dostopno povezavo za skupno rabo s strani uporabnika brez računa ${ BRAND_NAME }, zato njegove identitete ni mogoče preveriti."
+      ],
+      "Digital signature verified. This file was securely uploaded by <strong>${ emailAddress }</strong>.": [
+        "Digitalni podpis preverjen. To datoteko je varno naložil <strong>${ emailAddress }</strong>."
+      ],
+      "Digital signature verified. This folder was securely created by <strong>${ emailAddress }</strong>.": [
+        "Digitalni podpis preverjen. To mapo je varno ustvaril <strong>${ emailAddress }</strong>."
+      ],
+      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
+        "Pridobite ${ DRIVE_SHORT_APP_NAME } na svoj telefon"
+      ],
+      "Get mobile and desktop apps": [
+        "Prenesite mobilne in namizne aplikacije"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Uvozite svoje podatke v ${ BRAND_NAME }"
+      ],
+      "Make a copy": [
+        "Naredi kopijo"
+      ],
+      "Need to share more files with edit access?": [
+        "Želite datoteke deliti z možnostjo urejanja?"
+      ],
+      "Original size in bytes": [
+        "Izvirna velikost v bajtih"
+      ],
+      "Photo albums are here!": [
+        "Albumi s fotografijami so tukaj!"
+      ],
+      "Ready, set, upload.": [
+        "Pripravljeni, začnimo nalaganje."
+      ],
+      "Select data to import": [
+        "Izberite podatke za uvoz"
+      ],
+      "Size in bytes": [
+        "Velikost v bajtih"
+      ],
+      "This is likely due to the account or address having been deleted.": [
+        "To je verjetno posledica tega, da je bil račun ali naslov izbrisan."
+      ],
+      "Unknown user": [
+        "Neznan uporabnik"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Povečajte svojo produktivnost za ${ formattedPrice } s paketom ${ planName }"
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
+        "Nismo mogli preveriti, ali je <strong>${ emailAddress }</strong> ustvaril to datoteko."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "Nismo mogli preveriti, ali je <strong>${ emailAddress }</strong> ustvaril to mapo."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this folder.": [
+        "Nismo mogli preveriti, ali je <strong>${ emailAddress }</strong> naložil to mapo."
+      ],
+      "We couldn’t verify that an anonymous user created this file.": [
+        "Nismo mogli preveriti, ali je anonimni uporabnik ustvaril to datoteko."
+      ],
+      "We couldn’t verify that an anonymous user created this folder.": [
+        "Nismo mogli preveriti, ali je anonimni uporabnik ustvaril to mapo."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this file.": [
+        "Nismo mogli preveriti, ali je anonimni uporabnik naložil to datoteko."
+      ],
+      "We couldn’t verify that an anonymous user uploaded this folder.": [
+        "Nismo mogli preveriti, ali je anonimni uporabnik naložil to mapo."
+      ],
+      "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ nodeEntity.nameAuthor.error.error }": [
+        "Nismo mogli potrditi, da je ime ustvaril ali spremenil ${ claimedNameAuthor }. Razlog: ${ nodeEntity.nameAuthor.error.error }"
+      ],
+      "We weren’t able to confirm that the node was created by ${ claimedKeyAuthor }. The reason is: ${ nodeEntity.keyAuthor.error.error }": [
+        "Nismo mogli potrditi, da je vozlišče ustvaril ${ claimedKeyAuthor }. Razlog: ${ nodeEntity.keyAuthor.error.error }"
+      ],
+      "Welcome offer": [
+        "Ponudba dobrodošlice"
+      ],
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "Vaš prenos vključuje ${ DOCS_APP_NAME } ali ${ SHEETS_APP_NAME } datoteke"
+      ],
+      "You’re off to a great start!": [
+        "Odlično ste začeli!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12102,6 +12678,9 @@
       ],
       "Name must not be empty": [
         "Ime ne sme biti prazno"
+      ],
+      "Name must not contain slashes (/)": [
+        "Ime ne sme vsebovati poševnic (/)"
       ]
     },
     "Video control": {
@@ -12154,6 +12733,12 @@
         "Strežniki v več kot ${ numberOfCountries } državah",
         "Strežniki v več kot ${ numberOfCountries } državah",
         "Strežniki v več kot ${ numberOfCountries } državah"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Samodejno izbrano iz ${ numberOfCountries } države",
+        "Samodejno izbrano iz ${ numberOfCountries } držav",
+        "Samodejno izbrano iz ${ numberOfCountries } držav",
+        "Samodejno izbrano iz ${ numberOfCountries } držav"
       ]
     },
     "vpn_2step: feature": {
@@ -12190,6 +12775,12 @@
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Varnejši način izmenjave Bitcoina prek e-pošte namesto zapletenih 26-znakovnih Bitcoin naslovov, ki so dovzetni za napake"
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-poštni naslov",
+        "${ n } ${ BRAND_NAME } e-poštna naslova",
+        "${ n } ${ BRAND_NAME } e-poštni naslovi",
+        "${ n } ${ BRAND_NAME } e-poštnih naslovov"
       ]
     },
     "wallet_signup_2024:app-switcher": {
@@ -12274,6 +12865,21 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaša preskusna različica se izteče ${ textDate }. Če do ${ textDate } prekličete, vam ne bo zaračunano. ${ action }"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Vaše brezplačno preizkusno obdobje se izteče čez ${ timeRemaining }"
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "Napredni uvoz"
+      ]
+    },
+    "Upsell": {
+      "Get Drive for Business": [
+        "Pridobite Drive za podjetja"
       ]
     }
   }
