@@ -23,7 +23,8 @@ jest.mock('proton-mail/helpers/message/messageContent', () => ({
 jest.mock('proton-mail/helpers/message/messageSignature', () => ({
     insertSignature: jest.fn((content, signature) => {
         if (signature) {
-            return `${content}<div class="protonmail_signature_block">${signature}</div>`;
+            // Mimics real insertSignature which prepends signature before content
+            return `<div class="protonmail_signature_block">${signature}</div>${content}`;
         }
         return content;
     }),
@@ -327,6 +328,38 @@ describe('draft content html', () => {
             expect(result.document).toBeDefined();
             expect(result.document?.tagName).toBe('BODY');
             expect(result.document?.innerHTML).toContain('Test content');
+        });
+
+        it('should place signature after mailto body content', () => {
+            const referenceMessage = {
+                data: {
+                    ID: 'test-id',
+                    Time: Date.now() / 1000,
+                    Sender: sender,
+                    MIMEType: 'text/html',
+                },
+                decryption: {
+                    decryptedBody: '<div>Mailto body content</div>',
+                },
+            } as any;
+
+            const result = createHTMLDraftContent({
+                action: MESSAGE_ACTIONS.NEW,
+                referenceMessage,
+                mailSettings,
+                userSettings,
+                addresses,
+                senderAddress,
+                fontStyle,
+            });
+
+            const html = result.document?.innerHTML || '';
+            const bodyIndex = html.indexOf('Mailto body content');
+            const signatureIndex = html.indexOf('HTML Signature');
+
+            expect(bodyIndex).toBeGreaterThan(-1);
+            expect(signatureIndex).toBeGreaterThan(-1);
+            expect(bodyIndex).toBeLessThan(signatureIndex);
         });
     });
 });

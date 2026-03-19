@@ -128,14 +128,28 @@ export const createHTMLDraftContent = ({
             ? referenceMessage?.decryption?.decryptedBody || ''
             : generateBlockquote(referenceMessage || {}, mailSettings, userSettings, addresses, action);
 
-    const messageWithSignature = insertSignature(
-        messageBody,
-        senderAddress?.Signature,
-        action,
-        mailSettings,
-        userSettings,
-        fontStyle
-    );
+    let messageWithSignature: string;
+    if (action === MESSAGE_ACTIONS.NEW && messageBody) {
+        // For mailto bodies, place it first then the signature after.
+        const signatureOnly = insertSignature(
+            '',
+            senderAddress?.Signature,
+            action,
+            mailSettings,
+            userSettings,
+            fontStyle
+        );
+        messageWithSignature = messageBody + signatureOnly;
+    } else {
+        messageWithSignature = insertSignature(
+            messageBody,
+            senderAddress?.Signature,
+            action,
+            mailSettings,
+            userSettings,
+            fontStyle
+        );
+    }
 
     return { plainText: undefined, document: parseStringToDOM(messageWithSignature).body };
 };

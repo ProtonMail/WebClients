@@ -15,9 +15,7 @@ export const toAddresses = (emailsStr: string): Recipient[] => {
 
     // Remove potential unwanted HTML entities such as '&shy;' from the address
     const escaped = emails.map((email) => {
-        // Some HTML Entities might still be URI encoded at this point
-        const uriDecoded = decodeURIComponent(email);
-        return unescapeFromString(uriDecoded).trim();
+        return unescapeFromString(email).trim();
     });
 
     return escaped.map((element) => {
@@ -37,6 +35,49 @@ export const toAddresses = (emailsStr: string): Recipient[] => {
         // Element is an address only
         return { Name: sanitizedElement, Address: sanitizedElement };
     });
+};
+
+const MAILTO_PARAMS = {
+    subject: null,
+    cc: null,
+    bcc: null,
+    body: null,
+} as const;
+
+type MailtoParams = Record<keyof typeof MAILTO_PARAMS, string | null>;
+
+const isMailtoParam = (key: string): key is keyof MailtoParams => {
+    return key in MAILTO_PARAMS;
+};
+
+/**
+ * NOTE: Unlike URL.searchParams.get(), this does not treat `+` as space, important for email aliases (user+tag@proton.me)
+ *
+ * Some mailto links in the wild may use `+` for spaces instead of %20, though they should be rare.
+ *
+ * This is compliant with RFC 6068 (MAILTO)
+ *
+ * @param search - mailto query string excluding the to section
+ */
+const parseMailtoParams = (search: string): MailtoParams => {
+    const params: MailtoParams = { subject: null, cc: null, bcc: null, body: null };
+    if (!search || search === '?') {
+        return params;
+    }
+
+    const query = search.startsWith('?') ? search.slice(1) : search;
+    for (const pair of query.split('&')) {
+        const eqIndex = pair.indexOf('=');
+        if (eqIndex === -1) {
+            continue;
+        }
+        const key = decodeURIComponent(pair.slice(0, eqIndex)).toLowerCase();
+        if (isMailtoParam(key)) {
+            params[key] = decodeURIComponent(pair.slice(eqIndex + 1));
+        }
+    }
+
+    return params;
 };
 
 /**
@@ -59,23 +100,17 @@ export const mailtoParser = (mailto: string): PartialMessageState => {
     const to = mailto.substring(7, j);
 
     const url = new URL(mailto);
-
-    const searchObject = {
-        subject: url.searchParams.get('subject'),
-        cc: url.searchParams.get('cc'),
-        bcc: url.searchParams.get('bcc'),
-        body: url.searchParams.get('body'),
-    };
+    const searchObject = parseMailtoParams(url.search);
 
     const message: Partial<Message> = {};
     let decryptedBody;
 
     if (to) {
-        message.ToList = toAddresses(to);
+        message.ToList = toAddresses(decodeURIComponent(to));
     }
 
     if (searchObject.subject) {
-        message.Subject = decodeURIComponent(sanitizeString(searchObject.subject));
+        message.Subject = sanitizeString(searchObject.subject);
     }
 
     if (searchObject.cc) {
@@ -87,8 +122,11 @@ export const mailtoParser = (mailto: string): PartialMessageState => {
     }
 
     if (searchObject.body) {
+        // Convert newline characters to <br> tags so they pass through HTML processing.
+        // Handles %0D%0A (CRLF) and %0A (LF) after URL decoding.
+        const bodyWithLineBreaks = searchObject.body.replace(/\r\n|\n/g, '<br />');
         // use protonizer to replace src attributes to proton-src so that images are not loading without user approval
-        decryptedBody = decodeURIComponent(protonizer(searchObject.body, true).innerHTML);
+        decryptedBody = protonizer(bodyWithLineBreaks, true).innerHTML;
     }
 
     return { data: message, decryption: { decryptedBody } };
