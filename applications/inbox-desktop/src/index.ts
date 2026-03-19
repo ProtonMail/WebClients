@@ -3,7 +3,7 @@ import { handleIPCCalls } from "./ipc/main";
 import { handleWinNotification } from "./ipc/notification";
 import { moveUninstaller } from "./macos/uninstall";
 import { saveAppID } from "./store/idStore";
-import { getSettings } from "./store/settingsStore";
+import { getSettings, updateSettings } from "./store/settingsStore";
 import { performStoreMigrations } from "./store/storeMigrations";
 import { initializeUpdateChecks, updateDownloaded } from "./update/update";
 import { isMac } from "./utils/helpers";
@@ -36,6 +36,8 @@ import { preventRemoteDebugging, registerDebugStartOptions } from "./debug/start
 import { registerIOStreamErrorHandlers } from "./utils/errors/io-stream";
 import { profiler } from "./utils/profiler/profiler";
 import { performance } from "node:perf_hooks";
+import { join } from "node:path";
+import fs from "node:fs";
 import { quitTracker } from "./utils/log/quitTracker";
 
 (async function () {
@@ -71,6 +73,20 @@ import { quitTracker } from "./utils/log/quitTracker";
 
     // Config initialization
     saveAppID();
+
+    // Chromium logs, one-shot, auto-disabled for next session and log is overwritten
+    if (getSettings().chromiumLoggingEnabled) {
+        updateSettings({ chromiumLoggingEnabled: false });
+        const chromiumLogPath = join(app.getPath("logs"), "chromium.log");
+        try {
+            fs.unlinkSync(chromiumLogPath);
+        } catch {
+            // ignore (file may not exist)
+        }
+        app.commandLine.appendSwitch("enable-logging", "file");
+        app.commandLine.appendSwitch("log-level", "1");
+        app.commandLine.appendSwitch("log-file", chromiumLogPath);
+    }
 
     // We do not want to show certificates errors to users.
     // Also, this can happen during development when running the server locally.
