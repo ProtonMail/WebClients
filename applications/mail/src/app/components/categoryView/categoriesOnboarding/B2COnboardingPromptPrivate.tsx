@@ -1,7 +1,9 @@
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { type ModalProps, Prompt, useModalState } from '@proton/components';
 
 const B2COnboardingPromptPrivate = (props: ModalProps) => {
     return (

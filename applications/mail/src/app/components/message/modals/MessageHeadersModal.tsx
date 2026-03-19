@@ -1,8 +1,12 @@
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Form from '@proton/components/components/form/Form';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components';
-import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 

@@ -1,9 +1,9 @@
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components';
-import { Prompt } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';

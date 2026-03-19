@@ -1,6 +1,8 @@
+import useApi from '@proton/components/hooks/useApi';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { Dispatch, SetStateAction } from 'react';
 
-import { useApi, useModalTwo, useNotifications } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';

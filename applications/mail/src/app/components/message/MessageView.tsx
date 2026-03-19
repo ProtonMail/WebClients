@@ -1,7 +1,7 @@
+import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
 import type { FocusEvent, FocusEventHandler, Ref, RefObject } from 'react';
 import { forwardRef, memo, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 
-import { useKeyTransparencyContext } from '@proton/components';
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

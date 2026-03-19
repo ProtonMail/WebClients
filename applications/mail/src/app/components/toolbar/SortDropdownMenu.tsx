@@ -1,6 +1,7 @@
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { c } from 'ttag';
 
-import { DropdownMenu, DropdownMenuButton } from '@proton/components';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Sort } from '@proton/shared/lib/mail/search';

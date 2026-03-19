@@ -5,17 +5,13 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import {
-    Checkbox,
-    ConditionComparator,
-    ConditionType,
-    FilterModal,
-    FiltersUpsellModal,
-    OPERATORS,
-    computeTree,
-    newFilter,
-    useModalState,
-} from '@proton/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import FiltersUpsellModal from '@proton/components/components/upsell/modals/FiltersUpsellModal';
+import { OPERATORS } from '@proton/components/containers/filters/constants';
+import { ConditionComparator, ConditionType } from '@proton/components/containers/filters/interfaces';
+import FilterModal from '@proton/components/containers/filters/modal/FilterModal';
+import { computeTree, newFilter } from '@proton/components/containers/filters/utils';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

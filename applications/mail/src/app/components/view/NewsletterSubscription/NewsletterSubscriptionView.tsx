@@ -1,7 +1,10 @@
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import { useEffect, useRef } from 'react';
 import { Redirect } from 'react-router-dom';
 
-import { ErrorBoundary, StandardErrorPage, useActiveBreakpoint, useModalStateObject } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { domIsBusy } from '@proton/shared/lib/busy';

@@ -1,6 +1,7 @@
+import Icon from '@proton/components/components/icon/Icon';
+import Loader from '@proton/components/components/loader/Loader';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon, Loader } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { getSendIconHref, getStatusIconName } from '../../helpers/message/icon';

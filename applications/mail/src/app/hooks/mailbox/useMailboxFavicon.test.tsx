@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useDynamicFavicon } from '@proton/components';
+import useDynamicFavicon from '@proton/components/hooks/useDynamicFavicon';
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -12,8 +12,9 @@ import { DEFAULT_MAIL_SETTINGS, UNREAD_FAVICON, VIEW_MODE } from '@proton/shared
 
 import { useMailboxFavicon } from './useMailboxFavicon';
 
-jest.mock('@proton/components', () => ({
-    useDynamicFavicon: jest.fn(),
+jest.mock('@proton/components/hooks/useDynamicFavicon', () => ({
+    __esModule: true,
+    default: jest.fn(),
 }));
 
 jest.mock('@proton/mail/store/mailSettings/hooks');

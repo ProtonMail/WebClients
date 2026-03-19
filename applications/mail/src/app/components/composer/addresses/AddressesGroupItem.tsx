@@ -1,18 +1,16 @@
+import ContextMenu from '@proton/components/components/contextMenu/ContextMenu';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import useDragOver from '@proton/components/hooks/useDragOver';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { DragEvent, MouseEvent, RefObject } from 'react';
 import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import {
-    ContextMenu,
-    DropdownMenu,
-    DropdownMenuButton,
-    useDragOver,
-    useModalState,
-    useNotifications,
-    usePopperAnchor,
-} from '@proton/components';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { IcSquares } from '@proton/icons/icons/IcSquares';

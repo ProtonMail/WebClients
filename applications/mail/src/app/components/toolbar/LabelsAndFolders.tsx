@@ -1,10 +1,10 @@
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import type { Ref } from 'react';
 
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Vr } from '@proton/atoms/Vr/Vr';
-import { DropdownSizeUnit } from '@proton/components';
 import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
 import { IcTag } from '@proton/icons/icons/IcTag';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

@@ -1,8 +1,9 @@
+import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
 
-import { useApi, useNotifications } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import type { MessageKeys, MessageState } from '@proton/mail/store/messages/messagesTypes';

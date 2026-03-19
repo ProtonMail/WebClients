@@ -1,3 +1,8 @@
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
+import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
+import useApi from '@proton/components/hooks/useApi';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useState } from 'react';
 
 import { c } from 'ttag';
@@ -5,13 +10,6 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import {
-    InputFieldTwo,
-    OnboardingStep,
-    type OnboardingStepRenderCallback,
-    useApi,
-    useFormErrors,
-} from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';

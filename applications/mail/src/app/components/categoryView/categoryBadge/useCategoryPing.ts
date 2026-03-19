@@ -1,8 +1,8 @@
+import useApi from '@proton/components/hooks/useApi';
 import { useEffect } from 'react';
 
 import { differenceInHours } from 'date-fns';
 
-import { useApi } from '@proton/components';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 

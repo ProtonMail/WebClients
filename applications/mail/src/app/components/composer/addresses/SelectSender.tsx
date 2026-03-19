@@ -1,7 +1,8 @@
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { MutableRefObject } from 'react';
 import { useState } from 'react';
 
-import { DropdownSizeUnit, SelectTwo } from '@proton/components';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import generateUID from '@proton/utils/generateUID';

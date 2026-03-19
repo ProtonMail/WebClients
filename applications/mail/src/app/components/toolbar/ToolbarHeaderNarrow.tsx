@@ -1,8 +1,9 @@
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoints';
 import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useActiveBreakpoint, useElementBreakpoints } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';

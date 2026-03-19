@@ -1,7 +1,9 @@
+import ContactSelectorModal from '@proton/components/containers/contacts/selector/ContactSelectorModal';
+import { useContactModals } from '@proton/components/containers/contacts/hooks/useContactModals';
+import useToggle from '@proton/components/hooks/useToggle';
 import type { MouseEvent, MutableRefObject } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
-import { ContactSelectorModal, useContactModals, useToggle } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import noop from '@proton/utils/noop';
 

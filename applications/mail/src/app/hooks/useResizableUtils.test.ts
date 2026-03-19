@@ -4,14 +4,17 @@ import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
 
 import { resetMemoryCacheForTesting, useResizableUtils } from './useResizableUtils';
 
-// Mock useHandler and useWindowSize implementations for easier testing
-jest.mock('@proton/components', () => ({
+jest.mock('@proton/components/hooks/useHandler', () => ({
     useHandler: jest.fn((fn) => {
         const handler = (...args: any[]) => fn(...args);
         handler.cancel = jest.fn();
         return handler;
     }),
-    useWindowSize: jest.fn(() => [1000, 1000]),
+}));
+
+jest.mock('@proton/components/hooks/useWindowSize', () => ({
+    __esModule: true,
+    default: jest.fn(() => [1000, 1000]),
 }));
 
 const localStorageMock = {

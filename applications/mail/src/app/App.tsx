@@ -1,22 +1,20 @@
+import ApiProvider from '@proton/components/containers/api/ApiProvider';
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import CalendarModelEventManagerProvider from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
+import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
+import LoaderPage from '@proton/components/containers/app/LoaderPage';
+import ProtonApp from '@proton/components/containers/app/ProtonApp';
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
+import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
 import type { FunctionComponent } from 'react';
 import { useState } from 'react';
 import { Router } from 'react-router-dom';
 
 import EasySwitchStoreInitializer from '@proton/activation/src/logic/EasySwitchStoreInitializer';
 import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider';
-import {
-    ApiProvider,
-    AuthenticationProvider,
-    CalendarModelEventManagerProvider,
-    DrawerProvider,
-    ErrorBoundary,
-    EventManagerProvider,
-    LoaderPage,
-    ProtonApp,
-    StandardErrorPage,
-    StandardLoadErrorPage,
-    StandardPrivateApp,
-} from '@proton/components';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';

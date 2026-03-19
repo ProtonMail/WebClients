@@ -1,7 +1,10 @@
+import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
+import Spotlight from '@proton/components/components/spotlight/Spotlight';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useLocalState from '@proton/components/hooks/useLocalState';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { SimpleSidebarListItemHeader, Spotlight, useActiveBreakpoint, useLocalState } from '@proton/components';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import noop from '@proton/utils/noop';
 

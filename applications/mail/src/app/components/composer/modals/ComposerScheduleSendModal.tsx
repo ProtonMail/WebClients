@@ -1,3 +1,6 @@
+import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import TimeInput from '@proton/components/components/input/TimeInput';
 import { useEffect, useState } from 'react';
 
 import { addDays, endOfToday, getUnixTime, isToday } from 'date-fns';
@@ -5,7 +8,6 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms/Href/Href';
-import { DateInputTwo, InputFieldTwo, TimeInput } from '@proton/components';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
