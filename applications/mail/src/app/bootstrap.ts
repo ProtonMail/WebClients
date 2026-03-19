@@ -34,6 +34,11 @@ import noop from '@proton/utils/noop';
 
 import { registerMailToProtocolHandler } from 'proton-mail/helpers/url';
 
+import {
+    canLoadRunner,
+    shouldLoadMigrationWorker,
+} from './helpers/encryptedSearch/migration-system/helpers/shouldLoadMigrationWorker';
+import { migrationToolWorker } from './helpers/encryptedSearch/migration-system/migrationToolWorker';
 import locales from './locales';
 import { type MailState, extendStore, setupStore } from './store/store';
 
@@ -170,6 +175,15 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
         // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
         const [, mailSettings, organization] = await preloadPromise;
+
+        if (unleashClient.isEnabled('EncryptedSearchMigrationSystem')) {
+            const shouldLoad = await shouldLoadMigrationWorker(userData.user);
+            const canLoad = canLoadRunner();
+
+            if (shouldLoad && canLoad) {
+                void migrationToolWorker({ user: userData.user, keyPassword: authentication.getPassword() });
+            }
+        }
 
         const OnlyInInboxForCategoriesCounts =
             organization.Settings.MailCategoryViewEnabled && mailSettings.MailCategoryView ? 1 : 0;
