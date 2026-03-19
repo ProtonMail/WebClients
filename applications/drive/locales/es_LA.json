@@ -551,6 +551,9 @@
       "Go to settings": [
         "Ir a los ajustes"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -808,6 +811,9 @@
       ],
       "Refresh the page": [
         "Refrescar la página"
+      ],
+      "Reload": [
+        "Recargar"
       ],
       "Remove": [
         "Eliminar"
@@ -4817,6 +4823,11 @@
         "Seleccione ${ boldExport } para exportar el calendario como un archivo ICS."
       ]
     },
+    "Import provider": {
+      "Advanced import": [
+        "Importación avanzada"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos no se importarán. Haga clic para más detalles"
@@ -5069,6 +5080,9 @@
       "30-day money-back guarantee.": [
         "30 días de garantía de devolución del dinero."
       ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "Hay una nueva versión de ${ DRIVE_APP_NAME } disponible. Vuelva a cargar la página para seguir usando la búsqueda."
+      ],
       "A number will be added to the filename": [
         "Se agregará un número al nombre del archivo"
       ],
@@ -5275,6 +5289,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Elija un plan que funcione mejor para usted."
+      ],
+      "Choose your service to connect with": [
+        "Elija su servicio para conectar"
       ],
       "Clear all search data": [
         "Borrar todos los datos de búsqueda"
@@ -5676,6 +5693,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "En el siguiente paso, podrá enviar un depósito con una dirección Bitcoin."
+      ],
+      "Indexing in progress": [
+        "Indexación en curso"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexando ${ esProgress } elementos de ${ totalProgressToShow }"
@@ -6455,8 +6475,8 @@
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Para activar una búsqueda verdaderamente privada $ necesitamos indexar los archivos localmente. Puede seguir usando ${ DRIVE_APP_NAME } normalmente y le avisaremos cuando la indexación finalice."
       ],
-      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Para activar una búsqueda verdadera, necesitamos indexar los archivos localmente. Puede seguir usando ${ DRIVE_APP_NAME } normalmente y le avisaremos cuando la indexación finalice."
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
+        "Para activar la búsqueda completa, necesitamos indexar sus archivos localmente. Puede seguir usando ${ DRIVE_APP_NAME } con normalidad; le avisaremos cuando la indexación haya terminado."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
@@ -6547,6 +6567,9 @@
       ],
       "Untitled": [
         "Sin título"
+      ],
+      "Update required": [
+        "Actualización requerida"
       ],
       "Updating drive search...": [
         "Actualizando búsqueda en drive..."
@@ -10635,7 +10658,7 @@
         "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
       ],
       "Extend your subscription and save ${ discountPercent }%!": [
-        "¡Extienda su suscripción y guarde ${ discountPercent }%!"
+        "¡Extienda su suscripción y ahorre ${ discountPercent }%!"
       ],
       "Full access to ${ VPN_APP_NAME }": [
         "Acceso completo a ${ VPN_APP_NAME }"
@@ -10659,7 +10682,7 @@
         "Mayor protección contra ciberamenazas"
       ],
       "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
-        "¡Cambie a nuestro plan anual y guarde ${ toYearlyDiscountAmount }!"
+        "¡Cambie a nuestro plan anual y ahorre ${ toYearlyDiscountAmount }!"
       ],
       "Unlimited daily chats": [
         "Chats diarios ilimitados"
@@ -12259,6 +12282,9 @@
       "Check for malicious files": [
         "Buscar archivos maliciosos"
       ],
+      "Choose a provider": [
+        "Elegir un proveedor"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Reclame su dirección de ${ MAIL_APP_NAME }"
       ],
@@ -12324,6 +12350,9 @@
       ],
       "Currency": [
         "Moneda"
+      ],
+      "Custom": [
+        "Personalizado"
       ],
       "Customize and confirm": [
         "Personalizar y confirmar"
@@ -12587,6 +12616,9 @@
       ],
       "Import groups": [
         "Importar grupos"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importe sus datos a ${ BRAND_NAME }"
       ],
       "Information exposed in breach": [
         "Información expuesta en la vulneración"
@@ -12864,6 +12896,9 @@
       ],
       "Select contact group": [
         "Seleccionar grupo de contactos"
+      ],
+      "Select data to import": [
+        "Seleccionar datos para importar"
       ],
       "Select link expiration date": [
         "Seleccione la fecha de expiración del enlace"
