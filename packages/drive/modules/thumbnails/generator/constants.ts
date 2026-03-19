@@ -7,6 +7,7 @@ import { isIos, isSafari } from '@proton/shared/lib/helpers/browser';
 export const MAX_VIDEO_SIZE_FOR_THUMBNAIL_IOS = 500 * 1024 * 1024;
 // 100MB
 export const MAX_MEDIA_SIZE_FOR_THUMBNAIL_IOS = 100 * 1024 * 1024;
+export const THUMBNAIL_GENERATION_TIMEOUT_MS = 10_000;
 
 export const isIosDevice: boolean = isIos();
 export const isSafariDevice: boolean = isSafari();
