@@ -1673,6 +1673,21 @@
       ],
       "Edit billing address": [
         "编辑账单地址"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Manage addresses": [
+        "管理邮箱地址"
+      ],
+      "Or use a different Gmail address": [
+        "或使用其他 Gmail 地址"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "设置从 Gmail 自动转发邮件"
+      ],
+      "Use this Gmail address": [
+        "使用此 Gmail 地址"
       ]
     },
     "action": {
@@ -5086,6 +5101,18 @@
       ],
       "ZIP code is required": [
         "必须填写邮政编码"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "请输入您的用户名（不含 @example.com 域名）"
+      ],
+      "Invalid coupon": [
+        "优惠券无效"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "此套餐不支持反向收费机制"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "最低捐赠金额为 ${ price }"
       ]
     },
     "error": {
@@ -6324,6 +6351,12 @@
       ],
       "Import from Yahoo": [
         "从 Yahoo 导入"
+      ],
+      "Advanced import": [
+        "高级导入"
+      ],
+      "Import from ${ providerName }": [
+        "从 ${ providerName } 导入"
       ]
     },
     "Import warning": {
@@ -8767,6 +8800,15 @@
       ],
       "Insert image": [
         "插入图像"
+      ],
+      "Choose your service to connect with": [
+        "请选择要连接的服务"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "您已经在 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址上启用了转发功能。若要添加另一个，请先禁用其中一个。"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "您的账户当前已配置为应用反向收费机制，但所选套餐不支持此机制。若要继续，请从账单地址中移除增值税号，或选择其他套餐。"
       ]
     },
     "info": {
@@ -9842,6 +9884,9 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Import recent mails": [
+        "导入最近的邮件"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12182,6 +12227,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您当前的订阅已享有一个现有折扣，转用此新促销意味着现有折扣将不再适用。"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "适用增值税反向收费机制"
       ]
     },
     "Payments.Error": {
@@ -15490,6 +15538,36 @@
       ],
       "✨ Categories are coming!": [
         "✨ 分类功能即将推出！"
+      ],
+      "Choose a provider": [
+        "请选择提供商"
+      ],
+      "Connect a Gmail address": [
+        "连接 Gmail 地址"
+      ],
+      "Connect more addresses": [
+        "连接更多地址"
+      ],
+      "Custom": [
+        "自定义"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "将您的数据导入到 ${ BRAND_NAME }"
+      ],
+      "Limit reached": [
+        "数量已达上限"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "多个账户，1 个私密收件箱"
+      ],
+      "Remove forwarding address": [
+        "移除转发地址"
+      ],
+      "Reverse charge not supported": [
+        "不支持反向收费"
+      ],
+      "Select data to import": [
+        "请选择要导入的数据"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16022,6 +16100,14 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "要转发来自最多 ${ MAX_SYNC_PAID_USER } 个账户的邮件，请升级至 ${ planName } 计划。"
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "您正在将来自${ MAX_SYNC_FREE_USER }个外部账户的电子邮件转发至${ MAIL_APP_NAME }。"
       ]
     }
   }

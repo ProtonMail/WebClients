@@ -1678,6 +1678,21 @@
       ],
       "Edit billing address": [
         "Fatura adresini düzenle"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Manage addresses": [
+        "Adres yönetimi"
+      ],
+      "Or use a different Gmail address": [
+        "Ya da farklı bir Gmail adresi kullanın"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Gmail üzerinden otomatik iletmeyi ayarlama"
+      ],
+      "Use this Gmail address": [
+        "Bu Gmail adresini kullan"
       ]
     },
     "action": {
@@ -4686,7 +4701,7 @@
         "Kod geçersiz"
       ],
       "Invalid coupon": [
-        "Geçersiz kupon"
+        "Kupon geçersiz"
       ],
       "Invalid email address": [
         "E-posta adresi geçersiz"
@@ -5001,7 +5016,7 @@
         "Eklenebilecek en az kredi tutarı: ${ price }"
       ],
       "The minimum donation amount is ${ price }": [
-        "Minimum bağış tutarı ${ price }"
+        "En az bağış tutarı ${ price }"
       ],
       "The sending key is not valid": [
         "Gönderim anahtarı geçersiz"
@@ -5132,7 +5147,10 @@
         "Posta kodunun yazılması zorunludur"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "Bu tarife için sorumlu sıfatıyla KDV usulü desteklenmemektedir"
+        "Bu tarifede tersine KDV uygulaması desteklenmiyor"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Kullanıcı adınızı etki alanı (@example.com) olmadan yazın"
       ]
     },
     "error": {
@@ -5949,6 +5967,15 @@
       ],
       "You've unlocked 1 GB": [
         "Depolama alanınızı 1 GB boyutuna çıkardınız"
+      ],
+      "Download apps": [
+        "Uygulamaları indirin"
+      ],
+      "Get storage bonus": [
+        "Depolama alanı bonusunuzu alın"
+      ],
+      "Review import options": [
+        "İçe aktarma seçeneklerini inceleyin"
       ]
     },
     "Gmail forwarding": {
@@ -6390,6 +6417,12 @@
       ],
       "Import from Yahoo": [
         "Yahoo üzerinden içe aktar"
+      ],
+      "Advanced import": [
+        "Gelişmiş içe aktarma"
+      ],
+      "Import from ${ providerName }": [
+        "${ providerName } üzerinden içe aktar"
       ]
     },
     "Import warning": {
@@ -7569,7 +7602,7 @@
         "Düşük Öncelik"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME } uygulamasını varsayılan e-posta uygulamanız yapın."
+        "${ MAIL_APP_NAME }'i varsayılan e-posta uygulamanız olarak ayarlayın."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -8924,7 +8957,14 @@
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Hesabınız şu anda sorumlu sıfatıyla KDV usulünü uygulayacak şekilde yapılandırılmış. Bu durum seçilen tarife için desteklenmemektedir. Devam etmek için ya fatura adresinden KDV numarasını kaldırın ya da farklı bir tarife seçin."
+        "Hesabınızda şu anda tersine KDV uygulaması yapılandırılmış. Seçilmiş tarifede bu uygulama desteklenmiyor. İlerlemek için fatura adresinden KDV numarasını kaldırabilir ya da farklı bir tarife seçebilirsiniz."
+      ],
+      "Choose your service to connect with": [
+        "Bağlanmak istediğiniz hizmeti seçin"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "${ MAX_SYNC_PAID_USER } Gmail adresi için iletmeyi kullanıyorsunuz. Başka bir adres eklemek için önce bunlardan birini kullanımdan kaldırın.",
+        "${ MAX_SYNC_PAID_USER } Gmail adresi için iletmeyi kullanıyorsunuz. Başka bir adres eklemek için önce bunlardan birini kullanımdan kaldırın."
       ]
     },
     "info": {
@@ -11864,6 +11904,24 @@
       ],
       "Social media": [
         "Sosyal medya"
+      ],
+      "Choose your service": [
+        "Hizmetinizi seçin"
+      ],
+      "Popular services": [
+        "Popüler hizmetler"
+      ],
+      "Skip for now": [
+        "Şimdilik atla"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Hesaplarınızı ${ BRAND_NAME } hizmetine taşıyın"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "E-posta değiştirmek zordur, ${ BRAND_NAME } bunu kolaylaştırır. Eski hesabınızı bağlayıp her şeyi odaklanmış ve reklamsız tek bir çalışma alanında yönetin."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } hizmetine hoş geldiniz"
       ]
     },
     "Onboarding modal": {
@@ -12397,6 +12455,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Tersine KDV uygulaması kullanılıyor."
       ]
     },
     "Payments.Error": {
@@ -12906,6 +12967,12 @@
       ],
       "Use your own email domain": [
         "Kendi e-posta etki alanınızı kullanın"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Aboneliğinizi uzatın ve %${ discountPercent } tasarruf edin!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Yıllık tarifemize geçin ve ${ toYearlyDiscountAmount } tasarruf edin!"
       ]
     },
     "q1campaign: Title": {
@@ -15333,7 +15400,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Keep this banner hidden?": [
-        "Bu banner gizli tutulsun mu?"
+        "Bu başlığı gizli tutmak ister misiniz?"
       ],
       "Label as": [
         "Etiketle"
@@ -15890,7 +15957,34 @@
         "✨ Kategoriler özelliği geliyor!"
       ],
       "Reverse charge not supported": [
-        "Sorumlu sıfatıyla KDV desteklenmiyor"
+        "Tersine KDV uygulaması desteklenmiyor"
+      ],
+      "Choose a provider": [
+        "Sağlayıcı seçin"
+      ],
+      "Connect a Gmail address": [
+        "Bir Gmail adresi bağlayın"
+      ],
+      "Connect more addresses": [
+        "Başka adresler bağlayın"
+      ],
+      "Custom": [
+        "Özel"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Verilerinizi ${ BRAND_NAME } aktarın"
+      ],
+      "Limit reached": [
+        "Sınıra ulaşıldı"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Birden çok hesap, 1 güvenli gelen kutusu"
+      ],
+      "Remove forwarding address": [
+        "İletme adresini kaldır"
+      ],
+      "Select data to import": [
+        "İçe aktarılacak verileri seçin"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16468,6 +16562,16 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "${ MAX_SYNC_PAID_USER } hesaba kadar e-postaları iletmek için ${ planName } tarifesine yükseltin.",
+        "${ MAX_SYNC_PAID_USER } hesaba kadar e-postaları iletmek için ${ planName } tarifesine yükseltin."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "E-postaları ${ MAX_SYNC_FREE_USER } dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz.",
+        "E-postaları ${ MAX_SYNC_FREE_USER } dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz."
       ]
     }
   }

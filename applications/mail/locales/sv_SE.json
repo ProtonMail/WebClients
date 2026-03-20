@@ -1678,6 +1678,21 @@
       ],
       "Edit billing address": [
         "Redigera faktureringsadress"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Manage addresses": [
+        "Hantera adresser"
+      ],
+      "Or use a different Gmail address": [
+        "Eller använd en annan Gmail-adress"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Ställ in automatisk vidarebefordran från Gmail"
+      ],
+      "Use this Gmail address": [
+        "Använd denna Gmail-adress"
       ]
     },
     "action": {
@@ -5115,6 +5130,9 @@
       ],
       "ZIP code is required": [
         "Postnummer är obligatoriskt"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Ange ditt användarnamn utan domänen (@example.com)"
       ]
     },
     "error": {
@@ -5931,6 +5949,12 @@
       ],
       "You've unlocked 1 GB": [
         "Du har låst upp 1 GB"
+      ],
+      "Download apps": [
+        "Ladda ner appar"
+      ],
+      "Review import options": [
+        "Granska importalternativ"
       ]
     },
     "Gmail forwarding": {
@@ -6372,6 +6396,12 @@
       ],
       "Import from Yahoo": [
         "Importera från Yahoo"
+      ],
+      "Advanced import": [
+        "Avancerad import"
+      ],
+      "Import from ${ providerName }": [
+        "Importera från ${ providerName }"
       ]
     },
     "Import warning": {
@@ -8882,6 +8912,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "Choose your service to connect with": [
+        "Välj din tjänst att ansluta med"
       ]
     },
     "info": {
@@ -11815,6 +11848,21 @@
       ],
       "Social media": [
         "Sociala medier"
+      ],
+      "Choose your service": [
+        "Välj din tjänst"
+      ],
+      "Popular services": [
+        "Populära tjänster"
+      ],
+      "Skip for now": [
+        "Hoppa över just nu"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Byt dina konton till ${ BRAND_NAME }"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Välkommen till ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -12857,6 +12905,12 @@
       ],
       "Use your own email domain": [
         "Använd din egen e-postdomän"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Förläng din prenumeration och spara ${ discountPercent } %!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Byt till vårt årspaket och spara ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -15839,6 +15893,33 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "Choose a provider": [
+        "Välj en leverantör"
+      ],
+      "Connect a Gmail address": [
+        "Anslut en Gmail-adress"
+      ],
+      "Connect more addresses": [
+        "Anslut fler adresser"
+      ],
+      "Custom": [
+        "Anpassad"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importera din data till ${ BRAND_NAME }"
+      ],
+      "Limit reached": [
+        "Gräns uppnådd"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Flera konton, 1 privat inkorg"
+      ],
+      "Remove forwarding address": [
+        "Ta bort vidarebefordringsadress"
+      ],
+      "Select data to import": [
+        "Välj data att importera"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16413,6 +16494,16 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konto, uppgradera till ${ planName }.",
+        "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konton, uppgradera till ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externt konto till ${ MAIL_APP_NAME }.",
+        "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externa konton till ${ MAIL_APP_NAME }."
       ]
     }
   }

@@ -1675,6 +1675,18 @@
       ],
       "Edit billing address": [
         "Rediger faktureringsadresse"
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
+      ],
+      "Or use a different Gmail address": [
+        "Eller bruk en annen Gmail-adresse"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Konfigurer automatisk videresending fra Gmail"
+      ],
+      "Use this Gmail address": [
+        "Bruk denne Gmail-adressen"
       ]
     },
     "action": {
@@ -5121,6 +5133,18 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Skriv inn brukernavnet ditt uten domenet (@eksempel.com)"
+      ],
+      "Invalid coupon": [
+        "Ugyldig kupong"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omvendt avgiftsplikt støttes ikke for denne planen"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimumbeløpet for donasjon er ${ price }"
       ]
     },
     "error": {
@@ -8910,6 +8934,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Du har aktivert videresending på ${ MAX_SYNC_PAID_USER } Gmail-adresse. For å legge til en til, må du først deaktivere en av dem.",
+        "Du har aktivert videresending på ${ MAX_SYNC_PAID_USER } Gmail-adresser. Hvis du vil legge til en til, må du først deaktivere en av dem."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Kontoen din er for øyeblikket konfigurert til å bruke ordningen for omvendt avgiftsplikt. Dette støttes ikke for den valgte planen. For å fortsette, fjern enten MVA-nummeret fra faktureringsadressen eller velg en annen plan."
       ]
     },
     "info": {
@@ -9993,6 +10024,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Import recent mails": [
+        "Importer nylige e-poster"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12379,6 +12413,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Omvendt avgiftsplikt gjelder."
       ]
     },
     "Payments.Error": {
@@ -12888,6 +12925,12 @@
       ],
       "Use your own email domain": [
         "Bruk ditt eget e-postdomene"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Forleng abonnementet ditt og spar ${ discountPercent } %!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Bytt til vårt årlige abonnement og spar ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -15870,6 +15913,24 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "Connect a Gmail address": [
+        "Koble til en Gmail-adresse"
+      ],
+      "Connect more addresses": [
+        "Koble til flere adresser"
+      ],
+      "Limit reached": [
+        "Grense nådd"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Flere kontoer, 1 privat innboks"
+      ],
+      "Remove forwarding address": [
+        "Fjern videresendingsadresse"
+      ],
+      "Reverse charge not supported": [
+        "Omvendt avgiftsplikt støttes ikke"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16447,6 +16508,16 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "For å videresende e-poster fra opptil ${ MAX_SYNC_PAID_USER } konto, oppgrader til ${ planName }.",
+        "For å videresende e-poster fra opptil ${ MAX_SYNC_PAID_USER } kontoer, oppgrader til ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Du videresender e-poster fra ${ MAX_SYNC_FREE_USER } ekstern konto til ${ MAIL_APP_NAME }.",
+        "Du videresender e-poster fra ${ MAX_SYNC_FREE_USER } eksterne kontoer til ${ MAIL_APP_NAME }."
       ]
     }
   }

@@ -1670,6 +1670,18 @@
       ],
       "Edit billing address": [
         "請求先住所を編集"
+      ],
+      "Manage addresses": [
+        "アドレスの管理"
+      ],
+      "Or use a different Gmail address": [
+        "別のGmailアドレスを使用する"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Gmail からの自動転送の設定"
+      ],
+      "Use this Gmail address": [
+        "このGmailアドレスを使用してください"
       ]
     },
     "action": {
@@ -8729,6 +8741,9 @@
       ],
       "Insert image": [
         "画像を挿入"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "${ MAX_SYNC_PAID_USER } 個の Gmail アドレスで転送が有効になっています。別のアドレスを追加するには、まずいずれか 1 つを無効化してください。"
       ]
     },
     "info": {
@@ -11869,7 +11884,7 @@
         "親フォルダーなし"
       ],
       "Remind me later": [
-        "後ほど再通知"
+        "後で通知する"
       ],
       "Yes, don't show again": [
         "次回から表示しない"
@@ -12640,6 +12655,12 @@
       ],
       "Use your own email domain": [
         "独自のメールドメインを使用"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "サブスクリプションを延長して、${ discountPercent }%お得に！"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "年間プランに切り替えて、${ toYearlyDiscountAmount }お得に！"
       ]
     },
     "q1campaign: Title": {
@@ -14975,7 +14996,7 @@
         "無効な検証コードです"
       ],
       "Keep this banner hidden?": [
-        "バナーを非表示にしておきますか？"
+        "このバナーを非表示にしますか？"
       ],
       "Label as": [
         "ラベル付け"
@@ -15525,6 +15546,21 @@
       ],
       "✨ Categories are coming!": [
         "✨ カテゴリがまもなく登場します！"
+      ],
+      "Connect a Gmail address": [
+        "Gmail アドレスを接続する"
+      ],
+      "Connect more addresses": [
+        "さらにメールアドレスを接続"
+      ],
+      "Limit reached": [
+        "上限に達しました"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "複数のアカウント、1つのプライベート受信トレイ"
+      ],
+      "Remove forwarding address": [
+        "転送先アドレスを削除する"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16057,6 +16093,14 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "最大${ MAX_SYNC_PAID_USER }個のアカウントからメールを転送するには、${ planName }にアップグレードしてください。"
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "お客様は${ MAX_SYNC_FREE_USER }個の外部アカウントから${ MAIL_APP_NAME }へメールを転送しています。"
       ]
     }
   }

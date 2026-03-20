@@ -1669,6 +1669,18 @@
       ],
       "Edit billing address": [
         "Muokkaa laskutusosoitetta"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Manage addresses": [
+        "Hallitse osoitteita"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Määritä automaattivälitys Gmailista"
+      ],
+      "Use this Gmail address": [
+        "Käytä tätä Gmail-osoitetta"
       ]
     },
     "action": {
@@ -5002,6 +5014,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Tämä tilaus ei tue käännettyä verovelvollisuutta."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Syötä käyttäjätunnuksesi ilman verkkotunnusta (@example.com)"
       ]
     },
     "error": {
@@ -6251,6 +6266,12 @@
       ],
       "Import from Yahoo": [
         "Tuo Yahoosta"
+      ],
+      "Advanced import": [
+        "Edistynyt tuonti"
+      ],
+      "Import from ${ providerName }": [
+        "Tuo palvelusta ${ providerName }"
       ]
     },
     "Import warning": {
@@ -8738,6 +8759,13 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Tilisi asetuksissa on käytössä käännetty verovelvollisuus, jota valittu tilaus ei tue. Jatkaaksesi joko poista ALV-numero laskutustiedoista tai valitse toinen tilaus."
+      ],
+      "Choose your service to connect with": [
+        "Valitse palvelu, johon haluat yhdistää"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Olet ottanut käyttöön edelleenlähetyksen ${ MAX_SYNC_PAID_USER } Gmail-osoitteessa. Lisätäksesi toisen, sinun on ensin poistettava jokin niistä käytöstä.",
+        "Olet ottanut käyttöön edelleenlähetyksen ${ MAX_SYNC_PAID_USER } Gmail-osoitteissa. Lisätäksesi uuden osoitteen, sinun on ensin poistettava jokin niistä käytöstä."
       ]
     },
     "info": {
@@ -12107,6 +12135,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tilauksessasi on jo olemassa oleva alennus. Siirtyminen tähän uuteen kampanjaan tarkoittaa, että aiempaa alennusta ei enää käytetä."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Sovelletaan arvonlisäveron käänteistä verovelvollisuutta."
       ]
     },
     "Payments.Error": {
@@ -12593,6 +12624,12 @@
       ],
       "Use your own email domain": [
         "Käytä omaa sähköpostin verkkotunnusta"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Pidennä tilaustasi ja säästä ${ discountPercent } %!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Vaihda vuositilaukseemme ja säästä ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -15508,6 +15545,27 @@
       ],
       "Reverse charge not supported": [
         "Käännettyä verovelvollisuutta ei tueta."
+      ],
+      "Choose a provider": [
+        "Valitse tarjoaja"
+      ],
+      "Connect a Gmail address": [
+        "Yhdistä Gmail-osoite"
+      ],
+      "Connect more addresses": [
+        "Yhdistä lisää osoitteita"
+      ],
+      "Custom": [
+        "Mukautettu"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Tuo tietosi ${ BRAND_NAME }iin"
+      ],
+      "Limit reached": [
+        "Raja saavutettu"
+      ],
+      "Select data to import": [
+        "Valitse tuotavat tiedot"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16079,6 +16137,16 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Välittääksesi sähköposteja ${ MAX_SYNC_PAID_USER } tililtä, päivitä tilauksesi tasolle ${ planName }.",
+        "Välittääksesi sähköposteja jopa ${ MAX_SYNC_PAID_USER } tililtä, päivitä tilauksesi tasolle ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Välität sähköposteja ${ MAX_SYNC_FREE_USER } ulkoiselta tililtä ${ MAIL_APP_NAME }iin.",
+        "Välität sähköposteja ${ MAX_SYNC_FREE_USER } ulkoiselta tililtä ${ MAIL_APP_NAME }iin."
       ]
     }
   }

@@ -1675,6 +1675,24 @@
       ],
       "Edit billing address": [
         "Modifier l'adresse de facturation"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Hide": [
+        "Masquer"
+      ],
+      "Manage addresses": [
+        "Gérer les adresses"
+      ],
+      "Or use a different Gmail address": [
+        "Ou utiliser une autre adresse Gmail"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Configurer le transfert automatique depuis Gmail"
+      ],
+      "Use this Gmail address": [
+        "Utiliser cette adresse Gmail"
       ]
     },
     "action": {
@@ -2089,6 +2107,12 @@
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toutes les fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2025: Tooltip": {
@@ -5118,6 +5142,9 @@
       ],
       "ZIP code is required": [
         "Le code postal est nécessaire."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Saisissez votre nom d'utilisateur sans le domaine (@example.com)"
       ]
     },
     "error": {
@@ -5926,6 +5953,15 @@
       ],
       "You've unlocked 1 GB": [
         "Vous avez débloqué 1 Go."
+      ],
+      "Download apps": [
+        "Télécharger les applications"
+      ],
+      "Get storage bonus": [
+        "Obtenir un bonus de stockage"
+      ],
+      "Review import options": [
+        "Examiner les options d'importation"
       ]
     },
     "Gmail forwarding": {
@@ -6367,6 +6403,12 @@
       ],
       "Import from Yahoo": [
         "Importer depuis Yahoo"
+      ],
+      "Advanced import": [
+        "Importation avancée"
+      ],
+      "Import from ${ providerName }": [
+        "Importer depuis ${ providerName }"
       ]
     },
     "Import warning": {
@@ -8890,6 +8932,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "Choose your service to connect with": [
+        "Choisissez votre service pour vous connecter"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Vous avez activé le transfert sur ${ MAX_SYNC_PAID_USER } adresse Gmail. Pour en ajouter une autre, veuillez d’abord la désactiver.",
+        "Vous avez activé le transfert sur ${ MAX_SYNC_PAID_USER } adresses Gmail. Pour en ajouter une autre, veuillez d’abord en désactiver une."
       ]
     },
     "info": {
@@ -11825,6 +11874,27 @@
       ],
       "Social media": [
         "Réseaux sociaux"
+      ],
+      "Choose your service": [
+        "Choisissez votre service"
+      ],
+      "Popular services": [
+        "Services populaires"
+      ],
+      "Skip for now": [
+        "Ignorer pour le moment"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Basculez vos comptes vers ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Changer de messagerie est difficile. ${ BRAND_NAME } rend cela facile. Connectez votre ancien compte et gérez tout dans un espace de travail unique, ciblé et sans publicité."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Mettez à jour votre e-mail sur les services que vous utilisez le plus. Empêchez le suivi et protégez votre confidentialité."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Bienvenue dans ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -12358,6 +12428,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Le mécanisme d’autoliquidation de la TVA s’applique."
       ]
     },
     "Payments.Error": {
@@ -12867,6 +12940,12 @@
       ],
       "Use your own email domain": [
         "Utilisez votre propre domaine de messagerie"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Prolongez votre abonnement et économisez ${ discountPercent } % !"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Passez à notre abonnement annuel et économisez ${ toYearlyDiscountAmount } !"
       ]
     },
     "q1campaign: Title": {
@@ -15827,6 +15906,33 @@
       ],
       "✨ Categories are coming!": [
         "✨ Les catégories arrivent !"
+      ],
+      "Choose a provider": [
+        "Choisissez un fournisseur"
+      ],
+      "Connect a Gmail address": [
+        "Connectez une adresse Gmail"
+      ],
+      "Connect more addresses": [
+        "Connecter plus d'adresses"
+      ],
+      "Custom": [
+        "Personnalisé"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importer vos données vers ${ BRAND_NAME }"
+      ],
+      "Limit reached": [
+        "La limite est atteinte."
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Plusieurs comptes, 1 boîte de réception privée"
+      ],
+      "Remove forwarding address": [
+        "Retirer l'adresse de transfert"
+      ],
+      "Select data to import": [
+        "Sélectionner les données à importer"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16404,6 +16510,16 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Pour transférer des messages depuis ${ MAX_SYNC_PAID_USER } compte, passez à ${ planName }.",
+        "Pour transférer des messages depuis ${ MAX_SYNC_PAID_USER } comptes, passez à ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Vous transférez des messages depuis ${ MAX_SYNC_FREE_USER } compte externe vers ${ MAIL_APP_NAME }.",
+        "Vous transférez des messages depuis ${ MAX_SYNC_FREE_USER } comptes externes vers ${ MAIL_APP_NAME }."
       ]
     }
   }

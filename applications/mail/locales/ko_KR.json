@@ -1673,6 +1673,21 @@
       ],
       "Edit billing address": [
         "청구 주소 수정"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Manage addresses": [
+        "주소 관리"
+      ],
+      "Or use a different Gmail address": [
+        "또는 다른 Gmail 주소를 사용하세요"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Gmail에서 자동 가져오기 설정"
+      ],
+      "Use this Gmail address": [
+        "이 Gmail 주소 사용"
       ]
     },
     "action": {
@@ -2215,6 +2230,9 @@
       ],
       "Website access problem": [
         "웹사이트 접근 문제"
+      ],
+      "Sheets problem": [
+        "Sheets 문제"
       ]
     },
     "Button": {
@@ -5083,6 +5101,18 @@
       ],
       "ZIP code is required": [
         "우편번호가 필요합니다"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "도메인 없이 (@example.co.kr) 사용자 이름을 입력해 주세요."
+      ],
+      "Invalid coupon": [
+        "유효하지 않은 쿠폰"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "이 플랜에서는 매입자 납부제도(Reverse charge)가 지원되지 않습니다."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "최소 기부 금액은 ${ price }입니다."
       ]
     },
     "error": {
@@ -6321,6 +6351,12 @@
       ],
       "Import from Yahoo": [
         "Yahoo에서 가져오기"
+      ],
+      "Advanced import": [
+        "고급 가져오기"
+      ],
+      "Import from ${ providerName }": [
+        "${ providerName }(에)서 불러오기"
       ]
     },
     "Import warning": {
@@ -8761,6 +8797,15 @@
       ],
       "Insert image": [
         "이미지 삽입"
+      ],
+      "Choose your service to connect with": [
+        "연결하고자 하는 서비스 선택"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "${ MAX_SYNC_PAID_USER } Gmail 주소에 대한 전달이 활성화됨. 다른 전달을 추가하려면 먼저 그 중 하나를 비활성화하십시오."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "사용자의 계정에 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 현재 선택한 플랜에서는 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 플랜을 선택하십시오."
       ]
     },
     "info": {
@@ -9836,6 +9881,9 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Import recent mails": [
+        "최근 메일 가져오기"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12176,6 +12224,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "구독에 현재 기존 할인이 적용되어 있습니다. 새로운 프로모션으로 변경하면 기존 할인이 더 이상 적용되지 않습니다."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "매입자 납부제도(Reverse charge)가 적용됩니다."
       ]
     },
     "Payments.Error": {
@@ -12681,6 +12732,12 @@
       ],
       "Use your own email domain": [
         "나만의 이메일 도메인 사용"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "귀하의 구독을 연장하고 ${ discountPercent }%를 절약하세요!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "연간 요금제로 전환하고 ${ toYearlyDiscountAmount }를 절약하세요!"
       ]
     },
     "q1campaign: Title": {
@@ -15574,6 +15631,36 @@
       ],
       "✨ Categories are coming!": [
         "✨ 카테고리를 곧 만나보세요!"
+      ],
+      "Choose a provider": [
+        "제공업체 선택"
+      ],
+      "Connect a Gmail address": [
+        "Gmail 주소 연결"
+      ],
+      "Connect more addresses": [
+        "더 많은 주소 연결"
+      ],
+      "Custom": [
+        "사용자화"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "${ BRAND_NAME }로 데이터 불러오기"
+      ],
+      "Limit reached": [
+        "제한 도달"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "여러 계정, 하나의 받은 편지함"
+      ],
+      "Remove forwarding address": [
+        "포워딩 주소 삭제"
+      ],
+      "Reverse charge not supported": [
+        "매입자 납부제도(Reverse charge)가 지원되지 않습니다."
+      ],
+      "Select data to import": [
+        "불러올 데이터 선택"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16106,6 +16193,14 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "최대 ${ MAX_SYNC_PAID_USER }개의 계정에서 이메일을 전달하려면, ${ planName }(으)로 업그레이드하세요."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "${ MAX_SYNC_FREE_USER }개의 외부 계정에서 ${ MAIL_APP_NAME }(으)로 이메일을 전달하는 중입니다."
       ]
     }
   }

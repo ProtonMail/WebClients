@@ -1612,6 +1612,12 @@
       ],
       "Edit billing address": [
         "Editar o endereço da fatura"
+      ],
+      "Manage addresses": [
+        "Gerir endereços"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Configure o encaminhamento automático do Gmail"
       ]
     },
     "action": {
@@ -8272,6 +8278,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a alguns cliques de ter uma caixa de entrada organizada"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Ativou o encaminhamento em ${ MAX_SYNC_PAID_USER } endereço Gmail. Para adicionar outro, primeiro desativá-lo",
+        "Ativou o encaminhamento em ${ MAX_SYNC_PAID_USER } endereços de Gmail. Para adicionar outro, primeiro desative um deles."
       ]
     },
     "info": {
@@ -11822,6 +11832,12 @@
       ],
       "Use your own email domain": [
         "Utilize o seu próprio domínio de e-mail"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Prolongue a sua subscrição e poupe ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Mude para o nosso plano anual e poupe ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -14612,6 +14628,12 @@
       ],
       "Your shorter address is now ready": [
         "O seu endereço mais curto já está pronto"
+      ],
+      "Limit reached": [
+        "Limite atingido"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Várias contas, 1 caixa de entrada privada"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15177,6 +15199,16 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } conta, melhore para o ${ planName }.",
+        "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } contas, melhore para ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Está a encaminhar e-mails de ${ MAX_SYNC_FREE_USER } conta externa para ${ MAIL_APP_NAME }.",
+        "Está a encaminhar e-mails de ${ MAX_SYNC_FREE_USER } contas externas para ${ MAIL_APP_NAME }."
       ]
     }
   }

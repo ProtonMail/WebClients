@@ -1688,6 +1688,21 @@
       ],
       "Edit billing address": [
         "Рэдагаваць адрас аплаты"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Manage addresses": [
+        "Кіраванне адрасамі"
+      ],
+      "Or use a different Gmail address": [
+        "Ці скарыстайцеся іншым адрасам Gmail"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Наладзьце аўтаперасылку з Gmail"
+      ],
+      "Use this Gmail address": [
+        "Выкарыстоўваць гэты адрас Gmail"
       ]
     },
     "action": {
@@ -5209,6 +5224,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Схема адваротнага налічэння падатку не падтрымліваецца для гэтага тарыфнага плана"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Увядзіце сваё імя карыстальніка без дамена (@example.com)"
       ]
     },
     "error": {
@@ -6504,6 +6522,12 @@
       ],
       "Import from Yahoo": [
         "Імпартаваць з Yahoo"
+      ],
+      "Advanced import": [
+        "Пашыраны імпарт"
+      ],
+      "Import from ${ providerName }": [
+        "Імпартаваць з ${ providerName }"
       ]
     },
     "Import warning": {
@@ -9217,6 +9241,15 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб ужываць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
+      ],
+      "Choose your service to connect with": [
+        "Выберыце сэрвіс для падключэння"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Вы ўключылі перасылку на ${ MAX_SYNC_PAID_USER } адрас Gmail. Спачатку адключыце які-небудзь з адрасоў, каб дадаць яшчэ адзін.",
+        "Вы ўключылі перасылку на ${ MAX_SYNC_PAID_USER } адрасы Gmail. Спачатку адключыце які-небудзь з адрасоў, каб дадаць яшчэ адзін.",
+        "Вы ўключылі перасылку на ${ MAX_SYNC_PAID_USER } адрасоў Gmail. Спачатку адключыце які-небудзь з адрасоў, каб дадаць яшчэ адзін.",
+        "Вы ўключылі перасылку на ${ MAX_SYNC_PAID_USER } адрасоў Gmail. Спачатку адключыце які-небудзь з адрасоў, каб дадаць яшчэ адзін."
       ]
     },
     "info": {
@@ -12797,6 +12830,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Ужыты механізм адваротнага налічэння падатку ПДВ"
       ]
     },
     "Payments.Error": {
@@ -16387,6 +16423,33 @@
       ],
       "Reverse charge not supported": [
         "Адваротнае налічэнне падатку не падтрымліваецца"
+      ],
+      "Choose a provider": [
+        "Выберыце пастаўшчыка"
+      ],
+      "Connect a Gmail address": [
+        "Падключэнне адраса Gmail"
+      ],
+      "Connect more addresses": [
+        "Падключыць больш адрасоў"
+      ],
+      "Custom": [
+        "Карыстальніцкае"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Імпартуйце свае даныя ў ${ BRAND_NAME }"
+      ],
+      "Limit reached": [
+        "Дасягнута абмежаванне"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Некалькі ўліковых запісаў і 1 прыватная паштовая скрыня"
+      ],
+      "Remove forwarding address": [
+        "Выдаліць адрас перасылкі"
+      ],
+      "Select data to import": [
+        "Выберыце даныя для імпарту"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -17054,6 +17117,20 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковы запіс.",
+        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковыя запісы.",
+        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковых запісаў.",
+        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковых запісаў."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешняга ўліковага запісу ў ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }."
       ]
     }
   }

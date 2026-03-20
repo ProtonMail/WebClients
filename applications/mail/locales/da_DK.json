@@ -1675,6 +1675,18 @@
       ],
       "Edit billing address": [
         "Rediger faktureringsadresse"
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
+      ],
+      "Or use a different Gmail address": [
+        "Eller brug en anden Gmail-adresse"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Konfigurer automatisk videresendelse fra Gmail"
+      ],
+      "Use this Gmail address": [
+        "Brug denne Gmail-adresse"
       ]
     },
     "action": {
@@ -5106,6 +5118,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Omvendt betalingsordning understøttes ikke for dette abonnement"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Indtast dit brugernavn uden domænet (@example.com)"
       ]
     },
     "error": {
@@ -6355,6 +6370,9 @@
       ],
       "Import from Yahoo": [
         "Importér fra Yahoo"
+      ],
+      "Import from ${ providerName }": [
+        "Importér fra ${ providerName }"
       ]
     },
     "Import warning": {
@@ -8878,6 +8896,10 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Din konto er i øjeblikket konfigureret til at anvende omvendt betalingspligt, som ikke er understøttet i det valgte abonnement. For at fortsætte skal du enten fjerne momsnummeret fra faktureringsadressen eller vælge et andet abonnement."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Du har aktiveret videresendelse på ${ MAX_SYNC_PAID_USER } Gmail-adresse. For at tilføje endnu en skal du først deaktivere en af dem.",
+        "Du har aktiveret videresendelse på ${ MAX_SYNC_PAID_USER } Gmail-adresser. For at tilføje endnu en skal du først deaktivere en af dem."
       ]
     },
     "info": {
@@ -12826,6 +12848,12 @@
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Forlæng dit abonnement og spar ${ discountPercent } %!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Skift til vores årlige abonnement og spar ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -15789,6 +15817,33 @@
       ],
       "Reverse charge not supported": [
         "Fakturering med omvendt betaling understøttes ikke"
+      ],
+      "Choose a provider": [
+        "Vælg en udbyder"
+      ],
+      "Connect a Gmail address": [
+        "Forbind en Gmail-adresse"
+      ],
+      "Connect more addresses": [
+        "Tilslut flere adresser"
+      ],
+      "Custom": [
+        "Brugerdefineret"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importér dine data til ${ BRAND_NAME }"
+      ],
+      "Limit reached": [
+        "Grænse nået"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Flere konti, 1 privat indbakke"
+      ],
+      "Remove forwarding address": [
+        "Fjern videresendelsesadresse"
+      ],
+      "Select data to import": [
+        "Vælg data til import"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16366,6 +16421,16 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "For at videresende e-mails fra op til ${ MAX_SYNC_PAID_USER } konto skal du opgradere til ${ planName }.",
+        "For at videresende e-mails fra op til ${ MAX_SYNC_PAID_USER } konti skal du opgradere til ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Du videresender e-mails fra ${ MAX_SYNC_FREE_USER } ekstern konto til ${ MAIL_APP_NAME }.",
+        "Du videresender e-mails fra ${ MAX_SYNC_FREE_USER } eksterne konti til ${ MAIL_APP_NAME }."
       ]
     }
   }

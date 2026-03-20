@@ -1678,6 +1678,21 @@
       ],
       "Edit billing address": [
         "Editar la dirección de la factura"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Manage addresses": [
+        "Gestionar direcciones"
+      ],
+      "Or use a different Gmail address": [
+        "O use otra dirección de Gmail"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Configurar el reenvío automático desde Gmail"
+      ],
+      "Use this Gmail address": [
+        "Usar esta dirección de Gmail"
       ]
     },
     "action": {
@@ -5129,10 +5144,13 @@
         "Se requiere el código postal."
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "El esquema de inversión del sujeto pasivo no es compatible con este plan"
+        "El esquema de cobro inverso no es compatible con este plan"
       ],
       "The minimum donation amount is ${ price }": [
         "El importe mínimo de la donación es de ${ price }"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Ingrese su nombre de usuario sin el dominio (@ejemplo.com)"
       ]
     },
     "error": {
@@ -5949,6 +5967,15 @@
       ],
       "You've unlocked 1 GB": [
         "Ha desbloqueado 1 GB"
+      ],
+      "Download apps": [
+        "Descargar aplicaciones"
+      ],
+      "Get storage bonus": [
+        "Obtener bonificación de almacenamiento"
+      ],
+      "Review import options": [
+        "Revisar opciones de importación"
       ]
     },
     "Gmail forwarding": {
@@ -6390,6 +6417,12 @@
       ],
       "Import from Yahoo": [
         "Importar desde Yahoo"
+      ],
+      "Advanced import": [
+        "Importación avanzada"
+      ],
+      "Import from ${ providerName }": [
+        "Importar desde ${ providerName }"
       ]
     },
     "Import warning": {
@@ -8924,7 +8957,14 @@
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Su cuenta está configurada actualmente para aplicar el esquema de inversión del sujeto pasivo. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
+        "Su cuenta está actualmente configurada para aplicar el esquema de cargo inverso. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
+      ],
+      "Choose your service to connect with": [
+        "Elija su servicio para conectar"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Ha activado el reenvío en ${ MAX_SYNC_PAID_USER } dirección de Gmail. Para añadir otra, primero desactívela.",
+        "Ha activado el reenvío en ${ MAX_SYNC_PAID_USER } direcciones de Gmail. Para añadir otra, primero desactive una de ellas."
       ]
     },
     "info": {
@@ -11864,6 +11904,27 @@
       ],
       "Social media": [
         "Redes sociales"
+      ],
+      "Choose your service": [
+        "Elija su servicio"
+      ],
+      "Popular services": [
+        "Servicios populares"
+      ],
+      "Skip for now": [
+        "Omitir por ahora"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Cambie sus cuentas a ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Cambiar de correo electrónico es difícil. ${ BRAND_NAME } lo hace fácil. Conecte su cuenta anterior y gestione todo en un espacio de trabajo enfocado y sin anuncios."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Actualice su correo electrónico en los servicios que más usa. Evite el rastreo y proteja su privacidad."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Le damos la bienvenida a ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -12397,6 +12458,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Se aplica el mecanismo de cargo inverso del IVA."
       ]
     },
     "Payments.Error": {
@@ -12906,6 +12970,12 @@
       ],
       "Use your own email domain": [
         "Use su propio dominio de correo electrónico"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "¡Extienda su suscripción y ahorre ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "¡Cambie a nuestro plan anual y ahorre ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -15890,7 +15960,34 @@
         "✨ ¡Llegan las categorías!"
       ],
       "Reverse charge not supported": [
-        "Inversión del sujeto pasivo no soportada"
+        "Cargo inverso no soportado"
+      ],
+      "Choose a provider": [
+        "Elegir un proveedor"
+      ],
+      "Connect a Gmail address": [
+        "Conectar una dirección de Gmail"
+      ],
+      "Connect more addresses": [
+        "Conectar más direcciones"
+      ],
+      "Custom": [
+        "Personalizado"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importe sus datos a ${ BRAND_NAME }"
+      ],
+      "Limit reached": [
+        "Límite alcanzado"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Varias cuentas, 1 bandeja de entrada privada"
+      ],
+      "Remove forwarding address": [
+        "Eliminar dirección de reenvío"
+      ],
+      "Select data to import": [
+        "Seleccionar datos para importar"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16468,6 +16565,16 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Para reenviar correos electrónicos desde hasta ${ MAX_SYNC_PAID_USER } cuenta, actualice a ${ planName }.",
+        "Para reenviar correos electrónicos de hasta ${ MAX_SYNC_PAID_USER } cuentas, actualice a ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Está reenviando correos electrónicos desde ${ MAX_SYNC_FREE_USER } cuenta externa a ${ MAIL_APP_NAME }.",
+        "Está reenviando correos electrónicos desde ${ MAX_SYNC_FREE_USER } cuentas externas a ${ MAIL_APP_NAME }."
       ]
     }
   }

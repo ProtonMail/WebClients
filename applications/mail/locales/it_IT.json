@@ -1672,6 +1672,18 @@
       ],
       "Edit billing address": [
         "Modifica indirizzo di fatturazione"
+      ],
+      "Manage addresses": [
+        "Gestisci indirizzi"
+      ],
+      "Or use a different Gmail address": [
+        "Oppure usa un diverso indirizzo Gmail"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Configura l'inoltro automatico da Gmail"
+      ],
+      "Use this Gmail address": [
+        "Usa questo indirizzo Gmail"
       ]
     },
     "action": {
@@ -5037,6 +5049,18 @@
       ],
       "ZIP code is required": [
         "Il codice postale è obbligatorio"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Inserisci il tuo nome utente senza il dominio (@esempio.it)"
+      ],
+      "Invalid coupon": [
+        "Coupon non valido"
+      ],
+      "Please complete the billing details": [
+        "Completa i dettagli di fatturazione"
+      ],
+      "This field is invalid": [
+        "Questo campo non è valido"
       ]
     },
     "error": {
@@ -6286,6 +6310,9 @@
       ],
       "Import from Yahoo": [
         "Importa da Yahoo"
+      ],
+      "Advanced import": [
+        "Importazione avanzata"
       ]
     },
     "Import warning": {
@@ -8797,6 +8824,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Riceverai il premio in crediti 1 mese dopo che il tuo amico si sarà abbonato a un piano annuale e 2 mesi dopo che si sarà abbonato a un piano mensile."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Hai attivato l'inoltro su ${ MAX_SYNC_PAID_USER } indirizzo Gmail. Per aggiungerne un altro, prima disattiva uno di questi.",
+        "Hai attivato l'inoltro su ${ MAX_SYNC_PAID_USER } indirizzi Gmail. Per aggiungerne un altro, prima disattiva uno di questi."
       ]
     },
     "info": {
@@ -9874,6 +9908,9 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Last 6 months only": [
+        "Solo ultimi 6 mesi"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12226,6 +12263,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Il tuo abbonamento ha attualmente uno sconto esistente. Passare a questa nuova promozione significa che lo sconto esistente non sarà più applicato."
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "Inclusa l'imposta del ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Including ${ rate }% taxes: ${ taxAmountElement }": [
+        "Incluse imposte del ${ rate }%: ${ taxAmountElement }"
+      ],
+      "Taxes ${ rate }%": [
+        "Imposte ${ rate }%"
       ]
     },
     "Payments.Error": {
@@ -12715,6 +12761,12 @@
       ],
       "Use your own email domain": [
         "Usa il tuo dominio email personale"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Estendi il tuo abbonamento e risparmia ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Passa al nostro piano annuale e risparmia ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -15660,6 +15712,30 @@
       ],
       "✨ Categories are coming!": [
         "✨ Le categorie stanno arrivando!"
+      ],
+      "Choose a provider": [
+        "Scegli un fornitore"
+      ],
+      "Connect a Gmail address": [
+        "Connetti un indirizzo Gmail"
+      ],
+      "Connect more addresses": [
+        "Connetti più indirizzi"
+      ],
+      "Custom": [
+        "Personalizza"
+      ],
+      "Limit reached": [
+        "Limite raggiunto"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Più account, 1 casella di posta privata"
+      ],
+      "Remove forwarding address": [
+        "Rimuovere indirizzo d'inoltro"
+      ],
+      "Reverse charge not supported": [
+        "Inversione contabile non supportata"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16237,6 +16313,40 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "BF2025: Deal details": {
+      "2 TB data storage": [
+        "2 TB di spazio di archiviazione"
+      ],
+      "Block ads, trackers, and malware": [
+        "Blocca annunci, tracker e malware"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticazione 2FA integrata"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Per inoltrare email da un massimo di ${ MAX_SYNC_PAID_USER } account, effettua l’upgrade a ${ planName }.",
+        "Per inoltrare email da un massimo di ${ MAX_SYNC_PAID_USER } account, effettua l\"upgrade a ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Stai inoltrando email da ${ MAX_SYNC_FREE_USER } account esterno a ${ MAIL_APP_NAME }.",
+        "Stai inoltrando email da ${ MAX_SYNC_FREE_USER } account esterni a ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Il prezzo del rinnovo dipende dalla regione di fatturazione e dall'ABN."
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Il prezzo del rinnovo dipende dalla regione di fatturazione e dall'EIN."
+      ]
+    },
+    "sheets_2025:Action": {
+      "Open in ${ appName }": [
+        "Apri in ${ appName }"
       ]
     }
   }

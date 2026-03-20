@@ -1678,6 +1678,21 @@
       ],
       "Edit billing address": [
         "Edita l'adreça de la factura"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Manage addresses": [
+        "Gestionar adreces"
+      ],
+      "Or use a different Gmail address": [
+        "O utilitzeu una altra adreça de Gmail"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Configura el reenviament automàtic des de Gmail"
+      ],
+      "Use this Gmail address": [
+        "Utilitzeu aquesta adreça de Gmail"
       ]
     },
     "action": {
@@ -5133,6 +5148,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "El règim d'inversió del subjecte passiu no és compatible amb aquest pla"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduïu el vostre nom d'usuari sense el domini (@example.cat)"
       ]
     },
     "error": {
@@ -5949,6 +5967,15 @@
       ],
       "You've unlocked 1 GB": [
         "Heu desbloquejat 1 GB"
+      ],
+      "Download apps": [
+        "Descarregueu les aplicacions"
+      ],
+      "Get storage bonus": [
+        "Obtingueu una bonificació d'emmagatzematge"
+      ],
+      "Review import options": [
+        "Reviseu les opcions d'importació"
       ]
     },
     "Gmail forwarding": {
@@ -6390,6 +6417,12 @@
       ],
       "Import from Yahoo": [
         "Importa des del Yahoo"
+      ],
+      "Advanced import": [
+        "Importació avançada"
+      ],
+      "Import from ${ providerName }": [
+        "Importeu des de ${ providerName }"
       ]
     },
     "Import warning": {
@@ -7569,7 +7602,7 @@
         "Prioritat baixa"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Feu de ${ MAIL_APP_NAME } la vostra aplicació de correu predeterminada."
+        "Feu de ${ MAIL_APP_NAME } la vostra aplicació de correu electrònic per defecte."
       ],
       "Manage your folders": [
         "Gestioneu les vostres carpetes"
@@ -8925,6 +8958,13 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "El vostre compte està configurat actualment per aplicar el règim de facturació inversa. Això no és compatible amb el pla seleccionat. Per continuar, o bé elimineu el número d'IVA de l'adreça de facturació o bé seleccioneu un pla diferent."
+      ],
+      "Choose your service to connect with": [
+        "Trieu el servei amb què us voleu connectar"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Heu habilitat el reenviament en ${ MAX_SYNC_PAID_USER } adreça del Gmail. Per afegir-ne una altra, primer desactiveu-ne una.",
+        "Heu habilitat el reenviament en ${ MAX_SYNC_PAID_USER } adreces del Gmail. Per afegir-ne una altra, primer desactiveu-ne una."
       ]
     },
     "info": {
@@ -11864,6 +11904,27 @@
       ],
       "Social media": [
         "Xarxes socials"
+      ],
+      "Choose your service": [
+        "Trieu el vostre servei"
+      ],
+      "Popular services": [
+        "Serveis populars"
+      ],
+      "Skip for now": [
+        "Ometeu-ho per ara"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Canvieu els vostres comptes a ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Canviar de correu és difícil. ${ BRAND_NAME } ho fa fàcil. Connecteu el vostre compte antic i gestioneu-ho tot en un espai de treball concentrat i sense anuncis."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Actualitzeu el vostre correu als serveis que feu servir més. Preveniu el rastreig i protegiu la vostra privacitat."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Benvingut a ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -12397,6 +12458,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "La vostra subscripció ja té un descompte aplicat. Canviar a aquesta nova promoció implica que el descompte actual ja no s'aplicarà."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "S'aplica la inversió del subjecte passiu (IVA)."
       ]
     },
     "Payments.Error": {
@@ -15801,6 +15865,33 @@
       ],
       "Reverse charge not supported": [
         "No s'admet la inversió del subjecte passiu"
+      ],
+      "Choose a provider": [
+        "Escolliu un proveïdor"
+      ],
+      "Connect a Gmail address": [
+        "Connecteu-vos a una adreça de Gmail"
+      ],
+      "Connect more addresses": [
+        "Connecteu més adreces"
+      ],
+      "Custom": [
+        "Personalitzar"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importeu les dades a ${ BRAND_NAME }"
+      ],
+      "Limit reached": [
+        "S'ha assolit el límit."
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Múltiples comptes, 1 safata d'entrada privada"
+      ],
+      "Remove forwarding address": [
+        "Esborreu l'adreça de reenviament"
+      ],
+      "Select data to import": [
+        "Seleccioneu les dades que voleu importar"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16378,6 +16469,16 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Per reenviar correus electrònics des de fins a ${ MAX_SYNC_PAID_USER } compte, milloreu a ${ planName }.",
+        "Per reenviar correus electrònics des de fins a ${ MAX_SYNC_PAID_USER } comptes, milloreu a ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Esteu reenviant correus electrònics des d'${ MAX_SYNC_FREE_USER } compte extern a ${ MAIL_APP_NAME }.",
+        "Esteu reenviant correus electrònics des de ${ MAX_SYNC_FREE_USER } comptes externs a ${ MAIL_APP_NAME }."
       ]
     }
   }

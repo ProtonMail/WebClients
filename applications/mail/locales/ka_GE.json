@@ -1675,6 +1675,21 @@
       ],
       "Edit billing address": [
         "გადახდის მისამართის ჩასწორება"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Manage addresses": [
+        "მისამართების მართვა"
+      ],
+      "Or use a different Gmail address": [
+        "ან გამოიყენეთ სხვა Gmail-ის მისამართი"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Gmail-დან ავტოგადაგზავნის მორგება"
+      ],
+      "Use this Gmail address": [
+        "ამ Gmail-ის მისამართის გამოყენება"
       ]
     },
     "action": {
@@ -5032,6 +5047,18 @@
       ],
       "ZIP code is required": [
         "საფოსტო კოდი აუცილებელია"
+      ],
+      "Invalid coupon": [
+        "არასწორი კუპონი"
+      ],
+      "Invalid VAT number": [
+        "არასწორი დღგს ნომერი"
+      ],
+      "This field is invalid": [
+        "ეს ველი არასწორია"
+      ],
+      "Wrong billing address": [
+        "არასწორი გადახდის მისამართი"
       ]
     },
     "error": {
@@ -6275,6 +6302,9 @@
       ],
       "Import from Yahoo": [
         "yahoo-დან შემოტანა"
+      ],
+      "Advanced import": [
+        "გაფართოებული შემოტანა"
       ]
     },
     "Import warning": {
@@ -9763,6 +9793,9 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Import recent mails": [
+        "უახლესი ელფოსტების შემოტანა"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12398,6 +12431,12 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "სან-ფრანცისკო"
       ]
     },
     "Placeholder for contact group name": {
@@ -15422,6 +15461,33 @@
       ],
       "✨ Categories are coming!": [
         "✨ კატეგორიები გზაშია!"
+      ],
+      "Choose a provider": [
+        "აირჩიეთ პროვაიდერი"
+      ],
+      "Connect a Gmail address": [
+        "Gmail-ის მისამართთან დაკავშირება"
+      ],
+      "Connect more addresses": [
+        "მეტი მისამართის დაკავშირება"
+      ],
+      "Custom": [
+        "მომხმარებლის"
+      ],
+      "Limit reached": [
+        "მიაღწიეთ ლიმიტს"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "ერთზე მეტი ანგარიში, 1 პირადი საფოსტო ყუთი"
+      ],
+      "Remove forwarding address": [
+        "გადაგზავნის მისამართის წაშლა"
+      ],
+      "Select data to import": [
+        "აირჩიეთ შემოსატანი მონაცემები"
+      ],
+      "Spring Sale": [
+        "საგაზაფხულო ფასდაკლება"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15993,6 +16059,16 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "ელფოსტების გადასაგზავნად ${ MAX_SYNC_PAID_USER }-მდე ანგარიშიდან, ასწიეთ სატარიფო გეგმა ${ planName }-ზე.",
+        "ელფოსტების გადასაგზავნად ${ MAX_SYNC_PAID_USER }-მდე ანგარიშიდან, ასწიეთ სატარიფო გეგმა ${ planName }-ზე."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "თქვენ აგზავნით ელფოსტებს ${ MAX_SYNC_FREE_USER } გარე ანგარიშიდან ${ MAIL_APP_NAME }-ზე.",
+        "თქვენ აგზავნით ელფოსტებს ${ MAX_SYNC_FREE_USER } გარე ანგარიშიდან ${ MAIL_APP_NAME }-ზე."
       ]
     }
   }

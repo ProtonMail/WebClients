@@ -1657,6 +1657,12 @@
       ],
       "Edit billing address": [
         "Számlázási cím szerkesztése"
+      ],
+      "Manage addresses": [
+        "Címek kezelése"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Állítson be automatikus továbbítást Gmailről"
       ]
     },
     "action": {
@@ -8545,6 +8551,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Már csak néhány kattintás választja el a rendetlenség-mentes postaládától"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Engedélyezte a továbbítást a következő ${ MAX_SYNC_PAID_USER } Gmail címen. Ha újat szeretne hozzáadni, először tiltsa le az egyiket.",
+        "Engedélyezte a továbbítást a következő ${ MAX_SYNC_PAID_USER } Gmail címeken. Ha újat szeretne hozzáadni, először tiltsa le az egyiket."
       ]
     },
     "info": {
@@ -15077,6 +15087,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Érkeznek a kategóriák!"
+      ],
+      "Limit reached": [
+        "Korlát elérve"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15649,6 +15662,12 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "Easy switch": {
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "E-maileket továbbít ${ MAX_SYNC_FREE_USER } külső fiókból a ${ MAIL_APP_NAME } szolgáltatásba.",
+        "E-maileket továbbít ${ MAX_SYNC_FREE_USER } külső fiókból a ${ MAIL_APP_NAME } szolgáltatásba."
       ]
     }
   }

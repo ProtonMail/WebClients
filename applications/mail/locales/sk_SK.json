@@ -1688,6 +1688,21 @@
       ],
       "Edit billing address": [
         "Upraviť fakturačnú adresu"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Manage addresses": [
+        "Spravovať adresy"
+      ],
+      "Or use a different Gmail address": [
+        "Alebo použite inú Gmail adresu"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Nastavte automatické preposielanie z Gmailu"
+      ],
+      "Use this Gmail address": [
+        "Použiť túto Gmailovú adresu"
       ]
     },
     "action": {
@@ -5209,6 +5224,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Systém prenesenia daňovej povinnosti nie je pre tento plán podporovaný."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Zadajte používateľské meno bez domény (@príklad.com)"
       ]
     },
     "error": {
@@ -6504,6 +6522,12 @@
       ],
       "Import from Yahoo": [
         "Importovať z Yahoo"
+      ],
+      "Advanced import": [
+        "Pokročilý import"
+      ],
+      "Import from ${ providerName }": [
+        "Importovať z ${ providerName }"
       ]
     },
     "Import warning": {
@@ -9217,6 +9241,15 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Váš účet je momentálne nastavený tak, aby sa uplatňoval režim prenesenia daňovej povinnosti. Tento režim nie je podporovaný pre vybraný plán. Ak chcete pokračovať, odstráňte DIČ z fakturačnej adresy alebo vyberte iný plán."
+      ],
+      "Choose your service to connect with": [
+        "Vyberte si službu na pripojenie"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adrese Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte.",
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adresách Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte.",
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adresách Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte.",
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adresách Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte."
       ]
     },
     "info": {
@@ -12797,6 +12830,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše predplatné má v súčasnosti platnú zľavu. Prechodom na túto novú akciu sa existujúca zľava prestane uplatňovať."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Uplatňuje sa mechanizmus prenesenia daňovej povinnosti."
       ]
     },
     "Payments.Error": {
@@ -15825,7 +15861,7 @@
         "Nesprávny overovací kód"
       ],
       "Keep this banner hidden?": [
-        "Skryť toto oznámenie?"
+        "Ponechať túto reklamu skrytú?"
       ],
       "Label as": [
         "Označiť ako"
@@ -16387,6 +16423,33 @@
       ],
       "Reverse charge not supported": [
         "Obrátené zdanenie nie je podporované"
+      ],
+      "Choose a provider": [
+        "Vyberte poskytovateľa"
+      ],
+      "Connect a Gmail address": [
+        "Pripojte Gmailovú adresu"
+      ],
+      "Connect more addresses": [
+        "Pripojiť viac adries"
+      ],
+      "Custom": [
+        "Vlastné"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importujte svoje dáta do ${ BRAND_NAME }"
+      ],
+      "Limit reached": [
+        "Limit dosiahnutý"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Viacero účtov, 1 súkromná doručená pošta"
+      ],
+      "Remove forwarding address": [
+        "Odstrániť adresu preposielania"
+      ],
+      "Select data to import": [
+        "Vyberte dáta na import"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -17054,6 +17117,20 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Na preposielanie emailov z ${ MAX_SYNC_PAID_USER } účtu prejdite na ${ planName }.",
+        "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }.",
+        "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }.",
+        "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externého účtu do ${ MAIL_APP_NAME }.",
+        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }.",
+        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }.",
+        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }."
       ]
     }
   }

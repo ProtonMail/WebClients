@@ -1646,6 +1646,12 @@
       ],
       "Edit billing address": [
         "Edytuj adres rozliczeniowy"
+      ],
+      "Manage addresses": [
+        "Zarządzaj adresami"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Skonfiguruj automatyczne przekierowanie z Gmaila"
       ]
     },
     "action": {
@@ -4845,6 +4851,9 @@
       ],
       "ZIP code is required": [
         "Kod pocztowy jest wymagany"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Wpisz swoją nazwę użytkownika bez domeny (@example.com)"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -8704,6 +8713,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od uporządkowanej skrzynki odbiorczej dzieli Cię kilka kliknięć"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Włączono przekierowanie ${ MAX_SYNC_PAID_USER } adresu Gmail. Aby dodać kolejne, wyłącz jeden z nich.",
+        "Włączono przekierowanie ${ MAX_SYNC_PAID_USER } adresów Gmail. Aby dodać kolejne, wyłącz jeden z nich.",
+        "Włączono przekierowanie ${ MAX_SYNC_PAID_USER } adresów Gmail. Aby dodać kolejne, wyłącz jeden z nich.",
+        "Włączono przekierowanie ${ MAX_SYNC_PAID_USER } adresów Gmail. Aby dodać kolejne, wyłącz jeden z nich."
       ]
     },
     "info": {
@@ -12418,6 +12433,12 @@
       ],
       "Use your own email domain": [
         "Możliwość użycia własnej domeny e-mail"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Przedłuż subskrypcję i zaoszczędź ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Przejdź na nasz roczny plan i zaoszczędź ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -15315,6 +15336,15 @@
       ],
       "Your shorter address is now ready": [
         "Krótszy adres jest już gotowy"
+      ],
+      "Connect more addresses": [
+        "Połącz więcej adresów"
+      ],
+      "Limit reached": [
+        "Limit został osiągnięty"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Wiele kont, 1 prywatna skrzynka odbiorcza"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15976,6 +16006,20 @@
       ],
       "Passcode:": [
         "Kod dostępu:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Ulepsz konto do planu ${ planName }, aby przekierować wiadomości z ${ MAX_SYNC_PAID_USER } adresu.",
+        "Ulepsz konto do planu ${ planName }, aby przekierować wiadomości z ${ MAX_SYNC_PAID_USER } adresów.",
+        "Ulepsz konto do planu ${ planName }, aby przekierować wiadomości z ${ MAX_SYNC_PAID_USER } adresów.",
+        "Ulepsz konto do planu ${ planName }, aby przekierować wiadomości z ${ MAX_SYNC_PAID_USER } adresów."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Przekierowujesz do ${ MAIL_APP_NAME } wiadomości z ${ MAX_SYNC_FREE_USER } adresu.",
+        "Przekierowujesz do ${ MAIL_APP_NAME } wiadomości z ${ MAX_SYNC_FREE_USER } adresów.",
+        "Przekierowujesz do ${ MAIL_APP_NAME } wiadomości z ${ MAX_SYNC_FREE_USER } adresów.",
+        "Przekierowujesz do ${ MAIL_APP_NAME } wiadomości z ${ MAX_SYNC_FREE_USER } adresów."
       ]
     }
   }

@@ -1670,6 +1670,18 @@
       ],
       "Edit billing address": [
         "Edit alamat penagihan"
+      ],
+      "Manage addresses": [
+        "Kelola alamat"
+      ],
+      "Or use a different Gmail address": [
+        "Atau gunakan alamat Gmail yang berbeda"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Siapkan penerusan otomatis dari Gmail"
+      ],
+      "Use this Gmail address": [
+        "Gunakan alamat Gmail in"
       ]
     },
     "action": {
@@ -8579,6 +8591,9 @@
       ],
       "Insert image": [
         "Sisipkan gambar"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Anda telah mengaktifkan penerusan di ${ MAX_SYNC_PAID_USER } alamat Gmail. Untuk menambahkan yang lain, nonaktifkan salah satunya terlebih dahulu."
       ]
     },
     "info": {
@@ -15171,6 +15186,21 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategori akan segera hadir!"
+      ],
+      "Connect a Gmail address": [
+        "Hubungkan alamat Gmail"
+      ],
+      "Connect more addresses": [
+        "Hubungkan lebih banyak alamat"
+      ],
+      "Limit reached": [
+        "Batas tercapai"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Banyak akun, 1 kotak masuk privat"
+      ],
+      "Remove forwarding address": [
+        "Hapus alamat penerusan"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15703,6 +15733,14 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Untuk meneruskan email dari hingga ${ MAX_SYNC_PAID_USER } akun, tingkatkan ke ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Anda meneruskan alamat dari ${ MAX_SYNC_FREE_USER } akun eksternal ke ${ MAIL_APP_NAME }."
       ]
     }
   }

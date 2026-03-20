@@ -1678,6 +1678,21 @@
       ],
       "Edit billing address": [
         "Επεξεργασία διεύθυνσης χρέωσης"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Manage addresses": [
+        "Διαχείριση διευθύνσεων"
+      ],
+      "Or use a different Gmail address": [
+        "Ή χρησιμοποιήστε μια διαφορετική διεύθυνση Gmail"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Ρυθμίστε την αυτόματη προώθηση από το Gmail"
+      ],
+      "Use this Gmail address": [
+        "Χρησιμοποιήστε αυτήν τη διεύθυνση Gmail"
       ]
     },
     "action": {
@@ -5133,6 +5148,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Το σύστημα αντιστροφής χρέωσης δεν υποστηρίζεται για αυτό το πλάνο"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Εισάγετε το όνομα χρήστη σας χωρίς τον τομέα (@example.com)"
       ]
     },
     "error": {
@@ -5949,6 +5967,15 @@
       ],
       "You've unlocked 1 GB": [
         "Έχετε ξεκλειδώσει 1 GB"
+      ],
+      "Download apps": [
+        "Λήψη εφαρμογών"
+      ],
+      "Get storage bonus": [
+        "Λάβετε μπόνους αποθήκευσης"
+      ],
+      "Review import options": [
+        "Ανασκόπηση επιλογών εισαγωγής"
       ]
     },
     "Gmail forwarding": {
@@ -6390,6 +6417,12 @@
       ],
       "Import from Yahoo": [
         "Εισαγωγή από το Yahoo"
+      ],
+      "Advanced import": [
+        "Προηγμένη εισαγωγή"
+      ],
+      "Import from ${ providerName }": [
+        "Εισαγωγή από ${ providerName }"
       ]
     },
     "Import warning": {
@@ -8925,6 +8958,13 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Ο λογαριασμός σας είναι αυτή τη στιγμή ρυθμισμένος να εφαρμόζει το καθεστώς αντίστροφης χρέωσης. Αυτό δεν υποστηρίζεται για το επιλεγμένο πλάνο. Για να συνεχίσετε, είτε αφαιρέστε τον αριθμό ΦΠΑ από τη διεύθυνση χρέωσης είτε επιλέξτε ένα άλλο πλάνο."
+      ],
+      "Choose your service to connect with": [
+        "Επιλέξτε την υπηρεσία σας για να συνδεθείτε"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Έχετε ενεργοποιήσει την προώθηση σε ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail. Για να προσθέσετε ακόμα μία, απενεργοποιήστε πρώτα μία από αυτές.",
+        "Έχετε ενεργοποιήσει την προώθηση σε ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail. Για να προσθέσετε ακόμα μία, απενεργοποιήστε πρώτα μία από αυτές."
       ]
     },
     "info": {
@@ -11864,6 +11904,27 @@
       ],
       "Social media": [
         "Μέσα κοινωνικής δικτύωσης"
+      ],
+      "Choose your service": [
+        "Επιλέξτε την υπηρεσία σας"
+      ],
+      "Popular services": [
+        "Δημοφιλείς υπηρεσίες"
+      ],
+      "Skip for now": [
+        "Αγνοήστε για τώρα"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Μεταφέρετε τους λογαριασμούς σας στο ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Η αλλαγή email είναι δύσκολη. Το ${ BRAND_NAME } την καθιστά εύκολη. Συνδέστε τον παλιό σας λογαριασμό και διαχειριστείτε τα πάντα σε έναν εστιασμένο χώρο εργασίας χωρίς διαφημίσεις."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Ενημερώστε το email σας στις υπηρεσίες που χρησιμοποιείτε περισσότερο. Αποτρέψτε την παρακολούθηση και προστατέψτε την ιδιωτικότητά σας."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Καλώς ήρθατε στο ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -12397,6 +12458,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Η συνδρομή σας έχει ήδη μια υπάρχουσα έκπτωση. Η μετάβαση σε αυτή τη νέα προσφορά σημαίνει ότι η υπάρχουσα έκπτωση δε θα ισχύει πλέον."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Εφαρμόζεται ο μηχανισμός αντίστροφης χρέωσης ΦΠΑ."
       ]
     },
     "Payments.Error": {
@@ -15801,6 +15865,33 @@
       ],
       "Reverse charge not supported": [
         "Αντιστροφή χρέωσης δεν υποστηρίζεται"
+      ],
+      "Choose a provider": [
+        "Επιλέξτε έναν πάροχο"
+      ],
+      "Connect a Gmail address": [
+        "Συνδέστε μια διεύθυνση Gmail"
+      ],
+      "Connect more addresses": [
+        "Σύνδεση περισσότερων διευθύνσεων"
+      ],
+      "Custom": [
+        "Προσαρμογή"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Εισάγετε τα δεδομένα σας στο ${ BRAND_NAME }"
+      ],
+      "Limit reached": [
+        "Υπέρβαση ορίου"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Πολλαπλοί λογαριασμοί, 1 ιδιωτικά εισερχόμενο"
+      ],
+      "Remove forwarding address": [
+        "Κατάργηση διεύθυνσης προώθησης"
+      ],
+      "Select data to import": [
+        "Επιλέξτε δεδομένα για εισαγωγή"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16378,6 +16469,16 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Για να προωθήσετε μηνύματα ηλεκτρονικού ταχυδρομείου από έως και ${ MAX_SYNC_PAID_USER } λογαριασμό, αναβαθμίστε σε ${ planName }.",
+        "Για να προωθήσετε μηνύματα ηλεκτρονικού ταχυδρομείου από έως και ${ MAX_SYNC_PAID_USER } λογαριασμούς, αναβαθμίστε σε ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ${ MAX_SYNC_FREE_USER } εξωτερικό λογαριασμό στο ${ MAIL_APP_NAME }.",
+        "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ${ MAX_SYNC_FREE_USER } εξωτερικούς λογαριασμούς στο ${ MAIL_APP_NAME }."
       ]
     }
   }

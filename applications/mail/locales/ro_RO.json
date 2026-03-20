@@ -1680,6 +1680,21 @@
       ],
       "Edit billing address": [
         "Editare adresă de facturare"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Manage addresses": [
+        "Gestionare adrese"
+      ],
+      "Or use a different Gmail address": [
+        "Sau utilizați o altă adresă Gmail"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Setare transferare automată din Gmail"
+      ],
+      "Use this Gmail address": [
+        "Utilizare această adresă de Gmail"
       ]
     },
     "action": {
@@ -5168,6 +5183,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Schema de taxare inversă nu este acceptată pentru acest plan."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduceți numele de utilizator fără domeniu (@exemplu.com)."
       ]
     },
     "error": {
@@ -6444,6 +6462,12 @@
       ],
       "Import from Yahoo": [
         "Importare din Yahoo"
+      ],
+      "Advanced import": [
+        "Importare avansată"
+      ],
+      "Import from ${ providerName }": [
+        "Importare din ${ providerName }"
       ]
     },
     "Import warning": {
@@ -9068,6 +9092,14 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Contul este configurat în prezent pentru a aplica schema de taxare inversă. Aceasta nu este acceptată pentru planul selectat. Pentru a continua, fie eliminați numărul de TVA din adresa de facturare, fie selectați un alt plan."
+      ],
+      "Choose your service to connect with": [
+        "Alegeți serviciul cu care doriți să vă conectați"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Ați activat transferarea mesajelor pentru ${ MAX_SYNC_PAID_USER } adresă de Gmail. Pentru a adăuga alta, mai întâi dezactivați una.",
+        "Ați activat transferarea mesajelor pentru ${ MAX_SYNC_PAID_USER } adrese de Gmail. Pentru a adăuga alta, mai întâi dezactivați una.",
+        "Ați activat transferarea mesajelor pentru ${ MAX_SYNC_PAID_USER } de adrese de Gmail. Pentru a adăuga alta, mai întâi dezactivați una."
       ]
     },
     "info": {
@@ -12594,6 +12626,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Se aplică mecanismul de taxare inversă a TVA."
       ]
     },
     "Payments.Error": {
@@ -13032,7 +13067,7 @@
         "Valorificați oferta"
       ],
       "SPRING SALE 2026": [
-        "OFERTĂ DE PRIMĂVERII 2026"
+        "OFERTĂ PRIMĂVERII 2026"
       ]
     },
     "q1campaign: Info": {
@@ -13107,6 +13142,12 @@
       ],
       "Use your own email domain": [
         "Utilizați propriul domeniu de e-mail"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Extindeți-vă abonamentul și economisiți ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Treceți la planul nostru anual și economisiți ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -13114,7 +13155,7 @@
         "pentru 12 luni"
       ],
       "SPRING SALE": [
-        "OFERTĂ DE PRIMĂVERII"
+        "OFERTĂ PRIMĂVERII"
       ]
     },
     "Received email icon": {
@@ -16008,7 +16049,7 @@
         "Sortare mesaje"
       ],
       "Spring Sale": [
-        "Reducere de primăvară"
+        "Ofertă de primăvară"
       ],
       "Start a new import": [
         "Începere importare nouă"
@@ -16181,6 +16222,33 @@
       ],
       "Reverse charge not supported": [
         "Taxa inversă nu este suportată"
+      ],
+      "Choose a provider": [
+        "Alegeți un furnizor"
+      ],
+      "Connect a Gmail address": [
+        "Conectați adresa de Gmail"
+      ],
+      "Connect more addresses": [
+        "Conectați mai multe adrese"
+      ],
+      "Custom": [
+        "Personalizat"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importați-vă datele în ${ BRAND_NAME }"
+      ],
+      "Limit reached": [
+        "Limită atinsă"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Conturi multiple, un cont privat"
+      ],
+      "Remove forwarding address": [
+        "Eliminare adresă de transferare"
+      ],
+      "Select data to import": [
+        "Selectați datele de importat"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16803,6 +16871,18 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Pentru a transfera mesaje de la ${ MAX_SYNC_PAID_USER } cont, treceți la ${ planName }.",
+        "Pentru a transfera mesaje de la maxim ${ MAX_SYNC_PAID_USER } conturi, treceți la ${ planName }.",
+        "Pentru a transfera mesaje de la maxim ${ MAX_SYNC_PAID_USER } de conturi, treceți la ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Transferați mesaje de la ${ MAX_SYNC_FREE_USER } cont extern către ${ MAIL_APP_NAME }.",
+        "Transferați mesaje de la ${ MAX_SYNC_FREE_USER } conturi externe către ${ MAIL_APP_NAME }.",
+        "Transferați mesaje de la ${ MAX_SYNC_FREE_USER } de conturi externe către ${ MAIL_APP_NAME }."
       ]
     }
   }
