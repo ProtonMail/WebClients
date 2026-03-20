@@ -5,6 +5,7 @@ const BornPrivateAside = ({ children }: { children: ReactNode }) => {
         <aside
             className="w-custom w-full flex flex-column gap-8 justify-center items-center confirmation-two-column-aside"
             style={{ '--w-custom': '29rem' }}
+            data-testid="born-private-aside"
         >
             {children}
         </aside>
