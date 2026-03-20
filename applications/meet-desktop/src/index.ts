@@ -8,7 +8,6 @@ import {
     bringWindowToFront,
     getMainWindow,
     getWebContentsViewName,
-    loadURL,
     showView,
     viewCreationAppStartup,
 } from "./utils/view/viewManagement";
@@ -133,7 +132,7 @@ import {
 
     // Navigate to startup URL if provided via protocol (Windows/Linux argv)
     if (startupUrl) {
-        loadURL("meet", startupUrl);
+        showView("meet", startupUrl);
     }
 
     const settings = getSettings();
