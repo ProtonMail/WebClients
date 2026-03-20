@@ -153,9 +153,6 @@
       "Attention required": [
         "需要您的處理"
       ],
-      "Authenticate": [
-        "驗證"
-      ],
       "Auto-delete spam and trash": [
         "自動刪除垃圾郵件和垃圾桶"
       ],
@@ -194,9 +191,6 @@
       ],
       "Carbon Copy": [
         "副本"
-      ],
-      "Change email": [
-        "更換電子郵件"
       ],
       "Change password": [
         "變更密碼"
@@ -579,9 +573,6 @@
       "Font": [
         "字型"
       ],
-      "Forgot password?": [
-        "忘記密碼?"
-      ],
       "Formalize": [
         "正式化"
       ],
@@ -806,6 +797,9 @@
       ],
       "Make it friendly": [
         "使其更友善"
+      ],
+      "Manage addresses": [
+        "管理電郵位址"
       ],
       "Manage advanced account protections": [
         "管理進階帳戶保護"
@@ -1557,14 +1551,8 @@
       "Use a different payment method": [
         "改用另一個繳款方式"
       ],
-      "Use authentication code": [
-        "使用驗證代碼"
-      ],
       "Use for sending": [
         "用於寄送"
-      ],
-      "Use recovery code": [
-        "使用復原碼"
       ],
       "Use this": [
         "使用此"
@@ -5358,16 +5346,6 @@
         "無限制的 hide-my-email 別名"
       ]
     },
-    "fido2: Info": {
-      "Security key": [
-        "安全金鑰"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "安全金鑰"
-      ]
-    },
     "file size format": {
       "byte": [
         "位元組"
@@ -5602,9 +5580,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME }應用程式"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "App Store的${ MAIL_APP_NAME }"
       ],
@@ -5617,15 +5592,6 @@
       "${ remainingDaysCount } day left": [
         "${ remainingDaysCount } 剩餘天數"
       ],
-      "account logins": [
-        "帳號登錄"
-      ],
-      "Auto-forward Gmail": [
-        "自動轉寄 Gmail"
-      ],
-      "auto-forwarding": [
-        "自動轉寄"
-      ],
       "Block email communications from scammers permanently.": [
         "阻擋詐騙電子郵件通訊。"
       ],
@@ -5635,12 +5601,6 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "太棒了，讓您的電子郵件變得更加安全、方便與相關！我們已將您的免費儲存空間增加到總計 1 GB。"
       ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "變更${ strongText }至${ BRAND_NAME }位址"
-      ],
-      "Changed accounts": [
-        "變更帳號"
-      ],
       "Checklist complete": [
         "清單完成"
       ],
@@ -5649,9 +5609,6 @@
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "在 ${ daysCount } 日內完成以下項目可以免費將儲存空間翻倍。"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "了解${ strongText }如何保護您。"
       ],
       "Discover privacy features": [
         "探索隱私各種功能"
@@ -5665,17 +5622,8 @@
       "For your eyes only": [
         "自己看好了，別人不好看"
       ],
-      "Get more storage": [
-        "取得更多儲存空間"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "免費下載 ${ MAIL_APP_NAME } 行動裝置程式"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "於Android或iOS取得${ strongText }"
-      ],
-      "Get the App": [
-        "取得應用程式"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "保持使用${ MAIL_APP_NAME }以了解更多方法${ BRAND_NAME }保護隱私及簡化信件。"
@@ -5683,20 +5631,8 @@
       "Learn more": [
         "了解更多"
       ],
-      "Nice! You've updated all services in this category.": [
-        "您已更新於清單上的全部服務"
-      ],
-      "Popular online services": [
-        "熱門線上節點"
-      ],
-      "privacy features": [
-        "隱私功能"
-      ],
       "Protection from trackers": [
         "保護免於追蹤"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "設定${ strongText }至Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "登入行動APP以完成此步驟"
@@ -5709,9 +5645,6 @@
       ],
       "This feature is currently unavailable": [
         "此功能暫未開放"
-      ],
-      "Update your logins": [
-        "更新您的登入"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "請掃描此條碼或瀏覽iOS、Android商店。"
@@ -6895,17 +6828,11 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "確保通訊完全隱密與加密。立刻領取您的免費 ${ BRAND_NAME } 電子郵件位址。"
       ],
-      "Enter the code from your authenticator app": [
-        "輸入驗證應用程式中的驗證代碼"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "請輸入您想匯入的電郵帳號所使用的憑證。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
-      ],
-      "Enter your own password (as organization admin).": [
-        "輸入您的個人密碼 (組織機構管理員身份)。"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "預計尚餘時間：${ estimatedMinutes } 分鐘"
@@ -8368,6 +8295,9 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "屆時我們將於每 ${ renewCycle } 個月，收取 ${ renewAmountStr } 的訂閱費用。 您可隨時取消。"
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "您已在 ${ MAX_SYNC_PAID_USER } 個 Gmail 位址上啟用轉寄功能。若要新增另一個，請先停用其中一個。"
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "您已達到聯絡人群組郵件地址最高上限："
       ],
@@ -8833,9 +8763,6 @@
       ],
       "Attach screenshot(s)": [
         "附加螢幕截圖"
-      ],
-      "Authenticator app": [
-        "驗證 app"
       ],
       "Automated confirmations and alerts": [
         "自動確認和警報"
@@ -9511,12 +9438,6 @@
       ],
       "Your location": [
         "您的位置"
-      ],
-      "Your password (admin)": [
-        "您的密碼（管理員）"
-      ],
-      "Your password (trusted contact)": [
-        "您的密碼 (信任的內容)"
       ],
       "ZIP code": [
         "郵遞區號"
@@ -11281,23 +11202,8 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
-        "立即變更您在常用服務上的電子郵件地址，以避免遭到追蹤及分析。${ learnMoreLink }"
-      ],
-      "Finance": [
-        "金融"
-      ],
       "Maybe later": [
         "稍後再說"
-      ],
-      "Privacy for all your online accounts": [
-        "給予您的所有在線帳號隱私"
-      ],
-      "Shopping": [
-        "購物"
-      ],
-      "Social media": [
-        "社群媒體"
       ]
     },
     "Onboarding modal": {
@@ -11490,40 +11396,6 @@
       ],
       "Your free trial has started": [
         "您的免費試用已開始"
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "您是否有以下郵件平台的帳號？僅需點擊幾下，即可將您的電郵變更為 ${ MAIL_APP_NAME } 的位址。"
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "網銀服務"
-      ],
-      "Crypto": [
-        "加密貨幣"
-      ],
-      "E-commerce and Retail": [
-        "電子發票"
-      ],
-      "Entertainment": [
-        "娛樂"
-      ],
-      "Food and beverage": [
-        "飲食"
-      ],
-      "Gaming": [
-        "遊戲"
-      ],
-      "Most popular": [
-        "最受歡迎"
-      ],
-      "Travel": [
-        "旅遊"
-      ],
-      "Utilities": [
-        "無標題"
       ]
     },
     "Option": {
@@ -13047,17 +12919,6 @@
         "您的 pm.me 郵件位置已經啟用"
       ]
     },
-    "sso": {
-      "Sign in": [
-        "登入"
-      ],
-      "Sign in to your organization": [
-        "登入您的組織"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "您將被重新導向至您的第三方單一登入提供者。"
-      ]
-    },
     "State": {
       "Canceling your subscription, please wait": [
         "正將您的訂購授權取消，請稍候"
@@ -14390,9 +14251,6 @@
       "Enhance security with 2FA": [
         "透過雙重驗證強化安全性"
       ],
-      "Enter your password": [
-        "輸入您的密碼"
-      ],
       "Error": [
         "錯誤"
       ],
@@ -14509,6 +14367,9 @@
       ],
       "Label options": [
         "標籤選項"
+      ],
+      "Limit reached": [
+        "已達上限"
       ],
       "Link confirmation": [
         "外部連結確認"
@@ -14935,9 +14796,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "啟用${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Two-factor authentication": [
-        "兩步驟驗證"
       ],
       "Unsubscribe": [
         "取消訂閱"

@@ -153,9 +153,6 @@
       "Attention required": [
         "Pozornost!"
       ],
-      "Authenticate": [
-        "Preverjanje pristnosti"
-      ],
       "Auto-delete spam and trash": [
         "Samodejno briši neželeno/smeti"
       ],
@@ -191,9 +188,6 @@
       ],
       "Carbon Copy": [
         "Kopija"
-      ],
-      "Change email": [
-        "Spremeni naslov"
       ],
       "Change password": [
         "Spremeni geslo"
@@ -573,9 +567,6 @@
       "Font": [
         "Pisava"
       ],
-      "Forgot password?": [
-        "Pozabljeno geslo?"
-      ],
       "Formalize": [
         "Formalen ton besedila"
       ],
@@ -803,6 +794,9 @@
       ],
       "Make it friendly": [
         "Prijateljski ton besedila"
+      ],
+      "Manage addresses": [
+        "Upravljanje naslovov"
       ],
       "Manage advanced account protections": [
         "Upravljajte z naprednimi zaščitami računa"
@@ -1551,17 +1545,14 @@
       "Use a different payment method": [
         "Uporabite drug način plačila"
       ],
-      "Use authentication code": [
-        "Uporabi kodo za preverjanje pristnosti"
-      ],
       "Use for sending": [
         "Uporabi za pošiljanje"
       ],
-      "Use recovery code": [
-        "Uporabite kode za obnovitev"
-      ],
       "Use this": [
         "Uporabi"
+      ],
+      "Use this Gmail address": [
+        "Uporabi ta naslov Gmail"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Uporabite miško za spreminjanje velikosti pogleda. Če uporabljate tipkovnico, lahko uporabite puščici levo in desno za spreminjanje velikosti."
@@ -5445,24 +5436,6 @@
         "Bliskovite hitrosti"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vstavite varnostni ključ, povezan z vašim ${ BRAND_NAME } računom."
-      ],
-      "Security key": [
-        "Varnostni ključ"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Varnostni ključ"
-      ]
-    },
     "file size format": {
       "byte": [
         "bajt",
@@ -5715,9 +5688,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME } aplikacijo"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } v trgovini App Store"
       ],
@@ -5736,15 +5706,6 @@
         "Še ${ remainingDaysCount } dni",
         "Še ${ remainingDaysCount } dni"
       ],
-      "account logins": [
-        "prijave v račun"
-      ],
-      "Auto-forward Gmail": [
-        "Samodejno posredovanje Gmaila."
-      ],
-      "auto-forwarding": [
-        "samodejno posredovanje"
-      ],
       "Block email communications from scammers permanently.": [
         "Trajno blokirajte e-poštno komunikacijo prevarantov."
       ],
@@ -5754,23 +5715,17 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Svojo e-pošto ste pravkar napravili še varnejšo, priročnejšo in koristnejšo – čestitamo! Brezplačno shrambo smo vam povečali na 1 GB."
       ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Spremenite ${ strongText } v vaš naslov ${ BRAND_NAME }."
-      ],
-      "Changed accounts": [
-        "Račun zamenjan"
-      ],
       "Checklist complete": [
         "Kontrolni seznam je izpolnjen"
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Dokončajte ta kontrolni seznam v ${ daysCount } za podvojitev vaše shrambe brezplačno."
       ],
-      "Discover how our ${ strongText } protect you": [
-        "Odkrijte, kako vas naše ${ strongText } varujejo."
-      ],
       "Discover privacy features": [
         "Odkrijte funkcije zasebnosti"
+      ],
+      "Download apps": [
+        "Prenesite aplikacije"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Tako močno šifriranje, da lahko vaša sporočila preberete samo vi in njihovi prejemniki."
@@ -5781,17 +5736,11 @@
       "For your eyes only": [
         "Samo za vaše oči"
       ],
-      "Get more storage": [
-        "Pridobite več prostora"
+      "Get storage bonus": [
+        "Pridobite bonus za shranjevanje"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Prenesite mobilno aplikacijo ${ MAIL_APP_NAME }"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Pridobite ${ strongText } za Android ali iOS."
-      ],
-      "Get the App": [
-        "Pridobi aplikacijo"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Še naprej uporabljajte ${ MAIL_APP_NAME }, da odkrijete več načinov, kako ${ BRAND_NAME } varuje vašo zasebnost in poenostavlja pošiljanje e-pošte."
@@ -5799,20 +5748,11 @@
       "Learn more": [
         "Izvedi več."
       ],
-      "Nice! You've updated all services in this category.": [
-        "Lepo! Posodobili ste vse storitve v tej kategoriji."
-      ],
-      "Popular online services": [
-        "Priljubljene spletne storitve"
-      ],
-      "privacy features": [
-        "funkcije zasebnosti"
-      ],
       "Protection from trackers": [
         "Zaščita pred sledilniki"
       ],
-      "Set up ${ strongText } from Gmail": [
-        "Nastavite ${ strongText } iz Gmaila."
+      "Review import options": [
+        "Preglejte možnosti uvoza"
       ],
       "Sign in to the mobile app to complete this step": [
         "Za dokončanje tega koraka se prijavite v mobilno aplikacijo"
@@ -5825,9 +5765,6 @@
       ],
       "This feature is currently unavailable": [
         "Ta funkcija je trenutno nedostopna."
-      ],
-      "Update your logins": [
-        "Posodobite svoje prijave."
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Z mobilno napravo skenirajte to kodo QR ali obiščite trgovino za iOS ali Android."
@@ -6279,6 +6216,9 @@
     "Import provider": {
       "Advanced import": [
         "Napredni uvoz"
+      ],
+      "Import from ${ providerName }": [
+        "Uvoz iz ${ providerName }"
       ]
     },
     "Import warning": {
@@ -7145,9 +7085,6 @@
       "Duplicate key updated": [
         "Podvojeni ključ je posodobljen"
       ],
-      "Each code can only be used once": [
-        "Vsaka koda se lahko uporabi samo enkrat"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Enostavno upravljajte in se odjavite od glasil in poštnih seznamov."
       ],
@@ -7205,17 +7142,11 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Uživajte v hitrejši in bolj osredotočeni izkušnji e-pošte z namizno aplikacijo."
       ],
-      "Enter the code from your authenticator app": [
-        "Vnesite kodo iz aplikacije za preverjanje pristnosti"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Vnesite poverilnice e-poštnega računa, iz katerega želite uvoziti podatke."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vnesite kodo za preverjanje, ki je bila poslana na ${ destinationText }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Predvideni preostali čas: ${ estimatedMinutes } minuta",
@@ -8555,9 +8486,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Ko ste omogočili zaupanja vredne ključe za ${ senderName }, so bili javni ključi dodani kontaktnim podrobnostim."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Ko se prijavite na glasilo, uporabite vzdevek namesto svojega e-poštnega naslova. Vaša identiteta ostane skrita, vzdevek pa lahko kadar koli onemogočite."
       ],
@@ -9246,9 +9174,6 @@
       "Attach screenshot(s)": [
         "Priloži posnetke zaslona"
       ],
-      "Authenticator app": [
-        "Aplikacija za preverjanje pristnosti"
-      ],
       "BCC": [
         "SKP"
       ],
@@ -9884,9 +9809,6 @@
       ],
       "Your location": [
         "Vaša lokacija"
-      ],
-      "Your password (admin)": [
-        "Vaše geslo (admin)"
       ],
       "ZIP code": [
         "Poštna številka"
@@ -11730,20 +11652,29 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Finance": [
-        "Finance"
+      "Choose your service": [
+        "Izberite svojo storitev"
       ],
       "Maybe later": [
         "Morda pozneje"
       ],
-      "Privacy for all your online accounts": [
-        "Zasebnost za vse vaše spletne račune"
+      "Popular services": [
+        "Priljubljene storitve"
       ],
-      "Shopping": [
-        "Nakupovanje"
+      "Skip for now": [
+        "Preskoči za zdaj"
       ],
-      "Social media": [
-        "Družbena omrežja"
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Preklopite svoje račune na ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Preklop e-pošte je težaven. ${ BRAND_NAME } to olajša. Povežite svoj stari račun in upravljajte vse v enem osredotočenem delovnem prostoru brez oglasov."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Posodobite svoj e-poštni naslov za storitve, ki jih najpogosteje uporabljate. Preprečite sledenje in zaščitite svojo zasebnost."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Dobrodošli v ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -11910,6 +11841,9 @@
       "Continue": [
         "Nadaljuj"
       ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Uživajte brezplačne funkcije za poslovne uporabnike do ${ trialEndsOnFormatted }."
+      ],
       "help center": [
         "središče za pomoč"
       ],
@@ -11936,40 +11870,6 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Do konca preskusnega obdobja boste lahko uporabljali ${ planTitle } brezplačno."
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Ste registrirani pri kateri od teh storitev? Kliknite, če želite spremeniti e-poštni naslov na svoj naslov ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "Bančništvo"
-      ],
-      "Crypto": [
-        "Kripto"
-      ],
-      "E-commerce and Retail": [
-        "Spletne trgovine"
-      ],
-      "Entertainment": [
-        "Razvedrilo"
-      ],
-      "Food and beverage": [
-        "Hrana in pijača"
-      ],
-      "Gaming": [
-        "Igranje"
-      ],
-      "Most popular": [
-        "Najbolj priljubljeno"
-      ],
-      "Travel": [
-        "Potovanja"
-      ],
-      "Utilities": [
-        "Pripomočki"
       ]
     },
     "Option": {
@@ -13431,17 +13331,6 @@
         "Vaš e-poštni naslov pm.me je aktiven"
       ]
     },
-    "sso": {
-      "Sign in": [
-        "Prijava"
-      ],
-      "Sign in to your organization": [
-        "Prijavite se v svojo organizacijo"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Preusmerjeni boste k ponudniku SSO tretje osebe."
-      ]
-    },
     "State": {
       "Canceling your subscription, please wait": [
         "Preklic vaše naročnine, počakajte"
@@ -13903,6 +13792,9 @@
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Ko prekličete ${ planName }, boste degradirani na ${ BRAND_NAME } Free, ki ponuja le do 1 GB prostora za shranjevanje pošte in do 5 GB prostora za shranjevanje na Drive. Prav tako boste izgubili vse predhodno dodeljene bonuse za shranjevanje."
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Vaša naročnina ${ planName } se izteče ${ expiryDate }, po poteku boste preusmerjeni na brezplačni paket ${ BRAND_NAME }."
       ],
       "Yearly free storage bonuses": [
         "Letni bonusi za prostor za shranjevanje"
@@ -14759,8 +14651,14 @@
       "Confirm recipient address?": [
         "Potrdi naslov prejemnika?"
       ],
+      "Connect a Gmail address": [
+        "Poveži naslov Gmail"
+      ],
       "Connect apps and devices": [
         "Povežite aplikacije in naprave"
+      ],
+      "Connect more addresses": [
+        "Poveži več naslovov"
       ],
       "Connect to video conferencing": [
         "Poveži se z videokonferenco"
@@ -14948,9 +14846,6 @@
       "Enable message content search": [
         "Omogoči iskanje po vsebini sporočil"
       ],
-      "Enter your password": [
-        "Vnesite svoje geslo"
-      ],
       "Error": [
         "Napaka"
       ],
@@ -15076,6 +14971,9 @@
       ],
       "Label options": [
         "Možnosti oznake"
+      ],
+      "Limit reached": [
+        "Meja je dosežena"
       ],
       "Link confirmation": [
         "Potrditvena povezava"
@@ -15502,9 +15400,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Vklopi ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Two-factor authentication": [
-        "Dvojno preverjanja pristnosti"
       ],
       "Unsubscribe": [
         "Odjavi se"

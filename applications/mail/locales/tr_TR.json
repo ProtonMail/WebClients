@@ -154,9 +154,6 @@
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
-      "Authenticate": [
-        "Kimliği doğrula"
-      ],
       "Auto-delete spam and trash": [
         "İstenmeyenleri ve çöpü otomatik olarak silin"
       ],
@@ -195,9 +192,6 @@
       ],
       "Carbon Copy": [
         "Kopya"
-      ],
-      "Change email": [
-        "E-posta adresini değiştir"
       ],
       "Change password": [
         "Parolayı değiştir"
@@ -588,9 +582,6 @@
       "Font": [
         "Yazı tipi"
       ],
-      "Forgot password?": [
-        "Parolamı unuttum"
-      ],
       "Formalize": [
         "Resmileştir"
       ],
@@ -823,6 +814,9 @@
       "Make it friendly": [
         "Samimileştir"
       ],
+      "Manage addresses": [
+        "Adres yönetimi"
+      ],
       "Manage advanced account protections": [
         "Gelişmiş hesap korumalarını yönetin"
       ],
@@ -1023,6 +1017,9 @@
       ],
       "Open navigation": [
         "Gezinmeyi aç"
+      ],
+      "Or use a different Gmail address": [
+        "Ya da farklı bir Gmail adresi kullanın"
       ],
       "Ordered list": [
         "Numaralı liste"
@@ -1318,6 +1315,9 @@
       "Set up a custom domain": [
         "Bir özel etki alanı ayarlayın"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "Gmail üzerinden otomatik iletmeyi ayarlama"
+      ],
       "Set up email forwarding": [
         "E-posta iletmeyi ayarlayın"
       ],
@@ -1588,17 +1588,14 @@
       "Use a different payment method": [
         "Başka bir ödeme yöntemi kullanın"
       ],
-      "Use authentication code": [
-        "Kimlik doğrulama kodunu kullanın"
-      ],
       "Use for sending": [
         "Gönderim için kullan"
       ],
-      "Use recovery code": [
-        "Kurtarma kodunu kullanın"
-      ],
       "Use this": [
         "Bunu kullan"
+      ],
+      "Use this Gmail address": [
+        "Bu Gmail adresini kullan"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Fareyi ya da klavyedeki sağ ve sol ok tuşlarını kullanarak görünümün boyutunu değiştirebilirsiniz."
@@ -4327,6 +4324,16 @@
         "${ BRAND_NAME } Duo ile tarifenizin avantajlarını paylaşın"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "${ MAX_SYNC_PAID_USER } hesaba kadar e-postaları iletmek için ${ planName } tarifesine yükseltin.",
+        "${ MAX_SYNC_PAID_USER } hesaba kadar e-postaları iletmek için ${ planName } tarifesine yükseltin."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "E-postaları ${ MAX_SYNC_FREE_USER } dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz.",
+        "E-postaları ${ MAX_SYNC_FREE_USER } dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Yazı alanlarının doldurulması isteğe bağlıdır. Bu formda verdiğiniz bilgiler yalnızca gelecekte düzenlenecek faturalarda görüntülenecek ve var olan faturaları etkilemeyecek."
@@ -5567,24 +5574,6 @@
         "Işık hızında"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } hesabınız ile ilişkilendirilmiş güvenlik anahtarını takın."
-      ],
-      "Security key": [
-        "Güvenlik anahtarı"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Güvenlik anahtarı"
-      ]
-    },
     "file size format": {
       "byte": [
         "bayt",
@@ -5825,9 +5814,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME } uygulaması"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "App Store üzerinde ${ MAIL_APP_NAME }"
       ],
@@ -5842,15 +5828,6 @@
         "${ remainingDaysCount } gün kaldı",
         "${ remainingDaysCount } gün kaldı"
       ],
-      "account logins": [
-        "Hesap oturum açma"
-      ],
-      "Auto-forward Gmail": [
-        "Gmail otomatik iletme"
-      ],
-      "auto-forwarding": [
-        "otomatik iletme"
-      ],
       "Block email communications from scammers permanently.": [
         "Dolandırıcılardan gelen e-postaları kalıcı olarak engelleyin."
       ],
@@ -5859,12 +5836,6 @@
       ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "E-postanızı daha güvenli, kullanışlı ve sizinle ilgili yaptığınız için tebrik ederiz! Ücretsiz depolama alanınızı toplam 1 GB boyutuna yükselttik."
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "${ strongText } bilgilerini ${ BRAND_NAME } adresiniz ile değiştirin"
-      ],
-      "Changed accounts": [
-        "Hesaplar değiştirildi"
       ],
       "Checklist complete": [
         "Kontrol listesi tamamlandı"
@@ -5875,11 +5846,11 @@
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Depolama alanınızı ücretsiz olarak iki katına çıkarmak için bu görev listesini ${ daysCount } içinde tamamlayın."
       ],
-      "Discover how our ${ strongText } protect you": [
-        "${ strongText } hizmetimizin sizi nasıl koruduğunu öğrenin"
-      ],
       "Discover privacy features": [
         "Gizlilik özelliklerini keşfedin"
+      ],
+      "Download apps": [
+        "Uygulamaları indirin"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Kullanılan şifreleme çok güçlü olduğundan e-postalarınızı yalnızca siz ve hedeflediğiniz alıcılar görebilir."
@@ -5890,17 +5861,11 @@
       "For your eyes only": [
         "Yalnızca sizin gözleriniz için"
       ],
-      "Get more storage": [
-        "Daha fazla depolama alanı edinin"
+      "Get storage bonus": [
+        "Depolama alanı bonusunuzu alın"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "${ MAIL_APP_NAME } mobil uygulamasını edinin"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Android ya da iOS için ${ strongText } edinin"
-      ],
-      "Get the App": [
-        "Uygulamayı edinin"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "${ BRAND_NAME } uygulamasının gizliliğinizi koruduğu ve e-posta göndermeyi basitleştirdiği diğer yolları keşfetmek için ${ MAIL_APP_NAME } uygulamasını kullanmayı sürdürün."
@@ -5908,20 +5873,11 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
-      "Nice! You've updated all services in this category.": [
-        "Güzel! Bu kategorideki tüm hizmetleri güncellediniz."
-      ],
-      "Popular online services": [
-        "Yaygın kullanılan çevrim içi hizmetler"
-      ],
-      "privacy features": [
-        "gizlilik özellikleri"
-      ],
       "Protection from trackers": [
         "İzleyicilere karşı koruma"
       ],
-      "Set up ${ strongText } from Gmail": [
-        "Gmail için ${ strongText } özelliğini ayarlayın"
+      "Review import options": [
+        "İçe aktarma seçeneklerini inceleyin"
       ],
       "Sign in to the mobile app to complete this step": [
         "Bu adımı tamamlamak için mobil uygulamada oturum açın"
@@ -5934,9 +5890,6 @@
       ],
       "This feature is currently unavailable": [
         "Bu özellik şu anda kullanılamıyor"
-      ],
-      "Update your logins": [
-        "Oturum açma bilgilerinizi güncelleyin"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Mobil aygıtınızı kullanarak, bu kare kodu tarayın ya da iOS/Android mağazasına gidin."
@@ -6375,6 +6328,9 @@
     "Import provider": {
       "Advanced import": [
         "Gelişmiş içe aktarma"
+      ],
+      "Import from ${ providerName }": [
+        "${ providerName } üzerinden içe aktar"
       ]
     },
     "Import warning": {
@@ -7169,9 +7125,6 @@
       "Duplicate key updated": [
         "Çift anahtar güncellendi"
       ],
-      "Each code can only be used once": [
-        "Her kod yalnızca bir kez kullanılabilir"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Duyuru ve e-posta listelerini kolayca yönetin ve aboneliklerini sonlandırın."
       ],
@@ -7230,23 +7183,11 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Tümüyle güvenli ve şifrelenmiş iletişim sağlayın. Ücretsiz ${ BRAND_NAME } e-posta adresinizi şimdi alın."
       ],
-      "Enter the code from your authenticator app": [
-        "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "İçe aktarmak istediğiniz e-posta hesabının kimlik doğrulama bilgilerini yazın."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Doğrulama kodunu yazın. Rakam ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Kendi parolanızı yazın (güvenilen kişi olarak)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Öngörülen kalan süre: ${ estimatedMinutes } dakika",
@@ -8603,9 +8544,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName } için güvenilen anahtarlar özelliğini açtığınızda, kişi bilgilerine herkese açık anahtarlar eklenir."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları veriyoruz."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Bir duyuruya abone olurken e-posta adresiniz yerine bir takma ad kullanabilirsiniz. Böylece hem kimliğiniz gizli kalır hem de istediğiniz zaman takma adı kullanımdan kaldırabilirsiniz."
       ],
@@ -8785,6 +8723,10 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz.",
         "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "${ MAX_SYNC_PAID_USER } Gmail adresi için iletmeyi kullanıyorsunuz. Başka bir adres eklemek için önce bunlardan birini kullanımdan kaldırın.",
+        "${ MAX_SYNC_PAID_USER } Gmail adresi için iletmeyi kullanıyorsunuz. Başka bir adres eklemek için önce bunlardan birini kullanımdan kaldırın."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Kişi gruplarında bulunabilecek en fazla adres sayısına ulaştınız:"
@@ -9276,9 +9218,6 @@
       ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
-      ],
-      "Authenticator app": [
-        "Kimlik doğrulama uygulaması"
       ],
       "Automated confirmations and alerts": [
         "Otomatik onaylar ve uyarılar"
@@ -9972,12 +9911,6 @@
       ],
       "Your location": [
         "Konumunuz"
-      ],
-      "Your password (admin)": [
-        "Parolanız (yönetici)"
-      ],
-      "Your password (trusted contact)": [
-        "Parolanız (güvenilen kişi)"
       ],
       "ZIP code": [
         "Posta kodu"
@@ -11817,23 +11750,26 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
-        "İzlenmekten ve profillenizin çıkarılmasından kaçınmak için yaygın kullanılan hizmetlerdeki e-posta adresinizi şimdi değiştirin. ${ learnMoreLink }"
-      ],
-      "Finance": [
-        "Finans"
+      "Choose your service": [
+        "Hizmetinizi seçin"
       ],
       "Maybe later": [
         "Belki sonra"
       ],
-      "Privacy for all your online accounts": [
-        "Tüm çevrim içi hesaplarınız için gizlilik"
+      "Popular services": [
+        "Popüler hizmetler"
       ],
-      "Shopping": [
-        "Alışveriş"
+      "Skip for now": [
+        "Şimdilik atla"
       ],
-      "Social media": [
-        "Sosyal medya"
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Hesaplarınızı ${ BRAND_NAME } hizmetine taşıyın"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "E-posta değiştirmek zordur, ${ BRAND_NAME } bunu kolaylaştırır. Eski hesabınızı bağlayıp her şeyi odaklanmış ve reklamsız tek bir çalışma alanında yönetin."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } hizmetine hoş geldiniz"
       ]
     },
     "Onboarding modal": {
@@ -12032,40 +11968,6 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Deneme süresinin sonuna kadar ${ planTitle } tarifesini ücret ödemeden kullanabilirsiniz."
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Bu hizmetlerden birinde hesabınız var mı? E-posta adresinizi ${ MAIL_APP_NAME } adresinizle değiştirmek için tıklamanız yeterlidir."
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "Bankacılık"
-      ],
-      "Crypto": [
-        "Şifreleme"
-      ],
-      "E-commerce and Retail": [
-        "E-ticaret ve perakende"
-      ],
-      "Entertainment": [
-        "Eğlence"
-      ],
-      "Food and beverage": [
-        "Yeme içme"
-      ],
-      "Gaming": [
-        "Oyun"
-      ],
-      "Most popular": [
-        "En çok kullanılan"
-      ],
-      "Travel": [
-        "Gezi"
-      ],
-      "Utilities": [
-        "Araçlar"
       ]
     },
     "Option": {
@@ -13029,11 +12931,6 @@
         "Hesap güvenliğini gözden geçirin"
       ]
     },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "Oturum açılamadı."
-      ]
-    },
     "Search - no results": {
       "An action is being processed": [
         "Bir işlem yapılıyor"
@@ -13750,17 +13647,6 @@
       ],
       "Your pm.me email is active": [
         "pm.me e-posta adresiniz kullanımda"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "Oturum aç"
-      ],
-      "Sign in to your organization": [
-        "Kuruluşunuzda oturum açın"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
       ]
     },
     "State": {
@@ -15007,8 +14893,14 @@
       "Confirm recipient address?": [
         "Alıcı adresi onaylansın mı?"
       ],
+      "Connect a Gmail address": [
+        "Bir Gmail adresi bağlayın"
+      ],
       "Connect apps and devices": [
         "Uygulamaları ve aygıtları bağlayın"
+      ],
+      "Connect more addresses": [
+        "Başka adresler bağlayın"
       ],
       "Connect to video conferencing": [
         "Görüntülü konferansa bağlanın"
@@ -15189,9 +15081,6 @@
       "Enhance security with 2FA": [
         "İki adımlı doğrulama ile güvenliği artırın"
       ],
-      "Enter your password": [
-        "Parolanızı yazın"
-      ],
       "Error": [
         "Hata"
       ],
@@ -15319,6 +15208,9 @@
       "Label options": [
         "Etiket ayarları"
       ],
+      "Limit reached": [
+        "Sınıra ulaşıldı"
+      ],
       "Link confirmation": [
         "Bağlantı onayı"
       ],
@@ -15420,6 +15312,9 @@
       ],
       "Moving a snoozed message": [
         "Ertelenmiş bir ileti taşınıyor"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Birden çok hesap, 1 güvenli gelen kutusu"
       ],
       "Need more aliases?": [
         "Daha fazla takma ad mı gerekiyor?"
@@ -15570,6 +15465,9 @@
       ],
       "Referral": [
         "Yönlendirme"
+      ],
+      "Remove forwarding address": [
+        "İletme adresini kaldır"
       ],
       "Remove from list?": [
         "Listeden kaldırılsın mı?"
@@ -15754,9 +15652,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
-      ],
-      "Two-factor authentication": [
-        "İki adımlı doğrulama"
       ],
       "Unsubscribe": [
         "Aboneliği sonlandır"

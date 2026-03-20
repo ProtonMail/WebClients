@@ -150,9 +150,6 @@
       "Attention required": [
         "Требуется внимание"
       ],
-      "Authenticate": [
-        "Аутентификация"
-      ],
       "Auto-delete spam and trash": [
         "Автоматическое удаление спама и сообщений в корзине"
       ],
@@ -188,9 +185,6 @@
       ],
       "Carbon Copy": [
         "Копия"
-      ],
-      "Change email": [
-        "Изменить e-mail"
       ],
       "Change password": [
         "Изменить пароль"
@@ -558,9 +552,6 @@
       "Font": [
         "Шрифт"
       ],
-      "Forgot password?": [
-        "Забыли пароль?"
-      ],
       "Formalize": [
         "Формализовать"
       ],
@@ -773,6 +764,9 @@
       ],
       "Make it friendly": [
         "Сделать его дружественным"
+      ],
+      "Manage addresses": [
+        "Управление адресами"
       ],
       "Manage advanced account protections": [
         "Управление расширенной защитой аккаунта"
@@ -1245,6 +1239,9 @@
       "Set up a custom domain": [
         "Настроить пользовательский домен"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "Настройте автоматическую переадресацию из Gmail"
+      ],
       "Set up email forwarding": [
         "Настройка пересылки писем"
       ],
@@ -1488,14 +1485,8 @@
       "Use a different payment method": [
         "Использовать другой способ оплаты"
       ],
-      "Use authentication code": [
-        "Использовать код аутентификации"
-      ],
       "Use for sending": [
         "Использовать для отправки"
-      ],
-      "Use recovery code": [
-        "Использовать код восстановлени"
       ],
       "Use this": [
         "Использовать"
@@ -5118,16 +5109,6 @@
         "Молниеносная скорость"
       ]
     },
-    "fido2: Info": {
-      "Security key": [
-        "Ключ безопасности"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Ключ безопасности"
-      ]
-    },
     "file size format": {
       "byte": [
         "байт",
@@ -5380,9 +5361,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "приложение ${ MAIL_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } в App Store"
       ],
@@ -5401,15 +5379,6 @@
         "${ remainingDaysCount } дней осталось",
         "${ remainingDaysCount } дней осталось"
       ],
-      "account logins": [
-        "имена пользователей аккаунта"
-      ],
-      "Auto-forward Gmail": [
-        "Автоматическая пересылка Gmail"
-      ],
-      "auto-forwarding": [
-        "автопереадресация"
-      ],
       "Block email communications from scammers permanently.": [
         "Навсегда заблокируйте коммуникации с мошенниками."
       ],
@@ -5419,20 +5388,11 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Молодец, что делаешь свою электронную почту еще более безопасной, удобной и актуальной! Мы увеличили емкость бесплатного хранилища до общего объема в 1 ГБ."
       ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Измените ${ strongText } на ваш адрес ${ BRAND_NAME }."
-      ],
-      "Changed accounts": [
-        "Измененные аккаунты"
-      ],
       "Checklist complete": [
         "Контрольный список завершен"
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Завершите этот чек-лист в течение ${ daysCount }, чтобы бесплатно удвоить хранилище."
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Узнайте, как наши ${ strongText } защищают вас"
       ],
       "Discover privacy features": [
         "Откройте для себя функции конфиденциальности"
@@ -5446,17 +5406,8 @@
       "For your eyes only": [
         "Только для ваших глаз"
       ],
-      "Get more storage": [
-        "Получите больше места в хранилище"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Получить мобильное приложение ${ MAIL_APP_NAME }"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Получить ${ strongText } на Android или iOS"
-      ],
-      "Get the App": [
-        "Скачать приложение"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Продолжайте использовать ${ MAIL_APP_NAME }, чтобы открывать новые способы, с помощью которых ${ BRAND_NAME } защищает вашу конфиденциальность и упрощает работу с электронной почтой."
@@ -5464,20 +5415,8 @@
       "Learn more": [
         "Подробнее"
       ],
-      "Nice! You've updated all services in this category.": [
-        "Отлично! Вы обновили все сервисы в этой категории."
-      ],
-      "Popular online services": [
-        "Популярные сервисы в сети"
-      ],
-      "privacy features": [
-        "функции конфиденциальности"
-      ],
       "Protection from trackers": [
         "Защита от трекеров"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Настроить из ${ strongText } из Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "Войдите в мобильное приложение, чтобы выполнить это действие"
@@ -5490,9 +5429,6 @@
       ],
       "This feature is currently unavailable": [
         "Эта функция временно недоступна"
-      ],
-      "Update your logins": [
-        "Обновите ваше имя пользователя"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Используя ваше мобильное устройство, отсканируйте этот QR-код или посетите магазин приложений iOS или Android."
@@ -6820,17 +6756,11 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Наслаждайтесь более быстрой и сфокусированной отправкой электронных писем с помощью настольного приложения."
       ],
-      "Enter the code from your authenticator app": [
-        "Введите код из приложения-аутентификатора"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Введите учетные данные аккаунта электронной почты, из которого вы хотите импортировать данные."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Введите свой пароль как администратора организации."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Оставшееся время: ${ estimatedMinutes } минута",
@@ -8299,6 +8229,12 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Вы написали \"${ attachmentsFoundKeyword }\", но ни одно вложение не было добавлено. Хотите ли вы все равно отправить свое сообщение?"
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адрес Gmail. Чтобы добавить еще один, сначала отключите один из них.",
+        "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адреса Gmail. Чтобы добавить еще один, сначала отключите один из них.",
+        "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адресов Gmail. Чтобы добавить еще один, сначала отключите один из них.",
+        "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адресов Gmail. Чтобы добавить еще один, сначала отключите один из них."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Вы достигли лимита количества адресов в группе(-ах) контактов:"
       ],
@@ -8764,9 +8700,6 @@
       ],
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
-      ],
-      "Authenticator app": [
-        "Приложение-аутентификатор"
       ],
       "BCC": [
         "Cкрытая копия"
@@ -9319,9 +9252,6 @@
       ],
       "Your location": [
         "Ваше местоположение"
-      ],
-      "Your password (admin)": [
-        "Ваш пароль (admin)"
       ],
       "ZIP code": [
         "Почтовый индекс"
@@ -11052,20 +10982,6 @@
         "Хранилище"
       ]
     },
-    "Onboarding List Placeholder": {
-      "Finance": [
-        "Финансы"
-      ],
-      "Privacy for all your online accounts": [
-        "Конфиденциальность всех ваших учетных записей в сети"
-      ],
-      "Shopping": [
-        "Покупки"
-      ],
-      "Social media": [
-        "Социальные сети"
-      ]
-    },
     "Onboarding modal": {
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle } гарантирует, что только вы и предполагаемые получатели смогут получить доступ к вашим письмам."
@@ -11217,40 +11133,6 @@
       ],
       "If you need help,": [
         "Если вам нужна помощь,"
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "У вас есть аккаунт одного из этих сервисов? Просто кликните, чтобы изменить адрес электронной почты на ваш адрес ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "Банковские услуги"
-      ],
-      "Crypto": [
-        "Крипто"
-      ],
-      "E-commerce and Retail": [
-        "Электронная коммерция и розничная торговля"
-      ],
-      "Entertainment": [
-        "Развлечения"
-      ],
-      "Food and beverage": [
-        "Продукты питания и напитки"
-      ],
-      "Gaming": [
-        "Игры"
-      ],
-      "Most popular": [
-        "Самые популярные"
-      ],
-      "Travel": [
-        "Путешествия"
-      ],
-      "Utilities": [
-        "Коммунальные услуги"
       ]
     },
     "Option": {
@@ -11954,11 +11836,6 @@
         "Проверьте безопасность аккаунта"
       ]
     },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "Вход не был успешно завершен."
-      ]
-    },
     "Search - no results": {
       "No messages found": [
         "Сообщений не найдено"
@@ -12649,17 +12526,6 @@
       ],
       "Your pm.me email is active": [
         "Ваша почта pm.me активна"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "Войти"
-      ],
-      "Sign in to your organization": [
-        "Войдите в свою организацию"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Вы будете перенаправлены на вашего стороннего провайдера SSO."
       ]
     },
     "State": {
@@ -14144,9 +14010,6 @@
       "Enhance security with 2FA": [
         "Повысьте безопасность с двухфакторной аутентификацией"
       ],
-      "Enter your password": [
-        "Введите пароль"
-      ],
       "Error": [
         "Ошибка"
       ],
@@ -14254,6 +14117,9 @@
       ],
       "Label options": [
         "Параметры ярлыка"
+      ],
+      "Limit reached": [
+        "Достигнут предел"
       ],
       "Link confirmation": [
         "Подтверждение ссылки"
@@ -14662,9 +14528,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Включить ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Two-factor authentication": [
-        "Двухфакторная аутентификация"
       ],
       "Unsubscribe": [
         "Отменить подписку"

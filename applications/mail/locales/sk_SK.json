@@ -156,9 +156,6 @@
       "Attention required": [
         "Vyžaduje sa pozornosť"
       ],
-      "Authenticate": [
-        "Overiť"
-      ],
       "Auto-delete spam and trash": [
         "Automaticky vymazať spam a Kôš"
       ],
@@ -197,9 +194,6 @@
       ],
       "Carbon Copy": [
         "Kópia"
-      ],
-      "Change email": [
-        "Zmeniť email"
       ],
       "Change password": [
         "Zmeniť heslo"
@@ -594,9 +588,6 @@
       "Font": [
         "Písmo"
       ],
-      "Forgot password?": [
-        "Zabudli ste heslo?"
-      ],
       "Formalize": [
         "Formalizovať"
       ],
@@ -831,6 +822,9 @@
       "Make it friendly": [
         "Priateľská forma"
       ],
+      "Manage addresses": [
+        "Spravovať adresy"
+      ],
       "Manage advanced account protections": [
         "Spravovať pokročilé ochrany účtu"
       ],
@@ -1031,6 +1025,9 @@
       ],
       "Open navigation": [
         "Otvoriť menu"
+      ],
+      "Or use a different Gmail address": [
+        "Alebo použite inú Gmail adresu"
       ],
       "Ordered list": [
         "Zoradený zoznam"
@@ -1326,6 +1323,9 @@
       "Set up a custom domain": [
         "Nastavte vlastnú doménu"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "Nastavte automatické preposielanie z Gmailu"
+      ],
       "Set up email forwarding": [
         "Nastavenie preposielania emailov"
       ],
@@ -1596,17 +1596,14 @@
       "Use a different payment method": [
         "Použiť inú platobnú metódu"
       ],
-      "Use authentication code": [
-        "Použiť overovací kód"
-      ],
       "Use for sending": [
         "Použiť na odosielanie"
       ],
-      "Use recovery code": [
-        "Použiť kód pre obnovenie"
-      ],
       "Use this": [
         "Použiť tento"
+      ],
+      "Use this Gmail address": [
+        "Použiť túto Gmailovú adresu"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Pomocou myši môžete zmeniť veľkosť zobrazenia. Ak používate klávesnicu, môžete na zmenu veľkosti použiť klávesy so šípkami vľavo a vpravo."
@@ -4379,6 +4376,20 @@
         "Zdieľajte výhody vášho plánu s ${ BRAND_NAME } Duo"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Na preposielanie emailov z ${ MAX_SYNC_PAID_USER } účtu prejdite na ${ planName }.",
+        "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }.",
+        "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }.",
+        "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externého účtu do ${ MAIL_APP_NAME }.",
+        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }.",
+        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }.",
+        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Textové polia sú nepovinné. Informácie, ktoré uvediete v tomto formulári, sa zobrazia len na faktúrach vystavených v budúcnosti a neovplyvnia existujúce faktúry."
@@ -5649,24 +5660,6 @@
         "Bleskové rýchlosti"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vložte bezpečnostný kľúč prepojený s vaším ${ BRAND_NAME } účtom."
-      ],
-      "Security key": [
-        "Bezpečnostný kľúč"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Bezpečnostný kľúč"
-      ]
-    },
     "file size format": {
       "byte": [
         "bajt",
@@ -5919,9 +5912,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME } aplikácia"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } v App Store"
       ],
@@ -5940,15 +5930,6 @@
         "Zostáva ${ remainingDaysCount } dní",
         "Zostáva ${ remainingDaysCount } dní"
       ],
-      "account logins": [
-        "prihlásenia k účtom"
-      ],
-      "Auto-forward Gmail": [
-        "Automaticky preposielať Gmail"
-      ],
-      "auto-forwarding": [
-        "automatické preposielanie"
-      ],
       "Block email communications from scammers permanently.": [
         "Natrvalo blokujte emailovú komunikáciu od podvodníkov."
       ],
@@ -5958,12 +5939,6 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Bravó, váš email je ešte bezpečnejší, pohodlnejší a relevantnejší! Zvýšili sme vaše bezplatné úložisko na celkovú veľkosť 1 GB."
       ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Zmeňte ${ strongText } na vašu ${ BRAND_NAME } adresu"
-      ],
-      "Changed accounts": [
-        "Zmenené účty"
-      ],
       "Checklist complete": [
         "Kontrolný zoznam je dokončený"
       ],
@@ -5972,9 +5947,6 @@
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Pre zdvojnásobenie svojho úložného priestoru dokončite tento kontrolný zoznam počas ${ daysCount }."
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Zistite, ako vás chráni náš ${ strongText }"
       ],
       "Discover privacy features": [
         "Objavte funkcie ochrany súkromia"
@@ -5988,17 +5960,8 @@
       "For your eyes only": [
         "Len pre vaše oči"
       ],
-      "Get more storage": [
-        "Získajte viac úložného priestoru"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Získať mobilnú aplikáciu ${ MAIL_APP_NAME }"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Získať ${ strongText } pre Android alebo iOS"
-      ],
-      "Get the App": [
-        "Získať aplikáciu"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Pokračujte v používaní aplikácie ${ MAIL_APP_NAME } a objavte ďalšie spôsoby, ako ${ BRAND_NAME } chráni vaše súkromie a zjednodušuje odosielanie emailov."
@@ -6006,20 +5969,8 @@
       "Learn more": [
         "Zistiť viac"
       ],
-      "Nice! You've updated all services in this category.": [
-        "Pekne! Aktualizovali ste všetky služby v tejto kategórii."
-      ],
-      "Popular online services": [
-        "Populárne online služby"
-      ],
-      "privacy features": [
-        "funkcie ochrany súkromia"
-      ],
       "Protection from trackers": [
         "Ochrana pred sledovaním"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Nastaviť ${ strongText } zo služby Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "Prihláste sa do mobilnej aplikácie, aby ste dokončili tento krok"
@@ -6032,9 +5983,6 @@
       ],
       "This feature is currently unavailable": [
         "Táto funkcia je aktuálne nedostupná"
-      ],
-      "Update your logins": [
-        "Aktualizujte svoje prihlasovacie údaje"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Pomocou svojho mobilného zariadenia naskenujte tento QR kód alebo navštívte obchod so systémom iOS alebo Android."
@@ -6489,6 +6437,9 @@
     "Import provider": {
       "Advanced import": [
         "Pokročilý import"
+      ],
+      "Import from ${ providerName }": [
+        "Importovať z ${ providerName }"
       ]
     },
     "Import warning": {
@@ -7397,9 +7348,6 @@
       "Duplicate key updated": [
         "Duplicitný kľúč bol aktualizovaný"
       ],
-      "Each code can only be used once": [
-        "Každý kód môže byť použitý len jeden krát"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Jednoduchá správa a odhlásenie sa z odberu informačných bulletinov a emailových zoznamov."
       ],
@@ -7460,23 +7408,11 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Zabezpečte úplne súkromnú a šifrovanú komunikáciu. Vyžiadajte si teraz bezplatnú emailovú ${ BRAND_NAME } adresu."
       ],
-      "Enter the code from your authenticator app": [
-        "Zadajte kód z vašej overovacej aplikácie"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Zadajte prihlasovacie údaje emailového účtu, z ktorého chcete importovať."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadajte overovací kód, ktorý bol odoslaný na ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Zadajte overovací kód. Číslice ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Zadajte vlastné heslo (ako správca organizácie)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Zadajte vlastné heslo (ako dôveryhodný kontakt)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Odhadovaný čas do konca: ${ estimatedMinutes } minúta",
@@ -7798,6 +7734,9 @@
       ],
       "Low Priority": [
         "Nízka priorita"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Nastavte ${ MAIL_APP_NAME } ako vašu predvolenú emailovú aplikáciu."
       ],
       "Manage your folders": [
         "Spravovať priečinky"
@@ -8858,9 +8797,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Hneď ako povolíte dôverné kľúče pre ${ senderName }, verejné kľúče budú doplnené k detailu kontaktu."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Pri nastavení dvojstupňového overenia poskytujeme kódy na obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k vašej overovacej aplikácii."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Pri registrácii na odber noviniek používajte namiesto svojej emailovej adresy alias. Vaša identita zostane skrytá a alias môžete kedykoľvek vypnúť."
       ],
@@ -9070,6 +9006,12 @@
         "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
         "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
         "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adrese Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte.",
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adresách Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte.",
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adresách Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte.",
+        "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adresách Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Dosiahli ste maximálny počet adries v skupinách kontaktov:"
@@ -9581,9 +9523,6 @@
       ],
       "Attach screenshot(s)": [
         "Priložiť snímok(ky) obrazovky"
-      ],
-      "Authenticator app": [
-        "Overovacia aplikácia"
       ],
       "Automated confirmations and alerts": [
         "Automatické potvrdenia a upozornenia"
@@ -10277,12 +10216,6 @@
       ],
       "Your location": [
         "Vaša poloha"
-      ],
-      "Your password (admin)": [
-        "Vaše heslo (správca)"
-      ],
-      "Your password (trusted contact)": [
-        "Vaše heslo (dôveryhodný kontakt)"
       ],
       "ZIP code": [
         "PSČ"
@@ -12200,23 +12133,8 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
-        "Zmeňte svoju emailovú adresu pre populárne služby teraz, aby ste sa vyhli sledovaniu a profilovaniu. ${ learnMoreLink }"
-      ],
-      "Finance": [
-        "Financie"
-      ],
       "Maybe later": [
         "Možno neskôr"
-      ],
-      "Privacy for all your online accounts": [
-        "Ochrana súkromia všetkých vašich online účtov"
-      ],
-      "Shopping": [
-        "Nakupovanie"
-      ],
-      "Social media": [
-        "Sociálne médiá"
       ]
     },
     "Onboarding modal": {
@@ -12417,40 +12335,6 @@
         "Budete môcť používať ${ planTitle } až do konca skúšobného obdobia, bez poplatku."
       ]
     },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Máte účet v jednej z týchto služieb? Stačí kliknúť na zmenu emailovej adresy na vašu ${ MAIL_APP_NAME } adresu."
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "Bankovníctvo"
-      ],
-      "Crypto": [
-        "Krypto"
-      ],
-      "E-commerce and Retail": [
-        "Internetový obchod a maloobchod"
-      ],
-      "Entertainment": [
-        "Zábava"
-      ],
-      "Food and beverage": [
-        "Jedlo a nápoje"
-      ],
-      "Gaming": [
-        "Hranie"
-      ],
-      "Most popular": [
-        "Najpopulárnejšie"
-      ],
-      "Travel": [
-        "Cestovanie"
-      ],
-      "Utilities": [
-        "Verejné služby"
-      ]
-    },
     "Option": {
       "Add to existing group": [
         "Pridať do existujúcej skupiny"
@@ -12469,6 +12353,12 @@
       ],
       "No parent folder": [
         "Žiadny nadradený priečinok"
+      ],
+      "Remind me later": [
+        "Pripomenúť neskôr"
+      ],
+      "Yes, don't show again": [
+        "Áno, viac nezobrazovať"
       ]
     },
     "Option group": {
@@ -13340,11 +13230,6 @@
         "Skontrolovať bezpečnosť účtu"
       ]
     },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "Registrácia nebola úspešne dokončená."
-      ]
-    },
     "Search - no results": {
       "An action is being processed": [
         "Akcia sa spracováva"
@@ -14103,17 +13988,6 @@
       ],
       "Your pm.me email is active": [
         "Váš email pm.me je aktívny"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "Prihlásiť sa"
-      ],
-      "Sign in to your organization": [
-        "Prihláste sa do svojej organizácie"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Presmerujeme vás na poskytovateľa SSO tretej strany."
       ]
     },
     "State": {
@@ -15472,8 +15346,14 @@
       "Confirm recipient address?": [
         "Potvrdiť adresu príjemcu?"
       ],
+      "Connect a Gmail address": [
+        "Pripojte Gmailovú adresu"
+      ],
       "Connect apps and devices": [
         "Pripojenie aplikácií a zariadení"
+      ],
+      "Connect more addresses": [
+        "Pripojiť viac adries"
       ],
       "Connect to video conferencing": [
         "Pripojiť sa k videokonferencii"
@@ -15664,9 +15544,6 @@
       "Enhance security with 2FA": [
         "Zvýšte zabezpečenie pomocou 2FA"
       ],
-      "Enter your password": [
-        "Zadajte svoje heslo"
-      ],
       "Error": [
         "Chyba"
       ],
@@ -15787,11 +15664,17 @@
       "Invalid verification code": [
         "Nesprávny overovací kód"
       ],
+      "Keep this banner hidden?": [
+        "Ponechať túto reklamu skrytú?"
+      ],
       "Label as": [
         "Označiť ako"
       ],
       "Label options": [
         "Možnosti štítku"
+      ],
+      "Limit reached": [
+        "Limit dosiahnutý"
       ],
       "Link confirmation": [
         "Potvrdenie pred otvorením odkazu"
@@ -15894,6 +15777,9 @@
       ],
       "Moving a snoozed message": [
         "Presunutie odloženej správy"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Viacero účtov, 1 súkromná doručená pošta"
       ],
       "Need more aliases?": [
         "Potrebujete viac aliasov?"
@@ -16044,6 +15930,9 @@
       ],
       "Referral": [
         "Odporúčanie"
+      ],
+      "Remove forwarding address": [
+        "Odstrániť adresu preposielania"
       ],
       "Remove from list?": [
         "Odstrániť zo zoznamu?"
@@ -16230,9 +16119,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Zapnúť ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Two-factor authentication": [
-        "Dvojstupňové overenie"
       ],
       "Unsubscribe": [
         "Odhlásiť sa z odberu"

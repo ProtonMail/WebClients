@@ -154,9 +154,6 @@
       "Attention required": [
         "Es requereix la vostra atenció"
       ],
-      "Authenticate": [
-        "Autentica"
-      ],
       "Auto-delete spam and trash": [
         "Neteja automàticament el correu brossa i la paperera"
       ],
@@ -195,9 +192,6 @@
       ],
       "Carbon Copy": [
         "Copia"
-      ],
-      "Change email": [
-        "Canvia el correu electrònic"
       ],
       "Change password": [
         "Canvia la contrasenya"
@@ -588,9 +582,6 @@
       "Font": [
         "Font"
       ],
-      "Forgot password?": [
-        "Heu oblidat la contrasenya?"
-      ],
       "Formalize": [
         "Formalitza"
       ],
@@ -823,6 +814,9 @@
       "Make it friendly": [
         "Més amigable"
       ],
+      "Manage addresses": [
+        "Gestionar adreces"
+      ],
       "Manage advanced account protections": [
         "Gestiona les proteccions avançades del compte"
       ],
@@ -1023,6 +1017,9 @@
       ],
       "Open navigation": [
         "Obre la navegació"
+      ],
+      "Or use a different Gmail address": [
+        "O utilitzeu una altra adreça de Gmail"
       ],
       "Ordered list": [
         "Llista ordenada"
@@ -1318,6 +1315,9 @@
       "Set up a custom domain": [
         "Configura un domini personalitzat"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "Configura el reenviament automàtic des de Gmail"
+      ],
       "Set up email forwarding": [
         "Configura el reenviament de correu"
       ],
@@ -1588,17 +1588,14 @@
       "Use a different payment method": [
         "Utilitzeu un mètode de pagament diferent"
       ],
-      "Use authentication code": [
-        "Utilitza el codi d'autenticació"
-      ],
       "Use for sending": [
         "Usar per enviar"
       ],
-      "Use recovery code": [
-        "Utilitza un codi de recuperació"
-      ],
       "Use this": [
         "Utilitzeu això"
+      ],
+      "Use this Gmail address": [
+        "Utilitzeu aquesta adreça de Gmail"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Utilitzeu el ratolí per redimensionar la vista. Si esteu utilitzant el teclat, podeu utilitzar les tecles d'esquerra i dreta per redimensionar."
@@ -4327,6 +4324,16 @@
         "Compartiu els avantatges del vostre pla amb ${ BRAND_NAME } Duo"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Per reenviar correus electrònics des de fins a ${ MAX_SYNC_PAID_USER } compte, milloreu a ${ planName }.",
+        "Per reenviar correus electrònics des de fins a ${ MAX_SYNC_PAID_USER } comptes, milloreu a ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Esteu reenviant correus electrònics des d'${ MAX_SYNC_FREE_USER } compte extern a ${ MAIL_APP_NAME }.",
+        "Esteu reenviant correus electrònics des de ${ MAX_SYNC_FREE_USER } comptes externs a ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Els camps de text són opcionals. La informació que proporcioneu en aquest formulari només apareixerà en les factures emeses en el futur i no afectarà les factures existents."
@@ -5567,24 +5574,6 @@
         "Velocitats ultraràpides"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inseriu una clau de seguretat enllaçada al vostre compte de ${ BRAND_NAME }."
-      ],
-      "Security key": [
-        "Clau de seguretat"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Clau de seguretat"
-      ]
-    },
     "file size format": {
       "byte": [
         "byte",
@@ -5825,9 +5814,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "Aplicació ${ MAIL_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } a l'App Store"
       ],
@@ -5842,15 +5828,6 @@
         "Queda ${ remainingDaysCount } dia.",
         "Queden ${ remainingDaysCount } dies."
       ],
-      "account logins": [
-        "inicis de sessió al compte"
-      ],
-      "Auto-forward Gmail": [
-        "Reenviament automàtic des del Gmail"
-      ],
-      "auto-forwarding": [
-        "reenviament automàtic"
-      ],
       "Block email communications from scammers permanently.": [
         "Bloquegeu permanentment correus electrònics d'estafadors."
       ],
@@ -5859,12 +5836,6 @@
       ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Enhorabona per fer el vostre correu electrònic encara més segur, convenient i rellevant! Hem apujat el vostre emmagatzematge gratuït fins a un total d'1 GB."
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Canvieu els ${ strongText } a la vostra adreça de ${ BRAND_NAME }"
-      ],
-      "Changed accounts": [
-        "S'han canviat els comptes."
       ],
       "Checklist complete": [
         "S'ha completat la llista de verificació"
@@ -5875,11 +5846,11 @@
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Completeu aquesta llista en un termini de ${ daysCount } per duplicar el vostre emmagatzematge de manera gratuïta."
       ],
-      "Discover how our ${ strongText } protect you": [
-        "Descobriu com els nostres ${ strongText } us protegeixen."
-      ],
       "Discover privacy features": [
         "Descobriu les característiques de privacitat"
+      ],
+      "Download apps": [
+        "Descarregueu les aplicacions"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "El xifratge és tan fort que només vós i els destinataris escollits podran veure els vostres correus electrònics."
@@ -5890,17 +5861,11 @@
       "For your eyes only": [
         "Només per als vostres ulls"
       ],
-      "Get more storage": [
-        "Aconseguiu més emmagatzematge"
+      "Get storage bonus": [
+        "Obtingueu una bonificació d'emmagatzematge"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obtingueu l'aplicació mòbil de ${ MAIL_APP_NAME }"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Obteniu l'${ strongText } per a l'Android o l'iOS"
-      ],
-      "Get the App": [
-        "Obtingueu l'aplicació"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Seguiu utilitzant ${ MAIL_APP_NAME } per a descobrir més formes amb què ${ BRAND_NAME } protegeix la vostra privacitat i simplifica l'enviament de correus electrònics."
@@ -5908,20 +5873,11 @@
       "Learn more": [
         "Més informació"
       ],
-      "Nice! You've updated all services in this category.": [
-        "Perfecte! Heu actualitzat tots els serveis d'aquesta categoria."
-      ],
-      "Popular online services": [
-        "Serveis populars en línia"
-      ],
-      "privacy features": [
-        "característiques de privacitat"
-      ],
       "Protection from trackers": [
         "Protecció contra els rastrejadors"
       ],
-      "Set up ${ strongText } from Gmail": [
-        "Configura ${ strongText } des del Gmail"
+      "Review import options": [
+        "Reviseu les opcions d'importació"
       ],
       "Sign in to the mobile app to complete this step": [
         "Inicieu la sessió a l'aplicació mòbil per completar aquest pas."
@@ -5934,9 +5890,6 @@
       ],
       "This feature is currently unavailable": [
         "Aquesta característica no està disponible actualment."
-      ],
-      "Update your logins": [
-        "Actualitzeu els inicis de sessió"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Escanegeu aquest codi QR amb el vostre dispositiu mòbil o visiteu la tenda d'aplicacions d'iOS o d'Android."
@@ -6375,6 +6328,9 @@
     "Import provider": {
       "Advanced import": [
         "Importació avançada"
+      ],
+      "Import from ${ providerName }": [
+        "Importeu des de ${ providerName }"
       ]
     },
     "Import warning": {
@@ -7169,9 +7125,6 @@
       "Duplicate key updated": [
         "Clau duplicada actualitzada"
       ],
-      "Each code can only be used once": [
-        "Cada codi només es pot utilitzar una vegada"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gestioneu i doneu-vos de baixa fàcilment de butlletins i llistes de correu."
       ],
@@ -7230,23 +7183,11 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Assegureu-vos una comunicació totalment privada i xifrada. Aconseguiu ara la vostra adreça gratuïta de correu electrònic de ${ BRAND_NAME }."
       ],
-      "Enter the code from your authenticator app": [
-        "Introduïu el codi de la vostra aplicació d'autenticació."
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduïu les credencials del compte de correu electrònic des d'on voleu importar."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Introduïu el codi de verificació. Dígit ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Introduïu la vostra contrasenya (com a administrador de l'organització)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Introduïu la vostra contrasenya (com a contacte de confiança)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Temps restant estimat: ${ estimatedMinutes } minut",
@@ -8603,9 +8544,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quan vau activar les claus de confiança per a ${ senderName }, es van afegir les claus públiques a les dades del contacte."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l'autenticació en dos passos, et proporcionem codis de recuperació que pots utilitzar per iniciar sessió si perds l'accés a l'aplicació d'autenticació."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Quan us subscrigueu a un butlletí, utilitzeu un àlies en lloc de la vostra adreça de correu electrònic. La vostra identitat quedarà amagada i podreu desactivar l'àlies en qualsevol moment."
       ],
@@ -8785,6 +8723,10 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment.",
         "Llavors se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Heu habilitat el reenviament en ${ MAX_SYNC_PAID_USER } adreça del Gmail. Per afegir-ne una altra, primer desactiveu-ne una.",
+        "Heu habilitat el reenviament en ${ MAX_SYNC_PAID_USER } adreces del Gmail. Per afegir-ne una altra, primer desactiveu-ne una."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Heu assolit el nombre màxim d'adreces en el grup o els grups de contactes:"
@@ -9276,9 +9218,6 @@
       ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
-      ],
-      "Authenticator app": [
-        "Aplicació d'autenticació"
       ],
       "Automated confirmations and alerts": [
         "Confirmacions i alertes automatitzades"
@@ -9972,12 +9911,6 @@
       ],
       "Your location": [
         "La vostra ubicació"
-      ],
-      "Your password (admin)": [
-        "La vostra contrasenya (administrador)"
-      ],
-      "Your password (trusted contact)": [
-        "La vostra contrasenya (contacte de confiança)"
       ],
       "ZIP code": [
         "Codi postal"
@@ -11817,23 +11750,29 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
-        "Canvieu la vostra adreça de correu electrònic per serveis populars ara i eviteu ser rastrejat i perfilat. ${ learnMoreLink }"
-      ],
-      "Finance": [
-        "Finances"
+      "Choose your service": [
+        "Trieu el vostre servei"
       ],
       "Maybe later": [
         "Potser més tard"
       ],
-      "Privacy for all your online accounts": [
-        "Privacitat per a tots els vostres comptes en línia"
+      "Popular services": [
+        "Serveis populars"
       ],
-      "Shopping": [
-        "Compres"
+      "Skip for now": [
+        "Ometeu-ho per ara"
       ],
-      "Social media": [
-        "Xarxes socials"
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Canvieu els vostres comptes a ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Canviar de correu és difícil. ${ BRAND_NAME } ho fa fàcil. Connecteu el vostre compte antic i gestioneu-ho tot en un espai de treball concentrat i sense anuncis."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Actualitzeu el vostre correu als serveis que feu servir més. Preveniu el rastreig i protegiu la vostra privacitat."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Benvingut a ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -12032,40 +11971,6 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Podreu utilitzar ${ planTitle } de manera gratuïta fins que finalitzi el període de prova."
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Teniu un compte amb algun d'aquests serveis? Cliqueu per canviar l'adreça de correu electrònic a la vostra adreça de ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "Serveis bancaris"
-      ],
-      "Crypto": [
-        "Criptomoneda"
-      ],
-      "E-commerce and Retail": [
-        "Comerç electrònic i venda al detall"
-      ],
-      "Entertainment": [
-        "Entreteniment"
-      ],
-      "Food and beverage": [
-        "Alimentació i begudes"
-      ],
-      "Gaming": [
-        "Jocs"
-      ],
-      "Most popular": [
-        "Més populars"
-      ],
-      "Travel": [
-        "Viatge"
-      ],
-      "Utilities": [
-        "Utilitats"
       ]
     },
     "Option": {
@@ -12933,11 +12838,6 @@
         "Reviseu la seguretat del compte"
       ]
     },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "No s'ha completat l'inici de sessió."
-      ]
-    },
     "Search - no results": {
       "An action is being processed": [
         "S'està processant una acció"
@@ -13654,17 +13554,6 @@
       ],
       "Your pm.me email is active": [
         "El vostre correu electrònic de pm.me està actiu."
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "Inicia la sessió"
-      ],
-      "Sign in to your organization": [
-        "Inicieu la sessió a la vostra organització"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Se us redirigirà al vostre proveïdor d'SSO de tercers."
       ]
     },
     "State": {
@@ -14911,8 +14800,14 @@
       "Confirm recipient address?": [
         "Confirmeu l'adreça del destinatari?"
       ],
+      "Connect a Gmail address": [
+        "Connecteu-vos a una adreça de Gmail"
+      ],
       "Connect apps and devices": [
         "Connecteu aplicacions i dispositius"
+      ],
+      "Connect more addresses": [
+        "Connecteu més adreces"
       ],
       "Connect to video conferencing": [
         "Connecteu-vos a una videoconferència"
@@ -15093,9 +14988,6 @@
       "Enhance security with 2FA": [
         "Milloreu la seguretat amb 2FA"
       ],
-      "Enter your password": [
-        "Introduïu la vostra contrasenya"
-      ],
       "Error": [
         "Error"
       ],
@@ -15223,6 +15115,9 @@
       "Label options": [
         "Opcions d'etiqueta"
       ],
+      "Limit reached": [
+        "S'ha assolit el límit."
+      ],
       "Link confirmation": [
         "Confirmació d'enllaç"
       ],
@@ -15324,6 +15219,9 @@
       ],
       "Moving a snoozed message": [
         "S'està movent un missatge ajornat."
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Múltiples comptes, 1 safata d'entrada privada"
       ],
       "Need more aliases?": [
         "Necessiteu més àlies?"
@@ -15474,6 +15372,9 @@
       ],
       "Referral": [
         "Referència"
+      ],
+      "Remove forwarding address": [
+        "Esborreu l'adreça de reenviament"
       ],
       "Remove from list?": [
         "Voleu eliminar-lo de la llista?"
@@ -15658,9 +15559,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activeu ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Two-factor authentication": [
-        "Autenticació de doble factor"
       ],
       "Unsubscribe": [
         "Anul·leu-ne la subscripció"
