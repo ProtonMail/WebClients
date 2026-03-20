@@ -113,6 +113,7 @@ enum AccountFlag {
     PurchaseAttributionSurveyEnabled = 'PurchaseAttributionSurveyEnabled',
     BornPrivateReservation = 'BornPrivateReservation',
     BornPrivateActivationRecovery = 'BornPrivateActivationRecovery',
+    CancellationFlowFeedbackFirst = 'CancellationFlowFeedbackFirst',
 }
 
 enum PaymentsFlag {
