@@ -928,6 +928,18 @@
       ],
       "Edit billing address": [
         "Uredi naslov za izstavitev računa"
+      ],
+      "Copy link and close": [
+        "Kopiraj povezavo in zapri"
+      ],
+      "Create a free account": [
+        "Ustvarite brezplačen račun"
+      ],
+      "Go to the next available appointment": [
+        "Pojdi na naslednji prosti termin"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -1209,6 +1221,9 @@
       ],
       "Use your own email domain": [
         "Uporabite svojo e-poštno domeno"
+      ],
+      "Unlimited logins, credit cards, hide-my-email aliases and more": [
+        "Neomejeno število prijav, kreditnih kartic, hide-my-email vzdevkov in več"
       ]
     },
     "BF2024: Offers": {
@@ -1240,6 +1255,12 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Prostor za shranjevanje si delijo vse aplikacije ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštni naslov, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštna naslova, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštne naslove, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo.",
+        "Zavarujte svoja e-poštna sporočila in urnik s šifriranjem od konca do konca. Vključuje ${ addresses } e-poštnih naslovov, podporo za e-poštne domene po meri, neomejene vzdevke hide-my-email in drugo."
       ]
     },
     "BF2025: Deal details": {
@@ -1737,6 +1758,12 @@
       ],
       "Large file upload support": [
         "Podpora za nalaganje velikih datotek"
+      ],
+      "Basic chat history": [
+        "Osnovna zgodovina klepeta"
+      ],
+      "Unlimited daily chats": [
+        "Neomejeni dnevni klepeti"
       ]
     },
     "collider_2025: Info": {
@@ -2992,6 +3019,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ustvarili ste že 10 vzdevkov. Zagotovite si neomejeno število vzdevkov in 500 GB shrambe s paketom ${ BRAND_NAME } Unlimited."
+      ],
+      "To start, give your organization a name.": [
+        "Za začetek imenujte svojo organizacijo."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Uporabite ta priročnik, da bo vaša organizacija čim prej začela izkoriščati prednosti vodilnega ekosistema za šifriranje in varstvo zasebnosti podjetja ${ BRAND_NAME }."
       ]
     },
     "description": {
@@ -3128,6 +3161,9 @@
     "Duo offer: Link": {
       "Get 4x more storage": [
         "Pridobite 4x več prostora za shranjevanje"
+      ],
+      "Share your plan": [
+        "Svoj paket daj v skupno rabo"
       ]
     },
     "Duo offer: Title": {
@@ -3805,6 +3841,15 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Shema obrnjene davčne obveznosti ni podprta za ta načrt"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Vnesite svoje uporabniško ime brez domene (@example.com)"
+      ],
+      "Please enter a valid postal code": [
+        "Prosimo vnesite veljavno poštno številko"
+      ],
+      "You are reconnected to Zoom. You can save your event now.": [
+        "Ponovno ste se povezali s storitvijo Zoom. Zdaj lahko shranite svoj dogodek."
       ]
     },
     "error": {
@@ -4765,6 +4810,9 @@
       ],
       "Import from Yahoo": [
         "Uvoz iz Yahoo"
+      ],
+      "Advanced import": [
+        "Napredni uvoz"
       ]
     },
     "Import warning": {
@@ -6152,6 +6200,57 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Vaš račun je trenutno nastavljen za uporabo sheme povratnega DDV. To ni podprto za izbrani paket. Če želite nadaljevati, bodisi odstranite številko DDV s plačilnega naslova ali izberite drug paket."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Pooblastite skrbnika, da nadgradi paket ali odstrani stran iz stranske vrstice strani za rezervacije."
+      ],
+      "Choose your service to connect with": [
+        "Izberite storitev, s katero se želite povezati"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Ustvari varen oblak za ${ value } člana",
+        "Ustvari varen oblak za ${ value } člana",
+        "Ustvari varen oblak za ${ value } člane",
+        "Ustvari varen oblak za ${ value } članov"
+      ],
+      "Failed to update meeting name": [
+        "Ni uspelo posodobiti imena sestanka"
+      ],
+      "Host": [
+        "Gostitelj"
+      ],
+      "No appointments available": [
+        "Ni prostih terminov"
+      ],
+      "Range is too short.": [
+        "Obdobje je prekratko."
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Naročnina se samodejno obnovi na ${ cycle } mesec.",
+        "Naročnina se samodejno obnovi na ${ cycle } meseca.",
+        "Naročnina se samodejno obnovi na ${ cycle } mesece.",
+        "Naročnina se samodejno obnovi na ${ cycle } mesecev."
+      ],
+      "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
+        "To je ime ali vzdevek vaše organizacije, ki ga bodo videli vaši uporabniki. Spremenite ga lahko kadarkoli."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Če želite dodati novo stran za rezervacije, prosite svojega skrbnika, da nadgradi vaš paket."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Če želite dodati novo stran za rezervacije, odstranite obstoječo s stranske vrstice strani za rezervacije."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Če želite dodati novo stran z rezervacijo, nadgradite svoj paket."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Vaš načrtovani paket se začne ${ renewalTime } in se bo samodejno obnavljal vsak ${ cycle } mesec.",
+        "Vaš načrtovani paket se začne ${ renewalTime } in se bo samodejno obnavljal vsaka ${ cycle } meseca.",
+        "Vaš načrtovani paket se začne ${ renewalTime } in se bo samodejno obnavljal vsake ${ cycle } mesece.",
+        "Vaš načrtovani paket se začne ${ renewalTime } in se bo samodejno obnavljal vsakih ${ cycle } mesecev."
+      ],
+      "You’ll also lose access to ${ boldPlanTitle } features:": [
+        "Prav tako izgubite dostop do ${ boldPlanTitle } možnosti:"
       ]
     },
     "info": {
@@ -6846,6 +6945,9 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Dodaj ${ MEET_APP_NAME } konferenčno storitev"
       ]
     },
     "Label for contact group color": {
@@ -6999,6 +7101,9 @@
       ],
       "What’s this?": [
         "Kaj je to?"
+      ],
+      "Booking pages": [
+        "Strani za rezervacijo"
       ]
     },
     "Link label (optional)": {
@@ -7152,6 +7257,12 @@
         "Do ${ n } udeleženca",
         "Do ${ n } udeleženci",
         "Do ${ n } udeležencev"
+      ],
+      "${ n } participant": [
+        "${ n } udeleženec",
+        "${ n } udeleženca",
+        "${ n } udeleženci",
+        "${ n } udeleženci"
       ]
     },
     "Message": {
@@ -7903,6 +8014,24 @@
         "${ options }-dnevna zgodovina verzij datoteke",
         "${ options }-dnevna zgodovina verzij datoteke",
         "${ options }-dnevna zgodovina verzij datoteke"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } deljen ${ PASS_SHORT_APP_NAME } trezor na uporabnika",
+        "${ n } deljena ${ PASS_SHORT_APP_NAME } trezorja na uporabnika",
+        "${ n } deljeni ${ PASS_SHORT_APP_NAME } trezorji na uporabnika",
+        "${ n } deljenih ${ PASS_SHORT_APP_NAME } trezorjev na uporabnika"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "${ n } uporabnik (${ adminsText }, ${ usersText })",
+        "Do ${ n } uporabnika (${ adminsText }, ${ usersText })",
+        "Do ${ n } uporabnike (${ adminsText }, ${ usersText })",
+        "Do ${ n } uporabnikov (${ adminsText }, ${ usersText })"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Uporabite na ${ n } napravi hkrati",
+        "Uporabite na do ${ n } napravah hkrati",
+        "Uporabite na do ${ n } napravah hkrati",
+        "Uporabite na do ${ n } napravah hkrati"
       ]
     },
     "new_plans: feature highlight": {
@@ -8618,6 +8747,9 @@
       ],
       "Your subscription renews soon": [
         "Vaša naročnina se bo kmalu obnovila"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Nadgradite svojo shrambo za samo ${ pricingTitle } s paketom ${ planName }"
       ]
     },
     "Offer fearue": {
@@ -8649,6 +8781,9 @@
       ],
       "Storage": [
         "Shramba"
+      ],
+      "File version history (over 1 week)": [
+        "Zgodovina različic datoteke (več kot en teden)"
       ]
     },
     "Onboarding": {
@@ -8726,6 +8861,9 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Do konca preskusnega obdobja boste lahko uporabljali ${ planTitle } brezplačno."
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Uživajte brezplačne funkcije za poslovne uporabnike do ${ trialEndsOnFormatted }."
       ]
     },
     "Option": {
@@ -9031,6 +9169,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaša naročnina trenutno vsebuje obstoječi popust. Premik na to novo promocijo pomeni, da obstoječi popust ne bo več veljal."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Posebna znižana cena v višini ${ priceWithDiscount } velja za ${ subscriptionLength } mesec.",
+        "Posebna znižana cena v višini ${ priceWithDiscount } velja za prva ${ subscriptionLength } meseca.",
+        "Posebna znižana cena v višini ${ priceWithDiscount } velja za prve ${ subscriptionLength } mesece.",
+        "Posebna znižana cena v višini ${ priceWithDiscount } velja za prvih ${ subscriptionLength } mesecev."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Mehanizem DDV povratnega plačila velja."
       ]
     },
     "Payments.Error": {
@@ -9388,6 +9535,18 @@
       ],
       "your subscription": [
         "vaša naročnina"
+      ],
+      "Friend joined": [
+        "Prijatelj se je pridružil",
+        "Prijatelja sta se pridružila",
+        "Prijatelji so se pridružili",
+        "Prijatelji so se pridružili"
+      ],
+      "Friend subscribed": [
+        "Prijatelj se je naročil",
+        "Prijatelja sta se naročila",
+        "Prijatelji so se naročili",
+        "Prijatelji so se naročili"
       ]
     },
     "Reload event button tooltip": {
@@ -10426,6 +10585,21 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš kratek e-poštni vzdevek @pm.me"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } vam omogoča dostop do vseh naprednih funkcij storitev ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }. Zasebnost je vgrajena, zato lahko nadaljujete z delom, vedoč, da sta vaša identiteta in podatki varni."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } nudi ${ planMaxSpace } prostora za shranjevanje na uporabnika za e-pošto, priponke, dogodke in datoteke. Prav tako ste upravičeni do letnih bonusov za shrambo."
+      ],
+      "Catch-all email address": [
+        "Zoom srečanje"
+      ],
+      "Invited members will be removed from your organization": [
+        "Povabljeni člani bodo odstranjeni iz vaše organizacije"
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Vaša naročnina ${ planName } se izteče ${ expiryDate }, po poteku boste preusmerjeni na brezplačni paket ${ BRAND_NAME }."
       ]
     },
     "subscription reminder": {
@@ -11568,6 +11742,21 @@
       ],
       "Reverse charge not supported": [
         "Shema obrnjene davčne obveznosti"
+      ],
+      "Choose a provider": [
+        "Izberite ponudnika"
+      ],
+      "Custom": [
+        "Po meri"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Uvozite svoje podatke v ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Izberite podatke za uvoz"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Povečajte svojo produktivnost za ${ formattedPrice } s paketom ${ planName }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11763,6 +11952,12 @@
         "Strežniki v več kot ${ numberOfCountries } državah",
         "Strežniki v več kot ${ numberOfCountries } državah",
         "Strežniki v več kot ${ numberOfCountries } državah"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Samodejno izbrano iz ${ numberOfCountries } države",
+        "Samodejno izbrano iz ${ numberOfCountries } držav",
+        "Samodejno izbrano iz ${ numberOfCountries } držav",
+        "Samodejno izbrano iz ${ numberOfCountries } držav"
       ]
     },
     "vpn_2step: feature": {
@@ -11799,6 +11994,12 @@
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Varnejši način izmenjave Bitcoina prek e-pošte namesto zapletenih 26-znakovnih Bitcoin naslovov, ki so dovzetni za napake"
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-poštni naslov",
+        "${ n } ${ BRAND_NAME } e-poštna naslova",
+        "${ n } ${ BRAND_NAME } e-poštni naslovi",
+        "${ n } ${ BRAND_NAME } e-poštnih naslovov"
       ]
     },
     "wallet_signup_2024:app-switcher": {
@@ -12214,6 +12415,41 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Vaše brezplačno preizkusno obdobje se izteče čez ${ timeRemaining }"
+      ]
+    },
+    "Custom frequency option": {
+      "Doesn't end": [
+        "Se ne konča"
+      ],
+      "Ends after": [
+        "Se konča po"
+      ],
+      "Ends on": [
+        "Konča se"
+      ],
+      "event": [
+        "dogodek",
+        "dogodka",
+        "dogodki",
+        "dogodkov"
+      ]
+    },
+    "Duration": {
+      "30 minutes": [
+        "30 minut"
+      ],
+      "60 minutes": [
+        "60 minut"
+      ]
+    },
+    "label": {
+      "What should people know about this appointment?": [
+        "Kaj bi morali udeleženci vedeti o tem srečanju?"
       ]
     }
   }

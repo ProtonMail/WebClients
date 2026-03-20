@@ -1032,6 +1032,9 @@
       ],
       "Edit billing address": [
         "Editare adresă de facturare"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -4106,6 +4109,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Schema de taxare inversă nu este acceptată pentru acest plan."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduceți numele de utilizator fără domeniu (@exemplu.com)."
       ]
     },
     "error": {
@@ -5068,6 +5074,9 @@
       ],
       "Import from Yahoo": [
         "Importare din Yahoo"
+      ],
+      "Advanced import": [
+        "Importare avansată"
       ]
     },
     "Import warning": {
@@ -6646,6 +6655,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Contul este configurat în prezent pentru a aplica schema de taxare inversă. Aceasta nu este acceptată pentru planul selectat. Pentru a continua, fie eliminați numărul de TVA din adresa de facturare, fie selectați un alt plan."
+      ],
+      "Choose your service to connect with": [
+        "Alegeți serviciul cu care doriți să vă conectați"
       ]
     },
     "info": {
@@ -9692,6 +9704,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Se aplică mecanismul de taxare inversă a TVA."
       ]
     },
     "Payments.Error": {
@@ -10099,7 +10114,7 @@
         "Valorificați oferta"
       ],
       "SPRING SALE 2026": [
-        "OFERTĂ DE PRIMĂVERII 2026"
+        "OFERTĂ PRIMĂVERII 2026"
       ]
     },
     "q1campaign: Info": {
@@ -10174,6 +10189,12 @@
       ],
       "Use your own email domain": [
         "Utilizați propriul domeniu de e-mail"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Extindeți-vă abonamentul și economisiți ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Treceți la planul nostru anual și economisiți ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -10181,7 +10202,7 @@
         "pentru 12 luni"
       ],
       "SPRING SALE": [
-        "OFERTĂ DE PRIMĂVERII"
+        "OFERTĂ PRIMĂVERII"
       ]
     },
     "Referral": {
@@ -12422,7 +12443,7 @@
         "Simplificați gestionarea parolelor"
       ],
       "Spring Sale": [
-        "Reducere de primăvară"
+        "Ofertă de primăvară"
       ],
       "Start a new import": [
         "Începere importare nouă"
@@ -12567,6 +12588,18 @@
       ],
       "Reverse charge not supported": [
         "Taxa inversă nu este suportată"
+      ],
+      "Choose a provider": [
+        "Alegeți un furnizor"
+      ],
+      "Custom": [
+        "Personalizat"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importați-vă datele în ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Selectați datele de importat"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -1028,6 +1028,9 @@
       ],
       "Edit billing address": [
         "Editar endereço de cobrança"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -4058,6 +4061,12 @@
       ],
       "ZIP code is required": [
         "O CEP é obrigatório."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Insira seu nome de usuário sem o domínio (@example.com)"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "O valor mínimo da doação é de ${ price }"
       ]
     },
     "error": {
@@ -5003,6 +5012,9 @@
       ],
       "Import from Yahoo": [
         "Importar do Yahoo"
+      ],
+      "Advanced import": [
+        "Importação avançada"
       ]
     },
     "Import warning": {
@@ -6541,6 +6553,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Você atingiu o limite de agendamentos (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Choose your service to connect with": [
+        "Escolha seu serviço para conectar"
       ]
     },
     "info": {
@@ -9994,6 +10009,12 @@
       ],
       "Use your own email domain": [
         "Use seu próprio domínio de e-mail"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Estenda sua assinatura e economize ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Mude para o nosso plano anual e economize ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -12333,6 +12354,18 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "Choose a provider": [
+        "Selecione um provedor"
+      ],
+      "Custom": [
+        "Personalizado"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importe seus dados para a ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Selecionar dados para importar"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

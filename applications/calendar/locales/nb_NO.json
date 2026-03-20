@@ -4058,6 +4058,18 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Skriv inn brukernavnet ditt uten domenet (@eksempel.com)"
+      ],
+      "Invalid coupon": [
+        "Ugyldig kupong"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omvendt avgiftsplikt støttes ikke for denne planen"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimumbeløpet for donasjon er ${ price }"
       ]
     },
     "error": {
@@ -6544,6 +6556,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nådd grensen for antall bestillingsplasser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Kontoen din er for øyeblikket konfigurert til å bruke ordningen for omvendt avgiftsplikt. Dette støttes ikke for den valgte planen. For å fortsette, fjern enten MVA-nummeret fra faktureringsadressen eller velg en annen plan."
       ]
     },
     "info": {
@@ -9513,6 +9528,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Omvendt avgiftsplikt gjelder."
       ]
     },
     "Payments.Error": {
@@ -9991,6 +10009,12 @@
       ],
       "Use your own email domain": [
         "Bruk ditt eget e-postdomene"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Forleng abonnementet ditt og spar ${ discountPercent } %!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Bytt til vårt årlige abonnement og spar ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -12330,6 +12354,9 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "Reverse charge not supported": [
+        "Omvendt avgiftsplikt støttes ikke"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

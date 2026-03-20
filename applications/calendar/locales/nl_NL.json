@@ -1028,6 +1028,9 @@
       ],
       "Edit billing address": [
         "Factuuradres bewerken"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -4058,6 +4061,18 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Voer uw gebruikersnaam in zonder het domein (@example.com)"
+      ],
+      "Invalid coupon": [
+        "Ongeldige kortingscode"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Omgekeerde btw-regeling wordt niet ondersteund voor dit abonnement"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Het minimale donatiebedrag is ${ price }"
       ]
     },
     "error": {
@@ -4995,6 +5010,9 @@
       ],
       "Import from Yahoo": [
         "Importeer uit Yahoo"
+      ],
+      "Advanced import": [
+        "Geavanceerde import"
       ]
     },
     "Import warning": {
@@ -6536,6 +6554,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "U heeft de limiet voor boekingen bereikt (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Choose your service to connect with": [
+        "Kies uw service om verbinding te maken"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Uw account is momenteel geconfigureerd om het omgekeerde btw-tarief toe te passen. Dit wordt niet ondersteund voor het geselecteerde abonnement. Om door te gaan, verwijdt u het btw-nummer van het factuuradres of selecteert u een ander abonnement."
       ]
     },
     "info": {
@@ -9505,6 +9529,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Uw abonnement heeft momenteel een bestaande korting. Overstappen naar deze nieuwe promotie betekent dat de bestaande korting niet langer wordt toegepast."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Omgekeerde btw mechanisme is van toepassing"
       ]
     },
     "Payments.Error": {
@@ -9983,6 +10010,12 @@
       ],
       "Use your own email domain": [
         "Gebruik uw eigen e-maildomein"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Verleng uw abonnement en bespaar ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Stap over op ons jaarabonnement en bespaar ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -12322,6 +12355,21 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "Choose a provider": [
+        "Kies een provider"
+      ],
+      "Custom": [
+        "Aangepast"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importeer uw gegevens naar ${ BRAND_NAME }"
+      ],
+      "Reverse charge not supported": [
+        "Omgekeerde btw niet ondersteund"
+      ],
+      "Select data to import": [
+        "Selecteer gegevens om te importeren"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

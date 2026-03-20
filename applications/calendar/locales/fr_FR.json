@@ -1025,6 +1025,12 @@
       ],
       "Edit billing address": [
         "Modifier l'adresse de facturation"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Hide": [
+        "Masquer"
       ]
     },
     "action": {
@@ -1398,6 +1404,12 @@
       ],
       "Unlimited daily chats": [
         "Chats quotidiens illimités"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
+      ],
+      "All premium features of ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
+        "Toutes les fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "BF2025: Tooltip": {
@@ -4052,6 +4064,9 @@
       ],
       "ZIP code is required": [
         "Le code postal est nécessaire."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Saisissez votre nom d'utilisateur sans le domaine (@example.com)"
       ]
     },
     "error": {
@@ -4989,6 +5004,9 @@
       ],
       "Import from Yahoo": [
         "Importer depuis Yahoo"
+      ],
+      "Advanced import": [
+        "Importation avancée"
       ]
     },
     "Import warning": {
@@ -6521,6 +6539,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Vous avez atteint la limite de créneaux de réservation (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "Choose your service to connect with": [
+        "Choisissez votre service pour vous connecter"
       ]
     },
     "info": {
@@ -9486,6 +9507,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Le mécanisme d’autoliquidation de la TVA s’applique."
       ]
     },
     "Payments.Error": {
@@ -9964,6 +9988,12 @@
       ],
       "Use your own email domain": [
         "Utilisez votre propre domaine de messagerie"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Prolongez votre abonnement et économisez ${ discountPercent } % !"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Passez à notre abonnement annuel et économisez ${ toYearlyDiscountAmount } !"
       ]
     },
     "q1campaign: Title": {
@@ -12281,6 +12311,18 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Choose a provider": [
+        "Choisissez un fournisseur"
+      ],
+      "Custom": [
+        "Personnalisé"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importer vos données vers ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Sélectionner les données à importer"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

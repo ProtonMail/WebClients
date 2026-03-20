@@ -1022,6 +1022,9 @@
       ],
       "Edit billing address": [
         "Redigera faktureringsadress"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -4040,6 +4043,9 @@
       ],
       "ZIP code is required": [
         "Postnummer är obligatoriskt"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Ange ditt användarnamn utan domänen (@example.com)"
       ]
     },
     "error": {
@@ -4985,6 +4991,9 @@
       ],
       "Import from Yahoo": [
         "Importera från Yahoo"
+      ],
+      "Advanced import": [
+        "Avancerad import"
       ]
     },
     "Import warning": {
@@ -6492,6 +6501,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "Choose your service to connect with": [
+        "Välj din tjänst att ansluta med"
       ]
     },
     "info": {
@@ -9930,6 +9942,12 @@
       ],
       "Use your own email domain": [
         "Använd din egen e-postdomän"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Förläng din prenumeration och spara ${ discountPercent } %!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Byt till vårt årspaket och spara ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -12266,6 +12284,18 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Choose a provider": [
+        "Välj en leverantör"
+      ],
+      "Custom": [
+        "Anpassad"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importera din data till ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Välj data att importera"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

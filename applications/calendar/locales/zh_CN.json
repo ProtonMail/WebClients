@@ -1024,6 +1024,9 @@
       ],
       "Edit billing address": [
         "编辑账单地址"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -4019,6 +4022,18 @@
       ],
       "ZIP code is required": [
         "必须填写邮政编码"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "请输入您的用户名（不含 @example.com 域名）"
+      ],
+      "Invalid coupon": [
+        "优惠券无效"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "此套餐不支持反向收费机制"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "最低捐赠金额为 ${ price }"
       ]
     },
     "error": {
@@ -4947,6 +4962,9 @@
       ],
       "Import from Yahoo": [
         "从 Yahoo 导入"
+      ],
+      "Advanced import": [
+        "高级导入"
       ]
     },
     "Import warning": {
@@ -6454,6 +6472,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "您已达到预约时段数量上限 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Choose your service to connect with": [
+        "请选择要连接的服务"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "您的账户当前已配置为应用反向收费机制，但所选套餐不支持此机制。若要继续，请从账单地址中移除增值税号，或选择其他套餐。"
       ]
     },
     "info": {
@@ -9346,6 +9370,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您当前的订阅已享有一个现有折扣，转用此新促销意味着现有折扣将不再适用。"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "适用增值税反向收费机制"
       ]
     },
     "Payments.Error": {
@@ -12018,6 +12045,21 @@
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"
+      ],
+      "Choose a provider": [
+        "请选择提供商"
+      ],
+      "Custom": [
+        "自定义"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "将您的数据导入到 ${ BRAND_NAME }"
+      ],
+      "Reverse charge not supported": [
+        "不支持反向收费"
+      ],
+      "Select data to import": [
+        "请选择要导入的数据"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

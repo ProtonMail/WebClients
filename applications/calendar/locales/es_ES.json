@@ -1025,6 +1025,9 @@
       ],
       "Edit billing address": [
         "Editar la dirección de la factura"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -4064,6 +4067,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "El régimen de inversión del sujeto pasivo no es compatible con este plan"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Introduce tu nombre de usuario sin el dominio (@ejemplo.com)"
       ]
     },
     "error": {
@@ -5001,6 +5007,9 @@
       ],
       "Import from Yahoo": [
         "Importar desde Yahoo"
+      ],
+      "Advanced import": [
+        "Importación avanzada"
       ]
     },
     "Import warning": {
@@ -6536,6 +6545,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Tu cuenta está configurada actualmente para aplicar el régimen de inversión del sujeto pasivo, pero este no es compatible con el plan seleccionado. Para continuar, elimina el número de IVA de la dirección de facturación o selecciona un plan diferente."
+      ],
+      "Choose your service to connect with": [
+        "Elige tu servicio para conectar"
       ]
     },
     "info": {
@@ -9501,6 +9513,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tu suscripción tiene un descuento existente. Al cambiarte a esta nueva promoción, el descuento existente ya no se aplicará."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Se aplica el mecanismo de inversión del sujeto pasivo del IVA."
       ]
     },
     "Payments.Error": {
@@ -9979,6 +9994,12 @@
       ],
       "Use your own email domain": [
         "Usa tu propio dominio de correo electrónico"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "¡Extiende tu suscripción y ahorra un ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "¡Cámbiate a nuestro plan anual y ahorra ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -12311,6 +12332,18 @@
       ],
       "Reverse charge not supported": [
         "Inversión del sujeto pasivo no admitida"
+      ],
+      "Choose a provider": [
+        "Elegir un proveedor"
+      ],
+      "Custom": [
+        "Personalizado"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importa tus datos a ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Seleccionar datos para importar"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

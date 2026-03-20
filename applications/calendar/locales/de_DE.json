@@ -1028,6 +1028,9 @@
       ],
       "Edit billing address": [
         "Rechnungsadresse bearbeiten"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -4067,6 +4070,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Rückerstattung der Umsatzsteuer ist für dieses Abonnement nicht unterstützt"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Deinen Benutzernamen ohne die Domain (@example.com) eingeben"
       ]
     },
     "error": {
@@ -5012,6 +5018,9 @@
       ],
       "Import from Yahoo": [
         "Von Yahoo importieren"
+      ],
+      "Advanced import": [
+        "Erweiterter Import"
       ]
     },
     "Import warning": {
@@ -5575,7 +5584,7 @@
         "Fehler beim Aktualisieren des Besprechungspassworts"
       ],
       "Failed to update meeting schedule": [
-        "Fehler beim Aktualisieren des Sitzungsplans"
+        "Fehler beim Aktualisieren des Meeting-Zeitplans"
       ],
       "finance": [
         "Finanzen"
@@ -6556,6 +6565,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Dein Konto ist derzeit so konfiguriert, dass die Rückerstattung der Umsatzsteuer nicht angewendet wird. Dies wird für das ausgewählte Abonnement nicht unterstützt. Um fortzufahren, entferne entweder die Umsatzsteuer-Identifikationsnummer aus der Rechnungsadresse oder wähle anderes Abonnement."
+      ],
+      "Choose your service to connect with": [
+        "Deinen Dienst zum Verbinden auswählen"
       ]
     },
     "info": {
@@ -9525,6 +9537,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dein Abonnement hat derzeit einen bestehenden Rabatt. Der Wechsel zu dieser neuen Aktion bedeutet, dass der bestehende Rabatt nicht länger angewendet wird."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Die Rückerstattung der Umsatzsteuer gilt."
       ]
     },
     "Payments.Error": {
@@ -10003,6 +10018,12 @@
       ],
       "Use your own email domain": [
         "Nutze deine eigene E-Mail-Domain"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Verlängere dein Abonnement und spare ${ discountPercent } %!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Wechsle zu unserem jährlichen Abonnement und spare ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -12345,6 +12366,18 @@
       ],
       "Reverse charge not supported": [
         "Rückerstattungen der Umsatzsteuer nicht unterstützt"
+      ],
+      "Choose a provider": [
+        "Anbieter wählen"
+      ],
+      "Custom": [
+        "Benutzerdefiniert"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Deine Daten nach ${ BRAND_NAME } importieren"
+      ],
+      "Select data to import": [
+        "Daten zum Import auswählen"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -1001,6 +1001,9 @@
       ],
       "Edit billing address": [
         "Muokkaa laskutusosoitetta"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -3912,6 +3915,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Tämä tilaus ei tue käännettyä verovelvollisuutta."
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Syötä käyttäjätunnuksesi ilman verkkotunnusta (@example.com)"
       ]
     },
     "error": {
@@ -4844,6 +4850,9 @@
       ],
       "Import from Yahoo": [
         "Tuo Yahoosta"
+      ],
+      "Advanced import": [
+        "Edistynyt tuonti"
       ]
     },
     "Import warning": {
@@ -6289,6 +6298,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Tilisi asetuksissa on käytössä käännetty verovelvollisuus, jota valittu tilaus ei tue. Jatkaaksesi joko poista ALV-numero laskutustiedoista tai valitse toinen tilaus."
+      ],
+      "Choose your service to connect with": [
+        "Valitse palvelu, johon haluat yhdistää"
       ]
     },
     "info": {
@@ -9140,6 +9152,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tilauksessasi on jo olemassa oleva alennus. Siirtyminen tähän uuteen kampanjaan tarkoittaa, että aiempaa alennusta ei enää käytetä."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Sovelletaan arvonlisäveron käänteistä verovelvollisuutta."
       ]
     },
     "Payments.Error": {
@@ -9589,6 +9604,12 @@
       ],
       "Use your own email domain": [
         "Käytä omaa sähköpostin verkkotunnusta"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Pidennä tilaustasi ja säästä ${ discountPercent } %!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Vaihda vuositilaukseemme ja säästä ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -11846,6 +11867,18 @@
       ],
       "Reverse charge not supported": [
         "Käännettyä verovelvollisuutta ei tueta."
+      ],
+      "Choose a provider": [
+        "Valitse tarjoaja"
+      ],
+      "Custom": [
+        "Mukautettu"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Tuo tietosi ${ BRAND_NAME }iin"
+      ],
+      "Select data to import": [
+        "Valitse tuotavat tiedot"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -4040,6 +4040,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Omvendt betalingsordning understøttes ikke for dette abonnement"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Indtast dit brugernavn uden domænet (@example.com)"
       ]
     },
     "error": {
@@ -9926,6 +9929,12 @@
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Forlæng dit abonnement og spar ${ discountPercent } %!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Skift til vores årlige abonnement og spar ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -12246,6 +12255,18 @@
       ],
       "Reverse charge not supported": [
         "Fakturering med omvendt betaling understøttes ikke"
+      ],
+      "Choose a provider": [
+        "Vælg en udbyder"
+      ],
+      "Custom": [
+        "Brugerdefineret"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importér dine data til ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Vælg data til import"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

@@ -1028,6 +1028,9 @@
       ],
       "Edit billing address": [
         "Fatura adresini düzenle"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -3703,7 +3706,7 @@
         "Kod geçersiz"
       ],
       "Invalid coupon": [
-        "Geçersiz kupon"
+        "Kupon geçersiz"
       ],
       "Invalid email address": [
         "E-posta adresi geçersiz"
@@ -3969,7 +3972,7 @@
         "Eklenebilecek en az kredi tutarı: ${ price }"
       ],
       "The minimum donation amount is ${ price }": [
-        "Minimum bağış tutarı ${ price }"
+        "En az bağış tutarı ${ price }"
       ],
       "The sending key is not valid": [
         "Gönderim anahtarı geçersiz"
@@ -4066,7 +4069,10 @@
         "Posta kodunun yazılması zorunludur"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "Bu tarife için sorumlu sıfatıyla KDV usulü desteklenmemektedir"
+        "Bu tarifede tersine KDV uygulaması desteklenmiyor"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Kullanıcı adınızı etki alanı (@example.com) olmadan yazın"
       ]
     },
     "error": {
@@ -5012,6 +5018,9 @@
       ],
       "Import from Yahoo": [
         "Yahoo üzerinden içe aktar"
+      ],
+      "Advanced import": [
+        "Gelişmiş içe aktarma"
       ]
     },
     "Import warning": {
@@ -6555,7 +6564,10 @@
         "Rezervasyon aralığı sayısı sınırına ulaştınız (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Hesabınız şu anda sorumlu sıfatıyla KDV usulünü uygulayacak şekilde yapılandırılmış. Bu durum seçilen tarife için desteklenmemektedir. Devam etmek için ya fatura adresinden KDV numarasını kaldırın ya da farklı bir tarife seçin."
+        "Hesabınızda şu anda tersine KDV uygulaması yapılandırılmış. Seçilmiş tarifede bu uygulama desteklenmiyor. İlerlemek için fatura adresinden KDV numarasını kaldırabilir ya da farklı bir tarife seçebilirsiniz."
+      ],
+      "Choose your service to connect with": [
+        "Bağlanmak istediğiniz hizmeti seçin"
       ]
     },
     "info": {
@@ -9525,6 +9537,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Tersine KDV uygulaması kullanılıyor."
       ]
     },
     "Payments.Error": {
@@ -10003,6 +10018,12 @@
       ],
       "Use your own email domain": [
         "Kendi e-posta etki alanınızı kullanın"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "Aboneliğinizi uzatın ve %${ discountPercent } tasarruf edin!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "Yıllık tarifemize geçin ve ${ toYearlyDiscountAmount } tasarruf edin!"
       ]
     },
     "q1campaign: Title": {
@@ -12344,7 +12365,19 @@
         "Daha kısa adresiniz hazır"
       ],
       "Reverse charge not supported": [
-        "Sorumlu sıfatıyla KDV desteklenmiyor"
+        "Tersine KDV uygulaması desteklenmiyor"
+      ],
+      "Choose a provider": [
+        "Sağlayıcı seçin"
+      ],
+      "Custom": [
+        "Özel"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Verilerinizi ${ BRAND_NAME } aktarın"
+      ],
+      "Select data to import": [
+        "İçe aktarılacak verileri seçin"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

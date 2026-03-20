@@ -1028,6 +1028,9 @@
       ],
       "Edit billing address": [
         "Editar la dirección de la factura"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -4063,10 +4066,13 @@
         "Se requiere el código postal."
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "El esquema de inversión del sujeto pasivo no es compatible con este plan"
+        "El esquema de cobro inverso no es compatible con este plan"
       ],
       "The minimum donation amount is ${ price }": [
         "El importe mínimo de la donación es de ${ price }"
+      ],
+      "Enter your username without the domain (@example.com)": [
+        "Ingrese su nombre de usuario sin el dominio (@ejemplo.com)"
       ]
     },
     "error": {
@@ -5012,6 +5018,9 @@
       ],
       "Import from Yahoo": [
         "Importar desde Yahoo"
+      ],
+      "Advanced import": [
+        "Importación avanzada"
       ]
     },
     "Import warning": {
@@ -6555,7 +6564,10 @@
         "Ha alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Su cuenta está configurada actualmente para aplicar el esquema de inversión del sujeto pasivo. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
+        "Su cuenta está actualmente configurada para aplicar el esquema de cargo inverso. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
+      ],
+      "Choose your service to connect with": [
+        "Elija su servicio para conectar"
       ]
     },
     "info": {
@@ -9525,6 +9537,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Se aplica el mecanismo de cargo inverso del IVA."
       ]
     },
     "Payments.Error": {
@@ -10003,6 +10018,12 @@
       ],
       "Use your own email domain": [
         "Use su propio dominio de correo electrónico"
+      ],
+      "Extend your subscription and save ${ discountPercent }%!": [
+        "¡Extienda su suscripción y ahorre ${ discountPercent }%!"
+      ],
+      "Switch to our yearly plan and save ${ toYearlyDiscountAmount }!": [
+        "¡Cambie a nuestro plan anual y ahorre ${ toYearlyDiscountAmount }!"
       ]
     },
     "q1campaign: Title": {
@@ -12344,7 +12365,19 @@
         "Su dirección en formato más corto ya está lista."
       ],
       "Reverse charge not supported": [
-        "Inversión del sujeto pasivo no soportada"
+        "Cargo inverso no soportado"
+      ],
+      "Choose a provider": [
+        "Elegir un proveedor"
+      ],
+      "Custom": [
+        "Personalizado"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importe sus datos a ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Seleccionar datos para importar"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
