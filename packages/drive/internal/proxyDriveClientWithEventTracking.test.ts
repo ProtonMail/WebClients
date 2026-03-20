@@ -49,7 +49,7 @@ describe('proxyDriveClientWithEventTracking', () => {
             await wrappedCallback(mockEvent);
 
             expect(callback).toHaveBeenCalledWith(mockEvent);
-            expect(latestEventIdProvider.getLatestEventId('scope-123')).toBe('event-123');
+            await expect(latestEventIdProvider.getLatestEventId('scope-123')).resolves.toBe('event-123');
         });
 
         it('should save event ID even if callback throws', async () => {
@@ -60,18 +60,18 @@ describe('proxyDriveClientWithEventTracking', () => {
             const wrappedCallback = mockDriveClient.subscribeToTreeEvents.mock.calls[0][1];
 
             await expect(wrappedCallback(mockEvent)).rejects.toThrow('Callback error');
-            expect(latestEventIdProvider.getLatestEventId('scope-123')).toBe('event-123');
+            await expect(latestEventIdProvider.getLatestEventId('scope-123')).resolves.toBe('event-123');
         });
 
         it('should clean up event scope when dispose is called', async () => {
             const callback = jest.fn().mockResolvedValue(undefined);
-            latestEventIdProvider.saveLatestEventId('scope-123', 'some-event-id');
+            await latestEventIdProvider.saveLatestEventId('scope-123', 'some-event-id');
 
             const result = await proxiedClient.subscribeToTreeEvents('scope-123', callback);
             result.dispose();
 
             expect(mockDispose).toHaveBeenCalled();
-            expect(latestEventIdProvider.getLatestEventId('scope-123')).toBeNull();
+            await expect(latestEventIdProvider.getLatestEventId('scope-123')).resolves.toBeNull();
         });
     });
 });
