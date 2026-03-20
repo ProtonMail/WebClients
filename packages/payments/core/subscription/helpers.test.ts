@@ -10,6 +10,7 @@ import {
     getPlanIDs,
     getSubscriptionPlanTitle,
     hasLumoMobileSubscription,
+    isAddonDowngradeOnSameCycle,
     isDangerouslyAllowedSubscriptionEstimation,
     isManagedExternally,
     isSubscriptionCheckForbidden,
@@ -771,5 +772,119 @@ describe('hasLumoMobileSubscription', () => {
             ],
         });
         expect(hasLumoMobileSubscription(subscription)).toBe(true);
+    });
+});
+
+describe('isAddonDowngradeOnSameCycle', () => {
+    it('should return false when cycles differ', () => {
+        const current = buildSubscription({
+            planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 3 },
+            cycle: CYCLE.YEARLY,
+            currency: 'EUR',
+        });
+        const upcoming = buildSubscription({
+            planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 1 },
+            cycle: CYCLE.MONTHLY,
+            currency: 'EUR',
+        });
+        expect(isAddonDowngradeOnSameCycle(current, upcoming)).toBe(false);
+    });
+
+    it('should return false when same cycle and same addons', () => {
+        const current = buildSubscription({
+            planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 3 },
+            cycle: CYCLE.YEARLY,
+            currency: 'EUR',
+        });
+        const upcoming = buildSubscription({
+            planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 3 },
+            cycle: CYCLE.YEARLY,
+            currency: 'EUR',
+        });
+        expect(isAddonDowngradeOnSameCycle(current, upcoming)).toBe(false);
+    });
+
+    it('should return true when same cycle and addon quantity decreased', () => {
+        const current = buildSubscription({
+            planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 3 },
+            cycle: CYCLE.YEARLY,
+            currency: 'EUR',
+        });
+        const upcoming = buildSubscription({
+            planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 1 },
+            cycle: CYCLE.YEARLY,
+            currency: 'EUR',
+        });
+        expect(isAddonDowngradeOnSameCycle(current, upcoming)).toBe(true);
+    });
+
+    it('should return true when same cycle and addon removed entirely', () => {
+        const current = buildSubscription({
+            planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 2 },
+            cycle: CYCLE.YEARLY,
+            currency: 'EUR',
+        });
+        const upcoming = buildSubscription({
+            planIDs: { [PLANS.MAIL_PRO]: 1 },
+            cycle: CYCLE.YEARLY,
+            currency: 'EUR',
+        });
+        expect(isAddonDowngradeOnSameCycle(current, upcoming)).toBe(true);
+    });
+
+    it('should return false when same cycle and addon quantity increased (upgrade)', () => {
+        const current = buildSubscription({
+            planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 1 },
+            cycle: CYCLE.YEARLY,
+            currency: 'EUR',
+        });
+        const upcoming = buildSubscription({
+            planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 3 },
+            cycle: CYCLE.YEARLY,
+            currency: 'EUR',
+        });
+        expect(isAddonDowngradeOnSameCycle(current, upcoming)).toBe(false);
+    });
+
+    it('should return false when same cycle and new addon added', () => {
+        const current = buildSubscription({
+            planIDs: { [PLANS.MAIL_PRO]: 1 },
+            cycle: CYCLE.YEARLY,
+            currency: 'EUR',
+        });
+        const upcoming = buildSubscription({
+            planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 1 },
+            cycle: CYCLE.YEARLY,
+            currency: 'EUR',
+        });
+        expect(isAddonDowngradeOnSameCycle(current, upcoming)).toBe(false);
+    });
+
+    it('should return true when same cycle and one addon decreased while another added', () => {
+        const current = buildSubscription({
+            planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 3 },
+            cycle: CYCLE.YEARLY,
+            currency: 'EUR',
+        });
+        const upcoming = buildSubscription({
+            planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 1 },
+            cycle: CYCLE.YEARLY,
+            currency: 'EUR',
+        });
+        expect(isAddonDowngradeOnSameCycle(current, upcoming)).toBe(true);
+    });
+
+    it('should return false when same cycle and no addons on either side', () => {
+        const current = buildSubscription({
+            planIDs: { [PLANS.MAIL_PRO]: 1 },
+            cycle: CYCLE.YEARLY,
+            currency: 'EUR',
+        });
+        const upcoming = buildSubscription({
+            planIDs: { [PLANS.MAIL_PRO]: 1 },
+            cycle: CYCLE.YEARLY,
+            currency: 'EUR',
+        });
+        expect(isAddonDowngradeOnSameCycle(current, upcoming)).toBe(false);
     });
 });
