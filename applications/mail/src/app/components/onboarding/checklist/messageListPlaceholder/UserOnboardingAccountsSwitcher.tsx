@@ -90,6 +90,7 @@ const UserOnboardingAccountsSwitcher = () => {
                                     });
                                 }}
                                 className="inline-flex items-center justify-center rounded-lg shrink-0 gap-2"
+                                data-testid={`ServiceButton:${service.key}`}
                             >
                                 <img src={service.img} alt="" width={16} />
                                 <span>{service.name}</span>

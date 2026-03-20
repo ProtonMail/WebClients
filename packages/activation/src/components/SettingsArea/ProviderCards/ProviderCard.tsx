@@ -66,7 +66,6 @@ const ProviderCard = ({ app, header, hasBorders = true, showAdvancedImport = tru
                     className="mb-2 inline-flex items-center justify-center gap-2 rounded-lg"
                     showIcon
                     buttonText={c('Action').t`Google`}
-                    data-testid="ProviderButton:googleCard"
                     onComplete={onComplete}
                 />
 
