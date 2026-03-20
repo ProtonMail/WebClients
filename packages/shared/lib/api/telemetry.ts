@@ -40,6 +40,7 @@ export enum TelemetryMeasurementGroups {
     mailNewsletterSubscriptions = 'mail.web.newsletter_subscriptions',
     unlimitedOffer2025 = 'any.web.unlimited_offer_2025',
     unlimitedToDuoOffer = 'any.web.unlimited_to_duo_offer',
+    esMigrationTool = 'mail.es_migration_tool',
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
     vpnDrawer = 'any.web.vpn_drawer',
@@ -421,6 +422,10 @@ export enum TelemetryAppSwitcher {
     dropdown_app_click = 'dropdown_app_click',
 }
 
+export enum TelemetryESMigrationToolEvents {
+    migration_finished = 'es_migration_tool.migration_finished',
+}
+
 export type TelemetryEvents =
     | TelemetrySubscriptionModalEvents
     | TelemetryMailTrial2024UpsellModal
@@ -468,7 +473,8 @@ export type TelemetryEvents =
     | TelemetryAlwaysOnUpsellEvents
     | TelemetryUnlimitedToDuoOffer
     | TelemetryListSetting
-    | TelemetryAppSwitcher;
+    | TelemetryAppSwitcher
+    | TelemetryESMigrationToolEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
