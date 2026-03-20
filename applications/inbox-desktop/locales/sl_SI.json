@@ -38,6 +38,12 @@
       "Delete": [
         "Izbriši"
       ],
+      "Enable diagnostic logs": [
+        "Omogoči diagnostične dnevnike"
+      ],
+      "Enable diagnostic logs from the Chromium engine.": [
+        "Omogočite diagnostične dnevnike iz Chromiumovega mehanizma."
+      ],
       "Force Reload": [
         "Vsili ponovno nalaganje"
       ],
@@ -77,6 +83,9 @@
       "Restart and profile now": [
         "Znova zaženi in profiliraj zdaj"
       ],
+      "Restart with logging": [
+        "Ponovni zagon z beleženjem"
+      ],
       "Select All": [
         "Izberi vse"
       ],
@@ -97,6 +106,9 @@
       ],
       "Stop Speaking": [
         "Nehaj govoriti"
+      ],
+      "These logs help us diagnose issues. The app will restart to apply the change.": [
+        "Ti dnevniki nam pomagajo pri diagnosticiranju težav. Aplikacija se bo ponovno zagnala, da se sprememba uporabi."
       ],
       "This will measure how long the app takes to start and save a report to your logs folder.": [
         "To bo merilo, kako dolgo aplikacija potrebuje za zagon, in shranilo poročilo v vašo mapo z dnevniki."
