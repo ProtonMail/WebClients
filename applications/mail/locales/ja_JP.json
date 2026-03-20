@@ -153,9 +153,6 @@
       "Attention required": [
         "注意が必要です"
       ],
-      "Authenticate": [
-        "認証"
-      ],
       "Auto-delete spam and trash": [
         "迷惑メールとごみ箱のメールを自動削除"
       ],
@@ -194,9 +191,6 @@
       ],
       "Carbon Copy": [
         "カーボンコピー"
-      ],
-      "Change email": [
-        "メールアドレスを変更"
       ],
       "Change password": [
         "パスワードを変更"
@@ -585,9 +579,6 @@
       "Font": [
         "フォント"
       ],
-      "Forgot password?": [
-        "パスワードを忘れましたか？"
-      ],
       "Formalize": [
         "フォーマルにする"
       ],
@@ -816,6 +807,9 @@
       "Make it friendly": [
         "フレンドリーにする"
       ],
+      "Manage addresses": [
+        "アドレスの管理"
+      ],
       "Manage advanced account protections": [
         "高度なアカウント保護を管理"
       ],
@@ -1016,6 +1010,9 @@
       ],
       "Open navigation": [
         "ナビゲーションを開く"
+      ],
+      "Or use a different Gmail address": [
+        "別のGmailアドレスを使用する"
       ],
       "Ordered list": [
         "ソート済みリスト"
@@ -1311,6 +1308,9 @@
       "Set up a custom domain": [
         "カスタムドメインを設定"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "Gmail からの自動転送の設定"
+      ],
       "Set up email forwarding": [
         "メール転送の設定"
       ],
@@ -1578,17 +1578,14 @@
       "Use a different payment method": [
         "別の支払い方法を使用"
       ],
-      "Use authentication code": [
-        "認証コードを使用"
-      ],
       "Use for sending": [
         "送信に使用"
       ],
-      "Use recovery code": [
-        "回復用コードを使用"
-      ],
       "Use this": [
         "これを使用"
+      ],
+      "Use this Gmail address": [
+        "このGmailアドレスを使用してください"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "マウスを使うことで表示のサイズを変更することができます。キーボードを使っている場合は、左矢印キーと右矢印キーを使ってサイズを変更することができます。"
@@ -4295,6 +4292,14 @@
         "${ BRAND_NAME } Duo であなたのプラン特典を共有しましょう"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "最大${ MAX_SYNC_PAID_USER }個のアカウントからメールを転送するには、${ planName }にアップグレードしてください。"
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "お客様は${ MAX_SYNC_FREE_USER }個の外部アカウントから${ MAIL_APP_NAME }へメールを転送しています。"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "テキストフィールドは任意です。 このフォームに入力した情報は、将来発行された請求書にのみ表示され、既存の請求書には影響しません。"
@@ -5493,16 +5498,6 @@
         "最高速の速度"
       ]
     },
-    "fido2: Info": {
-      "Security key": [
-        "セキュリティキー"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "セキュリティキー"
-      ]
-    },
     "file size format": {
       "byte": [
         "バイト"
@@ -5737,9 +5732,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME } アプリ"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "App Store での ${ MAIL_APP_NAME }"
       ],
@@ -5752,15 +5744,6 @@
       "${ remainingDaysCount } day left": [
         "残り ${ remainingDaysCount } 日"
       ],
-      "account logins": [
-        "アカウントログイン"
-      ],
-      "Auto-forward Gmail": [
-        "Gmailへ自動転送"
-      ],
-      "auto-forwarding": [
-        "自動転送"
-      ],
       "Block email communications from scammers permanently.": [
         "詐欺のメールを永久にブロック"
       ],
@@ -5770,12 +5753,6 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "メールがさらに安全に、便利に、そして関連性が向上しました! 無料のストレージも合計 1 GB に増やしました。"
       ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "${ strongText } を ${ BRAND_NAME } のアドレスに変更しましょう"
-      ],
-      "Changed accounts": [
-        "変更されたアカウント"
-      ],
       "Checklist complete": [
         "チェックリストが完了しました"
       ],
@@ -5784,9 +5761,6 @@
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "無料でストレージ容量を2倍にするために、${ daysCount }日以内にこのチェックリストを完了しましょう。"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "${ strongText } がどのように保護されているかをご覧ください"
       ],
       "Discover privacy features": [
         "プライバシー機能を見る"
@@ -5800,17 +5774,8 @@
       "For your eyes only": [
         "あなたの目だけに"
       ],
-      "Get more storage": [
-        "さらに容量を獲得"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "${ MAIL_APP_NAME } のモバイルアプリを入手"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "AndroidまたはiOSで ${ strongText } を入手"
-      ],
-      "Get the App": [
-        "アプリを入手する"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "${ MAIL_APP_NAME } を引き続き使用して、${ BRAND_NAME } がプライバシーを保護しメールの送受信をより簡単にする方法をさらに見つけてください。"
@@ -5818,20 +5783,8 @@
       "Learn more": [
         "より詳しく"
       ],
-      "Nice! You've updated all services in this category.": [
-        "素晴らしい！カテゴリーの全てのサービスが更新されました。"
-      ],
-      "Popular online services": [
-        "有名なオンラインサービス"
-      ],
-      "privacy features": [
-        "プライバシー機能"
-      ],
       "Protection from trackers": [
         "トラッカーからの保護"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Gmail からの${ strongText }を設定する"
       ],
       "Sign in to the mobile app to complete this step": [
         "モバイル端末でサインインして、このステップを達成"
@@ -5844,9 +5797,6 @@
       ],
       "This feature is currently unavailable": [
         "この機能は現在ご利用いただけません。"
-      ],
-      "Update your logins": [
-        "ログイン情報を更新する"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "モバイル端末を使って、QR コードをスキャンするか iOS や Android のストアを見る。"
@@ -7063,20 +7013,11 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "完全にプライベートで暗号化された通信を確保するため、無料の${ BRAND_NAME }アドレスを今すぐ取得しましょう。"
       ],
-      "Enter the code from your authenticator app": [
-        "認証アプリからのコードを入力してください"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "インポートするメールアカウントの認証情報を入力します。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
-      ],
-      "Enter your own password (as organization admin).": [
-        "(組織管理者としての)パスワードを入力してください。"
-      ],
-      "Enter your own password (as trusted contact).": [
-        "(信頼済みの連絡先としての)パスワードを入力してください。"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "推定残り時間: ${ estimatedMinutes } 分"
@@ -8581,6 +8522,9 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "その後、${ renewCycle }ヶ月ごとに${ renewAmountStr }で請求されます。いつでもキャンセルできます。"
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "${ MAX_SYNC_PAID_USER } 個の Gmail アドレスで転送が有効になっています。別のアドレスを追加するには、まずいずれか 1 つを無効化してください。"
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "(1個以上の)連絡先グループのアドレス数の上限に達しました。"
       ],
@@ -9058,9 +9002,6 @@
       ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
-      ],
-      "Authenticator app": [
-        "認証アプリ"
       ],
       "Automated confirmations and alerts": [
         "自動確認とアラート"
@@ -9751,12 +9692,6 @@
       ],
       "Your location": [
         "お客様の現在地"
-      ],
-      "Your password (admin)": [
-        "あなたのパスワード (管理者)"
-      ],
-      "Your password (trusted contact)": [
-        "パスワード (信頼済みの連絡先)"
       ],
       "ZIP code": [
         "郵便番号"
@@ -11554,23 +11489,8 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
-        "追跡やプロファイリングを回避するため、人気のあるサービスで今すぐお客様のメールアドレスを変更してください。${ learnMoreLink }"
-      ],
-      "Finance": [
-        "ファイナンス"
-      ],
       "Maybe later": [
         "今度やる"
-      ],
-      "Privacy for all your online accounts": [
-        "すべてのオンラインのアカウントのためのプライバシー"
-      ],
-      "Shopping": [
-        "ショッピング"
-      ],
-      "Social media": [
-        "SNS"
       ]
     },
     "Onboarding modal": {
@@ -11769,40 +11689,6 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "${ planTitle }はトライアル終了までご利用いただけます。料金はかかりません。"
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "これらのサービスのアカウントをお持ちですか？ クリックするだけで、メールアドレスを ${ MAIL_APP_NAME } のアドレスに変更できます。"
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "銀行"
-      ],
-      "Crypto": [
-        "暗号通貨"
-      ],
-      "E-commerce and Retail": [
-        "E コマースと小売業"
-      ],
-      "Entertainment": [
-        "娯楽・エンタメ"
-      ],
-      "Food and beverage": [
-        "食料品と飲料"
-      ],
-      "Gaming": [
-        "ゲーム"
-      ],
-      "Most popular": [
-        "一番人気"
-      ],
-      "Travel": [
-        "旅行"
-      ],
-      "Utilities": [
-        "ユーティリティ"
       ]
     },
     "Option": {
@@ -12742,11 +12628,6 @@
         "アカウントの安全性を確認してください"
       ]
     },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "サインインは正しく完了しませんでした。"
-      ]
-    },
     "Search - no results": {
       "An action is being processed": [
         "処理中のアクションです"
@@ -13442,17 +13323,6 @@
       ],
       "Your pm.me email is active": [
         "pm.me メールが有効です"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "サインイン"
-      ],
-      "Sign in to your organization": [
-        "組織にサインインする"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "サードパーティのSSOプロバイダにリダイレクトされます"
       ]
     },
     "State": {
@@ -14640,8 +14510,14 @@
       "Confirm recipient address?": [
         "宛先のアドレスを確認しますか?"
       ],
+      "Connect a Gmail address": [
+        "Gmail アドレスを接続する"
+      ],
       "Connect apps and devices": [
         "アプリとデバイスを接続"
+      ],
+      "Connect more addresses": [
+        "さらにメールアドレスを接続"
       ],
       "Connect to video conferencing": [
         "ビデオ会議に接続"
@@ -14814,9 +14690,6 @@
       "Enhance security with 2FA": [
         "2要素認証でセキュリティを強化"
       ],
-      "Enter your password": [
-        "パスワードを入力してください"
-      ],
       "Error": [
         "エラー"
       ],
@@ -14940,6 +14813,9 @@
       "Label options": [
         "ラベルオプション"
       ],
+      "Limit reached": [
+        "上限に達しました"
+      ],
       "Link confirmation": [
         "リンクの確認"
       ],
@@ -15041,6 +14917,9 @@
       ],
       "Moving a snoozed message": [
         "スヌーズされたメッセージを移動"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "複数のアカウント、1つのプライベート受信トレイ"
       ],
       "Need more aliases?": [
         "もっとエイリアスが必要ですか？"
@@ -15191,6 +15070,9 @@
       ],
       "Referral": [
         "紹介"
+      ],
+      "Remove forwarding address": [
+        "転送先アドレスを削除する"
       ],
       "Remove from list?": [
         "リストから削除しますか？"
@@ -15365,9 +15247,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } をオンにする"
-      ],
-      "Two-factor authentication": [
-        "2 要素認証"
       ],
       "Unsubscribe": [
         "購読解除"
