@@ -68,7 +68,10 @@ const VoucherDisplay = ({ reservedEmail, activationCode }: VoucherDisplayProps) 
                                 <p className="voucher-color-text text-wrap-balance text-sm">{c('Label')
                                     .t`Your voucher for your reserved ${BRAND_NAME} email address:`}</p>
                                 <div className="voucher-email block px-4 py-3">
-                                    <span className="voucher-email-text voucher-color-text text-break">
+                                    <span
+                                        className="voucher-email-text voucher-color-text text-break"
+                                        data-testid="voucher-reserved-email"
+                                    >
                                         {reservedEmail}
                                     </span>
                                 </div>
@@ -96,7 +99,9 @@ const VoucherDisplay = ({ reservedEmail, activationCode }: VoucherDisplayProps) 
                                     id={`activation-code-svg-${uid}`}
                                 >
                                     <span className="text-semibold">{c('Label').t`Your activation code:`}</span>
-                                    <span className="text-pre">{activationCode}</span>
+                                    <span className="text-pre" data-testid="voucher-activation-code">
+                                        {activationCode}
+                                    </span>
                                 </div>
                             </div>
                         </div>
