@@ -60,15 +60,7 @@ describe('categoriesHelpers', () => {
                     outlinedIcon: 'bell-2',
                 },
             ],
-            [
-                '23',
-                {
-                    id: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
-                    colorShade: CATEGORIES_COLOR_SHADES.BLUE,
-                    filledIcon: 'speech-bubbles-filled',
-                    outlinedIcon: 'speech-bubbles',
-                },
-            ],
+            ['23'],
         ])('should return proper values for %s', (id, expectedValues) => {
             expect(getCategoryData(id)).toEqual(expectedValues);
         });
@@ -86,7 +78,6 @@ describe('categoriesHelpers', () => {
             [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, ['C', 'N']],
             [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, ['C', 'T']],
             [MAILBOX_LABEL_IDS.CATEGORY_UPDATES, ['C', 'U']],
-            [MAILBOX_LABEL_IDS.CATEGORY_FORUMS, ['C', 'F']],
         ];
 
         it.each(testArray)(

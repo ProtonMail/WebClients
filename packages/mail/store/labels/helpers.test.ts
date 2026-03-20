@@ -34,10 +34,6 @@ describe('helpers', () => {
                 },
                 {
                     ...baseLabel,
-                    ID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
-                },
-                {
-                    ...baseLabel,
                     ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
                 },
                 {

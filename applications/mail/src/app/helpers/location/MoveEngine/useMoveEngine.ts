@@ -67,7 +67,6 @@ export const useMoveEngine = () => {
     messageMoveEngine.addRule(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, messageCategoryRules);
     messageMoveEngine.addRule(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, messageCategoryRules);
     messageMoveEngine.addRule(MAILBOX_LABEL_IDS.CATEGORY_UPDATES, messageCategoryRules);
-    messageMoveEngine.addRule(MAILBOX_LABEL_IDS.CATEGORY_FORUMS, messageCategoryRules);
     messageMoveEngine.addRule(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, messageCategoryRules);
     messageMoveEngine.addRule(MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, messageCategoryRules);
     messageMoveEngine.addRule(MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, messageCategoryRules);
@@ -93,7 +92,6 @@ export const useMoveEngine = () => {
     conversationMoveEngine.addRule(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, conversationCategoryRules);
     conversationMoveEngine.addRule(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, conversationCategoryRules);
     conversationMoveEngine.addRule(MAILBOX_LABEL_IDS.CATEGORY_UPDATES, conversationCategoryRules);
-    conversationMoveEngine.addRule(MAILBOX_LABEL_IDS.CATEGORY_FORUMS, conversationCategoryRules);
     conversationMoveEngine.addRule(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, conversationCategoryRules);
     conversationMoveEngine.addRule(MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, conversationCategoryRules);
     conversationMoveEngine.addRule(MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, conversationCategoryRules);

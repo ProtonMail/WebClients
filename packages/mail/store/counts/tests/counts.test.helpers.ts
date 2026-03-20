@@ -98,11 +98,6 @@ export const createDefaultCounters = () => [
         Total: 0,
     },
     {
-        LabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
-        Unread: 0,
-        Total: 0,
-    },
-    {
         LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
         Unread: 0,
         Total: 0,
