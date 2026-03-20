@@ -28,7 +28,14 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, source, expectedEma
     const [importRecentEmails, setImportRecentEmails] = useState(showImportCheckbox);
 
     return (
-        <ModalTwo size="large" fullscreenOnMobile {...rest} onClose={onClose} className="modal-two-addbyoe">
+        <ModalTwo
+            size="large"
+            fullscreenOnMobile
+            {...rest}
+            onClose={onClose}
+            className="modal-two-addbyoe"
+            data-testid="EasySwitch:AddBYOEModal"
+        >
             <ModalTwoHeader />
             <div className="m-8 mt-0 flex flex-column *:min-size-auto md:flex-row items-center flex-nowrap gap-7">
                 <div className="flex flex-column flex-nowrap w-full lg:w-auto flex-1 gap-4">
