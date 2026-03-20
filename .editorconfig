@@ -15,3 +15,11 @@ trim_trailing_whitespace = false
 [*.scss]
 indent_size = 2
 indent_style = tab
+
+[tests/mail-renderer/public/**]
+trim_trailing_whitespace = false
+insert_final_newline = unset
+indent_style = unset
+indent_size = unset
+end_of_line = unset
+charset = unset
