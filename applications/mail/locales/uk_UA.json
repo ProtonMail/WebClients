@@ -147,9 +147,6 @@
       "Attention required": [
         "Потребує уваги"
       ],
-      "Authenticate": [
-        "Автентифікація"
-      ],
       "Auto-delete spam and trash": [
         "Автоматичне видалення спаму та смітника"
       ],
@@ -185,9 +182,6 @@
       ],
       "Carbon Copy": [
         "Копія"
-      ],
-      "Change email": [
-        "Змінити електронну пошту"
       ],
       "Change password": [
         "Змінити пароль"
@@ -528,9 +522,6 @@
       "Font": [
         "Шрифт"
       ],
-      "Forgot password?": [
-        "Не пам’ятаю пароль?"
-      ],
       "Formalize": [
         "Формалізувати"
       ],
@@ -725,6 +716,9 @@
       ],
       "Make it friendly": [
         "Зробити дружнім"
+      ],
+      "Manage addresses": [
+        "Керувати адресами"
       ],
       "Manage folders": [
         "Керувати теками"
@@ -1383,14 +1377,8 @@
       "Use a different payment method": [
         "Використати інший спосіб оплати"
       ],
-      "Use authentication code": [
-        "Використати код підтвердження"
-      ],
       "Use for sending": [
         "Використовувати для надсилання"
-      ],
-      "Use recovery code": [
-        "Використати код відновлення"
       ],
       "Use this": [
         "Скористатися"
@@ -3770,6 +3758,20 @@
         "Пріоритетна підтримка"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Щоб пересилати електронні листи з до ${ MAX_SYNC_PAID_USER } облікового запису, оновіть тариф до ${ planName }.",
+        "Щоб пересилати електронні листи з до ${ MAX_SYNC_PAID_USER } облікових записів, оновіть тариф до ${ planName }.",
+        "Щоб пересилати електронні листи з до ${ MAX_SYNC_PAID_USER } облікових записів, оновіть тариф до ${ planName }.",
+        "Щоб пересилати електронні листи з до ${ MAX_SYNC_PAID_USER } облікового(их) запису(ів), оновіть тариф до ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Ви пересилаєте електронні листи з ${ MAX_SYNC_FREE_USER } зовнішнього облікового запису до ${ MAIL_APP_NAME }.",
+        "Ви пересилаєте електронні листи з ${ MAX_SYNC_FREE_USER } зовнішніх облікових записів до ${ MAIL_APP_NAME }.",
+        "Ви пересилаєте електронні листи з ${ MAX_SYNC_FREE_USER } зовнішніх облікових записів до ${ MAIL_APP_NAME }.",
+        "Ви пересилаєте електронні листи з ${ MAX_SYNC_FREE_USER } облікового(их) запису(ів) до ${ MAIL_APP_NAME }."
+      ]
+    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Подію ${ eventTitle } скасовано."
@@ -4897,16 +4899,6 @@
         "Необмежена кількість псевдонімів Hide-my-email"
       ]
     },
-    "fido2: Info": {
-      "Security key": [
-        "Ключ безпеки"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Ключ безпеки"
-      ]
-    },
     "file size format": {
       "byte": [
         "байт",
@@ -5159,9 +5151,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "Програма ${ MAIL_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } в App Store"
       ],
@@ -5180,15 +5169,6 @@
         "Залишилось ${ remainingDaysCount } днів",
         "Залишилось ${ remainingDaysCount } днів"
       ],
-      "account logins": [
-        "імена користувачів"
-      ],
-      "Auto-forward Gmail": [
-        "Автопересилання Gmail"
-      ],
-      "auto-forwarding": [
-        "автопересилання"
-      ],
       "Block email communications from scammers permanently.": [
         "Остаточно заблокуйте електронні листи від шахраїв."
       ],
@@ -5198,20 +5178,11 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Браво! Ви зробили свою електронну пошту ще безпечнішою, зручнішою та актуальнішою! Ми збільшили безплатний обсяг вашого сховища до 1 ГБ."
       ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Змініть ${ strongText } на свою адресу ${ BRAND_NAME }"
-      ],
-      "Changed accounts": [
-        "Змінено обліковий запис"
-      ],
       "Checklist complete": [
         "Контрольний список завершено"
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Заповніть цей чек-лист протягом ${ daysCount }, щоб подвоїти обсяг вашого сховища безплатно."
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Дізнайтеся, як наші ${ strongText } захищають вас"
       ],
       "Discover privacy features": [
         "Відкрийте для себе функції приватності"
@@ -5225,17 +5196,8 @@
       "For your eyes only": [
         "Ніхто крім вас"
       ],
-      "Get more storage": [
-        "Збільшити сховище"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Отримайте програму ${ MAIL_APP_NAME } для мобільного пристрою"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Отримайте ${ strongText } на Android або iOS"
-      ],
-      "Get the App": [
-        "Отримати програму"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Користуйтеся ${ MAIL_APP_NAME }, щоб дізнатися більше про те, як ${ BRAND_NAME } захищає вашу приватність і спрощує роботу з електронною поштою."
@@ -5243,20 +5205,8 @@
       "Learn more": [
         "Докладніше"
       ],
-      "Nice! You've updated all services in this category.": [
-        "Чудово! Ви оновили всі сервіси в цій категорії."
-      ],
-      "Popular online services": [
-        "Популярні онлайн-сервіси"
-      ],
-      "privacy features": [
-        "функції приватності"
-      ],
       "Protection from trackers": [
         "Захист від стеження"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Налаштуйте ${ strongText } з Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "Виконайте вхід у програмі для мобільного пристрою, щоб завершити цей крок"
@@ -5269,9 +5219,6 @@
       ],
       "This feature is currently unavailable": [
         "Ця функція наразі недоступна"
-      ],
-      "Update your logins": [
-        "Оновіть свої записи входу"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Скануйте цей QR-код за допомогою мобільного пристрою, або відвідайте магазин iOS чи Android."
@@ -6497,17 +6444,11 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Насолоджуйтесь швидшою та цілеспрямованою роботою з настільним застосунком."
       ],
-      "Enter the code from your authenticator app": [
-        "Введіть код з вашого додатку автентифікатора"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Введіть дані облікового запису електронної пошти, з якої ви хочете імпортувати."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Введіть власний пароль (як адміністратор організації)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Приблизний час до завершення: ${ estimatedMinutes } хвилина",
@@ -7847,6 +7788,12 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Ви вказали “${ attachmentsFoundKeyword }”, але вкладення не було додано. Ви все одно хочете надіслати повідомлення?"
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Ви увімкнули пересилання на ${ MAX_SYNC_PAID_USER } адресу Gmail. Щоб додати іншу, спочатку вимкніть цю.",
+        "Ви увімкнули пересилання на ${ MAX_SYNC_PAID_USER } адреси Gmail. Щоб додати іншу, спочатку вимкніть одну з них.",
+        "Ви увімкнули пересилання на ${ MAX_SYNC_PAID_USER } адрес Gmail. Щоб додати іншу, спочатку вимкніть одну з них.",
+        "Ви увімкнули пересилання на ${ MAX_SYNC_PAID_USER } адрес Gmail. Щоб додати іншу, спочатку вимкніть одну з них."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Ви досягли максимальної кількості адрес у групах контактів:"
       ],
@@ -8265,9 +8212,6 @@
       ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
-      ],
-      "Authenticator app": [
-        "Програма автентифікації"
       ],
       "BCC": [
         "Прихована копія"
@@ -8796,9 +8740,6 @@
       ],
       "Your location": [
         "Ваше розташування:"
-      ],
-      "Your password (admin)": [
-        "Новий пароль (адмін)"
       ],
       "ZIP code": [
         "Поштовий індекс"
@@ -10421,20 +10362,6 @@
         "Сховище"
       ]
     },
-    "Onboarding List Placeholder": {
-      "Finance": [
-        "Фінанси"
-      ],
-      "Privacy for all your online accounts": [
-        "Приватність для всіх ваших облікових записів у мережі"
-      ],
-      "Shopping": [
-        "Шопінг"
-      ],
-      "Social media": [
-        "Соціальні мережі"
-      ]
-    },
     "Onboarding modal": {
       "${ advancedEncryptionTitle } ensures only you and intended recipients can access your emails.": [
         "${ advancedEncryptionTitle } гарантує, що тільки ви та зазначені отримувачі можуть отримати доступ до ваших листів."
@@ -10571,40 +10498,6 @@
       ],
       "help center": [
         "довідковий центр"
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Маєте обліковий запис в одному з цих сервісів? Просто натисніть, щоб змінити на адресу електронної пошти ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "Банківська справа"
-      ],
-      "Crypto": [
-        "Крипто"
-      ],
-      "E-commerce and Retail": [
-        "Електронна комерція та роздрібна торгівля"
-      ],
-      "Entertainment": [
-        "Розваги"
-      ],
-      "Food and beverage": [
-        "Їжа та напої"
-      ],
-      "Gaming": [
-        "Геймінг"
-      ],
-      "Most popular": [
-        "Найпопулярніші"
-      ],
-      "Travel": [
-        "Подорож"
-      ],
-      "Utilities": [
-        "Утиліти"
       ]
     },
     "Option": {
@@ -11188,11 +11081,6 @@
       ],
       "Re-encrypting invitation failed. Please try again.": [
         "Не вдалося повторно зашифрувати запрошення. Будь ласка, повторіть спробу."
-      ]
-    },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "Вхід не був успішно завершений."
       ]
     },
     "Search - no results": {
@@ -11855,17 +11743,6 @@
       ],
       "Your pm.me email is active": [
         "Ваша електронна пошта pm.me активна"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "Увійти"
-      ],
-      "Sign in to your organization": [
-        "Увійти до своєї організації"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Вас буде перенаправлено до вашого стороннього провайдера SSO."
       ]
     },
     "State": {
@@ -13303,9 +13180,6 @@
       "Enable message content search": [
         "Увімкнення пошуку вмісту повідомлень"
       ],
-      "Enter your password": [
-        "Введіть ваш пароль"
-      ],
       "Error": [
         "Помилка"
       ],
@@ -13398,6 +13272,9 @@
       ],
       "Label options": [
         "Опції мітки"
+      ],
+      "Limit reached": [
+        "Досягнуто обмеження"
       ],
       "Link confirmation": [
         "Підтвердження посилання"
@@ -13755,9 +13632,6 @@
       ],
       "Trust public key?": [
         "Довіряти відкритому ключу?"
-      ],
-      "Two-factor authentication": [
-        "Двоетапна перевірка"
       ],
       "Unsubscribe": [
         "Відписатися"

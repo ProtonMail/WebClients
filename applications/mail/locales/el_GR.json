@@ -154,9 +154,6 @@
       "Attention required": [
         "Χρειάζεται προσοχή"
       ],
-      "Authenticate": [
-        "Ταυτοποίηση"
-      ],
       "Auto-delete spam and trash": [
         "Αυτόματη διαγραφή ανεπιθύμητων και διαγεγραμμένων μηνυμάτων"
       ],
@@ -195,9 +192,6 @@
       ],
       "Carbon Copy": [
         "Κοινοποίηση"
-      ],
-      "Change email": [
-        "Αλλαγή διεύθυνσης ηλεκτρονικού ταχυδρομείου"
       ],
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
@@ -588,9 +582,6 @@
       "Font": [
         "Γραμματοσειρά"
       ],
-      "Forgot password?": [
-        "Ξεχάσατε τον κωδικό πρόσβασης;"
-      ],
       "Formalize": [
         "Επισημοποίηση"
       ],
@@ -823,6 +814,9 @@
       "Make it friendly": [
         "Κάντε το φιλικό"
       ],
+      "Manage addresses": [
+        "Διαχείριση διευθύνσεων"
+      ],
       "Manage advanced account protections": [
         "Διαχείριση προηγμένων προστασιών λογαριασμού"
       ],
@@ -1023,6 +1017,9 @@
       ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
+      ],
+      "Or use a different Gmail address": [
+        "Ή χρησιμοποιήστε μια διαφορετική διεύθυνση Gmail"
       ],
       "Ordered list": [
         "Ταξινομημένη λίστα"
@@ -1318,6 +1315,9 @@
       "Set up a custom domain": [
         "Ρυθμίστε ένα προσαρμοσμένο τομέα"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "Ρυθμίστε την αυτόματη προώθηση από το Gmail"
+      ],
       "Set up email forwarding": [
         "Ρύθμιση προώθησης μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ],
@@ -1588,17 +1588,14 @@
       "Use a different payment method": [
         "Χρησιμοποιήστε διαφορετικό τρόπο πληρωμής"
       ],
-      "Use authentication code": [
-        "Χρησιμοποιήστε έναν κωδικό ελέγχου ταυτότητας"
-      ],
       "Use for sending": [
         "Χρήση για αποστολή"
       ],
-      "Use recovery code": [
-        "Χρήση κωδικού ανάκτησης"
-      ],
       "Use this": [
         "Χρησιμοποιήστε αυτό"
+      ],
+      "Use this Gmail address": [
+        "Χρησιμοποιήστε αυτήν τη διεύθυνση Gmail"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Χρησιμοποιήστε το ποντίκι σας για να αλλάξετε το μέγεθος της προβολής. Εάν χρησιμοποιείτε το πληκτρολόγιό σας, μπορείτε να χρησιμοποιήσετε τα πλήκτρα αριστερού και δεξιού βέλους για να αλλάξετε το μέγεθος."
@@ -4327,6 +4324,16 @@
         "Μοιραστείτε τα οφέλη του πλάνου σας με το ${ BRAND_NAME } Duo"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Για να προωθήσετε μηνύματα ηλεκτρονικού ταχυδρομείου από έως και ${ MAX_SYNC_PAID_USER } λογαριασμό, αναβαθμίστε σε ${ planName }.",
+        "Για να προωθήσετε μηνύματα ηλεκτρονικού ταχυδρομείου από έως και ${ MAX_SYNC_PAID_USER } λογαριασμούς, αναβαθμίστε σε ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ${ MAX_SYNC_FREE_USER } εξωτερικό λογαριασμό στο ${ MAIL_APP_NAME }.",
+        "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ${ MAX_SYNC_FREE_USER } εξωτερικούς λογαριασμούς στο ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Τα πεδία κειμένου είναι προαιρετικά. Οι πληροφορίες που παρέχετε σε αυτή τη φόρμα θα εμφανίζονται σε μελλοντικά τιμολόγια και δεν θα επηρεάσουν τα τιμολόγια που ήδη έχουν εκδοθεί."
@@ -5567,24 +5574,6 @@
         "Αστραπιαίες ταχύτητες"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Εισαγάγετε ένα κλειδί ασφαλείας συνδεδεμένο με τον ${ BRAND_NAME } λογαριασμό σας ."
-      ],
-      "Security key": [
-        "Κλειδί ασφαλείας"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Κλειδί ασφαλείας"
-      ]
-    },
     "file size format": {
       "byte": [
         "byte",
@@ -5825,9 +5814,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "Εφαρμογή ${ MAIL_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } στο App Store"
       ],
@@ -5842,15 +5828,6 @@
         "${ remainingDaysCount } ημέρα απομένει",
         "${ remainingDaysCount } ημέρες απομένουν"
       ],
-      "account logins": [
-        "συνδέσεις λογαριασμού"
-      ],
-      "Auto-forward Gmail": [
-        "Αυτόματη προώθηση Gmail"
-      ],
-      "auto-forwarding": [
-        "αυτόματη προώθηση"
-      ],
       "Block email communications from scammers permanently.": [
         "Αποκλείστε μόνιμα επικοινωνίες ηλεκτρονικού ταχυδρομείου από απατεώνες."
       ],
@@ -5859,12 +5836,6 @@
       ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Μπράβο που κάνατε το email σας ακόμα πιο ασφαλές, βολικό και σχετικό! Αυξήσαμε τον δωρεάν αποθηκευτικό χώρο σας σε συνολικά 1 GB."
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Αλλάξτε το ${ strongText } στη ${ BRAND_NAME } διεύθυνση σας"
-      ],
-      "Changed accounts": [
-        "Αλλάξατε λογαριασμούς"
       ],
       "Checklist complete": [
         "Η λίστα ελέγχου ολοκληρώθηκε"
@@ -5875,11 +5846,11 @@
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Συμπληρώστε αυτήν τη λίστα ελέγχου εντός ${ daysCount } για να διπλασιάσετε τον αποθηκευτικό σας χώρο δωρεάν."
       ],
-      "Discover how our ${ strongText } protect you": [
-        "Ανακαλύψτε πώς το ${ strongText } μας σας προστατεύει"
-      ],
       "Discover privacy features": [
         "Ανακαλύψτε δυνατότητες απορρήτου"
+      ],
+      "Download apps": [
+        "Λήψη εφαρμογών"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Τόσο ισχυρή κρυπτογράφηση, που μόνο εσείς και οι παραλήπτες για τους οποίους προορίζεστε μπορείτε να δείτε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας."
@@ -5890,17 +5861,11 @@
       "For your eyes only": [
         "Μόνο για τα μάτια σας"
       ],
-      "Get more storage": [
-        "Αποκτήστε περισσότερο χώρο αποθήκευσης"
+      "Get storage bonus": [
+        "Λάβετε μπόνους αποθήκευσης"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Αποκτήστε την εφαρμογή ${ MAIL_APP_NAME } για κινητά"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Λάβετε τη ${ strongText } σε Android ή iOS"
-      ],
-      "Get the App": [
-        "Λάβετε την εφαρμογή"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Συνεχίστε να χρησιμοποιείτε το ${ MAIL_APP_NAME } για να ανακαλύψετε περισσότερους τρόπους με τους οποίους το ${ BRAND_NAME } προστατεύει το απόρρητό σας και απλοποιεί την αποστολή email."
@@ -5908,20 +5873,11 @@
       "Learn more": [
         "Περισσότερες πληροφορίες"
       ],
-      "Nice! You've updated all services in this category.": [
-        "Ωραία! Έχετε ενημερώσει όλες τις υπηρεσίες αυτής της κατηγορίας."
-      ],
-      "Popular online services": [
-        "Δημοφιλείς ηλεκτρονικές υπηρεσίες"
-      ],
-      "privacy features": [
-        "δυνατότητες απορρήτου"
-      ],
       "Protection from trackers": [
         "Προστασία από ιχνηλάτες"
       ],
-      "Set up ${ strongText } from Gmail": [
-        "Ρύθμιση ${ strongText } από το Gmail"
+      "Review import options": [
+        "Ανασκόπηση επιλογών εισαγωγής"
       ],
       "Sign in to the mobile app to complete this step": [
         "Συνδεθείτε στην εφαρμογή για κινητά για να ολοκληρώσετε αυτό το βήμα"
@@ -5934,9 +5890,6 @@
       ],
       "This feature is currently unavailable": [
         "Αυτή η δυνατότητα δεν είναι διαθέσιμη αυτήν τη στιγμή"
-      ],
-      "Update your logins": [
-        "Ενημερώστε τα στοιχεία σύνδεσής σας"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Χρησιμοποιώντας την κινητή συσκευή σας, σαρώστε αυτόν τον κωδικό QR ή επισκεφθείτε το κατάστημα iOS ή Android."
@@ -6375,6 +6328,9 @@
     "Import provider": {
       "Advanced import": [
         "Προηγμένη εισαγωγή"
+      ],
+      "Import from ${ providerName }": [
+        "Εισαγωγή από ${ providerName }"
       ]
     },
     "Import warning": {
@@ -7169,9 +7125,6 @@
       "Duplicate key updated": [
         "Το διπλότυπο κλειδί ενημερώθηκε"
       ],
-      "Each code can only be used once": [
-        "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μία φορά"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Διαχειριστείτε εύκολα και καταργήστε την εγγραφή σας από ενημερωτικά δελτία και λίστες αλληλογραφίας."
       ],
@@ -7230,23 +7183,11 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Διασφαλίστε πλήρως ιδιωτική και κρυπτογραφημένη επικοινωνία. Αποκτήστε επίσης τώρα τη δωρεάν ${ BRAND_NAME } ηλεκτρονική διεύθυνση σας."
       ],
-      "Enter the code from your authenticator app": [
-        "Πληκτρολογήστε τον κωδικό από την εφαρμογή ταυτοποίησης"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Συμπληρώστε τα διαπιστευτήρια του λογαριασμού email από τον οποίο θέλετε να εισάγετε."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης που εστάλη στο ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Εισάγετε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Εισάγετε τον κωδικό πρόσβασής σας (ως έμπιστη επαφή)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτό",
@@ -8603,9 +8544,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Όταν ενεργοποιήσατε τα αξιόπιστα κλειδιά για ${ senderName }, τα δημόσια κλειδιά προστέθηκαν στα στοιχεία της επαφής."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Όταν εγγράφεστε σε ένα ενημερωτικό δελτίο, χρησιμοποιήστε ένα ψευδώνυμο αντί για τη διεύθυνση ηλ. ταχυδρομείου σας. Η ταυτότητά σας παραμένει κρυφή και μπορείτε να απενεργοποιήσετε το ψευδώνυμο ανά πάσα στιγμή."
       ],
@@ -8785,6 +8723,10 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή.",
         "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνες στα ${ renewAmountStr }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Έχετε ενεργοποιήσει την προώθηση σε ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail. Για να προσθέσετε ακόμα μία, απενεργοποιήστε πρώτα μία από αυτές.",
+        "Έχετε ενεργοποιήσει την προώθηση σε ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail. Για να προσθέσετε ακόμα μία, απενεργοποιήστε πρώτα μία από αυτές."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Έχετε συμπληρώσει τον μέγιστο αριθμό διευθύνσεων στις ομάδες επαφών:"
@@ -9276,9 +9218,6 @@
       ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
-      ],
-      "Authenticator app": [
-        "Εφαρμογή επαλήθευσης"
       ],
       "Automated confirmations and alerts": [
         "Αυτοματοποιημένες επιβεβαιώσεις και ειδοποιήσεις"
@@ -9972,12 +9911,6 @@
       ],
       "Your location": [
         "Η τοποθεσία σας"
-      ],
-      "Your password (admin)": [
-        "Ο κωδικός σας (διαχειριστής)"
-      ],
-      "Your password (trusted contact)": [
-        "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
       ],
       "ZIP code": [
         "Τ.Κ."
@@ -11817,23 +11750,29 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
-        "Αλλάξτε τώρα την ηλεκτρονική διεύθυνσή για δημοφιλείς υπηρεσίες, ώστε να αποφύγετε την παρακολούθηση και τη δημιουργία προφίλ. ${ learnMoreLink }"
-      ],
-      "Finance": [
-        "Οικονομικά"
+      "Choose your service": [
+        "Επιλέξτε την υπηρεσία σας"
       ],
       "Maybe later": [
         "Ίσως αργότερα"
       ],
-      "Privacy for all your online accounts": [
-        "Απόρρητο για όλους τους online λογαριασμούς σας"
+      "Popular services": [
+        "Δημοφιλείς υπηρεσίες"
       ],
-      "Shopping": [
-        "Ψώνια"
+      "Skip for now": [
+        "Αγνοήστε για τώρα"
       ],
-      "Social media": [
-        "Μέσα κοινωνικής δικτύωσης"
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Μεταφέρετε τους λογαριασμούς σας στο ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Η αλλαγή email είναι δύσκολη. Το ${ BRAND_NAME } την καθιστά εύκολη. Συνδέστε τον παλιό σας λογαριασμό και διαχειριστείτε τα πάντα σε έναν εστιασμένο χώρο εργασίας χωρίς διαφημίσεις."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Ενημερώστε το email σας στις υπηρεσίες που χρησιμοποιείτε περισσότερο. Αποτρέψτε την παρακολούθηση και προστατέψτε την ιδιωτικότητά σας."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Καλώς ήρθατε στο ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -12032,40 +11971,6 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Θα μπορείτε να χρησιμοποιήσετε ${ planTitle } δωρεάν μέχρι το τέλος της δοκιμαστικής περιόδου."
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Έχετε λογαριασμό σε μία από αυτές τις υπηρεσίες; Απλώς κάντε κλικ για να αλλάξετε την ηλεκτρονική διεύθυνση στην διεύθυνση ${ MAIL_APP_NAME } σας."
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "Τραπεζικά"
-      ],
-      "Crypto": [
-        "Crypto"
-      ],
-      "E-commerce and Retail": [
-        "Ηλεκτρονικό και Λιανικό εμπόριο"
-      ],
-      "Entertainment": [
-        "Ψυχαγωγία"
-      ],
-      "Food and beverage": [
-        "Φαγητό και αναψυκτικά"
-      ],
-      "Gaming": [
-        "Παιχνίδια"
-      ],
-      "Most popular": [
-        "Δημοφιλέστερα"
-      ],
-      "Travel": [
-        "Ταξιδιωτικές"
-      ],
-      "Utilities": [
-        "Βοηθητικά προγράμματα"
       ]
     },
     "Option": {
@@ -12933,11 +12838,6 @@
         "Έλεγχος ασφάλειας λογαριασμού"
       ]
     },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "Η είσοδος δεν ολοκληρώθηκε με επιτυχία."
-      ]
-    },
     "Search - no results": {
       "An action is being processed": [
         "Μια ενέργεια είναι υπό επεξεργασία"
@@ -13654,17 +13554,6 @@
       ],
       "Your pm.me email is active": [
         "Το email pm.me σας είναι ενεργό"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "Σύνδεση"
-      ],
-      "Sign in to your organization": [
-        "Συνδεθήτε στον οργανισμό σας"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Θα ανακατευθυνθείτε στον τρίτο πάροχο SSO."
       ]
     },
     "State": {
@@ -14911,8 +14800,14 @@
       "Confirm recipient address?": [
         "Επιβεβαίωση διεύθυνσης παραλήπτη;"
       ],
+      "Connect a Gmail address": [
+        "Συνδέστε μια διεύθυνση Gmail"
+      ],
       "Connect apps and devices": [
         "Σύνδεση εφαρμογών και συσκευών"
+      ],
+      "Connect more addresses": [
+        "Σύνδεση περισσότερων διευθύνσεων"
       ],
       "Connect to video conferencing": [
         "Σύνδεση σε τηλεδιάσκεψη"
@@ -15093,9 +14988,6 @@
       "Enhance security with 2FA": [
         "Ενισχύστε την ασφάλεια με την πιστοποίηση δύο παραγόντων (2FA)"
       ],
-      "Enter your password": [
-        "Εισάγετε τον κωδικό πρόσβασης σας"
-      ],
       "Error": [
         "Σφάλμα"
       ],
@@ -15223,6 +15115,9 @@
       "Label options": [
         "Επιλογές ετικέτας"
       ],
+      "Limit reached": [
+        "Υπέρβαση ορίου"
+      ],
       "Link confirmation": [
         "Επιβεβαίωση συνδέσμου"
       ],
@@ -15324,6 +15219,9 @@
       ],
       "Moving a snoozed message": [
         "Μετακίνηση μηνύματος σε αναβολή"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Πολλαπλοί λογαριασμοί, 1 ιδιωτικά εισερχόμενο"
       ],
       "Need more aliases?": [
         "Χρειάζεστε περισσότερα ψευδώνυμα;"
@@ -15474,6 +15372,9 @@
       ],
       "Referral": [
         "Παραπομπή"
+      ],
+      "Remove forwarding address": [
+        "Κατάργηση διεύθυνσης προώθησης"
       ],
       "Remove from list?": [
         "Κατάργηση από τη λίστα;"
@@ -15658,9 +15559,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ενεργοποίηση ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Two-factor authentication": [
-        "Έλεγχος ταυτότητας δύο παραγόντων"
       ],
       "Unsubscribe": [
         "Απεγγραφή"

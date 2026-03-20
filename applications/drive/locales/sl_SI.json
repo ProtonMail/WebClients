@@ -3282,6 +3282,9 @@
       "Error decrypting a computer": [
         "Napaka pri dešifriranju računalnika"
       ],
+      "Error reading file": [
+        "Napaka pri branju datoteke"
+      ],
       "Expected structure attached": [
         "Pričakovana struktura je priložena"
       ],
@@ -3722,6 +3725,9 @@
       ],
       "We were not able to load some of your saved shared links": [
         "Nekaj vaših povezav v souporabi ni bilo mogoče naložiti"
+      ],
+      "We were not able to load some of your shared items": [
+        "Nekaterih vaših predmetov v skupni rabi nismo mogli naložiti"
       ],
       "We were not able to load some search results": [
         "Nekaterih rezultatov iskanja ni bilo mogoče naložiti"
@@ -4755,6 +4761,9 @@
         "${ contactsLength } stiki",
         "${ contactsLength } stikov"
       ],
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Datoteke ${ DOCS_APP_NAME } in ${ SHEETS_APP_NAME } ni mogoče prenesti neposredno in ne bodo vključene v ta prenos. Druge datoteke lahko prenesete s klikom na 'Nadaljuj prenos'."
+      ],
       "${ doneCount } finished": [
         "${ doneCount } dokončana",
         "${ doneCount } dokončani",
@@ -5514,6 +5523,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Uvažanje podatkov iz ${ fromEmail } v ${ toEmail }."
       ],
+      "In progress": [
+        "V obdelavi"
+      ],
       "In restrictive countries": [
         "V državah z omejitvami"
       ],
@@ -6072,6 +6084,9 @@
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Nekatere vlade blokirajo ali omejujejo dostop do določenih spletnih strani. VPN vam pomaga zaobiti cenzuro, pri tem pa ohranja vašo dejavnost in identiteto zasebno."
       ],
+      "Some items failed": [
+        "Nekateri predmeti niso uspeli"
+      ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Nekatere vaše datoteke niso več dostopne. Obnovite dostop do svojih datotek. ${ StartRecoveryButton }"
       ],
@@ -6216,11 +6231,17 @@
       "This will cancel any remaining downloads.": [
         "To bo preklicalo vse preostale prenose."
       ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "S tem boste preklicali vse preostale nalaganja in prenose. Preklicani prenosi ne bodo shranjeni v ${ DRIVE_APP_NAME }."
+      ],
       "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
         "To bo izbrisalo samo album. Vaše fotografije bodo ostale v vašem časovnem traku. Tega dejanja ni mogoče razveljaviti."
       ],
       "This will permanently delete the file you uploaded.": [
         "S tem boste trajno izbrisali datoteko, ki ste jo naložili."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "S tem boste trajno izbrisali mapo, ki ste jo naložili."
       ],
       "This will permanently delete the selected items you uploaded.": [
         "To dejanje bo trajno izbrisalo izbrane predmete, ki ste jih naložili."
@@ -6360,6 +6381,9 @@
       "upgrade your storage": [
         "​\nnadgradite svoj prostor za shranjevanje"
       ],
+      "Upload Failed": [
+        "Nalaganje ni uspelo"
+      ],
       "Uploaded": [
         "Naloženo"
       ],
@@ -6416,6 +6440,9 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Bravo, pravkar ste povečali prostor za shranjevanje na 5 GB!"
+      ],
+      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
+        "Trenutno imamo tehnične težave. Vsa dejanja, povezana z albumi, so začasno onemogočena."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Nismo mogli preveriti, ali je ${ nameAuthor } naložil ${ node.name }. Naslednje je bilo morda spremenjeno: vrstni red podatkov v datoteki. Odprite samo, če ji zaupate."
@@ -8999,6 +9026,9 @@
       "\"${ name }\" shared": [
         "\"${ name }\" dano v skupno rabo"
       ],
+      "\"${ name }\" successfully copied": [
+        "\"${ name }\" je bil uspešno kopiran"
+      ],
       "\"${ name }\" successfully moved": [
         "»${ name }« je uspešno premaknjen"
       ],
@@ -9525,6 +9555,9 @@
       "Continue": [
         "Nadaljuj"
       ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Uživajte brezplačne funkcije za poslovne uporabnike do ${ trialEndsOnFormatted }."
+      ],
       "help center": [
         "središče za pomoč"
       ],
@@ -9577,6 +9610,9 @@
       ],
       "Select JSON file": [
         "Izberite JSON datoteko"
+      ],
+      "Verify thumbnails": [
+        "Preveri sličice"
       ]
     },
     "Option group label": {
@@ -11135,6 +11171,9 @@
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Ko prekličete ${ planName }, boste degradirani na ${ BRAND_NAME } Free, ki ponuja le do 1 GB prostora za shranjevanje pošte in do 5 GB prostora za shranjevanje na Drive. Prav tako boste izgubili vse predhodno dodeljene bonuse za shranjevanje."
       ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Vaša naročnina ${ planName } se izteče ${ expiryDate }, po poteku boste preusmerjeni na brezplačni paket ${ BRAND_NAME }."
+      ],
       "Yearly free storage bonuses": [
         "Letni bonusi za prostor za shranjevanje"
       ],
@@ -11229,6 +11268,9 @@
       ],
       "Shared by ${ sharedBy }": [
         "V skupni rabi ${ sharedBy }"
+      ],
+      "Your favorited photos will appear here": [
+        "Vaše priljubljene fotografije bodo prikazane tukaj"
       ],
       "Your Live Photos will appear here": [
         "Vaše fotografije v živo se bodo prikazale tukaj"
@@ -12491,6 +12533,9 @@
       ],
       "Your changes are not synced yet": [
         "Vaše spremembe se še niso sinhronizirale"
+      ],
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "Vaš prenos vključuje ${ DOCS_APP_NAME } ali ${ SHEETS_APP_NAME } datoteke"
       ],
       "Your exposed information": [
         "Vaša razkrita informacija"

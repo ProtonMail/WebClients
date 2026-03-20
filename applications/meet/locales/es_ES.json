@@ -445,6 +445,9 @@
       "Show passphrase": [
         "Mostrar contraseña"
       ],
+      "Stop recording and download.": [
+        "Detener la grabación y descargar."
+      ],
       "Toggle camera": [
         "Activar/Desactivar cámara"
       ],
@@ -2051,6 +2054,9 @@
       "Recording saved": [
         "Grabación guardada"
       ],
+      "Recording will begin and attendees will be notified.": [
+        "La grabación comenzará y se notificará a los participantes."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación permanecerá en este dispositivo a menos que la elimines."
       ],
@@ -2095,6 +2101,9 @@
       ],
       "Sort by": [
         "Ordenar por"
+      ],
+      "Start recording": [
+        "Empezar a grabar"
       ],
       "Stop sharing your screen": [
         "Dejar de compartir tu pantalla"
@@ -2153,6 +2162,12 @@
       "To use your personal meeting room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
         "Para usar tu sala de reuniones personal, **crea una cuenta gratuita de ${ BRAND_NAME }**. Volverás a ${ MEET_APP_NAME } automáticamente."
       ],
+      "Today — ${ absoluteDate }": [
+        "Hoy — ${ absoluteDate }"
+      ],
+      "Tomorrow — ${ absoluteDate }": [
+        "Mañana — ${ absoluteDate }"
+      ],
       "Turn off camera": [
         "Apagar cámara"
       ],
@@ -2194,6 +2209,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "¿Quieres recibir un nuevo código de verificación?"
+      ],
+      "Yesterday — ${ absoluteDate }": [
+        "Ayer — ${ absoluteDate }"
       ],
       "You are almost there": [
         "Ya casi has terminado"
@@ -2813,6 +2831,9 @@
       "Publications": [
         "Publicaciones"
       ],
+      "Record this meeting": [
+        "Grabar esta reunión"
+      ],
       "Remote Participants": [
         "Participantes remotos"
       ],
@@ -2880,8 +2901,14 @@
       "Background blur is not supported on your browser": [
         "El desenfoque de fondo no es compatible en tu navegador"
       ],
+      "Generate a new meeting link. The current link will stop working.": [
+        "Generar un nuevo enlace de reunión. El enlace actual dejará de funcionar."
+      ],
       "Recurring meeting": [
         "Reunión periódica"
+      ],
+      "You can generate a new meeting link once per day.": [
+        "Puedes generar un nuevo enlace de reunión una vez al día."
       ]
     },
     "Validation": {

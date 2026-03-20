@@ -154,9 +154,6 @@
       "Attention required": [
         "Figyelem szükséges"
       ],
-      "Authenticate": [
-        "Hitelesítés"
-      ],
       "Auto-delete spam and trash": [
         "Levélszemét és lomtár automatikus törlése"
       ],
@@ -192,9 +189,6 @@
       ],
       "Carbon Copy": [
         "Másolat"
-      ],
-      "Change email": [
-        "E-mail cím módosítása"
       ],
       "Change password": [
         "Jelszó módosítása"
@@ -579,9 +573,6 @@
       "Font": [
         "Betűtípus"
       ],
-      "Forgot password?": [
-        "Elfelejtett jelszó?"
-      ],
       "Formalize": [
         "Hivatalos"
       ],
@@ -807,6 +798,9 @@
       ],
       "Make it friendly": [
         "Legyen barátságos"
+      ],
+      "Manage addresses": [
+        "Címek kezelése"
       ],
       "Manage advanced account protections": [
         "A speciális fiókvédelmek kezelése"
@@ -1300,6 +1294,9 @@
       "Set up a custom domain": [
         "Saját domain név beállítása"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "Állítson be automatikus továbbítást Gmailről"
+      ],
       "Set up email forwarding": [
         "E-mail továbbítás beállítása"
       ],
@@ -1564,14 +1561,8 @@
       "Use a different payment method": [
         "Más fizetési mód választása"
       ],
-      "Use authentication code": [
-        "Hitelesítő kód használata"
-      ],
       "Use for sending": [
         "Küldéshez használható"
-      ],
-      "Use recovery code": [
-        "Helyreállító kód használata"
       ],
       "Use this": [
         "Ennek használata"
@@ -4111,6 +4102,12 @@
         "Ossza meg csomagja előnyeit a ${ BRAND_NAME } Duoval"
       ]
     },
+    "Easy switch": {
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "E-maileket továbbít ${ MAX_SYNC_FREE_USER } külső fiókból a ${ MAIL_APP_NAME } szolgáltatásba.",
+        "E-maileket továbbít ${ MAX_SYNC_FREE_USER } külső fiókból a ${ MAIL_APP_NAME } szolgáltatásba."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "A szövegmezők nem kötelezőek. Az ebben az űrlapon megadott információk csak a jövőben kiállított számlákon jelennek meg, és nem befolyásolják a meglévő számlákat."
@@ -5278,16 +5275,6 @@
         "Villámgyors sebesség"
       ]
     },
-    "fido2: Info": {
-      "Security key": [
-        "Hitelesítési kulcs"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Hitelesítési kulcs"
-      ]
-    },
     "file size format": {
       "byte": [
         "bájt",
@@ -5528,9 +5515,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME } alkalmazást"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } az App Store-ban"
       ],
@@ -5545,15 +5529,6 @@
         "${ remainingDaysCount } nap van hátra",
         "${ remainingDaysCount } nap van hátra"
       ],
-      "account logins": [
-        "fiók bejelentkezéseket"
-      ],
-      "Auto-forward Gmail": [
-        "Gmail automatikus továbbítása"
-      ],
-      "auto-forwarding": [
-        "automatikus továbbítás"
-      ],
       "Block email communications from scammers permanently.": [
         "A csalók e-mail kommunikációjának végleges blokkolása."
       ],
@@ -5563,12 +5538,6 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Gratulálunk, hogy még biztonságosabbá, kényelmesebbé és relevánsabbá tette a fiókját! Ingyenes tárhelyét 1 GB-ra növeltük."
       ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Változtassa meg a ${ strongText } a ${ BRAND_NAME } címére"
-      ],
-      "Changed accounts": [
-        "Fiók átváltva"
-      ],
       "Checklist complete": [
         "Az ellenőrző lista kész"
       ],
@@ -5577,9 +5546,6 @@
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Teljesítse ezt a feladatlistát ${ daysCount } napon belül, és ingyen megduplázhatja a tárhelyét."
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Fedezze fel, hogyan védik önt az ${ strongText }"
       ],
       "Discover privacy features": [
         "Adatvédelmi funkciók felfedezése"
@@ -5593,17 +5559,8 @@
       "For your eyes only": [
         "Csak Önnek látható"
       ],
-      "Get more storage": [
-        "Kapjon több tárhelyet"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Töltse le a ${ MAIL_APP_NAME } mobil alkalmazást"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Szerezze be a ${ strongText } Androidon vagy iOS-en"
-      ],
-      "Get the App": [
-        "Töltse le az alkalmazást"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Használja továbbra is a ${ MAIL_APP_NAME } alkalmazást, hogy felfedezze, hogyan védi a ${ BRAND_NAME } a magánszféráját és hogyan egyszerűsíti az e-mailezést."
@@ -5611,20 +5568,8 @@
       "Learn more": [
         "További információk"
       ],
-      "Nice! You've updated all services in this category.": [
-        "Kiváló! Minden szolgáltatást frissített ebben a kategóriában."
-      ],
-      "Popular online services": [
-        "Népszerű online szolgáltatások"
-      ],
-      "privacy features": [
-        "adatvédelmi funkciók"
-      ],
       "Protection from trackers": [
         "Védelem a nyomkövetőkkel szemben"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Gmailből ${ strongText } beállítása"
       ],
       "Sign in to the mobile app to complete this step": [
         "Jelentkezzen be a mobilalkalmazásba, hogy befejezze ezt a lépést"
@@ -5637,9 +5582,6 @@
       ],
       "This feature is currently unavailable": [
         "Ez a funkció jelenleg nem elérhető."
-      ],
-      "Update your logins": [
-        "Bejelentkezéseinek frissítése"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Olvassa be ezt a QR-kódot a mobil eszközével, vagy pedig látogassa meg az iOS vagy az Android áruházat."
@@ -6903,17 +6845,11 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Biztosítsa a teljesen privát és titkosított kommunikációt. Igényeljen egy ingyenes ${ BRAND_NAME } e-mail címet."
       ],
-      "Enter the code from your authenticator app": [
-        "Írja be a kódot a hitelesítő alkalmazásból"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Adja meg az e-mail fiók belépési adatait, amelyről importálni szeretne."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Becsült hátralévő idő: ${ estimatedMinutes } perc",
@@ -8407,6 +8343,10 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "A levél tartalmazza a \"${ attachmentsFoundKeyword }\" kifejezést, de nem csatolt mellékletet. Biztos, hogy elküldi így a levelet?"
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Engedélyezte a továbbítást a következő ${ MAX_SYNC_PAID_USER } Gmail címen. Ha újat szeretne hozzáadni, először tiltsa le az egyiket.",
+        "Engedélyezte a továbbítást a következő ${ MAX_SYNC_PAID_USER } Gmail címeken. Ha újat szeretne hozzáadni, először tiltsa le az egyiket."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Elérte a névjegy csoport(ok)ban lehetséges címek maximális számát:"
       ],
@@ -8879,9 +8819,6 @@
       ],
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
-      ],
-      "Authenticator app": [
-        "Hitelesítő alkalmazás"
       ],
       "Automated confirmations and alerts": [
         "Automatikus visszaigazolások és értesítések"
@@ -9548,9 +9485,6 @@
       ],
       "Your location": [
         "Az ön tartózkodási helye"
-      ],
-      "Your password (admin)": [
-        "Jelszó (adminisztrátor)"
       ],
       "ZIP code": [
         "Irányítószám"
@@ -11294,23 +11228,8 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
-        "Módosítsa most e-mail címét a népszerű szolgáltatásoknál, hogy elkerülje a nyomon követést és a profilalkotást. ${ learnMoreLink }"
-      ],
-      "Finance": [
-        "Pénzügyek"
-      ],
       "Maybe later": [
         "Talán később"
-      ],
-      "Privacy for all your online accounts": [
-        "Adatvédelem minden online fiókjához"
-      ],
-      "Shopping": [
-        "Vásárlás"
-      ],
-      "Social media": [
-        "Közösségi média"
       ]
     },
     "Onboarding modal": {
@@ -11509,40 +11428,6 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Használhatja ingyenesen a ${ planTitle } csomagot, amíg a próbaverzió le nem jár."
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Már van fiókja ezekkel a szolgáltatásokkal? Csak kattintson, hogy megváltoztassa email címét ${ MAIL_APP_NAME } címére."
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "Bankolás"
-      ],
-      "Crypto": [
-        "Kriptovaluta"
-      ],
-      "E-commerce and Retail": [
-        "Elektronikus kereskedelem és kiskereskedelem"
-      ],
-      "Entertainment": [
-        "Szórakoztatás"
-      ],
-      "Food and beverage": [
-        "Étel és ital"
-      ],
-      "Gaming": [
-        "Játék"
-      ],
-      "Most popular": [
-        "Legnépszerűbb"
-      ],
-      "Travel": [
-        "Utazás"
-      ],
-      "Utilities": [
-        "Segédeszközök"
       ]
     },
     "Option": {
@@ -12273,11 +12158,6 @@
         "Fiókbiztonság átnézése"
       ]
     },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "A bejelentkezés nem sikerült."
-      ]
-    },
     "Search - no results": {
       "No messages found": [
         "Nincsenek üzenetek"
@@ -12968,17 +12848,6 @@
       ],
       "Your pm.me email is active": [
         "Az Ön pm.me e-mail címe aktív"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "Bejelentkezés"
-      ],
-      "Sign in to your organization": [
-        "Jelentkezzen be a szervezetébe"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Önt átirányítjuk a harmadik fél SSO-szolgáltatójához."
       ]
     },
     "State": {
@@ -14386,9 +14255,6 @@
       "Enhance security with 2FA": [
         "Növelje a biztonságot a kétlépcsős hitelesítés segítségével"
       ],
-      "Enter your password": [
-        "Adja meg a jelszavát"
-      ],
       "Error": [
         "Hiba"
       ],
@@ -14506,6 +14372,9 @@
       ],
       "Label options": [
         "Címke beállításai"
+      ],
+      "Limit reached": [
+        "Korlát elérve"
       ],
       "Link confirmation": [
         "Hivatkozás jóváhagyása"
@@ -14927,9 +14796,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } bekapcsolása"
-      ],
-      "Two-factor authentication": [
-        "Kétlépcsős hitelesítés"
       ],
       "Unsubscribe": [
         "Leiratkozás"

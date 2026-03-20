@@ -154,9 +154,6 @@
       "Attention required": [
         "Atenção necessária"
       ],
-      "Authenticate": [
-        "Autenticar"
-      ],
       "Auto-delete spam and trash": [
         "Auto-exclusão de spam e Lixeira"
       ],
@@ -195,9 +192,6 @@
       ],
       "Carbon Copy": [
         "Com cópia"
-      ],
-      "Change email": [
-        "Alterar e-mail"
       ],
       "Change password": [
         "Alterar senha"
@@ -588,9 +582,6 @@
       "Font": [
         "Fonte"
       ],
-      "Forgot password?": [
-        "Esqueceu sua senha?"
-      ],
       "Formalize": [
         "Formalizar"
       ],
@@ -823,6 +814,9 @@
       "Make it friendly": [
         "Mais amigável"
       ],
+      "Manage addresses": [
+        "Gerenciar endereços"
+      ],
       "Manage advanced account protections": [
         "Gerenciar proteções avançada de conta"
       ],
@@ -1023,6 +1017,9 @@
       ],
       "Open navigation": [
         "Abrir navegação"
+      ],
+      "Or use a different Gmail address": [
+        "ou use um endereço do Gmail diferente"
       ],
       "Ordered list": [
         "Lista ordenada"
@@ -1318,6 +1315,9 @@
       "Set up a custom domain": [
         "Configurar um domínio personalizado"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "Configure o encaminhamento automático do Gmail"
+      ],
       "Set up email forwarding": [
         "Configurar encaminhamento de e-mail"
       ],
@@ -1588,17 +1588,14 @@
       "Use a different payment method": [
         "Usar um método de pagamento diferente"
       ],
-      "Use authentication code": [
-        "Usar um código de autenticação"
-      ],
       "Use for sending": [
         "Usar para envio"
       ],
-      "Use recovery code": [
-        "Usar um código de recuperação"
-      ],
       "Use this": [
         "Usar isso"
+      ],
+      "Use this Gmail address": [
+        "Usar este endereço de Gmail"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Use o mouse para redimensionar a visualização. Se estiver usando o teclado, você pode usar as teclas de seta para a esquerda e para a direita para redimensionar."
@@ -4327,6 +4324,16 @@
         "Compartilhe os benefícios do seu plano com ${ BRAND_NAME } Duo"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } conta, faça o upgrade para ${ planName }.",
+        "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } contas, faça o upgrade para ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Você está encaminhando e-mails de ${ MAX_SYNC_FREE_USER } conta externa para ${ MAIL_APP_NAME }.\n",
+        "Você está encaminhando e-mails de ${ MAX_SYNC_FREE_USER } contas externas para ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Os campos de texto são opcionais. As informações que você fornecer neste formulário aparecerão somente em faturas emitidas no futuro e não afetarão as faturas existentes."
@@ -5561,24 +5568,6 @@
         "Velocidade ultrarrápida"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Ocorreu um erro ao autenticar com sua chave de segurança. Tente novamente."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Insira uma chave de segurança vinculada à sua conta ${ BRAND_NAME }."
-      ],
-      "Security key": [
-        "Chave de segurança"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Chave de segurança"
-      ]
-    },
     "file size format": {
       "byte": [
         "byte",
@@ -5819,9 +5808,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "Aplicativo do ${ MAIL_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } na App Store"
       ],
@@ -5836,15 +5822,6 @@
         "${ remainingDaysCount } dia restante",
         "${ remainingDaysCount } dias restantes"
       ],
-      "account logins": [
-        "acessos da conta"
-      ],
-      "Auto-forward Gmail": [
-        "Encaminhamento automático do Gmail"
-      ],
-      "auto-forwarding": [
-        "encaminhamento automático"
-      ],
       "Block email communications from scammers permanently.": [
         "Bloqueie permanentemente mensagens de golpistas."
       ],
@@ -5853,12 +5830,6 @@
       ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Parabéns por tornar seu e-mail ainda mais seguro, prático e relevante! Aumentamos seu armazenamento gratuito para um total de 1 GB."
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Mude os ${ strongText } para o seu endereço ${ BRAND_NAME }"
-      ],
-      "Changed accounts": [
-        "Contas alteradas"
       ],
       "Checklist complete": [
         "Lista de verificação completa"
@@ -5869,11 +5840,11 @@
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Complete esta lista de tarefas em ${ daysCount } para dobrar seu armazenamento gratuitamente."
       ],
-      "Discover how our ${ strongText } protect you": [
-        "Descubra como nossos ${ strongText } te protegem"
-      ],
       "Discover privacy features": [
         "Descobrir os recursos de privacidade"
+      ],
+      "Download apps": [
+        "Baixar aplicativos"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Criptografia tão robusta, que somente você e seus destinatários reais podem visualizar os e-mails."
@@ -5884,17 +5855,11 @@
       "For your eyes only": [
         "Somente para seus olhos"
       ],
-      "Get more storage": [
-        "Obter mais armazenamento"
+      "Get storage bonus": [
+        "Obter bônus de armazenamento"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obter o aplicativo móvel do ${ MAIL_APP_NAME }"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Baixe o ${ strongText } para Android na Google Play ou iOS na App Store"
-      ],
-      "Get the App": [
-        "Baixe o aplicativo"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Continue usando o ${ MAIL_APP_NAME } para descobrir mais maneiras que a ${ BRAND_NAME } protege sua privacidade e simplifica o envio de e-mails."
@@ -5902,20 +5867,8 @@
       "Learn more": [
         "Saiba mais"
       ],
-      "Nice! You've updated all services in this category.": [
-        "Ótimo! Você atualizou todos os serviços nesta categoria."
-      ],
-      "Popular online services": [
-        "Serviços online populares"
-      ],
-      "privacy features": [
-        "recursos de privacidade"
-      ],
       "Protection from trackers": [
         "Proteção contra rastreadores"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Configure ${ strongText } a partir do Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "Inicie sessão no aplicativo para completar esta etapa"
@@ -5928,9 +5881,6 @@
       ],
       "This feature is currently unavailable": [
         "Esse recurso está indisponível no momento"
-      ],
-      "Update your logins": [
-        "Atualize seus inícios de sessão"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Utilizando o seu dispositivo móvel, escaneie este código QR ou visite a loja de aplicativos iOS ou Android."
@@ -6369,6 +6319,9 @@
     "Import provider": {
       "Advanced import": [
         "Importação avançada"
+      ],
+      "Import from ${ providerName }": [
+        "Importar de ${ providerName }"
       ]
     },
     "Import warning": {
@@ -7163,9 +7116,6 @@
       "Duplicate key updated": [
         "Chave duplicada atualizada"
       ],
-      "Each code can only be used once": [
-        "Cada código só pode ser usado uma única vez."
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gerencie e cancele a assinatura de newsletters e listas de e-mails facilmente."
       ],
@@ -7224,23 +7174,11 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Garanta uma comunicação totalmente privada e criptografada. Crie seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
       ],
-      "Enter the code from your authenticator app": [
-        "Insira o código do seu aplicativo de autenticação."
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Digite as credenciais da conta de e-mail da qual você deseja importar."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Digite o código de verificação que foi enviado para ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Digite o código de verificação. Insira ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Digite sua própria senha (como administrador da organização)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Digite sua própria senha (como contato de confiança)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Tempo restante estimado: ${ estimatedMinutes } minuto",
@@ -7546,6 +7484,9 @@
       ],
       "Low Priority": [
         "Baixa prioridade"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Tornar ${ MAIL_APP_NAME } como seu aplicativo de e-mail padrão."
       ],
       "Manage your folders": [
         "Gerenciar suas pastas"
@@ -8594,9 +8535,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quando você ativou as chaves de confiança para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contato."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Ao se inscrever para receber um boletim informativo, use um alias em vez do seu endereço de e-mail. Sua identidade permanece oculta, e você pode desativar o alias a qualquer momento."
       ],
@@ -8773,6 +8711,10 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Você então será cobrado a cada ${ renewCycle } mês em ${ renewAmountStr }. Você pode cancelar a qualquer momento.",
         "Você então será cobrado a cada ${ renewCycle } meses em ${ renewAmountStr }.Você pode cancelar a qualquer momento."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Você ativou o encaminhamento em ${ MAX_SYNC_PAID_USER } endereço do Gmail. Para adicionar outro, primeiro desative um deles.",
+        "Você ativou o encaminhamento em ${ MAX_SYNC_PAID_USER } endereços do Gmail. Para adicionar outro, primeiro desative um deles."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Você alcançou o número máximo de endereços no grupo ou grupo de contatos"
@@ -9261,9 +9203,6 @@
       ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
-      ],
-      "Authenticator app": [
-        "Aplicativo de autenticação"
       ],
       "Automated confirmations and alerts": [
         "Confirmações e alertas automatizados"
@@ -9957,12 +9896,6 @@
       ],
       "Your location": [
         "Sua localização"
-      ],
-      "Your password (admin)": [
-        "Sua senha (admin)"
-      ],
-      "Your password (trusted contact)": [
-        "Sua senha (contato de confiança)"
       ],
       "ZIP code": [
         "CEP"
@@ -11802,23 +11735,20 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
-        "Para evitar rastreamentos, mude seu e-mail para serviços populares agora mesmo. ${ learnMoreLink }"
-      ],
-      "Finance": [
-        "Finanças"
+      "Choose your service": [
+        "Escolha seu serviço"
       ],
       "Maybe later": [
         "Talvez mais tarde"
       ],
-      "Privacy for all your online accounts": [
-        "Privacidade para todas as suas contas on-line"
+      "Popular services": [
+        "Serviços populares"
       ],
-      "Shopping": [
-        "Compras"
+      "Skip for now": [
+        "Pular por enquanto"
       ],
-      "Social media": [
-        "Rede social"
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Boas-vindas ao ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -12017,40 +11947,6 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Você poderá usar ${ planTitle } até o fim da avaliação, gratuitamente."
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Você tem uma conta com algum desses serviços? Basta clicar para alterar o endereço de e-mail para o seu endereço do ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "Serviços bancários"
-      ],
-      "Crypto": [
-        "Criptomoeda"
-      ],
-      "E-commerce and Retail": [
-        "Comércio eletrônico e na loja"
-      ],
-      "Entertainment": [
-        "Entretenimento"
-      ],
-      "Food and beverage": [
-        "Alimentos e bebidas"
-      ],
-      "Gaming": [
-        "Jogos"
-      ],
-      "Most popular": [
-        "Mais populares"
-      ],
-      "Travel": [
-        "Viagem"
-      ],
-      "Utilities": [
-        "Utilitários"
       ]
     },
     "Option": {
@@ -13017,11 +12913,6 @@
         "Revise a segurança da conta"
       ]
     },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "O início de sessão não foi concluído."
-      ]
-    },
     "Search - no results": {
       "An action is being processed": [
         "Uma ação está sendo processada"
@@ -13738,17 +13629,6 @@
       ],
       "Your pm.me email is active": [
         "Seu e-mail pm.me está ativo"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "Iniciar sessão"
-      ],
-      "Sign in to your organization": [
-        "Iniciar sessão na sua organização."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Você será redirecionado para o seu provedor de SSO de terceiros."
       ]
     },
     "State": {
@@ -14995,8 +14875,14 @@
       "Confirm recipient address?": [
         "Confirmar o endereço do destinatário?"
       ],
+      "Connect a Gmail address": [
+        "Conectar um endereço do Gmail"
+      ],
       "Connect apps and devices": [
         "Conectar aplicativos e dispositivos"
+      ],
+      "Connect more addresses": [
+        "Conectar mais endereços"
       ],
       "Connect to video conferencing": [
         "Conectar-se à videoconferência"
@@ -15177,9 +15063,6 @@
       "Enhance security with 2FA": [
         "Aumente a segurança com 2FA"
       ],
-      "Enter your password": [
-        "Digite sua senha"
-      ],
       "Error": [
         "Erro"
       ],
@@ -15307,6 +15190,9 @@
       "Label options": [
         "Opções de marcador"
       ],
+      "Limit reached": [
+        "Limite atingido"
+      ],
       "Link confirmation": [
         "Confirmar redirecionamento"
       ],
@@ -15408,6 +15294,9 @@
       ],
       "Moving a snoozed message": [
         "Movendo uma mensagem adiada"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Várias contas, 1 caixa de entrada privada."
       ],
       "Need more aliases?": [
         "Precisa de mais aliases?"
@@ -15558,6 +15447,9 @@
       ],
       "Referral": [
         "Indicação"
+      ],
+      "Remove forwarding address": [
+        "Remover endereço de encaminhamento"
       ],
       "Remove from list?": [
         "Remover da lista?"
@@ -15739,9 +15631,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ativar ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Two-factor authentication": [
-        "Autenticação de dois fatores"
       ],
       "Unsubscribe": [
         "Cancelar inscrição"
