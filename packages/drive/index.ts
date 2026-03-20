@@ -73,6 +73,8 @@ export { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDriveP
 export type { ProtonDrivePublicLinkClient } from '@protontech/drive-sdk/dist/protonDrivePublicLinkClient';
 export type SDKMetricRecord = MetricRecord<MetricEvent>;
 
+export { LatestEventIdProvider } from './internal/latestEventIdProvider';
+
 /* Other export */
 export {
     AbortError,

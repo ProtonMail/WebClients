@@ -20,7 +20,7 @@ export function proxyDriveClientWithEventTracking<T extends ProtonDriveClient | 
                             try {
                                 await callback(event);
                             } finally {
-                                latestEventIdProvider.saveLatestEventId(event.treeEventScopeId, event.eventId);
+                                await latestEventIdProvider.saveLatestEventId(event.treeEventScopeId, event.eventId);
                             }
                         };
 
@@ -28,9 +28,9 @@ export function proxyDriveClientWithEventTracking<T extends ProtonDriveClient | 
 
                         return subscription.then(({ dispose }) => {
                             return {
-                                dispose: () => {
+                                dispose: async () => {
                                     dispose();
-                                    latestEventIdProvider.removeEventScope(treeEventScopeId);
+                                    await latestEventIdProvider.removeEventScope(treeEventScopeId);
                                 },
                             };
                         });
@@ -42,7 +42,7 @@ export function proxyDriveClientWithEventTracking<T extends ProtonDriveClient | 
                             try {
                                 await callback(event);
                             } finally {
-                                latestEventIdProvider.saveLatestEventId(event.treeEventScopeId, event.eventId);
+                                await latestEventIdProvider.saveLatestEventId(event.treeEventScopeId, event.eventId);
                                 treeEventScopeId = event.treeEventScopeId;
                             }
                         };
@@ -51,9 +51,9 @@ export function proxyDriveClientWithEventTracking<T extends ProtonDriveClient | 
 
                         return subscription.then(({ dispose }) => {
                             return {
-                                dispose: () => {
+                                dispose: async () => {
                                     dispose();
-                                    latestEventIdProvider.removeEventScope(treeEventScopeId);
+                                    await latestEventIdProvider.removeEventScope(treeEventScopeId);
                                 },
                             };
                         });
