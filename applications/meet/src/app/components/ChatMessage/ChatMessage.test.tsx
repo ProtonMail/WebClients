@@ -1,22 +1,56 @@
-import { render, screen } from '@testing-library/react';
+import { Provider } from 'react-redux';
+
+import { configureStore } from '@reduxjs/toolkit';
+import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+
+import { chatAndReactionsReducer } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import { ProtonStoreContext } from '@proton/react-redux-store';
 
 import { ChatMessage } from './ChatMessage';
 
+const createMockStore = () => {
+    return configureStore({
+        reducer: {
+            ...chatAndReactionsReducer,
+        },
+    });
+};
+
+const Wrapper = ({ children }: { children: React.ReactNode }) => {
+    const store = createMockStore();
+
+    return (
+        <Provider context={ProtonStoreContext} store={store}>
+            {children}
+        </Provider>
+    );
+};
+
 describe('ChatMessage', () => {
+    afterEach(cleanup);
+
     const placeholderText = 'Type an encrypted message...';
 
     it('renders with correct placeholder text', () => {
         const mockOnMessageSend = vi.fn();
-        render(<ChatMessage onMessageSend={mockOnMessageSend} />);
+        render(
+            <Wrapper>
+                <ChatMessage onMessageSend={mockOnMessageSend} />
+            </Wrapper>
+        );
 
         expect(screen.getByPlaceholderText(placeholderText)).toBeInTheDocument();
     });
 
     it('starts with empty message', () => {
         const mockOnMessageSend = vi.fn();
-        render(<ChatMessage onMessageSend={mockOnMessageSend} />);
+        render(
+            <Wrapper>
+                <ChatMessage onMessageSend={mockOnMessageSend} />
+            </Wrapper>
+        );
 
         const textarea = screen.getByPlaceholderText(placeholderText);
         expect(textarea).toHaveValue('');
@@ -25,7 +59,11 @@ describe('ChatMessage', () => {
     it('allows user to type in textarea', async () => {
         const mockOnMessageSend = vi.fn();
         const user = userEvent.setup();
-        render(<ChatMessage onMessageSend={mockOnMessageSend} />);
+        render(
+            <Wrapper>
+                <ChatMessage onMessageSend={mockOnMessageSend} />
+            </Wrapper>
+        );
 
         const textarea = screen.getByPlaceholderText(placeholderText);
         await user.type(textarea, 'Hello world');
@@ -36,7 +74,11 @@ describe('ChatMessage', () => {
     it('calls onMessageSend with current message when send button is clicked', async () => {
         const mockOnMessageSend = vi.fn();
         const user = userEvent.setup();
-        render(<ChatMessage onMessageSend={mockOnMessageSend} />);
+        render(
+            <Wrapper>
+                <ChatMessage onMessageSend={mockOnMessageSend} />
+            </Wrapper>
+        );
 
         const textarea = screen.getByPlaceholderText(placeholderText);
         await user.type(textarea, 'Test message');
@@ -50,7 +92,11 @@ describe('ChatMessage', () => {
     it('clears message after sending via button click', async () => {
         const mockOnMessageSend = vi.fn().mockResolvedValue(true);
         const user = userEvent.setup();
-        render(<ChatMessage onMessageSend={mockOnMessageSend} />);
+        render(
+            <Wrapper>
+                <ChatMessage onMessageSend={mockOnMessageSend} />
+            </Wrapper>
+        );
 
         const textarea = screen.getByPlaceholderText(placeholderText);
         await user.type(textarea, 'Test message');
@@ -64,7 +110,11 @@ describe('ChatMessage', () => {
     it('disables send button when message is empty or only whitespace', async () => {
         const mockOnMessageSend = vi.fn();
         const user = userEvent.setup();
-        render(<ChatMessage onMessageSend={mockOnMessageSend} />);
+        render(
+            <Wrapper>
+                <ChatMessage onMessageSend={mockOnMessageSend} />
+            </Wrapper>
+        );
 
         const sendButton = screen.getByRole('button', { name: 'Send an encrypted message' });
 
@@ -82,7 +132,11 @@ describe('ChatMessage', () => {
     it('calls onMessageSend when Enter key is pressed without Shift', async () => {
         const mockOnMessageSend = vi.fn().mockResolvedValue(true);
         const user = userEvent.setup();
-        render(<ChatMessage onMessageSend={mockOnMessageSend} />);
+        render(
+            <Wrapper>
+                <ChatMessage onMessageSend={mockOnMessageSend} />
+            </Wrapper>
+        );
 
         const textarea = screen.getByPlaceholderText(placeholderText);
         await user.type(textarea, 'Test message');
@@ -96,7 +150,11 @@ describe('ChatMessage', () => {
     it('does not call onMessageSend when Shift+Enter is pressed', async () => {
         const mockOnMessageSend = vi.fn();
         const user = userEvent.setup();
-        render(<ChatMessage onMessageSend={mockOnMessageSend} />);
+        render(
+            <Wrapper>
+                <ChatMessage onMessageSend={mockOnMessageSend} />
+            </Wrapper>
+        );
 
         const textarea = screen.getByPlaceholderText(placeholderText) as HTMLTextAreaElement;
         await user.type(textarea, 'Test message');
@@ -109,7 +167,11 @@ describe('ChatMessage', () => {
     it('handles multiline messages with Shift+Enter', async () => {
         const mockOnMessageSend = vi.fn();
         const user = userEvent.setup();
-        render(<ChatMessage onMessageSend={mockOnMessageSend} />);
+        render(
+            <Wrapper>
+                <ChatMessage onMessageSend={mockOnMessageSend} />
+            </Wrapper>
+        );
 
         const textarea = screen.getByPlaceholderText(placeholderText);
         await user.type(textarea, 'Line 1');
@@ -129,7 +191,11 @@ describe('ChatMessage', () => {
     it('maintains focus on textarea after sending message via Enter', async () => {
         const mockOnMessageSend = vi.fn().mockResolvedValue(true);
         const user = userEvent.setup();
-        render(<ChatMessage onMessageSend={mockOnMessageSend} />);
+        render(
+            <Wrapper>
+                <ChatMessage onMessageSend={mockOnMessageSend} />
+            </Wrapper>
+        );
 
         const textarea = screen.getByPlaceholderText(placeholderText);
         await user.type(textarea, 'Test');
@@ -142,7 +208,11 @@ describe('ChatMessage', () => {
     it('does not send empty or whitespace-only messages via Enter', async () => {
         const mockOnMessageSend = vi.fn();
         const user = userEvent.setup();
-        render(<ChatMessage onMessageSend={mockOnMessageSend} />);
+        render(
+            <Wrapper>
+                <ChatMessage onMessageSend={mockOnMessageSend} />
+            </Wrapper>
+        );
 
         const textarea = screen.getByPlaceholderText(placeholderText);
 
