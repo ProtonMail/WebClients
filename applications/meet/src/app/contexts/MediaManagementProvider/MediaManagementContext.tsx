@@ -2,7 +2,7 @@ import { createContext, useContext } from 'react';
 
 import debounce from 'lodash/debounce';
 
-import type { DeviceState, SwitchActiveDevice } from '../../types';
+import type { DeviceState, SwitchActiveDevice, ToggleVideoType } from '../../types';
 
 const DEFAULT_DEVICE_STATE: DeviceState = {
     systemDefault: null,
@@ -32,17 +32,7 @@ export interface MediaManagementContextType {
     speakerState: DeviceState;
     isVideoEnabled: boolean;
     isAudioEnabled: boolean;
-    toggleVideo: ({
-        isEnabled,
-        videoDeviceId,
-        forceUpdate,
-        preserveCache,
-    }: {
-        isEnabled?: boolean;
-        videoDeviceId?: string;
-        forceUpdate?: boolean;
-        preserveCache?: boolean;
-    }) => Promise<boolean | undefined>;
+    toggleVideo: ToggleVideoType;
     toggleAudio: ({
         isEnabled,
         audioDeviceId,
