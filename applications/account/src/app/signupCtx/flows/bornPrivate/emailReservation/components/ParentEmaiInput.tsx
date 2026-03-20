@@ -23,6 +23,7 @@ const ParentEmailInput = ({ value, onValue, validator }: ParentEmailInputProps) 
                 onValue={onValue}
                 bigger
                 error={validator([emailValidator(value)].filter(isTruthy))}
+                data-testid="parent-email-input"
             />
         </div>
     );
