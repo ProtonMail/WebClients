@@ -24,7 +24,6 @@ describe('CategoriesTabs', () => {
         { label: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, colorShade: 'orange' },
         { label: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, colorShade: 'red' },
         { label: MAILBOX_LABEL_IDS.CATEGORY_UPDATES, colorShade: 'pink' },
-        { label: MAILBOX_LABEL_IDS.CATEGORY_FORUMS, colorShade: 'blue' },
     ])('should render the categories with the proper border class', async ({ label, colorShade }) => {
         await mailTestRender(<CategoriesTabs categoryLabelID={label} />);
         const categoryTab = screen.getByTestId(`category-tab-${label}`);

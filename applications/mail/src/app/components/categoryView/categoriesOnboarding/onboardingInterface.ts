@@ -19,7 +19,6 @@ export enum CategoriesOnboardingFlags {
     NEWSLETTER = 1 << 3,
     TRANSACTION = 1 << 4,
     UPDATE = 1 << 5,
-    FORUMS = 1 << 6,
 }
 
 export const FeatureValueDefault = -1 as const;

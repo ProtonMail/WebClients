@@ -48,11 +48,5 @@ export const getCategoriesBadgeMapping = (): CategoryBadgeMapping => {
             darkClassName: 'bg-purple-900 color-purple-300 hover:bg-purple-800 hover:color-purple-100',
             icon: 'bell-filled-2',
         },
-        [MAILBOX_LABEL_IDS.CATEGORY_FORUMS]: {
-            label: c('Label').t`Forums`,
-            className: 'bg-amber-100 color-amber-700 hover:bg-amber-200 hover:color-amber-900',
-            darkClassName: 'bg-amber-900 color-amber-300 hover:bg-amber-800 hover:color-amber-100',
-            icon: 'speech-bubbles-filled',
-        },
     };
 };

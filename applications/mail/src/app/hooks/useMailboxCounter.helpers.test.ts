@@ -81,7 +81,7 @@ describe('useMailboxCounter helpers', () => {
                 const conversationsCounts = [{ LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, Unread: 10, Total: 20 }];
                 const messagesCounts = [{ LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, Unread: 20, Total: 30 }];
                 const result = getCounterMap([], conversationsCounts, messagesCounts, {} as MailSettings, [
-                    MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                    MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 ]);
 
                 expect(result[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]).toStrictEqual({
@@ -94,14 +94,14 @@ describe('useMailboxCounter helpers', () => {
             it('should add the disabled category count to the primary category if count is present', () => {
                 const conversationsCounts = [
                     { LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, Unread: 10, Total: 20 },
-                    { LabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS, Unread: 5, Total: 10 },
+                    { LabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, Unread: 5, Total: 10 },
                 ];
                 const messagesCounts = [
                     { LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, Unread: 20, Total: 30 },
-                    { LabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS, Unread: 15, Total: 25 },
+                    { LabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, Unread: 15, Total: 25 },
                 ];
                 const result = getCounterMap([], conversationsCounts, messagesCounts, {} as MailSettings, [
-                    MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                    MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 ]);
 
                 expect(result[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]).toStrictEqual({
@@ -114,16 +114,16 @@ describe('useMailboxCounter helpers', () => {
             it('should add the disabled categories count to the primary category if multiple counts are present', () => {
                 const conversationsCounts = [
                     { LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, Unread: 10, Total: 20 },
-                    { LabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS, Unread: 5, Total: 10 },
+                    { LabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, Unread: 5, Total: 10 },
                     { LabelID: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, Unread: 5, Total: 10 },
                 ];
                 const messagesCounts = [
                     { LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, Unread: 20, Total: 30 },
-                    { LabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS, Unread: 15, Total: 25 },
+                    { LabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, Unread: 15, Total: 25 },
                     { LabelID: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, Unread: 15, Total: 25 },
                 ];
                 const result = getCounterMap([], conversationsCounts, messagesCounts, {} as MailSettings, [
-                    MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                    MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                     MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
                 ]);
 
@@ -137,14 +137,14 @@ describe('useMailboxCounter helpers', () => {
             it('should add the available categories count if some are missing', () => {
                 const conversationsCounts = [
                     { LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, Unread: 10, Total: 20 },
-                    { LabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS, Unread: 5, Total: 10 },
+                    { LabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, Unread: 5, Total: 10 },
                 ];
                 const messagesCounts = [
                     { LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, Unread: 20, Total: 30 },
-                    { LabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS, Unread: 15, Total: 25 },
+                    { LabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, Unread: 15, Total: 25 },
                 ];
                 const result = getCounterMap([], conversationsCounts, messagesCounts, {} as MailSettings, [
-                    MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                    MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                     MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
                 ]);
 

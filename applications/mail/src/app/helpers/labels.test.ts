@@ -402,9 +402,9 @@ describe('label', () => {
 
     describe('convertCategoryLabelToCategoryAndInbox', () => {
         it('should return an array with inbox and the category', () => {
-            expect(convertCategoryLabelToCategoryAndInbox(MAILBOX_LABEL_IDS.CATEGORY_FORUMS, [])).toEqual([
+            expect(convertCategoryLabelToCategoryAndInbox(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, [])).toEqual([
                 MAILBOX_LABEL_IDS.INBOX,
-                MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
             ]);
         });
 
@@ -415,15 +415,19 @@ describe('label', () => {
         it('should add disabled categories when fetching from primary location', () => {
             expect(
                 convertCategoryLabelToCategoryAndInbox(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, [
-                    MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                    MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 ])
-            ).toEqual([MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, MAILBOX_LABEL_IDS.CATEGORY_FORUMS]);
+            ).toEqual([
+                MAILBOX_LABEL_IDS.INBOX,
+                MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+            ]);
         });
 
         it('should not add disabled categories when fetching from social location', () => {
             expect(
                 convertCategoryLabelToCategoryAndInbox(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, [
-                    MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                    MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 ])
             ).toEqual([MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL]);
         });
