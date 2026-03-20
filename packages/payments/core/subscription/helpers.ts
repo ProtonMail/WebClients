@@ -660,6 +660,26 @@ export function hasPassLaunchOffer(subscription: Subscription | FreeSubscription
     return isLaunchOffer && subscription.Cycle === CYCLE.YEARLY && plan?.Name === PLANS.PASS;
 }
 
+export function isSameCycle(
+    subscriptionLeft: Subscription | FreeSubscription,
+    subscriptionRight: Subscription | FreeSubscription | undefined
+) {
+    return subscriptionLeft.Cycle === subscriptionRight?.Cycle;
+}
+
+export const isAddonDowngrade = (current: Subscription, upcoming: Subscription | undefined) => {
+    const upcomingAddons = getAddons(upcoming);
+    const currentAddons = getAddons(current);
+
+    return currentAddons.some(
+        ({ Name, Quantity }) => (upcomingAddons.find((a) => a.Name === Name)?.Quantity ?? 0) < Quantity
+    );
+};
+
+export const isAddonDowngradeOnSameCycle = (current: Subscription, upcoming: Subscription) => {
+    return isSameCycle(current, upcoming) && isAddonDowngrade(current, upcoming);
+};
+
 export function isUpcomingSubscriptionUnpaid(subscription: Subscription): boolean {
     const current = subscription;
     const upcoming = subscription.UpcomingSubscription;
@@ -667,7 +687,7 @@ export function isUpcomingSubscriptionUnpaid(subscription: Subscription): boolea
     // Two possible cases here: addon downgrade (for example, Scribe) and scheduled downcycling.
     // 1. Addon downgrade: user decreases the number of addons,
     //     then the upcoming subscription will have the same cycle as the current subscription
-    // "current.Cycle === upcoming.Cycle" checks that
+    // "isAddonDowngradeOnSameCycle()" checks that
     //
     // 2. Scheduled downcycling: user changes, for example, from 12 months to 1 month,
     //     then the upcoming subscription will have a lower cycle than the current subscription
@@ -678,7 +698,13 @@ export function isUpcomingSubscriptionUnpaid(subscription: Subscription): boolea
     //
     // Additional case from P2-1572:
     // 3. vpn2024 and bundle2022 can have 6m cycles which always renew for 12m.
-    return !!current && !!upcoming && (current.Cycle >= upcoming.Cycle || current.Cycle === CYCLE.SIX);
+    return (
+        !!current &&
+        !!upcoming &&
+        (current.Cycle > upcoming.Cycle ||
+            current.Cycle === CYCLE.SIX ||
+            isAddonDowngradeOnSameCycle(current, upcoming))
+    );
 }
 
 export function getRenewalTime(subscription: Subscription): number {
