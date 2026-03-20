@@ -49,7 +49,13 @@ const ParentEmail = ({ defaultEmail, onContinue, onBack }: ParentEmailProps) => 
                         <Button onClick={onBack} size="large" className="w-full md:w-auto rounded-lg">
                             {c('Action').t`Back`}
                         </Button>
-                        <Button type="submit" color="norm" size="large" className="w-full md:w-auto rounded-lg">
+                        <Button
+                            type="submit"
+                            color="norm"
+                            size="large"
+                            className="w-full md:w-auto rounded-lg"
+                            data-testid="parent-email-continue"
+                        >
                             {c('Action').t`Continue`}
                         </Button>
                     </BornPrivateFormFooter>

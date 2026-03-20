@@ -82,6 +82,7 @@ const DonationAmountSelect = ({ currency, donationAmount, setDonationAmount }: D
                             style={isSelected ? undefined : unselectedStyle}
                             onClick={() => handleSelect(amount)}
                             aria-pressed={isSelected}
+                            data-testid={`donation-amount-${amount}`}
                         >
                             <Price currency={currency} className="text-semibold">
                                 {amount}

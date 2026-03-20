@@ -18,7 +18,8 @@ const EmailConfirmation = ({ reservedEmail, activationCode }: VoucherDisplayProp
         <main className="flex flex-1 *:min-size-auto flex-column flex-nowrap items-center gap-8 text-center">
             <div className="flex flex-column flex-nowrap items-center gap-2 text-center">
                 <IcCheckmarkCircle size={12} className="color-primary icon-confirmation" />
-                <BornPrivateFormHeading as="h1">{c('Heading').t`We emailed you the voucher`}</BornPrivateFormHeading>
+                <BornPrivateFormHeading as="h1" data-testid="confirmation-heading">{c('Heading')
+                    .t`We emailed you the voucher`}</BornPrivateFormHeading>
             </div>
 
             <div
