@@ -110,8 +110,14 @@ export const updateSortedParticipants =
         participants: (LocalParticipant | RemoteParticipant)[]
     ): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> =>
     (dispatch, getState) => {
+        const { raisedHands } = getState().meetingChatAndReactions;
+        // Get raised hands and remove local participant and the ones are not in the participants list
+        const raisedHandsSet = new Set(
+            raisedHands.filter((id) => participants.some((p) => p.identity === id && !p.isLocal))
+        );
+
         // Get the ideal order of participants
-        const idealOrder = getIdealSortedParticipants(participants);
+        const idealOrder = getIdealSortedParticipants({ participants, raisedHandsSet });
 
         if (idealOrder.length === 0) {
             return;
@@ -128,7 +134,15 @@ export const updateSortedParticipants =
             selfView,
         });
 
-        dispatch(slice.actions.setSortedParticipantIdentities(stableOrder));
+        // Move raised hands first after local participant
+        const stableOrderWithRaisedHandsFirst = [
+            // Local participant is always first
+            stableOrder[0],
+            ...raisedHandsSet,
+            ...stableOrder.slice(1).filter((id) => !raisedHandsSet.has(id)),
+        ];
+
+        dispatch(slice.actions.setSortedParticipantIdentities(stableOrderWithRaisedHandsFirst));
     };
 
 export const selectSortedParticipantIdentities = (state: MeetState) => {
