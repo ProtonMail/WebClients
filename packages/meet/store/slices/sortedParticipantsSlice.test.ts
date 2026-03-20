@@ -1,10 +1,12 @@
 import type { ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
 import { configureStore } from '@reduxjs/toolkit';
+import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 import { describe, expect, it } from 'vitest';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 
 import type { MeetState } from '../rootReducer';
+import { chatAndReactionsReducer, raiseHand } from './chatAndReactionsSlice';
 import { setSelfView, settingsReducer } from './settings';
 import {
     removeParticipant,
@@ -15,6 +17,7 @@ import {
     setPageSize,
     setSortedParticipantIdentities,
     sortedParticipantsReducer,
+    updateSortedParticipants,
 } from './sortedParticipantsSlice';
 
 const reducer = sortedParticipantsReducer.sortedParticipants;
@@ -43,6 +46,7 @@ const createStore = ({ selfView = true }: { selfView?: boolean } = {}) => {
         reducer: {
             ...sortedParticipantsReducer,
             ...settingsReducer,
+            ...chatAndReactionsReducer,
         },
         preloadedState: {
             meetSettings: {
@@ -354,5 +358,320 @@ describe('sortedParticipantsSlice', () => {
 
             expect(selectPageCount(store.getState())).toBe(2);
         });
+    });
+
+    describe('updateSortedParticipants', () => {
+        const createMockLocal = (overrides: Partial<LocalParticipant> = {}): LocalParticipant =>
+            ({
+                identity: 'local',
+                isLocal: true,
+                isSpeaking: false,
+                audioLevel: 0,
+                lastSpokeAt: undefined,
+                isCameraEnabled: false,
+                joinedAt: undefined,
+                ...overrides,
+            }) as unknown as LocalParticipant;
+
+        const createMockRemote = (identity: string, overrides: Partial<RemoteParticipant> = {}): RemoteParticipant =>
+            ({
+                identity,
+                isLocal: false,
+                isSpeaking: false,
+                audioLevel: 0,
+                lastSpokeAt: undefined,
+                isCameraEnabled: false,
+                joinedAt: undefined,
+                ...overrides,
+            }) as unknown as RemoteParticipant;
+
+        /** Single shared local participant mock (identity always `"local"`). */
+        const local = createMockLocal();
+
+        const runThunk = ({
+            selfView = true,
+            pageSize = 4,
+            previousIdentities,
+            participants,
+            raisedHands = [],
+        }: {
+            selfView?: boolean;
+            pageSize?: number;
+            previousIdentities: readonly string[];
+            participants: readonly (LocalParticipant | RemoteParticipant)[];
+            raisedHands?: readonly string[];
+        }) => {
+            const store = createStore({ selfView });
+            store.dispatch(setSortedParticipantIdentities([...previousIdentities]));
+            store.dispatch(setPageSize(pageSize));
+            raisedHands.forEach((identity) => {
+                store.dispatch(raiseHand(identity));
+            });
+            store.dispatch(updateSortedParticipants([...participants]));
+            return store.getState().sortedParticipants.sortedParticipantIdentities;
+        };
+
+        type UpdateSortedParticipantsCase = {
+            description: string;
+            selfView?: boolean;
+            pageSize?: number;
+            previousIdentities: readonly string[];
+            participants: readonly (LocalParticipant | RemoteParticipant)[];
+            /** Identities passed to `raiseHand` in order (store `raisedHands` before `updateSortedParticipants`). */
+            raisedHands?: readonly string[];
+            expectedIdentities: readonly string[];
+        };
+        const updateSortedParticipantsCases: UpdateSortedParticipantsCase[] = [
+            {
+                description: 'does not change the stored list when participants is empty',
+                previousIdentities: ['local', 'A', 'B'],
+                participants: [],
+                expectedIdentities: ['local', 'A', 'B'],
+            },
+            {
+                description: 'fills the stored list from participants when it was empty',
+                selfView: false,
+                pageSize: 4,
+                previousIdentities: [],
+                participants: [local, createMockRemote('A'), createMockRemote('B'), createMockRemote('C')],
+                expectedIdentities: ['local', 'A', 'B', 'C'],
+            },
+            {
+                description: 'keeps the stored order when everyone fits on one page even if a remote starts speaking',
+                selfView: false,
+                pageSize: 5,
+                previousIdentities: ['local', 'A', 'B', 'C'],
+                participants: [
+                    local,
+                    createMockRemote('A'),
+                    createMockRemote('B', { isSpeaking: true, audioLevel: 0.5 }),
+                    createMockRemote('C'),
+                ],
+                expectedIdentities: ['local', 'A', 'B', 'C'],
+            },
+            {
+                description: 'does not reorder when the stored list already matches the participant list across pages',
+                selfView: false,
+                pageSize: 4,
+                previousIdentities: ['local', 'A', 'B', 'C', 'D', 'E'],
+                participants: [
+                    local,
+                    createMockRemote('A'),
+                    createMockRemote('B'),
+                    createMockRemote('C'),
+                    createMockRemote('D'),
+                    createMockRemote('E'),
+                ],
+                expectedIdentities: ['local', 'A', 'B', 'C', 'D', 'E'],
+            },
+            {
+                description:
+                    'keeps the stored per-page order when each page already has the right people but ranking would put them in a different order on that page',
+                selfView: false,
+                pageSize: 4,
+                previousIdentities: ['local', 'A', 'B', 'C', 'D', 'E'],
+                participants: [
+                    local,
+                    createMockRemote('A'),
+                    createMockRemote('B'),
+                    createMockRemote('C', { isSpeaking: true, audioLevel: 0.5 }),
+                    createMockRemote('D'),
+                    createMockRemote('E'),
+                ],
+                expectedIdentities: ['local', 'A', 'B', 'C', 'D', 'E'],
+            },
+            {
+                description: 'removes identities that are no longer in the participant list',
+                selfView: false,
+                pageSize: 4,
+                previousIdentities: ['local', 'A', 'B', 'C'],
+                participants: [local, createMockRemote('A'), createMockRemote('C')],
+                expectedIdentities: ['local', 'A', 'C'],
+            },
+            {
+                description: 'appends identities for newly joined participants at the end of the stable list',
+                selfView: false,
+                pageSize: 4,
+                previousIdentities: ['local', 'A', 'B'],
+                participants: [local, createMockRemote('A'), createMockRemote('B'), createMockRemote('C')],
+                expectedIdentities: ['local', 'A', 'B', 'C'],
+            },
+            {
+                description: 'moves someone onto the page where they belong when they were listed on a later page',
+                selfView: false,
+                pageSize: 4,
+                previousIdentities: ['local', 'A', 'B', 'C', 'D', 'E'],
+                participants: [
+                    local,
+                    createMockRemote('A'),
+                    createMockRemote('B'),
+                    createMockRemote('C'),
+                    createMockRemote('D'),
+                    createMockRemote('E', { isSpeaking: true, audioLevel: 0.8 }),
+                ],
+                expectedIdentities: ['local', 'A', 'B', 'C', 'E', 'D'],
+            },
+            {
+                description:
+                    'does not reorder within a page when the same people stay on that page but ranking would order them differently',
+                selfView: false,
+                pageSize: 4,
+                previousIdentities: ['local', 'A', 'B', 'C', 'D', 'E'],
+                participants: [
+                    local,
+                    createMockRemote('A', { lastSpokeAt: new Date('2026-03-11T10:00:00') }),
+                    createMockRemote('B', { lastSpokeAt: new Date('2026-03-11T12:00:00') }),
+                    createMockRemote('C', { lastSpokeAt: new Date('2026-03-11T11:00:00') }),
+                    createMockRemote('D', { isSpeaking: true, audioLevel: 0.5 }),
+                    createMockRemote('E'),
+                ],
+                expectedIdentities: ['local', 'A', 'B', 'C', 'D', 'E'],
+            },
+            {
+                description:
+                    'swaps people between pages when the ideal assignment for each page does not match the stored pages',
+                selfView: false,
+                pageSize: 4,
+                previousIdentities: ['local', 'A', 'B', 'C', 'D', 'E'],
+                participants: [
+                    local,
+                    createMockRemote('A', { lastSpokeAt: new Date('2026-03-11T14:00:00') }),
+                    createMockRemote('B', { lastSpokeAt: new Date('2026-03-11T11:00:00') }),
+                    createMockRemote('C', { lastSpokeAt: new Date('2026-03-11T10:00:00') }),
+                    createMockRemote('D', { lastSpokeAt: new Date('2026-03-11T12:00:00') }),
+                    createMockRemote('E', { isSpeaking: true, audioLevel: 0.8 }),
+                ],
+                expectedIdentities: ['local', 'A', 'B', 'E', 'D', 'C'],
+            },
+            {
+                description: 'can swap several pairs across pages in one update',
+                selfView: false,
+                pageSize: 4,
+                previousIdentities: ['local', 'A', 'B', 'C', 'D', 'E', 'F'],
+                participants: [
+                    local,
+                    createMockRemote('A', { lastSpokeAt: new Date('2026-03-11T13:00:00') }),
+                    createMockRemote('B', { lastSpokeAt: new Date('2026-03-11T12:00:00') }),
+                    createMockRemote('C', { lastSpokeAt: new Date('2026-03-11T11:00:00') }),
+                    createMockRemote('D', { lastSpokeAt: new Date('2026-03-11T16:00:00') }),
+                    createMockRemote('E', { lastSpokeAt: new Date('2026-03-11T15:00:00') }),
+                    createMockRemote('F', { lastSpokeAt: new Date('2026-03-11T14:00:00') }),
+                ],
+                expectedIdentities: ['local', 'A', 'E', 'F', 'D', 'B', 'C'],
+            },
+            {
+                description: 'leaves a single local identity unchanged when the stored list already matches',
+                selfView: false,
+                pageSize: 4,
+                previousIdentities: ['local'],
+                participants: [local],
+                expectedIdentities: ['local'],
+            },
+            {
+                description: 'with self view on, uses the same initial ordering when the stored list was empty',
+                selfView: true,
+                pageSize: 4,
+                previousIdentities: [],
+                participants: [local, createMockRemote('A'), createMockRemote('B'), createMockRemote('C')],
+                expectedIdentities: ['local', 'A', 'B', 'C'],
+            },
+            {
+                description:
+                    'with self view on, keeps the stored order when pages already contain the correct people but in an order that would differ with self view off',
+                selfView: true,
+                pageSize: 3,
+                previousIdentities: ['local', 'A', 'B', 'D', 'C'],
+                participants: [
+                    local,
+                    createMockRemote('A', { lastSpokeAt: new Date('2026-03-11T15:00:00') }),
+                    createMockRemote('B', { lastSpokeAt: new Date('2026-03-11T14:00:00') }),
+                    createMockRemote('C', { lastSpokeAt: new Date('2026-03-11T13:00:00') }),
+                    createMockRemote('D', { lastSpokeAt: new Date('2026-03-11T12:00:00') }),
+                ],
+                expectedIdentities: ['local', 'A', 'B', 'D', 'C'],
+            },
+            {
+                description:
+                    'with self view off, swaps across page boundaries for the same participant list that would not swap with self view on',
+                selfView: false,
+                pageSize: 3,
+                previousIdentities: ['local', 'A', 'B', 'D', 'C'],
+                participants: [
+                    local,
+                    createMockRemote('A', { lastSpokeAt: new Date('2026-03-11T15:00:00') }),
+                    createMockRemote('B', { lastSpokeAt: new Date('2026-03-11T14:00:00') }),
+                    createMockRemote('C', { lastSpokeAt: new Date('2026-03-11T13:00:00') }),
+                    createMockRemote('D', { lastSpokeAt: new Date('2026-03-11T12:00:00') }),
+                ],
+                expectedIdentities: ['local', 'A', 'B', 'C', 'D'],
+            },
+            {
+                description:
+                    'with self view on, swaps a different remote than with self view off for the same stored order and participants',
+                selfView: true,
+                pageSize: 4,
+                previousIdentities: ['local', 'A', 'B', 'C', 'D', 'E'],
+                participants: [
+                    local,
+                    createMockRemote('A'),
+                    createMockRemote('B'),
+                    createMockRemote('C'),
+                    createMockRemote('D'),
+                    createMockRemote('E', { isSpeaking: true, audioLevel: 0.8 }),
+                ],
+                expectedIdentities: ['local', 'A', 'B', 'E', 'D', 'C'],
+            },
+            {
+                description: 'places raised remotes immediately after local, before everyone else',
+                selfView: true,
+                pageSize: 4,
+                previousIdentities: [],
+                raisedHands: ['A'],
+                participants: [local, createMockRemote('A'), createMockRemote('B'), createMockRemote('C')],
+                expectedIdentities: ['local', 'A', 'B', 'C'],
+            },
+            {
+                description: 'orders multiple raised remotes by the order they appear in raisedHands state',
+                selfView: true,
+                pageSize: 4,
+                previousIdentities: [],
+                raisedHands: ['B', 'A'],
+                participants: [local, createMockRemote('A'), createMockRemote('B'), createMockRemote('C')],
+                expectedIdentities: ['local', 'B', 'A', 'C'],
+            },
+            {
+                description: 'does not treat the local identity as raised when it appears in raisedHands state',
+                selfView: true,
+                pageSize: 4,
+                previousIdentities: [],
+                raisedHands: ['local', 'A'],
+                participants: [local, createMockRemote('A'), createMockRemote('B')],
+                expectedIdentities: ['local', 'A', 'B'],
+            },
+            {
+                description: 'ignores raisedHands entries that are not present in the participant list',
+                selfView: true,
+                pageSize: 4,
+                previousIdentities: [],
+                raisedHands: ['ghost', 'A'],
+                participants: [local, createMockRemote('A'), createMockRemote('B')],
+                expectedIdentities: ['local', 'A', 'B'],
+            },
+        ];
+
+        it.each(updateSortedParticipantsCases)(
+            '$description',
+            ({ selfView, pageSize, previousIdentities, participants, raisedHands, expectedIdentities }) => {
+                expect(
+                    runThunk({
+                        selfView,
+                        pageSize,
+                        previousIdentities,
+                        participants,
+                        raisedHands,
+                    })
+                ).toEqual(expectedIdentities);
+            }
+        );
     });
 });

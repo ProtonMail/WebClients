@@ -6,6 +6,7 @@ import { RoomEvent } from 'livekit-client';
 
 import { useHandler } from '@proton/components/hooks/useHandler';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectRaisedHands } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import {
     removeParticipant,
     resetSortedParticipants,
@@ -57,9 +58,11 @@ export const SortedParticipantsProvider = ({ children }: { children: React.React
         dispatch(resetSortedParticipants());
     }, [dispatch]);
 
+    const raisedHands = useMeetSelector(selectRaisedHands);
+
     useEffect(() => {
         throttledUpdateSortedParticipants();
-    }, [participants, throttledUpdateSortedParticipants]);
+    }, [participants, throttledUpdateSortedParticipants, raisedHands]);
 
     useEffect(() => {
         room.on(RoomEvent.ActiveSpeakersChanged, throttledUpdateSortedParticipants);
