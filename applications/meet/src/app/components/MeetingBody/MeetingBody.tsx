@@ -34,8 +34,8 @@ import { NoDeviceDetectedModal } from '../NoDeviceDetectedModal/NoDeviceDetected
 import { NoPermissionInfo } from '../NoPermissionInfo/NoPermissionInfo';
 import { ParticipantControls } from '../ParticipantControls/ParticipantControls';
 import { ParticipantGrid } from '../ParticipantGrid';
+import { ParticipantList } from '../ParticipantList/ParticipantList';
 import { ParticipantSidebar } from '../ParticipantSidebar/ParticipantSidebar';
-import { Participants } from '../Participants/Participants';
 import { PermissionRequest } from '../PermissionRequest/PermissionRequest';
 import { RecordingInProgressModal } from '../RecordingInProgressModal/RecordingInProgressModal';
 import { Settings } from '../Settings/Settings';
@@ -238,7 +238,7 @@ export const MeetingBody = ({
 
                 {isSideBarOpen && (
                     <div className="h-full shrink-0" style={{ flexGrow: isScreenShare ? 2 : 3, flexBasis: 0 }}>
-                        <Participants />
+                        <ParticipantList />
                         <Settings />
                         <Chat />
                         <AssignHostSidebar />

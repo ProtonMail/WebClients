@@ -13,7 +13,6 @@ import type { MeetChatMessage, ParticipantEventRecord } from '@proton/meet/types
 import { ParticipantEvent } from '@proton/meet/types/types';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
-import { MeetContext } from '../contexts/MeetContext';
 import { useMeetingRoomUpdates } from './useMeetingRoomUpdates';
 
 const mockParticipantEvents: ParticipantEventRecord[] = [
@@ -36,7 +35,7 @@ const mockParticipantNameMap = {
     test: 'test',
 };
 
-const createMockStore = () => {
+const createMockStore = (overrides?: { chatMessages?: MeetChatMessage[]; events?: ParticipantEventRecord[] }) => {
     return configureStore({
         reducer: {
             ...sortedParticipantsReducer,
@@ -49,8 +48,9 @@ const createMockStore = () => {
                 pageSize: 12,
             },
             meetingChatAndReactions: {
-                chatMessages: mockChatMessages,
-                events: mockParticipantEvents,
+                draftMessage: '',
+                chatMessages: overrides?.chatMessages ?? mockChatMessages,
+                events: overrides?.events ?? mockParticipantEvents,
                 raisedHands: [],
                 activeReactions: {},
             },
@@ -62,21 +62,23 @@ const createMockStore = () => {
     });
 };
 
+function createTestWrapper(store: ReturnType<typeof createMockStore>) {
+    function TestWrapper({ children }: { children: React.ReactNode }) {
+        return (
+            <Provider context={ProtonStoreContext} store={store}>
+                {children}
+            </Provider>
+        );
+    }
+    return TestWrapper;
+}
+
 describe('useMeetingRoomUpdates', () => {
     it('should return the combined data of participant events and chat messages', () => {
         const store = createMockStore();
 
         const { result } = renderHook(() => useMeetingRoomUpdates(), {
-            wrapper: ({ children }) => (
-                <Provider context={ProtonStoreContext} store={store}>
-                    <MeetContext.Provider
-                        // @ts-expect-error - mock data
-                        value={{}}
-                    >
-                        {children}
-                    </MeetContext.Provider>
-                </Provider>
-            ),
+            wrapper: createTestWrapper(store),
         });
 
         expect(result.current).toEqual([

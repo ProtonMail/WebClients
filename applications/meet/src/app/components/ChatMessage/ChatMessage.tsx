@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import React, { type ChangeEventHandler, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import data from '@emoji-mart/data';
 import { Picker } from 'emoji-mart';
@@ -14,6 +14,8 @@ import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import useLoading from '@proton/hooks/useLoading';
 import { IcEmoji } from '@proton/icons/icons/IcEmoji';
 import { IcMeetSend } from '@proton/icons/icons/IcMeetSend';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectDraftMessage, setDraftMessage } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import clsx from '@proton/utils/clsx';
 
 import { trimMessage } from '../../utils/trim-message';
@@ -35,13 +37,14 @@ interface ChatMessageProps {
 }
 
 export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
-    const [message, setMessage] = useState('');
     const [emojiPickerOpen, setEmojiPickerOpen] = useState(false);
 
     const [chatMessageLoading, withChatMessageLoading] = useLoading();
 
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const emojiAnchorRef = useRef<HTMLButtonElement>(null);
+
+    const dispatch = useMeetDispatch();
 
     const { floating, position } = usePopper({
         reference: {
@@ -53,6 +56,31 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
         availablePlacements: ['top-end', 'top'],
         offset: 8,
     });
+
+    const draftMessage = useMeetSelector(selectDraftMessage);
+    const [message, setMessage] = useState(draftMessage);
+    const currentMessage = useRef(message);
+
+    const updateMessage = (value: string) => {
+        setMessage(value);
+        currentMessage.current = value;
+    };
+
+    const handleMessageChange: ChangeEventHandler<HTMLTextAreaElement> = (event) => {
+        const { value } = event.target;
+
+        updateMessage(value);
+    };
+
+    useLayoutEffect(() => {
+        // Moving textarea cursor to the end of the message on initial load
+        textareaRef.current?.setSelectionRange(message.length, message.length);
+
+        return () => {
+            // Preserve last message when component is unmounted
+            dispatch(setDraftMessage(currentMessage.current));
+        };
+    }, []);
 
     const textareaHeight = useMemo(() => {
         if (textareaRef.current) {
@@ -72,7 +100,7 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
         const result = await onMessageSend(message);
 
         if (result) {
-            setMessage('');
+            updateMessage('');
         }
 
         return result;
@@ -84,13 +112,13 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
             const start = textarea.selectionStart ?? message.length;
             const end = textarea.selectionEnd ?? message.length;
             const newMessage = message.slice(0, start) + emoji.native + message.slice(end);
-            setMessage(newMessage);
+            updateMessage(newMessage);
             setTimeout(() => {
                 textarea.setSelectionRange(start + emoji.native.length, start + emoji.native.length);
                 textarea.focus();
             }, 0);
         } else {
-            setMessage((prev) => prev + emoji.native);
+            updateMessage(message + emoji.native);
         }
         setEmojiPickerOpen(false);
     };
@@ -134,7 +162,7 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                 <InputFieldTwo
                     ref={textareaRef}
                     value={message}
-                    onChange={(e) => setMessage(e.target.value)}
+                    onChange={handleMessageChange}
                     placeholder={c('Placeholder').t`Type an encrypted message...`}
                     unstyled={true}
                     className={clsx('border-none resize-none px-0 my-auto', 'hide-scrollbar wrap-placeholder')}

@@ -5,6 +5,7 @@ import type { ChatMessageReactions, MeetChatMessage, ParticipantEventRecord } fr
 import type { MeetState } from '../rootReducer';
 
 export interface MeetingChatAndReactionsState {
+    draftMessage: string;
     chatMessages: MeetChatMessage[];
     events: ParticipantEventRecord[];
     raisedHands: string[];
@@ -12,6 +13,7 @@ export interface MeetingChatAndReactionsState {
 }
 
 const initialState: MeetingChatAndReactionsState = {
+    draftMessage: '',
     chatMessages: [],
     events: [],
     raisedHands: [],
@@ -22,6 +24,9 @@ const slice = createSlice({
     name: 'meetingChatAndReactions',
     initialState,
     reducers: {
+        setDraftMessage: (state, action: PayloadAction<string>) => {
+            state.draftMessage = action.payload;
+        },
         addChatMessages: (state, action: PayloadAction<MeetChatMessage[]>) => {
             state.chatMessages = [...state.chatMessages, ...action.payload];
         },
@@ -73,6 +78,7 @@ const slice = createSlice({
             }
         },
         resetChatAndReactions: (state) => {
+            state.draftMessage = initialState.draftMessage;
             state.chatMessages = initialState.chatMessages;
             state.events = initialState.events;
             state.raisedHands = initialState.raisedHands;
@@ -82,6 +88,7 @@ const slice = createSlice({
 });
 
 export const {
+    setDraftMessage,
     addChatMessages,
     toggleChatMessageReaction,
     addEvent,
@@ -93,6 +100,10 @@ export const {
     clearActiveReaction,
 } = slice.actions;
 
+export const selectDraftMessage = (state: MeetState) => {
+    return state.meetingChatAndReactions.draftMessage;
+};
+
 export const selectChatMessages = (state: MeetState) => {
     return state.meetingChatAndReactions.chatMessages;
 };
@@ -103,6 +114,10 @@ export const selectEvents = (state: MeetState) => {
 
 export const selectRaisedHands = (state: MeetState) => {
     return state.meetingChatAndReactions.raisedHands;
+};
+
+export const selectParticipantHasRaisedHand = (state: MeetState, identity: string): boolean => {
+    return state.meetingChatAndReactions.raisedHands.includes(identity);
 };
 
 export const selectActiveReaction = (state: MeetState, identity: string) => {
