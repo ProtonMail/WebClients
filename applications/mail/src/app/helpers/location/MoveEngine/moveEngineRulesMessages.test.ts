@@ -137,12 +137,6 @@ describe('moveEngineRulesMessages', () => {
                     LabelIDs: [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT],
                 },
                 {
-                    name: 'catRule, forums',
-                    run: messageCategoryRules,
-                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
-                    LabelIDs: [MAILBOX_LABEL_IDS.CATEGORY_FORUMS],
-                },
-                {
                     name: 'catRule, social',
                     run: messageCategoryRules,
                     destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
@@ -217,11 +211,6 @@ describe('moveEngineRulesMessages', () => {
                     name: 'catRule, default',
                     run: messageCategoryRules,
                     destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
-                },
-                {
-                    name: 'catRule, forum',
-                    run: messageCategoryRules,
-                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
                 },
                 {
                     name: 'catRule, newsletter',
@@ -330,12 +319,6 @@ describe('moveEngineRulesMessages', () => {
                     run: messageCategoryRules,
                     LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
                     destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
-                },
-                {
-                    name: 'catRule, forum',
-                    run: messageCategoryRules,
-                    LabelIDs: [MAILBOX_LABEL_IDS.ALL_DRAFTS],
-                    destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
                 },
                 {
                     name: 'catRule, newsletter',

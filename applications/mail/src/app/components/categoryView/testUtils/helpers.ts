@@ -8,7 +8,6 @@ export const mockActiveCategoriesData = [
     MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
     MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
     MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
-    MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
 ]
     .map(getCategoryData)
     .map((data) => ({ ...data, display: true, notify: true }));
@@ -57,14 +56,6 @@ export const mockCategoriesStore = [
     {
         ID: MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
         Name: 'Update',
-        Color: '#FFF',
-        Type: LABEL_TYPE.SYSTEM_FOLDER,
-        Order: 1,
-        Path: '',
-    },
-    {
-        ID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
-        Name: 'Forum',
         Color: '#FFF',
         Type: LABEL_TYPE.SYSTEM_FOLDER,
         Order: 1,
