@@ -11,7 +11,7 @@ export class LatestEventIdProvider {
      * @param treeEventScopeId - The unique identifier for the tree event scope
      * @returns The latestEventId for the scope, or null if no event ID has been saved
      */
-    getLatestEventId(treeEventScopeId: string): string | null {
+    async getLatestEventId(treeEventScopeId: string): Promise<string | null> {
         return this.eventIdMap.get(treeEventScopeId) ?? null;
     }
 
@@ -21,7 +21,7 @@ export class LatestEventIdProvider {
      * @param treeEventScopeId - The unique identifier for the tree event scope
      * @param eventId - The event ID to save as the latest for this scope
      */
-    saveLatestEventId(treeEventScopeId: string, eventId: string): void {
+    async saveLatestEventId(treeEventScopeId: string, eventId: string): Promise<void> {
         this.eventIdMap.set(treeEventScopeId, eventId);
     }
 
@@ -30,7 +30,7 @@ export class LatestEventIdProvider {
      *
      * @param treeEventScopeId - The unique identifier for the tree event scope to remove
      */
-    removeEventScope(treeEventScopeId: string): void {
+    async removeEventScope(treeEventScopeId: string): Promise<void> {
         this.eventIdMap.delete(treeEventScopeId);
     }
 }
