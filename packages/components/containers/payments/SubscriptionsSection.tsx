@@ -37,7 +37,12 @@ import {
     isUpcomingSubscriptionUnpaid,
     subscriptionExpires,
 } from '@proton/payments';
-import { isReferralTrial, shouldHaveUpcomingSubscription } from '@proton/payments/core/subscription/helpers';
+import {
+    isAddonDowngrade,
+    isReferralTrial,
+    isSameCycle,
+    shouldHaveUpcomingSubscription,
+} from '@proton/payments/core/subscription/helpers';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -45,6 +50,7 @@ import noop from '@proton/utils/noop';
 import type { BadgeType } from '../../components/badge/Badge';
 import { default as Badge } from '../../components/badge/Badge';
 import { getSubscriptionManagerName } from './subscription/InAppPurchaseModal';
+import { isSamePlan } from './subscription/helpers/isSamePlanCheckout';
 
 interface SubscriptionRowProps {
     subscription: Subscription;
@@ -138,6 +144,23 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
                 renewAmount: upcoming.Amount || upcoming.BaseRenewAmount,
                 renewCurrency: upcoming.Currency,
                 renewCycle: upcoming.Cycle,
+            };
+        }
+
+        // For a same plan same cycle renewal (which is enabled by a coupon)
+        // we want to display the BaseRenewAmount so the user does not expect to be charged the RenewAmount,
+        // which represents the discounted price.
+        // However if it is a full discount, we want to display a renewAmount of 0
+        if (
+            isSamePlan(latestSubscription, upcoming) &&
+            isSameCycle(latestSubscription, upcoming) &&
+            !isAddonDowngrade(latestSubscription, upcoming) &&
+            latestSubscription.RenewAmount !== 0
+        ) {
+            return {
+                renewAmount: latestSubscription.BaseRenewAmount,
+                renewCurrency: latestSubscription.Currency,
+                renewCycle: latestSubscription.RenewCycle,
             };
         }
 
