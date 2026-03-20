@@ -153,9 +153,6 @@
       "Attention required": [
         "Diperlukan perhatian"
       ],
-      "Authenticate": [
-        "Autentikasi"
-      ],
       "Auto-delete spam and trash": [
         "Hapus otomatis spam dan sampah"
       ],
@@ -194,9 +191,6 @@
       ],
       "Carbon Copy": [
         "Tembusan"
-      ],
-      "Change email": [
-        "Ubah email"
       ],
       "Change password": [
         "Ubah kata sandi"
@@ -585,9 +579,6 @@
       "Font": [
         "Fon"
       ],
-      "Forgot password?": [
-        "Lupa kata sandi?"
-      ],
       "Formalize": [
         "Formalkan"
       ],
@@ -813,6 +804,9 @@
       "Make it friendly": [
         "Buat lebih ramah"
       ],
+      "Manage addresses": [
+        "Kelola alamat"
+      ],
       "Manage advanced account protections": [
         "Kelola perlindungan akun lanjutan"
       ],
@@ -1013,6 +1007,9 @@
       ],
       "Open navigation": [
         "Buka navigasi"
+      ],
+      "Or use a different Gmail address": [
+        "Atau gunakan alamat Gmail yang berbeda"
       ],
       "Ordered list": [
         "Daftar numerik"
@@ -1308,6 +1305,9 @@
       "Set up a custom domain": [
         "Atur domain khusus"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "Siapkan penerusan otomatis dari Gmail"
+      ],
       "Set up email forwarding": [
         "Siapkan penerusan email"
       ],
@@ -1578,17 +1578,14 @@
       "Use a different payment method": [
         "Gunakan metode pembayaran lainnya"
       ],
-      "Use authentication code": [
-        "Gunakan kode autentikasi"
-      ],
       "Use for sending": [
         "Gunakan untuk pengiriman"
       ],
-      "Use recovery code": [
-        "Gunakan kode pemulihan"
-      ],
       "Use this": [
         "Gunakan ini"
+      ],
+      "Use this Gmail address": [
+        "Gunakan alamat Gmail in"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Gunakan mouse Anda untuk mengatur ukuran layar. Apabila Anda menggunakan keyboard, Anda juga dapat menggunakan tombol panah kiri dan panah kanan untuk mengatur ukuran layar."
@@ -4190,6 +4187,14 @@
         "Bagikan manfaat paket Anda dengan ${ BRAND_NAME } Duo."
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Untuk meneruskan email dari hingga ${ MAX_SYNC_PAID_USER } akun, tingkatkan ke ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Anda meneruskan alamat dari ${ MAX_SYNC_FREE_USER } akun eksternal ke ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Kolom teks bersifat opsional. Informasi yang Anda sediakan pada kolom ini hanya akan terlihat pada faktur yang diterbitkan ke depannya tanpa memengaruhi faktur yang telah ada."
@@ -5376,16 +5381,6 @@
         "Kecepatan secepat kilat"
       ]
     },
-    "fido2: Info": {
-      "Security key": [
-        "Kunci keamanan"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Kunci keamanan"
-      ]
-    },
     "file size format": {
       "byte": [
         "byte"
@@ -5620,9 +5615,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "Aplikasi ${ MAIL_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } di App Store"
       ],
@@ -5635,15 +5627,6 @@
       "${ remainingDaysCount } day left": [
         "${ remainingDaysCount } hari tersisa"
       ],
-      "account logins": [
-        "login akun"
-      ],
-      "Auto-forward Gmail": [
-        "Penerusan otomatis Gmail"
-      ],
-      "auto-forwarding": [
-        "penerusan otomatis"
-      ],
       "Block email communications from scammers permanently.": [
         "Blokir komunikasi email dari para penipu secara permanen."
       ],
@@ -5653,12 +5636,6 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Selamat karena telah menjadikan email Anda lebih aman, nyaman, dan relevan! Kami telah meningkatkan ruang penyimpanan gratis Anda ke 1 GB."
       ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Ubah ${ strongText } ke alamat ${ BRAND_NAME } Anda"
-      ],
-      "Changed accounts": [
-        "Akun yang diubah"
-      ],
       "Checklist complete": [
         "Ceklis selesai"
       ],
@@ -5667,9 +5644,6 @@
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Selesaikan ceklis ini dalam ${ daysCount } hari untuk menggandakan penyimpanan Anda secara gratis."
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Cari tahu bagaimana ${ strongText } kami bekerja melindungi Anda"
       ],
       "Discover privacy features": [
         "Telusuri berbagai fitur privasi kami"
@@ -5683,17 +5657,8 @@
       "For your eyes only": [
         "Khusus untuk Anda"
       ],
-      "Get more storage": [
-        "Dapatkan lebih banyak penyimpanan"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Dapatkan aplikasi seluler ${ MAIL_APP_NAME }"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Dapatkan ${ strongText } di Android dan iOS"
-      ],
-      "Get the App": [
-        "Dapatkan Aplikasinya"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Terus gunakan ${ MAIL_APP_NAME } untuk menelusuri lebih banyak cara bagaimana ${ BRAND_NAME } melindungi privasi Anda dan menyederhanakan pengiriman email."
@@ -5701,20 +5666,8 @@
       "Learn more": [
         "Pelajari lebih lanjut"
       ],
-      "Nice! You've updated all services in this category.": [
-        "Mantap! Anda telah memperbarui seluruh layanan dalam kategori ini."
-      ],
-      "Popular online services": [
-        "Layanan daring populer"
-      ],
-      "privacy features": [
-        "fitur privasi"
-      ],
       "Protection from trackers": [
         "Perlindungan dari pelacak"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Siapkan ${ strongText } dari Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "Masuk ke aplikasi seluler untuk menuntaskan langkah ini"
@@ -5727,9 +5680,6 @@
       ],
       "This feature is currently unavailable": [
         "Fitur saat ini belum tersedia"
-      ],
-      "Update your logins": [
-        "Perbarui login Anda"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Dengan perangkat seluler Anda, pindai kode QR ini atau kunjungi toko aplikasi iOS atau Android."
@@ -6943,20 +6893,11 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Pastikan komunikasi yang sepenuhnya privat dan terenkripsi. Klaim alamat email ${ BRAND_NAME } gratis Anda sekarang juga."
       ],
-      "Enter the code from your authenticator app": [
-        "Masukkan kode yang tertera pada aplikasi autentikator Anda"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Masukkan kredensial akun email yang ingin Anda impor."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Masukkan kata sandi Anda (selaku admin organisasi)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Masukkan kata sandi Anda (selaku kontak tepercaya)"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Perkiraan waktu yang tersisa: ${ estimatedMinutes } menit"
@@ -8440,6 +8381,9 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Anda menulis “${ attachmentsFoundKeyword }”, namun Anda tidak melampirkan file apa pun. Apakah Anda yakin tetap ingin mengirim pesan ini?"
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Anda telah mengaktifkan penerusan di ${ MAX_SYNC_PAID_USER } alamat Gmail. Untuk menambahkan yang lain, nonaktifkan salah satunya terlebih dahulu."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Anda telah mencapai batas jumlah alamat dalam grup kontak:"
       ],
@@ -8911,9 +8855,6 @@
       ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
-      ],
-      "Authenticator app": [
-        "Aplikasi autentikator"
       ],
       "Automated confirmations and alerts": [
         "Konfirmasi dan peringatan otomatis"
@@ -9598,12 +9539,6 @@
       ],
       "Your location": [
         "Lokasi Anda"
-      ],
-      "Your password (admin)": [
-        "Kata sandi Anda (admin)"
-      ],
-      "Your password (trusted contact)": [
-        "Kata sandi Anda (kontak tepercaya)"
       ],
       "ZIP code": [
         "Kode pos"
@@ -11386,23 +11321,8 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
-        "Ubah alamat email yang Anda gunakan untuk berbagai layanan populer sekarang juga untuk mencegah diri Anda agar tidak dilacak dan diprofil. ${ learnMoreLink }"
-      ],
-      "Finance": [
-        "Keuangan"
-      ],
       "Maybe later": [
         "Mungkin nanti"
-      ],
-      "Privacy for all your online accounts": [
-        "Privasi untuk seluruh akun daring Anda"
-      ],
-      "Shopping": [
-        "Belanja"
-      ],
-      "Social media": [
-        "Media sosial"
       ]
     },
     "Onboarding modal": {
@@ -11601,40 +11521,6 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Anda dapat menggunakan ${ planTitle } secara gratis hingga masa uji coba Anda berakhir."
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Memiliki akun pada salah satu layanan di bawah ini? Cukup klik layanan yang Anda gunakan untuk mengubah alamat email yang terdaftar ke alamat ${ MAIL_APP_NAME } Anda."
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "Perbankan"
-      ],
-      "Crypto": [
-        "Kripto"
-      ],
-      "E-commerce and Retail": [
-        "E-commerce dan Ritel"
-      ],
-      "Entertainment": [
-        "Hiburan"
-      ],
-      "Food and beverage": [
-        "Makanan dan minuman"
-      ],
-      "Gaming": [
-        "Game"
-      ],
-      "Most popular": [
-        "Terpopuler"
-      ],
-      "Travel": [
-        "Wisata"
-      ],
-      "Utilities": [
-        "Utilitas"
       ]
     },
     "Option": {
@@ -12422,11 +12308,6 @@
         "Tinjau keamanan akun"
       ]
     },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "Entri masuk tidak berhasil dirampungkan."
-      ]
-    },
     "Search - no results": {
       "No messages found": [
         "Tidak ada pesan yang ditemukan"
@@ -13099,17 +12980,6 @@
       ],
       "Your pm.me email is active": [
         "Email pm.me Anda aktif"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "Masuk"
-      ],
-      "Sign in to your organization": [
-        "Masuk ke organisasi Anda"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Anda akan diarahkan ke penyedia SSO pihak ketiga Anda."
       ]
     },
     "State": {
@@ -14294,8 +14164,14 @@
       "Confirm recipient address?": [
         "Konfirmasi alamat penerima?"
       ],
+      "Connect a Gmail address": [
+        "Hubungkan alamat Gmail"
+      ],
       "Connect apps and devices": [
         "Hubungkan aplkasi dan perangkat"
+      ],
+      "Connect more addresses": [
+        "Hubungkan lebih banyak alamat"
       ],
       "Connect to video conferencing": [
         "Hubungkan ke konferensi video"
@@ -14468,9 +14344,6 @@
       "Enhance security with 2FA": [
         "Tingkatkan keamanan dengan 2FA"
       ],
-      "Enter your password": [
-        "Masukkan kata sandi Anda"
-      ],
       "Error": [
         "Kesalahan"
       ],
@@ -14591,6 +14464,9 @@
       "Label options": [
         "Opsi label"
       ],
+      "Limit reached": [
+        "Batas tercapai"
+      ],
       "Link confirmation": [
         "Konfirmasi tautan"
       ],
@@ -14692,6 +14568,9 @@
       ],
       "Moving a snoozed message": [
         "Memindahkan pesan yang ditunda"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Banyak akun, 1 kotak masuk privat"
       ],
       "Need more aliases?": [
         "Butuh lebih banyak alias?"
@@ -14842,6 +14721,9 @@
       ],
       "Referral": [
         "Rujukan"
+      ],
+      "Remove forwarding address": [
+        "Hapus alamat penerusan"
       ],
       "Remove from list?": [
         "Hapus dari daftar?"
@@ -15016,9 +14898,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Aktifkan ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Two-factor authentication": [
-        "Autentikasi dua faktor"
       ],
       "Unsubscribe": [
         "Berhenti berlangganan"

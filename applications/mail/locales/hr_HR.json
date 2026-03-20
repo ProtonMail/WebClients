@@ -110,9 +110,6 @@
       "Attachment": [
         "Prilog"
       ],
-      "Authenticate": [
-        "Autenticiraj"
-      ],
       "Back": [
         "Natrag"
       ],
@@ -142,9 +139,6 @@
       ],
       "Carbon Copy": [
         "Kopija"
-      ],
-      "Change email": [
-        "Promijeni adresu e-pošte"
       ],
       "Change password": [
         "Promjena lozinke"
@@ -447,9 +441,6 @@
       "Font": [
         "Font"
       ],
-      "Forgot password?": [
-        "Zaboravili ste lozinku?"
-      ],
       "Forward as attachment": [
         "Proslijedi kao privitak"
       ],
@@ -610,6 +601,9 @@
       ],
       "Loading${ ellipsis }": [
         "Učitavanje${ ellipsis }"
+      ],
+      "Manage addresses": [
+        "Upravljanje adresama"
       ],
       "Manage folders": [
         "Upravljanje mapama"
@@ -1013,6 +1007,9 @@
       "Set recovery phrase": [
         "Postavite frazu za oporavak"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "Postavite automatsko prosljeđivanje iz Gmaila"
+      ],
       "Settings": [
         "Postavke"
       ],
@@ -1199,14 +1196,8 @@
       "Use a different payment method": [
         "Koristite drugi način plaćanja"
       ],
-      "Use authentication code": [
-        "Upotrijebite autentifikacijski kôd"
-      ],
       "Use for sending": [
         "Koristi za slanje"
-      ],
-      "Use recovery code": [
-        "Koristi kȏd za oporavak"
       ],
       "Verify": [
         "Potvrdi"
@@ -3104,6 +3095,13 @@
         "Podijelite svoju pretplatu"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Za preusmjeravanje e-pošte s do ${ MAX_SYNC_PAID_USER } računa, nadogradite na paket ${ planName }.",
+        "Za preusmjeravanje e-pošte s do ${ MAX_SYNC_PAID_USER } računa, nadogradite na paket ${ planName }.",
+        "Za preusmjeravanje e-pošte s do ${ MAX_SYNC_PAID_USER } računa, nadogradite na paket ${ planName }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Tekstualna polja su neobavezna. Informacije koje date u ovom obrascu će se prikazivati isključivo na računima izdanima u budućnosti i neće utjecati na postojeće račune."
@@ -3742,16 +3740,6 @@
         "Neograničen broj hide-my-email pseudonima"
       ]
     },
-    "fido2: Info": {
-      "Security key": [
-        "Sigurnosni ključ"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Sigurnosni ključ"
-      ]
-    },
     "file size format": {
       "byte": [
         "bajt",
@@ -3986,9 +3974,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME } aplikacija"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } na App Storeu"
       ],
@@ -4011,23 +3996,11 @@
       "Finish setup": [
         "Završi postavljanje"
       ],
-      "Get more storage": [
-        "Nabavite više pohrane"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Nabavite ${ MAIL_APP_NAME } mobilnu aplikaciju"
       ],
-      "Get the App": [
-        "Preuzmite aplikaciju"
-      ],
       "Learn more": [
         "Više informacija"
-      ],
-      "Popular online services": [
-        "Popularne internetske usluge"
-      ],
-      "privacy features": [
-        "značajke privatnosti"
       ]
     },
     "Gmail forwarding": {
@@ -6032,9 +6005,6 @@
       "Attach screenshot(s)": [
         "Priložite snimku(e) zaslona"
       ],
-      "Authenticator app": [
-        "Aplikacija autentifikatora"
-      ],
       "BCC": [
         "Skrivena kopija"
       ],
@@ -6550,9 +6520,6 @@
       ],
       "Your location": [
         "Vaša lokacija"
-      ],
-      "Your password (admin)": [
-        "Vaša lozinka (administrator)"
       ],
       "ZIP code": [
         "Poštanski broj"
@@ -7544,14 +7511,8 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Finance": [
-        "Financije"
-      ],
       "Maybe later": [
         "Možda kasnije"
-      ],
-      "Social media": [
-        "Društveni mediji"
       ]
     },
     "Onboarding modal": {
@@ -7633,32 +7594,6 @@
       ],
       "help center": [
         "centar za pomoć"
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "Financije"
-      ],
-      "Crypto": [
-        "Kripto"
-      ],
-      "Entertainment": [
-        "Zabava"
-      ],
-      "Food and beverage": [
-        "Hrana i piće"
-      ],
-      "Gaming": [
-        "Igre"
-      ],
-      "Most popular": [
-        "Najpopularnije"
-      ],
-      "Travel": [
-        "Putovanja"
-      ],
-      "Utilities": [
-        "Alati"
       ]
     },
     "Option": {
@@ -8527,17 +8462,6 @@
         "Zakaži slanje"
       ]
     },
-    "sso": {
-      "Sign in": [
-        "Prijavi se"
-      ],
-      "Sign in to your organization": [
-        "Prijavite se u vašu organizaciju"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Bit ćete preusmjereni na svog vanjskog pružatelja SSO usluga."
-      ]
-    },
     "Status": {
       "Alias disabled": [
         "Pseudonim onemogućen"
@@ -9315,6 +9239,9 @@
       "Confirm recipient address?": [
         "Potvrdite adresu primatelja?"
       ],
+      "Connect more addresses": [
+        "Povežite više adresa"
+      ],
       "Contact Details": [
         "Detalji o kontaktu"
       ],
@@ -9448,9 +9375,6 @@
       "Enable 2FA": [
         "Omogući 2FA"
       ],
-      "Enter your password": [
-        "Unesite lozinku"
-      ],
       "Error": [
         "Pogreška"
       ],
@@ -9516,6 +9440,9 @@
       ],
       "Label options": [
         "Opcije oznaka"
+      ],
+      "Limit reached": [
+        "Ograničenje je dosegnuto"
       ],
       "Link confirmation": [
         "Potvrda poveznice"
@@ -9845,9 +9772,6 @@
       ],
       "Trust public key?": [
         "Vjeruj javnom ključu?"
-      ],
-      "Two-factor authentication": [
-        "Dvofaktorska autentikacija"
       ],
       "Unsubscribe": [
         "Otkaži pretplatu"

@@ -38,6 +38,12 @@
       "Delete": [
         "Supprimer"
       ],
+      "Enable diagnostic logs": [
+        "Activer les journaux de diagnostic"
+      ],
+      "Enable diagnostic logs from the Chromium engine.": [
+        "Activer les journaux de diagnostic du moteur Chromium."
+      ],
       "Force Reload": [
         "Forcer le rechargement"
       ],
@@ -77,6 +83,9 @@
       "Restart and profile now": [
         "Redémarrer et analyser maintenant"
       ],
+      "Restart with logging": [
+        "Redémarrer avec la journalisation"
+      ],
       "Select All": [
         "Tout sélectionner"
       ],
@@ -97,6 +106,9 @@
       ],
       "Stop Speaking": [
         "Arrêter de parler"
+      ],
+      "These logs help us diagnose issues. The app will restart to apply the change.": [
+        "Ces journaux nous aident à diagnostiquer les problèmes. L'application va redémarrer pour appliquer la modification."
       ],
       "This will measure how long the app takes to start and save a report to your logs folder.": [
         "Cela mesurera le temps nécessaire au démarrage de l'application et enregistrera un rapport dans votre dossier de journals/logs."

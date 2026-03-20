@@ -154,9 +154,6 @@
       "Attention required": [
         "საჭიროა ყურადღება"
       ],
-      "Authenticate": [
-        "ავთენტიკაცია"
-      ],
       "Auto-delete spam and trash": [
         "სპამისა და ნაგვის ყუთის ავტოწაშლა"
       ],
@@ -195,9 +192,6 @@
       ],
       "Carbon Copy": [
         "ასლი"
-      ],
-      "Change email": [
-        "ელფოსტის შეცვლა"
       ],
       "Change password": [
         "პაროლის შეცვლა"
@@ -588,9 +582,6 @@
       "Font": [
         "ფონტი"
       ],
-      "Forgot password?": [
-        "დაგავიწყდათ პაროლი?"
-      ],
       "Formalize": [
         "ფორმალიზება"
       ],
@@ -823,6 +814,9 @@
       "Make it friendly": [
         "გახადეთ მეგობრული"
       ],
+      "Manage addresses": [
+        "მისამართების მართვა"
+      ],
       "Manage advanced account protections": [
         "ანგარიშის დამატებითი დაცვის მართვა"
       ],
@@ -1023,6 +1017,9 @@
       ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
+      ],
+      "Or use a different Gmail address": [
+        "ან გამოიყენეთ სხვა Gmail-ის მისამართი"
       ],
       "Ordered list": [
         "დალაგებული სია"
@@ -1318,6 +1315,9 @@
       "Set up a custom domain": [
         "მომხმარებლის დომენის მორგება"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "Gmail-დან ავტოგადაგზავნის მორგება"
+      ],
       "Set up email forwarding": [
         "ელფოსტის გადაგზავნის მორგება"
       ],
@@ -1585,17 +1585,14 @@
       "Use a different payment method": [
         "განსხვავებული გადახდის მეთოდის გამოყენება"
       ],
-      "Use authentication code": [
-        "ავთენტიკაციის კოდის გამოყენება"
-      ],
       "Use for sending": [
         "გასაგზავნად გამოყენება"
       ],
-      "Use recovery code": [
-        "აღდგენის კოდის გამოყენება"
-      ],
       "Use this": [
         "ამის გამოყენება"
+      ],
+      "Use this Gmail address": [
+        "ამ Gmail-ის მისამართის გამოყენება"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "ზომის შესაცვლელად გამოიყენეთ თაგუნა. კლავიატურით იმავეს მიღწევა მარცხნივ და მარჯვნივ ისრებით შეგიძლიათ."
@@ -4270,6 +4267,16 @@
         "გააზიარეთ თქვენი სატარიფო გეგმის უპირატესობები ${ BRAND_NAME } Duo-ისთან ერთად"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "ელფოსტების გადასაგზავნად ${ MAX_SYNC_PAID_USER }-მდე ანგარიშიდან, ასწიეთ სატარიფო გეგმა ${ planName }-ზე.",
+        "ელფოსტების გადასაგზავნად ${ MAX_SYNC_PAID_USER }-მდე ანგარიშიდან, ასწიეთ სატარიფო გეგმა ${ planName }-ზე."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "თქვენ აგზავნით ელფოსტებს ${ MAX_SYNC_FREE_USER } გარე ანგარიშიდან ${ MAIL_APP_NAME }-ზე.",
+        "თქვენ აგზავნით ელფოსტებს ${ MAX_SYNC_FREE_USER } გარე ანგარიშიდან ${ MAIL_APP_NAME }-ზე."
+      ]
+    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } გაუქმდა."
@@ -5472,16 +5479,6 @@
         "ჩქაროსნული კავშირი"
       ]
     },
-    "fido2: Info": {
-      "Security key": [
-        "უსაფრთხოების გასაღები"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "უსაფრთხოების გასაღები"
-      ]
-    },
     "file size format": {
       "byte": [
         "ბაიტი",
@@ -5722,9 +5719,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME } აპი"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME }-ი App Store-ში"
       ],
@@ -5739,15 +5733,6 @@
         "დარჩენილია ${ remainingDaysCount } დღე",
         "დარჩენილია ${ remainingDaysCount } დღე"
       ],
-      "account logins": [
-        "ანგარიშის შესვლის დეტალები"
-      ],
-      "Auto-forward Gmail": [
-        "Gmail-ის ავტომატური გადაგზავნა"
-      ],
-      "auto-forwarding": [
-        "ავტომატურად გადაგზავნა"
-      ],
       "Block email communications from scammers permanently.": [
         "სამუდამოდ დაბლოკეთ ელფოსტით კომუნიკაცია სკამერებისგან."
       ],
@@ -5757,12 +5742,6 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "თქვენი ელფოსტის კიდევ უფრო დაცული, თქვენთვის შესაბამისი და მორგებული სახით მიღებისთვის ტაშს მისახურებთ! თქვენი საცავი 1 გბ-მდე ავწიეთ."
       ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "შეცვალეთ ${ strongText } თქვენს ${ BRAND_NAME }-ის მისამართზე"
-      ],
-      "Changed accounts": [
-        "შეცვლილი ანგარიშები"
-      ],
       "Checklist complete": [
         "საკონტროლო სია დასრულდა"
       ],
@@ -5771,9 +5750,6 @@
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "დაასრულეთ ეს საკონტროლო სია ${ daysCount } დღეში და გაიორმაგეთ საცავი უფასოდ."
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "აღმოაჩინეთ, როგორ გიცავთ ჩვენი ${ strongText }"
       ],
       "Discover privacy features": [
         "აღმოაჩინეთ კონფიდენციალობის ფუნქციები"
@@ -5787,17 +5763,8 @@
       "For your eyes only": [
         "მხოლოდ, თქვენს დასანახად"
       ],
-      "Get more storage": [
-        "მიიღეთ მეტი საცავი"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "გადმოწერეთ ${ MAIL_APP_NAME }-ის მობილური აპლიკაცია"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "დააყენეთ ${ strongText } Android-ზე ან iOS-ზე"
-      ],
-      "Get the App": [
-        "გადმოიწერეთ აპი"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "გააგრძელეთ ${ MAIL_APP_NAME }-ის გამოყენება და აღმოაჩინეთ მეტი გზა, როგორ იცავს ${ BRAND_NAME } თქვენს კონფიდენციალობას და ამარტივებს ელფოსტით ურთიერთობას."
@@ -5805,20 +5772,8 @@
       "Learn more": [
         "გაიგეთ მეტი"
       ],
-      "Nice! You've updated all services in this category.": [
-        "ძალიან კარგი! ჩვენ ამ კატეგორიაში ყველა სერვისი განვაახლეთ."
-      ],
-      "Popular online services": [
-        "პოპულარული ონლაინ-სერვისები"
-      ],
-      "privacy features": [
-        "კონფიდენციალობის ფუნქციები"
-      ],
       "Protection from trackers": [
         "ტრეკერებისგან დაცვა"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "მოირგეთ ${ strongText }-ი Gmail-დან"
       ],
       "Sign in to the mobile app to complete this step": [
         "ამ ნაბიჯის დასასრულებლად შედით მობილურ აპში"
@@ -5831,9 +5786,6 @@
       ],
       "This feature is currently unavailable": [
         "ეს ფუნქცია ამჟამად მიუწვდომელია"
-      ],
-      "Update your logins": [
-        "განაახლეთ თქვენი შესვლის დეტალები"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "თქვენი მობილურ მოწყობილობით დაასკანერეთ ეს QR კოდი ან iOS-ის ან Android-ის მაღაზიას ეწვიეთ."
@@ -7085,20 +7037,11 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "უზრუნველყავით სრულად პირადი და დაშიფრული კომუნიკაცია. მოითხოვეთ თქვენი უფასო ${ BRAND_NAME } ელფოსტის მისამართი ახლავე."
       ],
-      "Enter the code from your authenticator app": [
-        "შეიყვანეთ კოდი თქვენი ავთენტიკატორი აპიდან"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "შეიყვანეთ ელფოსტის მომხმარებელი და პაროლი, საიდანაც შემოტანას აპირებთ."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "შეიყვანეთ ${ destinationText }-ზე გამოგზავნილი შემოწმების კოდი."
-      ],
-      "Enter your own password (as organization admin).": [
-        "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც სანდო კონტაქტმა)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "მიახლოებითი დარჩენილი დრო: ${ estimatedMinutes } წთ",
@@ -9041,9 +8984,6 @@
       "Attach screenshot(s)": [
         "ეკრანის ანაბეჭდ(ებ)-ის მიბმა"
       ],
-      "Authenticator app": [
-        "ავთენტიკატორი აპი"
-      ],
       "Automated confirmations and alerts": [
         "ავტომატიზებული დადასტურება და განგაშები"
       ],
@@ -9733,12 +9673,6 @@
       ],
       "Your location": [
         "თქვენი მდებარეობა"
-      ],
-      "Your password (admin)": [
-        "თქვენი პაროლი (admin)"
-      ],
-      "Your password (trusted contact)": [
-        "თქვენი პაროლი (სანდო კონტაქტი)"
       ],
       "ZIP code": [
         "საფოსტო კოდი"
@@ -11562,23 +11496,8 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
-        "შეცვალეთ თქვენი პოპულარული სერვისების ელფოსტის მისამართი ახლავე, რათა თავიდან აიცილოთ თვალთვალი და პროფილების შექმნა. ${ learnMoreLink }"
-      ],
-      "Finance": [
-        "ფინანსები"
-      ],
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
-      ],
-      "Privacy for all your online accounts": [
-        "კონფიდენციალობა ყველა თქვენი ინტერნეტ-ანგარიშებისთვის"
-      ],
-      "Shopping": [
-        "შოპინგი"
-      ],
-      "Social media": [
-        "სოციალური მედია"
       ]
     },
     "Onboarding modal": {
@@ -11777,40 +11696,6 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "${ planTitle }-ის გამოყენებას შეძლებთ საცდელი პერიოდის დასრულებამდე, უფასოდ."
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "გაქვთ ამ სერვისებიდან ერთ-ერთის ანგარიში? უბრალოდ, დააწკაპუნეთ, რომ ელფოსტის მისამართი თქვენს ${ MAIL_APP_NAME }-ის მისამართზე შეცვალოთ."
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "საბანკო საქმიანობა"
-      ],
-      "Crypto": [
-        "კრიპტო"
-      ],
-      "E-commerce and Retail": [
-        "ელკომერცია და საცალო"
-      ],
-      "Entertainment": [
-        "გართობა"
-      ],
-      "Food and beverage": [
-        "კვება და სასმელი"
-      ],
-      "Gaming": [
-        "თამაშები"
-      ],
-      "Most popular": [
-        "ყველაზე პოპულარული"
-      ],
-      "Travel": [
-        "მოგზაურობა"
-      ],
-      "Utilities": [
-        "ხელსაწყოები"
       ]
     },
     "Option": {
@@ -12587,11 +12472,6 @@
         "ანგარიშის უსაფრთხოების გადახედვა"
       ]
     },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "შესვლა წარმატებით არ დასრულდა."
-      ]
-    },
     "Search - no results": {
       "An action is being processed": [
         "მიმდინარეობს მოთხოვნის დამუშავება"
@@ -13293,17 +13173,6 @@
       ],
       "Your pm.me email is active": [
         "თქვენი pm.me ელფოსტა აქტიურია"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "შესვლა"
-      ],
-      "Sign in to your organization": [
-        "შედით თქვენს ორგანიზაციაში"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "ახლა გადაგამისამართებთ თქვენს SSO პროვაიდერზე."
       ]
     },
     "State": {
@@ -14544,8 +14413,14 @@
       "Confirm recipient address?": [
         "დავადასტურო მიმღების მისამართი?"
       ],
+      "Connect a Gmail address": [
+        "Gmail-ის მისამართთან დაკავშირება"
+      ],
       "Connect apps and devices": [
         "აპებისა და მოწყობილობების დაკავშირება"
+      ],
+      "Connect more addresses": [
+        "მეტი მისამართის დაკავშირება"
       ],
       "Connect to video conferencing": [
         "დაკავსირება ვიდეოკონფერენციასთან"
@@ -14726,9 +14601,6 @@
       "Enhance security with 2FA": [
         "გააფართოვეთ უსაფრთხოება 2FA-ით"
       ],
-      "Enter your password": [
-        "შეიყვანეთ თქვენი პაროლი"
-      ],
       "Error": [
         "შეცდომა"
       ],
@@ -14850,6 +14722,9 @@
       "Label options": [
         "ჭდის მორგება"
       ],
+      "Limit reached": [
+        "მიაღწიეთ ლიმიტს"
+      ],
       "Link confirmation": [
         "ბმულის დადასტურება"
       ],
@@ -14951,6 +14826,9 @@
       ],
       "Moving a snoozed message": [
         "დროებით დადუმებული შეტყობინების გადატანა"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "ერთზე მეტი ანგარიში, 1 პირადი საფოსტო ყუთი"
       ],
       "Need more aliases?": [
         "მეტი ფსევდონიმი გჭირდებათ?"
@@ -15101,6 +14979,9 @@
       ],
       "Referral": [
         "რეფერალი"
+      ],
+      "Remove forwarding address": [
+        "გადაგზავნის მისამართის წაშლა"
       ],
       "Remove from list?": [
         "წავშალო სიიდან?"
@@ -15282,9 +15163,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
-      ],
-      "Two-factor authentication": [
-        "2FA"
       ],
       "Unsubscribe": [
         "გამოწერის გაუქმება"

@@ -2167,6 +2167,12 @@
       "To use your personal meeting room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
         "Para usar sua sala de reunião pessoal, **crie uma conta ${ BRAND_NAME } gratuita**. Você retornará ao ${ MEET_APP_NAME } automaticamente."
       ],
+      "Today — ${ absoluteDate }": [
+        "Hoje — ${ absoluteDate }"
+      ],
+      "Tomorrow — ${ absoluteDate }": [
+        "Amanhã — ${ absoluteDate }"
+      ],
       "Turn off camera": [
         "Desativar câmera"
       ],
@@ -2211,6 +2217,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "Deseja receber um novo código de verificação?"
+      ],
+      "Yesterday — ${ absoluteDate }": [
+        "Ontem — ${ absoluteDate }"
       ],
       "You are almost there": [
         "Você está quase lá"
@@ -2897,8 +2906,14 @@
       "Background blur is not supported on your browser": [
         "O desfoque de fundo não é compatível com seu navegador"
       ],
+      "Generate a new meeting link. The current link will stop working.": [
+        "Gere um novo link de reunião. O link atual deixará de funcionar."
+      ],
       "Recurring meeting": [
         "Reunião recorrente"
+      ],
+      "You can generate a new meeting link once per day.": [
+        "Você pode gerar um novo link de reunião uma vez por dia."
       ]
     },
     "Validation": {

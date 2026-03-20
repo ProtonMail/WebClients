@@ -156,9 +156,6 @@
       "Attention required": [
         "Патрабуецца ўвага"
       ],
-      "Authenticate": [
-        "Аўтэнтыфікацыя"
-      ],
       "Auto-delete spam and trash": [
         "Аўтавыдаленне спаму і смецця"
       ],
@@ -197,9 +194,6 @@
       ],
       "Carbon Copy": [
         "Копія"
-      ],
-      "Change email": [
-        "Змяніць электронную пошту"
       ],
       "Change password": [
         "Змяніць пароль"
@@ -594,9 +588,6 @@
       "Font": [
         "Шрыфт"
       ],
-      "Forgot password?": [
-        "Забылі пароль?"
-      ],
       "Formalize": [
         "Фармалізаваць"
       ],
@@ -831,6 +822,9 @@
       "Make it friendly": [
         "Зрабіць прыязным"
       ],
+      "Manage addresses": [
+        "Кіраванне адрасамі"
+      ],
       "Manage advanced account protections": [
         "Кіраваць пашыранай абаронай уліковага запісу"
       ],
@@ -1031,6 +1025,9 @@
       ],
       "Open navigation": [
         "Адкрыць панэль навігацыі"
+      ],
+      "Or use a different Gmail address": [
+        "Ці скарыстайцеся іншым адрасам Gmail"
       ],
       "Ordered list": [
         "Упарадкаваны спіс"
@@ -1326,6 +1323,9 @@
       "Set up a custom domain": [
         "Наладзіць карыстальніцкі дамен"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "Наладзьце аўтаперасылку з Gmail"
+      ],
       "Set up email forwarding": [
         "Наладзіць перасылку лістоў"
       ],
@@ -1596,17 +1596,14 @@
       "Use a different payment method": [
         "Скарыстацца іншым спосабам аплаты"
       ],
-      "Use authentication code": [
-        "Выкарыстаць код аўтэнтыфікацыі"
-      ],
       "Use for sending": [
         "Выкарыстоўваць для адпраўкі"
       ],
-      "Use recovery code": [
-        "Выкарыстаць код аднаўлення"
-      ],
       "Use this": [
         "Выкарыстоўваць гэта"
+      ],
+      "Use this Gmail address": [
+        "Выкарыстоўваць гэты адрас Gmail"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Выкарыстоўвайце мышку, каб змяніць памер акна прагляду. Калі выкарыстоўваеце клавіятуру, то можаце змяняць памер стрэлкамі ўлева/управа."
@@ -4379,6 +4376,20 @@
         "Абагульвайце свае перавагі тарыфнага плана з ${ BRAND_NAME } Duo"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковы запіс.",
+        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковыя запісы.",
+        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковых запісаў.",
+        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковых запісаў."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешняга ўліковага запісу ў ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Тэкставыя палі з'яўляюцца неабавязковымі. Звесткі, якія вы падалі ў гэтай форме, з'явяцца толькі ў выстаўленых рахунках у будучым і гэта не акажа ўплыў на бягучыя рахункі."
@@ -5649,24 +5660,6 @@
         "Звышвысокія хуткасці"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Нешта пайшло не так з аўтэнтыфікацыяй ключа бяспекі. Паспрабуйце яшчэ раз."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Устаўце ключ бяспекі, які звязаны з вашым уліковым запісам ${ BRAND_NAME }."
-      ],
-      "Security key": [
-        "Ключ бяспекі"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Ключ бяспекі"
-      ]
-    },
     "file size format": {
       "byte": [
         "байт",
@@ -5919,9 +5912,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "Праграма ${ MAIL_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } у App Store"
       ],
@@ -5940,15 +5930,6 @@
         "Засталося ${ remainingDaysCount } дзён",
         "Засталося ${ remainingDaysCount } дзён"
       ],
-      "account logins": [
-        "запіс уваходу ўліковага запісу"
-      ],
-      "Auto-forward Gmail": [
-        "Аўтаперасылка з Gmail"
-      ],
-      "auto-forwarding": [
-        "аўтаперасылку"
-      ],
       "Block email communications from scammers permanently.": [
         "Цалкам блакіруйце электронныя лісты ад ашуканцаў."
       ],
@@ -5958,12 +5939,6 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Цудоўна, што робіце сваю электронную пошту яшчэ больш бяспечнай, зручнай, і актуальнай! Мы павялічылі аб'ём вашага бясплатнага месца ў сховішчы да 1 ГБ."
       ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Змяніце ${ strongText } на свой адрас ${ BRAND_NAME }"
-      ],
-      "Changed accounts": [
-        "Зменены ўліковы запіс"
-      ],
       "Checklist complete": [
         "Кантрольны спіс завершаны"
       ],
@@ -5972,9 +5947,6 @@
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Завяршыце гэты кантрольны спіс за ${ daysCount }, каб падвоіць сваё сховішча бясплатна."
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Даведайцеся, як нашы ${ strongText } абараняюць вас"
       ],
       "Discover privacy features": [
         "Пазнаёмцеся з функцыямі прыватнасці"
@@ -5988,17 +5960,8 @@
       "For your eyes only": [
         "Толькі для вашых вачэй"
       ],
-      "Get more storage": [
-        "Атрымайце больш месца ў сховішчы"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Атрымаць мабільную праграму ${ MAIL_APP_NAME }"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Атрымайце ${ strongText } на Android або iOS"
-      ],
-      "Get the App": [
-        "Атрымаць праграму"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Працягвайце выкарыстоўваць ${ MAIL_APP_NAME }, каб даведацца больш спосабаў, як з дапамогай ${ BRAND_NAME } абараніць сваю прыватнасць і спрасціць адпраўку лістоў."
@@ -6006,20 +5969,8 @@
       "Learn more": [
         "Даведацца больш"
       ],
-      "Nice! You've updated all services in this category.": [
-        "Цудоўна! Вы абнавілі ўсе сэрвісы ў гэтай катэгорыі."
-      ],
-      "Popular online services": [
-        "Папулярныя сеткавыя сэрвісы"
-      ],
-      "privacy features": [
-        "функцыі прыватнасці"
-      ],
       "Protection from trackers": [
         "Абарона ад праграм сачэння"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Наладзьце ${ strongText } з Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "Увайдзіце ў мабільную праграму, каб завяршыць гэты крок"
@@ -6032,9 +5983,6 @@
       ],
       "This feature is currently unavailable": [
         "Гэта функцыя ў цяперашні час недаступна"
-      ],
-      "Update your logins": [
-        "Абнавіце вашы запісы ўваходу"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Выкарыстоўваючы мабільную прыладу, адсканіруйце гэты QR-код або наведайце краму iOS або Android."
@@ -6489,6 +6437,9 @@
     "Import provider": {
       "Advanced import": [
         "Пашыраны імпарт"
+      ],
+      "Import from ${ providerName }": [
+        "Імпартаваць з ${ providerName }"
       ]
     },
     "Import warning": {
@@ -7397,9 +7348,6 @@
       "Duplicate key updated": [
         "Дублікат ключа абноўлены"
       ],
-      "Each code can only be used once": [
-        "Кожны код можа выкарыстоўвацца толькі адзін раз"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Без намаганняў кіруйце і скасоўвайце падпіску ад інфармацыйнай рассылкі, а таксама на спіс рассылкі."
       ],
@@ -7460,23 +7408,11 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Забяспечце цалкам прыватную і зашыфраваную сувязь. Атрымайце бясплатны адрас электроннай пошты ${ BRAND_NAME }."
       ],
-      "Enter the code from your authenticator app": [
-        "Увядзіце код з вашай праграмы аўтэнтыфікацыі"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Увядзіце ўліковыя даныя ад электроннай пошты з якой вы хочаце імпартаваць даныя."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Увядзіце код спраўджання, які быў адпраўлены на ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Увядзіце код спраўджання. Лічба ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Увядзіце свой пароль (адміністратара арганізацыі)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Увядзіце свой пароль (як давераны кантакт)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Прыблізна засталося часу: ${ estimatedMinutes } хвіліна",
@@ -8861,9 +8797,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Калі вы ўключылі давераныя ключы для ${ senderName }, то гэтыя адкрытыя ключы былі дададзены да кантактных звестак."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Пры наладжванні двухфактарнай аўтэнтыфікацыі, вы будзеце забяспечаны кодамі аднаўлення, якія зможаце выкарыстаць для ўваходу пры страце доступу да праграмы аўтэнтыфікацыі."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Выкарыстоўвайце псеўданімы замест свайго адраса электроннай пошты пры падпісцы на рассылку. Ваша ідэнтычнасць застанецца схаванай, а псеўданім вы можаце адключыць у любы момант."
       ],
@@ -9073,6 +9006,12 @@
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцы ў памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцаў у памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцаў у памеры ${ renewAmountStr }. Скасаваць можна ў любы час."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Вы ўключылі перасылку на ${ MAX_SYNC_PAID_USER } адрас Gmail. Спачатку адключыце які-небудзь з адрасоў, каб дадаць яшчэ адзін.",
+        "Вы ўключылі перасылку на ${ MAX_SYNC_PAID_USER } адрасы Gmail. Спачатку адключыце які-небудзь з адрасоў, каб дадаць яшчэ адзін.",
+        "Вы ўключылі перасылку на ${ MAX_SYNC_PAID_USER } адрасоў Gmail. Спачатку адключыце які-небудзь з адрасоў, каб дадаць яшчэ адзін.",
+        "Вы ўключылі перасылку на ${ MAX_SYNC_PAID_USER } адрасоў Gmail. Спачатку адключыце які-небудзь з адрасоў, каб дадаць яшчэ адзін."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Вы дасягнулі максімальнай колькасці адрасоў у групе кантактаў:"
@@ -9584,9 +9523,6 @@
       ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
-      ],
-      "Authenticator app": [
-        "Праграма аўтэнтыфікацыі"
       ],
       "Automated confirmations and alerts": [
         "Аўтаматычныя пацвярджэнні і абвесткі"
@@ -10280,12 +10216,6 @@
       ],
       "Your location": [
         "Ваша месцазнаходжанне"
-      ],
-      "Your password (admin)": [
-        "Ваш пароль (admin)"
-      ],
-      "Your password (trusted contact)": [
-        "Ваш пароль (давераны кантакт)"
       ],
       "ZIP code": [
         "Паштовы індэкс"
@@ -12203,23 +12133,8 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
-        "Змяніце свой адрас электроннай пошты для папулярных сэрвісаў, каб пазбегнуць адсочвання і прафілявання. ${ learnMoreLink }"
-      ],
-      "Finance": [
-        "Фінансы"
-      ],
       "Maybe later": [
         "Магчыма пазней"
-      ],
-      "Privacy for all your online accounts": [
-        "Прыватнасць для ўсіх вашых уліковых запісаў у інтэрнэце"
-      ],
-      "Shopping": [
-        "Пакупкі"
-      ],
-      "Social media": [
-        "Сацыяльныя сеткі"
       ]
     },
     "Onboarding modal": {
@@ -12418,40 +12333,6 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "У вас будзе магчымасць карыстацца ${ planTitle } бясплатна да канца пробнага перыяду."
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "У вас ужо ёсць уліковы запіс у адным з гэтых сэрвісаў? Проста націсніце, каб змяніць адрас электроннай пошты на адрас ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "Банкаўскае абслугоўванне"
-      ],
-      "Crypto": [
-        "Крыпта"
-      ],
-      "E-commerce and Retail": [
-        "Электронная камерцыя і рознічны продаж"
-      ],
-      "Entertainment": [
-        "Забавы"
-      ],
-      "Food and beverage": [
-        "Ежа і напоі"
-      ],
-      "Gaming": [
-        "Гульні"
-      ],
-      "Most popular": [
-        "Найбольш папулярныя"
-      ],
-      "Travel": [
-        "Падарожжы"
-      ],
-      "Utilities": [
-        "Утыліты"
       ]
     },
     "Option": {
@@ -13349,11 +13230,6 @@
         "Агляд бяспекі ўліковага запісу"
       ]
     },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "Рэгістрацыя завяршылася з памылкай."
-      ]
-    },
     "Search - no results": {
       "An action is being processed": [
         "Дзеянне апрацоўваецца"
@@ -14112,17 +13988,6 @@
       ],
       "Your pm.me email is active": [
         "Ваш адрас pm.me актыўны"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "Уваход"
-      ],
-      "Sign in to your organization": [
-        "Увайсці ў сваю арганізацыю"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO."
       ]
     },
     "State": {
@@ -15481,8 +15346,14 @@
       "Confirm recipient address?": [
         "Пацвердзіць адрас атрымальніка?"
       ],
+      "Connect a Gmail address": [
+        "Падключэнне адраса Gmail"
+      ],
       "Connect apps and devices": [
         "Падключэнне праграм і прылад"
+      ],
+      "Connect more addresses": [
+        "Падключыць больш адрасоў"
       ],
       "Connect to video conferencing": [
         "Падключыцца да відэаканферэнцыі"
@@ -15673,9 +15544,6 @@
       "Enhance security with 2FA": [
         "Паляпшэнне бяспекі з дапамогай 2ФА"
       ],
-      "Enter your password": [
-        "Увядзіце свой пароль"
-      ],
       "Error": [
         "Памылка"
       ],
@@ -15805,6 +15673,9 @@
       "Label options": [
         "Параметры меткі"
       ],
+      "Limit reached": [
+        "Дасягнута абмежаванне"
+      ],
       "Link confirmation": [
         "Пацвярджэнне спасылкі"
       ],
@@ -15906,6 +15777,9 @@
       ],
       "Moving a snoozed message": [
         "Перамяшчэнне адкладзенага паведамлення"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Некалькі ўліковых запісаў і 1 прыватная паштовая скрыня"
       ],
       "Need more aliases?": [
         "Патрабуецца больш псеўданімаў?"
@@ -16056,6 +15930,9 @@
       ],
       "Referral": [
         "Рэферал"
+      ],
+      "Remove forwarding address": [
+        "Выдаліць адрас перасылкі"
       ],
       "Remove from list?": [
         "Выдаліць са спіса?"
@@ -16242,9 +16119,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Уключэнне ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Two-factor authentication": [
-        "Двухфактарная аўтэнтыфікацыя"
       ],
       "Unsubscribe": [
         "Адпісацца"
