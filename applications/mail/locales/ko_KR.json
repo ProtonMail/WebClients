@@ -153,9 +153,6 @@
       "Attention required": [
         "주의 필요"
       ],
-      "Authenticate": [
-        "인증"
-      ],
       "Auto-delete spam and trash": [
         "스팸 및 휴지통 자동 삭제"
       ],
@@ -194,9 +191,6 @@
       ],
       "Carbon Copy": [
         "참조"
-      ],
-      "Change email": [
-        "이메일 변경"
       ],
       "Change password": [
         "비밀번호 변경"
@@ -585,9 +579,6 @@
       "Font": [
         "글꼴"
       ],
-      "Forgot password?": [
-        "비밀번호를 잊어버리셨나요?"
-      ],
       "Formalize": [
         "형식화"
       ],
@@ -819,6 +810,9 @@
       "Make it friendly": [
         "친근하게 만들기"
       ],
+      "Manage addresses": [
+        "주소 관리"
+      ],
       "Manage advanced account protections": [
         "향상된 계정 보호 관리"
       ],
@@ -1019,6 +1013,9 @@
       ],
       "Open navigation": [
         "탐색 열기"
+      ],
+      "Or use a different Gmail address": [
+        "또는 다른 Gmail 주소를 사용하세요"
       ],
       "Ordered list": [
         "번호순 목록"
@@ -1314,6 +1311,9 @@
       "Set up a custom domain": [
         "커스텀 도메인 설정"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "Gmail에서 자동 가져오기 설정"
+      ],
       "Set up email forwarding": [
         "이메일 가져오기 설정"
       ],
@@ -1584,17 +1584,14 @@
       "Use a different payment method": [
         "다른 결제 수단 사용하기"
       ],
-      "Use authentication code": [
-        "인증 코드 사용"
-      ],
       "Use for sending": [
         "발신에 사용"
       ],
-      "Use recovery code": [
-        "복구 코드 사용"
-      ],
       "Use this": [
         "사용하기"
+      ],
+      "Use this Gmail address": [
+        "이 Gmail 주소 사용"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "마우스를 이용해 크기를 조절합니다. 마우스 대신 키보드의 왼쪽, 오른쪽 방향키를 이용하여 조절할 수 있습니다."
@@ -4301,6 +4298,14 @@
         "${ BRAND_NAME } Duo로 플랜 혜택을 함께 누려보세요"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "최대 ${ MAX_SYNC_PAID_USER }개의 계정에서 이메일을 전달하려면, ${ planName }(으)로 업그레이드하세요."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "${ MAX_SYNC_FREE_USER }개의 외부 계정에서 ${ MAIL_APP_NAME }(으)로 이메일을 전달하는 중입니다."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "입력란은 선택 사항입니다. 이 양식에 작성되는 정보는 향후 발행되는 청구서에만 표시되며 기존 청구서에는 영향을 미치지 않습니다."
@@ -5526,24 +5531,6 @@
         "초고속 속도"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입해 주세요."
-      ],
-      "Security key": [
-        "보안 키"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "보안 키"
-      ]
-    },
     "file size format": {
       "byte": [
         "바이트"
@@ -5778,9 +5765,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME } 앱"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "App Store에서 ${ MAIL_APP_NAME } 받기"
       ],
@@ -5793,15 +5777,6 @@
       "${ remainingDaysCount } day left": [
         "${ remainingDaysCount }일 남음"
       ],
-      "account logins": [
-        "계정 로그인"
-      ],
-      "Auto-forward Gmail": [
-        "Gmail 자동 포워딩"
-      ],
-      "auto-forwarding": [
-        "자동 포워딩"
-      ],
       "Block email communications from scammers permanently.": [
         "사기꾼으로부터의 이메일의 수발신을 영구적으로 차단합니다."
       ],
@@ -5811,12 +5786,6 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "이메일을 더욱 안전하고 편리하며 관련성 있게 만들어냈다니 대단합니다! 무료 저장공간을 총 1GB로 늘려드렸습니다."
       ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "${ BRAND_NAME } 주소에 ${ strongText } 변경"
-      ],
-      "Changed accounts": [
-        "계정 전환됨"
-      ],
       "Checklist complete": [
         "체크 리스트 완료"
       ],
@@ -5825,9 +5794,6 @@
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "스토리지를 두 배로 늘리려면 ${ daysCount }일 내에 이 체크리스트를 완료하세요."
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "${ strongText }이 회원님을 보호하는 방법을 알아보기"
       ],
       "Discover privacy features": [
         "개인정보 관련 기능 알아보기"
@@ -5841,17 +5807,8 @@
       "For your eyes only": [
         "눈으로만 보기"
       ],
-      "Get more storage": [
-        "더 많은 저장공간 확보하기"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "${ MAIL_APP_NAME } 모바일 앱을 다운로드 하세요"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "${ strongText } 을(를) Android 및 iOS에서 다운로드 하세요."
-      ],
-      "Get the App": [
-        "앱 다운로드"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "${ MAIL_APP_NAME }을 계속 사용해서 ${ BRAND_NAME }이 개인정보를 보호하고 이메일을 간단하게 만드는 방식을 더 알아보세요."
@@ -5859,20 +5816,8 @@
       "Learn more": [
         "더 알아보기"
       ],
-      "Nice! You've updated all services in this category.": [
-        "좋아요! 이 카테고리의 모든 서비스를 업데이트했습니다."
-      ],
-      "Popular online services": [
-        "인기 있는 온라인 서비스"
-      ],
-      "privacy features": [
-        "개인정보 보호 기능"
-      ],
       "Protection from trackers": [
         "트래커로부터 보호"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Gmail에서 ${ strongText } 설정"
       ],
       "Sign in to the mobile app to complete this step": [
         "앱에 로그인하여 이 단계를 완료하세요."
@@ -5885,9 +5830,6 @@
       ],
       "This feature is currently unavailable": [
         "이 기능을 현재 사용할 수 없습니다."
-      ],
-      "Update your logins": [
-        "로그인 업데이트"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "모바일 디바이스를 사용하려면, 이 QR코드를 스캔하거나 iOS나 Android 스토어를 방문하세요."
@@ -6318,6 +6260,9 @@
     "Import provider": {
       "Advanced import": [
         "고급 가져오기"
+      ],
+      "Import from ${ providerName }": [
+        "${ providerName }(에)서 불러오기"
       ]
     },
     "Import warning": {
@@ -7055,9 +7000,6 @@
       "Duplicate key updated": [
         "중복 키 업데이트됨"
       ],
-      "Each code can only be used once": [
-        "각 코드는 한 번씩만 유효합니다."
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "간편하게 뉴스레터 및 메일링 리스트를 관리 및 구독 취소할 수 있어요."
       ],
@@ -7115,23 +7057,11 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "완전히 개인적이고 암호화된 통신을 보장합니다. 지금 무료 ${ BRAND_NAME } 이메일 주소를 받아보세요."
       ],
-      "Enter the code from your authenticator app": [
-        "인증 앱에서 코드를 입력하세요."
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "가져오기를 원하는 이메일 계정의 계정 정보를 입력하세요."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText }(으)로 인증 코드가 전송되었습니다."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "인증 코드를 입력하세요. ${ digit }자입니다."
-      ],
-      "Enter your own password (as organization admin).": [
-        "사용자의 비밀번호 입력 (조직 관리자와 같음)"
-      ],
-      "Enter your own password (as trusted contact).": [
-        "사용자 고유의 비밀번호 입력 (신뢰할 수 있는 연락처로서)"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "남은 예상 시간: ${ estimatedMinutes }분"
@@ -8471,9 +8401,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName }에 인증 키를 활성화하면, 공개 키가 연락처 상세 정보에 생성됩니다."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2단계 인증을 설정하면, 인증 앱에 접근할 수 없을때 로그인시 사용할 수 있는 복구 코드를 제공해 드립니다."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "뉴스래터를 신청할 때, 내 실제 이메일 주소 대신 별칭을 사용해 보세요. 별칭을 언제든 비활성화하고 신원은 비공개로 유지할 수 있답니다."
       ],
@@ -8638,6 +8565,9 @@
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "매 ${ renewCycle }개월마다 ${ renewAmountStr }(으)로 청구됩니다. 언제든지 취소할 수 있습니다."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "${ MAX_SYNC_PAID_USER } Gmail 주소에 대한 전달이 활성화됨. 다른 전달을 추가하려면 먼저 그 중 하나를 비활성화하십시오."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "이 연락처 그룹의 최대 주소 개수에 도달했습니다:"
@@ -9119,9 +9049,6 @@
       ],
       "Attach screenshot(s)": [
         "스크린샷 첨부"
-      ],
-      "Authenticator app": [
-        "인증 앱"
       ],
       "Automated confirmations and alerts": [
         "자동화된 확인 및 알림"
@@ -9815,12 +9742,6 @@
       ],
       "Your location": [
         "나의 위치"
-      ],
-      "Your password (admin)": [
-        "사용자의 비밀번호 (관리자)"
-      ],
-      "Your password (trusted contact)": [
-        "사용자 비밀번호 (신뢰할 수 있는 연락처)"
       ],
       "ZIP code": [
         "우편번호"
@@ -11621,23 +11542,8 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
-        "추적 및 프로파일링을 피하기 위해 지금 인기 있는 서비스 계정의 이메일 주소를 변경하세요. ${ learnMoreLink }"
-      ],
-      "Finance": [
-        "금융"
-      ],
       "Maybe later": [
         "나중에"
-      ],
-      "Privacy for all your online accounts": [
-        "나의 모든 온라인 계정을 위한 프라이버시"
-      ],
-      "Shopping": [
-        "쇼핑"
-      ],
-      "Social media": [
-        "소셜 미디어"
       ]
     },
     "Onboarding modal": {
@@ -11836,40 +11742,6 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "무료 체험 기간 종료 전까지 ${ planTitle }을(를) 무료로 계속 사용 가능합니다."
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "이들 서비스 중 하나의 계정을 가지고 계신가요? 한 번의 클릭만으로 이메일 주소를 ${ MAIL_APP_NAME } 주소로 변경하세요."
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "뱅킹"
-      ],
-      "Crypto": [
-        "암호화폐"
-      ],
-      "E-commerce and Retail": [
-        "이커머스 및 리테일"
-      ],
-      "Entertainment": [
-        "엔터테인먼트"
-      ],
-      "Food and beverage": [
-        "식음료"
-      ],
-      "Gaming": [
-        "게이밍"
-      ],
-      "Most popular": [
-        "인기 항목"
-      ],
-      "Travel": [
-        "여행"
-      ],
-      "Utilities": [
-        "유틸리티"
       ]
     },
     "Option": {
@@ -12812,11 +12684,6 @@
         "내 계정 보안 검토하기"
       ]
     },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "로그인이 성공적으로 완료되지 못했습니다."
-      ]
-    },
     "Search - no results": {
       "An action is being processed": [
         "작업이 처리 중입니다"
@@ -13512,17 +13379,6 @@
       ],
       "Your pm.me email is active": [
         "pm.me 이메일이 활성 상태입니다"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "로그인"
-      ],
-      "Sign in to your organization": [
-        "조직에 로그인"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "서드 파티 SSO 제공자로 리다이렉트됩니다."
       ]
     },
     "State": {
@@ -14713,8 +14569,14 @@
       "Confirm recipient address?": [
         "수신자의 주소를 확인할까요?"
       ],
+      "Connect a Gmail address": [
+        "Gmail 주소 연결"
+      ],
       "Connect apps and devices": [
         "앱 및 장치 연결하기"
+      ],
+      "Connect more addresses": [
+        "더 많은 주소 연결"
       ],
       "Connect to video conferencing": [
         "화상 회의에 연결하기"
@@ -14890,9 +14752,6 @@
       "Enhance security with 2FA": [
         "2단계 인증으로 보안 강화시키기"
       ],
-      "Enter your password": [
-        "비밀번호를 입력하세요"
-      ],
       "Error": [
         "오류"
       ],
@@ -15016,6 +14875,9 @@
       "Label options": [
         "라벨 옵션"
       ],
+      "Limit reached": [
+        "제한 도달"
+      ],
       "Link confirmation": [
         "링크 확인"
       ],
@@ -15117,6 +14979,9 @@
       ],
       "Moving a snoozed message": [
         "방해 금지 메시지 이동"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "여러 계정, 하나의 받은 편지함"
       ],
       "Need more aliases?": [
         "별칭이 더 필요하신가요?"
@@ -15267,6 +15132,9 @@
       ],
       "Referral": [
         "추천"
+      ],
+      "Remove forwarding address": [
+        "포워딩 주소 삭제"
       ],
       "Remove from list?": [
         "목록으로 부터 제거하시겠습니까?"
@@ -15450,9 +15318,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 켜기"
-      ],
-      "Two-factor authentication": [
-        "2단계 인증"
       ],
       "Unsubscribe": [
         "구독 취소"

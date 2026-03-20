@@ -153,9 +153,6 @@
       "Attention required": [
         "需要关注"
       ],
-      "Authenticate": [
-        "身份验证"
-      ],
       "Auto-delete spam and trash": [
         "自动清理垃圾邮件和回收站"
       ],
@@ -194,9 +191,6 @@
       ],
       "Carbon Copy": [
         "抄送"
-      ],
-      "Change email": [
-        "更换邮箱"
       ],
       "Change password": [
         "更改密码"
@@ -585,9 +579,6 @@
       "Font": [
         "字体"
       ],
-      "Forgot password?": [
-        "忘记密码？"
-      ],
       "Formalize": [
         "正式化"
       ],
@@ -819,6 +810,9 @@
       "Make it friendly": [
         "使它变得友好"
       ],
+      "Manage addresses": [
+        "管理邮箱地址"
+      ],
       "Manage advanced account protections": [
         "管理高级账户保护"
       ],
@@ -1019,6 +1013,9 @@
       ],
       "Open navigation": [
         "打开导航栏"
+      ],
+      "Or use a different Gmail address": [
+        "或使用其他 Gmail 地址"
       ],
       "Ordered list": [
         "标号列表"
@@ -1314,6 +1311,9 @@
       "Set up a custom domain": [
         "设置自定义域名"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "设置从 Gmail 自动转发邮件"
+      ],
       "Set up email forwarding": [
         "设置邮件转发"
       ],
@@ -1584,17 +1584,14 @@
       "Use a different payment method": [
         "使用其他方式支付"
       ],
-      "Use authentication code": [
-        "使用验证码"
-      ],
       "Use for sending": [
         "用于发送邮件"
       ],
-      "Use recovery code": [
-        "使用恢复码"
-      ],
       "Use this": [
         "确定使用"
+      ],
+      "Use this Gmail address": [
+        "使用此 Gmail 地址"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "使用鼠标调整视图大小，若是键盘用户可使用左右箭头键来调整大小。"
@@ -4301,6 +4298,14 @@
         "使用 ${ BRAND_NAME } Duo 分享您的套餐"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "要转发来自最多 ${ MAX_SYNC_PAID_USER } 个账户的邮件，请升级至 ${ planName } 计划。"
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "您正在将来自${ MAX_SYNC_FREE_USER }个外部账户的电子邮件转发至${ MAIL_APP_NAME }。"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "文本字段可选。您在本表中提供的信息只会出现在今后开具的发票上，不会影响现有发票。"
@@ -5526,24 +5531,6 @@
         "闪电般的速度"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "使用安全密钥认证时出现问题，请重试。"
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "插入与您的 ${ BRAND_NAME } 账户关联的安全密钥。"
-      ],
-      "Security key": [
-        "安全密钥"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "安全密钥"
-      ]
-    },
     "file size format": {
       "byte": [
         "B"
@@ -5778,9 +5765,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME } 移动应用"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "App Store 上的 ${ MAIL_APP_NAME }"
       ],
@@ -5793,15 +5777,6 @@
       "${ remainingDaysCount } day left": [
         "剩余 ${ remainingDaysCount } 天"
       ],
-      "account logins": [
-        "注册邮箱"
-      ],
-      "Auto-forward Gmail": [
-        "自动转发 Gmail 邮件"
-      ],
-      "auto-forwarding": [
-        "自动转发"
-      ],
       "Block email communications from scammers permanently.": [
         "永久阻止诈骗者的电子邮件通信。"
       ],
@@ -5811,12 +5786,6 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "太好了，现在您的邮箱将更加安全、更加便捷、更加称心如意。我们已免费为您将邮箱容量升至 1 GB。"
       ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "将各类网络账号的${ strongText }改为 ${ BRAND_NAME } 地址"
-      ],
-      "Changed accounts": [
-        "更改账号"
-      ],
       "Checklist complete": [
         "清单已完成"
       ],
@@ -5825,9 +5794,6 @@
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "在 ${ daysCount } 内完成此清单，即可免费将存储空间翻倍。"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "了解我们的${ strongText }如何为您提供防护"
       ],
       "Discover privacy features": [
         "探索隐私保护功能"
@@ -5841,17 +5807,8 @@
       "For your eyes only": [
         "邮件内容密不透风"
       ],
-      "Get more storage": [
-        "获得更多存储空间"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "下载 ${ MAIL_APP_NAME } 移动应用"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "在 Android 或 iOS 系统中安装 ${ strongText }"
-      ],
-      "Get the App": [
-        "下载移动应用"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "继续使用 ${ MAIL_APP_NAME } 来发现 ${ BRAND_NAME } 保护您的隐私和简化电子邮件发送的更多方法。"
@@ -5859,20 +5816,8 @@
       "Learn more": [
         "了解详情"
       ],
-      "Nice! You've updated all services in this category.": [
-        "好的！您已更新此类别中的所有服务。"
-      ],
-      "Popular online services": [
-        "热门在线服务"
-      ],
-      "privacy features": [
-        "隐私保护功能"
-      ],
       "Protection from trackers": [
         "抵御追踪脚本"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "设置${ strongText } Gmail 邮件"
       ],
       "Sign in to the mobile app to complete this step": [
         "登录移动应用程序以完成此步骤"
@@ -5885,9 +5830,6 @@
       ],
       "This feature is currently unavailable": [
         "此功能当前不可用。"
-      ],
-      "Update your logins": [
-        "更新注册邮箱"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "使用您的移动设备扫描此二维码或访问 iOS 或 Android 商店。"
@@ -6318,6 +6260,9 @@
     "Import provider": {
       "Advanced import": [
         "高级导入"
+      ],
+      "Import from ${ providerName }": [
+        "从 ${ providerName } 导入"
       ]
     },
     "Import warning": {
@@ -7055,9 +7000,6 @@
       "Duplicate key updated": [
         "重复的密钥已更新"
       ],
-      "Each code can only be used once": [
-        "每个恢复码只能使用一次"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "轻松管理和取消订阅新闻通讯和邮件列表。"
       ],
@@ -7115,23 +7057,11 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "确保完全私密且加密的通信。立即认领您的免费 ${ BRAND_NAME } 邮箱地址。"
       ],
-      "Enter the code from your authenticator app": [
-        "请输入身份验证应用中的验证码"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "输入您要导入的邮箱账号和密码。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "输入验证码，第 ${ digit } 位。"
-      ],
-      "Enter your own password (as organization admin).": [
-        "请输入您自己的密码（作为组织管理员）。"
-      ],
-      "Enter your own password (as trusted contact).": [
-        "输入您自己的密码（作为可信联系人）"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "预计剩余时间：${ estimatedMinutes } 分钟"
@@ -8471,9 +8401,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "当您为 ${ senderName } 启用可信密钥时，公钥被添加到联系人详细信息中。"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "当您设置双因素身份验证时，我们会提供恢复码。如果您无法使用验证器，可以使用这些恢复码登录。"
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "订阅新闻通讯时，使用别名而不是您的真实邮箱地址。这样可以保护你的身份，而且你可以随时禁用该别名。"
       ],
@@ -8638,6 +8565,9 @@
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "此后每 ${ renewCycle } 个月按 ${ renewAmountStr } 收费。您可以随时取消。"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "您已经在 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址上启用了转发功能。若要添加另一个，请先禁用其中一个。"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "以下群组中的邮箱地址数量已达上限："
@@ -9119,9 +9049,6 @@
       ],
       "Attach screenshot(s)": [
         "截图"
-      ],
-      "Authenticator app": [
-        "身份验证应用"
       ],
       "Automated confirmations and alerts": [
         "自动确认和提醒"
@@ -9815,12 +9742,6 @@
       ],
       "Your location": [
         "您的位置"
-      ],
-      "Your password (admin)": [
-        "您的密码（管理员）"
-      ],
-      "Your password (trusted contact)": [
-        "您的密码（可信联系人）"
       ],
       "ZIP code": [
         "邮政编码"
@@ -11621,23 +11542,8 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
-        "立即更改您常用服务的邮箱地址，以避免被跟踪和分析。${ learnMoreLink }"
-      ],
-      "Finance": [
-        "金融"
-      ],
       "Maybe later": [
         "以后再说"
-      ],
-      "Privacy for all your online accounts": [
-        "保护您所有在线账户的隐私"
-      ],
-      "Shopping": [
-        "购物"
-      ],
-      "Social media": [
-        "社交媒体"
       ]
     },
     "Onboarding modal": {
@@ -11836,40 +11742,6 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "您将能够免费使用 ${ planTitle } 直到试用期结束。"
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "注册过下列账户？点击右侧按钮即可将注册邮箱更改为 ${ MAIL_APP_NAME }。"
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "银行"
-      ],
-      "Crypto": [
-        "加密货币"
-      ],
-      "E-commerce and Retail": [
-        "电商"
-      ],
-      "Entertainment": [
-        "娱乐"
-      ],
-      "Food and beverage": [
-        "餐饮"
-      ],
-      "Gaming": [
-        "游戏"
-      ],
-      "Most popular": [
-        "人气最高"
-      ],
-      "Travel": [
-        "旅游"
-      ],
-      "Utilities": [
-        "通信"
       ]
     },
     "Option": {
@@ -12716,11 +12588,6 @@
         "审查账户安全"
       ]
     },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "登录未成功。"
-      ]
-    },
     "Search - no results": {
       "An action is being processed": [
         "正在处理一项操作"
@@ -13416,17 +13283,6 @@
       ],
       "Your pm.me email is active": [
         "您的 pm.me 邮箱地址已激活"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "登录"
-      ],
-      "Sign in to your organization": [
-        "登录到您的组织"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "您将被重定向到您的第三方 SSO 提供商。"
       ]
     },
     "State": {
@@ -14617,8 +14473,14 @@
       "Confirm recipient address?": [
         "确认收件人地址？"
       ],
+      "Connect a Gmail address": [
+        "连接 Gmail 地址"
+      ],
       "Connect apps and devices": [
         "连接应用和设备"
+      ],
+      "Connect more addresses": [
+        "连接更多地址"
       ],
       "Connect to video conferencing": [
         "连接至视频会议"
@@ -14794,9 +14656,6 @@
       "Enhance security with 2FA": [
         "通过 2FA 增强安全性"
       ],
-      "Enter your password": [
-        "请输入您的密码"
-      ],
       "Error": [
         "失败"
       ],
@@ -14920,6 +14779,9 @@
       "Label options": [
         "标签选项"
       ],
+      "Limit reached": [
+        "数量已达上限"
+      ],
       "Link confirmation": [
         "确认打开链接"
       ],
@@ -15021,6 +14883,9 @@
       ],
       "Moving a snoozed message": [
         "移动延迟通知的邮件"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "多个账户，1 个私密收件箱"
       ],
       "Need more aliases?": [
         "需要更多别名？"
@@ -15171,6 +15036,9 @@
       ],
       "Referral": [
         "推荐"
+      ],
+      "Remove forwarding address": [
+        "移除转发地址"
       ],
       "Remove from list?": [
         "从列表中移除？"
@@ -15354,9 +15222,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Two-factor authentication": [
-        "双因素身份验证"
       ],
       "Unsubscribe": [
         "退订"

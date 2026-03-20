@@ -154,9 +154,6 @@
       "Attention required": [
         "Huomiota vaaditaan"
       ],
-      "Authenticate": [
-        "Todenna"
-      ],
       "Auto-delete spam and trash": [
         "Roskapostin ja roskakorin automaattinen tyhjennys"
       ],
@@ -195,9 +192,6 @@
       ],
       "Carbon Copy": [
         "Kopio"
-      ],
-      "Change email": [
-        "Vaihda sähköpostiosoitteesi"
       ],
       "Change password": [
         "Vaihda salasana"
@@ -588,9 +582,6 @@
       "Font": [
         "Fontti"
       ],
-      "Forgot password?": [
-        "Unohditko salasanasi?"
-      ],
       "Formalize": [
         "Virallista"
       ],
@@ -819,6 +810,9 @@
       ],
       "Make it friendly": [
         "Tee siitä ystävällisempi"
+      ],
+      "Manage addresses": [
+        "Hallitse osoitteita"
       ],
       "Manage advanced account protections": [
         "Hallitse edistynyttä tilisuojausta"
@@ -1315,6 +1309,9 @@
       "Set up a custom domain": [
         "Määritä oma verkkotunnus"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "Määritä automaattivälitys Gmailista"
+      ],
       "Set up email forwarding": [
         "Määritä sähköpostin ohjaus"
       ],
@@ -1579,17 +1576,14 @@
       "Use a different payment method": [
         "Käytä eri maksutapaa"
       ],
-      "Use authentication code": [
-        "Käytä todennuskoodia"
-      ],
       "Use for sending": [
         "Käytä lähetykseen"
       ],
-      "Use recovery code": [
-        "Käytä palautuskoodia"
-      ],
       "Use this": [
         "Käytä tätä"
+      ],
+      "Use this Gmail address": [
+        "Käytä tätä Gmail-osoitetta"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Muuta näkymän kokoa hiirellä. Jos käytät näppäimistöä, voit muuttaa kokoa vasemmalla ja oikealla nuolipainikkeella."
@@ -4216,6 +4210,16 @@
         "Jaa tilausetusi ${ BRAND_NAME } Duon kanssa"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Välittääksesi sähköposteja ${ MAX_SYNC_PAID_USER } tililtä, päivitä tilauksesi tasolle ${ planName }.",
+        "Välittääksesi sähköposteja jopa ${ MAX_SYNC_PAID_USER } tililtä, päivitä tilauksesi tasolle ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Välität sähköposteja ${ MAX_SYNC_FREE_USER } ulkoiselta tililtä ${ MAIL_APP_NAME }iin.",
+        "Välität sähköposteja ${ MAX_SYNC_FREE_USER } ulkoiselta tililtä ${ MAIL_APP_NAME }iin."
+      ]
+    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } peruttiin."
@@ -5436,16 +5440,6 @@
         "Salamannopea"
       ]
     },
-    "fido2: Info": {
-      "Security key": [
-        "Suojausavain"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Suojausavain"
-      ]
-    },
     "file size format": {
       "byte": [
         "tavu",
@@ -5686,9 +5680,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME } -sovellus"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } App Storessa"
       ],
@@ -5703,15 +5694,6 @@
         "${ remainingDaysCount } päivä jäljellä",
         "${ remainingDaysCount } päivää jäljellä"
       ],
-      "account logins": [
-        "tilin kirjautumiset"
-      ],
-      "Auto-forward Gmail": [
-        "Automaattiohjaus Gmailista"
-      ],
-      "auto-forwarding": [
-        "automaattiohjaus"
-      ],
       "Block email communications from scammers permanently.": [
         "Estä huijareiden sähköpostiviestintä pysyvästi."
       ],
@@ -5721,12 +5703,6 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Hienoa, että olet tehnyt sähköpostistasi entistä turvallisemman, kätevämmän ja merkityksellisemmän! Olemme kasvattaneet ilmaisen tallennustilasi yhteen gigatavuun."
       ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Muuta ${ strongText } ${ BRAND_NAME } -osoitteeksi"
-      ],
-      "Changed accounts": [
-        "Vaihda tiliä"
-      ],
       "Checklist complete": [
         "Tarkistuslista on valmis"
       ],
@@ -5735,9 +5711,6 @@
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Tuplaa tallennustilasi ilmaiseksi suorittamalla tämä tarkistuslista ${ daysCount } kuluessa."
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Tutustu, kuinka ${ strongText } suojaa sinua"
       ],
       "Discover privacy features": [
         "Tutustu tietosuojaominaisuuksiin"
@@ -5751,17 +5724,8 @@
       "For your eyes only": [
         "Vain sinun silmillesi"
       ],
-      "Get more storage": [
-        "Hanki lisää tallennustilaa"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Hanki ${ MAIL_APP_NAME } -mobiilisovellus"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Hanki ${ strongText } Androidille tai iOS:lle"
-      ],
-      "Get the App": [
-        "Hanki sovellus"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Jatka ${ MAIL_APP_NAME }in käyttämistä ja löydä lisää tapoja, joilla ${ BRAND_NAME } suojaa yksityisyyttäsi ja yksinkertaistaa sähköpostien lähettämistä."
@@ -5769,20 +5733,8 @@
       "Learn more": [
         "Lue lisää"
       ],
-      "Nice! You've updated all services in this category.": [
-        "Hienoa! Olet päivittänyt kaikki tämän luokan palvelut."
-      ],
-      "Popular online services": [
-        "Suosittuja verkkopalveluita"
-      ],
-      "privacy features": [
-        "Yksityisyysominaisuudet"
-      ],
       "Protection from trackers": [
         "Seurantasuojaus"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Määritä ${ strongText } Gmailista"
       ],
       "Sign in to the mobile app to complete this step": [
         "Suorita tämä vaihe kirjautumalla mobiilisovellukseen"
@@ -5795,9 +5747,6 @@
       ],
       "This feature is currently unavailable": [
         "Ominaisuus ei ole tällä hetkellä käytettävissä"
-      ],
-      "Update your logins": [
-        "Päivitä kirjautumistietosi"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Skannaa tämä QR-koodi mobiililaitteellasi tai käy iOS- tai Android-kaupassa."
@@ -6236,6 +6185,9 @@
     "Import provider": {
       "Advanced import": [
         "Edistynyt tuonti"
+      ],
+      "Import from ${ providerName }": [
+        "Tuo palvelusta ${ providerName }"
       ]
     },
     "Import warning": {
@@ -7085,17 +7037,11 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Varmistu täysin yksityisestä ja salatusta viestinnästä. Hanki ilmainen ${ BRAND_NAME } -sähköpostiosoitteesi nyt."
       ],
-      "Enter the code from your authenticator app": [
-        "Syötä koodi todennussovelluksestasi"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Syötä tuotavan tilin kirjautumistiedot."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Syötä kohteeseen ${ destinationText } lähetetty vahvistuskoodi."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Syötä oma salasanasi (organisaation ylläpitäjänä)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Arviolta ${ estimatedMinutes } minuutti jäljellä",
@@ -8614,6 +8560,10 @@
         "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }. Voit peruuttaa tilauksen milloin tahansa.",
         "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }. Voit peruuttaa milloin tahansa."
       ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Olet ottanut käyttöön edelleenlähetyksen ${ MAX_SYNC_PAID_USER } Gmail-osoitteessa. Lisätäksesi toisen, sinun on ensin poistettava jokin niistä käytöstä.",
+        "Olet ottanut käyttöön edelleenlähetyksen ${ MAX_SYNC_PAID_USER } Gmail-osoitteissa. Lisätäksesi uuden osoitteen, sinun on ensin poistettava jokin niistä käytöstä."
+      ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Olet saavuttanut yhteystietoryhmien osoitteiden enimmäismäärän:"
       ],
@@ -9089,9 +9039,6 @@
       ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
-      ],
-      "Authenticator app": [
-        "Todennussovellus"
       ],
       "Automated confirmations and alerts": [
         "Automaattiset vahvistukset ja hälytykset"
@@ -9782,9 +9729,6 @@
       ],
       "Your location": [
         "Sijaintisi"
-      ],
-      "Your password (admin)": [
-        "Salasanasi (ylläpitäjä)"
       ],
       "ZIP code": [
         "Postinumero"
@@ -11566,23 +11510,8 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
-        "Vaihda sähköpostiosoitteesi suosituissa palveluissa nyt välttääksesi seurannan ja profiloinnin. ${ learnMoreLink }"
-      ],
-      "Finance": [
-        "Talous"
-      ],
       "Maybe later": [
         "Ehkä myöhemmin"
-      ],
-      "Privacy for all your online accounts": [
-        "Yksityisyyttä kaikille verkkotileillesi"
-      ],
-      "Shopping": [
-        "Shoppailu"
-      ],
-      "Social media": [
-        "Sosiaalinen media"
       ]
     },
     "Onboarding modal": {
@@ -11754,40 +11683,6 @@
       ],
       "Your free trial has started": [
         "Ilmainen kokeilujaksosi on alkanut"
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Onko sinulla tili jossakin näistä palveluista? Klikkaa vaihtaaksesi sähköpostiosoitteeksesi ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "Pankkitoiminta"
-      ],
-      "Crypto": [
-        "Krypto"
-      ],
-      "E-commerce and Retail": [
-        "Verkkokauppa ja vähittäiskauppa"
-      ],
-      "Entertainment": [
-        "Viihde"
-      ],
-      "Food and beverage": [
-        "Ruoka ja Juoma"
-      ],
-      "Gaming": [
-        "Pelaaminen"
-      ],
-      "Most popular": [
-        "Suosituimmat"
-      ],
-      "Travel": [
-        "Matkailu"
-      ],
-      "Utilities": [
-        "Apuohjelmat"
       ]
     },
     "Option": {
@@ -12704,11 +12599,6 @@
         "Tarkista tiliturvallisuus"
       ]
     },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "Sisäänkirjautumista ei suoritettu loppuun."
-      ]
-    },
     "Search - no results": {
       "An action is being processed": [
         "Toimintoa käsitellään"
@@ -13389,17 +13279,6 @@
       ],
       "Your pm.me email is active": [
         "Sinun pm.me-osoitteesi on käytössä"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "Kirjaudu sisään"
-      ],
-      "Sign in to your organization": [
-        "Kirjaudu sisään organisaatioosi"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Sinut ohjataan kolmannen osapuolen SSO- palveluntarjoajaan."
       ]
     },
     "State": {
@@ -14640,8 +14519,14 @@
       "Confirm recipient address?": [
         "Vahvistetaanko vastaanottajan osoite?"
       ],
+      "Connect a Gmail address": [
+        "Yhdistä Gmail-osoite"
+      ],
       "Connect apps and devices": [
         "Yhdistä sovelluksia ja laitteita"
+      ],
+      "Connect more addresses": [
+        "Yhdistä lisää osoitteita"
       ],
       "Connect to video conferencing": [
         "Yhdistä videoneuvotteluun"
@@ -14822,9 +14707,6 @@
       "Enhance security with 2FA": [
         "Paranna tietoturvaa 2FA:lla"
       ],
-      "Enter your password": [
-        "Syötä salasanasi"
-      ],
       "Error": [
         "Virhe"
       ],
@@ -14951,6 +14833,9 @@
       ],
       "Label options": [
         "Tunnisteen valinnat"
+      ],
+      "Limit reached": [
+        "Raja saavutettu"
       ],
       "Link confirmation": [
         "Linkin vahvistus"
@@ -15387,9 +15272,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
-      ],
-      "Two-factor authentication": [
-        "Kaksivaiheinen tunnistautuminen"
       ],
       "Unsubscribe": [
         "Peru tilaus"

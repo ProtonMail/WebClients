@@ -154,9 +154,6 @@
       "Attention required": [
         "Oppmerksomhet kreves"
       ],
-      "Authenticate": [
-        "Autentiser"
-      ],
       "Auto-delete spam and trash": [
         "Slett automatisk søppelpost og papirkurvinnhold"
       ],
@@ -195,9 +192,6 @@
       ],
       "Carbon Copy": [
         "Kopi"
-      ],
-      "Change email": [
-        "Endre e-post"
       ],
       "Change password": [
         "Endre passord"
@@ -588,9 +582,6 @@
       "Font": [
         "Skrifttype"
       ],
-      "Forgot password?": [
-        "Glemt passord?"
-      ],
       "Formalize": [
         "Formaliser"
       ],
@@ -820,6 +811,9 @@
       "Make it friendly": [
         "Gjør det vennlig"
       ],
+      "Manage addresses": [
+        "Administrer adresser"
+      ],
       "Manage advanced account protections": [
         "Administrer avansert kontobeskyttelse"
       ],
@@ -1020,6 +1014,9 @@
       ],
       "Open navigation": [
         "Åpne navigasjonsmeny"
+      ],
+      "Or use a different Gmail address": [
+        "Eller bruk en annen Gmail-adresse"
       ],
       "Ordered list": [
         "Nummerert liste"
@@ -1315,6 +1312,9 @@
       "Set up a custom domain": [
         "Konfigurer et egendefinert domene"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "Konfigurer automatisk videresending fra Gmail"
+      ],
       "Set up email forwarding": [
         "Konfigurer videresending av e-post"
       ],
@@ -1582,17 +1582,14 @@
       "Use a different payment method": [
         "Bruk en annen betalingsmåte"
       ],
-      "Use authentication code": [
-        "Bruk autentiseringskode"
-      ],
       "Use for sending": [
         "Bruk til sending"
       ],
-      "Use recovery code": [
-        "Bruk gjenopprettingskode"
-      ],
       "Use this": [
         "Bruk dette"
+      ],
+      "Use this Gmail address": [
+        "Bruk denne Gmail-adressen"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Bruk musen for å endre størrelsen på visningen. Bruker du tastaturet, kan du bruke venstre og høyre piltast for å endre størrelsen."
@@ -4321,6 +4318,16 @@
         "Del fordelene med planen din med ${ BRAND_NAME } Duo"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "For å videresende e-poster fra opptil ${ MAX_SYNC_PAID_USER } konto, oppgrader til ${ planName }.",
+        "For å videresende e-poster fra opptil ${ MAX_SYNC_PAID_USER } kontoer, oppgrader til ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Du videresender e-poster fra ${ MAX_SYNC_FREE_USER } ekstern konto til ${ MAIL_APP_NAME }.",
+        "Du videresender e-poster fra ${ MAX_SYNC_FREE_USER } eksterne kontoer til ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Tekstfelt er valgfrie. Informasjonen du oppgir i dette skjemaet vil bare vises på fakturaer som utstedes i fremtiden og vil ikke påvirke eksisterende fakturaer."
@@ -5561,24 +5568,6 @@
         "Lynraske hastigheter"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Sett inn en sikkerhetsnøkkel som er koblet til ${ BRAND_NAME }-kontoen."
-      ],
-      "Security key": [
-        "Sikkerhetsnøkkel"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Sikkerhetsnøkkel"
-      ]
-    },
     "file size format": {
       "byte": [
         "byte",
@@ -5819,9 +5808,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME }-app"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } på App Store"
       ],
@@ -5836,15 +5822,6 @@
         "${ remainingDaysCount } dag igjen",
         "${ remainingDaysCount } dager igjen"
       ],
-      "account logins": [
-        "kontopålogginger"
-      ],
-      "Auto-forward Gmail": [
-        "Videresend Gmail automatisk"
-      ],
-      "auto-forwarding": [
-        "automatisk videresending"
-      ],
       "Block email communications from scammers permanently.": [
         "Blokkér e-postkommunikasjon fra svindlere permanent."
       ],
@@ -5854,12 +5831,6 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Bravo for å gjøre e-posten din enda sikrere, praktisk og relevant. Vi har økt den gratis lagringsplassen din til totalt 1 GB."
       ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Endre ${ strongText } til din ${ BRAND_NAME }-adresse"
-      ],
-      "Changed accounts": [
-        "Byttet kontoer"
-      ],
       "Checklist complete": [
         "Sjekkliste fullført"
       ],
@@ -5868,9 +5839,6 @@
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Fullfør denne sjekklisten innen ${ daysCount } for å doble lagringsplassen din gratis."
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Oppdag hvordan våre ${ strongText } beskytter deg"
       ],
       "Discover privacy features": [
         "Oppdag personvernfunksjoner"
@@ -5884,17 +5852,8 @@
       "For your eyes only": [
         "Kun for dine øyne"
       ],
-      "Get more storage": [
-        "Skaff deg mer lagringskapasitet"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Skaff deg ${ MAIL_APP_NAME }-mobilappen"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Skaff deg ${ strongText }-en på Android eller iOS"
-      ],
-      "Get the App": [
-        "Skaff deg appen"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Fortsett å bruke ${ MAIL_APP_NAME } for å oppdage flere måter ${ BRAND_NAME } beskytter personvernet ditt på og forenkler e-post."
@@ -5902,20 +5861,8 @@
       "Learn more": [
         "Lær mer"
       ],
-      "Nice! You've updated all services in this category.": [
-        "Flott! Du har oppdatert alle tjenestene i denne kategorien."
-      ],
-      "Popular online services": [
-        "Populære tjenester på nettet"
-      ],
-      "privacy features": [
-        "personvernfunksjoner"
-      ],
       "Protection from trackers": [
         "Beskyttelse mot sporere"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Sett opp ${ strongText } fra Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "Logg på mobilappen for å fullføre dette trinnet"
@@ -5928,9 +5875,6 @@
       ],
       "This feature is currently unavailable": [
         "Denne funksjonen er utilgjengelig for øyeblikket."
-      ],
-      "Update your logins": [
-        "Oppdater påloggingene dine"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Bruk mobilenheten din, skann denne QR-koden eller besøk iOS- eller Android-butikken."
@@ -7155,9 +7099,6 @@
       "Duplicate key updated": [
         "Duplisert nøkkel oppdatert"
       ],
-      "Each code can only be used once": [
-        "Hver kode kan bare brukes én gang"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Administrer og enkelt meld deg av nyhetsbrev og e-postlister."
       ],
@@ -7216,23 +7157,11 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Sikre fullstendig privat og kryptert kommunikasjon. Gjør krav på din gratis ${ BRAND_NAME }-e-postadresse nå."
       ],
-      "Enter the code from your authenticator app": [
-        "Skriv inn koden fra autentiseringsappen"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Angi påloggingsinformasjonen til e-postkontoen du ønskere å importere fra."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Skriv inn verifiseringskoden som ble sendt til ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Skriv inn verifiseringskode. Siffer ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Skriv inn ditt eget passord (som organisasjonsadministrator)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Skriv inn ditt eget passord (som betrodd kontakt)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Beregnet tid som gjenstår: ${ estimatedMinutes } minutt",
@@ -8586,9 +8515,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Når du aktiverte klarerte nøkler for ${ senderName }, ble de offentlige nøklene lagt til i kontaktdetaljene."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Når du registrerer deg for et nyhetsbrev, bruk et alias i stedet for e-postadressen din. Identiteten din forblir skjult, og du kan deaktivere aliaset når som helst."
       ],
@@ -8768,6 +8694,10 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Du vil da bli fakturert hver ${ renewCycle } måned for ${ renewAmountStr }. Du kan avbryte når som helst.",
         "Du vil da bli fakturert hver ${ renewCycle } måned for ${ renewAmountStr }. Du kan avbryte når som helst."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Du har aktivert videresending på ${ MAX_SYNC_PAID_USER } Gmail-adresse. For å legge til en til, må du først deaktivere en av dem.",
+        "Du har aktivert videresending på ${ MAX_SYNC_PAID_USER } Gmail-adresser. Hvis du vil legge til en til, må du først deaktivere en av dem."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Du har nådd maksimalt antall adresser i kontaktgruppen(e):"
@@ -9259,9 +9189,6 @@
       ],
       "Attach screenshot(s)": [
         "Legg ved skjermbilde(r)"
-      ],
-      "Authenticator app": [
-        "Autentiseringsapp"
       ],
       "Automated confirmations and alerts": [
         "Automatiserte bekreftelser og varsler"
@@ -9955,12 +9882,6 @@
       ],
       "Your location": [
         "Plasseringen din"
-      ],
-      "Your password (admin)": [
-        "Ditt passord (admin)"
-      ],
-      "Your password (trusted contact)": [
-        "Passordet ditt (betrodd kontakt)"
       ],
       "ZIP code": [
         "Postnummer"
@@ -11800,23 +11721,8 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
-        "Endre e-postadressen din for populære tjenester nå for å unngå sporing og profilering. ${ learnMoreLink }"
-      ],
-      "Finance": [
-        "Finans"
-      ],
       "Maybe later": [
         "Kanskje senere"
-      ],
-      "Privacy for all your online accounts": [
-        "Personvern for alle nettkontoene dine"
-      ],
-      "Shopping": [
-        "Shopping"
-      ],
-      "Social media": [
-        "Sosiale medier"
       ]
     },
     "Onboarding modal": {
@@ -12015,40 +11921,6 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Du vil kunne bruke ${ planTitle } til prøveperioden avsluttes, gratis."
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Har du en konto med noen av disse tjenestene? Bare klikk for å endre e-postadressen til ${ MAIL_APP_NAME }-adressen din."
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "Banktjenester"
-      ],
-      "Crypto": [
-        "Krypto"
-      ],
-      "E-commerce and Retail": [
-        "E-handel og detaljhandel"
-      ],
-      "Entertainment": [
-        "Underholdning"
-      ],
-      "Food and beverage": [
-        "Mat og drikke"
-      ],
-      "Gaming": [
-        "Spilling"
-      ],
-      "Most popular": [
-        "Mest populær"
-      ],
-      "Travel": [
-        "Reise"
-      ],
-      "Utilities": [
-        "Verktøy"
       ]
     },
     "Option": {
@@ -13006,11 +12878,6 @@
         "Gjennomgå kontosikkerhet"
       ]
     },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "Påloggingen ble ikke fullført."
-      ]
-    },
     "Search - no results": {
       "An action is being processed": [
         "En handling blir behandlet"
@@ -13727,17 +13594,6 @@
       ],
       "Your pm.me email is active": [
         "Din pm.me-e-post er aktiv"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "Logg på"
-      ],
-      "Sign in to your organization": [
-        "Logg på organisasjonen"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Du blir omdirigert til din tredjeparts SSO-leverandør."
       ]
     },
     "State": {
@@ -14981,8 +14837,14 @@
       "Confirm recipient address?": [
         "Bekrefte mottakeradressen?"
       ],
+      "Connect a Gmail address": [
+        "Koble til en Gmail-adresse"
+      ],
       "Connect apps and devices": [
         "Koble til apper og enheter"
+      ],
+      "Connect more addresses": [
+        "Koble til flere adresser"
       ],
       "Connect to video conferencing": [
         "Koble til videokonferanser"
@@ -15160,9 +15022,6 @@
       "Enhance security with 2FA": [
         "Forbedre sikkerheten med 2FA"
       ],
-      "Enter your password": [
-        "Skriv inn passordet"
-      ],
       "Error": [
         "Feil"
       ],
@@ -15284,6 +15143,9 @@
       "Label options": [
         "Alternativer for etikett"
       ],
+      "Limit reached": [
+        "Grense nådd"
+      ],
       "Link confirmation": [
         "Bekreftelse av kobling"
       ],
@@ -15385,6 +15247,9 @@
       ],
       "Moving a snoozed message": [
         "Flytter en slumret melding"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Flere kontoer, 1 privat innboks"
       ],
       "Need more aliases?": [
         "Trenger du flere aliaser?"
@@ -15535,6 +15400,9 @@
       ],
       "Referral": [
         "Verving"
+      ],
+      "Remove forwarding address": [
+        "Fjern videresendingsadresse"
       ],
       "Remove from list?": [
         "Fjerne fra listen?"
@@ -15716,9 +15584,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Two-factor authentication": [
-        "Tofaktorautentisering"
       ],
       "Unsubscribe": [
         "Avslutt abonnementet"
