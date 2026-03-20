@@ -33,6 +33,60 @@ export interface ExtendedAttributesMetadata {
     };
 }
 
+export interface AdditionalMetadata {
+    Location?: {
+        Latitude: number;
+        Longitude: number;
+    };
+    Camera?: {
+        CaptureTime?: string;
+        Device?: string;
+        Orientation?: number;
+        SubjectCoordinates?: {
+            Top: number;
+            Left: number;
+            Bottom: number;
+            Right: number;
+        };
+    };
+    Media?: {
+        Width?: number;
+        Height?: number;
+        Duration?: number;
+    };
+    'iOS.photos'?: {
+        ICloudID?: string;
+        ModificationTime?: string;
+    };
+}
+
+export interface ParsedAdditionalMetadata {
+    location?: {
+        latitude: number;
+        longitude: number;
+    };
+    camera?: {
+        captureTime?: string;
+        device?: string;
+        orientation?: number;
+        subjectCoordinates?: {
+            top: number;
+            left: number;
+            bottom: number;
+            right: number;
+        };
+    };
+    media?: {
+        width?: number;
+        height?: number;
+        duration?: number;
+    };
+    iosPhotos?: {
+        iCloudId?: string;
+        modificationTime?: string;
+    };
+}
+
 export interface ExtendedAttributesResult {
     metadata: ExtendedAttributesMetadata;
 }
