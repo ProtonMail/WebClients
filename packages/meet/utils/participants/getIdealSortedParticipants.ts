@@ -3,9 +3,19 @@ import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 /**
  * We get ideal order of participants without taking into account the previous order
  */
-export const getIdealSortedParticipants = (participants: (LocalParticipant | RemoteParticipant)[]): string[] => {
+export const getIdealSortedParticipants = ({
+    participants,
+    raisedHandsSet,
+}: {
+    participants: (LocalParticipant | RemoteParticipant)[];
+    raisedHandsSet: Set<string>;
+}): string[] => {
+    if (participants.length === 0) {
+        return [];
+    }
+
     const local = participants.find((p) => p.isLocal) as LocalParticipant;
-    const remotes = participants.filter((p) => !p.isLocal) as RemoteParticipant[];
+    const remotes = participants.filter((p) => !p.isLocal && !raisedHandsSet.has(p.identity)) as RemoteParticipant[];
 
     remotes.sort((a, b) => {
         // Active speakers first
@@ -32,5 +42,5 @@ export const getIdealSortedParticipants = (participants: (LocalParticipant | Rem
         return (a.joinedAt?.getTime() ?? 0) - (b.joinedAt?.getTime() ?? 0);
     });
 
-    return [local, ...remotes].filter(Boolean).map((p) => p.identity);
+    return [local?.identity, ...raisedHandsSet, ...remotes.filter(Boolean).map((p) => p.identity)];
 };
