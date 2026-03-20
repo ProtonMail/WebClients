@@ -3758,6 +3758,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Ne-dešifrirano ime"
+      ],
+      "Error reading file": [
+        "Napaka pri branju datoteke"
+      ],
+      "We were not able to load some of your shared items": [
+        "Nekaterih vaših predmetov v skupni rabi nismo mogli naložiti"
       ]
     },
     "error": {
@@ -6719,6 +6725,27 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Prav tako izgubite dostop do ${ boldPlanTitle } možnosti:"
+      ],
+      "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
+        "Datoteke ${ DOCS_APP_NAME } in ${ SHEETS_APP_NAME } ni mogoče prenesti neposredno in ne bodo vključene v ta prenos. Druge datoteke lahko prenesete s klikom na 'Nadaljuj prenos'."
+      ],
+      "In progress": [
+        "V obdelavi"
+      ],
+      "Some items failed": [
+        "Nekateri predmeti niso uspeli"
+      ],
+      "This will cancel any remaining uploads and downloads. Cancelled uploads won't be saved in ${ DRIVE_APP_NAME }.": [
+        "S tem boste preklicali vse preostale nalaganja in prenose. Preklicani prenosi ne bodo shranjeni v ${ DRIVE_APP_NAME }."
+      ],
+      "This will permanently delete the folder you uploaded.": [
+        "S tem boste trajno izbrisali mapo, ki ste jo naložili."
+      ],
+      "Upload Failed": [
+        "Nalaganje ni uspelo"
+      ],
+      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
+        "Trenutno imamo tehnične težave. Vsa dejanja, povezana z albumi, so začasno onemogočena."
       ]
     },
     "info": {
@@ -9268,6 +9295,9 @@
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavitve so bile uspešno spremenjene"
+      ],
+      "\"${ name }\" successfully copied": [
+        "\"${ name }\" je bil uspešno kopiran"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9551,6 +9581,9 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Do konca preskusnega obdobja boste lahko uporabljali ${ planTitle } brezplačno."
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Uživajte brezplačne funkcije za poslovne uporabnike do ${ trialEndsOnFormatted }."
       ]
     },
     "Option": {
@@ -9577,6 +9610,9 @@
       ],
       "Select JSON file": [
         "Izberite JSON datoteko"
+      ],
+      "Verify thumbnails": [
+        "Preveri sličice"
       ]
     },
     "Option group label": {
@@ -11146,6 +11182,9 @@
       ],
       "Your own short @pm.me email alias": [
         "Vaš kratek e-poštni vzdevek @pm.me"
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Vaša naročnina ${ planName } se izteče ${ expiryDate }, po poteku boste preusmerjeni na brezplačni paket ${ BRAND_NAME }."
       ]
     },
     "subscription reminder": {
@@ -11253,6 +11292,9 @@
       ],
       "Your videos will appear here": [
         "Vaši videoposnetki bodo prikazani tukaj"
+      ],
+      "Your favorited photos will appear here": [
+        "Vaše priljubljene fotografije bodo prikazane tukaj"
       ]
     },
     "Success": {
@@ -12509,6 +12551,9 @@
       ],
       "You’ve got 5 GB of storage": [
         "Pridobili ste pet GB prostora za shranjevanje."
+      ],
+      "Your download includes ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } files": [
+        "Vaš prenos vključuje ${ DOCS_APP_NAME } ali ${ SHEETS_APP_NAME } datoteke"
       ]
     },
     "Today icon tooltip in mini calendar": {
