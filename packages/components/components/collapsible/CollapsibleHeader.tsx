@@ -10,6 +10,10 @@ import './CollapsibleHeader.scss';
 
 interface CollapsibleHeaderOwnProps {
     /**
+     * Component to prepend to the start of the header
+     */
+    prefix?: ReactNode;
+    /**
      * Component to append to the end of the header
      */
     suffix?: ReactNode;
@@ -29,6 +33,7 @@ type CollapsibleHeaderProps<E extends ElementType> = PolymorphicPropsWithoutRef<
 const defaultElement = 'header';
 
 const CollapsibleHeader = <E extends ElementType = typeof defaultElement>({
+    prefix,
     suffix,
     disableFullWidth,
     disableContainerToggle,
@@ -66,6 +71,8 @@ const CollapsibleHeader = <E extends ElementType = typeof defaultElement>({
                 !disabled && !disableContainerToggle && 'collapsible-header--clickable'
             )}
         >
+            {prefix && <div className="flex shrink-0">{prefix}</div>}
+
             <div id={headerId} className={clsx(!disableFullWidth && 'flex-1')} data-testid="collapsible-header">
                 {children}
             </div>
