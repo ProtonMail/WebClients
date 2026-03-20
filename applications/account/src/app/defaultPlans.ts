@@ -687,7 +687,7 @@ export const cachedPlans: Plan[] = [
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'bundlebiz2025' as PLANS | ADDON_NAMES,
-        Title: 'Proton Business Premium',
+        Title: 'Workspace Premium',
         MaxDomains: 20,
         MaxAddresses: 20,
         MaxCalendars: 25,
