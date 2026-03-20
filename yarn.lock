@@ -9823,6 +9823,26 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/nav@workspace:packages/nav":
+  version: 0.0.0-use.local
+  resolution: "@proton/nav@workspace:packages/nav"
+  dependencies:
+    "@proton/icons": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
+    "@testing-library/jest-dom": "npm:^6.9.1"
+    "@vitest/coverage-v8": "npm:3.2.4"
+    "@vitest/ui": "npm:3.2.4"
+    eslint: "npm:^9.39.2"
+    jest: "npm:^30.2.0"
+    jest-environment-jsdom: "npm:^30.2.0"
+    ts-jest: "npm:^29.4.6"
+    typescript: "npm:^5.9.3"
+    vitest: "npm:^3.2.4"
+  languageName: unknown
+  linkType: soft
+
 "@proton/pack@workspace:^, @proton/pack@workspace:packages/pack":
   version: 0.0.0-use.local
   resolution: "@proton/pack@workspace:packages/pack"
