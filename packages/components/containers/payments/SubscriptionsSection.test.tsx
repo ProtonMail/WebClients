@@ -17,7 +17,9 @@ jest.mock('@proton/account/paymentMethods/hooks', () => ({
 
 describe('SubscriptionsSection', () => {
     let subscription: Subscription;
+    let yearlySub: Subscription;
     let upcoming: Subscription | null = null;
+    let upcomingYearlySub: Subscription;
 
     beforeEach(() => {
         subscription = buildSubscription(
@@ -43,6 +45,32 @@ describe('SubscriptionsSection', () => {
                 PeriodStart: 1699239558,
                 PeriodEnd: 1730861958,
                 CreateTime: 1696561195,
+            }
+        );
+
+        yearlySub = buildSubscription(
+            {
+                planName: PLANS.BUNDLE,
+                currency: 'CHF',
+                cycle: CYCLE.YEARLY,
+            },
+            {
+                PeriodStart: 1696561158,
+                PeriodEnd: 1728097158,
+                CreateTime: 1696561161,
+            }
+        );
+
+        upcomingYearlySub = buildSubscription(
+            {
+                planName: PLANS.BUNDLE,
+                currency: 'CHF',
+                cycle: CYCLE.YEARLY,
+            },
+            {
+                PeriodStart: 1728097158,
+                PeriodEnd: 1759633158,
+                CreateTime: 1728097161,
             }
         );
 
@@ -82,6 +110,21 @@ describe('SubscriptionsSection', () => {
         expect(getByTestId('planEndTimeId')).toHaveTextContent('November 6th, 2023');
     });
 
+    it('should render end date of upcoming subscription for same plan same cycle renewal', () => {
+        yearlySub.UpcomingSubscription = upcomingYearlySub;
+
+        const { getByTestId } = renderWithProviders(<SubscriptionsSection />, {
+            preloadedState: {
+                subscription: getSubscriptionState(yearlySub),
+                plans: defaultPlansState,
+            },
+        });
+
+        expect(getByTestId('planNameId')).toHaveTextContent('Proton Unlimited');
+        expect(getByTestId('subscriptionStatusId')).toHaveTextContent('Active');
+        expect(getByTestId('planEndTimeId')).toHaveTextContent('October 5th, 2025');
+    });
+
     it('should render end date of upcoming subscription', () => {
         subscription.UpcomingSubscription = upcoming;
 
@@ -116,6 +159,34 @@ describe('SubscriptionsSection', () => {
             },
         });
         expect(getByTestId('renewalNotice')).toHaveTextContent('Renews automatically at CHF 119.88, for 12 months');
+    });
+
+    it('should show renewal notice if there is upcoming subscription for same plan same cycle', () => {
+        // Mimic a 30% off coupon on the BaseRenewAmount
+        upcomingYearlySub.RenewAmount = upcomingYearlySub.BaseRenewAmount * 0.7;
+
+        yearlySub.UpcomingSubscription = upcomingYearlySub;
+        const { getByTestId } = renderWithProviders(<SubscriptionsSection />, {
+            preloadedState: {
+                subscription: getSubscriptionState(yearlySub),
+                plans: defaultPlansState,
+            },
+        });
+        expect(getByTestId('renewalNotice')).toHaveTextContent('Renews automatically at CHF 119.88, for 12 months');
+    });
+
+    it('should show renewal notice with 0 amount if there is upcoming subscription for same plan same cycle', () => {
+        // Mimic a 100% off coupon on the BaseRenewAmount
+        upcomingYearlySub.RenewAmount = 0;
+
+        yearlySub.UpcomingSubscription = upcomingYearlySub;
+        const { getByTestId } = renderWithProviders(<SubscriptionsSection />, {
+            preloadedState: {
+                subscription: getSubscriptionState(yearlySub),
+                plans: defaultPlansState,
+            },
+        });
+        expect(getByTestId('renewalNotice')).toHaveTextContent('Renews automatically at CHF 0, for 12 months');
     });
 
     it('should now show renewal notice if subscription is expiring', () => {

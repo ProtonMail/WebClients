@@ -14,3 +14,10 @@ export function isSamePlanCheckout(
     const newPlanName = getPlanNameFromIDs(planIDs);
     return currentPlanName === newPlanName;
 }
+
+export function isSamePlan(
+    subscriptionLeft: Subscription | FreeSubscription,
+    subscriptionRight: Subscription | FreeSubscription | undefined
+): boolean {
+    return getPlanName(subscriptionLeft) === getPlanName(subscriptionRight);
+}
