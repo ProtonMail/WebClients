@@ -278,6 +278,9 @@ export function useDrive() {
     };
 }
 
+export { parseAdditionalMetadata } from './modules/extendedAttributes';
+export type { AdditionalMetadata, ParsedAdditionalMetadata } from './modules/extendedAttributes';
+
 export function getDrive(): ProtonDriveClient {
     return driveSingleton;
 }
