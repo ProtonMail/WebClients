@@ -8,66 +8,66 @@ describe('LatestEventIdProvider', () => {
     });
 
     describe('getLatestEventId', () => {
-        it('should return null for non-existent scope', () => {
-            expect(provider.getLatestEventId('non-existent')).toBeNull();
+        it('should return null for non-existent scope', async () => {
+            expect(await provider.getLatestEventId('non-existent')).toBeNull();
         });
 
-        it('should return saved event ID', () => {
-            provider.saveLatestEventId('scope-1', 'event-1');
+        it('should return saved event ID', async () => {
+            await provider.saveLatestEventId('scope-1', 'event-1');
 
-            expect(provider.getLatestEventId('scope-1')).toBe('event-1');
+            expect(await provider.getLatestEventId('scope-1')).toBe('event-1');
         });
 
-        it('should return null after removing scope', () => {
-            provider.saveLatestEventId('scope-1', 'event-1');
-            provider.removeEventScope('scope-1');
+        it('should return null after removing scope', async () => {
+            await provider.saveLatestEventId('scope-1', 'event-1');
+            await provider.removeEventScope('scope-1');
 
-            expect(provider.getLatestEventId('scope-1')).toBeNull();
+            expect(await provider.getLatestEventId('scope-1')).toBeNull();
         });
     });
 
     describe('saveLatestEventId', () => {
-        it('should save event ID for new scope', () => {
-            provider.saveLatestEventId('scope-1', 'event-1');
+        it('should save event ID for new scope', async () => {
+            await provider.saveLatestEventId('scope-1', 'event-1');
 
-            expect(provider.getLatestEventId('scope-1')).toBe('event-1');
+            expect(await provider.getLatestEventId('scope-1')).toBe('event-1');
         });
 
-        it('should update existing event ID', () => {
-            provider.saveLatestEventId('scope-1', 'event-1');
-            provider.saveLatestEventId('scope-1', 'event-2');
+        it('should update existing event ID', async () => {
+            await provider.saveLatestEventId('scope-1', 'event-1');
+            await provider.saveLatestEventId('scope-1', 'event-2');
 
-            expect(provider.getLatestEventId('scope-1')).toBe('event-2');
+            expect(await provider.getLatestEventId('scope-1')).toBe('event-2');
         });
 
-        it('should handle multiple scopes independently', () => {
-            provider.saveLatestEventId('scope-1', 'event-1');
-            provider.saveLatestEventId('scope-2', 'event-2');
+        it('should handle multiple scopes independently', async () => {
+            await provider.saveLatestEventId('scope-1', 'event-1');
+            await provider.saveLatestEventId('scope-2', 'event-2');
 
-            expect(provider.getLatestEventId('scope-1')).toBe('event-1');
-            expect(provider.getLatestEventId('scope-2')).toBe('event-2');
+            expect(await provider.getLatestEventId('scope-1')).toBe('event-1');
+            expect(await provider.getLatestEventId('scope-2')).toBe('event-2');
         });
     });
 
     describe('removeEventScope', () => {
-        it('should remove existing scope', () => {
-            provider.saveLatestEventId('scope-1', 'event-1');
-            provider.removeEventScope('scope-1');
+        it('should remove existing scope', async () => {
+            await provider.saveLatestEventId('scope-1', 'event-1');
+            await provider.removeEventScope('scope-1');
 
-            expect(provider.getLatestEventId('scope-1')).toBeNull();
+            expect(await provider.getLatestEventId('scope-1')).toBeNull();
         });
 
-        it('should handle removing non-existent scope gracefully', () => {
-            expect(() => provider.removeEventScope('non-existent')).not.toThrow();
+        it('should handle removing non-existent scope gracefully', async () => {
+            await expect(provider.removeEventScope('non-existent')).resolves.not.toThrow();
         });
 
-        it('should not affect other scopes', () => {
-            provider.saveLatestEventId('scope-1', 'event-1');
-            provider.saveLatestEventId('scope-2', 'event-2');
-            provider.removeEventScope('scope-1');
+        it('should not affect other scopes', async () => {
+            await provider.saveLatestEventId('scope-1', 'event-1');
+            await provider.saveLatestEventId('scope-2', 'event-2');
+            await provider.removeEventScope('scope-1');
 
-            expect(provider.getLatestEventId('scope-1')).toBeNull();
-            expect(provider.getLatestEventId('scope-2')).toBe('event-2');
+            expect(await provider.getLatestEventId('scope-1')).toBeNull();
+            expect(await provider.getLatestEventId('scope-2')).toBe('event-2');
         });
     });
 });
