@@ -115,7 +115,9 @@ describe('MetricHandler', () => {
                         eventName: 'upload',
                         volumeType: MetricVolumeType.OwnVolume,
                         uploadedSize: 1024,
+                        approximateUploadedSize: 4095,
                         expectedSize: 1024,
+                        approximateExpectedSize: 4095,
                     },
                 });
 
@@ -137,7 +139,9 @@ describe('MetricHandler', () => {
                     event: {
                         eventName: 'upload',
                         uploadedSize: 1024,
+                        approximateUploadedSize: 4095,
                         expectedSize: 1024,
+                        approximateExpectedSize: 4095,
                     },
                 });
 
@@ -162,7 +166,9 @@ describe('MetricHandler', () => {
                         eventName: 'upload',
                         volumeType: MetricVolumeType.OwnVolume,
                         uploadedSize: 512,
+                        approximateUploadedSize: 4095,
                         expectedSize: 1024,
+                        approximateExpectedSize: 4095,
                         error: '4xx',
                     },
                 });
@@ -197,7 +203,9 @@ describe('MetricHandler', () => {
                         eventName: 'upload',
                         volumeType: MetricVolumeType.OwnVolume,
                         uploadedSize: 512,
+                        approximateUploadedSize: 4095,
                         expectedSize: 1024,
+                        approximateExpectedSize: 4095,
                         error: 'unknown',
                         originalError: new Error('some error'),
                     },
@@ -228,7 +236,9 @@ describe('MetricHandler', () => {
                         eventName: 'upload',
                         volumeType: MetricVolumeType.OwnVolume,
                         uploadedSize: 512,
+                        approximateUploadedSize: 4095,
                         expectedSize: 1024,
+                        approximateExpectedSize: 4095,
                         error: 'unknown',
                     },
                 });
@@ -247,7 +257,9 @@ describe('MetricHandler', () => {
                         eventName: 'upload',
                         volumeType: MetricVolumeType.OwnVolume,
                         uploadedSize: 512,
+                        approximateUploadedSize: 4095,
                         expectedSize: 1024,
+                        approximateExpectedSize: 4095,
                         error: 'unknown',
                     },
                 });
@@ -258,7 +270,9 @@ describe('MetricHandler', () => {
                         eventName: 'upload',
                         volumeType: MetricVolumeType.OwnVolume,
                         uploadedSize: 256,
+                        approximateUploadedSize: 4095,
                         expectedSize: 1024,
+                        approximateExpectedSize: 4095,
                         error: 'server_error',
                     },
                 });
@@ -273,7 +287,9 @@ describe('MetricHandler', () => {
                         eventName: 'upload',
                         volumeType: MetricVolumeType.OwnVolume,
                         uploadedSize: 512,
+                        approximateUploadedSize: 4095,
                         expectedSize: 1024,
+                        approximateExpectedSize: 4095,
                         error: 'unknown',
                     },
                 });
@@ -289,7 +305,9 @@ describe('MetricHandler', () => {
                         eventName: 'upload',
                         volumeType: MetricVolumeType.OwnVolume,
                         uploadedSize: 256,
+                        approximateUploadedSize: 4095,
                         expectedSize: 1024,
+                        approximateExpectedSize: 4095,
                         error: 'server_error',
                     },
                 });
@@ -308,7 +326,9 @@ describe('MetricHandler', () => {
                         eventName: 'download',
                         volumeType: MetricVolumeType.OwnVolume,
                         downloadedSize: 1024,
+                        approximateDownloadedSize: 4095,
                         claimedFileSize: 1024,
+                        approximateClaimedFileSize: 4095,
                     },
                 });
 
@@ -330,7 +350,9 @@ describe('MetricHandler', () => {
                     event: {
                         eventName: 'download',
                         downloadedSize: 1024,
+                        approximateDownloadedSize: 4095,
                         claimedFileSize: 1024,
+                        approximateClaimedFileSize: 4095,
                     },
                 });
 
@@ -355,7 +377,9 @@ describe('MetricHandler', () => {
                         eventName: 'download',
                         volumeType: MetricVolumeType.OwnVolume,
                         downloadedSize: 512,
+                        approximateDownloadedSize: 4095,
                         claimedFileSize: 1024,
+                        approximateClaimedFileSize: 4095,
                         error: '4xx',
                     },
                 });
@@ -390,7 +414,9 @@ describe('MetricHandler', () => {
                         eventName: 'download',
                         volumeType: MetricVolumeType.OwnVolume,
                         downloadedSize: 512,
+                        approximateDownloadedSize: 4095,
                         claimedFileSize: 1024,
+                        approximateClaimedFileSize: 4095,
                         error: 'unknown',
                         originalError: new Error('some error'),
                     },
@@ -418,6 +444,7 @@ describe('MetricHandler', () => {
                         eventName: 'download',
                         volumeType: MetricVolumeType.OwnVolume,
                         downloadedSize: 512,
+                        approximateDownloadedSize: 4095,
                         error: 'network_error',
                     },
                 });
@@ -437,7 +464,9 @@ describe('MetricHandler', () => {
                         eventName: 'download',
                         volumeType: MetricVolumeType.OwnVolume,
                         downloadedSize: 512,
+                        approximateDownloadedSize: 4095,
                         claimedFileSize: 1024,
+                        approximateClaimedFileSize: 4095,
                         error: 'unknown',
                     },
                 });
@@ -456,7 +485,9 @@ describe('MetricHandler', () => {
                         eventName: 'download',
                         volumeType: MetricVolumeType.OwnVolume,
                         downloadedSize: 512,
+                        approximateDownloadedSize: 4095,
                         claimedFileSize: 1024,
+                        approximateClaimedFileSize: 4095,
                         error: 'unknown',
                     },
                 });
@@ -467,7 +498,9 @@ describe('MetricHandler', () => {
                         eventName: 'download',
                         volumeType: MetricVolumeType.OwnVolume,
                         downloadedSize: 256,
+                        approximateDownloadedSize: 4095,
                         claimedFileSize: 1024,
+                        approximateClaimedFileSize: 4095,
                         error: 'decryption_error',
                     },
                 });
@@ -482,7 +515,9 @@ describe('MetricHandler', () => {
                         eventName: 'download',
                         volumeType: MetricVolumeType.OwnVolume,
                         downloadedSize: 512,
+                        approximateDownloadedSize: 4095,
                         claimedFileSize: 1024,
+                        approximateClaimedFileSize: 4095,
                         error: 'unknown',
                     },
                 });
@@ -498,7 +533,9 @@ describe('MetricHandler', () => {
                         eventName: 'download',
                         volumeType: MetricVolumeType.OwnVolume,
                         downloadedSize: 256,
+                        approximateDownloadedSize: 4095,
                         claimedFileSize: 1024,
+                        approximateClaimedFileSize: 4095,
                         error: 'decryption_error',
                     },
                 });
