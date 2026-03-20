@@ -92,7 +92,7 @@ export const ProductSelectionModal = ({ onClose, provider, source, onComplete, .
 
     return (
         <>
-            <ModalTwo onClose={onClose} {...rest}>
+            <ModalTwo onClose={onClose} {...rest} data-testid='EasySwitch:ImportModal'>
                 <ModalHeader title={c('Title').t`Import your data to ${BRAND_NAME}`} />
                 <ModalContent>
                     <div className="flex flex-column gap-5">

@@ -170,7 +170,13 @@ const GmailSyncModal = ({
     }
 
     return (
-        <ModalTwo size="xlarge" fullscreenOnMobile {...rest} onClose={handleClose}>
+        <ModalTwo
+            size="xlarge"
+            fullscreenOnMobile
+            {...rest}
+            onClose={handleClose}
+            data-testid="EasySwitch:AddForwardingModal"
+        >
             <ModalTwoHeader />
             <ModalTwoContent className="m-8 mt-0 flex flex-row items-center flex-nowrap gap-7">
                 <div className="flex flex-column flex-1 gap-7">
