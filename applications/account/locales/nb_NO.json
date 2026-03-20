@@ -1715,6 +1715,9 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -12339,6 +12342,9 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "Choose your service to connect with": [
+        "Velg tjenesten du vil koble til"
       ]
     },
     "info": {
@@ -24153,6 +24159,18 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Choose a provider": [
+        "Velg en leverandør"
+      ],
+      "Custom": [
+        "Tilpasset"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importer dine data til ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Velg data for import"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25588,6 +25606,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "Avansert import"
       ]
     }
   }

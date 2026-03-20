@@ -1632,6 +1632,9 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Hide": [
+        "Ocultar"
       ]
     },
     "action": {
@@ -2749,6 +2752,9 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Debes otorgar el permiso para que ${ BRAND_NAME } copie tus datos. Después de aceptar los permisos, vuelve aquí para continuar."
+      ],
+      "Mail": [
+        "Correo"
       ]
     },
     "Bridge version load failed": {
@@ -5543,6 +5549,9 @@
       ],
       "You won't receive emails forwarded automatically from ${ boldForwarderEmail }.": [
         "No recibirás correos reenviados automáticamente desde ${ boldForwarderEmail }."
+      ],
+      "Forwarding to this address will become active once the recipient accepts the forwarding.": [
+        "El reenvío a esta dirección se activará cuando el destinatario lo acepte."
       ]
     },
     "email_forwarding_2023: Label": {
@@ -5585,6 +5594,9 @@
       ],
       "Pending": [
         "Pendiente"
+      ],
+      "Active": [
+        "Activo"
       ]
     },
     "email_forwarding_2023: Success": {
@@ -5610,6 +5622,9 @@
       ],
       "Forwarding activated": [
         "Se ha activado el reenvío ha sido."
+      ],
+      "Request sent": [
+        "Solicitud enviada"
       ]
     },
     "email_forwarding_2023: Warning": {
@@ -11852,6 +11867,9 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "You should export a backup of this key in case you need to restore data it encrypted.": [
+        "Te recomendamos exportar una copia de seguridad de esta clave para poder recuperar los datos que cifre."
       ]
     },
     "info": {
@@ -12065,6 +12083,12 @@
       ],
       "You already have this key type. Unless that key has been compromised, generating **a new key may slow down your account**.": [
         "Ya tienes este tipo de clave. A menos que esa clave se haya comprometido, generar **una nueva clave podría ralentizar tu cuenta**."
+      ],
+      "If you generated this key because you suspect your previous key was compromised, please mark it as compromised in your settings.": [
+        "Si has creado esta clave porque sospechas que la anterior está en peligro, márcala como comprometida en tus ajustes."
+      ],
+      "Key generation failed, please try again later.": [
+        "Error al generar la clave. Inténtalo de nuevo más tarde."
       ]
     },
     "Key state badge": {
@@ -13730,6 +13754,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Keep messages in Sent/Drafts": [
+        "Mantener mensajes en Enviados/Borradores"
       ]
     },
     "label": {
@@ -16528,6 +16555,9 @@
       ],
       "Windows": [
         "Windows"
+      ],
+      "UDP": [
+        "UDP"
       ]
     },
     "option": {
