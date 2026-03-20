@@ -156,9 +156,6 @@
       "Attention required": [
         "Vyžadována pozornost"
       ],
-      "Authenticate": [
-        "Ověřit"
-      ],
       "Auto-delete spam and trash": [
         "Automatické mazání spamu a koše"
       ],
@@ -197,9 +194,6 @@
       ],
       "Carbon Copy": [
         "Kopie"
-      ],
-      "Change email": [
-        "Změnit e-mail"
       ],
       "Change password": [
         "Změnit heslo"
@@ -594,9 +588,6 @@
       "Font": [
         "Písmo"
       ],
-      "Forgot password?": [
-        "Zapomenuté heslo?"
-      ],
       "Formalize": [
         "Formalizovat"
       ],
@@ -828,6 +819,9 @@
       "Make it friendly": [
         "Přátelská forma"
       ],
+      "Manage addresses": [
+        "Spravovat adresy"
+      ],
       "Manage advanced account protections": [
         "Spravovat pokročilé ochrany účtu"
       ],
@@ -1028,6 +1022,9 @@
       ],
       "Open navigation": [
         "Otevřít menu"
+      ],
+      "Or use a different Gmail address": [
+        "Nebo použijte jinou Gmail adresu"
       ],
       "Ordered list": [
         "Seřazený seznam"
@@ -1323,6 +1320,9 @@
       "Set up a custom domain": [
         "Nastavit vlastní doménu"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "Nastavit automatické přeposílání z Gmailu"
+      ],
       "Set up email forwarding": [
         "Nastavit přeposílání e-mailů"
       ],
@@ -1593,17 +1593,14 @@
       "Use a different payment method": [
         "Použít jinou platební metodu"
       ],
-      "Use authentication code": [
-        "Použít ověřovací kód"
-      ],
       "Use for sending": [
         "Použít pro odesílání"
       ],
-      "Use recovery code": [
-        "Použít kód pro obnovení"
-      ],
       "Use this": [
         "Použít toto"
+      ],
+      "Use this Gmail address": [
+        "Použít tuto Gmail adresu"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Pomocí myši změňte velikost zobrazení. Pokud používáte klávesnici, můžete ke změně velikosti použít klávesy se šipkami doleva a doprava."
@@ -4376,6 +4373,20 @@
         "Sdílejte výhody svého tarifu s ${ BRAND_NAME } Duo"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Chcete-li přeposílat e-maily z ${ MAX_SYNC_PAID_USER } účtu, navyšte tarif na ${ planName }.",
+        "Chcete-li přeposílat e-maily až ze ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }.",
+        "Chcete-li přeposílat e-maily až z ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }.",
+        "Chcete-li přeposílat e-maily až z ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externího účtu na ${ MAIL_APP_NAME }.",
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }.",
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }.",
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, se objeví pouze na fakturách vystavených v budoucnu a nebudou mít vliv na stávající faktury."
@@ -5628,24 +5639,6 @@
         "Blesková rychlost"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Při ověřování pomocí bezpečnostního klíče se něco pokazilo. Zkuste to prosím znovu."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Vložte bezpečnostní klíč spojený s vaším účtem ${ BRAND_NAME }."
-      ],
-      "Security key": [
-        "Bezpečnostní klíč"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Bezpečnostní klíč"
-      ]
-    },
     "file size format": {
       "byte": [
         "bajt",
@@ -5898,9 +5891,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME } aplikace"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } v App Store"
       ],
@@ -5919,15 +5909,6 @@
         "Zbývá ${ remainingDaysCount } dnů",
         "Zbývá ${ remainingDaysCount } dnů"
       ],
-      "account logins": [
-        "přihlašovací údaje k účtům"
-      ],
-      "Auto-forward Gmail": [
-        "Automatické přeposílání Gmailu"
-      ],
-      "auto-forwarding": [
-        "automatické přeposílání"
-      ],
       "Block email communications from scammers permanently.": [
         "Trvale blokujte e-mailovou komunikaci od podvodníků."
       ],
@@ -5937,12 +5918,6 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Výborně! Váš e-mail je ještě více bezpečný, pohodlný a praktický! Navýšili jsme váš bezplatný úložný prostor na celkem 1 GB."
       ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Změňte ${ strongText } na adresu ${ BRAND_NAME }."
-      ],
-      "Changed accounts": [
-        "Změněné účty"
-      ],
       "Checklist complete": [
         "Kontrolní seznam je kompletní"
       ],
@@ -5951,9 +5926,6 @@
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Pro zdvojnásobení svého úložného prostoru dokončete vše na tomto kontrolním seznamu během ${ daysCount }."
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Zjistěte, jak vás naše ${ strongText } chrání"
       ],
       "Discover privacy features": [
         "Objevte funkce ochrany soukromí"
@@ -5967,17 +5939,8 @@
       "For your eyes only": [
         "Pouze pro vaše oči"
       ],
-      "Get more storage": [
-        "Získat více úložného prostoru"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Získat mobilní aplikaci ${ MAIL_APP_NAME }"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Získání ${ strongText } pro Android nebo iOS"
-      ],
-      "Get the App": [
-        "Získat aplikaci"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Používejte ${ MAIL_APP_NAME } i nadále a objevte další způsoby, jak ${ BRAND_NAME } chrání vaše soukromí a zjednodušuje odesílání e-mailů."
@@ -5985,20 +5948,8 @@
       "Learn more": [
         "Více informací"
       ],
-      "Nice! You've updated all services in this category.": [
-        "Pěkné! Aktualizovali jste všechny služby v této kategorii."
-      ],
-      "Popular online services": [
-        "Oblíbené online služby"
-      ],
-      "privacy features": [
-        "funkce ochrany soukromí"
-      ],
       "Protection from trackers": [
         "Ochrana před sledováním"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Nastavit ${ strongText } z Gmailu"
       ],
       "Sign in to the mobile app to complete this step": [
         "Přihlaste se do mobilní aplikace a dokončete tento krok"
@@ -6011,9 +5962,6 @@
       ],
       "This feature is currently unavailable": [
         "Tato funkce je momentálně nedostupná"
-      ],
-      "Update your logins": [
-        "Aktualizace přihlašovacích údajů"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Pomocí svého mobilního zařízení naskenujte tento QR kód nebo navštivte obchod pro iOS nebo Android."
@@ -7368,9 +7316,6 @@
       "Duplicate key updated": [
         "Duplicitní klíč byl aktualizován"
       ],
-      "Each code can only be used once": [
-        "Každý kód lze použít pouze jednou"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Snadná správa a odhlašování odběru e-mailových zpravodajů a seznamů."
       ],
@@ -7431,23 +7376,11 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Zajistěte si zcela soukromou a šifrovanou komunikaci. Získejte zdarma e-mailovou adresu ${ BRAND_NAME } ještě dnes."
       ],
-      "Enter the code from your authenticator app": [
-        "Zadejte kód z vaší ověřovací aplikace"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Zadejte přihlašovací údaje e-mailového účtu, ze kterého chcete importovat."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Zadejte ověřovací kód. Číslice ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Zadejte vlastní heslo (jako správce organizace)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Zadejte vlastní heslo (jako důvěryhodný kontakt)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Předpokládaný zbývající čas: ${ estimatedMinutes } minuta",
@@ -8829,9 +8762,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Jakmile povolíte důvěryhodné klíče pro ${ senderName }, veřejné klíče budou doplněné k detailu kontaktu."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Když se přihlašujete k odběru e-mailového zpravodaje, použijte alias místo vaší hlavní e-mailové adresy. Tím zůstane vaše identita skrytá a můžete alias kdykoli deaktivovat."
       ],
@@ -9038,6 +8968,12 @@
         "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
         "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
         "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }. Zrušit můžete kdykoli."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Povolili jste přeposílání na ${ MAX_SYNC_PAID_USER } Gmail adresu. Chcete-li přidat další, nejprve jednu z nich deaktivujte.",
+        "Povolili jste přeposílánína ${ MAX_SYNC_PAID_USER } Gmail adresy. Chcete-li přidat další, nejprve jednu z nich deaktivujte.",
+        "Povolili jste přeposílánína ${ MAX_SYNC_PAID_USER } Gmail adres. Chcete-li přidat další, nejprve jednu z nich deaktivujte.",
+        "Povolili jste přeposílánína ${ MAX_SYNC_PAID_USER } Gmail adres. Chcete-li přidat další, nejprve jednu z nich deaktivujte."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Dosáhli jste maximálního počtu adres ve skupině (skupinách) kontaktů:"
@@ -9546,9 +9482,6 @@
       ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
-      ],
-      "Authenticator app": [
-        "Ověřovací aplikace"
       ],
       "Automated confirmations and alerts": [
         "Automatická potvrzení a upozornění"
@@ -10233,12 +10166,6 @@
       ],
       "Your location": [
         "Vaše poloha"
-      ],
-      "Your password (admin)": [
-        "Vaše heslo (správce)"
-      ],
-      "Your password (trusted contact)": [
-        "Vaše heslo (důvěryhodný kontakt)"
       ],
       "ZIP code": [
         "PSČ"
@@ -12156,23 +12083,8 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
-        "Změňte si ihned svou e-mailovou adresu u oblíbených služeb, abyste se vyhnuli sledování a profilování. ${ learnMoreLink }"
-      ],
-      "Finance": [
-        "Peníze"
-      ],
       "Maybe later": [
         "Možná později"
-      ],
-      "Privacy for all your online accounts": [
-        "Ochrana soukromí všech vašich online účtů"
-      ],
-      "Shopping": [
-        "Nakupování"
-      ],
-      "Social media": [
-        "Sociální sítě"
       ]
     },
     "Onboarding modal": {
@@ -12371,40 +12283,6 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "${ planTitle } budete moci bezplatně používat až do vypršení zkušební verze."
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Máte účet u některé z těchto služeb? Stačí kliknout pro změnu e-mailové adresy na vaši adresu ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "Bankovnictví"
-      ],
-      "Crypto": [
-        "Kryptoměna"
-      ],
-      "E-commerce and Retail": [
-        "Internetový obchod a maloobchod"
-      ],
-      "Entertainment": [
-        "Zábava"
-      ],
-      "Food and beverage": [
-        "Potraviny a nápoje"
-      ],
-      "Gaming": [
-        "Herní"
-      ],
-      "Most popular": [
-        "Nejoblíbenější"
-      ],
-      "Travel": [
-        "Cestování"
-      ],
-      "Utilities": [
-        "Nástroje"
       ]
     },
     "Option": {
@@ -13386,11 +13264,6 @@
         "Zkontrolujte bezpečnost účtu"
       ]
     },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "Přihlášení nebylo úspěšně dokončeno."
-      ]
-    },
     "Search - no results": {
       "An action is being processed": [
         "Probíhá zpracování akce"
@@ -14149,17 +14022,6 @@
       ],
       "Your pm.me email is active": [
         "Váš e-mail pm.me je aktivní"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "Přihlásit se"
-      ],
-      "Sign in to your organization": [
-        "Přihlaste se ke své organizaci"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Budete přesměrováni na poskytovatele SSO třetí strany."
       ]
     },
     "State": {
@@ -15515,8 +15377,14 @@
       "Confirm recipient address?": [
         "Potvrdit adresu příjemce?"
       ],
+      "Connect a Gmail address": [
+        "Připojte svou Gmail adresu"
+      ],
       "Connect apps and devices": [
         "Připojit aplikace a zařízení"
+      ],
+      "Connect more addresses": [
+        "Připojit více adres"
       ],
       "Connect to video conferencing": [
         "Připojit se k videokonferenci"
@@ -15704,9 +15572,6 @@
       "Enhance security with 2FA": [
         "Zvýšení zabezpečení pomocí 2FA"
       ],
-      "Enter your password": [
-        "Zadejte své heslo"
-      ],
       "Error": [
         "Chyba"
       ],
@@ -15830,6 +15695,9 @@
       "Label options": [
         "Nastavení štítku"
       ],
+      "Limit reached": [
+        "Limit dosažen"
+      ],
       "Link confirmation": [
         "Potvrzení před otevřením odkazu"
       ],
@@ -15931,6 +15799,9 @@
       ],
       "Moving a snoozed message": [
         "Přesunutí odložené zprávy"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Více účtů, 1 soukromá doručená pošta"
       ],
       "Need more aliases?": [
         "Potřebujete více aliasů?"
@@ -16081,6 +15952,9 @@
       ],
       "Referral": [
         "Doporučení"
+      ],
+      "Remove forwarding address": [
+        "Odebrat adresu přeposílání"
       ],
       "Remove from list?": [
         "Odebrat ze seznamu?"
@@ -16258,9 +16132,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Zapnout ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Two-factor authentication": [
-        "Dvoufázové ověření"
       ],
       "Unsubscribe": [
         "Odhlásit odběr"

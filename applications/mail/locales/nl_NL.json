@@ -154,9 +154,6 @@
       "Attention required": [
         "Aandacht vereist"
       ],
-      "Authenticate": [
-        "Authenticeren"
-      ],
       "Auto-delete spam and trash": [
         "Spam en prullenbak automatisch verwijderen"
       ],
@@ -195,9 +192,6 @@
       ],
       "Carbon Copy": [
         "CC"
-      ],
-      "Change email": [
-        "E-mailadres wijzigen"
       ],
       "Change password": [
         "Wachtwoord wijzigen"
@@ -588,9 +582,6 @@
       "Font": [
         "Lettertype"
       ],
-      "Forgot password?": [
-        "Wachtwoord vergeten?"
-      ],
       "Formalize": [
         "Formaliseren"
       ],
@@ -823,6 +814,9 @@
       "Make it friendly": [
         "Hou het vriendelijk"
       ],
+      "Manage addresses": [
+        "Adressen beheren"
+      ],
       "Manage advanced account protections": [
         "Geavanceerde accountbeveiligingen beheren"
       ],
@@ -1023,6 +1017,9 @@
       ],
       "Open navigation": [
         "Navigatie openen"
+      ],
+      "Or use a different Gmail address": [
+        "Of gebruik een ander Gmail-adres"
       ],
       "Ordered list": [
         "Genummerde lijst"
@@ -1318,6 +1315,9 @@
       "Set up a custom domain": [
         "Een eigen domein instellen"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "Stel automatisch doorsturen in vanaf Gmail"
+      ],
       "Set up email forwarding": [
         "E-mail doorsturen instellen"
       ],
@@ -1588,17 +1588,14 @@
       "Use a different payment method": [
         "Gebruik een andere betaalmethode"
       ],
-      "Use authentication code": [
-        "Authenticatiecode gebruiken"
-      ],
       "Use for sending": [
         "Gebruiken om te versturen"
       ],
-      "Use recovery code": [
-        "Herstelcode gebruiken"
-      ],
       "Use this": [
         "Gebruik dit"
+      ],
+      "Use this Gmail address": [
+        "Gebruik dit Gmail-adres"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Gebruik uw muis om de grootte van het beeld te wijzigen. Als u uw toetsenbord gebruikt, kunt u de linker en rechter pijltjestoetsen gebruiken om de grootte te wijzigen."
@@ -4327,6 +4324,16 @@
         "Deel uw abonnementsvoordelen met ${ BRAND_NAME } Duo"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } account, upgrade naar ${ planName }.",
+        "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } accounts, upgrade naar ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "U stuurt e-mails door van ${ MAX_SYNC_FREE_USER } extern account naar ${ MAIL_APP_NAME }.",
+        "U stuurt e-mails door van ${ MAX_SYNC_FREE_USER } externe accounts naar ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Tekstvelden zijn optioneel. De informatie die u in dit formulier verstrekt zal alleen verschijnen op in de toekomst uitgegeven facturen en zal geen invloed hebben op bestaande facturen."
@@ -5567,16 +5574,6 @@
         "Hoge snelheden"
       ]
     },
-    "fido2: Info": {
-      "Security key": [
-        "Beveiligingssleutel"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Beveiligingssleutel"
-      ]
-    },
     "file size format": {
       "byte": [
         "byte",
@@ -5817,9 +5814,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME }-app"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } in de App Store"
       ],
@@ -5834,15 +5828,6 @@
         "${ remainingDaysCount } dag over",
         "${ remainingDaysCount } dagen over"
       ],
-      "account logins": [
-        "account logins"
-      ],
-      "Auto-forward Gmail": [
-        "Gmail automatisch doorsturen"
-      ],
-      "auto-forwarding": [
-        "automatisch doorsturen"
-      ],
       "Block email communications from scammers permanently.": [
         "Blokkeer e-mailcommunicatie van oplichters permanent."
       ],
@@ -5852,12 +5837,6 @@
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Hulde voor het veiliger, handiger en relevanter maken van uw e-mails! We hebben uw opslag gratis verhoogd naar 1 GB."
       ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Wijzig ${ strongText } in uw adres ${ BRAND_NAME }"
-      ],
-      "Changed accounts": [
-        "Van account gewisseld"
-      ],
       "Checklist complete": [
         "Controlelijst voltooid"
       ],
@@ -5866,9 +5845,6 @@
       ],
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Voltooi deze checklist in ${ daysCount } om uw opslagruimte gratis te verdubbelen."
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Ontdek hoe onze ${ strongText } u beschermt"
       ],
       "Discover privacy features": [
         "Ontdek privacyfuncties"
@@ -5882,17 +5858,8 @@
       "For your eyes only": [
         "Alleen voor uw ogen"
       ],
-      "Get more storage": [
-        "Krijg meer opslagruimte"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Download de ${ MAIL_APP_NAME } mobiele app"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Download de ${ strongText } op Android of iOS"
-      ],
-      "Get the App": [
-        "Download de app"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Blijf ${ MAIL_APP_NAME } gebruiken om meer manieren te ontdekken waarmee ${ BRAND_NAME } uw privacy beschermt en e-mail vereenvoudigt."
@@ -5900,20 +5867,8 @@
       "Learn more": [
         "Meer info"
       ],
-      "Nice! You've updated all services in this category.": [
-        "Mooi! U heeft alle diensten in deze categorie bijgewerkt."
-      ],
-      "Popular online services": [
-        "Populaire online diensten"
-      ],
-      "privacy features": [
-        "privacy-functies"
-      ],
       "Protection from trackers": [
         "Bescherming van trackers"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Stel ${ strongText } in vanuit Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "Log in op de mobiele app om deze stap te voltooien"
@@ -5926,9 +5881,6 @@
       ],
       "This feature is currently unavailable": [
         "Deze functie is momenteel niet beschikbaar."
-      ],
-      "Update your logins": [
-        "Werk uw aanmeldingen bij"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Met gebruik van uw mobiele apparaat scant u deze QR-code of bezoekt u de iOS of Android Store."
@@ -6367,6 +6319,9 @@
     "Import provider": {
       "Advanced import": [
         "Geavanceerde import"
+      ],
+      "Import from ${ providerName }": [
+        "Importeer uit ${ providerName }"
       ]
     },
     "Import warning": {
@@ -7161,9 +7116,6 @@
       "Duplicate key updated": [
         "Dubbele sleutel bijgewerkt"
       ],
-      "Each code can only be used once": [
-        "Elke code kan slechts één keer worden gebruikt"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Beheer en meld u eenvoudig af voor nieuwsbrieven en adressenlijsten."
       ],
@@ -7222,23 +7174,11 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Zorg voor volledig privé en versleutelde communicatie. Vraag nu uw gratis ${ BRAND_NAME }-e-mailadres aan."
       ],
-      "Enter the code from your authenticator app": [
-        "Voer de code van uw authenticatie app in"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Voer verificatiecode in. Cijfer ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Voer uw eigen wachtwoord in (als vertrouwd contact)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Geschatte resterende tijd: ${ estimatedMinutes } minuut",
@@ -8595,9 +8535,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Toen u vertrouwde sleutels inschakelde voor ${ senderName }, zijn de openbare sleutels meteen toegevoegd aan deze contactpersoon."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Wanneer u tweestapsverificatie instelt, bieden we herstelcodes die u kunt gebruiken om u aan te melden als u de toegang tot uw authenticatie app verliest."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Wanneer u zich aanmeldt voor een nieuwsbrief, gebruik dan een alias in plaats van uw e-mailadres. Uw identiteit blijft verborgen, en u kunt de alias op elk moment uitschakelen."
       ],
@@ -8777,6 +8714,10 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd. U kunt op elk moment annuleren.",
         "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd. U kunt op elk moment annuleren."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "U heeft doorsturen ingeschakeld op ${ MAX_SYNC_PAID_USER } Gmail adres. Om een ander toe te voegen, schakel eerst een van deze uit.",
+        "U heeft doorsturen ingeschakeld op ${ MAX_SYNC_PAID_USER } Gmail adressen. Schakel een van deze eerst uit om een ander adres toe te voegen."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "U heeft het maximaal aantal adressen bereikt in de contactgroep(en):"
@@ -9268,9 +9209,6 @@
       ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
-      ],
-      "Authenticator app": [
-        "Authenticatie app"
       ],
       "Automated confirmations and alerts": [
         "Geautomatiseerde bevestigingen en meldingen"
@@ -9964,12 +9902,6 @@
       ],
       "Your location": [
         "Uw locatie"
-      ],
-      "Your password (admin)": [
-        "Uw wachtwoord (beheerder)"
-      ],
-      "Your password (trusted contact)": [
-        "Uw wachtwoord (vertrouwd contact)"
       ],
       "ZIP code": [
         "Postcode"
@@ -11809,23 +11741,8 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
-        "Wijzig nu uw e-mailadres voor populaire diensten om te voorkomen dat u wordt gevolgd en geprofileerd. ${ learnMoreLink }"
-      ],
-      "Finance": [
-        "Financieel"
-      ],
       "Maybe later": [
         "Misschien later"
-      ],
-      "Privacy for all your online accounts": [
-        "Privacy voor al uw online accounts"
-      ],
-      "Shopping": [
-        "Winkelen"
-      ],
-      "Social media": [
-        "Social media"
       ]
     },
     "Onboarding modal": {
@@ -12024,40 +11941,6 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "U kunt kosteloos gebruikmaken van ${ planTitle } totdat de proefversie eindigt."
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Heeft u een account bij één van deze diensten? Klik om het e-mailadres te wijzigen naar uw ${ MAIL_APP_NAME }-adres."
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "Bankieren"
-      ],
-      "Crypto": [
-        "Crypto"
-      ],
-      "E-commerce and Retail": [
-        "E-commerce en Retail"
-      ],
-      "Entertainment": [
-        "Entertainment"
-      ],
-      "Food and beverage": [
-        "Eten en drinken"
-      ],
-      "Gaming": [
-        "Gamen"
-      ],
-      "Most popular": [
-        "Populairste keuze"
-      ],
-      "Travel": [
-        "Reizen"
-      ],
-      "Utilities": [
-        "Hulpprogramma's"
       ]
     },
     "Option": {
@@ -13021,11 +12904,6 @@
         "Controleer de veiligheid van uw account"
       ]
     },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "Inloggen is niet gelukt."
-      ]
-    },
     "Search - no results": {
       "An action is being processed": [
         "Er wordt een actie verwerkt"
@@ -13742,17 +13620,6 @@
       ],
       "Your pm.me email is active": [
         "Uw pm.me e-mail is actief"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "Inloggen"
-      ],
-      "Sign in to your organization": [
-        "Aanmelden bij uw organisatie"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "U wordt doorgestuurd naar uw derde partij SSO-provider."
       ]
     },
     "State": {
@@ -14999,8 +14866,14 @@
       "Confirm recipient address?": [
         "Adres van ontvanger bevestigen?"
       ],
+      "Connect a Gmail address": [
+        "Verbind een Gmail-adres"
+      ],
       "Connect apps and devices": [
         "Apps en apparaten verbinden"
+      ],
+      "Connect more addresses": [
+        "Verbind meer adressen"
       ],
       "Connect to video conferencing": [
         "Verbinding maken met videoconferentie"
@@ -15181,9 +15054,6 @@
       "Enhance security with 2FA": [
         "Verbeter de beveiliging met 2FA"
       ],
-      "Enter your password": [
-        "Voer uw wachtwoord in"
-      ],
       "Error": [
         "Fout"
       ],
@@ -15311,6 +15181,9 @@
       "Label options": [
         "Labelopties"
       ],
+      "Limit reached": [
+        "Limiet bereikt"
+      ],
       "Link confirmation": [
         "Link bevestigen"
       ],
@@ -15412,6 +15285,9 @@
       ],
       "Moving a snoozed message": [
         "Een gesnoozed bericht verplaatsen"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Meerdere accounts, 1 privé inbox"
       ],
       "Need more aliases?": [
         "Meer aliassen nodig?"
@@ -15562,6 +15438,9 @@
       ],
       "Referral": [
         "Verwijzing"
+      ],
+      "Remove forwarding address": [
+        "Doorschakeladres verwijderen"
       ],
       "Remove from list?": [
         "Verwijderen van de lijst?"
@@ -15746,9 +15625,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } inschakelen"
-      ],
-      "Two-factor authentication": [
-        "Tweestapsverificatie"
       ],
       "Unsubscribe": [
         "Afmelden"

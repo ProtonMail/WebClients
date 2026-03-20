@@ -115,9 +115,6 @@
       "Attention required": [
         "Yesra leḥdar"
       ],
-      "Authenticate": [
-        "Asesteb"
-      ],
       "Back": [
         "Ɣer deffir"
       ],
@@ -150,9 +147,6 @@
       ],
       "Carbon Copy": [
         "Anɣal n Carbon"
-      ],
-      "Change email": [
-        "Beddel imayl"
       ],
       "Change password": [
         "Snifel awal uffir"
@@ -444,9 +438,6 @@
       "Font": [
         "Tasefsit"
       ],
-      "Forgot password?": [
-        "Tettud awal uffir?"
-      ],
       "Forward as attachment": [
         "Welleh am umedday"
       ],
@@ -594,6 +585,9 @@
       ],
       "Loading${ ellipsis }": [
         "Asali${ ellipsis }"
+      ],
+      "Manage addresses": [
+        "Sefrek tansiwin"
       ],
       "Manage folders": [
         "Sefrek ikaramen"
@@ -1162,14 +1156,8 @@
       "Use a different payment method": [
         "Seqdec tarayt-nniḍen n usellek"
       ],
-      "Use authentication code": [
-        "Seqdec tangalt n usesteb"
-      ],
       "Use for sending": [
         "Tuzna"
-      ],
-      "Use recovery code": [
-        "Seqdec tangalt n tririt"
       ],
       "Verify": [
         "Senqed"
@@ -3740,16 +3728,6 @@
         "Kkes tuddsa?"
       ]
     },
-    "fido2: Info": {
-      "Security key": [
-        "Tasarutt n tɣellist"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Tasarutt n tɣellist"
-      ]
-    },
     "file size format": {
       "byte": [
         "ibiten",
@@ -3948,9 +3926,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "asnas ${ MAIL_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } ɣef App Store"
       ],
@@ -3965,32 +3940,14 @@
         "Mazal ${ remainingDaysCount } wass",
         "Mazal ${ remainingDaysCount } wussan"
       ],
-      "account logins": [
-        "inekcam n umiḍan"
-      ],
-      "Auto-forward Gmail": [
-        "Awelleh awurman seg Gmail"
-      ],
-      "auto-forwarding": [
-        "awelleh awurman"
-      ],
       "Block email communications from scammers permanently.": [
         "Sewḥel i lebda iznan i d-yettasen seg yimakaren"
       ],
       "Block unsavory senders": [
         "Weḥlen yir yimazanen"
       ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Beddel ${ strongText } ɣer tansa-k ${ BRAND_NAME }"
-      ],
-      "Changed accounts": [
-        "Imiḍanen ttwabeddlen"
-      ],
       "Checklist complete": [
         "Tabdart n usenqed temmed"
-      ],
-      "Discover how our ${ strongText } protect you": [
-        "Snirem amek ${ strongText }-nneɣ yemmestan-ik"
       ],
       "Discover privacy features": [
         "Snirem timahilin n tbaḍnit"
@@ -4001,44 +3958,20 @@
       "For your eyes only": [
         "I wallen-ik kan"
       ],
-      "Get more storage": [
-        "Awi ugar n uḥraz"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Awi asnas n uziraz ${ MAIL_APP_NAME }"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Awi ${ strongText } ɣef Android neɣ iOS"
-      ],
-      "Get the App": [
-        "Awi asnas"
       ],
       "Learn more": [
         "Issin ugar"
       ],
-      "Nice! You've updated all services in this category.": [
-        "Igerrez! Tleqqmeḍ akk imeẓla-k deg taggayt-a."
-      ],
-      "Popular online services": [
-        "Imeẓla srid yettwassnen"
-      ],
-      "privacy features": [
-        "timahilin n tbaḍnit"
-      ],
       "Protection from trackers": [
         "Ammesten mgal ineḍfaren"
-      ],
-      "Set up ${ strongText } from Gmail": [
-        "Sesteb ${ strongText } seg Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "Qqen ɣer usnas aziraz i wakken ad tsemdeḍ takkayt-a"
       ],
       "Storage unlocked": [
         "Aḥraz yekkes-as usewḥel"
-      ],
-      "Update your logins": [
-        "Leqqem inekcam-ik"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "I useqdec n yibenk-a aziraz, ḍumm tangalt-a QR neɣ ddu ɣer taḥanut n iOS neɣ n Android."
@@ -4825,17 +4758,11 @@
       "Encrypt message": [
         "Wgelhen izen"
       ],
-      "Enter the code from your authenticator app": [
-        "Sekcem tangalt seg usnas-ik n usesteb"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Sekcem inekcam n umiḍan n yimayl iseg tebɣiḍ ad d-tketreḍ."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Sekcem tangalt n usenged i yettwaznen ɣer ${ destinationText }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Sekcem awal-ik uffir (am unedbal n tkebbanit)"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Akud i d-yeggran: ${ estimatedMinutes } n tesdat",
@@ -5964,9 +5891,6 @@
       "Attach screenshot(s)": [
         "Seddu tuṭṭfa(win) n ugdil"
       ],
-      "Authenticator app": [
-        "Asnas n usesteb"
-      ],
       "BCC": [
         "Anɣ. Uff. I"
       ],
@@ -6428,9 +6352,6 @@
       ],
       "Without attachment": [
         "War afaylu yeddan"
-      ],
-      "Your password (admin)": [
-        "Awal-ik uffir (anedbal)"
       ],
       "ZIP code": [
         "Tangalt Zip"
@@ -7414,29 +7335,6 @@
         "tallalt"
       ]
     },
-    "Online Accounts Name": {
-      "Banking": [
-        "Ameẓlu n lbanka"
-      ],
-      "Crypto": [
-        "Kriptu"
-      ],
-      "Entertainment": [
-        "Zzhu"
-      ],
-      "Food and beverage": [
-        "Učči d tissit"
-      ],
-      "Gaming": [
-        "Urar"
-      ],
-      "Most popular": [
-        "Ittwassen aṭas"
-      ],
-      "Travel": [
-        "Amerreḥ"
-      ]
-    },
     "Option": {
       "Add to existing group": [
         "Rnu ɣer ugraw yellan"
@@ -8165,14 +8063,6 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Tzemreḍ tura ad tedɣawseḍ iznan-ik ad ttwaznen ticki"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "Qqen"
-      ],
-      "Sign in to your organization": [
-        "Kcem ɣer tkebbanit-ik"
       ]
     },
     "Status": {
@@ -8969,9 +8859,6 @@
       "Enable message content search": [
         "Rmed anadi n ugbur n yizen"
       ],
-      "Enter your password": [
-        "Sekcem awal-ik uffir"
-      ],
       "Error": [
         "Tuccḍa"
       ],
@@ -9032,6 +8919,9 @@
       ],
       "Label options": [
         "Tixtiṛiyin n tebzimt"
+      ],
+      "Limit reached": [
+        "Tewwḍeḍ tilist"
       ],
       "Link confirmation": [
         "Aseɣwen n usentem"
@@ -9315,9 +9205,6 @@
       ],
       "Trust public key?": [
         "Tasarut tazayezt yettwamanen?"
-      ],
-      "Two-factor authentication": [
-        "Asesteb s snat n tarrayin"
       ],
       "Unsubscribe": [
         "Ffeɣ seg ujerred"

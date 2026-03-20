@@ -154,9 +154,6 @@
       "Attention required": [
         "Uppmärksamhet krävs"
       ],
-      "Authenticate": [
-        "Autentisera"
-      ],
       "Auto-delete spam and trash": [
         "Ta bort skräppost och papperskorg automatiskt"
       ],
@@ -195,9 +192,6 @@
       ],
       "Carbon Copy": [
         "Kopia"
-      ],
-      "Change email": [
-        "Ändra e-post"
       ],
       "Change password": [
         "Ändra lösenord"
@@ -588,9 +582,6 @@
       "Font": [
         "Typsnitt"
       ],
-      "Forgot password?": [
-        "Glömt lösenord?"
-      ],
       "Formalize": [
         "Formalisera"
       ],
@@ -823,6 +814,9 @@
       "Make it friendly": [
         "Gör det vänligt"
       ],
+      "Manage addresses": [
+        "Hantera adresser"
+      ],
       "Manage advanced account protections": [
         "Hantera avancerade kontoskydd"
       ],
@@ -1023,6 +1017,9 @@
       ],
       "Open navigation": [
         "Öppna navigering"
+      ],
+      "Or use a different Gmail address": [
+        "Eller använd en annan Gmail-adress"
       ],
       "Ordered list": [
         "Sorterad lista"
@@ -1318,6 +1315,9 @@
       "Set up a custom domain": [
         "Ställ in en anpassad domän"
       ],
+      "Set up auto-forwarding from Gmail": [
+        "Ställ in automatisk vidarebefordran från Gmail"
+      ],
       "Set up email forwarding": [
         "Ställ in vidarebefordran av e-post"
       ],
@@ -1588,17 +1588,14 @@
       "Use a different payment method": [
         "Använd en annan betalningsmetod"
       ],
-      "Use authentication code": [
-        "Använd autentiseringskod"
-      ],
       "Use for sending": [
         "Använd för att skicka"
       ],
-      "Use recovery code": [
-        "Använd återställningskod"
-      ],
       "Use this": [
         "Använd denna"
+      ],
+      "Use this Gmail address": [
+        "Använd denna Gmail-adress"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Använd din mus för att ändra storlek på vyn. Om du använder ditt tangentbord kan du använda piltangenterna för vänster- och höger för att ändra storlek."
@@ -4318,6 +4315,16 @@
         "Dela dina paketförmåner med ${ BRAND_NAME } Duo"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konto, uppgradera till ${ planName }.",
+        "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konton, uppgradera till ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externt konto till ${ MAIL_APP_NAME }.",
+        "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externa konton till ${ MAIL_APP_NAME }."
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Textfält är valfria. Informationen du anger i detta formulär kommer endast att visas på fakturor som utfärdas i framtiden och kommer inte att påverka befintliga fakturor."
@@ -5549,24 +5556,6 @@
         "Blixtsnabb hastighet"
       ]
     },
-    "fido2: Error": {
-      "Something went wrong authenticating with your security key. Please try again.": [
-        "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
-      ]
-    },
-    "fido2: Info": {
-      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Infoga en säkerhetsnyckel länkat till ditt ${ BRAND_NAME }-konto."
-      ],
-      "Security key": [
-        "Säkerhetsnyckel"
-      ]
-    },
-    "fido2: Label": {
-      "Security key": [
-        "Säkerhetsnyckel"
-      ]
-    },
     "file size format": {
       "byte": [
         "byte",
@@ -5807,9 +5796,6 @@
       ]
     },
     "Get started checklist instructions": {
-      "${ MAIL_APP_NAME } app": [
-        "${ MAIL_APP_NAME }-app"
-      ],
       "${ MAIL_APP_NAME } on App Store": [
         "${ MAIL_APP_NAME } på App Store"
       ],
@@ -5824,15 +5810,6 @@
         "${ remainingDaysCount } dag kvar",
         "${ remainingDaysCount } dagar kvar"
       ],
-      "account logins": [
-        "kontoinloggningar"
-      ],
-      "Auto-forward Gmail": [
-        "Automatisk vidarebefordran av Gmail"
-      ],
-      "auto-forwarding": [
-        "automatisk vidarebefordran"
-      ],
       "Block email communications from scammers permanently.": [
         "Blockera e-postkommunikation från bedragare permanent."
       ],
@@ -5841,12 +5818,6 @@
       ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Bravo för att göra din e-post ännu säkrare, bekvämare och mer relevant! Vi har utökat ditt gratis lagringsutrymme till totalt 1 GB."
-      ],
-      "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Ändra ${ strongText } till din ${ BRAND_NAME }-adress"
-      ],
-      "Changed accounts": [
-        "Ändrade konton"
       ],
       "Checklist complete": [
         "Checklista klar"
@@ -5857,11 +5828,11 @@
       "Complete this checklist within ${ daysCount } to double your storage for free.": [
         "Fyll i denna checklista inom ${ daysCount } för att dubbla ditt lagringsutrymme gratis."
       ],
-      "Discover how our ${ strongText } protect you": [
-        "Upptäck hur vår ${ strongText } skyddar dig"
-      ],
       "Discover privacy features": [
         "Upptäck integritetsfunktioner"
+      ],
+      "Download apps": [
+        "Ladda ner appar"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Kryptering så stark att bara du och avsedda mottagare kan visa din e-post."
@@ -5872,17 +5843,8 @@
       "For your eyes only": [
         "Bara för dina ögon"
       ],
-      "Get more storage": [
-        "Skaffa mer lagringsutrymme"
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Skaffa mobilappen för ${ MAIL_APP_NAME }"
-      ],
-      "Get the ${ strongText } on Android or iOS": [
-        "Skaffa ${ strongText } på Android eller iOS"
-      ],
-      "Get the App": [
-        "Skaffa appen"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Fortsätt använda ${ MAIL_APP_NAME } för att upptäcka fler sätt ${ BRAND_NAME } skyddar din integritet och förenklar sättet att skicka e-post."
@@ -5890,20 +5852,11 @@
       "Learn more": [
         "Lär dig mer"
       ],
-      "Nice! You've updated all services in this category.": [
-        "Härligt! Du har uppdaterat alla tjänster i denna kategori."
-      ],
-      "Popular online services": [
-        "Populära onlinetjänster"
-      ],
-      "privacy features": [
-        "integritetsfunktioner"
-      ],
       "Protection from trackers": [
         "Skydd från spårare"
       ],
-      "Set up ${ strongText } from Gmail": [
-        "Ställ in ${ strongText } från Gmail"
+      "Review import options": [
+        "Granska importalternativ"
       ],
       "Sign in to the mobile app to complete this step": [
         "Logga in på mobilappen för att slutföra detta steg"
@@ -5916,9 +5869,6 @@
       ],
       "This feature is currently unavailable": [
         "Denna funktion är för närvarande inte tillgänglig"
-      ],
-      "Update your logins": [
-        "Uppdatera dina inloggningar"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "Använd din mobila enhet, skanna denna QR-kod eller besök iOS- eller Android-butiken."
@@ -6357,6 +6307,9 @@
     "Import provider": {
       "Advanced import": [
         "Avancerad import"
+      ],
+      "Import from ${ providerName }": [
+        "Importera från ${ providerName }"
       ]
     },
     "Import warning": {
@@ -7148,9 +7101,6 @@
       "Duplicate key updated": [
         "Duplicerad nyckel uppdaterad"
       ],
-      "Each code can only be used once": [
-        "Varje kod kan endast användas en gång"
-      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Smidigt hantera och avsluta prenumerationer på nyhetsbrev och e-postlistor."
       ],
@@ -7209,23 +7159,11 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Säkerställ fullständig privat och krypterad kommunikation. Gör anspråk på din gratis ${ BRAND_NAME } e-postadress nu."
       ],
-      "Enter the code from your authenticator app": [
-        "Ange koden från din autentiseringsapp"
-      ],
       "Enter the credentials of the email account you want to import from.": [
         "Ange inloggningsuppgifter till e-postkontot du vill importera från."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ange verifieringskoden som skickades till ${ destinationText }."
-      ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Ange verifieringskod. Siffra ${ digit }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Ange ditt eget lösenord (som organisationsadministratör)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Ange ditt eget lösenord (som betrodd kontakt)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Beräknad återstående tid: ${ estimatedMinutes } minut",
@@ -8573,9 +8511,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "När du aktiverade betrodda nycklar för ${ senderName } lades de offentliga nycklarna till i kontaktuppgifterna."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "När du registrerar dig för ett nyhetsbrev, använd ett alias istället för din e-postadress. Din identitet förblir dold och du kan inaktivera aliaset när som helst."
       ],
@@ -9233,9 +9168,6 @@
       ],
       "Attach screenshot(s)": [
         "Bifoga skärmdump(ar)"
-      ],
-      "Authenticator app": [
-        "Autentiseringsapp"
       ],
       "Automated confirmations and alerts": [
         "Automatiserade bekräftelser och varningar"
@@ -9926,12 +9858,6 @@
       ],
       "Your location": [
         "Din plats"
-      ],
-      "Your password (admin)": [
-        "Ditt lösenord (admin)"
-      ],
-      "Your password (trusted contact)": [
-        "Ditt lösenord (betrodd kontakt)"
       ],
       "ZIP code": [
         "Postnummer"
@@ -11768,23 +11694,23 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
-        "Ändra din e-postadress för populära tjänster nu för att undvika bli spårad och profileras. ${ learnMoreLink }"
-      ],
-      "Finance": [
-        "Ekonomi"
+      "Choose your service": [
+        "Välj din tjänst"
       ],
       "Maybe later": [
         "Kanske senare"
       ],
-      "Privacy for all your online accounts": [
-        "Integritet för alla dina konton online"
+      "Popular services": [
+        "Populära tjänster"
       ],
-      "Shopping": [
-        "Shopping"
+      "Skip for now": [
+        "Hoppa över just nu"
       ],
-      "Social media": [
-        "Sociala medier"
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Byt dina konton till ${ BRAND_NAME }"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Välkommen till ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -11983,40 +11909,6 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Du kommer att kunna använda ${ planTitle } tills provperioden slutar, utan kostnad."
-      ]
-    },
-    "Online accounts": {
-      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Har du ett konto hos någon av dessa tjänster? Klicka bara för att ändra e-postadressen till din ${ MAIL_APP_NAME }-adress."
-      ]
-    },
-    "Online Accounts Name": {
-      "Banking": [
-        "Banktjänster"
-      ],
-      "Crypto": [
-        "Krypto"
-      ],
-      "E-commerce and Retail": [
-        "E-handel och detaljhandel"
-      ],
-      "Entertainment": [
-        "Underhållning"
-      ],
-      "Food and beverage": [
-        "Mat och dryck"
-      ],
-      "Gaming": [
-        "Spel"
-      ],
-      "Most popular": [
-        "Mest populär"
-      ],
-      "Travel": [
-        "Resa"
-      ],
-      "Utilities": [
-        "Verktyg"
       ]
     },
     "Option": {
@@ -12977,11 +12869,6 @@
         "Granska kontosäkerhet"
       ]
     },
-    "saml: Error": {
-      "Sign in wasn't successfully completed.": [
-        "Inloggning lyckades inte slutföras."
-      ]
-    },
     "Search - no results": {
       "An action is being processed": [
         "En åtgärd bearbetas"
@@ -13698,17 +13585,6 @@
       ],
       "Your pm.me email is active": [
         "Din pm.me-adress är aktiv"
-      ]
-    },
-    "sso": {
-      "Sign in": [
-        "Logga in"
-      ],
-      "Sign in to your organization": [
-        "Logga in på din organisation"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Du kommer omdirigeras till din tredjeparts SSO-leverantör."
       ]
     },
     "State": {
@@ -14955,8 +14831,14 @@
       "Confirm recipient address?": [
         "Bekräfta mottagarens adress?"
       ],
+      "Connect a Gmail address": [
+        "Anslut en Gmail-adress"
+      ],
       "Connect apps and devices": [
         "Anslut appar och enheter"
+      ],
+      "Connect more addresses": [
+        "Anslut fler adresser"
       ],
       "Connect to video conferencing": [
         "Anslut till videokonferens"
@@ -15137,9 +15019,6 @@
       "Enhance security with 2FA": [
         "Förbättra säkerhet med 2FA"
       ],
-      "Enter your password": [
-        "Ange ditt lösenord"
-      ],
       "Error": [
         "Fel"
       ],
@@ -15267,6 +15146,9 @@
       "Label options": [
         "Etikettalternativ"
       ],
+      "Limit reached": [
+        "Gräns uppnådd"
+      ],
       "Link confirmation": [
         "Länkbekräftelse"
       ],
@@ -15368,6 +15250,9 @@
       ],
       "Moving a snoozed message": [
         "Flyttar ett snoozat meddelande"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Flera konton, 1 privat inkorg"
       ],
       "Need more aliases?": [
         "Behöver du fler alias?"
@@ -15518,6 +15403,9 @@
       ],
       "Referral": [
         "Hänvisning"
+      ],
+      "Remove forwarding address": [
+        "Ta bort vidarebefordringsadress"
       ],
       "Remove from list?": [
         "Ta bort från lista?"
@@ -15699,9 +15587,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "Two-factor authentication": [
-        "Tvåfaktorsautentisering"
       ],
       "Unsubscribe": [
         "Avsluta prenumeration"
