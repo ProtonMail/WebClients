@@ -35,6 +35,10 @@
             "matchPackageNames": ["typescript"]
         },
         {
+            "groupName": "Turbo",
+            "matchPackageNames": ["turbo"]
+        },
+        {
             "groupName": "lexical",
             "matchPackageNames": ["@lexical/*", "lexical", "yjs", "y-protocols"]
         },
