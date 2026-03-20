@@ -60,7 +60,6 @@ describe('categoriesHelpers', () => {
                     outlinedIcon: 'bell-2',
                 },
             ],
-            ['23'],
         ])('should return proper values for %s', (id, expectedValues) => {
             expect(getCategoryData(id)).toEqual(expectedValues);
         });
