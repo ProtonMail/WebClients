@@ -33,7 +33,13 @@ const EmailReservation = ({ onContinue }: EmailReservationProps) => {
                     <HowItWorks />
                     <VoucherInformation />
                     <BornPrivateFormFooter step={Steps.Reservation} totalSteps={TOTAL_STEPS}>
-                        <Button type="submit" color="norm" size="large" className="w-full md:w-auto rounded-lg">
+                        <Button
+                            type="submit"
+                            color="norm"
+                            size="large"
+                            className="w-full md:w-auto rounded-lg"
+                            data-testid="email-reservation-continue"
+                        >
                             {c('Action').t`Continue`}
                         </Button>
                     </BornPrivateFormFooter>
