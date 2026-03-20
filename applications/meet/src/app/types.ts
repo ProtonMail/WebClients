@@ -49,4 +49,11 @@ export enum PublishableDataTypes {
     ChatMessageReaction = 'chatMessageReaction',
 }
 
+export type ToggleVideoType = (params: {
+    isEnabled?: boolean;
+    videoDeviceId?: string;
+    forceUpdate?: boolean;
+    preserveCache?: boolean;
+}) => Promise<boolean | undefined>;
+
 export type MeetButtonClass = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'danger' | 'danger-secondary';
