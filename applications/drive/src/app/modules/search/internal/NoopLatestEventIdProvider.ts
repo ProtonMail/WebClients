@@ -1,12 +1,16 @@
-import { LatestEventIdProvider } from '@proton/drive/internal/latestEventIdProvider';
+import { LatestEventIdProvider } from '@proton/drive';
 
 // TODO: Add real implementation based on indexeddb for incremental updates.
 export class NoopLatestEventIdProvider extends LatestEventIdProvider {
-    getLatestEventId(_treeEventScopeId: string): string | null {
+    async getLatestEventId(_treeEventScopeId: string): Promise<string | null> {
         return null;
     }
 
-    saveLatestEventId(_treeEventScopeId: string, _eventId: string): void {}
+    async saveLatestEventId(_treeEventScopeId: string, _eventId: string): Promise<void> {
+        // noop
+    }
 
-    removeEventScope(_treeEventScopeId: string): void {}
+    async removeEventScope(_treeEventScopeId: string): Promise<void> {
+        // noop
+    }
 }
