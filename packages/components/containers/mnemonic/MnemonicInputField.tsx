@@ -53,7 +53,7 @@ const MnemonicInputField = ({
             label={label}
             assistiveText={assistiveText}
             onValue={(newValue: string) => {
-                const splitWords = newValue.split(/\s+/);
+                const splitWords = newValue.trimStart().split(/\s+/);
                 const mnemonic = splitWords.slice(0, 12).join(' ');
                 return onValue?.(mnemonic);
             }}
