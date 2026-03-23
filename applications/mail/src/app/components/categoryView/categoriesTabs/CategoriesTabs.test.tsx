@@ -1,9 +1,11 @@
 import { screen } from '@testing-library/react';
 
+import { CATEGORIES_COLOR_SHADES } from '@proton/mail/features/categoriesView/categoriesConstants';
 import * as helpers from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { mailTestRender } from 'proton-mail/helpers/test/helper';
+import { newElementsState } from 'proton-mail/store/elements/elementsSlice';
 
 import { mockActiveCategoriesData } from '../testUtils/helpers';
 import { CategoriesTabs } from './CategoriesTabs';
@@ -17,20 +19,73 @@ jest.mock('../useCategoriesView', () => ({
 }));
 
 describe('CategoriesTabs', () => {
-    // TODO how to test this with redux now?
-    it.skip.each([
-        { label: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, colorShade: 'iris' },
-        { label: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, colorShade: 'cyan' },
-        { label: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, colorShade: 'teal' },
-        { label: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, colorShade: 'orange' },
-        { label: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, colorShade: 'red' },
-        { label: MAILBOX_LABEL_IDS.CATEGORY_UPDATES, colorShade: 'pink' },
-    ])('should render the categories with the proper border class', async ({ label, colorShade }) => {
-        await mailTestRender(<CategoriesTabs />);
-        const categoryTab = screen.getByTestId(`category-tab-${label}`);
+    describe('selected category test', () => {
+        // TODO add a test to cover disabled categories
+        it('should select primary when category is in categoryIDs', async () => {
+            await mailTestRender(<CategoriesTabs />, {
+                preloadedState: {
+                    elements: newElementsState({ params: { categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT] } }),
+                },
+            });
+            const categoryTab = screen.getByTestId(`category-tab-${MAILBOX_LABEL_IDS.CATEGORY_DEFAULT}`);
+            expect(categoryTab).toHaveClass('mail-category-border');
+            expect(categoryTab.dataset.color).toStrictEqual(CATEGORIES_COLOR_SHADES.IRIS);
+        });
 
-        expect(categoryTab).toHaveClass('mail-category-border');
-        expect(categoryTab.dataset.color).toStrictEqual(colorShade);
+        it('should select social when category is in categoryIDs', async () => {
+            await mailTestRender(<CategoriesTabs />, {
+                preloadedState: {
+                    elements: newElementsState({ params: { categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL] } }),
+                },
+            });
+            const categoryTab = screen.getByTestId(`category-tab-${MAILBOX_LABEL_IDS.CATEGORY_SOCIAL}`);
+            expect(categoryTab).toHaveClass('mail-category-border');
+            expect(categoryTab.dataset.color).toStrictEqual(CATEGORIES_COLOR_SHADES.CYAN);
+        });
+
+        it('should select promotion when category is in categoryIDs', async () => {
+            await mailTestRender(<CategoriesTabs />, {
+                preloadedState: {
+                    elements: newElementsState({ params: { categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS] } }),
+                },
+            });
+            const categoryTab = screen.getByTestId(`category-tab-${MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS}`);
+            expect(categoryTab).toHaveClass('mail-category-border');
+            expect(categoryTab.dataset.color).toStrictEqual(CATEGORIES_COLOR_SHADES.TEAL);
+        });
+
+        it('should select newsletters when category is in categoryIDs', async () => {
+            await mailTestRender(<CategoriesTabs />, {
+                preloadedState: {
+                    elements: newElementsState({ params: { categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS] } }),
+                },
+            });
+            const categoryTab = screen.getByTestId(`category-tab-${MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS}`);
+            expect(categoryTab).toHaveClass('mail-category-border');
+            expect(categoryTab.dataset.color).toStrictEqual(CATEGORIES_COLOR_SHADES.ORANGE);
+        });
+
+        it('should select transactions when category is in categoryIDs', async () => {
+            await mailTestRender(<CategoriesTabs />, {
+                preloadedState: {
+                    elements: newElementsState({ params: { categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS] } }),
+                },
+            });
+            const categoryTab = screen.getByTestId(`category-tab-${MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS}`);
+            expect(categoryTab).toHaveClass('mail-category-border');
+            expect(categoryTab.dataset.color).toStrictEqual(CATEGORIES_COLOR_SHADES.RED);
+        });
+
+        it('should select updates when category is in categoryIDs', async () => {
+            await mailTestRender(<CategoriesTabs />, {
+                preloadedState: {
+                    elements: newElementsState({ params: { categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_UPDATES] } }),
+                },
+            });
+            const categoryTab = screen.getByTestId(`category-tab-${MAILBOX_LABEL_IDS.CATEGORY_UPDATES}`);
+            expect(categoryTab).toHaveClass('mail-category-border');
+            expect(categoryTab.dataset.color).toStrictEqual(CATEGORIES_COLOR_SHADES.PINK);
+        });
     });
 
     describe('error boundaries test', () => {
