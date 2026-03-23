@@ -415,7 +415,7 @@ const ToolbarRightActionsAlbumGallery = ({
                 linkId={linkId}
                 showUploadButton={showIconOnly && !showAddAlbumsButton && showUploadButton}
                 showAddAlbumPhotosButton={showIconOnly && showAddAlbumsButton}
-                showDeleteAlbumButton={album.permissions.isAdmin && !driveAlbumsDisabled}
+                showDeleteAlbumButton={album.permissions.isOwner && !driveAlbumsDisabled}
                 showLeaveAlbumButton={!album.permissions.isOwner && !driveAlbumsDisabled}
             />
             {sharingModal}
@@ -516,7 +516,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
         album &&
         selectedItems.length &&
         album.cover?.linkId !== selectedItems[0].linkId &&
-        album.permissions.isAdmin &&
+        album.permissions.isOwner &&
         !driveAlbumsDisabled
     );
     const canSavePhotos = Boolean(
@@ -529,7 +529,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
     const canRemoveAlbum = Boolean(album && album.permissions.isEditor && removeAlbumPhotos && !driveAlbumsDisabled);
     const canShare = Boolean(
         (openSharePhotoModal && !hasMultipleSelected && !album) ||
-        (!hasMultipleSelected && album && album.permissions.isAdmin)
+        (!hasMultipleSelected && album && album.permissions.isOwner)
     );
     const canShareMultiple = Boolean(hasMultipleSelected && openSharePhotosIntoAnAlbumModal && !album);
     const canAddPhotosFromGallery = Boolean(

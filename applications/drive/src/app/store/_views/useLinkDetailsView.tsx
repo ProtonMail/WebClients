@@ -28,7 +28,7 @@ export default function useLinkDetailsView(
 
     // permissions load will be during the withLoading process, but we prefer to set owner by default,
     // so even if it's wrong permissions, BE will prevent any unauthorized actions
-    const [permissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(SHARE_MEMBER_PERMISSIONS.OWNER);
+    const [permissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(SHARE_MEMBER_PERMISSIONS.ADMIN_EDITOR);
     const [link, setLink] = useState<DecryptedLink>();
     const [error, setError] = useState<any>();
     const [isSharedWithMeLink, setIsSharedWithMeLink] = useState(false);

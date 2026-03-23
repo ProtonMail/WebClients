@@ -39,7 +39,7 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
     const { getSharePermissions } = useDirectSharingInfo();
     // permissions load will be during the withLoading process, but we prefer to set owner by default,
     // so even if it's wrong permissions, BE will prevent any unauthorized actions
-    const [permissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(SHARE_MEMBER_PERMISSIONS.OWNER);
+    const [permissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(SHARE_MEMBER_PERMISSIONS.ADMIN_EDITOR);
     const [isPermissionsLoading, withPermissionsLoading] = useLoading(true);
     const { isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile, videoStreaming } =
         useFileViewBase(shareId, linkId, { getCachedChildren, loadChildren }, revisionId);
@@ -106,6 +106,7 @@ export function usePublicFileView(
     useEffect(() => {
         if (error) {
             metrics.drive_file_preview_errors_total.increment({
+                // eslint-disable-next-line no-nested-ternary
                 type: !link ? 'unknown' : link.isFile ? 'file' : 'folder',
             });
         }

@@ -200,7 +200,7 @@ export const PhotosLayout = () => {
     const previewShareId = albumShareId || shareId;
     const isGalleryOrAdmin =
         currentPageType === AlbumsPageTypes.GALLERY ||
-        (currentPageType === AlbumsPageTypes.ALBUMSGALLERY && album?.permissions.isAdmin);
+        (currentPageType === AlbumsPageTypes.ALBUMSGALLERY && album?.permissions.isOwner);
     const canChangeAlbumCoverInPreview = isGalleryOrAdmin;
     const canChangeSharePhotoInPreview = isGalleryOrAdmin;
     /*
