@@ -249,7 +249,7 @@ const DomainsSectionUpgrade = () => {
 const DomainsSection = ({ onceRef }: { onceRef: MutableRefObject<boolean> }) => {
     const [customDomains] = useCustomDomains();
     const [user] = useUser();
-    const hasPermission = user.isAdmin && user.hasPaidMail;
+    const hasPermission = user.isAdmin && (user.hasPaidMail || user.hasPaidMeet);
 
     return hasPermission || (!hasPermission && customDomains?.length) ? (
         <DomainsSectionInternal onceRef={onceRef} />
