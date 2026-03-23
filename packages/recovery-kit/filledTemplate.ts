@@ -3,5 +3,5 @@ import { getTemplate } from './index';
 import filledTemplate from './templates/filled_template.pdf';
 
 export const getFilledTemplate = () => {
-    return getTemplate(filledTemplate);
+    return getTemplate(`${location.origin}${filledTemplate}`);
 };
