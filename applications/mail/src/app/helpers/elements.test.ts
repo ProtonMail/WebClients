@@ -743,15 +743,20 @@ describe('elements', () => {
                     } as Message;
 
                     // This element should not be visible since the category is not disabled
-                    const messageInForum = {
+                    const messageInTransaction = {
                         ID: 'message3',
                         ConversationID: 'conversationID3',
-                        LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_FORUMS],
+                        LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS],
                         Unread: 0,
                     } as Message;
 
                     const filtered = filterElementsInState({
-                        elements: [messageInPromotions, messageInDefaultCategory, messageInSocial, messageInForum],
+                        elements: [
+                            messageInPromotions,
+                            messageInDefaultCategory,
+                            messageInSocial,
+                            messageInTransaction,
+                        ],
                         bypassFilter: [],
                         labelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                         filter: {},
@@ -853,11 +858,11 @@ describe('elements', () => {
                     } as Conversation;
 
                     // This element should not be visible since the category is not disabled
-                    const conversationInForum = {
+                    const conversationInTransaction = {
                         ID: 'conversation3',
                         Labels: [
                             { ID: MAILBOX_LABEL_IDS.INBOX } as ConversationLabel,
-                            { ID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS } as ConversationLabel,
+                            { ID: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS } as ConversationLabel,
                         ],
                         NumUnread: 0,
                     } as Conversation;
@@ -867,7 +872,7 @@ describe('elements', () => {
                             converationInPromotions,
                             conversationInDefaultCategory,
                             conversationInSocial,
-                            conversationInForum,
+                            conversationInTransaction,
                         ],
                         bypassFilter: [],
                         labelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,

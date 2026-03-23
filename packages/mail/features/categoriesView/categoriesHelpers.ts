@@ -41,12 +41,6 @@ const RAW_TO_CATEGORY: Record<string, CategoryTab> = {
         filledIcon: 'bell-filled-2',
         outlinedIcon: 'bell-2',
     },
-    '23': {
-        id: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
-        colorShade: CATEGORIES_COLOR_SHADES.BLUE,
-        filledIcon: 'speech-bubbles-filled',
-        outlinedIcon: 'speech-bubbles',
-    },
 } as const;
 
 type RawId = keyof typeof RAW_TO_CATEGORY;
@@ -74,7 +68,6 @@ const CATEGORIES_SHORTCUTS_MAPPING: Record<CategoryLabelID, string[]> = {
     [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]: ['C', 'N'],
     [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS]: ['C', 'T'],
     [MAILBOX_LABEL_IDS.CATEGORY_UPDATES]: ['C', 'U'],
-    [MAILBOX_LABEL_IDS.CATEGORY_FORUMS]: ['C', 'F'],
 };
 
 export const getCategoryCommanderKeyboardShortcut = (id: CategoryLabelID): string[] => {

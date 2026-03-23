@@ -91,22 +91,22 @@ describe('useMailCategoriesRedirection', () => {
         mockUseLocation.mockReturnValue({ pathname: '/primary' } as any);
         mockedUseCategoryView.mockReturnValue({
             categoryViewAccess: true,
-            activeCategoriesTabs: [{ id: MAILBOX_LABEL_IDS.CATEGORY_FORUMS, display: false }],
+            activeCategoriesTabs: [{ id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, display: false }],
         } as any);
 
-        renderHook(() => useMailCategoriesRedirection({ labelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS }));
+        renderHook(() => useMailCategoriesRedirection({ labelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS }));
 
         expect(push).toHaveBeenCalled();
     });
 
     it('should not redirect if the category is displayed', () => {
-        mockUseLocation.mockReturnValue({ pathname: '/forums' } as any);
+        mockUseLocation.mockReturnValue({ pathname: '/transactions' } as any);
         mockedUseCategoryView.mockReturnValue({
             categoryViewAccess: true,
-            activeCategoriesTabs: [{ id: MAILBOX_LABEL_IDS.CATEGORY_FORUMS, display: true }],
+            activeCategoriesTabs: [{ id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, display: true }],
         } as any);
 
-        renderHook(() => useMailCategoriesRedirection({ labelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS }));
+        renderHook(() => useMailCategoriesRedirection({ labelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS }));
 
         expect(push).not.toHaveBeenCalled();
     });
@@ -124,13 +124,13 @@ describe('useMailCategoriesRedirection', () => {
     });
 
     it('should not redirect when labelID is not found in activeCategoriesTabs', () => {
-        mockUseLocation.mockReturnValue({ pathname: '/forums' } as any);
+        mockUseLocation.mockReturnValue({ pathname: '/transactions' } as any);
         mockedUseCategoryView.mockReturnValue({
             categoryViewAccess: true,
             activeCategoriesTabs: [{ id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, display: true }],
         } as any);
 
-        renderHook(() => useMailCategoriesRedirection({ labelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS }));
+        renderHook(() => useMailCategoriesRedirection({ labelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS }));
 
         expect(push).not.toHaveBeenCalled();
     });
