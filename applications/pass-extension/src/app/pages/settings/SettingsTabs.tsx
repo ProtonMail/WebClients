@@ -19,6 +19,7 @@ import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvi
 import { AccountPath } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { clientSessionLocked } from '@proton/pass/lib/client';
+import { OrganizationAliasCreateMode } from '@proton/pass/types';
 import type { Unpack } from '@proton/pass/types/utils/index';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -35,9 +36,9 @@ type Props = { pathname: string };
 type Tab = Unpack<Exclude<ComponentProps<typeof Tabs>['tabs'], undefined>>;
 type SettingTab = Tab & { path: string; hidden?: boolean };
 
-const getSettingsTabs = (orgEnabled: boolean = false): SettingTab[] => [
+const getSettingsTabs = (orgEnabled: boolean = false, aliasCreationDisabled: boolean = false): SettingTab[] => [
     { path: '/', title: c('Label').t`General`, content: <General /> },
-    { path: '/aliases', title: c('Label').t`Aliases`, content: <Aliases /> },
+    ...(!aliasCreationDisabled ? [{ path: '/aliases', title: c('Label').t`Aliases`, content: <Aliases /> }] : []),
     { path: '/security', title: c('Label').t`Security`, content: <Security /> },
     { path: '/import', title: c('Label').t`Import`, content: <Import /> },
     { path: '/export', title: c('Label').t`Export`, content: <Export /> },
@@ -61,12 +62,15 @@ const pathnameToIndex = (pathname: string, availableTabs: SettingTab[]) => {
     return idx !== -1 ? idx : 0;
 };
 
-export const SettingsTabs: FC<Props> = ({ pathname }) => {
+const SettingsTabsContent: FC<Props> = ({ pathname }) => {
     const history = useHistory();
-    const { authorized, status } = useAppState();
     const organization = useOrganization();
+    const orgAliasCreationDisabled = organization?.settings.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
 
-    const tabs = useMemo(() => getSettingsTabs(organization?.settings.enabled), [organization]);
+    const tabs = useMemo(
+        () => getSettingsTabs(organization?.settings.enabled, orgAliasCreationDisabled),
+        [organization]
+    );
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(pathname, tabs));
 
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
@@ -80,6 +84,20 @@ export const SettingsTabs: FC<Props> = ({ pathname }) => {
 
     useEffect(() => setActiveTab(pathnameToIndex(pathname, tabs)), [pathname, tabs]);
 
+    return (
+        <Tabs
+            className="w-full"
+            contentClassName="p-0"
+            navContainerClassName="mb-6"
+            onChange={handleOnChange}
+            tabs={tabs}
+            value={activeTab}
+        />
+    );
+};
+
+export const SettingsTabs: FC<Props> = ({ pathname }) => {
+    const { authorized, status } = useAppState();
     const onReauth = useExtensionReauth();
 
     if (authorized) {
@@ -90,14 +108,7 @@ export const SettingsTabs: FC<Props> = ({ pathname }) => {
                         <UpsellingProvider>
                             <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
                             <SettingsHeader />
-                            <Tabs
-                                className="w-full"
-                                contentClassName="p-0"
-                                navContainerClassName="mb-6"
-                                onChange={handleOnChange}
-                                tabs={tabs}
-                                value={activeTab}
-                            />
+                            <SettingsTabsContent pathname={pathname} />
                             <SettingsFooter />
                         </UpsellingProvider>
                     </PinUnlockProvider>
