@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { organizationActions } from '@proton/account/organization';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSamlSSO } from '@proton/account/samlSSO/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Logo from '@proton/components/components/logo/Logo';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -13,6 +14,7 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
+import { hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
@@ -93,6 +95,7 @@ const AccessControlSettingsSection = () => {
     const [samlSSO] = useSamlSSO();
     const hasSsoConfig = samlSSO && samlSSO.configs.length > 0;
     const [organization] = useOrganization();
+    const [subscription] = useSubscription();
 
     const isAuthenticatorAvailable = useFlag('AuthenticatorSettingsEnabled');
     const isMeetAvailable = useFlag('PMVC2025');
@@ -130,7 +133,7 @@ const AccessControlSettingsSection = () => {
             // check if _subusers_ of certain org have access to certain products, not just Mail. Perhaps the
             // proper way already exists. The best idea that I had is using Organization.PlanFlags, but I'm not
             // confident enough to use the same condition for the other toggles.
-            available: hasMailProduct(organization),
+            available: hasMailProduct(organization) || hasMeetBusiness(subscription),
             title: c('Info').t`${MAIL_APP_NAME} and ${CALENDAR_APP_NAME}`,
             description: c('Info').t`Email and calendar, integrated with ${CONTACTS_APP_NAME}`,
             logo: <MailCalendarIcon size={8} />,
