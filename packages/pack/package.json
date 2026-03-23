@@ -9,6 +9,7 @@
         "proton-pack": "./bin/protonPack.js"
     },
     "scripts": {
+        "check-types": "tsc",
         "lint": "eslint --quiet",
         "pretty": "prettier --write  cli bin"
     },
@@ -61,7 +62,8 @@
     },
     "devDependencies": {
         "eslint": "^9.39.4",
-        "prettier": "^3.8.1"
+        "prettier": "^3.8.1",
+        "typescript": "^6.0.2"
     },
     "peerDependencies": {
         "@proton/collect-metrics": "workspace:^"
