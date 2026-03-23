@@ -15,9 +15,11 @@ import { usePublicFolderStore } from './usePublicFolder.store';
 export const getPublicFolderCells = ({
     viewportWidth,
     onDownload,
+    isEditor,
 }: {
     viewportWidth: Breakpoints['viewportWidth'];
     onDownload: (uid: string) => void;
+    isEditor: boolean;
 }): CellDefinition[] => {
     const cells: CellDefinition[] = [
         {
@@ -47,21 +49,23 @@ export const getPublicFolderCells = ({
         },
     ];
 
-    cells.push({
-        ...defaultUploadedByCellConfig,
-        disabled: !viewportWidth['>=large'],
-        render: (uid) => {
-            const UploadedByCellComponent = () => {
-                const item = usePublicFolderStore(useShallow((state) => state.getFolderItem(uid)));
-                if (!item) {
-                    return null;
-                }
+    if (isEditor) {
+        cells.push({
+            ...defaultUploadedByCellConfig,
+            disabled: !viewportWidth['>=large'],
+            render: (uid) => {
+                const UploadedByCellComponent = () => {
+                    const item = usePublicFolderStore(useShallow((state) => state.getFolderItem(uid)));
+                    if (!item) {
+                        return null;
+                    }
 
-                return <UploadedByCell displayName={item.uploadedBy} />;
-            };
-            return <UploadedByCellComponent />;
-        },
-    });
+                    return <UploadedByCell displayName={item.uploadedBy} />;
+                };
+                return <UploadedByCellComponent />;
+            },
+        });
+    }
 
     cells.push(
         {
