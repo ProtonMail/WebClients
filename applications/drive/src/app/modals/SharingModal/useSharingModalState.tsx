@@ -79,9 +79,10 @@ export const useSharingModalState = ({
     const [ownerEmail, setOwnerEmail] = useState('');
     const [ownerDisplayName, setOwnerDisplayName] = useState<string | undefined>();
 
-    const [name, setName] = useState('');
+    const [fileName, setFileName] = useState('');
 
     const [parentUid, setParentUid] = useState<string | undefined>(undefined);
+    const [roleOnParentNode, setRoleOnParentNode] = useState<MemberRole>();
 
     const [canChangePermissions, setCanChangePermissions] = useState(false);
 
@@ -216,7 +217,7 @@ export const useSharingModalState = ({
                 () =>
                     createNotification({
                         // translator: for example '"image.jpg" shared'
-                        text: c('Notification').t`"${name}" shared`,
+                        text: c('Notification').t`"${fileName}" shared`,
                     }),
                 2000
             );
@@ -271,7 +272,7 @@ export const useSharingModalState = ({
                 const node = await drive.getNode(nodeUid);
                 const nodeInfo = node.ok ? node.value : node.error;
 
-                setName(getNodeName(node));
+                setFileName(getNodeName(node));
                 setParentUid(nodeInfo.parentUid);
                 setMediaType(nodeInfo.type === NodeType.Folder ? 'Folder' : nodeInfo.mediaType);
                 setIsAlbum(nodeInfo.type === NodeType.Album);
@@ -280,6 +281,7 @@ export const useSharingModalState = ({
                     const parent = await drive.getNode(nodeInfo.parentUid);
                     const parentNodeInfo = parent.ok ? parent.value : parent.error;
                     const effectiveRoleOnParent = await getNodeEffectiveRole(parentNodeInfo, drive);
+                    setRoleOnParentNode(effectiveRoleOnParent);
                     setCanChangePermissions(effectiveRoleOnParent === MemberRole.Admin);
                 }
 
@@ -353,7 +355,8 @@ export const useSharingModalState = ({
         onClose,
         sharingInfo,
         nodeUid,
-        name,
+        roleOnParentNode,
+        fileName,
         mediaType,
         canChangePermissions,
         ownerDisplayName,
