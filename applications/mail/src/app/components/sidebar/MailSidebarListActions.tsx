@@ -1,10 +1,10 @@
-import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
-import SidebarListItemHeaderLink from '@proton/components/components/sidebar/SidebarListItemHeaderLink';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import SidebarListItemHeaderLink from '@proton/components/components/sidebar/SidebarListItemHeaderLink';
+import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { APPS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit, hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';

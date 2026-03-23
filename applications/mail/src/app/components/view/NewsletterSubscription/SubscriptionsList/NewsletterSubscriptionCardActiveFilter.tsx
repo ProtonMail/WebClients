@@ -1,17 +1,17 @@
-import FiltersUpsellModal from '@proton/components/components/upsell/modals/FiltersUpsellModal';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PropsWithChildren } from 'react';
 
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import FiltersUpsellModal from '@proton/components/components/upsell/modals/FiltersUpsellModal';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
-import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useFilters } from '@proton/mail/store/filters/hooks';
+import { useFolders } from '@proton/mail/store/labels/hooks';
 import { toggleEnable } from '@proton/shared/lib/api/filters';
 import { FILTER_STATUS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';

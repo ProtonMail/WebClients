@@ -1,6 +1,11 @@
 import React from 'react';
 
-import { CheckListClaimProtonAddress, CheckListMobileStores, CheckListProtectInbox, CheckListReviewImports } from '@proton/components/components/checklist/CheckList';
+import {
+    CheckListClaimProtonAddress,
+    CheckListMobileStores,
+    CheckListProtectInbox,
+    CheckListReviewImports,
+} from '@proton/components/components/checklist/CheckList';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 

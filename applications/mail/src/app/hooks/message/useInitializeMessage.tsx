@@ -1,9 +1,9 @@
-import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useCallback } from 'react';
 
 import type { PayloadAction } from '@reduxjs/toolkit';
 
+import useApi from '@proton/components/hooks/useApi';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { FeatureCode, useFeature } from '@proton/features';
 import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
 import { prepareHtml, preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';

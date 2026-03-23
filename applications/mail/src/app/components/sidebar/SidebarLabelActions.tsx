@@ -1,10 +1,10 @@
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
-import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import { MAIL_UPSELL_PATHS, MAX_FOLDER_NESTING_LEVEL } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';

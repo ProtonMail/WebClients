@@ -1,15 +1,15 @@
-import Checkbox from '@proton/components/components/input/Checkbox';
-import type { GroupWithContacts } from '@proton/components/containers/contacts/ContactEmailsProvider';
-import Label from '@proton/components/components/label/Label';
 import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Label from '@proton/components/components/label/Label';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { GroupWithContacts } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { contactToInput } from '@proton/shared/lib/mail/recipient';
 import generateUID from '@proton/utils/generateUID';

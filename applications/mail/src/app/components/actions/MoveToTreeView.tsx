@@ -1,7 +1,7 @@
-import FolderIcon from '@proton/components/containers/labels/FolderIcon';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import FolderIcon from '@proton/components/containers/labels/FolderIcon';
 import { IcCheckmarkStrong } from '@proton/icons/icons/IcCheckmarkStrong';
 import clsx from '@proton/utils/clsx';
 

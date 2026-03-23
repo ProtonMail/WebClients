@@ -1,12 +1,12 @@
-import type { EditorMetadata } from '@proton/components/components/editor/interface';
-import Dropzone from '@proton/components/components/dropzone/Dropzone';
-import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import type { Ref, RefObject } from 'react';
 import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
+import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import type { EditorProps } from '@proton/components/components/editor/Editor';
+import type { EditorMetadata } from '@proton/components/components/editor/interface';
+import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import type { MessageState, MessageStateWithData, OutsideKey } from '@proton/mail/store/messages/messagesTypes';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';

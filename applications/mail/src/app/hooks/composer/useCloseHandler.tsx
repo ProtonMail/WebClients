@@ -1,10 +1,10 @@
-import type { Cancellable } from '@proton/components/hooks/useHandler';
-import { useHandler } from '@proton/components/hooks/useHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import type { Cancellable } from '@proton/components/hooks/useHandler';
+import { useHandler } from '@proton/components/hooks/useHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { wait } from '@proton/shared/lib/helpers/promise';

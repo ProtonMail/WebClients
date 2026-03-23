@@ -1,8 +1,8 @@
-import Alert from '@proton/components/components/alert/Alert';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import Alert from '@proton/components/components/alert/Alert';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';

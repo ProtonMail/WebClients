@@ -1,8 +1,8 @@
-import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { useHistory } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
+import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useFolders } from '@proton/mail/store/labels/hooks';

@@ -1,8 +1,8 @@
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
-import MiddleEllipsis from '@proton/components/components/ellipsis/MiddleEllipsis';
 import type { MouseEvent } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
+import MiddleEllipsis from '@proton/components/components/ellipsis/MiddleEllipsis';
+import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import './AttachmentThumbnail.scss';

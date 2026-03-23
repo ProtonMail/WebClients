@@ -1,8 +1,3 @@
-import AppLink from '@proton/components/components/link/AppLink';
-import Checkbox from '@proton/components/components/input/Checkbox';
-import Logo from '@proton/components/components/logo/Logo';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { addDays, isBefore } from 'date-fns';
@@ -13,7 +8,12 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import AppLink from '@proton/components/components/link/AppLink';
+import Logo from '@proton/components/components/logo/Logo';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { FeatureCode, useFeature } from '@proton/features';
 import { IcCross } from '@proton/icons/icons/IcCross';

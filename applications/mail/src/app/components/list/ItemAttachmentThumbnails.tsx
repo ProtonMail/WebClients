@@ -1,9 +1,9 @@
-import FilePreview from '@proton/components/containers/filePreview/FilePreview';
-import NavigationControl from '@proton/components/containers/filePreview/NavigationControl';
 import { useRef, useState } from 'react';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Portal from '@proton/components/components/portal/Portal';
+import FilePreview from '@proton/components/containers/filePreview/FilePreview';
+import NavigationControl from '@proton/components/containers/filePreview/NavigationControl';
 import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';

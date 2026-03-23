@@ -1,12 +1,12 @@
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button/Button';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
-import { c } from 'ttag';
-
-import { Button } from '@proton/atoms/Button/Button';
 import type { IconName } from '@proton/icons/types';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';

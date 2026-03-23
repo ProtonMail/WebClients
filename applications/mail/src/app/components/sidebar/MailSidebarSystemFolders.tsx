@@ -1,10 +1,10 @@
-import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
 import type { DragEvent, DragEventHandler } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
+import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 

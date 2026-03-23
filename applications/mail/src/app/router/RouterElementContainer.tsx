@@ -1,7 +1,7 @@
-import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useDeferredValue } from 'react';
 
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import ConversationView from 'proton-mail/components/conversation/ConversationView';

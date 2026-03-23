@@ -1,11 +1,11 @@
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import QRCode from '@proton/components/components/image/QRCode';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
+import QRCode from '@proton/components/components/image/QRCode';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';

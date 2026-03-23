@@ -1,8 +1,8 @@
-import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
-import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import { c } from 'ttag';
 
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
+import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
+import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
 import spotlightImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 

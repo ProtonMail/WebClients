@@ -1,12 +1,3 @@
-import LabelStack from '@proton/components/components/labelStack/LabelStack';
-import Loader from '@proton/components/components/loader/Loader';
-import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
-import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainAddress';
 import { useState } from 'react';
 
 import { c } from 'ttag';
@@ -15,6 +6,15 @@ import { memberThunk, organizationThunk, subscriptionThunk, useUserSettings, use
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import LabelStack from '@proton/components/components/labelStack/LabelStack';
+import Loader from '@proton/components/components/loader/Loader';
+import Toggle from '@proton/components/components/toggle/Toggle';
+import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
+import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
+import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainAddress';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import {
     PLANS,

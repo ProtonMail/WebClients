@@ -1,9 +1,9 @@
-import IconRow from '@proton/components/components/iconRow/IconRow';
 import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { useVideoConferencingWidget } from '@proton/calendar/videoConferencing/widget';
+import IconRow from '@proton/components/components/iconRow/IconRow';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';

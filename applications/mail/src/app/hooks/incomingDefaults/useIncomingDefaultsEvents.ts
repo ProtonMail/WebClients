@@ -1,6 +1,6 @@
-import useEventManager from '@proton/components/hooks/useEventManager';
 import { useEffect } from 'react';
 
+import useEventManager from '@proton/components/hooks/useEventManager';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 

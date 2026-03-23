@@ -1,6 +1,6 @@
-import EventManagerContext from '@proton/components/containers/eventManager/context';
 import type { ReactNode } from 'react';
 
+import EventManagerContext from '@proton/components/containers/eventManager/context';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 
 interface Props {

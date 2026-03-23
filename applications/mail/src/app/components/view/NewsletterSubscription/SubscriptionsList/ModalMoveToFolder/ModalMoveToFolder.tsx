@@ -1,19 +1,19 @@
-import Checkbox from '@proton/components/components/input/Checkbox';
-import FolderIcon from '@proton/components/containers/labels/FolderIcon';
-import Icon from '@proton/components/components/icon/Icon';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import useApi from '@proton/components/hooks/useApi';
-import useDebounceInput from '@proton/components/components/input/useDebounceInput';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import useDebounceInput from '@proton/components/components/input/useDebounceInput';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import FolderIcon from '@proton/components/containers/labels/FolderIcon';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { useFolders } from '@proton/mail/store/labels/hooks';

@@ -1,15 +1,15 @@
-import Icon from '@proton/components/components/icon/Icon';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import Icon from '@proton/components/components/icon/Icon';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import byoeSpolightImg from '@proton/styles/assets/img/illustrations/byoe-spotlight.svg';
 

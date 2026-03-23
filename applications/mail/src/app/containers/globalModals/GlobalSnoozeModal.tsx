@@ -1,12 +1,12 @@
-import Checkbox from '@proton/components/components/input/Checkbox';
-import Label from '@proton/components/components/label/Label';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Label from '@proton/components/components/label/Label';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { setItem } from '@proton/shared/lib/helpers/storage';
 
 import { HIDE_SNOOZE_CONFIRMATION_LS_KEY } from 'proton-mail/components/list/snooze/constant';

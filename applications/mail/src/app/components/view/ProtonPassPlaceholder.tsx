@@ -1,9 +1,9 @@
-import { DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID } from '@proton/components/components/drawer/views/SecurityCenter/constants';
-import useDrawer from '@proton/components/hooks/drawer/useDrawer';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID } from '@proton/components/components/drawer/views/SecurityCenter/constants';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import { getPlaceholderSrc } from '@proton/mail/helpers/getPlaceholderSrc';
 import noSpamSvgDark from '@proton/styles/assets/img/placeholders/auto-delete-cool-dark.svg';
 import noSpamSvgLight from '@proton/styles/assets/img/placeholders/auto-delete-cool-light.svg';
