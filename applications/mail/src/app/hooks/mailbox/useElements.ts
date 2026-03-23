@@ -137,7 +137,7 @@ export const useElements: UseElements = ({
     const countValues = conversationMode ? conversationCounts : messageCounts;
     const countsLoading = conversationMode ? loadingConversationCounts : loadingMessageCounts;
 
-    const { disabledCategoriesIDs } = useCategoriesView();
+    const { disabledCategoriesIDs, categoryViewAccess } = useCategoriesView();
 
     const { esStatus } = useEncryptedSearchContext();
     const { esEnabled } = esStatus;
@@ -226,6 +226,16 @@ export const useElements: UseElements = ({
             return;
         }
 
+        // Update the category IDs and push the disabled categories if the default category is selected
+        const categoryIDs: CategoryLabelID[] = [];
+        if (categoryViewAccess && isCategoryLabel(labelID)) {
+            categoryIDs.push(labelID);
+
+            if (labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
+                categoryIDs.push(...disabledCategoriesIDs);
+            }
+        }
+
         esEnabledRef.current = esEnabled;
 
         if (shouldResetElementsState) {
@@ -242,6 +252,7 @@ export const useElements: UseElements = ({
                         search,
                         conversationMode,
                         isSearching,
+                        categoryIDs,
                     },
                 })
             );
@@ -252,16 +263,6 @@ export const useElements: UseElements = ({
                 !filterToString(filter) && !isSearching
                     ? countValues.find((label) => label.LabelID === labelID)?.Total
                     : undefined;
-
-            // Update the categoty IDs and push the disabled categories if the default category is selected
-            const categoryIDs: CategoryLabelID[] = [];
-            if (isCategoryLabel(labelID)) {
-                categoryIDs.push(labelID);
-
-                if (labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
-                    categoryIDs.push(...disabledCategoriesIDs);
-                }
-            }
 
             dispatch(
                 setParams({
@@ -279,7 +280,7 @@ export const useElements: UseElements = ({
             );
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-577287
-    }, [location.pathname, location.hash, mailSettings.ViewMode, labelIDs, esEnabled, onPage]);
+    }, [location.pathname, location.hash, mailSettings.ViewMode, labelIDs, esEnabled, onPage, disabledCategoriesIDs]);
 
     // Reset the element state when receiving a setting update for page size or conversation mode
     useEffect(() => {
