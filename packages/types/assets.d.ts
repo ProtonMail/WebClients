@@ -4,6 +4,7 @@ declare module '*.png';
 declare module '*.webm';
 declare module '*.mp4';
 declare module '*.md';
+declare module '*.scss';
 declare module '*.raw.scss';
 declare module '*.csv';
 declare module '*.webp';
