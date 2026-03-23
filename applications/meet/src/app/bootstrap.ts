@@ -8,6 +8,7 @@ import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActions } from '@proton/account/index';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
+import { subscriptionThunk } from '@proton/account/subscription';
 import type { NotificationsManager } from '@proton/components/containers/notifications/manager';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features/index';
@@ -84,6 +85,7 @@ const loadUserData = async (dispatch: MeetDispatch) => {
         dispatch(userThunk()),
         dispatch(userSettingsThunk()),
         dispatch(fetchFeatures([FeatureCode.EarlyAccessScope])),
+        dispatch(subscriptionThunk()),
     ]);
 
     dispatch(welcomeFlagsActions.initial(userSettings));
