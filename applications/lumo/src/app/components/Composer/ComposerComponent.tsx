@@ -10,8 +10,8 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { SketchOverlay } from '../../features/drawingcanvas';
 import type { DriveSDKMethods } from '../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../hooks/useDriveSDK';
+import useComposerInput from '../../hooks/useComposerInput';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
-import useTipTapEditor from '../../hooks/useTipTapEditor';
 import { useDragArea } from '../../providers/DragAreaProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
@@ -59,14 +59,14 @@ export type ComposerComponentProps = {
     setIsEditorFocused?: (isEditorFocused: boolean) => void;
     isEditorFocused?: boolean;
     setIsEditorEmpty?: (isEditorEmpty: boolean) => void;
-    messageChain?: Message[]; // Optional for MainContainer (no conversation yet)
-    handleOpenFiles?: () => void; // Optional for MainContainer (no files management needed)
-    onShowDriveBrowser?: () => void; // Optional for Drive browser functionality
+    messageChain?: Message[];
+    handleOpenFiles?: () => void;
+    onShowDriveBrowser?: () => void;
     canShowLegalDisclaimer?: boolean;
     canShowLumoUpsellToggle?: boolean;
-    initialQuery?: string; // Initial query to populate and auto-execute
-    prefillQuery?: string; // Query to prefill without auto-executing
-    spaceId?: string; // Optional space ID to include space-level attachments
+    initialQuery?: string;
+    prefillQuery?: string;
+    spaceId?: string;
 };
 
 /**
@@ -109,55 +109,6 @@ const ComposerComponentInner = ({
     const { handleFileProcessing, handleFilesSelected, handleBrowseDrive, handleDeleteAttachment, fileUploadMode } =
         useFileHandling({ messageChain, onShowDriveBrowser, spaceId, uploadToDrive: driveContext?.uploadFile });
 
-    const sendGenerateMessage = useCallback(
-        async (editor: any) => {
-            if (isProcessingAttachment) {
-                console.log('Submission blocked: files are still being processed');
-                return;
-            }
-
-            // if (!editor?.isEmpty) {
-            //     const markdown = editor?.storage.markdown.getMarkdown();
-            //     if (!markdown) return;
-            //     editor?.commands.clearContent();
-            //     await handleSendMessage(markdown, isWebSearchButtonToggled);
-            // }
-
-            if (!editor?.isEmpty) {
-                // Get content as HTML, then convert to markdown
-                const html = editor?.getHTML();
-
-                if (!html) {
-                    return;
-                }
-
-                // Convert HTML to markdown
-                const { htmlToMarkdown } = await import('../../util/htmlToMarkdown');
-                const markdown = htmlToMarkdown(html);
-
-                editor?.commands.clearContent();
-                await handleSendMessage(markdown, isWebSearchButtonToggled);
-            }
-        },
-        [handleSendMessage, isWebSearchButtonToggled, isProcessingAttachment]
-    );
-
-    const handleDrawSketch = useCallback(() => {
-        setShowDrawingModal(true);
-    }, []);
-
-    const handleDrawingExport = useCallback(
-        async (imageData: string) => {
-            const file = base64ToFile(imageData, `sketch-${Date.now()}.png`);
-            await handleFileProcessing(file);
-            createNotification({
-                text: c('collider_2025: Info').t`Sketch added as attachment`,
-                type: 'success',
-            });
-        },
-        [handleFileProcessing, createNotification]
-    );
-
     const isAutocompleteActiveRef = useRef(false);
 
     const handleFocus = useCallback(() => {
@@ -180,6 +131,54 @@ const ComposerComponentInner = ({
         [dispatch, createNotification]
     );
 
+    const sendGenerateMessage = useCallback(
+        async (value: string) => {
+            if (isProcessingAttachment) {
+                console.log('Submission blocked: files are still being processed');
+                return;
+            }
+            if (!value.trim()) {
+                return;
+            }
+            composerInput.clear();
+            await handleSendMessage(value, isWebSearchButtonToggled);
+        },
+        // composerInput.clear is intentionally omitted from deps — it's stable but the object is created below
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [handleSendMessage, isWebSearchButtonToggled, isProcessingAttachment]
+    );
+
+    const composerInput = useComposerInput({
+        onSubmitCallback: sendGenerateMessage,
+        isGenerating,
+        isProcessingAttachment,
+        isAutocompleteActiveRef,
+        onFocus: handleFocus,
+        onBlur: handleBlur,
+        onPasteLargeContent: handlePasteLargeContent,
+    });
+
+    const { isEmpty, clear, textareaRef, setValue, handleSubmit } = composerInput;
+
+    const sendIsDisabled = !(isGenerating ?? false) && (isEmpty || isProcessingAttachment);
+    const canShowSendButton = (isGenerating ?? false) || !isEmpty;
+
+    // Update parent component when empty state changes
+    useEffect(() => {
+        setIsEditorEmpty?.(isEmpty);
+    }, [isEmpty, setIsEditorEmpty]);
+
+    // Populate textarea with query once per unique value
+    const handleInitialQueryReady = useCallback(async () => {
+        const currentValue = textareaRef.current?.value ?? '';
+        if (!currentValue.trim()) return;
+        clear();
+        await handleSendMessage(currentValue, isWebSearchButtonToggled);
+    }, [textareaRef, clear, handleSendMessage, isWebSearchButtonToggled]);
+
+    useEditorQuery(initialQuery, textareaRef, setValue, isProcessingAttachment, handleInitialQueryReady);
+    useEditorQuery(prefillQuery, textareaRef, setValue, isProcessingAttachment);
+
     // Handle paste events to attach images from clipboard
     useEffect(() => {
         const handlePaste = async (e: ClipboardEvent) => {
@@ -200,31 +199,23 @@ const ComposerComponentInner = ({
         }
     }, [handleFileProcessing]);
 
-    const { editor, handleSubmit, pasteCodeModal } = useTipTapEditor({
-        onSubmitCallback: sendGenerateMessage,
-        // hasTierErrors,
-        isGenerating,
-        isProcessingAttachment,
-        isAutocompleteActiveRef: isAutocompleteActiveRef,
-        onFocus: handleFocus,
-        onBlur: handleBlur,
-        onPasteLargeContent: handlePasteLargeContent,
-    });
+    const handleDrawSketch = useCallback(() => {
+        setShowDrawingModal(true);
+    }, []);
 
-    const isEditorEmpty = editor?.isEmpty;
-    const sendIsDisabled = !(isGenerating ?? false) && (isEditorEmpty || isProcessingAttachment);
-    const canShowSendButton = (isGenerating ?? false) || !isEditorEmpty;
+    const handleDrawingExport = useCallback(
+        async (imageData: string) => {
+            const file = base64ToFile(imageData, `sketch-${Date.now()}.png`);
+            await handleFileProcessing(file);
+            createNotification({
+                text: c('collider_2025: Info').t`Sketch added as attachment`,
+                type: 'success',
+            });
+        },
+        [handleFileProcessing, createNotification]
+    );
 
-    // Update parent component when editor empty state changes
-    useEffect(() => {
-        setIsEditorEmpty?.(isEditorEmpty ?? true);
-    }, [isEditorEmpty, setIsEditorEmpty]);
-
-    // Populate editor with query once per unique value; auto-submit when onReady is provided
-    useEditorQuery(initialQuery, editor, isProcessingAttachment, sendGenerateMessage);
-    useEditorQuery(prefillQuery, editor, isProcessingAttachment);
-
-    const showLegalDisclaimer = canShowLegalDisclaimer && !isEditorFocused && isEditorEmpty;
+    const showLegalDisclaimer = canShowLegalDisclaimer && !isEditorFocused && isEmpty;
 
     return (
         <>
@@ -260,7 +251,7 @@ const ComposerComponentInner = ({
                             />
                         )}
                         <ComposerEditorArea
-                            editor={editor}
+                            composerInput={composerInput}
                             canShowSendButton={canShowSendButton}
                             sendIsDisabled={sendIsDisabled}
                             isGenerating={isGenerating ?? false}
@@ -285,15 +276,12 @@ const ComposerComponentInner = ({
                     </div>
                 </section>
 
-                {/* drop files area, hidden unless one drags a file */}
                 {isDraggingOverScreen && <AttachmentArea handleFileProcessing={handleFileProcessing} />}
             </div>
 
             {fileToView && (
                 <FileContentModal attachment={fileToView} onClose={() => setFileToView(null)} open={!!fileToView} />
             )}
-
-            {pasteCodeModal}
 
             <SketchOverlay
                 isOpen={showDrawingModal}

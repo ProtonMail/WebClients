@@ -28,7 +28,7 @@ import {
     selectProvisionalAttachments,
     selectSpaceById,
 } from '../../redux/selectors';
-import { pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
+import { clearProvisionalAttachments } from '../../redux/slices/core/attachments';
 import {
     locallyDeleteConversationFromLocalRequest,
     pushConversationRequest,
@@ -138,18 +138,6 @@ const ProjectDetailViewInner = () => {
                 const conversationId = createConversationInProject(projectId);
                 console.log('Created conversation:', conversationId);
 
-                // TODO: cross check against with sendMessage logic, provisional attachments are being assigned twice
-                // Assign provisional attachments to the space
-                // This makes them permanent space-level attachments
-                if (provisionalAttachments.length > 0) {
-                    console.log('Assigning attachments to space:', provisionalAttachments);
-                    provisionalAttachments.forEach((attachment) => {
-                        dispatch(upsertAttachment({ ...attachment, spaceId: projectId }));
-                        // Now that the attachment has a spaceId, push it to the server
-                        dispatch(pushAttachmentRequest({ id: attachment.id }));
-                    });
-                }
-
                 // Navigate to the conversation first
                 history.push(`/c/${conversationId}`);
 
@@ -171,7 +159,10 @@ const ProjectDetailViewInner = () => {
                         conversationContext: {
                             spaceId: projectId,
                             conversationId,
-                            allConversationAttachments: [],
+                            // Include provisional attachments so prepareTurns can resolve their
+                            // full content (e.g. @mention files). sendMessage will merge RAG
+                            // results on top of this list.
+                            allConversationAttachments: [...provisionalAttachments],
                             messageChain: [],
                             contextFilters: [],
                         },
@@ -189,6 +180,11 @@ const ProjectDetailViewInner = () => {
                         },
                     })
                 );
+
+                // Clear mention-only provisionals now that the message has been sent.
+                // Uploaded provisionals (non-mention) were already promoted to the project
+                // space by sendMessage → assignProvisionalAttachmentsToSpace.
+                dispatch(clearProvisionalAttachments());
                 console.log('Message sent successfully');
             } catch (error) {
                 console.error('Error in handleSendInProject:', error);

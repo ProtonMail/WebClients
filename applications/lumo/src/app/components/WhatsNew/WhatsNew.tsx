@@ -139,6 +139,7 @@ const WhatsNew = () => {
 
     const { currentFeature, dismissFeature, declineFeature } = useStaggeredWhatsNewFeatures(features, whatsNew);
     const timerRef = useRef<number>();
+    const isMountedRef = useRef(false);
 
     const dismissCurrentFeature = () => {
         if (currentFeature) {
@@ -154,10 +155,20 @@ const WhatsNew = () => {
 
     const whatsNewModalProps = useModalStateObject({ onClose: declineCurrentFeature });
 
+
+    useEffect(() => {
+        isMountedRef.current = true;
+        return () => {
+            isMountedRef.current = false;
+        };
+    }, []);
+
     useEffect(() => {
         if (currentFeature) {
             timerRef.current = window.setTimeout(() => {
-                whatsNewModalProps.openModal(true);
+                if (isMountedRef.current) {
+                    whatsNewModalProps.openModal(true);
+                }
             }, 500);
         }
 

@@ -503,9 +503,6 @@ export const KnowledgeBasePanel = ({
                 <div className="mb-4">
                     <div className="flex flex-row items-center justify-space-between mb-2">
                         <div className="flex flex-row flex-nowrap items-center gap-1">
-                            <Button icon className="shrink-0" size="small" shape="ghost" onClick={onClose}>
-                                <IcCross />
-                            </Button>
                             <p className="m-0 text-lg text-bold">{c('collider_2025: Info').t`Chat knowledge`}</p>
                         </div>
 
@@ -523,6 +520,10 @@ export const KnowledgeBasePanel = ({
                                 </span>
                             </Button>
                         )}
+
+                        <Button icon className="shrink-0" size="small" shape="ghost" onClick={onClose}>
+                            <IcCross size={4} />
+                        </Button>
                     </div>
                 </div>
 
