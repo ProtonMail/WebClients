@@ -1,7 +1,7 @@
 import { getAppHref } from '../apps/helper';
 import { APPS } from '../constants';
 import { getIsIframe } from '../helpers/browser';
-import { isElectronMail } from '../helpers/desktop';
+import { isElectronMail, isElectronMeet } from '../helpers/desktop';
 import type {
     IPCInboxClientGetAsyncDataMessage,
     IPCInboxClientUpdateMessage,
@@ -12,24 +12,28 @@ import type {
     IPCInboxHostUpdateListenerRemover,
     IPCInboxHostUpdateMessageType,
     IPCInboxMessageBroker,
+    IPCMeetMessageBroker,
     PayloadOfHostUpdateType,
 } from './desktopTypes';
 
 declare global {
     interface Window {
         ipcInboxMessageBroker?: IPCInboxMessageBroker;
+        ipcMeetMessageBroker?: IPCMeetMessageBroker;
     }
 }
 
 const IPC_POST_MESSAGE_NAME = 'InboxDesktopIPC' as const;
 
 export function invokeInboxDesktopIPC({ type, payload }: IPCInboxClientUpdateMessage) {
-    if (!isElectronMail) {
+    if (!isElectronMail && !isElectronMeet) {
         return Promise.resolve();
     }
 
     if (window.ipcInboxMessageBroker?.send) {
         window.ipcInboxMessageBroker!.send!(type, payload);
+    } else if (isElectronMeet && window.ipcMeetMessageBroker?.send && type === 'openExternal') {
+        window.ipcMeetMessageBroker!.send!('openExternal', payload as string);
     } else if (getIsIframe() && window.top) {
         const messageId = crypto.randomUUID();
 
@@ -53,9 +57,11 @@ export function invokeInboxDesktopIPC({ type, payload }: IPCInboxClientUpdateMes
         });
 
         // With this targetOrigin resolution, we can only send IPC messages from frames
-        // to the mail application. Currently this is ok because we only need this from
+        // to the mail or meet application. Currently this is ok because we only need this from
         // calendar drawer and mail previews, but might need improvement in the future.
-        const targetURL = new URL(getAppHref('/', APPS.PROTONMAIL, undefined, location));
+        const targetURL = new URL(
+            getAppHref('/', isElectronMail ? APPS.PROTONMAIL : APPS.PROTONMEET, undefined, location)
+        );
 
         window.top.postMessage(
             { name: IPC_POST_MESSAGE_NAME, id: messageId, type, payload },

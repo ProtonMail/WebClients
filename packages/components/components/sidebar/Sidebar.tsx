@@ -200,7 +200,7 @@ const Sidebar = ({
 
                 <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
 
-                {!isElectronMail && (
+                {!isElectronMail && !isElectronMeet && (
                     <div
                         className={clsx(
                             'logo-container hidden md:flex shrink-0 justify-space-between items-center flex-nowrap gap-0.5',
@@ -226,7 +226,8 @@ const Sidebar = ({
                                 hasComposerInFocus && 'ignore-drag'
                             )}
                         >
-                            {appsDropdown}
+                            {isElectronMail && appsDropdown}
+                            {isElectronMeet && <div className="pt-8"></div>}
                         </div>
                         {primary && <div className="px-4 pb-2">{primary}</div>}
                     </div>
@@ -235,7 +236,8 @@ const Sidebar = ({
                 {(isElectronOnWindows || isElectronOnLinux) && (
                     <div className="sidebar-header flex flex-nowrap gap-4 items-center justify-between my-3 px-3">
                         {primary && <div className="shrink-0 flex-1 hidden md:block">{primary}</div>}
-                        <div className="shrink-0">{appsDropdown}</div>
+                        {isElectronMail && <div className="shrink-0">{appsDropdown}</div>}
+                        {isElectronMeet && <div className="pt-8"></div>}
                     </div>
                 )}
 
