@@ -14,7 +14,6 @@ describe('categoriesStringHelpers', () => {
             [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, 'Newsletters'],
             [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, 'Transactions'],
             [MAILBOX_LABEL_IDS.CATEGORY_UPDATES, 'Updates'],
-            [MAILBOX_LABEL_IDS.CATEGORY_FORUMS, 'Forums'],
         ];
 
         it.each(testArray)(
@@ -33,7 +32,6 @@ describe('categoriesStringHelpers', () => {
             [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, 'Non-promotional content and news'],
             [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, 'Bookings, billings, and orders'],
             [MAILBOX_LABEL_IDS.CATEGORY_UPDATES, 'Automated confirmations and alerts'],
-            [MAILBOX_LABEL_IDS.CATEGORY_FORUMS, 'Discussion board posts and threads'],
         ];
 
         it.each(testArray)(
@@ -52,7 +50,6 @@ describe('categoriesStringHelpers', () => {
             [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, 'Go to Newsletters'],
             [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, 'Go to Transactions'],
             [MAILBOX_LABEL_IDS.CATEGORY_UPDATES, 'Go to Updates'],
-            [MAILBOX_LABEL_IDS.CATEGORY_FORUMS, 'Go to Forums'],
         ];
 
         it.each(testArray)(

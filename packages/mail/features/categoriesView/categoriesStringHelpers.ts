@@ -11,7 +11,6 @@ export const getLabelFromCategoryId = (id: CategoryLabelID) => {
         [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]: c('Label').t`Newsletters`,
         [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS]: c('Label').t`Transactions`,
         [MAILBOX_LABEL_IDS.CATEGORY_UPDATES]: c('Label').t`Updates`,
-        [MAILBOX_LABEL_IDS.CATEGORY_FORUMS]: c('Label').t`Forums`,
     };
 
     return CATEGORIES_LABEL_MAPPING[id];
@@ -25,7 +24,6 @@ export const getDescriptionFromCategoryId = (id: CategoryLabelID) => {
         [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]: c('Label').t`Non-promotional content and news`,
         [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS]: c('Label').t`Bookings, billings, and orders`,
         [MAILBOX_LABEL_IDS.CATEGORY_UPDATES]: c('Label').t`Automated confirmations and alerts`,
-        [MAILBOX_LABEL_IDS.CATEGORY_FORUMS]: c('Label').t`Discussion board posts and threads`,
     };
 
     return CATEGORIES_DESCRIPTION_MAPPING[id];
@@ -39,7 +37,6 @@ export const getLabelFromCategoryIdInCommander = (id: CategoryLabelID) => {
         [MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]: c('Label').t`Go to Newsletters`,
         [MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS]: c('Label').t`Go to Transactions`,
         [MAILBOX_LABEL_IDS.CATEGORY_UPDATES]: c('Label').t`Go to Updates`,
-        [MAILBOX_LABEL_IDS.CATEGORY_FORUMS]: c('Label').t`Go to Forums`,
     };
 
     return CATEGORIES_LABEL_MAPPING[id];
