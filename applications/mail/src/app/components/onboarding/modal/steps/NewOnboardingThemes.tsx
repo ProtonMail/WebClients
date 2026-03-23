@@ -1,12 +1,12 @@
-import { ONBOARDING_THEMES } from '@proton/components/containers/onboarding/constants';
-import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
-import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
-import ThemeCard from '@proton/components/containers/themes/ThemeCard';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
+import { ONBOARDING_THEMES } from '@proton/components/containers/onboarding/constants';
+import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
+import ThemeCard from '@proton/components/containers/themes/ThemeCard';
 import { getThemeCardSize } from '@proton/components/containers/themes/ThemeCards';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import type { ThemeTypes } from '@proton/shared/lib/themes/constants';

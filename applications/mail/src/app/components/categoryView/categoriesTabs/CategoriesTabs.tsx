@@ -1,6 +1,6 @@
-import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { useEffect, useRef } from 'react';
 
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import clsx from '@proton/utils/clsx';
 
 import { useMailGlobalModals } from 'proton-mail/containers/globalModals/GlobalModalProvider';

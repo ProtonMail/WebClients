@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import clsx from '@proton/utils/clsx';
 import { IcDots } from '@proton/icons/icons/IcDots';
+import clsx from '@proton/utils/clsx';
 
 import PopoverCloseButton from './PopoverCloseButton';
 

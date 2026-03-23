@@ -1,6 +1,6 @@
-import type { LabelModel } from '@proton/components/containers/labels/modals/EditLabelModal';
 import { c } from 'ttag';
 
+import type { LabelModel } from '@proton/components/containers/labels/modals/EditLabelModal';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

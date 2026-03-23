@@ -1,7 +1,7 @@
-import MailShortcutsModal from '@proton/components/containers/mail/MailShortcutsModal';
-import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import { type Ref, forwardRef } from 'react';
 
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import MailShortcutsModal from '@proton/components/containers/mail/MailShortcutsModal';
 
 import AssistantIframe from 'proton-mail/components/assistant/AssistantIframe';
 import PrivateLayout from 'proton-mail/components/layout/PrivateLayout';

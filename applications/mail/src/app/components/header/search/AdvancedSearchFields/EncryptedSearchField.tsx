@@ -1,8 +1,3 @@
-import Info from '@proton/components/components/link/Info';
-import Label from '@proton/components/components/label/Label';
-import Progress from '@proton/components/components/progress/Progress';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import type { ReactNode } from 'react';
 
 import { add } from 'date-fns';
@@ -10,6 +5,11 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import Label from '@proton/components/components/label/Label';
+import Info from '@proton/components/components/link/Info';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Progress from '@proton/components/components/progress/Progress';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import type { ESIndexingState } from '@proton/encrypted-search/models';
 import { useIndexedDBSupport } from '@proton/encrypted-search/useIndexedDBSupport';
 import clsx from '@proton/utils/clsx';

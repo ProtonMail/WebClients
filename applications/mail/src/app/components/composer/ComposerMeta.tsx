@@ -1,10 +1,10 @@
-import Label from '@proton/components/components/label/Label';
 import type { ChangeEvent, MutableRefObject } from 'react';
 import { forwardRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms/Input/Input';
+import Label from '@proton/components/components/label/Label';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';

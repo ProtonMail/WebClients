@@ -1,10 +1,10 @@
-import DeleteLabelModal from '@proton/components/containers/labels/modals/DeleteLabelModal';
-import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import type { Reducer } from 'react';
 import { createContext, useCallback, useContext, useMemo, useReducer } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import DeleteLabelModal from '@proton/components/containers/labels/modals/DeleteLabelModal';
+import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 

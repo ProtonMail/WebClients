@@ -4,11 +4,10 @@ import { type PartDayEventProps, PartDayEventView } from '../../../components/ev
 import { getBookingSlotStyle } from '../../../helpers/color';
 import type { CalendarViewEvent } from '../../calendar/interface';
 
-interface PartDayBusyEventProps
-    extends Pick<
-        PartDayEventProps,
-        'size' | 'style' | 'formatTime' | 'eventPartDuration' | 'isSelected' | 'isBeforeNow' | 'eventRef'
-    > {
+interface PartDayBusyEventProps extends Pick<
+    PartDayEventProps,
+    'size' | 'style' | 'formatTime' | 'eventPartDuration' | 'isSelected' | 'isBeforeNow' | 'eventRef'
+> {
     event: CalendarViewEvent;
 }
 

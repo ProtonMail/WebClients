@@ -3,9 +3,9 @@ import ContactDrawerAppButton from '@proton/components/components/drawer/drawerA
 import ReferralAppButton from '@proton/components/components/drawer/drawerAppButtons/ReferralAppButton';
 import SecurityCenterDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/SecurityCenterDrawerAppButton';
 import VPNDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/VPNDrawerAppButton';
-import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useDisplayFeatureTourDrawerButton from '@proton/components/components/featureTour/useDisplayFeatureTourDrawerButton';
 import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';

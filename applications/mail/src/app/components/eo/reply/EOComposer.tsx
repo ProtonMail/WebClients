@@ -1,7 +1,7 @@
-import type { EditorMetadata } from '@proton/components/components/editor/interface';
-import { useHandler } from '@proton/components/hooks/useHandler';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
+import type { EditorMetadata } from '@proton/components/components/editor/interface';
+import { useHandler } from '@proton/components/hooks/useHandler';
 import type { PublicKeyReference } from '@proton/crypto';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MessageState, OutsideKey } from '@proton/mail/store/messages/messagesTypes';

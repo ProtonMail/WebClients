@@ -1,11 +1,11 @@
-import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
-import useModals from '@proton/components/hooks/useModals';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useCallback } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
+import useModals from '@proton/components/hooks/useModals';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { serverTime } from '@proton/crypto';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { HOUR } from '@proton/shared/lib/constants';

@@ -1,8 +1,8 @@
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { getPlaceholderSrc } from '@proton/mail/helpers/getPlaceholderSrc';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

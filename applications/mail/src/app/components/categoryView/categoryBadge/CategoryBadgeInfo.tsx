@@ -1,7 +1,7 @@
-import Info from '@proton/components/components/link/Info';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import Info from '@proton/components/components/link/Info';
 
 interface Props {
     className?: string;

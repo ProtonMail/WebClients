@@ -1,5 +1,5 @@
-import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { TipActionType } from 'proton-mail/models/tip';

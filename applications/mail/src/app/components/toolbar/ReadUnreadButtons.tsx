@@ -1,9 +1,9 @@
-import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';
 import { IcEnvelopeOpen } from '@proton/icons/icons/IcEnvelopeOpen';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

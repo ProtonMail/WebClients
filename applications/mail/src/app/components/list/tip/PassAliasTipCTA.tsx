@@ -1,11 +1,11 @@
-import CreatePassAliasesForm from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/modals/CreatePassAliasesForm/CreatePassAliasesForm';
-import PassAliasesUpsellModal from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/modals/PassAliasesUpsellModal';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
-import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
-import { usePassAliasesContext } from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/PassAliasesProvider';
 import { useMemo } from 'react';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { usePassAliasesContext } from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/PassAliasesProvider';
+import CreatePassAliasesForm from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/modals/CreatePassAliasesForm/CreatePassAliasesForm';
+import PassAliasesUpsellModal from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/modals/PassAliasesUpsellModal';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { encodeFilters } from '@proton/pass/components/Navigation/routing';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';

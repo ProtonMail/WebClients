@@ -1,10 +1,3 @@
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { FormEvent } from 'react';
 import { useState } from 'react';
 
@@ -12,7 +5,14 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import TextArea from '@proton/components/components/v2/input/TextArea';
+import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { useAssistant } from '@proton/llm/lib';

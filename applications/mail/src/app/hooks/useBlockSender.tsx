@@ -1,5 +1,3 @@
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { MouseEvent } from 'react';
 import { useMemo } from 'react';
 
@@ -7,6 +5,8 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { updateBlockSenderConfirmation } from '@proton/shared/lib/api/mailSettings';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';

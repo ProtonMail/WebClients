@@ -10,11 +10,10 @@ import { useCalendarSelector } from '../../store/hooks';
 import type { PartDayEventProps } from './PartDayEvent';
 import { PartDayEventView } from './PartDayEvent';
 
-interface PartDayBusyEventProps
-    extends Pick<
-        PartDayEventProps,
-        'size' | 'style' | 'formatTime' | 'eventPartDuration' | 'isSelected' | 'isBeforeNow' | 'eventRef'
-    > {
+interface PartDayBusyEventProps extends Pick<
+    PartDayEventProps,
+    'size' | 'style' | 'formatTime' | 'eventPartDuration' | 'isSelected' | 'isBeforeNow' | 'eventRef'
+> {
     event: CalendarViewBusyEvent;
 }
 

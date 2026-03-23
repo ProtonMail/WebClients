@@ -1,10 +1,3 @@
-import Prompt from '@proton/components/components/prompt/Prompt';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import { useHandler } from '@proton/components/hooks/useHandler';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import type { MutableRefObject } from 'react';
 import { useCallback } from 'react';
 
@@ -13,9 +6,16 @@ import { c, msgid } from 'ttag';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
-import { Href } from '@proton/atoms/Href/Href';
 import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import { useHandler } from '@proton/components/hooks/useHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MessageState, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import { forceSend } from '@proton/shared/lib/api/messages';

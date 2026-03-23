@@ -1,10 +1,10 @@
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import type { ReactNode } from 'react';
 import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import {
     MAIL_APP_NAME,
     MAIL_UPSELL_BANNER_LINK_ID_REF_PATH,

@@ -1,7 +1,7 @@
-import useApi from '@proton/components/hooks/useApi';
-import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import { useCallback, useEffect, useState } from 'react';
 
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';

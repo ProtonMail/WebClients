@@ -1,14 +1,14 @@
-import type { Filter } from '@proton/components/containers/filters/interfaces';
-import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
-import { createDefaultLabelsFilter } from '@proton/components/containers/filters/utils';
-import useApi from '@proton/components/hooks/useApi';
-import useAppLink from '@proton/components/components/link/useAppLink';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useCallback, useMemo } from 'react';
 
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import useAppLink from '@proton/components/components/link/useAppLink';
+import type { Filter } from '@proton/components/containers/filters/interfaces';
+import { createDefaultLabelsFilter } from '@proton/components/containers/filters/utils';
+import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
+import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { useGetFolders, useGetLabels } from '@proton/mail/store/labels/hooks';
 import { addTreeFilter, deleteFilter } from '@proton/shared/lib/api/filters';
