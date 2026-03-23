@@ -17,6 +17,14 @@ type Options = {
     iframeSVG: string;
 };
 
+const escapeHTMLAttribute = (value: string) =>
+    value
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
 const getIframeHtml = ({
     emailContent,
     messageDocument,
@@ -53,8 +61,8 @@ const getIframeHtml = ({
     let htmlContent = emailContent;
 
     if (bodyClasses || bodyStyles) {
-        const classAttr = bodyClasses ? `class="${bodyClasses.trim()}"` : '';
-        const styleAttr = bodyStyles ? `style="${bodyStyles}"` : '';
+        const classAttr = bodyClasses ? `class="${escapeHTMLAttribute(bodyClasses.trim())}"` : '';
+        const styleAttr = bodyStyles ? `style="${escapeHTMLAttribute(bodyStyles)}"` : '';
         const attrs = [classAttr, styleAttr].filter(Boolean).join(' ');
         htmlContent = `<div ${attrs}>${emailContent}</div>`;
     }
