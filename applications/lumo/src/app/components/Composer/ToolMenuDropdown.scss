@@ -1,0 +1,22 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+
+.tool-menu-dropdown {
+	.toggle-container {
+		border: 1px solid var(--field-disabled);
+
+		&::before {
+			// background-color: var(--background-upsell-toggle-button); // White toggle button
+			//   margin: 3px; // Add margin to create distance from container edges
+			margin-inline-start: 5px;
+			margin-block: auto;
+			inline-size: calc(#{em(24)} - 6px); // Reduce size to account for margin
+			block-size: calc(#{em(24)} - 6px); // Reduce size to account for margin
+		}
+
+		&--checked::before {
+			transform: translateX(0.8429em);
+			background-color: var(--interaction-norm);
+		}
+	}
+}
