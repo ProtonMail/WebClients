@@ -4,6 +4,7 @@ import { allInvites } from '@proton/pass/lib/invites/invite.requests';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { getAllBreaches } from '@proton/pass/lib/monitor/monitor.request';
 import { getOrganizationForPlan } from '@proton/pass/lib/organization/organization.requests';
+import { dedupeShares } from '@proton/pass/lib/shares/share.dedupe';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
 import { createDefaultVault } from '@proton/pass/lib/sync/common/vaults';
@@ -13,8 +14,9 @@ import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { syncResult } from '@proton/pass/store/actions';
 import type { HydratedAccessState, ItemsByShareId, SharesState, VaultShareItem } from '@proton/pass/store/reducers';
 import type { OrganizationState } from '@proton/pass/store/reducers/organization';
+import type { ShareDedupeState } from '@proton/pass/store/reducers/shares-dedupe';
 import { selectLoadGroupInvites } from '@proton/pass/store/selectors/invites';
-import type { State } from '@proton/pass/store/types';
+import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { BreachesGetResponse, Invite, Maybe, MaybeNull, Share, ShareGetResponse } from '@proton/pass/types';
 import { partition } from '@proton/pass/utils/array/partition';
 import { diadic } from '@proton/pass/utils/fp/variadics';
@@ -31,6 +33,7 @@ export type SyncResultV2 = {
     organization: MaybeNull<OrganizationState>;
     shares: SharesState;
     userEventId: string;
+    dedupe: ShareDedupeState;
     v: 2;
 };
 
@@ -43,7 +46,7 @@ const intoItemsByShareId = async ({ shareId }: Share): Promise<ItemsByShareId> =
  * The `lastEventID` is just before this initial moment. Do not start polling before this finishes.
  * NOTE: `state` is passed from the hydration step preceding this call —
  * user state (plan, groups, feature flags) is guaranteed to be hydrated.  */
-export function* syncV2(state: State): Generator<unknown, SyncResultV2> {
+export function* syncV2(state: State, { getCore }: RootSagaOptions): Generator<unknown, SyncResultV2> {
     /** 1. Get latest user-events eventID */
     const userEventId: string = yield call(getUserEventLatestID);
     /** 2a. Get user access state */
@@ -78,14 +81,15 @@ export function* syncV2(state: State): Generator<unknown, SyncResultV2> {
         organization,
         shares: toMap(shares, 'shareId'),
         userEventId,
+        dedupe: yield dedupeShares(shares, getCore()),
         v: 2,
     };
 }
 
-export function* processFullRefresh(): EventProcessor {
+export function* processFullRefresh(options: RootSagaOptions): EventProcessor {
     try {
         const state: State = yield select();
-        const result: SyncResultV2 = yield call(syncV2, state);
+        const result: SyncResultV2 = yield call(syncV2, state, options);
         yield put(syncResult(result));
         return true;
     } catch {
