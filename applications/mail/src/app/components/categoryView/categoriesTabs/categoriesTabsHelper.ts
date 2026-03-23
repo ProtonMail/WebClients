@@ -6,16 +6,16 @@ export const getTabState = ({
     index,
     category,
     categoriesList,
-    categoryLabelID,
     draggedOverCategoryId,
+    categoryIDs,
 }: {
     index: number;
     category: CategoryTab;
     categoriesList: CategoryTab[];
-    categoryLabelID: string;
     draggedOverCategoryId?: string;
+    categoryIDs?: string[];
 }): TabState => {
-    if (category.id === categoryLabelID) {
+    if (categoryIDs?.includes(category.id)) {
         return TabState.ACTIVE;
     } else if (category.id === draggedOverCategoryId) {
         return TabState.DRAGGING_OVER;

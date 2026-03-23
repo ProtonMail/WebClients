@@ -15,7 +15,8 @@ import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { params } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { elementsSliceActions } from 'proton-mail/store/elements/elementsSlice';
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { TabState, categoryColorClassName } from './tabsInterface';
 
@@ -35,6 +36,7 @@ const navClasses: Record<TabState, string> = {
 export const Tab = ({ category, count, tabState }: Props) => {
     const [mailSettings] = useMailSettings();
 
+    const dispatch = useMailDispatch();
     const history = useHistory();
     const mailParams = useMailSelector(params);
     const { call } = useEventManager();
@@ -42,6 +44,9 @@ export const Tab = ({ category, count, tabState }: Props) => {
     const [refreshing, withRefreshing] = useLoading(false);
 
     const handleClick = () => {
+        // TODO change the logic for the main category
+        dispatch(elementsSliceActions.updateCategoryIDs({ categoryIDs: [category.id] }));
+
         if (category.id === mailParams.labelID && history.location.hash === '' && !refreshing) {
             void withRefreshing(Promise.all([call(), wait(1000)]));
         }
