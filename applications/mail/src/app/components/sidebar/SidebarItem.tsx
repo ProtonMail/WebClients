@@ -107,7 +107,7 @@ const SidebarItem = ({
 
     const mailParams = useMailSelector(params);
 
-    const { categoryViewAccess, updateCategoryIDs } = useCategoriesView();
+    const { categoryViewAccess } = useCategoriesView();
 
     const [refreshing, withRefreshing] = useLoading(false);
 
@@ -132,10 +132,6 @@ const SidebarItem = ({
         ) {
             event.preventDefault();
             void withRefreshing(Promise.all([call(), wait(1000)]));
-        }
-
-        if (labelIDRoute === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
-            updateCategoryIDs(labelIDRoute);
         }
 
         // Allow to handle click outside of the SidebarItem

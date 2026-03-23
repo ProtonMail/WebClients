@@ -3,10 +3,12 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import isDeepEqual from 'lodash/isEqual';
 
+import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useConversationCounts, useGetConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { useGetMessageCounts, useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { CacheType } from '@proton/redux-utilities';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -17,6 +19,7 @@ import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/sea
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 import { extractSearchParameters, filterFromUrl, filterToString, sortFromUrl } from 'proton-mail/helpers/mailboxUrl';
 import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
@@ -134,6 +137,8 @@ export const useElements: UseElements = ({
     const countValues = conversationMode ? conversationCounts : messageCounts;
     const countsLoading = conversationMode ? loadingConversationCounts : loadingMessageCounts;
 
+    const { disabledCategoriesIDs } = useCategoriesView();
+
     const { esStatus } = useEncryptedSearchContext();
     const { esEnabled } = esStatus;
     const esEnabledRef = useRef(esEnabled);
@@ -247,6 +252,17 @@ export const useElements: UseElements = ({
                 !filterToString(filter) && !isSearching
                     ? countValues.find((label) => label.LabelID === labelID)?.Total
                     : undefined;
+
+            // Update the categoty IDs and push the disabled categories if the default category is selected
+            const categoryIDs: CategoryLabelID[] = [];
+            if (isCategoryLabel(labelID)) {
+                categoryIDs.push(labelID);
+
+                if (labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
+                    categoryIDs.push(...disabledCategoriesIDs);
+                }
+            }
+
             dispatch(
                 setParams({
                     labelID,
@@ -258,6 +274,7 @@ export const useElements: UseElements = ({
                     conversationMode,
                     isSearching,
                     total: locationTotal,
+                    categoryIDs,
                 })
             );
         }

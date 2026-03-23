@@ -17,7 +17,6 @@ import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { params } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { useCategoriesView } from '../useCategoriesView';
 import { TabState, categoryColorClassName } from './tabsInterface';
 
 interface Props {
@@ -40,13 +39,9 @@ export const Tab = ({ category, count, tabState }: Props) => {
     const mailParams = useMailSelector(params);
     const { call } = useEventManager();
 
-    const { updateCategoryIDs } = useCategoriesView();
-
     const [refreshing, withRefreshing] = useLoading(false);
 
     const handleClick = () => {
-        updateCategoryIDs(category.id);
-
         if (category.id === mailParams.labelID && history.location.hash === '' && !refreshing) {
             void withRefreshing(Promise.all([call(), wait(1000)]));
         }
