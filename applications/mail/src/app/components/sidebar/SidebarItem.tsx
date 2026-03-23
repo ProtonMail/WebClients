@@ -24,8 +24,7 @@ import { useCheckAllRef } from 'proton-mail/containers/CheckAllRefProvider';
 import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { params } from 'proton-mail/store/elements/elementsSelectors';
-import { elementsSliceActions } from 'proton-mail/store/elements/elementsSlice';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { shouldDisplayTotal } from '../../helpers/labels';
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
@@ -106,17 +105,15 @@ const SidebarItem = ({
     const { selectAll } = useSelectAll({ labelID });
     const { checkAllRef } = useCheckAllRef();
 
-    const dispatch = useMailDispatch();
-
     const mailParams = useMailSelector(params);
 
-    const categoryViewControl = useCategoriesView();
+    const { categoryViewAccess, updateCategoryIDs } = useCategoriesView();
 
     const [refreshing, withRefreshing] = useLoading(false);
 
     // We want to redirect the inbox link to the primary category if the feature is enabled and pointing to inbox
     const labelIDRoute =
-        categoryViewControl.categoryViewAccess && labelID === MAILBOX_LABEL_IDS.INBOX
+        categoryViewAccess && labelID === MAILBOX_LABEL_IDS.INBOX
             ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
             : (labelID as MAILBOX_LABEL_IDS);
 
@@ -138,8 +135,7 @@ const SidebarItem = ({
         }
 
         if (labelIDRoute === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
-            // TODO add disabled categories as well
-            dispatch(elementsSliceActions.updateCategoryIDs({ categoryIDs: [labelIDRoute] }));
+            updateCategoryIDs(labelIDRoute);
         }
 
         // Allow to handle click outside of the SidebarItem

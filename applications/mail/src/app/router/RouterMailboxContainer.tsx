@@ -25,7 +25,6 @@ import { MailboxContainerContextProvider } from 'proton-mail/containers/mailbox/
 import { filterFromUrl, pageFromUrl, sortFromUrl } from 'proton-mail/helpers/mailboxUrl';
 import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
 import { useElements } from 'proton-mail/hooks/mailbox/useElements';
-import { elementsSliceActions } from 'proton-mail/store/elements/elementsSlice';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
 
@@ -58,7 +57,7 @@ export const RouterMailboxContainer = () => {
 
     const [isResizing, setIsResizing] = useState(false);
 
-    const categoryViewControl = useCategoriesView();
+    const { categoryViewAccess, updateCategoryIDs } = useCategoriesView();
 
     /**
      * Temporary: Router mailbox side effects
@@ -97,17 +96,14 @@ export const RouterMailboxContainer = () => {
     }, [labelID, dispatch]);
 
     if (!labelID) {
-        const destination = categoryViewControl.categoryViewAccess
-            ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
-            : MAILBOX_LABEL_IDS.INBOX;
+        const destination = categoryViewAccess ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT : MAILBOX_LABEL_IDS.INBOX;
 
         if (destination === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
-            // TODO add disabled categories as well
-            dispatch(elementsSliceActions.updateCategoryIDs({ categoryIDs: [destination] }));
+            updateCategoryIDs(destination);
         }
 
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[destination]}`} />;
-    } else if (!categoryViewControl.categoryViewAccess && isCategoryLabel(labelID)) {
+    } else if (!categoryViewAccess && isCategoryLabel(labelID)) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 

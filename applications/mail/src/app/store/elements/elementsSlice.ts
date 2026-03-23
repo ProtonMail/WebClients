@@ -101,7 +101,7 @@ export const newElementsState = ({
     const defaultParams: ElementsStateParams = {
         labelID: MAILBOX_LABEL_IDS.INBOX,
         conversationMode: true,
-        categoryIDs: [],
+        categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT],
         filter: {},
         sort: { sort: 'Time', desc: true },
         search: {},
