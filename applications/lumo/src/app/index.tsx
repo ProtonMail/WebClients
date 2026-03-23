@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom/client';
 
 import '@proton/polyfill';
 
+import AppGuard from './entrypoint/AppGuard';
+
+// import MSWController from './mocks/MSWController';
+
+import './index.scss';
+
 // requestIdleCallback is not available in older WebKit engines (e.g. Orion, Safari < 17).
 // Some vendor bundles call it without a guard, so polyfill before anything else runs.
 if (typeof window.requestIdleCallback === 'undefined') {
@@ -24,7 +30,10 @@ if (typeof window.requestIdleCallback === 'undefined') {
 // (evaluating 'matches.call')" for every Tab keypress inside a modal when this
 // happens. Polyfill via querySelectorAll before any other module is evaluated.
 if (typeof Element !== 'undefined' && !Element.prototype.matches) {
-    Element.prototype.matches = function (this: Element, selector: string): boolean {
+    Element.prototype.matches = function <K extends keyof HTMLElementTagNameMap>(
+        this: Element,
+        selector: K
+    ): this is HTMLElementTagNameMap[K] {
         const root = this.ownerDocument;
         if (!root) {
             return false;
@@ -35,12 +44,6 @@ if (typeof Element !== 'undefined' && !Element.prototype.matches) {
         return i > -1;
     };
 }
-
-import AppGuard from './entrypoint/AppGuard';
-
-// import MSWController from './mocks/MSWController';
-
-import './index.scss';
 
 ReactDOM.createRoot(document.querySelector('.app-root')!).render(
     <React.StrictMode>
