@@ -8,7 +8,6 @@ const sortedIds = [
     MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
     MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
     MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
-    MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
 ] as const;
 
 export const sortSystemCategories = (unsorted: Label[] = []): Label[] => {

@@ -19,7 +19,7 @@ describe('CategoriesTabsHelper', () => {
                 index: 0,
                 category,
                 categoriesList: mockActiveCategoriesData,
-                categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 draggedOverCategoryId: undefined,
             });
             expect(tabState).toBe(TabState.INACTIVE);
@@ -27,7 +27,7 @@ describe('CategoriesTabsHelper', () => {
 
         it('should return active if the category is the same as the labelID', () => {
             const category: CategoryTab = {
-                id: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 colorShade: CATEGORIES_COLOR_SHADES.BLUE,
                 outlinedIcon: 'inbox',
                 filledIcon: 'inbox',
@@ -36,7 +36,7 @@ describe('CategoriesTabsHelper', () => {
                 index: 0,
                 category,
                 categoriesList: mockActiveCategoriesData,
-                categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 draggedOverCategoryId: undefined,
             });
             expect(tabState).toBe(TabState.ACTIVE);
@@ -44,7 +44,7 @@ describe('CategoriesTabsHelper', () => {
 
         it('should return dragging over if the categories is dragged over', () => {
             const category: CategoryTab = {
-                id: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 colorShade: CATEGORIES_COLOR_SHADES.BLUE,
                 outlinedIcon: 'inbox',
                 filledIcon: 'inbox',
@@ -54,14 +54,14 @@ describe('CategoriesTabsHelper', () => {
                 category,
                 categoriesList: mockActiveCategoriesData,
                 categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
-                draggedOverCategoryId: MAILBOX_LABEL_IDS.CATEGORY_FORUMS.toString(),
+                draggedOverCategoryId: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS.toString(),
             });
             expect(tabState).toBe(TabState.DRAGGING_OVER);
         });
 
         it('should return active is categories is dragged over but is already active', () => {
             const category: CategoryTab = {
-                id: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
+                id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 colorShade: CATEGORIES_COLOR_SHADES.BLUE,
                 outlinedIcon: 'inbox',
                 filledIcon: 'inbox',
@@ -70,8 +70,8 @@ describe('CategoriesTabsHelper', () => {
                 index: 0,
                 category,
                 categoriesList: mockActiveCategoriesData,
-                categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
-                draggedOverCategoryId: MAILBOX_LABEL_IDS.CATEGORY_FORUMS.toString(),
+                categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                draggedOverCategoryId: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS.toString(),
             });
             expect(tabState).toBe(TabState.ACTIVE);
         });

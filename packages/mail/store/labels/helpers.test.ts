@@ -34,10 +34,6 @@ describe('helpers', () => {
                 },
                 {
                     ...baseLabel,
-                    ID: MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
-                },
-                {
-                    ...baseLabel,
                     ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
                 },
                 {
@@ -46,7 +42,7 @@ describe('helpers', () => {
                 },
             ]);
 
-            expect(result.length).toBe(7);
+            expect(result.length).toBe(6);
             expect(result[0].ID).toBe(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
             expect(result[1].ID).toBe(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
             expect(result[2].ID).toBe(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS);

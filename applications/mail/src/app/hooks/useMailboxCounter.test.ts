@@ -124,18 +124,18 @@ describe('useMailboxCounter', () => {
             mockUseConversationCounts.mockReturnValue([
                 [
                     getCount(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, 1000, 100),
-                    getCount(MAILBOX_LABEL_IDS.CATEGORY_FORUMS, 1000, 100),
+                    getCount(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, 1000, 100),
                 ],
                 false,
             ]);
             mockUseMessageCounts.mockReturnValue([
                 [
                     getCount(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, 500, 50),
-                    getCount(MAILBOX_LABEL_IDS.CATEGORY_FORUMS, 500, 50),
+                    getCount(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, 500, 50),
                 ],
                 false,
             ]);
-            mockUseCategoriesView.mockReturnValue({ disabledCategoriesIDs: [MAILBOX_LABEL_IDS.CATEGORY_FORUMS] });
+            mockUseCategoriesView.mockReturnValue({ disabledCategoriesIDs: [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS] });
 
             const { result } = renderHook(() => useMailboxCounter());
 
@@ -147,7 +147,7 @@ describe('useMailboxCounter', () => {
             mockUseConversationCounts.mockReturnValue([
                 [
                     getCount(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, 1000, 100),
-                    getCount(MAILBOX_LABEL_IDS.CATEGORY_FORUMS, 1000, 100),
+                    getCount(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, 1000, 100),
                     getCount(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, 1000, 100),
                     getCount(MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, 1000, 100),
                 ],
@@ -156,14 +156,14 @@ describe('useMailboxCounter', () => {
             mockUseMessageCounts.mockReturnValue([
                 [
                     getCount(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, 500, 50),
-                    getCount(MAILBOX_LABEL_IDS.CATEGORY_FORUMS, 500, 50),
+                    getCount(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, 500, 50),
                     getCount(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, 500, 50),
                     getCount(MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, 500, 50),
                 ],
                 false,
             ]);
             mockUseCategoriesView.mockReturnValue({
-                disabledCategoriesIDs: [MAILBOX_LABEL_IDS.CATEGORY_FORUMS, MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
+                disabledCategoriesIDs: [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
             });
 
             const { result } = renderHook(() => useMailboxCounter());
