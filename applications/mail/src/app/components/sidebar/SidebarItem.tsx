@@ -24,7 +24,8 @@ import { useCheckAllRef } from 'proton-mail/containers/CheckAllRefProvider';
 import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { params } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailSelector } from 'proton-mail/store/hooks';
+import { elementsSliceActions } from 'proton-mail/store/elements/elementsSlice';
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { shouldDisplayTotal } from '../../helpers/labels';
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
@@ -105,6 +106,8 @@ const SidebarItem = ({
     const { selectAll } = useSelectAll({ labelID });
     const { checkAllRef } = useCheckAllRef();
 
+    const dispatch = useMailDispatch();
+
     const mailParams = useMailSelector(params);
 
     const categoryViewControl = useCategoriesView();
@@ -132,6 +135,11 @@ const SidebarItem = ({
         ) {
             event.preventDefault();
             void withRefreshing(Promise.all([call(), wait(1000)]));
+        }
+
+        if (labelIDRoute === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
+            // TODO add disabled categories as well
+            dispatch(elementsSliceActions.updateCategoryIDs({ categoryIDs: [labelIDRoute] }));
         }
 
         // Allow to handle click outside of the SidebarItem
