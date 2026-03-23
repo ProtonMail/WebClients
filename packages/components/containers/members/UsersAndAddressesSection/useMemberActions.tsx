@@ -41,6 +41,7 @@ import {
     getHasExternalMemberCapableB2BPlan,
     getHasPassB2BPlan,
     hasDuo,
+    hasMeetBusiness,
     hasPassBusiness,
     hasVPNPassProfessional,
     hasVisionary,
@@ -107,10 +108,16 @@ export const useMemberActions = ({
     };
 
     const hasDriveB2BPlan = getHasDriveB2BPlan(subscription);
+    const hasMeetB2BPlan = hasMeetBusiness(subscription);
     const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
 
+    const verifiedMailDomains = useMemo(() => (customDomains || []).filter(getIsDomainActive), [customDomains]);
+
     const hasMaxAddresses = Boolean(organization?.MaxAddresses ?? 0);
-    const useEmail = hasExternalMemberCapableB2BPlan;
+    const hasCustomDomains = verifiedMailDomains.length > 0;
+    // Allow using custom domain if organization has meetbiz2025 and a verified custom domain
+    const hasMeetB2BPlanAndVerifiedCustomDomain = hasMeetB2BPlan && hasCustomDomains;
+    const useEmail = hasExternalMemberCapableB2BPlan && !hasMeetB2BPlanAndVerifiedCustomDomain;
     const allowStorageConfiguration =
         !hasExternalMemberCapableB2BPlan ||
         hasDriveB2BPlan ||
@@ -144,8 +151,6 @@ export const useMemberActions = ({
 
     const canInviteProtonUsers = visionary || isOrgAFamilyPlan;
 
-    const verifiedMailDomains = useMemo(() => (customDomains || []).filter(getIsDomainActive), [customDomains]);
-
     const hasPassB2BPlan = getHasPassB2BPlan(subscription);
     const hasDuoPlan = hasDuo(subscription);
 
@@ -161,7 +166,7 @@ export const useMemberActions = ({
         loadingCustomDomains ||
         (organization?.UsedMembers || 0) >= (organization?.MaxMembers || 0);
 
-    const showAddAddress = !hasExternalMemberCapableB2BPlan || hasPassB2BPlan;
+    const showAddAddress = !hasExternalMemberCapableB2BPlan || hasPassB2BPlan || hasMeetB2BPlanAndVerifiedCustomDomain;
 
     const hasReachedInvitationLimit = organization?.InvitationsRemaining === 0;
     const disableInviteUserButton =
