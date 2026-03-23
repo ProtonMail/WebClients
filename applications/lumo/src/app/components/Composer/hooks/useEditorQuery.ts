@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 /**
- * Populates the editor with a query string exactly once per unique value.
+ * Populates the textarea with a query string exactly once per unique value.
  * If `onReady` is provided, calls it after setting content (auto-submit mode).
  * If omitted, focuses the cursor at the end of the content (prefill mode).
  *
@@ -10,9 +10,10 @@ import { useEffect, useRef } from 'react';
  */
 export const useEditorQuery = (
     query: string | undefined,
-    editor: any,
+    textareaRef: React.RefObject<HTMLTextAreaElement>,
+    setValue: (value: string) => void,
     isProcessingAttachment: boolean,
-    onReady?: (editor: any) => void
+    onReady?: () => void
 ) => {
     const hasExecuted = useRef(false);
     const lastQuery = useRef<string | null>(null);
@@ -23,15 +24,21 @@ export const useEditorQuery = (
             lastQuery.current = query || null;
         }
 
-        if (query && editor && !hasExecuted.current && !isProcessingAttachment) {
-            editor.commands.setContent(query);
+        if (query && !hasExecuted.current && !isProcessingAttachment) {
+            setValue(query);
             hasExecuted.current = true;
 
             if (onReady) {
-                setTimeout(() => onReady(editor), 100);
+                setTimeout(() => onReady(), 100);
             } else {
-                editor.commands.focus('end');
+                setTimeout(() => {
+                    const textarea = textareaRef.current;
+                    if (textarea) {
+                        textarea.focus();
+                        textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+                    }
+                }, 0);
             }
         }
-    }, [query, editor, isProcessingAttachment, onReady]);
+    }, [query, textareaRef, setValue, isProcessingAttachment, onReady]);
 };
