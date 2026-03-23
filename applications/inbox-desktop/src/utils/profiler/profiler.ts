@@ -21,7 +21,6 @@ class Profiler {
     private profilingMode: "warm" | "cold" = "warm";
     private marks = new Map<string, number>();
     private eventLoopMonitor: ReturnType<typeof monitorEventLoopDelay> | null = null;
-    private electronSession: Electron.Session | null = null;
 
     private ipc: IpcRecorder | null = null;
     private snapshots: SnapshotRecorder | null = null;
@@ -66,9 +65,7 @@ class Profiler {
                 break;
 
             case "load-url-called":
-                if (this.electronSession) {
-                    this.startupRequestsRecorder = new StartupRequestRecorder(this.electronSession, this.iifeStartPerf);
-                }
+                this.startupRequestsRecorder = new StartupRequestRecorder(this.iifeStartPerf);
                 break;
 
             case "did-finish-load":
@@ -84,10 +81,6 @@ class Profiler {
                 break;
             }
         }
-    }
-
-    public registerElectronSession(session: Electron.Session): void {
-        this.electronSession = session;
     }
 
     public ipcMessage(channel: string, type: string, handlerMs: number): void {
