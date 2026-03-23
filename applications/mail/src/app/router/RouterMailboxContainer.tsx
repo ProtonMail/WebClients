@@ -57,7 +57,7 @@ export const RouterMailboxContainer = () => {
 
     const [isResizing, setIsResizing] = useState(false);
 
-    const { categoryViewAccess, updateCategoryIDs } = useCategoriesView();
+    const { categoryViewAccess } = useCategoriesView();
 
     /**
      * Temporary: Router mailbox side effects
@@ -97,10 +97,6 @@ export const RouterMailboxContainer = () => {
 
     if (!labelID) {
         const destination = categoryViewAccess ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT : MAILBOX_LABEL_IDS.INBOX;
-
-        if (destination === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
-            updateCategoryIDs(destination);
-        }
 
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[destination]}`} />;
     } else if (!categoryViewAccess && isCategoryLabel(labelID)) {
