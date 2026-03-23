@@ -79,16 +79,21 @@ export const RoomForm = ({ id, variant, onSubmit, initialName, onClose }: RoomFo
     const [loading, setLoading] = useState(false);
     const editMode = !!id;
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!roomName.trim() || loading) {
+            return;
+        }
         setLoading(true);
         // Let the callback provider handle the errors
         void onSubmit({ name: roomName }).finally(() => setLoading(false));
     };
 
     return (
-        <div
+        <form
             className={clsx('room-form flex flex-column items-center w-full md:w-custom', `variant-${variant}`)}
             style={{ '--md-w-custom': '33rem' }}
+            onSubmit={handleSubmit}
         >
             <RoomIcon variant={variant} />
             <div className="flex flex-column items-center gap-3 py-10 w-full">
@@ -100,7 +105,7 @@ export const RoomForm = ({ id, variant, onSubmit, initialName, onClose }: RoomFo
             <div className="flex self-stretch items-center gap-4 my-4">
                 <IcTextAlignLeft size={5} className="color-hint" />
                 <Input
-                    placeholder={c('Placeholder').t`e.g., Design Team, Weekly Standup`}
+                    placeholder={c('Placeholder').t`e.g., Daily room, project hub`}
                     className="input-name rounded-full px-4 py-2"
                     value={roomName}
                     onChange={(e) => setRoomName(e.target.value)}
@@ -108,12 +113,12 @@ export const RoomForm = ({ id, variant, onSubmit, initialName, onClose }: RoomFo
                 />
             </div>
             <div className="room-form-buttons flex flex-column sm:flex-row w-full gap-4">
-                <Button className="cancel-button rounded-full text-semibold" onClick={() => onClose()} pill>
+                <Button type="button" className="cancel-button rounded-full text-semibold" onClick={onClose} pill>
                     {c('Action').t`Cancel`}
                 </Button>
                 <Button
+                    type="submit"
                     className="input-submit text-semibold"
-                    onClick={handleSubmit}
                     disabled={!roomName.trim() || loading}
                     loading={loading}
                     pill
@@ -121,6 +126,6 @@ export const RoomForm = ({ id, variant, onSubmit, initialName, onClose }: RoomFo
                     {editMode ? c('meet').t`Save and copy link` : c('meet').t`Create and copy link`}
                 </Button>
             </div>
-        </div>
+        </form>
     );
 };
