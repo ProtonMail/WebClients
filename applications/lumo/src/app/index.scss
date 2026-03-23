@@ -242,34 +242,6 @@ im.$media-expressions: $media-expressions;
 	outline: none;
 }
 
-.ProseMirror {
-	will-change: contents;
-	contain: layout;
-	backface-visibility: hidden;
-
-	@include im.media('<=small') {
-		font-size: 16px;
-	}
-}
-
-.ProseMirror:focus {
-	outline: none;
-	border: none;
-}
-
-.tiptap p {
-	margin-block: 0;
-	font-size: 16px !important;
-}
-
-.tiptap p.is-editor-empty:first-child::before {
-	// placeholder text
-	color: var(--text-weak);
-	content: attr(data-placeholder);
-	float: inline-start;
-	block-size: 0;
-	pointer-events: none;
-}
 
 .action-toolbar {
 	opacity: 0.8;
