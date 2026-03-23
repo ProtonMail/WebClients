@@ -280,7 +280,7 @@ export const useElements: UseElements = ({
             );
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-577287
-    }, [location.pathname, location.hash, mailSettings.ViewMode, labelIDs, esEnabled, onPage, disabledCategoriesIDs]);
+    }, [location.pathname, location.hash, mailSettings.ViewMode, labelIDs, esEnabled, onPage]);
 
     // Reset the element state when receiving a setting update for page size or conversation mode
     useEffect(() => {
