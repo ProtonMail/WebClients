@@ -20,6 +20,7 @@ export interface TreeStoreItem {
     type: NodeType | DirectoryTreeRootType;
     expandable: boolean;
     isSharedWithMe: boolean;
+    treeEventScopeId?: string;
     highestEffectiveRole?: MemberRole;
 }
 
