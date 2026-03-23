@@ -1,11 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import type { Message } from 'applications/lumo/src/app/types';
-
 import { useApi } from '@proton/components';
 import { getLogo } from '@proton/shared/lib/api/images';
 
 import type { SearchItem } from '../../../../../lib/toolCall/types';
+import type { Message } from '../../../../../types';
 
 interface EnhancedToolCallResults {
     enhancedResults: EnhancedSearchItem[] | null;
