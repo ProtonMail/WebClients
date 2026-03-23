@@ -12,11 +12,6 @@ jest.mock("../../store/urlStore", () => ({
     }),
 }));
 
-import { performance } from "node:perf_hooks";
-import { StartupRequestRecorder } from "./startupRequests";
-
-const mockPerfNow = performance.now as jest.Mock;
-
 interface MockRequestDetails {
     id: number;
     resourceType?: string;
@@ -29,22 +24,31 @@ let onResponseStarted: (details: MockRequestDetails) => void;
 let onCompleted: (details: MockRequestDetails) => void;
 let onErrorOccurred: (details: MockRequestDetails) => void;
 
-const mockSession = {
-    webRequest: {
+jest.mock("../electronSession/webRequestRouter", () => ({
+    webRequestRouter: {
         onBeforeRequest: jest.fn((cb: typeof onBeforeRequest) => {
             onBeforeRequest = cb;
+            return jest.fn();
         }),
         onResponseStarted: jest.fn((cb: typeof onResponseStarted) => {
             onResponseStarted = cb;
+            return jest.fn();
         }),
         onCompleted: jest.fn((cb: typeof onCompleted) => {
             onCompleted = cb;
+            return jest.fn();
         }),
         onErrorOccurred: jest.fn((cb: typeof onErrorOccurred) => {
             onErrorOccurred = cb;
+            return jest.fn();
         }),
     },
-} as unknown as Electron.Session;
+}));
+
+import { performance } from "node:perf_hooks";
+import { StartupRequestRecorder } from "./startupRequests";
+
+const mockPerfNow = performance.now as jest.Mock;
 
 let requestId = 0;
 let recorder: StartupRequestRecorder;
@@ -74,7 +78,7 @@ describe("StartupRequestRecorder", () => {
     beforeEach(() => {
         mockPerfNow.mockReset();
         requestId = 0;
-        recorder = new StartupRequestRecorder(mockSession, 0);
+        recorder = new StartupRequestRecorder(0);
     });
 
     describe("buildResources", () => {

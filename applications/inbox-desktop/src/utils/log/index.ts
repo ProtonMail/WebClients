@@ -1,10 +1,10 @@
 import { app, WebContents } from "electron";
 import Logger, { Hook, LogMessage, Transport } from "electron-log";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
-import { appSession } from "../session";
 import { isAbsolute } from "node:path";
 import { createHash } from "node:crypto";
 import metrics from "../metrics";
+import { webRequestRouter } from "../electronSession/webRequestRouter";
 
 if (process.env.NODE_ENV === "test") {
     Logger.transports.console.level = "error";
@@ -29,6 +29,7 @@ export const networkLogger = Logger.scope("network");
 export const printLogger = Logger.scope("print");
 export const ioStreamLogger = Logger.scope("io-stream");
 export const profilerLogger = Logger.scope("profiler");
+export const webRequestRouterLogger = Logger.scope("web-request-router");
 export const rendererLogger = (viewID: CHANGE_VIEW_TARGET | null) =>
     viewID ? Logger.scope(`renderer/${viewID}`) : Logger.scope("renderer");
 
@@ -215,7 +216,7 @@ export function initializeLog() {
 export async function connectNetLogger(
     getWebContentsViewName: (webContents: WebContents) => CHANGE_VIEW_TARGET | null,
 ) {
-    appSession().webRequest.onCompleted((details) => {
+    webRequestRouter.onCompleted((details) => {
         const viewName = details.webContents ? getWebContentsViewName(details.webContents) : null;
 
         if (details.statusCode >= 200 && details.statusCode < 400) {
@@ -229,6 +230,11 @@ export async function connectNetLogger(
                 details.error,
             );
         }
+    });
+
+    webRequestRouter.onErrorOccurred((details) => {
+        const viewName = details.webContents ? getWebContentsViewName(details.webContents) : null;
+        netLogger(viewName).error(details.method, details.url, details.error);
     });
 }
 
