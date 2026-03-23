@@ -24,8 +24,8 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { getNextOccurrence } from '../../../utils/getNextOccurrence';
-import { DeleteMeetingModal } from '../DeleteMeetingModal';
 import { getRoomVariantFromId } from '../../RoomForm/getRoomVariantFromId';
+import { DeleteMeetingModal } from '../DeleteMeetingModal';
 import { PersonalMeetingRotationButton } from './PersonalMeetingRotationButton';
 
 import './MeetingRow.scss';
@@ -134,6 +134,7 @@ export const MeetingRow = ({
                 APPS.PROTONCALENDAR,
                 true
             );
+            return;
         }
 
         if (
