@@ -278,6 +278,7 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
     const cells = getPublicFolderCells({
         viewportWidth,
         onDownload: (uid: string) => handleDownload([uid]),
+        isEditor,
     });
 
     const handleHeaderDownload = (shouldScan?: boolean) => {
