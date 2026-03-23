@@ -166,7 +166,7 @@ export async function generatePDFKit({
      * https://github.com/pdfme/pdfme/issues/239
      */
     const pdf = (await generate({
-        template: getTemplate(emptyTemplate),
+        template: getTemplate(`${location.origin}${emptyTemplate}`),
         inputs,
         options: { font: await getFont() },
     })) as Uint8Array<ArrayBuffer>; // TODO: Improve this type
