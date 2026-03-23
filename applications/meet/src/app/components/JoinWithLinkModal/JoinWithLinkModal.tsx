@@ -35,6 +35,15 @@ export const JoinWithLinkModal = ({ open, onClose, onJoin }: JoinWithLinkModalPr
     const { meetingId, urlPassword } = getMeetingParams();
     const canJoin = meetingId && urlPassword;
 
+    const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (!canJoin) {
+            return;
+        }
+        onClose();
+        onJoin(meetingId, urlPassword);
+    };
+
     const onResetAndClose = () => {
         setMeetingLink('');
         onClose();
@@ -44,9 +53,10 @@ export const JoinWithLinkModal = ({ open, onClose, onJoin }: JoinWithLinkModalPr
 
     return (
         <TranslucentModal open={open} onClose={onResetAndClose}>
-            <div
+            <form
                 className="join-with-link-modal flex flex-column justify-end items-center text-center md:w-custom"
                 style={{ '--md-w-custom': '33em' }}
+                onSubmit={onSubmit}
             >
                 <img
                     src={linkIcon}
@@ -83,23 +93,22 @@ export const JoinWithLinkModal = ({ open, onClose, onJoin }: JoinWithLinkModalPr
                     )}
                 </div>
                 <div className="flex flex-column md:flex-row gap-4 w-full py-10">
-                    <Button className="tertiary rounded-full py-4 md:flex-1 text-semibold" onClick={onResetAndClose}>
+                    <Button
+                        type="button"
+                        className="tertiary rounded-full py-4 md:flex-1 text-semibold"
+                        onClick={onResetAndClose}
+                    >
                         {c('Action').t`Cancel`}
                     </Button>
                     <Button
+                        type="submit"
                         className="primary rounded-full border-none py-4 md:flex-1 text-semibold"
-                        onClick={() => {
-                            if (canJoin) {
-                                onClose();
-                                onJoin(meetingId, urlPassword);
-                            }
-                        }}
                         disabled={!canJoin}
                     >
                         {c('Action').t`Join meeting`}
                     </Button>
                 </div>
-            </div>
+            </form>
         </TranslucentModal>
     );
 };
