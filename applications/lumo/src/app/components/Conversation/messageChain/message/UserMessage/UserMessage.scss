@@ -28,4 +28,8 @@
 			color: #4740d4 !important;
 		}
 	}
+
+	p:only-child {
+		margin-block: 0;
+	}
 }
