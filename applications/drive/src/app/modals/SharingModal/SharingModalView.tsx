@@ -3,9 +3,17 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { ContactEmailsProvider, FileIcon, type ModalStateProps, ModalTwo, useToggle } from '@proton/components';
+import {
+    ContactEmailsProvider,
+    FileIcon,
+    type ModalStateProps,
+    ModalTwo,
+    useConfirmActionModal,
+    useToggle,
+} from '@proton/components';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import { MemberRole, type ShareNodeSettings } from '@proton/drive';
 import useLoading from '@proton/hooks/useLoading';
@@ -32,7 +40,8 @@ export interface SharingModalViewProps extends ModalStateProps {
     isLoading: boolean;
 
     nodeUid: string;
-    name: string;
+    roleOnParentNode?: MemberRole;
+    fileName: string;
     canChangePermissions: boolean;
     mediaType?: string;
     ownerEmail?: string;
@@ -77,7 +86,8 @@ export const SharingModalView = ({
     open,
     isLoading,
     nodeUid,
-    name,
+    roleOnParentNode,
+    fileName,
     canChangePermissions,
     mediaType,
     ownerEmail,
@@ -92,10 +102,13 @@ export const SharingModalView = ({
     actions,
     isShared,
 }: SharingModalViewProps) => {
+    const [addresses] = useAddresses();
+
     const { isDirectSharingDisabled } = useFlagsDriveDirectSharing();
     const { isPublicEditModeEnabled } = useFlagsDrivePublicSharing();
 
     const [settingsModal, showSettingsModal] = useSharingSettingsModal();
+    const [confirmModal, showConfirmRemoveYourself] = useConfirmActionModal();
 
     const [publicLinkUpdating, withPublicLinkUpdating] = useLoading();
     const [publicLinkStateChanging, withPublicLinkStateChanging] = useLoading();
@@ -142,9 +155,27 @@ export const SharingModalView = ({
         });
 
     const handleChangeRole = async (email: string, role: MemberRole) => {
-        await actions.updateShareDirect({
-            users: [{ email, role }],
-        });
+        // NB in this case (editors can share) the editor role doesn't exist - internally, all editors are promoted to admins
+        const demotingMyself = !!addresses?.find((address) => address.Email === email) && role === MemberRole.Viewer;
+        // Only users without access to the parent or without admin on parent will loose sharing privileges
+        if (demotingMyself && roleOnParentNode !== MemberRole.Admin) {
+            showConfirmRemoveYourself({
+                title: c('Title').t`Change access to viewer?`,
+                submitText: c('Action').t`Change my access`,
+                message: c('Info')
+                    .t`You won’t be able to share "${fileName}" after changing access to viewer. Only the owner can change your access again.`,
+                onSubmit: async () => {
+                    await actions.updateShareDirect({
+                        users: [{ email, role }],
+                    });
+                    onClose();
+                },
+            });
+        } else {
+            await actions.updateShareDirect({
+                users: [{ email, role }],
+            });
+        }
     };
 
     const handleUpdatePublicLink = (publicLinkSettings: {
@@ -167,7 +198,25 @@ export const SharingModalView = ({
         cleanFields();
     };
 
-    const renderModalState = () => {
+    const handleRemove = async (email: string) => {
+        const removingMyself = !!addresses?.find((address) => address.Email === email);
+        if (removingMyself && !roleOnParentNode) {
+            showConfirmRemoveYourself({
+                title: c('Title').t`Remove your access?`,
+                submitText: c('Action').t`Remove my access`,
+                message: c('Info')
+                    .t`If you remove yourself, you’ll lose access to "${fileName}" and won’t be able to open it again unless the owner shares it with you.`,
+                onSubmit: async () => {
+                    await actions.unshareNode(email);
+                    onClose();
+                },
+            });
+        } else {
+            await actions.unshareNode(email);
+        }
+    };
+
+    const renderModalContent = () => {
         if (errorMessage) {
             return <ErrorState onClose={onClose}>{errorMessage}</ErrorState>;
         }
@@ -182,18 +231,26 @@ export const SharingModalView = ({
                     <div className="modal-two-header flex items-center flex-nowrap gap-2 m-0">
                         <FileIcon mimeType={mediaType ?? ''} />
                         <span className="modal-two-header-title h4 text-bold text-ellipsis">{c('Title')
-                            .t`Share ${name}`}</span>
+                            .t`Share "${fileName}"`}</span>
                     </div>
 
                     <div className="grow-0 shrink-0">
                         {!isInvitationWorkflow && (
-                            <Tooltip disabled={isSettingsDisabled} title={c('Info').t`Share via link settings`}>
+                            <Tooltip
+                                disabled={isSettingsDisabled}
+                                title={
+                                    <>
+                                        <strong>{c('Tooltip').t`New!`}</strong>{' '}
+                                        {c('Tooltip').t`Change shared item settings`}
+                                    </>
+                                }
+                            >
                                 <Button
                                     icon
                                     shape="ghost"
                                     onClick={() =>
                                         showSettingsModal({
-                                            sharedFileName: name,
+                                            sharedFileName: fileName,
                                             stopSharing: async () => {
                                                 await actions.stopSharing();
                                                 onClose();
@@ -232,7 +289,7 @@ export const SharingModalView = ({
                                 ownerEmail={ownerEmail}
                                 ownerDisplayName={ownerDisplayName}
                                 members={directMembers}
-                                onRemove={actions.unshareNode}
+                                onRemove={handleRemove}
                                 onChangeRole={handleChangeRole}
                                 onResendInvitation={actions.resendInvitation}
                                 onCopyInvitationLink={actions.copyInvitationLink}
@@ -275,7 +332,7 @@ export const SharingModalView = ({
                 }}
                 disableCloseOnEscape={publicLinkStateChanging || publicLinkUpdating || isAdding}
             >
-                <div className="double-modal-content shadow-lifted mb-3">{renderModalState()}</div>
+                <div className="double-modal-content shadow-lifted mb-3">{renderModalContent()}</div>
 
                 {!isInvitationWorkflow && isPublicLinkEnabled && (
                     <div className="double-modal-content shadow-lifted shrink-0">
@@ -299,6 +356,7 @@ export const SharingModalView = ({
             </ModalTwo>
 
             {settingsModal}
+            {confirmModal}
         </EditorsManageAccessContextProvider>
     );
 };
