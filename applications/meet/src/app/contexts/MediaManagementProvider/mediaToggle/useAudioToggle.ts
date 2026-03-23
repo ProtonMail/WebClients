@@ -197,12 +197,14 @@ export const useAudioToggle = (
                     }
                 }
 
-                await switchActiveDevice({
-                    deviceType: 'audioinput',
-                    deviceId,
-                    isSystemDefaultDevice: audioDeviceId === DEFAULT_DEVICE_ID,
-                    preserveDefaultDevice: !!preserveCache,
-                });
+                if (!isJustTogglingMute) {
+                    await switchActiveDevice({
+                        deviceType: 'audioinput',
+                        deviceId,
+                        isSystemDefaultDevice: audioDeviceId === DEFAULT_DEVICE_ID,
+                        preserveDefaultDevice: !!preserveCache,
+                    });
+                }
 
                 const currentAudioTrack = [...localParticipant.audioTrackPublications.values()].find(
                     (item) =>
