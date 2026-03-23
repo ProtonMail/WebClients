@@ -1484,7 +1484,8 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen"
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1672,6 +1673,18 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Authenticate": [
+        "Authentifizieren"
+      ],
+      "Forgot password?": [
+        "Passwort vergessen?"
+      ],
+      "Use authentication code": [
+        "Authentifizierungscode verwenden"
+      ],
+      "Use recovery code": [
+        "Wiederherstellungsschlüssel verwenden"
       ]
     },
     "action": {
@@ -7398,8 +7411,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -8843,6 +8855,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
+      ],
+      "Each code can only be used once": [
+        "Jeder Code kann nur ein Mal verwendet werden"
+      ],
+      "Enter the code from your authenticator app": [
+        "Code aus deiner Authentifizierungs-App ein eingeben"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Bestätigungscode eingeben. ${ digit } Ziffern."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Eigenes Passwort (als Organisationsadministrator) eingeben."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Gib dein eigenes Passwort ein (als vertrauenswürdiger Kontakt)."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authentifizierungs-App verloren hast."
       ]
     },
     "info": {
@@ -9914,6 +9944,15 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Authenticator app": [
+        "Authentifizierungs-App"
+      ],
+      "Your password (admin)": [
+        "Dein Passwort (Admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Dein Passwort (vertrauenswürdiger Kontakt)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15767,6 +15806,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorien kommen."
+      ],
+      "Enter your password": [
+        "Passwort eingeben"
+      ],
+      "Two-factor authentication": [
+        "Zwei‐Faktor‐Authentifizierung"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16344,6 +16389,40 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Füge einen Sicherheitsschlüssel ein, der mit Ihrem ${ BRAND_NAME }-Konto verknüpft ist."
+      ],
+      "Security key": [
+        "Sicherheitsschlüssel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sicherheitsschlüssel"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Die Anmeldung wurde nicht erfolgreich abgeschlossen."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Anmelden"
+      ],
+      "Sign in to your organization": [
+        "Bei deiner Organisation anmelden"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du wirst zu deinem SSO-Anbieter weitergeleitet."
       ]
     }
   }

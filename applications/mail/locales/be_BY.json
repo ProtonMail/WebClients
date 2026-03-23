@@ -1492,7 +1492,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -1682,6 +1685,18 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Authenticate": [
+        "Аўтэнтыфікацыя"
+      ],
+      "Forgot password?": [
+        "Забылі пароль?"
+      ],
+      "Use authentication code": [
+        "Выкарыстаць код аўтэнтыфікацыі"
+      ],
+      "Use recovery code": [
+        "Выкарыстаць код аднаўлення"
       ]
     },
     "action": {
@@ -3449,7 +3464,7 @@
         "Інданезія"
       ],
       "International": [
-        "Міжнародная"
+        "Міжнародны"
       ],
       "Iran": [
         "Іран"
@@ -5992,6 +6007,15 @@
       ],
       "You've unlocked 1 GB": [
         "Вы разблакіравалі 1 ГБ"
+      ],
+      "Download apps": [
+        "Спампаваць праграмы"
+      ],
+      "Get storage bonus": [
+        "Атрымаць бонуснае сховішча"
+      ],
+      "Review import options": [
+        "Паглядзець параметры імпарту"
       ]
     },
     "Gmail forwarding": {
@@ -7637,10 +7661,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -9132,6 +9153,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "Each code can only be used once": [
+        "Кожны код можа выкарыстоўвацца толькі адзін раз"
+      ],
+      "Enter the code from your authenticator app": [
+        "Увядзіце код з вашай праграмы аўтэнтыфікацыі"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Увядзіце код спраўджання. Лічба ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Увядзіце свой пароль (адміністратара арганізацыі)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Увядзіце свой пароль (як давераны кантакт)."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Пры наладжванні двухфактарнай аўтэнтыфікацыі, вы будзеце забяспечаны кодамі аднаўлення, якія зможаце выкарыстаць для ўваходу пры страце доступу да праграмы аўтэнтыфікацыі."
       ]
     },
     "info": {
@@ -10219,6 +10258,15 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Authenticator app": [
+        "Праграма аўтэнтыфікацыі"
+      ],
+      "Your password (admin)": [
+        "Ваш пароль (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ваш пароль (давераны кантакт)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12135,6 +12183,27 @@
     "Onboarding List Placeholder": {
       "Maybe later": [
         "Магчыма пазней"
+      ],
+      "Choose your service": [
+        "Выберыце свой сэрвіс"
+      ],
+      "Popular services": [
+        "Папулярныя сэрвісы"
+      ],
+      "Skip for now": [
+        "Пакуль прапусціць"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Пераключыце свае ўліковыя запісы на ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Перайсці на іншую электронную пошту даволі складана. З ${ BRAND_NAME } гэта зрабіць проста. Падключыце свой стары ўліковы запіс у адной мэтанакіраванай працоўнай прасторы, якая не змяшчае рэкламы."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Абнавіце сваю электронную пошту ў сэрвісах, якімі вы карыстаецеся часцей за ўсё. Прадухіляйце адсочванне і абараняйце сваю прыватнасць."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Вітаем у ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -16233,6 +16302,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Неўзабаве чакайце катэгорыі!"
+      ],
+      "Enter your password": [
+        "Увядзіце свой пароль"
+      ],
+      "Two-factor authentication": [
+        "Двухфактарная аўтэнтыфікацыя"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16900,6 +16975,40 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Нешта пайшло не так з аўтэнтыфікацыяй ключа бяспекі. Паспрабуйце яшчэ раз."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Устаўце ключ бяспекі, які звязаны з вашым уліковым запісам ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Ключ бяспекі"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ бяспекі"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Рэгістрацыя завяршылася з памылкай."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Уваход"
+      ],
+      "Sign in to your organization": [
+        "Увайсці ў сваю арганізацыю"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO."
       ]
     }
   }

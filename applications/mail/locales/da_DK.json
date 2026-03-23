@@ -1478,7 +1478,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1666,6 +1667,18 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Authenticate": [
+        "Godkend"
+      ],
+      "Forgot password?": [
+        "Glemt adgangskode?"
+      ],
+      "Use authentication code": [
+        "Brug godkendelseskode"
+      ],
+      "Use recovery code": [
+        "Brug gendannelseskode"
       ]
     },
     "action": {
@@ -5107,6 +5120,15 @@
       ],
       "ZIP code is required": [
         "Postnummer er påkrævet"
+      ],
+      "Invalid coupon": [
+        "Ugyldig kupon"
+      ],
+      "Please complete the billing details": [
+        "Udfyld faktureringsoplysningerne"
+      ],
+      "This field is invalid": [
+        "Dette felt er ugyldigt"
       ]
     },
     "error": {
@@ -7353,8 +7375,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8795,6 +8816,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "Enter the code from your authenticator app": [
+        "Indtast koden fra din godkendelsesapp"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Indtast bekræftelseskode. Ciffer ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Indtast din egen adgangskode (som organisationsadministrator)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Indtast din egen adgangskode (som betroet kontakt)."
       ]
     },
     "info": {
@@ -9857,6 +9890,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Authenticator app": [
+        "Godkendelsesapp"
+      ],
+      "Your password (admin)": [
+        "Din adgangskode (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Din adgangskode (betroet kontakt)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11691,6 +11733,9 @@
     "Onboarding List Placeholder": {
       "Maybe later": [
         "Måske senere"
+      ],
+      "Popular services": [
+        "Populære tjenester"
       ]
     },
     "Onboarding modal": {
@@ -15650,6 +15695,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier er på vej!"
+      ],
+      "Enter your password": [
+        "Indtast din adgangskode"
+      ],
+      "Two-factor authentication": [
+        "To-faktor-godkendelse"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16227,6 +16278,37 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sikkerhedsnøgle"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Fornyelsesprisen afhænger af faktureringsregionen og EIN."
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Indlogningen var ikke gennemført."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Log ind"
+      ],
+      "Sign in to your organization": [
+        "Log ind på din organisation"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du bliver omdirigeret til din tredjeparts SSO-udbyder."
       ]
     }
   }

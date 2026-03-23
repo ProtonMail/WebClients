@@ -1484,7 +1484,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1672,6 +1673,18 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Authenticate": [
+        "Ταυτοποίηση"
+      ],
+      "Forgot password?": [
+        "Ξεχάσατε τον κωδικό πρόσβασης;"
+      ],
+      "Use authentication code": [
+        "Χρησιμοποιήστε έναν κωδικό ελέγχου ταυτότητας"
+      ],
+      "Use recovery code": [
+        "Χρήση κωδικού ανάκτησης"
       ]
     },
     "action": {
@@ -7398,8 +7411,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8843,6 +8855,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "Each code can only be used once": [
+        "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μία φορά"
+      ],
+      "Enter the code from your authenticator app": [
+        "Πληκτρολογήστε τον κωδικό από την εφαρμογή ταυτοποίησης"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Εισάγετε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως έμπιστη επαφή)."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
       ]
     },
     "info": {
@@ -9914,6 +9944,15 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Authenticator app": [
+        "Εφαρμογή επαλήθευσης"
+      ],
+      "Your password (admin)": [
+        "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Your password (trusted contact)": [
+        "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15671,6 +15710,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Οι κατηγορίες έρχονται!"
+      ],
+      "Enter your password": [
+        "Εισάγετε τον κωδικό πρόσβασης σας"
+      ],
+      "Two-factor authentication": [
+        "Έλεγχος ταυτότητας δύο παραγόντων"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16248,6 +16293,40 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Εισαγάγετε ένα κλειδί ασφαλείας συνδεδεμένο με τον ${ BRAND_NAME } λογαριασμό σας ."
+      ],
+      "Security key": [
+        "Κλειδί ασφαλείας"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Κλειδί ασφαλείας"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Η είσοδος δεν ολοκληρώθηκε με επιτυχία."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Σύνδεση"
+      ],
+      "Sign in to your organization": [
+        "Συνδεθήτε στον οργανισμό σας"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Θα ανακατευθυνθείτε στον τρίτο πάροχο SSO."
       ]
     }
   }

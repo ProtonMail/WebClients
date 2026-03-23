@@ -1661,6 +1661,21 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Authenticate": [
+        "認証"
+      ],
+      "Forgot password?": [
+        "パスワードを忘れましたか？"
+      ],
+      "Trust key": [
+        "鍵を信頼する"
+      ],
+      "Use authentication code": [
+        "認証コードを使用"
+      ],
+      "Use recovery code": [
+        "回復用コードを使用"
       ]
     },
     "action": {
@@ -7221,7 +7236,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -8635,6 +8650,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "Enter the code from your authenticator app": [
+        "認証アプリからのコードを入力してください"
+      ],
+      "Enter your own password (as organization admin).": [
+        "(組織管理者としての)パスワードを入力してください。"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "(信頼済みの連絡先としての)パスワードを入力してください。"
       ]
     },
     "info": {
@@ -9695,6 +9719,15 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Authenticator app": [
+        "認証アプリ"
+      ],
+      "Your password (admin)": [
+        "あなたのパスワード (管理者)"
+      ],
+      "Your password (trusted contact)": [
+        "パスワード (信頼済みの連絡先)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15358,6 +15391,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ カテゴリがまもなく登場します！"
+      ],
+      "Enter your password": [
+        "パスワードを入力してください"
+      ],
+      "Two-factor authentication": [
+        "2 要素認証"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15890,6 +15929,32 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "セキュリティキー"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "セキュリティキー"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "サインインは正しく完了しませんでした。"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "サインイン"
+      ],
+      "Sign in to your organization": [
+        "組織にサインインする"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "サードパーティのSSOプロバイダにリダイレクトされます"
       ]
     }
   }

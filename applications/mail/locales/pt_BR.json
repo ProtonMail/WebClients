@@ -1484,7 +1484,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1672,6 +1673,18 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Authenticate": [
+        "Autenticar"
+      ],
+      "Forgot password?": [
+        "Esqueceu sua senha?"
+      ],
+      "Use authentication code": [
+        "Usar um código de autenticação"
+      ],
+      "Use recovery code": [
+        "Usar um código de recuperação"
       ]
     },
     "action": {
@@ -5890,6 +5903,9 @@
       ],
       "You've unlocked 1 GB": [
         "Você desbloqueou 1 GB"
+      ],
+      "Review import options": [
+        "Revisar opções de importação"
       ]
     },
     "Gmail forwarding": {
@@ -7389,8 +7405,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -8828,6 +8843,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Você está a alguns cliques de distância de ter uma caixa de entrada organizada"
+      ],
+      "Each code can only be used once": [
+        "Cada código só pode ser usado uma única vez."
+      ],
+      "Enter the code from your authenticator app": [
+        "Insira o código do seu aplicativo de autenticação."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Digite o código de verificação. Insira ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Digite sua própria senha (como administrador da organização)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Digite sua própria senha (como contato de confiança)."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação."
       ]
     },
     "info": {
@@ -9899,6 +9932,15 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Authenticator app": [
+        "Aplicativo de autenticação"
+      ],
+      "Your password (admin)": [
+        "Sua senha (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Sua senha (contato de confiança)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11749,6 +11791,9 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Boas-vindas ao ${ MAIL_APP_NAME }"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Alterne suas contas para a ${ BRAND_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -15743,6 +15788,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Categorias estão chegando!"
+      ],
+      "Enter your password": [
+        "Digite sua senha"
+      ],
+      "Two-factor authentication": [
+        "Autenticação de dois fatores"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16320,6 +16371,40 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Ocorreu um erro ao autenticar com sua chave de segurança. Tente novamente."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Insira uma chave de segurança vinculada à sua conta ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Chave de segurança"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Chave de segurança"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "O início de sessão não foi concluído."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Iniciar sessão"
+      ],
+      "Sign in to your organization": [
+        "Iniciar sessão na sua organização."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Você será redirecionado para o seu provedor de SSO de terceiros."
       ]
     }
   }

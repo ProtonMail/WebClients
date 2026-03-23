@@ -1631,6 +1631,24 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Authenticate": [
+        "驗證"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Trust key": [
+        "信任金鑰"
+      ],
+      "Use authentication code": [
+        "使用驗證代碼"
+      ],
+      "Use recovery code": [
+        "使用復原碼"
       ]
     },
     "action": {
@@ -1718,6 +1736,9 @@
       ],
       "Users": [
         "使用者"
+      ],
+      "Writing assistant": [
+        "撰寫助手"
       ]
     },
     "Alert": {
@@ -2003,6 +2024,9 @@
       ],
       "Unlimited daily chats": [
         "無限每日聊天"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "存取 15,000+ 臺伺服器，分布於 120+ 個國家"
       ]
     },
     "Billing cycle option": {
@@ -4920,11 +4944,20 @@
       ],
       "ZIP code is required": [
         "郵遞區號為必要項目"
+      ],
+      "Please complete the billing details": [
+        "請完成付款詳細資料"
+      ],
+      "This field is invalid": [
+        "此欄位無效"
       ]
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
         "請使用已經轉寄至 ${ MAIL_APP_NAME } 的 Gmail 位址登入"
+      ],
+      "Please sign in with the same Gmail address you originally connected": [
+        "請使用您最初連接的相同電子郵件地址登入"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5654,6 +5687,9 @@
       ],
       "You've unlocked 1 GB": [
         "您解鎖1GB"
+      ],
+      "Download apps": [
+        "下載應用程式"
       ]
     },
     "Gmail forwarding": {
@@ -7033,7 +7069,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -8399,6 +8435,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "輕點幾下滑鼠，即可擁有整潔的收件匣"
+      ],
+      "Enter the code from your authenticator app": [
+        "輸入驗證應用程式中的驗證代碼"
+      ],
+      "Enter your own password (as organization admin).": [
+        "輸入您的個人密碼 (組織機構管理員身份)。"
+      ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "此對話包含排定訊息。刪除他將取消排程寄送。"
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "您的付款日是 ${ renewalTime }。您可隨時取消。"
       ]
     },
     "info": {
@@ -9441,6 +9489,15 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Authenticator app": [
+        "驗證 app"
+      ],
+      "Your password (admin)": [
+        "您的密碼（管理員）"
+      ],
+      "Your password (trusted contact)": [
+        "您的密碼 (信任的內容)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10616,6 +10673,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "請支持 (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } + 使用者)"
       ]
     },
     "new_plans: feature highlight": {
@@ -11204,6 +11264,15 @@
     "Onboarding List Placeholder": {
       "Maybe later": [
         "稍後再說"
+      ],
+      "Popular services": [
+        "熱門服務"
+      ],
+      "Skip for now": [
+        "暫時略過"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "切換您的帳號至 ${ BRAND_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -14895,6 +14964,24 @@
       ],
       "✨ Categories are coming!": [
         "✨ 分類功能即將推出！"
+      ],
+      "Choose a provider": [
+        "選擇服務商"
+      ],
+      "Custom": [
+        "自訂"
+      ],
+      "Enter your password": [
+        "輸入您的密碼"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "匯入您的資料至 ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "選擇匯入資料"
+      ],
+      "Two-factor authentication": [
+        "兩步驟驗證"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15416,6 +15503,37 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "精心設計的 NetShield 保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "安全金鑰"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "安全金鑰"
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "進階匯入"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "登入"
+      ],
+      "Sign in to your organization": [
+        "登入您的組織"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "您將被重新導向至您的第三方單一登入提供者。"
       ]
     }
   }

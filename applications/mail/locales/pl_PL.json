@@ -1631,6 +1631,18 @@
       ],
       "Zoom out": [
         "Pomniejsz"
+      ],
+      "Authenticate": [
+        "Uwierzytelnij"
+      ],
+      "Forgot password?": [
+        "Nie pamiętasz hasła?"
+      ],
+      "Use authentication code": [
+        "Użyj kodu uwierzytelniającego"
+      ],
+      "Use recovery code": [
+        "Użyj kodu odzyskiwania"
       ]
     },
     "action": {
@@ -7173,10 +7185,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -8611,6 +8620,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od uporządkowanej skrzynki odbiorczej dzieli Cię kilka kliknięć"
+      ],
+      "Enter the code from your authenticator app": [
+        "Wpisz kod z aplikacji uwierzytelniającej"
+      ],
+      "Enter your own password (as organization admin).": [
+        "Wpisz swoje hasło (jako administrator organizacji)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Wpisz swoje hasło (jako zaufany kontakt)."
       ]
     },
     "info": {
@@ -9575,6 +9593,15 @@
       ],
       "ZIP code": [
         "Kod pocztowy"
+      ],
+      "Authenticator app": [
+        "Aplikacja uwierzytelniająca"
+      ],
+      "Your password (admin)": [
+        "Twoje hasło (administratora)"
+      ],
+      "Your password (trusted contact)": [
+        "Twoje hasło (zaufany kontakt)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15149,6 +15176,12 @@
       ],
       "Your shorter address is now ready": [
         "Krótszy adres jest już gotowy"
+      ],
+      "Enter your password": [
+        "Wpisz hasło"
+      ],
+      "Two-factor authentication": [
+        "Uwierzytelnianie dwustopniowe"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15810,6 +15843,40 @@
       ],
       "Passcode:": [
         "Kod dostępu:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Użyj klucza bezpieczeństwa powiązanego z kontem ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Klucz bezpieczeństwa"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Klucz bezpieczeństwa"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Logowanie nie zostało zakończone."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Zaloguj się"
+      ],
+      "Sign in to your organization": [
+        "Zaloguj się do organizacji"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Nastąpi przekierowanie do zewnętrznego dostawcy SSO."
       ]
     }
   }

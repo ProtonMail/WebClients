@@ -1669,6 +1669,22 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ],
+      "Authenticate": [
+        "ავთენტიკაცია"
+      ],
+      "Forgot password?": [
+        "დაგავიწყდათ პაროლი?"
+      ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
+      ],
+      "Use authentication code": [
+        "ავთენტიკაციის კოდის გამოყენება"
+      ],
+      "Use recovery code": [
+        "აღდგენის კოდის გამოყენება"
       ]
     },
     "action": {
@@ -7246,8 +7262,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
-        "გამოსახულებების ჩასმა"
+        "გამოსახულების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -8611,6 +8626,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
+      ],
+      "Enter the code from your authenticator app": [
+        "შეიყვანეთ კოდი თქვენი ავთენტიკატორი აპიდან"
+      ],
+      "Enter your own password (as organization admin).": [
+        "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც სანდო კონტაქტმა)."
       ]
     },
     "info": {
@@ -9676,6 +9700,15 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Authenticator app": [
+        "ავთენტიკატორი აპი"
+      ],
+      "Your password (admin)": [
+        "თქვენი პაროლი (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "თქვენი პაროლი (სანდო კონტაქტი)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15275,6 +15308,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ კატეგორიები გზაშია!"
+      ],
+      "Enter your password": [
+        "შეიყვანეთ თქვენი პაროლი"
+      ],
+      "Two-factor authentication": [
+        "2FA"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15846,6 +15885,32 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "უსაფრთხოების გასაღები"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "უსაფრთხოების გასაღები"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "შესვლა წარმატებით არ დასრულდა."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "შესვლა"
+      ],
+      "Sign in to your organization": [
+        "შედით თქვენს ორგანიზაციაში"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "ახლა გადაგამისამართებთ თქვენს SSO პროვაიდერზე."
       ]
     }
   }

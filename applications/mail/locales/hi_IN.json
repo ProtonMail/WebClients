@@ -1301,6 +1301,22 @@
       ],
       "Zoom out": [
         "ज़ूम कम करें"
+      ],
+      "Authenticate": [
+        "सत्यापन करें"
+      ],
+      "Forgot password?": [
+        "पासवर्ड भूल गए?"
+      ],
+      "Trust key": [
+        "ट्रस्ट की",
+        "ट्रस्ट कीज़"
+      ],
+      "Use authentication code": [
+        "सत्यापन कोड इस्तेमाल करें"
+      ],
+      "Use recovery code": [
+        "रिकवरी कोड इस्तेमाल करें"
       ]
     },
     "action": {
@@ -6370,6 +6386,15 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "आपके फ़ोन नंबर का उपयोग केवल इस एक बार के सत्यापन के लिए किया जाएगा।"
+      ],
+      "Enter the code from your authenticator app": [
+        "अपने प्रमाणिक ऐप से कोड दर्ज करें"
+      ],
+      "Enter your own password (as organization admin).": [
+        "अपना स्वयं का पासवर्ड दर्ज करें (संगठन व्यवस्थापक के रूप में)।"
+      ],
+      "Insert image": [
+        "तस्वीर डालें"
       ]
     },
     "info": {
@@ -7173,6 +7198,12 @@
       ],
       "ZIP code": [
         "ज़िप कोड"
+      ],
+      "Authenticator app": [
+        "प्रमाणीकरण अनुप्रयोग"
+      ],
+      "Your password (admin)": [
+        "आपका पासवर्ड (व्यवस्थापक)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10868,6 +10899,12 @@
       ],
       "Your shorter address is now ready": [
         "आपका छोटा पता अब तैयार है"
+      ],
+      "Enter your password": [
+        "आपका पासवर्ड डालें"
+      ],
+      "Two-factor authentication": [
+        "दो तरीकों से प्रमाणीकरण"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -11369,6 +11406,32 @@
     "Zoom Meeting": {
       "Passcode:": [
         "पासकोड:"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "सुरक्षा चाबी"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "सुरक्षा चाबी"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "साइन इन सफलतापूर्वक पूरा नहीं हुआ।"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "साइनइन करें"
+      ],
+      "Sign in to your organization": [
+        "अपने संगठन में साइन इन करें"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "आपको आपके तीसरें-पार्टी SSO प्रदाता पर रीडायरेक्ट कर दिया जाएगा।"
       ]
     }
   }

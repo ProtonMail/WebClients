@@ -1663,6 +1663,22 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Authenticate": [
+        "Autentica"
+      ],
+      "Forgot password?": [
+        "Hai dimenticato la password?"
+      ],
+      "Trust key": [
+        "chiave attendibile",
+        "chiavi attendibili"
+      ],
+      "Use authentication code": [
+        "Usa il codice di autenticazione"
+      ],
+      "Use recovery code": [
+        "Usa un codice di recupero"
       ]
     },
     "action": {
@@ -7307,8 +7323,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -8740,6 +8755,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "Enter the code from your authenticator app": [
+        "Inserisci il codice dalla tua app di autenticazione."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Inserisci la tua password (come amministratore dell'organizzazione)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Inserisci la tua password (come contatto attendibile)."
       ]
     },
     "info": {
@@ -9805,6 +9829,15 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Authenticator app": [
+        "App di autenticazione"
+      ],
+      "Your password (admin)": [
+        "La tua password (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "La tua password (contatto attendibile)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15564,6 +15597,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Le categorie stanno arrivando!"
+      ],
+      "Enter your password": [
+        "Inserisci la tua password"
+      ],
+      "Two-factor authentication": [
+        "Autenticazione a due fattori"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16141,6 +16180,32 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Chiave di sicurezza"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Chiave di sicurezza"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "L'accesso non è stato completato correttamente."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Accedi"
+      ],
+      "Sign in to your organization": [
+        "Accedi alla tua organizzazione"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Verrai reindirizzato al tuo provider SSO di terze parti."
       ]
     }
   }

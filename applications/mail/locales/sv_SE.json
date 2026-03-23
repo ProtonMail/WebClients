@@ -1484,7 +1484,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1672,6 +1673,18 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Authenticate": [
+        "Autentisera"
+      ],
+      "Forgot password?": [
+        "Glömt lösenord?"
+      ],
+      "Use authentication code": [
+        "Använd autentiseringskod"
+      ],
+      "Use recovery code": [
+        "Använd återställningskod"
       ]
     },
     "action": {
@@ -7374,8 +7387,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8793,6 +8805,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "Each code can only be used once": [
+        "Varje kod kan endast användas en gång"
+      ],
+      "Enter the code from your authenticator app": [
+        "Ange koden från din autentiseringsapp"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Ange verifieringskod. Siffra ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Ange ditt eget lösenord (som organisationsadministratör)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Ange ditt eget lösenord (som betrodd kontakt)."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
       ]
     },
     "info": {
@@ -9861,6 +9891,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Authenticator app": [
+        "Autentiseringsapp"
+      ],
+      "Your password (admin)": [
+        "Ditt lösenord (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ditt lösenord (betrodd kontakt)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15699,6 +15738,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "Enter your password": [
+        "Ange ditt lösenord"
+      ],
+      "Two-factor authentication": [
+        "Tvåfaktorsautentisering"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16273,6 +16318,40 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Infoga en säkerhetsnyckel länkat till ditt ${ BRAND_NAME }-konto."
+      ],
+      "Security key": [
+        "Säkerhetsnyckel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Säkerhetsnyckel"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Inloggning lyckades inte slutföras."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Logga in"
+      ],
+      "Sign in to your organization": [
+        "Logga in på din organisation"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du kommer omdirigeras till din tredjeparts SSO-leverantör."
       ]
     }
   }

@@ -1674,6 +1674,23 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Authenticate": [
+        "Autentificare"
+      ],
+      "Forgot password?": [
+        "Ați uitat parola?"
+      ],
+      "Trust key": [
+        "Aprobare cheie",
+        "Aprobare cheie",
+        "Aprobare cheie"
+      ],
+      "Use authentication code": [
+        "Folosire cod de autentificare"
+      ],
+      "Use recovery code": [
+        "Folosire cod de recuperare"
       ]
     },
     "action": {
@@ -7510,9 +7527,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8980,6 +8995,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "Each code can only be used once": [
+        "Fiecare cod poate fi folosit doar o dată."
+      ],
+      "Enter the code from your authenticator app": [
+        "Introduceți codul din aplicația Authenticator."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Introduceți codul de verificare. Cifra ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduceți parola (ca administrator al organizației)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Introduceți parola (ca și contact aprobat)."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
       ]
     },
     "info": {
@@ -10059,6 +10092,15 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Authenticator app": [
+        "Aplicația Authenticator"
+      ],
+      "Your password (admin)": [
+        "Parola dvs. (administrator)"
+      ],
+      "Your password (trusted contact)": [
+        "Parola dvs. (contact aprobat)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16030,6 +16072,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Sosesc categoriile!"
+      ],
+      "Enter your password": [
+        "Introduceți parola"
+      ],
+      "Two-factor authentication": [
+        "Autentificare cu doi factori"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16652,6 +16700,40 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Ceva nu a funcționat corect la autentificarea cu cheia de securitate. Reîncercați."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Introduceți o cheie de securitate legată la contul ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Cheie de securitate"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Cheie de securitate"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Înscrierea nu o fost finalizată corect."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Conectare"
+      ],
+      "Sign in to your organization": [
+        "Autentificare în organizație"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Pagina va fi redirecționată spre furnizorul autentificării unice (SSO)."
       ]
     }
   }

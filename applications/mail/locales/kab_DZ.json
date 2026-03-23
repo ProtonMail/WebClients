@@ -1209,6 +1209,18 @@
       ],
       "Zoom out": [
         "Semẓi"
+      ],
+      "Authenticate": [
+        "Asesteb"
+      ],
+      "Forgot password?": [
+        "Tettud awal uffir?"
+      ],
+      "Use authentication code": [
+        "Seqdec tangalt n usesteb"
+      ],
+      "Use recovery code": [
+        "Seqdec tangalt n tririt"
       ]
     },
     "action": {
@@ -4863,8 +4875,7 @@
         "Yettwaɣellet seg ukaram agejdan"
       ],
       "Insert image": [
-        "Ger tugna",
-        "Ger tugniwn"
+        "Ger tugna"
       ],
       "Insert link": [
         "Ger aseɣwen"
@@ -5565,6 +5576,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
+      ],
+      "Enter the code from your authenticator app": [
+        "Sekcem tangalt seg usnas-ik n usesteb"
+      ],
+      "Enter your own password (as organization admin).": [
+        "Sekcem awal-ik uffir (am unedbal n tkebbanit)"
       ]
     },
     "info": {
@@ -6355,6 +6372,12 @@
       ],
       "ZIP code": [
         "Tangalt Zip"
+      ],
+      "Authenticator app": [
+        "Asnas n usesteb"
+      ],
+      "Your password (admin)": [
+        "Awal-ik uffir (anedbal)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9244,6 +9267,12 @@
       ],
       "Your plan": [
         "Aɣawas-ik·im"
+      ],
+      "Enter your password": [
+        "Sekcem awal-ik uffir"
+      ],
+      "Two-factor authentication": [
+        "Asesteb s snat n tarrayin"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9702,6 +9731,24 @@
       ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Tasarutt n tɣellist"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Tasarutt n tɣellist"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Qqen"
+      ],
+      "Sign in to your organization": [
+        "Kcem ɣer tkebbanit-ik"
       ]
     }
   }

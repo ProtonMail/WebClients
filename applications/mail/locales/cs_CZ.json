@@ -1489,7 +1489,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -1679,6 +1682,18 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Authenticate": [
+        "Ověřit"
+      ],
+      "Forgot password?": [
+        "Zapomenuté heslo?"
+      ],
+      "Use authentication code": [
+        "Použít ověřovací kód"
+      ],
+      "Use recovery code": [
+        "Použít kód pro obnovení"
       ]
     },
     "action": {
@@ -7605,10 +7620,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -9091,6 +9103,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "Each code can only be used once": [
+        "Každý kód lze použít pouze jednou"
+      ],
+      "Enter the code from your authenticator app": [
+        "Zadejte kód z vaší ověřovací aplikace"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Zadejte ověřovací kód. Číslice ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Zadejte vlastní heslo (jako správce organizace)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Zadejte vlastní heslo (jako důvěryhodný kontakt)."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
       ]
     },
     "info": {
@@ -10169,6 +10199,15 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Authenticator app": [
+        "Ověřovací aplikace"
+      ],
+      "Your password (admin)": [
+        "Vaše heslo (správce)"
+      ],
+      "Your password (trusted contact)": [
+        "Vaše heslo (důvěryhodný kontakt)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16246,6 +16285,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorie se blíží!"
+      ],
+      "Enter your password": [
+        "Zadejte své heslo"
+      ],
+      "Two-factor authentication": [
+        "Dvoufázové ověření"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16913,6 +16958,40 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Při ověřování pomocí bezpečnostního klíče se něco pokazilo. Zkuste to prosím znovu."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vložte bezpečnostní klíč spojený s vaším účtem ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Bezpečnostní klíč"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Bezpečnostní klíč"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Přihlášení nebylo úspěšně dokončeno."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Přihlásit se"
+      ],
+      "Sign in to your organization": [
+        "Přihlaste se ke své organizaci"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Budete přesměrováni na poskytovatele SSO třetí strany."
       ]
     }
   }

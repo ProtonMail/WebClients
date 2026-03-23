@@ -1667,6 +1667,18 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Authenticate": [
+        "身份验证"
+      ],
+      "Forgot password?": [
+        "忘记密码？"
+      ],
+      "Use authentication code": [
+        "使用验证码"
+      ],
+      "Use recovery code": [
+        "使用恢复码"
       ]
     },
     "action": {
@@ -5839,6 +5851,15 @@
       ],
       "You've unlocked 1 GB": [
         "您已解锁 1 GB 存储空间"
+      ],
+      "Download apps": [
+        "下载应用"
+      ],
+      "Get storage bonus": [
+        "获取存储空间奖励"
+      ],
+      "Review import options": [
+        "查看导入选项"
       ]
     },
     "Gmail forwarding": {
@@ -7265,7 +7286,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图像"
+        "插入图片"
       ],
       "Insert link": [
         "插入链接"
@@ -8682,6 +8703,27 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "只需点击几下，您的收件箱就不会杂乱无章了"
+      ],
+      "Each code can only be used once": [
+        "每个恢复码只能使用一次"
+      ],
+      "Enter the code from your authenticator app": [
+        "请输入身份验证应用中的验证码"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "输入验证码，第 ${ digit } 位。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "请输入您自己的密码（作为组织管理员）。"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "输入您自己的密码（作为可信联系人）"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "将 ${ MAIL_APP_NAME } 设为默认邮箱应用。"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "当您设置双因素身份验证时，我们会提供恢复码。如果您无法使用验证器，可以使用这些恢复码登录。"
       ]
     },
     "info": {
@@ -9745,6 +9787,15 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Authenticator app": [
+        "身份验证应用"
+      ],
+      "Your password (admin)": [
+        "您的密码（管理员）"
+      ],
+      "Your password (trusted contact)": [
+        "您的密码（可信联系人）"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11544,6 +11595,27 @@
     "Onboarding List Placeholder": {
       "Maybe later": [
         "以后再说"
+      ],
+      "Choose your service": [
+        "请选择您的服务"
+      ],
+      "Popular services": [
+        "热门服务"
+      ],
+      "Skip for now": [
+        "稍后再说"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "将您的账户切换到 ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "切换邮箱很麻烦，但 ${ BRAND_NAME } 让这一切变得简单！连接您的旧账户，在一个专注、无广告的工作空间中管理所有内容。"
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "在您最常用的服务上更新您的邮箱，防止追踪并保护您的隐私。"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "欢迎使用 ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -11762,6 +11834,12 @@
       ],
       "No parent folder": [
         "无上层文件夹"
+      ],
+      "Remind me later": [
+        "稍后提醒我"
+      ],
+      "Yes, don't show again": [
+        "是的，不再显示"
       ]
     },
     "Option group": {
@@ -15333,6 +15411,15 @@
       ],
       "✨ Categories are coming!": [
         "✨ 分类功能即将推出！"
+      ],
+      "Enter your password": [
+        "请输入您的密码"
+      ],
+      "Keep this banner hidden?": [
+        "始终隐藏此横幅？"
+      ],
+      "Two-factor authentication": [
+        "双因素身份验证"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15865,6 +15952,40 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用安全密钥认证时出现问题，请重试。"
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入与您的 ${ BRAND_NAME } 账户关联的安全密钥。"
+      ],
+      "Security key": [
+        "安全密钥"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "安全密钥"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "登录未成功。"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "登录"
+      ],
+      "Sign in to your organization": [
+        "登录到您的组织"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "您将被重定向到您的第三方 SSO 提供商。"
       ]
     }
   }

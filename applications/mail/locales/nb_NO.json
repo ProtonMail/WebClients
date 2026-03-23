@@ -1666,6 +1666,25 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Authenticate": [
+        "Autentiser"
+      ],
+      "Forgot password?": [
+        "Glemt passord?"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
+      ],
+      "Use authentication code": [
+        "Bruk autentiseringskode"
+      ],
+      "Use recovery code": [
+        "Bruk gjenopprettingskode"
       ]
     },
     "action": {
@@ -5884,6 +5903,15 @@
       ],
       "You've unlocked 1 GB": [
         "Du har låst opp 1 GB"
+      ],
+      "Download apps": [
+        "Last ned apper"
+      ],
+      "Get storage bonus": [
+        "Få lagringsbonus"
+      ],
+      "Review import options": [
+        "Se over alternativer for import"
       ]
     },
     "Gmail forwarding": {
@@ -7372,8 +7400,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8814,6 +8841,30 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "Choose your service to connect with": [
+        "Velg tjenesten du vil koble til"
+      ],
+      "Each code can only be used once": [
+        "Hver kode kan bare brukes én gang"
+      ],
+      "Enter the code from your authenticator app": [
+        "Skriv inn koden fra autentiseringsappen"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Skriv inn verifiseringskode. Siffer ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Skriv inn ditt eget passord (som organisasjonsadministrator)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Skriv inn ditt eget passord (som betrodd kontakt)."
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Gjør ${ MAIL_APP_NAME } til standard e-postapplikasjon."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
       ]
     },
     "info": {
@@ -9885,6 +9936,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Authenticator app": [
+        "Autentiseringsapp"
+      ],
+      "Your password (admin)": [
+        "Ditt passord (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Passordet ditt (betrodd kontakt)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11723,6 +11783,27 @@
     "Onboarding List Placeholder": {
       "Maybe later": [
         "Kanskje senere"
+      ],
+      "Choose your service": [
+        "Velg tjenesten din"
+      ],
+      "Popular services": [
+        "Populære tjenester"
+      ],
+      "Skip for now": [
+        "Hopp over for nå"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Bytt kontoene dine til ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Å bytte e-post er vanskelig. ${ BRAND_NAME } gjør det enkelt. Koble til din gamle konto og administrer alt på ett fokusert, reklamefritt arbeidsområde."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Oppdater e-posten din på tjenestene du bruker mest. Forhindre sporing og beskytt personvernet ditt."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Velkommen til ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -11941,6 +12022,12 @@
       ],
       "No parent folder": [
         "Ingen overordnet mappe"
+      ],
+      "Remind me later": [
+        "Påminn meg senere"
+      ],
+      "Yes, don't show again": [
+        "Ja, ikke vis igjen"
       ]
     },
     "Option group": {
@@ -15696,6 +15783,27 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "Choose a provider": [
+        "Velg en leverandør"
+      ],
+      "Custom": [
+        "Tilpasset"
+      ],
+      "Enter your password": [
+        "Skriv inn passordet"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importer dine data til ${ BRAND_NAME }"
+      ],
+      "Keep this banner hidden?": [
+        "Holde dette banneret skjult?"
+      ],
+      "Select data to import": [
+        "Velg data for import"
+      ],
+      "Two-factor authentication": [
+        "Tofaktorautentisering"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16273,6 +16381,48 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Sett inn en sikkerhetsnøkkel som er koblet til ${ BRAND_NAME }-kontoen."
+      ],
+      "Security key": [
+        "Sikkerhetsnøkkel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sikkerhetsnøkkel"
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "Avansert import"
+      ],
+      "Import from ${ providerName }": [
+        "Importer fra ${ providerName }"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Påloggingen ble ikke fullført."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Logg på"
+      ],
+      "Sign in to your organization": [
+        "Logg på organisasjonen"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du blir omdirigert til din tredjeparts SSO-leverandør."
       ]
     }
   }

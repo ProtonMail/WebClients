@@ -1484,7 +1484,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1672,6 +1673,18 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Authenticate": [
+        "Autentica"
+      ],
+      "Forgot password?": [
+        "Heu oblidat la contrasenya?"
+      ],
+      "Use authentication code": [
+        "Utilitza el codi d'autenticació"
+      ],
+      "Use recovery code": [
+        "Utilitza un codi de recuperació"
       ]
     },
     "action": {
@@ -7398,8 +7411,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8843,6 +8855,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sou tot just a uns quants clics d'una safata d'entrada ordenada"
+      ],
+      "Each code can only be used once": [
+        "Cada codi només es pot utilitzar una vegada"
+      ],
+      "Enter the code from your authenticator app": [
+        "Introduïu el codi de la vostra aplicació d'autenticació."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Introduïu el codi de verificació. Dígit ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduïu la vostra contrasenya (com a administrador de l'organització)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Introduïu la vostra contrasenya (com a contacte de confiança)."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Quan configureu l'autenticació en dos passos, et proporcionem codis de recuperació que pots utilitzar per iniciar sessió si perds l'accés a l'aplicació d'autenticació."
       ]
     },
     "info": {
@@ -9914,6 +9944,15 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Authenticator app": [
+        "Aplicació d'autenticació"
+      ],
+      "Your password (admin)": [
+        "La vostra contrasenya (administrador)"
+      ],
+      "Your password (trusted contact)": [
+        "La vostra contrasenya (contacte de confiança)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15671,6 +15710,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Arriben les categories!"
+      ],
+      "Enter your password": [
+        "Introduïu la vostra contrasenya"
+      ],
+      "Two-factor authentication": [
+        "Autenticació de doble factor"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16248,6 +16293,40 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inseriu una clau de seguretat enllaçada al vostre compte de ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Clau de seguretat"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Clau de seguretat"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "No s'ha completat l'inici de sessió."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Inicia la sessió"
+      ],
+      "Sign in to your organization": [
+        "Inicieu la sessió a la vostra organització"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Se us redirigirà al vostre proveïdor d'SSO de tercers."
       ]
     }
   }

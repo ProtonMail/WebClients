@@ -1421,7 +1421,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar na chave"
+        "Confiar na chave",
+        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1597,6 +1598,18 @@
       ],
       "Zoom out": [
         "Reduzir"
+      ],
+      "Authenticate": [
+        "Autenticar"
+      ],
+      "Forgot password?": [
+        "Palavra-passe esquecida?"
+      ],
+      "Use authentication code": [
+        "Utilizar um código de autenticação"
+      ],
+      "Use recovery code": [
+        "Utilizar um código de recuperação"
       ]
     },
     "action": {
@@ -6812,8 +6825,7 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir uma imagem"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -8181,6 +8193,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a alguns cliques de ter uma caixa de entrada organizada"
+      ],
+      "Enter the code from your authenticator app": [
+        "Introduza o código da sua aplicação de autenticação."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduza a sua palavra-passe (como administrador da organização)."
       ]
     },
     "info": {
@@ -9127,6 +9145,12 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Authenticator app": [
+        "Aplicação de autenticação"
+      ],
+      "Your password (admin)": [
+        "A sua palavra-passe (admin)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14448,6 +14472,12 @@
       ],
       "Your shorter address is now ready": [
         "O seu endereço mais curto já está pronto"
+      ],
+      "Enter your password": [
+        "Introduza a sua palavra-passe"
+      ],
+      "Two-factor authentication": [
+        "Autenticação de dois fatores"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15013,6 +15043,32 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Chave de segurança"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Chave de segurança"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "O início de sessão não foi concluído."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Iniciar sessão"
+      ],
+      "Sign in to your organization": [
+        "Iniciar sessão na sua organização"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Será redirecionado para o seu fornecedor de SSO de terceiros."
       ]
     }
   }

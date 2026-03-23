@@ -1660,6 +1660,22 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Authenticate": [
+        "Todenna"
+      ],
+      "Forgot password?": [
+        "Unohditko salasanasi?"
+      ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
+      ],
+      "Use authentication code": [
+        "Käytä todennuskoodia"
+      ],
+      "Use recovery code": [
+        "Käytä palautuskoodia"
       ]
     },
     "action": {
@@ -5756,6 +5772,15 @@
       ],
       "You've unlocked 1 GB": [
         "Olet vapauttanut 1 Gt"
+      ],
+      "Download apps": [
+        "Lataa sovellukset"
+      ],
+      "Get storage bonus": [
+        "Hanki tallennustilan bonus"
+      ],
+      "Review import options": [
+        "Tarkista tuontiasetukset"
       ]
     },
     "Gmail forwarding": {
@@ -7252,8 +7277,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8664,6 +8688,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "Enter the code from your authenticator app": [
+        "Syötä koodi todennussovelluksestasi"
+      ],
+      "Enter your own password (as organization admin).": [
+        "Syötä oma salasanasi (organisaation ylläpitäjänä)."
       ]
     },
     "info": {
@@ -9732,6 +9762,12 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Authenticator app": [
+        "Todennussovellus"
+      ],
+      "Your password (admin)": [
+        "Salasanasi (ylläpitäjä)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11512,6 +11548,27 @@
     "Onboarding List Placeholder": {
       "Maybe later": [
         "Ehkä myöhemmin"
+      ],
+      "Choose your service": [
+        "Valitse palvelusi"
+      ],
+      "Popular services": [
+        "Suositut palvelut"
+      ],
+      "Skip for now": [
+        "Ohita toistaiseksi"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Vaihda tilisi ${ BRAND_NAME }:iin"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Sähköpostin vaihtaminen on vaikeaa. ${ BRAND_NAME } tekee siitä helppoa. Yhdistä vanha tilisi ja hallitse kaikkea yhdessä keskitetyssä, mainoksettomassa työtilassa."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Päivitä sähköpostisi eniten käyttämissäsi palveluissa. Estä seuranta ja suojaa yksityisyyttäsi."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Tervetuloa ${ MAIL_APP_NAME }iin"
       ]
     },
     "Onboarding modal": {
@@ -15378,6 +15435,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Luokat ovat tulossa!"
+      ],
+      "Enter your password": [
+        "Syötä salasanasi"
+      ],
+      "Two-factor authentication": [
+        "Kaksivaiheinen tunnistautuminen"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15949,6 +16012,32 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Suojausavain"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Suojausavain"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Sisäänkirjautumista ei suoritettu loppuun."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Kirjaudu sisään"
+      ],
+      "Sign in to your organization": [
+        "Kirjaudu sisään organisaatioosi"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Sinut ohjataan kolmannen osapuolen SSO- palveluntarjoajaan."
       ]
     }
   }

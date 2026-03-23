@@ -1484,7 +1484,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Approuver la clé",
+        "Clés de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1672,6 +1673,18 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Authenticate": [
+        "S'authentifier"
+      ],
+      "Forgot password?": [
+        "Mot de passe oublié ?"
+      ],
+      "Use authentication code": [
+        "Utiliser le code d'authentification"
+      ],
+      "Use recovery code": [
+        "Utiliser un code de récupération"
       ]
     },
     "action": {
@@ -7392,8 +7405,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8834,6 +8846,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "Enter the code from your authenticator app": [
+        "Saisissez le code de votre application d'authentification."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Saisissez votre propre mot de passe (en tant que contacts de confiance)."
       ]
     },
     "info": {
@@ -8967,7 +8988,7 @@
         "Déplacer vers le dossier Brouillons"
       ],
       "Go to Inbox": [
-        "Déplacer vers le dossier Boîte de réception"
+        "Aller à la boîte de réception"
       ],
       "Go to Sent": [
         "Déplacer vers le dossier Envoyés"
@@ -9905,6 +9926,15 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Authenticator app": [
+        "Application d'authentification"
+      ],
+      "Your password (admin)": [
+        "Votre mot de passe (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Votre mot de passe (contacts de confiance)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15739,6 +15769,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Les catégories arrivent !"
+      ],
+      "Enter your password": [
+        "Saisissez votre mot de passe"
+      ],
+      "Two-factor authentication": [
+        "Authentification à deux facteurs"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16316,6 +16352,32 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Clé de sécurité"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Clé de sécurité"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "La connexion n'a pas abouti."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Se connecter"
+      ],
+      "Sign in to your organization": [
+        "Connectez-vous à votre organisation."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Vous allez être redirigé vers votre service tiers d'authentification unique."
       ]
     }
   }

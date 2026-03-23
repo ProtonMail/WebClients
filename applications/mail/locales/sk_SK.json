@@ -1492,7 +1492,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1682,6 +1685,18 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Authenticate": [
+        "Overiť"
+      ],
+      "Forgot password?": [
+        "Zabudli ste heslo?"
+      ],
+      "Use authentication code": [
+        "Použiť overovací kód"
+      ],
+      "Use recovery code": [
+        "Použiť kód pre obnovenie"
       ]
     },
     "action": {
@@ -5992,6 +6007,15 @@
       ],
       "You've unlocked 1 GB": [
         "Odomkli ste 1GB"
+      ],
+      "Download apps": [
+        "Stiahnuť aplikácie"
+      ],
+      "Get storage bonus": [
+        "Získajte bonusové úložisko"
+      ],
+      "Review import options": [
+        "Prezrite si možnosti importu"
       ]
     },
     "Gmail forwarding": {
@@ -7637,10 +7661,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -9132,6 +9153,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "Each code can only be used once": [
+        "Každý kód môže byť použitý len jeden krát"
+      ],
+      "Enter the code from your authenticator app": [
+        "Zadajte kód z vašej overovacej aplikácie"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Zadajte overovací kód. Číslice ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Zadajte vlastné heslo (ako správca organizácie)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Zadajte vlastné heslo (ako dôveryhodný kontakt)."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Pri nastavení dvojstupňového overenia poskytujeme kódy na obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k vašej overovacej aplikácii."
       ]
     },
     "info": {
@@ -10219,6 +10258,15 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Authenticator app": [
+        "Overovacia aplikácia"
+      ],
+      "Your password (admin)": [
+        "Vaše heslo (správca)"
+      ],
+      "Your password (trusted contact)": [
+        "Vaše heslo (dôveryhodný kontakt)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12135,6 +12183,27 @@
     "Onboarding List Placeholder": {
       "Maybe later": [
         "Možno neskôr"
+      ],
+      "Choose your service": [
+        "Vyberte svoju službu"
+      ],
+      "Popular services": [
+        "Populárne služby"
+      ],
+      "Skip for now": [
+        "Zatiaľ preskočiť"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Prejdite so svojimi účtami na ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Prechod na nový email je náročný. S ${ BRAND_NAME } je to jednoduché. Pripojte si svoj starý účet a spravujte všetko na jednom prehľadnom pracovnom prostredí bez reklám."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Aktualizujte si emailové adresy v službách, ktoré najčastejšie používate. Zabráňte sledovaniu a chráňte svoje súkromie."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Vitajte v ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -16233,6 +16302,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Prichádzajú kategórie!"
+      ],
+      "Enter your password": [
+        "Zadajte svoje heslo"
+      ],
+      "Two-factor authentication": [
+        "Dvojstupňové overenie"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16900,6 +16975,40 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vložte bezpečnostný kľúč prepojený s vaším ${ BRAND_NAME } účtom."
+      ],
+      "Security key": [
+        "Bezpečnostný kľúč"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Bezpečnostný kľúč"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Registrácia nebola úspešne dokončená."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Prihlásiť sa"
+      ],
+      "Sign in to your organization": [
+        "Prihláste sa do svojej organizácie"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Presmerujeme vás na poskytovateľa SSO tretej strany."
       ]
     }
   }

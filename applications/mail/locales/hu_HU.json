@@ -1460,7 +1460,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Kulcs megjelölése megbízhatóként",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -1642,6 +1643,18 @@
       ],
       "Zoom out": [
         "Távolítás"
+      ],
+      "Authenticate": [
+        "Hitelesítés"
+      ],
+      "Forgot password?": [
+        "Elfelejtett jelszó?"
+      ],
+      "Use authentication code": [
+        "Hitelesítő kód használata"
+      ],
+      "Use recovery code": [
+        "Helyreállító kód használata"
       ]
     },
     "action": {
@@ -7060,7 +7073,6 @@
         "Inicializálás…"
       ],
       "Insert image": [
-        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -8450,6 +8462,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Már csak néhány kattintás választja el a rendetlenség-mentes postaládától"
+      ],
+      "Enter the code from your authenticator app": [
+        "Írja be a kódot a hitelesítő alkalmazásból"
+      ],
+      "Enter your own password (as organization admin).": [
+        "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
       ]
     },
     "info": {
@@ -9488,6 +9506,12 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "Authenticator app": [
+        "Hitelesítő alkalmazás"
+      ],
+      "Your password (admin)": [
+        "Jelszó (adminisztrátor)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14899,6 +14923,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Érkeznek a kategóriák!"
+      ],
+      "Enter your password": [
+        "Adja meg a jelszavát"
+      ],
+      "Two-factor authentication": [
+        "Kétlépcsős hitelesítés"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15471,6 +15501,32 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Hitelesítési kulcs"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Hitelesítési kulcs"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "A bejelentkezés nem sikerült."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Bejelentkezés"
+      ],
+      "Sign in to your organization": [
+        "Jelentkezzen be a szervezetébe"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Önt átirányítjuk a harmadik fél SSO-szolgáltatójához."
       ]
     }
   }

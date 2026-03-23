@@ -1661,6 +1661,24 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ],
+      "Authenticate": [
+        "Autentikasi"
+      ],
+      "Forgot password?": [
+        "Lupa kata sandi?"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Hide": [
+        "Sembunyikan"
+      ],
+      "Use authentication code": [
+        "Gunakan kode autentikasi"
+      ],
+      "Use recovery code": [
+        "Gunakan kode pemulihan"
       ]
     },
     "action": {
@@ -1725,6 +1743,15 @@
       ],
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Domains": [
+        "Domain"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Pengguna"
       ]
     },
     "Alert": {
@@ -2019,6 +2046,12 @@
       ],
       "Yearly": [
         "Tahunan"
+      ],
+      "${ n } month": [
+        "${ n } bulan"
+      ],
+      "${ n } year": [
+        "${ n } tahun"
       ]
     },
     "Browser": {
@@ -2494,6 +2527,9 @@
       ],
       "Total for ${ n } month": [
         "Total untuk ${ n } bulan"
+      ],
+      "Subtotal": [
+        "Subtotal"
       ]
     },
     "Collapsible tooltip": {
@@ -5689,6 +5725,9 @@
       ],
       "You've unlocked 1 GB": [
         "Anda telah memperoleh 1 GB"
+      ],
+      "Download apps": [
+        "Unduh aplikasi"
       ]
     },
     "Gmail forwarding": {
@@ -8488,6 +8527,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Anda hanya berjarak beberapa klik dari kotak masuk yang rapi"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Semua kontak Anda akan diimpor, hingga batas ${ maxContact } kontak"
+      ],
+      "Enter the code from your authenticator app": [
+        "Masukkan kode yang tertera pada aplikasi autentikator Anda"
+      ],
+      "Enter your own password (as organization admin).": [
+        "Masukkan kata sandi Anda (selaku admin organisasi)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Masukkan kata sandi Anda (selaku kontak tepercaya)"
       ]
     },
     "info": {
@@ -9542,6 +9593,15 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Authenticator app": [
+        "Aplikasi autentikator"
+      ],
+      "Your password (admin)": [
+        "Kata sandi Anda (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Kata sandi Anda (kontak tepercaya)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10033,6 +10093,12 @@
       ],
       "Up to ${ n } participant": [
         "Hingga ${ n } peserta"
+      ],
+      "${ n } participant": [
+        "${ n } peserta"
+      ],
+      "Booking pages": [
+        "Laman pemesanan"
       ]
     },
     "Message": {
@@ -11323,6 +11389,9 @@
     "Onboarding List Placeholder": {
       "Maybe later": [
         "Mungkin nanti"
+      ],
+      "Skip for now": [
+        "Lewati untuk sementara"
       ]
     },
     "Onboarding modal": {
@@ -11773,6 +11842,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Langganan Anda saat ini telah memiliki diskon. Dengan berpindah ke penawaran ini, diskon yang telah ada tidak akan lagi berlaku."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Diskon berlaku untuk ${ renewalsWithCoupon } perpanjangan."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ini berlaku selama ${ couponRedemptions } bulan. Selanjutnya, harga akan otomatis diperbarui menjadi ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku selama ${ couponRedemptions } bulan. Kemudian akan diperpanjang secara otomatis dengan harga ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
       ]
     },
     "Payments.Error": {
@@ -12079,6 +12157,12 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "San Francisco"
       ]
     },
     "Placeholder for contact group name": {
@@ -15006,6 +15090,18 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategori akan segera hadir!"
+      ],
+      "Custom": [
+        "Kustom"
+      ],
+      "Enter your password": [
+        "Masukkan kata sandi Anda"
+      ],
+      "Spring Sale": [
+        "Diskon Musim Semi"
+      ],
+      "Two-factor authentication": [
+        "Autentikasi dua faktor"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15538,6 +15634,32 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Kunci keamanan"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Kunci keamanan"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Entri masuk tidak berhasil dirampungkan."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Masuk"
+      ],
+      "Sign in to your organization": [
+        "Masuk ke organisasi Anda"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Anda akan diarahkan ke penyedia SSO pihak ketiga Anda."
       ]
     }
   }

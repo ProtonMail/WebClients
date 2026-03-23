@@ -1460,6 +1460,18 @@
       ],
       "Zoom out": [
         "Зменшити"
+      ],
+      "Authenticate": [
+        "Автентифікація"
+      ],
+      "Forgot password?": [
+        "Не пам’ятаю пароль?"
+      ],
+      "Use authentication code": [
+        "Використати код підтвердження"
+      ],
+      "Use recovery code": [
+        "Використати код відновлення"
       ]
     },
     "action": {
@@ -6637,9 +6649,6 @@
         "Ініціалізація…"
       ],
       "Insert image": [
-        "Вставити зображення",
-        "Вставити зображення",
-        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -7865,6 +7874,12 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ваш план починається ${ renewalTime } і буде автоматично поновлюватися щомісяця."
+      ],
+      "Enter the code from your authenticator app": [
+        "Введіть код з вашого додатку автентифікатора"
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введіть власний пароль (як адміністратор організації)."
       ]
     },
     "info": {
@@ -8743,6 +8758,15 @@
       ],
       "ZIP code": [
         "Поштовий індекс"
+      ],
+      "Authenticator app": [
+        "Програма автентифікації"
+      ],
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
+      "Your password (admin)": [
+        "Новий пароль (адмін)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13704,6 +13728,15 @@
       ],
       "Your shorter address is now ready": [
         "Ваша коротша адреса готова"
+      ],
+      "Enter your password": [
+        "Введіть ваш пароль"
+      ],
+      "Spring Sale": [
+        "Весняний розпродаж"
+      ],
+      "Two-factor authentication": [
+        "Двоетапна перевірка"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14345,6 +14378,32 @@
       ],
       "Passcode:": [
         "Код доступу"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Ключ безпеки"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ безпеки"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Вхід не був успішно завершений."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Увійти"
+      ],
+      "Sign in to your organization": [
+        "Увійти до своєї організації"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вас буде перенаправлено до вашого стороннього провайдера SSO."
       ]
     }
   }

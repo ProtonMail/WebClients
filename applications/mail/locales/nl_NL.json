@@ -1484,7 +1484,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1672,6 +1673,18 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Authenticate": [
+        "Authenticeren"
+      ],
+      "Forgot password?": [
+        "Wachtwoord vergeten?"
+      ],
+      "Use authentication code": [
+        "Authenticatiecode gebruiken"
+      ],
+      "Use recovery code": [
+        "Herstelcode gebruiken"
       ]
     },
     "action": {
@@ -7389,8 +7402,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -8834,6 +8846,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "Each code can only be used once": [
+        "Elke code kan slechts één keer worden gebruikt"
+      ],
+      "Enter the code from your authenticator app": [
+        "Voer de code van uw authenticatie app in"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Voer verificatiecode in. Cijfer ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Voer uw eigen wachtwoord in (als vertrouwd contact)."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Wanneer u tweestapsverificatie instelt, bieden we herstelcodes die u kunt gebruiken om u aan te melden als u de toegang tot uw authenticatie app verliest."
       ]
     },
     "info": {
@@ -9905,6 +9935,15 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Authenticator app": [
+        "Authenticatie app"
+      ],
+      "Your password (admin)": [
+        "Uw wachtwoord (beheerder)"
+      ],
+      "Your password (trusted contact)": [
+        "Uw wachtwoord (vertrouwd contact)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15737,6 +15776,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Categorieën komen eraan!"
+      ],
+      "Enter your password": [
+        "Voer uw wachtwoord in"
+      ],
+      "Two-factor authentication": [
+        "Tweestapsverificatie"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16314,6 +16359,32 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Beveiligingssleutel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Beveiligingssleutel"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Inloggen is niet gelukt."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Inloggen"
+      ],
+      "Sign in to your organization": [
+        "Aanmelden bij uw organisatie"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "U wordt doorgestuurd naar uw derde partij SSO-provider."
       ]
     }
   }

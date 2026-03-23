@@ -1390,7 +1390,10 @@
         "Доверять"
       ],
       "Trust key": [
-        "Доверять ключу"
+        "Доверенный ключ",
+        "Доверенных ключа",
+        "Доверенных ключей",
+        "Доверенных ключей"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -1568,6 +1571,18 @@
       ],
       "Zoom out": [
         "Уменьшить масштаб"
+      ],
+      "Authenticate": [
+        "Аутентификация"
+      ],
+      "Forgot password?": [
+        "Забыли пароль?"
+      ],
+      "Use authentication code": [
+        "Использовать код аутентификации"
+      ],
+      "Use recovery code": [
+        "Использовать код восстановлени"
       ]
     },
     "action": {
@@ -6958,10 +6973,7 @@
         "Инициализация…"
       ],
       "Insert image": [
-        "Вставить изображение",
-        "Вставить изображения",
-        "Вставить изображения",
-        "Вставить изображения"
+        "Вставить изображение"
       ],
       "Insert link": [
         "Вставить ссылку"
@@ -8324,6 +8336,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вы всего в нескольких нажатиях от почтового ящика, свободного от хлама"
+      ],
+      "Enter the code from your authenticator app": [
+        "Введите код из приложения-аутентификатора"
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введите свой пароль как администратора организации."
       ]
     },
     "info": {
@@ -9255,6 +9273,12 @@
       ],
       "ZIP code": [
         "Почтовый индекс"
+      ],
+      "Authenticator app": [
+        "Приложение-аутентификатор"
+      ],
+      "Your password (admin)": [
+        "Ваш пароль (admin)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14618,6 +14642,12 @@
       ],
       "Your shorter address is now ready": [
         "Ваш укороченный адрес готов"
+      ],
+      "Enter your password": [
+        "Введите пароль"
+      ],
+      "Two-factor authentication": [
+        "Двухфакторная аутентификация"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15273,6 +15303,32 @@
       ],
       "Passcode:": [
         "Код доступа:"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Ключ безопасности"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ безопасности"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Вход не был успешно завершен."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Войти"
+      ],
+      "Sign in to your organization": [
+        "Войдите в свою организацию"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вы будете перенаправлены на вашего стороннего провайдера SSO."
       ]
     }
   }

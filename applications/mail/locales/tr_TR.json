@@ -1484,7 +1484,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1672,6 +1673,18 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Authenticate": [
+        "Kimliği doğrula"
+      ],
+      "Forgot password?": [
+        "Parolamı unuttum"
+      ],
+      "Use authentication code": [
+        "Kimlik doğrulama kodunu kullanın"
+      ],
+      "Use recovery code": [
+        "Kurtarma kodunu kullanın"
       ]
     },
     "action": {
@@ -7398,8 +7411,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8843,6 +8855,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "Each code can only be used once": [
+        "Her kod yalnızca bir kez kullanılabilir"
+      ],
+      "Enter the code from your authenticator app": [
+        "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Kendi parolanızı yazın (güvenilen kişi olarak)."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları veriyoruz."
       ]
     },
     "info": {
@@ -9914,6 +9944,15 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Authenticator app": [
+        "Kimlik doğrulama uygulaması"
+      ],
+      "Your password (admin)": [
+        "Parolanız (yönetici)"
+      ],
+      "Your password (trusted contact)": [
+        "Parolanız (güvenilen kişi)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11770,6 +11809,9 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } hizmetine hoş geldiniz"
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "En sık kullandığınız hizmetlerde e-posta adresinizi güncelleyin. İzlenmeyi önleyin ve gizliliğinizi koruyun."
       ]
     },
     "Onboarding modal": {
@@ -15764,6 +15806,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategoriler özelliği geliyor!"
+      ],
+      "Enter your password": [
+        "Parolanızı yazın"
+      ],
+      "Two-factor authentication": [
+        "İki adımlı doğrulama"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16341,6 +16389,40 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } hesabınız ile ilişkilendirilmiş güvenlik anahtarını takın."
+      ],
+      "Security key": [
+        "Güvenlik anahtarı"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Güvenlik anahtarı"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Oturum açılamadı."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Oturum aç"
+      ],
+      "Sign in to your organization": [
+        "Kuruluşunuzda oturum açın"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
       ]
     }
   }

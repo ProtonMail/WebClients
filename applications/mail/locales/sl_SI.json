@@ -1447,7 +1447,10 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Zaupaj ključu"
+        "Ključ zaupanja",
+        "Ključa zaupanja",
+        "Ključi zaupanja",
+        "Ključev zaupanja"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -1631,6 +1634,18 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Authenticate": [
+        "Preverjanje pristnosti"
+      ],
+      "Forgot password?": [
+        "Pozabljeno geslo?"
+      ],
+      "Use authentication code": [
+        "Uporabi kodo za preverjanje pristnosti"
+      ],
+      "Use recovery code": [
+        "Uporabite kode za obnovitev"
       ]
     },
     "action": {
@@ -7356,10 +7371,7 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko",
-        "Vstavi sliki",
-        "Vstavi slike",
-        "Vstavi slik"
+        "Vstavi sliko"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -8794,6 +8806,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Do urejenega poštnega predala vas loči le nekaj klikov."
+      ],
+      "Each code can only be used once": [
+        "Vsaka koda se lahko uporabi samo enkrat"
+      ],
+      "Enter the code from your authenticator app": [
+        "Vnesite kodo iz aplikacije za preverjanje pristnosti"
+      ],
+      "Enter your own password (as organization admin).": [
+        "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
       ]
     },
     "info": {
@@ -9812,6 +9836,12 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Authenticator app": [
+        "Aplikacija za preverjanje pristnosti"
+      ],
+      "Your password (admin)": [
+        "Vaše geslo (admin)"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15505,6 +15535,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorije prihajajo!"
+      ],
+      "Enter your password": [
+        "Vnesite svoje geslo"
+      ],
+      "Two-factor authentication": [
+        "Dvojno preverjanja pristnosti"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16164,6 +16200,35 @@
       ],
       "Passcode:": [
         "Koda za dostop:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vstavite varnostni ključ, povezan z vašim ${ BRAND_NAME } računom."
+      ],
+      "Security key": [
+        "Varnostni ključ"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Varnostni ključ"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Prijava"
+      ],
+      "Sign in to your organization": [
+        "Prijavite se v svojo organizacijo"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Preusmerjeni boste k ponudniku SSO tretje osebe."
       ]
     }
   }
