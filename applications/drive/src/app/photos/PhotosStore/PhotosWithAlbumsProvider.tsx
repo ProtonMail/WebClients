@@ -17,7 +17,7 @@ import {
     queryUpdateAlbumCover,
 } from '@proton/shared/lib/api/drive/photos';
 import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
-import { getCanAdmin, getCanWrite, getIsOwner } from '@proton/shared/lib/drive/permissions';
+import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
@@ -134,7 +134,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const currentAlbumLinkId = useRef<string>();
     const [albumPhotos, setAlbumPhotos] = useState<AlbumPhoto[]>([]);
     const { getShare, getShareCreatorKeys } = useShare();
-    const { getSharePermissions } = useDirectSharingInfo();
+    const { getSharePermissions, isSharedWithMe } = useDirectSharingInfo();
     const { getLink } = useLink();
     const { updatePhotoLinkTags } = useLinksState();
     const { setVolumeShareIds } = useVolumesState();
@@ -212,6 +212,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
 
             await loadPhotos(abortSignal);
         },
+
         [
             // Unstable dependencies:
             // getShareCreatorKeys,
@@ -430,13 +431,14 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                                             : Promise.resolve(undefined),
                                     ]);
                                     const permissions = await getSharePermissions(abortSignal, link.rootShareId);
+                                    const sharedWithMe = await isSharedWithMe(abortSignal, link.rootShareId);
                                     setVolumeShareIds(album.VolumeID, [album.ShareID]);
                                     return {
                                         ...link,
                                         cover: cover,
                                         photoCount: album.PhotoCount,
                                         permissions: {
-                                            isOwner: getIsOwner(permissions),
+                                            isOwner: !sharedWithMe,
                                             isAdmin: getCanAdmin(permissions),
                                             isEditor: getCanWrite(permissions),
                                         },
@@ -917,6 +919,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                         ]);
 
                         const permissions = await getSharePermissions(abortSignal, link.rootShareId);
+                        const sharedWithMe = await isSharedWithMe(abortSignal, link.rootShareId);
 
                         return {
                             linkId,
@@ -925,7 +928,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                                 cover: cover,
                                 photoCount: album.photoCount,
                                 permissions: {
-                                    isOwner: getIsOwner(permissions),
+                                    isOwner: !sharedWithMe,
                                     isAdmin: getCanAdmin(permissions),
                                     isEditor: getCanWrite(permissions),
                                 },

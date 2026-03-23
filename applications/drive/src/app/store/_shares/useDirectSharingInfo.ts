@@ -4,6 +4,7 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
 import { getIsPublicContext } from '../../utils/getIsPublicContext';
 import type { ShareWithKey } from './interface';
+// eslint-disable-next-line import/no-named-as-default
 import useDefaultShare from './useDefaultShare';
 import { useDriveSharingFlags } from './useDriveSharingFlags';
 import useShare from './useShare';
@@ -45,12 +46,6 @@ export const useDirectSharingInfo = () => {
     };
 
     const getSharePermissions = async (abortSignal: AbortSignal, shareId: string) => {
-        const sharedWithMe = await isSharedWithMe(abortSignal, shareId);
-        // SharedWithMe memberships length is always 1, which may not be the case of default share,
-        // that's why we don't use membership for permissions of normal share.
-        if (!sharedWithMe) {
-            return SHARE_MEMBER_PERMISSIONS.OWNER;
-        }
         // Kill switch to disable all editing/modifications actions
         if (isReadOnlyMode) {
             return SHARE_MEMBER_PERMISSIONS.VIEWER;

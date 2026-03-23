@@ -3,7 +3,6 @@ export type DocumentRoleType =
   | 'Commenter'
   | 'Editor'
   | 'Admin'
-  | 'Owner'
   | 'PublicViewer'
   | 'PublicViewerWithAccess'
   | 'PublicEditor'
@@ -13,24 +12,15 @@ export class DocumentRole {
   constructor(public readonly roleType: DocumentRoleType) {}
 
   public canEdit(): boolean {
-    return (
-      this.roleType === 'Editor' ||
-      this.roleType === 'Admin' ||
-      this.roleType === 'PublicEditor' ||
-      this.roleType === 'Owner'
-    )
+    return this.roleType === 'Editor' || this.roleType === 'Admin' || this.roleType === 'PublicEditor'
   }
 
   isAdmin(): boolean {
     return this.roleType === 'Admin'
   }
 
-  isOwner(): boolean {
-    return this.roleType === 'Owner'
-  }
-
   isAdminOrOwner(): boolean {
-    return this.isAdmin() || this.isOwner()
+    return this.isAdmin()
   }
 
   /**
@@ -42,20 +32,15 @@ export class DocumentRole {
    * even though the request may fail for them. The ideal goal is for "owner" to be accurate, but it is not.
    */
   canRename(): boolean {
-    return (
-      this.roleType === 'Editor' ||
-      this.roleType === 'Admin' ||
-      this.roleType === 'Owner' ||
-      this.roleType === 'PublicEditor'
-    )
+    return this.roleType === 'Editor' || this.roleType === 'Admin' || this.roleType === 'PublicEditor'
   }
 
   canTrash(): boolean {
-    return this.isOwner() || this.isAdmin()
+    return this.isAdmin()
   }
 
   canShare(): boolean {
-    return this.isOwner() || this.isAdmin()
+    return this.isAdmin()
   }
 
   canComment(): boolean {
@@ -63,8 +48,7 @@ export class DocumentRole {
       this.roleType === 'Commenter' ||
       this.roleType === 'Editor' ||
       this.roleType === 'Admin' ||
-      this.roleType === 'PublicEditor' ||
-      this.roleType === 'Owner'
+      this.roleType === 'PublicEditor'
     )
   }
 
