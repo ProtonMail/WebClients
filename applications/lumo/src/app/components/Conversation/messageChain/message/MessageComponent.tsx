@@ -1,8 +1,7 @@
 import React, { memo } from 'react';
 
-import type { HandleEditMessage, HandleRegenerateMessage } from 'applications/lumo/src/app/hooks/useLumoActions';
-import type { SiblingInfo } from 'applications/lumo/src/app/hooks/usePreferredSiblings';
-
+import type { HandleEditMessage, HandleRegenerateMessage } from '../../../..//hooks/useLumoActions';
+import type { SiblingInfo } from '../../../..//hooks/usePreferredSiblings';
 import type { Message } from '../../../../types';
 import { Role } from '../../../../types';
 import ChatContainerItem from '../../../ChatContainerItem';
