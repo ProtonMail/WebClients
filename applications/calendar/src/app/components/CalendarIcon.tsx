@@ -1,7 +1,7 @@
 import tinycolor from 'tinycolor2';
 
-import clsx from '@proton/utils/clsx';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
+import clsx from '@proton/utils/clsx';
 
 interface Props {
     color?: string;
