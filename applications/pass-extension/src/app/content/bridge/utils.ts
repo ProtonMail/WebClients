@@ -1,4 +1,4 @@
-import type { ExportFunction } from 'applications/pass-extension/globals';
+import type { ExportFunction } from 'proton-pass-extension/globals';
 
 /** Exports a function defined within the content-script to
 the scope of the page script. This is necessary for Firefox.
