@@ -1,6 +1,6 @@
-import ItemCheckbox from '@proton/components/containers/items/ItemCheckbox';
 import { memo } from 'react';
 
+import ItemCheckbox from '@proton/components/containers/items/ItemCheckbox';
 import clsx from '@proton/utils/clsx';
 
 import type { Element } from '../../models/element';

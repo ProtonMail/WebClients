@@ -1,7 +1,7 @@
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import type { ChangeEventHandler } from 'react';
 
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 
 interface Props {

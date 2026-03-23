@@ -1,7 +1,7 @@
-import Prompt from '@proton/components/components/prompt/Prompt';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import Prompt from '@proton/components/components/prompt/Prompt';
 
 interface Props {
     onResolve: () => void;

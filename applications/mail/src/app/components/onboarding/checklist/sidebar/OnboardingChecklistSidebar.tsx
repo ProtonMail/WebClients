@@ -1,8 +1,8 @@
-import useLocalState from '@proton/components/hooks/useLocalState';
 import { differenceInDays } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import useLocalState from '@proton/components/hooks/useLocalState';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 

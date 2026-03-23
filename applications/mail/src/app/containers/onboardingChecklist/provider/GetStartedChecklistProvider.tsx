@@ -1,11 +1,11 @@
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import type { ReactNode } from 'react';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 import { fromUnixTime } from 'date-fns';
 
 import { useUser } from '@proton/account/user/hooks';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
 import { seenCompletedChecklist, updateChecklistDisplay, updateChecklistItem } from '@proton/shared/lib/api/checklist';

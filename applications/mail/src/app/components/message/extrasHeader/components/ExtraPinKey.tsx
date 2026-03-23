@@ -1,6 +1,3 @@
-import useApi from '@proton/components/hooks/useApi';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMemo } from 'react';
 
 import { c } from 'ttag';
@@ -10,6 +7,9 @@ import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';

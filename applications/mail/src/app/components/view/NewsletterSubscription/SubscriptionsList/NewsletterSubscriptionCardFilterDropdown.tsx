@@ -1,19 +1,19 @@
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import FiltersUpsellModal from '@proton/components/components/upsell/modals/FiltersUpsellModal';
-import Icon from '@proton/components/components/icon/Icon';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import Icon from '@proton/components/components/icon/Icon';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import FiltersUpsellModal from '@proton/components/components/upsell/modals/FiltersUpsellModal';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { useFilters } from '@proton/mail/store/filters/hooks';

@@ -5,14 +5,14 @@ import { c, msgid } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
+import { useFeature } from '@proton/features/index';
+import { FeatureCode } from '@proton/features/interface';
 import type { IconName } from '@proton/icons/types';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import clsx from '@proton/utils/clsx';
 
 import { getNumAttachments } from '../../helpers/elements';
 import type { Element } from '../../models/element';
-import { useFeature } from '@proton/features/index';
-import { FeatureCode } from '@proton/features/interface';
 
 interface Props {
     element?: Element;

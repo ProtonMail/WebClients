@@ -1,13 +1,13 @@
-import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Vr } from '@proton/atoms/Vr/Vr';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useLoading } from '@proton/hooks';
 import { IcBroom } from '@proton/icons/icons/IcBroom';
-import { useLabels } from '@proton/mail/store/labels/hooks';
 import { isCustomLabel, labelIncludes } from '@proton/mail/helpers/location';
+import { useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';

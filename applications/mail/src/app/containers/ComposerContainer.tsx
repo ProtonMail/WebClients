@@ -1,11 +1,11 @@
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
-import useDrawerWidth from '@proton/components/hooks/drawer/useDrawerWidth';
 import type { ReactNode } from 'react';
 import { memo, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import useDrawerWidth from '@proton/components/hooks/drawer/useDrawerWidth';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 
 import { ComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';

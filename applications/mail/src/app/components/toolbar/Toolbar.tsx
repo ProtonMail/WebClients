@@ -1,7 +1,7 @@
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import type { ReactElement, Ref } from 'react';
 import { memo } from 'react';
 
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { useFlag } from '@proton/unleash/useFlag';

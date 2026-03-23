@@ -1,6 +1,6 @@
-import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useCallback } from 'react';
 
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import type { MessageEmbeddedImage, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';

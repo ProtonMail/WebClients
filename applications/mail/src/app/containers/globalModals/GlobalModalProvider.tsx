@@ -1,7 +1,7 @@
 import { createContext, useContext, useRef } from 'react';
 
-import { GlobalCategoriesB2bOnboarding } from './GlobalCategoriesB2bOnboarding';
 import { GlobalBYOESpotlightModal } from './GlobalBYOESpotlightModal';
+import { GlobalCategoriesB2bOnboarding } from './GlobalCategoriesB2bOnboarding';
 import { GlobalScheduleModal } from './GlobalScheduleModal';
 import { GlobalSnoozeModal } from './GlobalSnoozeModal';
 import { GlobalUnsubscribeModal } from './GlobalUnsubscribeModal';

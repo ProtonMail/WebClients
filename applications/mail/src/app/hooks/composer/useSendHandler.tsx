@@ -1,12 +1,12 @@
-import type { Cancellable } from '@proton/components/hooks/useHandler';
-import { getOnlineStatus } from '@proton/components/hooks/useOnline';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import { useHandler } from '@proton/components/hooks/useHandler';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
+import useEventManager from '@proton/components/hooks/useEventManager';
+import type { Cancellable } from '@proton/components/hooks/useHandler';
+import { useHandler } from '@proton/components/hooks/useHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import { getOnlineStatus } from '@proton/components/hooks/useOnline';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -116,7 +116,7 @@ export const useSendHandler = ({
             // If there is anything new or pending, we have to make a last save
             if (!alreadySaved) {
                 await saveNow(inputMessage);
-                if(!shouldPreventEventLoopCallOnCompose){
+                if (!shouldPreventEventLoopCallOnCompose) {
                     await call();
                 }
             }
@@ -272,7 +272,7 @@ export const useSendHandler = ({
         } finally {
             const asyncFinally = async () => {
                 // Receive all updates about the current message before "releasing" it to prevent any flickering
-                if(!shouldPreventEventLoopCallOnCompose){
+                if (!shouldPreventEventLoopCallOnCompose) {
                     await call();
                 }
                 // Whatever happens once the composer is closed, the sending flag is reset when finished

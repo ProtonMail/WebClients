@@ -1,8 +1,8 @@
-import ProtonBadgeType from '@proton/components/components/protonBadge/ProtonBadgeType';
 import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import ProtonBadgeType from '@proton/components/components/protonBadge/ProtonBadgeType';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import uniqueBy from '@proton/utils/uniqueBy';

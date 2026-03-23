@@ -1,12 +1,12 @@
-import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
-import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import type { Location } from 'history';
 
-import { useFolders } from '@proton/mail/store/labels/hooks';
+import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
+import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { labelIncludes } from '@proton/mail/helpers/location';
+import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';

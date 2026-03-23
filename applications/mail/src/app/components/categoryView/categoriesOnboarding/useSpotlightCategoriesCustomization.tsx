@@ -1,10 +1,10 @@
-import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
-import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { Button } from '@proton/atoms/Button/Button';
+import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
+import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
 import { IcSliders2 } from '@proton/icons/icons/IcSliders2';
 import { useConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';

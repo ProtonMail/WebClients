@@ -1,6 +1,6 @@
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { c, msgid } from 'ttag';
 
+import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';

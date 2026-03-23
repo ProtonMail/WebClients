@@ -1,9 +1,9 @@
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import Prompt from '@proton/components/components/prompt/Prompt';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
 
 interface Props extends ModalProps {
     modalProps: ModalStateProps;

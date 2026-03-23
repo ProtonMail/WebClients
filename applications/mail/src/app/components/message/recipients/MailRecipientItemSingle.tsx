@@ -1,13 +1,13 @@
-import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { MouseEvent } from 'react';
 import { useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import type { PublicKeyReference } from '@proton/crypto';
 import { IcCircleSlash } from '@proton/icons/icons/IcCircleSlash';
 import { IcEnvelopeMagnifyingGlass } from '@proton/icons/icons/IcEnvelopeMagnifyingGlass';

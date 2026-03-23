@@ -1,7 +1,7 @@
-import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
-import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { useRef } from 'react';
 
+import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
+import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { HandleConversationFocus } from './useConversationFocus';

@@ -1,9 +1,9 @@
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Prompt from '@proton/components/components/prompt/Prompt';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { useAssistant } from '@proton/llm/lib';
 import { deleteAssistantCachedFiles } from '@proton/llm/lib/downloader';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';

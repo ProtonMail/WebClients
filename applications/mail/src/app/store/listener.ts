@@ -1,7 +1,7 @@
-import { startAccountSecurityListener } from '@proton/components/components/drawer/views/SecurityCenter/AccountSecurity/slice/accountSecurityListener';
 import { startAccountSessionsListener, startListeningToPlanNameChange, startPersistListener } from '@proton/account';
 import { startCalendarEventListener } from '@proton/calendar/calendars/listener';
 import { startHolidaysDirectoryListener } from '@proton/calendar/holidaysDirectory/listener';
+import { startAccountSecurityListener } from '@proton/components/components/drawer/views/SecurityCenter/AccountSecurity/slice/accountSecurityListener';
 import { mailSettingsHeartbeatListener, startSharedListening } from '@proton/redux-shared-store';
 
 import { startElementsListener } from 'proton-mail/store/elements/elementsListener';

@@ -1,12 +1,12 @@
-import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
-import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
+import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import type { User } from '@proton/shared/lib/interfaces';
 import { getIsBYOEAccount } from '@proton/shared/lib/keys';

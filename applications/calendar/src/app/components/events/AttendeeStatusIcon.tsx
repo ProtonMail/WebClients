@@ -1,7 +1,7 @@
-import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
 import { IcQuestionCircleFilled } from '@proton/icons/icons/IcQuestionCircleFilled';
+import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 
 const iconContainerClassName = 'inline-flex rounded-50 items-center justify-center partstatIcon';
 const iconClassName = '';

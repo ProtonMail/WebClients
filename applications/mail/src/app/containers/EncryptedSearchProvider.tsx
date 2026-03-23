@@ -1,5 +1,3 @@
-import useApi from '@proton/components/hooks/useApi';
-import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { type ReactNode, createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
@@ -9,6 +7,8 @@ import { useWelcomeFlags } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import useApi from '@proton/components/hooks/useApi';
+import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { getIndexKey } from '@proton/encrypted-search/esHelpers';
 import { contentIndexingProgress, hasESDB, wrappedGetOldestInfo } from '@proton/encrypted-search/esIDB';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models';

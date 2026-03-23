@@ -1,7 +1,7 @@
-import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { useEffect, useRef, useState } from 'react';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
+import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { useLabels } from '@proton/mail/store/labels/hooks';
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

@@ -1,10 +1,10 @@
-import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
-import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
-import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
+import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
+import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 
