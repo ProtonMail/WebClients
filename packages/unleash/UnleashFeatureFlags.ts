@@ -291,7 +291,6 @@ enum MeetFeatureFlag {
     MeetUnblockAudioButton = 'MeetUnblockAudioButton',
     MeetOpenLinksInDesktopApp = 'MeetOpenLinksInDesktopApp',
     MeetDebugMode = 'MeetDebugMode',
-    MeetSinglePeerConnection = 'MeetSinglePeerConnection',
     MeetQualityTelemetry = 'MeetQualityTelemetry',
     MeetAllowLiveKitDebugReporting = 'MeetAllowLiveKitDebugReporting',
     MeetDashboardV2 = 'MeetDashboardV2',

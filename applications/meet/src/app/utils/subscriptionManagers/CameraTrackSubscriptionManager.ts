@@ -350,8 +350,11 @@ export class CameraTrackSubscriptionManager {
     };
 
     /**
-     * Unsubscribes all currently subscribed video tracks.
+     * Pauses all currently subscribed video tracks.
      * Used when Safari is in background to save resources and bandwidth.
+     * Uses setEnabled(false) rather than setSubscribed(false) to keep the RTCRtpReceiver
+     * and its E2EE decryption transform alive, avoiding a renegotiation on resume that
+     * would race with transform reattachment and cause a black screen.
      */
     async unsubscribeAllVideos() {
         await this.runSerialized(async () => {
@@ -362,18 +365,19 @@ export class CameraTrackSubscriptionManager {
             for (const entry of subscribedPublications) {
                 try {
                     entry.publication.setEnabled(false);
-                    entry.publication.setSubscribed(false);
                 } catch (error) {
                     // eslint-disable-next-line no-console
-                    console.error('Error unsubscribing video', entry.publication.trackSid, error);
+                    console.error('Error pausing video', entry.publication.trackSid, error);
                 }
             }
         });
     }
 
     /**
-     * Resubscribes all video tracks that should be subscribed (pinned tracks).
+     * Resumes all video tracks that should be visible (pinned tracks).
      * Used when Safari returns to foreground to restore video display.
+     * Uses setEnabled(true) to resume the existing subscription without renegotiation,
+     * so E2EE decryption transforms are already in place when the SFU sends a fresh keyframe.
      */
     async resubscribeAllVideos() {
         // Use the existing reconcileCameraTracks logic to resubscribe all pinned tracks
@@ -381,17 +385,20 @@ export class CameraTrackSubscriptionManager {
             return;
         }
 
-        const pinnedCameraTrackPublications = Array.from(this.entriesByTrackSid.values()).filter(
-            (entry) => entry.pinned
-        );
+        await this.runSerialized(async () => {
+            const pinnedCameraTrackPublications = Array.from(this.entriesByTrackSid.values()).filter(
+                (entry) => entry.pinned && entry.publication.isSubscribed
+            );
 
-        if (pinnedCameraTrackPublications.length > 0) {
-            for (const publication of pinnedCameraTrackPublications) {
-                this.enqueueSubscriptionWork(publication.publication.trackSid);
+            for (const entry of pinnedCameraTrackPublications) {
+                try {
+                    entry.publication.setEnabled(true);
+                } catch (error) {
+                    // eslint-disable-next-line no-console
+                    console.error('Error resuming video', entry.publication.trackSid, error);
+                }
             }
-
-            await this.runSerialized(() => this.processSubscriptionQueue());
-        }
+        });
     }
 
     destroy() {
