@@ -150,76 +150,20 @@ export function sendMessage({
         const [date1, date2] = createDatePair();
         const { conversationId, spaceId } = dispatch(ensureConversation(c, ui, date1));
 
-        // Get space-level attachments (project files) and include them with the message
-        const allAttachmentsState = state.attachments;
-
-        // Get space attachments (project-level files) - these should be available for @ references
-        const spaceAssets: Attachment[] = Object.values(allAttachmentsState || {})
-            .filter((attachment: any) => {
-                return (
-                    attachment &&
-                    typeof attachment === 'object' &&
-                    attachment.spaceId === spaceId &&
-                    !attachment.processing &&
-                    !attachment.error
-                );
-            })
-            .map((attachment: any) => attachment as Attachment);
-
-        // Get attachments from current conversation messages - these should be available for @ references
-        const conversationAttachments: Attachment[] = [];
-        c.messageChain.forEach((message) => {
-            if (message.attachments) {
-                message.attachments.forEach((shallowAtt) => {
-                    const fullAtt = allAttachmentsState[shallowAtt.id];
-                    if (fullAtt && !conversationAttachments.some((a) => a.id === fullAtt.id)) {
-                        conversationAttachments.push(fullAtt as Attachment);
-                    }
-                });
-            }
-        });
-
-        // Combine space assets, conversation attachments, and provisional attachments for @ references
-        // Exclude space attachments from other conversations
-        const allMessageAttachments: Attachment[] = [...spaceAssets, ...conversationAttachments];
-        c.allConversationAttachments.forEach((att) => {
-            if (!allMessageAttachments.some((a) => a.id === att.id)) {
-                allMessageAttachments.push(att);
-            }
-        });
-
-        // Parse file references from the message content
+        // m.attachments contains directly-uploaded files (provisional) plus in-memory
+        // mention-resolved attachments built in handleSendAction. Mentioned files are
+        // identifiable by filename matching an @reference in the content — they should
+        // NOT be assigned to the space (they are ephemeral context, not project uploads).
         const fileReferences = parseFileReferences(m.content);
         const referencedFileNames = new Set(fileReferences.map((ref) => ref.fileName.toLowerCase()));
-
-        // Find attachments that match the referenced files
-        const referencedAttachments: Attachment[] = [];
-        fileReferences.forEach((ref) => {
-            const foundFile = allMessageAttachments.find(
-                (att) => att.filename.toLowerCase() === ref.fileName.toLowerCase()
-            );
-            if (foundFile && !referencedAttachments.some((a) => a.id === foundFile.id)) {
-                referencedAttachments.push(foundFile);
-            }
-        });
-
-        // For space assignment, only consider provisional attachments (those without spaceId)
-        // Referenced files should not be assigned to space regardless of their source
-        const nonReferencedAttachments = m.attachments.filter(
+        const uploadedAttachments = m.attachments.filter(
             (att) => !referencedFileNames.has(att.filename.toLowerCase())
         );
-
-        // Identify provisional referenced attachments (from composer)
-        const provisionalReferencedAttachments = m.attachments.filter((att) =>
-            referencedFileNames.has(att.filename.toLowerCase())
-        );
-
-        const processedContent: string = m.content;
 
         // Create the new messages (user and assistant)
         const lastMessage = c.messageChain.at(-1);
         let { userMessage, assistantMessage } = createMessagePair(
-            processedContent,
+            m.content,
             m.attachments,
             conversationId,
             lastMessage,
@@ -243,7 +187,6 @@ export function sendMessage({
         // after RAG attachments are added. This ensures attachments are included in the push.
 
         // Define the sequence of message the assistant will respond to.
-        // Obviously this must include the new user message containing the latest request.
         const newMessageChain = [...c.messageChain, userMessage];
 
         // Fill in context files (attachment ids)
@@ -252,16 +195,8 @@ export function sendMessage({
         // Save the assistant message to Redux
         dispatch(addMessage(assistantMessage));
 
-        // Detach attachments from the composer area and attach them to the space permanently
-        // Only assign non-referenced attachments to the space
-        // Referenced files (from @ mentions) should remain conversation-specific
-        dispatch(assignProvisionalAttachmentsToSpace(nonReferencedAttachments, spaceId));
-
-        // Push referenced attachments to server without assigning them to space
-        // Only push provisional referenced attachments (those from the composer)
-        provisionalReferencedAttachments.forEach((attachment) => {
-            dispatch(pushAttachmentRequest({ id: attachment.id }));
-        });
+        // Assign uploaded (non-mentioned) files to the space so they become project files.
+        dispatch(assignProvisionalAttachmentsToSpace(uploadedAttachments, spaceId));
 
         // Update navigation and siblings preference
         updateUi(userMessage, conversationId, ui);

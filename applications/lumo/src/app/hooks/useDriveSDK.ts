@@ -488,12 +488,17 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods & { isInitialized
             hasInitialized = true;
             const userPlan = isPaid(user) ? 'paid' : 'free';
             setState((prev) => ({ ...prev, isLoading: true }));
-            initDrive({
-                appName: config.APP_NAME,
-                appVersion: config.APP_VERSION,
-                userPlan,
-                logging,
-            });
+            try {
+                initDrive({
+                    appName: config.APP_NAME,
+                    appVersion: config.APP_VERSION,
+                    userPlan,
+                    logging,
+                });
+            } catch (e) {
+                // Drive SDK may already be configured (e.g. after HMR) — not fatal
+                setState((prev) => ({ ...prev, isLoading: false }));
+            }
         }
     }, [initDrive, drive, state.isLoading, isGuest, user]);
 

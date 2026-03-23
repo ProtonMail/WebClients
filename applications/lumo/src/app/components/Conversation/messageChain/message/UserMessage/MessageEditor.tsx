@@ -1,13 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-import { EditorContent } from '@tiptap/react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 
 import { useTierErrors } from '../../../../../hooks/useTierErrors';
-import useTipTapEditor from '../../../../../hooks/useTipTapEditor';
-import { htmlToMarkdown } from '../../../../../util/htmlToMarkdown';
 
 interface MessageEditorProps {
     messageContent: string;
@@ -17,6 +14,14 @@ interface MessageEditorProps {
 
 const MessageEditor = ({ messageContent, handleEditMessage, handleCancel }: MessageEditorProps) => {
     const { hasTierErrors } = useTierErrors();
+    const [value, setValue] = useState(messageContent);
+    const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+    useEffect(() => {
+        textareaRef.current?.focus();
+        const len = textareaRef.current?.value.length ?? 0;
+        textareaRef.current?.setSelectionRange(len, len);
+    }, []);
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
@@ -24,38 +29,41 @@ const MessageEditor = ({ messageContent, handleEditMessage, handleCancel }: Mess
                 handleCancel();
             }
         };
-
         document.addEventListener('keydown', handleKeyDown);
-
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
         };
     }, [handleCancel]);
 
-    const sendEditSubmit = (editor: any) => {
-        // Get HTML content and convert to markdown
-        const html = editor?.getHTML();
-        const currentMarkdownContent = html ? htmlToMarkdown(html) : '';
-
-        if (currentMarkdownContent !== messageContent) {
-            if (!editor?.isEmpty) {
-                editor?.commands.clearContent();
-                handleEditMessage(currentMarkdownContent);
-            }
+    const handleSubmit = () => {
+        const trimmed = value.trim();
+        if (trimmed && trimmed !== messageContent) {
+            handleEditMessage(trimmed);
         }
     };
 
-    const { editor, handleSubmit, editorContentMarkdown } = useTipTapEditor({
-        content: messageContent,
-        onSubmitCallback: sendEditSubmit,
-    });
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            handleSubmit();
+        }
+    };
+
+    const isUnchanged = value.trim() === messageContent.trim();
 
     return (
         <div className="flex flex-column w-full gap-2">
-            <EditorContent
-                editor={editor}
-                className="input p-2 max-h-custom overflow-y-auto"
+            <textarea
+                ref={textareaRef}
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+                onKeyDown={handleKeyDown}
+                className="input p-2 max-h-custom overflow-y-auto resize-none w-full"
                 style={{ '--max-h-custom': '210px' }}
+                rows={3}
+                autoCorrect="on"
+                autoComplete="off"
+                spellCheck
             />
             <div className="flex flex-column flex-nowrap gap-2">
                 <div className="flex flex-nowrap gap-3 self-end">
@@ -67,7 +75,7 @@ const MessageEditor = ({ messageContent, handleEditMessage, handleCancel }: Mess
                         shape="solid"
                         color="norm"
                         onClick={handleSubmit}
-                        disabled={messageContent === editorContentMarkdown || hasTierErrors}
+                        disabled={isUnchanged || hasTierErrors}
                     >
                         {c('collider_2025:Button').t`Send`}
                     </Button>
