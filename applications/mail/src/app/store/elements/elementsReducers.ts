@@ -530,6 +530,12 @@ export const setParams = (
         ...state.params,
         ...params,
     };
+
+    // We reset the category IDs when the label is not a category label
+    if (params.labelID && !isCategoryLabel(params.labelID)) {
+        state.params.categoryIDs = [];
+    }
+
     if (total !== undefined) {
         state.total[nextContextFilter] = total;
         state.retry = newRetry(state.retry, state.params, undefined);
