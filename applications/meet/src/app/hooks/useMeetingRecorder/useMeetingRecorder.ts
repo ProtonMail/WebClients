@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { useTracks } from '@livekit/components-react';
+import { useRoomContext, useTracks } from '@livekit/components-react';
 import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
-import { Track } from 'livekit-client';
+import { RemoteTrackPublication, RoomEvent, Track } from 'livekit-client';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -32,6 +32,7 @@ export function useMeetingRecorder(
     participantNameMap: Record<string, string>,
     pagedParticipants: (RemoteParticipant | LocalParticipant)[]
 ) {
+    const room = useRoomContext();
     const isLargerThanMd = useIsLargerThanMd();
 
     const isNarrowHeight = useIsNarrowHeight();
@@ -574,6 +575,20 @@ export function useMeetingRecorder(
         }
     });
 
+    const videoTracksSignature = cameraTracks
+        .map((trackRef) => {
+            const track = trackRef.publication.track;
+            return `${track?.sid}-${trackRef.publication.isMuted}-${track?.mediaStreamTrack?.id}`;
+        })
+        .join(',');
+
+    const screenShareTracksSignature = screenShareTracks
+        .map((trackRef) => {
+            const track = trackRef.publication.track;
+            return `${track?.sid}-${trackRef.publication.isMuted}-${track?.mediaStreamTrack?.id}`;
+        })
+        .join(',');
+
     useEffect(() => {
         if (!recordingState.isRecording || !renderWorkerRef.current) {
             return;
@@ -583,14 +598,39 @@ export function useMeetingRecorder(
             type: 'updateState',
             state: prepareRenderState(),
         });
-    }, [recordingState.isRecording, isLargerThanMd, isNarrowHeight, pagedParticipants]);
+    }, [
+        recordingState.isRecording,
+        isLargerThanMd,
+        isNarrowHeight,
+        pagedParticipants,
+        participantNameMap,
+        videoTracksSignature,
+        screenShareTracksSignature,
+    ]);
 
-    // Handle track changes during recording (start/stop frame capture as needed)
+    // Subscribe remote tracks and start/stop frame captures as needed during recording.
+    // Runs on participants change (to subscribe new joiners) and on track signature changes
+    // (to start capture once a track becomes available after subscription completes).
     useEffect(() => {
         if (!recordingState.isRecording) {
             return;
         }
 
+        // Ensure all remote camera and screenshare tracks are subscribed
+        for (const participant of room.remoteParticipants.values()) {
+            for (const publication of participant.trackPublications.values()) {
+                if (
+                    publication instanceof RemoteTrackPublication &&
+                    (publication.source === Track.Source.Camera || publication.source === Track.Source.ScreenShare) &&
+                    !publication.isSubscribed
+                ) {
+                    publication.setSubscribed(true);
+                    publication.setEnabled(true);
+                }
+            }
+        }
+
+        // Handle track changes: start/stop frame capture as needed
         const tracks = getRecordedTracks();
 
         // Get current track IDs
@@ -612,7 +652,21 @@ export function useMeetingRecorder(
                 startFrameCapture(trackInfo);
             }
         });
-    }, [recordingState.isRecording, cameraTracks, screenShareTracks, pagedParticipants]);
+
+        // Subscribe tracks published by late joiners
+        const handleTrackPublished = (publication: RemoteTrackPublication) => {
+            if (publication.source === Track.Source.Camera || publication.source === Track.Source.ScreenShare) {
+                publication.setSubscribed(true);
+                publication.setEnabled(true);
+            }
+        };
+
+        room.on(RoomEvent.TrackPublished, handleTrackPublished);
+
+        return () => {
+            room.off(RoomEvent.TrackPublished, handleTrackPublished);
+        };
+    }, [recordingState.isRecording, room, pagedParticipants, videoTracksSignature, screenShareTracksSignature]);
 
     const audioTracksSignature = audioTracks
         .map((trackRef) => {
