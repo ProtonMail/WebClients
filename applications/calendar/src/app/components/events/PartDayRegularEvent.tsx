@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
-import { MINUTE } from '@proton/shared/lib/constants';
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
+import { MINUTE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import type { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';

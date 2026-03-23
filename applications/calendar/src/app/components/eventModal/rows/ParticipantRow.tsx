@@ -1,12 +1,10 @@
 import { c } from 'ttag';
 
-
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { IcUserFilled } from '@proton/icons/icons/IcUserFilled';
-
 import { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
 import { getContactDisplayNameEmail } from '@proton/shared/lib/contacts/contactEmail';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
