@@ -219,6 +219,7 @@ describe('useMoveItemsModalState', () => {
 
             // Verify the resolved root UID was passed to the directory tree hook
             expect(mockUseDirectoryTree).toHaveBeenCalledWith(
+                'moveItemsModal',
                 expect.objectContaining({
                     treeRootsStrategy: { type: 'FROM_NODE', rootNodeUid: ROOT_UID },
                 })
