@@ -167,7 +167,7 @@ export const SearchLegacy = ({ shareId, searchView }: Props) => {
     return (
         <>
             <SearchItemContextMenu
-                permissions={SHARE_MEMBER_PERMISSIONS.OWNER} // TODO: Permissions is not supported on search for now
+                permissions={SHARE_MEMBER_PERMISSIONS.ADMIN_EDITOR} // TODO: Permissions is not supported on search for now
                 shareId={shareId}
                 selectedLinks={selectedItems}
                 anchorRef={contextMenuAnchorRef}

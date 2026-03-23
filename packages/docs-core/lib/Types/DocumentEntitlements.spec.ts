@@ -15,12 +15,6 @@ describe('DocumentEntitlements', () => {
       expect(result.roleType).toEqual('Editor')
     })
 
-    it('should return Admin role for Owner permission', () => {
-      const result = rawPermissionToRole(SHARE_MEMBER_PERMISSIONS.OWNER)
-
-      expect(result.roleType).toEqual('Admin')
-    })
-
     it('should return Viewer role for Read permission', () => {
       const result = rawPermissionToRole(SHARE_MEMBER_PERMISSIONS.VIEWER)
 
