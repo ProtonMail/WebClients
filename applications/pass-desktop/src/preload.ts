@@ -1,6 +1,6 @@
-import type { IPCChannelResult, IPCChannels } from 'applications/pass-desktop/src/lib/ipc';
 import type { IpcRendererEvent } from 'electron';
 import { contextBridge, ipcRenderer } from 'electron';
+import type { IPCChannelResult, IPCChannels } from 'proton-pass-desktop/src/lib/ipc';
 
 import type { ContextBridgeApi } from '@proton/pass/types';
 import { disableMouseNavigation } from '@proton/shared/lib/desktop/disableMouseNavigation';
