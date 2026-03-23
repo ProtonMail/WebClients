@@ -1,3 +1,5 @@
+import type { SieveBranch } from './interface';
+
 export const V1 = 1;
 export const V2 = 2;
 
@@ -14,37 +16,23 @@ export const TEST_NODES = {
                         Name: 'vnd.proton.spam-threshold',
                         Keys: ['*'],
                         Format: null,
-                        Match: {
-                            Type: 'Matches',
-                        },
+                        Match: { Type: 'Matches' },
                         Type: 'Environment',
                     },
                     {
-                        Value: {
-                            Value: '${1}',
-                            Type: 'VariableString',
-                        },
+                        Value: { Value: '${1}', Type: 'VariableString' },
                         Flags: [],
-                        Format: {
-                            Type: 'ASCIINumeric',
-                        },
-                        Match: {
-                            Comparator: 'ge',
-                            Type: 'GreaterEqualsValue',
-                        },
+                        Format: { Type: 'ASCIINumeric' },
+                        Match: { Comparator: 'ge', Type: 'GreaterEqualsValue' },
                         Type: 'SpamTest',
                     },
                 ],
                 Type: 'AllOf',
             },
-            Then: [
-                {
-                    Type: 'Return',
-                },
-            ],
+            Then: [{ Type: 'Return' }],
             Type: 'If',
         },
-    ],
+    ] satisfies SieveBranch[],
     attachment: [
         {
             Headers: ['X-Attached'],

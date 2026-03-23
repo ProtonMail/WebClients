@@ -9,6 +9,7 @@ import type {
     LABEL_KEY_TYPE,
     MainNodeType,
     PrepareType,
+    ThenNode,
     ValueNamePair,
     ValueTextPair,
     ValueTypePair,
@@ -291,15 +292,7 @@ export const parseIfConditions = (ifConditions: IfTest[], commentComparators?: s
 /**
  * Parse the then nodes to extract the actions.
  */
-export const parseThenNodes = (
-    thenNodes: {
-        Type: string;
-        Name: string;
-        Flags: string[];
-        Message: string;
-        Args: any[];
-    }[]
-) => {
+export const parseThenNodes = (thenNodes: ThenNode[]) => {
     const actions: FilterActions = {
         FileInto: [],
         Mark: {
@@ -319,24 +312,25 @@ export const parseThenNodes = (
         }
 
         if (type === 'AddFlag') {
-            actions.Mark = { Read: node.Flags.includes('\\Seen'), Starred: node.Flags.includes('\\Flagged') };
+            actions.Mark = {
+                Read: node.Flags?.includes('\\Seen') ?? false,
+                Starred: node.Flags?.includes('\\Flagged') ?? false,
+            };
         }
 
-        if (type === 'FileInto') {
-            const { Name } = node;
-            const unescapedName = unescapeVariables(Name);
+        if (type === 'FileInto' && node.Name) {
+            const unescapedName = unescapeVariables(node.Name);
             if (typeof unescapedName !== 'string') {
-                throw new Error(`Unsupported string ${Name}`);
+                throw new Error(`Unsupported string ${node.Name}`);
             }
 
             actions.FileInto.push(unescapedName);
         }
 
-        if (type === 'Vacation') {
-            const { Message } = node;
-            const unescapedMessage = unescapeVariables(Message);
+        if (type === 'Vacation' && node.Message) {
+            const unescapedMessage = unescapeVariables(node.Message);
             if (typeof unescapedMessage !== 'string') {
-                throw new Error(`Unsupported string ${Message}`);
+                throw new Error(`Unsupported string ${node.Message}`);
             }
             actions.Vacation = unescapedMessage;
         }
