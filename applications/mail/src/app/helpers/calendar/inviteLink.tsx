@@ -1,8 +1,8 @@
-import AppLink from '@proton/components/components/link/AppLink';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import AppLink from '@proton/components/components/link/AppLink';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { CALENDAR_SETTINGS_SECTION_ID, ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getInteroperabilityOperationsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';

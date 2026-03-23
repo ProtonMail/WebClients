@@ -1,4 +1,3 @@
-import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import {
     isCustomFolder,
     isCustomLabel,
@@ -6,6 +5,7 @@ import {
     isSystemLabel,
     isSystemLocation,
 } from '@proton/mail/helpers/location';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 
 export const useLabelIDIdentifier = () => {
     const [customLabels] = useLabels();

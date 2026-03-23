@@ -1,8 +1,3 @@
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import React from 'react';
 
 import { c } from 'ttag';
@@ -10,6 +5,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { VerticalStep } from '@proton/atoms/VerticalSteps/VerticalStep';
 import { VerticalSteps } from '@proton/atoms/VerticalSteps/VerticalSteps';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 

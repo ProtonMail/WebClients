@@ -1,13 +1,13 @@
-import FiltersUpsellModal from '@proton/components/components/upsell/modals/FiltersUpsellModal';
-import Icon from '@proton/components/components/icon/Icon';
-import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
-import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import type { PropsWithChildren } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import FiltersUpsellModal from '@proton/components/components/upsell/modals/FiltersUpsellModal';
+import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
 import type { IconName } from '@proton/icons/types';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';

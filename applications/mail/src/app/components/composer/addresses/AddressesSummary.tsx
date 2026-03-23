@@ -1,4 +1,3 @@
-import Label from '@proton/components/components/label/Label';
 import type { MouseEvent } from 'react';
 import { Fragment, memo } from 'react';
 
@@ -6,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import Label from '@proton/components/components/label/Label';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { getRecipients } from '@proton/shared/lib/mail/messages';

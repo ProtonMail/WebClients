@@ -1,15 +1,15 @@
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Form from '@proton/components/components/form/Form';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { RefObject } from 'react';
 import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import Form from '@proton/components/components/form/Form';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { inboxDesktopHasPrintDialogOption, inboxDesktopPrintDialog } from '@proton/shared/lib/desktop/printing/print';
 import { useFlag } from '@proton/unleash/useFlag';

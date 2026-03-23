@@ -1,20 +1,20 @@
-import AppLink from '@proton/components/components/link/AppLink';
-import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
-import DriveLogo from '@proton/components/components/logo/DriveLogo';
-import Logo from '@proton/components/components/logo/Logo';
-import MailLogo from '@proton/components/components/logo/MailLogo';
-import PassLogo from '@proton/components/components/logo/PassLogo';
-import PublicTopBanners from '@proton/components/containers/topBanners/PublicTopBanners';
-import VpnLogo from '@proton/components/components/logo/VpnLogo';
-import WalletLogo from '@proton/components/components/logo/WalletLogo';
-import { getAppVersion } from '@proton/components/helpers/appVersion';
-import useConfig from '@proton/components/hooks/useConfig';
 import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
+import AppLink from '@proton/components/components/link/AppLink';
+import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
+import DriveLogo from '@proton/components/components/logo/DriveLogo';
+import Logo from '@proton/components/components/logo/Logo';
+import MailLogo from '@proton/components/components/logo/MailLogo';
+import PassLogo from '@proton/components/components/logo/PassLogo';
+import VpnLogo from '@proton/components/components/logo/VpnLogo';
+import WalletLogo from '@proton/components/components/logo/WalletLogo';
+import PublicTopBanners from '@proton/components/containers/topBanners/PublicTopBanners';
+import { getAppVersion } from '@proton/components/helpers/appVersion';
+import useConfig from '@proton/components/hooks/useConfig';
 import {
     APPS,
     type APP_NAMES,

@@ -1,10 +1,10 @@
-import SidebarPrimaryButton from '@proton/components/components/sidebar/SidebarPrimaryButton';
 import { useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import SidebarPrimaryButton from '@proton/components/components/sidebar/SidebarPrimaryButton';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import clsx from '@proton/utils/clsx';

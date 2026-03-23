@@ -1,9 +1,3 @@
-import AppLink from '@proton/components/components/link/AppLink';
-import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
-import IconRow from '@proton/components/components/iconRow/IconRow';
-import useApi from '@proton/components/hooks/useApi';
-import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { getUnixTime } from 'date-fns';
@@ -16,7 +10,13 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import { useVideoConferencingWidget } from '@proton/calendar/videoConferencing/widget';
+import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
+import IconRow from '@proton/components/components/iconRow/IconRow';
+import AppLink from '@proton/components/components/link/AppLink';
+import useApi from '@proton/components/hooks/useApi';
+import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { IcKey } from '@proton/icons/icons/IcKey';

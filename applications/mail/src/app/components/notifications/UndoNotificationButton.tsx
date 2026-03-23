@@ -1,6 +1,6 @@
-import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
 import { c } from 'ttag';
 
+import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
 
 interface Props {
     onUndo: () => void;

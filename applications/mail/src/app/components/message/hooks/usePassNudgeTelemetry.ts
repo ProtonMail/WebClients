@@ -1,7 +1,7 @@
-import useApi from '@proton/components/hooks/useApi';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import type { TelemetryPassNudgeEvents } from '@proton/shared/lib/api/telemetry';
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';

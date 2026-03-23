@@ -1,9 +1,9 @@
-import useApi from '@proton/components/hooks/useApi';
 import { useUserSettings } from '@proton/account';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useFolders } from '@proton/mail/store/labels/hooks';
+import useApi from '@proton/components/hooks/useApi';
 import { isCustomFolder } from '@proton/mail/helpers/location';
+import { useFolders } from '@proton/mail/store/labels/hooks';
 import {
     type TelemetryEvents,
     TelemetryMailNewsletterSubscriptions,

@@ -158,10 +158,14 @@ export const sort = (elements: Element[], sort: Sort, labelID: string) => {
 };
 
 export const hasAttachments = (element: Element, includeInlineCount?: boolean) =>
-    isElementMessage(element) ? messageHasAttachments(element, includeInlineCount) : conversationHasAttachments(element, includeInlineCount);
+    isElementMessage(element)
+        ? messageHasAttachments(element, includeInlineCount)
+        : conversationHasAttachments(element, includeInlineCount);
 
 export const getNumAttachments = (element: Element, includeInlineCount?: boolean) =>
-    isElementMessage(element) ? messageNumAttachments(element, includeInlineCount) : conversationNumAttachments(element, includeInlineCount);
+    isElementMessage(element)
+        ? messageNumAttachments(element, includeInlineCount)
+        : conversationNumAttachments(element, includeInlineCount);
 
 /**
  * Starting from the element LabelIDs list, add and remove labels from an event manager event

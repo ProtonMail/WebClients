@@ -31,12 +31,12 @@ export const getConversationContextValue = (
     return 0;
 };
 
-export const getNumAttachments = (conversation: Conversation | undefined, includeInlineCount  = true) => {
+export const getNumAttachments = (conversation: Conversation | undefined, includeInlineCount = true) => {
     if (conversation?.NumAttachments) {
         return conversation.NumAttachments;
     } else if (conversation?.AttachmentInfo) {
         return Object.values(conversation?.AttachmentInfo).reduce((total, { inline = 0, attachment = 0 }) => {
-            if(includeInlineCount) {
+            if (includeInlineCount) {
                 return total + inline + attachment;
             }
             return total + attachment;
@@ -46,7 +46,8 @@ export const getNumAttachments = (conversation: Conversation | undefined, includ
     }
 };
 
-export const hasAttachments = (conversation: Conversation | undefined, includeInlineCount  = true) => getNumAttachments(conversation, includeInlineCount) > 0;
+export const hasAttachments = (conversation: Conversation | undefined, includeInlineCount = true) =>
+    getNumAttachments(conversation, includeInlineCount) > 0;
 
 export const getNumUnread = (conversation: Conversation | undefined, labelID: string | undefined) =>
     getConversationContextValue(conversation, 'NumUnread', labelID);

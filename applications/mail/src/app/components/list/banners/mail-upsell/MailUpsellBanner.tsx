@@ -1,10 +1,10 @@
-import MailShortcutsModal from '@proton/components/containers/mail/MailShortcutsModal';
-import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
-import ThemesModal from '@proton/components/containers/themes/ThemesModal';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import type { MutableRefObject } from 'react';
 import { useEffect, useState } from 'react';
 
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
+import MailShortcutsModal from '@proton/components/containers/mail/MailShortcutsModal';
+import ThemesModal from '@proton/components/containers/themes/ThemesModal';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import type { MessageOption } from './useMailUpsellOption';

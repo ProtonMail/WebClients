@@ -1,6 +1,3 @@
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
@@ -13,6 +10,9 @@ import useAssistantSubscriptionStatus, {
     ASSISTANT_TRIAL_TIME_DAYS,
 } from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
+import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';

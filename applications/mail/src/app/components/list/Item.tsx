@@ -1,7 +1,7 @@
-import ItemCheckbox from '@proton/components/containers/items/ItemCheckbox';
 import type { ChangeEvent, DragEvent, MouseEvent } from 'react';
 import { memo, useMemo, useRef } from 'react';
 
+import ItemCheckbox from '@proton/components/containers/items/ItemCheckbox';
 import { isCustomLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';

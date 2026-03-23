@@ -1,12 +1,12 @@
-import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
-import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useInboxDesktopVersion from '@proton/components/containers/desktop/useInboxDesktopVersion';
+import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
+import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { isDebianBased, isFedoraOrRedHatBased, isMac, isMobile, isWindows } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';

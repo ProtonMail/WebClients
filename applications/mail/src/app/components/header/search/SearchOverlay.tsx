@@ -1,8 +1,3 @@
-import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
-import { getCustomSizingClasses } from '@proton/components/helpers/getCustomSizingClasses';
-import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
-import { useHotkeys } from '@proton/components/hooks/useHotkeys';
-import useIsClosing from '@proton/components/hooks/useIsClosing';
 import type {
     AnimationEvent,
     CSSProperties,
@@ -15,7 +10,12 @@ import { useLayoutEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
 import { Portal } from '@proton/components/components/portal';
+import { getCustomSizingClasses } from '@proton/components/helpers/getCustomSizingClasses';
+import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
+import { useHotkeys } from '@proton/components/hooks/useHotkeys';
+import useIsClosing from '@proton/components/hooks/useIsClosing';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

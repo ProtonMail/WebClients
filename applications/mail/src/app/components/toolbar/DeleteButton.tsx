@@ -1,7 +1,7 @@
-import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { useLoading } from '@proton/hooks';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

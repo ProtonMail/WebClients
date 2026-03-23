@@ -1,6 +1,6 @@
-import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
 import { c } from 'ttag';
 
+import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
 import { ICAL_ATTENDEE_ROLE, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { getDtendProperty, propertyToLocalDate } from '@proton/shared/lib/calendar/vcalConverter';

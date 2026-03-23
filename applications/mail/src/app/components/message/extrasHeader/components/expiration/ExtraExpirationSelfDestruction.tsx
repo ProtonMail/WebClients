@@ -1,10 +1,10 @@
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { FeatureCode, useFeature } from '@proton/features';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';

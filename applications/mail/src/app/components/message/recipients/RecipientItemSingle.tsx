@@ -1,9 +1,9 @@
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import type { ReactNode, RefObject } from 'react';
 import { useState } from 'react';
 
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import RecipientDropdownItem from '@proton/components/containers/contacts/view/RecipientDropdownItem';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { Recipient } from '@proton/shared/lib/interfaces';

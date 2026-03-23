@@ -1,9 +1,9 @@
-import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoints';
 import type { ReactElement } from 'react';
 import { useRef } from 'react';
 
 import { c } from 'ttag';
 
+import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoints';
 import clsx from '@proton/utils/clsx';
 
 import { isLabelIDNewsletterSubscription } from '../../helpers/labels';

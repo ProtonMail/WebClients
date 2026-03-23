@@ -1,8 +1,8 @@
-import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import { isToday, isYesterday } from 'date-fns';
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
+import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { altKey, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 

@@ -1,8 +1,8 @@
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';

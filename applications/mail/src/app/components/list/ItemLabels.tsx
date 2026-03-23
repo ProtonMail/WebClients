@@ -1,7 +1,7 @@
-import LabelStack from '@proton/components/components/labelStack/LabelStack';
 import { useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import LabelStack from '@proton/components/components/labelStack/LabelStack';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';

@@ -1,12 +1,12 @@
-import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
-import { FEATURE_TOUR_STEPS } from '@proton/components/components/featureTour/constants';
-import FeatureTourDrawerSpotlight from '@proton/components/components/featureTour/FeatureTourDrawerSpotlight';
 import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { featureTourActions } from '@proton/account/featuresTour';
+import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import type { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
+import FeatureTourDrawerSpotlight from '@proton/components/components/featureTour/FeatureTourDrawerSpotlight';
+import { FEATURE_TOUR_STEPS } from '@proton/components/components/featureTour/constants';
 import LogoBase from '@proton/components/components/logo/LogoBase';
 import type { Optional } from '@proton/shared/lib/interfaces';
 import generateUID from '@proton/utils/generateUID';

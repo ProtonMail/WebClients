@@ -1,9 +1,9 @@
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { SEARCH_TYPE, useSearchTelemetry } from '@proton/encrypted-search/useSearchTelemetry';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 
