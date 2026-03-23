@@ -23,7 +23,6 @@ export const WrappedProtonMeetContainer = () => {
 
     const isMeetVp9Allowed = useFlag('MeetVp9');
     const isMeetHigherBitrate = useFlag('MeetHigherBitrate');
-    const isMeetSinglePeerConnectionEnabled = useFlag('MeetSinglePeerConnection');
     const isLiveKitDebugReportingAllowed = useFlag('MeetAllowLiveKitDebugReporting');
     const isMeetH264 = useFlag('MeetH264');
 
@@ -76,7 +75,6 @@ export const WrappedProtonMeetContainer = () => {
                     dtx: false,
                 },
                 disconnectOnPageLeave: false,
-                singlePeerConnection: isMeetSinglePeerConnectionEnabled,
             })
     );
 
