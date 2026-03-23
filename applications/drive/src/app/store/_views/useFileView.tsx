@@ -48,7 +48,7 @@ export default function useFileView(
     const { getSharePermissions } = useDirectSharingInfo();
     // permissions load will be during the withLoading process, but we prefer to set owner by default,
     // so even if it's wrong permissions, BE will prevent any unauthorized actions
-    const [permissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(SHARE_MEMBER_PERMISSIONS.OWNER);
+    const [permissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(SHARE_MEMBER_PERMISSIONS.ADMIN_EDITOR);
     const [isPermissionsLoading, withPermissionsLoading] = useLoading(true);
     const { isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile, videoStreaming } =
         useFileViewBase(shareId, linkId, { getCachedChildren, loadChildren }, revisionId, isForPhotos);

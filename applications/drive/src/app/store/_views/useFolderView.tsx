@@ -24,7 +24,7 @@ export default function useFolderView(folder: { shareId: string; linkId: string 
 
     // permissions load will be during the withLoading process, but we prefer to set owner by default,
     // so even if it's wrong permissions, BE will prevent any unauthorized actions
-    const [permissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(SHARE_MEMBER_PERMISSIONS.OWNER);
+    const [permissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(SHARE_MEMBER_PERMISSIONS.ADMIN_EDITOR);
     const { getSharePermissions } = useDirectSharingInfo();
     const folderName = useLinkName(shareId, linkId, setError);
 

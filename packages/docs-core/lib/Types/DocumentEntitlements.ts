@@ -1,4 +1,4 @@
-import { getCanWrite, getCanAdmin, getIsOwner } from '@proton/shared/lib/drive/permissions'
+import { getCanWrite, getCanAdmin } from '@proton/shared/lib/drive/permissions'
 import type { DocumentKeys, PublicDocumentKeys } from '@proton/drive-store/lib/_documents/DocumentKeys'
 import { isPublicNodeMeta } from '@proton/drive-store/lib/NodeMeta'
 import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store/lib/NodeMeta'
@@ -40,10 +40,6 @@ export function rawPermissionToRole(permission: SHARE_MEMBER_PERMISSIONS): Docum
 
   if (getCanWrite(permission)) {
     return new DocumentRole('Editor')
-  }
-
-  if (getIsOwner(permission)) {
-    return new DocumentRole('Owner')
   }
 
   return new DocumentRole('Viewer')

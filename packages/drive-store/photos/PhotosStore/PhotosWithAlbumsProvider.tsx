@@ -17,7 +17,7 @@ import {
     queryUpdateAlbumCover,
 } from '@proton/shared/lib/api/drive/photos';
 import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
-import { getCanAdmin, getCanWrite, getIsOwner } from '@proton/shared/lib/drive/permissions';
+import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
@@ -27,8 +27,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { type AlbumPhoto, type Photo, type ShareWithKey, useDefaultShare, useDriveEventManager } from '../../store';
 import { decryptedLinkToPhotos, photoPayloadToPhotos, useDebouncedRequest } from '../../store/_api';
-import { type DecryptedLink, useLink, useLinkActions } from '../../store/_links';
-import { useLinksActions } from '../../store/_links';
+import { type DecryptedLink, useLink, useLinkActions, useLinksActions } from '../../store/_links';
 import useLinksState from '../../store/_links/useLinksState';
 import { useShare } from '../../store/_shares';
 import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
@@ -133,7 +132,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const currentAlbumLinkId = useRef<string>();
     const [albumPhotos, setAlbumPhotos] = useState<AlbumPhoto[]>([]);
     const { getShare } = useShare();
-    const { getSharePermissions } = useDirectSharingInfo();
+    const { getSharePermissions, isSharedWithMe } = useDirectSharingInfo();
     const { getLink } = useLink();
     const { updatePhotoLinkTags } = useLinksState();
     const { setVolumeShareIds } = useVolumesState();
@@ -156,6 +155,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             return;
         }
 
+        // eslint-disable-next-line no-console
         driveEventManager.volumes.startSubscription(volumeId, VolumeTypeForEvents.photo).catch(console.warn);
         return () => {
             driveEventManager.volumes.unsubscribe(volumeId);
@@ -405,13 +405,14 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                                         : Promise.resolve(undefined),
                                 ]);
                                 const permissions = await getSharePermissions(abortSignal, link.rootShareId);
+                                const sharedWithMe = await isSharedWithMe(abortSignal, link.rootShareId);
                                 setVolumeShareIds(album.VolumeID, [album.ShareID]);
                                 return {
                                     ...link,
                                     cover: cover,
                                     photoCount: album.PhotoCount,
                                     permissions: {
-                                        isOwner: getIsOwner(permissions),
+                                        isOwner: !sharedWithMe,
                                         isAdmin: getCanAdmin(permissions),
                                         isEditor: getCanWrite(permissions),
                                     },
@@ -888,6 +889,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                         ]);
 
                         const permissions = await getSharePermissions(abortSignal, link.rootShareId);
+                        const sharedWithMe = await isSharedWithMe(abortSignal, link.rootShareId);
 
                         return {
                             linkId,
@@ -896,7 +898,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                                 cover: cover,
                                 photoCount: album.photoCount,
                                 permissions: {
-                                    isOwner: getIsOwner(permissions),
+                                    isOwner: !sharedWithMe,
                                     isAdmin: getCanAdmin(permissions),
                                     isEditor: getCanWrite(permissions),
                                 },
