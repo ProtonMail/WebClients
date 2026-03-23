@@ -1,7 +1,7 @@
-import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isFirefox, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
 export const supportsSetSinkId = () => {
-    if (!document || isSafari() || isMobile()) {
+    if (!document || isSafari() || isMobile() || isFirefox()) {
         return false;
     }
 
