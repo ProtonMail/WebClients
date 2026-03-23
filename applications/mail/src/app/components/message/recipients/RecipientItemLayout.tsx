@@ -1,11 +1,11 @@
-import ProtonBadgeType from '@proton/components/components/protonBadge/ProtonBadgeType';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import type { MouseEvent, ReactNode, RefObject } from 'react';
 import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import ProtonBadgeType from '@proton/components/components/protonBadge/ProtonBadgeType';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { highlightNode } from '@proton/encrypted-search/esHelpers';
 import { useCombinedRefs } from '@proton/hooks';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';

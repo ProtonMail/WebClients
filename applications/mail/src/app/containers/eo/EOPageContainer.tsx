@@ -1,7 +1,7 @@
-import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
 import { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';

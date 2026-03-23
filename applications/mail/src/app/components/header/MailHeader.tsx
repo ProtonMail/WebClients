@@ -1,14 +1,14 @@
-import FloatingButton from '@proton/components/components/button/FloatingButton';
-import PrivateHeader from '@proton/components/containers/heading/PrivateHeader';
-import UserDropdown from '@proton/components/containers/heading/UserDropdown';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import type { ReactNode } from 'react';
 import { memo, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import FloatingButton from '@proton/components/components/button/FloatingButton';
+import PrivateHeader from '@proton/components/containers/heading/PrivateHeader';
+import UserDropdown from '@proton/components/containers/heading/UserDropdown';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcPen } from '@proton/icons/icons/IcPen';
-import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';

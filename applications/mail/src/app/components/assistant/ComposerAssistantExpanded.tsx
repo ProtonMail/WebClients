@@ -1,4 +1,3 @@
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { RefObject } from 'react';
 import { useRef } from 'react';
 
@@ -10,6 +9,7 @@ import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Copy from '@proton/components/components/button/Copy';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, useAssistant } from '@proton/llm/lib';

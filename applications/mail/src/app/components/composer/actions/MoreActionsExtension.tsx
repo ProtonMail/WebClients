@@ -1,5 +1,3 @@
-import type { EditorMetadata } from '@proton/components/components/editor/interface';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import type { MutableRefObject } from 'react';
 import { memo, useCallback } from 'react';
 
@@ -7,7 +5,9 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
+import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';

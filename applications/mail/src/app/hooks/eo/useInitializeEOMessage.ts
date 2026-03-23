@@ -1,8 +1,8 @@
-import useApi from '@proton/components/hooks/useApi';
 import { useCallback } from 'react';
 
 import type { PayloadAction } from '@reduxjs/toolkit';
 
+import useApi from '@proton/components/hooks/useApi';
 import type { PrivateKeyReference } from '@proton/crypto';
 import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
 import { prepareHtml, preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';

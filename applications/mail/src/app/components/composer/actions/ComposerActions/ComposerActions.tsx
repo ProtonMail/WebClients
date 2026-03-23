@@ -1,7 +1,3 @@
-import type { EditorMetadata } from '@proton/components/components/editor/interface';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
-import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import type { MutableRefObject } from 'react';
 import { useMemo } from 'react';
 
@@ -11,8 +7,12 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Vr } from '@proton/atoms/Vr/Vr';
+import type { EditorMetadata } from '@proton/components/components/editor/interface';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode, useFeature } from '@proton/features';
 import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
 import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';

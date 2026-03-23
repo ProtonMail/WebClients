@@ -1,5 +1,5 @@
-import Icon from '@proton/components/components/icon/Icon';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import Icon from '@proton/components/components/icon/Icon';
 import type { IconName } from '@proton/icons/types';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { isExpiringByRetentionRule, isFrozenExpiration } from '@proton/shared/lib/mail/messages';

@@ -1,6 +1,6 @@
-import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import { Fragment } from 'react';
 
+import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 
 import type { RecipientOrGroup } from '../../../models/address';
 import type { MapStatusIcons } from '../../../models/crypto';

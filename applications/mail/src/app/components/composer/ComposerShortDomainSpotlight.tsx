@@ -1,9 +1,9 @@
-import Spotlight from '@proton/components/components/spotlight/Spotlight';
-import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import Spotlight from '@proton/components/components/spotlight/Spotlight';
+import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import useMailShortDomainPostSubscriptionComposerSpotlight from '@proton/components/hooks/mail/useMailShortDomainPostSubscriptionSpotlight';
 import spotlightImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 

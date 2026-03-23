@@ -1,5 +1,5 @@
-import Icon from '@proton/components/components/icon/Icon';
 import { Button } from '@proton/atoms/Button/Button';
+import Icon from '@proton/components/components/icon/Icon';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { setBit } from '@proton/shared/lib/helpers/bitset';

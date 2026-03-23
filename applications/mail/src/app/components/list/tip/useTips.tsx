@@ -1,5 +1,3 @@
-import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
-import { PassAliasesProvider } from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/PassAliasesProvider';
 import { useEffect, useMemo, useState } from 'react';
 
 import { differenceInDays } from 'date-fns';
@@ -10,6 +8,8 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms/Href/Href';
+import { PassAliasesProvider } from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/PassAliasesProvider';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

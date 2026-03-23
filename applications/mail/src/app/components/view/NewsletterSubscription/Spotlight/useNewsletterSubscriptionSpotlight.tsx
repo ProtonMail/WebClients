@@ -1,7 +1,7 @@
-import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
-import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
+import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
+import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
 import { SECOND } from '@proton/shared/lib/constants';
 import { isUserAccountOlderThanOrEqualToDays } from '@proton/shared/lib/user/helpers';

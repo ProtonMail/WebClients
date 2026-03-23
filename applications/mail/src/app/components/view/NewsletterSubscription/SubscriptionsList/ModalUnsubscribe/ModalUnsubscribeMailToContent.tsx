@@ -1,9 +1,9 @@
+import { c } from 'ttag';
+
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
-import { c } from 'ttag';
-
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 

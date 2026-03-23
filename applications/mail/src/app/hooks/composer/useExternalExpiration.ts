@@ -1,6 +1,6 @@
-import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useState } from 'react';
 
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 
 export const useExternalExpiration = (message?: MessageState) => {

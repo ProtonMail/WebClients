@@ -1,7 +1,7 @@
-import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useCallback } from 'react';
 
+import useApi from '@proton/components/hooks/useApi';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type {
     LoadEmbeddedResults,

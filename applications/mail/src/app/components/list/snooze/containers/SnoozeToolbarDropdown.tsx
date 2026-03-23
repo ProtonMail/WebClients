@@ -1,8 +1,8 @@
-import useApi from '@proton/components/hooks/useApi';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useApi from '@proton/components/hooks/useApi';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 
