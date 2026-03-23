@@ -150,15 +150,29 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
 
     const initializeCamera = async (initialCameraState: boolean) => {
         try {
-            if (initialCameraState) {
-                const result = await toggleVideo({
-                    videoDeviceId: selectedCameraId,
-                    isEnabled: true,
-                    preserveCache: true,
-                });
+            // Always publish the video track (and mute if camera is off at join) so E2EE transforms are set up
+            // as part of the initial SDP offer rather than a post-connect renegotiation.
+            // With H264 and simulcast, renegotiation has a race where the hardware encoder produces the first keyframes
+            // before the E2EE InsertableStreams transform is attached to the simulcast senders, sending unencrypted frames.
+            const result = await toggleVideo({
+                videoDeviceId: selectedCameraId,
+                isEnabled: true,
+                preserveCache: true,
+            });
 
-                if (!result) {
-                    throw new Error('Failed to initialize camera');
+            if (!result) {
+                throw new Error('Failed to initialize camera');
+            }
+
+            // If the user joined with camera off, mute the track immediately.
+            // The track stays published in the SFU so E2EE transforms remain attached,
+            // avoiding the renegotiation race when the user enables camera later.
+            if (!initialCameraState) {
+                const videoPublication = [...room.localParticipant.videoTrackPublications.values()].find(
+                    (pub) => pub.source === Track.Source.Camera
+                );
+                if (videoPublication?.track) {
+                    await videoPublication.track.mute();
                 }
             }
         } catch (error) {
