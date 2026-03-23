@@ -706,7 +706,13 @@ export const ProtonMeetContainer = ({
             const timeoutMs = 20_000;
             try {
                 await room.setE2EEEnabled(true);
+                // Start device init concurrently with connect so the camera track is included in the initial SDP offer
+                // rather than a post-connect renegotiation.
+                // On Safari with H264, renegotiation can cause the simulcast encoder to fail silently.
+                // E2EE is already enabled above so the queued publish will be encrypted.
+                const initDevices = initializeDevices(5_000);
                 await connectWithStunFallbackToTurnRelay(room, websocketUrl, accessToken, timeoutMs);
+                await initDevices;
             } catch (livekitError: any) {
                 // If LiveKit connection fails after MLS join, clean up MLS group to prevent inconsistent state
                 try {
@@ -732,9 +738,6 @@ export const ProtonMeetContainer = ({
                 setJoiningInProgress(false);
                 await wait(50);
             }
-
-            // Initialize devices with timeout protection to prevent blocking UI when permissions are denied
-            await initializeDevices(5_000);
 
             const originalOnTokenRefresh = room.engine.client.onTokenRefresh;
 
