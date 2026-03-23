@@ -1,5 +1,4 @@
 import type { ReactElement, RefObject } from 'react';
-import { useLocation } from 'react-router';
 
 import { useReferralDiscover } from '../hooks/useReferralDiscover';
 import { ReferralSpotlight } from './ReferralSpotlight';
@@ -10,8 +9,7 @@ interface Props {
 }
 
 export const SettingsReferralSpotlight = ({ children, anchorRef }: Props) => {
-    const location = useLocation();
-    const referralSpotlight = useReferralDiscover(location);
+    const referralSpotlight = useReferralDiscover();
 
     return (
         <ReferralSpotlight
