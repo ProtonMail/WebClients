@@ -24698,14 +24698,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-playwright@npm:^2.8.0":
-  version: 2.9.0
-  resolution: "eslint-plugin-playwright@npm:2.9.0"
+"eslint-plugin-playwright@npm:^2.10.1":
+  version: 2.10.1
+  resolution: "eslint-plugin-playwright@npm:2.10.1"
   dependencies:
     globals: "npm:^17.3.0"
   peerDependencies:
     eslint: ">=8.40.0"
-  checksum: 10/6851990084679752b7c6dd39f72767076723aba01d0b174b30dcb6992f8f98f237e598b5ef544074d04cc980ebedac2103347d3f0aadf45e4e0d07d5ffd9f30b
+  checksum: 10/1b74abf37c19926c0c66845229b598acc7b5730357ded30447771a8f2fa57c3261e73cee044b965d35093a598ce1a94a5bb69d71785e60963ad7472309b025ed
   languageName: node
   linkType: hard
 
@@ -38253,7 +38253,7 @@ __metadata:
     eslint: "npm:^9.39.4"
     eslint-plugin-custom-rules: "workspace:^"
     eslint-plugin-import: "npm:^2.32.0"
-    eslint-plugin-playwright: "npm:^2.8.0"
+    eslint-plugin-playwright: "npm:^2.10.1"
     extract-zip: "npm:^2.0.1"
     fs-extra: "npm:^11.3.4"
     gmail-tester: "npm:^1.4.0"
