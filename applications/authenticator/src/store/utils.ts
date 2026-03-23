@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { type Middleware, type PayloadAction, type SerializedError, createAsyncThunk } from '@reduxjs/toolkit';
-import type { AppDispatch, AppThunkExtra, RootState } from 'applications/authenticator/src/store';
+import type { AppDispatch, AppThunkExtra, RootState } from 'proton-authenticator/src/store';
 
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
 
