@@ -1,5 +1,5 @@
 type Data = Uint8Array<ArrayBuffer> | string;
-type ChunkWithData<T> = { done: boolean; value?: T };
+type ChunkWithData<T> = { done: true } | { done: false; value: T };
 enum STREAM_CONTROL_TYPE {
     'READ',
     'CANCEL',
@@ -62,14 +62,14 @@ export const ReadableStreamSerializer = {
 
         const reconstructedStream = new ReadableStream<T>({
             async pull(controller) {
-                const { done, value } = await portReader.read();
+                const chunk = await portReader.read();
                 // When no more data needs to be consumed, close the stream
-                if (done) {
+                if (chunk.done) {
                     controller.close();
                     return;
                 }
                 // Enqueue the next data chunk into our target stream
-                controller.enqueue(value);
+                controller.enqueue(chunk.value);
             },
             cancel() {
                 portReader.cancel();
