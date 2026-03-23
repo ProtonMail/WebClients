@@ -8371,9 +8371,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pdfme/common@npm:*, @pdfme/common@npm:^5.5.10":
-  version: 5.5.10
-  resolution: "@pdfme/common@npm:5.5.10"
+"@pdfme/common@npm:*, @pdfme/common@npm:^5.5.9":
+  version: 5.5.9
+  resolution: "@pdfme/common@npm:5.5.9"
   dependencies:
     "@pdfme/pdf-lib": "npm:*"
     acorn: "npm:^8.16.0"
@@ -8382,7 +8382,7 @@ __metadata:
   peerDependencies:
     antd: ^5.11.2
     form-render: ^2.2.20
-  checksum: 10/1f22f855d7cf0e558384a93ee9ef6dbd543155510359c67d4ab6a44878fb7d1e7d995130104fa752220007a6b3df74eda63fdb81996bcf13f2fa5ff5ef88945c
+  checksum: 10/644241b5ea81ff8c0778f7016a3782d916bfdc897506bf7009d52f9e170a1794aa7a776088ba5a464cd2c18d04b9d2a6875d718f36fe035db9cdb74ab408b545
   languageName: node
   linkType: hard
 
@@ -8400,16 +8400,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pdfme/generator@npm:^5.5.10":
-  version: 5.5.10
-  resolution: "@pdfme/generator@npm:5.5.10"
+"@pdfme/generator@npm:^5.5.9":
+  version: 5.5.9
+  resolution: "@pdfme/generator@npm:5.5.9"
   dependencies:
     "@pdfme/pdf-lib": "npm:*"
     fontkit: "npm:^2.0.2"
   peerDependencies:
     "@pdfme/common": "*"
     "@pdfme/schemas": "*"
-  checksum: 10/182bb48acf3a60a509fb2e4475d1cb85685344330eeb9ba17af1b062105d3ed2599bef65a79a9c610bd41b9d4db7ecd36f847caf443fe69c53de35d333e52930
+  checksum: 10/baaa201c483852808897c0b04758d90d6422c31c63c38382e720529035d91f5e1e9ec0f19e077808d44e5df5d704d9f75e0481c75917f8ae4febf2214d64b609
   languageName: node
   linkType: hard
 
@@ -8426,37 +8426,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pdfme/schemas@npm:^5.5.10":
-  version: 5.5.10
-  resolution: "@pdfme/schemas@npm:5.5.10"
+"@pdfme/schemas@npm:^5.5.9":
+  version: 5.5.9
+  resolution: "@pdfme/schemas@npm:5.5.9"
   dependencies:
     "@pdfme/pdf-lib": "npm:*"
     air-datepicker: "npm:^3.6.0"
     bwip-js: "npm:^4.8.0"
     date-fns: "npm:^4.1.0"
-    dompurify: "npm:^3.3.3"
+    dompurify: "npm:^3.3.1"
     fontkit: "npm:^2.0.2"
-    lucide: "npm:^0.577.0"
+    lucide: "npm:^0.575.0"
   peerDependencies:
     "@pdfme/common": "*"
-  checksum: 10/7247aab3a4e469a53a0676d7629305e142417fa31174e9ac691989e7d680616488a0dfdb6f6e48ccf4e9f9cb74c39d633c97877f02ff3891243d774576c38bae
+  checksum: 10/e7a7cb4914877231dc28e42c15a1a398def2850529d57da4cc8fdbef55b00145b374b0a1d498ee90d6c520b4160a891933517d2131d67f44b3e5429fd4eb13f6
   languageName: node
   linkType: hard
 
-"@pdfme/ui@npm:^5.5.10":
-  version: 5.5.10
-  resolution: "@pdfme/ui@npm:5.5.10"
+"@pdfme/ui@npm:^5.5.9":
+  version: 5.5.9
+  resolution: "@pdfme/ui@npm:5.5.9"
   dependencies:
     "@dnd-kit/core": "npm:^6.0.8"
     "@dnd-kit/sortable": "npm:^10.0.0"
     "@pdfme/converter": "npm:*"
     "@scena/react-guides": "npm:^0.28.2"
     antd: "npm:^5.27.4"
-    dompurify: "npm:^3.3.3"
+    dompurify: "npm:^3.3.1"
     form-render: "npm:^2.5.5"
     globrex: "npm:^0.1.2"
     hotkeys-js: "npm:^4.0.2"
-    lucide-react: "npm:^0.577.0"
+    lucide-react: "npm:^0.575.0"
     react: "npm:^16.14.0"
     react-dom: "npm:^16.14.0"
     react-moveable: "npm:^0.56.0"
@@ -8465,7 +8465,7 @@ __metadata:
   peerDependencies:
     "@pdfme/common": "*"
     "@pdfme/schemas": "*"
-  checksum: 10/613aadb05f9d62e129a759cf4d4ce7dcada4c0ef3d933fb783b5fa8ba27cb5483125294dad412e1ae14eba705e6e19772611abbeb917dc9a21111ade5282867c
+  checksum: 10/c663233f5ee211591219443fbe3b6902a036bef86ed2ac6c07d8608d076996622221c623ffe6b54158d0cdc3126cfe5c769811a0c887bc85ff4bf4972c242c9a
   languageName: node
   linkType: hard
 
@@ -10053,9 +10053,9 @@ __metadata:
   resolution: "@proton/recovery-kit@workspace:packages/recovery-kit"
   dependencies:
     "@pdf-lib/standard-fonts": "npm:^1.0.0"
-    "@pdfme/common": "npm:^5.5.10"
-    "@pdfme/generator": "npm:^5.5.10"
-    "@pdfme/schemas": "npm:^5.5.10"
+    "@pdfme/common": "npm:^5.5.9"
+    "@pdfme/generator": "npm:^5.5.9"
+    "@pdfme/schemas": "npm:^5.5.9"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/utils": "workspace:^"
     eslint: "npm:^9.39.4"
@@ -23298,7 +23298,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:^3.3.3":
+"dompurify@npm:^3.3.1, dompurify@npm:^3.3.3":
   version: 3.3.3
   resolution: "dompurify@npm:3.3.3"
   dependencies:
@@ -32867,19 +32867,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^0.577.0":
-  version: 0.577.0
-  resolution: "lucide-react@npm:0.577.0"
+"lucide-react@npm:^0.575.0":
+  version: 0.575.0
+  resolution: "lucide-react@npm:0.575.0"
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
-  checksum: 10/dcc834b83ff2b3fca4898672ead3ac3f6316c4c391a4ccfc94e5fdd4a08e834ab2d80de7503e3bc9f6fce8333d446c7263cfb5f6f4fc54b5f7569c4e53340e47
+  checksum: 10/2d0d11451ad099ced530de327c3954dee85e1a68186a56ec2b2294fe651853d6eb9463e2646434d137a7ee8d97b7050da5e8cbfc9a32ee3a3992f6dbce23430c
   languageName: node
   linkType: hard
 
-"lucide@npm:^0.577.0":
-  version: 0.577.0
-  resolution: "lucide@npm:0.577.0"
-  checksum: 10/d0c0cf3eda992f3419ee865f1b4628da4fb5554191b235a28961e0f12128e74250bd8130758a74a3d9ed6cb4b478d4e7f923e1fc6e37b0782067027b60036f0d
+"lucide@npm:^0.575.0":
+  version: 0.575.0
+  resolution: "lucide@npm:0.575.0"
+  checksum: 10/1afe3804a83f404c2911574e3699cc2f0fc38985d6a5a4fda60e7f474b259219b49151883331173620fdd1b578a40c9f799b7f2916830d78683e57c7d8d831d4
   languageName: node
   linkType: hard
 
@@ -36691,9 +36691,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "pdf-ui@workspace:applications/pdf-ui"
   dependencies:
-    "@pdfme/common": "npm:^5.5.10"
-    "@pdfme/schemas": "npm:^5.5.10"
-    "@pdfme/ui": "npm:^5.5.10"
+    "@pdfme/common": "npm:^5.5.9"
+    "@pdfme/schemas": "npm:^5.5.9"
+    "@pdfme/ui": "npm:^5.5.9"
     "@types/toastify-js": "npm:^1.12.4"
     eslint: "npm:^9.39.4"
     toastify-js: "npm:^1.12.0"
