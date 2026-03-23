@@ -16,6 +16,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import {
     isElectronMail,
+    isElectronMeet,
     isElectronOnLinux,
     isElectronOnMac,
     isElectronOnWindows,
@@ -244,7 +245,7 @@ const Sidebar = ({
                     </div>
                 )}
 
-                {primary && !isElectronMail ? (
+                {primary && !(isElectronMail || isElectronMeet) ? (
                     <div className="px-3 pb-2 shrink-0 hidden md:block">{primary}</div>
                 ) : null}
                 <div className="mt-1 md:mt-0" aria-hidden="true" />
