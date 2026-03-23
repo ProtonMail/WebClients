@@ -260,7 +260,7 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
                             "user-toolbar flex *:min-size-auto flex-row flex-nowrap gap-1 absolute bottom-custom right-0 p-1 items-center",
                             !isMobile && 'group-hover:opacity-100'
                         )}
-                        style={{ '--bottom-custom': '-1rem' }}
+                        style={{ '--bottom-custom': '-1.5rem' }}
                     >
                         <div className=" bg-norm border border-weak rounded-lg">
                             <UserActionToolbar
