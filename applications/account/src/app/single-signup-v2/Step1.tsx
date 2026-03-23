@@ -877,6 +877,12 @@ const Step1 = ({
     }, [isPorkbunPayment, selectedPlan.Name, model.plansMap, model.subscriptionDataCycleMapping, options.cycle]);
 
     const offerBanner = (() => {
+        if (isPorkbunPayment) {
+            // Early exit for Porkbun, Porkbun has its own offer banner.
+            // Do not remove this, do not move this down
+            return;
+        }
+
         const skeletonLoader = <SkeletonLoader width="36em" height="2.4rem" index={0} className="mt-4 max-w-full" />;
 
         if (model.loadingDependencies && !isMailVariantB) {
@@ -986,13 +992,7 @@ const Step1 = ({
             return <span className="text-center">{lifetimeText}</span>;
         }
 
-        if (
-            !hasPlanSelector ||
-            model.upsell.mode === UpsellTypes.UPSELL ||
-            !checkout.discountPercent ||
-            isPorkbunPayment ||
-            signupTrial
-        ) {
+        if (!hasPlanSelector || model.upsell.mode === UpsellTypes.UPSELL || !checkout.discountPercent || signupTrial) {
             return;
         }
 
