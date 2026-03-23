@@ -1,4 +1,5 @@
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 
 import { TabState } from './tabsInterface';
 
@@ -13,7 +14,7 @@ export const getTabState = ({
     category: CategoryTab;
     categoriesList: CategoryTab[];
     draggedOverCategoryId?: string;
-    categoryIDs?: string[];
+    categoryIDs?: CategoryLabelID[];
 }): TabState => {
     if (categoryIDs?.includes(category.id)) {
         return TabState.ACTIVE;
