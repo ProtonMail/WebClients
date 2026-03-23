@@ -220,6 +220,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                     '--right-custom': `${positionBySize[viewSize]}rem`,
                 }}
             >
+                {/* Reload track button for non-local participants on top right corner when noone is screen sharing */}
                 {!isLocalParticipant && showReloadTrackButton && !isScreenShare && (
                     <button
                         className={clsx(
@@ -268,6 +269,31 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                     </div>
                 )}
             </div>
+
+            {/* Reload track button for non-local participants on bottom right corner when someone is screen share */}
+            {!isLocalParticipant && showReloadTrackButton && isScreenShare && (
+                <button
+                    className={clsx(
+                        'absolute z-up user-select-none flex items-center justify-center w-custom h-custom bg-weak rounded-full border-none cursor-pointer transition-opacity',
+                        isRefreshing ? 'opacity-50 cursor-not-allowed' : 'opacity-80 hover:opacity-100'
+                    )}
+                    style={{
+                        '--w-custom': audioIconSize[viewSize],
+                        '--h-custom': audioIconSize[viewSize],
+                        bottom: `${positionBySize[viewSize]}rem`,
+                        right: `${positionBySize[viewSize]}rem`,
+                    }}
+                    onClick={handleRefreshTracks}
+                    disabled={isRefreshing}
+                    aria-label={c('Action').t`Refresh audio and video tracks`}
+                    title={c('Info').t`Refresh audio and video tracks`}
+                >
+                    <IcArrowsRotate
+                        size={viewSize === 'large' ? 4 : 3}
+                        className={clsx(isRefreshing && 'animate-spin')}
+                    />
+                </button>
+            )}
 
             {isSpeaking && (
                 <div

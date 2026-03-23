@@ -2,17 +2,19 @@ import { useEffect, useRef, useState } from 'react';
 
 import type { TrackReference } from '@livekit/components-react';
 import { RoomAudioRenderer, VideoTrack } from '@livekit/components-react';
-import { ConnectionState, type Participant } from 'livekit-client';
+import { ConnectionState, type Participant, type RemoteTrackPublication } from 'livekit-client';
 import { c } from 'ttag';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { TopBanner } from '@proton/components/index';
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingLink, selectParticipantNameMap } from '@proton/meet/store/slices/meetingInfo';
 import { selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
@@ -95,9 +97,42 @@ export const MeetingBody = ({
 
     const screenShareVideoRef = useRef<HTMLVideoElement>(null);
 
+    const showReloadTrackButton = useFlag('MeetShowReloadTrackButton');
+    const [isRefreshingScreenShare, setIsRefreshingScreenShare] = useState(false);
+
     const isMeetEnableAudioMixing = useFlag('MeetEnableAudioMixing');
     const isMeetEnableSpatialAudio = useFlag('MeetEnableSpatialAudio');
     const isSpatialAudioEnabled = isMeetEnableAudioMixing && isMeetEnableSpatialAudio;
+
+    const handleRefreshScreenShareTrack = async () => {
+        if (isRefreshingScreenShare || !screenShareTrack?.publication) {
+            return;
+        }
+
+        setIsRefreshingScreenShare(true);
+        try {
+            const pub = screenShareTrack.publication as RemoteTrackPublication;
+            const wasSubscribed = pub.isSubscribed;
+            const wasEnabled = pub.isEnabled;
+
+            if (wasSubscribed) {
+                pub.setSubscribed(false);
+                await wait(isSafari() ? 500 : 200);
+                pub.setSubscribed(true);
+                await wait(isSafari() ? 500 : 200);
+            }
+
+            if (wasEnabled !== undefined) {
+                pub.setEnabled(wasEnabled);
+                await wait(isSafari() ? 200 : 50);
+            }
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.error('Failed to refresh screen share track', error);
+        } finally {
+            setIsRefreshingScreenShare(false);
+        }
+    };
 
     useEffect(() => {
         if (isScreenShare && screenShareTrack?.publication?.track && screenShareVideoRef.current) {
@@ -220,6 +255,32 @@ export const MeetingBody = ({
                                 />
                                 {screenShareLabel}
                             </div>
+                            {!isLocalScreenShare && showReloadTrackButton && (
+                                <button
+                                    className={clsx(
+                                        'absolute user-select-none flex items-center justify-center w-custom h-custom bg-weak rounded-full border-none cursor-pointer transition-opacity',
+                                        isRefreshingScreenShare
+                                            ? 'opacity-50 cursor-not-allowed'
+                                            : 'opacity-80 hover:opacity-100'
+                                    )}
+                                    style={{
+                                        '--w-custom': '2rem',
+                                        '--h-custom': '2rem',
+                                        bottom: '1rem',
+                                        right: '1rem',
+                                        zIndex: 2,
+                                    }}
+                                    onClick={handleRefreshScreenShareTrack}
+                                    disabled={isRefreshingScreenShare}
+                                    aria-label={c('Action').t`Refresh screen share track`}
+                                    title={c('Info').t`Refresh screen share track`}
+                                >
+                                    <IcArrowsRotate
+                                        size={4}
+                                        className={clsx(isRefreshingScreenShare && 'animate-spin')}
+                                    />
+                                </button>
+                            )}
                         </div>
                         {isLargerThanMd && (
                             <ParticipantSidebar
