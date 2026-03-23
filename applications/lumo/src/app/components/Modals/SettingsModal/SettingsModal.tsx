@@ -37,6 +37,7 @@ import CreateFreeAccountLink from '../../CreateFreeAccountLink/CreateFreeAccount
 import { IndexingStatusBanner } from '../../Files/DriveBrowser/IndexingStatusBanner';
 import { LumoLogoThemeAware } from '../../Icons/LumoLogoThemeAware';
 import { SignInLinkButton } from '../../Links/SignInLink';
+import ApiKeysPanel from './ApiKeysPanel';
 import DeleteAllButton from './DeleteAllButton';
 import { PaidSubscriptionPanel } from './PaidSubscriptionPanel';
 import PersonalizationPanel from './PersonalizationPanel';
@@ -101,7 +102,7 @@ interface SettingsItem {
     guest: boolean;
 }
 
-const SettingsItems: SettingsItem[] = [
+const BASE_SETTINGS_ITEMS: SettingsItem[] = [
     {
         id: 'account',
         icon: 'user',
@@ -116,14 +117,23 @@ const SettingsItems: SettingsItem[] = [
     },
     { id: 'general', icon: 'cog-wheel', getText: () => c('collider_2025: Settings Item').t`General`, guest: true },
 ];
+
+const API_KEYS_SETTINGS_ITEM: SettingsItem = {
+    id: 'api-keys',
+    icon: 'key',
+    getText: () => c('collider_2025: Settings Item').t`API keys`,
+    guest: false,
+};
 const LumoSettingsSidebar = ({
     activePanel,
     onPanelChange,
     isGuest,
+    items,
 }: {
     activePanel: string;
     onPanelChange: (panel: string) => void;
     isGuest: boolean;
+    items: SettingsItem[];
 }) => {
     return (
         <div
@@ -138,7 +148,7 @@ const LumoSettingsSidebar = ({
 
             {/* Navigation Items */}
             <ul className="unstyled m-0 flex flex-row md:flex-column flex-nowrap gap-2 md:gap-4 mb-4">
-                {SettingsItems.map((item) => (
+                {items.map((item) => (
                     <li key={item.id}>
                         <Button
                             shape="ghost"
@@ -441,6 +451,11 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
     const [activePanel, setActivePanel] = useState(initialPanel);
     const isGuest = useIsGuest();
     const closeModal = modalProps.onClose;
+    const { apiKeyManagement } = useLumoFlags();
+
+    const SettingsItems = apiKeyManagement
+        ? [...BASE_SETTINGS_ITEMS, API_KEYS_SETTINGS_ITEM]
+        : BASE_SETTINGS_ITEMS;
 
     return (
         <ModalTwo size="xlarge" enableCloseWhenClickOutside className="lumo-settings-modal" {...modalProps}>
@@ -458,26 +473,62 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                 </Button>
 
                 <div className="modal-main-container">
-                    {/* Desktop view with sidebar */}
-                    <div className="hidden md:flex md:flex-row flex-nowrap flex-1">
-                        <div className="sidebar-container">
+                    {/*
+                     * Single unified layout — sidebar (desktop) and tabs (mobile) are toggled with
+                     * CSS, but the panel content is rendered exactly ONCE to avoid duplicate API
+                     * calls from components that fetch data on mount (e.g. ApiKeysPanel).
+                     */}
+                    <div className="flex md:flex-row flex-column flex-nowrap flex-1">
+                        {/* Sidebar — desktop only */}
+                        <div className="hidden md:flex sidebar-container">
                             <LumoSettingsSidebar
                                 activePanel={activePanel}
                                 onPanelChange={setActivePanel}
                                 isGuest={isGuest}
+                                items={SettingsItems}
                             />
                         </div>
 
                         <div className="flex flex-column flex-nowrap flex-1 content-container">
-                            {/* Top bar with panel name only */}
-                            <div className="flex items-center top-bar">
+                            {/* Mobile: settings title */}
+                            <div className="mobile-section-header md:hidden">
+                                <h1 className="text-2xl text-bold m-0">Settings</h1>
+                            </div>
+
+                            {/* Desktop: top bar with active panel name */}
+                            <div className="hidden md:flex items-center top-bar">
                                 <h2 className="text-xl text-semibold m-0">
                                     {SettingsItems.find((item) => item.id === activePanel)?.getText() || 'Settings'}
                                 </h2>
                             </div>
 
-                            {/* Panel content */}
-                            <div className="flex flex-row gap-2 flex-1 overflow-y-auto mb-10" style={{ minHeight: 0 }}>
+                            {/* Mobile: tab navigation */}
+                            <div className="md:hidden mobile-tabs-container">
+                                <div className="mobile-tabs">
+                                    {SettingsItems.map((item) => (
+                                        <Button
+                                            key={item.id}
+                                            shape="ghost"
+                                            className={clsx(
+                                                'mobile-tab',
+                                                activePanel === item.id && 'mobile-tab-active'
+                                            )}
+                                            onClick={() => setActivePanel(item.id)}
+                                            disabled={isGuest && !item.guest}
+                                            aria-pressed={activePanel === item.id}
+                                        >
+                                            <Icon className="shrink-0" name={item.icon} size={4} />
+                                            <span className="text-sm">{item.getText()}</span>
+                                        </Button>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Panel content — rendered exactly once */}
+                            <div
+                                className="flex flex-row gap-2 flex-1 overflow-y-auto mb-10"
+                                style={{ minHeight: 0 }}
+                            >
                                 {activePanel === 'account' &&
                                     (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
                                 {activePanel === 'personalization' && <PersonalizationPanel />}
@@ -487,47 +538,8 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                                     ) : (
                                         <GeneralSettingsPanelAuth onClose={closeModal} />
                                     ))}
+                                {activePanel === 'api-keys' && !isGuest && apiKeyManagement && <ApiKeysPanel />}
                             </div>
-                        </div>
-                    </div>
-
-                    {/* Mobile view with tabs */}
-                    <div className="md:hidden flex flex-column flex-1">
-                        {/* Settings title */}
-                        <div className="mobile-section-header">
-                            <h1 className="text-2xl text-bold m-0">Settings</h1>
-                        </div>
-
-                        {/* Mobile tabs */}
-                        <div className="mobile-tabs-container">
-                            <div className="mobile-tabs">
-                                {SettingsItems.map((item) => (
-                                    <Button
-                                        key={item.id}
-                                        shape="ghost"
-                                        className={clsx('mobile-tab', activePanel === item.id && 'mobile-tab-active')}
-                                        onClick={() => setActivePanel(item.id)}
-                                        disabled={isGuest && !item.guest}
-                                        aria-pressed={activePanel === item.id}
-                                    >
-                                        <Icon className="shrink-0" name={item.icon} size={4} />
-                                        <span className="text-sm">{item.getText()}</span>
-                                    </Button>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Tab content */}
-                        <div className="mobile-tab-content flex flex-column flex-1">
-                            {activePanel === 'account' &&
-                                (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
-                            {activePanel === 'personalization' && <PersonalizationPanel />}
-                            {activePanel === 'general' &&
-                                (isGuest ? (
-                                    <GeneralSettingsPanelGuest />
-                                ) : (
-                                    <GeneralSettingsPanelAuth onClose={closeModal} />
-                                ))}
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,9 @@ import useApi from '@proton/components/hooks/useApi';
 import type { User } from '@proton/shared/lib/interfaces';
 
 import type { AesGcmCryptoKey } from '../crypto/types';
-import { addContextToMessages, fillAttachmentData } from '../llm/attachments';
+import { addContextToMessages, fillAttachmentData, fillOneAttachmentData } from '../llm/attachments';
+import { getApproximateTokenCount } from '../llm/tokenizer';
+import { SearchService } from '../services/search/searchService';
 import { buildLinearChain } from '../messageTree';
 import { useGhostChat } from '../providers/GhostChatProvider';
 import { useGuestTracking } from '../providers/GuestTrackingProvider';
@@ -12,6 +14,7 @@ import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
 import { selectAttachments, selectAttachmentsBySpaceId, selectContextFilters } from '../redux/selectors';
 import type { MessageMap } from '../redux/slices/core/messages';
 import { addMessage, createDate, newMessageId } from '../redux/slices/core/messages';
+import { clearProvisionalAttachments, upsertAttachment } from '../redux/slices/core/attachments';
 import type { ConversationError } from '../redux/slices/meta/errors';
 import { useActionErrorHandler } from '../services/errors/useActionErrorHandler';
 import type { ActionParams, Attachment, ErrorContext, RetryStrategy } from '../types';
@@ -103,6 +106,71 @@ export const useLumoActions = ({
 
     const spaceId = space?.id;
 
+    /**
+     * Fill any shallow provisional attachments with content at send time.
+     *
+     * When a user @mentions a project file, a metadata-only provisional is created immediately
+     * (chip in the composer, no content). This function resolves the content just before the
+     * message is dispatched, preserving the provisional ID throughout.
+     *
+     * Lookup order:
+     *   1. Redux state   — fastest; content is already in memory if the file was loaded this session.
+     *   2. Search index  — fast; works for all indexed local and Drive files.
+     *   3. IndexedDB     — fallback for files not yet in the in-memory search index.
+     *
+     * We search ALL space attachments (not just the current conversation's space) so that
+     * project files are found even when the conversation space hasn't been assigned yet
+     * (e.g. the very first message in a new project conversation).
+     */
+    const fillShallowProvisionals = async (
+        attachments: Attachment[],
+        spaceDek: AesGcmCryptoKey | undefined
+    ): Promise<Attachment[]> => {
+        const userId = user?.ID;
+        const searchService = userId ? SearchService.get(userId) : undefined;
+
+        return Promise.all(
+            attachments.map(async (att) => {
+                // Skip attachments that already have content or are still downloading.
+                if (att.markdown || att.data || att.processing) return att;
+
+                // Find the backing space attachment by filename across ALL space attachments.
+                // Using allAttachments (not attachmentMap) ensures project files are found
+                // regardless of which space the current conversation belongs to.
+                const sourceAtt = Object.values(allAttachments).find(
+                    (sa) => sa.spaceId && sa.filename.toLowerCase() === att.filename.toLowerCase()
+                );
+                if (!sourceAtt) return att;
+
+                // 1. Content already in Redux — use it directly.
+                if (sourceAtt.markdown) {
+                    return { ...att, markdown: sourceAtt.markdown, tokenCount: sourceAtt.tokenCount };
+                }
+
+                // 2. Try the search index (keyed by the source attachment's ID).
+                if (searchService) {
+                    const doc = searchService.getDocumentById(sourceAtt.id);
+                    if (doc?.content) {
+                        return {
+                            ...att,
+                            markdown: doc.content,
+                            rawBytes: doc.size || att.rawBytes,
+                            tokenCount: getApproximateTokenCount(doc.content),
+                        };
+                    }
+                }
+
+                // 3. Fall back to IndexedDB.
+                const filled = await fillOneAttachmentData(sourceAtt, user, spaceDek);
+                if (filled.markdown) {
+                    return { ...att, markdown: filled.markdown, tokenCount: filled.tokenCount };
+                }
+
+                return att;
+            })
+        );
+    };
+
     // Helper to load and deduplicate attachments from message history
     const loadAttachments = async (
         messages: Message[],
@@ -150,10 +218,23 @@ export const useLumoActions = ({
         const enableImageTools = ffImageTools;
         const enableSmoothing = ffSmoothRendering;
 
-        // Load messages and all attachments from conversation history and combine with new message attachments
         const messagesWithContext = await addContextToMessages(messageChain, user, spaceDek);
         const historyAttachments = await loadAttachments(messagesWithContext, user, spaceDek);
-        const allConversationAttachments = [...historyAttachments, ...provisionalAttachments];
+
+        // Fill any @mention provisional attachments with content from the search index (or
+        // IndexedDB as fallback). Directly-uploaded files already carry their markdown, so
+        // this is a no-op for them. The chip IDs are preserved — nothing is re-created.
+        const filledAttachments = await fillShallowProvisionals(provisionalAttachments, spaceDek);
+
+        // Write resolved content back to Redux so the attachment chip shows "preview" content
+        // when the user clicks it on the sent message.
+        for (const att of filledAttachments) {
+            if (att.markdown && !provisionalAttachments.find((p) => p.id === att.id)?.markdown) {
+                dispatch(upsertAttachment(att));
+            }
+        }
+
+        const allConversationAttachments = [...historyAttachments, ...filledAttachments];
 
         await dispatch(
             sendMessage({
@@ -163,7 +244,7 @@ export const useLumoActions = ({
                 },
                 newMessageData: {
                     content: newMessageContent,
-                    attachments: provisionalAttachments,
+                    attachments: filledAttachments,
                 },
                 conversationContext: {
                     spaceId,
@@ -184,6 +265,10 @@ export const useLumoActions = ({
                 },
             })
         );
+
+        // Clear @mention provisionals now that the message has been sent.
+        // Uploaded provisionals (non-mention) were promoted to the space by sendMessage.
+        dispatch(clearProvisionalAttachments());
 
         // Increment guest question count after successful send
         guestTracking?.incrementCount();
@@ -440,7 +525,7 @@ export const useLumoActions = ({
             retryStrategy = 'simple',
             customRetryInstructions,
         } = actionParams;
-        const isWebSearchButtonToggled = !!actionParams.isWebSearchButtonToggled;
+        const isWebSearchButtonToggled = actionParams.isWebSearchButtonToggled;
 
         // Validate input parameters
         if (!validateActionParams(actionParams)) {
@@ -598,7 +683,7 @@ export const useLumoActions = ({
                     finalSpaceId,
                     spaceDek,
                     signal,
-                    !!error.actionParams.isWebSearchButtonToggled
+                    error.actionParams.isWebSearchButtonToggled
                 );
             } catch (retryError) {
                 const errorContext: ErrorContext = {

@@ -3,7 +3,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 /**
  * Centralized hook for all Lumo feature flags.
  * This prevents multiple subscriptions to the same flags across the app.
- * 
+ *
  * Available flags:
  * - imageTools: Enable image processing and drawing tools
  * - smoothRendering: Enable smooth rendering for messages
@@ -23,6 +23,7 @@ export const useLumoFlags = () => {
     const whatsNew = useFlag('WhatsNewV1p3');
     const earlyAccess = useFlag('LumoEarlyAccess');
     const highLoad = useFlag('LumoHighLoad');
+    const apiKeyManagement = useFlag('LumoAPIKeyManagement');
 
     return {
         imageTools,
@@ -33,5 +34,6 @@ export const useLumoFlags = () => {
         whatsNew,
         earlyAccess,
         highLoad,
+        apiKeyManagement,
     };
 };
