@@ -69,7 +69,7 @@ export const UploadMenuDropdown = ({
             isOpen={isOpen}
             anchorRef={anchorRef}
             onClose={onClose}
-            className="upload-menu-dropdown"
+            className="upload-menu-dropdown rounded-xl"
             width="200px"
         >
             {uploadMenuItems.map((item) => (

@@ -349,7 +349,8 @@ im.$media-expressions: $media-expressions;
 	border: none !important;
 }
 
-.apps-dropdown-button {
+.apps-dropdown-button,
+.dropdown-content svg {
 	stroke-width: 0.3px;
 	stroke: currentcolor;
 }
