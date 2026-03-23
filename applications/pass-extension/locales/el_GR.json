@@ -1339,6 +1339,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ο κωδικός PIN σας καταργήθηκε από μία άλλη ${ PASS_APP_NAME } εφαρμογή"
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Η κρυπτογραφημένη επικοινωνία για το ξεκλείδωμα της επιφάνειας εργασίας απέτυχε."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } είναι κλειδωμένη, και πρέπει να ξεκλειδωθεί."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } δεν είναι εγκατεστημένη."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } δεν ανταποκρίνεται, εκτελείται;"
       ]
     },
     "Error message": {
@@ -2693,6 +2705,54 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "Το ${ PASS_SHORT_APP_NAME } είναι αυτή τη στιγμή εκτός σύνδεσης. Ανοίξτε την προέκταση για να το ξεκλειδώσετε."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } λειτουργία εκτός σύνδεσης ενεργοποιημένη."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Ενεργοποιήστε τη λειτουργία εκτός σύνδεσης για να έχετε πρόσβαση στα δεδομένα σας ${ PASS_SHORT_APP_NAME } σε περίπτωση απώλειας σύνδεσης στο διαδίκτυο ή αν οι διακομιστές ${ BRAND_NAME } δεν είναι προσβάσιμοι."
+      ],
+      "Enabling desktop auto-lock": [
+        "Ενεργοποίηση αυτόματου κλειδώματος επιφάνειας εργασίας"
+      ],
+      "Offline mode": [
+        "Λειτουργία χωρίς σύνδεση"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να ενεργοποιήσετε τη λειτουργία εκτός σύνδεσης"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Παρακαλούμε επιβεβαιώστε τον εφεδρικό κωδικό πρόσβασής σας για να ενεργοποιήσετε τη λειτουργία εκτός σύνδεσης"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Παρακαλούμε επιβεβαιώστε τον επιπλέον κωδικό πρόσβασης για να ενεργοποιήσετε τη λειτουργία εκτός σύνδεσης"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Παρακαλούμε επιβεβαιώστε τον δεύτερο κωδικό πρόσβασης για να ενεργοποιήσετε τη λειτουργία εκτός σύνδεσης"
+      ],
+      "Reconnect": [
+        "Επανασύνδεση"
+      ],
+      "Reconnecting": [
+        "Επανασύνδεση"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Αυτή η λειτουργία απαιτεί να είναι εγκατεστημένη και να εκτελείται η εφαρμογή επιφάνειας ${ PASS_APP_NAME } κατά τη διάρκεια της ρύθμισης."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Όταν είναι ενεργοποιημένη, μπορείτε να συνεχίσετε να έχετε πρόσβαση στα δεδομένα σας ${ PASS_SHORT_APP_NAME } σε περίπτωση απώλειας σύνδεσης στο διαδίκτυο ή αν οι διακομιστές ${ BRAND_NAME } δεν είναι προσβάσιμοι."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Τώρα μπορείτε να χρησιμοποιήσετε τον εφεδρικό κωδικό πρόσβασής σας για πρόσβαση στο ${ PASS_SHORT_APP_NAME } εκτός σύνδεσης"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Τώρα μπορείτε να χρησιμοποιήσετε τον επιπλέον κωδικό πρόσβασής σας για πρόσβαση στο ${ PASS_SHORT_APP_NAME } εκτός σύνδεσης"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Τώρα μπορείτε να χρησιμοποιήσετε τον δεύτερο κωδικό πρόσβασής σας για πρόσβαση στο ${ PASS_SHORT_APP_NAME } εκτός σύνδεσης"
       ]
     },
     "Keyboard key": {
@@ -3827,6 +3887,12 @@
       ],
       "ZIP or Postal code": [
         "Τ.Κ. / Ταχυδρομικός κώδικας"
+      ],
+      "Enable offline access": [
+        "Ενεργοποίηση πρόσβασης εκτός σύνδεσης"
+      ],
+      "Offline mode": [
+        "Λειτουργία χωρίς σύνδεση"
       ]
     },
     "Link": {
@@ -5143,6 +5209,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Η συνδρομή σας δε σας επιτρέπει να δημιουργήσετε πολλαπλές κρύπτες. Όλα τα στοιχεία θα εισαχθούν στην πρώτη κρύπτη σας. Για να κάνετε εισαγωγή σε πολλαπλές κρύπτες, αναβαθμίστε τη συνδρομή σας."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } λειτουργία εκτός σύνδεσης απενεργοποιημένη."
+      ],
+      "Too many attempts": [
+        "Πάρα πολλές προσπάθειες"
       ]
     }
   }

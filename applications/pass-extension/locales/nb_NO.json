@@ -1339,6 +1339,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koden ble fjernet av en annen ${ PASS_APP_NAME }-klient"
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Krypteringskommunikasjon for opplåsing av skrivebordsapp mislyktes."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } er låst, den må låses opp."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } er ikke installert."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Skrivebordsappen ${ PASS_APP_NAME } svarer ikke. Kjører den?"
       ]
     },
     "Error message": {
@@ -2693,6 +2705,54 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME } er for øyeblikket frakoblet. Åpne utvidelsen for å låse opp."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } frakoblet modus aktivert."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Aktiver frakoblet modus for å få tilgang til ${ PASS_SHORT_APP_NAME }-dataene dine hvis du mister internettilkoblingen eller hvis ${ BRAND_NAME }-tjenerne er utilgjengelige."
+      ],
+      "Enabling desktop auto-lock": [
+        "Aktiverer automatisk låsing av skrivebordsapp"
+      ],
+      "Offline mode": [
+        "Frakoblet modus"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Bekreft passordet for ${ BRAND_NAME } for å aktivere frakoblet modus"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Bekreft reservepassordet ditt for å aktivere frakoblet modus"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Bekreft ekstra passordet ditt for å aktivere frakoblet modus"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Bekreft ditt andre passord for å aktivere frakoblet modus"
+      ],
+      "Reconnect": [
+        "Koble til på nytt"
+      ],
+      "Reconnecting": [
+        "Kobler til på nytt"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Denne funksjonen krever at ${ PASS_APP_NAME }-skrivebordsappen er installert og kjører under oppsettet."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Når aktivert, kan du fortsatt få tilgang til dine ${ PASS_SHORT_APP_NAME }-data hvis du mister internettilkoblingen eller hvis ${ BRAND_NAME }-servere er utilgjengelige."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nå bruke reservepassordet ditt for å få tilgang til ${ PASS_SHORT_APP_NAME } uten nett"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nå bruke ekstra passordet ditt for å få tilgang til ${ PASS_SHORT_APP_NAME } frakoblet"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nå bruke ditt andre passord for å få tilgang til ${ PASS_SHORT_APP_NAME } uten nett"
       ]
     },
     "Keyboard key": {
@@ -3827,6 +3887,12 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Enable offline access": [
+        "Aktiver frakoblet tilgang"
+      ],
+      "Offline mode": [
+        "Frakoblet modus"
       ]
     },
     "Link": {
@@ -5143,6 +5209,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonnementet ditt lar deg ikke opprette flere hvelv. Alle elementer vil bli importert til ditt første hvelv. Hvis du vil importere til flere hvelv, oppgraderer du abonnementet."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } frakoblet modus deaktivert."
+      ],
+      "Too many attempts": [
+        "For mange forsøk"
       ]
     }
   }

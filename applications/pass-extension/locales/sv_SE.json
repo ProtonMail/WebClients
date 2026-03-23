@@ -1336,6 +1336,15 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din PIN-kod togs bort av en annan ${ PASS_APP_NAME }-klient"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME }-appen för stationär dator är låst, den måste vara upplåst."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "${ PASS_APP_NAME }-appen för stationär dator är inte installerad."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME }-appen för stationär dator svarar inte, körs den?"
       ]
     },
     "Error message": {
@@ -2669,6 +2678,57 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME } är för närvarande offline. Öppna tillägget för att låsa upp."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } offlineläge aktiverat."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Aktivera offlineläge för att komma åt din ${ PASS_SHORT_APP_NAME }-data om du förlorar internetanslutningen eller om ${ BRAND_NAME }-servrar är oåtkomliga."
+      ],
+      "Enabling desktop auto-lock": [
+        "Aktiverar automatisk låsning för stationär dator"
+      ],
+      "Offline mode": [
+        "Offlineläge"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Bekräfta ditt ${ BRAND_NAME }-lösenord för att aktivera offlineläge"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Bekräfta ditt reservlösenord för att aktivera offlineläge"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Bekräfta ditt extra lösenord för att aktivera offlineläge"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Bekräfta ditt andra lösenord för att aktivera offlineläge"
+      ],
+      "Reconnect": [
+        "Anslut igen"
+      ],
+      "Reconnecting": [
+        "Återansluter"
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "Högerklicka på tilläggsikonen och välj “Hantera tillägg“. Navigera till “Behörigheter och data“ och aktivera webbplatsbehörigheter."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "Högerklicka på tilläggsikonen och välj “Hantera tillägg“. Navigera till “Webbplatsåtkomst“ och aktivera webbplatsbehörigheter."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Denna funktion kräver att ${ PASS_APP_NAME }-appen för stationär dator är installerad och körs under inställning."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "När det är aktiverat kan du fortfarande komma åt din ${ PASS_SHORT_APP_NAME }-data om du förlorar internetanslutningen eller om ${ BRAND_NAME }-servrar är oåtkomliga."
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nu använda ditt extra lösenord för att komma åt ${ PASS_SHORT_APP_NAME } offline"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nu använda ditt andra lösenord för att komma åt ${ PASS_SHORT_APP_NAME } offline"
       ]
     },
     "Keyboard key": {
@@ -3797,6 +3857,12 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Enable offline access": [
+        "Aktivera offlineåtkomst"
+      ],
+      "Offline mode": [
+        "Offlineläge"
       ]
     },
     "Link": {
@@ -5113,6 +5179,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Din prenumeration tillåter inte att du skapar flera valv. Alla objekt kommer att importeras till ditt första valv. För att importera till flera valv, uppgradera din prenumeration."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } offlineläge inaktiverat."
+      ],
+      "Too many attempts": [
+        "För många försök"
       ]
     }
   }

@@ -2572,6 +2572,27 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша организация требует, чтобы вы обеспечили защищенный доступ к ${ PASS_APP_NAME }"
+      ],
+      "Offline mode": [
+        "Офлайновый режим"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Подтвердите ваш пароль ${ BRAND_NAME } чтобы включить офлайновый режим"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Подтвердите пароль резервной копии, чтобы включить автономный режим"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Подтвердите дополнительный пароль, чтобы включить автономный режим"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Чтобы включить автономный режим, подтвердите второй пароль."
+      ],
+      "Reconnect": [
+        "Возобновить соединение"
+      ],
+      "Reconnecting": [
+        "Переподключение"
       ]
     },
     "Label": {
@@ -3642,6 +3663,12 @@
       ],
       "ZIP or Postal code": [
         "ZIP-код или почтовый индекс"
+      ],
+      "Enable offline access": [
+        "Включить офлайновый доступ"
+      ],
+      "Offline mode": [
+        "Офлайновый режим"
       ]
     },
     "Link": {
@@ -4951,6 +4978,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша подписка не позволяет создавать несколько хранилищ. Все элементы будут импортированы в ваше первое хранилище. Для импорта в несколько хранилищ обновите подписку."
+      ],
+      "Too many attempts": [
+        "Слишком много попыток"
       ]
     }
   }

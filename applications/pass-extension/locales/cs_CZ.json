@@ -2756,6 +2756,36 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaše organizace vyžaduje, abyste zabezpečili svůj přístup k ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Offline režim ${ PASS_SHORT_APP_NAME } povolen."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Povolte režim offline, abyste měli přístup k datům ${ PASS_SHORT_APP_NAME }, pokud ztratíte připojení k internetu nebo pokud jsou servery ${ BRAND_NAME } nedostupné."
+      ],
+      "Offline mode": [
+        "Režim offline"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Potvrďte prosím své heslo ${ BRAND_NAME }, abyste mohli povolit režim offline."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Potvrďte prosím své záložní heslo , abyste mohli povolit režim offline"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Potvrďte prosím své dodatečné heslo , abyste mohli povolit režim offline"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Pro povolení režimu offline prosím potvrďte své druhé heslo"
+      ],
+      "Reconnect": [
+        "Znovu připojit"
+      ],
+      "Reconnecting": [
+        "Obnovování připojení"
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Pokud je povoleno, můžete i nadále přistupovat k datům ${ PASS_SHORT_APP_NAME }, pokud dojde ke ztrátě připojení k internetu nebo pokud jsou servery ${ BRAND_NAME } nedostupné."
       ]
     },
     "Keyboard key": {
@@ -3918,6 +3948,12 @@
       ],
       "ZIP or Postal code": [
         "PSČ"
+      ],
+      "Enable offline access": [
+        "Povolit přístup offline"
+      ],
+      "Offline mode": [
+        "Režim offline"
       ]
     },
     "Link": {
@@ -5264,6 +5300,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše předplatné neumožňuje vytvořit více trezorů. Všechny položky budou importovány do vašeho prvního trezoru. Chcete-li importovat do více trezorů, navyšte své předplatné."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Offline režim ${ PASS_SHORT_APP_NAME } deaktivován."
+      ],
+      "Too many attempts": [
+        "Příliš mnoho pokusů"
       ]
     }
   }

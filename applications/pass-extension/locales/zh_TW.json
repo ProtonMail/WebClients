@@ -636,6 +636,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "找不到您使用的密碼管理器？歡迎告訴我們"
+      ],
+      "Start from scratch": [
+        "從空白檔建立"
       ]
     },
     "Browser": {
@@ -967,6 +970,12 @@
       ],
       "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
         "您的瀏覽器在啟用 ${ PASS_APP_NAME } 時發生問題"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "已鎖定 ${ PASS_APP_NAME } 桌面應用程式，必須將其解鎖。"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "尚未安裝${ PASS_APP_NAME } 桌面應用程式。"
       ]
     },
     "Error message": {
@@ -1681,6 +1690,24 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "您的資料在 ${ displayedDate } 被發現。"
+      ],
+      "Discover ${ PASS_APP_NAME } video": [
+        "探索 ${ PASS_APP_NAME } 影片"
+      ],
+      "Enabling desktop auto-lock": [
+        "啟用桌面自動鎖定"
+      ],
+      "No credit cards found": [
+        "找不到信用卡"
+      ],
+      "Offline mode": [
+        "離線模式"
+      ],
+      "Reconnect": [
+        "重新連線"
+      ],
+      "Reconnecting": [
+        "重新連線"
       ]
     },
     "Keyboard key": {
@@ -2654,6 +2681,30 @@
       ],
       "ZIP or Postal code": [
         "郵遞區號"
+      ],
+      "Credit-card autofill": [
+        "信用卡自動填寫"
+      ],
+      "Enable offline access": [
+        "啟用離線存取"
+      ],
+      "Issuing Country": [
+        "簽發國家"
+      ],
+      "Larger window": [
+        "較大的窗口"
+      ],
+      "Offline mode": [
+        "離線模式"
+      ],
+      "Points Balance": [
+        "剩餘積分"
+      ],
+      "Social Security": [
+        "社會保障"
+      ],
+      "Software license": [
+        "軟體授權"
       ]
     },
     "Link": {
@@ -2849,6 +2900,9 @@
       ],
       "Used on ${ url }": [
         "使用${ url }"
+      ],
+      "Select option": [
+        "選擇選項"
       ]
     },
     "Security Center - Info": {
