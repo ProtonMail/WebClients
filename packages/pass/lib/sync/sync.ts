@@ -14,6 +14,6 @@ export const sync = (state: MaybeNull<State>, options: RootSagaOptions) => {
         case SyncStrategy.LEGACY:
             return syncV1(options);
         case SyncStrategy.USER_EVENTS:
-            return syncV2(state);
+            return syncV2(state, options);
     }
 };
