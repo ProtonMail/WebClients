@@ -3918,6 +3918,15 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn, der ikke kan dekrypteres"
+      ],
+      "Invalid coupon": [
+        "Ugyldig kupon"
+      ],
+      "Please complete the billing details": [
+        "Udfyld faktureringsoplysningerne"
+      ],
+      "This field is invalid": [
+        "Dette felt er ugyldigt"
       ]
     },
     "error": {
@@ -6879,6 +6888,9 @@
       ],
       "Update required": [
         "Opdatering kræves"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Indtast bekræftelseskode. Ciffer ${ digit }."
       ]
     },
     "info": {
@@ -13307,6 +13319,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din prøveperiode udløber den ${ textDate }. Du vil ikke blive opkrævet, hvis du opsiger før den ${ textDate }. ${ action }"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Fornyelsesprisen afhænger af faktureringsregionen og EIN."
       ]
     }
   }

@@ -1202,6 +1202,18 @@
       ],
       "Reload": [
         "Muat ulang"
+      ],
+      "Encrypted": [
+        "Terenkripsi"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Hide": [
+        "Sembunyikan"
+      ],
+      "Shared": [
+        "Dibagikan"
       ]
     },
     "Actions": {
@@ -1250,6 +1262,15 @@
       ],
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Domains": [
+        "Domain"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Pengguna"
       ]
     },
     "Alert": {
@@ -1459,6 +1480,12 @@
       ],
       "Yearly": [
         "Tahunan"
+      ],
+      "${ n } month": [
+        "${ n } bulan"
+      ],
+      "${ n } year": [
+        "${ n } tahun"
       ]
     },
     "Browser": {
@@ -1657,6 +1684,9 @@
       ],
       "Total for ${ n } month": [
         "Total untuk ${ n } bulan"
+      ],
+      "Subtotal": [
+        "Subtotal"
       ]
     },
     "Collapsible tooltip": {
@@ -6526,6 +6556,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Anda akan tetap dapat melihat data milik akun Anda, namun seluruh akun pengguna akan dihapus dari organisasi Anda."
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Semua kontak Anda akan diimpor, hingga batas ${ maxContact } kontak"
+      ],
+      "Can edit": [
+        "Dapat menyunting"
+      ],
+      "Can view only": [
+        "Hanya dapat melihat"
+      ],
+      "Link copied": [
+        "Tautan disalin"
+      ],
+      "owner": [
+        "pemilik"
+      ],
+      "Preparing": [
+        "Menyiapkan"
       ]
     },
     "info": {
@@ -7232,6 +7280,21 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Access": [
+        "Akses"
+      ],
+      "Active": [
+        "Aktif"
+      ],
+      "can edit": [
+        "dapat menyunting"
+      ],
+      "can view": [
+        "dapat melihat"
+      ],
+      "Expiry": [
+        "Kedaluwarsa"
       ]
     },
     "Label for contact group color": {
@@ -7528,6 +7591,12 @@
       ],
       "Up to ${ n } participant": [
         "Hingga ${ n } peserta"
+      ],
+      "${ n } participant": [
+        "${ n } peserta"
+      ],
+      "Booking pages": [
+        "Laman pemesanan"
       ]
     },
     "Message": {
@@ -9614,6 +9683,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Langganan Anda saat ini telah memiliki diskon. Dengan berpindah ke penawaran ini, diskon yang telah ada tidak akan lagi berlaku."
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Diskon berlaku untuk ${ renewalsWithCoupon } perpanjangan."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ini berlaku selama ${ couponRedemptions } bulan. Selanjutnya, harga akan otomatis diperbarui menjadi ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku selama ${ couponRedemptions } bulan. Kemudian akan diperpanjang secara otomatis dengan harga ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
       ]
     },
     "Payments.Error": {
@@ -9860,6 +9938,12 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "San Francisco"
       ]
     },
     "Placeholder for contact group name": {
@@ -12307,6 +12391,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "Anda mendapatkan ruang penyimpanan 5 GB"
+      ],
+      "Custom": [
+        "Kustom"
+      ],
+      "Public link": [
+        "Tautan publik"
+      ],
+      "Spring Sale": [
+        "Diskon Musim Semi"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12599,6 +12692,14 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uji coba Anda akan berakhir pada ${ textDate }. Anda tidak akan dikenakan biaya apabila Anda membatalkan sebelum ${ textDate }. ${ action }"
+      ]
+    },
+    "Status": {
+      "accepted": [
+        "diterima"
+      ],
+      "pending": [
+        "menunggu"
       ]
     }
   }
