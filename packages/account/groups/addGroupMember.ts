@@ -7,7 +7,13 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { MEMBER_PRIVATE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { getIsEncryptionDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import type { Address, ApiKeysConfig, CachedOrganizationKey, EnhancedMember } from '@proton/shared/lib/interfaces';
+import type {
+    Address,
+    ApiKeysConfig,
+    CachedOrganizationKey,
+    DecryptedAddressKey,
+    EnhancedMember,
+} from '@proton/shared/lib/interfaces';
 import { GroupMemberType } from '@proton/shared/lib/interfaces';
 import { getAddressKeyToken, getDecryptedUserKeys, getEmailFromKey, splitKeys } from '@proton/shared/lib/keys';
 import { getInternalParameters, getInternalParametersPrivate } from '@proton/shared/lib/keys/forward/forward';
@@ -144,14 +150,19 @@ const mapProxyInstance = (proxyInstances: {
     ProxyParam: proxyInstances.ProxyParam,
 });
 
-export const addGroupMemberThunk = ({
-    group: { ID: GroupID, Address: groupAddress },
+const addGroupMemberThunk = ({
+    groupId: GroupID,
     email,
-    getMemberPublicKeys,
+    groupMemberPublicKeys: { forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey },
+    forwarderKey,
 }: {
-    group: { ID: string; Address: Address };
+    groupId: string;
     email: string;
-    getMemberPublicKeys: (email: string) => Promise<ApiKeysConfig>;
+    groupMemberPublicKeys: {
+        forwardeeKeysConfig: ApiKeysConfig;
+        forwardeeArmoredPrimaryPublicKey: string | undefined;
+    };
+    forwarderKey: DecryptedAddressKey;
 }): ThunkAction<Promise<void>, RequiredState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, _, extra) => {
         const api = getSilentApi(extra.api);
@@ -161,23 +172,11 @@ export const addGroupMemberThunk = ({
             dispatch(organizationKeyThunk()),
         ]);
 
-        const { forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey } = await getGroupMemberPublicKeys({
-            api,
-            memberEmail: email,
-            getMemberPublicKeys,
-        });
-
         const canonicalEmail = canonicalizeInternalEmail(email);
         const member = getMemberByEmail(members, canonicalEmail);
 
-        const forwarderKey = await dispatch(getGroupKey({ groupAddress }));
-
         const Type = getGroupMemberType(forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey);
         const AddressSignaturePacket = await signMemberEmail(canonicalEmail, forwarderKey.privateKey);
-
-        if (isExternalForMail(forwardeeKeysConfig) && !getIsEncryptionDisabled(groupAddress)) {
-            await dispatch(disableGroupAddressEncryption({ groupAddress, forwarderKey }));
-        }
 
         if (Type === GroupMemberType.External) {
             return api(addGroupMemberApi({ Type, GroupID, Email: email, AddressSignaturePacket }));
@@ -238,6 +237,55 @@ export const addGroupMemberThunk = ({
                 Token,
                 Signature,
             })
+        );
+    };
+};
+
+export const addGroupMembersThunk = ({
+    group: { ID: groupId, Address: groupAddress },
+    emails,
+    getMemberPublicKeys,
+}: {
+    group: { ID: string; Address: Address };
+    emails: string[];
+    getMemberPublicKeys: (email: string) => Promise<ApiKeysConfig>;
+}): ThunkAction<Promise<void>, RequiredState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, _, extra) => {
+        if (emails.length === 0) {
+            return;
+        }
+
+        const api = getSilentApi(extra.api);
+        const forwarderKey = await dispatch(getGroupKey({ groupAddress }));
+
+        const allMemberPublicKeys = await Promise.all(
+            emails.map((email) => getGroupMemberPublicKeys({ api, memberEmail: email, getMemberPublicKeys }))
+        );
+
+        // Disable group E2EE only once if any member requires it
+        const shouldDisableE2EE =
+            allMemberPublicKeys.some(({ forwardeeKeysConfig }) => isExternalForMail(forwardeeKeysConfig)) &&
+            !getIsEncryptionDisabled(groupAddress);
+
+        if (shouldDisableE2EE) {
+            await dispatch(disableGroupAddressEncryption({ groupAddress, forwarderKey }));
+        }
+
+        // Add each member, passing pre-computed values
+        await Promise.all(
+            emails.map((email, index) =>
+                dispatch(
+                    addGroupMemberThunk({
+                        groupId,
+                        email,
+                        groupMemberPublicKeys: allMemberPublicKeys[index],
+                        forwarderKey,
+                    })
+                ).catch((error) => {
+                    // eslint-disable-next-line no-console
+                    console.error(`Failed to add recipient ${email}:`, error);
+                })
+            )
         );
     };
 };
