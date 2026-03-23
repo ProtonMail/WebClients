@@ -271,7 +271,7 @@ export const AlbumsCard: FC<Props> = ({
                                 )}
                             </div>
                         </div>
-                        {album.permissions.isAdmin && (
+                        {album.permissions.isOwner && (
                             <div className="shrink-0 mb-2">
                                 <AlbumDropdownButton onShare={onShare} onRename={onRename} onDelete={onDelete} />
                             </div>
