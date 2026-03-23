@@ -1,11 +1,11 @@
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { useCallback } from 'react';
 import { useHistory } from 'react-router';
 
 import { c } from 'ttag';
 
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { MessageStateWithData, MessageStateWithDataFull } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';

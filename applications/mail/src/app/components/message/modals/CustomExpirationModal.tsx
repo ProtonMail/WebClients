@@ -1,11 +1,3 @@
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import DateInput from '@proton/components/components/input/DateInput';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import TimeInput from '@proton/components/components/input/TimeInput';
 import { useMemo, useRef, useState } from 'react';
 
 import { addDays, endOfDay, endOfToday, fromUnixTime, isBefore, isToday, startOfToday } from 'date-fns';
@@ -13,6 +5,14 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import DateInput from '@proton/components/components/input/DateInput';
+import TimeInput from '@proton/components/components/input/TimeInput';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { isExpiringByRetentionRule } from '@proton/shared/lib/mail/messages';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';

@@ -1,10 +1,10 @@
+import type { DragEvent, MouseEventHandler } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useHandler } from '@proton/components/hooks/useHandler';
 import useWindowSize from '@proton/components/hooks/useWindowSize';
-import type { DragEvent, MouseEventHandler } from 'react';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-
 import { getHasAssistantStatus } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';

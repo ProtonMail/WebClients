@@ -1,7 +1,7 @@
-import useApi from '@proton/components/hooks/useApi';
 import { useCallback } from 'react';
 
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import useApi from '@proton/components/hooks/useApi';
 import { FeatureCode, useFeature } from '@proton/features';
 import type { MessageKeys, MessageStateWithData, OutsideKey } from '@proton/mail/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';

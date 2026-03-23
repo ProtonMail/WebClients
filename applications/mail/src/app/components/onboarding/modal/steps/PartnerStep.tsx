@@ -1,10 +1,10 @@
-import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
-import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
 import { c } from 'ttag';
 
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
+import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import checkConfirmation from '@proton/styles/assets/img/onboarding/img-check-confirmation.svg';
 

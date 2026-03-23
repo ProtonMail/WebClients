@@ -1,12 +1,12 @@
-import ContextMenu from '@proton/components/components/contextMenu/ContextMenu';
-import ContextMenuButton from '@proton/components/components/contextMenu/ContextMenuButton';
-import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import type { RefObject } from 'react';
 import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import ContextMenu from '@proton/components/components/contextMenu/ContextMenu';
+import ContextMenuButton from '@proton/components/components/contextMenu/ContextMenuButton';
+import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 

@@ -1,11 +1,3 @@
-import Checkbox from '@proton/components/components/input/Checkbox';
-import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
-import Icon from '@proton/components/components/icon/Icon';
-import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
-import Mark from '@proton/components/components/text/Mark';
-import SearchInput from '@proton/components/components/input/SearchInput';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import type { ChangeEvent } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -15,9 +7,17 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import Icon from '@proton/components/components/icon/Icon';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import SearchInput from '@proton/components/components/input/SearchInput';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Mark from '@proton/components/components/text/Mark';
+import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
+import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useLoading } from '@proton/hooks';
-import { useLabels } from '@proton/mail/store/labels/hooks';
 import { isCustomLabel } from '@proton/mail/helpers/location';
+import { useLabels } from '@proton/mail/store/labels/hooks';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
@@ -245,16 +245,18 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
         const promises = [];
 
         try {
-            if(selectAll) {
-                promises.push(applyLabels({
-                    elements,
-                    changes,
-                    createFilters: always,
-                    selectedLabelIDs: checkedIDs,
-                    labelID,
-                    selectAll,
-                    onCheckAll,
-                }));
+            if (selectAll) {
+                promises.push(
+                    applyLabels({
+                        elements,
+                        changes,
+                        createFilters: always,
+                        selectedLabelIDs: checkedIDs,
+                        labelID,
+                        selectAll,
+                        onCheckAll,
+                    })
+                );
             } else {
                 if (Object.keys(changes).length > 0 && elements.length > 0) {
                     promises.push(applyMultipleLocations({ elements, changes, createFilters: always }));

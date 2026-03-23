@@ -1,15 +1,15 @@
-import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
-import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
-import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
-import SidebarListItemContentIcon from '@proton/components/components/sidebar/SidebarListItemContentIcon';
-import SidebarListItemLink from '@proton/components/components/sidebar/SidebarListItemLink';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import { useHotkeys } from '@proton/components/hooks/useHotkeys';
-import useItemsDroppable from '@proton/components/containers/items/useItemsDroppable';
 import type { ReactNode } from 'react';
 import { memo, useCallback, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
+import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
+import SidebarListItemContentIcon from '@proton/components/components/sidebar/SidebarListItemContentIcon';
+import SidebarListItemLink from '@proton/components/components/sidebar/SidebarListItemLink';
+import useItemsDroppable from '@proton/components/containers/items/useItemsDroppable';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
+import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { useLoading } from '@proton/hooks';
 import type { IconName, IconSize } from '@proton/icons/types';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';

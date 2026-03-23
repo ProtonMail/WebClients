@@ -1,8 +1,8 @@
+import { useState } from 'react';
+
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useState } from 'react';
-
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { snoozeConversations, unsnoozeConversations } from '@proton/shared/lib/api/conversations';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

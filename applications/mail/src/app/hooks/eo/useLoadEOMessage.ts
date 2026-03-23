@@ -1,6 +1,6 @@
-import useApi from '@proton/components/hooks/useApi';
 import { useCallback, useEffect, useMemo } from 'react';
 
+import useApi from '@proton/components/hooks/useApi';
 import type { OutsideKey } from '@proton/mail/store/messages/messagesTypes';
 
 import { useEOMailDispatch, useEOMailSelector, useEOMailStore } from 'proton-mail/store/eo/hooks';

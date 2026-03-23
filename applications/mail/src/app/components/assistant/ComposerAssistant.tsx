@@ -1,5 +1,3 @@
-import type { EditorMetadata } from '@proton/components/components/editor/interface';
-import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import type { MutableRefObject } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
@@ -7,6 +5,8 @@ import throttle from 'lodash/throttle';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import type { EditorMetadata } from '@proton/components/components/editor/interface';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal';
 import useAssistantSubscriptionStatus from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
 import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, getHasAssistantStatus, useAssistant } from '@proton/llm/lib';

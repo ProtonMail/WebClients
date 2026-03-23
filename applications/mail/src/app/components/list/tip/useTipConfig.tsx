@@ -1,18 +1,18 @@
-import AutoDeleteUpsellModal from '@proton/components/components/upsell/modals/AutoDeleteUpsellModal';
-import DWMUpsellModal from '@proton/components/components/upsell/modals/DWMUpsellModal';
-import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
-import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
-import PmMeUpsellModal from '@proton/components/components/upsell/modals/PmMeUpsellModal';
-import useApi from '@proton/components/hooks/useApi';
-import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainAddress';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import AutoDeleteUpsellModal from '@proton/components/components/upsell/modals/AutoDeleteUpsellModal';
+import DWMUpsellModal from '@proton/components/components/upsell/modals/DWMUpsellModal';
 import IncreasePrivacyUpsellModal from '@proton/components/components/upsell/modals/IncreasePrivacyUpsellModal';
-import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
+import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
+import PmMeUpsellModal from '@proton/components/components/upsell/modals/PmMeUpsellModal';
+import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
+import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainAddress';
+import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';

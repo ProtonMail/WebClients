@@ -1,12 +1,12 @@
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Checkbox from '@proton/components/components/input/Checkbox';
-import Label from '@proton/components/components/label/Label';
-import Prompt from '@proton/components/components/prompt/Prompt';
 import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Label from '@proton/components/components/label/Label';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import Prompt from '@proton/components/components/prompt/Prompt';
 
 import type { Element } from '../../../models/element';
 

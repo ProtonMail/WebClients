@@ -1,10 +1,10 @@
-import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoints';
 import { useRef } from 'react';
 
 import { c } from 'ttag';
 
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useElementBreakpoints from '@proton/components/hooks/useElementBreakpoints';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import clsx from '@proton/utils/clsx';
 

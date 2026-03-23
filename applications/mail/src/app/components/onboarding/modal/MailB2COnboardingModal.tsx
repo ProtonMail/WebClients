@@ -1,9 +1,9 @@
-import OnboardingModal from '@proton/components/containers/onboarding/OnboardingModal';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import { useEffect, useState } from 'react';
 
 import { useWelcomeFlags } from '@proton/account';
+import OnboardingModal from '@proton/components/containers/onboarding/OnboardingModal';
 import type { OnboardingStepComponent } from '@proton/components/containers/onboarding/interface';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import isTruthy from '@proton/utils/isTruthy';
 

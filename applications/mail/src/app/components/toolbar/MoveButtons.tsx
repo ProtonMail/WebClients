@@ -1,8 +1,8 @@
-import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Vr } from '@proton/atoms/Vr/Vr';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcFire } from '@proton/icons/icons/IcFire';
 import { IcFireSlash } from '@proton/icons/icons/IcFireSlash';

@@ -1,13 +1,13 @@
-import Checkbox from '@proton/components/components/input/Checkbox';
-import Label from '@proton/components/components/label/Label';
-import Prompt from '@proton/components/components/prompt/Prompt';
-import useApi from '@proton/components/hooks/useApi';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Label from '@proton/components/components/label/Label';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import useApi from '@proton/components/hooks/useApi';
 import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 

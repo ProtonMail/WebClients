@@ -1,6 +1,6 @@
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { type PropsWithChildren, type RefObject, createContext, useContext, useRef } from 'react';
 
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';

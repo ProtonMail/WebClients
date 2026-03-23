@@ -4,12 +4,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import StepDot from '@proton/components/components/stepDot/StepDot';
 import StepDots from '@proton/components/components/stepDots/StepDots';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import blockEmails from '@proton/styles/assets/img/illustrations/checklist-block-emails.svg';
 import fullyEncrypted from '@proton/styles/assets/img/illustrations/checklist-fully-encrypted.svg';

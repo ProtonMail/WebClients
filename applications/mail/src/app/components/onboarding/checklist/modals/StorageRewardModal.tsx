@@ -1,10 +1,10 @@
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import { c } from 'ttag';
-
-import { Button } from '@proton/atoms/Button/Button';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import storageUnlocked from '@proton/styles/assets/img/illustrations/checklist-storage-reward.svg';
 

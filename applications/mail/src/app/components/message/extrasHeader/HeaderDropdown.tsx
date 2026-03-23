@@ -1,14 +1,14 @@
-import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { MutableRefObject, ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import type { DropdownButtonProps } from '@proton/components/components/dropdown/DropdownButton';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import generateUID from '@proton/utils/generateUID';
 
 export interface DropdownRenderProps {
