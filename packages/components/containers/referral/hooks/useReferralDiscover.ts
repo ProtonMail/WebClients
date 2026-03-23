@@ -1,24 +1,31 @@
 import { useCallback, useEffect } from 'react';
-import type { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import { fromUnixTime } from 'date-fns';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import { useFlag } from '@proton/unleash/useFlag';
-import { useUser } from '@proton/account/user/hooks';
 
-export const useReferralDiscover = (location?: ReturnType<typeof useLocation>) => {
+import { getIsReferralUserEligible } from './useReferralUserEligible';
+
+export const useReferralDiscover = () => {
+    const location = useLocation();
     const [userSettings] = useUserSettings();
     const [subscription] = useSubscription();
     const [user] = useUser();
     const { isFree } = user;
+
+    const app = getAppFromPathnameSafe(location.pathname);
+    const isUserEligible = getIsReferralUserEligible(userSettings, isFree, app);
 
     const hasNotificationsEnabled = hasBit(userSettings.News, NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS);
 
@@ -28,12 +35,12 @@ export const useReferralDiscover = (location?: ReturnType<typeof useLocation>) =
 
     const isFeatureActive = useFlag('ReferralExpansionDiscover');
     const isFreeUsersDiscoverFeatureActive = useFlag('ReferralFreeUsersDiscover');
-    const isUserEligible = !!userSettings?.Referral?.Eligible;
 
     const subscriptionStartedThirtyDaysAgo =
         !!subscription?.PeriodStart && new Date() > addDays(fromUnixTime(subscription.PeriodStart), 30);
 
-    const userIsFreeAndCreatedThirtyDaysAgo = isFree && !!user.CreateTime && new Date() > addDays(fromUnixTime(user.CreateTime), 30);
+    const userIsFreeAndCreatedThirtyDaysAgo =
+        isFree && !!user.CreateTime && new Date() > addDays(fromUnixTime(user.CreateTime), 30);
 
     const { update: updateReferralSpotlightSettings } = settingsSpotlightFeature;
     const { update: updateReferralTopBarButton } = topButtonFeature;
@@ -41,7 +48,11 @@ export const useReferralDiscover = (location?: ReturnType<typeof useLocation>) =
 
     const { show: shouldShowSettingsSpotlight, onClose: onCloseSettingsSpotlight } = useSpotlightOnFeature(
         FeatureCode.ReferralSpotlightSettings,
-        isFeatureActive && isUserEligible && hasNotificationsEnabled && (subscriptionStartedThirtyDaysAgo || (isFreeUsersDiscoverFeatureActive && userIsFreeAndCreatedThirtyDaysAgo))
+        isFeatureActive &&
+            isUserEligible &&
+            hasNotificationsEnabled &&
+            (subscriptionStartedThirtyDaysAgo ||
+                (isFreeUsersDiscoverFeatureActive && userIsFreeAndCreatedThirtyDaysAgo))
     );
 
     const handleCloseSettingsSpotlight = useCallback(() => {
