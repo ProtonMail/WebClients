@@ -20,6 +20,10 @@ interface CollapsibleOwnProps {
      * If true, the collapsible state can be controlled by the parent component and the expandedByDefault prop.
      */
     externallyControlled?: boolean;
+    /**
+     * Callback method to notify subscribers when the expanded/collapsed state updates.
+     */
+    onToggle?: (isOpen: boolean) => void;
 }
 
 type CollapsibleProps<E extends ElementType> = PolymorphicPropsWithoutRef<CollapsibleOwnProps, E>;
@@ -32,6 +36,7 @@ const Collapsible = <E extends ElementType = typeof defaultElement>({
     children: childrenProp,
     externallyControlled = false,
     as,
+    onToggle,
     ...rest
 }: CollapsibleProps<E>) => {
     const [isExpanded, setIsExpanded] = useState(expandByDefault);
@@ -47,7 +52,11 @@ const Collapsible = <E extends ElementType = typeof defaultElement>({
     const headerId = generateUID('collapsible');
 
     const toggle = () => {
-        setIsExpanded((prevState) => !prevState);
+        setIsExpanded((prevState) => {
+            const next = !prevState;
+            onToggle?.(next);
+            return next;
+        });
     };
 
     const contextValue: CollapsibleContextValue = {
