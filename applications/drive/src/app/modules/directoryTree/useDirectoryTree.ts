@@ -10,6 +10,8 @@ import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getDeviceName } from '../../utils/sdk/getNodeName';
 import { directoryTreeStoreFactory } from './directoryTreeStoreFactory';
+import { iterateSharedWithMeNodes } from './events/iterateSharedWithMeNodes';
+import { TreeEventManager } from './events/treeEventManager';
 import {
     DEVICES_ROOT_ID,
     SHARED_WITH_ME_ROOT_ID,
@@ -34,7 +36,11 @@ type TreeRootsStrategy =
     // Start the tree from a specific node (e.g. a subfolder)
     | { type: 'FROM_NODE'; rootNodeUid: string };
 
-function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: DirectoryTreeOptions) {
+function useDirectoryTree(
+    useDirectoryTreeStore: DirectoryTreeStore,
+    eventManager: TreeEventManager,
+    options?: DirectoryTreeOptions
+) {
     const { drive } = useDrive();
 
     const { items, addItem, expandedTreeIds, changeExpanded } = useDirectoryTreeStore(
@@ -94,31 +100,27 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
 
     const loadSharedWithMe = useCallback(
         async (abortSignal: AbortSignal) => {
-            try {
-                for await (const sharedNode of drive.iterateSharedNodesWithMe(abortSignal)) {
-                    const { uid, name, type } = getNodeEntity(sharedNode).node;
+            for (const { node } of await iterateSharedWithMeNodes(abortSignal)) {
+                const { uid, name, type, treeEventScopeId } = node;
 
-                    if (options?.onlyFolders && type !== NodeType.Folder) {
-                        continue;
-                    }
-
-                    const highestEffectiveRole = options?.loadPermissions
-                        ? await findEffectiveRole(drive, sharedNode.ok ? sharedNode.value : sharedNode.error)
-                        : undefined;
-                    addItem({
-                        nodeUid: uid,
-                        treeItemId: makeTreeItemId(SHARED_WITH_ME_ROOT_ID, uid),
-                        parentUid: SHARED_WITH_ME_ROOT_ID,
-                        name,
-                        type,
-                        expandable: type === NodeType.Folder,
-                        isSharedWithMe: true,
-                        highestEffectiveRole,
-                    });
+                if (options?.onlyFolders && type !== NodeType.Folder) {
+                    continue;
                 }
-            } catch (error) {
-                handleSdkError(error, { fallbackMessage: 'Failed to load shared items' });
-                throw error;
+
+                const highestEffectiveRole = options?.loadPermissions
+                    ? await findEffectiveRole(drive, node)
+                    : undefined;
+                addItem({
+                    nodeUid: uid,
+                    treeItemId: makeTreeItemId(SHARED_WITH_ME_ROOT_ID, uid),
+                    parentUid: SHARED_WITH_ME_ROOT_ID,
+                    name,
+                    type,
+                    expandable: type === NodeType.Folder,
+                    isSharedWithMe: true,
+                    highestEffectiveRole,
+                    treeEventScopeId,
+                });
             }
         },
         [drive, options?.onlyFolders, options?.loadPermissions, addItem]
@@ -151,7 +153,7 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
             try {
                 const iterateOptions = options?.onlyFolders ? { type: NodeType.Folder } : undefined;
                 for await (const node of drive.iterateFolderChildren(parentUid, iterateOptions, abortSignal)) {
-                    const { uid, name, type } = getNodeEntity(node).node;
+                    const { uid, name, type, treeEventScopeId } = getNodeEntity(node).node;
                     const highestEffectiveRole = options?.loadPermissions
                         ? await findEffectiveRole(drive, node.ok ? node.value : node.error)
                         : undefined;
@@ -160,6 +162,7 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
                         nodeUid: uid,
                         parentUid,
                         treeItemId: makeTreeItemId(parentUid, uid),
+                        treeEventScopeId,
                         name,
                         type,
                         expandable: type === NodeType.Folder,
@@ -191,34 +194,40 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
     const toggleExpand = useCallback(
         async (treeItemId: string) => {
             const shouldExpand = !expandedTreeIds.get(treeItemId);
+            const uid = getNodeUidFromTreeItemId(treeItemId);
+            if (!uid) {
+                return;
+            }
 
             if (shouldExpand) {
+                changeExpanded(treeItemId, true);
+                eventManager.syncSubscriptions();
                 const controller = new AbortController();
                 expandAbortControllers.current.set(treeItemId, controller);
-
-                const uid = getNodeUidFromTreeItemId(treeItemId);
-                if (!uid) {
-                    return;
+                try {
+                    await loadChildren(uid, controller.signal);
+                } catch (error) {
+                    sendErrorReport(error);
                 }
-
-                await loadChildren(uid, controller.signal);
             } else {
                 // Cancel ongoing work when collapsing
                 expandAbortControllers.current.get(treeItemId)?.abort();
                 expandAbortControllers.current.delete(treeItemId);
+                changeExpanded(treeItemId, false);
+                eventManager.syncSubscriptions();
             }
-
-            changeExpanded(treeItemId, !!shouldExpand);
         },
-        [changeExpanded, expandedTreeIds, loadChildren]
+        [changeExpanded, expandedTreeIds, loadChildren, eventManager]
     );
-    // Stop ongoing work when closing modal
+    // Stop ongoing work and unregister when closing modal
     useEffect(() => {
         return () => {
             expandAbortControllers.current.forEach((controller) => {
                 controller.abort();
             });
+            eventManager.destroy();
         };
+        // eventManager is stable (created once per tree in directoryTreeFactory)
     }, []);
 
     const initializeFromNode = useCallback(
@@ -316,12 +325,17 @@ function useDirectoryTree(useDirectoryTreeStore: DirectoryTreeStore, options?: D
         treeRoots: toTree([...items.values()], expandedTreeIds),
         addNode,
         clear: () => useDirectoryTreeStore.getState().clearStore(),
+        loadSharedWithMe,
     };
 }
 
 export function directoryTreeFactory() {
     const directoryTreeStore = directoryTreeStoreFactory();
-    return function useDirectoryTreeWithStore(options?: DirectoryTreeOptions) {
-        return useDirectoryTree(directoryTreeStore, options);
+    let eventManager: TreeEventManager | undefined;
+    return function useDirectoryTreeWithStore(context: string, options?: DirectoryTreeOptions) {
+        if (!eventManager) {
+            eventManager = new TreeEventManager(directoryTreeStore, context);
+        }
+        return useDirectoryTree(directoryTreeStore, eventManager, options);
     };
 }

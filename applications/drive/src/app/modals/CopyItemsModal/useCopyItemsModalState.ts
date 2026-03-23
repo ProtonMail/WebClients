@@ -31,7 +31,7 @@ export type CopyItemsModalInnerProps = {
 export type UseCopyItemsModalStateProps = ModalStateProps & CopyItemsModalInnerProps;
 
 export const useCopyItemsModalState = ({ itemsToCopy, onClose, ...modalProps }: UseCopyItemsModalStateProps) => {
-    const { initializeTree, get, toggleExpand, treeRoots, addNode } = useCopyModalDirectoryTree({
+    const { initializeTree, get, toggleExpand, treeRoots, addNode } = useCopyModalDirectoryTree('copyItemsModal', {
         onlyFolders: true,
         loadPermissions: true,
     });

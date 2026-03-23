@@ -86,11 +86,14 @@ export const useMoveItemsModalState = ({ onClose, nodeUids, ...modalProps }: Use
         return { type: 'FROM_NODE' as const, rootNodeUid: scopeMoveNodeUid || '' };
     }, [scopeMoveNodeUid]);
 
-    const { initializeTree, toggleExpand, treeRoots, addNode, clear } = useMoveItemsModalDirectoryTree({
-        onlyFolders: true,
-        loadPermissions: true,
-        treeRootsStrategy: rootStrategy,
-    });
+    const { initializeTree, toggleExpand, treeRoots, addNode, clear } = useMoveItemsModalDirectoryTree(
+        'moveItemsModal',
+        {
+            onlyFolders: true,
+            loadPermissions: true,
+            treeRootsStrategy: rootStrategy,
+        }
+    );
 
     const customOnClose = useCallback(() => {
         onClose();
