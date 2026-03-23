@@ -25,7 +25,7 @@ import { handleStartupMailto, handleAppReadyMailto } from "./utils/protocol/mail
 import { handleDeepLink, handleStartupDeepLink } from "./utils/protocol/deep_links";
 import { checkDefaultProtocols } from "./utils/protocol/default";
 import { initializeSentry } from "./utils/sentry";
-import { setRequestPermission, extendAppVersionHeader, appSession } from "./utils/session";
+import { setRequestPermission, extendAppVersionHeader } from "./utils/session";
 import { captureTopLevelRejection, captureUncaughtErrors } from "./utils/log/captureUncaughtErrors";
 import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
 import metrics from "./utils/metrics";
@@ -157,7 +157,6 @@ import { quitTracker } from "./utils/log/quitTracker";
     checkDefaultProtocols();
     connectNetLogger(getWebContentsViewName);
     measureRequestTime();
-    profiler.registerElectronSession(appSession());
 
     initializeUpdateChecks();
     new Notification();

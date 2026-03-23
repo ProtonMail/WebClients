@@ -1,9 +1,9 @@
 import { performance } from "node:perf_hooks";
 import { getAppURL } from "../../store/urlStore";
+import { webRequestRouter } from "../electronSession/webRequestRouter";
 
 export class StartupRequestRecorder {
     private enabled = false;
-    private session: Electron.Session;
     private iifeStart: number;
     private requestStartMap = new Map<number, number>();
     private resourceDurations: number[] = [];
@@ -13,10 +13,11 @@ export class StartupRequestRecorder {
     private mainFrameRequests = new Map<number, string>();
     public mainFrameFirstByteMs = new Map<string, number>();
 
-    public constructor(session: Electron.Session, iifeStart: number) {
+    private unsubscribers: Array<() => void> = [];
+
+    public constructor(iifeStart: number) {
         this.enabled = true;
         this.iifeStart = iifeStart;
-        this.session = session;
         this.hookRequestTiming();
     }
 
@@ -26,52 +27,60 @@ export class StartupRequestRecorder {
 
     private hookRequestTiming(): void {
         const appURL = getAppURL();
-        this.session.webRequest.onBeforeRequest((details, callback) => {
-            if (this.enabled && ["stylesheet", "script", "image", "font"].includes(details.resourceType)) {
-                this.requestStartMap.set(details.id, performance.now());
-            }
-            if (details.resourceType === "mainFrame") {
-                const viewName = details.url.startsWith(appURL.mail)
-                    ? "mail"
-                    : details.url.startsWith(appURL.calendar)
-                      ? "calendar"
-                      : details.url.startsWith(appURL.account)
-                        ? "account"
-                        : null;
 
-                // Only track our own views and only once per view
-                if (viewName && !this.mainFrameFirstByteMs.has(viewName)) {
-                    this.mainFrameRequests.set(details.id, viewName);
+        this.unsubscribers.push(
+            webRequestRouter.onBeforeRequest((details) => {
+                if (this.enabled && ["stylesheet", "script", "image", "font"].includes(details.resourceType)) {
+                    this.requestStartMap.set(details.id, performance.now());
                 }
-            }
-            callback({});
-        });
+                if (details.resourceType === "mainFrame") {
+                    const viewName = details.url.startsWith(appURL.mail)
+                        ? "mail"
+                        : details.url.startsWith(appURL.calendar)
+                          ? "calendar"
+                          : details.url.startsWith(appURL.account)
+                            ? "account"
+                            : null;
 
-        this.session.webRequest.onResponseStarted((details) => {
-            const viewName = this.mainFrameRequests.get(details.id);
-            if (viewName && !this.mainFrameFirstByteMs.has(viewName)) {
-                this.mainFrameFirstByteMs.set(viewName, performance.now() - this.iifeStart);
+                    // Only track our own views and only once per view
+                    if (viewName && !this.mainFrameFirstByteMs.has(viewName)) {
+                        this.mainFrameRequests.set(details.id, viewName);
+                    }
+                }
+            }),
+        );
+
+        this.unsubscribers.push(
+            webRequestRouter.onResponseStarted((details) => {
+                const viewName = this.mainFrameRequests.get(details.id);
+                if (viewName && !this.mainFrameFirstByteMs.has(viewName)) {
+                    this.mainFrameFirstByteMs.set(viewName, performance.now() - this.iifeStart);
+                    this.mainFrameRequests.delete(details.id);
+                }
+            }),
+        );
+
+        this.unsubscribers.push(
+            webRequestRouter.onCompleted((details) => {
+                const start = this.requestStartMap.get(details.id);
+                if (start !== undefined) {
+                    this.resourceDurations.push(performance.now() - start);
+                    this.requestStartMap.delete(details.id);
+                    if (details.fromCache) this.resourceCacheHits++;
+                    else this.resourceCacheMisses++;
+                }
+            }),
+        );
+
+        this.unsubscribers.push(
+            webRequestRouter.onErrorOccurred((details) => {
+                if (this.requestStartMap.has(details.id)) {
+                    this.requestStartMap.delete(details.id);
+                    this.resourceFailures++;
+                }
                 this.mainFrameRequests.delete(details.id);
-            }
-        });
-
-        this.session.webRequest.onCompleted((details) => {
-            const start = this.requestStartMap.get(details.id);
-            if (start !== undefined) {
-                this.resourceDurations.push(performance.now() - start);
-                this.requestStartMap.delete(details.id);
-                if (details.fromCache) this.resourceCacheHits++;
-                else this.resourceCacheMisses++;
-            }
-        });
-
-        this.session.webRequest.onErrorOccurred((details) => {
-            if (this.requestStartMap.has(details.id)) {
-                this.requestStartMap.delete(details.id);
-                this.resourceFailures++;
-            }
-            this.mainFrameRequests.delete(details.id);
-        });
+            }),
+        );
     }
 
     public buildResources() {
@@ -89,11 +98,8 @@ export class StartupRequestRecorder {
         };
     }
 
-    // Electron sessions only allow one handler at a time, so we can safely null these out.
     public cleanup(): void {
-        this.session.webRequest.onBeforeRequest(null);
-        this.session.webRequest.onResponseStarted(null);
-        this.session.webRequest.onCompleted(null);
-        this.session.webRequest.onErrorOccurred(null);
+        this.unsubscribers.forEach((unsub) => unsub());
+        this.unsubscribers = [];
     }
 }
