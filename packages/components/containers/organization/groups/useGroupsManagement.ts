@@ -9,7 +9,7 @@ import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useGroupMembers } from '@proton/account/groupMembers/hooks';
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { createGroup, editGroup } from '@proton/account/groups/actions';
-import { addGroupMemberThunk } from '@proton/account/groups/addGroupMember';
+import { addGroupMembersThunk } from '@proton/account/groups/addGroupMember';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useMembers } from '@proton/account/members/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -59,9 +59,9 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     const [customDomains, loadingCustomDomains] = useCustomDomains();
     const { getMemberPublicKeys } = useGroupKeys();
 
-    const addGroupMember = async (group: { ID: string; Address: Address }, email: string) => {
+    const addGroupMembers = async (group: { ID: string; Address: Address }, emails: string[]) => {
         try {
-            await dispatch(addGroupMemberThunk({ group, email, getMemberPublicKeys }));
+            await dispatch(addGroupMembersThunk({ group, emails, getMemberPublicKeys }));
         } catch (e: unknown) {
             handleError(e);
         }
@@ -290,13 +290,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             dispatch(updateGroup(Group));
         }
 
-        const addMembersPromises = newEmails.map((email) =>
-            addGroupMember({ ID: Group.ID, Address: Group.Address }, email).catch((error) => {
-                // eslint-disable-next-line no-console
-                console.error(`Failed to add recipient ${email}:`, error);
-            })
-        );
-        await Promise.all(addMembersPromises);
+        await addGroupMembers({ ID: Group.ID, Address: Group.Address }, newEmails);
 
         if (!isNewGroup) {
             dispatch(updateMembersAfterEdit({ groupId: Group.ID }));
