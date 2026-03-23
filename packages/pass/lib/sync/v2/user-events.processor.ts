@@ -43,7 +43,7 @@ export function* processUserEvents(event: SyncEventListOutput, options: RootSaga
 
     /** Trigger full sync and update `LastEventID` */
     if (event.FullRefresh) {
-        const synced: boolean = yield call(processFullRefresh);
+        const synced: boolean = yield call(processFullRefresh, options);
         return synced;
     }
 

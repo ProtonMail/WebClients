@@ -131,8 +131,8 @@ export function* migrateV2(options: RootSagaOptions) {
  * cursor and reverts strategy to LEGACY. Like `migrateV2`, runs at
  * boot-time only — if any step throws, the caller should keep the
  * current strategy and retry on next boot. */
-export function* rollbackV2() {
-    yield call(syncV1);
+export function* rollbackV2(options: RootSagaOptions) {
+    yield call(syncV1, options);
     yield call(updateSyncStrategy, SyncStrategy.LEGACY, null);
 }
 
@@ -140,7 +140,7 @@ export function* migrate(next: SyncStrategy, options: RootSagaOptions) {
     try {
         switch (next) {
             case SyncStrategy.LEGACY:
-                yield call(rollbackV2);
+                yield call(rollbackV2, options);
                 break;
             case SyncStrategy.USER_EVENTS:
                 yield call(migrateV2, options);
