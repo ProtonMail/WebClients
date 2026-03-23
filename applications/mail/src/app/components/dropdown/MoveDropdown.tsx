@@ -252,7 +252,7 @@ const MoveDropdown = ({
                                     data-level={folder.level}
                                     className="flex flex-nowrap items-center flex-1"
                                     data-testid={`folder-dropdown:folder-${folder.Name}`}
-                                    onClick={() => actualMoveFolder(selectedFolder?.ID || '')}
+                                    onClick={() => actualMoveFolder(folder.ID)}
                                 >
                                     <FolderIcon
                                         folder={folder}

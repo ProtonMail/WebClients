@@ -352,15 +352,6 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
         await withLoading(actualApplyLabels(changes));
     };
 
-    const handleApplyDirectly = async (labelID: string) => {
-        const updatedChanges = {
-            ...changes,
-            [labelID]: selectedLabelIDs[labelID] !== LabelState.On,
-        };
-
-        await actualApplyLabels(updatedChanges);
-    };
-
     return (
         <form className="flex flex-column flex-nowrap justify-start items-stretch flex-auto" onSubmit={handleSubmit}>
             <div className="flex shrink-0 justify-space-between items-center m-4 mb-0">
@@ -413,7 +404,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
                                 title={Name}
                                 className="flex flex-nowrap items-center flex-1"
                                 data-testid={`label-dropdown:label-${Name}`}
-                                onClick={() => handleApplyDirectly(ID)}
+                                onClick={() => handleCheck(ID)}
                             >
                                 <Icon name="circle-filled" size={4} color={Color} className="shrink-0 relative mx-2" />
                                 <span className="text-ellipsis">
