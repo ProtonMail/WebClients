@@ -1,7 +1,7 @@
-import type { IconName, IconSize } from 'packages/icons/types';
 import { c } from 'ttag';
 
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
+import type { IconName, IconSize } from '@proton/icons/types';
 
 export const getModalTitle = () => c('q1campaign: Title').t`SPRING SALE`;
 export const getCTAContent = () => {
