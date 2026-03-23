@@ -9,12 +9,16 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 
+import FileIcon from '@proton/components/components/fileIcon/FileIcon';
+
 import type { HandleEditMessage } from '../../../../../hooks/useLumoActions';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../../../../redux/hooks';
 import { selectAttachments } from '../../../../../redux/selectors';
 import type { Attachment } from '../../../../../types';
 import { sendMessageEditEvent } from '../../../../../util/telemetry';
+import { getMimeTypeFromExtension } from '../../../../../util/filetypes';
+import { parseFileReferences } from '../../../../../util/fileReferences';
 import { AttachmentFileCard, FileContentModal } from '../../../../Files/Common';
 import { LazyProgressiveMarkdownRenderer } from '../../../../LumoMarkdown/LazyMarkdownComponents';
 import SiblingSelector from '../../../../SiblingSelector';
@@ -22,6 +26,94 @@ import useCollapsibleMessageContent from '../useCollapsibleMessageContent';
 import MessageEditor from './MessageEditor';
 
 import './UserMessage.scss';
+
+interface FileMentionChipProps {
+    filename: string;
+    attachment: Attachment | null;
+    onView?: (attachment: Attachment) => void;
+}
+
+const FileMentionChip = ({ filename, attachment, onView }: FileMentionChipProps) => {
+    const mimeType = getMimeTypeFromExtension(filename);
+    const canPreview = Boolean(attachment && onView);
+
+    const handleClick = () => {
+        if (attachment && onView) {
+            onView(attachment);
+        }
+    };
+
+    const className =
+        'inline-flex items-center gap-1 align-middle rounded border border-weak bg-weak px-2 py-0.5 text-sm transition-colors ' +
+        (canPreview ? 'cursor-pointer hover:border-norm hover:bg-norm' : '');
+
+    return (
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+        <span className={className} title={filename} onClick={canPreview ? handleClick : undefined}>
+            <FileIcon mimeType={mimeType} size={3} className="shrink-0" />
+            <span className="max-w-48 overflow-hidden text-ellipsis whitespace-nowrap">{filename}</span>
+        </span>
+    );
+};
+
+interface MessageContentWithMentionsProps {
+    content: string;
+    message: Message;
+    allAttachments: Record<string, Attachment>;
+    onView: (attachment: Attachment) => void;
+}
+
+const MessageContentWithMentions = ({ content, message, allAttachments, onView }: MessageContentWithMentionsProps) => {
+    const refs = parseFileReferences(content);
+    if (refs.length === 0) {
+        return <LazyProgressiveMarkdownRenderer content={content} isStreaming={false} message={message} />;
+    }
+
+    const nodes: React.ReactNode[] = [];
+    let lastIndex = 0;
+    const sorted = [...refs].sort((a, b) => a.startIndex - b.startIndex);
+
+    for (const ref of sorted) {
+        if (ref.startIndex > lastIndex) {
+            nodes.push(
+                <span key={`text-${lastIndex}`} className="whitespace-pre-line">
+                    {content.slice(lastIndex, ref.startIndex)}
+                </span>
+            );
+        }
+
+        // Find the attachment for this mention: prefer one already in this message's list,
+        // fall back to any attachment with a matching filename in the Redux store.
+        const fromMessage = (message.attachments || []).find(
+            (a) => a.filename.toLowerCase() === ref.fileName.toLowerCase()
+        );
+        const attachment = fromMessage
+            ? (allAttachments[fromMessage.id] ?? null)
+            : (Object.values(allAttachments).find(
+                  (a) => a.filename.toLowerCase() === ref.fileName.toLowerCase()
+              ) ?? null);
+
+        nodes.push(
+            <FileMentionChip
+                key={`mention-${ref.startIndex}`}
+                filename={ref.fileName}
+                attachment={attachment}
+                onView={onView}
+            />
+        );
+        lastIndex = ref.endIndex;
+    }
+
+    if (lastIndex < content.length) {
+        nodes.push(
+            <span key={`text-${lastIndex}`} className="whitespace-pre-line">
+                {content.slice(lastIndex)}
+            </span>
+        );
+    }
+
+    return <>{nodes}</>;
+};
 
 interface UserActionToolbarProps {
     onEdit: () => void;
@@ -145,10 +237,11 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
                         )}
                         ref={contentRef}
                     >
-                        <LazyProgressiveMarkdownRenderer
+                        <MessageContentWithMentions
                             content={messageContent || ''}
-                            isStreaming={false}
                             message={message}
+                            allAttachments={allAttachments}
+                            onView={handleViewFile}
                         />
                     </div>
                 </div>
