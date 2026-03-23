@@ -373,9 +373,15 @@ export const ScheduleMeetingForm = ({
                 )
             }
             <div className="flex md:items-center justify-center">
-                <div
+                <form
                     className={`create-container md:w-custom flex flex-column gap-2 variant-${variant}`}
                     style={{ '--md-w-custom': '35rem' }}
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        if (!isDisabled && !loading && !loadingDelete && !result) {
+                            void withLoading(handleSubmit());
+                        }
+                    }}
                 >
                     <div className="text-center">
                         <ScheduleMeetingSvgIcon variant={variant} />
@@ -401,7 +407,7 @@ export const ScheduleMeetingForm = ({
                         <InputFieldTwo
                             id="meetingName"
                             name="meetingName"
-                            placeholder={c('Placeholder').t`Enter meeting title`}
+                            placeholder={c('Placeholder').t`e.g., Team sync, project update`}
                             onChange={(e) => {
                                 setValues({ ...values, meetingName: e.target.value });
                                 setTouched({ ...touched, meetingName: true });
@@ -514,6 +520,7 @@ export const ScheduleMeetingForm = ({
                     </div>
                     <div className="w-full flex flex-nowrap justify-center flex-row mt-10 gap-4">
                         <Button
+                            type="button"
                             className="tertiary rounded-full text-semibold w-full"
                             onClick={() => (meeting ? withLoadingDelete(handleDeleteMeeting(meeting)) : onClose())}
                             size="large"
@@ -523,14 +530,14 @@ export const ScheduleMeetingForm = ({
                             {meeting ? c('Action').t`Delete` : c('Action').t`Cancel`}
                         </Button>
                         <Button
+                            type="submit"
                             className="primary rounded-full text-semibold w-full"
-                            onClick={() => withLoading(handleSubmit)}
                             size="large"
                             disabled={isDisabled || loading || loadingDelete || !!result}
                             loading={loading}
                         >{c('Action').t`Save`}</Button>
                     </div>
-                </div>
+                </form>
             </div>
         </>
     );
