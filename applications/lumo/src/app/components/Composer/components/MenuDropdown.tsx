@@ -16,7 +16,15 @@ export interface MenuItemProps {
     rightElement?: React.ReactNode;
 }
 
-export const MenuItem = ({ iconName, getLabel, getDescription, badge, onClick, onClose, rightElement }: MenuItemProps) => (
+export const MenuItem = ({
+    iconName,
+    getLabel,
+    getDescription,
+    badge,
+    onClick,
+    onClose,
+    rightElement,
+}: MenuItemProps) => (
     <DropdownMenuButton
         onClick={() => {
             onClick();
@@ -25,15 +33,13 @@ export const MenuItem = ({ iconName, getLabel, getDescription, badge, onClick, o
         className="justify-start"
     >
         <div className="flex items-center gap-3 w-full">
-            <Icon name={iconName} size={4} className="color-weak shrink-0" />
+            <Icon name={iconName} size={4} className="shrink-0" />
             <div className="flex flex-column flex-1 min-w-0">
                 <div className="flex items-center gap-2">
                     <span className="text-sm font-medium">{getLabel()}</span>
                     {badge}
                 </div>
-                {getDescription && (
-                    <span className="text-xs color-hint text-left">{getDescription()}</span>
-                )}
+                {getDescription && <span className="text-xs color-hint text-left">{getDescription()}</span>}
             </div>
             {rightElement}
         </div>
