@@ -1,6 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { globalReset } from '../actions';
@@ -100,6 +101,7 @@ export const newElementsState = ({
     const defaultParams: ElementsStateParams = {
         labelID: MAILBOX_LABEL_IDS.INBOX,
         conversationMode: true,
+        categoryIDs: [],
         filter: {},
         sort: { sort: 'Time', desc: true },
         search: {},
@@ -133,6 +135,9 @@ const elementsSlice = createSlice({
         },
         updateStateParams: (state, action: PayloadAction<Partial<ElementsStateParams>>) => {
             state.params = { ...(state.params || {}), ...action.payload };
+        },
+        updateCategoryIDs: (state, action: PayloadAction<{ categoryIDs: CategoryLabelID[] }>) => {
+            state.params = { ...(state.params || {}), categoryIDs: action.payload.categoryIDs };
         },
     },
     extraReducers: (builder) => {
