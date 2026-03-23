@@ -55,7 +55,6 @@ const MockIpcRecorder = IpcRecorder as jest.MockedClass<typeof IpcRecorder>;
 
 const mockPerfNow = performance.now as jest.Mock;
 const mockGetSettings = getSettings as jest.Mock;
-const mockElectronSession = {} as Electron.Session;
 
 describe("profiler — buildStartup", () => {
     beforeEach(() => {
@@ -66,7 +65,6 @@ describe("profiler — buildStartup", () => {
         (process as any).getCreationTime = jest.fn().mockReturnValue(null);
         mockMainFrameFirstByteMs.clear();
         profilerTestOnly.resetAll();
-        profiler.registerElectronSession(mockElectronSession);
         profiler.init(Date.now(), 0);
     });
 
@@ -220,7 +218,6 @@ describe("profiler — mark() side effects", () => {
         (process as any).getCreationTime = jest.fn().mockReturnValue(null);
         mockMainFrameFirstByteMs.clear();
         profilerTestOnly.resetAll();
-        profiler.registerElectronSession(mockElectronSession);
         profiler.init(Date.now(), 0);
     });
 

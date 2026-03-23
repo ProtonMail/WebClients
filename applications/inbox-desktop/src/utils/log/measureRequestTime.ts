@@ -1,19 +1,17 @@
 import { mainLogger } from ".";
-import { appSession } from "../session";
+import { webRequestRouter } from "../electronSession/webRequestRouter";
 
 export function measureRequestTime() {
-    const electronSession = appSession();
     const requestStartTimestampMap = new Map<number, number>();
     let loadTimeList: number[] = [];
 
-    electronSession.webRequest.onBeforeRequest((details, callback) => {
+    webRequestRouter.onBeforeRequest((details) => {
         if (["stylesheet", "script", "image", "font"].includes(details.resourceType)) {
             requestStartTimestampMap.set(details.id, performance.now());
         }
-        callback({});
     });
 
-    electronSession.webRequest.onCompleted((details) => {
+    webRequestRouter.onCompleted((details) => {
         const startTimestamp = requestStartTimestampMap.get(details.id);
         if (startTimestamp) {
             requestStartTimestampMap.delete(details.id);
