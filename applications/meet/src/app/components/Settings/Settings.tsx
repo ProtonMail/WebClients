@@ -129,7 +129,7 @@ export const Settings = () => {
                                     pipEnabled ? 'color-norm' : 'color-hint'
                                 )}
                                 htmlFor="pip-enabled"
-                            >{c('Action').t`Picture-in-picture mode`}</label>
+                            >{c('Action').t`Show floating thumbnail during screensharing`}</label>
                             <Toggle
                                 id="pip-enabled"
                                 checked={pipEnabled}
