@@ -40,7 +40,7 @@ export function SearchViewLegacy() {
                 toolbar={
                     <DriveToolbar
                         //TODO: We don't support search view and direct sharing so we assume that user is owner.
-                        permissions={SHARE_MEMBER_PERMISSIONS.OWNER}
+                        permissions={SHARE_MEMBER_PERMISSIONS.ADMIN_EDITOR}
                         volumeId={activeFolder.volumeId}
                         shareId={activeFolder.shareId}
                         linkId={activeFolder.linkId}
