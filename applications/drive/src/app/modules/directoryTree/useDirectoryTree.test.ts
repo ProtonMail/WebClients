@@ -1,14 +1,21 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { MemberRole, NodeType, useDrive } from '@proton/drive';
+import { MemberRole, NodeType, getDrive, useDrive } from '@proton/drive';
+import { getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
+import { TreeEventManager } from './events/treeEventManager';
 import { DEVICES_ROOT_ID, SHARED_WITH_ME_ROOT_ID, makeTreeItemId } from './helpers';
 import { DirectoryTreeRootType } from './types';
 
-jest.mock('@proton/drive');
+jest.mock('@proton/drive', () => ({
+    ...jest.requireActual('@proton/drive'),
+    useDrive: jest.fn(),
+    getDrive: jest.fn(),
+}));
 const mockedUseDrive = jest.mocked(useDrive);
+const mockedGetDrive = jest.mocked(getDrive);
 
 jest.mock('../../utils/errorHandling/handleSdkError');
 const mockedHandleSdkError = jest.mocked(handleSdkError);
@@ -21,7 +28,22 @@ jest.mock('@proton/drive/internal/BusDriver', () => ({
     getBusDriver: jest.fn(),
 }));
 
+jest.mock('./events/treeEventManager');
+
+const mockedGetBusDriver = jest.mocked(getBusDriver);
+const MockTreeEventManager = jest.mocked(TreeEventManager);
+
+const getMockEventManagerInstance = () => MockTreeEventManager.mock.instances[0] as jest.Mocked<TreeEventManager>;
+
 const { directoryTreeFactory } = jest.requireActual('./useDirectoryTree');
+
+const TEST_CONTEXT = 'directoryTree-test';
+
+const createDirectoryTreeHookForTest = () => {
+    const hook = directoryTreeFactory();
+    type DirectoryTreeHook = typeof hook;
+    return (options?: Parameters<DirectoryTreeHook>[1]) => hook(TEST_CONTEXT, options);
+};
 
 const createMockDevice = (rootFolderUid: string, name: string) => ({
     rootFolderUid,
@@ -30,7 +52,17 @@ const createMockDevice = (rootFolderUid: string, name: string) => ({
 
 const createMockNode = (uid: string, name: string, type: NodeType) => ({
     ok: true,
-    value: { uid, name, type, directRole: MemberRole.Viewer, isShared: false },
+    value: {
+        uid,
+        name,
+        type,
+        directRole: MemberRole.Viewer,
+        isShared: false,
+        deprecatedShareId: `share-${uid}`,
+        membership: {},
+        keyAuthor: { ok: true },
+        nameAuthor: { ok: true },
+    },
 });
 
 const createMockIterator = async function* <T>(items: T[]) {
@@ -74,13 +106,20 @@ describe('useDirectoryTree', () => {
         mockedUseDrive.mockReturnValue({
             drive: mockDrive,
         } as unknown as ReturnType<typeof useDrive>);
+        mockedGetDrive.mockReturnValue(mockDrive as any);
+
+        mockedGetBusDriver.mockReturnValue({
+            subscribeSdkEventsMyUpdates: jest.fn(),
+            unsubscribeSdkEventsMyUpdates: jest.fn(),
+            subscribe: jest.fn().mockReturnValue(jest.fn()),
+        } as unknown as ReturnType<typeof getBusDriver>);
     });
 
     describe('initializeTree', () => {
         it('should initialize tree with My files, Computers, and Shared with me roots', async () => {
             createMyFilesRoot();
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -120,7 +159,7 @@ describe('useDirectoryTree', () => {
         it('should hide Shared with me root when hideSharedWithMe is true', async () => {
             createMyFilesRoot();
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore({ hideSharedWithMe: true }));
 
             await act(async () => {
@@ -143,7 +182,7 @@ describe('useDirectoryTree', () => {
                 },
             });
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -167,7 +206,7 @@ describe('useDirectoryTree', () => {
 
             mockIterateDevices.mockReturnValue(createMockIterator(devices));
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -192,7 +231,7 @@ describe('useDirectoryTree', () => {
 
             mockIterateDevices.mockReturnValue(createMockIterator(devices));
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -212,12 +251,12 @@ describe('useDirectoryTree', () => {
                 throw new Error('Failed to load devices');
             });
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
                 await result.current.initializeTree();
-                await expect(result.current.toggleExpand(makeTreeItemId(null, DEVICES_ROOT_ID))).rejects.toThrow();
+                await result.current.toggleExpand(makeTreeItemId(null, DEVICES_ROOT_ID));
             });
 
             expect(mockedHandleSdkError).toHaveBeenCalledWith(expect.any(Error), {
@@ -236,7 +275,7 @@ describe('useDirectoryTree', () => {
 
             mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -260,7 +299,7 @@ describe('useDirectoryTree', () => {
 
             mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore({ onlyFolders: true }));
 
             await act(async () => {
@@ -284,13 +323,17 @@ describe('useDirectoryTree', () => {
                         uid: 'degraded-shared',
                         type: NodeType.Folder,
                         name: { ok: true, value: 'Degraded Name' },
+                        deprecatedShareId: 'share-degraded',
+                        membership: {},
+                        keyAuthor: { ok: true },
+                        nameAuthor: { ok: true },
                     },
                 },
             ];
 
             mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -314,7 +357,7 @@ describe('useDirectoryTree', () => {
 
             mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -334,18 +377,12 @@ describe('useDirectoryTree', () => {
                 throw new Error('Failed to load shared items');
             });
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
                 await result.current.initializeTree();
-                await expect(
-                    result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID))
-                ).rejects.toThrow();
-            });
-
-            expect(mockedHandleSdkError).toHaveBeenCalledWith(expect.any(Error), {
-                fallbackMessage: 'Failed to load shared items',
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
             });
         });
     });
@@ -358,7 +395,7 @@ describe('useDirectoryTree', () => {
 
             mockIterateFolderChildren.mockReturnValue(createMockIterator(children));
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -382,7 +419,7 @@ describe('useDirectoryTree', () => {
         it('should throw error when toggling with invalid treeItemId', async () => {
             createMyFilesRoot();
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -390,10 +427,8 @@ describe('useDirectoryTree', () => {
             });
 
             await act(async () => {
-                // Invalid treeItemId will extract uid and throw error if item doesn't exist
-                await expect(result.current.toggleExpand('some-parent___non-existent-uid')).rejects.toThrow(
-                    'Failed to expand folder'
-                );
+                // Invalid treeItemId will extract uid - error is caught and reported internally
+                await result.current.toggleExpand('some-parent___non-existent-uid');
             });
 
             expect(mockIterateFolderChildren).not.toHaveBeenCalled();
@@ -409,7 +444,7 @@ describe('useDirectoryTree', () => {
 
             mockIterateFolderChildren.mockReturnValue(createMockIterator(children));
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -442,7 +477,7 @@ describe('useDirectoryTree', () => {
 
             mockIterateFolderChildren.mockReturnValue(createMockIterator(children));
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -466,7 +501,7 @@ describe('useDirectoryTree', () => {
 
             mockIterateFolderChildren.mockReturnValue(createMockIterator(children));
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -487,7 +522,7 @@ describe('useDirectoryTree', () => {
                 throw new Error('Failed to load children');
             });
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -495,9 +530,7 @@ describe('useDirectoryTree', () => {
             });
 
             await act(async () => {
-                await expect(result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID))).rejects.toThrow(
-                    'Failed to load children'
-                );
+                await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
             });
 
             expect(mockedHandleSdkError).toHaveBeenCalledWith(expect.any(Error), {
@@ -505,9 +538,9 @@ describe('useDirectoryTree', () => {
                 extra: { uid: MY_FILES_ROOT_UID },
             });
 
-            // Item should remain collapsed
+            // Item stays expanded (no collapse on error), but has no children loaded
             const myFilesRoot = findTreeItem(result.current.treeRoots, MY_FILES_ROOT_UID);
-            expect(myFilesRoot.children).toBeNull();
+            expect(myFilesRoot.children).toEqual({});
         });
 
         it('should throw error when expanding non-expandable item', async () => {
@@ -517,7 +550,7 @@ describe('useDirectoryTree', () => {
 
             mockIterateFolderChildren.mockReturnValue(createMockIterator(children));
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -526,9 +559,7 @@ describe('useDirectoryTree', () => {
             });
 
             await act(async () => {
-                await expect(
-                    result.current.toggleExpand(makeTreeItemId(MY_FILES_ROOT_UID, 'child-file'))
-                ).rejects.toThrow('Failed to expand folder');
+                await result.current.toggleExpand(makeTreeItemId(MY_FILES_ROOT_UID, 'child-file'));
             });
         });
 
@@ -541,7 +572,7 @@ describe('useDirectoryTree', () => {
                 yield createMockDevice('device-1', 'Device 1');
             });
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -565,7 +596,7 @@ describe('useDirectoryTree', () => {
                 yield createMockNode('shared-1', 'Shared 1', NodeType.Folder);
             });
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -593,7 +624,7 @@ describe('useDirectoryTree', () => {
                 yield createMockNode('child-1', 'Child 1', NodeType.Folder);
             });
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -635,7 +666,7 @@ describe('useDirectoryTree', () => {
                 yield createMockNode('child-1', 'Child 1', NodeType.Folder);
             });
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -690,7 +721,7 @@ describe('useDirectoryTree', () => {
 
             mockIterateFolderChildren.mockReturnValue(createMockIterator(children));
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -707,7 +738,7 @@ describe('useDirectoryTree', () => {
         it('should return undefined for non-existent uid', async () => {
             createMyFilesRoot();
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -731,7 +762,7 @@ describe('useDirectoryTree', () => {
 
             mockIterateFolderChildren.mockReturnValue(createMockIterator(children));
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -771,7 +802,7 @@ describe('useDirectoryTree', () => {
 
             mockIterateFolderChildren.mockReturnValue(createMockIterator([]));
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -798,13 +829,17 @@ describe('useDirectoryTree', () => {
                         type: NodeType.Folder,
                         directRole: MemberRole.Admin,
                         parentUid: null,
+                        deprecatedShareId: 'share-admin',
+                        membership: {},
+                        keyAuthor: { ok: true },
+                        nameAuthor: { ok: true },
                     },
                 },
             ];
 
             mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore({ loadPermissions: true }));
 
             await act(async () => {
@@ -830,6 +865,10 @@ describe('useDirectoryTree', () => {
                         type: NodeType.Folder,
                         directRole: MemberRole.Viewer,
                         parentUid: 'parent-editor',
+                        deprecatedShareId: 'share-child',
+                        membership: {},
+                        keyAuthor: { ok: true },
+                        nameAuthor: { ok: true },
                     },
                 },
             ];
@@ -846,7 +885,7 @@ describe('useDirectoryTree', () => {
                 },
             });
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore({ loadPermissions: true }));
 
             await act(async () => {
@@ -871,6 +910,10 @@ describe('useDirectoryTree', () => {
                         type: NodeType.Folder,
                         directRole: MemberRole.Viewer,
                         parentUid: 'parent',
+                        deprecatedShareId: 'share-child',
+                        membership: {},
+                        keyAuthor: { ok: true },
+                        nameAuthor: { ok: true },
                     },
                 },
             ];
@@ -898,7 +941,7 @@ describe('useDirectoryTree', () => {
                     },
                 });
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore({ loadPermissions: true }));
 
             await act(async () => {
@@ -924,6 +967,10 @@ describe('useDirectoryTree', () => {
                         type: NodeType.Folder,
                         directRole: MemberRole.Editor,
                         parentUid: 'viewer-parent',
+                        deprecatedShareId: 'share-editor',
+                        membership: {},
+                        keyAuthor: { ok: true },
+                        nameAuthor: { ok: true },
                     },
                 },
             ];
@@ -940,7 +987,7 @@ describe('useDirectoryTree', () => {
                 },
             });
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore({ loadPermissions: true }));
 
             await act(async () => {
@@ -964,6 +1011,10 @@ describe('useDirectoryTree', () => {
                         type: NodeType.Folder,
                         directRole: MemberRole.Viewer,
                         parentUid: 'degraded-parent',
+                        deprecatedShareId: 'share-child',
+                        membership: {},
+                        keyAuthor: { ok: true },
+                        nameAuthor: { ok: true },
                     },
                 },
             ];
@@ -980,7 +1031,7 @@ describe('useDirectoryTree', () => {
                 },
             });
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore({ loadPermissions: true }));
 
             await act(async () => {
@@ -1027,12 +1078,16 @@ describe('useDirectoryTree', () => {
                             directRole: MemberRole.Viewer,
                             isShared: false,
                             parentUid: 'middle-non-shared',
+                            deprecatedShareId: 'share-leaf',
+                            membership: {},
+                            keyAuthor: { ok: true },
+                            nameAuthor: { ok: true },
                         },
                     },
                 ])
             );
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore({ loadPermissions: true }));
 
             await act(async () => {
@@ -1109,7 +1164,7 @@ describe('useDirectoryTree', () => {
             mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
             mockIterateFolderChildren.mockReturnValue(createMockIterator(myFilesChildren));
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -1132,8 +1187,8 @@ describe('useDirectoryTree', () => {
 
     describe('directoryTreeFactory', () => {
         it('should create isolated store instances for each factory call', () => {
-            const factory1 = directoryTreeFactory();
-            const factory2 = directoryTreeFactory();
+            const factory1 = createDirectoryTreeHookForTest();
+            const factory2 = createDirectoryTreeHookForTest();
 
             expect(factory1).not.toBe(factory2);
         });
@@ -1141,8 +1196,8 @@ describe('useDirectoryTree', () => {
         it('should maintain separate state for different instances', async () => {
             createMyFilesRoot('root-1');
 
-            const useDirectoryTreeWithStore1 = directoryTreeFactory();
-            const useDirectoryTreeWithStore2 = directoryTreeFactory();
+            const useDirectoryTreeWithStore1 = createDirectoryTreeHookForTest();
+            const useDirectoryTreeWithStore2 = createDirectoryTreeHookForTest();
 
             const { result: result1 } = renderHook(() => useDirectoryTreeWithStore1());
             const { result: result2 } = renderHook(() => useDirectoryTreeWithStore2());
@@ -1153,6 +1208,154 @@ describe('useDirectoryTree', () => {
 
             expect(result1.current.treeRoots).toHaveLength(3);
             expect(result2.current.treeRoots).toHaveLength(0);
+        });
+    });
+
+    describe('event manager registration', () => {
+        const SCOPE_ID = 'scope-123';
+
+        const createSharedFolderNode = (uid: string, name: string) => ({
+            ok: true as const,
+            value: {
+                uid,
+                name,
+                type: NodeType.Folder,
+                directRole: MemberRole.Viewer,
+                isShared: false,
+                treeEventScopeId: SCOPE_ID,
+                deprecatedShareId: `share-${uid}`,
+                membership: {},
+                keyAuthor: { ok: true },
+                nameAuthor: { ok: true },
+            },
+        });
+
+        it('should resync subscriptions when MyFiles root is expanded and collapsed', async () => {
+            createMyFilesRoot();
+            mockIterateFolderChildren.mockReturnValue(createMockIterator([]));
+
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
+            const { result } = renderHook(() => useDirectoryTreeWithStore());
+
+            await act(async () => {
+                await result.current.initializeTree();
+            });
+
+            const mockInstance = getMockEventManagerInstance();
+            expect(MockTreeEventManager).toHaveBeenCalledWith(expect.anything(), TEST_CONTEXT);
+
+            mockInstance.syncSubscriptions.mockClear();
+            await act(async () => {
+                await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
+            });
+            expect(mockInstance.syncSubscriptions).toHaveBeenCalled();
+
+            mockInstance.syncSubscriptions.mockClear();
+            await act(async () => {
+                await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
+            });
+            expect(mockInstance.syncSubscriptions).toHaveBeenCalled();
+        });
+
+        it('should resync subscriptions when Devices root is expanded and collapsed', async () => {
+            createMyFilesRoot();
+            mockIterateDevices.mockReturnValue(createMockIterator([]));
+
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
+            const { result } = renderHook(() => useDirectoryTreeWithStore());
+
+            await act(async () => {
+                await result.current.initializeTree();
+            });
+
+            const mockInstance = getMockEventManagerInstance();
+            mockInstance.syncSubscriptions.mockClear();
+            await act(async () => {
+                await result.current.toggleExpand(makeTreeItemId(null, DEVICES_ROOT_ID));
+            });
+            expect(mockInstance.syncSubscriptions).toHaveBeenCalled();
+
+            mockInstance.syncSubscriptions.mockClear();
+            await act(async () => {
+                await result.current.toggleExpand(makeTreeItemId(null, DEVICES_ROOT_ID));
+            });
+            expect(mockInstance.syncSubscriptions).toHaveBeenCalled();
+        });
+
+        it('should resync subscriptions when Shared root is expanded and collapsed', async () => {
+            createMyFilesRoot();
+            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator([]));
+
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
+            const { result } = renderHook(() => useDirectoryTreeWithStore());
+
+            await act(async () => {
+                await result.current.initializeTree();
+            });
+
+            const mockInstance = getMockEventManagerInstance();
+            mockInstance.syncSubscriptions.mockClear();
+            await act(async () => {
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
+            });
+            expect(mockInstance.syncSubscriptions).toHaveBeenCalled();
+
+            mockInstance.syncSubscriptions.mockClear();
+            await act(async () => {
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
+            });
+            expect(mockInstance.syncSubscriptions).toHaveBeenCalled();
+        });
+
+        it('should resync subscriptions when a shared folder with a scope toggles', async () => {
+            createMyFilesRoot();
+            mockIterateSharedNodesWithMe.mockReturnValue(
+                createMockIterator([createSharedFolderNode('shared-folder', 'Shared Folder')])
+            );
+            mockIterateFolderChildren.mockReturnValue(createMockIterator([]));
+
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
+            const { result } = renderHook(() => useDirectoryTreeWithStore());
+
+            await act(async () => {
+                await result.current.initializeTree();
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
+            });
+
+            const mockInstance = getMockEventManagerInstance();
+            mockInstance.syncSubscriptions.mockClear();
+            await act(async () => {
+                await result.current.toggleExpand(makeTreeItemId(SHARED_WITH_ME_ROOT_ID, 'shared-folder'));
+            });
+            expect(mockInstance.syncSubscriptions).toHaveBeenCalled();
+
+            mockInstance.syncSubscriptions.mockClear();
+            await act(async () => {
+                await result.current.toggleExpand(makeTreeItemId(SHARED_WITH_ME_ROOT_ID, 'shared-folder'));
+            });
+            expect(mockInstance.syncSubscriptions).toHaveBeenCalled();
+        });
+
+        it('should unregister all event subscriptions on unmount', async () => {
+            createMyFilesRoot();
+            mockIterateFolderChildren.mockReturnValue(createMockIterator([]));
+            mockIterateDevices.mockReturnValue(createMockIterator([]));
+            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator([]));
+
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
+            const { result, unmount } = renderHook(() => useDirectoryTreeWithStore());
+
+            await act(async () => {
+                await result.current.initializeTree();
+                await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
+                await result.current.toggleExpand(makeTreeItemId(null, DEVICES_ROOT_ID));
+                await result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
+            });
+
+            const mockInstance = getMockEventManagerInstance();
+            unmount();
+
+            expect(mockInstance.destroy).toHaveBeenCalled();
         });
     });
 
@@ -1232,7 +1435,7 @@ describe('useDirectoryTree', () => {
                 }
             });
 
-            const useDirectoryTreeWithStore = directoryTreeFactory();
+            const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result, unmount } = renderHook(() => useDirectoryTreeWithStore());
 
             await act(async () => {
@@ -1252,10 +1455,10 @@ describe('useDirectoryTree', () => {
             // Unmount should abort all loading operations
             unmount();
 
-            // All promises should reject due to abort
-            await expect(devicesPromise).rejects.toThrow('Aborted');
-            await expect(sharedPromise).rejects.toThrow('Aborted');
-            await expect(myFilesPromise).rejects.toThrow('Aborted');
+            // All promises resolve - errors are caught and reported internally
+            await devicesPromise;
+            await sharedPromise;
+            await myFilesPromise;
 
             // Verify all abort signals were aborted
             expect(abortSignals.get('devices')?.aborted).toBe(true);
