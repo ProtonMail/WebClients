@@ -273,6 +273,9 @@
       "Close navigation": [
         "Tutup navigasi"
       ],
+      "Close search": [
+        "Tutup pencarian"
+      ],
       "Close tab": [
         "Tutup tab"
       ],
@@ -317,6 +320,9 @@
       ],
       "Connected": [
         "Terhubung"
+      ],
+      "Contact sales": [
+        "Hubungi pemasaran"
       ],
       "Contact support": [
         "Hubungi layanan dukungan"
@@ -828,6 +834,9 @@
       "Go to settings": [
         "Buka pengaturan"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Dimengerti"
       ],
@@ -840,11 +849,17 @@
       "Help and resources": [
         "Bantuan dan sumber daya"
       ],
+      "Hide": [
+        "Sembunyikan"
+      ],
       "Hide more benefits": [
         "Sembunyikan manfaat lainnya"
       ],
       "Hide plan features": [
         "Sembunyikan fitur paket"
+      ],
+      "Ignore": [
+        "Abaikan"
       ],
       "Import": [
         "Impor"
@@ -1128,6 +1143,9 @@
       "Reload": [
         "Muat ulang"
       ],
+      "Reload page": [
+        "Muat ulang laman"
+      ],
       "Remove": [
         "Hapus"
       ],
@@ -1263,6 +1281,9 @@
       "Search countries": [
         "Cari negara"
       ],
+      "Search groups": [
+        "Cari grup"
+      ],
       "Search settings": [
         "Cari di pengaturan"
       ],
@@ -1274,6 +1295,9 @@
       ],
       "See plan features": [
         "Lihat fitur paket"
+      ],
+      "Select": [
+        "Pilih"
       ],
       "Select ${ planOrAppName }": [
         "Pilih ${ planOrAppName }"
@@ -1749,6 +1773,15 @@
       ],
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Domains": [
+        "Domain"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Pengguna"
       ]
     },
     "Address action": {
@@ -2264,6 +2297,12 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } bulan"
+      ],
+      "${ n } year": [
+        "${ n } tahun"
+      ],
       "1 month": [
         "1 bulan"
       ],
@@ -2550,6 +2589,9 @@
       "Add a custom domain": [
         "Tambah domain khusus"
       ],
+      "App installed": [
+        "Aplikasi dipasang"
+      ],
       "Authenticate": [
         "Autentikasi"
       ],
@@ -2558,6 +2600,9 @@
       ],
       "Change": [
         "Ubah"
+      ],
+      "Completed": [
+        "Selesai"
       ],
       "Configure": [
         "Atur"
@@ -2579,6 +2624,12 @@
       ],
       "Failed to load OAuth": [
         "OAuth gagal dimuat"
+      ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Install app": [
+        "Pasang aplikasi"
       ],
       "Install migration app": [
         "Instal aplikasi migrasi"
@@ -2606,6 +2657,9 @@
       ],
       "Migration status": [
         "Status migrasi"
+      ],
+      "Not started": [
+        "Belum dimulai"
       ],
       "Organization does not have enough seats available": [
         "Organisasi tidak memiliki jumlah kuota yang memadai"
@@ -2637,11 +2691,17 @@
       "Set up two-factor authentication": [
         "Siapkan autentikasi dua faktor"
       ],
+      "Settings": [
+        "Pengaturan"
+      ],
       "Sign in to Google Workspace": [
         "Masuk ke Google Workspace"
       ],
       "Start migration": [
         "Mulai migrasi"
+      ],
+      "Status": [
+        "Status"
       ],
       "Transfer errors": [
         "Kesalahan transfer"
@@ -3056,8 +3116,14 @@
       ]
     },
     "Checkout row": {
+      "${ n } month": [
+        "${ n } bulan"
+      ],
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Subtotal": [
+        "Subtotal"
       ],
       "Total": [
         "Total"
@@ -4725,6 +4791,11 @@
         "Nonaktifkan alamat?"
       ]
     },
+    "dollar_offer: Action": {
+      "Get the deal": [
+        "Dapatkan penawaran"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Terverifikasi"
@@ -4894,6 +4965,9 @@
       "Edge": [
         "Edge"
       ],
+      "Fedora": [
+        "Fedora"
+      ],
       "Fire TV": [
         "Fire TV"
       ],
@@ -4911,6 +4985,9 @@
       ],
       "Installation guide": [
         "Panduan pemasangan"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "iPhone/iPad": [
         "iPhone/iPad"
@@ -4933,6 +5010,9 @@
       "macOS Monterey": [
         "macOS Monterey"
       ],
+      "macOS Ventura": [
+        "macOS Ventura"
+      ],
       "Mail": [
         "Mail"
       ],
@@ -4950,6 +5030,9 @@
       ],
       "TV": [
         "TV"
+      ],
+      "Ubuntu/Debian": [
+        "Ubuntu/Debian"
       ],
       "Windows": [
         "Windows"
@@ -5717,6 +5800,9 @@
       "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
         "Pilih seseorang yang Anda percayai dengan data Anda. Mereka harus telah memiliki Akun ${ BRAND_NAME }."
       ],
+      "Contacts": [
+        "Kontak"
+      ],
       "Disabled": [
         "Dinonaktifkan"
       ],
@@ -5750,6 +5836,9 @@
       "Emergency contact removed": [
         "Kontak darurat dihapus"
       ],
+      "Enable": [
+        "Aktifkan"
+      ],
       "Enable auto-renew": [
         "Aktifkan pembaruan otomatis"
       ],
@@ -5758,6 +5847,9 @@
       ],
       "Give immediate access?": [
         "Berikan akses dengan segera?"
+      ],
+      "Got it": [
+        "Mengerti"
       ],
       "Immediate": [
         "Segera"
@@ -5789,6 +5881,9 @@
       "Protect your legacy with emergency access": [
         "Lindungi pusaka Anda dengan akses darurat"
       ],
+      "Recover data": [
+        "Pulihkan data"
+      ],
       "Refuse access": [
         "Tolak akses"
       ],
@@ -5812,6 +5907,9 @@
       ],
       "Revoke access?": [
         "Cabut akses?"
+      ],
+      "See request": [
+        "Lihat permintaan"
       ],
       "Stop being trusted contact?": [
         "Berhenti menjadi kontak tepercaya?"
@@ -8268,14 +8366,26 @@
       "Canceled": [
         "Dibatalkan"
       ],
+      "Canceling...": [
+        "Membatalkan..."
+      ],
       "Delayed": [
         "Ditunda"
+      ],
+      "Disabled": [
+        "Dinonaktifkan"
       ],
       "Failed": [
         "Gagal"
       ],
+      "Imported": [
+        "Diimpor"
+      ],
       "Paused": [
         "Dijeda"
+      ],
+      "Undo finished": [
+        "Pengurungan selesai"
       ]
     },
     "Import type": {
@@ -8705,6 +8815,9 @@
       "All your changes will be lost.": [
         "Seluruh perubahan yang Anda buat akan hilang."
       ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Semua kontak Anda akan diimpor, hingga batas ${ maxContact } kontak"
+      ],
       "Allocated": [
         "Dialokasikan"
       ],
@@ -8921,6 +9034,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Dengan membagikan rincian acara kalender ini secara menyeluruh, Anda mengizinkan ${ BRAND_NAME } untuk mengakses informasi terenkripsi yang terdapat pada kalender ini."
       ],
+      "Cancel": [
+        "Batal"
+      ],
       "Cancel anytime": [
         "Batalkan kapan pun"
       ],
@@ -9025,6 +9141,9 @@
       ],
       "Create a secure cloud for ${ value } member": [
         "Buat cloud yang aman untuk ${ value } anggota"
+      ],
+      "Create an account": [
+        "Buat akun"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Buat dan kelola sub-akun dan tetapkan untuk mereka alamat email di domain kustom Anda."
@@ -9383,6 +9502,9 @@
       "expires ${ expirationDate }": [
         "kedaluwarsa ${ expirationDate }"
       ],
+      "Facebook": [
+        "Facebook"
+      ],
       "Failed to fetch logs.": [
         "Gagal mengambil log."
       ],
@@ -9628,6 +9750,9 @@
       ],
       "Insert link": [
         "Sisipkan tautan"
+      ],
+      "Instagram": [
+        "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Pasang berkas konfigurasi negara untuk tersambung ke server secara acak di negara pilihan Anda."
@@ -10046,6 +10171,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Kelola server khusus Anda sebagai Gateway dan tentukan anggota organisasi mana saja yang dapat mengaksesnya."
       ],
+      "Other": [
+        "Lainnya"
+      ],
       "Other accounts": [
         "Akun lainnya"
       ],
@@ -10184,6 +10312,9 @@
       "Plus or Visionary subscription required": [
         "Dibutuhkan langganan Plus atau Visionary"
       ],
+      "Podcast": [
+        "Siniar"
+      ],
       "Preference saved": [
         "Preferensi disimpan"
       ],
@@ -10261,6 +10392,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Frasa pemulihan tidak terhubung dengan kunci mana pun yang telah usang."
+      ],
+      "Reddit": [
+        "Reddit"
       ],
       "Referral link copied to your clipboard": [
         "Tautan rujukan disalin ke papan klip"
@@ -10421,6 +10555,9 @@
       "Show original message": [
         "Tampilkan pesan asli"
       ],
+      "Sign in": [
+        "Masuk"
+      ],
       "Sign in only": [
         "Hanya masuk"
       ],
@@ -10478,6 +10615,12 @@
       "Step ${ step }/${ totalSteps }": [
         "Langkah ${ step }/${ totalSteps }"
       ],
+      "Step 1 of 2": [
+        "Langkah 1 dari 2"
+      ],
+      "Step 2 of 2": [
+        "Langkah 2 dari 2"
+      ],
       "Storage allocated to other users in this organisation": [
         "Ruang penyimpanan yang dialokasikan kepada pengguna lain di dalam organisasi ini"
       ],
@@ -10492,6 +10635,9 @@
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Simpan kata sandi dan file ini di tempat yang aman. Anda akan membutuhkan keduanya untuk mengimpor kunci Anda."
+      ],
+      "Submit": [
+        "Kirim"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Kirimkan deposit melalui alamat berikut atau pindai kode QR di bawah ini. Deposit Anda akan muncul pada akun setelah terkonfirmasi."
@@ -10762,6 +10908,9 @@
       ],
       "This will wipe all logs for your organization members.": [
         "Tindakan ini akan menghapus seluruh log untuk anggota organisasi Anda."
+      ],
+      "TikTok": [
+        "TikTok"
       ],
       "to ${ product } Business": [
         "ke ${ product } Business"
@@ -11168,6 +11317,9 @@
       "Writing assistant": [
         "Asisten penulisan"
       ],
+      "X": [
+        "X"
+      ],
       "Yearly": [
         "Tahunan"
       ],
@@ -11474,6 +11626,9 @@
       "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
         "Voucher untuk alamat email ${ BRAND_NAME } yang dipesan: ${ reservedEmail }"
       ],
+      "YouTube": [
+        "YouTube"
+      ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Anda juga akan kehilangan akses ke berbagai fitur ${ boldPlanTitle } berikut:"
       ],
@@ -11610,6 +11765,9 @@
     "invitation status": {
       "Declined": [
         "Ditolak"
+      ],
+      "Owner": [
+        "Pemilik"
       ],
       "Paused": [
         "Dijeda"
@@ -12537,9 +12695,6 @@
       "Disabled": [
         "Dinonaktifkan"
       ],
-      "Discussion board posts and threads": [
-        "Postingan dan utas forum diskusi"
-      ],
       "Display name": [
         "Nama tampilan"
       ],
@@ -12678,9 +12833,6 @@
       "for your first month": [
         "untuk bulan pertama Anda"
       ],
-      "Forums": [
-        "Forum"
-      ],
       "From: ${ fromEmail }": [
         "Dari: ${ fromEmail }"
       ],
@@ -12695,9 +12847,6 @@
       ],
       "Gift code": [
         "Kode hadiah"
-      ],
-      "Go to Forums": [
-        "Ke Forum"
       ],
       "Go to Newsletters": [
         "Ke Buletin"
@@ -12893,6 +13042,9 @@
       ],
       "Moderate NAT": [
         "NAT Moderat"
+      ],
+      "Most popular": [
+        "Paling populer"
       ],
       "Move to": [
         "Pindahkan ke"
@@ -13317,6 +13469,9 @@
       "To: ${ toEmail }": [
         "Kepada: ${ toEmail }"
       ],
+      "today": [
+        "hari ini"
+      ],
       "Token name": [
         "Nama token"
       ],
@@ -13448,6 +13603,9 @@
       ],
       "Your password (trusted contact)": [
         "Kata sandi Anda (kontak tepercaya)"
+      ],
+      "Your plan": [
+        "Paket Anda"
       ],
       "Your voucher for your reserved ${ BRAND_NAME } email address:": [
         "Voucher untuk alamat email ${ BRAND_NAME } yang dipesan:"
@@ -14123,6 +14281,9 @@
       "${ n } active meeting at a time": [
         "${ n } pertemuan yang aktif secara bersamaan"
       ],
+      "${ n } participant": [
+        "${ n } peserta"
+      ],
       "24 hours per meeting": [
         "24 jam per pertemuan"
       ],
@@ -14131,6 +14292,9 @@
       ],
       "Appointment scheduling": [
         "Penjadwalan janji temu"
+      ],
+      "Booking pages": [
+        "Laman pemesanan"
       ],
       "Browser, mobile, and desktop apps": [
         "Aplikasi peramban, seluler, dan desktop"
@@ -16451,6 +16615,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Buy now": [
+        "Beli sekarang"
+      ],
       "Contact us": [
         "Hubungi kami"
       ],
@@ -17023,11 +17190,20 @@
       "terms and conditions": [
         "syarat dan ketentuan"
       ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Diskon berlaku untuk ${ renewalsWithCoupon } perpanjangan."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ini berlaku selama ${ couponRedemptions } bulan. Selanjutnya, harga akan otomatis diperbarui menjadi ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
+      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ini berlaku untuk ${ subscriptionLength } bulan pertama."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Harga diskon khusus ini valid untuk bulan pertama. Selanjutnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku selama ${ couponRedemptions } bulan. Kemudian akan diperpanjang secara otomatis dengan harga ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ${ priceWithDiscount } ini valid untuk ${ subscriptionLength } bulan pertama."
@@ -17258,6 +17434,9 @@
       "Confirm": [
         "Konfirmasi"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "domain.com": [
         "domain.com"
       ],
@@ -17335,6 +17514,9 @@
       ],
       "Printer": [
         "Printer"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Pencarian"
@@ -20126,6 +20308,11 @@
         "Tambahkan kalender publik, eksternal, atau yang dibagikan."
       ]
     },
+    "Subscription": {
+      "Total due": [
+        "Total yang belum dibayarkan"
+      ]
+    },
     "Subscription attribute": {
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
         "Asisten penulisan ${ BRAND_NAME } Scribe untuk ${ maxAi } pengguna"
@@ -21044,11 +21231,17 @@
       ]
     },
     "Theme": {
+      "Auto": [
+        "Otomatis"
+      ],
       "Dark": [
         "Gelap"
       ],
       "Light": [
         "Terang"
+      ],
+      "Mode: Light": [
+        "Mode: Terang"
       ]
     },
     "Time unit": {
@@ -21282,6 +21475,9 @@
       "An address for each role": [
         "Alamat untuk setiap jabatan"
       ],
+      "Annual": [
+        "Tahunan"
+      ],
       "Anytime, anywhere access": [
         "Akses kapan saja dan di mana saja"
       ],
@@ -21503,6 +21699,9 @@
       ],
       "Currency": [
         "Mata uang"
+      ],
+      "Custom": [
+        "Kustom"
       ],
       "Custom domains:": [
         "Domain khusus:"
@@ -21828,6 +22027,9 @@
       "Forward emails": [
         "Penerusan email"
       ],
+      "Forwardings": [
+        "Penerusan"
+      ],
       "Free": [
         "Gratis"
       ],
@@ -21957,6 +22159,9 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Impor melalui ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
+      "Imports": [
+        "Impor"
+      ],
       "Inactive 2FA": [
         "2FA yang tidak aktif"
       ],
@@ -22008,6 +22213,9 @@
       "Leave group?": [
         "Tinggalkan grup?"
       ],
+      "Lifetime": [
+        "Seumur hidup"
+      ],
       "Limit reached": [
         "Batas tercapai"
       ],
@@ -22034,6 +22242,9 @@
       ],
       "Mobile": [
         "Seluler"
+      ],
+      "Monthly": [
+        "Bulanan"
       ],
       "Multi-user support": [
         "Dukungan multi-pengguna"
@@ -22395,6 +22606,9 @@
       "Sign in and grant access": [
         "Masuk dan berikan izin akses"
       ],
+      "Sign in on TV": [
+        "Masuk di TV"
+      ],
       "Sign in to join the Beta program": [
         "Silakan masuk untuk bergabung ke program Beta"
       ],
@@ -22436,6 +22650,9 @@
       ],
       "Special Offer": [
         "Penawaran Istimewa"
+      ],
+      "Spring Sale": [
+        "Diskon Musim Semi"
       ],
       "Start a new import": [
         "Mulai impor baru"

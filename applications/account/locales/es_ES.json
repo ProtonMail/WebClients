@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Access level": {
+      "Full view": [
+        "Vista completa"
+      ],
       "Full view (see all event details)": [
         "Vista completa (ver todos los detalles del evento)"
       ],
@@ -442,6 +445,9 @@
       "Delete group": [
         "Eliminar el grupo"
       ],
+      "Delete link": [
+        "Eliminar enlace"
+      ],
       "Delete logo": [
         "Eliminar el logo"
       ],
@@ -810,6 +816,9 @@
       ],
       "Help and resources": [
         "Ayuda y recursos"
+      ],
+      "Hide": [
+        "Ocultar"
       ],
       "Hide more benefits": [
         "Ocultar más ventajas"
@@ -2653,6 +2662,9 @@
       "Learn more about what can be migrated. Learn more": [
         "Consulta qué se puede migrar. Más información"
       ],
+      "Mail": [
+        "Correo"
+      ],
       "Migrate": [
         "Migrar"
       ],
@@ -2749,6 +2761,11 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Debes otorgar el permiso para que ${ BRAND_NAME } copie tus datos. Después de aceptar los permisos, vuelve aquí para continuar."
+      ]
+    },
+    "breadcrumb": {
+      "Calendars": [
+        "Calendarios"
       ]
     },
     "Bridge version load failed": {
@@ -2932,6 +2949,11 @@
     "Calendar settings private share description": {
       "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
         "Comparte tu calendario con otros usuarios de ${ BRAND_NAME }. Activa la colaboración permitiéndoles añadir y editar eventos en tu calendario. Puedes modificar los permisos de usuario en cualquier momento."
+      ]
+    },
+    "Calendar settings section title": {
+      "Share calendar": [
+        "Compartir calendario"
       ]
     },
     "Calendar settings sidebar": {
@@ -5063,6 +5085,9 @@
       ".deb for Debian / Ubuntu": [
         ".deb para Debian / Ubuntu"
       ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm para Fedora / Red Hat"
+      ],
       "You can also download the app through the ${ linkSnapStore }.": [
         "También puedes descargar la aplicación a través de ${ linkSnapStore }."
       ]
@@ -5484,6 +5509,9 @@
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
         "La condición está incompleta. Añade un token."
+      ],
+      "Token already exists": [
+        "El token ya existe"
       ]
     },
     "email_forwarding_2023: Error message, recovery": {
@@ -5502,6 +5530,9 @@
       ],
       "Forward from": [
         "Reenviar desde"
+      ],
+      "Status": [
+        "Estado"
       ],
       "To": [
         "Para"
@@ -5531,6 +5562,9 @@
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
         "El reenvío a una dirección sin cifrado de extremo a extremo desactivará el cifrado para tu dirección ${ boldForwarderEmail }, pero el cifrado de acceso cero se mantendrá activado. ${ learnMoreLink }"
+      ],
+      "Forwarding to this address will become active once the recipient accepts the forwarding.": [
+        "El reenvío a esta dirección se activará cuando el destinatario lo acepte."
       ],
       "No outgoing forwarding rules": [
         "No hay reglas de reenvío de salida"
@@ -5574,6 +5608,9 @@
       ]
     },
     "email_forwarding_2023: Status": {
+      "Active": [
+        "Activo"
+      ],
       "Declined": [
         "Rechazado"
       ],
@@ -5610,6 +5647,9 @@
       ],
       "Forwarding activated": [
         "Se ha activado el reenvío ha sido."
+      ],
+      "Request sent": [
+        "Solicitud enviada"
       ]
     },
     "email_forwarding_2023: Warning": {
@@ -7926,6 +7966,9 @@
       ]
     },
     "Header": {
+      "Access": [
+        "Acceder"
+      ],
       "Action": [
         "Acción"
       ],
@@ -8061,6 +8104,9 @@
       ]
     },
     "Header for table": {
+      "Created": [
+        "Creado"
+      ],
       "Email address": [
         "Correo electrónico"
       ]
@@ -9593,6 +9639,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Ingresa el código de verificación. Escribe ${ digit }."
+      ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Introduce los detalles de tu cuenta de ${ BRAND_NAME }."
       ],
@@ -10288,6 +10337,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Abre la guía para ver las acciones recomendadas y los enlaces útiles."
+      ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "Abre los ajustes de Safari para la extensión y verifica que los permisos del sitio están activados para los dominios de ${ BRAND_NAME }"
       ],
       "or ${ selectFileButton }": [
         "o ${ selectFileButton }"
@@ -11673,6 +11725,9 @@
       "You saved ${ discountAmount } with an offer": [
         "Has ahorrado ${ discountAmount } con una oferta"
       ],
+      "You should export a backup of this key in case you need to restore data it encrypted.": [
+        "Te recomendamos exportar una copia de seguridad de esta clave para poder recuperar los datos que cifre."
+      ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
         "Podrás promover al usuario como administrador una vez que haya aceptado la invitación."
       ],
@@ -12056,6 +12111,12 @@
     "Key generation": {
       "Generate key": [
         "Generar clave"
+      ],
+      "If you generated this key because you suspect your previous key was compromised, please mark it as compromised in your settings.": [
+        "Si has creado esta clave porque sospechas que la anterior está en peligro, márcala como comprometida en tus ajustes."
+      ],
+      "Key generation failed, please try again later.": [
+        "Error al generar la clave. Inténtalo de nuevo más tarde."
       ],
       "New key generated": [
         "Clave nueva generada"
@@ -12599,6 +12660,9 @@
       "Backup password": [
         "Contraseña de respaldo"
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billed at ${ priceYearly } every 12 months.": [
         "Facturación de ${ priceYearly } cada 12 meses."
       ],
@@ -12833,9 +12897,6 @@
       "Disabled": [
         "Desactivado"
       ],
-      "Discussion board posts and threads": [
-        "Publicaciones e hilos del foro de debate"
-      ],
       "Display name": [
         "Nombre a mostrar"
       ],
@@ -12865,6 +12926,9 @@
       ],
       "Donation amount": [
         "Importe de la donación"
+      ],
+      "Duration": [
+        "Duración"
       ],
       "e.g. example.com": [
         "por ejemplo ejemplo.es"
@@ -12968,9 +13032,6 @@
       "for your first month": [
         "en tu primer mes"
       ],
-      "Forums": [
-        "Foros"
-      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
@@ -12985,9 +13046,6 @@
       ],
       "Gift code": [
         "Código promocional"
-      ],
-      "Go to Forums": [
-        "Ir a Foros"
       ],
       "Go to Newsletters": [
         "Ir a Boletines"
@@ -13081,6 +13139,9 @@
       ],
       "Keep me signed in": [
         "Mantener mi sesión iniciada"
+      ],
+      "Keep messages in Sent/Drafts": [
+        "Mantener mensajes en Enviados/Borradores"
       ],
       "Key": [
         "Clave"
@@ -13503,6 +13564,9 @@
       "SMTP token": [
         "Token SMTP"
       ],
+      "SMTP username": [
+        "Nombre de usuario SMTP"
+      ],
       "Social": [
         "Redes Sociales"
       ],
@@ -13815,6 +13879,11 @@
     "Label to change composer mode": {
       "Maximized": [
         "Maximizado"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Cómodo"
       ]
     },
     "Label to change view layout": {
@@ -16472,6 +16541,9 @@
       "Not allowed": [
         "No permitido"
       ],
+      "Off": [
+        "Desactivado"
+      ],
       "Optional ${ defaultLabel }": [
         "${ defaultLabel } opcional"
       ],
@@ -16525,6 +16597,9 @@
       ],
       "Trash": [
         "Enviar a la papelera"
+      ],
+      "UDP": [
+        "UDP"
       ],
       "Windows": [
         "Windows"
@@ -16666,8 +16741,14 @@
       ]
     },
     "OS compatibility": {
+      ".deb (for Debian/Ubuntu)": [
+        ".deb (para Debian/Ubuntu)"
+      ],
       ".dmg (12.0 or later)": [
         ".dmg (12.0 o superior)"
+      ],
+      ".exe (64-bit)": [
+        ".exe (64-bit)"
       ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (para Fedora/openSUSE)"
@@ -18231,6 +18312,9 @@
       ]
     },
     "Remark about a key type option": {
+      "Classic": [
+        "Clásico"
+      ],
       "Post-quantum": [
         "Postcuántico"
       ]
@@ -21171,6 +21255,9 @@
       "Address added": [
         "Dirección añadida"
       ],
+      "Address updated": [
+        "Dirección actualizada"
+      ],
       "Administrator privileges restored": [
         "Se han restaurado los privilegios de administrador."
       ],
@@ -21451,6 +21538,9 @@
       ],
       "Resent invitation": [
         "Se ha reenviado la invitación."
+      ],
+      "Status updated": [
+        "Estado actualizado"
       ]
     },
     "Suffix": {
@@ -21502,6 +21592,11 @@
       ],
       "For individuals": [
         "Para particulares"
+      ]
+    },
+    "Table header; invitations to share calendar": {
+      "Shared with me": [
+        "Compartido conmigo"
       ]
     },
     "TableHeader": {
@@ -24147,6 +24242,9 @@
       ],
       "Android TV": [
         "Android TV"
+      ],
+      "macOS": [
+        "macOS"
       ]
     },
     "wallet_signup_2024: Info": {

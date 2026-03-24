@@ -2763,6 +2763,9 @@
       "Google Marketplace app to copy data to ${ BRAND_NAME }": [
         "Aplicativo do Google Marketplace para copiar dados para a ${ BRAND_NAME }"
       ],
+      "Has errors": [
+        "Tem erros"
+      ],
       "In progress": [
         "Em processo"
       ],
@@ -6891,6 +6894,9 @@
       "Tab closed": [
         "Guia fechada"
       ],
+      "The address is already activated": [
+        "Esse endereço já está ativado"
+      ],
       "The address might be misspelled": [
         "O endereço pode estar incorreto"
       ],
@@ -8861,6 +8867,9 @@
       ],
       "Paused": [
         "Em pausa"
+      ],
+      "Undo in progress": [
+        "Desfazendo"
       ]
     },
     "Import type": {
@@ -9567,6 +9576,9 @@
       ],
       "By creating a ${ PASS_APP_NAME } account with your SimpleLogin email, you can manage your aliases directly from ${ PASS_APP_NAME }.": [
         "Ao criar uma conta ${ PASS_APP_NAME } com seu e-mail do SimpleLogin, você pode gerenciar seus aliases diretamente do ${ PASS_APP_NAME }."
+      ],
+      "By disabling account monitor, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Ao desativar o monitoramento de conta, você também limpará todo o seu histórico. Tem certeza de que deseja desativar isso?"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao fazer o downgrade para um plano gratuito, você perderá permanentemente esses benefícios, mesmo que você faça o upgrade novamente no futuro."
@@ -10892,6 +10904,9 @@
       ],
       "Please open the document to view it.": [
         "Abra o documento para visualizá-lo"
+      ],
+      "Please reconnect to continue.": [
+        "Reconecte para continuar"
       ],
       "Please select the folders you would like to import:": [
         "Selecione as pastas que deseja importar:"
@@ -13418,9 +13433,6 @@
       "Disabled": [
         "Desativado"
       ],
-      "Discussion board posts and threads": [
-        "Publicações e tópicos do fórum de discussão"
-      ],
       "Display name": [
         "Nome de exibição"
       ],
@@ -13565,9 +13577,6 @@
       "for your first month": [
         "no seu primeiro mês"
       ],
-      "Forums": [
-        "Fóruns"
-      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
@@ -13582,9 +13591,6 @@
       ],
       "Gift code": [
         "Código do vale-presente"
-      ],
-      "Go to Forums": [
-        "Ir para Fóruns"
       ],
       "Go to Newsletters": [
         "Ir para Boletins"
@@ -15274,6 +15280,9 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Esqueceu o nome de usuário da sua conta ${ BRAND_NAME }? Encontre-o usando seu e-mail ou telefone de recuperação e recupere o acesso ao seu ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais."
+      ],
+      "Reserve your child's private email | ${ BRAND_NAME }": [
+        "Reserve o e-mail privado do seu filho | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Redefina a senha da sua conta ${ BRAND_NAME }"
@@ -22526,6 +22535,9 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Ferramenta de exportação do ${ MAIL_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } is missing permissions": [
+        "${ PASS_APP_NAME } está sem permissões"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor Report"
