@@ -1,4 +1,4 @@
-import { trimLocalID, isGoogleOAuthAuthorizationURL, isBookingURL } from "./urlTests";
+import { trimLocalID, isGoogleOAuthAuthorizationURL, isBookingURL, isCloseTicketURL } from "./urlTests";
 import * as urlStore from "../../store/urlStore";
 import { GOOGLE_OAUTH_PATH } from "@proton/shared/lib/api/activation";
 
@@ -96,6 +96,39 @@ describe("urlTests", () => {
             // Invalid URLs
             expect(isBookingURL("invalid url")).toBe(false);
             expect(isBookingURL("not a url at all")).toBe(false);
+        });
+    });
+
+    describe("isCloseTicketURL", () => {
+        beforeAll(() => {
+            jest.spyOn(urlStore, "getAppURL").mockReturnValue({
+                account: "https://account.proton.me",
+                mail: "https://mail.proton.me",
+                calendar: "https://calendar.proton.me",
+            });
+        });
+
+        it("returns true for close ticket paths", () => {
+            expect(isCloseTicketURL("https://account.proton.me/close-ticket")).toBe(true);
+            expect(isCloseTicketURL("https://account.proton.me/close-ticket/")).toBe(true);
+            expect(isCloseTicketURL("https://account.proton.me/Close-Ticket")).toBe(true);
+        });
+
+        it("returns false for non close ticket paths", () => {
+            // Wrong app
+            expect(isCloseTicketURL("https://mail.proton.me/close-ticket")).toBe(false);
+            expect(isCloseTicketURL("https://calendar.proton.me/close-ticket")).toBe(false);
+
+            // Not a close ticket url
+            expect(isCloseTicketURL("https://account.proton.me/settings")).toBe(false);
+            expect(isCloseTicketURL("https://account.proton.me/close-ticket/extra")).toBe(false);
+
+            // Standard link
+            expect(isCloseTicketURL("https://example.com/close-ticket")).toBe(false);
+
+            // Invalid URLs
+            expect(isCloseTicketURL("invalid url")).toBe(false);
+            expect(isCloseTicketURL("not a url at all")).toBe(false);
         });
     });
 });
