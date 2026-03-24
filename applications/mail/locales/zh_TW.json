@@ -153,6 +153,9 @@
       "Attention required": [
         "需要您的處理"
       ],
+      "Authenticate": [
+        "驗證"
+      ],
       "Auto-delete spam and trash": [
         "自動刪除垃圾郵件和垃圾桶"
       ],
@@ -573,6 +576,9 @@
       "Font": [
         "字型"
       ],
+      "Forgot password?": [
+        "忘記密碼?"
+      ],
       "Formalize": [
         "正式化"
       ],
@@ -635,6 +641,9 @@
       ],
       "Go to settings": [
         "前往設定值頁面"
+      ],
+      "Google": [
+        "Google"
       ],
       "Got it": [
         "了解"
@@ -1452,6 +1461,9 @@
       "Trust": [
         "信任"
       ],
+      "Trust key": [
+        "信任金鑰"
+      ],
       "Trust public key": [
         "信任公開金鑰"
       ],
@@ -1551,8 +1563,14 @@
       "Use a different payment method": [
         "改用另一個繳款方式"
       ],
+      "Use authentication code": [
+        "使用驗證代碼"
+      ],
       "Use for sending": [
         "用於寄送"
+      ],
+      "Use recovery code": [
+        "使用復原碼"
       ],
       "Use this": [
         "使用此"
@@ -1718,6 +1736,9 @@
       ],
       "Users": [
         "使用者"
+      ],
+      "Writing assistant": [
+        "撰寫助手"
       ]
     },
     "Alert": {
@@ -1989,6 +2010,9 @@
       "2 TB data storage": [
         "2 TB 的總儲存空間"
       ],
+      "Access 15,000+ servers in 120+ countries": [
+        "存取 15,000+ 臺伺服器，分布於 120+ 個國家"
+      ],
       "Access advanced AI models": [
         "存取進階 AI 模型"
       ],
@@ -2003,6 +2027,11 @@
       ],
       "Unlimited daily chats": [
         "無限每日聊天"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "精心設計的 NetShield 保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
       ]
     },
     "Billing cycle option": {
@@ -4630,6 +4659,9 @@
       "Please activate your search again": [
         "請再次啟用搜尋"
       ],
+      "Please complete the billing details": [
+        "請完成付款詳細資料"
+      ],
       "Please enter a valid postal code": [
         "請輸入有效的郵遞區號"
       ],
@@ -4828,6 +4860,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此欄位還剩下 ${ maximumLength } 個字元。"
       ],
+      "This field is invalid": [
+        "此欄位無效"
+      ],
       "This field is required": [
         "此欄位必填"
       ],
@@ -4925,6 +4960,9 @@
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
         "請使用已經轉寄至 ${ MAIL_APP_NAME } 的 Gmail 位址登入"
+      ],
+      "Please sign in with the same Gmail address you originally connected": [
+        "請使用您最初連接的相同電子郵件地址登入"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5346,6 +5384,16 @@
         "無限制的 hide-my-email 別名"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "安全金鑰"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "安全金鑰"
+      ]
+    },
     "file size format": {
       "byte": [
         "位元組"
@@ -5612,6 +5660,9 @@
       ],
       "Discover privacy features": [
         "探索隱私各種功能"
+      ],
+      "Download apps": [
+        "下載應用程式"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "強式加密，只有您及其他收件者可查看內容。"
@@ -6070,6 +6121,11 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "選取 ${ boldExport } 以將行事曆匯出為 ICS 檔案。"
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "進階匯入"
       ]
     },
     "Import warning": {
@@ -6828,11 +6884,17 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "確保通訊完全隱密與加密。立刻領取您的免費 ${ BRAND_NAME } 電子郵件位址。"
       ],
+      "Enter the code from your authenticator app": [
+        "輸入驗證應用程式中的驗證代碼"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "請輸入您想匯入的電郵帳號所使用的憑證。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "輸入您的個人密碼 (組織機構管理員身份)。"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "預計尚餘時間：${ estimatedMinutes } 分鐘"
@@ -7033,7 +7095,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -7761,6 +7823,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "此瀏覽器不支援預覽 PDF 文件。請下載該檔案。"
       ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "此對話包含排定訊息。刪除他將取消排程寄送。"
+      ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "此往來對話包含了排定傳送的郵件。此郵件的傳送將會被取消。"
       ],
@@ -8361,6 +8426,9 @@
       "Your message will expire tomorrow.": [
         "您的郵件將在明天到期。"
       ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "您的付款日是 ${ renewalTime }。您可隨時取消。"
+      ],
       "Your online activity is protected": [
         "你的線上活動受到保護"
       ],
@@ -8764,6 +8832,9 @@
       "Attach screenshot(s)": [
         "附加螢幕截圖"
       ],
+      "Authenticator app": [
+        "驗證 app"
+      ],
       "Automated confirmations and alerts": [
         "自動確認和警報"
       ],
@@ -8968,9 +9039,6 @@
       "Folder location": [
         "資料夾位置"
       ],
-      "Forums": [
-        "論壇"
-      ],
       "Forwards to": [
         "轉寄至"
       ],
@@ -8988,9 +9056,6 @@
       ],
       "Get the deal": [
         "取得優惠"
-      ],
-      "Go to Forums": [
-        "前往論壇"
       ],
       "Go to Newsletters": [
         "前往電子報"
@@ -9438,6 +9503,12 @@
       ],
       "Your location": [
         "您的位置"
+      ],
+      "Your password (admin)": [
+        "您的密碼（管理員）"
+      ],
+      "Your password (trusted contact)": [
+        "您的密碼 (信任的內容)"
       ],
       "ZIP code": [
         "郵遞區號"
@@ -10464,6 +10535,9 @@
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
       ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "請支持 (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } + 使用者)"
+      ],
       "Priority email support": [
         "優先電子郵件支援"
       ],
@@ -11204,6 +11278,15 @@
     "Onboarding List Placeholder": {
       "Maybe later": [
         "稍後再說"
+      ],
+      "Popular services": [
+        "熱門服務"
+      ],
+      "Skip for now": [
+        "暫時略過"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "切換您的帳號至 ${ BRAND_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -12919,6 +13002,17 @@
         "您的 pm.me 郵件位置已經啟用"
       ]
     },
+    "sso": {
+      "Sign in": [
+        "登入"
+      ],
+      "Sign in to your organization": [
+        "登入您的組織"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "您將被重新導向至您的第三方單一登入提供者。"
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "正將您的訂購授權取消，請稍候"
@@ -14059,6 +14153,9 @@
       "Change password": [
         "更改密碼"
       ],
+      "Choose a provider": [
+        "選擇服務商"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "取得 ${ MAIL_APP_NAME } 電郵位址"
       ],
@@ -14121,6 +14218,9 @@
       ],
       "Currency": [
         "貨幣"
+      ],
+      "Custom": [
+        "自訂"
       ],
       "Custom domains:": [
         "自訂域名："
@@ -14251,6 +14351,9 @@
       "Enhance security with 2FA": [
         "透過雙重驗證強化安全性"
       ],
+      "Enter your password": [
+        "輸入您的密碼"
+      ],
       "Error": [
         "錯誤"
       ],
@@ -14343,6 +14446,9 @@
       ],
       "Import groups": [
         "匯入群組"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "匯入您的資料至 ${ BRAND_NAME }"
       ],
       "Increase security with ${ VPN_APP_NAME }": [
         "使用 ${ VPN_APP_NAME } 來提升安全性"
@@ -14662,6 +14768,9 @@
       "Select contact group": [
         "選擇聯絡人群組"
       ],
+      "Select data to import": [
+        "選擇匯入資料"
+      ],
       "Self-destruct message": [
         "自我銷毀郵件"
       ],
@@ -14796,6 +14905,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "啟用${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "兩步驟驗證"
       ],
       "Unsubscribe": [
         "取消訂閱"

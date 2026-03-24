@@ -4623,6 +4623,9 @@
       ]
     },
     "Features": {
+      "@pm.me address": [
+        "naslov @pm.me"
+      ],
       "Ad-blocker and malware protection": [
         "Prepoved oglasov in zaščita pred zlonamerno programsko opremo"
       ],
@@ -5534,6 +5537,12 @@
       ],
       "${ storage } storage": [
         "${ storage } shrambe"
+      ],
+      "${ total } user found": [
+        "Najden je ${ total } uporabnik.",
+        "Najdena sta ${ total } uporabnika.",
+        "Najdeni so ${ total } uporabniki.",
+        "Najdenih je ${ total } uporabnikov."
       ],
       "${ vaultLink } created": [
         "${ vaultLink } ustvarjeno"

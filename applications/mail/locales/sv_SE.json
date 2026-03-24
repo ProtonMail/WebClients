@@ -154,6 +154,9 @@
       "Attention required": [
         "Uppmärksamhet krävs"
       ],
+      "Authenticate": [
+        "Autentisera"
+      ],
       "Auto-delete spam and trash": [
         "Ta bort skräppost och papperskorg automatiskt"
       ],
@@ -581,6 +584,9 @@
       ],
       "Font": [
         "Typsnitt"
+      ],
+      "Forgot password?": [
+        "Glömt lösenord?"
       ],
       "Formalize": [
         "Formalisera"
@@ -1484,7 +1490,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1588,8 +1595,14 @@
       "Use a different payment method": [
         "Använd en annan betalningsmetod"
       ],
+      "Use authentication code": [
+        "Använd autentiseringskod"
+      ],
       "Use for sending": [
         "Använd för att skicka"
+      ],
+      "Use recovery code": [
+        "Använd återställningskod"
       ],
       "Use this": [
         "Använd denna"
@@ -5556,6 +5569,24 @@
         "Blixtsnabb hastighet"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Infoga en säkerhetsnyckel länkat till ditt ${ BRAND_NAME }-konto."
+      ],
+      "Security key": [
+        "Säkerhetsnyckel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Säkerhetsnyckel"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -7101,6 +7132,9 @@
       "Duplicate key updated": [
         "Duplicerad nyckel uppdaterad"
       ],
+      "Each code can only be used once": [
+        "Varje kod kan endast användas en gång"
+      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Smidigt hantera och avsluta prenumerationer på nyhetsbrev och e-postlistor."
       ],
@@ -7159,11 +7193,23 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Säkerställ fullständig privat och krypterad kommunikation. Gör anspråk på din gratis ${ BRAND_NAME } e-postadress nu."
       ],
+      "Enter the code from your authenticator app": [
+        "Ange koden från din autentiseringsapp"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Ange inloggningsuppgifter till e-postkontot du vill importera från."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ange verifieringskoden som skickades till ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Ange verifieringskod. Siffra ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Ange ditt eget lösenord (som organisationsadministratör)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Ange ditt eget lösenord (som betrodd kontakt)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Beräknad återstående tid: ${ estimatedMinutes } minut",
@@ -7374,8 +7420,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8511,6 +8556,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "När du aktiverade betrodda nycklar för ${ senderName } lades de offentliga nycklarna till i kontaktuppgifterna."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "När du registrerar dig för ett nyhetsbrev, använd ett alias istället för din e-postadress. Din identitet förblir dold och du kan inaktivera aliaset när som helst."
       ],
@@ -9169,6 +9217,9 @@
       "Attach screenshot(s)": [
         "Bifoga skärmdump(ar)"
       ],
+      "Authenticator app": [
+        "Autentiseringsapp"
+      ],
       "Automated confirmations and alerts": [
         "Automatiserade bekräftelser och varningar"
       ],
@@ -9379,9 +9430,6 @@
       "Folder location": [
         "Mappens plats"
       ],
-      "Forums": [
-        "Forum"
-      ],
       "Forwards to": [
         "Vidarebefordras till"
       ],
@@ -9399,9 +9447,6 @@
       ],
       "Get the deal": [
         "Ta del av erbjudandet"
-      ],
-      "Go to Forums": [
-        "Gå till forum"
       ],
       "Go to Newsletters": [
         "Gå till nyhetsbrev"
@@ -9858,6 +9903,12 @@
       ],
       "Your location": [
         "Din plats"
+      ],
+      "Your password (admin)": [
+        "Ditt lösenord (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ditt lösenord (betrodd kontakt)"
       ],
       "ZIP code": [
         "Postnummer"
@@ -12869,6 +12920,11 @@
         "Granska kontosäkerhet"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Inloggning lyckades inte slutföras."
+      ]
+    },
     "Search - no results": {
       "An action is being processed": [
         "En åtgärd bearbetas"
@@ -13585,6 +13641,17 @@
       ],
       "Your pm.me email is active": [
         "Din pm.me-adress är aktiv"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Logga in"
+      ],
+      "Sign in to your organization": [
+        "Logga in på din organisation"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du kommer omdirigeras till din tredjeparts SSO-leverantör."
       ]
     },
     "State": {
@@ -15019,6 +15086,9 @@
       "Enhance security with 2FA": [
         "Förbättra säkerhet med 2FA"
       ],
+      "Enter your password": [
+        "Ange ditt lösenord"
+      ],
       "Error": [
         "Fel"
       ],
@@ -15587,6 +15657,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Tvåfaktorsautentisering"
       ],
       "Unsubscribe": [
         "Avsluta prenumeration"

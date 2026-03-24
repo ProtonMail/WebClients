@@ -5035,6 +5035,9 @@
       "Authentication error.": [
         "Napaka pri preverjanju pristnosti."
       ],
+      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
+        "Samodejni odgovori so plačljiva funkcija. Prosimo nadgradite na plačljiv račun, da jo lahko uporabljate."
+      ],
       "Calendar limit reached": [
         "Dosežena omejitev števila koledarjev."
       ],
@@ -5966,6 +5969,9 @@
       "Accounts with custom domains cannot join a family plan.": [
         "Računi z domenami po meri se ne morejo pridružiti družinskemu paketu."
       ],
+      "After leaving, you will be moved to a ${ BRAND_NAME } Free plan.": [
+        "Po odjavi boste premeščeni na brezplačni paket ${ BRAND_NAME }."
+      ],
       "customer support": [
         "podpora strankam"
       ],
@@ -6244,6 +6250,9 @@
       ]
     },
     "Features": {
+      "@pm.me address": [
+        "naslov @pm.me"
+      ],
       "Ad-blocker and malware protection": [
         "Prepoved oglasov in zaščita pred zlonamerno programsko opremo"
       ],
@@ -7445,6 +7454,12 @@
       ],
       "${ storage } storage": [
         "${ storage } shrambe"
+      ],
+      "${ total } user found": [
+        "Najden je ${ total } uporabnik.",
+        "Najdena sta ${ total } uporabnika.",
+        "Najdeni so ${ total } uporabniki.",
+        "Najdenih je ${ total } uporabnikov."
       ],
       "${ vaultLink } created": [
         "${ vaultLink } ustvarjeno"
@@ -8759,6 +8774,9 @@
       ],
       "Or select a particular server:": [
         "Ali izberite določen strežnik:"
+      ],
+      "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "Člani organizacije bodo morali odkleniti ${ PASS_APP_NAME } s svojim geslom ali PIN-om itd."
       ],
       "Organization size": [
         "Velikost organizacije"
@@ -11020,9 +11038,6 @@
       "Font size": [
         "Velikost pisave"
       ],
-      "Forums": [
-        "Forumi"
-      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
@@ -11034,9 +11049,6 @@
       ],
       "Gift code": [
         "Darilna koda"
-      ],
-      "Go to Forums": [
-        "Obišči forume"
       ],
       "Go to Promotions": [
         "Pojdite na Promocije"
@@ -15497,6 +15509,11 @@
       ],
       "your subscription": [
         "vaša naročnina"
+      ]
+    },
+    "Remove calendar section description": {
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
+        "Z odjavo ne boste več mogli dostopati do tega koledarja. Vsi dogodki v tem koledarju bodo izbrisani iz vašega računa, vendar bodo ostali v originalni javni povezavi."
       ]
     },
     "Remove organization logo": {

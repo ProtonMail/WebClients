@@ -173,6 +173,9 @@
       "Close navigation": [
         "Tutup navigasi"
       ],
+      "Close search": [
+        "Tutup pencarian"
+      ],
       "Close this banner": [
         "Tutup spanduk ini"
       ],
@@ -518,6 +521,9 @@
       "Go to panel ${ index }": [
         "Ke panel ${ index }"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Dimengerti"
       ],
@@ -529,6 +535,9 @@
       ],
       "Help and resources": [
         "Bantuan dan sumber daya"
+      ],
+      "Hide": [
+        "Sembunyikan"
       ],
       "Hide more benefits": [
         "Sembunyikan manfaat lainnya"
@@ -814,6 +823,9 @@
       ],
       "Search countries": [
         "Cari negara"
+      ],
+      "Search groups": [
+        "Cari grup"
       ],
       "See DNS TXT record": [
         "Lihat rekaman TXT DNS"
@@ -1193,6 +1205,15 @@
       ],
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Domains": [
+        "Domain"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Pengguna"
       ]
     },
     "Address action": {
@@ -1593,6 +1614,12 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } bulan"
+      ],
+      "${ n } year": [
+        "${ n } tahun"
+      ],
       "1 month": [
         "1 bulan"
       ],
@@ -1687,11 +1714,17 @@
       ]
     },
     "BOSS": {
+      "App installed": [
+        "Aplikasi dipasang"
+      ],
       "Authenticate": [
         "Autentikasi"
       ],
       "Calendar": [
         "Kalender"
+      ],
+      "Completed": [
+        "Selesai"
       ],
       "Configure migration": [
         "Atur migrasi"
@@ -1710,6 +1743,12 @@
       ],
       "Failed to load OAuth": [
         "OAuth gagal dimuat"
+      ],
+      "In progress": [
+        "Sedang berlangsung"
+      ],
+      "Install app": [
+        "Pasang aplikasi"
       ],
       "Install migration app": [
         "Instal aplikasi migrasi"
@@ -1738,6 +1777,9 @@
       "Migration status": [
         "Status migrasi"
       ],
+      "Not started": [
+        "Belum dimulai"
+      ],
       "Organization does not have enough seats available": [
         "Organisasi tidak memiliki jumlah kuota yang memadai"
       ],
@@ -1762,8 +1804,14 @@
       "Set up": [
         "Siapkan"
       ],
+      "Settings": [
+        "Pengaturan"
+      ],
       "Sign in to Google Workspace": [
         "Masuk ke Google Workspace"
+      ],
+      "Status": [
+        "Status"
       ],
       "Transfer errors": [
         "Kesalahan transfer"
@@ -1966,6 +2014,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Subtotal": [
+        "Subtotal"
       ],
       "Total": [
         "Total"
@@ -3301,6 +3352,11 @@
         "Nonaktifkan alamat?"
       ]
     },
+    "dollar_offer: Action": {
+      "Get the deal": [
+        "Dapatkan penawaran"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Terverifikasi"
@@ -3469,6 +3525,9 @@
       ],
       "macOS Monterey": [
         "macOS Monterey"
+      ],
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mobile": [
         "Seluler"
@@ -3715,6 +3774,9 @@
       ],
       "Added on ${ formattedDate }": [
         "Ditambahkan pada ${ formattedDate }"
+      ],
+      "Contacts": [
+        "Kontak"
       ],
       "Immediate": [
         "Segera"
@@ -5832,6 +5894,9 @@
       "All your changes will be lost.": [
         "Seluruh perubahan yang Anda buat akan hilang."
       ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Semua kontak Anda akan diimpor, hingga batas ${ maxContact } kontak"
+      ],
       "Allocated": [
         "Dialokasikan"
       ],
@@ -5951,6 +6016,9 @@
       ],
       "By leaving now, changes may not be saved": [
         "Dengan keluar sekarang, perubahan mungkin tidak tersimpan"
+      ],
+      "Cancel": [
+        "Batal"
       ],
       "Can’t access your recovery email?": [
         "Tidak dapat mengakses email pemulihan Anda?"
@@ -6318,6 +6386,9 @@
       "expires ${ expirationDate }": [
         "kedaluwarsa ${ expirationDate }"
       ],
+      "Facebook": [
+        "Facebook"
+      ],
       "Failed to fetch logs.": [
         "Gagal mengambil log."
       ],
@@ -6350,6 +6421,9 @@
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Dapatkan notifikasi apabila kata sandi atau data pribadi Anda lainnya dibocorkan. ${ learnMoreLinkNoBreach }"
+      ],
+      "Get started": [
+        "Mulai"
       ],
       "Get started with the referral link above.": [
         "Mulai dengan tautan rujukan di atas."
@@ -6467,6 +6541,9 @@
       ],
       "Inherited from parent folder": [
         "Diwariskan dari folder induk"
+      ],
+      "Instagram": [
+        "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Pasang berkas konfigurasi negara untuk tersambung ke server secara acak di negara pilihan Anda."
@@ -6792,6 +6869,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Kelola server khusus Anda sebagai Gateway dan tentukan anggota organisasi mana saja yang dapat mengaksesnya."
       ],
+      "Other": [
+        "Lainnya"
+      ],
       "Other accounts": [
         "Akun lainnya"
       ],
@@ -6903,6 +6983,9 @@
       "Plus or Visionary subscription required": [
         "Dibutuhkan langganan Plus atau Visionary"
       ],
+      "Podcast": [
+        "Siniar"
+      ],
       "Preference saved": [
         "Preferensi disimpan"
       ],
@@ -6968,6 +7051,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Frasa pemulihan tidak terhubung dengan kunci mana pun yang telah usang."
+      ],
+      "Reddit": [
+        "Reddit"
       ],
       "Referral link copied to your clipboard": [
         "Tautan rujukan disalin ke papan klip"
@@ -7136,6 +7222,9 @@
       ],
       "Storage used by this user": [
         "Penyimpanan yang digunakan oleh pengguna ini"
+      ],
+      "Submit": [
+        "Kirim"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Kirimkan deposit melalui alamat berikut atau pindai kode QR di bawah ini. Deposit Anda akan muncul pada akun setelah terkonfirmasi."
@@ -7340,6 +7429,9 @@
       ],
       "This will wipe all logs for your organization members.": [
         "Tindakan ini akan menghapus seluruh log untuk anggota organisasi Anda."
+      ],
+      "TikTok": [
+        "TikTok"
       ],
       "to ${ product } Business": [
         "ke ${ product } Business"
@@ -7674,6 +7766,9 @@
       "Writing assistant": [
         "Asisten penulisan"
       ],
+      "X": [
+        "X"
+      ],
       "You already have a free account": [
         "Anda telah memiliki akun gratis"
       ],
@@ -7899,6 +7994,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Masa uji coba Anda akan berakhir dalam ${ timeRemaining }."
       ],
+      "YouTube": [
+        "YouTube"
+      ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Anda juga akan kehilangan akses ke berbagai fitur ${ boldPlanTitle } berikut:"
       ],
@@ -8009,6 +8107,9 @@
     "invitation status": {
       "Declined": [
         "Ditolak"
+      ],
+      "Owner": [
+        "Pemilik"
       ],
       "Paused": [
         "Dijeda"
@@ -9350,6 +9451,9 @@
       "${ n } active meeting at a time": [
         "${ n } pertemuan yang aktif secara bersamaan"
       ],
+      "${ n } participant": [
+        "${ n } peserta"
+      ],
       "24 hours per meeting": [
         "24 jam per pertemuan"
       ],
@@ -9358,6 +9462,9 @@
       ],
       "Appointment scheduling": [
         "Penjadwalan janji temu"
+      ],
+      "Booking pages": [
+        "Laman pemesanan"
       ],
       "Browser, mobile, and desktop apps": [
         "Aplikasi peramban, seluler, dan desktop"
@@ -11365,11 +11472,20 @@
       "terms and conditions": [
         "syarat dan ketentuan"
       ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Diskon berlaku untuk ${ renewalsWithCoupon } perpanjangan."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ini berlaku selama ${ couponRedemptions } bulan. Selanjutnya, harga akan otomatis diperbarui menjadi ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
+      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ini berlaku untuk ${ subscriptionLength } bulan pertama."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Harga diskon khusus ini valid untuk bulan pertama. Selanjutnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku selama ${ couponRedemptions } bulan. Kemudian akan diperpanjang secara otomatis dengan harga ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ${ priceWithDiscount } ini valid untuk ${ subscriptionLength } bulan pertama."
@@ -11581,6 +11697,9 @@
       "Confirm": [
         "Konfirmasi"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "domain.com": [
         "domain.com"
       ],
@@ -11640,6 +11759,9 @@
       ],
       "Postal code": [
         "Kode pos"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Pencarian"
@@ -14164,11 +14286,22 @@
       ]
     },
     "Theme": {
+      "Auto": [
+        "Otomatis"
+      ],
       "Dark": [
         "Gelap"
       ],
       "Light": [
         "Terang"
+      ],
+      "Mode: Light": [
+        "Mode: Terang"
+      ]
+    },
+    "Themes": {
+      "Themes": [
+        "Tema"
       ]
     },
     "Time unit": {
@@ -14230,6 +14363,9 @@
       ],
       "Access control": [
         "Kontrol akses"
+      ],
+      "Account": [
+        "Akun"
       ],
       "Account recovery": [
         "Pemulihan akun"
@@ -14495,6 +14631,9 @@
       "Currency": [
         "Mata uang"
       ],
+      "Custom": [
+        "Kustom"
+      ],
       "Custom selection of users": [
         "Pengguna yang dipilih secara tertentu"
       ],
@@ -14723,6 +14862,9 @@
       "Get more from your VPN": [
         "Dapatkan lebih banyak dari VPN Anda"
       ],
+      "Get started": [
+        "Mulai"
+      ],
       "Get the apps": [
         "Dapatkan aplikasinya"
       ],
@@ -14881,6 +15023,9 @@
       ],
       "Phone": [
         "Telepon"
+      ],
+      "Plans": [
+        "Paket"
       ],
       "Preview": [
         "Pratinjau"
@@ -15064,6 +15209,9 @@
       ],
       "Spam, block, and allow lists": [
         "Daftar spam, blokir, dan izin"
+      ],
+      "Spring Sale": [
+        "Diskon Musim Semi"
       ],
       "Start a new import": [
         "Mulai impor baru"

@@ -86,11 +86,17 @@
       "Copy address": [
         "Adresse kopieren"
       ],
+      "Copy API key": [
+        "API-Schlüssel kopieren"
+      ],
       "Create": [
         "Erstellen"
       ],
       "Create folder": [
         "Ordner erstellen"
+      ],
+      "Create key": [
+        "Schlüssel erstellen"
       ],
       "Current plan": [
         "Aktuelles Abonnement"
@@ -101,11 +107,17 @@
       "Delete": [
         "Löschen"
       ],
+      "Delete ${ token.Name }": [
+        "„${ token.Name }“ löschen"
+      ],
       "Delete all conversations?": [
         "Alle Unterhaltungen löschen?"
       ],
       "Delete conversation?": [
         "Unterhaltung löschen?"
+      ],
+      "Delete key": [
+        "Schlüssel löschen"
       ],
       "Dismiss": [
         "Verwerfen"
@@ -205,6 +217,9 @@
       ],
       "More options for accounts": [
         "Mehr Optionen für Konten"
+      ],
+      "New key": [
+        "Neuer Schlüssel"
       ],
       "Next page": [
         "Nächste Seite"
@@ -948,12 +963,6 @@
       "Open ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } öffnen"
       ],
-      "Paste as code": [
-        "Als Code einfügen"
-      ],
-      "Paste as plaintext": [
-        "Als Klartext einfügen"
-      ],
       "Refresh folder contents": [
         "Ordnerinhalte aktualisieren"
       ],
@@ -1146,6 +1155,12 @@
       "Always enable web search for new conversations": [
         "Immer Websuche für neue Unterhaltungen aktivieren"
       ],
+      "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
+        "API-Schlüssel ermöglichen dir den programmgesteuerten Zugriff auf ${ LUMO_SHORT_APP_NAME }. Jeder Schlüssel wird nur einmal bei der Erstellung angezeigt."
+      ],
+      "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
+        "Erstelle einen Schlüssel, um ${ LUMO_SHORT_APP_NAME } mit deinen Skripten und Tools zu integrieren."
+      ],
       "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Verbessere dein privates KI-Erlebnis und schalte erweiterte Modelle und Premium-Funktionen mit ${ LUMO_SHORT_APP_NAME } Plus frei."
       ],
@@ -1154,6 +1169,9 @@
       ],
       "Include project conversations in the main chat history": [
         "Projektunterhaltungen im Haupt-Chatverlauf einschließen"
+      ],
+      "Keep it safe — it won't be shown again": [
+        "Bewahre es sicher auf – es wird nicht erneut angezeigt"
       ],
       "Last updated on ${ formattedDate }": [
         "Zuletzt aktualisiert am ${ formattedDate }"
@@ -1179,11 +1197,23 @@
       ]
     },
     "collider_2025: Error": {
+      "Could not retrieve your encryption key": [
+        "Dein Verschlüsselungsschlüssel konnte nicht abgerufen werden."
+      ],
       "Error processing ${ result.fileName }: ${ result.errorMessage }": [
         "Fehler bei der Verarbeitung von ${ result.fileName }: ${ result.errorMessage }"
       ],
       "Error processing file: ${ file.name }": [
         "Fehler beim Verarbeiten der Datei: ${ file.name }"
+      ],
+      "Failed to create API key": [
+        "API-Schlüssel konnte nicht erstellt werden"
+      ],
+      "Failed to delete API key": [
+        "API-Schlüssel konnte nicht gelöscht werden"
+      ],
+      "Failed to load API keys": [
+        "API-Schlüssel konnten nicht geladen werden"
       ],
       "Failed to process ${ DRIVE_SHORT_APP_NAME } file: ${ file.name }": [
         "Fehler beim Verarbeiten der ${ DRIVE_SHORT_APP_NAME }-Datei: ${ file.name }"
@@ -1205,6 +1235,12 @@
       ],
       "File uploaded but failed to add to knowledge base": [
         "Datei hochgeladen, konnte aber nicht zur Wissensdatenbank hinzugefügt werden."
+      ],
+      "Name is required": [
+        "Name ist erforderlich"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Name muss 191 Zeichen oder weniger umfassen"
       ],
       "Please select a category to describe what went wrong with the generated text": [
         "Bitte wähle eine Kategorie, um zu beschreiben, was mit dem generierten Text schiefgelaufen ist"
@@ -1459,6 +1495,15 @@
       "Excluded": [
         "Ausgeschlossen"
       ],
+      "Expired ": [
+        "Abgelaufen "
+      ],
+      "Expires ": [
+        "Läuft ab "
+      ],
+      "Expires tomorrow": [
+        "Läuft morgen ab"
+      ],
       "File capacity": [
         "Dateikapazität"
       ],
@@ -1524,6 +1569,9 @@
       ],
       "No supported files in this folder": [
         "Keine unterstützten Dateien in diesem Ordner"
+      ],
+      "No usage yet": [
+        "Noch keine Nutzung"
       ],
       "Note:": [
         "Hinweis:"
@@ -1615,9 +1663,6 @@
       "Table view": [
         "Tabellenansicht"
       ],
-      "The content you pasted appears to be code. Would you like to paste it as a code block?": [
-        "Der von dir eingefügte Inhalt scheint Programmcode zu sein. Möchtest du ihn als Codeblock einfügen?"
-      ],
       "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
         "Bei der Verarbeitung dieser Datei ist ein Fehler aufgetreten. Der Inhalt ist möglicherweise nicht lesbar oder das Dateiformat wird nicht vollständig unterstützt."
       ],
@@ -1635,6 +1680,9 @@
       ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Um später auf diese Unterhaltung zurückzukommen, melde dich an oder erstelle ein Konto."
+      ],
+      "tokens / 30d": [
+        "Token / 30 Tage"
       ],
       "Try the smartest version of ${ LUMO_SHORT_APP_NAME } with advanced capabilities.": [
         "Probiere die intelligenteste Version von ${ LUMO_SHORT_APP_NAME } mit erweiterten Funktionen."
@@ -1752,6 +1800,28 @@
         "Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus."
       ]
     },
+    "collider_2025: Notification": {
+      "API key copied to clipboard": [
+        "API-Schlüssel in die Zwischenablage kopiert"
+      ],
+      "API key deleted": [
+        "API-Schlüssel gelöscht"
+      ]
+    },
+    "collider_2025: Option": {
+      "1 year": [
+        "1 Jahr"
+      ],
+      "180 days": [
+        "180 Tage"
+      ],
+      "30 days": [
+        "30 Tage"
+      ],
+      "90 days": [
+        "90 Tage"
+      ]
+    },
     "collider_2025: Personality": {
       "Business Cat": [
         "Business-Katze"
@@ -1817,6 +1887,9 @@
       "Account": [
         "Konto"
       ],
+      "API keys": [
+        "API-Schlüssel"
+      ],
       "General": [
         "Allgemeines"
       ],
@@ -1827,6 +1900,18 @@
     "collider_2025: Status": {
       "${ LUMO_SHORT_APP_NAME }+ is included in your Visionary plan and you have access to these features:": [
         "${ LUMO_SHORT_APP_NAME }+ ist in deinem Visionary-Abonnement enthalten und du hast Zugriff auf diese Funktionen:"
+      ],
+      "Active": [
+        "Aktiv"
+      ],
+      "Copied!": [
+        "Kopiert"
+      ],
+      "Expired": [
+        "Abgelaufen"
+      ],
+      "Expiring soon": [
+        "Läuft bald ab"
       ],
       "You are subscribed to ${ LUMO_SHORT_APP_NAME }+ and have access to these features:": [
         "Du hast ${ LUMO_SHORT_APP_NAME }+ abonniert und Zugriff auf diese Funktionen:"
@@ -1868,6 +1953,9 @@
       "Automatic web search": [
         "Automatische Websuche"
       ],
+      "Create new API key": [
+        "Neue API-Schlüssel erstellen"
+      ],
       "Delete everything": [
         "Alles löschen"
       ],
@@ -1880,11 +1968,11 @@
       "Invalid Link": [
         "Ungültiger Link"
       ],
+      "No API keys yet": [
+        "Noch keine API-Schlüssel"
+      ],
       "Opening External Link": [
         "Externen Link öffnen"
-      ],
-      "Paste as code?": [
-        "Als Programmcode einfügen?"
       ],
       "Save your favorites": [
         "Deine Favoriten speichern"
@@ -1903,6 +1991,9 @@
       ],
       "Visionary": [
         "Visionary"
+      ],
+      "Your new API key": [
+        "Dein neuer API-Schlüssel"
       ]
     },
     "collider_2025: Tooltip": {
@@ -1999,6 +2090,11 @@
         "Nutze modernen Slang und einen angesagten Kommunikationsstil."
       ]
     },
+    "collider_2025: Unit": {
+      "tokens": [
+        "Token"
+      ]
+    },
     "collider_2025: Upsell": {
       "Create free account": [
         "Kostenloses Konto erstellen"
@@ -2025,6 +2121,9 @@
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Verdächtig: ${ urlParts.subdomainCount } Subdomain",
         "Verdächtig: ${ urlParts.subdomainCount } Subdomains"
+      ],
+      "This is the only time you'll see this key. Copy it now.": [
+        "Dies ist das einzige Mal, dass du diesen Schlüssel siehst. Kopiere ihn jetzt."
       ],
       "We're experiencing high traffic right now, but as a ${ LUMO_SHORT_APP_NAME } Plus customer, you're in the fast lane. We're prioritizing your requests as always.": [
         "Wir haben gerade viel Verkehr, aber als ${ LUMO_SHORT_APP_NAME } Plus-Kunde bist du auf der Überholspur. Wir priorisieren deine Anfragen wie immer."
@@ -2400,11 +2499,11 @@
       "Drive files are not available for guest users": [
         "Drive-Dateien sind für Gastbenutzer nicht verfügbar"
       ],
-      "File \"${ file.name }\" is already added to this conversation": [
-        "Datei „${ file.name }“ ist bereits zu dieser Unterhaltung hinzugefügt worden"
-      ],
       "File \"${ file.name }\" is already in this project": [
         "Die Datei \"${ file.name }\" ist bereits in diesem Projekt"
+      ],
+      "File \"${ file.name }\" is already mentioned": [
+        "Datei \"${ file.name }\" wird bereits erwähnt"
       ],
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "Dateien, die in dieses Projekt hochgeladen werden, werden im verknüpften Drive-Ordner gespeichert."
@@ -2521,9 +2620,6 @@
       ],
       "Holiday planner": [
         "Urlaubsplaner"
-      ],
-      "Processing files, please wait...": [
-        "Dateien werden verarbeitet, bitte warten..."
       ],
       "Search chats": [
         "Chats durchsuchen"
@@ -5031,6 +5127,9 @@
       "Expires": [
         "Gültig bis"
       ],
+      "Expires in": [
+        "Läuft ab in"
+      ],
       "First name": [
         "Vorname"
       ],
@@ -5057,6 +5156,9 @@
       ],
       "Integrated 2FA authenticator": [
         "Integrierter 2FA-Authentifikator"
+      ],
+      "Key name": [
+        "Schlüsselname"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastaturkürzel: ${ shortcut }"

@@ -153,6 +153,9 @@
       "Attention required": [
         "주의 필요"
       ],
+      "Authenticate": [
+        "인증"
+      ],
       "Auto-delete spam and trash": [
         "스팸 및 휴지통 자동 삭제"
       ],
@@ -578,6 +581,9 @@
       ],
       "Font": [
         "글꼴"
+      ],
+      "Forgot password?": [
+        "비밀번호를 잊어버리셨나요?"
       ],
       "Formalize": [
         "형식화"
@@ -1584,8 +1590,14 @@
       "Use a different payment method": [
         "다른 결제 수단 사용하기"
       ],
+      "Use authentication code": [
+        "인증 코드 사용"
+      ],
       "Use for sending": [
         "발신에 사용"
+      ],
+      "Use recovery code": [
+        "복구 코드 사용"
       ],
       "Use this": [
         "사용하기"
@@ -5531,6 +5543,24 @@
         "초고속 속도"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입해 주세요."
+      ],
+      "Security key": [
+        "보안 키"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "보안 키"
+      ]
+    },
     "file size format": {
       "byte": [
         "바이트"
@@ -5798,6 +5828,9 @@
       "Discover privacy features": [
         "개인정보 관련 기능 알아보기"
       ],
+      "Download apps": [
+        "앱 다운로드"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "강력한 암호화로, 이메일은 오직 회원님과 주고 받는 사람간에서만 볼 수 있습니다."
       ],
@@ -5806,6 +5839,9 @@
       ],
       "For your eyes only": [
         "눈으로만 보기"
+      ],
+      "Get storage bonus": [
+        "저장공간 보너스 받기"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "${ MAIL_APP_NAME } 모바일 앱을 다운로드 하세요"
@@ -5818,6 +5854,9 @@
       ],
       "Protection from trackers": [
         "트래커로부터 보호"
+      ],
+      "Review import options": [
+        "불러오기 옵션 보기"
       ],
       "Sign in to the mobile app to complete this step": [
         "앱에 로그인하여 이 단계를 완료하세요."
@@ -7000,6 +7039,9 @@
       "Duplicate key updated": [
         "중복 키 업데이트됨"
       ],
+      "Each code can only be used once": [
+        "각 코드는 한 번씩만 유효합니다."
+      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "간편하게 뉴스레터 및 메일링 리스트를 관리 및 구독 취소할 수 있어요."
       ],
@@ -7057,11 +7099,23 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "완전히 개인적이고 암호화된 통신을 보장합니다. 지금 무료 ${ BRAND_NAME } 이메일 주소를 받아보세요."
       ],
+      "Enter the code from your authenticator app": [
+        "인증 앱에서 코드를 입력하세요."
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "가져오기를 원하는 이메일 계정의 계정 정보를 입력하세요."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText }(으)로 인증 코드가 전송되었습니다."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "인증 코드를 입력하세요. ${ digit }자입니다."
+      ],
+      "Enter your own password (as organization admin).": [
+        "사용자의 비밀번호 입력 (조직 관리자와 같음)"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "사용자 고유의 비밀번호 입력 (신뢰할 수 있는 연락처로서)"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "남은 예상 시간: ${ estimatedMinutes }분"
@@ -7359,6 +7413,9 @@
       ],
       "Low Priority": [
         "중요도 낮음"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME }을 기본 이메일 애플리케이션으로 설정하세요."
       ],
       "Manage your folders": [
         "폴더 관리"
@@ -8401,6 +8458,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName }에 인증 키를 활성화하면, 공개 키가 연락처 상세 정보에 생성됩니다."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2단계 인증을 설정하면, 인증 앱에 접근할 수 없을때 로그인시 사용할 수 있는 복구 코드를 제공해 드립니다."
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "뉴스래터를 신청할 때, 내 실제 이메일 주소 대신 별칭을 사용해 보세요. 별칭을 언제든 비활성화하고 신원은 비공개로 유지할 수 있답니다."
       ],
@@ -9050,6 +9110,9 @@
       "Attach screenshot(s)": [
         "스크린샷 첨부"
       ],
+      "Authenticator app": [
+        "인증 앱"
+      ],
       "Automated confirmations and alerts": [
         "자동화된 확인 및 알림"
       ],
@@ -9182,9 +9245,6 @@
       "Did not follow instructions": [
         "지시사항을 따르지 않습니다"
       ],
-      "Discussion board posts and threads": [
-        "토론 게시판 게시물 및 스레드"
-      ],
       "Do you have any suggestions for our team?": [
         "저희 팀에 질문이 있으신가요?"
       ],
@@ -9263,9 +9323,6 @@
       "Folder location": [
         "폴더 위치"
       ],
-      "Forums": [
-        "포럼"
-      ],
       "Forwards to": [
         "다음으로 전달:"
       ],
@@ -9283,9 +9340,6 @@
       ],
       "Get the deal": [
         "특가로 구매"
-      ],
-      "Go to Forums": [
-        "포럼으로 이동"
       ],
       "Go to Newsletters": [
         "뉴스레터로 이동"
@@ -9742,6 +9796,12 @@
       ],
       "Your location": [
         "나의 위치"
+      ],
+      "Your password (admin)": [
+        "사용자의 비밀번호 (관리자)"
+      ],
+      "Your password (trusted contact)": [
+        "사용자 비밀번호 (신뢰할 수 있는 연락처)"
       ],
       "ZIP code": [
         "우편번호"
@@ -11542,8 +11602,29 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Choose your service": [
+        "사용하고 계신 서비스를 선택하세요"
+      ],
       "Maybe later": [
         "나중에"
+      ],
+      "Popular services": [
+        "인기 있는 서비스"
+      ],
+      "Skip for now": [
+        "지금은 건너뛰기"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "회원님의 계정을 ${ BRAND_NAME }으로 전환하세요"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "이메일 이전은 어려운 일이죠. ${ BRAND_NAME }이 그 과정을 쉽게 만들어 드릴게요. 이전 계정을 Proton과 연결하고 모든 메일을 하나의 집중적이고 광고 없는 작업 공간에서 관리해 보세요."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "가장 많이 사용하는 서비스에서 이메일을 업데이트하세요. 추적을 방지하고 개인정보를 보호하세요."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }에 오신 것을 환영해요"
       ]
     },
     "Onboarding modal": {
@@ -11762,6 +11843,12 @@
       ],
       "No parent folder": [
         "상위 폴더 없음"
+      ],
+      "Remind me later": [
+        "나중에 다시 알림"
+      ],
+      "Yes, don't show again": [
+        "네, 다시 보지 않을게요"
       ]
     },
     "Option group": {
@@ -12684,6 +12771,11 @@
         "내 계정 보안 검토하기"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "로그인이 성공적으로 완료되지 못했습니다."
+      ]
+    },
     "Search - no results": {
       "An action is being processed": [
         "작업이 처리 중입니다"
@@ -13379,6 +13471,17 @@
       ],
       "Your pm.me email is active": [
         "pm.me 이메일이 활성 상태입니다"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "로그인"
+      ],
+      "Sign in to your organization": [
+        "조직에 로그인"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "서드 파티 SSO 제공자로 리다이렉트됩니다."
       ]
     },
     "State": {
@@ -14752,6 +14855,9 @@
       "Enhance security with 2FA": [
         "2단계 인증으로 보안 강화시키기"
       ],
+      "Enter your password": [
+        "비밀번호를 입력하세요"
+      ],
       "Error": [
         "오류"
       ],
@@ -14868,6 +14974,9 @@
       ],
       "Invalid verification code": [
         "잘못된 검증 코드"
+      ],
+      "Keep this banner hidden?": [
+        "이 배너를 숨기시겠어요?"
       ],
       "Label as": [
         "라벨 추가"
@@ -15318,6 +15427,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 켜기"
+      ],
+      "Two-factor authentication": [
+        "2단계 인증"
       ],
       "Unsubscribe": [
         "구독 취소"

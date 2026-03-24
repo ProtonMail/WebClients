@@ -154,6 +154,9 @@
       "Attention required": [
         "Attention requise"
       ],
+      "Authenticate": [
+        "S'authentifier"
+      ],
       "Auto-delete spam and trash": [
         "Suppression auto spam/corbeille"
       ],
@@ -581,6 +584,9 @@
       ],
       "Font": [
         "Police"
+      ],
+      "Forgot password?": [
+        "Mot de passe oublié ?"
       ],
       "Formalize": [
         "Formel"
@@ -1484,7 +1490,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Approuver la clé",
+        "Clés de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1588,8 +1595,14 @@
       "Use a different payment method": [
         "Utiliser un autre moyen de paiement"
       ],
+      "Use authentication code": [
+        "Utiliser le code d'authentification"
+      ],
       "Use for sending": [
         "Utiliser pour l'envoi"
+      ],
+      "Use recovery code": [
+        "Utiliser un code de récupération"
       ],
       "Use this": [
         "Utiliser ceci"
@@ -5568,6 +5581,16 @@
         "Vitesses extrêmement élevées"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "Clé de sécurité"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Clé de sécurité"
+      ]
+    },
     "file size format": {
       "byte": [
         "octet",
@@ -7177,11 +7200,20 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Assurez une communication entièrement privée et chiffrée. Obtenez dès maintenant votre adresse e-mail ${ BRAND_NAME } gratuite."
       ],
+      "Enter the code from your authenticator app": [
+        "Saisissez le code de votre application d'authentification."
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Saisissez les identifiants du compte de messagerie depuis lequel vous voulez importer."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Saisissez votre propre mot de passe (en tant que contacts de confiance)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Temps restant estimé : ${ estimatedMinutes } minute",
@@ -7392,8 +7424,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8967,7 +8998,7 @@
         "Déplacer vers le dossier Brouillons"
       ],
       "Go to Inbox": [
-        "Déplacer vers le dossier Boîte de réception"
+        "Aller à la boîte de réception"
       ],
       "Go to Sent": [
         "Déplacer vers le dossier Envoyés"
@@ -9210,6 +9241,9 @@
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
+      "Authenticator app": [
+        "Application d'authentification"
+      ],
       "Automated confirmations and alerts": [
         "Confirmations et alertes automatisées"
       ],
@@ -9342,9 +9376,6 @@
       "Did not follow instructions": [
         "Les instructions n'ont pas été suivies."
       ],
-      "Discussion board posts and threads": [
-        "Publications et fils de discussion du forum"
-      ],
       "Do you have any suggestions for our team?": [
         "Avez-vous des suggestions pour notre équipe ?"
       ],
@@ -9423,9 +9454,6 @@
       "Folder location": [
         "Emplacement du dossier"
       ],
-      "Forums": [
-        "Forums"
-      ],
       "Forwards to": [
         "Transfert vers"
       ],
@@ -9443,9 +9471,6 @@
       ],
       "Get the deal": [
         "Profitez de l'offre"
-      ],
-      "Go to Forums": [
-        "Accéder aux forums"
       ],
       "Go to Newsletters": [
         "Accéder aux newsletters"
@@ -9902,6 +9927,12 @@
       ],
       "Your location": [
         "Votre emplacement"
+      ],
+      "Your password (admin)": [
+        "Votre mot de passe (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Votre mot de passe (contacts de confiance)"
       ],
       "ZIP code": [
         "Code postal"
@@ -12921,6 +12952,11 @@
         "Vérifier la sécurité du compte"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "La connexion n'a pas abouti."
+      ]
+    },
     "Search - no results": {
       "An action is being processed": [
         "Une action est en cours de traitement"
@@ -13625,6 +13661,17 @@
       ],
       "Your pm.me email is active": [
         "Votre e-mail pm.me est actif."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Se connecter"
+      ],
+      "Sign in to your organization": [
+        "Connectez-vous à votre organisation."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Vous allez être redirigé vers votre service tiers d'authentification unique."
       ]
     },
     "State": {
@@ -15059,6 +15106,9 @@
       "Enhance security with 2FA": [
         "Améliorez la sécurité avec l’A2F"
       ],
+      "Enter your password": [
+        "Saisissez votre mot de passe"
+      ],
       "Error": [
         "Erreur"
       ],
@@ -15627,6 +15677,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activer ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Authentification à deux facteurs"
       ],
       "Unsubscribe": [
         "Se désabonner"
