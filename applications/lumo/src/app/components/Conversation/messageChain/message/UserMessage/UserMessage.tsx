@@ -154,7 +154,7 @@ interface UserMessageProps {
     siblingInfo: SiblingInfo;
     handleEditMessage: HandleEditMessage;
     newMessageRef?: React.MutableRefObject<HTMLDivElement | null>;
-    onOpenFilePreview?: (attachment: Attachment) => void;
+    onOpenFilePreview: (attachment: Attachment) => void;
 }
 
 const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, newMessageRef, onOpenFilePreview }: UserMessageProps) => {
@@ -243,10 +243,10 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
                         >
                             <MessageContentWithMentions
                                 content={messageContent || ''}
-                                    message={message}
+                                message={message}
                                 allAttachments={allAttachments}
-                            onView={handleViewFile}
-                        />
+                                onView={onOpenFilePreview}
+                            />
                         </div>
                     </div>
                 )}
