@@ -88,7 +88,7 @@ export const handleRecipientInputChange = (
 
     const values = newValue.split(SEPARATOR_REGEX).map((value) => clearValue(value));
     if (values.length > 1) {
-        onAddRecipients(values.map(inputToRecipient));
+        onAddRecipients(values.filter(isTruthy).map(inputToRecipient));
         setInput('');
         return;
     }
