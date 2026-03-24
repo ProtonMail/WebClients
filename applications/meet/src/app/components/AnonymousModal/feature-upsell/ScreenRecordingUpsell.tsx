@@ -20,7 +20,7 @@ export const ScreenRecordingUpsell = ({ open, onClose, action }: CTAModalBasePro
                 />
             }
             title={c('Info').t`Record your meetings`}
-            subtitle={c('Info').t`Upgrade to access meeting recording.`}
+            subtitle={c('Info').t`Upgrade to record your meetings locally.`}
             headerClassName="upsell-modal pt-6 meet-glow-effect relative"
             titleClassName="upsell-modal-title font-arizona"
             actions={
