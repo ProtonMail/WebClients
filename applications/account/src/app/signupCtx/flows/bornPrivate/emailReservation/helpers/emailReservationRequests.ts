@@ -1,4 +1,4 @@
-import type { BillingAddress } from '@proton/payments';
+import type { BillingAddress, Currency } from '@proton/payments';
 import { getBuyProductConfig } from '@proton/payments/core/api/createPaymentSubscription';
 import { getCurrencyFormattingConfig } from '@proton/payments/core/currencies';
 import { auth } from '@proton/shared/lib/api/auth';
@@ -96,7 +96,7 @@ export const authenticateDonationUser = async ({
 export interface CaptureDonationPaymentParams {
     paymentToken: string;
     amount: number;
-    currency: 'USD';
+    currency: Currency;
     billingAddress: BillingAddress;
     api: Api;
     auth: AuthenticateDonationUserResult;
