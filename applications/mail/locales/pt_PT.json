@@ -151,6 +151,9 @@
       "Attention required": [
         "Requer atenção"
       ],
+      "Authenticate": [
+        "Autenticar"
+      ],
       "Auto-delete spam and trash": [
         "Eliminação automática das pastas Spam e Lixo"
       ],
@@ -563,6 +566,9 @@
       ],
       "Font": [
         "Letra"
+      ],
+      "Forgot password?": [
+        "Palavra-passe esquecida?"
       ],
       "Formalize": [
         "Formalizar"
@@ -1421,7 +1427,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar na chave"
+        "Confiar na chave",
+        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1516,8 +1523,14 @@
       "Use a different payment method": [
         "Utilizar um método de pagamento diferente"
       ],
+      "Use authentication code": [
+        "Utilizar um código de autenticação"
+      ],
       "Use for sending": [
         "Utilizar para o envio"
+      ],
+      "Use recovery code": [
+        "Utilizar um código de recuperação"
       ],
       "Use this": [
         "Utilizar isto"
@@ -5093,6 +5106,16 @@
         "Velocidades ultrarrápidas"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "Chave de segurança"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Chave de segurança"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -6621,11 +6644,17 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Desfrute de uma experiência de e-mail mais rápida e focada com a aplicação para desktop."
       ],
+      "Enter the code from your authenticator app": [
+        "Introduza o código da sua aplicação de autenticação."
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduza as credenciais da conta de e-mail da qual deseja importar."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduza o código de verificação que foi enviado para ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduza a sua palavra-passe (como administrador da organização)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Tempo restante estimado: ${ estimatedMinutes } minuto",
@@ -6812,8 +6841,7 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir uma imagem"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -8540,6 +8568,9 @@
       "Attach screenshot(s)": [
         "Anexar capturas de ecrã"
       ],
+      "Authenticator app": [
+        "Aplicação de autenticação"
+      ],
       "BCC": [
         "BCC"
       ],
@@ -8725,9 +8756,6 @@
       ],
       "Folder location": [
         "Localização da pasta"
-      ],
-      "Forums": [
-        "Fóruns"
       ],
       "Forwards to": [
         "Encaminha para"
@@ -9124,6 +9152,9 @@
       ],
       "Your location": [
         "A sua localização"
+      ],
+      "Your password (admin)": [
+        "A sua palavra-passe (admin)"
       ],
       "ZIP code": [
         "Código postal"
@@ -11762,6 +11793,11 @@
         "Verifique a segurança da sua conta"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "O início de sessão não foi concluído."
+      ]
+    },
     "Search - no results": {
       "No messages found": [
         "Nenhuma mensagem encontrada"
@@ -12452,6 +12488,17 @@
       ],
       "Your pm.me email is active": [
         "O seu e-mail pm.me está ativo."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Iniciar sessão"
+      ],
+      "Sign in to your organization": [
+        "Iniciar sessão na sua organização"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Será redirecionado para o seu fornecedor de SSO de terceiros."
       ]
     },
     "State": {
@@ -13831,6 +13878,9 @@
       "Enhance security with 2FA": [
         "Aumente a segurança com a A2F"
       ],
+      "Enter your password": [
+        "Introduza a sua palavra-passe"
+      ],
       "Error": [
         "Erro"
       ],
@@ -14357,6 +14407,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ativar o ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Autenticação de dois fatores"
       ],
       "Unsubscribe": [
         "Cancelar subscrição"

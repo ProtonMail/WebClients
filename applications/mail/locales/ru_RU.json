@@ -150,6 +150,9 @@
       "Attention required": [
         "Требуется внимание"
       ],
+      "Authenticate": [
+        "Аутентификация"
+      ],
       "Auto-delete spam and trash": [
         "Автоматическое удаление спама и сообщений в корзине"
       ],
@@ -551,6 +554,9 @@
       ],
       "Font": [
         "Шрифт"
+      ],
+      "Forgot password?": [
+        "Забыли пароль?"
       ],
       "Formalize": [
         "Формализовать"
@@ -1390,7 +1396,10 @@
         "Доверять"
       ],
       "Trust key": [
-        "Доверять ключу"
+        "Доверенный ключ",
+        "Доверенных ключа",
+        "Доверенных ключей",
+        "Доверенных ключей"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -1485,8 +1494,14 @@
       "Use a different payment method": [
         "Использовать другой способ оплаты"
       ],
+      "Use authentication code": [
+        "Использовать код аутентификации"
+      ],
       "Use for sending": [
         "Использовать для отправки"
+      ],
+      "Use recovery code": [
+        "Использовать код восстановлени"
       ],
       "Use this": [
         "Использовать"
@@ -5109,6 +5124,16 @@
         "Молниеносная скорость"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "Ключ безопасности"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ безопасности"
+      ]
+    },
     "file size format": {
       "byte": [
         "байт",
@@ -6756,11 +6781,17 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Наслаждайтесь более быстрой и сфокусированной отправкой электронных писем с помощью настольного приложения."
       ],
+      "Enter the code from your authenticator app": [
+        "Введите код из приложения-аутентификатора"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Введите учетные данные аккаунта электронной почты, из которого вы хотите импортировать данные."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введите свой пароль как администратора организации."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Оставшееся время: ${ estimatedMinutes } минута",
@@ -6958,10 +6989,7 @@
         "Инициализация…"
       ],
       "Insert image": [
-        "Вставить изображение",
-        "Вставить изображения",
-        "Вставить изображения",
-        "Вставить изображения"
+        "Вставить изображение"
       ],
       "Insert link": [
         "Вставить ссылку"
@@ -8701,6 +8729,9 @@
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
       ],
+      "Authenticator app": [
+        "Приложение-аутентификатор"
+      ],
       "BCC": [
         "Cкрытая копия"
       ],
@@ -9252,6 +9283,9 @@
       ],
       "Your location": [
         "Ваше местоположение"
+      ],
+      "Your password (admin)": [
+        "Ваш пароль (admin)"
       ],
       "ZIP code": [
         "Почтовый индекс"
@@ -11836,6 +11870,11 @@
         "Проверьте безопасность аккаунта"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Вход не был успешно завершен."
+      ]
+    },
     "Search - no results": {
       "No messages found": [
         "Сообщений не найдено"
@@ -12526,6 +12565,17 @@
       ],
       "Your pm.me email is active": [
         "Ваша почта pm.me активна"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Войти"
+      ],
+      "Sign in to your organization": [
+        "Войдите в свою организацию"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вы будете перенаправлены на вашего стороннего провайдера SSO."
       ]
     },
     "State": {
@@ -14010,6 +14060,9 @@
       "Enhance security with 2FA": [
         "Повысьте безопасность с двухфакторной аутентификацией"
       ],
+      "Enter your password": [
+        "Введите пароль"
+      ],
       "Error": [
         "Ошибка"
       ],
@@ -14528,6 +14581,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Включить ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Двухфакторная аутентификация"
       ],
       "Unsubscribe": [
         "Отменить подписку"

@@ -153,6 +153,9 @@
       "Attention required": [
         "需要关注"
       ],
+      "Authenticate": [
+        "身份验证"
+      ],
       "Auto-delete spam and trash": [
         "自动清理垃圾邮件和回收站"
       ],
@@ -578,6 +581,9 @@
       ],
       "Font": [
         "字体"
+      ],
+      "Forgot password?": [
+        "忘记密码？"
       ],
       "Formalize": [
         "正式化"
@@ -1584,8 +1590,14 @@
       "Use a different payment method": [
         "使用其他方式支付"
       ],
+      "Use authentication code": [
+        "使用验证码"
+      ],
       "Use for sending": [
         "用于发送邮件"
+      ],
+      "Use recovery code": [
+        "使用恢复码"
       ],
       "Use this": [
         "确定使用"
@@ -5531,6 +5543,24 @@
         "闪电般的速度"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "使用安全密钥认证时出现问题，请重试。"
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "插入与您的 ${ BRAND_NAME } 账户关联的安全密钥。"
+      ],
+      "Security key": [
+        "安全密钥"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "安全密钥"
+      ]
+    },
     "file size format": {
       "byte": [
         "B"
@@ -5798,6 +5828,9 @@
       "Discover privacy features": [
         "探索隐私保护功能"
       ],
+      "Download apps": [
+        "下载应用"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "极致的加密技术，只有您和目标收件人能够阅读邮件内容。"
       ],
@@ -5806,6 +5839,9 @@
       ],
       "For your eyes only": [
         "邮件内容密不透风"
+      ],
+      "Get storage bonus": [
+        "获取存储空间奖励"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "下载 ${ MAIL_APP_NAME } 移动应用"
@@ -5818,6 +5854,9 @@
       ],
       "Protection from trackers": [
         "抵御追踪脚本"
+      ],
+      "Review import options": [
+        "查看导入选项"
       ],
       "Sign in to the mobile app to complete this step": [
         "登录移动应用程序以完成此步骤"
@@ -7000,6 +7039,9 @@
       "Duplicate key updated": [
         "重复的密钥已更新"
       ],
+      "Each code can only be used once": [
+        "每个恢复码只能使用一次"
+      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "轻松管理和取消订阅新闻通讯和邮件列表。"
       ],
@@ -7057,11 +7099,23 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "确保完全私密且加密的通信。立即认领您的免费 ${ BRAND_NAME } 邮箱地址。"
       ],
+      "Enter the code from your authenticator app": [
+        "请输入身份验证应用中的验证码"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "输入您要导入的邮箱账号和密码。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "输入验证码，第 ${ digit } 位。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "请输入您自己的密码（作为组织管理员）。"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "输入您自己的密码（作为可信联系人）"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "预计剩余时间：${ estimatedMinutes } 分钟"
@@ -7265,7 +7319,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图像"
+        "插入图片"
       ],
       "Insert link": [
         "插入链接"
@@ -7359,6 +7413,9 @@
       ],
       "Low Priority": [
         "较低优先顺序"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "将 ${ MAIL_APP_NAME } 设为默认邮箱应用。"
       ],
       "Manage your folders": [
         "管理文件夹"
@@ -8401,6 +8458,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "当您为 ${ senderName } 启用可信密钥时，公钥被添加到联系人详细信息中。"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "当您设置双因素身份验证时，我们会提供恢复码。如果您无法使用验证器，可以使用这些恢复码登录。"
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "订阅新闻通讯时，使用别名而不是您的真实邮箱地址。这样可以保护你的身份，而且你可以随时禁用该别名。"
       ],
@@ -9050,6 +9110,9 @@
       "Attach screenshot(s)": [
         "截图"
       ],
+      "Authenticator app": [
+        "身份验证应用"
+      ],
       "Automated confirmations and alerts": [
         "自动确认和提醒"
       ],
@@ -9182,9 +9245,6 @@
       "Did not follow instructions": [
         "未遵循指令"
       ],
-      "Discussion board posts and threads": [
-        "讨论版帖子和讨论串"
-      ],
       "Do you have any suggestions for our team?": [
         "您对我们的团队有什么建议吗？"
       ],
@@ -9263,9 +9323,6 @@
       "Folder location": [
         "文件夹位置"
       ],
-      "Forums": [
-        "论坛"
-      ],
       "Forwards to": [
         "转发至"
       ],
@@ -9283,9 +9340,6 @@
       ],
       "Get the deal": [
         "获取优惠"
-      ],
-      "Go to Forums": [
-        "转到论坛"
       ],
       "Go to Newsletters": [
         "转到通讯"
@@ -9742,6 +9796,12 @@
       ],
       "Your location": [
         "您的位置"
+      ],
+      "Your password (admin)": [
+        "您的密码（管理员）"
+      ],
+      "Your password (trusted contact)": [
+        "您的密码（可信联系人）"
       ],
       "ZIP code": [
         "邮政编码"
@@ -11542,8 +11602,29 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Choose your service": [
+        "请选择您的服务"
+      ],
       "Maybe later": [
         "以后再说"
+      ],
+      "Popular services": [
+        "热门服务"
+      ],
+      "Skip for now": [
+        "稍后再说"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "将您的账户切换到 ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "切换邮箱很麻烦，但 ${ BRAND_NAME } 让这一切变得简单！连接您的旧账户，在一个专注、无广告的工作空间中管理所有内容。"
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "在您最常用的服务上更新您的邮箱，防止追踪并保护您的隐私。"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "欢迎使用 ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -11762,6 +11843,12 @@
       ],
       "No parent folder": [
         "无上层文件夹"
+      ],
+      "Remind me later": [
+        "稍后提醒我"
+      ],
+      "Yes, don't show again": [
+        "是的，不再显示"
       ]
     },
     "Option group": {
@@ -12588,6 +12675,11 @@
         "审查账户安全"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "登录未成功。"
+      ]
+    },
     "Search - no results": {
       "An action is being processed": [
         "正在处理一项操作"
@@ -13283,6 +13375,17 @@
       ],
       "Your pm.me email is active": [
         "您的 pm.me 邮箱地址已激活"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "登录"
+      ],
+      "Sign in to your organization": [
+        "登录到您的组织"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "您将被重定向到您的第三方 SSO 提供商。"
       ]
     },
     "State": {
@@ -14656,6 +14759,9 @@
       "Enhance security with 2FA": [
         "通过 2FA 增强安全性"
       ],
+      "Enter your password": [
+        "请输入您的密码"
+      ],
       "Error": [
         "失败"
       ],
@@ -14772,6 +14878,9 @@
       ],
       "Invalid verification code": [
         "验证码无效"
+      ],
+      "Keep this banner hidden?": [
+        "始终隐藏此横幅？"
       ],
       "Label as": [
         "加标签"
@@ -15222,6 +15331,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "双因素身份验证"
       ],
       "Unsubscribe": [
         "退订"

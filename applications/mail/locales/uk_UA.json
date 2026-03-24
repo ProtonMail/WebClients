@@ -147,6 +147,9 @@
       "Attention required": [
         "Потребує уваги"
       ],
+      "Authenticate": [
+        "Автентифікація"
+      ],
       "Auto-delete spam and trash": [
         "Автоматичне видалення спаму та смітника"
       ],
@@ -521,6 +524,9 @@
       ],
       "Font": [
         "Шрифт"
+      ],
+      "Forgot password?": [
+        "Не пам’ятаю пароль?"
       ],
       "Formalize": [
         "Формалізувати"
@@ -1290,9 +1296,6 @@
       "Trust": [
         "Довіряти"
       ],
-      "Trust key": [
-        "Довіряти ключу"
-      ],
       "Trust public key": [
         "Довіряти відкритому ключу"
       ],
@@ -1377,8 +1380,14 @@
       "Use a different payment method": [
         "Використати інший спосіб оплати"
       ],
+      "Use authentication code": [
+        "Використати код підтвердження"
+      ],
       "Use for sending": [
         "Використовувати для надсилання"
+      ],
+      "Use recovery code": [
+        "Використати код відновлення"
       ],
       "Use this": [
         "Скористатися"
@@ -4899,6 +4908,16 @@
         "Необмежена кількість псевдонімів Hide-my-email"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "Ключ безпеки"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Ключ безпеки"
+      ]
+    },
     "file size format": {
       "byte": [
         "байт",
@@ -6444,11 +6463,17 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Насолоджуйтесь швидшою та цілеспрямованою роботою з настільним застосунком."
       ],
+      "Enter the code from your authenticator app": [
+        "Введіть код з вашого додатку автентифікатора"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Введіть дані облікового запису електронної пошти, з якої ви хочете імпортувати."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введіть власний пароль (як адміністратор організації)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Приблизний час до завершення: ${ estimatedMinutes } хвилина",
@@ -6637,9 +6662,6 @@
         "Ініціалізація…"
       ],
       "Insert image": [
-        "Вставити зображення",
-        "Вставити зображення",
-        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -8213,6 +8235,9 @@
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
+      "Authenticator app": [
+        "Програма автентифікації"
+      ],
       "BCC": [
         "Прихована копія"
       ],
@@ -8404,6 +8429,9 @@
       ],
       "From: ${ fromEmail }": [
         "Від: ${ fromEmail }"
+      ],
+      "Get the deal": [
+        "Скористатися пропозицією"
       ],
       "Hide password": [
         "Приховати пароль"
@@ -8740,6 +8768,9 @@
       ],
       "Your location": [
         "Ваше розташування:"
+      ],
+      "Your password (admin)": [
+        "Новий пароль (адмін)"
       ],
       "ZIP code": [
         "Поштовий індекс"
@@ -11083,6 +11114,11 @@
         "Не вдалося повторно зашифрувати запрошення. Будь ласка, повторіть спробу."
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Вхід не був успішно завершений."
+      ]
+    },
     "Search - no results": {
       "No messages found": [
         "Повідомлень не знайдено"
@@ -11743,6 +11779,17 @@
       ],
       "Your pm.me email is active": [
         "Ваша електронна пошта pm.me активна"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Увійти"
+      ],
+      "Sign in to your organization": [
+        "Увійти до своєї організації"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вас буде перенаправлено до вашого стороннього провайдера SSO."
       ]
     },
     "State": {
@@ -13180,6 +13227,9 @@
       "Enable message content search": [
         "Увімкнення пошуку вмісту повідомлень"
       ],
+      "Enter your password": [
+        "Введіть ваш пароль"
+      ],
       "Error": [
         "Помилка"
       ],
@@ -13594,6 +13644,9 @@
       "Sort messages": [
         "Впорядкувати повідомлення"
       ],
+      "Spring Sale": [
+        "Весняний розпродаж"
+      ],
       "Start a new import": [
         "Почати новий імпорт"
       ],
@@ -13632,6 +13685,9 @@
       ],
       "Trust public key?": [
         "Довіряти відкритому ключу?"
+      ],
+      "Two-factor authentication": [
+        "Двоетапна перевірка"
       ],
       "Unsubscribe": [
         "Відписатися"

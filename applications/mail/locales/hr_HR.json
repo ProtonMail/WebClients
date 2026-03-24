@@ -110,6 +110,9 @@
       "Attachment": [
         "Prilog"
       ],
+      "Authenticate": [
+        "Autenticiraj"
+      ],
       "Back": [
         "Natrag"
       ],
@@ -440,6 +443,9 @@
       ],
       "Font": [
         "Font"
+      ],
+      "Forgot password?": [
+        "Zaboravili ste lozinku?"
       ],
       "Forward as attachment": [
         "Proslijedi kao privitak"
@@ -1115,9 +1121,6 @@
       "Trust": [
         "Vjeruj"
       ],
-      "Trust key": [
-        "Ključ povjerenja"
-      ],
       "Trust public key": [
         "Vjeruj javnom ključu"
       ],
@@ -1196,8 +1199,14 @@
       "Use a different payment method": [
         "Koristite drugi način plaćanja"
       ],
+      "Use authentication code": [
+        "Upotrijebite autentifikacijski kôd"
+      ],
       "Use for sending": [
         "Koristi za slanje"
+      ],
+      "Use recovery code": [
+        "Koristi kȏd za oporavak"
       ],
       "Verify": [
         "Potvrdi"
@@ -3740,6 +3749,16 @@
         "Neograničen broj hide-my-email pseudonima"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "Sigurnosni ključ"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sigurnosni ključ"
+      ]
+    },
     "file size format": {
       "byte": [
         "bajt",
@@ -4949,9 +4968,7 @@
         "Inicijalizacija…"
       ],
       "Insert image": [
-        "Umetni sliku",
-        "Umetni slike",
-        "Umetni slike"
+        "Umetni sliku"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -6005,6 +6022,9 @@
       "Attach screenshot(s)": [
         "Priložite snimku(e) zaslona"
       ],
+      "Authenticator app": [
+        "Aplikacija autentifikatora"
+      ],
       "BCC": [
         "Skrivena kopija"
       ],
@@ -6158,9 +6178,6 @@
       "Folder location": [
         "Lokacija mape"
       ],
-      "Forums": [
-        "Forumi"
-      ],
       "Frequency": [
         "Frekvencija"
       ],
@@ -6172,9 +6189,6 @@
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
-      ],
-      "Go to Forums": [
-        "Idi na Forume"
       ],
       "Go to Newsletters": [
         "Idi na biltene"
@@ -6520,6 +6534,9 @@
       ],
       "Your location": [
         "Vaša lokacija"
+      ],
+      "Your password (admin)": [
+        "Vaša lozinka (administrator)"
       ],
       "ZIP code": [
         "Poštanski broj"
@@ -8462,6 +8479,17 @@
         "Zakaži slanje"
       ]
     },
+    "sso": {
+      "Sign in": [
+        "Prijavi se"
+      ],
+      "Sign in to your organization": [
+        "Prijavite se u vašu organizaciju"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Bit ćete preusmjereni na svog vanjskog pružatelja SSO usluga."
+      ]
+    },
     "Status": {
       "Alias disabled": [
         "Pseudonim onemogućen"
@@ -9375,6 +9403,9 @@
       "Enable 2FA": [
         "Omogući 2FA"
       ],
+      "Enter your password": [
+        "Unesite lozinku"
+      ],
       "Error": [
         "Pogreška"
       ],
@@ -9772,6 +9803,9 @@
       ],
       "Trust public key?": [
         "Vjeruj javnom ključu?"
+      ],
+      "Two-factor authentication": [
+        "Dvofaktorska autentikacija"
       ],
       "Unsubscribe": [
         "Otkaži pretplatu"
