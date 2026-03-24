@@ -24,7 +24,7 @@ type SharesChannels = { events: EventChannel<SharesGetResponse>; incoming: Share
  * detection to `processSharesPollingEvent` (forked) and pushes newly discovered
  * shares to the incoming channel for `processSharesIncomingEvent` to handle.
  * Deleted shares are handled by per-share channel error handling (see
- * `channel.share.ts:onShareEventError`). FIXME: handle ItemShares */
+ * `channel.share.ts:onShareEventError`). */
 const onSharesEventFactory = (incoming: SharesIncomingChannel): EventChannelOnEvent<SharesGetResponse> =>
     function* (event) {
         if ('error' in event) throw event.error;

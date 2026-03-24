@@ -46,11 +46,11 @@ export const getShareLatestEventId = async (shareId: string): Promise<string> =>
         url: `pass/v1/share/${shareId}/event`,
         method: 'get',
     })
-        .then(({ EventID }) => EventID!)
+        .then(({ EventID }) => EventID)
         .catch((err) => {
             logger.info(`[Share] Failed getting latest eventID for share ${logId(shareId)}`);
-            /** FIXME: this should be properly handled in case share is no longer
-             * accessible for the user. eg:`PassErrorCode.DISABLED_SHARE` */
+            /** Callers should handle `PassErrorCode.DISABLED_SHARE` if the share
+             * is no longer accessible to the user. */
             throw err;
         });
 
