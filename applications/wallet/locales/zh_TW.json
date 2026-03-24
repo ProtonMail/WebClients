@@ -434,6 +434,9 @@
       ],
       "Users": [
         "使用者"
+      ],
+      "Writing assistant": [
+        "撰寫助手"
       ]
     },
     "Address list": {
@@ -2035,6 +2038,9 @@
       "Payment process not supported": [
         "不支援此付款程序"
       ],
+      "Please complete the billing details": [
+        "請完成付款詳細資料"
+      ],
       "Please enter a valid postal code": [
         "請輸入有效的郵遞區號"
       ],
@@ -2091,6 +2097,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此欄位還剩下 ${ maximumLength } 個字元。"
+      ],
+      "This field is invalid": [
+        "此欄位無效"
       ],
       "This field is required": [
         "此欄位必填"
@@ -2751,6 +2760,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "您的付款日是 ${ renewalTime }。您可隨時取消。"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
@@ -3469,6 +3481,9 @@
       ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "請支持 (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } + 使用者)"
       ],
       "Priority email support": [
         "優先電子郵件支援"

@@ -184,6 +184,9 @@
       "Help and resources": [
         "Bantuan dan sumber daya"
       ],
+      "Hide": [
+        "Sembunyikan"
+      ],
       "Hide more benefits": [
         "Sembunyikan manfaat lainnya"
       ],
@@ -446,6 +449,15 @@
       ],
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Domains": [
+        "Domain"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Pengguna"
       ]
     },
     "Address list": {
@@ -549,6 +561,12 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } bulan"
+      ],
+      "${ n } year": [
+        "${ n } tahun"
+      ],
       "1 month": [
         "1 bulan"
       ],
@@ -1009,6 +1027,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Subtotal": [
+        "Subtotal"
       ],
       "Total": [
         "Total"
@@ -3437,6 +3458,9 @@
       "${ n } active meeting at a time": [
         "${ n } pertemuan yang aktif secara bersamaan"
       ],
+      "${ n } participant": [
+        "${ n } peserta"
+      ],
       "24 hours per meeting": [
         "24 jam per pertemuan"
       ],
@@ -3445,6 +3469,9 @@
       ],
       "Appointment scheduling": [
         "Penjadwalan janji temu"
+      ],
+      "Booking pages": [
+        "Laman pemesanan"
       ],
       "Browser, mobile, and desktop apps": [
         "Aplikasi peramban, seluler, dan desktop"
@@ -4466,11 +4493,20 @@
       "terms and conditions": [
         "syarat dan ketentuan"
       ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Diskon berlaku untuk ${ renewalsWithCoupon } perpanjangan."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ini berlaku selama ${ couponRedemptions } bulan. Selanjutnya, harga akan otomatis diperbarui menjadi ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
+      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ini berlaku untuk ${ subscriptionLength } bulan pertama."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Harga diskon khusus ini valid untuk bulan pertama. Selanjutnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku selama ${ couponRedemptions } bulan. Kemudian akan diperpanjang secara otomatis dengan harga ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ${ priceWithDiscount } ini valid untuk ${ subscriptionLength } bulan pertama."
@@ -4634,6 +4670,9 @@
       "Confirm passphrase or leave empty": [
         "Konfirmasi frasa sandi atau biarkan kosong"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Mis., "
       ],
@@ -4660,6 +4699,9 @@
       ],
       "Postal code": [
         "Kode pos"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search": [
         "Pencarian"
@@ -5343,6 +5385,9 @@
       ],
       "Simplify password management": [
         "Sederhanakan pengelolaan kata sandi"
+      ],
+      "Spring Sale": [
+        "Diskon Musim Semi"
       ],
       "Summary": [
         "Ikhtisar"
