@@ -34,8 +34,7 @@ const LanguageSelect = ({ className, style, locales = {}, outlined, globe, color
         const { localeCode } = await loadLocales({ locale, locales, userSettings: undefined });
         forceRefresh();
         history.push(
-            `${getLocalePathPrefix(getLocaleMapping(localeCode) || '')}${location.pathname}${location.search}${
-                location.hash
+            `${getLocalePathPrefix(getLocaleMapping(localeCode) || '')}${location.pathname}${location.search}${location.hash
             }`
         );
     };
