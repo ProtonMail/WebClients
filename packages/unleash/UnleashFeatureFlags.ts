@@ -114,6 +114,7 @@ enum AccountFlag {
     BornPrivateReservation = 'BornPrivateReservation',
     BornPrivateActivationRecovery = 'BornPrivateActivationRecovery',
     CancellationFlowFeedbackFirst = 'CancellationFlowFeedbackFirst',
+    BornPrivateEurope = 'BornPrivateEurope',
 }
 
 enum PaymentsFlag {

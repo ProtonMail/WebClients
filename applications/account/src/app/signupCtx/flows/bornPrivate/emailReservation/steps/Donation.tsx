@@ -16,10 +16,12 @@ import { getMinDonationAmount } from '@proton/payments/core/amount-limits';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { useTaxCountry } from '@proton/payments/ui';
 import { PayButton } from '@proton/payments/ui/components/PayButton';
+import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { usePaymentOptimistic } from '@proton/payments/ui/context/PaymentContextOptimistic';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
+import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import BornPrivateFeatures from '../../components/BornPrivateFeatures';
@@ -37,7 +39,7 @@ import type { FormData, ReservedAccount } from '../EmailReservationSignup';
 import { Steps, TOTAL_STEPS } from '../EmailReservationSignup';
 import DonationAmountSelect from '../components/DonationAmountSelect';
 import ReservationErrorModal from '../components/ReservationErrorModal';
-import { ErrorTypes, generateReadableActivationCode } from '../helpers/emailReservationHelpers';
+import { ErrorTypes, generateReadableActivationCode, getDonationCurrency } from '../helpers/emailReservationHelpers';
 import {
     type AuthenticateDonationUserResult,
     authenticateDonationUser,
@@ -46,13 +48,12 @@ import {
     setBornPrivateDetails,
 } from '../helpers/emailReservationRequests';
 
-const currency: Currency = 'USD';
 const DEFAULT_DONATION_AMOUNT = 500;
 
 export interface DonationPaymentData {
     paymentToken: string;
     amount: number;
-    currency: typeof currency;
+    currency: Currency;
     billingAddress: BillingAddress;
 }
 
@@ -82,6 +83,11 @@ const FLOW_ID = 'reservation-donation';
 
 const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
     const { parentEmail, reservedAccount } = formData;
+    const isBornPrivateEuropeEnabled = useFlag('BornPrivateEurope');
+    const { paymentStatus } = usePayments();
+    const [currency, setCurrency] = useState<Currency>(
+        isBornPrivateEuropeEnabled ? getDonationCurrency(paymentStatus?.CountryCode) : 'USD'
+    );
     const [donationAmount, setDonationAmount] = useState(DEFAULT_DONATION_AMOUNT);
     const payments = usePaymentOptimistic();
     const [submitting, withSubmitting] = useLoading();
@@ -95,7 +101,7 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
     const [apiStatuses, setApiStatuses] = useState<DonationApiStatuses>(INITIAL_STATUSES);
     const activationKeyRef = useRef<string | null>(null);
 
-    const runStep = async<T,>(key: keyof DonationApiStatuses, request: () => Promise<T>): Promise<T> => {
+    const runStep = async <T,>(key: keyof DonationApiStatuses, request: () => Promise<T>): Promise<T> => {
         setApiStatuses((prev) => ({ ...prev, [key]: 'pending' }));
         try {
             const result = await request();
@@ -316,7 +322,7 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
         <Href href="https://proton.me/foundation" key="proton-foundation-link" className="color-inherit">{c('Link')
             .t`${BRAND_NAME} Foundation's`}</Href>
     );
-    const minimumDonation = getSimplePriceString(currency, 100);
+    const minimumDonation = getSimplePriceString(currency, getMinDonationAmount(currency));
 
     return (
         <BornPrivateLayout>
@@ -334,13 +340,17 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
                     }</BornPrivateFormParagraph>
                     <DonationAmountSelect
                         currency={currency}
+                        onCurrencyChange={setCurrency}
                         donationAmount={donationAmount}
                         setDonationAmount={setDonationAmount}
+                        isSubmitting={submitting || donationProcessing}
+                        showCurrencySelector={isBornPrivateEuropeEnabled}
                     />
                     <PaymentWrapper {...paymentFacade} noMaxWidth hideFirstLabel taxCountry={taxCountry} />
                     <BornPrivateFormFooter step={Steps.Donation} totalSteps={TOTAL_STEPS} stackedFullWidth>
                         <Button
-                            className="rounded-lg w-full"
+                            fullWidth
+                            className="rounded-lg"
                             onClick={onBack}
                             size="large"
                             disabled={
@@ -355,7 +365,7 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
 
                         <div className="rounded-lg overflow-hidden w-full">
                             <PayButton
-                                className="w-full"
+                                fullWidth
                                 size="large"
                                 color="norm"
                                 disabled={donationAmount < getMinDonationAmount(currency)}
