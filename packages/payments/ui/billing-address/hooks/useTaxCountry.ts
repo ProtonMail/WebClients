@@ -2,7 +2,6 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 
@@ -106,8 +105,6 @@ function isSameBillingAddress(billingAddress1: BillingAddress, billingAddress2: 
 }
 
 export const useTaxCountry = (props: HookProps): TaxCountryHook => {
-    const { createNotification } = useNotifications();
-
     const zipCodeBackendValid = !hasInvalidZipCodeError(props.paymentFacade?.checkResult);
     const billingAddressValidationResult = getWrongBillingAddressValidationResult(props.paymentFacade?.checkResult);
 
@@ -115,10 +112,6 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
     const paymentsApi = props.paymentsApi ?? defaultPaymentsApi;
 
     const offerUnavailableErrorMessage = useOfferUnavailableErrorMessage(props.paymentFacade);
-
-    if (!zipCodeBackendValid) {
-        createNotification({ text: c('Error').t`Please enter a valid ZIP code`, type: 'error' });
-    }
 
     const currentFromPaymentStatus: BillingAddress = getBillingAddressFromProp(props);
 
