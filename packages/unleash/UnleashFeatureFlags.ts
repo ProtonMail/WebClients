@@ -192,6 +192,9 @@ enum DriveFeatureFlag {
     DriveWebNewFileBrowser = 'DriveWebNewFileBrowser',
     // Foundation search libray
     DriveWebSearchFoundation = 'DriveWebSearchFoundation',
+    // SDK — names should match @protontech/drive-sdk FeatureFlags enum, or have a manual mapping
+    DriveCryptoEncryptBlocksWithPgpAead = 'DriveCryptoEncryptBlocksWithPgpAead',
+    DriveSmallFileUpload = 'DriveSmallFileUpload',
 }
 
 enum DocsFeatureFlag {
