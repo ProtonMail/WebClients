@@ -5,6 +5,9 @@
   },
   "contexts": {
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "\"즉시 재시작 및 프로필 캡처\"는 앱을 즉시 재시작하고 시작 프로필을 캡처합니다.\n\n\"다음 실행 시 프로필 캡처\"은 다음에 앱을 열 때 프로필을 캡처합니다. 재부팅 후 시작 속도를 측정하는 데 사용하세요."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }에 관하여"
       ],
@@ -35,6 +38,12 @@
       "Delete": [
         "삭제"
       ],
+      "Enable diagnostic logs": [
+        "분석 로그 활성화"
+      ],
+      "Enable diagnostic logs from the Chromium engine.": [
+        "Chromium 엔진의 진단 로그를 활성화합니다."
+      ],
       "Force Reload": [
         "강제 새로고침"
       ],
@@ -53,8 +62,11 @@
       "Paste and Match Style": [
         "붙여넣기 및 스타일 맞춤"
       ],
+      "Profile app startup": [
+        "프로필 앱 시작"
+      ],
       "Profile on next launch": [
-        "다음 실행 시 프로필 실행"
+        "다음 실행 시 프로필 캡처"
       ],
       "Quit": [
         "나가기"
@@ -67,6 +79,12 @@
       ],
       "Reload": [
         "새로고침"
+      ],
+      "Restart and profile now": [
+        "즉시 재시작 및 프로필 캡처"
+      ],
+      "Restart with logging": [
+        "로깅하여 다시 시작"
       ],
       "Select All": [
         "모두 선택"
@@ -88,6 +106,9 @@
       ],
       "Stop Speaking": [
         "말하기 중단"
+      ],
+      "These logs help us diagnose issues. The app will restart to apply the change.": [
+        "이 로그는 당사에서 문제 분석에 도움이 됩니다. 변경 사항을 적용하기 위해 앱이 다시 시작됩니다."
       ],
       "This will measure how long the app takes to start and save a report to your logs folder.": [
         "앱이 시작되는 데 걸리는 시간을 측정하고 해당 보고서를 사용자의 로그 폴더에 저장합니다."
