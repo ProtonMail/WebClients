@@ -441,6 +441,9 @@
       "Enable drive search": [
         "Aktifkan pencarian drive"
       ],
+      "Encrypted": [
+        "Terenkripsi"
+      ],
       "Expand folder": [
         "Lebarkan folder"
       ],
@@ -534,6 +537,9 @@
       "Go to settings": [
         "Buka pengaturan"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Dimengerti"
       ],
@@ -545,6 +551,9 @@
       ],
       "Help and resources": [
         "Bantuan dan sumber daya"
+      ],
+      "Hide": [
+        "Sembunyikan"
       ],
       "Hide advanced PGP settings": [
         "Sembunyikan pengaturan PGP lanjutan"
@@ -987,6 +996,9 @@
       "Share your calendar with your team": [
         "Bagikan kalender Anda dengan tim Anda"
       ],
+      "Shared": [
+        "Dibagikan"
+      ],
       "Sharing options": [
         "Opsi berbagi"
       ],
@@ -1250,6 +1262,15 @@
       ],
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Domains": [
+        "Domain"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Pengguna"
       ]
     },
     "Alert": {
@@ -1439,6 +1460,12 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } bulan"
+      ],
+      "${ n } year": [
+        "${ n } tahun"
+      ],
       "1 month": [
         "1 bulan"
       ],
@@ -1651,6 +1678,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Subtotal": [
+        "Subtotal"
       ],
       "Total": [
         "Total"
@@ -4835,6 +4865,9 @@
       "All your changes will be lost.": [
         "Seluruh perubahan yang Anda buat akan hilang."
       ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Semua kontak Anda akan diimpor, hingga batas ${ maxContact } kontak"
+      ],
       "Already in your library": [
         "Sudah dalam pustaka Anda"
       ],
@@ -4933,6 +4966,12 @@
       ],
       "Calendar side panel": [
         "Panel samping kalender"
+      ],
+      "Can edit": [
+        "Dapat menyunting"
+      ],
+      "Can view only": [
+        "Hanya dapat melihat"
       ],
       "Canceled": [
         "Dibatalkan"
@@ -5435,6 +5474,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Pelajari apa yang harus dilakukan ${ dataLeakedLink }"
       ],
+      "Link copied": [
+        "Tautan disalin"
+      ],
       "Link copied to clipboard": [
         "Tautan disalin ke papan klip"
       ],
@@ -5603,6 +5645,9 @@
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Peringatan kami mengutamakan keamanan. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
       ],
+      "owner": [
+        "pemilik"
+      ],
       "password": [
         "kata sandi"
       ],
@@ -5704,6 +5749,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Silakan tunggu selagi kami mencari kontak yang mengandung data yang terenkripsi dengan kunci yang tidak aktif."
+      ],
+      "Preparing": [
+        "Menyiapkan"
       ],
       "Preview failed to be loaded": [
         "Pratinjau gagal dimuat"
@@ -5848,9 +5896,6 @@
       ],
       "Share files with links": [
         "Berbagi file dengan tautan"
-      ],
-      "Share via link settings": [
-        "Bagikan melalui pengaturan tautan"
       ],
       "Shared": [
         "Dibagikan"
@@ -6639,11 +6684,17 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
       ],
+      "Access": [
+        "Akses"
+      ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Akses ${ PASS_APP_NAME } secara aman dari terminal. Ideal untuk pemrograman, automasi, dan alur kerja pengembangan."
       ],
       "Account holder": [
         "Pemilik akun"
+      ],
+      "Active": [
+        "Aktif"
       ],
       "Add email address": [
         "Tambah alamat email"
@@ -6710,6 +6761,12 @@
       ],
       "Calendar": [
         "Kalender"
+      ],
+      "can edit": [
+        "dapat menyunting"
+      ],
+      "can view": [
+        "dapat melihat"
       ],
       "Cancel download": [
         "Batalkan unduhan"
@@ -6856,6 +6913,9 @@
         "Kedaluwarsa"
       ],
       "Expires": [
+        "Kedaluwarsa"
+      ],
+      "Expiry": [
         "Kedaluwarsa"
       ],
       "Extended address": [
@@ -7496,6 +7556,9 @@
       "${ n } active meeting at a time": [
         "${ n } pertemuan yang aktif secara bersamaan"
       ],
+      "${ n } participant": [
+        "${ n } peserta"
+      ],
       "24 hours per meeting": [
         "24 jam per pertemuan"
       ],
@@ -7504,6 +7567,9 @@
       ],
       "Appointment scheduling": [
         "Penjadwalan janji temu"
+      ],
+      "Booking pages": [
+        "Laman pemesanan"
       ],
       "Browser, mobile, and desktop apps": [
         "Aplikasi peramban, seluler, dan desktop"
@@ -9564,11 +9630,20 @@
       "terms and conditions": [
         "syarat dan ketentuan"
       ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Diskon berlaku untuk ${ renewalsWithCoupon } perpanjangan."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ini berlaku selama ${ couponRedemptions } bulan. Selanjutnya, harga akan otomatis diperbarui menjadi ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
+      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ini berlaku untuk ${ subscriptionLength } bulan pertama."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Harga diskon khusus ini valid untuk bulan pertama. Selanjutnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku selama ${ couponRedemptions } bulan. Kemudian akan diperpanjang secara otomatis dengan harga ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ${ priceWithDiscount } ini valid untuk ${ subscriptionLength } bulan pertama."
@@ -9762,6 +9837,9 @@
       "Company name": [
         "Nama perusahaan"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Mis., "
       ],
@@ -9824,6 +9902,9 @@
       ],
       "Postal code": [
         "Kode pos"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search for group name": [
         "Cari nama grup"
@@ -10543,6 +10624,14 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Membatalkan langganan Anda, mohon menunggu"
+      ]
+    },
+    "Status": {
+      "accepted": [
+        "diterima"
+      ],
+      "pending": [
+        "menunggu"
       ]
     },
     "Storage": {
@@ -11510,6 +11599,9 @@
       "Currency": [
         "Mata uang"
       ],
+      "Custom": [
+        "Kustom"
+      ],
       "Customize and confirm": [
         "Sesuaikan dan konfirmasi"
       ],
@@ -11960,6 +12052,9 @@
       "Processing...": [
         "Memproses..."
       ],
+      "Public link": [
+        "Tautan publik"
+      ],
       "Public shared link status": [
         "Status tautan terbagi publik"
       ],
@@ -12053,9 +12148,6 @@
       "SHA1": [
         "SHA1"
       ],
-      "Share ${ name }": [
-        "Bagikan ${ name }"
-      ],
       "Share your calendar with your team": [
         "Bagikan kalender Anda dengan tim Anda"
       ],
@@ -12091,6 +12183,9 @@
       ],
       "Sort files/folders": [
         "Urutkan file/folder"
+      ],
+      "Spring Sale": [
+        "Diskon Musim Semi"
       ],
       "Start a new import": [
         "Mulai impor baru"
