@@ -15,6 +15,7 @@ import { Tabs } from '@proton/components/components/tabs/Tabs';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import type { IconName } from '@proton/icons/types';
+import { isAndroid, isDesktop, isIos, isLinux, isMac, isMobile, isWindows } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import appleAppStoreImage from './images/apple-app-store.svg';
@@ -64,7 +65,19 @@ interface CategoryTab {
 interface Category {
     tabs: CategoryTab[];
 }
+enum DeviceCategoryIndex {
+    Desktop = 0,
+    Mobile = 1,
+}
 
+enum PlatformIndex {
+    Default = 0,
+    Windows = 0,
+    Mac = 1,
+    Linux = 2,
+    Ios = 0,
+    Android = 1,
+}
 const downloadData = [
     {
         category: () => c('Download').t`Desktop`,
@@ -282,8 +295,36 @@ const downloadData = [
     },
 ];
 
-const CategoryTabs = ({ category }: { category: Category }) => {
-    const [activeTabIndex, setActiveTabIndex] = useState(0);
+const findPlatformTabIndex = (deviceIndex: DeviceCategoryIndex): PlatformIndex => {
+    switch (deviceIndex) {
+        case DeviceCategoryIndex.Desktop:
+            if (isMac()) {
+                return PlatformIndex.Mac;
+            }
+            if (isWindows()) {
+                return PlatformIndex.Windows;
+            }
+            if (isLinux() && !isAndroid()) {
+                return PlatformIndex.Linux;
+            }
+            return PlatformIndex.Default;
+
+        case DeviceCategoryIndex.Mobile:
+            return isAndroid() ? PlatformIndex.Android : PlatformIndex.Ios;
+
+        default:
+            return PlatformIndex.Default;
+    }
+};
+
+const CategoryTabs = ({
+    category,
+    deviceCategoryIndex,
+}: {
+    category: Category;
+    deviceCategoryIndex: DeviceCategoryIndex;
+}) => {
+    const [activeTabIndex, setActiveTabIndex] = useState(() => findPlatformTabIndex(deviceCategoryIndex));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const subTabs = category.tabs.map((tab: CategoryTab) => ({
@@ -399,11 +440,19 @@ const CategoryTabs = ({ category }: { category: Category }) => {
 };
 
 const Download = () => {
-    const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
+    const [activeDeviceIndex, setActiveDeviceIndex] = useState(() => {
+        if (isDesktop()) {
+            return DeviceCategoryIndex.Desktop;
+        }
+        if (isMobile() || isAndroid() || isIos()) {
+            return DeviceCategoryIndex.Mobile;
+        }
+        return DeviceCategoryIndex.Desktop;
+    });
 
     const categoryTabs = downloadData.map((category) => ({
         title: category.category(),
-        content: <CategoryTabs category={category} />,
+        content: <CategoryTabs key={activeDeviceIndex} category={category} deviceCategoryIndex={activeDeviceIndex} />,
     }));
 
     return (
@@ -411,8 +460,8 @@ const Download = () => {
             tabs={categoryTabs as Tab[]}
             variant="modern"
             fullWidth
-            value={activeCategoryIndex}
-            onChange={setActiveCategoryIndex}
+            value={activeDeviceIndex}
+            onChange={setActiveDeviceIndex}
         />
     );
 };
