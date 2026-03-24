@@ -12,9 +12,16 @@ import SidebarListItemContent from './SidebarListItemContent';
 import SidebarListItemContentIcon from './SidebarListItemContentIcon';
 import SidebarListItemLink from './SidebarListItemLink';
 
+function OptionalItemLink({ to, children }: { to?: string; children: ReactNode }) {
+    if (!to) {
+        return children;
+    }
+    return <SidebarListItemLink to={to}>{children}</SidebarListItemLink>;
+}
+
 interface Props {
-    to: string;
-    icon: IconName;
+    to?: string;
+    icon?: IconName;
     notification?: ThemeColor;
     children: ReactNode;
 }
@@ -22,16 +29,16 @@ interface Props {
 const SettingsListItem = forwardRef<HTMLLIElement, Props>(({ to, icon, children, notification }, ref) => {
     return (
         <SidebarListItem ref={ref}>
-            <SidebarListItemLink to={to}>
+            <OptionalItemLink to={to}>
                 <SidebarListItemContent
-                    left={<SidebarListItemContentIcon name={icon} />}
+                    left={icon ? <SidebarListItemContentIcon name={icon} /> : null}
                     right={
                         notification && <NotificationDot color={notification} alt={c('Info').t`Attention required`} />
                     }
                 >
                     {children}
                 </SidebarListItemContent>
-            </SidebarListItemLink>
+            </OptionalItemLink>
         </SidebarListItem>
     );
 });
