@@ -458,6 +458,9 @@
       "Go to the next available appointment": [
         "Buka janji temu berikutnya yang tersedia"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Dimengerti"
       ],
@@ -466,6 +469,9 @@
       ],
       "Help and resources": [
         "Bantuan dan sumber daya"
+      ],
+      "Hide": [
+        "Sembunyikan"
       ],
       "Hide advanced PGP settings": [
         "Sembunyikan pengaturan PGP lanjutan"
@@ -1079,6 +1085,15 @@
       ],
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Domains": [
+        "Domain"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Pengguna"
       ]
     },
     "Alarm notification": {
@@ -1317,6 +1332,12 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } bulan"
+      ],
+      "${ n } year": [
+        "${ n } tahun"
+      ],
       "1 month": [
         "1 bulan"
       ],
@@ -1704,6 +1725,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Subtotal": [
+        "Subtotal"
       ],
       "Total": [
         "Total"
@@ -4998,6 +5022,9 @@
       "All participants will get a cancellation email. Which event would you like to delete?": [
         "Seluruh peserta akan menerima email pembatalan. Acara mana yang ingin Anda hapus?"
       ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Semua kontak Anda akan diimpor, hingga batas ${ maxContact } kontak"
+      ],
       "American Express SafeKey logo": [
         "Logo American Express Safekey"
       ],
@@ -7260,6 +7287,9 @@
       "${ n } active meeting at a time": [
         "${ n } pertemuan yang aktif secara bersamaan"
       ],
+      "${ n } participant": [
+        "${ n } peserta"
+      ],
       "24 hours per meeting": [
         "24 jam per pertemuan"
       ],
@@ -7268,6 +7298,9 @@
       ],
       "Appointment scheduling": [
         "Penjadwalan janji temu"
+      ],
+      "Booking pages": [
+        "Laman pemesanan"
       ],
       "Browser, mobile, and desktop apps": [
         "Aplikasi peramban, seluler, dan desktop"
@@ -9030,11 +9063,20 @@
       "terms and conditions": [
         "syarat dan ketentuan"
       ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Diskon berlaku untuk ${ renewalsWithCoupon } perpanjangan."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ini berlaku selama ${ couponRedemptions } bulan. Selanjutnya, harga akan otomatis diperbarui menjadi ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
+      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ini berlaku untuk ${ subscriptionLength } bulan pertama."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Harga diskon khusus ini valid untuk bulan pertama. Selanjutnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku selama ${ couponRedemptions } bulan. Kemudian akan diperpanjang secara otomatis dengan harga ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ${ priceWithDiscount } ini valid untuk ${ subscriptionLength } bulan pertama."
@@ -9243,6 +9285,9 @@
       "Company name": [
         "Nama perusahaan"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Mis., "
       ],
@@ -9311,6 +9356,9 @@
       ],
       "Postal code": [
         "Kode pos"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search events": [
         "Cari acara"
@@ -11138,6 +11186,9 @@
       "Currency": [
         "Mata uang"
       ],
+      "Custom": [
+        "Kustom"
+      ],
       "Customize and confirm": [
         "Sesuaikan dan konfirmasi"
       ],
@@ -11563,6 +11614,9 @@
       ],
       "Simplify password management": [
         "Sederhanakan pengelolaan kata sandi"
+      ],
+      "Spring Sale": [
+        "Diskon Musim Semi"
       ],
       "Start a new import": [
         "Mulai impor baru"

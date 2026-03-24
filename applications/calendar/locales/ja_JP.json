@@ -458,6 +458,9 @@
       "Go to the next available appointment": [
         "次の利用可能な予定へ移動"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "はい"
       ],
@@ -3660,6 +3663,9 @@
       "Invalid code": [
         "無効なコードです"
       ],
+      "Invalid coupon": [
+        "無効なクーポン"
+      ],
       "Invalid email address": [
         "メールアドレスが正しくありません"
       ],
@@ -3782,6 +3788,9 @@
       ],
       "Please activate your search again": [
         "検索を再度有効にしてください"
+      ],
+      "Please complete the billing details": [
+        "請求の詳細をご記入ください"
       ],
       "Please create an address first.": [
         "最初にアドレスを作成してください。"
@@ -3909,6 +3918,9 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "追加クレジットの最低金額は ${ price } です。"
       ],
+      "The minimum donation amount is ${ price }": [
+        "最低寄付金額は ${ price } です。"
+      ],
       "The sending key is not valid": [
         "送信用の鍵が有効ではありません"
       ],
@@ -3920,6 +3932,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "このフィールドは${ maximumLength }文字の最大値を超えています。"
+      ],
+      "This field is invalid": [
+        "このフィールドは無効です"
       ],
       "This field is required": [
         "この項目の入力は必須です"
@@ -4898,6 +4913,11 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "${ boldExport } を選択して ICS ファイルとしてカレンダーをエクスポートします。"
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "高度なインポート"
       ]
     },
     "Import warning": {
@@ -6267,6 +6287,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted }より前にキャンセルした場合、請求はされません。"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "クレジット報酬は、ご友人が年額プランにご登録いただいてから1か月後、月額プランにご加入いただいてから2か月後に受け取れます。"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "その後、${ renewCycle }ヶ月ごとに${ renewAmountStr }で請求されます。いつでもキャンセルできます。"
@@ -11384,6 +11407,9 @@
       "Change password": [
         "パスワードを変更"
       ],
+      "Choose a provider": [
+        "プロバイダーを選択"
+      ],
       "Choose a time": [
         "時間を選択"
       ],
@@ -11443,6 +11469,9 @@
       ],
       "Currency": [
         "通貨"
+      ],
+      "Custom": [
+        "カスタム"
       ],
       "Customize and confirm": [
         "カスタマイズと確認"
@@ -11774,6 +11803,9 @@
       "Reshare your calendars": [
         "カレンダーを再び共有"
       ],
+      "Reverse charge not supported": [
+        "リバースチャージはサポートされていません"
+      ],
       "Save": [
         "保存"
       ],
@@ -11869,6 +11901,9 @@
       ],
       "Simplify password management": [
         "パスワード管理を簡単に"
+      ],
+      "Spring Sale": [
+        "スプリングセール"
       ],
       "Start a new import": [
         "新しいインポートを開始"

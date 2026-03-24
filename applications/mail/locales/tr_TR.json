@@ -154,6 +154,9 @@
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
+      "Authenticate": [
+        "Kimliği doğrula"
+      ],
       "Auto-delete spam and trash": [
         "İstenmeyenleri ve çöpü otomatik olarak silin"
       ],
@@ -581,6 +584,9 @@
       ],
       "Font": [
         "Yazı tipi"
+      ],
+      "Forgot password?": [
+        "Parolamı unuttum"
       ],
       "Formalize": [
         "Resmileştir"
@@ -1484,7 +1490,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1588,8 +1595,14 @@
       "Use a different payment method": [
         "Başka bir ödeme yöntemi kullanın"
       ],
+      "Use authentication code": [
+        "Kimlik doğrulama kodunu kullanın"
+      ],
       "Use for sending": [
         "Gönderim için kullan"
+      ],
+      "Use recovery code": [
+        "Kurtarma kodunu kullanın"
       ],
       "Use this": [
         "Bunu kullan"
@@ -5574,6 +5587,24 @@
         "Işık hızında"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } hesabınız ile ilişkilendirilmiş güvenlik anahtarını takın."
+      ],
+      "Security key": [
+        "Güvenlik anahtarı"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Güvenlik anahtarı"
+      ]
+    },
     "file size format": {
       "byte": [
         "bayt",
@@ -7125,6 +7156,9 @@
       "Duplicate key updated": [
         "Çift anahtar güncellendi"
       ],
+      "Each code can only be used once": [
+        "Her kod yalnızca bir kez kullanılabilir"
+      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Duyuru ve e-posta listelerini kolayca yönetin ve aboneliklerini sonlandırın."
       ],
@@ -7183,11 +7217,23 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Tümüyle güvenli ve şifrelenmiş iletişim sağlayın. Ücretsiz ${ BRAND_NAME } e-posta adresinizi şimdi alın."
       ],
+      "Enter the code from your authenticator app": [
+        "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "İçe aktarmak istediğiniz e-posta hesabının kimlik doğrulama bilgilerini yazın."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Kendi parolanızı yazın (güvenilen kişi olarak)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Öngörülen kalan süre: ${ estimatedMinutes } dakika",
@@ -7398,8 +7444,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8544,6 +8589,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName } için güvenilen anahtarlar özelliğini açtığınızda, kişi bilgilerine herkese açık anahtarlar eklenir."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları veriyoruz."
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Bir duyuruya abone olurken e-posta adresiniz yerine bir takma ad kullanabilirsiniz. Böylece hem kimliğiniz gizli kalır hem de istediğiniz zaman takma adı kullanımdan kaldırabilirsiniz."
       ],
@@ -9219,6 +9267,9 @@
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
+      "Authenticator app": [
+        "Kimlik doğrulama uygulaması"
+      ],
       "Automated confirmations and alerts": [
         "Otomatik onaylar ve uyarılar"
       ],
@@ -9351,9 +9402,6 @@
       "Did not follow instructions": [
         "Yönergeleri izlemedi"
       ],
-      "Discussion board posts and threads": [
-        "Tartışma panosu gönderileri ve konuları"
-      ],
       "Do you have any suggestions for our team?": [
         "Ekibimizden herhangi bir öneri aldınız mı?"
       ],
@@ -9432,9 +9480,6 @@
       "Folder location": [
         "Klasör konumu"
       ],
-      "Forums": [
-        "Forumlar"
-      ],
       "Forwards to": [
         "Şuraya iletiyor"
       ],
@@ -9452,9 +9497,6 @@
       ],
       "Get the deal": [
         "Tekliften yararlanın"
-      ],
-      "Go to Forums": [
-        "Forumlara git"
       ],
       "Go to Newsletters": [
         "Duyurulara git"
@@ -9911,6 +9953,12 @@
       ],
       "Your location": [
         "Konumunuz"
+      ],
+      "Your password (admin)": [
+        "Parolanız (yönetici)"
+      ],
+      "Your password (trusted contact)": [
+        "Parolanız (güvenilen kişi)"
       ],
       "ZIP code": [
         "Posta kodu"
@@ -11768,6 +11816,9 @@
       "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
         "E-posta değiştirmek zordur, ${ BRAND_NAME } bunu kolaylaştırır. Eski hesabınızı bağlayıp her şeyi odaklanmış ve reklamsız tek bir çalışma alanında yönetin."
       ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "En sık kullandığınız hizmetlerde e-posta adresinizi güncelleyin. İzlenmeyi önleyin ve gizliliğinizi koruyun."
+      ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } hizmetine hoş geldiniz"
       ]
@@ -12931,6 +12982,11 @@
         "Hesap güvenliğini gözden geçirin"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Oturum açılamadı."
+      ]
+    },
     "Search - no results": {
       "An action is being processed": [
         "Bir işlem yapılıyor"
@@ -13647,6 +13703,17 @@
       ],
       "Your pm.me email is active": [
         "pm.me e-posta adresiniz kullanımda"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Oturum aç"
+      ],
+      "Sign in to your organization": [
+        "Kuruluşunuzda oturum açın"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
       ]
     },
     "State": {
@@ -15081,6 +15148,9 @@
       "Enhance security with 2FA": [
         "İki adımlı doğrulama ile güvenliği artırın"
       ],
+      "Enter your password": [
+        "Parolanızı yazın"
+      ],
       "Error": [
         "Hata"
       ],
@@ -15652,6 +15722,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
+      ],
+      "Two-factor authentication": [
+        "İki adımlı doğrulama"
       ],
       "Unsubscribe": [
         "Aboneliği sonlandır"

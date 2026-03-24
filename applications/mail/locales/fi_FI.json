@@ -154,6 +154,9 @@
       "Attention required": [
         "Huomiota vaaditaan"
       ],
+      "Authenticate": [
+        "Todenna"
+      ],
       "Auto-delete spam and trash": [
         "Roskapostin ja roskakorin automaattinen tyhjennys"
       ],
@@ -581,6 +584,9 @@
       ],
       "Font": [
         "Fontti"
+      ],
+      "Forgot password?": [
+        "Unohditko salasanasi?"
       ],
       "Formalize": [
         "Virallista"
@@ -1477,6 +1483,10 @@
       "Trust": [
         "Luota"
       ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
+      ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
       ],
@@ -1576,8 +1586,14 @@
       "Use a different payment method": [
         "Käytä eri maksutapaa"
       ],
+      "Use authentication code": [
+        "Käytä todennuskoodia"
+      ],
       "Use for sending": [
         "Käytä lähetykseen"
+      ],
+      "Use recovery code": [
+        "Käytä palautuskoodia"
       ],
       "Use this": [
         "Käytä tätä"
@@ -5440,6 +5456,16 @@
         "Salamannopea"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "Suojausavain"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Suojausavain"
+      ]
+    },
     "file size format": {
       "byte": [
         "tavu",
@@ -5715,6 +5741,9 @@
       "Discover privacy features": [
         "Tutustu tietosuojaominaisuuksiin"
       ],
+      "Download apps": [
+        "Lataa sovellukset"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Niin vahva salaus, että vain sinä ja tarkoitetut vastaanottajat näkevät viestisi."
       ],
@@ -5723,6 +5752,9 @@
       ],
       "For your eyes only": [
         "Vain sinun silmillesi"
+      ],
+      "Get storage bonus": [
+        "Hanki tallennustilan bonus"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Hanki ${ MAIL_APP_NAME } -mobiilisovellus"
@@ -5735,6 +5767,9 @@
       ],
       "Protection from trackers": [
         "Seurantasuojaus"
+      ],
+      "Review import options": [
+        "Tarkista tuontiasetukset"
       ],
       "Sign in to the mobile app to complete this step": [
         "Suorita tämä vaihe kirjautumalla mobiilisovellukseen"
@@ -7037,11 +7072,17 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Varmistu täysin yksityisestä ja salatusta viestinnästä. Hanki ilmainen ${ BRAND_NAME } -sähköpostiosoitteesi nyt."
       ],
+      "Enter the code from your authenticator app": [
+        "Syötä koodi todennussovelluksestasi"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Syötä tuotavan tilin kirjautumistiedot."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Syötä kohteeseen ${ destinationText } lähetetty vahvistuskoodi."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Syötä oma salasanasi (organisaation ylläpitäjänä)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Arviolta ${ estimatedMinutes } minuutti jäljellä",
@@ -7252,8 +7293,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -9040,6 +9080,9 @@
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
       ],
+      "Authenticator app": [
+        "Todennussovellus"
+      ],
       "Automated confirmations and alerts": [
         "Automaattiset vahvistukset ja hälytykset"
       ],
@@ -9172,9 +9215,6 @@
       "Did not follow instructions": [
         "Ei seurannut ohjeitani"
       ],
-      "Discussion board posts and threads": [
-        "Keskustelualueen julkaisut ja keskustelut"
-      ],
       "Do you have any suggestions for our team?": [
         "Onko sinulla ehdotuksia tiimillemme?"
       ],
@@ -9253,9 +9293,6 @@
       "Folder location": [
         "Kansion sijainti"
       ],
-      "Forums": [
-        "Foorumit"
-      ],
       "Forwards to": [
         "Ohjaa osoitteeseen"
       ],
@@ -9273,9 +9310,6 @@
       ],
       "Get the deal": [
         "Hyödynnä tarjous"
-      ],
-      "Go to Forums": [
-        "Siirry foorumeille"
       ],
       "Go to Newsletters": [
         "Siirry uutiskirjeisiin"
@@ -9729,6 +9763,9 @@
       ],
       "Your location": [
         "Sijaintisi"
+      ],
+      "Your password (admin)": [
+        "Salasanasi (ylläpitäjä)"
       ],
       "ZIP code": [
         "Postinumero"
@@ -11510,8 +11547,29 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Choose your service": [
+        "Valitse palvelusi"
+      ],
       "Maybe later": [
         "Ehkä myöhemmin"
+      ],
+      "Popular services": [
+        "Suositut palvelut"
+      ],
+      "Skip for now": [
+        "Ohita toistaiseksi"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Vaihda tilisi ${ BRAND_NAME }:iin"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Sähköpostin vaihtaminen on vaikeaa. ${ BRAND_NAME } tekee siitä helppoa. Yhdistä vanha tilisi ja hallitse kaikkea yhdessä keskitetyssä, mainoksettomassa työtilassa."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Päivitä sähköpostisi eniten käyttämissäsi palveluissa. Estä seuranta ja suojaa yksityisyyttäsi."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Tervetuloa ${ MAIL_APP_NAME }iin"
       ]
     },
     "Onboarding modal": {
@@ -12599,6 +12657,11 @@
         "Tarkista tiliturvallisuus"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Sisäänkirjautumista ei suoritettu loppuun."
+      ]
+    },
     "Search - no results": {
       "An action is being processed": [
         "Toimintoa käsitellään"
@@ -13279,6 +13342,17 @@
       ],
       "Your pm.me email is active": [
         "Sinun pm.me-osoitteesi on käytössä"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Kirjaudu sisään"
+      ],
+      "Sign in to your organization": [
+        "Kirjaudu sisään organisaatioosi"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Sinut ohjataan kolmannen osapuolen SSO- palveluntarjoajaan."
       ]
     },
     "State": {
@@ -14707,6 +14781,9 @@
       "Enhance security with 2FA": [
         "Paranna tietoturvaa 2FA:lla"
       ],
+      "Enter your password": [
+        "Syötä salasanasi"
+      ],
       "Error": [
         "Virhe"
       ],
@@ -15272,6 +15349,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
+      ],
+      "Two-factor authentication": [
+        "Kaksivaiheinen tunnistautuminen"
       ],
       "Unsubscribe": [
         "Peru tilaus"

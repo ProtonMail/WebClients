@@ -1387,6 +1387,9 @@
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } ønsker at dele et element med en gruppe, som du administrerer."
       ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } ønsker at dele et element med gruppen ${ name }."
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } ønsker at dele et element med dig."
       ],
@@ -1699,6 +1702,9 @@
       "Enabling biometrics lock failed": [
         "Aktivering af biometrisk lås mislykkedes"
       ],
+      "Enabling desktop auto-lock": [
+        "Aktivering af automatisk låsning af desktop-app"
+      ],
       "Enabling offline mode...": [
         "Aktiverer offline-tilstand..."
       ],
@@ -1713,6 +1719,9 @@
       ],
       "Enter the address you want to email.": [
         "Indtast den adresse, du ønsker at sende en e-mail til."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Indtast bekræftelseskode. Ciffer ${ digit }."
       ],
       "Enter your extra password": [
         "Indtast din ekstra adgangskode"
@@ -1814,6 +1823,9 @@
       ],
       "Invite successfully resent": [
         "Invitation sendt igen"
+      ],
+      "invites the group ${ name } to access items in": [
+        "inviterer gruppen ${ name } til at få adgang til elementer i"
       ],
       "invites you to access items in": [
         "inviterer dig til at tilgå elementer i"
@@ -2286,6 +2298,9 @@
       ],
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Denne funktion er i øjeblikket eksperimentel på Linux. Sørg for, at dit system er opdateret."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Denne funktion kræver, at desktop-appen ${ PASS_APP_NAME } er installeret og kører under opsætningen."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Dette element deles i øjeblikket ikke med nogen. Inviter folk for at dele det med andre."

@@ -155,6 +155,9 @@
       "Attention required": [
         "Necesită atenție"
       ],
+      "Authenticate": [
+        "Autentificare"
+      ],
       "Auto-delete spam and trash": [
         "Ștergere automată mesaje din „Gunoi” și „Nedorite”"
       ],
@@ -584,6 +587,9 @@
       ],
       "Font": [
         "Font"
+      ],
+      "Forgot password?": [
+        "Ați uitat parola?"
       ],
       "Formalize": [
         "Formalizare"
@@ -1487,6 +1493,11 @@
       "Trust": [
         "Aprobare"
       ],
+      "Trust key": [
+        "Aprobare cheie",
+        "Aprobare cheie",
+        "Aprobare cheie"
+      ],
       "Trust public key": [
         "Aprobare cheie publică"
       ],
@@ -1589,8 +1600,14 @@
       "Use a different payment method": [
         "Folosire metodă de plată diferită"
       ],
+      "Use authentication code": [
+        "Folosire cod de autentificare"
+      ],
       "Use for sending": [
         "Folosire pentru trimitere"
+      ],
+      "Use recovery code": [
+        "Folosire cod de recuperare"
       ],
       "Use this": [
         "Folosire asta"
@@ -5614,6 +5631,24 @@
         "Viteză foarte mare"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Ceva nu a funcționat corect la autentificarea cu cheia de securitate. Reîncercați."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Introduceți o cheie de securitate legată la contul ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Cheie de securitate"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Cheie de securitate"
+      ]
+    },
     "file size format": {
       "byte": [
         "bait",
@@ -5897,6 +5932,9 @@
       "Discover privacy features": [
         "Descoperiți funcțiile de confidențialitate"
       ],
+      "Download apps": [
+        "Descărcați aplicații"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Criptare atât de puternică, încât doar dvs. și destinatarii vizați puteți vedea conținutul mesajelor."
       ],
@@ -5905,6 +5943,9 @@
       ],
       "For your eyes only": [
         "Doar pentru dumneavoastră"
+      ],
+      "Get storage bonus": [
+        "Obțineți spațiu de stocare bonus"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Luați aplicația ${ MAIL_APP_NAME } pentru dispozitive mobile"
@@ -5917,6 +5958,9 @@
       ],
       "Protection from trackers": [
         "Protecția împotriva monitorizării"
+      ],
+      "Review import options": [
+        "Revizuiți opțiunile de importare"
       ],
       "Sign in to the mobile app to complete this step": [
         "Conectați-vă la aplicația mobilă pentru a finaliza acest pas"
@@ -7229,6 +7273,9 @@
       "Duplicate key updated": [
         "Cheie duplicat actualizată"
       ],
+      "Each code can only be used once": [
+        "Fiecare cod poate fi folosit doar o dată."
+      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gestionați cu ușurință și efectuați dezabonarea de la buletine informative și liste de adrese."
       ],
@@ -7288,11 +7335,23 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Asigurați o comunicare complet privată și criptată. Revendicați-vă acum adresa gratuită de e-mail ${ BRAND_NAME }."
       ],
+      "Enter the code from your authenticator app": [
+        "Introduceți codul din aplicația Authenticator."
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduceți datele de conectare a contului de e-mail din care doriți să importați."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Introduceți codul de verificare. Cifra ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduceți parola (ca administrator al organizației)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Introduceți parola (ca și contact aprobat)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Timp estimat rămas: ${ estimatedMinutes } minut",
@@ -7510,9 +7569,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8663,6 +8720,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Când ați activat cheile de încredere pentru ${ senderName }, cheile publice au fost adăugate la datele de contact."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Când vă înscrieți pentru un buletin informativ, utilizați un alias în loc de adresa de e-mail reală. Identitatea vă va rămâne ascunsă și puteți dezactiva oricând aliasul."
       ],
@@ -9364,6 +9424,9 @@
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
+      "Authenticator app": [
+        "Aplicația Authenticator"
+      ],
       "Automated confirmations and alerts": [
         "Confirmări și alerte automate"
       ],
@@ -9496,9 +9559,6 @@
       "Did not follow instructions": [
         "Nu a urmat instrucțiunile"
       ],
-      "Discussion board posts and threads": [
-        "Publicări și fire de discuție pe forum"
-      ],
       "Do you have any suggestions for our team?": [
         "Aveți sugestii pentru echipa noastră?"
       ],
@@ -9577,9 +9637,6 @@
       "Folder location": [
         "Amplasare folder"
       ],
-      "Forums": [
-        "Forumuri"
-      ],
       "Forwards to": [
         "Transferare către"
       ],
@@ -9597,9 +9654,6 @@
       ],
       "Get the deal": [
         "Luați oferta"
-      ],
-      "Go to Forums": [
-        "Accesare forumuri"
       ],
       "Go to Newsletters": [
         "Accesare buletine informative"
@@ -10056,6 +10110,12 @@
       ],
       "Your location": [
         "Amplasare"
+      ],
+      "Your password (admin)": [
+        "Parola dvs. (administrator)"
+      ],
+      "Your password (trusted contact)": [
+        "Parola dvs. (contact aprobat)"
       ],
       "ZIP code": [
         "Cod poștal"
@@ -11934,8 +11994,29 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Choose your service": [
+        "Alegeți serviciul"
+      ],
       "Maybe later": [
         "Poate mai târziu"
+      ],
+      "Popular services": [
+        "Servicii populare"
+      ],
+      "Skip for now": [
+        "Omitere momentan"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Comutați-vă conturile la ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Migrarea conturilor de e-mail este dificilă. ${ BRAND_NAME } o face ușoară. Conectați-vă contul vechi și gestionați totul într-un singur spațiu de lucru concentrat, fără reclame."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Actualizați-vă e-mailul pe serviciile pe care le utilizați cel mai des. Preveniți urmărirea și protejați-vă confidențialitatea."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Bun venit la ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -13112,6 +13193,11 @@
         "Revizuire securitate cont"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Înscrierea nu o fost finalizată corect."
+      ]
+    },
     "Search - no results": {
       "An action is being processed": [
         "Se procesează o acțiune"
@@ -13849,6 +13935,17 @@
       ],
       "Your pm.me email is active": [
         "Adresa pm.me este activată"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Conectare"
+      ],
+      "Sign in to your organization": [
+        "Autentificare în organizație"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Pagina va fi redirecționată spre furnizorul autentificării unice (SSO)."
       ]
     },
     "State": {
@@ -15344,6 +15441,9 @@
       "Enhance security with 2FA": [
         "Îmbunătățiți securitatea cu A2F"
       ],
+      "Enter your password": [
+        "Introduceți parola"
+      ],
       "Error": [
         "Eroare"
       ],
@@ -15917,6 +16017,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activare ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Autentificare cu doi factori"
       ],
       "Unsubscribe": [
         "Dezabonare"

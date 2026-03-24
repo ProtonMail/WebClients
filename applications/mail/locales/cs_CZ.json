@@ -156,6 +156,9 @@
       "Attention required": [
         "Vyžadována pozornost"
       ],
+      "Authenticate": [
+        "Ověřit"
+      ],
       "Auto-delete spam and trash": [
         "Automatické mazání spamu a koše"
       ],
@@ -587,6 +590,9 @@
       ],
       "Font": [
         "Písmo"
+      ],
+      "Forgot password?": [
+        "Zapomenuté heslo?"
       ],
       "Formalize": [
         "Formalizovat"
@@ -1489,7 +1495,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -1593,8 +1602,14 @@
       "Use a different payment method": [
         "Použít jinou platební metodu"
       ],
+      "Use authentication code": [
+        "Použít ověřovací kód"
+      ],
       "Use for sending": [
         "Použít pro odesílání"
+      ],
+      "Use recovery code": [
+        "Použít kód pro obnovení"
       ],
       "Use this": [
         "Použít toto"
@@ -5639,6 +5654,24 @@
         "Blesková rychlost"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Při ověřování pomocí bezpečnostního klíče se něco pokazilo. Zkuste to prosím znovu."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vložte bezpečnostní klíč spojený s vaším účtem ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Bezpečnostní klíč"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Bezpečnostní klíč"
+      ]
+    },
     "file size format": {
       "byte": [
         "bajt",
@@ -7316,6 +7349,9 @@
       "Duplicate key updated": [
         "Duplicitní klíč byl aktualizován"
       ],
+      "Each code can only be used once": [
+        "Každý kód lze použít pouze jednou"
+      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Snadná správa a odhlašování odběru e-mailových zpravodajů a seznamů."
       ],
@@ -7376,11 +7412,23 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Zajistěte si zcela soukromou a šifrovanou komunikaci. Získejte zdarma e-mailovou adresu ${ BRAND_NAME } ještě dnes."
       ],
+      "Enter the code from your authenticator app": [
+        "Zadejte kód z vaší ověřovací aplikace"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Zadejte přihlašovací údaje e-mailového účtu, ze kterého chcete importovat."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Zadejte ověřovací kód. Číslice ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Zadejte vlastní heslo (jako správce organizace)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Zadejte vlastní heslo (jako důvěryhodný kontakt)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Předpokládaný zbývající čas: ${ estimatedMinutes } minuta",
@@ -7605,10 +7653,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -8762,6 +8807,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Jakmile povolíte důvěryhodné klíče pro ${ senderName }, veřejné klíče budou doplněné k detailu kontaktu."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Když se přihlašujete k odběru e-mailového zpravodaje, použijte alias místo vaší hlavní e-mailové adresy. Tím zůstane vaše identita skrytá a můžete alias kdykoli deaktivovat."
       ],
@@ -9483,6 +9531,9 @@
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
+      "Authenticator app": [
+        "Ověřovací aplikace"
+      ],
       "Automated confirmations and alerts": [
         "Automatická potvrzení a upozornění"
       ],
@@ -9615,9 +9666,6 @@
       "Did not follow instructions": [
         "Neřídil(a) se pokyny"
       ],
-      "Discussion board posts and threads": [
-        "Příspěvky a vlákna na diskuzním fóru"
-      ],
       "Do you have any suggestions for our team?": [
         "Máte pro náš tým nějaké návrhy?"
       ],
@@ -9693,9 +9741,6 @@
       "Folder location": [
         "Umístění složky"
       ],
-      "Forums": [
-        "Fóra"
-      ],
       "Forwards to": [
         "Přeposílá na"
       ],
@@ -9713,9 +9758,6 @@
       ],
       "Get the deal": [
         "Využít nabídku"
-      ],
-      "Go to Forums": [
-        "Přejít na fóra"
       ],
       "Go to Newsletters": [
         "Přejít na e-mailové zpravodaje"
@@ -10166,6 +10208,12 @@
       ],
       "Your location": [
         "Vaše poloha"
+      ],
+      "Your password (admin)": [
+        "Vaše heslo (správce)"
+      ],
+      "Your password (trusted contact)": [
+        "Vaše heslo (důvěryhodný kontakt)"
       ],
       "ZIP code": [
         "PSČ"
@@ -13264,6 +13312,11 @@
         "Zkontrolujte bezpečnost účtu"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Přihlášení nebylo úspěšně dokončeno."
+      ]
+    },
     "Search - no results": {
       "An action is being processed": [
         "Probíhá zpracování akce"
@@ -14022,6 +14075,17 @@
       ],
       "Your pm.me email is active": [
         "Váš e-mail pm.me je aktivní"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Přihlásit se"
+      ],
+      "Sign in to your organization": [
+        "Přihlaste se ke své organizaci"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Budete přesměrováni na poskytovatele SSO třetí strany."
       ]
     },
     "State": {
@@ -15572,6 +15636,9 @@
       "Enhance security with 2FA": [
         "Zvýšení zabezpečení pomocí 2FA"
       ],
+      "Enter your password": [
+        "Zadejte své heslo"
+      ],
       "Error": [
         "Chyba"
       ],
@@ -16132,6 +16199,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Zapnout ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Dvoufázové ověření"
       ],
       "Unsubscribe": [
         "Odhlásit odběr"

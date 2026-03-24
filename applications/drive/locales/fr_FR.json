@@ -513,7 +513,7 @@
         "Obtenir le lien"
       ],
       "Get mobile and desktop apps": [
-        "Obtenir l'application mobile et l'application de bureau"
+        "Obtenir les applications mobile et de bureau"
       ],
       "Get secure storage for ${ simplePriceString }": [
         "Obtenez un espace de stockage sécurisé pour ${ simplePriceString }"
@@ -6207,9 +6207,6 @@
       "Share files with links": [
         "Partagez des fichiers avec des liens."
       ],
-      "Share via link settings": [
-        "Paramètres de partage avec un lien"
-      ],
       "Shared": [
         "Partagé"
       ],
@@ -9208,6 +9205,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "«${ fileName }» partagé"
+      ],
       "\"${ name }\" created successfully": [
         "« ${ name } » a été créé."
       ],
@@ -9249,9 +9249,6 @@
       ],
       "\"${ name }\" saved successfully": [
         "« ${ name } » a été enregistré."
-      ],
-      "\"${ name }\" shared": [
-        "\"${ name }\" partagé"
       ],
       "\"${ name }\" successfully copied": [
         "« ${ name } » a été copié."
@@ -12878,9 +12875,6 @@
       ],
       "SHA1": [
         "SHA1"
-      ],
-      "Share ${ name }": [
-        "Partager ${ name }"
       ],
       "Share your calendar with your team": [
         "Partagez votre calendrier avec votre équipe"
