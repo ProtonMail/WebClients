@@ -29,7 +29,7 @@ interface Props {
     open: () => void;
     close: () => void;
     onMarkAs: (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION) => void;
-    onMove: (labelID: string, sourceAction: SOURCE_ACTION) => void;
+    onMove: (labelID: string) => void;
     onDelete: (sourceAction: SOURCE_ACTION) => void;
     canShowBlockSender: boolean;
     onBlockSender: () => Promise<void>;
@@ -56,8 +56,8 @@ const ItemContextMenu = ({
 
     const [actions] = useLabelActions(labelID);
 
-    const handleMove = (labelID: string, sourceAction: SOURCE_ACTION) => {
-        onMove(labelID, sourceAction);
+    const handleMove = (labelID: string) => {
+        onMove(labelID);
         rest.close();
     };
 
@@ -77,7 +77,7 @@ const ItemContextMenu = ({
             testId="context-menu-inbox"
             icon="inbox"
             name={c('Action').t`Move to inbox`}
-            action={() => handleMove(MAILBOX_LABEL_IDS.INBOX, SOURCE_ACTION.CONTEXT_MENU)}
+            action={() => handleMove(MAILBOX_LABEL_IDS.INBOX)}
         />
     );
 
@@ -87,7 +87,7 @@ const ItemContextMenu = ({
             testId="context-menu-nospam"
             icon="fire-slash"
             name={c('Action').t`Move to inbox (not spam)`}
-            action={() => handleMove(MAILBOX_LABEL_IDS.INBOX, SOURCE_ACTION.CONTEXT_MENU)}
+            action={() => handleMove(MAILBOX_LABEL_IDS.INBOX)}
         />
     );
 
@@ -97,7 +97,7 @@ const ItemContextMenu = ({
             testId="context-menu-archive"
             icon="archive-box"
             name={c('Action').t`Move to archive`}
-            action={() => handleMove(MAILBOX_LABEL_IDS.ARCHIVE, SOURCE_ACTION.CONTEXT_MENU)}
+            action={() => handleMove(MAILBOX_LABEL_IDS.ARCHIVE)}
         />
     );
 
@@ -107,7 +107,7 @@ const ItemContextMenu = ({
             testId="context-menu-trash"
             icon="trash"
             name={c('Action').t`Move to trash`}
-            action={() => handleMove(MAILBOX_LABEL_IDS.TRASH, SOURCE_ACTION.CONTEXT_MENU)}
+            action={() => handleMove(MAILBOX_LABEL_IDS.TRASH)}
         />
     );
 
@@ -117,7 +117,7 @@ const ItemContextMenu = ({
             testId="context-menu-spam"
             icon="fire"
             name={c('Action').t`Move to spam`}
-            action={() => handleMove(MAILBOX_LABEL_IDS.SPAM, SOURCE_ACTION.CONTEXT_MENU)}
+            action={() => handleMove(MAILBOX_LABEL_IDS.SPAM)}
         />
     );
 

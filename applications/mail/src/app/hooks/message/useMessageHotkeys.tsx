@@ -30,7 +30,6 @@ import type { Element } from '../../models/element';
 import { APPLY_LOCATION_TYPES } from '../actions/applyLocation/interface';
 import { useApplyLocation } from '../actions/applyLocation/useApplyLocation';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
-import { useMoveToFolder } from '../actions/move/useMoveToFolder';
 import { ComposeTypes } from '../composer/useCompose';
 
 enum ARROW_SCROLL_DIRECTIONS {
@@ -88,7 +87,6 @@ export const useMessageHotkeys = (
 
     const { markAs } = useMarkAs();
     const { applyLocation } = useApplyLocation();
-    const { moveScheduledModal, moveSnoozedModal, moveToSpamModal } = useMoveToFolder();
 
     const onCompose = useOnCompose();
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
@@ -339,8 +337,5 @@ export const useMessageHotkeys = (
         labelDropdownToggleRef,
         moveDropdownToggleRef,
         filterDropdownToggleRef,
-        moveScheduledModal,
-        moveSnoozedModal,
-        moveToSpamModal,
     };
 };
