@@ -17,11 +17,7 @@ import type {
     SyncEventChangedWithTokenOutput,
 } from '@proton/pass/types';
 
-/** Refreshes user access state when the server signals a change.
- *
- * FIXME: check if we need to trigger a full user-refresh for user keys etc.
- * The V1 `userEvent` handler also processes `User`, `Addresses`, `UserSettings`,
- * and `AuthDevices` — currently we only re-fetch access state here. */
+/** Refreshes user access state when the server signals a change. */
 export function* processUserRefresh(refresh: boolean): EventProcessor {
     if (!refresh) return true;
 
