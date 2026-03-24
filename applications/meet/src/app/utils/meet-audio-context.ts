@@ -16,10 +16,24 @@ import { isSafari } from '@proton/shared/lib/helpers/browser';
 export const createMeetAudioContext = (): { audioContext: AudioContext; cleanup: () => void } => {
     const audioContext = new AudioContext();
 
+    // setSinkId is supported in Chrome 110+ but not yet in the TypeScript lib types.
+    const ctx = audioContext as AudioContext & { setSinkId?: (sinkId: string) => Promise<void> };
+
+    // When an output device is disconnected (e.g. a USB speaker unplugged), Chrome fires
+    // an 'error' event on the AudioContext. Reset the sinkId to the system default so
+    // audio re-routes to the fallback device without requiring a page refresh.
+    const onAudioContextError = () => {
+        ctx.setSinkId?.('').catch(() => {});
+    };
+    audioContext.addEventListener('error', onAudioContextError);
+
     if (!isSafari()) {
         return {
             audioContext,
-            cleanup: () => audioContext.close().catch(() => {}),
+            cleanup: () => {
+                audioContext.removeEventListener('error', onAudioContextError);
+                audioContext.close().catch(() => {});
+            },
         };
     }
 
@@ -53,6 +67,7 @@ export const createMeetAudioContext = (): { audioContext: AudioContext; cleanup:
     return {
         audioContext,
         cleanup: () => {
+            audioContext.removeEventListener('error', onAudioContextError);
             audioContext.removeEventListener('statechange', onStateChange);
             source.stop();
             source.disconnect();
