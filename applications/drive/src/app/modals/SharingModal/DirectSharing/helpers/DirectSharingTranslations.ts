@@ -17,6 +17,6 @@ export const InvitationStateTranslations = {
         return c('Status').t`pending`;
     },
     get userRegistered() {
-        return c('Status').t`accepted`;
+        return c('Status').t`user joined`;
     },
 };
