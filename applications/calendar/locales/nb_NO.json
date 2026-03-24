@@ -1028,6 +1028,9 @@
       ],
       "Edit billing address": [
         "Rediger faktureringsadresse"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -5015,6 +5018,9 @@
       ],
       "Import from Yahoo": [
         "Importer fra Yahoo"
+      ],
+      "Advanced import": [
+        "Avansert import"
       ]
     },
     "Import warning": {
@@ -6559,6 +6565,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Kontoen din er for øyeblikket konfigurert til å bruke ordningen for omvendt avgiftsplikt. Dette støttes ikke for den valgte planen. For å fortsette, fjern enten MVA-nummeret fra faktureringsadressen eller velg en annen plan."
+      ],
+      "Choose your service to connect with": [
+        "Velg tjenesten du vil koble til"
       ]
     },
     "info": {
@@ -12357,6 +12366,18 @@
       ],
       "Reverse charge not supported": [
         "Omvendt avgiftsplikt støttes ikke"
+      ],
+      "Choose a provider": [
+        "Velg en leverandør"
+      ],
+      "Custom": [
+        "Tilpasset"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importer dine data til ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Velg data for import"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

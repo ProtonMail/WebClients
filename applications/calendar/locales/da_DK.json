@@ -4043,6 +4043,15 @@
       ],
       "Enter your username without the domain (@example.com)": [
         "Indtast dit brugernavn uden domænet (@example.com)"
+      ],
+      "Invalid coupon": [
+        "Ugyldig kupon"
+      ],
+      "Please complete the billing details": [
+        "Udfyld faktureringsoplysningerne"
+      ],
+      "This field is invalid": [
+        "Dette felt er ugyldigt"
       ]
     },
     "error": {
@@ -6512,6 +6521,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Din konto er i øjeblikket konfigureret til at anvende omvendt betalingspligt, som ikke er understøttet i det valgte abonnement. For at fortsætte skal du enten fjerne momsnummeret fra faktureringsadressen eller vælge et andet abonnement."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Indtast bekræftelseskode. Ciffer ${ digit }."
       ]
     },
     "info": {
@@ -12840,6 +12852,11 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Fornyelsesprisen afhænger af faktureringsregionen og EIN."
       ]
     }
   }
