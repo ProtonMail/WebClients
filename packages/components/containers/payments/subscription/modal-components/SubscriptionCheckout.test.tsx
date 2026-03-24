@@ -5,6 +5,7 @@ import { screen } from '@testing-library/react';
 import { CYCLE, FREE_PLAN, PLANS, SubscriptionMode } from '@proton/payments';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import type { TaxCountryHook } from '@proton/payments/ui';
 import { useTaxCountry } from '@proton/payments/ui';
 import { renderWithProviders } from '@proton/testing';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
@@ -541,5 +542,102 @@ describe('SubscriptionCheckout', () => {
         );
 
         expect(screen.queryAllByTestId('members-price-per-month')).toHaveLength(0);
+    });
+
+    describe('billing address error banner', () => {
+        const buildMockTaxCountry = (overrides?: Partial<TaxCountryHook>): TaxCountryHook => ({
+            selectedCountryCode: 'US',
+            setSelectedCountry: jest.fn(),
+            federalStateCode: null,
+            setFederalStateCode: jest.fn(),
+            zipCode: null,
+            setZipCode: jest.fn(),
+            billingAddressValid: true,
+            billingAddressStatus: { valid: true, reason: undefined },
+            zipCodeBackendValid: true,
+            paymentsApi: {} as any,
+            billingAddressChangedInModal: jest.fn(),
+            ...overrides,
+        });
+
+        const renderWithTaxCountry = (
+            taxCountry: TaxCountryHook,
+            paymentForbiddenReason: { forbidden: boolean; reason?: string } = { forbidden: false }
+        ) =>
+            renderWithProviders(
+                <SubscriptionCheckout
+                    freePlan={FREE_PLAN}
+                    checkResult={getOptimisticCheckResult({
+                        cycle: CYCLE.MONTHLY,
+                        planIDs: { [PLANS.MAIL]: 1 },
+                        plansMap: {} as any,
+                        currency: 'CHF',
+                    })}
+                    plansMap={{} as any}
+                    vpnServers={{ free: { servers: 0, countries: 0 }, paid: { servers: 0, countries: 0 } }}
+                    currency="CHF"
+                    cycle={CYCLE.MONTHLY}
+                    planIDs={{ [PLANS.MAIL]: 1 }}
+                    user={buildUser()}
+                    onChangeCurrency={() => {}}
+                    isProration={false}
+                    isCustomBilling={false}
+                    isScheduledChargedImmediately={false}
+                    isScheduledChargedLater={false}
+                    isScheduled={false}
+                    subscription={buildSubscription()}
+                    paymentForbiddenReason={paymentForbiddenReason as any}
+                    paymentMethods={{} as any}
+                    paymentFacade={{ showTaxCountry: true } as any}
+                    taxCountry={taxCountry}
+                    trial={false}
+                />
+            );
+
+        it('should display billing address error banner when there is an error message', () => {
+            const taxCountry = buildMockTaxCountry({
+                billingAddressErrorMessage: 'Please select billing country',
+                billingAddressValid: false,
+                billingAddressStatus: { valid: false, reason: 'missingCountry' },
+            });
+
+            renderWithTaxCountry(taxCountry);
+
+            expect(screen.getByText('Please select billing country')).toBeInTheDocument();
+        });
+
+        it('should not display billing address error banner when there is no error message', () => {
+            const taxCountry = buildMockTaxCountry({
+                billingAddressErrorMessage: undefined,
+            });
+
+            const { container } = renderWithTaxCountry(taxCountry);
+
+            expect(container.querySelector('[class*="Banner"]')).not.toBeInTheDocument();
+        });
+
+        it('should display zip code error message', () => {
+            const taxCountry = buildMockTaxCountry({
+                billingAddressErrorMessage: 'Please enter ZIP code',
+                billingAddressValid: false,
+                billingAddressStatus: { valid: false, reason: 'missingZipCode' },
+            });
+
+            renderWithTaxCountry(taxCountry);
+
+            expect(screen.getByText('Please enter ZIP code')).toBeInTheDocument();
+        });
+
+        it('should display invalid zip code error message', () => {
+            const taxCountry = buildMockTaxCountry({
+                billingAddressErrorMessage: 'Please enter a valid ZIP code',
+                billingAddressValid: false,
+                billingAddressStatus: { valid: false, reason: 'invalidZipCode' },
+            });
+
+            renderWithTaxCountry(taxCountry);
+
+            expect(screen.getByText('Please enter a valid ZIP code')).toBeInTheDocument();
+        });
     });
 });
