@@ -60,7 +60,7 @@ describe('DirectSharingMemberMenu', () => {
         expect(screen.getByText('pending')).toBeInTheDocument();
     });
 
-    it('shows accepted state for external invitation', () => {
+    it('shows "user joined" for external invitation', () => {
         mockedUsePopperAnchor.mockReturnValueOnce({ ...defaultUsePopperAnchorProps, isOpen: true });
         render(
             <DirectSharingMemberMenu
@@ -69,8 +69,8 @@ describe('DirectSharingMemberMenu', () => {
                 externalInvitationState={NonProtonInvitationState.UserRegistered}
             />
         );
-        expect(screen.getByText('accepted')).toBeInTheDocument();
-        expect(screen.getByText('Editor (accepted)')).toBeInTheDocument();
+        expect(screen.getByText('user joined')).toBeInTheDocument();
+        expect(screen.getByText('Editor (user joined)')).toBeInTheDocument();
     });
 
     it('shows menu options for external invitation when pending', () => {
