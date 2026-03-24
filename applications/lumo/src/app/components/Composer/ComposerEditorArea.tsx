@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef, useMemo } from 'react';
-
+import { useEffect, useMemo, useRef, useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
 import { c } from 'ttag';
@@ -9,11 +8,12 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import lumoStart from '@proton/styles/assets/img/illustrations/lumo-arrow.svg';
 import lumoStop from '@proton/styles/assets/img/illustrations/lumo-stop.svg';
 
-import { useFileMentionAutocomplete, type DriveSDKFunctions } from './hooks/useFileMentionAutocomplete';
-import type { SpaceId, Message } from '../../types';
-import type { DriveNode } from '../../hooks/useDriveSDK';
-import { FileMentionComponent } from './FileMentionComponent';
 import type useComposerInput from '../../hooks/useComposerInput';
+import type { DriveNode } from '../../hooks/useDriveSDK';
+import type { Message, SpaceId } from '../../types';
+import { FileMentionComponent } from './FileMentionComponent';
+import { type DriveSDKFunctions, useFileMentionAutocomplete } from './hooks/useFileMentionAutocomplete';
+import { useMobilePromptHandler } from './hooks/useMobilePromptHandler';
 
 export interface ComposerEditorAreaProps {
     composerInput: ReturnType<typeof useComposerInput>;
@@ -42,6 +42,7 @@ export const ComposerEditorArea = ({
     onAbort,
     onSubmit,
     spaceId,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     messageChain = [],
     isAutocompleteActiveRef,
     placeholder,
@@ -49,7 +50,17 @@ export const ComposerEditorArea = ({
     downloadFile,
     userId,
 }: ComposerEditorAreaProps) => {
-    const { value, setValue, textareaRef, handleChange, handleKeyDown, handlePaste, updateCursorPosition, onFocus, onBlur } = composerInput;
+    const {
+        value,
+        setValue,
+        textareaRef,
+        handleChange,
+        handleKeyDown,
+        handlePaste,
+        updateCursorPosition,
+        onFocus,
+        onBlur,
+    } = composerInput;
 
     const driveSDK: DriveSDKFunctions | undefined = useMemo(() => {
         if (browseFolderChildren && downloadFile) {
@@ -84,9 +95,15 @@ export const ComposerEditorArea = ({
     const closeMentionRef = useRef(closeMention);
     const onSubmitRef = useRef(onSubmit);
 
-    useEffect(() => { selectFileRef.current = selectFile; }, [selectFile]);
-    useEffect(() => { closeMentionRef.current = closeMention; }, [closeMention]);
-    useEffect(() => { onSubmitRef.current = onSubmit; }, [onSubmit]);
+    useEffect(() => {
+        selectFileRef.current = selectFile;
+    }, [selectFile]);
+    useEffect(() => {
+        closeMentionRef.current = closeMention;
+    }, [closeMention]);
+    useEffect(() => {
+        onSubmitRef.current = onSubmit;
+    }, [onSubmit]);
 
     const prevIsActiveRef = useRef(false);
     useEffect(() => {
@@ -148,10 +165,10 @@ export const ComposerEditorArea = ({
         updateCursorPosition();
     };
 
+    useMobilePromptHandler(setValue, textareaRef);
+
     return (
-        <div
-            className="lumo-input flex-grow w-full z-30 flex flex-row flex-nowrap items-end gap-3 p-2 pl-3 my-auto bg-norm relative"
-        >
+        <div className="lumo-input flex-grow w-full z-30 flex flex-row flex-nowrap items-end gap-3 p-2 pl-3 my-auto bg-norm relative">
             <TextareaAutosize
                 ref={textareaRef}
                 value={value}
@@ -185,6 +202,7 @@ export const ComposerEditorArea = ({
                 <div className="flex flex-row self-end items-end gap-1 h-full shrink-0 composer-submit-button">
                     <Tooltip
                         title={
+                            // eslint-disable-next-line no-nested-ternary
                             isProcessingAttachment
                                 ? c('collider_2025: Info').t`Please wait for files to finish processing`
                                 : isGenerating
