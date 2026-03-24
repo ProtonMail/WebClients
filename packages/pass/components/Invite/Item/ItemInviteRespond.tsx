@@ -39,13 +39,13 @@ export const ItemInviteRespond: FC<Props> = ({ token }) => {
      * store-triggered re-renders so the response flow can complete. */
     const [invite] = useState(useSelector(selectInviteByToken(token), () => true));
     const itemInvite = invite?.targetType === ShareType.Item ? invite : undefined;
-    const { name, isGroup } = useMaybeGroup(invite?.invitedEmail);
+    const { name, isGroup, groupIsLoading } = useMaybeGroup(invite?.invitedEmail, invite?.invitedGroupId);
 
     useEffect(() => {
         if (!itemInvite) onInviteResponse({ ok: false });
     }, []);
 
-    if (!itemInvite) return null;
+    if (!itemInvite || groupIsLoading) return null;
 
     const { content, acceptText } = getTexts(itemInvite, name, isGroup);
 
