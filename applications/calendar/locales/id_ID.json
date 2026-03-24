@@ -1021,6 +1021,12 @@
       ],
       "Edit billing address": [
         "Edit alamat penagihan"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Hide": [
+        "Sembunyikan"
       ]
     },
     "action": {
@@ -1085,6 +1091,15 @@
       ],
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Domains": [
+        "Domain"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Pengguna"
       ]
     },
     "Alarm notification": {
@@ -1343,6 +1358,12 @@
       ],
       "Yearly": [
         "Tahunan"
+      ],
+      "${ n } month": [
+        "${ n } bulan"
+      ],
+      "${ n } year": [
+        "${ n } tahun"
       ]
     },
     "Browser": {
@@ -1716,6 +1737,9 @@
       ],
       "Total for ${ n } month": [
         "Total untuk ${ n } bulan"
+      ],
+      "Subtotal": [
+        "Subtotal"
       ]
     },
     "Collapsible tooltip": {
@@ -6292,6 +6316,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Anda telah mencapai batas slot pemesanan (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Semua kontak Anda akan diimpor, hingga batas ${ maxContact } kontak"
       ]
     },
     "info": {
@@ -7336,6 +7363,12 @@
       ],
       "Up to ${ n } participant": [
         "Hingga ${ n } peserta"
+      ],
+      "${ n } participant": [
+        "${ n } peserta"
+      ],
+      "Booking pages": [
+        "Laman pemesanan"
       ]
     },
     "Message": {
@@ -9127,6 +9160,15 @@
       ],
       "I'm purchasing as a business": [
         "Saya membeli produk ini selaku pihak bisnis"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Diskon berlaku untuk ${ renewalsWithCoupon } perpanjangan."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ini berlaku selama ${ couponRedemptions } bulan. Selanjutnya, harga akan otomatis diperbarui menjadi ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku selama ${ couponRedemptions } bulan. Kemudian akan diperpanjang secara otomatis dengan harga ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
       ]
     },
     "Payments.Error": {
@@ -9397,6 +9439,12 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "San Francisco"
       ]
     },
     "Placeholder for contact group name": {
@@ -11748,6 +11796,12 @@
       ],
       "Your shorter address is now ready": [
         "Alamat lebih pendek Anda sudah siap"
+      ],
+      "Custom": [
+        "Kustom"
+      ],
+      "Spring Sale": [
+        "Diskon Musim Semi"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

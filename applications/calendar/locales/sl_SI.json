@@ -2973,6 +2973,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ustvarili ste že 10 vzdevkov. Zagotovite si neomejeno število vzdevkov in 500 GB shrambe s paketom ${ BRAND_NAME } Unlimited."
+      ],
+      "To start, give your organization a name.": [
+        "Za začetek imenujte svojo organizacijo."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Uporabite ta priročnik, da bo vaša organizacija čim prej začela izkoriščati prednosti vodilnega ekosistema za šifriranje in varstvo zasebnosti podjetja ${ BRAND_NAME }."
       ]
     },
     "description": {
@@ -3795,6 +3801,9 @@
       ],
       "You are reconnected to Zoom. You can save your event now.": [
         "Ponovno ste se povezali s storitvijo Zoom. Zdaj lahko shranite svoj dogodek."
+      ],
+      "Please enter a valid postal code": [
+        "Prosimo vnesite veljavno poštno številko"
       ]
     },
     "error": {
@@ -6181,6 +6190,21 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Prav tako izgubite dostop do ${ boldPlanTitle } možnosti:"
+      ],
+      "Failed to update meeting name": [
+        "Ni uspelo posodobiti imena sestanka"
+      ],
+      "Host": [
+        "Gostitelj"
+      ],
+      "No appointments available": [
+        "Ni prostih terminov"
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Če želite dodati novo stran za rezervacije, prosite svojega skrbnika, da nadgradi vaš paket."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Če želite dodati novo stran z rezervacijo, nadgradite svoj paket."
       ]
     },
     "info": {
@@ -7031,6 +7055,9 @@
       ],
       "What’s this?": [
         "Kaj je to?"
+      ],
+      "Booking pages": [
+        "Strani za rezervacijo"
       ]
     },
     "Link label (optional)": {
@@ -8674,6 +8701,9 @@
       ],
       "Your subscription renews soon": [
         "Vaša naročnina se bo kmalu obnovila"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Nadgradite svojo shrambo za samo ${ pricingTitle } s paketom ${ planName }"
       ]
     },
     "Offer fearue": {
@@ -8785,6 +8815,9 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Do konca preskusnega obdobja boste lahko uporabljali ${ planTitle } brezplačno."
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Uživajte brezplačne funkcije za poslovne uporabnike do ${ trialEndsOnFormatted }."
       ]
     },
     "Option": {
@@ -10498,6 +10531,15 @@
       ],
       "Catch-all email address": [
         "Zoom srečanje"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } vam omogoča dostop do vseh naprednih funkcij storitev ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }. Zasebnost je vgrajena, zato lahko nadaljujete z delom, vedoč, da sta vaša identiteta in podatki varni."
+      ],
+      "Invited members will be removed from your organization": [
+        "Povabljeni člani bodo odstranjeni iz vaše organizacije"
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Vaša naročnina ${ planName } se izteče ${ expiryDate }, po poteku boste preusmerjeni na brezplačni paket ${ BRAND_NAME }."
       ]
     },
     "subscription reminder": {
@@ -11652,6 +11694,9 @@
       ],
       "Select data to import": [
         "Izberite podatke za uvoz"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Povečajte svojo produktivnost za ${ formattedPrice } s paketom ${ planName }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12384,6 +12429,9 @@
         "dogodka",
         "dogodki",
         "dogodkov"
+      ],
+      "Ends on": [
+        "Konča se"
       ]
     },
     "Duration": {
@@ -12397,6 +12445,11 @@
     "label": {
       "What should people know about this appointment?": [
         "Kaj bi morali udeleženci vedeti o tem srečanju?"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Vaše brezplačno preizkusno obdobje se izteče čez ${ timeRemaining }"
       ]
     }
   }
