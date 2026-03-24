@@ -50,7 +50,7 @@ export function getIsEligible({
         }
     }
 
-    const drivePlan = subscription?.Plans.find((plan) => plan.Name === PLANS.DRIVE_1TB || plan.Name === PLANS.DRIVE);
+    const drivePlan = subscription?.Plans?.find((plan) => plan.Name === PLANS.DRIVE_1TB || plan.Name === PLANS.DRIVE);
     if (!drivePlan || drivePlan.Cycle !== CYCLE.YEARLY) {
         return false;
     }
