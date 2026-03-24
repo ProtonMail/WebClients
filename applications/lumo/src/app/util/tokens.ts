@@ -146,6 +146,14 @@ export function normalizeBrTags(markdown: string): string {
 // for more information see https://github.com/remarkjs/react-markdown/issues/785
 export const processForLatexMarkdown = (content: string) => {
     const processedContent = processForLatexParentheses(content);
+    // Convert \[...\] block math to $$...$$
     const blockProcessedContent = processedContent.replace(/\\\[(.*?)\\\]/gs, (_, equation) => `$$${equation}$$`);
-    return blockProcessedContent.replace(/\\\((.*?)\\\)/gs, (_, equation) => `$$${equation}$$`);
+    // Convert \(...\) inline math to $$...$$
+    const inlineProcessedContent = blockProcessedContent.replace(/\\\((.*?)\\\)/gs, (_, equation) => `$$${equation}$$`);
+    // Convert $...$ inline math (but not $$...$$) to $$...$$
+    // Requires non-whitespace-bordered content to avoid false positives with currency ($5, $10)
+    return inlineProcessedContent.replace(
+        /(?<!\$)\$(?!\$|\s)((?:[^$\n])+?)(?<!\s)\$(?!\$)/g,
+        (_, equation) => `$$${equation}$$`
+    );
 };
