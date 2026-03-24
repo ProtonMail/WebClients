@@ -218,9 +218,6 @@
       "Open link": [
         "Abrir enlace"
       ],
-      "Picture-in-picture mode": [
-        "Modo de pantalla en pantalla"
-      ],
       "Previous month": [
         "Mes anterior"
       ],
@@ -241,6 +238,9 @@
       ],
       "Refresh audio and video tracks": [
         "Actualizar pistas de audio y vídeo"
+      ],
+      "Refresh screen share track": [
+        "Actualizar la señal de pantalla"
       ],
       "Refresh the page": [
         "Actualizar la página"
@@ -289,6 +289,9 @@
       ],
       "Settings": [
         "Ajustes"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Mostrar miniatura flotante al compartir pantalla"
       ],
       "Show participants": [
         "Mostrar participantes"
@@ -1844,6 +1847,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Ingresa el código de verificación. Escribe ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Introduce tu propia contraseña (como administrador de la organización)."
       ],
@@ -2062,6 +2068,9 @@
       ],
       "Refresh audio and video tracks": [
         "Actualizar pistas de audio y vídeo"
+      ],
+      "Refresh screen share track": [
+        "Actualizar la señal de la pantalla compartida"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
@@ -2560,11 +2569,11 @@
       "E.g., ": [
         "P. ej., "
       ],
-      "e.g., Design Team, Weekly Standup": [
-        "ej. Equipo de diseño, reunión semanal"
+      "e.g., Daily room, project hub": [
+        "Ej.: Sala diaria, centro de proyectos"
       ],
-      "Enter meeting title": [
-        "Añadir título de la reunión"
+      "e.g., Team sync, project update": [
+        "Ej.: Sincro de equipo, estado del proyecto"
       ],
       "Enter passphrase": [
         "Introducir la frase de contraseña"
