@@ -6,13 +6,13 @@ import voucherThumbnail from '../../assets/images/voucher-thumbnail.svg';
 
 const LEARN_MORE_URL = 'https://proton.me/support/mail-reservation-voucher';
 
-const learnMoreLink = (
-    <Href href={LEARN_MORE_URL} key="born-private-article-link" className="text-underline color-primary">
-        {c('Link').t`Learn more`}
-    </Href>
-);
-
 const VoucherInformation = () => {
+    const learnMoreLink = (
+        <Href href={LEARN_MORE_URL} key="born-private-article-link" className="text-underline color-primary">
+            {c('Link').t`Learn more`}
+        </Href>
+    );
+
     return (
         <div className="flex flex-nowrap items-center gap-6 mt-4">
             <img src={voucherThumbnail} alt="" width={70} height={90} className="shrink-0" />
