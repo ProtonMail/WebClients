@@ -64,7 +64,7 @@ export interface SharingModalViewProps extends ModalStateProps {
     };
 
     actions: {
-        unshareNode: (email: string) => Promise<void>;
+        unshareNode: (email: string, options?: { refreshSharedWithMe?: boolean }) => Promise<void>;
         unsharePublic: () => Promise<void>;
         resendInvitation: (invitationUid: string) => Promise<void>;
         createSharePublic: () => Promise<void>;
@@ -207,7 +207,7 @@ export const SharingModalView = ({
                 message: c('Info')
                     .t`If you remove yourself, you’ll lose access to "${fileName}" and won’t be able to open it again unless the owner shares it with you.`,
                 onSubmit: async () => {
-                    await actions.unshareNode(email);
+                    await actions.unshareNode(email, { refreshSharedWithMe: true });
                     onClose();
                 },
             });
