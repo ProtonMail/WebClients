@@ -97,7 +97,11 @@ const sanitizeHtmlStyle = (element: HTMLElement) => {
     const sanitized = unescape(attributeValue)
         .replace(/<[^>]*>?/g, ' ')
         .replace(/(--!?|])>/g, ' ')
-        .replace(/>/g, ' ')
+        .replace(/["'>]/g, ' ')
+        .split(';')
+        .filter((declaration) => /^\s*-?-?[a-z][\w-]*\s*:/i.test(declaration))
+        .join(';')
+        .concat(';')
         .replace(/\s+/g, ' ')
         .trim();
 
