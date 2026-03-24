@@ -66,6 +66,20 @@
             "128": "/assets/protonpass-icon-128.png"
         }
     },
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+X"
+            },
+            "description": "Open Proton Pass"
+        },
+        "open-larger-window": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+L"
+            },
+            "description": "Open Proton Pass in a larger window"
+        }
+    },
     "icons": {
         "16": "/assets/protonpass-icon-16.png",
         "32": "/assets/protonpass-icon-32.png",
