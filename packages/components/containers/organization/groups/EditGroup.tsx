@@ -48,16 +48,6 @@ export interface NewGroupMember {
     GroupMemberType: GROUP_MEMBER_TYPE;
 }
 
-const getMemberAddressMap = (members: EnhancedMember[]) => {
-    const addressMap: { [key: string]: string | null } = {};
-    members?.forEach((member: EnhancedMember) => {
-        if (member?.Addresses && member.Addresses.length > 0) {
-            addressMap[member.Addresses[0].Email] = member.ID;
-        }
-    });
-    return addressMap;
-};
-
 const getEmailIsExternalMap = (members: EnhancedMember[]): Record<string, boolean> => {
     return members.reduce<Record<string, boolean>>((acc, member) => {
         (member?.Addresses ?? []).forEach((address) => {
@@ -80,6 +70,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
         selectedGroup,
         members,
         addressToMemberMap,
+        addressEmailToMemberMap,
     } = groupsManagement;
     // Since we're editing a group (EditGroup component), it's implied that deletion isn't the only option
     // Thus, canOnlyDelete is always false in this context
@@ -103,7 +94,6 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
         // remove external group members
         setNewGroupMembers((prev) => prev.filter((member) => member.GroupMemberType === GROUP_MEMBER_TYPE.INTERNAL));
     };
-    const memberAddressMap = getMemberAddressMap(members);
     const emailIsExternalMap = getEmailIsExternalMap(members);
     const verifiedCustomDomains = customDomains?.filter(getIsDomainActive);
     const panelRef = useRef<HTMLElement>(null);
@@ -159,11 +149,11 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
     }, [formValues.name]);
 
     const filterOutListedMembers = (newMembers: NewGroupMember[]) => {
-        const exisitingEmails = new Set([
+        const existingEmails = new Set([
             ...groupMembers?.map((member) => member?.Email),
             ...newGroupMembers.map((newMember) => newMember.Address),
         ]);
-        const newMembersToAdd = newMembers.filter((member) => !exisitingEmails.has(member.Address));
+        const newMembersToAdd = newMembers.filter((member) => !existingEmails.has(member.Address));
         if (newMembersToAdd.length === 0) {
             createNotification({ text: c('Info').t`All members have been added.` });
             return [];
@@ -171,12 +161,47 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
         return newMembersToAdd;
     };
 
+    const filterOutKeylessPrivateMembers = (newMembers: NewGroupMember[]) => {
+        const filteredOutNames: string[] = [];
+
+        const result = newMembers.filter((newMember) => {
+            const existingMember = addressEmailToMemberMap[newMember.Address];
+
+            if (existingMember && existingMember.Private && existingMember.PublicKey === null) {
+                filteredOutNames.push(existingMember.Name);
+                return false;
+            }
+
+            return true;
+        });
+
+        if (filteredOutNames.length > 0) {
+            const displayedNames =
+                filteredOutNames.slice(0, 3).join(', ') + (filteredOutNames.length > 3 ? ', ...' : '');
+
+            createNotification({
+                text: c('Error')
+                    .t`Private users can be added to group once they've signed in for the first time: ${displayedNames}`,
+                type: 'error',
+            });
+        }
+
+        return result;
+    };
+
     const handleAddNewMembers = async (newMembers: NewGroupMember[]) => {
-        const willDisableE2ee = newMembers.some((member) => member.GroupMemberType !== GROUP_MEMBER_TYPE.INTERNAL);
+        let newMembersToAdd = filterOutKeylessPrivateMembers(newMembers);
+
+        // Early return prevents showing contradicting notifications
+        if (newMembersToAdd.length === 0) {
+            return;
+        }
+
+        const willDisableE2ee = newMembersToAdd.some((member) => member.GroupMemberType !== GROUP_MEMBER_TYPE.INTERNAL);
         if (willDisableE2ee && !e2eeWillBeDisabled) {
             setWillDisableE2eeModal(true);
         }
-        const newMembersToAdd = filterOutListedMembers(newMembers);
+        newMembersToAdd = filterOutListedMembers(newMembersToAdd);
 
         setNewGroupMembers((prev) => [...prev, ...newMembersToAdd]);
     };
@@ -192,9 +217,9 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
     };
 
     const handleAddAllOrganizationMembers = async () => {
-        const groupMembers = Object.keys(memberAddressMap).map((email) => {
+        const groupMembers = Object.keys(addressEmailToMemberMap).map((email) => {
             const isExternal = emailIsExternalMap[email];
-            const hasKeys = !!memberAddressMap[email];
+            const hasKeys = !!addressEmailToMemberMap[email];
 
             let GroupMemberType = GROUP_MEMBER_TYPE.INTERNAL;
             if (isExternal) {
@@ -207,7 +232,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                 GroupMemberType,
             };
         });
-        const newMembersToAdd = filterOutListedMembers(groupMembers);
+        const newMembersToAdd = filterOutKeylessPrivateMembers(filterOutListedMembers(groupMembers));
 
         const willDisableE2ee = newMembersToAdd.some((member) => member.GroupMemberType !== GROUP_MEMBER_TYPE.INTERNAL);
         if (willDisableE2ee && !e2eeWillBeDisabled) {
