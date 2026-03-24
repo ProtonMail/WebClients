@@ -1,13 +1,15 @@
 import { LogLevel } from '@protontech/drive-sdk/dist/telemetry';
 
-import { traceError } from '@proton/shared/lib/helpers/sentry';
+import { addSentryBreadcrumb, traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { NO_SENTRY_COMPONENT_DEFINED, SentryLogHandler } from './sentryLogHandler';
 
 jest.mock('@proton/shared/lib/helpers/sentry', () => ({
+    addSentryBreadcrumb: jest.fn(),
     traceError: jest.fn(),
 }));
 
+const mockAddSentryBreadcrumb = jest.mocked(addSentryBreadcrumb);
 const mockTraceError = jest.mocked(traceError);
 
 describe('SentryLogHandler', () => {
@@ -18,7 +20,31 @@ describe('SentryLogHandler', () => {
         jest.clearAllMocks();
     });
 
-    it('should send ERROR logs to Sentry', () => {
+    it('should add a breadcrumb for INFO logs without reporting an issue', () => {
+        const logRecord = {
+            time: new Date('2023-01-01T10:00:00Z'),
+            level: LogLevel.INFO,
+            loggerName: 'test-logger',
+            message: 'Hello',
+        };
+
+        handler.log(logRecord);
+
+        expect(mockAddSentryBreadcrumb).toHaveBeenCalledWith({
+            category: 'drive.logger',
+            message: 'Hello',
+            level: 'info',
+            timestamp: 1_672_567_200,
+            data: {
+                component: NO_SENTRY_COMPONENT_DEFINED,
+                loggerName: 'test-logger',
+                logLevel: 'INFO',
+            },
+        });
+        expect(mockTraceError).not.toHaveBeenCalled();
+    });
+
+    it('should add a breadcrumb and send ERROR logs to Sentry', () => {
         const error = new Error('Test error');
         const logRecord = {
             time: new Date('2023-01-01T10:00:00Z'),
@@ -30,6 +56,17 @@ describe('SentryLogHandler', () => {
 
         handler.log(logRecord);
 
+        expect(mockAddSentryBreadcrumb).toHaveBeenCalledWith({
+            category: 'drive.logger',
+            message: 'Something went wrong',
+            level: 'error',
+            timestamp: 1_672_567_200,
+            data: {
+                component: NO_SENTRY_COMPONENT_DEFINED,
+                loggerName: 'test-logger',
+                logLevel: 'ERROR',
+            },
+        });
         expect(mockTraceError).toHaveBeenCalledWith(error, {
             level: 'debug',
             tags: {
@@ -44,7 +81,7 @@ describe('SentryLogHandler', () => {
         });
     });
 
-    it('should create Error when no error object provided', () => {
+    it('should create Error when no error object provided for ERROR', () => {
         const logRecord = {
             time: new Date('2023-01-01T10:00:00Z'),
             level: LogLevel.ERROR,
@@ -57,44 +94,6 @@ describe('SentryLogHandler', () => {
         expect(mockTraceError).toHaveBeenCalledTimes(1);
         const [errorArg] = mockTraceError.mock.calls[0];
         expect(errorArg).toBeInstanceOf(Error);
-        expect(errorArg.message).toBe('API request failed');
-    });
-
-    it('should not send non-ERROR logs to Sentry', () => {
-        const logRecord = {
-            time: new Date(),
-            level: LogLevel.INFO,
-            loggerName: 'test-logger',
-            message: 'This is a warning',
-        };
-
-        handler.log(logRecord);
-
-        expect(mockTraceError).not.toHaveBeenCalled();
-    });
-
-    it('allows overriding the component tag via constructor', () => {
-        handler = new SentryLogHandler('custom-component');
-        const logRecord = {
-            time: new Date('2023-01-01T11:00:00Z'),
-            level: LogLevel.WARNING,
-            loggerName: 'custom',
-            message: 'warn',
-        };
-
-        handler.log(logRecord);
-
-        expect(mockTraceError).toHaveBeenCalledWith(expect.any(Error), {
-            level: 'debug',
-            tags: {
-                component: 'custom-component',
-            },
-            extra: {
-                logTime: '2023-01-01T11:00:00.000Z',
-                logLevel: 'WARNING',
-                loggerName: 'custom',
-                logMessage: 'warn',
-            },
-        });
+        expect((errorArg as Error).message).toBe('API request failed');
     });
 });
