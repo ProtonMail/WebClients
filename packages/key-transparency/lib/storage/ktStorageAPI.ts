@@ -1,4 +1,4 @@
-import { instance } from '@proton/cross-storage/account-impl/guestInstance';
+import { instance } from '@proton/cross-storage/account/guest';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { KTLocalStorageAPI } from '@proton/shared/lib/interfaces';

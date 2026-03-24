@@ -3,7 +3,7 @@ import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import type { CrossStorageMessage, ResponseMessage } from './interface';
 import { getTestKeyValue, setTestKeyValue } from './support';
 
-const createHost = <Message, MessageResponse>(handler: (message: Message) => Promise<MessageResponse>) => {
+export const createHost = <Message, MessageResponse>(handler: (message: Message) => Promise<MessageResponse>) => {
     const isEmbedded = window.location !== window.parent.location;
     const hostSecondLevelDomain = getSecondLevelDomain(window.location.hostname);
 
@@ -48,5 +48,3 @@ const createHost = <Message, MessageResponse>(handler: (message: Message) => Pro
 export const initMainHost = () => {
     setTestKeyValue(window);
 };
-
-export default createHost;

@@ -10,7 +10,7 @@ import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { WasmProtonWalletApiClient } from '@proton/andromeda';
 import type { NotificationsManager } from '@proton/components/containers/notifications/manager';
-import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
+import { setupGuestCrossStorage } from '@proton/cross-storage/account/guest';
 import { FeatureCode, fetchFeatures } from '@proton/features';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';

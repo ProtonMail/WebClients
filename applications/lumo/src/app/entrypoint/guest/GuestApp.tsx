@@ -11,7 +11,7 @@ import {
     ProtonApp,
     StandardErrorPage,
 } from '@proton/components';
-import { initMainHost } from '@proton/cross-storage/lib';
+import { initMainHost } from '@proton/cross-storage/host';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';

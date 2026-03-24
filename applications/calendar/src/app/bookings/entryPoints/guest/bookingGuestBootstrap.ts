@@ -7,7 +7,7 @@ import {
     loadCrypto,
     unleashReady,
 } from '@proton/account/bootstrap';
-import { initMainHost } from '@proton/cross-storage/lib';
+import { initMainHost } from '@proton/cross-storage/host';
 import createApi from '@proton/shared/lib/api/createApi';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
