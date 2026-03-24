@@ -53,14 +53,14 @@ export const VaultInviteRespond: FC<Props> = ({ token }) => {
      * store-triggered re-renders so the response flow can complete. */
     const [invite] = useState(useSelector(selectInviteByToken(token), () => true));
     const vaultInvite = invite?.targetType === ShareType.Vault ? invite : undefined;
-    const { name, isGroup } = useMaybeGroup(invite?.invitedEmail);
+    const { name, isGroup, groupIsLoading } = useMaybeGroup(invite?.invitedEmail, invite?.invitedGroupId);
     const { vaultLimitReached } = useSelector(selectVaultLimits);
 
     useEffect(() => {
         if (!vaultInvite) onInviteResponse({ ok: false });
     }, []);
 
-    if (!vaultInvite) return null;
+    if (!vaultInvite || groupIsLoading) return null;
 
     const { vault } = vaultInvite;
     const { itemCount, memberCount } = vault;
