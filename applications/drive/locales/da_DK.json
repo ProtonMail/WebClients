@@ -3529,6 +3529,9 @@
       "Invalid code": [
         "Ugyldig kode"
       ],
+      "Invalid coupon": [
+        "Ugyldig kupon"
+      ],
       "Invalid email address": [
         "Ugyldig e-mailadresse"
       ],
@@ -3630,6 +3633,9 @@
       ],
       "Please activate your search again": [
         "Aktiver venligst din søgning igen"
+      ],
+      "Please complete the billing details": [
+        "Udfyld faktureringsoplysningerne"
       ],
       "Please enter a valid postal code": [
         "Indtast et gyldigt postnummer"
@@ -3797,6 +3803,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
+      ],
+      "This field is invalid": [
+        "Dette felt er ugyldigt"
       ],
       "This field is required": [
         "Feltet er påkrævet"
@@ -5463,6 +5472,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Indtast bekræftelseskode. Ciffer ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Indtast din egen adgangskode (som organisationsadministrator)."
       ],
@@ -6153,9 +6165,6 @@
       ],
       "Share files with links": [
         "Del filer med links"
-      ],
-      "Share via link settings": [
-        "Del via link-indstillinger"
       ],
       "Shared": [
         "Delt"
@@ -9131,9 +9140,6 @@
       "\"${ name }\" saved successfully": [
         "\"${ name }\" gemt"
       ],
-      "\"${ name }\" shared": [
-        "\"${ name }\" delt"
-      ],
       "\"${ name }\" successfully copied": [
         "\"${ name }\" blev kopieret"
       ],
@@ -10143,6 +10149,11 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Fornyelsesprisen afhænger af faktureringsregionen og EIN."
       ]
     },
     "Payments.Saved payment method details": {
@@ -12739,9 +12750,6 @@
       ],
       "SHA1": [
         "SHA1"
-      ],
-      "Share ${ name }": [
-        "Del ${ name }"
       ],
       "Share your calendar with your team": [
         "Del din kalender med dit team"

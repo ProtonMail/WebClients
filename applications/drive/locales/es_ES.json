@@ -159,6 +159,9 @@
       "Change": [
         "Cambio"
       ],
+      "Change my access": [
+        "Cambiar mi acceso"
+      ],
       "Change password": [
         "Cambiar contraseña"
       ],
@@ -566,6 +569,9 @@
       "Help and resources": [
         "Ayuda y recursos"
       ],
+      "Hide": [
+        "Ocultar"
+      ],
       "Hide advanced PGP settings": [
         "Ocultar configuración PGP avanzada"
       ],
@@ -841,6 +847,9 @@
       ],
       "Remove me": [
         "Eliminarme"
+      ],
+      "Remove my access": [
+        "Eliminar mi acceso"
       ],
       "Remove without saving": [
         "Eliminar sin guardar"
@@ -5516,6 +5525,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Ingresa el código de verificación. Escribe ${ digit }."
+      ],
       "Enter your own password (as organization admin).": [
         "Introduce tu propia contraseña (como administrador de la organización)."
       ],
@@ -5648,6 +5660,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Si continúas con un plan con menos funciones, perderás el acceso a las funciones de pago de ${ VPN_APP_NAME }."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Si te eliminas de la lista, perderás el acceso a «${ fileName }» y no podrás volver a abrirlo a menos que el propietario lo comparta contigo de nuevo."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
@@ -6209,9 +6224,6 @@
       ],
       "Share files with links": [
         "Compartir archivos con enlaces"
-      ],
-      "Share via link settings": [
-        "Ajustes de uso compartido con un enlace"
       ],
       "Shared": [
         "Compartido"
@@ -6810,6 +6822,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se te cobrará si cancelas antes del ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Ya no podrás compartir «${ fileName }» si cambias el acceso a lector. Solo el propietario podrá volver a modificar tus permisos."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Recibirás la recompensa en créditos 1 mes después de que tu amigo se suscriba a un plan anual, y 2 meses después de que se suscriba a un plan mensual."
@@ -9214,6 +9229,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" compartido"
+      ],
       "\"${ name }\" created successfully": [
         "\"Se ha creado ${ name }\"."
       ],
@@ -9255,9 +9273,6 @@
       ],
       "\"${ name }\" saved successfully": [
         "Se ha guardado \"${ name }\"."
-      ],
-      "\"${ name }\" shared": [
-        "\"${ name }\" compartido"
       ],
       "\"${ name }\" successfully copied": [
         "\"${ name }\" se ha copiado"
@@ -12249,6 +12264,9 @@
       "Card verification": [
         "Verificación de la tarjeta"
       ],
+      "Change access to viewer?": [
+        "¿Cambiar el acceso a lector?"
+      ],
       "Change layout": [
         "Cambiar la disposición"
       ],
@@ -12831,6 +12849,9 @@
         "¿Eliminar el elemento?",
         "¿Eliminar los elementos?"
       ],
+      "Remove your access?": [
+        "¿Eliminar tu acceso?"
+      ],
       "Rename a file": [
         "Renombrar un archivo"
       ],
@@ -12900,8 +12921,8 @@
       "SHA1": [
         "SHA-1"
       ],
-      "Share ${ name }": [
-        "Compartir ${ name }"
+      "Share \"${ fileName }\"": [
+        "Compartir «${ fileName }»"
       ],
       "Share your calendar with your team": [
         "Comparte tu calendario con tu equipo"
@@ -13177,6 +13198,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Cambia automáticamente entre tus temas preferidos para el día y la noche en sincronía con los modos de día y noche de tu sistema."
       ],
+      "Change shared item settings": [
+        "Cambiar ajustes de archivos compartidos"
+      ],
       "Customize import to reduce the number of folders": [
         "Personaliza la importación para reducir el número de carpetas."
       ],
@@ -13218,6 +13242,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "El mensaje y nombre del archivo se almacenan con cifrado de acceso cero cuando se incluyen en el correo."
+      ],
+      "New!": [
+        "¡Nuevo!"
       ],
       "Not all information listed here was exposed for all users.": [
         "No toda la información aquí mencionada fue expuesta para todos los usuarios."

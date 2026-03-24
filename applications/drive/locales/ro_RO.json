@@ -162,6 +162,9 @@
       "Change": [
         "Schimbare"
       ],
+      "Change my access": [
+        "Modifică-mi accesul"
+      ],
       "Change password": [
         "Schimbare parolă"
       ],
@@ -849,6 +852,9 @@
       ],
       "Remove me": [
         "Elimină-mă"
+      ],
+      "Remove my access": [
+        "Elimină-mi accesul"
       ],
       "Remove without saving": [
         "Eliminare fără salvare"
@@ -5753,6 +5759,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ VPN_APP_NAME }."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Dacă vă eliminați accesul, veți pierde accesul la „${ fileName }” și nu veți putea să-l deschideți din nou decât dacă proprietarul vi-l partajează."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importare ${ calendarCount } din ${ totalCalendarsCount } calendar",
         "Importare ${ calendarCount } din ${ totalCalendarsCount } calendare",
@@ -6316,9 +6325,6 @@
       ],
       "Share files with links": [
         "Partajare fișiere prin legături web"
-      ],
-      "Share via link settings": [
-        "Setări partajare prin legătură web"
       ],
       "Shared": [
         "Partajat"
@@ -6927,6 +6933,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nu se va aplica taxa dacă anulați înainte de ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Nu veți putea partaja „${ fileName }” după modificarea accesului la „utilizator”. Doar proprietarul vă poate modifica din nou accesul."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Vei primi recompensa în credite la o lună după ce persoana se abonează la un plan anual și la două luni după ce se abonează la un plan lunar."
@@ -9319,6 +9328,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "„${ fileName }” s-a partajat"
+      ],
       "\"${ name }\" created successfully": [
         "„${ name }” a fost creat cu succes."
       ],
@@ -9360,9 +9372,6 @@
       ],
       "\"${ name }\" saved successfully": [
         "„${ name }” a fost salvat."
-      ],
-      "\"${ name }\" shared": [
-        "S-a partajat „${ name }\""
       ],
       "\"${ name }\" successfully copied": [
         "„${ name }” s-a copiat."
@@ -12439,6 +12448,9 @@
       "Card verification": [
         "Verificare card"
       ],
+      "Change access to viewer?": [
+        "Schimbați accesul cu „utilizator”?"
+      ],
       "Change layout": [
         "Schimbare aspect"
       ],
@@ -13027,6 +13039,9 @@
         "Eliminați articolele?",
         "Eliminați articolele?"
       ],
+      "Remove your access?": [
+        "Vă eliminați accesul?"
+      ],
       "Rename a file": [
         "Redenumire fișier"
       ],
@@ -13096,8 +13111,8 @@
       "SHA1": [
         "SHA1"
       ],
-      "Share ${ name }": [
-        "Partajare ${ name }"
+      "Share \"${ fileName }\"": [
+        "Partajare „${ fileName }\""
       ],
       "Share your calendar with your team": [
         "Partajați-vă calendarul cu echipa proprie"
@@ -13373,6 +13388,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Comutare automată a temei preferate sincron cu modul luminos sau întunecat setat al sistemului."
       ],
+      "Change shared item settings": [
+        "Modificare setări articol partajat"
+      ],
       "Customize import to reduce the number of folders": [
         "Modificați importarea pentru a reduce numărul folderelor"
       ],
@@ -13414,6 +13432,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Mesajul și numele fișierului sunt stocate cu criptare cu acces zero atunci când sunt incluse în e-mail."
+      ],
+      "New!": [
+        "Nou!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Nu toate informațiile afișate aici au fost expuse pentru toți utilizatorii."
