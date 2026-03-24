@@ -154,6 +154,9 @@
       "Attention required": [
         "საჭიროა ყურადღება"
       ],
+      "Authenticate": [
+        "ავთენტიკაცია"
+      ],
       "Auto-delete spam and trash": [
         "სპამისა და ნაგვის ყუთის ავტოწაშლა"
       ],
@@ -581,6 +584,9 @@
       ],
       "Font": [
         "ფონტი"
+      ],
+      "Forgot password?": [
+        "დაგავიწყდათ პაროლი?"
       ],
       "Formalize": [
         "ფორმალიზება"
@@ -1483,6 +1489,10 @@
       "Trust": [
         "ნდობა"
       ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
+      ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
       ],
@@ -1585,8 +1595,14 @@
       "Use a different payment method": [
         "განსხვავებული გადახდის მეთოდის გამოყენება"
       ],
+      "Use authentication code": [
+        "ავთენტიკაციის კოდის გამოყენება"
+      ],
       "Use for sending": [
         "გასაგზავნად გამოყენება"
+      ],
+      "Use recovery code": [
+        "აღდგენის კოდის გამოყენება"
       ],
       "Use this": [
         "ამის გამოყენება"
@@ -5479,6 +5495,16 @@
         "ჩქაროსნული კავშირი"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "უსაფრთხოების გასაღები"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "უსაფრთხოების გასაღები"
+      ]
+    },
     "file size format": {
       "byte": [
         "ბაიტი",
@@ -7037,11 +7063,20 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "უზრუნველყავით სრულად პირადი და დაშიფრული კომუნიკაცია. მოითხოვეთ თქვენი უფასო ${ BRAND_NAME } ელფოსტის მისამართი ახლავე."
       ],
+      "Enter the code from your authenticator app": [
+        "შეიყვანეთ კოდი თქვენი ავთენტიკატორი აპიდან"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "შეიყვანეთ ელფოსტის მომხმარებელი და პაროლი, საიდანაც შემოტანას აპირებთ."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "შეიყვანეთ ${ destinationText }-ზე გამოგზავნილი შემოწმების კოდი."
+      ],
+      "Enter your own password (as organization admin).": [
+        "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც სანდო კონტაქტმა)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "მიახლოებითი დარჩენილი დრო: ${ estimatedMinutes } წთ",
@@ -7246,8 +7281,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
-        "გამოსახულებების ჩასმა"
+        "გამოსახულების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -8984,6 +9018,9 @@
       "Attach screenshot(s)": [
         "ეკრანის ანაბეჭდ(ებ)-ის მიბმა"
       ],
+      "Authenticator app": [
+        "ავთენტიკატორი აპი"
+      ],
       "Automated confirmations and alerts": [
         "ავტომატიზებული დადასტურება და განგაშები"
       ],
@@ -9116,9 +9153,6 @@
       "Did not follow instructions": [
         "არ მიჰყვა ინსტრუქციებს"
       ],
-      "Discussion board posts and threads": [
-        "ფორუმის პოსტები და საუბრები"
-      ],
       "Do you have any suggestions for our team?": [
         "გაქვთ რაიმე რჩევა ჩვენი გუნდისთვის?"
       ],
@@ -9197,9 +9231,6 @@
       "Folder location": [
         "საქაღალდის მდებარეობა"
       ],
-      "Forums": [
-        "ფორუმები"
-      ],
       "Forwards to": [
         "გადაგზავნა"
       ],
@@ -9217,9 +9248,6 @@
       ],
       "Get the deal": [
         "ფასდაკლების მიღება"
-      ],
-      "Go to Forums": [
-        "ფორუმებზე გადასვლა"
       ],
       "Go to Newsletters": [
         "ახალ ამბებზე გადასვლა"
@@ -9673,6 +9701,12 @@
       ],
       "Your location": [
         "თქვენი მდებარეობა"
+      ],
+      "Your password (admin)": [
+        "თქვენი პაროლი (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "თქვენი პაროლი (სანდო კონტაქტი)"
       ],
       "ZIP code": [
         "საფოსტო კოდი"
@@ -12472,6 +12506,11 @@
         "ანგარიშის უსაფრთხოების გადახედვა"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "შესვლა წარმატებით არ დასრულდა."
+      ]
+    },
     "Search - no results": {
       "An action is being processed": [
         "მიმდინარეობს მოთხოვნის დამუშავება"
@@ -13173,6 +13212,17 @@
       ],
       "Your pm.me email is active": [
         "თქვენი pm.me ელფოსტა აქტიურია"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "შესვლა"
+      ],
+      "Sign in to your organization": [
+        "შედით თქვენს ორგანიზაციაში"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "ახლა გადაგამისამართებთ თქვენს SSO პროვაიდერზე."
       ]
     },
     "State": {
@@ -14601,6 +14651,9 @@
       "Enhance security with 2FA": [
         "გააფართოვეთ უსაფრთხოება 2FA-ით"
       ],
+      "Enter your password": [
+        "შეიყვანეთ თქვენი პაროლი"
+      ],
       "Error": [
         "შეცდომა"
       ],
@@ -15163,6 +15216,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
+      ],
+      "Two-factor authentication": [
+        "2FA"
       ],
       "Unsubscribe": [
         "გამოწერის გაუქმება"

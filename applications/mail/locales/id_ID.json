@@ -153,6 +153,9 @@
       "Attention required": [
         "Diperlukan perhatian"
       ],
+      "Authenticate": [
+        "Autentikasi"
+      ],
       "Auto-delete spam and trash": [
         "Hapus otomatis spam dan sampah"
       ],
@@ -579,6 +582,9 @@
       "Font": [
         "Fon"
       ],
+      "Forgot password?": [
+        "Lupa kata sandi?"
+      ],
       "Formalize": [
         "Formalkan"
       ],
@@ -642,6 +648,9 @@
       "Go to settings": [
         "Buka pengaturan"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Dimengerti"
       ],
@@ -650,6 +659,9 @@
       ],
       "Help and resources": [
         "Bantuan dan sumber daya"
+      ],
+      "Hide": [
+        "Sembunyikan"
       ],
       "Hide ${ BRAND_NAME } Scribe writing assistant": [
         "Sembunyikan asisten penulisan ${ BRAND_NAME } Scribe"
@@ -1578,8 +1590,14 @@
       "Use a different payment method": [
         "Gunakan metode pembayaran lainnya"
       ],
+      "Use authentication code": [
+        "Gunakan kode autentikasi"
+      ],
       "Use for sending": [
         "Gunakan untuk pengiriman"
+      ],
+      "Use recovery code": [
+        "Gunakan kode pemulihan"
       ],
       "Use this": [
         "Gunakan ini"
@@ -1725,6 +1743,15 @@
       ],
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Domains": [
+        "Domain"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Pengguna"
       ]
     },
     "Alert": {
@@ -1999,6 +2026,12 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } bulan"
+      ],
+      "${ n } year": [
+        "${ n } tahun"
+      ],
       "1 month": [
         "1 bulan"
       ],
@@ -2488,6 +2521,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Subtotal": [
+        "Subtotal"
       ],
       "Total": [
         "Total"
@@ -5381,6 +5417,16 @@
         "Kecepatan secepat kilat"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "Kunci keamanan"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Kunci keamanan"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte"
@@ -5647,6 +5693,9 @@
       ],
       "Discover privacy features": [
         "Telusuri berbagai fitur privasi kami"
+      ],
+      "Download apps": [
+        "Unduh aplikasi"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Enkripsi yang teramat kuat, yang memastikan email Anda hanya dapat dibaca oleh para penerima dan diri Anda sendiri."
@@ -6464,6 +6513,9 @@
       "All your changes will be lost.": [
         "Seluruh perubahan yang Anda buat akan hilang."
       ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Semua kontak Anda akan diimpor, hingga batas ${ maxContact } kontak"
+      ],
       "American Express SafeKey logo": [
         "Logo American Express Safekey"
       ],
@@ -6893,11 +6945,20 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Pastikan komunikasi yang sepenuhnya privat dan terenkripsi. Klaim alamat email ${ BRAND_NAME } gratis Anda sekarang juga."
       ],
+      "Enter the code from your authenticator app": [
+        "Masukkan kode yang tertera pada aplikasi autentikator Anda"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Masukkan kredensial akun email yang ingin Anda impor."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Masukkan kata sandi Anda (selaku admin organisasi)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Masukkan kata sandi Anda (selaku kontak tepercaya)"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Perkiraan waktu yang tersisa: ${ estimatedMinutes } menit"
@@ -8856,6 +8917,9 @@
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
+      "Authenticator app": [
+        "Aplikasi autentikator"
+      ],
       "Automated confirmations and alerts": [
         "Konfirmasi dan peringatan otomatis"
       ],
@@ -8988,9 +9052,6 @@
       "Did not follow instructions": [
         "Tidak mengikuti perintah"
       ],
-      "Discussion board posts and threads": [
-        "Postingan dan utas forum diskusi"
-      ],
       "Do you have any suggestions for our team?": [
         "Apakah Anda memiliki saran untuk tim kami?"
       ],
@@ -9066,9 +9127,6 @@
       "Folder location": [
         "Lokasi folder"
       ],
-      "Forums": [
-        "Forum"
-      ],
       "Forwards to": [
         "Teruskan ke"
       ],
@@ -9086,9 +9144,6 @@
       ],
       "Get the deal": [
         "Dapatkan penawaran ini"
-      ],
-      "Go to Forums": [
-        "Ke Forum"
       ],
       "Go to Newsletters": [
         "Ke Buletin"
@@ -9539,6 +9594,12 @@
       ],
       "Your location": [
         "Lokasi Anda"
+      ],
+      "Your password (admin)": [
+        "Kata sandi Anda (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Kata sandi Anda (kontak tepercaya)"
       ],
       "ZIP code": [
         "Kode pos"
@@ -10001,6 +10062,9 @@
       "${ n } active meeting at a time": [
         "${ n } pertemuan yang aktif secara bersamaan"
       ],
+      "${ n } participant": [
+        "${ n } peserta"
+      ],
       "24 hours per meeting": [
         "24 jam per pertemuan"
       ],
@@ -10009,6 +10073,9 @@
       ],
       "Appointment scheduling": [
         "Penjadwalan janji temu"
+      ],
+      "Booking pages": [
+        "Laman pemesanan"
       ],
       "Browser, mobile, and desktop apps": [
         "Aplikasi peramban, seluler, dan desktop"
@@ -11323,6 +11390,9 @@
     "Onboarding List Placeholder": {
       "Maybe later": [
         "Mungkin nanti"
+      ],
+      "Skip for now": [
+        "Lewati untuk sementara"
       ]
     },
     "Onboarding modal": {
@@ -11723,11 +11793,20 @@
       "terms and conditions": [
         "syarat dan ketentuan"
       ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Diskon berlaku untuk ${ renewalsWithCoupon } perpanjangan."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ini berlaku selama ${ couponRedemptions } bulan. Selanjutnya, harga akan otomatis diperbarui menjadi ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
+      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ini berlaku untuk ${ subscriptionLength } bulan pertama."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Harga diskon khusus ini valid untuk bulan pertama. Selanjutnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku selama ${ couponRedemptions } bulan. Kemudian akan diperpanjang secara otomatis dengan harga ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ${ priceWithDiscount } ini valid untuk ${ subscriptionLength } bulan pertama."
@@ -11918,6 +11997,9 @@
       "Company name": [
         "Nama perusahaan"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "Describe what to change": [
         "Jelaskan yang perlu diubah"
       ],
@@ -12001,6 +12083,9 @@
       ],
       "Postal code": [
         "Kode pos"
+      ],
+      "San Francisco": [
+        "San Francisco"
       ],
       "Search date, name, email address, or subject line": [
         "Cari tanggal, nama, alamat email, atau baris subjek"
@@ -12306,6 +12391,11 @@
     "Safety review": {
       "Review account safety": [
         "Tinjau keamanan akun"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Entri masuk tidak berhasil dirampungkan."
       ]
     },
     "Search - no results": {
@@ -12980,6 +13070,17 @@
       ],
       "Your pm.me email is active": [
         "Email pm.me Anda aktif"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Masuk"
+      ],
+      "Sign in to your organization": [
+        "Masuk ke organisasi Anda"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Anda akan diarahkan ke penyedia SSO pihak ketiga Anda."
       ]
     },
     "State": {
@@ -14215,6 +14316,9 @@
       "Currency": [
         "Mata uang"
       ],
+      "Custom": [
+        "Kustom"
+      ],
       "Custom domains:": [
         "Domain khusus:"
       ],
@@ -14343,6 +14447,9 @@
       ],
       "Enhance security with 2FA": [
         "Tingkatkan keamanan dengan 2FA"
+      ],
+      "Enter your password": [
+        "Masukkan kata sandi Anda"
       ],
       "Error": [
         "Kesalahan"
@@ -14851,6 +14958,9 @@
       "Sort messages": [
         "Urutkan pesan"
       ],
+      "Spring Sale": [
+        "Diskon Musim Semi"
+      ],
       "Start a new import": [
         "Mulai impor baru"
       ],
@@ -14898,6 +15008,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Aktifkan ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Autentikasi dua faktor"
       ],
       "Unsubscribe": [
         "Berhenti berlangganan"
