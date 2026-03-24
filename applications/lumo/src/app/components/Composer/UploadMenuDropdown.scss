@@ -9,10 +9,6 @@ im.$media-expressions: $media-expressions;
 	// Ensure proper z-index and visibility
 	z-index: 9999;
 
-	.toggle-container {
-		border: 1px solid var(--field-disabled);
-	}
-
 	@include im.media('touch', '<=small') {
 		&.adaptive-for-touch-screens {
 			// Override centering - align to bottom instead
@@ -31,7 +27,6 @@ im.$media-expressions: $media-expressions;
 			inset: 0 !important;
 
 			// iOS WebView fix: Force hardware acceleration
-			transform: translateZ(0);
 			transform: translateZ(0);
 			will-change: transform;
 		}

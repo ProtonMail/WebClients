@@ -2,8 +2,11 @@
 @use '~@proton/styles/scss/lib/em' as *;
 
 .tool-menu-dropdown {
+	// fix bug where light theme field-norm value is not being applied
+	--field-norm: #adaba8;
+
 	.toggle-container {
-		border: 1px solid var(--field-disabled);
+		// border: 1px solid var(--field-disabled);
 
 		&::before {
 			// background-color: var(--background-upsell-toggle-button); // White toggle button
@@ -17,6 +20,12 @@
 		&--checked::before {
 			transform: translateX(0.8429em);
 			background-color: var(--interaction-norm);
+		}
+
+		&--checked {
+			.toggle-container-text:last-child .toggle-container-img {
+				opacity: 0;
+			}
 		}
 	}
 }
