@@ -11,7 +11,7 @@ export interface ElementsStateParams {
     labelID: string;
     elementID?: string;
     messageID?: string;
-    categoryIDs?: CategoryLabelID[];
+    categoryIDs: CategoryLabelID[];
     conversationMode: boolean;
     sort: Sort;
     filter: Filter;
