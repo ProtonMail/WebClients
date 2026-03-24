@@ -1,13 +1,24 @@
 import { c } from 'ttag';
 
 import { CircledNumber } from '@proton/atoms/CircledNumber/CircledNumber';
+import { getSimplePriceString } from '@proton/components/components/price/helper';
+import { getMinDonationAmount } from '@proton/payments/core/amount-limits';
+import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/useFlag';
+
+import { getDonationCurrency } from '../helpers/emailReservationHelpers';
 
 const HowItWorks = () => {
+    const isBornPrivateEuropeEnabled = useFlag('BornPrivateEurope');
+    const { paymentStatus } = usePayments();
+    const currency = isBornPrivateEuropeEnabled ? getDonationCurrency(paymentStatus?.CountryCode) : 'USD';
+    const minimumDonation = getSimplePriceString(currency, getMinDonationAmount(currency));
+
     const getSteps = () => [
         c('Label').t`Choose an address to reserve for your child`,
         c('Label').t`Enter your email address`,
-        c('Label').t`Donate $1 or more to the ${BRAND_NAME} Foundation`,
+        c('Label').t`Donate ${minimumDonation} or more to the ${BRAND_NAME} Foundation`,
     ];
 
     return (
