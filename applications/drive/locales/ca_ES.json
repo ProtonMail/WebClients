@@ -1241,6 +1241,12 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Change my access": [
+        "Canviar el meu accés"
+      ],
+      "Remove my access": [
+        "Elimineu el meu accés"
       ]
     },
     "Action: Docs": {
@@ -6958,6 +6964,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Si us elimineu, perdreu l'accés a \"${ fileName }\" i no podreu tornar a obrir el fitxer tret que el propietari us el torni a compartir."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "No podreu compartir \"${ fileName }\" un cop canvieu l'accés a visualitzador. Només el propietari podrà tornar a canviar el vostre accés."
       ]
     },
     "info": {
@@ -9580,6 +9592,9 @@
       ],
       "Your settings have been changed successfully": [
         "La configuració s'ha modificat."
+      ],
+      "\"${ fileName }\" shared": [
+        "S'ha compartit \"${ fileName }\""
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13088,6 +13103,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "Teniu 5 GB d'emmagatzematge"
+      ],
+      "Change access to viewer?": [
+        "Voleu canviar l'accés a visualitzador?"
+      ],
+      "Remove your access?": [
+        "Voleu eliminar el vostre accés?"
+      ],
+      "Share \"${ fileName }\"": [
+        "Compartir \"${ fileName }\""
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13182,6 +13206,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "Els hem enviat una invitació per accedir a l'element."
+      ],
+      "Change shared item settings": [
+        "Canviar les preferències dels elements compartits"
+      ],
+      "New!": [
+        "Nou!"
       ]
     },
     "tooltip": {

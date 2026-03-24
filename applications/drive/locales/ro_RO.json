@@ -1247,6 +1247,12 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Change my access": [
+        "Modifică-mi accesul"
+      ],
+      "Remove my access": [
+        "Elimină-mi accesul"
       ]
     },
     "Action: Docs": {
@@ -7057,6 +7063,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Dacă vă eliminați accesul, veți pierde accesul la „${ fileName }” și nu veți putea să-l deschideți din nou decât dacă proprietarul vi-l partajează."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Nu veți putea partaja „${ fileName }” după modificarea accesului la „utilizator”. Doar proprietarul vă poate modifica din nou accesul."
       ]
     },
     "info": {
@@ -9689,6 +9701,9 @@
       ],
       "Your settings have been changed successfully": [
         "Setările au fost modificate cu succes."
+      ],
+      "\"${ fileName }\" shared": [
+        "„${ fileName }” s-a partajat"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13356,6 +13371,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "Ați primit 5 GiB spațiu de stocare"
+      ],
+      "Change access to viewer?": [
+        "Schimbați accesul cu „utilizator”?"
+      ],
+      "Remove your access?": [
+        "Vă eliminați accesul?"
+      ],
+      "Share \"${ fileName }\"": [
+        "Partajare „${ fileName }\""
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13450,6 +13474,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "Li s-a trimis o invitație pentru a accesa articolul."
+      ],
+      "Change shared item settings": [
+        "Modificare setări articol partajat"
+      ],
+      "New!": [
+        "Nou!"
       ]
     },
     "tooltip": {

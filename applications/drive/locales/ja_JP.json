@@ -1232,6 +1232,9 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "Action: Docs": {
@@ -3895,6 +3898,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 復号できない名前"
+      ],
+      "Invalid coupon": [
+        "無効なクーポン"
+      ],
+      "Please complete the billing details": [
+        "請求の詳細をご記入ください"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "最低寄付金額は ${ price } です。"
+      ],
+      "This field is invalid": [
+        "このフィールドは無効です"
       ]
     },
     "error": {
@@ -6774,6 +6789,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "お客様ご自身のアカウントデータは引き続き表示できますが、すべてのユーザーアカウントがお客様の組織から削除されます。"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "クレジット報酬は、ご友人が年額プランにご登録いただいてから1か月後、月額プランにご加入いただいてから2か月後に受け取れます。"
       ]
     },
     "info": {
@@ -12777,6 +12795,18 @@
       ],
       "You’ve got 5 GB of storage": [
         "5 GB のストレージを手に入れました"
+      ],
+      "Choose a provider": [
+        "プロバイダーを選択"
+      ],
+      "Custom": [
+        "カスタム"
+      ],
+      "Reverse charge not supported": [
+        "リバースチャージはサポートされていません"
+      ],
+      "Spring Sale": [
+        "スプリングセール"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13069,6 +13099,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "お客様のトライアルは${ textDate }に終了します。${ textDate }までにキャンセルした場合、料金は請求されません。${ action }"
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "高度なインポート"
       ]
     }
   }

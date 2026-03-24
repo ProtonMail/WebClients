@@ -1238,6 +1238,15 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Change my access": [
+        "Cambiar mi acceso"
+      ],
+      "Hide": [
+        "Ocultar"
+      ],
+      "Remove my access": [
+        "Eliminar mi acceso"
       ]
     },
     "Action: Docs": {
@@ -6938,6 +6947,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrás seguir viendo los datos de tu propia cuenta, pero todas las cuentas de usuario serán eliminadas de tu organización."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Ingresa el código de verificación. Escribe ${ digit }."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Si te eliminas de la lista, perderás el acceso a «${ fileName }» y no podrás volver a abrirlo a menos que el propietario lo comparta contigo de nuevo."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Ya no podrás compartir «${ fileName }» si cambias el acceso a lector. Solo el propietario podrá volver a modificar tus permisos."
       ]
     },
     "info": {
@@ -9556,6 +9574,9 @@
       ],
       "Your settings have been changed successfully": [
         "Se ha modificado tu configuración."
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" compartido"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13160,6 +13181,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "Has obtenido 5 GB de almacenamiento."
+      ],
+      "Change access to viewer?": [
+        "¿Cambiar el acceso a lector?"
+      ],
+      "Remove your access?": [
+        "¿Eliminar tu acceso?"
+      ],
+      "Share \"${ fileName }\"": [
+        "Compartir «${ fileName }»"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13254,6 +13284,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "Hemos enviado una invitación para acceder al elemento."
+      ],
+      "Change shared item settings": [
+        "Cambiar ajustes de archivos compartidos"
+      ],
+      "New!": [
+        "¡Nuevo!"
       ]
     },
     "tooltip": {

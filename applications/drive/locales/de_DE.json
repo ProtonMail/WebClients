@@ -1235,6 +1235,12 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Change my access": [
+        "Meinen Zugriff ändern"
+      ],
+      "Remove my access": [
+        "Meinen Zugriff entfernen"
       ]
     },
     "Action: Docs": {
@@ -6952,6 +6958,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kannst weiterhin deine eigenen Kontodaten ansehen, aber alle Benutzerkonten werden aus deiner Organisation entfernt."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Wenn du dich selbst entfernst, verlierst du den Zugriff auf die Datei \"${ fileName }\" und kannst sie nicht wieder öffnen, es sei denn, der Inhaber teilt sie mit dir."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Du kannst \"${ fileName }\" nicht mehr teilen, nachdem du den Zugriff auf \"Betrachter\" geändert hast. Nur der Inhaber kann deinen Zugriff erneut ändern."
       ]
     },
     "info": {
@@ -9571,6 +9583,9 @@
       ],
       "Your settings have been changed successfully": [
         "Deine Einstellungen wurden erfolgreich geändert"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" geteilt"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13175,6 +13190,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "Du hast 5 GB Speicherplatz."
+      ],
+      "Change access to viewer?": [
+        "Zugriff auf Betrachter ändern?"
+      ],
+      "Remove your access?": [
+        "Deinen Zugriff entfernen?"
+      ],
+      "Share \"${ fileName }\"": [
+        "\"${ fileName }\" teilen"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13269,6 +13293,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "Wir haben der Person eine Einladung zum Zugreifen auf den Eintrag gesendet."
+      ],
+      "Change shared item settings": [
+        "Einstellungen für freigegebene Elemente ändern"
+      ],
+      "New!": [
+        "Neu"
       ]
     },
     "tooltip": {
