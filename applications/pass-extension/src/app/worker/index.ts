@@ -5,6 +5,7 @@
  * any bundled code that runs immediately when the file is loaded. This includes
  * side-effects such as directly executed statements and exported constants. */
 import config from 'proton-pass-extension/app/config';
+import { handleExtensionCommand } from 'proton-pass-extension/lib/extension/commands';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import 'proton-pass-extension/lib/polyfills/shim';
 import { checkChromeRuntimeError } from 'proton-pass-extension/lib/utils/chrome';
@@ -80,6 +81,10 @@ if (typeof browser !== 'undefined') {
 
     if (BUILD_TARGET !== 'safari') {
         browser.runtime.onUpdateAvailable.addListener(context.service.activation.onUpdateAvailable);
+    }
+
+    if (BUILD_TARGET !== 'safari') {
+        browser.commands.onCommand.addListener(handleExtensionCommand);
     }
 
     if (BUILD_TARGET === 'firefox' && ENV === 'production') {
