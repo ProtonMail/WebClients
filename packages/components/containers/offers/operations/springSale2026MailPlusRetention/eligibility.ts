@@ -50,7 +50,7 @@ export function getIsEligible({
         }
     }
 
-    const mailPlan = subscription?.Plans.find((plan) => plan.Name === PLANS.MAIL);
+    const mailPlan = subscription?.Plans?.find((plan) => plan.Name === PLANS.MAIL);
     if (!mailPlan || mailPlan.Cycle !== CYCLE.YEARLY) {
         return false;
     }

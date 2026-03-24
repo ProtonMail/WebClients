@@ -50,7 +50,7 @@ export function getIsEligible({
         }
     }
 
-    const vpnPlan = subscription?.Plans.find((plan) => plan.Name === PLANS.VPN || plan.Name === PLANS.VPN2024);
+    const vpnPlan = subscription?.Plans?.find((plan) => plan.Name === PLANS.VPN || plan.Name === PLANS.VPN2024);
     if (!vpnPlan || vpnPlan.Cycle !== CYCLE.YEARLY) {
         return false;
     }

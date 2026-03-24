@@ -50,7 +50,7 @@ export function getIsEligible({
         }
     }
 
-    const lumoPlan = subscription?.Plans.find((plan) => plan.Name === PLANS.LUMO);
+    const lumoPlan = subscription?.Plans?.find((plan) => plan.Name === PLANS.LUMO);
     if (!lumoPlan || lumoPlan.Cycle !== CYCLE.YEARLY) {
         return false;
     }
