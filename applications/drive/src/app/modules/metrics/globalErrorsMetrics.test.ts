@@ -18,6 +18,7 @@ jest.mock('@proton/metrics', () => ({
 
 jest.mock('@proton/shared/lib/helpers/sentry', () => ({
     traceError: jest.fn(),
+    addSentryBreadcrumb: jest.fn(),
 }));
 
 describe('GlobalErrorsMetrics', () => {
