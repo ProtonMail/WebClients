@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useAppName } from '@proton/account/appName';
 import { useUser } from '@proton/account/user/hooks';
+import { Banner } from '@proton/atoms/Banner/Banner';
 import { SubscriptionConfirmButton } from '@proton/components/containers/payments/subscription/confirm-button/SubscriptionConfirmButton';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { getPaymentMethodRequired } from '@proton/components/containers/payments/subscription/helpers/getPaymentMethodRequired';
@@ -245,6 +246,12 @@ const SubscriptionCheckoutPaymentSection = ({
                         showVisionaryWarning={renderVisionaryDowngradeWarningText}
                         onSubmit={onSubmit}
                     />
+                    {/* Error message related to billing address */}
+                    {billingAddressHook.taxCountry.billingAddressErrorMessage && (
+                        <Banner variant="danger" className="mt-2 mb-2">
+                            {billingAddressHook.taxCountry.billingAddressErrorMessage}
+                        </Banner>
+                    )}
                 </PaymentMethodForm>
                 {displayRenewNotice && (
                     <p className="color-weak text-sm" data-testid="checkout:renew-notice">
