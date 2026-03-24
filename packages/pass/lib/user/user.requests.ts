@@ -98,8 +98,8 @@ export const getUserData = async (webExtensionId: Maybe<string>): Promise<Hydrat
         ...access,
         addresses,
         devices: [],
-        /** FIXME: this is initialized as null for now as the `getUserData`
-         * will always preceed the synchronization step for now.. */
+        /** Initialized as null since `getUserData` always precedes
+         * the synchronization step. */
         userEventId: null,
         eventId,
         features: featureFlagsData.features,
