@@ -462,6 +462,9 @@
       "Delete filter “${ Name }”": [
         "Slett filter “${ Name }”"
       ],
+      "Delete forward": [
+        "Slett videresending"
+      ],
       "Delete Gateway": [
         "Slett porttjener"
       ],
@@ -852,6 +855,9 @@
       "Go to settings": [
         "Gå til innstillinger"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Skjønner"
       ],
@@ -1184,6 +1190,9 @@
       ],
       "Remove domain": [
         "Fjern domene"
+      ],
+      "Remove forward": [
+        "Fjern videresending"
       ],
       "Remove from favorites": [
         "Fjern fra favoritter"
@@ -4826,6 +4835,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkroniser filer enkelt til skyen fra datamaskinen din, og få tilgang til dem fra mobilenheten din."
       ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "Overfør enkelt e-poster, kalenderhendelser og kontakter fra din forrige leverandør. Velg engangsimport eller automatisk kontinuerlig synkronisering."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktiver ${ PROTON_SENTINEL_NAME } for å få tilgang til disse funksjonene"
       ],
@@ -6897,6 +6909,9 @@
       "Tab closed": [
         "Fane lukket"
       ],
+      "The address is already activated": [
+        "Adressen er allerede aktivert"
+      ],
       "The address might be misspelled": [
         "Adressen kan være feilstavet."
       ],
@@ -8466,7 +8481,7 @@
         "Verdikupong for adressereservasjon"
       ],
       "Donate to the ${ BRAND_NAME } Foundation": [
-        "Doner til ${ BRAND_NAME } Foundation"
+        "Doner til ${ BRAND_NAME }-stiftelsen"
       ],
       "Enter verification code": [
         "Angi verifiseringskode"
@@ -8832,6 +8847,14 @@
         "Er du sikker på at du ønsker å importere en privat nøkkel? Import av en usikkert generert eller lekket privat nøkkel kan skade sikkerheten til e-postene dine.\n\nVær også oppmerksom på at den offentlige nøkkelen som tilsvarer denne private nøkkelen vil være offentlig tilgjengelig fra vår nøkkelserver. Hvis nøkkelen inneholder personlige detaljer (slik som ditt fulle navn) som du ikke ønsker å publisere, rediger nøkkelen før import av den."
       ]
     },
+    "Import provider": {
+      "Advanced import": [
+        "Avansert import"
+      ],
+      "Import from ${ providerName }": [
+        "Importer fra ${ providerName }"
+      ]
+    },
     "Import status": {
       "Active": [
         "Aktiv"
@@ -8839,14 +8862,32 @@
       "Canceled": [
         "Avbrutt"
       ],
+      "Canceling...": [
+        "Avbryter..."
+      ],
       "Delayed": [
         "Forsinket"
+      ],
+      "Disabled": [
+        "Deaktivert"
       ],
       "Failed": [
         "Mislyktes"
       ],
+      "Imported": [
+        "Importert"
+      ],
+      "In progress...": [
+        "Pågår..."
+      ],
       "Paused": [
         "Satt på pause"
+      ],
+      "Undo finished": [
+        "Angre fullført"
+      ],
+      "Undo in progress": [
+        "Angre pågår"
       ]
     },
     "Import type": {
@@ -9383,6 +9424,12 @@
       "An error occurred while communicating with the extension": [
         "Det oppstod en feil under kommunikasjon med utvidelsen"
       ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "En import er satt på vent fordi tilkoblingen til e-postleverandøren din ble mistet."
+      ],
+      "An import is paused because your storage is almost full.": [
+        "En import er satt på pause fordi lagringsplassen din nesten er full."
+      ],
       "and": [
         "og"
       ],
@@ -9593,6 +9640,9 @@
       "Choose an Entity ID to continue.": [
         "Velg en enhets-ID for å fortsette."
       ],
+      "Choose your service to connect with": [
+        "Velg tjenesten du vil koble til"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikk \"be om ny kode\" for å få en ny verifiseringskode sendt til ${ strong }. Hvis dette telefonnummeret er feil, klikker du \"rediger\" for å rette det opp."
       ],
@@ -9610,6 +9660,9 @@
       ],
       "Coming soon": [
         "Kommer snart"
+      ],
+      "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
+        "Fullfør innloggingen på denne enheten for å begynne å bruke ${ VPN_APP_NAME } på TV-en din."
       ],
       "Compromised": [
         "Kompromittert"
@@ -10099,11 +10152,17 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "For brukere som bytter til ${ MAIL_APP_NAME } fra en annen e-posttjeneste, velger du ${ boldAddresses }-fanen og legger til alle aktive e-postadresser før du endrer MX-posten for å sikre en jevn overgang."
       ],
+      "Forwarding automatically sends new incoming emails to your Inbox.": [
+        "Videresending sender automatisk nye innkommende e-poster til innboksen din."
+      ],
       "Free forever": [
         "Gratis for alltid"
       ],
       "Free trial": [
         "Gratis prøveperiode"
+      ],
+      "Free up space or upgrade your storage to continue.": [
+        "Frigjør plass eller oppgrader lagringsplassen for å fortsette."
       ],
       "Friends and family": [
         "Venner og familie"
@@ -10172,7 +10231,7 @@
         "Grupper"
       ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
-        "Hjelp andre familier med å gi barna en trygg pålogget start. Del denne milepælen og spre ordet."
+        "Hjelp andre familier med å gi barna en trygg start på nettet. Del denne milepælen og spre ordet."
       ],
       "here": [
         "her"
@@ -10289,11 +10348,18 @@
       "Import from": [
         "Importer fra"
       ],
+      "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
+        "Import fra ${ accounts } er midlertidig forsinket på grunn av en båndbredbegrensning.",
+        "Importer fra ${ accounts } er midlertidig forsinket på grunn av en båndbreddebegrensning."
+      ],
       "Import in progress": [
         "Import pågår"
       ],
       "Import mailbox": [
         "Importer postboks"
+      ],
+      "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
+        "Importer én enkelt overføring av e-poster, kalendere eller kontakter til ${ BRAND_NAME }-kontoen din."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "VIKTIG: Hvis DNS-konsollen ikke tillater at CNAME-verdier slutter med en prikk, kan du fjerne den siste prikken i CNAME-verdiene."
@@ -10882,6 +10948,9 @@
       "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
         "Åpne innstillingene for nettleserutvidelsen din og gi ${ PASS_APP_NAME }-utvidelsen tilgang til nettstedsdata. Last deretter inn denne siden på nytt."
       ],
+      "Please reconnect to continue.": [
+        "Koble til på nytt for å fortsette."
+      ],
       "Please select the folders you would like to import:": [
         "Velg mappene du vil importere:"
       ],
@@ -11316,6 +11385,9 @@
       ],
       "Thanks for the feedback!": [
         "Takk for tilbakemeldingen!"
+      ],
+      "The ${ bandwidthLimitLink } was reached. We'll automatically resume it once it resets.": [
+        "${ bandwidthLimitLink } ble nådd. Vi gjenopptar den automatisk når den tilbakestilles."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked } meldingen vil ikke lenger bli vist, men du kan fremdeles låse opp dine data under ${ encryptionAndKeysLink }."
@@ -11921,7 +11993,7 @@
         "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
       ],
       "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
-        "Når du er klar til å aktivere adressen, skann QR-koden eller bruk lenken i verdikupongen."
+        "Når du er klar til å aktivere adressen, skann QR-koden eller bruk koblingen i verdikupongen."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Når abonnementet ditt fornyes, vil vi legge til alle tilgjengelige kreditter før vi belaster betalingsmåten ovenfor."
@@ -13419,9 +13491,6 @@
       "Disabled": [
         "Deaktivert"
       ],
-      "Discussion board posts and threads": [
-        "Innlegg og tråder i diskusjonsforum"
-      ],
       "Display name": [
         "Visningsnavn"
       ],
@@ -13447,7 +13516,7 @@
         "Ikke vis dette igjen"
       ],
       "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
-        "Doner 1 $ eller mer til ${ BRAND_NAME } Foundation"
+        "Doner 1 $ eller mer til ${ BRAND_NAME }-stiftelsen"
       ],
       "Donation amount": [
         "Donasjonsbeløp"
@@ -13510,7 +13579,7 @@
         "Angi passordet for nøkkel med fingeravtrykk: ${ fingerprintCode }"
       ],
       "Enter your email address": [
-        "Angi din e-postadresse"
+        "Skriv inn epostadressen din"
       ],
       "Enter your password": [
         "Skriv inn passordet"
@@ -13566,9 +13635,6 @@
       "for your first month": [
         "for første måneden din"
       ],
-      "Forums": [
-        "Forum"
-      ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
       ],
@@ -13583,9 +13649,6 @@
       ],
       "Gift code": [
         "Gavekode"
-      ],
-      "Go to Forums": [
-        "Gå til forum"
       ],
       "Go to Newsletters": [
         "Gå til nyhetsbrev"
@@ -14543,7 +14606,7 @@
     },
     "Link": {
       "${ BRAND_NAME } Foundation's": [
-        "${ BRAND_NAME } Foundations"
+        "Stiftelsen ${ BRAND_NAME }"
       ],
       "Activity log": [
         "Aktivitetslogg"
@@ -15252,8 +15315,11 @@
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-konto"
       ],
+      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
+        "Et enkelt steg i dag for å sikre barnets digitale sikkerhet i morgen. Reserver en privat ${ BRAND_NAME }-e-postadresse for barnet ditt."
+      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
-        "Aktiver den private ${ BRAND_NAME }-e-postadressen som er reservert for barnet ditt, og opprett kontoen deres."
+        "Aktiver den private ${ BRAND_NAME }-e-postadressen som er reservert for barnet ditt, og konfigurer kontoen deres."
       ],
       "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "Aktiver barnets ${ BRAND_NAME }-konto | ${ BRAND_NAME }"
@@ -15287,6 +15353,9 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "Gjenopprett barnets ${ BRAND_NAME }-konto | ${ BRAND_NAME }"
+      ],
+      "Reserve your child's private email | ${ BRAND_NAME }": [
+        "Reserver barnets private e-postadresse | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Tilbakestill passordet for ${ BRAND_NAME }-kontoen din"
@@ -22805,6 +22874,9 @@
       "Check your default mail application": [
         "Sjekk standard e-postapplikasjon"
       ],
+      "Choose a provider": [
+        "Velg en leverandør"
+      ],
       "Choose an account": [
         "Velg en konto"
       ],
@@ -22931,6 +23003,9 @@
       ],
       "Currency": [
         "Valuta"
+      ],
+      "Custom": [
+        "Tilpasset"
       ],
       "Custom domains:": [
         "Egendefinerte domener:"
@@ -23267,6 +23342,9 @@
       "Forward emails": [
         "Videresend e-poster"
       ],
+      "Forwardings": [
+        "Videresendinger"
+      ],
       "Free": [
         "Free"
       ],
@@ -23402,6 +23480,12 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importer via ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importer dine data til ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Importer"
       ],
       "Inactive 2FA": [
         "Inaktiv 2FA"
@@ -23778,6 +23862,9 @@
       "Select contact group": [
         "Velg kontaktgruppe"
       ],
+      "Select data to import": [
+        "Velg data for import"
+      ],
       "Select the time to send this notification": [
         "Velg tidspunktet dette varselet skal sendes"
       ],
@@ -23852,6 +23939,9 @@
       ],
       "Sign in and grant access": [
         "Logg på og gi tilgang"
+      ],
+      "Sign in on TV": [
+        "Logg inn på TV"
       ],
       "Sign in to join the Beta program": [
         "Logg på for å bli med i testprogrammet"
@@ -25321,6 +25411,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning du har gjort så langt."
+      ],
+      "You will not see this import record in the list anymore.": [
+        "Du vil ikke lenger se denne importposten i listen."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. ${ action }"

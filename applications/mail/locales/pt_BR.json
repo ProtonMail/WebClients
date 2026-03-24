@@ -154,6 +154,9 @@
       "Attention required": [
         "Atenção necessária"
       ],
+      "Authenticate": [
+        "Autenticar"
+      ],
       "Auto-delete spam and trash": [
         "Auto-exclusão de spam e Lixeira"
       ],
@@ -581,6 +584,9 @@
       ],
       "Font": [
         "Fonte"
+      ],
+      "Forgot password?": [
+        "Esqueceu sua senha?"
       ],
       "Formalize": [
         "Formalizar"
@@ -1484,7 +1490,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1588,8 +1595,14 @@
       "Use a different payment method": [
         "Usar um método de pagamento diferente"
       ],
+      "Use authentication code": [
+        "Usar um código de autenticação"
+      ],
       "Use for sending": [
         "Usar para envio"
+      ],
+      "Use recovery code": [
+        "Usar um código de recuperação"
       ],
       "Use this": [
         "Usar isso"
@@ -5568,6 +5581,24 @@
         "Velocidade ultrarrápida"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Ocorreu um erro ao autenticar com sua chave de segurança. Tente novamente."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Insira uma chave de segurança vinculada à sua conta ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Chave de segurança"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Chave de segurança"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -5869,6 +5900,9 @@
       ],
       "Protection from trackers": [
         "Proteção contra rastreadores"
+      ],
+      "Review import options": [
+        "Revisar opções de importação"
       ],
       "Sign in to the mobile app to complete this step": [
         "Inicie sessão no aplicativo para completar esta etapa"
@@ -7116,6 +7150,9 @@
       "Duplicate key updated": [
         "Chave duplicada atualizada"
       ],
+      "Each code can only be used once": [
+        "Cada código só pode ser usado uma única vez."
+      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gerencie e cancele a assinatura de newsletters e listas de e-mails facilmente."
       ],
@@ -7174,11 +7211,23 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Garanta uma comunicação totalmente privada e criptografada. Crie seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
       ],
+      "Enter the code from your authenticator app": [
+        "Insira o código do seu aplicativo de autenticação."
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Digite as credenciais da conta de e-mail da qual você deseja importar."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Digite o código de verificação que foi enviado para ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Digite o código de verificação. Insira ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Digite sua própria senha (como administrador da organização)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Digite sua própria senha (como contato de confiança)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Tempo restante estimado: ${ estimatedMinutes } minuto",
@@ -7389,8 +7438,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -8535,6 +8583,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quando você ativou as chaves de confiança para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contato."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação."
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Ao se inscrever para receber um boletim informativo, use um alias em vez do seu endereço de e-mail. Sua identidade permanece oculta, e você pode desativar o alias a qualquer momento."
       ],
@@ -9204,6 +9255,9 @@
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
       ],
+      "Authenticator app": [
+        "Aplicativo de autenticação"
+      ],
       "Automated confirmations and alerts": [
         "Confirmações e alertas automatizados"
       ],
@@ -9336,9 +9390,6 @@
       "Did not follow instructions": [
         "Não seguiu as instruções"
       ],
-      "Discussion board posts and threads": [
-        "Publicações e tópicos do fórum de discussão"
-      ],
       "Do you have any suggestions for our team?": [
         "Você tem alguma sugestão para nossa equipe?"
       ],
@@ -9417,9 +9468,6 @@
       "Folder location": [
         "Localização da pasta"
       ],
-      "Forums": [
-        "Fóruns"
-      ],
       "Forwards to": [
         "Encaminhar para"
       ],
@@ -9437,9 +9485,6 @@
       ],
       "Get the deal": [
         "Obtenha a oferta"
-      ],
-      "Go to Forums": [
-        "Ir para Fóruns"
       ],
       "Go to Newsletters": [
         "Ir para Boletins"
@@ -9896,6 +9941,12 @@
       ],
       "Your location": [
         "Sua localização"
+      ],
+      "Your password (admin)": [
+        "Sua senha (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Sua senha (contato de confiança)"
       ],
       "ZIP code": [
         "CEP"
@@ -11747,6 +11798,9 @@
       "Skip for now": [
         "Pular por enquanto"
       ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Alterne suas contas para a ${ BRAND_NAME }"
+      ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Boas-vindas ao ${ MAIL_APP_NAME }"
       ]
@@ -12913,6 +12967,11 @@
         "Revise a segurança da conta"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "O início de sessão não foi concluído."
+      ]
+    },
     "Search - no results": {
       "An action is being processed": [
         "Uma ação está sendo processada"
@@ -13629,6 +13688,17 @@
       ],
       "Your pm.me email is active": [
         "Seu e-mail pm.me está ativo"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Iniciar sessão"
+      ],
+      "Sign in to your organization": [
+        "Iniciar sessão na sua organização."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Você será redirecionado para o seu provedor de SSO de terceiros."
       ]
     },
     "State": {
@@ -15063,6 +15133,9 @@
       "Enhance security with 2FA": [
         "Aumente a segurança com 2FA"
       ],
+      "Enter your password": [
+        "Digite sua senha"
+      ],
       "Error": [
         "Erro"
       ],
@@ -15631,6 +15704,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ativar ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Autenticação de dois fatores"
       ],
       "Unsubscribe": [
         "Cancelar inscrição"

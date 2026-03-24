@@ -399,6 +399,9 @@
       "Go to label": [
         "Buka label"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Dimengerti"
       ],
@@ -410,6 +413,9 @@
       ],
       "Help and resources": [
         "Bantuan dan sumber daya"
+      ],
+      "Hide": [
+        "Sembunyikan"
       ],
       "Hide advanced PGP settings": [
         "Sembunyikan pengaturan PGP lanjutan"
@@ -906,6 +912,15 @@
       ],
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Domains": [
+        "Domain"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Pengguna"
       ]
     },
     "Alert": {
@@ -4053,6 +4068,9 @@
       "All (${ totalFoldersCount } label)": [
         "Semua (${ totalFoldersCount } label)"
       ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Semua kontak Anda akan diimpor, hingga batas ${ maxContact } kontak"
+      ],
       "an anonymous user": [
         "pengguna anonim"
       ],
@@ -4625,6 +4643,9 @@
       ],
       "Public documents are not yet enabled for your organization.": [
         "Dokumen publik belum diaktifkan untuk organisasi Anda."
+      ],
+      "Read-only": [
+        "Hanya baca"
       ],
       "Recent documents": [
         "Dokumen terkini"
@@ -5856,6 +5877,9 @@
       "${ n } active meeting at a time": [
         "${ n } pertemuan yang aktif secara bersamaan"
       ],
+      "${ n } participant": [
+        "${ n } peserta"
+      ],
       "24 hours per meeting": [
         "24 jam per pertemuan"
       ],
@@ -5864,6 +5888,9 @@
       ],
       "Appointment scheduling": [
         "Penjadwalan janji temu"
+      ],
+      "Booking pages": [
+        "Laman pemesanan"
       ],
       "Browser, mobile, and desktop apps": [
         "Aplikasi peramban, seluler, dan desktop"
@@ -7602,11 +7629,20 @@
       "terms and conditions": [
         "syarat dan ketentuan"
       ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Diskon berlaku untuk ${ renewalsWithCoupon } perpanjangan."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ini berlaku selama ${ couponRedemptions } bulan. Selanjutnya, harga akan otomatis diperbarui menjadi ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
+      ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ini berlaku untuk ${ subscriptionLength } bulan pertama."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Harga diskon khusus ini valid untuk bulan pertama. Selanjutnya, langganan ini akan diperbarui secara otomatis pada harga ${ renewPriceStr } per bulannya. Anda dapat membatalkan langganan Anda kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku selama ${ couponRedemptions } bulan. Kemudian akan diperpanjang secara otomatis dengan harga ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Harga diskon khusus ${ priceWithDiscount } ini valid untuk ${ subscriptionLength } bulan pertama."
@@ -8163,6 +8199,19 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Dibagikan oleh ${ ownerName }"
+      ]
+    },
+    "sheets_2025:Label": {
+      "Destination": [
+        "Tujuan"
+      ],
+      "Format": [
+        "Format"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "Impor data"
       ]
     },
     "Signing preference for emails": {
@@ -8938,6 +8987,9 @@
       "Currency": [
         "Mata uang"
       ],
+      "Custom": [
+        "Kustom"
+      ],
       "Customize and confirm": [
         "Sesuaikan dan konfirmasi"
       ],
@@ -9222,6 +9274,9 @@
       ],
       "Re-signing contacts": [
         "Menandatangani ulang kontak"
+      ],
+      "Read-only": [
+        "Hanya baca"
       ],
       "Recommended actions": [
         "Tindakan yang direkomendasikan"

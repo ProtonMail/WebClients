@@ -38,6 +38,12 @@
       "Delete": [
         "删除"
       ],
+      "Enable diagnostic logs": [
+        "启用诊断日志"
+      ],
+      "Enable diagnostic logs from the Chromium engine.": [
+        "启用 Chromium 引擎的诊断日志"
+      ],
       "Force Reload": [
         "全部重新加载"
       ],
@@ -77,6 +83,9 @@
       "Restart and profile now": [
         "立即重启并分析"
       ],
+      "Restart with logging": [
+        "重启以启用日志记录"
+      ],
       "Select All": [
         "全选"
       ],
@@ -97,6 +106,9 @@
       ],
       "Stop Speaking": [
         "停止说话"
+      ],
+      "These logs help us diagnose issues. The app will restart to apply the change.": [
+        "这些日志有助于我们诊断问题，应用将重启以应用更改。"
       ],
       "This will measure how long the app takes to start and save a report to your logs folder.": [
         "此项将测量应用启动所需时间，并将报告保存到您的日志文件夹中。"

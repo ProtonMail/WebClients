@@ -2931,6 +2931,9 @@
       "Incorrect username": [
         "Forkert brugernavn"
       ],
+      "Invalid coupon": [
+        "Ugyldig kupon"
+      ],
       "Invalid email address": [
         "Ugyldig e-mailadresse"
       ],
@@ -3130,6 +3133,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
+      ],
+      "This field is invalid": [
+        "Dette felt er ugyldigt"
       ],
       "This field is required": [
         "Feltet er påkrævet"
@@ -4431,6 +4437,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Indtast bekræftelseskode. Ciffer ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Indtast din egen adgangskode (som organisationsadministrator)."

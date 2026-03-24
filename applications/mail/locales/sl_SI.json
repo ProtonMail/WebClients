@@ -153,6 +153,9 @@
       "Attention required": [
         "Pozornost!"
       ],
+      "Authenticate": [
+        "Preverjanje pristnosti"
+      ],
       "Auto-delete spam and trash": [
         "Samodejno briši neželeno/smeti"
       ],
@@ -566,6 +569,9 @@
       ],
       "Font": [
         "Pisava"
+      ],
+      "Forgot password?": [
+        "Pozabljeno geslo?"
       ],
       "Formalize": [
         "Formalen ton besedila"
@@ -1447,7 +1453,10 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Zaupaj ključu"
+        "Ključ zaupanja",
+        "Ključa zaupanja",
+        "Ključi zaupanja",
+        "Ključev zaupanja"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -1545,8 +1554,14 @@
       "Use a different payment method": [
         "Uporabite drug način plačila"
       ],
+      "Use authentication code": [
+        "Uporabi kodo za preverjanje pristnosti"
+      ],
       "Use for sending": [
         "Uporabi za pošiljanje"
+      ],
+      "Use recovery code": [
+        "Uporabite kode za obnovitev"
       ],
       "Use this": [
         "Uporabi"
@@ -5436,6 +5451,24 @@
         "Bliskovite hitrosti"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Vstavite varnostni ključ, povezan z vašim ${ BRAND_NAME } računom."
+      ],
+      "Security key": [
+        "Varnostni ključ"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Varnostni ključ"
+      ]
+    },
     "file size format": {
       "byte": [
         "bajt",
@@ -7085,6 +7118,9 @@
       "Duplicate key updated": [
         "Podvojeni ključ je posodobljen"
       ],
+      "Each code can only be used once": [
+        "Vsaka koda se lahko uporabi samo enkrat"
+      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Enostavno upravljajte in se odjavite od glasil in poštnih seznamov."
       ],
@@ -7142,11 +7178,17 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Uživajte v hitrejši in bolj osredotočeni izkušnji e-pošte z namizno aplikacijo."
       ],
+      "Enter the code from your authenticator app": [
+        "Vnesite kodo iz aplikacije za preverjanje pristnosti"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Vnesite poverilnice e-poštnega računa, iz katerega želite uvoziti podatke."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vnesite kodo za preverjanje, ki je bila poslana na ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Predvideni preostali čas: ${ estimatedMinutes } minuta",
@@ -7356,10 +7398,7 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko",
-        "Vstavi sliki",
-        "Vstavi slike",
-        "Vstavi slik"
+        "Vstavi sliko"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -8486,6 +8525,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Ko ste omogočili zaupanja vredne ključe za ${ senderName }, so bili javni ključi dodani kontaktnim podrobnostim."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Ko se prijavite na glasilo, uporabite vzdevek namesto svojega e-poštnega naslova. Vaša identiteta ostane skrita, vzdevek pa lahko kadar koli onemogočite."
       ],
@@ -9174,6 +9216,9 @@
       "Attach screenshot(s)": [
         "Priloži posnetke zaslona"
       ],
+      "Authenticator app": [
+        "Aplikacija za preverjanje pristnosti"
+      ],
       "BCC": [
         "SKP"
       ],
@@ -9372,9 +9417,6 @@
       "Folder location": [
         "Mesto mape"
       ],
-      "Forums": [
-        "Forumi"
-      ],
       "Forwards to": [
         "Posreduje na"
       ],
@@ -9392,9 +9434,6 @@
       ],
       "Get the deal": [
         "Izkoristite posebno ponudbo"
-      ],
-      "Go to Forums": [
-        "Obišči forume"
       ],
       "Go to Promotions": [
         "Pojdite na Promocije"
@@ -9809,6 +9848,9 @@
       ],
       "Your location": [
         "Vaša lokacija"
+      ],
+      "Your password (admin)": [
+        "Vaše geslo (admin)"
       ],
       "ZIP code": [
         "Poštna številka"
@@ -13331,6 +13373,17 @@
         "Vaš e-poštni naslov pm.me je aktiven"
       ]
     },
+    "sso": {
+      "Sign in": [
+        "Prijava"
+      ],
+      "Sign in to your organization": [
+        "Prijavite se v svojo organizacijo"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Preusmerjeni boste k ponudniku SSO tretje osebe."
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "Preklic vaše naročnine, počakajte"
@@ -14846,6 +14899,9 @@
       "Enable message content search": [
         "Omogoči iskanje po vsebini sporočil"
       ],
+      "Enter your password": [
+        "Vnesite svoje geslo"
+      ],
       "Error": [
         "Napaka"
       ],
@@ -15400,6 +15456,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Vklopi ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Dvojno preverjanja pristnosti"
       ],
       "Unsubscribe": [
         "Odjavi se"

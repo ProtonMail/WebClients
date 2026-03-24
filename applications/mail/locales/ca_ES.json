@@ -154,6 +154,9 @@
       "Attention required": [
         "Es requereix la vostra atenció"
       ],
+      "Authenticate": [
+        "Autentica"
+      ],
       "Auto-delete spam and trash": [
         "Neteja automàticament el correu brossa i la paperera"
       ],
@@ -581,6 +584,9 @@
       ],
       "Font": [
         "Font"
+      ],
+      "Forgot password?": [
+        "Heu oblidat la contrasenya?"
       ],
       "Formalize": [
         "Formalitza"
@@ -1484,7 +1490,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1588,8 +1595,14 @@
       "Use a different payment method": [
         "Utilitzeu un mètode de pagament diferent"
       ],
+      "Use authentication code": [
+        "Utilitza el codi d'autenticació"
+      ],
       "Use for sending": [
         "Usar per enviar"
+      ],
+      "Use recovery code": [
+        "Utilitza un codi de recuperació"
       ],
       "Use this": [
         "Utilitzeu això"
@@ -5574,6 +5587,24 @@
         "Velocitats ultraràpides"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Alguna cosa ha anat malament en autenticar-se amb la vostra clau de seguretat. Torneu-ho a provar."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Inseriu una clau de seguretat enllaçada al vostre compte de ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Clau de seguretat"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Clau de seguretat"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -7125,6 +7156,9 @@
       "Duplicate key updated": [
         "Clau duplicada actualitzada"
       ],
+      "Each code can only be used once": [
+        "Cada codi només es pot utilitzar una vegada"
+      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gestioneu i doneu-vos de baixa fàcilment de butlletins i llistes de correu."
       ],
@@ -7183,11 +7217,23 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Assegureu-vos una comunicació totalment privada i xifrada. Aconseguiu ara la vostra adreça gratuïta de correu electrònic de ${ BRAND_NAME }."
       ],
+      "Enter the code from your authenticator app": [
+        "Introduïu el codi de la vostra aplicació d'autenticació."
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduïu les credencials del compte de correu electrònic des d'on voleu importar."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Introduïu el codi de verificació. Dígit ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduïu la vostra contrasenya (com a administrador de l'organització)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Introduïu la vostra contrasenya (com a contacte de confiança)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Temps restant estimat: ${ estimatedMinutes } minut",
@@ -7398,8 +7444,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -8544,6 +8589,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quan vau activar les claus de confiança per a ${ senderName }, es van afegir les claus públiques a les dades del contacte."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Quan configureu l'autenticació en dos passos, et proporcionem codis de recuperació que pots utilitzar per iniciar sessió si perds l'accés a l'aplicació d'autenticació."
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Quan us subscrigueu a un butlletí, utilitzeu un àlies en lloc de la vostra adreça de correu electrònic. La vostra identitat quedarà amagada i podreu desactivar l'àlies en qualsevol moment."
       ],
@@ -9219,6 +9267,9 @@
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
       ],
+      "Authenticator app": [
+        "Aplicació d'autenticació"
+      ],
       "Automated confirmations and alerts": [
         "Confirmacions i alertes automatitzades"
       ],
@@ -9351,9 +9402,6 @@
       "Did not follow instructions": [
         "No s'han seguit les instruccions"
       ],
-      "Discussion board posts and threads": [
-        "Publicacions i fils del fòrum de discussió"
-      ],
       "Do you have any suggestions for our team?": [
         "Teniu algun suggeriment pel nostre equip?"
       ],
@@ -9432,9 +9480,6 @@
       "Folder location": [
         "Ubicació de la carpeta"
       ],
-      "Forums": [
-        "Fòrums"
-      ],
       "Forwards to": [
         "Reenvia a"
       ],
@@ -9452,9 +9497,6 @@
       ],
       "Get the deal": [
         "Aconseguiu l'oferta"
-      ],
-      "Go to Forums": [
-        "Ves als fòrums"
       ],
       "Go to Newsletters": [
         "Ves als butlletins"
@@ -9911,6 +9953,12 @@
       ],
       "Your location": [
         "La vostra ubicació"
+      ],
+      "Your password (admin)": [
+        "La vostra contrasenya (administrador)"
+      ],
+      "Your password (trusted contact)": [
+        "La vostra contrasenya (contacte de confiança)"
       ],
       "ZIP code": [
         "Codi postal"
@@ -12838,6 +12886,11 @@
         "Reviseu la seguretat del compte"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "No s'ha completat l'inici de sessió."
+      ]
+    },
     "Search - no results": {
       "An action is being processed": [
         "S'està processant una acció"
@@ -13554,6 +13607,17 @@
       ],
       "Your pm.me email is active": [
         "El vostre correu electrònic de pm.me està actiu."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Inicia la sessió"
+      ],
+      "Sign in to your organization": [
+        "Inicieu la sessió a la vostra organització"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Se us redirigirà al vostre proveïdor d'SSO de tercers."
       ]
     },
     "State": {
@@ -14988,6 +15052,9 @@
       "Enhance security with 2FA": [
         "Milloreu la seguretat amb 2FA"
       ],
+      "Enter your password": [
+        "Introduïu la vostra contrasenya"
+      ],
       "Error": [
         "Error"
       ],
@@ -15559,6 +15626,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activeu ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Autenticació de doble factor"
       ],
       "Unsubscribe": [
         "Anul·leu-ne la subscripció"

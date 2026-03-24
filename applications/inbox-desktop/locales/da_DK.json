@@ -5,11 +5,17 @@
   },
   "contexts": {
     "App menu": {
+      "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
+        "\"Genstart og profilér nu\" vil genstarte appen med det samme og registrere en opstartsprofil.\n\n\"Profilér ved næste opstart\" vil profilere næste gang, du åbner appen. Brug dette til at måle opstartshastigheden efter en genstart."
+      ],
       "About ${ MAIL_APP_NAME }": [
         "Om ${ MAIL_APP_NAME }"
       ],
       "Actual Size": [
         "Faktisk størrelse"
+      ],
+      "Cancel": [
+        "Annuller"
       ],
       "Check spelling while typing": [
         "Stavekontrol mens du skriver"
@@ -20,6 +26,9 @@
       "Close Window": [
         "Luk vindue"
       ],
+      "Collect startup performance data": [
+        "Indsaml data om systemets ydeevne ved opstart"
+      ],
       "Copy": [
         "Kopier"
       ],
@@ -28,6 +37,12 @@
       ],
       "Delete": [
         "Slet"
+      ],
+      "Enable diagnostic logs": [
+        "Aktivér diagnostiske log-filer"
+      ],
+      "Enable diagnostic logs from the Chromium engine.": [
+        "Aktivér diagnostiske logfiler fra Chromium-motoren."
       ],
       "Force Reload": [
         "Tving genindlæsning"
@@ -47,6 +62,12 @@
       "Paste and Match Style": [
         "Indsæt og tilpas formatering"
       ],
+      "Profile app startup": [
+        "Profilér app-opstart"
+      ],
+      "Profile on next launch": [
+        "Profilér ved næste opstart"
+      ],
       "Quit": [
         "Afslut"
       ],
@@ -58,6 +79,12 @@
       ],
       "Reload": [
         "Genindlæs"
+      ],
+      "Restart and profile now": [
+        "Genstart og profilér nu"
+      ],
+      "Restart with logging": [
+        "Genstart med logning"
       ],
       "Select All": [
         "Vælg alle"
@@ -79,6 +106,12 @@
       ],
       "Stop Speaking": [
         "Stop med at tale"
+      ],
+      "These logs help us diagnose issues. The app will restart to apply the change.": [
+        "Disse logs hjælper os med at diagnosticere problemer. Appen genstarter for at anvende ændringen."
+      ],
+      "This will measure how long the app takes to start and save a report to your logs folder.": [
+        "Dette vil måle, hvor lang tid det tager for appen at starte, og gemme en rapport i din logmappe."
       ],
       "Toggle Full Screen": [
         "Slå fuld skærm til/fra"

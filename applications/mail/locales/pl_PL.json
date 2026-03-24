@@ -153,6 +153,9 @@
       "Attention required": [
         "Wymagana uwaga"
       ],
+      "Authenticate": [
+        "Uwierzytelnij"
+      ],
       "Auto-delete spam and trash": [
         "Automatyczne usuwanie spamu i kosza"
       ],
@@ -578,6 +581,9 @@
       ],
       "Font": [
         "Czcionka"
+      ],
+      "Forgot password?": [
+        "Nie pamiętasz hasła?"
       ],
       "Formalize": [
         "Zmień na tekst formalny"
@@ -1449,9 +1455,6 @@
       "Trust": [
         "Zaufaj"
       ],
-      "Trust key": [
-        "Zaufaj kluczowi"
-      ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
       ],
@@ -1548,8 +1551,14 @@
       "Use a different payment method": [
         "Użyj innej metody płatności"
       ],
+      "Use authentication code": [
+        "Użyj kodu uwierzytelniającego"
+      ],
       "Use for sending": [
         "Używaj do wysyłania"
+      ],
+      "Use recovery code": [
+        "Użyj kodu odzyskiwania"
       ],
       "Use this": [
         "Użyj tego"
@@ -5261,6 +5270,24 @@
         "Błyskawiczne prędkości"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Coś poszło nie tak z uwierzytelnianiem za pomocą klucza bezpieczeństwa. Spróbuj ponownie później."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Użyj klucza bezpieczeństwa powiązanego z kontem ${ BRAND_NAME }."
+      ],
+      "Security key": [
+        "Klucz bezpieczeństwa"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Klucz bezpieczeństwa"
+      ]
+    },
     "file size format": {
       "byte": [
         "bajt",
@@ -6974,11 +7001,20 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Zapewnij sobie prywatną i szyfrowaną komunikację. Uzyskaj darmowy adres ${ BRAND_NAME }."
       ],
+      "Enter the code from your authenticator app": [
+        "Wpisz kod z aplikacji uwierzytelniającej"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Wpisz dane logowania do konta e-mail, z którego chcesz zaimportować dane."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Wpisz swoje hasło (jako administrator organizacji)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Wpisz swoje hasło (jako zaufany kontakt)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Szacowany pozostały czas: ${ estimatedMinutes } minuta",
@@ -7173,10 +7209,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -8982,6 +9015,9 @@
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
       ],
+      "Authenticator app": [
+        "Aplikacja uwierzytelniająca"
+      ],
       "BCC": [
         "UDW"
       ],
@@ -9170,9 +9206,6 @@
       ],
       "Folder location": [
         "Lokalizacja folderu"
-      ],
-      "Forums": [
-        "Fora"
       ],
       "Forwards to": [
         "Przekaż do"
@@ -9572,6 +9605,12 @@
       ],
       "Your location": [
         "Twoja lokalizacja"
+      ],
+      "Your password (admin)": [
+        "Twoje hasło (administratora)"
+      ],
+      "Your password (trusted contact)": [
+        "Twoje hasło (zaufany kontakt)"
       ],
       "ZIP code": [
         "Kod pocztowy"
@@ -12369,6 +12408,11 @@
         "Sprawdź bezpieczeństwo konta"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Logowanie nie zostało zakończone."
+      ]
+    },
     "Search - no results": {
       "No messages found": [
         "Nie znaleziono żadnych wiadomości"
@@ -13069,6 +13113,17 @@
       ],
       "Your pm.me email is active": [
         "Adres pm.me jest aktywny"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Zaloguj się"
+      ],
+      "Sign in to your organization": [
+        "Zaloguj się do organizacji"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Nastąpi przekierowanie do zewnętrznego dostawcy SSO."
       ]
     },
     "State": {
@@ -14508,6 +14563,9 @@
       "Enhance security with 2FA": [
         "Zwiększ bezpieczeństwo za pomocą uwierzytelniania dwustopniowego"
       ],
+      "Enter your password": [
+        "Wpisz hasło"
+      ],
       "Error": [
         "Błąd"
       ],
@@ -15050,6 +15108,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Włącz ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Uwierzytelnianie dwustopniowe"
       ],
       "Unsubscribe": [
         "Anuluj subskrypcję"

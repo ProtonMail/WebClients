@@ -218,9 +218,6 @@
       "Open link": [
         "Link öffnen"
       ],
-      "Picture-in-picture mode": [
-        "Bild-in-Bild-Modus"
-      ],
       "Previous month": [
         "Vorheriger Monat"
       ],
@@ -241,6 +238,9 @@
       ],
       "Refresh audio and video tracks": [
         "Audio- und Videospuren aktualisieren"
+      ],
+      "Refresh screen share track": [
+        "Bildschirmfreigabe aktualisieren"
       ],
       "Refresh the page": [
         "Seite aktualisieren"
@@ -289,6 +289,9 @@
       ],
       "Settings": [
         "Einstellungen"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Schwebende Miniaturansicht während der Bildschirmfreigabe anzeigen"
       ],
       "Show participants": [
         "Teilnehmer anzeigen"
@@ -2077,6 +2080,9 @@
       "Refresh audio and video tracks": [
         "Audio- und Videospuren aktualisieren"
       ],
+      "Refresh screen share track": [
+        "Bildschirmfreigabe aktualisieren"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
@@ -2577,11 +2583,11 @@
       "E.g., ": [
         "Z. B. "
       ],
-      "e.g., Design Team, Weekly Standup": [
-        "z. B. Designteam, wöchentliches Statusmeeting"
+      "e.g., Daily room, project hub": [
+        "z.B. Tägliches Meeting, Projekt-Hub"
       ],
-      "Enter meeting title": [
-        "Einen Meeting-Titel eingeben"
+      "e.g., Team sync, project update": [
+        "z. B. Teamsynchronisierung, Projektaktualisierung"
       ],
       "Enter passphrase": [
         "Passphrase eingeben"

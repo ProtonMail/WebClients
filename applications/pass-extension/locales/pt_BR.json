@@ -1497,6 +1497,9 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } irá sugerir salvar chaves de acesso."
       ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME } está temporariamente off-line. Abra a extensão para desbloquear."
+      ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "Modo off-line do ${ PASS_SHORT_APP_NAME } está ativado."
       ],
@@ -2634,6 +2637,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Você agora pode usar a senha da ${ BRAND_NAME } para acessar o ${ PASS_SHORT_APP_NAME } no modo off-line"
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Você agora pode usar a senha de backup para acessar o ${ PASS_SHORT_APP_NAME } no modo off-line"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Você agora pode usar a senha adicional para acessar o ${ PASS_SHORT_APP_NAME } no modo off-line"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Você agora pode usar a segunda senha para acessar o ${ PASS_SHORT_APP_NAME } no modo off-line"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Você não pode alterar as caixas de entrada para este alias."
