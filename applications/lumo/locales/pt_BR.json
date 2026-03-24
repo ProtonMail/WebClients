@@ -86,11 +86,17 @@
       "Copy address": [
         "Copiar o endereço"
       ],
+      "Copy API key": [
+        "Copie a chave da API"
+      ],
       "Create": [
         "Criar"
       ],
       "Create folder": [
         "Criar pasta"
+      ],
+      "Create key": [
+        "Criar chave"
       ],
       "Current plan": [
         "Plano atual"
@@ -101,11 +107,17 @@
       "Delete": [
         "Excluir"
       ],
+      "Delete ${ token.Name }": [
+        "Excluir ${ token.Name }"
+      ],
       "Delete all conversations?": [
         "Excluir todas as conversas?"
       ],
       "Delete conversation?": [
         "Excluir conversa?"
+      ],
+      "Delete key": [
+        "Excluir chave"
       ],
       "Dismiss": [
         "Descartar"
@@ -205,6 +217,9 @@
       ],
       "More options for accounts": [
         "Mais opções para contas"
+      ],
+      "New key": [
+        "Nova chave"
       ],
       "Next page": [
         "Próxima página"
@@ -1200,6 +1215,12 @@
       "File uploaded but failed to add to knowledge base": [
         "Arquivo enviado, mas houve uma falha ao adicioná-lo à base de conhecimento"
       ],
+      "Name is required": [
+        "O nome é obrigatório."
+      ],
+      "Name must be 191 characters or fewer": [
+        "O nome deve ter no máximo 191 caracteres"
+      ],
       "Please select a category to describe what went wrong with the generated text": [
         "Selecione uma categoria para descrever o que deu errado com o texto gerado"
       ],
@@ -1453,6 +1474,15 @@
       "Excluded": [
         "Excluído"
       ],
+      "Expired ": [
+        "Expirado "
+      ],
+      "Expires ": [
+        "Expira "
+      ],
+      "Expires tomorrow": [
+        "Expira amanhã"
+      ],
       "File capacity": [
         "Capacidade de arquivo"
       ],
@@ -1518,6 +1548,9 @@
       ],
       "No supported files in this folder": [
         "Nenhum arquivo compatível nesta pasta"
+      ],
+      "No usage yet": [
+        "Não usado ainda"
       ],
       "Note:": [
         "Nota:"
@@ -1626,6 +1659,9 @@
       ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Para consultar esta conversa mais tarde, inicie uma sessão ou crie uma conta."
+      ],
+      "tokens / 30d": [
+        "tokens / 30d"
       ],
       "Try the smartest version of ${ LUMO_SHORT_APP_NAME } with advanced capabilities.": [
         "Experimente a versão mais inteligente do ${ LUMO_SHORT_APP_NAME }, com recursos avançados."
@@ -1743,6 +1779,28 @@
         "Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus."
       ]
     },
+    "collider_2025: Notification": {
+      "API key copied to clipboard": [
+        "Chave da API copiada para a área de transferência"
+      ],
+      "API key deleted": [
+        "Chave de API excluída"
+      ]
+    },
+    "collider_2025: Option": {
+      "1 year": [
+        "1 ano"
+      ],
+      "180 days": [
+        "180 dias"
+      ],
+      "30 days": [
+        "30 dias"
+      ],
+      "90 days": [
+        "90 dias"
+      ]
+    },
     "collider_2025: Personality": {
       "Business Cat": [
         "Gato de Negócios"
@@ -1808,6 +1866,9 @@
       "Account": [
         "Conta"
       ],
+      "API keys": [
+        "Chaves de API"
+      ],
       "General": [
         "Geral"
       ],
@@ -1818,6 +1879,18 @@
     "collider_2025: Status": {
       "${ LUMO_SHORT_APP_NAME }+ is included in your Visionary plan and you have access to these features:": [
         "${ LUMO_SHORT_APP_NAME }+ está incluído no seu plano Visionary e você tem acesso a estes recursos:"
+      ],
+      "Active": [
+        "Ativo"
+      ],
+      "Copied!": [
+        "Copiado!"
+      ],
+      "Expired": [
+        "Expirado"
+      ],
+      "Expiring soon": [
+        "Expirando em breve"
       ],
       "You are subscribed to ${ LUMO_SHORT_APP_NAME }+ and have access to these features:": [
         "Você está inscrito no ${ LUMO_SHORT_APP_NAME }+ e tem acesso a estes recursos:"
@@ -1859,6 +1932,9 @@
       "Automatic web search": [
         "Pesquisa automática da web"
       ],
+      "Create new API key": [
+        "Criar chave de API"
+      ],
       "Delete everything": [
         "Excluir tudo"
       ],
@@ -1870,6 +1946,9 @@
       ],
       "Invalid Link": [
         "Link inválido"
+      ],
+      "No API keys yet": [
+        "Ainda não há chaves de API"
       ],
       "Opening External Link": [
         "Abrindo link externo"
@@ -1891,6 +1970,9 @@
       ],
       "Visionary": [
         "Visionary"
+      ],
+      "Your new API key": [
+        "Sua nova chave de API"
       ]
     },
     "collider_2025: Tooltip": {
@@ -1985,6 +2067,11 @@
       ],
       "Use modern slang and trendy communication style.": [
         "Use gírias modernas e um estilo de comunicação descolado."
+      ]
+    },
+    "collider_2025: Unit": {
+      "tokens": [
+        "tokens"
       ]
     },
     "collider_2025: Upsell": {
@@ -2388,11 +2475,11 @@
       "Drive files are not available for guest users": [
         "Arquivos do Drive não estão disponíveis para usuários convidados"
       ],
-      "File \"${ file.name }\" is already added to this conversation": [
-        "O arquivo \"${ file.name }\" já foi adicionado a esta conversa"
-      ],
       "File \"${ file.name }\" is already in this project": [
         "O arquivo \"${ file.name }\" já está neste projeto"
+      ],
+      "File \"${ file.name }\" is already mentioned": [
+        "O arquivo \"${ file.name }\" já está mencionado"
       ],
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "Arquivos enviados para este projeto serão salvos na pasta do Drive vinculada."
@@ -2510,9 +2597,6 @@
       "Holiday planner": [
         "Planejador de feriados"
       ],
-      "Processing files, please wait...": [
-        "Processando arquivos. Aguarde..."
-      ],
       "Search chats": [
         "Pesquisar bate-papos"
       ],
@@ -2606,6 +2690,9 @@
       ],
       "Help me understand what this code does": [
         "Ajude-me a entender o que este código faz"
+      ],
+      "How does the world celebrate the Spring Equinox?": [
+        "Como o mundo celebra o Equinócio de Primavera?"
       ],
       "Identify any unusual or potentially unfavorable terms": [
         "Identifique quaisquer termos incomuns ou potencialmente desfavoráveis."
@@ -5007,6 +5094,9 @@
       "Expires": [
         "Data de validade"
       ],
+      "Expires in": [
+        "Expira em"
+      ],
       "First name": [
         "Primeiro nome"
       ],
@@ -5033,6 +5123,9 @@
       ],
       "Integrated 2FA authenticator": [
         "Autenticador A2F integrado"
+      ],
+      "Key name": [
+        "Nome da chave"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Atalho de teclado: ${ shortcut }"
