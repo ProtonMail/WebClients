@@ -113,7 +113,7 @@ export function DevicesBrowser({ onRename, onRemove }: Props) {
                 events={events}
                 loading={isLoading}
                 caption={c('Title').t`Devices`}
-                isMultiSelectionDisabled={true}
+                showCheckboxColumn={false}
                 contextMenuControls={{
                     isOpen: contextMenu.isOpen,
                     showContextMenu: contextMenu.handleContextMenu,
