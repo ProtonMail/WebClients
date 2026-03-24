@@ -15,7 +15,7 @@ export const serializeFormData = (data: { [key: string]: any }): FormData => {
     return formData;
 };
 
-export type FetchDataType = 'json' | 'form' | 'protobuf';
+export type FetchDataType = 'json' | 'form' | 'protobuf' | 'body';
 export const serializeData = (data: any, input: FetchDataType): Pick<RequestInit, 'body' | 'headers'> => {
     if (!data) {
         return {};
@@ -39,6 +39,11 @@ export const serializeData = (data: any, input: FetchDataType): Pick<RequestInit
             headers: {
                 'content-type': 'application/x-protobuf',
             },
+        };
+    }
+    if (input === 'body') {
+        return {
+            body: data,
         };
     }
     return {};
