@@ -23,7 +23,8 @@ export function useHttpClient(defaultHeaders: [string, string][] = []): ProtonDr
                 url: options.url,
                 method: options.method,
                 headers: Object.fromEntries(options.headers.entries()),
-                data: options.json,
+                data: options.json || options.body,
+                input: !options.body ? 'json' : 'body',
                 signal: options.signal,
                 timeout: options.timeoutMs,
                 ignoreHandler: [

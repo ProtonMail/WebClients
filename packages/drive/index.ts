@@ -19,6 +19,7 @@ import { proxyDriveClientWithEventTracking } from './internal/proxyDriveClientWi
 import type { UserPlan } from './internal/telemetry';
 import { initTelemetry } from './internal/telemetry';
 import { useAccount } from './internal/useAccount';
+import { useFeatureFlagProvider } from './internal/useFeatureFlagProvider';
 import { useHttpClient } from './internal/useHttpClient';
 import { useSrpModule } from './internal/useSrpModule';
 import { Logging } from './modules/logging';
@@ -123,6 +124,7 @@ export function useDrive() {
     const httpClient = useHttpClient(appVersionHeaders);
     const account = useAccount();
     const srpModule = useSrpModule();
+    const featureFlagProvider = useFeatureFlagProvider();
     const openPGPCryptoModule = initOpenPGPCryptoModule();
 
     /**
@@ -179,6 +181,7 @@ export function useDrive() {
                 latestEventIdProvider: driveLatestEventIdProvider,
                 config,
                 telemetry,
+                featureFlagProvider,
             });
             driveSingleton = proxyDriveClientWithEventTracking(driveClient, driveLatestEventIdProvider);
 
@@ -194,11 +197,12 @@ export function useDrive() {
                 latestEventIdProvider: photosLatestEventIdProvider,
                 config,
                 telemetry,
+                featureFlagProvider,
             });
             photosSingleton = proxyDriveClientWithEventTracking(photosClient, photosLatestEventIdProvider);
             photosEntitiesCacheSingleton = photosEntitiesCache;
         },
-        [setAppVersionHeaders, debug, httpClient, account, openPGPCryptoModule, srpModule]
+        [setAppVersionHeaders, debug, httpClient, account, openPGPCryptoModule, srpModule, featureFlagProvider]
     );
 
     return {
@@ -263,6 +267,7 @@ export function useDrive() {
                     latestEventIdProvider: params.latestEventIdProvider,
                     config: config,
                     telemetry: telemetry,
+                    featureFlagProvider,
                 });
             },
 
