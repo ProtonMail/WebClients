@@ -71,11 +71,6 @@ im.$media-expressions: $media-expressions;
 }
 
 .upsell-modal {
-	.upsell-modal-button {
-		line-height: 1.5rem;
-		background: linear-gradient(316deg, var(--interaction-norm) 21.43%, #d1cbff 115.05%) !important;
-	}
-
 	&.meet-glow-effect {
 		&::before {
 			margin-inline-start: -25vw;
@@ -85,4 +80,9 @@ im.$media-expressions: $media-expressions;
 			margin-inline-end: -25vw;
 		}
 	}
+}
+
+.upsell-modal-button {
+	line-height: 1.5rem;
+	background: linear-gradient(316deg, var(--interaction-norm) 21.43%, #d1cbff 115.05%) !important;
 }
