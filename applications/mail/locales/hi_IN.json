@@ -138,6 +138,9 @@
       "Attention required": [
         "ध्यान दें"
       ],
+      "Authenticate": [
+        "सत्यापन करें"
+      ],
       "Auto-delete spam and trash": [
         "स्पैम और ट्रैश को स्वचालित रूप से हटाएं"
       ],
@@ -475,6 +478,9 @@
       ],
       "Font": [
         "फॉन्ट"
+      ],
+      "Forgot password?": [
+        "पासवर्ड भूल गए?"
       ],
       "Formalize": [
         "संक्षेपित करें"
@@ -1158,6 +1164,10 @@
       "Trust": [
         "भरोसा करें"
       ],
+      "Trust key": [
+        "ट्रस्ट की",
+        "ट्रस्ट कीज़"
+      ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
       ],
@@ -1233,8 +1243,14 @@
       "Use a different payment method": [
         "अन्य भुगतान विधि का उपयोग करें"
       ],
+      "Use authentication code": [
+        "सत्यापन कोड इस्तेमाल करें"
+      ],
       "Use for sending": [
         "भेजने के लिए इस्तेमाल करें"
+      ],
+      "Use recovery code": [
+        "रिकवरी कोड इस्तेमाल करें"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "दृश्य का आकार बदलने के लिए अपने माउस का प्रयोग करें। यदि आप अपने कीबोर्ड का उपयोग कर रहे हैं, तो आप आकार बदलने के लिए बाएं और दाएं तीर वाली कुंजियों का उपयोग कर सकते हैं।"
@@ -4146,6 +4162,16 @@
         "बहुत तेज गति"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "सुरक्षा चाबी"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "सुरक्षा चाबी"
+      ]
+    },
     "file size format": {
       "byte": [
         "बाइट",
@@ -5302,11 +5328,17 @@
       "Encrypt message": [
         "संदेश एन्क्रिप्ट करें"
       ],
+      "Enter the code from your authenticator app": [
+        "अपने प्रमाणिक ऐप से कोड दर्ज करें"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "आप जिस ईमेल खाते से आयात करना चाहते हैं, उसके क्रेडेंशियल दर्ज करें।"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "वह सत्यापन कोड दर्ज करें जो ${ destinationText } को भेजा गया था।"
+      ],
+      "Enter your own password (as organization admin).": [
+        "अपना स्वयं का पासवर्ड दर्ज करें (संगठन व्यवस्थापक के रूप में)।"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "अनुमानित समय शेष: ${ estimatedMinutes } मिनट",
@@ -5427,6 +5459,9 @@
       ],
       "Inherited from parent folder": [
         "मूल फ़ोल्डर से इनहेरिट की गई"
+      ],
+      "Insert image": [
+        "तस्वीर डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -6691,6 +6726,9 @@
       "Attach screenshot(s)": [
         "स्क्रीनशॉट(स) संलग्न करें"
       ],
+      "Authenticator app": [
+        "प्रमाणीकरण अनुप्रयोग"
+      ],
       "BCC": [
         "बीसीसी"
       ],
@@ -7170,6 +7208,9 @@
       ],
       "Your domain": [
         "आपका डोमेन"
+      ],
+      "Your password (admin)": [
+        "आपका पासवर्ड (व्यवस्थापक)"
       ],
       "ZIP code": [
         "ज़िप कोड"
@@ -8978,6 +9019,11 @@
         "न्योता वापस एनक्रिप्ट करने में असफल। कृपया वापस कोशिश करें।"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "साइन इन सफलतापूर्वक पूरा नहीं हुआ।"
+      ]
+    },
     "Search - no results": {
       "No messages found": [
         "कोई संदेश नहीं मिला"
@@ -9462,6 +9508,17 @@
       ],
       "You can now schedule your messages to be sent later": [
         "अब आप अपने संदेशों को बाद में भेजने के लिए शेड्यूल कर सकते हैं"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "साइनइन करें"
+      ],
+      "Sign in to your organization": [
+        "अपने संगठन में साइन इन करें"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "आपको आपके तीसरें-पार्टी SSO प्रदाता पर रीडायरेक्ट कर दिया जाएगा।"
       ]
     },
     "Status": {
@@ -10443,6 +10500,9 @@
       "Enable message content search": [
         "संदेश सामग्री खोज सक्षम करें"
       ],
+      "Enter your password": [
+        "आपका पासवर्ड डालें"
+      ],
       "Error": [
         "गड़बड़"
       ],
@@ -10807,6 +10867,9 @@
       ],
       "Trust public key?": [
         "जनता की चाबी पर भरोसा?"
+      ],
+      "Two-factor authentication": [
+        "दो तरीकों से प्रमाणीकरण"
       ],
       "Unsubscribe": [
         "सदस्यता रद्द"

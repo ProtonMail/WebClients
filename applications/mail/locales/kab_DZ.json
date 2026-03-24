@@ -115,6 +115,9 @@
       "Attention required": [
         "Yesra leḥdar"
       ],
+      "Authenticate": [
+        "Asesteb"
+      ],
       "Back": [
         "Ɣer deffir"
       ],
@@ -437,6 +440,9 @@
       ],
       "Font": [
         "Tasefsit"
+      ],
+      "Forgot password?": [
+        "Tettud awal uffir?"
       ],
       "Forward as attachment": [
         "Welleh am umedday"
@@ -1078,9 +1084,6 @@
       "Trust": [
         "Amen"
       ],
-      "Trust key": [
-        "Tasarut yettwamanen"
-      ],
       "Trust public key": [
         "Tasarut tazayezt yettwamanen"
       ],
@@ -1156,8 +1159,14 @@
       "Use a different payment method": [
         "Seqdec tarayt-nniḍen n usellek"
       ],
+      "Use authentication code": [
+        "Seqdec tangalt n usesteb"
+      ],
       "Use for sending": [
         "Tuzna"
+      ],
+      "Use recovery code": [
+        "Seqdec tangalt n tririt"
       ],
       "Verify": [
         "Senqed"
@@ -3728,6 +3737,16 @@
         "Kkes tuddsa?"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "Tasarutt n tɣellist"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Tasarutt n tɣellist"
+      ]
+    },
     "file size format": {
       "byte": [
         "ibiten",
@@ -4758,11 +4777,17 @@
       "Encrypt message": [
         "Wgelhen izen"
       ],
+      "Enter the code from your authenticator app": [
+        "Sekcem tangalt seg usnas-ik n usesteb"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Sekcem inekcam n umiḍan n yimayl iseg tebɣiḍ ad d-tketreḍ."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Sekcem tangalt n usenged i yettwaznen ɣer ${ destinationText }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Sekcem awal-ik uffir (am unedbal n tkebbanit)"
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Akud i d-yeggran: ${ estimatedMinutes } n tesdat",
@@ -4863,8 +4888,7 @@
         "Yettwaɣellet seg ukaram agejdan"
       ],
       "Insert image": [
-        "Ger tugna",
-        "Ger tugniwn"
+        "Ger tugna"
       ],
       "Insert link": [
         "Ger aseɣwen"
@@ -5891,6 +5915,9 @@
       "Attach screenshot(s)": [
         "Seddu tuṭṭfa(win) n ugdil"
       ],
+      "Authenticator app": [
+        "Asnas n usesteb"
+      ],
       "BCC": [
         "Anɣ. Uff. I"
       ],
@@ -6352,6 +6379,9 @@
       ],
       "Without attachment": [
         "War afaylu yeddan"
+      ],
+      "Your password (admin)": [
+        "Awal-ik uffir (anedbal)"
       ],
       "ZIP code": [
         "Tangalt Zip"
@@ -8065,6 +8095,14 @@
         "Tzemreḍ tura ad tedɣawseḍ iznan-ik ad ttwaznen ticki"
       ]
     },
+    "sso": {
+      "Sign in": [
+        "Qqen"
+      ],
+      "Sign in to your organization": [
+        "Kcem ɣer tkebbanit-ik"
+      ]
+    },
     "Status": {
       "Unsubscribed": [
         "Sefsex amultaɣ"
@@ -8859,6 +8897,9 @@
       "Enable message content search": [
         "Rmed anadi n ugbur n yizen"
       ],
+      "Enter your password": [
+        "Sekcem awal-ik uffir"
+      ],
       "Error": [
         "Tuccḍa"
       ],
@@ -9205,6 +9246,9 @@
       ],
       "Trust public key?": [
         "Tasarut tazayezt yettwamanen?"
+      ],
+      "Two-factor authentication": [
+        "Asesteb s snat n tarrayin"
       ],
       "Unsubscribe": [
         "Ffeɣ seg ujerred"

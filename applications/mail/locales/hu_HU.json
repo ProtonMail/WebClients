@@ -154,6 +154,9 @@
       "Attention required": [
         "Figyelem szükséges"
       ],
+      "Authenticate": [
+        "Hitelesítés"
+      ],
       "Auto-delete spam and trash": [
         "Levélszemét és lomtár automatikus törlése"
       ],
@@ -572,6 +575,9 @@
       ],
       "Font": [
         "Betűtípus"
+      ],
+      "Forgot password?": [
+        "Elfelejtett jelszó?"
       ],
       "Formalize": [
         "Hivatalos"
@@ -1460,7 +1466,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Kulcs megjelölése megbízhatóként",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -1561,8 +1568,14 @@
       "Use a different payment method": [
         "Más fizetési mód választása"
       ],
+      "Use authentication code": [
+        "Hitelesítő kód használata"
+      ],
       "Use for sending": [
         "Küldéshez használható"
+      ],
+      "Use recovery code": [
+        "Helyreállító kód használata"
       ],
       "Use this": [
         "Ennek használata"
@@ -5275,6 +5288,16 @@
         "Villámgyors sebesség"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "Hitelesítési kulcs"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Hitelesítési kulcs"
+      ]
+    },
     "file size format": {
       "byte": [
         "bájt",
@@ -6845,11 +6868,17 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Biztosítsa a teljesen privát és titkosított kommunikációt. Igényeljen egy ingyenes ${ BRAND_NAME } e-mail címet."
       ],
+      "Enter the code from your authenticator app": [
+        "Írja be a kódot a hitelesítő alkalmazásból"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Adja meg az e-mail fiók belépési adatait, amelyről importálni szeretne."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Becsült hátralévő idő: ${ estimatedMinutes } perc",
@@ -7060,7 +7089,6 @@
         "Inicializálás…"
       ],
       "Insert image": [
-        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -8820,6 +8848,9 @@
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
       ],
+      "Authenticator app": [
+        "Hitelesítő alkalmazás"
+      ],
       "Automated confirmations and alerts": [
         "Automatikus visszaigazolások és értesítések"
       ],
@@ -8949,9 +8980,6 @@
       "Did not follow instructions": [
         "Nem követte az utasításokat"
       ],
-      "Discussion board posts and threads": [
-        "Fórumbejegyzések és fórumtémák"
-      ],
       "Do you have any suggestions for our team?": [
         "Lenne valamilyen javaslata a csapatunk számára?"
       ],
@@ -9021,9 +9049,6 @@
       "Folder location": [
         "Mappa helye"
       ],
-      "Forums": [
-        "Fórumok"
-      ],
       "Forwards to": [
         "Továbbít:"
       ],
@@ -9041,9 +9066,6 @@
       ],
       "Get the deal": [
         "Ajánlat elfogadása"
-      ],
-      "Go to Forums": [
-        "Fórumok megnyitása"
       ],
       "Go to Newsletters": [
         "Hírlevelek megnyitása"
@@ -9485,6 +9507,9 @@
       ],
       "Your location": [
         "Az ön tartózkodási helye"
+      ],
+      "Your password (admin)": [
+        "Jelszó (adminisztrátor)"
       ],
       "ZIP code": [
         "Irányítószám"
@@ -12158,6 +12183,11 @@
         "Fiókbiztonság átnézése"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "A bejelentkezés nem sikerült."
+      ]
+    },
     "Search - no results": {
       "No messages found": [
         "Nincsenek üzenetek"
@@ -12848,6 +12878,17 @@
       ],
       "Your pm.me email is active": [
         "Az Ön pm.me e-mail címe aktív"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Bejelentkezés"
+      ],
+      "Sign in to your organization": [
+        "Jelentkezzen be a szervezetébe"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Önt átirányítjuk a harmadik fél SSO-szolgáltatójához."
       ]
     },
     "State": {
@@ -14255,6 +14296,9 @@
       "Enhance security with 2FA": [
         "Növelje a biztonságot a kétlépcsős hitelesítés segítségével"
       ],
+      "Enter your password": [
+        "Adja meg a jelszavát"
+      ],
       "Error": [
         "Hiba"
       ],
@@ -14796,6 +14840,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } bekapcsolása"
+      ],
+      "Two-factor authentication": [
+        "Kétlépcsős hitelesítés"
       ],
       "Unsubscribe": [
         "Leiratkozás"

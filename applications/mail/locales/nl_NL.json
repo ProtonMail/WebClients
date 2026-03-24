@@ -154,6 +154,9 @@
       "Attention required": [
         "Aandacht vereist"
       ],
+      "Authenticate": [
+        "Authenticeren"
+      ],
       "Auto-delete spam and trash": [
         "Spam en prullenbak automatisch verwijderen"
       ],
@@ -581,6 +584,9 @@
       ],
       "Font": [
         "Lettertype"
+      ],
+      "Forgot password?": [
+        "Wachtwoord vergeten?"
       ],
       "Formalize": [
         "Formaliseren"
@@ -1484,7 +1490,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1588,8 +1595,14 @@
       "Use a different payment method": [
         "Gebruik een andere betaalmethode"
       ],
+      "Use authentication code": [
+        "Authenticatiecode gebruiken"
+      ],
       "Use for sending": [
         "Gebruiken om te versturen"
+      ],
+      "Use recovery code": [
+        "Herstelcode gebruiken"
       ],
       "Use this": [
         "Gebruik dit"
@@ -5574,6 +5587,16 @@
         "Hoge snelheden"
       ]
     },
+    "fido2: Info": {
+      "Security key": [
+        "Beveiligingssleutel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Beveiligingssleutel"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -7116,6 +7139,9 @@
       "Duplicate key updated": [
         "Dubbele sleutel bijgewerkt"
       ],
+      "Each code can only be used once": [
+        "Elke code kan slechts één keer worden gebruikt"
+      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Beheer en meld u eenvoudig af voor nieuwsbrieven en adressenlijsten."
       ],
@@ -7174,11 +7200,23 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Zorg voor volledig privé en versleutelde communicatie. Vraag nu uw gratis ${ BRAND_NAME }-e-mailadres aan."
       ],
+      "Enter the code from your authenticator app": [
+        "Voer de code van uw authenticatie app in"
+      ],
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Voer verificatiecode in. Cijfer ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Voer uw eigen wachtwoord in (als vertrouwd contact)."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Geschatte resterende tijd: ${ estimatedMinutes } minuut",
@@ -7389,8 +7427,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -8535,6 +8572,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Toen u vertrouwde sleutels inschakelde voor ${ senderName }, zijn de openbare sleutels meteen toegevoegd aan deze contactpersoon."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Wanneer u tweestapsverificatie instelt, bieden we herstelcodes die u kunt gebruiken om u aan te melden als u de toegang tot uw authenticatie app verliest."
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Wanneer u zich aanmeldt voor een nieuwsbrief, gebruik dan een alias in plaats van uw e-mailadres. Uw identiteit blijft verborgen, en u kunt de alias op elk moment uitschakelen."
       ],
@@ -9210,6 +9250,9 @@
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
       ],
+      "Authenticator app": [
+        "Authenticatie app"
+      ],
       "Automated confirmations and alerts": [
         "Geautomatiseerde bevestigingen en meldingen"
       ],
@@ -9342,9 +9385,6 @@
       "Did not follow instructions": [
         "Heeft de instructies niet gevolgd"
       ],
-      "Discussion board posts and threads": [
-        "Discussieforum berichten en discussiedraden"
-      ],
       "Do you have any suggestions for our team?": [
         "Heeft u suggesties voor ons team?"
       ],
@@ -9423,9 +9463,6 @@
       "Folder location": [
         "Map locatie"
       ],
-      "Forums": [
-        "Forums"
-      ],
       "Forwards to": [
         "Stuurt door na"
       ],
@@ -9443,9 +9480,6 @@
       ],
       "Get the deal": [
         "Pak deze deal"
-      ],
-      "Go to Forums": [
-        "Ga naar Forums"
       ],
       "Go to Newsletters": [
         "Ga naar Nieuwsbrieven"
@@ -9902,6 +9936,12 @@
       ],
       "Your location": [
         "Uw locatie"
+      ],
+      "Your password (admin)": [
+        "Uw wachtwoord (beheerder)"
+      ],
+      "Your password (trusted contact)": [
+        "Uw wachtwoord (vertrouwd contact)"
       ],
       "ZIP code": [
         "Postcode"
@@ -12904,6 +12944,11 @@
         "Controleer de veiligheid van uw account"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Inloggen is niet gelukt."
+      ]
+    },
     "Search - no results": {
       "An action is being processed": [
         "Er wordt een actie verwerkt"
@@ -13620,6 +13665,17 @@
       ],
       "Your pm.me email is active": [
         "Uw pm.me e-mail is actief"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Inloggen"
+      ],
+      "Sign in to your organization": [
+        "Aanmelden bij uw organisatie"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "U wordt doorgestuurd naar uw derde partij SSO-provider."
       ]
     },
     "State": {
@@ -15054,6 +15110,9 @@
       "Enhance security with 2FA": [
         "Verbeter de beveiliging met 2FA"
       ],
+      "Enter your password": [
+        "Voer uw wachtwoord in"
+      ],
       "Error": [
         "Fout"
       ],
@@ -15625,6 +15684,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } inschakelen"
+      ],
+      "Two-factor authentication": [
+        "Tweestapsverificatie"
       ],
       "Unsubscribe": [
         "Afmelden"
