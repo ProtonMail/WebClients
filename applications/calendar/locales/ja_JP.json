@@ -1018,6 +1018,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -3995,6 +3998,18 @@
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
+      ],
+      "Invalid coupon": [
+        "無効なクーポン"
+      ],
+      "Please complete the billing details": [
+        "請求の詳細をご記入ください"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "最低寄付金額は ${ price } です。"
+      ],
+      "This field is invalid": [
+        "このフィールドは無効です"
       ]
     },
     "error": {
@@ -6378,6 +6393,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "予約枠の上限に達しました${ numberOfSlots }/${ MAX_BOOKING_SLOTS }"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "クレジット報酬は、ご友人が年額プランにご登録いただいてから1か月後、月額プランにご加入いただいてから2か月後に受け取れます。"
       ]
     },
     "info": {
@@ -12007,6 +12025,18 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Choose a provider": [
+        "プロバイダーを選択"
+      ],
+      "Custom": [
+        "カスタム"
+      ],
+      "Reverse charge not supported": [
+        "リバースチャージはサポートされていません"
+      ],
+      "Spring Sale": [
+        "スプリングセール"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12536,6 +12566,11 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "高度なインポート"
       ]
     }
   }

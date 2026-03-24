@@ -4034,6 +4034,15 @@
       ],
       "ZIP code is required": [
         "Postnummer er påkrævet"
+      ],
+      "Invalid coupon": [
+        "Ugyldig kupon"
+      ],
+      "Please complete the billing details": [
+        "Udfyld faktureringsoplysningerne"
+      ],
+      "This field is invalid": [
+        "Dette felt er ugyldigt"
       ]
     },
     "error": {
@@ -6474,6 +6483,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nået grænsen for reservationspladser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Indtast bekræftelseskode. Ciffer ${ digit }."
       ]
     },
     "info": {
@@ -12793,6 +12805,11 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Fornyelsesprisen afhænger af faktureringsregionen og EIN."
       ]
     }
   }

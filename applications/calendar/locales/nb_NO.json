@@ -1022,6 +1022,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -6521,6 +6524,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nådd grensen for antall bestillingsplasser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Choose your service to connect with": [
+        "Velg tjenesten du vil koble til"
       ]
     },
     "info": {
@@ -12300,6 +12306,18 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "Choose a provider": [
+        "Velg en leverandør"
+      ],
+      "Custom": [
+        "Tilpasset"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importer dine data til ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Velg data for import"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12873,6 +12891,11 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "Avansert import"
       ]
     }
   }
