@@ -15,6 +15,7 @@ jest.mock('../../extendedAttributes');
 jest.mock('../store/uploadController.store');
 jest.mock('@proton/shared/lib/helpers/sentry', () => ({
     traceError: jest.fn(),
+    addSentryBreadcrumb: jest.fn(),
 }));
 jest.mock('../utils/createFileStream', () => ({
     createFileStream: jest.fn(() => {
