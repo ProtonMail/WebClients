@@ -1,6 +1,7 @@
 import type { BrowserOptions, Span } from '@sentry/browser';
 import {
     Integrations as SentryIntegrations,
+    addBreadcrumb,
     captureException,
     configureScope,
     init,
@@ -9,6 +10,7 @@ import {
     startInactiveSpan as sentryStartInactiveSpan,
 } from '@sentry/browser';
 import type { BrowserTransportOptions } from '@sentry/browser/types/transports/types';
+import type { Breadcrumb } from '@sentry/types/types/breadcrumb';
 import type { ErrorEvent, EventHint } from '@sentry/types/types/event';
 
 import { Availability, AvailabilityTypes } from '@proton/utils/availability';
@@ -332,6 +334,13 @@ export const traceError = (...args: Parameters<typeof captureException>) => {
         captureException(...args);
         Availability.mark(AvailabilityTypes.SENTRY);
     }
+};
+
+export const addSentryBreadcrumb = (breadcrumb: Breadcrumb): void => {
+    if (typeof self === 'undefined' || isLocalhost(self.location.host)) {
+        return;
+    }
+    addBreadcrumb(breadcrumb);
 };
 
 export const captureMessage = (...args: Parameters<typeof sentryCaptureMessage>) => {
