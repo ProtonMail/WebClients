@@ -61,7 +61,16 @@ export const useApplyEncryptedSearch = ({
     const categoriesView = useCategoriesView();
 
     // Force conversation mode to false in a search context
-    const params = { conversationMode: false, sort, filter, search, esEnabled, isSearching: isSearch(search) };
+    const params = {
+        conversationMode: false,
+        sort,
+        filter,
+        search,
+        esEnabled,
+        isSearching: isSearch(search),
+        // TODO update this when working on encrypted search adaptation (P3-268)
+        categoryIDs: [],
+    };
 
     const isES = useMailSelector((state: MailState) => isESSelector(state, { search, esStatus }));
     const shouldLoadElements = useMailSelector((state: MailState) => shouldSendRequestSelector(state, { page }));
