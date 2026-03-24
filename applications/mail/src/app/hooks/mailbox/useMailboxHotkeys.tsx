@@ -6,7 +6,6 @@ import type { Location } from 'history';
 import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { labelIncludes } from '@proton/mail/helpers/location';
-import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
@@ -16,10 +15,10 @@ import type { Filter } from '@proton/shared/lib/mail/search';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import { isStarred } from '../../helpers/elements';
-import { getFolderName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
 import type { Element } from '../../models/element';
@@ -27,7 +26,6 @@ import { APPLY_LOCATION_TYPES } from '../actions/applyLocation/interface';
 import { useApplyLocation } from '../actions/applyLocation/useApplyLocation';
 import { usePermanentDelete } from '../actions/delete/usePermanentDelete';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
-import { useMoveToFolder } from '../actions/move/useMoveToFolder';
 import { useGetElementsFromIDs } from './useElements';
 import { useFolderNavigationHotkeys } from './useFolderNavigationHotkeys';
 
@@ -98,13 +96,11 @@ export const useMailboxHotkeys = (
     const { selectAll } = useSelectAll({ labelID });
     const getElementsFromIDs = useGetElementsFromIDs();
     const history = useHistory<any>();
-    const [folders] = useFolders();
     const folderNavigationHotkeys = useFolderNavigationHotkeys();
     const elementIDForList = checkedIDs.length ? undefined : elementID;
     const elementRef = useRef<HTMLDivElement>(null);
     const { applyLocation } = useApplyLocation();
-    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
-        useMoveToFolder();
+    const { moveAllToFolder, selectAllMoveModal } = useMoveAllToFolder();
     const { markAs, selectAllMarkModal } = useMarkAs();
     const { handleDelete: permanentDelete, deleteAllModal, deleteSelectionModal } = usePermanentDelete(labelID);
 
@@ -130,17 +126,13 @@ export const useMailboxHotkeys = (
         }
         e.stopPropagation();
 
-        const folderName = getFolderName(LabelID, folders);
-
         if (selectAll) {
-            await moveToFolder({
+            await moveAllToFolder({
+                type: MoveAllType.selectAll,
                 elements,
                 sourceLabelID: labelID,
                 destinationLabelID: LabelID,
-                folderName,
-                selectAll,
                 onCheckAll: handleCheckAll,
-                sourceAction: SOURCE_ACTION.SHORTCUTS,
             });
 
             if (elementIDForList) {
@@ -510,13 +502,10 @@ export const useMailboxHotkeys = (
 
     return {
         elementRef,
-        moveToFolder,
+        moveAllToFolder,
         selectAll,
-        moveScheduledModal,
-        moveSnoozedModal,
         deleteAllModal,
         deleteSelectionModal,
-        moveToSpamModal,
         selectAllMoveModal,
         selectAllMarkModal,
     };

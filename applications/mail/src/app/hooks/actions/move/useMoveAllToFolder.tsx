@@ -27,6 +27,9 @@ import type { Element } from 'proton-mail/models/element';
 import { backendActionStarted, moveAll } from 'proton-mail/store/elements/elementsActions';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
+import { isElementMessage } from 'proton-mail/helpers/elements';
+import { getMessagesAuthorizedToMove } from 'proton-mail/helpers/message/messages';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 export enum MoveAllType {
     moveAll,
@@ -45,8 +48,7 @@ interface SelectAllParams {
     type: MoveAllType.selectAll;
     sourceLabelID: string;
     destinationLabelID: string;
-    authorizedToMove: Element[];
-    isMessage: boolean;
+    elements: Element[];
     onCheckAll?: (check: boolean) => void;
 }
 
@@ -102,10 +104,19 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
     const selectAllCallback = async ({
         sourceLabelID,
         destinationLabelID,
-        authorizedToMove,
-        isMessage,
+        elements,
         onCheckAll,
     }: SelectAllParams) => {
+        if (!elements.length) {
+            return;
+        }
+
+        const isMessage = isElementMessage(elements[0]);
+
+        const authorizedToMove = isMessage
+            ? getMessagesAuthorizedToMove(elements as Message[], destinationLabelID)
+            : elements;
+
         if (!authorizedToMove.length) {
             createNotification({
                 text: getNotificationTextUnauthorized(destinationLabelID, sourceLabelID),

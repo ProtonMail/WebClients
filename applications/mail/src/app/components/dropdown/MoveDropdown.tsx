@@ -17,7 +17,7 @@ import type { LabelModel } from '@proton/components/containers/labels/modals/Edi
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useLoading } from '@proton/hooks';
-import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
+import { useFolders } from '@proton/mail/store/labels/hooks';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
@@ -31,18 +31,16 @@ import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
+import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import type { FolderItem } from 'proton-mail/hooks/useMailTreeView/interface';
 import { useMailFolderTreeView } from 'proton-mail/hooks/useMailTreeView/useMailFolderTreeView';
 
 import { isElementMessage } from '../../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
-import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
 import { useGetElementsFromIDs, useGetMessagesOrElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { useScrollToItem } from '../../hooks/useScrollToItem';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
-import { folderLocation } from '../list/list-telemetry/listTelemetryHelper';
-import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import { getInboxCategoriesItems, toFolderItem } from './moveToFolderDropdown.helper';
 
 import './MoveDropdown.scss';
@@ -70,7 +68,6 @@ const MoveDropdown = ({
 }: Props) => {
     const [uid] = useState(generateUID('move-dropdown'));
     const [folders = []] = useFolders();
-    const [labels = []] = useLabels();
     const [user] = useUser();
     const [loading, withLoading] = useLoading();
     const [search, updateSearch] = useState('');
@@ -79,8 +76,7 @@ const MoveDropdown = ({
     const [containFocus, setContainFocus] = useState(true);
     const getElementsFromIDs = useGetElementsFromIDs();
     const getMessagesOrElements = useGetMessagesOrElementsFromIDs();
-    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
-        useMoveToFolder(setContainFocus);
+    const { moveAllToFolder, selectAllMoveModal } = useMoveAllToFolder();
     const { applyLocation } = useApplyLocation();
     const { getSendersToFilter } = useCreateFilters();
 
@@ -88,7 +84,6 @@ const MoveDropdown = ({
 
     const [editLabelProps, setEditLabelModalOpen, renderLabelModal] = useModalState();
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
-    const displayedFolder = folderLocation(labelID, labels, folders);
 
     const { scrollToItem } = useScrollToItem();
 
@@ -151,23 +146,19 @@ const MoveDropdown = ({
             return normalize(folder.Name, true).includes(normalize(search, true));
         });
 
-    const actualMoveFolder = async (selectedFolderID: string, selectedFolderName: string) => {
+    const actualMoveFolder = async (selectedFolderID: string) => {
         // If the destination folder is SPAM, we don't want to create a filter even if always is checked
         // Senders will be moved to spam anyway, but since we don't want to create filters in the "Spam case",
         // We only need to ignore the value in that scenario
         const canApplyAlways = selectedFolderID !== MAILBOX_LABEL_IDS.SPAM;
 
         if (selectAll) {
-            await moveToFolder({
+            await moveAllToFolder({
+                type: MoveAllType.selectAll,
                 elements,
                 sourceLabelID: labelID,
                 destinationLabelID: selectedFolderID,
-                folderName: selectedFolderName,
-                createFilters: canApplyAlways ? always : false,
-                selectAll,
                 onCheckAll,
-                sourceAction: SOURCE_ACTION.TOOLBAR,
-                currentFolder: displayedFolder,
             });
         } else {
             await applyLocation({
@@ -178,14 +169,6 @@ const MoveDropdown = ({
             });
         }
         onClose();
-    };
-
-    const handleMove = async () => {
-        await actualMoveFolder(selectedFolder?.ID || '', selectedFolder?.Name || '');
-    };
-
-    const handleApplyDirectly = async (selectedFolderID: string, selectedFolderName: string) => {
-        await actualMoveFolder(selectedFolderID, selectedFolderName);
     };
 
     const handleCreate = () => {
@@ -201,7 +184,7 @@ const MoveDropdown = ({
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        await withLoading(handleMove());
+        await withLoading(actualMoveFolder(selectedFolder?.ID || ''));
     };
 
     // The dropdown is several times in the view, native html ids has to be different each time
@@ -269,7 +252,7 @@ const MoveDropdown = ({
                                     data-level={folder.level}
                                     className="flex flex-nowrap items-center flex-1"
                                     data-testid={`folder-dropdown:folder-${folder.Name}`}
-                                    onClick={() => handleApplyDirectly(folder.ID, folder.Name)}
+                                    onClick={() => actualMoveFolder(folder.ID)}
                                 >
                                     <FolderIcon
                                         folder={folder}
@@ -330,9 +313,6 @@ const MoveDropdown = ({
                     {c('Action').t`Apply`}
                 </Button>
             </div>
-            {moveScheduledModal}
-            {moveSnoozedModal}
-            {moveToSpamModal}
             {selectAllMoveModal}
             {renderLabelModal && (
                 <EditLabelModal

@@ -12,8 +12,8 @@ import type { ApplyLabelsParams } from 'proton-mail/hooks/actions/label/interfac
 import type { LocationCountMap } from 'proton-mail/hooks/useMailboxCounter';
 import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
 
-import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
 import type { SystemFolder } from '../../hooks/useMoveSystemFolders';
+import type {  MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
 import useMoveSystemFolders, { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
 import { getCategorySystemFolder } from '../categoryView/categoriesHelpers';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
