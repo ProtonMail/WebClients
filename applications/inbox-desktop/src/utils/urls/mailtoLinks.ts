@@ -12,6 +12,6 @@ export const handleMailToUrls = (url: string): boolean => {
 
     telemetry.mailtoClicked();
 
-    showView("mail", addHashToCurrentURL(mailView.webContents.getURL(), `#mailto=${url}`));
+    showView("mail", addHashToCurrentURL(mailView.webContents.getURL(), `#mailto=${encodeURIComponent(url)}`));
     return true;
 };
