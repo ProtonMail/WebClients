@@ -79,9 +79,8 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
 
     const { checklist, loading, checklistType } = useChecklist();
 
-    const items = checklist.Items;
     const itemsToComplete = getMailChecklistItemsToComplete(checklistType);
-    const isChecklistFinished = itemsToComplete.every((item) => items?.includes(item)) && itemsToComplete.length > 0;
+    const isChecklistFinished = itemsToComplete.every((item) => doneItems.includes(item)) && itemsToComplete.length > 0;
 
     const createdAt: Date = (() => {
         const timestamp = checklist.CreatedAt;
@@ -105,7 +104,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     }, [checklist, submitting]);
 
     const markItemsAsDone = async (item: ChecklistKeyType) => {
-        setDoneItems([...doneItems, item]);
+        setDoneItems((state) => [...state, item]);
         if (canMarkItemsAsDone && checklistType) {
             await silentApi(updateChecklistItem(item, checklistType));
             await call();
@@ -123,12 +122,12 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         if (
             checklistType &&
             checklistType !== ChecklistType.MailBYOEUser &&
-            !items?.includes(ChecklistKey.AccountLogin)
+            !checklist.Items?.includes(ChecklistKey.AccountLogin)
         ) {
             void markItemsAsDone('AccountLogin');
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [items, checklistType]);
+    }, [checklist.Items, checklistType]);
 
     const changeChecklistDisplay = (newState: CHECKLIST_DISPLAY_TYPE) => {
         setDisplayState(newState);
@@ -137,7 +136,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
             if (newState === CHECKLIST_DISPLAY_TYPE.REDUCED) {
                 const items = checklist.Items;
                 if (!items.includes(ChecklistKey.ProtectInbox)) {
-                    setDoneItems([...doneItems, ChecklistKey.ProtectInbox]);
+                    setDoneItems((items) => [...items, ChecklistKey.ProtectInbox]);
                     if (canMarkItemsAsDone && checklistType) {
                         await silentApi(updateChecklistItem('ProtectInbox', checklistType));
                         await call();
@@ -172,7 +171,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         expiresAt,
         isChecklistFinished,
         isUserPaid: user.hasPaidMail,
-        items: new Set([...doneItems]),
+        items: new Set(doneItems),
         loading,
         markItemsAsDone,
         userWasRewarded: checklist.UserWasRewarded,
