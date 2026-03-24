@@ -51,7 +51,7 @@ export function getIsEligible({
         }
     }
 
-    const passPlan = subscription?.Plans.find((plan) => plan.Name === PLANS.PASS);
+    const passPlan = subscription?.Plans?.find((plan) => plan.Name === PLANS.PASS);
     if (!passPlan || passPlan.Cycle !== CYCLE.YEARLY) {
         return false;
     }
