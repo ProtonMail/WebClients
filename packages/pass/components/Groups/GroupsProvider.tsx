@@ -63,7 +63,12 @@ export const GroupsProvider: FC<Props> = ({ children }) => {
         if (isB2b && groupShareFeatureFlag) dispatch(getGroups.intent());
     }, []);
 
-    const onShowMembers = useCallback((groupId: GroupId) => setModalOpen(groupId), []);
+    const onShowMembers = useCallback(
+        (groupId: GroupId) => {
+            if ((groupsMembers[groupId]?.total ?? 0) > 0) setModalOpen(groupId);
+        },
+        [groupsMembers]
+    );
 
     const fetchGroupMembers = useCallback(
         (groupId: GroupId) => groupMembersAction.dispatch(groupId),
@@ -97,10 +102,17 @@ export const GroupsProvider: FC<Props> = ({ children }) => {
 type UseMaybeGroup = {
     name: string;
     isGroup: boolean;
+    groupIsLoading: boolean;
     onShowMembers: () => void;
 };
 
-export const useMaybeGroup = (email: Maybe<string>): UseMaybeGroup => {
+/**
+ * Returns the name to show for the given email.
+ * It may be the email itself for normal users but will be replaced
+ * by the group name if it's a known group.
+ * `inputGroupId` is optional and is used to know sooner to expect a group
+ */
+export const useMaybeGroup = (email: Maybe<string>, inputGroupId?: MaybeNull<string>): UseMaybeGroup => {
     const { groupsMembers, fetchGroupMembers, onShowMembers: onShowMembersById } = useGroups();
     const group = useSelector(selectGroupByEmail(email ?? ''));
 
@@ -108,15 +120,24 @@ export const useMaybeGroup = (email: Maybe<string>): UseMaybeGroup => {
         if (group) fetchGroupMembers(group.groupId);
     }, [group?.groupId]);
 
-    const { name, isGroup } = useMemo(() => {
-        if (!group) return { name: email ?? '', isGroup: false };
+    const name = useMemo(() => {
+        if (!group) return email ?? '';
         const memberCount = groupsMembers[group.groupId]?.members.length;
-        if (memberCount === undefined) return { name: group.name, isGroup: true };
+        if (memberCount === undefined) return group.name;
         const count = c('Info').ngettext(msgid`(${memberCount} member)`, `(${memberCount} members)`, memberCount);
-        return { name: `${group.name} ${count}`, isGroup: true };
+        return `${group.name} ${count}`;
     }, [email, group, groupsMembers]);
 
-    const onShowMembers = useCallback(group ? () => onShowMembersById(group?.groupId) : noop, [group?.groupId]);
+    // It's a group if the group is loaded or if we expect a group id
+    const isGroup = !!group || !!inputGroupId;
 
-    return { name, isGroup, onShowMembers };
+    // If we know it's a group and the group is not loaded yet
+    const groupIsLoading = isGroup && !group;
+
+    const onShowMembers = useCallback(group ? () => onShowMembersById(group?.groupId) : noop, [
+        group?.groupId,
+        onShowMembersById,
+    ]);
+
+    return { name, isGroup, groupIsLoading, onShowMembers };
 };
