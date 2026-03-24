@@ -9,6 +9,8 @@ export enum GROUP_MEMBER_STATE {
 export enum GROUP_MEMBER_TYPE {
     INTERNAL = 0,
     EXTERNAL = 1,
+    // Only used in the FE, BE does not use it
+    // Happens when user signs up for proton acc with external mail
     INTERNAL_TYPE_EXTERNAL = 2,
 }
 

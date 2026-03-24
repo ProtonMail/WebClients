@@ -54,6 +54,7 @@ export interface GroupsManagementReturn {
     suggestedAddressDomainPart: string;
     suggestedAddressDomainSource: 'customdomain' | 'group' | 'pm.me' | null;
     addressToMemberMap: { [key: string]: EnhancedMember | undefined };
+    addressEmailToMemberMap: { [key: string]: EnhancedMember | undefined };
     getSerializedGroup: () => { type: 'new' | 'edit'; payload: SerializedGroupFormData } | undefined;
     actions: {
         onDiscardChanges: () => void;
