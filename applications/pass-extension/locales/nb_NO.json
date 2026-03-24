@@ -1500,6 +1500,9 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } vil foreslå å lagre tilgangsnøkler."
       ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME } er for øyeblikket frakoblet. Åpne utvidelsen for å låse opp."
+      ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } frakoblet modus aktivert."
       ],
@@ -2634,6 +2637,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Du kan nå bruke ${ BRAND_NAME }-passordet for å få frakoblet tilgang til ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nå bruke reservepassordet ditt for å få tilgang til ${ PASS_SHORT_APP_NAME } uten nett"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nå bruke ekstra passordet ditt for å få tilgang til ${ PASS_SHORT_APP_NAME } frakoblet"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nå bruke ditt andre passord for å få tilgang til ${ PASS_SHORT_APP_NAME } uten nett"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Du kan ikke endre postboksene for dette aliaset."
