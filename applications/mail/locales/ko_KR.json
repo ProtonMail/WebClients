@@ -1676,6 +1676,18 @@
       ],
       "Google": [
         "Google"
+      ],
+      "Manage addresses": [
+        "주소 관리"
+      ],
+      "Or use a different Gmail address": [
+        "또는 다른 Gmail 주소를 사용하세요"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Gmail에서 자동 가져오기 설정"
+      ],
+      "Use this Gmail address": [
+        "이 Gmail 주소 사용"
       ]
     },
     "action": {
@@ -5904,6 +5916,15 @@
       ],
       "You've unlocked 1 GB": [
         "1 GB 잠금 해제했습니다"
+      ],
+      "Download apps": [
+        "앱 다운로드"
+      ],
+      "Get storage bonus": [
+        "저장공간 보너스 받기"
+      ],
+      "Review import options": [
+        "불러오기 옵션 보기"
       ]
     },
     "Gmail forwarding": {
@@ -6340,6 +6361,9 @@
       ],
       "Advanced import": [
         "고급 가져오기"
+      ],
+      "Import from ${ providerName }": [
+        "${ providerName }(에)서 불러오기"
       ]
     },
     "Import warning": {
@@ -7447,7 +7471,7 @@
         "중요도 낮음"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }을 기본 이메일 어플리케이션으로 설정하세요."
+        "${ MAIL_APP_NAME }을 기본 이메일 애플리케이션으로 설정하세요."
       ],
       "Manage your folders": [
         "폴더 관리"
@@ -8789,6 +8813,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "인증 코드를 입력하세요. ${ digit }자입니다."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "${ MAX_SYNC_PAID_USER } Gmail 주소에 대한 전달이 활성화됨. 다른 전달을 추가하려면 먼저 그 중 하나를 비활성화하십시오."
       ]
     },
     "info": {
@@ -11681,6 +11708,27 @@
       ],
       "Social media": [
         "소셜 미디어"
+      ],
+      "Choose your service": [
+        "사용하고 계신 서비스를 선택하세요"
+      ],
+      "Popular services": [
+        "인기 있는 서비스"
+      ],
+      "Skip for now": [
+        "지금은 건너뛰기"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "회원님의 계정을 ${ BRAND_NAME }으로 전환하세요"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "이메일 이전은 어려운 일이죠. ${ BRAND_NAME }이 그 과정을 쉽게 만들어 드릴게요. 이전 계정을 Proton과 연결하고 모든 메일을 하나의 집중적이고 광고 없는 작업 공간에서 관리해 보세요."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "가장 많이 사용하는 서비스에서 이메일을 업데이트하세요. 추적을 방지하고 개인정보를 보호하세요."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }에 오신 것을 환영해요"
       ]
     },
     "Onboarding modal": {
@@ -15526,6 +15574,21 @@
       ],
       "Select data to import": [
         "불러올 데이터 선택"
+      ],
+      "Connect a Gmail address": [
+        "Gmail 주소 연결"
+      ],
+      "Connect more addresses": [
+        "더 많은 주소 연결"
+      ],
+      "Limit reached": [
+        "제한 도달"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "여러 계정, 하나의 받은 편지함"
+      ],
+      "Remove forwarding address": [
+        "포워딩 주소 삭제"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16177,6 +16240,14 @@
     "springSale2026: Title": {
       "SPRING SALE": [
         "봄맞이 할인"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "최대 ${ MAX_SYNC_PAID_USER }개의 계정에서 이메일을 전달하려면, ${ planName }(으)로 업그레이드하세요."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "${ MAX_SYNC_FREE_USER }개의 외부 계정에서 ${ MAIL_APP_NAME }(으)로 이메일을 전달하는 중입니다."
       ]
     }
   }

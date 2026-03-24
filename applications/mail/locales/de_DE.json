@@ -1682,6 +1682,18 @@
       ],
       "Google": [
         "Google"
+      ],
+      "Manage addresses": [
+        "E-Mail-Adressen verwalten"
+      ],
+      "Or use a different Gmail address": [
+        "Oder benutze eine andere Gmail-Adresse"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Richte die automatische Weiterleitung von Gmail ein"
+      ],
+      "Use this Gmail address": [
+        "Diese E-Mail Adresse verwenden"
       ]
     },
     "action": {
@@ -5959,6 +5971,15 @@
       ],
       "You've unlocked 1 GB": [
         "Du hast 1 GB freigeschaltet."
+      ],
+      "Download apps": [
+        "Apps herunterladen"
+      ],
+      "Get storage bonus": [
+        "Sichere dir deinen Speicherplatzbonus"
+      ],
+      "Review import options": [
+        "Importoptionen anpassen"
       ]
     },
     "Gmail forwarding": {
@@ -6403,6 +6424,9 @@
       ],
       "Advanced import": [
         "Erweiterter Import"
+      ],
+      "Import from ${ providerName }": [
+        "Import von ${ providerName }"
       ]
     },
     "Import warning": {
@@ -8940,6 +8964,10 @@
       ],
       "Choose your service to connect with": [
         "Deinen Dienst zum Verbinden auswählen"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Du hast die Weiterleitung für ${ MAX_SYNC_PAID_USER } Gmail-Adresse aktiviert. Um eine weitere hinzuzufügen, deaktiviere sie zuerst.",
+        "Du hast die Weiterleitung für ${ MAX_SYNC_PAID_USER } Gmail-Adressen aktiviert. Um eine weitere hinzuzufügen, deaktiviere zuerst eine davon."
       ]
     },
     "info": {
@@ -11879,6 +11907,27 @@
       ],
       "Social media": [
         "Soziale Medien"
+      ],
+      "Choose your service": [
+        "Wähle deinen Dienst aus"
+      ],
+      "Popular services": [
+        "Beliebte Dienste"
+      ],
+      "Skip for now": [
+        "Vorerst überspringen"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Wechsle deine Konten zu ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Der Wechsel des E-Mail-Anbieters kann mühsam sein. Mit ${ BRAND_NAME } wird es ganz einfach. Verknüpfe dein bisheriges Konto und verwalte alles in einem übersichtlichen, werbefreien Arbeitsbereich."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Aktualisiere deine E-Mail-Adresse bei den Diensten, die du am häufigsten nutzt. Verhindere Tracking und schütze deine Privatsphäre."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Willkommen bei ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -15834,6 +15883,21 @@
       ],
       "Select data to import": [
         "Daten zum Import auswählen"
+      ],
+      "Connect a Gmail address": [
+        "Eine Gmail-Adresse verbinden"
+      ],
+      "Connect more addresses": [
+        "Verbinde mehr Adressen"
+      ],
+      "Limit reached": [
+        "Grenzwert erreicht"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Mehrere Konten, ein privater Posteingang"
+      ],
+      "Remove forwarding address": [
+        "Weiterleitungsadresse entfernen"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16515,6 +16579,16 @@
       ],
       "SPRING SALE": [
         "SPRING SALE"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Um E-Mails von ${ MAX_SYNC_PAID_USER } Konto weiterzuleiten, upgrade auf ${ planName }.",
+        "Um E-Mails von bis zu ${ MAX_SYNC_PAID_USER } Konten weiterzuleiten, upgrade zu ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Du leitest E-Mails von ${ MAX_SYNC_FREE_USER } externen Konto an ${ MAIL_APP_NAME } weiter.",
+        "Du leitest E-Mails von ${ MAX_SYNC_FREE_USER } externen Konten an ${ MAIL_APP_NAME } weiter."
       ]
     }
   }

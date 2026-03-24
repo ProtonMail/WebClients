@@ -1673,6 +1673,21 @@
       ],
       "Edit billing address": [
         "請求先住所を編集"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Manage addresses": [
+        "アドレスの管理"
+      ],
+      "Or use a different Gmail address": [
+        "別のGmailアドレスを使用する"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Gmail からの自動転送の設定"
+      ],
+      "Use this Gmail address": [
+        "このGmailアドレスを使用してください"
       ]
     },
     "action": {
@@ -5074,6 +5089,18 @@
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
+      ],
+      "Invalid coupon": [
+        "無効なクーポン"
+      ],
+      "Please complete the billing details": [
+        "請求の詳細をご記入ください"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "最低寄付金額は ${ price } です。"
+      ],
+      "This field is invalid": [
+        "このフィールドは無効です"
       ]
     },
     "error": {
@@ -6304,6 +6331,9 @@
       ],
       "Import from Yahoo": [
         "Yahooからインポート"
+      ],
+      "Advanced import": [
+        "高度なインポート"
       ]
     },
     "Import warning": {
@@ -8735,6 +8765,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "クレジット報酬は、ご友人が年額プランにご登録いただいてから1か月後、月額プランにご加入いただいてから2か月後に受け取れます。"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "${ MAX_SYNC_PAID_USER } 個の Gmail アドレスで転送が有効になっています。別のアドレスを追加するには、まずいずれか 1 つを無効化してください。"
       ]
     },
     "info": {
@@ -9810,6 +9846,9 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Import recent mails": [
+        "最近のメールをインポート"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11621,6 +11660,12 @@
       ],
       "Social media": [
         "SNS"
+      ],
+      "Popular services": [
+        "人気のサービス"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "アカウントを ${ BRAND_NAME } に切り替える"
       ]
     },
     "Onboarding modal": {
@@ -15444,6 +15489,33 @@
       ],
       "✨ Categories are coming!": [
         "✨ カテゴリがまもなく登場します！"
+      ],
+      "Choose a provider": [
+        "プロバイダーを選択"
+      ],
+      "Connect a Gmail address": [
+        "Gmail アドレスを接続する"
+      ],
+      "Connect more addresses": [
+        "さらにメールアドレスを接続"
+      ],
+      "Custom": [
+        "カスタム"
+      ],
+      "Limit reached": [
+        "上限に達しました"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "複数のアカウント、1つのプライベート受信トレイ"
+      ],
+      "Remove forwarding address": [
+        "転送先アドレスを削除する"
+      ],
+      "Reverse charge not supported": [
+        "リバースチャージはサポートされていません"
+      ],
+      "Spring Sale": [
+        "スプリングセール"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16080,6 +16152,14 @@
       ],
       "SPRING SALE": [
         "スプリング セール"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "最大${ MAX_SYNC_PAID_USER }個のアカウントからメールを転送するには、${ planName }にアップグレードしてください。"
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "お客様は${ MAX_SYNC_FREE_USER }個の外部アカウントから${ MAIL_APP_NAME }へメールを転送しています。"
       ]
     }
   }

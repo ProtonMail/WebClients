@@ -1676,6 +1676,18 @@
       ],
       "Google": [
         "Google"
+      ],
+      "Manage addresses": [
+        "管理邮箱地址"
+      ],
+      "Or use a different Gmail address": [
+        "或使用其他 Gmail 地址"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "设置从 Gmail 自动转发邮件"
+      ],
+      "Use this Gmail address": [
+        "使用此 Gmail 地址"
       ]
     },
     "action": {
@@ -5909,6 +5921,15 @@
       ],
       "You've unlocked 1 GB": [
         "您已解锁 1 GB 存储空间"
+      ],
+      "Download apps": [
+        "下载应用"
+      ],
+      "Get storage bonus": [
+        "获取存储空间奖励"
+      ],
+      "Review import options": [
+        "查看导入选项"
       ]
     },
     "Gmail forwarding": {
@@ -6345,6 +6366,9 @@
       ],
       "Advanced import": [
         "高级导入"
+      ],
+      "Import from ${ providerName }": [
+        "从 ${ providerName } 导入"
       ]
     },
     "Import warning": {
@@ -8794,6 +8818,9 @@
       ],
       "Choose your service to connect with": [
         "请选择要连接的服务"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "您已经在 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址上启用了转发功能。若要添加另一个，请先禁用其中一个。"
       ]
     },
     "info": {
@@ -11686,6 +11713,27 @@
       ],
       "Social media": [
         "社交媒体"
+      ],
+      "Choose your service": [
+        "请选择您的服务"
+      ],
+      "Popular services": [
+        "热门服务"
+      ],
+      "Skip for now": [
+        "稍后再说"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "将您的账户切换到 ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "切换邮箱很麻烦，但 ${ BRAND_NAME } 让这一切变得简单！连接您的旧账户，在一个专注、无广告的工作空间中管理所有内容。"
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "在您最常用的服务上更新您的邮箱，防止追踪并保护您的隐私。"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "欢迎使用 ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -14973,7 +15021,7 @@
         "验证码无效"
       ],
       "Keep this banner hidden?": [
-        "是否隐藏此横幅？"
+        "始终隐藏此横幅？"
       ],
       "Label as": [
         "加标签"
@@ -15541,6 +15589,21 @@
       ],
       "Select data to import": [
         "请选择要导入的数据"
+      ],
+      "Connect a Gmail address": [
+        "连接 Gmail 地址"
+      ],
+      "Connect more addresses": [
+        "连接更多地址"
+      ],
+      "Limit reached": [
+        "数量已达上限"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "多个账户，1 个私密收件箱"
+      ],
+      "Remove forwarding address": [
+        "移除转发地址"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16073,6 +16136,14 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "要转发来自最多 ${ MAX_SYNC_PAID_USER } 个账户的邮件，请升级至 ${ planName } 计划。"
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "您正在将来自${ MAX_SYNC_FREE_USER }个外部账户的电子邮件转发至${ MAIL_APP_NAME }。"
       ]
     }
   }

@@ -1682,6 +1682,18 @@
       ],
       "Google": [
         "Google"
+      ],
+      "Manage addresses": [
+        "Adressen beheren"
+      ],
+      "Or use a different Gmail address": [
+        "Of gebruik een ander Gmail-adres"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Stel automatisch doorsturen in vanaf Gmail"
+      ],
+      "Use this Gmail address": [
+        "Gebruik dit Gmail-adres"
       ]
     },
     "action": {
@@ -6395,6 +6407,9 @@
       ],
       "Advanced import": [
         "Geavanceerde import"
+      ],
+      "Import from ${ providerName }": [
+        "Importeer uit ${ providerName }"
       ]
     },
     "Import warning": {
@@ -8932,6 +8947,10 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Uw account is momenteel geconfigureerd om het omgekeerde btw-tarief toe te passen. Dit wordt niet ondersteund voor het geselecteerde abonnement. Om door te gaan, verwijdt u het btw-nummer van het factuuradres of selecteert u een ander abonnement."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "U heeft doorsturen ingeschakeld op ${ MAX_SYNC_PAID_USER } Gmail adres. Om een ander toe te voegen, schakel eerst een van deze uit.",
+        "U heeft doorsturen ingeschakeld op ${ MAX_SYNC_PAID_USER } Gmail adressen. Schakel een van deze eerst uit om een ander adres toe te voegen."
       ]
     },
     "info": {
@@ -12128,7 +12147,7 @@
         "Herinner mij later"
       ],
       "Yes, don't show again": [
-        "Niet meer weergeven"
+        "Ja, niet meer weergeven"
       ]
     },
     "Option group": {
@@ -15826,6 +15845,21 @@
       ],
       "Select data to import": [
         "Selecteer gegevens om te importeren"
+      ],
+      "Connect a Gmail address": [
+        "Verbind een Gmail-adres"
+      ],
+      "Connect more addresses": [
+        "Verbind meer adressen"
+      ],
+      "Limit reached": [
+        "Limiet bereikt"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Meerdere accounts, 1 privé inbox"
+      ],
+      "Remove forwarding address": [
+        "Doorschakeladres verwijderen"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16507,6 +16541,16 @@
       ],
       "SPRING SALE": [
         "LENTE SALE"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } account, upgrade naar ${ planName }.",
+        "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } accounts, upgrade naar ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "U stuurt e-mails door van ${ MAX_SYNC_FREE_USER } extern account naar ${ MAIL_APP_NAME }.",
+        "U stuurt e-mails door van ${ MAX_SYNC_FREE_USER } externe accounts naar ${ MAIL_APP_NAME }."
       ]
     }
   }

@@ -1484,8 +1484,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1682,6 +1681,18 @@
       ],
       "Google": [
         "Google"
+      ],
+      "Manage addresses": [
+        "Gerenciar endereços"
+      ],
+      "Or use a different Gmail address": [
+        "ou use um endereço do Gmail diferente"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Configure o encaminhamento automático do Gmail"
+      ],
+      "Use this Gmail address": [
+        "Usar este endereço de Gmail"
       ]
     },
     "action": {
@@ -5953,6 +5964,15 @@
       ],
       "You've unlocked 1 GB": [
         "Você desbloqueou 1 GB"
+      ],
+      "Download apps": [
+        "Baixar aplicativos"
+      ],
+      "Get storage bonus": [
+        "Obter bônus de armazenamento"
+      ],
+      "Review import options": [
+        "Revisar opções de importação"
       ]
     },
     "Gmail forwarding": {
@@ -6397,6 +6417,9 @@
       ],
       "Advanced import": [
         "Importação avançada"
+      ],
+      "Import from ${ providerName }": [
+        "Importar de ${ providerName }"
       ]
     },
     "Import warning": {
@@ -8928,6 +8951,10 @@
       ],
       "Choose your service to connect with": [
         "Escolha seu serviço para conectar"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Você ativou o encaminhamento em ${ MAX_SYNC_PAID_USER } endereço do Gmail. Para adicionar outro, primeiro desative um deles.",
+        "Você ativou o encaminhamento em ${ MAX_SYNC_PAID_USER } endereços do Gmail. Para adicionar outro, primeiro desative um deles."
       ]
     },
     "info": {
@@ -11867,6 +11894,21 @@
       ],
       "Social media": [
         "Rede social"
+      ],
+      "Choose your service": [
+        "Escolha seu serviço"
+      ],
+      "Popular services": [
+        "Serviços populares"
+      ],
+      "Skip for now": [
+        "Pular por enquanto"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Alterne suas contas para a ${ BRAND_NAME }"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Boas-vindas ao ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -15822,6 +15864,21 @@
       ],
       "Select data to import": [
         "Selecionar dados para importar"
+      ],
+      "Connect a Gmail address": [
+        "Conectar um endereço do Gmail"
+      ],
+      "Connect more addresses": [
+        "Conectar mais endereços"
+      ],
+      "Limit reached": [
+        "Limite atingido"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Várias contas, 1 caixa de entrada privada."
+      ],
+      "Remove forwarding address": [
+        "Remover endereço de encaminhamento"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16503,6 +16560,16 @@
       ],
       "SPRING SALE": [
         "PROMO DE PRIMAVERA"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } conta, faça o upgrade para ${ planName }.",
+        "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } contas, faça o upgrade para ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Você está encaminhando e-mails de ${ MAX_SYNC_FREE_USER } conta externa para ${ MAIL_APP_NAME }.\n",
+        "Você está encaminhando e-mails de ${ MAX_SYNC_FREE_USER } contas externas para ${ MAIL_APP_NAME }."
       ]
     }
   }

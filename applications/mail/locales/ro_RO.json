@@ -1688,6 +1688,18 @@
       ],
       "Google": [
         "Google"
+      ],
+      "Manage addresses": [
+        "Gestionare adrese"
+      ],
+      "Or use a different Gmail address": [
+        "Sau utilizați o altă adresă Gmail"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Setare transferare automată din Gmail"
+      ],
+      "Use this Gmail address": [
+        "Utilizare această adresă de Gmail"
       ]
     },
     "action": {
@@ -6009,6 +6021,15 @@
       ],
       "You've unlocked 1 GB": [
         "Ați deblocat 1 GiB de spațiu"
+      ],
+      "Download apps": [
+        "Descărcați aplicații"
+      ],
+      "Get storage bonus": [
+        "Obțineți spațiu de stocare bonus"
+      ],
+      "Review import options": [
+        "Revizuiți opțiunile de importare"
       ]
     },
     "Gmail forwarding": {
@@ -6461,6 +6482,9 @@
       ],
       "Advanced import": [
         "Importare avansată"
+      ],
+      "Import from ${ providerName }": [
+        "Importare din ${ providerName }"
       ]
     },
     "Import warning": {
@@ -9086,6 +9110,11 @@
       ],
       "Choose your service to connect with": [
         "Alegeți serviciul cu care doriți să vă conectați"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Ați activat transferarea mesajelor pentru ${ MAX_SYNC_PAID_USER } adresă de Gmail. Pentru a adăuga alta, mai întâi dezactivați una.",
+        "Ați activat transferarea mesajelor pentru ${ MAX_SYNC_PAID_USER } adrese de Gmail. Pentru a adăuga alta, mai întâi dezactivați una.",
+        "Ați activat transferarea mesajelor pentru ${ MAX_SYNC_PAID_USER } de adrese de Gmail. Pentru a adăuga alta, mai întâi dezactivați una."
       ]
     },
     "info": {
@@ -12072,6 +12101,27 @@
       ],
       "Social media": [
         "Rețele sociale"
+      ],
+      "Choose your service": [
+        "Alegeți serviciul"
+      ],
+      "Popular services": [
+        "Servicii populare"
+      ],
+      "Skip for now": [
+        "Omitere momentan"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Comutați-vă conturile la ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Migrarea conturilor de e-mail este dificilă. ${ BRAND_NAME } o face ușoară. Conectați-vă contul vechi și gestionați totul într-un singur spațiu de lucru concentrat, fără reclame."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Actualizați-vă e-mailul pe serviciile pe care le utilizați cel mai des. Preveniți urmărirea și protejați-vă confidențialitatea."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Bun venit la ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -16127,6 +16177,21 @@
       ],
       "Select data to import": [
         "Selectați datele de importat"
+      ],
+      "Connect a Gmail address": [
+        "Conectați adresa de Gmail"
+      ],
+      "Connect more addresses": [
+        "Conectați mai multe adrese"
+      ],
+      "Limit reached": [
+        "Limită atinsă"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Conturi multiple, un cont privat"
+      ],
+      "Remove forwarding address": [
+        "Eliminare adresă de transferare"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16853,6 +16918,18 @@
       ],
       "SPRING SALE": [
         "OFERTĂ PRIMĂVERII"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Pentru a transfera mesaje de la ${ MAX_SYNC_PAID_USER } cont, treceți la ${ planName }.",
+        "Pentru a transfera mesaje de la maxim ${ MAX_SYNC_PAID_USER } conturi, treceți la ${ planName }.",
+        "Pentru a transfera mesaje de la maxim ${ MAX_SYNC_PAID_USER } de conturi, treceți la ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Transferați mesaje de la ${ MAX_SYNC_FREE_USER } cont extern către ${ MAIL_APP_NAME }.",
+        "Transferați mesaje de la ${ MAX_SYNC_FREE_USER } conturi externe către ${ MAIL_APP_NAME }.",
+        "Transferați mesaje de la ${ MAX_SYNC_FREE_USER } de conturi externe către ${ MAIL_APP_NAME }."
       ]
     }
   }

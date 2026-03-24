@@ -1676,6 +1676,18 @@
       ],
       "Edit billing address": [
         "Modifica indirizzo di fatturazione"
+      ],
+      "Manage addresses": [
+        "Gestisci indirizzi"
+      ],
+      "Or use a different Gmail address": [
+        "Oppure usa un diverso indirizzo Gmail"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Configura l'inoltro automatico da Gmail"
+      ],
+      "Use this Gmail address": [
+        "Usa questo indirizzo Gmail"
       ]
     },
     "action": {
@@ -8821,6 +8833,10 @@
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Riceverai il premio in crediti 1 mese dopo che il tuo amico si sarà abbonato a un piano annuale e 2 mesi dopo che si sarà abbonato a un piano mensile."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Hai attivato l'inoltro su ${ MAX_SYNC_PAID_USER } indirizzo Gmail. Per aggiungerne un altro, prima disattiva uno di questi.",
+        "Hai attivato l'inoltro su ${ MAX_SYNC_PAID_USER } indirizzi Gmail. Per aggiungerne un altro, prima disattiva uno di questi."
       ]
     },
     "info": {
@@ -15616,6 +15632,21 @@
       ],
       "Reverse charge not supported": [
         "Inversione contabile non supportata"
+      ],
+      "Connect a Gmail address": [
+        "Connetti un indirizzo Gmail"
+      ],
+      "Connect more addresses": [
+        "Connetti più indirizzi"
+      ],
+      "Limit reached": [
+        "Limite raggiunto"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Più account, 1 casella di posta privata"
+      ],
+      "Remove forwarding address": [
+        "Rimuovere indirizzo d'inoltro"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16326,6 +16357,16 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Apri in ${ appName }"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Per inoltrare email da un massimo di ${ MAX_SYNC_PAID_USER } account, effettua l’upgrade a ${ planName }.",
+        "Per inoltrare email da un massimo di ${ MAX_SYNC_PAID_USER } account, effettua l\"upgrade a ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Stai inoltrando email da ${ MAX_SYNC_FREE_USER } account esterno a ${ MAIL_APP_NAME }.",
+        "Stai inoltrando email da ${ MAX_SYNC_FREE_USER } account esterni a ${ MAIL_APP_NAME }."
       ]
     }
   }

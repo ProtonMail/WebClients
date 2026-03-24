@@ -1670,6 +1670,24 @@
       ],
       "Edit billing address": [
         "Edit alamat penagihan"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Hide": [
+        "Sembunyikan"
+      ],
+      "Manage addresses": [
+        "Kelola alamat"
+      ],
+      "Or use a different Gmail address": [
+        "Atau gunakan alamat Gmail yang berbeda"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Siapkan penerusan otomatis dari Gmail"
+      ],
+      "Use this Gmail address": [
+        "Gunakan alamat Gmail in"
       ]
     },
     "action": {
@@ -1734,6 +1752,15 @@
       ],
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Domains": [
+        "Domain"
+      ],
+      "Servers": [
+        "Server"
+      ],
+      "Users": [
+        "Pengguna"
       ]
     },
     "Alert": {
@@ -2028,6 +2055,12 @@
       ],
       "Yearly": [
         "Tahunan"
+      ],
+      "${ n } month": [
+        "${ n } bulan"
+      ],
+      "${ n } year": [
+        "${ n } tahun"
       ]
     },
     "Browser": {
@@ -2503,6 +2536,9 @@
       ],
       "Total for ${ n } month": [
         "Total untuk ${ n } bulan"
+      ],
+      "Subtotal": [
+        "Subtotal"
       ]
     },
     "Collapsible tooltip": {
@@ -5748,6 +5784,9 @@
       ],
       "You've unlocked 1 GB": [
         "Anda telah memperoleh 1 GB"
+      ],
+      "Download apps": [
+        "Unduh aplikasi"
       ]
     },
     "Gmail forwarding": {
@@ -8582,6 +8621,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Anda hanya berjarak beberapa klik dari kotak masuk yang rapi"
+      ],
+      "All your contacts will be imported, up to a limit of ${ maxContact }": [
+        "Semua kontak Anda akan diimpor, hingga batas ${ maxContact } kontak"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Anda telah mengaktifkan penerusan di ${ MAX_SYNC_PAID_USER } alamat Gmail. Untuk menambahkan yang lain, nonaktifkan salah satunya terlebih dahulu."
       ]
     },
     "info": {
@@ -10142,6 +10187,12 @@
       ],
       "Up to ${ n } participant": [
         "Hingga ${ n } peserta"
+      ],
+      "${ n } participant": [
+        "${ n } peserta"
+      ],
+      "Booking pages": [
+        "Laman pemesanan"
       ]
     },
     "Message": {
@@ -11447,6 +11498,9 @@
       ],
       "Social media": [
         "Media sosial"
+      ],
+      "Skip for now": [
+        "Lewati untuk sementara"
       ]
     },
     "Onboarding modal": {
@@ -11934,6 +11988,15 @@
       ],
       "I'm purchasing as a business": [
         "Saya membeli produk ini selaku pihak bisnis"
+      ],
+      "The discount is valid for ${ renewalsWithCoupon } renewal.": [
+        "Diskon berlaku untuk ${ renewalsWithCoupon } perpanjangan."
+      ],
+      "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ini berlaku selama ${ couponRedemptions } bulan. Selanjutnya, harga akan otomatis diperbarui menjadi ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Harga diskon khusus ${ priceWithDiscount } berlaku selama ${ couponRedemptions } bulan. Kemudian akan diperpanjang secara otomatis dengan harga ${ renewPriceStr } selama 1 bulan. Anda dapat membatalkan kapan saja."
       ]
     },
     "Payments.Error": {
@@ -12240,6 +12303,12 @@
       ],
       "ZIP code": [
         "Kode pos"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "San Francisco": [
+        "San Francisco"
       ]
     },
     "Placeholder for contact group name": {
@@ -15177,6 +15246,27 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategori akan segera hadir!"
+      ],
+      "Connect a Gmail address": [
+        "Hubungkan alamat Gmail"
+      ],
+      "Connect more addresses": [
+        "Hubungkan lebih banyak alamat"
+      ],
+      "Custom": [
+        "Kustom"
+      ],
+      "Limit reached": [
+        "Batas tercapai"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Banyak akun, 1 kotak masuk privat"
+      ],
+      "Remove forwarding address": [
+        "Hapus alamat penerusan"
+      ],
+      "Spring Sale": [
+        "Diskon Musim Semi"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15709,6 +15799,14 @@
       ],
       "Passcode:": [
         "Kode sandi:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Untuk meneruskan email dari hingga ${ MAX_SYNC_PAID_USER } akun, tingkatkan ke ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Anda meneruskan alamat dari ${ MAX_SYNC_FREE_USER } akun eksternal ke ${ MAIL_APP_NAME }."
       ]
     }
   }

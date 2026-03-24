@@ -1682,6 +1682,18 @@
       ],
       "Google": [
         "Google"
+      ],
+      "Manage addresses": [
+        "Διαχείριση διευθύνσεων"
+      ],
+      "Or use a different Gmail address": [
+        "Ή χρησιμοποιήστε μια διαφορετική διεύθυνση Gmail"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Ρυθμίστε την αυτόματη προώθηση από το Gmail"
+      ],
+      "Use this Gmail address": [
+        "Χρησιμοποιήστε αυτήν τη διεύθυνση Gmail"
       ]
     },
     "action": {
@@ -5959,6 +5971,15 @@
       ],
       "You've unlocked 1 GB": [
         "Έχετε ξεκλειδώσει 1 GB"
+      ],
+      "Download apps": [
+        "Λήψη εφαρμογών"
+      ],
+      "Get storage bonus": [
+        "Λάβετε μπόνους αποθήκευσης"
+      ],
+      "Review import options": [
+        "Ανασκόπηση επιλογών εισαγωγής"
       ]
     },
     "Gmail forwarding": {
@@ -6403,6 +6424,9 @@
       ],
       "Advanced import": [
         "Προηγμένη εισαγωγή"
+      ],
+      "Import from ${ providerName }": [
+        "Εισαγωγή από ${ providerName }"
       ]
     },
     "Import warning": {
@@ -8940,6 +8964,10 @@
       ],
       "Choose your service to connect with": [
         "Επιλέξτε την υπηρεσία σας για να συνδεθείτε"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Έχετε ενεργοποιήσει την προώθηση σε ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail. Για να προσθέσετε ακόμα μία, απενεργοποιήστε πρώτα μία από αυτές.",
+        "Έχετε ενεργοποιήσει την προώθηση σε ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail. Για να προσθέσετε ακόμα μία, απενεργοποιήστε πρώτα μία από αυτές."
       ]
     },
     "info": {
@@ -11879,6 +11907,27 @@
       ],
       "Social media": [
         "Μέσα κοινωνικής δικτύωσης"
+      ],
+      "Choose your service": [
+        "Επιλέξτε την υπηρεσία σας"
+      ],
+      "Popular services": [
+        "Δημοφιλείς υπηρεσίες"
+      ],
+      "Skip for now": [
+        "Αγνοήστε για τώρα"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Μεταφέρετε τους λογαριασμούς σας στο ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Η αλλαγή email είναι δύσκολη. Το ${ BRAND_NAME } την καθιστά εύκολη. Συνδέστε τον παλιό σας λογαριασμό και διαχειριστείτε τα πάντα σε έναν εστιασμένο χώρο εργασίας χωρίς διαφημίσεις."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Ενημερώστε το email σας στις υπηρεσίες που χρησιμοποιείτε περισσότερο. Αποτρέψτε την παρακολούθηση και προστατέψτε την ιδιωτικότητά σας."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Καλώς ήρθατε στο ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -15834,6 +15883,21 @@
       ],
       "Select data to import": [
         "Επιλέξτε δεδομένα για εισαγωγή"
+      ],
+      "Connect a Gmail address": [
+        "Συνδέστε μια διεύθυνση Gmail"
+      ],
+      "Connect more addresses": [
+        "Σύνδεση περισσότερων διευθύνσεων"
+      ],
+      "Limit reached": [
+        "Υπέρβαση ορίου"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Πολλαπλοί λογαριασμοί, 1 ιδιωτικά εισερχόμενο"
+      ],
+      "Remove forwarding address": [
+        "Κατάργηση διεύθυνσης προώθησης"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16411,6 +16475,16 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Για να προωθήσετε μηνύματα ηλεκτρονικού ταχυδρομείου από έως και ${ MAX_SYNC_PAID_USER } λογαριασμό, αναβαθμίστε σε ${ planName }.",
+        "Για να προωθήσετε μηνύματα ηλεκτρονικού ταχυδρομείου από έως και ${ MAX_SYNC_PAID_USER } λογαριασμούς, αναβαθμίστε σε ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ${ MAX_SYNC_FREE_USER } εξωτερικό λογαριασμό στο ${ MAIL_APP_NAME }.",
+        "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ${ MAX_SYNC_FREE_USER } εξωτερικούς λογαριασμούς στο ${ MAIL_APP_NAME }."
       ]
     }
   }

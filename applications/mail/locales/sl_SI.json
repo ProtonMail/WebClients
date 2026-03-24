@@ -1649,6 +1649,12 @@
       ],
       "Google": [
         "Google"
+      ],
+      "Manage addresses": [
+        "Upravljanje naslovov"
+      ],
+      "Use this Gmail address": [
+        "Uporabi ta naslov Gmail"
       ]
     },
     "action": {
@@ -4037,6 +4043,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ustvarili ste že 10 vzdevkov. Zagotovite si neomejeno število vzdevkov in 500 GB shrambe s paketom ${ BRAND_NAME } Unlimited."
+      ],
+      "To start, give your organization a name.": [
+        "Za začetek imenujte svojo organizacijo."
+      ],
+      "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
+        "Uporabite ta priročnik, da bo vaša organizacija čim prej začela izkoriščati prednosti vodilnega ekosistema za šifriranje in varstvo zasebnosti podjetja ${ BRAND_NAME }."
       ]
     },
     "description": {
@@ -4960,6 +4972,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Shema obrnjene davčne obveznosti ni podprta za ta načrt"
+      ],
+      "Please enter a valid postal code": [
+        "Prosimo vnesite veljavno poštno številko"
       ]
     },
     "error": {
@@ -5784,6 +5799,15 @@
       ],
       "You've unlocked 1 GB": [
         "Odklenili ste 1 GB"
+      ],
+      "Download apps": [
+        "Prenesite aplikacije"
+      ],
+      "Get storage bonus": [
+        "Pridobite bonus za shranjevanje"
+      ],
+      "Review import options": [
+        "Preglejte možnosti uvoza"
       ]
     },
     "Gmail forwarding": {
@@ -6241,6 +6265,9 @@
       ],
       "Advanced import": [
         "Napredni uvoz"
+      ],
+      "Import from ${ providerName }": [
+        "Uvoz iz ${ providerName }"
       ]
     },
     "Import warning": {
@@ -8834,6 +8861,9 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Prav tako izgubite dostop do ${ boldPlanTitle } možnosti:"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Javna souporaba dokumentov še ni podprta."
       ]
     },
     "info": {
@@ -11664,6 +11694,9 @@
       ],
       "Your subscription renews soon": [
         "Vaša naročnina se bo kmalu obnovila"
+      ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "Nadgradite svojo shrambo za samo ${ pricingTitle } s paketom ${ planName }"
       ]
     },
     "Offer fearue": {
@@ -11715,6 +11748,27 @@
       ],
       "Social media": [
         "Družbena omrežja"
+      ],
+      "Choose your service": [
+        "Izberite svojo storitev"
+      ],
+      "Popular services": [
+        "Priljubljene storitve"
+      ],
+      "Skip for now": [
+        "Preskoči za zdaj"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Preklopite svoje račune na ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Preklop e-pošte je težaven. ${ BRAND_NAME } to olajša. Povežite svoj stari račun in upravljajte vse v enem osredotočenem delovnem prostoru brez oglasov."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Posodobite svoj e-poštni naslov za storitve, ki jih najpogosteje uporabljate. Preprečite sledenje in zaščitite svojo zasebnost."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Dobrodošli v ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -11907,6 +11961,9 @@
       ],
       "You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "Do konca preskusnega obdobja boste lahko uporabljali ${ planTitle } brezplačno."
+      ],
+      "Enjoy free business security features until ${ trialEndsOnFormatted }.": [
+        "Uživajte brezplačne funkcije za poslovne uporabnike do ${ trialEndsOnFormatted }."
       ]
     },
     "Online accounts": {
@@ -13858,6 +13915,15 @@
       ],
       "Catch-all email address": [
         "Zoom srečanje"
+      ],
+      "${ planName } gives you access to all premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
+        "${ planName } vam omogoča dostop do vseh naprednih funkcij storitev ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }. Zasebnost je vgrajena, zato lahko nadaljujete z delom, vedoč, da sta vaša identiteta in podatki varni."
+      ],
+      "Invited members will be removed from your organization": [
+        "Povabljeni člani bodo odstranjeni iz vaše organizacije"
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Vaša naročnina ${ planName } se izteče ${ expiryDate }, po poteku boste preusmerjeni na brezplačni paket ${ BRAND_NAME }."
       ]
     },
     "subscription reminder": {
@@ -15553,6 +15619,18 @@
       ],
       "Select data to import": [
         "Izberite podatke za uvoz"
+      ],
+      "Connect a Gmail address": [
+        "Poveži naslov Gmail"
+      ],
+      "Connect more addresses": [
+        "Poveži več naslovov"
+      ],
+      "Limit reached": [
+        "Meja je dosežena"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "Povečajte svojo produktivnost za ${ formattedPrice } s paketom ${ planName }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16285,6 +16363,11 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri preverjanju vašega varnostnega ključa je prišlo do napake. Prosimo, poskusite znova."
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Vaše brezplačno preizkusno obdobje se izteče čez ${ timeRemaining }"
       ]
     }
   }

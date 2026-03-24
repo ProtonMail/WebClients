@@ -1484,8 +1484,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1682,6 +1681,18 @@
       ],
       "Google": [
         "Google"
+      ],
+      "Manage addresses": [
+        "Hantera adresser"
+      ],
+      "Or use a different Gmail address": [
+        "Eller använd en annan Gmail-adress"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Ställ in automatisk vidarebefordran från Gmail"
+      ],
+      "Use this Gmail address": [
+        "Använd denna Gmail-adress"
       ]
     },
     "action": {
@@ -5941,6 +5952,12 @@
       ],
       "You've unlocked 1 GB": [
         "Du har låst upp 1 GB"
+      ],
+      "Download apps": [
+        "Ladda ner appar"
+      ],
+      "Review import options": [
+        "Granska importalternativ"
       ]
     },
     "Gmail forwarding": {
@@ -6385,6 +6402,9 @@
       ],
       "Advanced import": [
         "Avancerad import"
+      ],
+      "Import from ${ providerName }": [
+        "Importera från ${ providerName }"
       ]
     },
     "Import warning": {
@@ -11830,6 +11850,21 @@
       ],
       "Social media": [
         "Sociala medier"
+      ],
+      "Choose your service": [
+        "Välj din tjänst"
+      ],
+      "Popular services": [
+        "Populära tjänster"
+      ],
+      "Skip for now": [
+        "Hoppa över just nu"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Byt dina konton till ${ BRAND_NAME }"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Välkommen till ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -15779,6 +15814,21 @@
       ],
       "Select data to import": [
         "Välj data att importera"
+      ],
+      "Connect a Gmail address": [
+        "Anslut en Gmail-adress"
+      ],
+      "Connect more addresses": [
+        "Anslut fler adresser"
+      ],
+      "Limit reached": [
+        "Gräns uppnådd"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Flera konton, 1 privat inkorg"
+      ],
+      "Remove forwarding address": [
+        "Ta bort vidarebefordringsadress"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16457,6 +16507,16 @@
       ],
       "SPRING SALE": [
         "VÅRREA"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konto, uppgradera till ${ planName }.",
+        "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konton, uppgradera till ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externt konto till ${ MAIL_APP_NAME }.",
+        "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externa konton till ${ MAIL_APP_NAME }."
       ]
     }
   }

@@ -1682,6 +1682,18 @@
       ],
       "Google": [
         "Google"
+      ],
+      "Manage addresses": [
+        "მისამართების მართვა"
+      ],
+      "Or use a different Gmail address": [
+        "ან გამოიყენეთ სხვა Gmail-ის მისამართი"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Gmail-დან ავტოგადაგზავნის მორგება"
+      ],
+      "Use this Gmail address": [
+        "ამ Gmail-ის მისამართის გამოყენება"
       ]
     },
     "action": {
@@ -15470,6 +15482,21 @@
       ],
       "Select data to import": [
         "აირჩიეთ შემოსატანი მონაცემები"
+      ],
+      "Connect a Gmail address": [
+        "Gmail-ის მისამართთან დაკავშირება"
+      ],
+      "Connect more addresses": [
+        "მეტი მისამართის დაკავშირება"
+      ],
+      "Limit reached": [
+        "მიაღწიეთ ლიმიტს"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "ერთზე მეტი ანგარიში, 1 პირადი საფოსტო ყუთი"
+      ],
+      "Remove forwarding address": [
+        "გადაგზავნის მისამართის წაშლა"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16041,6 +16068,16 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "ელფოსტების გადასაგზავნად ${ MAX_SYNC_PAID_USER }-მდე ანგარიშიდან, ასწიეთ სატარიფო გეგმა ${ planName }-ზე.",
+        "ელფოსტების გადასაგზავნად ${ MAX_SYNC_PAID_USER }-მდე ანგარიშიდან, ასწიეთ სატარიფო გეგმა ${ planName }-ზე."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "თქვენ აგზავნით ელფოსტებს ${ MAX_SYNC_FREE_USER } გარე ანგარიშიდან ${ MAIL_APP_NAME }-ზე.",
+        "თქვენ აგზავნით ელფოსტებს ${ MAX_SYNC_FREE_USER } გარე ანგარიშიდან ${ MAIL_APP_NAME }-ზე."
       ]
     }
   }

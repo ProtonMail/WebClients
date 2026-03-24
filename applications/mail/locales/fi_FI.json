@@ -1676,6 +1676,15 @@
       ],
       "Google": [
         "Google"
+      ],
+      "Manage addresses": [
+        "Hallitse osoitteita"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Määritä automaattivälitys Gmailista"
+      ],
+      "Use this Gmail address": [
+        "Käytä tätä Gmail-osoitetta"
       ]
     },
     "action": {
@@ -5823,6 +5832,15 @@
       ],
       "You've unlocked 1 GB": [
         "Olet vapauttanut 1 Gt"
+      ],
+      "Download apps": [
+        "Lataa sovellukset"
+      ],
+      "Get storage bonus": [
+        "Hanki tallennustilan bonus"
+      ],
+      "Review import options": [
+        "Tarkista tuontiasetukset"
       ]
     },
     "Gmail forwarding": {
@@ -6267,6 +6285,9 @@
       ],
       "Advanced import": [
         "Edistynyt tuonti"
+      ],
+      "Import from ${ providerName }": [
+        "Tuo palvelusta ${ providerName }"
       ]
     },
     "Import warning": {
@@ -8756,6 +8777,10 @@
       ],
       "Choose your service to connect with": [
         "Valitse palvelu, johon haluat yhdistää"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Olet ottanut käyttöön edelleenlähetyksen ${ MAX_SYNC_PAID_USER } Gmail-osoitteessa. Lisätäksesi toisen, sinun on ensin poistettava jokin niistä käytöstä.",
+        "Olet ottanut käyttöön edelleenlähetyksen ${ MAX_SYNC_PAID_USER } Gmail-osoitteissa. Lisätäksesi uuden osoitteen, sinun on ensin poistettava jokin niistä käytöstä."
       ]
     },
     "info": {
@@ -11631,6 +11656,27 @@
       ],
       "Social media": [
         "Sosiaalinen media"
+      ],
+      "Choose your service": [
+        "Valitse palvelusi"
+      ],
+      "Popular services": [
+        "Suositut palvelut"
+      ],
+      "Skip for now": [
+        "Ohita toistaiseksi"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Vaihda tilisi ${ BRAND_NAME }:iin"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Sähköpostin vaihtaminen on vaikeaa. ${ BRAND_NAME } tekee siitä helppoa. Yhdistä vanha tilisi ja hallitse kaikkea yhdessä keskitetyssä, mainoksettomassa työtilassa."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Päivitä sähköpostisi eniten käyttämissäsi palveluissa. Estä seuranta ja suojaa yksityisyyttäsi."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Tervetuloa ${ MAIL_APP_NAME }iin"
       ]
     },
     "Onboarding modal": {
@@ -15446,6 +15492,15 @@
       ],
       "Select data to import": [
         "Valitse tuotavat tiedot"
+      ],
+      "Connect a Gmail address": [
+        "Yhdistä Gmail-osoite"
+      ],
+      "Connect more addresses": [
+        "Yhdistä lisää osoitteita"
+      ],
+      "Limit reached": [
+        "Raja saavutettu"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16126,6 +16181,16 @@
     "sheets_2025:Action": {
       "Open in ${ appName }": [
         "Avaa ${ appName } -sovelluksessa"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Välittääksesi sähköposteja ${ MAX_SYNC_PAID_USER } tililtä, päivitä tilauksesi tasolle ${ planName }.",
+        "Välittääksesi sähköposteja jopa ${ MAX_SYNC_PAID_USER } tililtä, päivitä tilauksesi tasolle ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Välität sähköposteja ${ MAX_SYNC_FREE_USER } ulkoiselta tililtä ${ MAIL_APP_NAME }iin.",
+        "Välität sähköposteja ${ MAX_SYNC_FREE_USER } ulkoiselta tililtä ${ MAIL_APP_NAME }iin."
       ]
     }
   }

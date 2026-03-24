@@ -1679,6 +1679,21 @@
       ],
       "Edit billing address": [
         "Rediger faktureringsadresse"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
+      ],
+      "Or use a different Gmail address": [
+        "Eller bruk en annen Gmail-adresse"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Konfigurer automatisk videresending fra Gmail"
+      ],
+      "Use this Gmail address": [
+        "Bruk denne Gmail-adressen"
       ]
     },
     "action": {
@@ -5956,6 +5971,15 @@
       ],
       "You've unlocked 1 GB": [
         "Du har låst opp 1 GB"
+      ],
+      "Download apps": [
+        "Last ned apper"
+      ],
+      "Get storage bonus": [
+        "Få lagringsbonus"
+      ],
+      "Review import options": [
+        "Se over alternativer for import"
       ]
     },
     "Gmail forwarding": {
@@ -6397,6 +6421,12 @@
       ],
       "Import from Yahoo": [
         "Importer fra Yahoo"
+      ],
+      "Advanced import": [
+        "Avansert import"
+      ],
+      "Import from ${ providerName }": [
+        "Importer fra ${ providerName }"
       ]
     },
     "Import warning": {
@@ -8931,6 +8961,13 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Kontoen din er for øyeblikket konfigurert til å bruke ordningen for omvendt avgiftsplikt. Dette støttes ikke for den valgte planen. For å fortsette, fjern enten MVA-nummeret fra faktureringsadressen eller velg en annen plan."
+      ],
+      "Choose your service to connect with": [
+        "Velg tjenesten du vil koble til"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Du har aktivert videresending på ${ MAX_SYNC_PAID_USER } Gmail-adresse. For å legge til en til, må du først deaktivere en av dem.",
+        "Du har aktivert videresending på ${ MAX_SYNC_PAID_USER } Gmail-adresser. Hvis du vil legge til en til, må du først deaktivere en av dem."
       ]
     },
     "info": {
@@ -11870,6 +11907,27 @@
       ],
       "Social media": [
         "Sosiale medier"
+      ],
+      "Choose your service": [
+        "Velg tjenesten din"
+      ],
+      "Popular services": [
+        "Populære tjenester"
+      ],
+      "Skip for now": [
+        "Hopp over for nå"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Bytt kontoene dine til ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Å bytte e-post er vanskelig. ${ BRAND_NAME } gjør det enkelt. Koble til din gamle konto og administrer alt på ett fokusert, reklamefritt arbeidsområde."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Oppdater e-posten din på tjenestene du bruker mest. Forhindre sporing og beskytt personvernet ditt."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Velkommen til ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -15813,6 +15871,33 @@
       ],
       "Reverse charge not supported": [
         "Omvendt avgiftsplikt støttes ikke"
+      ],
+      "Choose a provider": [
+        "Velg en leverandør"
+      ],
+      "Connect a Gmail address": [
+        "Koble til en Gmail-adresse"
+      ],
+      "Connect more addresses": [
+        "Koble til flere adresser"
+      ],
+      "Custom": [
+        "Tilpasset"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importer dine data til ${ BRAND_NAME }"
+      ],
+      "Limit reached": [
+        "Grense nådd"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Flere kontoer, 1 privat innboks"
+      ],
+      "Remove forwarding address": [
+        "Fjern videresendingsadresse"
+      ],
+      "Select data to import": [
+        "Velg data for import"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16494,6 +16579,16 @@
       ],
       "SPRING SALE": [
         "VÅRSALG"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "For å videresende e-poster fra opptil ${ MAX_SYNC_PAID_USER } konto, oppgrader til ${ planName }.",
+        "For å videresende e-poster fra opptil ${ MAX_SYNC_PAID_USER } kontoer, oppgrader til ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Du videresender e-poster fra ${ MAX_SYNC_FREE_USER } ekstern konto til ${ MAIL_APP_NAME }.",
+        "Du videresender e-poster fra ${ MAX_SYNC_FREE_USER } eksterne kontoer til ${ MAIL_APP_NAME }."
       ]
     }
   }

@@ -1481,8 +1481,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Approuver la clé",
-        "Clés de confiance"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1682,6 +1681,18 @@
       ],
       "Google": [
         "Google"
+      ],
+      "Manage addresses": [
+        "Gérer les adresses"
+      ],
+      "Or use a different Gmail address": [
+        "Ou utiliser une autre adresse Gmail"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Configurer le transfert automatique depuis Gmail"
+      ],
+      "Use this Gmail address": [
+        "Utiliser cette adresse Gmail"
       ]
     },
     "action": {
@@ -5945,6 +5956,15 @@
       ],
       "You've unlocked 1 GB": [
         "Vous avez débloqué 1 Go."
+      ],
+      "Download apps": [
+        "Télécharger les applications"
+      ],
+      "Get storage bonus": [
+        "Obtenir un bonus de stockage"
+      ],
+      "Review import options": [
+        "Examiner les options d'importation"
       ]
     },
     "Gmail forwarding": {
@@ -6389,6 +6409,9 @@
       ],
       "Advanced import": [
         "Importation avancée"
+      ],
+      "Import from ${ providerName }": [
+        "Importer depuis ${ providerName }"
       ]
     },
     "Import warning": {
@@ -8914,6 +8937,10 @@
       ],
       "Choose your service to connect with": [
         "Choisissez votre service pour vous connecter"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Vous avez activé le transfert sur ${ MAX_SYNC_PAID_USER } adresse Gmail. Pour en ajouter une autre, veuillez d’abord la désactiver.",
+        "Vous avez activé le transfert sur ${ MAX_SYNC_PAID_USER } adresses Gmail. Pour en ajouter une autre, veuillez d’abord en désactiver une."
       ]
     },
     "info": {
@@ -9047,7 +9074,7 @@
         "Déplacer vers le dossier Brouillons"
       ],
       "Go to Inbox": [
-        "Déplacer vers le dossier Boîte de réception"
+        "Aller à la boîte de réception"
       ],
       "Go to Sent": [
         "Déplacer vers le dossier Envoyés"
@@ -11849,6 +11876,27 @@
       ],
       "Social media": [
         "Réseaux sociaux"
+      ],
+      "Choose your service": [
+        "Choisissez votre service"
+      ],
+      "Popular services": [
+        "Services populaires"
+      ],
+      "Skip for now": [
+        "Ignorer pour le moment"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Basculez vos comptes vers ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Changer de messagerie est difficile. ${ BRAND_NAME } rend cela facile. Connectez votre ancien compte et gérez tout dans un espace de travail unique, ciblé et sans publicité."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Mettez à jour votre e-mail sur les services que vous utilisez le plus. Empêchez le suivi et protégez votre confidentialité."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Bienvenue dans ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -15779,6 +15827,21 @@
       ],
       "Select data to import": [
         "Sélectionner les données à importer"
+      ],
+      "Connect a Gmail address": [
+        "Connectez une adresse Gmail"
+      ],
+      "Connect more addresses": [
+        "Connecter plus d'adresses"
+      ],
+      "Limit reached": [
+        "La limite est atteinte."
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Plusieurs comptes, 1 boîte de réception privée"
+      ],
+      "Remove forwarding address": [
+        "Retirer l'adresse de transfert"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16460,6 +16523,16 @@
       ],
       "SPRING SALE": [
         "OFFRE DE PRINTEMPS"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Pour transférer des messages depuis ${ MAX_SYNC_PAID_USER } compte, passez à ${ planName }.",
+        "Pour transférer des messages depuis ${ MAX_SYNC_PAID_USER } comptes, passez à ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Vous transférez des messages depuis ${ MAX_SYNC_FREE_USER } compte externe vers ${ MAIL_APP_NAME }.",
+        "Vous transférez des messages depuis ${ MAX_SYNC_FREE_USER } comptes externes vers ${ MAIL_APP_NAME }."
       ]
     }
   }

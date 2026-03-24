@@ -1676,6 +1676,18 @@
       ],
       "Edit billing address": [
         "Rediger faktureringsadresse"
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
+      ],
+      "Or use a different Gmail address": [
+        "Eller brug en anden Gmail-adresse"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Konfigurer automatisk videresendelse fra Gmail"
+      ],
+      "Use this Gmail address": [
+        "Brug denne Gmail-adresse"
       ]
     },
     "action": {
@@ -5113,6 +5125,15 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Omvendt betalingsordning understøttes ikke for dette abonnement"
+      ],
+      "Invalid coupon": [
+        "Ugyldig kupon"
+      ],
+      "Please complete the billing details": [
+        "Udfyld faktureringsoplysningerne"
+      ],
+      "This field is invalid": [
+        "Dette felt er ugyldigt"
       ]
     },
     "error": {
@@ -6362,6 +6383,9 @@
       ],
       "Import from Yahoo": [
         "Importér fra Yahoo"
+      ],
+      "Import from ${ providerName }": [
+        "Importér fra ${ providerName }"
       ]
     },
     "Import warning": {
@@ -8884,6 +8908,13 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Din konto er i øjeblikket konfigureret til at anvende omvendt betalingspligt, som ikke er understøttet i det valgte abonnement. For at fortsætte skal du enten fjerne momsnummeret fra faktureringsadressen eller vælge et andet abonnement."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Indtast bekræftelseskode. Ciffer ${ digit }."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Du har aktiveret videresendelse på ${ MAX_SYNC_PAID_USER } Gmail-adresse. For at tilføje endnu en skal du først deaktivere en af dem.",
+        "Du har aktiveret videresendelse på ${ MAX_SYNC_PAID_USER } Gmail-adresser. For at tilføje endnu en skal du først deaktivere en af dem."
       ]
     },
     "info": {
@@ -11810,6 +11841,9 @@
       ],
       "Social media": [
         "Sociale medier"
+      ],
+      "Popular services": [
+        "Populære tjenester"
       ]
     },
     "Onboarding modal": {
@@ -15720,6 +15754,21 @@
       ],
       "Select data to import": [
         "Vælg data til import"
+      ],
+      "Connect a Gmail address": [
+        "Forbind en Gmail-adresse"
+      ],
+      "Connect more addresses": [
+        "Tilslut flere adresser"
+      ],
+      "Limit reached": [
+        "Grænse nået"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Flere konti, 1 privat indbakke"
+      ],
+      "Remove forwarding address": [
+        "Fjern videresendelsesadresse"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16401,6 +16450,21 @@
       ],
       "SPRING SALE": [
         "FORÅR SALG"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "For at videresende e-mails fra op til ${ MAX_SYNC_PAID_USER } konto skal du opgradere til ${ planName }.",
+        "For at videresende e-mails fra op til ${ MAX_SYNC_PAID_USER } konti skal du opgradere til ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Du videresender e-mails fra ${ MAX_SYNC_FREE_USER } ekstern konto til ${ MAIL_APP_NAME }.",
+        "Du videresender e-mails fra ${ MAX_SYNC_FREE_USER } eksterne konti til ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Fornyelsesprisen afhænger af faktureringsregionen og EIN."
       ]
     }
   }

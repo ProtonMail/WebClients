@@ -1679,6 +1679,21 @@
       ],
       "Google": [
         "Google"
+      ],
+      "Hide": [
+        "Ocultar"
+      ],
+      "Manage addresses": [
+        "Administrar direcciones"
+      ],
+      "Or use a different Gmail address": [
+        "O usa otra dirección de Gmail"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Configurar el reenvío automático desde Gmail"
+      ],
+      "Use this Gmail address": [
+        "Usar esta dirección de Gmail"
       ]
     },
     "action": {
@@ -5948,6 +5963,15 @@
       ],
       "You've unlocked 1 GB": [
         "Has desbloqueado 1 GB"
+      ],
+      "Download apps": [
+        "Descargar aplicaciones"
+      ],
+      "Get storage bonus": [
+        "Obtener bonificación de almacenamiento"
+      ],
+      "Review import options": [
+        "Revisar opciones de importación"
       ]
     },
     "Gmail forwarding": {
@@ -6392,6 +6416,9 @@
       ],
       "Advanced import": [
         "Importación avanzada"
+      ],
+      "Import from ${ providerName }": [
+        "Importar desde ${ providerName }"
       ]
     },
     "Import warning": {
@@ -7564,7 +7591,7 @@
         "Prioridad baja"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Configura ${ MAIL_APP_NAME } como tu aplicación de correo predeterminada."
+        "Establecer ${ MAIL_APP_NAME } como aplicación de correo predeterminada"
       ],
       "Manage your folders": [
         "Administra tus carpetas"
@@ -8920,6 +8947,13 @@
       ],
       "Choose your service to connect with": [
         "Elige tu servicio para conectar"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Ingresa el código de verificación. Escribe ${ digit }."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Has activado el reenvío en ${ MAX_SYNC_PAID_USER } dirección de Gmail. Para añadir otra, primero desactívala.",
+        "Has activado el reenvío en ${ MAX_SYNC_PAID_USER } direcciones de Gmail. Para añadir otra, primero desactiva alguna de ellas."
       ]
     },
     "info": {
@@ -11855,6 +11889,27 @@
       ],
       "Social media": [
         "Redes sociales"
+      ],
+      "Choose your service": [
+        "Elige tu servicio"
+      ],
+      "Popular services": [
+        "Servicios populares"
+      ],
+      "Skip for now": [
+        "Omitir por ahora"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Cambia tus cuentas a ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Cambiar de correo es difícil. ${ BRAND_NAME } te lo pone fácil. Conecta tu cuenta antigua y gestiónalo todo en un único espacio de trabajo centrado y sin anuncios."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Actualiza tu correo electrónico en los servicios que más utilizas. Evita el rastreo y protege tu privacidad."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Te damos la bienvenida a ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -15230,7 +15285,7 @@
         "Código de verificación no válido"
       ],
       "Keep this banner hidden?": [
-        "¿Mantener este banner oculto?"
+        "¿Mantener oculto este banner?"
       ],
       "Label as": [
         "Etiquetar como"
@@ -15800,6 +15855,21 @@
       ],
       "Select data to import": [
         "Seleccionar datos para importar"
+      ],
+      "Connect a Gmail address": [
+        "Conectar una dirección de Gmail"
+      ],
+      "Connect more addresses": [
+        "Conectar más direcciones"
+      ],
+      "Limit reached": [
+        "Límite alcanzado"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Varias cuentas, 1 bandeja de entrada privada"
+      ],
+      "Remove forwarding address": [
+        "Eliminar dirección de reenvío"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16481,6 +16551,16 @@
       ],
       "SPRING SALE": [
         "OFERTA DE PRIMAVERA"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Para reenviar correos electrónicos de hasta ${ MAX_SYNC_PAID_USER } cuenta, mejora a ${ planName }.",
+        "Para reenviar correos electrónicos de hasta ${ MAX_SYNC_PAID_USER } cuentas, mejora a ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Estás reenviando correos electrónicos desde ${ MAX_SYNC_FREE_USER } cuenta externa a ${ MAIL_APP_NAME }.",
+        "Estás reenviando correos electrónicos desde ${ MAX_SYNC_FREE_USER } cuentas externas a ${ MAIL_APP_NAME }."
       ]
     }
   }

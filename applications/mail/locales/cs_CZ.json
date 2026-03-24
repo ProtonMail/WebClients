@@ -1691,6 +1691,18 @@
       ],
       "Edit billing address": [
         "Upravit fakturační adresu"
+      ],
+      "Manage addresses": [
+        "Spravovat adresy"
+      ],
+      "Or use a different Gmail address": [
+        "Nebo použijte jinou Gmail adresu"
+      ],
+      "Set up auto-forwarding from Gmail": [
+        "Nastavit automatické přeposílání z Gmailu"
+      ],
+      "Use this Gmail address": [
+        "Použít tuto Gmail adresu"
       ]
     },
     "action": {
@@ -9199,6 +9211,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Povolili jste přeposílání na ${ MAX_SYNC_PAID_USER } Gmail adresu. Chcete-li přidat další, nejprve jednu z nich deaktivujte.",
+        "Povolili jste přeposílánína ${ MAX_SYNC_PAID_USER } Gmail adresy. Chcete-li přidat další, nejprve jednu z nich deaktivujte.",
+        "Povolili jste přeposílánína ${ MAX_SYNC_PAID_USER } Gmail adres. Chcete-li přidat další, nejprve jednu z nich deaktivujte.",
+        "Povolili jste přeposílánína ${ MAX_SYNC_PAID_USER } Gmail adres. Chcete-li přidat další, nejprve jednu z nich deaktivujte."
       ]
     },
     "info": {
@@ -16345,6 +16363,21 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorie se blíží!"
+      ],
+      "Connect a Gmail address": [
+        "Připojte svou Gmail adresu"
+      ],
+      "Connect more addresses": [
+        "Připojit více adres"
+      ],
+      "Limit reached": [
+        "Limit dosažen"
+      ],
+      "Multiple accounts, 1 private inbox": [
+        "Více účtů, 1 soukromá doručená pošta"
+      ],
+      "Remove forwarding address": [
+        "Odebrat adresu přeposílání"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -17116,6 +17149,20 @@
       ],
       "SPRING SALE": [
         "JARNÍ VÝPRODEJ"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Chcete-li přeposílat e-maily z ${ MAX_SYNC_PAID_USER } účtu, navyšte tarif na ${ planName }.",
+        "Chcete-li přeposílat e-maily až ze ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }.",
+        "Chcete-li přeposílat e-maily až z ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }.",
+        "Chcete-li přeposílat e-maily až z ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externího účtu na ${ MAIL_APP_NAME }.",
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }.",
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }.",
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }."
       ]
     }
   }
