@@ -2,7 +2,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
-import create from '../lib/guest';
+import { createGuest } from '../lib/guest';
 import type {
     GetLocalStorageKeysMessage,
     GetLocalStorageKeysMessageResponse,
@@ -17,7 +17,7 @@ import type {
 } from './interface';
 import { Action } from './interface';
 
-const createProtonInstance = (url: string) => create(url);
+const createProtonInstance = (url: string) => createGuest(url);
 
 type CrossStorageInstance = ReturnType<typeof createProtonInstance>;
 

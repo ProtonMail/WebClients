@@ -16,7 +16,7 @@ import { createCalendarModelEventManager } from '@proton/calendar/calendarModelE
 import { calendarSettingsThunk } from '@proton/calendar/calendarUserSettings';
 import { calendarsThunk } from '@proton/calendar/calendars';
 import { holidaysDirectoryThunk } from '@proton/calendar/holidaysDirectory';
-import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
+import { setupGuestCrossStorage } from '@proton/cross-storage/account/guest';
 import { FeatureCode, fetchFeatures } from '@proton/features';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
