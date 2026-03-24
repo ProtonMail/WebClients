@@ -159,6 +159,9 @@
       "Change": [
         "Canvia"
       ],
+      "Change my access": [
+        "Canviar el meu accés"
+      ],
       "Change password": [
         "Canvia la contrasenya"
       ],
@@ -844,6 +847,9 @@
       ],
       "Remove me": [
         "Esborra'm"
+      ],
+      "Remove my access": [
+        "Elimineu el meu accés"
       ],
       "Remove without saving": [
         "Esborra sense desar"
@@ -5666,6 +5672,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Si baixeu a un pla inferior, perdreu l'accés a les funcions de pagament de ${ VPN_APP_NAME }."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Si us elimineu, perdreu l'accés a \"${ fileName }\" i no podreu tornar a obrir el fitxer tret que el propietari us el torni a compartir."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importa ${ calendarCount } calendari de ${ totalCalendarsCount }",
         "Importa ${ calendarCount } calendaris de ${ totalCalendarsCount }"
@@ -6226,9 +6235,6 @@
       ],
       "Share files with links": [
         "Compartiu fitxers amb enllaços"
-      ],
-      "Share via link settings": [
-        "Preferències de compartició mitjançant un enllaç"
       ],
       "Shared": [
         "Compartit"
@@ -6830,6 +6836,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se us cobrarà res si cancel·leu abans del ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "No podreu compartir \"${ fileName }\" un cop canvieu l'accés a visualitzador. Només el propietari podrà tornar a canviar el vostre accés."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Rebreu la recompensa en crèdit un mes després que el vostre amic se subscrigui a un pla anual, i dos mesos després que ho faci a un pla mensual."
@@ -9238,6 +9247,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "S'ha compartit \"${ fileName }\""
+      ],
       "\"${ name }\" created successfully": [
         "S'ha creat \"${ name }\""
       ],
@@ -9279,9 +9291,6 @@
       ],
       "\"${ name }\" saved successfully": [
         "S'ha desat \"${ name }\""
-      ],
-      "\"${ name }\" shared": [
-        "S'ha compartit \"${ name }\""
       ],
       "\"${ name }\" successfully copied": [
         "«${ name }» s'ha copiat correctament"
@@ -12177,6 +12186,9 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
+      "Change access to viewer?": [
+        "Voleu canviar l'accés a visualitzador?"
+      ],
       "Change layout": [
         "Canvia la disposició"
       ],
@@ -12759,6 +12771,9 @@
         "Voleu esborrar l'element?",
         "Voleu esborrar els elements?"
       ],
+      "Remove your access?": [
+        "Voleu eliminar el vostre accés?"
+      ],
       "Rename a file": [
         "Canvia el nom"
       ],
@@ -12828,8 +12843,8 @@
       "SHA1": [
         "SHA1"
       ],
-      "Share ${ name }": [
-        "Comparteix ${ name }"
+      "Share \"${ fileName }\"": [
+        "Compartir \"${ fileName }\""
       ],
       "Share your calendar with your team": [
         "Compartiu el calendari amb el vostre equip"
@@ -13105,6 +13120,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Canvia automàticament entre els temes preferits per a dia i nit en sincronització amb els modes de dia i nit del sistema"
       ],
+      "Change shared item settings": [
+        "Canviar les preferències dels elements compartits"
+      ],
       "Customize import to reduce the number of folders": [
         "Personalitza la importació per reduir el nombre de carpetes"
       ],
@@ -13146,6 +13164,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "El missatge i el nom del fitxer s'emmagatzemen amb un xifratge d'accés zero quan s'inclouen al correu electrònic"
+      ],
+      "New!": [
+        "Nou!"
       ],
       "Not all information listed here was exposed for all users.": [
         "No tota la informació enumerada aquí es va exposar per a tots els usuaris."

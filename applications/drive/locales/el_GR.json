@@ -159,6 +159,9 @@
       "Change": [
         "Αλλαγή"
       ],
+      "Change my access": [
+        "Αλλαγή της πρόσβασής μου"
+      ],
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
       ],
@@ -844,6 +847,9 @@
       ],
       "Remove me": [
         "Αφαιρέστε με"
+      ],
+      "Remove my access": [
+        "Αφαίρεση της πρόσβασής μου"
       ],
       "Remove without saving": [
         "Αφαίρεση χωρίς αποθήκευση"
@@ -5666,6 +5672,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Αν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα χαρακτηριστικά επί πληρωμή του ${ VPN_APP_NAME }."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Αν αφαιρέσετε τον εαυτό σας, θα χάσετε την πρόσβαση στο \"${ fileName }\" και δε θα μπορείτε να το ανοίξετε ξανά εκτός αν ο κάτοχος το μοιραστεί μαζί σας."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγιο",
         "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγια"
@@ -6226,9 +6235,6 @@
       ],
       "Share files with links": [
         "Κοινή χρήση αρχείων με συνδέσμους"
-      ],
-      "Share via link settings": [
-        "Κοινοποίηση μέσω ρυθμίσεων συνδέσμου"
       ],
       "Shared": [
         "Κοινόχρηστα"
@@ -6830,6 +6836,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Δεν θα μπορείτε να μοιραστείτε το \"${ fileName }\" μετά την αλλαγή της πρόσβασης σε προβολέα. Μόνο ο ιδιοκτήτης μπορεί να αλλάξει ξανά την πρόσβασή σας."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Θα λάβετε την ανταμοιβή πίστωσης 1 μήνα αφότου ο φίλος σας εγγραφεί σε ετήσιο πλάνο και 2 μήνες αφότου εγγραφεί σε μηνιαίο πλάνο."
@@ -9178,6 +9187,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" κοινοποιήθηκε"
+      ],
       "\"${ name }\" created successfully": [
         "Το \"${ name }\" δημιουργήθηκε επιτυχώς"
       ],
@@ -9219,9 +9231,6 @@
       ],
       "\"${ name }\" saved successfully": [
         "Το \"${ name }\" αποθηκεύτηκε με επιτυχία"
-      ],
-      "\"${ name }\" shared": [
-        "\"${ name }\" κοινοποιήθηκε"
       ],
       "\"${ name }\" successfully copied": [
         "\"${ name }\" αντιγράφηκε επιτυχώς"
@@ -12117,6 +12126,9 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
+      "Change access to viewer?": [
+        "Αλλαγή πρόσβασης σε προβολέα;"
+      ],
       "Change layout": [
         "Αλλαγή διάταξης"
       ],
@@ -12699,6 +12711,9 @@
         "Κατάργηση στοιχείου;",
         "Αφαίρεση στοιχείων;"
       ],
+      "Remove your access?": [
+        "Αφαίρεση της πρόσβασής σας;"
+      ],
       "Rename a file": [
         "Μετονομασία αρχείου"
       ],
@@ -12768,8 +12783,8 @@
       "SHA1": [
         "SHA1"
       ],
-      "Share ${ name }": [
-        "Κοινοποίηση ${ name }"
+      "Share \"${ fileName }\"": [
+        "Κοινοποίηση \"${ fileName }\""
       ],
       "Share your calendar with your team": [
         "Κοινοποιήστε το ημερολόγιό σας με την ομάδα σας"
@@ -13045,6 +13060,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Αυτόματη εναλλαγή μεταξύ των προτιμώμενων θεμάτων ημέρας και νύχτας σε συγχρονισμό με τις λειτουργίες ημέρας και νύχτας του συστήματός σας"
       ],
+      "Change shared item settings": [
+        "Αλλαγή ρυθμίσεων κοινόχρηστου στοιχείου"
+      ],
       "Customize import to reduce the number of folders": [
         "Προσαρμόστε την εισαγωγή για μείωση του αριθμού των φακέλων"
       ],
@@ -13086,6 +13104,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Το μήνυμα και το όνομα αρχείου αποθηκεύονται με κρυπτογράφηση μηδενικής πρόσβασης όταν περιλαμβάνονται στο μήνυμα ηλεκτρονικού ταχυδρομείου"
+      ],
+      "New!": [
+        "Νέο!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Δεν εκτέθηκαν όλες οι πληροφορίες που παρατίθενται εδώ για όλους τους χρήστες."

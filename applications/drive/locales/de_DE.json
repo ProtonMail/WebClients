@@ -159,6 +159,9 @@
       "Change": [
         "Ändern"
       ],
+      "Change my access": [
+        "Meinen Zugriff ändern"
+      ],
       "Change password": [
         "Passwort ändern"
       ],
@@ -844,6 +847,9 @@
       ],
       "Remove me": [
         "Mich entfernen"
+      ],
+      "Remove my access": [
+        "Meinen Zugriff entfernen"
       ],
       "Remove without saving": [
         "Entfernen ohne Speichern"
@@ -5660,6 +5666,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Wenn du mit dem Downgrade fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ VPN_APP_NAME }."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Wenn du dich selbst entfernst, verlierst du den Zugriff auf die Datei \"${ fileName }\" und kannst sie nicht wieder öffnen, es sei denn, der Inhaber teilt sie mit dir."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount }/${ totalCalendarsCount } Kalender importieren",
         "${ calendarCount }/${ totalCalendarsCount } Kalendern importieren"
@@ -6220,9 +6229,6 @@
       ],
       "Share files with links": [
         "Dateien mit Links teilen"
-      ],
-      "Share via link settings": [
-        "Einstellungen für das Teilen via Link"
       ],
       "Shared": [
         "Geteilt"
@@ -6824,6 +6830,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Dir wird nichts berechnet, wenn du vor ${ trialEndsOnFormatted } kündigst."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Du kannst \"${ fileName }\" nicht mehr teilen, nachdem du den Zugriff auf \"Betrachter\" geändert hast. Nur der Inhaber kann deinen Zugriff erneut ändern."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du erhältst eine Gutschrift von einem Monat, nachdem die von dir geworbene Person ein Jahresabo abgeschlossen hat, und von zwei Monaten, nachdem sie ein Monatsabo abgeschlossen hat."
@@ -9229,6 +9238,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" geteilt"
+      ],
       "\"${ name }\" created successfully": [
         "„${ name }“ erfolgreich erstellt"
       ],
@@ -9270,9 +9282,6 @@
       ],
       "\"${ name }\" saved successfully": [
         "„${ name }“ erfolgreich gespeichert"
-      ],
-      "\"${ name }\" shared": [
-        "\"${ name }\" geteilt"
       ],
       "\"${ name }\" successfully copied": [
         "„${ name }“ erfolgreich kopiert"
@@ -12264,6 +12273,9 @@
       "Card verification": [
         "Kartenprüfung"
       ],
+      "Change access to viewer?": [
+        "Zugriff auf Betrachter ändern?"
+      ],
       "Change layout": [
         "Layout ändern"
       ],
@@ -12846,6 +12858,9 @@
         "Eintrag entfernen?",
         "Einträge entfernen?"
       ],
+      "Remove your access?": [
+        "Deinen Zugriff entfernen?"
+      ],
       "Rename a file": [
         "Datei umbenennen"
       ],
@@ -12915,8 +12930,8 @@
       "SHA1": [
         "SHA1"
       ],
-      "Share ${ name }": [
-        "${ name } teilen"
+      "Share \"${ fileName }\"": [
+        "\"${ fileName }\" teilen"
       ],
       "Share your calendar with your team": [
         "Teile deinen Kalender mit deinem Team"
@@ -13192,6 +13207,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisches Umschalten zwischen deinen bevorzugten Farbschemata für Tag und Nacht, synchron mit dem Tag- und Nachtmodus deines Systems."
       ],
+      "Change shared item settings": [
+        "Einstellungen für freigegebene Elemente ändern"
+      ],
       "Customize import to reduce the number of folders": [
         "Importvorgänge anpassen, um die Anzahl der Ordner zu reduzieren"
       ],
@@ -13233,6 +13251,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Nachricht und Dateiname werden mit Null-Zugriff-Verschlüsselung gespeichert, wenn sie in der E-Mail enthalten sind."
+      ],
+      "New!": [
+        "Neu"
       ],
       "Not all information listed here was exposed for all users.": [
         "Nicht alle hier aufgeführten Informationen wurden für alle Benutzer offengelegt."
