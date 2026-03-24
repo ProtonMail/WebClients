@@ -195,6 +195,7 @@ export const setup = async ({
             elements: {
                 params: {
                     labelID: props.labelID,
+                    categoryIDs: [],
                     elementID: props.elementID,
                     messageID: undefined,
                     conversationMode: false,

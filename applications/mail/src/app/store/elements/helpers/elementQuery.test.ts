@@ -13,6 +13,7 @@ const buildFiftyItems = (start: number = 0, count = 50) => {
 
 const baseElementsStateParams: ElementsStateParams = {
     labelID: 'all-mail',
+    categoryIDs: [],
     conversationMode: true,
     sort: { sort: 'Time', desc: true },
     filter: {},
