@@ -1,7 +1,10 @@
 {
     "name": "@proton/cross-storage",
-    "main": "lib/index.ts",
-    "module": "lib/index.ts",
+    "exports": {
+        "./host": "./lib/host.ts",
+        "./account/guest": "./account-impl/guestInstance.ts",
+        "./account/interface": "./account-impl/interface.ts"
+    },
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint --quiet"

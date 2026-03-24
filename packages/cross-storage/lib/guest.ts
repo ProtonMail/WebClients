@@ -8,7 +8,7 @@ enum States {
     ERROR,
 }
 
-const createGuest = (urlTarget: string) => {
+export const createGuest = (urlTarget: string) => {
     let iframe: HTMLIFrameElement;
     let state = States.INIT;
     let promiseHandler: {
@@ -137,5 +137,3 @@ const createGuest = (urlTarget: string) => {
         postAndGetMessage,
     };
 };
-
-export default createGuest;

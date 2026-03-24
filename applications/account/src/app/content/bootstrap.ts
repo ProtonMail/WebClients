@@ -12,7 +12,7 @@ import { coreEventLoopV6 } from '@proton/account/coreEventLoop';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { calendarEventLoopV6 } from '@proton/calendar/calendarEventLoop';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
-import { initMainHost } from '@proton/cross-storage';
+import { initMainHost } from '@proton/cross-storage/host';
 import { FeatureCode, fetchFeatures } from '@proton/features';
 import { contactEventLoopV6 } from '@proton/mail/store/contactEventLoop';
 import { mailEventLoopV6 } from '@proton/mail/store/mailEventLoop';
