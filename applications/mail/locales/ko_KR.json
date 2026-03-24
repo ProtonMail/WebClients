@@ -5918,6 +5918,15 @@
       ],
       "You've unlocked 1 GB": [
         "1 GB 잠금 해제했습니다"
+      ],
+      "Download apps": [
+        "앱 다운로드"
+      ],
+      "Get storage bonus": [
+        "저장공간 보너스 받기"
+      ],
+      "Review import options": [
+        "불러오기 옵션 보기"
       ]
     },
     "Gmail forwarding": {
@@ -7464,7 +7473,7 @@
         "중요도 낮음"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }을 기본 이메일 어플리케이션으로 설정하세요."
+        "${ MAIL_APP_NAME }을 기본 이메일 애플리케이션으로 설정하세요."
       ],
       "Manage your folders": [
         "폴더 관리"
@@ -8806,6 +8815,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "사용자의 계정에 현재 매입자 납부제도(Reverse charge)가 적용되도록 설정되어 있습니다. 이는 현재 선택한 플랜에서는 지원되지 않습니다. 계속 진행하려면 청구 주소에서 VAT 번호를 제거하거나 다른 플랜을 선택하십시오."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "인증 코드를 입력하세요. ${ digit }자입니다."
       ]
     },
     "info": {
@@ -11698,6 +11710,27 @@
       ],
       "Social media": [
         "소셜 미디어"
+      ],
+      "Choose your service": [
+        "사용하고 계신 서비스를 선택하세요"
+      ],
+      "Popular services": [
+        "인기 있는 서비스"
+      ],
+      "Skip for now": [
+        "지금은 건너뛰기"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "회원님의 계정을 ${ BRAND_NAME }으로 전환하세요"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "이메일 이전은 어려운 일이죠. ${ BRAND_NAME }이 그 과정을 쉽게 만들어 드릴게요. 이전 계정을 Proton과 연결하고 모든 메일을 하나의 집중적이고 광고 없는 작업 공간에서 관리해 보세요."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "가장 많이 사용하는 서비스에서 이메일을 업데이트하세요. 추적을 방지하고 개인정보를 보호하세요."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }에 오신 것을 환영해요"
       ]
     },
     "Onboarding modal": {

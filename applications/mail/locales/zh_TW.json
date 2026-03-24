@@ -1652,6 +1652,12 @@
       ],
       "Manage addresses": [
         "管理電郵位址"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Trust key": [
+        "信任金鑰"
       ]
     },
     "action": {
@@ -1739,6 +1745,9 @@
       ],
       "Servers": [
         "伺服器"
+      ],
+      "Writing assistant": [
+        "撰寫助手"
       ]
     },
     "Alert": {
@@ -2024,6 +2033,9 @@
       ],
       "Unlimited daily chats": [
         "無限每日聊天"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "存取 15,000+ 臺伺服器，分布於 120+ 個國家"
       ]
     },
     "Billing cycle option": {
@@ -4941,11 +4953,20 @@
       ],
       "Invalid VAT number": [
         "錯誤的統一編號"
+      ],
+      "Please complete the billing details": [
+        "請完成付款詳細資料"
+      ],
+      "This field is invalid": [
+        "此欄位無效"
       ]
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
         "請使用已經轉寄至 ${ MAIL_APP_NAME } 的 Gmail 位址登入"
+      ],
+      "Please sign in with the same Gmail address you originally connected": [
+        "請使用您最初連接的相同電子郵件地址登入"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5730,6 +5751,9 @@
       ],
       "You've unlocked 1 GB": [
         "您解鎖1GB"
+      ],
+      "Download apps": [
+        "下載應用程式"
       ]
     },
     "Gmail forwarding": {
@@ -6163,6 +6187,9 @@
       ],
       "Import from Yahoo": [
         "從 Yahoo 匯入"
+      ],
+      "Advanced import": [
+        "進階匯入"
       ]
     },
     "Import warning": {
@@ -8503,13 +8530,19 @@
         "輕點幾下滑鼠，即可擁有整潔的收件匣"
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "This message has a key attached, that has not been trusted yet.": [
         "此訊息附加的金鑰尚未受到信任。"
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "您已在 ${ MAX_SYNC_PAID_USER } 個 Gmail 位址上啟用轉寄功能。若要新增另一個，請先停用其中一個。"
+      ],
+      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
+        "此對話包含排定訊息。刪除他將取消排程寄送。"
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "您的付款日是 ${ renewalTime }。您可隨時取消。"
       ]
     },
     "info": {
@@ -10742,6 +10775,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "請支持 (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } + 使用者)"
       ]
     },
     "new_plans: feature highlight": {
@@ -11345,6 +11381,15 @@
       ],
       "Social media": [
         "社群媒體"
+      ],
+      "Popular services": [
+        "熱門服務"
+      ],
+      "Skip for now": [
+        "暫時略過"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "切換您的帳號至 ${ BRAND_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -15090,6 +15135,18 @@
       ],
       "Spring Sale": [
         "春季促銷"
+      ],
+      "Choose a provider": [
+        "選擇服務商"
+      ],
+      "Custom": [
+        "自訂"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "匯入您的資料至 ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "選擇匯入資料"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15611,6 +15668,11 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "精心設計的 NetShield 保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
       ]
     }
   }

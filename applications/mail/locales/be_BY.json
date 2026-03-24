@@ -1492,7 +1492,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -3470,7 +3473,7 @@
         "Інданезія"
       ],
       "International": [
-        "Міжнародная"
+        "Міжнародны"
       ],
       "Iran": [
         "Іран"
@@ -6065,6 +6068,15 @@
       ],
       "You've unlocked 1 GB": [
         "Вы разблакіравалі 1 ГБ"
+      ],
+      "Download apps": [
+        "Спампаваць праграмы"
+      ],
+      "Get storage bonus": [
+        "Атрымаць бонуснае сховішча"
+      ],
+      "Review import options": [
+        "Паглядзець параметры імпарту"
       ]
     },
     "Gmail forwarding": {
@@ -7740,10 +7752,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -12283,6 +12292,27 @@
       ],
       "Social media": [
         "Сацыяльныя сеткі"
+      ],
+      "Choose your service": [
+        "Выберыце свой сэрвіс"
+      ],
+      "Popular services": [
+        "Папулярныя сэрвісы"
+      ],
+      "Skip for now": [
+        "Пакуль прапусціць"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Пераключыце свае ўліковыя запісы на ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Перайсці на іншую электронную пошту даволі складана. З ${ BRAND_NAME } гэта зрабіць проста. Падключыце свой стары ўліковы запіс у адной мэтанакіраванай працоўнай прасторы, якая не змяшчае рэкламы."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Абнавіце сваю электронную пошту ў сэрвісах, якімі вы карыстаецеся часцей за ўсё. Прадухіляйце адсочванне і абараняйце сваю прыватнасць."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Вітаем у ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {

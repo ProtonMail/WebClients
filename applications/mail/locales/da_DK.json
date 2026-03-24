@@ -1481,7 +1481,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -5121,6 +5122,15 @@
       ],
       "Enter your username without the domain (@example.com)": [
         "Indtast dit brugernavn uden domænet (@example.com)"
+      ],
+      "Invalid coupon": [
+        "Ugyldig kupon"
+      ],
+      "Please complete the billing details": [
+        "Udfyld faktureringsoplysningerne"
+      ],
+      "This field is invalid": [
+        "Dette felt er ugyldigt"
       ]
     },
     "error": {
@@ -7449,8 +7459,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8900,6 +8909,9 @@
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Du har aktiveret videresendelse på ${ MAX_SYNC_PAID_USER } Gmail-adresse. For at tilføje endnu en skal du først deaktivere en af dem.",
         "Du har aktiveret videresendelse på ${ MAX_SYNC_PAID_USER } Gmail-adresser. For at tilføje endnu en skal du først deaktivere en af dem."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Indtast bekræftelseskode. Ciffer ${ digit }."
       ]
     },
     "info": {
@@ -11826,6 +11838,9 @@
       ],
       "Social media": [
         "Sociale medier"
+      ],
+      "Popular services": [
+        "Populære tjenester"
       ]
     },
     "Onboarding modal": {
@@ -16431,6 +16446,11 @@
       "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
         "Du videresender e-mails fra ${ MAX_SYNC_FREE_USER } ekstern konto til ${ MAIL_APP_NAME }.",
         "Du videresender e-mails fra ${ MAX_SYNC_FREE_USER } eksterne konti til ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Fornyelsesprisen afhænger af faktureringsregionen og EIN."
       ]
     }
   }

@@ -1682,6 +1682,12 @@
       ],
       "Use this Gmail address": [
         "このGmailアドレスを使用してください"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Trust key": [
+        "鍵を信頼する"
       ]
     },
     "action": {
@@ -5080,6 +5086,18 @@
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
+      ],
+      "Invalid coupon": [
+        "無効なクーポン"
+      ],
+      "Please complete the billing details": [
+        "請求の詳細をご記入ください"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "最低寄付金額は ${ price } です。"
+      ],
+      "This field is invalid": [
+        "このフィールドは無効です"
       ]
     },
     "error": {
@@ -6310,6 +6328,9 @@
       ],
       "Import from Yahoo": [
         "Yahooからインポート"
+      ],
+      "Advanced import": [
+        "高度なインポート"
       ]
     },
     "Import warning": {
@@ -8740,10 +8761,13 @@
         "不要なものが整理された受信トレイまで、あと数クリックです。"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "${ MAX_SYNC_PAID_USER } 個の Gmail アドレスで転送が有効になっています。別のアドレスを追加するには、まずいずれか 1 つを無効化してください。"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "クレジット報酬は、ご友人が年額プランにご登録いただいてから1か月後、月額プランにご加入いただいてから2か月後に受け取れます。"
       ]
     },
     "info": {
@@ -9819,6 +9843,9 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Import recent mails": [
+        "最近のメールをインポート"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11630,6 +11657,12 @@
       ],
       "Social media": [
         "SNS"
+      ],
+      "Popular services": [
+        "人気のサービス"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "アカウントを ${ BRAND_NAME } に切り替える"
       ]
     },
     "Onboarding modal": {
@@ -15561,6 +15594,18 @@
       ],
       "Remove forwarding address": [
         "転送先アドレスを削除する"
+      ],
+      "Choose a provider": [
+        "プロバイダーを選択"
+      ],
+      "Custom": [
+        "カスタム"
+      ],
+      "Reverse charge not supported": [
+        "リバースチャージはサポートされていません"
+      ],
+      "Spring Sale": [
+        "スプリングセール"
       ]
     },
     "Today icon tooltip in mini calendar": {
