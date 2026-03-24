@@ -81,6 +81,18 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         return value;
     }, [members]);
 
+    const addressEmailToMemberMap = useMemo(() => {
+        const value: { [email: string]: EnhancedMember | undefined } = {};
+        for (const member of members ?? []) {
+            if (member.Addresses) {
+                for (const address of member.Addresses) {
+                    value[address.Email] = member;
+                }
+            }
+        }
+        return value;
+    }, [members]);
+
     const getSuggestedAddressDomainName = () => {
         if (!organization) {
             createNotification({ type: 'error', text: 'Organization data is missing' });
@@ -362,6 +374,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         form,
         groupMembers: transformedGroupMembers,
         addressToMemberMap,
+        addressEmailToMemberMap,
         loadingGroupMembers,
         domainData,
         suggestedAddressDomainName,
