@@ -4129,6 +4129,9 @@
       "Invalid code": [
         "Ugyldig kode"
       ],
+      "Invalid coupon": [
+        "Ugyldig kupon"
+      ],
       "Invalid domain": [
         "Ugyldigt domæne"
       ],
@@ -4228,6 +4231,9 @@
       ],
       "Please add a payment method before reactivating your subscription": [
         "Tilføj en betalingsmetode før du genaktiverer dit abonnement"
+      ],
+      "Please complete the billing details": [
+        "Udfyld faktureringsoplysningerne"
       ],
       "Please configure a custom domain before adding addresses.": [
         "Sæt et brugerdomæne op, før du tilføjer adresser."
@@ -4400,6 +4406,9 @@
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
+      ],
+      "This field is invalid": [
+        "Dette felt er ugyldigt"
       ],
       "This field is required": [
         "Feltet er påkrævet"
@@ -6642,6 +6651,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Indtast bekræftelseskode. Ciffer ${ digit }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "Indtast dine kontooplysninger for ${ BRAND_NAME }."
@@ -12017,6 +12029,11 @@
     "Payments.plan_name": {
       "Free": [
         "Free"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and EIN.": [
+        "Fornyelsesprisen afhænger af faktureringsregionen og EIN."
       ]
     },
     "Payments.Saved payment method details": {
