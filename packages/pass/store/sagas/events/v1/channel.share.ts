@@ -23,7 +23,7 @@ export type ShareEventResponse = { Events: PassEventListResponse };
 
 /** Channel wrapper for per-share events. Handles channel-specific concerns
  * (pending file-link guard with `manager.setEventID`) then delegates core
- * processing to `processSharePollingEvent`. FIXME: support ItemShares */
+ * processing to `processSharePollingEvent`. */
 const onShareEvent = (shareId: string) =>
     function* (event: EventManagerEvent<ShareEventResponse>, channel: EventChannel<ShareEventResponse>, options: RootSagaOptions) {
         if ('error' in event) throw event.error;
