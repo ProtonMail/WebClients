@@ -73,7 +73,7 @@ interface Props {
     isNarrow: boolean;
     isTiny: boolean;
     isExtraTiny: boolean;
-    onMove: (labelID: string, sourceAction: SOURCE_ACTION) => void;
+    onMove: (labelID: string) => void;
     onDelete: (sourceAction: SOURCE_ACTION) => void;
     onCheckAll?: (check: boolean) => void;
 }

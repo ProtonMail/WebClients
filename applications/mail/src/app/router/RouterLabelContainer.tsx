@@ -13,7 +13,6 @@ import { useCategoriesView } from 'proton-mail/components/categoryView/useCatego
 import MailboxList from 'proton-mail/components/list/MailboxList';
 import { ResizableWrapper } from 'proton-mail/components/list/ResizableWrapper';
 import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
-import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { ROUTE_ELEMENT } from 'proton-mail/constants';
 import MailboxContainerPlaceholder from 'proton-mail/containers/mailbox/MailboxContainerPlaceholder';
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
@@ -28,11 +27,11 @@ import { selectComposersCount } from 'proton-mail/store/composers/composerSelect
 import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { getFolderName } from '../helpers/labels';
 import { RouterElementContainer } from './RouterElementContainer';
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
 import { MailboxToolbar } from './components/MailboxToolbar';
 import type { MailboxActions, RouterNavigation } from './interface';
+import { MoveAllType } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 
 interface Props {
     params: ElementsStateParams;
@@ -66,9 +65,6 @@ export const RouterLabelContainer = ({
         deleteAllModal,
         deleteSelectionModal,
         selectAllMarkModal,
-        moveToSpamModal,
-        moveSnoozedModal,
-        moveScheduledModal,
         selectAllMoveModal,
     } = actions;
 
@@ -115,12 +111,9 @@ export const RouterLabelContainer = ({
     });
 
     const {
-        moveToFolder,
+        moveAllToFolder,
         selectAll,
         elementRef,
-        moveScheduledModal: hotkeyMoveScheduledModal,
-        moveSnoozedModal: hotkeyMoveSnoozedModal,
-        moveToSpamModal: hotkeyMoveToSpamModal,
         deleteSelectionModal: hotkeyDeleteSelectionShortcutModal,
         deleteAllModal: hotkeyDeleteAllShortcutModal,
         selectAllMoveModal: hotkeySelectAllMoveModal,
@@ -158,17 +151,14 @@ export const RouterLabelContainer = ({
     );
 
     const handleMove = useCallback(
-        async (newLabelID: string, sourceAction: SOURCE_ACTION): Promise<void> => {
-            const folderName = getFolderName(newLabelID, folders);
+        async (newLabelID: string): Promise<void> => {
             const elements = getElementsFromIDs(selectedIDs);
             if (selectAll) {
-                await moveToFolder({
+                await moveAllToFolder({
+                    type: MoveAllType.selectAll,
                     elements,
                     sourceLabelID: labelID,
                     destinationLabelID: newLabelID,
-                    folderName,
-                    selectAll,
-                    sourceAction: sourceAction,
                 });
 
                 if (selectedIDs.includes(elementID || '')) {
@@ -251,16 +241,10 @@ export const RouterLabelContainer = ({
             </section>
             {commanderRender ? <Commander list={commanderList} {...commanderModalProps} /> : null}
             {deleteAllModal}
-            {moveToSpamModal}
-            {moveSnoozedModal}
-            {moveScheduledModal}
             {selectAllMoveModal}
             {selectAllMarkModal}
             {deleteSelectionModal}
             {hotkeyMarkAllModal}
-            {hotkeyMoveToSpamModal}
-            {hotkeyMoveSnoozedModal}
-            {hotkeyMoveScheduledModal}
             {hotkeySelectAllMoveModal}
             {hotkeyDeleteAllShortcutModal}
             {hotkeyDeleteSelectionShortcutModal}

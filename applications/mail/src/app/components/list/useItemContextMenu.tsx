@@ -16,7 +16,7 @@ interface Props {
     checkedIDs: string[];
     onCheck: (IDs: string[], checked: boolean, replace: boolean) => void;
     onMarkAs: (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION) => void;
-    onMove: (labelID: string, sourceAction: SOURCE_ACTION) => void;
+    onMove: (labelID: string) => void;
     onDelete: (sourceAction: SOURCE_ACTION) => void;
     conversationMode: boolean;
 }

@@ -8,7 +8,7 @@ import type { LocationCountMap } from 'proton-mail/hooks/useMailboxCounter';
 import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
 
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
-import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
+import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
 import SidebarItem from './SidebarItem';
 import SidebarLabelActions from './SidebarLabelActions';
 

@@ -18,7 +18,7 @@ import useListTelemetry, {
 import { type MoveAllToFolderArgs, MoveAllType } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 
 interface ActionProps {
-    onMove: (labelID: string, sourceAction: SOURCE_ACTION) => void;
+    onMove: (labelID: string) => void;
 }
 
 interface DeleteActionProps {
@@ -30,7 +30,7 @@ export const InboxAction = ({ onMove }: ActionProps) => {
         <DropdownMenuButton
             key="context-menu-inbox"
             className="text-left"
-            onClick={() => onMove(MAILBOX_LABEL_IDS.INBOX, SOURCE_ACTION.TOOLBAR)}
+            onClick={() => onMove(MAILBOX_LABEL_IDS.INBOX)}
             data-testid="toolbar:more-dropdown--movetoinbox"
         >
             <IcInbox className="mr-2" />
@@ -44,7 +44,7 @@ export const NoSpamAction = ({ onMove }: ActionProps) => {
         <DropdownMenuButton
             key="context-menu-nospam"
             className="text-left"
-            onClick={() => onMove(MAILBOX_LABEL_IDS.INBOX, SOURCE_ACTION.TOOLBAR)}
+            onClick={() => onMove(MAILBOX_LABEL_IDS.INBOX)}
             data-testid="toolbar:more-dropdown--movetonospam"
         >
             <IcFireSlash className="mr-2" />
@@ -58,7 +58,7 @@ export const ArchiveAction = ({ onMove }: ActionProps) => {
         <DropdownMenuButton
             key="context-menu-archive"
             className="text-left"
-            onClick={() => onMove(MAILBOX_LABEL_IDS.ARCHIVE, SOURCE_ACTION.TOOLBAR)}
+            onClick={() => onMove(MAILBOX_LABEL_IDS.ARCHIVE)}
             data-testid="toolbar:more-dropdown--movetonoarchive"
         >
             <IcArchiveBox className="mr-2" />
@@ -72,7 +72,7 @@ export const TrashAction = ({ onMove }: ActionProps) => {
         <DropdownMenuButton
             key="context-menu-trash"
             className="text-left"
-            onClick={() => onMove(MAILBOX_LABEL_IDS.TRASH, SOURCE_ACTION.TOOLBAR)}
+            onClick={() => onMove(MAILBOX_LABEL_IDS.TRASH)}
             data-testid="toolbar:more-dropdown--movetotrash"
         >
             <IcTrash className="mr-2" />
@@ -86,7 +86,7 @@ export const SpamAction = ({ onMove }: ActionProps) => {
         <DropdownMenuButton
             key="context-menu-spam"
             className="text-left"
-            onClick={() => onMove(MAILBOX_LABEL_IDS.SPAM, SOURCE_ACTION.TOOLBAR)}
+            onClick={() => onMove(MAILBOX_LABEL_IDS.SPAM)}
             data-testid="toolbar:more-dropdown--movetospam"
         >
             <IcFire className="mr-2" />
