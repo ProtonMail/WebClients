@@ -8,9 +8,9 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SketchOverlay } from '../../features/drawingcanvas';
+import useComposerInput from '../../hooks/useComposerInput';
 import type { DriveSDKMethods } from '../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../hooks/useDriveSDK';
-import useComposerInput from '../../hooks/useComposerInput';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
 import { useDragArea } from '../../providers/DragAreaProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
@@ -126,28 +126,11 @@ const ComposerComponentInner = ({
         fileUploadMode,
     } = useFileHandling({ messageChain, onShowDriveBrowser, spaceId, uploadToDrive: driveContext?.uploadFile });
 
-    // const sendGenerateMessage = useCallback(
-    //     async (editor: any) => {
-    //         if (isProcessingAttachment) {
-    //             console.log('Submission blocked: files are still being processed');
-    //             return;
-    //         }
-
-    //         if (!editor?.isEmpty) {
-    //             const markdown = editor?.storage.markdown.getMarkdown();
-    //             if (!markdown) return;
-    //             editor?.commands.clearContent();
-    //             await handleSendMessage(markdown, isWebSearchButtonToggled);
-    //         }
-    //     },
-    //     [handleSendMessage, isWebSearchButtonToggled, isProcessingAttachment]
-    // );
-
     const fileInputRef = useRef<HTMLInputElement>(null);
 
-    // const handleDrawSketch = useCallback(() => {
-    //     setShowDrawingModal(true);
-    // }, []);
+    const handleDrawSketch = useCallback(() => {
+        setShowDrawingModal(true);
+    }, []);
 
     // Auto-open sketch canvas when navigated from gallery with ?sketch=1
     useEffect(() => {
@@ -181,19 +164,6 @@ const ComposerComponentInner = ({
         handleDeleteAttachment
     );
 
-    // const handleDrawingExport = useCallback(
-    //     async (imageData: string) => {
-    //         const file = base64ToFile(imageData, `sketch-${Date.now()}.png`);
-    //         await handleFileProcessing(file);
-    //         createNotification({
-    //             text: c('collider_2025: Info').t`Sketch added as attachment`,
-    //             type: 'success',
-    //         });
-    //     },
-    //     [handleFileProcessing, createNotification]
-    // );
-
-   //TODO: check this after rebase
     const handleDrawingExport = useCallback(
         async (imageData: string, _mode: string, description: string) => {
             const file = base64ToFile(imageData, `sketch-${Date.now()}.png`);
@@ -238,7 +208,7 @@ const ComposerComponentInner = ({
             await handleSendMessage(value, isWebSearchButtonToggled);
         },
         // composerInput.clear is intentionally omitted from deps — it's stable but the object is created below
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+
         [handleSendMessage, isWebSearchButtonToggled, isProcessingAttachment]
     );
 
@@ -293,38 +263,23 @@ const ComposerComponentInner = ({
         }
     }, [handleFileProcessing]);
 
-    const handleDrawSketch = useCallback(() => {
-        setShowDrawingModal(true);
-    }, []);
+    // Auto-submit after sketch export: set description as textarea content and send
+    useEffect(() => {
+        if (pendingSketchDescription === null || isProcessingAttachment) return;
 
-    const handleDrawingExport = useCallback(
-        async (imageData: string) => {
-            const file = base64ToFile(imageData, `sketch-${Date.now()}.png`);
-            await handleFileProcessing(file);
-            createNotification({
-                text: c('collider_2025: Info').t`Sketch added as attachment`,
-                type: 'success',
-            });
-        },
-        [handleFileProcessing, createNotification]
-    );
+        if (pendingSketchDescription) {
+            setValue(pendingSketchDescription);
+        }
 
-    //TODO: check this after rebase
-    // Auto-submit after sketch export: set description as editor content and send
-        useEffect(() => {
-            if (pendingSketchDescription === null || isProcessingAttachment || !editor) return;
-    
+        const timer = setTimeout(() => {
             if (pendingSketchDescription) {
-                editor.commands.setContent(pendingSketchDescription);
+                void sendGenerateMessage(pendingSketchDescription);
             }
-    
-            const timer = setTimeout(() => {
-                sendGenerateMessage(editor);
-                setPendingSketchDescription(null);
-            }, 100);
-    
-            return () => clearTimeout(timer);
-        }, [pendingSketchDescription, isProcessingAttachment, editor, sendGenerateMessage]);
+            setPendingSketchDescription(null);
+        }, 100);
+
+        return () => clearTimeout(timer);
+    }, [pendingSketchDescription, isProcessingAttachment, setValue, sendGenerateMessage]);
 
     const showLegalDisclaimer = canShowLegalDisclaimer && !isEditorFocused && isEmpty;
 

@@ -7,9 +7,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
-import { IcPencil } from '@proton/icons/icons/IcPencil';
-
 import FileIcon from '@proton/components/components/fileIcon/FileIcon';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
 
 import type { HandleEditMessage } from '../../../../../hooks/useLumoActions';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
@@ -90,9 +89,8 @@ const MessageContentWithMentions = ({ content, message, allAttachments, onView }
         );
         const attachment = fromMessage
             ? (allAttachments[fromMessage.id] ?? null)
-            : (Object.values(allAttachments).find(
-                  (a) => a.filename.toLowerCase() === ref.fileName.toLowerCase()
-              ) ?? null);
+            : (Object.values(allAttachments).find((a) => a.filename.toLowerCase() === ref.fileName.toLowerCase()) ??
+              null);
 
         nodes.push(
             <FileMentionChip
@@ -157,7 +155,7 @@ interface UserMessageProps {
     siblingInfo: SiblingInfo;
     handleEditMessage: HandleEditMessage;
     newMessageRef?: React.MutableRefObject<HTMLDivElement | null>;
-    onOpenFilePreview?: (attachment: Attachment) => void;
+    onOpenFilePreview: (attachment: Attachment) => void;
 }
 
 const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, newMessageRef, onOpenFilePreview }: UserMessageProps) => {
@@ -246,10 +244,10 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
                         >
                             <MessageContentWithMentions
                                 content={messageContent || ''}
-                                    message={message}
+                                message={message}
                                 allAttachments={allAttachments}
-                            onView={handleViewFile}
-                        />
+                                onView={onOpenFilePreview}
+                            />
                         </div>
                     </div>
                 )}
