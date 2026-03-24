@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import Badge from '@proton/components/components/badge/Badge';
+import { Badge } from '@proton/components/components/badge/Badge';
 import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Meter from '@proton/components/components/progress/Meter';
@@ -482,11 +482,13 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         }
 
         const periodEnd = subscription?.PeriodEnd;
-        const startsOnTime = periodEnd ? <Time>{periodEnd}</Time> : null;
+        const startsOnTime = periodEnd ? <Time format="PPP">{periodEnd}</Time> : null;
 
         return (
             <>
-                {startsOnTime && <div className="color-weak">{c('Info').jt`Starts on ${startsOnTime}`}</div>}
+                {startsOnTime && (
+                    <div className="color-weak">{c('Info').jt`Subscription starts on ${startsOnTime}`}</div>
+                )}
                 <InlineLinkButton className="color-weak" onClick={() => setLearnMoreModal(true)}>
                     {c('Link').t`Learn more`}
                 </InlineLinkButton>
@@ -505,7 +507,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
             </Time>
         );
 
-        return <p className="color-weak mt-1">{c('Info').jt`Ends on ${formattedPeriodEndDate}`}</p>;
+        return <p className="color-weak mt-1">{c('Info').jt`Trial ends on ${formattedPeriodEndDate}`}</p>;
     })();
 
     const hasVpnOnlyB2BPlan = getHasVpnOnlyB2BPlan(subscription);
