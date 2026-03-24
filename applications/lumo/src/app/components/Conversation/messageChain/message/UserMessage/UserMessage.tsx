@@ -16,6 +16,7 @@ import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../../../../redux/hooks';
 import { selectAttachments } from '../../../../../redux/selectors';
 import type { Attachment } from '../../../../../types';
+import { getIsMobileDevice } from '../../../../../util/device';
 import { sendMessageEditEvent } from '../../../../../util/telemetry';
 import { getMimeTypeFromExtension } from '../../../../../util/filetypes';
 import { parseFileReferences } from '../../../../../util/fileReferences';
@@ -196,6 +197,7 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
     const canBeCollapsed = showCollapseButton || hasAttachments;
 
     const hasSiblingInfo = siblingInfo.count > 1;
+    const isMobile = getIsMobileDevice();
 
     const handleEdit = () => {
         sendMessageEditEvent();
@@ -263,7 +265,10 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
 
             {!isEditing && (
                 <div
-                    className="user-toolbar group-hover:opacity-100 flex *:min-size-auto flex-row flex-nowrap gap-1 absolute bottom-custom right-0 p-1 items-center"
+                    className={clsx(
+                        'user-toolbar flex *:min-size-auto flex-row flex-nowrap gap-1 absolute bottom-custom right-0 p-1 items-center',
+                        !isMobile && 'group-hover:opacity-100'
+                    )}
                     style={{ '--bottom-custom': '-1rem' }}
                 >
                     <div className=" bg-norm border border-weak rounded-lg">
