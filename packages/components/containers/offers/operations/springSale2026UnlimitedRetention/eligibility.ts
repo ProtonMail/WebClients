@@ -58,7 +58,7 @@ export function getIsEligible({
         isInApp(protonConfig, APPS.PROTONPASS, parentApp) ||
         isInApp(protonConfig, APPS.PROTONVPN_SETTINGS, parentApp);
 
-    const bundlePlan = subscription?.Plans.find((plan) => plan.Name === PLANS.BUNDLE);
+    const bundlePlan = subscription?.Plans?.find((plan) => plan.Name === PLANS.BUNDLE);
 
     if (isValidApp && bundlePlan && bundlePlan.Cycle === CYCLE.YEARLY) {
         return true;
