@@ -6,9 +6,12 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import Price from '@proton/components/components/price/Price';
+import CurrencySelector from '@proton/components/containers/payments/CurrencySelector';
 import { CurrencySymbols } from '@proton/payments/core/constants';
 import { getCurrencyFormattingConfig } from '@proton/payments/core/currencies';
 import type { Currency } from '@proton/payments/core/interface';
+
+import { DONATION_CURRENCIES } from '../helpers/emailReservationHelpers';
 
 const DONATION_MAX_MAJOR_UNIT = 1000;
 const DONATION_AMOUNTS_MINOR_UNITS = [100, 500, 1000, 2000];
@@ -16,11 +19,21 @@ type DonationValue = number;
 
 interface DonationAmountSelectProps {
     currency: Currency;
+    onCurrencyChange: (currency: Currency) => void;
     donationAmount: DonationValue;
     setDonationAmount: React.Dispatch<React.SetStateAction<number>>;
+    isSubmitting: boolean;
+    showCurrencySelector: boolean;
 }
 
-const DonationAmountSelect = ({ currency, donationAmount, setDonationAmount }: DonationAmountSelectProps) => {
+const DonationAmountSelect = ({
+    currency,
+    onCurrencyChange,
+    donationAmount,
+    setDonationAmount,
+    isSubmitting,
+    showCurrencySelector,
+}: DonationAmountSelectProps) => {
     const [selectedButton, setSelectedButton] = useState<DonationValue | undefined>(donationAmount);
     const [showInput, setShowInput] = useState(false);
     const { divisor } = getCurrencyFormattingConfig(currency);
@@ -69,7 +82,21 @@ const DonationAmountSelect = ({ currency, donationAmount, setDonationAmount }: D
 
     return (
         <div className="mt-8 mb-4">
-            <label className="text-semibold">{c('Label').t`Donation amount`}</label>
+            <div className="flex justify-space-between items-center">
+                <label className="text-semibold">{c('Label').t`Donation amount`}</label>
+                {showCurrencySelector && (
+                    <CurrencySelector
+                        disabled={isSubmitting}
+                        mode="select-two"
+                        currency={currency}
+                        currencies={DONATION_CURRENCIES}
+                        onSelect={onCurrencyChange}
+                        unstyled
+                        fullWidth={false}
+                        className="color-primary text-bold"
+                    />
+                )}
+            </div>
             <div role="radiogroup" id="donationSelect" className="unstyled m-0 mt-1 flex flex-row gap-2">
                 {DONATION_AMOUNTS_MINOR_UNITS.map((amount: number) => {
                     const isSelected = !showInput && selectedButton === amount;
@@ -78,6 +105,7 @@ const DonationAmountSelect = ({ currency, donationAmount, setDonationAmount }: D
                             key={amount}
                             size="medium"
                             shape="solid"
+                            disabled={isSubmitting}
                             color={isSelected ? 'norm' : 'weak'}
                             style={isSelected ? undefined : unselectedStyle}
                             onClick={() => handleSelect(amount)}
@@ -94,6 +122,7 @@ const DonationAmountSelect = ({ currency, donationAmount, setDonationAmount }: D
                     <Button
                         size="medium"
                         shape="solid"
+                        disabled={isSubmitting}
                         style={unselectedStyle}
                         onClick={() => {
                             setShowInput(true);
@@ -113,6 +142,7 @@ const DonationAmountSelect = ({ currency, donationAmount, setDonationAmount }: D
                         value={donationAmount / divisor}
                         containerProps={{ style: { '--min-w-custom': '6rem' } }}
                         onChange={handleChange}
+                        disabled={isSubmitting}
                     />
                 )}
             </div>
