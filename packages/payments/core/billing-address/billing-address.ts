@@ -64,6 +64,25 @@ export function getBillingAddressStatus(billingAddress: BillingAddress, zipCodeV
     return BILLING_ADDRESS_VALID;
 }
 
+export function zipCodeValidator(billingAddress: BillingAddress) {
+    const billingAddressStatus = getBillingAddressStatus(billingAddress);
+    if (!billingAddressStatus.valid && billingAddressStatus.reason === 'invalidZipCode') {
+        if (billingAddress.CountryCode === 'US') {
+            return c('Error').t`Please enter a valid ZIP code`;
+        }
+        return c('Error').t`Please enter a valid postal code`;
+    }
+
+    if (!billingAddressStatus.valid && billingAddressStatus.reason === 'missingZipCode') {
+        if (billingAddress.CountryCode === 'US') {
+            return c('Error').t`Please enter ZIP code`;
+        }
+        return c('Error').t`Please enter postal code`;
+    }
+
+    return '';
+}
+
 export function billingCountryValidator(billingAddress: BillingAddress) {
     const billingAddressStatus = getBillingAddressStatus(billingAddress);
     if (!billingAddressStatus.valid && billingAddressStatus.reason === 'missingCountry') {

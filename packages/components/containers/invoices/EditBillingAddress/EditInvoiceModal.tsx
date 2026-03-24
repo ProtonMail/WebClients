@@ -16,10 +16,10 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { type FullBillingAddress, type Invoice, isCountryWithRequiredPostalCode } from '@proton/payments';
+import { zipCodeValidator } from '@proton/payments/core/billing-address/billing-address';
 import type { BillingAddressValidationResult } from '@proton/payments/core/errors';
 import { WrongBillingAddressError, backendBillingAddressFieldError } from '@proton/payments/core/errors';
 import { getVatNumberName } from '@proton/payments/ui';
-import { zipCodeValidator } from '@proton/payments/ui/billing-address/containers/helpers';
 import { getVatFormErrors } from '@proton/payments/ui/billing-address/hooks/useVatFormValidation';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -116,12 +116,8 @@ export const EditInvoiceModal = (props: Props) => {
                                 }))
                             }
                             error={
-                                validator([
-                                    zipCodeValidator(
-                                        invoiceBillingAddress.BillingAddress.CountryCode,
-                                        invoiceBillingAddress.BillingAddress.ZipCode
-                                    ),
-                                ]) || backendBillingAddressFieldError(backendErrors?.ZipCode)
+                                validator([zipCodeValidator(invoiceBillingAddress.BillingAddress)]) ||
+                                backendBillingAddressFieldError(backendErrors?.ZipCode)
                             }
                         />
                     )}
