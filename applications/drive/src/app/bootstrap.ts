@@ -2,7 +2,7 @@ import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActio
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
-import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
+import { setupGuestCrossStorage } from '@proton/cross-storage/account/guest';
 import { FeatureCode, fetchFeatures } from '@proton/features';
 import createApi from '@proton/shared/lib/api/createApi';
 import { queryUserSettings } from '@proton/shared/lib/api/drive/user';

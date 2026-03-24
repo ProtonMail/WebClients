@@ -13,7 +13,7 @@ import {
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { userSettingsThunk } from '@proton/account/userSettings';
-import { initMainHost } from '@proton/cross-storage/lib';
+import { initMainHost } from '@proton/cross-storage/host';
 import { mailSettingsThunk } from '@proton/mail/store/mailSettings';
 import createApi from '@proton/shared/lib/api/createApi';
 import { requestFork } from '@proton/shared/lib/authentication/fork';

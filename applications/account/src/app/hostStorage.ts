@@ -1,5 +1,5 @@
-import { createHost } from '@proton/cross-storage';
-import { Action, type ProtonMessageResponses, type ProtonMessages } from '@proton/cross-storage/account-impl';
+import { Action, type ProtonMessageResponses, type ProtonMessages } from '@proton/cross-storage/account/interface';
+import { createHost } from '@proton/cross-storage/host';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 const handler = async (message: ProtonMessages): Promise<ProtonMessageResponses | undefined> => {
