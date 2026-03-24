@@ -21,7 +21,6 @@ import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 
 import ModalContentLoader from '../../components/modals/ModalContentLoader';
-import ErrorState from '../../components/modals/ShareLinkModal/ErrorState';
 import { useFlagsDriveDirectSharing } from '../../flags/useFlagsDriveDirectSharing';
 import { useFlagsDrivePublicSharing } from '../../flags/useFlagsDrivePublicSharing';
 import { DirectSharingAutocomplete } from './DirectSharing/DirectSharingAutocomplete';
@@ -29,6 +28,7 @@ import { DirectSharingFooter } from './DirectSharing/DirectSharingFooter';
 import { DirectSharingInviteMessage } from './DirectSharing/DirectSharingInviteMessage';
 import { DirectSharingListing } from './DirectSharing/DirectSharingListing';
 import { useShareInvitees } from './DirectSharing/useShareInvitees';
+import ErrorState from './ErrorState';
 import { PublicSharing } from './PublicSharing/PublicSharing';
 import { useSharingSettingsModal } from './SharingSettingsModal';
 import type { DirectMember, DirectSharingRole } from './interfaces';
