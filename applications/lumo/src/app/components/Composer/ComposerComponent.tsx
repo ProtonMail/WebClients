@@ -126,28 +126,11 @@ const ComposerComponentInner = ({
         fileUploadMode,
     } = useFileHandling({ messageChain, onShowDriveBrowser, spaceId, uploadToDrive: driveContext?.uploadFile });
 
-    // const sendGenerateMessage = useCallback(
-    //     async (editor: any) => {
-    //         if (isProcessingAttachment) {
-    //             console.log('Submission blocked: files are still being processed');
-    //             return;
-    //         }
-
-    //         if (!editor?.isEmpty) {
-    //             const markdown = editor?.storage.markdown.getMarkdown();
-    //             if (!markdown) return;
-    //             editor?.commands.clearContent();
-    //             await handleSendMessage(markdown, isWebSearchButtonToggled);
-    //         }
-    //     },
-    //     [handleSendMessage, isWebSearchButtonToggled, isProcessingAttachment]
-    // );
-
     const fileInputRef = useRef<HTMLInputElement>(null);
 
-    // const handleDrawSketch = useCallback(() => {
-    //     setShowDrawingModal(true);
-    // }, []);
+    const handleDrawSketch = useCallback(() => {
+        setShowDrawingModal(true);
+    }, []);
 
     // Auto-open sketch canvas when navigated from gallery with ?sketch=1
     useEffect(() => {
@@ -181,19 +164,6 @@ const ComposerComponentInner = ({
         handleDeleteAttachment
     );
 
-    // const handleDrawingExport = useCallback(
-    //     async (imageData: string) => {
-    //         const file = base64ToFile(imageData, `sketch-${Date.now()}.png`);
-    //         await handleFileProcessing(file);
-    //         createNotification({
-    //             text: c('collider_2025: Info').t`Sketch added as attachment`,
-    //             type: 'success',
-    //         });
-    //     },
-    //     [handleFileProcessing, createNotification]
-    // );
-
-   //TODO: check this after rebase
     const handleDrawingExport = useCallback(
         async (imageData: string, _mode: string, description: string) => {
             const file = base64ToFile(imageData, `sketch-${Date.now()}.png`);
@@ -293,38 +263,23 @@ const ComposerComponentInner = ({
         }
     }, [handleFileProcessing]);
 
-    const handleDrawSketch = useCallback(() => {
-        setShowDrawingModal(true);
-    }, []);
+    // Auto-submit after sketch export: set description as textarea content and send
+    useEffect(() => {
+        if (pendingSketchDescription === null || isProcessingAttachment) return;
 
-    const handleDrawingExport = useCallback(
-        async (imageData: string) => {
-            const file = base64ToFile(imageData, `sketch-${Date.now()}.png`);
-            await handleFileProcessing(file);
-            createNotification({
-                text: c('collider_2025: Info').t`Sketch added as attachment`,
-                type: 'success',
-            });
-        },
-        [handleFileProcessing, createNotification]
-    );
+        if (pendingSketchDescription) {
+            setValue(pendingSketchDescription);
+        }
 
-    //TODO: check this after rebase
-    // Auto-submit after sketch export: set description as editor content and send
-        useEffect(() => {
-            if (pendingSketchDescription === null || isProcessingAttachment || !editor) return;
-    
+        const timer = setTimeout(() => {
             if (pendingSketchDescription) {
-                editor.commands.setContent(pendingSketchDescription);
+                void sendGenerateMessage(pendingSketchDescription);
             }
-    
-            const timer = setTimeout(() => {
-                sendGenerateMessage(editor);
-                setPendingSketchDescription(null);
-            }, 100);
-    
-            return () => clearTimeout(timer);
-        }, [pendingSketchDescription, isProcessingAttachment, editor, sendGenerateMessage]);
+            setPendingSketchDescription(null);
+        }, 100);
+
+        return () => clearTimeout(timer);
+    }, [pendingSketchDescription, isProcessingAttachment, setValue, sendGenerateMessage]);
 
     const showLegalDisclaimer = canShowLegalDisclaimer && !isEditorFocused && isEmpty;
 
