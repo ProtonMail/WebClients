@@ -357,7 +357,7 @@ export const useSharingModalState = ({
         nodeUid,
         roleOnParentNode,
         fileName,
-        mediaType,
+        mediaType: isAlbum ? 'Album' : mediaType,
         canChangePermissions,
         ownerDisplayName,
         ownerEmail,
