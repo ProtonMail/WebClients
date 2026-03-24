@@ -443,6 +443,9 @@
       "Go to the next available appointment": [
         "至下一個可用預定"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "了解"
       ],
@@ -1067,6 +1070,9 @@
       ],
       "Users": [
         "使用者"
+      ],
+      "Writing assistant": [
+        "撰寫助手"
       ]
     },
     "Alarm notification": {
@@ -1302,6 +1308,9 @@
       "2 TB data storage": [
         "2 TB 的總儲存空間"
       ],
+      "Access 15,000+ servers in 120+ countries": [
+        "存取 15,000+ 臺伺服器，分布於 120+ 個國家"
+      ],
       "Access advanced AI models": [
         "存取進階 AI 模型"
       ],
@@ -1316,6 +1325,11 @@
       ],
       "Unlimited daily chats": [
         "無限每日聊天"
+      ]
+    },
+    "BF2025: Tooltip": {
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "精心設計的 NetShield 保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
       ]
     },
     "Billing cycle option": {
@@ -3635,6 +3649,9 @@
       "Please activate your search again": [
         "請再次啟用搜尋"
       ],
+      "Please complete the billing details": [
+        "請完成付款詳細資料"
+      ],
       "Please create an address first.": [
         "請先創建一個位址。"
       ],
@@ -3773,6 +3790,9 @@
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此欄位還剩下 ${ maximumLength } 個字元。"
       ],
+      "This field is invalid": [
+        "此欄位無效"
+      ],
       "This field is required": [
         "此欄位必填"
       ],
@@ -3849,6 +3869,9 @@
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
         "請使用已經轉寄至 ${ MAIL_APP_NAME } 的 Gmail 位址登入"
+      ],
+      "Please sign in with the same Gmail address you originally connected": [
+        "請使用您最初連接的相同電子郵件地址登入"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4739,6 +4762,11 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "選取 ${ boldExport } 以將行事曆匯出為 ICS 檔案。"
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "進階匯入"
       ]
     },
     "Import warning": {
@@ -6075,6 +6103,9 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "您的付款日是 ${ renewalTime }。您可隨時取消。"
       ],
       "Your online activity is protected": [
         "你的線上活動受到保護"
@@ -7675,6 +7706,9 @@
       ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
+      ],
+      "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
+        "請支持 (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } + 使用者)"
       ],
       "Priority email support": [
         "優先電子郵件支援"
@@ -10894,6 +10928,9 @@
       "Change password": [
         "更改密碼"
       ],
+      "Choose a provider": [
+        "選擇服務商"
+      ],
       "Choose a time": [
         "選擇一個時段"
       ],
@@ -10953,6 +10990,9 @@
       ],
       "Currency": [
         "貨幣"
+      ],
+      "Custom": [
+        "自訂"
       ],
       "Customize and confirm": [
         "自訂並確認"
@@ -11143,6 +11183,9 @@
       "Import groups": [
         "匯入群組"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "匯入您的資料至 ${ BRAND_NAME }"
+      ],
       "Information exposed in breach": [
         "於外洩的資料"
       ],
@@ -11298,6 +11341,9 @@
       ],
       "Select contact group": [
         "選擇聯絡人群組"
+      ],
+      "Select data to import": [
+        "選擇匯入資料"
       ],
       "Select event end date": [
         "請選擇事件的結束日期"
