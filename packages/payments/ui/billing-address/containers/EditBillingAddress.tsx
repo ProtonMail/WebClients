@@ -19,7 +19,7 @@ import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import type { FullBillingAddress } from '../../../core/billing-address/billing-address';
+import { type FullBillingAddress, zipCodeValidator } from '../../../core/billing-address/billing-address';
 import type { BillingAddressValidationResult } from '../../../core/errors';
 import { WrongBillingAddressError, backendBillingAddressFieldError } from '../../../core/errors';
 import type { FreeSubscription, PaymentsApi } from '../../../core/interface';
@@ -28,7 +28,6 @@ import { isFreeSubscription } from '../../../core/type-guards';
 import { CountryStateSelector } from '../components/CountryStateSelector';
 import { type CountriesWithCustomVatName, getVatNumberName } from '../components/VatNumberInput';
 import { getVatFormErrors } from '../hooks/useVatFormValidation';
-import { zipCodeValidator } from './helpers';
 
 export interface EditBillingAdressModalInputs {
     initialFullBillingAddress: FullBillingAddress;
@@ -184,12 +183,8 @@ export const EditBillingAddressModal = (props: Props) => {
                             }))
                         }
                         error={
-                            validator([
-                                zipCodeValidator(
-                                    fullBillingAddress.BillingAddress.CountryCode,
-                                    fullBillingAddress.BillingAddress.ZipCode
-                                ),
-                            ]) || backendBillingAddressFieldError(backendErrors?.ZipCode)
+                            validator([zipCodeValidator(fullBillingAddress.BillingAddress)]) ||
+                            backendBillingAddressFieldError(backendErrors?.ZipCode)
                         }
                     />
                     <InputFieldTwo
