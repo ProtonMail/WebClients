@@ -1676,6 +1676,9 @@
       ],
       "Use recovery code": [
         "回復用コードを使用"
+      ],
+      "Google": [
+        "Google"
       ]
     },
     "action": {
@@ -5079,6 +5082,18 @@
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
+      ],
+      "Invalid coupon": [
+        "無効なクーポン"
+      ],
+      "Please complete the billing details": [
+        "請求の詳細をご記入ください"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "最低寄付金額は ${ price } です。"
+      ],
+      "This field is invalid": [
+        "このフィールドは無効です"
       ]
     },
     "error": {
@@ -8659,6 +8674,9 @@
       ],
       "Enter your own password (as trusted contact).": [
         "(信頼済みの連絡先としての)パスワードを入力してください。"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "クレジット報酬は、ご友人が年額プランにご登録いただいてから1か月後、月額プランにご加入いただいてから2か月後に受け取れます。"
       ]
     },
     "info": {
@@ -9728,6 +9746,9 @@
       ],
       "Your password (trusted contact)": [
         "パスワード (信頼済みの連絡先)"
+      ],
+      "Import recent mails": [
+        "最近のメールをインポート"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11524,6 +11545,12 @@
     "Onboarding List Placeholder": {
       "Maybe later": [
         "今度やる"
+      ],
+      "Popular services": [
+        "人気のサービス"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "アカウントを ${ BRAND_NAME } に切り替える"
       ]
     },
     "Onboarding modal": {
@@ -15397,6 +15424,18 @@
       ],
       "Two-factor authentication": [
         "2 要素認証"
+      ],
+      "Choose a provider": [
+        "プロバイダーを選択"
+      ],
+      "Custom": [
+        "カスタム"
+      ],
+      "Reverse charge not supported": [
+        "リバースチャージはサポートされていません"
+      ],
+      "Spring Sale": [
+        "スプリングセール"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15955,6 +15994,11 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "サードパーティのSSOプロバイダにリダイレクトされます"
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "高度なインポート"
       ]
     }
   }
