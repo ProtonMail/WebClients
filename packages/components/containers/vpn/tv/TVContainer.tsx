@@ -8,6 +8,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import Loader from '@proton/components/components/loader/Loader';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
+import TotpInput from '@proton/components/components/v2/input/TotpInput';
 import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
@@ -16,8 +17,6 @@ import { pushForkSession } from '@proton/shared/lib/api/auth';
 import { VPN_TV_CLIENT_IDS, VPN_TV_PATHS_MAP } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
-
-import TVCodeInputs from './TVCodeInputs';
 
 enum STEP {
     ENTER_CODE,
@@ -88,7 +87,16 @@ const TVContainer = ({ background = true }: Props) => {
                 <form onSubmit={(event) => withLoading(handleSubmit(event))}>
                     <label className="h3 text-center mb-3" htmlFor="code-input">{c('Label')
                         .t`Enter the code displayed on your TV`}</label>
-                    <TVCodeInputs value={code} setValue={setCode} />
+                    <TotpInput
+                        length={8}
+                        onValue={(value) => setCode(value.toLocaleUpperCase())}
+                        value={code}
+                        centerDivider
+                        type="alphabet"
+                        autoComplete="one-time-code"
+                        error={error}
+                        id="tv-input"
+                    />
                     {error ? (
                         <>
                             <p className="mt-8 mb-0 pl-4 text-center color-danger">{c('Error')
