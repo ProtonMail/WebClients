@@ -174,6 +174,20 @@ export const isAccountLogin = (urlString: string) => {
     }
 };
 
+export const isCloseTicketURL = (urlString: string) => {
+    try {
+        const url = new URL(urlString);
+
+        if (getAppURL().account !== url.origin) {
+            return false;
+        }
+
+        return /^\/close-ticket\/?$/i.test(url.pathname);
+    } catch (error) {
+        return false;
+    }
+};
+
 export const isAccoutLite = (host: string) => {
     try {
         const hostURl = new URL(host);

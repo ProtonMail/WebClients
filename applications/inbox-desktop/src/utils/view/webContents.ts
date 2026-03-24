@@ -9,6 +9,7 @@ import {
     isAccoutLite,
     isBookingURL,
     isCalendar,
+    isCloseTicketURL,
     isGoogleOAuthAuthorizationURL,
     isHome,
     isHostAllowed,
@@ -173,6 +174,14 @@ export function handleWebContents(contents: WebContents) {
             return details.preventDefault();
         }
 
+        // Close ticket URLs use window.close() which doesn't work in Electron,
+        // so open them in the browser where the close tab button works correctly
+        if (isCloseTicketURL(details.url)) {
+            logger().info("opening close ticket URL in browser", details.url);
+            shell.openExternal(details.url);
+            return details.preventDefault();
+        }
+
         // Only redirect to a different browser view if the navigation is happening in
         // the visible web contents.
         if (isCurrentContent()) {
@@ -243,6 +252,8 @@ export function handleWebContents(contents: WebContents) {
             if (isAccoutLite(url)) return denyAndOpenExternal(`account lite in browser ${url}`);
 
             if (isUpsellURL(url)) return denyAndOpenExternal(`upsell in browser ${url}`);
+
+            if (isCloseTicketURL(url)) return denyAndOpenExternal(`close ticket in browser ${url}`);
 
             return denyAndShowView(url, "account", `account link in account view ${url}`);
         }
