@@ -615,18 +615,6 @@ describe('SubscriptionCheckout', () => {
             expect(container.querySelector('[class*="Banner"]')).not.toBeInTheDocument();
         });
 
-        it('should not display billing address error banner when payment is forbidden', () => {
-            const taxCountry = buildMockTaxCountry({
-                billingAddressErrorMessage: 'Please select billing country',
-                billingAddressValid: false,
-                billingAddressStatus: { valid: false, reason: 'missingCountry' },
-            });
-
-            renderWithTaxCountry(taxCountry, { forbidden: true, reason: 'some reason' });
-
-            expect(screen.queryByText('Please select billing country')).not.toBeInTheDocument();
-        });
-
         it('should display zip code error message', () => {
             const taxCountry = buildMockTaxCountry({
                 billingAddressErrorMessage: 'Please enter ZIP code',

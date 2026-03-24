@@ -406,7 +406,7 @@ const SubscriptionCheckout = ({
             </div>
 
             {/* Error message related to billing address */}
-            {!paymentForbiddenReason.forbidden && taxCountry.billingAddressErrorMessage && (
+            {taxCountry.billingAddressErrorMessage && (
                 <Banner variant="danger" className="mt-2 mb-2">
                     {taxCountry.billingAddressErrorMessage}
                 </Banner>
