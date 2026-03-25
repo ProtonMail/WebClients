@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { BRAND_NAME, MEET_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import upsellRoomIcon from '@proton/styles/assets/img/meet/upsell-room-icon.svg';
 
 import type { CTAModalBaseProps } from '../shared/types';
@@ -24,7 +24,7 @@ export const PersonalMeetingUpsellModal = ({ open, onClose, action }: CTAModalBa
             title={c('Info').t`You are almost there`}
             subtitle={getBoldFormattedText(
                 c('Info')
-                    .t`To use your personal meeting room, **create a free ${BRAND_NAME} account**. You will return to ${MEET_APP_NAME} automatically.`,
+                    .t`To use your personal meeting room, you'll need **a free ${BRAND_NAME} Account**. This only takes a few seconds.`,
                 'color-white'
             )}
         />
