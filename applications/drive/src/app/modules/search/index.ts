@@ -1,4 +1,3 @@
-export { NoopLatestEventIdProvider as SearchLatestEventIdProvider } from './internal/NoopLatestEventIdProvider';
-export { SearchModule } from './internal/SearchModule';
-export { EngineType, SdkType } from './internal/types';
-export type { SearchModuleState, SearchQuery, SearchResultItem, UserId } from './internal/types';
+export { SearchModule } from './internal_v2/mainThread/SearchModule';
+export { PersistentLatestEventIdProvider as SearchLatestEventIdProvider } from './internal_v2/shared/PersistentLatestEventIdProvider';
+export type { SearchModuleState, SearchQuery, SearchResultItem, UserId } from './internal_v2/shared/types';
