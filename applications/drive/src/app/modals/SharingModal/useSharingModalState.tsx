@@ -120,7 +120,10 @@ export const useSharingModalState = ({
         setSharingInfo(shareResult);
     };
 
-    const unshareNode = async (email: string) => {
+    const unshareNode: SharingModalViewProps['actions']['unshareNode'] = async (
+        email,
+        { refreshSharedWithMe } = {}
+    ) => {
         try {
             const updatedShareResult = await drive.unshareNode(nodeUid, {
                 users: [email],
@@ -132,6 +135,15 @@ export const useSharingModalState = ({
                 createNotification({ type: 'info', text: c('Notification').t`Access updated` });
             }
             await updateSharingState(updatedShareResult);
+
+            if (refreshSharedWithMe) {
+                await getBusDriver().emit(
+                    {
+                        type: BusDriverEventName.REFRESH_SHARED_WITH_ME,
+                    },
+                    drive
+                );
+            }
         } catch (e) {
             handleSdkError(e, { fallbackMessage: c('Error').t`Failed to unshare node`, extra: { nodeUid } });
         }
