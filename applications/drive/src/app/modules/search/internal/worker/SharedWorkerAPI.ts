@@ -1,105 +1,93 @@
-import { ActiveMainThreadBridgeService } from '../ActiveMainThreadBridgeService';
-import { Logger } from '../Logger';
-import type { MainThreadBridge } from '../MainThreadBridge';
-import { EngineOrchestrator } from '../engineOrchestrator';
-import { InvalidOrchestratorState } from '../errors';
-import { EngineType, SdkType } from '../types';
-import type { ClientId, SearchQuery, WorkerSearchResultEvent, UserId } from '../types';
+import type { MainThreadBridge } from '../mainThread/MainThreadBridge';
+import { Logger } from '../shared/Logger';
+import { SearchDB } from '../shared/SearchDB';
+import type { SearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
+import { createSearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
+import type { ClientId, SearchQuery, UserId, WorkerSearchResultEvent } from '../shared/types';
 import type { ClientContext } from './ClientCoordinator';
 import { ClientCoordinator } from './ClientCoordinator';
+import { IndexRegistry } from './index/IndexRegistry';
+import { IndexerTaskQueue } from './indexer/IndexerTaskQueue';
+import { TreeSubscriptionRegistry } from './indexer/TreeSubscriptionRegistry';
+import { SearchQueryExecutor } from './searcher/SearchQueryExecutor';
 
-const REQUIRED_CONFIG_KEY_FOR_DEFAULT_ENGINE = 'v1';
-
+/**
+ * SharedWorker API exposed via Comlink.
+ * Manages a single IndexerTaskQueue (no orchestrator). Coordinates clients across tabs.
+ */
 export class SharedWorkerAPI {
     private clientsCoordinator = new ClientCoordinator();
-    private readonly bridgeService = new ActiveMainThreadBridgeService();
-    private unsubscribeClientChanged: (() => void) | null = null;
-    private orchestrator: EngineOrchestrator | null = null;
+    private readonly indexRegistry = new IndexRegistry();
+    private indexer: IndexerTaskQueue | null = null;
+    private searcher: SearchQueryExecutor | null = null;
+    private stateChannel: SearchModuleStateUpdateChannel | null = null;
 
     constructor() {
-        this.unsubscribeClientChanged = this.clientsCoordinator.subscribeClientChanged(
-            this.handleActiveClientChanged.bind(this)
-        );
+        this.clientsCoordinator.subscribeClientChanged(this.handleActiveClientChanged.bind(this));
+    }
+
+    async registerClient(userId: UserId, clientId: ClientId, bridge: MainThreadBridge): Promise<void> {
+        this.clientsCoordinator.register(userId, clientId, bridge);
+    }
+
+    heartbeatClient(clientId: ClientId): void {
+        this.clientsCoordinator.heartbeat(clientId);
+    }
+
+    disconnectClient(clientId: ClientId): void {
+        this.clientsCoordinator.disconnect(clientId);
+    }
+
+    async search(query: SearchQuery, onEvent?: (event: WorkerSearchResultEvent) => void): Promise<void> {
+        if (!this.searcher) {
+            Logger.warn('SharedWorkerAPI: search called but no searcher available');
+            onEvent?.({ type: 'done' });
+            return;
+        }
+        for await (const item of this.searcher.performSearch(query)) {
+            onEvent?.({ type: 'item', ...item });
+        }
+        onEvent?.({ type: 'done' });
     }
 
     private handleActiveClientChanged(newClientContext: ClientContext | null) {
         if (newClientContext) {
             void this.onClientAvailable(newClientContext);
         } else {
-            this.orchestrator?.stop();
-            this.orchestrator = null;
+            this.indexer?.stop();
+            this.indexer = null;
+            this.searcher = null;
         }
     }
 
     private async onClientAvailable(clientContext: ClientContext): Promise<void> {
-        // Always update the service — all engines react automatically.
-        this.bridgeService.update(clientContext.bridge);
-
-        if (this.orchestrator) {
-            return;
+        // Stop existing indexer if running — bridge changed (tab swap).
+        if (this.indexer) {
+            this.indexer.stop();
+            this.indexer = null;
+            this.searcher = null;
         }
 
-        // First client: bootstrap the orchestrator and start engines.
         try {
-            this.orchestrator = new EngineOrchestrator(clientContext.userId, this.bridgeService);
-            // NOTE: Orchestrator configuration could be extracted when we have more than
-            // one engine configured.
-            await this.orchestrator.addEngine({
-                engineType: EngineType.MY_FILES,
-                configKey: REQUIRED_CONFIG_KEY_FOR_DEFAULT_ENGINE,
-                sdkType: SdkType.DRIVE,
+            const db = await SearchDB.open(clientContext.userId);
+
+            const treeSubscriptionRegistry = await TreeSubscriptionRegistry.create(clientContext.bridge, db);
+            this.searcher = new SearchQueryExecutor(this.indexRegistry, db);
+            this.indexer = new IndexerTaskQueue(this.indexRegistry, clientContext.bridge, db, treeSubscriptionRegistry);
+
+            this.stateChannel = createSearchModuleStateUpdateChannel(clientContext.userId);
+            this.indexer.onStateChange((state) => {
+                this.stateChannel?.postMessage({
+                    isInitialIndexing: state.isInitialIndexing,
+                    isIndexing: state.isIndexing,
+                    isSearchable: state.isSearchable,
+                });
             });
-            this.orchestrator.start();
+
+            await this.indexer.start();
         } catch (error) {
-            Logger.error('SharedWorkerAPI: failed to start the engine orchestrator', error);
-            this.orchestrator = null;
-        }
-    }
-
-    registerClient(userId: UserId, clientId: ClientId, bridge: MainThreadBridge) {
-        Logger.info(`SharedWorkerAPI: client registered <${clientId}>`);
-        this.clientsCoordinator.register(userId, clientId, bridge);
-    }
-
-    heartbeatClient(clientId: ClientId) {
-        Logger.info(`SharedWorkerAPI: client heartbeat <${clientId}>`);
-        this.clientsCoordinator.heartbeat(clientId);
-    }
-
-    disconnectClient(clientId: ClientId) {
-        Logger.info(`SharedWorkerAPI: client disconnected <${clientId}>`);
-        this.clientsCoordinator.disconnect(clientId);
-    }
-
-    /**
-     * Stream search results to the main thread via a Comlink-proxied callback.
-     *
-     * Events and completion are sent through a single callback (one MessagePort)
-     * to guarantee delivery order. We cannot rely on the Promise return for
-     * signalling completion because it resolves on a different Comlink port,
-     * which can race ahead of pending event messages.
-     */
-    async search(query: SearchQuery, onEvent?: (event: WorkerSearchResultEvent) => void): Promise<void> {
-        if (!this.orchestrator) {
-            const error = new InvalidOrchestratorState(`Search query done without ready orchestrator`);
-            Logger.error(`SharedWorkerAPI: Search query done without ready orchestrator`, error);
+            Logger.error('SharedWorkerAPI: failed to start indexer', error);
             throw error;
         }
-
-        for await (const item of this.orchestrator.search(query)) {
-            onEvent?.({ type: 'item', ...item });
-        }
-
-        onEvent?.({ type: 'done' });
     }
-
-    dispose() {
-        this.orchestrator?.stop();
-        this.orchestrator = null;
-        if (this.unsubscribeClientChanged) {
-            this.unsubscribeClientChanged();
-        }
-    }
-
-    // TODO: Monitor network availability and pause/resume indexing accordingly.
 }
