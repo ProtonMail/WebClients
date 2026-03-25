@@ -33,6 +33,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { getTimeZoneOptions, getTimezone } from '@proton/shared/lib/date/timezone';
 import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
+import clsx from '@proton/utils/clsx';
 
 import { getNextOccurrence } from '../../utils/getNextOccurrence';
 import { formatTimeHHMM } from '../../utils/timeFormat';
@@ -387,11 +388,16 @@ export const ScheduleMeetingForm = ({
                     <div className="text-center">
                         <ScheduleMeetingSvgIcon variant={variant} />
                     </div>
-                    <div className="create-container-title mb-10 w-full text-center text-semibold">
+                    <div
+                        className={clsx(
+                            'create-container-title w-full text-center text-semibold',
+                            isEdit ? 'mb-10' : 'mb-2'
+                        )}
+                    >
                         {meeting ? values.meetingName : c('Title').t`Schedule a meeting`}
                     </div>
                     {!isEdit && (
-                        <div className="text-left mb-5">
+                        <div className="flex justify-center mb-8">
                             <InlineLinkButton
                                 onClick={goToCalendar}
                                 className="flex text-no-decoration schedule-proton-calendar-button"
@@ -410,7 +416,7 @@ export const ScheduleMeetingForm = ({
                         <InputFieldTwo
                             id="meetingName"
                             name="meetingName"
-                            placeholder={c('Placeholder').t`e.g., Team sync, project update`}
+                            placeholder={c('Placeholder').t`Meeting name, e.g. team sync, project update, etc`}
                             onChange={(e) => {
                                 setValues({ ...values, meetingName: e.target.value });
                                 setTouched({ ...touched, meetingName: true });

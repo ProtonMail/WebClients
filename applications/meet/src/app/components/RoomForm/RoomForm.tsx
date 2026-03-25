@@ -105,7 +105,7 @@ export const RoomForm = ({ id, variant, onSubmit, initialName, onClose }: RoomFo
             <div className="flex self-stretch items-center gap-4 my-4">
                 <IcTextAlignLeft size={5} className="color-hint" />
                 <Input
-                    placeholder={c('Placeholder').t`e.g., Daily room, project hub`}
+                    placeholder={c('Placeholder').t`Room name, e.g. team sync, project update, etc`}
                     className="input-name rounded-full px-4 py-2"
                     value={roomName}
                     onChange={(e) => setRoomName(e.target.value)}
