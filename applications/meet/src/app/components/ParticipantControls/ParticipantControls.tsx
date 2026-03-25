@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { useLocalParticipant } from '@livekit/components-react';
 import { c } from 'ttag';
 
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
 import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophone } from '@proton/icons/icons/IcMeetMicrophone';
@@ -57,6 +58,7 @@ export const ParticipantControls = () => {
     const page = useMeetSelector(selectPage);
     const isLargerThanMd = useIsLargerThanMd();
     const isNarrowHeight = useIsNarrowHeight();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const sideBarState = useMeetSelector(selectSideBarState);
     const popupState = useMeetSelector(selectPopupState);
@@ -311,7 +313,7 @@ export const ParticipantControls = () => {
                     <div className="flex lg:hidden gap-1 sm:gap-2 flex-nowrap">
                         {isMobile() ? (
                             <>
-                                <ChatButton />
+                                {!viewportWidth.xsmall && <ChatButton />}
                                 <EmojiReactionButton />
                             </>
                         ) : (
