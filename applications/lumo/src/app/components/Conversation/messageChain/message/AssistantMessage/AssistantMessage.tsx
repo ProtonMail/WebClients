@@ -270,7 +270,6 @@ const AssistantMessage = ({
                                             handleLinkClick={handleLinkClick}
                                             sourcesContainerRef={sourcesContainerRef}
                                             reasoning={message.reasoning}
-                                            // toolCallResults={searchResults}
                                         />
                                     ) : (
                                         <EmptyMessage />

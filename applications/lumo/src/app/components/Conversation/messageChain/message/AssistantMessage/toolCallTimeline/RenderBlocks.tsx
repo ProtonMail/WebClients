@@ -19,7 +19,6 @@ interface RenderBlocksProps {
     handleLinkClick: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
     sourcesContainerRef: React.MutableRefObject<HTMLDivElement | null>;
     reasoning?: string;
-    // toolCallResults?: SearchItem[] | null;
 }
 
 /**
