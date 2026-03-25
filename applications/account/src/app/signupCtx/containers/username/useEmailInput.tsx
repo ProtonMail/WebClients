@@ -19,6 +19,7 @@ interface Props {
     autoFocus?: boolean;
     bigger?: boolean;
     inputClassName?: string;
+    placeholder?: string;
 
     emailReadOnly?: boolean;
     emailDisabled?: boolean;
@@ -39,6 +40,7 @@ const useEmailInput = ({
     inputClassName,
     usernameLabelHidden,
     usernameLabel,
+    placeholder,
 }: Props) => {
     const anchorRef = useRef<HTMLButtonElement | null>(null);
     const accountDataContext = useAccountFormDataContext();
@@ -105,6 +107,7 @@ const useEmailInput = ({
                                 ref={refs.email}
                                 id="email"
                                 label={emailLabelHidden ? undefined : c('Signup label').t`Email address`}
+                                placeholder={placeholder}
                                 inputClassName="email-input-field"
                                 error={errors.email}
                                 suffix={(() => {

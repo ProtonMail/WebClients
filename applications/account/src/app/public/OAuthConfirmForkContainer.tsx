@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { continueToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 
 import Content from './Content';
 import Header from './Header';
@@ -44,10 +45,7 @@ const OAuthConfirmForkContainer = ({ name = '', image, onConfirm, onCancel }: Pr
                     onClick={() => withLoading(onConfirm())}
                     loading={loading}
                 >
-                    {
-                        // translator: variable here is the name of the service to login to. Complete sentence: "Continue to SimpleLogin"
-                        c('Action').t`Continue to ${name}`
-                    }
+                    {continueToPlanOrAppNameText(name)}
                 </Button>
                 <Button shape="ghost" color="norm" fullWidth size="large" onClick={onCancel} disabled={loading}>
                     {c('Action').t`Cancel`}
