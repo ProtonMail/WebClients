@@ -613,6 +613,7 @@ describe('elements', () => {
                     elements,
                     bypassFilter: [messageBypassFilter.ID],
                     labelID: MAILBOX_LABEL_IDS.INBOX,
+                    categoryIDs: [],
                     filter: { Unread: 1 },
                     conversationMode: false,
                     search: {
@@ -661,10 +662,12 @@ describe('elements', () => {
                 elements,
                 bypassFilter: [],
                 labelID: MAILBOX_LABEL_IDS.DRAFTS,
+                categoryIDs: [],
                 filter: {},
                 conversationMode: false,
                 search: {} as SearchParameters,
             });
+
             expect(draftsFiltered).toEqual([draftMessage]);
 
             // When viewing Inbox folder, should only see non-deleted inbox messages
@@ -672,10 +675,12 @@ describe('elements', () => {
                 elements,
                 bypassFilter: [],
                 labelID: MAILBOX_LABEL_IDS.INBOX,
+                categoryIDs: [],
                 filter: {},
                 conversationMode: false,
                 search: {} as SearchParameters,
             });
+
             expect(inboxFiltered).toEqual([inboxMessage]);
 
             // When viewing SOFT_DELETED folder, should see all deleted items
@@ -683,10 +688,12 @@ describe('elements', () => {
                 elements,
                 bypassFilter: [],
                 labelID: MAILBOX_LABEL_IDS.SOFT_DELETED,
+                categoryIDs: [],
                 filter: {},
                 conversationMode: false,
                 search: {} as SearchParameters,
             });
+
             expect(deletedFiltered).toEqual([softDeletedDraft, softDeletedInboxMessage]);
         });
 
@@ -710,11 +717,11 @@ describe('elements', () => {
                     const filtered = filterElementsInState({
                         elements: [messageInPromotions, messageInSocial],
                         bypassFilter: [],
-                        labelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                        labelID: MAILBOX_LABEL_IDS.INBOX,
+                        categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
                         filter: {},
                         conversationMode: false,
                         search: {} as SearchParameters,
-                        disabledCategoriesIDs: [],
                     });
 
                     expect(filtered).toEqual([messageInPromotions]);
@@ -758,14 +765,15 @@ describe('elements', () => {
                             messageInTransaction,
                         ],
                         bypassFilter: [],
-                        labelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
-                        filter: {},
-                        conversationMode: false,
-                        search: {} as SearchParameters,
-                        disabledCategoriesIDs: [
+                        labelID: MAILBOX_LABEL_IDS.INBOX,
+                        categoryIDs: [
+                            MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                             MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                             MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                         ],
+                        filter: {},
+                        conversationMode: false,
+                        search: {} as SearchParameters,
                     });
 
                     expect(filtered).toEqual([messageInPromotions, messageInDefaultCategory, messageInSocial]);
@@ -782,14 +790,11 @@ describe('elements', () => {
                     const filtered = filterElementsInState({
                         elements: [messageInPromotions],
                         bypassFilter: [],
-                        labelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                        labelID: MAILBOX_LABEL_IDS.INBOX,
+                        categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
                         filter: {},
                         conversationMode: false,
                         search: {} as SearchParameters,
-                        disabledCategoriesIDs: [
-                            MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-                            MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                        ],
                     });
 
                     expect(filtered).toEqual([]);
@@ -819,11 +824,11 @@ describe('elements', () => {
                     const filtered = filterElementsInState({
                         elements: [converationInPromotions, conversationInSocial],
                         bypassFilter: [],
-                        labelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                        labelID: MAILBOX_LABEL_IDS.INBOX,
+                        categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
                         filter: {},
                         conversationMode: true,
                         search: {} as SearchParameters,
-                        disabledCategoriesIDs: [],
                     });
 
                     expect(filtered).toEqual([converationInPromotions]);
@@ -875,14 +880,15 @@ describe('elements', () => {
                             conversationInTransaction,
                         ],
                         bypassFilter: [],
-                        labelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
-                        filter: {},
-                        conversationMode: true,
-                        search: {} as SearchParameters,
-                        disabledCategoriesIDs: [
+                        labelID: MAILBOX_LABEL_IDS.INBOX,
+                        categoryIDs: [
+                            MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                             MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                             MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                         ],
+                        filter: {},
+                        conversationMode: true,
+                        search: {} as SearchParameters,
                     });
 
                     expect(filtered).toEqual([
@@ -905,14 +911,11 @@ describe('elements', () => {
                     const filtered = filterElementsInState({
                         elements: [converationInPromotions],
                         bypassFilter: [],
-                        labelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                        labelID: MAILBOX_LABEL_IDS.INBOX,
+                        categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
                         filter: {},
                         conversationMode: false,
                         search: {} as SearchParameters,
-                        disabledCategoriesIDs: [
-                            MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-                            MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                        ],
                     });
 
                     expect(filtered).toEqual([]);
