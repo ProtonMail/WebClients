@@ -11,6 +11,7 @@ interface ReportMeetErrorOptions {
     level?: SeverityLevel;
     context?: Record<string, unknown>;
     fingerprint?: string[];
+    tags?: Record<string, string>;
 }
 
 export type ReportMeetError = (label: string, options?: ReportMeetErrorOptions | unknown) => void;
@@ -31,12 +32,18 @@ export const useMeetErrorReporting = () => {
 
                 errorCountMapRef.current.set(label, currentCount + 1);
 
-                if (options && typeof options === 'object' && 'context' in options) {
-                    const { level = 'error', context, fingerprint } = options as ReportMeetErrorOptions;
+                const isReportMeetErrorOptions =
+                    !!options &&
+                    typeof options === 'object' &&
+                    ('context' in options || 'level' in options || 'fingerprint' in options || 'tags' in options);
+
+                if (isReportMeetErrorOptions) {
+                    const { level = 'error', context, fingerprint, tags } = options as ReportMeetErrorOptions;
                     captureMessage(label, {
                         level,
                         extra: context,
                         fingerprint,
+                        tags,
                     });
                 } else {
                     captureMessage(label, { level: 'error', extra: { error: options } });
