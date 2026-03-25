@@ -9,8 +9,6 @@ import { useLumoTheme } from '../../../providers';
 import type { LumoThemeCardProps } from './LumoThemeCard';
 import LumoThemeCard from './LumoThemeCard';
 
-import './LumoThemeButton.scss';
-
 const LUMO_AUTO_THEME = 'auto' as const;
 
 const getThemeCards = (): LumoThemeCardProps[] => [
