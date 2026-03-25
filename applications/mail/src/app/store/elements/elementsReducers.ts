@@ -898,11 +898,11 @@ const updateTotal = ({
             elements: elementsBeforeAction,
             bypassFilter: currentContextIdentifier === contextIdentifier ? state.bypassFilter : [],
             labelID: context.labelID,
+            categoryIDs: context.categoryIDs,
             filter: context.filter || {},
             conversationMode: context.conversationMode,
             search: getSearchParameters(context),
             newsletterSubscriptionID: context.newsletterSubscriptionID,
-            disabledCategoriesIDs: [],
         });
 
         // Local filtering of state after change for the current context
@@ -910,11 +910,11 @@ const updateTotal = ({
             elements,
             bypassFilter: currentContextIdentifier === contextIdentifier ? state.bypassFilter : [],
             labelID: context.labelID,
+            categoryIDs: context.categoryIDs,
             filter: context.filter || {},
             conversationMode: context.conversationMode,
             search: getSearchParameters(context),
             newsletterSubscriptionID: context.newsletterSubscriptionID,
-            disabledCategoriesIDs: [],
         });
 
         const totalBefore = state.total[contextIdentifier] || 0;

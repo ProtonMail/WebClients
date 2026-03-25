@@ -2,7 +2,6 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { ES_EXTRA_RESULTS_LIMIT } from '@proton/encrypted-search/constants';
 import type { ESStatus, NormalizedSearchParams } from '@proton/encrypted-search/models';
-import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import type { MailSettingState } from '@proton/mail/store/mailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
@@ -107,11 +106,11 @@ export const contextTotal = createSelector([params, total], (params, total) => {
 });
 
 export const elements = createSelector(
-    [elementsMap, params, page, pageSize, contextPages, bypassFilter, addresses, selectDisabledCategoriesIDs],
-    (elements, params, page, pageSize, pages, bypassFilter, addresses, selectDisabledCategoriesIDs) => {
+    [elementsMap, params, page, pageSize, contextPages, bypassFilter, addresses],
+    (elements, params, page, pageSize, pages, bypassFilter, addresses) => {
         // Getting all params from the cache and not from scoped params
         // To prevent any de-synchronization between cache and the output of the memo
-        const { labelID, sort, filter, conversationMode, search } = params;
+        const { labelID, sort, filter, conversationMode, search, categoryIDs } = params;
 
         let finalSort = { ...sort };
         // The default sorting needs to be overridden when in inbox or snooze to display snoozed emails on top
@@ -144,11 +143,11 @@ export const elements = createSelector(
                   addresses: addresses?.value,
                   bypassFilter,
                   labelID,
+                  categoryIDs,
                   filter,
                   conversationMode,
                   search,
                   newsletterSubscriptionID: params.newsletterSubscriptionID,
-                  disabledCategoriesIDs: selectDisabledCategoriesIDs,
               })
             : [];
 
@@ -324,7 +323,13 @@ export const dynamicTotal = createSelector(
             return undefined;
         }
 
-        return getTotal(counts, params.labelID, params.filter, bypassFilter.length);
+        return getTotal({
+            counts,
+            labelID: params.labelID,
+            categoryIDs: params.categoryIDs,
+            filter: params.filter,
+            bypassFilterCount: bypassFilter.length,
+        });
     }
 );
 
