@@ -45,6 +45,7 @@ export interface TypeParams {
 
 interface ContextIdentifier {
     labelID: string;
+    categoryIDs: CategoryLabelID[];
     conversationMode: boolean;
     filter?: Filter;
     sort?: Sort;
@@ -426,6 +427,7 @@ export const getElementContextIdentifier = (contextFilter: ContextIdentifier) =>
 
     return JSON.stringify({
         labelID: contextFilter.labelID,
+        categoryIDs: contextFilter.categoryIDs.join(','),
         conversationMode: contextFilter.conversationMode,
         filter: contextFilter.filter,
         sort: contextFilter.sort,

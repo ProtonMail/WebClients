@@ -1,3 +1,4 @@
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Attachment, Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
@@ -116,17 +117,20 @@ export const expectMessagesLabelsSameArray = (array1?: string[], array2?: string
  */
 export const generateElementContextIdentifier = ({
     labelID,
+    categoryIDs = [],
     conversationMode = false,
     filter = {},
     sort = { sort: 'Time', desc: true },
 }: {
     labelID: string;
+    categoryIDs?: CategoryLabelID[];
     conversationMode?: boolean;
     filter?: Filter;
     sort?: Sort;
 }) => {
     return getElementContextIdentifier({
         labelID,
+        categoryIDs,
         conversationMode,
         filter,
         sort,

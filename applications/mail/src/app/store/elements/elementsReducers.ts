@@ -109,6 +109,7 @@ export const loadFulfilled = (
 
     const contextFilter = getElementContextIdentifier({
         labelID: params.labelID,
+        categoryIDs: params.categoryIDs,
         conversationMode: params.conversationMode,
         filter: params.filter,
         sort: params.sort,
@@ -156,6 +157,7 @@ export const showSerializedElements = (
 
     const contextFilter = getElementContextIdentifier({
         labelID: params.labelID,
+        categoryIDs: params.categoryIDs,
         conversationMode: params.conversationMode,
         filter: params.filter,
         sort: params.sort,
@@ -231,6 +233,7 @@ export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<
     const params = action.payload.params;
     const contextFilter = getElementContextIdentifier({
         labelID: params.labelID,
+        categoryIDs: params.categoryIDs,
         conversationMode: params.conversationMode,
         filter: params.filter,
         sort: params.sort,
@@ -267,6 +270,7 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
 
     const contextFilter = getElementContextIdentifier({
         labelID: params.labelID,
+        categoryIDs: params.categoryIDs,
         conversationMode: params.conversationMode,
         filter: params.filter,
         sort: params.sort,
@@ -312,6 +316,7 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
         // When some element bypass the filter in the current context, we need to update total in the "opposite" context
         const oppositeFilter = getElementContextIdentifier({
             labelID: params.labelID,
+            categoryIDs: params.categoryIDs,
             conversationMode: params.conversationMode,
             filter: { Unread: unreadFilter ? 0 : 1 },
             sort: params.sort,
@@ -349,6 +354,7 @@ export const optimisticDelete = (state: Draft<ElementsState>, action: PayloadAct
 
         const contextFilter = getElementContextIdentifier({
             labelID: params.labelID,
+            categoryIDs: params.categoryIDs,
             conversationMode: params.conversationMode,
             filter: params.filter,
             sort: params.sort,
@@ -485,6 +491,7 @@ export const setParams = (
 
     const prevContextFilter = getElementContextIdentifier({
         labelID: state.params.labelID,
+        categoryIDs: state.params.categoryIDs,
         conversationMode: state.params.conversationMode,
         filter: state.params.filter,
         sort: state.params.sort,
@@ -498,6 +505,7 @@ export const setParams = (
 
     const nextContextFilter = getElementContextIdentifier({
         labelID: params.labelID ?? state.params.labelID,
+        categoryIDs: params.categoryIDs ?? state.params.categoryIDs,
         conversationMode: params.conversationMode ?? state.params.conversationMode,
         filter: params.filter,
         sort: params.sort,
@@ -578,6 +586,7 @@ const handleBypassFilter = (
         // When some element bypass the filter in the current context, we need to update total in the "opposite" context
         const oppositeFilter = getElementContextIdentifier({
             labelID: state.params.labelID,
+            categoryIDs: state.params.categoryIDs,
             conversationMode: state.params.conversationMode,
             filter: { Unread: unreadFilter ? 0 : 1 },
             sort: state.params.sort,
@@ -865,6 +874,7 @@ const updateTotal = ({
 }) => {
     const currentContextIdentifier = getElementContextIdentifier({
         labelID: state.params.labelID,
+        categoryIDs: state.params.categoryIDs,
         conversationMode: state.params.conversationMode,
         filter: state.params.filter,
         sort: state.params.sort,

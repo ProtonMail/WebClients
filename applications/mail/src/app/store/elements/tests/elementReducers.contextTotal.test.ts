@@ -30,6 +30,7 @@ describe('Update context Total', () => {
             elements: {},
             total: {},
             params: {
+                categoryIDs: [],
                 filter: {},
                 conversationMode: true,
             },

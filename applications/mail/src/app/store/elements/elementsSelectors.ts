@@ -71,6 +71,7 @@ const currentLabelID = (_: MailState, { labelID }: { labelID: string }) => label
 export const contextPages = createSelector([params, pages], (params, pages) => {
     const contextFilter = getElementContextIdentifier({
         labelID: params.labelID,
+        categoryIDs: params.categoryIDs,
         conversationMode: params.conversationMode,
         filter: params.filter,
         sort: params.sort,
@@ -89,6 +90,7 @@ export const contextPages = createSelector([params, pages], (params, pages) => {
 export const contextTotal = createSelector([params, total], (params, total) => {
     const contextFilter = getElementContextIdentifier({
         labelID: params.labelID,
+        categoryIDs: params.categoryIDs,
         conversationMode: params.conversationMode,
         filter: params.filter,
         sort: params.sort,

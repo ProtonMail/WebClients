@@ -28,6 +28,7 @@ describe('labelConversationsPending', () => {
             elements: {},
             total: {},
             params: {
+                categoryIDs: [],
                 filter: {},
                 conversationMode: true,
             },
