@@ -131,6 +131,7 @@ export const PreJoinDetails = ({
                             onChange={(e) => onDisplayNameChange(e.target.value)}
                             placeholder={c('Placeholder').t`Enter your name`}
                             maxLength={64}
+                            autoFocus={true}
                         />
                     </InputFieldStacked>
                 </InputFieldStackedGroup>
