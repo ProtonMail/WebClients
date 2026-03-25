@@ -1360,6 +1360,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Uw PIN-code is verwijderd door een andere ${ PASS_APP_NAME }-client"
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Versleutelingscommunicatie voor desktop ontgrendeling mislukt."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "De desktop-app van ${ PASS_APP_NAME } is vergrendeld, deze moet ontgrendeld worden."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "De desktop-app van ${ PASS_APP_NAME } is niet geïnstalleerd."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "De desktop-app van ${ PASS_APP_NAME } reageert niet, draait deze wel?"
       ]
     },
     "Error message": {
@@ -2053,7 +2065,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2748,6 +2761,54 @@
       ],
       "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
         "U moet mogelijk toegangsrechten verlenen aan ${ PASS_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME } is momenteel offline. Open de extensie om te ontgrendelen."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } offline modus ingeschakeld."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Schakel de offline modus in om toegang te krijgen tot uw ${ PASS_SHORT_APP_NAME }-gegevens als u de internetverbinding verliest of als de servers van ${ BRAND_NAME } onbereikbaar zijn."
+      ],
+      "Enabling desktop auto-lock": [
+        "Desktop automatisch vergrendelen inschakelen"
+      ],
+      "Offline mode": [
+        "Offline modus"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Bevestig uw ${ BRAND_NAME } wachtwoord om offline modus in te schakelen"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Bevestig uw back-upwachtwoord om offline modus in te schakelen"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Bevestig uw extra wachtwoord om offline modus in te schakelen"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Bevestig uw extra wachtwoord om offline modus in te schakelen"
+      ],
+      "Reconnect": [
+        "Opnieuw verbinden"
+      ],
+      "Reconnecting": [
+        "Opnieuw verbinden"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Deze functie vereist dat de desktop-app ${ PASS_APP_NAME } is geïnstalleerd en actief is tijdens de installatie."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Wanneer ingeschakeld, heeft u nog steeds toegang tot uw ${ PASS_SHORT_APP_NAME }-gegevens als u de internetverbinding verliest of als de servers van ${ BRAND_NAME } onbereikbaar zijn."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "U kunt nu uw back-up wachtwoord gebruiken om ${ PASS_SHORT_APP_NAME } offline te openen"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "U kunt nu uw extra wachtwoord gebruiken om ${ PASS_SHORT_APP_NAME } offline te openen."
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "U kunt nu uw tweede wachtwoord gebruiken om ${ PASS_SHORT_APP_NAME } offline te openen"
       ]
     },
     "Keyboard key": {
@@ -3882,6 +3943,15 @@
       ],
       "ZIP or Postal code": [
         "Postcode"
+      ],
+      "Enable offline access": [
+        "Offline toegang inschakelen"
+      ],
+      "Keyboard shortcuts": [
+        "Sneltoetsen"
+      ],
+      "Offline mode": [
+        "Offline modus"
       ]
     },
     "Link": {
@@ -5207,6 +5277,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Met uw abonnement kunt u niet meerdere kluizen maken. Alle items worden geïmporteerd in uw eerste kluis. Upgrade uw abonnement om in meerdere kluizen te importeren."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } offline modus uitgeschakeld."
+      ],
+      "Too many attempts": [
+        "Te veel mislukte pogingen"
       ]
     }
   }

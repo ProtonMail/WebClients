@@ -764,6 +764,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
+      ],
+      "Configure": [
+        "Määritä"
       ]
     },
     "Browser": {
@@ -1289,6 +1292,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koodisi poistettiin toiselta ${ PASS_APP_NAME } -päätteeltä"
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Salattu yhteys työpöydän lukituksen avaamiseksi epäonnistui."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME } -työpöytäsovellus on lukittu; se on avattava."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "${ PASS_APP_NAME } -työpöytäsovellusta ei ole asennettu."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME } -työpöytäsovellus ei vastaa, onko se käynnissä?"
       ]
     },
     "Error message": {
@@ -2599,6 +2614,64 @@
       ],
       "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
         "Saatat joutua myöntämään käyttöoikeusluvan ${ PASS_APP_NAME } -sovellukselle."
+      ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME } on tällä hetkellä pois käytöstä. Avaa laajennus ottaaksesi käyttöön."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } offline-tila käytössä."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Ota offline-tila käyttöön, jotta voit käyttää ${ PASS_SHORT_APP_NAME } -tietoja, jos internetyhteys katkeaa tai ${ BRAND_NAME } -palvelimet eivät ole käytettävissä."
+      ],
+      "Enabling desktop auto-lock": [
+        "Otetaan käyttöön työpöydän automaattilukitus"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
+      ],
+      "Not configured": [
+        "Ei määritetty"
+      ],
+      "Offline mode": [
+        "Yhteydetön tila"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Avaa ${ PASS_APP_NAME } suuremmassa ikkunassa"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Avaa ${ PASS_APP_NAME } -ponnahdusikkuna"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Vahvista yhteydettömän tilan käyttöönotto ${ BRAND_NAME }-salasanallasi."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Vahvista varasalasanasi ottaaksesi yhteydettömän tilan käyttöön"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Vahvista lisäsalasanasi ottaaksesi yhteydettömän tilan käyttöön"
+      ],
+      "Reconnect": [
+        "Uudelleenyhdistä"
+      ],
+      "Reconnecting": [
+        "Yhdistetään uudelleen"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Tämä ominaisuus edellyttää, että ${ PASS_APP_NAME } -työpöytäsovellus on asennettu ja käynnissä asennuksen aikana."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Kun tämä on käytössä, voit edelleen käyttää ${ PASS_SHORT_APP_NAME } -tietoja, vaikka internetyhteys katkeaisi tai ${ BRAND_NAME } -palvelimet eivät olisi käytettävissä."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Voit nyt käyttää varasalasanaasi päästäksesi ${ PASS_SHORT_APP_NAME } -sovellukseen offline-tilassa"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Voit nyt käyttää lisäsalasanaasi päästäksesi ${ PASS_SHORT_APP_NAME } -sovellukseen offline-tilassa"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Voit nyt käyttää toista salasanaasi päästäksesi ${ PASS_SHORT_APP_NAME } -sovellukseen offline-tilassa"
       ]
     },
     "Keyboard key": {
@@ -3712,6 +3785,15 @@
       ],
       "ZIP or Postal code": [
         "Postinumero"
+      ],
+      "Enable offline access": [
+        "Käytä yhteydetöntä tilaa"
+      ],
+      "Keyboard shortcuts": [
+        "Pikanäppäimet"
+      ],
+      "Offline mode": [
+        "Yhteydetön tila"
       ]
     },
     "Link": {
@@ -5017,6 +5099,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Tilauksesi ei salli useiden holvien luontia, joten kaikki kohteet tuodaan ensimmäiseen holviisi. Tuo useisiin holveihin päivittämällä tilauksesi."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } offline-tila pois käytöstä."
+      ],
+      "Too many attempts": [
+        "Liian monta yritystä"
       ]
     }
   }

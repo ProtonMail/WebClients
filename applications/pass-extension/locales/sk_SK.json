@@ -1370,6 +1370,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš PIN kód bol odstránený iným klientom ${ PASS_APP_NAME }"
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "''Odblokovanie pracovnej plochy pomocou šifrovanej komunikácie sa nepodarilo."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Aplikácia ${ PASS_APP_NAME } pre počítače je uzamknutá, musí byť odomknutá."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Desktopová aplikácia ${ PASS_APP_NAME } nie je nainštalovaná."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Desktopová aplikácia ${ PASS_APP_NAME } neodpovedá, je spustená?"
       ]
     },
     "Error message": {
@@ -2813,6 +2825,60 @@
       ],
       "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
         "Možno budete musieť udeliť povolenie na prístup aplikácii ${ PASS_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME } je momentálne nedostupný. Otvorte rozšírenie na odomknutie."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Režim offline aplikácie ${ PASS_SHORT_APP_NAME } je povolený."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Povoliť offline režim na prístup k vašim údajom ${ PASS_SHORT_APP_NAME }, ak stratíte internetové pripojenie alebo ak servery ${ BRAND_NAME } nie sú dostupné."
+      ],
+      "Enabling desktop auto-lock": [
+        "Povoliť automatické uzamykanie plochy"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+      ],
+      "Offline mode": [
+        "Offline režim"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Potvrďte svoje ${ BRAND_NAME } heslo na povolenie offline režimu"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Potvrďte svoje záložné heslo na povolenie offline režimu"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Potvrďte svoje dodatočné heslo na povolenie offline režimu"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Potvrďte, prosím, svoje druhé heslo na povolenie offline režimu"
+      ],
+      "Reconnect": [
+        "Znovu pripojiť"
+      ],
+      "Reconnecting": [
+        "Opätovné pripájanie"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Táto funkcia vyžaduje, aby bola počas inštalácie nainštalovaná a spustená desktopová aplikácia ${ PASS_APP_NAME }."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Ak je táto funkcia povolená, môžete naďalej pristupovať k svojim údajom ${ PASS_SHORT_APP_NAME }, aj keď stratíte pripojenie k internetu alebo ak sú servery ${ BRAND_NAME } nedostupné."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Teraz môžete použiť svoje záložné heslo na prístup k ${ PASS_SHORT_APP_NAME } offline"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Teraz môžete použiť svoje dodatočné heslo na prístup k ${ PASS_SHORT_APP_NAME } offline"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Teraz môžete použiť svoje druhé heslo na prístup k ${ PASS_SHORT_APP_NAME } offline"
       ]
     },
     "Keyboard key": {
@@ -3975,6 +4041,15 @@
       ],
       "ZIP or Postal code": [
         "PSČ"
+      ],
+      "Enable offline access": [
+        "Povoliť offline prístup"
+      ],
+      "Keyboard shortcuts": [
+        "Klávesové skratky"
+      ],
+      "Offline mode": [
+        "Offline režim"
       ]
     },
     "Link": {
@@ -5330,6 +5405,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše predplatné vám neumožňuje vytvoriť viacero trezorov. Všetky položky budú importované do vášho prvého trezoru. Pre importovanie do viacerých trezorov si navýšte vaše predplatné."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Režim offline aplikácie ${ PASS_SHORT_APP_NAME } je zakázaný."
+      ],
+      "Too many attempts": [
+        "Príliš veľa pokusov"
       ]
     }
   }

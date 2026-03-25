@@ -787,6 +787,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ],
+      "Configure": [
+        "Configurare"
       ]
     },
     "Browser": {
@@ -1365,6 +1368,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Codul dvs. PIN a fost eliminat de către alt utilizator al ${ PASS_APP_NAME }."
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Eroare la criptarea comunicării pentru deblocarea desktop."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Aplicația desktop ${ PASS_APP_NAME } este blocată, trebuie deblocată."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Aplicația desktop ${ PASS_APP_NAME } nu este instalată."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Aplicația desktop ${ PASS_APP_NAME } nu răspunde, rulează?"
       ]
     },
     "Error message": {
@@ -2779,6 +2794,68 @@
       ],
       "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
         "Trebuie să acordați permisiunea de accesibilitate pentru ${ PASS_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME } este momentan deconectat. Deschideți extensia pentru a-l debloca."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Modul deconectat ${ PASS_SHORT_APP_NAME } activat."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Activați modul de deconectare pentru a vă accesa datele ${ PASS_SHORT_APP_NAME } dacă pierdeți conectivitatea la internet sau dacă serverele ${ BRAND_NAME } nu sunt accesibile."
+      ],
+      "Enabling desktop auto-lock": [
+        "Activare blocare automată a desktopului"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+      ],
+      "Not configured": [
+        "Neconfigurat"
+      ],
+      "Offline mode": [
+        "Mod deconectat"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Deschidere ${ PASS_APP_NAME } într-o fereastră mai mare"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Deschidere fereastră flotantă ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Confirmați parola ${ BRAND_NAME } pentru a activa modul deconectat."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Confirmați parola de rezervă pentru a activa modul deconectat."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Confirmați parola suplimentară pentru a activa modul deconectat."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Confirmați parola secundară pentru activare mod fără conexiune."
+      ],
+      "Reconnect": [
+        "Reconectare"
+      ],
+      "Reconnecting": [
+        "Se reconectează."
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Această funcție necesită ca aplicația desktop ${ PASS_APP_NAME } să fie instalată și rulată în timpul configurării."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Când este activată, puteți accesa în continuare datele ${ PASS_SHORT_APP_NAME } dacă pierdeți conectivitatea la internet sau dacă serverele ${ BRAND_NAME } nu sunt accesibile."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Acum vă puteți folosi parola de rezervă pentru a accesa ${ PASS_SHORT_APP_NAME } în mod deconectat."
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Acum vă puteți folosi parola suplimentară pentru a accesa ${ PASS_SHORT_APP_NAME } în mod deconectat."
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Acum vă puteți folosi parola secundară pentru a accesa ${ PASS_SHORT_APP_NAME } în mod deconectat."
       ]
     },
     "Keyboard key": {
@@ -3927,6 +4004,15 @@
       ],
       "ZIP or Postal code": [
         "Cod poștal"
+      ],
+      "Enable offline access": [
+        "Activare acces deconectat"
+      ],
+      "Keyboard shortcuts": [
+        "Combinații de taste"
+      ],
+      "Offline mode": [
+        "Mod deconectat"
       ]
     },
     "Link": {
@@ -5267,6 +5353,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonamentul nu vă permite să creați mai multe seifuri. Toate articolele vor fi importate în primul seif. Pentru a importa în mai multe seifuri, modificați-vă abonamentul."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Modul deconectat ${ PASS_SHORT_APP_NAME } dezactivat."
+      ],
+      "Too many attempts": [
+        "Prea multe încercări."
       ]
     }
   }

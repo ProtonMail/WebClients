@@ -2422,6 +2422,18 @@
         "(${ memberCount } учасники)",
         "(${ memberCount } учасників)",
         "(${ memberCount } учасників)"
+      ],
+      "Offline mode": [
+        "Автономний режим"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Будь ласка, підтвердьте ваш пароль ${ BRAND_NAME } для того, щоб увімкнути автономний режим"
+      ],
+      "Reconnect": [
+        "Перез'єднати"
+      ],
+      "Reconnecting": [
+        "Повторне з'єднання"
       ]
     },
     "Label": {
@@ -3417,6 +3429,15 @@
       ],
       "ZIP or Postal code": [
         "Поштовий індекс"
+      ],
+      "Enable offline access": [
+        "Увімкнути автономний доступ"
+      ],
+      "Keyboard shortcuts": [
+        "Комбінації клавіш"
+      ],
+      "Offline mode": [
+        "Автономний режим"
       ]
     },
     "Link": {
@@ -4541,6 +4562,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша передплата не дозволяє створювати кілька сховищ. Всі елементи будуть імпортовані до вашого першого сховища. Щоб імпортувати дані до кількох сховищ, передплатіть тарифний план вищого рівня."
+      ],
+      "Too many attempts": [
+        "Забагато спроб"
       ]
     }
   }

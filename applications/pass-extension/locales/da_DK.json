@@ -785,6 +785,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Er din adgangskodeadministrator her ikke? Anmod om den."
+      ],
+      "Configure": [
+        "Konfigurér"
       ]
     },
     "Browser": {
@@ -1360,6 +1363,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din pinkode blev fjernet af en anden ${ PASS_APP_NAME }-klient"
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Krypteringskommunikation til oplåsning af desktop-appen mislykkedes."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME } desktop-appen er låst og skal låses op."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Desktop-appen ${ PASS_APP_NAME } er ikke installeret."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Desktop-appen ${ PASS_APP_NAME } svarer ikke. Kører den?"
       ]
     },
     "Error message": {
@@ -1848,7 +1863,7 @@
         "Indtast den adresse, du ønsker at sende en e-mail til."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Indtast verifikationskode. Ciffer ${ digit }."
+        "Indtast bekræftelseskode. Ciffer ${ digit }."
       ],
       "Enter your extra password": [
         "Indtast din ekstra adgangskode"
@@ -2053,7 +2068,8 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2742,6 +2758,69 @@
       ],
       "You may need to grant accessibility permission to ${ PASS_APP_NAME }.": [
         "Det kan være nødvendigt at give adgangstilladelse til ${ PASS_APP_NAME }."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } ønsker at dele et element med gruppen ${ name }."
+      ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME } er i øjeblikket offline. Åbn udvidelsen for at låse op."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } offline-tilstand er aktiveret."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Aktivér offline-tilstand for at få adgang til dine ${ PASS_SHORT_APP_NAME }-data, hvis du mister internetforbindelsen, eller hvis ${ BRAND_NAME }-serverne er utilgængelige."
+      ],
+      "Enabling desktop auto-lock": [
+        "Aktivering af automatisk låsning af desktop-app"
+      ],
+      "invites the group ${ name } to access items in": [
+        "inviterer gruppen ${ name } til at få adgang til elementer i"
+      ],
+      "Not configured": [
+        "Ikke konfigureret"
+      ],
+      "Offline mode": [
+        "Offline-tilstand"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Åbn ${ PASS_APP_NAME } i et større vindue"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Åbn ${ PASS_APP_NAME } pop op"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Bekræft din adgangskode til ${ BRAND_NAME } for at aktivere offline-tilstand"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Bekræft din sikkerhedskopi-adgangskode for at aktivere offline-tilstand"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Bekræft din ekstra adgangskode for at aktivere offline-tilstand"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Bekræft din anden adgangskode for at aktivere offline-tilstand"
+      ],
+      "Reconnect": [
+        "Genopret forbindelse"
+      ],
+      "Reconnecting": [
+        "Genforbinder"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Denne funktion kræver, at desktop-appen ${ PASS_APP_NAME } er installeret og kører under opsætningen."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Når det er aktiveret, kan du stadig få adgang til dine ${ PASS_SHORT_APP_NAME }-data, hvis du mister internetforbindelsen, eller hvis ${ BRAND_NAME }-serverne er utilgængelige."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nu bruge din backupadgangskode til at få offline-adgang til ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nu bruge din ekstra adgangskode til at få offline-adgang til ${ PASS_SHORT_APP_NAME }"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nu bruge din anden adgangskode til at få offline-adgang til ${ PASS_SHORT_APP_NAME }"
       ]
     },
     "Keyboard key": {
@@ -3876,6 +3955,15 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Enable offline access": [
+        "Aktivér offline-adgang"
+      ],
+      "Keyboard shortcuts": [
+        "Tastaturgenveje"
+      ],
+      "Offline mode": [
+        "Offline-tilstand"
       ]
     },
     "Link": {
@@ -5201,6 +5289,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din første boks. For at importere til flere bokse skal du opgradere dit abonnement."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } offline-tilstand er deaktiveret."
+      ],
+      "Too many attempts": [
+        "For mange forsøg"
       ]
     }
   }

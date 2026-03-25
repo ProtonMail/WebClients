@@ -2053,7 +2053,8 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -2739,6 +2740,36 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
         "(${ memberCount } membri)"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Modalità offline di ${ PASS_SHORT_APP_NAME } abilitata."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Attiva la modalità offline per accedere ai tuoi dati ${ PASS_SHORT_APP_NAME } se perdi la connessione Internet o se i server ${ BRAND_NAME } non sono raggiungibili."
+      ],
+      "Offline mode": [
+        "Modalità offline"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Conferma la password dell'account ${ BRAND_NAME } per abilitare la modalità offline"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Conferma la password di backup dell'account per abilitare la modalità offline"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Conferma la password extra dell'account per abilitare la modalità offline"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Conferma la tua password secondaria per attivare la modalità offline"
+      ],
+      "Reconnect": [
+        "Riconnetti"
+      ],
+      "Reconnecting": [
+        "Riconnessione"
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Quando abilitata, puoi comunque accedere ai tuoi dati ${ PASS_SHORT_APP_NAME } se perdi la connessione Internet o se i server ${ BRAND_NAME } non sono raggiungibili."
       ]
     },
     "Keyboard key": {
@@ -3873,6 +3904,15 @@
       ],
       "ZIP or Postal code": [
         "CAP"
+      ],
+      "Enable offline access": [
+        "Abilita l'accesso offline"
+      ],
+      "Keyboard shortcuts": [
+        "Scorciatoie da tastiera"
+      ],
+      "Offline mode": [
+        "Modalità offline"
       ]
     },
     "Link": {
@@ -5198,6 +5238,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Il tuo abbonamento non ti consente di creare più casseforti. Tutti gli elementi verranno importati nella tua prima cassaforte. Per importare in più casseforti, effettua l'upgrade del tuo abbonamento."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Modalità offline di ${ PASS_SHORT_APP_NAME } disabilitata."
+      ],
+      "Too many attempts": [
+        "Troppi tentativi"
       ]
     }
   }

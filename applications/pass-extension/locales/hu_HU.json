@@ -2577,6 +2577,31 @@
       "(${ memberCount } member)": [
         "(${ memberCount } tag)",
         "(${ memberCount } tag)"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Egy elem másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat.",
+        "Az elemek másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat."
+      ],
+      "Offline mode": [
+        "Kapcsolat nélküli mód"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Erősítse meg a(z) ${ BRAND_NAME } jelszavát az offline mód engedélyezéséhez"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "A biztonsági mentési jelszava megadásával engedélyezheti az offline módot"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Erősítse meg az extra jelszót az offline mód engedélyezéséhez"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "A második jelszava megadásával engedélyezheti az offline módot"
+      ],
+      "Reconnect": [
+        "Újrakapcsolódás"
+      ],
+      "Reconnecting": [
+        "Újracsatlakozás"
       ]
     },
     "Label": {
@@ -3697,6 +3722,15 @@
       ],
       "ZIP or Postal code": [
         "Irányítószám"
+      ],
+      "Enable offline access": [
+        "Offline hozzáférés engedélyezése"
+      ],
+      "Keyboard shortcuts": [
+        "Gyorsbillentyűk"
+      ],
+      "Offline mode": [
+        "Kapcsolat nélküli mód"
       ]
     },
     "Link": {
@@ -4991,6 +5025,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Az előfizetése nem teszi lehetővé több tároló létrehozását. Az összes elem az első tárolóba kerül importálásra. Több tárolóba való importáláshoz váltson nagyobb csomagra."
+      ],
+      "Too many attempts": [
+        "Túl sok próbálkozás"
       ]
     }
   }
