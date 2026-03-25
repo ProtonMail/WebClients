@@ -8,7 +8,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import clsx from '@proton/utils/clsx';
 
 interface Props extends ButtonProps {
-    provider: ImportProvider.OUTLOOK | ImportProvider.YAHOO;
+    provider: ImportProvider.OUTLOOK | ImportProvider.YAHOO | ImportProvider.GOOGLE;
 }
 
 const ProviderButton = ({ className, provider, ...rest }: Props) => {
