@@ -14,9 +14,10 @@ interface Props {
     autoFocus?: boolean;
     loading?: boolean;
     bigger?: boolean;
+    placeholder?: string;
 }
 
-export const usePasswordInputSpotlight = ({ autoFocus, loading, bigger }: Props) => {
+export const usePasswordInputSpotlight = ({ autoFocus, loading, bigger, placeholder }: Props) => {
     const { passwordStrengthIndicatorSpotlight, refs, state, inputStates, errors, onValue, hasConfirmPasswordLabel } =
         useAccountFormDataContext();
     const passwordContainerRef = useRef<HTMLInputElement>(null);
@@ -36,6 +37,7 @@ export const usePasswordInputSpotlight = ({ autoFocus, loading, bigger }: Props)
                     id="password"
                     autoFocus={autoFocus}
                     as={PasswordInputTwo}
+                    placeholder={placeholder}
                     assistiveText={
                         !passwordStrengthIndicatorSpotlight.supported &&
                         inputStates.password.focus &&
@@ -89,7 +91,7 @@ export const usePasswordInputSpotlight = ({ autoFocus, loading, bigger }: Props)
     return { passwordInputs };
 };
 
-export const usePasswordInputInline = ({ autoFocus, loading, bigger }: Props) => {
+export const usePasswordInputInline = ({ autoFocus, loading, bigger, placeholder }: Props) => {
     const { passwordStrengthIndicatorSpotlight, refs, state, inputStates, errors, onValue, hasConfirmPasswordLabel } =
         useAccountFormDataContext();
     const disableChange = loading;
@@ -102,6 +104,7 @@ export const usePasswordInputInline = ({ autoFocus, loading, bigger }: Props) =>
                 id="password"
                 autoFocus={autoFocus}
                 as={PasswordInputTwo}
+                placeholder={placeholder}
                 label={c('Signup label').t`Password`}
                 error={errors.password}
                 rootClassName={clsx('mt-2', !errors.password && 'pb-2')}

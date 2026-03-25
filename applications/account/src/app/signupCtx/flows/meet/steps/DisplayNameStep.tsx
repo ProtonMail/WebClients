@@ -9,6 +9,7 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import Header from '../components/Layout/Header';
 import Layout from '../components/Layout/Layout';
+import displayNameIcon from './display-name-icon.svg';
 
 const DisplayNameStep = ({ onSubmit }: { onSubmit: (displayName: string) => Promise<void> }) => {
     const [loading, withLoading] = useLoading();
@@ -28,14 +29,13 @@ const DisplayNameStep = ({ onSubmit }: { onSubmit: (displayName: string) => Prom
             >
                 <div className="flex items-center justify-center h-full">
                     <div className="flex flex-column md:flex-row flex-nowrap items-center justify-center w-full p-4">
-                        <div className="mx-auto w-full max-w-custom" style={{ '--max-w-custom': '27rem' }}>
-                            <h1 className="font-arizona text-semibold text-8xl mb-4">
-                                {c('Signup').t`Set display name`}
-                            </h1>
+                        <div className="mx-auto w-full max-w-custom text-center" style={{ '--max-w-custom': '28rem' }}>
+                            <img src={displayNameIcon} alt="" width={64} height={64} className="mb-4" />
 
-                            <p className="mt-4 mb-6 mr-auto">
-                                {c('Onboarding modal')
-                                    .t`To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.`}
+                            <h1 className="font-arizona text-8xl mb-4">{c('Signup').t`You are all set`}</h1>
+
+                            <p className="mt-4 mb-6 mr-auto color-weak text-lg">
+                                {c('Signup').t`Choose your display name to continue scheduling your meeting.`}
                             </p>
 
                             <form
@@ -54,13 +54,13 @@ const DisplayNameStep = ({ onSubmit }: { onSubmit: (displayName: string) => Prom
                             >
                                 <InputFieldTwo
                                     id="displayName"
-                                    bigger
-                                    label={c('Signup label').t`Display name`}
+                                    label={c('Signup label').t`Name shown in meetings`}
                                     error={validator([requiredValidator(displayName)])}
                                     disableChange={loading}
                                     autoFocus
                                     value={displayName}
                                     onValue={setDisplayName}
+                                    rootClassName="meet-signup-input-wrapper"
                                 />
                                 <Button
                                     size="large"
@@ -68,8 +68,8 @@ const DisplayNameStep = ({ onSubmit }: { onSubmit: (displayName: string) => Prom
                                     type="submit"
                                     fullWidth
                                     loading={loading}
-                                    className="mt-4 py-4 text-semibold"
                                     pill
+                                    className="mt-2 py-4 text-semibold meet-signup-cta"
                                 >
                                     {c('Action').t`Continue`}
                                 </Button>

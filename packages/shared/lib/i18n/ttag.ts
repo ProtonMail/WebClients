@@ -51,3 +51,16 @@ export const selectPlanOrAppNameText = (planOrAppName: string) => {
 export const everythingInPlanOrAppNameText = (planOrAppName: string) => {
     return c('Info').t`Everything in ${planOrAppName}`;
 };
+
+/**
+ * Get the text for the plan or app name
+ * In order avoid duplicate translations, we use this function to get the text for the plan or app name
+ * @param planOrAppName - The name of the plan or app
+ * @returns The text for the plan or app name
+ * @example
+ * goToPlanOrAppNameText('Drive') // Displays: 'Continue to Drive'
+ * goToPlanOrAppNameText('Mail Plus') // Displays: 'Continue to Mail Plus'
+ */
+export const continueToPlanOrAppNameText = (planOrAppName: string) => {
+    return c('Action').t`Continue to ${planOrAppName}`;
+};
