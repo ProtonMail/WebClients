@@ -1,22 +1,78 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import type { KrispNoiseFilterProcessor } from '@livekit/krisp-noise-filter';
 import { KrispNoiseFilter, isKrispNoiseFilterSupported } from '@livekit/krisp-noise-filter';
+import type { LocalTrack } from 'livekit-client';
 import { Track } from 'livekit-client';
-import throttle from 'lodash/throttle';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
+import { isSafari } from '@proton/shared/lib/helpers/browser';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { DEFAULT_DEVICE_ID } from '../../../constants';
 import { useStableCallback } from '../../../hooks/useStableCallback';
 import { audioQuality } from '../../../qualityConstants';
 import type { SwitchActiveDevice } from '../../../types';
 import { isAudioSessionAvailable, setAudioSessionType } from '../../../utils/ios-audio-session';
-import { ERRORS_SIGNALING_POTENTIAL_STALE_DEVICE_STATE } from './constants';
 
 const isAdvancedNoiseFilterSupported = isKrispNoiseFilterSupported();
+const TOGGLE_TIMEOUT_MS = 8000;
+const NOISE_FILTER_ATTACH_TIMEOUT_MS = 3000;
+/** Delay before attaching noise filter after a mute/unmute toggle */
+const NOISE_FILTER_SETTLE_DELAY_MS = 600;
+/** Longer delay after device change to let the track and devicechange events settle */
+const NOISE_FILTER_DEVICE_CHANGE_DELAY_MS = 1500;
+const SAFARI_DEVICE_RELEASE_DELAY_MS = 300;
+interface AudioToggleParams {
+    isEnabled: boolean;
+    audioDeviceId: string;
+    preserveCache: boolean;
+    /** Skip noise filter setup — used by track-ended recovery to get audio working immediately */
+    skipNoiseFilter: boolean;
+}
 
+const DEBUG_PREFIX = '[AudioToggle]';
+
+const debugLog = (message: string, data?: Record<string, unknown>) => {
+    // eslint-disable-next-line no-console
+    console.log(`${DEBUG_PREFIX} ${message}`, data ?? {});
+};
+
+const getErrorReason = (error: unknown) => {
+    if (error instanceof Error) {
+        return `${error.name}: ${error.message}`;
+    }
+    return String(error);
+};
+
+const withTimeout = async <T>(promise: Promise<T>, label: string, timeoutMs = TOGGLE_TIMEOUT_MS): Promise<T> => {
+    let timeout: ReturnType<typeof setTimeout> | undefined;
+    try {
+        return await Promise.race([
+            promise,
+            new Promise<never>((_, reject) => {
+                timeout = setTimeout(() => reject(new Error(`${label} timed out`)), timeoutMs);
+            }),
+        ]);
+    } finally {
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+    }
+};
+
+/**
+ * Manages microphone toggle (mute/unmute), device switching, and Krisp noise filter lifecycle.
+ *
+ * Noise filter architecture:
+ * - The AudioContext is created once and reused across device switches (Krisp needs it for AudioWorkletNode).
+ * - A new KrispNoiseFilter processor is created per track (processors can't be reused across tracks
+ *   because LiveKit calls processor.destroy() when a track is stopped).
+ * - On device change, LiveKit internally calls processor.restart() on the existing track — we do NOT
+ *   destroy the processor/AudioContext during device switches to avoid breaking that restart.
+ * - On track ended (device unplug), we abandon the processor refs and auto-recover to the system
+ */
 export const useAudioToggle = (
     activeMicrophoneDeviceId: string,
     switchActiveDevice: SwitchActiveDevice,
@@ -29,11 +85,20 @@ export const useAudioToggle = (
     const { isMicrophoneEnabled, localParticipant } = useLocalParticipant();
 
     const noiseFilterProcessor = useRef<KrispNoiseFilterProcessor | null>(null);
+    /** Persistent AudioContext reused across device switches — only closed on unmount */
     const audioContext = useRef<AudioContext | null>(null);
-    const trackId = useRef<string | null>(null);
+    /** Track ID the processor is currently attached to, used to detect track replacement */
+    const attachedTrackId = useRef<string | null>(null);
+    /** Incremented on abandon to invalidate in-flight setProcessor calls */
+    const noiseFilterGeneration = useRef(0);
+    const pendingNoiseFilterTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+    /** Prevents concurrent toggleAudio calls from interleaving */
     const toggleInProgress = useRef(false);
     const currentDeviceId = useRef<string | null>(null);
+    const toggleOperationId = useRef(0);
+    /** Queued recovery params when a track-ended recovery arrives while toggle lock is held */
+    const pendingRecovery = useRef<AudioToggleParams | null>(null);
 
     const room = useRoomContext();
 
@@ -47,249 +112,526 @@ export const useAudioToggle = (
         );
     };
 
-    const tearDownNoiseFilter = async () => {
+    const cancelPendingNoiseFilter = () => {
+        if (pendingNoiseFilterTimer.current) {
+            clearTimeout(pendingNoiseFilterTimer.current);
+            pendingNoiseFilterTimer.current = null;
+            debugLog('noiseFilter:pending-cancelled');
+        }
+    };
+
+    /** Returns the persistent AudioContext, creating one if needed (e.g. first attach or after unmount cleanup). */
+    const getOrCreateAudioContext = () => {
+        if (audioContext.current && audioContext.current.state !== 'closed') {
+            return audioContext.current;
+        }
+        // @ts-ignore - webkitAudioContext is not available in all browsers
+        const ctx = new (window.AudioContext || window.webkitAudioContext)() as AudioContext;
+        audioContext.current = ctx;
+        debugLog('noiseFilter:audio-context-created');
+        return ctx;
+    };
+
+    /**
+     * Clears processor and track refs without closing the AudioContext.
+     * Used on device change and track ended — keeps the AudioContext alive so LiveKit
+     * can still call processor.restart() during internal track restarts.
+     */
+    const abandonNoiseFilter = () => {
+        noiseFilterGeneration.current++;
+        cancelPendingNoiseFilter();
+
+        debugLog('noiseFilter:abandon', {
+            hadProcessor: !!noiseFilterProcessor.current,
+            attachedTrackId: attachedTrackId.current,
+            generation: noiseFilterGeneration.current,
+        });
+
+        noiseFilterProcessor.current = null;
+        attachedTrackId.current = null;
+    };
+
+    /**
+     * Stops the processor on the live track and clears refs.
+     * Used when the user intentionally disables the noise filter — unlike abandonNoiseFilter(),
+     * this actually detaches the Krisp AudioWorkletNode from the Web Audio pipeline
+     * so it stops consuming CPU.
+     */
+    const detachNoiseFilter = async () => {
         const publication = getCurrentPublication();
         const audioTrack = publication?.audioTrack;
 
-        if (audioTrack?.getProcessor()) {
-            await audioTrack.stopProcessor();
+        if (audioTrack && noiseFilterProcessor.current) {
+            try {
+                await withTimeout(
+                    audioTrack.stopProcessor(),
+                    'Stop noise filter processor',
+                    NOISE_FILTER_ATTACH_TIMEOUT_MS
+                );
+                debugLog('noiseFilter:detach-done');
+            } catch (error) {
+                debugLog('noiseFilter:detach-failed', { reason: getErrorReason(error) });
+            }
         }
 
-        if (audioContext.current) {
-            await noiseFilterProcessor.current?.setEnabled(false);
-            noiseFilterProcessor.current = null;
-            await audioContext.current.close();
-            audioContext.current = null;
-        }
-        trackId.current = null;
-        noiseFilterProcessor.current = null;
+        abandonNoiseFilter();
     };
 
-    const setupNoiseFilter = async () => {
+    /** Full cleanup: abandons processor refs AND closes the AudioContext. Only used on unmount. */
+    const destroyNoiseFilter = () => {
+        abandonNoiseFilter();
+
+        const ctx = audioContext.current;
+        audioContext.current = null;
+
+        if (ctx && ctx.state !== 'closed') {
+            ctx.close().catch(() => {});
+            debugLog('noiseFilter:audio-context-closed');
+        }
+    };
+
+    /**
+     * Creates a new KrispNoiseFilter processor and attaches it to the current audio track.
+     * Reuses the persistent AudioContext. Guards against stale attach via generation counter —
+     * if abandonNoiseFilter() is called while setProcessor is in flight, the result is discarded.
+     * On failure, detaches the AudioContext from the track so audio still flows directly.
+     */
+    const attachNoiseFilter = async () => {
         const publication = getCurrentPublication();
         const currentAudioTrack = publication?.audioTrack;
 
-        if (!currentAudioTrack || !isAdvancedNoiseFilterSupported || trackId.current === currentAudioTrack.id) {
+        if (!currentAudioTrack || !isAdvancedNoiseFilterSupported) {
+            debugLog('noiseFilter:attach-skip', {
+                hasTrack: !!currentAudioTrack,
+                supported: isAdvancedNoiseFilterSupported,
+            });
             return;
         }
 
-        await tearDownNoiseFilter();
+        if (currentAudioTrack.mediaStreamTrack?.readyState !== 'live') {
+            debugLog('noiseFilter:attach-skip-not-live', {
+                readyState: currentAudioTrack.mediaStreamTrack?.readyState,
+            });
+            return;
+        }
 
-        trackId.current = currentAudioTrack.id;
+        if (attachedTrackId.current === currentAudioTrack.id && noiseFilterProcessor.current) {
+            if (!noiseFilterProcessor.current.isEnabled()) {
+                debugLog('noiseFilter:re-enable-existing');
+                await withTimeout(
+                    noiseFilterProcessor.current.setEnabled(true),
+                    'Re-enable noise filter',
+                    NOISE_FILTER_ATTACH_TIMEOUT_MS
+                );
+            }
+            return;
+        }
 
-        noiseFilterProcessor.current = KrispNoiseFilter();
-        // @ts-ignore - webkitAudioContext is not available in all browsers
-        audioContext.current = new (window.AudioContext || window.webkitAudioContext)();
+        noiseFilterProcessor.current = null;
+        attachedTrackId.current = null;
+
+        const gen = ++noiseFilterGeneration.current;
+        const ctx = getOrCreateAudioContext();
+
+        debugLog('noiseFilter:attach-start', { trackId: currentAudioTrack.id, generation: gen });
+
+        const processor = KrispNoiseFilter();
 
         try {
-            await currentAudioTrack?.setAudioContext(audioContext.current);
-            await currentAudioTrack?.setProcessor(noiseFilterProcessor.current);
-        } catch (error) {
-            // Clean up on failure to prevent AudioContext leak
-            await audioContext.current?.close().catch(() => {});
-            audioContext.current = null;
-            noiseFilterProcessor.current = null;
-            trackId.current = null;
-            throw error;
-        }
-    };
+            currentAudioTrack.setAudioContext(ctx);
+            await withTimeout(
+                currentAudioTrack.setProcessor(processor),
+                'setProcessor',
+                NOISE_FILTER_ATTACH_TIMEOUT_MS
+            );
 
-    useEffect(() => {
-        return () => {
-            void tearDownNoiseFilter();
-        };
-    }, []);
-
-    const toggleAudio = useStableCallback(
-        async (
-            params: {
-                isEnabled?: boolean;
-                audioDeviceId?: string | null;
-                preserveCache?: boolean;
-                recoveringFromError?: boolean;
-            } = {}
-        ) => {
-            let toggleResult = false;
-
-            // Get current mute state from the actual track (more reliable than a ref)
-            const currentAudioPublication = getCurrentPublication();
-            const currentMuteState = currentAudioPublication?.isMuted ?? !initialAudioState;
-
-            const {
-                isEnabled = !currentMuteState, // Use actual track state, fallback to initialAudioState if no track exists yet
-                audioDeviceId = activeMicrophoneDeviceId,
-                preserveCache,
-                recoveringFromError = false,
-            } = params;
-
-            const deviceId = audioDeviceId === DEFAULT_DEVICE_ID ? systemDefaultMicrophone.deviceId : audioDeviceId;
-
-            if (toggleInProgress.current || !deviceId) {
+            if (noiseFilterGeneration.current !== gen) {
+                debugLog('noiseFilter:attach-aborted-stale', {
+                    generation: gen,
+                    current: noiseFilterGeneration.current,
+                });
                 return;
             }
 
-            toggleInProgress.current = true;
+            noiseFilterProcessor.current = processor;
+            attachedTrackId.current = currentAudioTrack.id;
 
-            // On iOS Safari, we need to let the system decide which device to use by not specifying a deviceId constraint.
-            // The audioSession workaround will ensure the correct external device (AirPods, wired headset) is selected.
-            const useIOSWorkaround = isAudioSessionAvailable();
-
-            const audio = {
-                ...(useIOSWorkaround ? {} : { deviceId: { exact: deviceId as string } }),
-                echoCancellation: { ideal: true },
-                autoGainControl: { ideal: true },
-                noiseSuppression: isAdvancedNoiseFilterSupported ? false : noiseFilter,
-                channelCount: { ideal: 1 },
-                dtx: false,
-            };
+            debugLog('noiseFilter:attach-done', { trackId: currentAudioTrack.id });
+        } catch (error) {
+            debugLog('noiseFilter:attach-failed', { reason: getErrorReason(error) });
 
             try {
-                // Get existing audio track and publication
-                const audioPublication = getCurrentPublication();
-                const audioTrack = audioPublication?.audioTrack;
+                currentAudioTrack.setAudioContext(undefined as unknown as AudioContext);
+                debugLog('noiseFilter:audio-context-detached');
+            } catch {
+                debugLog('noiseFilter:audio-context-detach-failed');
+            }
+        }
+    };
 
-                // Check if we're just toggling mute state (not changing devices or noise filter settings)
-                const isDeviceChanging = currentDeviceId.current !== deviceId;
-                const isJustTogglingMute = audioTrack && !isDeviceChanging;
+    const scheduleNoiseFilterAttach = (delayMs = NOISE_FILTER_SETTLE_DELAY_MS) => {
+        if (pendingNoiseFilterTimer.current) {
+            clearTimeout(pendingNoiseFilterTimer.current);
+        }
+        debugLog('noiseFilter:schedule', { delayMs });
+        pendingNoiseFilterTimer.current = setTimeout(() => {
+            pendingNoiseFilterTimer.current = null;
+            void attachNoiseFilter();
+        }, delayMs);
+    };
 
-                if (isJustTogglingMute) {
-                    // Fast path: just mute/unmute the existing track
-                    if (isEnabled) {
-                        await audioTrack.unmute();
-                    } else {
-                        await audioTrack.mute();
-                    }
+    useEffect(() => {
+        const handleDeviceChange = () => {
+            debugLog('devicechange:detected');
+        };
+
+        navigator.mediaDevices.addEventListener('devicechange', handleDeviceChange);
+
+        return () => {
+            navigator.mediaDevices.removeEventListener('devicechange', handleDeviceChange);
+            destroyNoiseFilter();
+        };
+    }, []);
+
+    /** Cleans up a track whose MediaStreamTrack has ended (e.g. device unplugged). */
+    const unpublishEndedTrack = async (operationId: number) => {
+        const publication = getCurrentPublication();
+        const audioTrack = publication?.audioTrack;
+        if (!audioTrack) {
+            return;
+        }
+        debugLog('unpublish-ended-track:start', { operationId });
+
+        abandonNoiseFilter();
+
+        try {
+            await withTimeout(localParticipant.unpublishTrack(audioTrack as LocalTrack, true), 'Unpublish ended track');
+        } catch (error) {
+            debugLog('unpublish-ended-track:failed', { operationId, reason: getErrorReason(error) });
+        }
+
+        try {
+            await withTimeout(localParticipant.setMicrophoneEnabled(false), 'Disable mic after unpublish');
+        } catch {
+            debugLog('unpublish-ended-track:disable-mic-failed', { operationId });
+        }
+
+        if (isSafari()) {
+            await wait(SAFARI_DEVICE_RELEASE_DELAY_MS);
+        }
+
+        debugLog('unpublish-ended-track:done', { operationId });
+    };
+
+    /**
+     * Main toggle function: handles mute/unmute, device switching, and noise filter scheduling.
+     *
+     * Three strategies:
+     * 1. Fast path (isJustTogglingMute): same device, track alive → mute/unmute only.
+     * 2. Track ended: unpublish dead track, create new one via setMicrophoneEnabled.
+     * 3. Device change: cancel pending noise filter, recreate track with new device constraints.
+     *    Falls back to relaxed constraints (no deviceId) on OverconstrainedError.
+     *
+     * After success, checks if the noise filter processor survived the device change
+     * (LiveKit restarts it internally). If the track was replaced (new ID), schedules
+     * a fresh noise filter attach with a longer delay to let devicechange events settle.
+     */
+    const toggleAudio = useStableCallback(async (params: Partial<AudioToggleParams> = {}) => {
+        let toggleResult = false;
+        const operationId = ++toggleOperationId.current;
+
+        const currentAudioPublication = getCurrentPublication();
+        const currentMuteState = currentAudioPublication?.isMuted ?? !initialAudioState;
+
+        const {
+            isEnabled = !currentMuteState,
+            audioDeviceId = activeMicrophoneDeviceId,
+            preserveCache,
+            skipNoiseFilter = false,
+        } = params;
+
+        const requestedDeviceId =
+            audioDeviceId === DEFAULT_DEVICE_ID ? systemDefaultMicrophone.deviceId : audioDeviceId;
+        const availableDeviceIds = new Set(microphones.map((mic) => mic.deviceId).filter(Boolean));
+        const fallbackDeviceId = microphones[0]?.deviceId || systemDefaultMicrophone.deviceId || null;
+        const deviceId =
+            requestedDeviceId && availableDeviceIds.has(requestedDeviceId) ? requestedDeviceId : fallbackDeviceId;
+
+        debugLog('toggle:start', {
+            operationId,
+            isEnabled,
+            audioDeviceId,
+            requestedDeviceId,
+            resolvedDeviceId: deviceId,
+            currentMuteState,
+            activeMicrophoneDeviceId,
+            currentDeviceId: currentDeviceId.current,
+        });
+
+        if (!deviceId) {
+            debugLog('toggle:blocked-no-device', { operationId });
+            return false;
+        }
+
+        if (toggleInProgress.current) {
+            if (skipNoiseFilter) {
+                pendingRecovery.current = {
+                    isEnabled,
+                    audioDeviceId: audioDeviceId ?? DEFAULT_DEVICE_ID,
+                    preserveCache: !!preserveCache,
+                    skipNoiseFilter: true,
+                };
+                debugLog('toggle:queued-recovery', { operationId });
+            } else {
+                debugLog('toggle:blocked-in-progress', { operationId });
+            }
+            return false;
+        }
+
+        toggleInProgress.current = true;
+
+        const runStep = async <T>(step: string, fn: () => Promise<T>): Promise<T> => {
+            debugLog('step:start', { operationId, step });
+            try {
+                const result = await fn();
+                debugLog('step:success', { operationId, step });
+                return result;
+            } catch (error) {
+                debugLog('step:failed', { operationId, step, reason: getErrorReason(error) });
+                throw error;
+            }
+        };
+
+        const useIOSWorkaround = isAudioSessionAvailable();
+        const audio = {
+            ...(useIOSWorkaround ? {} : { deviceId: { exact: deviceId as string } }),
+            echoCancellation: { ideal: true },
+            autoGainControl: { ideal: true },
+            noiseSuppression: isAdvancedNoiseFilterSupported ? false : noiseFilter,
+            channelCount: { ideal: 1 },
+            dtx: false,
+        };
+
+        try {
+            const audioPublication = getCurrentPublication();
+            const audioTrack = audioPublication?.audioTrack;
+            const isTrackEnded = audioTrack?.mediaStreamTrack?.readyState === 'ended';
+            const isDeviceChanging = currentDeviceId.current !== deviceId;
+            const isJustTogglingMute = !!audioTrack && !isDeviceChanging && !isTrackEnded;
+
+            debugLog('toggle:strategy', {
+                operationId,
+                hasAudioTrack: !!audioTrack,
+                isTrackEnded,
+                isDeviceChanging,
+                isJustTogglingMute,
+                trackReadyState: audioTrack?.mediaStreamTrack?.readyState,
+            });
+
+            if (isJustTogglingMute) {
+                if (isEnabled) {
+                    await runStep('fast-path-unmute', () => withTimeout(audioTrack.unmute(), 'Unmute audio track'));
                 } else {
-                    // Need to recreate track (device change, noise filter change, or no track exists)
-                    // Apply iOS Safari audioSession workaround before enabling microphone
-                    // This ensures the correct device is selected and audio routing is correct
-                    if (useIOSWorkaround) {
-                        setAudioSessionType('auto');
-                    }
-
-                    // Always create and publish the track (even if we want it muted)
-                    // This keeps iOS audio playback working and enables fast unmute
-                    await localParticipant.setMicrophoneEnabled(true, audio, {
-                        audioPreset: {
-                            maxBitrate: audioQuality,
-                            priority: 'high',
-                        },
-                    });
-
-                    if (useIOSWorkaround) {
-                        setAudioSessionType('play-and-record');
-                    }
-
-                    currentDeviceId.current = deviceId;
-
-                    // Now mute/unmute the newly created track based on desired state
-                    const newAudioPublication = [...localParticipant.audioTrackPublications.values()].find(
-                        (item) => item.kind === Track.Kind.Audio && item.source !== Track.Source.ScreenShare
-                    );
-                    const newAudioTrack = newAudioPublication?.audioTrack;
-
-                    if (newAudioTrack) {
-                        if (isEnabled) {
-                            await newAudioTrack.unmute();
-                        } else {
-                            await newAudioTrack.mute();
-                        }
-                    }
+                    await runStep('fast-path-mute', () => withTimeout(audioTrack.mute(), 'Mute audio track'));
+                }
+            } else {
+                if (isTrackEnded && audioTrack) {
+                    await runStep('cleanup-ended-track', () => unpublishEndedTrack(operationId));
+                } else if (isDeviceChanging) {
+                    cancelPendingNoiseFilter();
                 }
 
-                if (!isJustTogglingMute) {
-                    await switchActiveDevice({
+                if (useIOSWorkaround) {
+                    debugLog('toggle:ios-audio-session-auto', { operationId });
+                    setAudioSessionType('auto');
+                }
+
+                const micPreset = {
+                    audioPreset: {
+                        maxBitrate: audioQuality,
+                        priority: 'high' as const,
+                    },
+                };
+
+                // On OverconstrainedError (e.g. stale device ID after unplug), retry with
+                // relaxed constraints that omit deviceId and use { ideal } values only,
+                // letting the browser pick any available mic.
+                try {
+                    await runStep('recreate-enable-microphone', () =>
+                        withTimeout(localParticipant.setMicrophoneEnabled(true, audio, micPreset), 'Enable microphone')
+                    );
+                    if (useIOSWorkaround) {
+                        debugLog('toggle:ios-audio-session-play-and-record', { operationId });
+                        setAudioSessionType('play-and-record');
+                    }
+                } catch (firstError) {
+                    if ((firstError as Error)?.name === 'OverconstrainedError') {
+                        const relaxed = {
+                            echoCancellation: audio.echoCancellation,
+                            autoGainControl: audio.autoGainControl,
+                            channelCount: audio.channelCount,
+                            noiseSuppression: { ideal: false },
+                        };
+                        debugLog('recreate:retry-relaxed', { operationId });
+                        await runStep('recreate-enable-microphone-relaxed', () =>
+                            withTimeout(
+                                localParticipant.setMicrophoneEnabled(true, relaxed, micPreset),
+                                'Enable microphone (relaxed)'
+                            )
+                        );
+                    } else {
+                        throw firstError;
+                    }
+                }
+                currentDeviceId.current = deviceId;
+
+                const newAudioPublication = [...localParticipant.audioTrackPublications.values()].find(
+                    (item) => item.kind === Track.Kind.Audio && item.source !== Track.Source.ScreenShare
+                );
+                const newAudioTrack = newAudioPublication?.audioTrack;
+
+                if (newAudioTrack) {
+                    if (isEnabled) {
+                        await runStep('recreate-unmute-track', () =>
+                            withTimeout(newAudioTrack.unmute(), 'Unmute recreated track')
+                        );
+                    } else {
+                        await runStep('recreate-mute-track', () =>
+                            withTimeout(newAudioTrack.mute(), 'Mute recreated track')
+                        );
+                    }
+                } else {
+                    debugLog('recreate:new-track-missing', { operationId });
+                }
+            }
+
+            await runStep('switch-active-device', () =>
+                withTimeout(
+                    switchActiveDevice({
                         deviceType: 'audioinput',
                         deviceId,
                         isSystemDefaultDevice: audioDeviceId === DEFAULT_DEVICE_ID,
                         preserveDefaultDevice: !!preserveCache,
-                    });
-                }
+                    }),
+                    'Switch active audio input'
+                )
+            );
 
-                const currentAudioTrack = [...localParticipant.audioTrackPublications.values()].find(
-                    (item) =>
-                        item.kind === Track.Kind.Audio && item.source !== Track.Source.ScreenShare && item.audioTrack
-                )?.audioTrack;
+            toggleResult = true;
+            debugLog('toggle:success', { operationId, toggleResult });
+            // After toggle success, determine noise filter state:
+            // - If the track ID matches our ref, LiveKit restarted the processor internally → nothing to do.
+            // - If the track changed (new ID), the old processor is on a dead track → abandon and re-attach.
+            if (isEnabled && isAdvancedNoiseFilterSupported && noiseFilter && !skipNoiseFilter) {
+                const currentTrack = getCurrentPublication()?.audioTrack;
+                const processorStillAttached =
+                    noiseFilterProcessor.current &&
+                    attachedTrackId.current &&
+                    currentTrack?.id === attachedTrackId.current;
 
-                if (!currentAudioTrack) {
-                    return;
-                }
-
-                if (isEnabled && audioDeviceId && isAdvancedNoiseFilterSupported) {
-                    if (noiseFilter) {
-                        await setupNoiseFilter();
+                if (processorStillAttached) {
+                    debugLog('noiseFilter:processor-survived', { operationId, trackId: attachedTrackId.current });
+                } else {
+                    if (attachedTrackId.current && currentTrack?.id !== attachedTrackId.current) {
+                        debugLog('noiseFilter:track-changed', {
+                            operationId,
+                            oldTrackId: attachedTrackId.current,
+                            newTrackId: currentTrack?.id,
+                        });
+                        abandonNoiseFilter();
                     }
-
-                    if (noiseFilter && noiseFilterProcessor.current && !noiseFilterProcessor.current.isEnabled()) {
-                        await noiseFilterProcessor.current.setEnabled(true);
-                    }
+                    const delay = isJustTogglingMute
+                        ? NOISE_FILTER_SETTLE_DELAY_MS
+                        : NOISE_FILTER_DEVICE_CHANGE_DELAY_MS;
+                    debugLog('noiseFilter:schedule-attach', { operationId, delayMs: delay, isJustTogglingMute });
+                    scheduleNoiseFilterAttach(delay);
                 }
-
-                toggleResult = true;
-            } catch (error) {
-                reportError('Failed to toggle audio', error);
-                // eslint-disable-next-line no-console
-                console.error(error);
-
-                const isPotentialStaleDeviceState = ERRORS_SIGNALING_POTENTIAL_STALE_DEVICE_STATE.includes(
-                    (error as Error)?.name
-                );
-
-                // Recovering from potential stale device state
-                if (
-                    !recoveringFromError &&
-                    isPotentialStaleDeviceState &&
-                    microphones.length > 0 &&
-                    microphones[0].deviceId !== deviceId
-                ) {
-                    toggleInProgress.current = false;
-
-                    const recoveryResult = (await toggleAudio({
-                        isEnabled,
-                        audioDeviceId: microphones[0].deviceId,
-                        recoveringFromError: true,
-                        preserveCache: false,
-                    })) as boolean;
-                    toggleResult = recoveryResult ?? false;
-                }
-            } finally {
-                toggleInProgress.current = false;
+            } else if (skipNoiseFilter) {
+                debugLog('noiseFilter:skipped-for-recovery', { operationId });
             }
+        } catch (error) {
+            reportError('Failed to toggle audio', error);
+            // eslint-disable-next-line no-console
+            console.error(error);
+            debugLog('toggle:error', { operationId, reason: getErrorReason(error) });
+        } finally {
+            toggleInProgress.current = false;
+            debugLog('toggle:finally', { operationId, toggleResult, lockReleased: true });
 
-            return toggleResult;
+            const recovery = pendingRecovery.current;
+            if (recovery) {
+                pendingRecovery.current = null;
+                debugLog('toggle:drain-pending-recovery', { operationId });
+                void toggleAudio(recovery);
+            }
         }
-    );
+
+        return toggleResult;
+    });
+
+    /**
+     * Auto-recovery on device unplug: when the underlying MediaStreamTrack ends,
+     * abandon the noise filter and trigger a recovery toggle to the system default mic.
+     * Noise filter is skipped during recovery to avoid blocking audio output.
+     */
+    useEffect(() => {
+        const publication = getCurrentPublication();
+        const mediaTrack = publication?.audioTrack?.mediaStreamTrack;
+        if (!mediaTrack) {
+            return;
+        }
+
+        const handleTrackEnded = () => {
+            const wasEnabled = !publication?.isMuted;
+
+            debugLog('track-ended-event', {
+                wasEnabled,
+                activeMicrophoneDeviceId,
+                systemDefault: systemDefaultMicrophone.deviceId,
+            });
+
+            abandonNoiseFilter();
+
+            void toggleAudio({
+                isEnabled: wasEnabled,
+                audioDeviceId: DEFAULT_DEVICE_ID,
+                preserveCache: true,
+                skipNoiseFilter: true,
+            });
+        };
+
+        mediaTrack.addEventListener('ended', handleTrackEnded);
+        return () => {
+            mediaTrack.removeEventListener('ended', handleTrackEnded);
+        };
+    }, [activeMicrophoneDeviceId, microphones, room, localParticipant]);
 
     const toggleNoiseFilter = async () => {
+        debugLog('toggleNoiseFilter:start', { isMicrophoneEnabled, currentValue: noiseFilter });
+        const newValue = !noiseFilter;
+        setNoiseFilter(newValue);
+
         if (isMicrophoneEnabled) {
-            const newValue = !noiseFilter;
-
-            if (!noiseFilterProcessor.current && newValue) {
-                await setupNoiseFilter();
+            try {
+                if (newValue) {
+                    await attachNoiseFilter();
+                } else {
+                    await detachNoiseFilter();
+                }
+                debugLog('toggleNoiseFilter:applied', { newValue });
+            } catch (error) {
+                debugLog('toggleNoiseFilter:failed', { reason: getErrorReason(error) });
             }
-
-            if (noiseFilterProcessor.current) {
-                await noiseFilterProcessor.current?.setEnabled(newValue);
-            }
-
-            setNoiseFilter(newValue);
         } else {
-            setNoiseFilter((prev) => !prev);
+            debugLog('toggleNoiseFilter:queued-while-muted');
         }
     };
 
-    // Check actual mute state, not just publication state
     const audioPublication = [...localParticipant.audioTrackPublications.values()].find(
         (item) => item.kind === Track.Kind.Audio && item.source !== Track.Source.ScreenShare
     );
 
-    // If track exists but is muted, we're effectively "disabled"
     const isAudioEnabled = isMicrophoneEnabled && !audioPublication?.isMuted;
 
-    const throttledToggleAudio = useMemo(
-        () => throttle(toggleAudio, 750, { leading: true, trailing: true }),
-        [toggleAudio]
-    );
-
-    return { toggleAudio: throttledToggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled };
+    return { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled };
 };
