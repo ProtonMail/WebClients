@@ -9,6 +9,7 @@ import { urlHasMailto, readAndClearMailtoArgs } from "../protocol/mailto";
 import { urlHasOpenMailParams, readAndClearOpenMailArgs, readAndClearOpenCalendarArgs } from "../protocol/deep_links";
 import { checkKeys } from "../keyPinning";
 import { mainLogger, viewLogger } from "../log";
+import { registerWindowEventLog } from "../log/appEventLog";
 import { setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
 import {
@@ -121,6 +122,8 @@ export const viewCreationAppStartup = async () => {
     mainWindow.on("unmaximize", debouncedUpdateViewsBounds);
     mainWindow.on("enter-full-screen", debouncedUpdateViewsBounds);
     mainWindow.on("leave-full-screen", debouncedUpdateViewsBounds);
+
+    registerWindowEventLog(mainWindow);
 
     mainWindow.on("close", (event) => {
         // We don't want to prevent the close event if the update is downloaded
@@ -549,7 +552,11 @@ export async function showNetworkErrorPage(viewID: ViewID): Promise<void> {
     }
 
     viewURLMap[viewID] = filePath;
-    await view.webContents.loadFile(filePath, { query });
+    try {
+        await view.webContents.loadFile(filePath, { query });
+    } catch (error) {
+        viewLogger(viewID).error("showNetworkErrorPage failed to load error asset:", filePath, error);
+    }
 }
 
 async function showLoadingPage(title: string): Promise<void> {

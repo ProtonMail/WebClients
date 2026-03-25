@@ -207,7 +207,7 @@ export function initializeLog() {
     }
 
     Logger.initialize({ preload: true });
-    Logger.transports.file.maxSize = 5 * 1024 * 1024; // 3MB
+    Logger.transports.file.maxSize = 5 * 1024 * 1024; // 5MB
     Logger.hooks.push(filterSensitiveLogMessage);
     Logger.transports.metrics = metrics.logTransporter;
     Logger.eventLogger.startLogging();
