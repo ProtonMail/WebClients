@@ -87,7 +87,7 @@ interface UseDynamicDeviceHandlingParams {
         preserveCache,
     }: {
         isEnabled?: boolean;
-        audioDeviceId?: string | null;
+        audioDeviceId?: string;
         preserveCache?: boolean;
     }) => Promise<boolean | undefined>;
     switchActiveDevice: SwitchActiveDevice;
