@@ -1,16 +1,17 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
-        "sourceMap": true,
-        "outDir": "dist",
         "lib": ["WebWorker", "DOM", "DOM.Iterable", "ESNext"],
         "types": ["global-types-monorepo", "webpack-env", "jest"]
     },
     "ts-node": {
         "compilerOptions": {
+            "rootDir": "../..",
             "module": "commonjs",
-            "moduleResolution": "node"
-        }
+            "target": "esnext",
+            "esModuleInterop": true
+        },
+        "ignore": ["node_modules/(?!@proton)"]
     },
     "include": ["src/**/*"],
     "exclude": ["src/**/*.test.ts", "src/**/*.spec.ts"]

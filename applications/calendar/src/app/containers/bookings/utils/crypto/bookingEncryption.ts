@@ -1,5 +1,3 @@
-import type { BookingPageEditData } from 'applications/calendar/src/app/store/internalBooking/interface';
-
 import type { SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { deriveKey, exportKey, generateKey } from '@proton/crypto/lib/subtle/aesGcm';
@@ -11,6 +9,7 @@ import type {
 import type { DecryptedCalendarKey } from '@proton/shared/lib/interfaces/calendar/CalendarKey';
 import type { PrimaryAddressKeyForEncryption, PrimaryAddressKeysForSigning } from '@proton/shared/lib/keys';
 
+import type { BookingPageEditData } from '../../../../store/internalBooking/interface';
 import type { SerializedFormData } from '../../bookingsTypes';
 import { BookingLocation } from '../../interface';
 import { JSONFormatData, JSONFormatTextData, createBookingLink } from './bookingEncryptionHelpers';

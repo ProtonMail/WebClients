@@ -4,17 +4,23 @@
     "compilerOptions": {
         "target": "esnext",
         "lib": ["dom", "dom.iterable", "esnext", "WebWorker", "DOM.AsyncIterable"],
-        "types": ["@proton/types", "global-types-monorepo", "webpack-env", "jest", "chrome", "webextension-polyfill", "./globals.d.ts"]
+        "types": [
+            "@proton/types",
+            "global-types-monorepo",
+            "webpack-env",
+            "jest",
+            "chrome",
+            "webextension-polyfill",
+            "./globals.d.ts"
+        ]
     },
     "ts-node": {
         "compilerOptions": {
-            "allowJs": true,
-            "esModuleInterop": true,
+            "rootDir": "../..",
             "module": "commonjs",
-            "moduleResolution": "node",
-            "resolveJsonModule": true,
-            "skipLibCheck": true,
-            "target": "ES6"
-        }
+            "target": "esnext",
+            "esModuleInterop": true
+        },
+        "ignore": ["node_modules/(?!@proton)"]
     }
 }

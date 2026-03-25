@@ -1,7 +1,5 @@
-import React from 'react';
-
-import type { SearchItem } from 'applications/lumo/src/app/lib/toolCall/types';
-import type { Message } from 'applications/lumo/src/app/types';
+import type { SearchItem } from '../../../../../lib/toolCall/types';
+import type { Message } from '../../../../../types';
 
 // // Debug information object
 // const debugInfo = {

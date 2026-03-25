@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import type { Message } from 'applications/lumo/src/app/types';
+import type { Message } from '../../../../types';
 
 const useCollapsibleMessageContent = (message: Message) => {
     const [isCollapsed, setIsCollapsed] = useState(false);

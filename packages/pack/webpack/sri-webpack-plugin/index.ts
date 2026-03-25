@@ -21,17 +21,21 @@ export default class SriWebpackPlugin {
                     stage: webpack.Compilation.PROCESS_ASSETS_STAGE_OPTIMIZE_SIZE,
                 },
                 (assets) => {
-                    const toUpdate: {
-                        [pattern: string]: { filename: string; valueToReplace: string }[];
-                    } = {};
+                    const toUpdate: { [pattern: string]: { filename: string; valueToReplace: string }[] } = {};
                     const assetKeys = Object.keys(assets);
                     assetKeys.forEach((filename) => {
                         if (!filename.includes('.js')) {
                             return;
                         }
+
                         const asset = compilation.getAsset(filename);
+                        if (!asset) {
+                            return;
+                        }
+
                         const source = asset.source.source().toString();
-                        const matches = source.matchAll(regex);
+                        const matches = source?.matchAll(regex);
+
                         for (const match of matches) {
                             const pattern = match[1];
                             if (!toUpdate[pattern]) {
@@ -46,16 +50,25 @@ export default class SriWebpackPlugin {
                         if (!assetKey) {
                             throw new Error(`Failed to find asset from pattern ${pattern}`);
                         }
+
                         const targetAsset = compilation.getAsset(assetKey);
+                        if (!targetAsset) {
+                            return;
+                        }
+
                         const sri = createSri(targetAsset.source.source());
                         toUpdate[pattern].forEach(({ filename, valueToReplace }) => {
                             const selfAsset = compilation.getAsset(filename);
+                            if (!selfAsset) {
+                                return;
+                            }
+
                             const { source, map } = selfAsset.source.sourceAndMap();
                             const newSourceString = source.toString().replace(valueToReplace, sri);
                             const newSourceMapSource = new webpack.sources.SourceMapSource(
                                 newSourceString,
                                 filename,
-                                map,
+                                map ?? undefined,
                                 source,
                                 map,
                                 true

@@ -1,7 +1,7 @@
 import type { Listeners } from './listeners';
 import createListeners from './listeners';
 
-export interface Cache<K, V> extends Pick<Listeners<[K, V | undefined], void>, 'subscribe'>, Map<K, V> {
+export interface Cache<K, V> extends Pick<Listeners<[K, V | undefined], void>, 'subscribe'>, LegacyMap<K, V> {
     clearListeners: () => void;
 }
 
