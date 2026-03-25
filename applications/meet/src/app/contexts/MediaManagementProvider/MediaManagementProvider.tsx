@@ -75,8 +75,18 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 return;
             }
 
+            const activeDeviceIdByType: Record<'audioinput' | 'audiooutput' | 'videoinput', string> = {
+                audioinput: activeMicrophoneDeviceId,
+                audiooutput: activeAudioOutputDeviceId,
+                videoinput: activeCameraDeviceId,
+            };
+            const currentActiveDeviceId = activeDeviceIdByType[deviceType];
+            const shouldCallLiveKitSwitch = currentActiveDeviceId !== deviceId;
+
             try {
-                await room.switchActiveDevice(deviceType, deviceId);
+                if (shouldCallLiveKitSwitch) {
+                    await room.switchActiveDevice(deviceType, deviceId);
+                }
             } catch (error) {
                 reportMeetError('Failed to switch active device', error);
                 // eslint-disable-next-line no-console
@@ -91,7 +101,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             const toSave = isSystemDefaultDevice ? null : deviceId;
             setPreferredDevice(toSave, deviceType);
         },
-        [room, setPreferredDevice]
+        [activeAudioOutputDeviceId, activeCameraDeviceId, activeMicrophoneDeviceId, room, setPreferredDevice]
     );
 
     const {
