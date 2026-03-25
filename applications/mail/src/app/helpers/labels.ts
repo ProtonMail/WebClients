@@ -4,6 +4,7 @@ import type { IconName } from '@proton/icons/types';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { isCategoryLabel, labelIncludes } from '@proton/mail/helpers/location';
 import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -354,13 +355,9 @@ export const convertCustomViewLabelsToAlmostAllMail = (labelID: string) => {
     return labelID;
 };
 
-export const convertCategoryLabelToCategoryAndInbox = (labelID: string, disabledCategoriesIDs: string[]) => {
-    if (isCategoryLabel(labelID)) {
-        if (labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
-            return [MAILBOX_LABEL_IDS.INBOX, labelID, ...disabledCategoriesIDs];
-        }
-
-        return [MAILBOX_LABEL_IDS.INBOX, labelID];
+export const appendCategoryIDsInInbox = (labelID: string, categoryIDs: CategoryLabelID[]) => {
+    if (labelID === MAILBOX_LABEL_IDS.INBOX) {
+        return [MAILBOX_LABEL_IDS.INBOX, ...categoryIDs];
     }
 
     return labelID;
