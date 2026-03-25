@@ -90,6 +90,7 @@ export const WrappedProtonMeetContainer = () => {
                         // Including the local participant identity to be able to identify the local participant compared to the others
                         localParticipant: room.localParticipant?.identity,
                         context,
+                        tags: room.name ? { meetingLinkName: room.name } : undefined,
                     });
                 }
             });
