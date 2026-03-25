@@ -19,11 +19,11 @@ import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/s
 
 import type { Conversation } from '../models/conversation';
 import {
+    appendCategoryIDsInInbox,
     applyLabelChangesOnConversation,
     applyLabelChangesOnMessage,
     applyLabelChangesOnOneMessageOfAConversation,
     canMoveAll,
-    convertCategoryLabelToCategoryAndInbox,
     convertCustomViewLabelsToAlmostAllMail,
     getCustomViewFromRoute,
     getFolderName,
@@ -400,40 +400,31 @@ describe('label', () => {
         });
     });
 
-    describe('convertCategoryLabelToCategoryAndInbox', () => {
-        it('should return an array with inbox and the category', () => {
-            expect(convertCategoryLabelToCategoryAndInbox(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, [])).toEqual([
+    describe('appendCategoryIDsInInbox', () => {
+        it('should add the category when user is in Inbox', () => {
+            expect(appendCategoryIDsInInbox(MAILBOX_LABEL_IDS.INBOX, [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS])).toEqual([
                 MAILBOX_LABEL_IDS.INBOX,
                 MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
             ]);
         });
 
-        it('should return the spam label ID if fetching from there', () => {
-            expect(convertCategoryLabelToCategoryAndInbox(MAILBOX_LABEL_IDS.SPAM, [])).toEqual(MAILBOX_LABEL_IDS.SPAM);
-        });
-
-        it('should add disabled categories when fetching from primary location', () => {
+        it('should add all the categories when user is in Inbox', () => {
             expect(
-                convertCategoryLabelToCategoryAndInbox(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, [
+                appendCategoryIDsInInbox(MAILBOX_LABEL_IDS.INBOX, [
                     MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                    MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
                 ])
             ).toEqual([
                 MAILBOX_LABEL_IDS.INBOX,
-                MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                 MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
             ]);
         });
 
-        it('should not add disabled categories when fetching from social location', () => {
-            expect(
-                convertCategoryLabelToCategoryAndInbox(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, [
-                    MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-                ])
-            ).toEqual([MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL]);
-        });
-
-        it('should return the custom labelID if fetching from there', () => {
-            expect(convertCategoryLabelToCategoryAndInbox('customlabel1', [])).toEqual('customlabel1');
+        it('should not add the category when user is not in Inbox', () => {
+            expect(appendCategoryIDsInInbox(MAILBOX_LABEL_IDS.SPAM, [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS])).toEqual(
+                MAILBOX_LABEL_IDS.SPAM
+            );
         });
     });
 

@@ -235,8 +235,8 @@ export const useElements: UseElements = ({
 
         // Update the category IDs and push the disabled categories if the default category is selected
         const categoryIDs: CategoryLabelID[] = [];
-        const categoryInURL = categoryIDFromUrl(location);
-        if (categoryViewAccess && categoryInURL) {
+        if (categoryViewAccess && labelID === MAILBOX_LABEL_IDS.INBOX) {
+            const categoryInURL = categoryIDFromUrl(location) ?? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT;
             categoryIDs.push(categoryInURL);
 
             if (categoryInURL === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
