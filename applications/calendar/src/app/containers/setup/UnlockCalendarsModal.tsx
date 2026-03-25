@@ -25,6 +25,7 @@ import { process } from '@proton/shared/lib/calendar/crypto/keys/resetHelper';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { closeDrawerFromChildApp } from '@proton/shared/lib/drawer/helpers';
+import { continueToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 
 import CalendarReactivateSection from './CalendarReactivateSection';
 import CalendarResetSection from './CalendarResetSection';
@@ -169,7 +170,7 @@ const UnlockCalendarsModal = ({
                             {c('Action').t`Recover data`}
                         </ButtonLike>
                         <Button color="norm" type="submit" loading={isLoading} onClick={handleReset}>
-                            {c('Action').t`Continue to ${calendarAppBareName}`}
+                            {continueToPlanOrAppNameText(calendarAppBareName)}
                         </Button>
                     </ModalFooter>
                 </Modal>
