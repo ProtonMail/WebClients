@@ -29,7 +29,7 @@ module.exports = {
     testEnvironment: '@proton/jest-env',
     resolver: './jest.resolver.js',
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|@protontech/mutex-browser|@proton/raw-images|pmcrypto|openpgp|@openpgp/web-stream-tools|jsmimeparser|@protontech/bip39|emoji-mart|@preact/signals-core)/|client-zip)',
+        'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|@protontech/mutex-browser|@proton/raw-images|pmcrypto|openpgp|@openpgp/web-stream-tools|jsmimeparser|@protontech/bip39|emoji-mart|@preact/signals-core|@scure/base)/|client-zip)',
     ],
     moduleNameMapper: {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '@proton/components/__mocks__/fileMock.js',
