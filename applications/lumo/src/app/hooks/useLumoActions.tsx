@@ -18,7 +18,7 @@ import { SearchService } from '../services/search/searchService';
 import { buildLinearChain } from '../messageTree';
 import { useGhostChat } from '../providers/GhostChatProvider';
 import { useGuestTracking } from '../providers/GuestTrackingProvider';
-import { useThinkingMode } from '../providers/ThinkingModeProvider';
+import { useModelTier } from '../providers/ModelTierProvider';
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
 import { selectAttachments, selectAttachmentsBySpaceId, selectContextFilters } from '../redux/selectors';
 import type { MessageMap } from '../redux/slices/core/messages';
@@ -97,7 +97,7 @@ export const useLumoActions = ({
 
     // Custom hooks
     const { isGhostChatMode: isGhostMode } = useGhostChat();
-    const { isThinkingEnabled } = useThinkingMode();
+    const { isThinkingEnabled } = useModelTier();
     const { ensureConversationAndSpace } = useConversationState({
         conversationId,
         spaceId: space?.id,
