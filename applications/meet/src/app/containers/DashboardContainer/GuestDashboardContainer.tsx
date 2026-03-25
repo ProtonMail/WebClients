@@ -2,11 +2,14 @@ import { useHistory } from 'react-router-dom';
 
 import useAppLink from '@proton/components/components/link/useAppLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
 import { getMeetingLink } from '@proton/meet';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectPreviousMeetingLink, selectUpsellModalType, setUpsellModalType } from '@proton/meet/store/slices';
 import { UpsellModalTypes } from '@proton/meet/types/types';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
+import { isElectronMeet } from '@proton/shared/lib/helpers/desktop';
 
 import { CTAModal } from '../../components/AnonymousModal/CTAModal';
 import { JoinWithLinkModal } from '../../components/JoinWithLinkModal/JoinWithLinkModal';
@@ -34,6 +37,10 @@ export const GuestDashboardContainer = () => {
     };
 
     const handleCreateAccount = () => {
+        if (isElectronMeet) {
+            openLinkInBrowser(getAppHref('/meet/signup', APPS.PROTONACCOUNT));
+            return;
+        }
         goToApp('/meet/signup', APPS.PROTONACCOUNT, true);
     };
 

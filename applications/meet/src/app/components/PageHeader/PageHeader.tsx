@@ -5,10 +5,12 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import MeetLogo from '@proton/components/components/logo/MeetLogo';
 import AppsDropdown, { UnAuthenticatedAppsDropdown } from '@proton/components/containers/app/AppsDropdown';
+import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { isElectronMeet } from '@proton/shared/lib/helpers/desktop';
 import logo from '@proton/styles/assets/img/meet/brand-dual-colors.svg';
 import clsx from '@proton/utils/clsx';
 
@@ -30,6 +32,10 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
 
     const handleSignUpClick = () => {
         const returnUrl = getAppHref(SSO_PATHS.MEET_SIGNUP, APPS.PROTONACCOUNT);
+        if (isElectronMeet) {
+            openLinkInBrowser(returnUrl);
+            return;
+        }
         requestFork({
             fromApp: APPS.PROTONMEET,
             forkType: ForkType.SIGNUP,
