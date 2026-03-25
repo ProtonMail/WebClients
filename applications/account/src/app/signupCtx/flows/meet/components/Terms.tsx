@@ -26,7 +26,7 @@ const Terms = () => {
     );
 
     return (
-        <div className="mt-4 text-sm color-weak text-center">
+        <div className="text-sm color-weak text-center">
             {
                 // translator: Full sentence "By continuing, you agree to our terms and conditions and privacy policy."
                 c('pass_signup_2023: Info')
