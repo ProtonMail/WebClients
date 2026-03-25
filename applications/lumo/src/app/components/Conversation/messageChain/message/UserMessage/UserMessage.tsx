@@ -1,25 +1,23 @@
 import { useState } from 'react';
 
-import type { Message, SiblingInfo } from 'applications/lumo/src/app/types';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
-import { IcPencil } from '@proton/icons/icons/IcPencil';
-
 import FileIcon from '@proton/components/components/fileIcon/FileIcon';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
 
 import type { HandleEditMessage } from '../../../../../hooks/useLumoActions';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../../../../redux/hooks';
 import { selectAttachments } from '../../../../../redux/selectors';
-import type { Attachment } from '../../../../../types';
+import type { Attachment, Message, SiblingInfo } from '../../../../../types';
 import { getIsMobileDevice } from '../../../../../util/device';
-import { sendMessageEditEvent } from '../../../../../util/telemetry';
-import { getMimeTypeFromExtension } from '../../../../../util/filetypes';
 import { parseFileReferences } from '../../../../../util/fileReferences';
+import { getMimeTypeFromExtension } from '../../../../../util/filetypes';
+import { sendMessageEditEvent } from '../../../../../util/telemetry';
 import { AttachmentFileCard, FileContentModal } from '../../../../Files/Common';
 import { LazyProgressiveMarkdownRenderer } from '../../../../LumoMarkdown/LazyMarkdownComponents';
 import SiblingSelector from '../../../../SiblingSelector';
@@ -90,9 +88,8 @@ const MessageContentWithMentions = ({ content, message, allAttachments, onView }
         );
         const attachment = fromMessage
             ? (allAttachments[fromMessage.id] ?? null)
-            : (Object.values(allAttachments).find(
-                  (a) => a.filename.toLowerCase() === ref.fileName.toLowerCase()
-              ) ?? null);
+            : (Object.values(allAttachments).find((a) => a.filename.toLowerCase() === ref.fileName.toLowerCase()) ??
+              null);
 
         nodes.push(
             <FileMentionChip

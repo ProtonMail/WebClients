@@ -1,8 +1,8 @@
-import type { useMoveItemsModal } from 'applications/drive/src/app/modals/MoveItemsModal';
 import { c } from 'ttag';
 
 import { generateNodeUid } from '@proton/drive/index';
 
+import type { useMoveItemsModal } from '../../../../modals/MoveItemsModal';
 import type { DecryptedLink } from '../../../../store';
 import { ContextMenuButton } from '../../ContextMenu';
 

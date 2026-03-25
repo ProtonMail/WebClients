@@ -6,8 +6,8 @@
     "sideEffects": false,
     "exports": {
         "types": "./index.d.ts",
-        "default": "./empty.js",
-        "import": "./empty.js"
+        "import": "./empty.js",
+        "default": "./empty.js"
     },
     "main": "./empty.js",
     "types": "./index.d.ts",
@@ -20,7 +20,7 @@
     },
     "devDependencies": {
         "@types/react": "^18.3.28",
-        "typescript": "^5.9.3"
+        "typescript": "^6.0.2"
     },
     "peerDependencies": {
         "@types/react": ">=18.3.28"

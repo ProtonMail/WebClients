@@ -1,7 +1,5 @@
 import { memo, useCallback, useMemo, useRef, useState } from 'react';
 
-import type { HandleRegenerateMessage } from 'applications/lumo/src/app/hooks/useLumoActions';
-import type { ContentBlock, Message, RetryStrategy, SiblingInfo } from 'applications/lumo/src/app/types';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
@@ -9,11 +7,13 @@ import { useModalStateObject } from '@proton/components';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 
 import { useCopyNotification } from '../../../../../hooks/useCopyNotification';
+import type { HandleRegenerateMessage } from '../../../../../hooks/useLumoActions';
 import { useTierErrors } from '../../../../../hooks/useTierErrors';
 import type { SearchItem } from '../../../../../lib/toolCall/types';
 import { getMessageBlocks, messagesEqualForRendering } from '../../../../../messageHelpers';
 import { useIsGuest } from '../../../../../providers/IsGuestProvider';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
+import type { ContentBlock, Message, RetryStrategy, SiblingInfo } from '../../../../../types';
 import { sendMessageCopyEvent } from '../../../../../util/telemetry';
 import LumoButton from '../../../../Buttons/LumoButton';
 import { ReferenceFilesButton } from '../../../../Files';

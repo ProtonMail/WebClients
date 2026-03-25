@@ -2,13 +2,11 @@
     "extends": "../../tsconfig.base.json",
     "ts-node": {
         "compilerOptions": {
-            "allowJs": true,
-            "esModuleInterop": true,
+            "rootDir": "../..",
             "module": "commonjs",
-            "moduleResolution": "node",
-            "resolveJsonModule": true,
-            "skipLibCheck": true,
-            "target": "ES6"
-        }
+            "target": "esnext",
+            "esModuleInterop": true
+        },
+        "ignore": ["node_modules/(?!@proton)"]
     }
 }
