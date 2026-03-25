@@ -13,10 +13,9 @@ import { usePrefetchGenerateRecoveryKit } from '../../../containers/recoveryPhra
 import { SignupHumanVerification, SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';
 import DisplayNameStep from './steps/DisplayNameStep';
-import RecoveryPhraseStep from './steps/RecoveryPhraseStep';
 import AccountDetailsStep from './steps/accountDetails/AccountDetailsStep';
 
-type Step = 'account-details' | 'recovery' | 'display-name' | 'creating-account';
+type Step = 'account-details' | 'display-name' | 'creating-account';
 
 const MeetB2CSignupInner = () => {
     const [step, setStep] = useState<Step>('account-details');
@@ -41,18 +40,10 @@ const MeetB2CSignupInner = () => {
 
                             await signup.setupUser();
 
-                            setStep('recovery');
+                            setStep('display-name');
                         } catch (error) {
                             notifyError(error);
                         }
-                    }}
-                />
-            )}
-
-            {step === 'recovery' && (
-                <RecoveryPhraseStep
-                    onContinue={async () => {
-                        setStep('display-name');
                     }}
                 />
             )}
@@ -91,7 +82,11 @@ const MeetB2CSignup = (props: BaseSignupContextProps) => {
             flowId="meet-b2c"
             hvMode={SignupHumanVerification.DEFERRED}
             onLogin={async (session) => {
-                await props.handleLogin({ data: session, flow: 'signup', appIntent: { app: APPS.PROTONMEET } });
+                await props.handleLogin({
+                    data: session,
+                    flow: 'signup',
+                    appIntent: { app: APPS.PROTONMEET },
+                });
             }}
             paymentsDataConfig={{
                 availablePlans: [],
@@ -105,7 +100,7 @@ const MeetB2CSignup = (props: BaseSignupContextProps) => {
             }}
             accountFormDataConfig={{
                 defaultEmail: searchParams.get('email') || '',
-                availableSignupTypes: new Set([SignupType.Proton, SignupType.External]),
+                availableSignupTypes: new Set([SignupType.External, SignupType.Proton]),
             }}
         >
             <MeetB2CSignupInner />
