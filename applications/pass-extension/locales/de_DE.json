@@ -767,6 +767,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
+      ],
+      "Configure": [
+        "Konfigurieren"
       ]
     },
     "Browser": {
@@ -2744,6 +2747,15 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Deine Organisation verlangt, dass du deinen Zugang zu ${ PASS_APP_NAME } absicherst."
+      ],
+      "Not configured": [
+        "Nicht konfiguriert"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "${ PASS_APP_NAME } in einem größeren Fenster öffnen"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Das ${ PASS_APP_NAME }-Popup-Fenster öffnen"
       ]
     },
     "Keyboard key": {
@@ -3884,6 +3896,9 @@
       ],
       "ZIP or Postal code": [
         "Postleitzahl oder ZIP-Code"
+      ],
+      "Keyboard shortcuts": [
+        "Tastaturkürzel"
       ]
     },
     "Link": {
