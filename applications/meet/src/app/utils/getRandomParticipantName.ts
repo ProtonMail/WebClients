@@ -24,3 +24,7 @@ export const getRandomParticipantName = () => {
 
     return localizedName;
 };
+
+export const getEmptyParticipantName = () => {
+    return '';
+};

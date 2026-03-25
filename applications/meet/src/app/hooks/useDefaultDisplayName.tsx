@@ -1,6 +1,6 @@
 import { useUser } from '@proton/account/user/hooks';
 
-import { getRandomParticipantName } from '../utils/getRandomParticipantName';
+import { getEmptyParticipantName } from '../utils/getRandomParticipantName';
 
 const useDefaultDisplayNameAuthenticated = () => {
     const [user] = useUser();
@@ -8,7 +8,7 @@ const useDefaultDisplayNameAuthenticated = () => {
 };
 
 const useDefaultDisplayNameUnauthenticated = () => {
-    return getRandomParticipantName();
+    return getEmptyParticipantName();
 };
 
 export const defaultDisplayNameHooks = {
