@@ -27,6 +27,7 @@ describe('markMessageAs', () => {
             elements: {},
             total: {},
             params: {
+                categoryIDs: [],
                 filter: {},
                 conversationMode: true,
             },

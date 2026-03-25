@@ -26,6 +26,7 @@ describe('labelMessagesPending', () => {
             elements: {},
             total: {},
             params: {
+                categoryIDs: [],
                 filter: {},
                 conversationMode: true,
             },

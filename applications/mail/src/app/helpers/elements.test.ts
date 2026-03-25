@@ -1017,6 +1017,7 @@ describe('elements', () => {
         it('should generate the same identifier despite the order of the keys', () => {
             const first = getElementContextIdentifier({
                 labelID: MAILBOX_LABEL_IDS.INBOX,
+                categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL],
                 conversationMode: false,
                 filter: {},
                 sort: { sort: 'Time', desc: true },
@@ -1033,6 +1034,7 @@ describe('elements', () => {
                 from: 'hello@proton.me',
                 newsletterSubscriptionID: '1000',
                 labelID: MAILBOX_LABEL_IDS.INBOX,
+                categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL],
                 keyword: 'test',
                 conversationMode: false,
                 filter: {},
