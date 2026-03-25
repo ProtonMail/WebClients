@@ -1,11 +1,9 @@
-import { Logger } from '../Logger';
-import type { MainThreadBridge } from '../MainThreadBridge';
-import type { ClientId, UserId } from '../types';
+import type { MainThreadBridge } from '../mainThread/MainThreadBridge';
+import { Logger } from '../shared/Logger';
+import { sendErrorReportForSearch } from '../shared/errors';
+import type { ClientId, UserId } from '../shared/types';
 
-// How long we wait before considering a client dead.
-const HEARTBEAT_TIMEOUT = 30000;
-
-// Period to clean up the dead clients which did not sent a heartbeat.
+const HEARTBEAT_TIMEOUT = 300_000; // 5 minutes — generous to survive browser throttling of background tabs.
 const CLEANUP_PERIOD_MS = 3000;
 
 export type ClientContext = {
@@ -15,14 +13,13 @@ export type ClientContext = {
     bridge: MainThreadBridge;
 };
 
-// TODO: Rename to TabCoordinator for clarity.
+// TODO: Rename to TabCoordinator - it's less correct technically but clearer.
+// TODO: Use page visiblity API to improve the disconnection logic (e.g. increase the
+// heartbeat timeout or ping the heartbeat when page becomes visible again)
 export class ClientCoordinator {
     private clients = new Map<ClientId, ClientContext>();
-
     private activeClientId: ClientId | null = null;
-
     private cleanupInterval: number | undefined;
-
     private subscribers = new Set<(context: ClientContext | null) => void>();
 
     subscribeClientChanged(listener: (clientContext: ClientContext | null) => void): () => void {
@@ -42,8 +39,6 @@ export class ClientCoordinator {
         if (!this.activeClientId) {
             this.setActiveClient(clientContext);
         }
-
-        // Start looking for dead clients.
         if (this.cleanupInterval === undefined) {
             this.cleanupInterval = self.setInterval(() => this.cleanUpDeadClients(), CLEANUP_PERIOD_MS);
         }
@@ -72,36 +67,38 @@ export class ClientCoordinator {
 
     private setActiveClient(newClientContext: ClientContext | null) {
         this.activeClientId = newClientContext ? newClientContext.clientId : null;
-
         this.subscribers.forEach((fn) => fn(newClientContext));
         Logger.info(`ClientCoordinator: Active client set <${this.activeClientId}>`);
     }
 
-    // When a clients disappear (e.g. the tab is closed), we need to pick a new one.
     private electNextClient() {
         const [nextId] = this.clients.keys();
-        const nextClientId = nextId ?? null;
-        if (!nextClientId) {
-            // No more active client to pick from.
+        if (!nextId) {
             this.setActiveClient(null);
             return;
         }
-
-        const nextClientContext = this.clients.get(nextClientId);
+        const nextClientContext = this.clients.get(nextId);
         if (!nextClientContext) {
             this.setActiveClient(null);
-            Logger.error(`Missing client context for clientId <${nextClientId}>`);
             return;
         }
-
         this.setActiveClient(nextClientContext);
     }
 
+    // Remove dead clients that did not beforeunload/disconnect properly.
     private cleanUpDeadClients() {
         const now = Date.now();
         for (const [clientId, { lastSeen }] of this.clients) {
             if (now - lastSeen > HEARTBEAT_TIMEOUT) {
                 this.disconnect(clientId);
+                // Clients normally disconnect via beforeunload in WorkerClient.
+                // Heartbeat timeout is a fallback — report so we can track how often it happens.
+                sendErrorReportForSearch(new Error('Search client disconnected by timeout'), {
+                    extra: {
+                        staleness: now - lastSeen,
+                        remainingClients: this.clients.size,
+                    },
+                });
             }
         }
     }
