@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { MemberRole, type NonProtonInvitationState } from '@proton/drive';
+import noop from '@proton/utils/noop';
 
 import { DropdownMenuItem } from '../../DropdownMenuItem';
 import type { DirectSharingRole } from '../../interfaces';
@@ -25,21 +26,24 @@ export function DirectSharingRoles({
         return baseLabel;
     };
 
+    const isEditorOrAdmin = selectedRole === MemberRole.Editor || selectedRole === MemberRole.Admin;
+
     return (
         <>
             <DropdownMenuItem
                 label={getRoleLabel(MemberRole.Viewer, c('Label').t`Viewer`)}
                 description={c('Info').t`Can view only`}
                 iconName="eye"
-                onClick={() => onChangeRole(MemberRole.Viewer)}
+                onClick={selectedRole === MemberRole.Viewer ? noop : () => onChangeRole(MemberRole.Viewer)}
                 isSelected={selectedRole === MemberRole.Viewer}
             />
             <DropdownMenuItem
                 label={getRoleLabel(MemberRole.Editor, c('Label').t`Editor`)}
                 description={editorsManageAccess ? c('Info').t`Can edit and manage access` : c('Info').t`Can edit`}
                 iconName="pencil"
-                onClick={() => onChangeRole(MemberRole.Editor)}
-                isSelected={selectedRole === MemberRole.Editor}
+                onClick={isEditorOrAdmin ? noop : () => onChangeRole(MemberRole.Editor)}
+                // If editors can manage access internally they are actually admins
+                isSelected={isEditorOrAdmin}
             />
         </>
     );
