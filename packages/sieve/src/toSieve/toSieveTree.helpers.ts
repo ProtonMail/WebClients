@@ -13,7 +13,14 @@ import {
 
 import { TEST_NODES, V1, V2 } from '../constants';
 import { escapeCharacters, escapeVariables, unique } from '../helpers';
-import type { BuildFileIntoType, EscapeVariableType, SIEVE_VERSION, SieveCondition, ValueTypePair } from '../interface';
+import type {
+    BuildFileIntoType,
+    EscapeVariableType,
+    SIEVE_VERSION,
+    SieveBranch,
+    SieveCondition,
+    ValueTypePair,
+} from '../interface';
 import { MATCH_KEYS, OPERATOR_KEYS } from '../interface';
 
 /**
@@ -246,8 +253,8 @@ export const buildBasicTree = (
         dollarNeeded?: boolean;
     },
     version: SIEVE_VERSION
-) => {
-    const treeStructure = [];
+): SieveBranch[] => {
+    const treeStructure: SieveBranch[] = [];
     if (version === V2) {
         treeStructure.push(
             buildSieveRequire(
@@ -277,6 +284,7 @@ export const buildBasicTree = (
         Then: parameters.thens,
         Type: 'If',
     });
+
     return treeStructure;
 };
 

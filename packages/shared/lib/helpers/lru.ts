@@ -3,7 +3,7 @@ interface Args<K, V> {
     onDispose?: ([key, value]: [K, V | undefined]) => void;
 }
 
-function createLRU<K, V>({ max, onDispose }: Args<K, V>): Map<K, V> {
+function createLRU<K, V>({ max, onDispose }: Args<K, V>): LegacyMap<K, V> {
     const map = new Map<K, V>();
 
     const getOldestKey = () => map.keys().next().value;

@@ -22,6 +22,7 @@ export interface PrepareType {
 
 export interface Match {
     Type: string;
+    Comparator?: string;
 }
 
 export const LABEL_KEYS = {
@@ -89,22 +90,19 @@ export interface BuildFileIntoType {
 }
 
 export interface IfTest {
-    Headers: string[];
-    Keys: string[];
+    Name?: string;
+    Headers?: string[];
+    Keys?: string[];
     Match: Match;
-    Format: Match;
+    Format: Match | null;
     Type: string;
-    Test: IfTest;
+    Test?: IfTest;
     DateFormat?: string;
-    Zone?: {
-        Argument: string;
-        Type: string;
-    };
-    MatchOperator?: {
-        Comparator: string;
-        Type: string;
-    };
+    Zone?: { Argument: string; Type: string };
+    MatchOperator?: { Comparator: string; Type: string };
     AddressPart?: Match;
+    Value?: { Value: string; Type: string };
+    Flags?: any[];
 }
 
 export interface ItType {
@@ -112,14 +110,16 @@ export interface ItType {
         Tests: IfTest[];
         Type: string;
     };
-    Then: {
-        Type: string;
-        Name: string;
-        Flags: string[];
-        Message: string;
-        Args: any[];
-    }[];
+    Then: ThenNode[];
     Type: string;
+}
+
+export interface ThenNode {
+    Type: string;
+    Name?: string;
+    Flags?: string[];
+    Message?: string;
+    Args?: any[];
 }
 
 export interface SieveTests {
