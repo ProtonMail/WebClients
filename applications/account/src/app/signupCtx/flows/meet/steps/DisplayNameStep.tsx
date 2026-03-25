@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -9,6 +10,7 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import Header from '../components/Layout/Header';
 import Layout from '../components/Layout/Layout';
+import { MeetSignupIntent, getMeetSignupIntentFromSearchParams } from '../helpers/path';
 import displayNameIcon from './display-name-icon.svg';
 
 const DisplayNameStep = ({ onSubmit }: { onSubmit: (displayName: string) => Promise<void> }) => {
@@ -18,6 +20,16 @@ const DisplayNameStep = ({ onSubmit }: { onSubmit: (displayName: string) => Prom
     const { validator, onFormSubmit } = useFormErrors();
 
     const handleError = useErrorHandler();
+
+    const location = useLocation();
+    const meetIntent = getMeetSignupIntentFromSearchParams(new URLSearchParams(location.search));
+
+    const getMeetAccountDisplayNameDescription = (meetIntent: MeetSignupIntent | undefined) => {
+        if (meetIntent === MeetSignupIntent.Schedule) {
+            return c('Signup: Meet').t`Choose your display name to continue scheduling your meeting`;
+        }
+        return c('Signup: Meet').t`Choose your display name to continue`;
+    };
 
     return (
         <Layout>
@@ -35,7 +47,7 @@ const DisplayNameStep = ({ onSubmit }: { onSubmit: (displayName: string) => Prom
                             <h1 className="font-arizona text-8xl mb-4">{c('Signup').t`You are all set`}</h1>
 
                             <p className="mt-4 mb-6 mr-auto color-weak text-lg">
-                                {c('Signup').t`Choose your display name to continue scheduling your meeting.`}
+                                {getMeetAccountDisplayNameDescription(meetIntent)}
                             </p>
 
                             <form
