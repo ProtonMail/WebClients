@@ -48,6 +48,9 @@ const SignInWithAnotherDeviceModal = (props: Props) => {
                 api: silentApi,
                 qrCodePayload: deserializeQrCodePayload(qrCodeData),
                 keyPassword: authentication.getPassword(),
+                forkParameters: {
+                    payloadVersion: 1,
+                },
             });
             createNotification({ text: c('edm').t`You have successfully signed in to another device` });
             metrics.core_edm_push_total.increment({ status: 'success' });
