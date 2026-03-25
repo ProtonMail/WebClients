@@ -7,7 +7,7 @@ import { Logo, ProtonLogo, PublicTopBanners, getAppVersion, useConfig, useTheme 
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { addDesktopAppVersion } from '@proton/shared/lib/desktop/version';
-import { isElectronApp, isElectronMail, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
+import { isElectronApp, isElectronMail, isElectronMeet, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import clsx from '@proton/utils/clsx';
@@ -53,6 +53,8 @@ const getStaticAppUrl = (appName: APP_NAMES | undefined) => {
             return getStaticURL('/drive');
         case APPS.PROTONPASS:
             return getStaticURL('/pass');
+        case APPS.PROTONMEET:
+            return getStaticURL('/meet');
         default:
             return getStaticURL('');
     }
@@ -75,7 +77,7 @@ const Layout = ({
 }: Props) => {
     const { APP_VERSION, APP_NAME } = useConfig();
     const appVersion = getAppVersion(APP_VERSION);
-    const version = isElectronMail ? addDesktopAppVersion(appVersion) : appVersion; // only to avoid duplicate strings for L10N
+    const version = isElectronMail || isElectronMeet ? addDesktopAppVersion(appVersion) : appVersion; // only to avoid duplicate strings for L10N
 
     const theme = useTheme();
 
