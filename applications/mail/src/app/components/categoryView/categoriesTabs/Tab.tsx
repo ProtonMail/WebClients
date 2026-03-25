@@ -1,4 +1,4 @@
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
 
 import { clsx } from 'clsx';
 import { c, msgid } from 'ttag';
@@ -9,11 +9,10 @@ import useLoading from '@proton/hooks/useLoading';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
+import { setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
 import { params } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
@@ -35,6 +34,7 @@ const navClasses: Record<TabState, string> = {
 export const Tab = ({ category, count, tabState }: Props) => {
     const [mailSettings] = useMailSettings();
 
+    const location = useLocation();
     const history = useHistory();
     const mailParams = useMailSelector(params);
     const { call } = useEventManager();
@@ -47,8 +47,7 @@ export const Tab = ({ category, count, tabState }: Props) => {
         }
     };
 
-    const navigateTo = `/${LABEL_IDS_TO_HUMAN[category.id] || LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]}`;
-
+    const navigateTo = setCategoryInUrl(location, category.id);
     const unreadCount = count > 999 ? '999+' : count;
 
     return (

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { memo, useCallback, useRef } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
 import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
@@ -12,6 +12,7 @@ import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { useLoading } from '@proton/hooks';
 import type { IconName, IconSize } from '@proton/icons/types';
+import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -21,6 +22,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { useCheckAllRef } from 'proton-mail/containers/CheckAllRefProvider';
+import { categoryIDFromUrl, setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
 import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { params } from 'proton-mail/store/elements/elementsSelectors';
@@ -104,11 +106,16 @@ const SidebarItem = ({
     const { selectAll } = useSelectAll({ labelID });
     const { checkAllRef } = useCheckAllRef();
 
+    const location = useLocation();
     const mailParams = useMailSelector(params);
 
     const [refreshing, withRefreshing] = useLoading(false);
 
-    const humanID = LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS] ?? labelID;
+    // The category in the sidebar must redirect to /inbox#category=CATEGORY
+    const humanID = isCategoryLabel(labelID)
+        ? setCategoryInUrl(location, labelID)
+        : (LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS] ?? labelID);
+
     const link = `/${humanID}`;
 
     const needsTotalDisplay = shouldDisplayTotal(labelID);
@@ -191,6 +198,15 @@ const SidebarItem = ({
                 title={tooltipText}
                 to={link}
                 onClick={handleClick}
+                isActive={(match, location) => {
+                    // Categories are displayed on the sidebar, this highlights the active category
+                    if (isCategoryLabel(labelID)) {
+                        const categoryID = categoryIDFromUrl(location);
+                        return !!(labelID === categoryID);
+                    }
+
+                    return !!match;
+                }}
                 {...dragProps}
                 onDrop={handleDrop}
                 ref={elementRef}

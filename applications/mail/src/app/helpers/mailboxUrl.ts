@@ -3,10 +3,12 @@ import { generatePath, matchPath } from 'react-router';
 
 import type { Location } from 'history';
 
-import { getHumanLabelID } from '@proton/mail/helpers/location';
+import { getHumanLabelID, isCategoryLabel } from '@proton/mail/helpers/location';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/url';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
+import { HUMAN_TO_LABEL_IDS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 
 import { MAIN_ROUTE_PATH } from '../constants';
@@ -111,6 +113,20 @@ export const sortFromUrl = (location: Location, labelID?: string) =>
 
 export const filterFromUrl = (location: Location) => stringToFilter(getSearchParams(location.hash).filter);
 
+export const categoryIDFromUrl = (location: Location): CategoryLabelID | undefined => {
+    const humanCategory = getSearchParams(location.hash).category;
+    if (!humanCategory) {
+        return undefined;
+    }
+
+    const category = HUMAN_TO_LABEL_IDS[humanCategory];
+    if (category && isCategoryLabel(category)) {
+        return category as CategoryLabelID;
+    }
+
+    return undefined;
+};
+
 export const extractSearchParameters = (location: Location): SearchParameters => {
     const { address, from, to, keyword, begin, end, wildcard } = getSearchParams(location.hash);
     return {
@@ -132,3 +148,13 @@ export const setSortInUrl = (location: Location, sort: Sort) =>
 
 export const setFilterInUrl = (location: Location, filter: Filter) =>
     changeSearchParams(location.pathname, location.hash, { page: undefined, filter: filterToString(filter) });
+
+// We hardcode the pathname to inbox because categories are only present in the inbox
+export const setCategoryInUrl = (location: Location, category: CategoryLabelID) => {
+    return changeSearchParams(LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX], location.hash, {
+        page: undefined,
+        filter: undefined,
+        sort: undefined,
+        category: LABEL_IDS_TO_HUMAN[category],
+    });
+};
