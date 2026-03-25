@@ -22,7 +22,7 @@ import { sendPasswordChangeMessageToTabs } from '@proton/shared/lib/authenticati
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, CLIENT_TYPES, KEYGEN_CONFIGS, KEYGEN_TYPES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail, isElectronMeet } from '@proton/shared/lib/helpers/desktop';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
 import {
@@ -64,6 +64,11 @@ export const handleDone = ({
     if (isElectronMail) {
         appIntent = {
             app: APPS.PROTONMAIL,
+        };
+    }
+    if (isElectronMeet) {
+        appIntent = {
+            app: APPS.PROTONMEET,
         };
     }
 

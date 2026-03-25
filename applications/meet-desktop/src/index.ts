@@ -27,6 +27,7 @@ import {
     handleSecondInstanceDeepLink,
     handleStartupDeepLink,
 } from "./utils/protocol/deep_links";
+import { handleIPCCalls } from "./ipc/main";
 
 (async function () {
     initializeLog();
@@ -157,4 +158,5 @@ import {
 
     setRequestPermission();
     extendAppVersionHeader();
+    handleIPCCalls();
 })().catch(captureTopLevelRejection);

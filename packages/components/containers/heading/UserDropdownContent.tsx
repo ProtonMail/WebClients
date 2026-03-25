@@ -23,7 +23,6 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { ForkType } from '@proton/shared/lib/authentication/fork';
 import { APPS, APPS_CONFIGURATION, BRAND_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getShopURL } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
@@ -242,7 +241,7 @@ const UserDropdownContent = () => {
     const showSettingsButton =
         (viewportWidth['<=small'] && APP_NAME !== APPS.PROTONACCOUNT && APP_NAME !== APPS.PROTONVPN_SETTINGS) ||
         APP_NAME === APPS.PROTONDOCS ||
-        (APP_NAME === APPS.PROTONMEET && !isElectronApp);
+        APP_NAME === APPS.PROTONMEET;
 
     return (
         <Dropdown

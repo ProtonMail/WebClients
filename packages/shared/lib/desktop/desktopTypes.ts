@@ -165,6 +165,16 @@ export type PayloadOfHostUpdateType<T extends IPCInboxHostUpdateMessageType> = E
     { type: T }
 >['payload'];
 
+export type IPCMeetClientUpdateMessage = { type: 'openExternal'; payload: string };
+export type IPCMeetClientUpdateMessageType = IPCMeetClientUpdateMessage['type'];
+
+export type IPCMeetMessageBroker = {
+    send?: <T extends IPCMeetClientUpdateMessageType>(
+        type: T,
+        payload: Extract<IPCMeetClientUpdateMessage, { type: T }>['payload']
+    ) => void;
+};
+
 export const END_OF_TRIAL_KEY = 'endOfTrial';
 
 export interface InboxDesktopFreeTrialDates {
