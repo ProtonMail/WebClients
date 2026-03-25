@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
-import { useConfig } from '@proton/components';
+import { useApi, useConfig } from '@proton/components';
 import { useDrive } from '@proton/drive';
+import { queryLatestVolumeEvent } from '@proton/shared/lib/api/drive/volume';
 
 import { useFlagsDriveFoundationSearch } from '../../flags/useFlagsDriveFoundationSearch';
 import type { SearchQuery, SearchResultItem } from '../../modules/search';
@@ -12,6 +13,8 @@ import {
     type SearchModuleState,
     type UserId as SearchUserID,
 } from '../../modules/search';
+import { Logger } from '../../modules/search/internal_v2/shared/Logger';
+import { sendErrorReport } from '../../utils/errorHandling';
 
 export type UseSearchModuleReturn =
     | { isAvailable: false }
@@ -40,6 +43,7 @@ export const useSearchModule = (): UseSearchModuleReturn => {
     } = useDrive();
 
     const [user] = useUser();
+    const api = useApi();
 
     const [searchModule] = useState(() => {
         const isSupported = SearchModule.isEnvironmentCompatible();
@@ -49,18 +53,30 @@ export const useSearchModule = (): UseSearchModuleReturn => {
             return null;
         }
 
-        const latestEventIdProvider = new SearchLatestEventIdProvider();
+        const userId = user.ID as SearchUserID;
+        const latestEventIdProvider = new SearchLatestEventIdProvider(userId);
         const driveClientForSearchEvents = createSearchDriveInstance({
             latestEventIdProvider,
         });
 
-        return SearchModule.getOrCreate({
-            appVersion: APP_VERSION,
-            userId: user.ID as SearchUserID,
-            driveClient: drive,
-            driveClientForSearchEvents,
-            latestEventIdProvider,
-        });
+        try {
+            return SearchModule.getOrCreate({
+                appVersion: APP_VERSION,
+                userId,
+                driveClient: drive,
+                driveClientForSearchEvents,
+                latestEventIdProvider,
+                fetchLastEventIdForTreeScopeId: (treeEventScopeId, abortSignal) =>
+                    api<{ EventID: string; Code: number }>({
+                        ...queryLatestVolumeEvent(treeEventScopeId),
+                        signal: abortSignal.signal,
+                    }),
+            });
+        } catch (error) {
+            Logger.error('Error while creating Search module', error);
+            sendErrorReport(error);
+            return null;
+        }
     });
 
     const [searchModuleState, setSearchModuleState] = useState<SearchModuleState | null>(() =>
@@ -85,9 +101,9 @@ export const useSearchModule = (): UseSearchModuleReturn => {
             isSearchable: searchModuleState.isSearchable,
             isRunningOutdatedVersion: searchModuleState.isRunningOutdatedVersion,
 
-            // TODO: Implement
+            // TODO: remove
             isUserOptIn: true,
-            // TODO: Implement
+            // TODO: remove
             optIn: async () => {
                 window.alert('TBD: Optin');
             },
