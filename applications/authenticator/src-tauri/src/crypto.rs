@@ -1,4 +1,4 @@
-use rand::{rngs::StdRng, RngCore, SeedableRng};
+use rand::{TryRng, rngs::SysRng};
 
 const KEY_LENGTH: usize = 32;
 
@@ -7,10 +7,9 @@ pub fn generate_encryption_key() -> Vec<u8> {
 }
 
 fn random_bytes(count: usize) -> Vec<u8> {
-    let mut random_bytes = vec![0; count];
-    let mut rng = StdRng::from_os_rng();
-    rng.fill_bytes(&mut random_bytes);
-    random_bytes.to_vec()
+    let mut bytes = vec![0u8; count];
+    SysRng.try_fill_bytes(&mut bytes).expect("OS RNG failure");
+    bytes
 }
 
 #[cfg(test)]
