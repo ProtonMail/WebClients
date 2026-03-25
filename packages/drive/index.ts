@@ -1,6 +1,11 @@
 import { useCallback, useState } from 'react';
 
-import type { MetricEvent, ProtonDriveCryptoCache, Telemetry } from '@protontech/drive-sdk';
+import type {
+    MetricEvent,
+    ProtonDriveCryptoCache,
+    LatestEventIdProvider as SdkLatestEventIdProvider,
+    Telemetry,
+} from '@protontech/drive-sdk';
 import { MemoryCache, NodeType, ProtonDriveClient, VERSION } from '@protontech/drive-sdk';
 import { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
 import type { LogHandler, MetricHandler, MetricRecord } from '@protontech/drive-sdk/dist/telemetry';
@@ -243,7 +248,7 @@ export function useDrive() {
              * @param params Create
              * @returns
              */
-            createSearchDriveInstance: (params: { latestEventIdProvider: LatestEventIdProvider }) => {
+            createSearchDriveInstance: (params: { latestEventIdProvider: SdkLatestEventIdProvider }) => {
                 if (!driveEntitiesCacheSingleton) {
                     throw new Error('[createSearchDriveInstance] Entity cache required');
                 }
