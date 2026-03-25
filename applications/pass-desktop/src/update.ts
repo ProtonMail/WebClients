@@ -6,13 +6,15 @@ import { type FeatureFlagsResponse, PassFeature } from '@proton/pass/types/api/f
 import { semver } from '@proton/pass/utils/string/semver';
 import noop from '@proton/utils/noop';
 
+import { msix_updater } from '../native';
 import config from './app/config';
 import { ARCH } from './lib/env';
-import { installWindowsUpdate } from './lib/update';
 import { userAgent } from './lib/user-agent';
 import { store } from './store';
 import logger from './utils/logger';
 import { isMac, isProdEnv, isWindows } from './utils/platform';
+
+export const installWindowsUpdate = async (buildUri: string) => msix_updater.installUpdate(buildUri);
 
 const SUPPORTED_PLATFORMS = ['darwin', 'win32'];
 export const UPDATE_SOURCE_URL = `https://proton.me/download/PassDesktop/${process.platform}/${ARCH}`;
@@ -27,7 +29,7 @@ export type RemoteManifestResponse = {
         Version: string;
         RolloutPercentage: number;
         CategoryName: 'Stable' | 'Beta';
-        File: { Url: string }[];
+        File?: { Url: string }[];
     }[];
 };
 
@@ -107,10 +109,12 @@ export const checkForUpdates = async (session: Session): Promise<boolean> => {
         return false;
     }
 
-    // reset feed url each time to adapt if beta settings changed
-    const feedUrl = getFeedURL(getIsBeta());
-    autoUpdater.setFeedURL(feedUrl);
-    logger.log(`[Update] Set feed url ${feedUrl.url}`);
+    if (isMac()) {
+        // reset feed url each time to adapt if beta settings changed
+        const feedUrl = getFeedURL(getIsBeta());
+        autoUpdater.setFeedURL(feedUrl);
+        logger.log(`[Update] Set feed url ${feedUrl.url}`);
+    }
 
     // don't attempt to update during development
     if (!isProdEnv()) {
@@ -122,8 +126,13 @@ export const checkForUpdates = async (session: Session): Promise<boolean> => {
 
     logger.log(`[Update] Check for update v=${latestRelease.Version}`);
     if (isWindows()) {
-        const url = latestRelease.File[0]?.Url;
-        if (!url) logger.log(`[Update] No url found in the latest release`);
+        const url = latestRelease.File?.[0]?.Url;
+
+        if (!url) {
+            logger.log(`[Update] No url found in the latest release`);
+            return false;
+        }
+
         await installWindowsUpdate(url);
     } else {
         autoUpdater.checkForUpdates();
@@ -140,7 +149,9 @@ const initUpdater = (session: Session) => {
         return;
     }
 
-    autoUpdater.setFeedURL(getFeedURL(getIsBeta()));
+    if (isMac()) {
+        autoUpdater.setFeedURL(getFeedURL(getIsBeta()));
+    }
 
     autoUpdater.on('error', (err) => {
         logger.log('[Update] An error ocurred');

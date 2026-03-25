@@ -3,8 +3,8 @@ import { autoUpdater } from 'electron';
 import { type FeatureFlagsResponse, PassFeature } from '@proton/pass/types/api/features';
 import noop from '@proton/utils/noop';
 
+import { msix_updater } from '../native';
 import config from './app/config';
-import { installWindowsUpdate } from './lib/update';
 import { userAgent } from './lib/user-agent';
 import { store } from './store';
 import type { RemoteManifestResponse } from './update';
@@ -24,8 +24,8 @@ jest.mock('./utils/platform', () => ({
     isProdEnv: jest.fn(() => true),
 }));
 
-jest.mock('./lib/update', () => ({
-    installWindowsUpdate: jest.fn(),
+jest.mock('../native', () => ({
+    msix_updater: { installUpdate: jest.fn() },
 }));
 
 const getMockSession = (version: RemoteManifestResponse, flags: FeatureFlagsResponse): any => ({
@@ -277,6 +277,6 @@ describe('Electron updater', () => {
 
         expect(update).toBe(true);
         expect(autoUpdater.checkForUpdates).not.toHaveBeenCalled();
-        expect(installWindowsUpdate).toHaveBeenCalled();
+        expect(msix_updater.installUpdate).toHaveBeenCalled();
     });
 });

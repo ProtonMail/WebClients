@@ -18,6 +18,7 @@ shared = { path = "../shared" }
 windows = { version = "=0.54.0", features = [
   "Foundation",
   "Management_Deployment",
+  "Win32_System_Recovery",
 ] }
 
 [build-dependencies]
