@@ -743,6 +743,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
+      ],
+      "Configure": [
+        "Määritä"
       ]
     },
     "Browser": {
@@ -2592,6 +2595,15 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisaatiosi vaatii, että suojaat pääsysi ${ PASS_APP_NAME }:iin"
+      ],
+      "Not configured": [
+        "Ei määritetty"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Avaa ${ PASS_APP_NAME } suuremmassa ikkunassa"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Avaa ${ PASS_APP_NAME } -ponnahdusikkuna"
       ]
     },
     "Keyboard key": {
@@ -3711,6 +3723,9 @@
       ],
       "ZIP or Postal code": [
         "Postinumero"
+      ],
+      "Keyboard shortcuts": [
+        "Pikanäppäimet"
       ]
     },
     "Link": {
