@@ -6,7 +6,7 @@ module.exports = {
   testEnvironment: '@proton/jest-env',
   resolver: './jest.resolver.js',
   transformIgnorePatterns: [
-    'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|@protontech/mutex-browser|@proton/raw-images|pmcrypto|@openpgp/web-stream-tools|jsmimeparser|@protontech/bip39|emoji-mart|@preact/signals-core)/|client-zip)',
+    'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|@protontech/mutex-browser|@proton/raw-images|pmcrypto|@openpgp/web-stream-tools|jsmimeparser|@protontech/bip39|emoji-mart|@preact/signals-core|@scure/base)/|client-zip)',
   ],
   transform: {
     '^.+\\.(ts|js|mjs)x?$': [

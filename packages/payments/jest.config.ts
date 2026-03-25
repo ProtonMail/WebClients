@@ -6,7 +6,7 @@ const jestConfig: JestConfigWithTsJest = {
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     testEnvironment: '@proton/jest-env',
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|@protontech/mutex-browser|pmcrypto|openpgp|@openpgp/web-stream-tools|@protontech/bip39|jsmimeparser|emoji-mart|msw|@mswjs|until-async|@preact/signals-core)/)',
+        'node_modules/(?!(@proton/shared|@proton/components|@protontech/telemetry|@protontech/mutex-browser|pmcrypto|openpgp|@openpgp/web-stream-tools|@protontech/bip39|jsmimeparser|emoji-mart|msw|@mswjs|until-async|@preact/signals-core|@scure/base)/)',
     ],
     transform: {
         // experimentally using swc
