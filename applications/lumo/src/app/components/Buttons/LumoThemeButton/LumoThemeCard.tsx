@@ -2,7 +2,7 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import clsx from '@proton/utils/clsx';
 
 export type LumoThemeCardProps = {
@@ -19,13 +19,15 @@ type Props = LumoThemeCardProps & {
 const LumoThemeCard = ({ src, label, selected, onChange, value }: Props) => {
     return (
         <div className="flex flex-nowrap flex-column gap-1 items-center">
-            <Button
-                className={clsx('lumo-theme-card-button rounded', selected && 'is-active pointer-events-none')}
+            <ButtonLike
+                shape="outline"
+                color={selected ? 'norm' : 'weak'}
+                className={clsx('p-0 rounded overflow-hidden border-2', selected && 'pointer-events-none')}
                 onClick={() => onChange(value)}
                 aria-label={c('Action').t`Use ${label} theme`}
             >
-                <img src={src} alt="" />
-            </Button>
+                <img src={src} alt="" className="rtl:mirror" />
+            </ButtonLike>
             <span>{label}</span>
         </div>
     );
