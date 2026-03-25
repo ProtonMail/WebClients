@@ -10,6 +10,7 @@ const UPDATE_PROGRESS_THROTTLE_MS = 1000;
 type TaskLoad = {
     remainingBytes: number;
     totalBytes: number;
+    downloadId: string;
 };
 
 /**
@@ -52,6 +53,15 @@ export class DownloadScheduler {
         for (const download of downloads) {
             this.cancelTask(download.taskId);
         }
+
+        // Clear active task loads for this download so retries aren't
+        // blocked by ghost entries from the cancelled run.
+        for (const [taskId, load] of this.activeTasksLoad) {
+            if (load.downloadId === downloadId) {
+                this.activeTasksLoad.delete(taskId);
+            }
+        }
+        this.drainQueue();
     }
 
     // Reset the scheduler and drop any accounted load.
@@ -94,7 +104,11 @@ export class DownloadScheduler {
             }
 
             this.pendingTasks.splice(index, 1);
-            const pendingTaskLoad = { totalBytes: estimatedBytes, remainingBytes: estimatedBytes };
+            const pendingTaskLoad: TaskLoad = {
+                totalBytes: estimatedBytes,
+                remainingBytes: estimatedBytes,
+                downloadId: nextTask.downloadId,
+            };
             this.startTask(nextTask, pendingTaskLoad);
             break;
         }
