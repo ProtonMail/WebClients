@@ -11,6 +11,10 @@ export function measureRequestTime() {
         }
     });
 
+    webRequestRouter.onErrorOccurred((details) => {
+        requestStartTimestampMap.delete(details.id);
+    });
+
     webRequestRouter.onCompleted((details) => {
         const startTimestamp = requestStartTimestampMap.get(details.id);
         if (startTimestamp) {

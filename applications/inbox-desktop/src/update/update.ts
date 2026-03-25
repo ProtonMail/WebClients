@@ -35,6 +35,7 @@ export function initializeUpdateChecks() {
     }
 
     updateLogger.info("Initialization of update checks.");
+    autoUpdater.on("error", (error) => updateLogger.error("autoUpdater error:", error));
 
     autoUpdater.on("update-downloaded", async () => {
         updateDownloaded = true;
