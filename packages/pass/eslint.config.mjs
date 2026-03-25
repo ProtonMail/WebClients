@@ -16,5 +16,5 @@ export default defineConfig([
             'import/no-cycle': 'off',
         },
     },
-    globalIgnores(['fathom/', 'asm/']),
+    globalIgnores(['fathom/', 'asm/', 'docs/starlight/']),
 ]);
