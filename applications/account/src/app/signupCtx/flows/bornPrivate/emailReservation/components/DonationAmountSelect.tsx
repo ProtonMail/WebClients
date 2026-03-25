@@ -131,7 +131,7 @@ const DonationAmountSelect = ({
                             setShowInput(true);
                         }}
                     >
-                        <span className="text-semibold">Other</span>
+                        <span className="text-semibold">{c('Label').t`Other`}</span>
                     </Button>
                 ) : (
                     <Input
