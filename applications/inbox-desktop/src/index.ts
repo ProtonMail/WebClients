@@ -27,7 +27,8 @@ import { checkDefaultProtocols } from "./utils/protocol/default";
 import { initializeSentry } from "./utils/sentry";
 import { setRequestPermission, extendAppVersionHeader } from "./utils/session";
 import { captureTopLevelRejection, captureUncaughtErrors } from "./utils/log/captureUncaughtErrors";
-import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
+import { logInitialAppInfo, logPostReadyInfo } from "./utils/log/logInitialAppInfo";
+import { registerSystemEventLog } from "./utils/log/appEventLog";
 import metrics from "./utils/metrics";
 import { measureRequestTime } from "./utils/log/measureRequestTime";
 import { initializeFeatureFlagManager } from "./utils/flags/manager";
@@ -150,8 +151,12 @@ import { quitTracker } from "./utils/log/quitTracker";
     await app.whenReady();
     profiler.mark("app-ready");
 
+    // Log additional information that can only be accessed after app ready.
+    logPostReadyInfo();
+    registerSystemEventLog();
+
     // Register shutdown signal handlers (logs)
-    quitTracker.register();
+    quitTracker.register(getWebContentsViewName);
 
     handleSecondInstance();
     checkDefaultProtocols();
