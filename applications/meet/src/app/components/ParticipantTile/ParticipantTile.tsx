@@ -34,10 +34,11 @@ import './ParticipantTile.scss';
 
 interface ParticipantTileProps {
     participant: Participant;
-    viewSize?: 'small' | 'medium' | 'large' | 'midLarge';
+    viewSize?: 'xsmall' | 'small' | 'medium' | 'large' | 'midLarge';
 }
 
 const audioIconSize = {
+    xsmall: '1.5rem',
     small: '1.5rem',
     medium: '1.5rem',
     large: '2rem',
@@ -45,6 +46,7 @@ const audioIconSize = {
 };
 
 const positionBySize = {
+    xsmall: 0.375,
     small: 0.375,
     medium: 0.5,
     large: 1,
@@ -52,6 +54,7 @@ const positionBySize = {
 };
 
 const indicatorSizeBySize = {
+    xsmall: 24,
     small: 24,
     medium: 24,
     large: 32,
@@ -351,7 +354,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
             )}
             <div
                 className={clsx(
-                    'color-norm absolute left-custom bottom-custom participant-tile-name text-ellipsis max-w-custom flex',
+                    'color-norm absolute left-custom bottom-custom participant-tile-name max-w-custom flex flex-nowrap items-center',
                     viewSize !== 'large' && 'text-sm'
                 )}
                 style={{
@@ -363,9 +366,9 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
             >
                 <SecurityShield
                     title={c('Info').t`End-to-end encryption is active for audio and video.`}
-                    smallIcon={viewSize === 'small'}
+                    smallIcon={viewSize === 'xsmall' || viewSize === 'small'}
                 />
-                {participantName}
+                <span className={clsx('text-ellipsis', viewSize === 'xsmall' && 'text-sm')}>{participantName}</span>
             </div>
         </div>
     );
