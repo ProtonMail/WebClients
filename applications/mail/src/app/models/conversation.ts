@@ -1,4 +1,4 @@
-import type { MIME_TYPES } from '@proton/shared/lib/constants';
+import type { CategoryLabelID, MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { AttachmentInfo, AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -15,6 +15,7 @@ export interface Conversation {
     ContextNumUnread?: number;
     ContextNumMessages?: number;
     Labels?: ConversationLabel[];
+    CategoryID?: CategoryLabelID;
     Order?: number;
     NumAttachments?: number;
     ContextNumAttachments?: number;
