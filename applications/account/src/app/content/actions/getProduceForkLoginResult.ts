@@ -122,6 +122,9 @@ export const getProduceForkLoginResult = async ({
                         api,
                         qrCodePayload: desktopForkParameters.qrCodePayload,
                         keyPassword: session.data.keyPassword,
+                        forkParameters: {
+                            payloadVersion: forkParameters.payloadVersion,
+                        },
                     });
                     result = { type: 'success' };
                 } catch (e) {
