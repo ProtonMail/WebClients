@@ -3,6 +3,7 @@ import { type SetupServer, setupServer } from 'msw/node';
 import { base64ToMasterKey, generateMasterKeyBase64, generateSpaceKeyBase64 } from '../../crypto';
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import { CONVERSATION_STORE, DbApi, MESSAGE_STORE, SPACE_STORE } from '../../indexedDb/db';
+import { sendMessageWithRedux } from '../../lib/lumo-api-client/integrations/redux';
 import { _getCallbacks } from '../../llm';
 import { setRetryPushEveryMs } from '../../redux/sagas';
 import {
@@ -3077,5 +3078,326 @@ describe('Lumo Persistence Integration Tests', () => {
                 }
             }
         }, 30000);
+    });
+
+    describe('Failed assistant messages should survive page reload', () => {
+        it('should persist a failed assistant message to IDB so it survives reload', async () => {
+            const { store, dispatch, dbApi, actionHistory } =
+                await setupTestEnvironment();
+            allowConsoleError = true;
+            allowConsoleWarn = true;
+
+            try {
+                // --- Setup: space + conversation + user message (normal happy path) ---
+                const spaceId = newSpaceId();
+                const space = createTestSpace({ id: spaceId });
+                dispatch(addSpace(space));
+                dispatch(pushSpaceRequest({ id: spaceId }));
+
+                const conversationId = newConversationId();
+                const now = new Date().toISOString();
+                dispatch(
+                    addConversation({
+                        id: conversationId,
+                        spaceId,
+                        createdAt: now,
+                        updatedAt: now,
+                        title: '',
+                        status: ConversationStatus.GENERATING,
+                    })
+                );
+                dispatch(pushConversationRequest({ id: conversationId }));
+
+                const userMessageId = newMessageId();
+                dispatch(
+                    addMessage({
+                        id: userMessageId,
+                        conversationId,
+                        createdAt: now,
+                        role: Role.User,
+                        status: 'succeeded' as Status,
+                    })
+                );
+                dispatch(
+                    finishMessage({
+                        messageId: userMessageId,
+                        conversationId,
+                        spaceId,
+                        content: 'What is 2+2?',
+                        status: 'succeeded' as Status,
+                        role: Role.User,
+                    })
+                );
+                dispatch(pushMessageRequest({ id: userMessageId }));
+
+                // Wait for user message to reach IDB (proves the pipeline works)
+                await waitForMessageSyncWithServer(dbApi, userMessageId);
+
+                // --- Control: succeeded assistant message IS pushed and persisted ---
+                const succeededMessageId = newMessageId();
+                dispatch(
+                    addMessage({
+                        id: succeededMessageId,
+                        conversationId,
+                        createdAt: new Date().toISOString(),
+                        role: Role.Assistant,
+                        placeholder: true,
+                    })
+                );
+
+                actionHistory.clear();
+
+                dispatch(
+                    finishMessage({
+                        messageId: succeededMessageId,
+                        conversationId,
+                        spaceId,
+                        content: 'The answer is 4',
+                        status: 'succeeded' as Status,
+                        role: Role.Assistant,
+                    })
+                );
+                dispatch(pushMessageRequest({ id: succeededMessageId }));
+
+                await waitForMessageSyncWithServer(dbApi, succeededMessageId);
+
+                // Verify: succeeded message was pushed and reached IDB
+                const succeededPushActions = actionHistory.actions.filter(
+                    (a) => a.type === pushMessageRequest.type && a.payload.id === succeededMessageId
+                );
+                expect(succeededPushActions.length).toBeGreaterThan(0);
+
+                const idbSucceeded = await dbApi.getMessageById(succeededMessageId);
+                expect(idbSucceeded).toBeDefined();
+                expect(idbSucceeded!.id).toBe(succeededMessageId);
+
+                // --- Test: failed assistant message should get the same treatment ---
+
+                // Create the assistant message (as sendMessage does at helper.ts:253)
+                const assistantMessageId = newMessageId();
+                dispatch(
+                    addMessage({
+                        id: assistantMessageId,
+                        conversationId,
+                        createdAt: new Date().toISOString(),
+                        role: Role.Assistant,
+                        placeholder: true,
+                    })
+                );
+
+                actionHistory.clear();
+
+                // Mock only the network layer: return a ReadableStream with SSE data
+                // that streams some tokens then sends an error event.
+                // Everything else runs as real production code: callAssistant,
+                // runSseReceiveLoop, all transform streams, chunkCallback,
+                // error handling, finishCallback, and the push decision.
+                const mockApi = async () => {
+                    const encoder = new TextEncoder();
+                    return new ReadableStream({
+                        start(controller) {
+                            controller.enqueue(encoder.encode('data: {"type":"token_data","target":"message","content":"The ","count":0}\n\n'));
+                            controller.enqueue(encoder.encode('data: {"type":"token_data","target":"message","content":"answer is","count":1}\n\n'));
+                            controller.enqueue(encoder.encode('data: {"type":"error"}\n\n'));
+                            controller.close();
+                        },
+                    });
+                };
+
+                try {
+                    await dispatch(
+                        sendMessageWithRedux(mockApi as any, [], {
+                            messageId: assistantMessageId,
+                            conversationId,
+                            spaceId,
+                            config: { enableU2LEncryption: false, enableSmoothing: false },
+                        })
+                    );
+                } catch {
+                    // Expected: the error event causes chunkCallback to throw,
+                    // which propagates through runSseReceiveLoop
+                }
+
+                // Verify the real code path set status to 'failed'
+                const reduxMessage = store.getState().messages[assistantMessageId];
+                expect(reduxMessage).toBeDefined();
+                expect(reduxMessage.status).toBe('failed');
+                expect(reduxMessage.content).toBe('The answer is');
+                expect(reduxMessage.placeholder).toBe(false);
+
+                // Verify pushMessageRequest was dispatched by the real finishCallback
+                const pushActions = actionHistory.actions.filter(
+                    (a) => a.type === pushMessageRequest.type && a.payload.id === assistantMessageId
+                );
+                expect(pushActions.length).toBeGreaterThan(0);
+
+                // The failed assistant message should be persisted to IDB
+                await waitForCondition(async () => {
+                    const msg = await dbApi.getMessageById(assistantMessageId);
+                    return msg !== undefined;
+                }, { message: `waiting for failed message ${assistantMessageId} to appear in IDB` });
+
+                const idbMessage = await dbApi.getMessageById(assistantMessageId);
+                expect(idbMessage).toBeDefined();
+                expect(idbMessage!.id).toBe(assistantMessageId);
+            } finally {
+                dispatch(stopRootSaga());
+                await sleep(100);
+            }
+        }, 15000);
+
+        it('should reload a failed assistant message from IDB after page refresh', async () => {
+            const { dispatch, dbApi, masterKeyBase64, userId } = await setupTestEnvironment();
+            allowConsoleError = true;
+            allowConsoleWarn = true;
+
+            let succeededMessageId: string;
+            let assistantMessageId: string;
+            let conversationId: string;
+
+            // Session 1: create a conversation with both a succeeded and a failed assistant message
+            try {
+                const spaceId = newSpaceId();
+                const space = createTestSpace({ id: spaceId });
+                dispatch(addSpace(space));
+                dispatch(pushSpaceRequest({ id: spaceId }));
+
+                conversationId = newConversationId();
+                const now = new Date().toISOString();
+                dispatch(
+                    addConversation({
+                        id: conversationId,
+                        spaceId,
+                        createdAt: now,
+                        updatedAt: now,
+                        title: '',
+                        status: ConversationStatus.GENERATING,
+                    })
+                );
+                dispatch(pushConversationRequest({ id: conversationId }));
+
+                const userMessageId = newMessageId();
+                dispatch(
+                    addMessage({
+                        id: userMessageId,
+                        conversationId,
+                        createdAt: now,
+                        role: Role.User,
+                        status: 'succeeded' as Status,
+                    })
+                );
+                dispatch(
+                    finishMessage({
+                        messageId: userMessageId,
+                        conversationId,
+                        spaceId,
+                        content: 'What is 2+2?',
+                        status: 'succeeded' as Status,
+                        role: Role.User,
+                    })
+                );
+                dispatch(pushMessageRequest({ id: userMessageId }));
+                await waitForMessageSyncWithServer(dbApi, userMessageId);
+
+                // Control: succeeded assistant message
+                succeededMessageId = newMessageId();
+                dispatch(
+                    addMessage({
+                        id: succeededMessageId,
+                        conversationId,
+                        createdAt: new Date().toISOString(),
+                        role: Role.Assistant,
+                        placeholder: true,
+                    })
+                );
+                dispatch(
+                    finishMessage({
+                        messageId: succeededMessageId,
+                        conversationId,
+                        spaceId,
+                        content: 'The answer is 4',
+                        status: 'succeeded' as Status,
+                        role: Role.Assistant,
+                    })
+                );
+                dispatch(pushMessageRequest({ id: succeededMessageId }));
+                await waitForMessageSyncWithServer(dbApi, succeededMessageId);
+
+                // Test: failed assistant message via real sendMessageWithRedux
+                // with mock network returning SSE tokens then an error event
+                assistantMessageId = newMessageId();
+                dispatch(
+                    addMessage({
+                        id: assistantMessageId,
+                        conversationId,
+                        createdAt: new Date().toISOString(),
+                        role: Role.Assistant,
+                        placeholder: true,
+                    })
+                );
+
+                const mockApi = async () => {
+                    const encoder = new TextEncoder();
+                    return new ReadableStream({
+                        start(controller) {
+                            controller.enqueue(encoder.encode('data: {"type":"token_data","target":"message","content":"The answer","count":0}\n\n'));
+                            controller.enqueue(encoder.encode('data: {"type":"token_data","target":"message","content":" is","count":1}\n\n'));
+                            controller.enqueue(encoder.encode('data: {"type":"error"}\n\n'));
+                            controller.close();
+                        },
+                    });
+                };
+
+                try {
+                    await dispatch(
+                        sendMessageWithRedux(mockApi as any, [], {
+                            messageId: assistantMessageId,
+                            conversationId,
+                            spaceId,
+                            config: { enableU2LEncryption: false, enableSmoothing: false },
+                        })
+                    );
+                } catch {
+                    // Expected: error event causes chunkCallback to throw
+                }
+
+                // Wait for the push saga to persist the failed message
+                await waitForCondition(async () => {
+                    const msg = await dbApi.getMessageById(assistantMessageId);
+                    return msg !== undefined;
+                }, { message: `waiting for failed message ${assistantMessageId} to appear in IDB` });
+            } finally {
+                dispatch(stopRootSaga());
+                await sleep(100);
+            }
+
+            // Session 2: simulate page reload — fresh Redux, same IDB
+            {
+                const { store: store2, dispatch: dispatch2 } = await setupTestEnvironment({
+                    masterKeyBase64,
+                    existingDbApi: dbApi,
+                    existingUserId: userId,
+                });
+
+                try {
+                    await sleep(1000);
+
+                    // Control: succeeded message should survive reload
+                    const reloadedSucceeded = store2.getState().messages[succeededMessageId];
+                    expect(reloadedSucceeded).toBeDefined();
+                    expect(reloadedSucceeded.content).toBe('The answer is 4');
+                    expect(reloadedSucceeded.status).toBe('succeeded');
+
+                    // The failed assistant message should have been reloaded from IDB
+                    const reloadedMessage = store2.getState().messages[assistantMessageId];
+                    expect(reloadedMessage).toBeDefined();
+                    expect(reloadedMessage.content).toBe('The answer is');
+                    expect(reloadedMessage.status).toBe('failed');
+                } finally {
+                    dispatch2(stopRootSaga());
+                    await sleep(100);
+                }
+            }
+        }, 20000);
     });
 });
