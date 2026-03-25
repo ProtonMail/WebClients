@@ -1232,6 +1232,12 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Change my access": [
+        "Muuta käyttöoikeuttani"
+      ],
+      "Remove my access": [
+        "Poista käyttöoikeuteni"
       ]
     },
     "Action: Docs": {
@@ -6672,6 +6678,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Jos poistat itsesi, menetät käyttöoikeuden tiedostoon \"${ fileName }\" etkä voi avata sitä uudelleen, ellei omistaja jaa sitä kanssasi."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Et voi jakaa tiedostoa ”${ fileName }” sen jälkeen, kun käyttöoikeus on muutettu katselijaksi. Vain omistaja voi muuttaa käyttöoikeutesi uudelleen."
       ]
     },
     "info": {
@@ -9151,6 +9163,9 @@
       ],
       "Your settings have been changed successfully": [
         "Tekemäsi asetusmuutokset on tallennettu"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" jaettiin"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10770,6 +10785,9 @@
       ],
       "pending": [
         "odottaa"
+      ],
+      "user joined": [
+        "käyttäjä liittyi"
       ]
     },
     "Storage": {
@@ -12552,6 +12570,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "Sinulla on 5 Gt tallennustilaa"
+      ],
+      "Change access to viewer?": [
+        "Muutetaanko käyttöoikeus katseluun?"
+      ],
+      "Remove your access?": [
+        "Poista käyttöoikeus?"
+      ],
+      "Share \"${ fileName }\"": [
+        "Jaa \"${ fileName }\""
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12646,6 +12673,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "Heille on lähetetty kutsu kohteeseen."
+      ],
+      "Change shared item settings": [
+        "Muuta jaettavan kohteen asetuksia"
+      ],
+      "New!": [
+        "Uutta!"
       ]
     },
     "tooltip": {
