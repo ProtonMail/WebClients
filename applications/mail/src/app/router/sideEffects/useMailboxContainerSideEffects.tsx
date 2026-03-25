@@ -1,7 +1,6 @@
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 
-import { useMailCategoriesRedirection } from 'proton-mail/components/categoryView/useMailCategoriesRedirection';
 import useAutoOpenContactsDrawer from 'proton-mail/hooks/drawer/useAutoOpenContactsDrawer';
 import useNewEmailNotification from 'proton-mail/hooks/mailbox/notifications/useNewEmailNotification';
 import { type EncryptedSearchParams, useApplyEncryptedSearch } from 'proton-mail/hooks/mailbox/useApplyEncryptedSearch';
@@ -59,9 +58,6 @@ export const useMailboxContainerSideEffects = ({
     useCalendarUserSettings();
 
     usePreLoadElements({ elements, labelID, loading });
-
-    // Handle the redirection to /primary if the user tries to access /inbox when cateogries are enabled
-    useMailCategoriesRedirection({ labelID });
 
     useShowBYOESpotlightModal();
 };
