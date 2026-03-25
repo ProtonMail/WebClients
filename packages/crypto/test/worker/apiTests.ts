@@ -1,5 +1,3 @@
-import { use as chaiUse, expect } from 'chai';
-import chaiAsPromised from 'chai-as-promised';
 import { generateKey, getSHA256Fingerprints, reformatKey } from 'pmcrypto';
 import {
     type CompressedDataPacket,
@@ -13,6 +11,7 @@ import {
     readPrivateKey as openpgp_readPrivateKey,
     revokeKey as openpgp_revokeKey,
 } from 'pmcrypto/lib/openpgp';
+import { describe, expect, it } from 'vitest';
 
 import type { CryptoApiInterface, PrivateKeyReferenceV4, PrivateKeyReferenceV6, SessionKey } from '../../lib';
 import { ARGON2_PARAMS, KeyCompatibilityLevel, S2kTypeForConfig, VERIFICATION_STATUS } from '../../lib';
@@ -35,8 +34,6 @@ import {
     multipartSignedMessageBody,
 } from './processMIME.data';
 
-chaiUse(chaiAsPromised);
-
 export const runApiTests = (CryptoApiImplementation: CryptoApiInterface) => {
     it('OpenPGP grammar is enforced', async () => {
         expect(openpgp_config.enforceGrammar).to.be.true;
@@ -54,7 +51,7 @@ habAyxd1AGKaNp1wbGFpbnRleHQgbWVzc2FnZQ==
                 armoredMessage: skeskPlusLiteralData,
                 passwords: 'wrong but unused',
             })
-        ).to.be.rejectedWith(/Unexpected packet 11/);
+        ).rejects.toThrow(/Unexpected packet 11/);
     });
 
     it('decryptMessage - should decrypt message with correct password', async () => {
@@ -78,7 +75,7 @@ tBiO7HKQxoGj3FnUTJnI52Y0pIg=
             armoredMessage,
             passwords: 'wrong password',
         });
-        await expect(decryptWithWrongPassword).to.be.rejectedWith(/Error decrypting message/);
+        await expect(decryptWithWrongPassword).rejects.toThrow(/Error decrypting message/);
     });
 
     it('decryptMessage - message with signature', async () => {
@@ -160,7 +157,7 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
                 armoredMessage: fwdCiphertextArmored,
                 decryptionKeys: fwdRecipientKey,
             })
-        ).to.be.rejectedWith(/Error decrypting message/); // missing config flag
+        ).rejects.toThrow(/Error decrypting message/); // missing config flag
 
         const { data } = await CryptoApiImplementation.decryptMessage({
             armoredMessage: fwdCiphertextArmored,
@@ -365,7 +362,7 @@ yGZuVVMAK/ypFfebDf4D/rlEw3cysv213m8aoK8nAUO8xQX3XQq3Sg+EGm0BNV8E
                 signatureContext: { value: 'unexpected-context', required: true },
                 expectSigned: true,
             })
-        ).to.be.rejectedWith(/context verification error/);
+        ).rejects.toThrow(/context verification error/);
     });
 
     it('verifyMessage - it verifies a message ten seconds in the future', async () => {
@@ -547,7 +544,7 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
                 ...encryptionOptions,
                 signingKeys: [],
             })
-        ).to.be.rejectedWith(/Unexpected `signatureContext` input without any `signingKeys` provided/);
+        ).rejects.toThrow(/Unexpected `signatureContext` input without any `signingKeys` provided/);
 
         const { message: encryptedBinaryMessage } = await CryptoApiImplementation.encryptMessage(encryptionOptions);
 
@@ -564,7 +561,7 @@ fLz+Lk0ZkB4L3nhM/c6sQKSsI9k2Tptm1VZ5+Qo=
                 ...decryptionOptions,
                 verificationKeys: [],
             })
-        ).to.be.rejectedWith(/Unexpected `signatureContext` input without any `verificationKeys` provided/);
+        ).rejects.toThrow(/Unexpected `signatureContext` input without any `verificationKeys` provided/);
 
         const decryptionResult = await CryptoApiImplementation.decryptMessage({
             binaryMessage: encryptedBinaryMessage,
@@ -1320,7 +1317,7 @@ RudYbmMe/pzU8NRMIy8Ldd06k4vd0sClRAeGDg==
                 userIDsForForwardeeKey: { email: 'bob@test.com', comment: 'Forwarding from Bob' },
                 passphrase: 'passphrase',
             })
-        ).to.be.rejectedWith(/unsuitable for forwarding/);
+        ).rejects.toThrow(/unsuitable for forwarding/);
     });
 
     it('doesKeySupportE2EEForwarding - returns true on newly generated key', async () => {
@@ -1413,10 +1410,10 @@ siLL+xMJ+Hy4AhsMAAAKagEA4Knj6S6nG24nuXfqkkytPlFTHwzurjv3+qqXwWL6
             passphrase: null,
         });
 
-        await expect(CryptoApiImplementation.isE2EEForwardingKey({ key: signOnlyKey })).to.eventually.be.false;
-        await expect(CryptoApiImplementation.isE2EEForwardingKey({ key: charlieKeyEncrypted })).to.eventually.be.true;
-        await expect(CryptoApiImplementation.isE2EEForwardingKey({ key: charlieKey })).to.eventually.be.true;
-        await expect(CryptoApiImplementation.isE2EEForwardingKey({ key: bobKey })).to.eventually.be.false;
+        await expect(CryptoApiImplementation.isE2EEForwardingKey({ key: signOnlyKey })).resolves.toBe(false);
+        await expect(CryptoApiImplementation.isE2EEForwardingKey({ key: charlieKeyEncrypted })).resolves.toBe(true);
+        await expect(CryptoApiImplementation.isE2EEForwardingKey({ key: charlieKey })).resolves.toBe(true);
+        await expect(CryptoApiImplementation.isE2EEForwardingKey({ key: bobKey })).resolves.toBe(false);
     });
 
     describe('Key management API', () => {
@@ -1513,7 +1510,7 @@ siLL+xMJ+Hy4AhsMAAAKagEA4Knj6S6nG24nuXfqkkytPlFTHwzurjv3+qqXwWL6
             // empty passphrase not allowed
             await expect(
                 CryptoApiImplementation.exportPrivateKey({ privateKey: keyReference, passphrase: '' })
-            ).to.be.rejectedWith(/passphrase is required for key encryption/);
+            ).rejects.toThrow(/passphrase is required for key encryption/);
             const armoredEncryptedKey = await CryptoApiImplementation.exportPrivateKey({
                 privateKey: keyReference,
                 passphrase: 'passphrase',
@@ -1539,14 +1536,14 @@ siLL+xMJ+Hy4AhsMAAAKagEA4Knj6S6nG24nuXfqkkytPlFTHwzurjv3+qqXwWL6
             // this give no typescript error since serialised keys are indistinguishable for TS
             await expect(
                 CryptoApiImplementation.importPrivateKey({ armoredKey: publicKeyToImport.armor(), passphrase })
-            ).to.be.rejectedWith(/not of type private key/);
+            ).rejects.toThrow(/not of type private key/);
             const importedKeyRef = await CryptoApiImplementation.importPublicKey({
                 armoredKey: publicKeyToImport.armor(),
             });
             expect(importedKeyRef.isPrivate()).to.be.false;
             expect(importedKeyRef.getCreationTime()).to.deep.equal(publicKeyToImport.getCreationTime());
             // @ts-expect-error for non-private key reference
-            await expect(CryptoApiImplementation.exportPrivateKey({ privateKey: importedKeyRef })).to.be.rejectedWith(
+            await expect(CryptoApiImplementation.exportPrivateKey({ privateKey: importedKeyRef })).rejects.toThrow(
                 /Private key expected/
             );
             const armoredPublicKey = await CryptoApiImplementation.exportPublicKey({ key: importedKeyRef });
@@ -1576,7 +1573,7 @@ pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
 -----END PGP PRIVATE KEY BLOCK-----`;
             await expect(
                 CryptoApiImplementation.importPrivateKey({ armoredKey: argon2Key, passphrase })
-            ).to.be.rejectedWith(/Keys encrypted using Argon2 are not supported yet/);
+            ).rejects.toThrow(/Keys encrypted using Argon2 are not supported yet/);
         });
 
         it('compatibility - rejects importing a public key using the new curve25519 format', async () => {
@@ -1593,7 +1590,7 @@ pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
                     armoredKey: v4KeyNewCurve25519Format,
                     checkCompatibility: KeyCompatibilityLevel.BACKWARDS_COMPATIBLE,
                 })
-            ).to.be.rejectedWith(expectedError);
+            ).rejects.toThrow(expectedError);
 
             // support for RFC9580 algos is not yet enabled for v4 keys,
             // since not all our clients are compatible
@@ -1602,7 +1599,7 @@ pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
                     armoredKey: v4KeyNewCurve25519Format,
                     checkCompatibility: KeyCompatibilityLevel.V6_COMPATIBLE,
                 })
-            ).to.be.rejectedWith(expectedError);
+            ).rejects.toThrow(expectedError);
         });
 
         it('compatibility - rejects importing a v6 public key', async () => {
@@ -1617,14 +1614,14 @@ pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
                     armoredKey: v6KeyCurve25519,
                     checkCompatibility: KeyCompatibilityLevel.BACKWARDS_COMPATIBLE,
                 })
-            ).to.be.rejectedWith(/Version 6 keys are currently not supported./);
+            ).rejects.toThrow(/Version 6 keys are currently not supported./);
 
             await expect(
                 CryptoApiImplementation.importPublicKey({
                     armoredKey: v6KeyCurve25519,
                     checkCompatibility: KeyCompatibilityLevel.V6_COMPATIBLE,
                 })
-            ).to.not.be.rejected;
+            ).resolves.not.toThrow();
         });
 
         it('allows importing a private key as long as it can be decrypted', async () => {
@@ -1646,7 +1643,7 @@ pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
                     armoredKey: privateKey.armor(),
                     passphrase: 'wrong passphrase',
                 })
-            ).to.be.rejectedWith(/Error decrypting private key: Incorrect key passphrase/);
+            ).rejects.toThrow(/Error decrypting private key: Incorrect key passphrase/);
         });
 
         it('allows importing a decrypted key only when given a null passphrase', async () => {
@@ -1673,7 +1670,7 @@ DQ==
 
             await expect(
                 CryptoApiImplementation.importPrivateKey({ armoredKey: decryptedArmoredKey, passphrase: 'passphrase' })
-            ).to.be.rejectedWith(/Key packet is already decrypted/);
+            ).rejects.toThrow(/Key packet is already decrypted/);
         });
 
         it('reformatKey - reformatted key has a separate key reference', async () => {
@@ -1802,7 +1799,7 @@ fzUCGwwAIQkQXHnmw8RpeUoWIQT490w0irDiMLKqqe5ceebDxGl5Sl9wAQC+
             expect(await CryptoApiImplementation.exportPublicKey({ key: privateKeyRef })).length.above(0);
             await CryptoApiImplementation.clearKey({ key: privateKeyRef });
 
-            await expect(CryptoApiImplementation.exportPublicKey({ key: privateKeyRef })).to.be.rejectedWith(
+            await expect(CryptoApiImplementation.exportPublicKey({ key: privateKeyRef })).rejects.toThrow(
                 /Key not found/
             );
         });
@@ -1819,10 +1816,10 @@ fzUCGwwAIQkQXHnmw8RpeUoWIQT490w0irDiMLKqqe5ceebDxGl5Sl9wAQC+
             expect(await CryptoApiImplementation.exportPublicKey({ key: privateKeyRef2 })).length.above(0);
             await CryptoApiImplementation.clearKeyStore();
 
-            await expect(CryptoApiImplementation.exportPublicKey({ key: privateKeyRef1 })).to.be.rejectedWith(
+            await expect(CryptoApiImplementation.exportPublicKey({ key: privateKeyRef1 })).rejects.toThrow(
                 /Key not found/
             );
-            await expect(CryptoApiImplementation.exportPublicKey({ key: privateKeyRef2 })).to.be.rejectedWith(
+            await expect(CryptoApiImplementation.exportPublicKey({ key: privateKeyRef2 })).rejects.toThrow(
                 /Key not found/
             );
         });
