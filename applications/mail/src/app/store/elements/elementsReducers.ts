@@ -531,8 +531,8 @@ export const setParams = (
         ...params,
     };
 
-    // We reset the category IDs when the label is not a category label
-    if (params.labelID && !isCategoryLabel(params.labelID)) {
+    // We reset the category IDs when the label is inbox
+    if (params.labelID && params.labelID !== MAILBOX_LABEL_IDS.INBOX) {
         state.params.categoryIDs = [];
     }
 
