@@ -1,13 +1,10 @@
 import { type ReactNode, createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 import { useLumoUserSettings } from '../hooks';
-import { ModelType } from '../remote/nativeComposerBridge';
 import {
-    onNativeChangeModelType,
     onNativeToggleCreateImage,
     onNativeToggleWebSearch,
     setNativeCreateImage,
-    setNativeModelType,
     setNativeWebSearch,
 } from '../remote/nativeComposerBridgeHelpers';
 import { sendWebSearchButtonToggledEvent } from '../util/telemetry';
@@ -25,7 +22,6 @@ interface WebSearchProviderProps {
 
 export const WebSearchProvider = ({ children }: WebSearchProviderProps) => {
     const [createImageEnabled, setCreateImageEnabled] = useState(false);
-    const [modelType, setModelType] = useState<ModelType>(ModelType.Auto);
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
     const automaticWebSearch = lumoUserSettings.automaticWebSearch ?? true; // Default to true (automatic)
 
@@ -36,11 +32,6 @@ export const WebSearchProvider = ({ children }: WebSearchProviderProps) => {
         // TODO: i need an update
         setNativeCreateImage(createImageEnabled);
     }, [createImageEnabled]);
-
-    useEffect(() => {
-        // TODO: i need an update
-        setNativeModelType(modelType);
-    }, [modelType]);
 
     // Sync with persisted setting when it changes (e.g., from settings modal)
     useEffect(() => {
@@ -65,14 +56,6 @@ export const WebSearchProvider = ({ children }: WebSearchProviderProps) => {
         setCreateImageEnabled(newValue);
     }, [createImageEnabled]);
 
-    const handleChangeModelButtonClicked = useCallback(
-        (modelType: ModelType) => {
-            // TODO: i need an update
-            setModelType(modelType);
-        },
-        [modelType]
-    );
-
     useEffect(() => {
         console.log('Registered web search listener');
 
@@ -88,24 +71,12 @@ export const WebSearchProvider = ({ children }: WebSearchProviderProps) => {
             handleCreateImageButtonClick();
         });
 
-        const unsubscribeChangeModel = onNativeChangeModelType((e) => {
-            console.log('Received change model listener');
-
-            const { modelType } = e.detail;
-            if (Object.values<string>(ModelType).includes(modelType)) {
-                handleChangeModelButtonClicked(modelType as ModelType);
-            } else {
-                handleChangeModelButtonClicked(ModelType.Auto);
-            }
-        });
-
         return () => {
             console.log('Un-registered web search listener');
             unsubscribeToggleWebSearch();
             unsubscribeToggleCreateImage();
-            unsubscribeChangeModel();
         };
-    }, [handleWebSearchButtonClick, handleCreateImageButtonClick, handleChangeModelButtonClicked]);
+    }, [handleWebSearchButtonClick, handleCreateImageButtonClick]);
 
     const value = {
         isWebSearchButtonToggled,

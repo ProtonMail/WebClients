@@ -5,6 +5,7 @@ import { useLumoPlan } from '../../../providers/LumoPlanProvider';
 import {
     setNativeComposerIsImageGenEnabled,
     setNativeIsFreeUser,
+    setNativeIsGuestUser,
     setNativeIsModelSectionEnabled,
 } from '../../../remote/nativeComposerBridgeHelpers';
 
@@ -12,7 +13,7 @@ export const useNativeComposerFeatureFlagsApi = () => {
     const lumoFlags = useLumoFlags();
     const lumoNativeComposerImageGenEnabled = lumoFlags.nativeComposerImages;
     const lumoNativeComposerModelSelectionEnabled = lumoFlags.nativeComposerModelSelection;
-    const { isLumoFree } = useLumoPlan();
+    const { isLumoFree, isGuest } = useLumoPlan();
 
     useEffect(() => {
         setNativeComposerIsImageGenEnabled(lumoNativeComposerImageGenEnabled);
@@ -22,4 +23,8 @@ export const useNativeComposerFeatureFlagsApi = () => {
     useEffect(() => {
         setNativeIsFreeUser(isLumoFree);
     }, [isLumoFree]);
+
+    useEffect(() => {
+        setNativeIsGuestUser(isGuest);
+    }, [isGuest]);
 };

@@ -267,7 +267,6 @@ const AssistantMessage = ({
                                             sourcesContainerRef={sourcesContainerRef}
                                             messageContentContainerRef={markdownContainerRef}
                                             reasoning={message.reasoning}
-                                            // toolCallResults={searchResults}
                                         />
                                     ) : (
                                         <EmptyMessage />

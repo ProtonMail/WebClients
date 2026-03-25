@@ -20,7 +20,6 @@ interface RenderBlocksProps {
     sourcesContainerRef: React.MutableRefObject<HTMLDivElement | null>;
     messageContentContainerRef: React.MutableRefObject<HTMLDivElement | null>;
     reasoning?: string;
-    // toolCallResults?: SearchItem[] | null;
 }
 
 /**
