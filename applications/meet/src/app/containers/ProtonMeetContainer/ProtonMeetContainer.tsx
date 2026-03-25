@@ -133,6 +133,29 @@ export const ProtonMeetContainer = ({
     const { createNotification } = useNotifications();
 
     const { reportMeetError, clearSentryReportErrorCounts } = useMeetErrorReporting();
+    const meetingLinkNameRef = useRef<string>('');
+    const withMeetingLinkNameTag = useCallback((options?: unknown) => {
+        const meetingLinkName = meetingLinkNameRef.current;
+        if (!meetingLinkName) {
+            return options;
+        }
+
+        const tags = { meetingLinkName };
+        if (typeof options === 'string') {
+            return { context: { error: options }, tags };
+        } else if (options && typeof options === 'object') {
+            const optionsWithTags = options as { tags?: Record<string, string> };
+            return {
+                ...optionsWithTags,
+                tags: {
+                    ...(optionsWithTags.tags ?? {}),
+                    ...tags,
+                },
+            };
+        }
+        // option is not an expected type, return the tags
+        return { tags };
+    }, []);
 
     /**
      * Connect to LiveKit room with timeout handling.
@@ -162,20 +185,26 @@ export const ProtonMeetContainer = ({
                 if (warningSubtitle) {
                     setJoiningLoaderSubtitle(warningSubtitle);
                 }
-                reportMeetError(`Livekit room connection time abnormal (${warningTime}ms)`, {
-                    timeout: `${warningTime}ms`,
-                    stage: 'warning',
-                });
+                reportMeetError(
+                    `Livekit room connection time abnormal (${warningTime}ms)`,
+                    withMeetingLinkNameTag({
+                        timeout: `${warningTime}ms`,
+                        stage: 'warning',
+                    })
+                );
             }
         }, warningTime);
 
         let timeoutTimer: NodeJS.Timeout | undefined;
         const timeoutPromise = new Promise<never>((_, reject) => {
             timeoutTimer = setTimeout(async () => {
-                reportMeetError(`Livekit room connection timeout (${timeout}ms)`, {
-                    timeout: `${timeout}ms`,
-                    stage: 'failed',
-                });
+                reportMeetError(
+                    `Livekit room connection timeout (${timeout}ms)`,
+                    withMeetingLinkNameTag({
+                        timeout: `${timeout}ms`,
+                        stage: 'failed',
+                    })
+                );
                 reject(new Error(`Connection timeout after ${timeout}ms`));
             }, timeout);
         });
@@ -232,7 +261,7 @@ export const ProtonMeetContainer = ({
             const isTimeout = isConnectionTimeoutError(roomConnectionError);
             reportMeetError(
                 `STUN UDP connection ${isTimeout ? 'timeout' : 'failed'}, trying with TURN relay`,
-                roomConnectionError
+                withMeetingLinkNameTag(roomConnectionError)
             );
             setJoiningLoaderHeader(c('Warning').t`Connection is taking longer than expected`);
             setJoiningLoaderSubtitle(
@@ -398,19 +427,19 @@ export const ProtonMeetContainer = ({
 
     const reportMLSRelatedError = (key: string | undefined, epoch: bigint | undefined) => {
         if (epoch && lastEpochRef.current && lastEpochRef.current > epoch) {
-            reportMeetError('Lower epoch than last epoch', { epoch });
+            reportMeetError('Lower epoch than last epoch', withMeetingLinkNameTag({ epoch }));
         }
 
         if (epoch && lastEpochRef.current && lastEpochRef.current + 1n !== epoch) {
-            reportMeetError('Epoch is not the next epoch', { epoch });
+            reportMeetError('Epoch is not the next epoch', withMeetingLinkNameTag({ epoch }));
         }
 
         if (!key) {
-            reportMeetError('Key is undefined', { epoch });
+            reportMeetError('Key is undefined', withMeetingLinkNameTag({ epoch }));
         }
 
         if (!epoch) {
-            reportMeetError('Epoch is undefined', {});
+            reportMeetError('Epoch is undefined', withMeetingLinkNameTag({}));
         }
     };
     const assignHost = useAssignHost(accessTokenRef.current as string, token);
@@ -428,7 +457,7 @@ export const ProtonMeetContainer = ({
             mlsGroupStateRef.current = nextMlsGroupState;
             return { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch };
         } catch (err: any) {
-            reportMeetError('Error while calling getGroupKeyInfo', err);
+            reportMeetError('Error while calling getGroupKeyInfo', withMeetingLinkNameTag(err));
             throw err;
         }
     };
@@ -454,7 +483,7 @@ export const ProtonMeetContainer = ({
                 try {
                     await wasmApp?.tryLogDesignatedCommitter(Number(epoch));
                 } catch (error) {
-                    reportMeetError('Failed to log designated committer rank', error);
+                    reportMeetError('Failed to log designated committer rank', withMeetingLinkNameTag(error));
                 }
             }
 
@@ -479,7 +508,7 @@ export const ProtonMeetContainer = ({
                     message: 'Could not set new encryption key',
                 })
             );
-            reportMeetError('Could not set new encryption key', err);
+            reportMeetError('Could not set new encryption key', withMeetingLinkNameTag(err));
         }
     };
 
@@ -580,7 +609,9 @@ export const ProtonMeetContainer = ({
     // Log connection lost when connectionLost state changes to true
     useEffect(() => {
         if (connectionLost && wasmApp && joinedRoom && isMeetClientMetricsLogEnabled) {
-            void wasmApp.logConnectionLost().catch((error) => reportMeetError('Failed to log connection lost', error));
+            void wasmApp
+                .logConnectionLost()
+                .catch((error) => reportMeetError('Failed to log connection lost', withMeetingLinkNameTag(error)));
         }
     }, [connectionLost, wasmApp, joinedRoom]);
 
@@ -718,7 +749,10 @@ export const ProtonMeetContainer = ({
                 try {
                     await wasmApp?.leaveMeeting();
                 } catch (leaveError) {
-                    reportMeetError('Failed to leave MLS group after LiveKit connection failure', leaveError);
+                    reportMeetError(
+                        'Failed to leave MLS group after LiveKit connection failure',
+                        withMeetingLinkNameTag(leaveError)
+                    );
                 }
                 mlsSetupDone.current = false;
                 disallowHealthCheck();
@@ -817,8 +851,9 @@ export const ProtonMeetContainer = ({
                     }
                 } else if (reason !== undefined && reason !== DisconnectReason.CLIENT_INITIATED) {
                     // Log abnormal error to sentry
-                    reportMeetError('Room disconnected unexpectedly', DisconnectReason[reason]);
+                    reportMeetError('Room disconnected unexpectedly', withMeetingLinkNameTag(DisconnectReason[reason]));
                 }
+                meetingLinkNameRef.current = '';
 
                 if (reason === DisconnectReason.ROOM_DELETED || reason === DisconnectReason.PARTICIPANT_REMOVED) {
                     history.push('/dashboard');
@@ -836,11 +871,11 @@ export const ProtonMeetContainer = ({
                 try {
                     await wasmApp.logJoinedRoom();
                 } catch (error) {
-                    reportMeetError('Failed to log joined room', error);
+                    reportMeetError('Failed to log joined room', withMeetingLinkNameTag(error));
                 }
             }
         } catch (error: any) {
-            reportMeetError('Failed to join meeting', error);
+            reportMeetError('Failed to join meeting', withMeetingLinkNameTag(error));
 
             setJoiningInProgress(false);
             joinBlockedRef.current = false;
@@ -852,7 +887,7 @@ export const ProtonMeetContainer = ({
                 try {
                     await wasmApp?.logJoinedRoomFailed(code ? String(code) : undefined);
                 } catch (logError) {
-                    reportMeetError('Failed to log joined room failed', logError);
+                    reportMeetError('Failed to log joined room failed', withMeetingLinkNameTag(logError));
                 }
             }
 
@@ -884,6 +919,7 @@ export const ProtonMeetContainer = ({
                 isGuest: isGuest,
                 isPaidUser: paidUser,
             });
+            meetingLinkNameRef.current = id; // id is the meeting link name
 
             const handshakeResult = await handleHandshakeInfoFetch(id);
 
@@ -927,7 +963,7 @@ export const ProtonMeetContainer = ({
 
             history.push(meetingLinkRef.current);
         } catch (error: any) {
-            reportMeetError('Failed to create instant meeting', error);
+            reportMeetError('Failed to create instant meeting', withMeetingLinkNameTag(error));
             setJoiningInProgress(false);
         }
 
@@ -935,6 +971,7 @@ export const ProtonMeetContainer = ({
     };
 
     const joinMeeting = async (displayName: string, meetingToken: string = token) => {
+        meetingLinkNameRef.current = meetingToken; // meetingToken is the meeting link name
         handleWebRtcUnsupported();
 
         if (joinBlockedRef.current) {
@@ -1007,7 +1044,7 @@ export const ProtonMeetContainer = ({
                 expirationTime: 1000 * (meetingInfo.MeetingInfo.ExpirationTime ?? 0),
             }));
         } catch (error: any) {
-            reportMeetError('Failed to join meeting', error);
+            reportMeetError('Failed to join meeting', withMeetingLinkNameTag(error));
             setJoiningInProgress(false);
         }
 
@@ -1072,6 +1109,7 @@ export const ProtonMeetContainer = ({
 
     const handleLeave = () => {
         instantMeetingRef.current = false;
+        meetingLinkNameRef.current = '';
         void room.disconnect();
         resetParticipantNameMap();
         void wasmApp?.leaveMeeting();
@@ -1100,6 +1138,7 @@ export const ProtonMeetContainer = ({
 
     const handleUngracefulLeave = () => {
         instantMeetingRef.current = false;
+        meetingLinkNameRef.current = '';
 
         // Best effort because it is ungraceful
         try {
@@ -1133,11 +1172,12 @@ export const ProtonMeetContainer = ({
         try {
             await wasmApp.endMeeting();
         } catch (err) {
-            reportMeetError('Unable to end meeting for all', err);
+            reportMeetError('Unable to end meeting for all', withMeetingLinkNameTag(err));
         }
 
         // Always perform cleanup regardless of endMeeting success/failure
         instantMeetingRef.current = false;
+        meetingLinkNameRef.current = '';
         resetParticipantNameMap();
         mlsSetupDone.current = false; // need to set mls again after leave meeting
 
@@ -1182,7 +1222,7 @@ export const ProtonMeetContainer = ({
                     void room.disconnect();
                     void wasmApp?.leaveMeeting();
                 } catch (error) {
-                    reportMeetError('Error leaving meeting', error);
+                    reportMeetError('Error leaving meeting', withMeetingLinkNameTag(error));
                 }
             }
         };
@@ -1325,7 +1365,12 @@ export const ProtonMeetContainer = ({
                         onClose={() => {
                             void wasmApp
                                 ?.triggerWebSocketReconnect()
-                                .catch((error) => reportMeetError('Failed to trigger websocket reconnect', error));
+                                .catch((error) =>
+                                    reportMeetError(
+                                        'Failed to trigger websocket reconnect',
+                                        withMeetingLinkNameTag(error)
+                                    )
+                                );
                             setConnectionLost(false);
                         }}
                         onLeave={() => {
