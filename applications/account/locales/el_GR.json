@@ -7088,6 +7088,9 @@
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Οι ιδιώτες χρήστες μπορούν να προστεθούν στην ομάδα μόλις συνδεθούν για πρώτη φορά: ${ displayedNames }"
       ]
     },
     "error": {
@@ -12411,6 +12414,12 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Η συνδρομή ξεκινά στις ${ startsOnTime }"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Η δοκιμαστική περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ]
     },
     "info": {
@@ -14436,6 +14445,9 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
+        "Δωρίστε ${ minimumDonation } ή περισσότερα στο ${ BRAND_NAME } Foundation"
       ]
     },
     "label": {

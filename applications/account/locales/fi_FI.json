@@ -10814,6 +10814,12 @@
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Tilaus alkaa ${ startsOnTime }"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Kokeilujakso päättyy ${ formattedPeriodEndDate }"
       ]
     },
     "info": {
@@ -12638,6 +12644,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
+        "Lahjoita ${ minimumDonation } tai enemmän ${ BRAND_NAME } -säätiölle"
       ]
     },
     "label": {

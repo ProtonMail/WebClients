@@ -16603,6 +16603,9 @@
       ],
       "Windows": [
         "Windows"
+      ],
+      "macOS": [
+        "macOS"
       ]
     },
     "option": {
@@ -19471,6 +19474,9 @@
     "Settings/filters - table": {
       "Action": [
         "Acción"
+      ],
+      "Name": [
+        "Nombre"
       ]
     },
     "Settings/labels": {
@@ -23348,6 +23354,9 @@
       ],
       "Your subscriptions": [
         "Tus suscripciones"
+      ],
+      "Delete calendar": [
+        "Eliminar calendario"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24245,6 +24254,12 @@
       ],
       "macOS": [
         "macOS"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "iOS": [
+        "iOS"
       ]
     },
     "wallet_signup_2024: Info": {
@@ -24689,6 +24704,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Header; Table with list of calendars arranged by type": {
+      "Other": [
+        "Otro"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "Duración"
       ]
     }
   }

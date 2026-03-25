@@ -7088,6 +7088,9 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Los usuarios privados se pueden añadir al grupo una vez que hayan iniciado sesión por primera vez: ${ displayedNames }"
       ]
     },
     "error": {
@@ -12414,6 +12417,12 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Su suscripción inicia en ${ startsOnTime }"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "La prueba termina en ${ formattedPeriodEndDate }"
       ]
     },
     "info": {
@@ -14439,6 +14448,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
+        "Done ${ minimumDonation } o más para la Fundación de ${ BRAND_NAME }"
       ]
     },
     "label": {
