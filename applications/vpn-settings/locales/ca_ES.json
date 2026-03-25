@@ -4565,6 +4565,9 @@
       ],
       "ZIP code is required": [
         "Es requereix el codi postal."
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Els usuaris privats es podran afegir al grup un cop hagin iniciat la sessió per primera vegada: ${ displayedNames }"
       ]
     },
     "error": {
@@ -8515,6 +8518,12 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "La subscripció comença el ${ startsOnTime }"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "La prova finalitza el ${ formattedPeriodEndDate }"
       ]
     },
     "info": {

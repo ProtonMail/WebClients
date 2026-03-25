@@ -4595,6 +4595,9 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Utilizatorii privați pot fi adăugați în grup după ce s-au conectat pentru prima dată: ${ displayedNames }"
       ]
     },
     "error": {
@@ -8632,6 +8635,12 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Abonamentul începe la ${ startsOnTime }"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Perioada de probare expiră la ${ formattedPeriodEndDate }"
       ]
     },
     "info": {

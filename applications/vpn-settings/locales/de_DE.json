@@ -4565,6 +4565,9 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Private Benutzer können zur Gruppe hinzugefügt werden, sobald sie sich zum ersten Mal angemeldet haben: ${ displayedNames }"
       ]
     },
     "error": {
@@ -8515,6 +8518,12 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Abonnement beginnt am ${ startsOnTime }"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Testversion endet am ${ formattedPeriodEndDate }"
       ]
     },
     "info": {
