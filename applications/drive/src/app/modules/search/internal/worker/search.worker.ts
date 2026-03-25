@@ -1,16 +1,13 @@
 import * as Comlink from 'comlink';
 
-import { Logger } from '../Logger';
 import { SharedWorkerAPI } from './SharedWorkerAPI';
-
-declare const self: { onconnect: (e: MessageEvent) => void };
 
 const api = new SharedWorkerAPI();
 
-Logger.info(`SharedWorker created`);
+// SharedWorker entry point
+declare const self: SharedWorkerGlobalScope;
 
-self.onconnect = (e: MessageEvent) => {
-    // For shared workers, the port must be exposed.
-    Comlink.expose(api, e.ports[0]);
-    Logger.info(`SharedWorker connected`);
+self.onconnect = (event: MessageEvent) => {
+    const port = event.ports[0];
+    Comlink.expose(api, port);
 };
