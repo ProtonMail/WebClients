@@ -1,4 +1,5 @@
-import type { LumoFile, LumoMode, ModelType, State } from './nativeComposerBridge';
+import type { ModelTier } from '../providers/ModelTierProvider';
+import type { LumoFile, LumoMode, State } from './nativeComposerBridge';
 
 export const onComposerError = (error: string): void => {
     if (!isNativeComposerBridgeAvailable()) {
@@ -68,12 +69,12 @@ export const setNativeCreateImage = (enabled: boolean): void => {
     (window as any).nativeComposerApiInstance.setCreateImage(enabled);
 };
 
-export const setNativeModelType = (modelType: ModelType): void => {
+export const setNativeModelTier = (modelTier: ModelTier): void => {
     if (!isNativeComposerBridgeAvailable()) {
         console.warn('Native Composer Bridge not available');
         return;
     }
-    (window as any).nativeComposerApiInstance.setModelType(modelType);
+    (window as any).nativeComposerApiInstance.setNativeModelTier(modelTier);
 };
 
 export const onNativeHandleFileUploadRequest = (handler: FileUploadEventHandler): (() => void) => {
@@ -89,6 +90,11 @@ export const onNativeOpenDriveRequest = (handler: FileUploadEventHandler): (() =
 export const onNativeOpenSketch = (handler: FileUploadEventHandler): (() => void) => {
     window.addEventListener('lumo:openSketch', handler as EventListener);
     return () => window.removeEventListener('lumo:openSketch', handler as EventListener);
+};
+
+export const onNativeOpenAccount = (handler: FileUploadEventHandler): (() => void) => {
+    window.addEventListener('lumo:openAccount', handler as EventListener);
+    return () => window.removeEventListener('lumo:openAccount', handler as EventListener);
 };
 
 export const onNativeSendPrompt = (handler: SendPromptEventHandler): (() => void) => {
@@ -121,9 +127,9 @@ export const onNativeToggleCreateImage = (handler: SimpleToggleEventHandler): ((
     return () => window.addEventListener('lumo:toggleCreateImage', handler as EventListener);
 };
 
-export const onNativeChangeModelType = (handler: ChangeModelTypeEventHandler): (() => void) => {
-    window.addEventListener('lumo:changeModel', handler as EventListener);
-    return () => window.addEventListener('lumo:changeModel', handler as EventListener);
+export const onNativeChangeModelTier = (handler: ChangeModelTypeEventHandler): (() => void) => {
+    window.addEventListener('lumo:changeModelTier', handler as EventListener);
+    return () => window.addEventListener('lumo:changeModelTier', handler as EventListener);
 };
 
 export const setNativeComposerVisibility = (visible: boolean): void => {
@@ -158,6 +164,14 @@ export const setNativeIsFreeUser = (isFreeUser: boolean): void => {
     (window as any).nativeComposerApiInstance.setIsFreeUser(isFreeUser);
 };
 
+export const setNativeIsGuestUser = (isGuestUser: boolean): void => {
+    if (!isNativeComposerBridgeAvailable()) {
+        console.warn('Native Composer Bridge not available');
+        return;
+    }
+    (window as any).nativeComposerApiInstance.setIsGuestUser(isGuestUser);
+};
+
 export const setNativeTsAndCsVisibility = (visible: boolean): void => {
     if (!isNativeComposerBridgeAvailable()) {
         console.warn('Native Composer Bridge not available');
@@ -177,4 +191,4 @@ export type AbortPromptEventHandler = (event: CustomEvent<{ source: string }>) =
 export type SimpleToggleEventHandler = (event: CustomEvent<{ source: null }>) => void;
 export type RemoveFileEventHandler = (event: CustomEvent<{ attachmentId: string }>) => void;
 export type PreviewFileEventHandler = (event: CustomEvent<{ attachmentId: string }>) => void;
-export type ChangeModelTypeEventHandler = (event: CustomEvent<{ modelType: string }>) => void;
+export type ChangeModelTypeEventHandler = (event: CustomEvent<{ modelTier: ModelTier }>) => void;

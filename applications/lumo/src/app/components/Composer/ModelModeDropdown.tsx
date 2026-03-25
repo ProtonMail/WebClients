@@ -8,24 +8,23 @@ import Icon from '@proton/components/components/icon/Icon';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import type { IconName } from '@proton/icons/types';
-
-import { type ThinkingMode, useThinkingMode } from '../../providers/ThinkingModeProvider';
-import { MenuDropdown, MenuItem } from './components/MenuDropdown';
 import lumoPlusLogo from '@proton/styles/assets/img/lumo/lumo-plus-logo.svg';
+
+import { type ModelTier, useModelTier } from '../../providers/ModelTierProvider';
+import { MenuDropdown, MenuItem } from './components/MenuDropdown';
+import { useNativeComposerModelTierApi } from './hooks/useNativeComposerModelTierApi';
 
 import './ModelModeDropdown.scss';
 
 interface ModeOption {
-    mode: ThinkingMode;
+    mode: ModelTier;
     iconName: IconName;
     getLabel: () => string;
     getDescription: () => string;
     badge?: React.ReactNode;
 }
 
-const LumoPlusBadge = () => (
-    <img src={lumoPlusLogo} alt="Lumo+ Logo" className="lumo-plus-badge" />
-);
+const LumoPlusBadge = () => <img src={lumoPlusLogo} alt="Lumo+ Logo" className="lumo-plus-badge" />;
 
 const getModeOptions = (): ModeOption[] => [
     {
@@ -50,12 +49,14 @@ const getModeOptions = (): ModeOption[] => [
 ];
 
 export const ModelModeDropdown = () => {
-    const { thinkingMode, setThinkingMode } = useThinkingMode();
+    const { modelTier, setModelTier } = useModelTier();
     const [isOpen, setIsOpen] = useState(false);
     const anchorRef = useRef<HTMLButtonElement>(null);
 
     const modeOptions = getModeOptions();
-    const currentOption = modeOptions.find((o) => o.mode === thinkingMode) ?? modeOptions[0];
+    const currentOption = modeOptions.find((o) => o.mode === modelTier) ?? modeOptions[0];
+
+    useNativeComposerModelTierApi(modelTier, setModelTier);
 
     return (
         <>
@@ -89,13 +90,13 @@ export const ModelModeDropdown = () => {
                         getLabel={option.getLabel}
                         getDescription={option.getDescription}
                         badge={option.badge}
-                        onClick={() => setThinkingMode(option.mode)}
+                        onClick={() => setModelTier(option.mode)}
                         onClose={() => setIsOpen(false)}
                         rightElement={
                             <span
                                 className={clsx(
                                     'model-mode-checkmark shrink-0',
-                                    thinkingMode !== option.mode && 'visibility-hidden'
+                                    modelTier !== option.mode && 'visibility-hidden'
                                 )}
                             >
                                 <IcCheckmark size={4} className="color-primary" />
