@@ -12,11 +12,9 @@ export const resolveShortcuts = (commands: BrowserCommand[], supported: Record<s
 
 export const handleExtensionCommand = (command: string) => {
     if (command === 'open-larger-window') {
-        browser.windows
+        browser.tabs
             .create({
                 url: browser.runtime.getURL('popup.html#'),
-                type: 'popup',
-                focused: true,
             })
             .catch(noop);
     }
