@@ -20,6 +20,7 @@ const BABEL_INCLUDE_NODE_MODULES = [
     'react-redux',
     'reselect',
     'immer',
+    '@scure/base',
 ];
 const BABEL_EXCLUDE_FILES = ['mailparser.js'];
 
