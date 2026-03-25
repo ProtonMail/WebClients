@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import type { MeetButtonClass } from '../../types';
@@ -39,7 +40,7 @@ export const ConfirmationModal = ({
             open={true}
             rootClassName="confirmation-modal"
             size="small"
-            className="large-meet-radius border border-norm"
+            className="large-meet-radius border border-norm overflow-y-auto"
         >
             {onClose && (
                 <Button
@@ -56,14 +57,17 @@ export const ConfirmationModal = ({
                 </Button>
             )}
             <div
-                className="flex flex-column justify-end items-center gap-4 text-center h-full p-6 pt-custom overflow-hidden"
-                style={{ '--pt-custom': '5rem' }}
+                className="flex flex-column flex-nowrap justify-end items-center gap-4 text-center h-full p-6 pt-custom overflow-hidden min-h-custom"
+                style={{
+                    '--pt-custom': isMobile() ? 'none' : '5rem',
+                    '--min-h-custom': '22rem',
+                }}
             >
                 {icon}
                 <div className="text-3xl text-semibold">{title}</div>
                 {message && <div className="color-weak">{message}</div>}
 
-                <div className="w-full flex flex-column gap-2 mt-4">
+                <div className="w-full flex flex-column flex-nowrap gap-2 mt-4">
                     <Button
                         className={clsx('rounded-full text-semibold', primaryButtonClass)}
                         onClick={onPrimaryAction}
