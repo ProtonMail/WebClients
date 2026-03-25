@@ -62,12 +62,22 @@ const ProviderCard = ({ app, header, hasBorders = true, showAdvancedImport = tru
         >
             <div className="mb-4">{header ?? c('Info').t`Choose your service to connect with`}</div>
             <div className="flex flex-nowrap gap-2">
-                <ConnectGmailButton
-                    className="mb-2 inline-flex items-center justify-center gap-2 rounded-lg"
-                    showIcon
-                    buttonText={c('Action').t`Google`}
-                    onComplete={onComplete}
-                />
+                {app === APPS.PROTONMAIL ? (
+                    <ConnectGmailButton
+                        className="mb-2 inline-flex items-center justify-center gap-2 rounded-lg"
+                        showIcon
+                        buttonText={c('Action').t`Google`}
+                        onComplete={onComplete}
+                    />
+                ) : (
+                    <ProviderButton
+                        provider={ImportProvider.GOOGLE}
+                        onClick={() => handleOpenSelectionModal(ImportProvider.GOOGLE)}
+                        className="mb-2 inline-flex items-center justify-center rounded-lg"
+                        data-testid="ProviderButton:googleCard"
+                        disabled={loadingCalendars}
+                    />
+                )}
 
                 <ProviderButton
                     provider={ImportProvider.YAHOO}
@@ -89,7 +99,11 @@ const ProviderCard = ({ app, header, hasBorders = true, showAdvancedImport = tru
                 <Button
                     shape="underline"
                     color="norm"
-                    onClick={() => handleOpenSelectionModal(ImportProvider.GOOGLE)}
+                    onClick={() =>
+                        handleOpenSelectionModal(
+                            app === APPS.PROTONMAIL ? ImportProvider.GOOGLE : ImportProvider.DEFAULT
+                        )
+                    }
                     data-testid="ProviderButton:advancedImport"
                     disabled={loadingCalendars}
                 >
