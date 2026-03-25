@@ -10,10 +10,11 @@ interface ParticipantPlaceholderProps {
     smallView?: boolean;
     backgroundColor?: string;
     profileColor?: string;
-    viewSize?: 'small' | 'medium' | 'large' | 'midLarge';
+    viewSize?: 'xsmall' | 'small' | 'medium' | 'large' | 'midLarge';
 }
 
 const sizeByViewSize = {
+    xsmall: 2.5, // 24
     small: 2.5, // 40
     medium: 3, // 48
     midLarge: 4, // 64
@@ -26,6 +27,17 @@ export const ParticipantPlaceholder = ({
     profileColor,
     viewSize = 'large',
 }: ParticipantPlaceholderProps) => {
+    const getFontSizeClassName = (viewSize: 'xsmall' | 'small' | 'medium' | 'large' | 'midLarge') => {
+        switch (viewSize) {
+            case 'large':
+                return 'text-3xl';
+            case 'xsmall':
+                return 'text-md';
+            default:
+                return 'text-lg';
+        }
+    };
+
     return (
         <div
             className={clsx(
@@ -38,7 +50,7 @@ export const ParticipantPlaceholder = ({
                 className={clsx(
                     'text-center align-middle rounded-50 flex items-center justify-center color-invert text-semibold w-custom h-custom',
                     profileColor,
-                    viewSize === 'large' ? 'text-3xl' : 'text-lg',
+                    getFontSizeClassName(viewSize),
                     viewSize === 'large' ? 'radius-normal' : 'radius-small'
                 )}
                 style={{

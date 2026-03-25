@@ -3,9 +3,11 @@ import React from 'react';
 
 import { c } from 'ttag';
 
+import { Card } from '@proton/atoms/Card/Card';
 import type { PopperPosition } from '@proton/components/components/popper/interface';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import { isSafari } from '@proton/shared/lib/helpers/browser';
+import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
 import { DEFAULT_DEVICE_ID } from '../../constants';
@@ -14,6 +16,8 @@ import type { DeviceState } from '../../types';
 import { shouldShowDeviceCheckmark, shouldShowSystemDefaultCheckmark } from '../../utils/device-utils';
 import { DeviceSettingsDropdown } from '../DeviceSettingsDropdown';
 import { NoiseCancellingToggle } from '../NoiseCancellingToggle';
+
+import './AudioSettingsDropdown.scss';
 
 interface AudioSettingsDropdownProps {
     anchorRef: RefObject<HTMLButtonElement>;
@@ -54,12 +58,15 @@ const AudioSettingsDropdownComponent = ({
     const noSpeakerDetected = speakers.length === 0;
 
     const { noiseFilter, toggleNoiseFilter } = useMediaManagementContext();
+    const { viewportWidth } = useActiveBreakpoint();
+
+    const speakerSelectionNotSupported = isSafari() || isFirefox();
 
     return (
         <DeviceSettingsDropdown anchorRef={anchorRef} anchorPosition={anchorPosition} onClose={onClose}>
             <div className="flex flex-column gap-4 px-4 py-2 meet-scrollbar overflow-x-hidden overflow-y-auto">
                 <div className="flex flex-column gap-2">
-                    <div className="color-hint meet-font-weight text-uppercase text-sm">
+                    <div className="color-weak meet-font-weight text-uppercase text-sm">
                         {!noMicrophoneDetected ? c('Info').t`Select a microphone` : c('Info').t`No microphone detected`}
                     </div>
                     {microphoneState.systemDefault && (
@@ -103,7 +110,7 @@ const AudioSettingsDropdownComponent = ({
                 </div>
                 {!noMicrophoneDetected && (
                     <div className="flex flex-column gap-4">
-                        <div className="color-hint meet-font-weight text-uppercase text-sm">{c('Info')
+                        <div className="color-weak meet-font-weight text-uppercase text-sm">{c('Info')
                             .t`Microphone effects`}</div>
                         <div className="w-full pl-8 pr-4 ml-0.5">
                             <NoiseCancellingToggle
@@ -115,9 +122,9 @@ const AudioSettingsDropdownComponent = ({
                     </div>
                 )}
 
-                {!isSafari() && (
+                {!speakerSelectionNotSupported && (
                     <div className="flex flex-column gap-2">
-                        <div className="color-hint meet-font-weight text-uppercase text-sm">
+                        <div className="color-weak meet-font-weight text-uppercase text-sm">
                             {!noSpeakerDetected ? c('Info').t`Select a speaker` : c('Info').t`No speaker detected`}
                         </div>
                         {speakerState.systemDefault && (
@@ -164,6 +171,22 @@ const AudioSettingsDropdownComponent = ({
                                 Icon={IcCheckmark}
                             />
                         ))}
+                    </div>
+                )}
+                {speakerSelectionNotSupported && (
+                    <div
+                        className="flex flex-column gap-4 max-w-custom"
+                        style={{
+                            '--max-w-custom': viewportWidth['<=small'] ? 'auto' : '27em',
+                        }}
+                    >
+                        <div className="color-weak meet-font-weight text-uppercase text-sm">
+                            {c('Info').t`Select a speaker`}
+                        </div>
+                        <Card className="speaker-selection-not-supported-card rounded-xxl text-sm" background={false}>
+                            {c('Info')
+                                .t`Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.`}
+                        </Card>
                     </div>
                 )}
             </div>
