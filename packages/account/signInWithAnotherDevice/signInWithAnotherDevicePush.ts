@@ -1,6 +1,7 @@
 import type { QRCodePayload } from '@proton/account/signInWithAnotherDevice/qrCodePayload';
 import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
+import type { ProduceForkParameters } from '@proton/shared/lib/authentication/fork';
 import { getForkEncryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import type { PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -19,10 +20,12 @@ export const signInWithAnotherDevicePush = async ({
     api,
     qrCodePayload,
     keyPassword,
+    forkParameters,
 }: {
     api: Api;
     qrCodePayload: QRCodePayload;
     keyPassword: string;
+    forkParameters: Pick<ProduceForkParameters, 'payloadVersion'>;
 }) => {
     let payload: string | undefined;
     // When encoded bytes is empty, no payload is expected
@@ -33,7 +36,7 @@ export const signInWithAnotherDevicePush = async ({
                 type: 'default',
                 keyPassword,
             },
-            1
+            forkParameters.payloadVersion
         );
     }
 
