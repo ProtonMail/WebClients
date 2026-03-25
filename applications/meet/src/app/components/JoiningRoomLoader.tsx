@@ -13,10 +13,8 @@ export const JoiningRoomLoader = ({ participantCount, header, subtitle }: Joinin
 
     const joiningRoomTitles: { heading: (participantCount: number | null) => string; description: string }[] = [
         {
-            heading: () => c('Title').t`Protecting meeting with end-to-end encryption...`,
-            description: c('Description')
-                .t`Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)
-`,
+            heading: () => c('Title').t`Launching Meeting...`,
+            description: c('Description').t`Encrypting with Messaging Layer Security (MLS)`,
         },
         {
             heading: (participantCount) =>
