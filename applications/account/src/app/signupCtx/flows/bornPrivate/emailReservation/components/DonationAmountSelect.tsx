@@ -10,6 +10,7 @@ import CurrencySelector from '@proton/components/containers/payments/CurrencySel
 import { CurrencySymbols } from '@proton/payments/core/constants';
 import { getCurrencyFormattingConfig } from '@proton/payments/core/currencies';
 import type { Currency } from '@proton/payments/core/interface';
+import clsx from '@proton/utils/clsx';
 
 import { DONATION_CURRENCIES } from '../helpers/emailReservationHelpers';
 
@@ -76,12 +77,14 @@ const DonationAmountSelect = ({
         setDonationAmount(parsed * divisor);
     };
 
+    const isMaxAmount = donationAmount / divisor >= DONATION_MAX_MAJOR_UNIT;
+
     const unselectedStyle = {
         backgroundColor: '#E9E5FA',
     };
 
     return (
-        <div className="mt-8 mb-4">
+        <div className="mt-8">
             <div className="flex justify-space-between items-center">
                 <label className="text-semibold">{c('Label').t`Donation amount`}</label>
                 {showCurrencySelector && (
@@ -143,9 +146,19 @@ const DonationAmountSelect = ({
                         containerProps={{ style: { '--min-w-custom': '6rem' } }}
                         onChange={handleChange}
                         disabled={isSubmitting}
+                        aria-describedby="id_maxDonationDesc"
                     />
                 )}
             </div>
+            <p
+                id="id_maxDonationDesc"
+                className={clsx(
+                    'mt-1 mb-0 py-0 text-sm color-weak',
+                    !(showInput && isMaxAmount) && 'visibility-hidden'
+                )}
+            >
+                {c('Info').t`The maximum donation amount is ${DONATION_MAX_MAJOR_UNIT} ${CurrencySymbols[currency]}`}
+            </p>
         </div>
     );
 };
