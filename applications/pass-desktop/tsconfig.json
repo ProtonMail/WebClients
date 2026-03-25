@@ -6,6 +6,7 @@
     },
     "ts-node": {
         "compilerOptions": {
+            "rootDir": "../..",
             "module": "commonjs",
             "target": "esnext",
             "esModuleInterop": true

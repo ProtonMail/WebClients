@@ -1,13 +1,12 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
-        "sourceMap": true,
-        "outDir": "dist",
         "lib": ["WebWorker", "DOM", "DOM.Iterable", "ESNext"],
         "types": ["global-types-monorepo", "webpack-env", "jest"]
     },
     "ts-node": {
         "compilerOptions": {
+            "rootDir": "../..",
             "module": "commonjs",
             "target": "esnext",
             "esModuleInterop": true
