@@ -16,6 +16,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import {
     isElectronMail,
+    isElectronMeet,
     isElectronOnLinux,
     isElectronOnMac,
     isElectronOnWindows,
@@ -199,7 +200,7 @@ const Sidebar = ({
 
                 <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
 
-                {!isElectronMail && (
+                {!isElectronMail && !isElectronMeet && (
                     <div
                         className={clsx(
                             'logo-container hidden md:flex shrink-0 justify-space-between items-center flex-nowrap gap-0.5',
@@ -221,20 +222,26 @@ const Sidebar = ({
                     <div className="flex flex-column">
                         <div
                             className={clsx(
-                                'sidebar-header flex justify-end px-4 py-3 z-1',
+                                'sidebar-header flex justify-end px-4 z-1',
+                                isElectronMeet ? 'pt-11 pb-3' : 'py-3',
                                 hasComposerInFocus && 'ignore-drag'
                             )}
                         >
-                            {appsDropdown}
+                            {isElectronMail && appsDropdown}
                         </div>
                         {primary && <div className="px-4 pb-2">{primary}</div>}
                     </div>
                 )}
 
                 {(isElectronOnWindows || isElectronOnLinux) && (
-                    <div className="sidebar-header flex flex-nowrap gap-4 items-center justify-between my-3 px-3">
+                    <div
+                        className={clsx(
+                            'sidebar-header flex flex-nowrap gap-4 items-center justify-between my-3 px-3',
+                            isElectronMeet && 'pt-8'
+                        )}
+                    >
                         {primary && <div className="shrink-0 flex-1 hidden md:block">{primary}</div>}
-                        <div className="shrink-0">{appsDropdown}</div>
+                        {isElectronMail && <div className="shrink-0">{appsDropdown}</div>}
                     </div>
                 )}
 
@@ -244,7 +251,7 @@ const Sidebar = ({
                     </div>
                 )}
 
-                {primary && !isElectronMail ? (
+                {primary && !isElectronMail && !isElectronMeet ? (
                     <div className="px-3 pb-2 shrink-0 hidden md:block">{primary}</div>
                 ) : null}
                 <div className="mt-1 md:mt-0" aria-hidden="true" />

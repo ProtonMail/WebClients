@@ -56,7 +56,7 @@ import createCompatEventManager from '@proton/shared/lib/eventManager/compatEven
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import type { FetchConfig } from '@proton/shared/lib/fetch/interface';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
-import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMail, isElectronMeet } from '@proton/shared/lib/helpers/desktop';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 import sentry, { setSentryEnabled, setSentryTags, setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
@@ -134,7 +134,7 @@ export const init = ({
     locales: TtagLocaleMap;
 }) => {
     metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
-    if (isElectronMail) {
+    if (isElectronMail || isElectronMeet) {
         storeAppVersion(config.APP_NAME, config.APP_VERSION);
     }
     if (!authentication.UID) {
