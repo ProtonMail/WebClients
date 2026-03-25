@@ -769,6 +769,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ],
+      "Configure": [
+        "Configurare"
       ]
     },
     "Browser": {
@@ -1727,7 +1730,7 @@
         "Poate vedea acest articol."
       ],
       "Change your password": [
-        "Schimbare parolă"
+        "Modificare parolă"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Alegeți o cheie de acces salvată pentru a vă conecta la ${ domain }"
@@ -2777,6 +2780,15 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizația vă solicită să vă securizați accesul la ${ PASS_APP_NAME }"
+      ],
+      "Not configured": [
+        "Neconfigurat"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Deschidere ${ PASS_APP_NAME } într-o fereastră mai mare"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Deschidere fereastră flotantă ${ PASS_APP_NAME }"
       ]
     },
     "Keyboard key": {
@@ -3931,6 +3943,9 @@
       ],
       "ZIP or Postal code": [
         "Cod poștal"
+      ],
+      "Keyboard shortcuts": [
+        "Combinații de taste"
       ]
     },
     "Link": {
