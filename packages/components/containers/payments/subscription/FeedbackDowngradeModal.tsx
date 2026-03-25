@@ -1,11 +1,12 @@
 import type { ReactNode } from 'react';
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { CircledNumber } from '@proton/atoms/CircledNumber/CircledNumber';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -23,8 +24,10 @@ import type { FeedbackDowngradeData } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
-import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { maxLengthValidator, minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { UserModel } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash/useFlag';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import shuffle from '@proton/utils/shuffle';
 
@@ -80,6 +83,7 @@ const FeedbackDowngradeModal = ({
     const [organization] = useOrganization();
     const isB2BTrial = useIsB2BTrial(subscription, organization);
     const { APP_NAME } = useConfig();
+    const feedbackFirstCancellationEnabled = useFlag('CancellationFlowFeedbackFirst');
 
     const { isPaid } = user;
 
@@ -94,7 +98,8 @@ const FeedbackDowngradeModal = ({
         ReasonDetails: '',
         Context: isVpnApp ? 'vpn' : 'mail',
     });
-    const { validator, onFormSubmit } = useFormErrors();
+    const { validator, onFormSubmit, reset: resetFormErrors } = useFormErrors();
+    const [selectedProvider, setSelectedProvider] = useState('');
 
     const [randomisedOptions] = useState(() => {
         const reasons: ReasonOption[] = [
@@ -165,8 +170,28 @@ const FeedbackDowngradeModal = ({
         />,
     ];
 
+    const isB2B = !!organization?.IsBusiness;
+
+    const providerOptions = isB2B
+        ? [
+              <Option title={c('Provider option').t`Microsoft 365`} value="Microsoft 365" key="microsoft365" />,
+              <Option
+                  title={c('Provider option').t`Google Workspace`}
+                  value="Google Workspace"
+                  key="googleworkspace"
+              />,
+              <Option title={c('Provider option').t`Other`} value="Other" key="other" />,
+          ]
+        : [
+              <Option title={c('Provider option').t`Gmail`} value="Gmail" key="gmail" />,
+              <Option title={c('Provider option').t`Outlook`} value="Outlook" key="outlook" />,
+              <Option title={c('Provider option').t`Yahoo`} value="Yahoo" key="yahoo" />,
+              <Option title={c('Provider option').t`Other`} value="Other" key="other" />,
+          ];
+
     const sharedReasonDetailsProps = {
         value: model.ReasonDetails,
+        className: 'border-weak rounded-lg mt-4',
         onValue: (value: string) => setModel((model) => ({ ...model, ReasonDetails: value })),
     };
     const reasonDetails: ReasonDetail[] = [
@@ -176,7 +201,7 @@ const FeedbackDowngradeModal = ({
                 <InputFieldTwo
                     id={SUBSCRIPTION_CANCELLATION_REASONS.MISSING_FEATURE}
                     as={TextAreaTwo}
-                    rows={3}
+                    rows={2}
                     label={c('Label').t`Could you please specify?`}
                     error={validator(
                         model.Reason === SUBSCRIPTION_CANCELLATION_REASONS.MISSING_FEATURE
@@ -194,7 +219,7 @@ const FeedbackDowngradeModal = ({
                 <InputFieldTwo
                     id={SUBSCRIPTION_CANCELLATION_REASONS.QUALITY_ISSUE}
                     as={TextAreaTwo}
-                    rows={3}
+                    rows={2}
                     label={c('Label').t`Could you please specify?`}
                     error={validator(
                         model.Reason === SUBSCRIPTION_CANCELLATION_REASONS.QUALITY_ISSUE
@@ -212,7 +237,7 @@ const FeedbackDowngradeModal = ({
                 <InputFieldTwo
                     id={SUBSCRIPTION_CANCELLATION_REASONS.STREAMING_SERVICE_UNSUPPORTED}
                     as={TextAreaTwo}
-                    rows={3}
+                    rows={2}
                     label={c('Label').t`Could you please specify which streaming service?`}
                     error={validator(
                         model.Reason === SUBSCRIPTION_CANCELLATION_REASONS.STREAMING_SERVICE_UNSUPPORTED
@@ -227,18 +252,56 @@ const FeedbackDowngradeModal = ({
         {
             forReason: SUBSCRIPTION_CANCELLATION_REASONS.SWITCHING_TO_DIFFERENT_SERVICE,
             content: (
-                <InputFieldTwo
-                    id={SUBSCRIPTION_CANCELLATION_REASONS.SWITCHING_TO_DIFFERENT_SERVICE}
-                    as={TextAreaTwo}
-                    rows={3}
-                    label={c('Label').t`Could you please let us know which provider?`}
-                    error={validator(
-                        model.Reason === SUBSCRIPTION_CANCELLATION_REASONS.SWITCHING_TO_DIFFERENT_SERVICE
-                            ? [requiredValidator(model.ReasonDetails)]
-                            : []
-                    )}
-                    {...sharedReasonDetailsProps}
-                />
+                <div>
+                    <label
+                        htmlFor={SUBSCRIPTION_CANCELLATION_REASONS.SWITCHING_TO_DIFFERENT_SERVICE}
+                        className="text-semibold mb-4"
+                    >{c('Label').t`Could you please let us know which provider?`}</label>
+                    <div className="flex justify-space-between items-center gap-2 my-4">
+                        <InputFieldTwo
+                            id={SUBSCRIPTION_CANCELLATION_REASONS.SWITCHING_TO_DIFFERENT_SERVICE}
+                            as={SelectTwo}
+                            placeholder={c('Placeholder').t`Select a provider`}
+                            value={selectedProvider}
+                            onValue={(value: unknown) => {
+                                const provider = value as string;
+                                setSelectedProvider(provider);
+                                resetFormErrors();
+                                setModel((model) => ({
+                                    ...model,
+                                    ReasonDetails: provider === 'Other' ? '' : provider,
+                                }));
+                            }}
+                            error={validator(
+                                model.Reason === SUBSCRIPTION_CANCELLATION_REASONS.SWITCHING_TO_DIFFERENT_SERVICE
+                                    ? [requiredValidator(selectedProvider)]
+                                    : []
+                            )}
+                            className="border-weak rounded-lg"
+                            rootClassName="w-full md:w-1/2"
+                        >
+                            {providerOptions}
+                        </InputFieldTwo>
+                        {selectedProvider === 'Other' && (
+                            <InputFieldTwo
+                                id="provider-name"
+                                value={model.ReasonDetails}
+                                onValue={(value: string) => {
+                                    setModel((model) => ({ ...model, ReasonDetails: value }));
+                                }}
+                                maxLength={20}
+                                error={validator([
+                                    requiredValidator(model.ReasonDetails),
+                                    minLengthValidator(model.ReasonDetails, 2),
+                                    maxLengthValidator(model.ReasonDetails, 20),
+                                ])}
+                                placeholder={c('Placeholder').t`Enter a name`}
+                                className="border-weak rounded-lg"
+                                rootClassName="flex-1"
+                            />
+                        )}
+                    </div>
+                </div>
             ),
         },
     ];
@@ -266,52 +329,112 @@ const FeedbackDowngradeModal = ({
         onClose?.();
     };
 
+    const handleSkipFeedback = () => {
+        onResolve({
+            Reason: '',
+            Feedback: '',
+            ReasonDetails: '',
+            Context: model.Context,
+        });
+        onClose?.();
+    };
+
     const cancelFeedbackText = isB2BTrial ? c('b2b_trials_Action').t`Keep subscription` : c('Action').t`Cancel`;
     const submitFeedbackText = isB2BTrial ? c('b2b_trials_Action').t`Cancel subscription` : c('Action').t`Submit`;
     const submitFeedbackColor = isB2BTrial ? 'danger' : 'norm';
+    const skipFeedbackText = c('Label').t`Skip feedback`;
+    const continueCancellingText = c('Label').t`Continue cancelling`;
 
     return (
-        <Modal as={Form} onClose={handleKeepSubscription} onSubmit={handleSubmit} data-testid="help-improve" {...rest}>
+        <Modal
+            as={Form}
+            onClose={handleKeepSubscription}
+            onSubmit={handleSubmit}
+            data-testid="help-improve"
+            size="xlarge"
+            {...rest}
+        >
             <ModalHeader title={c('Downgrade modal exit survey title').t`Help us improve`} />
             <ModalContent>
-                <InputFieldTwo
-                    as={SelectTwo}
-                    label={c('Label').t`What is your main reason for canceling or downgrading?`}
-                    placeholder={c('Placeholder').t`Select a reason`}
-                    id="reason"
-                    autoFocus
-                    value={model.Reason}
-                    onValue={(value: unknown) => setModel((model) => ({ ...model, Reason: value as string }))}
-                    error={validator([requiredValidator(model.Reason)])}
-                >
-                    {options}
-                </InputFieldTwo>
+                <p className="mt-0 mb-10 color-weak" data-testid="feedback-reason-subtitle">
+                    {c('Description')
+                        .t`We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${BRAND_NAME} better for everyone.`}
+                </p>
+                <div className="mb-2">
+                    <div className="flex items-start justify-start gap-2 mb-4">
+                        <CircledNumber className="mx-0" number={1} />
+                        <label htmlFor="reason" className="text-semibold">{c('Label')
+                            .t`Main reason for cancelling`}</label>
+                    </div>
+                    <div className="pl-6">
+                        <InputFieldTwo
+                            as={SelectTwo}
+                            placeholder={c('Placeholder').t`Select a reason`}
+                            id="reason"
+                            autoFocus
+                            value={model.Reason}
+                            onValue={(value: unknown) => {
+                                setModel((model) => ({ ...model, Reason: value as string, ReasonDetails: '' }));
+                                setSelectedProvider('');
+                                resetFormErrors();
+                            }}
+                            error={validator([requiredValidator(model.Reason)])}
+                            className="border-weak rounded-lg"
+                            rootClassName="w-full md:w-1/2"
+                        >
+                            {options}
+                        </InputFieldTwo>
+                    </div>
+                </div>
 
                 {reasonDetails.map(({ forReason, content }) => {
                     if (model.Reason !== forReason) {
                         return;
                     }
-                    return <Fragment key={forReason}>{content}</Fragment>;
+                    return (
+                        <div className="pl-6" key={forReason}>
+                            {content}
+                        </div>
+                    );
                 })}
 
-                <InputFieldTwo
-                    id="feedback"
-                    as={TextAreaTwo}
-                    rootClassName="mt-2"
-                    rows={5}
-                    label={c('Label').t`Do you have any suggestions for our team?`}
-                    hint={c('Label').t`Optional`}
-                    placeholder={c('Placeholder').t`Share what you think could make ${BRAND_NAME} better`}
-                    value={model.Feedback}
-                    onValue={(value: string) => setModel((model) => ({ ...model, Feedback: value }))}
-                />
+                <div className="mb-4">
+                    <div className="flex items-start justify-start gap-2 mb-4">
+                        <CircledNumber className="mx-0" number={2} />
+                        <label htmlFor="feedback" className="text-semibold">{c('Label').t`Additional comments`}</label>
+                        <span className="ml-auto color-weak text-sm">{c('Label').t`Optional`}</span>
+                    </div>
+                    <div className="pl-6">
+                        <InputFieldTwo
+                            id="feedback"
+                            as={TextAreaTwo}
+                            rootClassName="mt-2"
+                            rows={10}
+                            placeholder={c('Placeholder').t`Anything you'd like us to know`}
+                            value={model.Feedback}
+                            onValue={(value: string) => setModel((old) => ({ ...old, Feedback: value }))}
+                            className="border-weak rounded-lg"
+                        />
+                    </div>
+                </div>
             </ModalContent>
-            <ModalFooter>
-                <Button data-testid="cancelFeedback" onClick={handleKeepSubscription}>
-                    {cancelFeedbackText}
+            <ModalFooter className={clsx('gap-2', feedbackFirstCancellationEnabled && 'justify-end')}>
+                <Button
+                    data-testid="cancelFeedback"
+                    onClick={feedbackFirstCancellationEnabled ? handleSkipFeedback : handleKeepSubscription}
+                    size="large"
+                    className="rounded-lg"
+                >
+                    {feedbackFirstCancellationEnabled ? skipFeedbackText : cancelFeedbackText}
                 </Button>
-                <Button data-testid="submitFeedback" type="submit" color={submitFeedbackColor}>
-                    {submitFeedbackText}
+                <Button
+                    data-testid="submitFeedback"
+                    type="submit"
+                    color={feedbackFirstCancellationEnabled ? 'danger' : submitFeedbackColor}
+                    size="large"
+                    className="rounded-lg"
+                >
+                    {feedbackFirstCancellationEnabled ? continueCancellingText : submitFeedbackText}
                 </Button>
             </ModalFooter>
         </Modal>
