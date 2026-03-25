@@ -34,7 +34,7 @@ export const AudioSettings = ({ anchorRef, onClose, anchorPosition }: AudioSetti
 
     const handleInputDeviceChange = async (value: string | null) => {
         if (!value) {
-            await toggleAudio({ isEnabled: false, audioDeviceId: null });
+            await toggleAudio({ isEnabled: false, audioDeviceId: undefined });
             return;
         }
 
