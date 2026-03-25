@@ -5,6 +5,8 @@
     "sideEffects": false,
     "scripts": {
         "check-types": "tsc",
+        "docs:build": "yarn workspace @proton/pass-docs build",
+        "docs:dev": "yarn workspace @proton/pass-docs dev",
         "generate:api-types": "API=${API:-proton.black} ./utils/openapi/index.ts \"https://${API}/api/internal/doc?page=pass\" > ./types/api/pass.ts",
         "generate:proto": "scripts/generate-protos.sh",
         "generate:rule-types": "./lib/extension/rules/generate.sh",
