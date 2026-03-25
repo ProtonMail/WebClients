@@ -748,7 +748,7 @@ describe('DownloadManager', () => {
         });
     });
 
-    it('should cancel downloads by aborting controllers and marking them cancelled', () => {
+    it('should cancel downloads by aborting controllers and marking them cancelled', async () => {
         const manager = DownloadManager.getInstance();
         const abortMock = jest.fn();
         const activeDownload = {
@@ -758,7 +758,7 @@ describe('DownloadManager', () => {
         Reflect.set(manager, 'activeDownloads', new Map([['job-3', activeDownload]]));
         storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.InProgress });
 
-        manager.cancel(['job-3']);
+        await manager.cancel(['job-3']);
 
         expect(abortMock).toHaveBeenCalled();
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith('job-3', {
@@ -807,16 +807,17 @@ describe('DownloadManager', () => {
         const activeDownloads = Reflect.get(manager, 'activeDownloads') as Map<string, unknown>;
         expect(activeDownloads.has('download-cancel-active')).toBe(true);
 
-        manager.cancel(['download-cancel-active']);
+        await manager.cancel(['download-cancel-active']);
 
         expect(storeMockState.updateDownloadItem).toHaveBeenCalledWith(
             'download-cancel-active',
             expect.objectContaining({ status: DownloadStatus.Cancelled })
         );
-        expect(activeDownloads.has('download-cancel-active')).toBe(false);
-
         controllerCompletion.reject(new TransferCancel({ id: 'download-cancel-active' }));
         await expect(completionPromise).rejects.toBeInstanceOf(TransferCancel);
+
+        // activeDownloads is cleaned up in .finally() after the abort settles
+        expect(activeDownloads.has('download-cancel-active')).toBe(false);
     });
 
     it('should clear active downloads, scheduler, and queue', async () => {
