@@ -140,13 +140,21 @@ export function handleWebContents(contents: WebContents) {
         }
     });
 
+    contents.on("unresponsive", () => {
+        logger().error("renderer unresponsive");
+    });
+
+    contents.on("responsive", () => {
+        logger().info("renderer responsive again");
+    });
+
     contents.on("will-attach-webview", (event) => {
         logger().info("will-attach-webview event prevented");
         return event.preventDefault();
     });
 
-    contents.on("did-fail-load", (_event, errorCode, validatedURL) => {
-        logger().error("did-fail-load", errorCode, validatedURL);
+    contents.on("did-fail-load", (_event, errorCode, errorDescription, validatedURL) => {
+        logger().error("did-fail-load", errorCode, errorDescription, validatedURL);
 
         if (!isCurrentContent()) {
             return;
