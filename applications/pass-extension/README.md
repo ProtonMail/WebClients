@@ -34,6 +34,8 @@ yarn start:reload # Development build with hot reloading
 yarn start:prod # Development build using production config (no hot reloading)
 ```
 
+If you want to target the production api, add set this env var `API_ENV=proton.me`
+
 In dev-mode, you can inspect the redux stores on the REDUX_DEVTOOLS_PORT (default: 8000) for the different extension components http://localhost:8000
 
 ## Building for Production
@@ -80,7 +82,6 @@ Open the `Proton Pass.xcodeproj` project and run it
 ### Local Backend Integration
 
 1. Configure the extension:
-
     - Set `API_URL = 'https://localhost:9090/api'` in `src/app/config.ts`
     - Update `externally_connectable.matches` to allow `localhost` in `public/manifest.json`
 
