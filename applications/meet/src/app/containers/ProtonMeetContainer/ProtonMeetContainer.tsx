@@ -1355,6 +1355,7 @@ export const ProtonMeetContainer = ({
                         isLoadingMeetings={isLoadingMeetings}
                         joiningLoaderHeader={joiningLoaderHeader}
                         joiningLoaderSubtitle={joiningLoaderSubtitle}
+                        userId={user?.ID}
                     />
                 )}
                 {isWebRtcUnsupportedModalOpen && (
