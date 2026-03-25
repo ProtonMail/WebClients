@@ -145,6 +145,36 @@ describe('DownloadScheduler', () => {
         expect(secondStart).toHaveBeenCalledTimes(1);
     });
 
+    it('should free active task load when cancelDownloadsById is called so retried tasks can start', async () => {
+        const scheduler = createScheduler();
+
+        // Schedule a task that starts immediately (becomes active, leaves pendingTasks)
+        const firstCompletion = createDeferred<void>();
+        const firstStart = jest.fn(async () => firstCompletion.promise);
+        const downloadId = 'download-1';
+        scheduler.scheduleDownload(
+            makeTask(firstStart, { downloadId, storageSizeEstimate: FILE_CHUNK_SIZE * MAX_DOWNLOADING_BLOCKS })
+        );
+
+        await flushAsync();
+        expect(firstStart).toHaveBeenCalledTimes(1);
+
+        // Cancel the download by downloadId — this must clear the active load
+        scheduler.cancelDownloadsById(downloadId);
+
+        // A new task for the same (retried) download should now be able to start
+        const retryStart = jest.fn(async () => Promise.resolve());
+        scheduler.scheduleDownload(
+            makeTask(retryStart, { downloadId, storageSizeEstimate: FILE_CHUNK_SIZE * MAX_DOWNLOADING_BLOCKS })
+        );
+
+        await flushAsync();
+        expect(retryStart).toHaveBeenCalledTimes(1);
+
+        firstCompletion.resolve();
+        await flushAsync(2);
+    });
+
     it('should start additional downloads even when a prior task lacks a size estimate', async () => {
         const scheduler = createScheduler();
 
