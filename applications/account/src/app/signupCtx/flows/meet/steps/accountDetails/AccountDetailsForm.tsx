@@ -5,8 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { IcShield2CheckFilled } from '@proton/icons/icons/IcShield2CheckFilled';
-import { BRAND_NAME, MAIL_APP_NAME, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { SignupType } from '../../../../../signup/interfaces';
@@ -16,13 +15,16 @@ import { useSignup } from '../../../../context/SignupContext';
 import { MeetSignupIntent, getMeetSignupIntentFromSearchParams } from '../../helpers/path';
 
 const getMeetAccountDetailsHeadline = (meetIntent: MeetSignupIntent | undefined) => {
-    if (meetIntent === MeetSignupIntent.Room) {
-        return c('Signup: Meet').t`Create your ${BRAND_NAME} account to create a room`;
+    if (meetIntent === MeetSignupIntent.Rooms) {
+        return c('Signup: Meet').t`Create your ${BRAND_NAME} account to create rooms`;
+    }
+    if (meetIntent === MeetSignupIntent.PersonalRoom) {
+        return c('Signup: Meet').t`Create your ${BRAND_NAME} account to use your personal room`;
     }
     if (meetIntent === MeetSignupIntent.Schedule) {
-        return c('Signup: Meet').t`Create your ${BRAND_NAME} account and schedule meetings`;
+        return c('Signup: Meet').t`Create your ${BRAND_NAME} account to schedule a meeting`;
     }
-    return c('Signup: Meet').t`Create your ${BRAND_NAME} account for ${MEET_SHORT_APP_NAME}`;
+    return c('Signup: Meet').t`Create a ${BRAND_NAME} account`;
 };
 
 const SwitchSignupType = () => {
@@ -155,13 +157,6 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
             >
                 {c('Action').t`Continue`}
             </Button>
-
-            <div className="text-center mt-4">
-                <span className="color-success">
-                    <IcShield2CheckFilled className="align-text-bottom mr-1" />
-                    <span>{c('Info').t`End-to-end encrypted`}</span>
-                </span>
-            </div>
         </form>
     );
 };
