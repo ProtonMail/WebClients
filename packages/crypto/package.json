@@ -4,13 +4,14 @@
     "license": "MIT",
     "author": "ProtonMail",
     "sideEffects": false,
+    "type": "module",
     "main": "./lib/index.ts",
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint --quiet",
         "pretty": "prettier --write $(find lib -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "test": "karma start test/karma.conf.js",
-        "test:ci": "yarn test"
+        "test": "vitest --config test/vitest.config.ts --run",
+        "test:ci": "CI=true yarn run test"
     },
     "dependencies": {
         "comlink": "^4.4.2",
@@ -18,10 +19,7 @@
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
-        "@types/chai": "^4.3.20",
-        "@types/chai-as-promised": "^7.1.8",
-        "chai": "^5.3.3",
-        "chai-as-promised": "^7.1.2",
+        "@vitest/browser-playwright": "^4.1.1",
         "eslint": "^9.39.4",
         "eslint-plugin-chai-friendly": "^1.1.1",
         "eslint-plugin-jasmine": "^4.2.2",
@@ -35,7 +33,6 @@
         "prettier": "^3.8.1",
         "ts-loader": "^9.5.4",
         "typescript": "^6.0.2",
-        "webpack": "^5.105.4",
-        "webpack-cli": "^6.0.1"
+        "vitest": "^4.1.1"
     }
 }

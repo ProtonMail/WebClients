@@ -1,11 +1,8 @@
-import { use as chaiUse, expect } from 'chai';
-import chaiAsPromised from 'chai-as-promised';
+import { describe, expect, it } from 'vitest';
 
 import type { CryptoApiInterface } from '../../lib';
 import { CryptoProxy, VERIFICATION_STATUS, updateServerTime } from '../../lib';
 import { Api as CryptoApi } from '../../lib/worker/api';
-
-chaiUse(chaiAsPromised);
 
 describe('CryptoProxy', () => {
     const api = new CryptoApi();

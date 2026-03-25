@@ -1,10 +1,7 @@
-import { use as chaiUse, expect } from 'chai';
-import chaiAsPromised from 'chai-as-promised';
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 import { CryptoProxy, canKeyEncryptAndDecrypt, getMatchingSigningKey } from '../../lib';
 import { Api as CryptoApi } from '../../lib/worker/api';
-
-chaiUse(chaiAsPromised);
 
 describe('CryptoProxy helpers', () => {
     beforeAll(() => {
