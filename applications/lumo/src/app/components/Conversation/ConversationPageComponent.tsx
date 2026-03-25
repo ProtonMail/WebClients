@@ -14,7 +14,7 @@ import { useConversation } from '../../providers/ConversationProvider';
 import { DragAreaProvider, useDragArea } from '../../providers/DragAreaProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
-import { ThinkingModeProvider } from '../../providers/ThinkingModeProvider';
+import { ModelTierProvider } from '../../providers/ModelTierProvider';
 import { WebSearchProvider } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoMemoSelector, useLumoSelector } from '../../redux/hooks';
 import {
@@ -234,9 +234,9 @@ export const ConversationPageComponent = () => {
     return (
         <DragAreaProvider>
             <WebSearchProvider>
-                <ThinkingModeProvider>
+                <ModelTierProvider>
                     <ConversationPageComponentInner />
-                </ThinkingModeProvider>
+                </ModelTierProvider>
             </WebSearchProvider>
         </DragAreaProvider>
     );

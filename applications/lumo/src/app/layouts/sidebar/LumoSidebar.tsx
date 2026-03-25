@@ -23,6 +23,7 @@ import { NewChatSidebarButton } from './components/NewChatSidebarButton';
 import { SearchSection } from './components/SearchSection';
 import { SidebarBottomUserArea } from './components/SidebarBottomUserArea';
 import { SidebarItem } from './components/SidebarItem';
+import { useNativeComposerAccountApi } from './hooks/useNativeComposerAccountApi';
 import { useSidebarVisibility } from './hooks/useSidebarVisibility';
 import { useTextVisibility } from './hooks/useTextVisibility';
 
@@ -44,6 +45,8 @@ const LumoSidebarContent = () => {
     useEffect(() => {
         registerOpenFunction(() => searchModal.openModal(true));
     }, [searchModal, registerOpenFunction]);
+
+    useNativeComposerAccountApi();
 
     if (!isVisible) {
         return null;
