@@ -540,7 +540,7 @@ export class DownloadManager {
 
     resolveMalwareDetection(downloadId: string, resolution: MalwareDownloadResolution) {
         if (resolution === MalwareDownloadResolution.CancelDownload) {
-            this.cancel([downloadId]);
+            void this.cancel([downloadId]);
         }
         if (resolution === MalwareDownloadResolution.ContinueDownload) {
             this.resume([downloadId]);
@@ -571,20 +571,21 @@ export class DownloadManager {
         });
     }
 
-    cancel(downloadIds: string[] = []) {
+    async cancel(downloadIds: string[] = []) {
         const { getQueueItem } = useDownloadManagerStore.getState();
+        const stopPromises: Promise<void>[] = [];
         downloadIds.forEach((id) => {
             const storeItem = getQueueItem(id);
             if (storeItem && this.activeDownloads.has(id)) {
                 downloadLogDebug('Cancel download', { downloadId: id, isActive: true });
-                void this.stopDownload([id]);
+                stopPromises.push(this.stopDownload([id]));
                 this.scheduler.cancelDownloadsById(id);
-                this.activeDownloads.delete(id);
             } else if (storeItem && this.requestedDownloads.has(id)) {
                 downloadLogDebug('Cancel download', { downloadId: id, isPending: true });
                 this.scheduler.cancelDownloadsById(id);
             }
         });
+        await Promise.all(stopPromises);
         this.updateStatus(downloadIds, DownloadStatus.Cancelled);
     }
 
@@ -595,7 +596,7 @@ export class DownloadManager {
             const requestedDownload = this.requestedDownloads.get(id);
             if (storeItem && requestedDownload) {
                 downloadLogDebug('Retry download', { downloadId: id });
-                updateDownloadItem(id, { isRetried: true, downloadedBytes: 0 });
+                updateDownloadItem(id, { isRetried: true, downloadedBytes: 0, status: DownloadStatus.Pending });
                 if (requestedDownload.length === 1 && requestedDownload[0].type !== NodeType.Folder) {
                     void this.scheduleSingleFileDownload(id, requestedDownload[0]);
                 } else {
