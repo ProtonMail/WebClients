@@ -13,7 +13,7 @@ import {
     type SearchModuleState,
     type UserId as SearchUserID,
 } from '../../modules/search';
-import { Logger } from '../../modules/search/internal_v2/shared/Logger';
+import { Logger } from '../../modules/search/internal/shared/Logger';
 import { sendErrorReport } from '../../utils/errorHandling';
 
 export type UseSearchModuleReturn =
