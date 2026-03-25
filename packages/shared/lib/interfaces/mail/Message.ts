@@ -1,6 +1,6 @@
 import type { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
-import type { MIME_TYPES } from '../../constants';
+import type { CategoryLabelID, MIME_TYPES } from '../../constants';
 import type { Recipient } from '../Address';
 
 export interface AttachmentInfo {
@@ -84,6 +84,7 @@ export interface MessageMetadata {
     IsForwarded: number;
     AddressID: string;
     LabelIDs: string[];
+    CategoryID?: CategoryLabelID;
     ExternalID: string;
     NumAttachments: number;
     Flags: number;
