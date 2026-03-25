@@ -157,7 +157,14 @@ interface UserMessageProps {
     onOpenFilePreview: (attachment: Attachment) => void;
 }
 
-const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, newMessageRef, onOpenFilePreview }: UserMessageProps) => {
+const UserMessage = ({
+    message,
+    messageContent,
+    siblingInfo,
+    handleEditMessage,
+    newMessageRef,
+    onOpenFilePreview,
+}: UserMessageProps) => {
     const [isEditing, setIsEditing] = useState(false);
     const { isWebSearchButtonToggled } = useWebSearch();
 

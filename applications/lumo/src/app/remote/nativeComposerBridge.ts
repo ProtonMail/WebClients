@@ -13,6 +13,8 @@ import {
     isVideo,
 } from '@proton/shared/lib/helpers/mimetype';
 
+import type { ModelTier } from '../providers/ModelTierProvider';
+
 /**
  * Native Composer Bridge
  * Provides API for native clients to interact with Lumo's composer
@@ -56,26 +58,25 @@ export enum LumoFileType {
     ProtonSheet = 'ProtonSheet',
 }
 
-export enum ModelType {
-    Auto = 'Auto',
-    Fast = 'Fast',
-    Thinking = 'Thinking',
-}
-
 export interface FeatureFlags {
     isImageGenEnabled: boolean;
     isModelSelectionEnabled: boolean;
 }
 
+export interface UserFlags {
+    isFreeUser: boolean;
+    isGuestUser: boolean;
+}
+
 export interface State {
     lumoMode: LumoMode;
-    modelType: ModelType;
+    modelTier: ModelTier;
     isGhostModeEnabled: boolean;
     isWebSearchEnabled: boolean;
     isCreateImageEnabled: boolean;
     isVisible: boolean;
     showTsAndCs: boolean;
-    isFreeUser: boolean;
+    userFlags: UserFlags;
     attachedFiles: LumoFile[];
     featureFlags: FeatureFlags;
 }
@@ -125,13 +126,16 @@ class NativeComposerApi {
     private state: State = {
         isGhostModeEnabled: false,
         lumoMode: LumoMode.Idle,
-        modelType: ModelType.Auto,
+        modelTier: 'auto',
         isCreateImageEnabled: false,
         attachedFiles: [],
         isWebSearchEnabled: false,
         isVisible: true,
         showTsAndCs: true,
-        isFreeUser: false,
+        userFlags: {
+            isGuestUser: true,
+            isFreeUser: true,
+        },
         featureFlags: {
             isImageGenEnabled: false,
             isModelSelectionEnabled: false,
@@ -274,9 +278,9 @@ class NativeComposerApi {
         this.updateState({ isCreateImageEnabled: enabled });
     }
 
-    public setModelType(modelType: ModelType): void {
-        console.log(`NativeComposerApi: Setting model type to ${modelType}`);
-        this.updateState({ modelType: modelType });
+    public setNativeModelTier(modelTier: ModelTier): void {
+        console.log(`NativeComposerApi: Setting model type to ${modelTier}`);
+        this.updateState({ modelTier: modelTier });
     }
 
     public setWebSearch(enabled: boolean): void {
@@ -308,10 +312,10 @@ class NativeComposerApi {
         return { success: true };
     }
 
-    public async changeModel(modelType: string): Promise<any> {
+    public async changeModelTier(modelTier: ModelTier): Promise<any> {
         console.log(`NativeComposerApi: Change model`);
-        const event = new CustomEvent('lumo:changeModel', {
-            detail: { source: 'nativeComposer', modelType },
+        const event = new CustomEvent('lumo:changeModelTier', {
+            detail: { source: 'nativeComposer', modelTier: modelTier },
         });
         window.dispatchEvent(event);
 
@@ -343,6 +347,14 @@ class NativeComposerApi {
     public openSketch(): void {
         console.log('NativeComposerApi: Open sketch');
         const event = new CustomEvent('lumo:openSketch', {
+            detail: { source: 'nativeComposer' },
+        });
+        window.dispatchEvent(event);
+    }
+
+    public openAccount(): void {
+        console.log('NativeComposerApi: Open account');
+        const event = new CustomEvent('lumo:openAccount', {
             detail: { source: 'nativeComposer' },
         });
         window.dispatchEvent(event);
@@ -395,7 +407,12 @@ class NativeComposerApi {
 
     public setIsFreeUser(isFreeUser: boolean): void {
         console.log(`NativeComposerApi: Set isFreeUser`);
-        this.updateState({ isFreeUser: isFreeUser });
+        this.updateState({ userFlags: { ...this.state.userFlags, isFreeUser: isFreeUser } });
+    }
+
+    public setIsGuestUser(isGuestUser: boolean): void {
+        console.log(`NativeComposerApi: Set isGuestUser`);
+        this.updateState({ userFlags: { ...this.state.userFlags, isGuestUser: isGuestUser } });
     }
 
     public onComposerError(error: string): void {
@@ -489,12 +506,13 @@ try {
         toggleWebSearch: createNativeWrapper('toggleWebSearch'),
         setCreateImage: createNativeWrapper('setCreateImage'),
         toggleCreateImage: createNativeWrapper('toggleCreateImage'),
-        changeModel: createNativeWrapper('changeModel'),
+        changeModelTier: createNativeWrapper('changeModelTier'),
 
         // Actions
         uploadFiles: createNativeWrapper('uploadFiles'),
         openProtonDrive: createNativeWrapper('openProtonDrive'),
         openSketch: createNativeWrapper('openSketch'),
+        openAccount: createNativeWrapper('openAccount'),
 
         sendPrompt: createNativeWrapper('sendPrompt'),
         abortPrompt: createNativeWrapper('abortPrompt'),
@@ -504,6 +522,7 @@ try {
         toggleImageGenEnabled: createNativeWrapper('toggleImageGenEnabled'),
         toggleModelSelectionEnabled: createNativeWrapper('toggleModelSelectionEnabled'),
         setIsFreeUser: createNativeWrapper('setIsFreeUser'),
+        setIsGuestUser: createNativeWrapper('setIsGuestUser'),
         previewFile: createNativeWrapper('previewFile'),
 
         // Error handling
