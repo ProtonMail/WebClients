@@ -211,10 +211,15 @@ export function sendMessageWithRedux(
                             role,
                         })
                     );
-                    // Only push to server if generation succeeded
-                    if (status !== 'failed') {
-                        dispatch(pushMessageRequest({ id: messageId }));
-                    }
+                    // Always persist the message to IDB, even if generation failed.
+                    // Failed messages have content the user can see (partial response,
+                    // reasoning tokens, tool calls). Without this push, the message
+                    // exists only in Redux and vanishes on page reload.
+                    // Importantly, if the user continues the conversation below a
+                    // non-persisted message, the entire child subtree is at risk:
+                    // persistence relies on the message tree topology, and a missing
+                    // parent means children cannot be persisted either.
+                    dispatch(pushMessageRequest({ id: messageId }));
 
                     // Handle final title processing
                     const finalTitle = postProcessTitle(accumulatedTitle);
