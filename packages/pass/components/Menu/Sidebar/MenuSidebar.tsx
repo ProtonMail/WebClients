@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import Icon from '@proton/components/components/icon/Icon';
 import { UserStorage } from '@proton/pass/components/Account/UserStorage';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { MonitorButton } from '@proton/pass/components/Menu/Monitor/MonitorButton';
 import { SharedMenu } from '@proton/pass/components/Menu/Shared/SharedMenu';
 import { AuthActions } from '@proton/pass/components/Menu/Sidebar/AuthActions';
@@ -33,6 +34,7 @@ export const MenuSidebar: FC<Props> = ({ onLock, onLogout, userPanel }) => {
     const menu = useMenuItems();
     const vaultActions = useVaultActions();
     const { vaultCreationDisabled } = useVaultCreationPolicy();
+    const { openSettings, popup } = usePassCore();
 
     return (
         <div className="flex flex-column flex-nowrap justify-space-between flex-1 overflow-auto">
@@ -106,7 +108,22 @@ export const MenuSidebar: FC<Props> = ({ onLock, onLogout, userPanel }) => {
 
                     <div className="flex justify-space-between items-center flex-nowrap gap-1 pl-3 pr-5">
                         {userPanel}
-                        {!EXTENSION_BUILD && <MenuActions onLogout={onLogout} />}
+                        {EXTENSION_BUILD ? (
+                            popup?.expanded && (
+                                <Button
+                                    icon
+                                    shape="ghost"
+                                    size="small"
+                                    className="shrink-0"
+                                    onClick={() => openSettings?.()}
+                                    title={c('Action').t`Settings`}
+                                >
+                                    <Icon name="cog-wheel" alt={c('Action').t`Settings`} />
+                                </Button>
+                            )
+                        ) : (
+                            <MenuActions onLogout={onLogout} />
+                        )}
                     </div>
 
                     <UserStorage />

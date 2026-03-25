@@ -68,6 +68,7 @@ const getPassCoreProviderProps = (
     });
 
     const onTelemetry = sendTelemetryEvent(messageFactory);
+    const popupController = endpoint === 'popup' ? createPopupController() : undefined;
 
     return {
         config,
@@ -170,11 +171,16 @@ const getPassCoreProviderProps = (
             browser.tabs
                 .query({ url: settingsUrl })
                 .then(async (match) => {
-                    await (match.length > 0 && match[0].id
+                    const tab = await (match.length > 0 && match[0].id
                         ? browser.tabs.update(match[0].id, { active: true, url })
                         : browser.tabs.create({ url }));
 
-                    window.close();
+                    if (popupController?.expanded) {
+                        /** Force focus on the opened tab because the popup, if expanded, remains over it */
+                        if (tab?.windowId) await browser.windows.update(tab.windowId, { focused: true });
+                    } else {
+                        window.close();
+                    }
                 })
                 .catch(noop);
         },
@@ -218,7 +224,7 @@ const getPassCoreProviderProps = (
             return granted;
         },
 
-        popup: endpoint === 'popup' ? createPopupController() : undefined,
+        popup: popupController,
 
         getDesktopUnlockSecret: async () =>
             sendMessage(messageFactory({ type: WorkerMessageType.DESKTOP_UNLOCK_SECRET })).then((res) => {
