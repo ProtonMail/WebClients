@@ -1,11 +1,112 @@
 @use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/meet/meet-breakpoints' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints;
+im.$media-expressions: $media-expressions;
 
-.generic-signup {
-	.button-outline-norm {
-		--button-default-text-color: var(--interaction-norm-major-1);
+.meet-signup-variables {
+	--font-weight-normal: 500;
+	--font-weight-bold: 700;
+	--theme-color: #968aef;
+	--interaction-norm: var(--theme-color);
+	--interaction-norm-major-1: #aea4f3;
+	--interaction-norm-major-2: #c8c1f7;
+	--interaction-norm-major-3: #ddd9fa;
+	--interaction-norm-minor-1: #7169b8;
+	--interaction-norm-minor-2: #4a4478;
+	--interaction-norm-minor-3: #2e2952;
+	--link-norm: var(--interaction-norm-major-1);
+	--link-hover: var(--interaction-norm-major-2);
+	--signal-success: #88f189;
+
+	font-weight: var(--font-weight-normal);
+}
+
+.meet-signup {
+	background: var(--background-norm);
+
+	.link {
+		text-decoration: none;
+	}
+
+	&::after,
+	&::before {
+		content: '';
+		position: absolute;
+		inline-size: 14rem;
+		block-size: 14rem;
+		background-color: #8268d9;
+		border-radius: 50%;
+		opacity: 0.4;
+		filter: blur(120px);
+		z-index: 0;
+		pointer-events: none;
+	}
+
+	&::before {
+		inset-inline-start: 15%;
+		inset-block-start: 45%;
+	}
+
+	&::after {
+		inset-inline-start: 75%;
+		inset-block-start: 35%;
 	}
 }
 
-.generic-signup-bg-gradient {
-	background: linear-gradient(122deg, #fff 8.63%, #f7f5fe 69.23%);
+.meet-signup-input-wrapper {
+	--theme-color: #968aef;
+	--focus-outline: var(--theme-color);
+
+	.field-two-label {
+		font-weight: var(--font-weight-normal);
+		margin-block-end: var(--space-2);
+	}
+
+	.input {
+		background-color: #232331 !important;
+		border-radius: 1.5rem !important;
+		padding: 0.5rem !important;
+		border-width: 0.063rem !important;
+		border-style: solid;
+		border-color: var(--border-weak);
+
+		&:focus-within {
+			border-color: var(--theme-color);
+			box-shadow: 0 0 0 0.063rem var(--theme-color);
+		}
+	}
+
+	.input-adornment .button {
+		--button-default-text-color: var(--interaction-norm-minor-1);
+	}
+}
+
+.meet-container-padding-x {
+	padding-inline: 1.5rem;
+
+	@include im.media('>medium') {
+		padding-inline: 2rem;
+	}
+
+	@include im.media('>large') {
+		padding-inline: 2rem;
+	}
+}
+
+.meet-signup-cta {
+	--button-default-text-color: var(--text-invert);
+	--button-hover-text-color: var(--text-invert);
+	--button-active-text-color: var(--text-invert);
+
+	background: linear-gradient(315.96deg, var(--theme-color) 21.43%, #d1cbff 115.05%);
+	transition: none;
+
+	&:hover {
+		background: var(--button-hover-background-color);
+	}
+
+	&:active {
+		background: var(--button-active-background-color);
+	}
 }

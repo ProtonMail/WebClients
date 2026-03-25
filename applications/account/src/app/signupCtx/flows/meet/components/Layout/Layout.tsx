@@ -4,7 +4,7 @@ import './layout.scss';
 
 const Layout = ({ children }: { children: ReactNode }) => {
     return (
-        <div className="flex *:min-size-auto flex-nowrap flex-column h-full overflow-auto relative scroll-smooth generic-signup generic-signup-bg-gradient">
+        <div className="*:min-size-auto h-full overflow-auto relative scroll-smooth flex-1 min-h-0 w-full flex flex-column flex-nowrap relative meet-signup meet-signup-variables meet-container-padding-x">
             <div>{children}</div>
         </div>
     );

@@ -12,6 +12,7 @@ import type { PlanIDs } from '@proton/payments';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { continueToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 
 import { Layout } from '../components/Layout/Layout';
 import { OfferModal } from '../components/OfferModal/OfferModal';
@@ -63,16 +64,12 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
     const searchParams = new URLSearchParams(location.search);
     const highlightUnlimitedFlag = searchParams.has('unlimited');
 
-    // Using same variable name in translations as a duplicate key in OAuthConfirmForkContainer
-    const name = PASS_APP_NAME;
-
     const plans: PlanCardProps[] = [
         {
             title: c('Title').t`Free`,
             price: getPrice({}),
             priceSubtitle: c('Subtitle').t`Free forever`,
-            // translator: variable here is the name of the service to login to. Complete sentence: "Continue to Proton Pass"
-            buttonText: c('Action').t`Continue to ${name}`,
+            buttonText: continueToPlanOrAppNameText(PASS_APP_NAME),
             buttonAction: openOfferModal,
             features: [
                 c('Label').t`Secure password generator`,

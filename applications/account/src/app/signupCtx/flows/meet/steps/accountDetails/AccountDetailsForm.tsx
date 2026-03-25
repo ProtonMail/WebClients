@@ -1,25 +1,29 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { IcShield2CheckFilled } from '@proton/icons/icons/IcShield2CheckFilled';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
-import { MAIL_APP_NAME, MEET_APP_NAME } from '@proton/shared/lib/constants';
-import { getStaticURL } from '@proton/shared/lib/helpers/url';
+import { BRAND_NAME, MAIL_APP_NAME, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { SignupType } from '../../../../../signup/interfaces';
 import { usePasswordInputInline } from '../../../../containers/password/usePasswordInput';
 import useEmailInput from '../../../../containers/username/useEmailInput';
 import { useSignup } from '../../../../context/SignupContext';
-import trusted from '../../assets/images/trusted.png';
-import Terms from '../../components/Terms';
+import { MeetSignupIntent, getMeetSignupIntentFromSearchParams } from '../../helpers/path';
 
-type Step = 'email' | 'password';
+const getMeetAccountDetailsHeadline = (meetIntent: MeetSignupIntent | undefined) => {
+    if (meetIntent === MeetSignupIntent.Room) {
+        return c('Signup: Meet').t`Create your ${BRAND_NAME} account to create a room`;
+    }
+    if (meetIntent === MeetSignupIntent.Schedule) {
+        return c('Signup: Meet').t`Create your ${BRAND_NAME} account and schedule meetings`;
+    }
+    return c('Signup: Meet').t`Create your ${BRAND_NAME} account for ${MEET_SHORT_APP_NAME}`;
+};
 
 const SwitchSignupType = () => {
     const signup = useSignup();
@@ -37,27 +41,19 @@ const SwitchSignupType = () => {
     };
 
     const externalButton = (
-        <InlineLinkButton
-            key="external-account-switch"
-            onClick={() => handleSwitchType(SignupType.Proton)}
-            className="color-norm"
-        >
+        <InlineLinkButton key="external-account-switch" onClick={() => handleSwitchType(SignupType.Proton)}>
             {c('Signup').t`get a secure ${MAIL_APP_NAME} address.`}
         </InlineLinkButton>
     );
 
     const internalButton = (
-        <InlineLinkButton
-            key="internal-account-switch"
-            onClick={() => handleSwitchType(SignupType.External)}
-            className="color-norm"
-        >
+        <InlineLinkButton key="internal-account-switch" onClick={() => handleSwitchType(SignupType.External)}>
             {c('Signup').t`use your current email.`}
         </InlineLinkButton>
     );
 
     return (
-        <p className="mt-4 mb-6 mr-auto">
+        <p className="mt-4 mb-3 mr-auto">
             {selectedSignupType === SignupType.External
                 ? // translator: "Use your email, or get a secure Proton Mail address."
                   c('Signup').jt`Use your email, or ${externalButton}`
@@ -68,48 +64,40 @@ const SwitchSignupType = () => {
 };
 
 const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) => {
-    const [step, setStep] = useState<Step>('email');
+    const location = useLocation();
     const signup = useSignup();
     const [submitting, setSubmitting] = useState(false);
+    const meetIntent = getMeetSignupIntentFromSearchParams(new URLSearchParams(location.search));
+    const { selectedSignupType } = signup.accountForm;
 
     const handleRequestSubmit = () => {
         signup.accountForm.refs.form.current?.requestSubmit();
     };
     const { emailInput, loadingChallenge } = useEmailInput({
-        autoFocus: step === 'email',
+        autoFocus: true,
         onSubmit: handleRequestSubmit,
         loading: submitting,
-        bigger: true,
+        inputClassName: 'meet-signup-variables meet-signup-input-wrapper pt-0.5',
+        emailLabelHidden: true,
+        usernameLabelHidden: true,
+        placeholder: selectedSignupType === SignupType.External ? c('Signup label').t`Your email` : undefined,
     });
     const { passwordInputs } = usePasswordInputInline({
-        autoFocus: step === 'password',
         loading: submitting,
-        bigger: true,
+        placeholder: c('Signup label').t`Your password`,
     });
 
     const handleSubmit = async () => {
-        if (step === 'email') {
-            try {
-                setSubmitting(true);
-                if (await signup.accountForm.getIsValid({ passwords: false })) {
-                    setStep('password');
-                }
-            } catch {
-                // Ignore, not valid
-            } finally {
-                setSubmitting(false);
-            }
-        }
-
-        if (step === 'password') {
-            try {
-                setSubmitting(true);
-                const accountData = await signup.accountForm.getValidAccountData({ passwords: true });
-                signup.submitAccountData(accountData);
-                await onSuccess();
-            } finally {
-                setSubmitting(false);
-            }
+        try {
+            setSubmitting(true);
+            await signup.accountForm.getIsValid({ passwords: false });
+            const accountData = await signup.accountForm.getValidAccountData({ passwords: true });
+            signup.submitAccountData(accountData);
+            await onSuccess();
+        } catch {
+            // Ignore, not valid
+        } finally {
+            setSubmitting(false);
         }
     };
 
@@ -129,14 +117,15 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
             noValidate
             className="w-full"
         >
-            <h1 className="font-arizona lh120 text-5xl lg:text-7xl">
-                {step === 'email' ? c('Signup: Meet').t`Sign up, meet privately` : c('Signup').t`Set your password`}
+            <h1 className="font-arizona lh120 text-5xl lg:text-7xl text-center mb-8">
+                {getMeetAccountDetailsHeadline(meetIntent)}
             </h1>
+
             <SwitchSignupType />
 
             {emailInput}
 
-            {step === 'password' && <div className="fade-in-up">{passwordInputs}</div>}
+            <div className="meet-signup-input-wrapper">{passwordInputs}</div>
 
             <Button
                 {...(() => {
@@ -162,9 +151,9 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
                 type="submit"
                 fullWidth
                 pill
-                className="mt-2 py-4 text-semibold"
+                className="mt-2 py-4 text-semibold meet-signup-cta"
             >
-                {step === 'email' ? c('Signup: Meet').t`Start using ${MEET_APP_NAME} now` : c('Action').t`Get started`}
+                {c('Action').t`Continue`}
             </Button>
 
             <div className="text-center mt-4">
@@ -173,34 +162,6 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
                     <span>{c('Info').t`End-to-end encrypted`}</span>
                 </span>
             </div>
-
-            {step === 'email' && (
-                <>
-                    <div className="flex gap-2 flex-nowrap items-center mt-8 mb-0">
-                        <img src={trusted} alt="" className="shrink-0" width={126} height={52} />
-                        <p className="m-0">
-                            {getBoldFormattedText(
-                                c('Signup: Meet').t`**Trusted by over 100 million** users and organizations`,
-                                'md:block'
-                            )}
-                        </p>
-                    </div>
-                    <div className="mt-6">
-                        <p className="color-weak m-0">
-                            {c('Signup: Meet').t`Own a business?`}{' '}
-                            <Href className="color-weak" href={getStaticURL('/business/meet/pricing')} target="_blank">
-                                {c('Signup: Meet').t`Get ${PLAN_NAMES[PLANS.MEET_BUSINESS]}`}
-                            </Href>
-                        </p>
-                    </div>
-                </>
-            )}
-
-            {step === 'password' && (
-                <footer className="mt-8">
-                    <Terms />
-                </footer>
-            )}
         </form>
     );
 };
