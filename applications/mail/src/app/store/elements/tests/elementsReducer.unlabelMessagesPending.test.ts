@@ -27,6 +27,7 @@ describe('unlabelMessagesPending', () => {
             elements: {},
             total: {},
             params: {
+                categoryIDs: [],
                 filter: {},
                 conversationMode: true,
             },

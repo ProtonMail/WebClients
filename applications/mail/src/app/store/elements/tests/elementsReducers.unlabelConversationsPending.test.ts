@@ -23,6 +23,7 @@ describe('unLabelConversationsPending', () => {
             elements: {},
             total: {},
             params: {
+                categoryIDs: [],
                 filter: {},
                 conversationMode: true,
             },
