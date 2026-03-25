@@ -281,6 +281,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         subscription: Subscription;
         subscriptionReminderFlow: boolean | undefined;
         upsellPlanId: PLANS | undefined;
+        existingFeedback?: FeedbackDowngradeData;
     }
 
     const cancelRenew = async ({
@@ -288,6 +289,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         subscription,
         subscriptionReminderFlow,
         upsellPlanId,
+        existingFeedback,
     }: CancelRenewProps): Promise<CancelSubscriptionResult> => {
         if (isB2BTrial) {
             try {
@@ -346,6 +348,10 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             } catch {
                 return SUBSCRIPTION_KEPT;
             }
+        }
+
+        if (existingFeedback) {
+            return finaliseCancellation({ feedback: existingFeedback });
         }
 
         const feedback = await showFeedbackDowngradeModal();
@@ -439,11 +445,13 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         upsellPlanId,
         skipUpsell,
         forceDeleteSubscription,
+        existingFeedback,
     }: {
         subscriptionReminderFlow?: boolean;
         upsellPlanId?: PLANS;
         skipUpsell?: boolean;
         forceDeleteSubscription?: boolean;
+        existingFeedback?: FeedbackDowngradeData;
     }): Promise<CancelSubscriptionResult> => {
         const [subscription, user] = await Promise.all([getSubscription(), getUser()]);
         if (user.isFree || isFreeSubscription(subscription)) {
@@ -467,6 +475,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
                 subscription,
                 subscriptionReminderFlow,
                 upsellPlanId,
+                existingFeedback,
             });
         }
 
