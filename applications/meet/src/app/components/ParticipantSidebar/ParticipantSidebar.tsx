@@ -57,7 +57,7 @@ export const ParticipantSidebar = ({
                 {participantSideBarOpen &&
                     participants.map((participant) => (
                         <div key={participant.identity} className="participant-sidebar__list__item">
-                            <ParticipantTile participant={participant} viewSize="small" />
+                            <ParticipantTile participant={participant} viewSize="xsmall" />
                         </div>
                     ))}
             </div>

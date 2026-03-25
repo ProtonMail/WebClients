@@ -26,7 +26,7 @@ export const SecurityShield = ({
     smallIcon = false,
 }: SecurityShieldProps) => {
     return (
-        <div className={clsx('flex items-center justify-center', smallIcon ? 'mr-1' : 'mr-2')}>
+        <div className={clsx('flex shrink-0 items-center justify-center', smallIcon ? 'mr-1' : 'mr-2')}>
             <Tooltip
                 tooltipClassName="meet-tooltip text-semibold p-4 "
                 title={title}

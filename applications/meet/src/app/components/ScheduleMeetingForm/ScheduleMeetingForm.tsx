@@ -81,6 +81,7 @@ export const ScheduleMeetingForm = ({
     const [loading, withLoading] = useLoading();
     const [loadingDelete, withLoadingDelete] = useLoading();
     const [meetingLink, setMeetingLink] = useState<string | null>(null);
+    const isEdit = !!meeting;
 
     const userTimeZone = getTimezone();
 
@@ -366,7 +367,7 @@ export const ScheduleMeetingForm = ({
                         endTime={combineDateAndTime(values.endDate, values.endTime, values.timeZone)}
                         timeZone={values.timeZone}
                         rrule={result.rrule}
-                        isEdit={!!meeting}
+                        isEdit={isEdit}
                         backToEditMeeting={backToEditMeeting}
                         meetingIsDecrypting={!meeting}
                     />
@@ -389,15 +390,17 @@ export const ScheduleMeetingForm = ({
                     <div className="create-container-title mb-10 w-full text-center text-semibold">
                         {meeting ? values.meetingName : c('Title').t`Schedule a meeting`}
                     </div>
-                    <div className="text-left mb-5">
-                        <InlineLinkButton
-                            onClick={goToCalendar}
-                            className="flex text-no-decoration schedule-proton-calendar-button"
-                        >
-                            {c('Placeholder').t`Schedule in ${CALENDAR_APP_NAME}`}
-                            <IcArrowWithinSquare size={5} className="ml-2" />
-                        </InlineLinkButton>
-                    </div>
+                    {!isEdit && (
+                        <div className="text-left mb-5">
+                            <InlineLinkButton
+                                onClick={goToCalendar}
+                                className="flex text-no-decoration schedule-proton-calendar-button"
+                            >
+                                {c('Placeholder').t`Schedule in ${CALENDAR_APP_NAME}`}
+                                <IcArrowWithinSquare size={5} className="ml-2" />
+                            </InlineLinkButton>
+                        </div>
+                    )}
                     <div className="w-full flex flex-nowrap items-center gap-4">
                         <IcTextAlignLeft
                             size={5}

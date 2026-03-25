@@ -28,7 +28,7 @@ export const OptionButton = ({ showIcon, label, onClick, Icon, iconSize, loading
                 {loading ? (
                     <CircleLoader />
                 ) : (
-                    showIcon && Icon && <Icon size={iconSize ?? 5} style={{ color: 'var(--interaction-norm)' }} />
+                    showIcon && Icon && <Icon size={iconSize ?? 5} style={{ color: 'var(--text-weak)' }} />
                 )}
             </div>
             <span className="text-ellipsis">{label}</span>
