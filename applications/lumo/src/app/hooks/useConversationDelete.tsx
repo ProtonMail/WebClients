@@ -4,7 +4,9 @@ import { c } from 'ttag';
 
 import { useModalStateObject, useNotifications } from '@proton/components';
 
-import { useLumoDispatch } from '../redux/hooks';
+import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
+import { selectConversationsBySpaceId, selectSpaceById } from '../redux/selectors';
+import { locallyDeleteConversationFromLocalRequest } from '../redux/slices/core/conversations';
 import { locallyDeleteSpaceFromLocalRequest, pushSpaceRequest } from '../redux/slices/core/spaces';
 import type { Conversation } from '../types';
 import { sendConversationDeleteEvent } from '../util/telemetry';
@@ -17,13 +19,15 @@ interface UseConversationDeleteProps {
 }
 
 export const useConversationDelete = ({ conversation }: UseConversationDeleteProps) => {
-    const { spaceId } = conversation;
+    const { id: conversationId, spaceId } = conversation;
     const dispatch = useLumoDispatch();
     const navigate = useLumoNavigate();
     const { createNotification } = useNotifications();
     const confirmDeleteModal = useModalStateObject();
     const { removeIndexedFoldersBySpace } = useDriveFolderIndexing();
     const searchService = useSearchService();
+    const space = useLumoSelector(selectSpaceById(spaceId));
+    const conversationsInSpace = useLumoSelector(selectConversationsBySpaceId(spaceId));
 
     const openConfirmationModal = useCallback(() => {
         confirmDeleteModal.openModal(true);
@@ -32,17 +36,22 @@ export const useConversationDelete = ({ conversation }: UseConversationDeletePro
     const handleDelete = useCallback(async () => {
         sendConversationDeleteEvent();
 
+        // Project spaces and any space with more than one chat only delete the conversation (legacy 1:1 was space delete)
+        const deleteConversationOnly = space?.isProject === true;
+
         try {
-            // Clean up any Drive folders indexed for this space
-            await removeIndexedFoldersBySpace(spaceId);
+            if (deleteConversationOnly) {
+                dispatch(locallyDeleteConversationFromLocalRequest(conversationId));
+            } else {
+                await removeIndexedFoldersBySpace(spaceId);
 
-            // Clean up search index for uploaded files in this space
-            if (searchService) {
-                searchService.removeDocumentsBySpace(spaceId);
+                if (searchService) {
+                    searchService.removeDocumentsBySpace(spaceId);
+                }
+
+                dispatch(locallyDeleteSpaceFromLocalRequest(spaceId));
+                dispatch(pushSpaceRequest({ id: spaceId }));
             }
-
-            dispatch(locallyDeleteSpaceFromLocalRequest(spaceId));
-            dispatch(pushSpaceRequest({ id: spaceId }));
 
             createNotification({ text: c('Success').jt`Conversation deleted` });
         } catch (error) {
@@ -51,7 +60,18 @@ export const useConversationDelete = ({ conversation }: UseConversationDeletePro
 
         confirmDeleteModal.openModal(false);
         navigate('/');
-    }, [spaceId, dispatch, createNotification, confirmDeleteModal, navigate, removeIndexedFoldersBySpace, searchService]);
+    }, [
+        conversationId,
+        spaceId,
+        space?.isProject,
+        conversationsInSpace,
+        dispatch,
+        createNotification,
+        confirmDeleteModal,
+        navigate,
+        removeIndexedFoldersBySpace,
+        searchService,
+    ]);
 
     return {
         openConfirmationModal,
