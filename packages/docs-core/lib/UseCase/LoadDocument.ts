@@ -17,7 +17,7 @@ import type { GetNode } from './GetNode'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { NodeMeta, PublicNodeMeta, PublicDriveCompat, DriveCompat } from '@proton/drive-store'
 import type { FetchMetaAndRawCommit } from './FetchMetaAndRawCommit'
-import type { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
+import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { jwtDecode } from 'jwt-decode'
 import { realtimeTokenPayloadSchema } from './FetchRealtimeToken'
 
@@ -94,9 +94,25 @@ export class LoadDocument {
 
       const { keys } = keysResult.getValue()
       const { node, fromCache: nodeIsFromCache } = nodeResult.getValue()
-      const { serverBasedMeta, latestCommit: encryptedCommit, realtimeToken } = metaResult.getValue()
-      const jwtPayload = realtimeTokenPayloadSchema.parse(jwtDecode(realtimeToken!.token))
-      const userRole = rawPermissionToRole(jwtPayload.Permissions)
+      const { serverBasedMeta, latestCommit: encryptedCommit, realtimeTokenResult } = metaResult.getValue()
+      const realtimeToken = realtimeTokenResult.isFailed() ? undefined : realtimeTokenResult.getValue()
+
+      let userRole: DocumentRole | undefined = undefined
+      if (realtimeToken?.token) {
+        const jwtPayload = realtimeTokenPayloadSchema.parse(jwtDecode(realtimeToken.token))
+        userRole = rawPermissionToRole(jwtPayload.Permissions)
+      } else {
+        const needsReadonlyMode =
+          realtimeTokenResult.isFailed() &&
+          realtimeTokenResult.getErrorObject().code === DocsApiErrorCode.NeedsReadonlyMode
+        if (needsReadonlyMode) {
+          userRole = new DocumentRole('Viewer')
+        }
+      }
+
+      if (!userRole) {
+        return DynamicResult.fail({ message: 'Unable to determine user role' })
+      }
 
       let decryptedCommit: DecryptedCommit | undefined
 
@@ -186,10 +202,12 @@ export class LoadDocument {
         return Result.fail(metaResult.getErrorObject().message)
       }
 
-      const { serverBasedMeta, latestCommit, realtimeToken } = metaResult.getValue()
+      const { serverBasedMeta, latestCommit, realtimeTokenResult } = metaResult.getValue()
       if (!serverBasedMeta) {
         return Result.fail('Document meta not found')
       }
+
+      const realtimeToken = realtimeTokenResult.isFailed() ? undefined : realtimeTokenResult.getValue()
 
       if (!keysResult) {
         return Result.fail('Unable to load all necessary data')
