@@ -3692,9 +3692,6 @@
       "Port is required": [
         "Port ist erforderlich"
       ],
-      "Postal code is required": [
-        "Postleitzahl ist erforderlich"
-      ],
       "Primary address key is not decrypted": [
         "Der Schlüssel der primären Adresse ist nicht entschlüsselt."
       ],
@@ -3948,9 +3945,6 @@
       ],
       "Your import will not be processed.": [
         "Dein Import wird nicht verarbeitet."
-      ],
-      "ZIP code is required": [
-        "Eine Postleitzahl ist erforderlich"
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Nicht entschlüsselbares Gerät"
@@ -11334,11 +11328,11 @@
       ]
     },
     "Status": {
-      "accepted": [
-        "Akzeptiert"
-      ],
       "pending": [
         "Ausstehend"
+      ],
+      "user joined": [
+        "Benutzer beigetreten"
       ]
     },
     "Storage": {

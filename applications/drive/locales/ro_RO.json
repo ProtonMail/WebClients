@@ -166,7 +166,7 @@
         "Modifică-mi accesul"
       ],
       "Change password": [
-        "Schimbare parolă"
+        "Modificare parolă"
       ],
       "Chat with us": [
         "Conversați cu noi"
@@ -3725,9 +3725,6 @@
       "Port is required": [
         "Portul este obligatoriu"
       ],
-      "Postal code is required": [
-        "Codul poștal este obligatoriu."
-      ],
       "Primary address key is not decrypted": [
         "Cheia primară a adresei nu este decriptată."
       ],
@@ -3983,9 +3980,6 @@
       ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
-      ],
-      "ZIP code is required": [
-        "Codul poștal este obligatoriu."
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Dispozitiv nedecriptabil"
@@ -5368,7 +5362,7 @@
         "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
       ],
       "Change your password": [
-        "Schimbare parolă"
+        "Modificare parolă"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Se verifică contactul ${ progress } din ${ max }..."
@@ -11482,11 +11476,11 @@
       ]
     },
     "Status": {
-      "accepted": [
-        "acceptat"
-      ],
       "pending": [
         "în așteptare"
+      ],
+      "user joined": [
+        "utilizator alăturat"
       ]
     },
     "Storage": {
@@ -12455,7 +12449,7 @@
         "Schimbare aspect"
       ],
       "Change password": [
-        "Schimbare parolă"
+        "Modificare parolă"
       ],
       "Check for malicious files": [
         "Verificare fișiere malițioase"
