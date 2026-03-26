@@ -16,7 +16,7 @@ type ErrorResult = {
 type SuccessResult = {
   serverBasedMeta: DocumentMetaInterface
   latestCommit: Commit | undefined
-  realtimeToken: RealtimeTokenResult | undefined
+  realtimeTokenResult: ApiResult<RealtimeTokenResult>
 }
 
 /**
@@ -78,12 +78,11 @@ export class FetchMetaAndRawCommit {
     }
 
     const latestCommit: Commit | undefined = commitDataResult?.getValue()
-    const realtimeToken = realtimeTokenResult.isFailed() ? undefined : realtimeTokenResult.getValue()
 
     return DynamicResult.ok({
       serverBasedMeta,
       latestCommit,
-      realtimeToken,
+      realtimeTokenResult,
     })
   }
 }
