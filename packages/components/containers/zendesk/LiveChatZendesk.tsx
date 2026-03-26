@@ -7,6 +7,7 @@ import type { ZendeskRef } from '@proton/components/containers/zendesk/helper';
 import { getZendeskIframeUrl } from '@proton/components/containers/zendesk/helper';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import * as sessionStorageWrapper from '@proton/shared/lib/helpers/sessionStorage';
 import * as localStorageWrapper from '@proton/shared/lib/helpers/storage';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -22,7 +23,10 @@ const fetchJWT = async (api: Api) => {
         });
         return JWT;
     } catch (e) {
-        return;
+        captureMessage('Zendesk: Failed to fetch JWT', {
+            level: 'error',
+            extra: { error: e },
+        });
     }
 };
 
@@ -282,6 +286,14 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
                             },
                         },
                     ]);
+                }
+            } else if (data.type === 'login-response') {
+                // payload will be `null` on successful authentication and will contain error details for failed attempts
+                if (data.payload) {
+                    captureMessage('Zendesk: Authentication failed', {
+                        level: 'error',
+                        extra: { error: data.payload.result },
+                    });
                 }
             }
         };
