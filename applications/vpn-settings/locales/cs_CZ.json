@@ -4350,9 +4350,6 @@
       "Port is required": [
         "Port je povinná položka"
       ],
-      "Postal code is required": [
-        "PSČ je povinné"
-      ],
       "Primary address key is not decrypted": [
         "Klíč primární adresy nebyl dešifrován"
       ],
@@ -4538,9 +4535,6 @@
       ],
       "Zero keys reactivated": [
         "Žádné klíče nebyly znovu aktivovány"
-      ],
-      "ZIP code is required": [
-        "PSČ je potřeba vyplnit"
       ]
     },
     "error": {
@@ -6789,9 +6783,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL adresa endpointu, kterou jste dostali od vašeho poskytovatele identity (např. https://idp.example.com/sso/saml)."
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "Končí ${ formattedPeriodEndDate }"
-      ],
       "Enhance your network security": [
         "Zlepšení zabezpečení sítě"
       ],
@@ -7697,9 +7688,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začněte ji sdílet s kontakty a používejte ji pro online služby."
-      ],
-      "Starts on ${ startsOnTime }": [
-        "Začíná ${ startsOnTime }"
       ],
       "Storage allocated to other users in this organisation": [
         "Úložný prostor přidělený ostatním uživatelům v této organizaci"

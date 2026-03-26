@@ -4365,14 +4365,14 @@
       "Port is required": [
         "Bağlantı noktasının yazılması zorunludur"
       ],
-      "Postal code is required": [
-        "Posta kodunun yazılması zorunludur"
-      ],
       "Primary address key is not decrypted": [
         "Birincil adres anahtarının şifresi çözülemedi"
       ],
       "Primary address key is not decrypted.": [
         "Birincil adres anahtarının şifresi çözülemedi."
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Gizli kullanıcılar ilk kez oturum açmalarından sonra gruba eklenebilirler: ${ displayedNames }"
       ],
       "Process aborted": [
         "İşlem iptal edildi"
@@ -4562,9 +4562,6 @@
       ],
       "Zero keys reactivated": [
         "Hiç bir anahtar yeniden kullanıma alınmadı"
-      ],
-      "ZIP code is required": [
-        "Posta kodunun yazılması zorunludur"
       ]
     },
     "error": {
@@ -6425,7 +6422,7 @@
         "İlerlemek için bir varlık kimliği seçin"
       ],
       "Choose your service to connect with": [
-        "Bağlanmak istediğiniz hizmeti seçin"
+        "Bağlamak istediğiniz hizmeti seçin"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
@@ -6716,9 +6713,6 @@
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Kimlik hizmeti sağlayıcınızın uç nokta adresi (örnek: https://idp.ornek.com/sso/saml)."
-      ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "${ formattedPeriodEndDate } tarihinde sona eriyor"
       ],
       "Enhance your network security": [
         "Ağ güvenliğinizi artırın"
@@ -7648,9 +7642,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
       ],
-      "Starts on ${ startsOnTime }": [
-        "Başlangıç tarihi: ${ startsOnTime }"
-      ],
       "Storage allocated to other users in this organisation": [
         "Bu kuruluştaki diğer kullanıcılara ayrılmış depolama alanı"
       ],
@@ -7684,6 +7675,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } avantajlarınızı sürdürmek için, aboneliğinizi Google Play Store üzerinden ${ byDate } tarihine kadar yeniden başlatın. ${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Abonelik ${ startsOnTime } zamanında başlar"
       ],
       "Summary": [
         "Özet"
@@ -7945,6 +7939,9 @@
       ],
       "Total VPN connections": [
         "Toplam VPN bağlantısı"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Deneme süresi ${ formattedPeriodEndDate } tarihinde sona eriyor"
       ],
       "trusted device": [
         "güvenilen aygıt"
@@ -15402,7 +15399,7 @@
         "İkinci parolayı değiştir"
       ],
       "Choose a provider": [
-        "Sağlayıcı seçin"
+        "Bir hizmet sağlayıcı seçin"
       ],
       "Choose user affiliations": [
         "Kullanıcı ilişkilerini seçin"
@@ -15805,7 +15802,7 @@
         "Grupları içe aktar"
       ],
       "Import your data to ${ BRAND_NAME }": [
-        "Verilerinizi ${ BRAND_NAME } aktarın"
+        "Verilerinizi ${ BRAND_NAME } içine aktarın"
       ],
       "Information exposed in breach": [
         "Veri sızıntısında açığa çıkan bilgiler"

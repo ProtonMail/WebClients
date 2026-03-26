@@ -4365,14 +4365,14 @@
       "Port is required": [
         "Απαιτείται θύρα"
       ],
-      "Postal code is required": [
-        "Απαιτείται ταχυδρομικός κώδικας"
-      ],
       "Primary address key is not decrypted": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
       ],
       "Primary address key is not decrypted.": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται."
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Οι ιδιώτες χρήστες μπορούν να προστεθούν στην ομάδα μόλις συνδεθούν για πρώτη φορά: ${ displayedNames }"
       ],
       "Process aborted": [
         "Η διαδικασία ματαιώθηκε"
@@ -4562,9 +4562,6 @@
       ],
       "Zero keys reactivated": [
         "Τα Μηδενικά κλειδιά ενεργοποιήθηκαν ξανά"
-      ],
-      "ZIP code is required": [
-        "Απαιτείται ταχυδρομικός κώδικας"
       ]
     },
     "error": {
@@ -6717,9 +6714,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Διεύθυνση URL τελικού σημείου που λάβατε από τον πάροχο ταυτότητάς σας (π.χ. https://idp.example.com/sso/saml)."
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "Λήγει στις ${ formattedPeriodEndDate }"
-      ],
       "Enhance your network security": [
         "Βελτιώστε την ασφάλεια του δικτύου σας"
       ],
@@ -7648,9 +7642,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Ξεκινήστε να το μοιράζεστε με επαφές και χρησιμοποιήστε το για ηλεκτρονικές υπηρεσίες."
       ],
-      "Starts on ${ startsOnTime }": [
-        "Ξεκινάει στις ${ startsOnTime }"
-      ],
       "Storage allocated to other users in this organisation": [
         "Κατανεμημένος αποθηκευτικός χώρος σε άλλους χρήστες αυτού του οργανισμού"
       ],
@@ -7684,6 +7675,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Η συνδρομή λήγει: Για να διατηρήσετε τα οφέλη του ${ planName }, επανεκκινήστε τη συνδρομή σας στο Google Play Store έως ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Η συνδρομή ξεκινά στις ${ startsOnTime }"
       ],
       "Summary": [
         "Περίληψη"
@@ -7945,6 +7939,9 @@
       ],
       "Total VPN connections": [
         "Σύνολο συνδέσεων VPN"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Η δοκιμαστική περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "αξιόπιστη συσκευή"
