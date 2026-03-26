@@ -640,6 +640,9 @@
       "Set extra password": [
         "追加のパスワードを設定する"
       ],
+      "Settings": [
+        "設定"
+      ],
       "Setup 2FA": [
         "2要素認証を設定"
       ],
@@ -1952,6 +1955,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
