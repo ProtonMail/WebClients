@@ -3012,6 +3012,18 @@
       "Photos upload is temporarily disabled. Please try again later": [
         "Fotoğraf yükleme özelliği geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden deneyin."
       ],
+      "Please enter a valid postal code": [
+        "Lütfen geçerli bir posta kodu yazın"
+      ],
+      "Please enter a valid ZIP code": [
+        "Lütfen geçerli bir posta kodu yazın"
+      ],
+      "Please enter postal code": [
+        "Lütfen posta kodunu yazın"
+      ],
+      "Please enter ZIP code": [
+        "Lütfen posta kodunu yazın"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
         "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
@@ -4307,7 +4319,7 @@
         "Size en uygun tarifeyi seçin."
       ],
       "Choose your service to connect with": [
-        "Bağlanmak istediğiniz hizmeti seçin"
+        "Bağlamak istediğiniz hizmeti seçin"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
@@ -9406,7 +9418,7 @@
         "Parolayı değiştir"
       ],
       "Choose a provider": [
-        "Sağlayıcı seçin"
+        "Bir hizmet sağlayıcı seçin"
       ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } adresinizi alın"
@@ -9649,7 +9661,7 @@
         "Grupları içe aktar"
       ],
       "Import your data to ${ BRAND_NAME }": [
-        "Verilerinizi ${ BRAND_NAME } aktarın"
+        "Verilerinizi ${ BRAND_NAME } içine aktarın"
       ],
       "Information exposed in breach": [
         "Veri sızıntısında açığa çıkan bilgiler"
