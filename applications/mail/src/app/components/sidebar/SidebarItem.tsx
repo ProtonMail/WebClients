@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { memo, useCallback, useRef } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
 import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
@@ -31,6 +31,7 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 import { shouldDisplayTotal } from '../../helpers/labels';
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
+import { useCategoriesView } from '../categoryView/useCategoriesView';
 import LocationAside from './LocationAside';
 
 import './SidebarItem.scss';
@@ -106,17 +107,24 @@ const SidebarItem = ({
     const { selectAll } = useSelectAll({ labelID });
     const { checkAllRef } = useCheckAllRef();
 
-    const location = useLocation();
     const mailParams = useMailSelector(params);
 
     const [refreshing, withRefreshing] = useLoading(false);
 
-    // The category in the sidebar must redirect to /inbox#category=CATEGORY
-    const humanID = isCategoryLabel(labelID)
-        ? setCategoryInUrl(location, labelID)
-        : (LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS] ?? labelID);
+    const { categoryViewAccess } = useCategoriesView();
 
-    const link = `/${humanID}`;
+    const humanID = LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS] ?? labelID;
+
+    let link: string;
+    if (isCategoryLabel(labelID)) {
+        // Category labels view redirect to /inbox#category=CATEGORY
+        link = setCategoryInUrl(labelID);
+    } else if (labelID === MAILBOX_LABEL_IDS.INBOX && categoryViewAccess) {
+        // We want to redirect to /inbox#category=primary when categories are enabled
+        link = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
+    } else {
+        link = `/${humanID}`;
+    }
 
     const needsTotalDisplay = shouldDisplayTotal(labelID);
 
@@ -203,6 +211,13 @@ const SidebarItem = ({
                     if (isCategoryLabel(labelID)) {
                         const categoryID = categoryIDFromUrl(location);
                         return !!(labelID === categoryID);
+                    }
+
+                    if (labelID === MAILBOX_LABEL_IDS.ALL_MAIL || labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL) {
+                        return (
+                            location.pathname.startsWith(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_MAIL]}`) ||
+                            location.pathname.startsWith(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL]}`)
+                        );
                     }
 
                     return !!match;
