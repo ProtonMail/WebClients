@@ -26,6 +26,7 @@ import {
     extractSearchParameters,
     filterFromUrl,
     filterToString,
+    setCategoryInUrl,
     sortFromUrl,
 } from 'proton-mail/helpers/mailboxUrl';
 import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
@@ -236,10 +237,16 @@ export const useElements: UseElements = ({
         // Update the category IDs and push the disabled categories if the default category is selected
         const categoryIDs: CategoryLabelID[] = [];
         if (categoryViewAccess && labelID === MAILBOX_LABEL_IDS.INBOX) {
-            const categoryInURL = categoryIDFromUrl(location) ?? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT;
-            categoryIDs.push(categoryInURL);
+            const categoryInURL = categoryIDFromUrl(location);
+            const category = categoryInURL ?? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT;
+            categoryIDs.push(category);
 
-            if (categoryInURL === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
+            if (!categoryInURL) {
+                const newLocation = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
+                history.push(newLocation);
+            }
+
+            if (category === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
                 categoryIDs.push(...disabledCategoriesIDs);
             }
         }
