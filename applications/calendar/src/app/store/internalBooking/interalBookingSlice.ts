@@ -11,6 +11,7 @@ import { type CalendarsState, calendarsThunk } from '@proton/calendar/calendars'
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { deleteBookingPage, getUserBookingPage } from '@proton/shared/lib/api/calendarBookings';
+import { SentryCalendarInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { InternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
 
 import { BookingLocation } from '../../containers/bookings/interface';
@@ -50,6 +51,10 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
             for (const bookingPage of bookingPages.BookingPages) {
                 const calData = getCalendarAndOwner(bookingPage.CalendarID, calendars);
                 if (!calData) {
+                    traceInitiativeError(
+                        SentryCalendarInitiatives.BOOKINGS,
+                        new Error(`Failed to get calendar data for booking page ${bookingPage.ID}`)
+                    );
                     continue;
                 }
 
@@ -63,6 +68,7 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                     ),
                     dispatch(getVerificationPreferencesThunk({ email: calData.ownerAddress.Email, lifetime: 0 })),
                 ]);
+
                 try {
                     const decrypted = await decryptAndVerifyBookingPageSecret({
                         bookingUID: bookingPage.BookingUID,
@@ -73,6 +79,10 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                     });
 
                     if (!decrypted) {
+                        traceInitiativeError(
+                            SentryCalendarInitiatives.BOOKINGS,
+                            new Error('Failed to decrypt booking page secret')
+                        );
                         continue;
                     }
 
@@ -103,12 +113,12 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
                     });
                     // We want to continue if decrypting one page fails
                 } catch (e) {
+                    traceInitiativeError(SentryCalendarInitiatives.BOOKINGS, e);
                     continue;
                 }
             }
         } catch (error) {
-            // eslint-disable-next-line no-console
-            console.warn({ error });
+            traceInitiativeError(SentryCalendarInitiatives.BOOKINGS, error);
         } finally {
             return { bookingPages: pagesArray };
         }
