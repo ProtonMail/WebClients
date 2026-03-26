@@ -1253,6 +1253,12 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Change my access": [
+        "Zmeniť môj prístup"
+      ],
+      "Remove my access": [
+        "Odstrániť mô prístup"
       ]
     },
     "Action: Docs": {
@@ -7153,6 +7159,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Ak odstránite seba, stratíte prístup k súboru \"${ fileName }\" a nebudete ho môcť znova otvoriť, pokiaľ vám ho vlastník znovu nesprístupní."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Po zmene prístupu na prehliadač nebudete môcť zdieľať \"${ fileName }\". Iba vlastník môže znova zmeniť váš prístup."
       ]
     },
     "info": {
@@ -9852,6 +9864,9 @@
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavenia boli úspešne zmenené"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" zdieľané"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11575,6 +11590,9 @@
       ],
       "pending": [
         "čakajúce"
+      ],
+      "user joined": [
+        "používateľ sa pripojil"
       ]
     },
     "Storage": {
@@ -13483,6 +13501,12 @@
       ],
       "You’ve got 5 GB of storage": [
         "Máte k dispozícii 5 GB úložného priestoru"
+      ],
+      "Remove your access?": [
+        "Odstrániť váš prístup?"
+      ],
+      "Share \"${ fileName }\"": [
+        "Zdieľať \"${ fileName }\""
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13577,6 +13601,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali sme im pozvánku s prístupom k položke."
+      ],
+      "Change shared item settings": [
+        "Zmeniť nastavenia zdieľanej položky"
+      ],
+      "New!": [
+        "Nové!"
       ]
     },
     "tooltip": {

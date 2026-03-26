@@ -1253,6 +1253,12 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Change my access": [
+        "Змяніць мой доступ"
+      ],
+      "Remove my access": [
+        "Выдаліць мой доступ"
       ]
     },
     "Action: Docs": {
@@ -7150,6 +7156,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Калі вы выдаліце сябе, то вы страціце доступ да \"${ fileName }\" і не зможаце адкрыць яго зноў. Толькі ўладальнік можа абагуліць яго з вамі."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Вы не зможаце абагуліць \"${ fileName }\" пасля змены доступу на праглядальніка. Толькі ўладальнік можа змяніць ваш доступ зноў."
       ]
     },
     "info": {
@@ -9900,6 +9912,9 @@
       ],
       "Your settings have been changed successfully": [
         "Вашы налады былі паспяхова зменены"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" абагулены"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11623,6 +11638,9 @@
       ],
       "pending": [
         "у чаканні"
+      ],
+      "user joined": [
+        "карыстальнік далучыўся"
       ]
     },
     "Storage": {
@@ -13531,6 +13549,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "Вы атрымалі 5 ГБ сховішча"
+      ],
+      "Change access to viewer?": [
+        "Змяніць доступ на прагляд?"
+      ],
+      "Remove your access?": [
+        "Выдаліць ваш доступ?"
+      ],
+      "Share \"${ fileName }\"": [
+        "Абагуліць \"${ fileName }\""
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13625,6 +13652,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "Мы адправілі ім запрашэнне на доступ да элемента."
+      ],
+      "Change shared item settings": [
+        "Змяніць налады абагуленага элемента"
+      ],
+      "New!": [
+        "Новае!"
       ]
     },
     "tooltip": {

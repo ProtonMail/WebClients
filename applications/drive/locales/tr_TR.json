@@ -1241,6 +1241,12 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Change my access": [
+        "Erişme iznimi değiştir"
+      ],
+      "Remove my access": [
+        "Erişme iznimi kaldır"
       ]
     },
     "Action: Docs": {
@@ -5081,7 +5087,7 @@
         "30 gün içinde ücreti geri ödeme garantisi."
       ],
       "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
-        "${ DRIVE_APP_NAME } uygulamasının yeni bir sürümü mevcut. Aramayı kullanmaya devam etmek için lütfen sayfayı yenileyin."
+        "Yeni bir ${ DRIVE_APP_NAME } sürümü yayınlanmış. Aramayı kullanmayı sürdürmek için lütfen yeniden yükleyin."
       ],
       "A number will be added to the filename": [
         "Dosya adına bir numara eklensin"
@@ -5291,7 +5297,7 @@
         "Size en uygun tarifeyi seçin."
       ],
       "Choose your service to connect with": [
-        "Bağlanmak istediğiniz hizmeti seçin"
+        "Bağlamak istediğiniz hizmeti seçin"
       ],
       "Clear all search data": [
         "Tüm arama verilerini temizle"
@@ -5695,7 +5701,7 @@
         "Bir sonraki adımda, bir Bitcoin adresi kullanarak ön ödemenizi yapabilirsiniz."
       ],
       "Indexing in progress": [
-        "Dizinleme devam ediyor"
+        "Dizine ekleme sürüyor"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "${ esProgress } / ${ totalProgressToShow } öge dizine ekleniyor"
@@ -6473,7 +6479,7 @@
         "Gerçek gizliliği koruyan arama özelliğini açmak için yerel dizini hazırlamamız gerekiyor. ${ DRIVE_APP_NAME } kullanmayı normal şekilde sürdürebilirsiniz. Dizin hazırlama işlemi tamamlandığında sizi bilgilendireceğiz."
       ],
       "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
-        "Gerçek anlamda arama yapabilmek için dosyalarınızı yerel olarak dizine eklememiz gerekiyor. ${ DRIVE_APP_NAME } uygulamasını normal şekilde kullanmaya devam edebilirsiniz. Dizine ekleme işlemi tamamlandığında size haber vereceğiz."
+        "Gerçek arama özelliğini açmak için yerel dizini hazırlamamız gerekiyor. ${ DRIVE_APP_NAME } kullanmayı normal şekilde sürdürebilirsiniz. Dizin hazırlama işlemi tamamlandığında sizi bilgilendireceğiz."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
@@ -6955,6 +6961,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Kendinizi gruptan çıkarırsanız \"${ fileName }\" dosyasına erişiminizi kaybedersiniz ve dosyanın sahibi dosyayı sizinle yeniden paylaşmadıkça artık dosyayı açamazsınız."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Erişme iznini görüntüleyebilir olarak değiştirdikten sonra \"${ fileName }\" dosyasını paylaşamazsınız. Erişim izninizi yalnızca sahibi yeniden değiştirebilir."
       ]
     },
     "info": {
@@ -9514,6 +9526,9 @@
       ],
       "Your settings have been changed successfully": [
         "Ayarlarınız değiştirildi"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" paylaşıldı"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11273,6 +11288,9 @@
       ],
       "pending": [
         "bekliyor"
+      ],
+      "user joined": [
+        "kullanıcı katıldı"
       ]
     },
     "Storage": {
@@ -12217,7 +12235,7 @@
         "Kötü amaçlı dosyalar denetlensin"
       ],
       "Choose a provider": [
-        "Sağlayıcı seçin"
+        "Bir hizmet sağlayıcı seçin"
       ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } adresinizi alın"
@@ -12552,7 +12570,7 @@
         "Grupları içe aktar"
       ],
       "Import your data to ${ BRAND_NAME }": [
-        "Verilerinizi ${ BRAND_NAME } aktarın"
+        "Verilerinizi ${ BRAND_NAME } içine aktarın"
       ],
       "Information exposed in breach": [
         "Veri sızıntısında açığa çıkan bilgiler"
@@ -13115,6 +13133,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "5 GB depolama alanı kazandınız"
+      ],
+      "Change access to viewer?": [
+        "Görüntüleme erişme izni değiştirilsin mi?"
+      ],
+      "Remove your access?": [
+        "Erişme izniniz kaldırılsın mı?"
+      ],
+      "Share \"${ fileName }\"": [
+        "\"${ fileName }\" dosyasını paylaş"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13209,6 +13236,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "Dosyaya erişebilmeleri için bir davetiye gönderdik."
+      ],
+      "Change shared item settings": [
+        "Paylaşılan öge ayarlarını değiştir"
+      ],
+      "New!": [
+        "Yeni!"
       ]
     },
     "tooltip": {
