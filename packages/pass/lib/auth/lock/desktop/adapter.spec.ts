@@ -36,8 +36,7 @@ describe('DesktopLock adapter', () => {
     describe('create', () => {
         test('should store a verifier, not the raw lock secret', async () => {
             const { adapter, authStore } = setupAdapter();
-
-            await adapter.create({ mode: LockMode.DESKTOP, secret: '', ttl: 600 });
+            await adapter.create('', 600);
 
             const verifier = authStore.getDesktopLockVerifier();
             expect(verifier).toBeDefined();
@@ -46,8 +45,7 @@ describe('DesktopLock adapter', () => {
 
         test('should set lock mode and unlock state', async () => {
             const { adapter, authStore } = setupAdapter();
-
-            await adapter.create({ mode: LockMode.DESKTOP, secret: '', ttl: 600 });
+            await adapter.create('', 600);
 
             expect(authStore.getLockMode()).toBe(LockMode.DESKTOP);
             expect(authStore.getLocked()).toBe(false);
@@ -58,7 +56,7 @@ describe('DesktopLock adapter', () => {
         test('should clear the verifier and reset lock state', async () => {
             const { adapter, authStore } = setupAdapter();
 
-            await adapter.create({ mode: LockMode.DESKTOP, secret: '', ttl: 600 });
+            await adapter.create('', 600);
             expect(authStore.getDesktopLockVerifier()).toBeDefined();
 
             await adapter.delete('');
@@ -78,8 +76,8 @@ describe('DesktopLock adapter', () => {
 
         test('should succeed and unlock when desktop returns the correct secret', async () => {
             const { adapter, authStore } = setupAdapter();
+            await adapter.create('', 600);
 
-            await adapter.create({ mode: LockMode.DESKTOP, secret: '', ttl: 600 });
             expect(capturedSecret).not.toBe('');
 
             const result = await adapter.unlock(capturedSecret);
@@ -89,8 +87,8 @@ describe('DesktopLock adapter', () => {
 
         test('should throw if desktop returns a different secret than the one stored', async () => {
             const { adapter } = setupAdapter();
+            await adapter.create('', 600);
 
-            await adapter.create({ mode: LockMode.DESKTOP, secret: '', ttl: 600 });
             unlockMessage.mockResolvedValue('wrong-secret');
 
             await expect(adapter.unlock('')).rejects.toThrow();

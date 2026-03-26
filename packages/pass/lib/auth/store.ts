@@ -1,7 +1,6 @@
-import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import { decodeUserData, encodeUserData } from '@proton/pass/lib/auth/store.utils';
 import type { OfflineComponents, OfflineConfig } from '@proton/pass/lib/cache/crypto';
 import { AuthMode, type Maybe, type Store } from '@proton/pass/types';
-import { deobfuscate, obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isObject } from '@proton/pass/utils/object/is-object';
 import { encodedGetter, encodedSetter } from '@proton/pass/utils/store';
 
@@ -41,24 +40,6 @@ const PASS_LAST_USED_AT = 'pass:last_used_at';
 const PASS_USER_DISPLAY_NAME = 'pass:user_display_name';
 const PASS_USER_EMAIL = 'pass:user_email';
 const PASS_SSO = 'pass:sso';
-
-export const encodeUserData = (email: string = '', displayName: string = '') => {
-    const encodedEmail = JSON.stringify(obfuscate(email));
-    const encodedDisplayName = JSON.stringify(obfuscate(displayName));
-    return utf8StringToUint8Array(`${encodedEmail}.${encodedDisplayName}`).toBase64();
-};
-
-export const decodeUserData = (userData: string): { PrimaryEmail?: string; DisplayName?: string } => {
-    try {
-        const [encodedEmail, encodedDisplayName] = uint8ArrayToUtf8String(Uint8Array.fromBase64(userData)).split('.');
-        return {
-            PrimaryEmail: deobfuscate(JSON.parse(encodedEmail)),
-            DisplayName: deobfuscate(JSON.parse(encodedDisplayName)),
-        };
-    } catch {
-        return {};
-    }
-};
 
 export const createAuthStore = (store: Store) => {
     const authStore = {

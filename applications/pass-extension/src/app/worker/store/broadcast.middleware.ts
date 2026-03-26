@@ -10,15 +10,17 @@ import { isActionWithReceiver, withSender } from '@proton/pass/store/actions/enh
 import type { State } from '@proton/pass/store/types';
 import { not } from '@proton/pass/utils/fp/predicates';
 import { toChunks } from '@proton/pass/utils/object/chunk';
+import { serialize } from '@proton/pass/utils/object/serialize';
 
-const broadcast = (action: Action) =>
+const broadcast = (action: Action) => {
     WorkerMessageBroker.ports.broadcast(
         backgroundMessage({
             type: WorkerMessageType.STORE_DISPATCH,
-            payload: { action: withSender({ endpoint: 'background' })(action) },
+            payload: { action: serialize(withSender({ endpoint: 'background' })(action)) },
         }),
         (name) => /^(popup|page)/.test(name)
     );
+};
 
 /** Middleware that broadcasts Redux actions from the worker to all clients.
  * This middleware handles broadcasting store updates to extension clients

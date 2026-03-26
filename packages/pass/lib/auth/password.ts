@@ -2,6 +2,7 @@ import { api } from '@proton/pass/lib/api/api';
 import { type OfflineComponents, getOfflineKeyDerivation } from '@proton/pass/lib/cache/crypto';
 import { decryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassEncryptionTag } from '@proton/pass/types';
+import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 import { queryUnlock } from '@proton/shared/lib/api/user';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { srpAuth, srpGetVerify } from '@proton/shared/lib/srp';
@@ -16,7 +17,8 @@ export enum PasswordVerification {
     SRP,
 }
 
-export type PasswordCredentials = { password: string };
+export type UnsafePasswordCredentials = { password: string };
+export type PasswordCredentials = { password: XorObfuscation };
 export type PasswordConfirmDTO = PasswordCredentials & { mode?: PasswordVerification };
 export type ExtraPasswordDTO = PasswordCredentials & { enabled: boolean };
 
@@ -26,7 +28,7 @@ export const getPasswordVerification = (authStore: AuthStore) => {
     return PasswordVerification.SRP;
 };
 
-export const registerExtraPassword = async (credentials: PasswordCredentials) => {
+export const registerExtraPassword = async (credentials: UnsafePasswordCredentials) => {
     const { Auth } = await srpGetVerify({ api, credentials });
 
     await api({
@@ -56,13 +58,13 @@ export const verifyOfflinePassword = async (
 };
 
 /** Verifies a proton user's encryption password via SRP */
-export const verifyPassword = async (credentials: PasswordCredentials): Promise<boolean> => {
+export const verifyPassword = async (credentials: UnsafePasswordCredentials): Promise<boolean> => {
     await srpAuth({ api, credentials, config: { ...queryUnlock(), silence: true } });
     return true;
 };
 
 /** Verifies the pass specific extra-password via SRP */
-export const verifyExtraPassword = async (credentials: PasswordCredentials): Promise<boolean> => {
+export const verifyExtraPassword = async (credentials: UnsafePasswordCredentials): Promise<boolean> => {
     const info = (await api({ url: 'pass/v1/user/srp/info', method: 'get' })).SRPData!;
 
     const { Version, SrpSalt: Salt, Modulus, ServerEphemeral } = info;

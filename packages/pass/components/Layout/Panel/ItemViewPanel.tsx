@@ -88,7 +88,7 @@ export const ItemViewPanel: FC<Props> = ({
         !isPassEssentials &&
         autotypeDiscoverySpotlight.open &&
         data.type === 'login' &&
-        Boolean(data.content.password.v || data.content.itemEmail.v || data.content.itemUsername.v);
+        [data.content.password, data.content.itemEmail, data.content.itemUsername].some(({ v }) => v?.length);
 
     const monitorActions = itemState.canMonitor && (
         <DropdownMenuButton

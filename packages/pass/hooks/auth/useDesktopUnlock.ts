@@ -1,36 +1,26 @@
-import { useCallback, useRef } from 'react';
+import { useCallback } from 'react';
 
-import { useOffline } from '@proton/pass/components/Core/ConnectivityProvider';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import { useOnlineRef } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { useRequest } from '@proton/pass/hooks/useRequest';
+import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
+import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { unlock as unlockAction } from '@proton/pass/store/actions';
-import type { MaybePromise } from '@proton/pass/types';
-
-type Options = {
-    onStart?: () => MaybePromise<void>;
-    onSuccess?: () => MaybePromise<void>;
-    onFailure?: () => MaybePromise<void>;
-};
 
 export const useDesktopUnlock = () => {
-    const offline = useOffline();
-    const optionsRef = useRef<Options>();
     const { getDesktopUnlockSecret } = usePassCore();
 
-    const desktopUnlock = useRequest(unlockAction, {
-        initial: true,
-        onStart: () => optionsRef.current?.onStart?.(),
-        onSuccess: () => optionsRef.current?.onSuccess?.(),
-        onFailure: () => optionsRef.current?.onFailure?.(),
-    });
+    const { createNotification } = useNotifications();
+    const unlock = useUnlock((err) => createNotification({ type: 'error', text: err.message }));
+    const online = useOnlineRef();
 
-    const unlock = useCallback(async (options: Options) => {
-        optionsRef.current = options;
-        const secret = await getDesktopUnlockSecret?.();
-        if (!secret) throw new Error();
-        desktopUnlock.dispatch({ mode: LockMode.DESKTOP, secret, offline });
+    return useCallback(async (): Promise<Extract<UnlockDTO, { mode: LockMode.DESKTOP }>> => {
+        const key = await getDesktopUnlockSecret?.();
+        if (!key) throw new Error();
+
+        const dto: UnlockDTO = { mode: LockMode.DESKTOP, key, offline: !online.current };
+        await unlock(dto);
+
+        return dto;
     }, []);
-
-    return unlock;
 };

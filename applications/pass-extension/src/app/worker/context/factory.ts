@@ -37,7 +37,6 @@ import { createApi } from '@proton/pass/lib/api/factory';
 import { desktopLockAdapterFactory } from '@proton/pass/lib/auth/lock/desktop/adapter';
 import { passwordLockAdapterFactory } from '@proton/pass/lib/auth/lock/password/adapter';
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
-import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { clientBooted, clientStatusResolved } from '@proton/pass/lib/client';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
@@ -65,9 +64,9 @@ export const createWorkerContext = (config: ProtonConfig) => {
     const nativeMessaging = createNativeMessagingService(authStore);
 
     if (ENV === 'development') QA_SERVICE?.init(storage.local);
-    auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
-    auth.registerLockAdapter(LockMode.DESKTOP, desktopLockAdapterFactory(auth, nativeMessaging));
-    auth.registerLockAdapter(LockMode.PASSWORD, passwordLockAdapterFactory(auth));
+    auth.registerLockAdapter(sessionLockAdapterFactory(auth));
+    auth.registerLockAdapter(desktopLockAdapterFactory(auth, nativeMessaging));
+    auth.registerLockAdapter(passwordLockAdapterFactory(auth));
 
     exposePassCrypto(createPassCrypto(core, store));
 

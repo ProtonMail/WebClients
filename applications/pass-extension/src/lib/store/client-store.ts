@@ -1,4 +1,5 @@
 import { devToolsEnhancer } from '@redux-devtools/remote';
+import type { Action } from '@reduxjs/toolkit';
 import { configureStore } from '@reduxjs/toolkit';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
@@ -11,6 +12,7 @@ import reducer from '@proton/pass/store/reducers';
 import { requestMiddlewareFactory } from '@proton/pass/store/request/middleware';
 import type { ClientEndpoint, TabId } from '@proton/pass/types/worker/runtime';
 import { not } from '@proton/pass/utils/fp/predicates';
+import { deserialize } from '@proton/pass/utils/object/serialize';
 
 import { relayMiddleware } from './relay.middleware';
 
@@ -48,10 +50,11 @@ export const createClientStore = (endpoint: ClientEndpoint, tabId: TabId) => {
      * 3. Only accept actions targeted for this context (endpoint/tabId) */
     ExtensionContext.get().port.onMessage.addListener((message: unknown) => {
         if (matchExtensionMessage(message, { sender: 'background', type: WorkerMessageType.STORE_DISPATCH })) {
-            const unprocessedAction = !isSynchronousAction(message.payload.action);
-            const acceptAction = isActionFor(message.payload.action, endpoint, tabId);
+            const action = deserialize<Action>(message.payload.action);
+            const unprocessedAction = !isSynchronousAction(action);
+            const acceptAction = isActionFor(action, endpoint, tabId);
 
-            if (unprocessedAction && acceptAction) store.dispatch(message.payload.action);
+            if (unprocessedAction && acceptAction) store.dispatch(action);
         }
     });
 

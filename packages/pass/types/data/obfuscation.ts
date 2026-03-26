@@ -28,6 +28,7 @@ export type Obfuscate<T, Auto extends keyof T, Manual extends keyof T> = Omit<T,
  * allows creating intermediary types with partially deobfuscated data. */
 export type Deobfuscate<T, Mode extends DeobfuscateMode = DeobfuscateMode> = {
     [K in keyof T]: T[K] extends ObfuscatedItemProperty<Mode> ? string
+    : T[K] extends ObfuscatedItemProperty<Exclude<DeobfuscateMode, Mode>> ? T[K]
     : T[K] extends ArrayBuffer ? T[K]
     : T[K] extends (infer U)[] ? Deobfuscate<U, Mode>[]
     : T[K] extends {} ? Deobfuscate<T[K], Mode>

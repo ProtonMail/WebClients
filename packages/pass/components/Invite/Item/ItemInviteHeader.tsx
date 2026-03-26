@@ -7,7 +7,6 @@ import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Them
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { selectItem } from '@proton/pass/store/selectors';
 import type { SelectedItem } from '@proton/pass/types';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
 
 export const ItemInviteHeader: FC<SelectedItem> = ({ shareId, itemId }) => {
@@ -26,7 +25,7 @@ export const ItemInviteHeader: FC<SelectedItem> = ({ shareId, itemId }) => {
                 <div
                     className={clsx([
                         'pass-item-list--subtitle block color-weak text-sm text-ellipsis',
-                        item.data.type === 'note' && isEmptyString(item.data.metadata.note.v) && 'text-italic',
+                        item.data.type === 'note' && item.data.metadata.note.v.length === 0 && 'text-italic',
                     ])}
                 >
                     {subheading}
