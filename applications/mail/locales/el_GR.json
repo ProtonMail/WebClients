@@ -1693,6 +1693,9 @@
       ],
       "Use this Gmail address": [
         "Χρησιμοποιήστε αυτήν τη διεύθυνση Gmail"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Συνέχεια στο ${ planOrAppName }"
       ]
     },
     "action": {
@@ -4204,6 +4207,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Λυπόμαστε που φεύγετε. Αν έχετε λίγο χρόνο, θα εκτιμούσαμε πραγματικά να μας πείτε γιατί θέλετε να ακυρώσετε. Τα σχόλιά σας μας βοηθούν να κάνουμε το ${ BRAND_NAME } καλύτερο για όλους."
       ]
     },
     "description": {
@@ -10051,6 +10057,18 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Additional comments": [
+        "Επιπλέον σχόλια"
+      ],
+      "Continue cancelling": [
+        "Συνέχεια ακύρωσης"
+      ],
+      "Main reason for cancelling": [
+        "Κύριος λόγος ακύρωσης"
+      ],
+      "Skip feedback": [
+        "Παράλειψη σχολίων"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12787,6 +12805,15 @@
       ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
+      ],
+      "Anything you'd like us to know": [
+        "Οτιδήποτε θα θέλατε να ξέρουμε"
+      ],
+      "Enter a name": [
+        "Πληκτρολογήστε ένα όνομα"
+      ],
+      "Select a provider": [
+        "Επιλέξτε έναν πάροχο"
       ]
     },
     "Placeholder for contact group name": {
@@ -16479,6 +16506,26 @@
       "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
         "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ${ MAX_SYNC_FREE_USER } εξωτερικό λογαριασμό στο ${ MAIL_APP_NAME }.",
         "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ${ MAX_SYNC_FREE_USER } εξωτερικούς λογαριασμούς στο ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Άλλο"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

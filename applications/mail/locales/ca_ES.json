@@ -1693,6 +1693,9 @@
       ],
       "Use this Gmail address": [
         "Utilitzeu aquesta adreça de Gmail"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Continua a ${ planOrAppName }"
       ]
     },
     "action": {
@@ -4204,6 +4207,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Ho sentim que vulguis cancel·lar. Si tens un moment, agrairíem molt que ens expliquessis per què vols cancel·lar. Els teus comentaris ens ajuden a millorar ${ BRAND_NAME } per a tothom."
       ]
     },
     "description": {
@@ -10051,6 +10057,18 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Additional comments": [
+        "Comentaris addicionals"
+      ],
+      "Continue cancelling": [
+        "Continueu amb la cancel·lació"
+      ],
+      "Main reason for cancelling": [
+        "Motiu principal de la cancel·lació"
+      ],
+      "Skip feedback": [
+        "Ometre els comentaris"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12787,6 +12805,15 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Anything you'd like us to know": [
+        "Qualsevol cosa que vulgueu que sapiguem"
+      ],
+      "Enter a name": [
+        "Introduïu un nom"
+      ],
+      "Select a provider": [
+        "Seleccioneu un proveïdor"
       ]
     },
     "Placeholder for contact group name": {
@@ -16479,6 +16506,26 @@
       "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
         "Esteu reenviant correus electrònics des d'${ MAX_SYNC_FREE_USER } compte extern a ${ MAIL_APP_NAME }.",
         "Esteu reenviant correus electrònics des de ${ MAX_SYNC_FREE_USER } comptes externs a ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Altres"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
