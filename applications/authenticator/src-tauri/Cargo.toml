@@ -35,8 +35,8 @@ base64 = { version = "0.22.1" }
 # Tauri Specta v2 is still in beta, and requires using Tauri v2 and Specta v2
 # lands as stable. It is really important you use = in versions.
 # see: https://docs.rs/tauri-specta/2.0.0-rc.21/tauri_specta/
-specta = { version = "=2.0.0-rc.22" }
-specta-typescript = { version = "=0.0.9" }
+specta = { version = "=2.0.0-rc.23" }
+specta-typescript = { version = "=0.0.10" }
 tauri-specta = { version = "=2.0.0-rc.21", features = ["derive", "typescript"] }
 
 [target.'cfg(target_os = "macos")'.dependencies]
