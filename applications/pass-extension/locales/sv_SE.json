@@ -625,6 +625,9 @@
       "Set extra password": [
         "Ställ in extralösenord"
       ],
+      "Settings": [
+        "Inställningar"
+      ],
       "Setup 2FA": [
         "Konfigurera 2FA"
       ],
@@ -2620,6 +2623,9 @@
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Du kan nu använda ditt ${ BRAND_NAME }-lösenord för att komma åt ${ PASS_SHORT_APP_NAME } offline"
       ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kan nu använda ditt reservlösenord för att komma åt ${ PASS_SHORT_APP_NAME } offline"
+      ],
       "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Du kan nu använda ditt extra lösenord för att komma åt ${ PASS_SHORT_APP_NAME } offline"
       ],
@@ -2720,9 +2726,6 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
-      ],
-      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Du kan nu använda ditt reservlösenord för att komma åt ${ PASS_SHORT_APP_NAME } offline"
       ]
     },
     "Keyboard key": {
@@ -3272,6 +3275,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tangentbordsgenväg: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Tangentbordsgenvägar"
       ],
       "Language": [
         "Språk"
@@ -3857,9 +3863,6 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
-      ],
-      "Keyboard shortcuts": [
-        "Tangentbordsgenvägar"
       ]
     },
     "Link": {

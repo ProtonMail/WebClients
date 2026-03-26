@@ -151,6 +151,9 @@
       "Close navigation": [
         "Sulje navigaatio"
       ],
+      "Configure": [
+        "Määritä"
+      ],
       "Confirm": [
         "Vahvista"
       ],
@@ -601,6 +604,9 @@
       "Set extra password": [
         "Aseta lisäsalasana"
       ],
+      "Settings": [
+        "Asetukset"
+      ],
       "Setup 2FA": [
         "Määritä 2FA"
       ],
@@ -743,9 +749,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
-      ],
-      "Configure": [
-        "Määritä"
       ]
     },
     "Browser": {
@@ -1987,6 +1990,9 @@
       "None": [
         "Ei mitään"
       ],
+      "Not configured": [
+        "Ei määritetty"
+      ],
       "Not recommended": [
         "Ei suositeltu"
       ],
@@ -1998,6 +2004,12 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME }in käyttäminen yhdistettynä vaatii PIN-koodin. Kolmen epäonnistuneen yrityksen jälkeen sinut kirjataan ulos."
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Avaa ${ PASS_APP_NAME } suuremmassa ikkunassa"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Avaa ${ PASS_APP_NAME } -ponnahdusikkuna"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Turvallisuus on hälytyksissämme etusijalla. Jos et tunnista tietomurron kohteeksi joutuneita tietoja, voit huoletta jättää tämän raportin huomiotta."
@@ -2595,15 +2607,6 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisaatiosi vaatii, että suojaat pääsysi ${ PASS_APP_NAME }:iin"
-      ],
-      "Not configured": [
-        "Ei määritetty"
-      ],
-      "Open ${ PASS_APP_NAME } in a larger window": [
-        "Avaa ${ PASS_APP_NAME } suuremmassa ikkunassa"
-      ],
-      "Open the ${ PASS_APP_NAME } popup": [
-        "Avaa ${ PASS_APP_NAME } -ponnahdusikkuna"
       ]
     },
     "Keyboard key": {
@@ -3150,6 +3153,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pikanäppäin: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Pikanäppäimet"
       ],
       "Language": [
         "Kieli"
@@ -3723,9 +3729,6 @@
       ],
       "ZIP or Postal code": [
         "Postinumero"
-      ],
-      "Keyboard shortcuts": [
-        "Pikanäppäimet"
       ]
     },
     "Link": {
