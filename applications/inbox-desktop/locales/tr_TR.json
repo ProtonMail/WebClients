@@ -39,10 +39,10 @@
         "Sil"
       ],
       "Enable diagnostic logs": [
-        "Tanılama günlüklerini etkinleştir"
+        "Tanılama günlüklerini aç"
       ],
       "Enable diagnostic logs from the Chromium engine.": [
-        "Chromium motorundan tanılama günlüklerini etkinleştir."
+        "Chromium altyapısı tanılama günlüklerini açar."
       ],
       "Force Reload": [
         "Yeniden yüklemeye zorla"
@@ -108,7 +108,7 @@
         "Konuşmayı durdur"
       ],
       "These logs help us diagnose issues. The app will restart to apply the change.": [
-        "Bu günlükler, sorunları tespit etmemize yardımcı olur. Değişikliğin uygulanması için uygulama yeniden başlatılacaktır."
+        "Bu günlükler, sorunları bulmamıza yardımcı olur. Değişikliğin geçerli olması için uygulama yeniden başlatılacak."
       ],
       "This will measure how long the app takes to start and save a report to your logs folder.": [
         "Bu işlem uygulamanın açılış süresini ölçer ve raporu logs klasörünüze kaydeder."
