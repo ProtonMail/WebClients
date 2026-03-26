@@ -11,6 +11,14 @@ im.$media-expressions: $media-expressions;
     gap: 1.25rem;
 }
 
+.api-keys-upsell-loading {
+    min-block-size: 10rem;
+}
+
+.api-keys-plus-gate {
+    inline-size: 100%;
+}
+
 // ── Header ────────────────────────────────────────────────────────────────────
 
 .api-keys-header {
