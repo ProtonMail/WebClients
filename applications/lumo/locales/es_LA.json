@@ -86,11 +86,17 @@
       "Copy address": [
         "Copiar la dirección"
       ],
+      "Copy API key": [
+        "Copiar clave de API"
+      ],
       "Create": [
         "Crear"
       ],
       "Create folder": [
         "Crear una carpeta"
+      ],
+      "Create key": [
+        "Crear clave"
       ],
       "Current plan": [
         "Plan actual"
@@ -101,11 +107,17 @@
       "Delete": [
         "Eliminar"
       ],
+      "Delete ${ token.Name }": [
+        "Eliminar ${ token.Name }"
+      ],
       "Delete all conversations?": [
         "¿Eliminar todas las conversaciones?"
       ],
       "Delete conversation?": [
         "Eliminar la conversación?"
+      ],
+      "Delete key": [
+        "Eliminar clave"
       ],
       "Dismiss": [
         "Descartar"
@@ -205,6 +217,9 @@
       ],
       "More options for accounts": [
         "Más opciones para las cuentas"
+      ],
+      "New key": [
+        "Nueva clave"
       ],
       "Next page": [
         "Página siguiente"
@@ -1140,6 +1155,12 @@
       "Always enable web search for new conversations": [
         "Activar siempre la búsqueda web para nuevas conversaciones"
       ],
+      "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
+        "Las claves de API le permiten acceder a ${ LUMO_SHORT_APP_NAME } mediante programación. Cada clave se muestra solo una vez al momento de su creación."
+      ],
+      "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
+        "Cree una clave para integrar ${ LUMO_SHORT_APP_NAME } con sus scripts y herramientas."
+      ],
       "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Eleve su experiencia de IA privada y desbloquee modelos avanzados y funciones premium con ${ LUMO_SHORT_APP_NAME } Plus."
       ],
@@ -1148,6 +1169,9 @@
       ],
       "Include project conversations in the main chat history": [
         "Incluir conversaciones del proyecto en el historial de chat principal"
+      ],
+      "Keep it safe — it won't be shown again": [
+        "Guárdela en un lugar seguro, no volverá a mostrarse"
       ],
       "Last updated on ${ formattedDate }": [
         "Última actualización el ${ formattedDate }"
@@ -1173,11 +1197,23 @@
       ]
     },
     "collider_2025: Error": {
+      "Could not retrieve your encryption key": [
+        "No se pudo recuperar su clave de cifrado"
+      ],
       "Error processing ${ result.fileName }: ${ result.errorMessage }": [
         "Error al procesar ${ result.fileName }: ${ result.errorMessage }"
       ],
       "Error processing file: ${ file.name }": [
         "Error al procesar el archivo: ${ file.name }"
+      ],
+      "Failed to create API key": [
+        "Error al crear la clave de API"
+      ],
+      "Failed to delete API key": [
+        "Error al eliminar la clave de API"
+      ],
+      "Failed to load API keys": [
+        "Error al cargar las claves de API"
       ],
       "Failed to process ${ DRIVE_SHORT_APP_NAME } file: ${ file.name }": [
         "Error al procesar el archivo ${ DRIVE_SHORT_APP_NAME }: ${ file.name }"
@@ -1199,6 +1235,12 @@
       ],
       "File uploaded but failed to add to knowledge base": [
         "Archivo cargado pero o se pudo añadir a la base de conocimientos"
+      ],
+      "Name is required": [
+        "El nombre es obligatorio"
+      ],
+      "Name must be 191 characters or fewer": [
+        "El nombre debe tener 191 caracteres como máximo"
       ],
       "Please select a category to describe what went wrong with the generated text": [
         "Seleccione una categoría para describir qué salió mal con el texto generado."
@@ -1453,6 +1495,15 @@
       "Excluded": [
         "Excluido"
       ],
+      "Expired ": [
+        "Expirada "
+      ],
+      "Expires ": [
+        "Expira "
+      ],
+      "Expires tomorrow": [
+        "Expira mañana"
+      ],
       "File capacity": [
         "Capacidad del archivo"
       ],
@@ -1518,6 +1569,9 @@
       ],
       "No supported files in this folder": [
         "No hay archivos compatibles en esta carpeta"
+      ],
+      "No usage yet": [
+        "Aún no se ha usado"
       ],
       "Note:": [
         "Nota:"
@@ -1626,6 +1680,9 @@
       ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Para consultar esta conversación más tarde, inicie sesión o cree una cuenta."
+      ],
+      "tokens / 30d": [
+        "tokens / 30d"
       ],
       "Try the smartest version of ${ LUMO_SHORT_APP_NAME } with advanced capabilities.": [
         "Pruebe la versión más inteligente de ${ LUMO_SHORT_APP_NAME } con capacidades avanzadas."
@@ -1743,6 +1800,28 @@
         "actualice a ${ LUMO_SHORT_APP_NAME } Plus."
       ]
     },
+    "collider_2025: Notification": {
+      "API key copied to clipboard": [
+        "Clave de API copiada al portapapeles"
+      ],
+      "API key deleted": [
+        "Clave de API eliminada"
+      ]
+    },
+    "collider_2025: Option": {
+      "1 year": [
+        "1 año"
+      ],
+      "180 days": [
+        "180 días"
+      ],
+      "30 days": [
+        "30 días"
+      ],
+      "90 days": [
+        "90 días"
+      ]
+    },
     "collider_2025: Personality": {
       "Business Cat": [
         "Gato empresario"
@@ -1808,6 +1887,9 @@
       "Account": [
         "Cuenta"
       ],
+      "API keys": [
+        "Claves de API"
+      ],
       "General": [
         "General"
       ],
@@ -1818,6 +1900,18 @@
     "collider_2025: Status": {
       "${ LUMO_SHORT_APP_NAME }+ is included in your Visionary plan and you have access to these features:": [
         "${ LUMO_SHORT_APP_NAME }+ está incluido en su plan Visionary y tiene acceso a estas funciones:"
+      ],
+      "Active": [
+        "Activa"
+      ],
+      "Copied!": [
+        "¡Copiada!"
+      ],
+      "Expired": [
+        "Expirada"
+      ],
+      "Expiring soon": [
+        "Expirará pronto"
       ],
       "You are subscribed to ${ LUMO_SHORT_APP_NAME }+ and have access to these features:": [
         "Tiene suscripción a ${ LUMO_SHORT_APP_NAME }+ con acceso a estas funciones:"
@@ -1859,6 +1953,9 @@
       "Automatic web search": [
         "Búsqueda web automática"
       ],
+      "Create new API key": [
+        "Crear una clave de API"
+      ],
       "Delete everything": [
         "Eliminar todo"
       ],
@@ -1870,6 +1967,9 @@
       ],
       "Invalid Link": [
         "Enlace no válido"
+      ],
+      "No API keys yet": [
+        "Aún no hay claves de API"
       ],
       "Opening External Link": [
         "Abriendo enlace externo"
@@ -1891,6 +1991,9 @@
       ],
       "Visionary": [
         "Visionary"
+      ],
+      "Your new API key": [
+        "Su clave de API nueva"
       ]
     },
     "collider_2025: Tooltip": {
@@ -1987,6 +2090,11 @@
         "Usar jerga moderna y un estilo de comunicación actual."
       ]
     },
+    "collider_2025: Unit": {
+      "tokens": [
+        "tokens"
+      ]
+    },
     "collider_2025: Upsell": {
       "Create free account": [
         "Crear cuenta gratuita"
@@ -2013,6 +2121,9 @@
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Sospechoso: ${ urlParts.subdomainCount } subdominio",
         "Sospechoso: ${ urlParts.subdomainCount } subdominios"
+      ],
+      "This is the only time you'll see this key. Copy it now.": [
+        "Esta clave solo aparecerá una vez. Cópiela ahora."
       ],
       "We're experiencing high traffic right now, but as a ${ LUMO_SHORT_APP_NAME } Plus customer, you're in the fast lane. We're prioritizing your requests as always.": [
         "Estamos experimentando mucho tráfico en este momento, pero como cliente Plus de ${ LUMO_SHORT_APP_NAME }, usted está en el carril rápido. Estamos priorizando sus solicitudes como siempre."
@@ -2390,6 +2501,9 @@
       ],
       "File \"${ file.name }\" is already in this project": [
         "El archivo «${ file.name }» ya está en este proyecto"
+      ],
+      "File \"${ file.name }\" is already mentioned": [
+        "El archivo «${ file.name }» ya está mencionado"
       ],
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "Los archivos cargados en este proyecto se guardarán en la carpeta de Drive enlazada."
@@ -4036,9 +4150,6 @@
       "Please select billing state": [
         "Seleccione el estado de facturación"
       ],
-      "Postal code is required": [
-        "Se requiere el código postal"
-      ],
       "Process aborted": [
         "Proceso abortado"
       ],
@@ -4101,9 +4212,6 @@
       ],
       "Wrong billing address": [
         "Dirección de facturación incorrecta"
-      ],
-      "ZIP code is required": [
-        "Se requiere el código postal."
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
@@ -5013,6 +5121,9 @@
       "Expires": [
         "Expira"
       ],
+      "Expires in": [
+        "Expira en"
+      ],
       "First name": [
         "Nombre"
       ],
@@ -5039,6 +5150,9 @@
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de 2FA integrado"
+      ],
+      "Key name": [
+        "Nombre de la clave"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Atajo de teclado: ${ shortcut }"
@@ -6698,6 +6812,9 @@
       ],
       "Cortex Inc.": [
         "Cortex Inc."
+      ],
+      "e.g. My automation script": [
+        "p. ej., mi script de automatización"
       ],
       "Enter a new folder name": [
         "Ingrese un nombre nuevo para la carpeta"
