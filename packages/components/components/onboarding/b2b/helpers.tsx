@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import AppLink from '@proton/components/components/link/AppLink';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type {
@@ -10,6 +9,7 @@ import type {
     B2BOnboardingFeature,
 } from '@proton/components/components/onboarding/b2b/interface';
 import canUseGroups from '@proton/components/containers/organization/groups/canUseGroups';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { type Subscription, getPlan } from '@proton/payments';
 import {
     APPS,
@@ -53,7 +53,10 @@ export const getFeatures = (
     onClickCTA?: (item: B2BFeaturesID) => Promise<void>
 ): B2BOnboardingFeature[] => {
     const plan = getPlan(subscription)?.Name;
-    const canSeeGroupsSection = canUseGroups(plan, { isUserGroupsNoCustomDomainEnabled: false });
+    const canSeeGroupsSection = canUseGroups(plan, {
+        isUserGroupsNoCustomDomainEnabled: false,
+        isUserGroupsPassBusinessEnabled: false,
+    });
 
     return [
         {
