@@ -165,6 +165,9 @@
       "Change": [
         "Змяніць"
       ],
+      "Change my access": [
+        "Змяніць мой доступ"
+      ],
       "Change password": [
         "Змяніць пароль"
       ],
@@ -854,6 +857,9 @@
       ],
       "Remove me": [
         "Выдаліць мяне"
+      ],
+      "Remove my access": [
+        "Выдаліць мой доступ"
       ],
       "Remove without saving": [
         "Выдаліць без захавання"
@@ -3746,9 +3752,6 @@
       "Port is required": [
         "Патрабуецца ўвесці порт"
       ],
-      "Postal code is required": [
-        "Патрабуецца ўвесці паштовы індэкс"
-      ],
       "Primary address key is not decrypted": [
         "Ключ асноўнага адраса не расшыфраваны"
       ],
@@ -4006,9 +4009,6 @@
       ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
-      ],
-      "ZIP code is required": [
-        "Патрабуецца ўвесці паштовы індэкс"
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Прылада не паддаецца расшыфроўцы"
@@ -5840,6 +5840,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ VPN_APP_NAME }."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Калі вы выдаліце сябе, то вы страціце доступ да \"${ fileName }\" і не зможаце адкрыць яго зноў. Толькі ўладальнік можа абагуліць яго з вамі."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Імпартаванне ${ calendarCount } календара з ${ totalCalendarsCount }",
         "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }",
@@ -7018,6 +7021,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "З вас не будзе спаганяцца плата, калі вы скасуеце да ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Вы не зможаце абагуліць \"${ fileName }\" пасля змены доступу на праглядальніка. Толькі ўладальнік можа змяніць ваш доступ зноў."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Вы атрымаеце ўзнагароду ў крэдытах праз 1 месяц пасля таго, як ваш сябар падпішацца на гадавы тарыфны план. Праз 2 месяцы можна разлічваць на ўзнагароду, калі ваш сябар падпішацца на месячны тарыфны план."
@@ -9505,6 +9511,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" абагулены"
+      ],
       "\"${ name }\" created successfully": [
         "\"${ name }\" паспяхова створана"
       ],
@@ -11618,11 +11627,11 @@
       ]
     },
     "Status": {
-      "accepted": [
-        "прынята"
-      ],
       "pending": [
         "у чаканні"
+      ],
+      "user joined": [
+        "карыстальнік далучыўся"
       ]
     },
     "Storage": {
@@ -12611,6 +12620,9 @@
       "Card verification": [
         "Праверка карткі"
       ],
+      "Change access to viewer?": [
+        "Змяніць доступ на прагляд?"
+      ],
       "Change layout": [
         "Змяніць выгляд"
       ],
@@ -13205,6 +13217,9 @@
         "Выдаліць элементы?",
         "Выдаліць элементы?"
       ],
+      "Remove your access?": [
+        "Выдаліць ваш доступ?"
+      ],
       "Rename a file": [
         "Перайменаваць файл"
       ],
@@ -13273,6 +13288,9 @@
       ],
       "SHA1": [
         "SHA1"
+      ],
+      "Share \"${ fileName }\"": [
+        "Абагуліць \"${ fileName }\""
       ],
       "Share your calendar with your team": [
         "Абагуліць каляндар са сваёй камандай"
@@ -13548,6 +13566,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Аўтаматычна пераключацца паміж вашымі пажаданымі тэмамі для дня і ночы згодна з начным і дзённым рэжымам вашай сістэмы."
       ],
+      "Change shared item settings": [
+        "Змяніць налады абагуленага элемента"
+      ],
       "Customize import to reduce the number of folders": [
         "Наладзьце імпартаванне, каб паменшыць колькасць папак"
       ],
@@ -13589,6 +13610,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Паведамленне і назва файла захоўваюцца з дапамогай шыфравання нулявога доступу, калі ўключаны ў ліст"
+      ],
+      "New!": [
+        "Новае!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Не ўсе пералічаныя тут звесткі былі скампраметаваны для ўсіх карыстальнікаў."
