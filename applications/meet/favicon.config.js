@@ -8,7 +8,7 @@ module.exports = {
     favicons: {
         appName: 'Proton Meet',
         appDescription:
-            'Proton Meet is a video conferencing tool that brings industry-leading encryption to your online calls, ensuring your most sensitive meetings remain private.',
+            'Proton Meet is a video conferencing tool that brings end-to-end encryption to your online calls, ensuring your most sensitive meetings remain private.',
     },
     url,
     locales: Object.keys(require('./locales/config/locales.json')),
