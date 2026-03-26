@@ -4,15 +4,15 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
-
 import { useMailboxCounter } from './useMailboxCounter';
 
 jest.mock('@proton/mail/store/mailSettings/hooks');
 const mockUseMailSettings = useMailSettings as jest.Mock;
 
-jest.mock('proton-mail/components/categoryView/useCategoriesView');
-const mockUseCategoriesView = useCategoriesView as jest.Mock;
+jest.mock('proton-mail/store/hooks', () => ({
+    useMailSelector: jest.fn(),
+}));
+const mockUseMailSelector = jest.requireMock('proton-mail/store/hooks').useMailSelector;
 
 jest.mock('@proton/mail/store/labels/hooks', () => ({
     useLabels: jest.fn(),
@@ -61,7 +61,7 @@ describe('useMailboxCounter', () => {
             mockUseSystemFolders.mockReturnValue([[], true]);
             mockUseConversationCounts.mockReturnValue([[], true]);
             mockUseMessageCounts.mockReturnValue([[], true]);
-            mockUseCategoriesView.mockReturnValue({ disabledCategoriesIDs: [] });
+            mockUseMailSelector.mockReturnValue([]);
         });
 
         it('should return loading while not all data is loaded', () => {
@@ -83,6 +83,7 @@ describe('useMailboxCounter', () => {
             mockUseSystemFolders.mockReturnValue([[], false]);
             mockUseConversationCounts.mockReturnValue([[getCount(MAILBOX_LABEL_IDS.INBOX, 1000, 100)], false]);
             mockUseMessageCounts.mockReturnValue([[getCount(MAILBOX_LABEL_IDS.INBOX, 500, 50)], false]);
+            mockUseMailSelector.mockReturnValue([]);
         });
 
         it('should return loading while not all data is loaded', () => {
@@ -118,6 +119,7 @@ describe('useMailboxCounter', () => {
             mockUseFolders.mockReturnValue([customSystemFolders, false]);
             mockUseLabels.mockReturnValue([customLabels, false]);
             mockUseSystemFolders.mockReturnValue([[], false]);
+            mockUseMailSelector.mockReturnValue([]);
         });
 
         it('should return the primary category with disabled category count', () => {
@@ -135,7 +137,10 @@ describe('useMailboxCounter', () => {
                 ],
                 false,
             ]);
-            mockUseCategoriesView.mockReturnValue({ disabledCategoriesIDs: [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS] });
+            mockUseMailSelector.mockReturnValue([
+                MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+            ]);
 
             const { result } = renderHook(() => useMailboxCounter());
 
@@ -162,9 +167,11 @@ describe('useMailboxCounter', () => {
                 ],
                 false,
             ]);
-            mockUseCategoriesView.mockReturnValue({
-                disabledCategoriesIDs: [MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
-            });
+            mockUseMailSelector.mockReturnValue([
+                MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+            ]);
 
             const { result } = renderHook(() => useMailboxCounter());
 
