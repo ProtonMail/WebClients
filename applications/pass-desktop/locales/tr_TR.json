@@ -640,6 +640,9 @@
       "Set extra password": [
         "Ek parolayı ayarla"
       ],
+      "Settings": [
+        "Ayarlar"
+      ],
       "Setup 2FA": [
         "İki adımlı doğrulama kur"
       ],
@@ -2019,7 +2022,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2572,13 +2576,13 @@
         "Artık ${ PASS_SHORT_APP_NAME } çevrim dışı erişimi için ${ BRAND_NAME } parolanızı kullanabilirsiniz"
       ],
       "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Artık yedek parolanızı kullanarak ${ PASS_SHORT_APP_NAME } uygulamasına çevrimdışı olarak erişebilirsiniz"
+        "Artık yedek parolanız ile ${ PASS_SHORT_APP_NAME } uygulamasına çevrim dışı erişebilirsiniz"
       ],
       "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Artık ek parolanızı kullanarak ${ PASS_SHORT_APP_NAME } uygulamasına çevrimdışı olarak erişebilirsiniz"
+        "Artık ek parolanız ile ${ PASS_SHORT_APP_NAME } uygulamasına çevrim dışı erişebilirsiniz"
       ],
       "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Artık ikinci parolanızı kullanarak ${ PASS_SHORT_APP_NAME } uygulamasına çevrimdışı olarak erişebilirsiniz"
+        "Artık ikinci parolanız ile ${ PASS_SHORT_APP_NAME } uygulamasına çevrim dışı erişebilirsiniz"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Bu takma adın e-posta kutularını değiştiremezsiniz."

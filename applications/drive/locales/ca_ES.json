@@ -3698,9 +3698,6 @@
       "Port is required": [
         "Es requereix el port"
       ],
-      "Postal code is required": [
-        "Cal un codi postal"
-      ],
       "Primary address key is not decrypted": [
         "La clau de l'adreça primària no està desxifrada."
       ],
@@ -3954,9 +3951,6 @@
       ],
       "Your import will not be processed.": [
         "La vostra importació no es processarà."
-      ],
-      "ZIP code is required": [
-        "Es requereix el codi postal."
       ],
       "⚠️ Undecryptable device": [
         "⚠️ No es pot desxifrar el dispositiu"
@@ -11247,11 +11241,11 @@
       ]
     },
     "Status": {
-      "accepted": [
-        "s'ha acceptat"
-      ],
       "pending": [
         "pendent"
+      ],
+      "user joined": [
+        "l'usuari s'ha unit"
       ]
     },
     "Storage": {

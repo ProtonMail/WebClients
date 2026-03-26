@@ -6318,9 +6318,6 @@
       "Port is required": [
         "จำเป็นต้องมีพอร์ต"
       ],
-      "Postal code is required": [
-        "จำเป็นต้องระบุรหัสไปรษณีย์"
-      ],
       "Primary address key is not decrypted": [
         "คีย์ที่อยู่หลักไม่ได้ถูกถอดรหัส"
       ],
@@ -6539,9 +6536,6 @@
       ],
       "Zero keys reactivated": [
         "คีย์ว่างเปล่าถูกเปิดใช้งาน"
-      ],
-      "ZIP code is required": [
-        "จำเป็นต้องระบุรหัสไปรษณีย์"
       ]
     },
     "error": {
@@ -9296,9 +9290,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL เอนด์พอยต์ที่ได้รับจากผู้ให้บริการข้อมูลระบุตัวตน (เช่น https://idp.example.com/sso/saml)"
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "สิ้นสุดวันที่ ${ formattedPeriodEndDate }"
-      ],
       "Enhance your network security": [
         "ยกระดับความปลอดภัยเครือข่ายของคุณ"
       ],
@@ -10468,9 +10459,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "เริ่มใช้เวอร์ชันที่สั้นและจดจำง่ายกว่าของที่อยู่อีเมล"
-      ],
-      "Starts on ${ startsOnTime }": [
-        "เริ่มเมื่อ ${ startsOnTime }"
       ],
       "Step ${ step }": [
         "ขั้นตอนที่ ${ step }"
@@ -12557,9 +12545,6 @@
       ],
       "Don't show this again": [
         "ไม่ต้องแสดงสิ่งนี้อีก"
-      ],
-      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
-        "บริจาค $1 หรือมากกว่าให้มูลนิธิ ${ BRAND_NAME }"
       ],
       "Donation amount": [
         "จำนวนเงินบริจาค"

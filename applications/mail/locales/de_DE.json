@@ -1490,8 +1490,7 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -4883,9 +4882,6 @@
       "Port is required": [
         "Port ist erforderlich"
       ],
-      "Postal code is required": [
-        "Postleitzahl ist erforderlich"
-      ],
       "Primary address key is not decrypted": [
         "Der Schlüssel der primären Adresse ist nicht entschlüsselt."
       ],
@@ -5147,9 +5143,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Deine Suche ergab zu viele Treffer. Schränke deine Suche ein und versuche es erneut."
-      ],
-      "ZIP code is required": [
-        "Eine Postleitzahl ist erforderlich"
       ]
     },
     "error": {
@@ -6512,10 +6505,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kann auch dein Unternehmen schützen."
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } Nachricht konnte nicht verschoben werden.",
-        "${ messagesNotAuthorizedToMove } Nachrichten konnten nicht verschoben werden."
-      ],
       "${ n } unread conversation": [
         "${ n } ungelesene Unterhaltung",
         "${ n } ungelesene Unterhaltungen"
@@ -7444,7 +7433,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -7622,9 +7612,6 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Die meisten öffentlichen WLAN-Netzwerke sind sicher, aber einige sind nicht sicher genug, sodass du Cyber-Bedrohungen ausgesetzt bist. Ein VPN verschlüsselt deinen Datenverkehr, damit du geschützt bist."
-      ],
-      "Moving this message will cancel its scheduled send.": [
-        "Wenn du diese Nachricht verschiebst, wird ihr geplanter Versand abgebrochen."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
@@ -8196,9 +8183,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Dieser Browser unterstützt keine Vorschau von PDF-Dokumenten. Bitte lade die Datei herunter."
-      ],
-      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
-        "Diese Unterhaltung enthält eine geplante Nachricht. Das Verschieben wird das geplante Senden abbrechen."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Diese Unterhaltung enthält eine geplante Nachricht. Das Versenden dieser Nachricht wurde abgebrochen."

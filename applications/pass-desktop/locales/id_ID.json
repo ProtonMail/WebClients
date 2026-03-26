@@ -640,6 +640,9 @@
       "Set extra password": [
         "Tetapkan kata sandi tambahan"
       ],
+      "Settings": [
+        "Pengaturan"
+      ],
       "Setup 2FA": [
         "Atur 2FA"
       ],
@@ -1953,6 +1956,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
+      ],
       "Moving items": [
         "Memindahkan item"
       ],
@@ -2567,9 +2573,6 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisasi Anda mewajibkan Anda mengamankan akses ke ${ PASS_APP_NAME }"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
       ]
     },
     "Keyboard key": {

@@ -80,11 +80,17 @@
       "Copy address": [
         "Copiar la dirección"
       ],
+      "Copy API key": [
+        "Copiar clave API"
+      ],
       "Create": [
         "Crear"
       ],
       "Create folder": [
         "Crear una carpeta"
+      ],
+      "Create key": [
+        "Crear clave"
       ],
       "Current plan": [
         "Plan actual"
@@ -94,6 +100,9 @@
       ],
       "Delete": [
         "Eliminar"
+      ],
+      "Delete ${ token.Name }": [
+        "Eliminar ${ token.Name }"
       ],
       "Delete all conversations?": [
         "¿Eliminar todas las conversaciones?"
@@ -1134,6 +1143,9 @@
       ]
     },
     "collider_2025: Error": {
+      "Could not retrieve your encryption key": [
+        "No se pudo recuperar tu clave de cifrado"
+      ],
       "Error processing ${ result.fileName }: ${ result.errorMessage }": [
         "Error al procesar ${ result.fileName }: ${ result.errorMessage }"
       ],
@@ -1160,6 +1172,12 @@
       ],
       "File uploaded but failed to add to knowledge base": [
         "Archivo cargado pero no se pudo añadir a conocimiento base"
+      ],
+      "Name is required": [
+        "El nombre es obligatorio"
+      ],
+      "Name must be 191 characters or fewer": [
+        "El nombre debe tener como máximo 191 caracteres"
       ],
       "Please select a category to describe what went wrong with the generated text": [
         "Por favor, selecciona una categoría para describir cuál es el problema con el texto generado"
@@ -1396,6 +1414,15 @@
       "Exclude file": [
         "Excluir archivo"
       ],
+      "Expired ": [
+        "Caducado "
+      ],
+      "Expires ": [
+        "Caducidad "
+      ],
+      "Expires tomorrow": [
+        "Caduca mañana"
+      ],
       "File capacity": [
         "Capacidad del archivo"
       ],
@@ -1558,6 +1585,9 @@
       "To refer back to this conversation later, sign in or create an account.": [
         "Para consultar esta conversación más tarde, inicia sesión o crea una cuenta."
       ],
+      "tokens / 30d": [
+        "tokens / 30d"
+      ],
       "Try the smartest version of ${ LUMO_SHORT_APP_NAME } with advanced capabilities.": [
         "Prueba la versión más inteligente de ${ LUMO_SHORT_APP_NAME } con capacidades avanzadas."
       ],
@@ -1657,8 +1687,14 @@
       ]
     },
     "collider_2025: Option": {
+      "1 year": [
+        "1 año"
+      ],
       "180 days": [
         "180 días"
+      ],
+      "30 days": [
+        "30 días"
       ]
     },
     "collider_2025: Personality": {
@@ -1724,6 +1760,15 @@
       ],
       "Active": [
         "Activo"
+      ],
+      "Copied!": [
+        "¡Copiado!"
+      ],
+      "Expired": [
+        "Caducado"
+      ],
+      "Expiring soon": [
+        "Caduca pronto"
       ],
       "You are subscribed to ${ LUMO_SHORT_APP_NAME }+ and have access to these features:": [
         "Estás suscrito a ${ LUMO_SHORT_APP_NAME }+ y tienes acceso a estas funciones:"
@@ -1791,6 +1836,9 @@
       ],
       "Visionary": [
         "Visionary"
+      ],
+      "Your new API key": [
+        "Tu nueva clave API"
       ]
     },
     "collider_2025: Tooltip": {
@@ -2161,6 +2209,9 @@
       ],
       "Current chat:": [
         "Chat actual:"
+      ],
+      "File \"${ file.name }\" is already mentioned": [
+        "El archivo \"${ file.name }\" ya se ha incluido"
       ],
       "From ${ DRIVE_APP_NAME }": [
         "Desde ${ DRIVE_APP_NAME }"
@@ -3626,9 +3677,6 @@
       "Please select billing state": [
         "Selecciona el estado de facturación"
       ],
-      "Postal code is required": [
-        "El código postal es requerido"
-      ],
       "Process aborted": [
         "Proceso anulado"
       ],
@@ -3691,9 +3739,6 @@
       ],
       "Wrong billing address": [
         "Dirección de facturación incorrecta"
-      ],
-      "ZIP code is required": [
-        "Se requiere el código postal."
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
@@ -4558,6 +4603,9 @@
       ],
       "Expires": [
         "Expira"
+      ],
+      "Expires in": [
+        "Caduca en"
       ],
       "First name": [
         "Nombre"

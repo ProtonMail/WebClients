@@ -4365,14 +4365,14 @@
       "Port is required": [
         "Es requereix el port"
       ],
-      "Postal code is required": [
-        "Cal un codi postal"
-      ],
       "Primary address key is not decrypted": [
         "La clau de l'adreça primària no està desxifrada."
       ],
       "Primary address key is not decrypted.": [
         "La clau de la adreça primària no està desxifrada."
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Els usuaris privats es podran afegir al grup un cop hagin iniciat la sessió per primera vegada: ${ displayedNames }"
       ],
       "Process aborted": [
         "Procés anul·lat"
@@ -4562,9 +4562,6 @@
       ],
       "Zero keys reactivated": [
         "Cap clau s'ha reactivat"
-      ],
-      "ZIP code is required": [
-        "Es requereix el codi postal."
       ]
     },
     "error": {
@@ -6717,9 +6714,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "S'ha rebut l'URL del punt final del proveïdor d'identitat (p. ex. https://idp.exemple.com/sso/saml)."
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "Acaba el ${ formattedPeriodEndDate }"
-      ],
       "Enhance your network security": [
         "Milloreu la seguretat de la vostra xarxa"
       ],
@@ -7648,9 +7642,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Comenceu a compartir-la amb els contactes i utilitzeu-la per als serveis en línia."
       ],
-      "Starts on ${ startsOnTime }": [
-        "Comença el ${ startsOnTime }"
-      ],
       "Storage allocated to other users in this organisation": [
         "Emmagatzematge assignat a altres usuaris d'aquesta organització"
       ],
@@ -7684,6 +7675,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "La vostra subscripció és a punt de finalitzar: per mantenir els avantatges del pla ${ planName }, reinicieu-la a Google Play Store abans del ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "La subscripció comença el ${ startsOnTime }"
       ],
       "Summary": [
         "Resum"
@@ -7945,6 +7939,9 @@
       ],
       "Total VPN connections": [
         "Connexions VPN totals"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "La prova finalitza el ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "dispositiu de confiança"

@@ -3671,9 +3671,6 @@
       "Port is required": [
         "Port er påkrævet."
       ],
-      "Postal code is required": [
-        "Postnummer kræves"
-      ],
       "Primary address key is not decrypted": [
         "Primære adressenøgle er ikke dekrypteret"
       ],
@@ -3918,9 +3915,6 @@
       ],
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
-      ],
-      "ZIP code is required": [
-        "Postnummer er påkrævet"
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Enhed, der ikke kan dekrypteres"
@@ -11161,11 +11155,11 @@
       ]
     },
     "Status": {
-      "accepted": [
-        "accepteret"
-      ],
       "pending": [
         "afventer"
+      ],
+      "user joined": [
+        "Bruger tilsluttede sig"
       ]
     },
     "Storage": {

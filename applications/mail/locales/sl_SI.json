@@ -1453,10 +1453,7 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Ključ zaupanja",
-        "Ključa zaupanja",
-        "Ključi zaupanja",
-        "Ključev zaupanja"
+        "Zaupaj ključu"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -6440,12 +6437,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } lahko ščiti tudi vaše podjetje."
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } sporočila ni bilo mogoče premakniti.",
-        "${ messagesNotAuthorizedToMove } sporočil ni bilo mogoče premakniti.",
-        "${ messagesNotAuthorizedToMove } sporočil ni bilo mogoče premakniti.",
-        "${ messagesNotAuthorizedToMove } sporočil ni bilo mogoče premakniti."
-      ],
       "${ n } unread conversation": [
         "${ n } neprebran pogovor",
         "${ n } neprebrana pogovora",
@@ -7398,7 +7389,10 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko"
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -7570,9 +7564,6 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Večina javnih omrežij WiFi je varnih, vendar nekatera nimajo ustrezne varnosti, zato ste izpostavljeni kibernetskim grožnjam. VPN šifrira vaš promet in vas ohranja zaščitene."
-      ],
-      "Moving this message will cancel its scheduled send.": [
-        "Premikanje tega sporočila bo preklicalo njegovo načrtovano pošiljanje."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poimenujte novo mapo in izberite, v kateri mapi naj se ustvari. Če ne izberete nadrejene mape, bo ta mapa ustvarjena kot mapa najvišje ravni."
@@ -8134,9 +8125,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Vaš brskalnik ne omogoča predogleda datotek PDF. Prenesite datoteko."
-      ],
-      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
-        "Ta pogovor vsebuje načrtovano sporočilo. Če ga premaknete, boste preklicali načrtovano pošiljanje."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Ta pogovor vsebuje načrtovano sporočilo. Njegovo pošiljanje bo preklicano."
