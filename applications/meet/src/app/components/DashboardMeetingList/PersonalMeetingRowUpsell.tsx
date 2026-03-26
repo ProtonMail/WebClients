@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcMeetUsers } from '@proton/icons/icons/IcMeetUsers';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
@@ -47,25 +48,44 @@ export const PersonalMeetingRowUpsell = () => {
                             '--right-custom': '0.75rem',
                         }}
                     >
-                        <Button
-                            className="action-button-new meeting-row-action color-norm rounded-full copy-link-button flex-1 md:flex-none flex justify-center items-center"
-                            size="medium"
-                            shape="ghost"
-                            disabled
-                            icon
+                        <Tooltip
+                            title={
+                                <>
+                                    <span>{c('Action').t`Generate a new meeting link.`}</span>
+                                    <br />
+                                    <span>{c('Action').t`The current link will stop working.`}</span>
+                                </>
+                            }
+                            tooltipClassName="text-semibold tooltip--no-max-width w-custom"
+                            tooltipStyle={{ '--w-custom': '246px' }}
+                            openDelay={100}
                         >
-                            <IcArrowsRotate alt={c('Alt').t`Rotate personal meeting link`} />
-                        </Button>
+                            <span>
+                                <Button
+                                    className="action-button-new meeting-row-action color-norm rounded-full copy-link-button flex-1 md:flex-none flex justify-center items-center"
+                                    size="medium"
+                                    shape="ghost"
+                                    disabled
+                                    icon
+                                >
+                                    <IcArrowsRotate />
+                                </Button>
+                            </span>
+                        </Tooltip>
                     </div>
-                    <Button
-                        className="action-button-new meeting-row-action color-norm rounded-full copy-link-button flex-1 md:flex-none flex justify-center items-center"
-                        size="medium"
-                        shape="ghost"
-                        disabled
-                        icon
-                    >
-                        <IcSquares alt={c('Action').t`Copy meeting link`} />
-                    </Button>
+                    <Tooltip title={c('Action').t`Copy link`} openDelay={100} tooltipClassName="text-semibold">
+                        <span>
+                            <Button
+                                className="action-button-new meeting-row-action color-norm rounded-full copy-link-button flex-1 md:flex-none flex justify-center items-center"
+                                size="medium"
+                                shape="ghost"
+                                disabled
+                                icon
+                            >
+                                <IcSquares />
+                            </Button>
+                        </span>
+                    </Tooltip>
                     <Button
                         className="join-button action-button-new color-norm rounded-full join-button flex-1 md:flex-none flex items-center justify-center"
                         onClick={handleJoin}

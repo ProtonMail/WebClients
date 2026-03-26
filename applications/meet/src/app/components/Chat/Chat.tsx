@@ -145,7 +145,7 @@ export const Chat = () => {
                         />
                         <div className="text-center color-disabled">
                             {c('Info')
-                                .t`This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.`}
+                                .t`This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.`}
                         </div>
                     </div>
                 )}
