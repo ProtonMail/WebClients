@@ -1,4 +1,4 @@
-import { NavLink, useHistory, useLocation } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 
 import { clsx } from 'clsx';
 import { c, msgid } from 'ttag';
@@ -34,7 +34,6 @@ const navClasses: Record<TabState, string> = {
 export const Tab = ({ category, count, tabState }: Props) => {
     const [mailSettings] = useMailSettings();
 
-    const location = useLocation();
     const history = useHistory();
     const mailParams = useMailSelector(params);
     const { call } = useEventManager();
@@ -47,7 +46,7 @@ export const Tab = ({ category, count, tabState }: Props) => {
         }
     };
 
-    const navigateTo = setCategoryInUrl(location, category.id);
+    const navigateTo = setCategoryInUrl(category.id);
     const unreadCount = count > 999 ? '999+' : count;
 
     return (
