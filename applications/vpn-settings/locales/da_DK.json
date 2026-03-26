@@ -4311,14 +4311,14 @@
       "Port is required": [
         "Port er påkrævet."
       ],
-      "Postal code is required": [
-        "Postnummer kræves"
-      ],
       "Primary address key is not decrypted": [
         "Primære adressenøgle er ikke dekrypteret"
       ],
       "Primary address key is not decrypted.": [
         "Primære adressenøgle er ikke dekrypteret."
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Private brugere kan tilføjes til gruppen, når de har logget ind for første gang: ${ displayedNames }"
       ],
       "Process aborted": [
         "Proces afbrudt"
@@ -4502,9 +4502,6 @@
       ],
       "Zero keys reactivated": [
         "Nul nøgler genaktiveret"
-      ],
-      "ZIP code is required": [
-        "Postnummer er påkrævet"
       ]
     },
     "error": {
@@ -6616,9 +6613,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpoint URL modtaget fra din identitetsudbyder (f.eks. https://idp.example.com/sso/saml)."
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "Slutter ${ formattedPeriodEndDate }"
-      ],
       "Enhance your network security": [
         "Styrk din netværkssikkerhed"
       ],
@@ -7504,9 +7498,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Begynd at dele det med dine kontakter, og brug det til onlinetjenester."
-      ],
-      "Starts on ${ startsOnTime }": [
-        "Starter kl. ${ startsOnTime }"
       ],
       "Storage allocated to other users in this organisation": [
         "Lagerplads tildelt andre brugere i denne organisation"

@@ -4362,14 +4362,14 @@
       "Port is required": [
         "Puerto requerido"
       ],
-      "Postal code is required": [
-        "El código postal es requerido"
-      ],
       "Primary address key is not decrypted": [
         "La clave principal no está descifrada."
       ],
       "Primary address key is not decrypted.": [
         "La clave principal no está descifrada."
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Los usuarios privados solo podrán añadirse al grupo tras su primer inicio de sesión: ${ displayedNames }"
       ],
       "Process aborted": [
         "Proceso anulado"
@@ -4559,9 +4559,6 @@
       ],
       "Zero keys reactivated": [
         "Ninguna clave reactivada"
-      ],
-      "ZIP code is required": [
-        "Se requiere el código postal."
       ]
     },
     "error": {
@@ -6702,9 +6699,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL del punto final recibida de tu proveedor de identidad (por ejemplo, https://idp.ejemplo.es/sso/saml)."
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "Acaba el ${ formattedPeriodEndDate }"
-      ],
       "Enhance your network security": [
         "Aumenta la seguridad de tu red"
       ],
@@ -7633,9 +7627,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Comienza a compartirla con tus contactos y úsala para servicios en línea."
       ],
-      "Starts on ${ startsOnTime }": [
-        "Empieza el ${ startsOnTime }"
-      ],
       "Storage allocated to other users in this organisation": [
         "Almacenamiento asignado a otros usuarios de esta organización"
       ],
@@ -7669,6 +7660,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Tu suscripción finaliza: Para mantener los beneficios de tu ${ planName }, reinicia tu suscripción en Google Play Store antes del ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "La suscripción comienza el ${ startsOnTime }"
       ],
       "Summary": [
         "Resumen"
@@ -7927,6 +7921,9 @@
       ],
       "Total VPN connections": [
         "Conexiones VPN totales"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "La prueba finaliza el ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "dispositivo de confianza"
@@ -11558,6 +11555,9 @@
       ],
       "It's too expensive": [
         "Es demasiado caro."
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "Mi motivo no aparece."
@@ -16993,6 +16993,12 @@
       ],
       "Android TV": [
         "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "macOS": [
         "macOS"
