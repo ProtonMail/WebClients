@@ -1,4 +1,4 @@
-import { DynamicResult, Result } from '@proton/docs-shared'
+import { DynamicResult, Result, ApiResult } from '@proton/docs-shared'
 import type { DecryptCommit } from './DecryptCommit'
 import type { NodeMeta, PublicDriveCompat } from '@proton/drive-store'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
@@ -57,7 +57,7 @@ describe('LoadDocument', () => {
     } as unknown as jest.Mocked<DecryptCommit>
 
     mockLoadMetaAndCommit = {
-      execute: jest.fn().mockResolvedValue(Result.ok({ realtimeToken: { preferences: {} } })),
+      execute: jest.fn().mockResolvedValue(Result.ok({ realtimeTokenResult: ApiResult.ok({ preferences: {} }) })),
     } as unknown as jest.Mocked<FetchMetaAndRawCommit>
 
     mockGetDocumentKeys = {
@@ -105,7 +105,7 @@ describe('LoadDocument', () => {
         DynamicResult.ok({
           serverBasedMeta: mockMeta,
           latestCommit: undefined,
-          realtimeToken: { token, preferences: {} },
+          realtimeTokenResult: ApiResult.ok({ token, preferences: {} }),
         } as any),
       )
     })
@@ -153,7 +153,7 @@ describe('LoadDocument', () => {
         DynamicResult.ok({
           serverBasedMeta: mockMeta,
           latestCommit: mockCommit,
-          realtimeToken: { token, preferences: {} },
+          realtimeTokenResult: ApiResult.ok({ token, preferences: {} }),
         } as any),
       )
       mockDecryptCommit.execute.mockResolvedValue(Result.ok(new DecryptedCommit('commit-1', [])))
@@ -191,7 +191,7 @@ describe('LoadDocument', () => {
         DynamicResult.ok({
           serverBasedMeta: { latestCommitId: () => 'commit-1' },
           latestCommit: undefined,
-          realtimeToken: { token: 'token-1', preferences: {} },
+          realtimeTokenResult: ApiResult.ok({ token: 'token-1', preferences: {} }),
         } as any),
       )
     })
