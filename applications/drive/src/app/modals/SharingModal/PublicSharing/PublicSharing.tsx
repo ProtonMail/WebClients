@@ -193,7 +193,7 @@ export const PublicSharing = ({
                                         background: 'var(--interaction-weak-minor-2)',
                                     }}
                                 >
-                                    <IcFormTextboxPassword className="color-hint" />
+                                    <IcFormTextboxPassword />
                                 </div>
                                 <span>{c('Action').t`Set password or expiration date`}</span>
                             </div>
