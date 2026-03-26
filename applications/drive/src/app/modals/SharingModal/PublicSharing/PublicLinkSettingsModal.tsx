@@ -140,7 +140,12 @@ const PublicLinkSettingsModal = ({
                                 <span className="color-weak text-normal">{c('Label')
                                     .t`Disable this link on a specific date`}</span>
                             </Label>
-                            <Toggle id="toggleExpiration" checked={expirationEnabled} onChange={toggleExpiration} />
+                            <Toggle
+                                id="toggleExpiration"
+                                checked={expirationEnabled}
+                                onChange={toggleExpiration}
+                                disabled={isSubmitting}
+                            />
                         </div>
 
                         {expirationEnabled && (
@@ -162,6 +167,7 @@ const PublicLinkSettingsModal = ({
                                     title={c('Title').t`Select link expiration date`}
                                     hasToday={false}
                                     data-testid="expiration-data-input"
+                                    disabled={isSubmitting}
                                 />
                             </div>
                         )}
@@ -179,7 +185,12 @@ const PublicLinkSettingsModal = ({
                                 <span className="color-weak text-normal">{c('Label')
                                     .t`Set a password to limit access via link`}</span>
                             </Label>
-                            <Toggle id="togglePassword" checked={passwordEnabled} onChange={togglePasswordEnabled} />
+                            <Toggle
+                                id="togglePassword"
+                                checked={passwordEnabled}
+                                onChange={togglePasswordEnabled}
+                                disabled={isSubmitting}
+                            />
                         </div>
 
                         {passwordEnabled && (
@@ -206,6 +217,7 @@ const PublicLinkSettingsModal = ({
                                     )
                                 }
                                 placeholder={c('Placeholder').t`Choose password`}
+                                disabled={isSubmitting}
                             />
                         )}
                     </div>
