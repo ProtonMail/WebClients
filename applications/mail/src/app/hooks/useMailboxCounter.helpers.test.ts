@@ -68,7 +68,9 @@ describe('useMailboxCounter helpers', () => {
             it('should return the count of default if no disabled categories', () => {
                 const conversationsCounts = [{ LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, Unread: 10, Total: 20 }];
                 const messagesCounts = [{ LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, Unread: 20, Total: 30 }];
-                const result = getCounterMap([], conversationsCounts, messagesCounts, {} as MailSettings, []);
+                const result = getCounterMap([], conversationsCounts, messagesCounts, {} as MailSettings, [
+                    MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                ]);
 
                 expect(result[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]).toStrictEqual({
                     LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
@@ -80,7 +82,9 @@ describe('useMailboxCounter helpers', () => {
             it('should return the count of default if disabled category has no count', () => {
                 const conversationsCounts = [{ LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, Unread: 10, Total: 20 }];
                 const messagesCounts = [{ LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, Unread: 20, Total: 30 }];
+
                 const result = getCounterMap([], conversationsCounts, messagesCounts, {} as MailSettings, [
+                    MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                     MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 ]);
 
@@ -101,6 +105,7 @@ describe('useMailboxCounter helpers', () => {
                     { LabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, Unread: 15, Total: 25 },
                 ];
                 const result = getCounterMap([], conversationsCounts, messagesCounts, {} as MailSettings, [
+                    MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                     MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                 ]);
 
@@ -123,6 +128,7 @@ describe('useMailboxCounter helpers', () => {
                     { LabelID: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, Unread: 15, Total: 25 },
                 ];
                 const result = getCounterMap([], conversationsCounts, messagesCounts, {} as MailSettings, [
+                    MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                     MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                     MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
                 ]);
@@ -144,6 +150,7 @@ describe('useMailboxCounter helpers', () => {
                     { LabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, Unread: 15, Total: 25 },
                 ];
                 const result = getCounterMap([], conversationsCounts, messagesCounts, {} as MailSettings, [
+                    MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                     MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                     MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
                 ]);
