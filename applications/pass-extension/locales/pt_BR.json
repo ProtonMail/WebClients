@@ -157,6 +157,9 @@
       "Close navigation": [
         "Fechar navegação"
       ],
+      "Configure": [
+        "Configurar"
+      ],
       "Confirm": [
         "Confirmar"
       ],
@@ -625,6 +628,9 @@
       "Set extra password": [
         "Configurar senha adicional"
       ],
+      "Settings": [
+        "Configurações"
+      ],
       "Setup 2FA": [
         "Configurar A2F"
       ],
@@ -767,9 +773,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Seu gerenciador de senhas não está aqui? Solicite."
-      ],
-      "Configure": [
-        "Configurar"
       ]
     },
     "Browser": {
@@ -2088,6 +2091,9 @@
       "None": [
         "Nenhum"
       ],
+      "Not configured": [
+        "Não configurado"
+      ],
       "Not recommended": [
         "Não recomendado"
       ],
@@ -2099,6 +2105,12 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "O acesso on-line ao ${ PASS_APP_NAME } exigirá um código PIN. Você será desconectado após 3 tentativas fracassadas."
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Abrir ${ PASS_APP_NAME } em uma janela maior"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Abrir o pop-up do ${ PASS_APP_NAME }"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Abra as configurações do Safari, encontre ${ PASS_APP_NAME }, vá para \"Permissões\" e ative as permissões do site."
@@ -2747,15 +2759,6 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Sua organização exige que você proteja seu acesso ao ${ PASS_APP_NAME }"
-      ],
-      "Not configured": [
-        "Não configurado"
-      ],
-      "Open ${ PASS_APP_NAME } in a larger window": [
-        "Abrir ${ PASS_APP_NAME } em uma janela maior"
-      ],
-      "Open the ${ PASS_APP_NAME } popup": [
-        "Abrir o pop-up do ${ PASS_APP_NAME }"
       ]
     },
     "Keyboard key": {
@@ -3308,6 +3311,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Atalho de teclado: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Atalhos do teclado"
       ],
       "Language": [
         "Idioma"
@@ -3896,9 +3902,6 @@
       ],
       "ZIP or Postal code": [
         "CEP ou código postal"
-      ],
-      "Keyboard shortcuts": [
-        "Atalhos do teclado"
       ]
     },
     "Link": {

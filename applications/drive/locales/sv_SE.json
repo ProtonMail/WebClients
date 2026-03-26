@@ -159,6 +159,9 @@
       "Change": [
         "Ändra"
       ],
+      "Change my access": [
+        "Ändra min åtkomst"
+      ],
       "Change password": [
         "Ändra lösenord"
       ],
@@ -844,6 +847,9 @@
       ],
       "Remove me": [
         "Ta bort mig"
+      ],
+      "Remove my access": [
+        "Ta bort min åtkomst"
       ],
       "Remove without saving": [
         "Ta bort utan att spara"
@@ -3677,9 +3683,6 @@
       "Port is required": [
         "Port är obligatoriskt"
       ],
-      "Postal code is required": [
-        "Postnummer är obligatoriskt"
-      ],
       "Primary address key is not decrypted": [
         "Primär adressnyckel är inte avkrypterad"
       ],
@@ -3927,9 +3930,6 @@
       ],
       "Your import will not be processed.": [
         "Din import kommer inte att bearbetas."
-      ],
-      "ZIP code is required": [
-        "Postnummer är obligatoriskt"
       ]
     },
     "error": {
@@ -9174,6 +9174,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "”${ fileName }” delad"
+      ],
       "\"${ name }\" created successfully": [
         "“${ name }“ skapades utan problem"
       ],
@@ -11258,11 +11261,11 @@
       ]
     },
     "Status": {
-      "accepted": [
-        "accepterad"
-      ],
       "pending": [
         "väntande"
+      ],
+      "user joined": [
+        "användare gick med"
       ]
     },
     "Storage": {
@@ -12779,6 +12782,9 @@
         "Ta bort objekt?",
         "Ta bort objekten?"
       ],
+      "Remove your access?": [
+        "Ta bort din åtkomst?"
+      ],
       "Rename a file": [
         "Byt namn på en fil"
       ],
@@ -12844,6 +12850,9 @@
       ],
       "SHA1": [
         "SHA1"
+      ],
+      "Share \"${ fileName }\"": [
+        "Dela ”${ fileName }”"
       ],
       "Share your calendar with your team": [
         "Dela din kalender med ditt team"
@@ -13160,6 +13169,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Meddelande och filnamn lagras med kryptering med noll åtkomst när de inkluderas i e-portmeddelandet"
+      ],
+      "New!": [
+        "Ny!"
       ],
       "Not all information listed here was exposed for all users.": [
         "All information som anges här har inte exponerats för alla användare."

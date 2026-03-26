@@ -4067,14 +4067,14 @@
       "Port is required": [
         "Portti vaaditaan"
       ],
-      "Postal code is required": [
-        "Postinumero vaaditaan"
-      ],
       "Primary address key is not decrypted": [
         "Ensisijaisen osoitteen avaimen salausta ei ole purettu"
       ],
       "Primary address key is not decrypted.": [
         "Ensisijaisen osoitteen avaimen salausta ei ole purettu."
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Yksityiskäyttäjät voidaan lisätä ryhmään, kun he ovat kirjautuneet sisään ensimmäisen kerran: ${ displayedNames }"
       ],
       "Process aborted": [
         "Tapahtuma keskeytettiin"
@@ -4261,9 +4261,6 @@
       ],
       "Zero keys reactivated": [
         "Yhtään avainta ei aktivoitu uudelleen"
-      ],
-      "ZIP code is required": [
-        "Postinumero vaaditaan"
       ]
     },
     "error": {
@@ -7207,6 +7204,9 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Tilaus päättyy: Jotta ${ planName } -etusi säilyvät, käynnistä tilauksesi uudelleen Google Play Kaupassa viimeistään ${ byDate }. ${ reactivateLink }"
       ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Tilaus alkaa ${ startsOnTime }"
+      ],
       "Summary": [
         "Yhteenveto"
       ],
@@ -7446,6 +7446,9 @@
       ],
       "Total VPN connections": [
         "VPN-yhteyksiä yhteensä"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Kokeilujakso päättyy ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "luotetulla laitteella"

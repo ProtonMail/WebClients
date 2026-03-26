@@ -1490,8 +1490,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -4883,9 +4882,6 @@
       "Port is required": [
         "Απαιτείται θύρα"
       ],
-      "Postal code is required": [
-        "Απαιτείται ταχυδρομικός κώδικας"
-      ],
       "Primary address key is not decrypted": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
       ],
@@ -5147,9 +5143,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
-      ],
-      "ZIP code is required": [
-        "Απαιτείται ταχυδρομικός κώδικας"
       ]
     },
     "error": {
@@ -6512,10 +6505,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "Το ${ MAIL_APP_NAME } μπορεί επίσης να προστατέψει την επιχείρησή σας."
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } μήνυμα δεν μπόρεσε να μετακινηθεί.",
-        "${ messagesNotAuthorizedToMove } μηνύματα δεν μπόρεσαν να μετακινηθούν."
-      ],
       "${ n } unread conversation": [
         "${ n } μη διαβασμένη συνομιλία",
         "${ n } μη διαβασμένες συνομιλίες"
@@ -7444,7 +7433,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -7622,9 +7612,6 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Τα περισσότερα δημόσια δίκτυα WiFi είναι ασφαλή, αλλά ορισμένα στερούνται ασφάλειας, εκθέτοντάς σας σε απειλές στον κυβερνοχώρο. Ένα VPN κρυπτογραφεί την κίνησή σας, διατηρώντας σας προστατευμένους."
-      ],
-      "Moving this message will cancel its scheduled send.": [
-        "Η μετακίνηση αυτού του μηνύματος θα ακυρώσει την προγραμματισμένη αποστολή του."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ονομάστε το νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, αυτός ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
@@ -8196,9 +8183,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Αυτός ο περιηγητής δεν υποστηρίζει προεπισκόπηση αρχείων PDF. Παρακαλούμε κατεβάστε το αρχείο."
-      ],
-      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
-        "Αυτή η συνομιλία περιέχει ένα προγραμματισμένο μήνυμα. Η μετακίνησή της θα ακυρώσει την προγραμματισμένη αποστολή."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Αυτή η συνομιλία περιέχει ένα προγραμματισμένο μήνυμα. Η αποστολή αυτού του μηνύματος θα ακυρωθεί."

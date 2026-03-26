@@ -1490,8 +1490,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -4883,9 +4882,6 @@
       "Port is required": [
         "Es requereix el port"
       ],
-      "Postal code is required": [
-        "Cal un codi postal"
-      ],
       "Primary address key is not decrypted": [
         "La clau de l'adreça primària no està desxifrada."
       ],
@@ -5147,9 +5143,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La vostra cerca coincideix amb massa resultats. Limiteu-la i torneu-ho a provar."
-      ],
-      "ZIP code is required": [
-        "Es requereix el codi postal."
       ]
     },
     "error": {
@@ -6512,10 +6505,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } pot protegir també la vostra empresa."
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } missatge no s'ha pogut moure.",
-        "${ messagesNotAuthorizedToMove } missatges no s'han pogut moure."
-      ],
       "${ n } unread conversation": [
         "Hi ha ${ n } conversa sense llegir",
         "Hi ha ${ n } converses sense llegir"
@@ -7444,7 +7433,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -7622,9 +7612,6 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La majoria de les xarxes wifi públiques són segures, però algunes no tenen seguretat, la qual cosa us exposa a amenaces cibernètiques. Una VPN xifra el vostre trànsit, mantenint-vos protegit."
-      ],
-      "Moving this message will cancel its scheduled send.": [
-        "Si moveu aquest missatge, se'n cancel·larà l'enviament programat."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poseu un nom a la vostra nova carpeta i seleccioneu la carpeta principal a la qual vulgueu introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
@@ -8196,9 +8183,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Aquest navegador no suporta la previsualització de documents PDF. Descarregueu-vos l'arxiu."
-      ],
-      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
-        "Aquesta conversa conté un missatge programat. Si el moveu, se'n cancel·larà l'enviament."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Aquesta conversa conté un missatge planificat. L'enviament d'aquest missatge es cancel·larà."

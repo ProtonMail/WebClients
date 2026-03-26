@@ -1495,10 +1495,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -4945,9 +4942,6 @@
       "Port is required": [
         "Port je povinná položka"
       ],
-      "Postal code is required": [
-        "PSČ je povinné"
-      ],
       "Primary address key is not decrypted": [
         "Klíč primární adresy nebyl dešifrován"
       ],
@@ -5208,9 +5202,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhledávání našlo příliš mnoho výsledků. Upřesněte hledání a zkuste to prosím znovu."
-      ],
-      "ZIP code is required": [
-        "PSČ je potřeba vyplnit"
       ]
     },
     "error": {
@@ -6638,12 +6629,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } může chránit i vaši firmu."
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } zpráva nemohla být přesunuta.",
-        "${ messagesNotAuthorizedToMove } zprávy nemohly být přesunuty.",
-        "${ messagesNotAuthorizedToMove } zpráv nemohlo být přesunuto.",
-        "${ messagesNotAuthorizedToMove } zpráv nemohlo být přesunuto."
-      ],
       "${ n } unread conversation": [
         "${ n } nepřečtená konverzace",
         "${ n } nepřečtené konverzace",
@@ -7653,7 +7638,10 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -7828,9 +7816,6 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Většina veřejných sítí Wi-Fi je bezpečná, ale některé nejsou dostatečně zabezpečené a vystavují vás kybernetickým hrozbám. VPN šifruje váš provoz a chrání vás."
-      ],
-      "Moving this message will cancel its scheduled send.": [
-        "Přesunutím této zprávy dojde ke zrušení jejího naplánovaného odeslání."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pojmenujte svou novou složku a vyberte nadřazenou složku, do které ji chcete vložit. Pokud nevyberete nadřazenou složku, bude nová složka vytvořena v kořenové složce."
@@ -8410,9 +8395,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Váš internetový prohlížeč nepodporuje zobrazení PDF dokumentů. Soubor si proto stáhněte."
-      ],
-      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
-        "Tato konverzace obsahuje naplánovanou zprávu. Přesunutím se zruší naplánované odeslání."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Tato konverzace obsahuje plánovanou zprávu. Odeslání této zprávy bude zrušeno."

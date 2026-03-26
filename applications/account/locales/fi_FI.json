@@ -5816,9 +5816,6 @@
       "Port is required": [
         "Portti vaaditaan"
       ],
-      "Postal code is required": [
-        "Postinumero vaaditaan"
-      ],
       "Primary address key is not decrypted": [
         "Ensisijaisen osoitteen avaimen salausta ei ole purettu"
       ],
@@ -5830,6 +5827,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "${ BRAND_NAME }-käyttäjälle noudettu ensisijainen avain ei kelpaa lähetykseen"
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Yksityiskäyttäjät voidaan lisätä ryhmään, kun he ovat kirjautuneet sisään ensimmäisen kerran: ${ displayedNames }"
       ],
       "Process aborted": [
         "Tapahtuma keskeytettiin"
@@ -6056,9 +6056,6 @@
       ],
       "Zero keys reactivated": [
         "Yhtään avainta ei aktivoitu uudelleen"
-      ],
-      "ZIP code is required": [
-        "Postinumero vaaditaan"
       ]
     },
     "error": {
@@ -9897,6 +9894,9 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Tilaus päättyy: Jotta ${ planName } -etusi säilyvät, käynnistä tilauksesi uudelleen Google Play Kaupassa viimeistään ${ byDate }. ${ reactivateLink }"
       ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Tilaus alkaa ${ startsOnTime }"
+      ],
       "Summary": [
         "Yhteenveto"
       ],
@@ -10196,6 +10196,9 @@
       ],
       "Total: ${ totalPrice }": [
         "Yhteensä: ${ totalPrice }"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Kokeilujakso päättyy ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "luotetulla laitteella"
@@ -11789,8 +11792,8 @@
       "Don't show this again": [
         "Älä näytä tätä uudelleen"
       ],
-      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
-        "Lahjoita vähintään 1 $ ${ BRAND_NAME }-säätiölle"
+      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
+        "Lahjoita ${ minimumDonation } tai enemmän ${ BRAND_NAME } -säätiölle"
       ],
       "Donation amount": [
         "Lahjoitussumma"

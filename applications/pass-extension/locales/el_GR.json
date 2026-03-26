@@ -157,6 +157,9 @@
       "Close navigation": [
         "Κλείσιμο μενού πλοήγησης"
       ],
+      "Configure": [
+        "Ρύθμιση"
+      ],
       "Confirm": [
         "Επιβεβαίωση"
       ],
@@ -625,6 +628,9 @@
       "Set extra password": [
         "Ορισμός επιπλέον κωδικού πρόσβασης"
       ],
+      "Settings": [
+        "Ρυθμίσεις"
+      ],
       "Setup 2FA": [
         "Ρύθμιση 2FA"
       ],
@@ -767,9 +773,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
-      ],
-      "Configure": [
-        "Ρύθμιση"
       ]
     },
     "Browser": {
@@ -2088,6 +2091,9 @@
       "None": [
         "Κανένα"
       ],
+      "Not configured": [
+        "Δεν έχει ρυθμιστεί"
+      ],
       "Not recommended": [
         "Δεν συνιστάται"
       ],
@@ -2099,6 +2105,12 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Η ηλεκτρονική πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN. Θα αποσυνδεθείτε μετά από 3 αποτυχημένες προσπάθειες."
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Ανοίξτε το ${ PASS_APP_NAME } σε ένα μεγαλύτερο παράθυρο"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Ανοίξτε το αναδυόμενο παράθυρο του ${ PASS_APP_NAME }"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Ανοίξτε τις ρυθμίσεις του Safari, βρείτε το ${ PASS_APP_NAME }, μεταβείτε στην ενότητα \"Δικαιώματα\" και ενεργοποιήστε τα δικαιώματα ιστότοπου."
@@ -2747,15 +2759,6 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
-      ],
-      "Not configured": [
-        "Δεν έχει ρυθμιστεί"
-      ],
-      "Open ${ PASS_APP_NAME } in a larger window": [
-        "Ανοίξτε το ${ PASS_APP_NAME } σε ένα μεγαλύτερο παράθυρο"
-      ],
-      "Open the ${ PASS_APP_NAME } popup": [
-        "Ανοίξτε το αναδυόμενο παράθυρο του ${ PASS_APP_NAME }"
       ]
     },
     "Keyboard key": {
@@ -3308,6 +3311,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Συντόμευση πληκτρολογίου: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Συντομεύσεις πληκτρολογίου"
       ],
       "Language": [
         "Γλώσσα"
@@ -3896,9 +3902,6 @@
       ],
       "ZIP or Postal code": [
         "Τ.Κ. / Ταχυδρομικός κώδικας"
-      ],
-      "Keyboard shortcuts": [
-        "Συντομεύσεις πληκτρολογίου"
       ]
     },
     "Link": {

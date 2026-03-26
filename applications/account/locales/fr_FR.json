@@ -6836,9 +6836,6 @@
       "Port is required": [
         "Le port est nécessaire."
       ],
-      "Postal code is required": [
-        "Le code postal est requis."
-      ],
       "Primary address key is not decrypted": [
         "La clé d'adresse principale n'est pas déchiffrée."
       ],
@@ -6850,6 +6847,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "La clé principale récupérée pour l'utilisateur ${ BRAND_NAME } n'est pas valide pour l'envoi."
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Les utilisateurs privés peuvent être ajoutés au groupe une fois qu'ils se sont connectés pour la première fois : ${ displayedNames }."
       ],
       "Process aborted": [
         "Le processus a été abandonné."
@@ -7079,9 +7079,6 @@
       ],
       "Zero keys reactivated": [
         "Aucune clé n'est réactivée."
-      ],
-      "ZIP code is required": [
-        "Le code postal est nécessaire."
       ]
     },
     "error": {
@@ -9996,9 +9993,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "L'URL des points de terminaison reçue de votre fournisseur d'identité (par ex. https://idp.exemple.fr/sso/saml)."
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "Se termine le ${ formattedPeriodEndDate }"
-      ],
       "Enhance your network security": [
         "Améliorez la sécurité de votre réseau."
       ],
@@ -11264,9 +11258,6 @@
       "Start using the shorter, catchier version of your email address.": [
         "Utilisez une version courte et percutante de votre adresse e-mail."
       ],
-      "Starts on ${ startsOnTime }": [
-        "Débute le ${ startsOnTime }"
-      ],
       "Step ${ step }": [
         "Étape ${ step }",
         "Étape ${ step }"
@@ -11316,6 +11307,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Fin de l'abonnement : Pour conserver les avantages de votre ${ planName }, veuillez renouveler votre abonnement dans le Google Play Store avant le ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Votre abonnement commence le ${ startsOnTime }"
       ],
       "Summary": [
         "Résumé"
@@ -11670,6 +11664,9 @@
       ],
       "Total: ${ totalPrice }": [
         "Total : ${ totalPrice }"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "La version d'essai se termine le ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "appareil approuvée"
@@ -13494,8 +13491,8 @@
       "Don't show this again": [
         "Ne plus afficher"
       ],
-      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
-        "Faites un don d'au moins 1 $ à la Fondation ${ BRAND_NAME }"
+      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
+        "Faites un don d'au moins ${ minimumDonation } à la Fondation ${ BRAND_NAME }"
       ],
       "Donation amount": [
         "Montant du don"

@@ -1484,8 +1484,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -4868,9 +4867,6 @@
       "Port is required": [
         "Port er påkrævet."
       ],
-      "Postal code is required": [
-        "Postnummer kræves"
-      ],
       "Primary address key is not decrypted": [
         "Primære adressenøgle er ikke dekrypteret"
       ],
@@ -5126,9 +5122,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din søgning gav for mange resultater. Begræns din søgning, og forsøg igen."
-      ],
-      "ZIP code is required": [
-        "Postnummer er påkrævet"
       ]
     },
     "error": {
@@ -6471,10 +6464,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kan også beskytte dit firma."
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } besked kunne ikke flyttes.",
-        "${ messagesNotAuthorizedToMove } beskeder kunne ikke flyttes."
-      ],
       "${ n } unread conversation": [
         "${ n } ulæst samtale",
         "${ n } ulæste samtaler"
@@ -7397,7 +7386,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -7575,9 +7565,6 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De fleste offentlige WiFi-netværk er sikre, men nogle mangler sikkerhed, hvilket udsætter dig for cybertrusler. En VPN krypterer din trafik og holder dig beskyttet."
-      ],
-      "Moving this message will cancel its scheduled send.": [
-        "Hvis du flytter denne besked, annulleres dens planlagte afsendelse."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
@@ -8149,9 +8136,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download filen."
-      ],
-      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
-        "Denne samtale indeholder en planlagt besked. Flytning af den vil annullere den planlagte afsendelse."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Denne samtale indeholder en planlagt besked. Afsendelsen af denne besked vil blive annulleret."
@@ -11732,6 +11716,9 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Choose your service": [
+        "Vælg din tjeneste"
+      ],
       "Maybe later": [
         "Måske senere"
       ],

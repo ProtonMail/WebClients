@@ -1483,10 +1483,6 @@
       "Trust": [
         "Considera attendibile"
       ],
-      "Trust key": [
-        "chiave attendibile",
-        "chiavi attendibili"
-      ],
       "Trust public key": [
         "Chiave pubblica attendibile"
       ],
@@ -4822,9 +4818,6 @@
       "Port is required": [
         "La porta è obbligatoria"
       ],
-      "Postal code is required": [
-        "Il codice postale è obbligatorio"
-      ],
       "Primary address key is not decrypted": [
         "Chiave dell'indirizzo principale non decriptata"
       ],
@@ -5074,9 +5067,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La tua ricerca ha restituito troppi risultati. Limita la ricerca e riprova."
-      ],
-      "ZIP code is required": [
-        "Il codice postale è obbligatorio"
       ]
     },
     "error": {
@@ -6419,10 +6409,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } può proteggere anche la tua azienda."
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } messaggio non è stato possibile spostarlo.",
-        "${ messagesNotAuthorizedToMove } messaggi non sono stati possibili spostarli."
-      ],
       "${ n } unread conversation": [
         "${ n } conversazione non letta",
         "${ n } conversazioni non lette"
@@ -7342,7 +7328,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
