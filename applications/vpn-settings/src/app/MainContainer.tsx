@@ -124,6 +124,7 @@ const MainContainer: FunctionComponent = () => {
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
+    const isUserGroupsPassBusinessEnabled = useFlag('UserGroupsPassBusiness');
     const isRolesAndPermissionsEnabled = useFlag('AdminRoleMVP');
     const [groups, loadingGroups] = useGroups();
     const { showVPNDashboard, showVPNDashboardVariant } = useShowVPNDashboard(APPS.PROTONVPN_SETTINGS);
@@ -166,6 +167,7 @@ const MainContainer: FunctionComponent = () => {
         isRetentionPoliciesEnabled,
         isProtonMeetIntegrationEnabled,
         isUserGroupsNoCustomDomainEnabled,
+        isUserGroupsPassBusinessEnabled,
         isGroupOwner,
         isRolesAndPermissionsEnabled,
     });

@@ -34,6 +34,7 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
     const groupsManagement = useGroupsManagement(organization);
     const [user, loadingUser] = useUser();
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
+    const isUserGroupsPassBusinessEnabled = useFlag('UserGroupsPassBusiness');
     const isUserGroupsGroupOwnerEnabled = useFlag('UserGroupsGroupOwner');
     const dispatch = useDispatch();
 
@@ -61,7 +62,10 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
     const usingGroupsDomainButNotActive =
         suggestedAddressDomainSource === 'group' && !isUserGroupsNoCustomDomainEnabled;
     const canOnlyDelete =
-        (!canUseGroups(organization?.PlanName, { isUserGroupsNoCustomDomainEnabled }) ||
+        (!canUseGroups(organization?.PlanName, {
+            isUserGroupsNoCustomDomainEnabled,
+            isUserGroupsPassBusinessEnabled,
+        }) ||
             usingGroupsDomainButNotActive) &&
         (groups?.length ?? 0) > 0;
 

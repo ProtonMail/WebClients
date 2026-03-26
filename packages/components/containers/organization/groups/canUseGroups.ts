@@ -6,7 +6,6 @@ const groupsCompatiblePlans = new Set([
     PLANS.BUNDLE_PRO_2024,
     PLANS.BUNDLE_BIZ_2025,
     PLANS.VISIONARY,
-    PLANS.PASS_BUSINESS,
 ]);
 
 const vpnPlans = new Set([PLANS.VPN_BUSINESS, PLANS.VPN_PRO, PLANS.VPN_PASS_BUNDLE_BUSINESS]);
@@ -15,10 +14,11 @@ const canUseGroups = (
     plan: PLANS | undefined,
     options: {
         isUserGroupsNoCustomDomainEnabled: boolean;
+        isUserGroupsPassBusinessEnabled: boolean;
         hasGroups?: boolean;
     }
 ) => {
-    const { isUserGroupsNoCustomDomainEnabled, hasGroups } = options;
+    const { isUserGroupsNoCustomDomainEnabled, isUserGroupsPassBusinessEnabled, hasGroups } = options;
     if (plan === undefined) {
         return false;
     }
@@ -36,6 +36,12 @@ const canUseGroups = (
     // The vpnPlans set will then be removed.
     // The isUserGroupsNoCustomDomainEnabled should also be removed from this function and all callers updated.
     if (isUserGroupsNoCustomDomainEnabled && isVpnPlan) {
+        return true;
+    }
+
+    // Once the feature flag UserGroupsPassBusiness is removed,
+    // PLANS.PASS_BUSINESS should be added to groupsCompatiblePlans
+    if (isUserGroupsPassBusinessEnabled && plan === PLANS.PASS_BUSINESS) {
         return true;
     }
 
