@@ -48,6 +48,7 @@ import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
 import UnprivatizationRequestTopBanner from '@proton/components/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
+import { useReferralUserEligible } from '@proton/components/containers/referral/hooks/useReferralUserEligible';
 import useShowDashboard from '@proton/components/hooks/accounts/useShowDashboard';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
@@ -241,13 +242,15 @@ const MainContainer = () => {
     const [invites = []] = useUserInvitations();
     const hasPendingInvitations = invites.length > 0;
 
+    const { isUserEligible: isReferralProgramEnabled } = useReferralUserEligible();
+
     const routes = getRoutes({
         app,
         user,
         addresses,
         organization,
         subscription,
-        isReferralProgramEnabled: Boolean(userSettings.Referral?.Eligible),
+        isReferralProgramEnabled,
         isDataRecoveryAvailable,
         isSessionRecoveryAvailable,
         recoveryNotification: recoveryNotification?.color,
