@@ -238,7 +238,7 @@
         "Modificare cheie"
       ],
       "Change password": [
-        "Schimbare parolă"
+        "Modificare parolă"
       ],
       "Change second password": [
         "Modificare parolă secundară"
@@ -6883,9 +6883,6 @@
       "Port is required": [
         "Portul este obligatoriu"
       ],
-      "Postal code is required": [
-        "Codul poștal este obligatoriu."
-      ],
       "Primary address key is not decrypted": [
         "Cheia primară a adresei nu este decriptată."
       ],
@@ -6897,6 +6894,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Cheia primară preluată pentru utilizatorul ${ BRAND_NAME } nu este validă pentru trimiteri."
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Utilizatorii privați pot fi adăugați în grup după ce s-au conectat pentru prima dată: ${ displayedNames }"
       ],
       "Process aborted": [
         "Proces abandonat"
@@ -7130,9 +7130,6 @@
       ],
       "Zero keys reactivated": [
         "Zero taste reactivate."
-      ],
-      "ZIP code is required": [
-        "Codul poștal este obligatoriu."
       ]
     },
     "error": {
@@ -9734,7 +9731,7 @@
         "Centrare"
       ],
       "Change your password": [
-        "Schimbare parolă"
+        "Modificare parolă"
       ],
       "Check the status of imports and forwarding.": [
         "Consultați starea importărilor și transferărilor."
@@ -10117,9 +10114,6 @@
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Adresa URL a punctului final primită de la furnizorul de identitate (ex. https://idp.exemplu.com/sso/saml)."
-      ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "Se încheie la ${ formattedPeriodEndDate }"
       ],
       "Enhance your network security": [
         "Îmbunătățiți-vă securitatea rețelei"
@@ -11397,9 +11391,6 @@
       "Start using the shorter, catchier version of your email address.": [
         "Utilizați versiunea mai scurtă și mai atractivă a adresei de e-mail."
       ],
-      "Starts on ${ startsOnTime }": [
-        "Începe ${ startsOnTime }"
-      ],
       "Step ${ step }": [
         "Pasul ${ step }",
         "Pasul ${ step }",
@@ -11451,6 +11442,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Abonamentul se încheie: pentru a păstra vă beneficiile din ${ planName }, reactivați-vă abonamentul în Magazin Play de la Google până la ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Abonamentul începe la ${ startsOnTime }"
       ],
       "Summary": [
         "Sumar"
@@ -11808,6 +11802,9 @@
       ],
       "Total: ${ totalPrice }": [
         "Total: ${ totalPrice }"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Perioada de probare expiră la ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "dispozitiv aprobat"
@@ -13657,8 +13654,8 @@
       "Don't show this again": [
         "Nu mai arăta asta"
       ],
-      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
-        "Donați 1 USD sau mai mult fundației ${ BRAND_NAME }"
+      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
+        "Donați ${ minimumDonation } sau mai mult Fundației ${ BRAND_NAME }"
       ],
       "Donation amount": [
         "Sumă donație"
@@ -15393,7 +15390,7 @@
         "Adăugare adresă"
       ],
       "Change password": [
-        "Schimbare parolă"
+        "Modificare parolă"
       ],
       "Convert to SSO": [
         "Convertire la autentificare unică (SSO)"
@@ -23139,16 +23136,16 @@
         "Adresă de agregare"
       ],
       "Change login password": [
-        "Schimbare parolă conectare"
+        "Modificare parolă conectare"
       ],
       "Change organization name": [
         "Schimbare nume organizație"
       ],
       "Change organization password": [
-        "Schimbare parolă organizație"
+        "Modificare parolă organizație"
       ],
       "Change password": [
-        "Schimbare parolă"
+        "Modificare parolă"
       ],
       "Change primary key?": [
         "Schimbați cheia principală?"
@@ -23628,7 +23625,7 @@
         "Ați uitat metoda de recuperare"
       ],
       "Forward and auto-reply": [
-        "Transferare/Autorăspuns"
+        "Transfer/Autorăspuns"
       ],
       "Forward emails": [
         "Transferare mesaje"

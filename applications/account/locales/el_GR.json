@@ -6839,9 +6839,6 @@
       "Port is required": [
         "Απαιτείται θύρα"
       ],
-      "Postal code is required": [
-        "Απαιτείται ταχυδρομικός κώδικας"
-      ],
       "Primary address key is not decrypted": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
       ],
@@ -6853,6 +6850,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Το πρωτεύον κλειδί που ανακτήθηκε για τον ${ BRAND_NAME } χρήστη δεν είναι έγκυρο για αποστολή"
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Οι ιδιώτες χρήστες μπορούν να προστεθούν στην ομάδα μόλις συνδεθούν για πρώτη φορά: ${ displayedNames }"
       ],
       "Process aborted": [
         "Η διαδικασία ματαιώθηκε"
@@ -7085,9 +7085,6 @@
       ],
       "Zero keys reactivated": [
         "Τα Μηδενικά κλειδιά ενεργοποιήθηκαν ξανά"
-      ],
-      "ZIP code is required": [
-        "Απαιτείται ταχυδρομικός κώδικας"
       ]
     },
     "error": {
@@ -10008,9 +10005,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Διεύθυνση URL τελικού σημείου που λάβατε από τον πάροχο ταυτότητάς σας (π.χ. https://idp.example.com/sso/saml)."
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "Λήγει στις ${ formattedPeriodEndDate }"
-      ],
       "Enhance your network security": [
         "Βελτιώστε την ασφάλεια του δικτύου σας"
       ],
@@ -11279,9 +11273,6 @@
       "Start using the shorter, catchier version of your email address.": [
         "Ξεκινήστε να χρησιμοποιείτε τη συντομότερη, πιο πιασάρικη έκδοση της διεύθυνσης ηλεκτρονικού ταχυδρομείου σας."
       ],
-      "Starts on ${ startsOnTime }": [
-        "Ξεκινάει στις ${ startsOnTime }"
-      ],
       "Step ${ step }": [
         "Βήμα ${ step }",
         "Βήματα ${ step }"
@@ -11331,6 +11322,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Η συνδρομή λήγει: Για να διατηρήσετε τα οφέλη του ${ planName }, επανεκκινήστε τη συνδρομή σας στο Google Play Store έως ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Η συνδρομή ξεκινά στις ${ startsOnTime }"
       ],
       "Summary": [
         "Περίληψη"
@@ -11685,6 +11679,9 @@
       ],
       "Total: ${ totalPrice }": [
         "Σύνολο: ${ totalPrice }"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Η δοκιμαστική περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "αξιόπιστη συσκευή"
@@ -13515,8 +13512,8 @@
       "Don't show this again": [
         "Να μην εμφανιστεί ξανά"
       ],
-      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
-        "Δωρίστε 1$ ή περισσότερα στο Ίδρυμα ${ BRAND_NAME }"
+      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
+        "Δωρίστε ${ minimumDonation } ή περισσότερα στο ${ BRAND_NAME } Foundation"
       ],
       "Donation amount": [
         "Ποσό δωρεάς"

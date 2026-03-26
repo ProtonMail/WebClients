@@ -4242,14 +4242,14 @@
       "Port is required": [
         "المنفذ مطلوب"
       ],
-      "Postal code is required": [
-        "الرمز البريدي إلزامي"
-      ],
       "Primary address key is not decrypted": [
         "لم يتم فك تشفير مفتاح العنوان الأساسي"
       ],
       "Primary address key is not decrypted.": [
         "مفتاح العنوان الأساسي غير مشفر."
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "يمكن إضافة المستخدمين الخاصين إلى المجموعة بعد تسجيل دخولهم لأول مرة: ${ displayedNames }"
       ],
       "Process aborted": [
         "تم الغاء العملية"
@@ -4436,9 +4436,6 @@
       ],
       "Zero keys reactivated": [
         "صفر من المفاتيح تم اعادة تفعليه"
-      ],
-      "ZIP code is required": [
-        "الرمز البريدي مطلوب"
       ]
     },
     "error": {
@@ -6769,9 +6766,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "عنوان نقطة النهاية المستلم من مزود الهوية الخاص بك (على سبيل المثال https://idp.example.com/sso/saml)."
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "ينتهي في ${ formattedPeriodEndDate }"
-      ],
       "Enhance your network security": [
         "حسّن أمان شبكتك"
       ],
@@ -7688,9 +7682,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "ابدأ مشاركته مع جهات الاتصال واستخدمه للخدمات عبر الإنترنت."
-      ],
-      "Starts on ${ startsOnTime }": [
-        "يبدأ في ${ startsOnTime }"
       ],
       "Storage allocated to other users in this organisation": [
         "مساحة التخزين المخصصة للمستخدمين الآخرين في هذه المؤسسة"

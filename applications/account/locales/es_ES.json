@@ -6532,9 +6532,6 @@
       "Port is required": [
         "Puerto requerido"
       ],
-      "Postal code is required": [
-        "El código postal es requerido"
-      ],
       "Primary address key is not decrypted": [
         "La clave principal no está descifrada."
       ],
@@ -6546,6 +6543,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "La clave principal recuperada para el usuario ${ BRAND_NAME } no es válida para envíos."
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Los usuarios privados solo podrán añadirse al grupo tras su primer inicio de sesión: ${ displayedNames }"
       ],
       "Process aborted": [
         "Proceso anulado"
@@ -6778,9 +6778,6 @@
       ],
       "Zero keys reactivated": [
         "Ninguna clave reactivada"
-      ],
-      "ZIP code is required": [
-        "Se requiere el código postal."
       ]
     },
     "error": {
@@ -8109,6 +8106,11 @@
       ],
       "Email address": [
         "Correo electrónico"
+      ]
+    },
+    "Header; Table with list of calendars arranged by type": {
+      "Other": [
+        "Otro"
       ]
     },
     "Heading": {
@@ -9591,9 +9593,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL del punto final recibida de tu proveedor de identidad (por ejemplo, https://idp.ejemplo.es/sso/saml)."
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "Acaba el ${ formattedPeriodEndDate }"
-      ],
       "Enhance your network security": [
         "Aumenta la seguridad de tu red"
       ],
@@ -10811,9 +10810,6 @@
       "Start using the shorter, catchier version of your email address.": [
         "Usa versión corta y atractiva de tu dirección de correo electrónico."
       ],
-      "Starts on ${ startsOnTime }": [
-        "Empieza el ${ startsOnTime }"
-      ],
       "Step ${ step }": [
         "Paso ${ step }",
         "Paso ${ step }"
@@ -10863,6 +10859,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Tu suscripción finaliza: Para mantener los beneficios de tu ${ planName }, reinicia tu suscripción en Google Play Store antes del ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "La suscripción comienza el ${ startsOnTime }"
       ],
       "Summary": [
         "Resumen"
@@ -11208,6 +11207,9 @@
       ],
       "Total: ${ totalPrice }": [
         "Total: ${ totalPrice }"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "La prueba finaliza el ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "dispositivo de confianza"
@@ -12921,8 +12923,8 @@
       "Don't show this again": [
         "No mostrar esto de nuevo"
       ],
-      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
-        "Dona 1 $ o más a la Fundación ${ BRAND_NAME }"
+      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
+        "Haz una donación de ${ minimumDonation } o más a la Fundación ${ BRAND_NAME }"
       ],
       "Donation amount": [
         "Importe de la donación"
@@ -13837,6 +13839,11 @@
       ],
       "Notifications": [
         "Notificaciones"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "Duración"
       ]
     },
     "Label for domain modal": {
@@ -16519,6 +16526,9 @@
       ],
       "Label as...": [
         "Etiquetar como..."
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mark as read": [
         "Marcar como leído"
@@ -19471,6 +19481,9 @@
     "Settings/filters - table": {
       "Action": [
         "Acción"
+      ],
+      "Name": [
+        "Nombre"
       ]
     },
     "Settings/labels": {
@@ -22220,6 +22233,9 @@
       "Delete account": [
         "Eliminar cuenta"
       ],
+      "Delete calendar": [
+        "Eliminar calendario"
+      ],
       "Delete folder?": [
         "¿Eliminar la carpeta?"
       ],
@@ -24242,6 +24258,12 @@
       ],
       "Android TV": [
         "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "iOS": [
+        "iOS"
       ],
       "macOS": [
         "macOS"

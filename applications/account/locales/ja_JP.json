@@ -6589,9 +6589,6 @@
       "Port is required": [
         "ポートは必須です"
       ],
-      "Postal code is required": [
-        "郵便番号は必須です"
-      ],
       "Primary address key is not decrypted": [
         "プライマリーアドレス鍵が復号されていません"
       ],
@@ -6822,9 +6819,6 @@
       ],
       "Zero keys reactivated": [
         "ゼロキーが再有効化されました"
-      ],
-      "ZIP code is required": [
-        "郵便番号は必須です"
       ]
     },
     "error": {
@@ -9599,9 +9593,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "ID プロバイダーから受け取ったエンドポイント URL (例: https://idp.example.com/sso/saml)。"
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "${ formattedPeriodEndDate } に終了します"
-      ],
       "Enhance your network security": [
         "ネットワークセキュリティの強化"
       ],
@@ -10783,9 +10774,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "より短く、覚えやすいメールアドレスを使い始めましょう。"
-      ],
-      "Starts on ${ startsOnTime }": [
-        "${ startsOnTime }に開始します"
       ],
       "Step ${ step }": [
         "ステップ ${ step }"
@@ -12923,9 +12911,6 @@
       ],
       "Don't show this again": [
         "次回から表示しない"
-      ],
-      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
-        "${ BRAND_NAME } Foundationに1ドル以上寄付する"
       ],
       "Donation amount": [
         "寄付額"

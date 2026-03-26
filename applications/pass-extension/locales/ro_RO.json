@@ -157,6 +157,9 @@
       "Close navigation": [
         "Închidere navigare"
       ],
+      "Configure": [
+        "Configurare"
+      ],
       "Confirm": [
         "Confirmare"
       ],
@@ -625,6 +628,9 @@
       "Set extra password": [
         "Setare parolă suplimentară"
       ],
+      "Settings": [
+        "Setări"
+      ],
       "Setup 2FA": [
         "Setare A2F"
       ],
@@ -769,9 +775,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
-      ],
-      "Configure": [
-        "Configurare"
       ]
     },
     "Browser": {
@@ -2115,6 +2118,9 @@
       "None": [
         "Fără"
       ],
+      "Not configured": [
+        "Neconfigurat"
+      ],
       "Not recommended": [
         "Nerecomandat"
       ],
@@ -2126,6 +2132,12 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Accesul online la ${ PASS_APP_NAME } va necesita un cod PIN. După 3 încercări nereușite contul va fi deconectat."
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Deschidere ${ PASS_APP_NAME } într-o fereastră mai mare"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Deschidere fereastră flotantă ${ PASS_APP_NAME }"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Deschideți setările Safari, găsiți ${ PASS_APP_NAME }, accesați „Permisiuni” și activați permisiunile pentru site."
@@ -2780,15 +2792,6 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizația vă solicită să vă securizați accesul la ${ PASS_APP_NAME }"
-      ],
-      "Not configured": [
-        "Neconfigurat"
-      ],
-      "Open ${ PASS_APP_NAME } in a larger window": [
-        "Deschidere ${ PASS_APP_NAME } într-o fereastră mai mare"
-      ],
-      "Open the ${ PASS_APP_NAME } popup": [
-        "Deschidere fereastră flotantă ${ PASS_APP_NAME }"
       ]
     },
     "Keyboard key": {
@@ -3355,6 +3358,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Combinații taste: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Combinații de taste"
       ],
       "Language": [
         "Limba"
@@ -3943,9 +3949,6 @@
       ],
       "ZIP or Postal code": [
         "Cod poștal"
-      ],
-      "Keyboard shortcuts": [
-        "Combinații de taste"
       ]
     },
     "Link": {

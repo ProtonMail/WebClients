@@ -4846,9 +4846,6 @@
       "Port is required": [
         "端口号必须填写"
       ],
-      "Postal code is required": [
-        "邮政编码为必填项"
-      ],
       "Primary address key is not decrypted": [
         "主密钥尚未解密"
       ],
@@ -5106,9 +5103,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜索结果过多，请缩小搜索范围后再试。"
-      ],
-      "ZIP code is required": [
-        "必须填写邮政编码"
       ]
     },
     "error": {
@@ -6430,9 +6424,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "您的商务邮件也可以交由 ${ MAIL_APP_NAME } 保护。"
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } 封邮件无法移动。"
-      ],
       "${ n } unread conversation": [
         "${ n } 项未读会话"
       ],
@@ -7319,7 +7310,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -7497,9 +7488,6 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "大多数公共 WiFi 网络都是安全的，但部分网络缺乏防护措施，使您面临网络威胁。通过 VPN 加密技术，您的网络活动将获得全程保护。"
-      ],
-      "Moving this message will cancel its scheduled send.": [
-        "移动此消息将取消其定时发送。"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "设置新文件夹的名称和位置，若不选取上层文件夹，则将创建顶层文件夹。"
@@ -8067,9 +8055,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "您目前使用的浏览器不支持查看 PDF 文件，请下载后打开。"
-      ],
-      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
-        "此对话包含一条定时发送的消息，移动它将取消定时发送。"
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "此会话中有一封定时发送的邮件将取消发送。"

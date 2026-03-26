@@ -1490,8 +1490,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -4883,9 +4882,6 @@
       "Port is required": [
         "Poort is vereist"
       ],
-      "Postal code is required": [
-        "Postcode is vereist"
-      ],
       "Primary address key is not decrypted": [
         "Primaire adressleutel is niet ontsleuteld"
       ],
@@ -5147,9 +5143,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Uw zoekopdracht leverde te veel resultaten op. Verfijn uw zoekopdracht en probeer het opnieuw."
-      ],
-      "ZIP code is required": [
-        "Postcode is vereist"
       ]
     },
     "error": {
@@ -6495,10 +6488,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kan uw bedrijf ook beschermen."
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } bericht kon niet verplaatst worden.",
-        "${ messagesNotAuthorizedToMove } berichten konden niet worden verplaatst."
-      ],
       "${ n } unread conversation": [
         "${ n } ongelezen gesprek",
         "${ n } ongelezen gesprekken"
@@ -7427,7 +7416,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -7605,9 +7595,6 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De meeste openbare wifi-netwerken zijn veilig, maar sommige zijn onveilig, waardoor u wordt blootgesteld aan cyberbedreigingen. Een VPN versleutelt uw verkeer en houdt u beschermd."
-      ],
-      "Moving this message will cancel its scheduled send.": [
-        "Het verplaatsen van dit bericht annuleert het gepland verzenden ervan."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
@@ -8179,9 +8166,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Deze browser ondersteunt geen voorbeeld PDF-documenten. Download het bestand."
-      ],
-      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
-        "Dit gesprek bevat een gepland bericht. Het verplaatsen ervan annuleert het gepland verzenden."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Dit gesprek bevat een gepland bericht. Het verzenden van dit bericht zal worden geannuleerd."

@@ -157,6 +157,9 @@
       "Close navigation": [
         "Tanca la navegació"
       ],
+      "Configure": [
+        "Configurar"
+      ],
       "Confirm": [
         "Confirma"
       ],
@@ -625,6 +628,9 @@
       "Set extra password": [
         "Estableix una contrasenya addicional"
       ],
+      "Settings": [
+        "Preferències"
+      ],
       "Setup 2FA": [
         "Configura el 2FA"
       ],
@@ -767,9 +773,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
-      ],
-      "Configure": [
-        "Configurar"
       ]
     },
     "Browser": {
@@ -2091,6 +2094,9 @@
       "None": [
         "Cap"
       ],
+      "Not configured": [
+        "No s'ha configurat"
+      ],
       "Not recommended": [
         "No recomanat"
       ],
@@ -2102,6 +2108,12 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "L'accés en línia a ${ PASS_APP_NAME } requerirà un codi PIN. Se us tancarà la sessió després de 3 intents que no han funcionat."
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Obriu ${ PASS_APP_NAME } en una finestra més gran"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Obriu la finestra emergent de ${ PASS_APP_NAME }"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Obriu la configuració de Safari, busqueu ${ PASS_APP_NAME }, aneu a \"Permisos\" i activeu-hi els corresponents al lloc."
@@ -2750,15 +2762,6 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
-      ],
-      "Not configured": [
-        "No s'ha configurat"
-      ],
-      "Open ${ PASS_APP_NAME } in a larger window": [
-        "Obriu ${ PASS_APP_NAME } en una finestra més gran"
-      ],
-      "Open the ${ PASS_APP_NAME } popup": [
-        "Obriu la finestra emergent de ${ PASS_APP_NAME }"
       ]
     },
     "Keyboard key": {
@@ -3311,6 +3314,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Drecera de teclat: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Dreceres de teclat"
       ],
       "Language": [
         "Idioma"
@@ -3899,9 +3905,6 @@
       ],
       "ZIP or Postal code": [
         "Codi postal"
-      ],
-      "Keyboard shortcuts": [
-        "Dreceres de teclat"
       ]
     },
     "Link": {

@@ -165,6 +165,9 @@
       "Change": [
         "Zmeniť"
       ],
+      "Change my access": [
+        "Zmeniť môj prístup"
+      ],
       "Change password": [
         "Zmeniť heslo"
       ],
@@ -854,6 +857,9 @@
       ],
       "Remove me": [
         "Odstrániť ma"
+      ],
+      "Remove my access": [
+        "Odstrániť mô prístup"
       ],
       "Remove without saving": [
         "Odstrániť bez uloženia"
@@ -3746,9 +3752,6 @@
       "Port is required": [
         "Port je požadovaný"
       ],
-      "Postal code is required": [
-        "Poštové smerovacie číslo je povinné"
-      ],
       "Primary address key is not decrypted": [
         "Kľúč primárnej adresy nebol dešifrovaný"
       ],
@@ -4006,9 +4009,6 @@
       ],
       "Your import will not be processed.": [
         "Váš import nebude spracovaný."
-      ],
-      "ZIP code is required": [
-        "PSČ je povinné"
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Nerozšifrovateľné zariadenie"
@@ -5840,6 +5840,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Ak prejdete na nižšie predplatné, stratíte prístup k plateným funkciám ${ VPN_APP_NAME } ."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Ak odstránite seba, stratíte prístup k súboru \"${ fileName }\" a nebudete ho môcť znova otvoriť, pokiaľ vám ho vlastník znovu nesprístupní."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importovať ${ calendarCount } z ${ totalCalendarsCount } kalendára",
         "Importovať ${ calendarCount } z ${ totalCalendarsCount } kalendárov",
@@ -7021,6 +7024,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nebude sa vám nič účtovať, ak službu zrušíte pred ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Po zmene prístupu na prehliadač nebudete môcť zdieľať \"${ fileName }\". Iba vlastník môže znova zmeniť váš prístup."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Kreditné odmeny získate 1 mesiac po tom, ako si váš priateľ predplatí ročný plán, a 2 mesiace po tom, ako si predplatí mesačný plán."
@@ -9457,6 +9463,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" zdieľané"
+      ],
       "\"${ name }\" created successfully": [
         "„${ name }“ úspešne vytvorené"
       ],
@@ -11570,11 +11579,11 @@
       ]
     },
     "Status": {
-      "accepted": [
-        "prijaté"
-      ],
       "pending": [
         "čakajúce"
+      ],
+      "user joined": [
+        "používateľ sa pripojil"
       ]
     },
     "Storage": {
@@ -13157,6 +13166,9 @@
         "Odstrániť položky?",
         "Odstrániť položky?"
       ],
+      "Remove your access?": [
+        "Odstrániť váš prístup?"
+      ],
       "Rename a file": [
         "Premenovať súbor"
       ],
@@ -13225,6 +13237,9 @@
       ],
       "SHA1": [
         "SHA1"
+      ],
+      "Share \"${ fileName }\"": [
+        "Zdieľať \"${ fileName }\""
       ],
       "Share your calendar with your team": [
         "Zdieľajte svoj kalendár so svojím tímom"
@@ -13500,6 +13515,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automaticky prepínať medzi preferovanými motívmi počas dňa a noci, synchronizovane s motívmi vášho systému"
       ],
+      "Change shared item settings": [
+        "Zmeniť nastavenia zdieľanej položky"
+      ],
       "Customize import to reduce the number of folders": [
         "Prispôsobiť import na zníženie počtu priečinkov"
       ],
@@ -13541,6 +13559,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Správa a názov súboru sú uložené so šifrovaním s nulovým prístupom, ak sú súčasťou emailu"
+      ],
+      "New!": [
+        "Nové!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Nie všetky informácie, ktoré sú tu uvedené, boli sprístupnené všetkým používateľom."

@@ -239,6 +239,9 @@
       "Refresh audio and video tracks": [
         "Ses ve görüntü izlerini yenile"
       ],
+      "Refresh screen share track": [
+        "Ekran paylaşımı kaydını yenile"
+      ],
       "Refresh the page": [
         "Sayfayı yenile"
       ],
@@ -286,6 +289,9 @@
       ],
       "Settings": [
         "Ayarlar"
+      ],
+      "Show floating thumbnail during screensharing": [
+        "Ekran paylaşımı sırasında kayan küçük görseli göster"
       ],
       "Show participants": [
         "Katılımcıları görüntüle"
@@ -2048,7 +2054,7 @@
         "Lütfen bu görüşmeyi görüntülemek ve şifresini çözmek için parolayı yazın"
       ],
       "Please try again or try another browser": [
-        "Lütfen tekrar deneyin veya başka bir tarayıcı kullanın"
+        "Lütfen yeniden deneyin ya da başka bir tarayıcı kullanın"
       ],
       "Poor connection": [
         "Bağlantı kötü"
@@ -2062,17 +2068,23 @@
       "Reconnecting to meeting...": [
         "Görüşmeye yeniden bağlanıyor..."
       ],
+      "Record your meetings": [
+        "Toplantılarınızı kaydedin"
+      ],
       "Recording saved": [
         "Görüşme kaydedildi"
       ],
       "Recording will begin and attendees will be notified.": [
-        "Kayıt başlayacak ve katılımcılara bildirim gönderilecektir."
+        "Kayıt başlatılacak ve katılımcılara bildirim gönderilecek."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
       ],
       "Refresh audio and video tracks": [
         "Ses ve görüntü izlerini yenile"
+      ],
+      "Refresh screen share track": [
+        "Ekran paylaşımı kaydını yenile"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
@@ -2114,7 +2126,7 @@
         "Sıralama"
       ],
       "Start recording": [
-        "Kayda başla"
+        "Kaydı başlat"
       ],
       "Stop sharing your screen": [
         "Ekran paylaşımını durdur"
@@ -2197,6 +2209,9 @@
       "Unlock ${ unlimitedMeeting } and premium features": [
         "${ unlimitedMeeting } ve ücretli özelliklere erişin"
       ],
+      "Upgrade to record your meetings locally.": [
+        "Toplantılarınızı yerel olarak kaydetmek için yükseltin."
+      ],
       "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
         "Tarifenizi yükselterek 1 saat sınırını kaldırın ve geri sayımı atlayın. 24 saatlik görüşmelerin tadını çıkarın."
       ],
@@ -2241,6 +2256,9 @@
       ],
       "You left your meeting": [
         "Toplantınızdan ayrıldınız"
+      ],
+      "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
+        "Bu özelliği kullanmak için ücretli bir ${ MEET_SHORT_APP_NAME } veya Workspace tarifesine ihtiyacınız var. Yükseltme işlemi için kuruluş yöneticinizle iletişime geçin."
       ],
       "You were removed from the meeting": [
         "Görüşmeden çıkarıldınız"
@@ -2574,6 +2592,12 @@
       "E.g., ": [
         "Örneğin, "
       ],
+      "e.g., Daily room, project hub": [
+        "ör. Günlük oda, proje merkezi"
+      ],
+      "e.g., Team sync, project update": [
+        "ör. ekip senkronizasyonu, proje güncellemesi"
+      ],
       "Enter passphrase": [
         "Parola ifadesini yazın"
       ],
@@ -2840,7 +2864,7 @@
         "Yayınlar"
       ],
       "Record this meeting": [
-        "Bu toplantıyı kaydedin"
+        "Bu görüşmeyi kaydet"
       ],
       "Remote Participants": [
         "Uzak katılımcılar"
@@ -2910,13 +2934,13 @@
         "Tarayıcınız arka planın bulanıklaştırılmasını desteklemiyor"
       ],
       "Generate a new meeting link. The current link will stop working.": [
-        "Yeni bir toplantı bağlantısı oluşturun. Mevcut bağlantı artık çalışmayacak."
+        "Yeni bir görüşme bağlantısı oluşturun. Var olan bağlantı artık çalışmayacak."
       ],
       "Recurring meeting": [
         "Yinelenen görüşme"
       ],
       "You can generate a new meeting link once per day.": [
-        "Günde bir kez yeni bir toplantı bağlantısı oluşturabilirsiniz."
+        "Günde bir kez yeni bir görüşme bağlantısı oluşturabilirsiniz."
       ]
     },
     "Validation": {
@@ -2936,7 +2960,7 @@
     },
     "Warning": {
       "Connection is taking longer than expected": [
-        "Bağlantı beklenenden uzun sürüyor"
+        "Bağlantının kurulması beklenenden uzun sürüyor"
       ],
       "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
         "Kameraya veya mikrofona erişilemedi. Görüşme denetimlerinden yeniden açmayı deneyebilirsiniz."
@@ -2951,7 +2975,7 @@
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
       ],
       "STUN UDP connection failed, trying with TURN relay…": [
-        "STUN UDP bağlantısı başarısız oldu, TURN aktarımıyla deneniyor…"
+        "STUN UDP bağlantısı kurulamadı. TURN aktarımıyla deneniyor…"
       ],
       "STUN UDP connection timeout, trying with TURN relay": [
         "STUN UDP bağlantısı zaman aşımına uğradı. TURN aktarmıyla deneniyor"
@@ -2960,7 +2984,7 @@
         "Görüşme sahibi sizi görüşmeden çıkardı"
       ],
       "Trying another route…": [
-        "Başka bir yöneltme deneniyor…"
+        "Başka bir yol deneniyor…"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Ne yazık ki, şu anca çevrim içi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrim içi olduğumuzda inceleyip size geri döneceğiz."
