@@ -13,9 +13,19 @@ import { formatTimeHHMM } from '../../utils/timeFormat';
 
 import './TimeInput.scss';
 
-const validateTimeFormat = (time: string) => {
-    const regex = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/;
-    return regex.test(time);
+const normaliseInput = (time: string): string | null => {
+    const match = time.match(/^([0-1]?[0-9]|2[0-3]):([0-5][0-9])(\s?(AM|PM))?$/i);
+    if (!match) {
+        return null;
+    }
+    let hours = parseInt(match[1]);
+    const period = match[4]?.toUpperCase();
+    if (period === 'PM' && hours < 12) {
+        hours += 12;
+    } else if (period === 'AM' && hours === 12) {
+        hours = 0;
+    }
+    return `${String(hours).padStart(2, '0')}:${match[2]}`;
 };
 
 export const TimeInput = ({
@@ -36,18 +46,23 @@ export const TimeInput = ({
     const currentPlaceholder = placeholder || c('Placeholder').t`Enter time`;
 
     const [isOpen, setIsOpen] = useState(false);
+    const [isFocused, setIsFocused] = useState(false);
+    const [inputBuffer, setInputBuffer] = useState('');
+    const skipBlurRef = useRef(false);
     const anchorRef = useRef<HTMLInputElement>(null);
     const activeButtonRef = useRef<HTMLButtonElement>(null);
 
     const activeOption = options.find((option) => option.value >= value);
 
-    const displayValue = value
-        ? (() => {
-              const [hours, minutes] = value.split(':');
-              const date = new Date(2024, 0, 1, parseInt(hours), parseInt(minutes), 0, 0);
-              return formatTimeHHMM(date, timeFormat);
-          })()
-        : '';
+    const displayValue = (() => {
+        if (!value) {
+            return '';
+        }
+        const [hours, minutes] = value.split(':');
+        // date is irrelevant and is picked randomly, we only need the time part
+        const date = new Date(2024, 0, 1, parseInt(hours), parseInt(minutes), 0, 0);
+        return formatTimeHHMM(date, timeFormat);
+    })();
 
     useEffect(() => {
         if (isOpen && activeButtonRef.current) {
@@ -56,25 +71,41 @@ export const TimeInput = ({
     }, [isOpen]);
 
     const handleOptionClick = (option: string) => {
-        onChange?.(option);
+        skipBlurRef.current = true;
+        onChange(option);
         setIsOpen(false);
+    };
+
+    const handleFocus = () => {
+        setIsFocused(true);
+        setInputBuffer(displayValue);
+    };
+
+    const handleBlur = () => {
+        setIsFocused(false);
+        if (skipBlurRef.current) {
+            skipBlurRef.current = false;
+            return;
+        }
+        const normalised = normaliseInput(inputBuffer);
+        if (normalised) {
+            onChange(normalised);
+        }
+        // if invalid, silently revert — buffer resets to displayValue on next focus
     };
 
     return (
         <div className={clsx('relative', className)}>
             <InputFieldTwo
                 ref={anchorRef}
-                value={displayValue}
+                value={isFocused ? inputBuffer : displayValue}
                 onClick={() => setIsOpen(true)}
-                onChange={(e) => {
-                    const inputValue = e.target.value;
-                    if (!inputValue || validateTimeFormat(inputValue)) {
-                        onChange(inputValue);
-                    }
-                }}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                onChange={(e) => setInputBuffer(e.target.value)}
                 placeholder={currentPlaceholder}
                 autoComplete="off"
-                error={error || (value && !validateTimeFormat(value))}
+                error={error || (value && !normaliseInput(value))}
                 {...rest}
             />
             <Dropdown

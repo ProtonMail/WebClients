@@ -63,13 +63,7 @@ export const TimeInputBlock = ({
                         id={`${name}Time`}
                         name={`${name}Time`}
                         value={values[`${name}Time`]}
-                        onChange={(value) => {
-                            if (!value.includes(':')) {
-                                return;
-                            }
-
-                            onDateTimeChange({ fieldName: `${name}Time`, value });
-                        }}
+                        onChange={(value) => onDateTimeChange({ fieldName: `${name}Time`, value })}
                         options={timeOptions}
                         timeFormat={timeFormat}
                         error={timeError}
