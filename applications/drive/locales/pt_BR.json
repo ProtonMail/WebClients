@@ -159,6 +159,9 @@
       "Change": [
         "Alterar"
       ],
+      "Change my access": [
+        "Alterar meu acesso"
+      ],
       "Change password": [
         "Alterar senha"
       ],
@@ -844,6 +847,9 @@
       ],
       "Remove me": [
         "Remover-me"
+      ],
+      "Remove my access": [
+        "Remover meu acesso"
       ],
       "Remove without saving": [
         "Remover sem salvar"
@@ -3683,9 +3689,6 @@
       "Port is required": [
         "Porta é necessária"
       ],
-      "Postal code is required": [
-        "Código postal é obrigatório"
-      ],
       "Primary address key is not decrypted": [
         "A chave do endereço principal não está descriptografada"
       ],
@@ -3936,9 +3939,6 @@
       ],
       "Your import will not be processed.": [
         "Sua importação não será processada."
-      ],
-      "ZIP code is required": [
-        "O CEP é obrigatório."
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Dispositivo indecifrável"
@@ -9205,6 +9205,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" compartilhado"
+      ],
       "\"${ name }\" created successfully": [
         "\"${ name }\" criado"
       ],
@@ -11295,9 +11298,6 @@
       ]
     },
     "Status": {
-      "accepted": [
-        "aceito"
-      ],
       "pending": [
         "pendente"
       ]
@@ -12234,6 +12234,9 @@
       "Card verification": [
         "Verificação do cartão"
       ],
+      "Change access to viewer?": [
+        "Alterar acesso para visualizador?"
+      ],
       "Change layout": [
         "Alterar layout"
       ],
@@ -12816,6 +12819,9 @@
         "Remover item?",
         "Remover itens?"
       ],
+      "Remove your access?": [
+        "Remover seu acesso?"
+      ],
       "Rename a file": [
         "Renomear um arquivo"
       ],
@@ -12881,6 +12887,9 @@
       ],
       "SHA1": [
         "SHA1"
+      ],
+      "Share \"${ fileName }\"": [
+        "Compartilhar \"${ fileName }\""
       ],
       "Share your calendar with your team": [
         "Compartilhar seu calendário com sua equipe"
@@ -13197,6 +13206,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "A mensagem e o nome do arquivo são armazenados com criptografia de acesso zero, quando incluídos no e-mail."
+      ],
+      "New!": [
+        "Novo!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Nem todas as informações listadas aqui foram expostas para todos os usuários."

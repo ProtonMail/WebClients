@@ -3698,9 +3698,6 @@
       "Port is required": [
         "Puerto requerido"
       ],
-      "Postal code is required": [
-        "El código postal es requerido"
-      ],
       "Primary address key is not decrypted": [
         "La clave principal no está descifrada."
       ],
@@ -3954,9 +3951,6 @@
       ],
       "Your import will not be processed.": [
         "No se procesará tu importación."
-      ],
-      "ZIP code is required": [
-        "Se requiere el código postal."
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Dispositivo indescifrable"
@@ -11325,11 +11319,11 @@
       ]
     },
     "Status": {
-      "accepted": [
-        "aceptado"
-      ],
       "pending": [
         "pendiente"
+      ],
+      "user joined": [
+        "Se ha unido"
       ]
     },
     "Storage": {

@@ -3698,9 +3698,6 @@
       "Port is required": [
         "Απαιτείται θύρα"
       ],
-      "Postal code is required": [
-        "Απαιτείται ταχυδρομικός κώδικας"
-      ],
       "Primary address key is not decrypted": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
       ],
@@ -3954,9 +3951,6 @@
       ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
-      ],
-      "ZIP code is required": [
-        "Απαιτείται ταχυδρομικός κώδικας"
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Μη αποκρυπτογραφήσιμη συσκευή"
@@ -11187,11 +11181,11 @@
       ]
     },
     "Status": {
-      "accepted": [
-        "αποδέχθηκε"
-      ],
       "pending": [
         "εκκρεμεί"
+      ],
+      "user joined": [
+        "χρήστης συνδέθηκε"
       ]
     },
     "Storage": {

@@ -159,6 +159,9 @@
       "Change": [
         "Muuta"
       ],
+      "Change my access": [
+        "Muuta käyttöoikeuttani"
+      ],
       "Change password": [
         "Vaihda salasana"
       ],
@@ -838,6 +841,9 @@
       ],
       "Remove me": [
         "Poista minut"
+      ],
+      "Remove my access": [
+        "Poista käyttöoikeuteni"
       ],
       "Remove without saving": [
         "Poistu tallentamatta"
@@ -3540,9 +3546,6 @@
       "Port is required": [
         "Portti vaaditaan"
       ],
-      "Postal code is required": [
-        "Postinumero vaaditaan"
-      ],
       "Primary address key is not decrypted": [
         "Ensisijaisen osoitteen avaimen salausta ei ole purettu"
       ],
@@ -3775,9 +3778,6 @@
       ],
       "Your import will not be processed.": [
         "Tuontiasi ei käsitellä."
-      ],
-      "ZIP code is required": [
-        "Postinumero vaaditaan"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nimen salausta ei pysty purkamaan"
@@ -5455,6 +5455,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Jos jatkat alennusta, menetät maksullisten ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Jos poistat itsesi, menetät käyttöoikeuden tiedostoon \"${ fileName }\" etkä voi avata sitä uudelleen, ellei omistaja jaa sitä kanssasi."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Tuo ${ calendarCount }/${ totalCalendarsCount } kalenteri",
         "Tuo ${ calendarCount }/${ totalCalendarsCount } kalenteria"
@@ -6562,6 +6565,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Sinua ei laskuteta, jos peruutat ennen päivää ${ trialEndsOnFormatted }"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Et voi jakaa tiedostoa ”${ fileName }” sen jälkeen, kun käyttöoikeus on muutettu katselijaksi. Vain omistaja voi muuttaa käyttöoikeutesi uudelleen."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }. Voit peruuttaa tilauksen milloin tahansa.",
@@ -8843,6 +8849,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" jaettiin"
+      ],
       "\"${ name }\" created successfully": [
         "\"${ name }\" luotiin"
       ],
@@ -10765,11 +10774,11 @@
       ]
     },
     "Status": {
-      "accepted": [
-        "hyväksyi"
-      ],
       "pending": [
         "odottaa"
+      ],
+      "user joined": [
+        "käyttäjä liittyi"
       ]
     },
     "Storage": {
@@ -11695,6 +11704,9 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
+      "Change access to viewer?": [
+        "Muutetaanko käyttöoikeus katseluun?"
+      ],
       "Change layout": [
         "Muuta asettelua"
       ],
@@ -12250,6 +12262,9 @@
         "Poistetaanko kohde?",
         "Poistetaanko kohteet?"
       ],
+      "Remove your access?": [
+        "Poista käyttöoikeus?"
+      ],
       "Rename a file": [
         "Nimeä tiedosto uudelleen"
       ],
@@ -12318,6 +12333,9 @@
       ],
       "SHA1": [
         "SHA1"
+      ],
+      "Share \"${ fileName }\"": [
+        "Jaa \"${ fileName }\""
       ],
       "Share your calendar with your team": [
         "Jaa kalenterisi tiimillesi"
@@ -12569,6 +12587,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Vaihda valitsemiesi päivä- ja yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan mukaisesti"
       ],
+      "Change shared item settings": [
+        "Muuta jaettavan kohteen asetuksia"
+      ],
       "Customize import to reduce the number of folders": [
         "Vähennä kansioiden määrää mukauttamalla tuontia"
       ],
@@ -12610,6 +12631,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Viestin teksti ja tiedoston nimi säilytetään sähköpostiviestissä zero access -salauksella"
+      ],
+      "New!": [
+        "Uutta!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Kaikkia tässä lueteltuja tietoja ei paljastettu kaikille käyttäjille."

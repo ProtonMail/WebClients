@@ -159,6 +159,9 @@
       "Change": [
         "Değiştir"
       ],
+      "Change my access": [
+        "Erişme iznimi değiştir"
+      ],
       "Change password": [
         "Parolayı değiştir"
       ],
@@ -844,6 +847,9 @@
       ],
       "Remove me": [
         "Beni çıkar"
+      ],
+      "Remove my access": [
+        "Erişme iznimi kaldır"
       ],
       "Remove without saving": [
         "Kaydetmeden kaldır"
@@ -3692,9 +3698,6 @@
       "Port is required": [
         "Bağlantı noktasının yazılması zorunludur"
       ],
-      "Postal code is required": [
-        "Posta kodunun yazılması zorunludur"
-      ],
       "Primary address key is not decrypted": [
         "Birincil adres anahtarının şifresi çözülemedi"
       ],
@@ -3948,9 +3951,6 @@
       ],
       "Your import will not be processed.": [
         "İçe aktarma işleminiz yapılmayacak."
-      ],
-      "ZIP code is required": [
-        "Posta kodunun yazılması zorunludur"
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Şifresi çözülemeyen aygıt"
@@ -5081,7 +5081,7 @@
         "30 gün içinde ücreti geri ödeme garantisi."
       ],
       "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
-        "${ DRIVE_APP_NAME } uygulamasının yeni bir sürümü mevcut. Aramayı kullanmaya devam etmek için lütfen sayfayı yenileyin."
+        "Yeni bir ${ DRIVE_APP_NAME } sürümü yayınlanmış. Aramayı kullanmayı sürdürmek için lütfen yeniden yükleyin."
       ],
       "A number will be added to the filename": [
         "Dosya adına bir numara eklensin"
@@ -5291,7 +5291,7 @@
         "Size en uygun tarifeyi seçin."
       ],
       "Choose your service to connect with": [
-        "Bağlanmak istediğiniz hizmeti seçin"
+        "Bağlamak istediğiniz hizmeti seçin"
       ],
       "Clear all search data": [
         "Tüm arama verilerini temizle"
@@ -5666,6 +5666,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Kendinizi gruptan çıkarırsanız \"${ fileName }\" dosyasına erişiminizi kaybedersiniz ve dosyanın sahibi dosyayı sizinle yeniden paylaşmadıkça artık dosyayı açamazsınız."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar",
         "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar"
@@ -5695,7 +5698,7 @@
         "Bir sonraki adımda, bir Bitcoin adresi kullanarak ön ödemenizi yapabilirsiniz."
       ],
       "Indexing in progress": [
-        "Dizinleme devam ediyor"
+        "Dizine ekleme sürüyor"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "${ esProgress } / ${ totalProgressToShow } öge dizine ekleniyor"
@@ -6473,7 +6476,7 @@
         "Gerçek gizliliği koruyan arama özelliğini açmak için yerel dizini hazırlamamız gerekiyor. ${ DRIVE_APP_NAME } kullanmayı normal şekilde sürdürebilirsiniz. Dizin hazırlama işlemi tamamlandığında sizi bilgilendireceğiz."
       ],
       "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
-        "Gerçek anlamda arama yapabilmek için dosyalarınızı yerel olarak dizine eklememiz gerekiyor. ${ DRIVE_APP_NAME } uygulamasını normal şekilde kullanmaya devam edebilirsiniz. Dizine ekleme işlemi tamamlandığında size haber vereceğiz."
+        "Gerçek arama özelliğini açmak için yerel dizini hazırlamamız gerekiyor. ${ DRIVE_APP_NAME } kullanmayı normal şekilde sürdürebilirsiniz. Dizin hazırlama işlemi tamamlandığında sizi bilgilendireceğiz."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
@@ -6827,6 +6830,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Erişme iznini görüntüleyebilir olarak değiştirdikten sonra \"${ fileName }\" dosyasını paylaşamazsınız. Erişim izninizi yalnızca sahibi yeniden değiştirebilir."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Arkadaşınızın yıllık bir tarifeye abone olmasından 1 ay sonra, aylık bir tarifeye abone oldmasından 2 ay sonra kredi ödülünü alacaksınız."
@@ -9175,6 +9181,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" paylaşıldı"
+      ],
       "\"${ name }\" created successfully": [
         "\"${ name }\" eklendi"
       ],
@@ -11268,11 +11277,11 @@
       ]
     },
     "Status": {
-      "accepted": [
-        "kabul edilmiş"
-      ],
       "pending": [
         "bekliyor"
+      ],
+      "user joined": [
+        "kullanıcı katıldı"
       ]
     },
     "Storage": {
@@ -12207,6 +12216,9 @@
       "Card verification": [
         "Kart doğrulama"
       ],
+      "Change access to viewer?": [
+        "Görüntüleme erişme izni değiştirilsin mi?"
+      ],
       "Change layout": [
         "Görünümü değiştir"
       ],
@@ -12217,7 +12229,7 @@
         "Kötü amaçlı dosyalar denetlensin"
       ],
       "Choose a provider": [
-        "Sağlayıcı seçin"
+        "Bir hizmet sağlayıcı seçin"
       ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } adresinizi alın"
@@ -12552,7 +12564,7 @@
         "Grupları içe aktar"
       ],
       "Import your data to ${ BRAND_NAME }": [
-        "Verilerinizi ${ BRAND_NAME } aktarın"
+        "Verilerinizi ${ BRAND_NAME } içine aktarın"
       ],
       "Information exposed in breach": [
         "Veri sızıntısında açığa çıkan bilgiler"
@@ -12789,6 +12801,9 @@
         "Öge kaldırılsın mı?",
         "Ögeler kaldırılsın mı?"
       ],
+      "Remove your access?": [
+        "Erişme izniniz kaldırılsın mı?"
+      ],
       "Rename a file": [
         "Bir dosyayı yeniden adlandır"
       ],
@@ -12857,6 +12872,9 @@
       ],
       "SHA1": [
         "SHA1"
+      ],
+      "Share \"${ fileName }\"": [
+        "\"${ fileName }\" dosyasını paylaş"
       ],
       "Share your calendar with your team": [
         "Takviminizi ekibinizle paylaşın"
@@ -13132,6 +13150,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Sisteminizin gündüz veya gece kipinde olmasına göre gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
       ],
+      "Change shared item settings": [
+        "Paylaşılan öge ayarlarını değiştir"
+      ],
       "Customize import to reduce the number of folders": [
         "Klasör sayısını azaltmak için içe aktarmayı özelleştirin"
       ],
@@ -13173,6 +13194,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "E-postaya eklendiğinde, ileti ve dosya adı sıfır erişim şifrelemesi ile kaydedilir"
+      ],
+      "New!": [
+        "Yeni!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Burada listelenen tüm bilgiler tüm kullanıcılara görüntülenmez."

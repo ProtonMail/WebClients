@@ -159,6 +159,9 @@
       "Change": [
         "Cambiar"
       ],
+      "Change my access": [
+        "Cambiar mi acceso"
+      ],
       "Change password": [
         "Cambiar contraseña"
       ],
@@ -844,6 +847,9 @@
       ],
       "Remove me": [
         "Eliminarme"
+      ],
+      "Remove my access": [
+        "Borrar mi acceso"
       ],
       "Remove without saving": [
         "Eliminar sin guardar"
@@ -3692,9 +3698,6 @@
       "Port is required": [
         "Puerto requerido"
       ],
-      "Postal code is required": [
-        "Se requiere el código postal"
-      ],
       "Primary address key is not decrypted": [
         "La clave principal no está descifrada"
       ],
@@ -3948,9 +3951,6 @@
       ],
       "Your import will not be processed.": [
         "No se procesará la importación."
-      ],
-      "ZIP code is required": [
-        "Se requiere el código postal."
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Dispositivo indescifrable"
@@ -5666,6 +5666,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Si procede con darse de baja, perderá el acceso a las funciones de pago de ${ VPN_APP_NAME }."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Si se elimina de la lista, perderá el acceso a «${ fileName }» y no podrá volver a abrirlo a menos que el propietario lo comparta con usted de nuevo."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendarios"
@@ -6827,6 +6830,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se le cobrará si cancela antes del ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Ya no podrá compartir «${ fileName }» si cambia el acceso a lector. Solo el propietario podrá volver a modificar tus permisos."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Recibirá la recompensa en créditos 1 mes después de que su amistad se suscriba a un plan anual, y 2 meses después de que se suscriba a un plan mensual."
@@ -9235,6 +9241,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "«${ fileName }» compartido"
+      ],
       "\"${ name }\" created successfully": [
         "\"${ name }\" creado"
       ],
@@ -11328,11 +11337,11 @@
       ]
     },
     "Status": {
-      "accepted": [
-        "aceptado"
-      ],
       "pending": [
         "pendiente"
+      ],
+      "user joined": [
+        "usuario unido"
       ]
     },
     "Storage": {
@@ -12267,6 +12276,9 @@
       "Card verification": [
         "Verificación de tarjeta"
       ],
+      "Change access to viewer?": [
+        "¿Cambiar el acceso a lector?"
+      ],
       "Change layout": [
         "Cambiar el diseño"
       ],
@@ -12849,6 +12861,9 @@
         "¿Eliminar el elemento?",
         "¿Eliminar los elementos?"
       ],
+      "Remove your access?": [
+        "¿Borrar su acceso?"
+      ],
       "Rename a file": [
         "Renombrar un archivo"
       ],
@@ -12917,6 +12932,9 @@
       ],
       "SHA1": [
         "SHA1"
+      ],
+      "Share \"${ fileName }\"": [
+        "Compartir «${ fileName }»"
       ],
       "Share your calendar with your team": [
         "Comparta su calendario con su equipo"
@@ -13192,6 +13210,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Cambie automáticamente entre los temas preferidos para el día y la noche en sincronía con los modos de día y noche del sistema"
       ],
+      "Change shared item settings": [
+        "Cambiar ajustes de archivos compartidos"
+      ],
       "Customize import to reduce the number of folders": [
         "Personalizar importación para reducir el número de carpetas"
       ],
@@ -13233,6 +13254,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "El mensaje y nombre del archivo se almacenan con cifrado de acceso cero cuando se incluyen en el correo"
+      ],
+      "New!": [
+        "¡Nuevo!"
       ],
       "Not all information listed here was exposed for all users.": [
         "No toda la información aquí mencionada fue expuesta para todos los usuarios."
