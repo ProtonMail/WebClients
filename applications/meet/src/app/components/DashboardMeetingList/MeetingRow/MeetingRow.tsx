@@ -224,25 +224,29 @@ export const MeetingRow = ({
                     >
                         {meeting.Type !== MeetingType.PERSONAL && (
                             <>
-                                <Button
-                                    className="action-button-new meeting-row-action color-norm rounded-full flex-1 md:flex-none delete-button"
-                                    size="medium"
-                                    shape="ghost"
-                                    icon
-                                    onClick={() => setIsDeleteMeetingModalOpen(true)}
-                                >
-                                    <IcTrash alt={c('Action').t`Delete meeting`} className="m-auto" />
-                                </Button>
+                                <Tooltip title={c('Action').t`Delete`}>
+                                    <Button
+                                        className="action-button-new meeting-row-action color-norm rounded-full flex-1 md:flex-none delete-button"
+                                        size="medium"
+                                        shape="ghost"
+                                        icon
+                                        onClick={() => setIsDeleteMeetingModalOpen(true)}
+                                    >
+                                        <IcTrash className="m-auto" />
+                                    </Button>
+                                </Tooltip>
 
-                                <Button
-                                    className="action-button-new meeting-row-action color-norm rounded-full flex-1 md:flex-none"
-                                    size="medium"
-                                    shape="ghost"
-                                    icon
-                                    onClick={() => handleEditMeeting()}
-                                >
-                                    <IcPenSquare alt={c('Action').t`Edit meeting`} className="m-auto" />
-                                </Button>
+                                <Tooltip title={c('Action').t`Edit`}>
+                                    <Button
+                                        className="action-button-new meeting-row-action color-norm rounded-full flex-1 md:flex-none"
+                                        size="medium"
+                                        shape="ghost"
+                                        icon
+                                        onClick={() => handleEditMeeting()}
+                                    >
+                                        <IcPenSquare className="m-auto" />
+                                    </Button>
+                                </Tooltip>
                             </>
                         )}
                         {meeting.Type === MeetingType.PERSONAL &&
@@ -254,14 +258,16 @@ export const MeetingRow = ({
                                 />
                             )}
                     </div>
-                    <Button
-                        className="action-button-new meeting-row-action color-norm rounded-full copy-link-button flex-1 md:flex-none flex justify-center items-center"
-                        size="medium"
-                        onClick={handleCopyLink}
-                        icon
-                    >
-                        <IcSquares alt={c('Action').t`Copy meeting link`} />
-                    </Button>
+                    <Tooltip title={isRoom ? c('Action').t`Copy room link` : c('Action').t`Copy meeting link`}>
+                        <Button
+                            className="action-button-new meeting-row-action color-norm rounded-full copy-link-button flex-1 md:flex-none flex justify-center items-center"
+                            size="medium"
+                            onClick={handleCopyLink}
+                            icon
+                        >
+                            <IcSquares />
+                        </Button>
+                    </Tooltip>
                     <Button
                         className="join-button action-button-new color-norm rounded-full join-button flex-1 md:flex-none flex items-center justify-center"
                         onClick={handleJoin}
