@@ -1396,10 +1396,7 @@
         "Доверять"
       ],
       "Trust key": [
-        "Доверенный ключ",
-        "Доверенных ключа",
-        "Доверенных ключей",
-        "Доверенных ключей"
+        "Доверять ключу"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -4707,9 +4704,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш поиск дал слишком много результатов. Пожалуйста, ограничьте поиск и повторите попытку."
-      ],
-      "ZIP code is required": [
-        "Необходимо указать почтовый индекс"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -6067,12 +6061,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } может защитить и вашу компанию."
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "Не удалось переместить ${ messagesNotAuthorizedToMove } сообщение.",
-        "Не удалось переместить ${ messagesNotAuthorizedToMove } сообщения.",
-        "Не удалось переместить ${ messagesNotAuthorizedToMove } сообщений.",
-        "Не удалось переместить ${ messagesNotAuthorizedToMove } сообщений."
-      ],
       "${ n } unread conversation": [
         "${ n } непрочитанная цепочка писем",
         "${ n } непрочитанных цепочек писем",
@@ -6989,7 +6977,10 @@
         "Инициализация…"
       ],
       "Insert image": [
-        "Вставить изображение"
+        "Вставить изображение",
+        "Вставить изображения",
+        "Вставить изображения",
+        "Вставить изображения"
       ],
       "Insert link": [
         "Вставить ссылку"

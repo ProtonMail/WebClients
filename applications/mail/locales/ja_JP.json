@@ -1485,9 +1485,6 @@
       "Trust": [
         "信頼する"
       ],
-      "Trust key": [
-        "鍵を信頼する"
-      ],
       "Trust public key": [
         "公開鍵を信頼"
       ],
@@ -4837,9 +4834,6 @@
       "Port is required": [
         "ポートは必須です"
       ],
-      "Postal code is required": [
-        "郵便番号は必須です"
-      ],
       "Primary address key is not decrypted": [
         "プライマリーアドレス鍵が復号されていません"
       ],
@@ -5091,9 +5085,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
-      ],
-      "ZIP code is required": [
-        "郵便番号は必須です"
       ]
     },
     "error": {
@@ -6395,9 +6386,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } はあなたのビジネスも保護します。"
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } 件のメッセージを移動できませんでした。"
-      ],
       "${ n } unread conversation": [
         "${ n } 件の未読の会話"
       ],
@@ -7275,7 +7263,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -7453,9 +7441,6 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "ほとんどの公共のWiFiネットワークは安全ですが、一部はセキュリティ対策が不十分であり、あなたをサイバー攻撃の危険に晒してしまいます。VPNはトラフィックを暗号化することにより、あなたを保護します。"
-      ],
-      "Moving this message will cancel its scheduled send.": [
-        "このメッセージを移動すると、送信予約がキャンセルされます。"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
@@ -8023,9 +8008,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "このブラウザーは PDF ドキュメントのプレビューに対応していません。ファイルをダウンロードしてください。"
-      ],
-      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
-        "この会話には送信予約メッセージが含まれています。移動すると、送信予約がキャンセルされます。"
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "この会話には送信予約メッセージが含まれます。送信予約はキャンセルされます。"

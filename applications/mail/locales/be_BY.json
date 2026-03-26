@@ -1498,10 +1498,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -4957,9 +4954,6 @@
       "Port is required": [
         "Патрабуецца ўвесці порт"
       ],
-      "Postal code is required": [
-        "Патрабуецца ўвесці паштовы індэкс"
-      ],
       "Primary address key is not decrypted": [
         "Ключ асноўнага адраса не расшыфраваны"
       ],
@@ -5229,9 +5223,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш пошук вярнуў занадта шмат вынікаў. Абмяжуйце вобласць пошуку і паспрабуйце яшчэ раз."
-      ],
-      "ZIP code is required": [
-        "Патрабуецца ўвесці паштовы індэкс"
       ]
     },
     "error": {
@@ -6676,12 +6667,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } можа абараніць і ваш бізнес."
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "Не ўдалося перамясціць ${ messagesNotAuthorizedToMove } паведамленне.",
-        "Не ўдалося перамясціць ${ messagesNotAuthorizedToMove } паведамленні.",
-        "Не ўдалося перамясціць ${ messagesNotAuthorizedToMove } паведамленняў.",
-        "Не ўдалося перамясціць ${ messagesNotAuthorizedToMove } паведамленняў."
-      ],
       "${ n } unread conversation": [
         "${ n } непрачытаная размова",
         "${ n } непрачытаныя размовы",
@@ -7694,7 +7679,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -7872,9 +7860,6 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Большасць агульнадаступных сетак Wi-Fi з'яўляюцца бяспечнымі, але ў некаторых адсутнічаюць функцыі бяспекі і гэта падвяргае вас кіберпагрозам. VPN шыфруе трафік і абараняе ваша падключэнне."
-      ],
-      "Moving this message will cancel its scheduled send.": [
-        "Перамяшчэнне гэтага паведамлення скасуе яго запланаваную адпраўку."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выбераце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
@@ -8454,9 +8439,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Дадзены браўзер не падтрымлівае папярэдні прагляд дакументаў PDF. Спампуйце файл."
-      ],
-      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
-        "Гэта размова змяшчае запланаванае паведамленне. Перамяшчэнне яго скасуе запланаваную адпраўку."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Гэта размова змяшчае запланаванае паведамленне. Адпраўка гэтага паведамлення будзе скасавана."

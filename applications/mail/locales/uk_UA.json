@@ -1296,6 +1296,9 @@
       "Trust": [
         "Довіряти"
       ],
+      "Trust key": [
+        "Довіряти ключу"
+      ],
       "Trust public key": [
         "Довіряти відкритому ключу"
       ],
@@ -4260,9 +4263,6 @@
       "Port is required": [
         "Порт обов'язковий"
       ],
-      "Postal code is required": [
-        "Необхідно вказати поштовий індекс"
-      ],
       "Primary address key is not decrypted": [
         "Ключ основної адреси не розшифрований"
       ],
@@ -5839,12 +5839,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } також може захистити ваш бізнес."
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } повідомлення не вдалося перемістити.",
-        "${ messagesNotAuthorizedToMove } повідомлення не вдалося перемістити.",
-        "${ messagesNotAuthorizedToMove } повідомлень не вдалося перемістити.",
-        "${ messagesNotAuthorizedToMove } повідомлень не вдалося перемістити."
-      ],
       "${ n } unread conversation": [
         "${ n } непрочитана розмова",
         "${ n } непрочитані розмови",
@@ -6662,6 +6656,9 @@
         "Ініціалізація…"
       ],
       "Insert image": [
+        "Вставити зображення",
+        "Вставити зображення",
+        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [

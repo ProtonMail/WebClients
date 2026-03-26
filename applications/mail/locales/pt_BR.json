@@ -1490,8 +1490,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -4880,9 +4879,6 @@
       "Port is required": [
         "Porta é necessária"
       ],
-      "Postal code is required": [
-        "Código postal é obrigatório"
-      ],
       "Primary address key is not decrypted": [
         "A chave do endereço principal não está descriptografada"
       ],
@@ -5141,9 +5137,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa correspondeu a muitos resultados. Limite sua busca e tente novamente."
-      ],
-      "ZIP code is required": [
-        "O CEP é obrigatório."
       ]
     },
     "error": {
@@ -6506,10 +6499,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } tambem pode proteger seus negócios."
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "Não foi possível mover ${ messagesNotAuthorizedToMove } mensagem.",
-        "Não foi possível mover ${ messagesNotAuthorizedToMove } mensagens."
-      ],
       "${ n } unread conversation": [
         "${ n } conversa não lida",
         "${ n } conversas não lidas"
@@ -7438,7 +7427,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -7616,9 +7606,6 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "A maioria das redes Wi-Fi públicas é segura, mas algumas são vulneráveis, expondo você a ameaças cibernéticas. Uma VPN criptografa seu tráfego, mantendo você protegido."
-      ],
-      "Moving this message will cancel its scheduled send.": [
-        "Mover esta mensagem cancelará o envio programado."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie sua nova pasta e selecione a pasta superior onde deseja colocá-la. Se você não selecionar uma pasta superior, esta nova pasta será criada como uma pasta de nível superior."
@@ -8190,9 +8177,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador não suporta pré-visualização de documentos PDF. Baixe o arquivo."
-      ],
-      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
-        "Esta conversa contém uma mensagem agendada. Movê-la cancelará o envio agendado."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Esta conversa contém uma mensagem programada. O envio desta mensagem será cancelado."

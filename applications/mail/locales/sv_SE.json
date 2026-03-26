@@ -1490,8 +1490,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -4868,9 +4867,6 @@
       "Port is required": [
         "Port är obligatoriskt"
       ],
-      "Postal code is required": [
-        "Postnummer är obligatoriskt"
-      ],
       "Primary address key is not decrypted": [
         "Primär adressnyckel är inte avkrypterad"
       ],
@@ -5129,9 +5125,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
-      ],
-      "ZIP code is required": [
-        "Postnummer är obligatoriskt"
       ]
     },
     "error": {
@@ -6491,10 +6484,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kan också skydda ditt företag."
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } meddelande kunde inte flyttas.",
-        "${ messagesNotAuthorizedToMove } meddelanden kunde inte flyttas."
-      ],
       "${ n } unread conversation": [
         "${ n } oläst konversation",
         "${ n } olästa konversationer"
@@ -7420,7 +7409,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -7598,9 +7588,6 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De flesta offentliga WiFi-nätverk är säkra, men vissa saknar säkerhet, vilket gör att du utsätts för cyberhot. Ett VPN krypterar din trafik och håller dig skyddad."
-      ],
-      "Moving this message will cancel its scheduled send.": [
-        "Att flytta detta meddelande kommer avbryta dess schemalagda sändning."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Namnge din nya mapp och välj den överordnade mapp du vill lägga den i. Om du inte väljer en överordnad mapp kommer denna nya mapp att skapas som en överordnad mapp."
@@ -8166,9 +8153,6 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denna webbläsare stöder inte förhandsgranskning av PDF-dokument. Ladda ner filen."
-      ],
-      "This conversation contains a scheduled message. Moving it will cancel the scheduled send.": [
-        "Denna konversation innehåller ett schemalagt meddelande. Att flytta det kommer att avbryta den schemalagda sändningen."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Denna konversation innehåller ett schemalagt meddelande. Sändningen av detta meddelande kommer att avbrytas."
