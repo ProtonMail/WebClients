@@ -9,7 +9,7 @@ import { userAgent } from './lib/user-agent';
 import { store } from './store';
 import type { RemoteManifestResponse } from './update';
 import { UPDATE_SOURCE_URL, checkForUpdates } from './update';
-import { isWindows } from './utils/platform';
+import { isMac, isWindows } from './utils/platform';
 
 jest.mock('electron', () => ({
     app: { isPackaged: true, isReady: () => true },
@@ -226,7 +226,9 @@ describe('Electron updater', () => {
         expect(autoUpdater.checkForUpdates).not.toHaveBeenCalled();
     });
 
-    it('should update feed url depending on the beta settings', async () => {
+    it('should update feed url on mac depending on the beta settings', async () => {
+        (isMac as jest.Mock).mockImplementation(() => true);
+
         await check([
             {
                 Version: '1.1.0',
@@ -238,8 +240,8 @@ describe('Electron updater', () => {
 
         expect(autoUpdater.setFeedURL).toHaveBeenCalledWith({
             headers: { 'user-agent': userAgent() },
-            serverType: 'default',
-            url: UPDATE_SOURCE_URL,
+            serverType: 'json',
+            url: `${UPDATE_SOURCE_URL}/RELEASES.json`,
         });
 
         jest.clearAllMocks();
@@ -258,25 +260,27 @@ describe('Electron updater', () => {
 
         expect(autoUpdater.setFeedURL).toHaveBeenCalledWith({
             headers: { 'user-agent': userAgent() },
-            serverType: 'default',
-            url: `${UPDATE_SOURCE_URL}/beta`,
+            serverType: 'json',
+            url: `${UPDATE_SOURCE_URL}/beta/RELEASES.json`,
         });
     });
 
     it('should use native windows binding to trigger updates on windows', async () => {
         (isWindows as jest.Mock).mockImplementation(() => true);
 
+        const url = 'url';
+
         const update = await check([
             {
                 Version: '1.1.0',
                 RolloutPercentage: 1.0,
                 CategoryName: 'Stable',
-                File: [],
+                File: [{ Url: url }],
             },
         ]);
 
         expect(update).toBe(true);
         expect(autoUpdater.checkForUpdates).not.toHaveBeenCalled();
-        expect(msix_updater.installUpdate).toHaveBeenCalled();
+        expect(msix_updater.installUpdate).toHaveBeenCalledWith(url);
     });
 });

@@ -14,8 +14,6 @@ import { store } from './store';
 import logger from './utils/logger';
 import { isMac, isProdEnv, isWindows } from './utils/platform';
 
-export const installWindowsUpdate = async (buildUri: string) => msix_updater.installUpdate(buildUri);
-
 const SUPPORTED_PLATFORMS = ['darwin', 'win32'];
 export const UPDATE_SOURCE_URL = `https://proton.me/download/PassDesktop/${process.platform}/${ARCH}`;
 const UPDATE_INTERVAL = 60 * 60 * 1_000; // 1h
@@ -133,7 +131,7 @@ export const checkForUpdates = async (session: Session): Promise<boolean> => {
             return false;
         }
 
-        await installWindowsUpdate(url);
+        await msix_updater.installUpdate(url);
     } else {
         autoUpdater.checkForUpdates();
     }
