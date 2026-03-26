@@ -16,7 +16,6 @@ describe('useCategoriesShortcuts', () => {
         it('should return inbox shortcuts if flag is disabled', () => {
             mockUseCategoriesView.mockReturnValue({
                 categoriesStore: [],
-                categoriesTabs: [],
                 activeCategoriesTabs: [],
                 categoryViewAccess: false,
                 shouldShowTabs: false,
@@ -39,7 +38,6 @@ describe('useCategoriesShortcuts', () => {
         it('should return inbox shortcuts if there is no active categories', () => {
             mockUseCategoriesView.mockReturnValue({
                 categoriesStore: [],
-                categoriesTabs: [],
                 activeCategoriesTabs: [],
                 categoryViewAccess: true,
                 shouldShowTabs: true,
@@ -62,7 +60,6 @@ describe('useCategoriesShortcuts', () => {
         it('should return only inbox if categories are disabled', () => {
             mockUseCategoriesView.mockReturnValue({
                 categoriesStore: mockCategoriesStore,
-                categoriesTabs: mockActiveCategoriesData,
                 activeCategoriesTabs: mockActiveCategoriesData,
                 categoryViewAccess: false,
                 shouldShowTabs: false,
@@ -78,7 +75,6 @@ describe('useCategoriesShortcuts', () => {
         it('should return all activated categories', () => {
             mockUseCategoriesView.mockReturnValue({
                 categoriesStore: mockCategoriesStore,
-                categoriesTabs: mockActiveCategoriesData,
                 activeCategoriesTabs: mockActiveCategoriesData,
                 categoryViewAccess: true,
                 shouldShowTabs: true,
@@ -92,7 +88,6 @@ describe('useCategoriesShortcuts', () => {
         it('should return only the activated categories', () => {
             mockUseCategoriesView.mockReturnValue({
                 categoriesStore: mockCategoriesStore,
-                categoriesTabs: mockActiveCategoriesData,
                 activeCategoriesTabs: [
                     mockActiveCategoriesData[0],
                     mockActiveCategoriesData[1],
