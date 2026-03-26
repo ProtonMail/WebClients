@@ -6800,9 +6800,6 @@
       "Port is required": [
         "Port er påkrævet."
       ],
-      "Postal code is required": [
-        "Postnummer kræves"
-      ],
       "Primary address key is not decrypted": [
         "Primære adressenøgle er ikke dekrypteret"
       ],
@@ -6814,6 +6811,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Primær nøgle hentet for ${ BRAND_NAME }-bruger er ikke gyldig til afsendelse"
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Private brugere kan tilføjes til gruppen, når de har logget ind for første gang: ${ displayedNames }"
       ],
       "Process aborted": [
         "Proces afbrudt"
@@ -7040,9 +7040,6 @@
       ],
       "Zero keys reactivated": [
         "Nul nøgler genaktiveret"
-      ],
-      "ZIP code is required": [
-        "Postnummer er påkrævet"
       ]
     },
     "error": {
@@ -9903,9 +9900,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpoint URL modtaget fra din identitetsudbyder (f.eks. https://idp.example.com/sso/saml)."
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "Slutter ${ formattedPeriodEndDate }"
-      ],
       "Enhance your network security": [
         "Styrk din netværkssikkerhed"
       ],
@@ -11112,9 +11106,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Begynd at bruge den kortere, mere catchy version af din e-mailadresse."
-      ],
-      "Starts on ${ startsOnTime }": [
-        "Starter kl. ${ startsOnTime }"
       ],
       "Step ${ step }": [
         "Trin ${ step }",
@@ -13300,9 +13291,6 @@
       ],
       "Don't show this again": [
         "Vis ikke dette igen"
-      ],
-      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
-        "Doner $1 eller mere til ${ BRAND_NAME } Foundation"
       ],
       "Donation amount": [
         "Donationsbeløb"
