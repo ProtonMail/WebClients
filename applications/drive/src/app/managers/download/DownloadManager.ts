@@ -1,11 +1,10 @@
 import type { NodeEntity, ProtonDriveClient, ProtonDrivePublicLinkClient } from '@proton/drive';
-import { NodeType, SDKEvent } from '@proton/drive';
+import { AbortError, NodeType, SDKEvent } from '@proton/drive';
 import { TransferSpeedMetrics } from '@proton/drive/internal/performance/transferSpeedMetrics';
 import metrics from '@proton/metrics';
 
 import { getNodeStorageSize } from '../../utils/sdk/getNodeStorageSize';
 import { bufferToStream } from '../../utils/stream';
-import { TransferCancel } from '../../utils/transfer';
 import { loadCreateReadableStreamWrapper } from '../../utils/webStreamsPolyfill';
 import type { DownloadItem } from '../../zustand/download/downloadManager.store';
 import {
@@ -360,8 +359,8 @@ export class DownloadManager {
                     }
                 },
                 onRejected: async () => {
-                    await abortSaving(new TransferCancel({ id: downloadId }));
-                    throw new TransferCancel({ id: downloadId });
+                    await abortSaving(new AbortError(`Transfer ${downloadId} canceled`));
+                    throw new AbortError(`Transfer ${downloadId} canceled`);
                 },
                 onError: abortSaving,
             });
@@ -619,7 +618,7 @@ export class DownloadManager {
         downloadIds.forEach((id) => {
             this.downloadSpeedMetrics.onFileEnded(id);
             const active = this.activeDownloads.get(id);
-            active?.abortController.abort(new TransferCancel({ id }));
+            active?.abortController.abort(new AbortError(`Transfer ${id} canceled`));
         });
     }
 
