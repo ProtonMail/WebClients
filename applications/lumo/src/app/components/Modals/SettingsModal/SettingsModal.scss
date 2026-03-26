@@ -129,12 +129,12 @@ im.$media-expressions: $media-expressions;
 
 	// Top bar with border that extends full width to edges
 	.top-bar {
-		margin-block-end: 0.5rem;
+		margin-block-end: 0.25rem;
 		border-block-end: 1px solid var(--border-weak);
 
 		// Extend border to very edges
 		margin-inline: -2rem;
-		padding-block: 0.6rem 1.3rem;
+		padding-block: 0.5rem 0.75rem;
 		padding-inline: 2rem;
 	}
 
@@ -276,7 +276,7 @@ im.$media-expressions: $media-expressions;
 
 				li {
 					display: flex !important;
-					align-items: center !important;
+					align-items: flex-start !important;
 					gap: 0.5rem !important;
 					padding: 0 !important;
 					margin: 0 !important;
@@ -292,11 +292,11 @@ im.$media-expressions: $media-expressions;
 
 					span {
 						font-size: 0.875rem !important;
-						line-height: 1.3 !important;
+						line-height: 1.4 !important;
 						flex: 1 !important;
-						white-space: nowrap !important;
-						overflow: hidden !important;
-						text-overflow: ellipsis !important;
+						white-space: normal !important;
+						overflow: visible !important;
+						text-overflow: clip !important;
 					}
 				}
 			}
@@ -322,11 +322,11 @@ im.$media-expressions: $media-expressions;
 		border-radius: 0.75rem;
 	}
 
-	// Fix features list layout on all screen sizes
+	// Feature list: allow wrapping (single-line ellipsis looked cramped in narrow panels)
 	ul {
 		li {
 			display: flex !important;
-			align-items: center !important;
+			align-items: flex-start !important;
 			flex-wrap: nowrap !important;
 			inline-size: 100% !important;
 
@@ -337,9 +337,10 @@ im.$media-expressions: $media-expressions;
 
 			span {
 				flex: 1 !important;
-				white-space: nowrap !important;
-				overflow: hidden !important;
-				text-overflow: ellipsis !important;
+				white-space: normal !important;
+				overflow: visible !important;
+				text-overflow: clip !important;
+				line-height: 1.4 !important;
 				color: var(--settings-modal-upsell-text) !important;
 			}
 		}

@@ -801,6 +801,7 @@ export enum LUMO_UPSELL_PATHS {
     SIDEBAR_BUTTON = 'sidebar-button',
     SETTINGS_MODAL = 'settings-modal',
     SETTINGS_MODAL_PLAN = 'settings-modal-plan',
+    API_KEYS = 'api-keys',
     LIMIT_QUESTIONS = 'limit-questions',
     QUESTION_LIMIT_FREE = 'free-user-question-limit',
     QUESTION_LIMIT_B2B_B2C = 'paid-user-question-limit',
