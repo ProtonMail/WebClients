@@ -1684,6 +1684,9 @@
       ],
       "Use recovery code": [
         "Använd återställningskod"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Fortsätt till ${ planOrAppName }"
       ]
     },
     "action": {
@@ -9900,6 +9903,15 @@
       ],
       "Your password (trusted contact)": [
         "Ditt lösenord (betrodd kontakt)"
+      ],
+      "Additional comments": [
+        "Ytterligare kommentarer"
+      ],
+      "Continue cancelling": [
+        "Fortsätt avbryta"
+      ],
+      "Skip feedback": [
+        "Hoppa över feedback"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11750,6 +11762,12 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Välkommen till ${ MAIL_APP_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Att byta e-post är svårt. ${ BRAND_NAME } gör det enkelt. Anslut ditt gamla konto och hantera allt i en fokuserad, annonsfri arbetsyta."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Uppdatera din e-post på de tjänster du använder mest. Förhindra spårning och skydda din integritet."
       ]
     },
     "Onboarding modal": {
@@ -12575,6 +12593,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Anything you'd like us to know": [
+        "Något du vill att vi ska veta"
+      ],
+      "Enter a name": [
+        "Ange ett namn"
+      ],
+      "Select a provider": [
+        "Välj en leverantör"
       ]
     },
     "Placeholder for contact group name": {
@@ -16352,6 +16379,26 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Du kommer omdirigeras till din tredjeparts SSO-leverantör."
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Annat"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

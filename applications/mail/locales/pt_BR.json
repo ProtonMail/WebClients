@@ -1684,6 +1684,9 @@
       ],
       "Use recovery code": [
         "Usar um código de recuperação"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Continuar com ${ planOrAppName }"
       ]
     },
     "action": {
@@ -9941,6 +9944,15 @@
       ],
       "Your password (trusted contact)": [
         "Sua senha (contato de confiança)"
+      ],
+      "Additional comments": [
+        "Comentários adicionais"
+      ],
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
+      "Skip feedback": [
+        "Pular feedback"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12625,6 +12637,12 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Enter a name": [
+        "Insira um nome"
+      ],
+      "Select a provider": [
+        "Selecione um provedor"
       ]
     },
     "Placeholder for contact group name": {
@@ -16405,6 +16423,26 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Você será redirecionado para o seu provedor de SSO de terceiros."
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Outros"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
