@@ -74,6 +74,24 @@ describe('Escape', () => {
                 `@import proton-url('https://malicious-tracker.example.com/spy.css');`
             );
         });
+
+        it('should escape a URL hidden between CSS comments (comment-based bypass)', () => {
+            const style = `* { background:/*@import '*/ url(https://attacker.com/image.png); /*'*/ }`;
+
+            expect(escapeURLinStyle(style)).toEqual(`* { background: proton-url(https://attacker.com/image.png);  }`);
+        });
+
+        it('should escape a URL preceded by a CSS comment', () => {
+            const style = `/* hidden */ background: url(https://attacker.com/image.png);`;
+
+            expect(escapeURLinStyle(style)).toEqual(` background: proton-url(https://attacker.com/image.png);`);
+        });
+
+        it('should strip CSS comments even when no URLs are present', () => {
+            const style = `/* comment */ color: red;`;
+
+            expect(escapeURLinStyle(style)).toEqual(` color: red;`);
+        });
     });
 
     describe('unescape', () => {

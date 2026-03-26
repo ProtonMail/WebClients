@@ -114,9 +114,13 @@ export const escapeURLinStyle = (style: string) => {
         return '';
     }
 
+    // Strip CSS comments so the sanitizer sees the same tokens the CSS parser would.
+    // This prevents attackers from hiding url() calls inside comment boundaries.
+    const withoutCSSComments = unescapedEncoding.replace(/\/\*[\s\S]*?\*\//g, '');
+
     const escapeFlag = unescapedEncoding !== style;
 
-    const escapedStyle = unescapedEncoding
+    const escapedStyle = withoutCSSComments
         .replace(/\\r/g, 'r')
         .replace(
             REGEXP_URL_ATTR,
