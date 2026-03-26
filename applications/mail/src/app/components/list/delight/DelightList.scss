@@ -22,6 +22,7 @@
 .items-column-list-inner {
 	border-inline-end: 1px solid var(--border-weak);
 	min-block-size: 100%;
+	transform: translateZ(0);
 }
 
 .loader-indicator::before {
