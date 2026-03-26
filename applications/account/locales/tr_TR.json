@@ -463,7 +463,7 @@
         "“${ Name }” süzgecini sil"
       ],
       "Delete forward": [
-        "Yönlendirmeyi sil"
+        "İletmeyi sil"
       ],
       "Delete Gateway": [
         "Ağ geçidini sil"
@@ -1192,7 +1192,7 @@
         "Etki alanını kaldır"
       ],
       "Remove forward": [
-        "Yönlendirmeyi kaldır"
+        "İletmeyi kaldır"
       ],
       "Remove from favorites": [
         "Beğenilenlerden kaldır"
@@ -4836,7 +4836,7 @@
         "Bilgisayarınızdaki dosyaları bulutla kolayca eşitleyin ve mobil aygıtınızdan erişin."
       ],
       "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
-        "Eski sağlayıcınızdaki e-postaları, takvim etkinliklerini ve kişileri kolayca aktarın. Tek seferlik içe aktarma veya sürekli otomatik senkronizasyon arasında seçim yapın."
+        "Eski hizmet sağlayıcınızdaki e-postaları, takvim etkinliklerini ve kişileri kolayca aktarın. Tek seferlik içe aktarma ya da sürekli otomatik eşitleme yöntemlerinden birini seçin."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Bu özelliklere erişmek için ${ PROTON_SENTINEL_NAME } özelliğini açın"
@@ -6839,9 +6839,6 @@
       "Port is required": [
         "Bağlantı noktasının yazılması zorunludur"
       ],
-      "Postal code is required": [
-        "Posta kodunun yazılması zorunludur"
-      ],
       "Primary address key is not decrypted": [
         "Birincil adres anahtarının şifresi çözülemedi"
       ],
@@ -6853,6 +6850,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "${ BRAND_NAME } kullanıcısı için alınan birincil anahtar, gönderim için geçerli değil"
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Gizli kullanıcılar ilk kez oturum açmalarından sonra gruba eklenebilirler: ${ displayedNames }"
       ],
       "Process aborted": [
         "İşlem iptal edildi"
@@ -7085,9 +7085,6 @@
       ],
       "Zero keys reactivated": [
         "Hiç bir anahtar yeniden kullanıma alınmadı"
-      ],
-      "ZIP code is required": [
-        "Posta kodunun yazılması zorunludur"
       ]
     },
     "error": {
@@ -8869,7 +8866,7 @@
         "Gecikti"
       ],
       "Disabled": [
-        "Devre dışı"
+        "Kapalı"
       ],
       "Failed": [
         "Tamamlanamadı"
@@ -8878,7 +8875,7 @@
         "İçe aktarıldı"
       ],
       "In progress...": [
-        "Devam ediyor..."
+        "İşleniyor..."
       ],
       "Paused": [
         "Duraklatıldı"
@@ -8887,7 +8884,7 @@
         "Geri alma tamamlandı"
       ],
       "Undo in progress": [
-        "Geri alma işlemi devam ediyor"
+        "Geri alma işlemi sürüyor"
       ]
     },
     "Import type": {
@@ -9425,10 +9422,10 @@
         "Eklenti ile iletişim kurulurken bir sorun çıktı"
       ],
       "An import is paused because the connection to your email provider was lost.": [
-        "E-posta hizmeti sağlayıcınızla olan bağlantı kesildiği için içe aktarma işlemi duraklatıldı."
+        "E-posta hizmeti sağlayıcınızla olan bağlantı kesildiğinden içe aktarma duraklatıldı."
       ],
       "An import is paused because your storage is almost full.": [
-        "Depolama alanınız neredeyse dolduğu için aktarma duraklatıldı."
+        "Depolama alanınız neredeyse dolduğundan içe aktarma duraklatıldı."
       ],
       "and": [
         "ve"
@@ -9641,7 +9638,7 @@
         "İlerlemek için bir varlık kimliği seçin"
       ],
       "Choose your service to connect with": [
-        "Bağlanmak istediğiniz hizmeti seçin"
+        "Bağlamak istediğiniz hizmeti seçin"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
@@ -9662,7 +9659,7 @@
         "Çok yakında"
       ],
       "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
-        "${ VPN_APP_NAME } uygulamasını TV'nizde kullanmaya başlamak için bu aygıtta oturum açma işlemini tamamlayın."
+        "TV üzerinde ${ VPN_APP_NAME } kullanmak için bu aygıtta oturum açma işlemini tamamlayın."
       ],
       "Compromised": [
         "Ele geçirilmiş"
@@ -10008,9 +10005,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Kimlik hizmeti sağlayıcınızın uç nokta adresi (örnek: https://idp.ornek.com/sso/saml)."
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "${ formattedPeriodEndDate } tarihinde sona eriyor"
-      ],
       "Enhance your network security": [
         "Ağ güvenliğinizi artırın"
       ],
@@ -10153,7 +10147,7 @@
         "Başka bir e-posta hizmetinden ${ MAIL_APP_NAME } uygulamasına geçiş yapan kullanıcılar için, sorunsuz bir geçiş sağlamak üzere MX kaydını değiştirmeden önce ${ boldAddresses } sekmesini seçin ve tüm etkin e-posta adreslerini ekleyin."
       ],
       "Forwarding automatically sends new incoming emails to your Inbox.": [
-        "Yönlendirme özelliği gelen yeni e-postaları otomatik olarak Gelen Kutunuza gönderir."
+        "İletme özelliği gelen yeni e-postaları otomatik olarak gelen kutunuza gönderir."
       ],
       "Free forever": [
         "Sonsuza kadar ücretsiz"
@@ -10162,7 +10156,7 @@
         "Ücretsiz deneme"
       ],
       "Free up space or upgrade your storage to continue.": [
-        "Devam etmek için depolama alanınızı boşaltın veya depolama kapasitenizi artırın."
+        "İlerlemek için depolama alanınızı boşaltın ya da tarfenizi yükseltin."
       ],
       "Friends and family": [
         "Arkadaşlar ve aile"
@@ -10349,8 +10343,8 @@
         "Şuradan içe aktar"
       ],
       "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
-        "Bant genişliği sınırlaması nedeniyle ${ accounts } dosyasından içe aktarma işlemi geçici olarak ertelenmiştir.",
-        "Bant genişliği sınırlaması nedeniyle ${ accounts } dosyasından içe aktarma işlemi geçici olarak ertelenmiştir."
+        "Bant genişliği sınırlaması nedeniyle ${ accounts } içe aktarımı geçici olarak ertelendi.",
+        "Bant genişliği sınırlaması nedeniyle ${ accounts } içe aktarımı geçici olarak ertelendi."
       ],
       "Import in progress": [
         "İçe aktarılıyor"
@@ -10359,7 +10353,7 @@
         "E-posta kutusunu içe aktar"
       ],
       "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
-        "E-postaları, takvimleri veya kişileri ${ BRAND_NAME } hesabınıza tek seferlik olarak içe aktarın."
+        "E-postaları, takvimleri veya kişileri ${ BRAND_NAME } hesabınıza tek seferlik içe aktarın."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "ÖNEMLİ: DNS panonuz CNAME değerlerinin noktayla bitmesine izin vermiyorsa CNAME değerlerindeki son noktayı kaldırabilirsiniz."
@@ -10949,7 +10943,7 @@
         "Lütfen tarayıcı eklentisi ayarlarını açın ve ${ PASS_APP_NAME } eklentisine site verilerine erişme izni verin. Ardından bu sayfayı yenileyin."
       ],
       "Please reconnect to continue.": [
-        "Devam etmek için lütfen yeniden bağlanın."
+        "İlerlemek için lütfen yeniden bağlanın."
       ],
       "Please select the folders you would like to import:": [
         "Lütfen içe aktarmak istediğiniz klasörleri seçin:"
@@ -11279,9 +11273,6 @@
       "Start using the shorter, catchier version of your email address.": [
         "E-posta adresinizin daha kısa ve kolay sürümünü kullanmaya başlayın."
       ],
-      "Starts on ${ startsOnTime }": [
-        "Başlangıç tarihi: ${ startsOnTime }"
-      ],
       "Step ${ step }": [
         "${ step }. adım",
         "${ step }. adım"
@@ -11331,6 +11322,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } avantajlarınızı sürdürmek için, aboneliğinizi Google Play Store üzerinden ${ byDate } tarihine kadar yeniden başlatın. ${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Abonelik ${ startsOnTime } zamanında başlar"
       ],
       "Summary": [
         "Özet"
@@ -11387,7 +11381,7 @@
         "Geri bildiriminiz için teşekkürler!"
       ],
       "The ${ bandwidthLimitLink } was reached. We'll automatically resume it once it resets.": [
-        "${ bandwidthLimitLink } sınırına ulaşıldı. Sınır sıfırlandığında hizmet otomatik olarak yeniden başlayacak."
+        "${ bandwidthLimitLink } sınırına ulaşıldı. Sınır sıfırlandığında işlem otomatik olarak sürdürülecek."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked } iletisi artık görüntülenmeyecek. Ancak yine de ${ encryptionAndKeysLink } altında verilerinizin şifresini çözebilirsiniz."
@@ -11685,6 +11679,9 @@
       ],
       "Total: ${ totalPrice }": [
         "Toplam: ${ totalPrice }"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Deneme süresi ${ formattedPeriodEndDate } tarihinde sona eriyor"
       ],
       "trusted device": [
         "güvenilen aygıt"
@@ -13515,8 +13512,8 @@
       "Don't show this again": [
         "Bu bir daha görüntülenmesin"
       ],
-      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
-        "${ BRAND_NAME } Vakfı için 1 USD veya daha fazla bağış yapın"
+      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
+        "${ BRAND_NAME } Vakfı için ${ minimumDonation } veya üzerinde bağış yapın"
       ],
       "Donation amount": [
         "Bağış tutarı"
@@ -15316,7 +15313,7 @@
         "${ BRAND_NAME } hesabı"
       ],
       "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
-        "Çocuğunuzun yarınki dijital güvenliğini sağlamak için bugün atılacak basit bir adım. Çocuğunuz için özel bir ${ BRAND_NAME } e-posta adresi ayırtın."
+        "Çocuğunuzun dijital güvenliğini yarın sağlamak için bugün atılacak basit bir adım. Çocuğunuz için gizli bir ${ BRAND_NAME } e-posta adresi ayırtın."
       ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "Çocuğunuz için ayırtılmış gizliliği koruyan ${ BRAND_NAME } e-posta adresini etkinleştirin ve hesabını kurun."
@@ -15355,7 +15352,7 @@
         "Çocuğunuzun ${ BRAND_NAME } hesabına erişin | ${ BRAND_NAME }"
       ],
       "Reserve your child's private email | ${ BRAND_NAME }": [
-        "Çocuğunuz için özel e-posta adresi rezerve edin | ${ BRAND_NAME }"
+        "Çocuğunuzun gizli e-posta adresini ayırtın | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "${ BRAND_NAME } hesabınızın parolasını sıfırlayın"
@@ -22875,7 +22872,7 @@
         "Varsayılan e-posta uygulamanızı kontrol edin"
       ],
       "Choose a provider": [
-        "Sağlayıcı seçin"
+        "Bir hizmet sağlayıcı seçin"
       ],
       "Choose an account": [
         "Bir hesap seçin"
@@ -23343,7 +23340,7 @@
         "E-postaları iletme"
       ],
       "Forwardings": [
-        "Yönlendirmeler"
+        "İletmeler"
       ],
       "Free": [
         "Free"
@@ -23482,7 +23479,7 @@
         "${ PRODUCT_NAMES.EASY_SWITCH } ile içe aktarma"
       ],
       "Import your data to ${ BRAND_NAME }": [
-        "Verilerinizi ${ BRAND_NAME } aktarın"
+        "Verilerinizi ${ BRAND_NAME } içine aktarın"
       ],
       "Imports": [
         "İçe aktarmalar"
@@ -23941,7 +23938,7 @@
         "Oturum açın ve erişim izni verin"
       ],
       "Sign in on TV": [
-        "TV'de oturum aç"
+        "TV üzerinde oturum aç"
       ],
       "Sign in to join the Beta program": [
         "Beta programına katılmak için oturum açın"

@@ -6927,9 +6927,6 @@
       "Port is required": [
         "Port je požadovaný"
       ],
-      "Postal code is required": [
-        "Poštové smerovacie číslo je povinné"
-      ],
       "Primary address key is not decrypted": [
         "Kľúč primárnej adresy nebol dešifrovaný"
       ],
@@ -7175,9 +7172,6 @@
       ],
       "Zero keys reactivated": [
         "Žiadne kľúče neboli znovu aktivované"
-      ],
-      "ZIP code is required": [
-        "PSČ je povinné"
       ]
     },
     "error": {
@@ -10228,9 +10222,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL adresa koncového bodu získaná od poskytovateľa identity (napr. https://idp.example.com/sso/saml)."
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "Končí dňa ${ formattedPeriodEndDate }"
-      ],
       "Enhance your network security": [
         "Zlepšite bezpečnosť vašej siete"
       ],
@@ -11515,9 +11506,6 @@
       "Start using the shorter, catchier version of your email address.": [
         "Začnite používať kratšiu verziu vašej emailovej adresy."
       ],
-      "Starts on ${ startsOnTime }": [
-        "Začína ${ startsOnTime }"
-      ],
       "Step ${ step }": [
         "Krok ${ step }",
         "Krok ${ step }",
@@ -11571,6 +11559,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Predplatné sa končí: Ak si chcete ponechať výhody predplatného ${ planName }, reštartujte si predplatné v Obchode Google Play do ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Predplatné začína ${ startsOnTime }"
       ],
       "Summary": [
         "Zhrnutie"
@@ -13798,9 +13789,6 @@
       ],
       "Don't show this again": [
         "Nabudúce nezobrazovať"
-      ],
-      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
-        "Darujte 1$ alebo viac nadácii ${ BRAND_NAME }"
       ],
       "Donation amount": [
         "Výška daru"
