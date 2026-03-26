@@ -14,14 +14,14 @@ interface Props {
     eligible: boolean;
 }
 
-const useUpgradableOptions = () => {
+const useUpgradableOptions = (variant: 'user' | 'organization') => {
     const [subscription] = useSubscription();
     const bundleProPlan = useBundleProPlan();
     const currentPlan = getPlanName(subscription);
     const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
+    const b2cPlans = [PLANS.PASS, PLANS.PASS_FAMILY, PLANS.BUNDLE, PLANS.FAMILY];
 
-    const workspacePlans = isNewB2BPlanEnabled ? [bundleProPlan, PLANS.BUNDLE_BIZ_2025] : [bundleProPlan];
-
+    // Generate suitable product specific b2b plans based on the current plan of the organization
     const productSpecificB2bPlans = (() => {
         switch (currentPlan) {
             case PLANS.VPN_PRO:
@@ -39,11 +39,15 @@ const useUpgradableOptions = () => {
         }
     })();
 
-    return productSpecificB2bPlans.concat(workspacePlans);
+    const workspacePlans = isNewB2BPlanEnabled ? [bundleProPlan, PLANS.BUNDLE_BIZ_2025] : [bundleProPlan];
+
+    const baseOptions = variant === 'user' ? b2cPlans : productSpecificB2bPlans;
+
+    return baseOptions.concat(workspacePlans);
 };
 
 const SentinelDescription = ({ variant, eligible }: Props) => {
-    const upgradeOptions = useUpgradableOptions();
+    const upgradeOptions = useUpgradableOptions(variant);
 
     const planNames = upgradeOptions.map((plan) => PLAN_NAMES[plan]);
     const firstPlanNames = planNames.slice(0, -1).join(', ');
