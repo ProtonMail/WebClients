@@ -86,11 +86,17 @@
       "Copy address": [
         "Adresi kopyala"
       ],
+      "Copy API key": [
+        "API anahtarını kopyala"
+      ],
       "Create": [
         "Ekle"
       ],
       "Create folder": [
         "Klasör oluştur"
+      ],
+      "Create key": [
+        "Anahtar oluştur"
       ],
       "Current plan": [
         "Geçerli tarife"
@@ -101,11 +107,17 @@
       "Delete": [
         "Sil"
       ],
+      "Delete ${ token.Name }": [
+        "${ token.Name } sil"
+      ],
       "Delete all conversations?": [
         "Tüm yazışmalar silinsin mi?"
       ],
       "Delete conversation?": [
         "Yazışma silinsin mi?"
+      ],
+      "Delete key": [
+        "Anahtarı sil"
       ],
       "Dismiss": [
         "Yok say"
@@ -205,6 +217,9 @@
       ],
       "More options for accounts": [
         "Hesaplar için diğer seçenekler"
+      ],
+      "New key": [
+        "Yeni anahtar"
       ],
       "Next page": [
         "Sonraki sayfa"
@@ -1140,6 +1155,12 @@
       "Always enable web search for new conversations": [
         "Yeni yazışmalarda internet araması her zaman açık olsun"
       ],
+      "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
+        "API anahtarları ${ LUMO_SHORT_APP_NAME } uygulamasına programlama ile erişmenizi sağlar. Oluşturulan her yalnızca bir kez görüntülenir."
+      ],
+      "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
+        "Betikleriniz ve araçlarınız ile ${ LUMO_SHORT_APP_NAME } bütünleştirmesi için bir anahtar oluşturun."
+      ],
       "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Güvenli yapay zeka deneyiminizi geliştirin ve ${ LUMO_SHORT_APP_NAME } Plus tarifesi ile gelişmiş modellere ve ücretli özelliklere erişin."
       ],
@@ -1148,6 +1169,9 @@
       ],
       "Include project conversations in the main chat history": [
         "Proje yazışmaları ana sohbet geçmişine katılsın"
+      ],
+      "Keep it safe — it won't be shown again": [
+        "Güvende tutun — Bir daha gösterilmeyecek"
       ],
       "Last updated on ${ formattedDate }": [
         "Son güncelleme: ${ formattedDate }"
@@ -1173,11 +1197,23 @@
       ]
     },
     "collider_2025: Error": {
+      "Could not retrieve your encryption key": [
+        "Şifreleme anahtarınız alınamadı"
+      ],
       "Error processing ${ result.fileName }: ${ result.errorMessage }": [
         "${ result.fileName } işlenirken sorun çıktı: ${ result.errorMessage }"
       ],
       "Error processing file: ${ file.name }": [
         "Dosya işlenirken sorun çıktı: ${ file.name }"
+      ],
+      "Failed to create API key": [
+        "API anahtarı oluşturulamadı"
+      ],
+      "Failed to delete API key": [
+        "API anahtarı silinemedi"
+      ],
+      "Failed to load API keys": [
+        "API anahtarları yüklenemedi"
       ],
       "Failed to process ${ DRIVE_SHORT_APP_NAME } file: ${ file.name }": [
         "${ DRIVE_SHORT_APP_NAME } dosyası işlenemedi: ${ file.name }"
@@ -1199,6 +1235,12 @@
       ],
       "File uploaded but failed to add to knowledge base": [
         "Dosya yüklendi ancak bilgi bankasına eklenemedi"
+      ],
+      "Name is required": [
+        "Adın yazılması zorunludur"
+      ],
+      "Name must be 191 characters or fewer": [
+        "Ad en fazla 191 karakter uzunluğunda olabilir"
       ],
       "Please select a category to describe what went wrong with the generated text": [
         "Üretilen yazıda neyin yanlış olduğunu açıklamak için lütfen bir kategori seçin"
@@ -1453,6 +1495,15 @@
       "Excluded": [
         "Katılmayan"
       ],
+      "Expired ": [
+        "Geçerlilik süresi dolmuş "
+      ],
+      "Expires ": [
+        "Geçerlilik sonu "
+      ],
+      "Expires tomorrow": [
+        "Geçerlilik süresi yarın doluyor"
+      ],
       "File capacity": [
         "Dosya kapasitesi"
       ],
@@ -1518,6 +1569,9 @@
       ],
       "No supported files in this folder": [
         "Bu klasörde desteklenen bir dosya yok"
+      ],
+      "No usage yet": [
+        "Henüz kullanılmamış"
       ],
       "Note:": [
         "Not:"
@@ -1626,6 +1680,9 @@
       ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Bu sohbete daha sonra geri dönmek için oturum veya bir hesap açın."
+      ],
+      "tokens / 30d": [
+        "kod / 30 gün"
       ],
       "Try the smartest version of ${ LUMO_SHORT_APP_NAME } with advanced capabilities.": [
         "Gelişmiş yetenekleri olan en akıllı ${ LUMO_SHORT_APP_NAME } sürümünü deneyin."
@@ -1743,6 +1800,28 @@
         "${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
       ]
     },
+    "collider_2025: Notification": {
+      "API key copied to clipboard": [
+        "API anahtarı panoya kopyalandı"
+      ],
+      "API key deleted": [
+        "API anahtarı silindi"
+      ]
+    },
+    "collider_2025: Option": {
+      "1 year": [
+        "1 yıl"
+      ],
+      "180 days": [
+        "180 gün"
+      ],
+      "30 days": [
+        "30 gün"
+      ],
+      "90 days": [
+        "90 gün"
+      ]
+    },
     "collider_2025: Personality": {
       "Business Cat": [
         "İş kedisi"
@@ -1808,6 +1887,9 @@
       "Account": [
         "Hesap"
       ],
+      "API keys": [
+        "API anahtarları"
+      ],
       "General": [
         "Genel"
       ],
@@ -1818,6 +1900,18 @@
     "collider_2025: Status": {
       "${ LUMO_SHORT_APP_NAME }+ is included in your Visionary plan and you have access to these features:": [
         "${ LUMO_SHORT_APP_NAME }+ Visionary tarifenizde bulunuyor ve şu özelliklere erişebilirsiniz:"
+      ],
+      "Active": [
+        "Etkin"
+      ],
+      "Copied!": [
+        "Kopyalandı!"
+      ],
+      "Expired": [
+        "Geçerlilik süresi dolmuş"
+      ],
+      "Expiring soon": [
+        "Yakında süresi dolacak"
       ],
       "You are subscribed to ${ LUMO_SHORT_APP_NAME }+ and have access to these features:": [
         "${ LUMO_SHORT_APP_NAME }+ hizmetine abone oldunuz ve şu özelliklere erişebilirsiniz:"
@@ -1859,6 +1953,9 @@
       "Automatic web search": [
         "Otomatik internet araması"
       ],
+      "Create new API key": [
+        "Yeni API anahtarı oluştur"
+      ],
       "Delete everything": [
         "Her şeyi sil"
       ],
@@ -1870,6 +1967,9 @@
       ],
       "Invalid Link": [
         "Bağlantı geçersiz"
+      ],
+      "No API keys yet": [
+        "Henüz API anahtarı yok"
       ],
       "Opening External Link": [
         "Dış bağlantı açılıyor"
@@ -1891,6 +1991,9 @@
       ],
       "Visionary": [
         "Visionary"
+      ],
+      "Your new API key": [
+        "Yeni API anahtarınız"
       ]
     },
     "collider_2025: Tooltip": {
@@ -1987,6 +2090,11 @@
         "Modern argo ve güncel iletişim tarzı kullan."
       ]
     },
+    "collider_2025: Unit": {
+      "tokens": [
+        "kodlar"
+      ]
+    },
     "collider_2025: Upsell": {
       "Create free account": [
         "Ücretsiz hesap açın"
@@ -2013,6 +2121,9 @@
       "Suspicious: ${ urlParts.subdomainCount } subdomain": [
         "Şüpheli: ${ urlParts.subdomainCount } alt etki alanı",
         "Şüpheli: ${ urlParts.subdomainCount } alt etki alanı"
+      ],
+      "This is the only time you'll see this key. Copy it now.": [
+        "Bu anahtarı yalnızca bir kez göreceksiniz. Hemen kopyalayın."
       ],
       "We're experiencing high traffic right now, but as a ${ LUMO_SHORT_APP_NAME } Plus customer, you're in the fast lane. We're prioritizing your requests as always.": [
         "Şu anda yoğun bir trafik var. Ancak bir ${ LUMO_SHORT_APP_NAME } Plus müşterisi olarak önceliklisiniz. İsteklerinize her zamanki gibi öncelik veriyoruz."
@@ -2391,6 +2502,9 @@
       "File \"${ file.name }\" is already in this project": [
         "“${ file.name }” dosyası bu projede zaten var"
       ],
+      "File \"${ file.name }\" is already mentioned": [
+        "\"${ file.name }\" dosyası daha önce belirtilmiş"
+      ],
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "Bu projeye yüklenen dosyalar bağlantılı Drive klasörüne kaydedilir."
       ],
@@ -2602,7 +2716,7 @@
         "Bu kodun ne işe yaradığını anlamama yardım et"
       ],
       "How does the world celebrate the Spring Equinox?": [
-        "Dünya, ilkbahar ekinoksunu nasıl kutluyor?"
+        "Dünya, ilkbahar gündönümünü nasıl kutluyor?"
       ],
       "Identify any unusual or potentially unfavorable terms": [
         "Olağandışı veya potansiyel olarak olumsuz şartları belirle"
@@ -4036,9 +4150,6 @@
       "Please select billing state": [
         "Lütfen faturalama durumunu seçin"
       ],
-      "Postal code is required": [
-        "Posta kodunun yazılması zorunludur"
-      ],
       "Process aborted": [
         "İşlem iptal edildi"
       ],
@@ -4101,9 +4212,6 @@
       ],
       "Wrong billing address": [
         "Fatura adresi yanlış"
-      ],
-      "ZIP code is required": [
-        "Posta kodunun yazılması zorunludur"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Şifresi çözülemeyen ad"
@@ -5013,6 +5121,9 @@
       "Expires": [
         "Geçerlilik süresi sonu"
       ],
+      "Expires in": [
+        "Geçerlilik sonu"
+      ],
       "First name": [
         "Ad"
       ],
@@ -5039,6 +5150,9 @@
       ],
       "Integrated 2FA authenticator": [
         "Bütünleşik iki adımlı kimlik doğrulayıcı"
+      ],
+      "Key name": [
+        "Anahtar adı"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klavye kısayolu: ${ shortcut }"
@@ -6698,6 +6812,9 @@
       ],
       "Cortex Inc.": [
         "Cortex Inc."
+      ],
+      "e.g. My automation script": [
+        "Örnek: Otomasyon betiğim"
       ],
       "Enter a new folder name": [
         "Yeni bir klasör adı yazın"
