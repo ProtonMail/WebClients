@@ -1,3 +1,4 @@
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Label, LabelCount, MailSettings, SafeLabelCount } from '@proton/shared/lib/interfaces';
@@ -6,11 +7,8 @@ import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 
 export type LocationCountMap = Record<string, SafeLabelCount>;
 
-const getDisabledCategoriesCounts = (
-    disabledCategoriesIDs: string[],
-    resultCounterMap: Record<string, SafeLabelCount>
-) => {
-    return disabledCategoriesIDs.reduce(
+const getPrimaryCategoryCounts = (categoryIDs: string[], resultCounterMap: Record<string, SafeLabelCount>) => {
+    return categoryIDs.reduce(
         (acc, id) => {
             return {
                 Total: acc.Total + (resultCounterMap[id]?.Total || 0),
@@ -26,7 +24,7 @@ export const getCounterMap = (
     conversationCounters: LabelCount[],
     messageCounters: LabelCount[],
     mailSettings: MailSettings,
-    disabledCategoriesIDs: string[]
+    categoryIDs: CategoryLabelID[]
 ) => {
     const labelIDs = [...Object.values(MAILBOX_LABEL_IDS), ...labels.map((label) => label.ID || '')];
 
@@ -47,14 +45,13 @@ export const getCounterMap = (
     }
 
     // We need to add the disabled categories totals to the default category
-    if (disabledCategoriesIDs && resultCounterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]) {
-        const initialCount = resultCounterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT];
-        const disabledCounts = getDisabledCategoriesCounts(disabledCategoriesIDs, resultCounterMap);
+    if (categoryIDs && resultCounterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]) {
+        const disabledCounts = getPrimaryCategoryCounts(categoryIDs, resultCounterMap);
 
         resultCounterMap[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT] = {
             LabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
-            Total: initialCount.Total + disabledCounts.Total,
-            Unread: initialCount.Unread + disabledCounts.Unread,
+            Total: disabledCounts.Total,
+            Unread: disabledCounts.Unread,
         };
     }
 
