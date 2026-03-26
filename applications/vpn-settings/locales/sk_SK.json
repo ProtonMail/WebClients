@@ -4425,9 +4425,6 @@
       "Port is required": [
         "Port je požadovaný"
       ],
-      "Postal code is required": [
-        "Poštové smerovacie číslo je povinné"
-      ],
       "Primary address key is not decrypted": [
         "Kľúč primárnej adresy nebol dešifrovaný"
       ],
@@ -4622,9 +4619,6 @@
       ],
       "Zero keys reactivated": [
         "Žiadne kľúče neboli znovu aktivované"
-      ],
-      "ZIP code is required": [
-        "PSČ je povinné"
       ]
     },
     "error": {
@@ -6905,9 +6899,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL adresa koncového bodu získaná od poskytovateľa identity (napr. https://idp.example.com/sso/saml)."
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "Končí dňa ${ formattedPeriodEndDate }"
-      ],
       "Enhance your network security": [
         "Zlepšite bezpečnosť vašej siete"
       ],
@@ -7850,9 +7841,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Začnite ju zdieľať s kontaktmi a používajte ju na online služby."
       ],
-      "Starts on ${ startsOnTime }": [
-        "Začína ${ startsOnTime }"
-      ],
       "Storage allocated to other users in this organisation": [
         "Úložisko pridelené iným používateľom v tejto organizácii"
       ],
@@ -7888,6 +7876,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Predplatné sa končí: Ak si chcete ponechať výhody predplatného ${ planName }, reštartujte si predplatné v Obchode Google Play do ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Predplatné začína ${ startsOnTime }"
       ],
       "Summary": [
         "Zhrnutie"

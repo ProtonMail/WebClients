@@ -4335,9 +4335,6 @@
       "Port is required": [
         "端口号必须填写"
       ],
-      "Postal code is required": [
-        "邮政编码为必填项"
-      ],
       "Primary address key is not decrypted": [
         "主密钥尚未解密"
       ],
@@ -4532,9 +4529,6 @@
       ],
       "Zero keys reactivated": [
         "未重新激活任何密钥"
-      ],
-      "ZIP code is required": [
-        "必须填写邮政编码"
       ]
     },
     "error": {
@@ -6623,9 +6617,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "从身份供应商（如 https://idp.example.com/sso/saml）收到的终端 URL。"
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "截止日期：${ formattedPeriodEndDate }"
-      ],
       "Enhance your network security": [
         "增强网络安全"
       ],
@@ -7546,9 +7537,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "开始与联系人分享，并将其用于在线服务。"
-      ],
-      "Starts on ${ startsOnTime }": [
-        "将在 ${ startsOnTime } 开始"
       ],
       "Storage allocated to other users in this organisation": [
         "此组织其他成员的存储空间分配量"

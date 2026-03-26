@@ -4210,9 +4210,6 @@
       "Port is required": [
         "ポートは必須です"
       ],
-      "Postal code is required": [
-        "郵便番号は必須です"
-      ],
       "Primary address key is not decrypted": [
         "プライマリーアドレス鍵が復号されていません"
       ],
@@ -4398,9 +4395,6 @@
       ],
       "Zero keys reactivated": [
         "ゼロキーが再有効化されました"
-      ],
-      "ZIP code is required": [
-        "郵便番号は必須です"
       ]
     },
     "error": {
@@ -6444,9 +6438,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "ID プロバイダーから受け取ったエンドポイント URL (例: https://idp.example.com/sso/saml)。"
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "${ formattedPeriodEndDate } に終了します"
-      ],
       "Enhance your network security": [
         "ネットワークセキュリティの強化"
       ],
@@ -7322,9 +7313,6 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "連絡先と共有し、オンラインサービスでご利用ください。"
-      ],
-      "Starts on ${ startsOnTime }": [
-        "${ startsOnTime }に開始します"
       ],
       "Storage allocated to other users in this organisation": [
         "この組織の他のユーザーに割り当てられたストレージ"

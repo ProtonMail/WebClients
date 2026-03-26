@@ -4362,14 +4362,14 @@
       "Port is required": [
         "Le port est nécessaire."
       ],
-      "Postal code is required": [
-        "Le code postal est requis."
-      ],
       "Primary address key is not decrypted": [
         "La clé d'adresse principale n'est pas déchiffrée."
       ],
       "Primary address key is not decrypted.": [
         "La clé d’adresse principale n’est pas déchiffrée."
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Les utilisateurs privés peuvent être ajoutés au groupe une fois qu'ils se sont connectés pour la première fois : ${ displayedNames }."
       ],
       "Process aborted": [
         "Le processus a été abandonné."
@@ -4556,9 +4556,6 @@
       ],
       "Zero keys reactivated": [
         "Aucune clé n'est réactivée."
-      ],
-      "ZIP code is required": [
-        "Le code postal est nécessaire."
       ]
     },
     "error": {
@@ -6702,9 +6699,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "L'URL des points de terminaison reçue de votre fournisseur d'identité (par ex. https://idp.exemple.fr/sso/saml)."
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "Se termine le ${ formattedPeriodEndDate }"
-      ],
       "Enhance your network security": [
         "Améliorez la sécurité de votre réseau."
       ],
@@ -7630,9 +7624,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Commencez à la partager avec vos contacts et utilisez-la pour les services en ligne."
       ],
-      "Starts on ${ startsOnTime }": [
-        "Débute le ${ startsOnTime }"
-      ],
       "Storage allocated to other users in this organisation": [
         "Espace de stockage alloué à d'autres utilisateurs de cette organisation"
       ],
@@ -7666,6 +7657,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Fin de l'abonnement : Pour conserver les avantages de votre ${ planName }, veuillez renouveler votre abonnement dans le Google Play Store avant le ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Votre abonnement commence le ${ startsOnTime }"
       ],
       "Summary": [
         "Résumé"
@@ -7927,6 +7921,9 @@
       ],
       "Total VPN connections": [
         "Nombre total de connexions VPN"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "La version d'essai se termine le ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "appareil approuvée"
