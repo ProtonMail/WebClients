@@ -1483,10 +1483,6 @@
       "Trust": [
         "Luota"
       ],
-      "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
-      ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
       ],
@@ -4764,9 +4760,6 @@
       "Port is required": [
         "Portti vaaditaan"
       ],
-      "Postal code is required": [
-        "Postinumero vaaditaan"
-      ],
       "Primary address key is not decrypted": [
         "Ensisijaisen osoitteen avaimen salausta ei ole purettu"
       ],
@@ -5016,9 +5009,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Haullasi löytyi liikaa tuloksia. Rajoita hakua ja yritä uudelleen."
-      ],
-      "ZIP code is required": [
-        "Postinumero vaaditaan"
       ]
     },
     "error": {
@@ -6373,10 +6363,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } voi suojata myös yritystoimintaasi."
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } viestiä ei voitu siirtää.",
-        "${ messagesNotAuthorizedToMove } viestiä ei voitu siirtää."
-      ],
       "${ n } unread conversation": [
         "${ n } lukematon keskustelu",
         "${ n } lukematonta keskustelua"
@@ -7293,7 +7279,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
