@@ -44,6 +44,7 @@ interface Props {
     canDisplayB2BLogsVPN: boolean;
     isUserGroupsFeatureEnabled: boolean;
     isUserGroupsNoCustomDomainEnabled: boolean;
+    isUserGroupsPassBusinessEnabled: boolean;
     groups: Group[] | undefined;
     isScribeEnabled?: boolean;
     isZoomIntegrationEnabled: boolean;
@@ -67,6 +68,7 @@ export const getOrganizationAppRoutes = ({
     canDisplayB2BLogsVPN,
     isUserGroupsFeatureEnabled,
     isUserGroupsNoCustomDomainEnabled,
+    isUserGroupsPassBusinessEnabled,
     groups,
     isScribeEnabled,
     isZoomIntegrationEnabled,
@@ -119,7 +121,11 @@ export const getOrganizationAppRoutes = ({
         !!organization &&
         (hasGroups ||
             (hasActiveOrganizationKey &&
-                canUseGroups(organization?.PlanName, { isUserGroupsNoCustomDomainEnabled, hasGroups })));
+                canUseGroups(organization?.PlanName, {
+                    isUserGroupsNoCustomDomainEnabled,
+                    isUserGroupsPassBusinessEnabled,
+                    hasGroups,
+                })));
 
     const canShowUsersAndAddressesSection =
         // The user must have a plan that supports multi-user
