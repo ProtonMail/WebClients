@@ -15,6 +15,7 @@ import {
     useToggle,
 } from '@proton/components';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { MemberRole, type ShareNodeSettings } from '@proton/drive';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
@@ -102,6 +103,9 @@ export const SharingModalView = ({
     actions,
     isShared,
 }: SharingModalViewProps) => {
+    const theme = useTheme();
+    const isDarkTheme = theme.information.dark;
+
     const [addresses] = useAddresses();
 
     const { isDirectSharingDisabled } = useFlagsDriveDirectSharing();
@@ -351,7 +355,8 @@ export const SharingModalView = ({
 
                 <div className="flex items-center justify-center gap-2 pt-5 shrink-0">
                     <IcLockFilled color="white" />
-                    <span className="color-invert">{c('Action').t`Sharing is end-to-end encrypted`}</span>
+                    <span className={isDarkTheme ? 'color-norm' : 'color-invert'}>{c('Action')
+                        .t`Sharing is end-to-end encrypted`}</span>
                 </div>
             </ModalTwo>
 
