@@ -6002,9 +6002,6 @@
       "Port is required": [
         "المنفذ مطلوب"
       ],
-      "Postal code is required": [
-        "الرمز البريدي إلزامي"
-      ],
       "Primary address key is not decrypted": [
         "لم يتم فك تشفير مفتاح العنوان الأساسي"
       ],
@@ -6016,6 +6013,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "المفتاح الأساسي الذي تم استرداده لمستخدم ${ BRAND_NAME } غير صالح للإرسال"
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "يمكن إضافة المستخدمين الخاصين إلى المجموعة بعد تسجيل دخولهم لأول مرة: ${ displayedNames }"
       ],
       "Process aborted": [
         "تم الغاء العملية"
@@ -6243,9 +6243,6 @@
       ],
       "Zero keys reactivated": [
         "صفر من المفاتيح تم اعادة تفعليه"
-      ],
-      "ZIP code is required": [
-        "الرمز البريدي مطلوب"
       ]
     },
     "error": {
@@ -9084,9 +9081,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "عنوان نقطة النهاية المستلم من مزود الهوية الخاص بك (على سبيل المثال https://idp.example.com/sso/saml)."
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "ينتهي في ${ formattedPeriodEndDate }"
-      ],
       "Enhance your network security": [
         "حسّن أمان شبكتك"
       ],
@@ -10207,9 +10201,6 @@
       ],
       "Start using the shorter, catchier version of your email address.": [
         "ابدأ في استخدام الإصدار الأقصر والأكثر جاذبية من عنوان بريدك الإلكتروني."
-      ],
-      "Starts on ${ startsOnTime }": [
-        "يبدأ في ${ startsOnTime }"
       ],
       "Step ${ step }": [
         "الخطوة ${ step }",
@@ -12149,9 +12140,6 @@
       ],
       "Don't show this again": [
         "لا تظهر لي هذا مرة أخرى"
-      ],
-      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
-        "تبرع بـ 1$ أو أكثر لمؤسسة ${ BRAND_NAME }"
       ],
       "Donation amount": [
         "مبلغ التبرع"

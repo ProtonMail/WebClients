@@ -6839,9 +6839,6 @@
       "Port is required": [
         "Es requereix el port"
       ],
-      "Postal code is required": [
-        "Cal un codi postal"
-      ],
       "Primary address key is not decrypted": [
         "La clau de l'adreça primària no està desxifrada."
       ],
@@ -6853,6 +6850,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "La clau principal obtinguda per a l'usuari de ${ BRAND_NAME } no és vàlida per a l'enviament"
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Els usuaris privats es podran afegir al grup un cop hagin iniciat la sessió per primera vegada: ${ displayedNames }"
       ],
       "Process aborted": [
         "Procés anul·lat"
@@ -7085,9 +7085,6 @@
       ],
       "Zero keys reactivated": [
         "Cap clau s'ha reactivat"
-      ],
-      "ZIP code is required": [
-        "Es requereix el codi postal."
       ]
     },
     "error": {
@@ -10008,9 +10005,6 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "S'ha rebut l'URL del punt final del proveïdor d'identitat (p. ex. https://idp.exemple.com/sso/saml)."
       ],
-      "Ends on ${ formattedPeriodEndDate }": [
-        "Acaba el ${ formattedPeriodEndDate }"
-      ],
       "Enhance your network security": [
         "Milloreu la seguretat de la vostra xarxa"
       ],
@@ -11279,9 +11273,6 @@
       "Start using the shorter, catchier version of your email address.": [
         "Comenceu a usar la versió més curta i fàcil de recordar de la vostra adreça."
       ],
-      "Starts on ${ startsOnTime }": [
-        "Comença el ${ startsOnTime }"
-      ],
       "Step ${ step }": [
         "Pas ${ step }",
         "Passes ${ step }"
@@ -11331,6 +11322,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "La vostra subscripció és a punt de finalitzar: per mantenir els avantatges del pla ${ planName }, reinicieu-la a Google Play Store abans del ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "La subscripció comença el ${ startsOnTime }"
       ],
       "Summary": [
         "Resum"
@@ -11685,6 +11679,9 @@
       ],
       "Total: ${ totalPrice }": [
         "Total: ${ totalPrice }"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "La prova finalitza el ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "dispositiu de confiança"
@@ -13515,8 +13512,8 @@
       "Don't show this again": [
         "No ho tornis a mostrar"
       ],
-      "Donate $1 or more to the ${ BRAND_NAME } Foundation": [
-        "Feu un donatiu d'$1 o més a la Fundació ${ BRAND_NAME }"
+      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
+        "Doneu ${ minimumDonation } o més a la Fundació ${ BRAND_NAME }"
       ],
       "Donation amount": [
         "Import del donatiu"
