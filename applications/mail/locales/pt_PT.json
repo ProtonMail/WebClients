@@ -902,7 +902,7 @@
         "Mover para"
       ],
       "Move to archive": [
-        "Mover para o ficheiro"
+        "Mover para o arquivo"
       ],
       "Move to Archive": [
         "Mover para o arquivo"
@@ -1427,8 +1427,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
+        "Confiar na chave"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -4459,9 +4458,6 @@
       "Port is required": [
         "A porta é obrigatória."
       ],
-      "Postal code is required": [
-        "O código postal é obrigatório"
-      ],
       "Primary address key is not decrypted": [
         "A chave de endereço principal não está desencriptada."
       ],
@@ -4693,9 +4689,6 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa obteve muitas correspondências. Limite a pesquisa e tente novamente."
-      ],
-      "ZIP code is required": [
-        "O código postal é necessário."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5982,10 +5975,6 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } também pode proteger a sua empresa."
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "Não é possível mover ${ messagesNotAuthorizedToMove } mensagem.",
-        "Não é possível mover ${ messagesNotAuthorizedToMove } mensagens."
-      ],
       "${ n } unread conversation": [
         "${ n } conversa não lida",
         "${ n } conversas não lidas"
@@ -6841,7 +6830,8 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir uma imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir uma ligação"
