@@ -20,7 +20,7 @@ const SettingsArea = ({ config, app }: Props) => {
     return (
         <EasySwitchStoreProvider>
             <EasySwitchStoreInitializer>
-                <PrivateMainSettingsArea config={config}>
+                <PrivateMainSettingsArea config={config} mainAreaClass="overflow-hidden">
                     <SettingsSectionWide data-testid="SettingsArea:forwardSection">
                         <ProviderCard app={app} />
                     </SettingsSectionWide>
