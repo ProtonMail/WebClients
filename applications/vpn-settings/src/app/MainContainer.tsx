@@ -89,6 +89,7 @@ import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso
 import { getIsSectionAvailable, getRoutePaths, getSectionPath } from '@proton/components/containers/layout/helper';
 import DashboardComparePlansCTA from '@proton/components/containers/payments/subscription/YourPlanSectionV2/DashboardComparePlansCTA';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
+import { useReferralUserEligible } from '@proton/components/containers/referral/hooks/useReferralUserEligible';
 import { RewardSection } from '@proton/components/containers/referral/rewards/RewardSection';
 import LiveChatZendesk, { getIsSelfChat } from '@proton/components/containers/zendesk/LiveChatZendesk';
 import type { ZendeskRef } from '@proton/components/containers/zendesk/helper';
@@ -133,13 +134,15 @@ const MainContainer: FunctionComponent = () => {
     const recoveryNotification = useRecoveryNotification(false, false);
     const [isGroupOwner, loadingIsGroupOwner] = useIsGroupOwner();
 
+    const { isUserEligible: isReferralProgramEnabled } = useReferralUserEligible();
+
     const vpnRoutes = getRoutes({
         user,
         subscription,
         showVPNDashboard,
         showVPNDashboardVariant: showVPNDashboardVariant.name,
         isB2BTrial,
-        isReferralProgramEnabled: Boolean(userSettings.Referral?.Eligible),
+        isReferralProgramEnabled,
         referralInfo: referralInfo.uiData,
         isProtonMeetIntegrationEnabled,
         isZoomIntegrationEnabled,
