@@ -3,7 +3,6 @@ import {
     selectActiveCategoriesTabs,
     selectCategoriesLabel,
     selectCategoriesTabs,
-    selectDisabledCategoriesIDs,
 } from '@proton/mail/store/labels/selector';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
@@ -18,7 +17,6 @@ export const useCategoriesData = () => {
     const categoriesStore = useSelector(selectCategoriesLabel);
     const categoriesTabs = useSelector(selectCategoriesTabs);
     const activeCategoriesTabs = useSelector(selectActiveCategoriesTabs);
-    const disabledCategoriesIDs = useSelector(selectDisabledCategoriesIDs);
 
     const settingAccess = organization?.Settings?.MailCategoryViewEnabled ? !!mailSettings.MailCategoryView : false;
     const categoryViewAccess = categoryViewFlag && settingAccess;
@@ -27,7 +25,6 @@ export const useCategoriesData = () => {
         categoriesStore,
         categoriesTabs: categoryViewAccess ? categoriesTabs : [],
         activeCategoriesTabs: categoryViewAccess ? activeCategoriesTabs : [],
-        disabledCategoriesIDs: categoryViewAccess ? disabledCategoriesIDs : [],
         categoryViewAccess,
     };
 };

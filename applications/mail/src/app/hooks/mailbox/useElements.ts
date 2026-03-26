@@ -7,6 +7,7 @@ import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useConversationCounts, useGetConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { useGetMessageCounts, useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
+import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import { CacheType } from '@proton/redux-utilities';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -137,7 +138,8 @@ export const useElements: UseElements = ({
     const countValues = conversationMode ? conversationCounts : messageCounts;
     const countsLoading = conversationMode ? loadingConversationCounts : loadingMessageCounts;
 
-    const { disabledCategoriesIDs, categoryViewAccess } = useCategoriesView();
+    const { categoryViewAccess } = useCategoriesView();
+    const disabledCategoriesIDs = useMailSelector(selectDisabledCategoriesIDs);
 
     const { esStatus } = useEncryptedSearchContext();
     const { esEnabled } = esStatus;
@@ -280,7 +282,7 @@ export const useElements: UseElements = ({
             );
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-577287
-    }, [location.pathname, location.hash, mailSettings.ViewMode, labelIDs, esEnabled, onPage]);
+    }, [location.pathname, location.hash, mailSettings.ViewMode, labelIDs, esEnabled, onPage, disabledCategoriesIDs]);
 
     // Reset the element state when receiving a setting update for page size or conversation mode
     useEffect(() => {
