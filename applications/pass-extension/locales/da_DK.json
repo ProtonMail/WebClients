@@ -157,6 +157,9 @@
       "Close navigation": [
         "Luk navigation"
       ],
+      "Configure": [
+        "Konfigurér"
+      ],
       "Confirm": [
         "Bekræft"
       ],
@@ -622,6 +625,9 @@
       "Set extra password": [
         "Indstil ekstra adgangskode"
       ],
+      "Settings": [
+        "Indstillinger"
+      ],
       "Setup 2FA": [
         "Indstil 2FA"
       ],
@@ -764,9 +770,6 @@
       ],
       "Your password manager is not here? Request it.": [
         "Er din adgangskodeadministrator her ikke? Anmod om den."
-      ],
-      "Configure": [
-        "Konfigurér"
       ]
     },
     "Browser": {
@@ -2088,6 +2091,9 @@
       "None": [
         "Ingen"
       ],
+      "Not configured": [
+        "Ikke konfigureret"
+      ],
       "Not recommended": [
         "Anbefales ikke"
       ],
@@ -2099,6 +2105,12 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online adgang til ${ PASS_APP_NAME } kræver en pinkode. Du bliver logget ud efter 3 mislykkede forsøg."
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Åbn ${ PASS_APP_NAME } i et større vindue"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Åbn ${ PASS_APP_NAME } pop op"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Åbn Safari-indstillingerne, find ${ PASS_APP_NAME }, gå til \"Tilladelser\", og aktivér webstedstilladelser."
@@ -2747,15 +2759,6 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kræver, at du sikrer din adgang til ${ PASS_APP_NAME }"
-      ],
-      "Not configured": [
-        "Ikke konfigureret"
-      ],
-      "Open ${ PASS_APP_NAME } in a larger window": [
-        "Åbn ${ PASS_APP_NAME } i et større vindue"
-      ],
-      "Open the ${ PASS_APP_NAME } popup": [
-        "Åbn ${ PASS_APP_NAME } pop op"
       ]
     },
     "Keyboard key": {
@@ -3308,6 +3311,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastaturgenvej: ${ shortcut }"
+      ],
+      "Keyboard shortcuts": [
+        "Tastaturgenveje"
       ],
       "Language": [
         "Sprog"
@@ -3896,9 +3902,6 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
-      ],
-      "Keyboard shortcuts": [
-        "Tastaturgenveje"
       ]
     },
     "Link": {
