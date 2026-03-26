@@ -13,7 +13,6 @@ import { CategoriesTabs } from './CategoriesTabs';
 jest.mock('../useCategoriesView', () => ({
     useCategoriesView: jest.fn(() => ({
         categoriesStore: [],
-        categoriesTabs: [],
         activeCategoriesTabs: mockActiveCategoriesData,
     })),
 }));
