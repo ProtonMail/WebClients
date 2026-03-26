@@ -9641,7 +9641,7 @@ __metadata:
     ts-jest: "npm:^29.4.6"
     ts-node: "npm:^10.9.2"
     tsx: "npm:^4.21.0"
-    yaml: "npm:^2.8.2"
+    yaml: "npm:^2.8.3"
   languageName: unknown
   linkType: soft
 
@@ -50631,12 +50631,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:^2.1.3, yaml@npm:^2.8.2":
-  version: 2.8.2
-  resolution: "yaml@npm:2.8.2"
+"yaml@npm:^2.1.3, yaml@npm:^2.8.2, yaml@npm:^2.8.3":
+  version: 2.8.3
+  resolution: "yaml@npm:2.8.3"
   bin:
     yaml: bin.mjs
-  checksum: 10/4eab0074da6bc5a5bffd25b9b359cf7061b771b95d1b3b571852098380db3b1b8f96e0f1f354b56cc7216aa97cea25163377ccbc33a2e9ce00316fe8d02f4539
+  checksum: 10/ecad41d39d34fae5cc17ea2d4b7f7f55faacd45cbce8983ba22d48d1ed1a92ed242ea49ea813a79ac39a69f75f9c5a03e7b5395fd954d55476f25e21a47c141d
   languageName: node
   linkType: hard
 
