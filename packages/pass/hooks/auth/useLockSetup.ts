@@ -14,13 +14,15 @@ import { useUpselling } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { DEFAULT_LOCK_TTL, UpsellRef } from '@proton/pass/constants';
 import { useDesktopUnlock } from '@proton/pass/hooks/auth/useDesktopUnlock';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
+import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { lockCreateIntent } from '@proton/pass/store/actions';
 import { lockCreateRequest } from '@proton/pass/store/actions/requests';
 import { selectLockMode, selectLockTTL, selectPassPlan } from '@proton/pass/store/selectors';
-import type { Maybe, MaybeNull } from '@proton/pass/types';
+import type { Maybe, MaybeNull, Result } from '@proton/pass/types';
+import { cloneObfuscation } from '@proton/pass/utils/obfuscate/xor';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -102,37 +104,38 @@ export const useLockSetup = (): LockSetup => {
 
         const ttl = orgLockTTL || (lockTTL ?? DEFAULT_LOCK_TTL);
 
-        /** If the current lock mode is a session lock - always
-         * ask for the current PIN in order to delete the lock */
-        const current = await new Promise<Maybe<{ secret: string }>>(async (resolve) => {
+        /** 1. Verify the current lock and collect the typed `UnlockDTO`.
+         * Forwarded to the creation request to delete the existing lock. */
+        const current = await new Promise<Result<UnlockDTO>>(async (resolve) => {
             switch (currentLockMode) {
                 case LockMode.SESSION:
                     return confirmPin({
                         title: c('Title').t`Confirm PIN code`,
                         assistiveText: c('Info')
                             .t`Please confirm your PIN code in order to unregister your current lock.`,
-                        onSubmit: async (secret) => {
-                            await unlock({ mode: currentLockMode, secret, offline: false });
-                            resolve({ secret });
+                        onSubmit: async (pin) => {
+                            const dto: UnlockDTO = { mode: LockMode.SESSION, pin, offline: false };
+                            await unlock(dto);
+                            resolve({ ok: true, ...dto });
                         },
                     });
 
                 case LockMode.BIOMETRICS: {
-                    /** Confirm the biometric key before proceeding */
-                    const secret = (await getBiometricsKey?.(authStore!).catch(noop)) ?? '';
-                    if (!secret) return resolve(undefined);
+                    const key = (await getBiometricsKey?.(authStore!).catch(noop)) ?? '';
+                    if (!key) return resolve({ ok: false });
+                    const dto: UnlockDTO = { mode: LockMode.BIOMETRICS, key, offline: false };
 
-                    return unlock({ mode: currentLockMode, secret, offline: false })
-                        .then(() => resolve({ secret }))
-                        .catch(() => resolve(undefined));
+                    return unlock(dto)
+                        .then(() => resolve({ ok: true, ...dto }))
+                        .catch(() => resolve({ ok: false }));
                 }
 
-                case LockMode.PASSWORD:
+                case LockMode.PASSWORD: {
                     return confirmPassword({
                         message: (() => {
                             switch (mode) {
-                                /** If the next mode is `BIOMETRIC` then we'll feed the result of this
-                                 * first unlock call to the `BIOMETRIC` lock creation */
+                                /** PASSWORD → BIOMETRICS: the resolved DTO carries the obfuscated
+                                 * password so it can be reused in step 3 without a second prompt. */
                                 case LockMode.BIOMETRICS:
                                     return passwordTypeSwitch({
                                         extra: c('Info')
@@ -157,39 +160,48 @@ export const useLockSetup = (): LockSetup => {
                                     });
                             }
                         })(),
-                        onSubmit: async (secret) => {
-                            await unlock({ mode: currentLockMode, secret, offline: false });
-                            resolve({ secret });
+                        onSubmit: async (password) => {
+                            /** Clone so the unlock adapter can zeroize its copy
+                             * without corrupting the original carried to step 3. */
+                            const dto: UnlockDTO = {
+                                mode: LockMode.PASSWORD,
+                                password: cloneObfuscation(password),
+                                offline: false,
+                            };
+                            await unlock(dto);
+                            resolve({ ok: true, ...dto, password });
                         },
                     });
+                }
 
                 case LockMode.DESKTOP:
-                    return confirmDesktop({
-                        onSuccess: async () => resolve({ secret: '' }),
-                    });
+                    return confirmDesktop()
+                        .then((dto) => resolve({ ok: true, ...dto }))
+                        .catch(() => resolve({ ok: false }));
 
-                default:
-                    return resolve(undefined);
+                case LockMode.NONE:
+                    return resolve({ ok: true, mode: currentLockMode });
             }
         });
 
-        /** Bail if currentLockMode required
-        /* verification, and it hasn't succeeeded. */
-        if (currentLockMode !== LockMode.NONE && !current) return;
+        /** 2. Bail if verification failed. */
+        if (!current.ok) return;
 
+        /** 3. Create the new lock. `current` is forwarded so the saga can
+         * delete the old lock as part of the same request (only for PIN). */
         switch (mode) {
             case LockMode.SESSION:
                 return confirmPin({
                     title: c('Title').t`Create PIN code`,
                     assistiveText: c('Info')
                         .t`You will use this PIN to unlock ${PASS_APP_NAME} once it auto-locks after a period of inactivity.`,
-                    onSubmit: (secret) =>
+                    onSubmit: (pin) =>
                         confirmPin({
                             title: c('Title').t`Confirm PIN code`,
                             assistiveText: c('Info')
                                 .t`You will use this PIN to unlock ${PASS_APP_NAME} once it auto-locks after a period of inactivity.`,
                             onSubmit: (confirmed) => {
-                                if (confirmed === secret) createLock.dispatch({ mode, secret, ttl });
+                                if (confirmed === pin) createLock.dispatch({ mode, pin, ttl, current });
                                 else createNotification({ type: 'error', text: c('Error').t`PIN codes do not match` });
                             },
                         }),
@@ -199,10 +211,10 @@ export const useLockSetup = (): LockSetup => {
                 return confirmPassword({
                     reauth: {
                         type: ReauthAction.PW_LOCK_SETUP,
-                        data: { current: currentLockMode === LockMode.SESSION ? current?.secret : undefined, ttl },
+                        data: { pin: current.mode === LockMode.SESSION ? current.pin : undefined, ttl },
                         fork: { promptBypass: 'none', promptType: 'offline' },
                     },
-                    onSubmit: (secret) => createLock.dispatch({ mode, secret, ttl, current }),
+                    onSubmit: (password) => createLock.dispatch({ mode, password, ttl, current }),
                     message: passwordTypeSwitch({
                         extra: c('Info')
                             .t`Please confirm your extra password in order to auto-lock with your extra password.`,
@@ -214,19 +226,20 @@ export const useLockSetup = (): LockSetup => {
                 });
 
             case LockMode.BIOMETRICS: {
-                if (currentLockMode === LockMode.PASSWORD) {
-                    /** if unregistered password lock then we have the secret already */
-                    return createLock.dispatch({ mode, secret: current?.secret ?? '', ttl });
+                /** Password lock was just unlocked in step 1, reuse that password. */
+                if (current.mode === LockMode.PASSWORD) {
+                    return createLock.dispatch({ mode, password: current.password, ttl });
                 }
 
-                /* else prompt for password */
+                /** Otherwise prompt for the password. Forward the PIN if the
+                 * previous lock was SESSION so the saga can delete it. */
                 return confirmPassword({
                     reauth: {
                         type: ReauthAction.BIOMETRICS_SETUP,
-                        data: { current: currentLockMode === LockMode.SESSION ? current?.secret : undefined, ttl },
+                        data: { pin: current.mode === LockMode.SESSION ? current.pin : undefined, ttl },
                         fork: { promptBypass: 'none', promptType: 'offline' },
                     },
-                    onSubmit: (secret) => createLock.dispatch({ mode, secret, ttl, current }),
+                    onSubmit: (password) => createLock.dispatch({ current, mode, password, ttl }),
                     message: passwordTypeSwitch({
                         extra: c('Info').t`Please confirm your extra password in order to auto-lock with biometrics.`,
                         sso: c('Info').t`Please confirm your backup password in order to auto-lock with biometrics.`,
@@ -237,27 +250,37 @@ export const useLockSetup = (): LockSetup => {
             }
 
             case LockMode.DESKTOP:
+                /** FIXME: for offline support using `LockMode.DESKTOP` we should
+                 * go through the same password confirm flow as `LockMode.BIOMETRICS` */
                 return createLock.dispatch({ mode, secret: '', ttl, current });
 
             case LockMode.NONE:
-                return createLock.dispatch({ mode, secret: '', ttl, current });
+                return createLock.dispatch({ mode, ttl, current });
         }
     };
 
+    /** Re-verification is required to update the TTL since the saga recreates
+     * the lock. The confirmed secret is forwarded as `current` in each case. */
     const setLockTTL = async (ttl: number) => {
         switch (currentLockMode) {
             case LockMode.SESSION:
                 return confirmPin({
-                    onSubmit: (secret) =>
-                        createLock.dispatch({ mode: currentLockMode, secret, ttl, current: { secret } }),
                     title: c('Title').t`Auto-lock update`,
                     assistiveText: c('Info').t`Please confirm your PIN code to edit this setting.`,
+                    onSubmit: (pin) =>
+                        createLock.dispatch({
+                            mode: currentLockMode,
+                            pin,
+                            ttl,
+                            current: { pin, mode: LockMode.SESSION },
+                        }),
                 });
 
+            /** Biometric key not needed since the mode is not changing. */
             case LockMode.PASSWORD:
             case LockMode.BIOMETRICS:
                 return confirmPassword({
-                    onSubmit: (secret) => createLock.dispatch({ mode: currentLockMode, secret, ttl }),
+                    onSubmit: (password) => createLock.dispatch({ mode: currentLockMode, password, ttl }),
                     message: passwordTypeSwitch({
                         extra: c('Info').t`Please confirm your extra password in order to update the auto-lock time.`,
                         sso: c('Info').t`Please confirm your backup password in order to update the auto-lock time.`,
@@ -267,9 +290,9 @@ export const useLockSetup = (): LockSetup => {
                 });
 
             case LockMode.DESKTOP:
-                return confirmDesktop({
-                    onSuccess: async () => createLock.dispatch({ mode: currentLockMode, secret: '', ttl }),
-                });
+                await confirmDesktop()
+                    .then(() => createLock.dispatch({ mode: currentLockMode, secret: '', ttl }))
+                    .catch(noop);
         }
     };
 

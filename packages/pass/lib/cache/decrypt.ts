@@ -9,6 +9,7 @@ import { PassEncryptionTag } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
 import { logger } from '@proton/pass/utils/logger';
 import { objectFilter } from '@proton/pass/utils/object/filter';
+import { deserialize } from '@proton/pass/utils/object/serialize';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 const decrypt = async <T extends object>(options: {
@@ -24,7 +25,7 @@ const decrypt = async <T extends object>(options: {
 
         const decoder = new TextDecoder();
         const value = options.useTextDecoder ? decoder.decode(decryptedData) : uint8ArrayToString(decryptedData);
-        return JSON.parse(value) as T;
+        return deserialize<T>(value);
     } catch (error) {
         logger.warn(`[Cache::decrypt] Decryption failure`, error);
     }

@@ -14,12 +14,13 @@ import type { PasswordTypeSwitch } from '@proton/pass/lib/auth/utils';
 import { passwordTypeSwitch } from '@proton/pass/lib/auth/utils';
 import { selectHasTwoPasswordMode, selectIsSSO, selectPasswordTypeConfig } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
+import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import type { PasswordModalState } from './PasswordModal';
 import { PasswordModal, type PasswordModalProps } from './PasswordModal';
 
-type PasswordUnlockContextValue = UseAsyncModalHandle<string, PasswordModalProps>;
+type PasswordUnlockContextValue = UseAsyncModalHandle<XorObfuscation, PasswordModalProps>;
 const PasswordUnlockContext = createContext<PasswordUnlockContextValue>(async () => {});
 
 export const usePasswordUnlock = () => useContext(PasswordUnlockContext);
@@ -107,7 +108,7 @@ export const PasswordUnlockProvider: FC<PropsWithChildren<PasswordUnlockProps>> 
         };
     }, [passwordTypeSwitch]);
 
-    const modal = useAsyncModalHandles<string, PasswordModalState>({ getInitialModalState });
+    const modal = useAsyncModalHandles<XorObfuscation, PasswordModalState>({ getInitialModalState });
     const { handler, abort, resolver, state, key } = modal;
 
     /** SSO and two-password users without an offline password must re-auth

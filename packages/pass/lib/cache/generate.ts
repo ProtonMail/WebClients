@@ -4,6 +4,7 @@ import { selectCachableState } from '@proton/pass/store/selectors/cache';
 import type { State } from '@proton/pass/store/types';
 import { PassEncryptionTag } from '@proton/pass/types';
 import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
+import { serialize } from '@proton/pass/utils/object/serialize';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import { CACHE_SALT_LENGTH, encryptOfflineCacheKey, getCacheEncryptionKey } from './crypto';
@@ -17,7 +18,7 @@ type GenerateCacheOptions = {
 export const generateCache =
     ({ keyPassword, sessionLockToken, offlineKD }: GenerateCacheOptions) =>
     async (state: State): Promise<EncryptedPassCache> => {
-        const cache = JSON.stringify(selectCachableState(state));
+        const cache = serialize(selectCachableState(state));
         const snapshot = JSON.stringify(PassCrypto.serialize());
 
         const cacheSalt = crypto.getRandomValues(new Uint8Array(CACHE_SALT_LENGTH));
@@ -29,7 +30,11 @@ export const generateCache =
 
         const encoder = new TextEncoder();
 
-        const encryptedState: Uint8Array<ArrayBuffer> = await encryptData(cacheKey, encoder.encode(cache), PassEncryptionTag.Cache);
+        const encryptedState: Uint8Array<ArrayBuffer> = await encryptData(
+            cacheKey,
+            encoder.encode(cache),
+            PassEncryptionTag.Cache
+        );
         const encryptedSnapshot = await encryptData(cacheKey, stringToUint8Array(snapshot), PassEncryptionTag.Cache);
 
         return {

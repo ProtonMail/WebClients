@@ -22,6 +22,7 @@ import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { selectCanCreateItems } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
+import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { ImportReport } from './ImportReport';
@@ -78,13 +79,18 @@ export const Import: FC = () => {
 
             {passphraseModal.state.open && (
                 <PasswordModal
+                    loading={passphraseModal.state.loading}
+                    open
+                    submitLabel={c('Action').t`Confirm`}
                     title={c('Title').t`Encrypted import`}
                     type="current-password"
-                    open
-                    loading={passphraseModal.state.loading}
-                    onSubmit={(passphrase) => passphraseModal.resolver({ ok: true, passphrase })}
                     onClose={() => passphraseModal.resolver({ ok: false })}
-                    submitLabel={c('Action').t`Confirm`}
+                    onSubmit={(passphrase) =>
+                        passphraseModal.resolver({
+                            ok: true,
+                            passphrase: deobfuscate(passphrase, { zeroize: true }),
+                        })
+                    }
                 />
             )}
 

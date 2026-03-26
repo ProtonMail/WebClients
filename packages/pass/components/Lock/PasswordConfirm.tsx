@@ -23,7 +23,7 @@ export const PasswordConfirm: FC<Props> = ({ mode, onSuccess }) => {
             id="password-confirm"
             loading={confirm.loading}
             submitLabel={c('Action').t`Continue`}
-            onSubmit={({ password }) => confirm.dispatch({ password, mode })}
+            onSubmit={(password) => confirm.dispatch({ password, mode })}
             onValidate={validateCurrentPassword}
         />
     );

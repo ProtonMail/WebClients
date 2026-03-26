@@ -3,7 +3,7 @@ import { deriveKey } from '@proton/crypto/lib/subtle/aesGcm';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { decryptData, encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import type { ExportRequestOptions } from '@proton/pass/lib/export/types';
-import { type Maybe, PassEncryptionTag } from '@proton/pass/types';
+import { PassEncryptionTag } from '@proton/pass/types';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 export enum ReauthAction {
@@ -20,7 +20,7 @@ type ReauthLockChange = {
      * an offline password available for local verification, as such, this
      * `current` value is only used when switching from a PIN lock to a
      * password or biometrics lock. */
-    current: Maybe<string>;
+    pin?: string;
     ttl: number;
 };
 
@@ -62,25 +62,25 @@ export const resolveReauthKey = async (
 };
 
 export const encryptReauthLock = async (payload: ReauthLockChange, authStore: AuthStore): Promise<ReauthLockChange> => {
-    if (!payload.current) return payload;
+    if (!payload.pin) return payload;
 
     const salt = crypto.getRandomValues(new Uint8Array(32));
     const key = await resolveReauthKey(authStore, salt);
-    const encrypted = await encryptData(key, stringToUint8Array(payload.current), PassEncryptionTag.ReauthPayload);
+    const encrypted = await encryptData(key, stringToUint8Array(payload.pin), PassEncryptionTag.ReauthPayload);
     const data = { encrypted: encrypted.toBase64(), salt: salt.toBase64() } satisfies EncryptedReauthPayload;
-    const current = JSON.stringify(data);
+    const pin = JSON.stringify(data);
 
-    return { current, ttl: payload.ttl };
+    return { pin, ttl: payload.ttl };
 };
 
 export const decryptReauthLock = async (payload: ReauthLockChange, authStore: AuthStore): Promise<ReauthLockChange> => {
-    if (!payload.current) return payload;
+    if (!payload.pin) return payload;
 
-    const data = JSON.parse(payload.current) as EncryptedReauthPayload;
+    const data = JSON.parse(payload.pin) as EncryptedReauthPayload;
     const salt = Uint8Array.fromBase64(data.salt);
     const encrypted = Uint8Array.fromBase64(data.encrypted);
     const key = await resolveReauthKey(authStore, salt);
-    const current = await decryptData(key, encrypted, PassEncryptionTag.ReauthPayload);
+    const pin = await decryptData(key, encrypted, PassEncryptionTag.ReauthPayload);
 
-    return { current: uint8ArrayToString(current), ttl: payload.ttl };
+    return { pin: uint8ArrayToString(pin), ttl: payload.ttl };
 };

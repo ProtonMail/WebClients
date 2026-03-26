@@ -1,6 +1,7 @@
 import { generateKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { sendSetupLockSecretMessage } from '@proton/pass/lib/auth/lock/desktop/logic.extension';
-import { type LockAdapter, LockMode } from '@proton/pass/lib/auth/lock/types';
+import type { LockAdapterDesktop } from '@proton/pass/lib/auth/lock/types';
+import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import { decryptData, encryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import type { NativeMessagingService } from '@proton/pass/lib/native-messaging/native-messaging.extension';
@@ -22,10 +23,13 @@ const checkVerifier = async (lockSecret: string, desktopLockVerifier: string) =>
     return true;
 };
 
-export const desktopLockAdapterFactory = (auth: AuthService, nativeMessaging: NativeMessagingService): LockAdapter => {
+export const desktopLockAdapterFactory = (
+    auth: AuthService,
+    nativeMessaging: NativeMessagingService
+): LockAdapterDesktop => {
     const { authStore } = auth.config;
 
-    const adapter: LockAdapter = {
+    const adapter: LockAdapterDesktop = {
         type: LockMode.DESKTOP,
 
         check: async () => {
@@ -35,7 +39,7 @@ export const desktopLockAdapterFactory = (auth: AuthService, nativeMessaging: Na
             return { mode: adapter.type, locked: false, ttl: authStore.getLockTTL() };
         },
 
-        create: async ({ ttl }, onBeforeCreate) => {
+        create: async (_, ttl, onBeforeCreate) => {
             logger.info(`[DesktopLock] creating desktop lock`);
 
             /** Create lock secret and send it to desktop app */

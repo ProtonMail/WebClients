@@ -34,11 +34,11 @@ const PinUnlockRender: ForwardRefRenderFunction<HTMLInputElement, Props> = ({ he
         rerender();
     });
 
-    const onSubmit = async (secret: string) => {
+    const onSubmit = async (pin: string) => {
         try {
             setLoading(true);
             setError(null);
-            await unlock({ mode: LockMode.SESSION, secret, offline: false });
+            await unlock({ mode: LockMode.SESSION, pin, offline: false });
             onUnlock?.();
         } catch {
         } finally {

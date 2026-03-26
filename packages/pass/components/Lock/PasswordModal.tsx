@@ -1,4 +1,4 @@
-import { type FC, useCallback, useMemo, useRef, useState } from 'react';
+import type { FC } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,10 +11,12 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
+import { usePasswordForm } from '@proton/pass/hooks/auth/usePasswordForm';
 import type { AsyncModalState } from '@proton/pass/hooks/useAsyncModalHandles';
 import type { RequestForkOptions } from '@proton/pass/lib/auth/fork';
 import type { ReauthActionPayload } from '@proton/pass/lib/auth/reauth';
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe, MaybePromise } from '@proton/pass/types';
+import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 
 import type { OnReauthFn } from './PasswordUnlockProvider';
 
@@ -41,8 +43,8 @@ export type PasswordModalState = {
 
 export type PasswordModalProps = AsyncModalState<PasswordModalState> & {
     onClose?: () => void;
-    onSubmit?: (password: string) => void;
     onReauth?: OnReauthFn;
+    onSubmit: (password: XorObfuscation) => MaybePromise<void>;
 };
 
 export const PasswordModal: FC<PasswordModalProps> = ({
@@ -60,21 +62,15 @@ export const PasswordModal: FC<PasswordModalProps> = ({
     onSubmit,
     onValidate,
 }) => {
-    const touched = useRef(false);
-    const [password, setPassword] = useState('');
-    const error = useMemo(() => onValidate?.(password), [password, onValidate]);
-
-    const onValue = useCallback((value: string) => {
-        touched.current = true;
-        setPassword(value);
-    }, []);
+    const { state, onValue, onFormSubmit } = usePasswordForm({ onSubmit, onValidate });
+    const disabled = Boolean(loading || !state.touched || state.error);
 
     return (
         <ModalTwo
             as={Form}
             onClose={onClose}
             onReset={onClose}
-            onSubmit={() => !error && onSubmit?.(password)}
+            onSubmit={onFormSubmit}
             open={open}
             size="small"
             data-protonpass-autosave-ignore="true"
@@ -92,13 +88,13 @@ export const PasswordModal: FC<PasswordModalProps> = ({
                     autoFocus
                     dense
                     disabled={loading}
-                    error={touched.current ? error : undefined}
+                    error={state.touched ? state.error : undefined}
                     id="password"
+                    name="password"
                     label={label ?? c('Label').t`Password`}
                     onValue={onValue}
                     placeholder={placeholder ?? c('Placeholder').t`Password`}
                     required
-                    value={password}
                     {...(!autofillable ? { 'data-protonpass-ignore': true } : {})}
                 />
 
@@ -108,7 +104,7 @@ export const PasswordModal: FC<PasswordModalProps> = ({
                 <Button color="danger" shape="outline" onClick={onClose} disabled={loading}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <Button type="submit" color="norm" loading={loading} disabled={loading || error !== undefined}>
+                <Button type="submit" color="norm" loading={loading} disabled={disabled}>
                     {submitLabel ?? c('Action').t`Authenticate`}
                 </Button>
             </ModalTwoFooter>
