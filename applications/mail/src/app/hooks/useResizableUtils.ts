@@ -1,6 +1,6 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
-import type { RefObject } from 'react';
 import type React from 'react';
+import type { RefObject } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 
 import throttle from 'lodash/throttle';
 
@@ -267,6 +267,13 @@ export const useResizableUtils = ({
     const [isResizing, setIsResizing] = useState(false);
     const [scrollBarWidth, setScrollBarWidth] = useState(0);
 
+    // Align value to device pixels to avoid subpixel rounding issues at zoom levels
+    // (prevents 1px elements from disappearing)
+    const snapToDevicePixel = (value: number) => {
+        const dpr = window.devicePixelRatio || 1;
+        return Math.ceil(value * dpr) / dpr;
+    };
+
     // Use useElementRect to observe container size changes
     const containerRect = useElementRect(containerRef);
     const containerWidth = containerRect?.width || 0;
@@ -292,7 +299,7 @@ export const useResizableUtils = ({
         const shouldUpdate = !hasCalculatedInitialWidth || Math.abs(width - targetWidth) > 5;
 
         if (shouldUpdate) {
-            setWidth(targetWidth);
+            setWidth(snapToDevicePixel(targetWidth));
             if (!hasCalculatedInitialWidth) {
                 setHasCalculatedInitialWidth(true);
             }
@@ -309,7 +316,7 @@ export const useResizableUtils = ({
 
     const updateWidth = (newWidth: number) => {
         const constrainedWidth = constrainWidth(newWidth, containerWidth, minWidth, maxRatio);
-        setWidth(constrainedWidth);
+        setWidth(snapToDevicePixel(constrainedWidth));
 
         safeSaveRatio(constrainedWidth);
         return constrainedWidth;
@@ -333,7 +340,7 @@ export const useResizableUtils = ({
         }
 
         const constrainedWidth = constrainWidth(newWidth, containerWidth, minWidth, maxRatio);
-        setWidth(constrainedWidth);
+        setWidth(snapToDevicePixel(constrainedWidth));
 
         safeSaveRatio(constrainedWidth);
     };
@@ -409,7 +416,7 @@ export const useResizableUtils = ({
         const savedWidth = calculateWidthFromSavedRatio(persistKey, containerWidth);
         if (savedWidth !== null) {
             const constrainedWidth = constrainWidth(savedWidth, containerWidth, minWidth, maxRatio);
-            setWidth(constrainedWidth);
+            setWidth(snapToDevicePixel(constrainedWidth));
         }
     }, [containerWidth, persistKey, maxRatio, minWidth]);
 
