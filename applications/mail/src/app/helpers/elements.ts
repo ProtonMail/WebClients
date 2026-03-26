@@ -422,7 +422,7 @@ export const getElementContextIdentifier = (contextFilter: ContextIdentifier) =>
 
     return JSON.stringify({
         labelID: contextFilter.labelID,
-        categoryIDs: contextFilter.categoryIDs.join(','),
+        categoryIDs: contextFilter.categoryIDs,
         conversationMode: contextFilter.conversationMode,
         filter: contextFilter.filter,
         sort: contextFilter.sort,
