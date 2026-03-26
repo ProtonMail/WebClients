@@ -767,6 +767,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
+      ],
+      "Configure": [
+        "Konfigurieren"
+      ],
+      "Settings": [
+        "Einstellungen"
       ]
     },
     "Browser": {
@@ -1339,6 +1345,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Dein PIN-Code wurde von einem anderen ${ PASS_APP_NAME }-Client entfernt"
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Die Verschlüsselung der Kommunikation für die Desktop-Entsperrung ist fehlgeschlagen."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App ist gesperrt, sie muss entsperrt werden."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App ist nicht installiert."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Die ${ PASS_APP_NAME }-Desktop-App reagiert nicht. Läuft sie?"
       ]
     },
     "Error message": {
@@ -2693,6 +2711,63 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Deine Organisation verlangt, dass du deinen Zugang zu ${ PASS_APP_NAME } absicherst."
+      ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME } ist derzeit offline. Öffne die Erweiterung zum Entsperren."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } Offline-Modus aktiviert."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Aktiviere den Offline-Modus, um auf deine ${ PASS_SHORT_APP_NAME }-Daten zuzugreifen, falls deine Internetverbindung abbricht oder die ${ BRAND_NAME }-Server nicht erreichbar sind."
+      ],
+      "Enabling desktop auto-lock": [
+        "Desktop-Autosperre aktivieren"
+      ],
+      "Not configured": [
+        "Nicht konfiguriert"
+      ],
+      "Offline mode": [
+        "Offline-Modus"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "${ PASS_APP_NAME } in einem größeren Fenster öffnen"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Das ${ PASS_APP_NAME }-Popup-Fenster öffnen"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um den Offline-Modus zu aktivieren."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Bitte bestätige dein Backup-Passwort, um den Offline-Modus zu aktivieren."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Bitte bestätige dein zusätzliches Passwort, um den Offline-Modus zu aktivieren."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Bitte bestätige dein zweites Passwort, um den Offline-Modus zu aktivieren"
+      ],
+      "Reconnect": [
+        "Erneut verbinden"
+      ],
+      "Reconnecting": [
+        "Verbindung wird wiederhergestellt"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Diese Funktion erfordert, dass die Desktop-App ${ PASS_APP_NAME } während der Einrichtung installiert und ausgeführt wird."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Wenn aktiviert, kannst du immer noch auf deine ${ PASS_SHORT_APP_NAME }-Daten zugreifen, wenn du keine Internetverbindung hast oder die ${ BRAND_NAME }-Server nicht erreichbar sind."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kannst jetzt dein Backup-Passwort verwenden, um offline auf ${ PASS_SHORT_APP_NAME } zuzugreifen"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kannst jetzt dein zusätzliches Passwort verwenden, um offline auf ${ PASS_SHORT_APP_NAME } zuzugreifen"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Du kannst jetzt dein zweites Passwort verwenden, um offline auf ${ PASS_SHORT_APP_NAME } zuzugreifen"
       ]
     },
     "Keyboard key": {
@@ -3827,6 +3902,15 @@
       ],
       "ZIP or Postal code": [
         "Postleitzahl oder ZIP-Code"
+      ],
+      "Enable offline access": [
+        "Offline-Zugriff aktivieren"
+      ],
+      "Keyboard shortcuts": [
+        "Tastaturkürzel"
+      ],
+      "Offline mode": [
+        "Offline-Modus"
       ]
     },
     "Link": {
@@ -5143,6 +5227,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dein Abonnement erlaubt es dir nicht, mehrere Tresore zu erstellen. Alle Einträge werden in deinen ersten Tresor importiert. Um in mehrere Tresore zu importieren, musst du dein Abonnement upgraden."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } Offline-Modus deaktiviert."
+      ],
+      "Too many attempts": [
+        "Zu viele Versuche"
       ]
     }
   }

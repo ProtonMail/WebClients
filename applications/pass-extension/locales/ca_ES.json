@@ -767,6 +767,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
+      ],
+      "Configure": [
+        "Configurar"
+      ],
+      "Settings": [
+        "Preferències"
       ]
     },
     "Browser": {
@@ -1339,6 +1345,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Un altre client de ${ PASS_APP_NAME } ha eliminat el codi PIN"
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Ha fallat la comunicació de xifratge per al desbloqueig de l'escriptori."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "L'aplicació d'escriptori de ${ PASS_APP_NAME } està bloquejada, s'ha de desbloquejar."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } no està instal·lada."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } no respon, s'està executant?"
       ]
     },
     "Error message": {
@@ -2696,6 +2714,63 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME } es troba actualment fora de línia. Obriu l'extensió per desbloquejar-lo."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "S'ha habilitat el mode fora de línia de ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Habiliteu el mode fora de línia per a accedir a les vostres dades de ${ PASS_SHORT_APP_NAME } si perdeu la connexió a internet o si no es pot accedir als servidors de ${ BRAND_NAME }."
+      ],
+      "Enabling desktop auto-lock": [
+        "S'està habilitant el bloqueig automàtic de l'escriptori"
+      ],
+      "Not configured": [
+        "No s'ha configurat"
+      ],
+      "Offline mode": [
+        "Mode fora de línia"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Obriu ${ PASS_APP_NAME } en una finestra més gran"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Obriu la finestra emergent de ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Confirmeu la contrasenya de ${ BRAND_NAME } per a activar el mode fora de línia."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Confirmeu la contrasenya de recuperació per a activar el mode fora de línia."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Confirmeu la contrasenya addicional per a activar el mode fora de línia."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Confirmeu la segona contrasenya per a activar el mode fora de línia."
+      ],
+      "Reconnect": [
+        "Torna a connectar"
+      ],
+      "Reconnecting": [
+        "S'està reconnectant"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Aquesta funció requereix que l'aplicació d'escriptori ${ PASS_APP_NAME } estigui instal·lada i en execució durant la configuració."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Quan estigui habilitada, encara podreu accedir a les vostres dades de ${ PASS_SHORT_APP_NAME } si perdeu la connexió a internet o si no es pot accedir als servidors de ${ BRAND_NAME }."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Ara podeu utilitzar la vostra contrasenya de recuperació per accedir a ${ PASS_SHORT_APP_NAME } fora de línia"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Ara podeu utilitzar la vostra contrasenya addicional per accedir a ${ PASS_SHORT_APP_NAME } fora de línia"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Ara podeu utilitzar la vostra segona contrasenya per accedir a ${ PASS_SHORT_APP_NAME } fora de línia"
       ]
     },
     "Keyboard key": {
@@ -3830,6 +3905,15 @@
       ],
       "ZIP or Postal code": [
         "Codi postal"
+      ],
+      "Enable offline access": [
+        "Activa l'accés fora de línia"
+      ],
+      "Keyboard shortcuts": [
+        "Dreceres de teclat"
+      ],
+      "Offline mode": [
+        "Mode fora de línia"
       ]
     },
     "Link": {
@@ -5146,6 +5230,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La vostra subscripció no us permet crear diverses caixes fortes. Tots els elements s'importaran a la vostra primera caixa forta. Per a importar a diverses caixes fortes milloreu la vostra subscripció."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "S'ha deshabilitat el mode fora de línia de ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Too many attempts": [
+        "Massa intents"
       ]
     }
   }

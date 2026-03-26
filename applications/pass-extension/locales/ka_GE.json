@@ -767,6 +767,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "თქვენი პაროლების მმართველი აქ არაა? მოითხოვეთ ის."
+      ],
+      "Settings": [
+        "მორგება"
       ]
     },
     "Browser": {
@@ -2627,6 +2630,33 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "თქვენი ორგანიზაცია ითხოვთ, დაიცვათ თქვენი წვდომა ${ PASS_APP_NAME }-ზე"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME }-ის ხაზგარეშე რეჟიმი ჩართულია."
+      ],
+      "Enabling desktop auto-lock": [
+        "სამუშაო მაგიდის ავტოდაბლოკვის ჩართვა"
+      ],
+      "Offline mode": [
+        "კავშირგარეშე რეჟიმი"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ქსელის გარეშე მუშაობის რეჟიმის ჩასართავად"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "დაადასტურეთ თქვნი მარქაფი პაროლი, ქსელის გარეშე მუშაობის რეჟიმის ჩასართავად"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "დაადასტურეთ თქვნი დამატებითი პაროლი, ქსელის გარეშე მუშაობის რეჟიმის ჩასართავად"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "დაადასტურეთ თქვნი მეორე პაროლი, ქსელის გარეშე მუშაობის რეჟიმის ჩასართავად"
+      ],
+      "Reconnect": [
+        "თავიდან დაკავშირება"
+      ],
+      "Reconnecting": [
+        "თავიდან დაკავშირება"
       ]
     },
     "Keyboard key": {
@@ -3761,6 +3791,15 @@
       ],
       "ZIP or Postal code": [
         "Zip ან საფოსტო კოდი"
+      ],
+      "Enable offline access": [
+        "ქსელის გარეშე წვდომის დაშვება"
+      ],
+      "Keyboard shortcuts": [
+        "კლავიატურის მალსახმობები"
+      ],
+      "Offline mode": [
+        "კავშირგარეშე რეჟიმი"
       ]
     },
     "Link": {
@@ -5077,6 +5116,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "თქვენი სატარიფო გეგმა ერთზე მეტი საცავის შექმნის უფლებას არ გაძლევთ. ყველა ელემენტი პირველ საცავში იქნება შემოტანილი. ერთზე მეტი საცავში შემოსატანად ასწიეთ თქვენი სატარიფო გეგმა."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME }-ის ხაზგარეშე რეჟიმი გამორთულია."
+      ],
+      "Too many attempts": [
+        "ძალიან ბევრი მცდელობა"
       ]
     }
   }

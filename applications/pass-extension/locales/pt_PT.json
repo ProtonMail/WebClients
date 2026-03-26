@@ -722,6 +722,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "O seu gestor de palavras-passe não está aqui? Solicite-o."
+      ],
+      "Settings": [
+        "Definições"
       ]
     },
     "Browser": {
@@ -2524,6 +2527,27 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "A sua organização exige que proteja o seu acesso ao ${ PASS_APP_NAME }."
+      ],
+      "Offline mode": [
+        "Modo sem conexão"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Confirme a sua palavra-passe da ${ BRAND_NAME } para ativar o modo offline."
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Confirme a sua palavra-passe de backup para ativar o modo offline."
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Confirme a sua palavra-passe adicional para ativar o modo offline."
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Confirme a sua segunda palavra-passe para ativar o modo offline."
+      ],
+      "Reconnect": [
+        "Voltar a ligar"
+      ],
+      "Reconnecting": [
+        "A religar"
       ]
     },
     "Label": {
@@ -3641,6 +3665,15 @@
       ],
       "ZIP or Postal code": [
         "Código postal"
+      ],
+      "Enable offline access": [
+        "Ativar o acesso offline"
+      ],
+      "Keyboard shortcuts": [
+        "Atalhos de teclado"
+      ],
+      "Offline mode": [
+        "Modo sem conexão"
       ]
     },
     "Link": {
@@ -4931,6 +4964,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "A sua subscrição não lhe permite criar vários cofres. Todos os itens serão importados para o seu primeiro cofre. Para importar para vários cofres, melhore a sua subscrição."
+      ],
+      "Too many attempts": [
+        "Ocorreu muitas tentativas."
       ]
     }
   }

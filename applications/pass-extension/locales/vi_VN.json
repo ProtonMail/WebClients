@@ -762,6 +762,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Trình quản lý mật khẩu không có ở đây? Hãy yêu cầu."
+      ],
+      "Settings": [
+        "Cài đặt"
       ]
     },
     "Browser": {
@@ -2624,6 +2627,36 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Tổ chức yêu cầu phải bảo mật truy cập tới ${ PASS_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "Đã kích hoạt chế độ ngoại tuyến ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Bật chế độ ngoại tuyến để truy cập dữ liệu ${ PASS_SHORT_APP_NAME } nếu mất kết nối internet hoặc nếu không thể truy cập máy chủ ${ BRAND_NAME }."
+      ],
+      "Offline mode": [
+        "Chế độ ngoại tuyến"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } để kích hoạt chế độ ngoại tuyến"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Vui lòng xác nhận mật khẩu sao lưu để kích hoạt chế độ ngoại tuyến"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Vui lòng xác nhận mật khẩu bổ sung để kích hoạt chế độ ngoại tuyến"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Vui lòng xác nhận mật khẩu thứ hai để kích hoạt chế độ ngoại tuyến"
+      ],
+      "Reconnect": [
+        "Kết nối lại"
+      ],
+      "Reconnecting": [
+        "Đang kết nối lại"
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Khi được kích hoạt, vẫn có thể truy cập dữ liệu ${ PASS_SHORT_APP_NAME } nếu mất kết nối internet hoặc nếu không thể truy cập máy chủ ${ BRAND_NAME }."
       ]
     },
     "Keyboard key": {
@@ -3741,6 +3774,15 @@
       ],
       "ZIP or Postal code": [
         "Mã bưu chính"
+      ],
+      "Enable offline access": [
+        "Kích hoạt truy cập ngoại tuyến"
+      ],
+      "Keyboard shortcuts": [
+        "Phím tắt"
+      ],
+      "Offline mode": [
+        "Chế độ ngoại tuyến"
       ]
     },
     "Link": {
@@ -5039,6 +5081,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Gói đăng ký không cho phép tạo nhiều kho. Tất cả mục sẽ được nhập vào kho chính. Hãy nâng cấp gói đăng ký để nhập vào nhiều kho."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "Đã vô hiệu hóa chế độ ngoại tuyến ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Too many attempts": [
+        "Quá nhiều lần thử"
       ]
     }
   }

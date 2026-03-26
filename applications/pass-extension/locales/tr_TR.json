@@ -767,6 +767,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
+      ],
+      "Configure": [
+        "Yapılandır"
+      ],
+      "Settings": [
+        "Ayarlar"
       ]
     },
     "Browser": {
@@ -1339,6 +1345,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN kodunuz başka bir ${ PASS_APP_NAME } istemcisi tarafından kaldırıldı"
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Bilgisayar kilidini açmak için gereken şifrelenmiş iletişim kurulamadı."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME } bilgisayar uygulaması kilitli. Kilidin açılması gerekiyor."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "${ PASS_APP_NAME } bilgisayar uygulaması kurulmamış."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME } bilgisayar uygulaması yanıt vermiyor. Çalışıyor mu?"
       ]
     },
     "Error message": {
@@ -2696,6 +2714,63 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
+      ],
+      "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
+        "${ PASS_SHORT_APP_NAME } şu anda çevrim dışı. Kilidi açmak için eklentiyi açın."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
+        "${ PASS_SHORT_APP_NAME } çevrim dışı kipi açıldı."
+      ],
+      "Enable offline mode to access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "İnternet bağlantınızı kaybederseniz veya ${ BRAND_NAME } sunucularına ulaşılamazsa ${ PASS_SHORT_APP_NAME } verilerinize erişmek için çevrim dışı kipi açın."
+      ],
+      "Enabling desktop auto-lock": [
+        "Otomatik bilgisayar kilitlemenin açılması"
+      ],
+      "Not configured": [
+        "Yapılandırılmamış"
+      ],
+      "Offline mode": [
+        "Çevrim dışı kip"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Daha büyük bir pencerede ${ PASS_APP_NAME } aç"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "${ PASS_APP_NAME } açılır penceresini aç"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Çevrim dışı kipini açmak için lütfen ${ BRAND_NAME } parolanızı yazın"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Çevrim dışı kipini açmak için lütfen yedek parolanızı yazın"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Çevrim dışı kipini açmak için lütfen ek parolanızı yazın"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Çevrim dışı kipini kullanıma almak için lütfen ikinci parolanızı onaylayın"
+      ],
+      "Reconnect": [
+        "Yeniden bağlan"
+      ],
+      "Reconnecting": [
+        "Yeniden bağlantı kuruluyor"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Bu özelliğin kullanılabilmesi için kurulum sırasında ${ PASS_APP_NAME } bilgisayar uygulamasının kurulmuş ve çalışıyor olması gerekir."
+      ],
+      "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Bu seçeneği açarsanız, internet bağlantınız kesilirse veya ${ BRAND_NAME } sunucularına ulaşılamazsa ${ PASS_SHORT_APP_NAME } verilerinize erişebilirsiniz."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Artık yedek parolanız ile ${ PASS_SHORT_APP_NAME } uygulamasına çevrim dışı erişebilirsiniz"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Artık ek parolanız ile ${ PASS_SHORT_APP_NAME } uygulamasına çevrim dışı erişebilirsiniz"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Artık ikinci parolanız ile ${ PASS_SHORT_APP_NAME } uygulamasına çevrim dışı erişebilirsiniz"
       ]
     },
     "Keyboard key": {
@@ -3830,6 +3905,15 @@
       ],
       "ZIP or Postal code": [
         "Posta kodu"
+      ],
+      "Enable offline access": [
+        "Çevrim dışı erişimi kullanıma al"
+      ],
+      "Keyboard shortcuts": [
+        "Klavye kısayolları"
+      ],
+      "Offline mode": [
+        "Çevrim dışı kip"
       ]
     },
     "Link": {
@@ -5146,6 +5230,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler ilk kasanıza aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."
+      ],
+      "${ PASS_SHORT_APP_NAME } offline mode disabled.": [
+        "${ PASS_SHORT_APP_NAME } çevrim dışı kipi kapatıldı."
+      ],
+      "Too many attempts": [
+        "Çok fazla deneme yapıldı"
       ]
     }
   }

@@ -726,6 +726,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Nie ma Twojego menadżera haseł? Zgłoś to."
+      ],
+      "Settings": [
+        "Ustawienia"
       ]
     },
     "Browser": {
@@ -2598,6 +2601,27 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizacja wymaga zabezpieczenia dostępu do ${ PASS_APP_NAME }"
+      ],
+      "Offline mode": [
+        "Tryb offline"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
+        "Potwierdź hasło ${ BRAND_NAME }, aby uzyskać dostęp do trybu offline"
+      ],
+      "Please confirm your backup password in order to enable offline mode": [
+        "Potwierdź hasło zapasowe, aby włączyć tryb offline"
+      ],
+      "Please confirm your extra password in order to enable offline mode": [
+        "Potwierdź dodatkowe hasło, aby włączyć tryb offline"
+      ],
+      "Please confirm your second password in order to enable offline mode": [
+        "Potwierdź drugie hasło, aby włączyć tryb offline"
+      ],
+      "Reconnect": [
+        "Połącz ponownie"
+      ],
+      "Reconnecting": [
+        "Ponowne łączenie"
       ]
     },
     "Label": {
@@ -3746,6 +3770,15 @@
       ],
       "ZIP or Postal code": [
         "Kod pocztowy"
+      ],
+      "Enable offline access": [
+        "Włącz dostęp offline"
+      ],
+      "Keyboard shortcuts": [
+        "Skróty klawiszowe"
+      ],
+      "Offline mode": [
+        "Tryb offline"
       ]
     },
     "Link": {
@@ -5061,6 +5094,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Subskrypcja nie pozwala na tworzenie wielu sejfów. Wszystkie elementy zostaną zaimportowane do pierwszego sejfu. Ulepsz plan, aby importować do wielu sejfów."
+      ],
+      "Too many attempts": [
+        "Zbyt wiele prób"
       ]
     }
   }
