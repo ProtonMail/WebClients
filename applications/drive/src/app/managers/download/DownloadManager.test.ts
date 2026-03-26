@@ -1,7 +1,6 @@
 import type { NodeEntity, ProtonDrivePhotosClient } from '@proton/drive/index';
-import { NodeType } from '@proton/drive/index';
+import { AbortError, NodeType } from '@proton/drive/index';
 
-import { TransferCancel } from '../../components/TransferManager/transfer';
 import { createMockNodeEntity } from '../../utils/test/nodeEntity';
 import { createDeferred, createEmptyAsyncGenerator, flushAsync, trackInstances, waitForCondition } from './testUtils';
 
@@ -129,7 +128,9 @@ jest.mock('@proton/drive/index', () => {
         getFileDownloader: jest.fn(),
         iterateFolderChildren: jest.fn(),
     };
-    class AbortError extends Error {}
+    class AbortError extends Error {
+        name = 'AbortError';
+    }
     const getDrive = jest.fn(() => driveMock);
     const getDriveForPhotos = jest.fn(() => driveMock);
     const emitSDKEvent = (event: string, ...args: unknown[]) => {
@@ -402,7 +403,7 @@ describe('DownloadManager', () => {
         expect(activeDownloads.has('download-1')).toBe(false);
     });
 
-    it('should mark downloads as cancelled when a TransferCancel error occurs', async () => {
+    it('should mark downloads as cancelled when an AbortError occurs', async () => {
         const manager = DownloadManager.getInstance();
         const schedulerInstance = getSchedulerInstance();
 
@@ -450,9 +451,9 @@ describe('DownloadManager', () => {
         const completionPromise = scheduledTask.start();
         await flushAsync();
 
-        controllerCompletion.reject(new TransferCancel({ message: 'cancelled' }));
+        controllerCompletion.reject(new AbortError('cancelled'));
         await flushAsync();
-        await expect(completionPromise).rejects.toBeInstanceOf(TransferCancel);
+        await expect(completionPromise).rejects.toBeInstanceOf(AbortError);
         await cancelDeferred.promise;
 
         expect(storeMockState.updateDownloadItem.mock.calls).toContainEqual([
@@ -813,8 +814,8 @@ describe('DownloadManager', () => {
             'download-cancel-active',
             expect.objectContaining({ status: DownloadStatus.Cancelled })
         );
-        controllerCompletion.reject(new TransferCancel({ id: 'download-cancel-active' }));
-        await expect(completionPromise).rejects.toBeInstanceOf(TransferCancel);
+        controllerCompletion.reject(new AbortError('Transfer download-cancel-active canceled'));
+        await expect(completionPromise).rejects.toBeInstanceOf(AbortError);
 
         // activeDownloads is cleaned up in .finally() after the abort settles
         expect(activeDownloads.has('download-cancel-active')).toBe(false);
@@ -1209,7 +1210,7 @@ describe('DownloadManager', () => {
             const { completionPromise } = await startSignatureDownload(setup);
 
             setup.controllerCompletion.reject(new Error('Signature verification failed'));
-            setup.saveDeferred.reject(new TransferCancel({ id: 'download-1' }));
+            setup.saveDeferred.reject(new AbortError('Transfer download-1 canceled'));
 
             await expect(completionPromise).rejects.toThrow();
 
