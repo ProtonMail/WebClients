@@ -45,7 +45,27 @@ import { combineDateAndTime, getInitialValues, validate } from './utils';
 
 import './ScheduleMeetingForm.scss';
 
-const minutes = ['00', '15', '30', '45'];
+// generate all quaters of hours for the day in the format of { hour: '00', minute: '00' }
+const QUARTERS_OF_HOURS = Array.from({ length: 24 }, (_, hour) =>
+    [0, 15, 30, 45].map((minute) => ({
+        hour: hour.toString().padStart(2, '0'),
+        minute: minute.toString().padStart(2, '0'),
+    }))
+).flat();
+
+const PRESET_REPEAT_OPTIONS = [
+    { label: c('Label').t`Does not repeat`, value: 'NO_REPEAT' },
+    { label: c('Label').t`Every day`, value: 'FREQ=DAILY' },
+    {
+        label: c('Label').t`Every weekday`,
+        sublabel: c('Label').t`Monday to Friday`,
+        value: 'FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR',
+    },
+    { label: c('Label').t`Every week`, value: 'FREQ=WEEKLY' },
+    { label: c('Label').t`Every month`, value: 'FREQ=MONTHLY' },
+    { label: c('Label').t`Every year`, value: 'FREQ=YEARLY' },
+];
+
 const timeZoneSelectOptions = getTimeZoneOptions().map((option) => ({
     label: option.text,
     value: option.value,
@@ -170,29 +190,17 @@ export const ScheduleMeetingForm = ({
 
     const errors = useMemo(() => validate(values), [values]);
 
-    const isDisabled = useMemo(() => {
-        return Object.values(errors).some((error) => error);
-    }, [errors]);
+    const isDisabled = useMemo(() => Object.values(errors).some(Boolean), [errors]);
 
-    const timeOptions = useMemo(() => {
-        return [...Array(24).keys()]
-            .map((item) => {
-                const hourString = item > 9 ? item : `${0}${item}`;
-
-                return minutes.map((minute) => {
-                    const value = `${hourString}:${minute}`;
-                    // Create a date object with a random date, only time matters
-                    const date = new Date(1900, 0, 1, item, parseInt(minute), 0, 0);
-
-                    return {
-                        value: value,
-                        label: formatTimeHHMM(date, timeFormat),
-                    };
-                });
-            })
-            .flat();
-    }, [timeFormat]);
-
+    const timeOptions = useMemo(
+        () =>
+            QUARTERS_OF_HOURS.map(({ hour, minute }) => ({
+                value: `${hour}:${minute}`,
+                // create a date object with a random date, only hour and minute matter
+                label: formatTimeHHMM(new Date(1900, 0, 1, +hour, +minute), timeFormat),
+            })),
+        [timeFormat]
+    );
     const handleSubmit = async () => {
         // Mark all fields as touched on submit attempt
         setTouched({ meetingName: true });
@@ -277,15 +285,6 @@ export const ScheduleMeetingForm = ({
             });
     };
 
-    useEffect(() => {
-        if (values.startTime >= values.endTime) {
-            setValues((prev) => ({
-                ...prev,
-                endTime: timeOptions.find((option) => option.value > values.startTime)?.value ?? values.startTime,
-            }));
-        }
-    }, [values.startTime, values.endTime]);
-
     const startTimeOptions = useMemo(() => {
         const now = new Date();
         return timeOptions.filter(
@@ -305,19 +304,6 @@ export const ScheduleMeetingForm = ({
             true
         );
     };
-
-    const repeatOptions = [
-        { label: c('Label').t`Does not repeat`, value: 'NO_REPEAT' },
-        { label: c('Label').t`Every day`, value: 'FREQ=DAILY' },
-        {
-            label: c('Label').t`Every weekday`,
-            sublabel: c('Label').t`Monday to Friday`,
-            value: 'FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR',
-        },
-        { label: c('Label').t`Every week`, value: 'FREQ=WEEKLY' },
-        { label: c('Label').t`Every month`, value: 'FREQ=MONTHLY' },
-        { label: c('Label').t`Every year`, value: 'FREQ=YEARLY' },
-    ];
 
     const handleCopyLink = () => {
         if (!meetingLink) {
@@ -345,11 +331,22 @@ export const ScheduleMeetingForm = ({
     };
 
     const handleDateTimeChange: OnDateTimeChange = ({ fieldName, value }) => {
-        setValues((oldValues) => ({
-            ...oldValues,
+        const newValues = {
+            ...values,
             [fieldName]: value,
-            ...(fieldName === 'startDate' ? { endDate: value as Date } : {}),
-        }));
+        };
+
+        // check if endDateTime is before startDateTime, if so, set endDateTime to one hour later
+        const startDateTime = combineDateAndTime(newValues.startDate, newValues.startTime, newValues.timeZone);
+        const endDateTime = combineDateAndTime(newValues.endDate, newValues.endTime, newValues.timeZone);
+
+        if (endDateTime <= startDateTime) {
+            const oneHourLater = utcToZonedTime(new Date(startDateTime.getTime() + 60 * 60 * 1000), newValues.timeZone);
+            newValues.endDate = new Date(oneHourLater.getFullYear(), oneHourLater.getMonth(), oneHourLater.getDate());
+            newValues.endTime = `${String(oneHourLater.getHours()).padStart(2, '0')}:${String(oneHourLater.getMinutes()).padStart(2, '0')}`;
+        }
+
+        setValues(newValues);
     };
 
     return (
@@ -505,7 +502,7 @@ export const ScheduleMeetingForm = ({
                                     .t`Repeat event`}</div>
                             }
                         >
-                            {repeatOptions.map((option) => (
+                            {PRESET_REPEAT_OPTIONS.map((option) => (
                                 <Option
                                     key={option.value}
                                     value={option.value}
