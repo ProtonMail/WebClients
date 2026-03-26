@@ -18,7 +18,7 @@ export const getDuplicatePasswords = (logins: ItemRevision<'login'>[]): UniqueIt
     const seenMap = new Map<string, UniqueItem>();
 
     logins.forEach(({ data, itemId, shareId }) => {
-        if (!data.content.password.v) return;
+        if (!data.content.password.v.length) return;
 
         const password = deobfuscate(data.content.password);
         const seen = seenMap.get(password);

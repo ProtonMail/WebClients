@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Exporter } from '@proton/pass/components/Export/Exporter';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { throwError } from '@proton/pass/utils/fp/throw';
+import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 export const Export: FC = () => {
     const authService = useAuthService();
@@ -13,7 +14,8 @@ export const Export: FC = () => {
     return (
         <SettingsPanel title={c('Label').t`Export`}>
             <Exporter
-                onConfirm={async (password) => {
+                onConfirm={async (passwordBuff) => {
+                    const password = deobfuscate(passwordBuff, { zeroize: true });
                     const check = await authService.confirmPassword(password);
                     if (!check) throwError({ message: 'Session not confirmed' });
 

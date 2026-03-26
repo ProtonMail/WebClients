@@ -380,15 +380,15 @@ export const createAuthService = ({
 
                             switch (fork.reauth.type) {
                                 case ReauthAction.PW_LOCK_SETUP: {
-                                    const { current, ttl } = await decryptReauthLock(fork.reauth.data, authStore);
-                                    if (current) await auth.deleteLock(authStore.getLockMode(), current);
+                                    const { pin, ttl } = await decryptReauthLock(fork.reauth.data, authStore);
+                                    if (pin) await auth.deleteLock({ mode: LockMode.SESSION, pin });
                                     authStore.setLockMode(LockMode.PASSWORD);
                                     authStore.setLockTTL(ttl);
                                     break;
                                 }
                                 case ReauthAction.BIOMETRICS_SETUP: {
-                                    const { current, ttl } = await decryptReauthLock(fork.reauth.data, authStore);
-                                    if (current) await auth.deleteLock(authStore.getLockMode(), current);
+                                    const { pin, ttl } = await decryptReauthLock(fork.reauth.data, authStore);
+                                    if (pin) await auth.deleteLock({ mode: LockMode.SESSION, pin });
                                     const encryptedOfflineKD = await generateBiometricsKey(core, offlineKD);
                                     authStore.setEncryptedOfflineKD(encryptedOfflineKD);
                                     authStore.setLockMode(LockMode.BIOMETRICS);
@@ -585,9 +585,9 @@ export const createAuthService = ({
         onNotification,
     });
 
-    auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
-    auth.registerLockAdapter(LockMode.PASSWORD, passwordLockAdapterFactory(auth));
-    auth.registerLockAdapter(LockMode.BIOMETRICS, biometricsLockAdapterFactory(auth, core));
+    auth.registerLockAdapter(sessionLockAdapterFactory(auth));
+    auth.registerLockAdapter(passwordLockAdapterFactory(auth));
+    auth.registerLockAdapter(biometricsLockAdapterFactory(auth, core));
 
     return auth;
 };

@@ -24,12 +24,13 @@ import { selectRequest } from '@proton/pass/store/selectors';
 import type { MaybePromise } from '@proton/pass/types';
 import { download } from '@proton/pass/utils/dom/download';
 import { throwError } from '@proton/pass/utils/fp/throw';
+import type { XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 type Props = {
     /** Optional assertion function that will be triggered
      * immediately before an export request */
-    onConfirm: (password: string) => MaybePromise<void>;
+    onConfirm: (password: XorObfuscation) => MaybePromise<void>;
 };
 
 export const Exporter: FC<Props> = ({ onConfirm }) => {

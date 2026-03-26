@@ -5,6 +5,7 @@ import { stateDestroy, stateHydrate } from '@proton/pass/store/actions';
 import request from '@proton/pass/store/request/reducer';
 import type { State } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
+import { zeroize } from '@proton/pass/utils/object/zero';
 
 import { access } from './access';
 import alias from './alias';
@@ -63,6 +64,7 @@ const wrappedRootReducer: Reducer<State> = (previousState, action) => {
         ((): Maybe<State> => {
             if (stateDestroy.match(action)) {
                 PassCrypto?.clear();
+                zeroize(previousState);
                 return undefined;
             }
 

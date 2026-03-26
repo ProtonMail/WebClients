@@ -37,7 +37,7 @@ const getCustomSuggestions = async (
     const suggestions = new Map<string, number>();
 
     for (const item of items) {
-        if (!item.data.content.itemEmail.v) continue;
+        if (!item.data.content.itemEmail.v.length) continue;
         const email = toLowerCase(deobfuscate(item.data.content.itemEmail));
         if (monitored.has(email)) continue;
         if (await PassUI.is_email_valid(email)) suggestions.set(email, (suggestions.get(email) ?? 0) + 1);
