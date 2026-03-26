@@ -1,3 +1,4 @@
+import { AbortError } from '@proton/drive';
 import metrics from '@proton/metrics/index';
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -9,7 +10,7 @@ import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { isValidationError } from '../../utils/errorHandling/ValidationError';
 import { streamToBuffer } from '../../utils/stream';
-import { TransferCancel, isTransferCancelError } from '../../utils/transfer';
+import { isTransferCancelError } from '../../utils/transfer';
 import { unleashVanillaStore } from '../../zustand/unleash/unleash.store';
 import { initDownloadSW, isOPFSSupported, isServiceWorkersSupported, openDownloadStream } from './download';
 import { fileSaverLogDebug } from './fileSaverLogger';
@@ -154,7 +155,7 @@ export class FileSaver {
             const saveStream = await openDownloadStream(meta, { onCancel: () => abortController.abort() });
             await new Promise((resolve, reject) => {
                 abortController.signal.addEventListener('abort', () => {
-                    reject(new TransferCancel({ message: `Transfer canceled` }));
+                    reject(new AbortError(`Transfer canceled`));
                 });
                 stream.pipeTo(saveStream, { preventCancel: true }).then(resolve).catch(reject);
             });

@@ -1,13 +1,12 @@
 import type { NodeEntity } from '@proton/drive/index';
 import { AbortError, NodeType } from '@proton/drive/index';
 
+import { createAsyncQueue } from '../../utils/asyncQueue';
 import { getNodeStorageSize } from '../../utils/sdk/getNodeStorageSize';
-import { TransferCancel } from '../../utils/transfer';
 import { useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
 import type { DownloadController } from './DownloadManager';
 import type { ArchiveItem, ArchiveTracker, DownloadQueueTask, DownloadScheduler } from './downloadTypes';
 import type { MalwareDetection } from './malwareDetection/malwareDetection';
-import { createAsyncQueue } from '../../utils/asyncQueue';
 import { createFileDownloadStream } from './utils/createFileDownloadStream';
 import { downloadLogDebug } from './utils/downloadLogger';
 import { validateDownloadSignatures } from './utils/handleDownloadCompletion';
@@ -191,7 +190,7 @@ export class ArchiveStreamGenerator {
                 node,
                 () => {},
                 () => {
-                    const error = new TransferCancel({ id: this.downloadId });
+                    const error = new AbortError(`Transfer ${this.downloadId} canceled`);
                     this.abortController.abort(error);
                     throw error;
                 }
@@ -223,7 +222,7 @@ export class ArchiveStreamGenerator {
                     controller,
                     onApproved: closeWriter,
                     onRejected: () => {
-                        const error = new TransferCancel({ id: this.downloadId });
+                        const error = new AbortError(`Transfer ${this.downloadId} canceled`);
                         this.abortController.abort(error);
                         throw error;
                     },
