@@ -157,6 +157,9 @@
       "Close navigation": [
         "Gezinmeyi kapat"
       ],
+      "Configure": [
+        "Yapılandır"
+      ],
       "Confirm": [
         "Onayla"
       ],
@@ -624,6 +627,9 @@
       ],
       "Set extra password": [
         "Ek parolayı ayarla"
+      ],
+      "Settings": [
+        "Ayarlar"
       ],
       "Setup 2FA": [
         "İki adımlı doğrulama kur"
@@ -1501,7 +1507,7 @@
         "${ PASS_APP_NAME } geçiş anahtarlarını kaydetmeyi önerecek."
       ],
       "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
-        "${ PASS_SHORT_APP_NAME } şu anda çevrimdışı. Kilidi açmak için eklentiyi açın."
+        "${ PASS_SHORT_APP_NAME } şu anda çevrim dışı. Kilidi açmak için eklentiyi açın."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } çevrim dışı kipi açıldı."
@@ -2088,6 +2094,9 @@
       "None": [
         "Yok"
       ],
+      "Not configured": [
+        "Yapılandırılmamış"
+      ],
       "Not recommended": [
         "Önerilmez"
       ],
@@ -2099,6 +2108,12 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Çevrim içi olarak ${ PASS_APP_NAME } kullanmak için PIN kodu yazmanız gerekir. 3 başarısız denemeden sonra oturumunuz kapatılır."
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Daha büyük bir pencerede ${ PASS_APP_NAME } aç"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "${ PASS_APP_NAME } açılır penceresini aç"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Safari ayarlarını açın, ${ PASS_APP_NAME } uygulamasını bulun. Ardından \"İzinler\" bölümüne gidin ve site izinlerini açın"
@@ -2642,13 +2657,13 @@
         "Artık ${ PASS_SHORT_APP_NAME } çevrim dışı erişimi için ${ BRAND_NAME } parolanızı kullanabilirsiniz"
       ],
       "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Artık yedek parolanızı kullanarak ${ PASS_SHORT_APP_NAME } uygulamasına çevrimdışı olarak erişebilirsiniz"
+        "Artık yedek parolanız ile ${ PASS_SHORT_APP_NAME } uygulamasına çevrim dışı erişebilirsiniz"
       ],
       "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Artık ek parolanızı kullanarak ${ PASS_SHORT_APP_NAME } uygulamasına çevrimdışı olarak erişebilirsiniz"
+        "Artık ek parolanız ile ${ PASS_SHORT_APP_NAME } uygulamasına çevrim dışı erişebilirsiniz"
       ],
       "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Artık ikinci parolanızı kullanarak ${ PASS_SHORT_APP_NAME } uygulamasına çevrimdışı olarak erişebilirsiniz"
+        "Artık ikinci parolanız ile ${ PASS_SHORT_APP_NAME } uygulamasına çevrim dışı erişebilirsiniz"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Bu takma adın e-posta kutularını değiştiremezsiniz."
@@ -3300,6 +3315,9 @@
       "Keyboard shortcut: ${ shortcut }": [
         "Klavye kısayolu: ${ shortcut }"
       ],
+      "Keyboard shortcuts": [
+        "Klavye kısayolları"
+      ],
       "Language": [
         "Dil"
       ],
@@ -3887,9 +3905,6 @@
       ],
       "ZIP or Postal code": [
         "Posta kodu"
-      ],
-      "Keyboard shortcuts": [
-        "Klavye kısayolları"
       ]
     },
     "Link": {
