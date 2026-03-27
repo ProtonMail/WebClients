@@ -1,6 +1,7 @@
 .meet-side-bar {
 	border-radius: 1.5rem;
 	box-shadow: 0 0.5rem 2.5rem 0 #00000029;
+	background-color: var(--background-card);
 
 	.close-button {
 		z-index: +3;
@@ -12,9 +13,25 @@
 	border-start-end-radius: 1.5rem;
 	border-end-start-radius: 0;
 	border-end-end-radius: 0;
-	backdrop-filter: blur(6px);
+
+	&.side-bar-transparent-header {
+		backdrop-filter: blur(5px);
+		background: linear-gradient(0deg, rgb(40 36 62 / 0) 0%, #28243e 100%);
+	}
 
 	&.scrolled {
 		border-block-end: 1px solid var(--border-norm);
 	}
+}
+
+.side-bar-bottom-gradient {
+	position: absolute;
+	inset-block-end: 0;
+	inset-inline: 0;
+	block-size: 5rem;
+	background: linear-gradient(180deg, rgb(40 36 62 / 0) 0%, #28243e 100%);
+	border-end-start-radius: 1.5rem;
+	border-end-end-radius: 1.5rem;
+	pointer-events: none;
+	backdrop-filter: blur(5px);
 }

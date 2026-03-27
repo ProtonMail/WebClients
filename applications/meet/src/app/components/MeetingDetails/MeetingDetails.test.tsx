@@ -5,6 +5,10 @@ import { render, screen } from '@testing-library/react';
 
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 import { initialState as initialMeetingInfoState, meetingInfoReducer } from '@proton/meet/store/slices/meetingInfo';
+import {
+    initialState as initialSortedParticipantsState,
+    sortedParticipantsReducer,
+} from '@proton/meet/store/slices/sortedParticipantsSlice';
 import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
 import { ProtonStoreContext } from '@proton/react-redux-store';
 
@@ -35,6 +39,7 @@ const createMockStore = ({ sideBarOpen = false, passphrase = '' }) => {
         reducer: {
             ...uiStateReducer,
             ...meetingInfoReducer,
+            ...sortedParticipantsReducer,
         },
         preloadedState: {
             uiState: {
@@ -62,6 +67,9 @@ const createMockStore = ({ sideBarOpen = false, passphrase = '' }) => {
                 meetingLink: mockLink,
                 roomName: mockMeetingName,
                 passphrase,
+            },
+            sortedParticipants: {
+                ...initialSortedParticipantsState,
             },
         },
     });
@@ -130,7 +138,7 @@ describe('MeetingDetails', () => {
         });
 
         expect(screen.getByText('Info')).toBeInTheDocument();
-        expect(screen.getByText('Meeting details')).toBeInTheDocument();
+        expect(screen.getByText('Meeting')).toBeInTheDocument();
         expect(screen.getByText(mockMeetingName)).toBeInTheDocument();
         expect(screen.getByText('Friday, August 29, 2025')).toBeInTheDocument();
         expect(screen.getByText(mockLink)).toBeInTheDocument();
