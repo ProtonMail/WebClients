@@ -4,9 +4,9 @@ import { ToolbarButton } from '@proton/components';
 import { IcFile } from '@proton/icons/icons/IcFile';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import type { FolderButtonProps } from './types';
+import type { ActionButtonProps } from '../../buttons/types';
 
-export const CreateNewFileButton = ({ type, close, onClick }: FolderButtonProps) => {
+export const CreateNewFileButton = ({ type, close, onClick }: ActionButtonProps) => {
     const title = c('Action').t`Create new text file`;
 
     if (type === 'toolbar') {

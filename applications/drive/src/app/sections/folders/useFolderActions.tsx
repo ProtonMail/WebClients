@@ -1,22 +1,21 @@
 import { generateNodeUid, useDrive } from '@proton/drive';
 
-import useOpenPreview from '../../../components/useOpenPreview';
-import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
-import { useCopyItemsModal } from '../../../modals/CopyItemsModal';
-import { useCreateFileModal } from '../../../modals/CreateFileModal';
-import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
-import { useDetailsModal } from '../../../modals/DetailsModal';
-import { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
-import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
-import { useRenameModal } from '../../../modals/RenameModal';
-import { useRevisionsModal } from '../../../modals/RevisionsModal';
-import { useFileSharingModal } from '../../../modals/SelectLinkToShareModal';
-import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
-import { useDrivePreviewModal } from '../../../modals/preview';
-import { useDocumentActions, useFileUploadInput, useFolderUploadInput } from '../../../store';
-import { isPreviewOrFallbackAvailable } from '../../../utils/isPreviewOrFallbackAvailable';
-import { getPublicLinkIsExpired } from '../../../utils/sdk/getPublicLinkIsExpired';
-import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
+import { useCopyItemsModal } from '../../modals/CopyItemsModal';
+import { useCreateFileModal } from '../../modals/CreateFileModal';
+import { useCreateFolderModal } from '../../modals/CreateFolderModal';
+import { useDetailsModal } from '../../modals/DetailsModal';
+import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
+import { useMoveItemsModal } from '../../modals/MoveItemsModal';
+import { useRenameModal } from '../../modals/RenameModal';
+import { useRevisionsModal } from '../../modals/RevisionsModal';
+import { useFileSharingModal } from '../../modals/SelectLinkToShareModal';
+import { useSharingModal } from '../../modals/SharingModal/SharingModal';
+import { useDrivePreviewModal } from '../../modals/preview';
+import { useFileUploadInput, useFolderUploadInput } from '../../store';
+import { createDocument } from '../../utils/docs/openInDocs';
+import { isPreviewOrFallbackAvailable } from '../../utils/isPreviewOrFallbackAvailable';
+import { getPublicLinkIsExpired } from '../../utils/sdk/getPublicLinkIsExpired';
+import type { FolderViewItem } from './useFolder.store';
 
 type Props = {
     shareId: string;
@@ -27,19 +26,15 @@ type Props = {
         mimeType?: string;
         storageSize: number;
     }[];
-    selectedItems: LegacyItem[];
+    selectedItems: FolderViewItem[];
 };
 
 export const toNodeUidsHelper = <T extends { volumeId: string; linkId: string }>(items: T[]): string[] =>
     items.map((item) => generateNodeUid(item.volumeId, item.linkId));
 
 export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkId, volumeId }: Props) => {
-    const { createDocument } = useDocumentActions();
     const { drive } = useDrive();
     const uid = generateNodeUid(volumeId, linkId);
-
-    const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
-    const openLegacyPreview = useOpenPreview();
 
     // Upload hooks
     const {
@@ -67,35 +62,40 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
     const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal();
     const { copyModal, showCopyItemsModal } = useCopyItemsModal();
 
+    const getPreviewableNodeUids = () =>
+        allSortedItems
+            .filter((item) => item.mimeType && isPreviewOrFallbackAvailable(item.mimeType, item.storageSize))
+            .map((item) => item.nodeUid);
+
     const showPreview = () => {
         const item = selectedItems[0];
         if (!item) {
             return;
         }
 
-        if (isSDKPreviewEnabled) {
-            const previewableNodeUids = allSortedItems
-                .filter((item) => item.mimeType && isPreviewOrFallbackAvailable(item.mimeType, item.storageSize))
-                .map((item) => item.nodeUid);
+        showPreviewModal({
+            deprecatedContextShareId: shareId,
+            nodeUid: item.uid,
+            previewableNodeUids: getPreviewableNodeUids(),
+        });
+    };
 
-            showPreviewModal({
-                deprecatedContextShareId: shareId,
-                nodeUid: item.uid,
-                previewableNodeUids,
-            });
-        } else {
-            openLegacyPreview(shareId, linkId);
-        }
+    const showPreviewForNode = (nodeUid: string) => {
+        showPreviewModal({
+            deprecatedContextShareId: shareId,
+            nodeUid,
+            previewableNodeUids: getPreviewableNodeUids(),
+        });
     };
 
     const createFolder = () => showCreateFolderModal({ parentFolderUid: uid });
 
     const createNewDocument = () => {
-        void createDocument({ type: 'doc', shareId, parentLinkId: linkId });
+        void createDocument({ type: 'doc', parentUid: uid });
     };
 
     const createNewSheet = () => {
-        void createDocument({ type: 'sheet', shareId, parentLinkId: linkId });
+        void createDocument({ type: 'sheet', parentUid: uid });
     };
 
     const moveAction = () => showMoveItemsModal({ nodeUids: toNodeUidsHelper(selectedItems) });
@@ -157,6 +157,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
         // Modal actions
         actions: {
             showPreviewModal: showPreview,
+            showPreviewForNode,
             showSharingModal: createShareLink,
             showDetailsModal: showDetails,
             showRenameModal: renameAction,
@@ -186,3 +187,7 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
         },
     };
 };
+
+export type FolderActions = ReturnType<typeof useFolderActions>['actions'];
+export type FolderUploadFile = ReturnType<typeof useFolderActions>['uploadFile'];
+export type FolderUploadFolder = ReturnType<typeof useFolderActions>['uploadFolder'];

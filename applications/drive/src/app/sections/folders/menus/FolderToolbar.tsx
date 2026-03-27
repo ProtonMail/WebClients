@@ -5,9 +5,9 @@ import { Toolbar, useActiveBreakpoint } from '@proton/components';
 import { MemberRole } from '@proton/drive/index';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
-import { useSelection } from '../../../components/FileBrowser';
 import { isMultiSelect, noSelection } from '../../../components/sections/ToolbarButtons/utils';
 import useIsEditEnabled from '../../../components/sections/useIsEditEnabled';
+import { useSelectionStore } from '../../../modules/selection';
 import { RenameActionButton } from '../../buttons/RenameActionButton';
 import { ActionsDropdown } from '../buttons/ActionsDropdown';
 import { CopyButton } from '../buttons/CopyButton';
@@ -27,68 +27,55 @@ import { TrashButton } from '../buttons/TrashButton';
 import { UploadFileButton } from '../buttons/UploadFileButton';
 import { UploadFolderButton } from '../buttons/UploadFolderButton';
 import { getSelectedItems } from '../getSelectedItems';
-import { useDownloadActions } from '../hooks/useDownloadActions';
-import { useFolderActions } from '../hooks/useFolderActions';
+import { useDownloadActions } from '../useDownloadActions';
 import { useFolderStore } from '../useFolder.store';
+import type { FolderActions, FolderUploadFile, FolderUploadFolder } from '../useFolderActions';
 
 interface Props {
     volumeId: string;
-    shareId: string;
-    linkId: string;
-    allSortedItems: { nodeUid: string; mimeType?: string; storageSize: number }[];
+    actions: FolderActions;
+    uploadFile: FolderUploadFile;
+    uploadFolder: FolderUploadFolder;
     showOptionsForNoSelection?: boolean;
 }
 
 export const FolderToolbar = ({
     volumeId,
-    shareId,
-    linkId,
-    allSortedItems,
+    actions,
+    uploadFile,
+    uploadFolder,
     showOptionsForNoSelection = true,
 }: Props) => {
     const isDesktop = !getDevice()?.type;
     const { viewportWidth } = useActiveBreakpoint();
-    const selectionControls = useSelection();
     const isEditEnabled = useIsEditEnabled();
+    const selectedItemIds = useSelectionStore(useShallow((state) => state.selectedItemIds));
     const { items, permissions, role } = useFolderStore(
         useShallow((state) => ({
             permissions: state.permissions,
-            items: state.getFolderItems(),
+            items: state.items,
             role: state.role,
         }))
     );
-    const selectedItems = getSelectedItems(items, selectionControls?.selectedItemIds || []);
+    const itemsList = Array.from(items.values());
+    const selectedItems = getSelectedItems(itemsList, Array.from(selectedItemIds));
+
     const {
-        actions: {
-            showPreviewModal,
-            showRenameModal,
-            showMoveModal,
-            showCopyModal,
-            showCreateFileModal,
-            showCreateFolderModal,
-            createNewDocument,
-            createNewSheet,
-            showDetailsModal,
-            showSharingModal,
-            showFileSharingModal,
-        },
-        uploadFile: { fileInputRef, handleFileClick, handleFileChange },
-        uploadFolder: { folderInputRef, handleFolderClick, handleFolderChange },
-        modals,
-    } = useFolderActions({
-        allSortedItems: allSortedItems.map((item) => ({
-            nodeUid: item.nodeUid,
-            mimeType: item.mimeType,
-            storageSize: item.storageSize,
-        })),
-        selectedItems,
-        shareId,
-        linkId,
-        volumeId,
-    });
+        showPreviewModal,
+        showRenameModal,
+        showMoveModal,
+        showCopyModal,
+        showCreateFileModal,
+        showCreateFolderModal,
+        createNewDocument,
+        createNewSheet,
+        showDetailsModal,
+        showSharingModal,
+        showFileSharingModal,
+    } = actions;
 
     const isAdmin = role === MemberRole.Admin;
-    const shouldShowShareButton = permissions.canShare && selectedItems.length === 0 && items.length > 0;
+    const shouldShowShareButton = permissions.canShare && selectedItems.length === 0 && items.size > 0;
     const shouldShowShareLinkButton = isAdmin && (selectedItems.length > 0 || permissions.canShareNode);
     const selectedItem = selectedItems.length === 1 ? selectedItems[0] : undefined;
     const { downloadItems } = useDownloadActions({ selectedItems });
@@ -113,8 +100,10 @@ export const FolderToolbar = ({
                                 <CreateNewSheetButton type="toolbar" onClick={createNewSheet} />
                             )}
                             <Vr />
-                            {isDesktop && <UploadFolderButton type="toolbar" onClick={handleFolderClick} />}
-                            <UploadFileButton type="toolbar" onClick={handleFileClick} />
+                            {isDesktop && (
+                                <UploadFolderButton type="toolbar" onClick={uploadFolder.handleFolderClick} />
+                            )}
+                            <UploadFileButton type="toolbar" onClick={uploadFile.handleFileClick} />
                             <Vr />
                         </>
                     ) : null}
@@ -169,18 +158,6 @@ export const FolderToolbar = ({
                 {selectedItems.length > 0 && <Vr className="hidden md:flex mx-2" />}
                 <LayoutToolbarButton />
             </span>
-            <input multiple type="file" ref={fileInputRef} className="hidden" onChange={handleFileChange} />
-            <input type="file" ref={folderInputRef} className="hidden" onChange={handleFolderChange} />
-            {modals.previewModal}
-            {modals.renameModal}
-            {modals.moveItemsModal}
-            {modals.copyModal}
-            {modals.createFileModal}
-            {modals.createFolderModal}
-            {modals.detailsModal}
-            {modals.filesDetailsModal}
-            {modals.sharingModal}
-            {modals.fileSharingModal}
         </Toolbar>
     );
 };

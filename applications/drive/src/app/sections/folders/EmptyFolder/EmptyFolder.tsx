@@ -8,11 +8,20 @@ import emptySvg from '@proton/styles/assets/img/illustrations/empty-my-files.svg
 
 import { DriveEmptyView } from '../../../components/layout/DriveEmptyView';
 import { useIsFreeUploadInProgress } from '../../../hooks/drive/freeUpload/useIsFreeUploadInProgress';
-import { FolderContextMenu } from '../FolderBrowser/FolderContextMenu';
+import { FolderContextMenu } from '../menus/FolderContextMenu';
 import { useFolderStore } from '../useFolder.store';
+import type { FolderActions, FolderUploadFile, FolderUploadFolder } from '../useFolderActions';
 import { DriveEmptyViewFreeUpload } from './DriveEmptyViewFreeUpload';
 
-export const EmptyFolder = ({ shareId, linkId, volumeId }: { shareId: string; linkId: string; volumeId: string }) => {
+export const EmptyFolder = ({
+    actions,
+    uploadFile,
+    uploadFolder,
+}: {
+    actions: FolderActions;
+    uploadFile: FolderUploadFile;
+    uploadFolder: FolderUploadFolder;
+}) => {
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLDivElement>();
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
     const { permissions, folder } = useFolderStore(
@@ -74,14 +83,14 @@ export const EmptyFolder = ({ shareId, linkId, volumeId }: { shareId: string; li
                 />
             )}
             <FolderContextMenu
-                volumeId={volumeId}
-                shareId={shareId}
-                linkId={linkId}
                 isOpen={isOpen}
                 open={open}
                 close={close}
                 position={contextMenuPosition}
                 anchorRef={anchorRef}
+                actions={actions}
+                uploadFile={uploadFile}
+                uploadFolder={uploadFolder}
             />
         </>
     );

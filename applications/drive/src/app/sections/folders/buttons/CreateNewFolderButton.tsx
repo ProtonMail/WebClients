@@ -4,9 +4,9 @@ import { ToolbarButton } from '@proton/components';
 import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import type { FolderButtonProps } from './types';
+import type { ActionButtonProps } from '../../buttons/types';
 
-export const CreateNewFolderButton = ({ type, close, onClick }: FolderButtonProps) => {
+export const CreateNewFolderButton = ({ type, close, onClick }: ActionButtonProps) => {
     if (type === 'toolbar') {
         return (
             <ToolbarButton
