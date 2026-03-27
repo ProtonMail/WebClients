@@ -40,7 +40,7 @@ import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors'
 import OnboardingChecklistSidebar from '../onboarding/checklist/sidebar/OnboardingChecklistSidebar';
 import MailSidebarList from './MailSidebarList';
 import MailSidebarPrimaryButton from './MailSidebarPrimaryButton';
-import { BookingPageLocationSpotlightContent, useBookingPageSpotlight } from './useBookingSpotlight';
+import { BookingPageLocationSpotlightContent, useBookingPageSpotlight } from './bookingSpotlight/useBookingSpotlight';
 
 const MailSidebar = () => {
     const api = useApi();
@@ -88,12 +88,19 @@ const MailSidebar = () => {
                 <Spotlight
                     originalPlacement={collapsed ? 'right' : 'bottom'}
                     closeIcon="cross-big"
+                    className="border-none spotlight--with-illustration"
+                    borderRadius="xl"
                     content={<BookingPageLocationSpotlightContent />}
                     show={bookingSpotlight.shouldShowSpotlight}
                     onClose={bookingSpotlight.onClose}
                     onDisplayed={bookingSpotlight.onDisplayed}
                 >
-                    <AppsDropdown app={APPS.PROTONMAIL} />
+                    <AppsDropdown
+                        app={APPS.PROTONMAIL}
+                        onDropdownClick={() => {
+                            bookingSpotlight.onClose();
+                        }}
+                    />
                 </Spotlight>
             }
             expanded={expanded}
