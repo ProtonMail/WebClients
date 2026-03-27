@@ -141,8 +141,6 @@ export enum CalendarFeatureFlag {
     RsvpCommentWeb = 'RsvpCommentWeb',
     CalendarBookings = 'CalendarBookings',
     CalendarExternalBookings = 'CalendarExternalBookings',
-    CalendarBookingsNoticeMode = 'CalendarBookingsNoticeMode',
-    CalendarBookingsConflictCalendars = 'CalendarBookingsConflictCalendars',
 }
 
 enum DriveFeatureFlag {
