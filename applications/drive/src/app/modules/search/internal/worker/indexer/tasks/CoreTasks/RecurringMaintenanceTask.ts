@@ -8,8 +8,13 @@ const INTERVAL_MS = 60_000;
 /**
  * Runs one cleanup task per cycle (round-robin), then self-schedules the next run.
  */
+type CleanUpTaskConstructor = new () => BaseTask;
+
 export class RecurringMaintenanceTask extends BaseTask {
-    constructor(private readonly cleanupIndex: number = 0) {
+    constructor(
+        private readonly cleanupIndex: number = 0,
+        private readonly tasks: readonly CleanUpTaskConstructor[] = CLEANUP_TASKS
+    ) {
         super();
     }
 
@@ -19,11 +24,12 @@ export class RecurringMaintenanceTask extends BaseTask {
 
     async execute(ctx: TaskContext): Promise<void> {
         Logger.info(`Running: ${this.getUid()}`);
-        const Task = CLEANUP_TASKS[this.cleanupIndex % CLEANUP_TASKS.length];
+        const Task = this.tasks[this.cleanupIndex];
         const task = new Task();
         await task.execute(ctx);
 
         // Self-schedule with round-robin advancement.
-        ctx.enqueueDelayed(new RecurringMaintenanceTask(this.cleanupIndex + 1), INTERVAL_MS);
+        const nextCleanupIndex = (this.cleanupIndex + 1) % this.tasks.length;
+        ctx.enqueueDelayed(new RecurringMaintenanceTask(nextCleanupIndex, this.tasks), INTERVAL_MS);
     }
 }

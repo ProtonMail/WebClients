@@ -30,6 +30,16 @@ global.ResizeObserver = jest.fn().mockImplementation(() => ({
     disconnect: jest.fn(),
 }));
 
+global.BroadcastChannel = jest.fn().mockImplementation(() => ({
+    postMessage: jest.fn(),
+    close: jest.fn(),
+    onmessage: null,
+    onmessageerror: null,
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+}));
+
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
 jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     __esModule: true,

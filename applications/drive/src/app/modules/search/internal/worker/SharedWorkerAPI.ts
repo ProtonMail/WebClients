@@ -81,6 +81,7 @@ export class SharedWorkerAPI {
                     isInitialIndexing: state.isInitialIndexing,
                     isIndexing: state.isIndexing,
                     isSearchable: state.isSearchable,
+                    permanentError: state.permanentError,
                 });
             });
 
