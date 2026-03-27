@@ -62,7 +62,7 @@ export const ParticipantListItem = memo(
 
         const displayName = participantNameMap[participant.identity] ?? c('Info').t`Loading...`;
         const {
-            participantColors: { backgroundColor, profileColor },
+            participantColors: { backgroundColor, profileTextColor },
         } = useParticipantDisplayColors(participant.identity);
 
         const getInitials = () => {
@@ -89,7 +89,7 @@ export const ParticipantListItem = memo(
                 <div
                     className={clsx(
                         backgroundColor,
-                        profileColor,
+                        profileTextColor,
                         'rounded-full flex items-center justify-center w-custom h-custom shrink-0'
                     )}
                     style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' }}
