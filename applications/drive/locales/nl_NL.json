@@ -7701,6 +7701,9 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Additional comments": [
+        "Aanvullende opmerkingen"
       ]
     },
     "Label for contact group color": {
@@ -10432,6 +10435,12 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Enter a name": [
+        "Voer een naam in"
+      ],
+      "Select a provider": [
+        "Kies een aanbieder"
       ]
     },
     "Placeholder for contact group name": {
@@ -13414,6 +13423,14 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uw proefversie eindigt op ${ textDate }. U wordt niet in rekening gebracht als u annuleert vóór ${ textDate }. ${ action }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
       ]
     }
   }

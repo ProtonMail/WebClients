@@ -1235,6 +1235,15 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Change my access": [
+        "更改我的访问权限"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "继续使用 ${ planOrAppName }"
+      ],
+      "Remove my access": [
+        "移除我的访问权限"
       ]
     },
     "Action: Docs": {
@@ -3021,6 +3030,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
       ]
     },
     "description": {
@@ -6856,6 +6868,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍然可以查看您自己的账户数据，但所有用户账户将从您的组织中移除。"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "如果移除您自己，您将失去对“${ fileName }”的访问权限，除非所有者与您再次分享，否则您将无法再次打开它。"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "更改为查看者权限后，您将无法再分享“${ fileName }”。只有所有者才能再次更改您的访问权限。"
       ]
     },
     "info": {
@@ -7604,6 +7622,18 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Additional comments": [
+        "附加备注"
+      ],
+      "Continue cancelling": [
+        "继续取消"
+      ],
+      "Main reason for cancelling": [
+        "取消的主要原因"
+      ],
+      "Skip feedback": [
+        "跳过反馈"
       ]
     },
     "Label for contact group color": {
@@ -9345,6 +9375,9 @@
       ],
       "Your settings have been changed successfully": [
         "设置已更改"
+      ],
+      "\"${ fileName }\" shared": [
+        "“${ fileName }”已共享"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10264,6 +10297,15 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Anything you'd like us to know": [
+        "您有任何想要告诉我们的吗？"
+      ],
+      "Enter a name": [
+        "请输入名称"
+      ],
+      "Select a provider": [
+        "请选择提供商"
       ]
     },
     "Placeholder for contact group name": {
@@ -10978,6 +11020,9 @@
       ],
       "pending": [
         "待处理"
+      ],
+      "user joined": [
+        "用户已加入"
       ]
     },
     "Storage": {
@@ -12787,6 +12832,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "您已获得 5 GB 存储空间"
+      ],
+      "Change access to viewer?": [
+        "将访问权限更改为查看者？"
+      ],
+      "Remove your access?": [
+        "移除您的访问权限？"
+      ],
+      "Share \"${ fileName }\"": [
+        "分享“${ fileName }”"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12881,6 +12935,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "我们已向他们发送了访问该项目的邀请。"
+      ],
+      "Change shared item settings": [
+        "更改共享项目设置"
+      ],
+      "New!": [
+        "新！"
       ]
     },
     "tooltip": {
@@ -13079,6 +13139,26 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的试用将于 ${ textDate } 结束。如果您在 ${ textDate } 之前取消，将不会被收费。${ action }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

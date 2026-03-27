@@ -1235,6 +1235,21 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Change my access": [
+        "Ændr min adgang"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Fortsæt til ${ planOrAppName }"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Hide": [
+        "Skjul"
+      ],
+      "Remove my access": [
+        "Fjern min adgang"
       ]
     },
     "Action: Docs": {
@@ -2850,6 +2865,9 @@
       ],
       "Åland Islands": [
         "Ålandsøerne"
+      ],
+      "North Macedonia": [
+        "Nordmakedonien"
       ]
     },
     "customer_support.feature.all": {
@@ -3033,6 +3051,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Vi er kede af at du forlader os. Hvis du har et øjeblik, så ville vi sætte stor pris på at høre hvorfor du annullerer. Din feedback hjælper os med at gøre ${ BRAND_NAME } bedre for alle."
       ]
     },
     "description": {
@@ -3927,6 +3948,27 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn, der ikke kan dekrypteres"
+      ],
+      "Can't retrieve device name": [
+        "Kan ikke hente enhedsnavn"
+      ],
+      "Company name or personal name is required": [
+        "Virksomhedsnavn eller personnavn er påkrævet"
+      ],
+      "Data integrity check failed": [
+        "Dataintegritetskontrol mislykkedes"
+      ],
+      "Invalid VAT number": [
+        "Ugyldigt VAT-/momsnummer"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Det mindste donationsbeløb er ${ price }"
+      ],
+      "We were not able to load the file history": [
+        "Vi kunne ikke indlæse filhistorikken"
+      ],
+      "Wrong billing address": [
+        "Forkert faktureringsadresse"
       ]
     },
     "error": {
@@ -4331,6 +4373,9 @@
     "fido2: Info": {
       "Security key": [
         "Sikkerhedsnøgle"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
       ]
     },
     "fido2: Label": {
@@ -6888,6 +6933,36 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "Can't rename to same name": [
+        "Kan ikke omdøbe til samme navn"
+      ],
+      "Choose your service to connect with": [
+        "Vælg tjenesten du vil forbinde til"
+      ],
+      "Clear all search data": [
+        "Ryd alt søgedata"
+      ],
+      "Clears browser data related to the search.": [
+        "Rydder browserdata relateret til søgningen."
+      ],
+      "Each code can only be used once": [
+        "Hver kode kan kun bruges én gang"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Hvis du fjerner dig selv, mister du adgang til \"${ fileName }\" og du vil ikke kunne åbne den igen, medmindre ejeren deler den med dig."
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Søgning aktiveret. Du kan nu lukke dialogen og søge efter filer og mapper."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Du vil ikke kunne dele \"${ fileName }\" efter du har ændret adgangen til seer. Kun ejeren kan ændre din adgang igen."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Du vil modtage kreditten 1 måned efter at din ven abonnerer på et årligt abonnement, og 2 måneder efter de abonnerer på et månedligt abonnement."
       ]
     },
     "info": {
@@ -7636,6 +7711,24 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Additional comments": [
+        "Yderligere kommentarer"
+      ],
+      "Continue cancelling": [
+        "Fortsæt annullering"
+      ],
+      "Emails (last 6 months)": [
+        "E-mails (seneste 6 måneder)"
+      ],
+      "Last 6 months only": [
+        "Kun de seneste 6 måneder"
+      ],
+      "Main reason for cancelling": [
+        "Hovedårsag til at annullere"
+      ],
+      "Skip feedback": [
+        "Spring feedback over"
       ]
     },
     "Label for contact group color": {
@@ -9437,6 +9530,9 @@
       ],
       "Your settings have been changed successfully": [
         "Dine indstillinger er blevet ændret"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" delt"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10094,6 +10190,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Omvendt betalingspligt gælder."
       ]
     },
     "Payments.Error": {
@@ -10154,6 +10253,15 @@
     "Payments.Renewal price dependent on VAT number": {
       "Renewal price is dependent on the billing region and EIN.": [
         "Fornyelsesprisen afhænger af faktureringsregionen og EIN."
+      ],
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Fornyelsesprisen afhænger af faktureringsregionen og ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Fornyelsesprisen afhænger af faktureringsregionen og virksomhedsnummeret."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Fornyelsesprisen afhænger af faktureringsregionen og momsnummeret."
       ]
     },
     "Payments.Saved payment method details": {
@@ -10345,6 +10453,21 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Anything you'd like us to know": [
+        "Noget du gerne vil have vi ved"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "Enter a name": [
+        "Indtast et navn"
+      ],
+      "San Francisco": [
+        "San Francisco"
+      ],
+      "Select a provider": [
+        "Vælg en udbyder"
       ]
     },
     "Placeholder for contact group name": {
@@ -10756,6 +10879,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Du har ${ timeRemaining.inDays } dag til at nulstille din adgangskode.",
         "Du har ${ timeRemaining.inDays } dage til at nulstille din adgangskode."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Du har ${ timeRemaining.inHours } time til at nulstille din adgangskode.",
+        "Du har ${ timeRemaining.inHours } timer til at nulstille din adgangskode."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Du har ${ timeRemaining.inMinutes } minut til at nulstille din adgangskode.",
+        "Du har ${ timeRemaining.inMinutes } minutter til at nulstille din adgangskode."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Du har ${ timeRemaining.inSeconds } sekund til at nulstille din adgangskode.",
+        "Du har ${ timeRemaining.inSeconds } sekunder til at nulstille din adgangskode."
       ]
     },
     "session_recovery:available:link": {
@@ -13011,6 +13146,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "Du har 5 GB lagerplads"
+      ],
+      "Change access to viewer?": [
+        "Skift adgang til seer?"
+      ],
+      "Remove your access?": [
+        "Fjern din adgang?"
+      ],
+      "Share \"${ fileName }\"": [
+        "Del \"${ fileName }\""
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13105,6 +13249,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har sendt dem en invitation til at tilgå emnet."
+      ],
+      "Change shared item settings": [
+        "Skift indstillinger for delte elementer"
+      ],
+      "New!": [
+        "Nyt!"
       ]
     },
     "tooltip": {
@@ -13318,6 +13468,36 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din prøveperiode udløber den ${ textDate }. Du vil ikke blive opkrævet, hvis du opsiger før den ${ textDate }. ${ action }"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ]
+    },
+    "Import provider": {
+      "Advanced import": [
+        "Avanceret import"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Andet"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

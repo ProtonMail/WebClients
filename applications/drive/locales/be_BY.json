@@ -1259,6 +1259,9 @@
       ],
       "Remove my access": [
         "Выдаліць мой доступ"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Працягнуць у ${ planOrAppName }"
       ]
     },
     "Action: Docs": {
@@ -3090,6 +3093,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Нам шкада, што вы пакідаеце нас. Мы будзем вам вельмі ўдзячныя, калі вы знойдзеце крыху часу паведаміць аб прычынах скасавання сваёй падпіскі. Вашы водгукі дапамагаюць зрабіць ${ BRAND_NAME } яшчэ лепш для кожнага карыстальніка."
       ]
     },
     "description": {
@@ -7928,6 +7934,18 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Additional comments": [
+        "Дадатковыя каментарыі"
+      ],
+      "Continue cancelling": [
+        "Працягнуць скасаванне"
+      ],
+      "Main reason for cancelling": [
+        "Галоўная прычына скасавання"
+      ],
+      "Skip feedback": [
+        "Прапусціць водгук"
       ]
     },
     "Label for contact group color": {
@@ -10855,6 +10873,15 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Anything you'd like us to know": [
+        "Магчыма, што вы б хацелі нам яшчэ нешта паведаміць"
+      ],
+      "Enter a name": [
+        "Увядзіце назву"
+      ],
+      "Select a provider": [
+        "Выбраць пастаўшчыка"
       ]
     },
     "Placeholder for contact group name": {
@@ -13901,6 +13928,26 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Ваш пробны перыяд завершыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Іншы"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
