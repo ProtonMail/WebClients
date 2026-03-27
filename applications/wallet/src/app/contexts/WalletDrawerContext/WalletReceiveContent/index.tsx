@@ -85,7 +85,10 @@ export const WalletReceiveContent = ({ wallet, account, onClose }: Props) => {
                         )}
                         <InputFieldStacked isGroupElement classname="bg-weak text-center">
                             <div className="w-custom pt-6 px-6 mx-auto" style={{ '--w-custom': '11.5rem' }}>
-                                <QRCode data-testid="serialized-payment-info-qrcode" value={bitcoinAddress} />
+                                <QRCode
+                                    data-testid="serialized-payment-info-qrcode"
+                                    value={`bitcoin:${bitcoinAddress.startsWith('bc1') ? bitcoinAddress.toUpperCase() : bitcoinAddress}`}
+                                />
                             </div>
                             <div className="flex flex-row flex-nowrap items-center p-4">
                                 <div>
