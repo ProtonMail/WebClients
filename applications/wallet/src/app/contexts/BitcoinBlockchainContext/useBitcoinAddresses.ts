@@ -25,11 +25,11 @@ import {
     generateBitcoinAddressesPayloadToFillPool,
     useGetBitcoinAddressPool,
     useGetBitcoinAddressUsedIndexes,
-    useWalletApiClients,
     useWalletDispatch,
     verifySignedData,
     walletAccountUpdate,
 } from '@proton/wallet';
+import { useWalletApiClients } from '@proton/wallet/contexts';
 
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
 import { getAccountWithChainDataFromManyWallets, isUndefined } from '../../utils';

@@ -20,8 +20,8 @@ import {
     getYesterday,
     updateWalletAccountActivityMetrics,
     useGetBitcoinNetwork,
-    useWalletApiClients,
 } from '@proton/wallet';
+import { useWalletApiClients } from '@proton/wallet/contexts';
 
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
 import { useMirroredRef } from '../../hooks/useMirrorredRef';

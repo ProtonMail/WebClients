@@ -7,9 +7,9 @@ import {
     encryptWalletDataWithWalletKey,
     updateWalletTransaction,
     useApiWalletTransactionData,
-    useWalletApi,
     useWalletDispatch,
 } from '@proton/wallet';
+import { useWalletApi } from '@proton/wallet/contexts';
 
 export const useTransactionNoteModal = ({
     transactionDataKey,
