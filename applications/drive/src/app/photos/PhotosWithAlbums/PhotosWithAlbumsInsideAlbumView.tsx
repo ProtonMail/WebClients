@@ -7,19 +7,21 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, useAppTitle, useConfig } from '@proton/components';
 import { generateNodeUid, getDriveForPhotos } from '@proton/drive/index';
+import { getBusDriver } from '@proton/drive/internal/BusDriver';
+import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useNavigate from '../../hooks/drive/useNavigate';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
-import { useThumbnailsDownload } from '../../store';
 import { usePhotoLayoutStore } from '../../zustand/photos/layout.store';
-import { useFavoritePhotoToggle } from '../PhotosActions/Albums';
+import { toggleFavorite } from '../PhotosActions/Albums';
 import { PhotosInsideAlbumsGrid } from './PhotosInsideAlbumsGrid';
 import { AlbumCoverHeader } from './components/AlbumCoverHeader';
 import { AlbumEmptyView } from './components/AlbumEmptyView';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
 import type { PhotosLayoutOutletContext } from './layout/PhotosLayout';
+import { enqueueAdditionalInfo } from './loaders/loadAdditionalInfo';
 
 const useAppTitleUpdate = () => {
     const { APP_NAME } = useConfig();
@@ -49,11 +51,10 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const updateTitle = useAppTitleUpdate();
     const [searchParams, setSearchParams] = useSearchParams();
-    const favoritePhotoToggle = useFavoritePhotoToggle();
     const { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
-    const { setPreviewLinkId, modals } = usePhotoLayoutStore(
+    const { setPreviewNodeUid, modals } = usePhotoLayoutStore(
         useShallow((state) => ({
-            setPreviewLinkId: state.setPreviewLinkId,
+            setPreviewNodeUid: state.setPreviewNodeUid,
             modals: state.modals,
         }))
     );
@@ -61,45 +62,44 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const {
         linkId,
         albums,
-        loadPhotoLink,
 
         albumPhotos,
 
         isAlbumsLoading,
         isAlbumPhotosLoading,
 
-        albumPhotosLinkIdToIndexMap,
-        photoLinkIdToIndexMap,
+        albumPhotosNodeUidToIndexMap,
+        photoNodeUidToIndexMap,
         photos,
     } = useOutletContext<PhotosLayoutOutletContext>();
 
     const { selectedItems, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection({
         photos,
         albumPhotos,
-        albumPhotosLinkIdToIndexMap,
-        photoLinkIdToIndexMap,
+        albumPhotosNodeUidToIndexMap,
+        photoNodeUidToIndexMap,
     });
+
     const isShiftPressed = useShiftKey();
 
     const [isInitialized, setIsInitialized] = useState<boolean>(false);
-    const thumbnails = useThumbnailsDownload();
     const { navigateToAlbum } = useNavigate();
 
-    const handleItemRender = useCallback(
-        (itemLinkId: string, domRef?: React.MutableRefObject<unknown>) => {
-            if (!albumShareId) {
-                return;
-            }
-            loadPhotoLink(albumShareId, itemLinkId, domRef);
-        },
-        [loadPhotoLink, albumShareId]
-    );
+    const handleItemRender = useCallback((nodeUid: string, domRef: React.MutableRefObject<unknown>) => {
+        enqueueAdditionalInfo(nodeUid, () => Boolean(domRef.current));
+    }, []);
 
-    const handleItemRenderLoadedLink = (itemLinkId: string, domRef?: React.MutableRefObject<unknown>) => {
-        if (albumShareId) {
-            thumbnails.addToDownloadQueue(albumShareId, itemLinkId, undefined, domRef);
-        }
-    };
+    const handleItemRenderLoadedLink = useCallback(
+        (nodeUid: string, activeRevisionUid: string, domRef: React.MutableRefObject<unknown>) => {
+            loadThumbnail(getDriveForPhotos(), {
+                nodeUid: nodeUid,
+                revisionUid: activeRevisionUid,
+                shouldLoad: () => Boolean(domRef.current),
+                thumbnailTypes: ['sd', 'hd'],
+            });
+        },
+        []
+    );
 
     const album = useMemo(() => {
         if (!albumLinkId) {
@@ -107,13 +107,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         }
         return albums.find((album) => album.linkId === albumLinkId);
     }, [albums, albumLinkId]);
-
-    const addOrRemovePhotoToFavorite = useCallback(
-        async (linkId: string, shareId: string, isFavorite: boolean) => {
-            void favoritePhotoToggle(linkId, shareId, isFavorite);
-        },
-        [favoritePhotoToggle]
-    );
 
     const isAlbumPhotosEmpty = album?.photoCount === 0;
     const albumName = album?.name;
@@ -146,6 +139,21 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
         }
     }, [isAlbumsLoading, isAlbumPhotosLoading]);
 
+    useEffect(() => {
+        if (!album?.volumeId || album.permissions.isOwner) {
+            return;
+        }
+        // Subscribe to shared album volume events so we receive updates for photos in this album.
+        // For owned albums this is already covered by subscribePhotosEventsMyUpdates.
+        // TODO: Use proper treeEventScopeId once albums are migrated to SDK
+        const treeEventScopeId = album.volumeId;
+        const context = `album-photos`;
+        getBusDriver().subscribePhotosEventsScope(treeEventScopeId, context);
+        return () => {
+            void getBusDriver().unsubscribeSdkEventsScope(treeEventScopeId, context, 'photos');
+        };
+    }, [album?.volumeId, album?.linkId, album?.permissions.isOwner]);
+
     if (!albumShareId || !linkId || !album || !uploadLinkId || !isInitialized || !albumLinkId) {
         return <Loader />;
     }
@@ -169,14 +177,15 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                     onItemRender={handleItemRender}
                     onItemRenderLoadedLink={handleItemRenderLoadedLink}
                     isLoading={isAlbumsLoading}
-                    onItemClick={setPreviewLinkId}
-                    selectedItems={selectedItems}
+                    onItemClick={setPreviewNodeUid}
+                    //TODO: Remove that any
+                    selectedItems={selectedItems as any}
                     onSelectChange={(i, isSelected) =>
                         handleSelection(i, { isSelected, isMultiSelect: isShiftPressed() })
                     }
                     isGroupSelected={isGroupSelected}
                     isItemSelected={isItemSelected}
-                    onFavorite={!driveAlbumsDisabled ? addOrRemovePhotoToFavorite : undefined}
+                    onFavorite={!driveAlbumsDisabled ? toggleFavorite : undefined}
                     rootLinkId={linkId}
                 >
                     <AlbumCoverHeader

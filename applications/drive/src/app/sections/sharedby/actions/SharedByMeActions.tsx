@@ -7,7 +7,7 @@ import { DownloadButton } from '../../commonButtons/DownloadButton';
 import { OpenInDocsOrSheetsButton } from '../../commonButtons/OpenInDocsOrSheetsButton';
 import { PreviewButton } from '../../commonButtons/PreviewButton';
 import { RenameButton } from '../../commonButtons/RenameButton';
-import { ShareLinkButton } from '../../commonButtons/ShareLinkButton';
+import { ShareButton } from '../../commonButtons/ShareButton';
 import { StopSharingButton } from '../buttons/StopSharingButton';
 import type { ItemTypeChecker } from './actionsItemsChecker';
 
@@ -99,7 +99,7 @@ export const SharedByMeActions = ({
             {itemChecker.canShare && firstUid && (
                 <>
                     <ContextSeparator />
-                    <ShareLinkButton
+                    <ShareButton
                         onClick={() => onShare(firstUid)}
                         {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
                     />
