@@ -142,11 +142,12 @@ describe('MetricHandler', () => {
                         approximateUploadedSize: 4095,
                         expectedSize: 1024,
                         approximateExpectedSize: 4095,
+                        volumeType: MetricVolumeType.OwnVolume,
                     },
                 });
 
                 expect(metrics.drive_sdk_upload_success_rate_total.increment).toHaveBeenCalledWith({
-                    volumeType: 'unknown',
+                    volumeType: 'own_volume',
                     status: 'success',
                 });
 
@@ -353,11 +354,12 @@ describe('MetricHandler', () => {
                         approximateDownloadedSize: 4095,
                         claimedFileSize: 1024,
                         approximateClaimedFileSize: 4095,
+                        volumeType: MetricVolumeType.OwnVolume,
                     },
                 });
 
                 expect(metrics.drive_sdk_download_success_rate_total.increment).toHaveBeenCalledWith({
-                    volumeType: 'unknown',
+                    volumeType: 'own_volume',
                     status: 'success',
                 });
 
