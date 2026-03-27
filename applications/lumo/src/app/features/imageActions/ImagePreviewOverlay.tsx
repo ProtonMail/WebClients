@@ -1,15 +1,16 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
 
-import type { DrawingMode } from '../drawingcanvas/types';
 import { SketchCanvas } from '../drawingcanvas/SketchCanvas';
-import { IMAGE_STYLE_OPTIONS } from './styleOptions';
-import './imageActions.scss';
+import type { DrawingMode } from '../drawingcanvas/types';
+import { ImageModifyButton, ImageStyleDropdown } from './ImageActionButtons';
+
 import '../drawingcanvas/SketchCanvas.scss';
+import './imageActions.scss';
 
 type OverlayMode = 'preview' | 'edit';
 
@@ -44,18 +45,14 @@ export const ImagePreviewOverlay = ({
 }: ImagePreviewOverlayProps) => {
     const [mode, setMode] = useState<OverlayMode>(defaultMode);
     const [canvasDims, setCanvasDims] = useState<{ width: number; height: number } | null>(null);
-    const [showStyleMenu, setShowStyleMenu] = useState(false);
-    const styleMenuRef = useRef<HTMLSpanElement>(null);
 
-    // Sync mode and reset menu when overlay opens/closes
+    // Sync mode when overlay opens/closes
     useEffect(() => {
         if (isOpen) {
             setMode(defaultMode);
-            setShowStyleMenu(false);
         } else {
             setMode('preview');
             setCanvasDims(null);
-            setShowStyleMenu(false);
         }
     }, [isOpen, defaultMode]);
 
@@ -80,18 +77,6 @@ export const ImagePreviewOverlay = ({
             document.body.style.overflow = '';
         };
     }, [isOpen]);
-
-    // Close style menu on outside click
-    useEffect(() => {
-        if (!showStyleMenu) return;
-        const handler = (e: MouseEvent) => {
-            if (styleMenuRef.current && !styleMenuRef.current.contains(e.target as Node)) {
-                setShowStyleMenu(false);
-            }
-        };
-        document.addEventListener('mousedown', handler);
-        return () => document.removeEventListener('mousedown', handler);
-    }, [showStyleMenu]);
 
     // Pre-compute canvas dimensions from the loaded image so switching to edit
     // mode is instant — no async re-load needed.
@@ -128,10 +113,7 @@ export const ImagePreviewOverlay = ({
     });
 
     return createPortal(
-        <div
-            className="image-lightbox fixed inset-0 flex flex-column"
-            style={{ zIndex: 9999 }}
-        >
+        <div className="image-lightbox fixed inset-0 flex flex-column" style={{ zIndex: 9999 }}>
             {/*
              * Hidden image: always present so dims are precomputed regardless of
              * which mode is active. Not shown to the user.
@@ -167,11 +149,13 @@ export const ImagePreviewOverlay = ({
             {mode === 'preview' ? (
                 <>
                     {/* Centered image */}
+                    {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                     <div
                         className="flex-1 min-h-0 flex items-center justify-center"
                         style={{ padding: '4rem 2rem 1rem' }}
                         onClick={onClose}
                     >
+                        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
                         <img
                             src={imageDataUrl}
                             alt={filename || 'Generated image'}
@@ -187,50 +171,14 @@ export const ImagePreviewOverlay = ({
                     </div>
 
                     {/* Action bar */}
+                    {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                     <div
                         className="flex items-center justify-center gap-2 flex-wrap pb-20"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        {onExport && (
-                            <button className="image-action-btn" onClick={handleModify}>
-                                <Icon name="pen" size={3.5} />
-                                {c('collider_2025:Action').t`Modify...`}
-                            </button>
-                        )}
+                        {onExport && <ImageModifyButton onClick={handleModify} />}
                         {showStyleOptions && onChangeStyle && (
-                            <span ref={styleMenuRef} className="image-style-menu">
-                                <button
-                                    className="image-action-btn"
-                                    onClick={() => setShowStyleMenu((v) => !v)}
-                                >
-                                    <Icon name="squares" size={3.5} />
-                                    {c('collider_2025:Action').t`Change style`}
-                                    <Icon
-                                        name="chevron-down-filled"
-                                        size={3}
-                                        style={{
-                                            transition: 'transform 0.15s',
-                                            transform: showStyleMenu ? 'rotate(180deg)' : 'rotate(0deg)',
-                                        }}
-                                    />
-                                </button>
-                                {showStyleMenu && (
-                                    <span
-                                        className="image-style-menu__popup"
-                                        onClick={(e) => e.stopPropagation()}
-                                    >
-                                        {IMAGE_STYLE_OPTIONS.map((style) => (
-                                            <button
-                                                key={style.id}
-                                                className="image-style-menu__item"
-                                                onClick={() => handleStyleChange(style.prompt)}
-                                            >
-                                                {style.label}
-                                            </button>
-                                        ))}
-                                    </span>
-                                )}
-                            </span>
+                            <ImageStyleDropdown onSelect={handleStyleChange} stopPropagation />
                         )}
                     </div>
 

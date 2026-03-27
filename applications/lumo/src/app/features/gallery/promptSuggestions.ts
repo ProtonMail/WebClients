@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
-import lumoPlushie from '@proton/styles/assets/img/lumo/lumo-image-examples/lumo-plushie.png';
-import lumoCookie from '@proton/styles/assets/img/lumo/lumo-image-examples/lumo-cookie.png';
 import lumoCaricature from '@proton/styles/assets/img/lumo/lumo-image-examples/lumo-caricature.png';
-import lumoRenaissance from '@proton/styles/assets/img/lumo/lumo-image-examples/lumo-renaissance.png';
+import lumoCookie from '@proton/styles/assets/img/lumo/lumo-image-examples/lumo-cookie.png';
 import lumoCubism from '@proton/styles/assets/img/lumo/lumo-image-examples/lumo-cubism.png';
-import lumoPackage from '@proton/styles/assets/img/lumo/lumo-image-examples/lumo-package.png';
 import lumoImpressionist from '@proton/styles/assets/img/lumo/lumo-image-examples/lumo-impressionist.png';
 import lumoModern from '@proton/styles/assets/img/lumo/lumo-image-examples/lumo-modern.png';
+import lumoPackage from '@proton/styles/assets/img/lumo/lumo-image-examples/lumo-package.png';
+import lumoPlushie from '@proton/styles/assets/img/lumo/lumo-image-examples/lumo-plushie.png';
+import lumoRenaissance from '@proton/styles/assets/img/lumo/lumo-image-examples/lumo-renaissance.png';
 import lumoSketch from '@proton/styles/assets/img/lumo/lumo-image-examples/lumo-sketch.png';
 
 /**

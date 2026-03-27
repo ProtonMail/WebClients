@@ -10,7 +10,14 @@ import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import type { ConversationError } from '../../redux/slices/meta/errors';
 import { selectConversationErrors, selectTierErrors } from '../../redux/slices/meta/errors';
-import type { Attachment, Conversation, Message, RetryStrategy, SiblingInfo } from '../../types';
+import {
+    type Attachment,
+    ComposerMode,
+    type Conversation,
+    type Message,
+    type RetryStrategy,
+    type SiblingInfo,
+} from '../../types';
 import { Role } from '../../types-api';
 import UpsellCard from '../../upsells/components/UpsellCard';
 import { ComposerComponent } from '../Composer/ComposerComponent';
@@ -301,6 +308,7 @@ const ConversationComponent = ({
                             }}
                         >
                             <ComposerComponent
+                                composerMode={ComposerMode.CONVERSATION}
                                 handleSendMessage={handleSendMessage}
                                 onAbort={handleAbort}
                                 isGenerating={isGenerating}

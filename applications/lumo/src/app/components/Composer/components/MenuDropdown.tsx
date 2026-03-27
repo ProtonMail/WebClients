@@ -7,7 +7,8 @@ import Icon from '@proton/components/components/icon/Icon';
 import type { IconName } from '@proton/icons/types';
 
 export interface MenuItemProps {
-    iconName: IconName;
+    iconName?: IconName;
+    iconSvg?: React.ComponentType;
     getLabel: () => string;
     getDescription?: () => string;
     badge?: React.ReactNode;
@@ -18,6 +19,7 @@ export interface MenuItemProps {
 
 export const MenuItem = ({
     iconName,
+    iconSvg: IconSvg,
     getLabel,
     getDescription,
     badge,
@@ -33,7 +35,7 @@ export const MenuItem = ({
         className="justify-start"
     >
         <div className="flex items-center gap-3 w-full">
-            <Icon name={iconName} size={4} className="shrink-0" />
+            {IconSvg ? <IconSvg /> : iconName && <Icon name={iconName} size={4} className="shrink-0" />}
             <div className="flex flex-column flex-1 min-w-0">
                 <div className="flex items-center gap-2">
                     <span className="text-sm font-medium">{getLabel()}</span>
