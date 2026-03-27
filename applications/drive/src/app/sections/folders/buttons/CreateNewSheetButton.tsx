@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { MimeIcon, ToolbarButton } from '@proton/components';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import type { FolderButtonProps } from './types';
+import type { ActionButtonProps } from '../../buttons/types';
 
-export const CreateNewSheetButton = ({ type, close, onClick }: FolderButtonProps) => {
+export const CreateNewSheetButton = ({ type, close, onClick }: ActionButtonProps) => {
     const title = c('Action').t`New spreadsheet`;
 
     if (type === 'toolbar') {

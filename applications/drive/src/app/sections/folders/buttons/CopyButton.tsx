@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import type { FolderButtonProps } from './types';
+import type { ActionButtonProps } from '../../buttons/types';
 
-export const CopyButton = ({ type, onClick, close }: FolderButtonProps) => {
+export const CopyButton = ({ type, onClick, close }: ActionButtonProps) => {
     const title = c('Action').t`Make a copy`;
     const icon = 'duplicate';
 

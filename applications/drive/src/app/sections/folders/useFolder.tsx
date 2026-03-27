@@ -6,20 +6,20 @@ import { useNotifications } from '@proton/components';
 import { MemberRole, useDrive } from '@proton/drive';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { useFlagsDriveSheet } from '../../flags/useFlagsDriveSheet';
 import { driveMetrics } from '../../modules/metrics';
-import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../store/_documents';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
-import { mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
 import { useDevicesStore } from '../devices/useDevices.store';
+import { mapNodeToFolderViewItem } from './mapNodeToFolderViewItem';
 import { type FolderViewItem, useFolderStore } from './useFolder.store';
 
 export function useFolder() {
     const { drive } = useDrive();
-    const { isDocsEnabled } = useDriveDocsFeatureFlag();
-    const isSheetsEnabled = useIsSheetsEnabled();
+    const isDriveDocsDisabled = useFlag('DriveDocsDisabled');
+    const isSheetsEnabled = useFlagsDriveSheet();
     const copyFeatureEnabled = useFlag('DriveWebSDKCopy');
     const { createNotification } = useNotifications();
     const handleFolderError = useCallback((error?: Error) => {
@@ -55,10 +55,10 @@ export function useFolder() {
 
             try {
                 const maybeNode = await drive.getNode(folderNodeUid);
-                const legacyNode = await mapNodeToLegacyItem(maybeNode, folderShareId, drive);
                 const { node } = getNodeEntity(maybeNode);
+                const folderItem = await mapNodeToFolderViewItem(maybeNode, folderShareId, drive);
                 const isDeviceRoot = !node.parentUid && !!getByRootFolderUid(folderNodeUid);
-                const isDeviceFolder = isDeviceRoot || (legacyNode.rootUid && !!getByRootFolderUid(legacyNode.rootUid));
+                const isDeviceFolder = isDeviceRoot || (folderItem.rootUid && !!getByRootFolderUid(folderItem.rootUid));
                 const role = await getNodeEffectiveRole(node, drive);
                 const canEdit = role !== MemberRole.Viewer && !isDeviceRoot;
                 const canTrash = role !== MemberRole.Viewer;
@@ -66,7 +66,9 @@ export function useFolder() {
                 const isAdmin = role === MemberRole.Admin;
 
                 setFolder({
-                    ...legacyNode,
+                    uid: node.uid,
+                    name: node.name,
+                    parentUid: node.parentUid,
                     isRoot: !node.parentUid,
                     shareId: folderShareId,
                 });
@@ -75,7 +77,7 @@ export function useFolder() {
                     canEdit,
                     canShare: isAdmin && (isDeviceRoot || isRoot),
                     canCreateNode: canEdit,
-                    canCreateDocs: isDocsEnabled && canEdit && !isDeviceFolder,
+                    canCreateDocs: !isDriveDocsDisabled && canEdit && !isDeviceFolder,
                     canCreateSheets: isSheetsEnabled && canEdit && !isDeviceFolder,
                     canOpenInDocs: canEdit,
                     canShareNode: isAdmin && !isDeviceRoot && !isRoot,
@@ -114,8 +116,8 @@ export function useFolder() {
                                 clearInterval(intervalId);
                                 return;
                             }
-                            const legacyItem = await mapNodeToLegacyItem(maybeNode, folderShareId, drive, node);
-                            itemsBatch.push(legacyItem);
+                            const item = await mapNodeToFolderViewItem(maybeNode, folderShareId, drive, node);
+                            itemsBatch.push(item);
                         } catch (e) {
                             handleSdkError(e, {
                                 showNotification: false,
@@ -142,7 +144,7 @@ export function useFolder() {
                 setIsLoading(false);
             }
         },
-        [copyFeatureEnabled, createNotification, drive, handleFolderError, isDocsEnabled, isSheetsEnabled]
+        [copyFeatureEnabled, createNotification, drive, handleFolderError, isDriveDocsDisabled, isSheetsEnabled]
     );
 
     return {

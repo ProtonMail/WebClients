@@ -126,6 +126,7 @@ export interface DriveExplorerEvents {
     onItemDoubleClick?: (uid: string, event: React.MouseEvent | React.KeyboardEvent | React.TouchEvent) => void;
     onItemContextMenu?: (uid: string, event: React.MouseEvent) => void;
     onItemRender?: (uid: string) => void;
+    onViewContextMenu?: (event: React.MouseEvent) => void;
 }
 
 /**
