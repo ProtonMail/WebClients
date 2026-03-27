@@ -4,7 +4,8 @@
     "license": "GPL-3.0",
     "sideEffects": false,
     "exports": {
-        ".": "./index.ts"
+        ".": "./index.ts",
+        "./contexts": "./contexts/index.ts"
     },
     "scripts": {
         "check-types": "tsc",

@@ -16,9 +16,9 @@ import {
     encryptPgp,
     updateWalletTransaction,
     useApiWalletTransactionData,
-    useWalletApi,
     useWalletDispatch,
 } from '@proton/wallet';
+import { useWalletApi } from '@proton/wallet/contexts';
 
 const senderName = (apiData?: DecryptedTransactionData) => {
     if (typeof apiData?.Sender === 'string') {

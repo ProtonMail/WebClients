@@ -11,11 +11,11 @@ import type { IWasmApiWalletData } from '@proton/wallet';
 import {
     encryptWalletDataWithWalletKey,
     useFiatCurrencies,
-    useWalletApiClients,
     useWalletDispatch,
     walletAccountDeletion,
     walletAccountUpdate,
 } from '@proton/wallet';
+import { useWalletApiClients } from '@proton/wallet/contexts';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useEmailIntegration } from '../../hooks/useEmailIntegration';

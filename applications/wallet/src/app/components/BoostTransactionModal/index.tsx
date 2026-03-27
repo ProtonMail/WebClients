@@ -23,8 +23,8 @@ import {
     WalletThemeOption,
     useNetworkFees,
     useUserWalletSettings,
-    useWalletApiClients,
 } from '@proton/wallet';
+import { useWalletApiClients } from '@proton/wallet/contexts';
 
 import { Button, Modal } from '../../atoms';
 import { Price } from '../../atoms/Price';

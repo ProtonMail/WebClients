@@ -12,10 +12,10 @@ import {
     bitcoinUnitChange,
     encryptWalletDataWithWalletKey,
     useUserWalletSettings,
-    useWalletApiClients,
     useWalletDispatch,
     walletUpdate,
 } from '@proton/wallet';
+import { useWalletApiClients } from '@proton/wallet/contexts';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
