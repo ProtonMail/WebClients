@@ -1,40 +1,74 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
-import { useSidebar } from '../../providers/SidebarProvider';
-import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
-import type { HandleSendMessage } from '../../hooks/useLumoActions';
-import { ComposerComponent } from '../../components/Composer/ComposerComponent';
-import { useFileHandling } from '../../components/Composer/hooks/useFileHandling';
-import { base64ToFile } from '../../util/imageHelpers';
-import { useIsGuest } from '../../providers/IsGuestProvider';
-import type { DrawingMode } from '../../features/drawingcanvas/types';
-import type { GalleryPromptSuggestion } from './promptSuggestions';
-import { DiscoverPanel } from './DiscoverPanel';
-import { CreatedGrid } from './CreatedGrid';
-import { useGeneratedGalleryImages } from './hooks/useGeneratedGalleryImages';
-import { LazyLottie } from '../../components/LazyLottie';
-import { GuestSignInState } from '../../components/GuestSignInState/GuestSignInState';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import lumoImageLight from '@proton/styles/assets/img/lumo/lumo-image-light.svg';
 
+import { ComposerComponent } from '../../components/Composer/ComposerComponent';
+import { useFileHandling } from '../../components/Composer/hooks/useFileHandling';
+import { GuestSignInState } from '../../components/GuestSignInState/GuestSignInState';
+import { LazyLottie } from '../../components/LazyLottie';
+import type { DrawingMode } from '../../features/drawingcanvas/types';
+import type { HandleSendMessage } from '../../hooks/useLumoActions';
+import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
+import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
+import { useIsGuest } from '../../providers/IsGuestProvider';
+import { useSidebar } from '../../providers/SidebarProvider';
+import { ComposerMode } from '../../types';
+import { base64ToFile } from '../../util/imageHelpers';
+import { CreatedGrid } from './CreatedGrid';
+import { InspirationPanel } from './InspirationPanel';
+import { useGeneratedGalleryImages } from './hooks/useGeneratedGalleryImages';
+import type { GalleryPromptSuggestion } from './promptSuggestions';
+
 import './GalleryView.scss';
+
+type GalleryTab = 'gallery' | 'inspiration';
+
+interface GalleryEmptyProps {
+    onInspirationClick: () => void;
+}
+
+const GalleryEmpty = ({ onInspirationClick }: GalleryEmptyProps) => {
+    const link = (
+        <InlineLinkButton key="inspiration-link" type="button" onClick={onInspirationClick}>
+            {c('collider_2025:Action').t`here`}
+        </InlineLinkButton>
+    );
+
+    return (
+        <div className="gallery-empty">
+            <LazyLottie
+                getAnimationData={() => import('../../components/Animations/lumo-image.json')}
+                loop
+                autoplay
+                className="gallery-empty__lottie"
+            />
+            <div className="gallery-empty-container flex flex-column items-center justify-center gap-2 mt-6 text-center">
+                <p className="text-xl color-norm text-semibold m-0">
+                    {c('collider_2025:Title').t`Get started by generating an image`}
+                </p>
+                <p className="color-weak m-0">
+                    {c('collider_2025:Info')
+                        .jt`Generate images, apply styles, and sketch ideas. For inspiration, click ${link}.`}
+                </p>
+            </div>
+        </div>
+    );
+};
 
 export interface GalleryViewProps {
     handleSendMessage: HandleSendMessage;
     isProcessingAttachment: boolean;
     prefillQuery?: string;
-    autoOpenSketch?: boolean;
-    autoOpenUpload?: boolean;
 }
 
 export const GalleryView = ({
     handleSendMessage,
     isProcessingAttachment,
     prefillQuery: externalPrefill,
-    autoOpenSketch: externalAutoOpenSketch,
-    autoOpenUpload,
 }: GalleryViewProps) => {
     const { isSmallScreen } = useSidebar();
     const isGuest = useIsGuest();
@@ -45,12 +79,19 @@ export const GalleryView = ({
     const createdScrollRef = useRef<HTMLDivElement>(null);
     const pendingEditPromptRef = useRef<string>('');
     const [composerPrefill, setComposerPrefill] = useState<string | undefined>(externalPrefill);
-    const [gallerySketchTrigger, setGallerySketchTrigger] = useState(externalAutoOpenSketch ?? false);
+    const [gallerySketchTrigger, setGallerySketchTrigger] = useState(false);
 
-    // Hoisted gallery data — used to decide top-pane content and passed to CreatedGrid
+    // Hoisted gallery data — used to decide default tab and passed to CreatedGrid
     const galleryImages = useGeneratedGalleryImages();
-    const allItems = useMemo(() => galleryImages.sections.flatMap((s) => s.items), [galleryImages.sections]);
-    const showGallery = allItems.length > 0 || galleryImages.status === 'loading' || galleryImages.status === 'error';
+    const hasImages = useMemo(
+        () =>
+            galleryImages.sections.some((s) => s.items.length > 0) ||
+            galleryImages.status === 'loading' ||
+            galleryImages.status === 'error',
+        [galleryImages.sections, galleryImages.status]
+    );
+
+    const [activeTab, setActiveTab] = useState<GalleryTab>(() => (hasImages ? 'gallery' : 'inspiration'));
 
     const handleSketchEditExport = useCallback(
         async (imageData: string, _mode: DrawingMode, description: string) => {
@@ -141,46 +182,63 @@ export const GalleryView = ({
                 </HeaderWrapper>
             )}
 
-            {/* Top pane — gallery grid or Lottie empty state */}
-            {showGallery ? (
-                <div ref={createdScrollRef} className="gallery-created-scroll">
-                    <div className="gallery-inner">
-                        <CreatedGrid
-                            sections={galleryImages.sections}
-                            status={galleryImages.status}
-                            hasMore={galleryImages.hasMore}
-                            loadMore={galleryImages.loadMore}
-                            onExport={handleSketchEditExport}
-                        />
-                    </div>
+            {/* Tab toggle */}
+            <div className="gallery-tab-bar">
+                <div className="gallery-tab-toggle">
+                    <button
+                        className={`gallery-tab-toggle__btn${activeTab === 'inspiration' ? ' gallery-tab-toggle__btn--active' : ''}`}
+                        onClick={() => setActiveTab('inspiration')}
+                        type="button"
+                    >
+                        {c('collider_2025:Tab').t`Create`}
+                    </button>
+                    <button
+                        className={`gallery-tab-toggle__btn${activeTab === 'gallery' ? ' gallery-tab-toggle__btn--active' : ''}`}
+                        onClick={() => setActiveTab('gallery')}
+                        type="button"
+                    >
+                        {c('collider_2025:Tab').t`Gallery`}
+                    </button>
                 </div>
+            </div>
+
+            {/* Main scrollable area — switches between Gallery and Inspiration */}
+            {/* eslint-disable-next-line no-nested-ternary */}
+            {activeTab === 'gallery' ? (
+                hasImages ? (
+                    <div ref={createdScrollRef} className="gallery-created-scroll">
+                        <div className="gallery-inner max-w-full">
+                            <CreatedGrid
+                                // sections={FAKE_GALLERY_SECTIONS}
+                                sections={galleryImages.sections}
+                                status={galleryImages.status}
+                                hasMore={galleryImages.hasMore}
+                                loadMore={galleryImages.loadMore}
+                                onExport={handleSketchEditExport}
+                            />
+                        </div>
+                    </div>
+                ) : (
+                    <GalleryEmpty onInspirationClick={() => setActiveTab('inspiration')} />
+                )
             ) : (
-                <div className="gallery-empty">
-                    <LazyLottie
-                        getAnimationData={() => import('../../components/Animations/lumo-image.json')}
-                        loop
-                        autoplay
-                        className="gallery-empty__lottie"
-                    />
-                    <h1 className="gallery-empty__title">
-                        {c('collider_2025:Title').t`What would you like to create today?`}
-                    </h1>
+                <div className="gallery-inspiration-scroll flex">
+                    <InspirationPanel onSuggestionClick={handleSuggestionClick} />
+                    {/* <DiscoverPanel onSuggestionClick={handleSuggestionClick} /> */}
                 </div>
             )}
 
-            {/* Bottom panel — suggestions + composer, always visible */}
-            <div className="gallery-bottom">
+            {/* Bottom panel — composer only, always visible */}
+            <div className={clsx('gallery-bottom w-full', hasImages && 'absolute')}>
                 <div className="gallery-inner">
-                    <DiscoverPanel onSuggestionClick={handleSuggestionClick} />
-
                     <div className="gallery-composer-wrapper">
                         <ComposerComponent
+                            composerMode={ComposerMode.GALLERY}
                             handleSendMessage={handleSendMessage}
                             isProcessingAttachment={isProcessingAttachment}
                             prefillQuery={composerPrefill}
                             autoOpenSketch={gallerySketchTrigger}
-                            autoOpenUpload={autoOpenUpload}
-                            canShowLumoUpsellToggle={true}
+                            placeholder={c('collider_2025:Placeholder').t`Describe your image...`}
                         />
                     </div>
                 </div>
