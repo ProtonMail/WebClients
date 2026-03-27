@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useNotifications, useSettingsLink } from '@proton/components';
+import { IcArrowDownCircle } from '@proton/icons/icons/IcArrowDownCircle';
 import { IcMeetRecord } from '@proton/icons/icons/IcMeetRecord';
 import { IcMeetRecordStop } from '@proton/icons/icons/IcMeetRecordStop';
 import { PLANS } from '@proton/payments/core/constants';
@@ -40,6 +41,7 @@ const RecordingControlsInternal = () => {
     const [showStartRecordingConfirmation, setShowStartRecordingConfirmation] = useState(false);
     const [showRecordingUpsellModal, setShowRecordingUpsellModal] = useState(false);
     const [showSubUserRecordingUpsellModal, setShowSubUserRecordingUpsellModal] = useState(false);
+    const [showStopRecordingConfirmation, setShowStopRecordingConfirmation] = useState(false);
 
     const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
     const { isPaid, isSubUser } = useIsTreatedAsPaidMeetUser();
@@ -65,7 +67,22 @@ const RecordingControlsInternal = () => {
         }
     };
 
+    const handleStartRecordingConfirmation = () => {
+        if (isPaid) {
+            setShowStartRecordingConfirmation(true);
+            return;
+        }
+
+        if (isSubUser) {
+            setShowSubUserRecordingUpsellModal(true);
+            return;
+        }
+
+        setShowRecordingUpsellModal(true);
+    };
+
     const handleStopAndDownload = async () => {
+        setShowStopRecordingConfirmation(false);
         try {
             await downloadRecording();
             createNotification({
@@ -82,18 +99,8 @@ const RecordingControlsInternal = () => {
         }
     };
 
-    const handleStartRecordingConfirmation = () => {
-        if (isPaid) {
-            setShowStartRecordingConfirmation(true);
-            return;
-        }
-
-        if (isSubUser) {
-            setShowSubUserRecordingUpsellModal(true);
-            return;
-        }
-
-        setShowRecordingUpsellModal(true);
+    const handleStopRecordingConfirmation = () => {
+        setShowStopRecordingConfirmation(true);
     };
 
     const formatDuration = (seconds: number) => {
@@ -124,7 +131,7 @@ const RecordingControlsInternal = () => {
                         )}
                         pill={true}
                         size="large"
-                        onClick={handleStopAndDownload}
+                        onClick={handleStopRecordingConfirmation}
                         aria-label={c('Alt').t`Stop recording and download.`}
                         style={{ '--min-w-custom': '16.5rem' }}
                     >
@@ -158,6 +165,18 @@ const RecordingControlsInternal = () => {
                     onPrimaryAction={handleStartRecording}
                     onSecondaryAction={() => setShowStartRecordingConfirmation(false)}
                     onClose={() => setShowStartRecordingConfirmation(false)}
+                />
+            )}
+            {showStopRecordingConfirmation && (
+                <ConfirmationModal
+                    icon={<IcArrowDownCircle size={15} />}
+                    title={c('Title').t`Stop recording`}
+                    message={c('Info').t`Are you sure you want to stop recording?`}
+                    primaryText={c('Action').t`Stop recording and download video`}
+                    primaryButtonClass="primary"
+                    onPrimaryAction={handleStopAndDownload}
+                    onSecondaryAction={() => setShowStopRecordingConfirmation(false)}
+                    onClose={() => setShowStopRecordingConfirmation(false)}
                 />
             )}
             {showRecordingUpsellModal && (
