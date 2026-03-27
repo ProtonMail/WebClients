@@ -192,7 +192,7 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
                 additionalMetadata: metadata,
             };
         } catch (error) {
-            uploadLogError('Failed to generate extended attributes', error, { fileName: file.name });
+            uploadLogError('Failed to generate extended attributes', error);
             traceError(error, {
                 level: 'debug', // Debug as we need it only when we investigate issues.
                 tags: {
