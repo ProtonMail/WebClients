@@ -785,6 +785,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece tu gestor de contraseñas? Solicítalo."
+      ],
+      "Configure": [
+        "Configurar"
+      ],
+      "Settings": [
+        "Ajustes"
       ]
     },
     "Browser": {
@@ -2065,8 +2071,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
-        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2809,6 +2814,15 @@
       ],
       "You will no longer have access to sharing, 2FA and other advanced features in ${ PASS_APP_NAME }": [
         "Ya no tendrás acceso a compartir, 2FA otras características avanzadas en ${ PASS_APP_NAME }"
+      ],
+      "Not configured": [
+        "Sin configurar"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Abrir ${ PASS_APP_NAME } en una ventana más grande"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Abrir la ventana emergente de ${ PASS_APP_NAME }"
       ]
     },
     "Keyboard key": {

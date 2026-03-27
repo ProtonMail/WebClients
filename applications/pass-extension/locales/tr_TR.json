@@ -785,6 +785,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
+      ],
+      "Configure": [
+        "Yapılandır"
+      ],
+      "Settings": [
+        "Ayarlar"
       ]
     },
     "Browser": {
@@ -2065,8 +2071,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2763,7 +2768,7 @@
         "${ PASS_APP_NAME } için erişilebilirlik izni vermeniz gerekebilir."
       ],
       "${ PASS_SHORT_APP_NAME } is currently offline. Open the extension to unlock.": [
-        "${ PASS_SHORT_APP_NAME } şu anda çevrimdışı. Kilidi açmak için eklentiyi açın."
+        "${ PASS_SHORT_APP_NAME } şu anda çevrim dışı. Kilidi açmak için eklentiyi açın."
       ],
       "${ PASS_SHORT_APP_NAME } offline mode enabled.": [
         "${ PASS_SHORT_APP_NAME } çevrim dışı kipi açıldı."
@@ -2802,13 +2807,22 @@
         "Bu seçeneği açarsanız, internet bağlantınız kesilirse veya ${ BRAND_NAME } sunucularına ulaşılamazsa ${ PASS_SHORT_APP_NAME } verilerinize erişebilirsiniz."
       ],
       "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Artık yedek parolanızı kullanarak ${ PASS_SHORT_APP_NAME } uygulamasına çevrimdışı olarak erişebilirsiniz"
+        "Artık yedek parolanız ile ${ PASS_SHORT_APP_NAME } uygulamasına çevrim dışı erişebilirsiniz"
       ],
       "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Artık ek parolanızı kullanarak ${ PASS_SHORT_APP_NAME } uygulamasına çevrimdışı olarak erişebilirsiniz"
+        "Artık ek parolanız ile ${ PASS_SHORT_APP_NAME } uygulamasına çevrim dışı erişebilirsiniz"
       ],
       "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Artık ikinci parolanızı kullanarak ${ PASS_SHORT_APP_NAME } uygulamasına çevrimdışı olarak erişebilirsiniz"
+        "Artık ikinci parolanız ile ${ PASS_SHORT_APP_NAME } uygulamasına çevrim dışı erişebilirsiniz"
+      ],
+      "Not configured": [
+        "Yapılandırılmamış"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Daha büyük bir pencerede ${ PASS_APP_NAME } aç"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "${ PASS_APP_NAME } açılır penceresini aç"
       ]
     },
     "Keyboard key": {

@@ -783,6 +783,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "您的密码管理器不在这里？请求添加它。"
+      ],
+      "Configure": [
+        "配置"
+      ],
+      "Settings": [
+        "设置"
       ]
     },
     "Browser": {
@@ -2038,7 +2044,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2774,6 +2780,15 @@
       ],
       "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
         "您现在可以使用您的二级密码来离线访问 ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Not configured": [
+        "未配置"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "在更大窗口中打开 ${ PASS_APP_NAME }"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "打开 ${ PASS_APP_NAME } 弹窗"
       ]
     },
     "Keyboard key": {
