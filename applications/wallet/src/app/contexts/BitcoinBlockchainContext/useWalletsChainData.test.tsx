@@ -9,13 +9,8 @@ import { WasmAccount, WasmWallet } from '@proton/andromeda';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { mockUseNotifications } from '@proton/testing/lib/vitest';
-import {
-    apiWalletsData,
-    mockUseFlag,
-    mockUseGetBitcoinNetwork,
-    mockUseWalletApiClients,
-    setupStore,
-} from '@proton/wallet';
+import { apiWalletsData, mockUseFlag, mockUseGetBitcoinNetwork, mockUseWalletApiClients } from '@proton/wallet';
+import { setupStore } from '@proton/wallet/store/store';
 
 import { mockUseBlockchainClient, mockWasmAccountSyncer } from '../../tests';
 import { mockIsFullSyncDone } from '../../tests/mocks/useCache';

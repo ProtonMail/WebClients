@@ -9,7 +9,7 @@ import {
 import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { useBitcoinAddressPool } from '@proton/wallet';
+import { useBitcoinAddressPool } from '@proton/wallet/store/hooks';
 
 import { ITEMS_PER_PAGE } from '../../../constants';
 import { useBitcoinBlockchainContext } from '../../../contexts';

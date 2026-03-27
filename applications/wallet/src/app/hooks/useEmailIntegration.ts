@@ -7,8 +7,9 @@ import type { WasmApiWalletAccount } from '@proton/andromeda';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { useWalletDispatch, walletAccountUpdate } from '@proton/wallet';
 import { useWalletApiClients } from '@proton/wallet/contexts';
+import { useWalletDispatch } from '@proton/wallet/store/hooks';
+import { walletAccountUpdate } from '@proton/wallet/store/slices';
 
 import { useBitcoinBlockchainContext } from '../contexts';
 import { getAccountWithChainDataFromManyWallets } from '../utils';

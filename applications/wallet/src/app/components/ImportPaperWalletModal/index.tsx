@@ -19,14 +19,8 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import walletBitcoinDark from '@proton/styles/assets/img/wallet/wallet-bitcoin-dark.jpg';
 import walletBitcoin from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
-import {
-    COMPUTE_BITCOIN_UNIT,
-    MIN_FEE_RATE,
-    PriorityTargetBlock,
-    WalletThemeOption,
-    useExchangeRate,
-    useUserWalletSettings,
-} from '@proton/wallet';
+import { COMPUTE_BITCOIN_UNIT, MIN_FEE_RATE, PriorityTargetBlock, WalletThemeOption } from '@proton/wallet';
+import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store/hooks';
 
 import { Button, CoreButton, Input } from '../../atoms';
 import { MaybeHiddenAmount } from '../../atoms/MaybeHiddenAmount';

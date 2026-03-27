@@ -17,7 +17,8 @@ import walletDownload from '@proton/styles/assets/img/wallet/wallet-download.png
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData, WalletChainDataByWalletId } from '@proton/wallet';
-import { WalletThemeOption, useWalletAccountExchangeRate } from '@proton/wallet';
+import { WalletThemeOption } from '@proton/wallet';
+import { useWalletAccountExchangeRate } from '@proton/wallet/store/hooks';
 
 import { Button, CoreButton, Modal, Select } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';

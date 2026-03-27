@@ -19,9 +19,9 @@ import {
     getWalletAccountMetrics,
     getYesterday,
     updateWalletAccountActivityMetrics,
-    useGetBitcoinNetwork,
 } from '@proton/wallet';
 import { useWalletApiClients } from '@proton/wallet/contexts';
+import { useGetBitcoinNetwork } from '@proton/wallet/store/hooks';
 
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
 import { useMirroredRef } from '../../hooks/useMirrorredRef';

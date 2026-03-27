@@ -1,7 +1,8 @@
 import { type FC, type PropsWithChildren, createContext, useContext, useLayoutEffect, useState } from 'react';
 
 import { useFlag } from '@proton/unleash/useFlag';
-import { WalletThemeOption, getWalletDefaultTheme, useSettings } from '@proton/wallet';
+import { WalletThemeOption, getWalletDefaultTheme } from '@proton/wallet';
+import { useSettings } from '@proton/wallet/store/hooks';
 
 // @ts-ignore
 import walletDarkTheme from '@proton/colors/themes/dist/wallet-dark.theme.css';
