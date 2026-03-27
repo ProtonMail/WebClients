@@ -7,7 +7,7 @@ import { useDispatch } from '@proton/redux-shared-store';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import type { ProcessedApiKey } from '@proton/shared/lib/interfaces';
 import { getKeyHasFlagsToVerify } from '@proton/shared/lib/keys';
-import { verifySignedData } from '@proton/wallet';
+import { verifySignedData } from '@proton/wallet/utils/crypto';
 
 const getVerifiedAddressKey = async (
     addressKeys: ProcessedApiKey[],

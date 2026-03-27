@@ -7,7 +7,7 @@ import type { ModalOwnProps } from '@proton/components';
 import { Prompt } from '@proton/components';
 import walletUserDark from '@proton/styles/assets/img/wallet/wallet-user-dark.jpg';
 import walletUser from '@proton/styles/assets/img/wallet/wallet-user.jpg';
-import { WalletThemeOption } from '@proton/wallet';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button } from '../../../atoms';
 import { EmailSelect } from '../../EmailSelect';

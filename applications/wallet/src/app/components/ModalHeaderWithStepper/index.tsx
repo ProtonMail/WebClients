@@ -10,7 +10,7 @@ import { AppLink, Icon } from '@proton/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import protonWalletLogoDark from '@proton/styles/assets/img/illustrations/proton-wallet-logo-dark.svg';
 import protonWalletLogo from '@proton/styles/assets/img/illustrations/proton-wallet-logo.svg';
-import { WalletThemeOption } from '@proton/wallet';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import config from '../../config';
 import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';

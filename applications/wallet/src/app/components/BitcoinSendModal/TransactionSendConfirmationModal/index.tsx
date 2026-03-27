@@ -6,7 +6,7 @@ import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import walletPaperPlaneDark from '@proton/styles/assets/img/wallet/wallet-paper-plane-dark.jpg';
 import walletPaperPlane from '@proton/styles/assets/img/wallet/wallet-paper-plane.jpg';
 import clsx from '@proton/utils/clsx';
-import { WalletThemeOption } from '@proton/wallet';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button } from '../../../atoms';
 import type { SubTheme } from '../../../utils';
