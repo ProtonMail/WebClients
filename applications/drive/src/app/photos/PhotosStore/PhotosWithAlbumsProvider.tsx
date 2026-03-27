@@ -4,13 +4,12 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState } f
 import { c, msgid } from 'ttag';
 
 import { useNotifications } from '@proton/components';
+import { generateNodeUid, getDriveForPhotos } from '@proton/drive';
 import {
     queryAddAlbumPhotos,
-    queryAlbumPhotos,
     queryAlbums,
     queryDeleteAlbum,
     queryDeletePhotosShare,
-    queryPhotos,
     queryRemoveAlbumPhotos,
     queryRemoveTagsFromPhoto,
     querySharedWithMeAlbums,
@@ -20,21 +19,24 @@ import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
-import type { PhotoDataForAddToAlbumPayload, PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
+import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
+import type { PhotoDataForAddToAlbumPayload } from '@proton/shared/lib/interfaces/drive/photos';
 import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { type AlbumPhoto, type Photo, type ShareWithKey, useDefaultShare, useDriveEventManager } from '../../store';
-import { decryptedLinkToPhotos, photoPayloadToPhotos, useDebouncedRequest } from '../../store/_api';
+import { type ShareWithKey, useDefaultShare, useDriveEventManager } from '../../store';
+import { useDebouncedRequest } from '../../store/_api';
 import { type DecryptedLink, useLink, useLinkActions, useLinksActions } from '../../store/_links';
-import useLinksState from '../../store/_links/useLinksState';
 import { useShare } from '../../store/_shares';
 import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
 import { useBatchHelper } from '../../store/_utils/useBatchHelper';
 import { VolumeTypeForEvents, useVolumesState } from '../../store/_volumes';
+import { createDebouncedBuffer } from '../../utils/createDebouncedBuffer';
 import { sendErrorReport } from '../../utils/errorHandling';
+import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { useAlbumProgressStore } from '../../zustand/photos/addToAlbumProgress.store';
+import { type PhotoItem, usePhotosStore } from '../usePhotos.store';
+import { createPhotoItemsFromNode } from '../utils/createPhotoItemsFromNode';
 
 export interface Album {
     Locked: boolean;
@@ -72,10 +74,8 @@ export const PhotosWithAlbumsContext = createContext<{
     userAddressEmail?: string;
     isPhotosLoading: boolean;
     isAlbumPhotosLoading: boolean;
-    photos: Photo[];
-    albumPhotos: AlbumPhoto[];
     albums: Map<string, DecryptedAlbum>;
-    loadPhotos: (abortSignal: AbortSignal, tags?: PhotoTag[]) => Promise<void>;
+    loadPhotos: (abortSignal: AbortSignal) => Promise<void>;
     initializePhotosView: (abortSignal: AbortSignal) => Promise<void>;
     addAlbumPhotos: (
         abortSignal: AbortSignal,
@@ -92,12 +92,11 @@ export const PhotosWithAlbumsContext = createContext<{
     removePhotosFromCache: (linkIds: string[]) => void;
     updateAlbumsFromCache: (linkIds: string[]) => void;
     deletePhotosShare: (volumeId: string, shareId: string) => Promise<void>;
-    updatePhotoFavoriteFromCache: (linkId: string, isFavorite: boolean) => void;
     addNewAlbumPhotoToCache: (
         abortSignal: AbortSignal,
         albumShareId: string,
         albumLinkId: string,
-        linkId: string
+        photoLinkId: string
     ) => Promise<void>;
     removeAlbumPhotos: (
         abortSignal: AbortSignal,
@@ -124,19 +123,16 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     const { getPhotoCloneForAlbum, copyLinksToVolume } = useLinkActions();
     const { favoritePhotoLink } = useLinksActions();
     const request = useDebouncedRequest();
-    const { batchAPIHelper, batchPromiseHelper } = useBatchHelper();
+    const { batchAPIHelper } = useBatchHelper();
     const driveEventManager = useDriveEventManager();
     const [photosLoading, setIsPhotosLoading] = useState<boolean>(true);
     const [albumPhotosLoading, setIsAlbumPhotosLoading] = useState<boolean>(true);
     const [userAddressEmail, setUserAddressEmail] = useState<string>();
-    const [photos, setPhotos] = useState<Photo[]>([]);
     const [albums, setAlbums] = useState<Map<string, DecryptedAlbum>>(new Map());
     const currentAlbumLinkId = useRef<string>();
-    const [albumPhotos, setAlbumPhotos] = useState<AlbumPhoto[]>([]);
     const { getShare, getShareCreatorKeys } = useShare();
     const { getSharePermissions, isSharedWithMe } = useDirectSharingInfo();
     const { getLink } = useLink();
-    const { updatePhotoLinkTags } = useLinksState();
     const { setVolumeShareIds } = useVolumesState();
     const eventAbortController = useRef<AbortController | undefined>(undefined);
     const albumProgress = useAlbumProgressStore();
@@ -153,46 +149,34 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         };
     }, [driveEventManager.volumes, volumeId]);
 
-    const loadPhotos = useCallback(
-        async (abortSignal: AbortSignal, tags?: PhotoTag[]) => {
-            if (!volumeId || !shareId) {
-                return;
-            }
-            const photoCall = async (lastLinkId?: string, tag?: PhotoTag) => {
-                const { Photos, Code } = await request<{ Photos: PhotoPayload[]; Code: number }>(
-                    queryPhotos(volumeId, {
-                        PreviousPageLastLinkID: lastLinkId,
-                        Tag: tag,
-                    }),
-                    abortSignal
-                );
-                if (Code === 1000 && !!Photos.length) {
-                    const photosData = Photos.map(photoPayloadToPhotos);
+    useEffect(() => {
+        void usePhotosStore.getState().subscribeToEvents('photosProvider');
 
-                    setPhotos((prevPhotos) => {
-                        const newPhotos = photosData.filter(
-                            (newPhoto) => !prevPhotos.some((prevPhoto) => prevPhoto.linkId === newPhoto.linkId)
-                        );
-                        return [...prevPhotos, ...newPhotos];
-                    });
+        return () => {
+            void usePhotosStore.getState().unsubscribeFromEvents('photosProvider');
+        };
+    }, []);
 
-                    void photoCall(photosData[photosData.length - 1].linkId);
-                } else {
-                    setIsPhotosLoading(false);
-                }
-            };
+    const loadPhotos = useCallback(async (abortSignal: AbortSignal) => {
+        setIsPhotosLoading(true);
+        const { push, drain } = createDebouncedBuffer<PhotoItem>((items) =>
+            usePhotosStore.getState().setPhotoItems(items)
+        );
 
-            setIsPhotosLoading(true);
-            if (tags) {
-                tags.forEach((tag) => {
-                    void photoCall(undefined, tag);
+        try {
+            for await (const photo of getDriveForPhotos().iterateTimeline(abortSignal)) {
+                push({
+                    nodeUid: photo.nodeUid,
+                    captureTime: photo.captureTime,
+                    tags: photo.tags,
+                    relatedPhotoNodeUids: [],
                 });
-            } else {
-                void photoCall();
             }
-        },
-        [request, shareId, volumeId]
-    );
+            drain();
+        } finally {
+            setIsPhotosLoading(false);
+        }
+    }, []);
 
     const initializePhotosView = useCallback(
         async (abortSignal: AbortSignal) => {
@@ -209,14 +193,11 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             setPhotosShare(defaultPhotosShare);
             const { address } = await getShareCreatorKeys(abortSignal, defaultPhotosShare);
             setUserAddressEmail(address.Email);
-
-            await loadPhotos(abortSignal);
         },
 
         [
             // Unstable dependencies:
             // getShareCreatorKeys,
-            loadPhotos,
             photosShare,
         ]
     );
@@ -226,69 +207,38 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             if (!volumeId) {
                 return;
             }
+            currentAlbumLinkId.current = albumLinkId;
             setIsAlbumPhotosLoading(true);
+            usePhotosStore.getState().clearAlbumPhotoUids();
 
-            const albumPhotosCall = async (anchorID?: string) => {
+            const { push, drain } = createDebouncedBuffer<PhotoItem>((items) =>
+                usePhotosStore.getState().setAlbumPhotoItems(items)
+            );
+
+            try {
                 let albumVolumeId = volumeId;
                 if (albumShareId !== undefined && shareId !== albumShareId) {
                     const share = await getShare(abortSignal, albumShareId);
                     albumVolumeId = share.volumeId;
                 }
-                const { Photos, Code, AnchorID, More } = await request<{
-                    Photos: PhotoPayload[];
-                    Code: number;
-                    AnchorID: string;
-                    More: boolean;
-                }>(
-                    queryAlbumPhotos(albumVolumeId, albumLinkId, {
-                        AnchorID: anchorID,
-                    }),
-                    abortSignal
-                );
-                if (Code === 1000) {
-                    const photosData = Photos.map(photoPayloadToPhotos);
-                    if (!currentAlbumLinkId.current || currentAlbumLinkId.current !== albumLinkId) {
-                        currentAlbumLinkId.current = albumLinkId;
-                        // We swapped album, so we remove previous ones from state
-                        setAlbumPhotos(
-                            photosData.map((photo) => {
-                                return {
-                                    ...photo,
-                                    parentLinkId: albumLinkId,
-                                    rootShareId: albumShareId,
-                                    volumeId: albumVolumeId,
-                                };
-                            })
-                        );
-                    } else {
-                        setAlbumPhotos((prevPhotos) => {
-                            const newPhotos = photosData
-                                .filter(
-                                    (newPhoto) => !prevPhotos.some((prevPhoto) => prevPhoto.linkId === newPhoto.linkId)
-                                )
-                                .map((photo) => {
-                                    return {
-                                        ...photo,
-                                        parentLinkId: albumLinkId,
-                                        rootShareId: albumShareId,
-                                        volumeId: albumVolumeId,
-                                    };
-                                });
-                            return [...prevPhotos, ...newPhotos];
-                        });
-                    }
-                    // Limit of 1000 photos per albums for now
-                    if (More) {
-                        void albumPhotosCall(AnchorID);
-                    } else {
-                        setIsAlbumPhotosLoading(false);
-                    }
-                }
-            };
 
-            void albumPhotosCall();
+                for await (const albumPhoto of getDriveForPhotos().iterateAlbum(
+                    generateNodeUid(albumVolumeId, albumLinkId),
+                    abortSignal
+                )) {
+                    push({
+                        nodeUid: albumPhoto.nodeUid,
+                        captureTime: albumPhoto.captureTime,
+                        tags: [],
+                        relatedPhotoNodeUids: [],
+                    });
+                }
+                drain();
+            } finally {
+                setIsAlbumPhotosLoading(false);
+            }
         },
-        [request, volumeId, shareId, getShare]
+        [volumeId, shareId]
     );
 
     // TODO: this is not working - not called in the right place + not cleaning properly as it should
@@ -351,6 +301,9 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                                     ]);
                                     return {
                                         ...link,
+                                        albumProperties: link.albumProperties
+                                            ? { ...link.albumProperties, coverLinkId: album.CoverLinkID }
+                                            : link.albumProperties,
                                         cover: cover,
                                         photoCount: album.PhotoCount,
                                         permissions: {
@@ -369,7 +322,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                             const newAlbums = new Map(prevAlbums);
                             batchResults.forEach((album) => {
                                 if (album !== undefined) {
-                                    newAlbums.set(album.linkId, album);
+                                    newAlbums.set(album.linkId, album as DecryptedAlbum);
                                     newAlbumsLinkIds.add(album.linkId);
                                 }
                             });
@@ -507,7 +460,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             hash: link.activeRevision.photo.hash,
             contentHash: link.activeRevision.photo.contentHash,
             tags: link.photoProperties?.tags || [],
-            relatedPhotos: [],
+            relatedPhotos: [] as { linkId: string; captureTime: number; hash?: string; contentHash?: string }[],
             parentLinkId: link.parentLinkId,
             rootShareId: link.rootShareId,
             volumeId: link.volumeId,
@@ -526,7 +479,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 string,
                 {
                     payload: PhotoDataForAddToAlbumPayload;
-                    albumPhoto: AlbumPhoto | undefined;
+                    albumPhoto: ReturnType<typeof getAlbumPhotoFromLink>;
                 }
             >();
 
@@ -618,7 +571,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 string,
                 {
                     payload: PhotoDataForAddToAlbumPayload;
-                    albumPhoto: AlbumPhoto | undefined;
+                    albumPhoto: ReturnType<typeof getAlbumPhotoFromLink>;
                 }
             >
         ) => {
@@ -720,13 +673,24 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     );
 
     const addNewAlbumPhotoToCache = useCallback(
-        async (abortSignal: AbortSignal, albumShareId: string, albumLinkId: string, linkId: string) => {
-            const photoLink = await getLink(abortSignal, albumShareId, linkId);
-            const albumPhoto = getAlbumPhotoFromLink(photoLink);
-            if (!albumPhoto) {
+        async (abortSignal: AbortSignal, albumShareId: string, albumLinkId: string, photoLinkId: string) => {
+            const album = albums.get(albumLinkId);
+            const albumVolumeId = album?.volumeId || volumeId;
+            if (!albumVolumeId) {
                 return;
             }
-            setAlbumPhotos((currentAlbumPhotos) => [...currentAlbumPhotos, albumPhoto]);
+            const photoNodeUid = generateNodeUid(albumVolumeId, photoLinkId);
+            const maybeNode = await getDriveForPhotos().getNode(photoNodeUid);
+            const { node, photoAttributes } = getNodeEntity(maybeNode);
+            if (!photoAttributes) {
+                return;
+            }
+            usePhotosStore.getState().addAlbumPhotoItem({
+                nodeUid: node.uid,
+                captureTime: photoAttributes.captureTime,
+                tags: photoAttributes.tags,
+                relatedPhotoNodeUids: [],
+            });
             setAlbums((currentAlbums) => {
                 const newAlbums = new Map(currentAlbums);
                 const album = newAlbums.get(albumLinkId);
@@ -737,7 +701,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 return newAlbums;
             });
         },
-        [getLink]
+        [albums, volumeId]
     );
 
     const addAlbumPhotos = useCallback(
@@ -760,7 +724,6 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             // If we add into shared album we must use copy
             const shouldCopy = !shouldAdd;
 
-            const allNewAlbumPhotos: AlbumPhoto[] = [];
             const linksInfoForAlbum = await getPayloadDataAndPreloadPhotoLinks(
                 abortSignal,
                 albumShareId,
@@ -793,9 +756,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 result = await addPhotosToAlbumInBatches(abortSignal, link.volumeId, albumLinkId, linksInfoForAlbum);
             }
 
-            allNewAlbumPhotos.push(
-                ...result.successes.map((linkId) => linksInfoForAlbum.get(linkId)?.albumPhoto).filter(isTruthy)
-            );
+            const nbSuccesses = result.successes.length;
 
             setAlbums((currentAlbums) => {
                 const newAlbums = new Map(currentAlbums);
@@ -803,7 +764,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 if (!album) {
                     return newAlbums;
                 }
-                album.photoCount = album.photoCount + allNewAlbumPhotos.length;
+                album.photoCount = album.photoCount + nbSuccesses;
                 return newAlbums;
             });
 
@@ -812,9 +773,28 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             // For other cases, it's safer to loadAlbumPhotos (request to API) to prevent new photos loading issues
             if (fromUpload) {
                 if (currentAlbumLinkId.current === albumLinkId) {
-                    setAlbumPhotos((currentAlbumPhotos) => [...currentAlbumPhotos, ...allNewAlbumPhotos]);
+                    const store = usePhotosStore.getState();
+                    const missingNodeUids: string[] = [];
+                    for (const successLinkId of result.successes) {
+                        const photoNodeUid = generateNodeUid(volumeId, successLinkId);
+                        const existing = store.getPhotoItem(photoNodeUid);
+                        if (existing) {
+                            store.addAlbumPhotoItem(existing);
+                        } else {
+                            missingNodeUids.push(photoNodeUid);
+                        }
+                    }
+                    if (missingNodeUids.length) {
+                        const photoItems = await createPhotoItemsFromNode(missingNodeUids);
+                        if (photoItems) {
+                            store.setPhotoItems(photoItems);
+                            for (const item of photoItems) {
+                                store.addAlbumPhotoItem(item);
+                            }
+                        }
+                    }
                     // Reload albums to reload cover of current album - first photo is automatically set as cover.
-                    if (albumPhotos.length === 0) {
+                    if (store.albumPhotoUids.size === 0) {
                         void loadAlbums(abortSignal);
                     }
                 }
@@ -822,7 +802,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 void loadAlbumPhotos(abortSignal, albumShareId, albumLinkId);
                 showNotifications(result, albumName, fromUpload, linkIds);
                 // Reload albums to reload cover of current album - first photo is automatically set as cover.
-                if (albumPhotos.length === 0) {
+                if (usePhotosStore.getState().albumPhotoUids.size === 0) {
                     void loadAlbums(abortSignal);
                 }
             }
@@ -834,7 +814,6 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             getLink,
             getPayloadDataAndPreloadPhotoLinks,
             addPhotosToAlbumInBatches,
-            albumPhotos.length,
             showNotifications,
             loadAlbumPhotos,
             loadAlbums,
@@ -975,17 +954,24 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 }
             };
             await addPhotoAsCoverCall();
-            // Optimistic: change the cover manually in memory
-            void updateAlbumsFromCache([albumLinkId]);
+            setAlbums((currentAlbums) => {
+                const newAlbums = new Map(currentAlbums);
+                const album = newAlbums.get(albumLinkId);
+                if (!album) {
+                    return newAlbums;
+                }
+                newAlbums.set(albumLinkId, {
+                    ...album,
+                    albumProperties: album.albumProperties ? { ...album.albumProperties, coverLinkId } : undefined,
+                });
+                return newAlbums;
+            });
         },
         [request, volumeId]
     );
 
-    const removePhotosFromCache = useCallback((linkIds: string[]) => {
-        setPhotos((prevPhotos) => {
-            return prevPhotos.filter((photo) => !linkIds.includes(photo.linkId));
-        });
-    }, []);
+    // TODO: Remove that once we removed the old PhotosStore
+    const removePhotosFromCache = useCallback((_: string[]) => {}, []);
 
     const deletePhotosShare = useCallback(
         async (volumeId: string, shareId: string): Promise<void> => {
@@ -1052,7 +1038,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 });
             }
 
-            setAlbumPhotos((prevPhotos) => prevPhotos.filter((photo) => !result.successes.includes(photo.linkId)));
+            usePhotosStore.getState().removeAlbumPhotoItemsByLinkIds(result.successes);
             setAlbums((currentAlbums) => {
                 const newAlbums = new Map(currentAlbums);
                 const album = newAlbums.get(albumLinkId);
@@ -1069,68 +1055,8 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         [getLink, batchAPIHelper, createNotification]
     );
 
-    const updatePhotoFavoriteFromCache = useCallback(
-        (linkId: string, isFavorite: boolean) => {
-            if (!shareId) {
-                return;
-            }
-
-            const updateTagsForPhoto = <T extends Photo>(photo: T, photoList: T[]) => {
-                if (!photo) {
-                    return;
-                }
-                // eslint-disable-next-line
-                const updatedTags = isFavorite
-                    ? photo.tags.includes(PhotoTag.Favorites)
-                        ? photo.tags
-                        : [...photo.tags, PhotoTag.Favorites]
-                    : photo.tags.filter((tag) => tag !== PhotoTag.Favorites);
-
-                updatePhotoLinkTags(shareId, linkId, updatedTags);
-
-                return photoList.map((original) =>
-                    original.linkId === linkId ? { ...original, tags: updatedTags } : original
-                );
-            };
-
-            const photo = photos.find((photo) => photo.linkId === linkId);
-            if (photo) {
-                const update = updateTagsForPhoto(photo, photos);
-                if (update) {
-                    setPhotos(update);
-                }
-            } else {
-                // This is the cache when the photo is not in the cache already
-                // As uploaded directly to the stream
-                const signal = new AbortController().signal;
-                void getLink(signal, shareId, linkId).then(async (link) => {
-                    const relatedPhotos = await batchPromiseHelper(
-                        link?.activeRevision?.photo?.relatedPhotosLinkIds || [],
-                        async (relatedPhotoLinkId) => getLink(signal, shareId, relatedPhotoLinkId),
-                        10,
-                        signal
-                    );
-                    const photo = decryptedLinkToPhotos(link, relatedPhotos);
-                    const update = updateTagsForPhoto(photo, photos);
-                    if (update) {
-                        setPhotos(update);
-                    }
-                });
-            }
-
-            const albumPhoto = albumPhotos.find((photo) => photo.linkId === linkId);
-            if (albumPhoto) {
-                const update = updateTagsForPhoto(albumPhoto, albumPhotos);
-                if (update) {
-                    setAlbumPhotos(update);
-                }
-            }
-        },
-        [shareId, photos, albumPhotos, updatePhotoLinkTags]
-    );
-
     const clearAlbumPhotos = useCallback(() => {
-        setAlbumPhotos([]);
+        usePhotosStore.getState().clearAlbumPhotoUids();
     }, []);
 
     return (
@@ -1142,9 +1068,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 volumeType: VolumeType.Photos,
                 isPhotosLoading: photosLoading,
                 isAlbumPhotosLoading: albumPhotosLoading,
-                photos,
                 albums,
-                albumPhotos,
                 addAlbumPhotos,
                 addPhotoAsCover,
                 loadAlbumPhotos,
@@ -1154,7 +1078,6 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 initializePhotosView,
                 removeAlbumsFromCache,
                 addNewAlbumPhotoToCache,
-                updatePhotoFavoriteFromCache,
                 removePhotosFromCache,
                 updateAlbumsFromCache,
                 deletePhotosShare,

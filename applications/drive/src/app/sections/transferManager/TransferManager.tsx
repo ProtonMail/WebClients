@@ -3,14 +3,13 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useBeforeUnload, useConfirmActionModal } from '@proton/components';
-import { getDrive, splitNodeUid } from '@proton/drive/index';
+import { getDrive, getDriveForPhotos } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { uploadManager } from '@proton/drive/modules/upload';
 import clsx from '@proton/utils/clsx';
 
 import type { AbuseReportPrefill } from '../../modals/ReportAbuseModal';
 import { useUploadConflictModal } from '../../modals/UploadConflictModal';
-import { useDriveEventManager } from '../../store';
 import { TransferManagerHeader } from './transferManagerHeader/transferManagerHeader';
 import { TransferManagerList } from './transferManagerList/transferManagerList';
 import { useTransferManagerActions } from './useTransferManagerActions';
@@ -35,7 +34,6 @@ export const TransferManager = ({
     const { clearQueue } = useTransferManagerActions();
     const [isMinimized, setMinimized] = useState(false);
     const [leaveMessage, setLeaveMessage] = useState('');
-    const driveEventManager = useDriveEventManager();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     useBeforeUnload(leaveMessage);
 
@@ -66,19 +64,15 @@ export const TransferManager = ({
 
         const busDriver = getBusDriver();
         uploadManager.subscribeToEvents('transfer-manager', async (event) => {
-            if (event.type === 'file:complete' && event.isUpdatedNode) {
+            if (event.type === 'file:complete') {
                 await busDriver.emit(
                     {
-                        type: BusDriverEventName.UPDATED_NODES,
+                        type: event.isUpdatedNode ? BusDriverEventName.UPDATED_NODES : BusDriverEventName.CREATED_NODES,
                         items: [{ uid: event.nodeUid, parentUid: event.parentUid }],
                     },
-                    getDrive()
+                    event.isForPhotos ? getDriveForPhotos() : getDrive()
                 );
-            } else if (event.type === 'file:complete' && event.isForPhotos) {
-                // TODO: Remove when photos section listing is using the sdk
-                const { volumeId } = splitNodeUid(event.nodeUid);
-                await driveEventManager.pollEvents.volumes(volumeId);
-            } else if (event.type === 'file:complete' || event.type === 'folder:complete') {
+            } else if (event.type === 'folder:complete') {
                 await busDriver.emit(
                     {
                         type: BusDriverEventName.CREATED_NODES,
@@ -93,7 +87,7 @@ export const TransferManager = ({
             uploadManager.unsubscribeFromEvents('transfer-manager');
             uploadManager.removeConflictResolver();
         };
-    }, [driveEventManager.pollEvents, showUploadConflictModal]);
+    }, [showUploadConflictModal]);
 
     const toggleMinimize = () => {
         setMinimized((value) => !value);

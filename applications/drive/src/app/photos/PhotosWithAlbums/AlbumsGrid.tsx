@@ -9,8 +9,12 @@ import { AlbumsCard } from './grid/AlbumsCard';
 
 type AlbumsGridProps = {
     data: DecryptedAlbum[];
-    onItemRender: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
-    onItemRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
+    onItemRender: (coverNodeUid: string, domRef: React.MutableRefObject<unknown>) => void;
+    onItemRenderLoadedLink: (
+        coverNodeUid: string,
+        coverActiveRevisionUid: string,
+        domRef: React.MutableRefObject<unknown>
+    ) => void;
     isLoading: boolean;
     onItemClick: (shareId: string, linkId: string) => void;
     onItemShare: (linkId: string) => void;

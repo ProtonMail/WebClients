@@ -2,37 +2,36 @@ import { c } from 'ttag';
 
 import { ToolbarButton } from '@proton/components';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import clsx from '@proton/utils/clsx';
 
 import { ContextMenuButton } from '../../components/sections/ContextMenu';
+import type { CommonButtonProps } from './types';
 
-interface BaseProps {
-    onClick: () => void;
+interface ContextMenuProps {
+    showTitle?: never;
 }
 
-interface ContextMenuProps extends BaseProps {
-    buttonType: 'contextMenu';
-    close: () => void;
-}
-
-interface ToolbarProps extends BaseProps {
-    buttonType: 'toolbar';
-    close?: never;
+interface ToolbarProps {
+    showTitle?: boolean;
 }
 
 type Props = ContextMenuProps | ToolbarProps;
 
-export const ShareButton = ({ buttonType, close, onClick }: Props) => {
+export const ShareButton = ({ buttonType, close, onClick, showTitle }: Props & CommonButtonProps) => {
     const title = c('Action').t`Share`;
     const icon = 'user-plus';
 
     if (buttonType === 'toolbar') {
         return (
             <ToolbarButton
+                className={clsx(showTitle && 'inline-flex gap-2')}
                 title={title}
                 icon={<IcUserPlus alt={title} />}
                 onClick={onClick}
-                data-testid="toolbar-share"
-            />
+                data-testid="toolbar-share-link"
+            >
+                {showTitle ? title : undefined}
+            </ToolbarButton>
         );
     }
 
