@@ -9,6 +9,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import Sidebar from '@proton/components/components/sidebar/Sidebar';
 import SidebarLogo from '@proton/components/components/sidebar/SidebarLogo';
 import SidebarNav from '@proton/components/components/sidebar/SidebarNav';
+import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import AppVersion from '@proton/components/components/version/AppVersion';
 import AppsDropdown from '@proton/components/containers/app/AppsDropdown';
 import SidebarStorageUpsell from '@proton/components/containers/payments/subscription/SidebarStorageUpsell';
@@ -39,6 +40,7 @@ import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors'
 import OnboardingChecklistSidebar from '../onboarding/checklist/sidebar/OnboardingChecklistSidebar';
 import MailSidebarList from './MailSidebarList';
 import MailSidebarPrimaryButton from './MailSidebarPrimaryButton';
+import { BookingPageLocationSpotlightContent, useBookingPageSpotlight } from './useBookingSpotlight';
 
 const MailSidebar = () => {
     const api = useApi();
@@ -46,6 +48,8 @@ const MailSidebar = () => {
     const [showSideBar, setShowSideBar] = useLocalState(true, `${user.ID}-${APPS.PROTONMAIL}-left-nav-opened`);
     const { viewportWidth } = useActiveBreakpoint();
     const collapsed = !showSideBar && !viewportWidth['<=small'];
+
+    const bookingSpotlight = useBookingPageSpotlight();
 
     const onCompose = useOnCompose();
     const dispatch = useMailDispatch();
@@ -80,7 +84,18 @@ const MailSidebar = () => {
     return (
         <Sidebar
             app={APPS.PROTONMAIL}
-            appsDropdown={<AppsDropdown app={APPS.PROTONMAIL} />}
+            appsDropdown={
+                <Spotlight
+                    originalPlacement={collapsed ? 'right' : 'bottom'}
+                    closeIcon="cross-big"
+                    content={<BookingPageLocationSpotlightContent />}
+                    show={bookingSpotlight.shouldShowSpotlight}
+                    onClose={bookingSpotlight.onClose}
+                    onDisplayed={bookingSpotlight.onDisplayed}
+                >
+                    <AppsDropdown app={APPS.PROTONMAIL} />
+                </Spotlight>
+            }
             expanded={expanded}
             onToggleExpand={() => {
                 dispatch(layoutActions.toggleSidebarExpand());
