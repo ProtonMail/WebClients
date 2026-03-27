@@ -5,12 +5,12 @@ import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testin
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { mockUseNotifications, mockUseUserKeys } from '@proton/testing/lib/vitest';
 import {
-    getUserKeys,
     mockUseApiWalletTransactionData,
     mockUseContactEmails,
     mockUseSaveVCardContact,
     mockUseWalletApi,
-} from '@proton/wallet';
+} from '@proton/wallet/tests/mocks';
+import { getUserKeys } from '@proton/wallet/tests/utils';
 import type { DecryptedTransactionData } from '@proton/wallet/types';
 import { decryptPgp } from '@proton/wallet/utils/crypto';
 
