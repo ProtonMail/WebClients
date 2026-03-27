@@ -6,11 +6,11 @@ import { useModalStateWithData } from '@proton/components/components/modalTwo/us
 import {
     type IWasmApiWalletData,
     type TransactionData,
-    type WalletTransactionsThunkArg,
     buildNetworkTransactionByHashedTxId,
     decryptWalletKeyForHmac,
-    useApiWalletTransactionData,
 } from '@proton/wallet';
+import { useApiWalletTransactionData } from '@proton/wallet/store/hooks';
+import type { WalletTransactionsThunkArg } from '@proton/wallet/store/slices';
 
 import { ITEMS_PER_PAGE } from '../../../constants';
 import { useBitcoinBlockchainContext } from '../../../contexts';

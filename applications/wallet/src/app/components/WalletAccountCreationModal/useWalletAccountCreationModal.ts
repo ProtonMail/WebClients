@@ -13,10 +13,10 @@ import {
     decryptWalletAccount,
     encryptWalletDataWithWalletKey,
     getDefaultWalletAccountName,
-    useWalletDispatch,
-    walletAccountCreation,
 } from '@proton/wallet';
 import { useWalletApiClients } from '@proton/wallet/contexts';
+import { useWalletDispatch } from '@proton/wallet/store/hooks';
+import { walletAccountCreation } from '@proton/wallet/store/slices';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { isUndefined } from '../../utils';
