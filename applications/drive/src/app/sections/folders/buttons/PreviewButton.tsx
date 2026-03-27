@@ -5,7 +5,7 @@ import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import { hasFoldersSelected, isMultiSelect } from '../../../components/sections/ToolbarButtons/utils';
-import type { FolderButtonProps } from './types';
+import type { ActionButtonProps } from '../../buttons/types';
 
 type Item = {
     uid: string;
@@ -16,7 +16,7 @@ type Item = {
     size?: number;
 };
 
-type Props = Omit<FolderButtonProps, 'onClick'> & {
+type Props = Omit<ActionButtonProps, 'onClick'> & {
     selectedItems: Item[];
     onClick: () => void;
 };

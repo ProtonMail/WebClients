@@ -277,6 +277,24 @@ const DriveExplorer = ({
         [selection]
     );
 
+    const handleContainerContextMenu = useCallback(
+        (event: React.MouseEvent) => {
+            if (!events?.onViewContextMenu) {
+                return;
+            }
+            const target = event.target as HTMLElement;
+            const isClickOnEmptySpace =
+                target === event.currentTarget ||
+                (target.closest('[data-testid="drive-explorer-row"]') === null &&
+                    target.closest('[data-testid="grid-item"]') === null);
+
+            if (isClickOnEmptySpace) {
+                events.onViewContextMenu(event);
+            }
+        },
+        [events]
+    );
+
     const handleContainerKeyDown = useCallback(
         (event: React.KeyboardEvent) => {
             if (event.key === 'Escape' && selection?.selectionMethods) {
@@ -295,6 +313,7 @@ const DriveExplorer = ({
             ref={driveExplorerRef}
             className={clsx('drive-explorer flex flex-column w-full h-full', config?.className)}
             onClick={handleContainerClick}
+            onContextMenu={handleContainerContextMenu}
             onKeyDown={handleContainerKeyDown}
             role="application"
             data-testid="drive-explorer"

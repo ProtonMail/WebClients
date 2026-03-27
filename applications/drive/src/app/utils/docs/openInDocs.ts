@@ -103,6 +103,31 @@ const openDocumentWindow = (params: OpenDocumentWindowParams) => {
     windowHandle.location.assign(url);
 };
 
+export const createDocument = async ({
+    parentUid,
+    type,
+    openBehavior = 'tab',
+}: {
+    parentUid: string;
+    type: DocumentType | ProtonDocumentType;
+    openBehavior?: 'tab' | 'redirect';
+}) => {
+    const w = openBehavior === 'tab' ? getNewWindow() : getCurrentTab();
+    const { volumeId, nodeId } = splitNodeUid(parentUid);
+    try {
+        openDocumentWindow({
+            type,
+            mode: 'create',
+            windowHandle: w.handle,
+            volumeId,
+            parentLinkId: nodeId,
+        });
+    } catch (e) {
+        w.close();
+        throw e;
+    }
+};
+
 const openDocument = async ({
     uid,
     openBehavior = 'tab',

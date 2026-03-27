@@ -13,7 +13,7 @@ import type { DriveSectionRouteProps } from '../components/sections/Drive/DriveV
 import { useActiveShare } from '../hooks/drive/useActiveShare';
 import { useLegacyContextShareHandler } from '../hooks/drive/useLegacyContextShareHandler';
 import useDriveNavigation from '../hooks/drive/useNavigate';
-import { FolderView } from '../sections/folders/FolderView';
+import { FolderView } from '../sections/folders/FolderView/FolderView';
 import { subscribeToFolderEvents } from '../sections/folders/subscribeToFolderEvents';
 import { useFolderStore } from '../sections/folders/useFolder.store';
 import { EnrichedError } from '../utils/errorHandling/EnrichedError';

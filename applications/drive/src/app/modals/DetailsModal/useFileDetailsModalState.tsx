@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components';
-import type { ProtonDriveClient } from '@proton/drive';
+import type { ProtonDriveClient, Revision } from '@proton/drive';
 import { type Author, type MaybeNode, MemberRole, NodeType, getDrive } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
 
@@ -51,6 +51,7 @@ export type FileDetails = {
 
 export type UseFileDetailsModalProps = ModalStateProps & {
     nodeUid: string;
+    revision?: Revision;
     drive?: Drive;
     verifySignatures?: boolean;
     onClose?: () => void;
@@ -60,6 +61,7 @@ export type UseFileDetailsModalProps = ModalStateProps & {
 
 export function useFileDetailsModalState({
     nodeUid,
+    revision,
     drive = getDrive(),
     showLocation = true,
     verifySignatures = true,
@@ -81,12 +83,19 @@ export function useFileDetailsModalState({
                 const fileType = node.ok ? node.value.type : node.error.type;
                 const location = showLocation ? await getFormattedNodeLocation(drive, node) : '';
                 const nodeEntity = node.ok ? node.value : node.error;
-                // eslint-disable-next-line no-nested-ternary
-                const activeRevision = node.ok
-                    ? node.value.activeRevision
-                    : node.error.activeRevision?.ok
-                      ? node.error.activeRevision.value
-                      : undefined;
+                let activeRevision;
+
+                if (revision) {
+                    activeRevision = revision;
+                } else {
+                    // eslint-disable-next-line no-nested-ternary
+                    activeRevision = node.ok
+                        ? node.value.activeRevision
+                        : node.error.activeRevision?.ok
+                          ? node.error.activeRevision.value
+                          : undefined;
+                }
+
                 const numberOfDownloads =
                     nodeEntity.directRole === MemberRole.Admin ? await getNumberOfDownloads(drive, nodeUid) : undefined;
 
