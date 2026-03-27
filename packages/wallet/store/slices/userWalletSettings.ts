@@ -4,7 +4,7 @@ import { type ModelState, getInitialModelState } from '@proton/account';
 import type { WasmBitcoinUnit, WasmUserSettings } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
-import { DEFAULT_DISPLAY_BITCOIN_UNIT, DEFAULT_FIAT_CURRENCY } from '../../constants';
+import { DEFAULT_DISPLAY_BITCOIN_UNIT, DEFAULT_FIAT_CURRENCY } from '../../constants/bitcoin';
 import type { WalletThunkArguments } from '../thunk';
 
 const name = 'user_wallet_setting' as const;

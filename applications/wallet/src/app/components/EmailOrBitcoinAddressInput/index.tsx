@@ -12,7 +12,7 @@ import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
-import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '@proton/wallet';
+import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '@proton/wallet/constants/settings';
 
 import type { InputProps } from '../../atoms';
 import { CoreButton, Input } from '../../atoms';

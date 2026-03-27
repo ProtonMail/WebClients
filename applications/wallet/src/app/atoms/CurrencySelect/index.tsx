@@ -7,7 +7,7 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Option from '@proton/components/components/option/Option';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
-import type { BITCOIN_CURRENCY } from '@proton/wallet';
+import type { BITCOIN_CURRENCY } from '@proton/wallet/constants/bitcoin';
 
 import { SearchableSelect } from '../Select';
 import { currencyFilterFunction, getAllDropdownOptions, getIsCurrencyOption, getSerialisedOption } from './helpers';

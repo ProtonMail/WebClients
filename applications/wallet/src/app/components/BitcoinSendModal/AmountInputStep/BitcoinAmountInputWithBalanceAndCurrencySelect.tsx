@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmApiFiatCurrency } from '@proton/andromeda';
-import { BITCOIN_CURRENCY, COMPUTE_BITCOIN_UNIT, SATS_CURRENCY } from '@proton/wallet';
+import { BITCOIN_CURRENCY, COMPUTE_BITCOIN_UNIT, SATS_CURRENCY } from '@proton/wallet/constants/bitcoin';
 import { useFiatCurrencies, useGetExchangeRate, useUserWalletSettings } from '@proton/wallet/store/hooks';
 
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
