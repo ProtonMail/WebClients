@@ -2,6 +2,7 @@ import type { FC, ReactNode } from 'react';
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 
 import { Loader, useElementRect } from '@proton/components';
+import { generateNodeUid } from '@proton/drive';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 import type { PhotoGridItem } from '../../store';
@@ -11,8 +12,12 @@ import { PhotosGroup } from './grid/PhotosGroup';
 
 type Props = {
     data: PhotoGridItem[];
-    onItemRender: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
-    onItemRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
+    onItemRender: (nodeUid: string, domRef: React.MutableRefObject<unknown>) => void;
+    onItemRenderLoadedLink: (
+        nodeUid: string,
+        activeRevisionUid: string,
+        domRef: React.MutableRefObject<unknown>
+    ) => void;
     selectedItems: PhotoGridItem[];
     isLoading: boolean;
     onItemClick: (linkId: string) => void;
@@ -21,7 +26,7 @@ type Props = {
     isItemSelected: (linkId: string) => boolean;
     categoryLoading?: string;
     children: ReactNode;
-    onFavorite?: (linkId: string, shareId: string, isFavorite: boolean) => void;
+    onFavorite?: (nodeUid: string) => void;
     rootLinkId: string;
 };
 
@@ -155,20 +160,20 @@ export const PhotosInsideAlbumsGrid: FC<Props> = ({
                 const y = currentY;
                 lastY = y;
 
-                const isSelected = isItemSelected(item.linkId);
-
+                const nodeUid = generateNodeUid(item.volumeId, item.linkId);
+                const isSelected = isItemSelected(nodeUid);
                 if (itemShouldRender(y, scrollPosition)) {
                     items.push(
                         <PhotosCard
-                            key={item.linkId}
-                            photo={item}
+                            key={nodeUid}
+                            nodeUid={nodeUid}
                             onRender={onItemRender}
                             onRenderLoadedLink={onItemRenderLoadedLink}
                             onClick={() => {
                                 if (hasSelection) {
                                     onSelectChange(i, !isSelected);
                                 } else {
-                                    onItemClick(item.linkId);
+                                    onItemClick(nodeUid);
                                 }
                             }}
                             onSelect={(isSelected) => {
@@ -186,16 +191,11 @@ export const PhotosInsideAlbumsGrid: FC<Props> = ({
                                 }s`,
                             }}
                             hasSelection={hasSelection}
-                            isFavorite={item.photoProperties?.isFavorite || false}
                             isOwnedByCurrentUser={item.parentLinkId === rootLinkId}
                             onFavorite={
                                 onFavorite
                                     ? () => {
-                                          onFavorite(
-                                              item.linkId,
-                                              item.rootShareId,
-                                              item.photoProperties?.isFavorite || false
-                                          );
+                                          onFavorite(generateNodeUid(item.volumeId, item.linkId));
                                       }
                                     : undefined
                             }
@@ -216,7 +216,21 @@ export const PhotosInsideAlbumsGrid: FC<Props> = ({
         };
 
         return [items, innerStyle];
-    }, [data, isItemSelected, isGroupSelected, dimensions, scrollPosition, isLoading, selectedItems]);
+    }, [
+        dimensions,
+        data,
+        scrollPosition,
+        isGroupSelected,
+        isLoading,
+        onSelectChange,
+        isItemSelected,
+        onItemRender,
+        onItemRenderLoadedLink,
+        hasSelection,
+        rootLinkId,
+        onFavorite,
+        onItemClick,
+    ]);
 
     return (
         <div

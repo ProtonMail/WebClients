@@ -5,8 +5,8 @@ import type { DecryptedLink } from '../_links/interface';
 import type { DriveFileRevisionPhoto } from '../_revisions';
 
 interface PhotoBase {
-    linkId: string;
-    captureTime: number;
+    nodeUid: string;
+    captureTime: Date;
     hash?: string;
     contentHash?: string;
 }
@@ -16,7 +16,27 @@ export interface Photo extends PhotoBase {
     relatedPhotos: PhotoBase[];
 }
 
-export interface AlbumPhoto extends Photo {
+/**
+ * @deprecated
+ * Legacy type
+ */
+
+export interface LegacyPhoto {
+    linkId: string;
+    captureTime: number;
+    hash?: string;
+    tags: PhotoTag[];
+    relatedPhotos: { linkId: string; captureTime: number; hash?: string; contentHash?: string }[];
+    contentHash?: string;
+}
+
+export interface AlbumPhoto {
+    linkId: string;
+    captureTime: number;
+    hash?: string;
+    tags: PhotoTag[];
+    relatedPhotos: { linkId: string; captureTime: number; hash?: string; contentHash?: string }[];
+    contentHash?: string;
     parentLinkId: string; // the album link id
     rootShareId: string; // the album share id
     volumeId: string; // the album volume id

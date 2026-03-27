@@ -84,10 +84,13 @@ type SetThumbnailData = (id: string, data: Partial<ThumbnailData>) => void;
  * - On a thrown error, marks all items as loaded and reports via handleSdkError.
  * - In all cases, records the attempt so the item won't be re-queued.
  * - Clears the interval once the queue is empty after processing.
+ * - SD (Type1) batches are prioritised: the HD (Type2) interval only starts
+ *   after the SD batch finishes, ensuring lower-resolution previews appear first.
  */
 const processBatch = async (
     drive: DriveClient,
     batch: BatchState,
+    batches: Map<DriveClient, Map<ThumbnailType, BatchState>>,
     setThumbnailData: SetThumbnailData,
     attempted: Set<string>
 ): Promise<void> => {
@@ -139,7 +142,34 @@ const processBatch = async (
             clearInterval(batch.intervalRef);
             batch.intervalRef = null;
         }
+        // SD (Type1) batches are processed first. Only once an SD batch finishes do we
+        // kick off the HD (Type2) interval, so lower-resolution previews always appear
+        // before their high-resolution counterparts.
+        // TODO: An idea can be, if SD items arrive while HD is already in-flight, the HD batch is not cancelled.
+        // We should pass an AbortSignal to iterateThumbnails and abort HD when new SD items are
+        // queued, re-queuing any unprocessed HD items for after SD finishes.
+        // This will allow faster load while scrolling.
+        if (batch.thumbnailType === ThumbnailType.Type1) {
+            const hdBatch = batches.get(drive)?.get(ThumbnailType.Type2);
+            if (hdBatch && hdBatch.pendingItems.size > 0 && !hdBatch.intervalRef) {
+                hdBatch.intervalRef = setInterval(() => {
+                    void processBatch(drive, hdBatch, batches, setThumbnailData, attempted);
+                }, BATCH_INTERVAL_MS);
+            }
+        }
     }
+};
+
+const startBatchInterval = (
+    drive: DriveClient,
+    batch: BatchState,
+    batches: Map<DriveClient, Map<ThumbnailType, BatchState>>,
+    setThumbnailData: SetThumbnailData,
+    attempted: Set<string>
+) => {
+    batch.intervalRef = setInterval(() => {
+        void processBatch(drive, batch, batches, setThumbnailData, attempted);
+    }, BATCH_INTERVAL_MS);
 };
 
 type ThumbnailsStore = {
@@ -215,9 +245,12 @@ export const useThumbnailsStore = create<ThumbnailsStore>((set, get) => ({
                 }
 
                 if (wasEmpty && !batch.intervalRef) {
-                    batch.intervalRef = setInterval(() => {
-                        void processBatch(drive, batch, setThumbnailData, get().attempted);
-                    }, BATCH_INTERVAL_MS);
+                    const sdBatch =
+                        thumbnailType === ThumbnailType.Type2 ? batches.get(drive)?.get(ThumbnailType.Type1) : null;
+                    const sdPending = sdBatch && (sdBatch.pendingItems.size > 0 || sdBatch.isProcessing);
+                    if (!sdPending) {
+                        startBatchInterval(drive, batch, batches, setThumbnailData, get().attempted);
+                    }
                 }
             }
         }

@@ -7,10 +7,11 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, useAppTitle, useModalStateObject, useNotifications } from '@proton/components';
 import { generateNodeUid, getDriveForPhotos } from '@proton/drive/index';
+import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import useNavigate from '../../hooks/drive/useNavigate';
-import { AlbumTag, useThumbnailsDownload } from '../../store';
+import { AlbumTag } from '../../store';
 import { useLinksActions } from '../../store/_links';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { usePhotoLayoutStore } from '../../zustand/photos/layout.store';
@@ -23,6 +24,7 @@ import { EmptyAlbums } from './EmptyAlbums';
 import { EmptyTagView } from './EmptyTagView';
 import { AlbumsTags, type AlbumsTagsProps } from './components/Tags';
 import type { PhotosLayoutOutletContext } from './layout/PhotosLayout';
+import { enqueueAdditionalInfo } from './loaders/loadAdditionalInfo';
 
 import './BannerInvite.scss';
 
@@ -52,16 +54,8 @@ export const stableSortAlbums = (albums: DecryptedAlbum[]): DecryptedAlbum[] => 
 
 export const AlbumsView: FC = () => {
     useAppTitle(c('Title').t`Albums`);
-    const {
-        volumeId,
-        shareId,
-        linkId,
-        albums,
-        isAlbumsLoading,
-        loadPhotoLink,
-        deleteAlbum,
-        refreshSharedWithMeAlbums,
-    } = useOutletContext<PhotosLayoutOutletContext>();
+    const { volumeId, shareId, linkId, albums, isAlbumsLoading, deleteAlbum, refreshSharedWithMeAlbums } =
+        useOutletContext<PhotosLayoutOutletContext>();
 
     const { modals } = usePhotoLayoutStore(
         useShallow((state) => ({
@@ -74,38 +68,24 @@ export const AlbumsView: FC = () => {
     const { transferPhotoLinks } = useLinksActions();
     const { createNotification } = useNotifications();
 
-    const thumbnails = useThumbnailsDownload();
     const { navigateToAlbum, navigateToAlbums } = useNavigate();
     // TODO: Move tag selection to specific hook
     const [selectedTags, setSelectedTags] = useState<AlbumsTagsProps['selectedTags']>([AlbumTag.All]);
-    const handleItemRender = useCallback(
-        (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
-            if (!shareId) {
-                return;
-            }
-            const album = albums.find((album) => album.linkId === itemLinkId);
-            if (album && album.rootShareId) {
-                loadPhotoLink(album.rootShareId, itemLinkId, domRef);
-            } else {
-                loadPhotoLink(shareId, itemLinkId, domRef);
-            }
-        },
-        [loadPhotoLink, albums, shareId]
-    );
+
+    const handleItemRender = useCallback((nodeUid: string, domRef: React.MutableRefObject<unknown>) => {
+        enqueueAdditionalInfo(nodeUid, () => Boolean(domRef.current));
+    }, []);
 
     const handleItemRenderLoadedLink = useCallback(
-        (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
-            const album = albums.find((album) => album.linkId === itemLinkId);
-
-            if (album && album.rootShareId && album.hasThumbnail) {
-                thumbnails.addToDownloadQueue(album.rootShareId, itemLinkId, undefined, domRef);
-            }
-
-            if (album && album.cover && album.cover.hasThumbnail) {
-                thumbnails.addToDownloadQueue(album.cover.rootShareId, album.cover.linkId, undefined, domRef);
-            }
+        (nodeUid: string, activeRevisionUid: string, domRef: React.MutableRefObject<unknown>) => {
+            loadThumbnail(getDriveForPhotos(), {
+                nodeUid: nodeUid,
+                revisionUid: activeRevisionUid,
+                shouldLoad: () => Boolean(domRef.current),
+                thumbnailTypes: ['sd', 'hd'],
+            });
         },
-        [albums, thumbnails]
+        []
     );
 
     const onRenameAlbum = useCallback(
@@ -198,7 +178,7 @@ export const AlbumsView: FC = () => {
         [modals, handleDeleteAlbum, navigateToAlbums]
     );
 
-    const isAlbumsEmpty = albums.length === 0;
+    const isAlbumsEmpty = !isAlbumsLoading && albums.length === 0;
     // the sorting is just so we maintain some ordering
     const filteredAlbums = stableSortAlbums(filterAlbums(albums, selectedTags[0]));
 

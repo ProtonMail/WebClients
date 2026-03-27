@@ -31,7 +31,6 @@ export const useTrashActions = () => {
         const success = [];
         const failures = [];
         await getBusDriver().emit({ type: BusDriverEventName.TRASHED_NODES, uids }, drive);
-
         try {
             for await (const result of drive.trashNodes(uids)) {
                 if (result.ok) {

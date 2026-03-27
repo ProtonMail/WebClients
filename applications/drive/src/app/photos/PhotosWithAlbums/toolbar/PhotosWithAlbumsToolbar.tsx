@@ -29,6 +29,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
+import { ShareButton } from '../../../sections/commonButtons/ShareButton';
 import type {
     OnFileSkippedSuccessCallbackData,
     OnFileUploadSuccessCallbackData,
@@ -591,11 +592,7 @@ export const PhotosWithAlbumsToolbar: FC<PhotosWithAlbumToolbarProps> = ({
                             <PhotosMakeCoverButton showIconOnly={showIconOnly} onSelectCover={onSelectCover} />
                         )}
                         {canShare && openSharePhotoModal && (
-                            <PhotosShareLinkButton
-                                showIconOnly={showIconOnly}
-                                selectedLink={selectedItems[0]}
-                                onClick={openSharePhotoModal}
-                            />
+                            <ShareButton buttonType="toolbar" showTitle onClick={openSharePhotoModal} />
                         )}
                         {canShareMultiple && openSharePhotosIntoAnAlbumModal && (
                             <PhotosShareMultipleLinkButton

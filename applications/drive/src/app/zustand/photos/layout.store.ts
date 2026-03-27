@@ -20,20 +20,20 @@ interface Modals {
 }
 interface PhotoLayoutStore {
     currentPageType: AlbumsPageTypes | undefined;
-    previewLinkId: string | undefined;
+    previewNodeUid: string | undefined;
     modals: Modals;
     setPageType: (pageType: AlbumsPageTypes) => void;
-    setPreviewLinkId: (previewLinkId: string | undefined) => void;
+    setPreviewNodeUid: (previewNodeUid: string | undefined) => void;
     setLayoutModals: (modals: Modals) => void;
 }
 
 export const usePhotoLayoutStore = create<PhotoLayoutStore>((set) => ({
     currentPageType: undefined,
-    previewLinkId: undefined,
+    previewNodeUid: undefined,
     modals: {
         linkSharing: undefined,
     },
     setPageType: (pageType: AlbumsPageTypes) => set((state) => ({ ...state, currentPageType: pageType })),
-    setPreviewLinkId: (previewLinkId: string | undefined) => set((state) => ({ ...state, previewLinkId })),
+    setPreviewNodeUid: (previewNodeUid: string | undefined) => set((state) => ({ ...state, previewNodeUid })),
     setLayoutModals: (modals: Modals) => set((state) => ({ ...state, modals })),
 }));

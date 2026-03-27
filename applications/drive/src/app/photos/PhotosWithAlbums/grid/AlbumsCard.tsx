@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import { formatDuration } from 'date-fns';
 import { c, msgid } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import {
@@ -13,6 +14,8 @@ import {
     usePopperAnchor,
     useTheme,
 } from '@proton/components';
+import { generateNodeUid } from '@proton/drive/index';
+import { useThumbnail } from '@proton/drive/modules/thumbnails';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
@@ -30,6 +33,7 @@ import { SignatureIcon } from '../../../components/SignatureIcon';
 import { getMimeTypeDescription } from '../../../components/sections/helpers';
 import { type DecryptedLink, isDecryptedLink } from '../../../store';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
+import { usePhotosStore } from '../../usePhotos.store';
 import { SharedAlbumDropdownButton } from './SharedAlbumDropdownButton';
 import { formatVideoDuration } from './formatVideoDuration';
 
@@ -37,8 +41,12 @@ import './AlbumsCard.scss';
 
 type Props = {
     album: DecryptedAlbum;
-    onRender: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
-    onRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
+    onRender: (coverNodeUid: string, domRef: React.MutableRefObject<unknown>) => void;
+    onRenderLoadedLink: (
+        coverNodeUid: string,
+        coverActiveRevisionUid: string,
+        domRef: React.MutableRefObject<unknown>
+    ) => void;
     style: CSSProperties;
     onClick: () => void;
     onRename: () => void;
@@ -133,38 +141,57 @@ export const AlbumsCard: FC<Props> = ({
     const ref = useRef(null);
 
     const isDecrypted = isDecryptedLink(album);
-    const isCoverDecrypted = isDecryptedLink(album.cover);
-
-    const thumbUrl =
-        (isCoverDecrypted && album.cover?.cachedThumbnailUrl) || (isDecrypted && album.cachedThumbnailUrl) || undefined;
-
-    const isThumbnailLoading =
-        !isDecrypted || (album.hasThumbnail && !imageReady) || (album.cover?.hasThumbnail && !imageReady);
-    const isLoaded = !isThumbnailLoading && isDecrypted;
 
     const theme = useTheme();
     const { sharedBy } = album;
     const albumSharedLabel = album.sharedBy ? c('Info').t`Shared with you` : c('Info').t`Shared`;
     const albumSharedTitle = album.sharedBy ? c('Info').t`Shared by ${sharedBy}` : c('Info').t`Shared by you`;
 
-    useEffect(() => {
-        const hasName = album.name;
-        if (!hasName) {
-            onRender(album.linkId, ref);
-        } else if (!thumbUrl) {
-            onRenderLoadedLink(album.linkId, ref);
-        }
-    }, [album, onRender, onRenderLoadedLink]);
+    const coverNodeUid =
+        album.albumProperties?.coverLinkId && generateNodeUid(album.volumeId, album.albumProperties?.coverLinkId);
+
+    const coverPhoto = usePhotosStore(
+        useShallow((state) => {
+            const item = coverNodeUid && state.getPhotoItem(coverNodeUid);
+            if (!item || item.additionalInfo === undefined) {
+                return undefined;
+            }
+            return {
+                activeRevisionUid: item.additionalInfo.activeRevisionUid,
+            };
+        })
+    );
+
+    const thumbnail = useThumbnail(coverPhoto?.activeRevisionUid);
+    const thumbnailUrl = thumbnail?.hdUrl || thumbnail?.sdUrl;
+    const isThumbnailLoading = Boolean(
+        coverNodeUid &&
+        (!coverPhoto ||
+            (coverPhoto.activeRevisionUid && thumbnail === undefined) ||
+            thumbnail?.sdStatus === 'loading' ||
+            (thumbnail?.sdStatus === 'loaded' && thumbnailUrl && !imageReady))
+    );
 
     useEffect(() => {
-        if (thumbUrl) {
+        if (!coverNodeUid) {
+            return;
+        }
+        if (!coverPhoto?.activeRevisionUid) {
+            onRender(coverNodeUid, ref);
+        } else {
+            onRenderLoadedLink(coverNodeUid, coverPhoto?.activeRevisionUid, ref);
+        }
+    }, [coverNodeUid, coverPhoto?.activeRevisionUid, onRender, onRenderLoadedLink]);
+
+    useEffect(() => {
+        if (thumbnailUrl) {
             const image = new Image();
-            image.src = thumbUrl;
+            image.src = thumbnailUrl;
             image.onload = () => {
                 setImageReady(true);
             };
         }
-    }, [thumbUrl]);
+    }, [thumbnailUrl]);
 
     const onKeyDown = useCallback(
         (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -190,22 +217,23 @@ export const AlbumsCard: FC<Props> = ({
             className={clsx(
                 'button-for-icon', // `aria-busy` buttons get extra padding, this avoids that
                 'relative albums-card p-0 rounded',
-                !isLoaded && 'albums-card--loading'
+                (isThumbnailLoading || !isDecrypted) && 'albums-card--loading'
             )}
             data-testid="albums-card"
             onClick={onClick}
             onKeyDown={onKeyDown}
             tabIndex={0}
             role="button"
-            aria-busy={!isLoaded}
+            aria-busy={isThumbnailLoading || !isDecrypted}
         >
             {isDecrypted ? (
                 <>
                     <div className={clsx('w-full h-full relative', isThumbnailLoading && 'hidden')}>
-                        {thumbUrl ? (
+                        {thumbnailUrl ? (
                             <img
                                 data-testid="albums-card-thumbnail"
-                                src={thumbUrl}
+                                data-node-uid={coverNodeUid}
+                                src={thumbnailUrl}
                                 alt={getAltText(album)}
                                 className="w-full h-full albums-card-thumbnail"
                             />
