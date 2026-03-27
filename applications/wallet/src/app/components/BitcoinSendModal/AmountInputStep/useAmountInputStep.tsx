@@ -6,7 +6,7 @@ import type { WasmApiExchangeRate, WasmApiWalletAccount, WasmTxBuilder } from '@
 import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
-import { COMPUTE_BITCOIN_UNIT, MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet';
+import { COMPUTE_BITCOIN_UNIT, MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet/constants/bitcoin';
 import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store/hooks';
 
 import { Price } from '../../../atoms/Price';

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmBitcoinUnit, WasmFiatCurrencySymbol, WasmNetwork } from '@proton/andromeda';
 import { WasmAddress, WasmScriptType, WasmSigningType } from '@proton/andromeda';
-import { BITCOIN, CENTS_BY_BITCOIN_UNIT, SATOSHI, mBITCOIN } from '@proton/wallet';
+import { BITCOIN, CENTS_BY_BITCOIN_UNIT, SATOSHI, mBITCOIN } from '@proton/wallet/constants/bitcoin';
 
 export const getLabelByUnit = (unit: WasmBitcoinUnit) => {
     switch (unit) {

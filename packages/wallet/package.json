@@ -5,6 +5,9 @@
     "sideEffects": false,
     "exports": {
         ".": "./index.ts",
+        "./constants/bitcoin": "./constants/bitcoin.ts",
+        "./constants/settings": "./constants/settings.tsx",
+        "./constants/wallet": "./constants/wallet.ts",
         "./contexts": "./contexts/index.ts",
         "./store/hooks": "./store/hooks/index.ts",
         "./store/thunk": "./store/thunk.ts",
