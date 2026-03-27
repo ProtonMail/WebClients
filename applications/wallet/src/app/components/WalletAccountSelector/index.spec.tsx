@@ -8,8 +8,8 @@ import {
     mockUseHideAmounts,
     mockUseUserWalletSettings,
     mockUseWalletAccountExchangeRate,
-    toWalletAccountSelectorOptions,
 } from '@proton/wallet';
+import { toWalletAccountSelectorOptions } from '@proton/wallet/utils/wallet';
 
 import { WalletAccountSelector } from '.';
 import { formatToSubset, getWalletsChainDataInit } from '../../contexts/BitcoinBlockchainContext/useWalletsChainData';

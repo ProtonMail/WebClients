@@ -4,15 +4,15 @@ import { act } from '@testing-library/react-hooks';
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { mockUseNotifications, mockUseUserKeys } from '@proton/testing/lib/vitest';
-import type { DecryptedTransactionData } from '@proton/wallet/types';
 import {
-    decryptPgp,
     getUserKeys,
     mockUseApiWalletTransactionData,
     mockUseContactEmails,
     mockUseSaveVCardContact,
     mockUseWalletApi,
 } from '@proton/wallet';
+import type { DecryptedTransactionData } from '@proton/wallet/types';
+import { decryptPgp } from '@proton/wallet/utils/crypto';
 
 import { mockUseWalletDispatch } from '../../tests';
 import { useUnknownSenderModal } from './useUnknownSenderModal';

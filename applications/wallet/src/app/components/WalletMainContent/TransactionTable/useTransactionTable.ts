@@ -3,10 +3,11 @@ import { useCallback, useEffect, useState } from 'react';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import type { WasmSortOrder } from '@proton/andromeda';
 import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
-import { buildNetworkTransactionByHashedTxId, decryptWalletKeyForHmac } from '@proton/wallet';
 import { useApiWalletTransactionData } from '@proton/wallet/store/hooks';
 import type { WalletTransactionsThunkArg } from '@proton/wallet/store/slices';
 import type { IWasmApiWalletData, TransactionData } from '@proton/wallet/types';
+import { decryptWalletKeyForHmac } from '@proton/wallet/utils/crypto';
+import { buildNetworkTransactionByHashedTxId } from '@proton/wallet/utils/transactions';
 
 import { ITEMS_PER_PAGE } from '../../../constants';
 import { useBitcoinBlockchainContext } from '../../../contexts';

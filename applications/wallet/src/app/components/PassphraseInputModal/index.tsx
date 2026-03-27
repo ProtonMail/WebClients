@@ -8,7 +8,8 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useLoading from '@proton/hooks/useLoading';
 import type { IWasmApiWalletData } from '@proton/wallet/types';
-import { encryptWalletDataWithWalletKey, getPassphraseLocalStorageKey } from '@proton/wallet';
+import { encryptWalletDataWithWalletKey } from '@proton/wallet/utils/crypto';
+import { getPassphraseLocalStorageKey } from '@proton/wallet/utils/localStorage';
 import { useWalletDispatch } from '@proton/wallet/store/hooks';
 import { setWalletPassphrase } from '@proton/wallet/store/slices';
 

@@ -12,7 +12,7 @@ import btcDarkSvg from '@proton/styles/assets/img/illustrations/btc-dark.svg';
 import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet/types';
-import { WalletThemeOption } from '@proton/wallet';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 import { BITCOIN, DEFAULT_FIAT_CURRENCY } from '@proton/wallet/constants/bitcoin';
 import { usePriceGraphData, useWalletAccountExchangeRate } from '@proton/wallet/store/hooks';
 

@@ -6,7 +6,7 @@ import { Href } from '@proton/atoms/Href/Href';
 import { Icon } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
-import { WalletThemeOption } from '@proton/wallet';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { ButtonLike } from '../atoms';
 import { useWalletTheme } from '../components/Layout/Theme/WalletThemeProvider';

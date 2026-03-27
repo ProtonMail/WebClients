@@ -15,8 +15,8 @@ import type { PublicKeyReference } from '@proton/crypto/lib';
 import { SECOND } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Address, DecryptedAddressKey, DecryptedKey, SimpleMap } from '@proton/shared/lib/interfaces';
-import { encryptPgp, encryptTransactionMessage, encryptWalletDataWithWalletKey } from '@proton/wallet';
 import type { IWasmApiWalletData, TransactionData, WalletChainDataByWalletId } from '@proton/wallet/types';
+import { encryptPgp, encryptTransactionMessage, encryptWalletDataWithWalletKey } from '@proton/wallet/utils/crypto';
 
 import type { WalletMap } from '../types';
 import { getAccountWithChainDataFromManyWallets } from './accounts';
