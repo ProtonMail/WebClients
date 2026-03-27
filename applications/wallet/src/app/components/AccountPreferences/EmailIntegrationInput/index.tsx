@@ -6,7 +6,7 @@ import type { WasmApiEmailAddress, WasmApiWalletAccount } from '@proton/andromed
 import { Info, Prompt, Toggle, useModalState } from '@proton/components';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { Button } from '../../../atoms';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../../../contexts/WalletSetupModalContext';

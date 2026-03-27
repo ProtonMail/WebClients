@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import type { WalletChainDataByWalletId } from '../../types';

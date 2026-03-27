@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import type { WasmApiExchangeRate, WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';
 import type { ModalOwnProps } from '@proton/components';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 import { toWalletAccountSelectorOptions } from '@proton/wallet';
 import { useUserWalletSettings } from '@proton/wallet/store/hooks';
 

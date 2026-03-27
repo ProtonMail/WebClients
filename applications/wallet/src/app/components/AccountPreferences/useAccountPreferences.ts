@@ -7,7 +7,7 @@ import { useUserKeys } from '@proton/account/userKeys/hooks';
 import type { WasmApiWalletAccount, WasmFiatCurrencySymbol } from '@proton/andromeda';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 import { encryptWalletDataWithWalletKey } from '@proton/wallet';
 import { useWalletApiClients } from '@proton/wallet/contexts';
 import { useFiatCurrencies, useWalletDispatch } from '@proton/wallet/store/hooks';

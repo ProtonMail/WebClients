@@ -4,7 +4,7 @@ import type { WasmApiWalletAccount } from '@proton/andromeda';
 import { WasmSortOrder } from '@proton/andromeda';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { CoreButton } from '../../../atoms';
 import { ExportStatementButton } from '../../ExportStatementButton';

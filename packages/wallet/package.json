@@ -12,7 +12,8 @@
         "./store/hooks": "./store/hooks/index.ts",
         "./store/thunk": "./store/thunk.ts",
         "./store/store": "./store/store.ts",
-        "./store/slices": "./store/slices/index.ts"
+        "./store/slices": "./store/slices/index.ts",
+        "./types": "./types/index.ts"
     },
     "scripts": {
         "check-types": "tsc",

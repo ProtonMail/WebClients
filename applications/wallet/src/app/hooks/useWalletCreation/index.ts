@@ -19,13 +19,7 @@ import type {
 import { WasmAccount, WasmDerivationPath, WasmMnemonic, WasmWallet } from '@proton/andromeda';
 import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import {
-    WalletType,
-    decryptWallet,
-    encryptWalletData,
-    encryptWalletDataWithWalletKey,
-    getDefaultWalletName,
-} from '@proton/wallet';
+import { decryptWallet, encryptWalletData, encryptWalletDataWithWalletKey, getDefaultWalletName } from '@proton/wallet';
 import {
     DEFAULT_FIRST_ACCOUNT_INDEX,
     DEFAULT_FIRST_BVE_ACCOUNT_INDEX,
@@ -36,6 +30,7 @@ import { DEFAULT_MAX_SUB_WALLETS } from '@proton/wallet/constants/wallet';
 import { useWalletApi, useWalletApiClients } from '@proton/wallet/contexts';
 import { useFiatCurrencies, useUserWalletSettings, useWalletDispatch } from '@proton/wallet/store/hooks';
 import { acceptTermsAndConditions, walletCreation } from '@proton/wallet/store/slices';
+import { WalletType } from '@proton/wallet/types';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { isUndefined } from '../../utils';
