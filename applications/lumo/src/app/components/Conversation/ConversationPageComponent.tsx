@@ -54,8 +54,6 @@ const ConversationPageComponentInner = () => {
     // Extract query parameters from URL (will be cleared after reading)
     const initialQuery = useQueryParam('q');
     const prefillQuery = useQueryParam('prefill');
-    const autoOpenSketch = useQueryParam('sketch');
-    const autoOpenUpload = useQueryParam('upload');
 
     // Prefill text injected from within the conversation (e.g. style change on an inline image).
     // Consumed once then cleared.
@@ -191,8 +189,6 @@ const ConversationPageComponentInner = () => {
                             handleSendMessage={handleSendMessage}
                             isProcessingAttachment={isProcessingAttachment}
                             prefillQuery={prefillQuery || undefined}
-                            autoOpenSketch={!!autoOpenSketch}
-                            autoOpenUpload={!!autoOpenUpload}
                         />
                     </Suspense>
                 )}
@@ -202,8 +198,6 @@ const ConversationPageComponentInner = () => {
                         handleSendMessage={handleSendMessage}
                         initialQuery={initialQuery || undefined}
                         prefillQuery={prefillQuery || undefined}
-                        autoOpenSketch={!!autoOpenSketch}
-                        autoOpenUpload={!!autoOpenUpload}
                     />
                 )}
                 {curConversationId && isLoading && <ConversationSkeleton />}

@@ -5,22 +5,24 @@ import { c } from 'ttag';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Icon } from '@proton/components';
 
-import { useLazyAttachment } from '../../hooks/useLazyAttachment';
 import { useFileHandling } from '../../components/Composer/hooks/useFileHandling';
+import type { DrawingMode } from '../../features/drawingcanvas/types';
+import { ImagePreviewOverlay } from '../../features/imageActions/ImagePreviewOverlay';
+import { useLazyAttachment } from '../../hooks/useLazyAttachment';
 import { useLumoNavigate } from '../../hooks/useLumoNavigate';
 import { attachmentDataCache } from '../../services/attachmentDataCache';
 import type { AttachmentId } from '../../types';
-import type { DrawingMode } from '../../features/drawingcanvas/types';
-import { ImagePreviewOverlay } from '../../features/imageActions/ImagePreviewOverlay';
 
 interface GalleryImageCardProps {
     attachmentId: AttachmentId;
     createdAt: Date;
     onExport?: (imageData: string, mode: DrawingMode, description: string) => void;
+    /** Bypasses Redux/attachment loading — for testing/dev use only. */
+    imageSrcOverride?: string;
 }
 
-export const GalleryImageCard = ({ attachmentId, createdAt, onExport }: GalleryImageCardProps) => {
-    const { data: attachment, isLoading } = useLazyAttachment(attachmentId);
+export const GalleryImageCard = ({ attachmentId, createdAt, onExport, imageSrcOverride }: GalleryImageCardProps) => {
+    const { data: attachment, isLoading } = useLazyAttachment(imageSrcOverride ? undefined : attachmentId);
     const [overlayOpen, setOverlayOpen] = useState(false);
     const [overlayDefaultMode, setOverlayDefaultMode] = useState<'preview' | 'edit'>('preview');
     const [hovered, setHovered] = useState(false);
@@ -28,13 +30,14 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport }: GalleryI
     const { handleFilesSelected } = useFileHandling({ messageChain: [] });
 
     const imageDataUrl = useMemo(() => {
+        if (imageSrcOverride) return imageSrcOverride;
         if (!attachment) return null;
         const imageData = attachment.data || attachmentDataCache.getData(attachment.id);
         if (!imageData) return null;
         const mimeType = attachment.mimeType || 'image/png';
         const blob = new Blob([imageData], { type: mimeType });
         return URL.createObjectURL(blob);
-    }, [attachmentId, attachment, attachment?.data, attachment?.id, attachment?.mimeType]);
+    }, [imageSrcOverride, attachmentId, attachment, attachment?.data, attachment?.id, attachment?.mimeType]);
 
     const openOverlay = useCallback((mode: 'preview' | 'edit' = 'preview') => {
         setOverlayDefaultMode(mode);
@@ -89,14 +92,12 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport }: GalleryI
     return (
         <>
             {/* Thumbnail */}
-            <div
+            <button
+                type="button"
                 className="gallery-card"
                 onClick={() => openOverlay('preview')}
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => e.key === 'Enter' && openOverlay('preview')}
                 aria-label={`Generated image from ${formattedDate}`}
             >
                 <img
@@ -112,7 +113,10 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport }: GalleryI
                             {onExport && (
                                 <button
                                     className="gallery-card__action-btn"
-                                    onClick={(e) => { e.stopPropagation(); openOverlay('edit'); }}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        openOverlay('edit');
+                                    }}
                                     aria-label={c('collider_2025:Action').t`Edit image`}
                                     title={c('collider_2025:Action').t`Edit image`}
                                 >
@@ -130,7 +134,7 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport }: GalleryI
                         </div>
                     </div>
                 )}
-            </div>
+            </button>
 
             <ImagePreviewOverlay
                 isOpen={overlayOpen}
