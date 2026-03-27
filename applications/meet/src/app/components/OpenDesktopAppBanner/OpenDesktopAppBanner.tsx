@@ -48,6 +48,11 @@ export const OpenDesktopAppBanner = ({ meetingLink }: OpenDesktopAppBannerProps)
         </span>
     );
 
+    const handleDownloadApp = () => {
+        const protocolUrl = 'https://proton.me/meet/download';
+        window.open(protocolUrl, '_blank');
+    };
+
     return (
         <div
             className="open-desktop-app-banner w-full py-4 grid items-center"
@@ -62,9 +67,12 @@ export const OpenDesktopAppBanner = ({ meetingLink }: OpenDesktopAppBannerProps)
                     }
                 </div>
                 {downloadDesktopAppEnabled && (
-                    <Button className="open-desktop-app-banner-button action-button-new rounded-full bg-transparent">{c(
-                        'Action'
-                    ).t`Download app`}</Button>
+                    <Button
+                        className="open-desktop-app-banner-button action-button-new rounded-full bg-transparent"
+                        onClick={handleDownloadApp}
+                    >
+                        {c('Action').t`Download app`}
+                    </Button>
                 )}
                 <Button
                     className="open-desktop-app-banner-button action-button-new rounded-full bg-transparent"
