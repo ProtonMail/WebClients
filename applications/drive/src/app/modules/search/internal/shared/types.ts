@@ -19,8 +19,11 @@ export type SearchModuleState = {
     permanentError: 'quota_exceeded' | 'corrupted_db' | null;
 };
 
+export type AttributeFilter = string | bigint | boolean;
+
 export type SearchQuery = {
     filename: string;
+    filters?: Record<string, AttributeFilter>;
 };
 
 export type SearchResultItem = {
