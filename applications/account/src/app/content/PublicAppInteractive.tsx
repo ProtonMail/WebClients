@@ -61,11 +61,11 @@ import type useLocationWithoutLocale from '../useLocationWithoutLocale';
 import AccountPublicApp from './AccountPublicApp';
 import ExternalSSOConsumer from './ExternalSSOConsumer';
 import SingleSignupSwitchContainer from './SingleSignupSwitchContainer';
+import { TvContainerNotSignedIn } from './TvContainerNotSignedIn/TvContainerNotSignedIn';
 import { type ProduceForkData, SSOType } from './actions/forkInterface';
 import { getSanitizedLocationDescriptorObject } from './actions/getSanitizedLocationDescriptorObject';
 import type { LoginLocationState, LoginResult } from './actions/interface';
 import { type Paths, UNAUTHENTICATED_ROUTES } from './helper';
-import { TvContainerNotSignedIn } from './tvWithCode/TvContainerNotSignedIn';
 
 let cryptoWorkerPromise: Promise<void> | undefined;
 
@@ -344,7 +344,7 @@ const PublicAppInteractive = ({
                                 >
                                     <UnleashFlagStarter location={location} />
                                     <Switch location={location}>
-                                        <Route path={'/vpn' + VPN_TV_PATH_WITH_CODE}>
+                                        <Route path={VPN_TV_PATH_WITH_CODE}>
                                             <UnAuthenticated>
                                                 <TvContainerNotSignedIn />
                                             </UnAuthenticated>
