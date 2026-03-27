@@ -1684,6 +1684,9 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Continuar com ${ planOrAppName }"
       ]
     },
     "action": {
@@ -9934,6 +9937,15 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Additional comments": [
+        "Comentários adicionais"
+      ],
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
+      "Skip feedback": [
+        "Pular feedback"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12618,6 +12630,12 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Enter a name": [
+        "Insira um nome"
+      ],
+      "Select a provider": [
+        "Selecione um provedor"
       ]
     },
     "Placeholder for contact group name": {
@@ -16380,6 +16398,26 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Outros"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
