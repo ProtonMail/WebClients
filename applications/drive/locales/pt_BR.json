@@ -1247,6 +1247,9 @@
       ],
       "Remove my access": [
         "Remover meu acesso"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Continuar com ${ planOrAppName }"
       ]
     },
     "Action: Docs": {
@@ -7694,6 +7697,15 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Additional comments": [
+        "Comentários adicionais"
+      ],
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
+      "Skip feedback": [
+        "Pular feedback"
       ]
     },
     "Label for contact group color": {
@@ -10476,6 +10488,12 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Enter a name": [
+        "Insira um nome"
+      ],
+      "Select a provider": [
+        "Selecione um provedor"
       ]
     },
     "Placeholder for contact group name": {
@@ -13467,6 +13485,26 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Seu período de teste terminará em ${ textDate }. Você não será cobrado se cancelar antes de ${ textDate }. ${ action }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Outros"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
