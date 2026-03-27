@@ -768,6 +768,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "您的密码管理器不在这里？请求添加它。"
+      ],
+      "Configure": [
+        "配置"
       ]
     },
     "Browser": {
@@ -2023,7 +2026,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移至其他保险库会清除其安全链接。"
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2717,6 +2720,15 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
+      ],
+      "Not configured": [
+        "未配置"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "在更大窗口中打开 ${ PASS_APP_NAME }"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "打开 ${ PASS_APP_NAME } 弹窗"
       ]
     },
     "Keyboard key": {
