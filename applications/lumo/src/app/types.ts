@@ -194,8 +194,17 @@ export function splitSpace(s: Space): {
 
 export function cleanSpace(space: Space): Space {
     if (space.isProject === true) {
-        const { id, createdAt, updatedAt, spaceKey, projectName, projectInstructions, isProject, projectIcon, linkedDriveFolder } =
-            space;
+        const {
+            id,
+            createdAt,
+            updatedAt,
+            spaceKey,
+            projectName,
+            projectInstructions,
+            isProject,
+            projectIcon,
+            linkedDriveFolder,
+        } = space;
         return {
             id,
             createdAt,
@@ -432,8 +441,30 @@ export function getMessagePub(message: MessagePub): MessagePub {
 }
 
 export function getMessagePriv(m: MessagePriv): MessagePriv {
-    const { content, context, attachments, toolCall, toolResult, contextFiles, blocks, reasoning, reasoningChunks, thinkingTimeline } = m;
-    return { content, context, attachments, toolCall, toolResult, contextFiles, blocks, reasoning, reasoningChunks, thinkingTimeline };
+    const {
+        content,
+        context,
+        attachments,
+        toolCall,
+        toolResult,
+        contextFiles,
+        blocks,
+        reasoning,
+        reasoningChunks,
+        thinkingTimeline,
+    } = m;
+    return {
+        content,
+        context,
+        attachments,
+        toolCall,
+        toolResult,
+        contextFiles,
+        blocks,
+        reasoning,
+        reasoningChunks,
+        thinkingTimeline,
+    };
 }
 
 export function splitMessage(m: Message): { messagePriv: MessagePriv; messagePub: MessagePub } {
@@ -1006,3 +1037,10 @@ export type GenerationErrorAction = {
     type: 'generation_error';
     payload: GenerationError;
 };
+
+export enum ComposerMode {
+    NEW_CONVERSATION = 'new-conversation',
+    CONVERSATION = 'conversation',
+    GALLERY = 'gallery',
+    PROJECT = 'project',
+}

@@ -36,7 +36,7 @@ import {
     pushConversationRequest,
 } from '../../redux/slices/core/conversations';
 import { addSpace, pullSpaceRequest, pushSpaceRequest } from '../../redux/slices/core/spaces';
-import { getProjectInfo } from '../../types';
+import { ComposerMode, getProjectInfo } from '../../types';
 import { openLumoUpsellModal } from '../../upsells/providers/LumoUpsellModalProvider';
 import { ProjectFilesPanel } from './ProjectFilesPanel';
 import { ConversationDropdown } from './components/ConversationDropdown';
@@ -368,6 +368,7 @@ const ProjectDetailViewInner = () => {
                                 handleSendMessage={handleSendInProject}
                                 isProcessingAttachment={false}
                                 className="w-full"
+                                composerMode={ComposerMode.PROJECT}
                                 setIsEditorFocused={setIsEditorFocused}
                                 isEditorFocused={isEditorFocused}
                                 canShowLumoUpsellToggle={false}

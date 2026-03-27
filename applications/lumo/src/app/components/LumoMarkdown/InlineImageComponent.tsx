@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,18 +6,19 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Icon } from '@proton/components';
 
+import type { DrawingMode } from '../../features/drawingcanvas/types';
+import { ImageModifyButton, ImageStyleDropdown } from '../../features/imageActions/ImageActionButtons';
+import { ImagePreviewOverlay } from '../../features/imageActions/ImagePreviewOverlay';
+import { useLazyAttachment } from '../../hooks';
 import { useLumoDispatch } from '../../redux/hooks';
 import { clearAttachmentLoading } from '../../redux/slices/attachmentLoadingState';
-import { pullAttachmentRequest } from '../../redux/slices/core/attachments';
 import { setPendingPrefill } from '../../redux/slices/composerActions';
+import { pullAttachmentRequest } from '../../redux/slices/core/attachments';
 import { attachmentDataCache } from '../../services/attachmentDataCache';
 import type { AttachmentId } from '../../types';
-import type { DrawingMode } from '../../features/drawingcanvas/types';
 import { base64ToFile } from '../../util/imageHelpers';
 import { useFileHandling } from '../Composer/hooks/useFileHandling';
-import { useLazyAttachment } from '../../hooks';
-import { ImagePreviewOverlay } from '../../features/imageActions/ImagePreviewOverlay';
-import { IMAGE_STYLE_OPTIONS } from '../../features/imageActions/styleOptions';
+
 import '../../features/imageActions/imageActions.scss';
 
 interface InlineImageComponentProps {
@@ -31,19 +32,6 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
     const spaceId = attachment?.spaceId;
     const [overlayOpen, setOverlayOpen] = useState(false);
     const [overlayDefaultMode, setOverlayDefaultMode] = useState<'preview' | 'edit'>('preview');
-    const [showStyleMenu, setShowStyleMenu] = useState(false);
-    const styleMenuRef = useRef<HTMLSpanElement>(null);
-
-    useEffect(() => {
-        if (!showStyleMenu) return;
-        const handler = (e: MouseEvent) => {
-            if (styleMenuRef.current && !styleMenuRef.current.contains(e.target as Node)) {
-                setShowStyleMenu(false);
-            }
-        };
-        document.addEventListener('mousedown', handler);
-        return () => document.removeEventListener('mousedown', handler);
-    }, [showStyleMenu]);
 
     const { handleFilesSelected } = useFileHandling({ messageChain: [] });
 
@@ -108,7 +96,10 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
 
     if (error || !attachment) {
         return (
-            <span className="inline-block p-4 rounded-lg border" style={{ background: '#f8d7da', borderColor: '#f5c6cb', color: '#721c24', maxWidth: '300px' }}>
+            <span
+                className="inline-block p-4 rounded-lg border"
+                style={{ background: '#f8d7da', borderColor: '#f5c6cb', color: '#721c24', maxWidth: '300px' }}
+            >
                 <span className="flex items-center gap-2 mb-2">
                     <Icon name="exclamation-circle" size={4} />
                     <span className="text-sm font-bold">{c('collider_2025:Error').t`Failed to load image`}</span>
@@ -138,52 +129,25 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
         <>
             {/* Image left, action panel right */}
             <span className="inline-image-card">
+                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                 <span
                     className="inline-image-card__img"
-                    onClick={() => { setOverlayDefaultMode('preview'); setOverlayOpen(true); }}
+                    onClick={() => {
+                        setOverlayDefaultMode('preview');
+                        setOverlayOpen(true);
+                    }}
                 >
                     <img src={imageDataUrl} alt={alt || attachment.filename} />
                 </span>
 
-                <span className="inline-image-card__actions">
-                    <button
-                        className="image-action-btn"
-                        onClick={() => { setOverlayDefaultMode('edit'); setOverlayOpen(true); }}
-                    >
-                        <Icon name="pen" size={3.5} />
-                        {c('collider_2025:Action').t`Modify...`}
-                    </button>
-
-                    <span ref={styleMenuRef} className="image-style-menu image-style-menu--side">
-                        <button
-                            className="image-action-btn"
-                            onClick={() => setShowStyleMenu((v) => !v)}
-                        >
-                            <Icon name="squares" size={3.5} />
-                            {c('collider_2025:Action').t`Change style`}
-                            <Icon
-                                name="chevron-down-filled"
-                                size={3}
-                                style={{
-                                    transition: 'transform 0.15s',
-                                    transform: showStyleMenu ? 'rotate(180deg)' : 'rotate(0deg)',
-                                }}
-                            />
-                        </button>
-                        {showStyleMenu && (
-                            <span className="image-style-menu__popup">
-                                {IMAGE_STYLE_OPTIONS.map((style) => (
-                                    <button
-                                        key={style.id}
-                                        className="image-style-menu__item"
-                                        onClick={() => { handleChangeStyle(style.prompt); setShowStyleMenu(false); }}
-                                    >
-                                        {style.label}
-                                    </button>
-                                ))}
-                            </span>
-                        )}
-                    </span>
+                <span className="inline-image-card__actions mt-auto">
+                    <ImageModifyButton
+                        onClick={() => {
+                            setOverlayDefaultMode('edit');
+                            setOverlayOpen(true);
+                        }}
+                    />
+                    <ImageStyleDropdown onSelect={handleChangeStyle} side />
                 </span>
             </span>
 
