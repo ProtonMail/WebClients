@@ -19,7 +19,7 @@ import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { selectProvisionalAttachments } from '../../redux/selectors';
 import { upsertAttachment } from '../../redux/slices/core/attachments';
-import type { Attachment, Message } from '../../types';
+import type { Attachment, ComposerMode, Message } from '../../types';
 import { base64ToFile } from '../../util/imageHelpers';
 import { createAttachmentFromPastedContent, getPasteConversionMessage } from '../../util/pastedContentHelper';
 import { AttachmentArea } from '../Files';
@@ -55,6 +55,7 @@ type ComposerComponentInnerProps = ComposerComponentProps & {
 };
 
 export type ComposerComponentProps = {
+    composerMode: ComposerMode;
     handleSendMessage: HandleSendMessage;
     onAbort?: () => void;
     isGenerating?: boolean;
@@ -73,8 +74,8 @@ export type ComposerComponentProps = {
     prefillQuery?: string; // Query to prefill without auto-executing
     spaceId?: string; // Optional space ID to include space-level attachments
     autoOpenSketch?: boolean; // Auto-open the sketch canvas on mount
-    autoOpenUpload?: boolean; // Auto-open the file upload dialog on mount
     canShowLumoUpsellToggle?: boolean;
+    placeholder?: string;
 };
 
 /**
@@ -82,6 +83,7 @@ export type ComposerComponentProps = {
  * Receives an optional driveContext — has no direct knowledge of guest vs authenticated state.
  */
 const ComposerComponentInner = ({
+    composerMode,
     handleSendMessage,
     onAbort,
     isGenerating,
@@ -100,7 +102,7 @@ const ComposerComponentInner = ({
     prefillQuery,
     spaceId,
     autoOpenSketch,
-    autoOpenUpload,
+    placeholder,
     driveContext,
 }: ComposerComponentInnerProps) => {
     const { isDragging: isDraggingOverScreen } = useDragArea();
@@ -126,8 +128,6 @@ const ComposerComponentInner = ({
         fileUploadMode,
     } = useFileHandling({ messageChain, onShowDriveBrowser, spaceId, uploadToDrive: driveContext?.uploadFile });
 
-    const fileInputRef = useRef<HTMLInputElement>(null);
-
     const handleDrawSketch = useCallback(() => {
         setShowDrawingModal(true);
     }, []);
@@ -138,16 +138,6 @@ const ComposerComponentInner = ({
             setShowDrawingModal(true);
         }
     }, [autoOpenSketch]);
-
-    // Auto-open file upload dialog when navigated from gallery with ?upload=1
-    useEffect(() => {
-        if (autoOpenUpload) {
-            const timer = setTimeout(() => {
-                fileInputRef.current?.click();
-            }, 150);
-            return () => clearTimeout(timer);
-        }
-    }, [autoOpenUpload]);
 
     const nativeComposerVisibilityApi = useNativeComposerVisibilityApi({
         showDrawingModal,
@@ -222,7 +212,7 @@ const ComposerComponentInner = ({
         onPasteLargeContent: handlePasteLargeContent,
     });
 
-    const { isEmpty, clear, textareaRef, setValue, handleSubmit } = composerInput;
+    const { isEmpty, clear, textareaRef, setValue, handleSubmit, focus } = composerInput;
 
     const sendIsDisabled = !(isGenerating ?? false) && (isEmpty || isProcessingAttachment);
     const canShowSendButton = (isGenerating ?? false) || !isEmpty;
@@ -242,6 +232,11 @@ const ComposerComponentInner = ({
 
     useEditorQuery(initialQuery, textareaRef, setValue, isProcessingAttachment, handleInitialQueryReady);
     useEditorQuery(prefillQuery, textareaRef, setValue, isProcessingAttachment);
+
+    const handleCreateImage = useCallback(() => {
+        setValue(c('collider_2025: Prefill').t`Generate an image with the following characteristics: `);
+        focus();
+    }, [setValue, focus]);
 
     // Handle paste events to attach images from clipboard
     useEffect(() => {
@@ -287,20 +282,6 @@ const ComposerComponentInner = ({
 
     return (
         <>
-            {/* Hidden file input used by autoOpenUpload */}
-            <input
-                ref={fileInputRef}
-                type="file"
-                accept="image/*"
-                className="hidden"
-                multiple
-                onChange={(e) => {
-                    if (e.target.files?.length) {
-                        handleFilesSelected(Array.from(e.target.files));
-                        e.target.value = '';
-                    }
-                }}
-            />
             <div
                 style={{ visibility: nativeComposerVisibilityApi.showWebComposer() ? 'visible' : 'hidden' }}
                 className="w-full"
@@ -350,12 +331,15 @@ const ComposerComponentInner = ({
                             browseFolderChildren={driveContext?.browseFolderChildren}
                             downloadFile={driveContext?.downloadFile}
                             userId={driveContext?.userId}
+                            placeholder={placeholder}
                         />
                         <ComposerToolbar
+                            composerMode={composerMode}
                             onFilesSelected={handleFilesSelected}
                             onBrowseDrive={handleBrowseDrive}
                             onDrawSketch={handleDrawSketch}
                             fileUploadMode={fileUploadMode}
+                            onCreateImage={handleCreateImage}
                         />
                     </div>
                     {isGuest && <TermsAndConditions className="m-0 hidden md:block" />}

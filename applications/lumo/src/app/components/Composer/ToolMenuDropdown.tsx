@@ -12,10 +12,10 @@ import { MenuDropdown, type MenuDropdownProps, MenuItem } from './components/Men
 import './ToolMenuDropdown.scss';
 
 interface ToolMenuDropdownProps extends Pick<MenuDropdownProps, 'isOpen' | 'anchorRef' | 'onClose'> {
-    // Additional props specific to ToolMenuDropdown can be added here such as handleCreateImageTool click
+    onCreateImage?: () => void;
 }
 
-export const ToolMenuDropdown = ({ isOpen, anchorRef, onClose }: ToolMenuDropdownProps) => {
+export const ToolMenuDropdown = ({ isOpen, anchorRef, onClose, onCreateImage }: ToolMenuDropdownProps) => {
     const { isWebSearchButtonToggled, handleWebSearchButtonClick } = useWebSearch();
 
     const handleWebSearchToggleChange = useCallback(
@@ -26,13 +26,13 @@ export const ToolMenuDropdown = ({ isOpen, anchorRef, onClose }: ToolMenuDropdow
         [handleWebSearchButtonClick]
     );
 
-    // TODO: add create image logic here
     const toolMenuItems = [
         {
             iconName: 'palette' as IconName,
             getLabel: () => c('collider_2025: Action').t`Create image`,
             onClick: () => {
-                console.log('create image clicked');
+                onCreateImage?.();
+                onClose?.();
             },
             onClose: onClose,
             canShow: true,

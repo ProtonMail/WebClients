@@ -11,7 +11,7 @@ import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useOnboardingContext } from '../../providers/OnboardingProvider';
-import type { Message } from '../../types';
+import { ComposerMode, type Message } from '../../types';
 import LumoNavbarUpsell from '../../upsells/composed/LumoNavbarUpsell';
 import { NewGhostChatButton } from '../Buttons/GhostChatButton/NewGhostChatButton';
 import { ComposerComponent } from '../Composer/ComposerComponent';
@@ -29,15 +29,11 @@ const MainContainer = ({
     isProcessingAttachment,
     initialQuery,
     prefillQuery,
-    autoOpenSketch,
-    autoOpenUpload,
 }: {
     handleSendMessage: HandleSendMessage;
     isProcessingAttachment: boolean;
     initialQuery?: string;
     prefillQuery?: string;
-    autoOpenSketch?: boolean;
-    autoOpenUpload?: boolean;
 }) => {
     const { isOnboardingCompleted } = useOnboardingContext();
     const { isSmallScreen } = useIsLumoSmallScreen();
@@ -130,6 +126,7 @@ const MainContainer = ({
 
                 <div className="composer-container md:px-4 w-full">
                     <ComposerComponent
+                        composerMode={ComposerMode.NEW_CONVERSATION}
                         handleSendMessage={handleSendMessage}
                         isProcessingAttachment={isProcessingAttachment}
                         className="fixed bottom-0 md:static w-full z-20"
@@ -142,8 +139,6 @@ const MainContainer = ({
                         canShowLumoUpsellToggle={true}
                         initialQuery={promptSuggestion || initialQuery}
                         prefillQuery={prefillQuery}
-                        autoOpenSketch={autoOpenSketch}
-                        autoOpenUpload={autoOpenUpload}
                     />
                 </div>
                 <WhatsNew />
