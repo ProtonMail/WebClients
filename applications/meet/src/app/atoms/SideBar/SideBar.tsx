@@ -26,14 +26,14 @@ export const SideBar = ({
     return (
         <div
             className={clsx(
-                'meet-side-bar bg-norm border border-norm flex flex-nowrap flex-column h-full w-full meet-radius relative max-w-full z-1',
+                'meet-side-bar border border-norm flex flex-nowrap flex-column h-full w-full meet-radius relative max-w-full z-1',
                 paddingClassName
             )}
         >
             <div
                 className={clsx(
                     'side-bar-header-wrapper flex items-center justify-space-between w-full flex-nowrap',
-                    absoluteHeader && 'absolute top-0 left-0 px-4 pt-4',
+                    absoluteHeader && 'absolute top-0 left-0 px-4 pt-4 side-bar-transparent-header',
                     isScrolled && 'scrolled',
                     !!header && 'pb-4',
                     paddingHeaderClassName
