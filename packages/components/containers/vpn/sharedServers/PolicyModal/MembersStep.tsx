@@ -129,12 +129,14 @@ const MembersStep = ({
     onChangeApplyPolicyTo,
 }: SharedServersMembersStepProps) => {
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
+    const isUserGroupsPassBusinessEnabled = useFlag('UserGroupsPassBusiness');
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
     const hasActiveOrganizationKey = isOrgActive && hasOrganizationKey;
 
     const allowedToUseGroups =
-        hasActiveOrganizationKey && canUseGroups(organization?.PlanName, { isUserGroupsNoCustomDomainEnabled });
+        hasActiveOrganizationKey &&
+        canUseGroups(organization?.PlanName, { isUserGroupsNoCustomDomainEnabled, isUserGroupsPassBusinessEnabled });
     const hasAtLeastOneGroup = (groups?.length ?? 0) > 0;
 
     const canCreateGroupsPolicy = !!organization && (allowedToUseGroups || hasAtLeastOneGroup);
