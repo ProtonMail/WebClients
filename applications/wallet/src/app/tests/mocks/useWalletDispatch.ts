@@ -1,4 +1,4 @@
-import * as useWalletDispatchModule from '@proton/wallet/store/hooks';
+import * as useWalletDispatchModule from '@proton/wallet';
 
 export const mockUseWalletDispatch = (mockedValue?: ReturnType<typeof useWalletDispatchModule.useWalletDispatch>) => {
     const spy = vi.spyOn(useWalletDispatchModule, 'useWalletDispatch');

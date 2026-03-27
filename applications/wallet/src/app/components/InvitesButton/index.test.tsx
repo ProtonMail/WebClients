@@ -10,7 +10,7 @@ import {
     mockUseRemainingInvites,
     mockUseWalletApiClients,
     mockUseWalletDispatch,
-} from '@proton/wallet/tests';
+} from '@proton/wallet';
 
 import { InvitesButton } from '.';
 

@@ -1,8 +1,7 @@
 import type { MockedFunction } from 'vitest';
 
-import { exchangeRate } from '@proton/wallet/tests';
-
 import * as useExchangeRateModule from '../../store/hooks/useExchangeRate';
+import { exchangeRate } from '../fixtures/api';
 
 export const mockUseGetExchangeRate = (
     mockedValue?: MockedFunction<ReturnType<typeof useExchangeRateModule.useGetExchangeRate>>

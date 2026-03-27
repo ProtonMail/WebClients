@@ -7,8 +7,7 @@ import type { WasmApiExchangeRate, WasmApiWallet, WasmApiWalletAccount } from '@
 import type { ModalOwnProps } from '@proton/components';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { toWalletAccountSelectorOptions } from '@proton/wallet';
-import { useUserWalletSettings } from '@proton/wallet/store';
+import { toWalletAccountSelectorOptions, useUserWalletSettings } from '@proton/wallet';
 
 import { FullscreenModal } from '../../atoms/FullscreenModal';
 import { useBitcoinBlockchainContext } from '../../contexts';

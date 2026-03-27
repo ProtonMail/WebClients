@@ -12,7 +12,7 @@ import walletBitcoinDark from '@proton/styles/assets/img/wallet/wallet-bitcoin-d
 import walletBitcoin from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
 import walletLockDark from '@proton/styles/assets/img/wallet/wallet-lock-dark.jpg';
 import walletLock from '@proton/styles/assets/img/wallet/wallet-lock.jpg';
-import { WalletThemeOption } from '@proton/wallet/utils/theme';
+import { WalletThemeOption } from '@proton/wallet';
 
 import { Button } from '../../atoms';
 import { useUpsellModal } from '../../hooks/useUpsellModal';

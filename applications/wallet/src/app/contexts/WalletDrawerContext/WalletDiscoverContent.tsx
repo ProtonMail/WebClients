@@ -11,8 +11,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { useWalletApi } from '@proton/wallet';
-import { disableWalletShowRecovery } from '@proton/wallet/store';
+import { disableWalletShowRecovery, useWalletApi } from '@proton/wallet';
 
 import { type DiscoverArticle, articles } from '../../constants/discover';
 import { getThemeForWallet } from '../../utils';

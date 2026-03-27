@@ -5,9 +5,14 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon, useModalState, useModalStateWithData } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import { COMPUTE_BITCOIN_UNIT, type IWasmApiWalletData, PriorityTargetBlock } from '@proton/wallet';
-import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store';
-import { WalletThemeOption } from '@proton/wallet/utils/theme';
+import {
+    COMPUTE_BITCOIN_UNIT,
+    type IWasmApiWalletData,
+    PriorityTargetBlock,
+    WalletThemeOption,
+    useExchangeRate,
+    useUserWalletSettings,
+} from '@proton/wallet';
 
 import { Button, CoreButton } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';

@@ -4,8 +4,13 @@ import { act } from '@testing-library/react-hooks';
 import { generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { mockUseNotifications } from '@proton/testing/lib/vitest';
-import { type DecryptedTransactionData, decryptWalletData } from '@proton/wallet';
-import { mockUseApiWalletTransactionData, mockUseWalletApi, mockUseWalletDispatch } from '@proton/wallet/tests';
+import {
+    type DecryptedTransactionData,
+    decryptWalletData,
+    mockUseApiWalletTransactionData,
+    mockUseWalletApi,
+    mockUseWalletDispatch,
+} from '@proton/wallet';
 
 import { useTransactionNoteModal } from './useTransactionNoteModal';
 

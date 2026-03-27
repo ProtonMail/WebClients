@@ -8,8 +8,14 @@ import type { WasmApiWalletAccount, WasmFiatCurrencySymbol } from '@proton/andro
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { encryptWalletDataWithWalletKey, useWalletApiClients } from '@proton/wallet';
-import { useFiatCurrencies, useWalletDispatch, walletAccountDeletion, walletAccountUpdate } from '@proton/wallet/store';
+import {
+    encryptWalletDataWithWalletKey,
+    useFiatCurrencies,
+    useWalletApiClients,
+    useWalletDispatch,
+    walletAccountDeletion,
+    walletAccountUpdate,
+} from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useEmailIntegration } from '../../hooks/useEmailIntegration';

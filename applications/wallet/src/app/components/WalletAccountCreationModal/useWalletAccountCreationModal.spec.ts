@@ -10,17 +10,15 @@ import { mockUseNotifications, mockUseUserKeys } from '@proton/testing/lib/vites
 import {
     type DecryptedApiWalletKey,
     type IWasmApiWalletData,
-    decryptWalletData,
-    encryptWalletDataWithWalletKey,
-} from '@proton/wallet';
-import {
     apiWalletAccountOneA,
     apiWalletAccountOneB,
     apiWalletsData,
+    decryptWalletData,
+    encryptWalletDataWithWalletKey,
     getUserKeys,
     mockUseWalletApiClients,
     mockUseWalletDispatch,
-} from '@proton/wallet/tests';
+} from '@proton/wallet';
 
 import { mockUseBitcoinBlockchainContext } from '../../tests';
 import { useWalletAccountCreationModal } from './useWalletAccountCreationModal';

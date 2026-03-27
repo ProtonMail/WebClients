@@ -9,15 +9,16 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import { mockUseGetAddressKeys } from '@proton/testing/lib/vitest';
 import type { WalletWithChainData } from '@proton/wallet';
-import { extendStore, setupStore } from '@proton/wallet/store';
 import {
     apiWalletsData,
+    extendStore,
     getAddressKey,
     getMockedApi,
     mockUseBitcoinAddressUsedIndexes,
     mockUseGetBitcoinAddressPool,
     mockUseWalletApiClients,
-} from '@proton/wallet/tests';
+    setupStore,
+} from '@proton/wallet';
 
 import { mockUseBlockchainClient } from '../../tests';
 import { useBitcoinAddresses } from './useBitcoinAddresses';
