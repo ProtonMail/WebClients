@@ -2,10 +2,16 @@ import type { Query } from '@proton/proton-foundation-search';
 import { Expression, Func, TermValue } from '@proton/proton-foundation-search';
 
 import type { SearchDB } from '../../shared/SearchDB';
-import type { SearchQuery, SearchResultItem } from '../../shared/types';
+import type { AttributeFilter, SearchQuery, SearchResultItem } from '../../shared/types';
 import { IndexKind, type IndexRegistry } from '../index/IndexRegistry';
 
-const ACTIVE_ENGINES: IndexKind[] = [IndexKind.MAIN];
+// TODO: Rename to indices instead of engines.
+let activeEngines: IndexKind[] = [IndexKind.MAIN];
+
+/** Exposed for tests only. */
+export function setActiveEnginesForTests(engines: IndexKind[]) {
+    activeEngines = engines;
+}
 
 /**
  * Searches across all active engines in parallel, yielding results as they arrive.
@@ -21,7 +27,7 @@ export class SearchQueryExecutor {
 
     async *performSearch(query: SearchQuery): AsyncGenerator<SearchResultItem> {
         // TODO: When adding more engines, consider running and yielding searches in parallel.
-        for (const kind of ACTIVE_ENGINES) {
+        for (const kind of activeEngines) {
             yield* this.searchEngine(kind, query);
         }
     }
@@ -34,11 +40,28 @@ export class SearchQueryExecutor {
     }
 
     /**
-     * Build a wildcard match on the "filename" attribute.
-     * e.g. query.filename = "report" → matches "report", "report.pdf", "myreport2024", etc.
+     * Build a wildcard match on the "filename" attribute, optionally ANDed with exact-match
+     * attribute filters (e.g. nodeType, indexPopulatorGeneration).
      */
     private buildSearchQuery(query: SearchQuery, wasmQuery: Query): Query {
-        const expression = Expression.attr('filename', Func.Matches, TermValue.text(query.filename).wildcard());
-        return wasmQuery.withStructuredExpression(expression);
+        let expr = Expression.attr('filename', Func.Matches, TermValue.text(query.filename).wildcard());
+
+        if (query.filters) {
+            for (const [name, attrValue] of Object.entries(query.filters)) {
+                expr = expr.and(Expression.attr(name, Func.Equals, this.toTermValue(attrValue)));
+            }
+        }
+
+        return wasmQuery.withStructuredExpression(expr);
+    }
+
+    private toTermValue(value: AttributeFilter): TermValue {
+        if (typeof value === 'string') {
+            return TermValue.text(value);
+        }
+        if (typeof value === 'bigint') {
+            return TermValue.int(value);
+        }
+        return TermValue.bool(value);
     }
 }
