@@ -32,12 +32,11 @@ import {
     getDefaultWalletName,
     useFiatCurrencies,
     useUserWalletSettings,
-    useWalletApi,
-    useWalletApiClients,
     useWalletDispatch,
     walletCreation,
     wordCountToNumber,
 } from '@proton/wallet';
+import { useWalletApi, useWalletApiClients } from '@proton/wallet/contexts';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { isUndefined } from '../../utils';

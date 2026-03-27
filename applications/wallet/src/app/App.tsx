@@ -34,8 +34,9 @@ import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { FlagProvider } from '@proton/unleash/proxy';
-import { ExtendedApiProvider, extraThunkArguments, isWasmSupported } from '@proton/wallet';
+import { extraThunkArguments, isWasmSupported } from '@proton/wallet';
 import type { WalletStore } from '@proton/wallet';
+import { ExtendedApiProvider } from '@proton/wallet/contexts';
 
 import type { bootstrapApp } from './bootstrap';
 import { WalletThemeProvider } from './components/Layout/Theme/WalletThemeProvider';
