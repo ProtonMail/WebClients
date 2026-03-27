@@ -145,7 +145,7 @@ export const getEmailSubscriptions = (
             flag: NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS,
             title: c('news').t`In-app notifications`,
             frequency: c('news')
-                .t`Disabling this will remove the ability to receive notifications in ${BRAND_NAME} applications`,
+                .t`Disabling this means you won't get in-app notifications about promotions, new features, new ${BRAND_NAME} services, and reminders.`,
             tooltip: c('news').t`Critical account notifications will still be delivered`,
         },
     ].filter(filter);
