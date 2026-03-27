@@ -19,7 +19,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import walletBitcoinDark from '@proton/styles/assets/img/wallet/wallet-bitcoin-dark.jpg';
 import walletBitcoin from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
-import { WalletThemeOption } from '@proton/wallet';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 import { COMPUTE_BITCOIN_UNIT, MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet/constants/bitcoin';
 import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store/hooks';
 

@@ -16,7 +16,7 @@ import walletClockDark from '@proton/styles/assets/img/wallet/wallet-clock-dark.
 import walletClock from '@proton/styles/assets/img/wallet/wallet-clock.jpg';
 import clsx from '@proton/utils/clsx';
 import type { TransactionData } from '@proton/wallet/types';
-import { WalletThemeOption } from '@proton/wallet';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 import { COMPUTE_BITCOIN_UNIT, PriorityTargetBlock } from '@proton/wallet/constants/bitcoin';
 import { useWalletApiClients } from '@proton/wallet/contexts';
 import { useNetworkFees, useUserWalletSettings } from '@proton/wallet/store/hooks';

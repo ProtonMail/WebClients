@@ -6,7 +6,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon, useModalState, useModalStateWithData } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import type { IWasmApiWalletData } from '@proton/wallet/types';
-import { WalletThemeOption } from '@proton/wallet';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 import { COMPUTE_BITCOIN_UNIT, PriorityTargetBlock } from '@proton/wallet/constants/bitcoin';
 import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store/hooks';
 

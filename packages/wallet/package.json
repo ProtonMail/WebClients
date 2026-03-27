@@ -13,7 +13,17 @@
         "./store/thunk": "./store/thunk.ts",
         "./store/store": "./store/store.ts",
         "./store/slices": "./store/slices/index.ts",
-        "./types": "./types/index.ts"
+        "./types": "./types/index.ts",
+        "./utils/account": "./utils/account.ts",
+        "./utils/cache": "./utils/cache.ts",
+        "./utils/crypto": "./utils/crypto.ts",
+        "./utils/date": "./utils/date.ts",
+        "./utils/localStorage": "./utils/localStorage.ts",
+        "./utils/messageSigner": "./utils/messageSigner.ts",
+        "./utils/transactions": "./utils/transactions.ts",
+        "./utils/theme": "./utils/theme.ts",
+        "./utils/wallet": "./utils/wallet.ts",
+        "./utils/wasm": "./utils/wasm.ts"
     },
     "scripts": {
         "check-types": "tsc",

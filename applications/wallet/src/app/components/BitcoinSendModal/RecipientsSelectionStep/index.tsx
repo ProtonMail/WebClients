@@ -7,7 +7,7 @@ import { useContactEmailsCache } from '@proton/components/containers/contacts/Co
 import useLoading from '@proton/hooks/useLoading';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces';
-import { WalletThemeOption } from '@proton/wallet';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 import { useBitcoinNetwork } from '@proton/wallet/store/hooks';
 
 import { Button } from '../../../atoms';

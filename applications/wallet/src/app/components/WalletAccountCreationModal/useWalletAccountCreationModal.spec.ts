@@ -7,17 +7,16 @@ import { type WasmApiWalletAccount, WasmDerivationPath, WasmScriptType } from '@
 import { generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { mockUseNotifications, mockUseUserKeys } from '@proton/testing/lib/vitest';
-import type { DecryptedApiWalletKey, IWasmApiWalletData } from '@proton/wallet/types';
 import {
     apiWalletAccountOneA,
     apiWalletAccountOneB,
     apiWalletsData,
-    decryptWalletData,
-    encryptWalletDataWithWalletKey,
     getUserKeys,
     mockUseWalletApiClients,
     mockUseWalletDispatch,
 } from '@proton/wallet';
+import type { DecryptedApiWalletKey, IWasmApiWalletData } from '@proton/wallet/types';
+import { decryptWalletData, encryptWalletDataWithWalletKey } from '@proton/wallet/utils/crypto';
 
 import { mockUseBitcoinBlockchainContext } from '../../tests';
 import { useWalletAccountCreationModal } from './useWalletAccountCreationModal';
