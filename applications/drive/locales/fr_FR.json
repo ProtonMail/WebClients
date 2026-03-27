@@ -1247,6 +1247,9 @@
       ],
       "Remove my access": [
         "Retirer mon accès"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Continuer vers ${ planOrAppName }"
       ]
     },
     "Action: Docs": {
@@ -3045,6 +3048,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Nous regrettons de vous voir partir. Si vous avez un moment, nous aimerions beaucoup savoir pourquoi vous souhaitez résilier votre abonnement. Vos commentaires nous aident à améliorer ${ BRAND_NAME } pour le bénéfice de tous."
       ]
     },
     "description": {
@@ -7698,6 +7704,18 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Additional comments": [
+        "Commentaires supplémentaires"
+      ],
+      "Continue cancelling": [
+        "Continuer l'annulation"
+      ],
+      "Main reason for cancelling": [
+        "Raison principale de l'annulation"
+      ],
+      "Skip feedback": [
+        "Ignorer les commentaires"
       ]
     },
     "Label for contact group color": {
@@ -10485,6 +10503,15 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Anything you'd like us to know": [
+        "Y a-t-il autre chose que vous aimeriez nous faire savoir"
+      ],
+      "Enter a name": [
+        "Saisissez un nom"
+      ],
+      "Select a provider": [
+        "Sélectionnez un fournisseur"
       ]
     },
     "Placeholder for contact group name": {
@@ -13470,6 +13497,26 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Votre version d'essai se terminera le ${ textDate }. Vous ne serez pas facturé si vous annulez avant le ${ textDate }. ${ action }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Autre"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

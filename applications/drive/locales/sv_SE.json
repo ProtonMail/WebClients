@@ -1247,6 +1247,9 @@
       ],
       "Remove my access": [
         "Ta bort min åtkomst"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Fortsätt till ${ planOrAppName }"
       ]
     },
     "Action: Docs": {
@@ -7660,6 +7663,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Additional comments": [
+        "Ytterligare kommentarer"
+      ],
+      "Continue cancelling": [
+        "Fortsätt avbryta"
+      ],
+      "Skip feedback": [
+        "Hoppa över feedback"
       ]
     },
     "Label for contact group color": {
@@ -10439,6 +10451,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Anything you'd like us to know": [
+        "Något du vill att vi ska veta"
+      ],
+      "Enter a name": [
+        "Ange ett namn"
+      ],
+      "Select a provider": [
+        "Välj en leverantör"
       ]
     },
     "Placeholder for contact group name": {
@@ -13427,6 +13448,26 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Annat"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

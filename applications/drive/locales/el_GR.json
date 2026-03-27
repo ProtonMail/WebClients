@@ -1247,6 +1247,9 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Συνέχεια στο ${ planOrAppName }"
       ]
     },
     "Action: Docs": {
@@ -3048,6 +3051,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Λυπόμαστε που φεύγετε. Αν έχετε λίγο χρόνο, θα εκτιμούσαμε πραγματικά να μας πείτε γιατί θέλετε να ακυρώσετε. Τα σχόλιά σας μας βοηθούν να κάνουμε το ${ BRAND_NAME } καλύτερο για όλους."
       ]
     },
     "description": {
@@ -7721,6 +7727,18 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Additional comments": [
+        "Επιπλέον σχόλια"
+      ],
+      "Continue cancelling": [
+        "Συνέχεια ακύρωσης"
+      ],
+      "Main reason for cancelling": [
+        "Κύριος λόγος ακύρωσης"
+      ],
+      "Skip feedback": [
+        "Παράλειψη σχολίων"
       ]
     },
     "Label for contact group color": {
@@ -10455,6 +10473,15 @@
       ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
+      ],
+      "Anything you'd like us to know": [
+        "Οτιδήποτε θα θέλατε να ξέρουμε"
+      ],
+      "Enter a name": [
+        "Πληκτρολογήστε ένα όνομα"
+      ],
+      "Select a provider": [
+        "Επιλέξτε έναν πάροχο"
       ]
     },
     "Placeholder for contact group name": {
@@ -13359,6 +13386,26 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Η δοκιμαστική περίοδος θα λήξει στις ${ textDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ textDate }. ${ action }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Άλλο"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
