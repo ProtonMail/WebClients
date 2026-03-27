@@ -6,7 +6,7 @@ import { Prompt } from '@proton/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import walletBitcoinDark from '@proton/styles/assets/img/wallet/wallet-bitcoin-dark.jpg';
 import walletBitcoin from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
-import { WalletThemeOption } from '@proton/wallet/utils/theme';
+import { WalletThemeOption } from '@proton/wallet';
 
 import { Button } from '../../../atoms';
 import { ModalParagraph } from '../../../atoms/ModalParagraph';

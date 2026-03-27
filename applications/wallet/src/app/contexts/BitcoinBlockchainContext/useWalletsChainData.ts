@@ -14,9 +14,14 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 import generateUID from '@proton/utils/generateUID';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { SYNCING_MINIMUM_COOLDOWN_MINUTES, getYesterday, useWalletApiClients } from '@proton/wallet';
-import { useGetBitcoinNetwork } from '@proton/wallet/store';
-import { getWalletAccountMetrics, updateWalletAccountActivityMetrics } from '@proton/wallet/utils/cache';
+import {
+    SYNCING_MINIMUM_COOLDOWN_MINUTES,
+    getWalletAccountMetrics,
+    getYesterday,
+    updateWalletAccountActivityMetrics,
+    useGetBitcoinNetwork,
+    useWalletApiClients,
+} from '@proton/wallet';
 
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
 import { useMirroredRef } from '../../hooks/useMirrorredRef';

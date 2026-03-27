@@ -8,8 +8,14 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { encryptWalletDataWithWalletKey, useWalletApiClients } from '@proton/wallet';
-import { bitcoinUnitChange, useUserWalletSettings, useWalletDispatch, walletUpdate } from '@proton/wallet/store';
+import {
+    bitcoinUnitChange,
+    encryptWalletDataWithWalletKey,
+    useUserWalletSettings,
+    useWalletApiClients,
+    useWalletDispatch,
+    walletUpdate,
+} from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';

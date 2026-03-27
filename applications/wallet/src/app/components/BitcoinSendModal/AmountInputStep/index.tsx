@@ -4,7 +4,7 @@ import type { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromed
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
-import { WalletThemeOption } from '@proton/wallet/utils/theme';
+import { WalletThemeOption } from '@proton/wallet';
 
 import { Button, CoreButton } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';

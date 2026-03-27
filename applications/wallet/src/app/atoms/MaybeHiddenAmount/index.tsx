@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { useHideAmounts } from '@proton/wallet/store/hooks/useHideAmounts';
+import { useHideAmounts } from '@proton/wallet';
 
 export const MaybeHiddenAmount = ({
     children,

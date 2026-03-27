@@ -23,7 +23,7 @@ import {
     useFiatCurrenciesByProvider,
     useGetQuotesByProvider,
     useWalletDispatch,
-} from '@proton/wallet/store';
+} from '@proton/wallet';
 
 import { BUY_BITCOIN_DEFAULT_AMOUNT } from '../../../constants/amount';
 import { useDebounceEffect } from '../../../utils/hooks/useDebouncedEffect';

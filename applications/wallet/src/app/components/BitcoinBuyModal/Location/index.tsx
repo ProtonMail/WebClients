@@ -9,8 +9,7 @@ import { Icon } from '@proton/components';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
-import { useCountriesByProvider } from '@proton/wallet/store';
-import { WalletThemeOption } from '@proton/wallet/utils/theme';
+import { WalletThemeOption, useCountriesByProvider } from '@proton/wallet';
 
 import { Button, SearchableSelect } from '../../../atoms';
 import type { CoreSearchableSelectProps } from '../../../atoms';

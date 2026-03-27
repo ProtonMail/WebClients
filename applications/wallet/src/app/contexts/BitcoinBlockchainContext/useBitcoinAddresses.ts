@@ -23,11 +23,13 @@ import {
     type WalletWithChainData,
     computeAddress,
     generateBitcoinAddressesPayloadToFillPool,
+    useGetBitcoinAddressPool,
+    useGetBitcoinAddressUsedIndexes,
     useWalletApiClients,
+    useWalletDispatch,
     verifySignedData,
+    walletAccountUpdate,
 } from '@proton/wallet';
-import { useGetBitcoinAddressPool, useWalletDispatch, walletAccountUpdate } from '@proton/wallet/store';
-import { useGetBitcoinAddressUsedIndexes } from '@proton/wallet/store/hooks/useBitcoinAddressUsedIndexes';
 
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
 import { getAccountWithChainDataFromManyWallets, isUndefined } from '../../utils';

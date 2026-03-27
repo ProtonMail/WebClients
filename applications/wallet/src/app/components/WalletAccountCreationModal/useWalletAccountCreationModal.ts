@@ -14,8 +14,9 @@ import {
     encryptWalletDataWithWalletKey,
     getDefaultWalletAccountName,
     useWalletApiClients,
+    useWalletDispatch,
+    walletAccountCreation,
 } from '@proton/wallet';
-import { useWalletDispatch, walletAccountCreation } from '@proton/wallet/store';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { isUndefined } from '../../utils';

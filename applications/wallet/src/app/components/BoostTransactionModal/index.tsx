@@ -15,9 +15,16 @@ import type { Address } from '@proton/shared/lib/interfaces';
 import walletClockDark from '@proton/styles/assets/img/wallet/wallet-clock-dark.jpg';
 import walletClock from '@proton/styles/assets/img/wallet/wallet-clock.jpg';
 import clsx from '@proton/utils/clsx';
-import { COMPUTE_BITCOIN_UNIT, PriorityTargetBlock, type TransactionData, useWalletApiClients } from '@proton/wallet';
-import { DEFAULT_FEE_SETTINGS, useNetworkFees, useUserWalletSettings } from '@proton/wallet/store';
-import { WalletThemeOption } from '@proton/wallet/utils/theme';
+import {
+    COMPUTE_BITCOIN_UNIT,
+    DEFAULT_FEE_SETTINGS,
+    PriorityTargetBlock,
+    type TransactionData,
+    WalletThemeOption,
+    useNetworkFees,
+    useUserWalletSettings,
+    useWalletApiClients,
+} from '@proton/wallet';
 
 import { Button, Modal } from '../../atoms';
 import { Price } from '../../atoms/Price';

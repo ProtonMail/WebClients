@@ -8,7 +8,7 @@ import { Copy, ModalTwo, ModalTwoContent, ModalTwoHeader, useModalState, useNoti
 import Icon from '@proton/components/components/icon/Icon';
 import QRCode from '@proton/components/components/image/QRCode';
 import clsx from '@proton/utils/clsx';
-import { useUserWalletSettings, useWalletAccountExchangeRate } from '@proton/wallet/store';
+import { useUserWalletSettings, useWalletAccountExchangeRate } from '@proton/wallet';
 
 import { CoreButtonLike } from '../../../atoms';
 import { Price } from '../../../atoms/Price';

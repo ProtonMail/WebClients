@@ -8,7 +8,7 @@ import walletKeyDark from '@proton/styles/assets/img/wallet/wallet-key-dark.jpg'
 import walletKey from '@proton/styles/assets/img/wallet/wallet-key.jpg';
 import walletLockDark from '@proton/styles/assets/img/wallet/wallet-lock-dark.jpg';
 import walletLock from '@proton/styles/assets/img/wallet/wallet-lock.jpg';
-import { WalletThemeOption } from '@proton/wallet/utils/theme';
+import { WalletThemeOption } from '@proton/wallet';
 
 import { Button, CoreButtonLike } from '../../atoms';
 import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';

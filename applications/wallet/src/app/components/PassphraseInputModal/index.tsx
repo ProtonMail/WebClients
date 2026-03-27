@@ -7,8 +7,13 @@ import { WasmWallet } from '@proton/andromeda';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useLoading from '@proton/hooks/useLoading';
-import { type IWasmApiWalletData, encryptWalletDataWithWalletKey, getPassphraseLocalStorageKey } from '@proton/wallet';
-import { setWalletPassphrase, useWalletDispatch } from '@proton/wallet/store';
+import {
+    type IWasmApiWalletData,
+    encryptWalletDataWithWalletKey,
+    getPassphraseLocalStorageKey,
+    setWalletPassphrase,
+    useWalletDispatch,
+} from '@proton/wallet';
 
 import { Button, Input, Modal } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
