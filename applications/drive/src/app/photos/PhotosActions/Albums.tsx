@@ -1,13 +1,12 @@
 import { useCallback } from 'react';
-import { useOutletContext } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
-import { usePreventLeave } from '@proton/components';
+import { useNotifications, usePreventLeave } from '@proton/components';
 import { CryptoProxy } from '@proton/crypto/lib';
+import { PhotoTag, getDriveForPhotos } from '@proton/drive';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { queryCreateAlbum, queryUpdateAlbumName } from '@proton/shared/lib/api/drive/photos';
-import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import {
     encryptName,
     generateLookupHash,
@@ -17,16 +16,17 @@ import {
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import getRandomString from '@proton/utils/getRandomString';
 
+import { getNotificationsManager } from '../../modules/notifications';
 import { useDriveEventManager } from '../../store';
 import { useDebouncedRequest } from '../../store/_api';
 import { useLink, validateLinkName } from '../../store/_links';
 import { useShare } from '../../store/_shares';
 import { useErrorHandler } from '../../store/_utils';
-import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { safeWrap } from '../../utils/safeWrap';
-import type { PhotosLayoutOutletContext } from '../PhotosWithAlbums/layout/PhotosLayout';
+import { usePhotosStore } from '../usePhotos.store';
 
 function useAlbumsActions() {
     const { preventLeave } = usePreventLeave();
@@ -291,88 +291,47 @@ export const useRenameAlbum = () => {
     );
 };
 
-export const useFavoritePhotoToggle = () => {
-    const { createNotification } = useNotifications();
-    const { updatePhotoFavoriteFromCache, favoritePhoto, removeTagsFromPhoto } =
-        useOutletContext<PhotosLayoutOutletContext>();
+// TODO: Check if we click really really fast, so maybe some abortController needed
+export const toggleFavorite = async (nodeUid: string) => {
+    const photoItem = usePhotosStore.getState().getPhotoItem(nodeUid);
+    if (!photoItem) {
+        return;
+    }
+    const isFavorite = photoItem.tags.includes(PhotoTag.Favorites);
+    try {
+        await Array.fromAsync(
+            getDriveForPhotos().updatePhotos([
+                {
+                    nodeUid,
+                    tagsToAdd: isFavorite ? undefined : [PhotoTag.Favorites],
+                    tagsToRemove: isFavorite ? [PhotoTag.Favorites] : undefined,
+                },
+            ])
+        );
+        await getBusDriver().emit(
+            {
+                type: BusDriverEventName.UPDATED_NODES,
+                items: [{ uid: nodeUid, parentUid: photoItem.additionalInfo?.parentNodeUid }],
+            },
+            getDriveForPhotos()
+        );
 
-    return useCallback(
-        async (linkId: string, shareId: string, isFavorite: boolean) => {
-            const abortController = new AbortController();
-
-            // Optimistic UI change
-            if (!isFavorite) {
-                updatePhotoFavoriteFromCache(linkId, true);
-                void favoritePhoto(abortController.signal, linkId, shareId)
-                    .then(({ shouldNotififyCopy }) => {
-                        if (shouldNotififyCopy) {
-                            // We show notification only when we copy (from shared album to own photo stream)
-                            // No notification for own photos/own album as it's instand with the heart filled
-                            createNotification({
-                                text: c('Info').t`Photo was copied to stream and marked favorite there.`,
-                            });
-                        }
-                    })
-                    .catch((e) => {
-                        // Revert if something goes wrong
-                        createNotification({ text: c('Error').t`Could not add to favorites`, type: 'error' });
-                        sendErrorReport(e);
-                        updatePhotoFavoriteFromCache(linkId, false);
-                    });
-            } else {
-                updatePhotoFavoriteFromCache(linkId, false);
-                void removeTagsFromPhoto(abortController.signal, linkId, [PhotoTag.Favorites]).catch((e) => {
-                    // Revert if something goes wrong
-                    createNotification({ text: c('Error').t`Could not remove from favorites`, type: 'error' });
-                    sendErrorReport(e);
-                    updatePhotoFavoriteFromCache(linkId, true);
-                });
-            }
-        },
-        [favoritePhoto, removeTagsFromPhoto, updatePhotoFavoriteFromCache, createNotification]
-    );
-};
-
-export const useFavoritePhotoToggleFromLayout = ({
-    updatePhotoFavoriteFromCache,
-    favoritePhoto,
-    removeTagsFromPhoto,
-}: Pick<PhotosLayoutOutletContext, 'updatePhotoFavoriteFromCache' | 'favoritePhoto' | 'removeTagsFromPhoto'>) => {
-    const { createNotification } = useNotifications();
-
-    return useCallback(
-        async (linkId: string, shareId: string, isFavorite: boolean) => {
-            const abortController = new AbortController();
-
-            // Optimistic UI change
-            if (!isFavorite) {
-                updatePhotoFavoriteFromCache(linkId, true);
-                void favoritePhoto(abortController.signal, linkId, shareId)
-                    .then(({ shouldNotififyCopy }) => {
-                        if (shouldNotififyCopy) {
-                            // We show notification only when we copy (from shared album to own photo stream)
-                            // No notification for own photos/own album as it's instand with the heart filled
-                            createNotification({
-                                text: c('Info').t`Photo was copied to stream and marked favorite there.`,
-                            });
-                        }
-                    })
-                    .catch((e) => {
-                        // Revert if something goes wrong
-                        createNotification({ text: c('Error').t`Could not add to favorites`, type: 'error' });
-                        sendErrorReport(e);
-                        updatePhotoFavoriteFromCache(linkId, false);
-                    });
-            } else {
-                updatePhotoFavoriteFromCache(linkId, false);
-                void removeTagsFromPhoto(abortController.signal, linkId, [PhotoTag.Favorites]).catch((e) => {
-                    // Revert if something goes wrong
-                    createNotification({ text: c('Error').t`Could not remove from favorites`, type: 'error' });
-                    sendErrorReport(e);
-                    updatePhotoFavoriteFromCache(linkId, true);
-                });
-            }
-        },
-        [favoritePhoto, removeTagsFromPhoto, updatePhotoFavoriteFromCache, createNotification]
-    );
+        // Show notification only when favoriting from a shared album (i.e. the photo is copied to own stream).
+        // We check if the photo's parent is NOT the user's own photos root folder.
+        const photosRootFolder = await getDriveForPhotos().getMyPhotosRootFolder();
+        const photosRootFolderUid = photosRootFolder.ok ? photosRootFolder.value.uid : undefined;
+        const isOwnPhoto = photosRootFolderUid && photoItem.additionalInfo?.parentNodeUid === photosRootFolderUid;
+        if (!isOwnPhoto && !isFavorite) {
+            getNotificationsManager().createNotification({
+                text: c('Info').t`Photo was copied to stream and marked favorite there.`,
+            });
+        }
+    } catch (e) {
+        handleSdkError(e, {
+            showNotification: true,
+            fallbackMessage: isFavorite
+                ? c('Error').t`Could not remove from favorites`
+                : c('Error').t`Could not add to favorites`,
+        });
+    }
 };

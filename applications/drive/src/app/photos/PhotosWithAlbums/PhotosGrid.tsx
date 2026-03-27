@@ -2,11 +2,14 @@ import type { FC, ReactNode } from 'react';
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 
 import { Loader, useElementRect } from '@proton/components';
+import { splitNodeUid } from '@proton/drive/index';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
-import type { PhotoGridItem } from '../../store';
+import type { PhotoGridItem as LegacyPhotoGridItem } from '../../store';
 import { isPhotoGroup } from '../../store/_photos';
+import { dateToLegacyTimestamp } from '../../utils/sdk/legacyTime';
+import type { PhotoGridItem } from '../usePhotos.store';
 import { FastScrollBar, getYearAndMonthFromCaptureTime } from './FastScrollBar';
 import { PhotosCard } from './grid/PhotosCard';
 import { PhotosGroup } from './grid/PhotosGroup';
@@ -17,17 +20,20 @@ const SCROLLBAR_CONTAINER_WIDTH = 48;
 
 type PhotosGridProps = {
     data: PhotoGridItem[];
-    onItemRender: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
-    onItemRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
-    selectedItems: PhotoGridItem[];
+    onItemRender: (nodeUid: string, domRef: React.MutableRefObject<unknown>) => void;
+    onItemRenderLoadedLink: (
+        nodeUid: string,
+        activeRevisionUid: string,
+        domRef: React.MutableRefObject<unknown>
+    ) => void;
     isLoading: boolean;
-    onItemClick: (linkId: string) => void;
+    onItemClick: (nodeUid: string) => void;
     onSelectChange: (index: number, isSelected: boolean) => void;
     isGroupSelected: (groupIndex: number) => boolean | 'some';
-    isItemSelected: (linkId: string) => boolean;
+    isItemSelected: (nodeUid: string) => boolean;
     categoryLoading?: string;
     isAddAlbumPhotosView?: boolean;
-    onFavorite?: (linkId: string, shareId: string, isFavorite: boolean) => void;
+    onFavorite?: (nodeUid: string) => void;
     rootLinkId: string;
     hasSelection: boolean;
 };
@@ -39,7 +45,6 @@ export const PhotosGrid: FC<PhotosGridProps> = ({
     isLoading,
     onItemClick,
     onSelectChange,
-    selectedItems,
     isGroupSelected,
     isItemSelected,
     isAddAlbumPhotosView,
@@ -178,7 +183,7 @@ export const PhotosGrid: FC<PhotosGridProps> = ({
                 let groupMonth: number | undefined = undefined;
 
                 if (isPhotoGroup(nextItem) === false) {
-                    const ym = getYearAndMonthFromCaptureTime(nextItem.activeRevision?.photo?.captureTime);
+                    const ym = getYearAndMonthFromCaptureTime(dateToLegacyTimestamp(nextItem.captureTime));
                     if (ym) {
                         const { year, month } = ym;
                         groupYear = year;
@@ -217,21 +222,21 @@ export const PhotosGrid: FC<PhotosGridProps> = ({
                 const x = currentX * (itemWidth + gap);
                 const y = currentY;
                 lastY = y;
-                const isSelected = isItemSelected(item.linkId);
+                const isSelected = isItemSelected(item.nodeUid);
                 positions.current.set(i, y);
 
                 if (itemShouldRender(y, scrollPosition)) {
                     items.push(
                         <PhotosCard
-                            key={item.linkId}
-                            photo={item}
+                            key={item.nodeUid}
+                            nodeUid={item.nodeUid}
                             onRender={onItemRender}
                             onRenderLoadedLink={onItemRenderLoadedLink}
                             onClick={() => {
                                 if (hasSelection) {
                                     onSelectChange(i, !isSelected);
                                 } else {
-                                    onItemClick(item.linkId);
+                                    onItemClick(item.nodeUid);
                                 }
                             }}
                             onSelect={(isSelected) => {
@@ -249,16 +254,14 @@ export const PhotosGrid: FC<PhotosGridProps> = ({
                                 }s`,
                             }}
                             hasSelection={hasSelection}
-                            isFavorite={item.photoProperties?.isFavorite || false}
-                            isOwnedByCurrentUser={item.parentLinkId === rootLinkId}
+                            isOwnedByCurrentUser={Boolean(
+                                item.additionalInfo?.parentNodeUid &&
+                                splitNodeUid(item.additionalInfo?.parentNodeUid).nodeId === rootLinkId
+                            )}
                             onFavorite={
                                 !isAddAlbumPhotosView && onFavorite
                                     ? () => {
-                                          onFavorite(
-                                              item.linkId,
-                                              item.rootShareId,
-                                              item.photoProperties?.isFavorite || false
-                                          );
+                                          onFavorite(item.nodeUid);
                                       }
                                     : undefined
                             }
@@ -280,15 +283,20 @@ export const PhotosGrid: FC<PhotosGridProps> = ({
 
         return [items, innerStyle];
     }, [
-        data,
-        isItemSelected,
-        isGroupSelected,
         dimensions,
+        data,
         scrollPosition,
+        isGroupSelected,
         isLoading,
-        selectedItems,
-        positions,
-        groupsPositions,
+        onSelectChange,
+        isItemSelected,
+        onItemRender,
+        onItemRenderLoadedLink,
+        hasSelection,
+        rootLinkId,
+        isAddAlbumPhotosView,
+        onFavorite,
+        onItemClick,
     ]);
 
     return (
@@ -309,7 +317,7 @@ export const PhotosGrid: FC<PhotosGridProps> = ({
             </div>
             {containerRect && innerStyle && (
                 <FastScrollBar
-                    data={data}
+                    data={data as unknown as LegacyPhotoGridItem[]}
                     containerRef={containerRef}
                     containerRect={containerRect}
                     containerHeight={visibleHeight - 24}

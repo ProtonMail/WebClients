@@ -21,7 +21,7 @@ import type { DriveVolume as DriveVolumePayload } from '@proton/shared/lib/inter
 import type { Device } from '../_devices';
 import type { DriveEvents } from '../_events';
 import type { DecryptedLink, EncryptedLink } from '../_links';
-import type { Photo } from '../_photos';
+import type { LegacyPhoto } from '../_photos';
 import type { DriveFileRevision } from '../_revisions';
 import { ShareType, hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
 import type {
@@ -316,7 +316,7 @@ export const shareUrlPayloadToShareUrlLEGACY = (shareUrl: ShareURLPayload): Shar
     };
 };
 
-export const photoPayloadToPhotos = (photo: PhotoPayload): Photo => {
+export const photoPayloadToPhotos = (photo: PhotoPayload): LegacyPhoto => {
     return {
         linkId: photo.LinkID,
         captureTime: photo.CaptureTime,
@@ -332,7 +332,7 @@ export const photoPayloadToPhotos = (photo: PhotoPayload): Photo => {
     };
 };
 
-export const decryptedLinkToPhotos = (link: DecryptedLink, relatedPhotoLinks: DecryptedLink[]): Photo => {
+export const decryptedLinkToPhotos = (link: DecryptedLink, relatedPhotoLinks: DecryptedLink[]): LegacyPhoto => {
     return {
         linkId: link.linkId,
         captureTime: link?.activeRevision?.photo?.captureTime ?? link.createTime,

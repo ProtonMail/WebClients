@@ -4,8 +4,7 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
 import { getIsPublicContext } from '../../utils/getIsPublicContext';
 import type { ShareWithKey } from './interface';
-// eslint-disable-next-line import/no-named-as-default
-import useDefaultShare from './useDefaultShare';
+import { useDefaultShare } from './useDefaultShare';
 import { useDriveSharingFlags } from './useDriveSharingFlags';
 import useShare from './useShare';
 import { getSharedWithMeMembership } from './utils';

@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { Button } from '@proton/atoms/Button/Button';
 import {
@@ -10,13 +11,17 @@ import {
     ModalTwoHeader,
     useModalStateObject,
 } from '@proton/components';
+import { generateNodeUid, getDriveForPhotos } from '@proton/drive/index';
+import { loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import { IcAlbumFolder } from '@proton/icons/icons/IcAlbumFolder';
 import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 
 import { getMimeTypeDescription } from '../../components/sections/helpers';
-import { type DecryptedLink, isDecryptedLink } from '../../store';
+import type { DecryptedLink } from '../../store';
 import { useAlbumProgressStore } from '../../zustand/photos/addToAlbumProgress.store';
 import type { DecryptedAlbum } from '../PhotosStore/PhotosWithAlbumsProvider';
+import { enqueueAdditionalInfo } from '../PhotosWithAlbums/loaders/loadAdditionalInfo';
+import { usePhotosStore } from '../usePhotos.store';
 import { CreateAlbumModal } from './CreateAlbumModal';
 
 import './AlbumPhotoSelection.scss';
@@ -35,12 +40,40 @@ const AlbumSquare = ({
     disabled: boolean;
     onClick: (shareId: string, linkId: string) => void;
 }) => {
-    const isDecrypted = isDecryptedLink(album);
-    const isCoverDecrypted = isDecryptedLink(album.cover);
+    const ref = useRef(null);
     const albumProgress = useAlbumProgressStore();
 
-    const thumbUrl =
-        (isCoverDecrypted && album.cover?.cachedThumbnailUrl) || (isDecrypted && album.cachedThumbnailUrl) || undefined;
+    const coverNodeUid =
+        album.albumProperties?.coverLinkId && generateNodeUid(album.volumeId, album.albumProperties?.coverLinkId);
+
+    const coverPhoto = usePhotosStore(
+        useShallow((state) => {
+            const item = coverNodeUid && state.getPhotoItem(coverNodeUid);
+            if (!item || item.additionalInfo === undefined) {
+                return undefined;
+            }
+            return { activeRevisionUid: item.additionalInfo.activeRevisionUid };
+        })
+    );
+
+    const thumbnail = useThumbnail(coverPhoto?.activeRevisionUid);
+    const thumbUrl = thumbnail?.hdUrl || thumbnail?.sdUrl;
+
+    useEffect(() => {
+        if (!coverNodeUid) {
+            return;
+        }
+        if (!coverPhoto?.activeRevisionUid) {
+            enqueueAdditionalInfo(coverNodeUid, () => Boolean(ref.current));
+        } else {
+            loadThumbnail(getDriveForPhotos(), {
+                nodeUid: coverNodeUid,
+                revisionUid: coverPhoto.activeRevisionUid,
+                shouldLoad: () => Boolean(ref.current),
+                thumbnailTypes: ['sd', 'hd'],
+            });
+        }
+    }, [coverNodeUid, coverPhoto?.activeRevisionUid]);
 
     let addPhotosProgressText = '';
     if (albumProgress.status === 'in-progress') {
@@ -49,7 +82,7 @@ const AlbumSquare = ({
     const shouldShowLoading = loading && albumProgress.status !== 'done';
 
     return (
-        <li key={album.linkId}>
+        <li key={album.linkId} ref={ref}>
             <Button
                 className="relative flex flex-nowrap items-center justify-start gap-2 album-photo-selection"
                 onClick={() => onClick(album.rootShareId, album.linkId)}

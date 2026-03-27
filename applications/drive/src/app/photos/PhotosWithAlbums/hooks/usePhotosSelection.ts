@@ -13,12 +13,12 @@ type HandleSelectionArgs = {
 
 export const usePhotosSelection = ({
     photos,
-    photoLinkIdToIndexMap,
+    photoNodeUidToIndexMap,
     albumPhotos,
-    albumPhotosLinkIdToIndexMap,
+    albumPhotosNodeUidToIndexMap,
 }: Pick<
     PhotosLayoutOutletContext,
-    'photos' | 'photoLinkIdToIndexMap' | 'albumPhotos' | 'albumPhotosLinkIdToIndexMap'
+    'photos' | 'photoNodeUidToIndexMap' | 'albumPhotos' | 'albumPhotosNodeUidToIndexMap'
 >) => {
     const { currentPageType } = usePhotoLayoutStore(
         useShallow((state) => ({
@@ -27,8 +27,9 @@ export const usePhotosSelection = ({
     );
 
     const map = useMemo(
-        () => (currentPageType === AlbumsPageTypes.ALBUMSGALLERY ? albumPhotosLinkIdToIndexMap : photoLinkIdToIndexMap),
-        [currentPageType, albumPhotosLinkIdToIndexMap, photoLinkIdToIndexMap]
+        () =>
+            currentPageType === AlbumsPageTypes.ALBUMSGALLERY ? albumPhotosNodeUidToIndexMap : photoNodeUidToIndexMap,
+        [currentPageType, albumPhotosNodeUidToIndexMap, photoNodeUidToIndexMap]
     );
 
     const data = useMemo(
