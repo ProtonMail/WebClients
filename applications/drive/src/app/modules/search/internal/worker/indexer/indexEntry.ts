@@ -59,8 +59,8 @@ export interface CreateIndexEntryParams<N extends string = string> {
     treeEventScopeId: TreeEventScopeId;
     parentPath: string;
     indexPopulatorId: string;
-    indexPopulatorVersion?: number;
-    indexPopulatorGeneration?: number;
+    indexPopulatorVersion: number;
+    indexPopulatorGeneration: number;
     additionalAttributes?: { name: N extends CoreAttributeName ? never : N; value: AttributeValue }[];
 }
 
@@ -70,8 +70,8 @@ export function createIndexEntry<N extends string>(params: CreateIndexEntryParam
         treeEventScopeId,
         parentPath,
         indexPopulatorId,
-        indexPopulatorVersion = 1,
-        indexPopulatorGeneration = 1,
+        indexPopulatorVersion,
+        indexPopulatorGeneration,
         additionalAttributes,
     } = params;
 
