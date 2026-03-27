@@ -1025,6 +1025,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Weiter zu ${ planOrAppName }"
       ]
     },
     "action": {
@@ -3187,6 +3190,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Wir bedauern, dass du gehst. Wenn du einen Moment Zeit hast, würden wir uns sehr freuen zu erfahren, warum du kündigen möchtest. Dein Feedback hilft uns, ${ BRAND_NAME } für alle besser zu machen."
       ]
     },
     "description": {
@@ -7256,6 +7262,18 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "Additional comments": [
+        "Zusätzliche Kommentare"
+      ],
+      "Continue cancelling": [
+        "Kündigung fortsetzen"
+      ],
+      "Main reason for cancelling": [
+        "Hauptgrund für die Kündigung"
+      ],
+      "Skip feedback": [
+        "Rückmeldung überspringen"
       ]
     },
     "label": {
@@ -9782,6 +9800,15 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Anything you'd like us to know": [
+        "Haben Sie etwas, das Sie uns mitteilen möchten?"
+      ],
+      "Enter a name": [
+        "Name eingeben"
+      ],
+      "Select a provider": [
+        "Anbieter auswählen"
       ]
     },
     "Placeholder for contact group name": {
@@ -12890,6 +12917,26 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Sonstiges"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

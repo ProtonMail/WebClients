@@ -1019,6 +1019,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din gratis provperiod av din app för stationär dator slutar den ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Fortsätt till ${ planOrAppName }"
       ]
     },
     "action": {
@@ -7192,6 +7195,15 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "Additional comments": [
+        "Ytterligare kommentarer"
+      ],
+      "Continue cancelling": [
+        "Fortsätt avbryta"
+      ],
+      "Skip feedback": [
+        "Hoppa över feedback"
       ]
     },
     "label": {
@@ -9706,6 +9718,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Anything you'd like us to know": [
+        "Något du vill att vi ska veta"
+      ],
+      "Enter a name": [
+        "Ange ett namn"
+      ],
+      "Select a provider": [
+        "Välj en leverantör"
       ]
     },
     "Placeholder for contact group name": {
@@ -12805,6 +12826,26 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Annat"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

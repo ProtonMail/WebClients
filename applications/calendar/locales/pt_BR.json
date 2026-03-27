@@ -1025,6 +1025,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Continuar com ${ planOrAppName }"
       ]
     },
     "action": {
@@ -7244,6 +7247,15 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "Additional comments": [
+        "Comentários adicionais"
+      ],
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
+      "Skip feedback": [
+        "Pular feedback"
       ]
     },
     "label": {
@@ -9773,6 +9785,12 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Enter a name": [
+        "Insira um nome"
+      ],
+      "Select a provider": [
+        "Selecione um provedor"
       ]
     },
     "Placeholder for contact group name": {
@@ -12878,6 +12896,26 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Outros"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
