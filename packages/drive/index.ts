@@ -99,6 +99,7 @@ export {
     ServerError,
     ThumbnailType,
     ValidationError,
+    PhotoTag,
 } from '@protontech/drive-sdk';
 
 // Shared config and telemetry for all SDK instances.

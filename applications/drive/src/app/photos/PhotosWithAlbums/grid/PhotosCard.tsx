@@ -3,62 +3,81 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import { formatDuration } from 'date-fns';
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Checkbox, FileIcon } from '@proton/components';
+import { useThumbnail } from '@proton/drive/modules/thumbnails';
 import { IcCloud } from '@proton/icons/icons/IcCloud';
 import { IcHeart } from '@proton/icons/icons/IcHeart';
 import { IcHeartFilled } from '@proton/icons/icons/IcHeartFilled';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';
 import clsx from '@proton/utils/clsx';
 
 import { SignatureIcon } from '../../../components/SignatureIcon';
 import { getMimeTypeDescription } from '../../../components/sections/helpers';
-import { type DecryptedLink, type PhotoLink, isDecryptedLink } from '../../../store';
 import { stopPropagation } from '../../../utils/stopPropagation';
+import { usePhotosStore } from '../../usePhotos.store';
 import { formatVideoDuration } from './formatVideoDuration';
 
 import './PhotosCard.scss';
 
 type Props = {
-    photo: PhotoLink;
+    nodeUid: string;
     selected: boolean;
-    onRender: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
-    onRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
+    onRender: (nodeUid: string, domRef: React.MutableRefObject<unknown>) => void;
+    onRenderLoadedLink: (nodeUid: string, activeRevisionUid: string, domRef: React.MutableRefObject<unknown>) => void;
     style: CSSProperties;
     onClick: () => void;
     onSelect: (isSelected: boolean) => void;
     onFavorite?: () => void;
     hasSelection: boolean;
-    isFavorite: boolean;
     isOwnedByCurrentUser: boolean;
 };
 
-const getAltText = ({ mimeType, name }: DecryptedLink) =>
-    `${c('Label').t`Photo`} - ${getMimeTypeDescription(mimeType || '')} - ${name}`;
+const getAltText = ({ mediaType, name }: { mediaType: string; name: string }) =>
+    `${c('Label').t`Photo`} - ${getMimeTypeDescription(mediaType)} - ${name}`;
 
 export const PhotosCard: FC<Props> = ({
     style,
     onRender,
     onRenderLoadedLink,
-    photo,
+    nodeUid,
     onClick,
     onSelect,
     onFavorite,
     selected,
     hasSelection,
-    isFavorite,
     isOwnedByCurrentUser,
 }) => {
+    const { photoInfo, isFavorite } = usePhotosStore(
+        useShallow((state) => {
+            const item = state.getPhotoItem(nodeUid);
+            if (!item?.additionalInfo) {
+                return { photoInfo: undefined, isFavorite: false };
+            }
+
+            return {
+                photoInfo: {
+                    name: item.additionalInfo.name,
+                    mediaType: item.additionalInfo.mediaType || '',
+                    haveSignatureIssues: item.additionalInfo.haveSignatureIssues,
+                    isShared: item.additionalInfo.isShared,
+                    duration: item.additionalInfo.duration,
+                    activeRevisionUid: item.additionalInfo.activeRevisionUid,
+                },
+                isFavorite: item.tags.includes(PhotoTag.Favorites),
+            };
+        })
+    );
+
     const [imageReady, setImageReady] = useState(false);
     const ref = useRef(null);
-
-    const isDecrypted = isDecryptedLink(photo);
-    const hasName = 'name' in photo;
 
     // First call when photo is rendered to request caching link meta data.
 
@@ -67,27 +86,27 @@ export const PhotosCard: FC<Props> = ({
     // The separation is needed to call thumbnail queue when link is already
     // present in cache to not fetch or decrypt meta data more than once.
     useEffect(() => {
-        if (!hasName) {
-            onRender(photo.linkId, ref);
+        if (!photoInfo?.activeRevisionUid) {
+            onRender(nodeUid, ref);
         } else {
-            onRenderLoadedLink(photo.linkId, ref);
+            onRenderLoadedLink(nodeUid, photoInfo.activeRevisionUid, ref);
         }
-    }, [hasName]);
+    }, [nodeUid, onRender, onRenderLoadedLink, photoInfo]);
 
-    const thumbUrl = isDecrypted ? photo.cachedThumbnailUrl : undefined;
-    const isThumbnailLoading = !isDecrypted || (photo.hasThumbnail && !imageReady);
-    const isActive = isDecrypted && photo.activeRevision?.id;
-    const isLoaded = !isThumbnailLoading && isActive;
+    const thumbnail = useThumbnail(photoInfo?.activeRevisionUid);
+    const thumbnailUrl = thumbnail?.hdUrl || thumbnail?.sdUrl;
+    const isThumbnailLoading = Boolean(thumbnail?.sdStatus === 'loading' || (thumbnailUrl && !imageReady));
+    const isLoaded = thumbnail !== undefined && !isThumbnailLoading && Boolean(photoInfo);
 
     useEffect(() => {
-        if (thumbUrl) {
+        if (thumbnailUrl) {
             const image = new Image();
-            image.src = thumbUrl;
+            image.src = thumbnailUrl;
             image.onload = () => {
                 setImageReady(true);
             };
         }
-    }, [thumbUrl]);
+    }, [thumbnailUrl]);
 
     const onKeyDown = useCallback(
         (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -167,25 +186,26 @@ export const PhotosCard: FC<Props> = ({
                     </Tooltip>
                 )}
 
-                {isLoaded ? (
+                {isLoaded && photoInfo ? (
                     <div className="w-full h-full relative photos-card-thumbnail-holder">
-                        {thumbUrl ? (
+                        {thumbnailUrl ? (
                             <img
                                 data-testid="photos-card-thumbnail"
-                                src={thumbUrl}
-                                alt={getAltText(photo)}
+                                data-node-uid={nodeUid}
+                                src={thumbnailUrl}
+                                alt={getAltText({ name: photoInfo.name, mediaType: photoInfo.mediaType })}
                                 className="w-full h-full photos-card-thumbnail rounded"
                             />
                         ) : (
                             <div
                                 className="flex items-center justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty"
-                                data-testid={getAltText(photo)}
+                                data-testid={getAltText({ name: photoInfo.name, mediaType: photoInfo.mediaType })}
                             >
-                                <FileIcon mimeType={photo.mimeType || ''} size={12} />
+                                <FileIcon mimeType={photoInfo.mediaType} size={12} />
                             </div>
                         )}
 
-                        {(!isOwnedByCurrentUser || photo.signatureIssues || photo.isShared) && (
+                        {(!isOwnedByCurrentUser || photoInfo.haveSignatureIssues || photoInfo.isShared) && (
                             <div className="absolute bottom-0 flex left-0 ml-2 mb-2 gap-1">
                                 {!isOwnedByCurrentUser &&
                                     !isFavorite &&
@@ -197,14 +217,14 @@ export const PhotosCard: FC<Props> = ({
                                             <IcCloud alt={c('Info').t`Photo is not saved to your library`} />
                                         </div>
                                     )}
-                                {photo.signatureIssues && (
+                                {photoInfo.haveSignatureIssues && (
                                     <SignatureIcon
                                         isFile
-                                        haveSignatureIssues={!!photo.signatureIssues}
+                                        haveSignatureIssues={photoInfo.haveSignatureIssues}
                                         className="color-danger"
                                     />
                                 )}
-                                {photo.isShared && (
+                                {photoInfo.isShared && (
                                     <div className="photos-card-bottom-icon rounded-50 flex items-center justify-center">
                                         <IcUsers color="white" size={3} />
                                     </div>
@@ -212,31 +232,29 @@ export const PhotosCard: FC<Props> = ({
                             </div>
                         )}
 
-                        {photo.mimeType && isVideo(photo.mimeType) && (
+                        {photoInfo.mediaType && isVideo(photoInfo.mediaType) && (
                             <div className="absolute bottom-0 flex right-0 mr-2 mb-2 gap-2">
-                                {photo.mimeType && isVideo(photo.mimeType) && (
-                                    <div
-                                        className={clsx(
-                                            'flex items-center pl-1',
-                                            !!photo.duration && 'rounded-full photos-card-video-info'
-                                        )}
-                                    >
-                                        {photo.duration && (
-                                            <time
-                                                className="text-semibold lh100 text-xs text-tabular-nums mr-0.5"
-                                                dateTime={formatDuration(
-                                                    { seconds: Math.floor(photo.duration) },
-                                                    {
-                                                        locale: dateLocale,
-                                                    }
-                                                )}
-                                            >
-                                                {formatVideoDuration(photo.duration)}
-                                            </time>
-                                        )}
-                                        <img src={playCircleFilledIcon} alt="" />
-                                    </div>
-                                )}
+                                <div
+                                    className={clsx(
+                                        'flex items-center pl-1',
+                                        !!photoInfo.duration && 'rounded-full photos-card-video-info'
+                                    )}
+                                >
+                                    {photoInfo.duration && (
+                                        <time
+                                            className="text-semibold lh100 text-xs text-tabular-nums mr-0.5"
+                                            dateTime={formatDuration(
+                                                { seconds: Math.floor(photoInfo.duration) },
+                                                {
+                                                    locale: dateLocale,
+                                                }
+                                            )}
+                                        >
+                                            {formatVideoDuration(photoInfo.duration)}
+                                        </time>
+                                    )}
+                                    <img src={playCircleFilledIcon} alt="" />
+                                </div>
                             </div>
                         )}
                     </div>
