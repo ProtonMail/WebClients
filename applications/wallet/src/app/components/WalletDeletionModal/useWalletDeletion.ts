@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 import { useWalletApiClients } from '@proton/wallet/contexts';
 import { useWalletDispatch } from '@proton/wallet/store/hooks';
 import { walletDeletion } from '@proton/wallet/store/slices';

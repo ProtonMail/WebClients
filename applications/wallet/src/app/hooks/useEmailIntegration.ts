@@ -6,10 +6,10 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import type { WasmApiWalletAccount } from '@proton/andromeda';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import type { IWasmApiWalletData } from '@proton/wallet';
 import { useWalletApiClients } from '@proton/wallet/contexts';
 import { useWalletDispatch } from '@proton/wallet/store/hooks';
 import { walletAccountUpdate } from '@proton/wallet/store/slices';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { useBitcoinBlockchainContext } from '../contexts';
 import { getAccountWithChainDataFromManyWallets } from '../utils';

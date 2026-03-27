@@ -16,15 +16,8 @@ import {
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { SECOND } from '@proton/shared/lib/constants';
 import type { DecryptedAddressKey, SimpleMap } from '@proton/shared/lib/interfaces';
-import {
-    type AccountWithChainData,
-    type ApiWalletWithPassphraseInput,
-    type IWasmApiWalletData,
-    type WalletWithChainData,
-    computeAddress,
-    generateBitcoinAddressesPayloadToFillPool,
-    verifySignedData,
-} from '@proton/wallet';
+import type { AccountWithChainData, ApiWalletWithPassphraseInput, IWasmApiWalletData, WalletWithChainData } from '@proton/wallet/types';
+import { computeAddress, generateBitcoinAddressesPayloadToFillPool, verifySignedData } from '@proton/wallet';
 import { useWalletApiClients } from '@proton/wallet/contexts';
 import {
     useGetBitcoinAddressPool,

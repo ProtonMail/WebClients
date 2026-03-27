@@ -14,7 +14,7 @@ import { registerSessionRemovalListener } from '@proton/shared/lib/authenticatio
 import { APPS, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import protonWalletLogoDark from '@proton/styles/assets/img/illustrations/proton-wallet-logo-dark.svg';
 import protonWalletLogo from '@proton/styles/assets/img/illustrations/proton-wallet-logo.svg';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 import { WalletThemeOption } from '@proton/wallet';
 
 import config from '../../../config';

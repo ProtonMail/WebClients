@@ -4,8 +4,8 @@ import { act } from '@testing-library/react-hooks';
 import { generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { mockUseNotifications } from '@proton/testing/lib/vitest';
+import type { DecryptedTransactionData } from '@proton/wallet/types';
 import {
-    type DecryptedTransactionData,
     decryptWalletData,
     mockUseApiWalletTransactionData,
     mockUseWalletApi,

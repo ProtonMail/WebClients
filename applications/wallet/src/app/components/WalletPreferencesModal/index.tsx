@@ -12,7 +12,7 @@ import {
     useNotifications,
 } from '@proton/components';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { Button, Input, Modal, Select, SelectOption } from '../../atoms';
 import type { SubTheme } from '../../utils';

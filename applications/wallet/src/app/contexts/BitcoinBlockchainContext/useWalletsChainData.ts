@@ -13,7 +13,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 import generateUID from '@proton/utils/generateUID';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 import { getWalletAccountMetrics, getYesterday, updateWalletAccountActivityMetrics } from '@proton/wallet';
 import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '@proton/wallet/constants/wallet';
 import { useWalletApiClients } from '@proton/wallet/contexts';

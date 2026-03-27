@@ -14,7 +14,7 @@ import {
 } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { Input } from '../../atoms';
 import { CurrencySelect } from '../../atoms/CurrencySelect';
