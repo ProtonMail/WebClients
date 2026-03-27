@@ -1,10 +1,11 @@
 import { MimeIcon, ToolbarButton } from '@proton/components';
 import { getOpenInDocsMimeIconName, getOpenInDocsString } from '@proton/shared/lib/drive/translations';
+import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import { hasFoldersSelected, isMultiSelect } from '../../../components/sections/ToolbarButtons/utils';
-import { useOpenInDocs } from '../../../store/_documents';
-import type { FolderButtonProps } from './types';
+import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../utils/docs/openInDocs';
+import type { ActionButtonProps } from '../../buttons/types';
 
 type Item = {
     uid: string;
@@ -16,30 +17,37 @@ type Item = {
     linkId: string;
 };
 
-type Props = Omit<FolderButtonProps, 'onClick'> & {
+type Props = Omit<ActionButtonProps, 'onClick'> & {
     selectedItems: Item[];
 };
 
 export const OpenInDocsButton = ({ selectedItems, type, close }: Props) => {
-    const selectedItem = selectedItems.length > 0 ? selectedItems[0] : undefined;
-    const openInDocsInfo = useOpenInDocs(selectedItem);
-
-    if (!openInDocsInfo.canOpen || isMultiSelect(selectedItems) || hasFoldersSelected(selectedItems)) {
+    const selectedItem = selectedItems[0];
+    const documentInfo = mimeTypeToOpenInDocsType(selectedItem?.mimeType);
+    if (!documentInfo || isMultiSelect(selectedItems) || hasFoldersSelected(selectedItems)) {
         return null;
     }
 
-    const title = getOpenInDocsString(openInDocsInfo, openInDocsInfo.mimeType);
-    const icon = <MimeIcon name={getOpenInDocsMimeIconName(openInDocsInfo)} className="mr-2" />;
+    const onClick = async () => {
+        if (!selectedItem) {
+            return;
+        }
+        const openInDocsInfo = getOpenInDocsInfo(selectedItem.mimeType);
+        if (openInDocsInfo) {
+            await openDocsOrSheetsDocument({
+                uid: selectedItem.uid,
+                isNative: openInDocsInfo.isNative,
+                type: openInDocsInfo.type,
+                openBehavior: 'tab',
+            });
+        }
+    };
+
+    const title = getOpenInDocsString(documentInfo, selectedItem.mimeType);
+    const icon = <MimeIcon name={getOpenInDocsMimeIconName(documentInfo)} className="mr-2" />;
 
     if (type === 'toolbar') {
-        return (
-            <ToolbarButton
-                title={title}
-                icon={icon}
-                onClick={() => openInDocsInfo.openDocument()}
-                data-testid="toolbar-open-document"
-            />
-        );
+        return <ToolbarButton title={title} icon={icon} onClick={onClick} data-testid="toolbar-open-document" />;
     }
 
     if (type === 'context') {
@@ -48,7 +56,7 @@ export const OpenInDocsButton = ({ selectedItems, type, close }: Props) => {
                 name={title}
                 icon={icon}
                 testId="context-menu-open-document"
-                action={() => openInDocsInfo.openDocument()}
+                action={onClick}
                 close={() => close?.()}
             />
         );

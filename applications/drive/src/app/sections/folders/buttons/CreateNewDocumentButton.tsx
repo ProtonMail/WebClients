@@ -1,12 +1,11 @@
 import { c } from 'ttag';
 
-import { ToolbarButton } from '@proton/components';
-import { MimeIcon } from '@proton/components';
+import { MimeIcon, ToolbarButton } from '@proton/components';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import type { FolderButtonProps } from './types';
+import type { ActionButtonProps } from '../../buttons/types';
 
-export const CreateNewDocumentButton = ({ type, close, onClick }: FolderButtonProps) => {
+export const CreateNewDocumentButton = ({ type, close, onClick }: ActionButtonProps) => {
     const title = c('Action').t`New document`;
 
     if (type === 'toolbar') {

@@ -34,17 +34,9 @@ export const useDocumentActions = () => {
         }
     };
 
-    const createDocument = async ({
-        uid,
-        parentLinkId,
-        type,
-    }: {
-        uid: string;
-        parentLinkId: string;
-        type: DocumentType;
-    }) => {
+    const createDocument = async ({ parentUid, type }: { parentUid: string; type: DocumentType }) => {
         const w = getNewWindow();
-        const { volumeId } = splitNodeUid(uid);
+        const { volumeId, nodeId } = splitNodeUid(parentUid);
 
         try {
             openDocumentWindow({
@@ -52,7 +44,7 @@ export const useDocumentActions = () => {
                 mode: 'create',
                 window: w.handle,
                 volumeId,
-                parentLinkId,
+                parentLinkId: nodeId,
             });
         } catch (e) {
             w.close();

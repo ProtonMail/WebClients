@@ -11,6 +11,7 @@ export const useContextMenuStore = create<ContextMenuStore>()(
             isOpen: false,
             position: undefined,
             lastCloseTime: undefined,
+            type: 'item',
 
             open: () => {
                 const state = get();
@@ -32,20 +33,20 @@ export const useContextMenuStore = create<ContextMenuStore>()(
                 });
             },
 
-            handleContextMenu: (e) => {
+            handleContextMenu: (e, type = 'item') => {
                 e.stopPropagation();
                 e.preventDefault();
 
-                set({ position: { top: e.clientY, left: e.clientX } });
+                set({ position: { top: e.clientY, left: e.clientX }, type });
                 get().open();
             },
 
-            handleContextMenuTouch: (e) => {
+            handleContextMenuTouch: (e, type = 'item') => {
                 e.stopPropagation();
                 e.preventDefault();
 
                 const touchPosition = e.changedTouches[e.changedTouches.length - 1];
-                set({ position: { top: touchPosition.clientY, left: touchPosition.clientX } });
+                set({ position: { top: touchPosition.clientY, left: touchPosition.clientX }, type });
                 get().open();
             },
         }),

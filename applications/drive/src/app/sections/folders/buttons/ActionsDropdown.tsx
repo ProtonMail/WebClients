@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
-import { MemberRole, generateNodeUid } from '@proton/drive/index';
+import { MemberRole, generateNodeUid, getDrive } from '@proton/drive/index';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
@@ -14,7 +14,7 @@ import { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
 import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
-import { useActions } from '../../../store';
+import { useTrashActions } from '../../commonActions/useTrashActions';
 
 export const toNodeUidsHelper = <T extends { volumeId: string; linkId: string }>(items: T[]): string[] =>
     items.map((item) => generateNodeUid(item.volumeId, item.linkId));
@@ -44,7 +44,7 @@ export const ActionsDropdown = ({ volumeId, selectedItems, role }: Props) => {
     const { sharingModal, showSharingModal } = useSharingModal();
     const isEditor = role === MemberRole.Editor;
     const isAdmin = role === MemberRole.Admin;
-    const { trashLinks } = useActions();
+    const { trashItems } = useTrashActions();
     const hasFoldersSelected = selectedItems.some((item) => !item.isFile);
     const isMultiSelect = selectedItems.length > 1;
     const selectedLinkIds = selectedItems.map(({ linkId }) => linkId);
@@ -103,7 +103,14 @@ export const ActionsDropdown = ({ volumeId, selectedItems, role }: Props) => {
             name: c('Action').t`Move to trash`,
             icon: 'trash',
             testId: 'actions-dropdown-trash',
-            action: () => trashLinks(new AbortController().signal, selectedItems),
+            action: () =>
+                trashItems(
+                    getDrive(),
+                    selectedItems.map((item) => ({
+                        uid: generateNodeUid(item.volumeId, item.linkId),
+                        parentUid: generateNodeUid(item.volumeId, item.parentLinkId),
+                    }))
+                ),
         },
     ];
 

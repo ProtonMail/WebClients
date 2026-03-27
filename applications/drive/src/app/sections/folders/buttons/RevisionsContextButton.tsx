@@ -1,11 +1,10 @@
 import { c } from 'ttag';
 
-import { splitNodeUid } from '@proton/drive/index';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
+import { useDocumentActions } from '../../../hooks/docs/useDocumentActions';
 import type { useRevisionsModal } from '../../../modals/RevisionsModal';
-import { useDocumentActions } from '../../../store';
 
 interface Props {
     nodeUid: string;
@@ -15,9 +14,8 @@ interface Props {
     close: () => void;
 }
 
-export const RevisionsContextButton = ({ nodeUid, mediaType, rootShareId, showRevisionsModal, close }: Props) => {
+export const RevisionsContextButton = ({ nodeUid, mediaType, showRevisionsModal, close }: Props) => {
     const { openDocumentHistory } = useDocumentActions();
-    const { nodeId } = splitNodeUid(nodeUid);
     return (
         <ContextMenuButton
             name={c('Action').t`See version history`}
@@ -25,11 +23,7 @@ export const RevisionsContextButton = ({ nodeUid, mediaType, rootShareId, showRe
             testId="context-menu-revisions"
             action={() => {
                 if (isProtonDocsDocument(mediaType)) {
-                    void openDocumentHistory({
-                        type: 'doc',
-                        shareId: rootShareId,
-                        linkId: nodeId,
-                    });
+                    void openDocumentHistory({ type: 'doc', uid: nodeUid });
                 } else {
                     showRevisionsModal({ nodeUid });
                 }
