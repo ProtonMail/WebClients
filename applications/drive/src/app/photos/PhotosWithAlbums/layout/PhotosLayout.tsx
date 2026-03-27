@@ -1,17 +1,10 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import {
-    Loader,
-    NavigationControl,
-    TopBanner,
-    useConfirmActionModal,
-    useModalStateObject,
-    useNotifications,
-} from '@proton/components';
+import { Loader, TopBanner, useConfirmActionModal, useModalStateObject, useNotifications } from '@proton/components';
 import { generateNodeUid, getDriveForPhotos, splitNodeUid } from '@proton/drive';
 import { uploadManager } from '@proton/drive/modules/upload';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -19,25 +12,19 @@ import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import PortalPreview from '../../../components/PortalPreview';
 import ToolbarRow from '../../../components/sections/ToolbarRow/ToolbarRow';
 import UploadDragDrop from '../../../components/uploads/UploadDragDrop/UploadDragDrop';
-import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { usePhotosPreviewModal } from '../../../modals/preview';
-import {
-    type OnFileUploadSuccessCallbackData,
-    type PhotoLink,
-    isDecryptedLink,
-    useSharedWithMeActions,
-} from '../../../store';
+import { type OnFileUploadSuccessCallbackData, type PhotoLink, useSharedWithMeActions } from '../../../store';
 import { useLinkActions, useLinksActions } from '../../../store/_links';
 import { useMemoArrayNoMatterTheOrder } from '../../../store/_views/utils';
 import { sendErrorReport } from '../../../utils/errorHandling';
+import { dateToLegacyTimestamp } from '../../../utils/sdk/legacyTime';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../zustand/photos/layout.store';
-import { useCreateAlbum, useFavoritePhotoToggleFromLayout } from '../../PhotosActions/Albums';
+import { toggleFavorite, useCreateAlbum } from '../../PhotosActions/Albums';
 import { AddAlbumPhotosModal } from '../../PhotosModals/AddAlbumPhotosModal';
 import { CreateAlbumModal } from '../../PhotosModals/CreateAlbumModal';
 import { useDeleteAlbumModal } from '../../PhotosModals/DeleteAlbumModal';
@@ -45,6 +32,8 @@ import { useRemoveAlbumPhotosModal } from '../../PhotosModals/RemoveAlbumPhotosM
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { useAlbumPhotoUploadSDKStore } from '../../PhotosStore/useAlbumPhotoUploadSDK.store';
 import { usePhotosWithAlbumsView } from '../../PhotosStore/usePhotosWithAlbumView';
+import { usePhotosStore } from '../../usePhotos.store';
+import type { MappedPhotoItem } from '../../utils/mapPhotoItemToLegacy';
 import PhotosRecoveryBanner from '../components/PhotosRecoveryBanner/PhotosRecoveryBanner';
 import { usePhotosSelection } from '../hooks/usePhotosSelection';
 import { TitleArea } from '../toolbar/TitleArea';
@@ -58,7 +47,6 @@ export const PhotosLayout = () => {
     */
     const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
     const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
-    const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
     const { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
     const { pathname } = useLocation();
     const { createNotification } = useNotifications();
@@ -73,13 +61,13 @@ export const PhotosLayout = () => {
         linkId,
 
         photos,
-        photoLinkIdToIndexMap,
+        photoNodeUidToIndexMap,
 
         albums,
-        albumPhotosLinkIds,
+        albumPhotosNodeUids,
         albumPhotos,
-        albumPhotosLinkIdToIndexMap,
-        photoLinkIds,
+        albumPhotosNodeUidToIndexMap,
+        photoNodeUids,
 
         addAlbumPhotos,
         addAlbumPhoto,
@@ -93,7 +81,6 @@ export const PhotosLayout = () => {
         refreshAlbums,
         addNewAlbumPhotoToCache,
 
-        userAddressEmail,
         isAlbumsLoading,
         isPhotosLoading,
         isAlbumPhotosLoading,
@@ -102,12 +89,12 @@ export const PhotosLayout = () => {
         initializePhotosView,
     } = photosView;
 
-    const { currentPageType, previewLinkId, setPageType, setPreviewLinkId, setLayoutModals } = usePhotoLayoutStore(
+    const { currentPageType, previewNodeUid, setPageType, setPreviewNodeUid, setLayoutModals } = usePhotoLayoutStore(
         useShallow((state) => ({
             currentPageType: state.currentPageType,
-            previewLinkId: state.previewLinkId,
+            previewNodeUid: state.previewNodeUid,
             setPageType: state.setPageType,
-            setPreviewLinkId: state.setPreviewLinkId,
+            setPreviewNodeUid: state.setPreviewNodeUid,
             setLayoutModals: state.setLayoutModals,
         }))
     );
@@ -117,11 +104,16 @@ export const PhotosLayout = () => {
     const { selectedItems, clearSelection } = usePhotosSelection({
         photos,
         albumPhotos,
-        albumPhotosLinkIdToIndexMap,
-        photoLinkIdToIndexMap,
+        albumPhotosNodeUidToIndexMap,
+        photoNodeUidToIndexMap,
     });
 
     const cachedSelectedItems = useMemoArrayNoMatterTheOrder(selectedItems);
+
+    const cachedSelectedItemsWithLinkIds = cachedSelectedItems as (
+        | MappedPhotoItem
+        | (PhotoLink & { nodeUid: string })
+    )[];
 
     const createAlbum = useCreateAlbum();
     const { detailsModal, showDetailsModal } = useDetailsModal();
@@ -132,32 +124,21 @@ export const PhotosLayout = () => {
     const [removeAlbumPhotosModal, showRemoveAlbumPhotosModal] = useRemoveAlbumPhotosModal();
     const createAlbumModal = useModalStateObject();
     const [isAddModalShared, setIsAddModalShared] = useState<boolean>(false);
-    const favoritePhotoToggle = useFavoritePhotoToggleFromLayout(photosView);
 
     /*
         Refs, Memos & Constants
     */
-    const previewRef = useRef<HTMLDivElement>(null);
-
-    const previewIndex = useMemo(
-        () =>
-            currentPageType === AlbumsPageTypes.ALBUMSGALLERY
-                ? albumPhotosLinkIds.findIndex((item) => item === previewLinkId)
-                : photoLinkIds.findIndex((item) => item === previewLinkId),
-        [currentPageType, photoLinkIds, albumPhotosLinkIds, previewLinkId]
-    );
-
     const previewItem = useMemo(() => {
-        if (currentPageType === AlbumsPageTypes.ALBUMSGALLERY) {
-            return previewLinkId !== undefined &&
-                typeof albumPhotos[albumPhotosLinkIdToIndexMap[previewLinkId]] !== 'string'
-                ? (albumPhotos[albumPhotosLinkIdToIndexMap[previewLinkId]] as PhotoLink)
-                : undefined;
+        if (!previewNodeUid) {
+            return undefined;
         }
-        return previewLinkId !== undefined && typeof photos[photoLinkIdToIndexMap[previewLinkId]] !== 'string'
-            ? (photos[photoLinkIdToIndexMap[previewLinkId]] as PhotoLink)
-            : undefined;
-    }, [currentPageType, photos, albumPhotos, previewLinkId, albumPhotosLinkIdToIndexMap, photoLinkIdToIndexMap]);
+        if (currentPageType === AlbumsPageTypes.ALBUMSGALLERY) {
+            const item = albumPhotos[albumPhotosNodeUidToIndexMap[previewNodeUid]];
+            return typeof item !== 'string' ? (item as PhotoLink) : undefined;
+        }
+        const item = photos[photoNodeUidToIndexMap[previewNodeUid]];
+        return typeof item !== 'string' ? item : undefined;
+    }, [currentPageType, photos, albumPhotos, previewNodeUid, albumPhotosNodeUidToIndexMap, photoNodeUidToIndexMap]);
 
     const album = useMemo(() => {
         if (!albumLinkId) {
@@ -172,10 +153,13 @@ export const PhotosLayout = () => {
 
     const canRemoveSelectedPhotos = useMemo(() => {
         return Boolean(album?.permissions.isAdmin || album?.permissions.isEditor);
-    }, [album?.permissions.isAdmin, selectedItems, userAddressEmail]);
+    }, [album?.permissions.isAdmin, album?.permissions.isEditor]);
 
     const selectedCount = selectedItems.length;
-    const selectedItemsLinkIds = useMemo(() => cachedSelectedItems.map((item) => item.linkId), [cachedSelectedItems]);
+    const selectedItemsLinkIds = useMemo(
+        () => cachedSelectedItemsWithLinkIds.map((item) => item.linkId),
+        [cachedSelectedItemsWithLinkIds]
+    );
 
     const uploadLinkId = useMemo(() => {
         // If you own the root photo share, your uploads always goes to the root (photo stream) and then we add the photos to the album
@@ -194,26 +178,15 @@ export const PhotosLayout = () => {
         return isUploadDisabled || Boolean(album && album.permissions.isEditor === false);
     }, [isUploadDisabled, currentPageType, album]);
 
-    const photoCount =
-        currentPageType === AlbumsPageTypes.ALBUMSGALLERY && album ? album.photoCount : photoLinkIds.length;
     const hasPreview = !!previewItem && currentPageType !== AlbumsPageTypes.ALBUMS;
     const previewShareId = albumShareId || shareId;
     const isGalleryOrAdmin =
         currentPageType === AlbumsPageTypes.GALLERY ||
         (currentPageType === AlbumsPageTypes.ALBUMSGALLERY && album?.permissions.isOwner);
     const canChangeAlbumCoverInPreview = isGalleryOrAdmin;
-    const canChangeSharePhotoInPreview = isGalleryOrAdmin;
     /*
         Callbacks
     */
-    const setPreviewIndex = useCallback(
-        (index: number) =>
-            setPreviewLinkId(
-                currentPageType === AlbumsPageTypes.ALBUMSGALLERY ? albumPhotosLinkIds[index] : photoLinkIds[index]
-            ),
-        [setPreviewLinkId, currentPageType, photoLinkIds, albumPhotosLinkIds]
-    );
-
     const onSelectCover = useCallback(
         async (linkId: string) => {
             try {
@@ -249,7 +222,7 @@ export const PhotosLayout = () => {
             drive: getDriveForPhotos(),
             nodeUid: generateNodeUid(linkVolumeId, linkId),
         });
-    }, [previewShareId, albumLinkId, showDetailsModal, previewItem]);
+    }, [previewItem, album?.volumeId, volumeId, albumLinkId, previewShareId, showDetailsModal]);
 
     const onLeaveAlbum = useCallback(async () => {
         if (!albumSharingShareId) {
@@ -354,12 +327,12 @@ export const PhotosLayout = () => {
     }, [handleDeleteAlbum, showDeleteAlbumModal, albumName, navigateToAlbums]);
 
     const handleToolbarPreview = useCallback(() => {
-        const selectedLinkId = selectedItemsLinkIds[0];
-
-        if (selectedItemsLinkIds.length === 1 && selectedLinkId) {
-            setPreviewLinkId(selectedLinkId);
+        if (cachedSelectedItems.length !== 1) {
+            return;
         }
-    }, [selectedItemsLinkIds, setPreviewLinkId]);
+        const selectedItem = cachedSelectedItems[0];
+        setPreviewNodeUid(selectedItem.nodeUid);
+    }, [cachedSelectedItems, setPreviewNodeUid]);
 
     const onSelectCoverToolbar = useCallback(async () => {
         const selectedItemLinkId = selectedItemsLinkIds[0];
@@ -369,7 +342,8 @@ export const PhotosLayout = () => {
             return;
         }
         await onSelectCover(selectedItemLinkId);
-    }, [createNotification, onSelectCover, selectedItemsLinkIds]);
+        clearSelection();
+    }, [createNotification, onSelectCover, selectedItemsLinkIds, clearSelection]);
 
     const handleRemoveAlbumPhotos = useCallback(
         async (
@@ -419,20 +393,23 @@ export const PhotosLayout = () => {
             linkId,
             albumLinkId,
             volumeId,
+            album,
             shareId,
             removeAlbumPhotos,
-            createNotification,
             transferPhotoLinks,
+            copyLinksToVolume,
+            createNotification,
         ]
     );
 
     const onRemoveAlbumPhotos = useCallback(async () => {
+        const photoLinkIdSet = new Set(photoNodeUids.map((nodeUid) => splitNodeUid(nodeUid).nodeId));
         const { missingPhotosIds, selectedPhotosIds } = selectedItemsLinkIds.reduce<{
             selectedPhotosIds: string[];
             missingPhotosIds: string[];
         }>(
             (acc, linkId) => {
-                if (!photoLinkIds.includes(linkId)) {
+                if (!photoLinkIdSet.has(linkId)) {
                     acc.missingPhotosIds.push(linkId);
                 }
                 acc.selectedPhotosIds.push(linkId);
@@ -453,7 +430,7 @@ export const PhotosLayout = () => {
                     }),
             });
         }
-    }, [selectedItemsLinkIds, photoLinkIds, handleRemoveAlbumPhotos, showRemoveAlbumPhotosModal]);
+    }, [selectedItemsLinkIds, photoNodeUids, handleRemoveAlbumPhotos, showRemoveAlbumPhotosModal]);
 
     const onPhotoUploadedToAlbum = useCallback(
         async (album: DecryptedAlbum | undefined, file: OnFileUploadSuccessCallbackData) => {
@@ -491,9 +468,9 @@ export const PhotosLayout = () => {
     }, [addAlbumPhotosModal]);
 
     const openSharePhotoModal = useCallback(() => {
-        const link = selectedItems[0];
+        const item = selectedItems[0];
 
-        showSharingModal({ nodeUid: generateNodeUid(link.volumeId, link.linkId) });
+        showSharingModal({ nodeUid: item.nodeUid });
     }, [showSharingModal, selectedItems]);
 
     const onAddAlbumPhotos = useCallback(
@@ -587,7 +564,7 @@ export const PhotosLayout = () => {
 
         const errors = [];
         const abortSignal = new AbortController().signal;
-        for (const selectedItem of selectedItems) {
+        for (const selectedItem of cachedSelectedItemsWithLinkIds) {
             try {
                 await copyLinkToVolume(
                     abortSignal,
@@ -718,50 +695,60 @@ export const PhotosLayout = () => {
         albumLinkId,
         isOwner,
         createNotification,
-        // addAlbumPhotos,
-        // addNewAlbumPhotoToCache,
+        addAlbumPhotos,
+        addNewAlbumPhotoToCache,
     ]);
 
     useEffect(() => {
-        if (!previewItem || !isSDKPreviewEnabled) {
+        if (!previewItem || !volumeId) {
             return;
         }
+        const photoItem = usePhotosStore
+            .getState()
+            .getPhotoItem(generateNodeUid(previewItem.volumeId, previewItem.linkId));
 
-        const previewableLinkIds =
-            currentPageType === AlbumsPageTypes.ALBUMSGALLERY ? albumPhotosLinkIds : photoLinkIds;
-        const previewableNodeUids = previewableLinkIds.map((linkId) => generateNodeUid(previewItem.volumeId, linkId));
+        if (!photoItem) {
+            return;
+        }
+        const previewableNodeUids =
+            currentPageType === AlbumsPageTypes.ALBUMSGALLERY ? albumPhotosNodeUids : photoNodeUids;
 
         showPreviewModal({
             drive: getDriveForPhotos(),
-            nodeUid: generateNodeUid(previewItem.volumeId, previewItem.linkId),
-            previewableNodeUids: previewableNodeUids,
-            onNodeChange: (nodeUid: string) => setPreviewLinkId(splitNodeUid(nodeUid).nodeId),
-            onClose: () => setPreviewLinkId(undefined),
+            nodeUid: photoItem.nodeUid,
+            previewableNodeUids,
+            onNodeChange: (nodeUid: string) => setPreviewNodeUid(nodeUid),
+            onClose: () => setPreviewNodeUid(undefined),
             photos: {
-                date:
-                    previewItem.activeRevision?.photo?.captureTime ||
-                    (isDecryptedLink(previewItem) ? previewItem.createTime : undefined),
-                isFavorite: previewItem.photoProperties?.isFavorite,
+                date: dateToLegacyTimestamp(photoItem.captureTime),
+                isFavorite: photoItem.tags.includes(PhotoTag.Favorites),
                 onFavorite: () => {
-                    if (previewItem.photoProperties) {
-                        void favoritePhotoToggle(
-                            previewItem.linkId,
-                            previewItem.rootShareId,
-                            previewItem.photoProperties.isFavorite
-                        );
-                    }
+                    void toggleFavorite(photoItem.nodeUid);
                 },
+                // TODO: Update that once we migrate album to sdk
                 onSelectCover:
                     canChangeAlbumCoverInPreview &&
                     currentPageType === AlbumsPageTypes.ALBUMSGALLERY &&
-                    album?.cover?.linkId !== previewItem.linkId
+                    album?.cover?.linkId !== splitNodeUid(photoItem.nodeUid).nodeId
                         ? () => {
                               void onSelectCoverPreview();
                           }
                         : undefined,
             },
         });
-    }, [isSDKPreviewEnabled, hasPreview, previewItem, albumPhotosLinkIds, photoLinkIds]);
+    }, [
+        hasPreview,
+        previewItem,
+        albumPhotosNodeUids,
+        photoNodeUids,
+        volumeId,
+        currentPageType,
+        showPreviewModal,
+        canChangeAlbumCoverInPreview,
+        album?.cover?.linkId,
+        setPreviewNodeUid,
+        onSelectCoverPreview,
+    ]);
 
     if (!previewShareId || !uploadLinkId || !currentPageType || !shareId || !linkId || !volumeId) {
         return <Loader />;
@@ -787,61 +774,6 @@ export const PhotosLayout = () => {
             {/* TODO: Remove this hack when albums cache is fixed and refactored */}
             <PhotosRecoveryBanner onSucceed={refreshAlbums} />
 
-            {hasPreview && !isSDKPreviewEnabled && (
-                <PortalPreview
-                    ref={previewRef}
-                    shareId={previewShareId}
-                    linkId={previewItem.linkId}
-                    revisionId={isDecryptedLink(previewItem) ? previewItem.activeRevision?.id : undefined}
-                    key="portal-preview-photos"
-                    open={hasPreview}
-                    date={
-                        previewItem.activeRevision?.photo?.captureTime ||
-                        (isDecryptedLink(previewItem) ? previewItem.createTime : undefined)
-                    }
-                    onShare={
-                        (isDecryptedLink(previewItem) && previewItem?.trashed) || !canChangeSharePhotoInPreview
-                            ? undefined
-                            : () =>
-                                  showSharingModal({
-                                      nodeUid: generateNodeUid(previewItem.volumeId, previewItem.linkId),
-                                      drive: getDriveForPhotos(),
-                                  })
-                    }
-                    onDetails={onShowDetails}
-                    onSelectCover={
-                        canChangeAlbumCoverInPreview &&
-                        !driveAlbumsDisabled &&
-                        currentPageType === AlbumsPageTypes.ALBUMSGALLERY &&
-                        album?.cover?.linkId !== previewItem.linkId
-                            ? onSelectCoverPreview
-                            : undefined
-                    }
-                    onFavorite={() => {
-                        if (previewItem.photoProperties) {
-                            void favoritePhotoToggle(
-                                previewItem.linkId,
-                                previewShareId,
-                                previewItem.photoProperties.isFavorite
-                            );
-                        }
-                    }}
-                    isFavorite={previewItem.photoProperties?.isFavorite}
-                    navigationControls={
-                        <NavigationControl
-                            current={previewIndex + 1}
-                            total={photoCount}
-                            rootRef={previewRef}
-                            onPrev={() => setPreviewIndex(previewIndex - 1)}
-                            onNext={() => setPreviewIndex(previewIndex + 1)}
-                        />
-                    }
-                    onClose={() => setPreviewLinkId(undefined)}
-                    onExit={() => setPreviewLinkId(undefined)}
-                    isForPhotos
-                />
-            )}
-
             <ToolbarRow
                 className={clsx('m-2 rounded toolbar-row--no-responsive', selectedCount > 0 && 'bg-weak')}
                 withBorder={false}
@@ -853,8 +785,8 @@ export const PhotosLayout = () => {
                         albums={albums}
                         photos={photos}
                         albumPhotos={albumPhotos}
-                        albumPhotosLinkIdToIndexMap={albumPhotosLinkIdToIndexMap}
-                        photoLinkIdToIndexMap={photoLinkIdToIndexMap}
+                        albumPhotosNodeUidToIndexMap={albumPhotosNodeUidToIndexMap}
+                        photoNodeUidToIndexMap={photoNodeUidToIndexMap}
                     />
                 }
                 toolbar={
@@ -871,7 +803,7 @@ export const PhotosLayout = () => {
                         album={album}
                         albumPhotos={albumPhotos}
                         photos={photos}
-                        selectedItems={selectedItems}
+                        selectedItems={cachedSelectedItemsWithLinkIds}
                         createAlbumModal={createAlbumModal}
                         requestDownload={requestDownload}
                         onAddAlbumPhotos={onAddAlbumPhotosToolbar}

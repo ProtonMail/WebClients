@@ -19,18 +19,18 @@ export const TitleArea = ({
     isPhotosLoading,
     albums,
     photos,
-    photoLinkIdToIndexMap,
+    photoNodeUidToIndexMap,
     albumPhotos,
-    albumPhotosLinkIdToIndexMap,
+    albumPhotosNodeUidToIndexMap,
 }: Pick<
     PhotosLayoutOutletContext,
     | 'isAlbumsLoading'
     | 'isPhotosLoading'
     | 'albums'
     | 'photos'
-    | 'photoLinkIdToIndexMap'
+    | 'photoNodeUidToIndexMap'
     | 'albumPhotos'
-    | 'albumPhotosLinkIdToIndexMap'
+    | 'albumPhotosNodeUidToIndexMap'
 >) => {
     const { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
     const { currentPageType } = usePhotoLayoutStore(
@@ -42,9 +42,9 @@ export const TitleArea = ({
 
     const { selectedItems, clearSelection } = usePhotosSelection({
         photos,
-        photoLinkIdToIndexMap,
+        photoNodeUidToIndexMap,
         albumPhotos,
-        albumPhotosLinkIdToIndexMap,
+        albumPhotosNodeUidToIndexMap,
     });
 
     const album = useMemo(() => {

@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import { fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
@@ -5,13 +7,17 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { UserAvatar } from '@proton/atoms/UserAvatar/UserAvatar';
+import { generateNodeUid, getDriveForPhotos } from '@proton/drive';
+import { loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import folderImages from '@proton/styles/assets/img/drive/folder-images.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
+import { usePhotosStore } from '../../usePhotos.store';
 import { getContactNameAndEmail } from '../getContactNameAndEmail';
 import { PhotosAddAlbumPhotosButton } from '../toolbar/PhotosAddAlbumPhotosButton';
 import { AlbumMembers } from './AlbumMembers';
@@ -34,6 +40,49 @@ export const AlbumCoverHeader = ({
     onAddAlbumPhotos,
 }: AlbumCoverHeaderProps) => {
     const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
+    const coverNodeUid =
+        album.albumProperties?.coverLinkId && generateNodeUid(album.volumeId, album.albumProperties.coverLinkId);
+    const [coverPhoto, setCoverPhoto] = useState<{ activeRevisionUid: string; isTrashed: boolean } | undefined>();
+
+    const thumbnail = useThumbnail(coverPhoto?.activeRevisionUid);
+    const thumbnailUrl = coverPhoto?.isTrashed ? undefined : thumbnail?.hdUrl || thumbnail?.sdUrl;
+
+    useEffect(() => {
+        if (!coverNodeUid) {
+            return;
+        }
+        const cover = usePhotosStore.getState().getPhotoItem(coverNodeUid);
+        if (cover?.additionalInfo?.activeRevisionUid) {
+            // In case the cover is in the store that mean it's not trashed
+            setCoverPhoto({ activeRevisionUid: cover.additionalInfo.activeRevisionUid, isTrashed: false });
+        } else {
+            // We do not want to load the cover in the store to prevent having it in timeline automatically
+            void getDriveForPhotos()
+                .getNode(coverNodeUid)
+                .then((coverNode) => {
+                    const { node } = getNodeEntity(coverNode);
+                    if (node.activeRevision) {
+                        setCoverPhoto({
+                            activeRevisionUid: node.activeRevision.uid,
+                            isTrashed: Boolean(node.trashTime),
+                        });
+                    }
+                });
+        }
+    }, [coverNodeUid]);
+
+    useEffect(() => {
+        if (!coverNodeUid || !coverPhoto?.activeRevisionUid) {
+            return;
+        }
+
+        loadThumbnail(getDriveForPhotos(), {
+            nodeUid: coverNodeUid,
+            revisionUid: coverPhoto?.activeRevisionUid,
+            thumbnailTypes: ['sd', 'hd'],
+        });
+    }, [coverNodeUid, coverPhoto?.activeRevisionUid]);
+
     const formattedDate = new Intl.DateTimeFormat(dateLocale.code, {
         dateStyle: 'long',
     }).format(fromUnixTime(album.createTime));
@@ -51,11 +100,10 @@ export const AlbumCoverHeader = ({
             className="flex shrink-0 flex-row gap-4 md:flex-nowrap items-center"
             data-testid="album-gallery-cover-section"
         >
-            {album.cachedThumbnailUrl || album.cover?.cachedThumbnailUrl ? (
+            {thumbnailUrl ? (
                 <img
                     loading="eager"
-                    key={album.cachedThumbnailUrl || album.cover?.cachedThumbnailUrl}
-                    src={album.cachedThumbnailUrl || album.cover?.cachedThumbnailUrl}
+                    src={thumbnailUrl}
                     alt=""
                     className="bg-weak rounded w-full md:w-1/3 flex h-custom object-cover lg:max-w-custom"
                     style={{
@@ -64,6 +112,7 @@ export const AlbumCoverHeader = ({
                         // min between 512px and 1/4 of viewport width: okay for global and text zooms, also for super large viewports
                     }}
                     data-testid="cover-image"
+                    data-node-uid={coverNodeUid}
                 />
             ) : (
                 <span

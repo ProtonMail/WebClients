@@ -5,19 +5,22 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, useAppTitle } from '@proton/components';
+import { getDriveForPhotos } from '@proton/drive';
+import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useShiftKey } from '../../hooks/util/useShiftKey';
-import { useThumbnailsDownload, useUserSettings } from '../../store';
+import { useUserSettings } from '../../store';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../zustand/photos/layout.store';
-import { useFavoritePhotoToggle } from '../PhotosActions/Albums';
+import { toggleFavorite } from '../PhotosActions/Albums';
 import { EmptyPhotos } from './EmptyPhotos';
 import { EmptyTagView } from './EmptyTagView';
 import { PhotosGrid } from './PhotosGrid';
 import { PhotosTags } from './components/Tags';
 import { usePhotosSelection } from './hooks/usePhotosSelection';
 import type { PhotosLayoutOutletContext } from './layout/PhotosLayout';
+import { enqueueAdditionalInfo } from './loaders/loadAdditionalInfo';
 
 export const PhotosWithAlbumsView = () => {
     useAppTitle(c('Title').t`Photos`);
@@ -31,56 +34,43 @@ export const PhotosWithAlbumsView = () => {
         linkId,
         photos,
         isPhotosLoading,
-        loadPhotoLink,
 
         selectedTags,
         handleSelectTag,
         isPhotosEmpty,
-        albumPhotosLinkIdToIndexMap,
-        photoLinkIdToIndexMap,
+        albumPhotosNodeUidToIndexMap,
+        photoNodeUidToIndexMap,
     } = useOutletContext<PhotosLayoutOutletContext>();
 
-    const favoritePhotoToggle = useFavoritePhotoToggle();
     const { photoTags } = useUserSettings();
     const isShiftPressed = useShiftKey();
-    const { setPreviewLinkId, currentPageType } = usePhotoLayoutStore(
+    const { setPreviewNodeUid, currentPageType } = usePhotoLayoutStore(
         useShallow((state) => ({
             currentPageType: state.currentPageType,
-            setPreviewLinkId: state.setPreviewLinkId,
+            setPreviewNodeUid: state.setPreviewNodeUid,
         }))
     );
     const { selectedItems, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection({
         photos,
         albumPhotos,
-        albumPhotosLinkIdToIndexMap,
-        photoLinkIdToIndexMap,
+        albumPhotosNodeUidToIndexMap,
+        photoNodeUidToIndexMap,
     });
 
-    const thumbnails = useThumbnailsDownload();
-    const handleItemRender = useCallback(
-        (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
-            if (!shareId) {
-                return;
-            }
-            loadPhotoLink(shareId, itemLinkId, domRef);
-        },
-        [shareId, loadPhotoLink]
-    );
+    const handleItemRender = useCallback((nodeUid: string, domRef: React.MutableRefObject<unknown>) => {
+        enqueueAdditionalInfo(nodeUid, () => Boolean(domRef.current));
+    }, []);
 
     const handleItemRenderLoadedLink = useCallback(
-        (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
-            if (shareId) {
-                thumbnails.addToDownloadQueue(shareId, itemLinkId, undefined, domRef);
-            }
+        (nodeUid: string, activeRevisionUid: string, domRef: React.MutableRefObject<unknown>) => {
+            loadThumbnail(getDriveForPhotos(), {
+                nodeUid: nodeUid,
+                revisionUid: activeRevisionUid,
+                shouldLoad: () => Boolean(domRef.current),
+                thumbnailTypes: ['sd', 'hd'],
+            });
         },
-        [shareId, thumbnails]
-    );
-
-    const addOrRemovePhotoToFavorite = useCallback(
-        async (linkId: string, shareId: string, isFavorite: boolean) => {
-            void favoritePhotoToggle(linkId, shareId, isFavorite);
-        },
-        [favoritePhotoToggle]
+        []
     );
 
     // We want to show the view in case they are more page to load, we can start to show what we already have
@@ -111,14 +101,13 @@ export const PhotosWithAlbumsView = () => {
                     onItemRender={handleItemRender}
                     onItemRenderLoadedLink={handleItemRenderLoadedLink}
                     isLoading={isPhotosLoading}
-                    onItemClick={setPreviewLinkId}
-                    selectedItems={selectedItems}
+                    onItemClick={setPreviewNodeUid}
                     onSelectChange={(i, isSelected) =>
                         handleSelection(i, { isSelected, isMultiSelect: isShiftPressed() })
                     }
                     isGroupSelected={isGroupSelected}
                     isItemSelected={isItemSelected}
-                    onFavorite={!driveAlbumsDisabled ? addOrRemovePhotoToFavorite : undefined}
+                    onFavorite={!driveAlbumsDisabled ? toggleFavorite : undefined}
                     isAddAlbumPhotosView={isAddAlbumPhotosView}
                     rootLinkId={linkId}
                     hasSelection={selectedItems.length > 0 || currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS}

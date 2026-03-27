@@ -52,6 +52,17 @@ jest.mock('../../_shares/useShare', () => {
     return useShare;
 });
 
+jest.mock('../../_bookmarks/useBookmarks', () => {
+    const useBookmarks = () => {
+        return {
+            listBookmarks: jest.fn().mockResolvedValue([]),
+            addBookmark: jest.fn(),
+            deleteBookmark: jest.fn(),
+        };
+    };
+    return { useBookmarks };
+});
+
 jest.mock('../../_shares/useDefaultShare', () => {
     const useDefaultShare = () => {
         return {
@@ -59,7 +70,7 @@ jest.mock('../../_shares/useDefaultShare', () => {
             getDefaultPhotosShare: jest.fn(),
         };
     };
-    return useDefaultShare;
+    return { useDefaultShare };
 });
 
 const mockDecrypt = jest.fn();

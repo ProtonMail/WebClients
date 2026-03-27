@@ -1,16 +1,19 @@
 import { create } from 'zustand';
 
-import { type PhotoGroup, type PhotoLink, isPhotoGroup } from '../../store';
+import type { PhotoGroup } from '../../photos/usePhotos.store';
+import { isPhotoGroup } from '../../photos/utils/isPhotoGroup';
 
 export interface HandleSelectionArgs {
     isSelected: boolean;
     isMultiSelect: boolean;
 }
 
-type SelectionItem = { linkId: string };
+type SelectionItem = { nodeUid: string };
 type SelectionGroup = PhotoGroup;
 
-export const getGroupLinkIds = <T extends SelectionItem>(data: (T | SelectionGroup)[], groupIndex: number) => {
+const getItemId = (item: SelectionItem): string => item.nodeUid;
+
+export const getGroupNodeUids = <T extends SelectionItem>(data: (T | SelectionGroup)[], groupIndex: number) => {
     if (!isPhotoGroup(data[groupIndex])) {
         return [];
     }
@@ -24,7 +27,7 @@ export const getGroupLinkIds = <T extends SelectionItem>(data: (T | SelectionGro
             break;
         }
 
-        items.push(current.linkId);
+        items.push(getItemId(current));
     }
 
     return items;
@@ -34,27 +37,27 @@ interface PhotoSelectionState {
     selection: Record<string, boolean>;
     lastIndex: number | undefined;
 
-    setSelected: (isSelected: boolean, ...linkIds: string[]) => void;
+    setSelected: (isSelected: boolean, ...nodeUids: string[]) => void;
     clearSelection: () => void;
     handleSelection: (data: any[], map: Record<string, number>, index: number, args: HandleSelectionArgs) => void;
     isGroupSelected: (data: any[], groupIndex: number) => boolean | 'some';
-    isItemSelected: (linkId: string) => boolean;
+    isItemSelected: (nodeUid: string) => boolean;
 
-    getSelectedItems: (data: any[], map: Record<string, number>) => PhotoLink[];
+    getSelectedItems: <T extends { nodeUid: string }>(data: any[], map: Record<string, number>) => T[];
 }
 
 export const usePhotoSelectionStore = create<PhotoSelectionState>((set, get) => ({
     selection: {},
     lastIndex: undefined,
 
-    setSelected: (isSelected, ...linkIds) => {
+    setSelected: (isSelected, ...nodeUids) => {
         set((state) => {
             const newSelection = { ...state.selection };
-            linkIds.forEach((linkId) => {
+            nodeUids.forEach((nodeUid) => {
                 if (isSelected) {
-                    newSelection[linkId] = true;
+                    newSelection[nodeUid] = true;
                 } else {
-                    delete newSelection[linkId];
+                    delete newSelection[nodeUid];
                 }
             });
             return { selection: newSelection };
@@ -70,33 +73,34 @@ export const usePhotoSelectionStore = create<PhotoSelectionState>((set, get) => 
 
         const item = data[index];
         if (isPhotoGroup(item)) {
-            const groupLinkIds = getGroupLinkIds(data, index);
-            setSelected(isSelected, ...groupLinkIds);
-            const lastIndexLinkId = groupLinkIds.shift();
-            set({ lastIndex: lastIndexLinkId ? map[lastIndexLinkId] : undefined });
+            const groupNodeUids = getGroupNodeUids(data, index);
+            setSelected(isSelected, ...groupNodeUids);
+            const lastIndexNodeUid = groupNodeUids.shift();
+            set({ lastIndex: lastIndexNodeUid ? map[lastIndexNodeUid] : undefined });
         } else {
             if (isMultiSelect && lastIndex !== undefined) {
                 const startIndex = lastIndex < index ? lastIndex : index;
                 const endIndex = lastIndex < index ? index : lastIndex;
-                const items = (data.slice(startIndex, endIndex + 1).filter((item) => !isPhotoGroup(item)) as any[]).map(
-                    (item) => item.linkId
-                );
+                const items = data
+                    .slice(startIndex, endIndex + 1)
+                    .filter((item) => !isPhotoGroup(item))
+                    .map((item) => getItemId(item));
                 set({ selection: {} });
                 setSelected(true, ...items);
                 return;
             }
             set({ lastIndex: index });
-            setSelected(isSelected, item.linkId);
+            setSelected(isSelected, getItemId(item));
         }
     },
 
     isGroupSelected: (data, groupIndex) => {
         const { selection } = get();
-        const linkIds = getGroupLinkIds(data, groupIndex);
+        const nodeUids = getGroupNodeUids(data, groupIndex);
         let selectedCount = 0;
 
-        for (const linkId of linkIds) {
-            if (selection[linkId]) {
+        for (const nodeUid of nodeUids) {
+            if (selection[nodeUid]) {
                 selectedCount++;
             } else if (selectedCount > 0) {
                 break;
@@ -106,21 +110,22 @@ export const usePhotoSelectionStore = create<PhotoSelectionState>((set, get) => 
         if (selectedCount === 0) {
             return false;
         }
-        return selectedCount === linkIds.length || 'some';
+        return selectedCount === nodeUids.length || 'some';
     },
 
-    isItemSelected: (linkId) => {
-        return !!get().selection[linkId];
+    isItemSelected: (nodeUid) => {
+        return !!get().selection[nodeUid];
     },
 
     getSelectedItems: (data, map) => {
         const { selection } = get();
-        return Object.keys(selection).reduce<PhotoLink[]>((acc, linkId) => {
-            const item = data[map[linkId]];
+        const result = [];
+        for (const nodeUid of Object.keys(selection)) {
+            const item = data[map[nodeUid]];
             if (item && !isPhotoGroup(item)) {
-                acc.push(item);
+                result.push(item);
             }
-            return acc;
-        }, []);
+        }
+        return result;
     },
 }));
