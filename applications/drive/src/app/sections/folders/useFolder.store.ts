@@ -3,8 +3,12 @@ import { devtools } from 'zustand/middleware';
 
 import type { NodeType } from '@proton/drive/index';
 import { MemberRole } from '@proton/drive/index';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
+import type { SortConfig } from '../../modules/sorting';
+import { SortField } from '../../modules/sorting';
 import type { EnrichedError } from '../../utils/errorHandling/EnrichedError';
+import { sortFolderItems } from './folder.sorting';
 
 export type FolderViewItem = {
     uid: string;
@@ -18,10 +22,11 @@ export type FolderViewItem = {
     mimeType: string;
     isFile: boolean;
     isShared?: boolean;
+    isSharedPublicly?: boolean;
     hasThumbnail: boolean;
     size: number;
     metaDataModifyTime: number;
-    fileModifyTime: number;
+    fileModifyTime: Date;
     trashed: number | null;
     rootUid?: string;
     parentUid: string | undefined;
@@ -55,7 +60,9 @@ type FolderState = {
     isLoading: boolean;
     hasEverLoaded: boolean;
     items: Map<string, FolderViewItem>;
-    itemUids: Set<string>;
+    sortedItemUids: string[];
+    sortField: SortField;
+    sortDirection: SORT_DIRECTION;
     folder?: FolderViewData;
     error: EnrichedError | null;
     role: MemberRole;
@@ -72,9 +79,8 @@ type FolderActions = {
     setItems: (items: FolderViewItem[]) => void;
     updateItem: (uid: string, item: Partial<FolderViewItem>) => void;
     removeItem: (uid: string) => void;
+    setSorting: (params: { sortField: SortField; direction: SORT_DIRECTION; sortConfig: SortConfig }) => void;
     reset: () => void;
-    getFolderItems: () => FolderViewItem[];
-    getItemUids: () => string[];
     setHasEverLoaded: () => void;
     checkAndSetHasEverLoaded: () => void;
 };
@@ -85,7 +91,9 @@ const initialState: FolderState = {
     isLoading: false,
     hasEverLoaded: false,
     items: new Map(),
-    itemUids: new Set(),
+    sortedItemUids: [],
+    sortField: SortField.modificationTime,
+    sortDirection: SORT_DIRECTION.DESC,
     folder: undefined,
     error: null,
     role: MemberRole.Viewer,
@@ -104,6 +112,10 @@ const initialState: FolderState = {
     },
 };
 
+function resort(state: FolderState): string[] {
+    return sortFolderItems(Array.from(state.items.values()), state.sortField, state.sortDirection);
+}
+
 export const useFolderStore = create<FolderStore>()(
     devtools((set, get) => ({
         ...initialState,
@@ -115,51 +127,37 @@ export const useFolderStore = create<FolderStore>()(
             set((state) => {
                 const updatedItems = new Map(state.items);
                 updatedItems.set(item.uid, item);
-
-                if (!state.itemUids.has(item.uid)) {
-                    const newUids = new Set(state.itemUids);
-                    newUids.add(item.uid);
-                    return {
-                        items: updatedItems,
-                        itemUids: newUids,
-                    };
-                }
-
+                const newState = { ...state, items: updatedItems };
                 return {
                     items: updatedItems,
+                    sortedItemUids: resort(newState),
                 };
             }),
         setItems: (items: FolderViewItem[]) =>
             set((state) => {
                 const updatedItems = new Map(state.items);
-                const newUids = new Set(state.itemUids);
-
                 items.forEach((item) => {
                     updatedItems.set(item.uid, item);
-                    newUids.add(item.uid);
                 });
-
+                const newState = { ...state, items: updatedItems };
                 return {
                     items: updatedItems,
-                    itemUids: newUids,
+                    sortedItemUids: resort(newState),
                 };
             }),
         updateItem: (uid: string, item: Partial<FolderViewItem>) =>
             set((state) => {
-                const updatedItems = new Map(state.items);
                 const existingItem = state.items.get(uid);
-                if (existingItem) {
-                    updatedItems.set(uid, {
-                        ...existingItem,
-                        ...item,
-                    });
-
-                    return {
-                        items: updatedItems,
-                    };
+                if (!existingItem) {
+                    return {};
                 }
-
-                return {};
+                const updatedItems = new Map(state.items);
+                updatedItems.set(uid, { ...existingItem, ...item });
+                const newState = { ...state, items: updatedItems };
+                return {
+                    items: updatedItems,
+                    sortedItemUids: resort(newState),
+                };
             }),
         removeItem: (uid: string) =>
             set((state) => {
@@ -168,16 +166,17 @@ export const useFolderStore = create<FolderStore>()(
                 }
                 const updatedItems = new Map(state.items);
                 updatedItems.delete(uid);
-                const newUids = new Set(state.itemUids);
-                newUids.delete(uid);
-
                 return {
                     items: updatedItems,
-                    itemUids: newUids,
+                    sortedItemUids: state.sortedItemUids.filter((id) => id !== uid),
                 };
             }),
-        getFolderItems: () => Array.from(get().items.values()),
-        getItemUids: () => Array.from(get().itemUids),
+        setSorting: ({ sortField, direction }) => {
+            const state = get();
+            const allItems = Array.from(state.items.values());
+            const sortedItemUids = sortFolderItems(allItems, sortField, direction);
+            set({ sortField, sortDirection: direction, sortedItemUids });
+        },
         setPermissions: (permissions) => set({ permissions }),
         setFolder: (folder) => set({ folder }),
         setError: (error) => set({ error }),

@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import type { FolderButtonProps } from './types';
+import type { ActionButtonProps } from '../../buttons/types';
 
-export const ShareLinkButton = ({ onClick, type, close }: FolderButtonProps) => {
+export const ShareLinkButton = ({ onClick, type, close }: ActionButtonProps) => {
     const title = c('Action').t`Share`;
     const icon = 'user-plus' as const;
     if (type === 'toolbar') {

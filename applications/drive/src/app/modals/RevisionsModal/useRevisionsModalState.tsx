@@ -118,8 +118,8 @@ export const useRevisionsModalState = ({
         return dm.downloadRevision(nodeUid, revision.uid);
     };
 
-    const openRevisionDetails = (_revision: Revision) => {
-        showDetailsModal({ nodeUid });
+    const openRevisionDetails = (rev: Revision) => {
+        showDetailsModal({ nodeUid, revision: rev });
     };
 
     const handleRevisionDelete = (revision: Revision) => {

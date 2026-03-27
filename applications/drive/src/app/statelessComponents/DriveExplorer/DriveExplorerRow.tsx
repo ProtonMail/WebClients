@@ -158,7 +158,7 @@ export const DriveExplorerRow = ({
                         return <DriveExplorerCell key={cell.id} itemId={itemId} cell={cell} />;
                     })}
                 {contextMenuControls && (
-                    <TableCell className="m-0 flex items-center relative">
+                    <TableCell className="m-0 flex items-center relative" data-testid="column-options">
                         <ContextMenuCellWithControls
                             uid={itemId}
                             isSelected={isSelected}

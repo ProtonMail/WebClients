@@ -2,31 +2,28 @@ import { getDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { logging } from '../../modules/logging';
-import type { LinkShareUrl } from '../../store';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
-import { mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
+import { mapNodeToFolderViewItem } from './mapNodeToFolderViewItem';
 import type { FolderStore, FolderViewData } from './useFolder.store';
 import { useFolderStore } from './useFolder.store';
 
 export const folderLogger = logging.getLogger('folder');
 
-const getLegacyItemFromUid = async (uid: string, folder: FolderViewData) => {
-    let legacyItem;
-    let shareUrl: LinkShareUrl | undefined;
+const getFolderViewItemFromUid = async (uid: string, folder: FolderViewData) => {
     try {
         const drive = getDrive();
         const maybeNode = await drive.getNode(uid);
-        legacyItem = await mapNodeToLegacyItem(maybeNode, folder.shareId);
+        return await mapNodeToFolderViewItem(maybeNode, folder.shareId, drive);
     } catch (error) {
         handleSdkError(error, { showNotification: false, fallbackMessage: 'Unhandled Error', extra: { uid } });
     }
-    return legacyItem ? { ...legacyItem, shareUrl } : undefined;
+    return undefined;
 };
 
 const addFolderItemToStore = async (uid: string, folder: FolderViewData, folderStore: FolderStore) => {
-    const legacyItem = await getLegacyItemFromUid(uid, folder);
-    if (legacyItem) {
-        folderStore.setItem(legacyItem);
+    const item = await getFolderViewItemFromUid(uid, folder);
+    if (item) {
+        folderStore.setItem(item);
     }
 };
 
@@ -37,8 +34,6 @@ export const subscribeToFolderEvents = () => {
         const store = useFolderStore.getState();
         const { folder } = store;
 
-        // TODO: delete this condition and any requirement to have the full legacy folder
-        // once the FileBrowser is migrated to the new version not needing LegacyItems
         if (!folder) {
             folderLogger.warn(`Event received before folder was loaded ${JSON.stringify(event)}`);
             return;

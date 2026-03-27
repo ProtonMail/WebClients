@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import type { FolderButtonProps } from './types';
+import type { ActionButtonProps } from '../../buttons/types';
 
-export const UploadFileButton = ({ type, close, onClick }: FolderButtonProps) => {
+export const UploadFileButton = ({ type, close, onClick }: ActionButtonProps) => {
     const title = c('Action').t`Upload file`;
     const icon = 'file-arrow-in-up' as const;
 

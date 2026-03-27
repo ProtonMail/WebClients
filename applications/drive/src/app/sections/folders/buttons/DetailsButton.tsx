@@ -4,14 +4,14 @@ import { Icon, ToolbarButton } from '@proton/components';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import { noSelection } from '../../../components/sections/ToolbarButtons/utils';
-import type { FolderButtonProps } from './types';
+import type { ActionButtonProps } from '../../buttons/types';
 
 type Item = {
     uid: string;
     name: string;
 };
 
-type Props = FolderButtonProps & {
+type Props = ActionButtonProps & {
     selectedItems: Item[];
 };
 
