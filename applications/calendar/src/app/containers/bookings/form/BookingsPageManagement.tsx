@@ -50,7 +50,6 @@ const getBookingBufferTimeOptions = () => {
 
 export const Form = () => {
     const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
-    const isNoticeModeEnabled = useFlag('CalendarBookingsNoticeMode');
     const [allowedProducts] = useAllowedProducts();
 
     const canUseMeetLocation = isMeetVideoConferenceEnabled && allowedProducts.has(Product.Meet);
@@ -123,28 +122,26 @@ export const Form = () => {
                 <FormRangeList />
             </FormIconRow>
 
-            {isNoticeModeEnabled && (
-                <FormIconRow icon={<IcCalendarLock />} title={c('Info').t`How far in advance can someone book?`}>
-                    <Checkbox
-                        className="gap-0 mb-4 text-sm items-center"
-                        checked={!!formData.minimumNoticeMode}
-                        onChange={({ target }) => handleToggleBufferTime(target.checked)}
-                    >
-                        <span className="mt-0.5 ml-2">{c('Label').t`Add notice period`}</span>
-                    </Checkbox>
-                    {!!formData.minimumNoticeMode && (
-                        <div className="flex flex-column flex-nowrap gap-3 ml-8 pl-1">
-                            <RadioGroup
-                                name="selected-buffer-time"
-                                className="text-sm inline-flex items-center flex-nowrap"
-                                onChange={handleSelectBufferTime}
-                                value={formData.minimumNoticeMode}
-                                options={getBookingBufferTimeOptions()}
-                            />
-                        </div>
-                    )}
-                </FormIconRow>
-            )}
+            <FormIconRow icon={<IcCalendarLock />} title={c('Info').t`How far in advance can someone book?`}>
+                <Checkbox
+                    className="gap-0 mb-4 text-sm items-center"
+                    checked={!!formData.minimumNoticeMode}
+                    onChange={({ target }) => handleToggleBufferTime(target.checked)}
+                >
+                    <span className="mt-0.5 ml-2">{c('Label').t`Add notice period`}</span>
+                </Checkbox>
+                {!!formData.minimumNoticeMode && (
+                    <div className="flex flex-column flex-nowrap gap-3 ml-8 pl-1">
+                        <RadioGroup
+                            name="selected-buffer-time"
+                            className="text-sm inline-flex items-center flex-nowrap"
+                            onChange={handleSelectBufferTime}
+                            value={formData.minimumNoticeMode}
+                            options={getBookingBufferTimeOptions()}
+                        />
+                    </div>
+                )}
+            </FormIconRow>
 
             <FormIconRow icon={<IcMapPin />} title={c('Info').t`Where will the appointment take place?`}>
                 {locationOptions.length > 1 && (
