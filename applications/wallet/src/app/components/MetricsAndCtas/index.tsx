@@ -11,7 +11,8 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import btcDarkSvg from '@proton/styles/assets/img/illustrations/btc-dark.svg';
 import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
 import clsx from '@proton/utils/clsx';
-import { BITCOIN, DEFAULT_FIAT_CURRENCY, type IWasmApiWalletData, WalletThemeOption } from '@proton/wallet';
+import { type IWasmApiWalletData, WalletThemeOption } from '@proton/wallet';
+import { BITCOIN, DEFAULT_FIAT_CURRENCY } from '@proton/wallet/constants/bitcoin';
 import { usePriceGraphData, useWalletAccountExchangeRate } from '@proton/wallet/store/hooks';
 
 import { Button, CoreButton } from '../../atoms/Button';

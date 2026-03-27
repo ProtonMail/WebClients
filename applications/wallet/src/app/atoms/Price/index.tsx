@@ -1,13 +1,14 @@
 import type { WasmApiExchangeRate, WasmBitcoinUnit, WasmFiatCurrencySymbol } from '@proton/andromeda';
 import type { Props as PriceOwnProps } from '@proton/components/components/price/Price';
 import CorePrice from '@proton/components/components/price/Price';
-import '@proton/components/components/price/Price.scss';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
-import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet';
+import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet/constants/bitcoin';
 
 import { MaybeHiddenAmount } from '../../atoms/MaybeHiddenAmount';
 import { convertAmount, convertAmountStr, isExchangeRateFromBitcoinUnit } from '../../utils';
+
+import '@proton/components/components/price/Price.scss';
 
 type ClassNamesProps = {
     [group in string]?: string;

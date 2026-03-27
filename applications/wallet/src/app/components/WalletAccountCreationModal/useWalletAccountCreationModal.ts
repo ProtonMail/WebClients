@@ -8,12 +8,8 @@ import { WasmDerivationPath, WasmScriptType } from '@proton/andromeda';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import {
-    DEFAULT_INDEX,
-    decryptWalletAccount,
-    encryptWalletDataWithWalletKey,
-    getDefaultWalletAccountName,
-} from '@proton/wallet';
+import { decryptWalletAccount, encryptWalletDataWithWalletKey, getDefaultWalletAccountName } from '@proton/wallet';
+import { DEFAULT_INDEX } from '@proton/wallet/constants/bitcoin';
 import { useWalletApiClients } from '@proton/wallet/contexts';
 import { useWalletDispatch } from '@proton/wallet/store/hooks';
 import { walletAccountCreation } from '@proton/wallet/store/slices';
