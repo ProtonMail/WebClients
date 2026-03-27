@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
 import { Icon } from '@proton/components';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet/constants/bitcoin';
 import {
     useHideAmounts,

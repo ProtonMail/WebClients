@@ -8,7 +8,7 @@ import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testin
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import { mockUseGetAddressKeys } from '@proton/testing/lib/vitest';
-import type { WalletWithChainData } from '@proton/wallet';
+import type { WalletWithChainData } from '@proton/wallet/types';
 import {
     apiWalletsData,
     getAddressKey,

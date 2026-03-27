@@ -7,7 +7,7 @@ import type { WasmBitcoinUnit } from '@proton/andromeda';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 import { encryptWalletDataWithWalletKey } from '@proton/wallet';
 import { useWalletApiClients } from '@proton/wallet/contexts';
 import { useUserWalletSettings, useWalletDispatch } from '@proton/wallet/store/hooks';

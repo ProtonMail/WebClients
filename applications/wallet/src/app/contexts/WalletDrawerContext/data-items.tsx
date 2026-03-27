@@ -10,7 +10,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon, Info, MiddleEllipsis, useModalState } from '@proton/components';
 import { SECOND } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
-import type { TransactionData } from '@proton/wallet';
+import type { TransactionData } from '@proton/wallet/types';
 import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet/constants/bitcoin';
 import { useUserWalletSettings } from '@proton/wallet/store/hooks';
 

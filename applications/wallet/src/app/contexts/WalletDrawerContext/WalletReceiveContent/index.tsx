@@ -9,7 +9,7 @@ import InputFieldStacked from '@proton/components/components/inputFieldStacked/I
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import Info from '@proton/components/components/link/Info';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { Button, Select } from '../../../atoms';
 import { WalletAccountItem } from '../../../components/WalletAccountSelector';

@@ -9,7 +9,7 @@ import {
     WasmTransactionFilter,
 } from '@proton/andromeda';
 import isTruthy from '@proton/utils/isTruthy';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import type { AccountWithChainData, WalletChainDataByWalletId, WalletWithChainData } from '../types';
 
