@@ -3,12 +3,12 @@ import { act } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { WasmNetwork } from '@proton/andromeda';
+import { apiWalletsData } from '@proton/wallet/tests/fixtures';
 import {
-    apiWalletsData,
     mockUseHideAmounts,
     mockUseUserWalletSettings,
     mockUseWalletAccountExchangeRate,
-} from '@proton/wallet';
+} from '@proton/wallet/tests/mocks';
 import { toWalletAccountSelectorOptions } from '@proton/wallet/utils/wallet';
 
 import { WalletAccountSelector } from '.';
