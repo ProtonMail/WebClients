@@ -93,6 +93,38 @@ input[type='number'] {
 	animation: spin 1s linear infinite;
 }
 
+@keyframes loading-bar-move {
+	0% {
+		transform: translateX(-100%);
+	}
+
+	100% {
+		transform: translateX(100%);
+	}
+}
+
+@keyframes loading-bar-stretch {
+	0%,
+	100% {
+		transform: scaleX(0.15);
+	}
+
+	50% {
+		transform: scaleX(0.6);
+	}
+}
+
+.animate-loading-bar-move {
+	animation: loading-bar-move 1.4s ease-in-out infinite alternate;
+	will-change: transform;
+}
+
+.animate-loading-bar-stretch {
+	animation: loading-bar-stretch 1.4s ease-in-out infinite alternate;
+	transform-origin: center;
+	will-change: transform;
+}
+
 .user-dropdown-button:not(.is-homepage *) {
 	.user-initials {
 		font-size: 12px;

@@ -18,7 +18,6 @@ import {
   WebsocketConnectionEvent,
   isDocumentState,
 } from '@proton/docs-core'
-import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { DebugMenu } from './DebugMenu'
 import type {
   CommentMarkNodeChangeData,
@@ -53,7 +52,7 @@ import type { InviteAutoAcceptResult } from './InviteAutoAccepter'
 import { InviteAutoAccepter } from './InviteAutoAccepter'
 import { type DocumentError, DocumentErrorFallback } from './DocumentErrorFallback'
 import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
-import { useAuthentication, useConfig } from '@proton/components'
+import { useAuthentication, useConfig, MimeIcon, Icon } from '@proton/components'
 import { useApplication } from '~/utils/application-context'
 import { useDocsUrlBar } from '~/utils/docs-url-bar'
 import { AppendPublicShareKeyMaterialToTitle } from './append-public-share-key-material-to-title'
@@ -64,7 +63,6 @@ import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import { UserSettingsProvider } from '@proton/drive-store/store'
 import { useDocsContext } from '../context'
 import { useDebugMode } from '~/utils/debug-mode-context'
-import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 import { useIsSheetsEditorEnabled } from '~/utils/misc'
 import { APPS, SHEETS_APP_NAME } from '@proton/shared/lib/constants'
 import { Button } from '@proton/atoms/Button/Button'
@@ -119,9 +117,7 @@ export function DocumentViewer({
   const [ready, setReady] = useState(false)
   const isSheetsEditorEnabled = useIsSheetsEditorEnabled()
   const [error, setError] = useState<DocumentError | null>(() => {
-    const pathname = window.location.pathname
-    const type = stripLocalBasenameFromPathname(pathname).slice(1) as DocumentAction['type']
-    if (type === 'sheet' && !isSheetsEditorEnabled) {
+    if (documentType === 'sheet' && !isSheetsEditorEnabled) {
       return { message: '', code: DocsApiErrorCode.InsufficientPermissions, userUnderstandableMessage: false }
     }
 
@@ -456,15 +452,6 @@ export function DocumentViewer({
     [application.compatWrapper, application.logger, nodeMeta],
   )
 
-  const Loader = (
-    <div className="relative h-full w-full">
-      <div className="bg-norm flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center gap-4">
-        <CircleLoader size="large" />
-        <div className="text-center">{c('Info').t`Loading document...`}</div>
-      </div>
-    </div>
-  )
-
   /**
    * If we are in the public app, and the user is signed in, and the user does not have edit access, we'll check
    * to see if there is a pending invite for the document. If there is, we'll autoaccept it.
@@ -507,14 +494,14 @@ export function DocumentViewer({
         >
           <InviteAutoAccepter nodeMeta={nodeMeta} onResult={onInviteAutoAcceptResult} />
         </UserSettingsProvider>
-        {Loader}
+        <Loader documentType={documentType} />
       </>
     )
   }
 
   if (wasAutoAcceptSuccessful) {
     // Prevent flash of "Something went wrong" while page is still reloading.
-    return Loader
+    return <Loader documentType={documentType} />
   }
 
   if (error) {
@@ -534,7 +521,7 @@ export function DocumentViewer({
 
       {ready && <WordCountOverlay />}
 
-      {(!documentState || !editorController) && Loader}
+      {(!documentState || !editorController) && <Loader documentType={documentType} />}
 
       {documentState &&
         isDocumentState(documentState) &&
@@ -557,6 +544,42 @@ export function DocumentViewer({
       {signatureFailedModal}
       {genericAlertModal}
       {genericInfoModal}
+    </div>
+  )
+}
+
+type LoaderProps = {
+  documentType: DocumentType | ProtonDocumentType
+}
+
+function Loader({ documentType }: LoaderProps) {
+  return (
+    <div className="relative h-full w-full">
+      <div className="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center">
+        <MimeIcon name={documentType === 'sheet' ? 'proton-sheet' : 'proton-doc'} size={9} className="shrink-0" />
+
+        <div className="mb-4 mt-12">
+          <LoadingBar />
+        </div>
+
+        <span className="mb-2 text-center text-xl font-bold">
+          {documentType === 'sheet' ? 'Proton Sheets' : 'Proton Docs'}
+        </span>
+        <span className="flex items-center gap-1.5">
+          <Icon name="lock-filled" />
+          <span className="text-center text-sm font-semibold">{c('Info').t`Decrypting your document`}</span>
+        </span>
+      </div>
+    </div>
+  )
+}
+
+function LoadingBar() {
+  return (
+    <div className="bg-strong h-[0.1875rem] w-72 overflow-hidden rounded-lg">
+      <div className="animate-loading-bar-move h-full w-full">
+        <div className="animate-loading-bar-stretch bg-primary h-full w-full rounded-lg" />
+      </div>
     </div>
   )
 }
