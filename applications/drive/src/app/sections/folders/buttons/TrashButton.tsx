@@ -6,8 +6,8 @@ import { useLoading } from '@proton/hooks';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import { noSelection } from '../../../components/sections/ToolbarButtons/utils';
+import type { ActionButtonProps } from '../../buttons/types';
 import { useTrashActions } from '../../commonActions/useTrashActions';
-import type { FolderButtonProps } from './types';
 
 type Item = {
     uid: string;
@@ -16,7 +16,7 @@ type Item = {
     type: NodeType;
 };
 
-type Props = Omit<FolderButtonProps, 'onClick'> & {
+type Props = Omit<ActionButtonProps, 'onClick'> & {
     selectedItems: Item[];
 };
 
