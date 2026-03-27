@@ -15,7 +15,6 @@ import {
     getVisualCalendars,
     sortCalendars,
 } from '@proton/shared/lib/calendar/calendar';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useBookings } from '../bookingsProvider/BookingsProvider';
@@ -23,7 +22,6 @@ import { BookingState } from '../interface';
 import { FormIconRow } from './BookingsFormComponents';
 
 export const BookingFormCalendarField = () => {
-    const isConflictCalendarsEnabled = useFlag('CalendarBookingsConflictCalendars');
     const { formData, updateFormData, bookingsState } = useBookings();
 
     const [calendars = []] = useCalendars();
@@ -86,7 +84,7 @@ export const BookingFormCalendarField = () => {
                 </p>
             )}
 
-            {isConflictCalendarsEnabled && availabilityCalendars.length > 1 && (
+            {availabilityCalendars.length > 1 && (
                 <Checkbox
                     className="gap-0 my-4 text-sm items-center"
                     checked={hasConflictingCalendarIDs}
