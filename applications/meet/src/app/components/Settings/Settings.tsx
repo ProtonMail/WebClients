@@ -3,11 +3,13 @@ import { c } from 'ttag';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { useLoading } from '@proton/hooks';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectIsLocalScreenShare } from '@proton/meet/store/slices/meetingInfo';
+import { selectIsLocalScreenShare, selectPaidUser } from '@proton/meet/store/slices/meetingInfo';
 import { selectMeetSettings, setDisableVideos, setPipEnabled, setSelfView } from '@proton/meet/store/slices/settings';
 import {
     MeetingSideBars,
+    selectShowDuration,
     selectSideBarState,
+    toggleShowDuration,
     toggleSideBarState as toggleSideBarStateAction,
 } from '@proton/meet/store/slices/uiStateSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -32,6 +34,8 @@ export const Settings = () => {
     const isLocalScreenShare = useMeetSelector(selectIsLocalScreenShare);
 
     const sideBarState = useMeetSelector(selectSideBarState);
+    const paidUser = useMeetSelector(selectPaidUser);
+    const showDuration = useMeetSelector(selectShowDuration);
 
     const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
 
@@ -51,7 +55,7 @@ export const Settings = () => {
                 </div>
             }
         >
-            <div className="overflow-y-auto">
+            <div className="overflow-y-auto flex-1 min-h-0">
                 <div className="flex flex-column flex-nowrap w-full gap-4 pr-4">
                     {(isLocalParticipantAdmin || isLocalParticipantHost) && (
                         <div className="flex flex-column flex-nowrap w-full gap-4 shrink-0">
@@ -142,6 +146,29 @@ export const Settings = () => {
                             />
                         </div>
                     </div>
+                    {!!paidUser && (
+                        <div className="flex flex-column flex-nowrap w-full gap-4 shrink-0">
+                            <h3 className="text-semibold text-rg color-weak py-2 shrink-0">{c('Title')
+                                .t`Meeting settings`}</h3>
+                            <div className="flex flex-column flex-nowrap w-full gap-4 pl-4 shrink-0">
+                                <div className="flex mx-auto justify-space-between gap-2 setting-container w-full flex-nowrap shrink-0">
+                                    <label
+                                        className={clsx('setting-label', showDuration ? 'color-norm' : 'color-hint')}
+                                        htmlFor="show-duration"
+                                    >{c('Title').t`Show duration`}</label>
+                                    <Toggle
+                                        id="show-duration"
+                                        className={clsx(
+                                            'settings-toggle',
+                                            showDuration ? '' : 'settings-toggle-inactive'
+                                        )}
+                                        checked={showDuration}
+                                        onChange={() => dispatch(toggleShowDuration())}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </SideBar>

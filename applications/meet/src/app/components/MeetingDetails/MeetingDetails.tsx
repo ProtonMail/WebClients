@@ -8,25 +8,19 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
-import { Toggle } from '@proton/components/index';
 import { IcMeetCopy } from '@proton/icons/icons/IcMeetCopy';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { useMeetings } from '@proton/meet/store/hooks/useMeetings';
 import {
+    selectInstantMeeting,
     selectKeyRotationLogs,
     selectMeetingLink,
     selectMlsGroupState,
-    selectPaidUser,
     selectPassphrase,
     selectRoomName,
 } from '@proton/meet/store/slices/meetingInfo';
-import {
-    MeetingSideBars,
-    selectShowDuration,
-    selectSideBarState,
-    toggleShowDuration,
-    toggleSideBarState,
-} from '@proton/meet/store/slices/uiStateSlice';
+import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
+import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { KeyRotationLog } from '@proton/meet/types/types';
 import { parseMeetingLink } from '@proton/meet/utils/parseMeetingLink';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -49,13 +43,13 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
     const keyRotationLogs = useMeetSelector(selectKeyRotationLogs);
     const mlsGroupState = useMeetSelector(selectMlsGroupState);
     const passphrase = useMeetSelector(selectPassphrase);
-    const paidUser = useMeetSelector(selectPaidUser);
     const meetingLink = useMeetSelector(selectMeetingLink);
+    const instantMeeting = useMeetSelector(selectInstantMeeting);
+    const participantsCount = useMeetSelector(selectTotalParticipantCount);
 
     const roomName = useMeetSelector(selectRoomName);
 
     const sideBarState = useMeetSelector(selectSideBarState);
-    const showDuration = useMeetSelector(selectShowDuration);
 
     const timeZone = currentMeeting?.Timezone ?? Intl.DateTimeFormat().resolvedOptions().timeZone;
 
@@ -104,6 +98,7 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
     return (
         <SideBar
             onClose={() => dispatch(toggleSideBarState(MeetingSideBars.MeetingDetails))}
+            absoluteHeader={true}
             paddingClassName="py-4"
             paddingHeaderClassName="px-4"
             header={
@@ -113,8 +108,10 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
             }
         >
             <div className="flex-1 overflow-auto min-h-0 px-4 outline-none--at-all">
-                <div className="meeting-info-wrapper meet-radius p-4">
-                    <h3 className="text-semibold text-rg mb-4">{c('Title').t`Meeting details`}</h3>
+                <div className="meeting-info-wrapper meet-radius p-4 mt-20">
+                    <h3 className="text-semibold text-rg mb-4">
+                        {instantMeeting ? c('Title').t`Meeting details` : c('Title').t`Meeting`}
+                    </h3>
                     <Table className="mb-0">
                         <TableBody>
                             <TableRow>
@@ -180,10 +177,6 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
 
                 <div className="meeting-info-wrapper meeting-info-mls-wrapper meet-radius overflow-hidden p-4">
                     <h3 className="text-semibold text-rg mb-4">{c('Title').t`Messaging Layer Security`}</h3>
-                    <div className="color-weak mb-2 pb-3 border-bottom">
-                        {c('Info')
-                            .t`This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).`}
-                    </div>
                     {mlsGroupState && mlsGroupState.displayCode !== null && (
                         <Table className="mb-0">
                             <TableBody>
@@ -207,6 +200,12 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                                                 ))}
                                         </button>
                                     </TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell type="header" scope="row" className="align-top color-weak w-1/3 pl-0">{c(
+                                        'Title'
+                                    ).t`Participants`}</TableCell>
+                                    <TableCell className="text-ellipsis">{participantsCount}</TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell type="header" scope="row" className="align-top color-weak w-1/3 pl-0">{c(
@@ -261,26 +260,6 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                                         </TableRow>
                                     );
                                 })}
-                            </TableBody>
-                        </Table>
-                    </div>
-                )}
-                {!!paidUser && (
-                    <div className="meeting-info-wrapper meeting-info-mls-wrapper meet-radius overflow-hidden p-4">
-                        <h3 className="text-semibold text-rg mb-4">{c('Title').t`Meeting settings`}</h3>
-                        <Table className="mb-0">
-                            <TableBody>
-                                <TableRow>
-                                    <TableCell type="header" scope="row" className="align-top color-weak w-1/2 pl-0">
-                                        {c('Title').t`Show duration`}
-                                    </TableCell>
-                                    <TableCell className="text-right">
-                                        <Toggle
-                                            checked={showDuration}
-                                            onChange={() => dispatch(toggleShowDuration())}
-                                        />
-                                    </TableCell>
-                                </TableRow>
                             </TableBody>
                         </Table>
                     </div>
