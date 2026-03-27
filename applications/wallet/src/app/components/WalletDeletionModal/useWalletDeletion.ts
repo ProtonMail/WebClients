@@ -3,8 +3,9 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { useWalletDispatch, walletDeletion } from '@proton/wallet';
 import { useWalletApiClients } from '@proton/wallet/contexts';
+import { useWalletDispatch } from '@proton/wallet/store/hooks';
+import { walletDeletion } from '@proton/wallet/store/slices';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';

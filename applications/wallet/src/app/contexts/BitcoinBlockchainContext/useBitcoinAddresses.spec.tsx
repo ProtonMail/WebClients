@@ -11,14 +11,13 @@ import { mockUseGetAddressKeys } from '@proton/testing/lib/vitest';
 import type { WalletWithChainData } from '@proton/wallet';
 import {
     apiWalletsData,
-    extendStore,
     getAddressKey,
     getMockedApi,
     mockUseBitcoinAddressUsedIndexes,
     mockUseGetBitcoinAddressPool,
     mockUseWalletApiClients,
-    setupStore,
 } from '@proton/wallet';
+import { extendStore, setupStore } from '@proton/wallet/store/store';
 
 import { mockUseBlockchainClient } from '../../tests';
 import { useBitcoinAddresses } from './useBitcoinAddresses';

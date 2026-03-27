@@ -6,7 +6,9 @@ import { c } from 'ttag';
 import type { WasmApiCountry, WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';
 import { Loader, type ModalOwnProps } from '@proton/components';
 import type { ApiWalletWithPassphraseInput, IWasmApiWalletData } from '@proton/wallet';
-import { resetQuotesByProvider, toWalletAccountSelectorOptions, useWalletDispatch } from '@proton/wallet';
+import { toWalletAccountSelectorOptions } from '@proton/wallet';
+import { useWalletDispatch } from '@proton/wallet/store/hooks';
+import { resetQuotesByProvider } from '@proton/wallet/store/slices';
 
 import { FullscreenModal } from '../../atoms/FullscreenModal';
 import { AZTECO } from '../../constants/buy';
