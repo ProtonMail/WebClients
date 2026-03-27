@@ -10121,7 +10121,7 @@ __metadata:
     "@proton/srp": "workspace:^"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
-    "@protontech/drive-sdk": "npm:^0.13.1"
+    "@protontech/drive-sdk": "npm:^0.14.1"
     "@types/jest": "npm:^30.0.0"
     "@types/node": "npm:^24.12.0"
     "@xmldom/xmldom": "npm:^0.9.8"
@@ -11047,14 +11047,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protontech/drive-sdk@npm:^0.13.1":
-  version: 0.13.1
-  resolution: "@protontech/drive-sdk@npm:0.13.1"
+"@protontech/drive-sdk@npm:^0.14.1":
+  version: 0.14.1
+  resolution: "@protontech/drive-sdk@npm:0.14.1"
   dependencies:
     "@noble/hashes": "npm:^1.8.0"
     bcryptjs: "npm:^2.4.3"
     ttag: "npm:^1.8.7"
-  checksum: 10/c85ea239644b04ddbd4d784078f22452cda6a0416a7dcfa717db3a3c366da7d026d5cd2c69619a7e617cf1294fa7e2e2f451f65d5b8171adcf7800a1908f92c5
+  checksum: 10/1077cc41889e81223589994fc49ac8c285d9eaa66f631f339a4910ea1797ac8b35ad68d3872f835e2e99ca8c3f1af2898280cae0b9868a71ec23b94a2ef1c50f
   languageName: node
   linkType: hard
 
