@@ -770,6 +770,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär den."
+      ],
+      "Configure": [
+        "Konfigurera"
       ]
     },
     "Browser": {
@@ -2726,6 +2729,19 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+      ],
+      "Not configured": [
+        "Inte konfigurerad"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Öppna ${ PASS_APP_NAME } i ett större fönster"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Öppna popup för ${ PASS_APP_NAME }"
       ]
     },
     "Keyboard key": {
