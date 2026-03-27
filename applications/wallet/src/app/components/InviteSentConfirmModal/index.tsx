@@ -5,7 +5,7 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import walletPaperPlaneDark from '@proton/styles/assets/img/wallet/wallet-paper-plane-dark.jpg';
 import walletPaperPlane from '@proton/styles/assets/img/wallet/wallet-paper-plane.jpg';
-import { WalletThemeOption } from '@proton/wallet/utils/theme';
+import { WalletThemeOption } from '@proton/wallet';
 
 import { Button } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';

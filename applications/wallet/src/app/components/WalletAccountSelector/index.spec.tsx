@@ -3,13 +3,13 @@ import { act } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { WasmNetwork } from '@proton/andromeda';
-import { toWalletAccountSelectorOptions } from '@proton/wallet';
 import {
     apiWalletsData,
     mockUseHideAmounts,
     mockUseUserWalletSettings,
     mockUseWalletAccountExchangeRate,
-} from '@proton/wallet/tests';
+    toWalletAccountSelectorOptions,
+} from '@proton/wallet';
 
 import { WalletAccountSelector } from '.';
 import { formatToSubset, getWalletsChainDataInit } from '../../contexts/BitcoinBlockchainContext/useWalletsChainData';

@@ -1,7 +1,6 @@
 import { Icon } from '@proton/components';
 import { useFlag } from '@proton/unleash/useFlag';
-import { themeChange, useWalletDispatch } from '@proton/wallet/store';
-import { WalletThemeOption } from '@proton/wallet/utils/theme';
+import { WalletThemeOption, themeChange, useWalletDispatch } from '@proton/wallet';
 
 import { CoreButton } from '../../atoms';
 import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';

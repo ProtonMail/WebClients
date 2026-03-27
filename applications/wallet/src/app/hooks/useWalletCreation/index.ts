@@ -25,21 +25,19 @@ import {
     DEFAULT_MAX_SUB_WALLETS,
     DEFAULT_SCRIPT_TYPE,
     WalletType,
+    acceptTermsAndConditions,
     decryptWallet,
     encryptWalletData,
     encryptWalletDataWithWalletKey,
     getDefaultWalletName,
-    useWalletApi,
-    useWalletApiClients,
-    wordCountToNumber,
-} from '@proton/wallet';
-import {
-    acceptTermsAndConditions,
     useFiatCurrencies,
     useUserWalletSettings,
+    useWalletApi,
+    useWalletApiClients,
     useWalletDispatch,
     walletCreation,
-} from '@proton/wallet/store';
+    wordCountToNumber,
+} from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { isUndefined } from '../../utils';

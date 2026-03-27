@@ -7,15 +7,15 @@ import { generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { mockUseAddresses, mockUseNotifications, mockUseUserKeys } from '@proton/testing/lib/vitest';
 import type { DecryptedApiWalletKey, IWasmApiWalletData } from '@proton/wallet';
-import { decryptWalletData } from '@proton/wallet';
 import {
     apiWalletsData,
+    decryptWalletData,
     getAddressKey,
     getUserKeys,
     mockUseUserWalletSettings,
     mockUseWalletApiClients,
     mockUseWalletDispatch,
-} from '@proton/wallet/tests';
+} from '@proton/wallet';
 
 import { useWalletPreferences } from './useWalletPreferences';
 

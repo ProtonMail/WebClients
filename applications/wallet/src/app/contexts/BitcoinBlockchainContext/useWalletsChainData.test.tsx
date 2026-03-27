@@ -4,13 +4,18 @@ import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import type { MockedFunction } from 'vitest';
 
-import type { WasmAccountSyncer} from '@proton/andromeda';
+import type { WasmAccountSyncer } from '@proton/andromeda';
 import { WasmAccount, WasmWallet } from '@proton/andromeda';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { mockUseNotifications } from '@proton/testing/lib/vitest';
-import { setupStore } from '@proton/wallet/store';
-import { apiWalletsData, mockUseFlag, mockUseGetBitcoinNetwork, mockUseWalletApiClients } from '@proton/wallet/tests';
+import {
+    apiWalletsData,
+    mockUseFlag,
+    mockUseGetBitcoinNetwork,
+    mockUseWalletApiClients,
+    setupStore,
+} from '@proton/wallet';
 
 import { mockUseBlockchainClient, mockWasmAccountSyncer } from '../../tests';
 import { mockIsFullSyncDone } from '../../tests/mocks/useCache';

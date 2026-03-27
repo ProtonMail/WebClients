@@ -3,8 +3,13 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { encryptWalletDataWithWalletKey, useWalletApi } from '@proton/wallet';
-import { updateWalletTransaction, useApiWalletTransactionData, useWalletDispatch } from '@proton/wallet/store';
+import {
+    encryptWalletDataWithWalletKey,
+    updateWalletTransaction,
+    useApiWalletTransactionData,
+    useWalletApi,
+    useWalletDispatch,
+} from '@proton/wallet';
 
 export const useTransactionNoteModal = ({
     transactionDataKey,

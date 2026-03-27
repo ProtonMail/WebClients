@@ -12,7 +12,7 @@ import walletKeyDark from '@proton/styles/assets/img/wallet/wallet-key-dark.jpg'
 import walletKey from '@proton/styles/assets/img/wallet/wallet-key.jpg';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { WalletThemeOption } from '@proton/wallet/utils/theme';
+import { WalletThemeOption } from '@proton/wallet';
 
 import { Button, ButtonLike } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';

@@ -9,7 +9,7 @@ import {
     mockUseGetExchangeRate,
     mockUseUserWalletSettings,
     mockUseWalletAccountExchangeRate,
-} from '@proton/wallet/tests';
+} from '@proton/wallet';
 
 import { WalletReceiveContent } from '.';
 import { mockUseBitcoinBlockchainContext } from '../../../tests';

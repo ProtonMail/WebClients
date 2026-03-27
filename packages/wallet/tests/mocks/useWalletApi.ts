@@ -12,8 +12,8 @@ import type {
     WasmSettingsClient,
     WasmWalletClient,
 } from '@proton/andromeda';
-import * as useWalletApiModule from '@proton/wallet/contexts/ExtendedApiContext';
 
+import * as useWalletApiModule from '../../contexts/ExtendedApiContext';
 import { freeable } from '../utils/wasm';
 
 type PartiallyMockedWalletApiClient = Partial<{
