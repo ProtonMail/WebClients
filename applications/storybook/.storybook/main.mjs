@@ -1,5 +1,6 @@
 import { createRequire } from 'node:module';
 import { dirname, join } from 'node:path';
+import TerserPlugin from 'terser-webpack-plugin';
 
 const require = createRequire(import.meta.url);
 
@@ -84,8 +85,12 @@ export default {
             },
             optimization: {
                 ...config.optimization,
-                // Use Storybook's default minimizer so mocker-runtime-injected.js (ESM) is minified correctly
-                minimizer: config.optimization.minimizer,
+                minimizer: [
+                    // Replace Storybook's default minimizer and disable parallel so that the CI doesn't OOM
+                    new TerserPlugin({
+                        parallel: 1,
+                    }),
+                ],
             },
             plugins: [
                 ...config.plugins,
