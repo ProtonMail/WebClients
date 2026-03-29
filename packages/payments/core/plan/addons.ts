@@ -81,16 +81,25 @@ export const isLumoAddon: AddonGuard = (addonOrName): boolean => {
     return isAddonType(addonOrName, ADDON_PREFIXES.LUMO);
 };
 
+export const isMeetAddon: AddonGuard = (addonOrName): boolean => {
+    return isAddonType(addonOrName, ADDON_PREFIXES.MEET);
+};
+
 export const AddonGuardsMap: Record<ADDON_PREFIXES, AddonGuard> = {
     [ADDON_PREFIXES.DOMAIN]: isDomainAddon,
     [ADDON_PREFIXES.IP]: isIpAddon,
     [ADDON_PREFIXES.MEMBER]: isMemberAddon,
     [ADDON_PREFIXES.SCRIBE]: isScribeAddon,
     [ADDON_PREFIXES.LUMO]: isLumoAddon,
+    [ADDON_PREFIXES.MEET]: isMeetAddon,
 };
 
 export const hasLumoAddonFromPlanIDs = (planIDs: PlanIDs) => {
     return Object.keys(planIDs).some((key) => isLumoAddon(key as any));
+};
+
+export const hasMeetAddonFromPlanIDs = (planIDs: PlanIDs) => {
+    return Object.keys(planIDs).some((key) => isMeetAddon(key as any));
 };
 
 export type SupportedAddons = Partial<Record<ADDON_NAMES, boolean>>;

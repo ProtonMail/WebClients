@@ -16,6 +16,7 @@ import {
     isDomainAddon,
     isIpAddon,
     isLumoAddon,
+    isMeetAddon,
     isMemberAddon,
     isScribeAddon,
 } from '../plan/addons';
@@ -23,6 +24,7 @@ import { getPlanFeatureLimit } from '../plan/feature-limits';
 import {
     getIsB2BAudienceFromPlan,
     getLumoAddonNameByPlan,
+    getMeetAddonNameByPlan,
     getPlanNameFromIDs,
     getScribeAddonNameByPlan,
 } from '../plan/helpers';
@@ -38,6 +40,7 @@ type PresentAddonTypes = {
     [ADDON_PREFIXES.MEMBER]: boolean;
     [ADDON_PREFIXES.SCRIBE]: boolean;
     [ADDON_PREFIXES.LUMO]: boolean;
+    [ADDON_PREFIXES.MEET]: boolean;
 };
 
 export type AddonBalanceKey = 'prefer-scribes' | 'prefer-lumos';
@@ -192,6 +195,10 @@ export class SelectedPlan {
         return this.getTotalAddons(isLumoAddon, 'MaxLumo');
     }
 
+    getTotalMeets(): number {
+        return this.getTotalAddons(isMeetAddon, 'MaxMeet');
+    }
+
     /**
      * Returns the entitelment number for the selected plan. It takes into account the numbers included both in the plan
      * and in the specified addons. For example, `MaxMembers` will return the total number of user seats the specified
@@ -209,6 +216,8 @@ export class SelectedPlan {
                 return this.getTotalScribes();
             case 'MaxLumo':
                 return this.getTotalLumos();
+            case 'MaxMeet':
+                return this.getTotalMeets();
             default:
                 // Just count the respective featureLimitKey in all the addons and plans
                 return this.getTotalAddons(() => true, featureLimitKey);
@@ -274,8 +283,33 @@ export class SelectedPlan {
         return updatedPlan;
     }
 
+    setMeetCount(newCount: number): SelectedPlan {
+        const meetAddonName = getMeetAddonNameByPlan(this.getPlanName());
+        if (!meetAddonName) {
+            return this;
+        }
+
+        const planIDs = { ...this._planIDs };
+
+        const meetsInPlan = this.getCountInPlan('MaxMeet');
+
+        const meetsInAddons = this.getCountInAddons(isMeetAddon, 'MaxMeet');
+        const meetsChange = newCount - meetsInPlan - meetsInAddons;
+        if (meetsChange === 0) {
+            return this;
+        }
+
+        planIDs[meetAddonName] = Math.max((planIDs[meetAddonName] ?? 0) + meetsChange, 0);
+        if (planIDs[meetAddonName] === 0) {
+            delete planIDs[meetAddonName];
+        }
+
+        const updatedPlan = this.selectedPlanWithNewIds(planIDs).capMeets();
+        return updatedPlan;
+    }
+
     private applyRules(preferred: AddonBalanceKey): SelectedPlan {
-        return this.capScribes().capLumos().balanceScribesAndLumos(preferred);
+        return this.capScribes().capLumos().capMeets().balanceScribesAndLumos(preferred);
     }
 
     getPlanName(): PLANS {
@@ -301,6 +335,10 @@ export class SelectedPlan {
     }
 
     getMaxScribes(): number {
+        return this.getTotalUsers();
+    }
+
+    getMaxMeets(): number {
         return this.getTotalUsers();
     }
 
@@ -334,6 +372,15 @@ export class SelectedPlan {
         return this;
     }
 
+    private capMeets(): SelectedPlan {
+        const maxMeets = this.getMaxMeets();
+        if (this.getTotalMeets() > maxMeets) {
+            return this.setMeetCount(maxMeets);
+        }
+
+        return this;
+    }
+
     private balanceScribesAndLumos(preferred: AddonBalanceKey): SelectedPlan {
         const members = this.getTotalMembers();
         const lumos = this.getTotalLumos();
@@ -343,7 +390,7 @@ export class SelectedPlan {
 
         if (difference > 0) {
             if (preferred === 'prefer-scribes') {
-                // We prefer scribes over lumos, so we remove lumos
+                // We prefer scribes, so we remove lumos
                 return this.setLumoCount(lumos - difference, false);
             } else {
                 // We prefer lumos over scribes, so we remove scribes

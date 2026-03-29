@@ -1,6 +1,13 @@
 import { c } from 'ttag';
 
-import { type FreePlanDefault, PLANS, type PlanIDs, type PlansMap, hasLumoAddonFromPlanIDs } from '@proton/payments';
+import {
+    type FreePlanDefault,
+    PLANS,
+    type PlanIDs,
+    type PlansMap,
+    hasLumoAddonFromPlanIDs,
+    hasMeetAddonFromPlanIDs,
+} from '@proton/payments';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
@@ -9,6 +16,7 @@ import {
     DUO_MAX_USERS,
     FAMILY_MAX_USERS,
     MAIL_SHORT_APP_NAME,
+    MEET_APP_NAME,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import type { Included } from '@proton/shared/lib/helpers/checkout';
@@ -283,6 +291,17 @@ export const getWhatsIncluded = ({
             {
                 type: 'text',
                 text: c('Info').t`${BRAND_NAME} Scribe writing assistant`,
+            },
+        ];
+    }
+
+    const meetAddon = hasMeetAddonFromPlanIDs(planIDs);
+    if (meetAddon) {
+        included = [
+            ...included,
+            {
+                type: 'text',
+                text: c('Info').t`${MEET_APP_NAME} video conferencing`,
             },
         ];
     }
