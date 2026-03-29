@@ -10634,7 +10634,7 @@ __metadata:
     react-router-dom: "npm:^5.3.4"
     redux: "npm:^5.0.1"
     redux-saga: "npm:^1.4.2"
-    tldts: "npm:^6.1.86"
+    tldts: "npm:^7.0.27"
     ttag: "npm:^1.8.12"
     typescript: "npm:^6.0.2"
     webextension-polyfill: "npm:^0.12.0"
@@ -47766,14 +47766,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tldts-core@npm:^7.0.12":
-  version: 7.0.12
-  resolution: "tldts-core@npm:7.0.12"
-  checksum: 10/10b2309ce340738b75cdcbbe6d71c5a4e48f5057536bfc865f485822c4c26abb5a4d104a9de11398fa5338f28029698bf36fd214442094b97dba48ab05d67810
+"tldts-core@npm:^7.0.27":
+  version: 7.0.27
+  resolution: "tldts-core@npm:7.0.27"
+  checksum: 10/9e5f8ad1f22a09e572afa3db30c6f795c38b515e8b89659ba0a54b486bdd91d69d11dee5456b1aa40ea5fdf24989e4801973841129697e2f68ef0ecf440db5fa
   languageName: node
   linkType: hard
 
-"tldts@npm:^6.1.32, tldts@npm:^6.1.86":
+"tldts@npm:^6.1.32":
   version: 6.1.86
   resolution: "tldts@npm:6.1.86"
   dependencies:
@@ -47784,14 +47784,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tldts@npm:^7.0.5":
-  version: 7.0.12
-  resolution: "tldts@npm:7.0.12"
+"tldts@npm:^7.0.27, tldts@npm:^7.0.5":
+  version: 7.0.27
+  resolution: "tldts@npm:7.0.27"
   dependencies:
-    tldts-core: "npm:^7.0.12"
+    tldts-core: "npm:^7.0.27"
   bin:
     tldts: bin/cli.js
-  checksum: 10/f449099e666befa0c1a28b90925c1e42b4864664f984ff1ff020e52968b2b68e92797a7dec3d66acd44fe21f3a3b77922e86364079a4679f4e65fb1f76925352
+  checksum: 10/e29ecf25b286cdfd7e7a76d69569b6d874ffaea8d2503f5bae23c4c435da355354a39c43fe8abc10f3d986c12451ff77d664994c3a41eca250a4a3aed6828943
   languageName: node
   linkType: hard
 
