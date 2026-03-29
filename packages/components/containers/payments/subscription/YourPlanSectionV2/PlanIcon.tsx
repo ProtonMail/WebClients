@@ -30,7 +30,7 @@ import {
     hasVpnBusiness,
     hasVpnPro,
 } from '@proton/payments';
-import { hasBundlePro, hasDriveLite, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
+import { hasBundlePro, hasDriveLite, hasMeet, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
@@ -116,7 +116,12 @@ export const PlanIcon = ({
             </LogoIconShape>
         );
     }
-    if (hasMeetBusiness(subscription) || planName === PLANS.MEET_BUSINESS) {
+    if (
+        hasMeetBusiness(subscription) ||
+        planName === PLANS.MEET_BUSINESS ||
+        hasMeet(subscription) ||
+        planName === PLANS.MEET
+    ) {
         return (
             <LogoIconShape border={false} size={size}>
                 <CustomLogo planName={PLANS.MEET_BUSINESS} app={app} size={size} />
