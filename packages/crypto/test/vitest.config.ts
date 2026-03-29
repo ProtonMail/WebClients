@@ -27,11 +27,11 @@ export default defineConfig({
             instances: process.env.CI
                 ? [
                       {
-                          name: 'chromium-sandboxed',
+                          name: 'chromium-no-sandbox',
                           browser: 'chromium',
                           provider: playwright({
                               launchOptions: {
-                                  chromiumSandbox: true,
+                                  chromiumSandbox: false,
                               },
                           }),
                       },
