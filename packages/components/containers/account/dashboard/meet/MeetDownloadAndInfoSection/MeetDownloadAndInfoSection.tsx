@@ -22,7 +22,7 @@ const MeetDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
 
-    const plan = PLANS.MEET_BUSINESS;
+    const plan = PLANS.MEET;
 
     if (loadingSubscription) {
         return <Loader />;
