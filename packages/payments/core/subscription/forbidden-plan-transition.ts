@@ -2,7 +2,13 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { type ADDON_NAMES, PLANS } from '../constants';
 import type { FreeSubscription, PlanIDs } from '../interface';
-import { getSupportedAddons, hasLumoAddonFromPlanIDs, isLumoAddon } from '../plan/addons';
+import {
+    getSupportedAddons,
+    hasLumoAddonFromPlanIDs,
+    hasMeetAddonFromPlanIDs,
+    isLumoAddon,
+    isMeetAddon,
+} from '../plan/addons';
 import { getHasPlusPlan, getPlanFromPlanIDs, getPlanNameFromIDs } from '../plan/helpers';
 import type { PlansMap } from '../plan/interface';
 import { clearPlanIDs } from '../planIDs';
@@ -41,6 +47,52 @@ export function isForbiddenLumoPlus({
         const newPlanIDs = {
             ...currentPlanIDs,
             [lumoAddon.Name]: currentPlanIDs[lumoAddon.Name] || 1, // Keep current addons or add at least one.
+        };
+        const currentPlanSelected = SelectedPlan.createNormalized(
+            newPlanIDs,
+            plansMap,
+            subscription.Cycle,
+            subscription.Currency
+        );
+
+        return {
+            planName: currentPlanSelected.getPlanName(),
+            planIDs: currentPlanSelected.planIDs,
+        };
+    }
+    return false;
+}
+
+export function isForbiddenMeetPlus({
+    subscription,
+    newPlanName,
+    plansMap,
+}: {
+    subscription: Subscription | FreeSubscription | null | undefined;
+    newPlanName: PLANS | ADDON_NAMES | undefined;
+    plansMap: PlansMap;
+}) {
+    if (!subscription || isFreeSubscription(subscription) || newPlanName !== PLANS.MEET) {
+        return false;
+    }
+    const currentPlanIDs = getPlanIDs(subscription);
+    // If the current plan is legacy VPN, we delete it and move to vpn 2024 since it has the meet addon.
+    if (currentPlanIDs[PLANS.VPN]) {
+        delete currentPlanIDs[PLANS.VPN];
+        currentPlanIDs[PLANS.VPN2024] = 1;
+    }
+    const currentPlanSupportedAddons = getSupportedAddons(currentPlanIDs);
+
+    const currentPlanKey = getPlanNameFromIDs(currentPlanIDs);
+    const currentPlan = currentPlanKey ? plansMap[currentPlanKey] : undefined;
+    const meetAddonForCurrentPlan = (Object.keys(currentPlanSupportedAddons) as ADDON_NAMES[]).find((key) =>
+        isMeetAddon(key)
+    );
+    const meetAddon = meetAddonForCurrentPlan ? plansMap[meetAddonForCurrentPlan as keyof typeof plansMap] : undefined;
+    if (currentPlan && meetAddon) {
+        const newPlanIDs = {
+            ...currentPlanIDs,
+            [meetAddon.Name]: currentPlanIDs[meetAddon.Name] || 1,
         };
         const currentPlanSelected = SelectedPlan.createNormalized(
             newPlanIDs,
@@ -122,13 +174,23 @@ export function isForbiddenPlusToPlus({
     const lumoPlusMobileToAnotherPlus =
         isSubscribedToLumoPlus && isNewPlanAPlusPlan && isManagedExternally(subscription);
 
+    const isSubscribedToMeetPlus = subscribedPlans.some((subscribedPlan) => subscribedPlan.Name === PLANS.MEET);
+    const newPlanIDsHaveMeetAddon = hasMeetAddonFromPlanIDs(clearPlanIDs(newPlanIDs)) && isNewPlanAPlusPlan;
+    const meetPlusToAnotherPlusWithMeetAddon = isSubscribedToMeetPlus && newPlanIDsHaveMeetAddon;
+
+    // case for multi-subs. If user has Meet Plus on mobile then they are ALLOWED to buy other Plus plans on web.
+    const meetPlusMobileToAnotherPlus =
+        isSubscribedToMeetPlus && isNewPlanAPlusPlan && isManagedExternally(subscription);
+
     return Boolean(
         isSubscribedToAPlusPlan &&
-            isNewPlanAPlusPlan &&
-            isNotSamePlanName &&
-            !allowPlusToPlusTransition &&
-            !lumoPlusToAnotherPlusWithLumoAddon &&
-            !lumoPlusMobileToAnotherPlus
+        isNewPlanAPlusPlan &&
+        isNotSamePlanName &&
+        !allowPlusToPlusTransition &&
+        !lumoPlusToAnotherPlusWithLumoAddon &&
+        !lumoPlusMobileToAnotherPlus &&
+        !meetPlusToAnotherPlusWithMeetAddon &&
+        !meetPlusMobileToAnotherPlus
     );
 }
 
@@ -158,6 +220,11 @@ export function getIsPlanTransitionForbidden({
     const lumoForbidden = isForbiddenLumoPlus({ plansMap, subscription, newPlanName });
     if (lumoForbidden) {
         return { type: 'lumo-plus', newPlanIDs: lumoForbidden.planIDs, newPlanName: lumoForbidden.planName } as const;
+    }
+
+    const meetForbidden = isForbiddenMeetPlus({ plansMap, subscription, newPlanName });
+    if (meetForbidden) {
+        return { type: 'meet-plus', newPlanIDs: meetForbidden.planIDs, newPlanName: meetForbidden.planName } as const;
     }
 
     if (isForbiddenPlusToPlus({ subscription, newPlanIDs: planIDs })) {

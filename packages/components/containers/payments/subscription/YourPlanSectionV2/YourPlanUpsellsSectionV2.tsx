@@ -75,6 +75,7 @@ import DrivePlusFromFreeBanner from './Upsells/drive/DrivePlusFromFreeBanner';
 import { useSubscriptionPriceComparison } from './Upsells/helper';
 import MailPlusExtendSubscription, { useMailPlusExtendSubscription } from './Upsells/mail/MailPlusExtendSubscription';
 import MailPlusFromFree, { useMailPlusFromFreeUpsells } from './Upsells/mail/MailPlusFromFree';
+import MeetAddonBanner from './Upsells/meet/MeetAddonBanner';
 import MeetProfessionalFromFree, { useMeetProfessionalFromFreeUpsells } from './Upsells/meet/MeetProfessionalFromFree';
 import WorkspaceBanner from './Upsells/meet/WorkspaceBanner';
 import PassFamilyBannerExtendSubscription, {
@@ -225,14 +226,17 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                 showVPNAVariant,
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
-                <UnlimitedBannerGradient
-                    app={app}
-                    showProductCards={true}
-                    showUpsellPanels={true}
-                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
-                    subscription={subscription as Subscription}
-                    {...unlimitedBannerGradientUpsells}
-                />
+                <>
+                    <UnlimitedBannerGradient
+                        app={app}
+                        showProductCards={true}
+                        showUpsellPanels={true}
+                        gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
+                        subscription={subscription as Subscription}
+                        {...unlimitedBannerGradientUpsells}
+                    />
+                    <MeetAddonBanner app={app} />
+                </>
             ),
         },
         {
@@ -242,15 +246,18 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                 showVPNBVariant,
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
-                <UnlimitedBannerGradient
-                    app={app}
-                    showProductCards={true}
-                    showUpsellPanels={false}
-                    showDiscoverButton={false}
-                    showUpsellHeader={true}
-                    subscription={subscription as Subscription}
-                    {...unlimitedBannerGradientUpsells}
-                />
+                <>
+                    <UnlimitedBannerGradient
+                        app={app}
+                        showProductCards={true}
+                        showUpsellPanels={false}
+                        showDiscoverButton={false}
+                        showUpsellHeader={true}
+                        subscription={subscription as Subscription}
+                        {...unlimitedBannerGradientUpsells}
+                    />
+                    <MeetAddonBanner app={app} />
+                </>
             ),
         },
         {
@@ -260,15 +267,18 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                 showVPNAVariant,
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
-                <UnlimitedBannerGradient
-                    app={app}
-                    showProductCards={true}
-                    showUpsellPanels={false}
-                    showDiscoverButton={false}
-                    showUpsellHeader={true}
-                    subscription={subscription as Subscription}
-                    {...unlimitedBannerGradientUpsells}
-                />
+                <>
+                    <UnlimitedBannerGradient
+                        app={app}
+                        showProductCards={true}
+                        showUpsellPanels={false}
+                        showDiscoverButton={false}
+                        showUpsellHeader={true}
+                        subscription={subscription as Subscription}
+                        {...unlimitedBannerGradientUpsells}
+                    />
+                    <MeetAddonBanner app={app} />
+                </>
             ),
         },
         {
@@ -288,6 +298,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                         subscription={subscription as Subscription}
                         {...unlimitedBannerGradientUpsells}
                     />
+                    <MeetAddonBanner app={app} />
                     <DuoBanner app={app} subscription={subscription as Subscription} />
                 </>
             ),
@@ -302,6 +313,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                         subscription={subscription as Subscription}
                         {...vpnPlusExtendSubscriptionUpsells}
                     />
+                    <MeetAddonBanner app={app} />
                     <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
                 </>
             ),
@@ -320,6 +332,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                         subscription={subscription as Subscription}
                         {...unlimitedBannerGradientUpsells}
                     />
+                    <MeetAddonBanner app={app} />
                 </>
             ),
         },
@@ -363,6 +376,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                         subscription={subscription as Subscription}
                         {...mailPlusExtendSubscriptionUpsells}
                     />
+                    <MeetAddonBanner app={app} />
                     <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
                 </>
             ),
@@ -371,14 +385,17 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             enabled: hasMail(subscription),
             upsells: mailPlusExtendSubscriptionUpsells.upsells,
             element: (
-                <UnlimitedBannerGradient
-                    app={app}
-                    showProductCards={true}
-                    showUpsellPanels={true}
-                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
-                    subscription={subscription as Subscription}
-                    {...unlimitedBannerGradientUpsells}
-                />
+                <>
+                    <UnlimitedBannerGradient
+                        app={app}
+                        showProductCards={true}
+                        showUpsellPanels={true}
+                        gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
+                        subscription={subscription as Subscription}
+                        {...unlimitedBannerGradientUpsells}
+                    />
+                    <MeetAddonBanner app={app} />
+                </>
             ),
         },
         {
@@ -407,6 +424,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                         subscription={subscription as Subscription}
                         {...passPlusExtendSubscriptionUpsells}
                     />
+                    <MeetAddonBanner app={app} />
                     <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
                 </>
             ),
@@ -415,14 +433,17 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             enabled: hasPass(subscription),
             upsells: passPlusExtendSubscriptionUpsells.upsells,
             element: (
-                <UnlimitedBannerGradient
-                    app={app}
-                    showProductCards={true}
-                    showUpsellPanels={true}
-                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
-                    subscription={subscription as Subscription}
-                    {...unlimitedBannerGradientUpsells}
-                />
+                <>
+                    <UnlimitedBannerGradient
+                        app={app}
+                        showProductCards={true}
+                        showUpsellPanels={true}
+                        gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
+                        subscription={subscription as Subscription}
+                        {...unlimitedBannerGradientUpsells}
+                    />
+                    <MeetAddonBanner app={app} />
+                </>
             ),
         },
         {
@@ -436,14 +457,20 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                         showUpsellPanels={true}
                         {...passFamilyBannerExtendSubscriptionUpsells}
                     />
-                    <FamilyUpgradeBanner app={app} subscription={subscription as Subscription} />,
+                    <MeetAddonBanner app={app} />
+                    <FamilyUpgradeBanner app={app} subscription={subscription as Subscription} />
                 </>
             ),
         },
         {
             enabled: hasPassFamily(subscription),
             upsells: passFamilyBannerExtendSubscriptionUpsells.upsells,
-            element: <FamilyUpgradeBanner app={app} subscription={subscription as Subscription} />,
+            element: (
+                <>
+                    <FamilyUpgradeBanner app={app} subscription={subscription as Subscription} />
+                    <MeetAddonBanner app={app} />
+                </>
+            ),
         },
         {
             enabled: isFreeUser && app === APPS.PROTONDRIVE,
@@ -475,6 +502,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                         subscription={subscription as Subscription}
                         {...drivePlusExtendSubscriptionUpsells}
                     />
+                    <MeetAddonBanner app={app} />
                     <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
                 </>
             ),
@@ -483,14 +511,17 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             enabled: hasDrive(subscription),
             upsells: drivePlusExtendSubscriptionUpsells.upsells,
             element: (
-                <UnlimitedBannerGradient
-                    app={app}
-                    showProductCards={true}
-                    showUpsellPanels={true}
-                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
-                    subscription={subscription as Subscription}
-                    {...unlimitedBannerGradientUpsells}
-                />
+                <>
+                    <UnlimitedBannerGradient
+                        app={app}
+                        showProductCards={true}
+                        showUpsellPanels={true}
+                        gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
+                        subscription={subscription as Subscription}
+                        {...unlimitedBannerGradientUpsells}
+                    />
+                    <MeetAddonBanner app={app} />
+                </>
             ),
         },
         {
@@ -504,6 +535,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                         subscription={subscription as Subscription}
                         {...drivePlusOneTBExtendSubscriptionUpsells}
                     />
+                    <MeetAddonBanner app={app} />
                     <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
                 </>
             ),
@@ -512,14 +544,17 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             enabled: hasDrive1TB(subscription),
             upsells: drivePlusOneTBExtendSubscriptionUpsells.upsells,
             element: (
-                <UnlimitedBannerGradient
-                    app={app}
-                    showProductCards={true}
-                    showUpsellPanels={true}
-                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
-                    subscription={subscription as Subscription}
-                    {...unlimitedBannerGradientUpsells}
-                />
+                <>
+                    <UnlimitedBannerGradient
+                        app={app}
+                        showProductCards={true}
+                        showUpsellPanels={true}
+                        gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
+                        subscription={subscription as Subscription}
+                        {...unlimitedBannerGradientUpsells}
+                    />
+                    <MeetAddonBanner app={app} />
+                </>
             ),
         },
         {
@@ -543,6 +578,7 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             upsells: meetProfessionalFromFreeUpsells.upsells,
             element: (
                 <>
+                    <MeetAddonBanner app={app} />
                     <WorkspaceBanner app={app} />
                 </>
             ),
@@ -551,44 +587,63 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             enabled: hasBundle(subscription) && canSaveByExtendingPlan,
             upsells: unlimitedBannerExtendSubscriptionUpsells.upsells,
             element: (
-                <UnlimitedBannerExtendSubscription
-                    app={app}
-                    subscription={subscription as Subscription}
-                    showUpsellPanels={true}
-                    {...unlimitedBannerExtendSubscriptionUpsells}
-                />
+                <>
+                    <UnlimitedBannerExtendSubscription
+                        app={app}
+                        subscription={subscription as Subscription}
+                        showUpsellPanels={true}
+                        {...unlimitedBannerExtendSubscriptionUpsells}
+                    />
+                    <MeetAddonBanner app={app} />
+                </>
             ),
         },
         {
             enabled: hasBundle(subscription) && getCanAccessFamilyPlans(subscription),
-            element: <ExploreGroupPlansBanner app={app} subscription={subscription as Subscription} />,
+            element: (
+                <>
+                    <MeetAddonBanner app={app} />
+                    <ExploreGroupPlansBanner app={app} subscription={subscription as Subscription} />
+                </>
+            ),
         },
         {
             enabled: hasDuo(subscription) && canSaveByExtendingPlan,
             upsells: duoBannerExtendSubscriptionUpsells.upsells,
             element: (
-                <DuoBannerExtendSubscription
-                    app={app}
-                    subscription={subscription as Subscription}
-                    showUpsellPanels={true}
-                    {...duoBannerExtendSubscriptionUpsells}
-                />
+                <>
+                    <DuoBannerExtendSubscription
+                        app={app}
+                        subscription={subscription as Subscription}
+                        showUpsellPanels={true}
+                        {...duoBannerExtendSubscriptionUpsells}
+                    />
+                    <MeetAddonBanner app={app} />
+                </>
             ),
         },
         {
             enabled: hasDuo(subscription) && getCanAccessFamilyPlans(subscription),
-            element: <FamilyBanner app={app} subscription={subscription as Subscription} />,
+            element: (
+                <>
+                    <MeetAddonBanner app={app} />
+                    <FamilyBanner app={app} subscription={subscription as Subscription} />
+                </>
+            ),
         },
         {
             enabled: hasFamily(subscription) && canSaveByExtendingPlan,
             upsells: familyBannerExtendSubscriptionUpsells.upsells,
             element: (
-                <FamilyBannerExtendSubscription
-                    app={app}
-                    subscription={subscription as Subscription}
-                    showUpsellPanels={true}
-                    {...familyBannerExtendSubscriptionUpsells}
-                />
+                <>
+                    <FamilyBannerExtendSubscription
+                        app={app}
+                        subscription={subscription as Subscription}
+                        showUpsellPanels={true}
+                        {...familyBannerExtendSubscriptionUpsells}
+                    />
+                    <MeetAddonBanner app={app} />
+                </>
             ),
         },
         {
@@ -597,7 +652,12 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
                 hasFamily(subscription) &&
                 subscription?.Cycle !== CYCLE.MONTHLY &&
                 app === APPS.PROTONVPN_SETTINGS,
-            element: <VPNB2BBanner app={app} />,
+            element: (
+                <>
+                    <MeetAddonBanner app={app} />
+                    <VPNB2BBanner app={app} />
+                </>
+            ),
         },
         {
             enabled: hasVisionary(subscription) && canSaveByExtendingPlan,
@@ -619,14 +679,17 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             enabled: hasVPNPassBundle(subscription),
             upsells: unlimitedBannerGradientUpsells.upsells,
             element: (
-                <UnlimitedBannerGradient
-                    app={app}
-                    showProductCards={true}
-                    showUpsellPanels={true}
-                    gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
-                    subscription={subscription as Subscription}
-                    {...unlimitedBannerGradientUpsells}
-                />
+                <>
+                    <UnlimitedBannerGradient
+                        app={app}
+                        showProductCards={true}
+                        showUpsellPanels={true}
+                        gridSectionHeaderCopy={c('Title').t`Get complete privacy coverage`}
+                        subscription={subscription as Subscription}
+                        {...unlimitedBannerGradientUpsells}
+                    />
+                    <MeetAddonBanner app={app} />
+                </>
             ),
         },
         // This has to remain the last option as users with plan could also have pass lifetime

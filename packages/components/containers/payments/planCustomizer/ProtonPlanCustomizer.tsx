@@ -23,6 +23,7 @@ import {
     TRIAL_MAX_DEDICATED_IPS,
     TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
     TRIAL_MAX_LUMO_SEATS,
+    TRIAL_MAX_MEET_SEATS,
     TRIAL_MAX_SCRIBE_SEATS,
     TRIAL_MAX_USERS,
     getAddonMultiplier,
@@ -32,20 +33,23 @@ import {
     isFreeSubscription,
     isIpAddon,
     isLumoAddon,
+    isMeetAddon,
     isMemberAddon,
     isOrgSizeAddon,
     isScribeAddon,
     setQuantity,
 } from '@proton/payments';
+import { isMultiUserPersonalPlan } from '@proton/payments/core/plan/helpers';
 import type { AddonBalanceKey } from '@proton/payments/core/subscription/selected-plan';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
-import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, LUMO_SHORT_APP_NAME, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import type { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import ScribeAddon from '../ScribeAddon';
 import { IPsNumberCustomiser } from './IPsNumberCustomiser';
 import LumoAddon from './LumoAddon';
+import MeetAddon from './MeetAddon';
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
 import { getForcedFeatureLimitations } from './forced-addon-limits';
 import type { DecreaseBlockedReason } from './helpers';
@@ -64,6 +68,7 @@ interface AddonCustomizerProps {
     latestSubscription?: Subscription | FreeSubscription;
     scribeAddonEnabled: boolean;
     lumoAddonEnabled: boolean;
+    meetAddonEnabled: boolean;
     audience?: Audience;
     mode: CustomiserMode;
     isTrialMode: boolean;
@@ -88,6 +93,7 @@ const getTrialProps = (
         [ADDON_PREFIXES.MEMBER]: TRIAL_MAX_USERS,
         [ADDON_PREFIXES.SCRIBE]: TRIAL_MAX_SCRIBE_SEATS,
         [ADDON_PREFIXES.LUMO]: TRIAL_MAX_LUMO_SEATS,
+        [ADDON_PREFIXES.MEET]: TRIAL_MAX_MEET_SEATS,
         [ADDON_PREFIXES.IP]: TRIAL_MAX_DEDICATED_IPS,
         [ADDON_PREFIXES.DOMAIN]: TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
     }[addonType];
@@ -99,6 +105,8 @@ const getTrialProps = (
             .t`You can have up to ${TRIAL_MAX_SCRIBE_SEATS} Scribe seats during the trial period.`,
         [ADDON_PREFIXES.LUMO]: c('b2b_trials_2025_Info')
             .t`You can have up to ${TRIAL_MAX_LUMO_SEATS} ${LUMO_SHORT_APP_NAME} seats during the trial period.`,
+        [ADDON_PREFIXES.MEET]: c('meet_2025: Info')
+            .t`You can have up to ${TRIAL_MAX_MEET_SEATS} ${MEET_SHORT_APP_NAME} seats during the trial period.`,
         [ADDON_PREFIXES.IP]: c('b2b_trials_2025_Info')
             .t`You can have up to ${TRIAL_MAX_DEDICATED_IPS} dedicated server during the trial period.`,
         [ADDON_PREFIXES.DOMAIN]: c('b2b_trials_2025_Info').t`You cannot add custom domains during the trial period.`,
@@ -121,6 +129,7 @@ const AddonCustomizer = ({
     latestSubscription,
     scribeAddonEnabled,
     lumoAddonEnabled,
+    meetAddonEnabled,
     audience,
     mode,
     isTrialMode,
@@ -183,9 +192,9 @@ const AddonCustomizer = ({
     const value = selectedPlan.getTotal(featureLimitKey);
 
     const selectedPlanTotalMembers = selectedPlan.getTotalUsers();
-    // The total number of scribe or lumo addons can't be higher than the total number of members
+    // The total number of scribe, lumo, or meet addons can't be higher than the total number of members
     const max =
-        isScribeAddon(addonName) || isLumoAddon(addonName)
+        isScribeAddon(addonName) || isLumoAddon(addonName) || isMeetAddon(addonName)
             ? selectedPlanTotalMembers
             : Math.min(forcedMax ?? Infinity, AddonLimit[addonName] * addonMultiplier);
 
@@ -194,6 +203,10 @@ const AddonCustomizer = ({
     const selectedPlanIDs = selectedPlan.planIDs;
     const cycle = selectedPlan.cycle;
     const currency = selectedPlan.currency;
+
+    // For multi-user personal plans (Duo, Family), Meet seats must equal the number of users.
+    // Lock the input so the user can't change the count after adding.
+    const isMeetAddonLockedForPlan = isMeetAddon(addonName) && isMultiUserPersonalPlan(selectedPlan.getPlanName());
 
     const sharedNumberCustomizerProps: Pick<
         NumberCustomiserProps,
@@ -217,11 +230,12 @@ const AddonCustomizer = ({
             let newPlanIDs = setQuantity(selectedPlanIDs, addon.Name, newValue);
 
             // #region
-            // This section makes Scribe or Lumo increase and decrease together with Members.
+            // This section makes Scribe, Lumo, or Meet increase and decrease together with Members.
             if (isMemberAddon(addonName)) {
                 const supportedAddonNames = selectedPlan.getSupportedAddonNames();
                 const scribeAddonKey = supportedAddonNames.find(isScribeAddon);
                 const lumoAddonKey = supportedAddonNames.find(isLumoAddon);
+                const meetAddonKey = supportedAddonNames.find(isMeetAddon);
                 const newMembersQuantity = newQuantity;
 
                 const currentMembersValue = value;
@@ -232,10 +246,15 @@ const AddonCustomizer = ({
                 const currentLumoValue = lumoAddonKey ? selectedPlanIDs[lumoAddonKey] : undefined;
                 const lumoConstrain = currentMembersValue === currentLumoValue && lumoAddonEnabled;
 
+                const currentMeetValue = meetAddonKey ? selectedPlanIDs[meetAddonKey] : undefined;
+                const meetConstrain = currentMembersValue === currentMeetValue && meetAddonEnabled;
+
                 if (scribeConstrain && scribeAddonKey) {
                     newPlanIDs = setQuantity(newPlanIDs, scribeAddonKey, newMembersQuantity);
                 } else if (lumoConstrain && lumoAddonKey) {
                     newPlanIDs = setQuantity(newPlanIDs, lumoAddonKey, newMembersQuantity);
+                } else if (meetConstrain && meetAddonKey) {
+                    newPlanIDs = setQuantity(newPlanIDs, meetAddonKey, newMembersQuantity);
                 }
 
                 onChangePlanIDs(newPlanIDs);
@@ -244,7 +263,7 @@ const AddonCustomizer = ({
             // #endregion
 
             // #region
-            // This section balances scribes and lumos when total exceeds members.
+            // This section balances scribes and lumos when their total exceeds members.
             const balanceKey: AddonBalanceKey | undefined = (() => {
                 if (isLumoAddon(addonName)) {
                     return 'prefer-lumos';
@@ -390,6 +409,25 @@ const AddonCustomizer = ({
         );
     }
 
+    if (isMeetAddon(addonName) && meetAddonEnabled) {
+        return (
+            <MeetAddon
+                key={`${addon.Name}-size`}
+                price={addonPriceInline}
+                onAddMeet={() => {
+                    onChangePlanIDs(setQuantity(selectedPlanIDs, addon.Name, max));
+                }}
+                onRemoveMeet={() => {
+                    onChangePlanIDs(setQuantity(selectedPlanIDs, addon.Name, 0));
+                }}
+                locked={isMeetAddonLockedForPlan}
+                telemetryContext={telemetryContext}
+                {...sharedNumberCustomizerProps}
+                {...trialProps}
+            />
+        );
+    }
+
     return null;
 };
 
@@ -407,6 +445,7 @@ export interface Props extends ComponentPropsWithoutRef<'div'> {
     audience?: Audience;
     scribeAddonEnabled?: boolean;
     lumoAddonEnabled?: boolean;
+    meetAddonEnabled?: boolean;
     separator?: boolean;
     isTrialMode?: boolean;
     telemetryContext: PaymentTelemetryContext;
@@ -414,7 +453,7 @@ export interface Props extends ComponentPropsWithoutRef<'div'> {
 
 function getAddonDisplayOrder(addonName: ADDON_NAMES): number {
     // the lower the index of the addon type, the higher the priority.
-    const mapping = [isMemberAddon, isDomainAddon, isIpAddon, isScribeAddon, isLumoAddon] as const;
+    const mapping = [isMemberAddon, isDomainAddon, isIpAddon, isScribeAddon, isLumoAddon, isMeetAddon] as const;
     return mapping.findIndex((guard) => guard(addonName)) ?? mapping.length;
 }
 
@@ -483,6 +522,7 @@ export const ProtonPlanCustomizer = ({
     audience,
     scribeAddonEnabled = false,
     lumoAddonEnabled = false,
+    meetAddonEnabled = false,
     separator = false,
     isTrialMode = false,
     telemetryContext,
@@ -532,6 +572,7 @@ export const ProtonPlanCustomizer = ({
                         key={addonName}
                         scribeAddonEnabled={scribeAddonEnabled}
                         lumoAddonEnabled={lumoAddonEnabled}
+                        meetAddonEnabled={meetAddonEnabled}
                         addonName={addonName}
                         selectedPlan={normalizedSelectedPlan}
                         onChangePlanIDs={(planIDs) => {
