@@ -504,7 +504,8 @@ export type FeatureLimitKey =
     | 'MaxTier'
     | 'MaxIPs' // synthetic key, it does't exist in the API
     | 'MaxAI' // synthetic key, it does't exist in the API
-    | 'MaxLumo';
+    | 'MaxLumo'
+    | 'MaxMeet'; // synthetic key, it does't exist in the API
 
 export type FreeSubscription = typeof FREE_SUBSCRIPTION;
 

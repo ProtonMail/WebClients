@@ -1,3 +1,4 @@
+import { ADDON_NAMES } from '@proton/payments/core/constants';
 import type { CYCLE } from '@proton/payments/core/constants';
 import { isRegionalCurrency } from '@proton/payments/core/currencies';
 import type { Currency, Pricing } from '@proton/payments/core/interface';
@@ -88,6 +89,41 @@ const plans: Plan[] = deepFreeze([
         Offers: [],
         Cycle: 1,
         Amount: 1299,
+        Vendors: [],
+    },
+    {
+        ID: 'meet2026-test-plan-id',
+        ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
+        Type: 1,
+        Name: 'meet2026',
+        Title: 'Meet Plus',
+        MaxDomains: 0,
+        MaxAddresses: 0,
+        MaxCalendars: 0,
+        MaxSpace: 0,
+        MaxMembers: 0,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Services: 64,
+        Features: 0,
+        State: 1,
+        Pricing: {
+            '1': 999,
+            '12': 9588,
+        },
+        DefaultPricing: {
+            '1': 999,
+            '12': 9588,
+        },
+        PeriodEnd: {
+            '1': 1757334604,
+            '12': 1786192204,
+        },
+        Currency: 'CHF',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 1,
+        Amount: 999,
         Vendors: [],
     },
     {
@@ -2907,10 +2943,43 @@ export function getLongTestPlans(currency: Currency = 'BRL'): Plan[] {
 }
 
 export function getTestPlansMap(currency: Currency = 'CHF'): PlansMap {
-    return getTestPlans(currency).reduce((acc, plan) => {
+    const plansMap = getTestPlans(currency).reduce((acc, plan) => {
         acc[plan.Name] = plan;
         return acc;
     }, {} as PlansMap);
+
+    // Derive meet addon entries from lumo addon entries so meet addons are available
+    // without duplicating hundreds of lines of fixture data.
+    // Only derive entries that are actually defined in ADDON_NAMES (i.e., supported by the backend).
+    const validAddonNames = new Set(Object.values(ADDON_NAMES));
+    for (const plan of Object.values(plansMap)) {
+        if (plan && plan.Name.startsWith('1lumo-')) {
+            const meetName = plan.Name.replace('1lumo-', '1meet-') as keyof PlansMap;
+            if (validAddonNames.has(meetName as ADDON_NAMES)) {
+                (plansMap as any)[meetName] = { ...plan, Name: meetName, Title: plan.Title.replace('Lumo', 'Meet') };
+            }
+        }
+    }
+
+    // Add meet addon entries that can't be derived from lumo addons (no 1lumo-lumo2024 / 1lumo-lumobiz2025 exists).
+    const lumoVpn2024 = plansMap['1lumo-vpn2024' as keyof PlansMap];
+    if (lumoVpn2024) {
+        (plansMap as any)['1meet-lumo2024'] = {
+            ...lumoVpn2024,
+            Name: '1meet-lumo2024',
+            Title: '+1 Meet Seat Lumo Plus',
+        };
+    }
+    const lumoBundlePro2024 = plansMap['1lumo-bundlepro2024' as keyof PlansMap];
+    if (lumoBundlePro2024) {
+        (plansMap as any)['1meet-lumobiz2025'] = {
+            ...lumoBundlePro2024,
+            Name: '1meet-lumobiz2025',
+            Title: '+1 Meet Seat Lumo Professional',
+        };
+    }
+
+    return plansMap;
 }
 
 export const PLANS_MAP: PlansMap = deepFreeze(getTestPlansMap());
