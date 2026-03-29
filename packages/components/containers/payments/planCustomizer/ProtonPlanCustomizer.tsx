@@ -453,7 +453,7 @@ export interface Props extends ComponentPropsWithoutRef<'div'> {
 
 function getAddonDisplayOrder(addonName: ADDON_NAMES): number {
     // the lower the index of the addon type, the higher the priority.
-    const mapping = [isMemberAddon, isDomainAddon, isIpAddon, isScribeAddon, isLumoAddon, isMeetAddon] as const;
+    const mapping = [isMemberAddon, isDomainAddon, isIpAddon, isMeetAddon, isScribeAddon, isLumoAddon] as const;
     return mapping.findIndex((guard) => guard(addonName)) ?? mapping.length;
 }
 
