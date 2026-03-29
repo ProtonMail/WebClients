@@ -4,6 +4,7 @@ import appleAppStoreImage from '@proton/components/containers/vpn/VpnDownloadSec
 import googlePlayStoreImage from '@proton/components/containers/vpn/VpnDownloadSection/images/google-play-store.svg';
 import type { IconName } from '@proton/icons/types';
 import { APPS } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import DashboardDownloadSection from '../../../shared/DashboardDownloadSection/DashboardDownloadSection';
 import {
@@ -22,45 +23,51 @@ const MeetDownloadSection = () => {
     const ubuntuDownloadUrl = useDownloadLinuxDesktopAppURL(APPS.PROTONMEET, LINUX_DISTRIBUTION.UBUNTU);
     const fedoraDownloadUrl = useDownloadLinuxDesktopAppURL(APPS.PROTONMEET, LINUX_DISTRIBUTION.FEDORA);
 
+    const mobileDownloadSectionEnabled = useFlag('MeetMobileDownloadSection');
+
     const downloadData = [
-        {
-            title: () => c('Download').t`Mobile`,
-            tabs: [
-                {
-                    title: () => c('Download').t`iOS`,
-                    icon: 'brand-apple' as IconName,
-                    content: {
-                        image: iosPreview,
-                        hint: () => c('Download').t`Scan the QR code with your mobile device`,
-                        downloadButtons: [
-                            {
-                                title: () => c('Download').t`Download on the Apple App Store`,
-                                link: 'https://apps.apple.com/app/id6745089447',
-                                style: 'appstore' as const,
-                                image: appleAppStoreImage,
-                            },
-                        ],
-                    },
-                },
-                {
-                    title: () => c('Download').t`Android`,
-                    icon: 'brand-android' as IconName,
-                    content: {
-                        image: androidPreview,
-                        hint: () => c('Download').t`Scan the QR code with your mobile device`,
-                        downloadButtons: [
-                            {
-                                title: () => c('Download').t`Get it on Google Play`,
-                                link: 'https://play.google.com/store/apps/details?id=proton.android.meet',
-                                style: 'appstore' as const,
-                                image: googlePlayStoreImage,
-                            },
-                        ],
-                    },
-                },
-            ],
-            enabled: true,
-        },
+        ...(mobileDownloadSectionEnabled
+            ? [
+                  {
+                      title: () => c('Download').t`Mobile`,
+                      tabs: [
+                          {
+                              title: () => c('Download').t`iOS`,
+                              icon: 'brand-apple' as IconName,
+                              content: {
+                                  image: iosPreview,
+                                  hint: () => c('Download').t`Scan the QR code with your mobile device`,
+                                  downloadButtons: [
+                                      {
+                                          title: () => c('Download').t`Download on the Apple App Store`,
+                                          link: 'https://apps.apple.com/app/id6745089447',
+                                          style: 'appstore' as const,
+                                          image: appleAppStoreImage,
+                                      },
+                                  ],
+                              },
+                          },
+                          {
+                              title: () => c('Download').t`Android`,
+                              icon: 'brand-android' as IconName,
+                              content: {
+                                  image: androidPreview,
+                                  hint: () => c('Download').t`Scan the QR code with your mobile device`,
+                                  downloadButtons: [
+                                      {
+                                          title: () => c('Download').t`Get it on Google Play`,
+                                          link: 'https://play.google.com/store/apps/details?id=proton.android.meet',
+                                          style: 'appstore' as const,
+                                          image: googlePlayStoreImage,
+                                      },
+                                  ],
+                              },
+                          },
+                      ],
+                      enabled: true,
+                  },
+              ]
+            : []),
         {
             title: () => c('Download').t`Desktop`,
             tabs: [
