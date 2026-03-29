@@ -218,6 +218,7 @@ export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHE
 export type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOSUGGEST_PASSWORD };
 export type AutofillSequenceMessage = WithPayload<WorkerMessageType.AUTOFILL_SEQUENCE, AutofillRequest>;
 export type AutofillSyncMessage = { type: WorkerMessageType.AUTOFILL_SYNC };
+export type AutofillTriggerMessage = { type: WorkerMessageType.AUTOFILL_TRIGGER };
 
 export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosaveRequest>;
 export type AutosuggestAliasMessage = { type: WorkerMessageType.AUTOSUGGEST_ALIAS };
@@ -321,6 +322,7 @@ export type WorkerMessage =
     | AutofillPasswordOptionsMessage
     | AutofillSequenceMessage
     | AutofillSyncMessage
+    | AutofillTriggerMessage
     | AutoSaveRequestMessage
     | AutosuggestAliasMessage
     | B2BEventMessage
