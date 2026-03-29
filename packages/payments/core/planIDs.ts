@@ -3,9 +3,17 @@ import type { EitherOr, Organization } from '@proton/shared/lib/interfaces';
 import { ADDON_NAMES, CYCLE, PLANS } from './constants';
 import { getDefaultMainCurrency } from './currencies';
 import type { FreeSubscription, PlanIDs } from './interface';
-import { getSupportedAddons, isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from './plan/addons';
+import {
+    getSupportedAddons,
+    isDomainAddon,
+    isIpAddon,
+    isLumoAddon,
+    isMeetAddon,
+    isMemberAddon,
+    isScribeAddon,
+} from './plan/addons';
 import { getPlanFeatureLimit } from './plan/feature-limits';
-import { getPlanNameFromIDs } from './plan/helpers';
+import { getPlanNameFromIDs, isMultiUserPersonalPlan } from './plan/helpers';
 import type { Plan, PlansMap } from './plan/interface';
 import { getPlanIDs, getSubscriptionsArray, hasLumo, isManagedExternally } from './subscription/helpers';
 import type { Subscription } from './subscription/interface';
@@ -14,6 +22,45 @@ import { isFreeSubscription, isValidPlanName } from './type-guards';
 
 export const hasPlanIDs = (planIDs: PlanIDs) => Object.values(planIDs).some((quantity) => quantity > 0);
 export const hasFreePlanIDs = (planIDs: PlanIDs) => !hasPlanIDs(planIDs) || Boolean(planIDs[PLANS.FREE]);
+
+const getMeetWithEnoughSeats = ({
+    planIDs,
+    toPlan,
+    plans,
+}: {
+    planIDs: PlanIDs;
+    toPlan: Plan;
+    plans: Plan[];
+}): number => {
+    // Count existing meet addons across all meet addon name variants
+    let meetAddons = 0;
+    for (const addonName of Object.values(ADDON_NAMES)) {
+        if (isMeetAddon(addonName)) {
+            meetAddons += planIDs[addonName] ?? 0;
+        }
+    }
+
+    if (meetAddons === 0) {
+        return 0;
+    }
+
+    // cycle and currency don't matter here, we only care about normalizing the planIDs.
+    const currentSelectedPlan = SelectedPlan.createNormalized(planIDs, plans, CYCLE.MONTHLY, getDefaultMainCurrency());
+    const newSelectedPlan = currentSelectedPlan.changePlan(toPlan.Name as PLANS);
+    const maxMeetsInNewPlan = newSelectedPlan.getMaxMeets();
+
+    // For multi-user personal plans (Duo, Family, PassFamily), the meet addon seat count is locked
+    // to the number of members. Always transfer the full seat count so the user doesn't end up
+    // with fewer seats than their plan requires (e.g. 1 seat on Family should become 6).
+    if (isMultiUserPersonalPlan(toPlan.Name as PLANS)) {
+        return maxMeetsInNewPlan;
+    }
+
+    // Mirror getLumoWithEnoughSeats: transfer existing count, capped at the new plan's max.
+    // e.g. 6 meets on Family → bundle2022 (max 1): Math.min(6, 1) = 1
+    //      1 meet  on Mail   → bundle2022 (max 1): Math.min(1, 1) = 1
+    return Math.min(meetAddons, maxMeetsInNewPlan);
+};
 
 const getLumoWithEnoughSeats = ({
     planIDs,
@@ -64,7 +111,7 @@ export const clearPlanIDs = (planIDs: PlanIDs): PlanIDs => {
     }, {});
 };
 
-const allAddons = ['lumo', 'ip', 'scribe', 'member', 'domain'] as const;
+const allAddons = ['lumo', 'meet', 'ip', 'scribe', 'member', 'domain'] as const;
 type Addons = (typeof allAddons)[number];
 
 type SwitchPlanOptions = EitherOr<
@@ -111,7 +158,7 @@ function getNewPlanIDs({ newPlan, newPlanIDs: newPlanIDsParam }: SwitchPlanOptio
 
 function getAddonPriority(addonName: ADDON_NAMES): number {
     // the lower the index of the addon type, the higher the priority.
-    const mapping = [isMemberAddon, isDomainAddon, isIpAddon, isLumoAddon, isScribeAddon] as const;
+    const mapping = [isMemberAddon, isDomainAddon, isIpAddon, isLumoAddon, isMeetAddon, isScribeAddon] as const;
     return mapping.findIndex((guard) => guard(addonName)) ?? mapping.length;
 }
 
@@ -338,6 +385,14 @@ export const switchPlan = (options: SwitchPlanOptions): PlanIDs => {
                     })
                 );
             }
+        }
+
+        if (isMeetAddon(addon) && plan && !dontTransferAddons.has('meet')) {
+            newPlanIDs[addon] = getMeetWithEnoughSeats({
+                planIDs: currentPlanIDs,
+                toPlan: plan,
+                plans,
+            });
         }
 
         if (isIpAddon(addon) && plan && organization && !dontTransferAddons.has('ip')) {

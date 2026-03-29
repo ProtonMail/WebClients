@@ -93,6 +93,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Organization, RequireOnly, UserModel } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -126,6 +127,7 @@ import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
 import { canShowGiftCodeInput } from './modal-components/helpers/canShowGiftCodeInput';
 import { showLumoAddonCustomizer } from './modal-components/helpers/showLumoAddonCustomizer';
+import { showMeetAddonCustomizer } from './modal-components/helpers/showMeetAddonCustomizer';
 import { PostSubscriptionModalLoadingContent } from './postSubscription/modals/PostSubscriptionModalsComponents';
 import useSubscriptionModalTelemetry from './useSubscriptionModalTelemetry';
 
@@ -330,6 +332,7 @@ const SubscriptionContainerInner = ({
     const [loadingGift, withLoadingGift] = useLoading();
     const [additionalCheckResults, setAdditionalCheckResults] = useState<SubscriptionEstimation[]>();
     const scribeEnabled = useAssistantFeatureEnabled();
+    const meetAddonFlag = useFlag('MeetAddonCustomizer');
     const [upsellModal, setUpsellModal, renderUpsellModal] = useModalState();
     const [plusToPlusUpsell, setPlusToPlusUpsell] = useState<{ unlockPlan: Plan | undefined } | null>(null);
 
@@ -481,6 +484,7 @@ const SubscriptionContainerInner = ({
         planIDs: model.planIDs,
         cycle: model.cycle,
     });
+    const meetAddonEnabled = meetAddonFlag && showMeetAddonCustomizer({ subscription });
 
     const [selectedProductPlans, setSelectedProductPlans] = useState(
         defaultSelectedProductPlans ||
@@ -858,6 +862,15 @@ const SubscriptionContainerInner = ({
                 newModel.planIDs = planTransitionForbidden.newPlanIDs;
                 // since we are switching the plan, it's the same as switching the cycle manually, so we need to make sure
                 // that the cycle is allowed
+                newModel.cycle = switchCycle(
+                    subscription?.Cycle ?? newModel.cycle,
+                    newModel.planIDs,
+                    newModel.currency
+                );
+            }
+
+            if (planTransitionForbidden?.type === 'meet-plus') {
+                newModel.planIDs = planTransitionForbidden.newPlanIDs;
                 newModel.cycle = switchCycle(
                     subscription?.Cycle ?? newModel.cycle,
                     newModel.planIDs,
@@ -1456,6 +1469,7 @@ const SubscriptionContainerInner = ({
                                             <ProtonPlanCustomizer
                                                 scribeAddonEnabled={scribeEnabled.paymentsEnabled}
                                                 lumoAddonEnabled={lumoAddonEnabled}
+                                                meetAddonEnabled={meetAddonEnabled}
                                                 loading={blockAccountSizeSelector}
                                                 currency={model.currency}
                                                 cycle={model.cycle}

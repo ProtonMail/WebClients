@@ -1,8 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import type { ADDON_NAMES, CYCLE } from '@proton/payments';
-import { PLANS, PLAN_NAMES, isDomainAddon, isLumoAddon, isScribeAddon } from '@proton/payments';
-import { BRAND_NAME, LUMO_APP_NAME } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES, isDomainAddon, isLumoAddon, isMeetAddon, isScribeAddon } from '@proton/payments';
+import { BRAND_NAME, LUMO_APP_NAME, MEET_APP_NAME } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 
@@ -51,6 +51,20 @@ export const getAddonDashboardTitle = (addonName: ADDON_NAMES, quantity: number,
             return c('Addon').t`${LUMO_APP_NAME} AI assistant`;
         }
     }
+
+    if (isMeetAddon(addonName)) {
+        if (maxMembers > 1) {
+            // translator: sentence is "Proton Meet (for 1 user)" or "Proton Meet (for 6 users)"
+            return c('meet_2025: Addon').ngettext(
+                msgid`${MEET_APP_NAME} (for ${quantity} user)`,
+                `${MEET_APP_NAME} (for ${quantity} users)`,
+                quantity
+            );
+        } else {
+            return MEET_APP_NAME;
+        }
+    }
+
     return '';
 };
 

@@ -1,7 +1,7 @@
 import isDeepEqual from 'lodash/isEqual';
 import { c, msgid } from 'ttag';
 
-import { LUMO_APP_NAME } from '@proton/shared/lib/constants';
+import { LUMO_APP_NAME, MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 import { pick } from '@proton/shared/lib/helpers/object';
 
@@ -13,6 +13,7 @@ import {
     isDomainAddon,
     isIpAddon,
     isLumoAddon,
+    isMeetAddon,
     isMemberAddon,
     isScribeAddon,
     supportsMemberAddon,
@@ -45,6 +46,8 @@ const getAddonQuantity = (addon: Plan, quantity: number) => {
         maxKey = 'MaxAI';
     } else if (isLumoAddon(addon.Name)) {
         maxKey = 'MaxLumo';
+    } else if (isMeetAddon(addon.Name)) {
+        maxKey = 'MaxMeet';
     }
 
     const addonMultiplier = maxKey ? getAddonMultiplier(maxKey, addon) : 0;
@@ -95,6 +98,23 @@ export const getAddonTitleWithQuantity = (addonName: ADDON_NAMES, quantity: numb
         return c('Addon').ngettext(msgid`${seats} ${LUMO_APP_NAME} seat`, `${seats} ${LUMO_APP_NAME} seats`, seats);
     }
 
+    if (isMeetAddon(addonName)) {
+        const seats = quantity;
+        if (isB2C) {
+            return c('Addon').ngettext(
+                msgid`${seats} ${MEET_APP_NAME} license`,
+                `${seats} ${MEET_APP_NAME} licenses`,
+                seats
+            );
+        }
+
+        return c('meet_2025: Addon').ngettext(
+            msgid`${seats} ${MEET_APP_NAME} seat`,
+            `${seats} ${MEET_APP_NAME} seats`,
+            seats
+        );
+    }
+
     return '';
 };
 
@@ -105,11 +125,15 @@ export const getAddonTitleByType = (
 ): string => {
     const scribeTitle = isB2C ? c('Addon').t`Writing assistant` : c('Addon').t`Writing assistant seats`;
     const lumoTitle = isB2C ? c('Addon').t`${LUMO_APP_NAME} AI license` : c('Addon').t`${LUMO_APP_NAME} seats`;
+    const meetTitle = isB2C
+        ? c('meet_2025: Addon').t`${MEET_APP_NAME} license`
+        : c('meet_2025: Addon').t`${MEET_APP_NAME} seats`;
     const ipTitle = short ? c('Addon').t`Servers` : c('Addon').t`Dedicated VPN servers`;
 
     const mapping: Record<ADDON_PREFIXES, string> = {
         [ADDON_PREFIXES.SCRIBE]: scribeTitle,
         [ADDON_PREFIXES.LUMO]: lumoTitle,
+        [ADDON_PREFIXES.MEET]: meetTitle,
         [ADDON_PREFIXES.MEMBER]: c('Addon').t`Users`,
         [ADDON_PREFIXES.DOMAIN]: c('Addon').t`Domains`,
         [ADDON_PREFIXES.IP]: ipTitle,

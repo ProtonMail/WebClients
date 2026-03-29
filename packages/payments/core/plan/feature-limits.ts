@@ -1,6 +1,6 @@
 import { type ADDON_NAMES, PLANS, PLAN_TYPES } from '../constants';
 import type { FeatureLimitKey, PlanIDs } from '../interface';
-import { isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from './addons';
+import { isIpAddon, isLumoAddon, isMeetAddon, isMemberAddon, isScribeAddon } from './addons';
 import { isMultiUserPersonalPlan } from './helpers';
 import type { Plan, PlansMap } from './interface';
 
@@ -49,6 +49,10 @@ export const getPlanMaxLumo = (plan: Plan) => {
     return isLumoAddon(plan.Name) ? 1 : 0;
 };
 
+export const getPlanMaxMeet = (plan: Plan) => {
+    return isMeetAddon(plan.Name) ? 1 : 0;
+};
+
 const getPlanMaxAIs = (plan: Plan) => {
     return isScribeAddon(plan.Name) || isLumoAddon(plan.Name) ? 1 : 0;
 };
@@ -75,6 +79,8 @@ export const getPlanFeatureLimit = (plan: Plan, key: FeatureLimitKey): number =>
         result = getPlanMaxAIs(plan);
     } else if (key === 'MaxLumo') {
         result = getPlanMaxLumo(plan);
+    } else if (key === 'MaxMeet') {
+        result = getPlanMaxMeet(plan);
     } else if (key === 'MaxMembers') {
         result = getPlanMaxMembers(plan);
     } else {
