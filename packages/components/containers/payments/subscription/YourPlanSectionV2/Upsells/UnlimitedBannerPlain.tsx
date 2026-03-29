@@ -67,7 +67,7 @@ const UnlimitedBannerPlain = ({ app, subscription }: Props) => {
                     {c('Action').t`Discover ${planName}`}
                 </Button>
             }
-            style="card"
+            style="promotionGradient"
         />
     );
 };

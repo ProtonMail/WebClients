@@ -10,6 +10,7 @@ import {
     isDomainAddon,
     isIpAddon,
     isLumoAddon,
+    isMeetAddon,
     isMemberAddon,
 } from '@proton/payments';
 
@@ -40,6 +41,9 @@ export const AddonTooltip = ({
             text = c('Addon').jt`${price} per dedicated server`;
             break;
         case isLumoAddon(addonName):
+            text = c('Addon').jt`${price} per seat`;
+            break;
+        case isMeetAddon(addonName):
             text = c('Addon').jt`${price} per seat`;
             break;
         default:
