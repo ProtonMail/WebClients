@@ -10,6 +10,7 @@ describe('getSupportedAddons', () => {
             const result = getSupportedAddons(planIDs);
             const expected: SupportedAddons = {
                 [ADDON_NAMES.LUMO_MAIL]: true,
+                [ADDON_NAMES.MEET_MAIL]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -19,6 +20,7 @@ describe('getSupportedAddons', () => {
             const result = getSupportedAddons(planIDs);
             const expected: SupportedAddons = {
                 [ADDON_NAMES.LUMO_DRIVE]: true,
+                [ADDON_NAMES.MEET_DRIVE]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -28,6 +30,7 @@ describe('getSupportedAddons', () => {
             const result = getSupportedAddons(planIDs);
             const expected: SupportedAddons = {
                 [ADDON_NAMES.LUMO_DRIVE_1TB]: true,
+                [ADDON_NAMES.MEET_DRIVE_1TB]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -37,6 +40,7 @@ describe('getSupportedAddons', () => {
             const result = getSupportedAddons(planIDs);
             const expected: SupportedAddons = {
                 [ADDON_NAMES.LUMO_PASS]: true,
+                [ADDON_NAMES.MEET_PASS]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -46,6 +50,7 @@ describe('getSupportedAddons', () => {
             const result = getSupportedAddons(planIDs);
             const expected: SupportedAddons = {
                 [ADDON_NAMES.LUMO_PASS_FAMILY]: true,
+                [ADDON_NAMES.MEET_PASS_FAMILY]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -55,6 +60,7 @@ describe('getSupportedAddons', () => {
             const result = getSupportedAddons(planIDs);
             const expected: SupportedAddons = {
                 [ADDON_NAMES.LUMO_VPN2024]: true,
+                [ADDON_NAMES.MEET_VPN2024]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -64,6 +70,7 @@ describe('getSupportedAddons', () => {
             const result = getSupportedAddons(planIDs);
             const expected: SupportedAddons = {
                 [ADDON_NAMES.LUMO_BUNDLE]: true,
+                [ADDON_NAMES.MEET_BUNDLE]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -73,6 +80,7 @@ describe('getSupportedAddons', () => {
             const result = getSupportedAddons(planIDs);
             const expected: SupportedAddons = {
                 [ADDON_NAMES.LUMO_FAMILY]: true,
+                [ADDON_NAMES.MEET_FAMILY]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -82,6 +90,7 @@ describe('getSupportedAddons', () => {
             const result = getSupportedAddons(planIDs);
             const expected: SupportedAddons = {
                 [ADDON_NAMES.LUMO_DUO]: true,
+                [ADDON_NAMES.MEET_DUO]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -95,6 +104,7 @@ describe('getSupportedAddons', () => {
                 [ADDON_NAMES.MEMBER_MAIL_PRO]: true,
                 [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: true,
                 [ADDON_NAMES.LUMO_MAIL_PRO]: true,
+                [ADDON_NAMES.MEET_MAIL_PRO]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -106,6 +116,7 @@ describe('getSupportedAddons', () => {
                 [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: true,
                 [ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS]: true,
                 [ADDON_NAMES.LUMO_MAIL_BUSINESS]: true,
+                [ADDON_NAMES.MEET_MAIL_BUSINESS]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -116,6 +127,7 @@ describe('getSupportedAddons', () => {
             const expected: SupportedAddons = {
                 [ADDON_NAMES.MEMBER_DRIVE_PRO]: true,
                 [ADDON_NAMES.LUMO_DRIVE_PRO]: true,
+                [ADDON_NAMES.MEET_DRIVE_PRO]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -126,6 +138,7 @@ describe('getSupportedAddons', () => {
             const expected: SupportedAddons = {
                 [ADDON_NAMES.MEMBER_DRIVE_BUSINESS]: true,
                 [ADDON_NAMES.LUMO_DRIVE_BUSINESS]: true,
+                [ADDON_NAMES.MEET_DRIVE_BUSINESS]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -139,6 +152,7 @@ describe('getSupportedAddons', () => {
                 [ADDON_NAMES.IP_BUNDLE_PRO]: true,
                 [ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO]: true,
                 [ADDON_NAMES.LUMO_BUNDLE_PRO]: true,
+                [ADDON_NAMES.MEET_BUNDLE_PRO]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -156,12 +170,24 @@ describe('getSupportedAddons', () => {
             expect(result).toEqual(expected);
         });
 
+        it('should return correct addons for PLANS.BUNDLE_BIZ_2025', () => {
+            const planIDs: PlanIDs = { [PLANS.BUNDLE_BIZ_2025]: 1 };
+            const result = getSupportedAddons(planIDs);
+            const expected: SupportedAddons = {
+                [ADDON_NAMES.MEMBER_BUNDLE_BIZ_2025]: true,
+                [ADDON_NAMES.DOMAIN_BUNDLE_BIZ_2025]: true,
+                [ADDON_NAMES.IP_BUNDLE_BIZ_2025]: true,
+            };
+            expect(result).toEqual(expected);
+        });
+
         it('should return correct addons for PLANS.VPN_PRO', () => {
             const planIDs: PlanIDs = { [PLANS.VPN_PRO]: 1 };
             const result = getSupportedAddons(planIDs);
             const expected: SupportedAddons = {
                 [ADDON_NAMES.MEMBER_VPN_PRO]: true,
                 [ADDON_NAMES.LUMO_VPN_PRO]: true,
+                [ADDON_NAMES.MEET_VPN_PRO]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -173,6 +199,7 @@ describe('getSupportedAddons', () => {
                 [ADDON_NAMES.MEMBER_VPN_BUSINESS]: true,
                 [ADDON_NAMES.IP_VPN_BUSINESS]: true,
                 [ADDON_NAMES.LUMO_VPN_BUSINESS]: true,
+                [ADDON_NAMES.MEET_VPN_BUSINESS]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -183,6 +210,7 @@ describe('getSupportedAddons', () => {
             const expected: SupportedAddons = {
                 [ADDON_NAMES.MEMBER_PASS_PRO]: true,
                 [ADDON_NAMES.LUMO_PASS_PRO]: true,
+                [ADDON_NAMES.MEET_PASS_PRO]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -193,6 +221,7 @@ describe('getSupportedAddons', () => {
             const expected: SupportedAddons = {
                 [ADDON_NAMES.MEMBER_PASS_BUSINESS]: true,
                 [ADDON_NAMES.LUMO_PASS_BUSINESS]: true,
+                [ADDON_NAMES.MEET_PASS_BUSINESS]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -204,6 +233,16 @@ describe('getSupportedAddons', () => {
                 [ADDON_NAMES.MEMBER_VPN_PASS_BUNDLE_BUSINESS]: true,
                 [ADDON_NAMES.LUMO_VPN_PASS_BUNDLE_BUSINESS]: true,
                 [ADDON_NAMES.IP_VPN_PASS_BUNDLE_BUSINESS]: true,
+                [ADDON_NAMES.MEET_VPN_PASS_BUNDLE_BUSINESS]: true,
+            };
+            expect(result).toEqual(expected);
+        });
+
+        it('should return correct addons for PLANS.LUMO', () => {
+            const planIDs: PlanIDs = { [PLANS.LUMO]: 1 };
+            const result = getSupportedAddons(planIDs);
+            const expected: SupportedAddons = {
+                [ADDON_NAMES.MEET_LUMO]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -213,25 +252,31 @@ describe('getSupportedAddons', () => {
             const result = getSupportedAddons(planIDs);
             const expected: SupportedAddons = {
                 [ADDON_NAMES.MEMBER_LUMO_BUSINESS]: true,
+                [ADDON_NAMES.MEET_LUMO_BUSINESS]: true,
+            };
+            expect(result).toEqual(expected);
+        });
+
+        it('should return correct addons for PLANS.MEET_BUSINESS', () => {
+            const planIDs: PlanIDs = { [PLANS.MEET_BUSINESS]: 1 };
+            const result = getSupportedAddons(planIDs);
+            const expected: SupportedAddons = {
+                [ADDON_NAMES.MEMBER_MEET_BUSINESS]: true,
+                [ADDON_NAMES.LUMO_MEET_BUSINESS]: true,
             };
             expect(result).toEqual(expected);
         });
     });
 
     describe('Plans without supported addons', () => {
-        it.each([
-            PLANS.FREE,
-            PLANS.VPN,
-            PLANS.DRIVE_LITE,
-            PLANS.VISIONARY,
-            PLANS.VPN_PASS_BUNDLE,
-            PLANS.PASS_LIFETIME,
-            PLANS.LUMO,
-        ])('should return empty object for %s', (plan) => {
-            const planIDs: PlanIDs = { [plan]: 1 };
-            const result = getSupportedAddons(planIDs);
-            expect(result).toEqual({});
-        });
+        it.each([PLANS.FREE, PLANS.VPN, PLANS.DRIVE_LITE, PLANS.VISIONARY, PLANS.VPN_PASS_BUNDLE, PLANS.PASS_LIFETIME])(
+            'should return empty object for %s',
+            (plan) => {
+                const planIDs: PlanIDs = { [plan]: 1 };
+                const result = getSupportedAddons(planIDs);
+                expect(result).toEqual({});
+            }
+        );
     });
 
     describe('Edge cases', () => {
@@ -255,6 +300,7 @@ describe('getSupportedAddons', () => {
             const result = getSupportedAddons(planIDs);
             const expected: SupportedAddons = {
                 [ADDON_NAMES.LUMO_DRIVE]: true,
+                [ADDON_NAMES.MEET_DRIVE]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -267,6 +313,7 @@ describe('getSupportedAddons', () => {
             const result = getSupportedAddons(planIDs);
             const expected: SupportedAddons = {
                 [ADDON_NAMES.LUMO_DRIVE]: true,
+                [ADDON_NAMES.MEET_DRIVE]: true,
             };
             expect(result).toEqual(expected);
         });
@@ -296,6 +343,7 @@ describe('getSupportedAddons', () => {
                 PLANS.VPN2024,
                 PLANS.BUNDLE,
                 PLANS.FAMILY,
+                PLANS.LUMO,
                 PLANS.DUO,
                 // B2B plans
                 PLANS.MAIL_PRO,

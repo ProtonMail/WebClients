@@ -215,6 +215,81 @@ describe('forbidden plan transitions', () => {
         expect(result).toEqual(null);
     });
 
+    it('should be forbidden going from legacy vpn plus to meet plus', () => {
+        const subscription = buildSubscription(PLANS.VPN);
+        const planIDs: PlanIDs = { [PLANS.MEET]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, planIDs, plansMap });
+        expect(result).toEqual({
+            type: 'meet-plus',
+            newPlanName: PLANS.VPN2024,
+            newPlanIDs: { [PLANS.VPN2024]: 1, [ADDON_NAMES.MEET_VPN2024]: 1 },
+        });
+    });
+
+    it('should be forbidden going from vpn plus to meet plus', () => {
+        const subscription = buildSubscription(PLANS.VPN2024);
+        const planIDs: PlanIDs = { [PLANS.MEET]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, planIDs, plansMap });
+        expect(result).toEqual({
+            type: 'meet-plus',
+            newPlanName: PLANS.VPN2024,
+            newPlanIDs: { [PLANS.VPN2024]: 1, [ADDON_NAMES.MEET_VPN2024]: 1 },
+        });
+    });
+
+    it('should be forbidden going from mail plus to meet plus', () => {
+        const subscription = buildSubscription(PLANS.MAIL);
+        const planIDs: PlanIDs = { [PLANS.MEET]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, planIDs, plansMap });
+        expect(result).toEqual({
+            type: 'meet-plus',
+            newPlanName: PLANS.MAIL,
+            newPlanIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.MEET_MAIL]: 1 },
+        });
+    });
+
+    it('should be allowed going from free to meet plus', () => {
+        const planIDs: PlanIDs = { [PLANS.MEET]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription: undefined, planIDs, plansMap });
+        expect(result).toEqual(null);
+    });
+
+    it('should be allowed to go from meet plus to another plus with meet addon', () => {
+        const subscription = buildSubscription(PLANS.MEET);
+        const planIDs: PlanIDs = { [PLANS.VPN2024]: 1, [ADDON_NAMES.MEET_VPN2024]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, planIDs, plansMap });
+        expect(result).toEqual(null);
+    });
+
+    it('should be forbidden to go from meet plus to another plus without meet addon', () => {
+        const subscription = buildSubscription(PLANS.MEET);
+        expect(
+            getIsPlanTransitionForbidden({
+                subscription,
+                planIDs: { [PLANS.VPN2024]: 1 },
+                plansMap,
+            })
+        ).toEqual({ type: 'plus-to-plus', newPlanName: PLANS.VPN2024 });
+    });
+
+    it('should be allowed to go from Meet Plus on iOS to other Plus subscription on web (multi-subs)', () => {
+        const subscription = buildSubscription(PLANS.MEET, {
+            External: SubscriptionPlatform.iOS,
+        });
+        const planIDs: PlanIDs = { [PLANS.VPN2024]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, planIDs, plansMap });
+        expect(result).toEqual(null);
+    });
+
+    it('should be allowed to go from Meet Plus on Android to other Plus subscription on web (multi-subs)', () => {
+        const subscription = buildSubscription(PLANS.MEET, {
+            External: SubscriptionPlatform.Android,
+        });
+        const planIDs: PlanIDs = { [PLANS.VPN2024]: 1 };
+        const result = getIsPlanTransitionForbidden({ subscription, planIDs, plansMap });
+        expect(result).toEqual(null);
+    });
+
     it('should warn about going from visionary to non-visionary plan (visionary downgrade)', () => {
         const subscription = buildSubscription(PLANS.VISIONARY);
         const planIDs: PlanIDs = { [PLANS.MAIL]: 1 };

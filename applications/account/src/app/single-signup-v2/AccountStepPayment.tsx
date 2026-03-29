@@ -40,6 +40,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience, isBilledUser } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
+import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import AccountStepPaymentSummary from './AccountStepPaymentSummary';
@@ -117,6 +118,8 @@ const AccountStepPayment = ({
     onMethodChanged,
     couponConfig,
 }: Props) => {
+    const meetAddonFlag = useFlag('MeetAddonCustomizer');
+
     const signupV2Theme = useSignupV2Theme();
     const formRef = useRef<HTMLFormElement>(null);
 
@@ -375,6 +378,7 @@ const AccountStepPayment = ({
     const loadingPaymentsForm = model.loadingDependencies;
 
     const showLumoCustomizer = app === APPS.PROTONLUMO;
+    const showMeetCustomizer = meetAddonFlag && app === APPS.PROTONMEET;
 
     const paymentsForm = (
         <>
@@ -415,6 +419,7 @@ const AccountStepPayment = ({
                             showUsersTooltip
                             isTrialMode={signupParameters.trial}
                             lumoAddonEnabled={showLumoCustomizer}
+                            meetAddonEnabled={showMeetCustomizer}
                             scribeAddonEnabled={
                                 // To avoid convoluted signup UI, we don't show Scribe and Lumo customizers together.
                                 // Remember: Lumo already includes Scribe.
