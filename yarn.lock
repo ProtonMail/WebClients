@@ -2457,14 +2457,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@discoveryjs/json-ext@npm:0.5.7":
-  version: 0.5.7
-  resolution: "@discoveryjs/json-ext@npm:0.5.7"
-  checksum: 10/b95682a852448e8ef50d6f8e3b7ba288aab3fd98a2bafbe46881a3db0c6e7248a2debe9e1ee0d4137c521e4743ca5bbcb1c0765c9d7b3e0ef53231506fec42b4
-  languageName: node
-  linkType: hard
-
-"@discoveryjs/json-ext@npm:^0.6.1":
+"@discoveryjs/json-ext@npm:^0.6.1, @discoveryjs/json-ext@npm:^0.6.3":
   version: 0.6.3
   resolution: "@discoveryjs/json-ext@npm:0.6.3"
   checksum: 10/6cb35ce92c8f1e9533250da9a893def63cce4f9a4f67677259bf11619d83858ca9c010171f49b22d83153b7b7ff65c39bbbf0edf4734d67e864de1044b7a943c
@@ -10190,8 +10183,8 @@ __metadata:
     eslint-plugin-no-only-tests: "npm:^3.3.0"
     eslint-plugin-react: "npm:^7.37.5"
     eslint-plugin-react-hooks: "npm:^7.0.1"
-    eslint-plugin-testing-library: "npm:^7.16.1"
-    typescript-eslint: "npm:^8.57.1"
+    eslint-plugin-testing-library: "npm:^7.16.2"
+    typescript-eslint: "npm:^8.57.2"
   peerDependencies:
     prettier: 3.8.1
     typescript: ^6.0.2
@@ -10410,8 +10403,8 @@ __metadata:
     "@vitest/ui": "npm:3.2.4"
     cross-env: "npm:^10.1.0"
     eslint: "npm:^9.39.4"
-    happy-dom: "npm:^20.8.4"
-    livekit-client: "npm:2.17.3"
+    happy-dom: "npm:^20.8.8"
+    livekit-client: "npm:2.18.0"
     prettier: "npm:^3.8.1"
     react: "npm:^18.3.1"
     ttag: "npm:^1.8.12"
@@ -10506,7 +10499,7 @@ __metadata:
     terser-webpack-plugin: "npm:^5.4.0"
     typescript: "npm:^6.0.2"
     webpack: "npm:^5.105.4"
-    webpack-bundle-analyzer: "npm:^5.2.0"
+    webpack-bundle-analyzer: "npm:^5.3.0"
     webpack-cli: "npm:^6.0.1"
     webpack-dev-server: "npm:^5.2.3"
     webpack-retry-chunk-load-plugin: "npm:^3.1.1"
@@ -13420,7 +13413,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-docs@npm:^10.3.1":
+"@storybook/addon-docs@npm:^10.3.3":
   version: 10.3.3
   resolution: "@storybook/addon-docs@npm:10.3.3"
   dependencies:
@@ -13437,7 +13430,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-links@npm:^10.3.1":
+"@storybook/addon-links@npm:^10.3.3":
   version: 10.3.3
   resolution: "@storybook/addon-links@npm:10.3.3"
   dependencies:
@@ -13585,7 +13578,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react-webpack5@npm:^10.3.1":
+"@storybook/react-webpack5@npm:^10.3.3":
   version: 10.3.3
   resolution: "@storybook/react-webpack5@npm:10.3.3"
   dependencies:
@@ -13604,7 +13597,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react@npm:10.3.3, @storybook/react@npm:^10.3.1":
+"@storybook/react@npm:10.3.3, @storybook/react@npm:^10.3.3":
   version: 10.3.3
   resolution: "@storybook/react@npm:10.3.3"
   dependencies:
@@ -22025,7 +22018,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^14.0.3":
+"commander@npm:^14.0.2, commander@npm:^14.0.3":
   version: 14.0.3
   resolution: "commander@npm:14.0.3"
   checksum: 10/dfa9ebe2a433d277de5cb0252d23b10a543d245d892db858d23b516336a835c50fd4f52bee4cd13c705cc8acb6f03dc632c73dd806f7d06d3353eb09953dd17a
@@ -23806,13 +23799,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debounce@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "debounce@npm:1.2.1"
-  checksum: 10/0b95b2a9d80ed69117d890f8dab8c0f2d6066f8d20edd1d810ae51f8f366a6d4c8b1d56e97dcb9304e93d57de4d5db440d34a03def7dad50403fc3f22bf16808
-  languageName: node
-  linkType: hard
-
 "debug@npm:2, debug@npm:2.6.9, debug@npm:^2.2.0, debug@npm:^2.6.8, debug@npm:^2.6.9":
   version: 2.6.9
   resolution: "debug@npm:2.6.9"
@@ -24398,10 +24384,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dexie@npm:^4.3.0":
-  version: 4.3.0
-  resolution: "dexie@npm:4.3.0"
-  checksum: 10/968c333d2da07b8bcc186a5d0891deae6e8b29caa3749794048c9eaba6503a949ed2b264b1721ab303a97ecb7304ee8e901422f1aeb5852382ec308fe46910fd
+"dexie@npm:^4.4.1":
+  version: 4.4.1
+  resolution: "dexie@npm:4.4.1"
+  checksum: 10/67ae3c1cd78777bd9c1fc9663db1262fb6e0181379c6348c13b5fb9ead1a718f89359e9ff6d5f7ea0b1137a2339ec938b1bcbb1f04a3fdc1096778f4672a9fcb
   languageName: node
   linkType: hard
 
@@ -25144,29 +25130,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron@npm:39.8.3":
-  version: 39.8.3
-  resolution: "electron@npm:39.8.3"
+"electron@npm:39.8.4":
+  version: 39.8.4
+  resolution: "electron@npm:39.8.4"
   dependencies:
     "@electron/get": "npm:^2.0.0"
     "@types/node": "npm:^22.7.7"
     extract-zip: "npm:^2.0.1"
   bin:
     electron: cli.js
-  checksum: 10/76d46ee60d2b45ce9d3128fabe61d23dbd99dfa4c31fc6233b12fd023173d62a5825c4c6d8c18eaf3fc4968ff632ef7648aefe311bd254e6770543840e93458c
+  checksum: 10/3b6ffc7decd2a5f5e0677db09367df2be1c1319e34b46cfa447aa11100d7b278005ff57abd39cf589797e76176ce9f0e69f1e156c1c7041f158fba20cc3b373a
   languageName: node
   linkType: hard
 
-"electron@npm:40.8.3":
-  version: 40.8.3
-  resolution: "electron@npm:40.8.3"
+"electron@npm:40.8.4":
+  version: 40.8.4
+  resolution: "electron@npm:40.8.4"
   dependencies:
     "@electron/get": "npm:^2.0.0"
     "@types/node": "npm:^24.9.0"
     extract-zip: "npm:^2.0.1"
   bin:
     electron: cli.js
-  checksum: 10/6d53f8a359de40c6b5c11c8b2b253f1b59db45a3c6dff6edd78a47af02c382ec67143a7f695f6e63c49d85f6bae39ad337b6b5f4cf73056a789f6e272a945dc5
+  checksum: 10/da28a030cdd5e8bfc601530c2a2327e6ea854bb191474f79156c292a69e230a2e3af2725f5b03ca99d85b0f208b9dd3d388e4605e6e71c5aba0794aa482e3471
   languageName: node
   linkType: hard
 
@@ -26370,7 +26356,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-storybook@npm:^10.3.1":
+"eslint-plugin-storybook@npm:^10.3.3":
   version: 10.3.3
   resolution: "eslint-plugin-storybook@npm:10.3.3"
   dependencies:
@@ -26382,7 +26368,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-testing-library@npm:^7.16.1":
+"eslint-plugin-testing-library@npm:^7.16.2":
   version: 7.16.2
   resolution: "eslint-plugin-testing-library@npm:7.16.2"
   dependencies:
@@ -29579,9 +29565,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:^20.8.4":
-  version: 20.8.8
-  resolution: "happy-dom@npm:20.8.8"
+"happy-dom@npm:^20.8.8":
+  version: 20.8.9
+  resolution: "happy-dom@npm:20.8.9"
   dependencies:
     "@types/node": "npm:>=20.0.0"
     "@types/whatwg-mimetype": "npm:^3.0.2"
@@ -29589,7 +29575,7 @@ __metadata:
     entities: "npm:^7.0.1"
     whatwg-mimetype: "npm:^3.0.0"
     ws: "npm:^8.18.3"
-  checksum: 10/aa07ee59a6402c4ff8871b177e09f4711c12acc611f843915efb5eebb18be5f77cdf4dab0dde196ecd86fbfcbc7697ad039eb8998737dee19c2ac85765759fae
+  checksum: 10/81fabd8c630c2165eedd57b72f38b58e8891ff2ff543302c5bdf88860fc3b45b16decd27dabfc72739af6a927d711b04008c61b7e8090893da1fe5feba2dc80e
   languageName: node
   linkType: hard
 
@@ -30253,14 +30239,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"html-escaper@npm:3.0.3":
+"html-escaper@npm:3.0.3, html-escaper@npm:^3.0.3":
   version: 3.0.3
   resolution: "html-escaper@npm:3.0.3"
   checksum: 10/7795141912bd82f0ece3c65fa329cdf40cd0ea6c1b9c556ac88ff2212e878ddc55b64219709f5fcb252406fe420ae15e5bd5626e36c0215ff1054f9d601ca382
   languageName: node
   linkType: hard
 
-"html-escaper@npm:^2.0.0, html-escaper@npm:^2.0.2":
+"html-escaper@npm:^2.0.0":
   version: 2.0.2
   resolution: "html-escaper@npm:2.0.2"
   checksum: 10/034d74029dcca544a34fb6135e98d427acd73019796ffc17383eaa3ec2fe1c0471dcbbc8f8ed39e46e86d43ccd753a160631615e4048285e313569609b66d5b7
@@ -34018,9 +34004,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"livekit-client@npm:2.17.3":
-  version: 2.17.3
-  resolution: "livekit-client@npm:2.17.3"
+"livekit-client@npm:2.18.0":
+  version: 2.18.0
+  resolution: "livekit-client@npm:2.18.0"
   dependencies:
     "@livekit/mutex": "npm:1.1.1"
     "@livekit/protocol": "npm:1.44.0"
@@ -34033,7 +34019,7 @@ __metadata:
     webrtc-adapter: "npm:^9.0.1"
   peerDependencies:
     "@types/dom-mediacapture-record": ^1
-  checksum: 10/a99025597a3d9b04b721b02c91a3310fb5721ae1061c85ef71184a2c899e952643bd7145b5ce7b528091499ede0bc9b4dbc0311c4897b298e367d7e5077fd6b5
+  checksum: 10/61cb37e67ed51e6b03669f55e11f5389101079dbd13b48e531b50e737e30017860b89f514c1f14dd29b6006f8fa543063dd630648c09cbe13e715452a9fbccc6
   languageName: node
   linkType: hard
 
@@ -40238,7 +40224,7 @@ __metadata:
     "@zxing/library": "npm:0.21.3"
     core-js: "npm:^3.49.0"
     cross-env: "npm:^10.1.0"
-    dexie: "npm:^4.3.0"
+    dexie: "npm:^4.4.1"
     dexie-react-hooks: "npm:^1.1.7"
     eslint: "npm:^9.39.4"
     formik: "npm:^2.4.9"
@@ -40653,7 +40639,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     css-loader: "npm:^7.1.4"
     dotenv: "npm:^17.3.1"
-    electron: "npm:40.8.3"
+    electron: "npm:40.8.4"
     electron-log: "npm:^5.4.3"
     electron-squirrel-startup: "npm:^1.0.1"
     electron-store: "npm:^8.2.0"
@@ -40674,7 +40660,7 @@ __metadata:
     ttag: "npm:^1.8.12"
     ttag-cli: "npm:^1.11.2"
     typescript: "npm:^6.0.2"
-    typescript-eslint: "npm:^8.57.1"
+    typescript-eslint: "npm:^8.57.2"
     update-electron-app: "npm:^3.1.2"
     zod: "npm:^3.25.76"
   languageName: unknown
@@ -40900,7 +40886,7 @@ __metadata:
     cross-env: "npm:^10.1.0"
     css-loader: "npm:^7.1.4"
     dotenv: "npm:^17.3.1"
-    electron: "npm:39.8.3"
+    electron: "npm:39.8.4"
     electron-log: "npm:^5.4.3"
     electron-squirrel-startup: "npm:^1.0.1"
     electron-store: "npm:^8.2.0"
@@ -40920,7 +40906,7 @@ __metadata:
     ttag: "npm:^1.8.12"
     ttag-cli: "npm:^1.11.2"
     typescript: "npm:^6.0.2"
-    typescript-eslint: "npm:^8.57.1"
+    typescript-eslint: "npm:^8.57.2"
     update-electron-app: "npm:^3.1.2"
     zod: "npm:^3.25.76"
   languageName: unknown
@@ -40961,8 +40947,8 @@ __metadata:
     cross-env: "npm:^10.1.0"
     date-fns-tz: "npm:^2.0.1"
     eslint: "npm:^9.39.4"
-    happy-dom: "npm:^20.8.4"
-    livekit-client: "npm:2.17.3"
+    happy-dom: "npm:^20.8.8"
+    livekit-client: "npm:2.18.0"
     prettier: "npm:^3.8.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -40997,7 +40983,7 @@ __metadata:
     "@proton/types": "workspace:^"
     "@vercel/webpack-asset-relocator-loader": "npm:1.7.3"
     cross-env: "npm:^10.1.0"
-    electron: "npm:39.8.3"
+    electron: "npm:39.8.4"
     electron-builder: "npm:26.8.1"
     electron-log: "npm:^5.4.3"
     electron-store: "npm:^8.2.0"
@@ -41105,16 +41091,16 @@ __metadata:
     "@proton/pack": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/styles": "workspace:^"
-    "@storybook/addon-docs": "npm:^10.3.1"
-    "@storybook/addon-links": "npm:^10.3.1"
-    "@storybook/react": "npm:^10.3.1"
-    "@storybook/react-webpack5": "npm:^10.3.1"
+    "@storybook/addon-docs": "npm:^10.3.3"
+    "@storybook/addon-links": "npm:^10.3.3"
+    "@storybook/react": "npm:^10.3.3"
+    "@storybook/react-webpack5": "npm:^10.3.3"
     "@types/react": "npm:^18.3.28"
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
     cross-env: "npm:^10.1.0"
     eslint: "npm:^9.39.4"
-    eslint-plugin-storybook: "npm:^10.3.1"
+    eslint-plugin-storybook: "npm:^10.3.3"
     http-server: "npm:^14.1.1"
     netlify-cli: "npm:17.38.1"
     prettier: "npm:^3.8.1"
@@ -41123,7 +41109,8 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^5.3.4"
     rimraf: "npm:^6.1.3"
-    storybook: "npm:^10.3.1"
+    storybook: "npm:^10.3.3"
+    terser-webpack-plugin: "npm:^5.4.0"
     ts-loader: "npm:^9.5.4"
     typescript: "npm:^6.0.2"
     wait-on: "npm:^8.0.5"
@@ -41229,7 +41216,7 @@ __metadata:
     chart.js: "npm:^4.5.1"
     cross-env: "npm:^10.1.0"
     eslint: "npm:^9.39.4"
-    happy-dom: "npm:^20.8.4"
+    happy-dom: "npm:^20.8.8"
     jsqr: "npm:^1.4.0"
     lodash: "npm:^4.17.23"
     path-browserify: "npm:^1.0.1"
@@ -46186,7 +46173,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:^10.3.1":
+"storybook@npm:^10.3.3":
   version: 10.3.3
   resolution: "storybook@npm:10.3.3"
   dependencies:
@@ -48656,7 +48643,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript-eslint@npm:^8.57.1":
+"typescript-eslint@npm:^8.57.2":
   version: 8.57.2
   resolution: "typescript-eslint@npm:8.57.2"
   dependencies:
@@ -50443,24 +50430,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-bundle-analyzer@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "webpack-bundle-analyzer@npm:5.2.0"
+"webpack-bundle-analyzer@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "webpack-bundle-analyzer@npm:5.3.0"
   dependencies:
-    "@discoveryjs/json-ext": "npm:0.5.7"
+    "@discoveryjs/json-ext": "npm:^0.6.3"
     acorn: "npm:^8.0.4"
     acorn-walk: "npm:^8.0.0"
-    commander: "npm:^7.2.0"
-    debounce: "npm:^1.2.1"
-    escape-string-regexp: "npm:^4.0.0"
-    html-escaper: "npm:^2.0.2"
+    commander: "npm:^14.0.2"
+    escape-string-regexp: "npm:^5.0.0"
+    html-escaper: "npm:^3.0.3"
     opener: "npm:^1.5.2"
     picocolors: "npm:^1.0.0"
     sirv: "npm:^3.0.2"
     ws: "npm:^8.19.0"
   bin:
     webpack-bundle-analyzer: lib/bin/analyzer.js
-  checksum: 10/0932ad96a9acb498507ecac8eae956fab1a922cf7cbeba22ac828f1b4b4ce0a7e90784104ec98eba05e9351d6b55e1630ff9b8b2c2c78f14bfe164f80c9f14bb
+  checksum: 10/debed08160f10ea0890548907d530a7cef26ae049a5f650998ba85e71c1267a453ca0b262f121822ad08954b9241706455ade86dd05769c6a129a348f5cf4087
   languageName: node
   linkType: hard
 
