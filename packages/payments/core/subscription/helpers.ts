@@ -228,6 +228,7 @@ export const hasPassFamily = (subscription: MaybeFreeSubscription) => hasSomePla
 export const hasPassBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS_BUSINESS);
 export const hasLumoBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.LUMO_BUSINESS);
 export const hasMeetBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.MEET_BUSINESS);
+export const hasMeet = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.MEET);
 export const hasFree = (subscription: MaybeFreeSubscription) => (subscription?.Plans || []).length === 0;
 
 // including 2 versions of bundlepro + bundlebiz2025

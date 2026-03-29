@@ -773,6 +773,17 @@ export const getVPNPassProPlan = (plan: Plan, serversCount: VPNServersCountData 
     };
 };
 
+export const getMeetB2CPlan = (plan: Plan): ShortPlan => {
+    return {
+        plan: PLANS.MEET,
+        title: plan.Title,
+        label: '',
+        description: c('collider_2025: Info').t`Private video calls for the conversations that matter.`,
+        cta: getCTA(plan.Title),
+        features: getMeetBusinessFeatures(),
+    };
+};
+
 export const getMeetBusinessPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.MEET_BUSINESS,
@@ -861,6 +872,8 @@ export const getShortPlan = (
             return getLumoBusinessPlan(planData);
         case PLANS.VPN_PASS_BUNDLE_BUSINESS:
             return getVPNPassProPlan(planData, vpnServers);
+        case PLANS.MEET:
+            return getMeetB2CPlan(planData);
         case PLANS.MEET_BUSINESS:
             return getMeetBusinessPlan(planData);
         default:
