@@ -46,11 +46,13 @@ im.$media-expressions: $media-expressions;
 	border-radius: 2rem;
 	font-weight: 500;
 	inline-size: 100%;
+	aspect-ratio: 16 / 9;
 	flex-grow: 1;
 
 	@include im.media('>medium') {
 		inline-size: 35rem;
 		block-size: 19.25rem;
+		aspect-ratio: unset;
 		flex-grow: 0;
 	}
 
