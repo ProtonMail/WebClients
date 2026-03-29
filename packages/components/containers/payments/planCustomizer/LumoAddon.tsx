@@ -15,7 +15,6 @@ import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser
 const LumoAddonBanner = ({ onClick, price }: { onClick: () => void; price: ReactElement }) => (
     <div
         className="border p-4 flex flex-column lg:flex-row gap-2 flex-nowrap items-start lg:items-center rounded-lg"
-        style={{ background: 'linear-gradient(85deg, rgb(112 76 255 / 0.15) 0%, rgb(70 26 255 / 0.04) 100%)' }}
         data-testid="lumo-addon-banner"
     >
         <div className="w-full">
