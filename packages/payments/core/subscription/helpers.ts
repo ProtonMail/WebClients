@@ -19,7 +19,13 @@ import {
 } from '../constants';
 import { isRegionalCurrency } from '../currencies';
 import type { Currency, FreeSubscription, PlanIDs } from '../interface';
-import { getSupportedAddons, hasLumoAddonFromPlanIDs, isIpAddon, isMemberAddon } from '../plan/addons';
+import {
+    getSupportedAddons,
+    hasLumoAddonFromPlanIDs,
+    hasMeetAddonFromPlanIDs,
+    isIpAddon,
+    isMemberAddon,
+} from '../plan/addons';
 import { getIsB2BAudienceFromPlan, isForbiddenModification } from '../plan/helpers';
 import type { PlansMap, SubscriptionPlan } from '../plan/interface';
 import { getPlanFromIDs } from '../planIDs';
@@ -735,6 +741,12 @@ export const hasLumoAddon = (subscription: MaybeFreeSubscription) => {
     return hasLumoAddonFromPlanIDs(currentPlanIDs);
 };
 
+export const hasMeetAddon = (subscription: MaybeFreeSubscription) => {
+    const currentPlanIDs = getPlanIDs(subscription);
+
+    return hasMeetAddonFromPlanIDs(currentPlanIDs);
+};
+
 /**
  * Variable cycle offers are marked by automatically created unpaid scheduled subscriptions with different cycles than
  * the current susbcription. For example when user subscribes to vpn2024 24m then the backend will create a scheduled
@@ -1131,6 +1143,11 @@ export function notHigherThanAvailableOnBackend(planIDs: PlanIDs, plansMap: Plan
 /**
  * If user already has mobile lumo subscription then they can't buy lumo addon.
  */
+export function canAddMeetAddon(_subscription: Subscription | FreeSubscription): boolean {
+    // Meet has no externally-managed (mobile IAP) subscription, so it can always be added.
+    return true;
+}
+
 export function canAddLumoAddon(subscription: Subscription | FreeSubscription): boolean {
     if (isFreeSubscription(subscription)) {
         return true;
