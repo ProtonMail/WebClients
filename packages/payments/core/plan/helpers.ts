@@ -73,6 +73,10 @@ export const getLumoAddonNameByPlan = (planName: PLANS) => {
     return getAddonNameByPlan(ADDON_PREFIXES.LUMO, planName);
 };
 
+export const getMeetAddonNameByPlan = (planName: PLANS) => {
+    return getAddonNameByPlan(ADDON_PREFIXES.MEET, planName);
+};
+
 const b2bPlans: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.MAIL_PRO,
     PLANS.MAIL_BUSINESS,
@@ -235,6 +239,7 @@ export const getHasPlusPlan = (planName?: PLANS | ADDON_NAMES) => {
             PLANS.VPN_PASS_BUNDLE,
             PLANS.PASS_LIFETIME,
             PLANS.LUMO,
+            PLANS.MEET,
         ].some((otherPlanName) => otherPlanName === planName)
     );
 };
