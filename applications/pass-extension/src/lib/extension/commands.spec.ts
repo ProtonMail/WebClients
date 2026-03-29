@@ -35,6 +35,15 @@ describe('handleExtensionCommand', () => {
         );
     });
 
+    it('should send message when tab id is 0', async () => {
+        (browser.tabs.query as jest.Mock).mockResolvedValueOnce([{ id: 0 }]);
+        await handleExtensionCommand('autofill');
+        expect(browser.tabs.sendMessage).toHaveBeenCalledWith(
+            0,
+            expect.objectContaining({ type: WorkerMessageType.AUTOFILL_TRIGGER })
+        );
+    });
+
     it('should not send message when no active tab', async () => {
         (browser.tabs.query as jest.Mock).mockResolvedValueOnce([]);
         await handleExtensionCommand('autofill');

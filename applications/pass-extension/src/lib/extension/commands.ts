@@ -24,7 +24,7 @@ export const handleExtensionCommand = async (command: string) => {
 
     if (command === 'autofill') {
         const [tab] = await browser.tabs.query({ active: true, currentWindow: true });
-        if (tab?.id) {
+        if (tab?.id != null) {
             browser.tabs.sendMessage(tab.id, backgroundMessage({ type: WorkerMessageType.AUTOFILL_TRIGGER })).catch(noop);
         }
     }
