@@ -77,7 +77,7 @@ export const useMeetProfessionalFromFreeUpsells = ({
         getDashboardUpsellV2({
             ...upsellsPayload,
             upsellPath: DASHBOARD_UPSELL_PATHS.MEET,
-            plan: PLANS.MEET_BUSINESS,
+            plan: PLANS.MEET,
             customCycle: CYCLE.MONTHLY,
             highlightPrice: true,
             title: getDashboardUpsellTitle(CYCLE.MONTHLY),
@@ -85,7 +85,7 @@ export const useMeetProfessionalFromFreeUpsells = ({
         getDashboardUpsellV2({
             ...upsellsPayload,
             upsellPath: DASHBOARD_UPSELL_PATHS.MEET,
-            plan: PLANS.MEET_BUSINESS,
+            plan: PLANS.MEET,
             customCycle: CYCLE.YEARLY,
             highlightPrice: true,
             title: getDashboardUpsellTitle(CYCLE.YEARLY),
@@ -101,7 +101,7 @@ interface Props extends UpsellsHook {
 }
 
 const MeetProfessionalFromFree = ({ subscription, upsells, handleExplorePlans }: Props) => {
-    const plan = PLANS.MEET_BUSINESS;
+    const plan = PLANS.MEET;
 
     return (
         <DashboardGrid>
