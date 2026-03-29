@@ -91,6 +91,8 @@ const getParameters = (
 
     if (!plan && addon === 'lumo') {
         plan = plansMap?.[getPlanName(subscription) as PLANS];
+    } else if (!plan && addon === 'meet') {
+        plan = plansMap?.[getPlanName(subscription) as PLANS];
     }
 
     const cycle = (() => {
@@ -113,8 +115,9 @@ const getParameters = (
         maximumCycle: parsedMaximumCycle,
         currency: parsedCurrency,
         step: parsedTarget || SUBSCRIPTION_STEPS.CHECKOUT,
-        disablePlanSelection: type === 'offer' || edit === 'disable' || addon === 'lumo',
-        disableCycleSelector: edit === 'enable' ? false : type === 'offer' || addon === 'lumo' || Boolean(offer),
+        disablePlanSelection: type === 'offer' || edit === 'disable' || addon === 'lumo' || addon === 'meet',
+        disableCycleSelector:
+            edit === 'enable' ? false : type === 'offer' || addon === 'lumo' || addon === 'meet' || Boolean(offer),
         plansMap,
         addon,
         preferredCurrency,
@@ -328,6 +331,16 @@ const AutomaticSubscriptionModal = () => {
                 openProps.plan = undefined; // We need to use maybePlanIDs when calculating planIDs in SubscriptionContainer
                 openProps.onSubscribed = () => {
                     goToApp('/', APPS.PROTONLUMO, false);
+                };
+            } else if (addon === 'meet') {
+                const selectedPlan = SelectedPlan.createFromSubscription(subscription, plansMap);
+
+                // Default number of meet addons to the total number of members
+                openProps.planIDs = selectedPlan.setMeetCount(selectedPlan.getTotalUsers()).planIDs;
+
+                openProps.plan = undefined; // We need to use maybePlanIDs when calculating planIDs in SubscriptionContainer
+                openProps.onSubscribed = () => {
+                    goToApp('/', APPS.PROTONMEET, false);
                 };
             }
 
