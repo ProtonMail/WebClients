@@ -14,7 +14,7 @@ import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { setPreviousMeetingLink, setUpsellModalType } from '@proton/meet/store/slices';
 import { resetChatAndReactions } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { addKeyRotationLog, setMlsGroupState } from '@proton/meet/store/slices/meetingInfo';
-import { toggleMeetingLockThunk } from '@proton/meet/store/slices/settings';
+import { setMeetingLocked, toggleMeetingLockThunk } from '@proton/meet/store/slices/settings';
 import {
     PopUpControls,
     resetUiState,
@@ -638,6 +638,8 @@ export const ProtonMeetContainer = ({
                 maxParticipants,
             }));
 
+            dispatch(setMeetingLocked(locked));
+
             return true;
         } catch (error) {
             setInvalidPassphrase(true);
@@ -946,6 +948,7 @@ export const ProtonMeetContainer = ({
                 maxParticipants,
             }));
 
+            dispatch(setMeetingLocked(locked));
             dispatch(setMeetingReadyPopupOpen(true));
 
             await handleJoin(displayName, id, passwordBase);
@@ -1033,6 +1036,8 @@ export const ProtonMeetContainer = ({
                 maxDuration: details.maxDuration,
                 maxParticipants: details.maxParticipants,
             }));
+
+            dispatch(setMeetingLocked(details.locked));
 
             await handleJoin(displayName, meetingToken, urlPassword);
 
