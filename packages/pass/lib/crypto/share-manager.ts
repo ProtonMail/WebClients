@@ -110,11 +110,12 @@ export const createShareManager = <T extends ShareType = ShareType>(
                 if (!targetKey) return false;
 
                 if (manager.isGroupShare()) {
-                    const { addresses, groupKeys: groupKeysContext } = PassCrypto.getContext();
+                    const { addresses, groups } = PassCrypto.getContext();
                     const { addressId, groupId } = manager.getShare();
                     const addressKeys = addresses?.find((address) => address.ID === addressId)?.Keys;
-                    const groupKeys = groupId ? groupKeysContext.get(groupId) : [];
-                    return !!(addressKeys?.length && groupKeys?.length);
+                    // Public keys will be fetch on demand, knowing that the group exists is good enough
+                    const group = groupId ? groups.get(groupId) : undefined;
+                    return !!(addressKeys?.length && group);
                 }
 
                 const { userKeys } = PassCrypto.getContext();

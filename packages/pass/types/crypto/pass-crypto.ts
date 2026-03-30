@@ -1,5 +1,5 @@
 import type { CreateSecureLinkData, FileDescriptorProcessResult } from '@proton/pass/lib/crypto/processes';
-import type { Group } from '@proton/pass/lib/groups/groups.types';
+import type { Group, GroupWithPublicKeys } from '@proton/pass/lib/groups/groups.types';
 import type {
     EncodedItemKeyRotation,
     InviteAcceptRequest,
@@ -22,14 +22,7 @@ import type { FileID, FileIdentifier } from '@proton/pass/types/data';
 import type { ShareRole, ShareType } from '@proton/pass/types/data/shares';
 import type { NativeMessageData } from '@proton/pass/types/desktop';
 import type { MaybeNull } from '@proton/pass/types/utils';
-import type {
-    Address,
-    AddressKey,
-    DecryptedAddressKey,
-    DecryptedKey,
-    OrganizationKey,
-    User,
-} from '@proton/shared/lib/interfaces';
+import type { Address, DecryptedAddressKey, DecryptedKey, OrganizationKey, User } from '@proton/shared/lib/interfaces';
 
 import type {
     InviteTargetKey,
@@ -51,7 +44,7 @@ export type PassCryptoManagerContext = {
     primaryAddress?: Address;
     shareManagers: Map<ShareId, ShareManager>;
     fileKeys: Map<string, Uint8Array<ArrayBuffer>>;
-    groupKeys: Map<string, AddressKey[]>;
+    groups: Map<string, GroupWithPublicKeys>;
 };
 
 export type PassCryptoSnapshot = Pick<PassCryptoManagerContext, 'shareManagers'>;
@@ -69,7 +62,7 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         clear?: boolean;
     }) => Promise<void>;
     clear: () => void;
-    setGroupKeys: (group: Group) => void;
+    setGroup: (group: Group) => void;
     getShareManager: (shareId: ShareId) => ShareManager;
     encryptForNativeMessaging: <T extends NativeMessageData>(
         payload: T,
