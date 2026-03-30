@@ -69,15 +69,14 @@ export const CircleButton = ({
                     <div
                         className={clsx(
                             'indicator rounded-full flex justify-center items-center absolute h-custom w-custom top-custom right-custom',
-                            `indicator-${indicatorStatus}`,
-                            (typeof indicatorContent !== 'string' || (indicatorContent as string).length > 1) &&
-                                'text-xs'
+                            `indicator-${indicatorStatus}`
                         )}
                         style={{
                             '--top-custom': '-0.25rem',
                             '--right-custom': '-0.25rem',
                             '--w-custom': '1.5rem',
                             '--h-custom': '1.5rem',
+                            'font-size': '0.5625rem',
                         }}
                     >
                         {indicatorContent}
