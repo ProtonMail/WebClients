@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { startOfMonth, startOfToday } from 'date-fns';
+import { addMonths, differenceInCalendarMonths, endOfMonth, startOfMonth, startOfToday } from 'date-fns';
 
 import Loader from '@proton/components/components/loader/Loader';
 import LocalizedMiniCalendar from '@proton/components/components/miniCalendar/LocalizedMiniCalendar';
@@ -20,7 +20,7 @@ interface BookingMiniCalendarProps {
 export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniCalendarProps) => {
     const isLoading = useBookingStore((state) => state.isLoading);
     const getDateKeySet = useBookingStore((state) => state.getDateKeySet);
-    const [, setDisplayedMonth] = useState(selectedDate);
+    const [displayedMonth, setDisplayedMonth] = useState(selectedDate);
 
     const { loadPublicBooking } = useExternalBookingLoader();
 
@@ -39,8 +39,16 @@ export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniC
         void loadPublicBooking(date);
     };
 
-    const handleMonthChange = (date: Date) => {
+    const handleMonthChange = async (date: Date) => {
         setDisplayedMonth(startOfMonth(date));
+        const monthDiff = differenceInCalendarMonths(date, displayedMonth);
+        if (monthDiff <= 0) {
+            return;
+        }
+
+        const newRangeStart = startOfMonth(addMonths(date, 1));
+        const newRangeEnd = endOfMonth(addMonths(date, 1));
+        await loadPublicBooking(newRangeStart, newRangeEnd);
     };
 
     const today = new Date();
