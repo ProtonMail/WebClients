@@ -453,7 +453,9 @@ describe('PassCrypto', () => {
 
             const groupId = 'groupId';
             const { group, groupKey } = await createRandomGroupKey(groupId);
-            PassCrypto.setGroupKeys(parseGroup(group));
+            PassCrypto.setGroup(parseGroup(group));
+            // Artificially add matching key in context, using private keys as a fallback here
+            PassCrypto.getContext().groups.get(groupId)!.publicKeys = group.Address.Keys.map((key) => key.PrivateKey);
 
             const [encryptedShare, shareKey] = await createRandomShareResponses(
                 addressKey,
