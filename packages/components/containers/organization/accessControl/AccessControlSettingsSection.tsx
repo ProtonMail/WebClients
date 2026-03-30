@@ -14,7 +14,7 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
-import { hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
+import { hasMeet, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
@@ -133,7 +133,7 @@ const AccessControlSettingsSection = () => {
             // check if _subusers_ of certain org have access to certain products, not just Mail. Perhaps the
             // proper way already exists. The best idea that I had is using Organization.PlanFlags, but I'm not
             // confident enough to use the same condition for the other toggles.
-            available: hasMailProduct(organization) || hasMeetBusiness(subscription),
+            available: hasMailProduct(organization) || hasMeetBusiness(subscription) || hasMeet(subscription),
             title: c('Info').t`${MAIL_APP_NAME} and ${CALENDAR_APP_NAME}`,
             description: c('Info').t`Email and calendar, integrated with ${CONTACTS_APP_NAME}`,
             logo: <MailCalendarIcon size={8} />,
