@@ -23,9 +23,11 @@ export const hasUserReachPlanLimit = (
         // Those plans have the maximum number of booking pages
         case PLANS.VISIONARY:
         case PLANS.MAIL_BUSINESS:
+        case PLANS.BUNDLE_PRO:
         case PLANS.BUNDLE_PRO_2024:
         case PLANS.BUNDLE_BIZ_2025:
-            // TODO add the logic for the meetbiz2025
+        case PLANS.MEET_BUSINESS:
+        case PLANS.MEET:
             return pageCount >= MAX_BOOKING_PAGES;
         // Those plans have 1 booking page and are upsell to budlebiz2025
         case PLANS.MAIL:
