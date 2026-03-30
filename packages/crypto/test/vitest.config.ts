@@ -1,6 +1,8 @@
 import { playwright } from '@vitest/browser-playwright';
 import { defineConfig } from 'vitest/config';
 
+const testFilesToInclude = ['test/**/*.spec.ts'];
+
 export default defineConfig({
     optimizeDeps: {
         // Without this, these worker dependencies are discovered "too late" and trigger a test reload,
@@ -18,7 +20,11 @@ export default defineConfig({
         },
     ],
     test: {
-        include: ['test/**/*.spec.ts'],
+        include: testFilesToInclude,
+        typecheck: {
+            enabled: true,
+            include: testFilesToInclude, // typechecking is run over these files only
+        },
         browser: {
             provider: playwright(),
             enabled: true,
