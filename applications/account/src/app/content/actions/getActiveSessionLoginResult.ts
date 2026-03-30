@@ -1,3 +1,5 @@
+import { matchPath } from 'react-router-dom';
+
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { ForkType, getShouldReAuth } from '@proton/shared/lib/authentication/fork';
@@ -5,7 +7,7 @@ import {
     GetActiveSessionType,
     type GetActiveSessionsResult,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { type APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
+import { type APP_NAMES, SSO_PATHS, VPN_TV_PATH_WITH_CODE } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import type { OAuthPartnersInitiateState } from '../../public/OAuthPartnersContainer';
@@ -36,6 +38,9 @@ export const getActiveSessionLoginResult = async ({
     paths: Paths;
 }): Promise<LoginResult> => {
     const autoSignIn = sessionsResult.type === GetActiveSessionType.AutoPick;
+    const skipAutoSignInForTv =
+        sessionsResult.sessions.length === 1 &&
+        matchPath(localRedirect?.location.pathname ?? '', VPN_TV_PATH_WITH_CODE);
 
     if (forkState?.type === SSOType.Proton) {
         const forkParameters = forkState.payload.forkParameters;
@@ -122,7 +127,7 @@ export const getActiveSessionLoginResult = async ({
         };
     }
 
-    if (autoSignIn) {
+    if (autoSignIn && !skipAutoSignInForTv) {
         const session: AuthSession = { data: sessionsResult.session };
         return getLoginResult({
             api,
