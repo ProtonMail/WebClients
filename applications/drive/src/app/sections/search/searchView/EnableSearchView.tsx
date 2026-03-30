@@ -7,11 +7,11 @@ import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-sea
 import { DriveEmptyView } from '../../../components/layout/DriveEmptyView';
 
 export const EnableSearchView = ({
-    enableSearch,
-    isComputingSearchIndex,
+    optIn,
+    isIndexingInProgress,
 }: {
-    enableSearch: () => void;
-    isComputingSearchIndex: boolean;
+    optIn: () => void;
+    isIndexingInProgress: boolean;
 }) => {
     // translator: Shown when searching and search is not enabled yet
     const title = c('Title').t`Enable drive search`;
@@ -25,9 +25,9 @@ export const EnableSearchView = ({
                     color="norm"
                     size="large"
                     className="text-bold"
-                    onClick={enableSearch}
-                    loading={isComputingSearchIndex}
-                    disabled={isComputingSearchIndex}
+                    onClick={optIn}
+                    loading={isIndexingInProgress}
+                    disabled={isIndexingInProgress}
                 >
                     {c('Action').t`Enable drive search`}
                 </Button>
