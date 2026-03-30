@@ -53,6 +53,17 @@ export const everythingInPlanOrAppNameText = (planOrAppName: string) => {
 };
 
 /**
+ * Get the "Everything in X, plus:" text for plan upsell descriptions
+ * @param planOrAppName - The name of the plan or app
+ * @returns The text for the plan or app name
+ * @example
+ * everythingInPlanOrAppNamePlusText('Mail Essentials') // Displays: 'Everything in Mail Essentials, plus:'
+ */
+export const everythingInPlanOrAppNamePlusText = (planOrAppName: string) => {
+    return c('Info').t`Everything in ${planOrAppName}, plus:`;
+};
+
+/**
  * Get the text for the plan or app name
  * In order avoid duplicate translations, we use this function to get the text for the plan or app name
  * @param planOrAppName - The name of the plan or app

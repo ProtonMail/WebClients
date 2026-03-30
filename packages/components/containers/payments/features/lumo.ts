@@ -15,6 +15,13 @@ export const getLumoAppFeature = (): PlanCardFeatureDefinition => {
     };
 };
 
+export const getPrivateAIChatFeature = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Private AI Chat (${LUMO_APP_NAME})`,
+        included: true,
+    };
+};
+
 export const getUnlimitedChatsText = () => {
     return c('collider_2025: feature').t`Unlimited daily chats`;
 };
