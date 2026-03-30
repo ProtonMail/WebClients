@@ -26,7 +26,14 @@ import { selectedSubscriptionSelector } from '../newsletterSubscriptions/newslet
 import type { MailState } from '../store';
 import { getTotal } from './helpers/elementTotal';
 
-export const params = (state: MailState) => state.elements.params;
+export const params = (state: MailState) => {
+    const isInbox = state.elements.params.labelID === MAILBOX_LABEL_IDS.INBOX;
+
+    return {
+        ...state.elements.params,
+        categoryIDs: isInbox ? state.elements.params.categoryIDs : [],
+    };
+};
 
 export const selectLabelID = createSelector([params], (params) => params.labelID);
 export const selectElementID = createSelector([params], (params) => params.elementID);
