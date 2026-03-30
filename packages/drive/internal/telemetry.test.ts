@@ -216,7 +216,7 @@ describe('MetricHandler', () => {
                     volumeType: 'own_volume',
                     type: 'unknown',
                 });
-                expect(captureMessage).toHaveBeenCalledWith('Metric event details: upload unknown error', {
+                expect(captureMessage).toHaveBeenCalledWith('Metric event details: upload error', {
                     level: 'debug',
                     tags: {
                         driveSdkMetricEvent: 'uploadError',
@@ -428,7 +428,7 @@ describe('MetricHandler', () => {
                     volumeType: 'own_volume',
                     type: 'unknown',
                 });
-                expect(captureMessage).toHaveBeenCalledWith('Metric event details: download unknown error', {
+                expect(captureMessage).toHaveBeenCalledWith('Metric event details: download error', {
                     level: 'debug',
                     tags: {
                         driveSdkMetricEvent: 'downloadError',
