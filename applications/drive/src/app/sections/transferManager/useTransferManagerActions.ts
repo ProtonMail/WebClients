@@ -7,16 +7,20 @@ import { useConfirmActionModal } from '@proton/components';
 import { uploadManager, useUploadQueueStore } from '@proton/drive/modules/upload';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
+import { useDownloadContainsDocumentsModal } from '../../components/modals/DownloadContainsDocumentsModal';
 import { DownloadManager } from '../../managers/download/DownloadManager';
 import { useSharingModal } from '../../modals/SharingModal/SharingModal';
+import { useSignatureIssueModal } from '../../modals/SignatureIssueModal';
 import { IssueStatus, useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
+import { isCancellable, isRetryable } from './transferStatus';
 import type { TransferManagerEntry } from './useTransferManagerState';
-import { isCancellable, isRetryable } from './utils/transferStatus';
 
 export const useTransferManagerActions = () => {
     const downloadManager = DownloadManager.getInstance();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const { sharingModal, showSharingModal } = useSharingModal();
+    const [containsDocumentModal, showDocumentsModal] = useDownloadContainsDocumentsModal();
+    const { signatureIssueModal, showSignatureIssueModal } = useSignatureIssueModal();
     const { getUploadItem } = useUploadQueueStore(useShallow((state) => ({ getUploadItem: state.getItem })));
     const { clearDownloads, updateDownloadItem, getDownloadItem } = useDownloadManagerStore(
         useShallow((state) => {
@@ -43,7 +47,7 @@ export const useTransferManagerActions = () => {
     const cancelTransfer = useCallback(
         (entry: TransferManagerEntry) => {
             if (entry.type === 'download') {
-                downloadManager.cancel([entry.id]);
+                void downloadManager.cancel([entry.id]);
             }
             if (entry.type === 'upload') {
                 void uploadManager.cancelUpload(entry.id);
@@ -132,6 +136,10 @@ export const useTransferManagerActions = () => {
         cancelAll,
         confirmModal,
         sharingModal,
+        containsDocumentModal,
+        showDocumentsModal,
+        signatureIssueModal,
+        showSignatureIssueModal,
         retryFailedTransfers,
     };
 };

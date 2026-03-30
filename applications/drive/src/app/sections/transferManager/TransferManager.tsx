@@ -3,15 +3,14 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useBeforeUnload, useConfirmActionModal } from '@proton/components';
-import { getDrive, getDriveForPhotos } from '@proton/drive';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { uploadManager } from '@proton/drive/modules/upload';
 import clsx from '@proton/utils/clsx';
 
 import type { AbuseReportPrefill } from '../../modals/ReportAbuseModal';
 import { useUploadConflictModal } from '../../modals/UploadConflictModal';
-import { TransferManagerHeader } from './transferManagerHeader/transferManagerHeader';
-import { TransferManagerList } from './transferManagerList/transferManagerList';
+import { TransferManagerHeader } from './connectedComponents/TransferManagerHeader';
+import { TransferManagerList } from './connectedComponents/TransferManagerList';
+import { subscribeToUploadEvents } from './subscribeToUploadEvents';
 import { useTransferManagerActions } from './useTransferManagerActions';
 import { TransferManagerStatus, useTransferManagerState } from './useTransferManagerState';
 
@@ -31,7 +30,20 @@ export const TransferManager = ({
     onReportAbuse,
 }: TransferManagerProps) => {
     const { items, status, isVisible } = useTransferManagerState();
-    const { clearQueue } = useTransferManagerActions();
+    const {
+        clearQueue,
+        cancelAll,
+        cancelTransfer,
+        retryTransfer,
+        retryFailedTransfers,
+        share,
+        confirmModal: actionsConfirmModal,
+        sharingModal,
+        containsDocumentModal,
+        showDocumentsModal,
+        signatureIssueModal,
+        showSignatureIssueModal,
+    } = useTransferManagerActions();
     const [isMinimized, setMinimized] = useState(false);
     const [leaveMessage, setLeaveMessage] = useState('');
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
@@ -62,29 +74,10 @@ export const TransferManager = ({
             });
         });
 
-        const busDriver = getBusDriver();
-        uploadManager.subscribeToEvents('transfer-manager', async (event) => {
-            if (event.type === 'file:complete') {
-                await busDriver.emit(
-                    {
-                        type: event.isUpdatedNode ? BusDriverEventName.UPDATED_NODES : BusDriverEventName.CREATED_NODES,
-                        items: [{ uid: event.nodeUid, parentUid: event.parentUid }],
-                    },
-                    event.isForPhotos ? getDriveForPhotos() : getDrive()
-                );
-            } else if (event.type === 'folder:complete') {
-                await busDriver.emit(
-                    {
-                        type: BusDriverEventName.CREATED_NODES,
-                        items: [{ uid: event.nodeUid, parentUid: event.parentUid }],
-                    },
-                    getDrive()
-                );
-            }
-        });
+        const unsubscribe = subscribeToUploadEvents();
 
         return () => {
-            uploadManager.unsubscribeFromEvents('transfer-manager');
+            unsubscribe();
             uploadManager.removeConflictResolver();
         };
     }, [showUploadConflictModal]);
@@ -122,19 +115,34 @@ export const TransferManager = ({
             }}
         >
             <section aria-label={c('Label').t`File transfer overview`}>
-                <TransferManagerHeader toggleMinimize={toggleMinimize} isMinimized={isMinimized} onClose={onClose} />
+                <TransferManagerHeader
+                    toggleMinimize={toggleMinimize}
+                    isMinimized={isMinimized}
+                    onClose={onClose}
+                    cancelAll={cancelAll}
+                    retryFailedTransfers={retryFailedTransfers}
+                />
 
                 {!isMinimized && (
                     <div className="mt-3" data-testid="drive-transfers-manager:list">
                         <TransferManagerList
                             items={items}
                             deprecatedRootShareId={deprecatedRootShareId}
+                            share={share}
+                            cancelTransfer={cancelTransfer}
+                            retryTransfer={retryTransfer}
+                            showDocumentsModal={showDocumentsModal}
+                            showSignatureIssueModal={showSignatureIssueModal}
                             onReportAbuse={onReportAbuse}
                         />
                     </div>
                 )}
                 {uploadConflictModal}
                 {confirmModal}
+                {actionsConfirmModal}
+                {sharingModal}
+                {containsDocumentModal}
+                {signatureIssueModal}
             </section>
         </div>
     );
