@@ -230,6 +230,8 @@ export type PaymentTelemetryContext =
     | 'ctx-signup-greenland'
     /** Context-based Meet signup */
     | 'ctx-signup-meet'
+    /** Context-based Meet B2C plan signup */
+    | 'ctx-signup-meet-b2c-plan'
     /** Context-based referral signup */
     | 'ctx-signup-referral'
     /** Context-based email reservation */
