@@ -84,12 +84,14 @@ export function FolderContainer() {
         };
     }, [shareId, linkId, withLoading, navigateToRoot, setFolder, handleContextShare, createNotification]);
 
+    const treeEventScopeId = useFolderStore((state) => state.treeEventScopeId);
+
     useEffect(() => {
-        const unsubscribe = subscribeToFolderEvents();
-        return () => {
-            unsubscribe();
-        };
-    }, []);
+        if (!treeEventScopeId) {
+            return;
+        }
+        return subscribeToFolderEvents(treeEventScopeId);
+    }, [treeEventScopeId]);
 
     // Should never happened as the routing are asking for them explicitely
     if (!shareId || !linkId) {
