@@ -26,6 +26,11 @@ export type GroupMembersResponse = {
     members: GroupMember[];
 };
 
+export type GroupWithPublicKeys = {
+    group: Group;
+    publicKeys: MaybeNull<string[]>;
+};
+
 // Core API
 
 export type CoreGroupGetResponse = {

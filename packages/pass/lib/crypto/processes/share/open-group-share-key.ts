@@ -2,23 +2,23 @@ import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoVaultError } from '@proton/pass/lib/crypto/utils/errors';
 import type { VaultShareKey as ShareKey, ShareKeyResponse } from '@proton/pass/types';
-import type { AddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 type OpenVaultKeyProcessParams = {
     shareKey: ShareKeyResponse;
     addressKeys: DecryptedKey[];
-    groupKeys: AddressKey[];
+    groupPublicKeys: string[];
 };
 
 export const openGroupShareKey = async ({
     shareKey,
     addressKeys,
-    groupKeys,
+    groupPublicKeys,
 }: OpenVaultKeyProcessParams): Promise<ShareKey> => {
     const { Key, KeyRotation, UserKeyID } = shareKey;
     const privateAddressKeys = addressKeys.map(({ privateKey }) => privateKey);
     const publicGroupKeys = await Promise.all(
-        groupKeys.map((key) => CryptoProxy.importPublicKey({ armoredKey: key.PrivateKey }))
+        groupPublicKeys.map((armoredKey) => CryptoProxy.importPublicKey({ armoredKey }))
     );
 
     const { data: vaultKey, verificationStatus } = await CryptoProxy.decryptMessage({

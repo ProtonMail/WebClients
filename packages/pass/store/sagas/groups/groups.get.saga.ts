@@ -13,7 +13,7 @@ function* getGroupWorker({ meta, payload }: ReturnType<typeof getGroup.intent>) 
         if (!enabled) throw {};
 
         const group: Group = yield call(fetchGroup, payload);
-        PassCrypto.setGroupKeys(group);
+        PassCrypto.setGroup(group);
 
         yield put(getGroup.success(meta.request.id, group));
     } catch (error) {
