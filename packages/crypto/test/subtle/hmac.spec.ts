@@ -1,15 +1,12 @@
-import { use as chaiUse, expect } from 'chai';
-import chaiAsPromised from 'chai-as-promised';
+import { describe, expect, it } from 'vitest';
 
 import { importKey, signData, verifyData } from '../../lib/subtle/hmac';
 import { utf8StringToUint8Array } from '../../lib/utils';
 
-chaiUse(chaiAsPromised);
-
 describe('Subtle - HMAC-SHA256 helpers', () => {
     it('importKey - throws on short keys', async () => {
         const secretBytesTooShort = crypto.getRandomValues(new Uint8Array(16)); // 32 bytes required with SHA256
-        await expect(importKey(secretBytesTooShort)).to.be.rejectedWith(/key is too short/);
+        await expect(importKey(secretBytesTooShort)).rejects.toThrow(/key is too short/);
     });
 
     it('importKey/signData/verifyData - correctly confirms authenticity of signed data', async () => {
@@ -22,6 +19,6 @@ describe('Subtle - HMAC-SHA256 helpers', () => {
         expect(verified).to.be.true;
 
         // check that different `data` does not verify
-        await expect(verifyData(key, signed, new Uint8Array([1, 2, 3]))).to.eventually.be.false;
+        await expect(verifyData(key, signed, new Uint8Array([1, 2, 3]))).resolves.toBe(false);
     });
 });
