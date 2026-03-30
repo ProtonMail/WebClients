@@ -41,6 +41,7 @@ import {
     getHasExternalMemberCapableB2BPlan,
     getHasPassB2BPlan,
     hasDuo,
+    hasMeet,
     hasMeetBusiness,
     hasPassBusiness,
     hasVPNPassProfessional,
@@ -108,7 +109,7 @@ export const useMemberActions = ({
     };
 
     const hasDriveB2BPlan = getHasDriveB2BPlan(subscription);
-    const hasMeetB2BPlan = hasMeetBusiness(subscription);
+    const hasMeetPlan = hasMeetBusiness(subscription) || hasMeet(subscription);
     const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
 
     const verifiedMailDomains = useMemo(() => (customDomains || []).filter(getIsDomainActive), [customDomains]);
@@ -116,7 +117,7 @@ export const useMemberActions = ({
     const hasMaxAddresses = Boolean(organization?.MaxAddresses ?? 0);
     const hasCustomDomains = verifiedMailDomains.length > 0;
     // Allow using custom domain if organization has meetbiz2025 and a verified custom domain
-    const hasMeetB2BPlanAndVerifiedCustomDomain = hasMeetB2BPlan && hasCustomDomains;
+    const hasMeetB2BPlanAndVerifiedCustomDomain = hasMeetPlan && hasCustomDomains;
     const useEmail = hasExternalMemberCapableB2BPlan && !hasMeetB2BPlanAndVerifiedCustomDomain;
     const allowStorageConfiguration =
         !hasExternalMemberCapableB2BPlan ||
