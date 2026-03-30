@@ -55,6 +55,18 @@ export const getMaxParticipants = (n: number): PlanCardFeatureDefinition => {
     };
 };
 
+export const getVideoMeetingsFeature = (n: number): PlanCardFeatureDefinition => {
+    return {
+        text: c('meet_2025: Feature').ngettext(
+            msgid`Video meetings, ${n} participant`,
+            `Video meetings, ${n} participants`,
+            n
+        ),
+        included: true,
+        icon: 'video-camera',
+    };
+};
+
 export const getMaxMeetingsText = (n: number) => {
     if (n === 1) {
         return c('meet_2025: Feature').t`One active meeting at a time`;
@@ -113,7 +125,7 @@ export const getMeetAppointmentSchedulingText = () => {
     return c('meet_2025: Feature').t`Appointment scheduling`;
 };
 
-const getMeetAppointmentScheduling = (included: boolean): PlanCardFeatureDefinition => {
+export const getMeetAppointmentScheduling = (included: boolean): PlanCardFeatureDefinition => {
     return {
         text: getMeetAppointmentSchedulingText(),
         included: included,
@@ -141,8 +153,8 @@ export const getMeetMeetingRecording = (included: boolean): PlanCardFeatureDefin
     return {
         text: getMeetMeetingRecordingText(),
         included: included,
-        icon: 'pass-laptop',
-        status: 'coming-soon',
+        tooltip: c('meet_2025: Feature').t`Hosts can record meetings locally on their computers`,
+        icon: 'meet-record',
     };
 };
 

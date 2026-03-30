@@ -306,7 +306,7 @@ export const getContactGroupsManagement = (): PlanCardFeatureDefinition => {
     };
 };
 
-const getSMTP = (included: boolean): PlanCardFeatureDefinition => {
+export const getSMTP = (included: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Email client support (via IMAP/SMTP)`,
         tooltip: c('new_plans: tooltip')
@@ -384,7 +384,7 @@ export const getDesktopApp = (included: boolean): PlanCardFeatureDefinition => {
     };
 };
 
-const getEmailDistributionLists = (included: boolean): PlanCardFeatureDefinition => {
+export const getEmailDistributionLists = (included: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Email groups`,
         tooltip: c('new_plans: tooltip').t`Email everyone in a group with a single email address`,
@@ -396,6 +396,13 @@ export const getProtonScribe = (included: boolean): PlanCardFeatureDefinition =>
     return {
         text: c('new_plans: feature').t`${BRAND_NAME} Scribe writing assistant`,
         icon: 'magic-wand',
+        included,
+    };
+};
+
+export const getDataRetentionPoliciesFeature = (included: boolean): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Data retention policies`,
         included,
     };
 };
@@ -491,7 +498,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.LUMO]: getNDomainsFeature({ n: 0 }),
                 [PLANS.LUMO_BUSINESS]: getNDomainsFeature({ n: 0 }),
-                [PLANS.MEET_BUSINESS]: getNDomainsFeature({ n: 0 }),
+                [PLANS.MEET_BUSINESS]: getNDomainsFeature({ n: 1 }),
                 [PLANS.VISIONARY]: getNDomainsFeature({ n: plansMap[PLANS.VISIONARY]?.MaxDomains || 10 }),
                 [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getNDomainsFeature({
                     n: plansMap[PLANS.VPN_PASS_BUNDLE_BUSINESS]?.MaxDomains || 0,
