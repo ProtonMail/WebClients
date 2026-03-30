@@ -7,14 +7,15 @@ import {
     delegatedAccessReducer,
     domainsAddressesReducer,
     memberAuthDevicesReducer,
+    organizationRolesReducer,
     passwordPoliciesReducer,
     paymentMethodsReducer,
     retentionPoliciesReducer,
     samlReducer,
 } from '@proton/account';
 import { oauthTokenReducer } from '@proton/activation/src/logic/oauthToken';
-import { calendarSettingsReducer } from '@proton/calendar/calendarUserSettings';
 import { calendarsBootstrapReducer } from '@proton/calendar/calendarBootstrap';
+import { calendarSettingsReducer } from '@proton/calendar/calendarUserSettings';
 import { calendarsReducer } from '@proton/calendar/calendars';
 import { holidaysDirectoryReducer } from '@proton/calendar/holidaysDirectory';
 import { filtersReducer } from '@proton/mail/store/filters';
@@ -41,6 +42,7 @@ export const rootReducer = combineReducers({
     ...oauthTokenReducer,
     ...retentionPoliciesReducer,
     ...delegatedAccessReducer,
+    ...organizationRolesReducer,
     ...appNameReducer,
 });
 
