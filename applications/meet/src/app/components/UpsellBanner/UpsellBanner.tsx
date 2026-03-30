@@ -20,9 +20,10 @@ export const DISMISS_DAYS = 30;
 
 interface UpsellBannerProps {
     isPaid: boolean;
+    hasSubscriptionWithoutMeet: boolean;
 }
 
-export const UpsellBanner = ({ isPaid }: UpsellBannerProps) => {
+export const UpsellBanner = ({ isPaid, hasSubscriptionWithoutMeet }: UpsellBannerProps) => {
     const meetUpsellEnabled = useFlag('MeetUpsell');
     const [visible, setVisible] = useState(() => canShowBanner(STORAGE_KEY));
 
@@ -60,7 +61,12 @@ export const UpsellBanner = ({ isPaid }: UpsellBannerProps) => {
                         c('Info').jt`Unlock ${unlimitedMeeting} and premium features`
                     }
                 </div>
-                <SettingsLink path={`/dashboard?plan=${PLANS.MEET_BUSINESS}`} className="shrink-0">
+                <SettingsLink
+                    path={
+                        hasSubscriptionWithoutMeet ? `dashboard?addon=meet` : `/dashboard?plan=${PLANS.MEET_BUSINESS}`
+                    }
+                    className="shrink-0"
+                >
                     <Button className="rounded-full text-xs md:text-sm">{c('Action').t`Upgrade`}</Button>
                 </SettingsLink>
             </div>
@@ -73,7 +79,7 @@ export const UpsellBanner = ({ isPaid }: UpsellBannerProps) => {
 };
 
 export const UpsellBannerWithUser = () => {
-    const { isPaid, isSubUser } = useIsTreatedAsPaidMeetUser();
+    const { isPaid, isSubUser, hasSubscriptionWithoutMeet } = useIsTreatedAsPaidMeetUser();
 
-    return <UpsellBanner isPaid={isPaid || isSubUser} />;
+    return <UpsellBanner isPaid={isPaid || isSubUser} hasSubscriptionWithoutMeet={hasSubscriptionWithoutMeet} />;
 };

@@ -11,14 +11,15 @@ export const useIsTreatedAsPaidMeetUser = () => {
     const [subscription] = useSubscription();
     const [organization] = useOrganization();
 
-    const hasSubscription =
+    const hasSubscriptionWithMeetFeature =
         hasVisionary(subscription) ||
         hasBundlePro2024(subscription) ||
         hasBundleBiz2025(subscription) ||
         isProtoneer(organization);
 
     return {
-        isPaid: daysSinceCreation < 3 || hasSubscription || user.hasPaidMeet,
+        isPaid: daysSinceCreation < 3 || hasSubscriptionWithMeetFeature || user.hasPaidMeet,
         isSubUser: isMember(user),
+        hasSubscriptionWithoutMeet: !!subscription && !hasSubscriptionWithMeetFeature && !user.hasPaidMeet,
     };
 };
