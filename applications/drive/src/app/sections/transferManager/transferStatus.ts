@@ -1,7 +1,7 @@
 import { UploadStatus } from '@proton/drive/modules/upload';
 
-import { BaseTransferStatus } from '../../../zustand/download/downloadManager.store';
-import type { TransferManagerEntry } from '../useTransferManagerState';
+import { BaseTransferStatus } from '../../zustand/download/downloadManager.store';
+import type { TransferManagerEntry } from './useTransferManagerState';
 
 export const isCancellable = (entry: TransferManagerEntry): boolean => {
     return (
