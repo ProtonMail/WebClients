@@ -1,7 +1,13 @@
 import { c, msgid } from 'ttag';
 
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
-import { BRAND_NAME, LUMO_APP_NAME, ORGANIZATION_STATE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import {
+    BRAND_NAME,
+    LUMO_APP_NAME,
+    MEET_APP_NAME,
+    ORGANIZATION_STATE,
+    VPN_CONNECTIONS,
+} from '@proton/shared/lib/constants';
 import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
 
 import { getNCalendarsText } from '../../features/calendar';
@@ -12,6 +18,14 @@ import {
     getHighSpeedVPNConnectionsText,
     getVPNConnectionsText,
 } from '../../features/vpn';
+
+/** Shared ngettext so Lumo/Meet lines do not duplicate the same placeholder pattern in one context (i18n validate). */
+const getProductForUsersSubscriptionAttributeText = (productName: string, count: number) =>
+    c('Subscription attribute').ngettext(
+        msgid`${productName} for ${count} user`,
+        `${productName} for ${count} users`,
+        count
+    );
 
 const getUserText = (isOrganizationDelinquent: boolean, MaxMembers: number, UsedMembers: number) => {
     if (isOrganizationDelinquent || MaxMembers === 0) {
@@ -123,11 +137,17 @@ const getLumoText = (organization?: Organization) => {
         return null;
     }
 
-    return c('Subscription attribute').ngettext(
-        msgid`${LUMO_APP_NAME} for ${maxLumo} user`,
-        `${LUMO_APP_NAME} for ${maxLumo} users`,
-        maxLumo
-    );
+    return getProductForUsersSubscriptionAttributeText(LUMO_APP_NAME, maxLumo);
+};
+
+const getMeetText = (organization?: Organization) => {
+    const maxMeet = organization?.MaxMeet ?? 0;
+
+    if (maxMeet === 0) {
+        return null;
+    }
+
+    return getProductForUsersSubscriptionAttributeText(MEET_APP_NAME, maxMeet);
 };
 
 /**
@@ -161,5 +181,6 @@ export const getSubscriptionPanelText = (user: UserModel, organization?: Organiz
         maxVPNDevicesText: getMaxVPNDevicesText(),
         writingAssistantText: getWritingAssistantText(organization),
         lumoText: getLumoText(organization),
+        meetText: getMeetText(organization),
     };
 };

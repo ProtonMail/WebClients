@@ -531,7 +531,7 @@ export const PLAN_NAMES: Record<PLANS, string> = {
     [PLANS.PASS_BUSINESS]: 'Pass Professional',
     [PLANS.PASS_FAMILY]: 'Pass Family',
     [PLANS.PASS_LIFETIME]: 'Pass + SimpleLogin Lifetime',
-    [PLANS.MEET]: 'Meet Professional (B2C)',
+    [PLANS.MEET]: 'Meet Professional',
     [PLANS.MEET_BUSINESS]: 'Meet Professional',
     [PLANS.VPN_PASS_BUNDLE_BUSINESS]: 'VPN and Pass Professional',
 };
