@@ -1,5 +1,4 @@
-import { use as chaiUse, expect } from 'chai';
-import chaiAsPromised from 'chai-as-promised';
+import { describe, expect, it } from 'vitest';
 
 import {
     KEY_LENGTH_BYTES,
@@ -7,18 +6,16 @@ import {
     deriveKey,
     encryptData,
     encryptDataWith16ByteIV,
+    exportKey,
     generateAndImportKey,
     generateKey,
     generateWrappingKey,
     importKey,
-    exportKey,
     importWrappingKey,
     unwrapKey,
     wrapKey,
 } from '../../lib/subtle/aesGcm';
 import { utf8StringToUint8Array } from '../../lib/utils';
-
-chaiUse(chaiAsPromised);
 
 describe('Subtle - AES-GCM helpers', () => {
     it('generateKey - key has declared size', async () => {
@@ -55,7 +52,7 @@ describe('Subtle - AES-GCM helpers', () => {
         const context = utf8StringToUint8Array('@proton/crypto gcm test');
         const encryptedLegacy = await encryptDataWith16ByteIV(key, data, context);
         // expect failure since a 12-byte IV should be used by default
-        await expect(decryptData(key, encryptedLegacy, context)).to.be.rejected;
+        await expect(decryptData(key, encryptedLegacy, context)).rejects.toThrow();
         // expect success if support for 16-byte IV is explictly set
         const decrypted = await decryptData(key, encryptedLegacy, context, true);
 
@@ -65,9 +62,7 @@ describe('Subtle - AES-GCM helpers', () => {
     it('deriveKey - throws on short secret input', async () => {
         const context = utf8StringToUint8Array('@proton/crypto gcm test');
         const salt = crypto.getRandomValues(new Uint8Array(32));
-        await expect(deriveKey(crypto.getRandomValues(new Uint8Array(8)), salt, context)).to.be.rejectedWith(
-            /too short/
-        );
+        await expect(deriveKey(crypto.getRandomValues(new Uint8Array(8)), salt, context)).rejects.toThrow(/too short/);
     });
 
     it('deriveKey - extractable key can be exported', async () => {

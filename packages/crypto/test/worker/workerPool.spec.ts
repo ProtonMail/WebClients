@@ -1,16 +1,13 @@
-import { use as chaiUse, expect } from 'chai';
-import chaiAsPromised from 'chai-as-promised';
 import { generateKey } from 'pmcrypto';
 import {
     decryptKey as openpgp_decryptKey,
     readKey as openpgp_readKey,
     readPrivateKey as openpgp_readPrivateKey,
 } from 'pmcrypto/lib/openpgp';
+import { afterAll, afterEach, beforeAll, describe, expect, it } from 'vitest';
 
 import { VERIFICATION_STATUS } from '../../lib';
 import { CryptoWorkerPool } from '../../lib/worker/workerPool';
-
-chaiUse(chaiAsPromised);
 
 describe('Worker Pool', () => {
     const poolSize = 2;
@@ -81,10 +78,10 @@ describe('Worker Pool', () => {
         const testHashSHA1Streamed = await CryptoWorkerPool.computeHashStream({
             algorithm: 'unsafeSHA1',
             dataStream,
-        }).then(bytes => bytes.toHex());
+        }).then((bytes) => bytes.toHex());
 
-        const testHashSHA1 = await CryptoWorkerPool.computeHash({ algorithm: 'unsafeSHA1', data }).then(
-            bytes => bytes.toHex()
+        const testHashSHA1 = await CryptoWorkerPool.computeHash({ algorithm: 'unsafeSHA1', data }).then((bytes) =>
+            bytes.toHex()
         );
 
         expect(testHashSHA1Streamed).to.equal(testHashSHA1);
@@ -310,7 +307,7 @@ fzUCGwwAIQkQXHnmw8RpeUoWIQT490w0irDiMLKqqe5ceebDxGl5Sl9wAQC+
             expect(await CryptoWorkerPool.exportPublicKey({ key: privateKeyRef })).length.above(0);
             await CryptoWorkerPool.clearKey({ key: privateKeyRef });
 
-            await expect(CryptoWorkerPool.exportPublicKey({ key: privateKeyRef })).to.be.rejectedWith(/Key not found/);
+            await expect(CryptoWorkerPool.exportPublicKey({ key: privateKeyRef })).rejects.toThrow(/Key not found/);
         });
 
         it('clearKeyStore - cannot reference any key after clearing the store', async () => {
@@ -325,8 +322,8 @@ fzUCGwwAIQkQXHnmw8RpeUoWIQT490w0irDiMLKqqe5ceebDxGl5Sl9wAQC+
             expect(await CryptoWorkerPool.exportPublicKey({ key: privateKeyRef2 })).length.above(0);
             await CryptoWorkerPool.clearKeyStore();
 
-            await expect(CryptoWorkerPool.exportPublicKey({ key: privateKeyRef1 })).to.be.rejectedWith(/Key not found/);
-            await expect(CryptoWorkerPool.exportPublicKey({ key: privateKeyRef2 })).to.be.rejectedWith(/Key not found/);
+            await expect(CryptoWorkerPool.exportPublicKey({ key: privateKeyRef1 })).rejects.toThrow(/Key not found/);
+            await expect(CryptoWorkerPool.exportPublicKey({ key: privateKeyRef2 })).rejects.toThrow(/Key not found/);
         });
     });
 });

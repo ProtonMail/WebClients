@@ -1,11 +1,8 @@
-import { use as chaiUse, expect } from 'chai';
-import chaiAsPromised from 'chai-as-promised';
+import { afterAll, afterEach, beforeAll, describe, expect, it } from 'vitest';
 
 import { CryptoProxy, updateServerTime } from '../../lib';
 import { CryptoWorkerPool as CryptoWorker } from '../../lib/worker/workerPool';
 import { runApiTests } from './apiTests';
-
-chaiUse(chaiAsPromised);
 
 describe('Worker API and Worker Pool Integration (behind CryptoProxy)', () => {
     beforeAll(async () => {
@@ -27,7 +24,7 @@ describe('Worker API and Worker Pool Integration (behind CryptoProxy)', () => {
     });
 
     it('init - should throw if already initialised', async () => {
-        await expect(CryptoWorker.init()).to.be.rejectedWith(/already initialised/);
+        await expect(CryptoWorker.init()).rejects.toThrow(/already initialised/);
     });
 
     runApiTests(CryptoProxy);

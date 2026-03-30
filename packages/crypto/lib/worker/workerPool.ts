@@ -69,7 +69,8 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
                     /* webpackChunkName: "crypto-worker" */
                     './worker.ts',
                     import.meta.url
-                )
+                ),
+                { type: 'module' }
             )
         );
 
