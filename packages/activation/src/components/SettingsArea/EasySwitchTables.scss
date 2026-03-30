@@ -4,7 +4,7 @@ $easy-switch-table-container-bp: 40rem;
 .easy-switch-table {
 	&.simple-table {
 		&--responsive {
-			@container (max-width: $easy-switch-table-container-bp) {
+			@container (max-width: #{$easy-switch-table-container-bp}) {
 				td {
 					display: block;
 					margin: 0;
@@ -19,7 +19,7 @@ $easy-switch-table-container-bp: 40rem;
 		}
 
 		&--responsive-cards {
-			@container (max-width: $easy-switch-table-container-bp) {
+			@container (max-width: #{$easy-switch-table-container-bp}) {
 				tr {
 					padding: var(--space-3);
 					border: 1px solid var(--table-border-color);
@@ -39,7 +39,7 @@ $easy-switch-table-container-bp: 40rem;
 		}
 
 		&--responsive .simple-table__th-small {
-			@container (max-width: $easy-switch-table-container-bp) {
+			@container (max-width: #{$easy-switch-table-container-bp}) {
 				display: flex !important;
 				align-content: center;
 				font-weight: var(--font-weight-medium);
@@ -51,7 +51,7 @@ $easy-switch-table-container-bp: 40rem;
 
 		&--border-lines-rounded {
 			&.simple-table--responsive-cards {
-				@container (max-width: $easy-switch-table-container-bp) {
+				@container (max-width: #{$easy-switch-table-container-bp}) {
 					tr td {
 						border: 0;
 						padding-block: 0 var(--space-2);
@@ -65,7 +65,7 @@ $easy-switch-table-container-bp: 40rem;
 			}
 		}
 
-		@container (max-width: $easy-switch-table-container-bp) {
+		@container (max-width: #{$easy-switch-table-container-bp}) {
 			&--responsive#{&}--has-actions {
 				td,
 				th {
@@ -88,7 +88,7 @@ $easy-switch-table-container-bp: 40rem;
 	&-actions {
 		inline-size: 16rem;
 	}
-	@container (max-width: 40rem) {
+	@container (max-width: #{$easy-switch-table-container-bp}) {
 		&-size,
 		&-status,
 		&-actions {
