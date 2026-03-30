@@ -2,16 +2,12 @@ import type { Engine, InitOutput } from '@proton/proton-foundation-search';
 import init, { Engine as SearchLibraryWasmEngine } from '@proton/proton-foundation-search';
 
 import type { SearchDB } from '../../shared/SearchDB';
+import type { IndexKind } from '../../shared/types';
 import { IndexBlobStore } from './IndexBlobStore';
 import { IndexReader } from './IndexReader';
 import { IndexWriter } from './IndexWriter';
 
-export enum IndexKind {
-    // The main default index: My files.
-    MAIN = 'main',
-
-    // TODO: Add more indices as needed (e.g. Devices, Photos, Shared with me, ...)
-}
+export { IndexKind } from '../../shared/types';
 
 export interface IndexInstance {
     engine: Engine;
