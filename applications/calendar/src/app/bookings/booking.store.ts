@@ -53,6 +53,7 @@ interface BookingStore {
     setBookingSlots: (bookingSlots: Omit<BookingTimeslot, 'tzDate'>[]) => void;
     filterBookingSlotPerDay: (date: Date) => BookingTimeslot[];
     nextAvailableSlot: BookingTimeslot | null;
+    latestAvailableSlot: BookingTimeslot | null;
     setNextAvailableSlot: (slot: Omit<BookingTimeslot, 'tzDate'> | null) => void;
     getDateKeySet: () => Set<string>;
 
@@ -73,6 +74,7 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
     bookingDetails: null,
     selectedBookingSlot: null,
     nextAvailableSlot: null,
+    latestAvailableSlot: null,
 
     loadedRanges: [],
 
@@ -106,6 +108,8 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
         set({
             // Recurring events have the same ID, so we need to check both id and startTime to remove duplicates
             bookingSlots: uniqueBy(newTimeSlots, (slot: BookingTimeslot) => `${slot.id}-${slot.startTime}`),
+            // We keep track of the latest available slot to prevent useless loadings
+            latestAvailableSlot: newTimeSlots[newTimeSlots.length - 1] ?? null,
         });
     },
 
