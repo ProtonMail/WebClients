@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { ProtonDriveClient, ProtonDrivePhotosClient } from '@proton/drive/index';
-import { NodeType, getDrive, getDriveForPhotos, useDrive } from '@proton/drive/index';
+import { NodeType, getDrive, getDriveForPhotos, getDrivePerNodeType, useDrive } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -230,7 +230,11 @@ export const useTrashActions = () => {
     };
 
     const handlePreview = (props: Parameters<typeof showPreviewModal>[0]) => {
-        showPreviewModal(props);
+        const item = useTrashStore.getState().getItem(props.nodeUid);
+        if (!item) {
+            return;
+        }
+        showPreviewModal({ ...props, drive: getDrivePerNodeType(item?.type) });
     };
 
     return {
