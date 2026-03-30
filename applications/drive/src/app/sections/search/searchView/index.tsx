@@ -46,15 +46,8 @@ export const SearchView = () => {
     const isFoudationSearchEnabled = useFlagsDriveFoundationSearch();
     const searchModel = isFoudationSearchEnabled ? foundationSearchModel : legacySearchModel;
 
-    const {
-        isSearchAvailable,
-        isSearchEnabled,
-        isComputingSearchIndex,
-        startIndexing,
-        isSearching,
-        resultUids,
-        refreshResults,
-    } = searchModel;
+    const { isSearchAvailable, isSearchEnabled, isSearchable, startIndexing, isSearching, resultUids, refreshResults } =
+        searchModel;
 
     const contextMenuControls = useContextMenuStore();
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
@@ -122,8 +115,12 @@ export const SearchView = () => {
     if (!isSearchAvailable) {
         return null;
     }
-    if (!isSearchEnabled) {
-        return <EnableSearchView enableSearch={startIndexing} isComputingSearchIndex={isComputingSearchIndex} />;
+
+    // TODO: Maybe show in the view why the search feature is not available.
+
+    if (!isSearchEnabled || !isSearchable) {
+        const isIndexingInProgress = isSearchEnabled && !isSearchable;
+        return <EnableSearchView optIn={startIndexing} isIndexingInProgress={isIndexingInProgress} />;
     }
 
     if (!isSearching && resultUids.length === 0) {

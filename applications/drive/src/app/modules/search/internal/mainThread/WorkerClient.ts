@@ -12,12 +12,13 @@ export class WorkerClient {
     private api: Comlink.Remote<SharedWorkerAPI>;
     private heartbeatInterval: ReturnType<typeof setInterval>;
     private onBeforeUnload: () => void;
+    private started = false;
 
     constructor(
-        userId: UserId,
+        private userId: UserId,
         appVersion: string,
         private clientId: ClientId,
-        bridge: MainThreadBridge
+        private bridge: MainThreadBridge
     ) {
         const sharedWorkerName = `drive-search-worker/${appVersion}/${userId}`;
         Logger.info(`Starting worker client for worker <${sharedWorkerName}>`);
@@ -30,14 +31,22 @@ export class WorkerClient {
 
         Logger.listenForWorkerLogs();
 
-        void this.api.registerClient(userId, this.clientId, Comlink.proxy(bridge));
-
         this.heartbeatInterval = setInterval(() => {
             void this.api.heartbeatClient(this.clientId);
         }, HEARTBEAT_INTERVAL);
 
         this.onBeforeUnload = () => this.disconnect();
         window.addEventListener('beforeunload', this.onBeforeUnload);
+    }
+
+    /** Register this client with the worker, triggering indexing. Safe to call multiple times. */
+    start(): void {
+        if (this.started) {
+            return;
+        }
+        this.started = true;
+        Logger.info('Registering search worker client');
+        void this.api.registerClient(this.userId, this.clientId, Comlink.proxy(this.bridge));
     }
 
     async *search(query: SearchQuery): AsyncGenerator<SearchResultItem> {
