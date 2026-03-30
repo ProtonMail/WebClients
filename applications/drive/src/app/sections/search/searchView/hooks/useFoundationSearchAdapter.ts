@@ -6,6 +6,7 @@ import { useNotifications } from '@proton/components';
 
 import { useSearchModule } from '../../../../hooks/search/useSearchModule';
 import { useUrlSearchParams } from '../../../../hooks/search/useUrlSearchParam';
+import type { SearchResultItem } from '../../../../modules/search';
 import { sendErrorReport } from '../../../../utils/errorHandling';
 import type { SearchViewModelAdapter } from '../type';
 
@@ -41,15 +42,15 @@ export const useFoundationSearchAdapter = (): SearchViewModelAdapter => {
                 // that calls loadNodes() depends on resultUids and aborts on every change,
                 // so updating state per item would cause repeated abort/restart cycles.
                 // TODO: Enable progressive rendering once loadNodes supports incremental loading.
-                const uids: string[] = [];
-                for await (const { nodeUid } of searchModule.search({ filename: searchParams })) {
+                const collected: SearchResultItem[] = [];
+                for await (const item of searchModule.search({ filename: searchParams })) {
                     if (abortController.signal.aborted) {
                         break;
                     }
-                    uids.push(nodeUid);
+                    collected.push(item);
                 }
                 if (!abortController.signal.aborted) {
-                    setCurrentResultUids(uids);
+                    setCurrentResultUids(mergeAndSortResults(collected));
                 }
             } catch (e) {
                 if (e instanceof DOMException && e.name === 'AbortError') {
@@ -106,3 +107,20 @@ export const useFoundationSearchAdapter = (): SearchViewModelAdapter => {
         refreshResults: refresh,
     };
 };
+
+/**
+ * Deduplicates search results by nodeUid (keeping the highest score)
+ * and returns uids sorted by descending score.
+ */
+export function mergeAndSortResults(items: SearchResultItem[]): string[] {
+    const best = new Map<string, number>();
+    for (const { nodeUid, score } of items) {
+        const existing = best.get(nodeUid);
+        if (existing === undefined || score > existing) {
+            best.set(nodeUid, score);
+        }
+    }
+    return [...best.entries()]
+        .sort(([uidA, scoreA], [uidB, scoreB]) => scoreB - scoreA || uidA.localeCompare(uidB))
+        .map(([uid]) => uid);
+}

@@ -1,4 +1,5 @@
 module.exports = {
+    forceExit: true,
     setupFilesAfterEnv: ['./jest.setup.js'],
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     collectCoverage: true,

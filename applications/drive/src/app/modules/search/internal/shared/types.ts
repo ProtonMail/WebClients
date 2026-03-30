@@ -21,6 +21,13 @@ export type SearchModuleState = {
 
 export type AttributeFilter = string | bigint | boolean;
 
+export enum IndexKind {
+    // The main default index: My files.
+    MAIN = 'main',
+
+    // TODO: Add more indices as needed (e.g. Devices, Photos, Shared with me, ...)
+}
+
 export type SearchQuery = {
     filename: string;
     filters?: Record<string, AttributeFilter>;
@@ -29,7 +36,7 @@ export type SearchQuery = {
 export type SearchResultItem = {
     nodeUid: string;
     score: number;
-    indexKind: string;
+    indexKind: IndexKind;
 };
 
 /**
