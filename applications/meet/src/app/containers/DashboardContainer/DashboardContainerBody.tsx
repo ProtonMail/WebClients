@@ -44,14 +44,14 @@ export const DashboardContainerBody = ({
     const isGuest = useGuestContext();
 
     const getHeadline = () => {
-        // translator: this word is part of the full sentence "Your conversations matter" but we need to emphasize matter with a purple color
-        const matterWord = (
-            <span key="matter-word" className="meet-dashboard-headline-emphasized">
-                {c('Info').t`matter`}
+        // translator: this word is part of the full sentence "Talk in total privacy" but we need to emphasize privacy with a purple color
+        const privacyWord = (
+            <span key="privacy-word" className="meet-dashboard-headline-emphasized">
+                {c('Info').t`privacy`}
             </span>
         );
-        // translator: full sentence is "Your conversations matter" where matter is emphasized with a purple color
-        return c('Headline').jt`Your conversations ${matterWord}`;
+        // translator: full sentence is "Talk in total privacy" where privacy is emphasized with a purple color
+        return c('Headline').jt`Talk in total ${privacyWord}`;
     };
 
     return (
@@ -61,8 +61,8 @@ export const DashboardContainerBody = ({
                 <PageHeader showAppSwitcher={!isElectronApp} />
                 <div className="flex flex-column items-center flex-nowrap w-full shrink-0 meet-dashboard-header-wrapper">
                     <h1 className="meet-dashboard-headline text-center">{getHeadline()}</h1>
-                    <span className="meet-dashboard-subtitle mt-5 mb-5 text-center text-wrap-balance">{c('Header')
-                        .t`Speak freely again - every call is end-to-end encrypted`}</span>
+                    <span className="meet-dashboard-subtitle mt-4 mb-5 text-center text-wrap-balance">{c('Header')
+                        .t`Protect your conversations with end-to-end encryption`}</span>
                     <div className="flex justify-center meet-dashboard-cta-wrapper mt-5 mb-5 w-full">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <CreateMeetingDropdown
@@ -78,7 +78,7 @@ export const DashboardContainerBody = ({
                             >
                                 <span className="inline-flex items-center mr-2">
                                     <IcLink size={4} className="shrink-0 mr-2" />
-                                    {c('Action').t`Join via link`}
+                                    {c('Action').t`Join with a link`}
                                 </span>
                             </Button>
                         </div>
