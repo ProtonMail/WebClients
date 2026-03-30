@@ -889,6 +889,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Fortsett til ${ planOrAppName }"
       ]
     },
     "Actions message": {
@@ -2538,6 +2541,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Vi beklager at du forlater oss. Hvis du har et øyeblikk, setter vi stor pris på å høre hvorfor du ønsker å avbryte abonnementet. Tilbakemeldingen din hjelper oss med å gjøre ${ BRAND_NAME } bedre for alle."
       ]
     },
     "description": {
@@ -4733,7 +4739,7 @@
         "Ingen kontakter er lagt til enda"
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Intet dokument oppgitt i URL-en. Gå tilbake til ${ DRIVE_APP_NAME } og velg et dokument."
+        "Ingen dokument oppgitt i URL-en. Gå tilbake til ${ DRIVE_APP_NAME } og velg et dokument."
       ],
       "No email address": [
         "Ingen e-postadresse"
@@ -5406,6 +5412,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil fortsatt kunne se dine egne kontodata, men alle brukerkontoer vil bli fjernet fra organisasjonen din."
+      ],
+      "Decrypting your document": [
+        "Dekrypterer dokumentet ditt"
       ]
     },
     "info": {
@@ -5917,6 +5926,18 @@
       ],
       "Your password (trusted contact)": [
         "Passordet ditt (betrodd kontakt)"
+      ],
+      "Additional comments": [
+        "Ytterligere kommentarer"
+      ],
+      "Continue cancelling": [
+        "Fortsett avbestillingen"
+      ],
+      "Main reason for cancelling": [
+        "Hovedårsaken til kanselleringen"
+      ],
+      "Skip feedback": [
+        "Hopp over tilbakemelding"
       ]
     },
     "Label for contact group color": {
@@ -7019,7 +7040,7 @@
         "200 GB med skylagring som lar deg lagre, synkronisere og dele filer lett. Sikret med ende-til-ende-kryptering."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre porttjenere"
+        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre gateway-tjenere"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
         "Avansert beskyttelse for team som går utover industristandarder."
@@ -7212,7 +7233,7 @@
         "På samme måte som en mappe, er et hvelv en praktisk måte å organisere elementene dine på."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private porttjenere."
+        "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private gatewayer."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Behandle abonnementet ditt, inkludert tilpasning av planen din. Betalingsmåter akseptert er kredittkort, PayPal, kryptovaluta og bankoverføring."
@@ -7380,7 +7401,7 @@
         "Støtte for mange plattformer"
       ],
       "Private gateways": [
-        "Private porttjenere"
+        "Private gateway-servere"
       ],
       "Support for ${ n } custom email domain": [
         "Støtte for ${ n } egendefinert e-postdomene",
@@ -8094,6 +8115,15 @@
       ],
       "Your organization name": [
         "Organisasjonsnavnet ditt"
+      ],
+      "Anything you'd like us to know": [
+        "Er det noe mer du vil at vi skal vite om"
+      ],
+      "Enter a name": [
+        "Skriv inn et navn"
+      ],
+      "Select a provider": [
+        "Velg en leverandør"
       ]
     },
     "Placeholder for contact group name": {
@@ -9657,7 +9687,7 @@
         "Forbedre sikkerheten med 2FA"
       ],
       "Enter your password": [
-        "Skriv inn passord"
+        "Skriv inn passordet"
       ],
       "Error Syncing": [
         "Feil ved synkronisering"
@@ -10277,6 +10307,26 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. Du blir ikke belastet hvis du avbryter før ${ textDate }. ${ action }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Annen"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

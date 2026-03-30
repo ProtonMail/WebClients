@@ -676,7 +676,7 @@
         "Desa els canvis"
       ],
       "Save preferences": [
-        "Deseu les preferències"
+        "Desar les preferències"
       ],
       "Search": [
         "Cerca"
@@ -892,6 +892,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte."
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Continuar amb ${ planOrAppName }"
       ]
     },
     "Actions message": {
@@ -959,6 +962,10 @@
       ],
       "Writing assistant seats": [
         "Llicències de l'assistent d'escriptura"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } llicència de ${ MEET_APP_NAME }",
+        "${ seats } llicències de ${ MEET_APP_NAME }"
       ]
     },
     "Alert": {
@@ -2541,6 +2548,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Ens sap greu que marxeu. Si teniu un moment, us agrairíem molt que ens diguéssiu per què voleu cancel·lar la subscripció. Els vostres comentaris ens ajuden a fer que ${ BRAND_NAME } sigui millor per a tothom."
       ]
     },
     "description": {
@@ -4395,7 +4405,7 @@
         "S'està creant l'enllaç a la carpeta"
       ],
       "Creating new document...": [
-        "S'està creant un nou document..."
+        "S’està creant el document..."
       ],
       "Current plan": [
         "Pla actual"
@@ -4485,7 +4495,7 @@
         "Introduïu el codi de verificació. Dígit ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
-        "Introduïu la vostra contrasenya (com a administrador d'organització)."
+        "Introduïu la vostra contrasenya (com a administrador de l'organització)."
       ],
       "Enter your own password (as trusted contact).": [
         "Introduïu la vostra contrasenya (com a contacte de confiança)."
@@ -4560,7 +4570,7 @@
         "Rebeu actualitzacions per correu electrònic dels comentaris i suggeriments afegits als vostres documents."
       ],
       "Get Notified About Comments": [
-        "Rebeu notificacions dels comentaris"
+        "Rebeu notificacions sobre els comentaris"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Els governs i els ISP poden controlar la vostra activitat en línia. En amagar la vostra IP real i xifrar la vostra activitat, la vostra navegació esdevé privada."
@@ -4702,7 +4712,7 @@
         "Prioritat baixa"
       ],
       "Making a copy...": [
-        "S'està fent una còpia..."
+        "S’està fent una còpia..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Màxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caràcter",
@@ -4736,7 +4746,7 @@
         "Encara no s'han afegit contactes"
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "L'adreça URL no ha proporcionat cap document. Torneu a ${ DRIVE_APP_NAME } i seleccioneu un document."
+        "No s'ha proporcionat cap document a l'URL. Torneu a ${ DRIVE_APP_NAME } i seleccioneu-ne algun."
       ],
       "No email address": [
         "Sense adreça de correu electrònic"
@@ -5020,7 +5030,7 @@
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Sembla que l'adreça URL que heu introduït s'ha copiat d'Slack incorrectament. Quan copieu enllaços llargs d'Slack, feu clic amb el botó dret sobre l'enllaç i trieu \"Copia l'enllaç\" en lloc de copiar directament el text truncat de l'adreça."
+        "Sembla que l'URL que heu introduït s'ha copiat d'Slack de manera incorrecta. Quan copieu enllaços llargs des d'Slack, feu clic amb el botó dret del ratolí sobre l'enllaç i seleccioneu \"Copia l'enllaç\" en lloc de copiar directament el text truncat de l'URL."
       ],
       "There are no documents in the trash.": [
         "No hi ha documents a la paperera."
@@ -5409,6 +5419,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
+      ],
+      "Decrypting your document": [
+        "S'està desxifrant el document"
       ]
     },
     "info": {
@@ -5640,7 +5653,7 @@
         "Correus electrònics (el mes passat)"
       ],
       "Enable email notifications": [
-        "Habiliteu les notificacions per correu electrònic"
+        "Habilitar les notificacions per correu electrònic"
       ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
@@ -5691,7 +5704,7 @@
         "Inclou els registres de l'aplicació a l'informe d'errors"
       ],
       "Include document name in notification": [
-        "Incloeu el nom del document a la notificació"
+        "Incloure el nom del document a la notificació"
       ],
       "Include message and file name in invite email": [
         "Inclou el missatge i el nom del fitxer al correu electrònic d'invitació"
@@ -5916,10 +5929,22 @@
         "La vostra ubicació"
       ],
       "Your password (admin)": [
-        "La seva contrasenya (admin)"
+        "La vostra contrasenya (administrador)"
       ],
       "Your password (trusted contact)": [
         "La vostra contrasenya (contacte de confiança)"
+      ],
+      "Additional comments": [
+        "Comentaris addicionals"
+      ],
+      "Continue cancelling": [
+        "Continueu amb la cancel·lació"
+      ],
+      "Main reason for cancelling": [
+        "Motiu principal de la cancel·lació"
+      ],
+      "Skip feedback": [
+        "Ometre els comentaris"
       ]
     },
     "Label for contact group color": {
@@ -8097,6 +8122,15 @@
       ],
       "Your organization name": [
         "El nom de la vostra organització"
+      ],
+      "Anything you'd like us to know": [
+        "Qualsevol cosa que vulgueu que sapiguem"
+      ],
+      "Enter a name": [
+        "Introduïu un nom"
+      ],
+      "Select a provider": [
+        "Seleccioneu un proveïdor"
       ]
     },
     "Placeholder for contact group name": {
@@ -8581,7 +8615,7 @@
     },
     "sheets_2025:Info": {
       "Creating new spreadsheet...": [
-        "S'està creant el full de càlcul nou..."
+        "S’està creant el full de càlcul..."
       ],
       "Detect automatically": [
         "Ho detecta automàticament"
@@ -10184,6 +10218,38 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La vostra prova finalitzarà el ${ textDate }. No se us cobrarà si cancel·leu abans del ${ textDate }. ${ action }"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "Llicència de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Llicències de ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } llicència de ${ MEET_APP_NAME }",
+        "${ seats } llicències de ${ MEET_APP_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Altres"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

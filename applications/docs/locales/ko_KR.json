@@ -367,7 +367,7 @@
         "이 버전을 xlsx로 내보내기"
       ],
       "Forgot password?": [
-        "비밀번호를 잊으셨나요?"
+        "비밀번호를 잊어버리셨나요?"
       ],
       "Forward as attachment": [
         "첨부 파일로 전달"
@@ -884,6 +884,9 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "vCard 파일을 ${ maxAttachments }개 이상 연락처로 보낼 수 없습니다"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "${ planOrAppName }(으)로 계속하기"
       ]
     },
     "Actions message": {
@@ -2522,6 +2525,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
       ]
     },
     "description": {
@@ -4001,7 +4007,7 @@
     },
     "Import provider": {
       "Advanced import": [
-        "고급 가져오기"
+        "고급 불러오기 설정"
       ]
     },
     "Import warning": {
@@ -4419,16 +4425,16 @@
         "인증 코드를 입력하세요. ${ digit }자입니다."
       ],
       "Enter your own password (as organization admin).": [
-        "자신의 비밀번호 입력 (조직 관리자와 같음)"
+        "사용자의 비밀번호 입력 (조직 관리자와 같음)"
       ],
       "Enter your own password (as trusted contact).": [
         "사용자 고유의 비밀번호 입력 (신뢰할 수 있는 연락처로서)"
       ],
       "Error converting document: ${ errorMessage }": [
-        "문서 변환 오류: ${ errorMessage }"
+        "문서 변환 실패: ${ errorMessage }"
       ],
       "Error loading document: ${ errorDetail }": [
-        "문서 로딩 오류: ${ errorDetail }"
+        "문서 로딩 실패: ${ errorDetail }"
       ],
       "Error Syncing": [
         "동기화 오류"
@@ -4950,7 +4956,7 @@
         "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "입력된 URL이 Slack에서 잘못 복사된 것으로 추정됩니다. Slack에서 긴 링크를 복사할 때 링크를 마우스 오른쪽 버튼으로 클릭한 다음 잘린 URL 텍스트를 직접 복사하는 대신 \"링크 복사\"를 선택하세요."
+        "입력하신 URL이 Slack에서 잘못 복사된 것 같습니다. Slack에서 긴 링크를 복사할 때는 링크를 마우스 오른쪽 버튼으로 클릭하고 잘린 URL 텍스트를 직접 복사하는 대신 \"링크 복사\"를 선택하세요."
       ],
       "There are no documents in the trash.": [
         "휴지통 내에 문서가 존재하지 않습니다."
@@ -5615,7 +5621,7 @@
         "버그 신고에 애플리케이션 로그 포함"
       ],
       "Include document name in notification": [
-        "알림에서 문서 이름 포함"
+        "알림에 문서 이름 포함"
       ],
       "Include message and file name in invite email": [
         "초대 이메일에 메시지 및 파일 이름을 포함하기"
@@ -5844,6 +5850,18 @@
       ],
       "Your password (trusted contact)": [
         "사용자 비밀번호 (신뢰할 수 있는 연락처)"
+      ],
+      "Additional comments": [
+        "추가 의견"
+      ],
+      "Continue cancelling": [
+        "취소 계속하기"
+      ],
+      "Main reason for cancelling": [
+        "취소의 주된 이유"
+      ],
+      "Skip feedback": [
+        "피드백 건너뛰기"
       ]
     },
     "Label for contact group color": {
@@ -7905,6 +7923,15 @@
       ],
       "Your organization name": [
         "조직 이름"
+      ],
+      "Anything you'd like us to know": [
+        "알려주셨으면 하는 사항이 있으신가요?"
+      ],
+      "Enter a name": [
+        "이름 입력"
+      ],
+      "Select a provider": [
+        "제공자 선택"
       ]
     },
     "Placeholder for contact group name": {
@@ -9480,7 +9507,7 @@
         "그룹 가져오기"
       ],
       "Import your data to ${ BRAND_NAME }": [
-        "${ BRAND_NAME }로 데이터 불러오기"
+        "${ BRAND_NAME }으로 데이터 불러오기"
       ],
       "Information exposed in breach": [
         "유출 시 노출된 정보"
@@ -10024,6 +10051,26 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate }에 종료됩니다. ${ textDate } 이전에 취소시 요금이 청구되지 않습니다. ${ action }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "기타"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

@@ -889,6 +889,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Συνέχεια στο ${ planOrAppName }"
       ]
     },
     "Actions message": {
@@ -956,6 +959,10 @@
       ],
       "Writing assistant seats": [
         "Άδειες βοηθού γραφής"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } άδεια χρήσης",
+        "${ seats } ${ MEET_APP_NAME } άδειες χρήσης"
       ]
     },
     "Alert": {
@@ -2538,6 +2545,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Λυπόμαστε που φεύγετε. Αν έχετε λίγο χρόνο, θα εκτιμούσαμε πραγματικά να μας πείτε γιατί θέλετε να ακυρώσετε. Τα σχόλιά σας μας βοηθούν να κάνουμε το ${ BRAND_NAME } καλύτερο για όλους."
       ]
     },
     "description": {
@@ -5406,6 +5416,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
+      ],
+      "Decrypting your document": [
+        "Γίνεται αποκρυπτογράφηση του εγγράφου σας"
       ]
     },
     "info": {
@@ -5917,6 +5930,18 @@
       ],
       "Your password (trusted contact)": [
         "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
+      ],
+      "Additional comments": [
+        "Επιπλέον σχόλια"
+      ],
+      "Continue cancelling": [
+        "Συνέχεια ακύρωσης"
+      ],
+      "Main reason for cancelling": [
+        "Κύριος λόγος ακύρωσης"
+      ],
+      "Skip feedback": [
+        "Παράλειψη σχολίων"
       ]
     },
     "Label for contact group color": {
@@ -8037,6 +8062,15 @@
       ],
       "Your organization name": [
         "Το όνομα του οργανισμού σας"
+      ],
+      "Anything you'd like us to know": [
+        "Οτιδήποτε θα θέλατε να ξέρουμε"
+      ],
+      "Enter a name": [
+        "Πληκτρολογήστε ένα όνομα"
+      ],
+      "Select a provider": [
+        "Επιλέξτε έναν πάροχο"
       ]
     },
     "Placeholder for contact group name": {
@@ -9504,7 +9538,7 @@
         "Ενισχύστε την ασφάλεια με την πιστοποίηση δύο παραγόντων (2FA)"
       ],
       "Enter your password": [
-        "Εισάγετε τον κωδικό σας"
+        "Εισάγετε τον κωδικό πρόσβασης σας"
       ],
       "Error Syncing": [
         "Σφάλμα Συγχρονισμού"
@@ -10124,6 +10158,38 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Η δοκιμαστική περίοδος θα λήξει στις ${ textDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ textDate }. ${ action }"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } άδεια χρήσης"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } θέσεις"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } θέση",
+        "${ seats } ${ MEET_APP_NAME } θέσεις"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Άλλο"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

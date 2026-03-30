@@ -91,7 +91,7 @@
         "Toepassen"
       ],
       "Ask me next time": [
-        "Volgende keer vragen"
+        "Vraag het de volgende keer aan mij"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Ten hoogste ${ maxContacts } contact is toegelaten per contactgroep",
@@ -4480,7 +4480,7 @@
         "Voer uw eigen wachtwoord in (als vertrouwd contact)."
       ],
       "Error converting document: ${ errorMessage }": [
-        "Fout bij het converteren van document: ${ errorMessage }"
+        "Fout bij het converteren van het document: ${ errorMessage }"
       ],
       "Error loading document: ${ errorDetail }": [
         "Fout bij het laden van document: ${ errorDetail }"
@@ -4691,7 +4691,7 @@
         "Lage Prioriteit"
       ],
       "Making a copy...": [
-        "Kopie wordt gemaakt..."
+        "Een kopie wordt gemaakt..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
@@ -5680,7 +5680,7 @@
         "Applicatie logs toevoegen aan het foutenrapport"
       ],
       "Include document name in notification": [
-        "Documentnaam opnemen in melding"
+        "Neem de documentnaam op in de e-mailnotificatie"
       ],
       "Include message and file name in invite email": [
         "Bericht- en bestandsnaam opnemen in uitnodigingsmail"
@@ -5905,10 +5905,13 @@
         "Uw locatie"
       ],
       "Your password (admin)": [
-        "Uw wachtwoord (admin)"
+        "Uw wachtwoord (beheerder)"
       ],
       "Your password (trusted contact)": [
         "Uw wachtwoord (vertrouwd contact)"
+      ],
+      "Additional comments": [
+        "Aanvullende opmerkingen"
       ]
     },
     "Label for contact group color": {
@@ -8029,6 +8032,12 @@
       ],
       "Your organization name": [
         "Uw organisatienaam"
+      ],
+      "Enter a name": [
+        "Voer een naam in"
+      ],
+      "Select a provider": [
+        "Kies een aanbieder"
       ]
     },
     "Placeholder for contact group name": {
@@ -8609,7 +8618,7 @@
     },
     "sheets_2025:Info": {
       "Creating new spreadsheet...": [
-        "Nieuw spreadsheet aanmaken..."
+        "Een nieuw spreadsheet wordt aangemaakt..."
       ],
       "Detect automatically": [
         "Automatisch detecteren"
@@ -10212,6 +10221,14 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Uw proefversie eindigt op ${ textDate }. U wordt niet in rekening gebracht als u annuleert vóór ${ textDate }. ${ action }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
       ]
     }
   }

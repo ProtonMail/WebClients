@@ -370,7 +370,7 @@
         "Exportar esta versión (como xlsx)"
       ],
       "Forgot password?": [
-        "¿Contraseña olvidada?"
+        "¿Olvidó su contraseña?"
       ],
       "Forward as attachment": [
         "Reenviar como adjunto"
@@ -676,7 +676,7 @@
         "Guardar los cambios"
       ],
       "Save preferences": [
-        "Guardar las preferencias"
+        "Guardar preferencias"
       ],
       "Search": [
         "Buscar"
@@ -892,6 +892,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto."
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Continuar con ${ planOrAppName }"
       ]
     },
     "Actions message": {
@@ -959,6 +962,10 @@
       ],
       "Writing assistant seats": [
         "Licencias del asistente de escritura"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licencia de ${ MEET_APP_NAME }",
+        "${ seats } licencias de ${ MEET_APP_NAME }"
       ]
     },
     "Alert": {
@@ -2541,6 +2548,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Lamentamos que se vaya. Si tiene un momento, agradeceríamos mucho saber por qué desea cancelar. Sus comentarios nos ayudan a mejorar ${ BRAND_NAME } para todos."
       ]
     },
     "description": {
@@ -5409,6 +5419,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrá seguir viendo los datos de su propia cuenta, pero todas las cuentas de usuario serán eliminadas de su organización."
+      ],
+      "Decrypting your document": [
+        "Descifrando su documento"
       ]
     },
     "info": {
@@ -5916,10 +5929,22 @@
         "Su ubicación"
       ],
       "Your password (admin)": [
-        "La contraseña (admin)"
+        "Su contraseña (admin)"
       ],
       "Your password (trusted contact)": [
         "Su contraseña (contacto de confianza)"
+      ],
+      "Additional comments": [
+        "Comentarios adicionales"
+      ],
+      "Continue cancelling": [
+        "Continuar cancelación"
+      ],
+      "Main reason for cancelling": [
+        "Razón principal de cancelación"
+      ],
+      "Skip feedback": [
+        "Omitir comentarios"
       ]
     },
     "Label for contact group color": {
@@ -8097,6 +8122,15 @@
       ],
       "Your organization name": [
         "El nombre de su organización"
+      ],
+      "Anything you'd like us to know": [
+        "¿Algo que le gustaría que supiéramos?"
+      ],
+      "Enter a name": [
+        "Ingrese un nombre"
+      ],
+      "Select a provider": [
+        "Seleccione un proveedor"
       ]
     },
     "Placeholder for contact group name": {
@@ -9660,7 +9694,7 @@
         "Mejore la seguridad con 2FA"
       ],
       "Enter your password": [
-        "Ingrese la contraseña"
+        "Ingrese su contraseña"
       ],
       "Error Syncing": [
         "Error al sincronizar"
@@ -10280,6 +10314,38 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Su prueba finalizará el ${ textDate }. No se le cobrará si cancela antes del ${ textDate }. ${ action }"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "Licencia de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licencias de ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licencia de ${ MEET_APP_NAME }",
+        "${ seats } licencias de ${ MEET_APP_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Otro"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

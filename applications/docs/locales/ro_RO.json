@@ -894,6 +894,9 @@
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Continuare cu ${ planOrAppName }"
       ]
     },
     "Actions message": {
@@ -967,6 +970,11 @@
       ],
       "Writing assistant seats": [
         "Licențe asistent de scriere"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }",
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }",
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }"
       ]
     },
     "Alert": {
@@ -2554,6 +2562,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
       ]
     },
     "description": {
@@ -4455,7 +4466,7 @@
         "Se creează legătura către folder"
       ],
       "Creating new document...": [
-        "Se creează un document..."
+        "Se creează noul document..."
       ],
       "Current plan": [
         "Plan actual"
@@ -4620,7 +4631,7 @@
         "Primiți actualizări prin e-mail pentru comentariile și sugestiile adăugate la documentele personale."
       ],
       "Get Notified About Comments": [
-        "Primi notificări despre comentarii"
+        "Primire notificări despre comentarii"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Guvernele și ISP-urile vă pot monitoriza activitatea online. Ascunzându-vă adresa IP reală și criptându-vă activitatea, navigarea devine privată."
@@ -5477,6 +5488,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "Decrypting your document": [
+        "Se decriptează documentul"
       ]
     },
     "info": {
@@ -5990,6 +6004,18 @@
       ],
       "Your password (trusted contact)": [
         "Parola dvs. (contact aprobat)"
+      ],
+      "Additional comments": [
+        "Comentarii adiționale"
+      ],
+      "Continue cancelling": [
+        "Continuare anulare"
+      ],
+      "Main reason for cancelling": [
+        "Motiv principal pentru anulare"
+      ],
+      "Skip feedback": [
+        "Omitere feedback"
       ]
     },
     "Label for contact group color": {
@@ -8169,6 +8195,15 @@
       ],
       "Your organization name": [
         "Numele organizației"
+      ],
+      "Anything you'd like us to know": [
+        "Orice ați dori să știm"
+      ],
+      "Enter a name": [
+        "Introduceți un nume"
+      ],
+      "Select a provider": [
+        "Selectați un furnizor"
       ]
     },
     "Placeholder for contact group name": {
@@ -9780,7 +9815,7 @@
         "Îmbunătățiți securitatea cu A2F"
       ],
       "Enter your password": [
-        "Introduceţi parola"
+        "Introduceți parola"
       ],
       "Error Syncing": [
         "Eroare la sincronizare"
@@ -10416,6 +10451,39 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Perioada de probare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licență"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licențe ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "Licențe ${ MEET_APP_NAME }: ${ seats }",
+        "Licențe ${ MEET_APP_NAME }: ${ seats }",
+        "Licențe ${ MEET_APP_NAME }: ${ seats }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Altul"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

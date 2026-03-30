@@ -91,7 +91,7 @@
         "Übernehmen"
       ],
       "Ask me next time": [
-        "Frag mich beim nächsten Mal"
+        "Frag mich nächstes Mal"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Pro Kontaktgruppe ist maximal ${ maxContacts } Kontakt erlaubt.",
@@ -889,6 +889,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten.",
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten."
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Weiter zu ${ planOrAppName }"
       ]
     },
     "Actions message": {
@@ -956,6 +959,10 @@
       ],
       "Writing assistant seats": [
         "Lizenzen für Schreibassistenten"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } Lizenz",
+        "${ seats } ${ MEET_APP_NAME } Lizenzen"
       ]
     },
     "Alert": {
@@ -2538,6 +2545,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Wir bedauern, dass du gehst. Wenn du einen Moment Zeit hast, würden wir uns sehr freuen zu erfahren, warum du kündigen möchtest. Dein Feedback hilft uns, ${ BRAND_NAME } für alle besser zu machen."
       ]
     },
     "description": {
@@ -4482,7 +4492,7 @@
         "Bestätigungscode eingeben. ${ digit } Ziffern."
       ],
       "Enter your own password (as organization admin).": [
-        "Gib dein eigenes Passwort ein (als Organisationsadministrator)."
+        "Eigenes Passwort (als Organisationsadministrator) eingeben."
       ],
       "Enter your own password (as trusted contact).": [
         "Gib dein eigenes Passwort ein (als vertrauenswürdiger Kontakt)."
@@ -4554,10 +4564,10 @@
         "Geoblockierung"
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "E-Mail-Updates für Kommentare und Vorschläge erhalten, die zu deinen Dokumenten hinzugefügt wurden."
+        "E-Mail-Benachrichtigungen für Kommentare und Vorschläge erhalten, die zu deinen Dokumenten hinzugefügt wurden."
       ],
       "Get Notified About Comments": [
-        "Über Kommentare benachrichtigt werden"
+        "Benachrichtigungen über Kommentare erhalten"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regierungen und Internetdienstanbieter können deine Online-Aktivitäten überwachen. Indem du deine echte IP-Adresse verbirgst und deine Aktivitäten verschlüsselst, wird dein Surfverhalten privat."
@@ -5406,6 +5416,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kannst weiterhin deine eigenen Kontodaten ansehen, aber alle Benutzerkonten werden aus deiner Organisation entfernt."
+      ],
+      "Decrypting your document": [
+        "Dein Dokument wird entschlüsselt"
       ]
     },
     "info": {
@@ -5917,6 +5930,18 @@
       ],
       "Your password (trusted contact)": [
         "Dein Passwort (vertrauenswürdiger Kontakt)"
+      ],
+      "Additional comments": [
+        "Zusätzliche Kommentare"
+      ],
+      "Continue cancelling": [
+        "Kündigung fortsetzen"
+      ],
+      "Main reason for cancelling": [
+        "Hauptgrund für die Kündigung"
+      ],
+      "Skip feedback": [
+        "Rückmeldung überspringen"
       ]
     },
     "Label for contact group color": {
@@ -8094,6 +8119,15 @@
       ],
       "Your organization name": [
         "Name deiner Organisation"
+      ],
+      "Anything you'd like us to know": [
+        "Haben Sie etwas, das Sie uns mitteilen möchten?"
+      ],
+      "Enter a name": [
+        "Name eingeben"
+      ],
+      "Select a provider": [
+        "Anbieter auswählen"
       ]
     },
     "Placeholder for contact group name": {
@@ -10277,6 +10311,38 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deine Testversion endet am ${ textDate }. Dir werden keine Kosten berechnet, wenn du vor dem ${ textDate } kündigst. ${ action }"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } Lizenz"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } Lizenz",
+        "${ seats } ${ MEET_APP_NAME } Lizenzen"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Sonstiges"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

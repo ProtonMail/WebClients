@@ -889,6 +889,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter",
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Fortsätt till ${ planOrAppName }"
       ]
     },
     "Actions message": {
@@ -953,6 +956,10 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME }-licens",
+        "${ seats } ${ MEET_APP_NAME }-licenser"
       ]
     },
     "Alert": {
@@ -5381,6 +5388,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "Decrypting your document": [
+        "Dekrypterar ditt dokument"
       ]
     },
     "info": {
@@ -5892,6 +5902,15 @@
       ],
       "Your password (trusted contact)": [
         "Ditt lösenord (betrodd kontakt)"
+      ],
+      "Additional comments": [
+        "Ytterligare kommentarer"
+      ],
+      "Continue cancelling": [
+        "Fortsätt avbryta"
+      ],
+      "Skip feedback": [
+        "Hoppa över feedback"
       ]
     },
     "Label for contact group color": {
@@ -8066,6 +8085,15 @@
       ],
       "Your organization name": [
         "Ditt organisationsnamn"
+      ],
+      "Anything you'd like us to know": [
+        "Något du vill att vi ska veta"
+      ],
+      "Enter a name": [
+        "Ange ett namn"
+      ],
+      "Select a provider": [
+        "Välj en leverantör"
       ]
     },
     "Placeholder for contact group name": {
@@ -10240,6 +10268,31 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME }-licens"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Annat"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

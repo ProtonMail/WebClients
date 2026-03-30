@@ -367,7 +367,7 @@
         "导出此版本 (xlsx 格式)"
       ],
       "Forgot password?": [
-        "忘记密码?"
+        "忘记密码？"
       ],
       "Forward as attachment": [
         "作为附件转发"
@@ -884,6 +884,9 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能发送超过 ${ maxAttachments } 个联系人的 vCard 文件"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "继续使用 ${ planOrAppName }"
       ]
     },
     "Actions message": {
@@ -2522,6 +2525,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
       ]
     },
     "description": {
@@ -4419,7 +4425,7 @@
         "输入验证码，第 ${ digit } 位。"
       ],
       "Enter your own password (as organization admin).": [
-        "请输入你的密码（作为组织管理员）。"
+        "请输入您自己的密码（作为组织管理员）。"
       ],
       "Enter your own password (as trusted contact).": [
         "输入您自己的密码（作为可信联系人）"
@@ -4494,7 +4500,7 @@
         "获取添加到您文档中的评论和建议的邮件更新"
       ],
       "Get Notified About Comments": [
-        "获取评论通知"
+        "接收评论通知"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "政府和网络供应商可以监视您的在线活动。Proton 通过隐藏您的真实 IP 地址并加密网络活动，让您的浏览私密无忧。"
@@ -5844,6 +5850,18 @@
       ],
       "Your password (trusted contact)": [
         "您的密码（可信联系人）"
+      ],
+      "Additional comments": [
+        "附加备注"
+      ],
+      "Continue cancelling": [
+        "继续取消"
+      ],
+      "Main reason for cancelling": [
+        "取消的主要原因"
+      ],
+      "Skip feedback": [
+        "跳过反馈"
       ]
     },
     "Label for contact group color": {
@@ -7905,6 +7923,15 @@
       ],
       "Your organization name": [
         "您的组织名称"
+      ],
+      "Anything you'd like us to know": [
+        "您有任何想要告诉我们的吗？"
+      ],
+      "Enter a name": [
+        "请输入名称"
+      ],
+      "Select a provider": [
+        "请选择提供商"
       ]
     },
     "Placeholder for contact group name": {
@@ -9324,7 +9351,7 @@
         "通过 2FA 增强安全性"
       ],
       "Enter your password": [
-        "输入密码"
+        "请输入您的密码"
       ],
       "Error Syncing": [
         "同步出错"
@@ -9928,6 +9955,26 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "您的试用将于 ${ textDate } 结束。如果您在 ${ textDate } 之前取消，将不会被收费。${ action }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

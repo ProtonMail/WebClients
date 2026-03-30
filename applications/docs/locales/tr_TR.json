@@ -370,7 +370,7 @@
         "Bu sürümü dışa aktar (xlsx olarak)"
       ],
       "Forgot password?": [
-        "Parolanızı mı unuttunuz?"
+        "Parolamı unuttum"
       ],
       "Forward as attachment": [
         "Ek dosya olarak ilet"
@@ -889,6 +889,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz",
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "${ planOrAppName } ile ilerle"
       ]
     },
     "Actions message": {
@@ -956,6 +959,10 @@
       ],
       "Writing assistant seats": [
         "Yazma asistanı koltuk sayısı"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } lisansı",
+        "${ seats } ${ MEET_APP_NAME } lisansı"
       ]
     },
     "Alert": {
@@ -2538,6 +2545,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Aramızdan ayrıldığınız için üzgünüz. Vakit ayırıp iptal etme nedeninizi paylaşırsanız çok seviniriz. Geri bildiriminiz ${ BRAND_NAME } hizmetlerini herkes için daha iyi yapmamıza yardımcı olur."
       ]
     },
     "description": {
@@ -4557,7 +4567,7 @@
         "Belgelerinize eklenen yorumlar ve öneriler için e-posta bildirimleri alın."
       ],
       "Get Notified About Comments": [
-        "Yorumlar ile ilgili bildirim alın"
+        "Yorum bildirimi alın"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Hükümetler ve internet hizmeti sağlayıcılar çevrim içi etkinliğinizi izleyebilir. Gezinme gizliliğinizi korumak için gerçek IP adresiniz gizlenir ve etkinliğiniz şifrelenir."
@@ -4699,7 +4709,7 @@
         "Düşük Öncelik"
       ],
       "Making a copy...": [
-        "Bir kopya oluşturuluyor..."
+        "Kopyalanıyor..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "En fazla ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
@@ -5406,6 +5416,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
+      ],
+      "Decrypting your document": [
+        "Belgenizin şifresi çözülüyor"
       ]
     },
     "info": {
@@ -5917,6 +5930,18 @@
       ],
       "Your password (trusted contact)": [
         "Parolanız (güvenilen kişi)"
+      ],
+      "Additional comments": [
+        "Ek açıklamalar"
+      ],
+      "Continue cancelling": [
+        "İptal etmeye geç"
+      ],
+      "Main reason for cancelling": [
+        "Temel iptal etme nedeni"
+      ],
+      "Skip feedback": [
+        "Geri bildirimi atla"
       ]
     },
     "Label for contact group color": {
@@ -8037,6 +8062,15 @@
       ],
       "Your organization name": [
         "Kuruluşunuzun adı"
+      ],
+      "Anything you'd like us to know": [
+        "Bizimle paylaşmak istediğiniz bir şey var mı?"
+      ],
+      "Enter a name": [
+        "Bir ad yazın"
+      ],
+      "Select a provider": [
+        "Bir hizmet sağlayıcı seçin"
       ]
     },
     "Placeholder for contact group name": {
@@ -10220,6 +10254,38 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deneme süreniz ${ textDate } tarihinde sona erecek. ${ textDate } tarihinden önce iptal ederseniz sizden ücret alınmayacak. ${ action }"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } lisansı"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } koltukları"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } koltuğu",
+        "${ seats } ${ MEET_APP_NAME } koltuğu"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Diğer"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
