@@ -70,7 +70,7 @@ export const JoinWithLinkModal = ({ open, onClose, onJoin }: JoinWithLinkModalPr
                         {c('Info').t`Paste your ${MEET_APP_NAME} link to join a secure meeting`}
                     </div>
                 </div>
-                <div className="flex flex-column w-full">
+                <div className="flex flex-column w-full relative">
                     <div className={clsx('flex items-center w-full justify-start flex-nowrap gap-2 my-4')}>
                         <img
                             src={linkIcon}
@@ -88,8 +88,9 @@ export const JoinWithLinkModal = ({ open, onClose, onJoin }: JoinWithLinkModalPr
                         />
                     </div>
                     {isError && (
-                        <span className="meeting-link-input-error text-left text-sm color-danger ml-11 mb-2">{c('Error')
-                            .t`Invalid meeting link`}</span>
+                        <span className="meeting-link-input-error absolute text-left text-sm color-danger ml-11 mb-2">{c(
+                            'Error'
+                        ).t`Invalid meeting link`}</span>
                     )}
                 </div>
                 <div className="flex flex-column md:flex-row gap-4 w-full py-10">
