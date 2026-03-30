@@ -1,10 +1,5 @@
-import { getLocalesFromRequireContext } from '@proton/shared/lib/i18n/locales'
+import { createLocaleMap } from '@proton/shared/lib/i18n/locales'
 
-const requireContext = import.meta.webpackContext!('../../../locales', {
-  recursive: false,
-  regExp: /\.json$/,
-  mode: 'lazy',
-  chunkName: 'locales/[request]',
-})
-
-export const locales = getLocalesFromRequireContext(requireContext)
+export const locales = createLocaleMap(
+  (locale) => import(/* webpackChunkName: "locales/[request]" */ `../../../locales/${locale}.json`),
+)
