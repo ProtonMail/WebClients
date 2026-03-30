@@ -39,7 +39,6 @@ import {
     isScribeAddon,
     setQuantity,
 } from '@proton/payments';
-import { isMultiUserPersonalPlan } from '@proton/payments/core/plan/helpers';
 import type { AddonBalanceKey } from '@proton/payments/core/subscription/selected-plan';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -204,9 +203,9 @@ const AddonCustomizer = ({
     const cycle = selectedPlan.cycle;
     const currency = selectedPlan.currency;
 
-    // For multi-user personal plans (Duo, Family), Meet seats must equal the number of users.
+    // For any plan with members (Duo, Family, B2B plans, etc.), Meet seats must equal the number of users.
     // Lock the input so the user can't change the count after adding.
-    const isMeetAddonLockedForPlan = isMeetAddon(addonName) && isMultiUserPersonalPlan(selectedPlan.getPlanName());
+    const isMeetAddonLockedForPlan = isMeetAddon(addonName) && selectedPlan.getTotal('MaxMembers') > 0;
 
     const sharedNumberCustomizerProps: Pick<
         NumberCustomiserProps,
@@ -247,13 +246,17 @@ const AddonCustomizer = ({
                 const lumoConstrain = currentMembersValue === currentLumoValue && lumoAddonEnabled;
 
                 const currentMeetValue = meetAddonKey ? selectedPlanIDs[meetAddonKey] : undefined;
-                const meetConstrain = currentMembersValue === currentMeetValue && meetAddonEnabled;
+                // Meet always follows the member count when it's active, regardless of the current ratio.
+                const meetConstrain = !!currentMeetValue && meetAddonEnabled;
 
                 if (scribeConstrain && scribeAddonKey) {
                     newPlanIDs = setQuantity(newPlanIDs, scribeAddonKey, newMembersQuantity);
                 } else if (lumoConstrain && lumoAddonKey) {
                     newPlanIDs = setQuantity(newPlanIDs, lumoAddonKey, newMembersQuantity);
-                } else if (meetConstrain && meetAddonKey) {
+                }
+
+                // Meet syncs independently so it always tracks member count even when scribe/lumo also sync.
+                if (meetConstrain && meetAddonKey) {
                     newPlanIDs = setQuantity(newPlanIDs, meetAddonKey, newMembersQuantity);
                 }
 
