@@ -38,7 +38,12 @@ export const selectSearch = createSelector([params], (params) => params.search);
 export const selectESEnabled = createSelector([params], (params) => params.esEnabled);
 export const selectisSearching = createSelector([params], (params) => params.isSearching);
 export const selectNewsletterSubscriptionID = createSelector([params], (params) => params.newsletterSubscriptionID);
-export const selectCategoryIDs = createSelector([params], (params) => params.categoryIDs);
+export const selectCategoryIDs = createSelector([params], (params) => {
+    if (params.labelID === MAILBOX_LABEL_IDS.INBOX) {
+        return params.categoryIDs;
+    }
+    return [];
+});
 
 const beforeFirstLoad = (state: MailState) => state.elements.beforeFirstLoad;
 export const elementsMap = (state: MailState) => state.elements.elements;

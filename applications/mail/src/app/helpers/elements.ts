@@ -357,7 +357,7 @@ export const filterElementsInState = ({
         // When viewing inbox with specific categories, also require the element to have one of those category labels
         if (
             labelID === MAILBOX_LABEL_IDS.INBOX &&
-            categoryIDs?.length > 0 &&
+            categoryIDs.length > 0 &&
             !categoryIDs.some((id) => labelIDsSet.has(id))
         ) {
             return false;
