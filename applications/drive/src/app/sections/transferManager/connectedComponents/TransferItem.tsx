@@ -16,22 +16,24 @@ import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
-import { useDownloadContainsDocumentsModal } from '../../../components/modals/DownloadContainsDocumentsModal';
 import { DownloadManager } from '../../../managers/download/DownloadManager';
 import { AbuseCategoryType, type AbuseReportPrefill } from '../../../modals/ReportAbuseModal';
-import { useSignatureIssueModal } from '../../../modals/SignatureIssueModal';
+import type { useSignatureIssueModal } from '../../../modals/SignatureIssueModal';
 import {
     BaseTransferStatus,
     IssueStatus,
     useDownloadManagerStore,
 } from '../../../zustand/download/downloadManager.store';
-import { useTransferManagerActions } from '../useTransferManagerActions';
+import { isCancellable, isRetryable, isShareable } from '../transferStatus';
 import type { TransferManagerEntry } from '../useTransferManagerState';
-import { isCancellable, isRetryable, isShareable } from '../utils/transferStatus';
 
 type Props = {
     entry: TransferManagerEntry;
     onShare?: () => void;
+    cancelTransfer: (entry: TransferManagerEntry) => void;
+    retryTransfer: (entry: TransferManagerEntry) => void;
+    showDocumentsModal: (props: { onSubmit: () => void; onCancel: () => void }) => void;
+    showSignatureIssueModal: ReturnType<typeof useSignatureIssueModal>['showSignatureIssueModal'];
     onReportAbuse?: (nodeUid: string, prefill?: AbuseReportPrefill) => void;
 };
 
@@ -85,12 +87,17 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
     return null;
 };
 
-export const TransferItem = ({ entry, onShare, onReportAbuse }: Props) => {
+export const TransferItem = ({
+    entry,
+    onShare,
+    cancelTransfer,
+    retryTransfer,
+    showDocumentsModal,
+    showSignatureIssueModal,
+    onReportAbuse,
+}: Props) => {
     // const showLocationText = c('Action').t`Show location`;
     const totalSize = entry.type === 'download' ? entry.storageSize : entry.clearTextSize;
-    const { cancelTransfer, retryTransfer } = useTransferManagerActions();
-    const [containsDocumentModal, showDocumentsModal] = useDownloadContainsDocumentsModal();
-    const { signatureIssueModal, showSignatureIssueModal } = useSignatureIssueModal();
     const onlyShowTransferredBytes = !totalSize;
     // Encrypted size is larger from file clear text size, we prevent showing larger transferred size to the user during upload
     const transferredBytes = Math.min(totalSize, entry.transferredBytes);
@@ -287,8 +294,6 @@ export const TransferItem = ({ entry, onShare, onReportAbuse }: Props) => {
                     </Button>
                 )}
             </div>
-            {containsDocumentModal}
-            {signatureIssueModal}
         </div>
     );
 };
