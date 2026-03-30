@@ -23,7 +23,7 @@ function* getGroupsWorker({ meta }: ReturnType<typeof getGroups.intent>) {
             if (organization !== null) group.organizationId = organization.ID;
 
             // Add groups to crypto context
-            PassCrypto.setGroupKeys(group);
+            PassCrypto.setGroup(group);
         });
 
         yield put(getGroups.success(meta.request.id, response));

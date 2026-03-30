@@ -165,12 +165,18 @@ export const createRandomItemKey = async (rotation: number): Promise<ItemKey> =>
     return { key, raw, rotation };
 };
 
-export const createRandomGroupKey = async (groupId: string): Promise<{ group: Group; groupKey: DecryptedKey }> => {
+export const createRandomGroupKey = async (
+    groupId: string
+): Promise<{ group: Group; groupKey: DecryptedKey; groupPublicKey: string }> => {
     const groupKey = await createRandomKey();
     const groupArmoredKey = await CryptoProxy.exportPrivateKey({
         format: 'armored',
         privateKey: groupKey.privateKey,
         passphrase: TEST_KEY_PASSWORD,
+    });
+    const groupPublicKey = await CryptoProxy.exportPublicKey({
+        key: groupKey.publicKey,
+        format: 'armored',
     });
     const groupAddressKey: AddressKey = {
         ID: groupKey.ID,
@@ -189,5 +195,5 @@ export const createRandomGroupKey = async (groupId: string): Promise<{ group: Gr
         Address: { ...randomAddress(), Keys: [groupAddressKey] },
     } as unknown as Group;
 
-    return { group, groupKey };
+    return { group, groupKey, groupPublicKey };
 };
