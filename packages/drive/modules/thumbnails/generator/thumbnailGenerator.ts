@@ -8,17 +8,19 @@ import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { isIosDevice, isSafariDevice } from './constants';
 import { ThumbnailProcessor } from './handlerRegistry';
 import { mimeTypeFromFile } from './mimeTypeParser/mimeTypeParser';
-import {
-    CorruptedImageError,
-    MissingDataError,
-    NoHandlerError,
-    ThumbnailError,
-    ThumbnailSizeError,
-    UnsupportedFormatError,
-} from './thumbnailError';
+import { ThumbnailError, ThumbnailSizeError } from './thumbnailError';
 import type { ThumbnailResult } from './utils';
 
 let processorInstance: ThumbnailProcessor | null = null;
+
+const ERROR_TO_LEVEL: Record<string, Context['level']> = {
+    ThumbnailTimeoutError: 'debug',
+    NoHandlerError: 'info',
+    CorruptedImageError: 'info',
+    ThumbnailSizeError: 'info',
+    UnsupportedFormatError: 'info',
+    MissingDataError: 'info',
+};
 
 function getProcessor(): ThumbnailProcessor {
     if (!processorInstance) {
@@ -34,14 +36,7 @@ function reportThumbnailError(thumbnailError: ThumbnailError): void {
             errorType: thumbnailError.name,
         },
         extra: thumbnailError.context,
-        level:
-            thumbnailError instanceof NoHandlerError ||
-            thumbnailError instanceof CorruptedImageError ||
-            thumbnailError instanceof ThumbnailSizeError ||
-            thumbnailError instanceof UnsupportedFormatError ||
-            thumbnailError instanceof MissingDataError
-                ? 'info'
-                : 'error',
+        level: ERROR_TO_LEVEL[thumbnailError.name] || 'error',
     };
 
     traceError(thumbnailError, context);
