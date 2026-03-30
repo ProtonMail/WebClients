@@ -59,9 +59,9 @@ const MeetLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoP
                             y2="16.6121"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop stopColor="#6652F5" />
-                            <stop offset="0.33754" stopColor="#9A9CF9" />
-                            <stop offset="0.868809" stopColor="#D9DAFC" />
+                            <stop stopColor="#6E45E2" />
+                            <stop offset="0.33754" stopColor="#45E1CC" />
+                            <stop offset="0.868809" stopColor="#82F8E1" />
                         </linearGradient>
                         <radialGradient
                             id={`${uid}-r-b`}
@@ -83,9 +83,9 @@ const MeetLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoP
                             y2="9.35166"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop stopColor="#6652F5" />
-                            <stop offset="0.33754" stopColor="#9A9CF9" />
-                            <stop offset="0.868809" stopColor="#D9DAFC" />
+                            <stop stopColor="#6E45E2" />
+                            <stop offset="0.33754" stopColor="#45E1CC" />
+                            <stop offset="0.868809" stopColor="#82F8E1" />
                         </linearGradient>
                     </defs>
                 </>
@@ -159,9 +159,9 @@ const MeetLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoP
                             y2="16.5224"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop stopColor="#6652F5" />
-                            <stop offset="0.33754" stopColor="#9A9CF9" />
-                            <stop offset="0.868809" stopColor="#D9DAFC" />
+                            <stop stopColor="#6E45E2" />
+                            <stop offset="0.33754" stopColor="#45E1CC" />
+                            <stop offset="0.868809" stopColor="#82F8E1" />
                         </linearGradient>
                         <radialGradient
                             id={`${uid}-r-b`}
@@ -183,9 +183,9 @@ const MeetLogo = ({ variant = 'with-wordmark', hasTitle = true, ...rest }: LogoP
                             y2="9.19187"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop stopColor="#6652F5" />
-                            <stop offset="0.33754" stopColor="#9A9CF9" />
-                            <stop offset="0.868809" stopColor="#D9DAFC" />
+                            <stop stopColor="#6E45E2" />
+                            <stop offset="0.33754" stopColor="#45E1CC" />
+                            <stop offset="0.868809" stopColor="#82F8E1" />
                         </linearGradient>
                         <clipPath id={`clip1_${uid}`}>
                             <rect
