@@ -9982,21 +9982,13 @@ __metadata:
   resolution: "@proton/crypto@workspace:packages/crypto"
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
+    "@sentry/browser": "npm:^7.120.4"
     "@vitest/browser-playwright": "npm:^4.1.1"
     comlink: "npm:^4.4.2"
     eslint: "npm:^9.39.4"
-    eslint-plugin-chai-friendly: "npm:^1.1.1"
-    eslint-plugin-jasmine: "npm:^4.2.2"
-    karma: "npm:^6.4.4"
-    karma-chrome-launcher: "npm:^3.2.0"
-    karma-firefox-launcher: "npm:^2.1.3"
-    karma-jasmine: "npm:^5.1.0"
-    karma-webkit-launcher: "npm:^2.6.0"
-    karma-webpack: "npm:^5.0.1"
     playwright: "npm:^1.58.2"
     pmcrypto: "npm:@protontech/pmcrypto@^8.8.1"
     prettier: "npm:^3.8.1"
-    ts-loader: "npm:^9.5.4"
     typescript: "npm:^6.0.2"
     vitest: "npm:^4.1.1"
   languageName: unknown
@@ -21277,9 +21269,9 @@ __metadata:
   linkType: hard
 
 "chalk@npm:^5.0.0, chalk@npm:^5.0.1, chalk@npm:^5.2.0, chalk@npm:^5.3.0":
-  version: 5.6.0
-  resolution: "chalk@npm:5.6.0"
-  checksum: 10/f0e0646a72adbd0f6e73441d3872d7f2f40ba98052924f08a30c10634ec6b1e2cd19cc3c40cc21081dad640e2a1a2749030418571690b89bd7782babf7f89866
+  version: 5.4.1
+  resolution: "chalk@npm:5.4.1"
+  checksum: 10/29df3ffcdf25656fed6e95962e2ef86d14dfe03cd50e7074b06bad9ffbbf6089adbb40f75c00744d843685c8d008adaf3aed31476780312553caf07fa86e5bc7
   languageName: node
   linkType: hard
 
@@ -26442,15 +26434,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-chai-friendly@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "eslint-plugin-chai-friendly@npm:1.1.1"
-  peerDependencies:
-    eslint: ">=3.0.0"
-  checksum: 10/7d7a01faf52686551c63f36b96587cf7ae425618285b46aa93039044850a9752c22e78415a21ff78e394c60ff02278cbbcfe8a6303fbaac7d34522113ef90e13
-  languageName: node
-  linkType: hard
-
 "eslint-plugin-custom-rules@workspace:^, eslint-plugin-custom-rules@workspace:packages/eslint-plugin-custom-rules":
   version: 0.0.0-use.local
   resolution: "eslint-plugin-custom-rules@workspace:packages/eslint-plugin-custom-rules"
@@ -31542,17 +31525,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-ci@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "is-ci@npm:3.0.1"
-  dependencies:
-    ci-info: "npm:^3.2.0"
-  bin:
-    is-ci: bin.js
-  checksum: 10/192c66dc7826d58f803ecae624860dccf1899fc1f3ac5505284c0a5cf5f889046ffeb958fa651e5725d5705c5bcb14f055b79150ea5fcad7456a9569de60260e
-  languageName: node
-  linkType: hard
-
 "is-ci@npm:^4.1.0":
   version: 4.1.0
   resolution: "is-ci@npm:4.1.0"
@@ -33664,16 +33636,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"karma-firefox-launcher@npm:^2.1.3":
-  version: 2.1.3
-  resolution: "karma-firefox-launcher@npm:2.1.3"
-  dependencies:
-    is-wsl: "npm:^2.2.0"
-    which: "npm:^3.0.0"
-  checksum: 10/0ad4c6c37e4c1a3649eb542e6f2acf1c4b6f45ceedc424c26abb2621a7f7cb6222b8c56cf53e5b39e18057bfe2b320f2aa080f5311f49f38f068d3c5e37b9aad
-  languageName: node
-  linkType: hard
-
 "karma-jasmine@npm:^5.1.0":
   version: 5.1.0
   resolution: "karma-jasmine@npm:5.1.0"
@@ -33705,19 +33667,6 @@ __metadata:
   peerDependencies:
     karma: ">=0.9"
   checksum: 10/a60db6dd94253b7e4cea338602f961db116143e40b30a0767ccad534953a30537519bc248dab5659806f36dfef4f42d2b933c89b367c4a48b20a056cee1a8ada
-  languageName: node
-  linkType: hard
-
-"karma-webkit-launcher@npm:^2.6.0":
-  version: 2.6.0
-  resolution: "karma-webkit-launcher@npm:2.6.0"
-  dependencies:
-    is-ci: "npm:^3.0.1"
-    uuid: "npm:^10.0.0"
-  peerDependenciesMeta:
-    playwright:
-      optional: true
-  checksum: 10/b3eb66d102911fa1815de63063e8f9672da1834280a7e3d39badd3296a41483796484556016fe396378d614a36eb953f2821199dab41f5a994ed38f111f56e46
   languageName: node
   linkType: hard
 
@@ -49159,12 +49108,12 @@ __metadata:
   linkType: hard
 
 "typescript@npm:^5.0.0, typescript@npm:^5.4.4":
-  version: 5.9.3
-  resolution: "typescript@npm:5.9.3"
+  version: 5.8.3
+  resolution: "typescript@npm:5.8.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10/c089d9d3da2729fd4ac517f9b0e0485914c4b3c26f80dc0cffcb5de1719a17951e92425d55db59515c1a7ddab65808466debb864d0d56dcf43f27007d0709594
+  checksum: 10/65c40944c51b513b0172c6710ee62e951b70af6f75d5a5da745cb7fab132c09ae27ffdf7838996e3ed603bb015dadd099006658046941bd0ba30340cc563ae92
   languageName: node
   linkType: hard
 
@@ -49199,12 +49148,12 @@ __metadata:
   linkType: hard
 
 "typescript@patch:typescript@npm%3A^5.0.0#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.4.4#optional!builtin<compat/typescript>":
-  version: 5.9.3
-  resolution: "typescript@patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"
+  version: 5.8.3
+  resolution: "typescript@patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10/696e1b017bc2635f4e0c94eb4435357701008e2f272f553d06e35b494b8ddc60aa221145e286c28ace0c89ee32827a28c2040e3a69bdc108b1a5dc8fb40b72e3
+  checksum: 10/b9b1e73dabac5dc730c041325dbd9c99467c1b0d239f1b74ec3b90d831384af3e2ba973946232df670519147eb51a2c20f6f96163cea2b359f03de1e2091cc4f
   languageName: node
   linkType: hard
 
@@ -50153,15 +50102,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:^10.0.0":
-  version: 10.0.0
-  resolution: "uuid@npm:10.0.0"
-  bin:
-    uuid: dist/bin/uuid
-  checksum: 10/35aa60614811a201ff90f8ca5e9ecb7076a75c3821e17f0f5ff72d44e36c2d35fcbc2ceee9c4ac7317f4cc41895da30e74f3885e30313bee48fda6338f250538
-  languageName: node
-  linkType: hard
-
 "uuid@npm:^11.1.0":
   version: 11.1.0
   resolution: "uuid@npm:11.1.0"
@@ -50435,8 +50375,8 @@ __metadata:
   linkType: hard
 
 "vite@npm:^5.0.0":
-  version: 5.4.21
-  resolution: "vite@npm:5.4.21"
+  version: 5.4.19
+  resolution: "vite@npm:5.4.19"
   dependencies:
     esbuild: "npm:^0.21.3"
     fsevents: "npm:~2.3.3"
@@ -50473,7 +50413,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10/479a63e271d2d9e80a8e553e165444179681f33ddec1e7c84a43c4572f67c3d3abd33136389beb42703e32d3e96e1e8a930a222ee1bb64263ba057c187ccf793
+  checksum: 10/27900c87ec6f84967ba12bd4a24c2b9182c3ddad278a13a1c7736ccc4ac7e325f3fbdc11836e2906857140cc89c55121cb0746d4100046e797e21e1e7570d9c4
   languageName: node
   linkType: hard
 
@@ -51540,17 +51480,6 @@ __metadata:
   bin:
     node-which: ./bin/node-which
   checksum: 10/4782f8a1d6b8fc12c65e968fea49f59752bf6302dc43036c3bf87da718a80710f61a062516e9764c70008b487929a73546125570acea95c5b5dcc8ac3052c70f
-  languageName: node
-  linkType: hard
-
-"which@npm:^3.0.0":
-  version: 3.0.1
-  resolution: "which@npm:3.0.1"
-  dependencies:
-    isexe: "npm:^2.0.0"
-  bin:
-    node-which: bin/which.js
-  checksum: 10/adf720fe9d84be2d9190458194f814b5e9015ae4b88711b150f30d0f4d0b646544794b86f02c7ebeec1db2029bc3e83a7ff156f542d7521447e5496543e26890
   languageName: node
   linkType: hard
 
